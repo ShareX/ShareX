@@ -183,6 +183,7 @@
             this.tsmiTrayScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayWebpageCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -228,7 +229,6 @@
             this.tsmiTrayRecentItems = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayWebpageCapture = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -382,8 +382,8 @@
             this.tsmiLastRegion,
             this.tsmiScreenRecordingFFmpeg,
             this.tsmiScreenRecordingGIF,
-            this.tsmiAutoCapture,
-            this.tsmiWebpageCapture});
+            this.tsmiWebpageCapture,
+            this.tsmiAutoCapture});
             this.tsddbCapture.Image = global::ShareX.Properties.Resources.camera;
             resources.ApplyResources(this.tsddbCapture, "tsddbCapture");
             this.tsddbCapture.Name = "tsddbCapture";
@@ -1296,8 +1296,8 @@
             this.tsmiTrayLastRegion,
             this.tsmiTrayScreenRecordingFFmpeg,
             this.tsmiTrayScreenRecordingGIF,
-            this.tsmiTrayAutoCapture,
-            this.tsmiTrayWebpageCapture});
+            this.tsmiTrayWebpageCapture,
+            this.tsmiTrayAutoCapture});
             this.tsmiTrayCapture.Image = global::ShareX.Properties.Resources.camera;
             this.tsmiTrayCapture.Name = "tsmiTrayCapture";
             resources.ApplyResources(this.tsmiTrayCapture, "tsmiTrayCapture");
@@ -1426,6 +1426,13 @@
             this.tsmiTrayAutoCapture.Name = "tsmiTrayAutoCapture";
             resources.ApplyResources(this.tsmiTrayAutoCapture, "tsmiTrayAutoCapture");
             this.tsmiTrayAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
+            // 
+            // tsmiTrayWebpageCapture
+            // 
+            this.tsmiTrayWebpageCapture.Image = global::ShareX.Properties.Resources.document_globe;
+            this.tsmiTrayWebpageCapture.Name = "tsmiTrayWebpageCapture";
+            resources.ApplyResources(this.tsmiTrayWebpageCapture, "tsmiTrayWebpageCapture");
+            this.tsmiTrayWebpageCapture.Click += new System.EventHandler(this.tsmiWebpageCapture_Click);
             // 
             // tsmiTrayUpload
             // 
@@ -1750,13 +1757,6 @@
             this.tsmiTrayExit.Name = "tsmiTrayExit";
             resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
             this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
-            // 
-            // tsmiTrayWebpageCapture
-            // 
-            this.tsmiTrayWebpageCapture.Image = global::ShareX.Properties.Resources.document_globe;
-            this.tsmiTrayWebpageCapture.Name = "tsmiTrayWebpageCapture";
-            resources.ApplyResources(this.tsmiTrayWebpageCapture, "tsmiTrayWebpageCapture");
-            this.tsmiTrayWebpageCapture.Click += new System.EventHandler(this.tsmiWebpageCapture_Click);
             // 
             // MainForm
             // 

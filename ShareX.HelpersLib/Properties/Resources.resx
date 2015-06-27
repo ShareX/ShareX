@@ -796,4 +796,10 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
+  <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
+    <value>Webpage capture</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
+    <value>Screen capture</value>
+  </data>
 </root>

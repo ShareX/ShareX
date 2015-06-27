@@ -56,15 +56,7 @@ namespace ShareX
 
         private void LoadSettings()
         {
-            if (Clipboard.ContainsText())
-            {
-                string text = Clipboard.GetText();
-
-                if (!string.IsNullOrEmpty(text) && URLHelpers.IsValidURLRegex(text))
-                {
-                    txtURL.Text = text;
-                }
-            }
+            CheckClipboardURL();
 
             Size browserSize = Program.Settings.WebpageCaptureBrowserSize;
             if (browserSize.Width == 0) browserSize.Width = Screen.PrimaryScreen.Bounds.Width;
@@ -75,11 +67,37 @@ namespace ShareX
             nudCaptureDelay.Value = (decimal)Program.Settings.WebpageCaptureDelay.Between((float)nudCaptureDelay.Minimum, (float)nudCaptureDelay.Maximum);
         }
 
+        private void CheckClipboardURL()
+        {
+            if (Clipboard.ContainsText())
+            {
+                string text = Clipboard.GetText();
+
+                if (!string.IsNullOrEmpty(text) && URLHelpers.IsValidURLRegex(text))
+                {
+                    txtURL.Text = text;
+                }
+            }
+        }
+
+        private void CleanPictureBox()
+        {
+            if (pbResult.Image != null)
+            {
+                pbResult.Image.Dispose();
+                pbResult.Image = null;
+            }
+        }
+
         private void webpageCapture_CaptureCompleted(Bitmap bmp)
         {
-            pbResult.Image = bmp;
-            IsBusy = false;
-            btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = !IsBusy;
+            if (!IsDisposed)
+            {
+                CleanPictureBox();
+                pbResult.Image = bmp;
+                btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = true;
+                IsBusy = false;
+            }
         }
 
         private void txtURL_TextChanged(object sender, EventArgs e)
@@ -105,12 +123,8 @@ namespace ShareX
         private void btnCapture_Click(object sender, EventArgs e)
         {
             IsBusy = true;
-            btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = !IsBusy;
-            if (pbResult.Image != null)
-            {
-                pbResult.Image.Dispose();
-                pbResult.Image = null;
-            }
+            btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = false;
+            CleanPictureBox();
 
             webpageCapture.CaptureDelay = (int)nudCaptureDelay.Value * 1000;
             webpageCapture.CapturePage(txtURL.Text, new Size((int)nudWebpageWidth.Value, (int)nudWebpageWidth.Value));

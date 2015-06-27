@@ -754,6 +754,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Webpage capture.
+        /// </summary>
+        internal static string HotkeyType_CaptureWebpage {
+            get {
+                return ResourceManager.GetString("HotkeyType_CaptureWebpage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen capture.
+        /// </summary>
+        internal static string HotkeyType_CaptureWebpage_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_CaptureWebpage_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload from clipboard.
         /// </summary>
         internal static string HotkeyType_ClipboardUpload {
