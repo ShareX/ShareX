@@ -45,6 +45,9 @@ namespace ShareX.ScreenCaptureLib
         public WebpageCapture()
         {
             webBrowser = new WebBrowser();
+            webBrowser.AllowNavigation = true;
+            webBrowser.ScriptErrorsSuppressed = true;
+            webBrowser.ScrollBarsEnabled = false;
             webBrowser.DocumentCompleted += webBrowser_DocumentCompleted;
         }
 
@@ -57,8 +60,6 @@ namespace ShareX.ScreenCaptureLib
         {
             if (!string.IsNullOrEmpty(url))
             {
-                webBrowser.ScriptErrorsSuppressed = true;
-                webBrowser.ScrollBarsEnabled = false;
                 webBrowser.Size = browserSize;
                 webBrowser.Navigate(url);
             }
@@ -66,33 +67,62 @@ namespace ShareX.ScreenCaptureLib
 
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            if (webBrowser.ReadyState == WebBrowserReadyState.Complete)
-            {
-                TaskEx.RunDelayed(GetWebpageBitmap, CaptureDelay);
-            }
+            TaskEx.RunDelayed(GetWebpageBitmap, CaptureDelay);
         }
 
         private void GetWebpageBitmap()
         {
-            Rectangle rect = webBrowser.Document.Body.ScrollRectangle;
-            webBrowser.Size = new Size(rect.Width, rect.Height);
-            Bitmap bmp = new Bitmap(rect.Width, rect.Height);
-
-            try
+            if (webBrowser.Document != null && webBrowser.Document.Body != null)
             {
-                webBrowser.DrawToBitmap(bmp, rect);
-                OnCaptureCompleted(bmp);
-            }
-            catch (Exception ex)
-            {
-                DebugHelper.WriteException(ex);
+                Rectangle rect = webBrowser.Document.Body.ScrollRectangle;
+                webBrowser.Size = new Size(rect.Width, rect.Height);
+                Bitmap bmp = new Bitmap(rect.Width, rect.Height);
 
-                if (bmp != null)
+                try
                 {
-                    bmp.Dispose();
+                    GetImage(webBrowser.ActiveXInstance, bmp, Color.White);
+                    OnCaptureCompleted(bmp);
                 }
+                catch (Exception ex)
+                {
+                    DebugHelper.WriteException(ex);
 
-                OnCaptureCompleted(null);
+                    if (bmp != null)
+                    {
+                        bmp.Dispose();
+                    }
+
+                    OnCaptureCompleted(null);
+                }
+            }
+        }
+
+        private static void GetImage(object obj, Image destination, Color backgroundColor)
+        {
+            using (Graphics graphics = Graphics.FromImage(destination))
+            {
+                IntPtr deviceContextHandle = IntPtr.Zero;
+                RECT rectangle = new RECT();
+
+                rectangle.Right = destination.Width;
+                rectangle.Bottom = destination.Height;
+
+                graphics.Clear(backgroundColor);
+
+                try
+                {
+                    deviceContextHandle = graphics.GetHdc();
+
+                    IViewObject viewObject = obj as IViewObject;
+                    viewObject.Draw(1, -1, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, deviceContextHandle, ref rectangle, IntPtr.Zero, IntPtr.Zero, 0);
+                }
+                finally
+                {
+                    if (deviceContextHandle != IntPtr.Zero)
+                    {
+                        graphics.ReleaseHdc(deviceContextHandle);
+                    }
+                }
             }
         }
 
