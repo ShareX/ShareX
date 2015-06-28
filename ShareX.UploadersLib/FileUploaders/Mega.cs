@@ -82,10 +82,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
         internal IEnumerable<DisplayNode> GetDisplayNodes()
         {
-            IEnumerable<Node> nodes = _megaClient.GetNodes().Where(n => n.Type == NodeType.Directory || n.Type == NodeType.Root).ToArray();
+            IEnumerable<INode> nodes = _megaClient.GetNodes().Where(n => n.Type == NodeType.Directory || n.Type == NodeType.Root).ToArray();
             List<DisplayNode> displayNodes = new List<DisplayNode>();
 
-            foreach (Node node in nodes)
+            foreach (INode node in nodes)
             {
                 displayNodes.Add(new DisplayNode(node, nodes));
             }
@@ -96,7 +96,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return displayNodes;
         }
 
-        public Node GetParentNode()
+        public INode GetParentNode()
         {
             if (_authInfos == null || _parentNodeId == null)
             {
@@ -110,7 +110,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Login();
 
-            Node createdNode = _megaClient.Upload(stream, fileName, GetParentNode());
+            INode createdNode = _megaClient.Upload(stream, fileName, GetParentNode());
 
             UploadResult res = new UploadResult();
             res.IsURLExpected = true;
@@ -155,21 +155,21 @@ namespace ShareX.UploadersLib.FileUploaders
                 DisplayName = "[Select a folder]";
             }
 
-            public DisplayNode(Node node, IEnumerable<Node> nodes)
+            public DisplayNode(INode node, IEnumerable<INode> nodes)
             {
                 Node = node;
                 DisplayName = GenerateDisplayName(node, nodes);
             }
 
-            public Node Node { get; private set; }
+            public INode Node { get; private set; }
 
             public string DisplayName { get; private set; }
 
-            private string GenerateDisplayName(Node node, IEnumerable<Node> nodes)
+            private string GenerateDisplayName(INode node, IEnumerable<INode> nodes)
             {
                 List<string> nodesTree = new List<string>();
 
-                Node parent = node;
+                INode parent = node;
                 do
                 {
                     if (parent.Type == NodeType.Directory)
