@@ -94,11 +94,13 @@ namespace ShareX.UploadersLib.FileUploaders
             metadataMap["mime"] = Helpers.IsTextFile(fileName) ? "text/plain" : Helpers.GetMimeType(fileName);
             metadataMap["name"] = fileName;
             
-            // Encode the metadata with UTF-16 and a double-null-byte terminator
-            var metadata = Encoding.BigEndianUnicode.GetBytes(JsonConvert.SerializeObject(metadataMap)).Concat(new byte[] { 0, 0 }).ToArray();
+            // Encode the metadata with UTF-16 and a double-null-byte terminator, and append data
+            // Unfortunately, the CCM cipher mode can't stream the encryption, and so we have to GetBytes() on the source.
+            // We do limit the source to 50MB however
+            var data = Encoding.BigEndianUnicode.GetBytes(JsonConvert.SerializeObject(metadataMap)).Concat(new byte[] { 0, 0 }).Concat(source.GetBytes()).ToArray();
 
             // Calculate the length of the CCM IV and copy it over
-            var ccmIVLen = FindIVLen(metadata.Length + source.Length);
+            var ccmIVLen = FindIVLen(data.Length);
             var ccmIV = new byte[ccmIVLen];
             Array.Copy(iv, ccmIV, ccmIVLen);
 
@@ -108,11 +110,20 @@ namespace ShareX.UploadersLib.FileUploaders
             var ccmMode = new CcmBlockCipher(new AesFastEngine());
             ccmMode.Init(true, ccmParams);
 
-            return new Up1Stream(source, metadata, ccmMode, metadata.Length + (int)source.Length);
+            // Perform the encryption
+            var encBytes = new byte[ccmMode.GetOutputSize(data.Length)];
+            var res = ccmMode.ProcessBytes(data, 0, data.Length, encBytes, 0);
+            ccmMode.DoFinal(encBytes, res);
+
+            return new MemoryStream(encBytes);
         }
 
         public override UploadResult Upload(Stream input, string fileName)
         {
+            // Make sure the file (or memory stream) is less than 50MB
+            if (input.Length > 50000000)
+                throw new ArgumentException("Input files for Up1 cannot be more than 50MB in size");
+
             // Initialize the encrypted stream
             string seed, ident;
             var encryptedStream = Encrypt(input, fileName, out seed, out ident);
@@ -136,171 +147,5 @@ namespace ShareX.UploadersLib.FileUploaders
         }
     }
 
-    /* This custom stream is used to encrypt the data on-the-fly. As the CCM functions in BouncyCastle are designed to 
-     * have a known input and unknown output, there are functions to accommodate this (GetOutputSize). Unfortunately as
-     * a Stream we are left with the other way around (unknown input and known output). In this case, we need to use an
-     * overrun buffer, as we can't perfectly estimate the size of intermediate buffers.
-     */
-    sealed class Up1Stream : Stream
-    {
-        private Stream _source;
-        private byte[] _overrun;
-        private CcmBlockCipher _ccmMode;
-        private bool _isCCMFinal;
-        private long _length;
-
-        public Up1Stream(Stream source, byte[] metadata, CcmBlockCipher ccmMode, long length)
-        {
-            _source = source;
-            _ccmMode = ccmMode;
-            _overrun = EncryptMetadata(metadata); // Nice little hack to ensure the metadata is written first
-            _isCCMFinal = false;
-            _length = length;
-        }
-
-        public byte[] EncryptMetadata(byte[] metadata)
-        {
-            var inArray = new byte[metadata.Length];
-            Array.Copy(metadata, inArray, metadata.Length);
-            var metaLen = _ccmMode.GetOutputSize(metadata.Length);
-            var outMeta = new byte[metaLen];
-            var outRealLen = _ccmMode.ProcessBytes(inArray, 0, inArray.Length, outMeta, 0);
-
-            Array.Resize(ref outMeta, outRealLen);
-            return outMeta;
-        }
-
-        public override int Read(byte[] buffer, int offset, int count)
-        {
-            // Check if the overrun is enough to satisfy the buffer
-            if (_overrun.Length >= count)
-            {
-                Array.Copy(_overrun, 0, buffer, offset, count);
-                _overrun = _overrun.Skip(count).ToArray();
-                return count;
-            }
-
-            // Check if we're on the last legs (CCM has been finalized)
-            if (_isCCMFinal)
-            {
-                if (_overrun.Length != 0)
-                    Array.Copy(_overrun, 0, buffer, offset, _overrun.Length);
-                return _overrun.Length;
-            }
-
-            // If overrun contains anything, throw it in the buffer immediately
-            var remainCount = count;
-            var remainOffset = offset;
-            if (_overrun.Length != 0)
-            {
-                remainOffset += _overrun.Length;
-                remainCount -= _overrun.Length;
-                Array.Copy(_overrun, buffer, _overrun.Length);
-                // At this point, ignore anything in _overrun
-            }
-
-            // Read chunk of data from input
-            var inBytes = new byte[remainCount];
-            var readBytes = _source.Read(inBytes, 0, remainCount);
-
-            // Calculate how much length we need depending on if we're at the end or not
-            var encLength = _ccmMode.GetOutputSize(readBytes);
-
-            // Close the file and finalize if we're at the end of the input
-            if (readBytes == 0)
-            {
-                _source.Close();
-                _isCCMFinal = true;
-            }
-
-            // Create overrun buffer if we have too much output
-            if (encLength > remainCount)
-            {
-                _overrun = new byte[encLength - remainCount];
-                var encBytes = new byte[encLength];
-                if (!_isCCMFinal)
-                    _ccmMode.ProcessBytes(inBytes, 0, readBytes, encBytes, 0);
-                else
-                    _ccmMode.DoFinal(encBytes, 0);
-
-                Array.Copy(encBytes, 0, buffer, remainOffset, remainCount);
-                Array.Copy(encBytes, encLength - remainCount, _overrun, 0, encLength - remainCount);
-            }
-            // Otherwise, encrypt directly to the given buffer
-            else
-            {
-                if (_overrun.Length != 0)
-                    _overrun = new byte[0]; // Clear the overrun buffer if exists
-                if (!_isCCMFinal)
-                    _ccmMode.ProcessBytes(inBytes, 0, readBytes, buffer, remainOffset);
-                else
-                    _ccmMode.DoFinal(buffer, remainOffset);
-            }
-
-            return remainCount;
-        }
-
-        public override bool CanRead
-        {
-            get
-            {
-                return true;
-            }
-        }
-        public override bool CanSeek
-        {
-            get
-            {
-                return false;
-            }
-        }
-        public override bool CanWrite
-        {
-            get
-            {
-                return false;
-            }
-        }
-
-        // We can't implement anything else in this stream
-
-        public override long Length
-        {
-            get
-            {
-                return _length;
-            }
-        }
-        public override long Position
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public override void Write(byte[] buffer, int offset, int count)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Flush()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override long Seek(long offset, SeekOrigin origin)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void SetLength(long value)
-        {
-            throw new NotImplementedException();
-        }
-    }
+    
 }
