@@ -76,6 +76,12 @@
       <HintPath>..\packages\MegaApiClient.1.1.0\lib\net40\MegaApiClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ClouDeveloper.Mime">
+      <HintPath>..\packages\cloudeveloper.mime.1.0.0\lib\net40-client\ClouDeveloper.Mime.dll</HintPath>
+    </Reference>
+    <Reference Include="crypto">
+      <HintPath>..\packages\Portable.BouncyCastle.1.7.0.2\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch10+MonoAndroid10+xamarinmac20+xamarinios10\crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -293,6 +299,7 @@
     <Compile Include="FileUploaders\MediaCrushUploader.cs" />
     <Compile Include="URLShorteners\VgdURLShortener.cs" />
     <Compile Include="URLShorteners\YourlsURLShortener.cs" />
+    <Compile Include="FileUploaders\Up1.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\AccountsControl.de.resx">

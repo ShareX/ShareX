@@ -90,6 +90,8 @@ namespace ShareX.UploadersLib
         GoogleDrive,
         [Description("Copy")]
         Copy,
+        [Description("Up1")]
+        Up1,
         //[Description("hubiC")]
         //Hubic,
         [Description("Box")]

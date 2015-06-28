@@ -241,6 +241,11 @@ namespace ShareX.UploadersLib
 
         public PushbulletSettings PushbulletSettings = new PushbulletSettings();
 
+        // Up1
+
+        public string Up1Host = "https://up1.ca";
+        public string Up1Key = "c61540b5ceecd05092799f936e27755f";
+
         // Lambda
 
         public LambdaSettings LambdaSettings = new LambdaSettings();
