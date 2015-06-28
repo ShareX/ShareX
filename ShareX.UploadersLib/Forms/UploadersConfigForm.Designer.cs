@@ -3406,38 +3406,38 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
 
-             // 
-+            // tpUp1
-+            // 
-+            this.tpUp1.Controls.Add(this.txtUp1Key);
-+            this.tpUp1.Controls.Add(this.txtUp1Host);
-+            this.tpUp1.Controls.Add(this.lblUp1Key);
-+            this.tpUp1.Controls.Add(this.lblUp1Host);
-+            resources.ApplyResources(this.tpUp1, "tpUp1");
-+            this.tpUp1.Name = "tpUp1";
-+            this.tpUp1.UseVisualStyleBackColor = true;
-+            // 
-+            // txtUp1Key
-+            // 
-+            resources.ApplyResources(this.txtUp1Key, "txtUp1Key");
-+            this.txtUp1Key.Name = "txtUp1Key";
-+            this.txtUp1Key.TextChanged += new System.EventHandler(this.txtUp1Key_TextChanged);
-+            // 
-+            // txtUp1Host
-+            // 
-+            resources.ApplyResources(this.txtUp1Host, "txtUp1Host");
-+            this.txtUp1Host.Name = "txtUp1Host";
-+            this.txtUp1Host.TextChanged += new System.EventHandler(this.txtUp1Host_TextChanged);
-+            // 
-+            // lblUp1Key
-+            // 
-+            resources.ApplyResources(this.lblUp1Key, "lblUp1Key");
-+            this.lblUp1Key.Name = "lblUp1Key";
-+            // 
-+            // lblUp1Host
-+            // 
-+            resources.ApplyResources(this.lblUp1Host, "lblUp1Host");
-+            this.lblUp1Host.Name = "lblUp1Host";
+            // 
+            // tpUp1
+            // 
+            this.tpUp1.Controls.Add(this.txtUp1Key);
+            this.tpUp1.Controls.Add(this.txtUp1Host);
+            this.tpUp1.Controls.Add(this.lblUp1Key);
+            this.tpUp1.Controls.Add(this.lblUp1Host);
+            resources.ApplyResources(this.tpUp1, "tpUp1");
+            this.tpUp1.Name = "tpUp1";
+            this.tpUp1.UseVisualStyleBackColor = true;
+            // 
+            // txtUp1Key
+            // 
+            resources.ApplyResources(this.txtUp1Key, "txtUp1Key");
+            this.txtUp1Key.Name = "txtUp1Key";
+            this.txtUp1Key.TextChanged += new System.EventHandler(this.txtUp1Key_TextChanged);
+            // 
+            // txtUp1Host
+            // 
+            resources.ApplyResources(this.txtUp1Host, "txtUp1Host");
+            this.txtUp1Host.Name = "txtUp1Host";
+            this.txtUp1Host.TextChanged += new System.EventHandler(this.txtUp1Host_TextChanged);
+            // 
+            // lblUp1Key
+            // 
+            resources.ApplyResources(this.lblUp1Key, "lblUp1Key");
+            this.lblUp1Key.Name = "lblUp1Key";
+            // 
+            // lblUp1Host
+            // 
+            resources.ApplyResources(this.lblUp1Host, "lblUp1Host");
+            this.lblUp1Host.Name = "lblUp1Host";
 
             // 
             // UploadersConfigForm
