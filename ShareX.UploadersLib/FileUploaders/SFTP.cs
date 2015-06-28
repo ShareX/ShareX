@@ -232,12 +232,18 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
                 catch (SftpPathNotFoundException)
                 {
+                    // Happens when directory not exist, create directory and retry uploading
+
                     CreateDirectory(URLHelpers.GetDirectoryPath(remotePath));
 
                     using (SftpFileStream sftpStream = client.OpenWrite(remotePath))
                     {
                         return TransferData(stream, sftpStream);
                     }
+                }
+                catch (NullReferenceException)
+                {
+                    // Happens when disconnected while uploading
                 }
             }
 
