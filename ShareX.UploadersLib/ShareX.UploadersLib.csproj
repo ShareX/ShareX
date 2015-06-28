@@ -750,6 +750,9 @@
   <ItemGroup>
     <None Include="Favicons\hubic.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Favicons\Up1.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <PropertyGroup>

@@ -112,6 +112,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpUpaste, Resources.Upaste);
             AddIconToTab(tpYourls, Resources.Yourls);
             AddIconToTab(tpLambda, Resources.Lambda);
+            AddIconToTab(tpUp1, Resources.Up1);
 
             tcFileUploaders.TabPages.Remove(tpHubic);
 
