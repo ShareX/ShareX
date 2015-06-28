@@ -42,34 +42,34 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public override UploadResult UploadText(string text, string fileName)
         {
-            if (string.IsNullOrEmpty(customUploader.RequestURL)) throw new Exception("'Request URL' must be not empty.");
+            UploadResult result = new UploadResult();
+
+            string requestURL = customUploader.GetRequestURL();
 
             if ((customUploader.RequestType != CustomUploaderRequestType.POST || string.IsNullOrEmpty(customUploader.FileFormName)) &&
                 (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$") || x.Value.Contains("%input"))))
                 throw new Exception("Atleast one '$input$' required for argument value.");
 
-            UploadResult result = new UploadResult();
-
-            Dictionary<string, string> args = customUploader.ParseArguments(text);
+            Dictionary<string, string> args = customUploader.GetArguments(text);
 
             if (customUploader.RequestType == CustomUploaderRequestType.POST)
             {
                 if (string.IsNullOrEmpty(customUploader.FileFormName))
                 {
-                    result.Response = SendRequest(HttpMethod.POST, customUploader.RequestURL, args, responseType: customUploader.ResponseType);
+                    result.Response = SendRequest(HttpMethod.POST, requestURL, args, responseType: customUploader.ResponseType);
                 }
                 else
                 {
                     byte[] byteArray = Encoding.UTF8.GetBytes(text);
                     using (MemoryStream stream = new MemoryStream(byteArray))
                     {
-                        result = UploadData(stream, customUploader.RequestURL, fileName, customUploader.FileFormName, args, responseType: customUploader.ResponseType);
+                        result = UploadData(stream, requestURL, fileName, customUploader.GetFileFormName(), args, responseType: customUploader.ResponseType);
                     }
                 }
             }
             else
             {
-                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.RequestURL, args, responseType: customUploader.ResponseType);
+                result.Response = SendRequest(customUploader.GetHttpMethod(), requestURL, args, responseType: customUploader.ResponseType);
             }
 
             customUploader.ParseResponse(result);

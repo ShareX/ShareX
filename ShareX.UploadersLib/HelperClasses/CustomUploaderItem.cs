@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -80,7 +81,27 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public Dictionary<string, string> ParseArguments(string input = null)
+        public string GetRequestURL()
+        {
+            if (string.IsNullOrEmpty(RequestURL))
+            {
+                throw new Exception("'Request URL' must be not empty.");
+            }
+
+            return URLHelpers.FixPrefix(RequestURL);
+        }
+
+        public string GetFileFormName()
+        {
+            if (string.IsNullOrEmpty(FileFormName))
+            {
+                throw new Exception("'File form name' must be not empty.");
+            }
+
+            return FileFormName;
+        }
+
+        public Dictionary<string, string> GetArguments(string input = null)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
 

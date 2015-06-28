@@ -39,11 +39,12 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (customUploader.RequestType != CustomUploaderRequestType.POST) throw new Exception("'Request type' must be 'POST' when using custom image uploader.");
-            if (string.IsNullOrEmpty(customUploader.FileFormName)) throw new Exception("'File form name' must be not empty when using custom image uploader.");
-            if (string.IsNullOrEmpty(customUploader.RequestURL)) throw new Exception("'Request URL' must be not empty.");
+            if (customUploader.RequestType != CustomUploaderRequestType.POST)
+            {
+                throw new Exception("'Request type' must be 'POST' when using custom image uploader.");
+            }
 
-            UploadResult result = UploadData(stream, customUploader.RequestURL, fileName, customUploader.FileFormName, customUploader.ParseArguments(), responseType: customUploader.ResponseType);
+            UploadResult result = UploadData(stream, customUploader.GetRequestURL(), fileName, customUploader.GetFileFormName(), customUploader.GetArguments(), responseType: customUploader.ResponseType);
 
             if (result.IsSuccess)
             {

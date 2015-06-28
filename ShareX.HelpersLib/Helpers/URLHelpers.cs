@@ -304,6 +304,11 @@ namespace ShareX.HelpersLib
 
         private static readonly string[] URLPrefixes = new string[] { "http://", "https://", "ftp://", "ftps://", "file://" };
 
+        public static bool HasPrefix(string url)
+        {
+            return URLPrefixes.Any(x => url.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));
+        }
+
         public static string FixPrefix(string url)
         {
             if (!HasPrefix(url))
@@ -322,11 +327,6 @@ namespace ShareX.HelpersLib
             }
 
             return url;
-        }
-
-        public static bool HasPrefix(string url)
-        {
-            return URLPrefixes.Any(x => url.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));
         }
 
         public static string RemovePrefixes(string url)
