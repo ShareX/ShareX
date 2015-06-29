@@ -145,7 +145,5 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return result;
         }
-    }
-
-    
+    }   
 }
