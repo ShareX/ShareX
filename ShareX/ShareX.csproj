@@ -254,6 +254,9 @@
     <EmbeddedResource Include="Controls\HotkeySelectionControl.hu.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HotkeySelectionControl.ja-JP.resx">
+      <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeySelectionControl.ko-KR.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +279,9 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.hu.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.ja-JP.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.ko-KR.resx">
@@ -330,6 +336,9 @@
     <EmbeddedResource Include="Forms\AfterCaptureForm.hu.resx">
       <DependentUpon>AfterCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterCaptureForm.ja-JP.resx">
+      <DependentUpon>AfterCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterCaptureForm.ko-KR.resx">
       <DependentUpon>AfterCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +366,9 @@
     <EmbeddedResource Include="Forms\AfterUploadForm.hu.resx">
       <DependentUpon>AfterUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterUploadForm.ja-JP.resx">
+      <DependentUpon>AfterUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterUploadForm.ko-KR.resx">
       <DependentUpon>AfterUploadForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -381,6 +393,9 @@
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.hu.resx">
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationSettingsForm.ja-JP.resx">
+      <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.ko-KR.resx">
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +418,9 @@
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutoCaptureForm.hu.resx">
+      <DependentUpon>AutoCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoCaptureForm.ja-JP.resx">
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutoCaptureForm.ko-KR.resx">
@@ -458,6 +476,9 @@
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.hu.resx">
+      <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardFormatForm.ja-JP.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.ko-KR.resx">
@@ -517,6 +538,9 @@
     <EmbeddedResource Include="Forms\FileExistForm.hu.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileExistForm.ja-JP.resx">
+      <DependentUpon>FileExistForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExistForm.ko-KR.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -544,6 +568,9 @@
     <EmbeddedResource Include="Forms\HotkeySettingsForm.hu.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HotkeySettingsForm.ja-JP.resx">
+      <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.ko-KR.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -568,6 +595,9 @@
     <EmbeddedResource Include="Forms\MainForm.hu.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.ja-JP.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.ko-KR.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -590,6 +620,9 @@
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenColorPicker.hu.resx">
+      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScreenColorPicker.ja-JP.resx">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenColorPicker.ko-KR.resx">
@@ -617,6 +650,9 @@
       <DependentUpon>ScreenRegionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenRegionForm.hu.resx">
+      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScreenRegionForm.ja-JP.resx">
       <DependentUpon>ScreenRegionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenRegionForm.ko-KR.resx">
@@ -652,6 +688,9 @@
     <EmbeddedResource Include="Forms\TaskSettingsForm.hu.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaskSettingsForm.ja-JP.resx">
+      <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.ko-KR.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -676,6 +715,9 @@
     <EmbeddedResource Include="Forms\VideoEncodersForm.hu.resx">
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideoEncodersForm.ja-JP.resx">
+      <DependentUpon>VideoEncodersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoEncodersForm.ko-KR.resx">
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -698,6 +740,9 @@
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.hu.resx">
+      <DependentUpon>WatchFolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WatchFolderForm.ja-JP.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.ko-KR.resx">
@@ -733,6 +778,7 @@
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
+    <EmbeddedResource Include="Properties\Resources.ja-JP.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -960,7 +1006,7 @@ if not exist GitHash.txt (
 )</PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

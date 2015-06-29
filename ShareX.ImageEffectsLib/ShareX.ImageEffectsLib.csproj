@@ -164,6 +164,9 @@
     <EmbeddedResource Include="ImageEffectsForm.hu.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImageEffectsForm.ja-JP.resx">
+      <DependentUpon>ImageEffectsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImageEffectsForm.ko-KR.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
