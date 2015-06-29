@@ -112,6 +112,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpUpaste, Resources.Upaste);
             AddIconToTab(tpYourls, Resources.Yourls);
             AddIconToTab(tpLambda, Resources.Lambda);
+            AddIconToTab(tpUp1, Resources.Up1);
 
             tcFileUploaders.TabPages.Remove(tpHubic);
 
@@ -536,6 +537,11 @@ namespace ShareX.UploadersLib
             txtMediaFirePassword.Text = Config.MediaFirePassword;
             txtMediaFirePath.Text = Config.MediaFirePath;
             cbMediaFireUseLongLink.Checked = Config.MediaFireUseLongLink;
+
+            // Up1
+
+            txtUp1Host.Text = Config.Up1Host;
+            txtUp1Key.Text = Config.Up1Key;
 
             // Lambda
 
@@ -1869,6 +1875,20 @@ namespace ShareX.UploadersLib
         }
 
         #endregion ownCloud
+
+        #region Up1
+
+        private void txtUp1Host_TextChanged(object sender, EventArgs e)
+        {
+            Config.Up1Host = txtUp1Host.Text;
+        }
+
+        private void txtUp1Key_TextChanged(object sender, EventArgs e)
+        {
+            Config.Up1Key = txtUp1Key.Text;
+        }
+
+        #endregion Up1
 
         #region Pushbullet
 

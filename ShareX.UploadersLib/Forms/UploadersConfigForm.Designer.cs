@@ -428,6 +428,11 @@
             this.atcGoogleURLShortenerAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauthTwitter = new ShareX.UploadersLib.OAuthControl();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.tpUp1 = new System.Windows.Forms.TabPage();
+            this.txtUp1Key = new System.Windows.Forms.TextBox();
+            this.txtUp1Host = new System.Windows.Forms.TextBox();
+            this.lblUp1Key = new System.Windows.Forms.Label();
+            this.lblUp1Host = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -489,6 +494,7 @@
             this.tpPicasa.SuspendLayout();
             this.tpChevereto.SuspendLayout();
             this.tcUploaders.SuspendLayout();
+            this.tpUp1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -1202,6 +1208,7 @@
             this.tcFileUploaders.Controls.Add(this.tpGoogleDrive);
             this.tcFileUploaders.Controls.Add(this.tpBox);
             this.tcFileUploaders.Controls.Add(this.tpCopy);
+            this.tcFileUploaders.Controls.Add(this.tpUp1);
             this.tcFileUploaders.Controls.Add(this.tpHubic);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
             this.tcFileUploaders.Controls.Add(this.tpMega);
@@ -3398,6 +3405,40 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
+
+            // 
+            // tpUp1
+            // 
+            this.tpUp1.Controls.Add(this.txtUp1Key);
+            this.tpUp1.Controls.Add(this.txtUp1Host);
+            this.tpUp1.Controls.Add(this.lblUp1Key);
+            this.tpUp1.Controls.Add(this.lblUp1Host);
+            resources.ApplyResources(this.tpUp1, "tpUp1");
+            this.tpUp1.Name = "tpUp1";
+            this.tpUp1.UseVisualStyleBackColor = true;
+            // 
+            // txtUp1Key
+            // 
+            resources.ApplyResources(this.txtUp1Key, "txtUp1Key");
+            this.txtUp1Key.Name = "txtUp1Key";
+            this.txtUp1Key.TextChanged += new System.EventHandler(this.txtUp1Key_TextChanged);
+            // 
+            // txtUp1Host
+            // 
+            resources.ApplyResources(this.txtUp1Host, "txtUp1Host");
+            this.txtUp1Host.Name = "txtUp1Host";
+            this.txtUp1Host.TextChanged += new System.EventHandler(this.txtUp1Host_TextChanged);
+            // 
+            // lblUp1Key
+            // 
+            resources.ApplyResources(this.lblUp1Key, "lblUp1Key");
+            this.lblUp1Key.Name = "lblUp1Key";
+            // 
+            // lblUp1Host
+            // 
+            resources.ApplyResources(this.lblUp1Host, "lblUp1Host");
+            this.lblUp1Host.Name = "lblUp1Host";
+
             // 
             // UploadersConfigForm
             // 
@@ -3516,6 +3557,8 @@
             this.tpChevereto.ResumeLayout(false);
             this.tpChevereto.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
+            this.tpUp1.ResumeLayout(false);
+            this.tpUp1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3920,5 +3963,10 @@
         private HelpersLib.MyListView lvTwitterAccounts;
         private System.Windows.Forms.ColumnHeader chTwitterAccount;
         private System.Windows.Forms.Label lblCustomUploaderRegexTip;        
+        private System.Windows.Forms.TabPage tpUp1;
+        private System.Windows.Forms.TextBox txtUp1Key;
+        private System.Windows.Forms.TextBox txtUp1Host;
+        private System.Windows.Forms.Label lblUp1Key;
+        private System.Windows.Forms.Label lblUp1Host;    
     }
 }

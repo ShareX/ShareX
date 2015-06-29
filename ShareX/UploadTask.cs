@@ -1009,6 +1009,9 @@ namespace ShareX
                 case FileDestination.Dropfile:
                     fileUploader = new Dropfile();
                     break;
+                case FileDestination.Up1:
+                    fileUploader = new Up1(Program.UploadersConfig.Up1Host, Program.UploadersConfig.Up1Key);
+                    break;
             }
 
             if (fileUploader != null)
