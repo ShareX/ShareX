@@ -90,10 +90,6 @@ namespace ShareX.UploadersLib
         GoogleDrive,
         [Description("Copy")]
         Copy,
-        [Description("Up1")]
-        Up1,
-        //[Description("hubiC")]
-        //Hubic,
         [Description("Box")]
         Box,
         [Description("MEGA")]
@@ -118,6 +114,8 @@ namespace ShareX.UploadersLib
         Localhostr,
         [Description("JIRA")]
         Jira,
+        //[Description("hubiC")]
+        //Hubic,
         [Description("Lambda")]
         Lambda,
         [Description("Imgrush")]
@@ -128,6 +126,8 @@ namespace ShareX.UploadersLib
         MaxFile,
         [Description("Dropfile")]
         Dropfile,
+        [Description("Up1")]
+        Up1,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized

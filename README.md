@@ -107,7 +107,6 @@ ShareX supports the following destinations.
 * [Google Drive](https://drive.google.com)
 * [Copy](https://www.copy.com)
 * [Box](https://www.box.com)
-* [Up1](https://up1.ca)
 * [MEGA](https://mega.co.nz)
 * [Amazon S3](http://aws.amazon.com/s3/)
 * [ownCloud](https://owncloud.org)

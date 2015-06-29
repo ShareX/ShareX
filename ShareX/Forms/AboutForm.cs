@@ -62,6 +62,7 @@ MediaFire support: https://github.com/michalx2
 Pushbullet support: https://github.com/BallisticLingonberries
 Lambda support: https://github.com/marcusant
 VideoBin support: https://github.com/corey-/
+Up1 support: https://github.com/Upload
 
 {1}:
 

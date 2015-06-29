@@ -72,6 +72,7 @@
             this.lblCustomUploaderRequestURL = new System.Windows.Forms.Label();
             this.btnCustomUploaderURLShortenerTest = new System.Windows.Forms.Button();
             this.gbCustomUploaderRegexp = new System.Windows.Forms.GroupBox();
+            this.lblCustomUploaderRegexTip = new System.Windows.Forms.Label();
             this.btnCustomUploaderRegexpEdit = new System.Windows.Forms.Button();
             this.txtCustomUploaderRegexp = new System.Windows.Forms.TextBox();
             this.lvCustomUploaderRegexps = new ShareX.HelpersLib.MyListView();
@@ -279,6 +280,11 @@
             this.lblLambdaInfo = new System.Windows.Forms.Label();
             this.lblLambdaApiKey = new System.Windows.Forms.Label();
             this.txtLambdaApiKey = new System.Windows.Forms.TextBox();
+            this.tpUp1 = new System.Windows.Forms.TabPage();
+            this.txtUp1Key = new System.Windows.Forms.TextBox();
+            this.txtUp1Host = new System.Windows.Forms.TextBox();
+            this.lblUp1Key = new System.Windows.Forms.Label();
+            this.lblUp1Host = new System.Windows.Forms.Label();
             this.tpEmail = new System.Windows.Forms.TabPage();
             this.chkEmailConfirm = new System.Windows.Forms.CheckBox();
             this.lblEmailSmtpServer = new System.Windows.Forms.Label();
@@ -406,7 +412,6 @@
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
-            this.lblCustomUploaderRegexTip = new System.Windows.Forms.Label();
             this.atcImgurAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new ShareX.UploadersLib.OAuthControl();
             this.atcTinyPicAccountType = new ShareX.UploadersLib.AccountTypeControl();
@@ -414,8 +419,8 @@
             this.oAuth2Gist = new ShareX.UploadersLib.OAuthControl();
             this.atcGistAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.ucFTPAccounts = new ShareX.UploadersLib.AccountsControl();
-            this.oauth2Dropbox = new ShareX.UploadersLib.OAuthControl();
             this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
+            this.oauth2Dropbox = new ShareX.UploadersLib.OAuthControl();
             this.oauth2GoogleDrive = new ShareX.UploadersLib.OAuthControl();
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
             this.oAuthCopy = new ShareX.UploadersLib.OAuthControl();
@@ -428,11 +433,6 @@
             this.atcGoogleURLShortenerAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauthTwitter = new ShareX.UploadersLib.OAuthControl();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.tpUp1 = new System.Windows.Forms.TabPage();
-            this.txtUp1Key = new System.Windows.Forms.TextBox();
-            this.txtUp1Host = new System.Windows.Forms.TextBox();
-            this.lblUp1Key = new System.Windows.Forms.Label();
-            this.lblUp1Host = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -471,6 +471,7 @@
             this.tpJira.SuspendLayout();
             this.gpJiraServer.SuspendLayout();
             this.tpLambda.SuspendLayout();
+            this.tpUp1.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
             this.tpSharedFolder.SuspendLayout();
@@ -494,7 +495,6 @@
             this.tpPicasa.SuspendLayout();
             this.tpChevereto.SuspendLayout();
             this.tcUploaders.SuspendLayout();
-            this.tpUp1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -831,6 +831,11 @@
             resources.ApplyResources(this.gbCustomUploaderRegexp, "gbCustomUploaderRegexp");
             this.gbCustomUploaderRegexp.Name = "gbCustomUploaderRegexp";
             this.gbCustomUploaderRegexp.TabStop = false;
+            // 
+            // lblCustomUploaderRegexTip
+            // 
+            resources.ApplyResources(this.lblCustomUploaderRegexTip, "lblCustomUploaderRegexTip");
+            this.lblCustomUploaderRegexTip.Name = "lblCustomUploaderRegexTip";
             // 
             // btnCustomUploaderRegexpEdit
             // 
@@ -1208,7 +1213,6 @@
             this.tcFileUploaders.Controls.Add(this.tpGoogleDrive);
             this.tcFileUploaders.Controls.Add(this.tpBox);
             this.tcFileUploaders.Controls.Add(this.tpCopy);
-            this.tcFileUploaders.Controls.Add(this.tpUp1);
             this.tcFileUploaders.Controls.Add(this.tpHubic);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
             this.tcFileUploaders.Controls.Add(this.tpMega);
@@ -1221,6 +1225,7 @@
             this.tcFileUploaders.Controls.Add(this.tpMinus);
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpLambda);
+            this.tcFileUploaders.Controls.Add(this.tpUp1);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
@@ -2313,6 +2318,38 @@
             this.txtLambdaApiKey.UseSystemPasswordChar = true;
             this.txtLambdaApiKey.TextChanged += new System.EventHandler(this.txtLambdaApiKey_TextChanged);
             // 
+            // tpUp1
+            // 
+            this.tpUp1.Controls.Add(this.txtUp1Key);
+            this.tpUp1.Controls.Add(this.txtUp1Host);
+            this.tpUp1.Controls.Add(this.lblUp1Key);
+            this.tpUp1.Controls.Add(this.lblUp1Host);
+            resources.ApplyResources(this.tpUp1, "tpUp1");
+            this.tpUp1.Name = "tpUp1";
+            this.tpUp1.UseVisualStyleBackColor = true;
+            // 
+            // txtUp1Key
+            // 
+            resources.ApplyResources(this.txtUp1Key, "txtUp1Key");
+            this.txtUp1Key.Name = "txtUp1Key";
+            this.txtUp1Key.TextChanged += new System.EventHandler(this.txtUp1Key_TextChanged);
+            // 
+            // txtUp1Host
+            // 
+            resources.ApplyResources(this.txtUp1Host, "txtUp1Host");
+            this.txtUp1Host.Name = "txtUp1Host";
+            this.txtUp1Host.TextChanged += new System.EventHandler(this.txtUp1Host_TextChanged);
+            // 
+            // lblUp1Key
+            // 
+            resources.ApplyResources(this.lblUp1Key, "lblUp1Key");
+            this.lblUp1Key.Name = "lblUp1Key";
+            // 
+            // lblUp1Host
+            // 
+            resources.ApplyResources(this.lblUp1Host, "lblUp1Host");
+            this.lblUp1Host.Name = "lblUp1Host";
+            // 
             // tpEmail
             // 
             this.tpEmail.Controls.Add(this.chkEmailConfirm);
@@ -3233,11 +3270,6 @@
             this.ttlvMain.MainTabControl = null;
             this.ttlvMain.Name = "ttlvMain";
             // 
-            // lblCustomUploaderRegexTip
-            // 
-            resources.ApplyResources(this.lblCustomUploaderRegexTip, "lblCustomUploaderRegexTip");
-            this.lblCustomUploaderRegexTip.Name = "lblCustomUploaderRegexTip";
-            // 
             // atcImgurAccountType
             // 
             resources.ApplyResources(this.atcImgurAccountType, "atcImgurAccountType");
@@ -3291,15 +3323,6 @@
             resources.ApplyResources(this.ucFTPAccounts, "ucFTPAccounts");
             this.ucFTPAccounts.Name = "ucFTPAccounts";
             // 
-            // oauth2Dropbox
-            // 
-            this.oauth2Dropbox.IsRefreshable = false;
-            resources.ApplyResources(this.oauth2Dropbox, "oauth2Dropbox");
-            this.oauth2Dropbox.Name = "oauth2Dropbox";
-            this.oauth2Dropbox.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
-            this.oauth2Dropbox.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
-            this.oauth2Dropbox.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Dropbox_ClearButtonClicked);
-            // 
             // oAuth2OneDrive
             // 
             resources.ApplyResources(this.oAuth2OneDrive, "oAuth2OneDrive");
@@ -3308,6 +3331,15 @@
             this.oAuth2OneDrive.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2OneDrive_CompleteButtonClicked);
             this.oAuth2OneDrive.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2OneDrive_ClearButtonClicked);
             this.oAuth2OneDrive.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oAuth2OneDrive_RefreshButtonClicked);
+            // 
+            // oauth2Dropbox
+            // 
+            this.oauth2Dropbox.IsRefreshable = false;
+            resources.ApplyResources(this.oauth2Dropbox, "oauth2Dropbox");
+            this.oauth2Dropbox.Name = "oauth2Dropbox";
+            this.oauth2Dropbox.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
+            this.oauth2Dropbox.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
+            this.oauth2Dropbox.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Dropbox_ClearButtonClicked);
             // 
             // oauth2GoogleDrive
             // 
@@ -3405,40 +3437,6 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-
-            // 
-            // tpUp1
-            // 
-            this.tpUp1.Controls.Add(this.txtUp1Key);
-            this.tpUp1.Controls.Add(this.txtUp1Host);
-            this.tpUp1.Controls.Add(this.lblUp1Key);
-            this.tpUp1.Controls.Add(this.lblUp1Host);
-            resources.ApplyResources(this.tpUp1, "tpUp1");
-            this.tpUp1.Name = "tpUp1";
-            this.tpUp1.UseVisualStyleBackColor = true;
-            // 
-            // txtUp1Key
-            // 
-            resources.ApplyResources(this.txtUp1Key, "txtUp1Key");
-            this.txtUp1Key.Name = "txtUp1Key";
-            this.txtUp1Key.TextChanged += new System.EventHandler(this.txtUp1Key_TextChanged);
-            // 
-            // txtUp1Host
-            // 
-            resources.ApplyResources(this.txtUp1Host, "txtUp1Host");
-            this.txtUp1Host.Name = "txtUp1Host";
-            this.txtUp1Host.TextChanged += new System.EventHandler(this.txtUp1Host_TextChanged);
-            // 
-            // lblUp1Key
-            // 
-            resources.ApplyResources(this.lblUp1Key, "lblUp1Key");
-            this.lblUp1Key.Name = "lblUp1Key";
-            // 
-            // lblUp1Host
-            // 
-            resources.ApplyResources(this.lblUp1Host, "lblUp1Host");
-            this.lblUp1Host.Name = "lblUp1Host";
-
             // 
             // UploadersConfigForm
             // 
@@ -3519,6 +3517,8 @@
             this.gpJiraServer.PerformLayout();
             this.tpLambda.ResumeLayout(false);
             this.tpLambda.PerformLayout();
+            this.tpUp1.ResumeLayout(false);
+            this.tpUp1.PerformLayout();
             this.tpEmail.ResumeLayout(false);
             this.tpEmail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
@@ -3557,8 +3557,6 @@
             this.tpChevereto.ResumeLayout(false);
             this.tpChevereto.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
-            this.tpUp1.ResumeLayout(false);
-            this.tpUp1.PerformLayout();
             this.ResumeLayout(false);
 
         }
