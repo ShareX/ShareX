@@ -65,6 +65,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public void Stop()
+        {
+            webBrowser.Stop();
+        }
+
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             TaskEx.RunDelayed(GetWebpageBitmap, CaptureDelay);

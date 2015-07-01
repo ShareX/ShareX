@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtURL.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="lblURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -169,10 +169,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblURL.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="btnCapture.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>9</value>
   </data>
   <data name="btnCapture.Location" type="System.Drawing.Point, System.Drawing">
     <value>336, 35</value>
@@ -196,7 +193,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCapture.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="pbResult.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -405,9 +402,6 @@
   <data name="&gt;&gt;nudCaptureDelay.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnCopy.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
     <value>576, 35</value>
   </data>
@@ -431,9 +425,6 @@
   </data>
   <data name="&gt;&gt;btnCopy.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="btnUpload.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="btnUpload.Location" type="System.Drawing.Point, System.Drawing">
     <value>456, 35</value>

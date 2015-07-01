@@ -44,6 +44,7 @@ namespace ShareX
         public bool IsBusy { get; private set; }
 
         private WebpageCapture webpageCapture;
+        private bool stopRequested;
 
         public WebpageCaptureForm()
         {
@@ -65,6 +66,8 @@ namespace ShareX
             nudWebpageHeight.Value = browserSize.Height.Between((int)nudWebpageHeight.Minimum, (int)nudWebpageHeight.Maximum);
 
             nudCaptureDelay.Value = (decimal)Program.Settings.WebpageCaptureDelay.Between((float)nudCaptureDelay.Minimum, (float)nudCaptureDelay.Maximum);
+
+            UpdateControls();
         }
 
         private void CheckClipboardURL()
@@ -91,7 +94,7 @@ namespace ShareX
 
         private void txtURL_TextChanged(object sender, EventArgs e)
         {
-            btnCapture.Enabled = txtURL.TextLength > 0;
+            UpdateControls();
         }
 
         private void nudWebpageWidth_ValueChanged(object sender, EventArgs e)
@@ -111,8 +114,21 @@ namespace ShareX
 
         private void btnCapture_Click(object sender, EventArgs e)
         {
+            if (IsBusy)
+            {
+                Stop();
+            }
+            else
+            {
+                Capture();
+            }
+        }
+
+        private void Capture()
+        {
             IsBusy = true;
-            btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = false;
+            stopRequested = false;
+            UpdateControls();
 
             lock (this)
             {
@@ -123,9 +139,17 @@ namespace ShareX
             webpageCapture.CapturePage(txtURL.Text, new Size((int)nudWebpageWidth.Value, (int)nudWebpageWidth.Value));
         }
 
+        private void Stop()
+        {
+            IsBusy = false;
+            stopRequested = true;
+            webpageCapture.Stop();
+            UpdateControls();
+        }
+
         private void webpageCapture_CaptureCompleted(Bitmap bmp)
         {
-            if (!IsDisposed)
+            if (!stopRequested && !IsDisposed)
             {
                 lock (this)
                 {
@@ -133,9 +157,16 @@ namespace ShareX
                     pbResult.Image = bmp;
                 }
 
-                btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = true;
                 IsBusy = false;
+                UpdateControls();
             }
+        }
+
+        private void UpdateControls()
+        {
+            btnCapture.Text = IsBusy ? "Stop" : "Capture";
+            txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = nudWebpageWidth.Enabled = nudWebpageHeight.Enabled = nudCaptureDelay.Enabled = !IsBusy;
+            btnCapture.Enabled = txtURL.TextLength > 0;
         }
 
         private void btnUpload_Click(object sender, EventArgs e)

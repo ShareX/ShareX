@@ -23,6 +23,11 @@
                 webpageCapture.Dispose();
             }
 
+            if (pbResult.Image != null)
+            {
+                pbResult.Image.Dispose();
+            }
+
             base.Dispose(disposing);
         }
 
@@ -190,9 +195,9 @@
             this.Controls.Add(this.nudWebpageWidth);
             this.Controls.Add(this.lblWebpageSize);
             this.Controls.Add(this.pResult);
-            this.Controls.Add(this.btnCapture);
             this.Controls.Add(this.lblURL);
             this.Controls.Add(this.txtURL);
+            this.Controls.Add(this.btnCapture);
             this.Name = "WebpageCaptureForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbResult)).EndInit();
             this.pResult.ResumeLayout(false);
