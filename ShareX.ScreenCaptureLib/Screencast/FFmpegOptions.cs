@@ -57,18 +57,34 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                switch (VideoCodec)
+                if (!VideoSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    default:
-                    case FFmpegVideoCodec.libx264:
-                    case FFmpegVideoCodec.libx265:
-                    case FFmpegVideoCodec.gif:
-                        return "mp4";
-                    case FFmpegVideoCodec.libvpx:
-                        return "webm";
-                    case FFmpegVideoCodec.libxvid:
-                        return "avi";
+                    switch (VideoCodec)
+                    {
+                        case FFmpegVideoCodec.libx264:
+                        case FFmpegVideoCodec.libx265:
+                        case FFmpegVideoCodec.gif:
+                            return "mp4";
+                        case FFmpegVideoCodec.libvpx:
+                            return "webm";
+                        case FFmpegVideoCodec.libxvid:
+                            return "avi";
+                    }
                 }
+                else if (!AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    switch (AudioCodec)
+                    {
+                        case FFmpegAudioCodec.libvoaacenc:
+                            return "m4a";
+                        case FFmpegAudioCodec.libvorbis:
+                            return "ogg";
+                        case FFmpegAudioCodec.libmp3lame:
+                            return "mp3";
+                    }
+                }
+
+                return "mp4";
             }
         }
 
@@ -92,7 +108,8 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                return !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase) && VideoCodec != FFmpegVideoCodec.gif;
+                return !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase) &&
+                    (!IsVideoSourceSelected || VideoCodec != FFmpegVideoCodec.gif);
             }
         }
 
