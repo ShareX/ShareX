@@ -116,15 +116,15 @@ namespace ShareX
         {
             if (IsBusy)
             {
-                Stop();
+                StopCapture();
             }
             else
             {
-                Capture();
+                StartCapture();
             }
         }
 
-        private void Capture()
+        private void StartCapture()
         {
             IsBusy = true;
             stopRequested = false;
@@ -139,7 +139,7 @@ namespace ShareX
             webpageCapture.CapturePage(txtURL.Text, new Size((int)nudWebpageWidth.Value, (int)nudWebpageWidth.Value));
         }
 
-        private void Stop()
+        private void StopCapture()
         {
             IsBusy = false;
             stopRequested = true;
@@ -164,7 +164,7 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            btnCapture.Text = IsBusy ? "Stop" : "Capture";
+            btnCapture.Text = IsBusy ? "Stop" : "Capture"; // TODO: Translate
             txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = nudWebpageWidth.Enabled = nudWebpageHeight.Enabled = nudCaptureDelay.Enabled = !IsBusy;
             btnCapture.Enabled = txtURL.TextLength > 0;
         }

@@ -550,7 +550,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap document_globe {
             get {
-                object obj = ResourceManager.GetObject("document-globe", resourceCulture);
+                object obj = ResourceManager.GetObject("document_globe", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -163,7 +163,7 @@
   <data name="notification_counter_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\notification-counter-03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minus-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="minus_circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\fugue\minus-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="slash" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -175,7 +175,7 @@
   <data name="tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\fugue\tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clipboard-paste-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="clipboard_paste_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\fugue\clipboard-paste-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notification_counter_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -184,7 +184,7 @@
   <data name="notification_counter_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\notification-counter-02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="disks-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="disks_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\fugue\disks-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notification_counter_08" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -199,13 +199,13 @@
   <data name="notification_counter_07" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\notification-counter-07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="drive-globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="drive_globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\fugue\drive-globe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notification_counter_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\notification-counter-10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="disk-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="disk_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icons\fugue\disk-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notification_counter_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
