@@ -81,6 +81,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpCopy, Resources.Copy);
             AddIconToTab(tpHubic, Resources.Hubic);
             AddIconToTab(tpChevereto, Resources.Chevereto);
+            AddIconToTab(tpSul, Resources.Sul);
             AddIconToTab(tpCustomUploaders, Resources.globe_network);
             AddIconToTab(tpDropbox, Resources.Dropbox);
             AddIconToTab(tpEmail, Resources.mail);
@@ -234,6 +235,10 @@ namespace ShareX.UploadersLib
             txtCheveretoWebsite.Text = Config.CheveretoWebsite;
             txtCheveretoAPIKey.Text = Config.CheveretoAPIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
+
+            // Sul
+            txtSulAPIKey.Text = Config.SulAPIKey;
+
 
             #endregion Image uploaders
 
@@ -926,6 +931,15 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Chevereto
+
+        #region Sul
+
+        private void txtSulAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.SulAPIKey = txtSulAPIKey.Text;
+        }
+
+        #endregion Sul
 
         #endregion Image Uploaders
 
@@ -2498,6 +2512,12 @@ namespace ShareX.UploadersLib
 
         #endregion Custom Uploaders
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion Other Uploaders
+
     }
 }

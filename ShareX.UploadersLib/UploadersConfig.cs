@@ -81,6 +81,10 @@ namespace ShareX.UploadersLib
         public string CheveretoAPIKey = string.Empty;
         public bool CheveretoDirectURL = true;
 
+        // s-ul.eu
+
+        public string SulAPIKey = string.Empty;
+
         #endregion Image uploaders
 
         #region Text uploaders
@@ -411,6 +415,8 @@ namespace ShareX.UploadersLib
                     return !string.IsNullOrEmpty(MediaFireUsername) && !string.IsNullOrEmpty(MediaFirePassword);
                 case FileDestination.Lambda:
                     return LambdaSettings != null && !string.IsNullOrEmpty(LambdaSettings.UserAPIKey);
+                case FileDestination.Sul:
+                    return !string.IsNullOrEmpty(SulAPIKey);
             }
 
             return true;
