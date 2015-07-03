@@ -51,7 +51,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("client", "sharex-native");
 
 
-            string url = "http://nte.sys.s-ul.eu";
+            string url = "https://s-ul.eu";
             url = URLHelpers.CombineURL(url, "upload.php");
 
             UploadResult result = UploadData(stream, url, fileName, "file", args);
@@ -89,7 +89,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 else
                 {
                     result.URL = protocol + domain + "/" + file + extension;
-                    result.DeletionURL = protocol + domain + "/delete.php?key=" + APIKey + "&file=" + file;
+                    result.DeletionURL =  "https://s-ul.eu/delete.php?key=" + APIKey + "&file=" + file;
                 }
             }
 
