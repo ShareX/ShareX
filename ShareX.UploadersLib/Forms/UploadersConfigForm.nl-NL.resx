@@ -757,4 +757,13 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   <data name="lblTwitterDescription.Text" xml:space="preserve">
     <value>Naam:</value>
   </data>
+  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
+    <value>Dubbelklik de regexe om in de link te gebruiken</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>API sleutel:</value>
+  </data>
 </root>

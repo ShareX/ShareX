@@ -1201,4 +1201,10 @@
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Kleurenkiezer...</value>
   </data>
+  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
+    <value>Webpagina vastleggen...</value>
+  </data>
+  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
+    <value>Webpagina vastleggen...</value>
+  </data>
 </root>
