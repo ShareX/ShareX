@@ -211,6 +211,10 @@ namespace ShareX.ScreenCaptureLib
                     catch { }
                 });
             }
+            else
+            {
+                MessageBox.Show("File not exists: \"" + filepath + "\"", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnHelperDevicesHelp_Click(object sender, EventArgs e)

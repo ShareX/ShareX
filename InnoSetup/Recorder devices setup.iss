@@ -1,4 +1,4 @@
-#define AppName "Screen Capture Recorder"
+#define AppName "Recorder Devices for ShareX"
 #define AppVersion "0.12.8"
 
 [Setup]
@@ -9,7 +9,7 @@ Compression=lzma2/ultra64
 DefaultDirName={pf}\{#AppName}
 DefaultGroupName={#AppName}
 DirExistsWarning=no
-OutputBaseFilename={#AppName} setup
+OutputBaseFilename=Recorder-devices-setup
 OutputDir=Output\
 SolidCompression=true
 
