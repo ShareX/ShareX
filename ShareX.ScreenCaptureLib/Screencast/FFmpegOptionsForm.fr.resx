@@ -191,4 +191,30 @@ Si la sortie semble bonne, alors essayez une valeur plus élevée et si elle est
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Bitrate variable:</value>
   </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>Chemin vers FFmpeg</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Mode de tramage:</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Préréglage:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>Bitrate variable:</value>
+  </data>
+  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
+    <value>1 étant la qualité la plus élevée/la taille du fichier la plus grande et 31 étant la qualité la plus faible/la taille du fichier la plus petite.</value>
+  </data>
+  <data name="cbx264Preset.ToolTip" xml:space="preserve">
+    <value>Un préréglage est un ensemble d'options qui apporteront une certaine vitesse d'encodage au taux de compression. Un préréglage lent fournira une meilleure compression (la compression est la qualité par rapport à la taille du fichier).
+Cela signifie que, par exemple, si vous ciblez une taille de fichier ou un certain débit binaire constant, vous obtiendrez une meilleure qualité avec un préréglage plus lent.
+De même, pour l'encodage de qualité constante, vous conserverez simplement le bitrate en choisissant un préréglage plus lent.</value>
+  </data>
+  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
+    <value>Installer l'outil d'enregistrement</value>
+  </data>
+  <data name="lblHelperDevices.Text" xml:space="preserve">
+    <value>Installe la source vidéo/audio "screen-capture-recorder" et "virtual-audio-capturer".</value>
+  </data>
 </root>

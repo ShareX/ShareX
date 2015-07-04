@@ -592,10 +592,10 @@
     <value>Étape 1: Ouvrir la page d'autorisation...</value>
   </data>
   <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>Étape 2: Autorisation complète</value>
+    <value>Étape 2: Compléter l'autorisation</value>
   </data>
   <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Étape 2: Autorisation complète</value>
+    <value>Étape 2: Compléter l'autorisation</value>
   </data>
   <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
     <value>Coloration syntaxique:</value>
@@ -756,5 +756,14 @@ Cela signifie qu'ils peuvent être perdu d'Amazon S3 à un certain moment.</valu
   </data>
   <data name="lblTwitterDescription.Text" xml:space="preserve">
     <value>Nom:</value>
+  </data>
+  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
+    <value>Double-cliquez sur le regex à utiliser dans l'URL</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Hôte:</value>
+  </data>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>Clé API:</value>
   </data>
 </root>

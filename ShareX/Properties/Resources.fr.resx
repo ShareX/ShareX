@@ -235,10 +235,10 @@ ici</value>
     <value>Le chemin du fichier ne peut pas être vide.</value>
   </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
-    <value>Mise en ligne du fichier</value>
+    <value>Mise en ligne de fichiers</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>Mise en ligne du fichier: {0}</value>
+    <value>Mise en ligne de fichiers: {0}</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
     <value>Avertissement pour la première mise en ligne</value>

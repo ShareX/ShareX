@@ -269,7 +269,7 @@
     <value>294, 22</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
-    <value>Mise en ligne avec glisser-déposer...</value>
+    <value>Mise en ligne par glisser-déposer...</value>
   </data>
   <data name="tsddbUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 20</value>
@@ -284,7 +284,7 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
-    <value>Ecran du sélecteur de couleur...</value>
+    <value>Sélecteur de couleur de l'écran...</value>
   </data>
   <data name="tsmiImageEditor.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -902,7 +902,7 @@
     <value>294, 22</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
-    <value>Mise en ligne avec glisser-déposer...</value>
+    <value>Mise en ligne par glisser-déposer...</value>
   </data>
   <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 22</value>
@@ -917,7 +917,7 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
-    <value>Écran du sélecteur de couleur...</value>
+    <value>Sélecteur de couleur de l'écran...</value>
   </data>
   <data name="tsmiTrayImageEditor.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -1179,5 +1179,11 @@
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Rectangle (Transparent)</value>
+  </data>
+  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
+    <value>Capturer une page Web...</value>
+  </data>
+  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
+    <value>Capturer une page Web...</value>
   </data>
 </root>

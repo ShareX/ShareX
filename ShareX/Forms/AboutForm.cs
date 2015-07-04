@@ -68,7 +68,7 @@ Up1 support: https://github.com/Upload
 
 Turkish: https://github.com/muratmoon
 German: https://github.com/Starbug2
-French: https://github.com/nwies
+French: https://github.com/nwies / https://github.com/Shadorc
 Simplified Chinese: https://github.com/jiajiechan
 Hungarian: https://github.com/devBluestar
 Korean: https://github.com/123jimin
