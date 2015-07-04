@@ -133,7 +133,7 @@
     <value>Étape 1: Ouvrir la page d'autorisation...</value>
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>Étape 2: Autorisation complète</value>
+    <value>Étape 2: Compléter l'autorisation</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>Code de vérification:</value>
