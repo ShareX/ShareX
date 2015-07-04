@@ -81,10 +81,6 @@ namespace ShareX.UploadersLib
         public string CheveretoAPIKey = string.Empty;
         public bool CheveretoDirectURL = true;
 
-        // s-ul.eu
-
-        public string SulAPIKey = string.Empty;
-
         #endregion Image uploaders
 
         #region Text uploaders
@@ -249,6 +245,10 @@ namespace ShareX.UploadersLib
 
         public string Up1Host = "https://up1.ca";
         public string Up1Key = "c61540b5ceecd05092799f936e27755f";
+
+        // s-ul.eu
+
+        public string SulAPIKey = string.Empty;
 
         // Lambda
 
