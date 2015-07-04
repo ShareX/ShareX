@@ -246,6 +246,10 @@ namespace ShareX.UploadersLib
         public string Up1Host = "https://up1.ca";
         public string Up1Key = "c61540b5ceecd05092799f936e27755f";
 
+        // s-ul.eu
+
+        public string SulAPIKey = string.Empty;
+
         // Lambda
 
         public LambdaSettings LambdaSettings = new LambdaSettings();
@@ -411,6 +415,8 @@ namespace ShareX.UploadersLib
                     return !string.IsNullOrEmpty(MediaFireUsername) && !string.IsNullOrEmpty(MediaFirePassword);
                 case FileDestination.Lambda:
                     return LambdaSettings != null && !string.IsNullOrEmpty(LambdaSettings.UserAPIKey);
+                case FileDestination.Sul:
+                    return !string.IsNullOrEmpty(SulAPIKey);
             }
 
             return true;

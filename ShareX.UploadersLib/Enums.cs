@@ -128,6 +128,8 @@ namespace ShareX.UploadersLib
         Dropfile,
         [Description("Up1")]
         Up1,
+        [Description("s-ul")]
+        Sul,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized

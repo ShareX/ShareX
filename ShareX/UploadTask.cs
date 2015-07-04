@@ -1012,6 +1012,9 @@ namespace ShareX
                 case FileDestination.Up1:
                     fileUploader = new Up1(Program.UploadersConfig.Up1Host, Program.UploadersConfig.Up1Key);
                     break;
+                case FileDestination.Sul:
+                    fileUploader = new SulUploader(Program.UploadersConfig.SulAPIKey);
+                    break;
             }
 
             if (fileUploader != null)
