@@ -120,4 +120,7 @@
   <data name="lblOwners.Text" xml:space="preserve">
     <value>Ontwikkeld door:</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Over</value>
+  </data>
 </root>

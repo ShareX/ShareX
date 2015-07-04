@@ -188,4 +188,51 @@ Als het resultaat er goed uitziet, probeer een hogere waarde, is het slechter, p
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>Het bereik is 0-10, met 10 de hoogste kwaliteit. 3-6 is een aanbevolen bereik. 3 is standaard.</value>
   </data>
+  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
+    <value>Opnametoestellen installeren</value>
+  </data>
+  <data name="cbGIFDither.ToolTip" xml:space="preserve">
+    <value>bayer: 8x8 geordende bayer dithering (deterministisch)
+heckbert: Dithering gedefinieerd door Paul Heckbert in 1982 (simpele error diffusion). Opgelet: dit type is soms beschouwd als zijnde "fout" en is ter referentie toegevoegd.
+floyd_steinberg: Floyd &amp; Steingberg dithering (fout diffusie)
+sierra2: Frankie Sierra dithering v2 (fout diffusie)
+sierra2_4a: Frankie Sierra dithering v2 "Lite" (error difusie)
+
+Standaard: sierra2_4a.</value>
+  </data>
+  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
+    <value>volledig: Bereken volledige frame histogrammen.
+verschil: Bereken de histogrammen enkel voor afwijkende delen tegenover het vorige frame. Dit kan belangrijk zijn om een grotere prioriteit te geven aan bewegende delen bij een statische achtergrond.
+
+Standaard: volledig.</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>FFmpeg pad</value>
+  </data>
+  <data name="cbx264Preset.ToolTip" xml:space="preserve">
+    <value>Een preset is een verzameling van opties die een bepaalde encoding snelheid en compressieratio opleveren. Een tragere preset zal meer compressie opleveren (compressie is kwaliteit tegenover bestandsgrootte).
+Bijvoorbeeld kan er, als je een bepaalde bestandsgrootte of bit rate nastreeft, betere kwaliteit behaald worden met een tragere preset.
+Gelijkaardig kan er voor een constante kwaliteitsencoding een tragere preset gekozen worden om de bitrate omlaag te halen.</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Dithering modus:</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Palette stats modus:</value>
+  </data>
+  <data name="lblHelperDevices.Text" xml:space="preserve">
+    <value>Installeert "screen-capture-recorder" en "virtual-audio-capturer" video/audio bronnen.</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Variabele bitrate:</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Voorkeur:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>Variabele bitrate:</value>
+  </data>
+  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
+    <value>1 is de hoogste kwaliteit/grootste bestandsgrootte en 31 is de laagste kwaliteit/kleinste bestandsgrootte.</value>
+  </data>
 </root>
