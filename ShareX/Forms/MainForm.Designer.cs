@@ -61,8 +61,8 @@
             this.tsmiLastRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWebpageCapture = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsddbUpload = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -182,8 +182,8 @@
             this.tsmiTrayLastRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayWebpageCapture = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -506,19 +506,19 @@
             resources.ApplyResources(this.tsmiScreenRecordingGIF, "tsmiScreenRecordingGIF");
             this.tsmiScreenRecordingGIF.Click += new System.EventHandler(this.tsmiScreenRecordingGIF_Click);
             // 
-            // tsmiAutoCapture
-            // 
-            this.tsmiAutoCapture.Image = global::ShareX.Properties.Resources.clock;
-            this.tsmiAutoCapture.Name = "tsmiAutoCapture";
-            resources.ApplyResources(this.tsmiAutoCapture, "tsmiAutoCapture");
-            this.tsmiAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
-            // 
             // tsmiWebpageCapture
             // 
             this.tsmiWebpageCapture.Image = global::ShareX.Properties.Resources.document_globe;
             this.tsmiWebpageCapture.Name = "tsmiWebpageCapture";
             resources.ApplyResources(this.tsmiWebpageCapture, "tsmiWebpageCapture");
             this.tsmiWebpageCapture.Click += new System.EventHandler(this.tsmiWebpageCapture_Click);
+            // 
+            // tsmiAutoCapture
+            // 
+            this.tsmiAutoCapture.Image = global::ShareX.Properties.Resources.clock;
+            this.tsmiAutoCapture.Name = "tsmiAutoCapture";
+            resources.ApplyResources(this.tsmiAutoCapture, "tsmiAutoCapture");
+            this.tsmiAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
             // 
             // tsddbUpload
             // 
@@ -1420,19 +1420,19 @@
             resources.ApplyResources(this.tsmiTrayScreenRecordingGIF, "tsmiTrayScreenRecordingGIF");
             this.tsmiTrayScreenRecordingGIF.Click += new System.EventHandler(this.tsmiScreenRecordingGIF_Click);
             // 
-            // tsmiTrayAutoCapture
-            // 
-            this.tsmiTrayAutoCapture.Image = global::ShareX.Properties.Resources.clock;
-            this.tsmiTrayAutoCapture.Name = "tsmiTrayAutoCapture";
-            resources.ApplyResources(this.tsmiTrayAutoCapture, "tsmiTrayAutoCapture");
-            this.tsmiTrayAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
-            // 
             // tsmiTrayWebpageCapture
             // 
             this.tsmiTrayWebpageCapture.Image = global::ShareX.Properties.Resources.document_globe;
             this.tsmiTrayWebpageCapture.Name = "tsmiTrayWebpageCapture";
             resources.ApplyResources(this.tsmiTrayWebpageCapture, "tsmiTrayWebpageCapture");
             this.tsmiTrayWebpageCapture.Click += new System.EventHandler(this.tsmiWebpageCapture_Click);
+            // 
+            // tsmiTrayAutoCapture
+            // 
+            this.tsmiTrayAutoCapture.Image = global::ShareX.Properties.Resources.clock;
+            this.tsmiTrayAutoCapture.Name = "tsmiTrayAutoCapture";
+            resources.ApplyResources(this.tsmiTrayAutoCapture, "tsmiTrayAutoCapture");
+            this.tsmiTrayAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
             // 
             // tsmiTrayUpload
             // 

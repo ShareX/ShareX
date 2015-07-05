@@ -121,6 +121,12 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tspbBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 16</value>
+  </data>
+  <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
   <data name="ssBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 241</value>
   </data>
@@ -129,7 +135,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ssBar.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="ssBar.Text" xml:space="preserve">
     <value>Status</value>
@@ -146,12 +152,6 @@
   <data name="&gt;&gt;ssBar.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="tspbBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 16</value>
-  </data>
-  <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
   <data name="btnExecute.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -162,7 +162,7 @@
     <value>288, 24</value>
   </data>
   <data name="btnExecute.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="btnExecute.Text" xml:space="preserve">
     <value>Start</value>
@@ -189,7 +189,7 @@
     <value>144, 17</value>
   </data>
   <data name="cbWaitUploads.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
     <value>Wait until tasks complete</value>
@@ -216,7 +216,7 @@
     <value>122, 17</value>
   </data>
   <data name="cbAutoMinimize.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
     <value>Auto minimize to tray</value>
@@ -243,7 +243,7 @@
     <value>41, 13</value>
   </data>
   <data name="lblRegion.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblRegion.Text" xml:space="preserve">
     <value>Region</value>
@@ -267,7 +267,7 @@
     <value>144, 24</value>
   </data>
   <data name="btnRegion.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
     <value>Select region</value>
@@ -291,7 +291,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudRepeatTime.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="nudRepeatTime.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
@@ -319,7 +319,7 @@
     <value>67, 13</value>
   </data>
   <data name="lblDuration.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
     <value>Repeat time:</value>
@@ -352,7 +352,7 @@
     <value>47, 13</value>
   </data>
   <data name="lblDurationSeconds.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="lblDurationSeconds.Text" xml:space="preserve">
     <value>seconds</value>
@@ -379,7 +379,7 @@
     <value>73, 17</value>
   </data>
   <data name="rbFullscreen.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="rbFullscreen.Text" xml:space="preserve">
     <value>Fullscreen</value>
@@ -406,7 +406,7 @@
     <value>92, 17</value>
   </data>
   <data name="rbCustomRegion.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="rbCustomRegion.Text" xml:space="preserve">
     <value>Custom region</value>
@@ -430,7 +430,7 @@
     <value>304, 96</value>
   </data>
   <data name="gbRegion.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="gbRegion.Text" xml:space="preserve">
     <value>Region</value>

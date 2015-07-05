@@ -163,7 +163,7 @@
   </data>
   <data name="lblBerk.Text" xml:space="preserve">
     <value>Jaex (Berk)</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblBerk.Name" xml:space="preserve">
     <value>lblBerk</value>
   </data>
@@ -190,7 +190,7 @@
   </data>
   <data name="lblMike.Text" xml:space="preserve">
     <value>mcored (Michael Delpach)</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblMike.Name" xml:space="preserve">
     <value>lblMike</value>
   </data>
@@ -214,11 +214,11 @@
     <value>449, 234</value>
   </data>
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="rtbCredits.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rtbCredits.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -245,7 +245,7 @@
   </data>
   <data name="rtbShareXInfo.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;rtbShareXInfo.Name" xml:space="preserve">
     <value>rtbShareXInfo</value>
   </data>
@@ -295,7 +295,7 @@
     <value>200, 200</value>
   </data>
   <data name="cLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;cLogo.Name" xml:space="preserve">
     <value>cLogo</value>

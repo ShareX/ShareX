@@ -133,7 +133,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnStop.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="btnStop.Text" xml:space="preserve">
     <value>Start</value>
@@ -167,7 +167,7 @@
   </data>
   <data name="lblTimer.Text" xml:space="preserve">
     <value>00:00:00</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblTimer.Name" xml:space="preserve">
     <value>lblTimer</value>
   </data>
@@ -196,7 +196,7 @@
     <value>96, 32</value>
   </data>
   <data name="btnAbort.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="btnAbort.Text" xml:space="preserve">
     <value>Abort</value>
@@ -226,7 +226,7 @@
     <value>270, 32</value>
   </data>
   <data name="pInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;pInfo.Name" xml:space="preserve">
     <value>pInfo</value>

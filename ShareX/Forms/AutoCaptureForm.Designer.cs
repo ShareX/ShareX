@@ -54,8 +54,8 @@
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.lblDurationSeconds = new System.Windows.Forms.Label();
             this.gbRegion = new System.Windows.Forms.GroupBox();
-            this.rbCustomRegion = new System.Windows.Forms.RadioButton();
             this.rbFullscreen = new System.Windows.Forms.RadioButton();
+            this.rbCustomRegion = new System.Windows.Forms.RadioButton();
             this.ssBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRepeatTime)).BeginInit();
             this.gbRegion.SuspendLayout();
@@ -165,6 +165,13 @@
             this.gbRegion.Name = "gbRegion";
             this.gbRegion.TabStop = false;
             // 
+            // rbFullscreen
+            // 
+            resources.ApplyResources(this.rbFullscreen, "rbFullscreen");
+            this.rbFullscreen.Name = "rbFullscreen";
+            this.rbFullscreen.UseVisualStyleBackColor = true;
+            this.rbFullscreen.CheckedChanged += new System.EventHandler(this.rbFullscreen_CheckedChanged);
+            // 
             // rbCustomRegion
             // 
             resources.ApplyResources(this.rbCustomRegion, "rbCustomRegion");
@@ -173,13 +180,6 @@
             this.rbCustomRegion.TabStop = true;
             this.rbCustomRegion.UseVisualStyleBackColor = true;
             this.rbCustomRegion.CheckedChanged += new System.EventHandler(this.rbCustomRegion_CheckedChanged);
-            // 
-            // rbFullscreen
-            // 
-            resources.ApplyResources(this.rbFullscreen, "rbFullscreen");
-            this.rbFullscreen.Name = "rbFullscreen";
-            this.rbFullscreen.UseVisualStyleBackColor = true;
-            this.rbFullscreen.CheckedChanged += new System.EventHandler(this.rbFullscreen_CheckedChanged);
             // 
             // AutoCaptureForm
             // 

@@ -142,7 +142,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblMainFormTip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;lblMainFormTip.Name" xml:space="preserve">
     <value>lblMainFormTip</value>
@@ -229,7 +229,7 @@
     <value>335, 407</value>
   </data>
   <data name="lvUploads.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lvUploads.Name" xml:space="preserve">
     <value>lvUploads</value>
@@ -829,7 +829,7 @@
     <value>160, 407</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tsMain.Name" xml:space="preserve">
     <value>tsMain</value>
@@ -1535,7 +1535,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1556,7 +1556,7 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;chFilename.Name" xml:space="preserve">
     <value>chFilename</value>
   </data>
@@ -1707,16 +1707,16 @@
   <data name="&gt;&gt;tsmiScreenRecordingGIF.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiAutoCapture.Name" xml:space="preserve">
-    <value>tsmiAutoCapture</value>
-  </data>
-  <data name="&gt;&gt;tsmiAutoCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiWebpageCapture.Name" xml:space="preserve">
     <value>tsmiWebpageCapture</value>
   </data>
   <data name="&gt;&gt;tsmiWebpageCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiAutoCapture.Name" xml:space="preserve">
+    <value>tsmiAutoCapture</value>
+  </data>
+  <data name="&gt;&gt;tsmiAutoCapture.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbUpload.Name" xml:space="preserve">
@@ -2421,16 +2421,16 @@
   <data name="&gt;&gt;tsmiTrayScreenRecordingGIF.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayAutoCapture.Name" xml:space="preserve">
-    <value>tsmiTrayAutoCapture</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayAutoCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiTrayWebpageCapture.Name" xml:space="preserve">
     <value>tsmiTrayWebpageCapture</value>
   </data>
   <data name="&gt;&gt;tsmiTrayWebpageCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayAutoCapture.Name" xml:space="preserve">
+    <value>tsmiTrayAutoCapture</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayAutoCapture.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUpload.Name" xml:space="preserve">

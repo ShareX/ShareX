@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="colorPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;colorPicker.Name" xml:space="preserve">
     <value>colorPicker</value>
   </data>
@@ -128,6 +132,9 @@
   </data>
   <data name="&gt;&gt;colorPicker.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="txtHex.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
   </data>
   <data name="&gt;&gt;txtHex.Name" xml:space="preserve">
     <value>txtHex</value>
@@ -141,6 +148,9 @@
   <data name="&gt;&gt;txtHex.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
   <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
     <value>btnCancel</value>
   </data>
@@ -152,6 +162,9 @@
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
   </data>
   <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
     <value>btnOK</value>
@@ -172,9 +185,8 @@
   <data name="btnPipette.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 24</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnPipette.TabIndex" type="System.Int32, mscorlib">
-    <value>56</value>
+    <value>46</value>
   </data>
   <data name="&gt;&gt;btnPipette.Name" xml:space="preserve">
     <value>btnPipette</value>
@@ -198,7 +210,7 @@
     <value>320, 56</value>
   </data>
   <data name="lblScreenColorPickerTip.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
+    <value>47</value>
   </data>
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>Press "Ctrl" button when this window active to stop screen color picker.</value>
@@ -229,7 +241,7 @@
     <value>248, 24</value>
   </data>
   <data name="btnColorPicker.TabIndex" type="System.Int32, mscorlib">
-    <value>52</value>
+    <value>45</value>
   </data>
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Start screen color picker</value>
@@ -256,11 +268,11 @@
     <value>17, 13</value>
   </data>
   <data name="lblY.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
+    <value>43</value>
   </data>
   <data name="lblY.Text" xml:space="preserve">
     <value>Y:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblY.Name" xml:space="preserve">
     <value>lblY</value>
   </data>
@@ -283,11 +295,11 @@
     <value>17, 13</value>
   </data>
   <data name="lblX.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>41</value>
   </data>
   <data name="lblX.Text" xml:space="preserve">
     <value>X:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblX.Name" xml:space="preserve">
     <value>lblX</value>
   </data>
@@ -310,7 +322,7 @@
     <value>80, 32</value>
   </data>
   <data name="btnCopyAll.TabIndex" type="System.Int32, mscorlib">
-    <value>57</value>
+    <value>37</value>
   </data>
   <data name="btnCopyAll.Text" xml:space="preserve">
     <value>Copy all</value>
@@ -334,11 +346,11 @@
     <value>48, 20</value>
   </data>
   <data name="txtX.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
+    <value>42</value>
   </data>
   <data name="txtX.Text" xml:space="preserve">
     <value>1680</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="txtX.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -361,11 +373,11 @@
     <value>48, 20</value>
   </data>
   <data name="txtY.TabIndex" type="System.Int32, mscorlib">
-    <value>59</value>
+    <value>44</value>
   </data>
   <data name="txtY.Text" xml:space="preserve">
     <value>1050</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="txtY.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -394,7 +406,7 @@
     <value>79, 13</value>
   </data>
   <data name="lblCursorPosition.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
+    <value>40</value>
   </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>Cursor position:</value>

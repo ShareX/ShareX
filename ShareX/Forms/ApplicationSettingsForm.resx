@@ -148,7 +148,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnLanguages.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>1</value>
   </data>
   <data name="btnLanguages.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -181,7 +181,7 @@
     <value>209, 13</value>
   </data>
   <data name="llTranslators.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>2</value>
   </data>
   <data name="llTranslators.Text" xml:space="preserve">
     <value>Help us translate ShareX to your language!</value>
@@ -211,7 +211,7 @@
     <value>58, 13</value>
   </data>
   <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Language:</value>
@@ -241,7 +241,7 @@
     <value>180, 17</value>
   </data>
   <data name="cbRememberMainFormPosition.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Remember main window position</value>
@@ -271,7 +271,7 @@
     <value>137, 17</value>
   </data>
   <data name="cbSilentRun.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>On start minimize to tray</value>
@@ -301,7 +301,7 @@
     <value>162, 17</value>
   </data>
   <data name="cbRememberMainFormSize.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Remember main window size</value>
@@ -331,7 +331,7 @@
     <value>178, 17</value>
   </data>
   <data name="cbTaskbarProgressEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Show progress in taskbar button</value>
@@ -361,7 +361,7 @@
     <value>150, 17</value>
   </data>
   <data name="cbTrayIconProgressEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
     <value>Show progress in tray icon</value>
@@ -391,7 +391,7 @@
     <value>301, 17</value>
   </data>
   <data name="cbShellContextMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Show "Upload using ShareX" button in shell context menu</value>
@@ -421,7 +421,7 @@
     <value>188, 17</value>
   </data>
   <data name="cbStartWithWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Run ShareX when Windows starts</value>
@@ -451,7 +451,7 @@
     <value>96, 17</value>
   </data>
   <data name="cbShowTray.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Show tray icon</value>
@@ -481,7 +481,7 @@
     <value>181, 17</value>
   </data>
   <data name="cbSendToMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Show ShareX in "Send to" menu</value>
@@ -599,7 +599,7 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
@@ -842,7 +842,7 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>
@@ -991,7 +991,7 @@
     <value>232, 20</value>
   </data>
   <data name="txtProxyHost.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtProxyHost.Name" xml:space="preserve">
     <value>txtProxyHost</value>
@@ -1042,7 +1042,7 @@
     <value>29, 13</value>
   </data>
   <data name="lblProxyPort.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="lblProxyPort.Text" xml:space="preserve">
     <value>Port:</value>
@@ -2050,7 +2050,7 @@
     <value>558, 396</value>
   </data>
   <data name="tcSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tcSettings.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2080,7 +2080,7 @@
     <value>731, 396</value>
   </data>
   <data name="tttvMain.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tttvMain.Name" xml:space="preserve">
     <value>tttvMain</value>

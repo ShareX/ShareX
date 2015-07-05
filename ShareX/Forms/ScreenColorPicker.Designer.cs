@@ -41,6 +41,22 @@
             this.lblCursorPosition = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // colorPicker
+            // 
+            resources.ApplyResources(this.colorPicker, "colorPicker");
+            // 
+            // txtHex
+            // 
+            resources.ApplyResources(this.txtHex, "txtHex");
+            // 
+            // btnCancel
+            // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
+            // 
+            // btnOK
+            // 
+            resources.ApplyResources(this.btnOK, "btnOK");
+            // 
             // btnPipette
             // 
             this.btnPipette.Image = global::ShareX.Properties.Resources.pipette;

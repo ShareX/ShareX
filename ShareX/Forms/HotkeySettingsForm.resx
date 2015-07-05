@@ -133,7 +133,7 @@
     <value>72, 23</value>
   </data>
   <data name="btnDuplicate.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>3</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Duplicate</value>
@@ -163,7 +163,7 @@
     <value>177, 23</value>
   </data>
   <data name="btnReset.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>4</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
     <value>Restore default hotkeys</value>
@@ -196,7 +196,7 @@
     <value>520, 373</value>
   </data>
   <data name="flpHotkeys.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>5</value>
   </data>
   <data name="flpHotkeys.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -226,7 +226,7 @@
     <value>72, 23</value>
   </data>
   <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>1</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Edit...</value>
@@ -256,7 +256,7 @@
     <value>72, 23</value>
   </data>
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>2</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Remove</value>
@@ -283,7 +283,7 @@
     <value>72, 23</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Add...</value>

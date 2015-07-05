@@ -130,7 +130,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtURL.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtURL.Name" xml:space="preserve">
     <value>txtURL</value>
@@ -154,11 +154,11 @@
     <value>32, 13</value>
   </data>
   <data name="lblURL.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="lblURL.Text" xml:space="preserve">
     <value>URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblURL.Name" xml:space="preserve">
     <value>lblURL</value>
   </data>
@@ -178,7 +178,7 @@
     <value>112, 23</value>
   </data>
   <data name="btnCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>8</value>
   </data>
   <data name="btnCapture.Text" xml:space="preserve">
     <value>Capture</value>
@@ -232,7 +232,7 @@
     <value>864, 592</value>
   </data>
   <data name="pResult.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;pResult.Name" xml:space="preserve">
     <value>pResult</value>
@@ -256,7 +256,7 @@
     <value>69, 13</value>
   </data>
   <data name="lblWebpageSize.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="lblWebpageSize.Text" xml:space="preserve">
     <value>Browser size:</value>
@@ -280,7 +280,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudWebpageWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="nudWebpageWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -304,7 +304,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudWebpageHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="nudWebpageHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -334,11 +334,11 @@
     <value>12, 13</value>
   </data>
   <data name="lblWebpageX.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="lblWebpageX.Text" xml:space="preserve">
     <value>x</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblWebpageX.Name" xml:space="preserve">
     <value>lblWebpageX</value>
   </data>
@@ -361,7 +361,7 @@
     <value>37, 13</value>
   </data>
   <data name="lblCaptureDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="lblCaptureDelay.Text" xml:space="preserve">
     <value>Delay:</value>
@@ -385,7 +385,7 @@
     <value>48, 20</value>
   </data>
   <data name="nudCaptureDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="nudCaptureDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -409,7 +409,7 @@
     <value>112, 23</value>
   </data>
   <data name="btnCopy.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="btnCopy.Text" xml:space="preserve">
     <value>Copy</value>
@@ -433,7 +433,7 @@
     <value>113, 23</value>
   </data>
   <data name="btnUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>9</value>
   </data>
   <data name="btnUpload.Text" xml:space="preserve">
     <value>Upload</value>

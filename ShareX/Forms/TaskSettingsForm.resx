@@ -157,7 +157,7 @@
     <value>193, 17</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>Use default "After capture" settings</value>
@@ -187,7 +187,7 @@
     <value>189, 17</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
     <value>Use default "After upload" settings</value>
@@ -217,7 +217,7 @@
     <value>185, 17</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
     <value>Use default "Destination" settings</value>
@@ -247,7 +247,7 @@
     <value>63, 13</value>
   </data>
   <data name="lblDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Description:</value>
@@ -271,7 +271,7 @@
     <value>504, 20</value>
   </data>
   <data name="tbDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;tbDescription.Name" xml:space="preserve">
     <value>tbDescription</value>
@@ -307,7 +307,7 @@
     <value>504, 21</value>
   </data>
   <data name="cbOverrideCustomUploader.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;cbOverrideCustomUploader.Name" xml:space="preserve">
     <value>cbOverrideCustomUploader</value>
@@ -334,7 +334,7 @@
     <value>185, 17</value>
   </data>
   <data name="chkOverrideCustomUploader.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Override default custom uploader:</value>
@@ -364,7 +364,7 @@
     <value>169, 17</value>
   </data>
   <data name="chkOverrideFTP.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
     <value>Override default FTP account:</value>
@@ -391,7 +391,7 @@
     <value>504, 21</value>
   </data>
   <data name="cboFTPaccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;cboFTPaccounts.Name" xml:space="preserve">
     <value>cboFTPaccounts</value>
@@ -415,7 +415,7 @@
     <value>504, 23</value>
   </data>
   <data name="btnAfterCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>After capture...</value>
@@ -445,7 +445,7 @@
     <value>504, 23</value>
   </data>
   <data name="btnAfterUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>After upload...</value>
@@ -517,7 +517,7 @@
     <value>504, 23</value>
   </data>
   <data name="btnDestinations.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="btnDestinations.Text" xml:space="preserve">
     <value>Destinations...</value>
@@ -547,7 +547,7 @@
     <value>504, 23</value>
   </data>
   <data name="btnTask.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Task...</value>
@@ -1111,7 +1111,7 @@
     <value>56, 20</value>
   </data>
   <data name="nudImageJPEGQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="nudImageJPEGQuality.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -1183,11 +1183,11 @@
     <value>40, 13</value>
   </data>
   <data name="lblImageJPEGQualityHint.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
     <value>lblImageJPEGQualityHint</value>
   </data>
@@ -1213,7 +1213,7 @@
     <value>60, 13</value>
   </data>
   <data name="lblImageGIFQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="lblImageGIFQuality.Text" xml:space="preserve">
     <value>GIF quality:</value>
@@ -1291,7 +1291,7 @@
     <value>557, 303</value>
   </data>
   <data name="pImage.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;pImage.Name" xml:space="preserve">
     <value>pImage</value>
@@ -1375,7 +1375,7 @@
     <value>415, 13</value>
   </data>
   <data name="lblImageEffectsNote.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>You can enable/disable Image effects from "After capture tasks -&gt; Add image effects".</value>
@@ -1405,7 +1405,7 @@
     <value>221, 17</value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>Show image effects window after capture</value>
@@ -1435,7 +1435,7 @@
     <value>193, 17</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Only apply effects to region capture</value>
@@ -1462,7 +1462,7 @@
     <value>208, 23</value>
   </data>
   <data name="btnImageEffects.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
     <value>Image effects configuration...</value>
@@ -1762,7 +1762,7 @@
     <value>565, 354</value>
   </data>
   <data name="tcImage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tcImage.Name" xml:space="preserve">
     <value>tcImage</value>
@@ -1813,11 +1813,11 @@
     <value>32, 24</value>
   </data>
   <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>16</value>
   </data>
   <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
     <value>&gt;&gt;</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnCaptureTransmitBoundsFromMonitorToCustomBounds.Name" xml:space="preserve">
     <value>btnCaptureTransmitBoundsFromMonitorToCustomBounds</value>
   </data>
@@ -1843,7 +1843,7 @@
     <value>35, 13</value>
   </data>
   <data name="lblCaptureCustomRegionWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>13</value>
   </data>
   <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
     <value>Width</value>
@@ -1873,7 +1873,7 @@
     <value>38, 13</value>
   </data>
   <data name="lblCaptureCustomRegionHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>14</value>
   </data>
   <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
     <value>Height</value>
@@ -1903,11 +1903,11 @@
     <value>14, 13</value>
   </data>
   <data name="lblCaptureCustomRegionY.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>12</value>
   </data>
   <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
     <value>Y</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCaptureCustomRegionY.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionY</value>
   </data>
@@ -1933,11 +1933,11 @@
     <value>14, 13</value>
   </data>
   <data name="lblCaptureCustomRegionX.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>11</value>
   </data>
   <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
     <value>X</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCaptureCustomRegionX.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionX</value>
   </data>
@@ -1957,7 +1957,7 @@
     <value>50, 20</value>
   </data>
   <data name="nudCaptureCustomRegionHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionHeight.Name" xml:space="preserve">
     <value>nudCaptureCustomRegionHeight</value>
@@ -1978,7 +1978,7 @@
     <value>50, 20</value>
   </data>
   <data name="nudCaptureCustomRegionWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionWidth.Name" xml:space="preserve">
     <value>nudCaptureCustomRegionWidth</value>
@@ -1999,7 +1999,7 @@
     <value>50, 20</value>
   </data>
   <data name="nudCaptureCustomRegionY.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionY.Name" xml:space="preserve">
     <value>nudCaptureCustomRegionY</value>
@@ -2020,7 +2020,7 @@
     <value>50, 20</value>
   </data>
   <data name="nudCaptureCustomRegionX.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionX.Name" xml:space="preserve">
     <value>nudCaptureCustomRegionX</value>
@@ -2047,7 +2047,7 @@
     <value>179, 13</value>
   </data>
   <data name="lblCaptureCustomRegionSelectedMonitor.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
     <value>Select a monitor for a custom region:</value>
@@ -2071,7 +2071,7 @@
     <value>272, 21</value>
   </data>
   <data name="cboCaptureCustomRegionMonitors.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;cboCaptureCustomRegionMonitors.Name" xml:space="preserve">
     <value>cboCaptureCustomRegionMonitors</value>
@@ -2128,7 +2128,7 @@
     <value>78, 13</value>
   </data>
   <data name="lblCaptureShadowOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>3</value>
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
     <value>Shadow offset:</value>
@@ -2188,7 +2188,7 @@
     <value>402, 17</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
     <value>When doing window capture if window intersects with taskbar then hide taskbar</value>
@@ -2248,7 +2248,7 @@
     <value>47, 13</value>
   </data>
   <data name="lblScreenshotDelayInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>seconds</value>
@@ -2278,7 +2278,7 @@
     <value>334, 17</value>
   </data>
   <data name="cbCaptureClientArea.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Capture client area when doing window or active window capture</value>
@@ -2302,7 +2302,7 @@
     <value>56, 20</value>
   </data>
   <data name="nudScreenshotDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="nudScreenshotDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -2326,7 +2326,7 @@
     <value>48, 20</value>
   </data>
   <data name="nudCaptureShadowOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="nudCaptureShadowOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -2356,7 +2356,7 @@
     <value>111, 17</value>
   </data>
   <data name="cbScreenshotDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Screenshot delay:</value>
@@ -2383,7 +2383,7 @@
     <value>557, 303</value>
   </data>
   <data name="pCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;pCapture.Name" xml:space="preserve">
     <value>pCapture</value>
@@ -2512,7 +2512,7 @@
     <value>224, 21</value>
   </data>
   <data name="cbGIFEncoding.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;cbGIFEncoding.Name" xml:space="preserve">
     <value>cbGIFEncoding</value>
@@ -2539,7 +2539,7 @@
     <value>69, 13</value>
   </data>
   <data name="lblGIFEncoding.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>5</value>
   </data>
   <data name="lblGIFEncoding.Text" xml:space="preserve">
     <value>GIF encoder:</value>
@@ -2566,7 +2566,7 @@
     <value>192, 24</value>
   </data>
   <data name="btnScreenRecorderFFmpegOptions.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>0</value>
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>Screen recording options...</value>
@@ -2596,7 +2596,7 @@
     <value>47, 13</value>
   </data>
   <data name="lblScreenRecorderStartDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>12</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>seconds</value>
@@ -2626,7 +2626,7 @@
     <value>122, 17</value>
   </data>
   <data name="chkScreenRecordAutoStart.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>10</value>
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>Start recording after:</value>
@@ -2656,7 +2656,7 @@
     <value>47, 13</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>9</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>seconds</value>
@@ -2680,7 +2680,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudScreenRecordFPS.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="nudScreenRecordFPS.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -2710,7 +2710,7 @@
     <value>114, 13</value>
   </data>
   <data name="lblScreenRecordFPS.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>1</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Screen recording FPS:</value>
@@ -2740,7 +2740,7 @@
     <value>120, 17</value>
   </data>
   <data name="chkRunScreencastCLI.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>13</value>
   </data>
   <data name="chkRunScreencastCLI.Text" xml:space="preserve">
     <value>Run CLI afterwards:</value>
@@ -2767,7 +2767,7 @@
     <value>94, 23</value>
   </data>
   <data name="btnEncoderConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>15</value>
   </data>
   <data name="btnEncoderConfig.Text" xml:space="preserve">
     <value>Profiles...</value>
@@ -2791,7 +2791,7 @@
     <value>224, 21</value>
   </data>
   <data name="cboEncoder.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;cboEncoder.Name" xml:space="preserve">
     <value>cboEncoder</value>
@@ -2812,7 +2812,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudScreenRecorderDuration.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="nudScreenRecorderDuration.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -2836,7 +2836,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudScreenRecorderStartDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>11</value>
   </data>
   <data name="nudScreenRecorderStartDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -2866,7 +2866,7 @@
     <value>95, 17</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Fixed duration:</value>
@@ -2890,7 +2890,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudGIFFPS.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>4</value>
   </data>
   <data name="nudGIFFPS.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -2920,7 +2920,7 @@
     <value>50, 13</value>
   </data>
   <data name="lblGIFFPS.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>3</value>
   </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>GIF FPS:</value>
@@ -2974,7 +2974,7 @@
     <value>551, 322</value>
   </data>
   <data name="pgRectangleAnnotate.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;pgRectangleAnnotate.Name" xml:space="preserve">
     <value>pgRectangleAnnotate</value>
@@ -3025,7 +3025,7 @@
     <value>565, 354</value>
   </data>
   <data name="tcCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tcCapture.Name" xml:space="preserve">
     <value>tcCapture</value>
@@ -3475,7 +3475,7 @@
     <value>133, 17</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>0</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Use custom time zone:</value>
@@ -3499,7 +3499,7 @@
     <value>288, 21</value>
   </data>
   <data name="cbNameFormatTimeZone.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbNameFormatTimeZone.Name" xml:space="preserve">
     <value>cbNameFormatTimeZone</value>
@@ -3526,7 +3526,7 @@
     <value>221, 13</value>
   </data>
   <data name="lblNameFormatPattern.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
     <value>Name pattern for capture or clipboard upload:</value>
@@ -3556,7 +3556,7 @@
     <value>313, 17</value>
   </data>
   <data name="cbFileUploadUseNamePattern.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Use name pattern for file uploads too instead actual file name</value>
@@ -3586,7 +3586,7 @@
     <value>48, 13</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Preview:</value>
@@ -3616,7 +3616,7 @@
     <value>48, 13</value>
   </data>
   <data name="lblNameFormatPatternPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
     <value>Preview:</value>
@@ -3640,7 +3640,7 @@
     <value>448, 20</value>
   </data>
   <data name="txtNameFormatPatternActiveWindow.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Name" xml:space="preserve">
     <value>txtNameFormatPatternActiveWindow</value>
@@ -3661,7 +3661,7 @@
     <value>448, 20</value>
   </data>
   <data name="txtNameFormatPattern.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;txtNameFormatPattern.Name" xml:space="preserve">
     <value>txtNameFormatPattern</value>
@@ -3685,7 +3685,7 @@
     <value>256, 23</value>
   </data>
   <data name="btnResetAutoIncrementNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
     <value>Reset auto increment number</value>
@@ -3715,7 +3715,7 @@
     <value>199, 13</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
     <value>Name pattern for active window capture:</value>
@@ -3742,7 +3742,7 @@
     <value>557, 303</value>
   </data>
   <data name="pUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;pUpload.Name" xml:space="preserve">
     <value>pUpload</value>
@@ -3826,7 +3826,7 @@
     <value>343, 17</value>
   </data>
   <data name="cbClipboardUploadShareURL.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>If clipboard contains a URL then share it using URL sharing service</value>
@@ -3886,7 +3886,7 @@
     <value>387, 17</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>If clipboard contains a folder path then index that folder and upload the index</value>
@@ -3970,7 +3970,7 @@
     <value>565, 354</value>
   </data>
   <data name="tcUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tcUpload.Name" xml:space="preserve">
     <value>tcUpload</value>
@@ -4195,7 +4195,7 @@
     <value>579, 386</value>
   </data>
   <data name="tcTaskSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tcTaskSettings.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4225,7 +4225,7 @@
     <value>768, 386</value>
   </data>
   <data name="tttvMain.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tttvMain.Name" xml:space="preserve">
     <value>tttvMain</value>
@@ -4247,9 +4247,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>774, 392</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -4290,24 +4287,6 @@
   <data name="&gt;&gt;tsmiURLSharingServices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chWatchFolderFolderPath.Name" xml:space="preserve">
-    <value>chWatchFolderFolderPath</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFilter.Name" xml:space="preserve">
-    <value>chWatchFolderFilter</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Name" xml:space="preserve">
-    <value>chWatchFolderIncludeSubdirectories</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;chActionsName.Name" xml:space="preserve">
     <value>chActionsName</value>
   </data>
@@ -4330,6 +4309,24 @@
     <value>chActionsExtensions</value>
   </data>
   <data name="&gt;&gt;chActionsExtensions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFolderPath.Name" xml:space="preserve">
+    <value>chWatchFolderFolderPath</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFilter.Name" xml:space="preserve">
+    <value>chWatchFolderFilter</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Name" xml:space="preserve">
+    <value>chWatchFolderIncludeSubdirectories</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
