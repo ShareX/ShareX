@@ -108,7 +108,7 @@ namespace ShareX.Setup
 
             List<string> files = new List<string>();
 
-            string[] endsWith = new string[] { "ShareX.exe", "ShareX.exe.config", ".dll", ".css", ".txt", "Screen Capture Recorder setup.exe" };
+            string[] endsWith = new string[] { "ShareX.exe", "ShareX.exe.config", ".dll", ".css", ".txt", "Recorder-devices-setup.exe" };
             string[] ignoreEndsWith = new string[] { };
 
             foreach (string filepath in Directory.GetFiles(releaseDir))
