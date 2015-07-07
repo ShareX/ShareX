@@ -79,7 +79,7 @@ namespace ShareX.HelpersLib
             return SettingsHelper.Save(this, FilePath, SerializationType);
         }
 
-        private void Save()
+        public void Save()
         {
             Save(FilePath);
         }
@@ -89,7 +89,7 @@ namespace ShareX.HelpersLib
             TaskEx.Run(() => Save(filePath));
         }
 
-        private void SaveAsync()
+        public void SaveAsync()
         {
             SaveAsync(FilePath);
         }

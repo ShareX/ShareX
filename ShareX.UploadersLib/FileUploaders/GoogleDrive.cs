@@ -166,7 +166,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private void SetPermissions(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type, string value, bool withLink)
         {
-            if (!CheckAuthorization()) return null;
+            if (!CheckAuthorization()) return;
 
             string url = string.Format("https://www.googleapis.com/drive/v2/files/{0}/permissions", fileID);
 

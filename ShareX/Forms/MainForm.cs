@@ -847,7 +847,7 @@ namespace ShareX
             {
                 e.Cancel = true;
                 Hide();
-                Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
+                Program.SaveSettingsAsync();
             }
         }
 

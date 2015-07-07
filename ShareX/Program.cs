@@ -431,6 +431,13 @@ namespace ShareX
             if (HotkeysConfig != null) HotkeysConfig.Save(HotkeysConfigFilePath);
         }
 
+        public static void SaveSettingsAsync()
+        {
+            if (Settings != null) Settings.SaveAsync(ApplicationConfigFilePath);
+            UploadersConfigSaveAsync();
+            if (HotkeysConfig != null) HotkeysConfig.SaveAsync(HotkeysConfigFilePath);
+        }
+
         public static void BackupSettings()
         {
             Helpers.BackupFileWeekly(ApplicationConfigFilePath, BackupFolder);
@@ -548,16 +555,19 @@ namespace ShareX
 
         public static void UploadersConfigSaveAsync()
         {
-            if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = false;
+            if (UploadersConfig != null)
+            {
+                if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = false;
 
-            TaskEx.Run(() =>
-            {
-                UploadersConfig.Save(UploadersConfigFilePath);
-            },
-            () =>
-            {
-                if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = true;
-            });
+                TaskEx.Run(() =>
+                {
+                    UploadersConfig.Save(UploadersConfigFilePath);
+                },
+                () =>
+                {
+                    if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = true;
+                });
+            }
         }
 
         public static string GetGitHash()
