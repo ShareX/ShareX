@@ -3,8 +3,8 @@
 
 [Setup]
 AppName={#AppName}
-AppVersion={#AppVersion}
 AppVerName={#AppName} {#AppVersion}
+AppVersion={#AppVersion}
 Compression=lzma2/ultra64
 DefaultDirName={pf}\{#AppName}
 DefaultGroupName={#AppName}

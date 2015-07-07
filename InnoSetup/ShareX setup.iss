@@ -9,7 +9,7 @@
 #define MyAppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"
 
 [Setup]
-AppCopyright=Copyright © 2007-2015 {#MyAppPublisher}
+AppCopyright=Copyright (C) 2007-2015 {#MyAppPublisher}
 AppId={#MyAppId}
 AppMutex={#MyAppId}
 AppName={#MyAppName}
@@ -40,10 +40,10 @@ UninstallDisplayName={#MyAppName}
 VersionInfoCompany={#MyAppPublisher}
 VersionInfoTextVersion={#MyAppVersion}
 VersionInfoVersion={#MyAppVersion}
-WizardImageFile=WizardImageFile.bmp
-WizardSmallImageFile=WizardSmallImageFile.bmp
 WizardImageBackColor=clWhite
+WizardImageFile=WizardImageFile.bmp
 WizardImageStretch=no
+WizardSmallImageFile=WizardSmallImageFile.bmp
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
