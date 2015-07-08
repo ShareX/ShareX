@@ -1119,7 +1119,11 @@ namespace ShareX
 
         private void lblDragAndDropTip_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
+            {
+                lvUploads.Focus();
+            }
+            else if (e.Button == MouseButtons.Right)
             {
                 UpdateControls();
                 cmsTaskInfo.Show((Control)sender, e.X + 1, e.Y + 1);
