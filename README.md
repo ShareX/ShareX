@@ -121,6 +121,7 @@ ShareX supports the following destinations.
 * [JIRA](https://www.atlassian.com/software/jira)
 * [Lambda](http://lambda.sx)
 * [Imgrush](https://imgrush.com)
+* [Up1](https://up1.ca)
 * Shared folder
 * [Email](https://en.wikipedia.org/wiki/Email)
 * Custom file uploader
