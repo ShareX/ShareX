@@ -111,7 +111,7 @@ ShareX supports the following destinations.
 * [Amazon S3](http://aws.amazon.com/s3/)
 * [ownCloud](https://owncloud.org)
 * [MediaFire](https://www.mediafire.com)
-* [Pomf](https://pomf.se)
+* [MaxFile](https://maxfile.ro)
 * [Gfycat](http://gfycat.com)
 * [Pushbullet](https://www.pushbullet.com)
 * [SendSpace](https://www.sendspace.com)
