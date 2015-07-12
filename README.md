@@ -25,6 +25,7 @@ ShareX incorporates the following methods to allow screen capture.
 * Custom region: You can configure custom region to be captured with hotkey from task settings. For example, you can configure second monitor region to be captured with hotkey.
 * Screen recording (FFmpeg): You can record a selected area on your screen or the entire screen. [FFmpeg](https://www.ffmpeg.org) allows you to record screen including sound and compress in real time using [x264](https://en.wikipedia.org/wiki/x264), [VP8 (WebM)](https://en.wikipedia.org/wiki/VP8), [Xvid](https://en.wikipedia.org/wiki/Xvid) etc.
 * Screen recording (GIF): You can record a selected area on your screen as an animated GIF.
+* Webpage capture
 * Auto capture: Allows you to automatically capture a screen area with specific time interval.
 
 #### After capture tasks
@@ -111,7 +112,6 @@ ShareX supports the following destinations.
 * [Amazon S3](http://aws.amazon.com/s3/)
 * [ownCloud](https://owncloud.org)
 * [MediaFire](https://www.mediafire.com)
-* [MaxFile](https://maxfile.ro)
 * [Gfycat](http://gfycat.com)
 * [Pushbullet](https://www.pushbullet.com)
 * [SendSpace](https://www.sendspace.com)
@@ -121,6 +121,10 @@ ShareX supports the following destinations.
 * [JIRA](https://www.atlassian.com/software/jira)
 * [Lambda](http://lambda.sx)
 * [Imgrush](https://imgrush.com)
+* [VideoBin](http://videobin.org)
+* [MaxFile](https://maxfile.ro)
+* [DropFile](https://dropfile.to)
+* [Up1](https://up1.ca)
 * Shared folder
 * [Email](https://en.wikipedia.org/wiki/Email)
 * Custom file uploader
