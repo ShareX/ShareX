@@ -193,6 +193,10 @@ namespace ShareX
                         if (!string.IsNullOrEmpty(ToastConfig.FilePath))
                             ClipboardHelpers.CopyImageFromFile(ToastConfig.FilePath);
                         break;
+                    case ToastClickAction.CopyUrl:
+                        if (!string.IsNullOrEmpty(ToastConfig.URL))
+                            ClipboardHelpers.CopyText(ToastConfig.URL);
+                        break;
                     case ToastClickAction.OpenFile:
                         if (!string.IsNullOrEmpty(ToastConfig.FilePath))
                             URLHelpers.OpenURL(ToastConfig.FilePath);
