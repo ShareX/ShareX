@@ -473,9 +473,10 @@ namespace ShareX
             return filepath;
         }
 
-        public static void OpenDropWindow()
+        public static void OpenDropWindow(TaskSettings taskSettings = null)
         {
-            DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity, Program.Settings.DropHoverOpacity).ShowActivate();
+            DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity,
+                Program.Settings.DropHoverOpacity, taskSettings).ShowActivate();
         }
 
         public static void StartScreenRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings = null)

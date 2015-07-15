@@ -36,12 +36,14 @@ namespace ShareX
     {
         private static DropForm instance;
 
-        public static DropForm GetInstance(int size, int offset, ContentAlignment alignment, int opacity, int hoverOpacity)
+        public static DropForm GetInstance(int size, int offset, ContentAlignment alignment, int opacity, int hoverOpacity, TaskSettings taskSettings = null)
         {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new DropForm(size, offset, alignment, opacity, hoverOpacity);
             }
+
+            instance.taskSettings = taskSettings;
 
             return instance;
         }
@@ -54,6 +56,7 @@ namespace ShareX
 
         private Bitmap backgroundImage;
         private bool isHovered;
+        private TaskSettings taskSettings;
 
         private DropForm(int size, int offset, ContentAlignment alignment, int opacity, int hoverOpacity)
         {
@@ -140,7 +143,7 @@ namespace ShareX
 
         private void DropForm_DragDrop(object sender, DragEventArgs e)
         {
-            UploadManager.DragDropUpload(e.Data);
+            UploadManager.DragDropUpload(e.Data, taskSettings);
 
             if (isHovered)
             {
