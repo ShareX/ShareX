@@ -1526,7 +1526,7 @@ namespace ShareX
                     UploadManager.UploadURL(safeTaskSettings);
                     break;
                 case HotkeyType.DragDropUpload:
-                    TaskHelpers.OpenDropWindow();
+                    TaskHelpers.OpenDropWindow(safeTaskSettings);
                     break;
                 case HotkeyType.StopUploads:
                     TaskManager.StopAllTasks();

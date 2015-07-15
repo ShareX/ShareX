@@ -81,7 +81,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (ScreenColorPickerMode && e.Button == MouseButtons.Left)
             {
-                CurrentPosition = e.Location;
+                CurrentPosition = InputManager.MousePosition;
                 Close(SurfaceResult.Region);
             }
         }

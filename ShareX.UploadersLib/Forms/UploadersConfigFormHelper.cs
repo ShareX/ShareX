@@ -1260,10 +1260,23 @@ namespace ShareX.UploadersLib
         {
             FTPAccount account = GetSelectedFTPAccount();
 
-            if (account != null && (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS))
+            if (account != null)
             {
-                new FTPClientForm(account).Show();
+                if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
+                {
+                    new FTPClientForm(account).Show();
+                }
+                else
+                {
+                    // TODO: Translate
+                    MessageBox.Show("FTP client only supports FTP or FTPS.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                return;
             }
+
+            // TODO: Translate
+            MessageBox.Show("Unable to find valid FTP account.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void TestFTPAccount(FTPAccount account)
