@@ -52,10 +52,6 @@
             this.tsmiRectangleAnnotate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRectangleTransparent = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRoundedRectangle = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEllipse = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTriangle = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDiamond = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPolygon = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFreeHand = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLastRegion = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,10 +169,6 @@
             this.tsmiTrayRectangleAnnotate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRectangleTransparent = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayRoundedRectangle = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayEllipse = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayTriangle = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayDiamond = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayPolygon = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFreeHand = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayLastRegion = new System.Windows.Forms.ToolStripMenuItem();
@@ -373,10 +365,6 @@
             this.tsmiRectangleAnnotate,
             this.tsmiRectangleLight,
             this.tsmiRectangleTransparent,
-            this.tsmiRoundedRectangle,
-            this.tsmiEllipse,
-            this.tsmiTriangle,
-            this.tsmiDiamond,
             this.tsmiPolygon,
             this.tsmiFreeHand,
             this.tsmiLastRegion,
@@ -442,34 +430,6 @@
             this.tsmiRectangleTransparent.Name = "tsmiRectangleTransparent";
             resources.ApplyResources(this.tsmiRectangleTransparent, "tsmiRectangleTransparent");
             this.tsmiRectangleTransparent.Click += new System.EventHandler(this.tsmiRectangleTransparent_Click);
-            // 
-            // tsmiRoundedRectangle
-            // 
-            this.tsmiRoundedRectangle.Image = global::ShareX.Properties.Resources.layer_shape_round;
-            this.tsmiRoundedRectangle.Name = "tsmiRoundedRectangle";
-            resources.ApplyResources(this.tsmiRoundedRectangle, "tsmiRoundedRectangle");
-            this.tsmiRoundedRectangle.Click += new System.EventHandler(this.tsmiRoundedRectangle_Click);
-            // 
-            // tsmiEllipse
-            // 
-            this.tsmiEllipse.Image = global::ShareX.Properties.Resources.layer_shape_ellipse;
-            this.tsmiEllipse.Name = "tsmiEllipse";
-            resources.ApplyResources(this.tsmiEllipse, "tsmiEllipse");
-            this.tsmiEllipse.Click += new System.EventHandler(this.tsmiEllipse_Click);
-            // 
-            // tsmiTriangle
-            // 
-            this.tsmiTriangle.Image = global::ShareX.Properties.Resources.Triangle;
-            this.tsmiTriangle.Name = "tsmiTriangle";
-            resources.ApplyResources(this.tsmiTriangle, "tsmiTriangle");
-            this.tsmiTriangle.Click += new System.EventHandler(this.tsmiTriangle_Click);
-            // 
-            // tsmiDiamond
-            // 
-            this.tsmiDiamond.Image = global::ShareX.Properties.Resources.Diamond;
-            this.tsmiDiamond.Name = "tsmiDiamond";
-            resources.ApplyResources(this.tsmiDiamond, "tsmiDiamond");
-            this.tsmiDiamond.Click += new System.EventHandler(this.tsmiDiamond_Click);
             // 
             // tsmiPolygon
             // 
@@ -1287,10 +1247,6 @@
             this.tsmiTrayRectangleAnnotate,
             this.tsmiTrayRectangleLight,
             this.tsmiTrayRectangleTransparent,
-            this.tsmiTrayRoundedRectangle,
-            this.tsmiTrayEllipse,
-            this.tsmiTrayTriangle,
-            this.tsmiTrayDiamond,
             this.tsmiTrayPolygon,
             this.tsmiTrayFreeHand,
             this.tsmiTrayLastRegion,
@@ -1356,34 +1312,6 @@
             this.tsmiTrayRectangleTransparent.Name = "tsmiTrayRectangleTransparent";
             resources.ApplyResources(this.tsmiTrayRectangleTransparent, "tsmiTrayRectangleTransparent");
             this.tsmiTrayRectangleTransparent.Click += new System.EventHandler(this.tsmiTrayRectangleTransparent_Click);
-            // 
-            // tsmiTrayRoundedRectangle
-            // 
-            this.tsmiTrayRoundedRectangle.Image = global::ShareX.Properties.Resources.layer_shape_round;
-            this.tsmiTrayRoundedRectangle.Name = "tsmiTrayRoundedRectangle";
-            resources.ApplyResources(this.tsmiTrayRoundedRectangle, "tsmiTrayRoundedRectangle");
-            this.tsmiTrayRoundedRectangle.Click += new System.EventHandler(this.tsmiTrayRoundedRectangle_Click);
-            // 
-            // tsmiTrayEllipse
-            // 
-            this.tsmiTrayEllipse.Image = global::ShareX.Properties.Resources.layer_shape_ellipse;
-            this.tsmiTrayEllipse.Name = "tsmiTrayEllipse";
-            resources.ApplyResources(this.tsmiTrayEllipse, "tsmiTrayEllipse");
-            this.tsmiTrayEllipse.Click += new System.EventHandler(this.tsmiTrayEllipse_Click);
-            // 
-            // tsmiTrayTriangle
-            // 
-            this.tsmiTrayTriangle.Image = global::ShareX.Properties.Resources.Triangle;
-            this.tsmiTrayTriangle.Name = "tsmiTrayTriangle";
-            resources.ApplyResources(this.tsmiTrayTriangle, "tsmiTrayTriangle");
-            this.tsmiTrayTriangle.Click += new System.EventHandler(this.tsmiTrayTriangle_Click);
-            // 
-            // tsmiTrayDiamond
-            // 
-            this.tsmiTrayDiamond.Image = global::ShareX.Properties.Resources.Diamond;
-            this.tsmiTrayDiamond.Name = "tsmiTrayDiamond";
-            resources.ApplyResources(this.tsmiTrayDiamond, "tsmiTrayDiamond");
-            this.tsmiTrayDiamond.Click += new System.EventHandler(this.tsmiTrayDiamond_Click);
             // 
             // tsmiTrayPolygon
             // 
@@ -1812,10 +1740,6 @@
         private System.Windows.Forms.ToolStripDropDownButton tsddbCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiFullscreen;
         private System.Windows.Forms.ToolStripMenuItem tsmiRectangle;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRoundedRectangle;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEllipse;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTriangle;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDiamond;
         private System.Windows.Forms.ToolStripMenuItem tsmiPolygon;
         private System.Windows.Forms.ToolStripMenuItem tsmiFreeHand;
         private System.Windows.Forms.ToolStripMenuItem tsmiWindow;
@@ -1828,12 +1752,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWindowRectangle;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangle;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayRoundedRectangle;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTriangle;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayDiamond;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayPolygon;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayFreeHand;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayEllipse;
         private System.Windows.Forms.ToolStripMenuItem tsmiLastRegion;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayLastRegion;
         private HelpersLib.SplitContainerCustomSplitter scMain;

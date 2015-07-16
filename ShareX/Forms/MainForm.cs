@@ -2177,19 +2177,14 @@ namespace ShareX
             }
         }
 
-        private void tsmiWindowRectangle_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.RectangleWindow);
-        }
-
         private void tsmiRectangle_Click(object sender, EventArgs e)
         {
             CaptureScreenshot(CaptureType.Rectangle);
         }
 
-        private void tsmiRoundedRectangle_Click(object sender, EventArgs e)
+        private void tsmiWindowRectangle_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.RoundedRectangle);
+            CaptureScreenshot(CaptureType.RectangleWindow);
         }
 
         private void tsmiRectangleAnnotate_Click(object sender, EventArgs e)
@@ -2205,21 +2200,6 @@ namespace ShareX
         private void tsmiRectangleTransparent_Click(object sender, EventArgs e)
         {
             CaptureRectangleTransparent();
-        }
-
-        private void tsmiEllipse_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.Ellipse);
-        }
-
-        private void tsmiTriangle_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.Triangle);
-        }
-
-        private void tsmiDiamond_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.Diamond);
         }
 
         private void tsmiPolygon_Click(object sender, EventArgs e)
@@ -2303,26 +2283,6 @@ namespace ShareX
         private void tsmiTrayRectangleTransparent_Click(object sender, EventArgs e)
         {
             CaptureRectangleTransparent(null, false);
-        }
-
-        private void tsmiTrayRoundedRectangle_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.RoundedRectangle, null, false);
-        }
-
-        private void tsmiTrayEllipse_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.Ellipse, null, false);
-        }
-
-        private void tsmiTrayTriangle_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.Triangle, null, false);
-        }
-
-        private void tsmiTrayDiamond_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.Diamond, null, false);
         }
 
         private void tsmiTrayPolygon_Click(object sender, EventArgs e)
