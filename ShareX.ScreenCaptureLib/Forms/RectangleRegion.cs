@@ -189,13 +189,13 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void Draw(Graphics g)
         {
-            List<Rectangle> areas = AreaManager.GetValidAreas;
+            RegionInfo[] areas = AreaManager.ValidAreas;
 
-            if (areas.Count > 0 || !AreaManager.CurrentHoverArea.IsEmpty)
+            if (areas.Length > 0 || !AreaManager.CurrentHoverArea.IsEmpty)
             {
                 UpdateRegionPath();
 
-                if (areas.Count > 0)
+                if (areas.Length > 0)
                 {
                     if (Config.UseDimming)
                     {
@@ -228,7 +228,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
                     {
-                        AddShapePath(hoverDrawPath, AreaManager.CurrentHoverArea.SizeOffset(-1));
+                        AddShapePath(hoverDrawPath, AreaManager.CurrentHoverArea.SizeOffset(-1), AreaManager.CurrentShape);
 
                         g.DrawPath(borderPen, hoverDrawPath);
                         g.DrawPath(borderDotPen, hoverDrawPath);
@@ -255,12 +255,12 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Config.ShowInfo)
                 {
-                    foreach (Rectangle area in areas)
+                    foreach (RegionInfo regionInfo in areas)
                     {
-                        if (area.IsValid())
+                        if (regionInfo.Area.IsValid())
                         {
-                            string areaText = GetAreaText(area);
-                            DrawAreaText(g, areaText, area);
+                            string areaText = GetAreaText(regionInfo.Area);
+                            DrawAreaText(g, areaText, regionInfo.Area);
                         }
                     }
                 }
@@ -594,14 +594,14 @@ namespace ShareX.ScreenCaptureLib
             regionFillPath = new GraphicsPath { FillMode = FillMode.Winding };
             regionDrawPath = new GraphicsPath { FillMode = FillMode.Winding };
 
-            foreach (Rectangle area in AreaManager.GetValidAreas)
+            foreach (RegionInfo regionInfo in AreaManager.ValidAreas)
             {
-                AddShapePath(regionFillPath, area);
-                AddShapePath(regionDrawPath, area.SizeOffset(-1));
+                AddShapePath(regionFillPath, regionInfo.Area, regionInfo.Shape);
+                AddShapePath(regionDrawPath, regionInfo.Area.SizeOffset(-1), regionInfo.Shape);
             }
         }
 
-        protected virtual void AddShapePath(GraphicsPath graphicsPath, Rectangle rect)
+        protected virtual void AddShapePath(GraphicsPath graphicsPath, Rectangle rect, RegionShape shape)
         {
             graphicsPath.AddRectangle(rect);
         }

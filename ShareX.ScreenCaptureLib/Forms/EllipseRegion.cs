@@ -30,7 +30,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public class EllipseRegion : RectangleRegion
     {
-        protected override void AddShapePath(GraphicsPath graphicsPath, Rectangle rect)
+        protected override void AddShapePath(GraphicsPath graphicsPath, Rectangle rect, RegionShape shape)
         {
             graphicsPath.AddEllipse(rect);
         }

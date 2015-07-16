@@ -33,18 +33,19 @@ namespace ShareX.ScreenCaptureLib
 {
     public class AreaManager
     {
-        public List<Rectangle> Areas { get; private set; }
-        public int SelectedAreaIndex { get; private set; }
+        public RegionShape CurrentShape { get; set; }
 
-        public List<Rectangle> GetValidAreas
+        public List<RegionInfo> Areas { get; private set; }
+
+        public RegionInfo[] ValidAreas
         {
             get
             {
-                List<Rectangle> areas = new List<Rectangle>();
-                areas.AddRange(Areas.Where(IsAreaValid));
-                return areas;
+                return Areas.Where(x => IsAreaValid(x.Area)).ToArray();
             }
         }
+
+        public int SelectedAreaIndex { get; private set; }
 
         public Rectangle CurrentArea
         {
@@ -52,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (SelectedAreaIndex > -1)
                 {
-                    return Areas[SelectedAreaIndex];
+                    return Areas[SelectedAreaIndex].Area;
                 }
 
                 return Rectangle.Empty;
@@ -61,7 +62,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (SelectedAreaIndex > -1)
                 {
-                    Areas[SelectedAreaIndex] = value;
+                    Areas[SelectedAreaIndex].Area = value;
                 }
             }
         }
@@ -111,10 +112,10 @@ namespace ShareX.ScreenCaptureLib
             this.surface = surface;
             ResizeManager = new ResizeManager(surface, this);
 
-            MinimumSize = 10;
-
-            Areas = new List<Rectangle>();
+            CurrentShape = RegionShape.Rectangle;
+            Areas = new List<RegionInfo>();
             SelectedAreaIndex = -1;
+            MinimumSize = 10;
 
             surface.MouseDown += surface_MouseDown;
             surface.MouseUp += surface_MouseUp;
@@ -228,7 +229,7 @@ namespace ShareX.ScreenCaptureLib
                         rect = new Rectangle(e.Location, new Size(1, 1));
                     }
 
-                    Areas.Add(rect);
+                    Areas.Add(new RegionInfo(rect, CurrentShape));
                     SelectedAreaIndex = Areas.Count - 1;
                 }
             }
@@ -261,7 +262,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!CurrentHoverArea.IsEmpty)
                 {
-                    Areas.Add(CurrentHoverArea);
+                    Areas.Add(new RegionInfo(CurrentHoverArea, CurrentShape));
                     SelectedAreaIndex = Areas.Count - 1;
 
                     if (surface.Config.QuickCrop)
@@ -323,7 +324,7 @@ namespace ShareX.ScreenCaptureLib
         {
             for (int i = Areas.Count - 1; i >= 0; i--)
             {
-                if (Areas[i].Contains(mousePosition))
+                if (Areas[i].Area.Contains(mousePosition))
                 {
                     return i;
                 }
@@ -343,7 +344,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (areaIndex > -1)
             {
-                return Areas[areaIndex];
+                return Areas[areaIndex].Area;
             }
 
             return Rectangle.Empty;
@@ -356,15 +357,15 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle CombineAreas()
         {
-            List<Rectangle> areas = GetValidAreas;
+            RegionInfo[] areas = ValidAreas;
 
-            if (areas.Count > 0)
+            if (areas.Length > 0)
             {
-                Rectangle rect = areas[0];
+                Rectangle rect = areas[0].Area;
 
-                for (int i = 1; i < areas.Count; i++)
+                for (int i = 1; i < areas.Length; i++)
                 {
-                    rect = Rectangle.Union(rect, areas[i]);
+                    rect = Rectangle.Union(rect, areas[i].Area);
                 }
 
                 return rect;

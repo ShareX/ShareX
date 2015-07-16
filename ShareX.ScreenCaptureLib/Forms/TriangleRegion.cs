@@ -67,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected override void AddShapePath(GraphicsPath graphicsPath, Rectangle rect)
+        protected override void AddShapePath(GraphicsPath graphicsPath, Rectangle rect, RegionShape shape)
         {
             graphicsPath.AddTriangle(rect, Angle);
         }

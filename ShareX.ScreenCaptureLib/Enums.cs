@@ -137,4 +137,13 @@ namespace ShareX.ScreenCaptureLib
         sierra2,
         sierra2_4a
     }
+
+    public enum RegionShape
+    {
+        Rectangle,
+        RoundedRectangle,
+        Ellipse,
+        Triangle,
+        Diamond
+    }
 }

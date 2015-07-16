@@ -23,49 +23,23 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RoundedRectangleRegion : RectangleRegion
+    public class RegionInfo
     {
-        public float Radius { get; set; }
-        public int RadiusIncrement { get; set; }
+        public Rectangle Area { get; set; }
+        public RegionShape Shape { get; set; }
 
-        public RoundedRectangleRegion()
+        public RegionInfo(Rectangle area, RegionShape shape)
         {
-            Radius = 25;
-            RadiusIncrement = 3;
-            KeyDown += RoundedRectangleRegion_KeyDown;
-        }
-
-        private void RoundedRectangleRegion_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Add)
-            {
-                Radius += RadiusIncrement;
-            }
-            else if (e.KeyData == Keys.Subtract)
-            {
-                Radius = Math.Max(0, Radius - RadiusIncrement);
-            }
-        }
-
-        protected override void AddShapePath(GraphicsPath graphicsPath, Rectangle rect, RegionShape shape)
-        {
-            graphicsPath.AddRoundedRectangle(rect, Radius);
-        }
-
-        protected override void WriteTips(StringBuilder sb)
-        {
-            base.WriteTips(sb);
-
-            sb.AppendLine("[Numpad +] [Numpad -] Change corner radius");
+            Area = area;
+            Shape = shape;
         }
     }
 }
