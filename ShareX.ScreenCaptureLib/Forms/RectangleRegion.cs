@@ -38,6 +38,10 @@ namespace ShareX.ScreenCaptureLib
     {
         public AreaManager AreaManager { get; private set; }
 
+        public float RoundedRectangleRadius { get; set; }
+        public int RoundedRectangleRadiusIncrement { get; set; }
+        public TriangleAngle TriangleAngle { get; set; }
+
         #region Screen color picker
 
         public bool ScreenColorPickerMode { get; set; }
@@ -72,6 +76,11 @@ namespace ShareX.ScreenCaptureLib
         public RectangleRegion()
         {
             AreaManager = new AreaManager(this);
+
+            RoundedRectangleRadius = 25;
+            RoundedRectangleRadiusIncrement = 3;
+            TriangleAngle = TriangleAngle.Top;
+
             KeyDown += RectangleRegion_KeyDown;
             MouseDown += RectangleRegion_MouseDown;
             MouseWheel += RectangleRegion_MouseWheel;
@@ -104,6 +113,57 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.Control | Keys.C:
                     CopyAreaInfo();
+                    break;
+                case Keys.NumPad1:
+                    AreaManager.CurrentShape = RegionShape.Rectangle;
+                    break;
+                case Keys.NumPad2:
+                    AreaManager.CurrentShape = RegionShape.RoundedRectangle;
+                    break;
+                case Keys.NumPad3:
+                    AreaManager.CurrentShape = RegionShape.Ellipse;
+                    break;
+                case Keys.NumPad4:
+                    AreaManager.CurrentShape = RegionShape.Triangle;
+                    break;
+                case Keys.NumPad5:
+                    AreaManager.CurrentShape = RegionShape.Diamond;
+                    break;
+                case Keys.Add:
+                    switch (AreaManager.CurrentShape)
+                    {
+                        case RegionShape.RoundedRectangle:
+                            RoundedRectangleRadius += RoundedRectangleRadiusIncrement;
+                            break;
+                        case RegionShape.Triangle:
+                            if (TriangleAngle == TriangleAngle.Left)
+                            {
+                                TriangleAngle = TriangleAngle.Top;
+                            }
+                            else
+                            {
+                                TriangleAngle++;
+                            }
+                            break;
+                    }
+                    break;
+                case Keys.Subtract:
+                    switch (AreaManager.CurrentShape)
+                    {
+                        case RegionShape.RoundedRectangle:
+                            RoundedRectangleRadius = Math.Max(0, RoundedRectangleRadius - RoundedRectangleRadiusIncrement);
+                            break;
+                        case RegionShape.Triangle:
+                            if (TriangleAngle == TriangleAngle.Top)
+                            {
+                                TriangleAngle = TriangleAngle.Left;
+                            }
+                            else
+                            {
+                                TriangleAngle--;
+                            }
+                            break;
+                    }
                     break;
             }
         }
@@ -407,6 +467,29 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(string.Format("[I] {0} position and size info", Config.ShowInfo ? "Hide" : "Show"));
             sb.AppendLine(string.Format("[M] {0} magnifier", Config.ShowMagnifier ? "Hide" : "Show"));
             sb.AppendLine(string.Format("[C] {0} screen wide crosshair", Config.ShowCrosshair ? "Hide" : "Show"));
+
+            sb.AppendLine();
+
+            if (AreaManager.CurrentShape == RegionShape.Rectangle) sb.Append("-> ");
+            sb.AppendLine("[Numpad 1] Rectangle shape");
+            if (AreaManager.CurrentShape == RegionShape.RoundedRectangle) sb.Append("-> ");
+            sb.AppendLine("[Numpad 2] Rounded rectangle shape");
+            if (AreaManager.CurrentShape == RegionShape.Ellipse) sb.Append("-> ");
+            sb.AppendLine("[Numpad 3] Ellipse shape");
+            if (AreaManager.CurrentShape == RegionShape.Triangle) sb.Append("-> ");
+            sb.AppendLine("[Numpad 4] Triangle shape");
+            if (AreaManager.CurrentShape == RegionShape.Diamond) sb.Append("-> ");
+            sb.AppendLine("[Numpad 5] Diamond shape");
+
+            switch (AreaManager.CurrentShape)
+            {
+                case RegionShape.RoundedRectangle:
+                    sb.AppendLine("[Numpad + or -] Change rounded rectangle corner radius");
+                    break;
+                case RegionShape.Triangle:
+                    sb.AppendLine("[Numpad + or -] Change triangle angle");
+                    break;
+            }
         }
 
         private string GetAreaText(Rectangle area)
@@ -603,7 +686,25 @@ namespace ShareX.ScreenCaptureLib
 
         protected virtual void AddShapePath(GraphicsPath graphicsPath, Rectangle rect, RegionShape shape)
         {
-            graphicsPath.AddRectangle(rect);
+            switch (shape)
+            {
+                default:
+                case RegionShape.Rectangle:
+                    graphicsPath.AddRectangle(rect);
+                    break;
+                case RegionShape.RoundedRectangle:
+                    graphicsPath.AddRoundedRectangle(rect, RoundedRectangleRadius);
+                    break;
+                case RegionShape.Ellipse:
+                    graphicsPath.AddEllipse(rect);
+                    break;
+                case RegionShape.Triangle:
+                    graphicsPath.AddTriangle(rect, TriangleAngle);
+                    break;
+                case RegionShape.Diamond:
+                    graphicsPath.AddDiamond(rect);
+                    break;
+            }
         }
 
         protected override void Dispose(bool disposing)
