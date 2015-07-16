@@ -97,7 +97,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public RegionShape CurrentShape { get; set; }
         public float RoundedRectangleRadius { get; set; }
         public int RoundedRectangleRadiusIncrement { get; set; }
         public TriangleAngle TriangleAngle { get; set; }
@@ -131,7 +130,6 @@ namespace ShareX.ScreenCaptureLib
 
             Areas = new List<RegionInfo>();
             SelectedAreaIndex = -1;
-            CurrentShape = RegionShape.Rectangle;
             RoundedRectangleRadius = 25;
             RoundedRectangleRadiusIncrement = 3;
             TriangleAngle = TriangleAngle.Top;
@@ -166,7 +164,7 @@ namespace ShareX.ScreenCaptureLib
                     ChangeCurrentShape(RegionShape.Diamond);
                     break;
                 case Keys.Add:
-                    switch (CurrentShape)
+                    switch (surface.Config.CurrentRegionShape)
                     {
                         case RegionShape.RoundedRectangle:
                             RoundedRectangleRadius += RoundedRectangleRadiusIncrement;
@@ -185,7 +183,7 @@ namespace ShareX.ScreenCaptureLib
                     UpdateCurrentRegionInfo();
                     break;
                 case Keys.Subtract:
-                    switch (CurrentShape)
+                    switch (surface.Config.CurrentRegionShape)
                     {
                         case RegionShape.RoundedRectangle:
                             RoundedRectangleRadius = Math.Max(0, RoundedRectangleRadius - RoundedRectangleRadiusIncrement);
@@ -367,7 +365,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ChangeCurrentShape(RegionShape shape)
         {
-            CurrentShape = shape;
+            surface.Config.CurrentRegionShape = shape;
             UpdateCurrentRegionInfo();
         }
 
@@ -379,7 +377,7 @@ namespace ShareX.ScreenCaptureLib
 
         public RegionInfo GetRegionInfo(Rectangle rect)
         {
-            RegionInfo regionInfo = new RegionInfo(rect, CurrentShape);
+            RegionInfo regionInfo = new RegionInfo(rect, surface.Config.CurrentRegionShape);
             regionInfo.RoundedRectangleRadius = RoundedRectangleRadius;
             regionInfo.TriangleAngle = TriangleAngle;
             return regionInfo;
@@ -388,9 +386,13 @@ namespace ShareX.ScreenCaptureLib
         private void UpdateCurrentRegionInfo()
         {
             RegionInfo regionInfo = CurrentRegionInfo;
-            regionInfo.Shape = CurrentShape;
-            regionInfo.RoundedRectangleRadius = RoundedRectangleRadius;
-            regionInfo.TriangleAngle = TriangleAngle;
+
+            if (regionInfo != null)
+            {
+                regionInfo.Shape = surface.Config.CurrentRegionShape;
+                regionInfo.RoundedRectangleRadius = RoundedRectangleRadius;
+                regionInfo.TriangleAngle = TriangleAngle;
+            }
         }
 
         private void SelectArea()

@@ -411,18 +411,18 @@ namespace ShareX.ScreenCaptureLib
 
             sb.AppendLine();
 
-            if (AreaManager.CurrentShape == RegionShape.Rectangle) sb.Append("-> ");
+            if (Config.CurrentRegionShape == RegionShape.Rectangle) sb.Append("-> ");
             sb.AppendLine("[Numpad 1] Rectangle shape");
-            if (AreaManager.CurrentShape == RegionShape.RoundedRectangle) sb.Append("-> ");
+            if (Config.CurrentRegionShape == RegionShape.RoundedRectangle) sb.Append("-> ");
             sb.AppendLine("[Numpad 2] Rounded rectangle shape");
-            if (AreaManager.CurrentShape == RegionShape.Ellipse) sb.Append("-> ");
+            if (Config.CurrentRegionShape == RegionShape.Ellipse) sb.Append("-> ");
             sb.AppendLine("[Numpad 3] Ellipse shape");
-            if (AreaManager.CurrentShape == RegionShape.Triangle) sb.Append("-> ");
+            if (Config.CurrentRegionShape == RegionShape.Triangle) sb.Append("-> ");
             sb.AppendLine("[Numpad 4] Triangle shape");
-            if (AreaManager.CurrentShape == RegionShape.Diamond) sb.Append("-> ");
+            if (Config.CurrentRegionShape == RegionShape.Diamond) sb.Append("-> ");
             sb.AppendLine("[Numpad 5] Diamond shape");
 
-            switch (AreaManager.CurrentShape)
+            switch (Config.CurrentRegionShape)
             {
                 case RegionShape.RoundedRectangle:
                     sb.AppendLine("[Numpad + or -] Change rounded rectangle corner radius");

@@ -79,6 +79,9 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(typeof(Size), "250, 250"), Description("Fixed shape size.")]
         public Size FixedSize { get; set; }
 
+        [DefaultValue(RegionShape.Rectangle), Description("Current region shape.")]
+        public RegionShape CurrentRegionShape { get; set; }
+
         public SurfaceOptions()
         {
             this.ApplyDefaultPropertyValues();
