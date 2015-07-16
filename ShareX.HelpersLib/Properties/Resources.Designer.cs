@@ -844,24 +844,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture diamond region.
-        /// </summary>
-        internal static string HotkeyType_DiamondRegion {
-            get {
-                return ResourceManager.GetString("HotkeyType_DiamondRegion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Screen capture.
-        /// </summary>
-        internal static string HotkeyType_DiamondRegion_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_DiamondRegion_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to DNS changer.
         /// </summary>
         internal static string HotkeyType_DNSChanger {
@@ -894,24 +876,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_DragDropUpload_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_DragDropUpload_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Capture ellipse region.
-        /// </summary>
-        internal static string HotkeyType_EllipseRegion {
-            get {
-                return ResourceManager.GetString("HotkeyType_EllipseRegion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Screen capture.
-        /// </summary>
-        internal static string HotkeyType_EllipseRegion_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_EllipseRegion_Category", resourceCulture);
             }
         }
         
@@ -1177,7 +1141,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture rectangle region (Annotate).
+        ///   Looks up a localized string similar to Capture region (Annotate).
         /// </summary>
         internal static string HotkeyType_RectangleAnnotate {
             get {
@@ -1195,7 +1159,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture rectangle region (Light).
+        ///   Looks up a localized string similar to Capture region (Light).
         /// </summary>
         internal static string HotkeyType_RectangleLight {
             get {
@@ -1213,7 +1177,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture rectangle region.
+        ///   Looks up a localized string similar to Capture region.
         /// </summary>
         internal static string HotkeyType_RectangleRegion {
             get {
@@ -1231,7 +1195,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture rectangle region (Transparent).
+        ///   Looks up a localized string similar to Capture region (Transparent).
         /// </summary>
         internal static string HotkeyType_RectangleTransparent {
             get {
@@ -1245,24 +1209,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_RectangleTransparent_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_RectangleTransparent_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Capture rounded rectangle region.
-        /// </summary>
-        internal static string HotkeyType_RoundedRectangleRegion {
-            get {
-                return ResourceManager.GetString("HotkeyType_RoundedRectangleRegion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Screen capture.
-        /// </summary>
-        internal static string HotkeyType_RoundedRectangleRegion_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_RoundedRectangleRegion_Category", resourceCulture);
             }
         }
         
@@ -1447,24 +1393,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture triangle region.
-        /// </summary>
-        internal static string HotkeyType_TriangleRegion {
-            get {
-                return ResourceManager.GetString("HotkeyType_TriangleRegion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Screen capture.
-        /// </summary>
-        internal static string HotkeyType_TriangleRegion_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_TriangleRegion_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Tweet message.
         /// </summary>
         internal static string HotkeyType_TweetMessage {
@@ -1501,7 +1429,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture rectangle region (Window).
+        ///   Looks up a localized string similar to Capture region (Objects).
         /// </summary>
         internal static string HotkeyType_WindowRectangle {
             get {

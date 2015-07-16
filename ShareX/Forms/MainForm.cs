@@ -1556,18 +1556,6 @@ namespace ShareX
                 case HotkeyType.RectangleTransparent:
                     CaptureRectangleTransparent(safeTaskSettings, false);
                     break;
-                case HotkeyType.RoundedRectangleRegion:
-                    CaptureScreenshot(CaptureType.RoundedRectangle, safeTaskSettings, false);
-                    break;
-                case HotkeyType.EllipseRegion:
-                    CaptureScreenshot(CaptureType.Ellipse, safeTaskSettings, false);
-                    break;
-                case HotkeyType.TriangleRegion:
-                    CaptureScreenshot(CaptureType.Triangle, safeTaskSettings, false);
-                    break;
-                case HotkeyType.DiamondRegion:
-                    CaptureScreenshot(CaptureType.Diamond, safeTaskSettings, false);
-                    break;
                 case HotkeyType.PolygonRegion:
                     CaptureScreenshot(CaptureType.Polygon, safeTaskSettings, false);
                     break;

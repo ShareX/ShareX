@@ -408,14 +408,8 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>Upload from clipboard with content viewer</value>
   </data>
-  <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>Capture diamond region</value>
-  </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
     <value>Drag and drop upload</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>Capture ellipse region</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Upload file</value>
@@ -457,16 +451,13 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>QR code</value>
   </data>
   <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Capture rectangle region (Annotate)</value>
+    <value>Capture region (Annotate)</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Capture rectangle region (Light)</value>
+    <value>Capture region (Light)</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Capture rectangle region</value>
-  </data>
-  <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>Capture rounded rectangle region</value>
+    <value>Capture region</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Ruler</value>
@@ -480,9 +471,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Stop all active uploads</value>
   </data>
-  <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>Capture triangle region</value>
-  </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
     <value>Tweet message</value>
   </data>
@@ -490,7 +478,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Upload from URL</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Capture rectangle region (Window)</value>
+    <value>Capture region (Objects)</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Custom file uploader</value>
@@ -632,7 +620,7 @@ Would you like to download and install it?</value>
     <value>Open/Stop Automate tool</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Capture rectangle region (Transparent)</value>
+    <value>Capture region (Transparent)</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Capture custom region</value>
@@ -670,14 +658,8 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
-  <data name="HotkeyType_DiamondRegion_Category" xml:space="preserve">
-    <value>Screen capture</value>
-  </data>
   <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
     <value>Upload</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion_Category" xml:space="preserve">
-    <value>Screen capture</value>
   </data>
   <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
     <value>Upload</value>
@@ -727,9 +709,6 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
-  <data name="HotkeyType_RoundedRectangleRegion_Category" xml:space="preserve">
-    <value>Screen capture</value>
-  </data>
   <data name="HotkeyType_Ruler_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
@@ -753,9 +732,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
     <value>Upload</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion_Category" xml:space="preserve">
-    <value>Screen capture</value>
   </data>
   <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
     <value>Tools</value>
