@@ -83,12 +83,6 @@
     </Compile>
     <Compile Include="RegionHelpers\AreaManager.cs" />
     <Compile Include="RegionHelpers\DrawObject.cs" />
-    <Compile Include="Forms\DiamondRegion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EllipseRegion.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\FreeHandRegion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,12 +90,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\RectangleRegion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\RoundedRectangleRegion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TriangleRegion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegionHelpers\InputManager.cs" />

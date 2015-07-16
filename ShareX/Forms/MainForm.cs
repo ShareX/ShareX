@@ -1660,10 +1660,6 @@ namespace ShareX
                     break;
                 case CaptureType.Rectangle:
                 case CaptureType.RectangleWindow:
-                case CaptureType.RoundedRectangle:
-                case CaptureType.Ellipse:
-                case CaptureType.Triangle:
-                case CaptureType.Diamond:
                 case CaptureType.Polygon:
                 case CaptureType.Freehand:
                     CaptureRegion(captureType, taskSettings, autoHideForm);
@@ -1757,8 +1753,7 @@ namespace ShareX
 
         private bool IsRegionCapture(CaptureType captureType)
         {
-            return captureType.HasFlagAny(CaptureType.RectangleWindow, CaptureType.Rectangle, CaptureType.RoundedRectangle, CaptureType.Ellipse,
-                CaptureType.Triangle, CaptureType.Diamond, CaptureType.Polygon, CaptureType.Freehand, CaptureType.LastRegion);
+            return captureType.HasFlagAny(CaptureType.RectangleWindow, CaptureType.Rectangle, CaptureType.Polygon, CaptureType.Freehand, CaptureType.LastRegion);
         }
 
         private void CaptureActiveWindow(TaskSettings taskSettings, bool autoHideForm = true)
@@ -1847,18 +1842,6 @@ namespace ShareX
                     rectangleRegion.AreaManager.WindowCaptureMode = true;
                     rectangleRegion.AreaManager.IncludeControls = true;
                     surface = rectangleRegion;
-                    break;
-                case CaptureType.RoundedRectangle:
-                    surface = new RoundedRectangleRegion();
-                    break;
-                case CaptureType.Ellipse:
-                    surface = new EllipseRegion();
-                    break;
-                case CaptureType.Triangle:
-                    surface = new TriangleRegion();
-                    break;
-                case CaptureType.Diamond:
-                    surface = new DiamondRegion();
                     break;
                 case CaptureType.Polygon:
                     surface = new PolygonRegion();

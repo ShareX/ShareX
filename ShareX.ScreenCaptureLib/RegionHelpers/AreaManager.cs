@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -33,8 +34,6 @@ namespace ShareX.ScreenCaptureLib
 {
     public class AreaManager
     {
-        public RegionShape CurrentShape { get; set; }
-
         public List<RegionInfo> Areas { get; private set; }
 
         public RegionInfo[] ValidAreas
@@ -46,6 +45,19 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public int SelectedAreaIndex { get; private set; }
+
+        public RegionInfo CurrentRegionInfo
+        {
+            get
+            {
+                if (SelectedAreaIndex > -1)
+                {
+                    return Areas[SelectedAreaIndex];
+                }
+
+                return null;
+            }
+        }
 
         public Rectangle CurrentArea
         {
@@ -85,6 +97,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public RegionShape CurrentShape { get; set; }
+        public float RoundedRectangleRadius { get; set; }
+        public int RoundedRectangleRadiusIncrement { get; set; }
+        public TriangleAngle TriangleAngle { get; set; }
+
         public ResizeManager ResizeManager { get; private set; }
         public bool IsCreating { get; private set; }
         public bool IsMoving { get; private set; }
@@ -112,9 +129,12 @@ namespace ShareX.ScreenCaptureLib
             this.surface = surface;
             ResizeManager = new ResizeManager(surface, this);
 
-            CurrentShape = RegionShape.Rectangle;
             Areas = new List<RegionInfo>();
             SelectedAreaIndex = -1;
+            CurrentShape = RegionShape.Rectangle;
+            RoundedRectangleRadius = 25;
+            RoundedRectangleRadiusIncrement = 3;
+            TriangleAngle = TriangleAngle.Top;
             MinimumSize = 10;
 
             surface.MouseDown += surface_MouseDown;
@@ -125,9 +145,64 @@ namespace ShareX.ScreenCaptureLib
 
         private void surface_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.ShiftKey)
+            switch (e.KeyData)
             {
-                proportionalResizing = true;
+                case Keys.ShiftKey:
+                    proportionalResizing = true;
+                    break;
+                case Keys.NumPad1:
+                    ChangeCurrentShape(RegionShape.Rectangle);
+                    break;
+                case Keys.NumPad2:
+                    ChangeCurrentShape(RegionShape.RoundedRectangle);
+                    break;
+                case Keys.NumPad3:
+                    ChangeCurrentShape(RegionShape.Ellipse);
+                    break;
+                case Keys.NumPad4:
+                    ChangeCurrentShape(RegionShape.Triangle);
+                    break;
+                case Keys.NumPad5:
+                    ChangeCurrentShape(RegionShape.Diamond);
+                    break;
+                case Keys.Add:
+                    switch (CurrentShape)
+                    {
+                        case RegionShape.RoundedRectangle:
+                            RoundedRectangleRadius += RoundedRectangleRadiusIncrement;
+                            break;
+                        case RegionShape.Triangle:
+                            if (TriangleAngle == TriangleAngle.Left)
+                            {
+                                TriangleAngle = TriangleAngle.Top;
+                            }
+                            else
+                            {
+                                TriangleAngle++;
+                            }
+                            break;
+                    }
+                    UpdateCurrentRegionInfo();
+                    break;
+                case Keys.Subtract:
+                    switch (CurrentShape)
+                    {
+                        case RegionShape.RoundedRectangle:
+                            RoundedRectangleRadius = Math.Max(0, RoundedRectangleRadius - RoundedRectangleRadiusIncrement);
+                            break;
+                        case RegionShape.Triangle:
+                            if (TriangleAngle == TriangleAngle.Top)
+                            {
+                                TriangleAngle = TriangleAngle.Left;
+                            }
+                            else
+                            {
+                                TriangleAngle--;
+                            }
+                            break;
+                    }
+                    UpdateCurrentRegionInfo();
+                    break;
             }
         }
 
@@ -229,8 +304,7 @@ namespace ShareX.ScreenCaptureLib
                         rect = new Rectangle(e.Location, new Size(1, 1));
                     }
 
-                    Areas.Add(new RegionInfo(rect, CurrentShape));
-                    SelectedAreaIndex = Areas.Count - 1;
+                    AddRegionInfo(rect);
                 }
             }
         }
@@ -262,8 +336,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!CurrentHoverArea.IsEmpty)
                 {
-                    Areas.Add(new RegionInfo(CurrentHoverArea, CurrentShape));
-                    SelectedAreaIndex = Areas.Count - 1;
+                    AddRegionInfo(CurrentHoverArea);
 
                     if (surface.Config.QuickCrop)
                     {
@@ -290,6 +363,34 @@ namespace ShareX.ScreenCaptureLib
                     surface.Close(SurfaceResult.Close);
                 }
             }
+        }
+
+        private void ChangeCurrentShape(RegionShape shape)
+        {
+            CurrentShape = shape;
+            UpdateCurrentRegionInfo();
+        }
+
+        private void AddRegionInfo(Rectangle rect)
+        {
+            Areas.Add(GetRegionInfo(rect));
+            SelectedAreaIndex = Areas.Count - 1;
+        }
+
+        public RegionInfo GetRegionInfo(Rectangle rect)
+        {
+            RegionInfo regionInfo = new RegionInfo(rect, CurrentShape);
+            regionInfo.RoundedRectangleRadius = RoundedRectangleRadius;
+            regionInfo.TriangleAngle = TriangleAngle;
+            return regionInfo;
+        }
+
+        private void UpdateCurrentRegionInfo()
+        {
+            RegionInfo regionInfo = CurrentRegionInfo;
+            regionInfo.Shape = CurrentShape;
+            regionInfo.RoundedRectangleRadius = RoundedRectangleRadius;
+            regionInfo.TriangleAngle = TriangleAngle;
         }
 
         private void SelectArea()
