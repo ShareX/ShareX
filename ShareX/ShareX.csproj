@@ -930,6 +930,8 @@
     <None Include="Resources\es.png" />
     <None Include="Resources\nl.png" />
     <None Include="Resources\document-globe.png" />
+    <None Include="Resources\keyboard--minus.png" />
+    <None Include="Resources\keyboard--plus.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

@@ -211,6 +211,7 @@
             this.tsmiTrayApplicationSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTaskSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHotkeySettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayToggleHotkeys = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiScreenshotsFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHistory = new System.Windows.Forms.ToolStripMenuItem();
@@ -1222,6 +1223,7 @@
             this.tsmiTrayApplicationSettings,
             this.tsmiTrayTaskSettings,
             this.tsmiTrayHotkeySettings,
+            this.tsmiTrayToggleHotkeys,
             this.tssTray2,
             this.tsmiScreenshotsFolder,
             this.tsmiTrayHistory,
@@ -1621,6 +1623,13 @@
             resources.ApplyResources(this.tsmiTrayHotkeySettings, "tsmiTrayHotkeySettings");
             this.tsmiTrayHotkeySettings.Click += new System.EventHandler(this.tsbHotkeySettings_Click);
             // 
+            // tsmiTrayToggleHotkeys
+            // 
+            this.tsmiTrayToggleHotkeys.Image = global::ShareX.Properties.Resources.keyboard__minus;
+            this.tsmiTrayToggleHotkeys.Name = "tsmiTrayToggleHotkeys";
+            resources.ApplyResources(this.tsmiTrayToggleHotkeys, "tsmiTrayToggleHotkeys");
+            this.tsmiTrayToggleHotkeys.Click += new System.EventHandler(this.tsmiTrayToggleHotkeys_Click);
+            // 
             // tssTray2
             // 
             this.tssTray2.Name = "tssTray2";
@@ -1909,5 +1918,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleTransparent;
         private System.Windows.Forms.ToolStripMenuItem tsmiWebpageCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWebpageCapture;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayToggleHotkeys;
     }
 }

@@ -1419,6 +1419,12 @@
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>Hotkey settings...</value>
   </data>
+  <data name="tsmiTrayToggleHotkeys.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>Disable hotkeys</value>
+  </data>
   <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 6</value>
   </data>
@@ -1477,7 +1483,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 418</value>
+    <value>189, 440</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -2545,6 +2551,12 @@
     <value>tsmiTrayHotkeySettings</value>
   </data>
   <data name="&gt;&gt;tsmiTrayHotkeySettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayToggleHotkeys.Name" xml:space="preserve">
+    <value>tsmiTrayToggleHotkeys</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayToggleHotkeys.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTray2.Name" xml:space="preserve">

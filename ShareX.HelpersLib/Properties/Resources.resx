@@ -778,4 +778,10 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>Disable/Enable hotkeys</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
 </root>

@@ -558,6 +558,7 @@ namespace ShareX
             }
 
             UpdateControls();
+            UpdateToggleHotkeyButton();
 
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
         }
@@ -788,6 +789,21 @@ namespace ShareX
 
             tsMain.Visible = lblSplitter.Visible = Program.Settings.ShowMenu;
             Refresh();
+        }
+
+        public void UpdateToggleHotkeyButton()
+        {
+            // TODO: Translate
+            if (Program.Settings.DisableHotkeys)
+            {
+                tsmiTrayToggleHotkeys.Text = "Enable hotkeys";
+                tsmiTrayToggleHotkeys.Image = Resources.keyboard__plus;
+            }
+            else
+            {
+                tsmiTrayToggleHotkeys.Text = "Disable hotkeys";
+                tsmiTrayToggleHotkeys.Image = Resources.keyboard__minus;
+            }
         }
 
         #region Form events
@@ -1058,6 +1074,11 @@ namespace ShareX
 
             UpdateWorkflowsMenu();
             Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
+        }
+
+        private void tsmiTrayToggleHotkeys_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.ToggleHotkeys();
         }
 
         private void tsbDestinationSettings_Click(object sender, EventArgs e)
@@ -1489,7 +1510,15 @@ namespace ShareX
 
             if (hotkeySetting.TaskSettings.Job != HotkeyType.None)
             {
-                ExecuteJob(hotkeySetting.TaskSettings);
+                if (hotkeySetting.TaskSettings.Job == HotkeyType.DisableHotkeys)
+                {
+                    TaskHelpers.ToggleHotkeys();
+                }
+
+                if (!Program.Settings.DisableHotkeys)
+                {
+                    ExecuteJob(hotkeySetting.TaskSettings);
+                }
             }
         }
 

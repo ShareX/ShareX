@@ -182,6 +182,7 @@ namespace ShareX
         TweetMessage,
         MonitorTest,
         // Other
+        DisableHotkeys,
         OpenScreenshotsFolder
     }
 

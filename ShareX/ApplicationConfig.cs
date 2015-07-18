@@ -42,6 +42,7 @@ namespace ShareX
         public bool ShowTrayMiddleClickTip = true; // Tray icon middle click tip
         public int NameParserAutoIncrementNumber = 0;
         public RecentItem[] RecentLinks = null;
+        public bool DisableHotkeys = false;
 
         public ApplicationConfig()
         {

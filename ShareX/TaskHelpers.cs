@@ -757,5 +757,23 @@ namespace ShareX
 
             return EDataType.File;
         }
+
+        public static bool ToggleHotkeys()
+        {
+            bool result = !Program.Settings.DisableHotkeys;
+            Program.Settings.DisableHotkeys = result;
+
+            Program.MainForm.UpdateToggleHotkeyButton();
+
+            if (Program.MainForm.niTray.Visible)
+            {
+                Program.MainForm.niTray.Tag = null;
+                // TODO: Translate
+                string balloonTipText = result ? "Hotkeys disabled." : "Hotkeys enabled.";
+                Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", balloonTipText, ToolTipIcon.Info);
+            }
+
+            return result;
+        }
     }
 }

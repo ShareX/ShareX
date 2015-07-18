@@ -844,6 +844,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disable/Enable hotkeys.
+        /// </summary>
+        internal static string HotkeyType_DisableHotkeys {
+            get {
+                return ResourceManager.GetString("HotkeyType_DisableHotkeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        internal static string HotkeyType_DisableHotkeys_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_DisableHotkeys_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DNS changer.
         /// </summary>
         internal static string HotkeyType_DNSChanger {
