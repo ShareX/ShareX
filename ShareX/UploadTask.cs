@@ -683,7 +683,7 @@ namespace ShareX
                         albumID = Program.UploadersConfig.ImgurSelectedAlbum.id;
                     }
 
-                    imageUploader = new Imgur_v3(Program.UploadersConfig.ImgurOAuth2Info)
+                    imageUploader = new Imgur(Program.UploadersConfig.ImgurOAuth2Info)
                     {
                         UploadMethod = Program.UploadersConfig.ImgurAccountType,
                         DirectLink = Program.UploadersConfig.ImgurDirectLink,

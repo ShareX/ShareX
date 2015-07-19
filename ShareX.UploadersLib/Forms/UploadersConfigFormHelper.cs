@@ -50,7 +50,7 @@ namespace ShareX.UploadersLib
             {
                 OAuth2Info oauth = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
 
-                string url = new Imgur_v3(oauth).GetAuthorizationURL();
+                string url = new Imgur(oauth).GetAuthorizationURL();
 
                 if (!string.IsNullOrEmpty(url))
                 {
@@ -75,7 +75,7 @@ namespace ShareX.UploadersLib
             {
                 if (!string.IsNullOrEmpty(code) && Config.ImgurOAuth2Info != null)
                 {
-                    bool result = new Imgur_v3(Config.ImgurOAuth2Info).GetAccessToken(code);
+                    bool result = new Imgur(Config.ImgurOAuth2Info).GetAccessToken(code);
 
                     if (result)
                     {
@@ -103,7 +103,7 @@ namespace ShareX.UploadersLib
             {
                 if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
                 {
-                    bool result = new Imgur_v3(Config.ImgurOAuth2Info).RefreshAccessToken();
+                    bool result = new Imgur(Config.ImgurOAuth2Info).RefreshAccessToken();
 
                     if (result)
                     {
@@ -134,7 +134,7 @@ namespace ShareX.UploadersLib
 
                 if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
                 {
-                    Config.ImgurAlbumList = new Imgur_v3(Config.ImgurOAuth2Info).GetAlbums();
+                    Config.ImgurAlbumList = new Imgur(Config.ImgurOAuth2Info).GetAlbums();
                     ImgurFillAlbumList();
                     lvImgurAlbumList.Focus();
                 }

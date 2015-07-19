@@ -49,7 +49,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         Huge_Thumbnail
     }
 
-    public sealed class Imgur_v3 : ImageUploader, IOAuth2
+    public sealed class Imgur : ImageUploader, IOAuth2
     {
         public AccountType UploadMethod { get; set; }
         public OAuth2Info AuthInfo { get; set; }
@@ -57,7 +57,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public string UploadAlbumID { get; set; }
         public bool DirectLink { get; set; }
 
-        public Imgur_v3(OAuth2Info oauth)
+        public Imgur(OAuth2Info oauth)
         {
             AuthInfo = oauth;
         }
@@ -156,18 +156,17 @@ namespace ShareX.UploadersLib.ImageUploaders
             {
                 string response = SendRequest(HttpMethod.GET, "https://api.imgur.com/3/account/me/albums", headers: GetAuthHeaders());
 
-                if (!string.IsNullOrEmpty(response))
+                ImgurResponse imgurResponse = JsonConvert.DeserializeObject<ImgurResponse>(response);
+
+                if (imgurResponse != null)
                 {
-                    ImgurAlbums albums = JsonConvert.DeserializeObject<ImgurAlbums>(response);
-
-                    if (albums != null)
+                    if (imgurResponse.success && imgurResponse.status == 200)
                     {
-                        if (albums.success)
-                        {
-                            return albums.data;
-                        }
-
-                        Errors.Add("Imgur albums failed. Status code: " + albums.status);
+                        return ((JArray)imgurResponse.data).ToObject<List<ImgurAlbumData>>();
+                    }
+                    else
+                    {
+                        HandleErrors(imgurResponse);
                     }
                 }
             }
@@ -204,26 +203,23 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             if (!string.IsNullOrEmpty(result.Response))
             {
-                JToken jsonResponse = JToken.Parse(result.Response);
+                ImgurResponse imgurResponse = JsonConvert.DeserializeObject<ImgurResponse>(result.Response);
 
-                if (jsonResponse != null)
+                if (imgurResponse != null)
                 {
-                    bool success = jsonResponse["success"].Value<bool>();
-                    int status = jsonResponse["status"].Value<int>();
-
-                    if (success && status == 200)
+                    if (imgurResponse.success && imgurResponse.status == 200)
                     {
-                        ImgurUploadData uploadData = jsonResponse["data"].ToObject<ImgurUploadData>();
+                        ImgurImageData imageData = ((JObject)imgurResponse.data).ToObject<ImgurImageData>();
 
-                        if (uploadData != null && !string.IsNullOrEmpty(uploadData.link))
+                        if (imageData != null && !string.IsNullOrEmpty(imageData.link))
                         {
                             if (DirectLink)
                             {
-                                result.URL = uploadData.link;
+                                result.URL = imageData.link;
                             }
                             else
                             {
-                                result.URL = "http://imgur.com/" + uploadData.id;
+                                result.URL = "http://imgur.com/" + imageData.id;
                             }
 
                             int index = result.URL.LastIndexOf('.');
@@ -251,48 +247,37 @@ namespace ShareX.UploadersLib.ImageUploaders
                                     break;
                             }
 
-                            result.ThumbnailURL = string.Format("http://i.imgur.com/{0}{1}.jpg", uploadData.id, thumbnail); // Thumbnails always jpg
-                            result.DeletionURL = "http://imgur.com/delete/" + uploadData.deletehash;
+                            result.ThumbnailURL = string.Format("http://i.imgur.com/{0}{1}.jpg", imageData.id, thumbnail); // Thumbnails always jpg
+                            result.DeletionURL = "http://imgur.com/delete/" + imageData.deletehash;
                         }
                     }
                     else
                     {
-                        ImgurErrorData errorData = jsonResponse["data"].ToObject<ImgurErrorData>();
-
-                        if (errorData != null && !string.IsNullOrEmpty(errorData.error))
-                        {
-                            string errorMessage = string.Format("Status: {0}, Error: {1}", status, errorData.error);
-                            Errors.Add(errorMessage);
-                        }
+                        HandleErrors(imgurResponse);
                     }
                 }
             }
 
             return result;
         }
+
+        private void HandleErrors(ImgurResponse response)
+        {
+            ImgurErrorData errorData = ((JObject)response.data).ToObject<ImgurErrorData>();
+
+            if (errorData != null)
+            {
+                string errorMessage = string.Format("Status: {0}, Request: {1}, Error: {2}", response.status, errorData.request, errorData.error);
+                Errors.Add(errorMessage);
+            }
+        }
     }
 
-    public class ImgurUploadData
+    public class ImgurResponse
     {
-        public string id { get; set; }
-        public string deletehash { get; set; }
-        public string link { get; set; }
-    }
-
-    public class ImgurAlbumData
-    {
-        public string id { get; set; }
-        public string title { get; set; }
-        public string description { get; set; }
-        /*public int datetime { get; set; }
-        public object cover { get; set; }
-        public string account_url { get; set; }
-        public string privacy { get; set; }
-        public string layout { get; set; }
-        public int views { get; set; }
-        public string link { get; set; }
-        public bool favorite { get; set; }
-        public int order { get; set; }*/
+        public object data { get; set; }
+        public bool success { get; set; }
+        public int status { get; set; }
     }
 
     public class ImgurErrorData
@@ -302,10 +287,56 @@ namespace ShareX.UploadersLib.ImageUploaders
         public string method { get; set; }
     }
 
-    public class ImgurAlbums
+    public class ImgurImageData
     {
-        public List<ImgurAlbumData> data { get; set; }
-        public bool success { get; set; }
-        public int status { get; set; }
+        public string id { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public int datetime { get; set; }
+        public string type { get; set; }
+        public bool animated { get; set; }
+        public int width { get; set; }
+        public int height { get; set; }
+        public int size { get; set; }
+        public int views { get; set; }
+        public int bandwidth { get; set; }
+        public string deletehash { get; set; }
+        public string name { get; set; }
+        public string section { get; set; }
+        public string link { get; set; }
+        public string gifv { get; set; }
+        public string mp4 { get; set; }
+        public string webm { get; set; }
+        public bool looping { get; set; }
+        public bool favorite { get; set; }
+        public bool? nsfw { get; set; }
+        public string vote { get; set; }
+        public string account_url { get; set; }
+        public int? account_id { get; set; }
+        public string comment_preview { get; set; }
+    }
+
+    public class ImgurAlbumData
+    {
+        public string id { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public int datetime { get; set; }
+        public string cover { get; set; }
+        public string cover_width { get; set; }
+        public string cover_height { get; set; }
+        public string account_url { get; set; }
+        public int? account_id { get; set; }
+        public string privacy { get; set; }
+        public string layout { get; set; }
+        public int views { get; set; }
+        public string link { get; set; }
+        public bool favorite { get; set; }
+        public bool? nsfw { get; set; }
+        public string section { get; set; }
+        public int order { get; set; }
+        public string deletehash { get; set; }
+        public int images_count { get; set; }
+        public ImgurImageData[] images { get; set; }
     }
 }

@@ -239,7 +239,7 @@
     <Compile Include="HelperClasses\OAuth\OAuthManager.cs" />
     <Compile Include="HelperClasses\OAuth\OAuthInfo.cs" />
     <Compile Include="ImageUploaders\CustomImageUploader.cs" />
-    <Compile Include="ImageUploaders\Imgur_v3.cs" />
+    <Compile Include="ImageUploaders\Imgur.cs" />
     <Compile Include="ImageUploaders\Picasa.cs" />
     <Compile Include="TextUploaders\CustomTextUploader.cs" />
     <Compile Include="TextUploaders\Gist.cs" />
@@ -264,7 +264,6 @@
     <Compile Include="ImageUploaders\ImageBin.cs" />
     <Compile Include="ImageUploaders\ImageShackUploader.cs" />
     <Compile Include="ImageUploaders\Img1Uploader.cs" />
-    <Compile Include="ImageUploaders\Imgur_v2.cs" />
     <Compile Include="ImageUploaders\TinyPicUploader.cs" />
     <Compile Include="ImageUploaders\TwitPicUploader.cs" />
     <Compile Include="ImageUploaders\TwitSnapsUploader.cs" />
