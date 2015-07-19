@@ -67,7 +67,6 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             UploadResult result = new UploadResult();
 
-            fileName = Helpers.GetValidURL(fileName);
             string subFolderPath = Account.GetSubFolderPath();
             string path = subFolderPath.CombineURL(fileName);
             bool uploadResult;
