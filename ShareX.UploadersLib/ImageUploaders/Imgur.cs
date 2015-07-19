@@ -215,7 +215,14 @@ namespace ShareX.UploadersLib.ImageUploaders
                         {
                             if (DirectLink)
                             {
-                                result.URL = imageData.link;
+                                if (!string.IsNullOrEmpty(imageData.gifv))
+                                {
+                                    result.URL = imageData.gifv;
+                                }
+                                else
+                                {
+                                    result.URL = imageData.link;
+                                }
                             }
                             else
                             {
