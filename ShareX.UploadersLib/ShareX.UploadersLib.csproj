@@ -284,6 +284,7 @@
     <Compile Include="TextUploaders\Slexy.cs" />
     <Compile Include="Uploader.cs" />
     <Compile Include="URLShortener.cs" />
+    <Compile Include="URLShorteners\TwoGPURLShortener.cs" />
     <Compile Include="URLShorteners\AdFlyURLShortener.cs" />
     <Compile Include="URLShorteners\BitlyURLShortener.cs" />
     <Compile Include="URLShorteners\CoinURLShortener.cs" />
