@@ -282,7 +282,7 @@ namespace ShareX.HelpersLib
             return newPosition;
         }
 
-        public static Rectangle GetWindowRectangle(IntPtr handle, bool maximizeFix = true)
+        public static Rectangle GetWindowRectangle(IntPtr handle)
         {
             Rectangle rect = Rectangle.Empty;
 
@@ -301,7 +301,7 @@ namespace ShareX.HelpersLib
                 rect = NativeMethods.GetWindowRect(handle);
             }
 
-            if (maximizeFix && NativeMethods.IsZoomed(handle))
+            if (!Helpers.IsWindows10OrGreater() && NativeMethods.IsZoomed(handle))
             {
                 rect = NativeMethods.MaximizedWindowFix(handle, rect);
             }
