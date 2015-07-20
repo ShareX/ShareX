@@ -278,6 +278,9 @@ namespace ShareX.UploadersLib
         // lnku.co
         public string LnkUAPIKEY = string.Empty;
 
+        // coinurl.com
+        public string CoinURLUUID = string.Empty;
+
         #endregion URL shorteners
 
         #region URL sharing services
@@ -433,6 +436,8 @@ namespace ShareX.UploadersLib
                     return !string.IsNullOrEmpty(AdFlyAPIKEY) && !string.IsNullOrEmpty(AdFlyAPIUID);
                 case UrlShortenerType.LnkU:
                     return !string.IsNullOrEmpty(LnkUAPIKEY);
+                case UrlShortenerType.CoinURL:
+                    return !string.IsNullOrEmpty(CoinURLUUID);
                 case UrlShortenerType.CustomURLShortener:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomURLShortenerSelected);
             }
