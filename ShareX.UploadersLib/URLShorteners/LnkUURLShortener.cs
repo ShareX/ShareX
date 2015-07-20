@@ -28,42 +28,42 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
-	public sealed class LnkUURLShortener : URLShortener
-	{
-		private const string API_ENDPOINT = "http://lnku.co/api/go/";
-		public string API_KEY { get; set; }
+    public sealed class LnkUURLShortener : URLShortener
+    {
+        private const string API_ENDPOINT = "http://lnku.co/api/go/";
+        public string API_KEY { get; set; }
 
-		public override UploadResult ShortenURL(string url)
-		{
-			UploadResult result = new UploadResult { URL = url };
+        public override UploadResult ShortenURL(string url)
+        {
+            UploadResult result = new UploadResult { URL = url };
 
-			Dictionary<string, string> args = new Dictionary<string, string>();
-			args.Add("apikey", API_KEY);
-			args.Add("action" , "shorten");
-			args.Add("fullurl", url);
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("apikey", API_KEY);
+            args.Add("action", "shorten");
+            args.Add("fullurl", url);
 
-			string response = SendRequest(HttpMethod.GET, API_ENDPOINT, args);
+            string response = SendRequest(HttpMethod.GET, API_ENDPOINT, args);
 
-			if (!string.IsNullOrEmpty(response))
-			{
-				LnkUURLShortenerResponse jsonResponse = JsonConvert.DeserializeObject<LnkUURLShortenerResponse>(response);
+            if (!string.IsNullOrEmpty(response))
+            {
+                LnkUURLShortenerResponse jsonResponse = JsonConvert.DeserializeObject<LnkUURLShortenerResponse>(response);
 
-				if (jsonResponse != null)
-				{
-					result.ShortenedURL = jsonResponse.shorturl;
-				}
-			}
+                if (jsonResponse != null)
+                {
+                    result.ShortenedURL = jsonResponse.shorturl;
+                }
+            }
 
-			return result;
-		}
-	}
+            return result;
+        }
+    }
 
-	public class LnkUURLShortenerResponse
-	{
-		public string shortcode { get; set; }
-		public string site { get; set; }
-		public string shorturl { get; set; }
-		public string fullurl { get; set; }
-		public string title { get; set; }
-	}
+    public class LnkUURLShortenerResponse
+    {
+        public string shortcode { get; set; }
+        public string site { get; set; }
+        public string shorturl { get; set; }
+        public string fullurl { get; set; }
+        public string title { get; set; }
+    }
 }
