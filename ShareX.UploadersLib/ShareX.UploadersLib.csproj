@@ -292,6 +292,7 @@
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
     <Compile Include="URLShorteners\LnkUURLShortener.cs" />
     <Compile Include="URLShorteners\NlcmURLShortener.cs" />
+    <Compile Include="URLShorteners\QRnetURLShortener.cs" />
     <Compile Include="URLShorteners\TinyURLShortener.cs" />
     <Compile Include="URLShorteners\TurlURLShortener.cs" />
     <Compile Include="FileUploaders\MediaCrushUploader.cs" />
