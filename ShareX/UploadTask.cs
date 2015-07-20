@@ -1087,6 +1087,9 @@ namespace ShareX
                         UUID = Program.UploadersConfig.CoinURLUUID
                     };
                     break;
+                case UrlShortenerType.QRnet:
+                    urlShortener = new QRnetURLShortener();
+                    break;
                 case UrlShortenerType.CustomURLShortener:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomURLShortenerSelected);
                     if (customUploader != null)
