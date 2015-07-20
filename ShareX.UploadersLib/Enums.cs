@@ -162,6 +162,8 @@ namespace ShareX.UploadersLib
         QRnet,
         [Description("vurl.com")]
         VURL,
+        [Description("2.gp")]
+        TwoGP,
         CustomURLShortener // Localized
     }
 

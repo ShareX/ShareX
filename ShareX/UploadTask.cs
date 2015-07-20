@@ -1093,6 +1093,9 @@ namespace ShareX
                 case UrlShortenerType.VURL:
                     urlShortener = new VURLShortener();
                     break;
+                case UrlShortenerType.TwoGP:
+                    urlShortener = new TwoGPURLShortener();
+                    break;
                 case UrlShortenerType.CustomURLShortener:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomURLShortenerSelected);
                     if (customUploader != null)
