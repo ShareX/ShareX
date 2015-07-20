@@ -63,6 +63,7 @@ Pushbullet support: https://github.com/BallisticLingonberries
 Lambda support: https://github.com/marcusant
 VideoBin support: https://github.com/corey-/
 Up1 support: https://github.com/Upload
+LnkU, CoinURL, QRnet, VURL support: https://github.com/DanielMcAssey
 
 {1}:
 
