@@ -160,6 +160,8 @@ namespace ShareX.UploadersLib
         CoinURL,
         [Description("qr.net")]
         QRnet,
+        [Description("vurl.com")]
+        VURL,
         CustomURLShortener // Localized
     }
 

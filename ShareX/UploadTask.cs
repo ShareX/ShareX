@@ -1090,6 +1090,9 @@ namespace ShareX
                 case UrlShortenerType.QRnet:
                     urlShortener = new QRnetURLShortener();
                     break;
+                case UrlShortenerType.VURL:
+                    urlShortener = new VURLShortener();
+                    break;
                 case UrlShortenerType.CustomURLShortener:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomURLShortenerSelected);
                     if (customUploader != null)
