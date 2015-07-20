@@ -461,4 +461,7 @@ Created folders:</value>
   <data name="Hubic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\hubic.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LnkU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Favicons\LnkU.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

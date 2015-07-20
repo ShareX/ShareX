@@ -95,6 +95,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpImageShack, Resources.ImageShack);
             AddIconToTab(tpImgur, Resources.Imgur);
             AddIconToTab(tpJira, Resources.jira);
+            AddIconToTab(tpLnkU, Resources.LnkU);
             AddIconToTab(tpMediaFire, Resources.MediaFire);
             AddIconToTab(tpMega, Resources.Mega);
             AddIconToTab(tpMinus, Resources.Minus);
@@ -581,6 +582,10 @@ namespace ShareX.UploadersLib
 
             txtAdflyAPIKEY.Text = Config.AdFlyAPIKEY;
             txtAdflyAPIUID.Text = Config.AdFlyAPIUID;
+
+            // lnku.co
+
+            txtLnkUAPIKEY.Text = Config.LnkUAPIKEY;
 
             #endregion URL Shorteners
 
@@ -2132,6 +2137,14 @@ namespace ShareX.UploadersLib
         }
 
         #endregion adf.ly
+
+        #region LnkU.co
+
+        private void txtLnkUAPIKEY_TextChanged(object sender, EventArgs e)
+        {
+            Config.LnkUAPIKEY = txtLnkUAPIKEY.Text;
+        }
+        #endregion
 
         #endregion URL Shorteners
 

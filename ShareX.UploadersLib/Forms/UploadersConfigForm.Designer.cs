@@ -433,6 +433,9 @@
             this.atcGoogleURLShortenerAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauthTwitter = new ShareX.UploadersLib.OAuthControl();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.tpLnkU = new System.Windows.Forms.TabPage();
+            this.txtLnkUAPIKEY = new System.Windows.Forms.TextBox();
+            this.lblLnkUAPIKey = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -495,6 +498,7 @@
             this.tpPicasa.SuspendLayout();
             this.tpChevereto.SuspendLayout();
             this.tcUploaders.SuspendLayout();
+            this.tpLnkU.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -1059,6 +1063,7 @@
             this.tcURLShorteners.Controls.Add(this.tpGoogleURLShortener);
             this.tcURLShorteners.Controls.Add(this.tpYourls);
             this.tcURLShorteners.Controls.Add(this.tpAdFly);
+			this.tcURLShorteners.Controls.Add(this.tpLnkU);
             resources.ApplyResources(this.tcURLShorteners, "tcURLShorteners");
             this.tcURLShorteners.Name = "tcURLShorteners";
             this.tcURLShorteners.SelectedIndex = 0;
@@ -3415,15 +3420,25 @@
             this.oauth2GoogleURLShortener.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleURLShortener_CompleteButtonClicked);
             this.oauth2GoogleURLShortener.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleURLShortener_ClearButtonClicked);
             this.oauth2GoogleURLShortener.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleURLShortener_RefreshButtonClicked);
+            // tpLnkU
             // 
             // atcGoogleURLShortenerAccountType
+            this.tpLnkU.Controls.Add(this.txtLnkUAPIKEY);
+            this.tpLnkU.Controls.Add(this.lblLnkUAPIKey);
+            resources.ApplyResources(this.tpLnkU, "tpLnkU");
+            this.tpLnkU.Name = "tpLnkU";
+            this.tpLnkU.UseVisualStyleBackColor = true;
             // 
             resources.ApplyResources(this.atcGoogleURLShortenerAccountType, "atcGoogleURLShortenerAccountType");
             this.atcGoogleURLShortenerAccountType.Name = "atcGoogleURLShortenerAccountType";
             this.atcGoogleURLShortenerAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             this.atcGoogleURLShortenerAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGoogleURLShortenerAccountType_AccountTypeChanged);
+            // txtLnkUAPIKEY
             // 
             // oauthTwitter
+            resources.ApplyResources(this.txtLnkUAPIKEY, "txtLnkUAPIKEY");
+            this.txtLnkUAPIKEY.Name = "txtLnkUAPIKEY";
+            this.txtLnkUAPIKEY.TextChanged += new System.EventHandler(this.txtLnkUAPIKEY_TextChanged);
             // 
             resources.ApplyResources(this.oauthTwitter, "oauthTwitter");
             this.oauthTwitter.IsRefreshable = false;
@@ -3431,12 +3446,15 @@
             this.oauthTwitter.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauthTwitter_OpenButtonClicked);
             this.oauthTwitter.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauthTwitter_CompleteButtonClicked);
             this.oauthTwitter.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauthTwitter_ClearButtonClicked);
+            // lblLnkUAPIKey
             // 
             // actRapidShareAccountType
             // 
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
+            resources.ApplyResources(this.lblLnkUAPIKey, "lblLnkUAPIKey");
+            this.lblLnkUAPIKey.Name = "lblLnkUAPIKey";
             // 
             // UploadersConfigForm
             // 
@@ -3557,6 +3575,8 @@
             this.tpChevereto.ResumeLayout(false);
             this.tpChevereto.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
+            this.tpLnkU.ResumeLayout(false);
+            this.tpLnkU.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3965,6 +3985,9 @@
         private System.Windows.Forms.TextBox txtUp1Key;
         private System.Windows.Forms.TextBox txtUp1Host;
         private System.Windows.Forms.Label lblUp1Key;
-        private System.Windows.Forms.Label lblUp1Host;    
+        private System.Windows.Forms.Label lblUp1Host;
+        private System.Windows.Forms.TabPage tpLnkU;
+        private System.Windows.Forms.TextBox txtLnkUAPIKEY;
+        private System.Windows.Forms.Label lblLnkUAPIKey;
     }
 }
