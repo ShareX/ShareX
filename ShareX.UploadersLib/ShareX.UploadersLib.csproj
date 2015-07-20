@@ -289,6 +289,7 @@
     <Compile Include="URLShorteners\CustomURLShortener.cs" />
     <Compile Include="URLShorteners\GoogleURLShortener.cs" />
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
+    <Compile Include="URLShorteners\LnkUURLShortener.cs" />
     <Compile Include="URLShorteners\NlcmURLShortener.cs" />
     <Compile Include="URLShorteners\TinyURLShortener.cs" />
     <Compile Include="URLShorteners\TurlURLShortener.cs" />
@@ -744,6 +745,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\Up1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Favicons\LnkU.ico" />
+    <None Include="Resources\LnkU.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -154,6 +154,8 @@ namespace ShareX.UploadersLib
         NLCM,
         [Description("adf.ly")]
         AdFly,
+		[Description("lnku.co")]
+		LnkU,
         CustomURLShortener // Localized
     }
 

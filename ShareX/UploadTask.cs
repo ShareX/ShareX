@@ -1075,6 +1075,12 @@ namespace ShareX
                         APIUID = Program.UploadersConfig.AdFlyAPIUID
                     };
                     break;
+				case UrlShortenerType.LnkU:
+					urlShortener = new LnkUURLShortener
+					{
+						API_KEY = Program.UploadersConfig.LnkUAPIKEY
+					};
+					break;
                 case UrlShortenerType.CustomURLShortener:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomURLShortenerSelected);
                     if (customUploader != null)
