@@ -30,7 +30,7 @@ namespace ShareX.UploadersLib.URLShorteners
 {
 	public sealed class LnkUURLShortener : URLShortener
 	{
-		private const string API_ENDPOINT = "https://api-ssl.bitly.com/";
+		private const string API_ENDPOINT = "http://lnku.co/api/go/";
 		public string API_KEY { get; set; }
 
 		public override UploadResult ShortenURL(string url)
@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.URLShorteners
 			Dictionary<string, string> args = new Dictionary<string, string>();
 			args.Add("apikey", API_KEY);
 			args.Add("action" , "shorten");
-			args.Add("url", url);
+			args.Add("fullurl", url);
 
 			string response = SendRequest(HttpMethod.GET, API_ENDPOINT, args);
 
