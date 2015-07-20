@@ -156,6 +156,8 @@ namespace ShareX.UploadersLib
         AdFly,
         [Description("lnku.co")]
         LnkU,
+        [Description("coinurl.com")]
+        CoinURL,
         CustomURLShortener // Localized
     }
 

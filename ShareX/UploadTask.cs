@@ -1081,6 +1081,12 @@ namespace ShareX
                         API_KEY = Program.UploadersConfig.LnkUAPIKEY
                     };
                     break;
+                case UrlShortenerType.CoinURL:
+                    urlShortener = new CoinURLShortener
+                    {
+                        UUID = Program.UploadersConfig.CoinURLUUID
+                    };
+                    break;
                 case UrlShortenerType.CustomURLShortener:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomURLShortenerSelected);
                     if (customUploader != null)

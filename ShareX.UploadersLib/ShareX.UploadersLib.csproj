@@ -286,6 +286,7 @@
     <Compile Include="URLShortener.cs" />
     <Compile Include="URLShorteners\AdFlyURLShortener.cs" />
     <Compile Include="URLShorteners\BitlyURLShortener.cs" />
+    <Compile Include="URLShorteners\CoinURLShortener.cs" />
     <Compile Include="URLShorteners\CustomURLShortener.cs" />
     <Compile Include="URLShorteners\GoogleURLShortener.cs" />
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
@@ -747,7 +748,9 @@
     <None Include="Favicons\Up1.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Favicons\CoinURL.ico" />
     <Content Include="Favicons\LnkU.ico" />
+    <None Include="Resources\favicon.ico" />
     <None Include="Resources\LnkU.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
