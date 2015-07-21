@@ -128,6 +128,11 @@ namespace ShareX
                     Setting.HotkeyInfo.Hotkey = Keys.None;
                     StopEditing();
                 }
+                else if (e.KeyCode == Keys.LWin || e.KeyCode == Keys.RWin)
+                {
+                    Setting.HotkeyInfo.Win = !Setting.HotkeyInfo.Win;
+                    UpdateHotkeyText();
+                }
                 else if (new HotkeyInfo(e.KeyData).IsValidHotkey)
                 {
                     Setting.HotkeyInfo.Hotkey = e.KeyData;

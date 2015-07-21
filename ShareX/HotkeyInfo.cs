@@ -101,7 +101,7 @@ namespace ShareX
         {
             get
             {
-                return KeyCode == Keys.ControlKey || KeyCode == Keys.ShiftKey || KeyCode == Keys.Menu;
+                return KeyCode == Keys.ControlKey || KeyCode == Keys.ShiftKey || KeyCode == Keys.Menu || (KeyCode == Keys.None && Win);
             }
         }
 
@@ -134,27 +134,24 @@ namespace ShareX
         {
             string text = string.Empty;
 
-            if (KeyCode != Keys.None)
+            if (Control)
             {
-                if (Control)
-                {
-                    text += "Ctrl + ";
-                }
+                text += "Ctrl + ";
+            }
 
-                if (Shift)
-                {
-                    text += "Shift + ";
-                }
+            if (Shift)
+            {
+                text += "Shift + ";
+            }
 
-                if (Alt)
-                {
-                    text += "Alt + ";
-                }
+            if (Alt)
+            {
+                text += "Alt + ";
+            }
 
-                if (Win)
-                {
-                    text += "Win + ";
-                }
+            if (Win)
+            {
+                text += "Win + ";
             }
 
             if (IsOnlyModifiers)
