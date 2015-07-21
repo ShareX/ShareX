@@ -25,7 +25,9 @@
 
 using ShareX.HelpersLib;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Drawing;
+using System.Drawing.Design;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -36,6 +38,13 @@ namespace ShareX.ScreenCaptureLib
 
         [DefaultValue(true), Description("Show coordinate and size information.")]
         public bool ShowInfo { get; set; }
+
+        [DefaultValue(false), Description("Allows to show your custom info text near cursor. This way you can show color info too.")]
+        public bool UseCustomInfoText { get; set; }
+
+        [DefaultValue("X: $x, Y: $y\r\nR: $r, G: $g, B: $b\r\nHex: $hex"), Description("Show this custom info when color info setting is enabled. Formats: $x, $y, $r, $g, $b, $hex"),
+            Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
+        public string CustomInfoText { get; set; }
 
         [DefaultValue(true), Description("Show hotkeys/tips.")]
         public bool ShowTips { get; set; }

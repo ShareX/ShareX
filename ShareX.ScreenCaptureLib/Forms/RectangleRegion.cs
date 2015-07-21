@@ -115,12 +115,11 @@ namespace ShareX.ScreenCaptureLib
             if (AreaManager.IsCurrentAreaValid)
             {
                 clipboardText = GetAreaText(AreaManager.CurrentArea);
-                ClipboardHelpers.CopyText(clipboardText);
             }
             else
             {
                 CurrentPosition = InputManager.MousePosition;
-                clipboardText = string.Format("X: {0} Y: {1}", CurrentPosition.X, CurrentPosition.Y);
+                clipboardText = GetInfoText();
             }
 
             ClipboardHelpers.CopyText(clipboardText);
@@ -175,7 +174,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (ScreenColorPickerMode)
+            if (Config.UseCustomInfoText || ScreenColorPickerMode)
             {
                 bmpSurfaceImage = new Bitmap(SurfaceImage);
             }
@@ -384,6 +383,14 @@ namespace ShareX.ScreenCaptureLib
             {
                 sb.AppendLine("[Ctrl + C] Copy position and size");
             }
+            else if (Config.UseCustomInfoText)
+            {
+                sb.AppendLine("[Ctrl + C] Copy info");
+            }
+            else
+            {
+                sb.AppendLine("[Ctrl + C] Copy position");
+            }
 
             sb.AppendLine();
 
@@ -444,6 +451,28 @@ namespace ShareX.ScreenCaptureLib
             return string.Format(Resources.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
         }
 
+        private string GetInfoText()
+        {
+            if (ScreenColorPickerMode || Config.UseCustomInfoText)
+            {
+                Color color = CurrentColor;
+
+                if (!ScreenColorPickerMode && !string.IsNullOrEmpty(Config.CustomInfoText))
+                {
+                    return Config.CustomInfoText.Replace("$r", color.R.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                        Replace("$g", color.G.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                        Replace("$b", color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                        Replace("$hex", ColorHelpers.ColorToHex(color), StringComparison.InvariantCultureIgnoreCase).
+                        Replace("$x", CurrentPosition.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                        Replace("$y", CurrentPosition.Y.ToString(), StringComparison.InvariantCultureIgnoreCase);
+                }
+
+                return string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y);
+            }
+
+            return string.Format("X: {0} Y: {1}", CurrentPosition.X, CurrentPosition.Y);
+        }
+
         private void DrawCrosshair(Graphics g)
         {
             int offset = 5;
@@ -492,16 +521,7 @@ namespace ShareX.ScreenCaptureLib
 
                 CurrentPosition = InputManager.MousePosition;
 
-                if (ScreenColorPickerMode)
-                {
-                    Color color = CurrentColor;
-                    infoText = string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y);
-                }
-                else
-                {
-                    infoText = string.Format("X: {0} Y: {1}", CurrentPosition.X, CurrentPosition.Y);
-                }
-
+                infoText = GetInfoText();
                 Size textSize = g.MeasureString(infoText, infoFont).ToSize();
                 infoTextRect.Size = new Size(textSize.Width + infoTextPadding * 2, textSize.Height + infoTextPadding * 2);
             }
