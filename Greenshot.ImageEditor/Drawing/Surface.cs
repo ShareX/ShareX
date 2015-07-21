@@ -700,7 +700,7 @@ namespace Greenshot.Drawing
                 DrawableContainerList loadedElements = (DrawableContainerList)binaryRead.Deserialize(streamRead);
                 loadedElements.Parent = this;
                 // Make sure the steplabels are sorted accoring to their number
-                _stepLabels.Sort(delegate(StepLabelContainer p1, StepLabelContainer p2)
+                _stepLabels.Sort(delegate (StepLabelContainer p1, StepLabelContainer p2)
                 {
                     return p1.Number.CompareTo(p2.Number);
                 });

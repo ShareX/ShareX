@@ -223,10 +223,10 @@ namespace ShareX.HistoryLib
 
             var types = from hi in historyItems
                         group hi by hi.Type
-                            into t
-                            let count = t.Count()
-                            orderby t.Key
-                            select string.Format(", {0}: {1}", t.Key, count);
+                        into t
+                        let count = t.Count()
+                        orderby t.Key
+                        select string.Format(", {0}: {1}", t.Key, count);
 
             foreach (string type in types)
             {

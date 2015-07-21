@@ -1031,12 +1031,12 @@ namespace GreenshotPlugin.Core
         {
             Bitmap clone = (Bitmap)Clone(sourceImage);
             ColorMatrix invertMatrix = new ColorMatrix(new[] {
-				new float[] {-1, 0, 0, 0, 0},
-				new float[] {0, -1, 0, 0, 0},
-				new float[] {0, 0, -1, 0, 0},
-				new float[] {0, 0, 0, 1, 0},
-				new float[] {1, 1, 1, 1, 1}
-			});
+                new float[] {-1, 0, 0, 0, 0},
+                new float[] {0, -1, 0, 0, 0},
+                new float[] {0, 0, -1, 0, 0},
+                new float[] {0, 0, 0, 1, 0},
+                new float[] {1, 1, 1, 1, 1}
+            });
             ApplyColorMatrix(clone, invertMatrix);
             return clone;
         }
@@ -1196,12 +1196,12 @@ namespace GreenshotPlugin.Core
             float adjustedBrightness = brightness - 1.0f;
             ColorMatrix applyColorMatrix = new ColorMatrix(
                     new float[][] {
-						new float[] {contrast, 0, 0, 0, 0}, // scale red
+                        new float[] {contrast, 0, 0, 0, 0}, // scale red
 						new float[] {0, contrast, 0, 0, 0}, // scale green
 						new float[] {0, 0, contrast, 0, 0}, // scale blue
 						new float[] {0, 0, 0, 1.0f, 0}, // don't scale alpha
 						new float[] {adjustedBrightness, adjustedBrightness, adjustedBrightness, 0, 1}
-					});
+                    });
 
             //create some image attributes
             ImageAttributes attributes = new ImageAttributes();
@@ -1241,12 +1241,12 @@ namespace GreenshotPlugin.Core
         {
             Bitmap clone = (Bitmap)Clone(sourceImage);
             ColorMatrix grayscaleMatrix = new ColorMatrix(new float[][] {
-				new float[] {.3f, .3f, .3f, 0, 0},
-				new float[] {.59f, .59f, .59f, 0, 0},
-				new float[] {.11f, .11f, .11f, 0, 0},
-				new float[] {0, 0, 0, 1, 0},
-				new float[] {0, 0, 0, 0, 1}
-			});
+                new float[] {.3f, .3f, .3f, 0, 0},
+                new float[] {.59f, .59f, .59f, 0, 0},
+                new float[] {.11f, .11f, .11f, 0, 0},
+                new float[] {0, 0, 0, 1, 0},
+                new float[] {0, 0, 0, 0, 1}
+            });
             ApplyColorMatrix(clone, grayscaleMatrix);
             return clone;
         }

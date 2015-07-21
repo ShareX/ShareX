@@ -148,7 +148,7 @@ namespace GreenshotPlugin.Core
             lock (lockObject)
             {
                 var cachedItem = new CachedItem(key, value, secondsToExpire.HasValue ? secondsToExpire.Value : this.secondsToExpire);
-                cachedItem.Expired += delegate(TK cacheKey, TV cacheValue)
+                cachedItem.Expired += delegate (TK cacheKey, TV cacheValue)
                 {
                     if (internalCache.ContainsKey(cacheKey))
                     {

@@ -30,7 +30,6 @@ using Org.BouncyCastle.Crypto.Parameters;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;

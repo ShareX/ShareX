@@ -2149,7 +2149,8 @@ namespace ShareX.UploadersLib
         {
             Config.LnkUAPIKEY = txtLnkUAPIKEY.Text;
         }
-        #endregion
+
+        #endregion LnkU.co
 
         #region CoinURL
 
@@ -2157,7 +2158,8 @@ namespace ShareX.UploadersLib
         {
             Config.CoinURLUUID = txtCoinURLUUID.Text;
         }
-        #endregion
+
+        #endregion CoinURL
 
         #endregion URL Shorteners
 

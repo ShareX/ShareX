@@ -90,11 +90,11 @@ namespace GreenshotPlugin.Core
         private Int32[] blues;
         private Int32[] sums;
 
-        private Int64[, ,] weights;
-        private Int64[, ,] momentsRed;
-        private Int64[, ,] momentsGreen;
-        private Int64[, ,] momentsBlue;
-        private Single[, ,] moments;
+        private Int64[,,] weights;
+        private Int64[,,] momentsRed;
+        private Int64[,,] momentsGreen;
+        private Int64[,,] momentsBlue;
+        private Single[,,] moments;
 
         private byte[] tag;
 
@@ -526,7 +526,7 @@ namespace GreenshotPlugin.Core
         /// <summary>
         /// Computes the volume of the cube in a specific moment.
         /// </summary>
-        private static Int64 Volume(WuColorCube cube, Int64[, ,] moment)
+        private static Int64 Volume(WuColorCube cube, Int64[,,] moment)
         {
             return moment[cube.RedMaximum, cube.GreenMaximum, cube.BlueMaximum] -
                    moment[cube.RedMaximum, cube.GreenMaximum, cube.BlueMinimum] -
@@ -541,7 +541,7 @@ namespace GreenshotPlugin.Core
         /// <summary>
         /// Computes the volume of the cube in a specific moment. For the floating-point values.
         /// </summary>
-        private static Single VolumeFloat(WuColorCube cube, Single[, ,] moment)
+        private static Single VolumeFloat(WuColorCube cube, Single[,,] moment)
         {
             return moment[cube.RedMaximum, cube.GreenMaximum, cube.BlueMaximum] -
                    moment[cube.RedMaximum, cube.GreenMaximum, cube.BlueMinimum] -
@@ -556,7 +556,7 @@ namespace GreenshotPlugin.Core
         /// <summary>
         /// Splits the cube in given position, and color direction.
         /// </summary>
-        private static Int64 Top(WuColorCube cube, Int32 direction, Int32 position, Int64[, ,] moment)
+        private static Int64 Top(WuColorCube cube, Int32 direction, Int32 position, Int64[,,] moment)
         {
             switch (direction)
             {
@@ -586,7 +586,7 @@ namespace GreenshotPlugin.Core
         /// <summary>
         /// Splits the cube in a given color direction at its minimum.
         /// </summary>
-        private static Int64 Bottom(WuColorCube cube, Int32 direction, Int64[, ,] moment)
+        private static Int64 Bottom(WuColorCube cube, Int32 direction, Int64[,,] moment)
         {
             switch (direction)
             {

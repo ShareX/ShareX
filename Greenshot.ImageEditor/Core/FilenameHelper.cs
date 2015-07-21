@@ -478,7 +478,7 @@ namespace GreenshotPlugin.Core
             }
 
             return VAR_REGEXP.Replace(pattern,
-                delegate(Match m)
+                delegate (Match m)
                 {
                     return MatchVarEvaluator(m, null, processVars, userVars, machineVars, filenameSafeMode);
                 }
@@ -527,7 +527,7 @@ namespace GreenshotPlugin.Core
             try
             {
                 return VAR_REGEXP.Replace(pattern,
-                    delegate(Match m)
+                    delegate (Match m)
                     {
                         return MatchVarEvaluator(m, captureDetails, processVars, userVars, machineVars, filenameSafeMode);
                     }
