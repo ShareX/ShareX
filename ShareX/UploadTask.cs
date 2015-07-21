@@ -981,7 +981,8 @@ namespace ShareX
                         Path = Program.UploadersConfig.OwnCloudPath,
                         CreateShare = Program.UploadersConfig.OwnCloudCreateShare,
                         DirectLink = Program.UploadersConfig.OwnCloudDirectLink,
-                        IgnoreInvalidCert = Program.UploadersConfig.OwnCloudIgnoreInvalidCert
+                        IgnoreInvalidCert = Program.UploadersConfig.OwnCloudIgnoreInvalidCert,
+                        IsCompatibility81 = Program.UploadersConfig.OwnCloud81Compatibility
                     };
                     break;
                 case FileDestination.Pushbullet:
