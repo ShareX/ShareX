@@ -532,6 +532,7 @@ namespace ShareX.UploadersLib
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
             cbOwnCloudIgnoreInvalidCert.Checked = Config.OwnCloudIgnoreInvalidCert;
+            cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
 
             // MediaFire
 
@@ -1882,6 +1883,11 @@ namespace ShareX.UploadersLib
         private void cbOwnCloudIgnoreInvalidCert_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloudIgnoreInvalidCert = cbOwnCloudIgnoreInvalidCert.Checked;
+        }
+
+        private void cbOwnCloud81Compatibility_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloud81Compatibility = cbOwnCloud81Compatibility.Checked;
         }
 
         #endregion ownCloud

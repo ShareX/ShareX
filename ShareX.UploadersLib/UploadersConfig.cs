@@ -229,6 +229,7 @@ namespace ShareX.UploadersLib
         public bool OwnCloudCreateShare = true;
         public bool OwnCloudDirectLink = false;
         public bool OwnCloudIgnoreInvalidCert = false;
+        public bool OwnCloud81Compatibility = false;
 
         // MediaFire
 

@@ -132,6 +132,9 @@
             this.tpLnkU = new System.Windows.Forms.TabPage();
             this.txtLnkUAPIKEY = new System.Windows.Forms.TextBox();
             this.lblLnkUAPIKey = new System.Windows.Forms.Label();
+            this.tpCoinURL = new System.Windows.Forms.TabPage();
+            this.txtCoinURLUUID = new System.Windows.Forms.TextBox();
+            this.lblCoinURLUUID = new System.Windows.Forms.Label();
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
             this.tpFTP = new System.Windows.Forms.TabPage();
@@ -436,9 +439,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.tpCoinURL = new System.Windows.Forms.TabPage();
-            this.txtCoinURLUUID = new System.Windows.Forms.TextBox();
-            this.lblCoinURLUUID = new System.Windows.Forms.Label();
+            this.cbOwnCloud81Compatibility = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -453,6 +454,7 @@
             this.tpYourls.SuspendLayout();
             this.tpAdFly.SuspendLayout();
             this.tpLnkU.SuspendLayout();
+            this.tpCoinURL.SuspendLayout();
             this.tpFileUploaders.SuspendLayout();
             this.tcFileUploaders.SuspendLayout();
             this.tpFTP.SuspendLayout();
@@ -502,7 +504,6 @@
             this.tpPicasa.SuspendLayout();
             this.tpChevereto.SuspendLayout();
             this.tcUploaders.SuspendLayout();
-            this.tpCoinURL.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -1261,6 +1262,25 @@
             resources.ApplyResources(this.lblLnkUAPIKey, "lblLnkUAPIKey");
             this.lblLnkUAPIKey.Name = "lblLnkUAPIKey";
             // 
+            // tpCoinURL
+            // 
+            this.tpCoinURL.Controls.Add(this.txtCoinURLUUID);
+            this.tpCoinURL.Controls.Add(this.lblCoinURLUUID);
+            resources.ApplyResources(this.tpCoinURL, "tpCoinURL");
+            this.tpCoinURL.Name = "tpCoinURL";
+            this.tpCoinURL.UseVisualStyleBackColor = true;
+            // 
+            // txtCoinURLUUID
+            // 
+            resources.ApplyResources(this.txtCoinURLUUID, "txtCoinURLUUID");
+            this.txtCoinURLUUID.Name = "txtCoinURLUUID";
+            this.txtCoinURLUUID.TextChanged += new System.EventHandler(this.txtCoinURLUUID_TextChanged);
+            // 
+            // lblCoinURLUUID
+            // 
+            resources.ApplyResources(this.lblCoinURLUUID, "lblCoinURLUUID");
+            this.lblCoinURLUUID.Name = "lblCoinURLUUID";
+            // 
             // tpFileUploaders
             // 
             this.tpFileUploaders.Controls.Add(this.tcFileUploaders);
@@ -1939,6 +1959,7 @@
             // 
             // tpOwnCloud
             // 
+            this.tpOwnCloud.Controls.Add(this.cbOwnCloud81Compatibility);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudIgnoreInvalidCert);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudDirectLink);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudCreateShare);
@@ -3467,24 +3488,12 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // tpCoinURL
+            // cbOwnCloud81Compatibility
             // 
-            this.tpCoinURL.Controls.Add(this.txtCoinURLUUID);
-            this.tpCoinURL.Controls.Add(this.lblCoinURLUUID);
-            resources.ApplyResources(this.tpCoinURL, "tpCoinURL");
-            this.tpCoinURL.Name = "tpCoinURL";
-            this.tpCoinURL.UseVisualStyleBackColor = true;
-            // 
-            // txtCoinURLUUID
-            // 
-            resources.ApplyResources(this.txtCoinURLUUID, "txtCoinURLUUID");
-            this.txtCoinURLUUID.Name = "txtCoinURLUUID";
-            this.txtCoinURLUUID.TextChanged += new System.EventHandler(this.txtCoinURLUUID_TextChanged);
-            // 
-            // lblCoinURLUUID
-            // 
-            resources.ApplyResources(this.lblCoinURLUUID, "lblCoinURLUUID");
-            this.lblCoinURLUUID.Name = "lblCoinURLUUID";
+            resources.ApplyResources(this.cbOwnCloud81Compatibility, "cbOwnCloud81Compatibility");
+            this.cbOwnCloud81Compatibility.Name = "cbOwnCloud81Compatibility";
+            this.cbOwnCloud81Compatibility.UseVisualStyleBackColor = true;
+            this.cbOwnCloud81Compatibility.CheckedChanged += new System.EventHandler(this.cbOwnCloud81Compatibility_CheckedChanged);
             // 
             // UploadersConfigForm
             // 
@@ -3521,6 +3530,8 @@
             this.tpAdFly.PerformLayout();
             this.tpLnkU.ResumeLayout(false);
             this.tpLnkU.PerformLayout();
+            this.tpCoinURL.ResumeLayout(false);
+            this.tpCoinURL.PerformLayout();
             this.tpFileUploaders.ResumeLayout(false);
             this.tcFileUploaders.ResumeLayout(false);
             this.tpFTP.ResumeLayout(false);
@@ -3607,8 +3618,6 @@
             this.tpChevereto.ResumeLayout(false);
             this.tpChevereto.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
-            this.tpCoinURL.ResumeLayout(false);
-            this.tpCoinURL.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4024,5 +4033,6 @@
         private System.Windows.Forms.TabPage tpCoinURL;
         private System.Windows.Forms.TextBox txtCoinURLUUID;
         private System.Windows.Forms.Label lblCoinURLUUID;
+        private System.Windows.Forms.CheckBox cbOwnCloud81Compatibility;
     }
 }

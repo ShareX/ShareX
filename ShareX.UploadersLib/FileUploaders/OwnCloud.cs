@@ -41,6 +41,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool CreateShare { get; set; }
         public bool DirectLink { get; set; }
         public bool IgnoreInvalidCert { get; set; }
+        public bool IsCompatibility81 { get; set; }
 
         public OwnCloud(string host, string username, string password)
         {
@@ -133,7 +134,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     if (result.ocs.data != null && result.ocs.meta.statuscode == 100)
                     {
                         string link = result.ocs.data.url;
-                        if (DirectLink) link += "&download";
+                        if (DirectLink) link += (IsCompatibility81 ? "/download" : "&download");
                         return link;
                     }
                     else
