@@ -2505,7 +2505,7 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderExamples_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://github.com/ShareX/ShareX/wiki/Custom-Uploader-examples");
+            URLHelpers.OpenURL("https://github.com/ShareX/CustomUploaders");
         }
 
         private void btnCustomUploaderShowLastResponse_Click(object sender, EventArgs e)
