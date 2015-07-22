@@ -457,7 +457,7 @@ namespace ShareX.UploadersLib
             cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
-            CustomUploaderClear();
+            CustomUploaderClearFields();
 
             // Jira
 
@@ -2265,25 +2265,10 @@ namespace ShareX.UploadersLib
                 int index = lbCustomUploaderList.SelectedIndex;
                 Config.CustomUploadersList.RemoveAt(index);
                 lbCustomUploaderList.Items.RemoveAt(index);
-                CustomUploaderClear();
-                FixSelectedUploader(index);
+                CustomUploaderClearFields();
+                CustomUploaderFixSelectedUploader(index);
                 PrepareCustomUploaderList();
             }
-        }
-
-        private void FixSelectedUploader(int removedIndex)
-        {
-            if (Config.CustomImageUploaderSelected == removedIndex) Config.CustomImageUploaderSelected = 0;
-            else if (Config.CustomImageUploaderSelected > removedIndex) Config.CustomImageUploaderSelected--;
-
-            if (Config.CustomTextUploaderSelected == removedIndex) Config.CustomTextUploaderSelected = 0;
-            else if (Config.CustomTextUploaderSelected > removedIndex) Config.CustomTextUploaderSelected--;
-
-            if (Config.CustomFileUploaderSelected == removedIndex) Config.CustomFileUploaderSelected = 0;
-            else if (Config.CustomFileUploaderSelected > removedIndex) Config.CustomFileUploaderSelected--;
-
-            if (Config.CustomURLShortenerSelected == removedIndex) Config.CustomURLShortenerSelected = 0;
-            else if (Config.CustomURLShortenerSelected > removedIndex) Config.CustomURLShortenerSelected--;
         }
 
         private void btnCustomUploaderUpdate_Click(object sender, EventArgs e)
@@ -2309,6 +2294,19 @@ namespace ShareX.UploadersLib
         private void eiCustomUploaders_ImportRequested(object obj)
         {
             AddCustomUploader(obj as CustomUploaderItem);
+        }
+
+        private void btnCustomUploaderClearUploaders_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Remove all custom uploaders?", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CustomUploaderClearUploaders();
+            }
+        }
+
+        private void btnCustomUploaderClear_Click(object sender, EventArgs e)
+        {
+            CustomUploaderClearFields();
         }
 
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)
@@ -2367,12 +2365,11 @@ namespace ShareX.UploadersLib
 
                 if (!string.IsNullOrEmpty(regex))
                 {
+                    string syntax;
                     Match match = Regex.Match(regex, @"\((?:\?<(.+?)>)?.+?\)");
 
                     if (match.Success)
                     {
-                        string syntax;
-
                         if (match.Groups.Count > 1 && !string.IsNullOrEmpty(match.Groups[1].Value))
                         {
                             syntax = string.Format("${0},{1}$", selectedIndex + 1, match.Groups[1].Value);
@@ -2381,9 +2378,13 @@ namespace ShareX.UploadersLib
                         {
                             syntax = string.Format("${0},1$", selectedIndex + 1);
                         }
-
-                        txtCustomUploaderURL.AppendText(syntax);
                     }
+                    else
+                    {
+                        syntax = string.Format("${0}$", selectedIndex + 1);
+                    }
+
+                    txtCustomUploaderURL.AppendText(syntax);
                 }
             }
         }
@@ -2435,11 +2436,6 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderArgName.Text = name;
             txtCustomUploaderArgValue.Text = value;
-        }
-
-        private void btnCustomUploaderClear_Click(object sender, EventArgs e)
-        {
-            CustomUploaderClear();
         }
 
         private void cbCustomUploaderImageUploader_SelectedIndexChanged(object sender, EventArgs e)

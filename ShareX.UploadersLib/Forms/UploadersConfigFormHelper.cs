@@ -1764,9 +1764,33 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void CustomUploaderClear()
+        private void CustomUploaderClearUploaders()
+        {
+            Config.CustomUploadersList.Clear();
+            lbCustomUploaderList.Items.Clear();
+            CustomUploaderClearFields();
+            Config.CustomImageUploaderSelected = Config.CustomTextUploaderSelected = Config.CustomFileUploaderSelected = Config.CustomURLShortenerSelected = 0;
+            PrepareCustomUploaderList();
+        }
+
+        private void CustomUploaderClearFields()
         {
             LoadCustomUploader(new CustomUploaderItem());
+        }
+
+        private void CustomUploaderFixSelectedUploader(int removedIndex)
+        {
+            if (Config.CustomImageUploaderSelected == removedIndex) Config.CustomImageUploaderSelected = 0;
+            else if (Config.CustomImageUploaderSelected > removedIndex) Config.CustomImageUploaderSelected--;
+
+            if (Config.CustomTextUploaderSelected == removedIndex) Config.CustomTextUploaderSelected = 0;
+            else if (Config.CustomTextUploaderSelected > removedIndex) Config.CustomTextUploaderSelected--;
+
+            if (Config.CustomFileUploaderSelected == removedIndex) Config.CustomFileUploaderSelected = 0;
+            else if (Config.CustomFileUploaderSelected > removedIndex) Config.CustomFileUploaderSelected--;
+
+            if (Config.CustomURLShortenerSelected == removedIndex) Config.CustomURLShortenerSelected = 0;
+            else if (Config.CustomURLShortenerSelected > removedIndex) Config.CustomURLShortenerSelected--;
         }
 
         private void PrepareCustomUploaderList()
