@@ -190,12 +190,15 @@ namespace ShareX.HelpersLib
         {
             if (ImportRequested != null)
             {
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Settings (*.txt, *.json)|*.txt;*.json|All files (*.*)|*.*" })
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Settings (*.json)|*.json|All files (*.*)|*.*", Multiselect = true })
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
-                        string json = File.ReadAllText(ofd.FileName, Encoding.UTF8);
-                        Import(json);
+                        foreach (string filename in ofd.FileNames)
+                        {
+                            string json = File.ReadAllText(filename, Encoding.UTF8);
+                            Import(json);
+                        }
                     }
                 }
             }
