@@ -42,6 +42,9 @@
             this.chRemaining = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
+            this.pGreenlight = new System.Windows.Forms.Panel();
+            this.btnGreenlightHide = new ShareX.HelpersLib.BlackStyleButton();
+            this.btnGreenlightOpen = new ShareX.HelpersLib.BlackStyleButton();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.tsddbCapture = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiFullscreen = new System.Windows.Forms.ToolStripMenuItem();
@@ -226,6 +229,7 @@
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
+            this.pGreenlight.SuspendLayout();
             this.tsMain.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
@@ -325,6 +329,26 @@
             this.pbPreview.EnableRightClickMenu = true;
             this.pbPreview.FullscreenOnClick = true;
             this.pbPreview.Name = "pbPreview";
+            // 
+            // pGreenlight
+            // 
+            resources.ApplyResources(this.pGreenlight, "pGreenlight");
+            this.pGreenlight.BackColor = System.Drawing.Color.White;
+            this.pGreenlight.Controls.Add(this.btnGreenlightHide);
+            this.pGreenlight.Controls.Add(this.btnGreenlightOpen);
+            this.pGreenlight.Name = "pGreenlight";
+            // 
+            // btnGreenlightHide
+            // 
+            resources.ApplyResources(this.btnGreenlightHide, "btnGreenlightHide");
+            this.btnGreenlightHide.ForeColor = System.Drawing.Color.White;
+            this.btnGreenlightHide.Name = "btnGreenlightHide";
+            // 
+            // btnGreenlightOpen
+            // 
+            resources.ApplyResources(this.btnGreenlightOpen, "btnGreenlightOpen");
+            this.btnGreenlightOpen.ForeColor = System.Drawing.Color.White;
+            this.btnGreenlightOpen.Name = "btnGreenlightOpen";
             // 
             // tsMain
             // 
@@ -1702,6 +1726,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
+            this.Controls.Add(this.pGreenlight);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -1717,6 +1742,7 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
+            this.pGreenlight.ResumeLayout(false);
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
             this.cmsTaskInfo.ResumeLayout(false);
@@ -1919,5 +1945,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiWebpageCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWebpageCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayToggleHotkeys;
+        private System.Windows.Forms.Panel pGreenlight;
+        private HelpersLib.BlackStyleButton btnGreenlightHide;
+        private HelpersLib.BlackStyleButton btnGreenlightOpen;
     }
 }
