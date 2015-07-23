@@ -1,6 +1,16 @@
 language: csharp
 solution: ShareX.sln
+
 install:
   - nuget restore ShareX.sln
+
 script:
   - xbuild /p:Configuration=Release ShareX.sln
+
+notifications:
+#  irc:
+#    channels:
+#      - "irc.freenode.net#sharex"
+    on_success: always
+    on_failure: always
+#    skip_join: true
