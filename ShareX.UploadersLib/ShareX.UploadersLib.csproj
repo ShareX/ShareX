@@ -757,10 +757,10 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <PropertyGroup>
-    <PreBuildEvent  Condition=" '$(OS)' == 'Windows_NT' ">cd "$(ProjectDir)APIKeys\"
+    <PreBuildEvent Condition=" '$(OS)' == 'Windows_NT' ">cd "$(ProjectDir)APIKeys\"
 
 if not exist APIKeysLocal.cs type nul &gt; APIKeysLocal.cs</PreBuildEvent>
-	<PreBuildEvent  Condition=" '$(OS)' != 'Windows_NT' ">cd "$(ProjectDir)APIKeys\"
+	<PreBuildEvent Condition=" '$(OS)' != 'Windows_NT' ">cd "$(ProjectDir)APIKeys\"
 
 touch APIKeysLocal.cs</PreBuildEvent>
   </PropertyGroup>
