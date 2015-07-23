@@ -1,0 +1,6 @@
+language: csharp
+solution: ShareX.sln
+install:
+  - nuget restore ShareX.sln
+script:
+  - xbuild /p:Configuration=Release ShareX.sln
