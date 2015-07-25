@@ -448,20 +448,13 @@ namespace ShareX.HelpersLib
 
         public static bool Is64Bit()
         {
-            if (IntPtr.Size == 8 || (IntPtr.Size == 4 && Is32BitProcessOn64BitProcessor()))
-            {
-                return true;
-            }
-
-            return false;
+            return IntPtr.Size == 8 || (IntPtr.Size == 4 && Is32BitProcessOn64BitProcessor());
         }
 
         private static bool Is32BitProcessOn64BitProcessor()
         {
             bool retVal;
-
             IsWow64Process(Process.GetCurrentProcess().Handle, out retVal);
-
             return retVal;
         }
     }

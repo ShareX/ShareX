@@ -103,6 +103,9 @@
     <Compile Include="Colors\HSB.cs" />
     <Compile Include="Colors\MyColor.cs" />
     <Compile Include="Colors\RGBA.cs" />
+    <Compile Include="Controls\GreenlightButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\LabelNoCopy.cs">
       <SubType>Component</SubType>
     </Compile>

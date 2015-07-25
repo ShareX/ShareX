@@ -561,6 +561,8 @@ namespace ShareX
             UpdateToggleHotkeyButton();
 
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
+
+            pGreenlight.Visible = Program.Settings.ShowGreenlightButton;
         }
 
         private void RegisterMenuClosing()
@@ -1468,6 +1470,24 @@ namespace ShareX
             Program.Settings.ImagePreview = ImagePreviewVisibility.Automatic;
             tsmiImagePreviewAutomatic.Check();
             UpdateControls();
+        }
+
+        private void btnGreenlightOpen_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                URLHelpers.OpenURL("");
+                btnGreenlightOpen.Text = "Thanks for considering voting :)\r\nYou can hide these buttons by pressing hide button on the right side:";
+            }
+        }
+
+        private void btnGreenlightHide_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                pGreenlight.Visible = false;
+                Program.Settings.ShowGreenlightButton = false;
+            }
         }
 
         #endregion UploadInfoMenu events

@@ -69,8 +69,8 @@
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK, Version=2.3.46.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.2.3.46.0\lib\net35\AWSSDK.dll</HintPath>
+    <Reference Include="AWSSDK, Version=2.3.48.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.2.3.48.0\lib\net35\AWSSDK.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="crypto">
@@ -85,8 +85,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Renci.SshNet, Version=2014.4.6.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SSH.NET.2014.4.6-beta1\lib\net40\Renci.SshNet.dll</HintPath>
+      <HintPath>..\packages\SSH.NET.2014.4.6-beta2\lib\net40\Renci.SshNet.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Design" />
@@ -692,12 +692,12 @@
     <None Include="Favicons\MediaFire.ico" />
     <None Include="Favicons\OwnCloud.png" />
     <None Include="Favicons\Pushbullet.ico" />
-	<None Include="Favicons\OneDrive.ico" />
-	<None Include="Favicons\Chevereto.png" />
-	<None Include="Favicons\Hastebin.png" />
-	<None Include="Favicons\hubic.ico" />
-	<None Include="Favicons\Up1.ico" />
-	<None Include="Favicons\CoinURL.ico" />
+    <None Include="Favicons\OneDrive.ico" />
+    <None Include="Favicons\Chevereto.png" />
+    <None Include="Favicons\Hastebin.png" />
+    <None Include="Favicons\hubic.ico" />
+    <None Include="Favicons\Up1.ico" />
+    <None Include="Favicons\CoinURL.ico" />
     <None Include="Favicons\LnkU.ico" />
     <None Include="Favicons\copy.ico" />
     <None Include="Favicons\Lambda.ico" />

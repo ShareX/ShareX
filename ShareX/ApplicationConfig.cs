@@ -40,6 +40,7 @@ namespace ShareX
         public bool ShowUploadWarning = true; // First time upload warning
         public bool ShowMultiUploadWarning = true; // More than 10 files upload warning
         public bool ShowTrayMiddleClickTip = true; // Tray icon middle click tip
+        public bool ShowGreenlightButton = true;
         public int NameParserAutoIncrementNumber = 0;
         public RecentItem[] RecentLinks = null;
         public bool DisableHotkeys = false;

@@ -274,7 +274,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Filename</value>
@@ -318,54 +318,6 @@
   <data name="pGreenlight.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="&gt;&gt;btnGreenlightHide.Name" xml:space="preserve">
-    <value>btnGreenlightHide</value>
-  </data>
-  <data name="&gt;&gt;btnGreenlightHide.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnGreenlightHide.Parent" xml:space="preserve">
-    <value>pGreenlight</value>
-  </data>
-  <data name="&gt;&gt;btnGreenlightHide.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnGreenlightOpen.Name" xml:space="preserve">
-    <value>btnGreenlightOpen</value>
-  </data>
-  <data name="&gt;&gt;btnGreenlightOpen.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnGreenlightOpen.Parent" xml:space="preserve">
-    <value>pGreenlight</value>
-  </data>
-  <data name="&gt;&gt;btnGreenlightOpen.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pGreenlight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 362</value>
-  </data>
-  <data name="pGreenlight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>656, 45</value>
-  </data>
-  <data name="pGreenlight.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="pGreenlight.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pGreenlight.Name" xml:space="preserve">
-    <value>pGreenlight</value>
-  </data>
-  <data name="&gt;&gt;pGreenlight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pGreenlight.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pGreenlight.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="btnGreenlightHide.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -373,13 +325,13 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnGreenlightHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>553, 0</value>
+    <value>581, 0</value>
   </data>
   <data name="btnGreenlightHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 45</value>
+    <value>75, 56</value>
   </data>
   <data name="btnGreenlightHide.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnGreenlightHide.Text" xml:space="preserve">
     <value>Hide</value>
@@ -388,7 +340,7 @@
     <value>btnGreenlightHide</value>
   </data>
   <data name="&gt;&gt;btnGreenlightHide.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.GreenlightButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnGreenlightHide.Parent" xml:space="preserve">
     <value>pGreenlight</value>
@@ -406,26 +358,50 @@
     <value>0, 0</value>
   </data>
   <data name="btnGreenlightOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 45</value>
+    <value>576, 56</value>
   </data>
   <data name="btnGreenlightOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="btnGreenlightOpen.Text" xml:space="preserve">
-    <value>We need your help for us to be able to release ShareX in Steam!
+    <value>We need your help to be able to release ShareX on Steam! 
 If you would like to vote, click here to open our Steam Greenlight page.</value>
   </data>
   <data name="&gt;&gt;btnGreenlightOpen.Name" xml:space="preserve">
     <value>btnGreenlightOpen</value>
   </data>
   <data name="&gt;&gt;btnGreenlightOpen.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.GreenlightButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnGreenlightOpen.Parent" xml:space="preserve">
     <value>pGreenlight</value>
   </data>
   <data name="&gt;&gt;btnGreenlightOpen.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="pGreenlight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 344</value>
+  </data>
+  <data name="pGreenlight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>656, 56</value>
+  </data>
+  <data name="pGreenlight.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="pGreenlight.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pGreenlight.Name" xml:space="preserve">
+    <value>pGreenlight</value>
+  </data>
+  <data name="&gt;&gt;pGreenlight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pGreenlight.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pGreenlight.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -458,7 +434,7 @@ If you would like to vote, click here to open our Steam Greenlight page.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tsddbCapture.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
