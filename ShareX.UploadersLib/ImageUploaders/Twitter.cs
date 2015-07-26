@@ -90,13 +90,12 @@ namespace ShareX.UploadersLib.ImageUploaders
             }
 
             string url = string.Format("https://api.twitter.com/{0}/statuses/update.json", APIVersion);
+            string query = OAuthManager.GenerateQuery(url, null, HttpMethod.POST, AuthInfo);
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("status", message);
 
-            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
-
-            string response = SendRequest(HttpMethod.POST, query);
+            string response = SendRequest(HttpMethod.POST, query, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -114,13 +113,12 @@ namespace ShareX.UploadersLib.ImageUploaders
             }
 
             string url = string.Format("https://api.twitter.com/{0}/statuses/update_with_media.json", APIVersion);
+            string query = OAuthManager.GenerateQuery(url, null, HttpMethod.POST, AuthInfo);
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("status", message);
 
-            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
-
-            UploadResult result = UploadData(stream, query, fileName, "media[]");
+            UploadResult result = UploadData(stream, query, fileName, "media[]", args);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
