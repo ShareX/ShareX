@@ -333,7 +333,7 @@
             // pGreenlight
             // 
             resources.ApplyResources(this.pGreenlight, "pGreenlight");
-            this.pGreenlight.BackColor = System.Drawing.Color.White;
+            this.pGreenlight.BackColor = System.Drawing.Color.Transparent;
             this.pGreenlight.Controls.Add(this.btnGreenlightHide);
             this.pGreenlight.Controls.Add(this.btnGreenlightOpen);
             this.pGreenlight.Name = "pGreenlight";
@@ -1728,6 +1728,7 @@
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pGreenlight);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);

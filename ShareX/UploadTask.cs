@@ -440,8 +440,7 @@ namespace ShareX
             }
             else if (Info.Job == TaskJob.TextUpload && !string.IsNullOrEmpty(tempText))
             {
-                byte[] byteArray = Encoding.UTF8.GetBytes(tempText);
-                Data = new MemoryStream(byteArray);
+                DoTextJobs();
             }
 
             if (Info.IsUploadJob && Data != null && Data.CanSeek)
@@ -586,6 +585,24 @@ namespace ShareX
                     ClipboardHelpers.CopyText(Info.FilePath);
                 }
             }
+        }
+
+        private void DoTextJobs()
+        {
+            if (Info.TaskSettings.AdvancedSettings.TextTaskSaveAsFile)
+            {
+                string filePath = TaskHelpers.CheckFilePath(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
+
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    Info.FilePath = filePath;
+                    File.WriteAllText(Info.FilePath, tempText, Encoding.UTF8);
+                    DebugHelper.WriteLine("SaveTextToFile: " + Info.FilePath);
+                }
+            }
+
+            byte[] byteArray = Encoding.UTF8.GetBytes(tempText);
+            Data = new MemoryStream(byteArray);
         }
 
         private void DoAfterUploadJobs()
