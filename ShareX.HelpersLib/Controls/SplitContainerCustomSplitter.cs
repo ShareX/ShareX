@@ -34,8 +34,12 @@ namespace ShareX.HelpersLib
         {
             Graphics g = pevent.Graphics;
             Rectangle rect = SplitterRectangle;
-            g.DrawLine(Pens.Black, rect.Left, rect.Top, rect.Left, rect.Bottom - 1);
-            g.DrawLine(Pens.Black, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1);
+
+            using (Pen pen = new Pen(ForeColor))
+            {
+                g.DrawLine(pen, rect.Left, rect.Top, rect.Left, rect.Bottom - 1);
+                g.DrawLine(pen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1);
+            }
         }
     }
 }

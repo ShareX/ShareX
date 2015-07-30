@@ -2711,6 +2711,6 @@ If you would like to vote, click here to open our Steam Greenlight page.</value>
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=10.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

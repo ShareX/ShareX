@@ -239,6 +239,7 @@
             // 
             resources.ApplyResources(this.scMain, "scMain");
             this.scMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.scMain.ForeColor = System.Drawing.Color.DarkGray;
             this.scMain.Name = "scMain";
             // 
             // scMain.Panel1
@@ -263,7 +264,7 @@
             // 
             // lblSplitter
             // 
-            this.lblSplitter.BackColor = System.Drawing.Color.Gray;
+            this.lblSplitter.BackColor = System.Drawing.Color.DarkGray;
             resources.ApplyResources(this.lblSplitter, "lblSplitter");
             this.lblSplitter.Name = "lblSplitter";
             // 

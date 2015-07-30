@@ -463,7 +463,10 @@ namespace ShareX.UploadersLib
 
             txtJiraHost.Text = Config.JiraHost;
             txtJiraIssuePrefix.Text = Config.JiraIssuePrefix;
-            txtJiraConfigHelp.Text = string.Format(@"Howto configure your Jira server:
+
+            try
+            {
+                txtJiraConfigHelp.Text = string.Format(@"Howto configure your Jira server:
 
 - Go to 'Administration' -> 'Add-ons'
 - Select 'Application Links'
@@ -479,6 +482,11 @@ namespace ShareX.UploadersLib
         - Public Key (without quotes): '{3}'
 
 - You can now authenticate to Jira", Links.URL_WEBSITE, "ShareX", APIKeys.JiraConsumerKey, Jira.PublicKey);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
 
             if (OAuthInfo.CheckOAuth(Config.JiraOAuthInfo))
             {
