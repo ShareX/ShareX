@@ -707,7 +707,14 @@ namespace ShareX
                     continue;
                 }
 
-                UploadManager.UploadFile(command.Command);
+                if (URLHelpers.IsValidURLRegex(command.Command))
+                {
+                    UploadManager.DownloadAndUploadFile(command.Command);
+                }
+                else
+                {
+                    UploadManager.UploadFile(command.Command);
+                }
             }
         }
 

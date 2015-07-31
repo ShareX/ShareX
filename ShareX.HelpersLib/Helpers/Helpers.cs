@@ -854,6 +854,12 @@ namespace ShareX.HelpersLib
             return Path.GetFullPath(path);
         }
 
+        public static string GetTempPath(string extension)
+        {
+            string path = Path.GetTempFileName();
+            return Path.ChangeExtension(path, extension);
+        }
+
         public static bool IsAdministrator()
         {
             return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
