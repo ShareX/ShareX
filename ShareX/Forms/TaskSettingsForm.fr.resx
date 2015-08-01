@@ -328,7 +328,7 @@
     <value>Décalage de l'ombre:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Paramètres de la tâche</value>
+    <value>ShareX - Paramètres des tâches</value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>Afficher la fenêtre des effets d'image après la capture</value>
@@ -373,13 +373,13 @@
     <value>Raccourcisseurs d'URL</value>
   </data>
   <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Utiliser les actions dans les paramètres de la tâche de la fenêtre principale</value>
+    <value>Utiliser les actions dans les paramètres des tâches de la fenêtre principale</value>
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres avancés dans les paramètres de la tâche de la fenêtre principale</value>
+    <value>Utiliser les paramètres avancés dans les paramètres des tâches de la fenêtre principale</value>
   </data>
   <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres de capture dans les paramètres de la tâche de la fenêtre principale</value>
+    <value>Utiliser les paramètres de capture dans les paramètres des tâches de la fenêtre principale</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>Utiliser par défaut les paramètres "Après la capture"</value>
@@ -391,19 +391,19 @@
     <value>Utiliser par défaut les paramètres "Destination"</value>
   </data>
   <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres généraux dans les paramètres de la tâche de la fenêtre principale</value>
+    <value>Utiliser les paramètres généraux dans les paramètres des tâches de la fenêtre principale</value>
   </data>
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres d'image dans les paramètres de la tâche de la fenêtre principale</value>
+    <value>Utiliser les paramètres d'image dans les paramètres des tâches de la fenêtre principale</value>
   </data>
   <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres de l'indexeur dans les paramètres de la tâche de la fenêtre principale</value>
+    <value>Utiliser les paramètres de l'indexeur dans les paramètres des tâches de la fenêtre principale</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Utiliser un modèle de nom aussi pour les fichiers mis en ligne plutôt que les noms actuels</value>
   </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres de transfert dans les paramètres de la tâche de la fenêtre principale</value>
+    <value>Utiliser les paramètres de transfert dans les paramètres des tâches de la fenêtre principale</value>
   </data>
   <data name="tpWatchFolders.Text" xml:space="preserve">
     <value>Surveiller les dossiers</value>

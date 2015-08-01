@@ -169,12 +169,6 @@ Voulez-vous la télécharger et l'installer?</value>
   <data name="HotkeyType_ActiveWindow" xml:space="preserve">
     <value>Capturer la fenêtre active</value>
   </data>
-  <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>Capturer une région en diamant</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>Capturer une région en ellipse</value>
-  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Capturer tout l'écran</value>
   </data>
@@ -198,12 +192,6 @@ Voulez-vous la télécharger et l'installer?</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
     <value>Capturer une région rectangulaire (Fenêtre)</value>
-  </data>
-  <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>Capturer une région rectangulaire arrondie</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>Capturer la région triangulaire</value>
   </data>
   <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
     <value>Choisir le chemin du fichier</value>
@@ -702,9 +690,6 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
   <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
     <value>Capture d'écran</value>
   </data>
-  <data name="HotkeyType_DiamondRegion_Category" xml:space="preserve">
-    <value>Capture d'écran</value>
-  </data>
   <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
     <value>Capture d'écran</value>
   </data>
@@ -720,9 +705,6 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
   <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
     <value>Capture d'écran</value>
   </data>
-  <data name="HotkeyType_RoundedRectangleRegion_Category" xml:space="preserve">
-    <value>Capture d'écran</value>
-  </data>
   <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
     <value>Capture d'écran</value>
   </data>
@@ -732,13 +714,7 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
   <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
     <value>Capture d'écran</value>
   </data>
-  <data name="HotkeyType_EllipseRegion_Category" xml:space="preserve">
-    <value>Capture d'écran</value>
-  </data>
   <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
-    <value>Capture d'écran</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion_Category" xml:space="preserve">
     <value>Capture d'écran</value>
   </data>
   <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
@@ -779,5 +755,11 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>Démarrer l'enregistrement de l'écran en utilisant la région de la fenêtre active</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
+    <value>Autre</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>Activer/Désactiver les raccourcis clavier</value>
   </data>
 </root>
