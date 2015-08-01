@@ -67,7 +67,7 @@ LnkU, CoinURL, QRnet, VURL, 2gp support: https://github.com/DanielMcAssey
 
 {1}:
 
-Turkish: https://github.com/muratmoon
+Turkish: https://github.com/Jaex / https://github.com/muratmoon
 German: https://github.com/Starbug2
 French: https://github.com/nwies / https://github.com/Shadorc
 Simplified Chinese: https://github.com/jiajiechan
@@ -79,10 +79,10 @@ Dutch: https://github.com/wforums
 {2}:
 
 Greenshot Image Editor: https://bitbucket.org/greenshot/greenshot
-Json.NET: https://json.codeplex.com
+Json.NET: https://github.com/JamesNK/Newtonsoft.Json
 SSH.NET: https://sshnet.codeplex.com
 Icons: http://p.yusukekamiyamane.com
-ImageListView: https://code.google.com/p/imagelistview
+ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: http://www.ffmpeg.org
 FFmpeg Windows builds: http://ffmpeg.zeranoe.com/builds
 7-Zip: http://www.7-zip.org
@@ -91,6 +91,8 @@ DirectShow video and audio device: https://github.com/rdp/screen-capture-recorde
 QrCode.Net: https://qrcodenet.codeplex.com
 System.Net.FtpClient: https://netftp.codeplex.com
 ResX Resource Manager: https://resxresourcemanager.codeplex.com
+AWSSDK: http://aws.amazon.com/sdk-for-net/
+BouncyCastle-PCL: https://github.com/onovotny/BouncyCastle-PCL
 
 Copyright © 2007-2015 ShareX Developers", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries);
         }

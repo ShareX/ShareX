@@ -1483,7 +1483,7 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Left)
             {
-                URLHelpers.OpenURL("");
+                URLHelpers.OpenURL("http://steamcommunity.com/sharedfiles/filedetails/?id=491692781");
                 btnGreenlightOpen.Text = "Thanks for considering voting :)\r\nYou can hide these buttons by pressing hide button on the right side:";
             }
         }
