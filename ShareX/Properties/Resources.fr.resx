@@ -259,7 +259,7 @@ ici</value>
     <value>raccourcis clavier</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>Logiciel de mise en ligne d'images: {0}</value>
+    <value>Mise en ligne d'images: {0}</value>
   </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
     <value>En attente</value>
@@ -332,10 +332,10 @@ Voulez-vous redémarrer ShareX?</value>
     <value>Tâche finie</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
-    <value>Paramètres de la tâche</value>
+    <value>Paramètres des tâches</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
-    <value>Paramètres de la tâche pour {0}</value>
+    <value>Paramètres des tâches pour {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
     <value>Tâche: {0}</value>
@@ -344,7 +344,7 @@ Voulez-vous redémarrer ShareX?</value>
     <value>Test de mise en ligne d'un texte</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>Logiciel de mise en ligne de textes: {0}</value>
+    <value>Mise en ligne de textes: {0}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traducteurs</value>

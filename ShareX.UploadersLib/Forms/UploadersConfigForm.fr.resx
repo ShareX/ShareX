@@ -301,10 +301,10 @@
     <value>Ignorer certificat SSL invalide</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Logiciel de mis en ligne d'images:</value>
+    <value>Logiciel de mise en ligne d'images:</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mis en ligne d'images</value>
+    <value>Logiciels de mise en ligne d'images</value>
   </data>
   <data name="lblFtpImages.Text" xml:space="preserve">
     <value>Image:</value>
@@ -765,5 +765,8 @@ Cela signifie qu'ils peuvent être perdu d'Amazon S3 à un certain moment.</valu
   </data>
   <data name="lblUp1Key.Text" xml:space="preserve">
     <value>Clé API:</value>
+  </data>
+  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
+    <value>Supprimer tous</value>
   </data>
 </root>
