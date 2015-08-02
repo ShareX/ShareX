@@ -39,6 +39,7 @@ namespace ShareX.UploadersLib
         public static string PhotobucketConsumerSecret = "";
         public static string TwitsnapsKey = "";
         public static string TwitPicKey = "";
+        public static string SomeImageKey = "";
 
         // File Uploaders
         public static string DropboxConsumerKey = "";
