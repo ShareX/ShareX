@@ -1215,6 +1215,10 @@ namespace ShareX
                 case Keys.Delete:
                     RemoveSelectedItems();
                     break;
+                case Keys.Shift | Keys.Delete:
+                    uim.DeleteFiles();
+                    RemoveSelectedItems();
+                    break;
             }
 
             e.Handled = true;
