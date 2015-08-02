@@ -751,6 +751,9 @@ namespace ShareX
                 case ImageDestination.Vgyme:
                     imageUploader = new VgymeUploader();
                     break;
+                case ImageDestination.SomeImage:
+                    imageUploader = new SomeImage(APIKeys.SomeImageKey);
+                    break;
                 case ImageDestination.CustomImageUploader:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomImageUploaderSelected);
                     if (customUploader != null)

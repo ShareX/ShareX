@@ -50,6 +50,8 @@ namespace ShareX.UploadersLib
         HizliResim,
         [Description("vgy.me")]
         Vgyme,
+        [Description("SomeImage")]
+        SomeImage,
         CustomImageUploader, // Localized
         FileUploader // Localized
     }
