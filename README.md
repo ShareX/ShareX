@@ -1,4 +1,6 @@
 ### Website: [getsharex.com](https://getsharex.com)
+### ShareX Steam Greenlight page:
+### http://steamcommunity.com/sharedfiles/filedetails/?id=491692781
 
 [![](https://getsharex.com/img/ShareX_Screenshot.png)](https://getsharex.com)
 
