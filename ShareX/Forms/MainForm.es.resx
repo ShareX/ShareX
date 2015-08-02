@@ -202,26 +202,14 @@
   <data name="tsmiRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
   </data>
-  <data name="tsmiRoundedRectangle.Text" xml:space="preserve">
-    <value>Rectángulo redondeado</value>
-  </data>
   <data name="tsmiEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
-  </data>
-  <data name="tsmiEllipse.Text" xml:space="preserve">
-    <value>Elipse</value>
   </data>
   <data name="tsmiTriangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
   </data>
-  <data name="tsmiTriangle.Text" xml:space="preserve">
-    <value>Triángulo</value>
-  </data>
   <data name="tsmiDiamond.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
-  </data>
-  <data name="tsmiDiamond.Text" xml:space="preserve">
-    <value>Diamante</value>
   </data>
   <data name="tsmiPolygon.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
@@ -871,26 +859,14 @@
   <data name="tsmiTrayRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
   </data>
-  <data name="tsmiTrayRoundedRectangle.Text" xml:space="preserve">
-    <value>Rectángulo redondeado</value>
-  </data>
   <data name="tsmiTrayEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
-  </data>
-  <data name="tsmiTrayEllipse.Text" xml:space="preserve">
-    <value>Elipse</value>
   </data>
   <data name="tsmiTrayTriangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
   </data>
-  <data name="tsmiTrayTriangle.Text" xml:space="preserve">
-    <value>Triángulo</value>
-  </data>
   <data name="tsmiTrayDiamond.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
-  </data>
-  <data name="tsmiTrayDiamond.Text" xml:space="preserve">
-    <value>Diamante</value>
   </data>
   <data name="tsmiTrayPolygon.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>

@@ -199,26 +199,14 @@
   <data name="tsmiRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
-  <data name="tsmiRoundedRectangle.Text" xml:space="preserve">
-    <value>Yuvarlatılmış dikdörtgen</value>
-  </data>
   <data name="tsmiEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
-  </data>
-  <data name="tsmiEllipse.Text" xml:space="preserve">
-    <value>Elips</value>
   </data>
   <data name="tsmiTriangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
-  <data name="tsmiTriangle.Text" xml:space="preserve">
-    <value>Üçgen</value>
-  </data>
   <data name="tsmiDiamond.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
-  </data>
-  <data name="tsmiDiamond.Text" xml:space="preserve">
-    <value>Karo</value>
   </data>
   <data name="tsmiPolygon.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -853,26 +841,14 @@
   <data name="tsmiTrayRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
-  <data name="tsmiTrayRoundedRectangle.Text" xml:space="preserve">
-    <value>Yuvarlatılmış dikdörtgen</value>
-  </data>
   <data name="tsmiTrayEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
-  </data>
-  <data name="tsmiTrayEllipse.Text" xml:space="preserve">
-    <value>Elips</value>
   </data>
   <data name="tsmiTrayTriangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
-  <data name="tsmiTrayTriangle.Text" xml:space="preserve">
-    <value>Üçgen</value>
-  </data>
   <data name="tsmiTrayDiamond.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
-  </data>
-  <data name="tsmiTrayDiamond.Text" xml:space="preserve">
-    <value>Karo</value>
   </data>
   <data name="tsmiTrayPolygon.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1179,5 +1155,8 @@
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Dikdörtgen (Saydam)</value>
+  </data>
+  <data name="btnGreenlightHide.Text" xml:space="preserve">
+    <value>Sakla</value>
   </data>
 </root>

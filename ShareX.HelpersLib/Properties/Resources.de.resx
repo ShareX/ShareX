@@ -335,14 +335,8 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>Aus Zwischenablage mit Inhaltsviewer hochladen</value>
   </data>
-  <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>Diamantregion aufnehmen</value>
-  </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
     <value>Drag &amp; Drop hochladen</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>Ellipsregion aufnehmen</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Datei hochladen</value>
@@ -392,9 +386,6 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Rechteckregion aufnehmen</value>
   </data>
-  <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>gerundete Rechteckregion aufnehmen</value>
-  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Lineal:</value>
   </data>
@@ -412,9 +403,6 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Alle aktiven Uploads anhalten</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>Dreiecksregion aufnehmen</value>
   </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
     <value>Twittere Nachricht</value>

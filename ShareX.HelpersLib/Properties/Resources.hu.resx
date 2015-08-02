@@ -335,14 +335,8 @@ Fájlméret: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>Feltöltés vágólapról tartalom nézőkével</value>
   </data>
-  <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>Gyémánt régió képlopás</value>
-  </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
     <value>Húzd és vond feltöltés</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>Ellipszis régió képlopás</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Fájl feltöltése</value>
@@ -392,9 +386,6 @@ Fájlméret: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Téglalap régió képlopás</value>
   </data>
-  <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>Kerekített téglalap régió képlopás</value>
-  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Vonalzó</value>
   </data>
@@ -412,9 +403,6 @@ Fájlméret: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Az összes aktív feltöltés leállítása</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>Háromszög régió képlopás</value>
   </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
     <value>Tweet üzenet</value>

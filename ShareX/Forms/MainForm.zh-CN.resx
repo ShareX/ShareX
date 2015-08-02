@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -254,9 +255,6 @@
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>目标设置...</value>
   </data>
-  <data name="tsmiDiamond.Text" xml:space="preserve">
-    <value>四边形</value>
-  </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>更换DNS...</value>
   </data>
@@ -265,9 +263,6 @@
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>编辑图像...</value>
-  </data>
-  <data name="tsmiEllipse.Text" xml:space="preserve">
-    <value>椭圆形</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>文件上传者</value>
@@ -359,9 +354,6 @@
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>矩形（光）</value>
   </data>
-  <data name="tsmiRoundedRectangle.Text" xml:space="preserve">
-    <value>圆角矩形</value>
-  </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>尺子...</value>
   </data>
@@ -440,17 +432,11 @@
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>目标设置...</value>
   </data>
-  <data name="tsmiTrayDiamond.Text" xml:space="preserve">
-    <value>四边形</value>
-  </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>DNS更换...</value>
   </data>
   <data name="tsmiTrayDonate.Text" xml:space="preserve">
     <value>捐赠...</value>
-  </data>
-  <data name="tsmiTrayEllipse.Text" xml:space="preserve">
-    <value>椭圆形</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>退出</value>
@@ -515,9 +501,6 @@
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>矩形（光）</value>
   </data>
-  <data name="tsmiTrayRoundedRectangle.Text" xml:space="preserve">
-    <value>圆角矩形</value>
-  </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>尺子...</value>
   </data>
@@ -541,9 +524,6 @@
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>工具</value>
-  </data>
-  <data name="tsmiTrayTriangle.Text" xml:space="preserve">
-    <value>三角形</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>消息声音提示...</value>
@@ -580,9 +560,6 @@
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>快捷动作</value>
-  </data>
-  <data name="tsmiTriangle.Text" xml:space="preserve">
-    <value>三角形</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>鸣叫消息...</value>

@@ -196,26 +196,14 @@
   <data name="tsmiRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
   </data>
-  <data name="tsmiRoundedRectangle.Text" xml:space="preserve">
-    <value>Lekerekített téglalap</value>
-  </data>
   <data name="tsmiEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
-  </data>
-  <data name="tsmiEllipse.Text" xml:space="preserve">
-    <value>Ellipszis</value>
   </data>
   <data name="tsmiTriangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
   </data>
-  <data name="tsmiTriangle.Text" xml:space="preserve">
-    <value>Háromszög</value>
-  </data>
   <data name="tsmiDiamond.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
-  </data>
-  <data name="tsmiDiamond.Text" xml:space="preserve">
-    <value>Gyémánt</value>
   </data>
   <data name="tsmiPolygon.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
@@ -841,26 +829,14 @@
   <data name="tsmiTrayRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
   </data>
-  <data name="tsmiTrayRoundedRectangle.Text" xml:space="preserve">
-    <value>Kerekített téglalap</value>
-  </data>
   <data name="tsmiTrayEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
-  </data>
-  <data name="tsmiTrayEllipse.Text" xml:space="preserve">
-    <value>Ellipszis</value>
   </data>
   <data name="tsmiTrayTriangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
   </data>
-  <data name="tsmiTrayTriangle.Text" xml:space="preserve">
-    <value>Háromszög</value>
-  </data>
   <data name="tsmiTrayDiamond.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
-  </data>
-  <data name="tsmiTrayDiamond.Text" xml:space="preserve">
-    <value>Gyémánt</value>
   </data>
   <data name="tsmiTrayPolygon.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>

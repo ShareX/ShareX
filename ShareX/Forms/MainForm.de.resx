@@ -184,23 +184,14 @@
   <data name="tsmiRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
-  <data name="tsmiRoundedRectangle.Text" xml:space="preserve">
-    <value>abgerundetes Rechteck</value>
-  </data>
   <data name="tsmiEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
   <data name="tsmiTriangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
-  <data name="tsmiTriangle.Text" xml:space="preserve">
-    <value>Dreieck</value>
-  </data>
   <data name="tsmiDiamond.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
-  </data>
-  <data name="tsmiDiamond.Text" xml:space="preserve">
-    <value>Diamant</value>
   </data>
   <data name="tsmiPolygon.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -811,23 +802,14 @@
   <data name="tsmiTrayRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
-  <data name="tsmiTrayRoundedRectangle.Text" xml:space="preserve">
-    <value>abgerundetes Rechteck</value>
-  </data>
   <data name="tsmiTrayEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
   <data name="tsmiTrayTriangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
-  <data name="tsmiTrayTriangle.Text" xml:space="preserve">
-    <value>Dreieck</value>
-  </data>
   <data name="tsmiTrayDiamond.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
-  </data>
-  <data name="tsmiTrayDiamond.Text" xml:space="preserve">
-    <value>Diamant</value>
   </data>
   <data name="tsmiTrayPolygon.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -1132,9 +1114,6 @@
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="tsmiEllipse.Text" xml:space="preserve">
-    <value>Ellipse</value>
-  </data>
   <data name="tsmiMonitor.Text" xml:space="preserve">
     <value>Monitor</value>
   </data>
@@ -1146,9 +1125,6 @@
   </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR-Code...</value>
-  </data>
-  <data name="tsmiTrayEllipse.Text" xml:space="preserve">
-    <value>Ellipse</value>
   </data>
   <data name="tsmiTrayMonitor.Text" xml:space="preserve">
     <value>Monitor</value>

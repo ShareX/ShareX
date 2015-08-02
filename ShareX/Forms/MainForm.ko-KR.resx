@@ -264,9 +264,6 @@
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>이미지 편집...</value>
   </data>
-  <data name="tsmiDiamond.Text" xml:space="preserve">
-    <value>다이아몬드</value>
-  </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>DNS 변경기...</value>
   </data>
@@ -275,9 +272,6 @@
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
     <value>로컬 파일 삭제...</value>
-  </data>
-  <data name="tsmiEllipse.Text" xml:space="preserve">
-    <value>타원</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>파일 업로더</value>
@@ -396,9 +390,6 @@
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>목적지</value>
   </data>
-  <data name="tsmiTrayDiamond.Text" xml:space="preserve">
-    <value>다이아몬드</value>
-  </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>DNS 변경기...</value>
   </data>
@@ -410,9 +401,6 @@
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
     <value>끌어서 업로드...</value>
-  </data>
-  <data name="tsmiTrayEllipse.Text" xml:space="preserve">
-    <value>타원</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>종료</value>
@@ -501,12 +489,6 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>직사각형</value>
   </data>
-  <data name="tsmiRoundedRectangle.Text" xml:space="preserve">
-    <value>모서리 둥근 직사각형</value>
-  </data>
-  <data name="tsmiTrayRoundedRectangle.Text" xml:space="preserve">
-    <value>모서리 둥근 직사각형</value>
-  </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>측정...</value>
   </data>
@@ -551,12 +533,6 @@
   </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>업로드</value>
-  </data>
-  <data name="tsmiTrayTriangle.Text" xml:space="preserve">
-    <value>삼각형</value>
-  </data>
-  <data name="tsmiTriangle.Text" xml:space="preserve">
-    <value>삼각형</value>
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>도구</value>

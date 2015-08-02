@@ -180,12 +180,6 @@
   <data name="HotkeyType_ActiveWindow" xml:space="preserve">
     <value>현재 창 촬영</value>
   </data>
-  <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>다이아몬드 영역 촬영</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>타원 영역 촬영</value>
-  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>전체 화면 촬영</value>
   </data>
@@ -209,12 +203,6 @@
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
     <value>직사각형 영역 촬영 (창)</value>
-  </data>
-  <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>모서리 둥근 직사각형 영역 촬영</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>삼각형 영역 촬영</value>
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>화면 녹화 (FFmpeg)</value>

@@ -1,4 +1,5 @@
-﻿<root>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -334,14 +335,8 @@
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>从剪贴板内容查看器上传</value>
   </data>
-  <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>正方形截图</value>
-  </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
     <value>拖放上传</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>捕捉椭圆区域</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>上传文件</value>
@@ -391,9 +386,6 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>捕捉矩形区域</value>
   </data>
-  <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>捕捉圆角矩形区域</value>
-  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>统治者</value>
   </data>
@@ -411,9 +403,6 @@
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>停止所有活动上传</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>截图三角形</value>
   </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
     <value>鸣叫消息</value>

@@ -338,14 +338,8 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Kleurenkiezer</value>
   </data>
-  <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>Leg regio vast in vorm van Diamant</value>
-  </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
     <value>Uploaden via slepen</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>Leg regio vast in vorm van ellips</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Upload bestand</value>
@@ -398,9 +392,6 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Leg rechthoekige regio vast (Transparant)</value>
   </data>
-  <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>Leg rechthoekige regio vast met afgeronde hoeken</value>
-  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Meetlat</value>
   </data>
@@ -424,9 +415,6 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Stop alle actieve uploads</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>Leg driehoekige regio vast</value>
   </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
     <value>Tweet bericht</value>
@@ -636,12 +624,6 @@ Wil je deze downloaden en installeren?</value>
   <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
     <value>Scherm vastleggen</value>
   </data>
-  <data name="HotkeyType_DiamondRegion_Category" xml:space="preserve">
-    <value>Scherm vastleggen</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion_Category" xml:space="preserve">
-    <value>Scherm vastleggen</value>
-  </data>
   <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
     <value>Scherm vastleggen</value>
   </data>
@@ -664,12 +646,6 @@ Wil je deze downloaden en installeren?</value>
     <value>Scherm vastleggen</value>
   </data>
   <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
-    <value>Scherm vastleggen</value>
-  </data>
-  <data name="HotkeyType_RoundedRectangleRegion_Category" xml:space="preserve">
-    <value>Scherm vastleggen</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion_Category" xml:space="preserve">
     <value>Scherm vastleggen</value>
   </data>
   <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">

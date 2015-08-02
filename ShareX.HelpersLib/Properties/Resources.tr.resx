@@ -386,14 +386,8 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>İçerik gösterici ile panodan yükle</value>
   </data>
-  <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>Karo bölge yakala</value>
-  </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
     <value>Sürükle bırak ile yükle</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>Elips bölge yakala</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Dosya yükle</value>
@@ -443,9 +437,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Dikdörtgen bölge yakala</value>
   </data>
-  <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>Yuvarlatılmış dikdörtgen bölge yakala</value>
-  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Cetvel</value>
   </data>
@@ -457,9 +448,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Tüm aktif yüklemeleri durdur</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>Üçgen bölge yakala</value>
   </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
     <value>Tweet mesajı</value>

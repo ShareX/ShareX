@@ -329,9 +329,6 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
     <value>Arrastrar y soltar subida</value>
   </data>
-  <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>Capturar región diamante</value>
-  </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR código</value>
   </data>
@@ -370,9 +367,6 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>Subir desde el portapapeles con visor de contenido</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>Capturar región elipse</value>
   </data>
   <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
     <value>Capturar región a mano alzada</value>
@@ -419,14 +413,8 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Subir desde URL</value>
   </data>
-  <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>Capturar región triángulo</value>
-  </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Pantalla de selector de color</value>
-  </data>
-  <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>Capturar región rectángulo redondeado</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Capturar región rectángulo</value>
