@@ -596,6 +596,7 @@ namespace ShareX
                 if (!string.IsNullOrEmpty(filePath))
                 {
                     Info.FilePath = filePath;
+                    Helpers.CreateDirectoryIfNotExist(Info.FilePath);
                     File.WriteAllText(Info.FilePath, tempText, Encoding.UTF8);
                     DebugHelper.WriteLine("SaveTextToFile: " + Info.FilePath);
                 }
