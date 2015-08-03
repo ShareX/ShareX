@@ -192,11 +192,11 @@ namespace GreenshotPlugin.UnmanagedHelpers
             {
                 return false;
             }
-            else if (Environment.OSVersion.Version.Minor >= 2 && radius < 20)
-            {
-                return false;
-            }
-            return true;
+
+            Version version = Environment.OSVersion.Version;
+            bool isWindows8OrHigher = (version.Major == 6 && version.Minor >= 2) || version.Major > 6;
+
+            return !isWindows8OrHigher || radius >= 20; ;
         }
 
         /// <summary>
