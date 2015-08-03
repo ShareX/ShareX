@@ -115,6 +115,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpYourls, Resources.Yourls);
             AddIconToTab(tpLambda, Resources.Lambda);
             AddIconToTab(tpUp1, Resources.Up1);
+            AddIconToTab(tpOneTimeSecret, Resources.OneTimeSecret);
 
             tcFileUploaders.TabPages.Remove(tpHubic);
 
@@ -1060,6 +1061,20 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Hastebin
+
+        #region OneTimeSecret
+
+        private void txtOneTimeSecretEmail_TextChanged(object sender, EventArgs e)
+        {
+            Config.OneTimeSecretAPIUsername = txtOneTimeSecretEmail.Text;
+        }
+
+        private void txtOneTimeSecretAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.OneTimeSecretAPIKey = txtOneTimeSecretAPIKey.Text;
+        }
+
+        #endregion OneTimeSecret
 
         #endregion Text Uploaders
 

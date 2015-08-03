@@ -194,6 +194,7 @@
     <Compile Include="ImageUploaders\SomeImage.cs" />
     <Compile Include="ImageUploaders\VgymeUploader.cs" />
     <Compile Include="TextUploaders\Hastebin.cs" />
+    <Compile Include="TextUploaders\OneTimeSecret.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />
     <Compile Include="UploadersConfig.cs" />
     <Compile Include="Forms\UserPassBox.cs">
@@ -704,6 +705,7 @@
     <None Include="Favicons\Lambda.ico" />
     <None Include="Favicons\Mega.ico" />
     <None Include="Favicons\Picasa.ico" />
+    <None Include="Favicons\OneTimeSecret.ico" />
     <None Include="packages.config" />
     <None Include="Resources\server-network.png" />
     <None Include="Resources\mail.png" />
