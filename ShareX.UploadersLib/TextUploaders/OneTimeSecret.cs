@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
@@ -45,10 +46,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("secret", text);
 
-                NameValueCollection headers = new NameValueCollection();
-                headers.Add("Authorization", "Basic " + System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes((API_USERNAME + ":" + API_KEY))));
-
-                result.Response = SendRequest(HttpMethod.POST, API_ENDPOINT, args, headers);
+                result.Response = SendRequest(HttpMethod.POST, API_ENDPOINT, args, CreateAuthenticationHeader(API_USERNAME, API_KEY));
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {
@@ -56,7 +54,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
                     if (jsonResponse != null)
                     {
-                        result.URL = "https://onetimesecret.com/secret/" + jsonResponse.secret_key;
+                        result.URL = URLHelpers.CombineURL("https://onetimesecret.com/secret/", jsonResponse.secret_key);
                     }
                 }
             }
