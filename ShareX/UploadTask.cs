@@ -816,6 +816,13 @@ namespace ShareX
                         SyntaxHighlighting = Program.UploadersConfig.HastebinSyntaxHighlighting
                     };
                     break;
+                case TextDestination.OneTimeSecret:
+                    textUploader = new OneTimeSecret()
+                    {
+                        API_KEY = Program.UploadersConfig.OneTimeSecretAPIKey,
+                        API_USERNAME = Program.UploadersConfig.OneTimeSecretAPIUsername
+                    };
+                    break;
                 case TextDestination.CustomTextUploader:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomTextUploaderSelected);
                     if (customUploader != null)

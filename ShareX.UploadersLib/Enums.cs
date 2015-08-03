@@ -75,6 +75,8 @@ namespace ShareX.UploadersLib
         Upaste,
         [Description("Hastebin")]
         Hastebin,
+        [Description("OneTimeSecret")]
+        OneTimeSecret,
         CustomTextUploader, // Localized
         FileUploader // Localized
     }

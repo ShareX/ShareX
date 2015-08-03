@@ -109,6 +109,11 @@ namespace ShareX.UploadersLib
         public string HastebinCustomDomain = "http://hastebin.com";
         public string HastebinSyntaxHighlighting = "hs";
 
+        // OneTimeSecret
+
+        public string OneTimeSecretAPIKey = string.Empty;
+        public string OneTimeSecretAPIUsername = string.Empty;
+
         #endregion Text uploaders
 
         #region File uploaders
@@ -370,6 +375,8 @@ namespace ShareX.UploadersLib
         {
             switch (destination)
             {
+                case TextDestination.OneTimeSecret:
+                    return !string.IsNullOrEmpty(OneTimeSecretAPIUsername) && !string.IsNullOrEmpty(OneTimeSecretAPIKey);
                 case TextDestination.CustomTextUploader:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomTextUploaderSelected);
             }
