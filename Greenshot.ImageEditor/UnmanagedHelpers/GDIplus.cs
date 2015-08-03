@@ -196,7 +196,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
             Version version = Environment.OSVersion.Version;
             bool isWindows8OrHigher = (version.Major == 6 && version.Minor >= 2) || version.Major > 6;
 
-            return !isWindows8OrHigher || radius >= 20; ;
+            return !isWindows8OrHigher || radius >= 20;
         }
 
         /// <summary>
