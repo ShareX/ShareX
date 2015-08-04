@@ -51,20 +51,6 @@ namespace ShareX
         Turkish
     }
 
-    public enum EImageFormat
-    {
-        [Description("png")]
-        PNG,
-        [Description("jpg")]
-        JPEG,
-        [Description("gif")]
-        GIF,
-        [Description("bmp")]
-        BMP,
-        [Description("tif")]
-        TIFF
-    }
-
     public enum TaskJob
     {
         Job,
@@ -73,6 +59,15 @@ namespace ShareX
         TextUpload,
         ShortenURL,
         ShareURL
+    }
+
+    public enum TaskStatus
+    {
+        InQueue,
+        Preparing,
+        Working,
+        Stopping,
+        Completed
     }
 
     [Flags]
@@ -230,10 +225,5 @@ namespace ShareX
     public enum ImagePreviewVisibility
     {
         Show, Hide, Automatic
-    }
-
-    public enum ColorPickerFormat
-    {
-        RGB, Hexadecimal
     }
 }

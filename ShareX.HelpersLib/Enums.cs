@@ -39,13 +39,6 @@ namespace ShareX.HelpersLib
         txt, log, nfo, c, cpp, cc, cxx, h, hpp, hxx, cs, vb, html, htm, xhtml, xht, xml, css, js, php, bat, java, lua, py, pl, cfg, ini
     }
 
-    public enum EncryptionStrength
-    {
-        Low = 128,
-        Medium = 192,
-        High = 256
-    }
-
     public enum EDataType
     {
         Default,
@@ -53,14 +46,6 @@ namespace ShareX.HelpersLib
         Image,
         Text,
         URL
-    }
-
-    public enum EInputType
-    {
-        None,
-        Clipboard,
-        FileSystem,
-        Screenshot
     }
 
     public enum GIFQuality // Localized
@@ -73,32 +58,16 @@ namespace ShareX.HelpersLib
 
     public enum EImageFormat
     {
+        [Description("png")]
         PNG,
+        [Description("jpg")]
         JPEG,
+        [Description("gif")]
         GIF,
+        [Description("bmp")]
         BMP,
+        [Description("tif")]
         TIFF
-    }
-
-    public enum AnimatedImageFormat
-    {
-        PNG,
-        GIF
-    }
-
-    public enum TaskStatus
-    {
-        InQueue,
-        Preparing,
-        Working,
-        Stopping,
-        Completed
-    }
-
-    public enum TaskProgress
-    {
-        ReportStarted,
-        ReportProgress
     }
 
     public enum TriangleAngle
