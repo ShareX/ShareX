@@ -31,7 +31,7 @@ using System.Text;
 
 namespace ShareX.MediaLib
 {
-    internal class ScreenshotInfo
+    public class VideoThumbnailInfo
     {
         public string Args { get; set; }
         public string FullImageLink { get; set; }
@@ -39,7 +39,7 @@ namespace ShareX.MediaLib
         public string LocalPath { get; set; }
         public TimeSpan Timestamp { get; set; }
 
-        public ScreenshotInfo(string fp)
+        public VideoThumbnailInfo(string fp)
         {
             LocalPath = fp;
         }

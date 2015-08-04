@@ -960,6 +960,11 @@ namespace ShareX
             TaskHelpers.OpenIndexFolder();
         }
 
+        private void tsmiVideoThumbnailer_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenVideoThumbnailer();
+        }
+
         private void tsmiImageEditor_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenImageEditor();

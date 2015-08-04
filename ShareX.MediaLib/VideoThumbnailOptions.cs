@@ -53,9 +53,6 @@ namespace ShareX.MediaLib
         [Category("Screenshots"), DefaultValue(true), Description("Keep or delete screenshots after processing files.")]
         public bool KeepScreenshots { get; set; }
 
-        [Category("Screenshots"), DefaultValue(true), Description("Create screenshots using thumbnailer.")]
-        public bool CreateScreenshots { get; set; }
-
         [Category("Screenshots"), DefaultValue(ThumbnailLocationType.DefaultFolder), Description("Create screenshots in the same folders as the media file, default torrent folder or in a custom folder.")]
         public ThumbnailLocationType ScreenshotsLocation { get; set; }
 
@@ -82,5 +79,10 @@ namespace ShareX.MediaLib
 
         [Category("Screenshots / Combined"), DefaultValue(true), Description("Draw rectangle shadow behind thumbnails.")]
         public bool DrawShadow { get; set; }
+
+        public VideoThumbnailOptions()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
     }
 }

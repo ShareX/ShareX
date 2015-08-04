@@ -42,8 +42,6 @@ namespace ShareX.MediaLib
         public VideoThumbnailOptions Options { get; private set; }
         public VideoInfo VideoInfo { get; private set; }
 
-        private List<ScreenshotInfo> tempScreenshots = new List<ScreenshotInfo>();
-        private List<ScreenshotInfo> screenshots = new List<ScreenshotInfo>();
         private int timeSlice;
         private List<int> mediaSeekTimes = new List<int>();
 
@@ -66,9 +64,14 @@ namespace ShareX.MediaLib
             }
         }
 
-        public virtual void TakeScreenshots()
+        public virtual List<VideoThumbnailInfo> TakeScreenshots()
         {
-            if (!File.Exists(FFmpegPath)) return;
+            if (!File.Exists(FFmpegPath))
+            {
+                return null;
+            }
+
+            List<VideoThumbnailInfo> tempScreenshots = new List<VideoThumbnailInfo>();
 
             for (int i = 0; i < Options.ScreenshotCount; i++)
             {
@@ -77,7 +80,7 @@ namespace ShareX.MediaLib
 
                 int timeSliceElapsed = Options.RandomFrame ? GetRandomTimeSlice(i) : timeSlice * (i + 1);
                 string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed.ToString("00000"), Options.FFmpegThumbnailExtension);
-                string tempScreenshotPath = Path.Combine(Options.OutputDirectory, filename);
+                string tempScreenshotPath = Path.Combine(GetOutputDirectory(), filename);
 
                 ProcessStartInfo psi = new ProcessStartInfo(FFmpegPath);
                 psi.WindowStyle = ProcessWindowStyle.Hidden;
@@ -92,7 +95,7 @@ namespace ShareX.MediaLib
 
                 if (File.Exists(tempScreenshotPath))
                 {
-                    ScreenshotInfo screenshotInfo = new ScreenshotInfo(tempScreenshotPath)
+                    VideoThumbnailInfo screenshotInfo = new VideoThumbnailInfo(tempScreenshotPath)
                     {
                         Args = psi.Arguments,
                         Timestamp = TimeSpan.FromSeconds(timeSliceElapsed)
@@ -102,11 +105,13 @@ namespace ShareX.MediaLib
                 }
             }
 
-            Finish();
+            return Finish(tempScreenshots);
         }
 
-        protected virtual void Finish()
+        protected virtual List<VideoThumbnailInfo> Finish(List<VideoThumbnailInfo> tempScreenshots)
         {
+            List<VideoThumbnailInfo> screenshots = new List<VideoThumbnailInfo>();
+
             if (tempScreenshots != null && tempScreenshots.Count > 0)
             {
                 if (Options.CombineScreenshots)
@@ -114,7 +119,7 @@ namespace ShareX.MediaLib
                     string temp_fp = "";
                     using (Image img = CombineScreenshots(tempScreenshots))
                     {
-                        temp_fp = Path.Combine(Options.OutputDirectory, Path.GetFileNameWithoutExtension(MediaPath) + "_s." + Options.FFmpegThumbnailExtension);
+                        temp_fp = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + "_s." + Options.FFmpegThumbnailExtension);
 
                         switch (Options.FFmpegThumbnailExtension)
                         {
@@ -126,7 +131,7 @@ namespace ShareX.MediaLib
                                 break;
                         }
 
-                        screenshots.Add(new ScreenshotInfo(temp_fp) { Args = tempScreenshots[0].Args });
+                        screenshots.Add(new VideoThumbnailInfo(temp_fp) { Args = tempScreenshots[0].Args });
                     }
 
                     tempScreenshots.ForEach(x => File.Delete(x.LocalPath));
@@ -136,11 +141,27 @@ namespace ShareX.MediaLib
                     screenshots.AddRange(tempScreenshots);
                 }
             }
+
+            return screenshots;
+        }
+
+        private string GetOutputDirectory()
+        {
+            switch (Options.ScreenshotsLocation)
+            {
+                case ThumbnailLocationType.ParentFolder:
+                    return Path.GetDirectoryName(MediaPath);
+                case ThumbnailLocationType.CustomFolder:
+                    return Options.OutputDirectory;
+                default:
+                case ThumbnailLocationType.DefaultFolder: // TODO
+                    return "";
+            }
         }
 
         protected int GetTimeSlice(int count)
         {
-            return (int)(VideoInfo.Duration.TotalSeconds / (count * 1000));
+            return (int)(VideoInfo.Duration.TotalSeconds / count);
         }
 
         protected int GetRandomTimeSlice(int start)
@@ -149,7 +170,7 @@ namespace ShareX.MediaLib
             return (int)(random.NextDouble() * (mediaSeekTimes[start + 1] - mediaSeekTimes[start]) + mediaSeekTimes[start]);
         }
 
-        private Image CombineScreenshots(List<ScreenshotInfo> screenshots)
+        private Image CombineScreenshots(List<VideoThumbnailInfo> screenshots)
         {
             List<Image> images = new List<Image>();
             Image finalImage = null;
@@ -169,7 +190,7 @@ namespace ShareX.MediaLib
                     }
                 }
 
-                foreach (ScreenshotInfo screenshot in screenshots)
+                foreach (VideoThumbnailInfo screenshot in screenshots)
                 {
                     Image img = Image.FromFile(screenshot.LocalPath);
 

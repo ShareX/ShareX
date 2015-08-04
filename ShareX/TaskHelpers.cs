@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
+using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -619,6 +620,13 @@ namespace ShareX
         public static void OpenIndexFolder()
         {
             UploadManager.IndexFolder();
+        }
+
+        public static void OpenVideoThumbnailer(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, Program.Settings.VideoThumbnailOptions).Show();
         }
 
         public static void OpenImageEditor(string filePath = null)

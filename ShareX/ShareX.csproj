@@ -766,6 +766,10 @@
       <Project>{750c6f46-2c5a-4488-81d3-3b35ca50f3ee}</Project>
       <Name>ShareX.IndexerLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj">
+      <Project>{1a190e53-1419-4cc2-b0e5-3bc7ea861c8b}</Project>
+      <Name>ShareX.MediaLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShareX.ScreenCaptureLib\ShareX.ScreenCaptureLib.csproj">
       <Project>{DBDB0DAA-B3AE-4CC4-A8C2-20550B7F32E3}</Project>
       <Name>ShareX.ScreenCaptureLib</Name>
@@ -933,6 +937,7 @@
     <None Include="Resources\document-globe.png" />
     <None Include="Resources\keyboard--minus.png" />
     <None Include="Resources\keyboard--plus.png" />
+    <None Include="Resources\images-stack.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

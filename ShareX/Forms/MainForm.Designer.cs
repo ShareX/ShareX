@@ -83,6 +83,7 @@
             this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tssMain1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsddbAfterCaptureTasks = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbAfterUploadTasks = new System.Windows.Forms.ToolStripDropDownButton();
@@ -576,6 +577,7 @@
             this.tsmiRuler,
             this.tsmiAutomate,
             this.tsmiIndexFolder,
+            this.tsmiVideoThumbnailer,
             this.tsmiFTPClient,
             this.tsmiTweetMessage,
             this.tsmiMonitorTest});
@@ -673,6 +675,13 @@
             this.tsmiMonitorTest.Name = "tsmiMonitorTest";
             resources.ApplyResources(this.tsmiMonitorTest, "tsmiMonitorTest");
             this.tsmiMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
+            // 
+            // tsmiVideoThumbnailer
+            // 
+            this.tsmiVideoThumbnailer.Image = global::ShareX.Properties.Resources.images_stack;
+            this.tsmiVideoThumbnailer.Name = "tsmiVideoThumbnailer";
+            resources.ApplyResources(this.tsmiVideoThumbnailer, "tsmiVideoThumbnailer");
+            this.tsmiVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
             // 
             // tssMain1
             // 
@@ -1954,5 +1963,6 @@
         private System.Windows.Forms.Panel pGreenlight;
         private HelpersLib.GreenlightButton btnGreenlightOpen;
         private HelpersLib.GreenlightButton btnGreenlightHide;
+        private System.Windows.Forms.ToolStripMenuItem tsmiVideoThumbnailer;
     }
 }
