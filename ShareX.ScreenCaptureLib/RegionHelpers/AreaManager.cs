@@ -143,7 +143,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void surface_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyData)
+            switch (e.KeyCode)
             {
                 case Keys.ShiftKey:
                     proportionalResizing = true;
