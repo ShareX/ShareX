@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums.cs" />
+    <Compile Include="FFmpegCLIManager.cs" />
     <Compile Include="ScreenshotInfo.cs" />
+    <Compile Include="VideoInfo.cs" />
     <Compile Include="VideoThumbnailer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VideoThumbnailOptions.cs" />
