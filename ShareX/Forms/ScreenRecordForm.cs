@@ -192,7 +192,7 @@ namespace ShareX
 
             IsRecording = true;
 
-            Screenshot.CaptureCursor = taskSettings.CaptureSettings.ShowCursor;
+            Screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
 
             string trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Waiting___;
             TrayIcon.Text = trayText.Truncate(63);
@@ -227,7 +227,7 @@ namespace ShareX
                         Duration = duration,
                         OutputPath = path,
                         CaptureArea = captureRectangle,
-                        DrawCursor = taskSettings.CaptureSettings.ShowCursor
+                        DrawCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor
                     };
 
                     screenRecorder = new ScreenRecorder(outputType, options, captureRectangle);

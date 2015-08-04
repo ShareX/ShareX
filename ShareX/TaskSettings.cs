@@ -277,6 +277,7 @@ namespace ShareX
         #region Capture / General
 
         public bool ShowCursor = true;
+        public bool ScreenRecordShowCursor = true;
         public bool CaptureTransparent = false;
         public bool CaptureShadow = true;
         public int CaptureShadowOffset = 20;
