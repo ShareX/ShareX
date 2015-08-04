@@ -79,6 +79,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_ConfirmAddLanguageFile = False
 		RESX_AutoCreateNewLanguageFiles = False
 	EndGlobalSection
 EndGlobal
