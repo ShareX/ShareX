@@ -934,7 +934,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap images_stack {
             get {
-                object obj = ResourceManager.GetObject("images-stack", resourceCulture);
+                object obj = ResourceManager.GetObject("images_stack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

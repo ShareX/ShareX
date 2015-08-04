@@ -37,6 +37,9 @@ namespace ShareX.MediaLib
 {
     public class VideoThumbnailer
     {
+        public delegate void ProgressChangedEventHandler(int current, int length);
+        public event ProgressChangedEventHandler ProgressChanged;
+
         public string MediaPath { get; private set; }
         public string FFmpegPath { get; private set; }
         public VideoThumbnailOptions Options { get; private set; }
@@ -76,10 +79,8 @@ namespace ShareX.MediaLib
             for (int i = 0; i < Options.ScreenshotCount; i++)
             {
                 string mediaFileName = Path.GetFileNameWithoutExtension(MediaPath);
-                //worker.ReportProgress((int)ProgressType.UPDATE_STATUSBAR_DEBUG, string.Format("Taking screenshot {0} of {1} for {2}", i + 1, Options.ScreenshotCount, mediaFileName));
-
                 int timeSliceElapsed = Options.RandomFrame ? GetRandomTimeSlice(i) : timeSlice * (i + 1);
-                string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed.ToString("00000"), Options.FFmpegThumbnailExtension);
+                string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed.ToString("00000"), Options.FFmpegThumbnailExtension.GetDescription());
                 string tempScreenshotPath = Path.Combine(GetOutputDirectory(), filename);
 
                 ProcessStartInfo psi = new ProcessStartInfo(FFmpegPath);
@@ -103,6 +104,8 @@ namespace ShareX.MediaLib
 
                     tempScreenshots.Add(screenshotInfo);
                 }
+
+                OnProgressChanged(i + 1, Options.ScreenshotCount);
             }
 
             return Finish(tempScreenshots);
@@ -116,22 +119,21 @@ namespace ShareX.MediaLib
             {
                 if (Options.CombineScreenshots)
                 {
-                    string temp_fp = "";
                     using (Image img = CombineScreenshots(tempScreenshots))
                     {
-                        temp_fp = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + "_s." + Options.FFmpegThumbnailExtension);
+                        string tempFilepath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + "_s." + Options.FFmpegThumbnailExtension);
 
                         switch (Options.FFmpegThumbnailExtension)
                         {
                             case EImageFormat.PNG:
-                                img.Save(temp_fp, ImageFormat.Png);
+                                img.Save(tempFilepath, ImageFormat.Png);
                                 break;
                             case EImageFormat.JPEG:
-                                img.Save(temp_fp, ImageFormat.Jpeg);
+                                img.Save(tempFilepath, ImageFormat.Jpeg);
                                 break;
                         }
 
-                        screenshots.Add(new VideoThumbnailInfo(temp_fp) { Args = tempScreenshots[0].Args });
+                        screenshots.Add(new VideoThumbnailInfo(tempFilepath) { Args = tempScreenshots[0].Args });
                     }
 
                     tempScreenshots.ForEach(x => File.Delete(x.LocalPath));
@@ -142,12 +144,25 @@ namespace ShareX.MediaLib
                 }
             }
 
+            if (Options.OpenDirectory && screenshots.Count > 0)
+            {
+                Helpers.OpenFolderWithFile(screenshots[0].LocalPath);
+            }
+
             return screenshots;
+        }
+
+        protected void OnProgressChanged(int current, int length)
+        {
+            if (ProgressChanged != null)
+            {
+                ProgressChanged(current, length);
+            }
         }
 
         private string GetOutputDirectory()
         {
-            switch (Options.ScreenshotsLocation)
+            switch (Options.OutputLocation)
             {
                 case ThumbnailLocationType.ParentFolder:
                     return Path.GetDirectoryName(MediaPath);
@@ -247,7 +262,7 @@ namespace ShareX.MediaLib
                             {
                                 int shadowOffset = 3;
 
-                                using (Brush shadowBrush = new SolidBrush(Color.FromArgb(50, Color.Black)))
+                                using (Brush shadowBrush = new SolidBrush(Color.FromArgb(75, Color.Black)))
                                 {
                                     g.FillRectangle(shadowBrush, offsetX + shadowOffset, offsetY + shadowOffset, thumbWidth, thumbHeight);
                                 }

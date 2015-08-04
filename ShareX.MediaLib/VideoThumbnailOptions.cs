@@ -35,6 +35,9 @@ namespace ShareX.MediaLib
 {
     public class VideoThumbnailOptions
     {
+        [Category("Screenshots"), DefaultValue(ThumbnailLocationType.ParentFolder), Description("Create screenshots in the same folders as the media file, default torrent folder or in a custom folder.")]
+        public ThumbnailLocationType OutputLocation { get; set; }
+
         [Category("Screenshots"), DefaultValue(""), Description("Output folder where screenshots will get saved.")]
         public string OutputDirectory { get; set; }
 
@@ -44,7 +47,7 @@ namespace ShareX.MediaLib
         [Category("Screenshots"), DefaultValue(3), Description("Total number of screenshots to take.")]
         public int ScreenshotCount { get; set; }
 
-        [Category("Screenshots"), DefaultValue(true), Description("Choose random frame each time a media file is processed.")]
+        [Category("Screenshots"), DefaultValue(false), Description("Choose random frame each time a media file is processed.")]
         public bool RandomFrame { get; set; }
 
         [Category("Screenshots"), DefaultValue(true), Description("Upload screenshots.")]
@@ -53,8 +56,8 @@ namespace ShareX.MediaLib
         [Category("Screenshots"), DefaultValue(true), Description("Keep or delete screenshots after processing files.")]
         public bool KeepScreenshots { get; set; }
 
-        [Category("Screenshots"), DefaultValue(ThumbnailLocationType.DefaultFolder), Description("Create screenshots in the same folders as the media file, default torrent folder or in a custom folder.")]
-        public ThumbnailLocationType ScreenshotsLocation { get; set; }
+        [Category("Screenshots"), DefaultValue(true), Description("After all screenshots taken open output directory automatically.")]
+        public bool OpenDirectory { get; set; }
 
         [Category("Screenshots"), DefaultValue(0), Description("Maximum thumbnail width size, 0 means don't resize.")]
         public int MaxThumbnailWidth { get; set; }

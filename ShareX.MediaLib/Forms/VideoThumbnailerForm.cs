@@ -54,15 +54,34 @@ namespace ShareX.MediaLib
         {
             string mediaPath = txtMediaPath.Text;
 
-            if (File.Exists(mediaPath))
+            if (File.Exists(mediaPath) && File.Exists(FFmpegPath))
             {
                 VideoThumbnailer thumbnailer = new VideoThumbnailer(mediaPath, FFmpegPath, Options);
-                btnStart.Enabled = false;
+                thumbnailer.ProgressChanged += Thumbnailer_ProgressChanged;
+                pbProgress.Value = 0;
+                pbProgress.Maximum = Options.ScreenshotCount;
+                pbProgress.Visible = true;
+                btnStart.Visible = false;
                 BackgroundWorker bw = new BackgroundWorker();
                 bw.DoWork += (sender2, e2) => thumbnailer.TakeScreenshots();
-                bw.RunWorkerCompleted += (sender3, e3) => btnStart.Enabled = true;
+                bw.RunWorkerCompleted += (sender3, e3) =>
+                {
+                    btnStart.Visible = true;
+                    pbProgress.Visible = false;
+                };
                 bw.RunWorkerAsync();
             }
+        }
+
+        private void Thumbnailer_ProgressChanged(int current, int length)
+        {
+            this.InvokeSafe(() => pbProgress.Value = current);
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            // TODO: Translate
+            Helpers.BrowseFile("Browse for media file", txtMediaPath);
         }
     }
 }
