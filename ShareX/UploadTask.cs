@@ -1125,6 +1125,13 @@ namespace ShareX
                 case UrlShortenerType.TwoGP:
                     urlShortener = new TwoGPURLShortener();
                     break;
+                case UrlShortenerType.Polr:
+                    urlShortener = new PolrURLShortener
+                    {
+                        API_HOST = Program.UploadersConfig.PolrAPIHostname,
+                        API_KEY = Program.UploadersConfig.PolrAPIKey
+                    };
+                    break;
                 case UrlShortenerType.CustomURLShortener:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomURLShortenerSelected);
                     if (customUploader != null)
