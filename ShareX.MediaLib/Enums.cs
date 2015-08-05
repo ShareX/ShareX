@@ -31,9 +31,9 @@ namespace ShareX.MediaLib
     {
         [Description("Default folder")]
         DefaultFolder,
-        [Description("Custom folder")]
-        CustomFolder,
         [Description("Parent folder of the media file")]
-        ParentFolder
+        ParentFolder,
+        [Description("Custom folder")]
+        CustomFolder
     }
 }

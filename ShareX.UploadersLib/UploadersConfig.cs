@@ -287,6 +287,10 @@ namespace ShareX.UploadersLib
         // coinurl.com
         public string CoinURLUUID = string.Empty;
 
+        // polr
+        public string PolrAPIHostname = string.Empty;
+        public string PolrAPIKey = string.Empty;
+
         #endregion URL shorteners
 
         #region URL sharing services
@@ -446,6 +450,8 @@ namespace ShareX.UploadersLib
                     return !string.IsNullOrEmpty(LnkUAPIKEY);
                 case UrlShortenerType.CoinURL:
                     return !string.IsNullOrEmpty(CoinURLUUID);
+                case UrlShortenerType.Polr:
+                    return !string.IsNullOrEmpty(PolrAPIKey);
                 case UrlShortenerType.CustomURLShortener:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomURLShortenerSelected);
             }

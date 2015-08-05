@@ -25,9 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -60,7 +58,7 @@ namespace ShareX.MediaLib
 
         public VideoInfo GetVideoInfo(string videoPath)
         {
-            Open(FFmpegPath, "-i " + videoPath);
+            Open(FFmpegPath, string.Format("-i \"{0}\"", videoPath));
             string output = Output.ToString();
             Match match = Regex.Match(output, @"Duration: (?<Duration>\d{2}:\d{2}:\d{2}\.\d{2}),.+?start: (?<Start>\d+\.\d+),.+?bitrate: (?<Bitrate>\d+) kb/s", RegexOptions.CultureInvariant);
 
@@ -69,6 +67,9 @@ namespace ShareX.MediaLib
                 VideoInfo videoInfo = new VideoInfo();
                 videoInfo.FilePath = videoPath;
                 videoInfo.Duration = TimeSpan.Parse(match.Groups["Duration"].Value);
+                //videoInfo.Start = TimeSpan.Parse(match.Groups["Start"].Value);
+                videoInfo.Bitrate = int.Parse(match.Groups["Bitrate"].Value);
+
                 return videoInfo;
             }
 

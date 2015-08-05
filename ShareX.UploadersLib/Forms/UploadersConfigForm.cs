@@ -116,6 +116,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpLambda, Resources.Lambda);
             AddIconToTab(tpUp1, Resources.Up1);
             AddIconToTab(tpOneTimeSecret, Resources.OneTimeSecret);
+            AddIconToTab(tpPolr, Resources.Polr);
 
             tcFileUploaders.TabPages.Remove(tpHubic);
 
@@ -2189,6 +2190,20 @@ namespace ShareX.UploadersLib
         }
 
         #endregion CoinURL
+
+        #region Polr
+
+        private void txtPolrAPIHostname_TextChanged(object sender, EventArgs e)
+        {
+            Config.PolrAPIHostname = txtPolrAPIHostname.Text;
+        }
+
+        private void txtPolrAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.PolrAPIKey = txtPolrAPIKey.Text;
+        }
+
+        #endregion Polr
 
         #endregion URL Shorteners
 

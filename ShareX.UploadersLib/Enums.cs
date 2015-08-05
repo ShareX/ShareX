@@ -168,6 +168,8 @@ namespace ShareX.UploadersLib
         VURL,
         [Description("2.gp")]
         TwoGP,
+        [Description("Polr")]
+        Polr,
         CustomURLShortener // Localized
     }
 

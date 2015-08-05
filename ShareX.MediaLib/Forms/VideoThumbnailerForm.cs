@@ -26,19 +26,17 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
 {
     public partial class VideoThumbnailerForm : Form
     {
-        public string FFmpegPath { get; private set; }
+        public event Action<string> UploadRequested;
+
+        public string FFmpegPath { get; set; }
         public VideoThumbnailOptions Options { get; set; }
 
         public VideoThumbnailerForm(string ffmpegPath, VideoThumbnailOptions options)
@@ -47,6 +45,7 @@ namespace ShareX.MediaLib
             Options = options;
             InitializeComponent();
             Icon = ShareXResources.Icon;
+            txtMediaPath.Text = Options.LastVideoPath ?? string.Empty;
             pgOptions.SelectedObject = Options;
         }
 
@@ -56,26 +55,47 @@ namespace ShareX.MediaLib
 
             if (File.Exists(mediaPath) && File.Exists(FFmpegPath))
             {
+                Options.LastVideoPath = mediaPath;
+
                 VideoThumbnailer thumbnailer = new VideoThumbnailer(mediaPath, FFmpegPath, Options);
                 thumbnailer.ProgressChanged += Thumbnailer_ProgressChanged;
                 pbProgress.Value = 0;
                 pbProgress.Maximum = Options.ScreenshotCount;
                 pbProgress.Visible = true;
                 btnStart.Visible = false;
-                BackgroundWorker bw = new BackgroundWorker();
-                bw.DoWork += (sender2, e2) => thumbnailer.TakeScreenshots();
-                bw.RunWorkerCompleted += (sender3, e3) =>
+
+                new Thread(() =>
                 {
-                    btnStart.Visible = true;
-                    pbProgress.Visible = false;
-                };
-                bw.RunWorkerAsync();
+                    List<VideoThumbnailInfo> screenshots = thumbnailer.TakeScreenshots();
+
+                    if (screenshots != null && screenshots.Count > 0)
+                    {
+                        this.InvokeSafe(() =>
+                        {
+                            btnStart.Visible = true;
+                            pbProgress.Visible = false;
+
+                            if (Options.UploadScreenshots)
+                            {
+                                screenshots.ForEach(x => OnUploadRequested(x.Filepath));
+                            }
+                        });
+                    }
+                }).Start();
             }
         }
 
         private void Thumbnailer_ProgressChanged(int current, int length)
         {
             this.InvokeSafe(() => pbProgress.Value = current);
+        }
+
+        protected void OnUploadRequested(string filepath)
+        {
+            if (UploadRequested != null)
+            {
+                UploadRequested(filepath);
+            }
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)

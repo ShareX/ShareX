@@ -626,7 +626,10 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, Program.Settings.VideoThumbnailOptions).Show();
+            Program.Settings.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
+            VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, Program.Settings.VideoThumbnailOptions);
+            thumbnailerForm.UploadRequested += filepath => UploadManager.UploadFile(filepath, taskSettings);
+            thumbnailerForm.Show();
         }
 
         public static void OpenImageEditor(string filePath = null)

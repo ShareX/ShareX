@@ -23,24 +23,40 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.IO;
+using Newtonsoft.Json;
+using ShareX.HelpersLib;
+using System.Collections.Generic;
 
-namespace ShareX.MediaLib
+namespace ShareX.UploadersLib.URLShorteners
 {
-    public class VideoThumbnailInfo
+    public sealed class PolrURLShortener : URLShortener
     {
-        public string Filepath { get; set; }
-        public TimeSpan Timestamp { get; set; }
+        public string API_KEY { get; set; }
 
-        public VideoThumbnailInfo(string filepath)
-        {
-            Filepath = filepath;
-        }
+        public string API_HOST { get; set; }
 
-        public override string ToString()
+        public override UploadResult ShortenURL(string url)
         {
-            return Path.GetFileName(Filepath);
+            UploadResult result = new UploadResult { URL = url };
+
+            if (string.IsNullOrEmpty(API_HOST))
+            {
+                API_HOST = "https://polr.me";
+            }
+
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("apikey", API_KEY);
+            args.Add("action", "shorten");
+            args.Add("url", url);
+
+            string response = SendRequest(HttpMethod.GET, URLHelpers.CombineURL(API_HOST, "api.php"), args);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                result.ShortenedURL = response;
+            }
+
+            return result;
         }
     }
 }

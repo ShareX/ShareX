@@ -234,6 +234,7 @@ namespace ShareX
             nudScreenRecorderDuration.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordDuration;
             chkScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
             nudScreenRecorderStartDelay.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay;
+            cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
             chkRunScreencastCLI.Checked = cboEncoder.Enabled = btnEncoderConfig.Enabled = TaskSettings.CaptureSettings.RunScreencastCLI;
             UpdateVideoEncoders();
 
@@ -834,32 +835,13 @@ namespace ShareX
                 Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                 OutputPath = "output.mp4",
                 CaptureArea = Screen.PrimaryScreen.Bounds,
-                DrawCursor = TaskSettings.CaptureSettings.ShowCursor
+                DrawCursor = TaskSettings.CaptureSettings.ScreenRecordShowCursor
             };
 
             using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
             {
                 form.DefaultToolsPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
                 form.ShowDialog();
-            }
-        }
-
-        private void chkRunScreencastCLI_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.RunScreencastCLI = cboEncoder.Enabled = btnEncoderConfig.Enabled = chkRunScreencastCLI.Checked;
-        }
-
-        private void cboEncoder_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.VideoEncoderSelected = cboEncoder.SelectedIndex;
-        }
-
-        private void btnEncoderConfig_Click(object sender, EventArgs e)
-        {
-            using (VideoEncodersForm form = new VideoEncodersForm() { Icon = this.Icon })
-            {
-                form.ShowDialog();
-                UpdateVideoEncoders();
             }
         }
 
@@ -916,6 +898,30 @@ namespace ShareX
         private void nudScreenRecorderStartDelay_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordStartDelay = (float)nudScreenRecorderStartDelay.Value;
+        }
+
+        private void cbScreenRecorderShowCursor_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.ScreenRecordShowCursor = cbScreenRecorderShowCursor.Checked;
+        }
+
+        private void chkRunScreencastCLI_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.RunScreencastCLI = cboEncoder.Enabled = btnEncoderConfig.Enabled = chkRunScreencastCLI.Checked;
+        }
+
+        private void cboEncoder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.VideoEncoderSelected = cboEncoder.SelectedIndex;
+        }
+
+        private void btnEncoderConfig_Click(object sender, EventArgs e)
+        {
+            using (VideoEncodersForm form = new VideoEncodersForm() { Icon = this.Icon })
+            {
+                form.ShowDialog();
+                UpdateVideoEncoders();
+            }
         }
 
         #endregion Screen recorder

@@ -24,10 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace ShareX.MediaLib
 {
@@ -35,10 +32,12 @@ namespace ShareX.MediaLib
     {
         public string FilePath { get; set; }
         public TimeSpan Duration { get; set; }
+        public TimeSpan Start { get; set; }
+        public int Bitrate { get; set; }
 
         public override string ToString()
         {
-            return string.Format("Filename: {0}, Duration {1}", Path.GetFileName(FilePath), Duration);
+            return string.Format("Filename: {0}, Duration: {1}, Bitrate: {2} kb/s", Path.GetFileName(FilePath), Duration.ToString(@"hh\:mm\:ss"), Bitrate);
         }
     }
 }
