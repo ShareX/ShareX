@@ -30,8 +30,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace ShareX.MediaLib
 {
@@ -121,7 +119,7 @@ namespace ShareX.MediaLib
                 {
                     using (Image img = CombineScreenshots(tempScreenshots))
                     {
-                        string tempFilepath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + "_s." + Options.FFmpegThumbnailExtension);
+                        string tempFilepath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + "_Thumbnail." + Options.FFmpegThumbnailExtension.GetDescription());
 
                         switch (Options.FFmpegThumbnailExtension)
                         {
