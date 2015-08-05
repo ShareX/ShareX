@@ -26,12 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -74,13 +69,13 @@ namespace ShareX.MediaLib
                     {
                         this.InvokeSafe(() =>
                         {
+                            btnStart.Visible = true;
+                            pbProgress.Visible = false;
+
                             if (Options.UploadScreenshots)
                             {
                                 screenshots.ForEach(x => OnUploadRequested(x.Filepath));
                             }
-
-                            btnStart.Visible = true;
-                            pbProgress.Visible = false;
                         });
                     }
                 }).Start();

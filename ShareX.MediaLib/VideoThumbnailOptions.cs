@@ -30,8 +30,11 @@ namespace ShareX.MediaLib
 {
     public class VideoThumbnailOptions
     {
-        [Category("Screenshots"), DefaultValue(ThumbnailLocationType.ParentFolder), Description("Create screenshots in the same folders as the media file, default screenshot folder or in a custom folder.")]
+        [Category("Screenshots"), DefaultValue(ThumbnailLocationType.DefaultFolder), Description("Create screenshots in default screenshot folder, same folder as the media file or in a custom folder.")]
         public ThumbnailLocationType OutputLocation { get; set; }
+
+        [Browsable(false)]
+        public string DefaultOutputDirectory { get; set; }
 
         [Category("Screenshots"), DefaultValue(""), Description("Output folder where screenshots will get saved.")]
         public string CustomOutputDirectory { get; set; }

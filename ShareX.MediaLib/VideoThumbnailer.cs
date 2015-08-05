@@ -150,12 +150,12 @@ namespace ShareX.MediaLib
             switch (Options.OutputLocation)
             {
                 default:
+                case ThumbnailLocationType.DefaultFolder:
+                    return Options.DefaultOutputDirectory;
                 case ThumbnailLocationType.ParentFolder:
                     return Path.GetDirectoryName(MediaPath);
                 case ThumbnailLocationType.CustomFolder:
                     return Options.CustomOutputDirectory;
-                case ThumbnailLocationType.DefaultFolder: // TODO
-                    return "";
             }
         }
 
