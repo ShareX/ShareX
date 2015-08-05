@@ -117,28 +117,92 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ações</value>
+  <data name="btnGreenlightHide.Text" xml:space="preserve">
+    <value>Esconder</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="btnGreenlightOpen.Text" xml:space="preserve">
+    <value>Nós precisamos da sua ajuda para lançar o programa ShareX na Steam!
+Se você gostaria de votar, clique aqui para abir a nossa página no Steam Greenlight.</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
+  <data name="chElapsed.Text" xml:space="preserve">
+    <value>Gasto</value>
   </data>
-  <data name="lblArgs.Text" xml:space="preserve">
-    <value>Parâmetros:</value>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Nome do arquivo</value>
   </data>
-  <data name="lblExtensions.Text" xml:space="preserve">
-    <value>Filtro de extensão: (ex: jpg png mp4)</value>
+  <data name="chProgress.Text" xml:space="preserve">
+    <value>Progresso</value>
   </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>Nome:</value>
+  <data name="chRemaining.Text" xml:space="preserve">
+    <value>Restando</value>
   </data>
-  <data name="lblPath.Text" xml:space="preserve">
-    <value>Local do arquivo:</value>
+  <data name="chSpeed.Text" xml:space="preserve">
+    <value>Velocidade</value>
   </data>
-  <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Extensão do arquivo de saída (vazio = usar a mesma do nome do arquivo)</value>
+  <data name="chStatus.Text" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>Config. do programa...</value>
+  </data>
+  <data name="tsbHistory.Text" xml:space="preserve">
+    <value>Histórico...</value>
+  </data>
+  <data name="tsbHotkeySettings.Text" xml:space="preserve">
+    <value>Config. de atalhos...</value>
+  </data>
+  <data name="tsbImageHistory.Text" xml:space="preserve">
+    <value>Histórico de imagens...</value>
+  </data>
+  <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
+    <value>Capturas de tela...</value>
+  </data>
+  <data name="tsbTaskSettings.Text" xml:space="preserve">
+    <value>Config. de tarefas...</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
+    <value>Tarefas pós-captura</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
+    <value>Tarefas pós-upload</value>
+  </data>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Capturar</value>
+  </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>Depurar</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Destinos</value>
+  </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="tsmiAbout.Text" xml:space="preserve">
+    <value>Sobre...</value>
+  </data>
+  <data name="tsmiTrayDonate.Text" xml:space="preserve">
+    <value>Doar...</value>
+  </data>
+  <data name="tsmiTrayExit.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
+    <value>Config. de tarefas...</value>
+  </data>
+  <data name="tsmiTrayTools.Text" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="tsmiWindow.Text" xml:space="preserve">
+    <value>Janela</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
+    <value>Enviar</value>
   </data>
 </root>
