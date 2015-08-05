@@ -192,6 +192,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbScreenRecordShowCursor = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -788,6 +789,7 @@
             // 
             // pCapture
             // 
+            this.pCapture.Controls.Add(this.cbScreenRecordShowCursor);
             this.pCapture.Controls.Add(this.btnCaptureTransmitBoundsFromMonitorToCustomBounds);
             this.pCapture.Controls.Add(this.lblCaptureCustomRegionWidth);
             this.pCapture.Controls.Add(this.lblCaptureCustomRegionHeight);
@@ -1580,6 +1582,13 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             // 
+            // cbScreenRecordShowCursor
+            // 
+            resources.ApplyResources(this.cbScreenRecordShowCursor, "cbScreenRecordShowCursor");
+            this.cbScreenRecordShowCursor.Name = "cbScreenRecordShowCursor";
+            this.cbScreenRecordShowCursor.UseVisualStyleBackColor = true;
+            this.cbScreenRecordShowCursor.CheckedChanged += new System.EventHandler(this.cbScreenRecordShowCursor_CheckedChanged);
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1818,6 +1827,7 @@
         private System.Windows.Forms.Button btnCaptureTransmitBoundsFromMonitorToCustomBounds;
         private System.Windows.Forms.ComboBox cbGIFEncoding;
         private System.Windows.Forms.Label lblGIFEncoding;
+        private System.Windows.Forms.CheckBox cbScreenRecordShowCursor;
 
 
 

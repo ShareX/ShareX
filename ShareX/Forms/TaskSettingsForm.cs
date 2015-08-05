@@ -201,6 +201,7 @@ namespace ShareX
 
             // Capture
             cbShowCursor.Checked = TaskSettings.CaptureSettings.ShowCursor;
+            cbScreenRecordShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
             cbCaptureTransparent.Checked = TaskSettings.CaptureSettings.CaptureTransparent;
             cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
             cbCaptureShadow.Checked = TaskSettings.CaptureSettings.CaptureShadow;
@@ -785,6 +786,11 @@ namespace ShareX
             TaskSettings.CaptureSettings.ShowCursor = cbShowCursor.Checked;
         }
 
+        private void cbScreenRecordShowCursor_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.ScreenRecordShowCursor = cbScreenRecordShowCursor.Checked;
+        }
+
         private void cbCaptureTransparent_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.CaptureTransparent = cbCaptureTransparent.Checked;
@@ -834,7 +840,7 @@ namespace ShareX
                 Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                 OutputPath = "output.mp4",
                 CaptureArea = Screen.PrimaryScreen.Bounds,
-                DrawCursor = TaskSettings.CaptureSettings.ShowCursor
+                DrawCursor = TaskSettings.CaptureSettings.ScreenRecordShowCursor
             };
 
             using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
