@@ -117,10 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>Pré-visualização da imagem</value>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value> Exportar</value>
   </data>
-  <data name="tsmiCopyImage.Text" xml:space="preserve">
-    <value>Copiar imagem</value>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value> Importar</value>
+  </data>
+  <data name="tsmiExportClipboard.Text" xml:space="preserve">
+    <value>Copiar para área de transferência</value>
+  </data>
+  <data name="tsmiExportFile.Text" xml:space="preserve">
+    <value>Salvar como arquivo...</value>
+  </data>
+  <data name="tsmiExportUpload.Text" xml:space="preserve">
+    <value>Upload como texto</value>
+  </data>
+  <data name="tsmiImportClipboard.Text" xml:space="preserve">
+    <value>Da area de transferência</value>
+  </data>
+  <data name="tsmiImportFile.Text" xml:space="preserve">
+    <value>Do arquivo...</value>
+  </data>
+  <data name="tsmiImportURL.Text" xml:space="preserve">
+    <value>Da URL...</value>
   </data>
 </root>

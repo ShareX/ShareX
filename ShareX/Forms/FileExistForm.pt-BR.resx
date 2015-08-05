@@ -132,4 +132,8 @@
   <data name="btnUniqueName.Text" xml:space="preserve">
     <value>Usar um nome unico:</value>
   </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Já existe um arquivo com o mesmo nome nesse local.
+Escolher outro nome:</value>
+  </data>
 </root>
