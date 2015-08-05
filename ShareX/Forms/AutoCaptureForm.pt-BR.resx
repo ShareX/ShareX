@@ -118,153 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configurações do programa</value>
+    <value>ShareX - Captura automática</value>
   </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Procurar...</value>
+  <data name="btnExecute.Text" xml:space="preserve">
+    <value>Iniciar</value>
   </data>
-  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
-    <value>Procurar...</value>
+  <data name="btnRegion.Text" xml:space="preserve">
+    <value>Selecionar região</value>
   </data>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
-    <value>Adicionar...</value>
+  <data name="cbAutoMinimize.Text" xml:space="preserve">
+    <value>Minimizar automaticamente para a bandeja</value>
   </data>
-  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Editar...</value>
+  <data name="cbWaitUploads.Text" xml:space="preserve">
+    <value>Esperar até que as tarefas estejam completas</value>
   </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Remover</value>
+  <data name="gbRegion.Text" xml:space="preserve">
+    <value>Região</value>
   </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Abrir...</value>
+  <data name="lblDuration.Text" xml:space="preserve">
+    <value>Tempo de repetição</value>
   </data>
-  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
-    <value>Abrir...</value>
+  <data name="lblDurationSeconds.Text" xml:space="preserve">
+    <value>segundos</value>
   </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Configurações de impressão da imagem</value>
+  <data name="lblRegion.Text" xml:space="preserve">
+    <value>Região</value>
   </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>Não abrir a janela de configurações de impressão da imagem</value>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX - Captura automática</value>
   </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Número de tentativas se o upload falhar:</value>
+  <data name="rbCustomRegion.Text" xml:space="preserve">
+    <value>Região customizada</value>
   </data>
-  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>Não abrir a janela de impressão do Windows</value>
+  <data name="rbFullscreen.Text" xml:space="preserve">
+    <value>Tela cheia</value>
   </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Lembrar posição da janela principal</value>
-  </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Lembrar tamanho da janela principal</value>
-  </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Mostrar ShareX no menu de "Enviar para"</value>
-  </data>
-  <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Mostrar ícone da bandeja do sistema</value>
-  </data>
-  <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Ao iniciar minimizar para a bandeja</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Executar ShareX quando o Windows iniciar</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Mostrar progresso na barra de tarefas</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Mostrar progresso no ícone da bandeja</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Usar capturas de tela customizadas</value>
-  </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Descrição</value>
-  </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Formato</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Usar hospedagem secundária</value>
-  </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos da área de transferência</value>
-  </data>
-  <data name="lblBufferSize.Text" xml:space="preserve">
-    <value>Tamanho do buffer:</value>
-  </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Idioma:</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: é necessário reiniciar o programa para que as alterações de pastas pessoais façam efeito.</value>
-  </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Pasta pessoal do ShareX:</value>
-  </data>
-  <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Configuração de proxy:</value>
-  </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Senha:</value>
-  </data>
-  <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Porta:</value>
-  </data>
-  <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Usuário:</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Modelo de sub pasta:</value>
-  </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Limite de uploads simultâneos:</value>
-  </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 desabilita o limite)</value>
-  </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Ajude-nos a traduzir o ShareX para o seu idioma! </value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Avançado</value>
-  </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>Geral</value>
-  </data>
-  <data name="tpPaths.Text" xml:space="preserve">
-    <value>Locais</value>
-  </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Imprimir</value>
-  </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
-  </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Upload</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Hospedagem de arquivos secundária</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Hospedagem de imagens secundária</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Hospedagem de texto secundária</value>
-  </data>
-  <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Domínio:</value>
-  </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostrar botão "Enviar usando ShareX" no menu da shell</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Tentar novamente</value>
+  <data name="ssBar.Text" xml:space="preserve">
+    <value>Status</value>
   </data>
 </root>
