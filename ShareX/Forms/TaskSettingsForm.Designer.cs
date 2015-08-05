@@ -192,6 +192,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1026,6 +1027,7 @@
             // 
             // tpScreenRecorder
             // 
+            this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderShowCursor);
             this.tpScreenRecorder.Controls.Add(this.cbGIFEncoding);
             this.tpScreenRecorder.Controls.Add(this.lblGIFEncoding);
             this.tpScreenRecorder.Controls.Add(this.btnScreenRecorderFFmpegOptions);
@@ -1580,6 +1582,13 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             // 
+            // cbScreenRecorderShowCursor
+            // 
+            resources.ApplyResources(this.cbScreenRecorderShowCursor, "cbScreenRecorderShowCursor");
+            this.cbScreenRecorderShowCursor.Name = "cbScreenRecorderShowCursor";
+            this.cbScreenRecorderShowCursor.UseVisualStyleBackColor = true;
+            this.cbScreenRecorderShowCursor.CheckedChanged += new System.EventHandler(this.cbScreenRecorderShowCursor_CheckedChanged);
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1818,8 +1827,6 @@
         private System.Windows.Forms.Button btnCaptureTransmitBoundsFromMonitorToCustomBounds;
         private System.Windows.Forms.ComboBox cbGIFEncoding;
         private System.Windows.Forms.Label lblGIFEncoding;
-
-
-
+        private System.Windows.Forms.CheckBox cbScreenRecorderShowCursor;
     }
 }
