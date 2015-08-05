@@ -113,7 +113,7 @@ namespace ShareX.MediaLib
                 {
                     using (Image img = CombineScreenshots(tempScreenshots))
                     {
-                        string tempFilepath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + "_Thumbnail." + Options.ImageFormat.GetDescription());
+                        string tempFilepath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + Options.FilenameSuffix + "." + Options.ImageFormat.GetDescription());
                         ImageHelpers.SaveImage(img, tempFilepath);
                         screenshots.Add(new VideoThumbnailInfo(tempFilepath));
                     }
