@@ -33,9 +33,6 @@ namespace ShareX.MediaLib
         [Category("Screenshots"), DefaultValue(ThumbnailLocationType.DefaultFolder), Description("Create screenshots in default screenshot folder, same folder as the media file or in a custom folder.")]
         public ThumbnailLocationType OutputLocation { get; set; }
 
-        [Browsable(false)]
-        public string DefaultOutputDirectory { get; set; }
-
         [Category("Screenshots"), DefaultValue(""), Description("Output folder where screenshots will get saved.")]
         public string CustomOutputDirectory { get; set; }
 
@@ -63,7 +60,7 @@ namespace ShareX.MediaLib
         [Category("Screenshots / Combined"), DefaultValue(true), Description("Combine all screenshots to one large screenshot.")]
         public bool CombineScreenshots { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(20), Description("Space between border and content as pixel.")]
+        [Category("Screenshots / Combined"), DefaultValue(10), Description("Space between border and content as pixel.")]
         public int Padding { get; set; }
 
         [Category("Screenshots / Combined"), DefaultValue(10), Description("Space between screenshots as pixel.")]
@@ -80,6 +77,11 @@ namespace ShareX.MediaLib
 
         [Category("Screenshots / Combined"), DefaultValue(true), Description("Draw rectangle shadow behind thumbnails.")]
         public bool DrawShadow { get; set; }
+
+        [Category("Screenshots / Combined"), DefaultValue(true), Description("Draw border around thumbnails.")]
+        public bool DrawBorder { get; set; }
+
+        public string DefaultOutputDirectory, LastVideoPath;
 
         public VideoThumbnailOptions()
         {

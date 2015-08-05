@@ -191,7 +191,7 @@ namespace ShareX.MediaLib
                 {
                     infoString = VideoInfo.ToString();
 
-                    using (Font font = new Font("Arial", 14))
+                    using (Font font = new Font("Arial", 12))
                     {
                         infoStringHeight = Helpers.MeasureText(infoString, font).Height;
                     }
@@ -235,7 +235,7 @@ namespace ShareX.MediaLib
 
                     if (!string.IsNullOrEmpty(infoString))
                     {
-                        using (Font font = new Font("Arial", 14))
+                        using (Font font = new Font("Arial", 12))
                         {
                             g.DrawString(infoString, font, Brushes.Black, Options.Padding, Options.Padding);
                         }
@@ -262,11 +262,16 @@ namespace ShareX.MediaLib
 
                             g.DrawImage(images[i], offsetX, offsetY, thumbWidth, thumbHeight);
 
+                            if (Options.DrawBorder)
+                            {
+                                g.DrawRectangleProper(Pens.Black, offsetX, offsetY, thumbWidth, thumbHeight);
+                            }
+
                             if (Options.AddTimestamp)
                             {
                                 int timestampOffset = 10;
 
-                                using (Font font = new Font("Arial", 12))
+                                using (Font font = new Font("Arial", 10, FontStyle.Bold))
                                 {
                                     ImageHelpers.DrawTextWithShadow(g, screenshots[i].Timestamp.ToString(),
                                         new Point(offsetX + timestampOffset, offsetY + timestampOffset), font, Color.White, Color.Black);

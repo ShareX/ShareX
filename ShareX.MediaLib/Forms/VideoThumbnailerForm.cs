@@ -45,6 +45,7 @@ namespace ShareX.MediaLib
             Options = options;
             InitializeComponent();
             Icon = ShareXResources.Icon;
+            txtMediaPath.Text = Options.LastVideoPath ?? string.Empty;
             pgOptions.SelectedObject = Options;
         }
 
@@ -54,6 +55,8 @@ namespace ShareX.MediaLib
 
             if (File.Exists(mediaPath) && File.Exists(FFmpegPath))
             {
+                Options.LastVideoPath = mediaPath;
+
                 VideoThumbnailer thumbnailer = new VideoThumbnailer(mediaPath, FFmpegPath, Options);
                 thumbnailer.ProgressChanged += Thumbnailer_ProgressChanged;
                 pbProgress.Value = 0;
