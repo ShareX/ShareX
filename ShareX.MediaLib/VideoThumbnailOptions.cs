@@ -30,16 +30,16 @@ namespace ShareX.MediaLib
 {
     public class VideoThumbnailOptions
     {
-        [Category("Screenshots"), DefaultValue(ThumbnailLocationType.ParentFolder), Description("Create screenshots in the same folders as the media file, default torrent folder or in a custom folder.")]
+        [Category("Screenshots"), DefaultValue(ThumbnailLocationType.ParentFolder), Description("Create screenshots in the same folders as the media file, default screenshot folder or in a custom folder.")]
         public ThumbnailLocationType OutputLocation { get; set; }
 
         [Category("Screenshots"), DefaultValue(""), Description("Output folder where screenshots will get saved.")]
-        public string OutputDirectory { get; set; }
+        public string CustomOutputDirectory { get; set; }
 
-        [Category("Screenshots"), DefaultValue(EImageFormat.PNG), Description("FFmpeg thumbnail extension e.g. png or jpg.")]
-        public EImageFormat FFmpegThumbnailExtension { get; set; }
+        [Category("Screenshots"), DefaultValue(EImageFormat.PNG), Description("Thumbnail image format to save.")]
+        public EImageFormat ImageFormat { get; set; }
 
-        [Category("Screenshots"), DefaultValue(3), Description("Total number of screenshots to take.")]
+        [Category("Screenshots"), DefaultValue(9), Description("Total number of screenshots to take.")]
         public int ScreenshotCount { get; set; }
 
         [Category("Screenshots"), DefaultValue(false), Description("Choose random frame each time a media file is processed.")]
@@ -48,16 +48,16 @@ namespace ShareX.MediaLib
         [Category("Screenshots"), DefaultValue(true), Description("Upload screenshots.")]
         public bool UploadScreenshots { get; set; }
 
-        [Category("Screenshots"), DefaultValue(true), Description("Keep or delete screenshots after processing files.")]
+        [Category("Screenshots"), DefaultValue(false), Description("After combine screenshots keep single image files.")]
         public bool KeepScreenshots { get; set; }
 
-        [Category("Screenshots"), DefaultValue(true), Description("After all screenshots taken open output directory automatically.")]
+        [Category("Screenshots"), DefaultValue(false), Description("After all screenshots taken open output directory automatically.")]
         public bool OpenDirectory { get; set; }
 
-        [Category("Screenshots"), DefaultValue(0), Description("Maximum thumbnail width size, 0 means don't resize.")]
+        [Category("Screenshots"), DefaultValue(512), Description("Maximum thumbnail width size, 0 means don't resize.")]
         public int MaxThumbnailWidth { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(false), Description("Combine all screenshots to one large screenshot.")]
+        [Category("Screenshots / Combined"), DefaultValue(true), Description("Combine all screenshots to one large screenshot.")]
         public bool CombineScreenshots { get; set; }
 
         [Category("Screenshots / Combined"), DefaultValue(20), Description("Space between border and content as pixel.")]
@@ -66,11 +66,11 @@ namespace ShareX.MediaLib
         [Category("Screenshots / Combined"), DefaultValue(10), Description("Space between screenshots as pixel.")]
         public int Spacing { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(1), Description("Number of screenshots per row.")]
+        [Category("Screenshots / Combined"), DefaultValue(3), Description("Number of screenshots per row.")]
         public int ColumnCount { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(true), Description("Add movie information to the combined screenshot.")]
-        public bool AddMovieInfo { get; set; }
+        [Category("Screenshots / Combined"), DefaultValue(true), Description("Add video information to the combined screenshot.")]
+        public bool AddVideoInfo { get; set; }
 
         [Category("Screenshots / Combined"), DefaultValue(true), Description("Add timestamp of screenshot at corner of image.")]
         public bool AddTimestamp { get; set; }

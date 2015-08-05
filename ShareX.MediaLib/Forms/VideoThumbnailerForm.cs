@@ -32,12 +32,15 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
 {
     public partial class VideoThumbnailerForm : Form
     {
+        public event Action<string> UploadRequested;
+
         public string FFmpegPath { get; set; }
         public VideoThumbnailOptions Options { get; set; }
 
@@ -62,23 +65,39 @@ namespace ShareX.MediaLib
                 pbProgress.Maximum = Options.ScreenshotCount;
                 pbProgress.Visible = true;
                 btnStart.Visible = false;
-                BackgroundWorker bw = new BackgroundWorker();
-                bw.DoWork += (sender2, e2) => thumbnailer.TakeScreenshots();
-                bw.RunWorkerCompleted += (sender3, e3) =>
+
+                new Thread(() =>
                 {
-                    if (!IsDisposed)
+                    List<VideoThumbnailInfo> screenshots = thumbnailer.TakeScreenshots();
+
+                    if (screenshots != null && screenshots.Count > 0)
                     {
-                        btnStart.Visible = true;
-                        pbProgress.Visible = false;
+                        this.InvokeSafe(() =>
+                        {
+                            if (Options.UploadScreenshots)
+                            {
+                                screenshots.ForEach(x => OnUploadRequested(x.Filepath));
+                            }
+
+                            btnStart.Visible = true;
+                            pbProgress.Visible = false;
+                        });
                     }
-                };
-                bw.RunWorkerAsync();
+                }).Start();
             }
         }
 
         private void Thumbnailer_ProgressChanged(int current, int length)
         {
             this.InvokeSafe(() => pbProgress.Value = current);
+        }
+
+        protected void OnUploadRequested(string filepath)
+        {
+            if (UploadRequested != null)
+            {
+                UploadRequested(filepath);
+            }
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)

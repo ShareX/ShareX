@@ -74,7 +74,7 @@ namespace ShareX.MediaLib
                     timeSliceElapsed = GetTimeSlice(Options.ScreenshotCount) * (i + 1);
                 }
 
-                string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.FFmpegThumbnailExtension.GetDescription());
+                string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetDescription());
                 string tempScreenshotPath = Path.Combine(GetOutputDirectory(), filename);
 
                 using (Process p = new Process())
@@ -113,22 +113,15 @@ namespace ShareX.MediaLib
                 {
                     using (Image img = CombineScreenshots(tempScreenshots))
                     {
-                        string tempFilepath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + "_Thumbnail." + Options.FFmpegThumbnailExtension.GetDescription());
-
-                        switch (Options.FFmpegThumbnailExtension)
-                        {
-                            case EImageFormat.PNG:
-                                img.Save(tempFilepath, ImageFormat.Png);
-                                break;
-                            case EImageFormat.JPEG:
-                                img.Save(tempFilepath, ImageFormat.Jpeg);
-                                break;
-                        }
-
+                        string tempFilepath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + "_Thumbnail." + Options.ImageFormat.GetDescription());
+                        ImageHelpers.SaveImage(img, tempFilepath);
                         screenshots.Add(new VideoThumbnailInfo(tempFilepath));
                     }
 
-                    tempScreenshots.ForEach(x => File.Delete(x.Filepath));
+                    if (!Options.KeepScreenshots)
+                    {
+                        tempScreenshots.ForEach(x => File.Delete(x.Filepath));
+                    }
                 }
                 else
                 {
@@ -160,7 +153,7 @@ namespace ShareX.MediaLib
                 case ThumbnailLocationType.ParentFolder:
                     return Path.GetDirectoryName(MediaPath);
                 case ThumbnailLocationType.CustomFolder:
-                    return Options.OutputDirectory;
+                    return Options.CustomOutputDirectory;
                 case ThumbnailLocationType.DefaultFolder: // TODO
                     return "";
             }
@@ -194,7 +187,7 @@ namespace ShareX.MediaLib
                 string infoString = "";
                 int infoStringHeight = 0;
 
-                if (Options.AddMovieInfo)
+                if (Options.AddVideoInfo)
                 {
                     infoString = VideoInfo.ToString();
 
