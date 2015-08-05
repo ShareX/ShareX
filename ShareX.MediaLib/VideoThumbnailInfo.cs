@@ -24,29 +24,23 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace ShareX.MediaLib
 {
     public class VideoThumbnailInfo
     {
-        public string Args { get; set; }
-        public string FullImageLink { get; set; }
-        public string LinkedThumbnail { get; set; }
-        public string LocalPath { get; set; }
+        public string Filepath { get; set; }
         public TimeSpan Timestamp { get; set; }
 
-        public VideoThumbnailInfo(string fp)
+        public VideoThumbnailInfo(string filepath)
         {
-            LocalPath = fp;
+            Filepath = filepath;
         }
 
         public override string ToString()
         {
-            return Path.GetFileName(LocalPath);
+            return Path.GetFileName(Filepath);
         }
     }
 }

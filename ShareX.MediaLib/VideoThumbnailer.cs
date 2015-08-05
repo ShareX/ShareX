@@ -43,9 +43,6 @@ namespace ShareX.MediaLib
         public VideoThumbnailOptions Options { get; private set; }
         public VideoInfo VideoInfo { get; private set; }
 
-        private int timeSlice;
-        private List<int> mediaSeekTimes = new List<int>();
-
         public VideoThumbnailer(string mediaPath, string ffmpegPath, VideoThumbnailOptions options)
         {
             MediaPath = mediaPath;
@@ -56,37 +53,35 @@ namespace ShareX.MediaLib
             {
                 VideoInfo = ffmpegCLI.GetVideoInfo(MediaPath);
             }
-
-            timeSlice = GetTimeSlice(Options.ScreenshotCount);
-
-            for (int i = 1; i < Options.ScreenshotCount + 2; i++)
-            {
-                mediaSeekTimes.Add(GetTimeSlice(Options.ScreenshotCount + 2) * i);
-            }
         }
 
-        public virtual List<VideoThumbnailInfo> TakeScreenshots()
+        public List<VideoThumbnailInfo> TakeScreenshots()
         {
-            if (!File.Exists(FFmpegPath))
-            {
-                return null;
-            }
-
             List<VideoThumbnailInfo> tempScreenshots = new List<VideoThumbnailInfo>();
 
             for (int i = 0; i < Options.ScreenshotCount; i++)
             {
                 string mediaFileName = Path.GetFileNameWithoutExtension(MediaPath);
-                int timeSliceElapsed = Options.RandomFrame ? GetRandomTimeSlice(i) : timeSlice * (i + 1);
-                string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed.ToString("00000"), Options.FFmpegThumbnailExtension.GetDescription());
-                string tempScreenshotPath = Path.Combine(GetOutputDirectory(), filename);
 
-                ProcessStartInfo psi = new ProcessStartInfo(FFmpegPath);
-                psi.WindowStyle = ProcessWindowStyle.Hidden;
-                psi.Arguments = string.Format("-ss {0} -i \"{1}\" -f image2 -vframes 1 -y \"{2}\"", timeSliceElapsed, MediaPath, tempScreenshotPath);
+                int timeSliceElapsed;
+
+                if (Options.RandomFrame)
+                {
+                    timeSliceElapsed = GetRandomTimeSlice(i);
+                }
+                else
+                {
+                    timeSliceElapsed = GetTimeSlice(Options.ScreenshotCount) * (i + 1);
+                }
+
+                string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.FFmpegThumbnailExtension.GetDescription());
+                string tempScreenshotPath = Path.Combine(GetOutputDirectory(), filename);
 
                 using (Process p = new Process())
                 {
+                    ProcessStartInfo psi = new ProcessStartInfo(FFmpegPath);
+                    psi.WindowStyle = ProcessWindowStyle.Hidden;
+                    psi.Arguments = string.Format("-ss {0} -i \"{1}\" -f image2 -vframes 1 -y \"{2}\"", timeSliceElapsed, MediaPath, tempScreenshotPath);
                     p.StartInfo = psi;
                     p.Start();
                     p.WaitForExit(1000 * 30);
@@ -96,7 +91,6 @@ namespace ShareX.MediaLib
                 {
                     VideoThumbnailInfo screenshotInfo = new VideoThumbnailInfo(tempScreenshotPath)
                     {
-                        Args = psi.Arguments,
                         Timestamp = TimeSpan.FromSeconds(timeSliceElapsed)
                     };
 
@@ -109,7 +103,7 @@ namespace ShareX.MediaLib
             return Finish(tempScreenshots);
         }
 
-        protected virtual List<VideoThumbnailInfo> Finish(List<VideoThumbnailInfo> tempScreenshots)
+        private List<VideoThumbnailInfo> Finish(List<VideoThumbnailInfo> tempScreenshots)
         {
             List<VideoThumbnailInfo> screenshots = new List<VideoThumbnailInfo>();
 
@@ -131,20 +125,20 @@ namespace ShareX.MediaLib
                                 break;
                         }
 
-                        screenshots.Add(new VideoThumbnailInfo(tempFilepath) { Args = tempScreenshots[0].Args });
+                        screenshots.Add(new VideoThumbnailInfo(tempFilepath));
                     }
 
-                    tempScreenshots.ForEach(x => File.Delete(x.LocalPath));
+                    tempScreenshots.ForEach(x => File.Delete(x.Filepath));
                 }
                 else
                 {
                     screenshots.AddRange(tempScreenshots);
                 }
-            }
 
-            if (Options.OpenDirectory && screenshots.Count > 0)
-            {
-                Helpers.OpenFolderWithFile(screenshots[0].LocalPath);
+                if (Options.OpenDirectory && screenshots.Count > 0)
+                {
+                    Helpers.OpenFolderWithFile(screenshots[0].Filepath);
+                }
             }
 
             return screenshots;
@@ -162,23 +156,30 @@ namespace ShareX.MediaLib
         {
             switch (Options.OutputLocation)
             {
+                default:
                 case ThumbnailLocationType.ParentFolder:
                     return Path.GetDirectoryName(MediaPath);
                 case ThumbnailLocationType.CustomFolder:
                     return Options.OutputDirectory;
-                default:
                 case ThumbnailLocationType.DefaultFolder: // TODO
                     return "";
             }
         }
 
-        protected int GetTimeSlice(int count)
+        private int GetTimeSlice(int count)
         {
             return (int)(VideoInfo.Duration.TotalSeconds / count);
         }
 
-        protected int GetRandomTimeSlice(int start)
+        private int GetRandomTimeSlice(int start)
         {
+            List<int> mediaSeekTimes = new List<int>();
+
+            for (int i = 1; i < Options.ScreenshotCount + 2; i++)
+            {
+                mediaSeekTimes.Add(GetTimeSlice(Options.ScreenshotCount + 2) * i);
+            }
+
             Random random = new Random();
             return (int)(random.NextDouble() * (mediaSeekTimes[start + 1] - mediaSeekTimes[start]) + mediaSeekTimes[start]);
         }
@@ -205,7 +206,7 @@ namespace ShareX.MediaLib
 
                 foreach (VideoThumbnailInfo screenshot in screenshots)
                 {
-                    Image img = Image.FromFile(screenshot.LocalPath);
+                    Image img = Image.FromFile(screenshot.Filepath);
 
                     if (Options.MaxThumbnailWidth > 0 && img.Width > Options.MaxThumbnailWidth)
                     {

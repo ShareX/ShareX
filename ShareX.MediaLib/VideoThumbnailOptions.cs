@@ -24,12 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 
 namespace ShareX.MediaLib
 {

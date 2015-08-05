@@ -38,7 +38,7 @@ namespace ShareX.MediaLib
 {
     public partial class VideoThumbnailerForm : Form
     {
-        public string FFmpegPath { get; private set; }
+        public string FFmpegPath { get; set; }
         public VideoThumbnailOptions Options { get; set; }
 
         public VideoThumbnailerForm(string ffmpegPath, VideoThumbnailOptions options)
@@ -66,8 +66,11 @@ namespace ShareX.MediaLib
                 bw.DoWork += (sender2, e2) => thumbnailer.TakeScreenshots();
                 bw.RunWorkerCompleted += (sender3, e3) =>
                 {
-                    btnStart.Visible = true;
-                    pbProgress.Visible = false;
+                    if (!IsDisposed)
+                    {
+                        btnStart.Visible = true;
+                        pbProgress.Visible = false;
+                    }
                 };
                 bw.RunWorkerAsync();
             }
