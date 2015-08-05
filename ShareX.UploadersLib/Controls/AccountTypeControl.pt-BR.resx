@@ -123,4 +123,7 @@
   <data name="cbAccountType.Items1" xml:space="preserve">
     <value>Usuário</value>
   </data>
+  <data name="lblAccountType.Text" xml:space="preserve">
+    <value>Tipo de conta:</value>
+  </data>
 </root>
