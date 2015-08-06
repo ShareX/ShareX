@@ -628,7 +628,16 @@ namespace ShareX
 
             Program.Settings.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
             VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, Program.Settings.VideoThumbnailOptions);
-            thumbnailerForm.UploadRequested += filepath => UploadManager.UploadFile(filepath, taskSettings);
+            thumbnailerForm.ThumbnailsTaken += thumbnails =>
+            {
+                if (Program.Settings.VideoThumbnailOptions.UploadScreenshots)
+                {
+                    foreach (VideoThumbnailInfo thumbnailInfo in thumbnails)
+                    {
+                        UploadManager.UploadFile(thumbnailInfo.Filepath, taskSettings);
+                    }
+                }
+            };
             thumbnailerForm.Show();
         }
 

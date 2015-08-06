@@ -34,7 +34,7 @@ namespace ShareX.MediaLib
 {
     public partial class VideoThumbnailerForm : Form
     {
-        public event Action<string> UploadRequested;
+        public event Action<List<VideoThumbnailInfo>> ThumbnailsTaken;
 
         public string FFmpegPath { get; set; }
         public VideoThumbnailOptions Options { get; set; }
@@ -57,8 +57,6 @@ namespace ShareX.MediaLib
             {
                 Options.LastVideoPath = mediaPath;
 
-                VideoThumbnailer thumbnailer = new VideoThumbnailer(mediaPath, FFmpegPath, Options);
-                thumbnailer.ProgressChanged += Thumbnailer_ProgressChanged;
                 pbProgress.Value = 0;
                 pbProgress.Maximum = Options.ScreenshotCount;
                 pbProgress.Visible = true;
@@ -66,19 +64,29 @@ namespace ShareX.MediaLib
 
                 new Thread(() =>
                 {
-                    List<VideoThumbnailInfo> screenshots = thumbnailer.TakeScreenshots();
+                    List<VideoThumbnailInfo> thumbnails = null;
 
-                    if (screenshots != null && screenshots.Count > 0)
+                    try
+                    {
+                        VideoThumbnailer thumbnailer = new VideoThumbnailer(mediaPath, FFmpegPath, Options);
+                        thumbnailer.ProgressChanged += Thumbnailer_ProgressChanged;
+                        thumbnails = thumbnailer.TakeThumbnails();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
                     {
                         this.InvokeSafe(() =>
                         {
+                            if (thumbnails != null)
+                            {
+                                OnThumbnailsTaken(thumbnails);
+                            }
+
                             btnStart.Visible = true;
                             pbProgress.Visible = false;
-
-                            if (Options.UploadScreenshots)
-                            {
-                                screenshots.ForEach(x => OnUploadRequested(x.Filepath));
-                            }
                         });
                     }
                 }).Start();
@@ -90,11 +98,11 @@ namespace ShareX.MediaLib
             this.InvokeSafe(() => pbProgress.Value = current);
         }
 
-        protected void OnUploadRequested(string filepath)
+        protected void OnThumbnailsTaken(List<VideoThumbnailInfo> thumbnails)
         {
-            if (UploadRequested != null)
+            if (ThumbnailsTaken != null)
             {
-                UploadRequested(filepath);
+                ThumbnailsTaken(thumbnails);
             }
         }
 

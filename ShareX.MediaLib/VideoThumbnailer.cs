@@ -55,7 +55,7 @@ namespace ShareX.MediaLib
             }
         }
 
-        public List<VideoThumbnailInfo> TakeScreenshots()
+        public List<VideoThumbnailInfo> TakeThumbnails()
         {
             List<VideoThumbnailInfo> tempScreenshots = new List<VideoThumbnailInfo>();
 
