@@ -117,28 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnExport.Text" xml:space="preserve">
-    <value> Exportar</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX Trocador de DNS</value>
   </data>
-  <data name="btnImport.Text" xml:space="preserve">
-    <value> Importar</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>&amp;Fechar</value>
   </data>
-  <data name="tsmiExportClipboard.Text" xml:space="preserve">
-    <value>Copiar para área de transferência</value>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>&amp;Aplicar</value>
   </data>
-  <data name="tsmiExportFile.Text" xml:space="preserve">
-    <value>Salvar como arquivo...</value>
+  <data name="cbAutomatic.Text" xml:space="preserve">
+    <value>Obter endereço do servidor DNS automaticamente</value>
   </data>
-  <data name="tsmiExportUpload.Text" xml:space="preserve">
-    <value>Upload como texto</value>
+  <data name="lblAdapters.Text" xml:space="preserve">
+    <value>Adaptadores de rede:</value>
   </data>
-  <data name="tsmiImportClipboard.Text" xml:space="preserve">
-    <value>Da área de transferência</value>
+  <data name="lblAlternateDNS.Text" xml:space="preserve">
+    <value>Servidor DNS alternativo:</value>
   </data>
-  <data name="tsmiImportFile.Text" xml:space="preserve">
-    <value>Do arquivo...</value>
+  <data name="lblDNS.Text" xml:space="preserve">
+    <value>Servidores DNS:</value>
   </data>
-  <data name="tsmiImportURL.Text" xml:space="preserve">
-    <value>Da URL...</value>
+  <data name="lblPreferredDNS.Text" xml:space="preserve">
+    <value>Servidor DNS preferido:</value>
   </data>
 </root>

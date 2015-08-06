@@ -117,28 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnExport.Text" xml:space="preserve">
-    <value> Exportar</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Selecionar cor</value>
   </data>
-  <data name="btnImport.Text" xml:space="preserve">
-    <value> Importar</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
-  <data name="tsmiExportClipboard.Text" xml:space="preserve">
-    <value>Copiar para área de transferência</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="tsmiExportFile.Text" xml:space="preserve">
-    <value>Salvar como arquivo...</value>
+  <data name="lblAlpha.Text" xml:space="preserve">
+    <value>Alfa:</value>
   </data>
-  <data name="tsmiExportUpload.Text" xml:space="preserve">
-    <value>Upload como texto</value>
+  <data name="lblCyan.Text" xml:space="preserve">
+    <value>Ciano:</value>
   </data>
-  <data name="tsmiImportClipboard.Text" xml:space="preserve">
-    <value>Da área de transferência</value>
+  <data name="lblDecimal.Text" xml:space="preserve">
+    <value>Decimal:</value>
   </data>
-  <data name="tsmiImportFile.Text" xml:space="preserve">
-    <value>Do arquivo...</value>
+  <data name="lblKey.Text" xml:space="preserve">
+    <value>Chave:</value>
   </data>
-  <data name="tsmiImportURL.Text" xml:space="preserve">
-    <value>Da URL...</value>
+  <data name="lblMagenta.Text" xml:space="preserve">
+    <value>Magenta:</value>
+  </data>
+  <data name="lblNew.Text" xml:space="preserve">
+    <value>Novo:</value>
+  </data>
+  <data name="lblOld.Text" xml:space="preserve">
+    <value>Velho:</value>
+  </data>
+  <data name="lblYellow.Text" xml:space="preserve">
+    <value>Amarelo:</value>
+  </data>
+  <data name="rbBlue.Text" xml:space="preserve">
+    <value>Azul:</value>
+  </data>
+  <data name="rbBrightness.Text" xml:space="preserve">
+    <value>Brilho:</value>
+  </data>
+  <data name="rbGreen.Text" xml:space="preserve">
+    <value>Verde:</value>
+  </data>
+  <data name="rbHue.Text" xml:space="preserve">
+    <value>Matiz</value>
+  </data>
+  <data name="rbRed.Text" xml:space="preserve">
+    <value>Vermelho:</value>
+  </data>
+  <data name="rbSaturation.Text" xml:space="preserve">
+    <value>Saturação:</value>
   </data>
 </root>

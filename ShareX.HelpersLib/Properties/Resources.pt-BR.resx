@@ -117,28 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnExport.Text" xml:space="preserve">
-    <value> Exportar</value>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Conteúdo da área de transferência: Arquivo (Contagem: {0})</value>
   </data>
-  <data name="btnImport.Text" xml:space="preserve">
-    <value> Importar</value>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Conteúdo da área de transferência: Imagem (Tamanho: {0}x{1})</value>
   </data>
-  <data name="tsmiExportClipboard.Text" xml:space="preserve">
-    <value>Copiar para área de transferência</value>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Conteúdo da área de transferência: Texto (Comprimento: {0})</value>
   </data>
-  <data name="tsmiExportFile.Text" xml:space="preserve">
-    <value>Salvar como arquivo...</value>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Área de transferência está vazia ou possui dados desconhecidos.</value>
   </data>
-  <data name="tsmiExportUpload.Text" xml:space="preserve">
-    <value>Upload como texto</value>
+  <data name="HotkeyType_DNSChanger" xml:space="preserve">
+    <value>Trocador de DNS</value>
   </data>
-  <data name="tsmiImportClipboard.Text" xml:space="preserve">
-    <value>Da área de transferência</value>
-  </data>
-  <data name="tsmiImportFile.Text" xml:space="preserve">
-    <value>Do arquivo...</value>
-  </data>
-  <data name="tsmiImportURL.Text" xml:space="preserve">
-    <value>Da URL...</value>
+  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
+    <value>Ferramentas</value>
   </data>
 </root>
