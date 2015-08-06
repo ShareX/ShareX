@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Drawing;
 using System.IO;
 
 namespace ShareX.MediaLib
@@ -31,13 +32,23 @@ namespace ShareX.MediaLib
     public class VideoInfo
     {
         public string FilePath { get; set; }
+
         public TimeSpan Duration { get; set; }
         public TimeSpan Start { get; set; }
         public int Bitrate { get; set; }
 
+        public string VideoCodec { get; set; }
+        public Size VideoResolution { get; set; }
+        public int VideoBitrate { get; set; }
+        public int VideoFPS { get; set; }
+
+        public string AudioCodec { get; set; }
+        public int AudioBitrate { get; set; }
+
         public override string ToString()
         {
-            return string.Format("Filename: {0}, Duration: {1}, Bitrate: {2} kb/s", Path.GetFileName(FilePath), Duration.ToString(@"hh\:mm\:ss"), Bitrate);
+            return string.Format("Filename: {0}, Duration: {1}, Bitrate: {2} kb/s [Video] Codec: {3}, Resolution: {4}x{5}, Bitrate: {6} kb/s, FPS: {7} [Audio] Codec: {8}, Bitrate: {9} kb/s",
+                Path.GetFileName(FilePath), Duration.ToString(@"hh\:mm\:ss"), Bitrate, VideoCodec, VideoResolution.Width, VideoResolution.Height, VideoBitrate, VideoFPS, AudioCodec, AudioBitrate);
         }
     }
 }

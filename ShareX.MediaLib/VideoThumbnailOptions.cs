@@ -34,8 +34,7 @@ namespace ShareX.MediaLib
         [Category("Screenshots"), DefaultValue(ThumbnailLocationType.DefaultFolder), Description("Create screenshots in default screenshot folder, same folder as the media file or in a custom folder.")]
         public ThumbnailLocationType OutputLocation { get; set; }
 
-        [Category("Screenshots"), DefaultValue(""), Description("Output folder where screenshots will get saved.")]
-        [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
+        [Category("Screenshots"), DefaultValue(""), Description("Output folder where screenshots will get saved."), Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CustomOutputDirectory { get; set; }
 
         [Category("Screenshots"), DefaultValue(EImageFormat.PNG), Description("Thumbnail image format to save.")]
@@ -44,7 +43,7 @@ namespace ShareX.MediaLib
         [Category("Screenshots"), DefaultValue(9), Description("Total number of screenshots to take.")]
         public int ScreenshotCount { get; set; }
 
-        [Category("Screenshots"), DefaultValue("_Thumbnail"), Description("Suffix to append to the screenshot filename")]
+        [Category("Screenshots"), DefaultValue("_Thumbnail"), Description("Suffix to append to the screenshot filename.")]
         public string FilenameSuffix { get; set; }
 
         [Category("Screenshots"), DefaultValue(false), Description("Choose random frame each time a media file is processed.")]
