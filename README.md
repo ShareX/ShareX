@@ -72,7 +72,8 @@ These tasks will automatically run after successful upload to any host.
 
 ## Destinations
 
-ShareX supports the following destinations.
+ShareX supports the following destinations, which reflect whats inside ShareX menus.(see below image)
+![](https://camo.githubusercontent.com/9fda52aabcf84e9503ee07fb1b5a397b8bfb663b/68747470733a2f2f646c2e64726f70626f7875736572636f6e74656e742e636f6d2f752f31343037363239382f5368617265582f323031352f30382f48446d6a4a5a666c30652e706e67)
 
 #### Image uploaders
 
