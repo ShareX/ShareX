@@ -630,7 +630,7 @@ namespace ShareX
             VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, Program.Settings.VideoThumbnailOptions);
             thumbnailerForm.ThumbnailsTaken += thumbnails =>
             {
-                if (Program.Settings.VideoThumbnailOptions.UploadScreenshots)
+                if (Program.Settings.VideoThumbnailOptions.UploadThumbnails)
                 {
                     foreach (VideoThumbnailInfo thumbnailInfo in thumbnails)
                     {
