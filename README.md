@@ -87,7 +87,6 @@ ShareX supports the following destinations.
 * [Hızlı Resim](http://hizliresim.com)
 * [vgy.me](http://vgy.me)
 * Custom image uploader
-* File uploader
 
 #### Text uploaders
 
@@ -100,7 +99,6 @@ ShareX supports the following destinations.
 * [uPaste](http://upaste.me)
 * [Hastebin](http://hastebin.com)
 * Custom text uploader
-* File uploader
 
 #### File uploaders
 
@@ -127,8 +125,8 @@ ShareX supports the following destinations.
 * [MaxFile](https://maxfile.ro)
 * [DropFile](https://dropfile.to)
 * [Up1](https://up1.ca)
-* Shared folder
 * [Email](https://en.wikipedia.org/wiki/Email)
+* Shared folder
 * Custom file uploader
 
 #### URL shorteners
