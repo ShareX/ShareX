@@ -553,9 +553,19 @@ namespace ShareX.ScreenCaptureLib
                 using (TextureBrush brush = new TextureBrush(magnifier))
                 {
                     brush.TranslateTransform(x, y);
-                    g.FillEllipse(brush, x, y, magnifier.Width, magnifier.Height);
-                    g.DrawEllipse(Pens.White, x - 1, y - 1, magnifier.Width + 2, magnifier.Height + 2);
-                    g.DrawEllipse(Pens.Black, x, y, magnifier.Width, magnifier.Height);
+
+                    if (Config.UseSquareMagnifier)
+                    {
+                        g.FillRectangle(brush, x, y, magnifier.Width, magnifier.Height);
+                        g.DrawRectangleProper(Pens.White, x - 1, y - 1, magnifier.Width + 2, magnifier.Height + 2);
+                        g.DrawRectangleProper(Pens.Black, x, y, magnifier.Width, magnifier.Height);
+                    }
+                    else
+                    {
+                        g.FillEllipse(brush, x, y, magnifier.Width, magnifier.Height);
+                        g.DrawEllipse(Pens.White, x - 1, y - 1, magnifier.Width + 2, magnifier.Height + 2);
+                        g.DrawEllipse(Pens.Black, x, y, magnifier.Width, magnifier.Height);
+                    }
                 }
             }
         }

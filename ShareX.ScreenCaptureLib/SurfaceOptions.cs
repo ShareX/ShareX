@@ -52,6 +52,9 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(true), Description("Show magnifier.")]
         public bool ShowMagnifier { get; set; }
 
+        [DefaultValue(false), Description("Use square or circle shape magnifier.")]
+        public bool UseSquareMagnifier { get; set; }
+
         [DefaultValue(15), Description("Number of pixels in magnifier. Must be odd number like 11, 13, 15 etc.")]
         public int MagnifierPixelCount { get; set; }
 
