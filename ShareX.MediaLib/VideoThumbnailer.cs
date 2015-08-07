@@ -57,9 +57,9 @@ namespace ShareX.MediaLib
 
         public List<VideoThumbnailInfo> TakeThumbnails()
         {
-            List<VideoThumbnailInfo> tempThumbnails = new List<VideoThumbnailInfo>();
+            List<VideoThumbnailInfo> tempScreenshots = new List<VideoThumbnailInfo>();
 
-            for (int i = 0; i < Options.ThumbnailCount; i++)
+            for (int i = 0; i < Options.ScreenshotCount; i++)
             {
                 string mediaFileName = Path.GetFileNameWithoutExtension(MediaPath);
 
@@ -71,70 +71,70 @@ namespace ShareX.MediaLib
                 }
                 else
                 {
-                    timeSliceElapsed = GetTimeSlice(Options.ThumbnailCount) * (i + 1);
+                    timeSliceElapsed = GetTimeSlice(Options.ScreenshotCount) * (i + 1);
                 }
 
                 string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetDescription());
-                string tempThumbnailPath = Path.Combine(GetOutputDirectory(), filename);
+                string tempScreenshotPath = Path.Combine(GetOutputDirectory(), filename);
 
                 using (Process p = new Process())
                 {
                     ProcessStartInfo psi = new ProcessStartInfo(FFmpegPath);
                     psi.WindowStyle = ProcessWindowStyle.Hidden;
-                    psi.Arguments = string.Format("-ss {0} -i \"{1}\" -f image2 -vframes 1 -y \"{2}\"", timeSliceElapsed, MediaPath, tempThumbnailPath);
+                    psi.Arguments = string.Format("-ss {0} -i \"{1}\" -f image2 -vframes 1 -y \"{2}\"", timeSliceElapsed, MediaPath, tempScreenshotPath);
                     p.StartInfo = psi;
                     p.Start();
                     p.WaitForExit(1000 * 30);
                 }
 
-                if (File.Exists(tempThumbnailPath))
+                if (File.Exists(tempScreenshotPath))
                 {
-                    VideoThumbnailInfo screenshotInfo = new VideoThumbnailInfo(tempThumbnailPath)
+                    VideoThumbnailInfo screenshotInfo = new VideoThumbnailInfo(tempScreenshotPath)
                     {
                         Timestamp = TimeSpan.FromSeconds(timeSliceElapsed)
                     };
 
-                    tempThumbnails.Add(screenshotInfo);
+                    tempScreenshots.Add(screenshotInfo);
                 }
 
-                OnProgressChanged(i + 1, Options.ThumbnailCount);
+                OnProgressChanged(i + 1, Options.ScreenshotCount);
             }
 
-            return Finish(tempThumbnails);
+            return Finish(tempScreenshots);
         }
 
-        private List<VideoThumbnailInfo> Finish(List<VideoThumbnailInfo> tempThumbnails)
+        private List<VideoThumbnailInfo> Finish(List<VideoThumbnailInfo> tempScreenshots)
         {
-            List<VideoThumbnailInfo> thumbnails = new List<VideoThumbnailInfo>();
+            List<VideoThumbnailInfo> screenshots = new List<VideoThumbnailInfo>();
 
-            if (tempThumbnails != null && tempThumbnails.Count > 0)
+            if (tempScreenshots != null && tempScreenshots.Count > 0)
             {
                 if (Options.CombineScreenshots)
                 {
-                    using (Image img = CombineScreenshots(tempThumbnails))
+                    using (Image img = CombineScreenshots(tempScreenshots))
                     {
                         string tempFilepath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + Options.FilenameSuffix + "." + Options.ImageFormat.GetDescription());
                         ImageHelpers.SaveImage(img, tempFilepath);
-                        thumbnails.Add(new VideoThumbnailInfo(tempFilepath));
+                        screenshots.Add(new VideoThumbnailInfo(tempFilepath));
                     }
 
                     if (!Options.KeepScreenshots)
                     {
-                        tempThumbnails.ForEach(x => File.Delete(x.Filepath));
+                        tempScreenshots.ForEach(x => File.Delete(x.Filepath));
                     }
                 }
                 else
                 {
-                    thumbnails.AddRange(tempThumbnails);
+                    screenshots.AddRange(tempScreenshots);
                 }
 
-                if (Options.OpenDirectory && thumbnails.Count > 0)
+                if (Options.OpenDirectory && screenshots.Count > 0)
                 {
-                    Helpers.OpenFolderWithFile(thumbnails[0].Filepath);
+                    Helpers.OpenFolderWithFile(screenshots[0].Filepath);
                 }
             }
 
-            return thumbnails;
+            return screenshots;
         }
 
         protected void OnProgressChanged(int current, int length)
@@ -168,16 +168,16 @@ namespace ShareX.MediaLib
         {
             List<int> mediaSeekTimes = new List<int>();
 
-            for (int i = 1; i < Options.ThumbnailCount + 2; i++)
+            for (int i = 1; i < Options.ScreenshotCount + 2; i++)
             {
-                mediaSeekTimes.Add(GetTimeSlice(Options.ThumbnailCount + 2) * i);
+                mediaSeekTimes.Add(GetTimeSlice(Options.ScreenshotCount + 2) * i);
             }
 
             Random random = new Random();
             return (int)(random.NextDouble() * (mediaSeekTimes[start + 1] - mediaSeekTimes[start]) + mediaSeekTimes[start]);
         }
 
-        private Image CombineScreenshots(List<VideoThumbnailInfo> thumbnails)
+        private Image CombineScreenshots(List<VideoThumbnailInfo> screenshots)
         {
             List<Image> images = new List<Image>();
             Image finalImage = null;
@@ -197,9 +197,9 @@ namespace ShareX.MediaLib
                     }
                 }
 
-                foreach (VideoThumbnailInfo thumbnail in thumbnails)
+                foreach (VideoThumbnailInfo screenshot in screenshots)
                 {
-                    Image img = Image.FromFile(thumbnail.Filepath);
+                    Image img = Image.FromFile(screenshot.Filepath);
 
                     if (Options.MaxThumbnailWidth > 0 && img.Width > Options.MaxThumbnailWidth)
                     {
@@ -273,7 +273,7 @@ namespace ShareX.MediaLib
 
                                 using (Font font = new Font("Arial", 10, FontStyle.Bold))
                                 {
-                                    ImageHelpers.DrawTextWithShadow(g, thumbnails[i].Timestamp.ToString(),
+                                    ImageHelpers.DrawTextWithShadow(g, screenshots[i].Timestamp.ToString(),
                                         new Point(offsetX + timestampOffset, offsetY + timestampOffset), font, Color.White, Color.Black);
                                 }
                             }

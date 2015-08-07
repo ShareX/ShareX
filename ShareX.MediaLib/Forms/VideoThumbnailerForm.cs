@@ -58,7 +58,7 @@ namespace ShareX.MediaLib
                 Options.LastVideoPath = mediaPath;
 
                 pbProgress.Value = 0;
-                pbProgress.Maximum = Options.ThumbnailCount;
+                pbProgress.Maximum = Options.ScreenshotCount;
                 pbProgress.Visible = true;
                 btnStart.Visible = false;
 
