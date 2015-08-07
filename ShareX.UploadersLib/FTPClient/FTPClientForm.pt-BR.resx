@@ -117,10 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAbort.Text" xml:space="preserve">
-    <value>Abortar</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Cliente FTP do ShareX</value>
   </data>
-  <data name="btnStop.Text" xml:space="preserve">
-    <value>Iniciar</value>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Nome do arquivo</value>
+  </data>
+  <data name="chFilesize.Text" xml:space="preserve">
+    <value>Tamanho do arquivo</value>
+  </data>
+  <data name="chFiletype.Text" xml:space="preserve">
+    <value>Tipo do arquivo</value>
+  </data>
+  <data name="chLastModified.Text" xml:space="preserve">
+    <value>Ultima modificação</value>
+  </data>
+  <data name="connectToolStripMenuItem.Text" xml:space="preserve">
+    <value>Conectar</value>
+  </data>
+  <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copiar URL(s) para a área de transferência</value>
+  </data>
+  <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Criar diretório</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Deletar</value>
+  </data>
+  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
+    <value>Disconectar</value>
+  </data>
+  <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="lblConnecting.Text" xml:space="preserve">
+    <value>Conectando ao servidor FTP...</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>status</value>
+  </data>
+  <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abrir URL</value>
+  </data>
+  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
+    <value>Renomear</value>
+  </data>
+  <data name="tpAccount.Text" xml:space="preserve">
+    <value>Conta</value>
+  </data>
+  <data name="tpConsole.Text" xml:space="preserve">
+    <value>Console</value>
   </data>
 </root>
