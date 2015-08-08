@@ -68,6 +68,8 @@ namespace ShareX.ScreenCaptureLib
 
         #endregion Screen ruler
 
+        private GlowTimer glowTimer = new GlowTimer();
+
         public RectangleRegion()
         {
             AreaManager = new AreaManager(this);
@@ -183,6 +185,7 @@ namespace ShareX.ScreenCaptureLib
         protected override void Update()
         {
             base.Update();
+            glowTimer.Update();
             AreaManager.Update();
         }
 
@@ -206,7 +209,10 @@ namespace ShareX.ScreenCaptureLib
                         }
                     }
 
-                    g.DrawPath(borderPen, regionDrawPath);
+                    using (Pen glowingBorderPen = new Pen(glowTimer.GetColor()))
+                    {
+                        g.DrawPath(glowingBorderPen, regionDrawPath);
+                    }
 
                     /*
                     if (areas.Count > 1)

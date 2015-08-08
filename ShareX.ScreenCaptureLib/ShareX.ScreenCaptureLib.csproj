@@ -60,6 +60,7 @@
     <Compile Include="MonitorRegion.cs" />
     <Compile Include="MonitorRegionDefaultCreator.cs" />
     <Compile Include="RectangleAnnotateOptions.cs" />
+    <Compile Include="RegionHelpers\GlowColorTimer.cs" />
     <Compile Include="RegionHelpers\RegionInfo.cs" />
     <Compile Include="Screencast\FFmpegOptions.cs" />
     <Compile Include="Screencast\FFmpegHelper.cs" />
