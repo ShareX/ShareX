@@ -56,6 +56,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public ImgurThumbnailType ThumbnailType { get; set; }
         public string UploadAlbumID { get; set; }
         public bool DirectLink { get; set; }
+        public bool UseGIFV { get; set; }
 
         public Imgur(OAuth2Info oauth)
         {
@@ -215,7 +216,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                         {
                             if (DirectLink)
                             {
-                                if (!string.IsNullOrEmpty(imageData.gifv))
+                                if (UseGIFV && !string.IsNullOrEmpty(imageData.gifv))
                                 {
                                     result.URL = imageData.gifv;
                                 }

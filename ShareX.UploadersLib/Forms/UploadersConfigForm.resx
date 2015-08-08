@@ -2737,6 +2737,153 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtCustomUploaderArgName.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="&gt;&gt;tcURLShorteners.Name" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.Parent" xml:space="preserve">
+    <value>tpURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpURLShorteners.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>986, 525</value>
+  </data>
+  <data name="tpURLShorteners.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>URL shorteners</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.Name" xml:space="preserve">
+    <value>tpURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.Parent" xml:space="preserve">
+    <value>tcUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
+    <value>tpBitly</value>
+  </data>
+  <data name="&gt;&gt;tpBitly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpBitly.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpBitly.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tpGoogleURLShortener.Name" xml:space="preserve">
+    <value>tpGoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;tpGoogleURLShortener.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpGoogleURLShortener.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpGoogleURLShortener.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
+    <value>tpYourls</value>
+  </data>
+  <data name="&gt;&gt;tpYourls.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpYourls.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpYourls.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tpLnkU.Name" xml:space="preserve">
+    <value>tpLnkU</value>
+  </data>
+  <data name="&gt;&gt;tpLnkU.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpLnkU.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpLnkU.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
+    <value>tpCoinURL</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tcURLShorteners.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tcURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 519</value>
+  </data>
+  <data name="tcURLShorteners.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.Name" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.Parent" xml:space="preserve">
+    <value>tpURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;txtBitlyDomain.Name" xml:space="preserve">
     <value>txtBitlyDomain</value>
   </data>
@@ -2800,6 +2947,78 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpBitly.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="txtBitlyDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 248</value>
+  </data>
+  <data name="txtBitlyDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 20</value>
+  </data>
+  <data name="txtBitlyDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtBitlyDomain.Name" xml:space="preserve">
+    <value>txtBitlyDomain</value>
+  </data>
+  <data name="&gt;&gt;txtBitlyDomain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtBitlyDomain.Parent" xml:space="preserve">
+    <value>tpBitly</value>
+  </data>
+  <data name="&gt;&gt;txtBitlyDomain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBitlyDomain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBitlyDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblBitlyDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 232</value>
+  </data>
+  <data name="lblBitlyDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="lblBitlyDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>Domain:</value>
+  </data>
+  <data name="&gt;&gt;lblBitlyDomain.Name" xml:space="preserve">
+    <value>lblBitlyDomain</value>
+  </data>
+  <data name="&gt;&gt;lblBitlyDomain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBitlyDomain.Parent" xml:space="preserve">
+    <value>tpBitly</value>
+  </data>
+  <data name="&gt;&gt;lblBitlyDomain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="oauth2Bitly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2Bitly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 208</value>
+  </data>
+  <data name="oauth2Bitly.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Name" xml:space="preserve">
+    <value>oauth2Bitly</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
+    <value>tpBitly</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
     <value>oauth2GoogleURLShortener</value>
   </data>
@@ -2849,6 +3068,48 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tcURLShorteners</value>
   </data>
   <data name="&gt;&gt;tpGoogleURLShortener.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
+    <value>oauth2GoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Parent" xml:space="preserve">
+    <value>tpGoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 40</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Name" xml:space="preserve">
+    <value>atcGoogleURLShortenerAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Parent" xml:space="preserve">
+    <value>tpGoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;txtYourlsPassword.Name" xml:space="preserve">
@@ -2985,480 +3246,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tpYourls.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.Name" xml:space="preserve">
-    <value>llAdflyLink</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.Name" xml:space="preserve">
-    <value>txtAdflyAPIUID</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.Name" xml:space="preserve">
-    <value>lblAdflyAPIUID</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.Name" xml:space="preserve">
-    <value>txtAdflyAPIKEY</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.Name" xml:space="preserve">
-    <value>lblAdflyAPIKEY</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tpAdFly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpAdFly.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpAdFly.Text" xml:space="preserve">
-    <value>adf.ly</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.Name" xml:space="preserve">
-    <value>txtLnkUAPIKEY</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.Parent" xml:space="preserve">
-    <value>tpLnkU</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.Name" xml:space="preserve">
-    <value>lblLnkUAPIKey</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.Parent" xml:space="preserve">
-    <value>tpLnkU</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tpLnkU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpLnkU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpLnkU.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tpLnkU.Text" xml:space="preserve">
-    <value>LnkU.co</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.Name" xml:space="preserve">
-    <value>tpLnkU</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.Name" xml:space="preserve">
-    <value>txtCoinURLUUID</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.Parent" xml:space="preserve">
-    <value>tpCoinURL</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.Name" xml:space="preserve">
-    <value>lblCoinURLUUID</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.Parent" xml:space="preserve">
-    <value>tpCoinURL</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tpCoinURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpCoinURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpCoinURL.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="tpCoinURL.Text" xml:space="preserve">
-    <value>CoinURL</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
-    <value>tpCoinURL</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="txtPolrAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 83</value>
-  </data>
-  <data name="txtPolrAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
-  </data>
-  <data name="txtPolrAPIKey.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIKey.Name" xml:space="preserve">
-    <value>txtPolrAPIKey</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIKey.Parent" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIKey.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblPolrAPIKey.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPolrAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblPolrAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 67</value>
-  </data>
-  <data name="lblPolrAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
-  </data>
-  <data name="lblPolrAPIKey.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="lblPolrAPIKey.Text" xml:space="preserve">
-    <value>API Key:</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIKey.Name" xml:space="preserve">
-    <value>lblPolrAPIKey</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIKey.Parent" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIKey.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtPolrAPIHostname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 38</value>
-  </data>
-  <data name="txtPolrAPIHostname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
-  </data>
-  <data name="txtPolrAPIHostname.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIHostname.Name" xml:space="preserve">
-    <value>txtPolrAPIHostname</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIHostname.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIHostname.Parent" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIHostname.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblPolrAPIHostname.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPolrAPIHostname.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblPolrAPIHostname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 22</value>
-  </data>
-  <data name="lblPolrAPIHostname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 13</value>
-  </data>
-  <data name="lblPolrAPIHostname.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
-    <value>API Hostname: (e.g. http://example.com, Leave blank to use polr.me)</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIHostname.Name" xml:space="preserve">
-    <value>lblPolrAPIHostname</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIHostname.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIHostname.Parent" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIHostname.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tpPolr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="tpPolr.Text" xml:space="preserve">
-    <value>Polr</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tcURLShorteners.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tcURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tcURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
-  </data>
-  <data name="tcURLShorteners.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Name" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Parent" xml:space="preserve">
-    <value>tpURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpURLShorteners.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
-  </data>
-  <data name="tpURLShorteners.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL shorteners</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.Name" xml:space="preserve">
-    <value>tpURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.Parent" xml:space="preserve">
-    <value>tcUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtBitlyDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 248</value>
-  </data>
-  <data name="txtBitlyDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 20</value>
-  </data>
-  <data name="txtBitlyDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtBitlyDomain.Name" xml:space="preserve">
-    <value>txtBitlyDomain</value>
-  </data>
-  <data name="&gt;&gt;txtBitlyDomain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtBitlyDomain.Parent" xml:space="preserve">
-    <value>tpBitly</value>
-  </data>
-  <data name="&gt;&gt;txtBitlyDomain.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblBitlyDomain.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblBitlyDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblBitlyDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 232</value>
-  </data>
-  <data name="lblBitlyDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
-  </data>
-  <data name="lblBitlyDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>Domain:</value>
-  </data>
-  <data name="&gt;&gt;lblBitlyDomain.Name" xml:space="preserve">
-    <value>lblBitlyDomain</value>
-  </data>
-  <data name="&gt;&gt;lblBitlyDomain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblBitlyDomain.Parent" xml:space="preserve">
-    <value>tpBitly</value>
-  </data>
-  <data name="&gt;&gt;lblBitlyDomain.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="oauth2Bitly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2Bitly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 208</value>
-  </data>
-  <data name="oauth2Bitly.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Name" xml:space="preserve">
-    <value>oauth2Bitly</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
-    <value>tpBitly</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
-    <value>oauth2GoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Parent" xml:space="preserve">
-    <value>tpGoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 40</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Name" xml:space="preserve">
-    <value>atcGoogleURLShortenerAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Parent" xml:space="preserve">
-    <value>tpGoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="txtYourlsPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 200</value>
@@ -3694,6 +3481,93 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblYourlsAPIURL.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="&gt;&gt;llAdflyLink.Name" xml:space="preserve">
+    <value>llAdflyLink</value>
+  </data>
+  <data name="&gt;&gt;llAdflyLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;llAdflyLink.Parent" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;llAdflyLink.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIUID.Name" xml:space="preserve">
+    <value>txtAdflyAPIUID</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIUID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIUID.Parent" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIUID.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIUID.Name" xml:space="preserve">
+    <value>lblAdflyAPIUID</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIUID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIUID.Parent" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIUID.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIKEY.Name" xml:space="preserve">
+    <value>txtAdflyAPIKEY</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIKEY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIKEY.Parent" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIKEY.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIKEY.Name" xml:space="preserve">
+    <value>lblAdflyAPIKEY</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIKEY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIKEY.Parent" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIKEY.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpAdFly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpAdFly.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpAdFly.Text" xml:space="preserve">
+    <value>adf.ly</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="llAdflyLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3826,8 +3700,56 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblAdflyAPIKEY.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;txtLnkUAPIKEY.Name" xml:space="preserve">
+    <value>txtLnkUAPIKEY</value>
+  </data>
+  <data name="&gt;&gt;txtLnkUAPIKEY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtLnkUAPIKEY.Parent" xml:space="preserve">
+    <value>tpLnkU</value>
+  </data>
+  <data name="&gt;&gt;txtLnkUAPIKEY.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblLnkUAPIKey.Name" xml:space="preserve">
+    <value>lblLnkUAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblLnkUAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLnkUAPIKey.Parent" xml:space="preserve">
+    <value>tpLnkU</value>
+  </data>
+  <data name="&gt;&gt;lblLnkUAPIKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpLnkU.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpLnkU.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpLnkU.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tpLnkU.Text" xml:space="preserve">
+    <value>LnkU.co</value>
+  </data>
+  <data name="&gt;&gt;tpLnkU.Name" xml:space="preserve">
+    <value>tpLnkU</value>
+  </data>
+  <data name="&gt;&gt;tpLnkU.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpLnkU.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpLnkU.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="txtLnkUAPIKEY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 38</value>
+    <value>16, 32</value>
   </data>
   <data name="txtLnkUAPIKEY.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 20</value>
@@ -3854,7 +3776,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>NoControl</value>
   </data>
   <data name="lblLnkUAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 22</value>
+    <value>13, 16</value>
   </data>
   <data name="lblLnkUAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -3877,8 +3799,56 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblLnkUAPIKey.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;txtCoinURLUUID.Name" xml:space="preserve">
+    <value>txtCoinURLUUID</value>
+  </data>
+  <data name="&gt;&gt;txtCoinURLUUID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCoinURLUUID.Parent" xml:space="preserve">
+    <value>tpCoinURL</value>
+  </data>
+  <data name="&gt;&gt;txtCoinURLUUID.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblCoinURLUUID.Name" xml:space="preserve">
+    <value>lblCoinURLUUID</value>
+  </data>
+  <data name="&gt;&gt;lblCoinURLUUID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCoinURLUUID.Parent" xml:space="preserve">
+    <value>tpCoinURL</value>
+  </data>
+  <data name="&gt;&gt;lblCoinURLUUID.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpCoinURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpCoinURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpCoinURL.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tpCoinURL.Text" xml:space="preserve">
+    <value>CoinURL</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
+    <value>tpCoinURL</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="txtCoinURLUUID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 38</value>
+    <value>16, 32</value>
   </data>
   <data name="txtCoinURLUUID.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 20</value>
@@ -3905,7 +3875,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>NoControl</value>
   </data>
   <data name="lblCoinURLUUID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 22</value>
+    <value>13, 16</value>
   </data>
   <data name="lblCoinURLUUID.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -3927,6 +3897,180 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblCoinURLUUID.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.Name" xml:space="preserve">
+    <value>txtPolrAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.Name" xml:space="preserve">
+    <value>lblPolrAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.Name" xml:space="preserve">
+    <value>txtPolrAPIHostname</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.Name" xml:space="preserve">
+    <value>lblPolrAPIHostname</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tpPolr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tpPolr.Text" xml:space="preserve">
+    <value>Polr</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtPolrAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="txtPolrAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 20</value>
+  </data>
+  <data name="txtPolrAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.Name" xml:space="preserve">
+    <value>txtPolrAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblPolrAPIKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPolrAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPolrAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 56</value>
+  </data>
+  <data name="lblPolrAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="lblPolrAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.Name" xml:space="preserve">
+    <value>lblPolrAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtPolrAPIHostname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="txtPolrAPIHostname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 20</value>
+  </data>
+  <data name="txtPolrAPIHostname.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.Name" xml:space="preserve">
+    <value>txtPolrAPIHostname</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblPolrAPIHostname.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPolrAPIHostname.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPolrAPIHostname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblPolrAPIHostname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>333, 13</value>
+  </data>
+  <data name="lblPolrAPIHostname.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>API hostname: (e.g. http://example.com, Leave blank to use polr.me)</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.Name" xml:space="preserve">
+    <value>lblPolrAPIHostname</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;tcFileUploaders.Name" xml:space="preserve">
     <value>tcFileUploaders</value>
@@ -12891,277 +13035,31 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtOneTimeSecretEmail.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;tcImageUploaders.Name" xml:space="preserve">
-    <value>tcImageUploaders</value>
+  <data name="cbImgurUseGIFV.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;tcImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbImgurUseGIFV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 376</value>
   </data>
-  <data name="&gt;&gt;tcImageUploaders.Parent" xml:space="preserve">
-    <value>tpImageUploaders</value>
+  <data name="cbImgurUseGIFV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 17</value>
   </data>
-  <data name="&gt;&gt;tcImageUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="cbImgurUseGIFV.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="tpImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>Use GIFV link instead of GIF</value>
   </data>
-  <data name="tpImageUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="&gt;&gt;cbImgurUseGIFV.Name" xml:space="preserve">
+    <value>cbImgurUseGIFV</value>
   </data>
-  <data name="tpImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
-  </data>
-  <data name="tpImageUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>Image uploaders</value>
-  </data>
-  <data name="&gt;&gt;tpImageUploaders.Name" xml:space="preserve">
-    <value>tpImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpImageUploaders.Parent" xml:space="preserve">
-    <value>tcUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpImageUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;tpImgur.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpImgur.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpImgur.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
-    <value>tpImageShack</value>
-  </data>
-  <data name="&gt;&gt;tpImageShack.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpImageShack.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpImageShack.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;tpTinyPic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpTinyPic.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpTinyPic.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
-    <value>tpFlickr</value>
-  </data>
-  <data name="&gt;&gt;tpFlickr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpFlickr.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpFlickr.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
-    <value>tpPhotobucket</value>
-  </data>
-  <data name="&gt;&gt;tpPhotobucket.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPhotobucket.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpPhotobucket.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
-    <value>tpPicasa</value>
-  </data>
-  <data name="&gt;&gt;tpPicasa.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPicasa.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpPicasa.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
-    <value>tpChevereto</value>
-  </data>
-  <data name="&gt;&gt;tpChevereto.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpChevereto.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpChevereto.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tcImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tcImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tcImageUploaders.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>780, 480</value>
-  </data>
-  <data name="tcImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
-  </data>
-  <data name="tcImageUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tcImageUploaders.Name" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tcImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcImageUploaders.Parent" xml:space="preserve">
-    <value>tpImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tcImageUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbImgurUploadSelectedAlbum.Name" xml:space="preserve">
-    <value>cbImgurUploadSelectedAlbum</value>
-  </data>
-  <data name="&gt;&gt;cbImgurUploadSelectedAlbum.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbImgurUseGIFV.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbImgurUploadSelectedAlbum.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbImgurUseGIFV.Parent" xml:space="preserve">
     <value>tpImgur</value>
   </data>
-  <data name="&gt;&gt;cbImgurUploadSelectedAlbum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbImgurDirectLink.Name" xml:space="preserve">
-    <value>cbImgurDirectLink</value>
-  </data>
-  <data name="&gt;&gt;cbImgurDirectLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbImgurDirectLink.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;cbImgurDirectLink.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.Name" xml:space="preserve">
-    <value>atcImgurAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.Name" xml:space="preserve">
-    <value>oauth2Imgur</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lvImgurAlbumList.Name" xml:space="preserve">
-    <value>lvImgurAlbumList</value>
-  </data>
-  <data name="&gt;&gt;lvImgurAlbumList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvImgurAlbumList.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;lvImgurAlbumList.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;btnImgurRefreshAlbumList.Name" xml:space="preserve">
-    <value>btnImgurRefreshAlbumList</value>
-  </data>
-  <data name="&gt;&gt;btnImgurRefreshAlbumList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnImgurRefreshAlbumList.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;btnImgurRefreshAlbumList.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cbImgurThumbnailType.Name" xml:space="preserve">
-    <value>cbImgurThumbnailType</value>
-  </data>
-  <data name="&gt;&gt;cbImgurThumbnailType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbImgurThumbnailType.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;cbImgurThumbnailType.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblImgurThumbnailType.Name" xml:space="preserve">
-    <value>lblImgurThumbnailType</value>
-  </data>
-  <data name="&gt;&gt;lblImgurThumbnailType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblImgurThumbnailType.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;lblImgurThumbnailType.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tpImgur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpImgur.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpImgur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpImgur.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tpImgur.Text" xml:space="preserve">
-    <value>Imgur</value>
-  </data>
-  <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;tpImgur.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpImgur.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpImgur.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbImgurUseGIFV.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cbImgurUploadSelectedAlbum.AutoSize" type="System.Boolean, mscorlib">
@@ -13192,7 +13090,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;cbImgurUploadSelectedAlbum.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbImgurDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -13222,7 +13120,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;cbImgurDirectLink.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="atcImgurAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -13243,7 +13141,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="oauth2Imgur.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 64</value>
@@ -13264,7 +13162,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lvImgurAlbumList.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 48</value>
@@ -13285,22 +13183,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="chImgurID.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="chImgurTitle.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="chImgurDescription.Width" type="System.Int32, mscorlib">
-    <value>226</value>
+    <value>5</value>
   </data>
   <data name="btnImgurRefreshAlbumList.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -13330,7 +13213,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;btnImgurRefreshAlbumList.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbImgurThumbnailType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 344</value>
@@ -13351,7 +13234,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;cbImgurThumbnailType.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblImgurThumbnailType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -13381,7 +13264,34 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpImgur</value>
   </data>
   <data name="&gt;&gt;lblImgurThumbnailType.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
+  </data>
+  <data name="tpImgur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpImgur.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpImgur.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpImgur.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpImgur.Text" xml:space="preserve">
+    <value>Imgur</value>
+  </data>
+  <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
+    <value>tpImgur</value>
+  </data>
+  <data name="&gt;&gt;tpImgur.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpImgur.Parent" xml:space="preserve">
+    <value>tcImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpImgur.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;btnImageShackLogin.Name" xml:space="preserve">
     <value>btnImageShackLogin</value>
@@ -13505,6 +13415,534 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tpImageShack.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.Name" xml:space="preserve">
+    <value>atcTinyPicAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.Parent" xml:space="preserve">
+    <value>tpTinyPic</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnTinyPicLogin.Name" xml:space="preserve">
+    <value>btnTinyPicLogin</value>
+  </data>
+  <data name="&gt;&gt;btnTinyPicLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTinyPicLogin.Parent" xml:space="preserve">
+    <value>tpTinyPic</value>
+  </data>
+  <data name="&gt;&gt;btnTinyPicLogin.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtTinyPicPassword.Name" xml:space="preserve">
+    <value>txtTinyPicPassword</value>
+  </data>
+  <data name="&gt;&gt;txtTinyPicPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTinyPicPassword.Parent" xml:space="preserve">
+    <value>tpTinyPic</value>
+  </data>
+  <data name="&gt;&gt;txtTinyPicPassword.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblTinyPicPassword.Name" xml:space="preserve">
+    <value>lblTinyPicPassword</value>
+  </data>
+  <data name="&gt;&gt;lblTinyPicPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTinyPicPassword.Parent" xml:space="preserve">
+    <value>tpTinyPic</value>
+  </data>
+  <data name="&gt;&gt;lblTinyPicPassword.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtTinyPicUsername.Name" xml:space="preserve">
+    <value>txtTinyPicUsername</value>
+  </data>
+  <data name="&gt;&gt;txtTinyPicUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTinyPicUsername.Parent" xml:space="preserve">
+    <value>tpTinyPic</value>
+  </data>
+  <data name="&gt;&gt;txtTinyPicUsername.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblTinyPicUsername.Name" xml:space="preserve">
+    <value>lblTinyPicUsername</value>
+  </data>
+  <data name="&gt;&gt;lblTinyPicUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTinyPicUsername.Parent" xml:space="preserve">
+    <value>tpTinyPic</value>
+  </data>
+  <data name="&gt;&gt;lblTinyPicUsername.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnTinyPicOpenMyImages.Name" xml:space="preserve">
+    <value>btnTinyPicOpenMyImages</value>
+  </data>
+  <data name="&gt;&gt;btnTinyPicOpenMyImages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTinyPicOpenMyImages.Parent" xml:space="preserve">
+    <value>tpTinyPic</value>
+  </data>
+  <data name="&gt;&gt;btnTinyPicOpenMyImages.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tpTinyPic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpTinyPic.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpTinyPic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpTinyPic.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpTinyPic.Text" xml:space="preserve">
+    <value>TinyPic</value>
+  </data>
+  <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
+    <value>tpTinyPic</value>
+  </data>
+  <data name="&gt;&gt;tpTinyPic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpTinyPic.Parent" xml:space="preserve">
+    <value>tcImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpTinyPic.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrOpenImages.Name" xml:space="preserve">
+    <value>btnFlickrOpenImages</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrOpenImages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrOpenImages.Parent" xml:space="preserve">
+    <value>tpFlickr</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrOpenImages.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pgFlickrAuthInfo.Name" xml:space="preserve">
+    <value>pgFlickrAuthInfo</value>
+  </data>
+  <data name="&gt;&gt;pgFlickrAuthInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgFlickrAuthInfo.Parent" xml:space="preserve">
+    <value>tpFlickr</value>
+  </data>
+  <data name="&gt;&gt;pgFlickrAuthInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pgFlickrSettings.Name" xml:space="preserve">
+    <value>pgFlickrSettings</value>
+  </data>
+  <data name="&gt;&gt;pgFlickrSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgFlickrSettings.Parent" xml:space="preserve">
+    <value>tpFlickr</value>
+  </data>
+  <data name="&gt;&gt;pgFlickrSettings.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrCheckToken.Name" xml:space="preserve">
+    <value>btnFlickrCheckToken</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrCheckToken.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrCheckToken.Parent" xml:space="preserve">
+    <value>tpFlickr</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrCheckToken.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrCompleteAuth.Name" xml:space="preserve">
+    <value>btnFlickrCompleteAuth</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrCompleteAuth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrCompleteAuth.Parent" xml:space="preserve">
+    <value>tpFlickr</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrCompleteAuth.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrOpenAuthorize.Name" xml:space="preserve">
+    <value>btnFlickrOpenAuthorize</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrOpenAuthorize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrOpenAuthorize.Parent" xml:space="preserve">
+    <value>tpFlickr</value>
+  </data>
+  <data name="&gt;&gt;btnFlickrOpenAuthorize.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tpFlickr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpFlickr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpFlickr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpFlickr.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpFlickr.Text" xml:space="preserve">
+    <value>Flickr</value>
+  </data>
+  <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
+    <value>tpFlickr</value>
+  </data>
+  <data name="&gt;&gt;tpFlickr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpFlickr.Parent" xml:space="preserve">
+    <value>tcImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpFlickr.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketAlbumPath.Name" xml:space="preserve">
+    <value>gbPhotobucketAlbumPath</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketAlbumPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketAlbumPath.Parent" xml:space="preserve">
+    <value>tpPhotobucket</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketAlbumPath.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketAlbums.Name" xml:space="preserve">
+    <value>gbPhotobucketAlbums</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketAlbums.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketAlbums.Parent" xml:space="preserve">
+    <value>tpPhotobucket</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketAlbums.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketUserAccount.Name" xml:space="preserve">
+    <value>gbPhotobucketUserAccount</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketUserAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketUserAccount.Parent" xml:space="preserve">
+    <value>tpPhotobucket</value>
+  </data>
+  <data name="&gt;&gt;gbPhotobucketUserAccount.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tpPhotobucket.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpPhotobucket.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpPhotobucket.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpPhotobucket.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tpPhotobucket.Text" xml:space="preserve">
+    <value>Photobucket</value>
+  </data>
+  <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
+    <value>tpPhotobucket</value>
+  </data>
+  <data name="&gt;&gt;tpPhotobucket.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpPhotobucket.Parent" xml:space="preserve">
+    <value>tcImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpPhotobucket.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtPicasaAlbumID.Name" xml:space="preserve">
+    <value>txtPicasaAlbumID</value>
+  </data>
+  <data name="&gt;&gt;txtPicasaAlbumID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPicasaAlbumID.Parent" xml:space="preserve">
+    <value>tpPicasa</value>
+  </data>
+  <data name="&gt;&gt;txtPicasaAlbumID.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblPicasaAlbumID.Name" xml:space="preserve">
+    <value>lblPicasaAlbumID</value>
+  </data>
+  <data name="&gt;&gt;lblPicasaAlbumID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPicasaAlbumID.Parent" xml:space="preserve">
+    <value>tpPicasa</value>
+  </data>
+  <data name="&gt;&gt;lblPicasaAlbumID.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lvPicasaAlbumList.Name" xml:space="preserve">
+    <value>lvPicasaAlbumList</value>
+  </data>
+  <data name="&gt;&gt;lvPicasaAlbumList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvPicasaAlbumList.Parent" xml:space="preserve">
+    <value>tpPicasa</value>
+  </data>
+  <data name="&gt;&gt;lvPicasaAlbumList.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnPicasaRefreshAlbumList.Name" xml:space="preserve">
+    <value>btnPicasaRefreshAlbumList</value>
+  </data>
+  <data name="&gt;&gt;btnPicasaRefreshAlbumList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPicasaRefreshAlbumList.Parent" xml:space="preserve">
+    <value>tpPicasa</value>
+  </data>
+  <data name="&gt;&gt;btnPicasaRefreshAlbumList.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.Name" xml:space="preserve">
+    <value>oauth2Picasa</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.Parent" xml:space="preserve">
+    <value>tpPicasa</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpPicasa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpPicasa.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpPicasa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpPicasa.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="tpPicasa.Text" xml:space="preserve">
+    <value>Picasa</value>
+  </data>
+  <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
+    <value>tpPicasa</value>
+  </data>
+  <data name="&gt;&gt;tpPicasa.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpPicasa.Parent" xml:space="preserve">
+    <value>tcImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpPicasa.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbCheveretoDirectURL.Name" xml:space="preserve">
+    <value>cbCheveretoDirectURL</value>
+  </data>
+  <data name="&gt;&gt;cbCheveretoDirectURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCheveretoDirectURL.Parent" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;cbCheveretoDirectURL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoWebsiteTip.Name" xml:space="preserve">
+    <value>lblCheveretoWebsiteTip</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoWebsiteTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoWebsiteTip.Parent" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoWebsiteTip.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoWebsite.Name" xml:space="preserve">
+    <value>lblCheveretoWebsite</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoWebsite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoWebsite.Parent" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoWebsite.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtCheveretoWebsite.Name" xml:space="preserve">
+    <value>txtCheveretoWebsite</value>
+  </data>
+  <data name="&gt;&gt;txtCheveretoWebsite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCheveretoWebsite.Parent" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;txtCheveretoWebsite.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtCheveretoAPIKey.Name" xml:space="preserve">
+    <value>txtCheveretoAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtCheveretoAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCheveretoAPIKey.Parent" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;txtCheveretoAPIKey.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoAPIKey.Name" xml:space="preserve">
+    <value>lblCheveretoAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoAPIKey.Parent" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoAPIKey.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tpChevereto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpChevereto.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpChevereto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpChevereto.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="tpChevereto.Text" xml:space="preserve">
+    <value>Chevereto</value>
+  </data>
+  <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;tpChevereto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpChevereto.Parent" xml:space="preserve">
+    <value>tcImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpChevereto.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tcImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tcImageUploaders.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>780, 480</value>
+  </data>
+  <data name="tcImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 519</value>
+  </data>
+  <data name="tcImageUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tcImageUploaders.Name" xml:space="preserve">
+    <value>tcImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tcImageUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcImageUploaders.Parent" xml:space="preserve">
+    <value>tpImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tcImageUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpImageUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>986, 525</value>
+  </data>
+  <data name="tpImageUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>Image uploaders</value>
+  </data>
+  <data name="&gt;&gt;tpImageUploaders.Name" xml:space="preserve">
+    <value>tpImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpImageUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpImageUploaders.Parent" xml:space="preserve">
+    <value>tcUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpImageUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="chImgurTitle.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="chImgurDescription.Width" type="System.Int32, mscorlib">
+    <value>226</value>
   </data>
   <data name="btnImageShackLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -13719,117 +14157,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblImageShackPassword.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.Name" xml:space="preserve">
-    <value>atcTinyPicAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.Parent" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnTinyPicLogin.Name" xml:space="preserve">
-    <value>btnTinyPicLogin</value>
-  </data>
-  <data name="&gt;&gt;btnTinyPicLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnTinyPicLogin.Parent" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;btnTinyPicLogin.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtTinyPicPassword.Name" xml:space="preserve">
-    <value>txtTinyPicPassword</value>
-  </data>
-  <data name="&gt;&gt;txtTinyPicPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtTinyPicPassword.Parent" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;txtTinyPicPassword.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblTinyPicPassword.Name" xml:space="preserve">
-    <value>lblTinyPicPassword</value>
-  </data>
-  <data name="&gt;&gt;lblTinyPicPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTinyPicPassword.Parent" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;lblTinyPicPassword.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtTinyPicUsername.Name" xml:space="preserve">
-    <value>txtTinyPicUsername</value>
-  </data>
-  <data name="&gt;&gt;txtTinyPicUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtTinyPicUsername.Parent" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;txtTinyPicUsername.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblTinyPicUsername.Name" xml:space="preserve">
-    <value>lblTinyPicUsername</value>
-  </data>
-  <data name="&gt;&gt;lblTinyPicUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTinyPicUsername.Parent" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;lblTinyPicUsername.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;btnTinyPicOpenMyImages.Name" xml:space="preserve">
-    <value>btnTinyPicOpenMyImages</value>
-  </data>
-  <data name="&gt;&gt;btnTinyPicOpenMyImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnTinyPicOpenMyImages.Parent" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;btnTinyPicOpenMyImages.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tpTinyPic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpTinyPic.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpTinyPic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpTinyPic.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tpTinyPic.Text" xml:space="preserve">
-    <value>TinyPic</value>
-  </data>
-  <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;tpTinyPic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpTinyPic.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpTinyPic.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="atcTinyPicAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>
@@ -14007,105 +14334,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;btnTinyPicOpenMyImages.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;btnFlickrOpenImages.Name" xml:space="preserve">
-    <value>btnFlickrOpenImages</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrOpenImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrOpenImages.Parent" xml:space="preserve">
-    <value>tpFlickr</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrOpenImages.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pgFlickrAuthInfo.Name" xml:space="preserve">
-    <value>pgFlickrAuthInfo</value>
-  </data>
-  <data name="&gt;&gt;pgFlickrAuthInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgFlickrAuthInfo.Parent" xml:space="preserve">
-    <value>tpFlickr</value>
-  </data>
-  <data name="&gt;&gt;pgFlickrAuthInfo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pgFlickrSettings.Name" xml:space="preserve">
-    <value>pgFlickrSettings</value>
-  </data>
-  <data name="&gt;&gt;pgFlickrSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgFlickrSettings.Parent" xml:space="preserve">
-    <value>tpFlickr</value>
-  </data>
-  <data name="&gt;&gt;pgFlickrSettings.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrCheckToken.Name" xml:space="preserve">
-    <value>btnFlickrCheckToken</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrCheckToken.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrCheckToken.Parent" xml:space="preserve">
-    <value>tpFlickr</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrCheckToken.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrCompleteAuth.Name" xml:space="preserve">
-    <value>btnFlickrCompleteAuth</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrCompleteAuth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrCompleteAuth.Parent" xml:space="preserve">
-    <value>tpFlickr</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrCompleteAuth.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrOpenAuthorize.Name" xml:space="preserve">
-    <value>btnFlickrOpenAuthorize</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrOpenAuthorize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrOpenAuthorize.Parent" xml:space="preserve">
-    <value>tpFlickr</value>
-  </data>
-  <data name="&gt;&gt;btnFlickrOpenAuthorize.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tpFlickr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpFlickr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpFlickr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpFlickr.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpFlickr.Text" xml:space="preserve">
-    <value>Flickr</value>
-  </data>
-  <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
-    <value>tpFlickr</value>
-  </data>
-  <data name="&gt;&gt;tpFlickr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpFlickr.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpFlickr.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="btnFlickrOpenImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -14258,69 +14486,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;btnFlickrOpenAuthorize.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketAlbumPath.Name" xml:space="preserve">
-    <value>gbPhotobucketAlbumPath</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketAlbumPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketAlbumPath.Parent" xml:space="preserve">
-    <value>tpPhotobucket</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketAlbumPath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketAlbums.Name" xml:space="preserve">
-    <value>gbPhotobucketAlbums</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketAlbums.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketAlbums.Parent" xml:space="preserve">
-    <value>tpPhotobucket</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketAlbums.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketUserAccount.Name" xml:space="preserve">
-    <value>gbPhotobucketUserAccount</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketUserAccount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketUserAccount.Parent" xml:space="preserve">
-    <value>tpPhotobucket</value>
-  </data>
-  <data name="&gt;&gt;gbPhotobucketUserAccount.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tpPhotobucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpPhotobucket.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpPhotobucket.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpPhotobucket.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tpPhotobucket.Text" xml:space="preserve">
-    <value>Photobucket</value>
-  </data>
-  <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
-    <value>tpPhotobucket</value>
-  </data>
-  <data name="&gt;&gt;tpPhotobucket.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPhotobucket.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpPhotobucket.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="&gt;&gt;btnPhotobucketAddAlbum.Name" xml:space="preserve">
     <value>btnPhotobucketAddAlbum</value>
@@ -14967,93 +15132,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblPhotobucketAccountStatus.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;txtPicasaAlbumID.Name" xml:space="preserve">
-    <value>txtPicasaAlbumID</value>
-  </data>
-  <data name="&gt;&gt;txtPicasaAlbumID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPicasaAlbumID.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
-  </data>
-  <data name="&gt;&gt;txtPicasaAlbumID.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblPicasaAlbumID.Name" xml:space="preserve">
-    <value>lblPicasaAlbumID</value>
-  </data>
-  <data name="&gt;&gt;lblPicasaAlbumID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPicasaAlbumID.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
-  </data>
-  <data name="&gt;&gt;lblPicasaAlbumID.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lvPicasaAlbumList.Name" xml:space="preserve">
-    <value>lvPicasaAlbumList</value>
-  </data>
-  <data name="&gt;&gt;lvPicasaAlbumList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvPicasaAlbumList.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
-  </data>
-  <data name="&gt;&gt;lvPicasaAlbumList.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnPicasaRefreshAlbumList.Name" xml:space="preserve">
-    <value>btnPicasaRefreshAlbumList</value>
-  </data>
-  <data name="&gt;&gt;btnPicasaRefreshAlbumList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnPicasaRefreshAlbumList.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
-  </data>
-  <data name="&gt;&gt;btnPicasaRefreshAlbumList.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Name" xml:space="preserve">
-    <value>oauth2Picasa</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tpPicasa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpPicasa.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpPicasa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpPicasa.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="tpPicasa.Text" xml:space="preserve">
-    <value>Picasa</value>
-  </data>
-  <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
-    <value>tpPicasa</value>
-  </data>
-  <data name="&gt;&gt;tpPicasa.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPicasa.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpPicasa.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="txtPicasaAlbumID.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 64</value>
   </data>
@@ -15194,105 +15272,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="&gt;&gt;cbCheveretoDirectURL.Name" xml:space="preserve">
-    <value>cbCheveretoDirectURL</value>
-  </data>
-  <data name="&gt;&gt;cbCheveretoDirectURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbCheveretoDirectURL.Parent" xml:space="preserve">
-    <value>tpChevereto</value>
-  </data>
-  <data name="&gt;&gt;cbCheveretoDirectURL.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsiteTip.Name" xml:space="preserve">
-    <value>lblCheveretoWebsiteTip</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsiteTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsiteTip.Parent" xml:space="preserve">
-    <value>tpChevereto</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsiteTip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsite.Name" xml:space="preserve">
-    <value>lblCheveretoWebsite</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsite.Parent" xml:space="preserve">
-    <value>tpChevereto</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsite.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtCheveretoWebsite.Name" xml:space="preserve">
-    <value>txtCheveretoWebsite</value>
-  </data>
-  <data name="&gt;&gt;txtCheveretoWebsite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCheveretoWebsite.Parent" xml:space="preserve">
-    <value>tpChevereto</value>
-  </data>
-  <data name="&gt;&gt;txtCheveretoWebsite.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtCheveretoAPIKey.Name" xml:space="preserve">
-    <value>txtCheveretoAPIKey</value>
-  </data>
-  <data name="&gt;&gt;txtCheveretoAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCheveretoAPIKey.Parent" xml:space="preserve">
-    <value>tpChevereto</value>
-  </data>
-  <data name="&gt;&gt;txtCheveretoAPIKey.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoAPIKey.Name" xml:space="preserve">
-    <value>lblCheveretoAPIKey</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoAPIKey.Parent" xml:space="preserve">
-    <value>tpChevereto</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoAPIKey.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tpChevereto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpChevereto.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpChevereto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpChevereto.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="tpChevereto.Text" xml:space="preserve">
-    <value>Chevereto</value>
-  </data>
-  <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
-    <value>tpChevereto</value>
-  </data>
-  <data name="&gt;&gt;tpChevereto.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpChevereto.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpChevereto.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="cbCheveretoDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

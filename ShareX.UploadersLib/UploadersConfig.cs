@@ -43,6 +43,7 @@ namespace ShareX.UploadersLib
         public AccountType ImgurAccountType = AccountType.Anonymous;
         public bool ImgurDirectLink = true;
         public ImgurThumbnailType ImgurThumbnailType = ImgurThumbnailType.Large_Thumbnail;
+        public bool ImgurUseGIFV = true;
         public OAuth2Info ImgurOAuth2Info = null;
         public bool ImgurUploadSelectedAlbum = false;
         public ImgurAlbumData ImgurSelectedAlbum = null;

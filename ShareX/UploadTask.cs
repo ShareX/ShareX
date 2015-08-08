@@ -706,6 +706,7 @@ namespace ShareX
                         UploadMethod = Program.UploadersConfig.ImgurAccountType,
                         DirectLink = Program.UploadersConfig.ImgurDirectLink,
                         ThumbnailType = Program.UploadersConfig.ImgurThumbnailType,
+                        UseGIFV = Program.UploadersConfig.ImgurUseGIFV,
                         UploadAlbumID = albumID
                     };
                     break;
