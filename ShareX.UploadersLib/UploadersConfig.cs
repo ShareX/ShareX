@@ -379,8 +379,6 @@ namespace ShareX.UploadersLib
         {
             switch (destination)
             {
-                case TextDestination.OneTimeSecret:
-                    return !string.IsNullOrEmpty(OneTimeSecretAPIUsername) && !string.IsNullOrEmpty(OneTimeSecretAPIKey);
                 case TextDestination.CustomTextUploader:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomTextUploaderSelected);
             }

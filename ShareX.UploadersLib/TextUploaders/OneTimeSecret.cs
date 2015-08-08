@@ -46,7 +46,14 @@ namespace ShareX.UploadersLib.TextUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("secret", text);
 
-                result.Response = SendRequest(HttpMethod.POST, API_ENDPOINT, args, CreateAuthenticationHeader(API_USERNAME, API_KEY));
+                NameValueCollection headers = null;
+
+                if (!string.IsNullOrEmpty(API_USERNAME) && !string.IsNullOrEmpty(API_KEY))
+                {
+                    headers = CreateAuthenticationHeader(API_USERNAME, API_KEY);
+                }
+
+                result.Response = SendRequest(HttpMethod.POST, API_ENDPOINT, args, headers);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {

@@ -53,6 +53,8 @@ namespace ShareX.HelpersLib
                         {
                             Process.Start(url);
                         }
+
+                        DebugHelper.WriteLine("URL opened: " + url);
                     }
                     catch (Exception e)
                     {

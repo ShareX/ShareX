@@ -289,6 +289,11 @@ namespace ShareX.UploadersLib
             txtHastebinCustomDomain.Text = Config.HastebinCustomDomain;
             txtHastebinSyntaxHighlighting.Text = Config.HastebinSyntaxHighlighting;
 
+            // OneTimeSecret
+
+            txtOneTimeSecretEmail.Text = Config.OneTimeSecretAPIUsername;
+            txtOneTimeSecretAPIKey.Text = Config.OneTimeSecretAPIKey;
+
             #endregion Text uploaders
 
             #region File uploaders
