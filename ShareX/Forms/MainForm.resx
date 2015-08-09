@@ -1594,6 +1594,9 @@ If you would like to vote, click here to open our Steam Greenlight page.</value>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
   </data>
+  <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>405, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2557,6 +2560,12 @@ If you would like to vote, click here to open our Steam Greenlight page.</value>
   <data name="&gt;&gt;tsmiTrayIndexFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Name" xml:space="preserve">
+    <value>tsmiTrayVideoThumbnailer</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayFTPClient.Name" xml:space="preserve">
     <value>tsmiTrayFTPClient</value>
   </data>
@@ -2725,11 +2734,11 @@ If you would like to vote, click here to open our Steam Greenlight page.</value>
   <data name="&gt;&gt;tsmiTrayExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Name" xml:space="preserve">
-    <value>tsmiTrayVideoThumbnailer</value>
+  <data name="&gt;&gt;timerTraySingleClick.Name" xml:space="preserve">
+    <value>timerTraySingleClick</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;timerTraySingleClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

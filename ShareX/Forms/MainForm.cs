@@ -72,10 +72,11 @@ namespace ShareX
         {
             this.ShowActivate();
 
-            if (Program.Settings != null && Program.Settings.ShowTrayMiddleClickTip && niTray.Visible && Program.Settings.TrayMiddleClickAction == HotkeyType.RectangleRegion)
+            if (Program.Settings != null && Program.Settings.ShowTrayLeftClickTip && niTray.Visible && Program.Settings.TrayLeftClickAction == HotkeyType.RectangleRegion)
             {
-                niTray.ShowBalloonTip(5000, "ShareX", Resources.MainForm_AfterShownJobs_You_can_middle_click_the_ShareX_tray_icon_to_start_rectangle_capture_, ToolTipIcon.Info);
-                Program.Settings.ShowTrayMiddleClickTip = false;
+                // TODO: Translate
+                niTray.ShowBalloonTip(5000, "ShareX", "You can single left click the ShareX tray icon to start region capture.", ToolTipIcon.Info);
+                Program.Settings.ShowTrayLeftClickTip = false;
             }
         }
 
@@ -1231,21 +1232,32 @@ namespace ShareX
 
         #region Tray events
 
+        private void timerTraySingleClick_Tick(object sender, EventArgs e)
+        {
+            timerTraySingleClick.Stop();
+            ExecuteJob(Program.Settings.TrayLeftClickAction);
+        }
+
+        private void niTray_MouseClick(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    timerTraySingleClick.Interval = (int)(SystemInformation.DoubleClickTime * 1.1);
+                    timerTraySingleClick.Start();
+                    break;
+                case MouseButtons.Middle:
+                    ExecuteJob(Program.Settings.TrayMiddleClickAction);
+                    break;
+            }
+        }
+
         private void niTray_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
+                timerTraySingleClick.Stop();
                 this.ShowActivate();
-            }
-        }
-
-        private void niTray_MouseUp(object sender, MouseEventArgs e)
-        {
-            switch (e.Button)
-            {
-                case MouseButtons.Middle:
-                    ExecuteJob(Program.Settings.TrayMiddleClickAction);
-                    break;
             }
         }
 

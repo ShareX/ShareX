@@ -198,6 +198,7 @@
             this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAutomate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
@@ -226,7 +227,7 @@
             this.tsmiTrayRecentItems = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1245,8 +1246,8 @@
             this.niTray.ContextMenuStrip = this.cmsTray;
             resources.ApplyResources(this.niTray, "niTray");
             this.niTray.BalloonTipClicked += new System.EventHandler(this.niTray_BalloonTipClicked);
+            this.niTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseClick);
             this.niTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseDoubleClick);
-            this.niTray.MouseUp += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseUp);
             // 
             // cmsTray
             // 
@@ -1547,6 +1548,13 @@
             resources.ApplyResources(this.tsmiTrayIndexFolder, "tsmiTrayIndexFolder");
             this.tsmiTrayIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
             // 
+            // tsmiTrayVideoThumbnailer
+            // 
+            this.tsmiTrayVideoThumbnailer.Image = global::ShareX.Properties.Resources.images_stack;
+            this.tsmiTrayVideoThumbnailer.Name = "tsmiTrayVideoThumbnailer";
+            resources.ApplyResources(this.tsmiTrayVideoThumbnailer, "tsmiTrayVideoThumbnailer");
+            this.tsmiTrayVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
+            // 
             // tsmiTrayFTPClient
             // 
             this.tsmiTrayFTPClient.Image = global::ShareX.Properties.Resources.application_network;
@@ -1735,12 +1743,9 @@
             resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
             this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
             // 
-            // tsmiTrayVideoThumbnailer
+            // timerTraySingleClick
             // 
-            this.tsmiTrayVideoThumbnailer.Image = global::ShareX.Properties.Resources.images_stack;
-            this.tsmiTrayVideoThumbnailer.Name = "tsmiTrayVideoThumbnailer";
-            resources.ApplyResources(this.tsmiTrayVideoThumbnailer, "tsmiTrayVideoThumbnailer");
-            this.tsmiTrayVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
+            this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
             // 
             // MainForm
             // 
@@ -1974,5 +1979,6 @@
         private HelpersLib.GreenlightButton btnGreenlightHide;
         private System.Windows.Forms.ToolStripMenuItem tsmiVideoThumbnailer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayVideoThumbnailer;
+        private System.Windows.Forms.Timer timerTraySingleClick;
     }
 }
