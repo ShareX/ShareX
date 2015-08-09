@@ -163,7 +163,7 @@
   </data>
   <data name="lblBerk.Text" xml:space="preserve">
     <value>Jaex (Berk)</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblBerk.Name" xml:space="preserve">
     <value>lblBerk</value>
   </data>
@@ -190,7 +190,7 @@
   </data>
   <data name="lblMike.Text" xml:space="preserve">
     <value>mcored (Michael Delpach)</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblMike.Name" xml:space="preserve">
     <value>lblMike</value>
   </data>
@@ -206,10 +206,6 @@
   <data name="rtbCredits.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 200</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="rtbCredits.ScrollBars" type="System.Windows.Forms.RichTextBoxScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
   <data name="rtbCredits.Size" type="System.Drawing.Size, System.Drawing">
     <value>449, 234</value>
   </data>
@@ -218,7 +214,7 @@
   </data>
   <data name="rtbCredits.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rtbCredits.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -245,7 +241,7 @@
   </data>
   <data name="rtbShareXInfo.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;rtbShareXInfo.Name" xml:space="preserve">
     <value>rtbShareXInfo</value>
   </data>
@@ -285,6 +281,7 @@
   <data name="&gt;&gt;lblOwners.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -488,7 +485,7 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - About</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AboutForm</value>
   </data>
