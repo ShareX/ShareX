@@ -25,53 +25,57 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class GlowTimer
+    public class ColorBlinkAnimation
     {
-        public float Max = 1;
-        public float Min = 0;
-        public float Current = 0;
+        public float Max { get; set; }
+        public float Min { get; set; }
+        public float Current { get; set; }
+        public float Speed { get; set; }
+        public Color FromColor { get; set; }
+        public Color ToColor { get; set; }
 
         private Stopwatch timer;
         private TimeSpan previousTime;
-        private int direction = 1;
-        private float increase = 0.75f;
+        private int direction;
 
-        public GlowTimer()
+        public ColorBlinkAnimation()
         {
+            Max = 1;
+            Min = 0;
+            Current = Min;
+            Speed = 0.75f;
+            FromColor = Color.FromArgb(30, 30, 30);
+            ToColor = Color.FromArgb(100, 100, 100);
+
             timer = Stopwatch.StartNew();
+            direction = 1;
         }
 
-        public void Update()
+        public Color GetColor()
         {
             TimeSpan totalElapsed = timer.Elapsed;
             TimeSpan elapsed = totalElapsed - previousTime;
             previousTime = totalElapsed;
 
-            Current += (float)elapsed.TotalSeconds * increase * direction;
+            Current += (float)elapsed.TotalSeconds * Speed * direction;
 
             if (Current > Max)
             {
-                Current = Max - (Current - Max);
+                Current = Max; //Max - (Current - Max);
                 direction = -1;
             }
             else if (Current < Min)
             {
-                Current = Min + (Min - Current);
+                Current = Min; //Min + (Min - Current);
                 direction = 1;
             }
-        }
 
-        public Color GetColor()
-        {
-            return ColorHelpers.Lerp(Color.FromArgb(30, 30, 30), Color.FromArgb(100, 100, 100), Current);
+            return ColorHelpers.Lerp(FromColor, ToColor, Current);
         }
     }
 }

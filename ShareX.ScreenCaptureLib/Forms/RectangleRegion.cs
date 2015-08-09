@@ -68,7 +68,7 @@ namespace ShareX.ScreenCaptureLib
 
         #endregion Screen ruler
 
-        private GlowTimer glowTimer = new GlowTimer();
+        private ColorBlinkAnimation colorBlinkAnimation = new ColorBlinkAnimation();
 
         public RectangleRegion()
         {
@@ -185,7 +185,6 @@ namespace ShareX.ScreenCaptureLib
         protected override void Update()
         {
             base.Update();
-            glowTimer.Update();
             AreaManager.Update();
         }
 
@@ -209,9 +208,9 @@ namespace ShareX.ScreenCaptureLib
                         }
                     }
 
-                    using (Pen glowingBorderPen = new Pen(glowTimer.GetColor()))
+                    using (Pen blinkBorderPen = new Pen(colorBlinkAnimation.GetColor()))
                     {
-                        g.DrawPath(glowingBorderPen, regionDrawPath);
+                        g.DrawPath(blinkBorderPen, regionDrawPath);
                     }
 
                     /*
@@ -408,11 +407,11 @@ namespace ShareX.ScreenCaptureLib
 
             if (Config.QuickCrop)
             {
-                sb.AppendLine("[Q] Multi region mode");
+                sb.AppendLine("[Q] Activate multi region mode");
             }
             else
             {
-                sb.AppendLine("[Q] Quick capture mode");
+                sb.AppendLine("[Q] Activate quick capture mode");
             }
 
             sb.AppendLine("[Mouse wheel] Change magnifier pixel count");
