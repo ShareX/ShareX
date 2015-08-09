@@ -609,6 +609,11 @@ namespace ShareX.UploadersLib
 
             txtCoinURLUUID.Text = Config.CoinURLUUID;
 
+            // Polr
+
+            txtPolrAPIHostname.Text = Config.PolrAPIHostname;
+            txtPolrAPIKey.Text = Config.PolrAPIKey;
+
             #endregion URL Shorteners
 
             #region Other Services

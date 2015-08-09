@@ -31,9 +31,8 @@ namespace ShareX.UploadersLib.URLShorteners
 {
     public sealed class PolrURLShortener : URLShortener
     {
-        public string API_KEY { get; set; }
-
         public string API_HOST { get; set; }
+        public string API_KEY { get; set; }
 
         public override UploadResult ShortenURL(string url)
         {
@@ -41,15 +40,25 @@ namespace ShareX.UploadersLib.URLShorteners
 
             if (string.IsNullOrEmpty(API_HOST))
             {
-                API_HOST = "https://polr.me";
+                API_HOST = "https://polr.me/publicapi.php";
+                API_KEY = null;
+            }
+            else
+            {
+                API_HOST = URLHelpers.FixPrefix(API_HOST);
             }
 
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("apikey", API_KEY);
+
+            if (!string.IsNullOrEmpty(API_KEY))
+            {
+                args.Add("apikey", API_KEY);
+            }
+
             args.Add("action", "shorten");
             args.Add("url", url);
 
-            string response = SendRequest(HttpMethod.GET, URLHelpers.CombineURL(API_HOST, "api.php"), args);
+            string response = SendRequest(HttpMethod.GET, API_HOST, args);
 
             if (!string.IsNullOrEmpty(response))
             {
