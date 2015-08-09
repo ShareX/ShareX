@@ -127,7 +127,7 @@
     <value>Tamanho</value>
   </data>
   <data name="tsmiCopyPublicLink.Text" xml:space="preserve">
-    <value>Copiar link publico</value>
+    <value>Copiar link público</value>
   </data>
   <data name="tsmiCreateDirectory.Text" xml:space="preserve">
     <value>Criar diretório...</value>
@@ -140,5 +140,8 @@
   </data>
   <data name="tsmiRefresh.Text" xml:space="preserve">
     <value>Atualizar</value>
+  </data>
+  <data name="tsbSelectFolder.Text" xml:space="preserve">
+    <value>Selecionar local da pasta atual</value>
   </data>
 </root>

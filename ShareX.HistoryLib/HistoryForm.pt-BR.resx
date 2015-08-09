@@ -136,7 +136,7 @@
     <value>Filtro diferencia letras maiúsculas de minúsculas</value>
   </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Contem</value>
+    <value>Contém</value>
   </data>
   <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
     <value>Começa com</value>
@@ -145,7 +145,7 @@
     <value>Termina com</value>
   </data>
   <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Combina exatamente</value>
+    <value>Combinação exata</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Filtro de hospedagem:</value>
@@ -185,5 +185,14 @@
   </data>
   <data name="tsslStatus.Text" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
+    <value>Cultura atual</value>
+  </data>
+  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
+    <value>Cultura invariante (Inglês)</value>
+  </data>
+  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
+    <value>Ordinal (Inglês)</value>
   </data>
 </root>

@@ -118,30 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Opções de impressão</value>
+    <value>Histórico de imagem</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="tsbQuickList.Text" xml:space="preserve">
+    <value>Mostrar somente as últimas 100 imagens</value>
   </data>
-  <data name="btnPrint.Text" xml:space="preserve">
-    <value>Imprimir...</value>
+  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
+    <value>Tamanho da miniatura</value>
   </data>
-  <data name="btnShowPreview.Text" xml:space="preserve">
-    <value>Pré-visualização...</value>
+  <data name="tsddbViewMode.Text" xml:space="preserve">
+    <value>Modo de visualização</value>
   </data>
-  <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>Permitir que a imagem alargue</value>
+  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
+    <value>Galeria</value>
   </data>
-  <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>Auto rotação da imagem</value>
+  <data name="tsmiViewModePane.Text" xml:space="preserve">
+    <value>Painel</value>
   </data>
-  <data name="lblMargin.Text" xml:space="preserve">
-    <value>Margem:</value>
-  </data>
-  <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>Centralizar posição da imagem</value>
-  </data>
-  <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Auto escala da imagem</value>
+  <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
+    <value>Miniaturas</value>
   </data>
 </root>

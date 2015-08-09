@@ -118,30 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Opções de impressão</value>
+    <value>ShareX - Perfis de Codificação</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="btnEncoderDuplicate.Text" xml:space="preserve">
+    <value>Duplicar</value>
   </data>
-  <data name="btnPrint.Text" xml:space="preserve">
-    <value>Imprimir...</value>
+  <data name="btnEncodersAdd.Text" xml:space="preserve">
+    <value>Adicionar</value>
   </data>
-  <data name="btnShowPreview.Text" xml:space="preserve">
-    <value>Pré-visualização...</value>
+  <data name="btnEncodersEdit.Text" xml:space="preserve">
+    <value>Editar</value>
   </data>
-  <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>Permitir que a imagem alargue</value>
+  <data name="btnEncodersRemove.Text" xml:space="preserve">
+    <value>Remover</value>
   </data>
-  <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>Auto rotação da imagem</value>
+  <data name="chEncoderArgs.Text" xml:space="preserve">
+    <value>Parâmetros</value>
   </data>
-  <data name="lblMargin.Text" xml:space="preserve">
-    <value>Margem:</value>
+  <data name="chEncoderDescription.Text" xml:space="preserve">
+    <value>Descrição</value>
   </data>
-  <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>Centralizar posição da imagem</value>
+  <data name="chEncoderOutputExtension.Text" xml:space="preserve">
+    <value>Extensão de saída</value>
   </data>
-  <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Auto escala da imagem</value>
+  <data name="chEncoderPath.Text" xml:space="preserve">
+    <value>Local</value>
   </data>
 </root>

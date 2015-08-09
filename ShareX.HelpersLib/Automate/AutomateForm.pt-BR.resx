@@ -118,30 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Opções de impressão</value>
+    <value>ShareX - Automatizar</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="btnAddMouseMove.Text" xml:space="preserve">
+    <value>Adicionar posição do cursor</value>
   </data>
-  <data name="btnPrint.Text" xml:space="preserve">
-    <value>Imprimir...</value>
+  <data name="btnLoadExample.Text" xml:space="preserve">
+    <value>Carregar exemplo</value>
   </data>
-  <data name="btnShowPreview.Text" xml:space="preserve">
-    <value>Pré-visualização...</value>
+  <data name="btnRemoveScript.Text" xml:space="preserve">
+    <value>Remover</value>
   </data>
-  <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>Permitir que a imagem alargue</value>
+  <data name="btnRun.Text" xml:space="preserve">
+    <value>Iniciar</value>
   </data>
-  <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>Auto rotação da imagem</value>
+  <data name="btnSaveScript.Text" xml:space="preserve">
+    <value>Salvar</value>
   </data>
-  <data name="lblMargin.Text" xml:space="preserve">
-    <value>Margem:</value>
+  <data name="chScriptName.Text" xml:space="preserve">
+    <value>Nome</value>
   </data>
-  <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>Centralizar posição da imagem</value>
+  <data name="lblFunctions.Text" xml:space="preserve">
+    <value>Funções:</value>
   </data>
-  <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Auto escala da imagem</value>
+  <data name="lblKeys.Text" xml:space="preserve">
+    <value>Teclas:</value>
+  </data>
+  <data name="lblLineDelay.Text" xml:space="preserve">
+    <value>Atraso de linha:</value>
+  </data>
+  <data name="lblLineDelayMiliseconds.Text" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="lblScriptName.Text" xml:space="preserve">
+    <value>Nome do script:</value>
   </data>
 </root>

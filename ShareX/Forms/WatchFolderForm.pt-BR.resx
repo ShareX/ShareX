@@ -118,30 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Opções de impressão</value>
+    <value>Monitorar pasta</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
-  <data name="btnPrint.Text" xml:space="preserve">
-    <value>Imprimir...</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="btnShowPreview.Text" xml:space="preserve">
-    <value>Pré-visualização...</value>
+  <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Incluir subdiretórios</value>
   </data>
-  <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>Permitir que a imagem alargue</value>
+  <data name="lblFilter.Text" xml:space="preserve">
+    <value>Filtro:</value>
   </data>
-  <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>Auto rotação da imagem</value>
+  <data name="lblFilterExample.Text" xml:space="preserve">
+    <value>Exemplo: *.png</value>
   </data>
-  <data name="lblMargin.Text" xml:space="preserve">
-    <value>Margem:</value>
-  </data>
-  <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>Centralizar posição da imagem</value>
-  </data>
-  <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Auto escala da imagem</value>
+  <data name="lblFolderPath.Text" xml:space="preserve">
+    <value>Local da pasta:</value>
   </data>
 </root>

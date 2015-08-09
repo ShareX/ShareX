@@ -117,31 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCopyPreview.Text" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Opções de impressão</value>
+    <value>ShareX - Opções de gravações de tela</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="btnDownload.Text" xml:space="preserve">
+    <value>Baixar</value>
   </data>
-  <data name="btnPrint.Text" xml:space="preserve">
-    <value>Imprimir...</value>
+  <data name="btnHelp.Text" xml:space="preserve">
+    <value>Ajuda...</value>
   </data>
-  <data name="btnShowPreview.Text" xml:space="preserve">
-    <value>Pré-visualização...</value>
+  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
+    <value>Instalar dispositivos de gravação</value>
   </data>
-  <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>Permitir que a imagem alargue</value>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>Atualizar</value>
   </data>
-  <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>Auto rotação da imagem</value>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Testar com CMD</value>
   </data>
-  <data name="lblMargin.Text" xml:space="preserve">
-    <value>Margem:</value>
+  <data name="cbCustomCommands.Text" xml:space="preserve">
+    <value>Usar comandos customizados</value>
   </data>
-  <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>Centralizar posição da imagem</value>
+  <data name="gbCodecs.Text" xml:space="preserve">
+    <value>Codecs</value>
   </data>
-  <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Auto escala da imagem</value>
+  <data name="gbCommandLineArgs.Text" xml:space="preserve">
+    <value>Parâmetros da linha de comando adicionais</value>
+  </data>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Prévia da linha de comando</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>Local do codec FFmpeg</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Fontes</value>
+  </data>
+  <data name="lblAACQuality.Text" xml:space="preserve">
+    <value>Taxa de bits:</value>
+  </data>
+  <data name="lblAudioCodec.Text" xml:space="preserve">
+    <value>Codec de áudio:</value>
+  </data>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>Fonte de áudio:</value>
+  </data>
+  <data name="lblCodec.Text" xml:space="preserve">
+    <value>Codec de vídeo:</value>
+  </data>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Qualidade:</value>
+  </data>
+  <data name="lblVideoSource.Text" xml:space="preserve">
+    <value>Fonte do vídeo:</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Qualidade</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Taxa de bits variável:</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Pré-definição:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>Taxa de bits variável:</value>
+  </data>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>Padrão é 128k.</value>
   </data>
 </root>

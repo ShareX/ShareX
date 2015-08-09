@@ -122,7 +122,7 @@
   </data>
   <data name="btnGreenlightOpen.Text" xml:space="preserve">
     <value>Nós precisamos da sua ajuda para lançar o programa ShareX na Steam!
-Se você gostaria de votar, clique aqui para abir a nossa página no Steam Greenlight.</value>
+Clique aqui para votar.</value>
   </data>
   <data name="chElapsed.Text" xml:space="preserve">
     <value>Gasto</value>
@@ -140,7 +140,7 @@ Se você gostaria de votar, clique aqui para abir a nossa página no Steam Green
     <value>Velocidade</value>
   </data>
   <data name="chStatus.Text" xml:space="preserve">
-    <value>Estado</value>
+    <value>Status</value>
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
@@ -251,7 +251,7 @@ Se você gostaria de votar, clique aqui para abir a nossa página no Steam Green
     <value>Link para fórum (BBCode)</value>
   </data>
   <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
-    <value>Imagem com link embutido (BBCode)</value>
+    <value>Imagem para fórum com link embutido (BBCode)</value>
   </data>
   <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
     <value>Imagem para HTML</value>
@@ -368,7 +368,7 @@ Se você gostaria de votar, clique aqui para abir a nossa página no Steam Green
     <value>Encurtar URL</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
-    <value>Pasta de screenshots</value>
+    <value>Pasta de capturas de tela...</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Log de depuração...</value>
@@ -477,5 +477,170 @@ Se você gostaria de votar, clique aqui para abir a nossa página no Steam Green
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Mostrar código QR...</value>
+  </data>
+  <data name="tsddbWorkflows.Text" xml:space="preserve">
+    <value>Workflows</value>
+  </data>
+  <data name="tsmiCopyThumbnailFile.Text" xml:space="preserve">
+    <value>Arquivo da miniatura</value>
+  </data>
+  <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
+    <value>Imagem da miniatura</value>
+  </data>
+  <data name="tsmiDNSChanger.Text" xml:space="preserve">
+    <value>Trocador de DNS...</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Envio de arquivos</value>
+  </data>
+  <data name="tsmiFreeHand.Text" xml:space="preserve">
+    <value>Desenho à mão livre</value>
+  </data>
+  <data name="tsmiHashCheck.Text" xml:space="preserve">
+    <value>Verificação de hash...</value>
+  </data>
+  <data name="tsmiImagePreview.Text" xml:space="preserve">
+    <value>Prévia de imagem</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Envio de imagens</value>
+  </data>
+  <data name="tsmiIndexFolder.Text" xml:space="preserve">
+    <value>Arquivar pasta...</value>
+  </data>
+  <data name="tsmiLastRegion.Text" xml:space="preserve">
+    <value>Última região</value>
+  </data>
+  <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
+    <value>URL encurtado</value>
+  </data>
+  <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
+    <value>Arquivo da miniatura</value>
+  </data>
+  <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
+    <value>URL da miniatura</value>
+  </data>
+  <data name="tsmiPolygon.Text" xml:space="preserve">
+    <value>Polígono</value>
+  </data>
+  <data name="tsmiRectangle.Text" xml:space="preserve">
+    <value>Região</value>
+  </data>
+  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
+    <value>Região (anotar)</value>
+  </data>
+  <data name="tsmiRectangleLight.Text" xml:space="preserve">
+    <value>Região (leve)</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>Região (transparente)</value>
+  </data>
+  <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
+    <value>Seleção de cor da tela</value>
+  </data>
+  <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>Gravar tela</value>
+  </data>
+  <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
+    <value>Gravar tela (GIF)</value>
+  </data>
+  <data name="tsmiShowResponse.Text" xml:space="preserve">
+    <value>Mostrar resposta...</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Envio de texto</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>Seleção de cores...</value>
+  </data>
+  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
+    <value>Trocador de DNS...</value>
+  </data>
+  <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
+    <value>Envio de arquivos</value>
+  </data>
+  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
+    <value>Desenho à mão livre</value>
+  </data>
+  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
+    <value>Verificação de hash</value>
+  </data>
+  <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
+    <value>Efeitos de imagem...</value>
+  </data>
+  <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
+    <value>Histórico de imagens...</value>
+  </data>
+  <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
+    <value>Envio de imagens</value>
+  </data>
+  <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
+    <value>Arquivar pasta...</value>
+  </data>
+  <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
+    <value>Última região</value>
+  </data>
+  <data name="tsmiTrayMonitor.Text" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
+    <value>Teste de monitor</value>
+  </data>
+  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
+    <value>Polígono</value>
+  </data>
+  <data name="tsmiTrayRectangle.Text" xml:space="preserve">
+    <value>Região</value>
+  </data>
+  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
+    <value>Região (anotar)</value>
+  </data>
+  <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
+    <value>Região (leve)</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>Região (transparente)</value>
+  </data>
+  <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
+    <value>Seleção de cores da tela...</value>
+  </data>
+  <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>Gravar tela</value>
+  </data>
+  <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
+    <value>Gravar tela (GIF)</value>
+  </data>
+  <data name="tsmiTrayShow.Text" xml:space="preserve">
+    <value>Mostrar janela do ShareX</value>
+  </data>
+  <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
+    <value>Envio de arquivos</value>
+  </data>
+  <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
+    <value>Serviços de compartilhamento de URLs</value>
+  </data>
+  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
+    <value>Captura de página da web...</value>
+  </data>
+  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
+    <value>Região (objetos)</value>
+  </data>
+  <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
+    <value>Workflows</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>Serviços de compartilhamento de URLs</value>
+  </data>
+  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
+    <value>Captura de página da web...</value>
+  </data>
+  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
+    <value>Região (objetos)</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>Miniaturizador de vídeo...</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>Miniaturizador de vídeo...</value>
   </data>
 </root>

@@ -135,4 +135,7 @@
   <data name="lblPath.Text" xml:space="preserve">
     <value>Local:</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Programa de codificação</value>
+  </data>
 </root>

@@ -118,30 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Opções de impressão</value>
+    <value>Verificação de hash</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="btnFilePathBrowse.Text" xml:space="preserve">
+    <value>Procurar...</value>
   </data>
-  <data name="btnPrint.Text" xml:space="preserve">
-    <value>Imprimir...</value>
+  <data name="btnStartHashCheck.Text" xml:space="preserve">
+    <value>Iniciar</value>
   </data>
-  <data name="btnShowPreview.Text" xml:space="preserve">
-    <value>Pré-visualização...</value>
+  <data name="lblFile.Text" xml:space="preserve">
+    <value>Local do arquivo:</value>
   </data>
-  <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>Permitir que a imagem alargue</value>
+  <data name="lblHashType.Text" xml:space="preserve">
+    <value>Tipo de hash:</value>
   </data>
-  <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>Auto rotação da imagem</value>
+  <data name="lblProgress.Text" xml:space="preserve">
+    <value>Progresso:</value>
   </data>
-  <data name="lblMargin.Text" xml:space="preserve">
-    <value>Margem:</value>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Resultado:</value>
   </data>
-  <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>Centralizar posição da imagem</value>
-  </data>
-  <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Auto escala da imagem</value>
+  <data name="lblTarget.Text" xml:space="preserve">
+    <value>Destino:</value>
   </data>
 </root>

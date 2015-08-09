@@ -139,7 +139,7 @@
     <value>Falha na configuração de DNS:</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>Falha na configuração de DNS com codigo de erro:</value>
+    <value>Falha na configuração de DNS com código de erro:</value>
   </data>
   <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
     <value>Manual</value>
@@ -160,7 +160,7 @@
     <value>Instalar</value>
   </data>
   <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
-    <value>Cancelar.</value>
+    <value>Cancelar</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
     <value>Baixando.</value>
@@ -172,13 +172,13 @@
     <value>Erro</value>
   </data>
   <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>Procurar por executavel...</value>
+    <value>Procurar por executável...</value>
   </data>
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
     <value>Falha na importação.</value>
   </data>
   <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
-    <value>Falha na exportação</value>
+    <value>Falha na exportação.</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
     <value>Configurações copiadas para a sua área de transferência.</value>
@@ -220,13 +220,13 @@
     <value>Capturar monitor ativo</value>
   </data>
   <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
-    <value>Captura de tela</value>
+    <value>Capturar tela</value>
   </data>
   <data name="HotkeyType_ActiveWindow" xml:space="preserve">
     <value>Capturar janela ativa</value>
   </data>
   <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
-    <value>Captura de tela</value>
+    <value>Capturar tela</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Upload da área de transferência</value>
@@ -262,10 +262,10 @@
     <value>Upload</value>
   </data>
   <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
-    <value>Captura de tela</value>
+    <value>Capturar tela</value>
   </data>
   <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
-    <value>Captura de tela</value>
+    <value>Capturar tela</value>
   </data>
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>Cliente FTP</value>
@@ -277,25 +277,25 @@
     <value>Efeitos de imagem</value>
   </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
-    <value>Capturar ultima região</value>
+    <value>Capturar última região</value>
   </data>
   <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
-    <value>Captura de tela</value>
+    <value>Capturar tela</value>
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>Teste de monitor</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
-    <value>Outro</value>
+    <value>Outros</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>Código QR</value>
   </data>
   <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
-    <value>Captura de tela</value>
+    <value>Capturar tela</value>
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
-    <value>Gravando tela</value>
+    <value>Gravar tela</value>
   </data>
   <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
     <value>Gravar tela</value>
@@ -328,13 +328,13 @@
     <value>URL de redirecionamento</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
-    <value>Atualização disponivel</value>
+    <value>Atualização disponível</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Falha em procurar atualizações</value>
+    <value>Falha ao procurar por atualizações</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Uma nova versão está disponivel.
+    <value>Uma nova versão está disponível.
 Você gostaria de baixar e instalar?</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
@@ -356,7 +356,7 @@ Você gostaria de baixar e instalar?</value>
     <value>Capturar a tela inteira</value>
   </data>
   <data name="HotkeyType_PolygonRegion_Category" xml:space="preserve">
-    <value>Captura de tela</value>
+    <value>Capturar tela</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Fechar</value>
@@ -387,5 +387,257 @@ Você gostaria de baixar e instalar?</value>
   </data>
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
     <value>Encurtar URL</value>
+  </data>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>Capturar automaticamente</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
+    <value>Capturar página da web</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
+    <value>Capturar tela</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
+    <value>Upload da área de transferência com visualizador de conteúdo</value>
+  </data>
+  <data name="HotkeyType_ColorPicker" xml:space="preserve">
+    <value>Seleção de cores</value>
+  </data>
+  <data name="HotkeyType_CustomRegion" xml:space="preserve">
+    <value>Capturar região customizada</value>
+  </data>
+  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
+    <value>Capturar tela</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>Desabilitar/Habilitar atalhos</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
+    <value>Outros</value>
+  </data>
+  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="HotkeyType_HashCheck" xml:space="preserve">
+    <value>Verificação de hash</value>
+  </data>
+  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="HotkeyType_IndexFolder" xml:space="preserve">
+    <value>Arquivador de pastas</value>
+  </data>
+  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="HotkeyType_None" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
+    <value>Abrir pasta de capturas de tela</value>
+  </data>
+  <data name="HotkeyType_PolygonRegion" xml:space="preserve">
+    <value>Capturar região de polígono</value>
+  </data>
+  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
+    <value>Capturar tela</value>
+  </data>
+  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
+    <value>Capturar tela</value>
+  </data>
+  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
+    <value>Capturar tela</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
+    <value>Capturar tela</value>
+  </data>
+  <data name="HotkeyType_Ruler" xml:space="preserve">
+    <value>Régua</value>
+  </data>
+  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
+    <value>Seleção de cores da tela</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
+    <value>Imprimir</value>
+  </data>
+  <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
+    <value>Nome: {0}, Tamanho: {1}</value>
+  </data>
+  <data name="RegistryHelpers_ShellExtDesc_Upload_with__0_" xml:space="preserve">
+    <value>Enviar com {0}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>Nome do computador</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>Dia atual</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>Hora atual</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>Altura da imagem</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>Minuto atual</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>Mês atual</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>Local do arquivo</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
+    <value>Local do arquivo sem extensão</value>
+  </data>
+  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
+    <value>Adicionar efeitos de imagem / marca d'água</value>
+  </data>
+  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
+    <value>Abrir imagem no editor</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
+    <value>Copiar local do arquivo para a área de transferência</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>Copiar arquivo para a área de transferência</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
+    <value>Copiar imagem para a área de transferência</value>
+  </data>
+  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
+    <value>Realizar ações</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
+    <value>Salvar miniatura de imagem</value>
+  </data>
+  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
+    <value>Enviar imagem para hospedagem</value>
+  </data>
+  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
+    <value>Mostrar janela de código QR</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>Ciano: {0:0.0}%, Magenta: {1:0.0}%, Amarelo: {2:0.0}%, Chave: {3:0.0}%</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
+    <value>DNS definido com sucesso.</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
+    <value>DNs definido com sucesso. Requer reinicialização.</value>
+  </data>
+  <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
+    <value>URL para baixar as configurações</value>
+  </data>
+  <data name="FileExistAction_UniqueName" xml:space="preserve">
+    <value>Acrescentar número ao nome do arquivo</value>
+  </data>
+  <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
+    <value>Escolher local do arquivo</value>
+  </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>Não foi possível criar o diretório, verifique suas configurações de locais.</value>
+  </data>
+  <data name="HotkeyType_Automate" xml:space="preserve">
+    <value>Abrir/Parar ferramenta de Automatização</value>
+  </data>
+  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
+    <value>Capturar região à mão livre</value>
+  </data>
+  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
+    <value>Capturar região (anotar)</value>
+  </data>
+  <data name="HotkeyType_RectangleLight" xml:space="preserve">
+    <value>Capturar região (leve)</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
+    <value>Capturar região</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Capturar região (transparente)</value>
+  </data>
+  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
+    <value>Carregando imagem: {0}%</value>
+  </data>
+  <data name="SupportedLanguage_Automatic" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>Encurtador de URLs customizado</value>
+  </data>
+  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
+    <value>Gravar tela</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
+    <value>Gravar tela</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
+    <value>Gravar tela</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
+    <value>Gravar tela</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
+    <value>Gravar tela</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
+    <value>Gravar tela</value>
+  </data>
+  <data name="HotkeyType_StopUploads" xml:space="preserve">
+    <value>Parar todos os envios ativos</value>
+  </data>
+  <data name="HotkeyType_TweetMessage" xml:space="preserve">
+    <value>Tuitar mensagem</value>
+  </data>
+  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
+    <value>Feramentas</value>
+  </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>Upload do URL</value>
+  </data>
+  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
+    <value>Capturar região (objetos)</value>
+  </data>
+  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
+    <value>Capturar tela</value>
+  </data>
+  <data name="HSB_ToString_" xml:space="preserve">
+    <value>Matiz: {0:0.0}°, Saturação: {1:0.0}%, Brilho: {2:0.0}%</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
+    <value>{0} está atualizado</value>
   </data>
 </root>
