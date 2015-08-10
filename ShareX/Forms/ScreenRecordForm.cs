@@ -128,6 +128,7 @@ namespace ShareX
             {
                 outputType = ScreenRecordOutput.FFmpeg;
                 taskSettings.CaptureSettings.FFmpegOptions.VideoCodec = FFmpegVideoCodec.gif;
+                taskSettings.CaptureSettings.FFmpegOptions.UseCustomCommands = false;
             }
 
             if (outputType == ScreenRecordOutput.FFmpeg)
