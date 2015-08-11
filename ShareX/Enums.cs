@@ -48,7 +48,9 @@ namespace ShareX
         [Description("Español (Spanish)")]
         Spanish,
         [Description("Türkçe (Turkish)")]
-        Turkish
+        Turkish,
+        [Description("Português (Brasil)")]
+        BrazilianPortuguese
     }
 
     public enum TaskJob
