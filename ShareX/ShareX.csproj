@@ -999,6 +999,7 @@
     <None Include="Resources\keyboard--minus.png" />
     <None Include="Resources\keyboard--plus.png" />
     <None Include="Resources\images-stack.png" />
+    <None Include="Resources\br.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

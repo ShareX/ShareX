@@ -117,13 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnGreenlightHide.Text" xml:space="preserve">
-    <value>Esconder</value>
-  </data>
-  <data name="btnGreenlightOpen.Text" xml:space="preserve">
-    <value>Nós precisamos da sua ajuda para lançar o programa ShareX na Steam!
-Clique aqui para votar.</value>
-  </data>
   <data name="chElapsed.Text" xml:space="preserve">
     <value>Gasto</value>
   </data>

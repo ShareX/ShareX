@@ -66,6 +66,9 @@ namespace ShareX
                     case SupportedLanguage.Korean:
                         cultureName = "ko-KR";
                         break;
+                    case SupportedLanguage.PortugueseBrazil:
+                        cultureName = "pt-BR";
+                        break;
                     case SupportedLanguage.SimplifiedChinese:
                         cultureName = "zh-CN";
                         break;
@@ -74,9 +77,6 @@ namespace ShareX
                         break;
                     case SupportedLanguage.Turkish:
                         cultureName = "tr-TR";
-                        break;
-                    case SupportedLanguage.BrazilianPortuguese:
-                        cultureName = "pt-BR";
                         break;
                 }
 
