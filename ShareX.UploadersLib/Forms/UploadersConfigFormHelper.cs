@@ -1268,15 +1268,13 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    // TODO: Translate
-                    MessageBox.Show("FTP client only supports FTP or FTPS.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 return;
             }
 
-            // TODO: Translate
-            MessageBox.Show("Unable to find valid FTP account.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Resources.UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void TestFTPAccount(FTPAccount account)

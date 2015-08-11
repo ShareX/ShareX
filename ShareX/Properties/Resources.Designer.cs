@@ -318,6 +318,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom.
+        /// </summary>
+        public static string BeforeUploadControl_AddDestination_Custom {
+            get {
+                return ResourceManager.GetString("BeforeUploadControl_AddDestination_Custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} is about to be uploaded to {1}. You may choose a different destination..
         /// </summary>
         public static string BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_ {
@@ -1110,6 +1119,16 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can single left click the ShareX tray icon to start region capture..
+        /// </summary>
+        public static string MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_ {
+            get {
+                return ResourceManager.GetString("MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_r" +
+                        "egion_capture_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you really want to delete this file?.
         /// </summary>
         public static string MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_ {
@@ -1169,6 +1188,24 @@ namespace ShareX.Properties {
         public static string MainForm_UpdateMenu_Show_menu {
             get {
                 return ResourceManager.GetString("MainForm_UpdateMenu_Show_menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable hotkeys.
+        /// </summary>
+        public static string MainForm_UpdateToggleHotkeyButton_Disable_hotkeys {
+            get {
+                return ResourceManager.GetString("MainForm_UpdateToggleHotkeyButton_Disable_hotkeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable hotkeys.
+        /// </summary>
+        public static string MainForm_UpdateToggleHotkeyButton_Enable_hotkeys {
+            get {
+                return ResourceManager.GetString("MainForm_UpdateToggleHotkeyButton_Enable_hotkeys", resourceCulture);
             }
         }
         
@@ -1539,6 +1576,24 @@ namespace ShareX.Properties {
         public static string TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_ {
             get {
                 return ResourceManager.GetString("TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hotkeys disabled..
+        /// </summary>
+        public static string TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_ToggleHotkeys_Hotkeys_disabled_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hotkeys enabled..
+        /// </summary>
+        public static string TaskHelpers_ToggleHotkeys_Hotkeys_enabled_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_ToggleHotkeys_Hotkeys_enabled_", resourceCulture);
             }
         }
         
@@ -1963,6 +2018,24 @@ namespace ShareX.Properties {
         public static string WatchFolderForm_btnPathBrowse_Click_Choose_folder_path {
             get {
                 return ResourceManager.GetString("WatchFolderForm_btnPathBrowse_Click_Choose_folder_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture.
+        /// </summary>
+        public static string WebpageCaptureForm_UpdateControls_Capture {
+            get {
+                return ResourceManager.GetString("WebpageCaptureForm_UpdateControls_Capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        public static string WebpageCaptureForm_UpdateControls_Stop {
+            get {
+                return ResourceManager.GetString("WebpageCaptureForm_UpdateControls_Stop", resourceCulture);
             }
         }
         

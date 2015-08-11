@@ -1162,14 +1162,7 @@
   <data name="tsmiWebpageCapture.Text" xml:space="preserve">
     <value>Capturer une page Web...</value>
   </data>
-  <data name="btnGreenlightHide.Text" xml:space="preserve">
-    <value>Cacher</value>
-  </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Désactiver les raccourcis clavier</value>
-  </data>
-  <data name="btnGreenlightOpen.Text" xml:space="preserve">
-    <value>Nous avons besoin de votre aide pour pouvoir sortir ShareX sur Steam !
-Si vous souhaitez voter, cliquez ici pour ouvrir notre page Steam Greenlight.</value>
   </data>
 </root>

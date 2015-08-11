@@ -46,8 +46,6 @@ namespace ShareX.UploadersLib
         Twitter,
         [Description("Chevereto")]
         Chevereto,
-        [Description("Hızlı Resim")]
-        HizliResim,
         [Description("vgy.me")]
         Vgyme,
         [Description("SomeImage")]

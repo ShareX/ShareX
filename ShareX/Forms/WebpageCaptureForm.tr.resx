@@ -118,108 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ekran kayıt ayarları</value>
+    <value>ShareX - Web sayfası yakala</value>
   </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Yakala</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
     <value>Kopyala</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>İndir</value>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Yükle</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Yardım...</value>
+  <data name="lblCaptureDelay.Text" xml:space="preserve">
+    <value>Gecikme:</value>
   </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>Yenile</value>
-  </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>CMD ile test et</value>
-  </data>
-  <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Özel komutları kullan</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Kaynaklar</value>
-  </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>Kalite:</value>
-  </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Kalite:</value>
-  </data>
-  <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>Video kaynağı:</value>
-  </data>
-  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>Varsayılan 128k.</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Çözücüler</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Komut satırı önizleme</value>
-  </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>Video çözücü:</value>
-  </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>Bit hızı:</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Ek komut satırı parametreleri</value>
-  </data>
-  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>0-10 arasında, 10 en yüksek kalite. 3-6 arası denenebilir. Varsayılan 3'dür.</value>
-  </data>
-  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>0-9 arası, küçük değer yüksek kalite anlamına gelir.</value>
-  </data>
-  <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>Ses çözücü:</value>
-  </data>
-  <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>Ses kaynağı:</value>
-  </data>
-  <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Video kalitesini belirler.
-0 en iyi kalite, 23 varsayılan, 51 en kötü kalite.
-Kaliteyi arttırmak dosya boyutunu arttırır.</value>
-  </data>
-  <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>Değişken bit hızı:</value>
-  </data>
-  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
-    <value>1 en yüksek kalite / en büyük dosya boyutu ve 31 en küçük kalite / en küçük dosya boyutu.</value>
-  </data>
-  <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>Genel:</value>
-  </data>
-  <data name="lblXvidQscale.Text" xml:space="preserve">
-    <value>Değişken bit hızı:</value>
-  </data>
-  <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>Kodlama hızı ile sıkıştırma oranı arasında seçim.
-Ekrandan kayıt yaparken hızlı seçmeniz tavsiye edilir.</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg yolu</value>
-  </data>
-  <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>"screen-capture-recorder" ve "virtual-audio-capturer" video/ses kaynaklarını yükler.</value>
-  </data>
-  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Kayıt cihazlarını yükle</value>
-  </data>
-  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>Varsayılan full.</value>
-  </data>
-  <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>Varsayılan sierra2_4a.</value>
-  </data>
-  <data name="lblGIFDither.Text" xml:space="preserve">
-    <value>Kıpırtılandırma modu:</value>
-  </data>
-  <data name="lblGIFStatsMode.Text" xml:space="preserve">
-    <value>Palet modu:</value>
+  <data name="lblWebpageSize.Text" xml:space="preserve">
+    <value>Tarayıcı boyutu:</value>
   </data>
 </root>

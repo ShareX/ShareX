@@ -1156,7 +1156,19 @@
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Dikdörtgen (Saydam)</value>
   </data>
-  <data name="btnGreenlightHide.Text" xml:space="preserve">
-    <value>Sakla</value>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>Kısayolları devre dışı bırak</value>
+  </data>
+  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
+    <value>Web sayfası yakala...</value>
+  </data>
+  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
+    <value>Web sayfası yakala...</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>Video küçük resim yapıcı...</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>Video küçük resim yapıcı...</value>
   </data>
 </root>

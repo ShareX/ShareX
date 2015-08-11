@@ -788,8 +788,7 @@ namespace ShareX
             if (Program.MainForm.niTray.Visible)
             {
                 Program.MainForm.niTray.Tag = null;
-                // TODO: Translate
-                string balloonTipText = result ? "Hotkeys disabled." : "Hotkeys enabled.";
+                string balloonTipText = result ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_;
                 Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", balloonTipText, ToolTipIcon.Info);
             }
 

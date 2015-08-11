@@ -407,9 +407,6 @@ Merci de sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
     <value>Vous pouvez glisser et déposer des fichiers dans cette fenêtre.</value>
   </data>
-  <data name="MainForm_AfterShownJobs_You_can_middle_click_the_ShareX_tray_icon_to_start_rectangle_capture_" xml:space="preserve">
-    <value>Vous pouvez cliquer avec la molette l'icône de ShareX pour commencer une capture rectangulaire.</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Clic gauche pour copier l'URL dans le presse-papier. Clic droit pour l'ouvrir.</value>
   </data>

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,5 +119,8 @@
   </resheader>
   <data name="lblOwners.Text" xml:space="preserve">
     <value>Sahipler:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Hakkında</value>
   </data>
 </root>

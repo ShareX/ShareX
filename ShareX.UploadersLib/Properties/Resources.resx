@@ -473,4 +473,10 @@ Created folders:</value>
   <data name="Polr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Polr.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>FTP client only supports FTP or FTPS.</value>
+  </data>
+  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>Unable to find valid FTP account.</value>
+  </data>
 </root>

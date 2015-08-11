@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -108,8 +109,7 @@ namespace ShareX.MediaLib
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            // TODO: Translate
-            Helpers.BrowseFile("Browse for media file", txtMediaPath);
+            Helpers.BrowseFile(Resources.VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file, txtMediaPath);
         }
     }
 }

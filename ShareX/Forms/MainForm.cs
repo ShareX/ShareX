@@ -74,8 +74,7 @@ namespace ShareX
 
             if (Program.Settings != null && Program.Settings.ShowTrayLeftClickTip && niTray.Visible && Program.Settings.TrayLeftClickAction == HotkeyType.RectangleRegion)
             {
-                // TODO: Translate
-                niTray.ShowBalloonTip(5000, "ShareX", "You can single left click the ShareX tray icon to start region capture.", ToolTipIcon.Info);
+                niTray.ShowBalloonTip(5000, "ShareX", Resources.MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_, ToolTipIcon.Info);
                 Program.Settings.ShowTrayLeftClickTip = false;
             }
         }
@@ -562,8 +561,6 @@ namespace ShareX
             UpdateToggleHotkeyButton();
 
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
-
-            pGreenlight.Visible = Program.Settings.ShowGreenlightButton;
         }
 
         private void RegisterMenuClosing()
@@ -803,15 +800,14 @@ namespace ShareX
 
         public void UpdateToggleHotkeyButton()
         {
-            // TODO: Translate
             if (Program.Settings.DisableHotkeys)
             {
-                tsmiTrayToggleHotkeys.Text = "Enable hotkeys";
+                tsmiTrayToggleHotkeys.Text = Resources.MainForm_UpdateToggleHotkeyButton_Enable_hotkeys;
                 tsmiTrayToggleHotkeys.Image = Resources.keyboard__plus;
             }
             else
             {
-                tsmiTrayToggleHotkeys.Text = "Disable hotkeys";
+                tsmiTrayToggleHotkeys.Text = Resources.MainForm_UpdateToggleHotkeyButton_Disable_hotkeys;
                 tsmiTrayToggleHotkeys.Image = Resources.keyboard__minus;
             }
         }
@@ -1498,24 +1494,6 @@ namespace ShareX
             Program.Settings.ImagePreview = ImagePreviewVisibility.Automatic;
             tsmiImagePreviewAutomatic.Check();
             UpdateControls();
-        }
-
-        private void btnGreenlightOpen_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                URLHelpers.OpenURL("http://steamcommunity.com/sharedfiles/filedetails/?id=491692781");
-                btnGreenlightOpen.Text = "Thanks for considering to vote :)\r\nYou can hide these buttons by pressing hide button on the right side:";
-            }
-        }
-
-        private void btnGreenlightHide_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                pGreenlight.Visible = false;
-                Program.Settings.ShowGreenlightButton = false;
-            }
         }
 
         #endregion UploadInfoMenu events

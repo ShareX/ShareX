@@ -755,4 +755,37 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
     <value>Varsayılan tweet mesajı:</value>
   </data>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
+  </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Sunucu:</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>API sunucu: (örneğin: http://example.com/api.php, polr.me kullanmak için boş bırakın)</value>
+  </data>
+  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblLnkUAPIKey.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
+  </data>
+  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
+  </data>
+  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
+    <value>Regex çift tıklıyarak URL kısmında kullanabilirsiniz</value>
+  </data>
+  <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
+    <value>ownCloud 8.1+ uyumluluk</value>
+  </data>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>GIF yerine GIFV adresi kullan</value>
+  </data>
+  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
+    <value>Yükleyicileri temizle</value>
+  </data>
 </root>

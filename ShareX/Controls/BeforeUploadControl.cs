@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
 using System.Linq;
@@ -194,8 +195,8 @@ namespace ShareX
             {
                 RadioButton rb = new RadioButton() { AutoSize = true };
 
-                // TODO: Translate
-                rb.Text = string.IsNullOrEmpty(overrideText) ? destination.GetLocalizedDescription() : "Custom [" + overrideText + "]";
+                rb.Text = string.IsNullOrEmpty(overrideText) ? destination.GetLocalizedDescription() :
+                    string.Format("{0} [{1}]", Resources.BeforeUploadControl_AddDestination_Custom, overrideText);
                 rb.Tag = destination;
                 rb.CheckedChanged += (sender, e) => SetDestinations(rb.Checked, dataType, rb.Tag, taskSettings);
 

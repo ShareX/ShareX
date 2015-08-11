@@ -929,7 +929,7 @@ Default is sierra2_4a.</value>
     <value>0</value>
   </data>
   <data name="lblGIFStatsMode.Text" xml:space="preserve">
-    <value>Palette stats mode:</value>
+    <value>Palette mode:</value>
   </data>
   <data name="&gt;&gt;lblGIFStatsMode.Name" xml:space="preserve">
     <value>lblGIFStatsMode</value>

@@ -343,103 +343,105 @@ namespace ShareX.ScreenCaptureLib
 
         protected virtual void WriteTips(StringBuilder sb)
         {
-            sb.AppendLine("[F1] Hide tips");
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__F1__Hide_tips);
             sb.AppendLine();
 
             if (AreaManager.IsCreating)
             {
-                sb.AppendLine("[Right click] Cancel region selection");
-                sb.AppendLine("[Esc] Cancel capture");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click__Cancel_region_selection);
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
             }
             else
             {
-                sb.AppendLine("[Hold Left click] Start region selection");
-                sb.AppendLine("[Right click] [Esc] Cancel capture");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection);
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture);
             }
 
             if (!Config.QuickCrop && AreaManager.Areas.Count > 0)
             {
-                sb.AppendLine("[Double Left click] [Enter] Capture regions");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions);
             }
 
             sb.AppendLine();
 
             if (!Config.QuickCrop && !AreaManager.IsCreating && AreaManager.IsCurrentAreaValid)
             {
-                sb.AppendLine(string.Format("[Arrow keys] Resize selected region from {0}", AreaManager.ResizeManager.IsBottomRightResizing ? "bottom right" : "top left"));
-                sb.AppendLine(string.Format("[Tab] Swap resize anchor to {0}", AreaManager.ResizeManager.IsBottomRightResizing ? "top left" : "bottom right"));
-                sb.AppendLine("[Hold Shift] Move selected region instead resizing");
-                sb.AppendLine("[Hold Ctrl] Resize / Move faster");
-                sb.AppendLine("[Hold Left click on selection] Move region");
-                sb.AppendLine("[Right click on selection] [Delete] Remove region");
+                sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_, AreaManager.ResizeManager.IsBottomRightResizing ?
+                    Resources.RectangleRegion_WriteTips_bottom_right : Resources.RectangleRegion_WriteTips_top_left));
+                sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_, AreaManager.ResizeManager.IsBottomRightResizing ?
+                    Resources.RectangleRegion_WriteTips_top_left : Resources.RectangleRegion_WriteTips_bottom_right));
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing);
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster);
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region);
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region);
             }
             else
             {
-                sb.AppendLine("[Arrow keys] Move cursor position");
-                sb.AppendLine("[Ctrl + Arrow keys] Move cursor position faster");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position);
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster);
             }
 
             if (AreaManager.IsCreating)
             {
-                sb.AppendLine("[Hold Shift] Proportional resizing");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing);
             }
 
             if (AreaManager.IsCurrentAreaValid)
             {
-                sb.AppendLine("[Ctrl + C] Copy position and size");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size);
             }
             else if (Config.UseCustomInfoText)
             {
-                sb.AppendLine("[Ctrl + C] Copy info");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_info);
             }
             else
             {
-                sb.AppendLine("[Ctrl + C] Copy position");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position);
             }
 
             sb.AppendLine();
 
-            sb.AppendLine("[Space] Fullscreen capture");
-            sb.AppendLine("[1, 2, 3 ... 0] Monitor capture");
-            sb.AppendLine("[~] Active monitor capture");
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Space__Fullscreen_capture);
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture);
+            sb.AppendLine(Resources.RectangleRegion_WriteTips_____Active_monitor_capture);
 
             sb.AppendLine();
 
             if (Config.QuickCrop)
             {
-                sb.AppendLine("[Q] Activate multi region mode");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Q__Activate_multi_region_mode);
             }
             else
             {
-                sb.AppendLine("[Q] Activate quick capture mode");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Q__Activate_quick_capture_mode);
             }
 
-            sb.AppendLine("[Mouse wheel] Change magnifier pixel count");
-            sb.AppendLine("[Ctrl + Mouse wheel] Change magnifier pixel size");
-            sb.AppendLine(string.Format("[I] {0} position and size info", Config.ShowInfo ? "Hide" : "Show"));
-            sb.AppendLine(string.Format("[M] {0} magnifier", Config.ShowMagnifier ? "Hide" : "Show"));
-            sb.AppendLine(string.Format("[C] {0} screen wide crosshair", Config.ShowCrosshair ? "Hide" : "Show"));
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count);
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size);
+            sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__I___0__position_and_size_info, Config.ShowInfo ? Resources.RectangleRegion_WriteTips_Hide : Resources.RectangleRegion_WriteTips_Show));
+            sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__M___0__magnifier, Config.ShowMagnifier ? Resources.RectangleRegion_WriteTips_Hide : Resources.RectangleRegion_WriteTips_Show));
+            sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__C___0__screen_wide_crosshair, Config.ShowCrosshair ? Resources.RectangleRegion_WriteTips_Hide : Resources.RectangleRegion_WriteTips_Show));
 
             sb.AppendLine();
 
             if (Config.CurrentRegionShape == RegionShape.Rectangle) sb.Append("-> ");
-            sb.AppendLine("[Numpad 1] Rectangle shape");
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_1__Rectangle_shape);
             if (Config.CurrentRegionShape == RegionShape.RoundedRectangle) sb.Append("-> ");
-            sb.AppendLine("[Numpad 2] Rounded rectangle shape");
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape);
             if (Config.CurrentRegionShape == RegionShape.Ellipse) sb.Append("-> ");
-            sb.AppendLine("[Numpad 3] Ellipse shape");
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_3__Ellipse_shape);
             if (Config.CurrentRegionShape == RegionShape.Triangle) sb.Append("-> ");
-            sb.AppendLine("[Numpad 4] Triangle shape");
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_4__Triangle_shape);
             if (Config.CurrentRegionShape == RegionShape.Diamond) sb.Append("-> ");
-            sb.AppendLine("[Numpad 5] Diamond shape");
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_5__Diamond_shape);
 
             switch (Config.CurrentRegionShape)
             {
                 case RegionShape.RoundedRectangle:
-                    sb.AppendLine("[Numpad + or -] Change rounded rectangle corner radius");
+                    sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius);
                     break;
                 case RegionShape.Triangle:
-                    sb.AppendLine("[Numpad + or -] Change triangle angle");
+                    sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle);
                     break;
             }
         }
