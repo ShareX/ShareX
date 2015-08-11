@@ -171,4 +171,7 @@
   <data name="tpConsole.Text" xml:space="preserve">
     <value>Console</value>
   </data>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>Arquivos</value>
+  </data>
 </root>
