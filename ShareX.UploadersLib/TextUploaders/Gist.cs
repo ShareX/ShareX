@@ -100,7 +100,7 @@ namespace ShareX.UploadersLib.TextUploaders
             {
                 var gistUploadObject = new
                 {
-                    @public = this.publishPublic,
+                    @public = publishPublic,
                     files = new Dictionary<string, object>
                     {
                         { fileName, new { content = text } }

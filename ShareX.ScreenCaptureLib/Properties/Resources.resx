@@ -183,13 +183,13 @@ X: {4} Y: {5}</value>
     <value>[Esc] Cancel capture</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
-    <value>[Hold Left click] Start region selection</value>
+    <value>[Hold left click] Start region selection</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
     <value>[Right click] [Esc] Cancel capture</value>
   </data>
   <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
-    <value>[Double Left click] [Enter] Capture regions</value>
+    <value>[Double left click] [Enter] Capture regions</value>
   </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
     <value>[Arrow keys] Resize selected region from {0}</value>
@@ -210,7 +210,7 @@ X: {4} Y: {5}</value>
     <value>[Hold Ctrl] Resize / Move faster</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
-    <value>[Hold Left click on selection] Move region</value>
+    <value>[Hold left click on selection] Move region</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Right click on selection] [Delete] Remove region</value>

@@ -429,13 +429,13 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>QR kod</value>
   </data>
   <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Dipnot)</value>
+    <value>Bölge yakala (Dipnot)</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Basit)</value>
+    <value>Bölge yakala (Basit)</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala</value>
+    <value>Bölge yakala</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Cetvel</value>
@@ -456,7 +456,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Adresten yükle</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Pencere)</value>
+    <value>Bölge yakala (Objeler)</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Özel dosya yükleyici</value>
@@ -598,7 +598,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Aç/Durdur otomatikleştirme aracını</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Saydam)</value>
+    <value>Bölge yakala (Saydam)</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Özel bölge yakala</value>

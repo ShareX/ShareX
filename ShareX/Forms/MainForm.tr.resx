@@ -176,25 +176,25 @@
     <value>212, 22</value>
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
-    <value>Dikdörtgen</value>
+    <value>Bölge</value>
   </data>
   <data name="tsmiWindowRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Dikdörtgen (Objeler)</value>
+    <value>Bölge (Objeler)</value>
   </data>
   <data name="tsmiRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Dikdörtgen (Açıklama)</value>
+    <value>Bölge (Dipnot)</value>
   </data>
   <data name="tsmiRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>Dikdörtgen (Basit)</value>
+    <value>Bölge (Basit)</value>
   </data>
   <data name="tsmiRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -818,25 +818,25 @@
     <value>212, 22</value>
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
-    <value>Dikdörtgen</value>
+    <value>Bölge</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Dikdörtgen (Objeler)</value>
+    <value>Bölge (Objeler)</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Dikdörtgen (Açıklama)</value>
+    <value>Bölge (Dipnot)</value>
   </data>
   <data name="tsmiTrayRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
-    <value>Dikdörtgen (Basit)</value>
+    <value>Bölge (Basit)</value>
   </data>
   <data name="tsmiTrayRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1151,10 +1151,10 @@
     <value>Otomatikleştirmek...</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
-    <value>Dikdörtgen (Saydam)</value>
+    <value>Bölge (Saydam)</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
-    <value>Dikdörtgen (Saydam)</value>
+    <value>Bölge (Saydam)</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Kısayolları devre dışı bırak</value>

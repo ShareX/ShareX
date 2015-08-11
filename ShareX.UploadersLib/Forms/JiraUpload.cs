@@ -92,7 +92,7 @@ namespace ShareX.UploadersLib.GUI
 
         private void UpdateSummaryAsync(Task<string> task)
         {
-            this.Invoke((Action)(() => UpdateSummary(task.Result)));
+            Invoke((Action)(() => UpdateSummary(task.Result)));
         }
 
         private void UpdateSummary(string summary)

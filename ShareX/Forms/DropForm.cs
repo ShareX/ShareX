@@ -117,7 +117,7 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Right)
             {
-                this.Close();
+                Close();
             }
         }
 

@@ -34,12 +34,12 @@ namespace ShareX.HelpersLib
     {
         public SSLBypassHelper()
         {
-            ServicePointManager.ServerCertificateValidationCallback += this.ServerCertificateValidationCallback;
+            ServicePointManager.ServerCertificateValidationCallback += ServerCertificateValidationCallback;
         }
 
         public void Dispose()
         {
-            ServicePointManager.ServerCertificateValidationCallback -= this.ServerCertificateValidationCallback;
+            ServicePointManager.ServerCertificateValidationCallback -= ServerCertificateValidationCallback;
         }
 
         private bool ServerCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)

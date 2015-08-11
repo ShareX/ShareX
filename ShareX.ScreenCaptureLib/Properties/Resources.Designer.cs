@@ -283,7 +283,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Double Left click] [Enter] Capture regions.
+        ///   Looks up a localized string similar to [Double left click] [Enter] Capture regions.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions {
             get {
@@ -319,7 +319,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Hold Left click] Start region selection.
+        ///   Looks up a localized string similar to [Hold left click] Start region selection.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection {
             get {
@@ -328,7 +328,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Hold Left click on selection] Move region.
+        ///   Looks up a localized string similar to [Hold left click on selection] Move region.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region {
             get {
