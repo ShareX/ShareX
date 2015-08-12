@@ -40,14 +40,10 @@
             this.lblOwners = new System.Windows.Forms.Label();
             this.cLogo = new ShareX.HelpersLib.Canvas();
             this.uclUpdate = new ShareX.HelpersLib.UpdateCheckerLabel();
-            this.pbMikeGooglePlus = new System.Windows.Forms.PictureBox();
-            this.pbBerkSteamURL = new System.Windows.Forms.PictureBox();
             this.pbMikeURL = new System.Windows.Forms.PictureBox();
             this.pbAU = new System.Windows.Forms.PictureBox();
             this.pbBerkURL = new System.Windows.Forms.PictureBox();
             this.pbTR = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMikeGooglePlus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBerkSteamURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).BeginInit();
@@ -113,26 +109,6 @@
             resources.ApplyResources(this.uclUpdate, "uclUpdate");
             this.uclUpdate.Name = "uclUpdate";
             // 
-            // pbMikeGooglePlus
-            // 
-            this.pbMikeGooglePlus.BackColor = System.Drawing.Color.Transparent;
-            this.pbMikeGooglePlus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMikeGooglePlus.Image = global::ShareX.Properties.Resources.google_plus;
-            resources.ApplyResources(this.pbMikeGooglePlus, "pbMikeGooglePlus");
-            this.pbMikeGooglePlus.Name = "pbMikeGooglePlus";
-            this.pbMikeGooglePlus.TabStop = false;
-            this.pbMikeGooglePlus.Click += new System.EventHandler(this.pbMikeGooglePlus_Click);
-            // 
-            // pbBerkSteamURL
-            // 
-            this.pbBerkSteamURL.BackColor = System.Drawing.Color.Transparent;
-            this.pbBerkSteamURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBerkSteamURL.Image = global::ShareX.Properties.Resources.steam;
-            resources.ApplyResources(this.pbBerkSteamURL, "pbBerkSteamURL");
-            this.pbBerkSteamURL.Name = "pbBerkSteamURL";
-            this.pbBerkSteamURL.TabStop = false;
-            this.pbBerkSteamURL.Click += new System.EventHandler(this.pbBerkSteamURL_Click);
-            // 
             // pbMikeURL
             // 
             this.pbMikeURL.BackColor = System.Drawing.Color.Transparent;
@@ -174,11 +150,9 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.pbMikeGooglePlus);
             this.Controls.Add(this.lblOwners);
             this.Controls.Add(this.rtbShareXInfo);
             this.Controls.Add(this.rtbCredits);
-            this.Controls.Add(this.pbBerkSteamURL);
             this.Controls.Add(this.lblBerk);
             this.Controls.Add(this.lblMike);
             this.Controls.Add(this.uclUpdate);
@@ -192,8 +166,6 @@
             this.MaximizeBox = false;
             this.Name = "AboutForm";
             this.Shown += new System.EventHandler(this.AboutForm_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMikeGooglePlus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBerkSteamURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).EndInit();
@@ -213,11 +185,9 @@
         private System.Windows.Forms.PictureBox pbAU;
         private System.Windows.Forms.Label lblMike;
         private HelpersLib.Canvas cLogo;
-        private System.Windows.Forms.PictureBox pbBerkSteamURL;
         private System.Windows.Forms.RichTextBox rtbCredits;
         private System.Windows.Forms.RichTextBox rtbShareXInfo;
         private System.Windows.Forms.Label lblOwners;
         private HelpersLib.UpdateCheckerLabel uclUpdate;
-        private System.Windows.Forms.PictureBox pbMikeGooglePlus;
     }
 }
