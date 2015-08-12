@@ -147,13 +147,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProductName.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>10</value>
   </data>
   <data name="lblBerk.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblBerk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 144</value>
+    <value>64, 144</value>
   </data>
   <data name="lblBerk.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
@@ -174,13 +174,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblBerk.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="lblMike.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblMike.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 168</value>
+    <value>64, 168</value>
   </data>
   <data name="lblMike.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 13</value>
@@ -201,13 +201,17 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMike.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="rtbCredits.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="rtbCredits.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 200</value>
   </data>
   <data name="rtbCredits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>449, 234</value>
+    <value>450, 234</value>
   </data>
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -228,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtbCredits.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="rtbShareXInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 66</value>
@@ -252,7 +256,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtbShareXInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblOwners.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -279,14 +283,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOwners.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="cLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, -8</value>
+    <value>281, -8</value>
   </data>
   <data name="cLogo.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
@@ -304,7 +307,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cLogo.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="uclUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 36</value>
@@ -325,55 +328,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;uclUpdate.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="pbMikeGooglePlus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 166</value>
-  </data>
-  <data name="pbMikeGooglePlus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbMikeGooglePlus.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbMikeGooglePlus.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;pbMikeGooglePlus.Name" xml:space="preserve">
-    <value>pbMikeGooglePlus</value>
-  </data>
-  <data name="&gt;&gt;pbMikeGooglePlus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbMikeGooglePlus.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbMikeGooglePlus.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pbBerkSteamURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 142</value>
-  </data>
-  <data name="pbBerkSteamURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbBerkSteamURL.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>CenterImage</value>
-  </data>
-  <data name="pbBerkSteamURL.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;pbBerkSteamURL.Name" xml:space="preserve">
-    <value>pbBerkSteamURL</value>
-  </data>
-  <data name="&gt;&gt;pbBerkSteamURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbBerkSteamURL.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbBerkSteamURL.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="pbMikeURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 166</value>
@@ -397,7 +352,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbMikeURL.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="pbAU.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 166</value>
@@ -421,7 +376,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbAU.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="pbBerkURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 142</value>
@@ -445,7 +400,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbBerkURL.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="pbTR.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 142</value>
@@ -469,7 +424,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbTR.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -478,7 +433,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>473, 446</value>
+    <value>474, 446</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>490, 485</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

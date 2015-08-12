@@ -130,7 +130,7 @@
     <value>Culture actuelle ({0})</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>Suppression URL</value>
+    <value>URL de suppression </value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>Fichier</value>
@@ -202,7 +202,7 @@
     <value>Total: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>URL miniature</value>
+    <value>URL de la miniature</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Texte</value>

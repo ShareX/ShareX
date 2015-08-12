@@ -545,7 +545,7 @@ Você gostaria de baixar e instalar?</value>
     <value>DNS definido com sucesso.</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNs definido com sucesso. Requer reinicialização.</value>
+    <value>DNS definido com sucesso. Requer reinicialização.</value>
   </data>
   <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
     <value>URL para baixar as configurações</value>
@@ -673,7 +673,7 @@ Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
     <value>Horário UNIX</value>
   </data>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
-    <value>Iniciar captura automática na ultima região utilizada</value>
+    <value>Iniciar captura automática na última região utilizada</value>
   </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>Envio de arquivos</value>
@@ -698,5 +698,68 @@ Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Milissegundo atual</value>
+  </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>Octree quantizer 16 cores</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>Octree quantizer 256 cores (devagar mas com qualidade melhor)</value>
+  </data>
+  <data name="GIFQuality_Default" xml:space="preserve">
+    <value>Codificação padrão .NET (rápida mas com qualidade mediana)</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
+    <value>Gravar tela usando a região da janela ativa</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
+    <value>Gravar tela (GIF)</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
+    <value>Gravar tela usando a região da janela ativa (GIF)</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>Gravar tela usando a última região utilizada</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
+    <value>Gravar tela usando a última região utilizada (GIF)</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>Serviço de upload de imagem personalizado </value>
+  </data>
+  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
+    <value>Mostrar diálogo de balão da bandeja</value>
+  </data>
+  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
+    <value>Mostrar notificações toast com pé-visualizações</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>Octree quantizer (qualidade média)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>Largura da imagem</value>
+  </data>
+  <data name="ResponseType_Headers" xml:space="preserve">
+    <value>Cabeçalhos de resposta</value>
+  </data>
+  <data name="ResponseType_Text" xml:space="preserve">
+    <value>Texto de resposta</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>Usuário</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>Nome do usuário</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>Recebe AM/PM</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>Serviço de upload de texto personalizado</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>Serviço de upload de arquivo personalizado</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>Paleta de tons de cinza quantizer 256 cores</value>
   </data>
 </root>

@@ -530,7 +530,7 @@
     <value>179, 22</value>
   </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
-    <value>Suppression URL</value>
+    <value>URL de suppression </value>
   </data>
   <data name="tssOpen1.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 6</value>
@@ -551,7 +551,7 @@
     <value>179, 22</value>
   </data>
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
-    <value>Fichier de miniature</value>
+    <value>Fichier de la miniature</value>
   </data>
   <data name="tsmiOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
@@ -572,13 +572,13 @@
     <value>245, 22</value>
   </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
-    <value>URL de miniature</value>
+    <value>URL de la miniature</value>
   </data>
   <data name="tsmiCopyDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 22</value>
   </data>
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
-    <value>Suppression URL</value>
+    <value>URL de suppression </value>
   </data>
   <data name="tssCopy1.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 6</value>
@@ -602,13 +602,13 @@
     <value>245, 22</value>
   </data>
   <data name="tsmiCopyThumbnailFile.Text" xml:space="preserve">
-    <value>Fichier de miniature</value>
+    <value>Fichier de la miniature</value>
   </data>
   <data name="tsmiCopyThumbnailImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 22</value>
   </data>
   <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
-    <value>Image de miniature</value>
+    <value>Image de la miniature</value>
   </data>
   <data name="tssCopy2.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 6</value>
@@ -1164,5 +1164,11 @@
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Désactiver les raccourcis clavier</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniature de vidéo...</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniature de vidéo...</value>
   </data>
 </root>

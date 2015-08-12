@@ -75,6 +75,7 @@ Hungarian: https://github.com/devBluestar
 Korean: https://github.com/123jimin
 Spanish: https://github.com/ovnisoftware
 Dutch: https://github.com/wforums
+Portuguese (Brazil): https://github.com/athosbr99 / https://github.com/RockyTV
 
 {2}:
 
@@ -113,19 +114,9 @@ Copyright © 2007-2015 ShareX Developers", Resources.AboutForm_AboutForm_Contrib
             URLHelpers.OpenURL(Links.URL_BERK);
         }
 
-        private void pbBerkSteamURL_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_BERK_STEAM);
-        }
-
         private void pbMikeURL_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_MIKE);
-        }
-
-        private void pbMikeGooglePlus_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_MIKE_GOOGLE_PLUS);
         }
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
