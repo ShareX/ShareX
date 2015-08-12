@@ -672,4 +672,31 @@ Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Horário UNIX</value>
   </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>Iniciar captura automática na ultima região utilizada</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>Envio de arquivos</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>Envio de arquivos</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>Dia da semana (linguagem local)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>Dia da semana (inglês)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>Mês atual (linguagem local)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>Mês atual (inglês)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>Auto incrementar número</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>Milissegundo atual</value>
+  </data>
 </root>

@@ -443,4 +443,7 @@ Por favor, selecione um atalho diferente ou feche a aplicação que está gerand
   <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
     <value>Padronizado</value>
   </data>
+  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
+    <value>Você pode clicar com o botão direito no icone do ShareX na bandeja do sistema para iniciar captura por região.</value>
+  </data>
 </root>

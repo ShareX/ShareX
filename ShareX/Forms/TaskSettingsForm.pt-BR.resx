@@ -438,4 +438,7 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Se a área de transferência contém o local de uma pasta: arquivar a pasta e enviar o índice</value>
   </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>Mostrar cursor na gravação</value>
+  </data>
 </root>
