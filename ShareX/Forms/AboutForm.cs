@@ -75,7 +75,7 @@ Hungarian: https://github.com/devBluestar
 Korean: https://github.com/123jimin
 Spanish: https://github.com/ovnisoftware
 Dutch: https://github.com/wforums
-Portuguese-Brazil: https://github.com/athosbr99 / https://github.com/RockyTV
+Portuguese (Brazil): https://github.com/athosbr99 / https://github.com/RockyTV
 
 {2}:
 

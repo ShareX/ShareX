@@ -75,9 +75,9 @@
             // 
             // rtbCredits
             // 
+            resources.ApplyResources(this.rtbCredits, "rtbCredits");
             this.rtbCredits.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbCredits.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.rtbCredits, "rtbCredits");
             this.rtbCredits.Name = "rtbCredits";
             this.rtbCredits.ReadOnly = true;
             this.rtbCredits.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);
@@ -162,7 +162,6 @@
             this.Controls.Add(this.pbTR);
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.cLogo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AboutForm";
             this.Shown += new System.EventHandler(this.AboutForm_Shown);
