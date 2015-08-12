@@ -145,7 +145,7 @@
     <value>Clés:</value>
   </data>
   <data name="lblLineDelay.Text" xml:space="preserve">
-    <value>Retard de la ligne:</value>
+    <value>Délai entre chaque ligne:</value>
   </data>
   <data name="lblLineDelayMiliseconds.Text" xml:space="preserve">
     <value>ms</value>

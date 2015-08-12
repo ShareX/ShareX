@@ -145,7 +145,7 @@
     <value>Après la mise en ligne...</value>
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>Capturer la zone de capture client pendant les captures "fenêtre" ou "fenêtre active"</value>
+    <value>Capturer la zone client pendant la capture d'une fenêtre ou d'une fenêtre active</value>
   </data>
   <data name="cbCaptureShadow.Text" xml:space="preserve">
     <value>Capturer la fenêtre avec ombrage (transparence nécessaire)</value>
@@ -157,7 +157,7 @@
     <value>Mise en ligne du presse-papier</value>
   </data>
   <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>Créer une miniature seulement si la taille de l'image est plus grande que la taille des miniatures</value>
+    <value>Créer une miniature seulement si la taille de l'image est plus grande que la taille de la miniature</value>
   </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Description:</value>
@@ -271,7 +271,7 @@
     <value>Jouer un son quand la capture est faite</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
-    <value>Jouer un son quand la capture est finie</value>
+    <value>Jouer un son quand la tâche est terminée</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>Prévisualisation</value>
@@ -307,13 +307,13 @@
     <value>Enregistrer les infos de tâches dans l'historique</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>Vitesse d'enregistrement d'écran FPS:</value>
+    <value>FPS de l'enregistrement d'écran:</value>
   </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Enregistreur d'écran</value>
   </data>
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Délai de capture d'écran:</value>
+    <value>Délai de la capture d'écran:</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>secondes</value>
@@ -400,7 +400,7 @@
     <value>Utiliser les paramètres de l'indexeur dans les paramètres des tâches de la fenêtre principale</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Utiliser un modèle de nom aussi pour les fichiers mis en ligne plutôt que les noms actuels</value>
+    <value>Utiliser un modèle de nom aussi pour la mise en ligne de fichiers plutôt que le nom du fichier réel</value>
   </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
     <value>Utiliser les paramètres de transfert dans les paramètres des tâches de la fenêtre principale</value>
@@ -412,7 +412,7 @@
     <value>Surveiller le dossier et si un nouveau fichier est créé alors le mettre en ligne</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>Lors de la capture d'écran, si la fenêtre de sélection croise la barre des tâches alors cacher la barre des tâches</value>
+    <value>Lors de la capture d'une fenêtre, si la fenêtre croise la barre des tâches alors cacher la barre des tâches</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
     <value>Largeur:</value>
@@ -435,19 +435,10 @@
   <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
     <value>Sélectionnez un écran pour une région personnalisée:</value>
   </data>
-  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
-    <value>0 - 100</value>
-  </data>
-  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
-  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
-    <value>Y</value>
-  </data>
-  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
-  </data>
   <data name="lblGIFEncoding.Text" xml:space="preserve">
     <value>GIF encodeur:</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>Montrer le curseur dans l'enregistrement</value>
   </data>
 </root>
