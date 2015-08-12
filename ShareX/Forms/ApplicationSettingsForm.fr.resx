@@ -238,10 +238,10 @@
     <value>Afficher le bouton "Télécharger en utilisant ShareX" dans le menu contextuel</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Afficher la progression dans le bouton de la barre des tâches</value>
+    <value>Afficher la progression dans l'icône de la barre des tâches</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Afficher la progression dans l'icône de la barre des tâches</value>
+    <value>Afficher la progression dans l'icône de la zone de notification</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Afficher ShareX dans le menu "Envoyer vers"</value>

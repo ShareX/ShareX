@@ -164,4 +164,121 @@ Distance: {6:0,00} px / Angle: {7:0,00}°</value>
   <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
     <value>Écran {0} (X:{1} Y:{2} Largeur:{3} Hauteur:{4})</value>
   </data>
+  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
+    <value>Cacher</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
+    <value>[Ctrl + C] Copier la position</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
+    <value>[Ctrl + C] Copier la position et la taille</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
+    <value>[F1] Masquer les conseils</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
+    <value>[Esc] Annuler la capture</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
+    <value>Afficher</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
+    <value>[Touches fléchées] Déplacer la position du curseur</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
+    <value>[Clic droit] [Echap] Annuler la capture</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
+    <value>[Espace] Capture plein écran</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
+    <value>[1, 2, 3 ... 0] Capturer un écran</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
+    <value>[M] {0} la loupe</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
+    <value>[Pavé numérique 3] Forme elliptique</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
+    <value>[Pavé numérique 1] Forme rectangulaire</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
+    <value>[Pavé numérique 2] Forme rectangulaire arrondie</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
+    <value>[Pavé numérique 4] Forme triangulaire</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
+    <value>[Pavé numérique 5] Forme de losange</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
+    <value>[I] {0} les infos sur la position et la taille</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
+    <value>[Ctrl + C] Copier les infos</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
+    <value>[Q] Activer le mode de capture rapide</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
+    <value>[Q] Activer le mode de capture de plusieurs régions</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
+    <value>[Pavé numérique + ou -] Modifier le rayon du coin du rectangle arrondi</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
+    <value>[Clic droit] Annuler la sélection de la région</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
+    <value>[Clic droit sur la sélection] [Suppr] Supprimer la région</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
+    <value>[Pavé numérique + ou -] Changer l'angle du triangle</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
+    <value>[Maintenir clic gauche sur la sélection] Déplacer la région</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
+    <value>[~] Capturer l'écran actif</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
+    <value>[Molette de la souris] Changer le nombre de pixels de la loupe</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
+    <value>[Maintenir clic gauche] Débuter la sélection de la région</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
+    <value>[Ctrl + Molette de la souris] Changer la taille de la loupe</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
+    <value>[C] {0} le réticule</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
+    <value>[Maintenir Ctrl] Redimensionner / Déplacer plus rapidement</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
+    <value>[Maintenir Maj] Redimensionnement proportionnel</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
+    <value>[Double clic gauche] [Entrée] Capturer les régions</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
+    <value>[Maintenir Maj] Déplacer la région sélectionnée au lieu de la redimensionner</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
+    <value>[Ctrl + Touches fléchées] Déplacer la position du curseur plus rapidement</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
+    <value>[Touches fléchées] Redimensionner la région sélectionnée à partir du {0}</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
+    <value>bas à droite</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
+    <value>haut à gauche</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
+    <value>[Tab] Définir le point d'encrage du redimensionnement à partir du {0}</value>
+  </data>
 </root>

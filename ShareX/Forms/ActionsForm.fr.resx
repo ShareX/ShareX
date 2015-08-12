@@ -127,7 +127,7 @@
     <value>OK</value>
   </data>
   <data name="lblArgs.Text" xml:space="preserve">
-    <value>Paramètres:</value>
+    <value>Arguments:</value>
   </data>
   <data name="lblExtensions.Text" xml:space="preserve">
     <value>Filtre d'extensions: (Exemple: jpg png mp4)</value>
