@@ -165,4 +165,34 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Captura de região</value>
   </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
+    <value>[Ctrl + C] Copiar informações</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
+    <value>Esconder</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
+    <value>Mostrar</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
+    <value>[F1] Esconder dicas</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
+    <value>[Esc] Cancelar captura</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
+    <value>[Clique direito] [Esc] Cancelar captura</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
+    <value>[Clique direito] Cancelar seleção de região</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
+    <value>[Espaço] Captura de tela cheia</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
+    <value>[Ctrl + C] Copiar posição</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
+    <value>[Ctrl + C] Copiar posição e tamanho</value>
+  </data>
 </root>

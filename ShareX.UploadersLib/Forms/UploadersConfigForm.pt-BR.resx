@@ -665,4 +665,22 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
     <value>Chave de API do usuário:</value>
   </data>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>Usar link GIFV ao invés de GIF</value>
+  </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>Chave da API:</value>
+  </data>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>Encurtador de URL:</value>
+  </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>ID de album para upload (Vazio = sem upload de album):</value>
+  </data>
+  <data name="lblMinusURLType.Text" xml:space="preserve">
+    <value>Tipo da URL:</value>
+  </data>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>Resultado do teste:</value>
+  </data>
 </root>

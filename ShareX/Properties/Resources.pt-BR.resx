@@ -422,4 +422,25 @@ Por favor, selecione um atalho diferente ou feche a aplicação que está gerand
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL para baixar arquivo e enviar</value>
   </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
+    <value>Desativar atalhos</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
+    <value>Ativar atalhos</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>Atalhos desativados.</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>Atalhos ativados.</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Capturar</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Parar</value>
+  </data>
+  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
+    <value>Padronizado</value>
+  </data>
 </root>

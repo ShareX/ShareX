@@ -247,4 +247,10 @@ Pastas criadas:</value>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Consultando pastas...</value>
   </data>
+  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>Cliente FTP apenas suporta FTP ou FTPS.</value>
+  </data>
+  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>Não foi possivel achar uma conta FTP valida.</value>
+  </data>
 </root>

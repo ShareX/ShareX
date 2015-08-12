@@ -666,4 +666,10 @@ Você gostaria de baixar e instalar?</value>
 Velocidade do download: {1:0.0} KB/s
 Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>Char randômico alfanumérico</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>Horário UNIX</value>
+  </data>
 </root>
