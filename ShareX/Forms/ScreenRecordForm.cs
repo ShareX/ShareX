@@ -36,8 +36,6 @@ namespace ShareX
 {
     public class ScreenRecordForm : TrayForm
     {
-        public bool IsRecording { get; private set; }
-
         private static ScreenRecordForm instance;
 
         public static ScreenRecordForm Instance
@@ -53,6 +51,8 @@ namespace ShareX
                 return instance;
             }
         }
+
+        public bool IsRecording { get; private set; }
 
         private ScreenRecorder screenRecorder;
         private ScreenRegionForm regionForm;
@@ -133,23 +133,9 @@ namespace ShareX
 
             if (outputType == ScreenRecordOutput.FFmpeg)
             {
-                if (!File.Exists(taskSettings.CaptureSettings.FFmpegOptions.CLIPath))
+                if (!TaskHelpers.CheckFFmpeg(taskSettings))
                 {
-                    string ffmpegText = string.IsNullOrEmpty(taskSettings.CaptureSettings.FFmpegOptions.CLIPath) ? "ffmpeg.exe" : taskSettings.CaptureSettings.FFmpegOptions.CLIPath;
-
-                    if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegText),
-                        "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    {
-                        if (FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
-                        {
-                            Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
-                               taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
-                        }
-                    }
-                    else
-                    {
-                        return;
-                    }
+                    return;
                 }
 
                 if (!taskSettings.CaptureSettings.FFmpegOptions.IsSourceSelected)
@@ -363,21 +349,6 @@ namespace ShareX
                 abortRequested = false;
                 IsRecording = false;
             });
-        }
-
-        private void DownloaderForm_InstallRequested(string filePath)
-        {
-            string extractPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, extractPath);
-
-            if (result)
-            {
-                MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }

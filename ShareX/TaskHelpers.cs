@@ -626,6 +626,11 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
+            if (!CheckFFmpeg(taskSettings))
+            {
+                return;
+            }
+
             Program.Settings.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
             VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, Program.Settings.VideoThumbnailOptions);
             thumbnailerForm.ThumbnailsTaken += thumbnails =>
@@ -793,6 +798,45 @@ namespace ShareX
             }
 
             return result;
+        }
+
+        public static bool CheckFFmpeg(TaskSettings taskSettings)
+        {
+            if (!File.Exists(taskSettings.CaptureSettings.FFmpegOptions.CLIPath))
+            {
+                string ffmpegText = string.IsNullOrEmpty(taskSettings.CaptureSettings.FFmpegOptions.CLIPath) ? "ffmpeg.exe" : taskSettings.CaptureSettings.FFmpegOptions.CLIPath;
+
+                if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegText),
+                    "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    if (FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
+                    {
+                        Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
+                           taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private static void DownloaderForm_InstallRequested(string filePath)
+        {
+            string extractPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, extractPath);
+
+            if (result)
+            {
+                MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
