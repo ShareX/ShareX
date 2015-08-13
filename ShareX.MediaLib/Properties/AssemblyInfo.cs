@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ShareX MediaLib")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ShareX Developers")]
+[assembly: AssemblyCompany("ShareX Team")]
 [assembly: AssemblyProduct("ShareX")]
-[assembly: AssemblyCopyright("Copyright © 2007-2015 ShareX Developers")]
+[assembly: AssemblyCopyright("Copyright (c) 2007-2015 ShareX Team")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
