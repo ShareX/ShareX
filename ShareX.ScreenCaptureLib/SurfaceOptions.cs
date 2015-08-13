@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing;
@@ -91,12 +92,26 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(typeof(Size), "250, 250"), Description("Fixed shape size.")]
         public Size FixedSize { get; set; }
 
+        [DefaultValue(10), Description("How much region size must be close to snap size for it to snap.")]
+        public int SnapDistance { get; set; }
+
+        [Description("When you hold snap modifier key it will check these sizes and if your region size close to them then it will snap to this size.")]
+        public List<Size> SnapSizes { get; set; }
+
         [DefaultValue(RegionShape.Rectangle), Description("Current region shape.")]
         public RegionShape CurrentRegionShape { get; set; }
 
         public SurfaceOptions()
         {
             this.ApplyDefaultPropertyValues();
+
+            SnapSizes = new List<Size>()
+            {
+                new Size(800, 600),
+                new Size(1280, 720),
+                new Size(1024, 768),
+                new Size(1920, 1080)
+            };
         }
     }
 }
