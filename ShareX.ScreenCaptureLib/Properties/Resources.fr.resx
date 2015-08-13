@@ -240,7 +240,7 @@ Distance: {6:0,00} px / Angle: {7:0,00}°</value>
     <value>[Maintenir clic gauche sur la sélection] Déplacer la région</value>
   </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] Capturer l'écran actif</value>
+    <value>[~] [ù] Capturer l'écran actif</value>
   </data>
   <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
     <value>[Molette de la souris] Changer le nombre de pixels de la loupe</value>
