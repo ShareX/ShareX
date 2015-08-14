@@ -311,7 +311,7 @@ namespace ShareX
                     Stop();
                 }
 
-                if (Data.Length > Program.Settings.LargeFileSize)
+                if (Program.Settings.LargeFileSize != 0 && Data.Length > Program.Settings.LargeFileSize)
                 {
                     using (MyMessageBox msgbox = new MyMessageBox(
                         "You are attempting to upload a large file.\n\nAre you sure you want to continue?",

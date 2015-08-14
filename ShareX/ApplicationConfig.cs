@@ -152,7 +152,7 @@ namespace ShareX
         [Category("Application"), DefaultValue(10), Description("In recent links tray menu max how many links to show.")]
         public int RecentLinksMaxCount { get; set; }
 
-        [Category("Application"), DefaultValue(104857600), Description("Large file size defined in bytes. ShareX will warn before uploading large files.")]
+        [Category("Application"), DefaultValue(104857600), Description("Large file size defined in bytes. ShareX will warn before uploading large files. 0 disables this feature.")]
         public long LargeFileSize { get; set; }
 
         [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
