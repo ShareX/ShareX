@@ -40,7 +40,6 @@ namespace ShareX
         public string FileUploadDefaultDirectory = "";
         public bool ShowUploadWarning = true; // First time upload warning
         public bool ShowMultiUploadWarning = true; // More than 10 files upload warning
-        public bool ShowLargeFileUploadWarning = true;
         public bool ShowTrayLeftClickTip = true; // Tray icon left click tip
         public int NameParserAutoIncrementNumber = 0;
         public RecentItem[] RecentLinks = null;
@@ -152,8 +151,8 @@ namespace ShareX
         [Category("Application"), DefaultValue(10), Description("In recent links tray menu max how many links to show.")]
         public int RecentLinksMaxCount { get; set; }
 
-        [Category("Application"), DefaultValue(104857600), Description("Large file size defined in bytes. ShareX will warn before uploading large files. 0 disables this feature.")]
-        public long LargeFileSize { get; set; }
+        [Category("Application"), DefaultValue(100), Description("Large file size defined in MiB or MB. ShareX will warn before uploading large files. 0 disables this feature.")]
+        public int LargeFileSizeWarning { get; set; }
 
         [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
         [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]

@@ -311,16 +311,20 @@ namespace ShareX
                     Stop();
                 }
 
-                if (Program.Settings.LargeFileSize != 0 && Data.Length > Program.Settings.LargeFileSize)
+                if (Program.Settings.LargeFileSizeWarning != 0)
                 {
-                    using (MyMessageBox msgbox = new MyMessageBox(
-                        "You are attempting to upload a large file.\n\nAre you sure you want to continue?",
-                        Application.ProductName,
-                        MessageBoxButtons.YesNo, Resources.UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_))
+                    long dataSize = Program.Settings.BinaryUnits ? Program.Settings.LargeFileSizeWarning * 1024 * 1024 : Program.Settings.LargeFileSizeWarning * 1000 * 1000;
+                    if (Data != null && Data.Length > dataSize)
                     {
-                        msgbox.ShowDialog();
-                        Program.Settings.ShowLargeFileUploadWarning = !msgbox.IsChecked;
-                        if (msgbox.DialogResult == DialogResult.No) Stop();
+                        using (MyMessageBox msgbox = new MyMessageBox(
+                            "You are attempting to upload a large file.\n\nAre you sure you want to continue?",
+                            Application.ProductName,
+                            MessageBoxButtons.YesNo, Resources.UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_))
+                        {
+                            msgbox.ShowDialog();
+                            if (msgbox.IsChecked) Program.Settings.LargeFileSizeWarning = 0;
+                            if (msgbox.DialogResult == DialogResult.No) Stop();
+                        }
                     }
                 }
 
