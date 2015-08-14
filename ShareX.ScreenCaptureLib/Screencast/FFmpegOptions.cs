@@ -44,6 +44,7 @@ namespace ShareX.ScreenCaptureLib
         public FFmpegPreset x264_Preset { get; set; }
         public int x264_CRF { get; set; }
         public int VPx_bitrate { get; set; }  // kbit/s
+        public int VP9x_bitrate { get; set; }  // kbit/s
         public int XviD_qscale { get; set; }
         public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; }
         public FFmpegPaletteUseDither GIFDither { get; set; }
@@ -66,6 +67,8 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.gif:
                             return "mp4";
                         case FFmpegVideoCodec.libvpx:
+                            return "webm";
+                        case FFmpegVideoCodec.libvpxvp9:
                             return "webm";
                         case FFmpegVideoCodec.libxvid:
                             return "avi";
@@ -128,6 +131,7 @@ namespace ShareX.ScreenCaptureLib
             x264_CRF = 30;
             x264_Preset = FFmpegPreset.veryfast;
             VPx_bitrate = 3000;
+            VP9x_bitrate = 3000;
             XviD_qscale = 10;
             GIFStatsMode = FFmpegPaletteGenStatsMode.full;
             GIFDither = FFmpegPaletteUseDither.sierra2_4a;

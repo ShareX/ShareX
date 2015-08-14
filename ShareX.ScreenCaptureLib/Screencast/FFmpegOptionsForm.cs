@@ -84,6 +84,9 @@ namespace ShareX.ScreenCaptureLib
             // VPx
             nudVP8Bitrate.Value = Options.FFmpeg.VPx_bitrate.Between((int)nudVP8Bitrate.Minimum, (int)nudVP8Bitrate.Maximum);
 
+            // VP9
+            nudVP9Bitrate.Value = Options.FFmpeg.VP9x_bitrate.Between((int)nudVP9Bitrate.Minimum, (int)nudVP9Bitrate.Maximum);
+
             // Xvid
             nudXvidQscale.Value = Options.FFmpeg.XviD_qscale.Between((int)nudXvidQscale.Minimum, (int)nudXvidQscale.Maximum);
 
@@ -244,6 +247,9 @@ namespace ShareX.ScreenCaptureLib
                     case FFmpegVideoCodec.gif:
                         tcFFmpegVideoCodecs.SelectedIndex = 3;
                         break;
+                    case FFmpegVideoCodec.libvpxvp9:
+                        tcFFmpegVideoCodecs.SelectedIndex = 4;
+                        break;
                 }
             }
 
@@ -289,6 +295,12 @@ namespace ShareX.ScreenCaptureLib
         private void nudVP8Bitrate_ValueChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.VPx_bitrate = (int)nudVP8Bitrate.Value;
+            UpdateUI();
+        }
+
+        private void nudVP9Bitrate_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.VP9x_bitrate = (int)nudVP9Bitrate.Value;
             UpdateUI();
         }
 

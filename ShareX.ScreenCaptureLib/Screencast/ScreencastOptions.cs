@@ -158,8 +158,16 @@ namespace ShareX.ScreenCaptureLib
                         videoCodec = FFmpegVideoCodec.libx264.ToString();
                         break;
                 }
-
-                args.AppendFormat("-c:v {0} ", videoCodec);
+                
+                
+                if (videoCodec == "libvpxvp9")
+                {
+                    args.AppendFormat("-c:v libvpx-vp9 ", videoCodec);
+                }
+                else
+                {
+                    args.AppendFormat("-c:v {0} ", videoCodec);
+                }
                 args.AppendFormat("-r {0} ", fps); // output FPS
 
                 switch (FFmpeg.VideoCodec)
@@ -174,6 +182,10 @@ namespace ShareX.ScreenCaptureLib
                     case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
                         args.AppendFormat("-deadline {0} ", "realtime");
                         args.AppendFormat("-b:v {0}k ", FFmpeg.VPx_bitrate);
+                        break;
+                    case FFmpegVideoCodec.libvpxvp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
+                        args.AppendFormat("-deadline {0} ", "realtime");
+                        args.AppendFormat("-b:v {0}k ", FFmpeg.VP9x_bitrate);
                         break;
                     case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
                         args.AppendFormat("-qscale:v {0} ", FFmpeg.XviD_qscale);

@@ -64,6 +64,7 @@
             this.tpGIF = new System.Windows.Forms.TabPage();
             this.lblGIFDither = new System.Windows.Forms.Label();
             this.lblGIFStatsMode = new System.Windows.Forms.Label();
+            this.tpVp9 = new System.Windows.Forms.TabPage();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnCopyPreview = new System.Windows.Forms.Button();
             this.tcFFmpegAudioCodecs = new System.Windows.Forms.TabControl();
@@ -87,6 +88,9 @@
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.btnHelp = new System.Windows.Forms.Button();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
+            this.lblVP9Bitrate = new System.Windows.Forms.Label();
+            this.nudVP9Bitrate = new System.Windows.Forms.NumericUpDown();
+            this.lblVP9BitrateK = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -101,12 +105,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudVP8Bitrate)).BeginInit();
             this.tpXvid.SuspendLayout();
             this.tpGIF.SuspendLayout();
+            this.tpVp9.SuspendLayout();
             this.tcFFmpegAudioCodecs.SuspendLayout();
             this.tpAAC.SuspendLayout();
             this.tpVorbis.SuspendLayout();
             this.tpMP3.SuspendLayout();
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVP9Bitrate)).BeginInit();
             this.SuspendLayout();
             // 
             // lblx264CRF
@@ -330,6 +336,7 @@
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpVpx);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpXvid);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpGIF);
+            this.tcFFmpegVideoCodecs.Controls.Add(this.tpVp9);
             resources.ApplyResources(this.tcFFmpegVideoCodecs, "tcFFmpegVideoCodecs");
             this.tcFFmpegVideoCodecs.Name = "tcFFmpegVideoCodecs";
             this.tcFFmpegVideoCodecs.SelectedIndex = 0;
@@ -388,6 +395,51 @@
             // 
             resources.ApplyResources(this.lblVP8Bitrate, "lblVP8Bitrate");
             this.lblVP8Bitrate.Name = "lblVP8Bitrate";
+            //
+            // tpVp9
+            //
+            this.tpVp9.Controls.Add(this.lblVP9BitrateK);
+            this.tpVp9.Controls.Add(this.nudVP9Bitrate);
+            this.tpVp9.Controls.Add(this.lblVP9Bitrate);
+            resources.ApplyResources(this.tpVp9, "tpVp9");
+            this.tpVp9.Name = "tpVp9";
+            this.tpVp9.UseVisualStyleBackColor = true;
+            // 
+            // lblVP9BitrateK
+            // 
+            resources.ApplyResources(this.lblVP9BitrateK, "lblVP9BitrateK");
+            this.lblVP9BitrateK.Name = "lblVP9BitrateK";
+            // 
+            // nudVP9Bitrate
+            // 
+            this.nudVP9Bitrate.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.nudVP9Bitrate, "nudVP9Bitrate");
+            this.nudVP9Bitrate.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.nudVP9Bitrate.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudVP9Bitrate.Name = "nudVP9Bitrate";
+            this.nudVP9Bitrate.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudVP9Bitrate.ValueChanged += new System.EventHandler(this.nudVP9Bitrate_ValueChanged);
+            // 
+            // lblVP9Bitrate
+            // 
+            resources.ApplyResources(this.lblVP9Bitrate, "lblVP9Bitrate");
+            this.lblVP9Bitrate.Name = "lblVP9Bitrate";
             // 
             // tpXvid
             // 
@@ -416,6 +468,15 @@
             // 
             resources.ApplyResources(this.lblGIFStatsMode, "lblGIFStatsMode");
             this.lblGIFStatsMode.Name = "lblGIFStatsMode";
+            // 
+            // tpVp9
+            // 
+            this.tpVp9.Controls.Add(this.lblVP9BitrateK);
+            this.tpVp9.Controls.Add(this.nudVP9Bitrate);
+            this.tpVp9.Controls.Add(this.lblVP9Bitrate);
+            resources.ApplyResources(this.tpVp9, "tpVp9");
+            this.tpVp9.Name = "tpVp9";
+            this.tpVp9.UseVisualStyleBackColor = true;
             // 
             // btnTest
             // 
@@ -585,6 +646,41 @@
             this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
             this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
             // 
+            // lblVP9Bitrate
+            // 
+            resources.ApplyResources(this.lblVP9Bitrate, "lblVP9Bitrate");
+            this.lblVP9Bitrate.Name = "lblVP9Bitrate";
+            // 
+            // nudVP9Bitrate
+            // 
+            this.nudVP9Bitrate.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.nudVP9Bitrate, "nudVP9Bitrate");
+            this.nudVP9Bitrate.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.nudVP9Bitrate.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudVP9Bitrate.Name = "nudVP9Bitrate";
+            this.nudVP9Bitrate.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
+            // lblVP9BitrateK
+            // 
+            resources.ApplyResources(this.lblVP9BitrateK, "lblVP9BitrateK");
+            this.lblVP9BitrateK.Name = "lblVP9BitrateK";
+            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -625,6 +721,8 @@
             this.tpXvid.PerformLayout();
             this.tpGIF.ResumeLayout(false);
             this.tpGIF.PerformLayout();
+            this.tpVp9.ResumeLayout(false);
+            this.tpVp9.PerformLayout();
             this.tcFFmpegAudioCodecs.ResumeLayout(false);
             this.tpAAC.ResumeLayout(false);
             this.tpAAC.PerformLayout();
@@ -636,6 +734,7 @@
             this.gbSource.PerformLayout();
             this.gbCodecs.ResumeLayout(false);
             this.gbCodecs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVP9Bitrate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -663,6 +762,7 @@
         private System.Windows.Forms.TabControl tcFFmpegVideoCodecs;
         private System.Windows.Forms.TabPage tpX264;
         private System.Windows.Forms.TabPage tpVpx;
+        private System.Windows.Forms.TabPage tpVp9;
         private System.Windows.Forms.TabPage tpXvid;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnCopyPreview;
@@ -699,5 +799,8 @@
         private System.Windows.Forms.Button btnHelperDevicesHelp;
         private System.Windows.Forms.Label lblHelperDevices;
         private System.Windows.Forms.Button btnInstallHelperDevices;
+        private System.Windows.Forms.Label lblVP9Bitrate;
+        private System.Windows.Forms.Label lblVP9BitrateK;
+        private System.Windows.Forms.NumericUpDown nudVP9Bitrate;
     }
 }

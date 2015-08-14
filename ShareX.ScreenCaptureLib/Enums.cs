@@ -78,6 +78,8 @@ namespace ShareX.ScreenCaptureLib
         libx264,
         [Description("VP8 (WebM)")]
         libvpx,
+        [Description("VP9 (WebM)")]
+        libvpxvp9,
         [Description("Xvid")]
         libxvid,
         [Description("Animated GIF")]
