@@ -520,6 +520,15 @@ namespace ShareX
                 isPositionChanged = true;
             }
 
+            // Adjust the menu width to the items
+            tsMain.Width = tsMain.PreferredSize.Width;
+
+            // Calculate the required height to view the whole menu
+            int height = Size.Height + tsMain.PreferredSize.Height - tsMain.Height;
+
+            // Set the minimum size of the form to prevent menu items from hidding
+            MinimumSize = new Size(MinimumSize.Width, height);
+
             if (Program.Settings.RememberMainFormSize && !Program.Settings.MainFormSize.IsEmpty)
             {
                 Size = Program.Settings.MainFormSize;
@@ -530,6 +539,11 @@ namespace ShareX
                     Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
                     Location = new Point(activeScreen.Width / 2 - Size.Width / 2, activeScreen.Height / 2 - Size.Height / 2);
                 }
+            }
+            else
+            {
+                // Adjust the size to the minimum if not loaded
+                Size = new Size(Size.Width, height);
             }
 
             switch (Program.Settings.ImagePreview)
