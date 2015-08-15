@@ -1960,7 +1960,6 @@ namespace ShareX.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to You are attempting to upload a large file.
-        ///
         ///Are you sure you want to continue?.
         /// </summary>
         public static string UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file {
