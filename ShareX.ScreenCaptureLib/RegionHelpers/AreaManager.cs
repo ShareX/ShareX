@@ -263,7 +263,7 @@ namespace ShareX.ScreenCaptureLib
             Rectangle currentRect = CaptureHelpers.CreateRectangle(posOnClick, posCurrent);
             Point newPosition = posCurrent;
 
-            foreach (Size size in surface.Config.SnapSizes)
+            foreach (SnapSize size in surface.Config.SnapSizes)
             {
                 if (currentRect.Width.IsBetween(size.Width - surface.Config.SnapDistance, size.Width + surface.Config.SnapDistance) ||
                     currentRect.Height.IsBetween(size.Height - surface.Config.SnapDistance, size.Height + surface.Config.SnapDistance))

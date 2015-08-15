@@ -95,8 +95,8 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(10), Description("How much region size must be close to snap size for it to snap.")]
         public int SnapDistance { get; set; }
 
-        [Description("When you hold snap modifier key it will check these sizes and if your region size close to them then it will snap to this size.")]
-        public List<Size> SnapSizes { get; set; }
+        [Description("How close to a snap size you must be for it to snap.")]
+        public List<SnapSize> SnapSizes { get; set; }
 
         [DefaultValue(RegionShape.Rectangle), Description("Current region shape.")]
         public RegionShape CurrentRegionShape { get; set; }
@@ -105,12 +105,12 @@ namespace ShareX.ScreenCaptureLib
         {
             this.ApplyDefaultPropertyValues();
 
-            SnapSizes = new List<Size>()
+            SnapSizes = new List<SnapSize>()
             {
-                new Size(800, 600),
-                new Size(1280, 720),
-                new Size(1024, 768),
-                new Size(1920, 1080)
+                new SnapSize(800, 600),
+                new SnapSize(1280, 720),
+                new SnapSize(1024, 768),
+                new SnapSize(1920, 1080)
             };
         }
     }
