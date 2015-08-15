@@ -146,16 +146,25 @@ namespace ShareX.MediaLib
 
         private string GetOutputDirectory()
         {
+            string directory;
+
             switch (Options.OutputLocation)
             {
                 default:
                 case ThumbnailLocationType.DefaultFolder:
-                    return Options.DefaultOutputDirectory;
+                    directory = Options.DefaultOutputDirectory;
+                    break;
                 case ThumbnailLocationType.ParentFolder:
-                    return Path.GetDirectoryName(MediaPath);
+                    directory = Path.GetDirectoryName(MediaPath);
+                    break;
                 case ThumbnailLocationType.CustomFolder:
-                    return Options.CustomOutputDirectory;
+                    directory = Options.CustomOutputDirectory;
+                    break;
             }
+
+            Helpers.CreateDirectoryIfNotExist(directory, false);
+
+            return directory;
         }
 
         private int GetTimeSlice(int count)
