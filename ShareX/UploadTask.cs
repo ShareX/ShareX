@@ -447,7 +447,7 @@ namespace ShareX
 
             if (Info.Job == TaskJob.Job)
             {
-                if (tempImage != null && !DoAfterCaptureJobs())
+                if (!DoAfterCaptureJobs())
                 {
                     return false;
                 }
@@ -457,6 +457,10 @@ namespace ShareX
             else if (Info.Job == TaskJob.TextUpload && !string.IsNullOrEmpty(tempText))
             {
                 DoTextJobs();
+            }
+            else if (Info.Job == TaskJob.FileUpload && Info.TaskSettings.AdvancedSettings.UseAfterCaptureTasksForFileUpload)
+            {
+                DoFileJobs();
             }
 
             if (Info.IsUploadJob && Data != null && Data.CanSeek)
@@ -469,6 +473,11 @@ namespace ShareX
 
         private bool DoAfterCaptureJobs()
         {
+            if (tempImage == null)
+            {
+                return true;
+            }
+
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
                 tempImage = TaskHelpers.AddImageEffects(tempImage, Info.TaskSettings);

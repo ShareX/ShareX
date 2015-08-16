@@ -341,11 +341,14 @@ namespace ShareX
 
     public class TaskSettingsAdvanced
     {
-        [Category("General"), DefaultValue(false), Description("Allow after capture tasks for image files by treating them as images when files are handled during file upload, clipboard file upload, drag && drop file upload, watch folder and other tasks.")]
+        [Category("General"), DefaultValue(false), Description("Allow after capture tasks for image files by treating them as images when files are handled during file upload, clipboard file upload, drag && drop file upload, watch folder and other image file tasks.")]
         public bool ProcessImagesDuringFileUpload { get; set; }
 
         [Category("General"), DefaultValue(false), Description("Use after capture tasks for clipboard image upload.")]
         public bool ProcessImagesDuringClipboardUpload { get; set; }
+
+        [Category("General"), DefaultValue(true), Description("Allows file related after capture tasks to be used when doing file upload. Example \"Perform actions\", \"Copy file to clipboard\" etc.")]
+        public bool UseAfterCaptureTasksForFileUpload { get; set; }
 
         [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
         public bool AutoClearClipboard { get; set; }
@@ -361,11 +364,11 @@ namespace ShareX
         public string CustomCaptureSoundPath { get; set; }
 
         [Category("Sound"), DefaultValue(false), Description("Enable/disable custom task complete sound.")]
-        public bool UseCustomTaskCompleteSound { get; set; }
+        public bool UseCustomTaskCompletedSound { get; set; }
 
         [Category("Sound"), DefaultValue(""), Description("Task complete sound file path."),
         Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
-        public string CustomTaskCompleteSoundPath { get; set; }
+        public string CustomTaskCompletedSoundPath { get; set; }
 
         [Category("Sound"), DefaultValue(false), Description("Enable/disable custom error sound.")]
         public bool UseCustomErrorSound { get; set; }

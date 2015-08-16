@@ -857,9 +857,9 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.AdvancedSettings.UseCustomTaskCompleteSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomTaskCompleteSoundPath))
+            if (taskSettings.AdvancedSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomTaskCompletedSoundPath))
             {
-                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomTaskCompleteSoundPath);
+                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomTaskCompletedSoundPath);
             }
             else
             {
