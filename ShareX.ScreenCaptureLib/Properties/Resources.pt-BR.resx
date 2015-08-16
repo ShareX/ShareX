@@ -237,4 +237,28 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
     <value>[Teclado numérico 5] Forma de diamante</value>
   </data>
+  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
+    <value>[Teclado numérico 3] Formato de elipse</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
+    <value>[Teclado numérico 2] Formato de retângulo arredondado</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
+    <value>[Teclado numérico + ou -] Mudar o ângulo do triângulo</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
+    <value>[Pressione Shift] Redimensionamento proporcional</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
+    <value>canto inferior direito</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
+    <value>canto superior esquerdo</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
+    <value>[Pressione Shift] Mover a região selecionada ao invés de redimensionar</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
+    <value>[Pressione Ctrl] Redimensionar / Mover rapidamente </value>
+  </data>
 </root>

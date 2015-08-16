@@ -707,4 +707,60 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
     <value>Dica: Você pode clicar duas vezes no nome da pasta para abri-la.</value>
   </data>
+  <data name="lblOwnCloudPath.Text" xml:space="preserve">
+    <value>Local:</value>
+  </data>
+  <data name="lblMediaFirePath.Text" xml:space="preserve">
+    <value>Local de upload:</value>
+  </data>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>Código de verificação (Pegue o código na página de autorização):</value>
+  </data>
+  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>Você pode achar sua chave de API e UID aqui:</value>
+  </data>
+  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
+    <value>Usar uma classe de hospedagem de menor redundância para objetos guardados.
+Com esta opção, os objetos são mais baratos de armazenar, mas possuem durabilidade de 99.99%, ao invés de 99.999999999%.
+Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Hospedagem:</value>
+  </data>
+  <data name="lblOwnCloudHost.Text" xml:space="preserve">
+    <value>Hospedagem:</value>
+  </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>Nome do album novo (precisa ter entre 2 e 50 caracteres. Caracteres validos são letras, números, subtraço (_), hífen (-) e espaço.</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>Tipo de pedido:</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>URL de pedido:</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>URL de resposta:</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>Para obter uma chave de API, logue no Lambda em https://lambda.xs/ e clique no ícone de configurações no canto superior direito.</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>URL da miniatura:</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>Hospedagem customizada</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>Outras hospedagens</value>
+  </data>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>Tipo da miniatura:</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>Caminho do álbum pai</value>
+  </data>
 </root>

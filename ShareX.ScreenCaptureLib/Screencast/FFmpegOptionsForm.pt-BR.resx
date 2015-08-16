@@ -189,4 +189,13 @@
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>Padrão é 128k.</value>
   </data>
+  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
+    <value>Limite de 0-10, aonde 10 é a maior qualidade. 3-6 é um bom limite para experimentar. O padrão é 3.</value>
+  </data>
+  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
+    <value>1 sendo o tamanho de arquivo maior e de melhor qualidade e 31 sendo o tamanho de arquivo menor e pior qualidade.</value>
+  </data>
+  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
+    <value>Limite é de 0-9, aonde o menor valor equivale a maior qualidade. 0-3 normalmente produz resultados transparentes, 4 (padrão) deveria produzir algo perto da transparência perceptual e 6 produz uma qualidade aceitavel.</value>
+  </data>
 </root>
