@@ -838,5 +838,47 @@ namespace ShareX
                 MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public static void PlayCaptureSound(TaskSettings taskSettings)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (taskSettings.AdvancedSettings.UseCustomCaptureSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomCaptureSoundPath))
+            {
+                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomCaptureSoundPath);
+            }
+            else
+            {
+                Helpers.PlaySoundAsync(Resources.CaptureSound);
+            }
+        }
+
+        public static void PlayTaskCompleteSound(TaskSettings taskSettings)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (taskSettings.AdvancedSettings.UseCustomTaskCompleteSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomTaskCompleteSoundPath))
+            {
+                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomTaskCompleteSoundPath);
+            }
+            else
+            {
+                Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
+            }
+        }
+
+        public static void PlayErrorSound(TaskSettings taskSettings)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (taskSettings.AdvancedSettings.UseCustomErrorSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomErrorSoundPath))
+            {
+                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomErrorSoundPath);
+            }
+            else
+            {
+                Helpers.PlaySoundAsync(Resources.ErrorSound);
+            }
+        }
     }
 }

@@ -529,14 +529,31 @@ namespace ShareX.HelpersLib
 
         public static void PlaySoundAsync(Stream stream)
         {
-            TaskEx.Run(() =>
+            if (stream != null)
             {
-                using (stream)
-                using (SoundPlayer soundPlayer = new SoundPlayer(stream))
+                TaskEx.Run(() =>
                 {
-                    soundPlayer.PlaySync();
-                }
-            });
+                    using (stream)
+                    using (SoundPlayer soundPlayer = new SoundPlayer(stream))
+                    {
+                        soundPlayer.PlaySync();
+                    }
+                });
+            }
+        }
+
+        public static void PlaySoundAsync(string filepath)
+        {
+            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            {
+                TaskEx.Run(() =>
+                {
+                    using (SoundPlayer soundPlayer = new SoundPlayer(filepath))
+                    {
+                        soundPlayer.PlaySync();
+                    }
+                });
+            }
         }
 
         public static bool BrowseFile(string title, TextBox tb, string initialDirectory = "")

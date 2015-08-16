@@ -266,9 +266,9 @@ namespace ShareX
 
                             if (!info.TaskSettings.AdvancedSettings.DisableNotifications)
                             {
-                                if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                                if (info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                 {
-                                    Helpers.PlaySoundAsync(Resources.ErrorSound);
+                                    TaskHelpers.PlayErrorSound(info.TaskSettings);
                                 }
 
                                 if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && Program.MainForm.niTray.Visible && !string.IsNullOrEmpty(errors))
@@ -303,7 +303,7 @@ namespace ShareX
 
                             if (!task.StopRequested && !string.IsNullOrEmpty(result))
                             {
-                                if (task.Info.TaskSettings.GeneralSettings.SaveHistory)
+                                if (info.TaskSettings.GeneralSettings.SaveHistory)
                                 {
                                     HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
                                 }
@@ -321,9 +321,9 @@ namespace ShareX
 
                                 if (!info.TaskSettings.AdvancedSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
                                 {
-                                    if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                                    if (info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                     {
-                                        Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
+                                        TaskHelpers.PlayTaskCompleteSound(info.TaskSettings);
                                     }
 
                                     if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))

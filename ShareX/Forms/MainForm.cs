@@ -1805,7 +1805,7 @@ namespace ShareX
             {
                 if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
                 {
-                    Helpers.PlaySoundAsync(Resources.CaptureSound);
+                    TaskHelpers.PlayCaptureSound(taskSettings);
                 }
 
                 if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture && !IsRegionCapture(captureType))

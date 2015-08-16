@@ -353,22 +353,43 @@ namespace ShareX
         [Category("General"), DefaultValue(true), Description("Save text as file for tasks such as clipboard text upload, drag and drop text upload, index folder etc.")]
         public bool TextTaskSaveAsFile { get; set; }
 
+        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom capture sound.")]
+        public bool UseCustomCaptureSound { get; set; }
+
+        [Category("Sound"), DefaultValue(""), Description("Capture sound file path."),
+        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
+        public string CustomCaptureSoundPath { get; set; }
+
+        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom task complete sound.")]
+        public bool UseCustomTaskCompleteSound { get; set; }
+
+        [Category("Sound"), DefaultValue(""), Description("Task complete sound file path."),
+        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
+        public string CustomTaskCompleteSoundPath { get; set; }
+
+        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom error sound.")]
+        public bool UseCustomErrorSound { get; set; }
+
+        [Category("Sound"), DefaultValue(""), Description("Error sound file path."),
+        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
+        public string CustomErrorSoundPath { get; set; }
+
         [Category("Image"), DefaultValue(256), Description("Preferred thumbnail width. 0 means aspect ratio will be used to adjust width according to height.")]
         public int ThumbnailPreferredWidth { get; set; }
 
         [Category("Image"), DefaultValue(0), Description("Preferred thumbnail height. 0 means aspect ratio will be used to adjust height according to width.")]
         public int ThumbnailPreferredHeight { get; set; }
 
-        [Category("Paths"), Description("Custom capture path takes precedence over path configured in Application configuration.")]
-        [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
+        [Category("Paths"), Description("Custom capture path takes precedence over path configured in Application configuration."),
+        Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CapturePath { get; set; }
 
-        [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader.")]
-        [Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+        [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader."),
+        Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> ImageExtensions { get; set; }
 
-        [Category("Upload"), Description("Files with these file extensions will be uploaded using text uploader.")]
-        [Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+        [Category("Upload"), Description("Files with these file extensions will be uploaded using text uploader."),
+        Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> TextExtensions { get; set; }
 
         [Category("After upload"), DefaultValue(false), Description("If result URL starts with \"http://\" then replace it with \"https://\".")]
