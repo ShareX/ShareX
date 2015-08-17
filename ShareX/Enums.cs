@@ -60,7 +60,8 @@ namespace ShareX
         FileUpload,
         TextUpload,
         ShortenURL,
-        ShareURL
+        ShareURL,
+        DownloadUpload
     }
 
     public enum TaskStatus

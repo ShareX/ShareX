@@ -1969,6 +1969,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Downloading.
+        /// </summary>
+        public static string UploadTask_DownloadAndUpload_Downloading {
+            get {
+                return ResourceManager.GetString("UploadTask_DownloadAndUpload_Downloading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Done.
         /// </summary>
         public static string UploadTask_OnUploadCompleted_Done {

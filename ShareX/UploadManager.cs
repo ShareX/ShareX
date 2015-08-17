@@ -48,11 +48,7 @@ namespace ShareX
                 if (File.Exists(filePath))
                 {
                     UploadTask task = UploadTask.CreateFileUploaderTask(filePath, taskSettings);
-
-                    if (task != null)
-                    {
-                        TaskManager.Start(task);
-                    }
+                    TaskManager.Start(task);
                 }
                 else if (Directory.Exists(filePath))
                 {
@@ -296,7 +292,19 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            string url = InputBox.GetInputText("ShareX - " + Resources.UploadManager_UploadURL_URL_to_download_from_and_upload);
+            string inputText = null;
+
+            if (Clipboard.ContainsText())
+            {
+                string text = Clipboard.GetText();
+
+                if (!string.IsNullOrEmpty(text) && URLHelpers.IsValidURLRegex(text))
+                {
+                    inputText = text;
+                }
+            }
+
+            string url = InputBox.GetInputText("ShareX - " + Resources.UploadManager_UploadURL_URL_to_download_from_and_upload, inputText);
 
             if (!string.IsNullOrEmpty(url))
             {
@@ -431,47 +439,8 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                string downloadPath = null;
-                bool isDownloaded = false;
-
-                TaskEx.Run(() =>
-                {
-                    url = url.Trim();
-                    string filename = URLHelpers.GetFileName(url, true, true);
-
-                    if (!string.IsNullOrEmpty(filename))
-                    {
-                        downloadPath = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, filename, taskSettings);
-
-                        if (!string.IsNullOrEmpty(downloadPath))
-                        {
-                            Helpers.CreateDirectoryIfNotExist(downloadPath);
-
-                            try
-                            {
-                                using (WebClient wc = new WebClient())
-                                {
-                                    wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                                    wc.DownloadFile(url, downloadPath);
-                                }
-
-                                isDownloaded = true;
-                            }
-                            catch (Exception e)
-                            {
-                                DebugHelper.WriteException(e);
-                                MessageBox.Show(string.Format(Resources.UploadManager_DownloadAndUploadFile_Download_failed, e), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    }
-                },
-                () =>
-                {
-                    if (isDownloaded)
-                    {
-                        UploadFile(downloadPath, taskSettings);
-                    }
-                });
+                UploadTask task = UploadTask.CreateDownloadUploadTask(url, taskSettings);
+                TaskManager.Start(task);
             }
         }
     }

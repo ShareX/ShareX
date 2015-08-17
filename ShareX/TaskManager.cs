@@ -54,14 +54,17 @@ namespace ShareX
 
         public static void Start(UploadTask task)
         {
-            Tasks.Add(task);
-            UpdateMainFormTip();
-            task.StatusChanged += task_StatusChanged;
-            task.UploadStarted += task_UploadStarted;
-            task.UploadProgressChanged += task_UploadProgressChanged;
-            task.UploadCompleted += task_UploadCompleted;
-            CreateListViewItem(task);
-            StartTasks();
+            if (task != null)
+            {
+                Tasks.Add(task);
+                UpdateMainFormTip();
+                task.StatusChanged += task_StatusChanged;
+                task.UploadStarted += task_UploadStarted;
+                task.UploadProgressChanged += task_UploadProgressChanged;
+                task.UploadCompleted += task_UploadCompleted;
+                CreateListViewItem(task);
+                StartTasks();
+            }
         }
 
         public static void Remove(UploadTask task)

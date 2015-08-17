@@ -341,20 +341,20 @@ namespace ShareX
 
     public class TaskSettingsAdvanced
     {
-        [Category("General"), DefaultValue(false), Description("Allow after capture tasks for image files by treating them as images when files are handled during file upload, clipboard file upload, drag && drop file upload, watch folder and other image file tasks.")]
+        [Category("General"), DefaultValue(false), Description("Allow after capture tasks for image files by loading them as bitmap when files are handled during file upload, clipboard file upload, drag && drop file upload, watch folder and other image file tasks.")]
         public bool ProcessImagesDuringFileUpload { get; set; }
 
         [Category("General"), DefaultValue(false), Description("Use after capture tasks for clipboard image upload.")]
         public bool ProcessImagesDuringClipboardUpload { get; set; }
 
-        [Category("General"), DefaultValue(true), Description("Allows file related after capture tasks to be used when doing file upload. Example \"Perform actions\", \"Copy file to clipboard\" etc.")]
-        public bool UseAfterCaptureTasksForFileUpload { get; set; }
-
-        [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
-        public bool AutoClearClipboard { get; set; }
+        [Category("General"), DefaultValue(true), Description("Allows file related after capture tasks (\"Perform actions\", \"Copy file to clipboard\" etc.) to be used when doing file upload.")]
+        public bool UseAfterCaptureTasksDuringFileUpload { get; set; }
 
         [Category("General"), DefaultValue(true), Description("Save text as file for tasks such as clipboard text upload, drag and drop text upload, index folder etc.")]
         public bool TextTaskSaveAsFile { get; set; }
+
+        [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
+        public bool AutoClearClipboard { get; set; }
 
         [Category("Sound"), DefaultValue(false), Description("Enable/disable custom capture sound.")]
         public bool UseCustomCaptureSound { get; set; }
@@ -408,7 +408,7 @@ namespace ShareX
         [Category("After upload"), DefaultValue("$result"), Description("After upload task \"Open URL\" format. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
         public string OpenURLFormat { get; set; }
 
-        [Category("After upload / Automatic URL Shortener"), DefaultValue(0), Description("Automatically shorten URL if the URL is longer than the specified number of characters. 0 means automatic URL shortening is not active.")]
+        [Category("After upload"), DefaultValue(0), Description("Automatically shorten URL if the URL is longer than the specified number of characters. 0 means automatic URL shortening is not active.")]
         public int AutoShortenURLLength { get; set; }
 
         private float toastWindowDuration;

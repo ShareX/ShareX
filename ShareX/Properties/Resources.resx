@@ -764,4 +764,7 @@ Would you like to restart ShareX?</value>
     <value>You are attempting to upload a large file.
 Are you sure you want to continue?</value>
   </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>Downloading</value>
+  </data>
 </root>
