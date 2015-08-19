@@ -83,7 +83,7 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(1), Description("Number of pixels to move shape at each arrow key stroke.")]
         public int MinMoveSpeed { get; set; }
 
-        [DefaultValue(5), Description("Number of pixels to move shape at each arrow key stroke while holding Ctrl key.")]
+        [DefaultValue(10), Description("Number of pixels to move shape at each arrow key stroke while holding Ctrl key.")]
         public int MaxMoveSpeed { get; set; }
 
         [DefaultValue(false), Description("Fixed shape size.")]
