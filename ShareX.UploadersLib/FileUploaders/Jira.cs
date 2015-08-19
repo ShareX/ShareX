@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -209,7 +209,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         };
                     }
 
-                    Uri uri = this.Combine(_jiraBaseAddress, string.Format(PathIssueAttachments, up.IssueId));
+                    Uri uri = Combine(_jiraBaseAddress, string.Format(PathIssueAttachments, up.IssueId));
                     string query = OAuthManager.GenerateQuery(uri.ToString(), null, HttpMethod.POST, AuthInfo);
 
                     NameValueCollection headers = new NameValueCollection();
@@ -226,7 +226,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         var anonType = new[] { new { thumbnail = "" } };
                         var anonObject = JsonConvert.DeserializeAnonymousType(res.Response, anonType);
                         res.ThumbnailURL = anonObject[0].thumbnail;
-                        res.URL = this.Combine(_jiraBaseAddress, string.Format(PathBrowseIssue, up.IssueId)).ToString();
+                        res.URL = Combine(_jiraBaseAddress, string.Format(PathBrowseIssue, up.IssueId)).ToString();
                     }
 
                     return res;
@@ -261,10 +261,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private void InitUris()
         {
-            _jiraRequestToken = this.Combine(_jiraBaseAddress, PathRequestToken);
-            _jiraAuthorize = this.Combine(_jiraBaseAddress, PathAuthorize);
-            _jiraAccessToken = this.Combine(_jiraBaseAddress, PathAccessToken);
-            _jiraPathSearch = this.Combine(_jiraBaseAddress, PathSearch);
+            _jiraRequestToken = Combine(_jiraBaseAddress, PathRequestToken);
+            _jiraAuthorize = Combine(_jiraBaseAddress, PathAuthorize);
+            _jiraAccessToken = Combine(_jiraBaseAddress, PathAccessToken);
+            _jiraPathSearch = Combine(_jiraBaseAddress, PathSearch);
         }
 
         private Uri Combine(string path1, string path2)

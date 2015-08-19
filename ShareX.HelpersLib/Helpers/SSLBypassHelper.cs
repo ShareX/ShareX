@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,12 +34,12 @@ namespace ShareX.HelpersLib
     {
         public SSLBypassHelper()
         {
-            ServicePointManager.ServerCertificateValidationCallback += this.ServerCertificateValidationCallback;
+            ServicePointManager.ServerCertificateValidationCallback += ServerCertificateValidationCallback;
         }
 
         public void Dispose()
         {
-            ServicePointManager.ServerCertificateValidationCallback -= this.ServerCertificateValidationCallback;
+            ServicePointManager.ServerCertificateValidationCallback -= ServerCertificateValidationCallback;
         }
 
         private bool ServerCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)

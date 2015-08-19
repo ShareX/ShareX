@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -72,10 +72,10 @@ namespace ShareX
         {
             this.ShowActivate();
 
-            if (Program.Settings != null && Program.Settings.ShowTrayMiddleClickTip && niTray.Visible && Program.Settings.TrayMiddleClickAction == HotkeyType.RectangleRegion)
+            if (Program.Settings != null && Program.Settings.ShowTrayLeftClickTip && niTray.Visible && Program.Settings.TrayLeftClickAction == HotkeyType.RectangleRegion)
             {
-                niTray.ShowBalloonTip(5000, "ShareX", Resources.MainForm_AfterShownJobs_You_can_middle_click_the_ShareX_tray_icon_to_start_rectangle_capture_, ToolTipIcon.Info);
-                Program.Settings.ShowTrayMiddleClickTip = false;
+                niTray.ShowBalloonTip(5000, "ShareX", Resources.MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_, ToolTipIcon.Info);
+                Program.Settings.ShowTrayLeftClickTip = false;
             }
         }
 
@@ -520,6 +520,15 @@ namespace ShareX
                 isPositionChanged = true;
             }
 
+            // Adjust the menu width to the items
+            tsMain.Width = tsMain.PreferredSize.Width;
+
+            // Calculate the required height to view the whole menu
+            int height = Size.Height + tsMain.PreferredSize.Height - tsMain.Height;
+
+            // Set the minimum size of the form to prevent menu items from hidding
+            MinimumSize = new Size(MinimumSize.Width, height);
+
             if (Program.Settings.RememberMainFormSize && !Program.Settings.MainFormSize.IsEmpty)
             {
                 Size = Program.Settings.MainFormSize;
@@ -530,6 +539,11 @@ namespace ShareX
                     Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
                     Location = new Point(activeScreen.Width / 2 - Size.Width / 2, activeScreen.Height / 2 - Size.Height / 2);
                 }
+            }
+            else
+            {
+                // Adjust the size to the minimum if not loaded
+                Size = new Size(Size.Width, height);
             }
 
             switch (Program.Settings.ImagePreview)
@@ -561,8 +575,6 @@ namespace ShareX
             UpdateToggleHotkeyButton();
 
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
-
-            pGreenlight.Visible = Program.Settings.ShowGreenlightButton;
         }
 
         private void RegisterMenuClosing()
@@ -802,15 +814,14 @@ namespace ShareX
 
         public void UpdateToggleHotkeyButton()
         {
-            // TODO: Translate
             if (Program.Settings.DisableHotkeys)
             {
-                tsmiTrayToggleHotkeys.Text = "Enable hotkeys";
+                tsmiTrayToggleHotkeys.Text = Resources.MainForm_UpdateToggleHotkeyButton_Enable_hotkeys;
                 tsmiTrayToggleHotkeys.Image = Resources.keyboard__plus;
             }
             else
             {
-                tsmiTrayToggleHotkeys.Text = "Disable hotkeys";
+                tsmiTrayToggleHotkeys.Text = Resources.MainForm_UpdateToggleHotkeyButton_Disable_hotkeys;
                 tsmiTrayToggleHotkeys.Image = Resources.keyboard__minus;
             }
         }
@@ -1231,21 +1242,32 @@ namespace ShareX
 
         #region Tray events
 
+        private void timerTraySingleClick_Tick(object sender, EventArgs e)
+        {
+            timerTraySingleClick.Stop();
+            ExecuteJob(Program.Settings.TrayLeftClickAction);
+        }
+
+        private void niTray_MouseClick(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    timerTraySingleClick.Interval = (int)(SystemInformation.DoubleClickTime * 1.1);
+                    timerTraySingleClick.Start();
+                    break;
+                case MouseButtons.Middle:
+                    ExecuteJob(Program.Settings.TrayMiddleClickAction);
+                    break;
+            }
+        }
+
         private void niTray_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
+                timerTraySingleClick.Stop();
                 this.ShowActivate();
-            }
-        }
-
-        private void niTray_MouseUp(object sender, MouseEventArgs e)
-        {
-            switch (e.Button)
-            {
-                case MouseButtons.Middle:
-                    ExecuteJob(Program.Settings.TrayMiddleClickAction);
-                    break;
             }
         }
 
@@ -1486,24 +1508,6 @@ namespace ShareX
             Program.Settings.ImagePreview = ImagePreviewVisibility.Automatic;
             tsmiImagePreviewAutomatic.Check();
             UpdateControls();
-        }
-
-        private void btnGreenlightOpen_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                URLHelpers.OpenURL("http://steamcommunity.com/sharedfiles/filedetails/?id=491692781");
-                btnGreenlightOpen.Text = "Thanks for considering to vote :)\r\nYou can hide these buttons by pressing hide button on the right side:";
-            }
-        }
-
-        private void btnGreenlightHide_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                pGreenlight.Visible = false;
-                Program.Settings.ShowGreenlightButton = false;
-            }
         }
 
         #endregion UploadInfoMenu events
@@ -1801,7 +1805,7 @@ namespace ShareX
             {
                 if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
                 {
-                    Helpers.PlaySoundAsync(Resources.CaptureSound);
+                    TaskHelpers.PlayCaptureSound(taskSettings);
                 }
 
                 if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture && !IsRegionCapture(captureType))

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
@@ -159,7 +160,7 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            btnCapture.Text = IsBusy ? "Stop" : "Capture"; // TODO: Translate
+            btnCapture.Text = IsBusy ? Resources.WebpageCaptureForm_UpdateControls_Stop : Resources.WebpageCaptureForm_UpdateControls_Capture;
             txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = nudWebpageWidth.Enabled = nudWebpageHeight.Enabled = nudCaptureDelay.Enabled = !IsBusy;
             btnCapture.Enabled = txtURL.TextLength > 0;
         }

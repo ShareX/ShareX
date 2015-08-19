@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,6 +26,8 @@
 using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
+using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -58,22 +60,43 @@ namespace ShareX.MediaLib
 
         public VideoInfo GetVideoInfo(string videoPath)
         {
+            VideoInfo videoInfo = new VideoInfo();
+            videoInfo.FilePath = videoPath;
+
             Open(FFmpegPath, string.Format("-i \"{0}\"", videoPath));
             string output = Output.ToString();
-            Match match = Regex.Match(output, @"Duration: (?<Duration>\d{2}:\d{2}:\d{2}\.\d{2}),.+?start: (?<Start>\d+\.\d+),.+?bitrate: (?<Bitrate>\d+) kb/s", RegexOptions.CultureInvariant);
 
-            if (match.Success)
+            Match matchInput = Regex.Match(output, @"Duration: (?<Duration>\d{2}:\d{2}:\d{2}\.\d{2}),.+?start: (?<Start>\d+\.\d+),.+?bitrate: (?<Bitrate>\d+) kb/s", RegexOptions.CultureInvariant);
+
+            if (matchInput.Success)
             {
-                VideoInfo videoInfo = new VideoInfo();
-                videoInfo.FilePath = videoPath;
-                videoInfo.Duration = TimeSpan.Parse(match.Groups["Duration"].Value);
+                videoInfo.Duration = TimeSpan.Parse(matchInput.Groups["Duration"].Value);
                 //videoInfo.Start = TimeSpan.Parse(match.Groups["Start"].Value);
-                videoInfo.Bitrate = int.Parse(match.Groups["Bitrate"].Value);
-
-                return videoInfo;
+                videoInfo.Bitrate = int.Parse(matchInput.Groups["Bitrate"].Value);
+            }
+            else
+            {
+                return null;
             }
 
-            return null;
+            Match matchVideoStream = Regex.Match(output, @"Stream #\d+:\d+(?:\(.+?\))?: Video: (?<Codec>.+?) \(.+?,.+?, (?<Width>\d+)x(?<Height>\d+).+?, (?<FPS>\d+(?:\.\d+)?) fps",
+                RegexOptions.CultureInvariant);
+
+            if (matchVideoStream.Success)
+            {
+                videoInfo.VideoCodec = matchVideoStream.Groups["Codec"].Value;
+                videoInfo.VideoResolution = new Size(int.Parse(matchVideoStream.Groups["Width"].Value), int.Parse(matchVideoStream.Groups["Height"].Value));
+                videoInfo.VideoFPS = double.Parse(matchVideoStream.Groups["FPS"].Value, CultureInfo.InvariantCulture);
+            }
+
+            Match matchAudioStream = Regex.Match(output, @"Stream #\d+:\d+(?:\(.+?\))?: Audio: (?<Codec>.+?)(?: \(|,)", RegexOptions.CultureInvariant);
+
+            if (matchAudioStream.Success)
+            {
+                videoInfo.AudioCodec = matchAudioStream.Groups["Codec"].Value;
+            }
+
+            return videoInfo;
         }
     }
 }

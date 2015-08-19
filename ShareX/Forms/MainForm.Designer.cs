@@ -42,9 +42,6 @@
             this.chRemaining = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
-            this.pGreenlight = new System.Windows.Forms.Panel();
-            this.btnGreenlightHide = new ShareX.HelpersLib.GreenlightButton();
-            this.btnGreenlightOpen = new ShareX.HelpersLib.GreenlightButton();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.tsddbCapture = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiFullscreen = new System.Windows.Forms.ToolStripMenuItem();
@@ -198,6 +195,7 @@
             this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAutomate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
@@ -226,12 +224,11 @@
             this.tsmiTrayRecentItems = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
-            this.pGreenlight.SuspendLayout();
             this.tsMain.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
@@ -332,30 +329,6 @@
             this.pbPreview.EnableRightClickMenu = true;
             this.pbPreview.FullscreenOnClick = true;
             this.pbPreview.Name = "pbPreview";
-            // 
-            // pGreenlight
-            // 
-            resources.ApplyResources(this.pGreenlight, "pGreenlight");
-            this.pGreenlight.BackColor = System.Drawing.Color.Transparent;
-            this.pGreenlight.Controls.Add(this.btnGreenlightHide);
-            this.pGreenlight.Controls.Add(this.btnGreenlightOpen);
-            this.pGreenlight.Name = "pGreenlight";
-            // 
-            // btnGreenlightHide
-            // 
-            this.btnGreenlightHide.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btnGreenlightHide, "btnGreenlightHide");
-            this.btnGreenlightHide.ForeColor = System.Drawing.Color.White;
-            this.btnGreenlightHide.Name = "btnGreenlightHide";
-            this.btnGreenlightHide.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGreenlightHide_MouseClick);
-            // 
-            // btnGreenlightOpen
-            // 
-            this.btnGreenlightOpen.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btnGreenlightOpen, "btnGreenlightOpen");
-            this.btnGreenlightOpen.ForeColor = System.Drawing.Color.White;
-            this.btnGreenlightOpen.Name = "btnGreenlightOpen";
-            this.btnGreenlightOpen.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnGreenlightOpen_MouseClick);
             // 
             // tsMain
             // 
@@ -1245,8 +1218,8 @@
             this.niTray.ContextMenuStrip = this.cmsTray;
             resources.ApplyResources(this.niTray, "niTray");
             this.niTray.BalloonTipClicked += new System.EventHandler(this.niTray_BalloonTipClicked);
+            this.niTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseClick);
             this.niTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseDoubleClick);
-            this.niTray.MouseUp += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseUp);
             // 
             // cmsTray
             // 
@@ -1547,6 +1520,13 @@
             resources.ApplyResources(this.tsmiTrayIndexFolder, "tsmiTrayIndexFolder");
             this.tsmiTrayIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
             // 
+            // tsmiTrayVideoThumbnailer
+            // 
+            this.tsmiTrayVideoThumbnailer.Image = global::ShareX.Properties.Resources.images_stack;
+            this.tsmiTrayVideoThumbnailer.Name = "tsmiTrayVideoThumbnailer";
+            resources.ApplyResources(this.tsmiTrayVideoThumbnailer, "tsmiTrayVideoThumbnailer");
+            this.tsmiTrayVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
+            // 
             // tsmiTrayFTPClient
             // 
             this.tsmiTrayFTPClient.Image = global::ShareX.Properties.Resources.application_network;
@@ -1735,12 +1715,9 @@
             resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
             this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
             // 
-            // tsmiTrayVideoThumbnailer
+            // timerTraySingleClick
             // 
-            this.tsmiTrayVideoThumbnailer.Image = global::ShareX.Properties.Resources.images_stack;
-            this.tsmiTrayVideoThumbnailer.Name = "tsmiTrayVideoThumbnailer";
-            resources.ApplyResources(this.tsmiTrayVideoThumbnailer, "tsmiTrayVideoThumbnailer");
-            this.tsmiTrayVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
+            this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
             // 
             // MainForm
             // 
@@ -1748,7 +1725,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.pGreenlight);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
             this.DoubleBuffered = true;
@@ -1766,7 +1742,6 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
-            this.pGreenlight.ResumeLayout(false);
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
             this.cmsTaskInfo.ResumeLayout(false);
@@ -1969,10 +1944,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiWebpageCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWebpageCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayToggleHotkeys;
-        private System.Windows.Forms.Panel pGreenlight;
-        private HelpersLib.GreenlightButton btnGreenlightOpen;
-        private HelpersLib.GreenlightButton btnGreenlightHide;
         private System.Windows.Forms.ToolStripMenuItem tsmiVideoThumbnailer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayVideoThumbnailer;
+        private System.Windows.Forms.Timer timerTraySingleClick;
     }
 }

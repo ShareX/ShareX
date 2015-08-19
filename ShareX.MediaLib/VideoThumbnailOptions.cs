@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,60 +25,64 @@
 
 using ShareX.HelpersLib;
 using System.ComponentModel;
+using System.Drawing.Design;
 
 namespace ShareX.MediaLib
 {
     public class VideoThumbnailOptions
     {
-        [Category("Screenshots"), DefaultValue(ThumbnailLocationType.DefaultFolder), Description("Create screenshots in default screenshot folder, same folder as the media file or in a custom folder.")]
+        [Category("Thumbnails"), DefaultValue(ThumbnailLocationType.DefaultFolder), Description("Create thumbnails in default screenshot folder, same folder as the media file or in a custom folder.")]
         public ThumbnailLocationType OutputLocation { get; set; }
 
-        [Category("Screenshots"), DefaultValue(""), Description("Output folder where screenshots will get saved.")]
+        [Category("Thumbnails"), DefaultValue(""), Description("Output folder where thumbnails will get saved."), Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CustomOutputDirectory { get; set; }
 
-        [Category("Screenshots"), DefaultValue(EImageFormat.PNG), Description("Thumbnail image format to save.")]
+        [Category("Thumbnails"), DefaultValue(EImageFormat.PNG), Description("Thumbnail image format to save.")]
         public EImageFormat ImageFormat { get; set; }
 
-        [Category("Screenshots"), DefaultValue(9), Description("Total number of screenshots to take.")]
-        public int ScreenshotCount { get; set; }
+        [Category("Thumbnails"), DefaultValue(9), Description("Total number of thumbnails to take.")]
+        public int ThumbnailCount { get; set; }
 
-        [Category("Screenshots"), DefaultValue(false), Description("Choose random frame each time a media file is processed.")]
+        [Category("Thumbnails"), DefaultValue("_Thumbnail"), Description("Suffix to append to the thumbnail filename.")]
+        public string FilenameSuffix { get; set; }
+
+        [Category("Thumbnails"), DefaultValue(false), Description("Choose random frame each time a media file is processed.")]
         public bool RandomFrame { get; set; }
 
-        [Category("Screenshots"), DefaultValue(true), Description("Upload screenshots.")]
-        public bool UploadScreenshots { get; set; }
+        [Category("Thumbnails"), DefaultValue(true), Description("Upload thumbnails.")]
+        public bool UploadThumbnails { get; set; }
 
-        [Category("Screenshots"), DefaultValue(false), Description("After combine screenshots keep single image files.")]
+        [Category("Thumbnails"), DefaultValue(false), Description("After combine thumbnails keep single image files.")]
         public bool KeepScreenshots { get; set; }
 
-        [Category("Screenshots"), DefaultValue(false), Description("After all screenshots taken open output directory automatically.")]
+        [Category("Thumbnails"), DefaultValue(false), Description("After all thumbnails taken open output directory automatically.")]
         public bool OpenDirectory { get; set; }
 
-        [Category("Screenshots"), DefaultValue(512), Description("Maximum thumbnail width size, 0 means don't resize.")]
+        [Category("Thumbnails"), DefaultValue(512), Description("Maximum thumbnail width size, 0 means don't resize.")]
         public int MaxThumbnailWidth { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(true), Description("Combine all screenshots to one large screenshot.")]
+        [Category("Thumbnails / Combined"), DefaultValue(true), Description("Combine all thumbnails to one large thumbnail.")]
         public bool CombineScreenshots { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(10), Description("Space between border and content as pixel.")]
+        [Category("Thumbnails / Combined"), DefaultValue(10), Description("Space between border and content as pixel.")]
         public int Padding { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(10), Description("Space between screenshots as pixel.")]
+        [Category("Thumbnails / Combined"), DefaultValue(10), Description("Space between thumbnails as pixel.")]
         public int Spacing { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(3), Description("Number of screenshots per row.")]
+        [Category("Thumbnails / Combined"), DefaultValue(3), Description("Number of thumbnails per row.")]
         public int ColumnCount { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(true), Description("Add video information to the combined screenshot.")]
+        [Category("Thumbnails / Combined"), DefaultValue(true), Description("Add video information to the combined thumbnail.")]
         public bool AddVideoInfo { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(true), Description("Add timestamp of screenshot at corner of image.")]
+        [Category("Thumbnails / Combined"), DefaultValue(true), Description("Add timestamp of thumbnail at corner of image.")]
         public bool AddTimestamp { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(true), Description("Draw rectangle shadow behind thumbnails.")]
+        [Category("Thumbnails / Combined"), DefaultValue(true), Description("Draw rectangle shadow behind thumbnails.")]
         public bool DrawShadow { get; set; }
 
-        [Category("Screenshots / Combined"), DefaultValue(true), Description("Draw border around thumbnails.")]
+        [Category("Thumbnails / Combined"), DefaultValue(true), Description("Draw border around thumbnails.")]
         public bool DrawBorder { get; set; }
 
         public string DefaultOutputDirectory, LastVideoPath;

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -181,6 +181,7 @@ namespace ShareX.UploadersLib
             cbImgurThumbnailType.Items.Clear();
             cbImgurThumbnailType.Items.AddRange(Helpers.GetEnumDescriptions<ImgurThumbnailType>());
             cbImgurThumbnailType.SelectedIndex = (int)Config.ImgurThumbnailType;
+            cbImgurUseGIFV.Checked = Config.ImgurUseGIFV;
             cbImgurUploadSelectedAlbum.Checked = Config.ImgurUploadSelectedAlbum;
             ImgurFillAlbumList();
 
@@ -288,6 +289,11 @@ namespace ShareX.UploadersLib
 
             txtHastebinCustomDomain.Text = Config.HastebinCustomDomain;
             txtHastebinSyntaxHighlighting.Text = Config.HastebinSyntaxHighlighting;
+
+            // OneTimeSecret
+
+            txtOneTimeSecretEmail.Text = Config.OneTimeSecretAPIUsername;
+            txtOneTimeSecretAPIKey.Text = Config.OneTimeSecretAPIKey;
 
             #endregion Text uploaders
 
@@ -603,6 +609,11 @@ namespace ShareX.UploadersLib
 
             txtCoinURLUUID.Text = Config.CoinURLUUID;
 
+            // Polr
+
+            txtPolrAPIHostname.Text = Config.PolrAPIHostname;
+            txtPolrAPIKey.Text = Config.PolrAPIKey;
+
             #endregion URL Shorteners
 
             #region Other Services
@@ -664,6 +675,11 @@ namespace ShareX.UploadersLib
         private void cbImgurThumbnailType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.ImgurThumbnailType = (ImgurThumbnailType)cbImgurThumbnailType.SelectedIndex;
+        }
+
+        private void cbImgurUseGIFV_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.ImgurUseGIFV = cbImgurUseGIFV.Checked;
         }
 
         private void cbImgurUploadSelectedAlbum_CheckedChanged(object sender, EventArgs e)

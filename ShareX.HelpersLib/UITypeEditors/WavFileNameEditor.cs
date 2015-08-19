@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,32 +23,32 @@
 
 #endregion License Information (GPL v3)
 
-using System.IO;
-using System.Text.RegularExpressions;
+using ShareX.HelpersLib.Properties;
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
-namespace ShareX.UploadersLib.ImageUploaders
+namespace ShareX.HelpersLib
 {
-    public sealed class HizliResim : ImageUploader
+    public class WavFileNameEditor : FileNameEditor
     {
-        public bool DirectURL { get; set; }
-
-        public override UploadResult Upload(Stream stream, string fileName)
+        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            UploadResult result = UploadData(stream, "http://hizliresim.com/upload.php", fileName, "local_files[]");
-
-            if (result.IsSuccess)
+            if (context == null || provider == null)
             {
-                string id = DirectURL ? "link-direct" : "link-web";
-
-                Match match = Regex.Match(result.Response, string.Format("id={0}.+?value=\"(.+)\">", id));
-
-                if (match.Success)
+                return base.EditValue(context, provider, value);
+            }
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = Resources.ExeFileNameEditor_EditValue_Browse_for_executable___;
+                dlg.Filter = "Sound file (*.wav)|*.wav";
+                if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    result.URL = match.Groups[1].Value;
+                    value = dlg.FileName;
                 }
             }
-
-            return result;
+            return value;
         }
     }
 }

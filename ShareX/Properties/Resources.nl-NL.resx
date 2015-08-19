@@ -419,9 +419,6 @@ Klik op "Nee" om de huidige upload te annuleren en het automatisch uploaden uit 
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Kan geen geldig Twitter account vinden.</value>
   </data>
-  <data name="MainForm_AfterShownJobs_You_can_middle_click_the_ShareX_tray_icon_to_start_rectangle_capture_" xml:space="preserve">
-    <value>Middelklik het ShareX tray icoon om de schermopname te beginnen.</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Links klikken om de link naar het klembord te kopiëren. Rechtsklikken om de link te openen.</value>
   </data>

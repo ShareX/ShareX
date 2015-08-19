@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,7 +35,7 @@ namespace ShareX.MediaLib
 {
     public partial class VideoThumbnailerForm : Form
     {
-        public event Action<string> UploadRequested;
+        public event Action<List<VideoThumbnailInfo>> ThumbnailsTaken;
 
         public string FFmpegPath { get; set; }
         public VideoThumbnailOptions Options { get; set; }
@@ -57,28 +58,36 @@ namespace ShareX.MediaLib
             {
                 Options.LastVideoPath = mediaPath;
 
-                VideoThumbnailer thumbnailer = new VideoThumbnailer(mediaPath, FFmpegPath, Options);
-                thumbnailer.ProgressChanged += Thumbnailer_ProgressChanged;
                 pbProgress.Value = 0;
-                pbProgress.Maximum = Options.ScreenshotCount;
+                pbProgress.Maximum = Options.ThumbnailCount;
                 pbProgress.Visible = true;
                 btnStart.Visible = false;
 
                 new Thread(() =>
                 {
-                    List<VideoThumbnailInfo> screenshots = thumbnailer.TakeScreenshots();
+                    List<VideoThumbnailInfo> thumbnails = null;
 
-                    if (screenshots != null && screenshots.Count > 0)
+                    try
+                    {
+                        VideoThumbnailer thumbnailer = new VideoThumbnailer(mediaPath, FFmpegPath, Options);
+                        thumbnailer.ProgressChanged += Thumbnailer_ProgressChanged;
+                        thumbnails = thumbnailer.TakeThumbnails();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
                     {
                         this.InvokeSafe(() =>
                         {
+                            if (thumbnails != null)
+                            {
+                                OnThumbnailsTaken(thumbnails);
+                            }
+
                             btnStart.Visible = true;
                             pbProgress.Visible = false;
-
-                            if (Options.UploadScreenshots)
-                            {
-                                screenshots.ForEach(x => OnUploadRequested(x.Filepath));
-                            }
                         });
                     }
                 }).Start();
@@ -90,18 +99,17 @@ namespace ShareX.MediaLib
             this.InvokeSafe(() => pbProgress.Value = current);
         }
 
-        protected void OnUploadRequested(string filepath)
+        protected void OnThumbnailsTaken(List<VideoThumbnailInfo> thumbnails)
         {
-            if (UploadRequested != null)
+            if (ThumbnailsTaken != null)
             {
-                UploadRequested(filepath);
+                ThumbnailsTaken(thumbnails);
             }
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            // TODO: Translate
-            Helpers.BrowseFile("Browse for media file", txtMediaPath);
+            Helpers.BrowseFile(Resources.VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file, txtMediaPath);
         }
     }
 }

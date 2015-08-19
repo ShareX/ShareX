@@ -964,6 +964,24 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FTP client only supports FTP or FTPS..
+        /// </summary>
+        internal static string UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to find valid FTP account..
+        /// </summary>
+        internal static string UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hubic refresh folders list failed.
         /// </summary>
         internal static string UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed {

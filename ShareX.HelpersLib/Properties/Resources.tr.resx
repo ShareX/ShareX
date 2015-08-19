@@ -429,13 +429,13 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>QR kod</value>
   </data>
   <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Dipnot)</value>
+    <value>Bölge yakala (Dipnot)</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Basit)</value>
+    <value>Bölge yakala (Basit)</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala</value>
+    <value>Bölge yakala</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Cetvel</value>
@@ -456,7 +456,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Adresten yükle</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Pencere)</value>
+    <value>Bölge yakala (Objeler)</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Özel dosya yükleyici</value>
@@ -598,9 +598,168 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Aç/Durdur otomatikleştirme aracını</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Saydam)</value>
+    <value>Bölge yakala (Saydam)</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Özel bölge yakala</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (İyi kalite)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (Kötü kalite)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>Octree nicemleyici (Orta kalite)</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_PolygonRegion_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_Automate_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
+    <value>Ekran kaydetme</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
+    <value>Ekran kaydetme</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
+    <value>Ekran kaydetme</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
+    <value>Ekran kaydetme</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
+    <value>Ekran kaydetme</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
+    <value>Ekran kaydetme</value>
+  </data>
+  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>Devre dışı bırak/Aktif et kısayolları</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
+    <value>Web sayfası yakala</value>
+  </data>
+  <data name="HotkeyType_DNSChanger" xml:space="preserve">
+    <value>DNS değiştirici</value>
+  </data>
+  <data name="HotkeyType_ImageEditor" xml:space="preserve">
+    <value>Resim düzenleyici</value>
+  </data>
+  <data name="HotkeyType_MonitorTest" xml:space="preserve">
+    <value>Monitör testi</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
+    <value>Aktif pencere alanıyla ekran kaydetme başlat</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
+    <value>Aktif pencere alanıyla ekran kaydetme (GIF) başlat</value>
   </data>
 </root>

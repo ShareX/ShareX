@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,8 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Drawing;
+using System.Globalization;
 using System.IO;
 
 namespace ShareX.MediaLib
@@ -31,13 +33,33 @@ namespace ShareX.MediaLib
     public class VideoInfo
     {
         public string FilePath { get; set; }
+
         public TimeSpan Duration { get; set; }
         public TimeSpan Start { get; set; }
         public int Bitrate { get; set; }
 
+        public string VideoCodec { get; set; }
+        public Size VideoResolution { get; set; }
+        public double VideoFPS { get; set; }
+
+        public string AudioCodec { get; set; }
+
         public override string ToString()
         {
-            return string.Format("Filename: {0}, Duration: {1}, Bitrate: {2} kb/s", Path.GetFileName(FilePath), Duration.ToString(@"hh\:mm\:ss"), Bitrate);
+            string text = string.Format("Filename: {0}, Duration: {1}, Bitrate: {2} kb/s", Path.GetFileName(FilePath), Duration.ToString(@"hh\:mm\:s"), Bitrate);
+
+            if (!string.IsNullOrEmpty(VideoCodec))
+            {
+                text += string.Format(", Video codec: {0}, Resolution: {1}x{2}, FPS: {3}", VideoCodec, VideoResolution.Width, VideoResolution.Height,
+                    VideoFPS.ToString("0.##", CultureInfo.InvariantCulture));
+            }
+
+            if (!string.IsNullOrEmpty(AudioCodec))
+            {
+                text += string.Format(", Audio codec: {0}", AudioCodec);
+            }
+
+            return text;
         }
     }
 }

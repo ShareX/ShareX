@@ -142,7 +142,7 @@
     <value>Enregistrer l'image...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Effets d'images</value>
+    <value>ShareX - Effets d'image</value>
   </data>
   <data name="mbLoadImage.Text" xml:space="preserve">
     <value>Charger l'image</value>

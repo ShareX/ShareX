@@ -164,4 +164,121 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
     <value>Monitor {0} (X:{1} Y:{2} Genişlik:{3} Yükseklik:{4})</value>
   </data>
+  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
+    <value>[~] Aktif monitörü yakala</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
+    <value>[1, 2, 3 ... 0] Monitör yakala</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
+    <value>[Yön tuşları] İmleci hareket ettir</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
+    <value>[Yön tuşları] Seçili alanı {0} boyutlandır</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
+    <value>sağ aşağıdan</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
+    <value>sol üstten</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
+    <value>sakla</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
+    <value>göster</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
+    <value>[C] Ekranı kaplıyan artı şeklinde çizgiyi {0}</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
+    <value>[C + Yön tuşları] İmleci daha hızlı hareket ettir</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
+    <value>[Ctrl + C] Bilgiyi kopyala</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
+    <value>[Ctrl + C] Pozisyonu kopyala</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
+    <value>[Ctrl + C] Pozisyon ve boyutu kopyala</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
+    <value>[Ctrl + Fare tekerleği] Büyüteç piksel boyutunu değiştir</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
+    <value>[Çift sol tıkla] [Enter] Seçili alanları yakala</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
+    <value>[Esc] Yakalamayı iptal et</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
+    <value>[F1] Bu bilgileri gizle</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
+    <value>[Ctrl basılı tut] Daha hızlı boyutlandır/taşı</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
+    <value>[Sol tık basılı tut] Alan seçimini başlat</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
+    <value>[Sol tık basılı tut alan seçiliyken] Alanı taşı</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
+    <value>[Shift basılı tut] Seçili alanı taşı boyutlandırmak yerine</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
+    <value>[Shift basılı tut] Orantısal boyutlandırma</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
+    <value>[I] Pozisyon ve boyut bilgisini {0}</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
+    <value>[M] Büyüteç {0}</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
+    <value>[Fare tekerleği] Büyüteç piksel sayısını değiştir</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
+    <value>[Tuş takımı + veya -] Yuvarlatılmış dikdörtgen kenar yarıçapını değiştir</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
+    <value>[Tuş takımı + veya -] Üçgen açısını değiştir</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
+    <value>[Tuş takımı 1] Dikdörtgen şekli</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
+    <value>[Tuş takımı 2] Yuvarlatılmış dikdörtgen şekli</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
+    <value>[Tuş takımı 3] Elips şekli</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
+    <value>[Tuş takımı 4] Üçgen şekli</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
+    <value>[Tuş takımı 5] Elmas şekli</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
+    <value>[Q] Çoklu alan modunu aktif et</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
+    <value>[Q] Hızlı yakalama modunu aktif et</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
+    <value>[Sağ tık] [Esc] Yakalamayı iptal et</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
+    <value>[Sağ tık] Alan seçimini iptal et</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
+    <value>[Sağ tık seçim üstünde] [Delete] Alanı sil</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
+    <value>[Space] Tam ekran yakala</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
+    <value>[Tab] Boyutlandırma noktasını {0} olarak değiştir</value>
+  </data>
 </root>

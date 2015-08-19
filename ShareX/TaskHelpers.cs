@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -626,9 +626,23 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
+            if (!CheckFFmpeg(taskSettings))
+            {
+                return;
+            }
+
             Program.Settings.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
             VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, Program.Settings.VideoThumbnailOptions);
-            thumbnailerForm.UploadRequested += filepath => UploadManager.UploadFile(filepath, taskSettings);
+            thumbnailerForm.ThumbnailsTaken += thumbnails =>
+            {
+                if (Program.Settings.VideoThumbnailOptions.UploadThumbnails)
+                {
+                    foreach (VideoThumbnailInfo thumbnailInfo in thumbnails)
+                    {
+                        UploadManager.UploadFile(thumbnailInfo.Filepath, taskSettings);
+                    }
+                }
+            };
             thumbnailerForm.Show();
         }
 
@@ -779,12 +793,92 @@ namespace ShareX
             if (Program.MainForm.niTray.Visible)
             {
                 Program.MainForm.niTray.Tag = null;
-                // TODO: Translate
-                string balloonTipText = result ? "Hotkeys disabled." : "Hotkeys enabled.";
+                string balloonTipText = result ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_;
                 Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", balloonTipText, ToolTipIcon.Info);
             }
 
             return result;
+        }
+
+        public static bool CheckFFmpeg(TaskSettings taskSettings)
+        {
+            if (!File.Exists(taskSettings.CaptureSettings.FFmpegOptions.CLIPath))
+            {
+                string ffmpegText = string.IsNullOrEmpty(taskSettings.CaptureSettings.FFmpegOptions.CLIPath) ? "ffmpeg.exe" : taskSettings.CaptureSettings.FFmpegOptions.CLIPath;
+
+                if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegText),
+                    "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    if (FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
+                    {
+                        Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
+                           taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private static void DownloaderForm_InstallRequested(string filePath)
+        {
+            string extractPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, extractPath);
+
+            if (result)
+            {
+                MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static void PlayCaptureSound(TaskSettings taskSettings)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (taskSettings.AdvancedSettings.UseCustomCaptureSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomCaptureSoundPath))
+            {
+                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomCaptureSoundPath);
+            }
+            else
+            {
+                Helpers.PlaySoundAsync(Resources.CaptureSound);
+            }
+        }
+
+        public static void PlayTaskCompleteSound(TaskSettings taskSettings)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (taskSettings.AdvancedSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomTaskCompletedSoundPath))
+            {
+                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomTaskCompletedSoundPath);
+            }
+            else
+            {
+                Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
+            }
+        }
+
+        public static void PlayErrorSound(TaskSettings taskSettings)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (taskSettings.AdvancedSettings.UseCustomErrorSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomErrorSoundPath))
+            {
+                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomErrorSoundPath);
+            }
+            else
+            {
+                Helpers.PlaySoundAsync(Resources.ErrorSound);
+            }
         }
     }
 }

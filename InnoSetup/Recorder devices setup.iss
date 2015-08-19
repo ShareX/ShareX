@@ -5,13 +5,13 @@
 AppName={#AppName}
 AppVerName={#AppName} {#AppVersion}
 AppVersion={#AppVersion}
-Compression=lzma2/ultra64
+ArchitecturesAllowed=x86 x64 ia64
+ArchitecturesInstallIn64BitMode=x64 ia64
 DefaultDirName={pf}\{#AppName}
 DefaultGroupName={#AppName}
 DirExistsWarning=no
 OutputBaseFilename=Recorder-devices-setup
 OutputDir=Output\
-SolidCompression=true
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"

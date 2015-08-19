@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -122,6 +122,7 @@ namespace ShareX.ScreenCaptureLib
         private Point currentPosition;
         private Point positionOnClick;
         private bool proportionalResizing;
+        private bool snapResizing;
 
         public AreaManager(RectangleRegion surface)
         {
@@ -147,6 +148,9 @@ namespace ShareX.ScreenCaptureLib
             {
                 case Keys.ShiftKey:
                     proportionalResizing = true;
+                    break;
+                case Keys.ControlKey:
+                    snapResizing = true;
                     break;
                 case Keys.NumPad1:
                     ChangeCurrentShape(RegionShape.Rectangle);
@@ -211,6 +215,9 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.ShiftKey:
                     proportionalResizing = false;
                     break;
+                case Keys.ControlKey:
+                    snapResizing = false;
+                    break;
                 case Keys.Delete:
                     RemoveCurrentArea();
                     break;
@@ -238,12 +245,66 @@ namespace ShareX.ScreenCaptureLib
                     newPosition = CaptureHelpers.ProportionalPosition(positionOnClick, currentPosition);
                 }
 
+                if (snapResizing)
+                {
+                    newPosition = SnapPosition(positionOnClick, newPosition);
+                }
+
                 CurrentArea = CaptureHelpers.CreateRectangle(positionOnClick, newPosition);
             }
 
             CheckHover();
 
             ResizeManager.Update();
+        }
+
+        private Point SnapPosition(Point posOnClick, Point posCurrent)
+        {
+            Rectangle currentRect = CaptureHelpers.CreateRectangle(posOnClick, posCurrent);
+            Point newPosition = posCurrent;
+
+            foreach (SnapSize size in surface.Config.SnapSizes)
+            {
+                if (currentRect.Width.IsBetween(size.Width - surface.Config.SnapDistance, size.Width + surface.Config.SnapDistance) ||
+                    currentRect.Height.IsBetween(size.Height - surface.Config.SnapDistance, size.Height + surface.Config.SnapDistance))
+                {
+                    if (posCurrent.X > posOnClick.X)
+                    {
+                        if (posCurrent.Y > posOnClick.Y)
+                        {
+                            newPosition = new Point(posOnClick.X + size.Width - 1, posOnClick.Y + size.Height - 1);
+                            break;
+                        }
+                        else
+                        {
+                            newPosition = new Point(posOnClick.X + size.Width - 1, posOnClick.Y - size.Height + 1);
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        if (posCurrent.Y > posOnClick.Y)
+                        {
+                            newPosition = new Point(posOnClick.X - size.Width + 1, posOnClick.Y + size.Height - 1);
+                            break;
+                        }
+                        else
+                        {
+                            newPosition = new Point(posOnClick.X - size.Width + 1, posOnClick.Y - size.Height + 1);
+                            break;
+                        }
+                    }
+                }
+            }
+
+            Rectangle newRect = CaptureHelpers.CreateRectangle(posOnClick, newPosition);
+
+            if (surface.ScreenRectangle0Based.Contains(newRect))
+            {
+                return newPosition;
+            }
+
+            return posCurrent;
         }
 
         private void CheckHover()

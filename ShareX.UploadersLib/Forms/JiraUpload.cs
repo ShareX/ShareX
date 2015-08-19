@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -92,7 +92,7 @@ namespace ShareX.UploadersLib.GUI
 
         private void UpdateSummaryAsync(Task<string> task)
         {
-            this.Invoke((Action)(() => UpdateSummary(task.Result)));
+            Invoke((Action)(() => UpdateSummary(task.Result)));
         }
 
         private void UpdateSummary(string summary)

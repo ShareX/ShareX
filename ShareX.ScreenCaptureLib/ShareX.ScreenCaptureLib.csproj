@@ -60,6 +60,7 @@
     <Compile Include="MonitorRegion.cs" />
     <Compile Include="MonitorRegionDefaultCreator.cs" />
     <Compile Include="RectangleAnnotateOptions.cs" />
+    <Compile Include="RegionHelpers\ColorBlinkAnimation.cs" />
     <Compile Include="RegionHelpers\RegionInfo.cs" />
     <Compile Include="Screencast\FFmpegOptions.cs" />
     <Compile Include="Screencast\FFmpegHelper.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="RegionHelpers\NodeObject.cs" />
     <Compile Include="RegionHelpers\ResizeManager.cs" />
     <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
+    <Compile Include="SnapSize.cs" />
     <Compile Include="SurfaceOptions.cs" />
     <Compile Include="Screencast\ScreenRecorder.cs" />
     <Compile Include="Screencast\HardDiskCache.cs" />
@@ -136,6 +138,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
+    <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -159,6 +162,9 @@
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.nl-NL.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.pt-BR.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.resx">

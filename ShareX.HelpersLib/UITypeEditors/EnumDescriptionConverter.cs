@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,7 +26,7 @@
 using System;
 using System.ComponentModel;
 using System.Globalization;
-using System.Reflection;
+using System.Linq;
 
 namespace ShareX.HelpersLib
 {
@@ -47,7 +47,7 @@ namespace ShareX.HelpersLib
 
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destType)
         {
-            return ((Enum)value).GetDescription();
+            return ((Enum)value).GetLocalizedDescription();
         }
 
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type srcType)
@@ -57,13 +57,11 @@ namespace ShareX.HelpersLib
 
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
-            foreach (FieldInfo fi in enumType.GetFields())
+            foreach (Enum e in Enum.GetValues(enumType).OfType<Enum>())
             {
-                DescriptionAttribute da = (DescriptionAttribute)Attribute.GetCustomAttribute(fi, typeof(DescriptionAttribute));
-
-                if (da != null && da.Description == (string)value)
+                if (e.GetLocalizedDescription() == (string)value)
                 {
-                    return Enum.Parse(enumType, fi.Name);
+                    return e;
                 }
             }
 

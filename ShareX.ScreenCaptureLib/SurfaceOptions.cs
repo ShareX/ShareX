@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing;
@@ -51,6 +52,9 @@ namespace ShareX.ScreenCaptureLib
 
         [DefaultValue(true), Description("Show magnifier.")]
         public bool ShowMagnifier { get; set; }
+
+        [DefaultValue(false), Description("Use square or circle shape magnifier.")]
+        public bool UseSquareMagnifier { get; set; }
 
         [DefaultValue(15), Description("Number of pixels in magnifier. Must be odd number like 11, 13, 15 etc.")]
         public int MagnifierPixelCount { get; set; }
@@ -88,12 +92,26 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(typeof(Size), "250, 250"), Description("Fixed shape size.")]
         public Size FixedSize { get; set; }
 
+        [DefaultValue(10), Description("How much region size must be close to snap size for it to snap.")]
+        public int SnapDistance { get; set; }
+
+        [Description("How close to a snap size you must be for it to snap.")]
+        public List<SnapSize> SnapSizes { get; set; }
+
         [DefaultValue(RegionShape.Rectangle), Description("Current region shape.")]
         public RegionShape CurrentRegionShape { get; set; }
 
         public SurfaceOptions()
         {
             this.ApplyDefaultPropertyValues();
+
+            SnapSizes = new List<SnapSize>()
+            {
+                new SnapSize(800, 600),
+                new SnapSize(1280, 720),
+                new SnapSize(1024, 768),
+                new SnapSize(1920, 1080)
+            };
         }
     }
 }

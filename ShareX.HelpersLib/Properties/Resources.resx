@@ -605,7 +605,7 @@ Would you like to download and install it?</value>
     <value>Update is available</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
-    <value>Could not create directory, check your path settings.</value>
+    <value>Could not create directory.</value>
   </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Color picker</value>

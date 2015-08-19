@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -63,7 +63,7 @@ Pushbullet support: https://github.com/BallisticLingonberries
 Lambda support: https://github.com/marcusant
 VideoBin support: https://github.com/corey-/
 Up1 support: https://github.com/Upload
-LnkU, CoinURL, QRnet, VURL, 2gp support: https://github.com/DanielMcAssey
+LnkU, CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://github.com/DanielMcAssey
 
 {1}:
 
@@ -75,6 +75,7 @@ Hungarian: https://github.com/devBluestar
 Korean: https://github.com/123jimin
 Spanish: https://github.com/ovnisoftware
 Dutch: https://github.com/wforums
+Portuguese (Brazil): https://github.com/athosbr99 / https://github.com/RockyTV
 
 {2}:
 
@@ -94,7 +95,7 @@ ResX Resource Manager: https://resxresourcemanager.codeplex.com
 AWSSDK: http://aws.amazon.com/sdk-for-net/
 BouncyCastle-PCL: https://github.com/onovotny/BouncyCastle-PCL
 
-Copyright © 2007-2015 ShareX Developers", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries);
+Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries);
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)
@@ -113,19 +114,9 @@ Copyright © 2007-2015 ShareX Developers", Resources.AboutForm_AboutForm_Contrib
             URLHelpers.OpenURL(Links.URL_BERK);
         }
 
-        private void pbBerkSteamURL_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_BERK_STEAM);
-        }
-
         private void pbMikeURL_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_MIKE);
-        }
-
-        private void pbMikeGooglePlus_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_MIKE_GOOGLE_PLUS);
         }
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)

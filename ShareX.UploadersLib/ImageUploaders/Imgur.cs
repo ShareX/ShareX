@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -56,6 +56,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public ImgurThumbnailType ThumbnailType { get; set; }
         public string UploadAlbumID { get; set; }
         public bool DirectLink { get; set; }
+        public bool UseGIFV { get; set; }
 
         public Imgur(OAuth2Info oauth)
         {
@@ -215,7 +216,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                         {
                             if (DirectLink)
                             {
-                                if (!string.IsNullOrEmpty(imageData.gifv))
+                                if (UseGIFV && !string.IsNullOrEmpty(imageData.gifv))
                                 {
                                     result.URL = imageData.gifv;
                                 }

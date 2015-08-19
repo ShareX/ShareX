@@ -164,7 +164,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Annuler</value>
   </data>
   <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
-    <value>Capturer le moniteur actif</value>
+    <value>Capturer l'écran actif</value>
   </data>
   <data name="HotkeyType_ActiveWindow" xml:space="preserve">
     <value>Capturer la fenêtre active</value>
@@ -191,7 +191,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Capturer une région rectangulaire (Simple)</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Capturer une région rectangulaire (Fenêtre)</value>
+    <value>Capturer une région rectangulaire (Objets)</value>
   </data>
   <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
     <value>Choisir le chemin du fichier</value>
@@ -281,7 +281,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Couper</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
-    <value>Cyan: {0:0,0}%, Magenta: {1:0,0}%, Jaune: {2: 0.0}%, Clé: {3: 0,0}%</value>
+    <value>Cyan: {0:0,0}%, Magenta: {1:0,0}%, Jaune: {2: 0.0}%, Noir: {3: 0,0}%</value>
   </data>
   <data name="GIFQuality_Default" xml:space="preserve">
     <value>Encodage par défaut .NET (Encodage rapide mais de qualité moyenne)</value>
@@ -538,7 +538,7 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>Titre de la fenêtre active</value>
   </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Message du Tweet</value>
+    <value>Tweeter un message</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>Vérification de mise à jour echouée</value>
@@ -553,10 +553,10 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>Afficher les astuces dans la barre</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
-    <value>Mettre en ligne le fichier</value>
+    <value>Mise en ligne d'un fichier</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
-    <value>Mettre en ligne depuis le presse-papier</value>
+    <value>Mise en ligne depuis le presse-papier</value>
   </data>
   <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
     <value>Télécharger des paramètres à partir de l'URL</value>
@@ -568,10 +568,10 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>Unix timestamp</value>
   </data>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
-    <value>Mettre en ligne le dossier</value>
+    <value>Mise en ligne d'un dossier</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
-    <value>Mettre en ligne depuis le presse-papier avec la visualisation de contenu</value>
+    <value>Mise en ligne depuis le presse-papier avec la visualisation du contenu</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Mise en ligne depuis l'URL</value>
@@ -745,7 +745,7 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>Enregistrer l'écran</value>
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
-    <value>Test de moniteur</value>
+    <value>Test d'écran</value>
   </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
     <value>Capturer une page Web</value>

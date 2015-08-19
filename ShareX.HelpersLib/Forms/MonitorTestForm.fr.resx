@@ -124,7 +124,7 @@
     <value>Noir, Blanc:</value>
   </data>
   <data name="cbShapes.Items" xml:space="preserve">
-    <value>Verificateur</value>
+    <value>Carreaux</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Fermer</value>
@@ -136,7 +136,7 @@
     <value>Couleur 2</value>
   </data>
   <data name="btnColorDialog.Text" xml:space="preserve">
-    <value>Couleur du dialogue...</value>
+    <value>Sélecteur de couleur...</value>
   </data>
   <data name="lblGreen.Text" xml:space="preserve">
     <value>V:</value>

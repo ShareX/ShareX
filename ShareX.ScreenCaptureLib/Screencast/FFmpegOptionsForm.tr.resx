@@ -201,4 +201,25 @@ Kaliteyi arttırmak dosya boyutunu arttırır.</value>
     <value>Kodlama hızı ile sıkıştırma oranı arasında seçim.
 Ekrandan kayıt yaparken hızlı seçmeniz tavsiye edilir.</value>
   </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>FFmpeg yolu</value>
+  </data>
+  <data name="lblHelperDevices.Text" xml:space="preserve">
+    <value>"screen-capture-recorder" ve "virtual-audio-capturer" video/ses kaynaklarını yükler.</value>
+  </data>
+  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
+    <value>Kayıt cihazlarını yükle</value>
+  </data>
+  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
+    <value>Varsayılan full.</value>
+  </data>
+  <data name="cbGIFDither.ToolTip" xml:space="preserve">
+    <value>Varsayılan sierra2_4a.</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Kıpırtılandırma modu:</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Palet modu:</value>
+  </data>
 </root>
