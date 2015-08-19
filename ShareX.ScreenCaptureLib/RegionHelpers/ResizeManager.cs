@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Input = System.Windows.Input;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -149,90 +150,80 @@ namespace ShareX.ScreenCaptureLib
 
         private void surface_KeyDown(object sender, KeyEventArgs e)
         {
-            int speed;
+            ProcessKeyDown(sender, e, true);
+        }
 
-            if (e.Control)
-            {
-                speed = MaxMoveSpeed;
-            }
-            else
-            {
-                speed = MinMoveSpeed;
-            }
-
+        private void ProcessKeyDown(object sender, KeyEventArgs e, bool first = false)
+        {
+            int speed = e.Control ? MaxMoveSpeed : MinMoveSpeed;
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
+                    if (Input.Keyboard.IsKeyDown(Input.Key.Right)) return;
+                    AdjustPosition(-speed, 0, e);
+                    if (first)
                     {
-                        Cursor.Position = new Point(Cursor.Position.X - speed, Cursor.Position.Y);
-                    }
-                    else
-                    {
-                        if (e.Shift)
-                        {
-                            MoveCurrentArea(-speed, 0);
-                        }
-                        else
-                        {
-                            ResizeCurrentArea(-speed, 0, IsBottomRightResizing);
-                        }
+                        NextKeyDown(sender, e, Keys.Up);
+                        NextKeyDown(sender, e, Keys.Down);
                     }
                     break;
                 case Keys.Right:
-                    if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
+                    if (Input.Keyboard.IsKeyDown(Input.Key.Left)) return;
+                    AdjustPosition(speed, 0, e);
+                    if (first)
                     {
-                        Cursor.Position = new Point(Cursor.Position.X + speed, Cursor.Position.Y);
-                    }
-                    else
-                    {
-                        if (e.Shift)
-                        {
-                            MoveCurrentArea(speed, 0);
-                        }
-                        else
-                        {
-                            ResizeCurrentArea(speed, 0, IsBottomRightResizing);
-                        }
+                        NextKeyDown(sender, e, Keys.Down);
+                        NextKeyDown(sender, e, Keys.Up);
                     }
                     break;
                 case Keys.Up:
-                    if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
+                    if (Input.Keyboard.IsKeyDown(Input.Key.Down)) return;
+                    AdjustPosition(0, -speed, e);
+                    if (first)
                     {
-                        Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y - speed);
-                    }
-                    else
-                    {
-                        if (e.Shift)
-                        {
-                            MoveCurrentArea(0, -speed);
-                        }
-                        else
-                        {
-                            ResizeCurrentArea(0, -speed, IsBottomRightResizing);
-                        }
+                        NextKeyDown(sender, e, Keys.Right);
+                        NextKeyDown(sender, e, Keys.Left);
                     }
                     break;
                 case Keys.Down:
-                    if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
+                    if (Input.Keyboard.IsKeyDown(Input.Key.Up)) return;
+                    AdjustPosition(0, speed, e);
+                    if (first)
                     {
-                        Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y + speed);
-                    }
-                    else
-                    {
-                        if (e.Shift)
-                        {
-                            MoveCurrentArea(0, speed);
-                        }
-                        else
-                        {
-                            ResizeCurrentArea(0, speed, IsBottomRightResizing);
-                        }
+                        NextKeyDown(sender, e, Keys.Left);
+                        NextKeyDown(sender, e, Keys.Right);
                     }
                     break;
                 case Keys.Tab:
                     IsBottomRightResizing = !IsBottomRightResizing;
                     break;
+            }
+        }
+
+        private void NextKeyDown(object sender, KeyEventArgs e, Keys k)
+        {
+            if (Input.Keyboard.IsKeyDown(Input.KeyInterop.KeyFromVirtualKey((int)k)))
+            {
+                ProcessKeyDown(sender, new KeyEventArgs(k | e.Modifiers));
+            }
+        }
+
+        private void AdjustPosition(int x, int y, KeyEventArgs e)
+        {
+            if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
+            {
+                Cursor.Position = new Point(Cursor.Position.X + x, Cursor.Position.Y + y);
+            }
+            else
+            {
+                if (e.Shift)
+                {
+                    MoveCurrentArea(x, y);
+                }
+                else
+                {
+                    ResizeCurrentArea(x, y, IsBottomRightResizing);
+                }
             }
         }
 
