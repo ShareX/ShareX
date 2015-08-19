@@ -72,7 +72,12 @@ namespace ShareX.HelpersLib
                 if (cms.Items.Count > 0) cms.Show(tb, new Point(tb.Width + 1, 0));
             };
 
-            tb.Leave += (sender, e) =>
+            tb.GotFocus += (sender, e) =>
+            {
+                if (cms.Items.Count > 0) cms.Show(tb, new Point(tb.Width + 1, 0));
+            };
+
+            tb.LostFocus += (sender, e) =>
             {
                 if (cms.Visible) cms.Close();
             };
