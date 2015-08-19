@@ -174,16 +174,27 @@ namespace ShareX.ScreenCaptureLib
                     return;
             }
 
-            if ((IsUpPressed && IsDownPressed)
-                || (IsLeftPressed && IsRightPressed))
-            {
-                return;
-            }
-
+            // Calculate cursor movement
             int speed = e.Control ? MaxMoveSpeed : MinMoveSpeed;
-            int y = IsDownPressed ? speed : IsUpPressed ? -speed : 0;
-            int x = IsRightPressed ? speed : IsLeftPressed ? -speed : 0;
-            AdjustPosition(x, y, e);
+            int y = IsUpPressed && IsDownPressed ? 0 : IsDownPressed ? speed : IsUpPressed ? -speed : 0;
+            int x = IsLeftPressed && IsRightPressed ? 0 : IsRightPressed ? speed : IsLeftPressed ? -speed : 0;
+
+            // Move the cursor
+            if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
+            {
+                Cursor.Position = new Point(Cursor.Position.X + x, Cursor.Position.Y + y);
+            }
+            else
+            {
+                if (e.Shift)
+                {
+                    MoveCurrentArea(x, y);
+                }
+                else
+                {
+                    ResizeCurrentArea(x, y, IsBottomRightResizing);
+                }
+            }
         }
 
         private void surface_KeyUp(object sender, KeyEventArgs e)
@@ -202,25 +213,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Right:
                     IsRightPressed = false;
                     break;
-            }
-        }
-
-        private void AdjustPosition(int x, int y, KeyEventArgs e)
-        {
-            if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
-            {
-                Cursor.Position = new Point(Cursor.Position.X + x, Cursor.Position.Y + y);
-            }
-            else
-            {
-                if (e.Shift)
-                {
-                    MoveCurrentArea(x, y);
-                }
-                else
-                {
-                    ResizeCurrentArea(x, y, IsBottomRightResizing);
-                }
             }
         }
 
