@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Input = System.Windows.Input;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -57,6 +56,11 @@ namespace ShareX.ScreenCaptureLib
         public int MinMoveSpeed { get; set; }
         public bool IsBottomRightResizing { get; set; }
 
+        private bool IsUpPressed { get; set; }
+        private bool IsDownPressed { get; set; }
+        private bool IsLeftPressed { get; set; }
+        private bool IsRightPressed { get; set; }
+
         private AreaManager areaManager;
         private NodeObject[] nodes;
         private Rectangle tempRect;
@@ -69,6 +73,7 @@ namespace ShareX.ScreenCaptureLib
             MaxMoveSpeed = surface.Config.MaxMoveSpeed;
 
             surface.KeyDown += surface_KeyDown;
+            surface.KeyUp += surface_KeyUp;
 
             nodes = new NodeObject[8];
 
@@ -150,61 +155,53 @@ namespace ShareX.ScreenCaptureLib
 
         private void surface_KeyDown(object sender, KeyEventArgs e)
         {
-            ProcessKeyDown(sender, e, true);
-        }
-
-        private void ProcessKeyDown(object sender, KeyEventArgs e, bool first = false)
-        {
-            int speed = e.Control ? MaxMoveSpeed : MinMoveSpeed;
             switch (e.KeyCode)
             {
-                case Keys.Left:
-                    if (Input.Keyboard.IsKeyDown(Input.Key.Right)) return;
-                    AdjustPosition(-speed, 0, e);
-                    if (first)
-                    {
-                        NextKeyDown(sender, e, Keys.Up);
-                        NextKeyDown(sender, e, Keys.Down);
-                    }
-                    break;
-                case Keys.Right:
-                    if (Input.Keyboard.IsKeyDown(Input.Key.Left)) return;
-                    AdjustPosition(speed, 0, e);
-                    if (first)
-                    {
-                        NextKeyDown(sender, e, Keys.Down);
-                        NextKeyDown(sender, e, Keys.Up);
-                    }
-                    break;
                 case Keys.Up:
-                    if (Input.Keyboard.IsKeyDown(Input.Key.Down)) return;
-                    AdjustPosition(0, -speed, e);
-                    if (first)
-                    {
-                        NextKeyDown(sender, e, Keys.Right);
-                        NextKeyDown(sender, e, Keys.Left);
-                    }
+                    IsUpPressed = true;
                     break;
                 case Keys.Down:
-                    if (Input.Keyboard.IsKeyDown(Input.Key.Up)) return;
-                    AdjustPosition(0, speed, e);
-                    if (first)
-                    {
-                        NextKeyDown(sender, e, Keys.Left);
-                        NextKeyDown(sender, e, Keys.Right);
-                    }
+                    IsDownPressed = true;
+                    break;
+                case Keys.Left:
+                    IsLeftPressed = true;
+                    break;
+                case Keys.Right:
+                    IsRightPressed = true;
                     break;
                 case Keys.Tab:
                     IsBottomRightResizing = !IsBottomRightResizing;
-                    break;
+                    return;
             }
+
+            if ((IsUpPressed && IsDownPressed)
+                || (IsLeftPressed && IsRightPressed))
+            {
+                return;
+            }
+
+            int speed = e.Control ? MaxMoveSpeed : MinMoveSpeed;
+            int y = IsDownPressed ? speed : IsUpPressed ? -speed : 0;
+            int x = IsRightPressed ? speed : IsLeftPressed ? -speed : 0;
+            AdjustPosition(x, y, e);
         }
 
-        private void NextKeyDown(object sender, KeyEventArgs e, Keys k)
+        private void surface_KeyUp(object sender, KeyEventArgs e)
         {
-            if (Input.Keyboard.IsKeyDown(Input.KeyInterop.KeyFromVirtualKey((int)k)))
+            switch (e.KeyCode)
             {
-                ProcessKeyDown(sender, new KeyEventArgs(k | e.Modifiers));
+                case Keys.Up:
+                    IsUpPressed = false;
+                    break;
+                case Keys.Down:
+                    IsDownPressed = false;
+                    break;
+                case Keys.Left:
+                    IsLeftPressed = false;
+                    break;
+                case Keys.Right:
+                    IsRightPressed = false;
+                    break;
             }
         }
 
