@@ -1673,7 +1673,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto increment number.
+        ///   Looks up a localized string similar to Auto increment number. 0 pad left using {n}.
         /// </summary>
         internal static string ReplCodeMenuEntry_i_Auto_increment_number {
             get {
@@ -1754,7 +1754,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Random alphanumeric char.
+        ///   Looks up a localized string similar to Random alphanumeric char. Repeat using {n}.
         /// </summary>
         internal static string ReplCodeMenuEntry_ra_Random_alphanumeric_char {
             get {
@@ -1763,7 +1763,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Random number 0 to 9.
+        ///   Looks up a localized string similar to Random number 0 to 9. Repeat using {n}.
         /// </summary>
         internal static string ReplCodeMenuEntry_rn_Random_number_0_to_9 {
             get {

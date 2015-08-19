@@ -197,13 +197,13 @@
     <value>Unix timestamp</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Auto increment number</value>
+    <value>Auto increment number. 0 pad left using {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Random number 0 to 9</value>
+    <value>Random number 0 to 9. Repeat using {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Random alphanumeric char</value>
+    <value>Random alphanumeric char. Repeat using {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>Image width</value>

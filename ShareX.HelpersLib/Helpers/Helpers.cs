@@ -881,5 +881,15 @@ namespace ShareX.HelpersLib
         {
             return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
         }
+
+        public static string RepeatGenerator(int count, Func<string> generator)
+        {
+            string result = "";
+            for (int x = count; x > 0; x--)
+            {
+                result += generator();
+            }
+            return result;
+        }
     }
 }
