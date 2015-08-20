@@ -149,22 +149,19 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Insert:
                     if (IsCreating)
                     {
-                        CancelRegionSelection();
                         EndRegionSelection();
                     }
                     else
                     {
-                        RegionSelection(InputManager.MousePosition);
-                    }
-                    break;
-                case Keys.End:
-                    if (IsCreating)
-                    {
-                        EndRegionSelection();
-                    }
-                    else
-                    {
-                        DeselectArea();
+                        int areaIndex = SelectedAreaIndex;
+                        if (ResizeManager.Visible)
+                        {
+                            DeselectArea();
+                        }
+                        if (0 > areaIndex || areaIndex != AreaIntersect())
+                        {
+                            RegionSelection(InputManager.MousePosition);
+                        }
                     }
                     break;
                 case Keys.ShiftKey:
@@ -241,6 +238,10 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.Delete:
                     RemoveCurrentArea();
+                    if (IsCreating)
+                    {
+                        EndRegionSelection();
+                    }
                     break;
             }
         }
@@ -357,7 +358,10 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                RegionSelection(e.Location);
+                if (!IsCreating)
+                {
+                    RegionSelection(e.Location);
+                }
             }
         }
 

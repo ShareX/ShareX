@@ -177,7 +177,7 @@ X: {4} Y: {5}</value>
     <value>[F1] Hide tips</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
-    <value>[Right click] [Insert] Cancel region selection</value>
+    <value>[Right click] [Delete] Cancel region selection</value>
   </data>
   <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
     <value>[Esc] Cancel capture</value>
@@ -290,10 +290,7 @@ X: {4} Y: {5}</value>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
     <value>[Numpad + or -] Change triangle angle</value>
   </data>
-  <data name="RectangleRegion_WriteTips__End__Stop_region_editing" xml:space="preserve">
-    <value>[End] Stop editing the region</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__End__Stop_region_selection" xml:space="preserve">
-    <value>[End] Stop region selection</value>
+  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
+    <value>[Insert] Stop region selection</value>
   </data>
 </root>
