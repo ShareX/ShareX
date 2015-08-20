@@ -92,7 +92,7 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(typeof(Size), "250, 250"), Description("Fixed shape size.")]
         public Size FixedSize { get; set; }
 
-        [DefaultValue(10), Description("How much region size must be close to snap size for it to snap.")]
+        [DefaultValue(20), Description("How much region size must be close to snap size for it to snap.")]
         public int SnapDistance { get; set; }
 
         [Description("How close to a snap size you must be for it to snap.")]

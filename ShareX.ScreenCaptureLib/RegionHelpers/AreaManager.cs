@@ -167,7 +167,7 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.ShiftKey:
                     proportionalResizing = true;
                     break;
-                case Keys.ControlKey:
+                case Keys.Menu:
                     snapResizing = true;
                     break;
                 case Keys.NumPad1:
@@ -233,7 +233,7 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.ShiftKey:
                     proportionalResizing = false;
                     break;
-                case Keys.ControlKey:
+                case Keys.Menu:
                     snapResizing = false;
                     break;
                 case Keys.Delete:
