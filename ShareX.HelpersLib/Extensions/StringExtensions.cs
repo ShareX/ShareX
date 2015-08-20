@@ -278,8 +278,8 @@ namespace ShareX.HelpersLib
             int f = 0;
             int b = 0;
             while (text.Length > f
-                   && 0 < (f = text.IndexOf(front, f))
-                   && 0 < (b = text.IndexOf(back, f + front.Length)))
+                   && 0 <= (f = text.IndexOf(front, f))
+                   && 0 <= (b = text.IndexOf(back, f + front.Length)))
             {
                 string result = text.Substring(f, (b + back.Length) - f);
                 yield return new Tuple<string, string>(result, result.Substring(front.Length, (result.Length - back.Length) - front.Length));
