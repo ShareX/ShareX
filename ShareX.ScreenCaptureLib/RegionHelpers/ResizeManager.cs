@@ -56,6 +56,11 @@ namespace ShareX.ScreenCaptureLib
         public int MinMoveSpeed { get; set; }
         public bool IsBottomRightResizing { get; set; }
 
+        private bool IsUpPressed { get; set; }
+        private bool IsDownPressed { get; set; }
+        private bool IsLeftPressed { get; set; }
+        private bool IsRightPressed { get; set; }
+
         private AreaManager areaManager;
         private NodeObject[] nodes;
         private Rectangle tempRect;
@@ -68,6 +73,7 @@ namespace ShareX.ScreenCaptureLib
             MaxMoveSpeed = surface.Config.MaxMoveSpeed;
 
             surface.KeyDown += surface_KeyDown;
+            surface.KeyUp += surface_KeyUp;
 
             nodes = new NodeObject[8];
 
@@ -149,89 +155,63 @@ namespace ShareX.ScreenCaptureLib
 
         private void surface_KeyDown(object sender, KeyEventArgs e)
         {
-            int speed;
-
-            if (e.Control)
-            {
-                speed = MaxMoveSpeed;
-            }
-            else
-            {
-                speed = MinMoveSpeed;
-            }
-
             switch (e.KeyCode)
             {
-                case Keys.Left:
-                    if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
-                    {
-                        Cursor.Position = new Point(Cursor.Position.X - speed, Cursor.Position.Y);
-                    }
-                    else
-                    {
-                        if (e.Shift)
-                        {
-                            MoveCurrentArea(-speed, 0);
-                        }
-                        else
-                        {
-                            ResizeCurrentArea(-speed, 0, IsBottomRightResizing);
-                        }
-                    }
-                    break;
-                case Keys.Right:
-                    if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
-                    {
-                        Cursor.Position = new Point(Cursor.Position.X + speed, Cursor.Position.Y);
-                    }
-                    else
-                    {
-                        if (e.Shift)
-                        {
-                            MoveCurrentArea(speed, 0);
-                        }
-                        else
-                        {
-                            ResizeCurrentArea(speed, 0, IsBottomRightResizing);
-                        }
-                    }
-                    break;
                 case Keys.Up:
-                    if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
-                    {
-                        Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y - speed);
-                    }
-                    else
-                    {
-                        if (e.Shift)
-                        {
-                            MoveCurrentArea(0, -speed);
-                        }
-                        else
-                        {
-                            ResizeCurrentArea(0, -speed, IsBottomRightResizing);
-                        }
-                    }
+                    IsUpPressed = true;
                     break;
                 case Keys.Down:
-                    if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
-                    {
-                        Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y + speed);
-                    }
-                    else
-                    {
-                        if (e.Shift)
-                        {
-                            MoveCurrentArea(0, speed);
-                        }
-                        else
-                        {
-                            ResizeCurrentArea(0, speed, IsBottomRightResizing);
-                        }
-                    }
+                    IsDownPressed = true;
+                    break;
+                case Keys.Left:
+                    IsLeftPressed = true;
+                    break;
+                case Keys.Right:
+                    IsRightPressed = true;
                     break;
                 case Keys.Tab:
                     IsBottomRightResizing = !IsBottomRightResizing;
+                    return;
+            }
+
+            // Calculate cursor movement
+            int speed = e.Control ? MaxMoveSpeed : MinMoveSpeed;
+            int y = IsUpPressed && IsDownPressed ? 0 : IsDownPressed ? speed : IsUpPressed ? -speed : 0;
+            int x = IsLeftPressed && IsRightPressed ? 0 : IsRightPressed ? speed : IsLeftPressed ? -speed : 0;
+
+            // Move the cursor
+            if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
+            {
+                Cursor.Position = new Point(Cursor.Position.X + x, Cursor.Position.Y + y);
+            }
+            else
+            {
+                if (e.Shift)
+                {
+                    MoveCurrentArea(x, y);
+                }
+                else
+                {
+                    ResizeCurrentArea(x, y, IsBottomRightResizing);
+                }
+            }
+        }
+
+        private void surface_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    IsUpPressed = false;
+                    break;
+                case Keys.Down:
+                    IsDownPressed = false;
+                    break;
+                case Keys.Left:
+                    IsLeftPressed = false;
+                    break;
+                case Keys.Right:
+                    IsRightPressed = false;
                     break;
             }
         }
