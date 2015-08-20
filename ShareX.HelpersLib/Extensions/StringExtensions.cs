@@ -31,6 +31,11 @@ namespace ShareX.HelpersLib
 {
     public static class StringExtensions
     {
+        public static bool Contains(this string str, string value, StringComparison comparisonType)
+        {
+            return str.IndexOf(value, comparisonType) >= 0;
+        }
+
         public static string Left(this string str, int length)
         {
             if (length < 1) return string.Empty;
