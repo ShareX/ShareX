@@ -348,7 +348,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (AreaManager.IsCreating)
             {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__End__Stop_region_selection);
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Insert__Stop_region_selection);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click__Cancel_region_selection);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
             }
@@ -367,7 +367,6 @@ namespace ShareX.ScreenCaptureLib
 
             if (!Config.QuickCrop && !AreaManager.IsCreating && AreaManager.IsCurrentAreaValid)
             {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__End__Stop_region_editing);
                 sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_, AreaManager.ResizeManager.IsBottomRightResizing ?
                     Resources.RectangleRegion_WriteTips_bottom_right : Resources.RectangleRegion_WriteTips_top_left));
                 sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_, AreaManager.ResizeManager.IsBottomRightResizing ?

@@ -292,24 +292,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [End] Stop editing the region.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__End__Stop_region_editing {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__End__Stop_region_editing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [End] Stop region selection.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__End__Stop_region_selection {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__End__Stop_region_selection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to [Esc] Cancel capture.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Esc__Cancel_capture {
@@ -378,6 +360,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string RectangleRegion_WriteTips__I___0__position_and_size_info {
             get {
                 return ResourceManager.GetString("RectangleRegion_WriteTips__I___0__position_and_size_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Insert] Stop region selection.
+        /// </summary>
+        internal static string RectangleRegion_WriteTips__Insert__Stop_region_selection {
+            get {
+                return ResourceManager.GetString("RectangleRegion_WriteTips__Insert__Stop_region_selection", resourceCulture);
             }
         }
         
@@ -490,7 +481,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Right click] [Insert] Cancel region selection.
+        ///   Looks up a localized string similar to [Right click] [Delete] Cancel region selection.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Right_click__Cancel_region_selection {
             get {
