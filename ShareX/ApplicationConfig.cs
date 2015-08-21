@@ -158,7 +158,7 @@ namespace ShareX
         [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
         public string BrowserPath { get; set; }
 
-        [Category("Application"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settigns to memory.")]
+        [Category("Application"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settings to memory.")]
         public bool DetectUploaderConfigFileChanges { get; set; }
 
         [Category("Clipboard upload"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
