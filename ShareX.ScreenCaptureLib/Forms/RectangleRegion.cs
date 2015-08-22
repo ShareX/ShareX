@@ -190,6 +190,15 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void Draw(Graphics g)
         {
+            if (AreaManager.IsCreating && AreaManager.IsSnapResizing)
+            {
+                foreach (Size size in Config.SnapSizes)
+                {
+                    Rectangle snapRect = CaptureHelpers.CalculateNewRectangle(AreaManager.PositionOnClick, AreaManager.CurrentPosition, size);
+                    g.DrawRectangleProper(markerPen, snapRect);
+                }
+            }
+
             RegionInfo[] areas = AreaManager.ValidAreas;
 
             if (areas.Length > 0 || !AreaManager.CurrentHoverArea.IsEmpty)
@@ -385,6 +394,7 @@ namespace ShareX.ScreenCaptureLib
             if (AreaManager.IsCreating)
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing);
+                sb.AppendLine("[Hold Alt] Snap resizing to preset sizes");
             }
 
             if (AreaManager.IsCurrentAreaValid)

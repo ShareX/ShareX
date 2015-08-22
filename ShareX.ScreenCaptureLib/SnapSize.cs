@@ -25,6 +25,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -74,6 +75,11 @@ namespace ShareX.ScreenCaptureLib
         {
             Width = width;
             Height = height;
+        }
+
+        public static implicit operator Size(SnapSize size)
+        {
+            return new Size(size.Width, size.Height);
         }
 
         public override string ToString()

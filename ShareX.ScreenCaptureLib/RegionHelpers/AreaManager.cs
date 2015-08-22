@@ -101,6 +101,9 @@ namespace ShareX.ScreenCaptureLib
         public int RoundedRectangleRadiusIncrement { get; set; }
         public TriangleAngle TriangleAngle { get; set; }
 
+        public Point CurrentPosition { get; private set; }
+        public Point PositionOnClick { get; private set; }
+
         public ResizeManager ResizeManager { get; private set; }
         public bool IsCreating { get; private set; }
         public bool IsMoving { get; private set; }
@@ -113,16 +116,15 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public bool IsProportionalResizing { get; private set; }
+        public bool IsSnapResizing { get; private set; }
+
         public List<Rectangle> Windows { get; set; }
         public bool WindowCaptureMode { get; set; }
         public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; }
 
         private RectangleRegion surface;
-        private Point currentPosition;
-        private Point positionOnClick;
-        private bool proportionalResizing;
-        private bool snapResizing;
 
         public AreaManager(RectangleRegion surface)
         {
@@ -165,10 +167,10 @@ namespace ShareX.ScreenCaptureLib
                     }
                     break;
                 case Keys.ShiftKey:
-                    proportionalResizing = true;
+                    IsProportionalResizing = true;
                     break;
                 case Keys.Menu:
-                    snapResizing = true;
+                    IsSnapResizing = true;
                     break;
                 case Keys.NumPad1:
                     ChangeCurrentShape(RegionShape.Rectangle);
@@ -231,10 +233,10 @@ namespace ShareX.ScreenCaptureLib
             switch (e.KeyCode)
             {
                 case Keys.ShiftKey:
-                    proportionalResizing = false;
+                    IsProportionalResizing = false;
                     break;
                 case Keys.Menu:
-                    snapResizing = false;
+                    IsSnapResizing = false;
                     break;
                 case Keys.Delete:
                     RemoveCurrentArea();
@@ -258,21 +260,21 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsCreating && !CurrentArea.IsEmpty)
             {
-                currentPosition = InputManager.MousePosition0Based;
+                CurrentPosition = InputManager.MousePosition0Based;
 
-                Point newPosition = currentPosition;
+                Point newPosition = CurrentPosition;
 
-                if (proportionalResizing)
+                if (IsProportionalResizing)
                 {
-                    newPosition = CaptureHelpers.ProportionalPosition(positionOnClick, currentPosition);
+                    newPosition = CaptureHelpers.ProportionalPosition(PositionOnClick, CurrentPosition);
                 }
 
-                if (snapResizing)
+                if (IsSnapResizing)
                 {
-                    newPosition = SnapPosition(positionOnClick, newPosition);
+                    newPosition = SnapPosition(PositionOnClick, newPosition);
                 }
 
-                CurrentArea = CaptureHelpers.CreateRectangle(positionOnClick, newPosition);
+                CurrentArea = CaptureHelpers.CreateRectangle(PositionOnClick, newPosition);
             }
 
             CheckHover();
@@ -290,32 +292,8 @@ namespace ShareX.ScreenCaptureLib
                 if (currentRect.Width.IsBetween(size.Width - surface.Config.SnapDistance, size.Width + surface.Config.SnapDistance) ||
                     currentRect.Height.IsBetween(size.Height - surface.Config.SnapDistance, size.Height + surface.Config.SnapDistance))
                 {
-                    if (posCurrent.X > posOnClick.X)
-                    {
-                        if (posCurrent.Y > posOnClick.Y)
-                        {
-                            newPosition = new Point(posOnClick.X + size.Width - 1, posOnClick.Y + size.Height - 1);
-                            break;
-                        }
-                        else
-                        {
-                            newPosition = new Point(posOnClick.X + size.Width - 1, posOnClick.Y - size.Height + 1);
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        if (posCurrent.Y > posOnClick.Y)
-                        {
-                            newPosition = new Point(posOnClick.X - size.Width + 1, posOnClick.Y + size.Height - 1);
-                            break;
-                        }
-                        else
-                        {
-                            newPosition = new Point(posOnClick.X - size.Width + 1, posOnClick.Y - size.Height + 1);
-                            break;
-                        }
-                    }
+                    newPosition = CaptureHelpers.CalculateNewPosition(posOnClick, posCurrent, size);
+                    break;
                 }
             }
 
@@ -385,7 +363,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             int areaIndex = AreaIntersect(InputManager.MousePosition0Based);
-            positionOnClick = InputManager.MousePosition0Based;
+            PositionOnClick = InputManager.MousePosition0Based;
 
             if (areaIndex > -1) // Select area
             {

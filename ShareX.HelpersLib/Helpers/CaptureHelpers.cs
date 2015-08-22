@@ -282,6 +282,38 @@ namespace ShareX.HelpersLib
             return newPosition;
         }
 
+        public static Point CalculateNewPosition(Point posOnClick, Point posCurrent, Size size)
+        {
+            if (posCurrent.X > posOnClick.X)
+            {
+                if (posCurrent.Y > posOnClick.Y)
+                {
+                    return new Point(posOnClick.X + size.Width - 1, posOnClick.Y + size.Height - 1);
+                }
+                else
+                {
+                    return new Point(posOnClick.X + size.Width - 1, posOnClick.Y - size.Height + 1);
+                }
+            }
+            else
+            {
+                if (posCurrent.Y > posOnClick.Y)
+                {
+                    return new Point(posOnClick.X - size.Width + 1, posOnClick.Y + size.Height - 1);
+                }
+                else
+                {
+                    return new Point(posOnClick.X - size.Width + 1, posOnClick.Y - size.Height + 1);
+                }
+            }
+        }
+
+        public static Rectangle CalculateNewRectangle(Point posOnClick, Point posCurrent, Size size)
+        {
+            Point newPosition = CalculateNewPosition(posOnClick, posCurrent, size);
+            return CreateRectangle(posOnClick, newPosition);
+        }
+
         public static Rectangle GetWindowRectangle(IntPtr handle)
         {
             Rectangle rect = Rectangle.Empty;
