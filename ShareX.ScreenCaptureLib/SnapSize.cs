@@ -78,7 +78,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override string ToString()
         {
-            return $"{Width}x{Height}";
+            return "{Width}x{Height}";
         }
     }
 }
