@@ -650,6 +650,20 @@ namespace ShareX
         {
             if (string.IsNullOrEmpty(filePath))
             {
+                if (Clipboard.ContainsImage() &&
+                    MessageBox.Show("Your clipboard contains image, would you like to open it in image editor?\r\n\r\nYes = Open image from clipboard.\r\nNo = Open image file dialog.",
+                    "Image editor - How to load image?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    using (Image img = Clipboard.GetImage())
+                    {
+                        if (img != null)
+                        {
+                            AnnotateImage(img, null);
+                            return;
+                        }
+                    }
+                }
+
                 filePath = ImageHelpers.OpenImageFileDialog();
             }
 
