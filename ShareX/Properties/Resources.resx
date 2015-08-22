@@ -767,4 +767,12 @@ Are you sure you want to continue?</value>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Downloading</value>
   </data>
+  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
+    <value>Your clipboard contains image, would you like to open it in image editor?
+
+Press yes to open image from clipboard. Alternatively, press no to open image file dialog box.</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
+    <value>Image editor - How to load image?</value>
+  </data>
 </root>

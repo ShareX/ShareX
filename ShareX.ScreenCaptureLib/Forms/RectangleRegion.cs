@@ -394,7 +394,7 @@ namespace ShareX.ScreenCaptureLib
             if (AreaManager.IsCreating)
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing);
-                sb.AppendLine("[Hold Alt] Snap resizing to preset sizes");
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes);
             }
 
             if (AreaManager.IsCurrentAreaValid)

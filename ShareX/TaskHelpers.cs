@@ -651,8 +651,8 @@ namespace ShareX
             if (string.IsNullOrEmpty(filePath))
             {
                 if (Clipboard.ContainsImage() &&
-                    MessageBox.Show("Your clipboard contains image, would you like to open it in image editor?\r\n\r\nPress yes to open image from clipboard. Alternatively, press no to open image file dialog box.",
-                    "Image editor - How to load image?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    MessageBox.Show(Resources.TaskHelpers_OpenImageEditor_Your_clipboard_contains_image,
+                    Resources.TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     using (Image img = Clipboard.GetImage())
                     {

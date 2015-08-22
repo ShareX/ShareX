@@ -1581,6 +1581,26 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image editor - How to load image?.
+        /// </summary>
+        public static string TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your clipboard contains image, would you like to open it in image editor?
+        ///
+        ///Press yes to open image from clipboard. Alternatively, press no to open image file dialog box..
+        /// </summary>
+        public static string TaskHelpers_OpenImageEditor_Your_clipboard_contains_image {
+            get {
+                return ResourceManager.GetString("TaskHelpers_OpenImageEditor_Your_clipboard_contains_image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copied to clipboard: {0}.
         /// </summary>
         public static string TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_ {

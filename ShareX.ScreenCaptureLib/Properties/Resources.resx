@@ -293,4 +293,7 @@ X: {4} Y: {5}</value>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Insert] Stop region selection</value>
   </data>
+  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
+    <value>[Hold Alt] Snap resizing to preset sizes</value>
+  </data>
 </root>
