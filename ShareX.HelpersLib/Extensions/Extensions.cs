@@ -264,7 +264,7 @@ namespace ShareX.HelpersLib
 
         public static long ToUnix(this DateTime dateTime)
         {
-            return (dateTime.Ticks - 621355968000000000) / 10000000;
+            return Helpers.DateTimeToUnix(dateTime);
         }
 
         public static void AppendTextToSelection(this TextBox tb, string text)

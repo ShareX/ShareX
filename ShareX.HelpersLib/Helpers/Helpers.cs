@@ -891,5 +891,18 @@ namespace ShareX.HelpersLib
             }
             return result;
         }
+
+        public static DateTime UnixToDateTime(long unix)
+        {
+            long timeInTicks = unix * TimeSpan.TicksPerSecond;
+            return new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddTicks(timeInTicks);
+        }
+
+        public static long DateTimeToUnix(DateTime dateTime)
+        {
+            DateTime date = dateTime.ToUniversalTime();
+            long ticks = date.Ticks - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).Ticks;
+            return ticks / TimeSpan.TicksPerSecond;
+        }
     }
 }
