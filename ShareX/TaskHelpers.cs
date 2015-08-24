@@ -631,11 +631,11 @@ namespace ShareX
                 return;
             }
 
-            Program.Settings.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
-            VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, Program.Settings.VideoThumbnailOptions);
+            taskSettings.ToolsSettings.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
+            VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, taskSettings.ToolsSettings.VideoThumbnailOptions);
             thumbnailerForm.ThumbnailsTaken += thumbnails =>
             {
-                if (Program.Settings.VideoThumbnailOptions.UploadThumbnails)
+                if (taskSettings.ToolsSettings.VideoThumbnailOptions.UploadThumbnails)
                 {
                     foreach (VideoThumbnailInfo thumbnailInfo in thumbnails)
                     {

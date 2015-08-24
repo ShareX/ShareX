@@ -44,7 +44,6 @@ namespace ShareX
         public int NameParserAutoIncrementNumber = 0;
         public RecentItem[] RecentLinks = null;
         public bool DisableHotkeys = false;
-        public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
 
         public ApplicationConfig()
         {

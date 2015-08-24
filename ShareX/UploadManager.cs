@@ -160,10 +160,10 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                taskSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
-                string text = Indexer.Index(folderPath, taskSettings.IndexerSettings);
+                taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
+                string text = Indexer.Index(folderPath, taskSettings.ToolsSettings.IndexerSettings);
                 UploadTask task = UploadTask.CreateTextUploaderTask(text, taskSettings);
-                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.IndexerSettings.Output.ToString().ToLower());
+                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
                 TaskManager.Start(task);
             }
         }

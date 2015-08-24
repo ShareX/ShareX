@@ -31,6 +31,9 @@ namespace ShareX.HelpersLib
 {
     public partial class TabToTreeView : UserControl
     {
+        public delegate void TabChangedEventHandler(TabPage tabPage);
+        public event TabChangedEventHandler TabChanged;
+
         private TabControl mainTabControl;
 
         [Browsable(false)]
@@ -133,7 +136,12 @@ namespace ShareX.HelpersLib
         private void tvMain_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TabPage tabPage = e.Node.Tag as TabPage;
+            SelectTab(tabPage);
+            OnTabChanged(tabPage);
+        }
 
+        public void SelectTab(TabPage tabPage)
+        {
             if (tabPage != null)
             {
                 tvMain.BeginUpdate();
@@ -142,6 +150,22 @@ namespace ShareX.HelpersLib
                 tcMain.TabPages.Add(tabPage);
                 tvMain.Focus();
                 tvMain.EndUpdate();
+            }
+        }
+
+        public void SelectChild()
+        {
+            if (tvMain.SelectedNode.Nodes.Count > 0)
+            {
+                tvMain.SelectedNode = tvMain.SelectedNode.Nodes[0];
+            }
+        }
+
+        protected void OnTabChanged(TabPage tabPage)
+        {
+            if (TabChanged != null)
+            {
+                TabChanged(tabPage);
             }
         }
     }

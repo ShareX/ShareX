@@ -27,6 +27,7 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
 using ShareX.IndexerLib;
+using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
@@ -81,8 +82,8 @@ namespace ShareX
         public bool UseDefaultActions = true;
         public List<ExternalProgram> ExternalPrograms = new List<ExternalProgram>();
 
-        public bool UseDefaultIndexerSettings = true;
-        public IndexerSettings IndexerSettings = new IndexerSettings();
+        public bool UseDefaultToolsSettings = true;
+        public TaskSettingsTools ToolsSettings = new TaskSettingsTools();
 
         public bool UseDefaultAdvancedSettings = true;
         public TaskSettingsAdvanced AdvancedSettings = new TaskSettingsAdvanced();
@@ -117,7 +118,7 @@ namespace ShareX
             get
             {
                 return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && !OverrideFTP && !OverrideCustomUploader && UseDefaultGeneralSettings &&
-                    UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions && UseDefaultIndexerSettings &&
+                    UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions && UseDefaultToolsSettings &&
                     UseDefaultAdvancedSettings && !WatchFolderEnabled;
             }
         }
@@ -202,9 +203,9 @@ namespace ShareX
                     ExternalPrograms = defaultTaskSettings.ExternalPrograms;
                 }
 
-                if (UseDefaultIndexerSettings)
+                if (UseDefaultToolsSettings)
                 {
-                    IndexerSettings = defaultTaskSettings.IndexerSettings;
+                    ToolsSettings = defaultTaskSettings.ToolsSettings;
                 }
 
                 if (UseDefaultAdvancedSettings)
@@ -337,6 +338,12 @@ namespace ShareX
         public bool ClipboardUploadAutoIndexFolder = false;
 
         #endregion Upload / Clipboard upload
+    }
+
+    public class TaskSettingsTools
+    {
+        public IndexerSettings IndexerSettings = new IndexerSettings();
+        public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
     }
 
     public class TaskSettingsAdvanced

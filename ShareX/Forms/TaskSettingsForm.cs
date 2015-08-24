@@ -45,8 +45,6 @@ namespace ShareX
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTextFileUploaders;
         private bool loaded;
 
-        private readonly string ConfigureEncoder = Resources.TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____;
-
         public TaskSettingsForm(TaskSettings hotkeySetting, bool isDefault = false)
         {
             InitializeComponent();
@@ -58,7 +56,7 @@ namespace ShareX
             {
                 tcTaskSettings.TabPages.Remove(tpTask);
                 chkUseDefaultGeneralSettings.Visible = chkUseDefaultImageSettings.Visible = chkUseDefaultCaptureSettings.Visible = chkUseDefaultActions.Visible =
-                    chkUseDefaultUploadSettings.Visible = chkUseDefaultIndexerSettings.Visible = chkUseDefaultAdvancedSettings.Visible = false;
+                    chkUseDefaultUploadSettings.Visible = chkUseDefaultToolsSettings.Visible = chkUseDefaultAdvancedSettings.Visible = false;
             }
             else
             {
@@ -71,7 +69,7 @@ namespace ShareX
                 chkUseDefaultCaptureSettings.Checked = TaskSettings.UseDefaultCaptureSettings;
                 chkUseDefaultActions.Checked = TaskSettings.UseDefaultActions;
                 chkUseDefaultUploadSettings.Checked = TaskSettings.UseDefaultUploadSettings;
-                chkUseDefaultIndexerSettings.Checked = TaskSettings.UseDefaultIndexerSettings;
+                chkUseDefaultToolsSettings.Checked = TaskSettings.UseDefaultToolsSettings;
                 chkUseDefaultAdvancedSettings.Checked = TaskSettings.UseDefaultAdvancedSettings;
             }
 
@@ -280,8 +278,11 @@ namespace ShareX
             cbClipboardUploadShareURL.Checked = TaskSettings.UploadSettings.ClipboardUploadShareURL;
             cbClipboardUploadAutoIndexFolder.Checked = TaskSettings.UploadSettings.ClipboardUploadAutoIndexFolder;
 
-            // Indexer
-            pgIndexerConfig.SelectedObject = TaskSettings.IndexerSettings;
+            // Tools / Indexer
+            pgIndexer.SelectedObject = TaskSettings.ToolsSettings.IndexerSettings;
+
+            // Tools / Video thumbnailer
+            pgVideoThumbnailer.SelectedObject = TaskSettings.ToolsSettings.VideoThumbnailOptions;
 
             // Advanced
             pgTaskSettings.SelectedObject = TaskSettings.AdvancedSettings;
@@ -314,9 +315,9 @@ namespace ShareX
                 Program.Settings.VideoEncoders.ForEach(x => cboEncoder.Items.Add(x));
                 cboEncoder.SelectedIndex = TaskSettings.CaptureSettings.VideoEncoderSelected.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1);
             }
-            else if (!cboEncoder.Items.Contains(ConfigureEncoder))
+            else if (!cboEncoder.Items.Contains(Resources.TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____))
             {
-                cboEncoder.Items.Add(ConfigureEncoder);
+                cboEncoder.Items.Add(Resources.TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____);
                 cboEncoder.SelectedIndex = 0;
             }
         }
@@ -330,7 +331,7 @@ namespace ShareX
                 pCapture.Enabled = ((Control)tpRegionCapture).Enabled = ((Control)tpScreenRecorder).Enabled = ((Control)tpRectangleAnnotate).Enabled = !TaskSettings.UseDefaultCaptureSettings;
                 pActions.Enabled = !TaskSettings.UseDefaultActions;
                 pUpload.Enabled = ((Control)tpUploadClipboard).Enabled = !TaskSettings.UseDefaultUploadSettings;
-                pgIndexerConfig.Enabled = !TaskSettings.UseDefaultIndexerSettings;
+                ((Control)tpIndexer).Enabled = ((Control)tpVideoThumbnailer).Enabled = ((Control)tpIRCClient).Enabled = !TaskSettings.UseDefaultToolsSettings;
                 pgTaskSettings.Enabled = !TaskSettings.UseDefaultAdvancedSettings;
             }
         }
@@ -352,6 +353,14 @@ namespace ShareX
 
             lblNameFormatPatternPreviewActiveWindow.Text = Resources.TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_ + " " +
                 nameParser.Parse(TaskSettings.UploadSettings.NameFormatPatternActiveWindow);
+        }
+
+        private void tttvMain_TabChanged(TabPage tabPage)
+        {
+            if (IsDefault && tabPage == tpToolsMain)
+            {
+                tttvMain.SelectChild();
+            }
         }
 
         private void TaskSettingsForm_Resize(object sender, EventArgs e)
@@ -1157,15 +1166,15 @@ namespace ShareX
 
         #endregion Upload
 
-        #region Indexer
+        #region Tools
 
-        private void chkUseDefaultIndexerSettings_CheckedChanged(object sender, EventArgs e)
+        private void chkUseDefaultToolsSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultIndexerSettings = chkUseDefaultIndexerSettings.Checked;
+            TaskSettings.UseDefaultToolsSettings = chkUseDefaultToolsSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
-        #endregion Indexer
+        #endregion Tools
 
         #region Advanced
 
