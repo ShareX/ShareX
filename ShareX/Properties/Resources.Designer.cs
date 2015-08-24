@@ -310,6 +310,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap balloon_white {
+            get {
+                object obj = ResourceManager.GetObject("balloon-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap barcode_2d {
             get {
                 object obj = ResourceManager.GetObject("barcode_2d", resourceCulture);
@@ -1581,6 +1591,26 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image editor - How to load image?.
+        /// </summary>
+        public static string TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your clipboard contains image, would you like to open it in image editor?
+        ///
+        ///Press yes to open image from clipboard. Alternatively, press no to open image file dialog box..
+        /// </summary>
+        public static string TaskHelpers_OpenImageEditor_Your_clipboard_contains_image {
+            get {
+                return ResourceManager.GetString("TaskHelpers_OpenImageEditor_Your_clipboard_contains_image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copied to clipboard: {0}.
         /// </summary>
         public static string TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_ {
@@ -1955,6 +1985,25 @@ namespace ShareX.Properties {
         public static string UploadTask_DoUploadJob_Uploading {
             get {
                 return ResourceManager.GetString("UploadTask_DoUploadJob_Uploading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are attempting to upload a large file.
+        ///Are you sure you want to continue?.
+        /// </summary>
+        public static string UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file {
+            get {
+                return ResourceManager.GetString("UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Downloading.
+        /// </summary>
+        public static string UploadTask_DownloadAndUpload_Downloading {
+            get {
+                return ResourceManager.GetString("UploadTask_DownloadAndUpload_Downloading", resourceCulture);
             }
         }
         

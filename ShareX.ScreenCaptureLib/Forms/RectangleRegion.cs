@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -190,6 +190,15 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void Draw(Graphics g)
         {
+            if (AreaManager.IsCreating && AreaManager.IsSnapResizing)
+            {
+                foreach (Size size in Config.SnapSizes)
+                {
+                    Rectangle snapRect = CaptureHelpers.CalculateNewRectangle(AreaManager.PositionOnClick, AreaManager.CurrentPosition, size);
+                    g.DrawRectangleProper(markerPen, snapRect);
+                }
+            }
+
             RegionInfo[] areas = AreaManager.ValidAreas;
 
             if (areas.Length > 0 || !AreaManager.CurrentHoverArea.IsEmpty)
@@ -348,6 +357,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (AreaManager.IsCreating)
             {
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Insert__Stop_region_selection);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click__Cancel_region_selection);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
             }
@@ -384,6 +394,7 @@ namespace ShareX.ScreenCaptureLib
             if (AreaManager.IsCreating)
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing);
+                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes);
             }
 
             if (AreaManager.IsCurrentAreaValid)

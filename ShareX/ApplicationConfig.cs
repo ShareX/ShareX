@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -44,7 +44,6 @@ namespace ShareX
         public int NameParserAutoIncrementNumber = 0;
         public RecentItem[] RecentLinks = null;
         public bool DisableHotkeys = false;
-        public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
 
         public ApplicationConfig()
         {
@@ -151,11 +150,14 @@ namespace ShareX
         [Category("Application"), DefaultValue(10), Description("In recent links tray menu max how many links to show.")]
         public int RecentLinksMaxCount { get; set; }
 
+        [Category("Application"), DefaultValue(100), Description("Large file size defined in MiB or MB. ShareX will warn before uploading large files. 0 disables this feature.")]
+        public int LargeFileSizeWarning { get; set; }
+
         [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
         [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
         public string BrowserPath { get; set; }
 
-        [Category("Application"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settigns to memory.")]
+        [Category("Application"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settings to memory.")]
         public bool DetectUploaderConfigFileChanges { get; set; }
 
         [Category("Clipboard upload"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]

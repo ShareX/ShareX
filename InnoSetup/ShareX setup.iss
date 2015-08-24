@@ -5,11 +5,11 @@
 #dim Version[4]
 #expr ParseVersion(AppPath, Version[0], Version[1], Version[2], Version[3])
 #define AppVersion Str(Version[0]) + "." + Str(Version[1]) + "." + Str(Version[2])
-#define AppPublisher "ShareX Developers"
+#define AppPublisher "ShareX Team"
 #define AppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"
 
 [Setup]
-AppCopyright=Copyright (C) 2007-2015 {#AppPublisher}
+AppCopyright=Copyright (c) 2007-2015 {#AppPublisher}
 AppId={#AppId}
 AppMutex={#AppId}
 AppName={#AppName}

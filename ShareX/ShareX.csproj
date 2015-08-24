@@ -827,6 +827,10 @@
       <Project>{750c6f46-2c5a-4488-81d3-3b35ca50f3ee}</Project>
       <Name>ShareX.IndexerLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShareX.IRCLib\ShareX.IRCLib.csproj">
+      <Project>{ef7fcc3f-b776-4a5e-bddc-32329ab11a58}</Project>
+      <Name>ShareX.IRCLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj">
       <Project>{1a190e53-1419-4cc2-b0e5-3bc7ea861c8b}</Project>
       <Name>ShareX.MediaLib</Name>
@@ -1000,6 +1004,7 @@
     <None Include="Resources\keyboard--plus.png" />
     <None Include="Resources\images-stack.png" />
     <None Include="Resources\br.png" />
+    <None Include="Resources\balloon-white.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

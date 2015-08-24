@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -520,6 +520,15 @@ namespace ShareX
                 isPositionChanged = true;
             }
 
+            // Adjust the menu width to the items
+            tsMain.Width = tsMain.PreferredSize.Width;
+
+            // Calculate the required height to view the whole menu
+            int height = Size.Height + tsMain.PreferredSize.Height - tsMain.Height;
+
+            // Set the minimum size of the form to prevent menu items from hidding
+            MinimumSize = new Size(MinimumSize.Width, height);
+
             if (Program.Settings.RememberMainFormSize && !Program.Settings.MainFormSize.IsEmpty)
             {
                 Size = Program.Settings.MainFormSize;
@@ -530,6 +539,11 @@ namespace ShareX
                     Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
                     Location = new Point(activeScreen.Width / 2 - Size.Width / 2, activeScreen.Height / 2 - Size.Height / 2);
                 }
+            }
+            else
+            {
+                // Adjust the size to the minimum if not loaded
+                Size = new Size(Size.Width, height);
             }
 
             switch (Program.Settings.ImagePreview)
@@ -932,14 +946,29 @@ namespace ShareX
             TaskHelpers.OpenScreenColorPicker();
         }
 
-        private void tsmiFTPClient_Click(object sender, EventArgs e)
+        private void tsmiImageEditor_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenFTPClient();
+            TaskHelpers.OpenImageEditor();
+        }
+
+        private void tsmiImageEffects_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageEffects();
         }
 
         private void tsmiHashCheck_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenHashCheck();
+        }
+
+        private void tsmiDNSChanger_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenDNSChanger();
+        }
+
+        private void tsmiQRCode_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenQRCode();
         }
 
         private void tsmiRuler_Click(object sender, EventArgs e)
@@ -962,34 +991,24 @@ namespace ShareX
             TaskHelpers.OpenVideoThumbnailer();
         }
 
-        private void tsmiImageEditor_Click(object sender, EventArgs e)
+        private void tsmiFTPClient_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenImageEditor();
+            TaskHelpers.OpenFTPClient();
         }
 
-        private void tsmiImageEffects_Click(object sender, EventArgs e)
+        private void tsmiIRCClient_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenImageEffects();
-        }
-
-        private void tsmiMonitorTest_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenMonitorTest();
-        }
-
-        private void tsmiDNSChanger_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDNSChanger();
-        }
-
-        private void tsmiQRCode_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenQRCode();
+            TaskHelpers.OpenIRCClient();
         }
 
         private void tsmiTweetMessage_Click(object sender, EventArgs e)
         {
             TaskHelpers.TweetMessage();
+        }
+
+        private void tsmiMonitorTest_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenMonitorTest();
         }
 
         private void tsddbDestinations_DropDownOpened(object sender, EventArgs e)
@@ -1791,7 +1810,7 @@ namespace ShareX
             {
                 if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
                 {
-                    Helpers.PlaySoundAsync(Resources.CaptureSound);
+                    TaskHelpers.PlayCaptureSound(taskSettings);
                 }
 
                 if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture && !IsRegionCapture(captureType))

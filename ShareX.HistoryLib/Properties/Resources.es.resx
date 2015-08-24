@@ -121,7 +121,7 @@
     <value>Historial: {0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>Total</value>
+    <value>Total: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>Copiar</value>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing;
@@ -82,7 +83,7 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(1), Description("Number of pixels to move shape at each arrow key stroke.")]
         public int MinMoveSpeed { get; set; }
 
-        [DefaultValue(5), Description("Number of pixels to move shape at each arrow key stroke while holding Ctrl key.")]
+        [DefaultValue(10), Description("Number of pixels to move shape at each arrow key stroke while holding Ctrl key.")]
         public int MaxMoveSpeed { get; set; }
 
         [DefaultValue(false), Description("Fixed shape size.")]
@@ -91,12 +92,32 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(typeof(Size), "250, 250"), Description("Fixed shape size.")]
         public Size FixedSize { get; set; }
 
+        [DefaultValue(20), Description("How much region size must be close to snap size for it to snap.")]
+        public int SnapDistance { get; set; }
+
+        [Description("How close to a snap size you must be for it to snap.")]
+        public List<SnapSize> SnapSizes { get; set; }
+
         [DefaultValue(RegionShape.Rectangle), Description("Current region shape.")]
         public RegionShape CurrentRegionShape { get; set; }
 
         public SurfaceOptions()
         {
             this.ApplyDefaultPropertyValues();
+
+            SnapSizes = new List<SnapSize>()
+            {
+                new SnapSize(426, 240), // 240p
+                new SnapSize(640, 360), // 360p
+                new SnapSize(854, 480), // 480p
+                new SnapSize(1280, 720), // 720p
+                new SnapSize(1920, 1080), // 1080p
+                new SnapSize(2560, 1440), // 1440p
+                new SnapSize(3840, 2160), // 2160p
+                new SnapSize(800, 600), // SVGA
+                new SnapSize(1024, 768), // XGA
+                new SnapSize(4096, 2160) // 4K
+            };
         }
     }
 }

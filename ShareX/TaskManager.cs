@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -54,14 +54,17 @@ namespace ShareX
 
         public static void Start(UploadTask task)
         {
-            Tasks.Add(task);
-            UpdateMainFormTip();
-            task.StatusChanged += task_StatusChanged;
-            task.UploadStarted += task_UploadStarted;
-            task.UploadProgressChanged += task_UploadProgressChanged;
-            task.UploadCompleted += task_UploadCompleted;
-            CreateListViewItem(task);
-            StartTasks();
+            if (task != null)
+            {
+                Tasks.Add(task);
+                UpdateMainFormTip();
+                task.StatusChanged += task_StatusChanged;
+                task.UploadStarted += task_UploadStarted;
+                task.UploadProgressChanged += task_UploadProgressChanged;
+                task.UploadCompleted += task_UploadCompleted;
+                CreateListViewItem(task);
+                StartTasks();
+            }
         }
 
         public static void Remove(UploadTask task)
@@ -266,9 +269,9 @@ namespace ShareX
 
                             if (!info.TaskSettings.AdvancedSettings.DisableNotifications)
                             {
-                                if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                                if (info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                 {
-                                    Helpers.PlaySoundAsync(Resources.ErrorSound);
+                                    TaskHelpers.PlayErrorSound(info.TaskSettings);
                                 }
 
                                 if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && Program.MainForm.niTray.Visible && !string.IsNullOrEmpty(errors))
@@ -303,7 +306,7 @@ namespace ShareX
 
                             if (!task.StopRequested && !string.IsNullOrEmpty(result))
                             {
-                                if (task.Info.TaskSettings.GeneralSettings.SaveHistory)
+                                if (info.TaskSettings.GeneralSettings.SaveHistory)
                                 {
                                     HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
                                 }
@@ -321,9 +324,9 @@ namespace ShareX
 
                                 if (!info.TaskSettings.AdvancedSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
                                 {
-                                    if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                                    if (info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                     {
-                                        Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
+                                        TaskHelpers.PlayTaskCompleteSound(info.TaskSettings);
                                     }
 
                                     if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))

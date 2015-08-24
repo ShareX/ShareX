@@ -265,13 +265,13 @@
     <value>14, 117</value>
   </data>
   <data name="lblOwners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="lblOwners.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="lblOwners.Text" xml:space="preserve">
-    <value>Owners:</value>
+    <value>ShareX Team:</value>
   </data>
   <data name="&gt;&gt;lblOwners.Name" xml:space="preserve">
     <value>lblOwners</value>

@@ -44,16 +44,12 @@
             this.chkOverrideCustomUploader = new System.Windows.Forms.CheckBox();
             this.chkOverrideFTP = new System.Windows.Forms.CheckBox();
             this.cboFTPaccounts = new System.Windows.Forms.ComboBox();
-            this.btnAfterCapture = new ShareX.HelpersLib.MenuButton();
-            this.btnAfterUpload = new ShareX.HelpersLib.MenuButton();
-            this.btnDestinations = new ShareX.HelpersLib.MenuButton();
             this.cmsDestinations = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiImageUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnTask = new ShareX.HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.panelGeneral = new System.Windows.Forms.Panel();
             this.chkShowBeforeUploadForm = new System.Windows.Forms.CheckBox();
@@ -127,6 +123,7 @@
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
             this.pgRegionCapture = new System.Windows.Forms.PropertyGrid();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
             this.cbGIFEncoding = new System.Windows.Forms.ComboBox();
             this.lblGIFEncoding = new System.Windows.Forms.Label();
             this.btnScreenRecorderFFmpegOptions = new System.Windows.Forms.Button();
@@ -149,11 +146,6 @@
             this.pActions = new System.Windows.Forms.Panel();
             this.btnActionsDuplicate = new System.Windows.Forms.Button();
             this.btnActionsAdd = new System.Windows.Forms.Button();
-            this.lvActions = new ShareX.HelpersLib.MyListView();
-            this.chActionsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnActionsEdit = new System.Windows.Forms.Button();
             this.btnActionsRemove = new System.Windows.Forms.Button();
             this.chkUseDefaultActions = new System.Windows.Forms.CheckBox();
@@ -185,14 +177,29 @@
             this.chkClipboardUploadURLContents = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadShortenURL = new System.Windows.Forms.CheckBox();
+            this.tpTools = new System.Windows.Forms.TabPage();
+            this.tcTools = new System.Windows.Forms.TabControl();
+            this.tpToolsMain = new System.Windows.Forms.TabPage();
+            this.chkUseDefaultToolsSettings = new System.Windows.Forms.CheckBox();
             this.tpIndexer = new System.Windows.Forms.TabPage();
-            this.pgIndexerConfig = new System.Windows.Forms.PropertyGrid();
-            this.chkUseDefaultIndexerSettings = new System.Windows.Forms.CheckBox();
+            this.pgIndexer = new System.Windows.Forms.PropertyGrid();
+            this.tpVideoThumbnailer = new System.Windows.Forms.TabPage();
+            this.pgVideoThumbnailer = new System.Windows.Forms.PropertyGrid();
+            this.tpIRCClient = new System.Windows.Forms.TabPage();
+            this.pgIRCClient = new System.Windows.Forms.PropertyGrid();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.btnAfterCapture = new ShareX.HelpersLib.MenuButton();
+            this.btnAfterUpload = new ShareX.HelpersLib.MenuButton();
+            this.btnDestinations = new ShareX.HelpersLib.MenuButton();
+            this.btnTask = new ShareX.HelpersLib.MenuButton();
+            this.lvActions = new ShareX.HelpersLib.MyListView();
+            this.chActionsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -233,7 +240,12 @@
             this.tpUploadNamePattern.SuspendLayout();
             this.pUpload.SuspendLayout();
             this.tpUploadClipboard.SuspendLayout();
+            this.tpTools.SuspendLayout();
+            this.tcTools.SuspendLayout();
+            this.tpToolsMain.SuspendLayout();
             this.tpIndexer.SuspendLayout();
+            this.tpVideoThumbnailer.SuspendLayout();
+            this.tpIRCClient.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -293,7 +305,7 @@
             this.tcTaskSettings.Controls.Add(this.tpActions);
             this.tcTaskSettings.Controls.Add(this.tpWatchFolders);
             this.tcTaskSettings.Controls.Add(this.tpUpload);
-            this.tcTaskSettings.Controls.Add(this.tpIndexer);
+            this.tcTaskSettings.Controls.Add(this.tpTools);
             this.tcTaskSettings.Controls.Add(this.tpAdvanced);
             resources.ApplyResources(this.tcTaskSettings, "tcTaskSettings");
             this.tcTaskSettings.Name = "tcTaskSettings";
@@ -348,30 +360,6 @@
             this.cboFTPaccounts.Name = "cboFTPaccounts";
             this.cboFTPaccounts.SelectedIndexChanged += new System.EventHandler(this.cboFTPaccounts_SelectedIndexChanged);
             // 
-            // btnAfterCapture
-            // 
-            resources.ApplyResources(this.btnAfterCapture, "btnAfterCapture");
-            this.btnAfterCapture.Menu = this.cmsAfterCapture;
-            this.btnAfterCapture.Name = "btnAfterCapture";
-            this.btnAfterCapture.UseMnemonic = false;
-            this.btnAfterCapture.UseVisualStyleBackColor = true;
-            // 
-            // btnAfterUpload
-            // 
-            resources.ApplyResources(this.btnAfterUpload, "btnAfterUpload");
-            this.btnAfterUpload.Menu = this.cmsAfterUpload;
-            this.btnAfterUpload.Name = "btnAfterUpload";
-            this.btnAfterUpload.UseMnemonic = false;
-            this.btnAfterUpload.UseVisualStyleBackColor = true;
-            // 
-            // btnDestinations
-            // 
-            resources.ApplyResources(this.btnDestinations, "btnDestinations");
-            this.btnDestinations.Menu = this.cmsDestinations;
-            this.btnDestinations.Name = "btnDestinations";
-            this.btnDestinations.UseMnemonic = false;
-            this.btnDestinations.UseVisualStyleBackColor = true;
-            // 
             // cmsDestinations
             // 
             this.cmsDestinations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -412,14 +400,6 @@
             this.tsmiURLSharingServices.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiURLSharingServices.Name = "tsmiURLSharingServices";
             resources.ApplyResources(this.tsmiURLSharingServices, "tsmiURLSharingServices");
-            // 
-            // btnTask
-            // 
-            resources.ApplyResources(this.btnTask, "btnTask");
-            this.btnTask.Menu = this.cmsTask;
-            this.btnTask.Name = "btnTask";
-            this.btnTask.UseMnemonic = false;
-            this.btnTask.UseVisualStyleBackColor = true;
             // 
             // tpGeneral
             // 
@@ -1048,6 +1028,13 @@
             this.tpScreenRecorder.Name = "tpScreenRecorder";
             this.tpScreenRecorder.UseVisualStyleBackColor = true;
             // 
+            // cbScreenRecorderShowCursor
+            // 
+            resources.ApplyResources(this.cbScreenRecorderShowCursor, "cbScreenRecorderShowCursor");
+            this.cbScreenRecorderShowCursor.Name = "cbScreenRecorderShowCursor";
+            this.cbScreenRecorderShowCursor.UseVisualStyleBackColor = true;
+            this.cbScreenRecorderShowCursor.CheckedChanged += new System.EventHandler(this.cbScreenRecorderShowCursor_CheckedChanged);
+            // 
             // cbGIFEncoding
             // 
             this.cbGIFEncoding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1261,42 +1248,6 @@
             this.btnActionsAdd.Name = "btnActionsAdd";
             this.btnActionsAdd.UseVisualStyleBackColor = true;
             this.btnActionsAdd.Click += new System.EventHandler(this.btnActionsAdd_Click);
-            // 
-            // lvActions
-            // 
-            this.lvActions.AllowDrop = true;
-            this.lvActions.AllowItemDrag = true;
-            resources.ApplyResources(this.lvActions, "lvActions");
-            this.lvActions.AutoFillColumn = true;
-            this.lvActions.CheckBoxes = true;
-            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chActionsName,
-            this.chActionsPath,
-            this.chActionsArgs,
-            this.chActionsExtensions});
-            this.lvActions.FullRowSelect = true;
-            this.lvActions.MultiSelect = false;
-            this.lvActions.Name = "lvActions";
-            this.lvActions.UseCompatibleStateImageBehavior = false;
-            this.lvActions.View = System.Windows.Forms.View.Details;
-            this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
-            this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
-            // 
-            // chActionsName
-            // 
-            resources.ApplyResources(this.chActionsName, "chActionsName");
-            // 
-            // chActionsPath
-            // 
-            resources.ApplyResources(this.chActionsPath, "chActionsPath");
-            // 
-            // chActionsArgs
-            // 
-            resources.ApplyResources(this.chActionsArgs, "chActionsArgs");
-            // 
-            // chActionsExtensions
-            // 
-            resources.ApplyResources(this.chActionsExtensions, "chActionsExtensions");
             // 
             // btnActionsEdit
             // 
@@ -1523,30 +1474,83 @@
             this.cbClipboardUploadShortenURL.UseVisualStyleBackColor = true;
             this.cbClipboardUploadShortenURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoDetectURL_CheckedChanged);
             // 
+            // tpTools
+            // 
+            this.tpTools.Controls.Add(this.tcTools);
+            resources.ApplyResources(this.tpTools, "tpTools");
+            this.tpTools.Name = "tpTools";
+            this.tpTools.UseVisualStyleBackColor = true;
+            // 
+            // tcTools
+            // 
+            this.tcTools.Controls.Add(this.tpToolsMain);
+            this.tcTools.Controls.Add(this.tpIndexer);
+            this.tcTools.Controls.Add(this.tpVideoThumbnailer);
+            this.tcTools.Controls.Add(this.tpIRCClient);
+            resources.ApplyResources(this.tcTools, "tcTools");
+            this.tcTools.Name = "tcTools";
+            this.tcTools.SelectedIndex = 0;
+            // 
+            // tpToolsMain
+            // 
+            this.tpToolsMain.Controls.Add(this.chkUseDefaultToolsSettings);
+            resources.ApplyResources(this.tpToolsMain, "tpToolsMain");
+            this.tpToolsMain.Name = "tpToolsMain";
+            this.tpToolsMain.UseVisualStyleBackColor = true;
+            // 
+            // chkUseDefaultToolsSettings
+            // 
+            resources.ApplyResources(this.chkUseDefaultToolsSettings, "chkUseDefaultToolsSettings");
+            this.chkUseDefaultToolsSettings.Checked = true;
+            this.chkUseDefaultToolsSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkUseDefaultToolsSettings.Name = "chkUseDefaultToolsSettings";
+            this.chkUseDefaultToolsSettings.UseVisualStyleBackColor = true;
+            this.chkUseDefaultToolsSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultToolsSettings_CheckedChanged);
+            // 
             // tpIndexer
             // 
-            this.tpIndexer.Controls.Add(this.pgIndexerConfig);
-            this.tpIndexer.Controls.Add(this.chkUseDefaultIndexerSettings);
+            this.tpIndexer.Controls.Add(this.pgIndexer);
             resources.ApplyResources(this.tpIndexer, "tpIndexer");
             this.tpIndexer.Name = "tpIndexer";
             this.tpIndexer.UseVisualStyleBackColor = true;
             // 
-            // pgIndexerConfig
+            // pgIndexer
             // 
-            this.pgIndexerConfig.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            resources.ApplyResources(this.pgIndexerConfig, "pgIndexerConfig");
-            this.pgIndexerConfig.Name = "pgIndexerConfig";
-            this.pgIndexerConfig.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgIndexerConfig.ToolbarVisible = false;
+            this.pgIndexer.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            resources.ApplyResources(this.pgIndexer, "pgIndexer");
+            this.pgIndexer.Name = "pgIndexer";
+            this.pgIndexer.PropertySort = System.Windows.Forms.PropertySort.Categorized;
+            this.pgIndexer.ToolbarVisible = false;
             // 
-            // chkUseDefaultIndexerSettings
+            // tpVideoThumbnailer
             // 
-            resources.ApplyResources(this.chkUseDefaultIndexerSettings, "chkUseDefaultIndexerSettings");
-            this.chkUseDefaultIndexerSettings.Checked = true;
-            this.chkUseDefaultIndexerSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultIndexerSettings.Name = "chkUseDefaultIndexerSettings";
-            this.chkUseDefaultIndexerSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultIndexerSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultIndexerSettings_CheckedChanged);
+            this.tpVideoThumbnailer.Controls.Add(this.pgVideoThumbnailer);
+            resources.ApplyResources(this.tpVideoThumbnailer, "tpVideoThumbnailer");
+            this.tpVideoThumbnailer.Name = "tpVideoThumbnailer";
+            this.tpVideoThumbnailer.UseVisualStyleBackColor = true;
+            // 
+            // pgVideoThumbnailer
+            // 
+            this.pgVideoThumbnailer.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            resources.ApplyResources(this.pgVideoThumbnailer, "pgVideoThumbnailer");
+            this.pgVideoThumbnailer.Name = "pgVideoThumbnailer";
+            this.pgVideoThumbnailer.PropertySort = System.Windows.Forms.PropertySort.Categorized;
+            this.pgVideoThumbnailer.ToolbarVisible = false;
+            // 
+            // tpIRCClient
+            // 
+            this.tpIRCClient.Controls.Add(this.pgIRCClient);
+            resources.ApplyResources(this.tpIRCClient, "tpIRCClient");
+            this.tpIRCClient.Name = "tpIRCClient";
+            this.tpIRCClient.UseVisualStyleBackColor = true;
+            // 
+            // pgIRCClient
+            // 
+            this.pgIRCClient.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            resources.ApplyResources(this.pgIRCClient, "pgIRCClient");
+            this.pgIRCClient.Name = "pgIRCClient";
+            this.pgIRCClient.PropertySort = System.Windows.Forms.PropertySort.Categorized;
+            this.pgIRCClient.ToolbarVisible = false;
             // 
             // tpAdvanced
             // 
@@ -1573,6 +1577,74 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
+            // btnAfterCapture
+            // 
+            resources.ApplyResources(this.btnAfterCapture, "btnAfterCapture");
+            this.btnAfterCapture.Menu = this.cmsAfterCapture;
+            this.btnAfterCapture.Name = "btnAfterCapture";
+            this.btnAfterCapture.UseMnemonic = false;
+            this.btnAfterCapture.UseVisualStyleBackColor = true;
+            // 
+            // btnAfterUpload
+            // 
+            resources.ApplyResources(this.btnAfterUpload, "btnAfterUpload");
+            this.btnAfterUpload.Menu = this.cmsAfterUpload;
+            this.btnAfterUpload.Name = "btnAfterUpload";
+            this.btnAfterUpload.UseMnemonic = false;
+            this.btnAfterUpload.UseVisualStyleBackColor = true;
+            // 
+            // btnDestinations
+            // 
+            resources.ApplyResources(this.btnDestinations, "btnDestinations");
+            this.btnDestinations.Menu = this.cmsDestinations;
+            this.btnDestinations.Name = "btnDestinations";
+            this.btnDestinations.UseMnemonic = false;
+            this.btnDestinations.UseVisualStyleBackColor = true;
+            // 
+            // btnTask
+            // 
+            resources.ApplyResources(this.btnTask, "btnTask");
+            this.btnTask.Menu = this.cmsTask;
+            this.btnTask.Name = "btnTask";
+            this.btnTask.UseMnemonic = false;
+            this.btnTask.UseVisualStyleBackColor = true;
+            // 
+            // lvActions
+            // 
+            this.lvActions.AllowDrop = true;
+            this.lvActions.AllowItemDrag = true;
+            resources.ApplyResources(this.lvActions, "lvActions");
+            this.lvActions.AutoFillColumn = true;
+            this.lvActions.CheckBoxes = true;
+            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chActionsName,
+            this.chActionsPath,
+            this.chActionsArgs,
+            this.chActionsExtensions});
+            this.lvActions.FullRowSelect = true;
+            this.lvActions.MultiSelect = false;
+            this.lvActions.Name = "lvActions";
+            this.lvActions.UseCompatibleStateImageBehavior = false;
+            this.lvActions.View = System.Windows.Forms.View.Details;
+            this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
+            this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
+            // 
+            // chActionsName
+            // 
+            resources.ApplyResources(this.chActionsName, "chActionsName");
+            // 
+            // chActionsPath
+            // 
+            resources.ApplyResources(this.chActionsPath, "chActionsPath");
+            // 
+            // chActionsArgs
+            // 
+            resources.ApplyResources(this.chActionsArgs, "chActionsArgs");
+            // 
+            // chActionsExtensions
+            // 
+            resources.ApplyResources(this.chActionsExtensions, "chActionsExtensions");
+            // 
             // tttvMain
             // 
             resources.ApplyResources(this.tttvMain, "tttvMain");
@@ -1581,13 +1653,7 @@
             this.tttvMain.Name = "tttvMain";
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
-            // 
-            // cbScreenRecorderShowCursor
-            // 
-            resources.ApplyResources(this.cbScreenRecorderShowCursor, "cbScreenRecorderShowCursor");
-            this.cbScreenRecorderShowCursor.Name = "cbScreenRecorderShowCursor";
-            this.cbScreenRecorderShowCursor.UseVisualStyleBackColor = true;
-            this.cbScreenRecorderShowCursor.CheckedChanged += new System.EventHandler(this.cbScreenRecorderShowCursor_CheckedChanged);
+            this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
             // TaskSettingsForm
             // 
@@ -1655,8 +1721,13 @@
             this.pUpload.PerformLayout();
             this.tpUploadClipboard.ResumeLayout(false);
             this.tpUploadClipboard.PerformLayout();
+            this.tpTools.ResumeLayout(false);
+            this.tcTools.ResumeLayout(false);
+            this.tpToolsMain.ResumeLayout(false);
+            this.tpToolsMain.PerformLayout();
             this.tpIndexer.ResumeLayout(false);
-            this.tpIndexer.PerformLayout();
+            this.tpVideoThumbnailer.ResumeLayout(false);
+            this.tpIRCClient.ResumeLayout(false);
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
             this.ResumeLayout(false);
@@ -1759,9 +1830,7 @@
         private System.Windows.Forms.CheckBox chkUseDefaultGeneralSettings;
         private System.Windows.Forms.Panel panelGeneral;
         private System.Windows.Forms.PropertyGrid pgRegionCapture;
-        private System.Windows.Forms.TabPage tpIndexer;
-        private System.Windows.Forms.PropertyGrid pgIndexerConfig;
-        private System.Windows.Forms.CheckBox chkUseDefaultIndexerSettings;
+        private System.Windows.Forms.TabPage tpTools;
         private System.Windows.Forms.NumericUpDown nudScreenRecorderStartDelay;
         private System.Windows.Forms.Button btnImageEffects;
         private System.Windows.Forms.CheckBox cbImageEffectOnlyRegionCapture;
@@ -1828,5 +1897,14 @@
         private System.Windows.Forms.ComboBox cbGIFEncoding;
         private System.Windows.Forms.Label lblGIFEncoding;
         private System.Windows.Forms.CheckBox cbScreenRecorderShowCursor;
+        private System.Windows.Forms.TabControl tcTools;
+        private System.Windows.Forms.TabPage tpToolsMain;
+        private System.Windows.Forms.TabPage tpIndexer;
+        private System.Windows.Forms.CheckBox chkUseDefaultToolsSettings;
+        private System.Windows.Forms.PropertyGrid pgIndexer;
+        private System.Windows.Forms.TabPage tpVideoThumbnailer;
+        private System.Windows.Forms.PropertyGrid pgVideoThumbnailer;
+        private System.Windows.Forms.TabPage tpIRCClient;
+        private System.Windows.Forms.PropertyGrid pgIRCClient;
     }
 }

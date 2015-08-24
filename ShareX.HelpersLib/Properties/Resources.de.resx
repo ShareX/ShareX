@@ -187,7 +187,7 @@
     <value>Zwischenablage ist leer oder enthält unbekannte Daten.</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
-    <value>Cyan: {0:0.0}%, Magenta {1:0.0}%, Gelb: {2:0.0}%, Schlüssel: {4:0.0}%</value>
+    <value>Cyan: {0:0.0}%, Magenta {1:0.0}%, Gelb: {2:0.0}%, Schlüssel: {3:0.0}%</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Schließen</value>

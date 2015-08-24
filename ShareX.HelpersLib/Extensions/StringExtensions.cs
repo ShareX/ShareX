@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,12 +24,18 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace ShareX.HelpersLib
 {
     public static class StringExtensions
     {
+        public static bool Contains(this string str, string value, StringComparison comparisonType)
+        {
+            return str.IndexOf(value, comparisonType) >= 0;
+        }
+
         public static string Left(this string str, int length)
         {
             if (length < 1) return string.Empty;
@@ -265,6 +271,20 @@ namespace ShareX.HelpersLib
         public static string[] Lines(this string text)
         {
             return text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+        }
+
+        public static IEnumerable<Tuple<string, string>> ForEachBetween(this string text, string front, string back)
+        {
+            int f = 0;
+            int b = 0;
+            while (text.Length > f
+                   && 0 <= (f = text.IndexOf(front, f))
+                   && 0 <= (b = text.IndexOf(back, f + front.Length)))
+            {
+                string result = text.Substring(f, (b + back.Length) - f);
+                yield return new Tuple<string, string>(result, result.Substring(front.Length, (result.Length - back.Length) - front.Length));
+                f += front.Length;
+            }
         }
     }
 }

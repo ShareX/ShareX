@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,6 +27,8 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
 using ShareX.IndexerLib;
+using ShareX.IRCLib;
+using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
@@ -81,8 +83,8 @@ namespace ShareX
         public bool UseDefaultActions = true;
         public List<ExternalProgram> ExternalPrograms = new List<ExternalProgram>();
 
-        public bool UseDefaultIndexerSettings = true;
-        public IndexerSettings IndexerSettings = new IndexerSettings();
+        public bool UseDefaultToolsSettings = true;
+        public TaskSettingsTools ToolsSettings = new TaskSettingsTools();
 
         public bool UseDefaultAdvancedSettings = true;
         public TaskSettingsAdvanced AdvancedSettings = new TaskSettingsAdvanced();
@@ -117,7 +119,7 @@ namespace ShareX
             get
             {
                 return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && !OverrideFTP && !OverrideCustomUploader && UseDefaultGeneralSettings &&
-                    UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions && UseDefaultIndexerSettings &&
+                    UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions && UseDefaultToolsSettings &&
                     UseDefaultAdvancedSettings && !WatchFolderEnabled;
             }
         }
@@ -202,9 +204,9 @@ namespace ShareX
                     ExternalPrograms = defaultTaskSettings.ExternalPrograms;
                 }
 
-                if (UseDefaultIndexerSettings)
+                if (UseDefaultToolsSettings)
                 {
-                    IndexerSettings = defaultTaskSettings.IndexerSettings;
+                    ToolsSettings = defaultTaskSettings.ToolsSettings;
                 }
 
                 if (UseDefaultAdvancedSettings)
@@ -339,19 +341,50 @@ namespace ShareX
         #endregion Upload / Clipboard upload
     }
 
+    public class TaskSettingsTools
+    {
+        public IndexerSettings IndexerSettings = new IndexerSettings();
+        public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
+        public IRCInfo IRCSettings = new IRCInfo();
+    }
+
     public class TaskSettingsAdvanced
     {
-        [Category("General"), DefaultValue(false), Description("Allow after capture tasks for image files by treating them as images when files are handled during file upload, clipboard file upload, drag && drop file upload, watch folder and other tasks.")]
+        [Category("General"), DefaultValue(false), Description("Allow after capture tasks for image files by loading them as bitmap when files are handled during file upload, clipboard file upload, drag && drop file upload, watch folder and other image file tasks.")]
         public bool ProcessImagesDuringFileUpload { get; set; }
 
         [Category("General"), DefaultValue(false), Description("Use after capture tasks for clipboard image upload.")]
         public bool ProcessImagesDuringClipboardUpload { get; set; }
 
-        [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
-        public bool AutoClearClipboard { get; set; }
+        [Category("General"), DefaultValue(true), Description("Allows file related after capture tasks (\"Perform actions\", \"Copy file to clipboard\" etc.) to be used when doing file upload.")]
+        public bool UseAfterCaptureTasksDuringFileUpload { get; set; }
 
         [Category("General"), DefaultValue(true), Description("Save text as file for tasks such as clipboard text upload, drag and drop text upload, index folder etc.")]
         public bool TextTaskSaveAsFile { get; set; }
+
+        [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
+        public bool AutoClearClipboard { get; set; }
+
+        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom capture sound.")]
+        public bool UseCustomCaptureSound { get; set; }
+
+        [Category("Sound"), DefaultValue(""), Description("Capture sound file path."),
+        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
+        public string CustomCaptureSoundPath { get; set; }
+
+        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom task complete sound.")]
+        public bool UseCustomTaskCompletedSound { get; set; }
+
+        [Category("Sound"), DefaultValue(""), Description("Task complete sound file path."),
+        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
+        public string CustomTaskCompletedSoundPath { get; set; }
+
+        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom error sound.")]
+        public bool UseCustomErrorSound { get; set; }
+
+        [Category("Sound"), DefaultValue(""), Description("Error sound file path."),
+        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
+        public string CustomErrorSoundPath { get; set; }
 
         [Category("Image"), DefaultValue(256), Description("Preferred thumbnail width. 0 means aspect ratio will be used to adjust width according to height.")]
         public int ThumbnailPreferredWidth { get; set; }
@@ -359,16 +392,16 @@ namespace ShareX
         [Category("Image"), DefaultValue(0), Description("Preferred thumbnail height. 0 means aspect ratio will be used to adjust height according to width.")]
         public int ThumbnailPreferredHeight { get; set; }
 
-        [Category("Paths"), Description("Custom capture path takes precedence over path configured in Application configuration.")]
-        [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
+        [Category("Paths"), Description("Custom capture path takes precedence over path configured in Application configuration."),
+        Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CapturePath { get; set; }
 
-        [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader.")]
-        [Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+        [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader."),
+        Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> ImageExtensions { get; set; }
 
-        [Category("Upload"), Description("Files with these file extensions will be uploaded using text uploader.")]
-        [Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+        [Category("Upload"), Description("Files with these file extensions will be uploaded using text uploader."),
+        Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> TextExtensions { get; set; }
 
         [Category("After upload"), DefaultValue(false), Description("If result URL starts with \"http://\" then replace it with \"https://\".")]
@@ -384,7 +417,7 @@ namespace ShareX
         [Category("After upload"), DefaultValue("$result"), Description("After upload task \"Open URL\" format. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
         public string OpenURLFormat { get; set; }
 
-        [Category("After upload / Automatic URL Shortener"), DefaultValue(0), Description("Automatically shorten URL if the URL is longer than the specified number of characters. 0 means automatic URL shortening is not active.")]
+        [Category("After upload"), DefaultValue(0), Description("Automatically shorten URL if the URL is longer than the specified number of characters. 0 means automatic URL shortening is not active.")]
         public int AutoShortenURLLength { get; set; }
 
         private float toastWindowDuration;

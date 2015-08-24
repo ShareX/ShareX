@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib.Properties;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Text;
@@ -177,6 +178,10 @@ namespace ShareX.HelpersLib
             if (sb.ToString().Contains(ReplCodeMenuEntry.i.ToPrefixString()))
             {
                 AutoIncrementNumber++;
+                foreach (Tuple<string, int> entry in ListEntryWithValue(sb.ToString(), ReplCodeMenuEntry.i.ToPrefixString()))
+                {
+                    sb.Replace(entry.Item1, Helpers.AddZeroes(AutoIncrementNumber, Math.Max(0, entry.Item2)));
+                }
                 sb.Replace(ReplCodeMenuEntry.i.ToPrefixString(), AutoIncrementNumber.ToString());
             }
 
@@ -190,6 +195,15 @@ namespace ShareX.HelpersLib
             }
 
             string result = sb.ToString();
+
+            foreach (Tuple<string, int> entry in ListEntryWithValue(result, ReplCodeMenuEntry.rn.ToPrefixString()))
+            {
+                result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Numbers).ToString()));
+            }
+            foreach (Tuple<string, int> entry in ListEntryWithValue(result, ReplCodeMenuEntry.ra.ToPrefixString()))
+            {
+                result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString()));
+            }
 
             result = result.ReplaceAll(ReplCodeMenuEntry.rn.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Numbers).ToString());
             result = result.ReplaceAll(ReplCodeMenuEntry.ra.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString());
@@ -217,6 +231,18 @@ namespace ShareX.HelpersLib
             }
 
             return result;
+        }
+
+        private IEnumerable<Tuple<string, int>> ListEntryWithValue(string text, string entry)
+        {
+            foreach (Tuple<string, string> s in text.ForEachBetween(entry + "{", "}"))
+            {
+                int n = 0;
+                if (int.TryParse(s.Item2, out n))
+                {
+                    yield return new Tuple<string, int>(s.Item1, n);
+                }
+            }
         }
     }
 }

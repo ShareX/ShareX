@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -101,6 +101,9 @@ namespace ShareX.ScreenCaptureLib
         public int RoundedRectangleRadiusIncrement { get; set; }
         public TriangleAngle TriangleAngle { get; set; }
 
+        public Point CurrentPosition { get; private set; }
+        public Point PositionOnClick { get; private set; }
+
         public ResizeManager ResizeManager { get; private set; }
         public bool IsCreating { get; private set; }
         public bool IsMoving { get; private set; }
@@ -113,15 +116,15 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public bool IsProportionalResizing { get; private set; }
+        public bool IsSnapResizing { get; private set; }
+
         public List<Rectangle> Windows { get; set; }
         public bool WindowCaptureMode { get; set; }
         public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; }
 
         private RectangleRegion surface;
-        private Point currentPosition;
-        private Point positionOnClick;
-        private bool proportionalResizing;
 
         public AreaManager(RectangleRegion surface)
         {
@@ -145,8 +148,29 @@ namespace ShareX.ScreenCaptureLib
         {
             switch (e.KeyCode)
             {
+                case Keys.Insert:
+                    if (IsCreating)
+                    {
+                        EndRegionSelection();
+                    }
+                    else
+                    {
+                        int areaIndex = SelectedAreaIndex;
+                        if (ResizeManager.Visible)
+                        {
+                            DeselectArea();
+                        }
+                        if (0 > areaIndex || areaIndex != AreaIntersect())
+                        {
+                            RegionSelection(InputManager.MousePosition);
+                        }
+                    }
+                    break;
                 case Keys.ShiftKey:
-                    proportionalResizing = true;
+                    IsProportionalResizing = true;
+                    break;
+                case Keys.Menu:
+                    IsSnapResizing = true;
                     break;
                 case Keys.NumPad1:
                     ChangeCurrentShape(RegionShape.Rectangle);
@@ -209,10 +233,17 @@ namespace ShareX.ScreenCaptureLib
             switch (e.KeyCode)
             {
                 case Keys.ShiftKey:
-                    proportionalResizing = false;
+                    IsProportionalResizing = false;
+                    break;
+                case Keys.Menu:
+                    IsSnapResizing = false;
                     break;
                 case Keys.Delete:
                     RemoveCurrentArea();
+                    if (IsCreating)
+                    {
+                        EndRegionSelection();
+                    }
                     break;
             }
         }
@@ -229,21 +260,51 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsCreating && !CurrentArea.IsEmpty)
             {
-                currentPosition = InputManager.MousePosition0Based;
+                CurrentPosition = InputManager.MousePosition0Based;
 
-                Point newPosition = currentPosition;
+                Point newPosition = CurrentPosition;
 
-                if (proportionalResizing)
+                if (IsProportionalResizing)
                 {
-                    newPosition = CaptureHelpers.ProportionalPosition(positionOnClick, currentPosition);
+                    newPosition = CaptureHelpers.ProportionalPosition(PositionOnClick, CurrentPosition);
                 }
 
-                CurrentArea = CaptureHelpers.CreateRectangle(positionOnClick, newPosition);
+                if (IsSnapResizing)
+                {
+                    newPosition = SnapPosition(PositionOnClick, newPosition);
+                }
+
+                CurrentArea = CaptureHelpers.CreateRectangle(PositionOnClick, newPosition);
             }
 
             CheckHover();
 
             ResizeManager.Update();
+        }
+
+        private Point SnapPosition(Point posOnClick, Point posCurrent)
+        {
+            Rectangle currentRect = CaptureHelpers.CreateRectangle(posOnClick, posCurrent);
+            Point newPosition = posCurrent;
+
+            foreach (SnapSize size in surface.Config.SnapSizes)
+            {
+                if (currentRect.Width.IsBetween(size.Width - surface.Config.SnapDistance, size.Width + surface.Config.SnapDistance) ||
+                    currentRect.Height.IsBetween(size.Height - surface.Config.SnapDistance, size.Height + surface.Config.SnapDistance))
+                {
+                    newPosition = CaptureHelpers.CalculateNewPosition(posOnClick, posCurrent, size);
+                    break;
+                }
+            }
+
+            Rectangle newRect = CaptureHelpers.CreateRectangle(posOnClick, newPosition);
+
+            if (surface.ScreenRectangle0Based.Contains(newRect))
+            {
+                return newPosition;
+            }
+
+            return posCurrent;
         }
 
         private void CheckHover()
@@ -273,36 +334,11 @@ namespace ShareX.ScreenCaptureLib
 
         private void surface_MouseDown(object sender, MouseEventArgs e)
         {
-            int areaIndex = AreaIntersect(InputManager.MousePosition0Based);
-
-            if (e.Button == MouseButtons.Left && !ResizeManager.IsCursorOnNode())
+            if (e.Button == MouseButtons.Left)
             {
-                positionOnClick = InputManager.MousePosition0Based;
-
-                if (areaIndex > -1) // Select area
+                if (!IsCreating)
                 {
-                    IsMoving = true;
-                    SelectedAreaIndex = areaIndex;
-                    SelectArea();
-                }
-                else if (!IsCreating) // Create new area
-                {
-                    DeselectArea();
-
-                    Rectangle rect;
-
-                    if (surface.Config.IsFixedSize)
-                    {
-                        IsMoving = true;
-                        rect = new Rectangle(new Point(e.X - surface.Config.FixedSize.Width / 2, e.Y - surface.Config.FixedSize.Height / 2), surface.Config.FixedSize);
-                    }
-                    else
-                    {
-                        IsCreating = true;
-                        rect = new Rectangle(e.Location, new Size(1, 1));
-                    }
-
-                    AddRegionInfo(rect);
+                    RegionSelection(e.Location);
                 }
             }
         }
@@ -311,55 +347,102 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                IsCreating = false;
-                IsMoving = false;
-
-                if (!CurrentArea.IsEmpty)
-                {
-                    if (!IsCurrentAreaValid)
-                    {
-                        RemoveCurrentArea();
-                        CheckHover();
-                    }
-                    else if (surface.Config.QuickCrop)
-                    {
-                        surface.UpdateRegionPath();
-                        surface.Close(SurfaceResult.Region);
-                    }
-                    else
-                    {
-                        SelectArea();
-                    }
-                }
-
-                if (!CurrentHoverArea.IsEmpty)
-                {
-                    AddRegionInfo(CurrentHoverArea);
-
-                    if (surface.Config.QuickCrop)
-                    {
-                        surface.UpdateRegionPath();
-                        surface.Close(SurfaceResult.Region);
-                    }
-                    else
-                    {
-                        SelectArea();
-                    }
-                }
+                EndRegionSelection();
             }
             else if (e.Button == MouseButtons.Right)
             {
-                int areaIndex = AreaIntersect();
+                CancelRegionSelection();
+            }
+        }
 
-                if (areaIndex > -1)
+        private void RegionSelection(Point location)
+        {
+            if (ResizeManager.IsCursorOnNode())
+            {
+                return;
+            }
+
+            int areaIndex = AreaIntersect(InputManager.MousePosition0Based);
+            PositionOnClick = InputManager.MousePosition0Based;
+
+            if (areaIndex > -1) // Select area
+            {
+                IsMoving = true;
+                SelectedAreaIndex = areaIndex;
+                SelectArea();
+            }
+            else if (!IsCreating) // Create new area
+            {
+                DeselectArea();
+
+                Rectangle rect;
+
+                if (surface.Config.IsFixedSize)
                 {
-                    Areas.RemoveAt(areaIndex);
-                    DeselectArea();
+                    IsMoving = true;
+                    rect = new Rectangle(new Point(location.X - surface.Config.FixedSize.Width / 2, location.Y - surface.Config.FixedSize.Height / 2), surface.Config.FixedSize);
                 }
                 else
                 {
-                    surface.Close(SurfaceResult.Close);
+                    IsCreating = true;
+                    rect = new Rectangle(location, new Size(1, 1));
                 }
+
+                AddRegionInfo(rect);
+            }
+        }
+
+        private void EndRegionSelection()
+        {
+            IsCreating = false;
+            IsMoving = false;
+
+            if (!CurrentArea.IsEmpty)
+            {
+                if (!IsCurrentAreaValid)
+                {
+                    RemoveCurrentArea();
+                    CheckHover();
+                }
+                else if (surface.Config.QuickCrop)
+                {
+                    surface.UpdateRegionPath();
+                    surface.Close(SurfaceResult.Region);
+                }
+                else
+                {
+                    SelectArea();
+                }
+            }
+
+            if (!CurrentHoverArea.IsEmpty)
+            {
+                AddRegionInfo(CurrentHoverArea);
+
+                if (surface.Config.QuickCrop)
+                {
+                    surface.UpdateRegionPath();
+                    surface.Close(SurfaceResult.Region);
+                }
+                else
+                {
+                    SelectArea();
+                }
+            }
+        }
+
+        private void CancelRegionSelection()
+        {
+            int areaIndex = AreaIntersect();
+
+            if (areaIndex > -1)
+            {
+                Areas.RemoveAt(areaIndex);
+                DeselectArea();
+            }
+            else
+            {
+                surface.Close(SurfaceResult.Close);
             }
         }
 

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2015 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -51,7 +51,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected TextureBrush darkBackgroundBrush, lightBackgroundBrush;
         protected GraphicsPath regionFillPath, regionDrawPath;
-        protected Pen borderPen, borderDotPen, textBackgroundPenWhite, textBackgroundPenBlack;
+        protected Pen borderPen, borderDotPen, textBackgroundPenWhite, textBackgroundPenBlack, markerPen;
         protected Brush nodeBackgroundBrush, textBackgroundBrush;
         protected Font textFont, infoFont;
         protected Stopwatch timerStart, timerFPS;
@@ -86,6 +86,7 @@ namespace ShareX.ScreenCaptureLib
             textBackgroundBrush = new SolidBrush(Color.FromArgb(75, Color.Black));
             textBackgroundPenWhite = new Pen(Color.FromArgb(50, Color.White));
             textBackgroundPenBlack = new Pen(Color.FromArgb(150, Color.Black));
+            markerPen = new Pen(Color.FromArgb(200, Color.Red)) { DashStyle = DashStyle.Dash };
         }
 
         private void InitializeComponent()
@@ -411,6 +412,7 @@ namespace ShareX.ScreenCaptureLib
             if (textBackgroundBrush != null) textBackgroundBrush.Dispose();
             if (textBackgroundPenWhite != null) textBackgroundPenWhite.Dispose();
             if (textBackgroundPenBlack != null) textBackgroundPenBlack.Dispose();
+            if (markerPen != null) markerPen.Dispose();
 
             if (regionFillPath != null)
             {
