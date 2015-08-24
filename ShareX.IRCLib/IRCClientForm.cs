@@ -60,7 +60,7 @@ namespace ShareX.IRCLib
         {
             this.InvokeSafe(() =>
             {
-                tb.AppendText($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}\r\n");
+                tb.AppendText($"{message}\r\n");
             });
         }
 
@@ -370,12 +370,12 @@ namespace ShareX.IRCLib
 
         private void IRC_Output(MessageInfo messageInfo)
         {
-            WriteText(messageInfo.Content, txtOutput);
+            WriteText($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {messageInfo.Content}", txtOutput);
         }
 
         private void IRC_Message(UserInfo user, string channel, string message)
         {
-            WriteText($"{user.Nickname} > {channel}: {message}", txtMessages);
+            WriteText($"{DateTime.Now:HH:mm:ss} - {user.Nickname} > {channel}: {message}", txtMessages);
         }
 
         #endregion IRC events
