@@ -198,4 +198,13 @@
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
     <value>Limite é de 0-9, aonde o menor valor equivale a maior qualidade. 0-3 normalmente produz resultados transparentes, 4 (padrão) deveria produzir algo perto da transparência perceptual e 6 produz uma qualidade aceitavel.</value>
   </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Modo da paleta:</value>
+  </data>
+  <data name="lblHelperDevices.Text" xml:space="preserve">
+    <value>Instala fonte de vídeo/áudio "screen-capture-recorder" e "virtual-audio-capturer"</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Modo de pontilhado:</value>
+  </data>
 </root>

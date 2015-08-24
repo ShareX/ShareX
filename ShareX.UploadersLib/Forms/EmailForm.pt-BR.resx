@@ -133,6 +133,6 @@
     <value>Assunto:</value>
   </data>
   <data name="lblToEmail.Text" xml:space="preserve">
-    <value>Para o email:</value>
+    <value>Destinatário:</value>
   </data>
 </root>

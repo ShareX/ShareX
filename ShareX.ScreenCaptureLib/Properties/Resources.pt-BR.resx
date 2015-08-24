@@ -199,7 +199,7 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[M] {0} lupa</value>
   </data>
   <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
-    <value>[Q] Ativar modo de região multipla</value>
+    <value>[Q] Ativar modo de região múltipla</value>
   </data>
   <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
     <value>[Q] Ativar modo de captura rápida</value>
@@ -229,13 +229,13 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[Clique direito na seleção] [Delete] Remover região</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
-    <value>[Teclado numérico] Formato de retangulo</value>
+    <value>[Teclado numérico 1] Formato de retângulo</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[Teclado numérico] Forma de triangulo</value>
+    <value>[Teclado numérico 4] Formato de triângulo</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[Teclado numérico 5] Forma de diamante</value>
+    <value>[Teclado numérico 5] Formato de diamante</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
     <value>[Teclado numérico 3] Formato de elipse</value>
@@ -259,6 +259,33 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[Pressione Shift] Mover a região selecionada ao invés de redimensionar</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[Pressione Ctrl] Redimensionar / Mover rapidamente </value>
+    <value>[Segure Ctrl] Redimensionar / Mover rapidamente </value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
+    <value>[Setas do teclado] Redimensionar região selecionada a partir do {0}</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
+    <value>[Ctrl + Rodela do mouse] Alterar tamanho de pixel da lupa</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
+    <value>[Tab] Trocar âncora de redimensionamento para {0}</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
+    <value>[C] {0} cruz do tamanho da tela</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
+    <value>[Segure Alt] Travar redimensionamento para tamanhos pré-definidos</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
+    <value>[I] {0} informação de tamanho e posição</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
+    <value>[Insert] Parar seleção de região</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
+    <value>[Rodela do mouse] Alterar contagem de pixels da lupa</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
+    <value>[Numpad + or -] Mudar o raio do canto do retângulo arrendondado</value>
   </data>
 </root>

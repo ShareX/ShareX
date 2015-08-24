@@ -717,7 +717,7 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
     <value>Código de verificação (Pegue o código na página de autorização):</value>
   </data>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
-    <value>Template</value>
+    <value>Modelo</value>
   </data>
   <data name="llAdflyLink.Text" xml:space="preserve">
     <value>Você pode achar sua chave de API e UID aqui:</value>
@@ -762,5 +762,32 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
   </data>
   <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
     <value>Caminho do álbum pai</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>Nome do formulário de arquivos:</value>
+  </data>
+  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
+    <value>Clique duplo para usar regex no URL</value>
+  </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>Destaque de sintaxe:</value>
+  </data>
+  <data name="lblJiraHost.Text" xml:space="preserve">
+    <value>Domínio Jira:</value>
+  </data>
+  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
+    <value>Prefixo de questão do Jira</value>
+  </data>
+  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
+    <value>Privacidade</value>
+  </data>
+  <data name="lblPastebinSyntax.Text" xml:space="preserve">
+    <value>Sintaxe da colagem:</value>
+  </data>
+  <data name="lblPastebinTitle.Text" xml:space="preserve">
+    <value>Nome da colagem:</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>Hostname da API: (e.g http://example.com/api.php, Deixe em branco para usar polr.me)</value>
   </data>
 </root>

@@ -253,4 +253,7 @@ Pastas criadas:</value>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Não foi possivel achar uma conta FTP valida.</value>
   </data>
+  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
+    <value>Falha ao atualizar lista de pastas Hubic</value>
+  </data>
 </root>
