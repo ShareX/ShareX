@@ -54,6 +54,7 @@ namespace ShareX.IRCLib
             IRC.Disconnected += IRC_Disconnected;
             IRC.Output += IRC_Output;
             IRC.Message += IRC_Message;
+            IRC.UserJoined += IRC_UserJoined;
         }
 
         private void WriteText(string message, TextBox tb)
@@ -376,6 +377,17 @@ namespace ShareX.IRCLib
         private void IRC_Message(UserInfo user, string channel, string message)
         {
             WriteText($"{DateTime.Now:HH:mm:ss} - {user.Nickname} > {channel}: {message}", txtMessages);
+        }
+
+        private void IRC_UserJoined(UserInfo user, string channel)
+        {
+            if (user.Nickname == Info.Nickname && user.Username == Info.Username)
+            {
+                this.InvokeSafe(() =>
+                {
+                    txtChannel.Text = channel;
+                });
+            }
         }
 
         #endregion IRC events

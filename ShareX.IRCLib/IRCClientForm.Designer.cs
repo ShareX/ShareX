@@ -35,22 +35,6 @@
             this.tsmiMessageItalic = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMessageUnderline = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMessageNormal = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnMessageSend = new System.Windows.Forms.Button();
-            this.txtOutput = new System.Windows.Forms.TextBox();
-            this.tcMain = new System.Windows.Forms.TabControl();
-            this.tpMain = new System.Windows.Forms.TabPage();
-            this.btnConnect = new System.Windows.Forms.Button();
-            this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.tpOutput = new System.Windows.Forms.TabPage();
-            this.txtCommand = new System.Windows.Forms.TextBox();
-            this.lblCommand = new System.Windows.Forms.Label();
-            this.btnCommandSend = new System.Windows.Forms.Button();
-            this.tpMessages = new System.Windows.Forms.TabPage();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.lblChannel = new System.Windows.Forms.Label();
-            this.txtMessages = new System.Windows.Forms.TextBox();
-            this.txtChannel = new System.Windows.Forms.TextBox();
-            this.btnMessagesMenu = new System.Windows.Forms.Button();
             this.tsmiColors = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiColorWhite = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiColorBlack = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,6 +52,22 @@
             this.tsmiColorPink = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiColorGrey = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiColorLightGrey = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMessageSend = new System.Windows.Forms.Button();
+            this.txtOutput = new System.Windows.Forms.TextBox();
+            this.tcMain = new System.Windows.Forms.TabControl();
+            this.tpMain = new System.Windows.Forms.TabPage();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.pgSettings = new System.Windows.Forms.PropertyGrid();
+            this.tpOutput = new System.Windows.Forms.TabPage();
+            this.txtCommand = new System.Windows.Forms.TextBox();
+            this.lblCommand = new System.Windows.Forms.Label();
+            this.btnCommandSend = new System.Windows.Forms.Button();
+            this.tpMessages = new System.Windows.Forms.TabPage();
+            this.btnMessagesMenu = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.lblChannel = new System.Windows.Forms.Label();
+            this.txtMessages = new System.Windows.Forms.TextBox();
+            this.txtChannel = new System.Windows.Forms.TextBox();
             this.cmsMessage.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tpMain.SuspendLayout();
@@ -79,7 +79,7 @@
             // 
             this.txtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMessage.Location = new System.Drawing.Point(64, 604);
+            this.txtMessage.Location = new System.Drawing.Point(248, 604);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(600, 20);
             this.txtMessage.TabIndex = 0;
@@ -101,7 +101,7 @@
             // 
             this.tsmiMessageBold.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tsmiMessageBold.Name = "tsmiMessageBold";
-            this.tsmiMessageBold.Size = new System.Drawing.Size(127, 22);
+            this.tsmiMessageBold.Size = new System.Drawing.Size(100, 22);
             this.tsmiMessageBold.Text = "Bold";
             this.tsmiMessageBold.Click += new System.EventHandler(this.tsmiMessageBold_Click);
             // 
@@ -109,7 +109,7 @@
             // 
             this.tsmiMessageItalic.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tsmiMessageItalic.Name = "tsmiMessageItalic";
-            this.tsmiMessageItalic.Size = new System.Drawing.Size(127, 22);
+            this.tsmiMessageItalic.Size = new System.Drawing.Size(100, 22);
             this.tsmiMessageItalic.Text = "Italic";
             this.tsmiMessageItalic.Click += new System.EventHandler(this.tsmiMessageItalic_Click);
             // 
@@ -117,16 +117,183 @@
             // 
             this.tsmiMessageUnderline.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tsmiMessageUnderline.Name = "tsmiMessageUnderline";
-            this.tsmiMessageUnderline.Size = new System.Drawing.Size(127, 22);
+            this.tsmiMessageUnderline.Size = new System.Drawing.Size(100, 22);
             this.tsmiMessageUnderline.Text = "Underline";
             this.tsmiMessageUnderline.Click += new System.EventHandler(this.tsmiMessageUnderline_Click);
             // 
             // tsmiMessageNormal
             // 
             this.tsmiMessageNormal.Name = "tsmiMessageNormal";
-            this.tsmiMessageNormal.Size = new System.Drawing.Size(127, 22);
+            this.tsmiMessageNormal.Size = new System.Drawing.Size(100, 22);
             this.tsmiMessageNormal.Text = "Normal";
             this.tsmiMessageNormal.Click += new System.EventHandler(this.tsmiMessageNormal_Click);
+            // 
+            // tsmiColors
+            // 
+            this.tsmiColors.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiColorWhite,
+            this.tsmiColorBlack,
+            this.tsmiColorBlue,
+            this.tsmiColorGreen,
+            this.tsmiColorLightRed,
+            this.tsmiColorBrown,
+            this.tsmiColorPurple,
+            this.tsmiColorOrange,
+            this.tsmiColorYellow,
+            this.tsmiColorLightGreen,
+            this.tsmiColorCyan,
+            this.tsmiColorLightCyan,
+            this.tsmiColorLightBlue,
+            this.tsmiColorPink,
+            this.tsmiColorGrey,
+            this.tsmiColorLightGrey});
+            this.tsmiColors.Name = "tsmiColors";
+            this.tsmiColors.Size = new System.Drawing.Size(100, 22);
+            this.tsmiColors.Text = "Colors";
+            // 
+            // tsmiColorWhite
+            // 
+            this.tsmiColorWhite.BackColor = System.Drawing.Color.White;
+            this.tsmiColorWhite.ForeColor = System.Drawing.Color.Black;
+            this.tsmiColorWhite.Name = "tsmiColorWhite";
+            this.tsmiColorWhite.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorWhite.Text = "White";
+            this.tsmiColorWhite.Click += new System.EventHandler(this.tsmiColorWhite_Click);
+            // 
+            // tsmiColorBlack
+            // 
+            this.tsmiColorBlack.BackColor = System.Drawing.Color.Black;
+            this.tsmiColorBlack.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorBlack.Name = "tsmiColorBlack";
+            this.tsmiColorBlack.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorBlack.Text = "Black";
+            this.tsmiColorBlack.Click += new System.EventHandler(this.tsmiColorBlack_Click);
+            // 
+            // tsmiColorBlue
+            // 
+            this.tsmiColorBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(127)))));
+            this.tsmiColorBlue.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorBlue.Name = "tsmiColorBlue";
+            this.tsmiColorBlue.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorBlue.Text = "Blue";
+            this.tsmiColorBlue.Click += new System.EventHandler(this.tsmiColorBlue_Click);
+            // 
+            // tsmiColorGreen
+            // 
+            this.tsmiColorGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(0)))));
+            this.tsmiColorGreen.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorGreen.Name = "tsmiColorGreen";
+            this.tsmiColorGreen.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorGreen.Text = "Green";
+            this.tsmiColorGreen.Click += new System.EventHandler(this.tsmiColorGreen_Click);
+            // 
+            // tsmiColorLightRed
+            // 
+            this.tsmiColorLightRed.BackColor = System.Drawing.Color.Red;
+            this.tsmiColorLightRed.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorLightRed.Name = "tsmiColorLightRed";
+            this.tsmiColorLightRed.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorLightRed.Text = "Light Red";
+            this.tsmiColorLightRed.Click += new System.EventHandler(this.tsmiColorLightRed_Click);
+            // 
+            // tsmiColorBrown
+            // 
+            this.tsmiColorBrown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tsmiColorBrown.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorBrown.Name = "tsmiColorBrown";
+            this.tsmiColorBrown.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorBrown.Text = "Brown";
+            this.tsmiColorBrown.Click += new System.EventHandler(this.tsmiColorBrown_Click);
+            // 
+            // tsmiColorPurple
+            // 
+            this.tsmiColorPurple.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(0)))), ((int)(((byte)(156)))));
+            this.tsmiColorPurple.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorPurple.Name = "tsmiColorPurple";
+            this.tsmiColorPurple.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorPurple.Text = "Purple";
+            this.tsmiColorPurple.Click += new System.EventHandler(this.tsmiColorPurple_Click);
+            // 
+            // tsmiColorOrange
+            // 
+            this.tsmiColorOrange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
+            this.tsmiColorOrange.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorOrange.Name = "tsmiColorOrange";
+            this.tsmiColorOrange.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorOrange.Text = "Orange";
+            this.tsmiColorOrange.Click += new System.EventHandler(this.tsmiColorOrange_Click);
+            // 
+            // tsmiColorYellow
+            // 
+            this.tsmiColorYellow.BackColor = System.Drawing.Color.Yellow;
+            this.tsmiColorYellow.ForeColor = System.Drawing.Color.Black;
+            this.tsmiColorYellow.Name = "tsmiColorYellow";
+            this.tsmiColorYellow.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorYellow.Text = "Yellow";
+            this.tsmiColorYellow.Click += new System.EventHandler(this.tsmiColorYellow_Click);
+            // 
+            // tsmiColorLightGreen
+            // 
+            this.tsmiColorLightGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(252)))), ((int)(((byte)(0)))));
+            this.tsmiColorLightGreen.ForeColor = System.Drawing.Color.Black;
+            this.tsmiColorLightGreen.Name = "tsmiColorLightGreen";
+            this.tsmiColorLightGreen.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorLightGreen.Text = "Light Green";
+            this.tsmiColorLightGreen.Click += new System.EventHandler(this.tsmiColorLightGreen_Click);
+            // 
+            // tsmiColorCyan
+            // 
+            this.tsmiColorCyan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(147)))));
+            this.tsmiColorCyan.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorCyan.Name = "tsmiColorCyan";
+            this.tsmiColorCyan.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorCyan.Text = "Cyan";
+            this.tsmiColorCyan.Click += new System.EventHandler(this.tsmiColorCyan_Click);
+            // 
+            // tsmiColorLightCyan
+            // 
+            this.tsmiColorLightCyan.BackColor = System.Drawing.Color.Aqua;
+            this.tsmiColorLightCyan.ForeColor = System.Drawing.Color.Black;
+            this.tsmiColorLightCyan.Name = "tsmiColorLightCyan";
+            this.tsmiColorLightCyan.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorLightCyan.Text = "Light Cyan";
+            this.tsmiColorLightCyan.Click += new System.EventHandler(this.tsmiColorLightCyan_Click);
+            // 
+            // tsmiColorLightBlue
+            // 
+            this.tsmiColorLightBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(252)))));
+            this.tsmiColorLightBlue.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorLightBlue.Name = "tsmiColorLightBlue";
+            this.tsmiColorLightBlue.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorLightBlue.Text = "Light Blue";
+            this.tsmiColorLightBlue.Click += new System.EventHandler(this.tsmiColorLightBlue_Click);
+            // 
+            // tsmiColorPink
+            // 
+            this.tsmiColorPink.BackColor = System.Drawing.Color.Fuchsia;
+            this.tsmiColorPink.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorPink.Name = "tsmiColorPink";
+            this.tsmiColorPink.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorPink.Text = "Pink";
+            this.tsmiColorPink.Click += new System.EventHandler(this.tsmiColorPink_Click);
+            // 
+            // tsmiColorGrey
+            // 
+            this.tsmiColorGrey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.tsmiColorGrey.ForeColor = System.Drawing.Color.White;
+            this.tsmiColorGrey.Name = "tsmiColorGrey";
+            this.tsmiColorGrey.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorGrey.Text = "Grey";
+            this.tsmiColorGrey.Click += new System.EventHandler(this.tsmiColorGrey_Click);
+            // 
+            // tsmiColorLightGrey
+            // 
+            this.tsmiColorLightGrey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.tsmiColorLightGrey.ForeColor = System.Drawing.Color.Black;
+            this.tsmiColorLightGrey.Name = "tsmiColorLightGrey";
+            this.tsmiColorLightGrey.Size = new System.Drawing.Size(135, 22);
+            this.tsmiColorLightGrey.Text = "Light Grey";
+            this.tsmiColorLightGrey.Click += new System.EventHandler(this.tsmiColorLightGrey_Click);
             // 
             // btnMessageSend
             // 
@@ -266,11 +433,22 @@
             this.tpMessages.Text = "Messages";
             this.tpMessages.UseVisualStyleBackColor = true;
             // 
+            // btnMessagesMenu
+            // 
+            this.btnMessagesMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMessagesMenu.Location = new System.Drawing.Point(856, 602);
+            this.btnMessagesMenu.Name = "btnMessagesMenu";
+            this.btnMessagesMenu.Size = new System.Drawing.Size(24, 24);
+            this.btnMessagesMenu.TabIndex = 4;
+            this.btnMessagesMenu.Text = "...";
+            this.btnMessagesMenu.UseVisualStyleBackColor = true;
+            this.btnMessagesMenu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMessagesMenu_MouseClick);
+            // 
             // lblMessage
             // 
             this.lblMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(8, 608);
+            this.lblMessage.Location = new System.Drawing.Point(192, 608);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(53, 13);
             this.lblMessage.TabIndex = 0;
@@ -278,9 +456,9 @@
             // 
             // lblChannel
             // 
-            this.lblChannel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblChannel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblChannel.AutoSize = true;
-            this.lblChannel.Location = new System.Drawing.Point(704, 608);
+            this.lblChannel.Location = new System.Drawing.Point(8, 608);
             this.lblChannel.Name = "lblChannel";
             this.lblChannel.Size = new System.Drawing.Size(76, 13);
             this.lblChannel.TabIndex = 2;
@@ -303,188 +481,11 @@
             // 
             // txtChannel
             // 
-            this.txtChannel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtChannel.Location = new System.Drawing.Point(784, 604);
+            this.txtChannel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtChannel.Location = new System.Drawing.Point(88, 604);
             this.txtChannel.Name = "txtChannel";
             this.txtChannel.Size = new System.Drawing.Size(96, 20);
             this.txtChannel.TabIndex = 1;
-            // 
-            // btnMessagesMenu
-            // 
-            this.btnMessagesMenu.Location = new System.Drawing.Point(672, 602);
-            this.btnMessagesMenu.Name = "btnMessagesMenu";
-            this.btnMessagesMenu.Size = new System.Drawing.Size(24, 24);
-            this.btnMessagesMenu.TabIndex = 4;
-            this.btnMessagesMenu.Text = "...";
-            this.btnMessagesMenu.UseVisualStyleBackColor = true;
-            this.btnMessagesMenu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMessagesMenu_MouseClick);
-            // 
-            // tsmiColors
-            // 
-            this.tsmiColors.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiColorWhite,
-            this.tsmiColorBlack,
-            this.tsmiColorBlue,
-            this.tsmiColorGreen,
-            this.tsmiColorLightRed,
-            this.tsmiColorBrown,
-            this.tsmiColorPurple,
-            this.tsmiColorOrange,
-            this.tsmiColorYellow,
-            this.tsmiColorLightGreen,
-            this.tsmiColorCyan,
-            this.tsmiColorLightCyan,
-            this.tsmiColorLightBlue,
-            this.tsmiColorPink,
-            this.tsmiColorGrey,
-            this.tsmiColorLightGrey});
-            this.tsmiColors.Name = "tsmiColors";
-            this.tsmiColors.Size = new System.Drawing.Size(127, 22);
-            this.tsmiColors.Text = "Colors";
-            // 
-            // tsmiColorWhite
-            // 
-            this.tsmiColorWhite.BackColor = System.Drawing.Color.White;
-            this.tsmiColorWhite.ForeColor = System.Drawing.Color.Black;
-            this.tsmiColorWhite.Name = "tsmiColorWhite";
-            this.tsmiColorWhite.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorWhite.Text = "White";
-            this.tsmiColorWhite.Click += new System.EventHandler(this.tsmiColorWhite_Click);
-            // 
-            // tsmiColorBlack
-            // 
-            this.tsmiColorBlack.BackColor = System.Drawing.Color.Black;
-            this.tsmiColorBlack.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorBlack.Name = "tsmiColorBlack";
-            this.tsmiColorBlack.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorBlack.Text = "Black";
-            this.tsmiColorBlack.Click += new System.EventHandler(this.tsmiColorBlack_Click);
-            // 
-            // tsmiColorBlue
-            // 
-            this.tsmiColorBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(127)))));
-            this.tsmiColorBlue.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorBlue.Name = "tsmiColorBlue";
-            this.tsmiColorBlue.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorBlue.Text = "Blue";
-            this.tsmiColorBlue.Click += new System.EventHandler(this.tsmiColorBlue_Click);
-            // 
-            // tsmiColorGreen
-            // 
-            this.tsmiColorGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(0)))));
-            this.tsmiColorGreen.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorGreen.Name = "tsmiColorGreen";
-            this.tsmiColorGreen.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorGreen.Text = "Green";
-            this.tsmiColorGreen.Click += new System.EventHandler(this.tsmiColorGreen_Click);
-            // 
-            // tsmiColorLightRed
-            // 
-            this.tsmiColorLightRed.BackColor = System.Drawing.Color.Red;
-            this.tsmiColorLightRed.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorLightRed.Name = "tsmiColorLightRed";
-            this.tsmiColorLightRed.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorLightRed.Text = "Light Red";
-            this.tsmiColorLightRed.Click += new System.EventHandler(this.tsmiColorLightRed_Click);
-            // 
-            // tsmiColorBrown
-            // 
-            this.tsmiColorBrown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tsmiColorBrown.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorBrown.Name = "tsmiColorBrown";
-            this.tsmiColorBrown.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorBrown.Text = "Brown";
-            this.tsmiColorBrown.Click += new System.EventHandler(this.tsmiColorBrown_Click);
-            // 
-            // tsmiColorPurple
-            // 
-            this.tsmiColorPurple.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(0)))), ((int)(((byte)(156)))));
-            this.tsmiColorPurple.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorPurple.Name = "tsmiColorPurple";
-            this.tsmiColorPurple.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorPurple.Text = "Purple";
-            this.tsmiColorPurple.Click += new System.EventHandler(this.tsmiColorPurple_Click);
-            // 
-            // tsmiColorOrange
-            // 
-            this.tsmiColorOrange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(127)))), ((int)(((byte)(0)))));
-            this.tsmiColorOrange.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorOrange.Name = "tsmiColorOrange";
-            this.tsmiColorOrange.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorOrange.Text = "Orange";
-            this.tsmiColorOrange.Click += new System.EventHandler(this.tsmiColorOrange_Click);
-            // 
-            // tsmiColorYellow
-            // 
-            this.tsmiColorYellow.BackColor = System.Drawing.Color.Yellow;
-            this.tsmiColorYellow.ForeColor = System.Drawing.Color.Black;
-            this.tsmiColorYellow.Name = "tsmiColorYellow";
-            this.tsmiColorYellow.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorYellow.Text = "Yellow";
-            this.tsmiColorYellow.Click += new System.EventHandler(this.tsmiColorYellow_Click);
-            // 
-            // tsmiColorLightGreen
-            // 
-            this.tsmiColorLightGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(252)))), ((int)(((byte)(0)))));
-            this.tsmiColorLightGreen.ForeColor = System.Drawing.Color.Black;
-            this.tsmiColorLightGreen.Name = "tsmiColorLightGreen";
-            this.tsmiColorLightGreen.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorLightGreen.Text = "Light Green";
-            this.tsmiColorLightGreen.Click += new System.EventHandler(this.tsmiColorLightGreen_Click);
-            // 
-            // tsmiColorCyan
-            // 
-            this.tsmiColorCyan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(147)))));
-            this.tsmiColorCyan.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorCyan.Name = "tsmiColorCyan";
-            this.tsmiColorCyan.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorCyan.Text = "Cyan";
-            this.tsmiColorCyan.Click += new System.EventHandler(this.tsmiColorCyan_Click);
-            // 
-            // tsmiColorLightCyan
-            // 
-            this.tsmiColorLightCyan.BackColor = System.Drawing.Color.Aqua;
-            this.tsmiColorLightCyan.ForeColor = System.Drawing.Color.Black;
-            this.tsmiColorLightCyan.Name = "tsmiColorLightCyan";
-            this.tsmiColorLightCyan.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorLightCyan.Text = "Light Cyan";
-            this.tsmiColorLightCyan.Click += new System.EventHandler(this.tsmiColorLightCyan_Click);
-            // 
-            // tsmiColorLightBlue
-            // 
-            this.tsmiColorLightBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(252)))));
-            this.tsmiColorLightBlue.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorLightBlue.Name = "tsmiColorLightBlue";
-            this.tsmiColorLightBlue.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorLightBlue.Text = "Light Blue";
-            this.tsmiColorLightBlue.Click += new System.EventHandler(this.tsmiColorLightBlue_Click);
-            // 
-            // tsmiColorPink
-            // 
-            this.tsmiColorPink.BackColor = System.Drawing.Color.Fuchsia;
-            this.tsmiColorPink.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorPink.Name = "tsmiColorPink";
-            this.tsmiColorPink.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorPink.Text = "Pink";
-            this.tsmiColorPink.Click += new System.EventHandler(this.tsmiColorPink_Click);
-            // 
-            // tsmiColorGrey
-            // 
-            this.tsmiColorGrey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.tsmiColorGrey.ForeColor = System.Drawing.Color.White;
-            this.tsmiColorGrey.Name = "tsmiColorGrey";
-            this.tsmiColorGrey.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorGrey.Text = "Grey";
-            this.tsmiColorGrey.Click += new System.EventHandler(this.tsmiColorGrey_Click);
-            // 
-            // tsmiColorLightGrey
-            // 
-            this.tsmiColorLightGrey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.tsmiColorLightGrey.ForeColor = System.Drawing.Color.Black;
-            this.tsmiColorLightGrey.Name = "tsmiColorLightGrey";
-            this.tsmiColorLightGrey.Size = new System.Drawing.Size(152, 22);
-            this.tsmiColorLightGrey.Text = "Light Grey";
-            this.tsmiColorLightGrey.Click += new System.EventHandler(this.tsmiColorLightGrey_Click);
             // 
             // IRCClientForm
             // 

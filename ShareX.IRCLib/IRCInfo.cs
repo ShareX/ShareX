@@ -77,7 +77,7 @@ namespace ShareX.IRCLib
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> AutoJoinChannels { get; set; } = new List<string>() { "#ShareX" };
 
-        [Description("Wait identify confirmation before auto join channels."), DefaultValue(false)]
+        [Description("Wait identify confirmation before auto join channels. Currently only works in Freenode server because each server sends different response after identify."), DefaultValue(false)]
         public bool AutoJoinWaitIdentify { get; set; }
 
         [Description("Enable/Disable auto response system which using AutoResponseList."), DefaultValue(false)]
