@@ -265,6 +265,6 @@
     <value>Mostrar botão "Enviar usando ShareX" no menu da shell</value>
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Tentar novamente</value>
+    <value>Reenvio</value>
   </data>
 </root>

@@ -260,7 +260,7 @@ Pressione "Não" para cancelar e desabilitar o upload automático.</value>
     <value>Serviço de compartilhar URL: {0}</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
-    <value>Tarefa completada</value>
+    <value>Tarefa concluída</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>Erro</value>
@@ -269,7 +269,7 @@ Pressione "Não" para cancelar e desabilitar o upload automático.</value>
     <value>Não foi encontrada uma conta válida do Twitter.</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tuite enviado com sucesso.</value>
+    <value>Tuíte enviado com sucesso.</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>Cliente FTP suporta apenas FTP ou FTPS.</value>
@@ -421,5 +421,44 @@ Por favor, selecione um atalho diferente ou feche a aplicação que está gerand
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL para baixar arquivo e enviar</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
+    <value>Desativar atalhos</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
+    <value>Ativar atalhos</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>Atalhos desativados.</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>Atalhos ativados.</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Capturar</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Parar</value>
+  </data>
+  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
+    <value>Personalizado</value>
+  </data>
+  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
+    <value>Você pode clicar com o botão direito no icone do ShareX na bandeja do sistema para iniciar captura por região.</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
+    <value>Editor de imagem - como carregar a imagem?</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
+    <value>Sua área de transferência possui uma imagem, gostaria de abrí-la em no editor de imagem?
+
+Aperte sim para abrir a imagem da área de transferência. Aperte não para escolher outra imagem.</value>
+  </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>Baixando</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
+    <value>Você está tentando enviar um arquivo grande.
+Tem certeza de que quer continuar?</value>
   </data>
 </root>

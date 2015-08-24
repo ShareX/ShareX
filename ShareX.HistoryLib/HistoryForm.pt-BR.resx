@@ -163,7 +163,7 @@
     <value>Texto</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>Data &amp; hora</value>
+    <value>Data e hora</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nome do arquivo</value>

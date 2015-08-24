@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblStatus.Text" xml:space="preserve">
-    <value>Pré-visualização da imagem</value>
+    <value>Pré-visualização de imagem</value>
   </data>
   <data name="tsmiCopyImage.Text" xml:space="preserve">
     <value>Copiar imagem</value>

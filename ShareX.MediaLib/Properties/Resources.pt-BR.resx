@@ -117,13 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblCheckingUpdates.Text" xml:space="preserve">
-    <value>Verificando por atualizações...</value>
-  </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>... está atualizado</value>
-  </data>
-  <data name="llblUpdateAvailable.Text" xml:space="preserve">
-    <value>Uma nova versão do ShareX está disponível</value>
+  <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
+    <value>Procurar por arquivo de mídia</value>
   </data>
 </root>
