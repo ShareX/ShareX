@@ -134,10 +134,13 @@ namespace ShareX.IRCLib
 
         private void Connect()
         {
-            btnConnect.Text = "Disconnect";
-            btnCommandSend.Enabled = btnMessageSend.Enabled = true;
-            tcMain.SelectedTab = tpOutput;
-            IRC.Connect();
+            if (CheckInfo())
+            {
+                btnConnect.Text = "Disconnect";
+                btnCommandSend.Enabled = btnMessageSend.Enabled = true;
+                tcMain.SelectedTab = tpOutput;
+                IRC.Connect();
+            }
         }
 
         private void Disconnect()
@@ -145,6 +148,41 @@ namespace ShareX.IRCLib
             btnConnect.Text = "Connect";
             btnCommandSend.Enabled = btnMessageSend.Enabled = false;
             IRC.Disconnect();
+        }
+
+        private bool CheckInfo()
+        {
+            if (string.IsNullOrEmpty(Info.Server))
+            {
+                MessageBox.Show("Server field cannot be empty.", "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (Info.Port <= 0)
+            {
+                MessageBox.Show("Invalid server port.", "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(Info.Nickname))
+            {
+                MessageBox.Show("Nickname field cannot be empty.", "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(Info.Username))
+            {
+                MessageBox.Show("Username field cannot be empty.", "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(Info.Realname))
+            {
+                MessageBox.Show("Realname field cannot be empty.", "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
 
         #region Form events

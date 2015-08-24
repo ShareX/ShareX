@@ -47,7 +47,7 @@ namespace ShareX.IRCLib
         [Description("Username. This show up in WHOIS result."), DefaultValue("username")]
         public string Username { get; set; } = "username";
 
-        [Description("Realname. This show up in WHOUS result."), DefaultValue("realname")]
+        [Description("Realname. This show up in WHOIS result."), DefaultValue("realname")]
         public string Realname { get; set; } = "realname";
 
         [Description("IRC invisible mode."), DefaultValue(true)]
