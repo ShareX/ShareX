@@ -27,6 +27,7 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
 using ShareX.IndexerLib;
+using ShareX.IRCLib;
 using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -344,6 +345,7 @@ namespace ShareX
     {
         public IndexerSettings IndexerSettings = new IndexerSettings();
         public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
+        public IRCInfo IRCSettings = new IRCInfo();
     }
 
     public class TaskSettingsAdvanced

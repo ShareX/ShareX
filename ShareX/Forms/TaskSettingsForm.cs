@@ -284,6 +284,9 @@ namespace ShareX
             // Tools / Video thumbnailer
             pgVideoThumbnailer.SelectedObject = TaskSettings.ToolsSettings.VideoThumbnailOptions;
 
+            // Tools / IRC client
+            pgIRCClient.SelectedObject = TaskSettings.ToolsSettings.IRCSettings;
+
             // Advanced
             pgTaskSettings.SelectedObject = TaskSettings.AdvancedSettings;
 

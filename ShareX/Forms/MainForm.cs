@@ -946,14 +946,29 @@ namespace ShareX
             TaskHelpers.OpenScreenColorPicker();
         }
 
-        private void tsmiFTPClient_Click(object sender, EventArgs e)
+        private void tsmiImageEditor_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenFTPClient();
+            TaskHelpers.OpenImageEditor();
+        }
+
+        private void tsmiImageEffects_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageEffects();
         }
 
         private void tsmiHashCheck_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenHashCheck();
+        }
+
+        private void tsmiDNSChanger_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenDNSChanger();
+        }
+
+        private void tsmiQRCode_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenQRCode();
         }
 
         private void tsmiRuler_Click(object sender, EventArgs e)
@@ -976,34 +991,24 @@ namespace ShareX
             TaskHelpers.OpenVideoThumbnailer();
         }
 
-        private void tsmiImageEditor_Click(object sender, EventArgs e)
+        private void tsmiFTPClient_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenImageEditor();
+            TaskHelpers.OpenFTPClient();
         }
 
-        private void tsmiImageEffects_Click(object sender, EventArgs e)
+        private void tsmiIRCClient_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenImageEffects();
-        }
-
-        private void tsmiMonitorTest_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenMonitorTest();
-        }
-
-        private void tsmiDNSChanger_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDNSChanger();
-        }
-
-        private void tsmiQRCode_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenQRCode();
+            TaskHelpers.OpenIRCClient();
         }
 
         private void tsmiTweetMessage_Click(object sender, EventArgs e)
         {
             TaskHelpers.TweetMessage();
+        }
+
+        private void tsmiMonitorTest_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenMonitorTest();
         }
 
         private void tsddbDestinations_DropDownOpened(object sender, EventArgs e)

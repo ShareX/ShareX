@@ -79,6 +79,7 @@
             this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiIRCClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tssMain1 = new System.Windows.Forms.ToolStripSeparator();
@@ -225,6 +226,7 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
+            this.tsmiTrayIRCClient = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -553,6 +555,7 @@
             this.tsmiIndexFolder,
             this.tsmiVideoThumbnailer,
             this.tsmiFTPClient,
+            this.tsmiIRCClient,
             this.tsmiTweetMessage,
             this.tsmiMonitorTest});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
@@ -642,6 +645,13 @@
             this.tsmiFTPClient.Name = "tsmiFTPClient";
             resources.ApplyResources(this.tsmiFTPClient, "tsmiFTPClient");
             this.tsmiFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
+            // 
+            // tsmiIRCClient
+            // 
+            this.tsmiIRCClient.Image = global::ShareX.Properties.Resources.balloon_white;
+            this.tsmiIRCClient.Name = "tsmiIRCClient";
+            resources.ApplyResources(this.tsmiIRCClient, "tsmiIRCClient");
+            this.tsmiIRCClient.Click += new System.EventHandler(this.tsmiIRCClient_Click);
             // 
             // tsmiTweetMessage
             // 
@@ -1444,6 +1454,7 @@
             this.tsmiTrayIndexFolder,
             this.tsmiTrayVideoThumbnailer,
             this.tsmiTrayFTPClient,
+            this.tsmiTrayIRCClient,
             this.tsmiTrayTweetMessage,
             this.tsmiTrayMonitorTest});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
@@ -1719,6 +1730,13 @@
             // 
             this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
             // 
+            // tsmiTrayIRCClient
+            // 
+            this.tsmiTrayIRCClient.Image = global::ShareX.Properties.Resources.balloon_white;
+            this.tsmiTrayIRCClient.Name = "tsmiTrayIRCClient";
+            resources.ApplyResources(this.tsmiTrayIRCClient, "tsmiTrayIRCClient");
+            this.tsmiTrayIRCClient.Click += new System.EventHandler(this.tsmiIRCClient_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1947,5 +1965,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiVideoThumbnailer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayVideoThumbnailer;
         private System.Windows.Forms.Timer timerTraySingleClick;
+        private System.Windows.Forms.ToolStripMenuItem tsmiIRCClient;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayIRCClient;
     }
 }
