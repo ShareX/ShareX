@@ -284,6 +284,7 @@
     <Compile Include="Cryptographic\Translator.cs" />
     <Compile Include="Cryptographic\TranslatorHelper.cs" />
     <Compile Include="UITypeEditors\NameParserEditor.cs" />
+    <Compile Include="UITypeEditors\StringCollectionToStringTypeConverter.cs" />
     <Compile Include="UITypeEditors\WavFileNameEditor.cs" />
     <Compile Include="UnsafeBitmap.cs" />
     <Compile Include="UpdateChecker\GitHubUpdateChecker.cs" />

@@ -38,16 +38,16 @@ namespace ShareX.IRCLib
         [Description("IRC server port."), DefaultValue(6667)]
         public int Port { get; set; } = 6667;
 
-        [Description("IRC server password."), PasswordPropertyText(true)]
+        [Description("IRC server password. In some servers can be used to identify."), PasswordPropertyText(true)]
         public string Password { get; set; }
 
         [Description("Nickname.")]
         public string Nickname { get; set; }
 
-        [Description("Username."), DefaultValue("username")]
+        [Description("Username. This show up in WHOIS result."), DefaultValue("username")]
         public string Username { get; set; } = "username";
 
-        [Description("Realname."), DefaultValue("realname")]
+        [Description("Realname. This show up in WHOUS result."), DefaultValue("realname")]
         public string Realname { get; set; } = "realname";
 
         [Description("IRC invisible mode."), DefaultValue(true)]
@@ -59,10 +59,10 @@ namespace ShareX.IRCLib
         [Description("Wait specific milliseconds before reconnecting."), DefaultValue(5000)]
         public int AutoReconnectDelay { get; set; } = 5000;
 
-        [Description("When got kicked auto rejoin channel."), DefaultValue(false)]
+        [Description("When got kicked from channel auto rejoin."), DefaultValue(false)]
         public bool AutoRejoinOnKick { get; set; }
 
-        [Description("Don't show 'Message of the day' text."), DefaultValue(true)]
+        [Description("Don't show 'Message of the day' texts in output."), DefaultValue(true)]
         public bool SuppressMOTD { get; set; } = true;
 
         [Description("When you disconnect what message gonna show to other people."), DefaultValue("Leaving")]
@@ -72,7 +72,8 @@ namespace ShareX.IRCLib
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> ConnectCommands { get; set; } = new List<string>();
 
-        [Description("When connected automatically will join these channels."),
+        [Description("When connected automatically join these channels."),
+        TypeConverter(typeof(StringCollectionToStringTypeConverter)),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> AutoJoinChannels { get; set; } = new List<string>() { "#ShareX" };
 
@@ -82,10 +83,10 @@ namespace ShareX.IRCLib
         [Description("Enable/Disable auto response system which using AutoResponseList."), DefaultValue(false)]
         public bool AutoResponse { get; set; }
 
-        [Description("After successful auto response match how much milliseconds wait for next auto response. Delay independant per message."), DefaultValue(10000)]
+        [Description("After successful auto response match how much milliseconds wait for next auto response. Delay independant per response."), DefaultValue(10000)]
         public int AutoResponseDelay { get; set; } = 10000;
 
-        [Description("When specific message written in channel automatically will response with your message.")]
+        [Description("When specific message written in channel automatically response with your message.")]
         public List<AutoResponseInfo> AutoResponseList { get; set; } = new List<AutoResponseInfo>();
 
         public string GetAutoResponses()
