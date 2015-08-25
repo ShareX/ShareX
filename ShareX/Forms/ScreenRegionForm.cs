@@ -207,6 +207,12 @@ namespace ShareX
             }
         }
 
+        public void Abort()
+        {
+            AbortRequested = true;
+            StartStop();
+        }
+
         private void btnStop_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -219,8 +225,7 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Left)
             {
-                AbortRequested = true;
-                StartStop();
+                Abort();
             }
         }
     }

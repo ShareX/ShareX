@@ -56,6 +56,10 @@ namespace ShareX
 
         private ScreenRecorder screenRecorder;
         private ScreenRegionForm regionForm;
+        private ContextMenuStrip cmsMain;
+        private System.ComponentModel.IContainer components;
+        private ToolStripMenuItem tsmiStart;
+        private ToolStripMenuItem tsmiAbort;
         private bool abortRequested;
 
         private ScreenRecordForm()
@@ -64,11 +68,29 @@ namespace ShareX
             TrayIcon.MouseClick += TrayIcon_MouseClick;
         }
 
+        private void tsmiStart_Click(object sender, EventArgs e)
+        {
+            StartStopRecording();
+        }
+
+        private void tsmiAbort_Click(object sender, EventArgs e)
+        {
+            AbortRecording();
+        }
+
         public void StartStopRecording()
         {
             if (regionForm != null && !regionForm.IsDisposed)
             {
                 regionForm.StartStop();
+            }
+        }
+
+        public void AbortRecording()
+        {
+            if (regionForm != null && !regionForm.IsDisposed)
+            {
+                regionForm.Abort();
             }
         }
 
@@ -223,6 +245,8 @@ namespace ShareX
                     {
                         trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
                         TrayIcon.Text = trayText.Truncate(63);
+                        tsmiStart.Text = Resources.AutoCaptureForm_Execute_Start;
+                        cmsMain.Enabled = true;
 
                         if (taskSettings.CaptureSettings.ScreenRecordAutoStart)
                         {
@@ -251,6 +275,7 @@ namespace ShareX
                         trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
                         TrayIcon.Text = trayText.Truncate(63);
                         TrayIcon.Icon = Resources.control_record.ToIcon();
+                        tsmiStart.Text = Resources.AutoCaptureForm_Execute_Stop;
 
                         if (regionForm != null)
                         {
@@ -289,6 +314,7 @@ namespace ShareX
                     {
                         TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
                         TrayIcon.Icon = Resources.camcorder_pencil.ToIcon();
+                        cmsMain.Enabled = false;
 
                         if (outputType == ScreenRecordOutput.GIF)
                         {
@@ -349,6 +375,52 @@ namespace ShareX
                 abortRequested = false;
                 IsRecording = false;
             });
+        }
+
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAbort = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsMain.SuspendLayout();
+            this.SuspendLayout();
+            //
+            // TrayIcon
+            //
+            this.TrayIcon.ContextMenuStrip = this.cmsMain;
+            //
+            // cmsMain
+            //
+            this.cmsMain.Enabled = false;
+            this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiStart,
+            this.tsmiAbort});
+            this.cmsMain.Name = "cmsMain";
+            this.cmsMain.Size = new System.Drawing.Size(153, 70);
+            //
+            // tsmiStart
+            //
+            this.tsmiStart.Image = global::ShareX.Properties.Resources.control_record;
+            this.tsmiStart.Name = "tsmiStart";
+            this.tsmiStart.Size = new System.Drawing.Size(104, 22);
+            this.tsmiStart.Text = "Start";
+            this.tsmiStart.Click += new System.EventHandler(this.tsmiStart_Click);
+            //
+            // tsmiAbort
+            //
+            this.tsmiAbort.Image = global::ShareX.Properties.Resources.cross;
+            this.tsmiAbort.Name = "tsmiAbort";
+            this.tsmiAbort.Size = new System.Drawing.Size(104, 22);
+            this.tsmiAbort.Text = "Abort";
+            this.tsmiAbort.Click += new System.EventHandler(this.tsmiAbort_Click);
+            //
+            // ScreenRecordForm
+            //
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "ScreenRecordForm";
+            this.cmsMain.ResumeLayout(false);
+            this.ResumeLayout(false);
         }
     }
 }

@@ -650,6 +650,9 @@
     <EmbeddedResource Include="Forms\ScreenColorPicker.zh-CN.resx">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenRegionForm.de.resx">
       <DependentUpon>ScreenRegionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1005,6 +1008,7 @@
     <None Include="Resources\images-stack.png" />
     <None Include="Resources\br.png" />
     <None Include="Resources\balloon-white.png" />
+    <None Include="Resources\cross.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

@@ -312,7 +312,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap balloon_white {
             get {
-                object obj = ResourceManager.GetObject("balloon-white", resourceCulture);
+                object obj = ResourceManager.GetObject("balloon_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -520,6 +520,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap control_record_yellow {
             get {
                 object obj = ResourceManager.GetObject("control_record_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap cross {
+            get {
+                object obj = ResourceManager.GetObject("cross", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
