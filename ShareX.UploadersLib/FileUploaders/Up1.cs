@@ -24,9 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using Org.BouncyCastle.Crypto.Engines;
-using Org.BouncyCastle.Crypto.Modes;
-using Org.BouncyCastle.Crypto.Parameters;
+using Security.Cryptography;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
@@ -153,18 +151,24 @@ namespace ShareX.UploadersLib.FileUploaders
             byte[] ccmIV = new byte[ccmIVLen];
             Array.Copy(iv, ccmIV, ccmIVLen);
 
-            // Set up the encryption parameters
-            KeyParameter keyParam = new KeyParameter(key);
-            CcmParameters ccmParams = new CcmParameters(keyParam, MacSize, ccmIV, new byte[0]);
-            CcmBlockCipher ccmMode = new CcmBlockCipher(new AesFastEngine());
-            ccmMode.Init(true, ccmParams);
+            // http://blogs.msdn.com/b/shawnfa/archive/2009/03/17/authenticated-symmetric-encryption-in-net.aspx
+            using (AuthenticatedAesCng aes = new AuthenticatedAesCng())
+            {
+                aes.CngMode = CngChainingMode.Ccm;
+                aes.Key = key;
+                aes.IV = ccmIV;
 
-            // Perform the encryption
-            byte[] encBytes = new byte[ccmMode.GetOutputSize(data.Length)];
-            int res = ccmMode.ProcessBytes(data, 0, data.Length, encBytes, 0);
-            ccmMode.DoFinal(encBytes, res);
+                MemoryStream ms = new MemoryStream();
 
-            return new MemoryStream(encBytes);
+                using (IAuthenticatedCryptoTransform encryptor = aes.CreateAuthenticatedEncryptor())
+                {
+                    CryptoStream cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write);
+                    cs.Write(data, 0, data.Length);
+                    cs.FlushFinalBlock();
+                    //tag = encryptor.GetTag();
+                    return ms;
+                }
+            }
         }
 
         public override UploadResult Upload(Stream input, string fileName)

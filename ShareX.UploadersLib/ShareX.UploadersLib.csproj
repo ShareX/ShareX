@@ -77,10 +77,6 @@
       <HintPath>..\packages\AWSSDK.S3.3.1.2.0\lib\net35\AWSSDK.S3.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="crypto, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Portable.BouncyCastle.1.7.0.2\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch10+MonoAndroid10+xamarinmac20+xamarinios10\crypto.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="MegaApiClient, Version=1.1.1.44, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
       <HintPath>..\packages\MegaApiClient.1.1.1\lib\net40\MegaApiClient.dll</HintPath>
       <Private>True</Private>
@@ -92,6 +88,9 @@
     <Reference Include="Renci.SshNet, Version=2014.4.6.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2014.4.6-beta2\lib\net40\Renci.SshNet.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Security.Cryptography">
+      <HintPath>..\Lib\Security.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Design" />
