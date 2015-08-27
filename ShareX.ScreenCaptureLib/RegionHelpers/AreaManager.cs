@@ -369,12 +369,18 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                EndRegionSelection();
+                if (IsMoving || IsCreating)
+                {
+                    EndRegionSelection();
+                }
             }
             else if (e.Button == MouseButtons.Right)
             {
                 CancelRegionSelection();
-                EndRegionSelection();
+                if (IsCreating)
+                {
+                    EndRegionSelection();
+                }
             }
         }
 
