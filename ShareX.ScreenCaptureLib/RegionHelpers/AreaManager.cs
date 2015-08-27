@@ -374,6 +374,7 @@ namespace ShareX.ScreenCaptureLib
             else if (e.Button == MouseButtons.Right)
             {
                 CancelRegionSelection();
+                EndRegionSelection();
             }
         }
 
