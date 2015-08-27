@@ -1,0 +1,7 @@
+{
+  "name": "com.test.test",
+  "description": "ShareX",
+  "path": "{path}",
+  "type": "stdio",
+  "allowed_origins": [ "" ]
+}

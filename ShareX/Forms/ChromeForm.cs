@@ -24,11 +24,13 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -45,12 +47,35 @@ namespace ShareX
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            RegistryHelpers.RegisterChromeSupport(Program.ChromeHostManifestPath);
+            try
+            {
+                string manifest = Encoding.UTF8.GetString(Resources.Chrome_host_manifest);
+                manifest = manifest.Replace("{path}", Program.ChromeHostPath);
+                File.WriteAllText(Program.ChromeHostManifestPath, manifest, Encoding.UTF8);
+
+                RegistryHelpers.RegisterChromeSupport(Program.ChromeHostManifestPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnUnregister_Click(object sender, EventArgs e)
         {
-            RegistryHelpers.UnregisterChromeSupport();
+            try
+            {
+                if (File.Exists(Program.ChromeHostManifestPath))
+                {
+                    File.Delete(Program.ChromeHostManifestPath);
+                }
+
+                RegistryHelpers.UnregisterChromeSupport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnInstallExtension_Click(object sender, EventArgs e)

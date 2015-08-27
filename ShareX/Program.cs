@@ -221,13 +221,9 @@ namespace ShareX
 
         public static string ToolsFolder => Path.Combine(PersonalPath, "Tools");
 
-        public static string ChromeHostManifestPath
-        {
-            get
-            {
-                return Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
-            }
-        }
+        public static string ChromeHostManifestPath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
+
+        public static string ChromeHostPath => Helpers.GetAbsolutePath("ShareX_Chrome.exe");
 
         #endregion Paths
 
