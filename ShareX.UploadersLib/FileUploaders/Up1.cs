@@ -157,6 +157,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 aes.CngMode = CngChainingMode.Ccm;
                 aes.Key = key;
                 aes.IV = ccmIV;
+                aes.TagSize = MacSize;
 
                 MemoryStream ms = new MemoryStream();
 
@@ -165,7 +166,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     CryptoStream cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write);
                     cs.Write(data, 0, data.Length);
                     cs.FlushFinalBlock();
-                    //tag = encryptor.GetTag();
+                    byte[] tag = encryptor.GetTag();
+                    ms.Write(tag, 0, tag.Length);
                     return ms;
                 }
             }
