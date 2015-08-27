@@ -182,13 +182,7 @@ namespace ShareX
             }
         }
 
-        private static string LogsFolder
-        {
-            get
-            {
-                return Path.Combine(PersonalPath, "Logs");
-            }
-        }
+        private static string LogsFolder => Path.Combine(PersonalPath, "Logs");
 
         public static string LogsFilePath
         {
@@ -221,27 +215,17 @@ namespace ShareX
             }
         }
 
-        public static string ScreenRecorderCacheFilePath
-        {
-            get
-            {
-                return Path.Combine(PersonalPath, "ScreenRecorder.avi");
-            }
-        }
+        public static string ScreenRecorderCacheFilePath => Path.Combine(PersonalPath, "ScreenRecorder.avi");
 
-        private static string BackupFolder
-        {
-            get
-            {
-                return Path.Combine(PersonalPath, "Backup");
-            }
-        }
+        private static string BackupFolder => Path.Combine(PersonalPath, "Backup");
 
-        public static string ToolsFolder
+        public static string ToolsFolder => Path.Combine(PersonalPath, "Tools");
+
+        public static string ChromeHostManifestPath
         {
             get
             {
-                return Path.Combine(PersonalPath, "Tools");
+                return Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
             }
         }
 

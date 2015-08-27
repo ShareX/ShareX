@@ -322,6 +322,11 @@ namespace ShareX
             Program.Settings.RememberMainFormSize = cbRememberMainFormSize.Checked;
         }
 
+        private void btnChromeSupport_Click(object sender, EventArgs e)
+        {
+            new ChromeForm().Show();
+        }
+
         #endregion General
 
         #region Paths

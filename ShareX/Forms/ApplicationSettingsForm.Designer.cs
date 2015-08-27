@@ -108,6 +108,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.btnChromeSupport = new System.Windows.Forms.Button();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -143,6 +144,7 @@ namespace ShareX
             // 
             // tpGeneral
             // 
+            this.tpGeneral.Controls.Add(this.btnChromeSupport);
             this.tpGeneral.Controls.Add(this.btnLanguages);
             this.tpGeneral.Controls.Add(this.llTranslators);
             this.tpGeneral.Controls.Add(this.lblLanguage);
@@ -716,6 +718,13 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             // 
+            // btnChromeSupport
+            // 
+            resources.ApplyResources(this.btnChromeSupport, "btnChromeSupport");
+            this.btnChromeSupport.Name = "btnChromeSupport";
+            this.btnChromeSupport.UseVisualStyleBackColor = true;
+            this.btnChromeSupport.Click += new System.EventHandler(this.btnChromeSupport_Click);
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -838,5 +847,6 @@ namespace ShareX
         private TabToTreeView tttvMain;
         private MenuButton btnLanguages;
         private System.Windows.Forms.ContextMenuStrip cmsLanguages;
+        private System.Windows.Forms.Button btnChromeSupport;
     }
 }
