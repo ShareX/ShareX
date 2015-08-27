@@ -866,7 +866,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Resources\Chrome-host-manifest.json" />
     <None Include="Resources\RoundedRectangle.png" />
     <None Include="Resources\Rectangle.png" />
     <None Include="Resources\Polygon.png" />

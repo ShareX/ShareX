@@ -121,7 +121,7 @@
             this.MaximizeBox = false;
             this.Name = "ChromeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Chrome support";
+            this.Text = "ShareX - Chrome extension support";
             this.ResumeLayout(false);
 
         }

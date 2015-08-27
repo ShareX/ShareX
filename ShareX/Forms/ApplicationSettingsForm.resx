@@ -126,14 +126,14 @@
     <value>8, 272</value>
   </data>
   <data name="btnChromeSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 24</value>
+    <value>224, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnChromeSupport.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Chrome support...</value>
+    <value>Chrome extension support...</value>
   </data>
   <data name="&gt;&gt;btnChromeSupport.Name" xml:space="preserve">
     <value>btnChromeSupport</value>

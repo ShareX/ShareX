@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
@@ -45,13 +46,27 @@ namespace ShareX
             Icon = ShareXResources.Icon;
         }
 
+        private void CreateChromeHostManifest(string filepath)
+        {
+            var manifest = new
+            {
+                name = "com.test.test",
+                description = "ShareX",
+                path = Program.ChromeHostPath,
+                type = "stdio",
+                allowed_origins = new string[] { "" }
+            };
+
+            string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
+
+            File.WriteAllText(filepath, json, Encoding.UTF8);
+        }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             try
             {
-                string manifest = Encoding.UTF8.GetString(Resources.Chrome_host_manifest);
-                manifest = manifest.Replace("{path}", Program.ChromeHostPath);
-                File.WriteAllText(Program.ChromeHostManifestPath, manifest, Encoding.UTF8);
+                CreateChromeHostManifest(Program.ChromeHostManifestPath);
 
                 RegistryHelpers.RegisterChromeSupport(Program.ChromeHostManifestPath);
             }
@@ -80,6 +95,7 @@ namespace ShareX
 
         private void btnInstallExtension_Click(object sender, EventArgs e)
         {
+            URLHelpers.OpenURL("");
         }
     }
 }

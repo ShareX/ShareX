@@ -33,6 +33,7 @@ namespace ShareX
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationSettingsForm));
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.btnChromeSupport = new System.Windows.Forms.Button();
             this.btnLanguages = new ShareX.HelpersLib.MenuButton();
             this.cmsLanguages = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.llTranslators = new System.Windows.Forms.LinkLabel();
@@ -108,7 +109,6 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.btnChromeSupport = new System.Windows.Forms.Button();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -160,6 +160,13 @@ namespace ShareX
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.UseVisualStyleBackColor = true;
+            // 
+            // btnChromeSupport
+            // 
+            resources.ApplyResources(this.btnChromeSupport, "btnChromeSupport");
+            this.btnChromeSupport.Name = "btnChromeSupport";
+            this.btnChromeSupport.UseVisualStyleBackColor = true;
+            this.btnChromeSupport.Click += new System.EventHandler(this.btnChromeSupport_Click);
             // 
             // btnLanguages
             // 
@@ -717,13 +724,6 @@ namespace ShareX
             this.tttvMain.Name = "tttvMain";
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
-            // 
-            // btnChromeSupport
-            // 
-            resources.ApplyResources(this.btnChromeSupport, "btnChromeSupport");
-            this.btnChromeSupport.Name = "btnChromeSupport";
-            this.btnChromeSupport.UseVisualStyleBackColor = true;
-            this.btnChromeSupport.Click += new System.EventHandler(this.btnChromeSupport_Click);
             // 
             // ApplicationSettingsForm
             // 
