@@ -58,6 +58,7 @@ Source: "{#AppParentDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "{#AppParentDirectory}\*.css"; DestDir: {app}; Flags: ignoreversion
 Source: "{#AppParentDirectory}\*.txt"; DestDir: {app}; Flags: ignoreversion
 Source: "Output\Recorder-devices-setup.exe"; DestDir: {app}; Flags: ignoreversion
+Source: "..\..\ShareX_Chrome\ShareX_Chrome\bin\Release\ShareX_Chrome.exe"; DestDir: {app}; Flags: ignoreversion
 
 Source: "{#AppParentDirectory}\de\*.resources.dll"; DestDir: {app}\Languages\de; Flags: ignoreversion
 Source: "{#AppParentDirectory}\es\*.resources.dll"; DestDir: {app}\Languages\es; Flags: ignoreversion
