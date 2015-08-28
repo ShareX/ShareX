@@ -1283,7 +1283,7 @@ namespace ShareX
         {
             string url = Info.Result.URL.Trim();
             Info.Result.URL = string.Empty;
-            string filename = URLHelpers.GetFileName(url, true, true);
+            string filename = URLHelpers.GetFileName(url, true); // TODO: Set filename in task creation
 
             if (!string.IsNullOrEmpty(filename))
             {

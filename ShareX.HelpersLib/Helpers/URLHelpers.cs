@@ -251,7 +251,7 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string GetFileName(string path, bool checkExtension = false, bool urlDecode = false)
+        public static string GetFileName(string path, bool urlDecode = false)
         {
             if (urlDecode)
             {
@@ -264,14 +264,14 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            if (path.Contains("/"))
+            if (path.Contains('/'))
             {
-                path = path.Remove(0, path.LastIndexOf('/') + 1);
+                path = path.Substring(path.LastIndexOf('/') + 1);
             }
 
-            if (checkExtension && !Path.HasExtension(path))
+            if (path.Contains('?'))
             {
-                return null;
+                path = path.Remove(path.IndexOf('?'));
             }
 
             return path;
