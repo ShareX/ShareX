@@ -50,11 +50,11 @@ namespace ShareX
         {
             var manifest = new
             {
-                name = "com.test.test",
+                name = "com.getsharex.sharex",
                 description = "ShareX",
                 path = Program.ChromeHostPath,
                 type = "stdio",
-                allowed_origins = new string[] { "" }
+                allowed_origins = new string[] { "chrome-extension://nlkoigbdolhchiicbonbihbphgamnaoc/" }
             };
 
             string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
@@ -69,6 +69,8 @@ namespace ShareX
                 CreateChromeHostManifest(Program.ChromeHostManifestPath);
 
                 RegistryHelpers.RegisterChromeSupport(Program.ChromeHostManifestPath);
+
+                MessageBox.Show("Chrome support enabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -86,6 +88,8 @@ namespace ShareX
                 }
 
                 RegistryHelpers.UnregisterChromeSupport();
+
+                MessageBox.Show("Chrome support disabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -95,7 +99,7 @@ namespace ShareX
 
         private void btnInstallExtension_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("");
+            URLHelpers.OpenURL("https://chrome.google.com/webstore/detail/sharex/nlkoigbdolhchiicbonbihbphgamnaoc");
         }
     }
 }

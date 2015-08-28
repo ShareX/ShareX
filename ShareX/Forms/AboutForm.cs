@@ -93,7 +93,7 @@ QrCode.Net: https://qrcodenet.codeplex.com
 System.Net.FtpClient: https://netftp.codeplex.com
 ResX Resource Manager: https://resxresourcemanager.codeplex.com
 AWSSDK: http://aws.amazon.com/sdk-for-net/
-BouncyCastle-PCL: https://github.com/onovotny/BouncyCastle-PCL
+CLR Security: http://clrsecurity.codeplex.com
 
 Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries);
         }
