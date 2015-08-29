@@ -48,19 +48,13 @@ namespace ShareX
 
         private void CreateChromeHostManifest(string filepath)
         {
-            string id = "";
-
-#if !DEBUG
-            id = "chrome-extension://nlkoigbdolhchiicbonbihbphgamnaoc/";
-#endif
-
             var manifest = new
             {
                 name = "com.getsharex.sharex",
                 description = "ShareX",
                 path = Program.ChromeHostPath,
                 type = "stdio",
-                allowed_origins = new string[] { id }
+                allowed_origins = new string[] { "chrome-extension://nlkoigbdolhchiicbonbihbphgamnaoc/" }
             };
 
             string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);

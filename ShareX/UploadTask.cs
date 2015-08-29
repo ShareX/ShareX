@@ -191,6 +191,13 @@ namespace ShareX
             UploadTask task = new UploadTask(taskSettings);
             task.Info.Job = TaskJob.DownloadUpload;
             task.Info.DataType = TaskHelpers.FindDataType(url, taskSettings);
+            task.Info.FileName = URLHelpers.GetFileName(url, true);
+
+            if (string.IsNullOrEmpty(task.Info.FileName))
+            {
+                return null;
+            }
+
             task.Info.Result.URL = url;
             return task;
         }
@@ -1283,36 +1290,31 @@ namespace ShareX
         {
             string url = Info.Result.URL.Trim();
             Info.Result.URL = string.Empty;
-            string filename = URLHelpers.GetFileName(url, true); // TODO: Set filename in task creation
+            Info.FilePath = TaskHelpers.CheckFilePath(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
 
-            if (!string.IsNullOrEmpty(filename))
+            if (!string.IsNullOrEmpty(Info.FilePath))
             {
-                Info.FilePath = TaskHelpers.CheckFilePath(Info.TaskSettings.CaptureFolder, filename, Info.TaskSettings);
+                Info.Status = Resources.UploadTask_DownloadAndUpload_Downloading;
+                OnStatusChanged();
 
-                if (!string.IsNullOrEmpty(Info.FilePath))
+                try
                 {
-                    Info.Status = Resources.UploadTask_DownloadAndUpload_Downloading;
-                    OnStatusChanged();
+                    Helpers.CreateDirectoryIfNotExist(Info.FilePath);
 
-                    try
+                    using (WebClient wc = new WebClient())
                     {
-                        Helpers.CreateDirectoryIfNotExist(Info.FilePath);
-
-                        using (WebClient wc = new WebClient())
-                        {
-                            wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                            wc.DownloadFile(url, Info.FilePath);
-                        }
-
-                        LoadFileStream();
-
-                        return true;
+                        wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+                        wc.DownloadFile(url, Info.FilePath);
                     }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                        MessageBox.Show(string.Format(Resources.UploadManager_DownloadAndUploadFile_Download_failed, e), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+
+                    LoadFileStream();
+
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                    MessageBox.Show(string.Format(Resources.UploadManager_DownloadAndUploadFile_Download_failed, e), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

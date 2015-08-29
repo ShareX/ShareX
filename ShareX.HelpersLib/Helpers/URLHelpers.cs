@@ -274,6 +274,11 @@ namespace ShareX.HelpersLib
                 path = path.Remove(path.IndexOf('?'));
             }
 
+            if (path.Contains('#'))
+            {
+                path = path.Remove(path.IndexOf('#'));
+            }
+
             return path;
         }
 
