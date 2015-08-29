@@ -267,4 +267,13 @@
   <data name="tpUploadRetry.Text" xml:space="preserve">
     <value>Reenvio</value>
   </data>
+  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>Suporte para extensões do Chrome...</value>
+  </data>
 </root>
