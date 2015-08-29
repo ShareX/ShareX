@@ -1291,13 +1291,13 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(Info.FilePath))
                 {
-                    Helpers.CreateDirectoryIfNotExist(Info.FilePath);
-
                     Info.Status = Resources.UploadTask_DownloadAndUpload_Downloading;
                     OnStatusChanged();
 
                     try
                     {
+                        Helpers.CreateDirectoryIfNotExist(Info.FilePath);
+
                         using (WebClient wc = new WebClient())
                         {
                             wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
