@@ -795,7 +795,7 @@
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <PropertyGroup>
     <PreBuildEvent>cd $(ProjectDir)APIKeys
-echo=&gt;&gt; APIKeysLocal.cs
+type APIKeysLocal.cs || cat APIKeysLocal.cs || echo=&gt;&gt;APIKeysLocal.cs
 exit 0</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1036,7 +1036,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>cd $(ProjectDir)
-git &amp;&amp; git rev-parse HEAD &gt; GitHash.txt || echo= &gt;&gt; GitHash.txt
+git &amp;&amp; git rev-parse HEAD &gt; GitHash.txt || type GitHash.txt || cat GitHash.txt || echo=&gt;&gt;GitHash.txt
 exit 0</PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
