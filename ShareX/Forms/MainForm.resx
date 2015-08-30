@@ -1358,7 +1358,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsmiTrayFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
   </data>
@@ -1541,7 +1541,7 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;chFilename.Name" xml:space="preserve">
     <value>chFilename</value>
   </data>

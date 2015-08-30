@@ -283,9 +283,6 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
     <value>Gebruik de instellingen voor afbeeldingen in het algemene venster voor taakinstellingen</value>
   </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>Gebruik de indexatie instellingen in het algemene venster voor taakinstellingen</value>
-  </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
     <value>Gebruik de upload instellingen in het algemene venster voor taakinstellingen</value>
   </data>

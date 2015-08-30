@@ -273,9 +273,6 @@
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
     <value>Benutze Bildeinstellungen im Hauptfenster Aufgabeneinstellungen</value>
   </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>Benutze Einteilereinstellungen im Hauptfenster Aufgabeneinstellungen</value>
-  </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
     <value>Benutze Hochladeeinstellungen im Hauptfenster Aufgabeneinstellungen</value>
   </data>

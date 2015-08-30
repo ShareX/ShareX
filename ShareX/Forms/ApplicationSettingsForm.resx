@@ -623,7 +623,7 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
@@ -866,7 +866,7 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>

@@ -266,7 +266,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap arrow_270 {
             get {
-                object obj = ResourceManager.GetObject("arrow-270", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_270", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

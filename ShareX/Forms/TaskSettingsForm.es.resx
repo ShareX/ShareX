@@ -421,9 +421,6 @@ Agregar efectos de imagen".</value>
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
     <value>Utilice configuración de la imagen en configuración de la tarea de la ventana principal</value>
   </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>Utilice configuración indexador en configuración de la tarea de la ventana principal</value>
-  </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
     <value>Utilice la configuración de subida en configuración de la tarea de la ventana principal</value>
   </data>

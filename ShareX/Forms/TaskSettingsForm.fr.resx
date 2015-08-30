@@ -396,9 +396,6 @@
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
     <value>Utiliser les paramètres d'image dans les paramètres des tâches de la fenêtre principale</value>
   </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres de l'indexeur dans les paramètres des tâches de la fenêtre principale</value>
-  </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Utiliser un modèle de nom aussi pour la mise en ligne de fichiers plutôt que le nom du fichier réel</value>
   </data>

@@ -423,9 +423,6 @@
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
     <value>기본 작업 설정의 이미지 설정 사용하기</value>
   </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>기본 작업 설정의 색인기 설정 사용하기</value>
-  </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
     <value>기본 작업 설정의 업로드 설정 사용하기</value>
   </data>

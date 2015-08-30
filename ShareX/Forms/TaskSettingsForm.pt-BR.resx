@@ -429,9 +429,6 @@
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
     <value>Usar opções de imagem nas opções de tarefas da janela principal</value>
   </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>Usar opções de indexer nas opções de tarefas da janela principal</value>
-  </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
     <value>Usar opções de upload nas opções de tarefas da janela principal</value>
   </data>

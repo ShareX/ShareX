@@ -440,7 +440,11 @@ namespace ShareX
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
                 UploadTask task = UploadTask.CreateDownloadUploadTask(url, taskSettings);
-                TaskManager.Start(task);
+
+                if (task != null)
+                {
+                    TaskManager.Start(task);
+                }
             }
         }
     }

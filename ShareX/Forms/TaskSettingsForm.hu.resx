@@ -273,9 +273,6 @@
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
     <value>Kép beállítások használata a főablak feladat beállításainál</value>
   </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>Indexelési beállítások használata a főablak feladat beállításainál</value>
-  </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
     <value>Feltöltési beállítások használata a főablak feladat beállításainál</value>
   </data>

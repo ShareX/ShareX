@@ -273,9 +273,6 @@
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
     <value>使用主窗口任务设置图像设置</value>
   </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>使用主窗口任务设置索引设置</value>
-  </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
     <value>使用主窗口任务设置上传设置</value>
   </data>

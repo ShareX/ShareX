@@ -390,9 +390,6 @@
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Yükleme</value>
   </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>Varsayılan indeksleyici ayarlarını kullan</value>
-  </data>
   <data name="tpIndexer.Text" xml:space="preserve">
     <value>İndeksleyici</value>
   </data>
@@ -440,5 +437,11 @@
   </data>
   <data name="lblGIFEncoding.Text" xml:space="preserve">
     <value>GIF kodlayıcı:</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
+    <value>Varsayılan araç ayarlarını kullan</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>Araçlar</value>
   </data>
 </root>
