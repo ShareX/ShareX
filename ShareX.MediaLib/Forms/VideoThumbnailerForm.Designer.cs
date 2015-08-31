@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoThumbnailerForm));
             this.txtMediaPath = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.pgOptions = new System.Windows.Forms.PropertyGrid();
@@ -37,54 +38,40 @@
             // 
             // txtMediaPath
             // 
-            this.txtMediaPath.Location = new System.Drawing.Point(8, 8);
+            resources.ApplyResources(this.txtMediaPath, "txtMediaPath");
             this.txtMediaPath.Name = "txtMediaPath";
-            this.txtMediaPath.Size = new System.Drawing.Size(496, 20);
-            this.txtMediaPath.TabIndex = 0;
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(544, 6);
+            resources.ApplyResources(this.btnStart, "btnStart");
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(168, 24);
-            this.btnStart.TabIndex = 1;
-            this.btnStart.Text = "Take screenshots";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // pgOptions
             // 
             this.pgOptions.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.pgOptions.Location = new System.Drawing.Point(8, 40);
+            resources.ApplyResources(this.pgOptions, "pgOptions");
             this.pgOptions.Name = "pgOptions";
             this.pgOptions.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgOptions.Size = new System.Drawing.Size(704, 416);
-            this.pgOptions.TabIndex = 2;
             this.pgOptions.ToolbarVisible = false;
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(512, 6);
+            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(27, 24);
-            this.btnBrowse.TabIndex = 3;
-            this.btnBrowse.Text = "...";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // pbProgress
             // 
-            this.pbProgress.Location = new System.Drawing.Point(544, 6);
+            resources.ApplyResources(this.pbProgress, "pbProgress");
             this.pbProgress.Name = "pbProgress";
-            this.pbProgress.Size = new System.Drawing.Size(168, 24);
-            this.pbProgress.TabIndex = 4;
-            this.pbProgress.Visible = false;
             // 
             // VideoThumbnailerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 464);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.pgOptions);
             this.Controls.Add(this.txtMediaPath);
@@ -92,8 +79,6 @@
             this.Controls.Add(this.pbProgress);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "VideoThumbnailerForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Video thumbnailer";
             this.ResumeLayout(false);
             this.PerformLayout();
 

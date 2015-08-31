@@ -70,7 +70,7 @@ namespace ShareX
 
                 RegistryHelpers.RegisterChromeSupport(Program.ChromeHostManifestPath);
 
-                MessageBox.Show("Chrome support enabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.ChromeForm_btnRegister_Click_Chrome_support_enabled_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -89,7 +89,7 @@ namespace ShareX
 
                 RegistryHelpers.UnregisterChromeSupport();
 
-                MessageBox.Show("Chrome support disabled.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.ChromeForm_btnUnregister_Click_Chrome_support_disabled_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

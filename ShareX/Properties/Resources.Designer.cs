@@ -455,6 +455,24 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chrome support enabled..
+        /// </summary>
+        public static string ChromeForm_btnRegister_Click_Chrome_support_enabled_ {
+            get {
+                return ResourceManager.GetString("ChromeForm_btnRegister_Click_Chrome_support_enabled_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chrome support disabled..
+        /// </summary>
+        public static string ChromeForm_btnUnregister_Click_Chrome_support_disabled_ {
+            get {
+                return ResourceManager.GetString("ChromeForm_btnUnregister_Click_Chrome_support_disabled_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap clipboard {
