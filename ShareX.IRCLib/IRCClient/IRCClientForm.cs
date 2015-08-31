@@ -228,6 +228,16 @@ namespace ShareX.IRCLib
             SendCommand();
         }
 
+        private void tcMessages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TabInfo tabInfo = tabManager.ActiveTab;
+
+            if (tabInfo != null)
+            {
+                txtChannel.Text = tabInfo.Name;
+            }
+        }
+
         private void txtMessage_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -388,8 +398,12 @@ namespace ShareX.IRCLib
             {
                 this.InvokeSafe(() =>
                 {
-                    txtChannel.Text = channel;
                     tabManager.AddChannel(channel);
+
+                    if (string.IsNullOrEmpty(txtChannel.Text))
+                    {
+                        txtChannel.Text = channel;
+                    }
                 });
             }
         }

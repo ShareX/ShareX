@@ -43,9 +43,9 @@ namespace ShareX.IRCLib
             Name = name;
             Tab = new TabPage(Name)
             {
-                BackColor = Color.White
+                BackColor = Color.White,
+                Tag = this
             };
-            Tab.Tag = this;
             TextBox = new TextBox()
             {
                 BackColor = Color.White,

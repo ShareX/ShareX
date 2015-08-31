@@ -382,6 +382,7 @@
             resources.ApplyResources(this.tcMessages, "tcMessages");
             this.tcMessages.Name = "tcMessages";
             this.tcMessages.SelectedIndex = 0;
+            this.tcMessages.SelectedIndexChanged += new System.EventHandler(this.tcMessages_SelectedIndexChanged);
             // 
             // IRCClientForm
             // 

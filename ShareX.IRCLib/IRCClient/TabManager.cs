@@ -35,6 +35,26 @@ namespace ShareX.IRCLib
     {
         public List<TabInfo> Tabs { get; private set; }
 
+        public TabInfo ActiveTab
+        {
+            get
+            {
+                TabPage tabPage = tc.SelectedTab;
+
+                if (tabPage != null)
+                {
+                    TabInfo tabInfo = tabPage.Tag as TabInfo;
+
+                    if (tabInfo != null)
+                    {
+                        return tabInfo;
+                    }
+                }
+
+                return null;
+            }
+        }
+
         private TabControl tc;
 
         public TabManager(TabControl tabControl)
