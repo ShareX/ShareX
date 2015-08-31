@@ -41,7 +41,10 @@ namespace ShareX.IRCLib
         public TabInfo(string name)
         {
             Name = name;
-            Tab = new TabPage(Name);
+            Tab = new TabPage(Name)
+            {
+                BackColor = Color.White
+            };
             Tab.Tag = this;
             TextBox = new TextBox()
             {

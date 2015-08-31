@@ -43,18 +43,30 @@ namespace ShareX.IRCLib
             Tabs = new List<TabInfo>();
         }
 
-        public void AddMessage(string channel, string text)
+        public void AddMessage(string channel, string message)
+        {
+            TabInfo tabInfo = AddChannel(channel);
+            tabInfo.AppendText(message);
+        }
+
+        public TabInfo AddChannel(string channel)
         {
             TabInfo tabInfo = Tabs.FirstOrDefault(x => x.Name.Equals(channel, StringComparison.InvariantCultureIgnoreCase));
 
             if (tabInfo == null)
             {
                 tabInfo = new TabInfo(channel);
-                tc.Controls.Add(tabInfo.Tab);
                 Tabs.Add(tabInfo);
+                Tabs.Sort((x, y) => string.Compare(x.Name, y.Name, StringComparison.InvariantCultureIgnoreCase));
+                tc.SuspendLayout();
+                TabPage selected = tc.SelectedTab;
+                tc.TabPages.Clear();
+                tc.TabPages.AddRange(Tabs.Select(x => x.Tab).ToArray());
+                if (selected != null) tc.SelectedTab = selected;
+                tc.ResumeLayout();
             }
 
-            tabInfo.AppendText(text);
+            return tabInfo;
         }
     }
 }

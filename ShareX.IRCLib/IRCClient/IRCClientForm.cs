@@ -389,6 +389,7 @@ namespace ShareX.IRCLib
                 this.InvokeSafe(() =>
                 {
                     txtChannel.Text = channel;
+                    tabManager.AddChannel(channel);
                 });
             }
         }
