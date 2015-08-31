@@ -43,6 +43,9 @@ namespace ShareX
 {
     public class TaskSettings
     {
+        [JsonIgnore]
+        public TaskSettings TaskSettingsReference { get; private set; }
+
         public string Description = string.Empty;
 
         public HotkeyType Job = HotkeyType.None;
@@ -77,26 +80,8 @@ namespace ShareX
         public bool UseDefaultCaptureSettings = true;
         public TaskSettingsCapture CaptureSettings = new TaskSettingsCapture();
 
-        public bool UseDefaultUploadSettings = true;
-        public TaskSettingsUpload UploadSettings = new TaskSettingsUpload();
-
-        public bool UseDefaultActions = true;
-        public List<ExternalProgram> ExternalPrograms = new List<ExternalProgram>();
-
-        public bool UseDefaultToolsSettings = true;
-        public TaskSettingsTools ToolsSettings = new TaskSettingsTools();
-
-        public bool UseDefaultAdvancedSettings = true;
-        public TaskSettingsAdvanced AdvancedSettings = new TaskSettingsAdvanced();
-
-        public bool WatchFolderEnabled = false;
-        public List<WatchFolderSettings> WatchFolderList = new List<WatchFolderSettings>();
-
         [JsonIgnore]
-        public TaskSettings TaskSettingsReference { get; private set; }
-
-        [JsonIgnore]
-        public TaskSettingsCapture TaskSettingsCaptureReference
+        public TaskSettingsCapture CaptureSettingsReference
         {
             get
             {
@@ -108,6 +93,35 @@ namespace ShareX
                 return TaskSettingsReference.CaptureSettings;
             }
         }
+
+        public bool UseDefaultUploadSettings = true;
+        public TaskSettingsUpload UploadSettings = new TaskSettingsUpload();
+
+        public bool UseDefaultActions = true;
+        public List<ExternalProgram> ExternalPrograms = new List<ExternalProgram>();
+
+        public bool UseDefaultToolsSettings = true;
+        public TaskSettingsTools ToolsSettings = new TaskSettingsTools();
+
+        [JsonIgnore]
+        public TaskSettingsTools ToolsSettingsReference
+        {
+            get
+            {
+                if (UseDefaultToolsSettings)
+                {
+                    return Program.DefaultTaskSettings.ToolsSettings;
+                }
+
+                return TaskSettingsReference.ToolsSettings;
+            }
+        }
+
+        public bool UseDefaultAdvancedSettings = true;
+        public TaskSettingsAdvanced AdvancedSettings = new TaskSettingsAdvanced();
+
+        public bool WatchFolderEnabled = false;
+        public List<WatchFolderSettings> WatchFolderList = new List<WatchFolderSettings>();
 
         public override string ToString()
         {

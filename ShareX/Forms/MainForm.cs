@@ -1932,7 +1932,7 @@ namespace ShareX
 
                 try
                 {
-                    surface.Config = taskSettings.TaskSettingsCaptureReference.SurfaceOptions;
+                    surface.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
                     surface.SurfaceImage = screenshot;
                     surface.Prepare();
                     surface.ShowDialog();
@@ -1995,7 +1995,7 @@ namespace ShareX
             {
                 Image img = null;
 
-                using (RectangleAnnotate rectangleAnnotate = new RectangleAnnotate(taskSettings.TaskSettingsCaptureReference.RectangleAnnotateOptions))
+                using (RectangleAnnotate rectangleAnnotate = new RectangleAnnotate(taskSettings.CaptureSettingsReference.RectangleAnnotateOptions))
                 {
                     if (rectangleAnnotate.ShowDialog() == DialogResult.OK)
                     {

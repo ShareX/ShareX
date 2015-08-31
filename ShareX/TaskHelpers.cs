@@ -633,10 +633,10 @@ namespace ShareX
             }
 
             taskSettings.ToolsSettings.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
-            VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, taskSettings.ToolsSettings.VideoThumbnailOptions);
+            VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, taskSettings.ToolsSettingsReference.VideoThumbnailOptions);
             thumbnailerForm.ThumbnailsTaken += thumbnails =>
             {
-                if (taskSettings.ToolsSettings.VideoThumbnailOptions.UploadThumbnails)
+                if (taskSettings.ToolsSettingsReference.VideoThumbnailOptions.UploadThumbnails)
                 {
                     foreach (VideoThumbnailInfo thumbnailInfo in thumbnails)
                     {
@@ -752,7 +752,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            new IRCClientForm(taskSettings.ToolsSettings.IRCSettings).Show();
+            new IRCClientForm(taskSettings.ToolsSettingsReference.IRCSettings).Show();
         }
 
         public static void TweetMessage()
