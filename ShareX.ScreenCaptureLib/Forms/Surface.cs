@@ -37,7 +37,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class Surface : Form
+    public class Surface : BaseForm
     {
         public Image SurfaceImage { get; set; }
         public SurfaceOptions Config { get; set; }

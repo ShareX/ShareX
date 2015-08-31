@@ -36,7 +36,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class DownloaderForm : Form
+    public partial class DownloaderForm : BaseForm
     {
         public delegate void DownloaderInstallEventHandler(string filePath);
         public event DownloaderInstallEventHandler InstallRequested;
@@ -60,7 +60,6 @@ namespace ShareX.HelpersLib
         private DownloaderForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
 
             fillRect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
 

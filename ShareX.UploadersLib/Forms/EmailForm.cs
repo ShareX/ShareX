@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.GUI
 {
-    public partial class EmailForm : Form
+    public partial class EmailForm : BaseForm
     {
         public string ToEmail { get; private set; }
         public string Subject { get; private set; }
@@ -38,7 +38,6 @@ namespace ShareX.UploadersLib.GUI
         public EmailForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
         }
 
         public EmailForm(string toEmail, string subject, string body)

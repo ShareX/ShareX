@@ -39,7 +39,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class UploadersConfigForm : Form
+    public partial class UploadersConfigForm : BaseForm
     {
         public UploadersConfig Config { get; private set; }
 
@@ -54,8 +54,6 @@ namespace ShareX.UploadersLib
             {
                 Text += " - " + Config.FilePath;
             }
-
-            Icon = ShareXResources.Icon;
         }
 
         private void UploadersConfigForm_Shown(object sender, EventArgs e)

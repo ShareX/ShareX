@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class WatchFolderForm : Form
+    public partial class WatchFolderForm : BaseForm
     {
         public WatchFolderSettings WatchFolder { get; private set; }
 

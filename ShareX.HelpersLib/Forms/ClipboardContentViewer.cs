@@ -31,7 +31,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class ClipboardContentViewer : Form
+    public partial class ClipboardContentViewer : BaseForm
     {
         public bool IsClipboardEmpty { get; private set; }
 
@@ -40,7 +40,6 @@ namespace ShareX.HelpersLib
         public ClipboardContentViewer(bool showCheckBox = false)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             cbDontShowThisWindow.Visible = showCheckBox;
         }
 

@@ -36,7 +36,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class FTPClientForm : Form
+    public partial class FTPClientForm : BaseForm
     {
         private const string Root = "/";
 
@@ -49,7 +49,6 @@ namespace ShareX.UploadersLib
         public FTPClientForm(FTPAccount account)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
 
             lblStatus.Text = string.Empty;
             lvFTPList.SubItemEndEditing += lvFTPList_SubItemEndEditing;

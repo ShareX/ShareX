@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ScreenRegionForm : Form
+    public partial class ScreenRegionForm : BaseForm
     {
         public event Action StopRequested;
 

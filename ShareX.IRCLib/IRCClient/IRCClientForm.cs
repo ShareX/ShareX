@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.IRCLib
 {
-    public partial class IRCClientForm : Form
+    public partial class IRCClientForm : BaseForm
     {
         public IRCInfo Info { get; private set; }
         public IRC IRC { get; private set; }
@@ -45,7 +45,6 @@ namespace ShareX.IRCLib
         public IRCClientForm(IRCInfo info)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             ((ToolStripDropDownMenu)tsmiColors.DropDown).ShowImageMargin = false;
 
             tabManager = new TabManager(tcMessages);

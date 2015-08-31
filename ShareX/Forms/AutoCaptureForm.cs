@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class AutoCaptureForm : Form
+    public partial class AutoCaptureForm : BaseForm
     {
         private static AutoCaptureForm instance;
 
@@ -63,7 +63,6 @@ namespace ShareX
         private AutoCaptureForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             niTray.Icon = Resources.clock.ToIcon();
 
             screenshotTimer = new System.Timers.Timer();

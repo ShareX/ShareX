@@ -28,7 +28,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class TrayForm : Form
+    public class TrayForm : BaseForm
     {
         protected NotifyIcon TrayIcon = null;
 

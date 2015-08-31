@@ -30,14 +30,13 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class HashCheckForm : Form
+    public partial class HashCheckForm : BaseForm
     {
         private HashCheck hashCheck;
 
         public HashCheckForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
 
             cbHashType.Items.AddRange(Helpers.GetEnumDescriptions<HashType>());
             cbHashType.SelectedIndex = (int)HashType.SHA1;

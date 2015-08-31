@@ -1007,8 +1007,6 @@ namespace ShareX
                     using (EmailForm emailForm = new EmailForm(Program.UploadersConfig.EmailRememberLastTo ? Program.UploadersConfig.EmailLastTo : string.Empty,
                         Program.UploadersConfig.EmailDefaultSubject, Program.UploadersConfig.EmailDefaultBody))
                     {
-                        emailForm.Icon = ShareXResources.Icon;
-
                         if (emailForm.ShowDialog() == DialogResult.OK)
                         {
                             if (Program.UploadersConfig.EmailRememberLastTo)

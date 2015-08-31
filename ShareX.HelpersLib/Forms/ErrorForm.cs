@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class ErrorForm : Form
+    public partial class ErrorForm : BaseForm
     {
         public string LogPath { get; private set; }
         public string BugReportPath { get; private set; }
@@ -42,7 +42,6 @@ namespace ShareX.HelpersLib
         public ErrorForm(string errorTitle, string errorMessage, string logPath, string bugReportPath)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             LogPath = logPath;
             BugReportPath = bugReportPath;
 

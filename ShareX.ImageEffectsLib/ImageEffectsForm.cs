@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
-    public partial class ImageEffectsForm : Form
+    public partial class ImageEffectsForm : BaseForm
     {
         public Image DefaultImage { get; private set; }
 
@@ -43,7 +43,6 @@ namespace ShareX.ImageEffectsLib
         public ImageEffectsForm(Image img, List<ImageEffect> effects = null)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             DefaultImage = img;
             eiImageEffects.ObjectType = typeof(List<ImageEffect>);
             AddAllEffectsToContextMenu();

@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ApplicationSettingsForm : Form
+    public partial class ApplicationSettingsForm : BaseForm
     {
         private bool loaded;
         private const int MaxBufferSizePower = 14;
@@ -48,8 +48,6 @@ namespace ShareX
 
         private void LoadSettings()
         {
-            Icon = ShareXResources.Icon;
-
             // General
 
             foreach (SupportedLanguage language in Helpers.GetEnums<SupportedLanguage>())

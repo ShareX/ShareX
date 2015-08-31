@@ -35,7 +35,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.Forms
 {
-    public partial class DropboxFilesForm : Form
+    public partial class DropboxFilesForm : BaseForm
     {
         public string CurrentFolderPath { get; private set; }
 

@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class PrintForm : Form
+    public partial class PrintForm : BaseForm
     {
         private PrintHelper printHelper;
         private PrintSettings printSettings;

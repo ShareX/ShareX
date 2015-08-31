@@ -35,7 +35,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleAnnotate : Form
+    public class RectangleAnnotate : BaseForm
     {
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
