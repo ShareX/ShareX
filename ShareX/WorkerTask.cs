@@ -191,13 +191,17 @@ namespace ShareX
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.DownloadUpload;
             task.Info.DataType = TaskHelpers.FindDataType(url, taskSettings);
-            task.Info.FileName = URLHelpers.GetFileName(url, true);
 
-            if (string.IsNullOrEmpty(task.Info.FileName))
+            string filename = URLHelpers.URLDecode(url, 10);
+            filename = URLHelpers.GetFileName(filename);
+            filename = Helpers.GetValidFileName(filename);
+
+            if (string.IsNullOrEmpty(filename))
             {
                 return null;
             }
 
+            task.Info.FileName = filename;
             task.Info.Result.URL = url;
             return task;
         }

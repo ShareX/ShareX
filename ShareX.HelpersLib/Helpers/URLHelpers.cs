@@ -27,7 +27,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -121,6 +120,19 @@ namespace ShareX.HelpersLib
             }
 
             return result.ToString();
+        }
+
+        public static string URLDecode(string url, int count = 1)
+        {
+            string temp = null;
+
+            for (int i = 0; i < count && url != temp; i++)
+            {
+                temp = url;
+                url = HttpUtility.UrlDecode(url);
+            }
+
+            return url;
         }
 
         public static string CombineURL(string url1, string url2)
@@ -251,19 +263,8 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string GetFileName(string path, bool urlDecode = false)
+        public static string GetFileName(string path)
         {
-            if (urlDecode)
-            {
-                string tempPath = null;
-
-                for (int i = 0; i < 10 && path != tempPath; i++)
-                {
-                    tempPath = path;
-                    path = HttpUtility.UrlDecode(path);
-                }
-            }
-
             if (path.Contains('/'))
             {
                 path = path.Substring(path.LastIndexOf('/') + 1);
