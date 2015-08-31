@@ -61,6 +61,34 @@ namespace ShareX.IRCLib
         {
             tc = tabControl;
             Tabs = new List<TabInfo>();
+            tc.MouseClick += tc_MouseClick;
+        }
+
+        private void tc_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Middle)
+            {
+                for (int i = 0; i < tc.TabCount; ++i)
+                {
+                    if (tc.GetTabRect(i).Contains(e.Location))
+                    {
+                        TabPage tabPage = tc.TabPages[i];
+
+                        if (tabPage != null)
+                        {
+                            TabInfo tabInfo = tabPage.Tag as TabInfo;
+
+                            if (tabInfo != null)
+                            {
+                                tc.TabPages.Remove(tabPage);
+                                Tabs.Remove(tabInfo);
+                            }
+                        }
+
+                        return;
+                    }
+                }
+            }
         }
 
         public void AddMessage(string channel, string message)
