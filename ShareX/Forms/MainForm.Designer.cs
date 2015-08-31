@@ -198,6 +198,7 @@
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayIRCClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray1 = new System.Windows.Forms.ToolStripSeparator();
@@ -226,7 +227,6 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
-            this.tsmiTrayIRCClient = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -548,6 +548,7 @@
             this.tsmiImageEditor,
             this.tsmiImageEffects,
             this.tsmiHashCheck,
+            this.tsmiIRCClient,
             this.tsmiDNSChanger,
             this.tsmiQRCode,
             this.tsmiRuler,
@@ -555,7 +556,6 @@
             this.tsmiIndexFolder,
             this.tsmiVideoThumbnailer,
             this.tsmiFTPClient,
-            this.tsmiIRCClient,
             this.tsmiTweetMessage,
             this.tsmiMonitorTest});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
@@ -1447,6 +1447,7 @@
             this.tsmiTrayImageEditor,
             this.tsmiTrayImageEffects,
             this.tsmiTrayHashCheck,
+            this.tsmiTrayIRCClient,
             this.tsmiTrayDNSChanger,
             this.tsmiTrayQRCode,
             this.tsmiTrayRuler,
@@ -1454,7 +1455,6 @@
             this.tsmiTrayIndexFolder,
             this.tsmiTrayVideoThumbnailer,
             this.tsmiTrayFTPClient,
-            this.tsmiTrayIRCClient,
             this.tsmiTrayTweetMessage,
             this.tsmiTrayMonitorTest});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
@@ -1544,6 +1544,13 @@
             this.tsmiTrayFTPClient.Name = "tsmiTrayFTPClient";
             resources.ApplyResources(this.tsmiTrayFTPClient, "tsmiTrayFTPClient");
             this.tsmiTrayFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
+            // 
+            // tsmiTrayIRCClient
+            // 
+            this.tsmiTrayIRCClient.Image = global::ShareX.Properties.Resources.balloon_white;
+            this.tsmiTrayIRCClient.Name = "tsmiTrayIRCClient";
+            resources.ApplyResources(this.tsmiTrayIRCClient, "tsmiTrayIRCClient");
+            this.tsmiTrayIRCClient.Click += new System.EventHandler(this.tsmiIRCClient_Click);
             // 
             // tsmiTrayTweetMessage
             // 
@@ -1729,13 +1736,6 @@
             // timerTraySingleClick
             // 
             this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
-            // 
-            // tsmiTrayIRCClient
-            // 
-            this.tsmiTrayIRCClient.Image = global::ShareX.Properties.Resources.balloon_white;
-            this.tsmiTrayIRCClient.Name = "tsmiTrayIRCClient";
-            resources.ApplyResources(this.tsmiTrayIRCClient, "tsmiTrayIRCClient");
-            this.tsmiTrayIRCClient.Click += new System.EventHandler(this.tsmiIRCClient_Click);
             // 
             // MainForm
             // 

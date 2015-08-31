@@ -116,7 +116,7 @@ namespace ShareX.IRCLib
             catch (Exception e)
             {
                 IsConnected = false;
-                Console.WriteLine(e.ToString());
+                DebugHelper.WriteLine(e.ToString());
             }
         }
 
@@ -124,10 +124,11 @@ namespace ShareX.IRCLib
         {
             try
             {
+                disconnecting = true;
+
                 if (IsConnected)
                 {
                     Quit(Info.QuitReason);
-                    disconnecting = true;
                 }
 
                 if (streamReader != null) streamReader.Close();
@@ -136,7 +137,7 @@ namespace ShareX.IRCLib
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                DebugHelper.WriteLine(e.ToString());
             }
         }
 
@@ -154,12 +155,22 @@ namespace ShareX.IRCLib
 
                 while ((message = streamReader.ReadLine()) != null)
                 {
-                    if (!CheckCommand(message)) break;
+                    try
+                    {
+                        if (!CheckCommand(message)) break;
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteLine(e.ToString());
+                    }
                 }
+            }
+            catch (IOException)
+            {
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                DebugHelper.WriteLine(e.ToString());
             }
 
             OnDisconnected();
@@ -267,7 +278,7 @@ namespace ShareX.IRCLib
                 Output(messageInfo);
             }
 
-            Console.WriteLine($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {messageInfo.Content}");
+            //Console.WriteLine($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {messageInfo.Content}");
         }
 
         protected void OnConnected()

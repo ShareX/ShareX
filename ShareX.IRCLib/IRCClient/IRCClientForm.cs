@@ -60,12 +60,22 @@ namespace ShareX.IRCLib
             IRC.UserJoined += IRC_UserJoined;
         }
 
-        private void WriteText(string message, TextBox tb)
+        protected override void Dispose(bool disposing)
         {
-            this.InvokeSafe(() =>
+            if (disposing)
             {
-                tb.AppendText($"{message}\r\n");
-            });
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+
+                if (IRC != null)
+                {
+                    IRC.Dispose();
+                }
+            }
+
+            base.Dispose(disposing);
         }
 
         private void AppendMessage(string message)
@@ -190,11 +200,6 @@ namespace ShareX.IRCLib
         }
 
         #region Form events
-
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            IRC.Disconnect();
-        }
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
@@ -381,7 +386,10 @@ namespace ShareX.IRCLib
 
         private void IRC_Output(MessageInfo messageInfo)
         {
-            WriteText($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {messageInfo.Content}", txtOutput);
+            this.InvokeSafe(() =>
+            {
+                txtOutput.AppendText($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {messageInfo.Content}\r\n");
+            });
         }
 
         private void IRC_Message(UserInfo user, string channel, string message)

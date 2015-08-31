@@ -147,15 +147,6 @@
   <metadata name="cmsMessage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="cmsMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 114</value>
-  </data>
-  <data name="&gt;&gt;cmsMessage.Name" xml:space="preserve">
-    <value>cmsMessage</value>
-  </data>
-  <data name="&gt;&gt;cmsMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiMessageBold.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt, style=Bold</value>
   </data>
@@ -188,12 +179,6 @@
   </data>
   <data name="tsmiMessageNormal.Text" xml:space="preserve">
     <value>Normal</value>
-  </data>
-  <data name="tsmiColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="tsmiColors.Text" xml:space="preserve">
-    <value>Colors</value>
   </data>
   <data name="tsmiColorWhite.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 22</value>
@@ -291,6 +276,21 @@
   <data name="tsmiColorLightGrey.Text" xml:space="preserve">
     <value>Light Grey</value>
   </data>
+  <data name="tsmiColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="tsmiColors.Text" xml:space="preserve">
+    <value>Colors</value>
+  </data>
+  <data name="cmsMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 114</value>
+  </data>
+  <data name="&gt;&gt;cmsMessage.Name" xml:space="preserve">
+    <value>cmsMessage</value>
+  </data>
+  <data name="&gt;&gt;cmsMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="btnMessageSend.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -354,6 +354,21 @@
   <data name="&gt;&gt;txtOutput.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnConnect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnConnect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 600</value>
+  </data>
+  <data name="btnConnect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 24</value>
+  </data>
+  <data name="btnConnect.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnConnect.Text" xml:space="preserve">
+    <value>Connect</value>
+  </data>
   <data name="&gt;&gt;btnConnect.Name" xml:space="preserve">
     <value>btnConnect</value>
   </data>
@@ -365,6 +380,18 @@
   </data>
   <data name="&gt;&gt;btnConnect.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="pgSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>960, 584</value>
+  </data>
+  <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
     <value>pgSettings</value>
@@ -405,6 +432,18 @@
   <data name="&gt;&gt;tpMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="txtCommand.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="txtCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 604</value>
+  </data>
+  <data name="txtCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>808, 20</value>
+  </data>
+  <data name="txtCommand.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;txtCommand.Name" xml:space="preserve">
     <value>txtCommand</value>
   </data>
@@ -417,6 +456,24 @@
   <data name="&gt;&gt;txtCommand.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="lblCommand.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="lblCommand.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 608</value>
+  </data>
+  <data name="lblCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="lblCommand.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblCommand.Text" xml:space="preserve">
+    <value>Command:</value>
+  </data>
   <data name="&gt;&gt;lblCommand.Name" xml:space="preserve">
     <value>lblCommand</value>
   </data>
@@ -428,6 +485,24 @@
   </data>
   <data name="&gt;&gt;lblCommand.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnCommandSend.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnCommandSend.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnCommandSend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>888, 602</value>
+  </data>
+  <data name="btnCommandSend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 24</value>
+  </data>
+  <data name="btnCommandSend.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnCommandSend.Text" xml:space="preserve">
+    <value>Send</value>
   </data>
   <data name="&gt;&gt;btnCommandSend.Name" xml:space="preserve">
     <value>btnCommandSend</value>
@@ -653,141 +728,6 @@
   </data>
   <data name="&gt;&gt;tcMain.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="btnConnect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="btnConnect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 600</value>
-  </data>
-  <data name="btnConnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 24</value>
-  </data>
-  <data name="btnConnect.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnConnect.Text" xml:space="preserve">
-    <value>Connect</value>
-  </data>
-  <data name="&gt;&gt;btnConnect.Name" xml:space="preserve">
-    <value>btnConnect</value>
-  </data>
-  <data name="&gt;&gt;btnConnect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnConnect.Parent" xml:space="preserve">
-    <value>tpMain</value>
-  </data>
-  <data name="&gt;&gt;btnConnect.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pgSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 584</value>
-  </data>
-  <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
-    <value>pgSettings</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Parent" xml:space="preserve">
-    <value>tpMain</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtCommand.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="txtCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 604</value>
-  </data>
-  <data name="txtCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>808, 20</value>
-  </data>
-  <data name="txtCommand.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtCommand.Name" xml:space="preserve">
-    <value>txtCommand</value>
-  </data>
-  <data name="&gt;&gt;txtCommand.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCommand.Parent" xml:space="preserve">
-    <value>tpOutput</value>
-  </data>
-  <data name="&gt;&gt;txtCommand.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblCommand.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="lblCommand.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 608</value>
-  </data>
-  <data name="lblCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
-  </data>
-  <data name="lblCommand.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblCommand.Text" xml:space="preserve">
-    <value>Command:</value>
-  </data>
-  <data name="&gt;&gt;lblCommand.Name" xml:space="preserve">
-    <value>lblCommand</value>
-  </data>
-  <data name="&gt;&gt;lblCommand.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCommand.Parent" xml:space="preserve">
-    <value>tpOutput</value>
-  </data>
-  <data name="&gt;&gt;lblCommand.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnCommandSend.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="btnCommandSend.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnCommandSend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>888, 602</value>
-  </data>
-  <data name="btnCommandSend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
-  </data>
-  <data name="btnCommandSend.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnCommandSend.Text" xml:space="preserve">
-    <value>Send</value>
-  </data>
-  <data name="&gt;&gt;btnCommandSend.Name" xml:space="preserve">
-    <value>btnCommandSend</value>
-  </data>
-  <data name="&gt;&gt;btnCommandSend.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCommandSend.Parent" xml:space="preserve">
-    <value>tpOutput</value>
-  </data>
-  <data name="&gt;&gt;btnCommandSend.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

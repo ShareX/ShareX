@@ -7,19 +7,6 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -64,11 +51,11 @@
             this.lblCommand = new System.Windows.Forms.Label();
             this.btnCommandSend = new System.Windows.Forms.Button();
             this.tpMessages = new System.Windows.Forms.TabPage();
+            this.tcMessages = new System.Windows.Forms.TabControl();
             this.btnMessagesMenu = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblChannel = new System.Windows.Forms.Label();
             this.txtChannel = new System.Windows.Forms.TextBox();
-            this.tcMessages = new System.Windows.Forms.TabControl();
             this.cmsMessage.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tpMain.SuspendLayout();
@@ -355,6 +342,13 @@
             this.tpMessages.Name = "tpMessages";
             this.tpMessages.UseVisualStyleBackColor = true;
             // 
+            // tcMessages
+            // 
+            resources.ApplyResources(this.tcMessages, "tcMessages");
+            this.tcMessages.Name = "tcMessages";
+            this.tcMessages.SelectedIndex = 0;
+            this.tcMessages.SelectedIndexChanged += new System.EventHandler(this.tcMessages_SelectedIndexChanged);
+            // 
             // btnMessagesMenu
             // 
             resources.ApplyResources(this.btnMessagesMenu, "btnMessagesMenu");
@@ -377,20 +371,12 @@
             resources.ApplyResources(this.txtChannel, "txtChannel");
             this.txtChannel.Name = "txtChannel";
             // 
-            // tcMessages
-            // 
-            resources.ApplyResources(this.tcMessages, "tcMessages");
-            this.tcMessages.Name = "tcMessages";
-            this.tcMessages.SelectedIndex = 0;
-            this.tcMessages.SelectedIndexChanged += new System.EventHandler(this.tcMessages_SelectedIndexChanged);
-            // 
             // IRCClientForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tcMain);
             this.Name = "IRCClientForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.cmsMessage.ResumeLayout(false);
             this.tcMain.ResumeLayout(false);
             this.tpMain.ResumeLayout(false);

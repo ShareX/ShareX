@@ -79,7 +79,7 @@ namespace ShareX.IRCLib
                 Tabs.Add(tabInfo);
                 Tabs.Sort((x, y) => string.Compare(x.Name, y.Name, StringComparison.InvariantCultureIgnoreCase));
                 tc.SuspendLayout();
-                TabPage selected = tc.SelectedTab;
+                TabPage selected = tc.TabPages.Count > 0 ? tc.SelectedTab : null;
                 tc.TabPages.Clear();
                 tc.TabPages.AddRange(Tabs.Select(x => x.Tab).ToArray());
                 if (selected != null) tc.SelectedTab = selected;
