@@ -67,8 +67,8 @@
             this.btnMessagesMenu = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblChannel = new System.Windows.Forms.Label();
-            this.txtMessages = new System.Windows.Forms.TextBox();
             this.txtChannel = new System.Windows.Forms.TextBox();
+            this.tcMessages = new System.Windows.Forms.TabControl();
             this.cmsMessage.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tpMain.SuspendLayout();
@@ -344,10 +344,10 @@
             // 
             // tpMessages
             // 
+            this.tpMessages.Controls.Add(this.tcMessages);
             this.tpMessages.Controls.Add(this.btnMessagesMenu);
             this.tpMessages.Controls.Add(this.lblMessage);
             this.tpMessages.Controls.Add(this.lblChannel);
-            this.tpMessages.Controls.Add(this.txtMessages);
             this.tpMessages.Controls.Add(this.txtChannel);
             this.tpMessages.Controls.Add(this.txtMessage);
             this.tpMessages.Controls.Add(this.btnMessageSend);
@@ -372,17 +372,16 @@
             resources.ApplyResources(this.lblChannel, "lblChannel");
             this.lblChannel.Name = "lblChannel";
             // 
-            // txtMessages
-            // 
-            resources.ApplyResources(this.txtMessages, "txtMessages");
-            this.txtMessages.BackColor = System.Drawing.Color.White;
-            this.txtMessages.Name = "txtMessages";
-            this.txtMessages.ReadOnly = true;
-            // 
             // txtChannel
             // 
             resources.ApplyResources(this.txtChannel, "txtChannel");
             this.txtChannel.Name = "txtChannel";
+            // 
+            // tcMessages
+            // 
+            resources.ApplyResources(this.tcMessages, "tcMessages");
+            this.tcMessages.Name = "tcMessages";
+            this.tcMessages.SelectedIndex = 0;
             // 
             // IRCClientForm
             // 
@@ -410,7 +409,6 @@
         private System.Windows.Forms.TabControl tcMain;
         private System.Windows.Forms.TabPage tpOutput;
         private System.Windows.Forms.TabPage tpMessages;
-        private System.Windows.Forms.TextBox txtMessages;
         private System.Windows.Forms.TextBox txtChannel;
         private System.Windows.Forms.Label lblChannel;
         private System.Windows.Forms.Label lblMessage;
@@ -443,6 +441,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiColorPink;
         private System.Windows.Forms.ToolStripMenuItem tsmiColorGrey;
         private System.Windows.Forms.ToolStripMenuItem tsmiColorLightGrey;
+        private System.Windows.Forms.TabControl tcMessages;
     }
 }
 

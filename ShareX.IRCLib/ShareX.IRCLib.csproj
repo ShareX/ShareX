@@ -46,20 +46,22 @@
     <Compile Include="AutoResponseInfo.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="IRC.cs" />
-    <Compile Include="IRCClientForm.cs">
+    <Compile Include="IRCClient\IRCClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IRCClientForm.Designer.cs">
+    <Compile Include="IRCClient\IRCClientForm.Designer.cs">
       <DependentUpon>IRCClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="IRCClient\TabInfo.cs" />
     <Compile Include="IRCInfo.cs" />
     <Compile Include="IRCText.cs" />
     <Compile Include="MessageInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IRCClient\TabManager.cs" />
     <Compile Include="UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="IRCClientForm.resx">
+    <EmbeddedResource Include="IRCClient\IRCClientForm.resx">
       <DependentUpon>IRCClientForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

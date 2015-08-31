@@ -147,6 +147,15 @@
   <metadata name="cmsMessage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="cmsMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 114</value>
+  </data>
+  <data name="&gt;&gt;cmsMessage.Name" xml:space="preserve">
+    <value>cmsMessage</value>
+  </data>
+  <data name="&gt;&gt;cmsMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tsmiMessageBold.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt, style=Bold</value>
   </data>
@@ -179,6 +188,12 @@
   </data>
   <data name="tsmiMessageNormal.Text" xml:space="preserve">
     <value>Normal</value>
+  </data>
+  <data name="tsmiColors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="tsmiColors.Text" xml:space="preserve">
+    <value>Colors</value>
   </data>
   <data name="tsmiColorWhite.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 22</value>
@@ -276,21 +291,6 @@
   <data name="tsmiColorLightGrey.Text" xml:space="preserve">
     <value>Light Grey</value>
   </data>
-  <data name="tsmiColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="tsmiColors.Text" xml:space="preserve">
-    <value>Colors</value>
-  </data>
-  <data name="cmsMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 114</value>
-  </data>
-  <data name="&gt;&gt;cmsMessage.Name" xml:space="preserve">
-    <value>cmsMessage</value>
-  </data>
-  <data name="&gt;&gt;cmsMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="btnMessageSend.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -354,6 +354,306 @@
   <data name="&gt;&gt;txtOutput.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;btnConnect.Name" xml:space="preserve">
+    <value>btnConnect</value>
+  </data>
+  <data name="&gt;&gt;btnConnect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnConnect.Parent" xml:space="preserve">
+    <value>tpMain</value>
+  </data>
+  <data name="&gt;&gt;btnConnect.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
+    <value>pgSettings</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Parent" xml:space="preserve">
+    <value>tpMain</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>976, 635</value>
+  </data>
+  <data name="tpMain.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="&gt;&gt;tpMain.Name" xml:space="preserve">
+    <value>tpMain</value>
+  </data>
+  <data name="&gt;&gt;tpMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpMain.Parent" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tpMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtCommand.Name" xml:space="preserve">
+    <value>txtCommand</value>
+  </data>
+  <data name="&gt;&gt;txtCommand.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCommand.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;txtCommand.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblCommand.Name" xml:space="preserve">
+    <value>lblCommand</value>
+  </data>
+  <data name="&gt;&gt;lblCommand.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCommand.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;lblCommand.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnCommandSend.Name" xml:space="preserve">
+    <value>btnCommandSend</value>
+  </data>
+  <data name="&gt;&gt;btnCommandSend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCommandSend.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;btnCommandSend.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tpOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpOutput.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>976, 635</value>
+  </data>
+  <data name="tpOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>IRC output</value>
+  </data>
+  <data name="&gt;&gt;tpOutput.Name" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;tpOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpOutput.Parent" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tpOutput.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tcMessages.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="tcMessages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tcMessages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>976, 592</value>
+  </data>
+  <data name="tcMessages.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tcMessages.Name" xml:space="preserve">
+    <value>tcMessages</value>
+  </data>
+  <data name="&gt;&gt;tcMessages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcMessages.Parent" xml:space="preserve">
+    <value>tpMessages</value>
+  </data>
+  <data name="&gt;&gt;tcMessages.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnMessagesMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnMessagesMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>856, 602</value>
+  </data>
+  <data name="btnMessagesMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnMessagesMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnMessagesMenu.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;btnMessagesMenu.Name" xml:space="preserve">
+    <value>btnMessagesMenu</value>
+  </data>
+  <data name="&gt;&gt;btnMessagesMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMessagesMenu.Parent" xml:space="preserve">
+    <value>tpMessages</value>
+  </data>
+  <data name="&gt;&gt;btnMessagesMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblMessage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="lblMessage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMessage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 608</value>
+  </data>
+  <data name="lblMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="lblMessage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblMessage.Text" xml:space="preserve">
+    <value>Message:</value>
+  </data>
+  <data name="&gt;&gt;lblMessage.Name" xml:space="preserve">
+    <value>lblMessage</value>
+  </data>
+  <data name="&gt;&gt;lblMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMessage.Parent" xml:space="preserve">
+    <value>tpMessages</value>
+  </data>
+  <data name="&gt;&gt;lblMessage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblChannel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="lblChannel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblChannel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 608</value>
+  </data>
+  <data name="lblChannel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
+  </data>
+  <data name="lblChannel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblChannel.Text" xml:space="preserve">
+    <value>Channel/Nick:</value>
+  </data>
+  <data name="&gt;&gt;lblChannel.Name" xml:space="preserve">
+    <value>lblChannel</value>
+  </data>
+  <data name="&gt;&gt;lblChannel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblChannel.Parent" xml:space="preserve">
+    <value>tpMessages</value>
+  </data>
+  <data name="&gt;&gt;lblChannel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtChannel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="txtChannel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 604</value>
+  </data>
+  <data name="txtChannel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="txtChannel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtChannel.Name" xml:space="preserve">
+    <value>txtChannel</value>
+  </data>
+  <data name="&gt;&gt;txtChannel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtChannel.Parent" xml:space="preserve">
+    <value>tpMessages</value>
+  </data>
+  <data name="&gt;&gt;txtChannel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpMessages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpMessages.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpMessages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>976, 635</value>
+  </data>
+  <data name="tpMessages.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpMessages.Text" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="&gt;&gt;tpMessages.Name" xml:space="preserve">
+    <value>tpMessages</value>
+  </data>
+  <data name="&gt;&gt;tpMessages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpMessages.Parent" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tpMessages.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tcMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tcMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>984, 661</value>
+  </data>
+  <data name="tcMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tcMain.Name" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tcMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcMain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnConnect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -404,33 +704,6 @@
   </data>
   <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="tpMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 635</value>
-  </data>
-  <data name="tpMain.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tpMain.Text" xml:space="preserve">
-    <value>Main</value>
-  </data>
-  <data name="&gt;&gt;tpMain.Name" xml:space="preserve">
-    <value>tpMain</value>
-  </data>
-  <data name="&gt;&gt;tpMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpMain.Parent" xml:space="preserve">
-    <value>tcMain</value>
-  </data>
-  <data name="&gt;&gt;tpMain.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="txtCommand.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -515,228 +788,6 @@
   </data>
   <data name="&gt;&gt;btnCommandSend.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="tpOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpOutput.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 635</value>
-  </data>
-  <data name="tpOutput.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tpOutput.Text" xml:space="preserve">
-    <value>IRC output</value>
-  </data>
-  <data name="&gt;&gt;tpOutput.Name" xml:space="preserve">
-    <value>tpOutput</value>
-  </data>
-  <data name="&gt;&gt;tpOutput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpOutput.Parent" xml:space="preserve">
-    <value>tcMain</value>
-  </data>
-  <data name="&gt;&gt;tpOutput.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnMessagesMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="btnMessagesMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>856, 602</value>
-  </data>
-  <data name="btnMessagesMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="btnMessagesMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnMessagesMenu.Text" xml:space="preserve">
-    <value>...</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;btnMessagesMenu.Name" xml:space="preserve">
-    <value>btnMessagesMenu</value>
-  </data>
-  <data name="&gt;&gt;btnMessagesMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMessagesMenu.Parent" xml:space="preserve">
-    <value>tpMessages</value>
-  </data>
-  <data name="&gt;&gt;btnMessagesMenu.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblMessage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="lblMessage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 608</value>
-  </data>
-  <data name="lblMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
-  </data>
-  <data name="lblMessage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblMessage.Text" xml:space="preserve">
-    <value>Message:</value>
-  </data>
-  <data name="&gt;&gt;lblMessage.Name" xml:space="preserve">
-    <value>lblMessage</value>
-  </data>
-  <data name="&gt;&gt;lblMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMessage.Parent" xml:space="preserve">
-    <value>tpMessages</value>
-  </data>
-  <data name="&gt;&gt;lblMessage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblChannel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="lblChannel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblChannel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 608</value>
-  </data>
-  <data name="lblChannel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
-  </data>
-  <data name="lblChannel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblChannel.Text" xml:space="preserve">
-    <value>Channel/Nick:</value>
-  </data>
-  <data name="&gt;&gt;lblChannel.Name" xml:space="preserve">
-    <value>lblChannel</value>
-  </data>
-  <data name="&gt;&gt;lblChannel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblChannel.Parent" xml:space="preserve">
-    <value>tpMessages</value>
-  </data>
-  <data name="&gt;&gt;lblChannel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txtMessages.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="txtMessages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="txtMessages.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtMessages.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
-  <data name="txtMessages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 584</value>
-  </data>
-  <data name="txtMessages.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="txtMessages.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;txtMessages.Name" xml:space="preserve">
-    <value>txtMessages</value>
-  </data>
-  <data name="&gt;&gt;txtMessages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtMessages.Parent" xml:space="preserve">
-    <value>tpMessages</value>
-  </data>
-  <data name="&gt;&gt;txtMessages.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtChannel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="txtChannel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 604</value>
-  </data>
-  <data name="txtChannel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 20</value>
-  </data>
-  <data name="txtChannel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtChannel.Name" xml:space="preserve">
-    <value>txtChannel</value>
-  </data>
-  <data name="&gt;&gt;txtChannel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtChannel.Parent" xml:space="preserve">
-    <value>tpMessages</value>
-  </data>
-  <data name="&gt;&gt;txtChannel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tpMessages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpMessages.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpMessages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 635</value>
-  </data>
-  <data name="tpMessages.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tpMessages.Text" xml:space="preserve">
-    <value>Messages</value>
-  </data>
-  <data name="&gt;&gt;tpMessages.Name" xml:space="preserve">
-    <value>tpMessages</value>
-  </data>
-  <data name="&gt;&gt;tpMessages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpMessages.Parent" xml:space="preserve">
-    <value>tcMain</value>
-  </data>
-  <data name="&gt;&gt;tpMessages.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tcMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tcMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tcMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 661</value>
-  </data>
-  <data name="tcMain.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tcMain.Name" xml:space="preserve">
-    <value>tcMain</value>
-  </data>
-  <data name="&gt;&gt;tcMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tcMain.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

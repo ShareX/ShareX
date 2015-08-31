@@ -35,6 +35,7 @@ namespace ShareX.IRCLib
         public IRCInfo Info { get; private set; }
         public IRC IRC { get; private set; }
 
+        private TabManager tabManager;
         private string lastCommand, lastMessage;
 
         public IRCClientForm() : this(new IRCInfo())
@@ -46,6 +47,8 @@ namespace ShareX.IRCLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
             ((ToolStripDropDownMenu)tsmiColors.DropDown).ShowImageMargin = false;
+
+            tabManager = new TabManager(tcMessages);
 
             Info = info;
             pgSettings.SelectedObject = Info;
@@ -190,10 +193,7 @@ namespace ShareX.IRCLib
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (IRC.IsConnected)
-            {
-                IRC.Disconnect();
-            }
+            IRC.Disconnect();
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -376,7 +376,10 @@ namespace ShareX.IRCLib
 
         private void IRC_Message(UserInfo user, string channel, string message)
         {
-            WriteText($"{DateTime.Now:HH:mm:ss} - {user.Nickname} > {channel}: {message}", txtMessages);
+            this.InvokeSafe(() =>
+            {
+                tabManager.AddMessage(channel, $"{DateTime.Now:HH:mm:ss} - {user.Nickname}: {message}");
+            });
         }
 
         private void IRC_UserJoined(UserInfo user, string channel)
