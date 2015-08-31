@@ -46,13 +46,13 @@ namespace ShareX
             }
         }
 
-        private static readonly List<UploadTask> Tasks = new List<UploadTask>();
+        private static readonly List<WorkerTask> Tasks = new List<WorkerTask>();
 
         public static readonly RecentManager RecentManager = new RecentManager();
 
         private static int lastIconStatus = -1;
 
-        public static void Start(UploadTask task)
+        public static void Start(WorkerTask task)
         {
             if (task != null)
             {
@@ -67,7 +67,7 @@ namespace ShareX
             }
         }
 
-        public static void Remove(UploadTask task)
+        public static void Remove(WorkerTask task)
         {
             if (task != null)
             {
@@ -89,7 +89,7 @@ namespace ShareX
         private static void StartTasks()
         {
             int workingTasksCount = Tasks.Count(x => x.IsWorking);
-            UploadTask[] inQueueTasks = Tasks.Where(x => x.Status == TaskStatus.InQueue).ToArray();
+            WorkerTask[] inQueueTasks = Tasks.Where(x => x.Status == TaskStatus.InQueue).ToArray();
 
             if (inQueueTasks.Length > 0)
             {
@@ -113,7 +113,7 @@ namespace ShareX
 
         public static void StopAllTasks()
         {
-            foreach (UploadTask task in Tasks)
+            foreach (WorkerTask task in Tasks)
             {
                 if (task != null) task.Stop();
             }
@@ -124,13 +124,13 @@ namespace ShareX
             Program.MainForm.lblMainFormTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
         }
 
-        private static ListViewItem FindListViewItem(UploadTask task)
+        private static ListViewItem FindListViewItem(WorkerTask task)
         {
             if (ListViewControl != null)
             {
                 foreach (ListViewItem lvi in ListViewControl.Items)
                 {
-                    UploadTask tag = lvi.Tag as UploadTask;
+                    WorkerTask tag = lvi.Tag as WorkerTask;
 
                     if (tag != null && tag == task)
                     {
@@ -142,7 +142,7 @@ namespace ShareX
             return null;
         }
 
-        private static void ChangeListViewItemStatus(UploadTask task)
+        private static void ChangeListViewItemStatus(WorkerTask task)
         {
             if (ListViewControl != null)
             {
@@ -155,7 +155,7 @@ namespace ShareX
             }
         }
 
-        private static void CreateListViewItem(UploadTask task)
+        private static void CreateListViewItem(WorkerTask task)
         {
             if (ListViewControl != null)
             {
@@ -186,14 +186,14 @@ namespace ShareX
             }
         }
 
-        private static void task_StatusChanged(UploadTask task)
+        private static void task_StatusChanged(WorkerTask task)
         {
             DebugHelper.WriteLine("Task status: " + task.Status);
             ChangeListViewItemStatus(task);
             UpdateProgressUI();
         }
 
-        private static void task_UploadStarted(UploadTask task)
+        private static void task_UploadStarted(WorkerTask task)
         {
             TaskInfo info = task.Info;
 
@@ -211,7 +211,7 @@ namespace ShareX
             }
         }
 
-        private static void task_UploadProgressChanged(UploadTask task)
+        private static void task_UploadProgressChanged(WorkerTask task)
         {
             if (task.Status == TaskStatus.Working && ListViewControl != null)
             {
@@ -237,7 +237,7 @@ namespace ShareX
             }
         }
 
-        private static void task_UploadCompleted(UploadTask task)
+        private static void task_UploadCompleted(WorkerTask task)
         {
             try
             {
@@ -397,7 +397,7 @@ namespace ShareX
             bool isWorkingTasks = false;
             double averageProgress = 0;
 
-            IEnumerable<UploadTask> workingTasks = Tasks.Where(x => x != null && x.Status == TaskStatus.Working && x.Info != null);
+            IEnumerable<WorkerTask> workingTasks = Tasks.Where(x => x != null && x.Status == TaskStatus.Working && x.Info != null);
 
             if (workingTasks.Count() > 0)
             {

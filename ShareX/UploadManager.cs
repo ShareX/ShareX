@@ -47,7 +47,7 @@ namespace ShareX
             {
                 if (File.Exists(filePath))
                 {
-                    UploadTask task = UploadTask.CreateFileUploaderTask(filePath, taskSettings);
+                    WorkerTask task = WorkerTask.CreateFileUploaderTask(filePath, taskSettings);
                     TaskManager.Start(task);
                 }
                 else if (Directory.Exists(filePath))
@@ -162,7 +162,7 @@ namespace ShareX
 
                 taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
                 string text = Indexer.Index(folderPath, taskSettings.ToolsSettings.IndexerSettings);
-                UploadTask task = UploadTask.CreateTextUploaderTask(text, taskSettings);
+                WorkerTask task = WorkerTask.CreateTextUploaderTask(text, taskSettings);
                 task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
                 TaskManager.Start(task);
             }
@@ -318,7 +318,7 @@ namespace ShareX
 
             if (img != null && taskSettings != null)
             {
-                UploadTask task = UploadTask.CreateImageUploaderTask(img, taskSettings);
+                WorkerTask task = WorkerTask.CreateImageUploaderTask(img, taskSettings);
                 TaskManager.Start(task);
             }
         }
@@ -371,7 +371,7 @@ namespace ShareX
                     }
                 }
 
-                UploadTask task = UploadTask.CreateTextUploaderTask(text, taskSettings);
+                WorkerTask task = WorkerTask.CreateTextUploaderTask(text, taskSettings);
                 TaskManager.Start(task);
             }
         }
@@ -382,7 +382,7 @@ namespace ShareX
 
             if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(filename))
             {
-                UploadTask task = UploadTask.CreateDataUploaderTask(EDataType.Image, stream, filename, taskSettings);
+                WorkerTask task = WorkerTask.CreateDataUploaderTask(EDataType.Image, stream, filename, taskSettings);
                 TaskManager.Start(task);
             }
         }
@@ -393,7 +393,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                UploadTask task = UploadTask.CreateURLShortenerTask(url, taskSettings);
+                WorkerTask task = WorkerTask.CreateURLShortenerTask(url, taskSettings);
                 TaskManager.Start(task);
             }
         }
@@ -405,7 +405,7 @@ namespace ShareX
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                 taskSettings.URLShortenerDestination = urlShortener;
 
-                UploadTask task = UploadTask.CreateURLShortenerTask(url, taskSettings);
+                WorkerTask task = WorkerTask.CreateURLShortenerTask(url, taskSettings);
                 TaskManager.Start(task);
             }
         }
@@ -416,7 +416,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                UploadTask task = UploadTask.CreateShareURLTask(url, taskSettings);
+                WorkerTask task = WorkerTask.CreateShareURLTask(url, taskSettings);
                 TaskManager.Start(task);
             }
         }
@@ -428,7 +428,7 @@ namespace ShareX
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                 taskSettings.URLSharingServiceDestination = urlSharingService;
 
-                UploadTask task = UploadTask.CreateShareURLTask(url, taskSettings);
+                WorkerTask task = WorkerTask.CreateShareURLTask(url, taskSettings);
                 TaskManager.Start(task);
             }
         }
@@ -439,7 +439,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                UploadTask task = UploadTask.CreateDownloadUploadTask(url, taskSettings);
+                WorkerTask task = WorkerTask.CreateDownloadUploadTask(url, taskSettings);
 
                 if (task != null)
                 {

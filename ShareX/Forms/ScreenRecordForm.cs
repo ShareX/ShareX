@@ -380,7 +380,7 @@ namespace ShareX
 
                 if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings))
                 {
-                    UploadTask task = UploadTask.CreateFileJobTask(path, taskSettings);
+                    WorkerTask task = WorkerTask.CreateFileJobTask(path, taskSettings);
                     TaskManager.Start(task);
                 }
 

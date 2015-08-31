@@ -812,7 +812,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="UploadTask.cs" />
+    <Compile Include="WorkerTask.cs" />
     <Compile Include="UploadInfoManager.cs" />
     <Compile Include="UploadManager.cs" />
     <Compile Include="ApplicationConfig.cs" />

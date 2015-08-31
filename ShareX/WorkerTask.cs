@@ -43,9 +43,9 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public class UploadTask : IDisposable
+    public class WorkerTask : IDisposable
     {
-        public delegate void TaskEventHandler(UploadTask task);
+        public delegate void TaskEventHandler(WorkerTask task);
 
         public event TaskEventHandler StatusChanged;
         public event TaskEventHandler UploadStarted;
@@ -78,15 +78,15 @@ namespace ShareX
 
         #region Constructors
 
-        private UploadTask(TaskSettings taskSettings)
+        private WorkerTask(TaskSettings taskSettings)
         {
             Status = TaskStatus.InQueue;
             Info = new TaskInfo(taskSettings);
         }
 
-        public static UploadTask CreateDataUploaderTask(EDataType dataType, Stream stream, string fileName, TaskSettings taskSettings)
+        public static WorkerTask CreateDataUploaderTask(EDataType dataType, Stream stream, string fileName, TaskSettings taskSettings)
         {
-            UploadTask task = new UploadTask(taskSettings);
+            WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.DataUpload;
             task.Info.DataType = dataType;
             task.Info.FileName = fileName;
@@ -94,9 +94,9 @@ namespace ShareX
             return task;
         }
 
-        public static UploadTask CreateFileUploaderTask(string filePath, TaskSettings taskSettings)
+        public static WorkerTask CreateFileUploaderTask(string filePath, TaskSettings taskSettings)
         {
-            UploadTask task = new UploadTask(taskSettings);
+            WorkerTask task = new WorkerTask(taskSettings);
             task.Info.FilePath = filePath;
             task.Info.DataType = TaskHelpers.FindDataType(task.Info.FilePath, taskSettings);
 
@@ -124,9 +124,9 @@ namespace ShareX
             return task;
         }
 
-        public static UploadTask CreateImageUploaderTask(Image image, TaskSettings taskSettings)
+        public static WorkerTask CreateImageUploaderTask(Image image, TaskSettings taskSettings)
         {
-            UploadTask task = new UploadTask(taskSettings);
+            WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.Job;
             task.Info.DataType = EDataType.Image;
             task.Info.FileName = TaskHelpers.GetImageFilename(taskSettings, image);
@@ -134,9 +134,9 @@ namespace ShareX
             return task;
         }
 
-        public static UploadTask CreateTextUploaderTask(string text, TaskSettings taskSettings)
+        public static WorkerTask CreateTextUploaderTask(string text, TaskSettings taskSettings)
         {
-            UploadTask task = new UploadTask(taskSettings);
+            WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.TextUpload;
             task.Info.DataType = EDataType.Text;
             task.Info.FileName = TaskHelpers.GetFilename(taskSettings, taskSettings.AdvancedSettings.TextFileExtension);
@@ -144,9 +144,9 @@ namespace ShareX
             return task;
         }
 
-        public static UploadTask CreateURLShortenerTask(string url, TaskSettings taskSettings)
+        public static WorkerTask CreateURLShortenerTask(string url, TaskSettings taskSettings)
         {
-            UploadTask task = new UploadTask(taskSettings);
+            WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.ShortenURL;
             task.Info.DataType = EDataType.URL;
             task.Info.FileName = string.Format(Resources.UploadTask_CreateURLShortenerTask_Shorten_URL___0__, taskSettings.URLShortenerDestination.GetLocalizedDescription());
@@ -154,9 +154,9 @@ namespace ShareX
             return task;
         }
 
-        public static UploadTask CreateShareURLTask(string url, TaskSettings taskSettings)
+        public static WorkerTask CreateShareURLTask(string url, TaskSettings taskSettings)
         {
-            UploadTask task = new UploadTask(taskSettings);
+            WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.ShareURL;
             task.Info.DataType = EDataType.URL;
             task.Info.FileName = string.Format(Resources.UploadTask_CreateShareURLTask_Share_URL___0__, taskSettings.URLSharingServiceDestination.GetLocalizedDescription());
@@ -164,9 +164,9 @@ namespace ShareX
             return task;
         }
 
-        public static UploadTask CreateFileJobTask(string filePath, TaskSettings taskSettings)
+        public static WorkerTask CreateFileJobTask(string filePath, TaskSettings taskSettings)
         {
-            UploadTask task = new UploadTask(taskSettings);
+            WorkerTask task = new WorkerTask(taskSettings);
             task.Info.FilePath = filePath;
             task.Info.DataType = TaskHelpers.FindDataType(task.Info.FilePath, taskSettings);
 
@@ -186,9 +186,9 @@ namespace ShareX
             return task;
         }
 
-        public static UploadTask CreateDownloadUploadTask(string url, TaskSettings taskSettings)
+        public static WorkerTask CreateDownloadUploadTask(string url, TaskSettings taskSettings)
         {
-            UploadTask task = new UploadTask(taskSettings);
+            WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.DownloadUpload;
             task.Info.DataType = TaskHelpers.FindDataType(url, taskSettings);
             task.Info.FileName = URLHelpers.GetFileName(url, true);

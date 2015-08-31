@@ -85,7 +85,7 @@ namespace ShareX
         {
             if (lv != null && lv.SelectedItems != null && lv.SelectedItems.Count > 0)
             {
-                SelectedItems = lv.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as UploadTask).Where(x => x != null && x.Info != null).
+                SelectedItems = lv.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask).Where(x => x != null && x.Info != null).
                     Select(x => new UploadInfoStatus(x.Info)).ToArray();
             }
             else
