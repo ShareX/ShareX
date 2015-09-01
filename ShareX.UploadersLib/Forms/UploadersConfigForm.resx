@@ -11022,9 +11022,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 557</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>
   </data>
@@ -11131,6 +11128,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>UploadersConfigForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

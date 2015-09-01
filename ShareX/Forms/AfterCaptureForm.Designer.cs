@@ -33,7 +33,7 @@
             this.chAfterCapture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnContinue = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.pbImage = new HelpersLib.MyPictureBox();
+            this.pbImage = new ShareX.HelpersLib.MyPictureBox();
             this.btnCopy = new System.Windows.Forms.Button();
             this.tcTasks = new System.Windows.Forms.TabControl();
             this.tpAfterCapture = new System.Windows.Forms.TabPage();

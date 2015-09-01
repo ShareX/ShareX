@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryItemInfoForm));
-            this.olvMain = new HistoryLib.CustomControls.ObjectListView();
+            this.olvMain = new ShareX.HistoryLib.CustomControls.ObjectListView();
             this.SuspendLayout();
             // 
             // olvMain
@@ -40,7 +40,7 @@
             this.olvMain.HideSelection = false;
             this.olvMain.MultiSelect = false;
             this.olvMain.Name = "olvMain";
-            this.olvMain.SetObjectType = HistoryLib.CustomControls.ObjectListView.ObjectType.Properties;
+            this.olvMain.SetObjectType = ShareX.HistoryLib.CustomControls.ObjectListView.ObjectType.Properties;
             this.olvMain.UseCompatibleStateImageBehavior = false;
             this.olvMain.View = System.Windows.Forms.View.Details;
             // 
