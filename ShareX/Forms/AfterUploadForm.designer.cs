@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AfterUploadForm));
-            this.pbPreview = new HelpersLib.MyPictureBox();
+            this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
             this.btnCopyImage = new System.Windows.Forms.Button();
             this.btnCopyLink = new System.Windows.Forms.Button();
             this.btnOpenLink = new System.Windows.Forms.Button();
@@ -38,7 +38,7 @@
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.tmrClose = new System.Windows.Forms.Timer(this.components);
             this.btnClose = new System.Windows.Forms.Button();
-            this.lvClipboardFormats = new HelpersLib.MyListView();
+            this.lvClipboardFormats = new ShareX.HelpersLib.MyListView();
             this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();

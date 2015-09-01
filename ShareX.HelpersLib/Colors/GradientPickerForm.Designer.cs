@@ -41,7 +41,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.pbPreview = new System.Windows.Forms.PictureBox();
             this.lblPreview = new System.Windows.Forms.Label();
-            this.cbtnCurrentColor = new HelpersLib.ColorButton();
+            this.cbtnCurrentColor = new ShareX.HelpersLib.ColorButton();
             ((System.ComponentModel.ISupportInitialize)(this.nudLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
             this.SuspendLayout();
@@ -135,7 +135,7 @@
             resources.ApplyResources(this.cbtnCurrentColor, "cbtnCurrentColor");
             this.cbtnCurrentColor.Name = "cbtnCurrentColor";
             this.cbtnCurrentColor.UseVisualStyleBackColor = true;
-            this.cbtnCurrentColor.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.cbtnCurrentColor_ColorChanged);
+            this.cbtnCurrentColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.cbtnCurrentColor_ColorChanged);
             // 
             // GradientPickerForm
             // 

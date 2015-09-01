@@ -35,7 +35,7 @@
             this.txtClipboard = new System.Windows.Forms.TextBox();
             this.lbClipboard = new System.Windows.Forms.ListBox();
             this.cbDontShowThisWindow = new System.Windows.Forms.CheckBox();
-            this.pbClipboard = new HelpersLib.MyPictureBox();
+            this.pbClipboard = new ShareX.HelpersLib.MyPictureBox();
             this.SuspendLayout();
             // 
             // lblQuestion

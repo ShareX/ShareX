@@ -33,7 +33,7 @@
             this.btnEncodersAdd = new System.Windows.Forms.Button();
             this.btnEncodersEdit = new System.Windows.Forms.Button();
             this.btnEncodersRemove = new System.Windows.Forms.Button();
-            this.lvEncoders = new HelpersLib.MyListView();
+            this.lvEncoders = new ShareX.HelpersLib.MyListView();
             this.chEncoderDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chEncoderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chEncoderArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));

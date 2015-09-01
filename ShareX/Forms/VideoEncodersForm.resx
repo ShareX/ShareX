@@ -256,7 +256,7 @@
     <value>lvEncoders</value>
   </data>
   <data name="&gt;&gt;lvEncoders.Type" xml:space="preserve">
-    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvEncoders.Parent" xml:space="preserve">
     <value>$this</value>
@@ -310,6 +310,6 @@
     <value>VideoEncodersForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
