@@ -31,9 +31,10 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.GUI
 {
+    using ShareX.HelpersLib;
     using System.Threading.Tasks;
 
-    public partial class JiraUpload : Form
+    public partial class JiraUpload : BaseForm
     {
         public delegate string GetSummaryHandler(string issueId);
 

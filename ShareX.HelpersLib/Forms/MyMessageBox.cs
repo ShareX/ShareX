@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class MyMessageBox : Form
+    public class MyMessageBox : BaseForm
     {
         private const int LabelHorizontalPadding = 15;
         private const int LabelVerticalPadding = 20;

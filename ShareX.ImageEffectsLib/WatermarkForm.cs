@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
-    public partial class WatermarkForm : Form
+    public partial class WatermarkForm : BaseForm
     {
         private WatermarkConfig config;
         private bool IsGuiReady;

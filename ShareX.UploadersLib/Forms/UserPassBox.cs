@@ -23,12 +23,13 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class UserPassBox : Form
+    public partial class UserPassBox : BaseForm
     {
         public string FullName { get; private set; }
         public string UserName { get; private set; }

@@ -33,7 +33,7 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lvFTPList = new UploadersLib.ListViewEx();
+            this.lvFTPList = new ShareX.UploadersLib.ListViewEx();
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFilesize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFiletype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));

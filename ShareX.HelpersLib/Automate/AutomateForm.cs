@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class AutomateForm : Form
+    public partial class AutomateForm : BaseForm
     {
         private static AutomateForm instance;
 
@@ -49,7 +49,6 @@ namespace ShareX.HelpersLib
         private AutomateForm(List<ScriptInfo> scripts)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             rtbInput.AddContextMenu();
             tokenizer.Keywords = FunctionManager.Functions.Select(x => x.Key).ToArray();
             cbFunctions.Items.AddRange(tokenizer.Keywords);

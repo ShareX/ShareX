@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class LayeredForm : Form
+    public class LayeredForm : BaseForm
     {
         public LayeredForm()
         {

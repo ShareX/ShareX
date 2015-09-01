@@ -37,7 +37,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class TaskSettingsForm : Form
+    public partial class TaskSettingsForm : BaseForm
     {
         public TaskSettings TaskSettings { get; private set; }
         public bool IsDefault { get; private set; }
@@ -48,7 +48,6 @@ namespace ShareX
         public TaskSettingsForm(TaskSettings hotkeySetting, bool isDefault = false)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             TaskSettings = hotkeySetting;
             IsDefault = isDefault;
 

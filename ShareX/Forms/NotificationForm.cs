@@ -31,7 +31,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public class NotificationForm : Form
+    public class NotificationForm : BaseForm
     {
         public NotificationFormConfig ToastConfig { get; private set; }
 

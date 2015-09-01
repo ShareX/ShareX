@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public partial class FFmpegOptionsForm : Form
+    public partial class FFmpegOptionsForm : BaseForm
     {
         public ScreencastOptions Options { get; private set; }
         public string DefaultToolsPath { get; set; }
@@ -43,7 +43,6 @@ namespace ShareX.ScreenCaptureLib
         public FFmpegOptionsForm(ScreencastOptions options)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             Options = options;
 
             eiFFmpeg.ObjectType = typeof(FFmpegOptions);

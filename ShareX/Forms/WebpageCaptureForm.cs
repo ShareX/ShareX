@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class WebpageCaptureForm : Form
+    public partial class WebpageCaptureForm : BaseForm
     {
         public event Action<Image> OnImageUploadRequested;
         public event Action<Image> OnImageCopyRequested;
@@ -45,7 +45,6 @@ namespace ShareX
         public WebpageCaptureForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             LoadSettings();
             webpageCapture = new WebpageCapture();
             webpageCapture.CaptureCompleted += webpageCapture_CaptureCompleted;

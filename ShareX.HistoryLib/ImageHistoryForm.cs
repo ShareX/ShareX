@@ -35,7 +35,7 @@ using View = Manina.Windows.Forms.View;
 
 namespace ShareX.HistoryLib
 {
-    public partial class ImageHistoryForm : Form
+    public partial class ImageHistoryForm : BaseForm
     {
         public string HistoryPath { get; private set; }
         public int MaxItemCount { get; set; }
@@ -74,7 +74,6 @@ namespace ShareX.HistoryLib
         public ImageHistoryForm(string historyPath, int viewMode, Size thumbnailSize, int maxItemCount = -1)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             Text = "ShareX - " + string.Format("Image history: {0}", historyPath);
 
             HistoryPath = historyPath;

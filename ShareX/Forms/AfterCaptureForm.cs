@@ -31,7 +31,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class AfterCaptureForm : Form
+    public partial class AfterCaptureForm : BaseForm
     {
         public AfterCaptureTasks AfterCaptureTasks { get; private set; }
         public AfterCaptureFormResult Result { get; private set; }
@@ -39,7 +39,6 @@ namespace ShareX
         public AfterCaptureForm(Image img, TaskSettings taskSettings)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
 
             ImageList imageList = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
             imageList.Images.Add(Resources.checkbox_uncheck);

@@ -31,7 +31,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class AfterUploadForm : Form
+    public partial class AfterUploadForm : BaseForm
     {
         public TaskInfo Info { get; private set; }
 
@@ -46,7 +46,6 @@ namespace ShareX
         public AfterUploadForm(TaskInfo info)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             Info = info;
             if (Info.TaskSettings.AdvancedSettings.AutoCloseAfterUploadForm) tmrClose.Start();
 

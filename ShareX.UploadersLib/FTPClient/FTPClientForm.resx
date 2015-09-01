@@ -280,7 +280,7 @@
     <value>lvFTPList</value>
   </data>
   <data name="&gt;&gt;lvFTPList.Type" xml:space="preserve">
-    <value>UploadersLib.ListViewEx, UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.ListViewEx, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvFTPList.Parent" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -919,6 +919,6 @@
     <value>FTPClientForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

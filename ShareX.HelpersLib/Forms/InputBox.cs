@@ -28,7 +28,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class InputBox : Form
+    public class InputBox : BaseForm
     {
         public string Title { get; set; }
         public string InputText { get; set; }
@@ -36,7 +36,6 @@ namespace ShareX.HelpersLib
         public InputBox(string title = null, string inputText = null)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
 
             Title = title;
             InputText = inputText;

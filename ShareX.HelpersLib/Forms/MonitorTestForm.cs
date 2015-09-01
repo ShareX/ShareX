@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class MonitorTestForm : Form
+    public partial class MonitorTestForm : BaseForm
     {
         public MonitorTestForm()
         {

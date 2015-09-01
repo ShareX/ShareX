@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class ResponseForm : Form
+    public partial class ResponseForm : BaseForm
     {
         public string Response { get; private set; }
 
@@ -38,7 +38,6 @@ namespace ShareX.UploadersLib
         public ResponseForm(string response)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             Response = response;
             txtSource.Text = Response;
         }

@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class TwitterTweetForm : Form
+    public partial class TwitterTweetForm : BaseForm
     {
         public string Message
         {

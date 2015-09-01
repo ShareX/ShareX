@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class ImageViewer : Form
+    public class ImageViewer : BaseForm
     {
         private Image screenshot;
 

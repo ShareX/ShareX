@@ -31,7 +31,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class FileExistForm : Form
+    public partial class FileExistForm : BaseForm
     {
         public string Filepath { get; private set; }
 
@@ -41,7 +41,6 @@ namespace ShareX
         public FileExistForm(string filepath)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
 
             Filepath = filepath;
             filename = Path.GetFileNameWithoutExtension(Filepath);

@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class UpdateMessageBox : Form
+    public partial class UpdateMessageBox : BaseForm
     {
         public static bool IsOpen { get; private set; }
         public static bool DontShow { get; private set; }
@@ -43,7 +43,6 @@ namespace ShareX.HelpersLib
         {
             InitializeComponent();
 
-            Icon = ShareXResources.Icon;
             Text = Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
             lblText.Text = string.Format(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName);
 

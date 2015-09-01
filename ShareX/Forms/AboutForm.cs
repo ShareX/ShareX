@@ -32,12 +32,11 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class AboutForm : Form
+    public partial class AboutForm : BaseForm
     {
         public AboutForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             lblProductName.Text = Program.Title;
 
             rtbShareXInfo.AddContextMenu();

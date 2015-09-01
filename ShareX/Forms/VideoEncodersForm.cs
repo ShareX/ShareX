@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class VideoEncodersForm : Form
+    public partial class VideoEncodersForm : BaseForm
     {
         public VideoEncodersForm()
         {
