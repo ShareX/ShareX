@@ -618,14 +618,14 @@ namespace ShareX.UploadersLib
 
             // Twitter
 
-            lvTwitterAccounts.Items.Clear();
+            lbTwitterAccounts.Items.Clear();
 
             foreach (OAuthInfo twitterOAuth in Config.TwitterOAuthInfoList)
             {
-                lvTwitterAccounts.Items.Add(twitterOAuth.Description);
+                lbTwitterAccounts.Items.Add(twitterOAuth.Description);
             }
 
-            lvTwitterAccounts.Select(Config.TwitterSelectedAccount);
+            lbTwitterAccounts.SelectedIndex = Config.TwitterSelectedAccount;
 
             TwitterUpdateSelected();
 
@@ -2229,31 +2229,31 @@ namespace ShareX.UploadersLib
         {
             OAuthInfo oauth = new OAuthInfo();
             Config.TwitterOAuthInfoList.Add(oauth);
-            lvTwitterAccounts.Items.Add(oauth.Description);
-            lvTwitterAccounts.SelectLast();
+            lbTwitterAccounts.Items.Add(oauth.Description);
+            lbTwitterAccounts.SelectedIndex = lbTwitterAccounts.Items.Count - 1;
 
             TwitterUpdateSelected();
         }
 
         private void btnTwitterRemove_Click(object sender, EventArgs e)
         {
-            int selected = lvTwitterAccounts.SelectedIndex;
+            int selected = lbTwitterAccounts.SelectedIndex;
 
             if (selected > -1)
             {
-                lvTwitterAccounts.Items.RemoveAt(selected);
+                lbTwitterAccounts.Items.RemoveAt(selected);
                 Config.TwitterOAuthInfoList.RemoveAt(selected);
 
-                if (lvTwitterAccounts.Items.Count > 0)
+                if (lbTwitterAccounts.Items.Count > 0)
                 {
-                    lvTwitterAccounts.SelectedIndex = selected >= lvTwitterAccounts.Items.Count ? lvTwitterAccounts.Items.Count - 1 : selected;
+                    lbTwitterAccounts.SelectedIndex = selected >= lbTwitterAccounts.Items.Count ? lbTwitterAccounts.Items.Count - 1 : selected;
                 }
             }
 
             TwitterUpdateSelected();
         }
 
-        private void lvTwitterAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        private void lbTwitterAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
             TwitterUpdateSelected();
         }
@@ -2265,7 +2265,7 @@ namespace ShareX.UploadersLib
             if (oauth != null)
             {
                 oauth.Description = txtTwitterDescription.Text;
-                lvTwitterAccounts.SelectedItems[0].Text = oauth.Description;
+                lbTwitterAccounts.SelectedItem = oauth.Description;
             }
         }
 

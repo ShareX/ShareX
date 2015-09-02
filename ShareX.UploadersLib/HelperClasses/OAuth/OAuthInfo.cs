@@ -105,11 +105,6 @@ namespace ShareX.UploadersLib.HelperClasses
                 && !string.IsNullOrEmpty(oauth.UserToken) && !string.IsNullOrEmpty(oauth.UserSecret);
         }
 
-        public override string ToString()
-        {
-            return Description;
-        }
-
         public OAuthInfo Clone()
         {
             return MemberwiseClone() as OAuthInfo;
@@ -118,6 +113,11 @@ namespace ShareX.UploadersLib.HelperClasses
         object ICloneable.Clone()
         {
             return Clone();
+        }
+
+        public override string ToString()
+        {
+            return Description;
         }
     }
 }

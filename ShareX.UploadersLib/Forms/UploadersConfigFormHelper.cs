@@ -1470,7 +1470,7 @@ namespace ShareX.UploadersLib
 
         private bool TwitterUpdateSelected()
         {
-            Config.TwitterSelectedAccount = lvTwitterAccounts.SelectedIndex;
+            Config.TwitterSelectedAccount = lbTwitterAccounts.SelectedIndex;
 
             if (Config.TwitterSelectedAccount > -1)
             {

@@ -37,8 +37,6 @@
             this.tpOtherUploaders = new System.Windows.Forms.TabPage();
             this.tcOtherUploaders = new System.Windows.Forms.TabControl();
             this.tpTwitter = new System.Windows.Forms.TabPage();
-            this.lvTwitterAccounts = new ShareX.HelpersLib.MyListView();
-            this.chTwitterAccount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblTwitterDefaultMessage = new System.Windows.Forms.Label();
             this.txtTwitterDefaultMessage = new System.Windows.Forms.TextBox();
             this.cbTwitterSkipMessageBox = new System.Windows.Forms.CheckBox();
@@ -452,6 +450,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.lbTwitterAccounts = new System.Windows.Forms.ListBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -569,7 +568,7 @@
             // 
             // tpTwitter
             // 
-            this.tpTwitter.Controls.Add(this.lvTwitterAccounts);
+            this.tpTwitter.Controls.Add(this.lbTwitterAccounts);
             this.tpTwitter.Controls.Add(this.lblTwitterDefaultMessage);
             this.tpTwitter.Controls.Add(this.txtTwitterDefaultMessage);
             this.tpTwitter.Controls.Add(this.cbTwitterSkipMessageBox);
@@ -581,26 +580,6 @@
             resources.ApplyResources(this.tpTwitter, "tpTwitter");
             this.tpTwitter.Name = "tpTwitter";
             this.tpTwitter.UseVisualStyleBackColor = true;
-            // 
-            // lvTwitterAccounts
-            // 
-            this.lvTwitterAccounts.AutoFillColumn = true;
-            this.lvTwitterAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chTwitterAccount});
-            this.lvTwitterAccounts.DisableDeselect = true;
-            this.lvTwitterAccounts.FullRowSelect = true;
-            this.lvTwitterAccounts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvTwitterAccounts.HideSelection = false;
-            resources.ApplyResources(this.lvTwitterAccounts, "lvTwitterAccounts");
-            this.lvTwitterAccounts.MultiSelect = false;
-            this.lvTwitterAccounts.Name = "lvTwitterAccounts";
-            this.lvTwitterAccounts.UseCompatibleStateImageBehavior = false;
-            this.lvTwitterAccounts.View = System.Windows.Forms.View.Details;
-            this.lvTwitterAccounts.SelectedIndexChanged += new System.EventHandler(this.lvTwitterAccounts_SelectedIndexChanged);
-            // 
-            // chTwitterAccount
-            // 
-            resources.ApplyResources(this.chTwitterAccount, "chTwitterAccount");
             // 
             // lblTwitterDefaultMessage
             // 
@@ -3594,6 +3573,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // lbTwitterAccounts
+            // 
+            this.lbTwitterAccounts.FormattingEnabled = true;
+            resources.ApplyResources(this.lbTwitterAccounts, "lbTwitterAccounts");
+            this.lbTwitterAccounts.Name = "lbTwitterAccounts";
+            this.lbTwitterAccounts.SelectedIndexChanged += new System.EventHandler(this.lbTwitterAccounts_SelectedIndexChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4122,8 +4108,6 @@
         private System.Windows.Forms.Label lblTwitterDefaultMessage;
         private System.Windows.Forms.TextBox txtTwitterDefaultMessage;
         private System.Windows.Forms.CheckBox cbTwitterSkipMessageBox;
-        private HelpersLib.MyListView lvTwitterAccounts;
-        private System.Windows.Forms.ColumnHeader chTwitterAccount;
         private System.Windows.Forms.Label lblCustomUploaderRegexTip;        
         private System.Windows.Forms.TabPage tpUp1;
         private System.Windows.Forms.TextBox txtUp1Key;
@@ -4149,5 +4133,6 @@
         private System.Windows.Forms.TextBox txtPolrAPIHostname;
         private System.Windows.Forms.Label lblPolrAPIHostname;
         private System.Windows.Forms.CheckBox cbImgurUseGIFV;
+        private System.Windows.Forms.ListBox lbTwitterAccounts;
     }
 }
