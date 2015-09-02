@@ -66,15 +66,15 @@ LnkU, CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https:/
 
 {1}:
 
-Turkish: https://github.com/Jaex / https://github.com/muratmoon
+Turkish: https://github.com/Jaex & https://github.com/muratmoon
 German: https://github.com/Starbug2
-French: https://github.com/nwies / https://github.com/Shadorc
+French: https://github.com/nwies & https://github.com/Shadorc
 Simplified Chinese: https://github.com/jiajiechan
 Hungarian: https://github.com/devBluestar
 Korean: https://github.com/123jimin
 Spanish: https://github.com/ovnisoftware
 Dutch: https://github.com/wforums
-Portuguese (Brazil): https://github.com/athosbr99 / https://github.com/RockyTV
+Portuguese (Brazil): https://github.com/athosbr99 & https://github.com/RockyTV
 
 {2}:
 

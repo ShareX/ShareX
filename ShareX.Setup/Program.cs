@@ -108,7 +108,7 @@ namespace ShareX.Setup
 
             List<string> files = new List<string>();
 
-            string[] endsWith = new string[] { "ShareX.exe", "ShareX.exe.config", ".dll", ".css", ".txt", "Recorder-devices-setup.exe" };
+            string[] endsWith = new string[] { "ShareX.exe", "ShareX.exe.config", ".dll", ".css", ".txt" };
             string[] ignoreEndsWith = new string[] { };
 
             foreach (string filepath in Directory.GetFiles(releaseDir))
@@ -126,8 +126,11 @@ namespace ShareX.Setup
 
             foreach (string language in languages)
             {
-                CopyFiles(Path.Combine(releaseDir, language + "\\*.resources.dll"), Path.Combine(portableDir, "Languages\\" + language));
+                CopyFiles(Path.Combine(releaseDir, language), "*.resources.dll", Path.Combine(portableDir, "Languages", language));
             }
+
+            CopyFile(Path.Combine(outputDir, "Recorder-devices-setup.exe"), portableDir);
+            CopyFile(Path.Combine(parentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release\ShareX_Chrome.exe"), portableDir);
 
             File.WriteAllText(Path.Combine(portableDir, "PersonalPath.cfg"), "ShareX", Encoding.UTF8);
 
@@ -152,21 +155,27 @@ namespace ShareX.Setup
 
         private static void CopyFiles(IEnumerable files, string toFolder)
         {
+            if (!Directory.Exists(toFolder))
+            {
+                Directory.CreateDirectory(toFolder);
+            }
+
             foreach (string filepath in files)
             {
                 string filename = Path.GetFileName(filepath);
                 string dest = Path.Combine(toFolder, filename);
-
                 File.Copy(filepath, dest);
             }
         }
 
-        private static void CopyFiles(string path, string toFolder)
+        private static void CopyFile(string path, string toFolder)
         {
-            string directory = Path.GetDirectoryName(path);
-            string filename = Path.GetFileName(path);
-            if (!Directory.Exists(toFolder)) Directory.CreateDirectory(toFolder);
-            CopyFiles(Directory.GetFiles(directory, filename), toFolder);
+            CopyFiles(path, toFolder);
+        }
+
+        private static void CopyFiles(string directory, string searchPattern, string toFolder)
+        {
+            CopyFiles(Directory.GetFiles(directory, searchPattern), toFolder);
         }
 
         private static void Zip(string source, string target)
