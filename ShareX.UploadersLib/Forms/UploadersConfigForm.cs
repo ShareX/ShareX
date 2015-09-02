@@ -2258,14 +2258,14 @@ namespace ShareX.UploadersLib
             TwitterUpdateSelected();
         }
 
-        private void txtTwitterDescription_TextChanged(object sender, EventArgs e)
+        private void btnTwitterNameUpdate_Click(object sender, EventArgs e)
         {
             OAuthInfo oauth = GetSelectedTwitterAccount();
 
             if (oauth != null)
             {
                 oauth.Description = txtTwitterDescription.Text;
-                lbTwitterAccounts.SelectedItem = oauth.Description;
+                lbTwitterAccounts.Items[lbTwitterAccounts.SelectedIndex] = oauth.Description;
             }
         }
 

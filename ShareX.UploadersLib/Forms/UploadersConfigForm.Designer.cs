@@ -37,6 +37,7 @@
             this.tpOtherUploaders = new System.Windows.Forms.TabPage();
             this.tcOtherUploaders = new System.Windows.Forms.TabControl();
             this.tpTwitter = new System.Windows.Forms.TabPage();
+            this.lbTwitterAccounts = new System.Windows.Forms.ListBox();
             this.lblTwitterDefaultMessage = new System.Windows.Forms.Label();
             this.txtTwitterDefaultMessage = new System.Windows.Forms.TextBox();
             this.cbTwitterSkipMessageBox = new System.Windows.Forms.CheckBox();
@@ -450,7 +451,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lbTwitterAccounts = new System.Windows.Forms.ListBox();
+            this.btnTwitterNameUpdate = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -568,6 +569,7 @@
             // 
             // tpTwitter
             // 
+            this.tpTwitter.Controls.Add(this.btnTwitterNameUpdate);
             this.tpTwitter.Controls.Add(this.lbTwitterAccounts);
             this.tpTwitter.Controls.Add(this.lblTwitterDefaultMessage);
             this.tpTwitter.Controls.Add(this.txtTwitterDefaultMessage);
@@ -580,6 +582,13 @@
             resources.ApplyResources(this.tpTwitter, "tpTwitter");
             this.tpTwitter.Name = "tpTwitter";
             this.tpTwitter.UseVisualStyleBackColor = true;
+            // 
+            // lbTwitterAccounts
+            // 
+            this.lbTwitterAccounts.FormattingEnabled = true;
+            resources.ApplyResources(this.lbTwitterAccounts, "lbTwitterAccounts");
+            this.lbTwitterAccounts.Name = "lbTwitterAccounts";
+            this.lbTwitterAccounts.SelectedIndexChanged += new System.EventHandler(this.lbTwitterAccounts_SelectedIndexChanged);
             // 
             // lblTwitterDefaultMessage
             // 
@@ -612,7 +621,6 @@
             // 
             resources.ApplyResources(this.txtTwitterDescription, "txtTwitterDescription");
             this.txtTwitterDescription.Name = "txtTwitterDescription";
-            this.txtTwitterDescription.TextChanged += new System.EventHandler(this.txtTwitterDescription_TextChanged);
             // 
             // lblTwitterDescription
             // 
@@ -3573,12 +3581,12 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // lbTwitterAccounts
+            // btnTwitterNameUpdate
             // 
-            this.lbTwitterAccounts.FormattingEnabled = true;
-            resources.ApplyResources(this.lbTwitterAccounts, "lbTwitterAccounts");
-            this.lbTwitterAccounts.Name = "lbTwitterAccounts";
-            this.lbTwitterAccounts.SelectedIndexChanged += new System.EventHandler(this.lbTwitterAccounts_SelectedIndexChanged);
+            resources.ApplyResources(this.btnTwitterNameUpdate, "btnTwitterNameUpdate");
+            this.btnTwitterNameUpdate.Name = "btnTwitterNameUpdate";
+            this.btnTwitterNameUpdate.UseVisualStyleBackColor = true;
+            this.btnTwitterNameUpdate.Click += new System.EventHandler(this.btnTwitterNameUpdate_Click);
             // 
             // UploadersConfigForm
             // 
@@ -4134,5 +4142,6 @@
         private System.Windows.Forms.Label lblPolrAPIHostname;
         private System.Windows.Forms.CheckBox cbImgurUseGIFV;
         private System.Windows.Forms.ListBox lbTwitterAccounts;
+        private System.Windows.Forms.Button btnTwitterNameUpdate;
     }
 }
