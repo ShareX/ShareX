@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib
         private void UploadersConfigForm_Shown(object sender, EventArgs e)
         {
             FormSettings();
-            LoadSettings(Config);
+            LoadSettings();
         }
 
         private void UploadersConfigForm_Resize(object sender, EventArgs e)
@@ -160,7 +160,7 @@ namespace ShareX.UploadersLib
             tp.ImageKey = tp.Name;
         }
 
-        public void LoadSettings(UploadersConfig uploadersConfig)
+        public void LoadSettings()
         {
             #region Image uploaders
 

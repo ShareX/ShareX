@@ -36,9 +36,6 @@ namespace ShareX.HelpersLib
         public delegate void ListViewItemMovedEventHandler(object sender, int oldIndex, int newIndex);
         public event ListViewItemMovedEventHandler ItemMoved;
 
-        private const int WM_PAINT = 0xF;
-        private const int WM_ERASEBKGND = 0x14;
-
         [DefaultValue(false)]
         public bool AutoFillColumn { get; set; }
 
@@ -51,6 +48,9 @@ namespace ShareX.HelpersLib
         // Note: AllowDrag also need to be true.
         [DefaultValue(false)]
         public bool AllowItemDrag { get; set; }
+
+        [DefaultValue(false)]
+        public bool DisableDeselect { get; set; }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -144,20 +144,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        [DebuggerStepThrough]
-        protected override void OnNotifyMessage(Message m)
-        {
-            if (m.Msg == WM_PAINT && !DesignMode && AutoFillColumn)
-            {
-                FillColumn(AutoFillColumnIndex);
-            }
-
-            if (m.Msg != WM_ERASEBKGND)
-            {
-                base.OnNotifyMessage(m);
-            }
-        }
-
         protected override void OnKeyDown(KeyEventArgs e)
         {
             if (MultiSelect && e.Control && e.KeyCode == Keys.A)
@@ -171,11 +157,37 @@ namespace ShareX.HelpersLib
             base.OnKeyDown(e);
         }
 
+        [DebuggerStepThrough]
         protected override void WndProc(ref Message m)
         {
+            if (AutoFillColumn && m.Msg == (int)WindowsMessages.PAINT && !DesignMode)
+            {
+                FillColumn(AutoFillColumnIndex);
+            }
+
+            if (m.Msg == (int)WindowsMessages.ERASEBKGND)
+            {
+                return;
+            }
+
+            if (DisableDeselect && m.Msg >= (int)WindowsMessages.LBUTTONDOWN && m.Msg <= (int)WindowsMessages.MBUTTONDBLCLK)
+            {
+                Point pos = new Point(m.LParam.ToInt32() & 0xffff, m.LParam.ToInt32() >> 16);
+                ListViewHitTestInfo hit = HitTest(pos);
+                switch (hit.Location)
+                {
+                    case ListViewHitTestLocations.AboveClientArea:
+                    case ListViewHitTestLocations.BelowClientArea:
+                    case ListViewHitTestLocations.LeftOfClientArea:
+                    case ListViewHitTestLocations.RightOfClientArea:
+                    case ListViewHitTestLocations.None:
+                        return;
+                }
+            }
+
             base.WndProc(ref m);
 
-            if (m.Msg == WM_PAINT && lineIndex >= 0)
+            if (m.Msg == (int)WindowsMessages.PAINT && lineIndex >= 0)
             {
                 Rectangle rc = Items[lineIndex < Items.Count ? lineIndex : lineIndex - 1].GetBounds(ItemBoundsPortion.Entire);
                 DrawInsertionLine(rc.Left, rc.Right, lineIndex < Items.Count ? rc.Top : rc.Bottom);
