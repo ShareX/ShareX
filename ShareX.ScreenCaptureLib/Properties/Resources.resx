@@ -291,9 +291,9 @@ X: {4} Y: {5}</value>
     <value>[Numpad + or -] Change triangle angle</value>
   </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
-    <value>[Insert] Stop region selection</value>
+    <value>[Release left click] [Insert] Finish region selection</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
-    <value>[Hold Alt] Snap resizing to preset sizes</value>
+    <value>[Hold Alt] Snap selection to preset sizes</value>
   </data>
 </root>

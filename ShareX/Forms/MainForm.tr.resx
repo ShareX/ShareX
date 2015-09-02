@@ -630,4 +630,10 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video küçük resim yapıcı...</value>
   </data>
+  <data name="tsmiIRCClient.Text" xml:space="preserve">
+    <value>IRC istemcisi...</value>
+  </data>
+  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
+    <value>IRC istemcisi...</value>
+  </data>
 </root>

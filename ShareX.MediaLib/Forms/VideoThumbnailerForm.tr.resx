@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Video küçük resim yapıcı</value>
+  </data>
+  <data name="btnStart.Text" xml:space="preserve">
+    <value>Ekran görüntülerini al</value>
+  </data>
 </root>

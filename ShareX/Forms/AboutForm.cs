@@ -44,6 +44,10 @@ namespace ShareX
 
             uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
 
+            lblTeam.Text = "ShareX Team:";
+            lblBerk.Text = "Jaex (Berk)";
+            lblMike.Text = "mcored (Michael Delpach)";
+
             rtbShareXInfo.Text = string.Format(@"{0}: {1}
 {2}: {3}
 {4}: {5}", Resources.AboutForm_AboutForm_Website, Links.URL_WEBSITE, Resources.AboutForm_AboutForm_Project_page, Links.URL_PROJECT, Resources.AboutForm_AboutForm_Issues, Links.URL_ISSUES);
@@ -59,7 +63,7 @@ Copy support: https://github.com/KamilKZ
 AdFly support: https://github.com/LRNAB
 MediaFire support: https://github.com/michalx2
 Pushbullet support: https://github.com/BallisticLingonberries
-Lambda support: https://github.com/marcusant
+Lambda support: https://github.com/mstojcevich
 VideoBin support: https://github.com/corey-/
 Up1 support: https://github.com/Upload
 LnkU, CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://github.com/DanielMcAssey
@@ -73,7 +77,7 @@ Simplified Chinese: https://github.com/jiajiechan
 Hungarian: https://github.com/devBluestar
 Korean: https://github.com/123jimin
 Spanish: https://github.com/ovnisoftware
-Dutch: https://github.com/wforums
+Dutch: https://github.com/canihavesomecoffee
 Portuguese (Brazil): https://github.com/athosbr99 & https://github.com/RockyTV
 
 {2}:

@@ -286,7 +286,7 @@
     <value>5</value>
   </data>
   <data name="lbl3.Text" xml:space="preserve">
-    <value>3. In Chrome right click on image or selected text and you will see "Upload with ShareX" button in context menu.</value>
+    <value>3. In Chrome right click on image, video, audio or selected text and you will see "Upload with ShareX" button in context menu.</value>
   </data>
   <data name="&gt;&gt;lbl3.Name" xml:space="preserve">
     <value>lbl3</value>

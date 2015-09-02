@@ -117,4 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - IRC istemcisi</value>
+  </data>
+  <data name="btnCommandSend.Text" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="btnConnect.Text" xml:space="preserve">
+    <value>Bağlan</value>
+  </data>
+  <data name="btnMessageSend.Text" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="lblChannel.Text" xml:space="preserve">
+    <value>Kanal/Nick:</value>
+  </data>
+  <data name="lblCommand.Text" xml:space="preserve">
+    <value>Komut:</value>
+  </data>
+  <data name="lblMessage.Text" xml:space="preserve">
+    <value>Mesaj:</value>
+  </data>
+  <data name="tpMessages.Text" xml:space="preserve">
+    <value>Mesajlar</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>IRC çıktısı</value>
+  </data>
+  <data name="tsmiMessageBold.Text" xml:space="preserve">
+    <value>Kalın</value>
+  </data>
+  <data name="tsmiMessageItalic.Text" xml:space="preserve">
+    <value>İtalik</value>
+  </data>
+  <data name="tsmiMessageNormal.Text" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="tsmiMessageUnderline.Text" xml:space="preserve">
+    <value>Altı çizgili</value>
+  </data>
+  <data name="tsmiColorYellow.Text" xml:space="preserve">
+    <value>Sarı</value>
+  </data>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="tsmiColorBlack.Text" xml:space="preserve">
+    <value>Siyah</value>
+  </data>
+  <data name="tsmiColorBlue.Text" xml:space="preserve">
+    <value>Mavi</value>
+  </data>
+  <data name="tsmiColorBrown.Text" xml:space="preserve">
+    <value>Kahverengi</value>
+  </data>
+  <data name="tsmiColorCyan.Text" xml:space="preserve">
+    <value>Camgöbeği</value>
+  </data>
+  <data name="tsmiColorGreen.Text" xml:space="preserve">
+    <value>Yeşil</value>
+  </data>
+  <data name="tsmiColorGrey.Text" xml:space="preserve">
+    <value>Gri</value>
+  </data>
+  <data name="tsmiColorLightBlue.Text" xml:space="preserve">
+    <value>Açık mavi</value>
+  </data>
+  <data name="tsmiColorLightCyan.Text" xml:space="preserve">
+    <value>Açık camgöbeği</value>
+  </data>
+  <data name="tsmiColorLightGreen.Text" xml:space="preserve">
+    <value>Açık yeşil</value>
+  </data>
+  <data name="tsmiColorLightGrey.Text" xml:space="preserve">
+    <value>Açık gri</value>
+  </data>
+  <data name="tsmiColorLightRed.Text" xml:space="preserve">
+    <value>Açık kırmızı</value>
+  </data>
+  <data name="tsmiColorOrange.Text" xml:space="preserve">
+    <value>Turuncu</value>
+  </data>
+  <data name="tsmiColorPink.Text" xml:space="preserve">
+    <value>Pembe</value>
+  </data>
+  <data name="tsmiColorPurple.Text" xml:space="preserve">
+    <value>Mor</value>
+  </data>
+  <data name="tsmiColors.Text" xml:space="preserve">
+    <value>Renkler</value>
+  </data>
+  <data name="tsmiColorWhite.Text" xml:space="preserve">
+    <value>Beyaz</value>
+  </data>
 </root>

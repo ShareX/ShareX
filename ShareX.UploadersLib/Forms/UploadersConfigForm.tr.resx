@@ -743,9 +743,6 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   <data name="btnTwitterRemove.Text" xml:space="preserve">
     <value>Kaldır</value>
   </data>
-  <data name="chTwitterAccount.Text" xml:space="preserve">
-    <value>İsim</value>
-  </data>
   <data name="lblTwitterDescription.Text" xml:space="preserve">
     <value>İsim:</value>
   </data>
@@ -787,5 +784,8 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   </data>
   <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
     <value>Yükleyicileri temizle</value>
+  </data>
+  <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+    <value>Güncelle</value>
   </data>
 </root>

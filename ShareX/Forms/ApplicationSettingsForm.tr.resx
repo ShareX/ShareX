@@ -267,4 +267,7 @@
   <data name="llTranslators.Text" xml:space="preserve">
     <value>ShareX i kendi dilinize çevirmek için bize yardım edin!</value>
   </data>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>Chrome eklenti desteği...</value>
+  </data>
 </root>

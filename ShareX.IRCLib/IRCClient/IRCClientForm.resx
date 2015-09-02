@@ -418,7 +418,7 @@
     <value>2</value>
   </data>
   <data name="tpMain.Text" xml:space="preserve">
-    <value>Main</value>
+    <value>Settings</value>
   </data>
   <data name="&gt;&gt;tpMain.Name" xml:space="preserve">
     <value>tpMain</value>
@@ -581,7 +581,7 @@
   </data>
   <data name="btnMessagesMenu.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnMessagesMenu.Name" xml:space="preserve">
     <value>btnMessagesMenu</value>
   </data>

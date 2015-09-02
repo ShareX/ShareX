@@ -37,13 +37,13 @@
             this.lblMike = new System.Windows.Forms.Label();
             this.rtbCredits = new System.Windows.Forms.RichTextBox();
             this.rtbShareXInfo = new System.Windows.Forms.RichTextBox();
-            this.lblOwners = new System.Windows.Forms.Label();
             this.cLogo = new ShareX.HelpersLib.Canvas();
             this.uclUpdate = new ShareX.HelpersLib.UpdateCheckerLabel();
             this.pbMikeURL = new System.Windows.Forms.PictureBox();
             this.pbAU = new System.Windows.Forms.PictureBox();
             this.pbBerkURL = new System.Windows.Forms.PictureBox();
             this.pbTR = new System.Windows.Forms.PictureBox();
+            this.lblTeam = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).BeginInit();
@@ -90,11 +90,6 @@
             this.rtbShareXInfo.Name = "rtbShareXInfo";
             this.rtbShareXInfo.ReadOnly = true;
             this.rtbShareXInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);
-            // 
-            // lblOwners
-            // 
-            resources.ApplyResources(this.lblOwners, "lblOwners");
-            this.lblOwners.Name = "lblOwners";
             // 
             // cLogo
             // 
@@ -145,12 +140,17 @@
             this.pbTR.Name = "pbTR";
             this.pbTR.TabStop = false;
             // 
+            // lblTeam
+            // 
+            resources.ApplyResources(this.lblTeam, "lblTeam");
+            this.lblTeam.Name = "lblTeam";
+            // 
             // AboutForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.lblOwners);
+            this.Controls.Add(this.lblTeam);
             this.Controls.Add(this.rtbShareXInfo);
             this.Controls.Add(this.rtbCredits);
             this.Controls.Add(this.lblBerk);
@@ -186,7 +186,7 @@
         private HelpersLib.Canvas cLogo;
         private System.Windows.Forms.RichTextBox rtbCredits;
         private System.Windows.Forms.RichTextBox rtbShareXInfo;
-        private System.Windows.Forms.Label lblOwners;
         private HelpersLib.UpdateCheckerLabel uclUpdate;
+        private System.Windows.Forms.Label lblTeam;
     }
 }

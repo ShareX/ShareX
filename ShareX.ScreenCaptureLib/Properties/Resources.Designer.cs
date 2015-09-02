@@ -310,7 +310,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Hold Alt] Snap resizing to preset sizes.
+        ///   Looks up a localized string similar to [Hold Alt] Snap selection to preset sizes.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes {
             get {
@@ -373,7 +373,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Insert] Stop region selection.
+        ///   Looks up a localized string similar to [Release left click] [Insert] Finish region selection.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Insert__Stop_region_selection {
             get {

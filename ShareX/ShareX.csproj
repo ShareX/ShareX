@@ -482,6 +482,9 @@
     <EmbeddedResource Include="Forms\ChromeForm.resx">
       <DependentUpon>ChromeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChromeForm.tr.resx">
+      <DependentUpon>ChromeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.de.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
     </EmbeddedResource>

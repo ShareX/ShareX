@@ -748,9 +748,6 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
     <value>Sla venster met tweet bericht over</value>
   </data>
-  <data name="chTwitterAccount.Text" xml:space="preserve">
-    <value>Naam</value>
-  </data>
   <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
     <value>Standaard inhoud tweet:</value>
   </data>

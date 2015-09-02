@@ -156,14 +156,11 @@
     <value>64, 144</value>
   </data>
   <data name="lblBerk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>0, 13</value>
   </data>
   <data name="lblBerk.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="lblBerk.Text" xml:space="preserve">
-    <value>Jaex (Berk)</value>
-  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblBerk.Name" xml:space="preserve">
     <value>lblBerk</value>
   </data>
@@ -183,14 +180,11 @@
     <value>64, 168</value>
   </data>
   <data name="lblMike.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 13</value>
+    <value>0, 13</value>
   </data>
   <data name="lblMike.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="lblMike.Text" xml:space="preserve">
-    <value>mcored (Michael Delpach)</value>
-  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblMike.Name" xml:space="preserve">
     <value>lblMike</value>
   </data>
@@ -216,9 +210,6 @@
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="rtbCredits.Text" xml:space="preserve">
-    <value />
-  <comment>@Invariant</comment></data>
   <data name="rtbCredits.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -243,9 +234,6 @@
   <data name="rtbShareXInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="rtbShareXInfo.Text" xml:space="preserve">
-    <value />
-  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;rtbShareXInfo.Name" xml:space="preserve">
     <value>rtbShareXInfo</value>
   </data>
@@ -257,33 +245,6 @@
   </data>
   <data name="&gt;&gt;rtbShareXInfo.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="lblOwners.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblOwners.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 117</value>
-  </data>
-  <data name="lblOwners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="lblOwners.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblOwners.Text" xml:space="preserve">
-    <value>ShareX Team:</value>
-  </data>
-  <data name="&gt;&gt;lblOwners.Name" xml:space="preserve">
-    <value>lblOwners</value>
-  </data>
-  <data name="&gt;&gt;lblOwners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblOwners.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblOwners.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="cLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -425,6 +386,30 @@
   </data>
   <data name="&gt;&gt;pbTR.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="lblTeam.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTeam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 117</value>
+  </data>
+  <data name="lblTeam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblTeam.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;lblTeam.Name" xml:space="preserve">
+    <value>lblTeam</value>
+  </data>
+  <data name="&gt;&gt;lblTeam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTeam.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblTeam.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

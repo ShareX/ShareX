@@ -389,9 +389,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Nome</value>
   </data>
-  <data name="chTwitterAccount.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
   <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
     <value>Parâmetros</value>
   </data>

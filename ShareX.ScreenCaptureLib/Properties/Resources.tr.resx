@@ -281,4 +281,10 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
     <value>[Tab] Boyutlandırma noktasını {0} olarak değiştir</value>
   </data>
+  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
+    <value>[Alt basılı tut] Seçimi önceden ayarlı boyutlara hizala</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
+    <value>[Sağ tık bırak] [Insert] Alan seçimini bitir</value>
+  </data>
 </root>

@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Chrome eklenti desteği</value>
+  </data>
+  <data name="btnInstallExtension.Text" xml:space="preserve">
+    <value>ShareX Chrome eklentisini yükle</value>
+  </data>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>Chrome desteğini aktif et</value>
+  </data>
+  <data name="btnUnregister.Text" xml:space="preserve">
+    <value>Chrome desteğini devre dışı bırak</value>
+  </data>
+  <data name="lbl1.Text" xml:space="preserve">
+    <value>1. Chrome desteğini aktif edin yoksa eklenti ShareX ile bağlantı kuramaz.</value>
+  </data>
+  <data name="lbl2.Text" xml:space="preserve">
+    <value>2. ShareX eklentisini Chrome web mağazasından indirin.</value>
+  </data>
+  <data name="lbl3.Text" xml:space="preserve">
+    <value>3. Chrome da resim, video, ses veya seçilmiş yazı üstünde sağ tıkladığınızda "Upload with ShareX" tuşunu görüceksiniz.</value>
+  </data>
 </root>

@@ -742,9 +742,6 @@ Cela signifie qu'ils peuvent être perdu d'Amazon S3 à un certain moment.</valu
   <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
     <value>Ignorer la boîte de message du tweet</value>
   </data>
-  <data name="chTwitterAccount.Text" xml:space="preserve">
-    <value>Nom</value>
-  </data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>Clé API:</value>
   </data>

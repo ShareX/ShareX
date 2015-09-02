@@ -450,4 +450,21 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
     <value>Büyük bir dosya yüklüyorsunuz.
 Devam etmek istediğinizden emin misiniz?</value>
   </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>İndiriliyor</value>
+  </data>
+  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
+    <value>Chrome desteği aktif edildi.</value>
+  </data>
+  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>Chrome desteği devre dışı bırakıldı.</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
+    <value>Resim düzenleyici - Resim nasıl açılsın?</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
+    <value>Panonuzda resim bulunmaktadır, bunu resim düzenleyicide açmak ister misiniz?
+
+Evet tuşuna basarsanız panonuzdaki resim açılır. Veya hayır tuşuna basarak resim dosyası seçebilirsiniz.</value>
+  </data>
 </root>
