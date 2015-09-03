@@ -193,9 +193,18 @@ namespace ShareX.IRCLib
 
             //:sendak.freenode.net 375 Jaex :- sendak.freenode.net Message of the Day -
             //:sendak.freenode.net 372 Jaex :- Welcome to sendak.freenode.net in Vilnius, Lithuania, EU.
-            if ((messageInfo.Command == "375" || messageInfo.Command == "372") && Info.SuppressMOTD)
+            //:sendak.freenode.net 376 Jaex :End of /MOTD command.
+            if (Info.SuppressMOTD)
             {
-                return true;
+                if (messageInfo.Command == "375" || messageInfo.Command == "372")
+                {
+                    return true;
+                }
+                else if (messageInfo.Command == "376")
+                {
+                    OnConnected();
+                    return true;
+                }
             }
 
             if (messageInfo.User.UserType == IRCUserType.Me)
