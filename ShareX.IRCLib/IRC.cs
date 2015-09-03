@@ -28,6 +28,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Security;
 using System.Net.Sockets;
 using System.Threading;
 
@@ -101,7 +102,17 @@ namespace ShareX.IRCLib
                 disconnecting = false;
 
                 tcp = new TcpClient(Info.Server, Info.Port);
-                NetworkStream networkStream = tcp.GetStream();
+                tcp.NoDelay = true;
+                Stream networkStream = tcp.GetStream();
+
+                if (Info.UseSSL)
+                {
+                    RemoteCertificateValidationCallback callback = (sender, certificate, chain, sslPolicyErrors) => true;
+                    SslStream sslStream = new SslStream(networkStream, false, callback);
+                    sslStream.AuthenticateAsClient(Info.Server);
+                    networkStream = sslStream;
+                }
+
                 streamReader = new StreamReader(networkStream);
                 streamWriter = new StreamWriter(networkStream);
 
