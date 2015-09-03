@@ -298,7 +298,7 @@
             resources.ApplyResources(this.pgSettings, "pgSettings");
             this.pgSettings.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.pgSettings.Name = "pgSettings";
-            this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgSettings.ToolbarVisible = false;
             // 
             // tpOutput

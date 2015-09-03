@@ -91,7 +91,7 @@ namespace ShareX.IRCLib
             {
                 lastCommand = command;
 
-                if (IRC.IsConnected)
+                if (IRC.IsWorking)
                 {
                     SendCommand(command);
                 }
@@ -121,7 +121,7 @@ namespace ShareX.IRCLib
             {
                 lastMessage = message;
 
-                if (IRC.IsConnected)
+                if (IRC.IsWorking)
                 {
                     SendMessage(message);
                 }
@@ -202,7 +202,7 @@ namespace ShareX.IRCLib
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            if (!IRC.IsConnected)
+            if (!IRC.IsWorking)
             {
                 Connect();
             }

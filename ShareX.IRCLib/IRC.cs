@@ -48,6 +48,7 @@ namespace ShareX.IRCLib
         public event UserKickedEventHandler UserKicked;
 
         public IRCInfo Info { get; private set; }
+        public bool IsWorking { get; private set; }
         public bool IsConnected { get; private set; }
         public string CurrentNickname { get; private set; }
         public string LastChannel { get; private set; }
@@ -88,14 +89,15 @@ namespace ShareX.IRCLib
 
         public void Connect()
         {
-            if (IsConnected)
+            if (IsWorking)
             {
                 return;
             }
 
             try
             {
-                IsConnected = true;
+                IsWorking = true;
+                IsConnected = false;
                 disconnecting = false;
 
                 tcp = new TcpClient(Info.Server, Info.Port);
@@ -116,7 +118,7 @@ namespace ShareX.IRCLib
             }
             catch (Exception e)
             {
-                IsConnected = false;
+                IsWorking = false;
                 DebugHelper.WriteLine(e.ToString());
             }
         }
@@ -127,7 +129,7 @@ namespace ShareX.IRCLib
             {
                 disconnecting = true;
 
-                if (IsConnected)
+                if (IsWorking)
                 {
                     Quit(Info.QuitReason);
                 }
@@ -315,7 +317,7 @@ namespace ShareX.IRCLib
 
         protected void OnDisconnected()
         {
-            IsConnected = false;
+            IsWorking = IsConnected = false;
 
             if (Disconnected != null)
             {
@@ -350,15 +352,8 @@ namespace ShareX.IRCLib
         // JOIN channel
         public void JoinChannel(string channel)
         {
-            if (IsConnected)
-            {
-                SendRawMessage($"JOIN {channel}");
-                LastChannel = channel;
-            }
-            else
-            {
-                Info.AutoJoinChannels.Add(channel);
-            }
+            SendRawMessage($"JOIN {channel}");
+            LastChannel = channel;
         }
 
         // TOPIC channel :message

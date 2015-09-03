@@ -32,65 +32,65 @@ namespace ShareX.IRCLib
 {
     public class IRCInfo : SettingsBase<IRCInfo>
     {
-        [Description("IRC server address."), DefaultValue("chat.freenode.net")]
+        [Category("\t\tServer info"), Description("IRC server address. Example: chat.freenode.net"), DefaultValue("chat.freenode.net")]
         public string Server { get; set; } = "chat.freenode.net";
 
-        [Description("IRC server port."), DefaultValue(6667)]
+        [Category("\t\tServer info"), Description("IRC server port. Default: 6667"), DefaultValue(6667)]
         public int Port { get; set; } = 6667;
 
-        [Description("IRC server password. In some servers can be used to identify."), PasswordPropertyText(true)]
+        [Category("\t\tServer info"), Description("IRC server password. In some servers can be used to identify."), PasswordPropertyText(true)]
         public string Password { get; set; }
 
-        [Description("Nickname.")]
+        [Category("\tUser info"), Description("Nickname.")]
         public string Nickname { get; set; }
 
-        [Description("Alternative nickname in case nickname already in use. If it is empty then _ character will be added end of nickname.")]
+        [Category("\tUser info"), Description("Alternative nickname in case nickname already in use. If it is empty then _ character will be added to end of nickname.")]
         public string Nickname2 { get; set; }
 
-        [Description("Username. This show up in WHOIS result."), DefaultValue("username")]
+        [Category("\tUser info"), Description("Username. This info visible to everyone in WHOIS result."), DefaultValue("username")]
         public string Username { get; set; } = "username";
 
-        [Description("Realname. This show up in WHOIS result."), DefaultValue("realname")]
+        [Category("\tUser info"), Description("Realname. This info visible to everyone in WHOIS result."), DefaultValue("realname")]
         public string Realname { get; set; } = "realname";
 
-        [Description("IRC invisible mode."), DefaultValue(true)]
+        [Category("\tUser info"), Description("IRC invisible mode."), DefaultValue(true)]
         public bool Invisible { get; set; } = true;
 
-        [Description("When disconnected from server auto reconnect."), DefaultValue(true)]
+        [Category("Options"), Description("When disconnected from server auto reconnect."), DefaultValue(true)]
         public bool AutoReconnect { get; set; } = true;
 
-        [Description("Wait specific milliseconds before reconnecting."), DefaultValue(5000)]
+        [Category("Options"), Description("Wait specific milliseconds before reconnecting."), DefaultValue(5000)]
         public int AutoReconnectDelay { get; set; } = 5000;
 
-        [Description("When got kicked from channel auto rejoin."), DefaultValue(false)]
+        [Category("Options"), Description("When got kicked from channel auto rejoin."), DefaultValue(false)]
         public bool AutoRejoinOnKick { get; set; }
 
-        [Description("Don't show 'Message of the day' texts in output."), DefaultValue(true)]
-        public bool SuppressMOTD { get; set; } = true;
+        [Category("Options"), Description("Don't show 'Message of the day' texts in output."), DefaultValue(false)]
+        public bool SuppressMOTD { get; set; } = false;
 
-        [Description("When you disconnect what message gonna show to other people."), DefaultValue("Leaving")]
+        [Category("Options"), Description("When you disconnect what message gonna show to other people."), DefaultValue("Leaving")]
         public string QuitReason { get; set; } = "Leaving";
 
-        [Description("When connected these commands will automatically execute."),
+        [Category("Options"), Description("When connected these commands will automatically execute."),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> ConnectCommands { get; set; } = new List<string>();
 
-        [Description("When connected automatically join these channels."),
+        [Category("Options"), Description("When connected automatically join these channels."),
         TypeConverter(typeof(StringCollectionToStringTypeConverter)),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> AutoJoinChannels { get; set; } = new List<string>() { "#ShareX" };
 
-        [Description("Wait identify confirmation before auto join channels. Currently only works in Freenode server because each server sends different response after identify."), DefaultValue(false)]
+        [Category("Options"), Description("Wait identify confirmation before auto join channels. Currently only works in Freenode server because each server sends different response after identify."), DefaultValue(false)]
         public bool AutoJoinWaitIdentify { get; set; }
 
-        [Description("Enable/Disable auto response system which using AutoResponseList."), DefaultValue(false)]
+        [Category("Options"), Description("Enable/Disable auto response system which using AutoResponseList."), DefaultValue(false)]
         public bool AutoResponse { get; set; }
 
-        [Description("After successful auto response match how much milliseconds wait for next auto response. Delay independant per response."), DefaultValue(10000)]
-        public int AutoResponseDelay { get; set; } = 10000;
-
-        [Description("When specific message written in channel automatically response with your message.")]
+        [Category("Options"), Description("When specific message written in channel automatically response with your message.")]
         public List<AutoResponseInfo> AutoResponseList { get; set; } = new List<AutoResponseInfo>();
+
+        [Category("Options"), Description("After successful auto response match how much milliseconds wait for next auto response. Delay independant per response."), DefaultValue(10000)]
+        public int AutoResponseDelay { get; set; } = 10000;
 
         public string GetAutoResponses()
         {
