@@ -401,7 +401,7 @@ namespace ShareX.IRCLib
 
         private void IRC_UserJoined(UserInfo user, string channel)
         {
-            if (user.Nickname == Info.Nickname && user.Username == Info.Username)
+            if (user.Nickname == IRC.CurrentNickname && user.Username == Info.Username)
             {
                 this.InvokeSafe(() =>
                 {

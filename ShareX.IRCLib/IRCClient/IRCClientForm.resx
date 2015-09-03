@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 604</value>
+    <value>248, 504</value>
   </data>
   <data name="txtMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 20</value>
+    <value>400, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtMessage.TabIndex" type="System.Int32, mscorlib">
@@ -298,7 +298,7 @@
     <value>False</value>
   </data>
   <data name="btnMessageSend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>888, 602</value>
+    <value>688, 502</value>
   </data>
   <data name="btnMessageSend.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 24</value>
@@ -334,7 +334,7 @@
     <value>Both</value>
   </data>
   <data name="txtOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 584</value>
+    <value>760, 484</value>
   </data>
   <data name="txtOutput.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -358,7 +358,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnConnect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 600</value>
+    <value>8, 500</value>
   </data>
   <data name="btnConnect.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 24</value>
@@ -388,7 +388,7 @@
     <value>8, 8</value>
   </data>
   <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 584</value>
+    <value>760, 484</value>
   </data>
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -412,7 +412,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 635</value>
+    <value>776, 535</value>
   </data>
   <data name="tpMain.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -436,10 +436,10 @@
     <value>Bottom, Left, Right</value>
   </data>
   <data name="txtCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 604</value>
+    <value>72, 504</value>
   </data>
   <data name="txtCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>808, 20</value>
+    <value>608, 20</value>
   </data>
   <data name="txtCommand.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -463,7 +463,7 @@
     <value>True</value>
   </data>
   <data name="lblCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 608</value>
+    <value>8, 508</value>
   </data>
   <data name="lblCommand.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -493,7 +493,7 @@
     <value>False</value>
   </data>
   <data name="btnCommandSend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>888, 602</value>
+    <value>688, 502</value>
   </data>
   <data name="btnCommandSend.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 24</value>
@@ -523,7 +523,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 635</value>
+    <value>776, 535</value>
   </data>
   <data name="tpOutput.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -550,7 +550,7 @@
     <value>0, 0</value>
   </data>
   <data name="tcMessages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 592</value>
+    <value>776, 492</value>
   </data>
   <data name="tcMessages.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -571,7 +571,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnMessagesMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>856, 602</value>
+    <value>656, 502</value>
   </data>
   <data name="btnMessagesMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
@@ -581,7 +581,7 @@
   </data>
   <data name="btnMessagesMenu.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnMessagesMenu.Name" xml:space="preserve">
     <value>btnMessagesMenu</value>
   </data>
@@ -601,7 +601,7 @@
     <value>True</value>
   </data>
   <data name="lblMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 608</value>
+    <value>192, 508</value>
   </data>
   <data name="lblMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -631,7 +631,7 @@
     <value>True</value>
   </data>
   <data name="lblChannel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 608</value>
+    <value>8, 508</value>
   </data>
   <data name="lblChannel.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 13</value>
@@ -658,7 +658,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="txtChannel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 604</value>
+    <value>88, 504</value>
   </data>
   <data name="txtChannel.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 20</value>
@@ -685,7 +685,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMessages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 635</value>
+    <value>776, 535</value>
   </data>
   <data name="tpMessages.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -712,7 +712,7 @@
     <value>0, 0</value>
   </data>
   <data name="tcMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 661</value>
+    <value>784, 561</value>
   </data>
   <data name="tcMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -739,7 +739,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>984, 661</value>
+    <value>784, 561</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -44,6 +44,9 @@ namespace ShareX.IRCLib
         [Description("Nickname.")]
         public string Nickname { get; set; }
 
+        [Description("Alternative nickname in case nickname already in use. If it is empty then _ character will be added end of nickname.")]
+        public string Nickname2 { get; set; }
+
         [Description("Username. This show up in WHOIS result."), DefaultValue("username")]
         public string Username { get; set; } = "username";
 

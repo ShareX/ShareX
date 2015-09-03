@@ -49,6 +49,7 @@ namespace ShareX.IRCLib
 
         public IRCInfo Info { get; private set; }
         public bool IsConnected { get; private set; }
+        public string CurrentNickname { get; private set; }
         public string LastChannel { get; private set; }
 
         private TcpClient tcp;
@@ -197,7 +198,7 @@ namespace ShareX.IRCLib
 
             if (messageInfo.User.UserType == IRCUserType.Me)
             {
-                messageInfo.User.Nickname = Info.Nickname;
+                messageInfo.User.Nickname = CurrentNickname;
             }
 
             OnOutput(messageInfo);
@@ -209,6 +210,17 @@ namespace ShareX.IRCLib
                     break;
                 case "376": //:sendak.freenode.net 376 Jaex :End of /MOTD command.
                     OnConnected();
+                    break;
+                case "433": //:sendak.freenode.net 433 * ShareX :Nickname is already in use.
+                    if (!IsConnected && messageInfo.Parameters.Count >= 2)
+                    {
+                        string nickname = !string.IsNullOrEmpty(Info.Nickname2) ? Info.Nickname2 : Info.Nickname + "_";
+
+                        if (!messageInfo.Parameters[1].Equals(nickname, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            ChangeNickname(nickname);
+                        }
+                    }
                     break;
                 case "PRIVMSG": //:Jaex!Jaex@unaffiliated/jaex PRIVMSG #ShareX :test
                     CheckMessage(messageInfo);
@@ -376,7 +388,7 @@ namespace ShareX.IRCLib
         public void ChangeNickname(string nick)
         {
             SendRawMessage($"NICK {nick}");
-            Info.Nickname = nick;
+            CurrentNickname = nick;
         }
 
         // PART channel :reason
@@ -427,11 +439,11 @@ namespace ShareX.IRCLib
 
         private bool HandleAutoResponse(string channel, string nick, string message)
         {
-            if (Info.AutoResponse && nick != Info.Nickname)
+            if (Info.AutoResponse && nick != CurrentNickname)
             {
                 foreach (AutoResponseInfo autoResponseInfo in Info.AutoResponseList)
                 {
-                    if (autoResponseInfo.CheckLastMatchTimer(Info.AutoResponseDelay) && autoResponseInfo.IsMatch(message, nick, Info.Nickname))
+                    if (autoResponseInfo.CheckLastMatchTimer(Info.AutoResponseDelay) && autoResponseInfo.IsMatch(message, nick, CurrentNickname))
                     {
                         // Is it whisper?
                         if (!channel.StartsWith("#"))
@@ -439,7 +451,7 @@ namespace ShareX.IRCLib
                             channel = nick;
                         }
 
-                        string response = autoResponseInfo.RandomResponse(nick, Info.Nickname);
+                        string response = autoResponseInfo.RandomResponse(nick, CurrentNickname);
                         SendMessage(response, channel);
 
                         return true;
