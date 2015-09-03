@@ -207,4 +207,17 @@
   <data name="lblGIFDither.Text" xml:space="preserve">
     <value>Modo de pontilhado:</value>
   </data>
+  <data name="nudx264CRF.ToolTip" xml:space="preserve">
+    <value>Constant Rate Factor (CRF): A variação da escala do quantizador é 0-51: aonde 0 é sem perdas, 23 é padrão e 51 é o pior possível.
+Um valor mais baixo equivale à melhor qualidade, subjetivamente uma escala sensata seria 18-28.
+Considere 18 sendo visualmente sem perdas ou quase: deveria ter a mesma qualidade ou quase a mesma, mas tecnicamente não é sem perdas.
+A escala é exponencial, então aumentando o valor do CRF em +6 é grosseiramente metade do bitrate enquanto -6 é grosseiramente o dobro do bitrate.
+O uso geral é escolher entre um meio termo entre o valor do CRF e uma qualidade aceitável.
+Se o arquivo de saída ficar de acordo com o esperado, tente um valor mais alto e se ficar pior, escolha um valor menor.</value>
+  </data>
+  <data name="cbx264Preset.ToolTip" xml:space="preserve">
+    <value>Um preset é uma coleção de opções que irão fornecer uma certa velocidade de encoding na taxa de compressão. Um preset menor irá fornecer melhor compressão (compressão é qualidade por tamanho de arquivo).
+Isso significa por exemplo, que se você almeja um certo tamanho de arquivo ou um bitrate constante, você irá ter uma melhor qualidade com um preset menor.
+Da mesma forma, para qualidade de encoding constante, você irá simplesmente economizar no bitrate escolhendo um preset menor.</value>
+  </data>
 </root>
