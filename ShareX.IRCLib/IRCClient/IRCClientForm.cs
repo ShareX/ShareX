@@ -200,6 +200,18 @@ namespace ShareX.IRCLib
 
         #region Form events
 
+        private void tcMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tcMain.SelectedTab == tpOutput)
+            {
+                txtCommand.Focus();
+            }
+            else if (tcMain.SelectedTab == tpMessages)
+            {
+                txtMessage.Focus();
+            }
+        }
+
         private void btnConnect_Click(object sender, EventArgs e)
         {
             if (!IRC.IsWorking)
@@ -240,6 +252,8 @@ namespace ShareX.IRCLib
             {
                 txtChannel.Text = tabInfo.Name;
             }
+
+            txtMessage.Focus();
         }
 
         private void txtMessage_KeyDown(object sender, KeyEventArgs e)
