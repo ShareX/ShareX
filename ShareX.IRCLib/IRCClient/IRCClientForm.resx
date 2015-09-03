@@ -716,7 +716,7 @@
   </data>
   <data name="btnMessagesMenu.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnMessagesMenu.Name" xml:space="preserve">
     <value>btnMessagesMenu</value>
   </data>

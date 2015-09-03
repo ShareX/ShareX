@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.IRCLib.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -149,7 +150,7 @@ namespace ShareX.IRCLib
         {
             if (CheckInfo())
             {
-                btnConnect.Text = "Disconnect";
+                btnConnect.Text = Resources.IRCClientForm_Connect_Disconnect;
                 btnCommandSend.Enabled = btnMessageSend.Enabled = true;
                 tcMain.SelectedTab = tpOutput;
                 IRC.Connect();
@@ -158,7 +159,7 @@ namespace ShareX.IRCLib
 
         private void Disconnect()
         {
-            btnConnect.Text = "Connect";
+            btnConnect.Text = Resources.IRCClientForm_Disconnect_Connect;
             btnCommandSend.Enabled = btnMessageSend.Enabled = false;
             IRC.Disconnect();
         }
