@@ -130,7 +130,7 @@
     <value>Vitesse</value>
   </data>
   <data name="chElapsed.Text" xml:space="preserve">
-    <value>Passé</value>
+    <value>Écoulé</value>
   </data>
   <data name="chRemaining.Text" xml:space="preserve">
     <value>Restant</value>
@@ -301,7 +301,7 @@
     <value>Arrêter la mise en ligne</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
-    <value>URL raccourci</value>
+    <value>URL raccourcie</value>
   </data>
   <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
     <value>URL de la miniature</value>
@@ -322,7 +322,7 @@
     <value>Ouvrir</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
-    <value>URL raccourci</value>
+    <value>URL raccourcie</value>
   </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
     <value>URL de la miniature</value>
@@ -388,7 +388,7 @@
     <value>Raccourcir l'URL</value>
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
-    <value>Partager URL</value>
+    <value>Partager l'URL</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Afficher le QR code...</value>
@@ -625,9 +625,15 @@
     <value>Désactiver les raccourcis clavier</value>
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
-    <value>Générateur de miniature de vidéo...</value>
+    <value>Générateur de miniatures de vidéo...</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
-    <value>Générateur de miniature de vidéo...</value>
+    <value>Générateur de miniatures de vidéo...</value>
+  </data>
+  <data name="tsmiIRCClient.Text" xml:space="preserve">
+    <value>Client IRC...</value>
+  </data>
+  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
+    <value>Client IRC...</value>
   </data>
 </root>
