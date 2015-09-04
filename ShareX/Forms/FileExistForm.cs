@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ShareX
 {
