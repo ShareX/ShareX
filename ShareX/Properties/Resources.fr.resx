@@ -411,7 +411,7 @@ Merci de sélectionner un raccourci différent ou quitter l'application en confl
     <value>Clic gauche pour copier l'URL dans le presse-papier. Clic droit pour l'ouvrir.</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>le client FTP prend uniquement en charge FTP ou FTPS.</value>
+    <value>Le client FTP prend uniquement en charge FTP ou FTPS.</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Impossible de trouver un compte FTP valide.</value>
@@ -442,5 +442,26 @@ Merci de sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
     <value>Vous pouvez faire un clic gauche sur l'icône de ShareX pour commencer la capture de région.</value>
+  </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>Téléchargement</value>
+  </data>
+  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
+    <value>Support pour Chrome activé.</value>
+  </data>
+  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>Support pour Chrome désactivé.</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
+    <value>Vous êtes sur le point de mettre en ligne un fichier volumineux.
+Êtes-vous sûr de vouloir continuer ?</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
+    <value>Votre presse-papier contient une image, souhaitez-vous l'ouvrir dans l'éditeur d'image?
+
+Appuyez sur Oui pour ouvrir l'image du presse-papier. Sinon, appuyez sur Non pour ouvrir la boîte de dialogue pour les images.</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
+    <value>Éditeur d'image - Comment charger une image ?</value>
   </data>
 </root>

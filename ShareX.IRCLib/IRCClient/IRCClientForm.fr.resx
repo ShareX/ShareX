@@ -117,157 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
-    <value>Ajouter...</value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Avancé</value>
-  </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 désactivé)</value>
-  </data>
-  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
-    <value>Parcourir...</value>
-  </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Parcourir...</value>
-  </data>
-  <data name="lblBufferSize.Text" xml:space="preserve">
-    <value>Taille du buffer:</value>
-  </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formats du presse-papier</value>
-  </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>Ne pas montrer la boite de dialogue des paramètres d'impression de l'image</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>Ne pas montrer la boite de dialogue d'impression de Windows</value>
-  </data>
-  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Éditer...</value>
-  </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Format</value>
-  </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>Général</value>
-  </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Aidez nous à traduire ShareX dans votre langue!</value>
-  </data>
-  <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Hôte:</value>
-  </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Paramètres d'impression d'image...</value>
-  </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Langue:</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Note: Vous devez redémarrer ShareX pour que les changements du dossier personnel soient pris en compte</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Nombre de tentatives si la mise en ligne échoue:</value>
-  </data>
-  <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Démarrer iconisé dans la barre</value>
-  </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Ouvrir...</value>
-  </data>
-  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
-    <value>Ouvrir...</value>
-  </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
-  </data>
-  <data name="tpPaths.Text" xml:space="preserve">
-    <value>Chemins</value>
-  </data>
-  <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Port:</value>
-  </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Imprimer</value>
-  </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
-  </data>
-  <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Configuration du proxy</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Se souvenir de la position de la fenêtre principale</value>
-  </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Se souvenir de la taille de la fenêtre principale</value>
-  </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Supprimer</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Résultats</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Réessayer</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Exécuter ShareX au démarrage de Windows</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne de fichiers secondaires</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne d'images secondaires</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne de textes secondaires</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Paramètres de l'application</value>
+    <value>ShareX - Client IRC</value>
   </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Dossier personnel ShareX:</value>
+  <data name="btnCommandSend.Text" xml:space="preserve">
+    <value>Envoyer</value>
   </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Afficher le bouton "Télécharger en utilisant ShareX" dans le menu contextuel</value>
+  <data name="btnConnect.Text" xml:space="preserve">
+    <value>Se connecter</value>
   </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Afficher la progression dans l'icône de la barre des tâches</value>
+  <data name="btnMessageSend.Text" xml:space="preserve">
+    <value>Envoyer</value>
   </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Afficher la progression dans l'icône de la zone de notification</value>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Logs IRC</value>
   </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Afficher ShareX dans le menu "Envoyer vers"</value>
+  <data name="tsmiColorBlack.Text" xml:space="preserve">
+    <value>Noir</value>
   </data>
-  <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Afficher l'icône dans la barre des tâches</value>
+  <data name="tsmiColorBlue.Text" xml:space="preserve">
+    <value>Bleu</value>
   </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Limite de mises en ligne simultanées:</value>
+  <data name="tsmiColorBrown.Text" xml:space="preserve">
+    <value>Marron</value>
   </data>
-  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Modèle de sous-dossier:</value>
+  <data name="tsmiColorCyan.Text" xml:space="preserve">
+    <value>Cyan</value>
   </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Mise en ligne</value>
+  <data name="tsmiColorGreen.Text" xml:space="preserve">
+    <value>Vert</value>
   </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Utilisez un dossier de captures d'écran personnalisé:</value>
+  <data name="tsmiColorGrey.Text" xml:space="preserve">
+    <value>Gris</value>
   </data>
-  <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur:</value>
+  <data name="tsmiColorLightBlue.Text" xml:space="preserve">
+    <value>Bleu Clair</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Utiliser le logiciel de mise en ligne secondaire de préférence lors de la nouvelle tentative</value>
+  <data name="tsmiColorLightCyan.Text" xml:space="preserve">
+    <value>Cyan Clair</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Support de l'extension pour Chrome...</value>
+  <data name="tsmiColorLightGreen.Text" xml:space="preserve">
+    <value>Vert Clair</value>
+  </data>
+  <data name="tsmiColorLightGrey.Text" xml:space="preserve">
+    <value>Gris Clair</value>
+  </data>
+  <data name="tsmiColorLightRed.Text" xml:space="preserve">
+    <value>Rouge Clair</value>
+  </data>
+  <data name="tsmiColorOrange.Text" xml:space="preserve">
+    <value>Orange</value>
+  </data>
+  <data name="tsmiColorPink.Text" xml:space="preserve">
+    <value>Rose</value>
+  </data>
+  <data name="tsmiColorPurple.Text" xml:space="preserve">
+    <value>Violet</value>
+  </data>
+  <data name="tsmiColors.Text" xml:space="preserve">
+    <value>Couleurs</value>
+  </data>
+  <data name="tsmiColorWhite.Text" xml:space="preserve">
+    <value>Blanc</value>
+  </data>
+  <data name="tsmiColorYellow.Text" xml:space="preserve">
+    <value>Jaune</value>
+  </data>
+  <data name="tsmiMessageBold.Text" xml:space="preserve">
+    <value>Gras</value>
+  </data>
+  <data name="tsmiMessageItalic.Text" xml:space="preserve">
+    <value>Italique</value>
+  </data>
+  <data name="tsmiMessageNormal.Text" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="tsmiMessageUnderline.Text" xml:space="preserve">
+    <value>Souligné</value>
+  </data>
+  <data name="lblMessage.Text" xml:space="preserve">
+    <value>Message:</value>
+  </data>
+  <data name="lblCommand.Text" xml:space="preserve">
+    <value>Commande:</value>
+  </data>
+  <data name="tpMessages.Text" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="lblChannel.Text" xml:space="preserve">
+    <value>Salon/Pseudo:</value>
   </data>
 </root>

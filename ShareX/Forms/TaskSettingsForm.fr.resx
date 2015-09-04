@@ -438,4 +438,16 @@
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Montrer le curseur dans l'enregistrement</value>
   </data>
+  <data name="tpIRCClient.Text" xml:space="preserve">
+    <value>Client IRC</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
+    <value>Utiliser les paramètres d'outils dans les paramètres des tâches de la fenêtre principale</value>
+  </data>
+  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniatures de vidéo</value>
+  </data>
 </root>

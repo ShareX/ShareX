@@ -281,4 +281,10 @@ Distance: {6:0,00} px / Angle: {7:0,00}°</value>
   <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
     <value>[Tab] Définir le point d'encrage du redimensionnement à partir du {0}</value>
   </data>
+  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
+    <value>[Maintenir Alt] Aligner la sélection avec des tailles prédéfinies</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
+    <value>[Relâcher clic gauche] [Inser] Terminer la sélection de la région</value>
+  </data>
 </root>
