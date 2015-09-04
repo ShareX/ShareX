@@ -865,7 +865,7 @@ namespace ShareX.HelpersLib
         {
             if (!Path.IsPathRooted(path)) // Is relative path?
             {
-                path = Path.Combine(Application.StartupPath, path);
+                path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
             }
 
             return Path.GetFullPath(path);
@@ -903,6 +903,53 @@ namespace ShareX.HelpersLib
             DateTime date = dateTime.ToUniversalTime();
             long ticks = date.Ticks - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).Ticks;
             return ticks / TimeSpan.TicksPerSecond;
+        }
+
+        public static bool IsRunning(string name)
+        {
+            try
+            {
+                Mutex mutex = Mutex.OpenExisting(name);
+                mutex.ReleaseMutex();
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static void ShowError(Exception e)
+        {
+            MessageBox.Show(e.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void CopyAll(string sourceDirectory, string targetDirectory)
+        {
+            DirectoryInfo diSource = new DirectoryInfo(sourceDirectory);
+            DirectoryInfo diTarget = new DirectoryInfo(targetDirectory);
+
+            CopyAll(diSource, diTarget);
+        }
+
+        public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
+        {
+            if (!Directory.Exists(target.FullName))
+            {
+                Directory.CreateDirectory(target.FullName);
+            }
+
+            foreach (FileInfo fi in source.GetFiles())
+            {
+                fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
+            }
+
+            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
+            {
+                DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(diSourceSubDir.Name);
+                CopyAll(diSourceSubDir, nextTargetSubDir);
+            }
         }
     }
 }
