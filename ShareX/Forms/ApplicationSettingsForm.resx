@@ -418,7 +418,7 @@
     <value>7</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Show "Upload using ShareX" button in shell context menu</value>
+    <value>Show "Upload with ShareX" button in shell context menu</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenu.Name" xml:space="preserve">
     <value>cbShellContextMenu</value>
