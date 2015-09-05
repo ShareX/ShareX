@@ -42,6 +42,8 @@ namespace ShareX
 
         private void CreateChromeHostManifest(string filepath)
         {
+            Helpers.CreateDirectoryIfNotExist(filepath);
+
             var manifest = new
             {
                 name = "com.getsharex.sharex",
