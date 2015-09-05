@@ -35,8 +35,8 @@ namespace ShareX.IRCLib
         [Category("\t\tServer info"), Description("IRC server address. Example: chat.freenode.net"), DefaultValue("chat.freenode.net")]
         public string Server { get; set; } = "chat.freenode.net";
 
-        [Category("\t\tServer info"), Description("IRC server port. Default: 6667. Default SSL: 6697"), DefaultValue(6667)]
-        public int Port { get; set; } = 6667;
+        [Category("\t\tServer info"), Description("IRC server port. Default: 6667. Default SSL: 6697"), DefaultValue(IRC.DefaultPort)]
+        public int Port { get; set; } = IRC.DefaultPort;
 
         [Category("\t\tServer info"), Description("Will use SSL connection. You must use correct SSL port of the IRC server."), DefaultValue(false)]
         public bool UseSSL { get; set; } = false;

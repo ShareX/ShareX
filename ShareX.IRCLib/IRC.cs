@@ -36,6 +36,9 @@ namespace ShareX.IRCLib
 {
     public class IRC : IDisposable
     {
+        public const int DefaultPort = 6667;
+        public const int DefaultPortSSL = 6697;
+
         public event Action<MessageInfo> Output;
         public event Action Connected, Disconnected;
         public delegate void MessageEventHandler(UserInfo user, string channel, string message);
@@ -101,14 +104,30 @@ namespace ShareX.IRCLib
                 IsConnected = false;
                 disconnecting = false;
 
-                tcp = new TcpClient(Info.Server, Info.Port);
-                tcp.NoDelay = true;
+                int port = Info.Port;
+
+                if (port <= 0)
+                {
+                    if (Info.UseSSL)
+                    {
+                        port = DefaultPortSSL;
+                    }
+                    else
+                    {
+                        port = DefaultPort;
+                    }
+                }
+
+                tcp = new TcpClient(Info.Server, port)
+                {
+                    NoDelay = true
+                };
+
                 Stream networkStream = tcp.GetStream();
 
                 if (Info.UseSSL)
                 {
-                    RemoteCertificateValidationCallback callback = (sender, certificate, chain, sslPolicyErrors) => true;
-                    SslStream sslStream = new SslStream(networkStream, false, callback);
+                    SslStream sslStream = new SslStream(networkStream, false, (sender, certificate, chain, sslPolicyErrors) => true);
                     sslStream.AuthenticateAsClient(Info.Server);
                     networkStream = sslStream;
                 }

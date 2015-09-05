@@ -172,12 +172,6 @@ namespace ShareX.IRCLib
                 return false;
             }
 
-            if (Info.Port <= 0)
-            {
-                MessageBox.Show("Invalid server port.", "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
             if (string.IsNullOrEmpty(Info.Nickname))
             {
                 MessageBox.Show("Nickname field cannot be empty.", "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
