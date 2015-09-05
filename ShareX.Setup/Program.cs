@@ -170,7 +170,7 @@ namespace ShareX.Setup
 
         private static void CopyFile(string path, string toFolder)
         {
-            CopyFiles(path, toFolder);
+            CopyFiles(new string[] { path }, toFolder);
         }
 
         private static void CopyFiles(string directory, string searchPattern, string toFolder)
