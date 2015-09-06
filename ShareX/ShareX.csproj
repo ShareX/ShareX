@@ -488,6 +488,9 @@
     <EmbeddedResource Include="Forms\BeforeUploadForm.zh-CN.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChromeForm.fr.resx">
+      <DependentUpon>ChromeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChromeForm.resx">
       <DependentUpon>ChromeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -802,6 +805,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.zh-CN.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.fr.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.nl-NL.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.pt-BR.resx">
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
