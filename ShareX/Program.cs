@@ -39,7 +39,7 @@ namespace ShareX
 {
     internal static class Program
     {
-        public static bool IsBeta = false;
+        public static bool IsBeta = true;
 
         public static string Title
         {

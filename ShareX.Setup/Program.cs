@@ -38,7 +38,8 @@ namespace ShareX.Setup
         private enum SetupType
         {
             Stable, // Build setup + create portable zip file
-            Beta // Build setup + upload it using "Debug/ShareX.exe"
+            Beta, // Build setup + upload it using "Debug/ShareX.exe"
+            Steam
         }
 
         private const SetupType Setup = SetupType.Stable;
@@ -66,6 +67,10 @@ namespace ShareX.Setup
                 case SetupType.Beta:
                     CompileSetup();
                     UploadLatestFile();
+                    break;
+                case SetupType.Steam:
+                    CreatePortable();
+                    OpenOutputDirectory();
                     break;
             }
 

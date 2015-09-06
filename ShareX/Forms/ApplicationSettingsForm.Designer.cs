@@ -109,6 +109,8 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.gbGeneralWindows = new System.Windows.Forms.GroupBox();
+            this.gbGeneralApplication = new System.Windows.Forms.GroupBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -128,6 +130,8 @@ namespace ShareX
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).BeginInit();
             this.tpPrint.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
+            this.gbGeneralWindows.SuspendLayout();
+            this.gbGeneralApplication.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcSettings
@@ -144,19 +148,11 @@ namespace ShareX
             // 
             // tpGeneral
             // 
-            this.tpGeneral.Controls.Add(this.btnChromeSupport);
+            this.tpGeneral.Controls.Add(this.gbGeneralApplication);
+            this.tpGeneral.Controls.Add(this.gbGeneralWindows);
             this.tpGeneral.Controls.Add(this.btnLanguages);
             this.tpGeneral.Controls.Add(this.llTranslators);
             this.tpGeneral.Controls.Add(this.lblLanguage);
-            this.tpGeneral.Controls.Add(this.cbRememberMainFormPosition);
-            this.tpGeneral.Controls.Add(this.cbSilentRun);
-            this.tpGeneral.Controls.Add(this.cbRememberMainFormSize);
-            this.tpGeneral.Controls.Add(this.cbTaskbarProgressEnabled);
-            this.tpGeneral.Controls.Add(this.cbTrayIconProgressEnabled);
-            this.tpGeneral.Controls.Add(this.cbShellContextMenu);
-            this.tpGeneral.Controls.Add(this.cbStartWithWindows);
-            this.tpGeneral.Controls.Add(this.cbShowTray);
-            this.tpGeneral.Controls.Add(this.cbSendToMenu);
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.UseVisualStyleBackColor = true;
@@ -725,6 +721,28 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             // 
+            // gbGeneralWindows
+            // 
+            this.gbGeneralWindows.Controls.Add(this.cbStartWithWindows);
+            this.gbGeneralWindows.Controls.Add(this.cbSendToMenu);
+            this.gbGeneralWindows.Controls.Add(this.cbShellContextMenu);
+            resources.ApplyResources(this.gbGeneralWindows, "gbGeneralWindows");
+            this.gbGeneralWindows.Name = "gbGeneralWindows";
+            this.gbGeneralWindows.TabStop = false;
+            // 
+            // gbGeneralApplication
+            // 
+            this.gbGeneralApplication.Controls.Add(this.cbShowTray);
+            this.gbGeneralApplication.Controls.Add(this.cbTrayIconProgressEnabled);
+            this.gbGeneralApplication.Controls.Add(this.btnChromeSupport);
+            this.gbGeneralApplication.Controls.Add(this.cbTaskbarProgressEnabled);
+            this.gbGeneralApplication.Controls.Add(this.cbRememberMainFormSize);
+            this.gbGeneralApplication.Controls.Add(this.cbSilentRun);
+            this.gbGeneralApplication.Controls.Add(this.cbRememberMainFormPosition);
+            resources.ApplyResources(this.gbGeneralApplication, "gbGeneralApplication");
+            this.gbGeneralApplication.Name = "gbGeneralApplication";
+            this.gbGeneralApplication.TabStop = false;
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -762,6 +780,10 @@ namespace ShareX
             this.tpPrint.ResumeLayout(false);
             this.tpPrint.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
+            this.gbGeneralWindows.ResumeLayout(false);
+            this.gbGeneralWindows.PerformLayout();
+            this.gbGeneralApplication.ResumeLayout(false);
+            this.gbGeneralApplication.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -848,5 +870,7 @@ namespace ShareX
         private MenuButton btnLanguages;
         private System.Windows.Forms.ContextMenuStrip cmsLanguages;
         private System.Windows.Forms.Button btnChromeSupport;
+        private System.Windows.Forms.GroupBox gbGeneralWindows;
+        private System.Windows.Forms.GroupBox gbGeneralApplication;
     }
 }
