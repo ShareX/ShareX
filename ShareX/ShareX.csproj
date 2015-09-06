@@ -988,7 +988,6 @@
     </None>
     <None Include="Resources\barcode-2d.png" />
     <None Include="Resources\GitHub.png" />
-    <EmbeddedResource Include="GitHash.txt" />
     <None Include="Resources\Twitter.ico" />
     <None Include="Resources\folder.png" />
     <None Include="Resources\clipboard.png" />
@@ -1057,17 +1056,8 @@
     </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>cd $(ProjectDir)
-
-if $(ConfigurationName) == Release (
-    for %25%25x in (git.exe) do if not [%25%25~$PATH:x]==[] (
-        git rev-parse HEAD &gt; GitHash.txt
-    )
-)
-
-if not exist GitHash.txt (
-    type nul &gt; GitHash.txt
-)</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
