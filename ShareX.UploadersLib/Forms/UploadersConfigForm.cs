@@ -625,7 +625,10 @@ namespace ShareX.UploadersLib
                 lbTwitterAccounts.Items.Add(twitterOAuth.Description);
             }
 
-            lbTwitterAccounts.SelectedIndex = Config.TwitterSelectedAccount;
+            if (CheckTwitterAccounts())
+            {
+                lbTwitterAccounts.SelectedIndex = Config.TwitterSelectedAccount;
+            }
 
             TwitterUpdateSelected();
 
