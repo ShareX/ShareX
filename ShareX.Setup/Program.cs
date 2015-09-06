@@ -53,7 +53,7 @@ namespace ShareX.Setup
         private static string outputDir = Path.Combine(parentDir, "InnoSetup", "Output");
         private static string portableDir = Path.Combine(outputDir, "ShareX-portable");
         private static string steamOutputDir = Path.Combine(outputDir, "ShareX");
-        private static string steamLauncherPath = Path.Combine(parentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release\ShareX_Launcher.exe");
+        private static string steamLauncherDir = Path.Combine(parentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release");
         private static string steamUpdatesDir = Path.Combine(steamOutputDir, "Updates");
         private static string innoSetupPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
         private static string innoSetupScriptPath = Path.Combine(parentDir, "InnoSetup", "ShareX setup.iss");
@@ -116,7 +116,8 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(steamOutputDir);
 
-            CopyFile(steamLauncherPath, steamOutputDir);
+            CopyFile(Path.Combine(steamLauncherDir, "ShareX_Launcher.exe"), steamOutputDir);
+            CopyFiles(steamLauncherDir, "*.dll", steamOutputDir);
 
             CreatePortable(steamUpdatesDir);
         }
