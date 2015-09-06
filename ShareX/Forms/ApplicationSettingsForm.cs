@@ -275,7 +275,16 @@ namespace ShareX
             if (loaded)
             {
                 //RegistryHelper.SetStartWithWindows(cbStartWithWindows.Checked);
-                ShortcutHelpers.SetShortcut(cbStartWithWindows.Checked, Environment.SpecialFolder.Startup, "-silent");
+
+                string filePath;
+
+#if Steam
+                filePath = Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
+#else
+                filePath = Application.ExecutablePath;
+#endif
+
+                ShortcutHelpers.SetShortcut(cbStartWithWindows.Checked, Environment.SpecialFolder.Startup, filePath, "-silent");
             }
         }
 
@@ -283,7 +292,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                ShortcutHelpers.SetShortcut(cbSendToMenu.Checked, Environment.SpecialFolder.SendTo);
+                ShortcutHelpers.SetShortcut(cbSendToMenu.Checked, Environment.SpecialFolder.SendTo, Application.ExecutablePath);
             }
         }
 

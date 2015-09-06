@@ -68,13 +68,13 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool SetShortcut(bool create, Environment.SpecialFolder specialFolder, string arguments = "")
+        public static bool SetShortcut(bool create, Environment.SpecialFolder specialFolder, string filepath = "", string arguments = "")
         {
             string shortcutPath = GetShortcutPath(specialFolder);
 
             if (create)
             {
-                return Create(shortcutPath, Application.ExecutablePath, arguments);
+                return Create(shortcutPath, filepath, arguments);
             }
 
             return Delete(shortcutPath);
