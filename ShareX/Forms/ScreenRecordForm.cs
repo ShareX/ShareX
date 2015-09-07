@@ -85,6 +85,11 @@ namespace ShareX
             Region = region;
 
             Timer = new Stopwatch();
+            UpdateTimer();
+
+            RecordResetEvent = new ManualResetEvent(false);
+
+            ChangeState(ScreenRecordState.Waiting);
         }
 
         protected override bool ShowWithoutActivation
@@ -137,22 +142,6 @@ namespace ShareX
             {
                 StopRequested();
             }
-        }
-
-        public static ScreenRecordForm Show(Rectangle captureRectangle, Action stopRequested, bool activateWindow, float duration = 0)
-        {
-            ScreenRecordForm regionForm = new ScreenRecordForm(captureRectangle, activateWindow, duration);
-
-            Thread thread = new Thread(() =>
-            {
-                regionForm.StopRequested += stopRequested;
-                regionForm.UpdateTimer();
-                regionForm.ShowDialog();
-            });
-
-            thread.Start();
-
-            return regionForm;
         }
 
         public void StartCountdown(int milliseconds)
