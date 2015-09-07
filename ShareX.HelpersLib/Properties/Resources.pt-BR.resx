@@ -662,7 +662,7 @@ Você gostaria de baixar e instalar?</value>
     <value>Nome do processo da janela ativa</value>
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
-    <value>Progresso: {0:0.0)%
+    <value>Progresso: {0:0.0}%
 Velocidade do download: {1:0.0} KB/s
 Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   </data>
