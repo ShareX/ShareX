@@ -414,7 +414,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Rechteckregion aufnehmen (Fenster)</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
-    <value>Färbung: {0:0.0}°, Sättigung [1:0.0}%, Helligkeit {2:0.0}%</value>
+    <value>Färbung: {0:0.0}°, Sättigung: {1:0.0}%, Helligkeit: {2:0.0}%</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>Eigener Bildhochlader</value>

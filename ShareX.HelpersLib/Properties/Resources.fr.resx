@@ -281,7 +281,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Couper</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
-    <value>Cyan: {0:0,0}%, Magenta: {1:0,0}%, Jaune: {2: 0.0}%, Noir: {3: 0,0}%</value>
+    <value>Cyan: {0:0.0}%, Magenta: {1:0.0}%, Jaune: {2:0.0}%, Noir: {3:0.0}%</value>
   </data>
   <data name="GIFQuality_Default" xml:space="preserve">
     <value>Encodage par défaut .NET (Encodage rapide mais de qualité moyenne)</value>

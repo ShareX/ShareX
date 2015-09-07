@@ -326,10 +326,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>1</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>full: Compute full frame histograms.
-diff: Compute histograms only for the part that differs from previous frame. This might be relevant to give more importance to the moving part of your input if the background is static.
-
-Default is full.</value>
+    <value>Default is full.</value>
   </data>
   <data name="&gt;&gt;cbGIFStatsMode.Name" xml:space="preserve">
     <value>cbGIFStatsMode</value>
@@ -353,13 +350,7 @@ Default is full.</value>
     <value>3</value>
   </data>
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>bayer: Ordered 8x8 bayer dithering (deterministic)
-heckbert: Dithering as defined by Paul Heckbert in 1982 (simple error diffusion). Note: this dithering is sometimes considered "wrong" and is included as a reference.
-floyd_steinberg: Floyd and Steingberg dithering (error diffusion)
-sierra2: Frankie Sierra dithering v2 (error diffusion)
-sierra2_4a: Frankie Sierra dithering v2 "Lite" (error diffusion)
-
-Default is sierra2_4a.</value>
+    <value>Default is sierra2_4a.</value>
   </data>
   <data name="&gt;&gt;cbGIFDither.Name" xml:space="preserve">
     <value>cbGIFDither</value>

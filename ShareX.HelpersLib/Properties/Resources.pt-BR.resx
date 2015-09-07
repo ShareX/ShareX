@@ -334,7 +334,7 @@
     <value>Falha ao procurar por atualizações</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Uma nova versão está disponível.
+    <value>Uma nova versão do {0} está disponível.
 Você gostaria de baixar e instalar?</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
@@ -662,7 +662,7 @@ Você gostaria de baixar e instalar?</value>
     <value>Nome do processo da janela ativa</value>
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
-    <value>Progresso: {0:0.0)%
+    <value>Progresso: {0:0.0}%
 Velocidade do download: {1:0.0} KB/s
 Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   </data>

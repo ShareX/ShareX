@@ -123,7 +123,4 @@
   <data name="btnAbort.Text" xml:space="preserve">
     <value>취소</value>
   </data>
-  <data name="btnStop.Text" xml:space="preserve">
-    <value>시작</value>
-  </data>
 </root>

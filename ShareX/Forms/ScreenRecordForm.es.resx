@@ -120,9 +120,6 @@
   <data name="btnAbort.Text" xml:space="preserve">
     <value>Abortar</value>
   </data>
-  <data name="btnStop.Text" xml:space="preserve">
-    <value>Iniciar</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pantalla ventana región</value>
   </data>

@@ -214,7 +214,7 @@ namespace ShareX.HelpersLib
             if (fileDownloader != null)
             {
                 pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
-                lblProgress.Text = String.Format(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress,
+                lblProgress.Text = string.Format(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress,
                     fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1024, fileDownloader.DownloadedSize / 1024, fileDownloader.FileSize / 1024);
             }
         }

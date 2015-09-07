@@ -123,7 +123,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Région de fenêtre de l'écran</value>
   </data>
-  <data name="btnStop.Text" xml:space="preserve">
+  <data name="btnStart.Text" xml:space="preserve">
     <value>Démarrer</value>
   </data>
 </root>
