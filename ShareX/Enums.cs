@@ -229,4 +229,9 @@ namespace ShareX
     {
         Show, Hide, Automatic
     }
+
+    public enum ScreenRecordState
+    {
+        Waiting, BeforeStart, AfterStart, AfterStop
+    }
 }

@@ -33,11 +33,6 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public enum ScreenRecordState
-    {
-        Waiting, BeforeStart, AfterStart, AfterStop
-    }
-
     public partial class ScreenRecordForm : BaseForm
     {
         public event Action StopRequested;

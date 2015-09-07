@@ -40,7 +40,6 @@ namespace ShareX
 
         private static ScreenRecorder screenRecorder;
         private static ScreenRecordForm recordForm;
-        private static bool abortRequested;
 
         public static void StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
         {
@@ -159,6 +158,7 @@ namespace ShareX
             Screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
 
             string path = "";
+            bool abortRequested = false;
 
             float duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0;
 
@@ -190,8 +190,6 @@ namespace ShareX
                         DrawCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor
                     };
 
-                    screenRecorder = new ScreenRecorder(outputType, options, captureRectangle);
-
                     recordForm.ChangeState(ScreenRecordState.BeforeStart);
 
                     if (taskSettings.CaptureSettings.ScreenRecordAutoStart)
@@ -217,8 +215,8 @@ namespace ShareX
 
                     if (!abortRequested)
                     {
-                        recordForm.ChangeState(ScreenRecordState.AfterStart);
-
+                        screenRecorder = new ScreenRecorder(outputType, options, captureRectangle);
+                        screenRecorder.RecordingStarted += () => recordForm.ChangeState(ScreenRecordState.AfterStart);
                         screenRecorder.StartRecording();
 
                         if (recordForm.AbortRequested)

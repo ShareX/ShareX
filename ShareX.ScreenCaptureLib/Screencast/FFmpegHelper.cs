@@ -44,8 +44,12 @@ namespace ShareX.ScreenCaptureLib
 
         public const int libmp3lame_qscale_end = 9;
 
+        public event Action RecordingStarted;
+
         public StringBuilder Output { get; private set; }
         public ScreencastOptions Options { get; private set; }
+
+        private bool recordingStarted;
 
         public FFmpegHelper(ScreencastOptions options)
         {
@@ -63,13 +67,28 @@ namespace ShareX.ScreenCaptureLib
                 if (!string.IsNullOrEmpty(e.Data))
                 {
                     Output.AppendLine(e.Data);
+
+                    if (!recordingStarted && e.Data.Contains("Press [q] to stop", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        recordingStarted = true;
+                        OnRecordingStarted();
+                    }
                 }
             }
         }
 
         public bool Record()
         {
+            recordingStarted = false;
             return Run(Options.FFmpeg.CLIPath, Options.GetFFmpegCommands());
+        }
+
+        protected void OnRecordingStarted()
+        {
+            if (RecordingStarted != null)
+            {
+                RecordingStarted();
+            }
         }
 
         public bool EncodeGIF(string input, string output)

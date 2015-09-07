@@ -90,8 +90,9 @@ namespace ShareX.ScreenCaptureLib
 
         public ScreencastOptions Options { get; set; }
 
-        public delegate void ProgressEventHandler(int progress);
+        public event Action RecordingStarted;
 
+        public delegate void ProgressEventHandler(int progress);
         public event ProgressEventHandler EncodingProgressChanged;
 
         private int fps, delay, frameCount, previousProgress;
@@ -121,6 +122,7 @@ namespace ShareX.ScreenCaptureLib
                 default:
                 case ScreenRecordOutput.FFmpeg:
                     ffmpegCli = new FFmpegHelper(Options);
+                    ffmpegCli.RecordingStarted += OnRecordingStarted;
                     break;
                 case ScreenRecordOutput.GIF:
                     imgCache = new HardDiskCache(Options);
@@ -147,6 +149,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
+                    OnRecordingStarted();
                     RecordUsingCache();
                 }
             }
@@ -236,6 +239,14 @@ namespace ShareX.ScreenCaptureLib
             if (!string.IsNullOrEmpty(sourceFilePath) && File.Exists(sourceFilePath))
             {
                 encoder.Encode(sourceFilePath, targetFilePath);
+            }
+        }
+
+        protected void OnRecordingStarted()
+        {
+            if (RecordingStarted != null)
+            {
+                RecordingStarted();
             }
         }
 
