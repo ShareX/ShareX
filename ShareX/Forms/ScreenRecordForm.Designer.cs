@@ -1,6 +1,6 @@
 ﻿namespace ShareX
 {
-    partial class ScreenRegionForm
+    partial class ScreenRecordForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScreenRegionForm));
-            this.btnStop = new ShareX.HelpersLib.BlackStyleButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScreenRecordForm));
+            this.btnStart = new ShareX.HelpersLib.BlackStyleButton();
             this.lblTimer = new ShareX.HelpersLib.BlackStyleLabel();
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
             this.btnAbort = new ShareX.HelpersLib.BlackStyleButton();
             this.pInfo = new System.Windows.Forms.Panel();
+            this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAbort = new System.Windows.Forms.ToolStripMenuItem();
             this.pInfo.SuspendLayout();
+            this.cmsMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnStop
+            // TrayIcon
             // 
-            resources.ApplyResources(this.btnStop, "btnStop");
-            this.btnStop.ForeColor = System.Drawing.Color.White;
-            this.btnStop.Name = "btnStop";
-            this.btnStop.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStop_MouseClick);
+            this.TrayIcon.ContextMenuStrip = this.cmsMain;
+            this.TrayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
+            // 
+            // btnStart
+            // 
+            resources.ApplyResources(this.btnStart, "btnStart");
+            this.btnStart.ForeColor = System.Drawing.Color.White;
+            this.btnStart.Name = "btnStart";
+            this.btnStart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
             // 
             // lblTimer
             // 
@@ -70,9 +79,31 @@
             resources.ApplyResources(this.pInfo, "pInfo");
             this.pInfo.BackColor = System.Drawing.Color.White;
             this.pInfo.Controls.Add(this.btnAbort);
-            this.pInfo.Controls.Add(this.btnStop);
+            this.pInfo.Controls.Add(this.btnStart);
             this.pInfo.Controls.Add(this.lblTimer);
             this.pInfo.Name = "pInfo";
+            // 
+            // cmsMain
+            // 
+            this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiStart,
+            this.tsmiAbort});
+            this.cmsMain.Name = "cmsMain";
+            resources.ApplyResources(this.cmsMain, "cmsMain");
+            // 
+            // tsmiStart
+            // 
+            this.tsmiStart.Image = global::ShareX.Properties.Resources.control_record;
+            this.tsmiStart.Name = "tsmiStart";
+            resources.ApplyResources(this.tsmiStart, "tsmiStart");
+            this.tsmiStart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
+            // 
+            // tsmiAbort
+            // 
+            this.tsmiAbort.Image = global::ShareX.Properties.Resources.cross;
+            this.tsmiAbort.Name = "tsmiAbort";
+            resources.ApplyResources(this.tsmiAbort, "tsmiAbort");
+            this.tsmiAbort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAbort_MouseClick);
             // 
             // ScreenRegionForm
             // 
@@ -84,6 +115,7 @@
             this.ShowInTaskbar = false;
             this.Shown += new System.EventHandler(this.ScreenRegionForm_Shown);
             this.pInfo.ResumeLayout(false);
+            this.cmsMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,11 +123,13 @@
 
         #endregion
 
-        private HelpersLib.BlackStyleButton btnStop;
+        private HelpersLib.BlackStyleButton btnStart;
         private System.Windows.Forms.Timer timerRefresh;
         private HelpersLib.BlackStyleLabel lblTimer;
         private HelpersLib.BlackStyleButton btnAbort;
         private System.Windows.Forms.Panel pInfo;
-
+        private System.Windows.Forms.ContextMenuStrip cmsMain;
+        private System.Windows.Forms.ToolStripMenuItem tsmiStart;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAbort;
     }
 }

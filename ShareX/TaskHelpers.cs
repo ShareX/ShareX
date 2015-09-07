@@ -485,15 +485,13 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ScreenRecordForm form = ScreenRecordForm.Instance;
-
-            if (form.IsRecording)
+            if (ScreenRecordManager.IsRecording)
             {
-                form.StartStopRecording();
+                ScreenRecordManager.StartStopRecording();
             }
             else
             {
-                form.StartRecording(outputType, taskSettings, startMethod);
+                ScreenRecordManager.StartRecording(outputType, taskSettings, startMethod);
             }
         }
 

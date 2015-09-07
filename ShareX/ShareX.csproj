@@ -165,14 +165,12 @@
     <Compile Include="Forms\ScreenColorPicker.Designer.cs">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScreenRecordManager.cs" />
     <Compile Include="Forms\ScreenRecordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ScreenRegionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ScreenRegionForm.Designer.cs">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    <Compile Include="Forms\ScreenRecordForm.Designer.cs">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ApplicationSettingsForm.cs">
       <SubType>Form</SubType>
@@ -674,32 +672,29 @@
     <EmbeddedResource Include="Forms\ScreenColorPicker.zh-CN.resx">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.resx">
+    <EmbeddedResource Include="Forms\ScreenRecordForm.de.resx">
       <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRegionForm.de.resx">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.es.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRegionForm.es.resx">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.fr.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRegionForm.fr.resx">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.hu.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRegionForm.hu.resx">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.ko-KR.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRegionForm.ko-KR.resx">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.nl-NL.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRegionForm.nl-NL.resx">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.pt-BR.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRegionForm.pt-BR.resx">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRegionForm.resx">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.resx">
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
@@ -707,11 +702,11 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRegionForm.tr.resx">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.tr.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRegionForm.zh-CN.resx">
-      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.zh-CN.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.de.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
