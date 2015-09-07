@@ -485,14 +485,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (ScreenRecordManager.IsRecording)
-            {
-                ScreenRecordManager.StartStopRecording();
-            }
-            else
-            {
-                ScreenRecordManager.StartRecording(outputType, taskSettings, startMethod);
-            }
+            ScreenRecordManager.StartStopRecording(outputType, startMethod, taskSettings);
         }
 
         public static void OpenAutoCapture()

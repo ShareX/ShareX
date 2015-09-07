@@ -7,19 +7,6 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -38,14 +25,10 @@
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiStart = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAbort = new System.Windows.Forms.ToolStripMenuItem();
+            this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.pInfo.SuspendLayout();
             this.cmsMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // TrayIcon
-            // 
-            this.TrayIcon.ContextMenuStrip = this.cmsMain;
-            this.TrayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
             // 
             // btnStart
             // 
@@ -105,13 +88,19 @@
             resources.ApplyResources(this.tsmiAbort, "tsmiAbort");
             this.tsmiAbort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAbort_MouseClick);
             // 
-            // ScreenRegionForm
+            // niTray
+            // 
+            this.niTray.ContextMenuStrip = this.cmsMain;
+            resources.ApplyResources(this.niTray, "niTray");
+            this.niTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
+            // 
+            // ScreenRecordForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ScreenRegionForm";
+            this.Name = "ScreenRecordForm";
             this.ShowInTaskbar = false;
             this.Shown += new System.EventHandler(this.ScreenRegionForm_Shown);
             this.pInfo.ResumeLayout(false);
@@ -131,5 +120,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsMain;
         private System.Windows.Forms.ToolStripMenuItem tsmiStart;
         private System.Windows.Forms.ToolStripMenuItem tsmiAbort;
+        private System.Windows.Forms.NotifyIcon niTray;
     }
 }

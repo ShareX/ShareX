@@ -38,7 +38,7 @@ namespace ShareX
         Waiting, BeforeStart, AfterStart, AfterStop
     }
 
-    public partial class ScreenRecordForm : TrayForm
+    public partial class ScreenRecordForm : BaseForm
     {
         public event Action StopRequested;
 
@@ -53,12 +53,15 @@ namespace ShareX
         private Rectangle borderRectangle;
         private Rectangle borderRectangle0Based;
         private bool activateWindow;
+        private float duration;
 
-        public ScreenRecordForm(Rectangle regionRectangle, bool activateWindow = true)
+        public ScreenRecordForm(Rectangle regionRectangle, bool activateWindow = true, float duration = 0)
         {
             InitializeComponent();
+            niTray.Icon = ShareXResources.Icon;
 
             this.activateWindow = activateWindow;
+            this.duration = duration;
 
             borderRectangle = regionRectangle.Offset(1);
             borderRectangle0Based = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
@@ -102,6 +105,24 @@ namespace ShareX
             }
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+
+                if (RecordResetEvent != null)
+                {
+                    RecordResetEvent.Dispose();
+                }
+            }
+
+            base.Dispose(disposing);
+        }
+
         private void ScreenRegionForm_Shown(object sender, EventArgs e)
         {
             if (activateWindow)
@@ -120,7 +141,7 @@ namespace ShareX
 
         public static ScreenRecordForm Show(Rectangle captureRectangle, Action stopRequested, bool activateWindow, float duration = 0)
         {
-            ScreenRecordForm regionForm = new ScreenRecordForm(captureRectangle, activateWindow);
+            ScreenRecordForm regionForm = new ScreenRecordForm(captureRectangle, activateWindow, duration);
 
             Thread thread = new Thread(() =>
             {
@@ -146,9 +167,9 @@ namespace ShareX
             UpdateTimer();
         }
 
-        public void StartRecordingTimer(bool isCountdown, float duration = 0)
+        public void StartRecordingTimer()
         {
-            IsCountdown = isCountdown;
+            IsCountdown = duration > 0;
             Countdown = TimeSpan.FromSeconds(duration);
 
             lblTimer.ForeColor = Color.White;
@@ -215,6 +236,7 @@ namespace ShareX
                 AbortRecording();
             }
         }
+
         public void StartStopRecording()
         {
             if (IsRecording)
@@ -235,50 +257,44 @@ namespace ShareX
 
         public void ChangeState(ScreenRecordState state)
         {
-            switch (state)
+            this.InvokeSafe(() =>
             {
-                case ScreenRecordState.Waiting:
-                    string trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Waiting___;
-                    TrayIcon.Text = trayText.Truncate(63);
-                    TrayIcon.Icon = Resources.control_record_yellow.ToIcon();
-                    cmsMain.Enabled = false;
-                    TrayIcon.Visible = true;
-                    break;
-                case ScreenRecordState.BeforeStart:
-                    trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
-                    TrayIcon.Text = trayText.Truncate(63);
-
-                    this.InvokeSafe(() =>
-                    {
+                switch (state)
+                {
+                    case ScreenRecordState.Waiting:
+                        string trayTextWaiting = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Waiting___;
+                        niTray.Text = trayTextWaiting.Truncate(63);
+                        niTray.Icon = Resources.control_record_yellow.ToIcon();
+                        cmsMain.Enabled = false;
+                        niTray.Visible = true;
+                        break;
+                    case ScreenRecordState.BeforeStart:
+                        string trayTextBeforeStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
+                        niTray.Text = trayTextBeforeStart.Truncate(63);
                         tsmiStart.Text = Resources.AutoCaptureForm_Execute_Start;
                         cmsMain.Enabled = true;
-                    });
-                    break;
-                case ScreenRecordState.AfterStart:
-                    trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
-                    TrayIcon.Text = trayText.Truncate(63);
-                    TrayIcon.Icon = Resources.control_record.ToIcon();
-
-                    this.InvokeSafe(() =>
-                    {
+                        break;
+                    case ScreenRecordState.AfterStart:
+                        string trayTextAfterStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
+                        niTray.Text = trayTextAfterStart.Truncate(63);
+                        niTray.Icon = Resources.control_record.ToIcon();
                         tsmiStart.Text = Resources.AutoCaptureForm_Execute_Stop;
-                    });
-                    break;
-                case ScreenRecordState.AfterStop:
-                    TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
-                    TrayIcon.Icon = Resources.camcorder_pencil.ToIcon();
-
-                    this.InvokeSafe(() =>
-                    {
+                        StartRecordingTimer();
+                        break;
+                    case ScreenRecordState.AfterStop:
+                        Hide();
+                        string trayTextAfterStop = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
+                        niTray.Text = trayTextAfterStop.Truncate(63);
+                        niTray.Icon = Resources.camcorder_pencil.ToIcon();
                         cmsMain.Enabled = false;
-                    });
-                    break;
-            }
+                        break;
+                }
+            });
         }
 
         public void ChangeStateProgress(int progress)
         {
-            TrayIcon.Text = string.Format("ShareX - {0} ({1}%)", Resources.ScreenRecordForm_StartRecording_Encoding___, progress);
+            niTray.Text = string.Format("ShareX - {0} ({1}%)", Resources.ScreenRecordForm_StartRecording_Encoding___, progress);
         }
     }
 }

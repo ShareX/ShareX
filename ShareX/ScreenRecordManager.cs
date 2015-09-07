@@ -39,14 +39,21 @@ namespace ShareX
         public static bool IsRecording { get; private set; }
 
         private static ScreenRecorder screenRecorder;
-        private static ScreenRecordForm regionForm;
+        private static ScreenRecordForm recordForm;
         private static bool abortRequested;
 
-        public static void StartStopRecording()
+        public static void StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
         {
-            if (regionForm != null && !regionForm.IsDisposed)
+            if (IsRecording)
             {
-                regionForm.StartStopRecording();
+                if (recordForm != null && !recordForm.IsDisposed)
+                {
+                    recordForm.StartStopRecording();
+                }
+            }
+            else
+            {
+                StartRecording(outputType, taskSettings, startMethod);
             }
         }
 
@@ -58,7 +65,7 @@ namespace ShareX
             }
         }
 
-        public static void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
+        private static void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
         {
             string debugText;
 
@@ -155,9 +162,9 @@ namespace ShareX
 
             float duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0;
 
-            regionForm = ScreenRecordForm.Show(captureRectangle, StopRecording, startMethod == ScreenRecordStartMethod.Region, duration);
-            regionForm.RecordResetEvent = new ManualResetEvent(false);
-            regionForm.ChangeState(ScreenRecordState.Waiting);
+            recordForm = ScreenRecordForm.Show(captureRectangle, StopRecording, startMethod == ScreenRecordStartMethod.Region, duration);
+            recordForm.RecordResetEvent = new ManualResetEvent(false);
+            recordForm.ChangeState(ScreenRecordState.Waiting);
 
             TaskEx.Run(() =>
             {
@@ -185,43 +192,36 @@ namespace ShareX
 
                     screenRecorder = new ScreenRecorder(outputType, options, captureRectangle);
 
-                    if (regionForm != null && regionForm.RecordResetEvent != null)
+                    recordForm.ChangeState(ScreenRecordState.BeforeStart);
+
+                    if (taskSettings.CaptureSettings.ScreenRecordAutoStart)
                     {
-                        regionForm.ChangeState(ScreenRecordState.BeforeStart);
+                        int delay = (int)(taskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
 
-                        if (taskSettings.CaptureSettings.ScreenRecordAutoStart)
+                        if (delay > 0)
                         {
-                            int delay = (int)(taskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
+                            recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));
 
-                            if (delay > 0)
-                            {
-                                regionForm.InvokeSafe(() => regionForm.StartCountdown(delay));
+                            recordForm.RecordResetEvent.WaitOne(delay);
+                        }
+                    }
+                    else
+                    {
+                        recordForm.RecordResetEvent.WaitOne();
+                    }
 
-                                regionForm.RecordResetEvent.WaitOne(delay);
-                            }
-                        }
-                        else
-                        {
-                            regionForm.RecordResetEvent.WaitOne();
-                        }
-
-                        if (regionForm.AbortRequested)
-                        {
-                            abortRequested = true;
-                        }
+                    if (recordForm.AbortRequested)
+                    {
+                        abortRequested = true;
                     }
 
                     if (!abortRequested)
                     {
-                        if (regionForm != null)
-                        {
-                            regionForm.ChangeState(ScreenRecordState.AfterStart);
-                            regionForm.InvokeSafe(() => regionForm.StartRecordingTimer(duration > 0, duration));
-                        }
+                        recordForm.ChangeState(ScreenRecordState.AfterStart);
 
                         screenRecorder.StartRecording();
 
-                        if (regionForm != null && regionForm.AbortRequested)
+                        if (recordForm.AbortRequested)
                         {
                             abortRequested = true;
                         }
@@ -236,12 +236,12 @@ namespace ShareX
                 {
                     if (!abortRequested && screenRecorder != null)
                     {
-                        regionForm.ChangeState(ScreenRecordState.AfterStop);
+                        recordForm.ChangeState(ScreenRecordState.AfterStop);
 
                         if (outputType == ScreenRecordOutput.GIF)
                         {
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
-                            screenRecorder.EncodingProgressChanged += progress => regionForm.ChangeStateProgress(progress);
+                            screenRecorder.EncodingProgressChanged += progress => recordForm.ChangeStateProgress(progress);
                             GIFQuality gifQuality = taskSettings.CaptureSettings.GIFEncoding == ScreenRecordGIFEncoding.OctreeQuantizer ? GIFQuality.Bit8 : GIFQuality.Default;
                             screenRecorder.SaveAsGIF(path, gifQuality);
                         }
@@ -262,6 +262,16 @@ namespace ShareX
                 }
                 finally
                 {
+                    if (recordForm != null)
+                    {
+                        recordForm.InvokeSafe(() =>
+                        {
+                            recordForm.Close();
+                            recordForm.Dispose();
+                            recordForm = null;
+                        });
+                    }
+
                     if (screenRecorder != null)
                     {
                         if ((outputType == ScreenRecordOutput.GIF || taskSettings.CaptureSettings.RunScreencastCLI ||
@@ -283,17 +293,6 @@ namespace ShareX
             },
             () =>
             {
-                if (regionForm != null)
-                {
-                    if (regionForm.RecordResetEvent != null)
-                    {
-                        regionForm.RecordResetEvent.Dispose();
-                    }
-
-                    regionForm.InvokeSafe(() => regionForm.Close());
-                    regionForm = null;
-                }
-
                 if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings))
                 {
                     WorkerTask task = WorkerTask.CreateFileJobTask(path, taskSettings);
