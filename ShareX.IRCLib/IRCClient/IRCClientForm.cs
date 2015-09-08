@@ -404,7 +404,12 @@ namespace ShareX.IRCLib
         {
             this.InvokeSafe(() =>
             {
-                tabManager.AddMessage(channel, $"{DateTime.Now:HH:mm:ss} - {user.Nickname}: {message}");
+                if (channel[0] != '#' && user.UserType == IRCUserType.User)
+                {
+                    channel = user.Nickname;
+                }
+
+                tabManager.AddMessage(channel, $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {user.Nickname}: {message}");
             });
         }
 
