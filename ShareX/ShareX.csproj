@@ -1034,6 +1034,7 @@
     <None Include="Resources\balloon-white.png" />
     <None Include="Resources\cross.png" />
     <None Include="Resources\arrow-270.png" />
+    <None Include="Resources\ru.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

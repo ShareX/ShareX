@@ -270,4 +270,7 @@
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Chrome eklenti desteği...</value>
   </data>
+  <data name="gbGeneralApplication.Text" xml:space="preserve">
+    <value>Uygulama</value>
+  </data>
 </root>

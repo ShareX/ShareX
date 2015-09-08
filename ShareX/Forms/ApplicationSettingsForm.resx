@@ -452,7 +452,7 @@
   </data>
   <data name="gbGeneralWindows.Text" xml:space="preserve">
     <value>Windows</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;gbGeneralWindows.Name" xml:space="preserve">
     <value>gbGeneralWindows</value>
   </data>
