@@ -47,10 +47,10 @@ namespace ShareX
 
                 switch (language)
                 {
-                    default:
                     case SupportedLanguage.Dutch:
                         cultureName = "nl-NL";
                         break;
+                    default:
                     case SupportedLanguage.English:
                         cultureName = "en-US";
                         break;

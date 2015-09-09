@@ -25,6 +25,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ShareX.IRCLib
@@ -123,6 +124,11 @@ namespace ShareX.IRCLib
             }
 
             return message;
+        }
+
+        public bool CheckCommand(params string[] commands)
+        {
+            return commands.Any(x => x.Equals(Command, StringComparison.InvariantCultureIgnoreCase));
         }
 
         public override string ToString()

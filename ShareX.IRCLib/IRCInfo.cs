@@ -68,11 +68,14 @@ namespace ShareX.IRCLib
         [Category("Options"), Description("Auto rejoin when got kicked out from the channel."), DefaultValue(false)]
         public bool AutoRejoinOnKick { get; set; }
 
+        [Category("Options"), Description("Message to show others when you disconnect from the server."), DefaultValue("Leaving")]
+        public string QuitReason { get; set; } = "Leaving";
+
         [Category("Options"), Description("Don't show 'Message of the day' texts in output."), DefaultValue(false)]
         public bool SuppressMOTD { get; set; } = false;
 
-        [Category("Options"), Description("Message to show others when you disconnect from the server."), DefaultValue("Leaving")]
-        public string QuitReason { get; set; } = "Leaving";
+        [Category("Options"), Description("Don't show 'PING' and 'PONG' texts in output."), DefaultValue(false)]
+        public bool SuppressPing { get; set; } = false;
 
         [Category("Options"), Description("When connected these commands will automatically execute."),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]

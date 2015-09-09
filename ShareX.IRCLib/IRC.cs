@@ -226,28 +226,24 @@ namespace ShareX.IRCLib
         {
             MessageInfo messageInfo = MessageInfo.Parse(message);
 
-            //:sendak.freenode.net 375 Jaex :- sendak.freenode.net Message of the Day -
-            //:sendak.freenode.net 372 Jaex :- Welcome to sendak.freenode.net in Vilnius, Lithuania, EU.
-            //:sendak.freenode.net 376 Jaex :End of /MOTD command.
-            if (Info.SuppressMOTD)
-            {
-                if (messageInfo.Command == "375" || messageInfo.Command == "372")
-                {
-                    return true;
-                }
-                else if (messageInfo.Command == "376")
-                {
-                    OnConnected();
-                    return true;
-                }
-            }
-
             if (messageInfo.User.UserType == IRCUserType.Me)
             {
                 messageInfo.User.Nickname = CurrentNickname;
             }
 
-            OnOutput(messageInfo);
+            bool suppressOutput =
+                //:sendak.freenode.net 375 Jaex :- sendak.freenode.net Message of the Day -
+                //:sendak.freenode.net 372 Jaex :- Welcome to sendak.freenode.net in Vilnius, Lithuania, EU.
+                //:sendak.freenode.net 376 Jaex :End of /MOTD command.
+                (Info.SuppressMOTD && messageInfo.CheckCommand("375", "372", "376")) ||
+                //PING :sendak.freenode.net
+                //PONG :sendak.freenode.net
+                (Info.SuppressPing && messageInfo.CheckCommand("PING", "PONG"));
+
+            if (!suppressOutput)
+            {
+                OnOutput(messageInfo);
+            }
 
             switch (messageInfo.Command)
             {
