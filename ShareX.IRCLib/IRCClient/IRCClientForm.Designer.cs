@@ -41,7 +41,6 @@
             this.tsmiColorGrey = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiColorLightGrey = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMessageSend = new System.Windows.Forms.Button();
-            this.txtOutput = new System.Windows.Forms.TextBox();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpMain = new System.Windows.Forms.TabPage();
             this.btnConnect = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.txtCommand = new System.Windows.Forms.TextBox();
             this.lblCommand = new System.Windows.Forms.Label();
             this.btnCommandSend = new System.Windows.Forms.Button();
+            this.rtbOutput = new System.Windows.Forms.RichTextBox();
             this.tpMessages = new System.Windows.Forms.TabPage();
             this.tcMessages = new System.Windows.Forms.TabControl();
             this.btnMessagesMenu = new System.Windows.Forms.Button();
@@ -262,13 +262,6 @@
             this.btnMessageSend.UseVisualStyleBackColor = true;
             this.btnMessageSend.Click += new System.EventHandler(this.btnMessageSend_Click);
             // 
-            // txtOutput
-            // 
-            resources.ApplyResources(this.txtOutput, "txtOutput");
-            this.txtOutput.BackColor = System.Drawing.Color.White;
-            this.txtOutput.Name = "txtOutput";
-            this.txtOutput.ReadOnly = true;
-            // 
             // tcMain
             // 
             this.tcMain.Controls.Add(this.tpMain);
@@ -307,7 +300,7 @@
             this.tpOutput.Controls.Add(this.txtCommand);
             this.tpOutput.Controls.Add(this.lblCommand);
             this.tpOutput.Controls.Add(this.btnCommandSend);
-            this.tpOutput.Controls.Add(this.txtOutput);
+            this.tpOutput.Controls.Add(this.rtbOutput);
             resources.ApplyResources(this.tpOutput, "tpOutput");
             this.tpOutput.Name = "tpOutput";
             this.tpOutput.UseVisualStyleBackColor = true;
@@ -329,6 +322,14 @@
             this.btnCommandSend.Name = "btnCommandSend";
             this.btnCommandSend.UseVisualStyleBackColor = true;
             this.btnCommandSend.Click += new System.EventHandler(this.btnCommandSend_Click);
+            // 
+            // rtbOutput
+            // 
+            resources.ApplyResources(this.rtbOutput, "rtbOutput");
+            this.rtbOutput.BackColor = System.Drawing.Color.White;
+            this.rtbOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbOutput.Name = "rtbOutput";
+            this.rtbOutput.ReadOnly = true;
             // 
             // tpMessages
             // 
@@ -393,7 +394,6 @@
 
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Button btnMessageSend;
-        private System.Windows.Forms.TextBox txtOutput;
         private System.Windows.Forms.TabControl tcMain;
         private System.Windows.Forms.TabPage tpOutput;
         private System.Windows.Forms.TabPage tpMessages;
@@ -430,6 +430,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiColorGrey;
         private System.Windows.Forms.ToolStripMenuItem tsmiColorLightGrey;
         private System.Windows.Forms.TabControl tcMessages;
+        private System.Windows.Forms.RichTextBox rtbOutput;
     }
 }
 

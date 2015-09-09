@@ -46,6 +46,7 @@ namespace ShareX.IRCLib
         public IRCClientForm(IRCInfo info)
         {
             InitializeComponent();
+            rtbOutput.AddContextMenu();
             ((ToolStripDropDownMenu)tsmiColors.DropDown).ShowImageMargin = false;
 
             tabManager = new TabManager(tcMessages);
@@ -56,6 +57,7 @@ namespace ShareX.IRCLib
             IRC = new IRC(Info);
             IRC.Disconnected += IRC_Disconnected;
             IRC.Output += IRC_Output;
+            IRC.ErrorOutput += IRC_ErrorOutput;
             IRC.Message += IRC_Message;
             IRC.UserJoined += IRC_UserJoined;
         }
@@ -76,6 +78,16 @@ namespace ShareX.IRCLib
             }
 
             base.Dispose(disposing);
+        }
+
+        private void AppendOutput(string output, Color color)
+        {
+            this.InvokeSafe(() =>
+            {
+                rtbOutput.Select(rtbOutput.TextLength, 0);
+                rtbOutput.SelectionColor = color;
+                rtbOutput.AppendText($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {output}\r\n");
+            });
         }
 
         private void AppendMessage(string message)
@@ -394,10 +406,12 @@ namespace ShareX.IRCLib
 
         private void IRC_Output(MessageInfo messageInfo)
         {
-            this.InvokeSafe(() =>
-            {
-                txtOutput.AppendText($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {messageInfo.Content}\r\n");
-            });
+            AppendOutput(messageInfo.Content, Color.Black);
+        }
+
+        private void IRC_ErrorOutput(Exception e)
+        {
+            AppendOutput(e.ToString(), Color.Red);
         }
 
         private void IRC_Message(UserInfo user, string channel, string message)
@@ -409,7 +423,7 @@ namespace ShareX.IRCLib
                     channel = user.Nickname;
                 }
 
-                tabManager.AddMessage(channel, $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {user.Nickname}: {message}");
+                tabManager.AddMessage(channel, $"{user.Nickname}: {message}");
             });
         }
 

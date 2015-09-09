@@ -93,7 +93,7 @@ namespace ShareX.IRCLib
         public void AddMessage(string channel, string message)
         {
             TabInfo tabInfo = AddChannel(channel);
-            tabInfo.AppendText(message);
+            tabInfo.TextBox.AppendText($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}\r\n");
         }
 
         public TabInfo AddChannel(string channel)

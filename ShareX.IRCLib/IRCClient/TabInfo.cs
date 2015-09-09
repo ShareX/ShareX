@@ -53,10 +53,5 @@ namespace ShareX.IRCLib
             };
             Tab.Controls.Add(TextBox);
         }
-
-        public void AppendText(string text)
-        {
-            TextBox.AppendText(text + "\r\n");
-        }
     }
 }

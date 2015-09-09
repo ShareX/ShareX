@@ -40,6 +40,7 @@ namespace ShareX.IRCLib
         public const int DefaultPortSSL = 6697;
 
         public event Action<MessageInfo> Output;
+        public event Action<Exception> ErrorOutput;
         public event Action Connected, Disconnected;
         public delegate void MessageEventHandler(UserInfo user, string channel, string message);
         public event MessageEventHandler Message;
@@ -150,6 +151,7 @@ namespace ShareX.IRCLib
             {
                 IsWorking = false;
                 DebugHelper.WriteLine(e.ToString());
+                OnErrorOutput(e);
             }
         }
 
@@ -171,6 +173,7 @@ namespace ShareX.IRCLib
             catch (Exception e)
             {
                 DebugHelper.WriteLine(e.ToString());
+                OnErrorOutput(e);
             }
         }
 
@@ -195,15 +198,17 @@ namespace ShareX.IRCLib
                     catch (Exception e)
                     {
                         DebugHelper.WriteLine(e.ToString());
+                        OnErrorOutput(e);
                     }
                 }
             }
-            catch (IOException)
-            {
-            }
             catch (Exception e)
             {
-                DebugHelper.WriteLine(e.ToString());
+                if (!disconnecting)
+                {
+                    DebugHelper.WriteLine(e.ToString());
+                    OnErrorOutput(e);
+                }
             }
 
             OnDisconnected();
@@ -332,6 +337,14 @@ namespace ShareX.IRCLib
             }
 
             //Console.WriteLine($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {messageInfo.Content}");
+        }
+
+        private void OnErrorOutput(Exception e)
+        {
+            if (ErrorOutput != null)
+            {
+                ErrorOutput(e);
+            }
         }
 
         protected void OnConnected()
