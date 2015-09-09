@@ -281,7 +281,7 @@ namespace ShareX
 
                 string filePath;
 
-#if Steam
+#if STEAM
                 filePath = Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
 #else
                 filePath = Application.ExecutablePath;

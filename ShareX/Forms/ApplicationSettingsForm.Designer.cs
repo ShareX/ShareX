@@ -35,19 +35,23 @@ namespace ShareX
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.cbShowTray = new System.Windows.Forms.CheckBox();
             this.cbTrayIconProgressEnabled = new System.Windows.Forms.CheckBox();
-            this.btnChromeSupport = new System.Windows.Forms.Button();
+            this.btnLanguages = new ShareX.HelpersLib.MenuButton();
+            this.cmsLanguages = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cbRememberMainFormPosition = new System.Windows.Forms.CheckBox();
+            this.llTranslators = new System.Windows.Forms.LinkLabel();
+            this.cbSilentRun = new System.Windows.Forms.CheckBox();
             this.cbTaskbarProgressEnabled = new System.Windows.Forms.CheckBox();
             this.cbRememberMainFormSize = new System.Windows.Forms.CheckBox();
-            this.cbSilentRun = new System.Windows.Forms.CheckBox();
-            this.cbRememberMainFormPosition = new System.Windows.Forms.CheckBox();
+            this.lblLanguage = new System.Windows.Forms.Label();
+            this.tpIntegration = new System.Windows.Forms.TabPage();
+            this.gbSteam = new System.Windows.Forms.GroupBox();
+            this.cbSteamShowInApp = new System.Windows.Forms.CheckBox();
+            this.gbChrome = new System.Windows.Forms.GroupBox();
+            this.btnChromeSupport = new System.Windows.Forms.Button();
             this.gbWindows = new System.Windows.Forms.GroupBox();
             this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
             this.cbSendToMenu = new System.Windows.Forms.CheckBox();
             this.cbShellContextMenu = new System.Windows.Forms.CheckBox();
-            this.btnLanguages = new ShareX.HelpersLib.MenuButton();
-            this.cmsLanguages = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.llTranslators = new System.Windows.Forms.LinkLabel();
-            this.lblLanguage = new System.Windows.Forms.Label();
             this.tpPaths = new System.Windows.Forms.TabPage();
             this.lblNotePersonalFolderPath = new System.Windows.Forms.Label();
             this.btnOpenScreenshotsFolder = new System.Windows.Forms.Button();
@@ -110,12 +114,11 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.gbChrome = new System.Windows.Forms.GroupBox();
-            this.cbSteamShowInApp = new System.Windows.Forms.CheckBox();
-            this.tpIntegration = new System.Windows.Forms.TabPage();
-            this.gbSteam = new System.Windows.Forms.GroupBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
+            this.tpIntegration.SuspendLayout();
+            this.gbSteam.SuspendLayout();
+            this.gbChrome.SuspendLayout();
             this.gbWindows.SuspendLayout();
             this.tpPaths.SuspendLayout();
             this.tpProxy.SuspendLayout();
@@ -134,9 +137,6 @@ namespace ShareX
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).BeginInit();
             this.tpPrint.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
-            this.gbChrome.SuspendLayout();
-            this.tpIntegration.SuspendLayout();
-            this.gbSteam.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcSettings
@@ -181,12 +181,39 @@ namespace ShareX
             this.cbTrayIconProgressEnabled.UseVisualStyleBackColor = true;
             this.cbTrayIconProgressEnabled.CheckedChanged += new System.EventHandler(this.cbTrayIconProgressEnabled_CheckedChanged);
             // 
-            // btnChromeSupport
+            // btnLanguages
             // 
-            resources.ApplyResources(this.btnChromeSupport, "btnChromeSupport");
-            this.btnChromeSupport.Name = "btnChromeSupport";
-            this.btnChromeSupport.UseVisualStyleBackColor = true;
-            this.btnChromeSupport.Click += new System.EventHandler(this.btnChromeSupport_Click);
+            resources.ApplyResources(this.btnLanguages, "btnLanguages");
+            this.btnLanguages.Menu = this.cmsLanguages;
+            this.btnLanguages.MenuX0 = true;
+            this.btnLanguages.Name = "btnLanguages";
+            this.btnLanguages.UseVisualStyleBackColor = true;
+            // 
+            // cmsLanguages
+            // 
+            this.cmsLanguages.Name = "cmsLanguages";
+            resources.ApplyResources(this.cmsLanguages, "cmsLanguages");
+            // 
+            // cbRememberMainFormPosition
+            // 
+            resources.ApplyResources(this.cbRememberMainFormPosition, "cbRememberMainFormPosition");
+            this.cbRememberMainFormPosition.Name = "cbRememberMainFormPosition";
+            this.cbRememberMainFormPosition.UseVisualStyleBackColor = true;
+            this.cbRememberMainFormPosition.CheckedChanged += new System.EventHandler(this.cbRememberMainFormPosition_CheckedChanged);
+            // 
+            // llTranslators
+            // 
+            resources.ApplyResources(this.llTranslators, "llTranslators");
+            this.llTranslators.Name = "llTranslators";
+            this.llTranslators.TabStop = true;
+            this.llTranslators.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llTranslators_LinkClicked);
+            // 
+            // cbSilentRun
+            // 
+            resources.ApplyResources(this.cbSilentRun, "cbSilentRun");
+            this.cbSilentRun.Name = "cbSilentRun";
+            this.cbSilentRun.UseVisualStyleBackColor = true;
+            this.cbSilentRun.CheckedChanged += new System.EventHandler(this.cbSilentRun_CheckedChanged);
             // 
             // cbTaskbarProgressEnabled
             // 
@@ -202,19 +229,46 @@ namespace ShareX
             this.cbRememberMainFormSize.UseVisualStyleBackColor = true;
             this.cbRememberMainFormSize.CheckedChanged += new System.EventHandler(this.cbRememberMainFormSize_CheckedChanged);
             // 
-            // cbSilentRun
+            // lblLanguage
             // 
-            resources.ApplyResources(this.cbSilentRun, "cbSilentRun");
-            this.cbSilentRun.Name = "cbSilentRun";
-            this.cbSilentRun.UseVisualStyleBackColor = true;
-            this.cbSilentRun.CheckedChanged += new System.EventHandler(this.cbSilentRun_CheckedChanged);
+            resources.ApplyResources(this.lblLanguage, "lblLanguage");
+            this.lblLanguage.Name = "lblLanguage";
             // 
-            // cbRememberMainFormPosition
+            // tpIntegration
             // 
-            resources.ApplyResources(this.cbRememberMainFormPosition, "cbRememberMainFormPosition");
-            this.cbRememberMainFormPosition.Name = "cbRememberMainFormPosition";
-            this.cbRememberMainFormPosition.UseVisualStyleBackColor = true;
-            this.cbRememberMainFormPosition.CheckedChanged += new System.EventHandler(this.cbRememberMainFormPosition_CheckedChanged);
+            this.tpIntegration.Controls.Add(this.gbSteam);
+            this.tpIntegration.Controls.Add(this.gbChrome);
+            this.tpIntegration.Controls.Add(this.gbWindows);
+            resources.ApplyResources(this.tpIntegration, "tpIntegration");
+            this.tpIntegration.Name = "tpIntegration";
+            this.tpIntegration.UseVisualStyleBackColor = true;
+            // 
+            // gbSteam
+            // 
+            this.gbSteam.Controls.Add(this.cbSteamShowInApp);
+            resources.ApplyResources(this.gbSteam, "gbSteam");
+            this.gbSteam.Name = "gbSteam";
+            this.gbSteam.TabStop = false;
+            // 
+            // cbSteamShowInApp
+            // 
+            resources.ApplyResources(this.cbSteamShowInApp, "cbSteamShowInApp");
+            this.cbSteamShowInApp.Name = "cbSteamShowInApp";
+            this.cbSteamShowInApp.UseVisualStyleBackColor = true;
+            // 
+            // gbChrome
+            // 
+            this.gbChrome.Controls.Add(this.btnChromeSupport);
+            resources.ApplyResources(this.gbChrome, "gbChrome");
+            this.gbChrome.Name = "gbChrome";
+            this.gbChrome.TabStop = false;
+            // 
+            // btnChromeSupport
+            // 
+            resources.ApplyResources(this.btnChromeSupport, "btnChromeSupport");
+            this.btnChromeSupport.Name = "btnChromeSupport";
+            this.btnChromeSupport.UseVisualStyleBackColor = true;
+            this.btnChromeSupport.Click += new System.EventHandler(this.btnChromeSupport_Click);
             // 
             // gbWindows
             // 
@@ -245,31 +299,6 @@ namespace ShareX
             this.cbShellContextMenu.Name = "cbShellContextMenu";
             this.cbShellContextMenu.UseVisualStyleBackColor = true;
             this.cbShellContextMenu.CheckedChanged += new System.EventHandler(this.cbShellContextMenu_CheckedChanged);
-            // 
-            // btnLanguages
-            // 
-            resources.ApplyResources(this.btnLanguages, "btnLanguages");
-            this.btnLanguages.Menu = this.cmsLanguages;
-            this.btnLanguages.MenuX0 = true;
-            this.btnLanguages.Name = "btnLanguages";
-            this.btnLanguages.UseVisualStyleBackColor = true;
-            // 
-            // cmsLanguages
-            // 
-            this.cmsLanguages.Name = "cmsLanguages";
-            resources.ApplyResources(this.cmsLanguages, "cmsLanguages");
-            // 
-            // llTranslators
-            // 
-            resources.ApplyResources(this.llTranslators, "llTranslators");
-            this.llTranslators.Name = "llTranslators";
-            this.llTranslators.TabStop = true;
-            this.llTranslators.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llTranslators_LinkClicked);
-            // 
-            // lblLanguage
-            // 
-            resources.ApplyResources(this.lblLanguage, "lblLanguage");
-            this.lblLanguage.Name = "lblLanguage";
             // 
             // tpPaths
             // 
@@ -740,35 +769,6 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             // 
-            // gbChrome
-            // 
-            this.gbChrome.Controls.Add(this.btnChromeSupport);
-            resources.ApplyResources(this.gbChrome, "gbChrome");
-            this.gbChrome.Name = "gbChrome";
-            this.gbChrome.TabStop = false;
-            // 
-            // cbSteamShowInApp
-            // 
-            resources.ApplyResources(this.cbSteamShowInApp, "cbSteamShowInApp");
-            this.cbSteamShowInApp.Name = "cbSteamShowInApp";
-            this.cbSteamShowInApp.UseVisualStyleBackColor = true;
-            // 
-            // tpIntegration
-            // 
-            this.tpIntegration.Controls.Add(this.gbSteam);
-            this.tpIntegration.Controls.Add(this.gbChrome);
-            this.tpIntegration.Controls.Add(this.gbWindows);
-            resources.ApplyResources(this.tpIntegration, "tpIntegration");
-            this.tpIntegration.Name = "tpIntegration";
-            this.tpIntegration.UseVisualStyleBackColor = true;
-            // 
-            // gbSteam
-            // 
-            this.gbSteam.Controls.Add(this.cbSteamShowInApp);
-            resources.ApplyResources(this.gbSteam, "gbSteam");
-            this.gbSteam.Name = "gbSteam";
-            this.gbSteam.TabStop = false;
-            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -784,6 +784,10 @@ namespace ShareX
             this.tcSettings.ResumeLayout(false);
             this.tpGeneral.ResumeLayout(false);
             this.tpGeneral.PerformLayout();
+            this.tpIntegration.ResumeLayout(false);
+            this.gbSteam.ResumeLayout(false);
+            this.gbSteam.PerformLayout();
+            this.gbChrome.ResumeLayout(false);
             this.gbWindows.ResumeLayout(false);
             this.gbWindows.PerformLayout();
             this.tpPaths.ResumeLayout(false);
@@ -808,10 +812,6 @@ namespace ShareX
             this.tpPrint.ResumeLayout(false);
             this.tpPrint.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
-            this.gbChrome.ResumeLayout(false);
-            this.tpIntegration.ResumeLayout(false);
-            this.gbSteam.ResumeLayout(false);
-            this.gbSteam.PerformLayout();
             this.ResumeLayout(false);
 
         }

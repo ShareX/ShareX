@@ -42,7 +42,11 @@ namespace ShareX
             rtbShareXInfo.AddContextMenu();
             rtbCredits.AddContextMenu();
 
+#if STEAM
+            uclUpdate.Visible = false;
+#else
             uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
+#endif
 
             lblTeam.Text = "ShareX Team:";
             lblBerk.Text = "Jaex (Berk)";

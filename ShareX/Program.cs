@@ -41,6 +41,18 @@ namespace ShareX
     {
         public static bool IsBeta = true;
 
+        public static bool IsSteamBuild
+        {
+            get
+            {
+#if STEAM
+                return true;
+#else
+                return false;
+#endif
+            }
+        }
+
         public static string Title
         {
             get

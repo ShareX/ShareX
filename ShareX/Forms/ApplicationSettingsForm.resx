@@ -442,13 +442,13 @@
     <value>16, 24</value>
   </data>
   <data name="cbSteamShowInApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 17</value>
+    <value>246, 17</value>
   </data>
   <data name="cbSteamShowInApp.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>While ShareX open show "In-app" in Steam</value>
+    <value>While ShareX is open, show "In-app" in Steam</value>
   </data>
   <data name="&gt;&gt;cbSteamShowInApp.Name" xml:space="preserve">
     <value>cbSteamShowInApp</value>

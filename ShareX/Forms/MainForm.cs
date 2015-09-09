@@ -672,7 +672,7 @@ namespace ShareX
 
         private void ConfigureAutoUpdate()
         {
-#if !DEBUG
+#if RELEASE
             lock (updateTimerLock)
             {
                 if (Program.Settings.AutoCheckUpdate)
