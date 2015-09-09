@@ -76,7 +76,12 @@ namespace ShareX
             cbStartWithWindows.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup); //RegistryHelper.CheckStartWithWindows();
             cbShellContextMenu.Checked = RegistryHelpers.CheckShellContextMenu();
             cbSendToMenu.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo);
+
+#if STEAM
             cbSteamShowInApp.Checked = File.Exists(Helpers.GetAbsolutePath("Steam"));
+#else
+            gbSteam.Visible = false;
+#endif
 
             // Paths
             txtPersonalFolderPath.Text = Program.ReadPersonalPathConfig();
@@ -359,6 +364,8 @@ namespace ShareX
                 {
                     File.Delete(path);
                 }
+
+                MessageBox.Show("For settings to take effect ShareX need to be reopened from Steam.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

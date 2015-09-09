@@ -128,8 +128,10 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
         public bool WorkflowsOnlyShowEdited { get; set; }
 
+#if !STEAM
         [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
         public bool AutoCheckUpdate { get; set; }
+#endif
 
         [Category("Application"), DefaultValue(true), Description("Automatically expand capture menu when you open the tray menu.")]
         public bool TrayAutoExpandCaptureMenu { get; set; }
