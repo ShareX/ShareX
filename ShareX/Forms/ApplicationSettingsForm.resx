@@ -130,7 +130,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbShowTray.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
+    <value>16, 64</value>
   </data>
   <data name="cbShowTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 17</value>
@@ -148,7 +148,7 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbShowTray.Parent" xml:space="preserve">
-    <value>gbGeneralApplication</value>
+    <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbShowTray.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>16, 112</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 17</value>
@@ -178,291 +178,9 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbTrayIconProgressEnabled.Parent" xml:space="preserve">
-    <value>gbGeneralApplication</value>
+    <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayIconProgressEnabled.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnChromeSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 168</value>
-  </data>
-  <data name="btnChromeSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 24</value>
-  </data>
-  <data name="btnChromeSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Chrome extension support...</value>
-  </data>
-  <data name="&gt;&gt;btnChromeSupport.Name" xml:space="preserve">
-    <value>btnChromeSupport</value>
-  </data>
-  <data name="&gt;&gt;btnChromeSupport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnChromeSupport.Parent" xml:space="preserve">
-    <value>gbGeneralApplication</value>
-  </data>
-  <data name="&gt;&gt;btnChromeSupport.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 17</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Show progress in taskbar button</value>
-  </data>
-  <data name="&gt;&gt;cbTaskbarProgressEnabled.Name" xml:space="preserve">
-    <value>cbTaskbarProgressEnabled</value>
-  </data>
-  <data name="&gt;&gt;cbTaskbarProgressEnabled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTaskbarProgressEnabled.Parent" xml:space="preserve">
-    <value>gbGeneralApplication</value>
-  </data>
-  <data name="&gt;&gt;cbTaskbarProgressEnabled.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRememberMainFormSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbRememberMainFormSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 144</value>
-  </data>
-  <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 17</value>
-  </data>
-  <data name="cbRememberMainFormSize.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Remember main window size</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormSize.Name" xml:space="preserve">
-    <value>cbRememberMainFormSize</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormSize.Parent" xml:space="preserve">
-    <value>gbGeneralApplication</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormSize.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbSilentRun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbSilentRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
-  </data>
-  <data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 17</value>
-  </data>
-  <data name="cbSilentRun.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>On start minimize to tray</value>
-  </data>
-  <data name="&gt;&gt;cbSilentRun.Name" xml:space="preserve">
-    <value>cbSilentRun</value>
-  </data>
-  <data name="&gt;&gt;cbSilentRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbSilentRun.Parent" xml:space="preserve">
-    <value>gbGeneralApplication</value>
-  </data>
-  <data name="&gt;&gt;cbSilentRun.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="cbRememberMainFormPosition.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRememberMainFormPosition.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 120</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 17</value>
-  </data>
-  <data name="cbRememberMainFormPosition.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Remember main window position</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormPosition.Name" xml:space="preserve">
-    <value>cbRememberMainFormPosition</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormPosition.Parent" xml:space="preserve">
-    <value>gbGeneralApplication</value>
-  </data>
-  <data name="&gt;&gt;cbRememberMainFormPosition.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="gbGeneralApplication.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 168</value>
-  </data>
-  <data name="gbGeneralApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 208</value>
-  </data>
-  <data name="gbGeneralApplication.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="gbGeneralApplication.Text" xml:space="preserve">
-    <value>Application</value>
-  </data>
-  <data name="&gt;&gt;gbGeneralApplication.Name" xml:space="preserve">
-    <value>gbGeneralApplication</value>
-  </data>
-  <data name="&gt;&gt;gbGeneralApplication.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbGeneralApplication.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;gbGeneralApplication.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbStartWithWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
-  </data>
-  <data name="cbStartWithWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Run ShareX when Windows starts</value>
-  </data>
-  <data name="&gt;&gt;cbStartWithWindows.Name" xml:space="preserve">
-    <value>cbStartWithWindows</value>
-  </data>
-  <data name="&gt;&gt;cbStartWithWindows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbStartWithWindows.Parent" xml:space="preserve">
-    <value>gbGeneralWindows</value>
-  </data>
-  <data name="&gt;&gt;cbStartWithWindows.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbSendToMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
-  </data>
-  <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 17</value>
-  </data>
-  <data name="cbSendToMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Show ShareX in "Send to" menu</value>
-  </data>
-  <data name="&gt;&gt;cbSendToMenu.Name" xml:space="preserve">
-    <value>cbSendToMenu</value>
-  </data>
-  <data name="&gt;&gt;cbSendToMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbSendToMenu.Parent" xml:space="preserve">
-    <value>gbGeneralWindows</value>
-  </data>
-  <data name="&gt;&gt;cbSendToMenu.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbShellContextMenu.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbShellContextMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbShellContextMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
-  </data>
-  <data name="cbShellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 17</value>
-  </data>
-  <data name="cbShellContextMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Show "Upload with ShareX" button in Windows Explorer context menu</value>
-  </data>
-  <data name="&gt;&gt;cbShellContextMenu.Name" xml:space="preserve">
-    <value>cbShellContextMenu</value>
-  </data>
-  <data name="&gt;&gt;cbShellContextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbShellContextMenu.Parent" xml:space="preserve">
-    <value>gbGeneralWindows</value>
-  </data>
-  <data name="&gt;&gt;cbShellContextMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="gbGeneralWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 56</value>
-  </data>
-  <data name="gbGeneralWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 104</value>
-  </data>
-  <data name="gbGeneralWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="gbGeneralWindows.Text" xml:space="preserve">
-    <value>Windows</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;gbGeneralWindows.Name" xml:space="preserve">
-    <value>gbGeneralWindows</value>
-  </data>
-  <data name="&gt;&gt;gbGeneralWindows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbGeneralWindows.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;gbGeneralWindows.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="btnLanguages.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -472,7 +190,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnLanguages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
+    <value>16, 32</value>
   </data>
   <metadata name="cmsLanguages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -510,6 +228,36 @@
   <data name="&gt;&gt;btnLanguages.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cbRememberMainFormPosition.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRememberMainFormPosition.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 160</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 17</value>
+  </data>
+  <data name="cbRememberMainFormPosition.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>Remember main window position</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormPosition.Name" xml:space="preserve">
+    <value>cbRememberMainFormPosition</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormPosition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormPosition.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormPosition.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="llTranslators.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -517,7 +265,7 @@
     <value>NoControl</value>
   </data>
   <data name="llTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 28</value>
+    <value>248, 37</value>
   </data>
   <data name="llTranslators.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 13</value>
@@ -538,7 +286,97 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;llTranslators.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbSilentRun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbSilentRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="cbSilentRun.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>On start minimize to tray</value>
+  </data>
+  <data name="&gt;&gt;cbSilentRun.Name" xml:space="preserve">
+    <value>cbSilentRun</value>
+  </data>
+  <data name="&gt;&gt;cbSilentRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbSilentRun.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbSilentRun.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 136</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 17</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>Show progress in taskbar button</value>
+  </data>
+  <data name="&gt;&gt;cbTaskbarProgressEnabled.Name" xml:space="preserve">
+    <value>cbTaskbarProgressEnabled</value>
+  </data>
+  <data name="&gt;&gt;cbTaskbarProgressEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTaskbarProgressEnabled.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbTaskbarProgressEnabled.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRememberMainFormSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbRememberMainFormSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 184</value>
+  </data>
+  <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 17</value>
+  </data>
+  <data name="cbRememberMainFormSize.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>Remember main window size</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormSize.Name" xml:space="preserve">
+    <value>cbRememberMainFormSize</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormSize.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormSize.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -547,7 +385,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
+    <value>13, 16</value>
   </data>
   <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -568,7 +406,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -597,6 +435,246 @@
   <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbSteamShowInApp.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbSteamShowInApp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="cbSteamShowInApp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 17</value>
+  </data>
+  <data name="cbSteamShowInApp.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>While ShareX open show "In-app" in Steam</value>
+  </data>
+  <data name="&gt;&gt;cbSteamShowInApp.Name" xml:space="preserve">
+    <value>cbSteamShowInApp</value>
+  </data>
+  <data name="&gt;&gt;cbSteamShowInApp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbSteamShowInApp.Parent" xml:space="preserve">
+    <value>gbSteam</value>
+  </data>
+  <data name="&gt;&gt;cbSteamShowInApp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbSteam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 192</value>
+  </data>
+  <data name="gbSteam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 56</value>
+  </data>
+  <data name="gbSteam.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
+    <value>gbSteam</value>
+  </data>
+  <data name="&gt;&gt;gbSteam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSteam.Parent" xml:space="preserve">
+    <value>tpIntegration</value>
+  </data>
+  <data name="&gt;&gt;gbSteam.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnChromeSupport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="btnChromeSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 24</value>
+  </data>
+  <data name="btnChromeSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>Chrome extension support...</value>
+  </data>
+  <data name="&gt;&gt;btnChromeSupport.Name" xml:space="preserve">
+    <value>btnChromeSupport</value>
+  </data>
+  <data name="&gt;&gt;btnChromeSupport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChromeSupport.Parent" xml:space="preserve">
+    <value>gbChrome</value>
+  </data>
+  <data name="&gt;&gt;btnChromeSupport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbChrome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 120</value>
+  </data>
+  <data name="gbChrome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 64</value>
+  </data>
+  <data name="gbChrome.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Chrome</value>
+  </data>
+  <data name="&gt;&gt;gbChrome.Name" xml:space="preserve">
+    <value>gbChrome</value>
+  </data>
+  <data name="&gt;&gt;gbChrome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbChrome.Parent" xml:space="preserve">
+    <value>tpIntegration</value>
+  </data>
+  <data name="&gt;&gt;gbChrome.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbStartWithWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 17</value>
+  </data>
+  <data name="cbStartWithWindows.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbStartWithWindows.Text" xml:space="preserve">
+    <value>Run ShareX when Windows starts</value>
+  </data>
+  <data name="&gt;&gt;cbStartWithWindows.Name" xml:space="preserve">
+    <value>cbStartWithWindows</value>
+  </data>
+  <data name="&gt;&gt;cbStartWithWindows.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbStartWithWindows.Parent" xml:space="preserve">
+    <value>gbWindows</value>
+  </data>
+  <data name="&gt;&gt;cbStartWithWindows.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbSendToMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 48</value>
+  </data>
+  <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 17</value>
+  </data>
+  <data name="cbSendToMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Show ShareX in "Send to" menu</value>
+  </data>
+  <data name="&gt;&gt;cbSendToMenu.Name" xml:space="preserve">
+    <value>cbSendToMenu</value>
+  </data>
+  <data name="&gt;&gt;cbSendToMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbSendToMenu.Parent" xml:space="preserve">
+    <value>gbWindows</value>
+  </data>
+  <data name="&gt;&gt;cbSendToMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbShellContextMenu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbShellContextMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbShellContextMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="cbShellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 17</value>
+  </data>
+  <data name="cbShellContextMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>Show "Upload with ShareX" button in Windows Explorer context menu</value>
+  </data>
+  <data name="&gt;&gt;cbShellContextMenu.Name" xml:space="preserve">
+    <value>cbShellContextMenu</value>
+  </data>
+  <data name="&gt;&gt;cbShellContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbShellContextMenu.Parent" xml:space="preserve">
+    <value>gbWindows</value>
+  </data>
+  <data name="&gt;&gt;cbShellContextMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gbWindows.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="gbWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 104</value>
+  </data>
+  <data name="gbWindows.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
+    <value>gbWindows</value>
+  </data>
+  <data name="&gt;&gt;gbWindows.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbWindows.Parent" xml:space="preserve">
+    <value>tpIntegration</value>
+  </data>
+  <data name="&gt;&gt;gbWindows.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tpIntegration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpIntegration.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpIntegration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 370</value>
+  </data>
+  <data name="tpIntegration.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>Integration</value>
+  </data>
+  <data name="&gt;&gt;tpIntegration.Name" xml:space="preserve">
+    <value>tpIntegration</value>
+  </data>
+  <data name="&gt;&gt;tpIntegration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpIntegration.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="&gt;&gt;tpIntegration.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblNotePersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -604,7 +682,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNotePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 80</value>
+    <value>13, 88</value>
   </data>
   <data name="lblNotePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 13</value>
@@ -631,7 +709,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 204</value>
+    <value>16, 212</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -661,7 +739,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 53</value>
+    <value>120, 61</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 13</value>
@@ -671,7 +749,7 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
@@ -688,7 +766,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 23</value>
+    <value>432, 31</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -718,7 +796,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
+    <value>13, 16</value>
   </data>
   <data name="lblPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 13</value>
@@ -742,7 +820,7 @@
     <value>4</value>
   </data>
   <data name="txtPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
+    <value>16, 32</value>
   </data>
   <data name="txtPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 20</value>
@@ -766,7 +844,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 131</value>
+    <value>432, 139</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -793,7 +871,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 48</value>
+    <value>16, 56</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -817,7 +895,7 @@
     <value>7</value>
   </data>
   <data name="txtCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 132</value>
+    <value>16, 140</value>
   </data>
   <data name="txtCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 20</value>
@@ -844,7 +922,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 108</value>
+    <value>16, 116</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 17</value>
@@ -874,7 +952,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 164</value>
+    <value>13, 172</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -904,7 +982,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 209</value>
+    <value>120, 217</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 13</value>
@@ -914,7 +992,7 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>
@@ -928,7 +1006,7 @@
     <value>11</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 180</value>
+    <value>16, 188</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 20</value>
@@ -973,10 +1051,10 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
+    <value>16, 32</value>
   </data>
   <data name="cbProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 21</value>
@@ -1003,7 +1081,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
+    <value>13, 16</value>
   </data>
   <data name="lblProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -1033,7 +1111,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblProxyHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 56</value>
+    <value>13, 64</value>
   </data>
   <data name="lblProxyHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -1057,7 +1135,7 @@
     <value>2</value>
   </data>
   <data name="txtProxyHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 72</value>
+    <value>16, 80</value>
   </data>
   <data name="txtProxyHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 20</value>
@@ -1078,7 +1156,7 @@
     <value>3</value>
   </data>
   <data name="nudProxyPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 72</value>
+    <value>256, 80</value>
   </data>
   <data name="nudProxyPort.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -1108,7 +1186,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblProxyPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 56</value>
+    <value>253, 64</value>
   </data>
   <data name="lblProxyPort.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 13</value>
@@ -1138,7 +1216,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 152</value>
+    <value>13, 160</value>
   </data>
   <data name="lblProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -1162,7 +1240,7 @@
     <value>6</value>
   </data>
   <data name="txtProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 168</value>
+    <value>16, 176</value>
   </data>
   <data name="txtProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 20</value>
@@ -1189,7 +1267,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 104</value>
+    <value>13, 112</value>
   </data>
   <data name="lblProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -1213,7 +1291,7 @@
     <value>8</value>
   </data>
   <data name="txtProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 120</value>
+    <value>16, 128</value>
   </data>
   <data name="txtProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 20</value>
@@ -1258,7 +1336,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpProxy.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblUploadLimit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1267,7 +1345,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
+    <value>13, 16</value>
   </data>
   <data name="lblUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 13</value>
@@ -1291,7 +1369,7 @@
     <value>0</value>
   </data>
   <data name="nudUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
+    <value>16, 32</value>
   </data>
   <data name="nudUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -1321,7 +1399,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblUploadLimitHint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 28</value>
+    <value>80, 36</value>
   </data>
   <data name="lblUploadLimitHint.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 13</value>
@@ -1345,7 +1423,7 @@
     <value>2</value>
   </data>
   <data name="cbBufferSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 72</value>
+    <value>16, 80</value>
   </data>
   <data name="cbBufferSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 21</value>
@@ -1372,7 +1450,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblBufferSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 56</value>
+    <value>13, 64</value>
   </data>
   <data name="lblBufferSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
@@ -1948,7 +2026,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpUpload.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1957,7 +2035,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 64</value>
+    <value>16, 72</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 17</value>
@@ -1987,7 +2065,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
+    <value>16, 48</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 17</value>
@@ -2014,7 +2092,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnShowImagePrintSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>16, 16</value>
   </data>
   <data name="btnShowImagePrintSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 23</value>
@@ -2062,7 +2140,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpPrint.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="pgSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2113,7 +2191,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpAdvanced.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="tcSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 3</value>
@@ -2199,22 +2277,22 @@
   <data name="&gt;&gt;chFormat.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
-    <value>columnHeader1</value>
+  <data name="&gt;&gt;chSecondaryImageUploaders.Name" xml:space="preserve">
+    <value>chSecondaryImageUploaders</value>
   </data>
-  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
+  <data name="&gt;&gt;chSecondaryImageUploaders.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
-    <value>columnHeader3</value>
+  <data name="&gt;&gt;chSecondaryFileUploaders.Name" xml:space="preserve">
+    <value>chSecondaryFileUploaders</value>
   </data>
-  <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
+  <data name="&gt;&gt;chSecondaryFileUploaders.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
-    <value>columnHeader2</value>
+  <data name="&gt;&gt;chSecondaryTextUploaders.Name" xml:space="preserve">
+    <value>chSecondaryTextUploaders</value>
   </data>
-  <data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
+  <data name="&gt;&gt;chSecondaryTextUploaders.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -330,6 +330,7 @@
             this.rtbOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtbOutput.Name = "rtbOutput";
             this.rtbOutput.ReadOnly = true;
+            this.rtbOutput.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbOutput_LinkClicked);
             // 
             // tpMessages
             // 

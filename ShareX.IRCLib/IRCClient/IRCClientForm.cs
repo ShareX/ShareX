@@ -231,6 +231,11 @@ namespace ShareX.IRCLib
             }
         }
 
+        private void rtbOutput_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL(e.LinkText);
+        }
+
         private void txtCommand_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
