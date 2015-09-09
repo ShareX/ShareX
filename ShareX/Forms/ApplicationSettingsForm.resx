@@ -571,7 +571,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
+    <value>16, 72</value>
   </data>
   <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 17</value>
@@ -601,7 +601,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbShellContextMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>16, 48</value>
   </data>
   <data name="cbShellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>359, 17</value>

@@ -255,6 +255,7 @@ namespace ShareX
             resources.ApplyResources(this.cbSteamShowInApp, "cbSteamShowInApp");
             this.cbSteamShowInApp.Name = "cbSteamShowInApp";
             this.cbSteamShowInApp.UseVisualStyleBackColor = true;
+            this.cbSteamShowInApp.CheckedChanged += new System.EventHandler(this.cbSteamShowInApp_CheckedChanged);
             // 
             // gbChrome
             // 

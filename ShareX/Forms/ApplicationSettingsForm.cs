@@ -29,6 +29,7 @@ using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -65,14 +66,17 @@ namespace ShareX
             cbShowTray.Checked = Program.Settings.ShowTray;
             cbSilentRun.Enabled = Program.Settings.ShowTray;
             cbSilentRun.Checked = Program.Settings.SilentRun;
-            cbStartWithWindows.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup); //RegistryHelper.CheckStartWithWindows();
-            cbSendToMenu.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo);
-            cbShellContextMenu.Checked = RegistryHelpers.CheckShellContextMenu();
             cbTrayIconProgressEnabled.Checked = Program.Settings.TrayIconProgressEnabled;
             cbTaskbarProgressEnabled.Enabled = TaskbarManager.IsPlatformSupported;
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
             cbRememberMainFormPosition.Checked = Program.Settings.RememberMainFormPosition;
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
+
+            // Integration
+            cbStartWithWindows.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup); //RegistryHelper.CheckStartWithWindows();
+            cbShellContextMenu.Checked = RegistryHelpers.CheckShellContextMenu();
+            cbSendToMenu.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo);
+            cbSteamShowInApp.Checked = File.Exists(Helpers.GetAbsolutePath("Steam"));
 
             // Paths
             txtPersonalFolderPath.Text = Program.ReadPersonalPathConfig();
@@ -273,40 +277,6 @@ namespace ShareX
             Program.Settings.SilentRun = cbSilentRun.Checked;
         }
 
-        private void cbStartWithWindows_CheckedChanged(object sender, EventArgs e)
-        {
-            if (loaded)
-            {
-                //RegistryHelper.SetStartWithWindows(cbStartWithWindows.Checked);
-
-                string filePath;
-
-#if STEAM
-                filePath = Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
-#else
-                filePath = Application.ExecutablePath;
-#endif
-
-                ShortcutHelpers.SetShortcut(cbStartWithWindows.Checked, Environment.SpecialFolder.Startup, filePath, "-silent");
-            }
-        }
-
-        private void cbSendToMenu_CheckedChanged(object sender, EventArgs e)
-        {
-            if (loaded)
-            {
-                ShortcutHelpers.SetShortcut(cbSendToMenu.Checked, Environment.SpecialFolder.SendTo, Application.ExecutablePath);
-            }
-        }
-
-        private void cbShellContextMenu_CheckedChanged(object sender, EventArgs e)
-        {
-            if (loaded)
-            {
-                RegistryHelpers.SetShellContextMenu(cbShellContextMenu.Checked);
-            }
-        }
-
         private void cbTrayIconProgressEnabled_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.TrayIconProgressEnabled = cbTrayIconProgressEnabled.Checked;
@@ -332,12 +302,67 @@ namespace ShareX
             Program.Settings.RememberMainFormSize = cbRememberMainFormSize.Checked;
         }
 
+        #endregion General
+
+        #region Integration
+
+        private void cbStartWithWindows_CheckedChanged(object sender, EventArgs e)
+        {
+            if (loaded)
+            {
+                //RegistryHelper.SetStartWithWindows(cbStartWithWindows.Checked);
+
+                string filePath;
+
+#if STEAM
+                filePath = Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
+#else
+                filePath = Application.ExecutablePath;
+#endif
+
+                ShortcutHelpers.SetShortcut(cbStartWithWindows.Checked, Environment.SpecialFolder.Startup, filePath, "-silent");
+            }
+        }
+
+        private void cbShellContextMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (loaded)
+            {
+                RegistryHelpers.SetShellContextMenu(cbShellContextMenu.Checked);
+            }
+        }
+
+        private void cbSendToMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (loaded)
+            {
+                ShortcutHelpers.SetShortcut(cbSendToMenu.Checked, Environment.SpecialFolder.SendTo, Application.ExecutablePath);
+            }
+        }
+
         private void btnChromeSupport_Click(object sender, EventArgs e)
         {
             new ChromeForm().Show();
         }
 
-        #endregion General
+        private void cbSteamShowInApp_CheckedChanged(object sender, EventArgs e)
+        {
+            if (loaded)
+            {
+                string path = Helpers.GetAbsolutePath("Steam");
+
+                if (cbSteamShowInApp.Checked)
+                {
+                    File.Create(path).Dispose();
+                }
+                else if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+            }
+        }
+
+        #endregion Integration
 
         #region Paths
 
