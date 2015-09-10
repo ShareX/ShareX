@@ -252,6 +252,16 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For settings to take effect ShareX needs to be reopened from Steam..
+        /// </summary>
+        public static string ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_ {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effe" +
+                        "ct_ShareX_needs_to_be_reopened_from_Steam_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap arrow_090 {

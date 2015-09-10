@@ -27,7 +27,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public abstract class BaseForm : Form
+    public class BaseForm : Form
     {
         protected BaseForm()
         {

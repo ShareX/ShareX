@@ -365,7 +365,7 @@ namespace ShareX
                     File.Delete(path);
                 }
 
-                MessageBox.Show("For settings to take effect ShareX needs to be reopened from Steam.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
