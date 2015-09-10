@@ -23,28 +23,16 @@
 
 #endregion License Information (GPL v3)
 
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class BaseForm : Form
+    public abstract class BaseForm : Form
     {
         protected BaseForm()
         {
-            InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            SuspendLayout();
-            AutoScaleDimensions = new SizeF(6F, 13F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(300, 300);
             Icon = ShareXResources.Icon;
-            Name = "BaseForm";
             Text = "ShareX";
-            ResumeLayout(false);
         }
     }
 }

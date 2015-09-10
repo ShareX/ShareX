@@ -365,7 +365,7 @@ namespace ShareX
                     File.Delete(path);
                 }
 
-                MessageBox.Show("For settings to take effect ShareX need to be reopened from Steam.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("For settings to take effect ShareX needs to be reopened from Steam.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
