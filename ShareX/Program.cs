@@ -578,7 +578,7 @@ namespace ShareX
 
         private static bool CheckUninstall()
         {
-            if (CLI.IsCommandExist("Uninstall"))
+            if (CLI.IsCommandExist("uninstall"))
             {
                 try
                 {
