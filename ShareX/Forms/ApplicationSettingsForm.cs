@@ -78,7 +78,7 @@ namespace ShareX
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
 
 #if STEAM
-            cbSteamShowInApp.Checked = IntegrationHelpers.CheckSteamShowInGame();
+            cbSteamShowInApp.Checked = IntegrationHelpers.CheckSteamShowInApp();
 #else
             gbSteam.Visible = false;
 #endif
