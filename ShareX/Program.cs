@@ -253,6 +253,10 @@ namespace ShareX
             CLI = new CLIManager(args);
             CLI.ParseCommands();
 
+#if STEAM
+            if (CheckUninstall()) return; // Steam will run ShareX with -Uninstall when uninstalling
+#endif
+
             if (CheckAdminTasks()) return; // If ShareX opened just for be able to execute task as Admin
 
             IsMultiInstance = CLI.IsCommandExist("multi", "m");
@@ -566,6 +570,24 @@ namespace ShareX
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new DNSChangerForm());
+                return true;
+            }
+
+            return false;
+        }
+
+        private static bool CheckUninstall()
+        {
+            if (CLI.IsCommandExist("Uninstall"))
+            {
+                try
+                {
+                    IntegrationHelpers.Uninstall();
+                }
+                catch
+                {
+                }
+
                 return true;
             }
 
