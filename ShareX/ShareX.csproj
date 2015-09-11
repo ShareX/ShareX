@@ -89,10 +89,12 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\BeforeUploadControl.cs">
@@ -165,6 +167,13 @@
     <Compile Include="Forms\ScreenColorPicker.Designer.cs">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FirstTimeConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FirstTimeConfigForm.Designer.cs">
+      <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntegrationHelpers.cs" />
     <Compile Include="ScreenRecordManager.cs" />
     <Compile Include="Forms\ScreenRecordForm.cs">
       <SubType>Form</SubType>
@@ -707,6 +716,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenRecordForm.zh-CN.resx">
       <DependentUpon>ScreenRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeConfigForm.resx">
+      <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.de.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>

@@ -95,8 +95,8 @@ namespace ShareX.ScreenCaptureLib
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             StartPosition = FormStartPosition.Manual;
-            Bounds = ScreenRectangle;
             FormBorderStyle = FormBorderStyle.None;
+            Bounds = ScreenRectangle;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Text = "ShareX - " + Resources.Surface_InitializeComponent_Region_capture;
             ShowInTaskbar = false;

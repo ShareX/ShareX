@@ -65,7 +65,17 @@ namespace ShareX
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
-            UseCommandLineArgs(Program.CLI.Commands);
+            if (Program.IsFirstTimeConfig)
+            {
+                using (FirstTimeConfigForm firstTimeConfigForm = new FirstTimeConfigForm())
+                {
+                    firstTimeConfigForm.ShowDialog();
+                }
+            }
+            else
+            {
+                UseCommandLineArgs(Program.CLI.Commands);
+            }
         }
 
         private void AfterShownJobs()

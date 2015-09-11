@@ -71,6 +71,7 @@ namespace ShareX
         public static bool IsPortable { get; private set; }
         public static bool IsSilentRun { get; private set; }
         public static bool IsSandbox { get; private set; }
+        public static bool IsFirstTimeConfig { get; private set; }
 
         public static ApplicationConfig Settings { get; private set; }
         public static TaskSettings DefaultTaskSettings { get; private set; }
@@ -305,6 +306,8 @@ namespace ShareX
                     }
                 }
             }
+
+            IsFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
 
             DebugHelper.WriteLine("{0} started", Title);
             DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);

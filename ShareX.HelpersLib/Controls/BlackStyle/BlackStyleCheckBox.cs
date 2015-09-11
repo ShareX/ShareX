@@ -94,11 +94,7 @@ namespace ShareX.HelpersLib
 
             SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
 
-            Prepare();
-        }
-
-        private void Prepare()
-        {
+            BackColor = Color.Transparent;
             ForeColor = Color.White;
 
             // http://connect.microsoft.com/VisualStudio/feedback/details/348321/bug-in-fillrectangle-using-lineargradientbrush

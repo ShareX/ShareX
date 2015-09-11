@@ -125,7 +125,6 @@
             this.Name = "DownloaderForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdaterForm_FormClosing);
             this.Shown += new System.EventHandler(this.DownloaderForm_Shown);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdaterForm_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

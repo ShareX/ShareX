@@ -315,17 +315,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                //RegistryHelper.SetStartWithWindows(cbStartWithWindows.Checked);
-
-                string filePath;
-
-#if STEAM
-                filePath = Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
-#else
-                filePath = Application.ExecutablePath;
-#endif
-
-                ShortcutHelpers.SetShortcut(cbStartWithWindows.Checked, Environment.SpecialFolder.Startup, filePath, "-silent");
+                IntegrationHelpers.CreateStartupShortcut(cbStartWithWindows.Checked);
             }
         }
 
@@ -333,7 +323,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                RegistryHelpers.SetShellContextMenu(cbShellContextMenu.Checked);
+                IntegrationHelpers.CreateShellContextMenuButton(cbShellContextMenu.Checked);
             }
         }
 
@@ -341,7 +331,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                ShortcutHelpers.SetShortcut(cbSendToMenu.Checked, Environment.SpecialFolder.SendTo, Application.ExecutablePath);
+                IntegrationHelpers.CreateSendToMenuButton(cbSendToMenu.Checked);
             }
         }
 
@@ -354,18 +344,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                string path = Helpers.GetAbsolutePath("Steam");
-
-                if (cbSteamShowInApp.Checked)
-                {
-                    File.Create(path).Dispose();
-                }
-                else if (File.Exists(path))
-                {
-                    File.Delete(path);
-                }
-
-                MessageBox.Show(Resources.ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                IntegrationHelpers.SteamShowIngame(cbSteamShowInApp.Checked);
             }
         }
 

@@ -93,7 +93,7 @@ namespace ShareX.HelpersLib
             lblFilename.Text = string.Format(Resources.DownloaderForm_DownloaderForm_Filename___0_, Filename);
         }
 
-        private void UpdaterForm_Paint(object sender, PaintEventArgs e)
+        protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
 
@@ -101,6 +101,8 @@ namespace ShareX.HelpersLib
             {
                 g.FillRectangle(brush, fillRect);
             }
+
+            base.OnPaint(e);
         }
 
         private void DownloaderForm_Shown(object sender, EventArgs e)
