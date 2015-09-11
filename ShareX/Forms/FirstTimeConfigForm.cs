@@ -44,6 +44,18 @@ namespace ShareX
         {
             InitializeComponent();
             pbLogo.Image = ImageHelpers.ResizeImage(ShareXResources.Logo, 128, 128);
+
+            cbRunStartup.Checked = IntegrationHelpers.CheckStartupShortcut();
+            cbShellContextMenuButton.Checked = IntegrationHelpers.CheckShellContextMenuButton();
+            cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
+
+#if STEAM
+            cbSteamInApp.Checked = IntegrationHelpers.CheckSteamShowInApp();
+#else
+            cbSteamInApp.Visible = false;
+#endif
+
+            loaded = true;
         }
 
         private void btnOK_MouseClick(object sender, MouseEventArgs e)
@@ -79,7 +91,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                IntegrationHelpers.SteamShowIngame(cbSteamInApp.Checked);
+                IntegrationHelpers.SteamShowInApp(cbSteamInApp.Checked);
             }
         }
     }

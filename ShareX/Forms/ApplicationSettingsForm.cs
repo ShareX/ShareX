@@ -73,12 +73,12 @@ namespace ShareX
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
 
             // Integration
-            cbStartWithWindows.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup); //RegistryHelper.CheckStartWithWindows();
-            cbShellContextMenu.Checked = RegistryHelpers.CheckShellContextMenu();
-            cbSendToMenu.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo);
+            cbStartWithWindows.Checked = IntegrationHelpers.CheckStartupShortcut();
+            cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
+            cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
 
 #if STEAM
-            cbSteamShowInApp.Checked = File.Exists(Helpers.GetAbsolutePath("Steam"));
+            cbSteamShowInApp.Checked = IntegrationHelpers.CheckSteamShowInGame();
 #else
             gbSteam.Visible = false;
 #endif
@@ -344,7 +344,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                IntegrationHelpers.SteamShowIngame(cbSteamShowInApp.Checked);
+                IntegrationHelpers.SteamShowInApp(cbSteamShowInApp.Checked);
             }
         }
 

@@ -65,6 +65,11 @@ namespace ShareX
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
+            UseCommandLineArgs(Program.CLI.Commands);
+        }
+
+        private void AfterShownJobs()
+        {
             if (Program.IsFirstTimeConfig)
             {
                 using (FirstTimeConfigForm firstTimeConfigForm = new FirstTimeConfigForm())
@@ -74,13 +79,8 @@ namespace ShareX
             }
             else
             {
-                UseCommandLineArgs(Program.CLI.Commands);
+                this.ShowActivate();
             }
-        }
-
-        private void AfterShownJobs()
-        {
-            this.ShowActivate();
 
             if (Program.Settings != null && Program.Settings.ShowTrayLeftClickTip && niTray.Visible && Program.Settings.TrayLeftClickAction == HotkeyType.RectangleRegion)
             {

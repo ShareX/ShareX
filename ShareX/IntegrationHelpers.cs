@@ -36,6 +36,11 @@ namespace ShareX
 {
     public static class IntegrationHelpers
     {
+        public static bool CheckStartupShortcut()
+        {
+            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup); //RegistryHelper.CheckStartWithWindows();
+        }
+
         public static void CreateStartupShortcut(bool create)
         {
             //RegistryHelper.SetStartWithWindows(cbStartWithWindows.Checked);
@@ -51,9 +56,19 @@ namespace ShareX
             ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, filePath, "-silent");
         }
 
+        public static bool CheckShellContextMenuButton()
+        {
+            return RegistryHelpers.CheckShellContextMenu();
+        }
+
         public static void CreateShellContextMenuButton(bool create)
         {
             RegistryHelpers.SetShellContextMenu(create);
+        }
+
+        public static bool CheckSendToMenuButton()
+        {
+            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo);
         }
 
         public static void CreateSendToMenuButton(bool create)
@@ -61,11 +76,17 @@ namespace ShareX
             ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.SendTo, Application.ExecutablePath);
         }
 
-        public static void SteamShowIngame(bool ingame)
+        public static bool CheckSteamShowInApp()
+        {
+            string path = Helpers.GetAbsolutePath("Steam");
+            return File.Exists(path);
+        }
+
+        public static void SteamShowInApp(bool inapp)
         {
             string path = Helpers.GetAbsolutePath("Steam");
 
-            if (ingame)
+            if (inapp)
             {
                 File.Create(path).Dispose();
             }
