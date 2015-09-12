@@ -201,7 +201,22 @@ namespace ShareX.HelpersLib
 
         public static Image ResizeImageLimit(Image img, int maxPixels)
         {
-            return ResizeImageLimit(img, maxPixels, maxPixels);
+            double ratio = (double)img.Width / img.Height;
+            double x = Math.Sqrt(maxPixels / ratio);
+
+            int width, height;
+            if (ratio > 1)
+            {
+                width = (int)(ratio * x);
+                height = (int)(width / ratio);
+            }
+            else
+            {
+                height = (int)(ratio * x);
+                width = (int)(height / ratio);
+            }
+
+            return ResizeImage(img, width, height);
         }
 
         public static Image CropImage(Image img, Rectangle rect)
@@ -1136,18 +1151,22 @@ namespace ShareX.HelpersLib
                     case "png":
                         imageFormat = ImageFormat.Png;
                         break;
+
                     case "jpg":
                     case "jpeg":
                     case "jpe":
                     case "jfif":
                         imageFormat = ImageFormat.Jpeg;
                         break;
+
                     case "gif":
                         imageFormat = ImageFormat.Gif;
                         break;
+
                     case "bmp":
                         imageFormat = ImageFormat.Bmp;
                         break;
+
                     case "tif":
                     case "tiff":
                         imageFormat = ImageFormat.Tiff;
