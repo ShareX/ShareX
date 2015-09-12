@@ -45,10 +45,12 @@
             this.pbTR = new System.Windows.Forms.PictureBox();
             this.lblTeam = new System.Windows.Forms.Label();
             this.lblSteamBuild = new System.Windows.Forms.Label();
+            this.pbSteam = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSteam)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProductName
@@ -151,11 +153,21 @@
             resources.ApplyResources(this.lblSteamBuild, "lblSteamBuild");
             this.lblSteamBuild.Name = "lblSteamBuild";
             // 
+            // pbSteam
+            // 
+            this.pbSteam.BackColor = System.Drawing.Color.Transparent;
+            this.pbSteam.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSteam.Image = global::ShareX.Properties.Resources.steam;
+            resources.ApplyResources(this.pbSteam, "pbSteam");
+            this.pbSteam.Name = "pbSteam";
+            this.pbSteam.TabStop = false;
+            // 
             // AboutForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.pbSteam);
             this.Controls.Add(this.lblSteamBuild);
             this.Controls.Add(this.lblTeam);
             this.Controls.Add(this.rtbShareXInfo);
@@ -176,6 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSteam)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +209,6 @@
         private HelpersLib.UpdateCheckerLabel uclUpdate;
         private System.Windows.Forms.Label lblTeam;
         private System.Windows.Forms.Label lblSteamBuild;
+        private System.Windows.Forms.PictureBox pbSteam;
     }
 }

@@ -1151,22 +1151,18 @@ namespace ShareX.HelpersLib
                     case "png":
                         imageFormat = ImageFormat.Png;
                         break;
-
                     case "jpg":
                     case "jpeg":
                     case "jpe":
                     case "jfif":
                         imageFormat = ImageFormat.Jpeg;
                         break;
-
                     case "gif":
                         imageFormat = ImageFormat.Gif;
                         break;
-
                     case "bmp":
                         imageFormat = ImageFormat.Bmp;
                         break;
-
                     case "tif":
                     case "tiff":
                         imageFormat = ImageFormat.Tiff;

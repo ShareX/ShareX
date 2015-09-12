@@ -45,6 +45,7 @@ namespace ShareX
 #if STEAM
             uclUpdate.Visible = false;
 #else
+            pbSteam.Visible = false;
             lblSteamBuild.Visible = false;
             uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
 #endif
