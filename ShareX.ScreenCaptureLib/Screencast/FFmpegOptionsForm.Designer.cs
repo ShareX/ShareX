@@ -45,6 +45,7 @@
             this.lblx264Preset = new System.Windows.Forms.Label();
             this.lblXvidQscale = new System.Windows.Forms.Label();
             this.gbFFmpegExe = new System.Windows.Forms.GroupBox();
+            this.cbOverrideFFmpegPath = new System.Windows.Forms.CheckBox();
             this.btnDownload = new System.Windows.Forms.Button();
             this.btnFFmpegBrowse = new System.Windows.Forms.Button();
             this.txtFFmpegPath = new System.Windows.Forms.TextBox();
@@ -259,6 +260,13 @@
             this.gbFFmpegExe.Name = "gbFFmpegExe";
             this.gbFFmpegExe.TabStop = false;
             // 
+            // cbOverrideFFmpegPath
+            // 
+            resources.ApplyResources(this.cbOverrideFFmpegPath, "cbOverrideFFmpegPath");
+            this.cbOverrideFFmpegPath.Name = "cbOverrideFFmpegPath";
+            this.cbOverrideFFmpegPath.UseVisualStyleBackColor = true;
+            this.cbOverrideFFmpegPath.CheckedChanged += new System.EventHandler(this.cbOverrideFFmpegPath_CheckedChanged);
+            // 
             // btnDownload
             // 
             resources.ApplyResources(this.btnDownload, "btnDownload");
@@ -277,7 +285,7 @@
             // 
             resources.ApplyResources(this.txtFFmpegPath, "txtFFmpegPath");
             this.txtFFmpegPath.Name = "txtFFmpegPath";
-            this.txtFFmpegPath.TextChanged += new System.EventHandler(this.tbFFmpegPath_TextChanged);
+            this.txtFFmpegPath.TextChanged += new System.EventHandler(this.txtFFmpegPath_TextChanged);
             // 
             // gbCommandLinePreview
             // 
@@ -590,6 +598,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cbOverrideFFmpegPath);
             this.Controls.Add(this.eiFFmpeg);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.gbCodecs);
@@ -637,6 +646,7 @@
             this.gbCodecs.ResumeLayout(false);
             this.gbCodecs.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -699,5 +709,6 @@
         private System.Windows.Forms.Button btnHelperDevicesHelp;
         private System.Windows.Forms.Label lblHelperDevices;
         private System.Windows.Forms.Button btnInstallHelperDevices;
+        private System.Windows.Forms.CheckBox cbOverrideFFmpegPath;
     }
 }

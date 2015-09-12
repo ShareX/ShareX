@@ -624,7 +624,7 @@ namespace ShareX
             }
 
             taskSettings.ToolsSettings.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
-            VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.CLIPath, taskSettings.ToolsSettingsReference.VideoThumbnailOptions);
+            VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath, taskSettings.ToolsSettingsReference.VideoThumbnailOptions);
             thumbnailerForm.ThumbnailsTaken += thumbnails =>
             {
                 if (taskSettings.ToolsSettingsReference.VideoThumbnailOptions.UploadThumbnails)
@@ -815,9 +815,9 @@ namespace ShareX
 
         public static bool CheckFFmpeg(TaskSettings taskSettings)
         {
-            if (!File.Exists(taskSettings.CaptureSettings.FFmpegOptions.CLIPath))
+            if (!File.Exists(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath))
             {
-                string ffmpegText = string.IsNullOrEmpty(taskSettings.CaptureSettings.FFmpegOptions.CLIPath) ? "ffmpeg.exe" : taskSettings.CaptureSettings.FFmpegOptions.CLIPath;
+                string ffmpegText = string.IsNullOrEmpty(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath) ? "ffmpeg.exe" : taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath;
 
                 if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegText),
                     "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -826,6 +826,11 @@ namespace ShareX
                     {
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
                            taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
+
+#if STEAM
+                        Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.OverrideCLIPath =
+                          taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = true;
+#endif
                     }
                 }
                 else

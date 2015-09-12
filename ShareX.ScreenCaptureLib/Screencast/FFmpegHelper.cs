@@ -80,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
         public bool Record()
         {
             recordingStarted = false;
-            return Run(Options.FFmpeg.CLIPath, Options.GetFFmpegCommands());
+            return Run(Options.FFmpeg.FFmpegPath, Options.GetFFmpegCommands());
         }
 
         protected void OnRecordingStarted()
@@ -95,17 +95,17 @@ namespace ShareX.ScreenCaptureLib
         {
             bool result;
 
-            string palettePath = Path.Combine(Path.GetDirectoryName(Options.FFmpeg.CLIPath), "palette.png");
+            string palettePath = Path.Combine(Path.GetDirectoryName(Options.FFmpeg.FFmpegPath), "palette.png");
 
             try
             {
                 // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
-                result = Run(Options.FFmpeg.CLIPath, string.Format("-y -i \"{0}\" -vf \"palettegen=stats_mode={2}\" \"{1}\"", input, palettePath, Options.FFmpeg.GIFStatsMode));
+                result = Run(Options.FFmpeg.FFmpegPath, string.Format("-y -i \"{0}\" -vf \"palettegen=stats_mode={2}\" \"{1}\"", input, palettePath, Options.FFmpeg.GIFStatsMode));
 
                 if (result)
                 {
                     // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
-                    result = Run(Options.FFmpeg.CLIPath, string.Format("-y -i \"{0}\" -i \"{1}\" -lavfi \"paletteuse=dither={3}\" \"{2}\"", input, palettePath, output, Options.FFmpeg.GIFDither));
+                    result = Run(Options.FFmpeg.FFmpegPath, string.Format("-y -i \"{0}\" -i \"{1}\" -lavfi \"paletteuse=dither={3}\" \"{2}\"", input, palettePath, output, Options.FFmpeg.GIFDither));
                 }
             }
             finally
@@ -134,10 +134,10 @@ namespace ShareX.ScreenCaptureLib
         {
             DirectShowDevices devices = new DirectShowDevices();
 
-            if (File.Exists(Options.FFmpeg.CLIPath))
+            if (File.Exists(Options.FFmpeg.FFmpegPath))
             {
                 string arg = "-list_devices true -f dshow -i dummy";
-                Open(Options.FFmpeg.CLIPath, arg);
+                Open(Options.FFmpeg.FFmpegPath, arg);
                 string output = Output.ToString();
                 string[] lines = output.Lines();
                 bool isVideo = true;

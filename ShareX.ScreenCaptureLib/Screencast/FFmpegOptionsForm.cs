@@ -60,19 +60,21 @@ namespace ShareX.ScreenCaptureLib
             settingsLoaded = false;
 
             // General
+
+#if STEAM
+            cbOverrideFFmpegPath.Checked = Options.FFmpeg.OverrideCLIPath;
+            gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
+#else
+            cbOverrideFFmpegPath.Visible = false;
+#endif
+
+            txtFFmpegPath.Text = Options.FFmpeg.CLIPath;
+            txtFFmpegPath.SelectionStart = txtFFmpegPath.TextLength;
+
             RefreshSourcesAsync();
 
             cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
             cboAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
-
-            string cli = "ffmpeg.exe";
-            if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath) && File.Exists(cli))
-            {
-                Options.FFmpeg.CLIPath = cli;
-            }
-
-            txtFFmpegPath.Text = Options.FFmpeg.CLIPath;
-            txtFFmpegPath.SelectionStart = txtFFmpegPath.TextLength;
 
             tbUserArgs.Text = Options.FFmpeg.UserArgs;
 
@@ -167,6 +169,27 @@ namespace ShareX.ScreenCaptureLib
                 {
                     txtCommandLinePreview.Text = Options.GetFFmpegArgs();
                 }
+            }
+        }
+
+        private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
+        {
+#if STEAM
+            Options.FFmpeg.OverrideCLIPath = cbOverrideFFmpegPath.Checked;
+            gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
+#endif
+        }
+
+        private void txtFFmpegPath_TextChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.CLIPath = txtFFmpegPath.Text;
+        }
+
+        private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
+        {
+            if (Helpers.BrowseFile(Resources.FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe, txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
+            {
+                RefreshSourcesAsync();
             }
         }
 
@@ -327,20 +350,6 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void tbFFmpegPath_TextChanged(object sender, EventArgs e)
-        {
-            Options.FFmpeg.CLIPath = txtFFmpegPath.Text;
-            txtFFmpegPath.BackColor = File.Exists(txtFFmpegPath.Text) ? Color.FromArgb(200, 255, 200) : Color.FromArgb(255, 200, 200);
-        }
-
-        private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
-        {
-            if (Helpers.BrowseFile(Resources.FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe, txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
-            {
-                RefreshSourcesAsync();
-            }
-        }
-
         private void tbUserArgs_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.UserArgs = tbUserArgs.Text;
@@ -381,7 +390,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            if (File.Exists(Options.FFmpeg.CLIPath))
+            if (File.Exists(Options.FFmpeg.FFmpegPath))
             {
                 try
                 {
@@ -389,7 +398,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         ProcessStartInfo psi = new ProcessStartInfo("cmd.exe");
                         psi.Arguments = "/k ffmpeg " + Options.GetFFmpegCommands();
-                        psi.WorkingDirectory = Path.GetDirectoryName(Options.FFmpeg.CLIPath);
+                        psi.WorkingDirectory = Path.GetDirectoryName(Options.FFmpeg.FFmpegPath);
 
                         process.StartInfo = psi;
                         process.Start();

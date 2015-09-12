@@ -157,6 +157,13 @@ namespace ShareX.Setup
                 CopyFiles(Path.Combine(ReleaseDirectory, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
             }
 
+            if (Setup == SetupType.Steam)
+            {
+                // These git ignored
+                CopyFile(Path.Combine(parentDir, "Lib", "ffmpeg.exe"), destination);
+                CopyFile(Path.Combine(parentDir, "Lib", "ffmpeg-x64.exe"), destination);
+            }
+
             CopyFile(Path.Combine(outputDir, "Recorder-devices-setup.exe"), destination);
             CopyFile(Path.Combine(parentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release\ShareX_Chrome.exe"), destination);
 

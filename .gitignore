@@ -199,3 +199,5 @@ FakesAssemblies/
 InnoSetup/Output/
 ShareX/GitHash.txt
 ShareX.UploadersLib/APIKeys/APIKeysLocal.cs
+Lib/ffmpeg.exe
+Lib/ffmpeg-x64.exe

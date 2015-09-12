@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 
 namespace ShareX.ScreenCaptureLib
@@ -30,11 +31,12 @@ namespace ShareX.ScreenCaptureLib
     public class FFmpegOptions
     {
         // General
+        public bool OverrideCLIPath { get; set; }
+        public string CLIPath { get; set; }
         public string VideoSource { get; set; }
         public string AudioSource { get; set; }
         public FFmpegVideoCodec VideoCodec { get; set; }
         public FFmpegAudioCodec AudioCodec { get; set; }
-        public string CLIPath { get; set; }
         public string UserArgs { get; set; }
         public bool UseCustomCommands { get; set; }
         public string CustomCommands { get; set; }
@@ -52,6 +54,28 @@ namespace ShareX.ScreenCaptureLib
         public int AAC_bitrate { get; set; }  // kbit/s
         public int Vorbis_qscale { get; set; }
         public int MP3_qscale { get; set; }
+
+        public string FFmpegPath
+        {
+            get
+            {
+#if STEAM
+                if (!OverrideCLIPath)
+                {
+                    if (NativeMethods.Is64Bit())
+                    {
+                        return Helpers.GetAbsolutePath("ffmpeg-x64.exe");
+                    }
+                    else
+                    {
+                        return Helpers.GetAbsolutePath("ffmpeg.exe");
+                    }
+                }
+#endif
+
+                return CLIPath;
+            }
+        }
 
         public string Extension
         {
@@ -116,11 +140,11 @@ namespace ShareX.ScreenCaptureLib
         public FFmpegOptions()
         {
             // General
+            OverrideCLIPath = false;
             VideoSource = FFmpegHelper.SourceGDIGrab;
             AudioSource = FFmpegHelper.SourceNone;
             VideoCodec = FFmpegVideoCodec.libx264;
             AudioCodec = FFmpegAudioCodec.libvoaacenc;
-            CLIPath = "ffmpeg.exe";
             UserArgs = "";
             ShowError = true;
 
