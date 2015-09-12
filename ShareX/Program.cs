@@ -41,14 +41,16 @@ namespace ShareX
     {
         public static bool IsBeta = true;
 
-        public static bool IsSteamBuild
+        public static ShareXBuild Build
         {
             get
             {
 #if STEAM
-                return true;
+                return ShareXBuild.Steam;
+#elif RELEASE
+                return ShareXBuild.Release;
 #else
-                return false;
+                return ShareXBuild.Debug;
 #endif
             }
         }
@@ -313,7 +315,7 @@ namespace ShareX
 
             IsFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
 
-            DebugHelper.WriteLine("{0} started", Title);
+            DebugHelper.WriteLine($"{Title} {Build} build");
             DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);
             DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
             DebugHelper.WriteLine("Personal path: " + PersonalPath);

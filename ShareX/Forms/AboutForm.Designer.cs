@@ -44,6 +44,7 @@
             this.pbBerkURL = new System.Windows.Forms.PictureBox();
             this.pbTR = new System.Windows.Forms.PictureBox();
             this.lblTeam = new System.Windows.Forms.Label();
+            this.lblSteamBuild = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).BeginInit();
@@ -145,11 +146,17 @@
             resources.ApplyResources(this.lblTeam, "lblTeam");
             this.lblTeam.Name = "lblTeam";
             // 
+            // lblSteamBuild
+            // 
+            resources.ApplyResources(this.lblSteamBuild, "lblSteamBuild");
+            this.lblSteamBuild.Name = "lblSteamBuild";
+            // 
             // AboutForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.lblSteamBuild);
             this.Controls.Add(this.lblTeam);
             this.Controls.Add(this.rtbShareXInfo);
             this.Controls.Add(this.rtbCredits);
@@ -188,5 +195,6 @@
         private System.Windows.Forms.RichTextBox rtbShareXInfo;
         private HelpersLib.UpdateCheckerLabel uclUpdate;
         private System.Windows.Forms.Label lblTeam;
+        private System.Windows.Forms.Label lblSteamBuild;
     }
 }

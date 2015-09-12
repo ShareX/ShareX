@@ -28,6 +28,13 @@ using System.ComponentModel;
 
 namespace ShareX
 {
+    public enum ShareXBuild
+    {
+        Debug,
+        Release,
+        Steam
+    }
+
     public enum SupportedLanguage
     {
         Automatic, // Localized

@@ -147,7 +147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProductName.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblBerk.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -171,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblBerk.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblMike.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -195,7 +195,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMike.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="rtbCredits.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -205,10 +205,13 @@
     <value>15, 200</value>
   </data>
   <data name="rtbCredits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 234</value>
+    <value>450, 299</value>
   </data>
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
+  </data>
+  <data name="rtbCredits.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="rtbCredits.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -223,16 +226,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtbCredits.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="rtbShareXInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 66</value>
+    <value>16, 66</value>
   </data>
   <data name="rtbShareXInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>281, 48</value>
   </data>
   <data name="rtbShareXInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="rtbShareXInfo.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rtbShareXInfo.Name" xml:space="preserve">
     <value>rtbShareXInfo</value>
@@ -244,7 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtbShareXInfo.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -268,7 +274,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cLogo.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="uclUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 36</value>
@@ -289,7 +295,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;uclUpdate.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="pbMikeURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 166</value>
@@ -313,7 +319,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbMikeURL.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="pbAU.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 166</value>
@@ -337,7 +343,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbAU.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="pbBerkURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 142</value>
@@ -361,7 +367,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbBerkURL.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="pbTR.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 142</value>
@@ -385,7 +391,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbTR.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblTeam.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -409,6 +415,36 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTeam.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblSteamBuild.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSteamBuild.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="lblSteamBuild.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 40</value>
+  </data>
+  <data name="lblSteamBuild.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 16</value>
+  </data>
+  <data name="lblSteamBuild.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblSteamBuild.Text" xml:space="preserve">
+    <value>Steam build</value>
+  </data>
+  <data name="&gt;&gt;lblSteamBuild.Name" xml:space="preserve">
+    <value>lblSteamBuild</value>
+  </data>
+  <data name="&gt;&gt;lblSteamBuild.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSteamBuild.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblSteamBuild.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -418,10 +454,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>474, 446</value>
+    <value>474, 511</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>490, 485</value>
+    <value>490, 550</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
