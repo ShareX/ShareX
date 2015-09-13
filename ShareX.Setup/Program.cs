@@ -117,6 +117,7 @@ namespace ShareX.Setup
             Directory.CreateDirectory(steamOutputDir);
 
             CopyFile(Path.Combine(steamLauncherDir, "ShareX_Launcher.exe"), steamOutputDir);
+            CopyFile(Path.Combine(steamLauncherDir, "steam_appid.txt"), steamOutputDir);
             CopyFile(Path.Combine(steamLauncherDir, "installscript.vdf"), steamOutputDir);
             CopyFiles(steamLauncherDir, "*.dll", steamOutputDir);
 
