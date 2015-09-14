@@ -119,6 +119,11 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
             URLHelpers.OpenURL(Links.URL_VERSION_HISTORY);
         }
 
+        private void pbSteam_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_STEAM);
+        }
+
         private void pbBerkURL_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_BERK);

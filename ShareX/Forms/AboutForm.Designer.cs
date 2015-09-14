@@ -161,6 +161,7 @@
             resources.ApplyResources(this.pbSteam, "pbSteam");
             this.pbSteam.Name = "pbSteam";
             this.pbSteam.TabStop = false;
+            this.pbSteam.Click += new System.EventHandler(this.pbSteam_Click);
             // 
             // AboutForm
             // 

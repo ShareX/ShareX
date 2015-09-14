@@ -36,5 +36,6 @@ namespace ShareX.HelpersLib
         public const string URL_DONATE = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PCNWK2G6ZYJ2E";
         public const string URL_BERK = "https://github.com/Jaex";
         public const string URL_MIKE = "https://github.com/McoreD";
+        public const string URL_STEAM = "http://store.steampowered.com/app/400040/";
     }
 }
