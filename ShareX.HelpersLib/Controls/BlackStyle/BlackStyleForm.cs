@@ -23,34 +23,26 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class BlackStyleForm : BaseForm
+    public class BlackStyleForm : BaseForm
     {
-        public BlackStyleForm()
-        {
-            InitializeComponent();
-        }
-
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
 
             Rectangle fillRect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
 
-            using (LinearGradientBrush brush = new LinearGradientBrush(fillRect, Color.FromArgb(80, 80, 80), Color.FromArgb(50, 50, 50), LinearGradientMode.Vertical))
+            if (fillRect.IsValid())
             {
-                g.FillRectangle(brush, fillRect);
+                using (LinearGradientBrush brush = new LinearGradientBrush(fillRect, Color.FromArgb(80, 80, 80), Color.FromArgb(40, 40, 40), LinearGradientMode.Vertical))
+                {
+                    g.FillRectangle(brush, fillRect);
+                }
             }
 
             base.OnPaint(e);

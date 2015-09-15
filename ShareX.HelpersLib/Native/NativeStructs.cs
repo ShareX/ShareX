@@ -599,4 +599,14 @@ namespace ShareX.HelpersLib
     {
         void Draw([MarshalAs(UnmanagedType.U4)] uint dwAspect, int lindex, IntPtr pvAspect, [In] IntPtr ptd, IntPtr hdcTargetDev, IntPtr hdcDraw, [MarshalAs(UnmanagedType.Struct)] ref RECT lprcBounds, [In] IntPtr lprcWBounds, IntPtr pfnContinue, [MarshalAs(UnmanagedType.U4)] uint dwContinue);
     }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct FLASHWINFO
+    {
+        public UInt32 cbSize;
+        public IntPtr hwnd;
+        public UInt32 dwFlags;
+        public UInt32 uCount;
+        public UInt32 dwTimeout;
+    }
 }

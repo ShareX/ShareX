@@ -78,7 +78,6 @@
             this.MaximizeBox = false;
             this.Name = "UpdateMessageBox";
             this.Shown += new System.EventHandler(this.UpdateMessageBox_Shown);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdateMessageBox_Paint);
             this.ResumeLayout(false);
 
         }

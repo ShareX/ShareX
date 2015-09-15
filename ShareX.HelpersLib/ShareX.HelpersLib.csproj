@@ -117,9 +117,6 @@
     <Compile Include="Controls\BlackStyle\BlackStyleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\BlackStyle\BlackStyleForm.Designer.cs">
-      <DependentUpon>BlackStyleForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\GreenlightButton.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -30,23 +30,26 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class UpdateMessageBox : BaseForm
+    public partial class UpdateMessageBox : BlackStyleForm
     {
         public static bool IsOpen { get; private set; }
         public static bool DontShow { get; private set; }
 
-        public bool ActivateWindow { get; set; }
+        public bool ActivateWindow { get; private set; }
 
-        private Rectangle fillRect;
-
-        public UpdateMessageBox()
+        public UpdateMessageBox(bool activateWindow)
         {
+            ActivateWindow = activateWindow;
             InitializeComponent();
+
+            if (!ActivateWindow)
+            {
+                WindowState = FormWindowState.Minimized;
+                NativeMethods.FlashWindowEx(this);
+            }
 
             Text = Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
             lblText.Text = string.Format(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName);
-
-            fillRect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
         }
 
         public static void Start(UpdateChecker updateChecker, bool activateWindow = true)
@@ -59,9 +62,8 @@ namespace ShareX.HelpersLib
                 {
                     DialogResult result;
 
-                    using (UpdateMessageBox messageBox = new UpdateMessageBox())
+                    using (UpdateMessageBox messageBox = new UpdateMessageBox(activateWindow))
                     {
-                        messageBox.ActivateWindow = activateWindow;
                         result = messageBox.ShowDialog();
                     }
 
@@ -85,29 +87,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        protected override bool ShowWithoutActivation
-        {
-            get
-            {
-                return !ActivateWindow;
-            }
-        }
+        protected override bool ShowWithoutActivation => !ActivateWindow;
 
         private void UpdateMessageBox_Shown(object sender, System.EventArgs e)
         {
             if (ActivateWindow)
             {
                 this.ShowActivate();
-            }
-        }
-
-        private void UpdateMessageBox_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-
-            using (LinearGradientBrush brush = new LinearGradientBrush(fillRect, Color.FromArgb(80, 80, 80), Color.FromArgb(50, 50, 50), LinearGradientMode.Vertical))
-            {
-                g.FillRectangle(brush, fillRect);
             }
         }
 

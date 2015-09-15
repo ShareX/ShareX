@@ -36,7 +36,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class DownloaderForm : BaseForm
+    public partial class DownloaderForm : BlackStyleForm
     {
         public delegate void DownloaderInstallEventHandler(string filePath);
         public event DownloaderInstallEventHandler InstallRequested;
@@ -91,18 +91,6 @@ namespace ShareX.HelpersLib
             URL = url;
             Filename = filename;
             lblFilename.Text = string.Format(Resources.DownloaderForm_DownloaderForm_Filename___0_, Filename);
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-
-            using (LinearGradientBrush brush = new LinearGradientBrush(fillRect, Color.FromArgb(80, 80, 80), Color.FromArgb(50, 50, 50), LinearGradientMode.Vertical))
-            {
-                g.FillRectangle(brush, fillRect);
-            }
-
-            base.OnPaint(e);
         }
 
         private void DownloaderForm_Shown(object sender, EventArgs e)
