@@ -397,7 +397,7 @@ namespace ShareX.ScreenCaptureLib
                     using (Process process = new Process())
                     {
                         ProcessStartInfo psi = new ProcessStartInfo("cmd.exe");
-                        psi.Arguments = "/k ffmpeg " + Options.GetFFmpegCommands();
+                        psi.Arguments = $"/k {Path.GetFileName(Options.FFmpeg.FFmpegPath)} {Options.GetFFmpegCommands()}";
                         psi.WorkingDirectory = Path.GetDirectoryName(Options.FFmpeg.FFmpegPath);
 
                         process.StartInfo = psi;
@@ -413,7 +413,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnCopyPreview_Click(object sender, EventArgs e)
         {
-            ClipboardHelpers.CopyText("ffmpeg " + Options.GetFFmpegCommands());
+            ClipboardHelpers.CopyText($"{Path.GetFileName(Options.FFmpeg.FFmpegPath)} {Options.GetFFmpegCommands()}");
         }
 
         private void cbCustomCommands_CheckedChanged(object sender, EventArgs e)
