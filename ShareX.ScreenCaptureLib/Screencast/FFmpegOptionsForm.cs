@@ -183,6 +183,10 @@ namespace ShareX.ScreenCaptureLib
         private void txtFFmpegPath_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.CLIPath = txtFFmpegPath.Text;
+
+#if !STEAM
+            txtFFmpegPath.BackColor = File.Exists(txtFFmpegPath.Text) ? Color.FromArgb(200, 255, 200) : Color.FromArgb(255, 200, 200);
+#endif
         }
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
