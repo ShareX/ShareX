@@ -32,7 +32,8 @@ namespace ShareX
     {
         Debug,
         Release,
-        Steam
+        Steam,
+        Unknown
     }
 
     public enum SupportedLanguage
@@ -52,8 +53,8 @@ namespace ShareX
         Korean,
         [Description("Português-Brasil (Portuguese-Brazil)")]
         PortugueseBrazil,
-        [Description("Русский (Russian)")]
-        Russian,
+        /*[Description("Русский (Russian)")]
+        Russian,*/
         [Description("简体中文 (Simplified Chinese)")]
         SimplifiedChinese,
         [Description("Español (Spanish)")]

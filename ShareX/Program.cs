@@ -30,7 +30,6 @@ using SingleInstanceApplication;
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -39,8 +38,6 @@ namespace ShareX
 {
     internal static class Program
     {
-        public static bool IsBeta = true;
-
         public static ShareXBuild Build
         {
             get
@@ -49,11 +46,15 @@ namespace ShareX
                 return ShareXBuild.Steam;
 #elif RELEASE
                 return ShareXBuild.Release;
-#else
+#elif DEBUG
                 return ShareXBuild.Debug;
+#else
+                return ShareXBuild.Unknown;
 #endif
             }
         }
+
+        public static bool IsBeta { get; } = true;
 
         public static string Title
         {

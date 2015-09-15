@@ -69,9 +69,9 @@ namespace ShareX
                     case SupportedLanguage.PortugueseBrazil:
                         cultureName = "pt-BR";
                         break;
-                    case SupportedLanguage.Russian:
+                    /*case SupportedLanguage.Russian:
                         cultureName = "ru";
-                        break;
+                        break;*/
                     case SupportedLanguage.SimplifiedChinese:
                         cultureName = "zh-CN";
                         break;

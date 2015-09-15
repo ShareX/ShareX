@@ -174,9 +174,9 @@ namespace ShareX
                 case SupportedLanguage.PortugueseBrazil:
                     icon = Resources.br;
                     break;
-                case SupportedLanguage.Russian:
+                /*case SupportedLanguage.Russian:
                     icon = Resources.ru;
-                    break;
+                    break;*/
                 case SupportedLanguage.SimplifiedChinese:
                     icon = Resources.cn;
                     break;
