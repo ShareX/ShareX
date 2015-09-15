@@ -50,6 +50,7 @@ namespace ShareX.ScreenCaptureLib
         public ScreencastOptions Options { get; private set; }
 
         private bool recordingStarted;
+        private int closeTryCount = 0;
 
         public FFmpegHelper(ScreencastOptions options)
         {
@@ -179,7 +180,15 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Close()
         {
-            WriteInput("q");
+            if (closeTryCount >= 3)
+            {
+                base.Close();
+            }
+            else
+            {
+                WriteInput("q");
+                closeTryCount++;
+            }
         }
     }
 
