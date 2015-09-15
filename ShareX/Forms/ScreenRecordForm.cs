@@ -158,14 +158,12 @@ namespace ShareX
 
             lblTimer.ForeColor = Color.White;
             borderColor = Color.FromArgb(0, 255, 0);
-            btnStart.Text = Resources.AutoCaptureForm_Execute_Stop;
             Refresh();
 
             Timer.Reset();
             Timer.Start();
             timerRefresh.Start();
             UpdateTimer();
-            IsRecording = true;
         }
 
         private void UpdateTimer()
@@ -263,6 +261,10 @@ namespace ShareX
                         niTray.Text = trayTextAfterStart.Truncate(63);
                         niTray.Icon = Resources.control_record.ToIcon();
                         tsmiStart.Text = Resources.AutoCaptureForm_Execute_Stop;
+                        btnStart.Text = Resources.AutoCaptureForm_Execute_Stop;
+                        IsRecording = true;
+                        break;
+                    case ScreenRecordState.AfterRecordingStart:
                         StartRecordingTimer();
                         break;
                     case ScreenRecordState.AfterStop:

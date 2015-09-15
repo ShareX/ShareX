@@ -180,9 +180,9 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Close()
         {
-            if (closeTryCount >= 3)
+            if (closeTryCount >= 2)
             {
-                base.Close();
+                process.Kill();
             }
             else
             {

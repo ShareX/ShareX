@@ -216,7 +216,8 @@ namespace ShareX
                     if (!abortRequested)
                     {
                         screenRecorder = new ScreenRecorder(outputType, options, captureRectangle);
-                        screenRecorder.RecordingStarted += () => recordForm.ChangeState(ScreenRecordState.AfterStart);
+                        screenRecorder.RecordingStarted += () => recordForm.ChangeState(ScreenRecordState.AfterRecordingStart);
+                        recordForm.ChangeState(ScreenRecordState.AfterStart);
                         screenRecorder.StartRecording();
 
                         if (recordForm.AbortRequested)

@@ -35,7 +35,7 @@ namespace ShareX.HelpersLib
         public event DataReceivedEventHandler OutputDataReceived;
         public event DataReceivedEventHandler ErrorDataReceived;
 
-        private Process process;
+        protected Process process;
 
         public virtual int Open(string path, string args = null)
         {

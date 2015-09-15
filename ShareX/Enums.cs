@@ -241,6 +241,6 @@ namespace ShareX
 
     public enum ScreenRecordState
     {
-        Waiting, BeforeStart, AfterStart, AfterStop
+        Waiting, BeforeStart, AfterStart, AfterRecordingStart, AfterStop
     }
 }
