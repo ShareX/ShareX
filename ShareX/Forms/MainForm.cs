@@ -404,6 +404,18 @@ namespace ShareX
 
             if (uim.IsItemSelected)
             {
+                // Open
+                tsmiOpen.Visible = true;
+
+                tsmiOpenURL.Enabled = uim.SelectedItem.IsURLExist;
+                tsmiOpenShortenedURL.Enabled = uim.SelectedItem.IsShortenedURLExist;
+                tsmiOpenThumbnailURL.Enabled = uim.SelectedItem.IsThumbnailURLExist;
+                tsmiOpenDeletionURL.Enabled = uim.SelectedItem.IsDeletionURLExist;
+
+                tsmiOpenFile.Enabled = uim.SelectedItem.IsFileExist;
+                tsmiOpenFolder.Enabled = uim.SelectedItem.IsFileExist;
+                tsmiOpenThumbnailFile.Enabled = uim.SelectedItem.IsThumbnailFileExist;
+
                 if (GetCurrentTasks().Any(x => x.IsWorking))
                 {
                     tsmiStopUpload.Visible = true;
@@ -411,18 +423,6 @@ namespace ShareX
                 else
                 {
                     tsmiShowErrors.Visible = uim.SelectedItem.Info.Result.IsError;
-
-                    // Open
-                    tsmiOpen.Visible = true;
-
-                    tsmiOpenURL.Enabled = uim.SelectedItem.IsURLExist;
-                    tsmiOpenShortenedURL.Enabled = uim.SelectedItem.IsShortenedURLExist;
-                    tsmiOpenThumbnailURL.Enabled = uim.SelectedItem.IsThumbnailURLExist;
-                    tsmiOpenDeletionURL.Enabled = uim.SelectedItem.IsDeletionURLExist;
-
-                    tsmiOpenFile.Enabled = uim.SelectedItem.IsFileExist;
-                    tsmiOpenFolder.Enabled = uim.SelectedItem.IsFileExist;
-                    tsmiOpenThumbnailFile.Enabled = uim.SelectedItem.IsThumbnailFileExist;
 
                     // Copy
                     tsmiCopy.Visible = true;
