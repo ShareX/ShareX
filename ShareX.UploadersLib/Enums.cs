@@ -156,8 +156,6 @@ namespace ShareX.UploadersLib
         NLCM,
         [Description("adf.ly")]
         AdFly,
-        [Description("lnku.co")]
-        LnkU,
         [Description("coinurl.com")]
         CoinURL,
         [Description("qr.net")]

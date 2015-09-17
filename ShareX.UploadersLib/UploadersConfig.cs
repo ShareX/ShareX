@@ -282,9 +282,6 @@ namespace ShareX.UploadersLib
         public string AdFlyAPIKEY = String.Empty;
         public string AdFlyAPIUID = String.Empty;
 
-        // lnku.co
-        public string LnkUAPIKEY = string.Empty;
-
         // coinurl.com
         public string CoinURLUUID = string.Empty;
 
@@ -450,8 +447,6 @@ namespace ShareX.UploadersLib
                     return !string.IsNullOrEmpty(YourlsAPIURL) && (!string.IsNullOrEmpty(YourlsSignature) || (!string.IsNullOrEmpty(YourlsUsername) && !string.IsNullOrEmpty(YourlsPassword)));
                 case UrlShortenerType.AdFly:
                     return !string.IsNullOrEmpty(AdFlyAPIKEY) && !string.IsNullOrEmpty(AdFlyAPIUID);
-                case UrlShortenerType.LnkU:
-                    return !string.IsNullOrEmpty(LnkUAPIKEY);
                 case UrlShortenerType.CoinURL:
                     return !string.IsNullOrEmpty(CoinURLUUID);
                 case UrlShortenerType.Polr:

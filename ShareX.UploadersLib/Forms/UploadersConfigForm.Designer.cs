@@ -37,6 +37,7 @@
             this.tpOtherUploaders = new System.Windows.Forms.TabPage();
             this.tcOtherUploaders = new System.Windows.Forms.TabControl();
             this.tpTwitter = new System.Windows.Forms.TabPage();
+            this.btnTwitterNameUpdate = new System.Windows.Forms.Button();
             this.lbTwitterAccounts = new System.Windows.Forms.ListBox();
             this.lblTwitterDefaultMessage = new System.Windows.Forms.Label();
             this.txtTwitterDefaultMessage = new System.Windows.Forms.TextBox();
@@ -129,9 +130,6 @@
             this.lblAdflyAPIUID = new System.Windows.Forms.Label();
             this.txtAdflyAPIKEY = new System.Windows.Forms.TextBox();
             this.lblAdflyAPIKEY = new System.Windows.Forms.Label();
-            this.tpLnkU = new System.Windows.Forms.TabPage();
-            this.txtLnkUAPIKEY = new System.Windows.Forms.TextBox();
-            this.lblLnkUAPIKey = new System.Windows.Forms.Label();
             this.tpCoinURL = new System.Windows.Forms.TabPage();
             this.txtCoinURLUUID = new System.Windows.Forms.TextBox();
             this.lblCoinURLUUID = new System.Windows.Forms.Label();
@@ -451,7 +449,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.btnTwitterNameUpdate = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -465,7 +462,6 @@
             this.tpGoogleURLShortener.SuspendLayout();
             this.tpYourls.SuspendLayout();
             this.tpAdFly.SuspendLayout();
-            this.tpLnkU.SuspendLayout();
             this.tpCoinURL.SuspendLayout();
             this.tpPolr.SuspendLayout();
             this.tpFileUploaders.SuspendLayout();
@@ -582,6 +578,13 @@
             resources.ApplyResources(this.tpTwitter, "tpTwitter");
             this.tpTwitter.Name = "tpTwitter";
             this.tpTwitter.UseVisualStyleBackColor = true;
+            // 
+            // btnTwitterNameUpdate
+            // 
+            resources.ApplyResources(this.btnTwitterNameUpdate, "btnTwitterNameUpdate");
+            this.btnTwitterNameUpdate.Name = "btnTwitterNameUpdate";
+            this.btnTwitterNameUpdate.UseVisualStyleBackColor = true;
+            this.btnTwitterNameUpdate.Click += new System.EventHandler(this.btnTwitterNameUpdate_Click);
             // 
             // lbTwitterAccounts
             // 
@@ -1087,7 +1090,6 @@
             this.tcURLShorteners.Controls.Add(this.tpGoogleURLShortener);
             this.tcURLShorteners.Controls.Add(this.tpYourls);
             this.tcURLShorteners.Controls.Add(this.tpAdFly);
-            this.tcURLShorteners.Controls.Add(this.tpLnkU);
             this.tcURLShorteners.Controls.Add(this.tpCoinURL);
             this.tcURLShorteners.Controls.Add(this.tpPolr);
             resources.ApplyResources(this.tcURLShorteners, "tcURLShorteners");
@@ -1253,25 +1255,6 @@
             // 
             resources.ApplyResources(this.lblAdflyAPIKEY, "lblAdflyAPIKEY");
             this.lblAdflyAPIKEY.Name = "lblAdflyAPIKEY";
-            // 
-            // tpLnkU
-            // 
-            this.tpLnkU.Controls.Add(this.txtLnkUAPIKEY);
-            this.tpLnkU.Controls.Add(this.lblLnkUAPIKey);
-            resources.ApplyResources(this.tpLnkU, "tpLnkU");
-            this.tpLnkU.Name = "tpLnkU";
-            this.tpLnkU.UseVisualStyleBackColor = true;
-            // 
-            // txtLnkUAPIKEY
-            // 
-            resources.ApplyResources(this.txtLnkUAPIKEY, "txtLnkUAPIKEY");
-            this.txtLnkUAPIKEY.Name = "txtLnkUAPIKEY";
-            this.txtLnkUAPIKEY.TextChanged += new System.EventHandler(this.txtLnkUAPIKEY_TextChanged);
-            // 
-            // lblLnkUAPIKey
-            // 
-            resources.ApplyResources(this.lblLnkUAPIKey, "lblLnkUAPIKey");
-            this.lblLnkUAPIKey.Name = "lblLnkUAPIKey";
             // 
             // tpCoinURL
             // 
@@ -3581,13 +3564,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // btnTwitterNameUpdate
-            // 
-            resources.ApplyResources(this.btnTwitterNameUpdate, "btnTwitterNameUpdate");
-            this.btnTwitterNameUpdate.Name = "btnTwitterNameUpdate";
-            this.btnTwitterNameUpdate.UseVisualStyleBackColor = true;
-            this.btnTwitterNameUpdate.Click += new System.EventHandler(this.btnTwitterNameUpdate_Click);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -3621,8 +3597,6 @@
             this.tpYourls.PerformLayout();
             this.tpAdFly.ResumeLayout(false);
             this.tpAdFly.PerformLayout();
-            this.tpLnkU.ResumeLayout(false);
-            this.tpLnkU.PerformLayout();
             this.tpCoinURL.ResumeLayout(false);
             this.tpCoinURL.PerformLayout();
             this.tpPolr.ResumeLayout(false);
@@ -4122,9 +4096,6 @@
         private System.Windows.Forms.TextBox txtUp1Host;
         private System.Windows.Forms.Label lblUp1Key;
         private System.Windows.Forms.Label lblUp1Host;
-        private System.Windows.Forms.TabPage tpLnkU;
-        private System.Windows.Forms.TextBox txtLnkUAPIKEY;
-        private System.Windows.Forms.Label lblLnkUAPIKey;
         private System.Windows.Forms.TabPage tpCoinURL;
         private System.Windows.Forms.TextBox txtCoinURLUUID;
         private System.Windows.Forms.Label lblCoinURLUUID;

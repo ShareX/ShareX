@@ -307,7 +307,6 @@
     <Compile Include="URLShorteners\CustomURLShortener.cs" />
     <Compile Include="URLShorteners\GoogleURLShortener.cs" />
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
-    <Compile Include="URLShorteners\LnkUURLShortener.cs" />
     <Compile Include="URLShorteners\NlcmURLShortener.cs" />
     <Compile Include="URLShorteners\QRnetURLShortener.cs" />
     <Compile Include="URLShorteners\TinyURLShortener.cs" />
@@ -750,7 +749,6 @@
     <None Include="Favicons\hubic.ico" />
     <None Include="Favicons\Up1.ico" />
     <None Include="Favicons\CoinURL.ico" />
-    <None Include="Favicons\LnkU.ico" />
     <None Include="Favicons\copy.ico" />
     <None Include="Favicons\Lambda.ico" />
     <None Include="Favicons\Mega.ico" />

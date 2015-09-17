@@ -208,6 +208,237 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbAmazonS3CustomCNAME.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="&gt;&gt;tcOtherUploaders.Name" xml:space="preserve">
+    <value>tcOtherUploaders</value>
+  </data>
+  <data name="&gt;&gt;tcOtherUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcOtherUploaders.Parent" xml:space="preserve">
+    <value>tpOtherUploaders</value>
+  </data>
+  <data name="&gt;&gt;tcOtherUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpOtherUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpOtherUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpOtherUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>986, 525</value>
+  </data>
+  <data name="tpOtherUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>Other uploaders</value>
+  </data>
+  <data name="&gt;&gt;tpOtherUploaders.Name" xml:space="preserve">
+    <value>tpOtherUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpOtherUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpOtherUploaders.Parent" xml:space="preserve">
+    <value>tcUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpOtherUploaders.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;tpTwitter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpTwitter.Parent" xml:space="preserve">
+    <value>tcOtherUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpTwitter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaders.Name" xml:space="preserve">
+    <value>tpCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaders.Parent" xml:space="preserve">
+    <value>tcOtherUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpCustomUploaders.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tcOtherUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcOtherUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tcOtherUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 519</value>
+  </data>
+  <data name="tcOtherUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tcOtherUploaders.Name" xml:space="preserve">
+    <value>tcOtherUploaders</value>
+  </data>
+  <data name="&gt;&gt;tcOtherUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcOtherUploaders.Parent" xml:space="preserve">
+    <value>tpOtherUploaders</value>
+  </data>
+  <data name="&gt;&gt;tcOtherUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterNameUpdate.Name" xml:space="preserve">
+    <value>btnTwitterNameUpdate</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterNameUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterNameUpdate.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterNameUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbTwitterAccounts.Name" xml:space="preserve">
+    <value>lbTwitterAccounts</value>
+  </data>
+  <data name="&gt;&gt;lbTwitterAccounts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTwitterAccounts.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;lbTwitterAccounts.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDefaultMessage.Name" xml:space="preserve">
+    <value>lblTwitterDefaultMessage</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDefaultMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDefaultMessage.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDefaultMessage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDefaultMessage.Name" xml:space="preserve">
+    <value>txtTwitterDefaultMessage</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDefaultMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDefaultMessage.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDefaultMessage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbTwitterSkipMessageBox.Name" xml:space="preserve">
+    <value>cbTwitterSkipMessageBox</value>
+  </data>
+  <data name="&gt;&gt;cbTwitterSkipMessageBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTwitterSkipMessageBox.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;cbTwitterSkipMessageBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Name" xml:space="preserve">
+    <value>oauthTwitter</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDescription.Name" xml:space="preserve">
+    <value>txtTwitterDescription</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDescription.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDescription.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDescription.Name" xml:space="preserve">
+    <value>lblTwitterDescription</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDescription.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDescription.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterRemove.Name" xml:space="preserve">
+    <value>btnTwitterRemove</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterRemove.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterRemove.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterAdd.Name" xml:space="preserve">
+    <value>btnTwitterAdd</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterAdd.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterAdd.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tpTwitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpTwitter.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpTwitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;tpTwitter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpTwitter.Parent" xml:space="preserve">
+    <value>tcOtherUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpTwitter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnTwitterNameUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -474,30 +705,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;btnTwitterAdd.ZOrder" xml:space="preserve">
     <value>9</value>
-  </data>
-  <data name="tpTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpTwitter.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tpTwitter.Text" xml:space="preserve">
-    <value>Twitter</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
-    <value>tpTwitter</value>
-  </data>
-  <data name="&gt;&gt;tpTwitter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpTwitter.Parent" xml:space="preserve">
-    <value>tcOtherUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpTwitter.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderExamples.Name" xml:space="preserve">
     <value>btnCustomUploaderExamples</value>
@@ -933,57 +1140,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tpCustomUploaders.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="tcOtherUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tcOtherUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tcOtherUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
-  </data>
-  <data name="tcOtherUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tcOtherUploaders.Name" xml:space="preserve">
-    <value>tcOtherUploaders</value>
-  </data>
-  <data name="&gt;&gt;tcOtherUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcOtherUploaders.Parent" xml:space="preserve">
-    <value>tpOtherUploaders</value>
-  </data>
-  <data name="&gt;&gt;tcOtherUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpOtherUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpOtherUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpOtherUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
-  </data>
-  <data name="tpOtherUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>Other uploaders</value>
-  </data>
-  <data name="&gt;&gt;tpOtherUploaders.Name" xml:space="preserve">
-    <value>tpOtherUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpOtherUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpOtherUploaders.Parent" xml:space="preserve">
-    <value>tcUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpOtherUploaders.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="btnCustomUploaderExamples.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2190,7 +2346,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtCustomUploaderLog.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtCustomUploaderLog.Name" xml:space="preserve">
     <value>txtCustomUploaderLog</value>
   </data>
@@ -2352,7 +2508,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCustomUploaderURL.Text" xml:space="preserve">
     <value>URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCustomUploaderURL.Name" xml:space="preserve">
     <value>lblCustomUploaderURL</value>
   </data>
@@ -2617,153 +2773,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtCustomUploaderArgName.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;tcURLShorteners.Name" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Parent" xml:space="preserve">
-    <value>tpURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpURLShorteners.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 525</value>
-  </data>
-  <data name="tpURLShorteners.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL shorteners</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.Name" xml:space="preserve">
-    <value>tpURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.Parent" xml:space="preserve">
-    <value>tcUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpURLShorteners.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
-    <value>tpBitly</value>
-  </data>
-  <data name="&gt;&gt;tpBitly.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpBitly.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpBitly.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tpGoogleURLShortener.Name" xml:space="preserve">
-    <value>tpGoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;tpGoogleURLShortener.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpGoogleURLShortener.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpGoogleURLShortener.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
-    <value>tpYourls</value>
-  </data>
-  <data name="&gt;&gt;tpYourls.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpYourls.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpYourls.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.Name" xml:space="preserve">
-    <value>tpLnkU</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
-    <value>tpCoinURL</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tcURLShorteners.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tcURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tcURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 519</value>
-  </data>
-  <data name="tcURLShorteners.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Name" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.Parent" xml:space="preserve">
-    <value>tpURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tcURLShorteners.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;txtBitlyDomain.Name" xml:space="preserve">
     <value>txtBitlyDomain</value>
   </data>
@@ -2814,7 +2823,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
     <value>tpBitly</value>
   </data>
@@ -2826,78 +2835,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tpBitly.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="txtBitlyDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 248</value>
-  </data>
-  <data name="txtBitlyDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 20</value>
-  </data>
-  <data name="txtBitlyDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtBitlyDomain.Name" xml:space="preserve">
-    <value>txtBitlyDomain</value>
-  </data>
-  <data name="&gt;&gt;txtBitlyDomain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtBitlyDomain.Parent" xml:space="preserve">
-    <value>tpBitly</value>
-  </data>
-  <data name="&gt;&gt;txtBitlyDomain.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblBitlyDomain.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblBitlyDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblBitlyDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 232</value>
-  </data>
-  <data name="lblBitlyDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
-  </data>
-  <data name="lblBitlyDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>Domain:</value>
-  </data>
-  <data name="&gt;&gt;lblBitlyDomain.Name" xml:space="preserve">
-    <value>lblBitlyDomain</value>
-  </data>
-  <data name="&gt;&gt;lblBitlyDomain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblBitlyDomain.Parent" xml:space="preserve">
-    <value>tpBitly</value>
-  </data>
-  <data name="&gt;&gt;lblBitlyDomain.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="oauth2Bitly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2Bitly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 208</value>
-  </data>
-  <data name="oauth2Bitly.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Name" xml:space="preserve">
-    <value>oauth2Bitly</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
-    <value>tpBitly</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
     <value>oauth2GoogleURLShortener</value>
@@ -2937,7 +2874,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGoogleURLShortener.Text" xml:space="preserve">
     <value>Google</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleURLShortener.Name" xml:space="preserve">
     <value>tpGoogleURLShortener</value>
   </data>
@@ -2948,48 +2885,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tcURLShorteners</value>
   </data>
   <data name="&gt;&gt;tpGoogleURLShortener.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
-    <value>oauth2GoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Parent" xml:space="preserve">
-    <value>tpGoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 40</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Name" xml:space="preserve">
-    <value>atcGoogleURLShortenerAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Parent" xml:space="preserve">
-    <value>tpGoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;txtYourlsPassword.Name" xml:space="preserve">
@@ -3114,7 +3009,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
   </data>
@@ -3126,6 +3021,378 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tpYourls.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;llAdflyLink.Name" xml:space="preserve">
+    <value>llAdflyLink</value>
+  </data>
+  <data name="&gt;&gt;llAdflyLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;llAdflyLink.Parent" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;llAdflyLink.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIUID.Name" xml:space="preserve">
+    <value>txtAdflyAPIUID</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIUID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIUID.Parent" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIUID.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIUID.Name" xml:space="preserve">
+    <value>lblAdflyAPIUID</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIUID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIUID.Parent" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIUID.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIKEY.Name" xml:space="preserve">
+    <value>txtAdflyAPIKEY</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIKEY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIKEY.Parent" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;txtAdflyAPIKEY.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIKEY.Name" xml:space="preserve">
+    <value>lblAdflyAPIKEY</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIKEY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIKEY.Parent" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;lblAdflyAPIKEY.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpAdFly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpAdFly.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpAdFly.Text" xml:space="preserve">
+    <value>adf.ly</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
+    <value>tpAdFly</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpAdFly.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtCoinURLUUID.Name" xml:space="preserve">
+    <value>txtCoinURLUUID</value>
+  </data>
+  <data name="&gt;&gt;txtCoinURLUUID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCoinURLUUID.Parent" xml:space="preserve">
+    <value>tpCoinURL</value>
+  </data>
+  <data name="&gt;&gt;txtCoinURLUUID.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblCoinURLUUID.Name" xml:space="preserve">
+    <value>lblCoinURLUUID</value>
+  </data>
+  <data name="&gt;&gt;lblCoinURLUUID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCoinURLUUID.Parent" xml:space="preserve">
+    <value>tpCoinURL</value>
+  </data>
+  <data name="&gt;&gt;lblCoinURLUUID.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpCoinURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpCoinURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpCoinURL.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tpCoinURL.Text" xml:space="preserve">
+    <value>CoinURL</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
+    <value>tpCoinURL</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpCoinURL.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.Name" xml:space="preserve">
+    <value>txtPolrAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.Name" xml:space="preserve">
+    <value>lblPolrAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.Name" xml:space="preserve">
+    <value>txtPolrAPIHostname</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;txtPolrAPIHostname.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.Name" xml:space="preserve">
+    <value>lblPolrAPIHostname</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.Parent" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;lblPolrAPIHostname.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tpPolr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 493</value>
+  </data>
+  <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tpPolr.Text" xml:space="preserve">
+    <value>Polr</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
+    <value>tpPolr</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.Parent" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tcURLShorteners.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tcURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 519</value>
+  </data>
+  <data name="tcURLShorteners.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.Name" xml:space="preserve">
+    <value>tcURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.Parent" xml:space="preserve">
+    <value>tpURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tcURLShorteners.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpURLShorteners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpURLShorteners.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>986, 525</value>
+  </data>
+  <data name="tpURLShorteners.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>URL shorteners</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.Name" xml:space="preserve">
+    <value>tpURLShorteners</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.Parent" xml:space="preserve">
+    <value>tcUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpURLShorteners.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtBitlyDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 248</value>
+  </data>
+  <data name="txtBitlyDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 20</value>
+  </data>
+  <data name="txtBitlyDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtBitlyDomain.Name" xml:space="preserve">
+    <value>txtBitlyDomain</value>
+  </data>
+  <data name="&gt;&gt;txtBitlyDomain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtBitlyDomain.Parent" xml:space="preserve">
+    <value>tpBitly</value>
+  </data>
+  <data name="&gt;&gt;txtBitlyDomain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBitlyDomain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBitlyDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblBitlyDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 232</value>
+  </data>
+  <data name="lblBitlyDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="lblBitlyDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>Domain:</value>
+  </data>
+  <data name="&gt;&gt;lblBitlyDomain.Name" xml:space="preserve">
+    <value>lblBitlyDomain</value>
+  </data>
+  <data name="&gt;&gt;lblBitlyDomain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBitlyDomain.Parent" xml:space="preserve">
+    <value>tpBitly</value>
+  </data>
+  <data name="&gt;&gt;lblBitlyDomain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="oauth2Bitly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2Bitly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 208</value>
+  </data>
+  <data name="oauth2Bitly.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Name" xml:space="preserve">
+    <value>oauth2Bitly</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
+    <value>tpBitly</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
+    <value>oauth2GoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Parent" xml:space="preserve">
+    <value>tpGoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 40</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Name" xml:space="preserve">
+    <value>atcGoogleURLShortenerAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Parent" xml:space="preserve">
+    <value>tpGoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="txtYourlsPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 200</value>
@@ -3348,7 +3615,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblYourlsAPIURL.Name" xml:space="preserve">
     <value>lblYourlsAPIURL</value>
   </data>
@@ -3360,93 +3627,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblYourlsAPIURL.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.Name" xml:space="preserve">
-    <value>llAdflyLink</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.Name" xml:space="preserve">
-    <value>txtAdflyAPIUID</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.Name" xml:space="preserve">
-    <value>lblAdflyAPIUID</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.Name" xml:space="preserve">
-    <value>txtAdflyAPIKEY</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.Name" xml:space="preserve">
-    <value>lblAdflyAPIKEY</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tpAdFly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpAdFly.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpAdFly.Text" xml:space="preserve">
-    <value>adf.ly</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="llAdflyLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3516,7 +3696,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>API UID:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblAdflyAPIUID.Name" xml:space="preserve">
     <value>lblAdflyAPIUID</value>
   </data>
@@ -3580,153 +3760,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblAdflyAPIKEY.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.Name" xml:space="preserve">
-    <value>txtLnkUAPIKEY</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.Parent" xml:space="preserve">
-    <value>tpLnkU</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.Name" xml:space="preserve">
-    <value>lblLnkUAPIKey</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.Parent" xml:space="preserve">
-    <value>tpLnkU</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tpLnkU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpLnkU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpLnkU.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tpLnkU.Text" xml:space="preserve">
-    <value>LnkU.co</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;tpLnkU.Name" xml:space="preserve">
-    <value>tpLnkU</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpLnkU.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txtLnkUAPIKEY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <data name="txtLnkUAPIKEY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
-  </data>
-  <data name="txtLnkUAPIKEY.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.Name" xml:space="preserve">
-    <value>txtLnkUAPIKEY</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.Parent" xml:space="preserve">
-    <value>tpLnkU</value>
-  </data>
-  <data name="&gt;&gt;txtLnkUAPIKEY.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblLnkUAPIKey.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblLnkUAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblLnkUAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblLnkUAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="lblLnkUAPIKey.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblLnkUAPIKey.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.Name" xml:space="preserve">
-    <value>lblLnkUAPIKey</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.Parent" xml:space="preserve">
-    <value>tpLnkU</value>
-  </data>
-  <data name="&gt;&gt;lblLnkUAPIKey.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.Name" xml:space="preserve">
-    <value>txtCoinURLUUID</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.Parent" xml:space="preserve">
-    <value>tpCoinURL</value>
-  </data>
-  <data name="&gt;&gt;txtCoinURLUUID.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.Name" xml:space="preserve">
-    <value>lblCoinURLUUID</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.Parent" xml:space="preserve">
-    <value>tpCoinURL</value>
-  </data>
-  <data name="&gt;&gt;lblCoinURLUUID.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tpCoinURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpCoinURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpCoinURL.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="tpCoinURL.Text" xml:space="preserve">
-    <value>CoinURL</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
-    <value>tpCoinURL</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpCoinURL.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="txtCoinURLUUID.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
   </data>
@@ -3765,7 +3798,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCoinURLUUID.Text" xml:space="preserve">
     <value>UUID:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCoinURLUUID.Name" xml:space="preserve">
     <value>lblCoinURLUUID</value>
   </data>
@@ -3777,78 +3810,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblCoinURLUUID.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIKey.Name" xml:space="preserve">
-    <value>txtPolrAPIKey</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIKey.Parent" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIKey.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIKey.Name" xml:space="preserve">
-    <value>lblPolrAPIKey</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIKey.Parent" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIKey.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIHostname.Name" xml:space="preserve">
-    <value>txtPolrAPIHostname</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIHostname.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIHostname.Parent" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;txtPolrAPIHostname.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIHostname.Name" xml:space="preserve">
-    <value>lblPolrAPIHostname</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIHostname.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIHostname.Parent" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;lblPolrAPIHostname.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tpPolr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
-  </data>
-  <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="tpPolr.Text" xml:space="preserve">
-    <value>Polr</value>
-  <comment>@Invariant</comment></data>
-  <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
-    <value>tpPolr</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpPolr.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="txtPolrAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 72</value>
@@ -4389,7 +4350,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFTP.Name" xml:space="preserve">
     <value>tpFTP</value>
   </data>
@@ -4752,7 +4713,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpDropbox.Name" xml:space="preserve">
     <value>tpDropbox</value>
   </data>
@@ -5183,7 +5144,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOneDrive.Name" xml:space="preserve">
     <value>tpOneDrive</value>
   </data>
@@ -5399,7 +5360,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleDrive.Name" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
@@ -5693,7 +5654,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
   </data>
@@ -5972,7 +5933,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpCopy.Text" xml:space="preserve">
     <value>Copy</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpCopy.Name" xml:space="preserve">
     <value>tpCopy</value>
   </data>
@@ -6338,7 +6299,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpHubic.Text" xml:space="preserve">
     <value>hubiC</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHubic.Name" xml:space="preserve">
     <value>tpHubic</value>
   </data>
@@ -6713,7 +6674,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAmazonS3.Name" xml:space="preserve">
     <value>tpAmazonS3</value>
   </data>
@@ -6821,7 +6782,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.Name" xml:space="preserve">
     <value>btnAmazonS3BucketNameOpen</value>
   </data>
@@ -6848,7 +6809,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnAmazonS3AccessKeyOpen.Name" xml:space="preserve">
     <value>btnAmazonS3AccessKeyOpen</value>
   </data>
@@ -7259,7 +7220,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMega.Name" xml:space="preserve">
     <value>tpMega</value>
   </data>
@@ -7724,7 +7685,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
@@ -8159,7 +8120,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMediaFire.Name" xml:space="preserve">
     <value>tpMediaFire</value>
   </data>
@@ -8432,7 +8393,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPushbullet.Name" xml:space="preserve">
     <value>tpPushbullet</value>
   </data>
@@ -8666,7 +8627,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSendSpace.Name" xml:space="preserve">
     <value>tpSendSpace</value>
   </data>
@@ -8915,7 +8876,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGe_tt.Text" xml:space="preserve">
     <value>Ge.tt</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGe_tt.Name" xml:space="preserve">
     <value>tpGe_tt</value>
   </data>
@@ -9161,7 +9122,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHostr.Name" xml:space="preserve">
     <value>tpHostr</value>
   </data>
@@ -9368,7 +9329,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMinus.Text" xml:space="preserve">
     <value>Minus</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMinus.Name" xml:space="preserve">
     <value>tpMinus</value>
   </data>
@@ -10007,7 +9968,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
   </data>
@@ -10031,7 +9992,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtJiraIssuePrefix.Name" xml:space="preserve">
     <value>txtJiraIssuePrefix</value>
   </data>
@@ -10175,7 +10136,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtJiraHost.Name" xml:space="preserve">
     <value>txtJiraHost</value>
   </data>
@@ -10289,7 +10250,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpLambda.Name" xml:space="preserve">
     <value>tpLambda</value>
   </data>
@@ -10445,7 +10406,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpUp1.Text" xml:space="preserve">
     <value>Up1</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpUp1.Name" xml:space="preserve">
     <value>tpUp1</value>
   </data>
@@ -11777,7 +11738,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
   </data>
@@ -12218,7 +12179,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
   </data>
@@ -12329,7 +12290,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>Gist</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
   </data>
@@ -12467,7 +12428,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
   </data>
@@ -12623,7 +12584,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
   </data>
@@ -12800,7 +12761,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOneTimeSecret.Name" xml:space="preserve">
     <value>tpOneTimeSecret</value>
   </data>
@@ -13187,7 +13148,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
   </data>
@@ -13355,7 +13316,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="chImgurID.Text" xml:space="preserve">
     <value>ID</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Title</value>
   </data>
@@ -13559,7 +13520,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
   </data>
@@ -13883,7 +13844,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTinyPic.Text" xml:space="preserve">
     <value>TinyPic</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
     <value>tpTinyPic</value>
   </data>
@@ -14159,7 +14120,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
   </data>
@@ -14375,7 +14336,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
   </data>
@@ -15107,7 +15068,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPicasa.Text" xml:space="preserve">
     <value>Picasa</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
     <value>tpPicasa</value>
   </data>
@@ -15194,7 +15155,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="chPicasaID.Width" type="System.Int32, mscorlib">
     <value>135</value>
   </data>
@@ -15347,7 +15308,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
   </data>
@@ -15407,7 +15368,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCheveretoWebsiteTip.Text" xml:space="preserve">
     <value>/api/1/upload</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCheveretoWebsiteTip.Name" xml:space="preserve">
     <value>lblCheveretoWebsiteTip</value>
   </data>
