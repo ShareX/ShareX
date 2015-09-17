@@ -428,6 +428,7 @@ namespace ShareX
             updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             updateChecker.CheckUpdate();
 
+            /*
             // Fallback if GitHub API fails
             if (updateChecker.Status == UpdateStatus.None || updateChecker.Status == UpdateStatus.UpdateCheckFailed)
             {
@@ -436,6 +437,7 @@ namespace ShareX
                 updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                 updateChecker.CheckUpdate();
             }
+            */
 
             return updateChecker;
         }
