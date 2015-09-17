@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+// Credits: https://github.com/DanielMcAssey
+
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;

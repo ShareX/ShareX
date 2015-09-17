@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+// Credits: https://github.com/Upload
+
 using Newtonsoft.Json;
 using Security.Cryptography;
 using ShareX.HelpersLib;

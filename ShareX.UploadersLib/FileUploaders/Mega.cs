@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+// Credits: https://github.com/gpailler
+
 using CG.Web.MegaApiClient;
 using System;
 using System.Collections.Generic;

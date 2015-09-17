@@ -72,7 +72,7 @@ Pushbullet support: https://github.com/BallisticLingonberries
 Lambda support: https://github.com/mstojcevich
 VideoBin support: https://github.com/corey-/
 Up1 support: https://github.com/Upload
-LnkU, CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://github.com/DanielMcAssey
+CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://github.com/DanielMcAssey
 
 {1}:
 

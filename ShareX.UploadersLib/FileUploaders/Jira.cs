@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-// gpailler
+// Credits: https://github.com/gpailler
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
