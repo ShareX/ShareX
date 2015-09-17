@@ -217,4 +217,16 @@ De même, pour l'encodage de qualité constante, vous conserverez simplement le 
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>Installe la source vidéo/audio "screen-capture-recorder" et "virtual-audio-capturer".</value>
   </data>
+  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
+    <value>La valeur par défaut est "full".</value>
+  </data>
+  <data name="cbGIFDither.ToolTip" xml:space="preserve">
+    <value>La valeur par défaut est "sierra2_4a".</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>Utiliser un chemin personnalisé</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Mode de palette:</value>
+  </data>
 </root>

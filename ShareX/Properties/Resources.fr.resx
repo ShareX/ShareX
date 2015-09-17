@@ -402,7 +402,7 @@ Merci de sélectionner un raccourci différent ou quitter l'application en confl
     <value>X: {0}, Y: {1}, Largeur: {2}, Hauteur: {3}</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Vous pouvez ajouter des flux de travail à partir des paramètres des raccourcis clavier...</value>
+    <value>Vous pouvez ajouter des workflows à partir des paramètres des raccourcis clavier...</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
     <value>Vous pouvez glisser et déposer des fichiers dans cette fenêtre.</value>
@@ -463,5 +463,11 @@ Appuyez sur Oui pour ouvrir l'image du presse-papier. Sinon, appuyez sur Non pou
   </data>
   <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
     <value>Éditeur d'image - Comment charger une image ?</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>Pour que les réglages prennent effets, ShareX doit être rouvert à partir de Steam.</value>
+  </data>
+  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
+    <value>Personnalisé</value>
   </data>
 </root>
