@@ -41,10 +41,8 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class AmazonS3 : FileUploader
     {
-        private AmazonS3Settings s3Settings { get; set; }
-
-        private static readonly AmazonS3Region UnknownEndpoint = new AmazonS3Region("Unknown Endpoint");
-        private static readonly AmazonS3Region DreamObjectsEndpoint = new AmazonS3Region("DreamObjects", "dreamobjects", "objects.dreamhost.com");
+        public static readonly AmazonS3Region UnknownEndpoint = new AmazonS3Region("Unknown Endpoint");
+        public static readonly AmazonS3Region DreamObjectsEndpoint = new AmazonS3Region("DreamObjects", "dreamobjects", "objects.dreamhost.com");
 
         private static IList<AmazonS3Region> regionEndpoints = new List<AmazonS3Region>();
 
@@ -62,6 +60,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 return regionEndpoints;
             }
         }
+
+        private AmazonS3Settings s3Settings { get; set; }
 
         public AmazonS3(AmazonS3Settings s3Settings)
         {
