@@ -120,4 +120,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Hakkında</value>
   </data>
+  <data name="lblSteamBuild.Text" xml:space="preserve">
+    <value>Steam sürümü</value>
+  </data>
 </root>

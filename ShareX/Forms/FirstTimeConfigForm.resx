@@ -344,7 +344,7 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FirstTimeConfigForm</value>
   </data>

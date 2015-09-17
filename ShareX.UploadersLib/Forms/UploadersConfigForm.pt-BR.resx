@@ -575,9 +575,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>Chave da API:</value>
   </data>
-  <data name="lblLnkUAPIKey.Text" xml:space="preserve">
-    <value>Chave da API:</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>

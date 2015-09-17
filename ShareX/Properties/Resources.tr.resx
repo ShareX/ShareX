@@ -467,4 +467,7 @@ Devam etmek istediğinizden emin misiniz?</value>
 
 Evet tuşuna basarsanız panonuzdaki resim açılır. Veya hayır tuşuna basarak resim dosyası seçebilirsiniz.</value>
   </data>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>Ayarların geçerli olabilmesi için ShareX in Steam den yeniden açılması gerekmektedir.</value>
+  </data>
 </root>

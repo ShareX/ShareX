@@ -767,9 +767,6 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
     <value>Eposta:</value>
   </data>
-  <data name="lblLnkUAPIKey.Text" xml:space="preserve">
-    <value>API anahtarı:</value>
-  </data>
   <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
     <value>API anahtarı:</value>
   </data>

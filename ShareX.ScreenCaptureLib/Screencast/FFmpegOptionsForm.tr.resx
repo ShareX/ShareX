@@ -222,4 +222,7 @@ Ekrandan kayıt yaparken hızlı seçmeniz tavsiye edilir.</value>
   <data name="lblGIFStatsMode.Text" xml:space="preserve">
     <value>Palet modu:</value>
   </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>Kişisel dosya yolu kullan</value>
+  </data>
 </root>
