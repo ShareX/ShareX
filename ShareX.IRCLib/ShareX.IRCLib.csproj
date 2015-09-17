@@ -78,6 +78,9 @@
     <EmbeddedResource Include="IRCClient\IRCClientForm.fr.resx">
       <DependentUpon>IRCClientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IRCClient\IRCClientForm.pt-BR.resx">
+      <DependentUpon>IRCClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IRCClient\IRCClientForm.resx">
       <DependentUpon>IRCClientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +88,7 @@
       <DependentUpon>IRCClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
+    <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

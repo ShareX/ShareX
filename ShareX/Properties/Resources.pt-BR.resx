@@ -461,4 +461,13 @@ Aperte sim para abrir a imagem da área de transferência. Aperte não para esco
     <value>Você está tentando enviar um arquivo grande.
 Tem certeza de que quer continuar?</value>
   </data>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>Para que as alterações tenham efeito o programa precisa ser reaberto na Steam.</value>
+  </data>
+  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
+    <value>Suporte ao Chrome habilitado.</value>
+  </data>
+  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>Suporte ao Chrome desabilitado.</value>
+  </data>
 </root>

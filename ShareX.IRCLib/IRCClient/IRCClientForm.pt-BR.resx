@@ -117,116 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>Copiar</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Opções de gravações de tela</value>
+    <value>ShareX - Cliente IRC</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Baixar</value>
+  <data name="btnCommandSend.Text" xml:space="preserve">
+    <value>Enviar</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Ajuda...</value>
+  <data name="btnConnect.Text" xml:space="preserve">
+    <value>Conectar</value>
   </data>
-  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Instalar dispositivos de gravação</value>
+  <data name="btnMessageSend.Text" xml:space="preserve">
+    <value>Enviar</value>
   </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>Atualizar</value>
+  <data name="lblChannel.Text" xml:space="preserve">
+    <value>Canal/Nick:</value>
   </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>Testar com CMD</value>
+  <data name="lblCommand.Text" xml:space="preserve">
+    <value>Comando:</value>
   </data>
-  <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Usar comandos customizados</value>
+  <data name="lblMessage.Text" xml:space="preserve">
+    <value>Mensagem:</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codecs</value>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>Configurações</value>
   </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Parâmetros da linha de comando adicionais</value>
+  <data name="tpMessages.Text" xml:space="preserve">
+    <value>Mensagens</value>
   </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Prévia da linha de comando</value>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Saída do IRC</value>
   </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Local do codec FFmpeg</value>
+  <data name="tsmiColorBlack.Text" xml:space="preserve">
+    <value>Preto</value>
   </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Fontes</value>
+  <data name="tsmiColorBlue.Text" xml:space="preserve">
+    <value>Azul</value>
   </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>Taxa de bits:</value>
+  <data name="tsmiColorBrown.Text" xml:space="preserve">
+    <value>Marrom</value>
   </data>
-  <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>Codec de áudio:</value>
+  <data name="tsmiColorCyan.Text" xml:space="preserve">
+    <value>Ciano</value>
   </data>
-  <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>Fonte de áudio:</value>
+  <data name="tsmiColorGreen.Text" xml:space="preserve">
+    <value>Verde</value>
   </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>Codec de vídeo:</value>
+  <data name="tsmiColorGrey.Text" xml:space="preserve">
+    <value>Cinza</value>
   </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>Qualidade:</value>
+  <data name="tsmiColorLightBlue.Text" xml:space="preserve">
+    <value>Azul claro</value>
   </data>
-  <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>Fonte do vídeo:</value>
+  <data name="tsmiColorLightCyan.Text" xml:space="preserve">
+    <value>Ciano claro</value>
   </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Qualidade</value>
+  <data name="tsmiColorLightGreen.Text" xml:space="preserve">
+    <value>Verde claro</value>
   </data>
-  <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>Taxa de bits variável:</value>
+  <data name="tsmiColorLightGrey.Text" xml:space="preserve">
+    <value>Cinza claro</value>
   </data>
-  <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>Pré-definição:</value>
+  <data name="tsmiColorLightRed.Text" xml:space="preserve">
+    <value>Vermelho claro</value>
   </data>
-  <data name="lblXvidQscale.Text" xml:space="preserve">
-    <value>Taxa de bits variável:</value>
+  <data name="tsmiColorOrange.Text" xml:space="preserve">
+    <value>Laranja</value>
   </data>
-  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>Padrão é 128k.</value>
+  <data name="tsmiColorPink.Text" xml:space="preserve">
+    <value>Rosa</value>
   </data>
-  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>Limite de 0-10, aonde 10 é a maior qualidade. 3-6 é um bom limite para experimentar. O padrão é 3.</value>
+  <data name="tsmiColorPurple.Text" xml:space="preserve">
+    <value>Roxo</value>
   </data>
-  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
-    <value>1 sendo o tamanho de arquivo maior e de melhor qualidade e 31 sendo o tamanho de arquivo menor e pior qualidade.</value>
+  <data name="tsmiColors.Text" xml:space="preserve">
+    <value>Cores</value>
   </data>
-  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>Limite é de 0-9, aonde o menor valor equivale a maior qualidade. 0-3 normalmente produz resultados transparentes, 4 (padrão) deveria produzir algo perto da transparência perceptual e 6 produz uma qualidade aceitavel.</value>
+  <data name="tsmiColorWhite.Text" xml:space="preserve">
+    <value>Branco</value>
   </data>
-  <data name="lblGIFStatsMode.Text" xml:space="preserve">
-    <value>Modo da paleta:</value>
+  <data name="tsmiColorYellow.Text" xml:space="preserve">
+    <value>Amarelo</value>
   </data>
-  <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>Instala fonte de vídeo/áudio "screen-capture-recorder" e "virtual-audio-capturer"</value>
+  <data name="tsmiMessageBold.Text" xml:space="preserve">
+    <value>Negrito</value>
   </data>
-  <data name="lblGIFDither.Text" xml:space="preserve">
-    <value>Modo de pontilhado:</value>
+  <data name="tsmiMessageItalic.Text" xml:space="preserve">
+    <value>Itálico</value>
   </data>
-  <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Constant Rate Factor (CRF): A variação da escala do quantizador é 0-51: aonde 0 é sem perdas, 23 é padrão e 51 é o pior possível.
-Um valor mais baixo equivale à melhor qualidade, subjetivamente uma escala sensata seria 18-28.
-Considere 18 sendo visualmente sem perdas ou quase: deveria ter a mesma qualidade ou quase a mesma, mas tecnicamente não é sem perdas.
-A escala é exponencial, então aumentando o valor do CRF em +6 é grosseiramente metade do bitrate enquanto -6 é grosseiramente o dobro do bitrate.
-O uso geral é escolher entre um meio termo entre o valor do CRF e uma qualidade aceitável.
-Se o arquivo de saída ficar de acordo com o esperado, tente um valor mais alto e se ficar pior, escolha um valor menor.</value>
+  <data name="tsmiMessageNormal.Text" xml:space="preserve">
+    <value>Normal</value>
   </data>
-  <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>Um preset é uma coleção de opções que irão fornecer uma certa velocidade de encoding na taxa de compressão. Um preset menor irá fornecer melhor compressão (compressão é qualidade por tamanho de arquivo).
-Isso significa por exemplo, que se você almeja um certo tamanho de arquivo ou um bitrate constante, você irá ter uma melhor qualidade com um preset menor.
-Da mesma forma, para qualidade de encoding constante, você irá simplesmente economizar no bitrate escolhendo um preset menor.</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
-    <value>Usar local personalizado</value>
-  </data>
-  <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>Padrão é sierra2_41.</value>
-  </data>
-  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>Padrão é cheio.</value>
+  <data name="tsmiMessageUnderline.Text" xml:space="preserve">
+    <value>Sublinhado</value>
   </data>
 </root>
