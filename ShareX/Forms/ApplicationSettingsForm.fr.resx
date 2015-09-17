@@ -217,7 +217,7 @@
     <value>Réessayer</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Exécuter ShareX au démarrage de Windows</value>
+    <value>Lancer ShareX au démarrage de Windows</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>Logiciels de mise en ligne de fichiers secondaires</value>
@@ -269,5 +269,11 @@
   </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Support de l'extension pour Chrome...</value>
+  </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>Quand ShareX est ouvert, afficher "Dans une application" dans Steam</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>Intégration</value>
   </data>
 </root>

@@ -199,7 +199,7 @@
     <value>Qualité GIF:</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
-    <value>Hauteur</value>
+    <value>Hauteur:</value>
   </data>
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
     <value>Si le presse-papier contient l'URL d'un fichier alors le télécharger et le mettre en ligne</value>

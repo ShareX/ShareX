@@ -571,7 +571,7 @@
     <value>Image</value>
   </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
-    <value>Flux de travail</value>
+    <value>Workflows</value>
   </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>URL</value>
@@ -592,7 +592,7 @@
     <value>Rectangle</value>
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
-    <value>Flux de travail</value>
+    <value>Workflows</value>
   </data>
   <data name="tsmiAutomate.Text" xml:space="preserve">
     <value>Automatiser...</value>

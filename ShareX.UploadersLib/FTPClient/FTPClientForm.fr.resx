@@ -139,7 +139,7 @@
     <value>Effacer</value>
   </data>
   <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Déconnecter</value>
+    <value>Se déconnecter </value>
   </data>
   <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
     <value>Télécharger</value>

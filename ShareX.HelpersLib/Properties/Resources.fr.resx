@@ -353,7 +353,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Vérifier un Hash</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
-    <value>Teinte: {0:0.0}°, Saturation: {1:0,0}%, Luminosité: {2:0,0}%</value>
+    <value>Teinte: {0:0.0}°, Saturation: {1:0.0}%, Luminosité: {2:0.0}%</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Effets d'image</value>
@@ -514,7 +514,7 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>Enregistrer la miniature de l'image comme fichier</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
-    <value>Sélecteur de couleurs de l'écran</value>
+    <value>Sélecteur de couleur de l'écran</value>
   </data>
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
     <value>Raccourcir l'URL</value>

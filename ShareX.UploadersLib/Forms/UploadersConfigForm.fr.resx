@@ -124,7 +124,7 @@
     <value>Ajouter</value>
   </data>
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
-    <value> Clé d'accès:</value>
+    <value>Clé d'accès:</value>
   </data>
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Ajouter</value>
