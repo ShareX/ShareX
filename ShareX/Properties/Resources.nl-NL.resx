@@ -422,4 +422,52 @@ Klik op "Nee" om de huidige upload te annuleren en het automatisch uploaden uit 
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Links klikken om de link naar het klembord te kopiëren. Rechtsklikken om de link te openen.</value>
   </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
+    <value>Schakel sneltoetsen uit</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
+    <value>Schakel sneltoetsen in</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>Sneltoetsen uitgeschakeld.</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>Sneltoetsen ingeschakeld.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>Om de instellingen toe te passen moet ShareX vanuit Steam heropgestart worden.</value>
+  </data>
+  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
+    <value>Aangepast</value>
+  </data>
+  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
+    <value>Chrome ondersteuning is ingeschakeld.</value>
+  </data>
+  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>Chrome ondersteuning is uitgeschakeld.</value>
+  </data>
+  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
+    <value>Je kunt regio vastleggen starten door een linkse enkele muisklik op het tray icoon</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
+    <value>Afbeeldingsbewerker - Hoe laad je de afbeelding in?</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
+    <value>Je klembord bevat een afbeelding, wil je deze openen met de afbeeldingsbewerker?
+
+Klik op ja om de afbeelding van het klembord te openen. Klik nee om een afbeelding te selecteren.</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
+    <value>Je probeert een groot bestand te uploaden.
+Ben je zeker dat je door wilt gaan?</value>
+  </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>Downloaden</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Vastleggen</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
 </root>

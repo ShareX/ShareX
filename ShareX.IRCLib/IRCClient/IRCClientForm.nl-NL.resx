@@ -117,16 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnNo.Text" xml:space="preserve">
-    <value>Nee</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - IRC programma</value>
   </data>
-  <data name="btnYes.Text" xml:space="preserve">
-    <value>Ja</value>
+  <data name="btnCommandSend.Text" xml:space="preserve">
+    <value>Verstuur</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Toon niet meer tot opnieuw opstarten</value>
+  <data name="btnConnect.Text" xml:space="preserve">
+    <value>Verbind</value>
   </data>
-  <data name="btnOpenChangelog.Text" xml:space="preserve">
-    <value>Update geschiedenis</value>
+  <data name="btnMessageSend.Text" xml:space="preserve">
+    <value>Verstuur</value>
+  </data>
+  <data name="lblChannel.Text" xml:space="preserve">
+    <value>Kanaal/Nick:</value>
+  </data>
+  <data name="lblCommand.Text" xml:space="preserve">
+    <value>Commando:</value>
+  </data>
+  <data name="lblMessage.Text" xml:space="preserve">
+    <value>Bericht:</value>
+  </data>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>Instellingen</value>
+  </data>
+  <data name="tpMessages.Text" xml:space="preserve">
+    <value>Berichten</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>IRC resultaat</value>
+  </data>
+  <data name="tsmiColorBlack.Text" xml:space="preserve">
+    <value>Zwart</value>
+  </data>
+  <data name="tsmiColorBlue.Text" xml:space="preserve">
+    <value>Blauw</value>
+  </data>
+  <data name="tsmiColorBrown.Text" xml:space="preserve">
+    <value>Bruin</value>
+  </data>
+  <data name="tsmiColorCyan.Text" xml:space="preserve">
+    <value>Turqoise</value>
+  </data>
+  <data name="tsmiColorGreen.Text" xml:space="preserve">
+    <value>Groen</value>
+  </data>
+  <data name="tsmiColorGrey.Text" xml:space="preserve">
+    <value>Grijs</value>
+  </data>
+  <data name="tsmiColorLightBlue.Text" xml:space="preserve">
+    <value>Lichtblauw</value>
+  </data>
+  <data name="tsmiColorLightCyan.Text" xml:space="preserve">
+    <value>Lichtturqoise</value>
+  </data>
+  <data name="tsmiColorLightGreen.Text" xml:space="preserve">
+    <value>Lichtgroen</value>
+  </data>
+  <data name="tsmiColorLightGrey.Text" xml:space="preserve">
+    <value>Lichtgrijs</value>
+  </data>
+  <data name="tsmiColorLightRed.Text" xml:space="preserve">
+    <value>Lichtrood</value>
+  </data>
+  <data name="tsmiColorOrange.Text" xml:space="preserve">
+    <value>Oranje</value>
+  </data>
+  <data name="tsmiColorPink.Text" xml:space="preserve">
+    <value>Roze</value>
+  </data>
+  <data name="tsmiColorPurple.Text" xml:space="preserve">
+    <value>Paars</value>
+  </data>
+  <data name="tsmiColors.Text" xml:space="preserve">
+    <value>Kleuren</value>
+  </data>
+  <data name="tsmiColorWhite.Text" xml:space="preserve">
+    <value>Wit</value>
+  </data>
+  <data name="tsmiColorYellow.Text" xml:space="preserve">
+    <value>Geel</value>
+  </data>
+  <data name="tsmiMessageBold.Text" xml:space="preserve">
+    <value>Vet</value>
+  </data>
+  <data name="tsmiMessageItalic.Text" xml:space="preserve">
+    <value>Cursief</value>
+  </data>
+  <data name="tsmiMessageNormal.Text" xml:space="preserve">
+    <value>Normaal</value>
+  </data>
+  <data name="tsmiMessageUnderline.Text" xml:space="preserve">
+    <value>Onderlijn</value>
   </data>
 </root>

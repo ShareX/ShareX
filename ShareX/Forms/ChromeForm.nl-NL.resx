@@ -117,16 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnNo.Text" xml:space="preserve">
-    <value>Nee</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - ondersteuning voor Chrome extensie</value>
   </data>
-  <data name="btnYes.Text" xml:space="preserve">
-    <value>Ja</value>
+  <data name="btnInstallExtension.Text" xml:space="preserve">
+    <value>Installeer de ShareX Chrome extensie</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Toon niet meer tot opnieuw opstarten</value>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>Schakel Chrome ondersteuning in</value>
   </data>
-  <data name="btnOpenChangelog.Text" xml:space="preserve">
-    <value>Update geschiedenis</value>
+  <data name="btnUnregister.Text" xml:space="preserve">
+    <value>Schakel Chrome ondersteuning uit</value>
+  </data>
+  <data name="lbl1.Text" xml:space="preserve">
+    <value>1. Chrome ondersteuning moet ingeschakeld zijn anders kan het niet met ShareX communiceren.</value>
+  </data>
+  <data name="lbl2.Text" xml:space="preserve">
+    <value>2. Installeer de ShareX Chrome extensie vanuit de Chrome web store.</value>
+  </data>
+  <data name="lbl3.Text" xml:space="preserve">
+    <value>3. Rechtsklik op de afbeelding, video, audio of geselecteerde tekst in Chrome en een "Upload met ShareX" knop moet in het context menu zichtbaar zijn.</value>
   </data>
 </root>

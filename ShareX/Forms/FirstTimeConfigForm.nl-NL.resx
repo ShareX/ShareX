@@ -117,16 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnNo.Text" xml:space="preserve">
-    <value>Nee</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="btnYes.Text" xml:space="preserve">
-    <value>Ja</value>
+  <data name="cbRunStartup.Text" xml:space="preserve">
+    <value>Start ShareX als Windows start</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Toon niet meer tot opnieuw opstarten</value>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Toon ShareX in het "Kopiëren naar" menu</value>
   </data>
-  <data name="btnOpenChangelog.Text" xml:space="preserve">
-    <value>Update geschiedenis</value>
+  <data name="cbShellContextMenuButton.Text" xml:space="preserve">
+    <value>Toon een "Upload met ShareX" knop in het Windows Explorer context menu</value>
+  </data>
+  <data name="cbSteamInApp.Text" xml:space="preserve">
+    <value>Toon "In-App" op Steam zolang ShareX open is</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Je kunt deze instellingen vinden in het "Intellingen programma -&gt; Integratie tabblad".</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Eerste configuratie ShareX</value>
   </data>
 </root>

@@ -763,4 +763,28 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   <data name="lblUp1Key.Text" xml:space="preserve">
     <value>API sleutel:</value>
   </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>API sleutel:</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>API url: (bijv. http://example.com/api.php, leeglaten voor polr.me)</value>
+  </data>
+  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
+    <value>API sleutel:</value>
+  </data>
+  <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
+    <value>Compatibiliteit met ownCloud 8.1+</value>
+  </data>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>Gebruik een GIFV link in plaats van GIF</value>
+  </data>
+  <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+    <value>Bijwerken</value>
+  </data>
+  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
+    <value>Leeg uploaders</value>
+  </data>
 </root>

@@ -117,16 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnNo.Text" xml:space="preserve">
-    <value>Nee</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Videominiatuur</value>
   </data>
-  <data name="btnYes.Text" xml:space="preserve">
-    <value>Ja</value>
-  </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Toon niet meer tot opnieuw opstarten</value>
-  </data>
-  <data name="btnOpenChangelog.Text" xml:space="preserve">
-    <value>Update geschiedenis</value>
+  <data name="btnStart.Text" xml:space="preserve">
+    <value>Maak screenshot</value>
   </data>
 </root>
