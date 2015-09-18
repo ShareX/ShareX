@@ -126,4 +126,10 @@
   <data name="btnStart.Text" xml:space="preserve">
     <value>Iniciar</value>
   </data>
+  <data name="tsmiAbort.Text" xml:space="preserve">
+    <value>Abortar</value>
+  </data>
+  <data name="tsmiStart.Text" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
 </root>

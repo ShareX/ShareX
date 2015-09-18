@@ -784,4 +784,7 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
     <value>Hostname da API: (e.g http://example.com/api.php, Deixe em branco para usar polr.me)</value>
   </data>
+  <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
 </root>

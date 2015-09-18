@@ -276,4 +276,10 @@
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Suporte para extensões do Chrome...</value>
   </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>Enquanto o programa estiver aberto, mostrar "Em aplicativo" na Steam</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>Integração</value>
+  </data>
 </root>
