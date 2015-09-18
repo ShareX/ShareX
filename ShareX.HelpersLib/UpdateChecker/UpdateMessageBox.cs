@@ -102,7 +102,7 @@ namespace ShareX.HelpersLib
             DontShow = cbDontShow.Checked;
         }
 
-        private void btnOpenChangelog_MouseClick(object sender, MouseEventArgs e)
+        private void lblViewChangelog_Click(object sender, System.EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_CHANGELOG);
         }

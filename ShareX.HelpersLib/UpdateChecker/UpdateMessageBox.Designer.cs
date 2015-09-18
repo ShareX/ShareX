@@ -33,7 +33,7 @@
             this.btnNo = new ShareX.HelpersLib.BlackStyleButton();
             this.btnYes = new ShareX.HelpersLib.BlackStyleButton();
             this.cbDontShow = new ShareX.HelpersLib.BlackStyleCheckBox();
-            this.btnOpenChangelog = new ShareX.HelpersLib.BlackStyleButton();
+            this.lblViewChangelog = new ShareX.HelpersLib.BlackStyleLabel();
             this.SuspendLayout();
             // 
             // lblText
@@ -66,22 +66,24 @@
             this.cbDontShow.SpaceAfterCheckBox = 3;
             this.cbDontShow.CheckedChanged += new System.EventHandler(this.cbDontShow_CheckedChanged);
             // 
-            // btnOpenChangelog
+            // lblViewChangelog
             // 
-            resources.ApplyResources(this.btnOpenChangelog, "btnOpenChangelog");
-            this.btnOpenChangelog.ForeColor = System.Drawing.Color.White;
-            this.btnOpenChangelog.Name = "btnOpenChangelog";
-            this.btnOpenChangelog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnOpenChangelog_MouseClick);
+            this.lblViewChangelog.BackColor = System.Drawing.Color.Transparent;
+            this.lblViewChangelog.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.lblViewChangelog, "lblViewChangelog");
+            this.lblViewChangelog.ForeColor = System.Drawing.Color.White;
+            this.lblViewChangelog.Name = "lblViewChangelog";
+            this.lblViewChangelog.Click += new System.EventHandler(this.lblViewChangelog_Click);
             // 
             // UpdateMessageBox
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.Controls.Add(this.btnOpenChangelog);
-            this.Controls.Add(this.lblText);
+            this.Controls.Add(this.lblViewChangelog);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
+            this.Controls.Add(this.lblText);
             this.Controls.Add(this.cbDontShow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -97,6 +99,6 @@
         private BlackStyleButton btnNo;
         private BlackStyleLabel lblText;
         private BlackStyleCheckBox cbDontShow;
-        private BlackStyleButton btnOpenChangelog;
+        private BlackStyleLabel lblViewChangelog;
     }
 }

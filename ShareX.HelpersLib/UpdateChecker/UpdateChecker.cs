@@ -60,7 +60,7 @@ namespace ShareX.HelpersLib
 
         public string DownloadURL { get; set; }
 
-        private const bool forceUpdate = true; // For testing purposes
+        private const bool forceUpdate = false; // For testing purposes
 
         public void RefreshStatus()
         {
