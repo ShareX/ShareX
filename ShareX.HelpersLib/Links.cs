@@ -31,7 +31,7 @@ namespace ShareX.HelpersLib
         public const string URL_PROJECT = "https://github.com/ShareX/ShareX";
         public const string URL_ISSUES = URL_PROJECT + "/issues";
         public const string URL_CALLBACK = URL_WEBSITE + "/callback/";
-        public const string URL_VERSION_HISTORY = URL_PROJECT + "/wiki/Changelog";
+        public const string URL_CHANGELOG = URL_PROJECT + "/wiki/Changelog";
         public const string URL_DONATE = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PCNWK2G6ZYJ2E";
         public const string URL_BERK = "https://github.com/Jaex";
         public const string URL_MIKE = "https://github.com/McoreD";

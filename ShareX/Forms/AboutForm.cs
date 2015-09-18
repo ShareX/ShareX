@@ -119,7 +119,7 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
 
         private void lblProductName_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_VERSION_HISTORY);
+            URLHelpers.OpenURL(Links.URL_CHANGELOG);
         }
 
         private void pbSteam_Click(object sender, EventArgs e)
