@@ -756,4 +756,10 @@ Wil je deze downloaden en installeren?</value>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
     <value>Start schermopname (GIF) met actieve scherm regio</value>
   </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>Schakel sneltoetsen uit/in.</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
+    <value>Andere</value>
+  </data>
 </root>

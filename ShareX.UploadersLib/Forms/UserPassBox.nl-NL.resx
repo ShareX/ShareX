@@ -127,7 +127,7 @@
     <value>OK</value>
   </data>
   <data name="lblEmail.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-mail:</value>
   </data>
   <data name="lblFullName.Text" xml:space="preserve">
     <value>Volledige naam:</value>

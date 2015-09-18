@@ -267,4 +267,13 @@
   <data name="tpUploadRetry.Text" xml:space="preserve">
     <value>Opnieuw proberen</value>
   </data>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>Ondersteuning voor Chrome extensie...</value>
+  </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>Toon "In-App" op Steam zolang ShareX open is</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>Integratie</value>
+  </data>
 </root>

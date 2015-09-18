@@ -621,4 +621,19 @@
   <data name="tsmiWebpageCapture.Text" xml:space="preserve">
     <value>Webpagina vastleggen...</value>
   </data>
+  <data name="tsmiIRCClient.Text" xml:space="preserve">
+    <value>IRC programma...</value>
+  </data>
+  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
+    <value>IRC programma...</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>Schakel sneltoetsen uit</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>Videominiatuur...</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>Videominiatuur...</value>
+  </data>
 </root>

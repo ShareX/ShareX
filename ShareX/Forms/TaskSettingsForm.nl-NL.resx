@@ -445,4 +445,19 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="lblGIFEncoding.Text" xml:space="preserve">
     <value>GIF encoder:</value>
   </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>Toon de muis op de opname</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
+    <value>Gebruik de instellingen van de hulpmiddelen in het algemene taakscherm</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>Hulpmiddelen</value>
+  </data>
+  <data name="tpIRCClient.Text" xml:space="preserve">
+    <value>IRC programma</value>
+  </data>
+  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
+    <value>Videominiatuur</value>
+  </data>
 </root>
