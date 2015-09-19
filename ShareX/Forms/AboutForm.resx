@@ -153,7 +153,7 @@
     <value>True</value>
   </data>
   <data name="lblBerk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 144</value>
+    <value>64, 163</value>
   </data>
   <data name="lblBerk.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
@@ -177,7 +177,7 @@
     <value>True</value>
   </data>
   <data name="lblMike.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 168</value>
+    <value>64, 187</value>
   </data>
   <data name="lblMike.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
@@ -202,10 +202,10 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="rtbCredits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 200</value>
+    <value>15, 219</value>
   </data>
   <data name="rtbCredits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 299</value>
+    <value>513, 317</value>
   </data>
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -232,7 +232,7 @@
     <value>16, 66</value>
   </data>
   <data name="rtbShareXInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 48</value>
+    <value>328, 62</value>
   </data>
   <data name="rtbShareXInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -256,7 +256,7 @@
     <value>Top, Right</value>
   </data>
   <data name="cLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>281, -8</value>
+    <value>344, -8</value>
   </data>
   <data name="cLogo.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
@@ -277,7 +277,7 @@
     <value>13</value>
   </data>
   <data name="uclUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 36</value>
+    <value>14, 35</value>
   </data>
   <data name="uclUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 24</value>
@@ -298,7 +298,7 @@
     <value>7</value>
   </data>
   <data name="pbMikeURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 166</value>
+    <value>41, 185</value>
   </data>
   <data name="pbMikeURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -322,7 +322,7 @@
     <value>8</value>
   </data>
   <data name="pbAU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 166</value>
+    <value>17, 185</value>
   </data>
   <data name="pbAU.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -346,7 +346,7 @@
     <value>9</value>
   </data>
   <data name="pbBerkURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 142</value>
+    <value>41, 161</value>
   </data>
   <data name="pbBerkURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -370,7 +370,7 @@
     <value>10</value>
   </data>
   <data name="pbTR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 142</value>
+    <value>17, 161</value>
   </data>
   <data name="pbTR.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -397,7 +397,7 @@
     <value>True</value>
   </data>
   <data name="lblTeam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 117</value>
+    <value>14, 136</value>
   </data>
   <data name="lblTeam.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
@@ -481,7 +481,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>474, 511</value>
+    <value>537, 545</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>490, 550</value>

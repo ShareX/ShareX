@@ -61,6 +61,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Changelog.
+        /// </summary>
+        public static string AboutForm_AboutForm_Changelog {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Changelog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contributors.
         /// </summary>
         public static string AboutForm_AboutForm_Contributors {

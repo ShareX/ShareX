@@ -57,10 +57,7 @@
             // 
             resources.ApplyResources(this.lblProductName, "lblProductName");
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
-            this.lblProductName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblProductName.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Click += new System.EventHandler(this.lblProductName_Click);
             // 
             // lblBerk
             // 

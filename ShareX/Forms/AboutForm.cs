@@ -56,7 +56,10 @@ namespace ShareX
 
             rtbShareXInfo.Text = string.Format(@"{0}: {1}
 {2}: {3}
-{4}: {5}", Resources.AboutForm_AboutForm_Website, Links.URL_WEBSITE, Resources.AboutForm_AboutForm_Project_page, Links.URL_PROJECT, Resources.AboutForm_AboutForm_Issues, Links.URL_ISSUES);
+{4}: {5}
+{6}: {7}",
+Resources.AboutForm_AboutForm_Website, Links.URL_WEBSITE, Resources.AboutForm_AboutForm_Project_page, Links.URL_PROJECT, Resources.AboutForm_AboutForm_Issues, Links.URL_ISSUES,
+Resources.AboutForm_AboutForm_Changelog, Links.URL_CHANGELOG);
 
             rtbCredits.Text = string.Format(@"{0}:
 
@@ -115,11 +118,6 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
         {
             this.ShowActivate();
             cLogo.Start(50);
-        }
-
-        private void lblProductName_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_CHANGELOG);
         }
 
         private void pbSteam_Click(object sender, EventArgs e)

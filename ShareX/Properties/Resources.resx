@@ -796,4 +796,7 @@ Would you like to restart ShareX?</value>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>For settings to take effect ShareX needs to be reopened from Steam.</value>
   </data>
+  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
 </root>
