@@ -256,7 +256,7 @@
     <value>Imagem</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
-    <value>URL encurtada</value>
+    <value>URL encurtado</value>
   </data>
   <data name="tsmiCopyText.Text" xml:space="preserve">
     <value>Texto</value>
@@ -337,7 +337,7 @@
     <value>Upload de pasta...</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
-    <value>Upload da URL...</value>
+    <value>Upload do URL...</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
     <value>Encurtadores de URL</value>
@@ -415,7 +415,7 @@
     <value>Janela</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>Upload da URL...</value>
+    <value>Upload do URL...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Teste de monitor...</value>

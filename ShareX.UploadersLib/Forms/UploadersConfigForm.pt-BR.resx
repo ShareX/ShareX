@@ -297,7 +297,7 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
     <value>Criar link compartilhável</value>
   </data>
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>URL Direto</value>
+    <value>URL direto</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Criar URL compartilhável:</value>
@@ -465,7 +465,7 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
     <value>Tipo de URL:</value>
   </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>URL de Remoção:</value>
+    <value>URL de remoção:</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>Senha:</value>
