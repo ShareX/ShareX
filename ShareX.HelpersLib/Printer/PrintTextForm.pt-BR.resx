@@ -124,7 +124,7 @@
     <value>Cancelar</value>
   </data>
   <data name="btnChangeFont.Text" xml:space="preserve">
-    <value>Mudar fonte...</value>
+    <value>Alterar fonte...</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
     <value>Imprimir...</value>
