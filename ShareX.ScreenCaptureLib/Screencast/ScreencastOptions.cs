@@ -174,6 +174,7 @@ namespace ShareX.ScreenCaptureLib
                     case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
                         args.AppendFormat("-deadline {0} ", "realtime");
                         args.AppendFormat("-b:v {0}k ", FFmpeg.VPx_bitrate);
+                        args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // -pix_fmt yuv420p required otherwise causing issues in Chrome related to WebM transparency support
                         break;
                     case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
                         args.AppendFormat("-qscale:v {0} ", FFmpeg.XviD_qscale);
