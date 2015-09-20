@@ -108,6 +108,12 @@ AWSSDK: http://aws.amazon.com/sdk-for-net/
 CLR Security: http://clrsecurity.codeplex.com
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 
+Trailer music credits:
+Track Name: Au5 - Inside (feat. Danyka Nadeau)
+Video Link: https://youtu.be/WrkyT-6ivjc
+Buy Link: http://music.monstercat.com/track/inside-feat-danyka-nadeau
+Label Channel: http://www.YouTube.com/Monstercat
+
 Running from:
 {3}
 
