@@ -719,6 +719,8 @@ namespace ShareX
 
         public void UseCommandLineArgs(List<CLICommand> commands)
         {
+            TaskSettings taskSettings = FindCLITask(commands);
+
             foreach (CLICommand command in commands)
             {
                 DebugHelper.WriteLine("CommandLine: " + command.Command);
@@ -730,11 +732,11 @@ namespace ShareX
 
                 if (URLHelpers.IsValidURLRegex(command.Command))
                 {
-                    UploadManager.DownloadAndUploadFile(command.Command);
+                    UploadManager.DownloadAndUploadFile(command.Command, taskSettings);
                 }
                 else
                 {
-                    UploadManager.UploadFile(command.Command);
+                    UploadManager.UploadFile(command.Command, taskSettings);
                 }
             }
         }
@@ -743,7 +745,7 @@ namespace ShareX
         {
             foreach (HotkeyType job in Helpers.GetEnums<HotkeyType>())
             {
-                if (command.Command.Equals(job.ToString(), StringComparison.InvariantCultureIgnoreCase))
+                if (command.CheckCommand(job.ToString()))
                 {
                     ExecuteJob(job);
                     return true;
@@ -755,7 +757,7 @@ namespace ShareX
 
         private bool CheckCLIWorkflow(CLICommand command)
         {
-            if (command.Command.Equals("workflow", StringComparison.InvariantCultureIgnoreCase) && !string.IsNullOrEmpty(command.Parameter) && Program.HotkeysConfig != null)
+            if (Program.HotkeysConfig != null && command.CheckCommand("workflow") && !string.IsNullOrEmpty(command.Parameter))
             {
                 foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
                 {
@@ -771,6 +773,27 @@ namespace ShareX
             }
 
             return false;
+        }
+
+        private TaskSettings FindCLITask(List<CLICommand> commands)
+        {
+            if (Program.HotkeysConfig != null)
+            {
+                CLICommand command = commands.FirstOrDefault(x => x.CheckCommand("task") && !string.IsNullOrEmpty(x.Parameter));
+
+                if (command != null)
+                {
+                    foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
+                    {
+                        if (command.Parameter == hotkeySetting.TaskSettings.ToString())
+                        {
+                            return hotkeySetting.TaskSettings;
+                        }
+                    }
+                }
+            }
+
+            return null;
         }
 
         private WorkerTask[] GetCurrentTasks()

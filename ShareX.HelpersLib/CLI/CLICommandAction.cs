@@ -46,7 +46,7 @@ namespace ShareX.HelpersLib
             {
                 foreach (string text in Commands)
                 {
-                    if (command.Command.Equals(text, StringComparison.InvariantCultureIgnoreCase))
+                    if (command.CheckCommand(text))
                     {
                         ExecuteAction(command.Parameter);
                         return true;
