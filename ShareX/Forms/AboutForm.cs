@@ -228,27 +228,34 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
 
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
-            if (!isEasterEggStarted)
+            if (e.Button == MouseButtons.Middle)
             {
-                isPaused = !isPaused;
-
-                clickCount++;
-
-                if (clickCount >= 10)
-                {
-                    isEasterEggStarted = true;
-                    cLogo.Stop();
-                    RunEasterEgg();
-                }
+                CompanionCubeManager.Toggle();
             }
             else
             {
-                if (bounceTimer != null)
+                if (!isEasterEggStarted)
                 {
-                    bounceTimer.Stop();
-                }
+                    isPaused = !isPaused;
 
-                isEasterEggStarted = false;
+                    clickCount++;
+
+                    if (clickCount >= 10)
+                    {
+                        isEasterEggStarted = true;
+                        cLogo.Stop();
+                        RunEasterEgg();
+                    }
+                }
+                else
+                {
+                    if (bounceTimer != null)
+                    {
+                        bounceTimer.Stop();
+                    }
+
+                    isEasterEggStarted = false;
+                }
             }
         }
 
