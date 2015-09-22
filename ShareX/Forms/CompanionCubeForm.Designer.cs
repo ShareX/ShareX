@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.DoubleBuffered = true;
@@ -44,7 +44,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CompanionCubeForm";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CompanionCubeForm_FormClosing);
             this.Load += new System.EventHandler(this.CompanionCubeForm_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CompanionCubeForm_MouseClick);
             this.ResumeLayout(false);
 
         }

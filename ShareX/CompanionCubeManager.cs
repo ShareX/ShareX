@@ -38,7 +38,7 @@ namespace ShareX
     public static class CompanionCubeManager
     {
         public static bool IsActive { get; set; }
-        public static int CubeCount { get; } = 100;
+        public static int CubeCount { get; } = 50;
 
         private static List<CompanionCubeForm> cubes;
         private static Timer timer;
@@ -50,7 +50,7 @@ namespace ShareX
         {
             cubes = new List<CompanionCubeForm>();
             timer = new Timer();
-            timer.Interval = 20;
+            timer.Interval = 10;
             timer.Tick += Timer_Tick;
         }
 
@@ -64,16 +64,39 @@ namespace ShareX
 
                 for (int i = 0; i < CubeCount; i++)
                 {
-                    CompanionCubeForm cube = new CompanionCubeForm(MathHelpers.Random(100, 500), MathHelpers.Random(50, 100));
-                    cube.Location = new Point(MathHelpers.Random(screen.X, screen.X + screen.Width - cube.CubeSize),
+                    CompanionCubeForm cube = new CompanionCubeForm(MathHelpers.Random(200, 500), MathHelpers.Random(50, 100));
+                    cube.CubeLocation = new Point(MathHelpers.Random(screen.X, screen.X + screen.Width - cube.CubeSize),
                         MathHelpers.Random(screen.Y - cube.CubeSize - 500, screen.Y - cube.CubeSize));
                     cube.Show();
-                    Console.WriteLine(cube.Location);
                     cubes.Add(cube);
                 }
 
                 startTime = Stopwatch.StartNew();
                 timer.Start();
+            }
+            else
+            {
+                Stop();
+            }
+        }
+
+        public static void Stop()
+        {
+            if (IsActive)
+            {
+                timer.Stop();
+
+                foreach (CompanionCubeForm cube in cubes)
+                {
+                    if (cube != null && cube.IsActive)
+                    {
+                        cube.Close();
+                    }
+                }
+
+                cubes.Clear();
+
+                IsActive = false;
             }
         }
 
@@ -84,30 +107,32 @@ namespace ShareX
 
             foreach (CompanionCubeForm cube in cubes)
             {
+                if (!cube.IsActive)
+                {
+                    continue;
+                }
+
                 int velocityY = (int)(cube.Gravity * elapsed.TotalSeconds);
-                Point newLoc = new Point(cube.Location.X, cube.Location.Y + velocityY);
+                Point newLoc = new Point(cube.CubeLocation.X, cube.CubeLocation.Y + velocityY);
                 Rectangle newRect = new Rectangle(newLoc, new Size(cube.CubeSize, cube.CubeSize));
                 bool intersect = false;
 
                 foreach (CompanionCubeForm cube2 in cubes)
                 {
-                    if (cube != cube2 && newRect.IntersectsWith(cube2.CubeRectangle))
+                    if (cube != cube2 && cube2.IsActive && (newRect.IntersectsWith(cube2.CubeRectangle) || cube.CubeRectangle.IntersectsWith(cube2.CubeRectangle)))
                     {
                         intersect = true;
-                        newLoc = new Point(cube.Location.X, cube2.Location.Y - cube.CubeSize);
+                        newLoc = new Point(cube.CubeLocation.X, cube2.CubeLocation.Y - cube.CubeSize);
                         break;
                     }
                 }
 
                 if (!intersect && newLoc.Y + cube.CubeSize > screen.Y + screen.Height)
                 {
-                    newLoc = new Point(cube.Location.X, screen.Height - cube.CubeSize);
+                    newLoc = new Point(cube.CubeLocation.X, screen.Height - cube.CubeSize);
                 }
 
-                if (cube.Location != newLoc)
-                {
-                    cube.Location = newLoc;
-                }
+                cube.CubeLocation = newLoc;
             }
         }
     }

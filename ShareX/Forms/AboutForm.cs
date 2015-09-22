@@ -146,6 +146,13 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
             URLHelpers.OpenURL(e.LinkText);
         }
 
+        private void AboutForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+#if STEAM
+            CompanionCubeManager.Stop();
+#endif
+        }
+
         #region Animation
 
         private const int w = 200;
@@ -228,34 +235,35 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
 
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
+#if STEAM
             if (e.Button == MouseButtons.Middle)
             {
                 CompanionCubeManager.Toggle();
+                return;
+            }
+#endif
+
+            if (!isEasterEggStarted)
+            {
+                isPaused = !isPaused;
+
+                clickCount++;
+
+                if (clickCount >= 10)
+                {
+                    isEasterEggStarted = true;
+                    cLogo.Stop();
+                    RunEasterEgg();
+                }
             }
             else
             {
-                if (!isEasterEggStarted)
+                if (bounceTimer != null)
                 {
-                    isPaused = !isPaused;
-
-                    clickCount++;
-
-                    if (clickCount >= 10)
-                    {
-                        isEasterEggStarted = true;
-                        cLogo.Stop();
-                        RunEasterEgg();
-                    }
+                    bounceTimer.Stop();
                 }
-                else
-                {
-                    if (bounceTimer != null)
-                    {
-                        bounceTimer.Stop();
-                    }
 
-                    isEasterEggStarted = false;
-                }
+                isEasterEggStarted = false;
             }
         }
 
