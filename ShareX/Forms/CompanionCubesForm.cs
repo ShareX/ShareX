@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,51 +35,18 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class CompanionCubeForm : Form
+    public class CompanionCubesForm : LayeredForm
     {
-        public bool IsActive { get; set; } = true;
-
-        private Point cubeLocation;
-
-        public Point CubeLocation
+        public CompanionCubesForm()
         {
-            get
-            {
-                return cubeLocation;
-            }
-            set
-            {
-                cubeLocation = value;
-                Location = cubeLocation;
-            }
+            StartPosition = FormStartPosition.Manual;
+            Bounds = CaptureHelpers.GetScreenBounds();
+            Shown += CompanionCubesForm_Shown;
         }
 
-        public int CubeSize { get; private set; }
-        public Rectangle CubeRectangle => new Rectangle(CubeLocation, new Size(CubeSize, CubeSize));
-        public int Gravity { get; private set; }
-
-        public CompanionCubeForm(int gravity, int size)
+        private void CompanionCubesForm_Shown(object sender, EventArgs e)
         {
-            CubeSize = size;
-            Gravity = gravity;
-            InitializeComponent();
-            BackgroundImage = (Bitmap)ImageHelpers.ResizeImage(Resources.CompanionCube, CubeSize, CubeSize);
-        }
-
-        private void CompanionCubeForm_Load(object sender, EventArgs e)
-        {
-            Size = new Size(CubeSize, CubeSize);
-        }
-
-        private void CompanionCubeForm_MouseClick(object sender, MouseEventArgs e)
-        {
-            IsActive = false;
-            Close();
-        }
-
-        private void CompanionCubeForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            IsActive = false;
+            this.ShowActivate();
         }
     }
 }

@@ -148,9 +148,7 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
 
         private void AboutForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-#if STEAM
             CompanionCubeManager.Stop();
-#endif
         }
 
         #region Animation
@@ -235,13 +233,11 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
 
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
-#if STEAM
             if (e.Button == MouseButtons.Middle)
             {
                 CompanionCubeManager.Toggle();
                 return;
             }
-#endif
 
             if (!isEasterEggStarted)
             {

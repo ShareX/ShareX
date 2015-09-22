@@ -97,6 +97,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanionCube.cs" />
     <Compile Include="CompanionCubeManager.cs" />
     <Compile Include="Controls\BeforeUploadControl.cs">
       <SubType>UserControl</SubType>
@@ -122,11 +123,8 @@
     <Compile Include="Forms\ClipboardFormatForm.Designer.cs">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CompanionCubeForm.cs">
+    <Compile Include="Forms\CompanionCubesForm.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CompanionCubeForm.Designer.cs">
-      <DependentUpon>CompanionCubeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EncoderProgramForm.cs">
       <SubType>Form</SubType>
@@ -546,9 +544,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.zh-CN.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CompanionCubeForm.resx">
-      <DependentUpon>CompanionCubeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EncoderProgramForm.de.resx">
       <DependentUpon>EncoderProgramForm.cs</DependentUpon>
