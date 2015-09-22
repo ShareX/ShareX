@@ -37,6 +37,7 @@ namespace ShareX
         public Point Location { get; set; }
         public Size Size { get; set; }
         public Rectangle Rectangle => new Rectangle(Location, Size);
+        public Point Center => new Point(Location.X + (Size.Width / 2), Location.Y + (Size.Height / 2));
         public int Speed { get; set; }
 
         public CompanionCube(int size, int speed)

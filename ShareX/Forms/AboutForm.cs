@@ -235,8 +235,14 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
         {
             if (e.Button == MouseButtons.Middle)
             {
+                cLogo.Stop();
                 CompanionCubeManager.Toggle();
                 return;
+            }
+
+            if (CompanionCubeManager.IsActive)
+            {
+                CompanionCubeManager.Stop();
             }
 
             if (!isEasterEggStarted)

@@ -76,7 +76,7 @@ namespace ShareX
 
                 for (int i = 0; i < CubeCount; i++)
                 {
-                    CompanionCube cube = new CompanionCube(MathHelpers.Random(50, 100), MathHelpers.Random(200, 500));
+                    CompanionCube cube = new CompanionCube(MathHelpers.Random(50, 100), MathHelpers.Random(250, 500));
                     cube.Location = new Point(MathHelpers.Random(screen.X, screen.X + screen.Width - cube.Size.Width),
                         MathHelpers.Random(screen.Y - cube.Size.Height - 500, screen.Y - cube.Size.Height));
                     Cubes.Add(cube);
@@ -131,21 +131,18 @@ namespace ShareX
             TimeSpan elapsed = startTime.Elapsed - previousElapsed;
             previousElapsed = startTime.Elapsed;
 
-            foreach (CompanionCube cube in Cubes)
-            {
-                if (!cube.IsActive)
-                {
-                    continue;
-                }
+            IEnumerable<CompanionCube> cubes = Cubes.Where(x => x.IsActive).OrderBy(x => x.Rectangle.Bottom);
 
+            foreach (CompanionCube cube in cubes)
+            {
                 int velocityY = (int)(cube.Speed * elapsed.TotalSeconds);
                 Point newLocation = new Point(cube.Location.X, cube.Location.Y + velocityY);
                 Rectangle newRectangle = new Rectangle(newLocation, cube.Size);
                 bool intersect = false;
 
-                foreach (CompanionCube cube2 in Cubes)
+                foreach (CompanionCube cube2 in cubes)
                 {
-                    if (cube != cube2 && cube2.IsActive && (newRectangle.IntersectsWith(cube2.Rectangle) || cube.Rectangle.IntersectsWith(cube2.Rectangle)))
+                    if (cube != cube2 && (newRectangle.IntersectsWith(cube2.Rectangle) || cube.Rectangle.IntersectsWith(cube2.Rectangle)))
                     {
                         intersect = true;
                         newLocation = new Point(cube.Location.X, cube2.Location.Y - cube.Size.Height);
