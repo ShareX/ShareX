@@ -69,6 +69,7 @@ namespace ShareX
 
                 if (cubesForm != null) cubesForm.Close();
                 cubesForm = new CompanionCubesForm();
+                cubesForm.MouseClick += CubesForm_MouseClick;
                 cubesForm.Show();
 
                 Cubes = new List<CompanionCube>(CubeCount);
@@ -77,7 +78,7 @@ namespace ShareX
                 {
                     CompanionCube cube = new CompanionCube(MathHelpers.Random(50, 100), MathHelpers.Random(200, 500));
                     cube.Location = new Point(MathHelpers.Random(screen.X, screen.X + screen.Width - cube.Size.Width),
-                        MathHelpers.Random(screen.Y - cube.Size.Height, screen.Y - cube.Size.Height + 500));
+                        MathHelpers.Random(screen.Y - cube.Size.Height - 500, screen.Y - cube.Size.Height));
                     Cubes.Add(cube);
                 }
 
@@ -88,6 +89,16 @@ namespace ShareX
                 timer.Interval = 10;
                 timer.Tick += Timer_Tick;
                 timer.Start();
+            }
+        }
+
+        private static void CubesForm_MouseClick(object sender, MouseEventArgs e)
+        {
+            CompanionCube cube = Cubes.FirstOrDefault(x => x.Rectangle.Contains(e.Location));
+
+            if (cube != null)
+            {
+                cube.IsActive = false;
             }
         }
 
@@ -163,7 +174,10 @@ namespace ShareX
             {
                 foreach (CompanionCube cube in Cubes)
                 {
-                    g.DrawImage(companionCube, new Rectangle(CaptureHelpers.ScreenToClient(cube.Location), cube.Size));
+                    if (cube.IsActive)
+                    {
+                        g.DrawImage(companionCube, new Rectangle(CaptureHelpers.ScreenToClient(cube.Location), cube.Size));
+                    }
                 }
 
                 cubesForm.SelectBitmap(surface);
