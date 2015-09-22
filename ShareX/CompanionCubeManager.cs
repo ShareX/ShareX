@@ -94,9 +94,7 @@ namespace ShareX
 
         private static void CubesForm_MouseClick(object sender, MouseEventArgs e)
         {
-            CompanionCube cube = Cubes.FirstOrDefault(x => x.Rectangle.Contains(e.Location));
-
-            if (cube != null)
+            foreach (CompanionCube cube in Cubes.Where(x => x.Rectangle.Contains(e.Location)))
             {
                 cube.IsActive = false;
             }
