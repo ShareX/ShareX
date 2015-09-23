@@ -1763,6 +1763,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto increment by base {n} using alphanumeric (1 &lt; n &lt; 63).
+        /// </summary>
+        internal static string ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto increment hexadecimal. 0 pad left using {n}.
         /// </summary>
         internal static string ReplCodeMenuEntry_ix_Auto_increment_hexadecimal {

@@ -63,6 +63,7 @@ namespace ShareX.HelpersLib
         public static readonly ReplCodeMenuEntry i = new ReplCodeMenuEntry("i", Resources.ReplCodeMenuEntry_i_Auto_increment_number, Resources.ReplCodeMenuCategory_Incremental);
         public static readonly ReplCodeMenuEntry ia = new ReplCodeMenuEntry("ia", Resources.ReplCodeMenuEntry_ia_Auto_increment_alphanumeric, Resources.ReplCodeMenuCategory_Incremental);
         public static readonly ReplCodeMenuEntry iAa = new ReplCodeMenuEntry("iAa", Resources.ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all, Resources.ReplCodeMenuCategory_Incremental);
+        public static readonly ReplCodeMenuEntry ib = new ReplCodeMenuEntry("ib", Resources.ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric, Resources.ReplCodeMenuCategory_Incremental);
         public static readonly ReplCodeMenuEntry ix = new ReplCodeMenuEntry("ix", Resources.ReplCodeMenuEntry_ix_Auto_increment_hexadecimal, Resources.ReplCodeMenuCategory_Incremental);
         public static readonly ReplCodeMenuEntry rn = new ReplCodeMenuEntry("rn", Resources.ReplCodeMenuEntry_rn_Random_number_0_to_9, Resources.ReplCodeMenuCategory_Random);
         public static readonly ReplCodeMenuEntry ra = new ReplCodeMenuEntry("ra", Resources.ReplCodeMenuEntry_ra_Random_alphanumeric_char, Resources.ReplCodeMenuCategory_Random);
@@ -90,7 +91,7 @@ namespace ShareX.HelpersLib
         public NameParserType Type { get; private set; }
         public int MaxNameLength { get; set; }
         public int MaxTitleLength { get; set; }
-        public int AutoIncrementNumber { get; set; } // %i, %ia, %iAa, %ix
+        public int AutoIncrementNumber { get; set; } // %i, %ia, %ib, %iAa, %ix
         public Image Picture { get; set; } // %width, %height
         public string WindowText { get; set; } // %t
         public string ProcessName { get; set; } // %pn
@@ -181,6 +182,8 @@ namespace ShareX.HelpersLib
             sb.Replace(ReplCodeMenuEntry.unix.ToPrefixString(), DateTime.UtcNow.ToUnix().ToString());
 
             if (sb.ToString().Contains(ReplCodeMenuEntry.i.ToPrefixString())
+                || sb.ToString().Contains(ReplCodeMenuEntry.ib.ToPrefixString())
+                || sb.ToString().Contains(ReplCodeMenuEntry.ib.ToPrefixString().Replace('b', 'B'))
                 || sb.ToString().Contains(ReplCodeMenuEntry.iAa.ToPrefixString())
                 || sb.ToString().Contains(ReplCodeMenuEntry.iAa.ToPrefixString().Replace("Aa", "aA"))
                 || sb.ToString().Contains(ReplCodeMenuEntry.ia.ToPrefixString())
@@ -189,6 +192,22 @@ namespace ShareX.HelpersLib
                 || sb.ToString().Contains(ReplCodeMenuEntry.ix.ToPrefixString().Replace('x', 'X')))
             {
                 AutoIncrementNumber++;
+
+                // Base
+                try
+                {
+                    foreach (Tuple<string, int[]> entry in ListEntryWithValues(sb.ToString(), ReplCodeMenuEntry.ib.ToPrefixString(), 2))
+                    {
+                        sb.Replace(entry.Item1, Helpers.AddZeroes(AutoIncrementNumber.ToBase(entry.Item2[0], Helpers.AlphanumericInverse), entry.Item2[1]));
+                    }
+                    foreach (Tuple<string, int[]> entry in ListEntryWithValues(sb.ToString(), ReplCodeMenuEntry.ib.ToPrefixString().Replace('b', 'B'), 2))
+                    {
+                        sb.Replace(entry.Item1, Helpers.AddZeroes(AutoIncrementNumber.ToBase(entry.Item2[0], Helpers.Alphanumeric), entry.Item2[1]));
+                    }
+                }
+                catch
+                {
+                }
 
                 // Alphanumeric Dual Case (Base 62)
                 foreach (Tuple<string, int> entry in ListEntryWithValue(sb.ToString(), ReplCodeMenuEntry.iAa.ToPrefixString()))
@@ -301,15 +320,41 @@ namespace ShareX.HelpersLib
             return result;
         }
 
+        private IEnumerable<Tuple<string, string[]>> ListEntryWithArguments(string text, string entry, int elements)
+        {
+            foreach (Tuple<string, string> o in text.ForEachBetween(entry + "{", "}"))
+            {
+                string[] s = o.Item2.Split(',');
+                if (elements > s.Length)
+                {
+                    Array.Resize(ref s, elements);
+                }
+                yield return new Tuple<string, string[]>(o.Item1, s);
+            }
+        }
+
+        private IEnumerable<Tuple<string, int[]>> ListEntryWithValues(string text, string entry, int elements)
+        {
+            foreach (Tuple<string, string[]> o in ListEntryWithArguments(text, entry, elements))
+            {
+                int[] a = new int[o.Item2.Length];
+                for (int i = o.Item2.Length - 1; i >= 0; --i)
+                {
+                    int n = 0;
+                    if (int.TryParse(o.Item2[i], out n))
+                    {
+                        a[i] = n;
+                    }
+                }
+                yield return new Tuple<string, int[]>(o.Item1, a);
+            }
+        }
+
         private IEnumerable<Tuple<string, int>> ListEntryWithValue(string text, string entry)
         {
-            foreach (Tuple<string, string> s in text.ForEachBetween(entry + "{", "}"))
+            foreach (Tuple<string, int[]> o in ListEntryWithValues(text, entry, 1))
             {
-                int n = 0;
-                if (int.TryParse(s.Item2, out n))
-                {
-                    yield return new Tuple<string, int>(s.Item1, n);
-                }
+                yield return new Tuple<string, int>(o.Item1, o.Item2[0]);
             }
         }
     }

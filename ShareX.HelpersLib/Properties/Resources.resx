@@ -796,6 +796,9 @@ Would you like to download and install it?</value>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
     <value>Auto increment alphanumeric case-insensitive. 0 pad left using {n}</value>
   </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>Auto increment by base {n} using alphanumeric (1 &lt; n &lt; 63)</value>
+  </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Random GUID</value>
   </data>
