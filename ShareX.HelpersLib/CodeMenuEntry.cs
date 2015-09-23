@@ -29,16 +29,18 @@ namespace ShareX.HelpersLib
 {
     public abstract class CodeMenuEntry
     {
-        protected readonly String _value, _description;
+        protected readonly String _value, _description, _category;
 
-        public CodeMenuEntry(string value, string description)
+        public CodeMenuEntry(string value, string description, string category = default(string))
         {
             _value = value;
             _description = description;
+            _category = category;
         }
 
         public String Value { get { return _value; } }
         public String Description { get { return _description; } }
+        public String Category { get { return _category; } }
 
         public abstract string ToPrefixString();
     }
