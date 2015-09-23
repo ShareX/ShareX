@@ -54,6 +54,8 @@ namespace ShareX.HelpersLib
         public const string AlphabetCapital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // 65 ... 90
         public const string Alphabet = "abcdefghijklmnopqrstuvwxyz"; // 97 ... 122
         public const string Alphanumeric = Numbers + AlphabetCapital + Alphabet;
+        public const string AlphanumericInverse = Numbers + Alphabet + AlphabetCapital;
+        public const string Hexadecimal = Numbers + "ABCDEF";
         public const string URLCharacters = Alphanumeric + "-._~"; // 45 46 95 126
         public const string URLPathCharacters = URLCharacters + "/"; // 47
         public const string ValidURLCharacters = URLPathCharacters + ":?#[]@!$&'()*+,;= ";
@@ -138,9 +140,14 @@ namespace ShareX.HelpersLib
             return EDataType.File;
         }
 
+        public static string AddZeroes(string input, int digits = 2)
+        {
+            return input.PadLeft(digits, '0');
+        }
+
         public static string AddZeroes(int number, int digits = 2)
         {
-            return number.ToString().PadLeft(digits, '0');
+            return AddZeroes(number.ToString(), digits);
         }
 
         public static string HourTo12(int hour)

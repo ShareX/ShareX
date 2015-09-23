@@ -34,8 +34,8 @@ namespace ShareX.HelpersLib
 {
     public class ReplCodeMenuEntry : CodeMenuEntry
     {
-        public ReplCodeMenuEntry(string value, string description)
-            : base(value, description)
+        public ReplCodeMenuEntry(string value, string description, string category = default(string))
+            : base(value, description, category)
         {
         }
 
@@ -44,30 +44,35 @@ namespace ShareX.HelpersLib
             return '%' + _value;
         }
 
-        public static readonly ReplCodeMenuEntry t = new ReplCodeMenuEntry("t", Resources.ReplCodeMenuEntry_t_Title_of_active_window);
-        public static readonly ReplCodeMenuEntry pn = new ReplCodeMenuEntry("pn", Resources.ReplCodeMenuEntry_pn_Process_name_of_active_window);
-        public static readonly ReplCodeMenuEntry y = new ReplCodeMenuEntry("y", Resources.ReplCodeMenuEntry_y_Current_year);
-        public static readonly ReplCodeMenuEntry yy = new ReplCodeMenuEntry("yy", Resources.ReplCodeMenuEntry_yy_Current_year__2_digits_);
-        public static readonly ReplCodeMenuEntry mo = new ReplCodeMenuEntry("mo", Resources.ReplCodeMenuEntry_mo_Current_month);
-        public static readonly ReplCodeMenuEntry mon = new ReplCodeMenuEntry("mon", Resources.ReplCodeMenuEntry_mon_Current_month_name__Local_language_);
-        public static readonly ReplCodeMenuEntry mon2 = new ReplCodeMenuEntry("mon2", Resources.ReplCodeMenuEntry_mon2_Current_month_name__English_);
-        public static readonly ReplCodeMenuEntry d = new ReplCodeMenuEntry("d", Resources.ReplCodeMenuEntry_d_Current_day);
-        public static readonly ReplCodeMenuEntry h = new ReplCodeMenuEntry("h", Resources.ReplCodeMenuEntry_h_Current_hour);
-        public static readonly ReplCodeMenuEntry mi = new ReplCodeMenuEntry("mi", Resources.ReplCodeMenuEntry_mi_Current_minute);
-        public static readonly ReplCodeMenuEntry s = new ReplCodeMenuEntry("s", Resources.ReplCodeMenuEntry_s_Current_second);
-        public static readonly ReplCodeMenuEntry ms = new ReplCodeMenuEntry("ms", Resources.ReplCodeMenuEntry_ms_Current_millisecond);
-        public static readonly ReplCodeMenuEntry pm = new ReplCodeMenuEntry("pm", Resources.ReplCodeMenuEntry_pm_Gets_AM_PM);
-        public static readonly ReplCodeMenuEntry w = new ReplCodeMenuEntry("w", Resources.ReplCodeMenuEntry_w_Current_week_name__Local_language_);
-        public static readonly ReplCodeMenuEntry w2 = new ReplCodeMenuEntry("w2", Resources.ReplCodeMenuEntry_w2_Current_week_name__English_);
-        public static readonly ReplCodeMenuEntry unix = new ReplCodeMenuEntry("unix", Resources.ReplCodeMenuEntry_unix_Unix_timestamp);
-        public static readonly ReplCodeMenuEntry i = new ReplCodeMenuEntry("i", Resources.ReplCodeMenuEntry_i_Auto_increment_number);
-        public static readonly ReplCodeMenuEntry rn = new ReplCodeMenuEntry("rn", Resources.ReplCodeMenuEntry_rn_Random_number_0_to_9);
-        public static readonly ReplCodeMenuEntry ra = new ReplCodeMenuEntry("ra", Resources.ReplCodeMenuEntry_ra_Random_alphanumeric_char);
-        public static readonly ReplCodeMenuEntry width = new ReplCodeMenuEntry("width", Resources.ReplCodeMenuEntry_width_Gets_image_width);
-        public static readonly ReplCodeMenuEntry height = new ReplCodeMenuEntry("height", Resources.ReplCodeMenuEntry_height_Gets_image_height);
-        public static readonly ReplCodeMenuEntry un = new ReplCodeMenuEntry("un", Resources.ReplCodeMenuEntry_un_User_name);
-        public static readonly ReplCodeMenuEntry uln = new ReplCodeMenuEntry("uln", Resources.ReplCodeMenuEntry_uln_User_login_name);
-        public static readonly ReplCodeMenuEntry cn = new ReplCodeMenuEntry("cn", Resources.ReplCodeMenuEntry_cn_Computer_name);
+        public static readonly ReplCodeMenuEntry t = new ReplCodeMenuEntry("t", Resources.ReplCodeMenuEntry_t_Title_of_active_window, Resources.ReplCodeMenuCategory_Target);
+        public static readonly ReplCodeMenuEntry pn = new ReplCodeMenuEntry("pn", Resources.ReplCodeMenuEntry_pn_Process_name_of_active_window, Resources.ReplCodeMenuCategory_Target);
+        public static readonly ReplCodeMenuEntry y = new ReplCodeMenuEntry("y", Resources.ReplCodeMenuEntry_y_Current_year, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry yy = new ReplCodeMenuEntry("yy", Resources.ReplCodeMenuEntry_yy_Current_year__2_digits_, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry mo = new ReplCodeMenuEntry("mo", Resources.ReplCodeMenuEntry_mo_Current_month, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry mon = new ReplCodeMenuEntry("mon", Resources.ReplCodeMenuEntry_mon_Current_month_name__Local_language_, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry mon2 = new ReplCodeMenuEntry("mon2", Resources.ReplCodeMenuEntry_mon2_Current_month_name__English_, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry d = new ReplCodeMenuEntry("d", Resources.ReplCodeMenuEntry_d_Current_day, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry h = new ReplCodeMenuEntry("h", Resources.ReplCodeMenuEntry_h_Current_hour, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry mi = new ReplCodeMenuEntry("mi", Resources.ReplCodeMenuEntry_mi_Current_minute, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry s = new ReplCodeMenuEntry("s", Resources.ReplCodeMenuEntry_s_Current_second, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry ms = new ReplCodeMenuEntry("ms", Resources.ReplCodeMenuEntry_ms_Current_millisecond, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry pm = new ReplCodeMenuEntry("pm", Resources.ReplCodeMenuEntry_pm_Gets_AM_PM, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry w = new ReplCodeMenuEntry("w", Resources.ReplCodeMenuEntry_w_Current_week_name__Local_language_, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry w2 = new ReplCodeMenuEntry("w2", Resources.ReplCodeMenuEntry_w2_Current_week_name__English_, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry unix = new ReplCodeMenuEntry("unix", Resources.ReplCodeMenuEntry_unix_Unix_timestamp, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly ReplCodeMenuEntry i = new ReplCodeMenuEntry("i", Resources.ReplCodeMenuEntry_i_Auto_increment_number, Resources.ReplCodeMenuCategory_Incremental);
+        public static readonly ReplCodeMenuEntry ia = new ReplCodeMenuEntry("ia", Resources.ReplCodeMenuEntry_ia_Auto_increment_alphanumeric, Resources.ReplCodeMenuCategory_Incremental);
+        public static readonly ReplCodeMenuEntry iAa = new ReplCodeMenuEntry("iAa", Resources.ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all, Resources.ReplCodeMenuCategory_Incremental);
+        public static readonly ReplCodeMenuEntry ix = new ReplCodeMenuEntry("ix", Resources.ReplCodeMenuEntry_ix_Auto_increment_hexadecimal, Resources.ReplCodeMenuCategory_Incremental);
+        public static readonly ReplCodeMenuEntry rn = new ReplCodeMenuEntry("rn", Resources.ReplCodeMenuEntry_rn_Random_number_0_to_9, Resources.ReplCodeMenuCategory_Random);
+        public static readonly ReplCodeMenuEntry ra = new ReplCodeMenuEntry("ra", Resources.ReplCodeMenuEntry_ra_Random_alphanumeric_char, Resources.ReplCodeMenuCategory_Random);
+        public static readonly ReplCodeMenuEntry rx = new ReplCodeMenuEntry("rx", Resources.ReplCodeMenuEntry_rx_Random_hexadecimal, Resources.ReplCodeMenuCategory_Random);
+        public static readonly ReplCodeMenuEntry guid = new ReplCodeMenuEntry("guid", Resources.ReplCodeMenuEntry_guid_Random_guid, Resources.ReplCodeMenuCategory_Random);
+        public static readonly ReplCodeMenuEntry width = new ReplCodeMenuEntry("width", Resources.ReplCodeMenuEntry_width_Gets_image_width, Resources.ReplCodeMenuCategory_Image);
+        public static readonly ReplCodeMenuEntry height = new ReplCodeMenuEntry("height", Resources.ReplCodeMenuEntry_height_Gets_image_height, Resources.ReplCodeMenuCategory_Image);
+        public static readonly ReplCodeMenuEntry un = new ReplCodeMenuEntry("un", Resources.ReplCodeMenuEntry_un_User_name, Resources.ReplCodeMenuCategory_Computer);
+        public static readonly ReplCodeMenuEntry uln = new ReplCodeMenuEntry("uln", Resources.ReplCodeMenuEntry_uln_User_login_name, Resources.ReplCodeMenuCategory_Computer);
+        public static readonly ReplCodeMenuEntry cn = new ReplCodeMenuEntry("cn", Resources.ReplCodeMenuEntry_cn_Computer_name, Resources.ReplCodeMenuCategory_Computer);
         public static readonly ReplCodeMenuEntry n = new ReplCodeMenuEntry("n", Resources.ReplCodeMenuEntry_n_New_line);
     }
 
@@ -85,7 +90,7 @@ namespace ShareX.HelpersLib
         public NameParserType Type { get; private set; }
         public int MaxNameLength { get; set; }
         public int MaxTitleLength { get; set; }
-        public int AutoIncrementNumber { get; set; } // %i
+        public int AutoIncrementNumber { get; set; } // %i, %ia, %iAa, %ix
         public Image Picture { get; set; } // %width, %height
         public string WindowText { get; set; } // %t
         public string ProcessName { get; set; } // %pn
@@ -175,14 +180,64 @@ namespace ShareX.HelpersLib
 
             sb.Replace(ReplCodeMenuEntry.unix.ToPrefixString(), DateTime.UtcNow.ToUnix().ToString());
 
-            if (sb.ToString().Contains(ReplCodeMenuEntry.i.ToPrefixString()))
+            if (sb.ToString().Contains(ReplCodeMenuEntry.i.ToPrefixString())
+                || sb.ToString().Contains(ReplCodeMenuEntry.iAa.ToPrefixString())
+                || sb.ToString().Contains(ReplCodeMenuEntry.iAa.ToPrefixString().Replace("Aa", "aA"))
+                || sb.ToString().Contains(ReplCodeMenuEntry.ia.ToPrefixString())
+                || sb.ToString().Contains(ReplCodeMenuEntry.ia.ToPrefixString().Replace('a', 'A'))
+                || sb.ToString().Contains(ReplCodeMenuEntry.ix.ToPrefixString())
+                || sb.ToString().Contains(ReplCodeMenuEntry.ix.ToPrefixString().Replace('x', 'X')))
             {
                 AutoIncrementNumber++;
+
+                // Alphanumeric Dual Case (Base 62)
+                foreach (Tuple<string, int> entry in ListEntryWithValue(sb.ToString(), ReplCodeMenuEntry.iAa.ToPrefixString()))
+                {
+                    sb.Replace(entry.Item1, Helpers.AddZeroes(AutoIncrementNumber.ToBase(62, Helpers.Alphanumeric), entry.Item2));
+                }
+                sb.Replace(ReplCodeMenuEntry.iAa.ToPrefixString(), AutoIncrementNumber.ToBase(62, Helpers.Alphanumeric));
+
+                // Alphanumeric Dual Case (Base 62)
+                foreach (Tuple<string, int> entry in ListEntryWithValue(sb.ToString(), ReplCodeMenuEntry.iAa.ToPrefixString().Replace("Aa", "aA")))
+                {
+                    sb.Replace(entry.Item1, Helpers.AddZeroes(AutoIncrementNumber.ToBase(62, Helpers.AlphanumericInverse), entry.Item2));
+                }
+                sb.Replace(ReplCodeMenuEntry.iAa.ToPrefixString().Replace("Aa", "aA"), AutoIncrementNumber.ToBase(62, Helpers.AlphanumericInverse));
+
+                // Alphanumeric Single Case (Base 36)
+                foreach (Tuple<string, int> entry in ListEntryWithValue(sb.ToString(), ReplCodeMenuEntry.ia.ToPrefixString()))
+                {
+                    sb.Replace(entry.Item1, Helpers.AddZeroes(AutoIncrementNumber.ToBase(36, Helpers.Alphanumeric), entry.Item2).ToLowerInvariant());
+                }
+                sb.Replace(ReplCodeMenuEntry.ia.ToPrefixString(), AutoIncrementNumber.ToBase(36, Helpers.Alphanumeric).ToLowerInvariant());
+
+                // Alphanumeric Single Case Capital (Base 36)
+                foreach (Tuple<string, int> entry in ListEntryWithValue(sb.ToString(), ReplCodeMenuEntry.ia.ToPrefixString().Replace('a', 'A')))
+                {
+                    sb.Replace(entry.Item1, Helpers.AddZeroes(AutoIncrementNumber.ToBase(36, Helpers.Alphanumeric), entry.Item2).ToUpperInvariant());
+                }
+                sb.Replace(ReplCodeMenuEntry.ia.ToPrefixString().Replace('a', 'A'), AutoIncrementNumber.ToBase(36, Helpers.Alphanumeric).ToUpperInvariant());
+
+                // Hexadecimal (Base 16)
+                foreach (Tuple<string, int> entry in ListEntryWithValue(sb.ToString(), ReplCodeMenuEntry.ix.ToPrefixString()))
+                {
+                    sb.Replace(entry.Item1, AutoIncrementNumber.ToString("x" + entry.Item2.ToString()));
+                }
+                sb.Replace(ReplCodeMenuEntry.ix.ToPrefixString(), AutoIncrementNumber.ToString("x"));
+
+                // Hexadecimal Capital (Base 16)
+                foreach (Tuple<string, int> entry in ListEntryWithValue(sb.ToString(), ReplCodeMenuEntry.ix.ToPrefixString().Replace('x', 'X')))
+                {
+                    sb.Replace(entry.Item1, AutoIncrementNumber.ToString("X" + entry.Item2.ToString()));
+                }
+                sb.Replace(ReplCodeMenuEntry.ix.ToPrefixString().Replace('x', 'X'), AutoIncrementNumber.ToString("X"));
+
+                // Number (Base 10)
                 foreach (Tuple<string, int> entry in ListEntryWithValue(sb.ToString(), ReplCodeMenuEntry.i.ToPrefixString()))
                 {
-                    sb.Replace(entry.Item1, Helpers.AddZeroes(AutoIncrementNumber, Math.Max(0, entry.Item2)));
+                    sb.Replace(entry.Item1, AutoIncrementNumber.ToString("d" + entry.Item2.ToString()));
                 }
-                sb.Replace(ReplCodeMenuEntry.i.ToPrefixString(), AutoIncrementNumber.ToString());
+                sb.Replace(ReplCodeMenuEntry.i.ToPrefixString(), AutoIncrementNumber.ToString("d"));
             }
 
             sb.Replace(ReplCodeMenuEntry.un.ToPrefixString(), Environment.UserName);
@@ -204,9 +259,22 @@ namespace ShareX.HelpersLib
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString()));
             }
+            foreach (Tuple<string, int> entry in ListEntryWithValue(result, ReplCodeMenuEntry.rx.ToPrefixString()))
+            {
+                result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToLowerInvariant()).ToString()));
+            }
+            foreach (Tuple<string, int> entry in ListEntryWithValue(result, ReplCodeMenuEntry.rx.ToPrefixString().Replace('x', 'X')))
+            {
+                result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToUpperInvariant()).ToString()));
+            }
 
             result = result.ReplaceAll(ReplCodeMenuEntry.rn.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Numbers).ToString());
             result = result.ReplaceAll(ReplCodeMenuEntry.ra.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString());
+            result = result.ReplaceAll(ReplCodeMenuEntry.rx.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToLowerInvariant()).ToString());
+            result = result.ReplaceAll(ReplCodeMenuEntry.rx.ToPrefixString().Replace('x', 'X'), () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToUpperInvariant()).ToString());
+
+            result = result.ReplaceAll(ReplCodeMenuEntry.guid.ToPrefixString().ToLowerInvariant(), () => Guid.NewGuid().ToString().ToLowerInvariant());
+            result = result.ReplaceAll(ReplCodeMenuEntry.guid.ToPrefixString().ToUpperInvariant(), () => Guid.NewGuid().ToString().ToUpperInvariant());
 
             if (Type == NameParserType.FolderPath)
             {
