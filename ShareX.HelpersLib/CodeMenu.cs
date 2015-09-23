@@ -71,6 +71,7 @@ namespace ShareX.HelpersLib
                     if (0 > index)
                     {
                         tsmiParent = new ToolStripMenuItem { Text = variable.Category, Tag = variable.Category, Name = variable.Category };
+                        tsmiParent.HideImageMargin();
                         cms.Items.Add(tsmiParent);
                     }
                     else

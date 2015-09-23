@@ -301,7 +301,7 @@
     <value>Güncel hafta adı (Yerel dil)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Otomatik artan sayı</value>
+    <value>Otomatik artan sayı. {sayı} kullanarak başına 0 ekleyebilirsiniz</value>
   </data>
   <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
     <value>Elle</value>

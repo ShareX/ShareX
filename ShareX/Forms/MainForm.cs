@@ -95,11 +95,15 @@ namespace ShareX
 
             Text = Program.Title;
 
-            ((ToolStripDropDownMenu)tsddbWorkflows.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayWorkflows.DropDown).ShowImageMargin =
-                ((ToolStripDropDownMenu)tsmiMonitor.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayMonitor.DropDown).ShowImageMargin =
-                ((ToolStripDropDownMenu)tsmiOpen.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiCopy.DropDown).ShowImageMargin =
-                ((ToolStripDropDownMenu)tsmiShortenSelectedURL.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiShareSelectedURL.DropDown).ShowImageMargin =
-                ((ToolStripDropDownMenu)tsmiTrayRecentItems.DropDown).ShowImageMargin = false;
+            tsddbWorkflows.HideImageMargin();
+            tsmiTrayWorkflows.HideImageMargin();
+            tsmiMonitor.HideImageMargin();
+            tsmiTrayMonitor.HideImageMargin();
+            tsmiOpen.HideImageMargin();
+            tsmiCopy.HideImageMargin();
+            tsmiShortenSelectedURL.HideImageMargin();
+            tsmiShareSelectedURL.HideImageMargin();
+            tsmiTrayRecentItems.HideImageMargin();
 
             AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(x),
                 tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
