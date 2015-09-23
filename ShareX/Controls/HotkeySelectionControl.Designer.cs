@@ -32,6 +32,7 @@
             this.lblHotkeyStatus = new System.Windows.Forms.Label();
             this.lblHotkeyDescription = new ShareX.HelpersLib.LabelNoCopy();
             this.btnHotkey = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHotkeyStatus
@@ -64,10 +65,19 @@
             this.btnHotkey.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnHotkey_MouseClick);
             this.btnHotkey.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnHotkey_PreviewKeyDown);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::ShareX.Properties.Resources.gear;
+            resources.ApplyResources(this.btnEdit, "btnEdit");
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // HotkeySelectionControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnHotkey);
             this.Controls.Add(this.lblHotkeyStatus);
             this.Controls.Add(this.lblHotkeyDescription);
@@ -81,5 +91,6 @@
         private System.Windows.Forms.Label lblHotkeyStatus;
         private ShareX.HelpersLib.LabelNoCopy lblHotkeyDescription;
         private System.Windows.Forms.Button btnHotkey;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
