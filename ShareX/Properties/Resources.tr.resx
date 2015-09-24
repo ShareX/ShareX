@@ -470,4 +470,7 @@ Evet tuşuna basarsanız panonuzdaki resim açılır. Veya hayır tuşuna basara
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Ayarların geçerli olabilmesi için ShareX in Steam den yeniden açılması gerekmektedir.</value>
   </data>
+  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>Değişim günlüğü</value>
+  </data>
 </root>

@@ -1646,7 +1646,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date and Time.
+        ///   Looks up a localized string similar to Date and time.
         /// </summary>
         internal static string ReplCodeMenuCategory_Date_and_Time {
             get {

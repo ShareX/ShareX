@@ -803,7 +803,7 @@ Would you like to download and install it?</value>
     <value>Random GUID</value>
   </data>
   <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
-    <value>Date and Time</value>
+    <value>Date and time</value>
   </data>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Incremental</value>
