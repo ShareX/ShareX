@@ -39,6 +39,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class ScrollingCaptureForm : BaseForm
     {
+        public event Action<Image> ProcessRequested;
+
         public ScrollingCaptureOptions Options { get; set; }
         public Image Result { get; set; }
 
@@ -266,6 +268,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
+            OnProcessRequested((Image)Result.Clone());
         }
 
         private void CombineAndPreviewImages()
@@ -318,6 +321,14 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return ImageHelpers.CombineImages(output);
+        }
+
+        protected void OnProcessRequested(Image image)
+        {
+            if (ProcessRequested != null)
+            {
+                ProcessRequested(image);
+            }
         }
     }
 }

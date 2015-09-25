@@ -403,7 +403,7 @@ namespace ShareX.ScreenCaptureLib
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(168, 23);
             this.btnProcess.TabIndex = 9;
-            this.btnProcess.Text = "3. Upload";
+            this.btnProcess.Text = "3. Upload/Save";
             this.btnProcess.UseVisualStyleBackColor = true;
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
