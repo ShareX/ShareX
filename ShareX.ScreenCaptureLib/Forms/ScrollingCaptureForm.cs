@@ -86,7 +86,7 @@ namespace ShareX.ScreenCaptureLib
             if (simpleWindowInfo != null)
             {
                 selectedWindow = new WindowInfo(simpleWindowInfo.Handle);
-                lblControlText.Text = selectedWindow.ClassName ?? string.Empty;
+                lblControlText.Text = selectedWindow.ClassName ?? String.Empty;
                 btnCapture.Enabled = true;
             }
             else
@@ -161,6 +161,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void captureTimer_Tick(object sender, EventArgs e)
         {
+            Screenshot.CaptureCursor = false;
             Image image = Screenshot.CaptureRectangle(selectedWindow.Rectangle);
 
             if (image != null)
@@ -170,7 +171,7 @@ namespace ShareX.ScreenCaptureLib
 
             currentScrollCount++;
 
-            if (currentScrollCount == Options.MaximumScrollCount || NativeMethods.IsScrollReachedBottom(selectedWindow.Handle))
+            if (currentScrollCount == Options.MaximumScrollCount || IsScrollReachedBottom(selectedWindow.Handle))
             {
                 StopCapture();
             }
@@ -186,6 +187,34 @@ namespace ShareX.ScreenCaptureLib
         private void nudMaximumScrollCount_ValueChanged(object sender, EventArgs e)
         {
             Options.MaximumScrollCount = (int)nudMaximumScrollCount.Value;
+        }
+
+        private bool IsScrollReachedBottom(IntPtr handle)
+        {
+            SCROLLINFO scrollInfo = new SCROLLINFO();
+            scrollInfo.cbSize = (uint)Marshal.SizeOf(scrollInfo);
+            scrollInfo.fMask = (uint)(ScrollInfoMask.SIF_RANGE | ScrollInfoMask.SIF_PAGE | ScrollInfoMask.SIF_TRACKPOS);
+
+            if (NativeMethods.GetScrollInfo(handle, (int)SBOrientation.SB_VERT, ref scrollInfo))
+            {
+                return scrollInfo.nMax == scrollInfo.nTrackPos + scrollInfo.nPage - 1;
+            }
+
+            if (images.Count > 1)
+            {
+                bool result = ImageHelpers.IsImagesEqual((Bitmap)images[images.Count - 1], (Bitmap)images[images.Count - 2]);
+
+                if (result)
+                {
+                    Image last = images[images.Count - 1];
+                    images.Remove(last);
+                    last.Dispose();
+                }
+
+                return result;
+            }
+
+            return false;
         }
     }
 }
