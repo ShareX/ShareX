@@ -115,6 +115,7 @@
     <Compile Include="RegionHelpers\NodeObject.cs" />
     <Compile Include="RegionHelpers\ResizeManager.cs" />
     <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
+    <Compile Include="ScrollingCaptureOptions.cs" />
     <Compile Include="SimpleWindowInfo.cs" />
     <Compile Include="SnapSize.cs" />
     <Compile Include="SurfaceOptions.cs" />

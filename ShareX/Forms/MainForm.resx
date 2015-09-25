@@ -325,91 +325,97 @@
     <value>Left</value>
   </data>
   <data name="tsmiFullscreen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Fullscreen</value>
   </data>
   <data name="tsmiWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>Window</value>
   </data>
   <data name="tsmiMonitor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiMonitor.Text" xml:space="preserve">
     <value>Monitor</value>
   </data>
   <data name="tsmiRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Region</value>
   </data>
   <data name="tsmiWindowRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiWindowRectangle.Text" xml:space="preserve">
     <value>Region (Windows &amp; controls)</value>
   </data>
   <data name="tsmiRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
     <value>Region (Annotate)</value>
   </data>
   <data name="tsmiRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Region (Light)</value>
   </data>
   <data name="tsmiRectangleTransparent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Region (Transparent)</value>
   </data>
   <data name="tsmiPolygon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiPolygon.Text" xml:space="preserve">
     <value>Polygon</value>
   </data>
   <data name="tsmiFreeHand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiFreeHand.Text" xml:space="preserve">
     <value>Freehand</value>
   </data>
   <data name="tsmiLastRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Last region</value>
   </data>
   <data name="tsmiScreenRecordingFFmpeg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>Screen recording</value>
   </data>
   <data name="tsmiScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
     <value>Screen recording (GIF)</value>
   </data>
+  <data name="tsmiScrollingCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>Scrolling capture...</value>
+  </data>
   <data name="tsmiWebpageCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiWebpageCapture.Text" xml:space="preserve">
     <value>Webpage capture...</value>
   </data>
   <data name="tsmiAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Auto capture...</value>
@@ -1132,91 +1138,91 @@
     <value>190, 17</value>
   </metadata>
   <data name="tsmiTrayFullscreen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Fullscreen</value>
   </data>
   <data name="tsmiTrayWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Window</value>
   </data>
   <data name="tsmiTrayMonitor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayMonitor.Text" xml:space="preserve">
     <value>Monitor</value>
   </data>
   <data name="tsmiTrayRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Region</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
     <value>Region (Windows &amp; controls)</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
     <value>Region (Annotate)</value>
   </data>
   <data name="tsmiTrayRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Region (Light)</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Region (Transparent)</value>
   </data>
   <data name="tsmiTrayPolygon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayPolygon.Text" xml:space="preserve">
     <value>Polygon</value>
   </data>
   <data name="tsmiTrayFreeHand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
     <value>Freehand</value>
   </data>
   <data name="tsmiTrayLastRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Last region</value>
   </data>
   <data name="tsmiTrayScreenRecordingFFmpeg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>Screen recording</value>
   </data>
   <data name="tsmiTrayScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
     <value>Screen recording (GIF)</value>
   </data>
   <data name="tsmiTrayWebpageCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
     <value>Webpage capture...</value>
   </data>
   <data name="tsmiTrayAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Auto capture...</value>
@@ -1517,7 +1523,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
@@ -1665,6 +1671,12 @@
   <data name="&gt;&gt;tsmiScreenRecordingGIF.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiScrollingCapture.Name" xml:space="preserve">
+    <value>tsmiScrollingCapture</value>
+  </data>
+  <data name="&gt;&gt;tsmiScrollingCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiWebpageCapture.Name" xml:space="preserve">
     <value>tsmiWebpageCapture</value>
   </data>
@@ -1755,6 +1767,12 @@
   <data name="&gt;&gt;tsmiHashCheck.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiIRCClient.Name" xml:space="preserve">
+    <value>tsmiIRCClient</value>
+  </data>
+  <data name="&gt;&gt;tsmiIRCClient.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiDNSChanger.Name" xml:space="preserve">
     <value>tsmiDNSChanger</value>
   </data>
@@ -1795,12 +1813,6 @@
     <value>tsmiFTPClient</value>
   </data>
   <data name="&gt;&gt;tsmiFTPClient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiIRCClient.Name" xml:space="preserve">
-    <value>tsmiIRCClient</value>
-  </data>
-  <data name="&gt;&gt;tsmiIRCClient.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTweetMessage.Name" xml:space="preserve">
@@ -2457,6 +2469,12 @@
   <data name="&gt;&gt;tsmiTrayHashCheck.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayIRCClient.Name" xml:space="preserve">
+    <value>tsmiTrayIRCClient</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayIRCClient.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayDNSChanger.Name" xml:space="preserve">
     <value>tsmiTrayDNSChanger</value>
   </data>
@@ -2497,12 +2515,6 @@
     <value>tsmiTrayFTPClient</value>
   </data>
   <data name="&gt;&gt;tsmiTrayFTPClient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayIRCClient.Name" xml:space="preserve">
-    <value>tsmiTrayIRCClient</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayIRCClient.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayTweetMessage.Name" xml:space="preserve">
@@ -2677,6 +2689,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=10.2.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

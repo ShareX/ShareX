@@ -490,6 +490,13 @@ namespace ShareX
             ScreenRecordManager.StartStopRecording(outputType, startMethod, taskSettings);
         }
 
+        public static void OpenScrollingCapture(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            new ScrollingCaptureForm(taskSettings.CaptureSettings.ScrollingCaptureOptions).Show();
+        }
+
         public static void OpenAutoCapture()
         {
             AutoCaptureForm.Instance.ShowActivate();

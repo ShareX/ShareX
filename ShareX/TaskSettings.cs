@@ -326,6 +326,12 @@ namespace ShareX
 
         #endregion Capture / Screen recorder
 
+        #region Capture / Scrolling capture
+
+        public ScrollingCaptureOptions ScrollingCaptureOptions = new ScrollingCaptureOptions();
+
+        #endregion Capture / Scrolling capture
+
         #region Capture / Rectangle annotate
 
         public RectangleAnnotateOptions RectangleAnnotateOptions = new RectangleAnnotateOptions();

@@ -1092,6 +1092,11 @@ namespace ShareX
             TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region);
         }
 
+        private void tsmiScrollingCapture_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenScrollingCapture();
+        }
+
         private void tsmiAutoCapture_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenAutoCapture();
