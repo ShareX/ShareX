@@ -40,6 +40,7 @@ namespace ShareX.ScreenCaptureLib
     public partial class ScrollingCaptureForm : BaseForm
     {
         public ScrollingCaptureOptions Options { get; set; }
+        public Image Result { get; set; }
 
         private WindowInfo selectedWindow;
         private int currentScrollCount;
@@ -221,31 +222,37 @@ namespace ShareX.ScreenCaptureLib
         private void nudTrimLeft_ValueChanged(object sender, EventArgs e)
         {
             Options.TrimLeftEdge = (int)nudTrimLeft.Value;
+            CombineAndPreviewImages();
         }
 
         private void nudTrimTop_ValueChanged(object sender, EventArgs e)
         {
             Options.TrimTopEdge = (int)nudTrimTop.Value;
+            CombineAndPreviewImages();
         }
 
         private void nudTrimRight_ValueChanged(object sender, EventArgs e)
         {
             Options.TrimRightEdge = (int)nudTrimRight.Value;
+            CombineAndPreviewImages();
         }
 
         private void nudTrimBottom_ValueChanged(object sender, EventArgs e)
         {
             Options.TrimBottomEdge = (int)nudTrimBottom.Value;
+            CombineAndPreviewImages();
         }
 
         private void nudCombineVertical_ValueChanged(object sender, EventArgs e)
         {
             Options.CombineAdjustmentVertical = (int)nudCombineVertical.Value;
+            CombineAndPreviewImages();
         }
 
         private void nudCombineLastVertical_ValueChanged(object sender, EventArgs e)
         {
             Options.CombineAdjustmentLastVertical = (int)nudCombineLastVertical.Value;
+            CombineAndPreviewImages();
         }
 
         private void btnGuessSettings_Click(object sender, EventArgs e)
@@ -254,9 +261,18 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnCombine_Click(object sender, EventArgs e)
         {
-            Image output = CombineImages();
+            CombineAndPreviewImages();
+        }
+
+        private void btnProcess_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void CombineAndPreviewImages()
+        {
             if (pbOutput.Image != null) pbOutput.Image.Dispose();
-            pbOutput.Image = output;
+            Result = CombineImages();
+            pbOutput.Image = Result;
         }
 
         private Image CombineImages()
@@ -280,12 +296,14 @@ namespace ShareX.ScreenCaptureLib
                 Rectangle rect = new Rectangle(Options.TrimLeftEdge, Options.TrimTopEdge, image.Width - Options.TrimLeftEdge - Options.TrimRightEdge,
                     image.Height - Options.TrimTopEdge - Options.TrimBottomEdge);
 
-                if (i == images.Count)
+                if (i == images.Count - 1)
                 {
+                    rect.Y += Options.CombineAdjustmentLastVertical;
                     rect.Height -= Options.CombineAdjustmentLastVertical;
                 }
                 else if (i > 0)
                 {
+                    rect.Y += Options.CombineAdjustmentVertical;
                     rect.Height -= Options.CombineAdjustmentVertical;
                 }
 

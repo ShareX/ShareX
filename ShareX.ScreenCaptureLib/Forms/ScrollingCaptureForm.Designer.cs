@@ -34,39 +34,40 @@ namespace ShareX.ScreenCaptureLib
             this.tcScrollingCapture = new System.Windows.Forms.TabControl();
             this.tpCapture = new System.Windows.Forms.TabPage();
             this.tpOutput = new System.Windows.Forms.TabPage();
-            this.pOutput = new System.Windows.Forms.Panel();
-            this.pbOutput = new System.Windows.Forms.PictureBox();
-            this.nudTrimLeft = new System.Windows.Forms.NumericUpDown();
-            this.nudTrimTop = new System.Windows.Forms.NumericUpDown();
-            this.nudTrimRight = new System.Windows.Forms.NumericUpDown();
-            this.nudTrimBottom = new System.Windows.Forms.NumericUpDown();
-            this.gbTrimEdges = new System.Windows.Forms.GroupBox();
-            this.lblTrimLeft = new System.Windows.Forms.Label();
-            this.lblTrimTop = new System.Windows.Forms.Label();
-            this.lblTrimRight = new System.Windows.Forms.Label();
-            this.lblTrimBottom = new System.Windows.Forms.Label();
+            this.btnGuessSettings = new System.Windows.Forms.Button();
+            this.btnCombine = new System.Windows.Forms.Button();
             this.gbCombineAdjustments = new System.Windows.Forms.GroupBox();
+            this.lblCombineLastVertical = new System.Windows.Forms.Label();
             this.lblCombineVertical = new System.Windows.Forms.Label();
             this.nudCombineVertical = new System.Windows.Forms.NumericUpDown();
             this.nudCombineLastVertical = new System.Windows.Forms.NumericUpDown();
-            this.btnCombine = new System.Windows.Forms.Button();
-            this.lblCombineLastVertical = new System.Windows.Forms.Label();
-            this.btnGuessSettings = new System.Windows.Forms.Button();
+            this.gbTrimEdges = new System.Windows.Forms.GroupBox();
+            this.lblTrimBottom = new System.Windows.Forms.Label();
+            this.lblTrimRight = new System.Windows.Forms.Label();
+            this.lblTrimTop = new System.Windows.Forms.Label();
+            this.lblTrimLeft = new System.Windows.Forms.Label();
+            this.nudTrimLeft = new System.Windows.Forms.NumericUpDown();
+            this.nudTrimBottom = new System.Windows.Forms.NumericUpDown();
+            this.nudTrimTop = new System.Windows.Forms.NumericUpDown();
+            this.nudTrimRight = new System.Windows.Forms.NumericUpDown();
+            this.pOutput = new System.Windows.Forms.Panel();
+            this.pbOutput = new System.Windows.Forms.PictureBox();
+            this.btnProcess = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
             this.tpCapture.SuspendLayout();
             this.tpOutput.SuspendLayout();
-            this.pOutput.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTrimLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTrimTop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTrimRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTrimBottom)).BeginInit();
-            this.gbTrimEdges.SuspendLayout();
             this.gbCombineAdjustments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCombineVertical)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCombineLastVertical)).BeginInit();
+            this.gbTrimEdges.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTrimLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTrimBottom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTrimTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTrimRight)).BeginInit();
+            this.pOutput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSelectHandle
@@ -173,6 +174,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpOutput
             // 
+            this.tpOutput.Controls.Add(this.btnProcess);
             this.tpOutput.Controls.Add(this.btnGuessSettings);
             this.tpOutput.Controls.Add(this.btnCombine);
             this.tpOutput.Controls.Add(this.gbCombineAdjustments);
@@ -186,135 +188,25 @@ namespace ShareX.ScreenCaptureLib
             this.tpOutput.Text = "Output";
             this.tpOutput.UseVisualStyleBackColor = true;
             // 
-            // pOutput
+            // btnGuessSettings
             // 
-            this.pOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pOutput.AutoScroll = true;
-            this.pOutput.Controls.Add(this.pbOutput);
-            this.pOutput.Location = new System.Drawing.Point(8, 136);
-            this.pOutput.Name = "pOutput";
-            this.pOutput.Size = new System.Drawing.Size(912, 518);
-            this.pOutput.TabIndex = 1;
+            this.btnGuessSettings.Location = new System.Drawing.Point(312, 16);
+            this.btnGuessSettings.Name = "btnGuessSettings";
+            this.btnGuessSettings.Size = new System.Drawing.Size(168, 23);
+            this.btnGuessSettings.TabIndex = 8;
+            this.btnGuessSettings.Text = "1. Guess settings";
+            this.btnGuessSettings.UseVisualStyleBackColor = true;
+            this.btnGuessSettings.Click += new System.EventHandler(this.btnGuessSettings_Click);
             // 
-            // pbOutput
+            // btnCombine
             // 
-            this.pbOutput.Location = new System.Drawing.Point(0, 0);
-            this.pbOutput.Name = "pbOutput";
-            this.pbOutput.Size = new System.Drawing.Size(100, 100);
-            this.pbOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbOutput.TabIndex = 0;
-            this.pbOutput.TabStop = false;
-            // 
-            // nudTrimLeft
-            // 
-            this.nudTrimLeft.Location = new System.Drawing.Point(64, 16);
-            this.nudTrimLeft.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nudTrimLeft.Name = "nudTrimLeft";
-            this.nudTrimLeft.Size = new System.Drawing.Size(56, 20);
-            this.nudTrimLeft.TabIndex = 2;
-            this.nudTrimLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudTrimLeft.ValueChanged += new System.EventHandler(this.nudTrimLeft_ValueChanged);
-            // 
-            // nudTrimTop
-            // 
-            this.nudTrimTop.Location = new System.Drawing.Point(64, 40);
-            this.nudTrimTop.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nudTrimTop.Name = "nudTrimTop";
-            this.nudTrimTop.Size = new System.Drawing.Size(56, 20);
-            this.nudTrimTop.TabIndex = 3;
-            this.nudTrimTop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudTrimTop.ValueChanged += new System.EventHandler(this.nudTrimTop_ValueChanged);
-            // 
-            // nudTrimRight
-            // 
-            this.nudTrimRight.Location = new System.Drawing.Point(64, 64);
-            this.nudTrimRight.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nudTrimRight.Name = "nudTrimRight";
-            this.nudTrimRight.Size = new System.Drawing.Size(56, 20);
-            this.nudTrimRight.TabIndex = 4;
-            this.nudTrimRight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudTrimRight.ValueChanged += new System.EventHandler(this.nudTrimRight_ValueChanged);
-            // 
-            // nudTrimBottom
-            // 
-            this.nudTrimBottom.Location = new System.Drawing.Point(64, 88);
-            this.nudTrimBottom.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nudTrimBottom.Name = "nudTrimBottom";
-            this.nudTrimBottom.Size = new System.Drawing.Size(56, 20);
-            this.nudTrimBottom.TabIndex = 5;
-            this.nudTrimBottom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudTrimBottom.ValueChanged += new System.EventHandler(this.nudTrimBottom_ValueChanged);
-            // 
-            // gbTrimEdges
-            // 
-            this.gbTrimEdges.Controls.Add(this.lblTrimBottom);
-            this.gbTrimEdges.Controls.Add(this.lblTrimRight);
-            this.gbTrimEdges.Controls.Add(this.lblTrimTop);
-            this.gbTrimEdges.Controls.Add(this.lblTrimLeft);
-            this.gbTrimEdges.Controls.Add(this.nudTrimLeft);
-            this.gbTrimEdges.Controls.Add(this.nudTrimBottom);
-            this.gbTrimEdges.Controls.Add(this.nudTrimTop);
-            this.gbTrimEdges.Controls.Add(this.nudTrimRight);
-            this.gbTrimEdges.Location = new System.Drawing.Point(8, 8);
-            this.gbTrimEdges.Name = "gbTrimEdges";
-            this.gbTrimEdges.Size = new System.Drawing.Size(128, 120);
-            this.gbTrimEdges.TabIndex = 6;
-            this.gbTrimEdges.TabStop = false;
-            this.gbTrimEdges.Text = "Trim edges";
-            // 
-            // lblTrimLeft
-            // 
-            this.lblTrimLeft.AutoSize = true;
-            this.lblTrimLeft.Location = new System.Drawing.Point(8, 20);
-            this.lblTrimLeft.Name = "lblTrimLeft";
-            this.lblTrimLeft.Size = new System.Drawing.Size(28, 13);
-            this.lblTrimLeft.TabIndex = 7;
-            this.lblTrimLeft.Text = "Left:";
-            // 
-            // lblTrimTop
-            // 
-            this.lblTrimTop.AutoSize = true;
-            this.lblTrimTop.Location = new System.Drawing.Point(8, 44);
-            this.lblTrimTop.Name = "lblTrimTop";
-            this.lblTrimTop.Size = new System.Drawing.Size(29, 13);
-            this.lblTrimTop.TabIndex = 7;
-            this.lblTrimTop.Text = "Top:";
-            // 
-            // lblTrimRight
-            // 
-            this.lblTrimRight.AutoSize = true;
-            this.lblTrimRight.Location = new System.Drawing.Point(8, 68);
-            this.lblTrimRight.Name = "lblTrimRight";
-            this.lblTrimRight.Size = new System.Drawing.Size(35, 13);
-            this.lblTrimRight.TabIndex = 7;
-            this.lblTrimRight.Text = "Right:";
-            // 
-            // lblTrimBottom
-            // 
-            this.lblTrimBottom.AutoSize = true;
-            this.lblTrimBottom.Location = new System.Drawing.Point(8, 92);
-            this.lblTrimBottom.Name = "lblTrimBottom";
-            this.lblTrimBottom.Size = new System.Drawing.Size(43, 13);
-            this.lblTrimBottom.TabIndex = 7;
-            this.lblTrimBottom.Text = "Bottom:";
+            this.btnCombine.Location = new System.Drawing.Point(312, 48);
+            this.btnCombine.Name = "btnCombine";
+            this.btnCombine.Size = new System.Drawing.Size(168, 23);
+            this.btnCombine.TabIndex = 8;
+            this.btnCombine.Text = "2. Combine images";
+            this.btnCombine.UseVisualStyleBackColor = true;
+            this.btnCombine.Click += new System.EventHandler(this.btnCombine_Click);
             // 
             // gbCombineAdjustments
             // 
@@ -328,6 +220,15 @@ namespace ShareX.ScreenCaptureLib
             this.gbCombineAdjustments.TabIndex = 7;
             this.gbCombineAdjustments.TabStop = false;
             this.gbCombineAdjustments.Text = "Combine adjustments";
+            // 
+            // lblCombineLastVertical
+            // 
+            this.lblCombineLastVertical.AutoSize = true;
+            this.lblCombineLastVertical.Location = new System.Drawing.Point(8, 44);
+            this.lblCombineLastVertical.Name = "lblCombineLastVertical";
+            this.lblCombineLastVertical.Size = new System.Drawing.Size(67, 13);
+            this.lblCombineLastVertical.TabIndex = 16;
+            this.lblCombineLastVertical.Text = "Last vertical:";
             // 
             // lblCombineVertical
             // 
@@ -366,34 +267,145 @@ namespace ShareX.ScreenCaptureLib
             this.nudCombineLastVertical.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudCombineLastVertical.ValueChanged += new System.EventHandler(this.nudCombineLastVertical_ValueChanged);
             // 
-            // btnCombine
+            // gbTrimEdges
             // 
-            this.btnCombine.Location = new System.Drawing.Point(312, 48);
-            this.btnCombine.Name = "btnCombine";
-            this.btnCombine.Size = new System.Drawing.Size(168, 23);
-            this.btnCombine.TabIndex = 8;
-            this.btnCombine.Text = "2. Combine images";
-            this.btnCombine.UseVisualStyleBackColor = true;
-            this.btnCombine.Click += new System.EventHandler(this.btnCombine_Click);
+            this.gbTrimEdges.Controls.Add(this.lblTrimBottom);
+            this.gbTrimEdges.Controls.Add(this.lblTrimRight);
+            this.gbTrimEdges.Controls.Add(this.lblTrimTop);
+            this.gbTrimEdges.Controls.Add(this.lblTrimLeft);
+            this.gbTrimEdges.Controls.Add(this.nudTrimLeft);
+            this.gbTrimEdges.Controls.Add(this.nudTrimBottom);
+            this.gbTrimEdges.Controls.Add(this.nudTrimTop);
+            this.gbTrimEdges.Controls.Add(this.nudTrimRight);
+            this.gbTrimEdges.Location = new System.Drawing.Point(8, 8);
+            this.gbTrimEdges.Name = "gbTrimEdges";
+            this.gbTrimEdges.Size = new System.Drawing.Size(128, 120);
+            this.gbTrimEdges.TabIndex = 6;
+            this.gbTrimEdges.TabStop = false;
+            this.gbTrimEdges.Text = "Trim edges";
             // 
-            // lblCombineLastVertical
+            // lblTrimBottom
             // 
-            this.lblCombineLastVertical.AutoSize = true;
-            this.lblCombineLastVertical.Location = new System.Drawing.Point(8, 44);
-            this.lblCombineLastVertical.Name = "lblCombineLastVertical";
-            this.lblCombineLastVertical.Size = new System.Drawing.Size(67, 13);
-            this.lblCombineLastVertical.TabIndex = 16;
-            this.lblCombineLastVertical.Text = "Last vertical:";
+            this.lblTrimBottom.AutoSize = true;
+            this.lblTrimBottom.Location = new System.Drawing.Point(8, 92);
+            this.lblTrimBottom.Name = "lblTrimBottom";
+            this.lblTrimBottom.Size = new System.Drawing.Size(43, 13);
+            this.lblTrimBottom.TabIndex = 7;
+            this.lblTrimBottom.Text = "Bottom:";
             // 
-            // btnGuessSettings
+            // lblTrimRight
             // 
-            this.btnGuessSettings.Location = new System.Drawing.Point(312, 16);
-            this.btnGuessSettings.Name = "btnGuessSettings";
-            this.btnGuessSettings.Size = new System.Drawing.Size(168, 23);
-            this.btnGuessSettings.TabIndex = 8;
-            this.btnGuessSettings.Text = "1. Guess settings";
-            this.btnGuessSettings.UseVisualStyleBackColor = true;
-            this.btnGuessSettings.Click += new System.EventHandler(this.btnGuessSettings_Click);
+            this.lblTrimRight.AutoSize = true;
+            this.lblTrimRight.Location = new System.Drawing.Point(8, 68);
+            this.lblTrimRight.Name = "lblTrimRight";
+            this.lblTrimRight.Size = new System.Drawing.Size(35, 13);
+            this.lblTrimRight.TabIndex = 7;
+            this.lblTrimRight.Text = "Right:";
+            // 
+            // lblTrimTop
+            // 
+            this.lblTrimTop.AutoSize = true;
+            this.lblTrimTop.Location = new System.Drawing.Point(8, 44);
+            this.lblTrimTop.Name = "lblTrimTop";
+            this.lblTrimTop.Size = new System.Drawing.Size(29, 13);
+            this.lblTrimTop.TabIndex = 7;
+            this.lblTrimTop.Text = "Top:";
+            // 
+            // lblTrimLeft
+            // 
+            this.lblTrimLeft.AutoSize = true;
+            this.lblTrimLeft.Location = new System.Drawing.Point(8, 20);
+            this.lblTrimLeft.Name = "lblTrimLeft";
+            this.lblTrimLeft.Size = new System.Drawing.Size(28, 13);
+            this.lblTrimLeft.TabIndex = 7;
+            this.lblTrimLeft.Text = "Left:";
+            // 
+            // nudTrimLeft
+            // 
+            this.nudTrimLeft.Location = new System.Drawing.Point(64, 16);
+            this.nudTrimLeft.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudTrimLeft.Name = "nudTrimLeft";
+            this.nudTrimLeft.Size = new System.Drawing.Size(56, 20);
+            this.nudTrimLeft.TabIndex = 2;
+            this.nudTrimLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudTrimLeft.ValueChanged += new System.EventHandler(this.nudTrimLeft_ValueChanged);
+            // 
+            // nudTrimBottom
+            // 
+            this.nudTrimBottom.Location = new System.Drawing.Point(64, 88);
+            this.nudTrimBottom.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudTrimBottom.Name = "nudTrimBottom";
+            this.nudTrimBottom.Size = new System.Drawing.Size(56, 20);
+            this.nudTrimBottom.TabIndex = 5;
+            this.nudTrimBottom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudTrimBottom.ValueChanged += new System.EventHandler(this.nudTrimBottom_ValueChanged);
+            // 
+            // nudTrimTop
+            // 
+            this.nudTrimTop.Location = new System.Drawing.Point(64, 40);
+            this.nudTrimTop.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudTrimTop.Name = "nudTrimTop";
+            this.nudTrimTop.Size = new System.Drawing.Size(56, 20);
+            this.nudTrimTop.TabIndex = 3;
+            this.nudTrimTop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudTrimTop.ValueChanged += new System.EventHandler(this.nudTrimTop_ValueChanged);
+            // 
+            // nudTrimRight
+            // 
+            this.nudTrimRight.Location = new System.Drawing.Point(64, 64);
+            this.nudTrimRight.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudTrimRight.Name = "nudTrimRight";
+            this.nudTrimRight.Size = new System.Drawing.Size(56, 20);
+            this.nudTrimRight.TabIndex = 4;
+            this.nudTrimRight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudTrimRight.ValueChanged += new System.EventHandler(this.nudTrimRight_ValueChanged);
+            // 
+            // pOutput
+            // 
+            this.pOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pOutput.AutoScroll = true;
+            this.pOutput.Controls.Add(this.pbOutput);
+            this.pOutput.Location = new System.Drawing.Point(8, 136);
+            this.pOutput.Name = "pOutput";
+            this.pOutput.Size = new System.Drawing.Size(912, 518);
+            this.pOutput.TabIndex = 1;
+            // 
+            // pbOutput
+            // 
+            this.pbOutput.Location = new System.Drawing.Point(0, 0);
+            this.pbOutput.Name = "pbOutput";
+            this.pbOutput.Size = new System.Drawing.Size(100, 100);
+            this.pbOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbOutput.TabIndex = 0;
+            this.pbOutput.TabStop = false;
+            // 
+            // btnProcess
+            // 
+            this.btnProcess.Location = new System.Drawing.Point(312, 80);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(168, 23);
+            this.btnProcess.TabIndex = 9;
+            this.btnProcess.Text = "3. Upload";
+            this.btnProcess.UseVisualStyleBackColor = true;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // ScrollingCaptureForm
             // 
@@ -410,19 +422,19 @@ namespace ShareX.ScreenCaptureLib
             this.tpCapture.ResumeLayout(false);
             this.tpCapture.PerformLayout();
             this.tpOutput.ResumeLayout(false);
-            this.pOutput.ResumeLayout(false);
-            this.pOutput.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTrimLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTrimTop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTrimRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTrimBottom)).EndInit();
-            this.gbTrimEdges.ResumeLayout(false);
-            this.gbTrimEdges.PerformLayout();
             this.gbCombineAdjustments.ResumeLayout(false);
             this.gbCombineAdjustments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCombineVertical)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCombineLastVertical)).EndInit();
+            this.gbTrimEdges.ResumeLayout(false);
+            this.gbTrimEdges.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTrimLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTrimBottom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTrimTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTrimRight)).EndInit();
+            this.pOutput.ResumeLayout(false);
+            this.pOutput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -458,5 +470,6 @@ namespace ShareX.ScreenCaptureLib
         private Button btnCombine;
         private Label lblCombineLastVertical;
         private Button btnGuessSettings;
+        private Button btnProcess;
     }
 }

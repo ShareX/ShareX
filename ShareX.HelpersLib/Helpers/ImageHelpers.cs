@@ -1226,7 +1226,7 @@ namespace ShareX.HelpersLib
 
         public static Image CombineImages(IEnumerable<Image> images, int space = 0)
         {
-            int width = images.Sum(x => x.Width);
+            int width = images.Max(x => x.Width);
             int height = images.Sum(x => x.Height);
             Bitmap bmp = new Bitmap(width, height + (space * (images.Count() - 1)));
 
