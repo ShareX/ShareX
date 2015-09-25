@@ -32,7 +32,13 @@ namespace ShareX
 {
     public class ScrollingCaptureOptions
     {
-        public int ScrollDelay { get; set; } = 500;
+        public int ScrollDelay { get; set; } = 1000;
         public int MaximumScrollCount { get; set; } = 20;
+        public int TrimLeftEdge { get; set; } = 0;
+        public int TrimTopEdge { get; set; } = 0;
+        public int TrimRightEdge { get; set; } = 0;
+        public int TrimBottomEdge { get; set; } = 0;
+        public int CombineAdjustmentVertical { get; set; } = 0;
+        public int CombineAdjustmentLastVertical { get; set; } = 0;
     }
 }

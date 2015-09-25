@@ -138,6 +138,7 @@ namespace ShareX.ScreenCaptureLib
             btnCapture.Enabled = true;
             this.ShowActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
+            if (pbOutput.Image != null) pbOutput.Image.Dispose();
             pbOutput.Image = ImageHelpers.CombineImages(images);
         }
 
@@ -215,6 +216,90 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return false;
+        }
+
+        private void nudTrimLeft_ValueChanged(object sender, EventArgs e)
+        {
+            Options.TrimLeftEdge = (int)nudTrimLeft.Value;
+        }
+
+        private void nudTrimTop_ValueChanged(object sender, EventArgs e)
+        {
+            Options.TrimTopEdge = (int)nudTrimTop.Value;
+        }
+
+        private void nudTrimRight_ValueChanged(object sender, EventArgs e)
+        {
+            Options.TrimRightEdge = (int)nudTrimRight.Value;
+        }
+
+        private void nudTrimBottom_ValueChanged(object sender, EventArgs e)
+        {
+            Options.TrimBottomEdge = (int)nudTrimBottom.Value;
+        }
+
+        private void nudCombineVertical_ValueChanged(object sender, EventArgs e)
+        {
+            Options.CombineAdjustmentVertical = (int)nudCombineVertical.Value;
+        }
+
+        private void nudCombineLastVertical_ValueChanged(object sender, EventArgs e)
+        {
+            Options.CombineAdjustmentLastVertical = (int)nudCombineLastVertical.Value;
+        }
+
+        private void btnGuessSettings_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnCombine_Click(object sender, EventArgs e)
+        {
+            Image output = CombineImages();
+            if (pbOutput.Image != null) pbOutput.Image.Dispose();
+            pbOutput.Image = output;
+        }
+
+        private Image CombineImages()
+        {
+            if (images == null || images.Count == 0)
+            {
+                return null;
+            }
+
+            if (images.Count == 1)
+            {
+                return images[0];
+            }
+
+            List<Image> output = new List<Image>();
+
+            for (int i = 0; i < images.Count; i++)
+            {
+                Image image = images[i];
+
+                Rectangle rect = new Rectangle(Options.TrimLeftEdge, Options.TrimTopEdge, image.Width - Options.TrimLeftEdge - Options.TrimRightEdge,
+                    image.Height - Options.TrimTopEdge - Options.TrimBottomEdge);
+
+                if (i == images.Count)
+                {
+                    rect.Height -= Options.CombineAdjustmentLastVertical;
+                }
+                else if (i > 0)
+                {
+                    rect.Height -= Options.CombineAdjustmentVertical;
+                }
+
+                Image newImage = ImageHelpers.CropImage(image, rect);
+
+                if (newImage == null)
+                {
+                    newImage = (Image)image.Clone();
+                }
+
+                output.Add(newImage);
+            }
+
+            return ImageHelpers.CombineImages(output);
         }
     }
 }
