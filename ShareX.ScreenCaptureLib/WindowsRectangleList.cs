@@ -35,23 +35,23 @@ namespace ShareX.ScreenCaptureLib
         public IntPtr IgnoreHandle { get; set; }
         public bool IncludeChildWindows { get; set; }
 
-        private List<Rectangle> rectangles;
+        private List<SimpleWindowInfo> windows;
 
-        public List<Rectangle> GetWindowsRectangleList()
+        public List<SimpleWindowInfo> GetWindowsRectangleList()
         {
-            rectangles = new List<Rectangle>();
+            windows = new List<SimpleWindowInfo>();
             NativeMethods.EnumWindowsProc ewp = EvalWindow;
             NativeMethods.EnumWindows(ewp, IntPtr.Zero);
 
-            List<Rectangle> result = new List<Rectangle>();
+            List<SimpleWindowInfo> result = new List<SimpleWindowInfo>();
 
-            foreach (Rectangle rect in rectangles)
+            foreach (SimpleWindowInfo window in windows)
             {
                 bool rectVisible = true;
 
-                foreach (Rectangle rect2 in result)
+                foreach (SimpleWindowInfo window2 in result)
                 {
-                    if (rect2.Contains(rect))
+                    if (window2.Rectangle.Contains(window.Rectangle))
                     {
                         rectVisible = false;
                         break;
@@ -60,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (rectVisible)
                 {
-                    result.Add(rect);
+                    result.Add(window);
                 }
             }
 
@@ -84,18 +84,18 @@ namespace ShareX.ScreenCaptureLib
                 return true;
             }
 
-            Rectangle rect;
+            SimpleWindowInfo windowInfo = new SimpleWindowInfo(handle);
 
             if (isWindow)
             {
-                rect = CaptureHelpers.GetWindowRectangle(handle);
+                windowInfo.Rectangle = CaptureHelpers.GetWindowRectangle(handle);
             }
             else
             {
-                rect = NativeMethods.GetWindowRect(handle);
+                windowInfo.Rectangle = NativeMethods.GetWindowRect(handle);
             }
 
-            if (!rect.IsValid())
+            if (!windowInfo.Rectangle.IsValid())
             {
                 return true;
             }
@@ -112,11 +112,11 @@ namespace ShareX.ScreenCaptureLib
 
                 if (clientRect.IsValid())
                 {
-                    rectangles.Add(clientRect);
+                    windows.Add(new SimpleWindowInfo(handle, clientRect));
                 }
             }
 
-            rectangles.Add(rect);
+            windows.Add(windowInfo);
 
             return true;
         }

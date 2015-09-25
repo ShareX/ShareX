@@ -352,7 +352,7 @@
     <value>191, 22</value>
   </data>
   <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Region (Objects)</value>
+    <value>Region (Windows &amp; controls)</value>
   </data>
   <data name="tsmiRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
@@ -1159,7 +1159,7 @@
     <value>191, 22</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Region (Objects)</value>
+    <value>Region (Windows &amp; controls)</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>

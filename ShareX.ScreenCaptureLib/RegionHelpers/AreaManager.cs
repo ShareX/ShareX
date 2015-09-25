@@ -119,7 +119,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsProportionalResizing { get; private set; }
         public bool IsSnapResizing { get; private set; }
 
-        public List<Rectangle> Windows { get; set; }
+        public List<SimpleWindowInfo> Windows { get; set; }
         public bool WindowCaptureMode { get; set; }
         public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; }
@@ -319,17 +319,27 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentHoverArea = hoverArea;
                 }
-                else if (WindowCaptureMode && Windows != null)
+                else
                 {
-                    hoverArea = Windows.FirstOrDefault(x => x.Contains(InputManager.MousePosition));
+                    SimpleWindowInfo window = FindSelectedWindow();
 
-                    if (!hoverArea.IsEmpty)
+                    if (window != null && !window.Rectangle.IsEmpty)
                     {
-                        hoverArea = CaptureHelpers.ScreenToClient(hoverArea);
+                        hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
                         CurrentHoverArea = Rectangle.Intersect(surface.ScreenRectangle0Based, hoverArea);
                     }
                 }
             }
+        }
+
+        public SimpleWindowInfo FindSelectedWindow()
+        {
+            if (Windows != null)
+            {
+                return Windows.FirstOrDefault(x => x.Rectangle.Contains(InputManager.MousePosition));
+            }
+
+            return null;
         }
 
         private void surface_MouseDown(object sender, MouseEventArgs e)

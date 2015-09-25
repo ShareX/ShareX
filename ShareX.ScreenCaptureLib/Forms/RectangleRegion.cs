@@ -68,6 +68,9 @@ namespace ShareX.ScreenCaptureLib
 
         #endregion Screen ruler
 
+        public bool OneClickMode { get; set; }
+        public SimpleWindowInfo SelectedWindow { get; set; }
+
         private ColorBlinkAnimation colorBlinkAnimation = new ColorBlinkAnimation();
 
         public RectangleRegion()
@@ -81,9 +84,15 @@ namespace ShareX.ScreenCaptureLib
 
         private void RectangleRegion_MouseDown(object sender, MouseEventArgs e)
         {
-            if (ScreenColorPickerMode && e.Button == MouseButtons.Left)
+            if ((OneClickMode || ScreenColorPickerMode) && e.Button == MouseButtons.Left)
             {
                 CurrentPosition = InputManager.MousePosition;
+
+                if (OneClickMode)
+                {
+                    SelectedWindow = AreaManager.FindSelectedWindow();
+                }
+
                 Close(SurfaceResult.Region);
             }
         }
@@ -162,7 +171,7 @@ namespace ShareX.ScreenCaptureLib
                 AreaManager.WindowCaptureMode |= Config.ForceWindowCapture;
                 AreaManager.IncludeControls |= Config.IncludeControls;
 
-                if (AreaManager.WindowCaptureMode)
+                if (OneClickMode || AreaManager.WindowCaptureMode)
                 {
                     IntPtr handle = Handle;
 

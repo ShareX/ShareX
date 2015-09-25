@@ -66,6 +66,12 @@
     <Compile Include="Forms\RectangleTransparent.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\ScrollingCaptureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScrollingCaptureForm.Designer.cs">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MonitorRegion.cs" />
     <Compile Include="MonitorRegionDefaultCreator.cs" />
     <Compile Include="RectangleAnnotateOptions.cs" />
@@ -109,6 +115,7 @@
     <Compile Include="RegionHelpers\NodeObject.cs" />
     <Compile Include="RegionHelpers\ResizeManager.cs" />
     <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
+    <Compile Include="SimpleWindowInfo.cs" />
     <Compile Include="SnapSize.cs" />
     <Compile Include="SurfaceOptions.cs" />
     <Compile Include="Screencast\ScreenRecorder.cs" />
@@ -131,6 +138,9 @@
     <Content Include="Resources\Crosshair.cur" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\ScrollingCaptureForm.resx">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
