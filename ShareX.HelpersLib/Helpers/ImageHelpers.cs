@@ -60,6 +60,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -1221,6 +1222,27 @@ namespace ShareX.HelpersLib
             }
 
             return null;
+        }
+
+        public static Image CombineImages(IEnumerable<Image> images, int space = 0)
+        {
+            int width = images.Sum(x => x.Width);
+            int height = images.Sum(x => x.Height);
+            Bitmap bmp = new Bitmap(width, height + (space * (images.Count() - 1)));
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.SetHighQuality();
+                int y = 0;
+
+                foreach (Image image in images)
+                {
+                    g.DrawImage(image, 0, y, image.Width, image.Height);
+                    y += image.Height + space;
+                }
+            }
+
+            return bmp;
         }
     }
 }

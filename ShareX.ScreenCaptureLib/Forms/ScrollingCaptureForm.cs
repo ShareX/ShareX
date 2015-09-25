@@ -30,6 +30,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -42,6 +43,7 @@ namespace ShareX.ScreenCaptureLib
 
         private WindowInfo selectedWindow;
         private int currentScrollCount;
+        private List<Image> images = new List<Image>();
 
         public ScrollingCaptureForm(ScrollingCaptureOptions options)
         {
@@ -49,6 +51,21 @@ namespace ShareX.ScreenCaptureLib
             InitializeComponent();
             nudScrollDelay.Value = Options.ScrollDelay;
             nudMaximumScrollCount.Value = Options.MaximumScrollCount;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+
+                Clean();
+            }
+
+            base.Dispose(disposing);
         }
 
         private void btnSelectHandle_Click(object sender, EventArgs e)
@@ -109,7 +126,7 @@ namespace ShareX.ScreenCaptureLib
         private void StartCapture()
         {
             btnCapture.Enabled = false;
-            currentScrollCount = 0;
+            Clean();
             selectedWindow.Activate();
             captureTimer.Interval = Options.ScrollDelay;
             captureTimer.Start();
@@ -119,18 +136,46 @@ namespace ShareX.ScreenCaptureLib
         {
             captureTimer.Stop();
             btnCapture.Enabled = true;
+            this.ShowActivate();
+            tcScrollingCapture.SelectedTab = tpOutput;
+            pbOutput.Image = ImageHelpers.CombineImages(images);
+        }
+
+        private void Clean()
+        {
+            currentScrollCount = 0;
+
+            if (images != null)
+            {
+                foreach (Image image in images)
+                {
+                    if (image != null)
+                    {
+                        image.Dispose();
+                    }
+                }
+
+                images.Clear();
+            }
         }
 
         private void captureTimer_Tick(object sender, EventArgs e)
         {
-            NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_PAGEDOWN, 0);
+            Image image = Screenshot.CaptureRectangle(selectedWindow.Rectangle);
+
+            if (image != null)
+            {
+                images.Add(image);
+            }
 
             currentScrollCount++;
 
-            if (currentScrollCount == Options.MaximumScrollCount)
+            if (currentScrollCount == Options.MaximumScrollCount || NativeMethods.IsScrollReachedBottom(selectedWindow.Handle))
             {
                 StopCapture();
             }
+
+            NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_PAGEDOWN, 0);
         }
 
         private void nudScrollDelay_ValueChanged(object sender, EventArgs e)

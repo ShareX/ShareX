@@ -2815,4 +2815,22 @@ namespace ShareX.HelpersLib
         SB_RIGHT = 7,
         SB_ENDSCROLL = 8
     }
+
+    public enum SBOrientation : int
+    {
+        SB_HORZ = 0x0,
+        SB_VERT = 0x1,
+        SB_CTL = 0x2,
+        SB_BOTH = 0x3
+    }
+
+    public enum ScrollInfoMask : uint
+    {
+        SIF_RANGE = 0x1,
+        SIF_PAGE = 0x2,
+        SIF_POS = 0x4,
+        SIF_DISABLENOSCROLL = 0x8,
+        SIF_TRACKPOS = 0x10,
+        SIF_ALL = (SIF_RANGE | SIF_PAGE | SIF_POS | SIF_TRACKPOS)
+    }
 }

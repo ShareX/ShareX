@@ -475,5 +475,14 @@ namespace ShareX.HelpersLib
 
             return FlashWindowEx(ref fInfo);
         }
+
+        public static bool IsScrollReachedBottom(IntPtr handle)
+        {
+            SCROLLINFO scrollInfo = new SCROLLINFO();
+            scrollInfo.cbSize = (uint)Marshal.SizeOf(scrollInfo);
+            scrollInfo.fMask = (uint)(ScrollInfoMask.SIF_RANGE | ScrollInfoMask.SIF_PAGE | ScrollInfoMask.SIF_TRACKPOS);
+            NativeMethods.GetScrollInfo(handle, (int)SBOrientation.SB_VERT, ref scrollInfo);
+            return scrollInfo.nMax == scrollInfo.nTrackPos + scrollInfo.nPage - 1;
+        }
     }
 }
