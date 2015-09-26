@@ -58,6 +58,7 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput = new System.Windows.Forms.Panel();
             this.pbOutput = new System.Windows.Forms.PictureBox();
             this.cbAutoDetectScrollEnd = new System.Windows.Forms.CheckBox();
+            this.cbRemoveDuplicates = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -87,16 +88,16 @@ namespace ShareX.ScreenCaptureLib
             // 
             // lblControlText
             // 
+            this.lblControlText.AutoSize = true;
             this.lblControlText.Location = new System.Drawing.Point(324, 15);
             this.lblControlText.Name = "lblControlText";
-            this.lblControlText.Size = new System.Drawing.Size(240, 19);
+            this.lblControlText.Size = new System.Drawing.Size(0, 13);
             this.lblControlText.TabIndex = 1;
-            this.lblControlText.Text = "Text";
             // 
             // btnCapture
             // 
             this.btnCapture.Enabled = false;
-            this.btnCapture.Location = new System.Drawing.Point(16, 144);
+            this.btnCapture.Location = new System.Drawing.Point(16, 168);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(152, 23);
             this.btnCapture.TabIndex = 2;
@@ -162,6 +163,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpCapture
             // 
+            this.tpCapture.Controls.Add(this.cbRemoveDuplicates);
             this.tpCapture.Controls.Add(this.cbAutoDetectScrollEnd);
             this.tpCapture.Controls.Add(this.lblScrollMethod);
             this.tpCapture.Controls.Add(this.cbScrollMethod);
@@ -197,6 +199,7 @@ namespace ShareX.ScreenCaptureLib
             this.cbScrollMethod.Name = "cbScrollMethod";
             this.cbScrollMethod.Size = new System.Drawing.Size(176, 21);
             this.cbScrollMethod.TabIndex = 7;
+            this.cbScrollMethod.SelectedIndexChanged += new System.EventHandler(this.cbScrollMethod_SelectedIndexChanged);
             // 
             // tpOutput
             // 
@@ -469,6 +472,17 @@ namespace ShareX.ScreenCaptureLib
             this.cbAutoDetectScrollEnd.UseVisualStyleBackColor = true;
             this.cbAutoDetectScrollEnd.CheckedChanged += new System.EventHandler(this.cbAutoDetectScrollEnd_CheckedChanged);
             // 
+            // cbRemoveDuplicates
+            // 
+            this.cbRemoveDuplicates.AutoSize = true;
+            this.cbRemoveDuplicates.Location = new System.Drawing.Point(16, 144);
+            this.cbRemoveDuplicates.Name = "cbRemoveDuplicates";
+            this.cbRemoveDuplicates.Size = new System.Drawing.Size(117, 17);
+            this.cbRemoveDuplicates.TabIndex = 10;
+            this.cbRemoveDuplicates.Text = "Remove duplicates";
+            this.cbRemoveDuplicates.UseVisualStyleBackColor = true;
+            this.cbRemoveDuplicates.CheckedChanged += new System.EventHandler(this.cbRemoveDuplicates_CheckedChanged);
+            // 
             // ScrollingCaptureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,5 +552,6 @@ namespace ShareX.ScreenCaptureLib
         private Label lblScrollMethod;
         private ComboBox cbScrollMethod;
         private CheckBox cbAutoDetectScrollEnd;
+        private CheckBox cbRemoveDuplicates;
     }
 }

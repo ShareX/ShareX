@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
         private int currentScrollCount;
         private bool isBusy;
 
-        public ScrollingCaptureForm(ScrollingCaptureOptions options)
+        public ScrollingCaptureForm(ScrollingCaptureOptions options, bool startSelection = false)
         {
             Options = options;
             InitializeComponent();
@@ -58,7 +58,13 @@ namespace ShareX.ScreenCaptureLib
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
             nudScrollDelay.Value = Options.ScrollDelay;
             nudMaximumScrollCount.Value = Options.MaximumScrollCount;
-            cbAutoDetectScrollEnd.Checked = options.AutoDetectScrollEnd;
+            cbAutoDetectScrollEnd.Checked = Options.AutoDetectScrollEnd;
+            cbRemoveDuplicates.Checked = Options.RemoveDuplicates;
+
+            if (startSelection)
+            {
+                SelectHandle();
+            }
         }
 
         protected override void Dispose(bool disposing)
@@ -86,7 +92,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnSelectHandle_Click(object sender, EventArgs e)
         {
-            Hide();
+            SelectHandle(true);
+        }
+
+        private void SelectHandle(bool hideForm = false)
+        {
+            if (hideForm) Hide();
             SimpleWindowInfo simpleWindowInfo;
 
             try
@@ -96,7 +107,7 @@ namespace ShareX.ScreenCaptureLib
             }
             finally
             {
-                Show();
+                if (hideForm) Show();
             }
 
             if (simpleWindowInfo != null)
@@ -155,7 +166,7 @@ namespace ShareX.ScreenCaptureLib
             this.ShowActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
             btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = btnCombine.Enabled = images.Count > 1;
-            RemoveLastDuplicates();
+            if (Options.RemoveDuplicates) RemoveDuplicates();
             ResetCombine();
         }
 
@@ -177,7 +188,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void RemoveLastDuplicates()
+        private void RemoveDuplicates()
         {
             if (images.Count > 1)
             {
@@ -190,10 +201,6 @@ namespace ShareX.ScreenCaptureLib
                         Image img = images[i];
                         images.Remove(img);
                         img.Dispose();
-                    }
-                    else
-                    {
-                        return;
                     }
                 }
             }
@@ -226,9 +233,14 @@ namespace ShareX.ScreenCaptureLib
                     //NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.KEYDOWN, (int)VirtualKeyCode.NEXT, 0);
                     break;
                 case ScrollingCaptureScrollMethod.MouseWheel:
-                    InputHelpers.SendMouseWheel(120);
+                    InputHelpers.SendMouseWheel(-120);
                     break;
             }
+        }
+
+        private void cbScrollMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.ScrollMethod = (ScrollingCaptureScrollMethod)cbScrollMethod.SelectedIndex;
         }
 
         private void nudScrollDelay_ValueChanged(object sender, EventArgs e)
@@ -244,6 +256,11 @@ namespace ShareX.ScreenCaptureLib
         private void cbAutoDetectScrollEnd_CheckedChanged(object sender, EventArgs e)
         {
             Options.AutoDetectScrollEnd = cbAutoDetectScrollEnd.Checked;
+        }
+
+        private void cbRemoveDuplicates_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.RemoveDuplicates = cbRemoveDuplicates.Checked;
         }
 
         private bool IsScrollReachedBottom(IntPtr handle)
@@ -557,8 +574,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private int CalculateVerticalOffset(Image img1, Image img2, int ignoreRightOffset = 50, int matchCount = 5)
+        private int CalculateVerticalOffset(Image img1, Image img2, int ignoreRightOffset = 50, int matchCount = 50)
         {
+            int lastMatchCount = 0;
+            int lastMatchOffset = 0;
+
             Rectangle rect = new Rectangle(Options.TrimLeftEdge, Options.TrimTopEdge,
                 img1.Width - Options.TrimLeftEdge - Options.TrimRightEdge - (img1.Width > ignoreRightOffset ? ignoreRightOffset : 0),
                 img1.Height - Options.TrimTopEdge - Options.TrimBottomEdge);
@@ -581,7 +601,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (isLineMatches)
                     {
-                        int lineMatchesCount = 0;
+                        int lineMatchesCount = 1;
                         int y3 = 2;
 
                         for (int y2 = y - 1; y2 >= rect.Y; y2--)
@@ -606,17 +626,18 @@ namespace ShareX.ScreenCaptureLib
                             {
                                 break;
                             }
+                        }
 
-                            if (lineMatchesCount == matchCount)
-                            {
-                                return y - rect.Y + 1;
-                            }
+                        if (lineMatchesCount > lastMatchCount)
+                        {
+                            lastMatchCount = lineMatchesCount;
+                            lastMatchOffset = y - rect.Y + 1;
                         }
                     }
                 }
             }
 
-            return 0;
+            return lastMatchOffset;
         }
     }
 }
