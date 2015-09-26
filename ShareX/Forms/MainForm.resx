@@ -1215,6 +1215,12 @@
   <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
     <value>Screen recording (GIF)</value>
   </data>
+  <data name="tsmiTrayScrollingCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>Scrolling capture...</value>
+  </data>
   <data name="tsmiTrayWebpageCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
   </data>
@@ -2684,6 +2690,12 @@
   </data>
   <data name="&gt;&gt;timerTraySingleClick.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayScrollingCapture.Name" xml:space="preserve">
+    <value>tsmiTrayScrollingCapture</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayScrollingCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
