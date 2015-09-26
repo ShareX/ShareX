@@ -34,6 +34,8 @@ namespace ShareX.ScreenCaptureLib
             this.tcScrollingCapture = new System.Windows.Forms.TabControl();
             this.tpCapture = new System.Windows.Forms.TabPage();
             this.tpOutput = new System.Windows.Forms.TabPage();
+            this.btnResetCombine = new System.Windows.Forms.Button();
+            this.btnGuessCombineAdjustments = new System.Windows.Forms.Button();
             this.btnProcess = new System.Windows.Forms.Button();
             this.btnGuessEdges = new System.Windows.Forms.Button();
             this.btnCombine = new System.Windows.Forms.Button();
@@ -53,8 +55,8 @@ namespace ShareX.ScreenCaptureLib
             this.nudTrimRight = new System.Windows.Forms.NumericUpDown();
             this.pOutput = new System.Windows.Forms.Panel();
             this.pbOutput = new System.Windows.Forms.PictureBox();
-            this.btnGuessCombineAdjustments = new System.Windows.Forms.Button();
-            this.btnResetCombine = new System.Windows.Forms.Button();
+            this.cbScrollMethod = new System.Windows.Forms.ComboBox();
+            this.lblScrollMethod = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -93,7 +95,7 @@ namespace ShareX.ScreenCaptureLib
             // btnCapture
             // 
             this.btnCapture.Enabled = false;
-            this.btnCapture.Location = new System.Drawing.Point(12, 106);
+            this.btnCapture.Location = new System.Drawing.Point(16, 128);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(152, 23);
             this.btnCapture.TabIndex = 2;
@@ -107,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // nudScrollDelay
             // 
-            this.nudScrollDelay.Location = new System.Drawing.Point(140, 46);
+            this.nudScrollDelay.Location = new System.Drawing.Point(136, 68);
             this.nudScrollDelay.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -121,7 +123,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // nudMaximumScrollCount
             // 
-            this.nudMaximumScrollCount.Location = new System.Drawing.Point(140, 70);
+            this.nudMaximumScrollCount.Location = new System.Drawing.Point(136, 92);
             this.nudMaximumScrollCount.Name = "nudMaximumScrollCount";
             this.nudMaximumScrollCount.Size = new System.Drawing.Size(80, 20);
             this.nudMaximumScrollCount.TabIndex = 4;
@@ -131,7 +133,7 @@ namespace ShareX.ScreenCaptureLib
             // lblScrollDelay
             // 
             this.lblScrollDelay.AutoSize = true;
-            this.lblScrollDelay.Location = new System.Drawing.Point(12, 50);
+            this.lblScrollDelay.Location = new System.Drawing.Point(16, 72);
             this.lblScrollDelay.Name = "lblScrollDelay";
             this.lblScrollDelay.Size = new System.Drawing.Size(64, 13);
             this.lblScrollDelay.TabIndex = 5;
@@ -140,7 +142,7 @@ namespace ShareX.ScreenCaptureLib
             // lblMaximumScrollCount
             // 
             this.lblMaximumScrollCount.AutoSize = true;
-            this.lblMaximumScrollCount.Location = new System.Drawing.Point(12, 74);
+            this.lblMaximumScrollCount.Location = new System.Drawing.Point(16, 96);
             this.lblMaximumScrollCount.Name = "lblMaximumScrollCount";
             this.lblMaximumScrollCount.Size = new System.Drawing.Size(111, 13);
             this.lblMaximumScrollCount.TabIndex = 6;
@@ -159,6 +161,8 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpCapture
             // 
+            this.tpCapture.Controls.Add(this.lblScrollMethod);
+            this.tpCapture.Controls.Add(this.cbScrollMethod);
             this.tpCapture.Controls.Add(this.btnSelectHandle);
             this.tpCapture.Controls.Add(this.lblMaximumScrollCount);
             this.tpCapture.Controls.Add(this.lblControlText);
@@ -191,6 +195,27 @@ namespace ShareX.ScreenCaptureLib
             this.tpOutput.TabIndex = 1;
             this.tpOutput.Text = "Output";
             this.tpOutput.UseVisualStyleBackColor = true;
+            // 
+            // btnResetCombine
+            // 
+            this.btnResetCombine.Location = new System.Drawing.Point(696, 16);
+            this.btnResetCombine.Name = "btnResetCombine";
+            this.btnResetCombine.Size = new System.Drawing.Size(75, 23);
+            this.btnResetCombine.TabIndex = 11;
+            this.btnResetCombine.Text = "Reset";
+            this.btnResetCombine.UseVisualStyleBackColor = true;
+            this.btnResetCombine.Click += new System.EventHandler(this.btnResetCombine_Click);
+            // 
+            // btnGuessCombineAdjustments
+            // 
+            this.btnGuessCombineAdjustments.Enabled = false;
+            this.btnGuessCombineAdjustments.Location = new System.Drawing.Point(312, 40);
+            this.btnGuessCombineAdjustments.Name = "btnGuessCombineAdjustments";
+            this.btnGuessCombineAdjustments.Size = new System.Drawing.Size(376, 23);
+            this.btnGuessCombineAdjustments.TabIndex = 10;
+            this.btnGuessCombineAdjustments.Text = "2. Guess combine adjustments";
+            this.btnGuessCombineAdjustments.UseVisualStyleBackColor = true;
+            this.btnGuessCombineAdjustments.Click += new System.EventHandler(this.btnGuessCombineAdjustments_Click);
             // 
             // btnProcess
             // 
@@ -413,26 +438,23 @@ namespace ShareX.ScreenCaptureLib
             this.pbOutput.TabIndex = 0;
             this.pbOutput.TabStop = false;
             // 
-            // btnGuessCombineAdjustments
+            // cbScrollMethod
             // 
-            this.btnGuessCombineAdjustments.Enabled = false;
-            this.btnGuessCombineAdjustments.Location = new System.Drawing.Point(312, 40);
-            this.btnGuessCombineAdjustments.Name = "btnGuessCombineAdjustments";
-            this.btnGuessCombineAdjustments.Size = new System.Drawing.Size(376, 23);
-            this.btnGuessCombineAdjustments.TabIndex = 10;
-            this.btnGuessCombineAdjustments.Text = "2. Guess combine adjustments";
-            this.btnGuessCombineAdjustments.UseVisualStyleBackColor = true;
-            this.btnGuessCombineAdjustments.Click += new System.EventHandler(this.btnGuessCombineAdjustments_Click);
+            this.cbScrollMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbScrollMethod.FormattingEnabled = true;
+            this.cbScrollMethod.Location = new System.Drawing.Point(136, 44);
+            this.cbScrollMethod.Name = "cbScrollMethod";
+            this.cbScrollMethod.Size = new System.Drawing.Size(176, 21);
+            this.cbScrollMethod.TabIndex = 7;
             // 
-            // btnResetCombine
+            // lblScrollMethod
             // 
-            this.btnResetCombine.Location = new System.Drawing.Point(696, 16);
-            this.btnResetCombine.Name = "btnResetCombine";
-            this.btnResetCombine.Size = new System.Drawing.Size(75, 23);
-            this.btnResetCombine.TabIndex = 11;
-            this.btnResetCombine.Text = "Reset";
-            this.btnResetCombine.UseVisualStyleBackColor = true;
-            this.btnResetCombine.Click += new System.EventHandler(this.btnResetCombine_Click);
+            this.lblScrollMethod.AutoSize = true;
+            this.lblScrollMethod.Location = new System.Drawing.Point(16, 48);
+            this.lblScrollMethod.Name = "lblScrollMethod";
+            this.lblScrollMethod.Size = new System.Drawing.Size(74, 13);
+            this.lblScrollMethod.TabIndex = 8;
+            this.lblScrollMethod.Text = "Scroll method:";
             // 
             // ScrollingCaptureForm
             // 
@@ -500,5 +522,7 @@ namespace ShareX.ScreenCaptureLib
         private Button btnProcess;
         private Button btnGuessCombineAdjustments;
         private Button btnResetCombine;
+        private Label lblScrollMethod;
+        private ComboBox cbScrollMethod;
     }
 }

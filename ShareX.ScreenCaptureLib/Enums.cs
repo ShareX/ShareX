@@ -146,4 +146,11 @@ namespace ShareX.ScreenCaptureLib
         Triangle,
         Diamond
     }
+
+    public enum ScrollingCaptureScrollMethod
+    {
+        SendMessageScroll,
+        KeyPressPageDown,
+        MouseWheel
+    }
 }

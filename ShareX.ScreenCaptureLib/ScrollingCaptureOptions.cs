@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,8 @@ namespace ShareX
 {
     public class ScrollingCaptureOptions
     {
-        public int ScrollDelay { get; set; } = 1000;
+        public ScrollingCaptureScrollMethod ScrollMethod { get; set; } = ScrollingCaptureScrollMethod.SendMessageScroll;
+        public int ScrollDelay { get; set; } = 250;
         public int MaximumScrollCount { get; set; } = 20;
         public int TrimLeftEdge { get; set; } = 0;
         public int TrimTopEdge { get; set; } = 0;

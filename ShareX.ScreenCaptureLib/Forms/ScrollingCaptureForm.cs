@@ -54,6 +54,8 @@ namespace ShareX.ScreenCaptureLib
         {
             Options = options;
             InitializeComponent();
+            cbScrollMethod.Items.AddRange(Enum.GetNames(typeof(ScrollingCaptureScrollMethod)));
+            cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
             nudScrollDelay.Value = Options.ScrollDelay;
             nudMaximumScrollCount.Value = Options.MaximumScrollCount;
         }
@@ -190,7 +192,19 @@ namespace ShareX.ScreenCaptureLib
                 StopCapture();
             }
 
-            NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_PAGEDOWN, 0);
+            switch (Options.ScrollMethod)
+            {
+                case ScrollingCaptureScrollMethod.SendMessageScroll:
+                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_PAGEDOWN, 0);
+                    break;
+                case ScrollingCaptureScrollMethod.KeyPressPageDown:
+                    InputHelpers.SendKeyPress(VirtualKeyCode.NEXT);
+                    //NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.KEYDOWN, (int)VirtualKeyCode.NEXT, 0);
+                    break;
+                case ScrollingCaptureScrollMethod.MouseWheel:
+                    InputHelpers.SendMouseWheel(120);
+                    break;
+            }
         }
 
         private void nudScrollDelay_ValueChanged(object sender, EventArgs e)
@@ -317,7 +331,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (images.Count == 1)
             {
-                return images[0];
+                return (Image)images[0].Clone();
             }
 
             List<Image> output = new List<Image>();
