@@ -347,7 +347,7 @@ namespace ShareX.ScreenCaptureLib
                     Rectangle rect = new Rectangle(Options.TrimLeftEdge, Options.TrimTopEdge, image.Width - Options.TrimLeftEdge - Options.TrimRightEdge,
                         image.Height - Options.TrimTopEdge - Options.TrimBottomEdge);
 
-                    if (images.Count > 2 && i == images.Count - 1)
+                    if (i == images.Count - 1)
                     {
                         rect.Y += Options.CombineAdjustmentLastVertical;
                         rect.Height -= Options.CombineAdjustmentLastVertical;
@@ -392,10 +392,40 @@ namespace ShareX.ScreenCaptureLib
 
             nudTrimLeft.Value = nudTrimTop.Value = nudTrimRight.Value = nudTrimBottom.Value = 0;
 
-            Rectangle rect = new Rectangle(0, 0, images[0].Width, images[0].Height);
+            Padding result = new Padding();
 
-            using (UnsafeBitmap bmp1 = new UnsafeBitmap((Bitmap)images[0], true, ImageLockMode.ReadOnly))
-            using (UnsafeBitmap bmp2 = new UnsafeBitmap((Bitmap)images[images.Count - 1], true, ImageLockMode.ReadOnly))
+            for (int i = 0; i < images.Count - 1; i++)
+            {
+                Padding edges = GuessEdges(images[i], images[i + 1]);
+
+                if (i == 0)
+                {
+                    result = edges;
+                }
+                else
+                {
+                    result.Left = Math.Min(result.Left, edges.Left);
+                    result.Top = Math.Min(result.Top, edges.Top);
+                    result.Right = Math.Min(result.Right, edges.Right);
+                    result.Bottom = Math.Min(result.Bottom, edges.Bottom);
+                }
+            }
+
+            nudTrimLeft.Value = result.Left;
+            nudTrimTop.Value = result.Top;
+            nudTrimRight.Value = result.Right;
+            nudTrimBottom.Value = result.Bottom;
+
+            isBusy = false;
+        }
+
+        private Padding GuessEdges(Image img1, Image img2)
+        {
+            Padding result = new Padding();
+            Rectangle rect = new Rectangle(0, 0, img1.Width, img1.Height);
+
+            using (UnsafeBitmap bmp1 = new UnsafeBitmap((Bitmap)img1, true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap bmp2 = new UnsafeBitmap((Bitmap)img2, true, ImageLockMode.ReadOnly))
             {
                 bool valueFound = false;
 
@@ -407,7 +437,7 @@ namespace ShareX.ScreenCaptureLib
                         if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
                         {
                             valueFound = true;
-                            nudTrimLeft.Value = x;
+                            result.Left = x;
                             rect.X = x;
                             break;
                         }
@@ -424,7 +454,7 @@ namespace ShareX.ScreenCaptureLib
                         if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
                         {
                             valueFound = true;
-                            nudTrimTop.Value = y;
+                            result.Top = y;
                             rect.Y = y;
                             break;
                         }
@@ -441,7 +471,7 @@ namespace ShareX.ScreenCaptureLib
                         if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
                         {
                             valueFound = true;
-                            nudTrimRight.Value = rect.Width - x - 1;
+                            result.Right = rect.Width - x - 1;
                             rect.Width = x + 1;
                             break;
                         }
@@ -458,7 +488,7 @@ namespace ShareX.ScreenCaptureLib
                         if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
                         {
                             valueFound = true;
-                            nudTrimBottom.Value = rect.Height - y - 1;
+                            result.Bottom = rect.Height - y - 1;
                             rect.Height = y + 1;
                             break;
                         }
@@ -466,7 +496,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            isBusy = false;
+            return result;
         }
 
         private void GuessCombineAdjustments()
@@ -477,17 +507,22 @@ namespace ShareX.ScreenCaptureLib
 
                 int vertical = 0;
 
-                for (int i = 0; i < images.Count - 1; i++)
+                for (int i = 0; i < images.Count - 2; i++)
                 {
-                    vertical = Math.Max(vertical, CalculateVerticalOffset(images[i], images[i + 1]));
+                    int temp = CalculateVerticalOffset(images[i], images[i + 1]);
+
+                    if (i == 0)
+                    {
+                        vertical = temp;
+                    }
+                    else
+                    {
+                        vertical = Math.Max(vertical, temp);
+                    }
                 }
 
                 nudCombineVertical.Value = vertical;
-
-                if (images.Count > 2)
-                {
-                    nudCombineLastVertical.Value = CalculateVerticalOffset(images[images.Count - 2], images[images.Count - 1]);
-                }
+                nudCombineLastVertical.Value = CalculateVerticalOffset(images[images.Count - 2], images[images.Count - 1]);
 
                 isBusy = false;
             }
@@ -543,9 +578,9 @@ namespace ShareX.ScreenCaptureLib
                                 break;
                             }
 
-                            if (lineMatchesCount == matchCount || y2 == rect.Y)
+                            if (lineMatchesCount == matchCount)
                             {
-                                return y - rect.Y;
+                                return y - rect.Y + 1;
                             }
                         }
                     }
