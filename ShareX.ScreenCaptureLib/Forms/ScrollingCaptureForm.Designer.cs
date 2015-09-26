@@ -34,7 +34,8 @@ namespace ShareX.ScreenCaptureLib
             this.tcScrollingCapture = new System.Windows.Forms.TabControl();
             this.tpCapture = new System.Windows.Forms.TabPage();
             this.tpOutput = new System.Windows.Forms.TabPage();
-            this.btnGuessSettings = new System.Windows.Forms.Button();
+            this.btnProcess = new System.Windows.Forms.Button();
+            this.btnGuessEdges = new System.Windows.Forms.Button();
             this.btnCombine = new System.Windows.Forms.Button();
             this.gbCombineAdjustments = new System.Windows.Forms.GroupBox();
             this.lblCombineLastVertical = new System.Windows.Forms.Label();
@@ -52,7 +53,8 @@ namespace ShareX.ScreenCaptureLib
             this.nudTrimRight = new System.Windows.Forms.NumericUpDown();
             this.pOutput = new System.Windows.Forms.Panel();
             this.pbOutput = new System.Windows.Forms.PictureBox();
-            this.btnProcess = new System.Windows.Forms.Button();
+            this.btnGuessCombineAdjustments = new System.Windows.Forms.Button();
+            this.btnResetCombine = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -174,8 +176,10 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpOutput
             // 
+            this.tpOutput.Controls.Add(this.btnResetCombine);
+            this.tpOutput.Controls.Add(this.btnGuessCombineAdjustments);
             this.tpOutput.Controls.Add(this.btnProcess);
-            this.tpOutput.Controls.Add(this.btnGuessSettings);
+            this.tpOutput.Controls.Add(this.btnGuessEdges);
             this.tpOutput.Controls.Add(this.btnCombine);
             this.tpOutput.Controls.Add(this.gbCombineAdjustments);
             this.tpOutput.Controls.Add(this.gbTrimEdges);
@@ -188,23 +192,35 @@ namespace ShareX.ScreenCaptureLib
             this.tpOutput.Text = "Output";
             this.tpOutput.UseVisualStyleBackColor = true;
             // 
-            // btnGuessSettings
+            // btnProcess
             // 
-            this.btnGuessSettings.Location = new System.Drawing.Point(312, 16);
-            this.btnGuessSettings.Name = "btnGuessSettings";
-            this.btnGuessSettings.Size = new System.Drawing.Size(168, 23);
-            this.btnGuessSettings.TabIndex = 8;
-            this.btnGuessSettings.Text = "1. Guess settings";
-            this.btnGuessSettings.UseVisualStyleBackColor = true;
-            this.btnGuessSettings.Click += new System.EventHandler(this.btnGuessSettings_Click);
+            this.btnProcess.Location = new System.Drawing.Point(312, 88);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(376, 23);
+            this.btnProcess.TabIndex = 9;
+            this.btnProcess.Text = "4. Upload/save depending on after capture settings";
+            this.btnProcess.UseVisualStyleBackColor = true;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
+            // 
+            // btnGuessEdges
+            // 
+            this.btnGuessEdges.Enabled = false;
+            this.btnGuessEdges.Location = new System.Drawing.Point(312, 16);
+            this.btnGuessEdges.Name = "btnGuessEdges";
+            this.btnGuessEdges.Size = new System.Drawing.Size(376, 23);
+            this.btnGuessEdges.TabIndex = 8;
+            this.btnGuessEdges.Text = "1. Guess edge values to trim";
+            this.btnGuessEdges.UseVisualStyleBackColor = true;
+            this.btnGuessEdges.Click += new System.EventHandler(this.btnGuessEdges_Click);
             // 
             // btnCombine
             // 
-            this.btnCombine.Location = new System.Drawing.Point(312, 48);
+            this.btnCombine.Enabled = false;
+            this.btnCombine.Location = new System.Drawing.Point(312, 64);
             this.btnCombine.Name = "btnCombine";
-            this.btnCombine.Size = new System.Drawing.Size(168, 23);
+            this.btnCombine.Size = new System.Drawing.Size(376, 23);
             this.btnCombine.TabIndex = 8;
-            this.btnCombine.Text = "2. Combine images";
+            this.btnCombine.Text = "3. Combine images using these settings";
             this.btnCombine.UseVisualStyleBackColor = true;
             this.btnCombine.Click += new System.EventHandler(this.btnCombine_Click);
             // 
@@ -397,15 +413,26 @@ namespace ShareX.ScreenCaptureLib
             this.pbOutput.TabIndex = 0;
             this.pbOutput.TabStop = false;
             // 
-            // btnProcess
+            // btnGuessCombineAdjustments
             // 
-            this.btnProcess.Location = new System.Drawing.Point(312, 80);
-            this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(168, 23);
-            this.btnProcess.TabIndex = 9;
-            this.btnProcess.Text = "3. Upload/Save";
-            this.btnProcess.UseVisualStyleBackColor = true;
-            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
+            this.btnGuessCombineAdjustments.Enabled = false;
+            this.btnGuessCombineAdjustments.Location = new System.Drawing.Point(312, 40);
+            this.btnGuessCombineAdjustments.Name = "btnGuessCombineAdjustments";
+            this.btnGuessCombineAdjustments.Size = new System.Drawing.Size(376, 23);
+            this.btnGuessCombineAdjustments.TabIndex = 10;
+            this.btnGuessCombineAdjustments.Text = "2. Guess combine adjustments";
+            this.btnGuessCombineAdjustments.UseVisualStyleBackColor = true;
+            this.btnGuessCombineAdjustments.Click += new System.EventHandler(this.btnGuessCombineAdjustments_Click);
+            // 
+            // btnResetCombine
+            // 
+            this.btnResetCombine.Location = new System.Drawing.Point(696, 16);
+            this.btnResetCombine.Name = "btnResetCombine";
+            this.btnResetCombine.Size = new System.Drawing.Size(75, 23);
+            this.btnResetCombine.TabIndex = 11;
+            this.btnResetCombine.Text = "Reset";
+            this.btnResetCombine.UseVisualStyleBackColor = true;
+            this.btnResetCombine.Click += new System.EventHandler(this.btnResetCombine_Click);
             // 
             // ScrollingCaptureForm
             // 
@@ -469,7 +496,9 @@ namespace ShareX.ScreenCaptureLib
         private NumericUpDown nudTrimRight;
         private Button btnCombine;
         private Label lblCombineLastVertical;
-        private Button btnGuessSettings;
+        private Button btnGuessEdges;
         private Button btnProcess;
+        private Button btnGuessCombineAdjustments;
+        private Button btnResetCombine;
     }
 }

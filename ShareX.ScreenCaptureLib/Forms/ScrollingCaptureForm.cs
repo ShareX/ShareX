@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -45,8 +46,9 @@ namespace ShareX.ScreenCaptureLib
         public Image Result { get; set; }
 
         private WindowInfo selectedWindow;
-        private int currentScrollCount;
         private List<Image> images = new List<Image>();
+        private int currentScrollCount;
+        private bool isBusy;
 
         public ScrollingCaptureForm(ScrollingCaptureOptions options)
         {
@@ -69,6 +71,14 @@ namespace ShareX.ScreenCaptureLib
             }
 
             base.Dispose(disposing);
+        }
+
+        protected void OnProcessRequested(Image image)
+        {
+            if (ProcessRequested != null)
+            {
+                ProcessRequested(image);
+            }
         }
 
         private void btnSelectHandle_Click(object sender, EventArgs e)
@@ -141,8 +151,8 @@ namespace ShareX.ScreenCaptureLib
             btnCapture.Enabled = true;
             this.ShowActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
-            if (pbOutput.Image != null) pbOutput.Image.Dispose();
-            pbOutput.Image = ImageHelpers.CombineImages(images);
+            btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = btnCombine.Enabled = images.Count > 1;
+            ResetCombine();
         }
 
         private void Clean()
@@ -257,8 +267,14 @@ namespace ShareX.ScreenCaptureLib
             CombineAndPreviewImages();
         }
 
-        private void btnGuessSettings_Click(object sender, EventArgs e)
+        private void btnGuessEdges_Click(object sender, EventArgs e)
         {
+            GuessEdges();
+        }
+
+        private void btnGuessCombineAdjustments_Click(object sender, EventArgs e)
+        {
+            GuessCombineAdjustments();
         }
 
         private void btnCombine_Click(object sender, EventArgs e)
@@ -271,11 +287,25 @@ namespace ShareX.ScreenCaptureLib
             OnProcessRequested((Image)Result.Clone());
         }
 
+        private void btnResetCombine_Click(object sender, EventArgs e)
+        {
+            ResetCombine();
+        }
+
+        private void ResetCombine()
+        {
+            nudTrimLeft.Value = nudTrimTop.Value = nudTrimRight.Value = nudTrimBottom.Value = nudCombineVertical.Value = nudCombineLastVertical.Value = 0;
+            CombineAndPreviewImages();
+        }
+
         private void CombineAndPreviewImages()
         {
-            if (pbOutput.Image != null) pbOutput.Image.Dispose();
-            Result = CombineImages();
-            pbOutput.Image = Result;
+            if (!isBusy)
+            {
+                if (pbOutput.Image != null) pbOutput.Image.Dispose();
+                Result = CombineImages();
+                pbOutput.Image = Result;
+            }
         }
 
         private Image CombineImages()
@@ -294,23 +324,28 @@ namespace ShareX.ScreenCaptureLib
 
             for (int i = 0; i < images.Count; i++)
             {
+                Image newImage = null;
                 Image image = images[i];
 
-                Rectangle rect = new Rectangle(Options.TrimLeftEdge, Options.TrimTopEdge, image.Width - Options.TrimLeftEdge - Options.TrimRightEdge,
-                    image.Height - Options.TrimTopEdge - Options.TrimBottomEdge);
-
-                if (i == images.Count - 1)
+                if (Options.TrimLeftEdge > 0 || Options.TrimTopEdge > 0 || Options.TrimTopEdge > 0 || Options.TrimBottomEdge > 0 ||
+                    Options.CombineAdjustmentVertical > 0 || Options.CombineAdjustmentLastVertical > 0)
                 {
-                    rect.Y += Options.CombineAdjustmentLastVertical;
-                    rect.Height -= Options.CombineAdjustmentLastVertical;
-                }
-                else if (i > 0)
-                {
-                    rect.Y += Options.CombineAdjustmentVertical;
-                    rect.Height -= Options.CombineAdjustmentVertical;
-                }
+                    Rectangle rect = new Rectangle(Options.TrimLeftEdge, Options.TrimTopEdge, image.Width - Options.TrimLeftEdge - Options.TrimRightEdge,
+                        image.Height - Options.TrimTopEdge - Options.TrimBottomEdge);
 
-                Image newImage = ImageHelpers.CropImage(image, rect);
+                    if (i == images.Count - 1)
+                    {
+                        rect.Y += Options.CombineAdjustmentLastVertical;
+                        rect.Height -= Options.CombineAdjustmentLastVertical;
+                    }
+                    else if (i > 0)
+                    {
+                        rect.Y += Options.CombineAdjustmentVertical;
+                        rect.Height -= Options.CombineAdjustmentVertical;
+                    }
+
+                    newImage = ImageHelpers.CropImage(image, rect);
+                }
 
                 if (newImage == null)
                 {
@@ -320,15 +355,183 @@ namespace ShareX.ScreenCaptureLib
                 output.Add(newImage);
             }
 
-            return ImageHelpers.CombineImages(output);
+            Image result = ImageHelpers.CombineImages(output);
+
+            foreach (Image image in output)
+            {
+                if (image != null)
+                {
+                    image.Dispose();
+                }
+            }
+
+            output.Clear();
+
+            return result;
         }
 
-        protected void OnProcessRequested(Image image)
+        private void GuessEdges()
         {
-            if (ProcessRequested != null)
+            if (images.Count < 2) return;
+
+            isBusy = true;
+
+            nudTrimLeft.Value = nudTrimTop.Value = nudTrimRight.Value = nudTrimBottom.Value = 0;
+
+            Rectangle rect = new Rectangle(0, 0, images[0].Width, images[0].Height);
+
+            using (UnsafeBitmap bmp1 = new UnsafeBitmap((Bitmap)images[0], true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap bmp2 = new UnsafeBitmap((Bitmap)images[1], true, ImageLockMode.ReadOnly))
             {
-                ProcessRequested(image);
+                bool valueFound = false;
+
+                // Left edge
+                for (int x = rect.X; !valueFound && x < rect.Width; x++)
+                {
+                    for (int y = rect.Y; y < rect.Height; y++)
+                    {
+                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+                        {
+                            valueFound = true;
+                            nudTrimLeft.Value = x;
+                            rect.X = x;
+                            break;
+                        }
+                    }
+                }
+
+                valueFound = false;
+
+                // Top edge
+                for (int y = rect.Y; !valueFound && y < rect.Height; y++)
+                {
+                    for (int x = rect.X; x < rect.Width; x++)
+                    {
+                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+                        {
+                            valueFound = true;
+                            nudTrimTop.Value = y;
+                            rect.Y = y;
+                            break;
+                        }
+                    }
+                }
+
+                valueFound = false;
+
+                // Right edge
+                for (int x = rect.Width - 1; !valueFound && x >= rect.X; x--)
+                {
+                    for (int y = rect.Y; y < rect.Height; y++)
+                    {
+                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+                        {
+                            valueFound = true;
+                            nudTrimRight.Value = rect.Width - x - 1;
+                            rect.Width = x + 1;
+                            break;
+                        }
+                    }
+                }
+
+                valueFound = false;
+
+                // Bottom edge
+                for (int y = rect.Height - 1; !valueFound && y >= rect.X; y--)
+                {
+                    for (int x = rect.X; x < rect.Width; x++)
+                    {
+                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+                        {
+                            valueFound = true;
+                            nudTrimBottom.Value = rect.Height - y - 1;
+                            rect.Height = y + 1;
+                            break;
+                        }
+                    }
+                }
             }
+
+            isBusy = false;
+        }
+
+        private void GuessCombineAdjustments()
+        {
+            if (images.Count > 1)
+            {
+                isBusy = true;
+
+                nudCombineVertical.Value = CalculateVerticalOffset(images[0], images[1]);
+
+                if (images.Count > 2)
+                {
+                    nudCombineLastVertical.Value = CalculateVerticalOffset(images[images.Count - 2], images[images.Count - 1]);
+                }
+
+                isBusy = false;
+            }
+        }
+
+        private int CalculateVerticalOffset(Image img1, Image img2, int ignoreRightOffset = 50, int matchCount = 5)
+        {
+            Rectangle rect = new Rectangle(Options.TrimLeftEdge, Options.TrimTopEdge,
+                img1.Width - Options.TrimLeftEdge - Options.TrimRightEdge - (img1.Width > ignoreRightOffset ? ignoreRightOffset : 0),
+                img1.Height - Options.TrimTopEdge - Options.TrimBottomEdge);
+
+            using (UnsafeBitmap bmp1 = new UnsafeBitmap((Bitmap)img1, true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap bmp2 = new UnsafeBitmap((Bitmap)img2, true, ImageLockMode.ReadOnly))
+            {
+                for (int y = rect.Y; y < rect.Height; y++)
+                {
+                    bool isLineMatches = true;
+
+                    for (int x = rect.X; x < rect.Width; x++)
+                    {
+                        if (bmp2.GetPixel(x, y) != bmp1.GetPixel(x, rect.Height - 1))
+                        {
+                            isLineMatches = false;
+                            break;
+                        }
+                    }
+
+                    if (isLineMatches)
+                    {
+                        int lineMatchesCount = 0;
+                        int y3 = 2;
+
+                        for (int y2 = y - 1; y2 >= rect.Y; y2--)
+                        {
+                            bool isLineMatches2 = true;
+
+                            for (int x2 = rect.X; x2 < rect.Width; x2++)
+                            {
+                                if (bmp2.GetPixel(x2, y2) != bmp1.GetPixel(x2, rect.Height - y3))
+                                {
+                                    isLineMatches2 = false;
+                                    break;
+                                }
+                            }
+
+                            if (isLineMatches2)
+                            {
+                                lineMatchesCount++;
+                                y3++;
+                            }
+                            else
+                            {
+                                break;
+                            }
+
+                            if (lineMatchesCount == matchCount || y2 == rect.Y)
+                            {
+                                return y;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return 0;
         }
     }
 }
