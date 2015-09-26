@@ -58,6 +58,7 @@ namespace ShareX.ScreenCaptureLib
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
             nudScrollDelay.Value = Options.ScrollDelay;
             nudMaximumScrollCount.Value = Options.MaximumScrollCount;
+            cbAutoDetectScrollEnd.Checked = options.AutoDetectScrollEnd;
         }
 
         protected override void Dispose(bool disposing)
@@ -154,6 +155,7 @@ namespace ShareX.ScreenCaptureLib
             this.ShowActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
             btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = btnCombine.Enabled = images.Count > 1;
+            RemoveLastDuplicates();
             ResetCombine();
         }
 
@@ -175,6 +177,28 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void RemoveLastDuplicates()
+        {
+            if (images.Count > 1)
+            {
+                for (int i = images.Count - 1; i > 0; i--)
+                {
+                    bool result = ImageHelpers.IsImagesEqual((Bitmap)images[i], (Bitmap)images[i - 1]);
+
+                    if (result)
+                    {
+                        Image img = images[i];
+                        images.Remove(img);
+                        img.Dispose();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+
         private void captureTimer_Tick(object sender, EventArgs e)
         {
             Screenshot.CaptureCursor = false;
@@ -187,7 +211,7 @@ namespace ShareX.ScreenCaptureLib
 
             currentScrollCount++;
 
-            if (currentScrollCount == Options.MaximumScrollCount || IsScrollReachedBottom(selectedWindow.Handle))
+            if (currentScrollCount == Options.MaximumScrollCount || (Options.AutoDetectScrollEnd && IsScrollReachedBottom(selectedWindow.Handle)))
             {
                 StopCapture();
             }
@@ -215,6 +239,11 @@ namespace ShareX.ScreenCaptureLib
         private void nudMaximumScrollCount_ValueChanged(object sender, EventArgs e)
         {
             Options.MaximumScrollCount = (int)nudMaximumScrollCount.Value;
+        }
+
+        private void cbAutoDetectScrollEnd_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.AutoDetectScrollEnd = cbAutoDetectScrollEnd.Checked;
         }
 
         private bool IsScrollReachedBottom(IntPtr handle)

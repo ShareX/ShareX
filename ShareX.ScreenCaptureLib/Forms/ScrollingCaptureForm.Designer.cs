@@ -33,6 +33,8 @@ namespace ShareX.ScreenCaptureLib
             this.lblMaximumScrollCount = new System.Windows.Forms.Label();
             this.tcScrollingCapture = new System.Windows.Forms.TabControl();
             this.tpCapture = new System.Windows.Forms.TabPage();
+            this.lblScrollMethod = new System.Windows.Forms.Label();
+            this.cbScrollMethod = new System.Windows.Forms.ComboBox();
             this.tpOutput = new System.Windows.Forms.TabPage();
             this.btnResetCombine = new System.Windows.Forms.Button();
             this.btnGuessCombineAdjustments = new System.Windows.Forms.Button();
@@ -55,8 +57,7 @@ namespace ShareX.ScreenCaptureLib
             this.nudTrimRight = new System.Windows.Forms.NumericUpDown();
             this.pOutput = new System.Windows.Forms.Panel();
             this.pbOutput = new System.Windows.Forms.PictureBox();
-            this.cbScrollMethod = new System.Windows.Forms.ComboBox();
-            this.lblScrollMethod = new System.Windows.Forms.Label();
+            this.cbAutoDetectScrollEnd = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -95,7 +96,7 @@ namespace ShareX.ScreenCaptureLib
             // btnCapture
             // 
             this.btnCapture.Enabled = false;
-            this.btnCapture.Location = new System.Drawing.Point(16, 128);
+            this.btnCapture.Location = new System.Drawing.Point(16, 144);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(152, 23);
             this.btnCapture.TabIndex = 2;
@@ -161,6 +162,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpCapture
             // 
+            this.tpCapture.Controls.Add(this.cbAutoDetectScrollEnd);
             this.tpCapture.Controls.Add(this.lblScrollMethod);
             this.tpCapture.Controls.Add(this.cbScrollMethod);
             this.tpCapture.Controls.Add(this.btnSelectHandle);
@@ -177,6 +179,24 @@ namespace ShareX.ScreenCaptureLib
             this.tpCapture.TabIndex = 0;
             this.tpCapture.Text = "Capture";
             this.tpCapture.UseVisualStyleBackColor = true;
+            // 
+            // lblScrollMethod
+            // 
+            this.lblScrollMethod.AutoSize = true;
+            this.lblScrollMethod.Location = new System.Drawing.Point(16, 48);
+            this.lblScrollMethod.Name = "lblScrollMethod";
+            this.lblScrollMethod.Size = new System.Drawing.Size(74, 13);
+            this.lblScrollMethod.TabIndex = 8;
+            this.lblScrollMethod.Text = "Scroll method:";
+            // 
+            // cbScrollMethod
+            // 
+            this.cbScrollMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbScrollMethod.FormattingEnabled = true;
+            this.cbScrollMethod.Location = new System.Drawing.Point(136, 44);
+            this.cbScrollMethod.Name = "cbScrollMethod";
+            this.cbScrollMethod.Size = new System.Drawing.Size(176, 21);
+            this.cbScrollMethod.TabIndex = 7;
             // 
             // tpOutput
             // 
@@ -438,23 +458,16 @@ namespace ShareX.ScreenCaptureLib
             this.pbOutput.TabIndex = 0;
             this.pbOutput.TabStop = false;
             // 
-            // cbScrollMethod
+            // cbAutoDetectScrollEnd
             // 
-            this.cbScrollMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbScrollMethod.FormattingEnabled = true;
-            this.cbScrollMethod.Location = new System.Drawing.Point(136, 44);
-            this.cbScrollMethod.Name = "cbScrollMethod";
-            this.cbScrollMethod.Size = new System.Drawing.Size(176, 21);
-            this.cbScrollMethod.TabIndex = 7;
-            // 
-            // lblScrollMethod
-            // 
-            this.lblScrollMethod.AutoSize = true;
-            this.lblScrollMethod.Location = new System.Drawing.Point(16, 48);
-            this.lblScrollMethod.Name = "lblScrollMethod";
-            this.lblScrollMethod.Size = new System.Drawing.Size(74, 13);
-            this.lblScrollMethod.TabIndex = 8;
-            this.lblScrollMethod.Text = "Scroll method:";
+            this.cbAutoDetectScrollEnd.AutoSize = true;
+            this.cbAutoDetectScrollEnd.Location = new System.Drawing.Point(16, 120);
+            this.cbAutoDetectScrollEnd.Name = "cbAutoDetectScrollEnd";
+            this.cbAutoDetectScrollEnd.Size = new System.Drawing.Size(129, 17);
+            this.cbAutoDetectScrollEnd.TabIndex = 9;
+            this.cbAutoDetectScrollEnd.Text = "Auto detect scroll end";
+            this.cbAutoDetectScrollEnd.UseVisualStyleBackColor = true;
+            this.cbAutoDetectScrollEnd.CheckedChanged += new System.EventHandler(this.cbAutoDetectScrollEnd_CheckedChanged);
             // 
             // ScrollingCaptureForm
             // 
@@ -524,5 +537,6 @@ namespace ShareX.ScreenCaptureLib
         private Button btnResetCombine;
         private Label lblScrollMethod;
         private ComboBox cbScrollMethod;
+        private CheckBox cbAutoDetectScrollEnd;
     }
 }
