@@ -347,7 +347,7 @@ namespace ShareX.ScreenCaptureLib
                     Rectangle rect = new Rectangle(Options.TrimLeftEdge, Options.TrimTopEdge, image.Width - Options.TrimLeftEdge - Options.TrimRightEdge,
                         image.Height - Options.TrimTopEdge - Options.TrimBottomEdge);
 
-                    if (i == images.Count - 1)
+                    if (images.Count > 2 && i == images.Count - 1)
                     {
                         rect.Y += Options.CombineAdjustmentLastVertical;
                         rect.Height -= Options.CombineAdjustmentLastVertical;
@@ -395,7 +395,7 @@ namespace ShareX.ScreenCaptureLib
             Rectangle rect = new Rectangle(0, 0, images[0].Width, images[0].Height);
 
             using (UnsafeBitmap bmp1 = new UnsafeBitmap((Bitmap)images[0], true, ImageLockMode.ReadOnly))
-            using (UnsafeBitmap bmp2 = new UnsafeBitmap((Bitmap)images[1], true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap bmp2 = new UnsafeBitmap((Bitmap)images[images.Count - 1], true, ImageLockMode.ReadOnly))
             {
                 bool valueFound = false;
 
@@ -475,7 +475,14 @@ namespace ShareX.ScreenCaptureLib
             {
                 isBusy = true;
 
-                nudCombineVertical.Value = CalculateVerticalOffset(images[0], images[1]);
+                int vertical = 0;
+
+                for (int i = 0; i < images.Count - 1; i++)
+                {
+                    vertical = Math.Max(vertical, CalculateVerticalOffset(images[i], images[i + 1]));
+                }
+
+                nudCombineVertical.Value = vertical;
 
                 if (images.Count > 2)
                 {
@@ -495,13 +502,13 @@ namespace ShareX.ScreenCaptureLib
             using (UnsafeBitmap bmp1 = new UnsafeBitmap((Bitmap)img1, true, ImageLockMode.ReadOnly))
             using (UnsafeBitmap bmp2 = new UnsafeBitmap((Bitmap)img2, true, ImageLockMode.ReadOnly))
             {
-                for (int y = rect.Y; y < rect.Height; y++)
+                for (int y = rect.Y; y < rect.Bottom; y++)
                 {
                     bool isLineMatches = true;
 
-                    for (int x = rect.X; x < rect.Width; x++)
+                    for (int x = rect.X; x < rect.Right; x++)
                     {
-                        if (bmp2.GetPixel(x, y) != bmp1.GetPixel(x, rect.Height - 1))
+                        if (bmp2.GetPixel(x, y) != bmp1.GetPixel(x, rect.Bottom - 1))
                         {
                             isLineMatches = false;
                             break;
@@ -517,9 +524,9 @@ namespace ShareX.ScreenCaptureLib
                         {
                             bool isLineMatches2 = true;
 
-                            for (int x2 = rect.X; x2 < rect.Width; x2++)
+                            for (int x2 = rect.X; x2 < rect.Right; x2++)
                             {
-                                if (bmp2.GetPixel(x2, y2) != bmp1.GetPixel(x2, rect.Height - y3))
+                                if (bmp2.GetPixel(x2, y2) != bmp1.GetPixel(x2, rect.Bottom - y3))
                                 {
                                     isLineMatches2 = false;
                                     break;
@@ -538,7 +545,7 @@ namespace ShareX.ScreenCaptureLib
 
                             if (lineMatchesCount == matchCount || y2 == rect.Y)
                             {
-                                return y;
+                                return y - rect.Y;
                             }
                         }
                     }

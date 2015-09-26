@@ -284,7 +284,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             this.nudCombineVertical.Location = new System.Drawing.Point(88, 16);
             this.nudCombineVertical.Maximum = new decimal(new int[] {
-            1000,
+            5000,
             0,
             0,
             0});
@@ -298,7 +298,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             this.nudCombineLastVertical.Location = new System.Drawing.Point(88, 40);
             this.nudCombineLastVertical.Maximum = new decimal(new int[] {
-            1000,
+            5000,
             0,
             0,
             0});
@@ -365,7 +365,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             this.nudTrimLeft.Location = new System.Drawing.Point(64, 16);
             this.nudTrimLeft.Maximum = new decimal(new int[] {
-            1000,
+            5000,
             0,
             0,
             0});
@@ -379,7 +379,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             this.nudTrimBottom.Location = new System.Drawing.Point(64, 88);
             this.nudTrimBottom.Maximum = new decimal(new int[] {
-            1000,
+            5000,
             0,
             0,
             0});
@@ -393,7 +393,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             this.nudTrimTop.Location = new System.Drawing.Point(64, 40);
             this.nudTrimTop.Maximum = new decimal(new int[] {
-            1000,
+            5000,
             0,
             0,
             0});
@@ -407,7 +407,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             this.nudTrimRight.Location = new System.Drawing.Point(64, 64);
             this.nudTrimRight.Maximum = new decimal(new int[] {
-            1000,
+            5000,
             0,
             0,
             0});
