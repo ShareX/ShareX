@@ -1339,6 +1339,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scrolling capture.
+        /// </summary>
+        internal static string HotkeyType_ScrollingCapture {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScrollingCapture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen capture.
+        /// </summary>
+        internal static string HotkeyType_ScrollingCapture_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScrollingCapture_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start auto capture using last region.
         /// </summary>
         internal static string HotkeyType_StartAutoCapture {

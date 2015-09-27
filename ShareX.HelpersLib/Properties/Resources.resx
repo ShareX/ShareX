@@ -820,4 +820,10 @@ Would you like to download and install it?</value>
   <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
     <value>Target</value>
   </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>Scrolling capture</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
+    <value>Screen capture</value>
+  </data>
 </root>

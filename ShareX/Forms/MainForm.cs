@@ -1683,6 +1683,9 @@ namespace ShareX
                 case HotkeyType.LastRegion:
                     CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
                     break;
+                case HotkeyType.ScrollingCapture:
+                    TaskHelpers.OpenScrollingCapture(safeTaskSettings, true);
+                    break;
                 case HotkeyType.CaptureWebpage:
                     TaskHelpers.OpenWebpageCapture(safeTaskSettings);
                     break;

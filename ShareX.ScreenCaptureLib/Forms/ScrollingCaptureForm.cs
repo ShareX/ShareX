@@ -52,7 +52,7 @@ namespace ShareX.ScreenCaptureLib
         private bool isCapturing;
         private bool firstCapture;
 
-        public ScrollingCaptureForm(ScrollingCaptureOptions options)
+        public ScrollingCaptureForm(ScrollingCaptureOptions options, bool forceSelection = false)
         {
             Options = options;
             InitializeComponent();
@@ -66,7 +66,7 @@ namespace ShareX.ScreenCaptureLib
             cbAutoDetectScrollEnd.Checked = Options.AutoDetectScrollEnd;
             cbRemoveDuplicates.Checked = Options.RemoveDuplicates;
 
-            if (Options.StartSelectionAutomatically)
+            if (forceSelection || Options.StartSelectionAutomatically)
             {
                 if (Options.StartCaptureAutomatically)
                 {
@@ -194,9 +194,9 @@ namespace ShareX.ScreenCaptureLib
             tcScrollingCapture.SelectedTab = tpOutput;
             btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = images.Count > 1;
             btnStartTask.Enabled = images.Count > 0;
-            lblImageCount.Text = "Image count: " + images.Count;
             StartingProcess();
             if (Options.RemoveDuplicates) RemoveDuplicates();
+            lblImageCount.Text = "Image count: " + images.Count;
             ResetCombine();
             EndingProcess();
             isCapturing = false;

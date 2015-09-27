@@ -165,6 +165,7 @@ namespace ShareX
         FreeHandRegion,
         CustomRegion,
         LastRegion,
+        ScrollingCapture,
         CaptureWebpage,
         AutoCapture,
         StartAutoCapture,

@@ -501,7 +501,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             this.pbOutput.Location = new System.Drawing.Point(0, 0);
             this.pbOutput.Name = "pbOutput";
-            this.pbOutput.Size = new System.Drawing.Size(100, 100);
+            this.pbOutput.Size = new System.Drawing.Size(10, 10);
             this.pbOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbOutput.TabIndex = 0;
             this.pbOutput.TabStop = false;
@@ -509,10 +509,10 @@ namespace ShareX.ScreenCaptureLib
             // lblProcessing
             // 
             this.lblProcessing.AutoSize = true;
-            this.lblProcessing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProcessing.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProcessing.Location = new System.Drawing.Point(8, 8);
             this.lblProcessing.Name = "lblProcessing";
-            this.lblProcessing.Size = new System.Drawing.Size(99, 20);
+            this.lblProcessing.Size = new System.Drawing.Size(137, 25);
             this.lblProcessing.TabIndex = 1;
             this.lblProcessing.Text = "Processing...";
             // 
