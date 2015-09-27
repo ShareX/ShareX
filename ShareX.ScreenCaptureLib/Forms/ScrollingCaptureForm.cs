@@ -26,13 +26,9 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -55,16 +51,20 @@ namespace ShareX.ScreenCaptureLib
         public ScrollingCaptureForm(ScrollingCaptureOptions options, bool forceSelection = false)
         {
             Options = options;
+
             InitializeComponent();
+
             cbScrollMethod.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollMethod>());
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
             nudStartDelay.Value = Options.StartDelay;
             nudScrollDelay.Value = Options.ScrollDelay;
             nudMaximumScrollCount.Value = Options.MaximumScrollCount;
+            cbStartSelectionAutomatically.Checked = Options.StartSelectionAutomatically;
             cbStartCaptureAutomatically.Checked = Options.StartCaptureAutomatically;
             cbScrollTopBeforeCapture.Checked = Options.ScrollTopBeforeCapture;
             cbAutoDetectScrollEnd.Checked = Options.AutoDetectScrollEnd;
             cbRemoveDuplicates.Checked = Options.RemoveDuplicates;
+            cbAutoCombine.Checked = Options.AfterCaptureAutomaticallyCombine;
 
             if (forceSelection || Options.StartSelectionAutomatically)
             {
@@ -237,7 +237,13 @@ namespace ShareX.ScreenCaptureLib
             lblImageCount.Text = "Image count: " + images.Count;
             btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = images.Count > 1;
             btnStartTask.Enabled = btnResetCombine.Enabled = images.Count > 0;
-            ResetCombine();
+            ResetOffsets();
+            if (Options.AfterCaptureAutomaticallyCombine)
+            {
+                GuessEdges();
+                GuessCombineAdjustments();
+            }
+            CombineAndPreviewImages();
             EndingProcess();
             isCapturing = false;
         }
@@ -373,6 +379,11 @@ namespace ShareX.ScreenCaptureLib
             Options.MaximumScrollCount = (int)nudMaximumScrollCount.Value;
         }
 
+        private void cbStartSelectionAutomatically_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.StartSelectionAutomatically = cbStartSelectionAutomatically.Checked;
+        }
+
         private void cbStartCaptureAutomatically_CheckedChanged(object sender, EventArgs e)
         {
             Options.StartCaptureAutomatically = cbStartCaptureAutomatically.Checked;
@@ -391,6 +402,11 @@ namespace ShareX.ScreenCaptureLib
         private void cbRemoveDuplicates_CheckedChanged(object sender, EventArgs e)
         {
             Options.RemoveDuplicates = cbRemoveDuplicates.Checked;
+        }
+
+        private void cbAutoCombine_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.AfterCaptureAutomaticallyCombine = cbAutoCombine.Checked;
         }
 
         private bool IsScrollReachedBottom(IntPtr handle)
@@ -503,15 +519,15 @@ namespace ShareX.ScreenCaptureLib
         private void btnResetCombine_Click(object sender, EventArgs e)
         {
             StartingProcess();
-            ResetCombine();
+            ResetOffsets();
+            CombineAndPreviewImages();
             EndingProcess();
         }
 
-        private void ResetCombine()
+        private void ResetOffsets()
         {
             nudTrimLeft.Value = nudTrimTop.Value = nudTrimRight.Value = nudTrimBottom.Value = nudCombineVertical.Value = nudCombineLastVertical.Value = 0;
             Options.TrimLeftEdge = Options.TrimTopEdge = Options.TrimRightEdge = Options.TrimBottomEdge = Options.CombineAdjustmentVertical = Options.CombineAdjustmentLastVertical = 0;
-            CombineAndPreviewImages();
         }
 
         private void CombineAndPreviewImagesFromControl()
