@@ -42,9 +42,8 @@ namespace ShareX.ScreenCaptureLib
             this.tpOutput = new System.Windows.Forms.TabPage();
             this.btnResetCombine = new System.Windows.Forms.Button();
             this.btnGuessCombineAdjustments = new System.Windows.Forms.Button();
-            this.btnProcess = new System.Windows.Forms.Button();
+            this.btnStartTask = new System.Windows.Forms.Button();
             this.btnGuessEdges = new System.Windows.Forms.Button();
-            this.btnCombine = new System.Windows.Forms.Button();
             this.gbCombineAdjustments = new System.Windows.Forms.GroupBox();
             this.lblCombineLastVertical = new System.Windows.Forms.Label();
             this.lblCombineVertical = new System.Windows.Forms.Label();
@@ -61,6 +60,8 @@ namespace ShareX.ScreenCaptureLib
             this.nudTrimRight = new System.Windows.Forms.NumericUpDown();
             this.pOutput = new System.Windows.Forms.Panel();
             this.pbOutput = new System.Windows.Forms.PictureBox();
+            this.lblProcessing = new System.Windows.Forms.Label();
+            this.lblImageCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -251,11 +252,11 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpOutput
             // 
+            this.tpOutput.Controls.Add(this.lblImageCount);
             this.tpOutput.Controls.Add(this.btnResetCombine);
             this.tpOutput.Controls.Add(this.btnGuessCombineAdjustments);
-            this.tpOutput.Controls.Add(this.btnProcess);
+            this.tpOutput.Controls.Add(this.btnStartTask);
             this.tpOutput.Controls.Add(this.btnGuessEdges);
-            this.tpOutput.Controls.Add(this.btnCombine);
             this.tpOutput.Controls.Add(this.gbCombineAdjustments);
             this.tpOutput.Controls.Add(this.gbTrimEdges);
             this.tpOutput.Controls.Add(this.pOutput);
@@ -271,9 +272,9 @@ namespace ShareX.ScreenCaptureLib
             // 
             this.btnResetCombine.Location = new System.Drawing.Point(696, 16);
             this.btnResetCombine.Name = "btnResetCombine";
-            this.btnResetCombine.Size = new System.Drawing.Size(75, 23);
+            this.btnResetCombine.Size = new System.Drawing.Size(216, 23);
             this.btnResetCombine.TabIndex = 11;
-            this.btnResetCombine.Text = "Reset";
+            this.btnResetCombine.Text = "Reset output";
             this.btnResetCombine.UseVisualStyleBackColor = true;
             this.btnResetCombine.Click += new System.EventHandler(this.btnResetCombine_Click);
             // 
@@ -284,19 +285,20 @@ namespace ShareX.ScreenCaptureLib
             this.btnGuessCombineAdjustments.Name = "btnGuessCombineAdjustments";
             this.btnGuessCombineAdjustments.Size = new System.Drawing.Size(376, 23);
             this.btnGuessCombineAdjustments.TabIndex = 10;
-            this.btnGuessCombineAdjustments.Text = "2. Guess combine adjustments";
+            this.btnGuessCombineAdjustments.Text = "2. Guess combine adjustments & combine";
+            this.btnGuessCombineAdjustments.UseMnemonic = false;
             this.btnGuessCombineAdjustments.UseVisualStyleBackColor = true;
             this.btnGuessCombineAdjustments.Click += new System.EventHandler(this.btnGuessCombineAdjustments_Click);
             // 
-            // btnProcess
+            // btnStartTask
             // 
-            this.btnProcess.Location = new System.Drawing.Point(312, 88);
-            this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(376, 23);
-            this.btnProcess.TabIndex = 9;
-            this.btnProcess.Text = "4. Upload/save depending on after capture settings";
-            this.btnProcess.UseVisualStyleBackColor = true;
-            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
+            this.btnStartTask.Location = new System.Drawing.Point(312, 64);
+            this.btnStartTask.Name = "btnStartTask";
+            this.btnStartTask.Size = new System.Drawing.Size(376, 23);
+            this.btnStartTask.TabIndex = 9;
+            this.btnStartTask.Text = "3. Upload/save depending on after capture settings";
+            this.btnStartTask.UseVisualStyleBackColor = true;
+            this.btnStartTask.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // btnGuessEdges
             // 
@@ -308,17 +310,6 @@ namespace ShareX.ScreenCaptureLib
             this.btnGuessEdges.Text = "1. Guess edge values to trim";
             this.btnGuessEdges.UseVisualStyleBackColor = true;
             this.btnGuessEdges.Click += new System.EventHandler(this.btnGuessEdges_Click);
-            // 
-            // btnCombine
-            // 
-            this.btnCombine.Enabled = false;
-            this.btnCombine.Location = new System.Drawing.Point(312, 64);
-            this.btnCombine.Name = "btnCombine";
-            this.btnCombine.Size = new System.Drawing.Size(376, 23);
-            this.btnCombine.TabIndex = 8;
-            this.btnCombine.Text = "3. Combine images using these settings";
-            this.btnCombine.UseVisualStyleBackColor = true;
-            this.btnCombine.Click += new System.EventHandler(this.btnCombine_Click);
             // 
             // gbCombineAdjustments
             // 
@@ -494,6 +485,7 @@ namespace ShareX.ScreenCaptureLib
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pOutput.AutoScroll = true;
+            this.pOutput.Controls.Add(this.lblProcessing);
             this.pOutput.Controls.Add(this.pbOutput);
             this.pOutput.Location = new System.Drawing.Point(8, 136);
             this.pOutput.Name = "pOutput";
@@ -508,6 +500,25 @@ namespace ShareX.ScreenCaptureLib
             this.pbOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbOutput.TabIndex = 0;
             this.pbOutput.TabStop = false;
+            // 
+            // lblProcessing
+            // 
+            this.lblProcessing.AutoSize = true;
+            this.lblProcessing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProcessing.Location = new System.Drawing.Point(8, 8);
+            this.lblProcessing.Name = "lblProcessing";
+            this.lblProcessing.Size = new System.Drawing.Size(99, 20);
+            this.lblProcessing.TabIndex = 1;
+            this.lblProcessing.Text = "Processing...";
+            // 
+            // lblImageCount
+            // 
+            this.lblImageCount.AutoSize = true;
+            this.lblImageCount.Location = new System.Drawing.Point(696, 48);
+            this.lblImageCount.Name = "lblImageCount";
+            this.lblImageCount.Size = new System.Drawing.Size(66, 13);
+            this.lblImageCount.TabIndex = 12;
+            this.lblImageCount.Text = "Image count";
             // 
             // ScrollingCaptureForm
             // 
@@ -524,6 +535,7 @@ namespace ShareX.ScreenCaptureLib
             this.tpCapture.ResumeLayout(false);
             this.tpCapture.PerformLayout();
             this.tpOutput.ResumeLayout(false);
+            this.tpOutput.PerformLayout();
             this.gbCombineAdjustments.ResumeLayout(false);
             this.gbCombineAdjustments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCombineVertical)).EndInit();
@@ -569,10 +581,9 @@ namespace ShareX.ScreenCaptureLib
         private NumericUpDown nudTrimBottom;
         private NumericUpDown nudTrimTop;
         private NumericUpDown nudTrimRight;
-        private Button btnCombine;
         private Label lblCombineLastVertical;
         private Button btnGuessEdges;
-        private Button btnProcess;
+        private Button btnStartTask;
         private Button btnGuessCombineAdjustments;
         private Button btnResetCombine;
         private Label lblScrollMethod;
@@ -581,5 +592,7 @@ namespace ShareX.ScreenCaptureLib
         private CheckBox cbRemoveDuplicates;
         private CheckBox cbStartCaptureAutomatically;
         private CheckBox cbScrollTopBeforeCapture;
+        private Label lblProcessing;
+        private Label lblImageCount;
     }
 }

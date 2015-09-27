@@ -180,9 +180,13 @@ namespace ShareX.ScreenCaptureLib
             btnCapture.Enabled = true;
             this.ShowActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
-            btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = btnCombine.Enabled = images.Count > 1;
+            btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = images.Count > 1;
+            btnStartTask.Enabled = images.Count > 0;
+            lblImageCount.Text = "Image count: " + images.Count;
+            StartingProcess();
             if (Options.RemoveDuplicates) RemoveDuplicates();
             ResetCombine();
+            EndingProcess();
         }
 
         private void Clean()
@@ -200,6 +204,17 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 images.Clear();
+            }
+        }
+
+        private void CleanPictureBox()
+        {
+            Image temp = pbOutput.Image;
+
+            if (temp != null)
+            {
+                pbOutput.Image = null;
+                temp.Dispose();
             }
         }
 
@@ -327,62 +342,82 @@ namespace ShareX.ScreenCaptureLib
         private void nudTrimLeft_ValueChanged(object sender, EventArgs e)
         {
             Options.TrimLeftEdge = (int)nudTrimLeft.Value;
-            CombineAndPreviewImages();
+            CombineAndPreviewImagesFromControl();
         }
 
         private void nudTrimTop_ValueChanged(object sender, EventArgs e)
         {
             Options.TrimTopEdge = (int)nudTrimTop.Value;
-            CombineAndPreviewImages();
+            CombineAndPreviewImagesFromControl();
         }
 
         private void nudTrimRight_ValueChanged(object sender, EventArgs e)
         {
             Options.TrimRightEdge = (int)nudTrimRight.Value;
-            CombineAndPreviewImages();
+            CombineAndPreviewImagesFromControl();
         }
 
         private void nudTrimBottom_ValueChanged(object sender, EventArgs e)
         {
             Options.TrimBottomEdge = (int)nudTrimBottom.Value;
-            CombineAndPreviewImages();
+            CombineAndPreviewImagesFromControl();
         }
 
         private void nudCombineVertical_ValueChanged(object sender, EventArgs e)
         {
             Options.CombineAdjustmentVertical = (int)nudCombineVertical.Value;
-            CombineAndPreviewImages();
+            CombineAndPreviewImagesFromControl();
         }
 
         private void nudCombineLastVertical_ValueChanged(object sender, EventArgs e)
         {
             Options.CombineAdjustmentLastVertical = (int)nudCombineLastVertical.Value;
-            CombineAndPreviewImages();
+            CombineAndPreviewImagesFromControl();
         }
 
         private void btnGuessEdges_Click(object sender, EventArgs e)
         {
+            StartingProcess();
             GuessEdges();
+            CombineAndPreviewImages();
+            EndingProcess();
         }
 
         private void btnGuessCombineAdjustments_Click(object sender, EventArgs e)
         {
+            StartingProcess();
             GuessCombineAdjustments();
-        }
-
-        private void btnCombine_Click(object sender, EventArgs e)
-        {
             CombineAndPreviewImages();
+            EndingProcess();
         }
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
-            OnProcessRequested((Image)Result.Clone());
+            if (Result != null)
+            {
+                OnProcessRequested((Image)Result.Clone());
+            }
+        }
+
+        private void StartingProcess()
+        {
+            isBusy = true;
+            CleanPictureBox();
+            lblProcessing.Visible = true;
+            Application.DoEvents();
+        }
+
+        private void EndingProcess()
+        {
+            lblProcessing.Visible = false;
+            isBusy = false;
         }
 
         private void btnResetCombine_Click(object sender, EventArgs e)
         {
+            StartingProcess();
             ResetCombine();
+            EndingProcess();
         }
 
         private void ResetCombine()
@@ -392,14 +427,19 @@ namespace ShareX.ScreenCaptureLib
             CombineAndPreviewImages();
         }
 
-        private void CombineAndPreviewImages()
+        private void CombineAndPreviewImagesFromControl()
         {
             if (!isBusy)
             {
-                if (pbOutput.Image != null) pbOutput.Image.Dispose();
-                Result = CombineImages();
-                pbOutput.Image = Result;
+                CleanPictureBox();
+                CombineAndPreviewImages();
             }
+        }
+
+        private void CombineAndPreviewImages()
+        {
+            Result = CombineImages();
+            pbOutput.Image = Result;
         }
 
         private Image CombineImages()
@@ -468,8 +508,6 @@ namespace ShareX.ScreenCaptureLib
         {
             if (images.Count < 2) return;
 
-            isBusy = true;
-
             nudTrimLeft.Value = nudTrimTop.Value = nudTrimRight.Value = nudTrimBottom.Value = 0;
 
             Padding result = new Padding();
@@ -495,8 +533,6 @@ namespace ShareX.ScreenCaptureLib
             nudTrimTop.Value = result.Top;
             nudTrimRight.Value = result.Right;
             nudTrimBottom.Value = result.Bottom;
-
-            isBusy = false;
         }
 
         private Padding GuessEdges(Image img1, Image img2)
@@ -583,8 +619,6 @@ namespace ShareX.ScreenCaptureLib
         {
             if (images.Count > 1)
             {
-                isBusy = true;
-
                 int vertical = 0;
 
                 for (int i = 0; i < images.Count - 2; i++)
@@ -603,8 +637,6 @@ namespace ShareX.ScreenCaptureLib
 
                 nudCombineVertical.Value = vertical;
                 nudCombineLastVertical.Value = CalculateVerticalOffset(images[images.Count - 2], images[images.Count - 1]);
-
-                isBusy = false;
             }
         }
 
