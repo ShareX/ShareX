@@ -108,6 +108,8 @@ namespace ShareX.ScreenCaptureLib
             WindowState = FormWindowState.Minimized;
             SimpleWindowInfo simpleWindowInfo;
 
+            bool capturing = false;
+
             try
             {
                 Thread.Sleep(250);
@@ -121,6 +123,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (Options.StartCaptureAutomatically)
                     {
+                        capturing = true;
                         StartCapture();
                     }
                 }
@@ -131,7 +134,7 @@ namespace ShareX.ScreenCaptureLib
             }
             finally
             {
-                if (!Options.StartCaptureAutomatically) this.ShowActivate();
+                if (!capturing) this.ShowActivate();
             }
         }
 
@@ -246,6 +249,7 @@ namespace ShareX.ScreenCaptureLib
                 if (Options.ScrollTopBeforeCapture)
                 {
                     InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
+                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
                     return;
                 }
             }
