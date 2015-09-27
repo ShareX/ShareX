@@ -33,11 +33,15 @@ namespace ShareX
 {
     public class ScrollingCaptureOptions
     {
-        public ScrollingCaptureScrollMethod ScrollMethod { get; set; } = ScrollingCaptureScrollMethod.SendMessageScroll;
+        public ScrollingCaptureScrollMethod ScrollMethod { get; set; } = ScrollingCaptureScrollMethod.Automatic;
         public int ScrollDelay { get; set; } = 250;
         public int MaximumScrollCount { get; set; } = 20;
+        public bool StartSelectionAutomatically { get; set; } = true;
+        public bool StartCaptureAutomatically { get; set; } = false;
+        public bool ScrollTopBeforeCapture { get; set; } = true;
         public bool AutoDetectScrollEnd { get; set; } = true;
         public bool RemoveDuplicates { get; set; } = true;
+
         public int TrimLeftEdge { get; set; } = 0;
         public int TrimTopEdge { get; set; } = 0;
         public int TrimRightEdge { get; set; } = 0;

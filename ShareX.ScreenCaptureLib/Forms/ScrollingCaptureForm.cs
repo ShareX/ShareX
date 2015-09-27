@@ -49,20 +49,28 @@ namespace ShareX.ScreenCaptureLib
         private List<Image> images = new List<Image>();
         private int currentScrollCount;
         private bool isBusy;
+        private bool firstCapture;
 
-        public ScrollingCaptureForm(ScrollingCaptureOptions options, bool startSelection = false)
+        public ScrollingCaptureForm(ScrollingCaptureOptions options)
         {
             Options = options;
             InitializeComponent();
-            cbScrollMethod.Items.AddRange(Enum.GetNames(typeof(ScrollingCaptureScrollMethod)));
+            cbScrollMethod.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollMethod>());
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
             nudScrollDelay.Value = Options.ScrollDelay;
             nudMaximumScrollCount.Value = Options.MaximumScrollCount;
+            cbStartCaptureAutomatically.Checked = Options.StartCaptureAutomatically;
+            cbScrollTopBeforeCapture.Checked = Options.ScrollTopBeforeCapture;
             cbAutoDetectScrollEnd.Checked = Options.AutoDetectScrollEnd;
             cbRemoveDuplicates.Checked = Options.RemoveDuplicates;
 
-            if (startSelection)
+            if (Options.StartSelectionAutomatically)
             {
+                if (Options.StartCaptureAutomatically)
+                {
+                    WindowState = FormWindowState.Minimized;
+                }
+
                 SelectHandle();
             }
         }
@@ -92,33 +100,38 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnSelectHandle_Click(object sender, EventArgs e)
         {
-            SelectHandle(true);
+            SelectHandle();
         }
 
-        private void SelectHandle(bool hideForm = false)
+        private void SelectHandle()
         {
-            if (hideForm) Hide();
+            WindowState = FormWindowState.Minimized;
             SimpleWindowInfo simpleWindowInfo;
 
             try
             {
                 Thread.Sleep(250);
                 simpleWindowInfo = GetWindowInfo();
+
+                if (simpleWindowInfo != null)
+                {
+                    selectedWindow = new WindowInfo(simpleWindowInfo.Handle);
+                    lblControlText.Text = selectedWindow.ClassName ?? string.Empty;
+                    btnCapture.Enabled = true;
+
+                    if (Options.StartCaptureAutomatically)
+                    {
+                        StartCapture();
+                    }
+                }
+                else
+                {
+                    btnCapture.Enabled = false;
+                }
             }
             finally
             {
-                if (hideForm) Show();
-            }
-
-            if (simpleWindowInfo != null)
-            {
-                selectedWindow = new WindowInfo(simpleWindowInfo.Handle);
-                lblControlText.Text = selectedWindow.ClassName ?? String.Empty;
-                btnCapture.Enabled = true;
-            }
-            else
-            {
-                btnCapture.Enabled = false;
+                if (!Options.StartCaptureAutomatically) this.ShowActivate();
             }
         }
 
@@ -152,7 +165,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void StartCapture()
         {
+            WindowState = FormWindowState.Minimized;
             btnCapture.Enabled = false;
+            firstCapture = true;
             Clean();
             selectedWindow.Activate();
             captureTimer.Interval = Options.ScrollDelay;
@@ -208,6 +223,13 @@ namespace ShareX.ScreenCaptureLib
 
         private void captureTimer_Tick(object sender, EventArgs e)
         {
+            if (Options.ScrollTopBeforeCapture && firstCapture)
+            {
+                firstCapture = false;
+                InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
+                Thread.Sleep(Options.ScrollDelay);
+            }
+
             Screenshot.CaptureCursor = false;
             Image image = Screenshot.CaptureRectangle(selectedWindow.Rectangle);
 
@@ -225,6 +247,7 @@ namespace ShareX.ScreenCaptureLib
 
             switch (Options.ScrollMethod)
             {
+                case ScrollingCaptureScrollMethod.Automatic:
                 case ScrollingCaptureScrollMethod.SendMessageScroll:
                     NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_PAGEDOWN, 0);
                     break;
@@ -251,6 +274,16 @@ namespace ShareX.ScreenCaptureLib
         private void nudMaximumScrollCount_ValueChanged(object sender, EventArgs e)
         {
             Options.MaximumScrollCount = (int)nudMaximumScrollCount.Value;
+        }
+
+        private void cbStartCaptureAutomatically_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.StartCaptureAutomatically = cbStartCaptureAutomatically.Checked;
+        }
+
+        private void cbScrollTopBeforeCapture_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.ScrollTopBeforeCapture = cbScrollTopBeforeCapture.Checked;
         }
 
         private void cbAutoDetectScrollEnd_CheckedChanged(object sender, EventArgs e)
@@ -355,6 +388,7 @@ namespace ShareX.ScreenCaptureLib
         private void ResetCombine()
         {
             nudTrimLeft.Value = nudTrimTop.Value = nudTrimRight.Value = nudTrimBottom.Value = nudCombineVertical.Value = nudCombineLastVertical.Value = 0;
+            Options.TrimLeftEdge = Options.TrimTopEdge = Options.TrimRightEdge = Options.TrimBottomEdge = Options.CombineAdjustmentVertical = Options.CombineAdjustmentLastVertical = 0;
             CombineAndPreviewImages();
         }
 

@@ -494,9 +494,9 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions, true);
+            ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions);
             scrollingCaptureForm.ProcessRequested += image => UploadManager.RunImageTask(image, taskSettings);
-            scrollingCaptureForm.ShowActivate();
+            scrollingCaptureForm.Show();
         }
 
         public static void OpenAutoCapture()
