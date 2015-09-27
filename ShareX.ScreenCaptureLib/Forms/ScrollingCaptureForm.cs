@@ -46,6 +46,7 @@ namespace ShareX.ScreenCaptureLib
         public Image Result { get; set; }
 
         private WindowInfo selectedWindow;
+        private Rectangle selectedRectangle;
         private List<Image> images = new List<Image>();
         private int currentScrollCount;
         private bool isBusy, isCapturing, firstCapture, detectingScrollMethod;
@@ -104,6 +105,11 @@ namespace ShareX.ScreenCaptureLib
             SelectHandle();
         }
 
+        private void btnSelectRectangle_Click(object sender, EventArgs e)
+        {
+            SelectRectangle();
+        }
+
         private void SelectHandle()
         {
             WindowState = FormWindowState.Minimized;
@@ -113,13 +119,16 @@ namespace ShareX.ScreenCaptureLib
             try
             {
                 Thread.Sleep(250);
+
                 SimpleWindowInfo simpleWindowInfo = GetWindowInfo();
 
                 if (simpleWindowInfo != null)
                 {
                     selectedWindow = new WindowInfo(simpleWindowInfo.Handle);
                     lblControlText.Text = selectedWindow.ClassName ?? string.Empty;
-                    btnCapture.Enabled = true;
+                    selectedRectangle = simpleWindowInfo.Rectangle;
+                    lblSelectedRectangle.Text = selectedRectangle.ToString();
+                    btnSelectRectangle.Enabled = btnCapture.Enabled = true;
 
                     if (Options.StartCaptureAutomatically)
                     {
@@ -135,6 +144,27 @@ namespace ShareX.ScreenCaptureLib
             finally
             {
                 if (!capturing) this.ShowActivate();
+            }
+        }
+
+        private void SelectRectangle()
+        {
+            WindowState = FormWindowState.Minimized;
+
+            try
+            {
+                Thread.Sleep(250);
+
+                Rectangle rect;
+                if (Surface.SelectRegion(out rect))
+                {
+                    selectedRectangle = rect;
+                    lblSelectedRectangle.Text = selectedRectangle.ToString();
+                }
+            }
+            finally
+            {
+                this.ShowActivate();
             }
         }
 
@@ -275,7 +305,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Screenshot.CaptureCursor = false;
-            Image image = Screenshot.CaptureRectangle(selectedWindow.Rectangle);
+            Image image = Screenshot.CaptureRectangle(selectedRectangle);
 
             if (image != null)
             {
