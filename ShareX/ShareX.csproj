@@ -1004,10 +1004,6 @@
     <None Include="Resources\network-ip.png" />
     <None Include="Resources\ruler-triangle.png" />
     <None Include="Resources\application-network.png" />
-    <None Include="..\LICENSE.txt">
-      <Link>LICENSE.txt</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="..\Lib\7z-x64.dll">
       <Link>7z-x64.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

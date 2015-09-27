@@ -324,12 +324,13 @@ namespace ShareX.ScreenCaptureLib
             this.lblImageCount.AutoSize = true;
             this.lblImageCount.Location = new System.Drawing.Point(696, 48);
             this.lblImageCount.Name = "lblImageCount";
-            this.lblImageCount.Size = new System.Drawing.Size(66, 13);
+            this.lblImageCount.Size = new System.Drawing.Size(78, 13);
             this.lblImageCount.TabIndex = 12;
-            this.lblImageCount.Text = "Image count";
+            this.lblImageCount.Text = "Image count: 0";
             // 
             // btnResetCombine
             // 
+            this.btnResetCombine.Enabled = false;
             this.btnResetCombine.Location = new System.Drawing.Point(696, 16);
             this.btnResetCombine.Name = "btnResetCombine";
             this.btnResetCombine.Size = new System.Drawing.Size(216, 23);
@@ -352,6 +353,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // btnStartTask
             // 
+            this.btnStartTask.Enabled = false;
             this.btnStartTask.Location = new System.Drawing.Point(312, 64);
             this.btnStartTask.Name = "btnStartTask";
             this.btnStartTask.Size = new System.Drawing.Size(376, 23);
@@ -561,6 +563,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblProcessing.Size = new System.Drawing.Size(137, 25);
             this.lblProcessing.TabIndex = 1;
             this.lblProcessing.Text = "Processing...";
+            this.lblProcessing.Visible = false;
             // 
             // pbOutput
             // 

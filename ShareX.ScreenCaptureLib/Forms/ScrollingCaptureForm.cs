@@ -232,11 +232,11 @@ namespace ShareX.ScreenCaptureLib
             btnCapture.Text = "Start capture";
             this.ShowActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
-            btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = images.Count > 1;
-            btnStartTask.Enabled = images.Count > 0;
             StartingProcess();
             if (Options.RemoveDuplicates) RemoveDuplicates();
             lblImageCount.Text = "Image count: " + images.Count;
+            btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = images.Count > 1;
+            btnStartTask.Enabled = btnResetCombine.Enabled = images.Count > 0;
             ResetCombine();
             EndingProcess();
             isCapturing = false;
