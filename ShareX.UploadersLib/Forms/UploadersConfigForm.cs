@@ -77,7 +77,6 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpBitly, Resources.Bitly);
             AddIconToTab(tpBox, Resources.Box);
             AddIconToTab(tpCopy, Resources.Copy);
-            AddIconToTab(tpHubic, Resources.Hubic);
             AddIconToTab(tpChevereto, Resources.Chevereto);
             AddIconToTab(tpCoinURL, Resources.CoinURL);
             AddIconToTab(tpCustomUploaders, Resources.globe_network);
@@ -114,8 +113,6 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpUp1, Resources.Up1);
             AddIconToTab(tpOneTimeSecret, Resources.OneTimeSecret);
             AddIconToTab(tpPolr, Resources.Polr);
-
-            tcFileUploaders.TabPages.Remove(tpHubic);
 
             ttlvMain.ImageList = uploadersImageList;
             ttlvMain.MainTabControl = tcUploaders;
@@ -367,16 +364,6 @@ namespace ShareX.UploadersLib
 
             cbBoxShare.Checked = Config.BoxShare;
             lblBoxFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.BoxSelectedFolder.name;
-
-            // Hubic
-
-            if (OAuth2Info.CheckOAuth(Config.HubicOAuth2Info))
-            {
-                oauth2Hubic.Status = OAuthLoginStatus.LoginSuccessful;
-                btnHubicRefreshFolders.Enabled = true;
-            }
-
-            cbHubicPublishLink.Checked = Config.HubicPublish;
 
             // Ge.tt
 
@@ -1173,69 +1160,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Copy
-
-        #region Hubic
-
-        private void oAuth2Hubic_OpenButtonClicked()
-        {
-            HubicAuthOpen();
-        }
-
-        private void oAuth2Hubic_CompleteButtonClicked(string code)
-        {
-            HubicAuthComplete(code);
-        }
-
-        private void oAuth2Hubic_RefreshButtonClicked()
-        {
-            HubicAuthRefresh();
-        }
-
-        private void oAuth2Hubic_ClearButtonClicked()
-        {
-            Config.HubicOAuth2Info = null;
-            Config.HubicOpenstackAuthInfo = null;
-        }
-
-        private void btnHubicRefreshFolders_Click(object sender, EventArgs e)
-        {
-            HubicListFolders(Hubic.RootFolder);
-        }
-
-        private void lvHubicFolders_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvHubicFolders.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvHubicFolders.SelectedItems[0];
-                HubicFolderInfo folder = lvi.Tag as HubicFolderInfo;
-                if (folder != null)
-                {
-                    lblHubicSelectedFolder.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + folder.name;
-                    Config.HubicSelectedFolder = folder;
-                }
-            }
-        }
-
-        private void lvHubicFolders_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left && lvHubicFolders.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvHubicFolders.SelectedItems[0];
-                HubicFolderInfo folder = lvi.Tag as HubicFolderInfo;
-                if (folder != null)
-                {
-                    lvHubicFolders.Items.Clear();
-                    HubicListFolders(folder);
-                }
-            }
-        }
-
-        private void cbHubicPublishLink_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.HubicPublish = cbHubicPublishLink.Checked;
-        }
-
-        #endregion Hubic
 
         #region OneDrive
 

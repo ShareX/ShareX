@@ -140,13 +140,6 @@ namespace ShareX.UploadersLib
         public string CopyUploadPath = "ShareX/%y/%mo";
         public CopyURLType CopyURLType = CopyURLType.Shortened;
 
-        // Hubic
-
-        public OAuth2Info HubicOAuth2Info = null;
-        public HubicOpenstackAuthInfo HubicOpenstackAuthInfo = null;
-        public HubicFolderInfo HubicSelectedFolder = Hubic.RootFolder;
-        public bool HubicPublish = false;
-
         // Google Drive
 
         public OAuth2Info GoogleDriveOAuth2Info = null;

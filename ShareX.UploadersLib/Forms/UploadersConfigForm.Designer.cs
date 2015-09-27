@@ -191,14 +191,6 @@
             this.lblCopyPath = new System.Windows.Forms.Label();
             this.txtCopyPath = new System.Windows.Forms.TextBox();
             this.oAuthCopy = new ShareX.UploadersLib.OAuthControl();
-            this.tpHubic = new System.Windows.Forms.TabPage();
-            this.cbHubicPublishLink = new System.Windows.Forms.CheckBox();
-            this.lblHubicSelectedFolderNote = new System.Windows.Forms.Label();
-            this.lvHubicFolders = new ShareX.HelpersLib.MyListView();
-            this.chHubicFolderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblHubicSelectedFolder = new System.Windows.Forms.Label();
-            this.btnHubicRefreshFolders = new System.Windows.Forms.Button();
-            this.oauth2Hubic = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
             this.txtAmazonS3CustomDomain = new System.Windows.Forms.TextBox();
             this.lblAmazonS3PathPreviewLabel = new System.Windows.Forms.Label();
@@ -474,7 +466,6 @@
             this.tpBox.SuspendLayout();
             this.tpCopy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).BeginInit();
-            this.tpHubic.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
             this.tpMega.SuspendLayout();
             this.tpOwnCloud.SuspendLayout();
@@ -1323,7 +1314,6 @@
             this.tcFileUploaders.Controls.Add(this.tpGoogleDrive);
             this.tcFileUploaders.Controls.Add(this.tpBox);
             this.tcFileUploaders.Controls.Add(this.tpCopy);
-            this.tcFileUploaders.Controls.Add(this.tpHubic);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
             this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
@@ -1726,68 +1716,6 @@
             this.oAuthCopy.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
             this.oAuthCopy.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
             this.oAuthCopy.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuthCopy_ClearButtonClicked);
-            // 
-            // tpHubic
-            // 
-            this.tpHubic.Controls.Add(this.cbHubicPublishLink);
-            this.tpHubic.Controls.Add(this.lblHubicSelectedFolderNote);
-            this.tpHubic.Controls.Add(this.lvHubicFolders);
-            this.tpHubic.Controls.Add(this.lblHubicSelectedFolder);
-            this.tpHubic.Controls.Add(this.btnHubicRefreshFolders);
-            this.tpHubic.Controls.Add(this.oauth2Hubic);
-            resources.ApplyResources(this.tpHubic, "tpHubic");
-            this.tpHubic.Name = "tpHubic";
-            this.tpHubic.UseVisualStyleBackColor = true;
-            // 
-            // cbHubicPublishLink
-            // 
-            resources.ApplyResources(this.cbHubicPublishLink, "cbHubicPublishLink");
-            this.cbHubicPublishLink.Name = "cbHubicPublishLink";
-            this.cbHubicPublishLink.UseVisualStyleBackColor = true;
-            this.cbHubicPublishLink.CheckedChanged += new System.EventHandler(this.cbHubicPublishLink_CheckedChanged);
-            // 
-            // lblHubicSelectedFolderNote
-            // 
-            resources.ApplyResources(this.lblHubicSelectedFolderNote, "lblHubicSelectedFolderNote");
-            this.lblHubicSelectedFolderNote.Name = "lblHubicSelectedFolderNote";
-            // 
-            // lvHubicFolders
-            // 
-            this.lvHubicFolders.AutoFillColumn = true;
-            this.lvHubicFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chHubicFolderName});
-            this.lvHubicFolders.FullRowSelect = true;
-            resources.ApplyResources(this.lvHubicFolders, "lvHubicFolders");
-            this.lvHubicFolders.Name = "lvHubicFolders";
-            this.lvHubicFolders.UseCompatibleStateImageBehavior = false;
-            this.lvHubicFolders.View = System.Windows.Forms.View.Details;
-            this.lvHubicFolders.SelectedIndexChanged += new System.EventHandler(this.lvHubicFolders_SelectedIndexChanged);
-            this.lvHubicFolders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvHubicFolders_MouseDoubleClick);
-            // 
-            // chHubicFolderName
-            // 
-            resources.ApplyResources(this.chHubicFolderName, "chHubicFolderName");
-            // 
-            // lblHubicSelectedFolder
-            // 
-            resources.ApplyResources(this.lblHubicSelectedFolder, "lblHubicSelectedFolder");
-            this.lblHubicSelectedFolder.Name = "lblHubicSelectedFolder";
-            // 
-            // btnHubicRefreshFolders
-            // 
-            resources.ApplyResources(this.btnHubicRefreshFolders, "btnHubicRefreshFolders");
-            this.btnHubicRefreshFolders.Name = "btnHubicRefreshFolders";
-            this.btnHubicRefreshFolders.UseVisualStyleBackColor = true;
-            this.btnHubicRefreshFolders.Click += new System.EventHandler(this.btnHubicRefreshFolders_Click);
-            // 
-            // oauth2Hubic
-            // 
-            resources.ApplyResources(this.oauth2Hubic, "oauth2Hubic");
-            this.oauth2Hubic.Name = "oauth2Hubic";
-            this.oauth2Hubic.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2Hubic_OpenButtonClicked);
-            this.oauth2Hubic.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2Hubic_CompleteButtonClicked);
-            this.oauth2Hubic.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2Hubic_ClearButtonClicked);
-            this.oauth2Hubic.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oAuth2Hubic_RefreshButtonClicked);
             // 
             // tpAmazonS3
             // 
@@ -3617,8 +3545,6 @@
             this.tpCopy.ResumeLayout(false);
             this.tpCopy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).EndInit();
-            this.tpHubic.ResumeLayout(false);
-            this.tpHubic.PerformLayout();
             this.tpAmazonS3.ResumeLayout(false);
             this.tpAmazonS3.PerformLayout();
             this.tpMega.ResumeLayout(false);
@@ -4070,14 +3996,6 @@
         private System.Windows.Forms.CheckBox cbOneDriveCreateShareableLink;
         private System.Windows.Forms.Label lblOneDriveFolderID;
         private System.Windows.Forms.TreeView tvOneDrive;
-        private System.Windows.Forms.TabPage tpHubic;
-        private OAuthControl oauth2Hubic;
-        private System.Windows.Forms.Label lblHubicSelectedFolderNote;
-        private HelpersLib.MyListView lvHubicFolders;
-        private System.Windows.Forms.ColumnHeader chHubicFolderName;
-        private System.Windows.Forms.Label lblHubicSelectedFolder;
-        private System.Windows.Forms.Button btnHubicRefreshFolders;
-        private System.Windows.Forms.CheckBox cbHubicPublishLink;
         private System.Windows.Forms.TabPage tpLambda;
         private System.Windows.Forms.Label lblLambdaApiKey;
         private System.Windows.Forms.TextBox txtLambdaApiKey;

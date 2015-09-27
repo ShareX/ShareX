@@ -130,7 +130,6 @@
     <Compile Include="FileUploaders\Ge_tt.cs" />
     <Compile Include="FileUploaders\AmazonS3.cs" />
     <Compile Include="FileUploaders\GoogleDrive.cs" />
-    <Compile Include="FileUploaders\Hubic.cs" />
     <Compile Include="FileUploaders\Jira.cs" />
     <Compile Include="FileUploaders\Hostr.cs" />
     <Compile Include="FileUploaders\MaxFile.cs" />
@@ -746,7 +745,6 @@
     <None Include="Favicons\OneDrive.ico" />
     <None Include="Favicons\Chevereto.png" />
     <None Include="Favicons\Hastebin.png" />
-    <None Include="Favicons\hubic.ico" />
     <None Include="Favicons\Up1.ico" />
     <None Include="Favicons\CoinURL.ico" />
     <None Include="Favicons\copy.ico" />
