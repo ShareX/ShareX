@@ -62,6 +62,8 @@ namespace ShareX.ScreenCaptureLib
             this.pbOutput = new System.Windows.Forms.PictureBox();
             this.lblProcessing = new System.Windows.Forms.Label();
             this.lblImageCount = new System.Windows.Forms.Label();
+            this.lblStartDelay = new System.Windows.Forms.Label();
+            this.nudStartDelay = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -77,15 +79,16 @@ namespace ShareX.ScreenCaptureLib
             ((System.ComponentModel.ISupportInitialize)(this.nudTrimRight)).BeginInit();
             this.pOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSelectHandle
             // 
-            this.btnSelectHandle.Location = new System.Drawing.Point(12, 10);
+            this.btnSelectHandle.Location = new System.Drawing.Point(16, 16);
             this.btnSelectHandle.Name = "btnSelectHandle";
             this.btnSelectHandle.Size = new System.Drawing.Size(304, 23);
             this.btnSelectHandle.TabIndex = 0;
-            this.btnSelectHandle.Text = "Select window or control to scroll";
+            this.btnSelectHandle.Text = "Select window or control to scroll...";
             this.btnSelectHandle.UseVisualStyleBackColor = true;
             this.btnSelectHandle.Click += new System.EventHandler(this.btnSelectHandle_Click);
             // 
@@ -100,7 +103,7 @@ namespace ShareX.ScreenCaptureLib
             // btnCapture
             // 
             this.btnCapture.Enabled = false;
-            this.btnCapture.Location = new System.Drawing.Point(16, 216);
+            this.btnCapture.Location = new System.Drawing.Point(16, 240);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(152, 23);
             this.btnCapture.TabIndex = 2;
@@ -114,7 +117,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // nudScrollDelay
             // 
-            this.nudScrollDelay.Location = new System.Drawing.Point(136, 68);
+            this.nudScrollDelay.Location = new System.Drawing.Point(136, 92);
             this.nudScrollDelay.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -128,7 +131,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // nudMaximumScrollCount
             // 
-            this.nudMaximumScrollCount.Location = new System.Drawing.Point(136, 92);
+            this.nudMaximumScrollCount.Location = new System.Drawing.Point(136, 116);
             this.nudMaximumScrollCount.Name = "nudMaximumScrollCount";
             this.nudMaximumScrollCount.Size = new System.Drawing.Size(80, 20);
             this.nudMaximumScrollCount.TabIndex = 4;
@@ -138,7 +141,7 @@ namespace ShareX.ScreenCaptureLib
             // lblScrollDelay
             // 
             this.lblScrollDelay.AutoSize = true;
-            this.lblScrollDelay.Location = new System.Drawing.Point(16, 72);
+            this.lblScrollDelay.Location = new System.Drawing.Point(16, 96);
             this.lblScrollDelay.Name = "lblScrollDelay";
             this.lblScrollDelay.Size = new System.Drawing.Size(64, 13);
             this.lblScrollDelay.TabIndex = 5;
@@ -147,7 +150,7 @@ namespace ShareX.ScreenCaptureLib
             // lblMaximumScrollCount
             // 
             this.lblMaximumScrollCount.AutoSize = true;
-            this.lblMaximumScrollCount.Location = new System.Drawing.Point(16, 96);
+            this.lblMaximumScrollCount.Location = new System.Drawing.Point(16, 120);
             this.lblMaximumScrollCount.Name = "lblMaximumScrollCount";
             this.lblMaximumScrollCount.Size = new System.Drawing.Size(111, 13);
             this.lblMaximumScrollCount.TabIndex = 6;
@@ -166,6 +169,8 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpCapture
             // 
+            this.tpCapture.Controls.Add(this.lblStartDelay);
+            this.tpCapture.Controls.Add(this.nudStartDelay);
             this.tpCapture.Controls.Add(this.cbScrollTopBeforeCapture);
             this.tpCapture.Controls.Add(this.cbStartCaptureAutomatically);
             this.tpCapture.Controls.Add(this.cbRemoveDuplicates);
@@ -190,7 +195,7 @@ namespace ShareX.ScreenCaptureLib
             // cbScrollTopBeforeCapture
             // 
             this.cbScrollTopBeforeCapture.AutoSize = true;
-            this.cbScrollTopBeforeCapture.Location = new System.Drawing.Point(16, 144);
+            this.cbScrollTopBeforeCapture.Location = new System.Drawing.Point(16, 168);
             this.cbScrollTopBeforeCapture.Name = "cbScrollTopBeforeCapture";
             this.cbScrollTopBeforeCapture.Size = new System.Drawing.Size(223, 17);
             this.cbScrollTopBeforeCapture.TabIndex = 12;
@@ -201,7 +206,7 @@ namespace ShareX.ScreenCaptureLib
             // cbStartCaptureAutomatically
             // 
             this.cbStartCaptureAutomatically.AutoSize = true;
-            this.cbStartCaptureAutomatically.Location = new System.Drawing.Point(16, 120);
+            this.cbStartCaptureAutomatically.Location = new System.Drawing.Point(16, 144);
             this.cbStartCaptureAutomatically.Name = "cbStartCaptureAutomatically";
             this.cbStartCaptureAutomatically.Size = new System.Drawing.Size(213, 17);
             this.cbStartCaptureAutomatically.TabIndex = 11;
@@ -212,7 +217,7 @@ namespace ShareX.ScreenCaptureLib
             // cbRemoveDuplicates
             // 
             this.cbRemoveDuplicates.AutoSize = true;
-            this.cbRemoveDuplicates.Location = new System.Drawing.Point(16, 192);
+            this.cbRemoveDuplicates.Location = new System.Drawing.Point(16, 216);
             this.cbRemoveDuplicates.Name = "cbRemoveDuplicates";
             this.cbRemoveDuplicates.Size = new System.Drawing.Size(117, 17);
             this.cbRemoveDuplicates.TabIndex = 10;
@@ -223,7 +228,7 @@ namespace ShareX.ScreenCaptureLib
             // cbAutoDetectScrollEnd
             // 
             this.cbAutoDetectScrollEnd.AutoSize = true;
-            this.cbAutoDetectScrollEnd.Location = new System.Drawing.Point(16, 168);
+            this.cbAutoDetectScrollEnd.Location = new System.Drawing.Point(16, 192);
             this.cbAutoDetectScrollEnd.Name = "cbAutoDetectScrollEnd";
             this.cbAutoDetectScrollEnd.Size = new System.Drawing.Size(129, 17);
             this.cbAutoDetectScrollEnd.TabIndex = 9;
@@ -520,6 +525,29 @@ namespace ShareX.ScreenCaptureLib
             this.lblImageCount.TabIndex = 12;
             this.lblImageCount.Text = "Image count";
             // 
+            // lblStartDelay
+            // 
+            this.lblStartDelay.AutoSize = true;
+            this.lblStartDelay.Location = new System.Drawing.Point(16, 72);
+            this.lblStartDelay.Name = "lblStartDelay";
+            this.lblStartDelay.Size = new System.Drawing.Size(60, 13);
+            this.lblStartDelay.TabIndex = 14;
+            this.lblStartDelay.Text = "Start delay:";
+            // 
+            // nudStartDelay
+            // 
+            this.nudStartDelay.Location = new System.Drawing.Point(136, 68);
+            this.nudStartDelay.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.nudStartDelay.Name = "nudStartDelay";
+            this.nudStartDelay.Size = new System.Drawing.Size(80, 20);
+            this.nudStartDelay.TabIndex = 13;
+            this.nudStartDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudStartDelay.ValueChanged += new System.EventHandler(this.nudStartDelay_ValueChanged);
+            // 
             // ScrollingCaptureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,6 +577,7 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput.ResumeLayout(false);
             this.pOutput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -594,5 +623,7 @@ namespace ShareX.ScreenCaptureLib
         private CheckBox cbScrollTopBeforeCapture;
         private Label lblProcessing;
         private Label lblImageCount;
+        private Label lblStartDelay;
+        private NumericUpDown nudStartDelay;
     }
 }

@@ -49,6 +49,7 @@ namespace ShareX.ScreenCaptureLib
         private List<Image> images = new List<Image>();
         private int currentScrollCount;
         private bool isBusy;
+        private bool isCapturing;
         private bool firstCapture;
 
         public ScrollingCaptureForm(ScrollingCaptureOptions options)
@@ -57,6 +58,7 @@ namespace ShareX.ScreenCaptureLib
             InitializeComponent();
             cbScrollMethod.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollMethod>());
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
+            nudStartDelay.Value = Options.StartDelay;
             nudScrollDelay.Value = Options.ScrollDelay;
             nudMaximumScrollCount.Value = Options.MaximumScrollCount;
             cbStartCaptureAutomatically.Checked = Options.StartCaptureAutomatically;
@@ -106,14 +108,13 @@ namespace ShareX.ScreenCaptureLib
         private void SelectHandle()
         {
             WindowState = FormWindowState.Minimized;
-            SimpleWindowInfo simpleWindowInfo;
 
             bool capturing = false;
 
             try
             {
                 Thread.Sleep(250);
-                simpleWindowInfo = GetWindowInfo();
+                SimpleWindowInfo simpleWindowInfo = GetWindowInfo();
 
                 if (simpleWindowInfo != null)
                 {
@@ -140,7 +141,14 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnCapture_Click(object sender, EventArgs e)
         {
-            StartCapture();
+            if (isCapturing)
+            {
+                StopCapture();
+            }
+            else
+            {
+                StartCapture();
+            }
         }
 
         private SimpleWindowInfo GetWindowInfo()
@@ -168,19 +176,20 @@ namespace ShareX.ScreenCaptureLib
 
         private void StartCapture()
         {
+            isCapturing = true;
+            btnCapture.Text = "Stop capture";
             WindowState = FormWindowState.Minimized;
-            btnCapture.Enabled = false;
             firstCapture = true;
             Clean();
             selectedWindow.Activate();
-            captureTimer.Interval = 1000;
+            captureTimer.Interval = Options.StartDelay;
             captureTimer.Start();
         }
 
         private void StopCapture()
         {
             captureTimer.Stop();
-            btnCapture.Enabled = true;
+            btnCapture.Text = "Start capture";
             this.ShowActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
             btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = images.Count > 1;
@@ -190,6 +199,7 @@ namespace ShareX.ScreenCaptureLib
             if (Options.RemoveDuplicates) RemoveDuplicates();
             ResetCombine();
             EndingProcess();
+            isCapturing = false;
         }
 
         private void Clean()
@@ -287,6 +297,11 @@ namespace ShareX.ScreenCaptureLib
         private void cbScrollMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.ScrollMethod = (ScrollingCaptureScrollMethod)cbScrollMethod.SelectedIndex;
+        }
+
+        private void nudStartDelay_ValueChanged(object sender, EventArgs e)
+        {
+            Options.StartDelay = (int)nudStartDelay.Value;
         }
 
         private void nudScrollDelay_ValueChanged(object sender, EventArgs e)
