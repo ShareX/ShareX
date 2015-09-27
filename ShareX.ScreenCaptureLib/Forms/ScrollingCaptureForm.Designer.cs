@@ -33,6 +33,8 @@ namespace ShareX.ScreenCaptureLib
             this.lblMaximumScrollCount = new System.Windows.Forms.Label();
             this.tcScrollingCapture = new System.Windows.Forms.TabControl();
             this.tpCapture = new System.Windows.Forms.TabPage();
+            this.lblStartDelay = new System.Windows.Forms.Label();
+            this.nudStartDelay = new System.Windows.Forms.NumericUpDown();
             this.cbScrollTopBeforeCapture = new System.Windows.Forms.CheckBox();
             this.cbStartCaptureAutomatically = new System.Windows.Forms.CheckBox();
             this.cbRemoveDuplicates = new System.Windows.Forms.CheckBox();
@@ -40,6 +42,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblScrollMethod = new System.Windows.Forms.Label();
             this.cbScrollMethod = new System.Windows.Forms.ComboBox();
             this.tpOutput = new System.Windows.Forms.TabPage();
+            this.lblImageCount = new System.Windows.Forms.Label();
             this.btnResetCombine = new System.Windows.Forms.Button();
             this.btnGuessCombineAdjustments = new System.Windows.Forms.Button();
             this.btnStartTask = new System.Windows.Forms.Button();
@@ -59,15 +62,13 @@ namespace ShareX.ScreenCaptureLib
             this.nudTrimTop = new System.Windows.Forms.NumericUpDown();
             this.nudTrimRight = new System.Windows.Forms.NumericUpDown();
             this.pOutput = new System.Windows.Forms.Panel();
-            this.pbOutput = new System.Windows.Forms.PictureBox();
             this.lblProcessing = new System.Windows.Forms.Label();
-            this.lblImageCount = new System.Windows.Forms.Label();
-            this.lblStartDelay = new System.Windows.Forms.Label();
-            this.nudStartDelay = new System.Windows.Forms.NumericUpDown();
+            this.pbOutput = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
             this.tpCapture.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).BeginInit();
             this.tpOutput.SuspendLayout();
             this.gbCombineAdjustments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCombineVertical)).BeginInit();
@@ -79,7 +80,6 @@ namespace ShareX.ScreenCaptureLib
             ((System.ComponentModel.ISupportInitialize)(this.nudTrimRight)).BeginInit();
             this.pOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSelectHandle
@@ -95,7 +95,7 @@ namespace ShareX.ScreenCaptureLib
             // lblControlText
             // 
             this.lblControlText.AutoSize = true;
-            this.lblControlText.Location = new System.Drawing.Point(324, 15);
+            this.lblControlText.Location = new System.Drawing.Point(324, 21);
             this.lblControlText.Name = "lblControlText";
             this.lblControlText.Size = new System.Drawing.Size(0, 13);
             this.lblControlText.TabIndex = 1;
@@ -192,6 +192,29 @@ namespace ShareX.ScreenCaptureLib
             this.tpCapture.Text = "Capture";
             this.tpCapture.UseVisualStyleBackColor = true;
             // 
+            // lblStartDelay
+            // 
+            this.lblStartDelay.AutoSize = true;
+            this.lblStartDelay.Location = new System.Drawing.Point(16, 72);
+            this.lblStartDelay.Name = "lblStartDelay";
+            this.lblStartDelay.Size = new System.Drawing.Size(60, 13);
+            this.lblStartDelay.TabIndex = 14;
+            this.lblStartDelay.Text = "Start delay:";
+            // 
+            // nudStartDelay
+            // 
+            this.nudStartDelay.Location = new System.Drawing.Point(136, 68);
+            this.nudStartDelay.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.nudStartDelay.Name = "nudStartDelay";
+            this.nudStartDelay.Size = new System.Drawing.Size(80, 20);
+            this.nudStartDelay.TabIndex = 13;
+            this.nudStartDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudStartDelay.ValueChanged += new System.EventHandler(this.nudStartDelay_ValueChanged);
+            // 
             // cbScrollTopBeforeCapture
             // 
             this.cbScrollTopBeforeCapture.AutoSize = true;
@@ -272,6 +295,15 @@ namespace ShareX.ScreenCaptureLib
             this.tpOutput.TabIndex = 1;
             this.tpOutput.Text = "Output";
             this.tpOutput.UseVisualStyleBackColor = true;
+            // 
+            // lblImageCount
+            // 
+            this.lblImageCount.AutoSize = true;
+            this.lblImageCount.Location = new System.Drawing.Point(696, 48);
+            this.lblImageCount.Name = "lblImageCount";
+            this.lblImageCount.Size = new System.Drawing.Size(66, 13);
+            this.lblImageCount.TabIndex = 12;
+            this.lblImageCount.Text = "Image count";
             // 
             // btnResetCombine
             // 
@@ -497,15 +529,6 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput.Size = new System.Drawing.Size(912, 518);
             this.pOutput.TabIndex = 1;
             // 
-            // pbOutput
-            // 
-            this.pbOutput.Location = new System.Drawing.Point(0, 0);
-            this.pbOutput.Name = "pbOutput";
-            this.pbOutput.Size = new System.Drawing.Size(10, 10);
-            this.pbOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbOutput.TabIndex = 0;
-            this.pbOutput.TabStop = false;
-            // 
             // lblProcessing
             // 
             this.lblProcessing.AutoSize = true;
@@ -516,37 +539,14 @@ namespace ShareX.ScreenCaptureLib
             this.lblProcessing.TabIndex = 1;
             this.lblProcessing.Text = "Processing...";
             // 
-            // lblImageCount
+            // pbOutput
             // 
-            this.lblImageCount.AutoSize = true;
-            this.lblImageCount.Location = new System.Drawing.Point(696, 48);
-            this.lblImageCount.Name = "lblImageCount";
-            this.lblImageCount.Size = new System.Drawing.Size(66, 13);
-            this.lblImageCount.TabIndex = 12;
-            this.lblImageCount.Text = "Image count";
-            // 
-            // lblStartDelay
-            // 
-            this.lblStartDelay.AutoSize = true;
-            this.lblStartDelay.Location = new System.Drawing.Point(16, 72);
-            this.lblStartDelay.Name = "lblStartDelay";
-            this.lblStartDelay.Size = new System.Drawing.Size(60, 13);
-            this.lblStartDelay.TabIndex = 14;
-            this.lblStartDelay.Text = "Start delay:";
-            // 
-            // nudStartDelay
-            // 
-            this.nudStartDelay.Location = new System.Drawing.Point(136, 68);
-            this.nudStartDelay.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.nudStartDelay.Name = "nudStartDelay";
-            this.nudStartDelay.Size = new System.Drawing.Size(80, 20);
-            this.nudStartDelay.TabIndex = 13;
-            this.nudStartDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudStartDelay.ValueChanged += new System.EventHandler(this.nudStartDelay_ValueChanged);
+            this.pbOutput.Location = new System.Drawing.Point(0, 0);
+            this.pbOutput.Name = "pbOutput";
+            this.pbOutput.Size = new System.Drawing.Size(10, 10);
+            this.pbOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbOutput.TabIndex = 0;
+            this.pbOutput.TabStop = false;
             // 
             // ScrollingCaptureForm
             // 
@@ -562,6 +562,7 @@ namespace ShareX.ScreenCaptureLib
             this.tcScrollingCapture.ResumeLayout(false);
             this.tpCapture.ResumeLayout(false);
             this.tpCapture.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).EndInit();
             this.tpOutput.ResumeLayout(false);
             this.tpOutput.PerformLayout();
             this.gbCombineAdjustments.ResumeLayout(false);
@@ -577,7 +578,6 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput.ResumeLayout(false);
             this.pOutput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).EndInit();
             this.ResumeLayout(false);
 
         }

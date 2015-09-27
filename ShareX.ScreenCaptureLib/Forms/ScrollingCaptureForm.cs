@@ -48,9 +48,8 @@ namespace ShareX.ScreenCaptureLib
         private WindowInfo selectedWindow;
         private List<Image> images = new List<Image>();
         private int currentScrollCount;
-        private bool isBusy;
-        private bool isCapturing;
-        private bool firstCapture;
+        private bool isBusy, isCapturing, firstCapture, detectingScrollMethod;
+        private ScrollingCaptureScrollMethod currentScrollMethod;
 
         public ScrollingCaptureForm(ScrollingCaptureOptions options, bool forceSelection = false)
         {
@@ -180,6 +179,17 @@ namespace ShareX.ScreenCaptureLib
             btnCapture.Text = "Stop capture";
             WindowState = FormWindowState.Minimized;
             firstCapture = true;
+
+            if (Options.ScrollMethod == ScrollingCaptureScrollMethod.Automatic)
+            {
+                currentScrollMethod = ScrollingCaptureScrollMethod.SendMessageScroll;
+            }
+            else
+            {
+                currentScrollMethod = Options.ScrollMethod;
+            }
+
+            detectingScrollMethod = true;
             Clean();
             selectedWindow.Activate();
             captureTimer.Interval = Options.StartDelay;
@@ -272,14 +282,31 @@ namespace ShareX.ScreenCaptureLib
                 images.Add(image);
             }
 
-            currentScrollCount++;
-
-            if (currentScrollCount == Options.MaximumScrollCount || (Options.AutoDetectScrollEnd && IsScrollReachedBottom(selectedWindow.Handle)))
+            if (Options.ScrollMethod == ScrollingCaptureScrollMethod.Automatic && detectingScrollMethod && images.Count > 1 && IsLastTwoImagesSame())
+            {
+                if (currentScrollMethod == ScrollingCaptureScrollMethod.SendMessageScroll)
+                {
+                    currentScrollMethod = ScrollingCaptureScrollMethod.KeyPressPageDown;
+                }
+                else if (currentScrollMethod == ScrollingCaptureScrollMethod.KeyPressPageDown)
+                {
+                    currentScrollMethod = ScrollingCaptureScrollMethod.MouseWheel;
+                }
+                else
+                {
+                    StopCapture();
+                }
+            }
+            else if (currentScrollCount == Options.MaximumScrollCount || (Options.AutoDetectScrollEnd && IsScrollReachedBottom(selectedWindow.Handle)))
             {
                 StopCapture();
             }
+            else if (images.Count > 1)
+            {
+                detectingScrollMethod = false;
+            }
 
-            switch (Options.ScrollMethod)
+            switch (currentScrollMethod)
             {
                 case ScrollingCaptureScrollMethod.Automatic:
                 case ScrollingCaptureScrollMethod.SendMessageScroll:
@@ -292,6 +319,8 @@ namespace ShareX.ScreenCaptureLib
                     InputHelpers.SendMouseWheel(-120);
                     break;
             }
+
+            currentScrollCount++;
         }
 
         private void cbScrollMethod_SelectedIndexChanged(object sender, EventArgs e)
@@ -345,9 +374,16 @@ namespace ShareX.ScreenCaptureLib
                 return scrollInfo.nMax == scrollInfo.nTrackPos + scrollInfo.nPage - 1;
             }
 
+            return IsLastTwoImagesSame();
+        }
+
+        private bool IsLastTwoImagesSame()
+        {
+            bool result = false;
+
             if (images.Count > 1)
             {
-                bool result = ImageHelpers.IsImagesEqual((Bitmap)images[images.Count - 1], (Bitmap)images[images.Count - 2]);
+                result = ImageHelpers.IsImagesEqual((Bitmap)images[images.Count - 1], (Bitmap)images[images.Count - 2]);
 
                 if (result)
                 {
@@ -355,11 +391,9 @@ namespace ShareX.ScreenCaptureLib
                     images.Remove(last);
                     last.Dispose();
                 }
-
-                return result;
             }
 
-            return false;
+            return result;
         }
 
         private void nudTrimLeft_ValueChanged(object sender, EventArgs e)
