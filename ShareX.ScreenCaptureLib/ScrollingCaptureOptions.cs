@@ -34,7 +34,7 @@ namespace ShareX
     public class ScrollingCaptureOptions
     {
         public ScrollingCaptureScrollMethod ScrollMethod { get; set; } = ScrollingCaptureScrollMethod.Automatic;
-        public int ScrollDelay { get; set; } = 250;
+        public int ScrollDelay { get; set; } = 500;
         public int MaximumScrollCount { get; set; } = 20;
         public bool StartSelectionAutomatically { get; set; } = true;
         public bool StartCaptureAutomatically { get; set; } = false;

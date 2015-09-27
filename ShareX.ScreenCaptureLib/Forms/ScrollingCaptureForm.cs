@@ -170,7 +170,7 @@ namespace ShareX.ScreenCaptureLib
             firstCapture = true;
             Clean();
             selectedWindow.Activate();
-            captureTimer.Interval = Options.ScrollDelay;
+            captureTimer.Interval = 1000;
             captureTimer.Start();
         }
 
@@ -238,11 +238,16 @@ namespace ShareX.ScreenCaptureLib
 
         private void captureTimer_Tick(object sender, EventArgs e)
         {
-            if (Options.ScrollTopBeforeCapture && firstCapture)
+            if (firstCapture)
             {
                 firstCapture = false;
-                InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
-                Thread.Sleep(Options.ScrollDelay);
+                captureTimer.Interval = Options.ScrollDelay;
+
+                if (Options.ScrollTopBeforeCapture)
+                {
+                    InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
+                    return;
+                }
             }
 
             Screenshot.CaptureCursor = false;
@@ -268,7 +273,6 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ScrollingCaptureScrollMethod.KeyPressPageDown:
                     InputHelpers.SendKeyPress(VirtualKeyCode.NEXT);
-                    //NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.KEYDOWN, (int)VirtualKeyCode.NEXT, 0);
                     break;
                 case ScrollingCaptureScrollMethod.MouseWheel:
                     InputHelpers.SendMouseWheel(-120);
