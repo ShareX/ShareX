@@ -743,7 +743,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private int CalculateVerticalOffset(Image img1, Image img2, int ignoreRightOffset = 50, int matchCount = 50)
+        private int CalculateVerticalOffset(Image img1, Image img2, int ignoreRightOffset = 50)
         {
             int lastMatchCount = 0;
             int lastMatchOffset = 0;
