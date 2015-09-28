@@ -32,22 +32,6 @@ namespace ShareX.IndexerLib
 {
     public static class HtmlHelper
     {
-        public static string GetCssStyle(string filePath)
-        {
-            string css;
-
-            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
-            {
-                css = File.ReadAllText(filePath, Encoding.UTF8);
-            }
-            else
-            {
-                css = Resources.IndexerDefault;
-            }
-
-            return string.Format("<style type=\"text/css\">\r\n{0}\r\n</style>", css);
-        }
-
         public static string StartTag(string tag, string style = "", string otherFields = "")
         {
             string css = string.Empty;

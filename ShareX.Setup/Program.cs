@@ -55,6 +55,7 @@ namespace ShareX.Setup
         private static readonly string steamOutputDir = Path.Combine(outputDir, "ShareX");
         private static readonly string steamLauncherDir = Path.Combine(parentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release");
         private static readonly string steamUpdatesDir = Path.Combine(steamOutputDir, "Updates");
+        private static readonly string chromeReleaseDir = Path.Combine(parentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release");
         private static readonly string innoSetupPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
         private static readonly string innoSetupScriptPath = Path.Combine(parentDir, "InnoSetup", "ShareX setup.iss");
 
@@ -138,10 +139,9 @@ namespace ShareX.Setup
             CopyFile(Path.Combine(ReleaseDirectory, "ShareX.exe"), destination);
             CopyFile(Path.Combine(ReleaseDirectory, "ShareX.exe.config"), destination);
             CopyFiles(ReleaseDirectory, "*.dll", destination);
-            CopyFile(Path.Combine(ReleaseDirectory, "IndexerDefault.css"), destination);
             CopyFiles(Path.Combine(parentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
             CopyFile(Path.Combine(outputDir, "Recorder-devices-setup.exe"), destination);
-            CopyFile(Path.Combine(parentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release\ShareX_Chrome.exe"), destination);
+            CopyFile(Path.Combine(chromeReleaseDir, "ShareX_Chrome.exe"), destination);
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "tr", "zh-CN" };
 
