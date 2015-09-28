@@ -33,6 +33,8 @@ namespace ShareX.ScreenCaptureLib
             this.lblMaximumScrollCount = new System.Windows.Forms.Label();
             this.tcScrollingCapture = new System.Windows.Forms.TabControl();
             this.tpCapture = new System.Windows.Forms.TabPage();
+            this.cbStartSelectionAutomatically = new System.Windows.Forms.CheckBox();
+            this.cbAutoCombine = new System.Windows.Forms.CheckBox();
             this.lblSelectedRectangle = new System.Windows.Forms.Label();
             this.btnSelectRectangle = new System.Windows.Forms.Button();
             this.lblStartDelay = new System.Windows.Forms.Label();
@@ -66,8 +68,6 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput = new System.Windows.Forms.Panel();
             this.lblProcessing = new System.Windows.Forms.Label();
             this.pbOutput = new System.Windows.Forms.PictureBox();
-            this.cbAutoCombine = new System.Windows.Forms.CheckBox();
-            this.cbStartSelectionAutomatically = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -110,7 +110,7 @@ namespace ShareX.ScreenCaptureLib
             this.btnCapture.Location = new System.Drawing.Point(16, 312);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(304, 23);
-            this.btnCapture.TabIndex = 2;
+            this.btnCapture.TabIndex = 18;
             this.btnCapture.Text = "Start capture";
             this.btnCapture.UseVisualStyleBackColor = true;
             this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
@@ -129,7 +129,7 @@ namespace ShareX.ScreenCaptureLib
             0});
             this.nudScrollDelay.Name = "nudScrollDelay";
             this.nudScrollDelay.Size = new System.Drawing.Size(80, 20);
-            this.nudScrollDelay.TabIndex = 3;
+            this.nudScrollDelay.TabIndex = 9;
             this.nudScrollDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudScrollDelay.ValueChanged += new System.EventHandler(this.nudScrollDelay_ValueChanged);
             // 
@@ -138,7 +138,7 @@ namespace ShareX.ScreenCaptureLib
             this.nudMaximumScrollCount.Location = new System.Drawing.Point(160, 140);
             this.nudMaximumScrollCount.Name = "nudMaximumScrollCount";
             this.nudMaximumScrollCount.Size = new System.Drawing.Size(80, 20);
-            this.nudMaximumScrollCount.TabIndex = 4;
+            this.nudMaximumScrollCount.TabIndex = 11;
             this.nudMaximumScrollCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudMaximumScrollCount.ValueChanged += new System.EventHandler(this.nudMaximumScrollCount_ValueChanged);
             // 
@@ -148,7 +148,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblScrollDelay.Location = new System.Drawing.Point(16, 120);
             this.lblScrollDelay.Name = "lblScrollDelay";
             this.lblScrollDelay.Size = new System.Drawing.Size(64, 13);
-            this.lblScrollDelay.TabIndex = 5;
+            this.lblScrollDelay.TabIndex = 8;
             this.lblScrollDelay.Text = "Scroll delay:";
             // 
             // lblMaximumScrollCount
@@ -157,7 +157,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblMaximumScrollCount.Location = new System.Drawing.Point(16, 144);
             this.lblMaximumScrollCount.Name = "lblMaximumScrollCount";
             this.lblMaximumScrollCount.Size = new System.Drawing.Size(111, 13);
-            this.lblMaximumScrollCount.TabIndex = 6;
+            this.lblMaximumScrollCount.TabIndex = 10;
             this.lblMaximumScrollCount.Text = "Maximum scroll count:";
             // 
             // tcScrollingCapture
@@ -169,7 +169,7 @@ namespace ShareX.ScreenCaptureLib
             this.tcScrollingCapture.Name = "tcScrollingCapture";
             this.tcScrollingCapture.SelectedIndex = 0;
             this.tcScrollingCapture.Size = new System.Drawing.Size(935, 689);
-            this.tcScrollingCapture.TabIndex = 7;
+            this.tcScrollingCapture.TabIndex = 0;
             // 
             // tpCapture
             // 
@@ -200,13 +200,35 @@ namespace ShareX.ScreenCaptureLib
             this.tpCapture.Text = "Capture";
             this.tpCapture.UseVisualStyleBackColor = true;
             // 
+            // cbStartSelectionAutomatically
+            // 
+            this.cbStartSelectionAutomatically.AutoSize = true;
+            this.cbStartSelectionAutomatically.Location = new System.Drawing.Point(16, 168);
+            this.cbStartSelectionAutomatically.Name = "cbStartSelectionAutomatically";
+            this.cbStartSelectionAutomatically.Size = new System.Drawing.Size(288, 17);
+            this.cbStartSelectionAutomatically.TabIndex = 12;
+            this.cbStartSelectionAutomatically.Text = "Automatically start selection before opening this window";
+            this.cbStartSelectionAutomatically.UseVisualStyleBackColor = true;
+            this.cbStartSelectionAutomatically.CheckedChanged += new System.EventHandler(this.cbStartSelectionAutomatically_CheckedChanged);
+            // 
+            // cbAutoCombine
+            // 
+            this.cbAutoCombine.AutoSize = true;
+            this.cbAutoCombine.Location = new System.Drawing.Point(16, 288);
+            this.cbAutoCombine.Name = "cbAutoCombine";
+            this.cbAutoCombine.Size = new System.Drawing.Size(280, 17);
+            this.cbAutoCombine.TabIndex = 17;
+            this.cbAutoCombine.Text = "Automatically guess offsets and combine after capture";
+            this.cbAutoCombine.UseVisualStyleBackColor = true;
+            this.cbAutoCombine.CheckedChanged += new System.EventHandler(this.cbAutoCombine_CheckedChanged);
+            // 
             // lblSelectedRectangle
             // 
             this.lblSelectedRectangle.AutoSize = true;
             this.lblSelectedRectangle.Location = new System.Drawing.Point(328, 45);
             this.lblSelectedRectangle.Name = "lblSelectedRectangle";
             this.lblSelectedRectangle.Size = new System.Drawing.Size(0, 13);
-            this.lblSelectedRectangle.TabIndex = 16;
+            this.lblSelectedRectangle.TabIndex = 3;
             // 
             // btnSelectRectangle
             // 
@@ -214,7 +236,7 @@ namespace ShareX.ScreenCaptureLib
             this.btnSelectRectangle.Location = new System.Drawing.Point(16, 40);
             this.btnSelectRectangle.Name = "btnSelectRectangle";
             this.btnSelectRectangle.Size = new System.Drawing.Size(304, 23);
-            this.btnSelectRectangle.TabIndex = 15;
+            this.btnSelectRectangle.TabIndex = 2;
             this.btnSelectRectangle.Text = "(Optional) Select custom region in window...";
             this.btnSelectRectangle.UseVisualStyleBackColor = true;
             this.btnSelectRectangle.Click += new System.EventHandler(this.btnSelectRectangle_Click);
@@ -225,7 +247,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblStartDelay.Location = new System.Drawing.Point(16, 96);
             this.lblStartDelay.Name = "lblStartDelay";
             this.lblStartDelay.Size = new System.Drawing.Size(60, 13);
-            this.lblStartDelay.TabIndex = 14;
+            this.lblStartDelay.TabIndex = 6;
             this.lblStartDelay.Text = "Start delay:";
             // 
             // nudStartDelay
@@ -238,7 +260,7 @@ namespace ShareX.ScreenCaptureLib
             0});
             this.nudStartDelay.Name = "nudStartDelay";
             this.nudStartDelay.Size = new System.Drawing.Size(80, 20);
-            this.nudStartDelay.TabIndex = 13;
+            this.nudStartDelay.TabIndex = 7;
             this.nudStartDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudStartDelay.ValueChanged += new System.EventHandler(this.nudStartDelay_ValueChanged);
             // 
@@ -248,7 +270,7 @@ namespace ShareX.ScreenCaptureLib
             this.cbScrollTopBeforeCapture.Location = new System.Drawing.Point(16, 216);
             this.cbScrollTopBeforeCapture.Name = "cbScrollTopBeforeCapture";
             this.cbScrollTopBeforeCapture.Size = new System.Drawing.Size(223, 17);
-            this.cbScrollTopBeforeCapture.TabIndex = 12;
+            this.cbScrollTopBeforeCapture.TabIndex = 14;
             this.cbScrollTopBeforeCapture.Text = "Attempt scrolling to the top before capture";
             this.cbScrollTopBeforeCapture.UseVisualStyleBackColor = true;
             this.cbScrollTopBeforeCapture.CheckedChanged += new System.EventHandler(this.cbScrollTopBeforeCapture_CheckedChanged);
@@ -259,7 +281,7 @@ namespace ShareX.ScreenCaptureLib
             this.cbStartCaptureAutomatically.Location = new System.Drawing.Point(16, 192);
             this.cbStartCaptureAutomatically.Name = "cbStartCaptureAutomatically";
             this.cbStartCaptureAutomatically.Size = new System.Drawing.Size(213, 17);
-            this.cbStartCaptureAutomatically.TabIndex = 11;
+            this.cbStartCaptureAutomatically.TabIndex = 13;
             this.cbStartCaptureAutomatically.Text = "Start capture immediately after selection";
             this.cbStartCaptureAutomatically.UseVisualStyleBackColor = true;
             this.cbStartCaptureAutomatically.CheckedChanged += new System.EventHandler(this.cbStartCaptureAutomatically_CheckedChanged);
@@ -270,7 +292,7 @@ namespace ShareX.ScreenCaptureLib
             this.cbRemoveDuplicates.Location = new System.Drawing.Point(16, 264);
             this.cbRemoveDuplicates.Name = "cbRemoveDuplicates";
             this.cbRemoveDuplicates.Size = new System.Drawing.Size(148, 17);
-            this.cbRemoveDuplicates.TabIndex = 10;
+            this.cbRemoveDuplicates.TabIndex = 16;
             this.cbRemoveDuplicates.Text = "Remove duplicate images";
             this.cbRemoveDuplicates.UseVisualStyleBackColor = true;
             this.cbRemoveDuplicates.CheckedChanged += new System.EventHandler(this.cbRemoveDuplicates_CheckedChanged);
@@ -281,7 +303,7 @@ namespace ShareX.ScreenCaptureLib
             this.cbAutoDetectScrollEnd.Location = new System.Drawing.Point(16, 240);
             this.cbAutoDetectScrollEnd.Name = "cbAutoDetectScrollEnd";
             this.cbAutoDetectScrollEnd.Size = new System.Drawing.Size(169, 17);
-            this.cbAutoDetectScrollEnd.TabIndex = 9;
+            this.cbAutoDetectScrollEnd.TabIndex = 15;
             this.cbAutoDetectScrollEnd.Text = "Automatically detect scroll end";
             this.cbAutoDetectScrollEnd.UseVisualStyleBackColor = true;
             this.cbAutoDetectScrollEnd.CheckedChanged += new System.EventHandler(this.cbAutoDetectScrollEnd_CheckedChanged);
@@ -292,7 +314,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblScrollMethod.Location = new System.Drawing.Point(16, 72);
             this.lblScrollMethod.Name = "lblScrollMethod";
             this.lblScrollMethod.Size = new System.Drawing.Size(74, 13);
-            this.lblScrollMethod.TabIndex = 8;
+            this.lblScrollMethod.TabIndex = 4;
             this.lblScrollMethod.Text = "Scroll method:";
             // 
             // cbScrollMethod
@@ -302,7 +324,7 @@ namespace ShareX.ScreenCaptureLib
             this.cbScrollMethod.Location = new System.Drawing.Point(160, 68);
             this.cbScrollMethod.Name = "cbScrollMethod";
             this.cbScrollMethod.Size = new System.Drawing.Size(312, 21);
-            this.cbScrollMethod.TabIndex = 7;
+            this.cbScrollMethod.TabIndex = 5;
             this.cbScrollMethod.SelectedIndexChanged += new System.EventHandler(this.cbScrollMethod_SelectedIndexChanged);
             // 
             // tpOutput
@@ -329,7 +351,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblImageCount.Location = new System.Drawing.Point(696, 48);
             this.lblImageCount.Name = "lblImageCount";
             this.lblImageCount.Size = new System.Drawing.Size(78, 13);
-            this.lblImageCount.TabIndex = 12;
+            this.lblImageCount.TabIndex = 5;
             this.lblImageCount.Text = "Image count: 0";
             // 
             // btnResetCombine
@@ -338,7 +360,7 @@ namespace ShareX.ScreenCaptureLib
             this.btnResetCombine.Location = new System.Drawing.Point(696, 16);
             this.btnResetCombine.Name = "btnResetCombine";
             this.btnResetCombine.Size = new System.Drawing.Size(216, 23);
-            this.btnResetCombine.TabIndex = 11;
+            this.btnResetCombine.TabIndex = 3;
             this.btnResetCombine.Text = "Reset output";
             this.btnResetCombine.UseVisualStyleBackColor = true;
             this.btnResetCombine.Click += new System.EventHandler(this.btnResetCombine_Click);
@@ -349,7 +371,7 @@ namespace ShareX.ScreenCaptureLib
             this.btnGuessCombineAdjustments.Location = new System.Drawing.Point(312, 40);
             this.btnGuessCombineAdjustments.Name = "btnGuessCombineAdjustments";
             this.btnGuessCombineAdjustments.Size = new System.Drawing.Size(376, 23);
-            this.btnGuessCombineAdjustments.TabIndex = 10;
+            this.btnGuessCombineAdjustments.TabIndex = 4;
             this.btnGuessCombineAdjustments.Text = "2. Guess combine adjustments & combine";
             this.btnGuessCombineAdjustments.UseMnemonic = false;
             this.btnGuessCombineAdjustments.UseVisualStyleBackColor = true;
@@ -361,7 +383,7 @@ namespace ShareX.ScreenCaptureLib
             this.btnStartTask.Location = new System.Drawing.Point(312, 64);
             this.btnStartTask.Name = "btnStartTask";
             this.btnStartTask.Size = new System.Drawing.Size(376, 23);
-            this.btnStartTask.TabIndex = 9;
+            this.btnStartTask.TabIndex = 6;
             this.btnStartTask.Text = "3. Upload/save depending on after capture settings";
             this.btnStartTask.UseVisualStyleBackColor = true;
             this.btnStartTask.Click += new System.EventHandler(this.btnProcess_Click);
@@ -372,7 +394,7 @@ namespace ShareX.ScreenCaptureLib
             this.btnGuessEdges.Location = new System.Drawing.Point(312, 16);
             this.btnGuessEdges.Name = "btnGuessEdges";
             this.btnGuessEdges.Size = new System.Drawing.Size(376, 23);
-            this.btnGuessEdges.TabIndex = 8;
+            this.btnGuessEdges.TabIndex = 2;
             this.btnGuessEdges.Text = "1. Guess edge values to trim";
             this.btnGuessEdges.UseVisualStyleBackColor = true;
             this.btnGuessEdges.Click += new System.EventHandler(this.btnGuessEdges_Click);
@@ -386,7 +408,7 @@ namespace ShareX.ScreenCaptureLib
             this.gbCombineAdjustments.Location = new System.Drawing.Point(144, 8);
             this.gbCombineAdjustments.Name = "gbCombineAdjustments";
             this.gbCombineAdjustments.Size = new System.Drawing.Size(152, 120);
-            this.gbCombineAdjustments.TabIndex = 7;
+            this.gbCombineAdjustments.TabIndex = 1;
             this.gbCombineAdjustments.TabStop = false;
             this.gbCombineAdjustments.Text = "Combine adjustments";
             // 
@@ -396,7 +418,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblCombineLastVertical.Location = new System.Drawing.Point(8, 44);
             this.lblCombineLastVertical.Name = "lblCombineLastVertical";
             this.lblCombineLastVertical.Size = new System.Drawing.Size(67, 13);
-            this.lblCombineLastVertical.TabIndex = 16;
+            this.lblCombineLastVertical.TabIndex = 2;
             this.lblCombineLastVertical.Text = "Last vertical:";
             // 
             // lblCombineVertical
@@ -405,7 +427,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblCombineVertical.Location = new System.Drawing.Point(8, 20);
             this.lblCombineVertical.Name = "lblCombineVertical";
             this.lblCombineVertical.Size = new System.Drawing.Size(45, 13);
-            this.lblCombineVertical.TabIndex = 15;
+            this.lblCombineVertical.TabIndex = 0;
             this.lblCombineVertical.Text = "Vertical:";
             // 
             // nudCombineVertical
@@ -418,7 +440,7 @@ namespace ShareX.ScreenCaptureLib
             0});
             this.nudCombineVertical.Name = "nudCombineVertical";
             this.nudCombineVertical.Size = new System.Drawing.Size(56, 20);
-            this.nudCombineVertical.TabIndex = 8;
+            this.nudCombineVertical.TabIndex = 1;
             this.nudCombineVertical.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudCombineVertical.ValueChanged += new System.EventHandler(this.nudCombineVertical_ValueChanged);
             // 
@@ -432,7 +454,7 @@ namespace ShareX.ScreenCaptureLib
             0});
             this.nudCombineLastVertical.Name = "nudCombineLastVertical";
             this.nudCombineLastVertical.Size = new System.Drawing.Size(56, 20);
-            this.nudCombineLastVertical.TabIndex = 9;
+            this.nudCombineLastVertical.TabIndex = 3;
             this.nudCombineLastVertical.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudCombineLastVertical.ValueChanged += new System.EventHandler(this.nudCombineLastVertical_ValueChanged);
             // 
@@ -449,7 +471,7 @@ namespace ShareX.ScreenCaptureLib
             this.gbTrimEdges.Location = new System.Drawing.Point(8, 8);
             this.gbTrimEdges.Name = "gbTrimEdges";
             this.gbTrimEdges.Size = new System.Drawing.Size(128, 120);
-            this.gbTrimEdges.TabIndex = 6;
+            this.gbTrimEdges.TabIndex = 0;
             this.gbTrimEdges.TabStop = false;
             this.gbTrimEdges.Text = "Trim edges";
             // 
@@ -459,7 +481,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblTrimBottom.Location = new System.Drawing.Point(8, 92);
             this.lblTrimBottom.Name = "lblTrimBottom";
             this.lblTrimBottom.Size = new System.Drawing.Size(43, 13);
-            this.lblTrimBottom.TabIndex = 7;
+            this.lblTrimBottom.TabIndex = 6;
             this.lblTrimBottom.Text = "Bottom:";
             // 
             // lblTrimRight
@@ -468,7 +490,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblTrimRight.Location = new System.Drawing.Point(8, 68);
             this.lblTrimRight.Name = "lblTrimRight";
             this.lblTrimRight.Size = new System.Drawing.Size(35, 13);
-            this.lblTrimRight.TabIndex = 7;
+            this.lblTrimRight.TabIndex = 4;
             this.lblTrimRight.Text = "Right:";
             // 
             // lblTrimTop
@@ -477,7 +499,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblTrimTop.Location = new System.Drawing.Point(8, 44);
             this.lblTrimTop.Name = "lblTrimTop";
             this.lblTrimTop.Size = new System.Drawing.Size(29, 13);
-            this.lblTrimTop.TabIndex = 7;
+            this.lblTrimTop.TabIndex = 2;
             this.lblTrimTop.Text = "Top:";
             // 
             // lblTrimLeft
@@ -486,7 +508,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblTrimLeft.Location = new System.Drawing.Point(8, 20);
             this.lblTrimLeft.Name = "lblTrimLeft";
             this.lblTrimLeft.Size = new System.Drawing.Size(28, 13);
-            this.lblTrimLeft.TabIndex = 7;
+            this.lblTrimLeft.TabIndex = 0;
             this.lblTrimLeft.Text = "Left:";
             // 
             // nudTrimLeft
@@ -499,7 +521,7 @@ namespace ShareX.ScreenCaptureLib
             0});
             this.nudTrimLeft.Name = "nudTrimLeft";
             this.nudTrimLeft.Size = new System.Drawing.Size(56, 20);
-            this.nudTrimLeft.TabIndex = 2;
+            this.nudTrimLeft.TabIndex = 1;
             this.nudTrimLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudTrimLeft.ValueChanged += new System.EventHandler(this.nudTrimLeft_ValueChanged);
             // 
@@ -513,7 +535,7 @@ namespace ShareX.ScreenCaptureLib
             0});
             this.nudTrimBottom.Name = "nudTrimBottom";
             this.nudTrimBottom.Size = new System.Drawing.Size(56, 20);
-            this.nudTrimBottom.TabIndex = 5;
+            this.nudTrimBottom.TabIndex = 7;
             this.nudTrimBottom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudTrimBottom.ValueChanged += new System.EventHandler(this.nudTrimBottom_ValueChanged);
             // 
@@ -541,7 +563,7 @@ namespace ShareX.ScreenCaptureLib
             0});
             this.nudTrimRight.Name = "nudTrimRight";
             this.nudTrimRight.Size = new System.Drawing.Size(56, 20);
-            this.nudTrimRight.TabIndex = 4;
+            this.nudTrimRight.TabIndex = 5;
             this.nudTrimRight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudTrimRight.ValueChanged += new System.EventHandler(this.nudTrimRight_ValueChanged);
             // 
@@ -556,7 +578,7 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput.Location = new System.Drawing.Point(8, 136);
             this.pOutput.Name = "pOutput";
             this.pOutput.Size = new System.Drawing.Size(912, 518);
-            this.pOutput.TabIndex = 1;
+            this.pOutput.TabIndex = 7;
             // 
             // lblProcessing
             // 
@@ -565,7 +587,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblProcessing.Location = new System.Drawing.Point(8, 8);
             this.lblProcessing.Name = "lblProcessing";
             this.lblProcessing.Size = new System.Drawing.Size(137, 25);
-            this.lblProcessing.TabIndex = 1;
+            this.lblProcessing.TabIndex = 0;
             this.lblProcessing.Text = "Processing...";
             this.lblProcessing.Visible = false;
             // 
@@ -577,28 +599,6 @@ namespace ShareX.ScreenCaptureLib
             this.pbOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbOutput.TabIndex = 0;
             this.pbOutput.TabStop = false;
-            // 
-            // cbAutoCombine
-            // 
-            this.cbAutoCombine.AutoSize = true;
-            this.cbAutoCombine.Location = new System.Drawing.Point(16, 288);
-            this.cbAutoCombine.Name = "cbAutoCombine";
-            this.cbAutoCombine.Size = new System.Drawing.Size(280, 17);
-            this.cbAutoCombine.TabIndex = 17;
-            this.cbAutoCombine.Text = "After capture automatically guess offsets and combine";
-            this.cbAutoCombine.UseVisualStyleBackColor = true;
-            this.cbAutoCombine.CheckedChanged += new System.EventHandler(this.cbAutoCombine_CheckedChanged);
-            // 
-            // cbStartSelectionAutomatically
-            // 
-            this.cbStartSelectionAutomatically.AutoSize = true;
-            this.cbStartSelectionAutomatically.Location = new System.Drawing.Point(16, 168);
-            this.cbStartSelectionAutomatically.Name = "cbStartSelectionAutomatically";
-            this.cbStartSelectionAutomatically.Size = new System.Drawing.Size(274, 17);
-            this.cbStartSelectionAutomatically.TabIndex = 18;
-            this.cbStartSelectionAutomatically.Text = "Before this window open automatically start selection";
-            this.cbStartSelectionAutomatically.UseVisualStyleBackColor = true;
-            this.cbStartSelectionAutomatically.CheckedChanged += new System.EventHandler(this.cbStartSelectionAutomatically_CheckedChanged);
             // 
             // ScrollingCaptureForm
             // 
