@@ -266,13 +266,14 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void CleanPictureBox()
+        private void CleanPictureBox(Image img = null)
         {
             Image temp = pbOutput.Image;
 
+            pbOutput.Image = img;
+
             if (temp != null)
             {
-                pbOutput.Image = null;
                 temp.Dispose();
             }
         }
@@ -534,8 +535,8 @@ namespace ShareX.ScreenCaptureLib
         {
             if (!isBusy)
             {
-                CleanPictureBox();
-                CombineAndPreviewImages();
+                Result = CombineImages();
+                CleanPictureBox(Result);
             }
         }
 
@@ -582,6 +583,11 @@ namespace ShareX.ScreenCaptureLib
                     }
 
                     newImage = ImageHelpers.CropImage(image, rect);
+
+                    if (newImage == null)
+                    {
+                        continue;
+                    }
                 }
 
                 if (newImage == null)
