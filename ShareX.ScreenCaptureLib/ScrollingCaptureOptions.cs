@@ -50,5 +50,6 @@ namespace ShareX
         public int TrimBottomEdge { get; set; } = 0;
         public int CombineAdjustmentVertical { get; set; } = 0;
         public int CombineAdjustmentLastVertical { get; set; } = 0;
+        public int IgnoreLast { get; set; } = 0;
     }
 }

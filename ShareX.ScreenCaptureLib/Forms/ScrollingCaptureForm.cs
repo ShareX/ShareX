@@ -234,9 +234,10 @@ namespace ShareX.ScreenCaptureLib
             tcScrollingCapture.SelectedTab = tpOutput;
             StartingProcess();
             if (Options.RemoveDuplicates) RemoveDuplicates();
-            lblImageCount.Text = "Image count: " + images.Count;
+            txtImagesCount.Text = images.Count.ToString();
             btnGuessEdges.Enabled = btnGuessCombineAdjustments.Enabled = images.Count > 1;
             btnStartTask.Enabled = btnResetCombine.Enabled = images.Count > 0;
+            nudIgnoreLast.Maximum = images.Count > 1 ? images.Count - 1 : 0;
             ResetOffsets();
             if (Options.AfterCaptureAutomaticallyCombine)
             {
@@ -479,6 +480,13 @@ namespace ShareX.ScreenCaptureLib
             CombineAndPreviewImagesFromControl();
         }
 
+        private void nudIgnoreLast_ValueChanged(object sender, EventArgs e)
+        {
+            Options.IgnoreLast = (int)nudIgnoreLast.Value;
+            txtImagesCount.Text = (images.Count - Options.IgnoreLast).ToString();
+            CombineAndPreviewImagesFromControl();
+        }
+
         private void btnGuessEdges_Click(object sender, EventArgs e)
         {
             StartingProcess();
@@ -527,8 +535,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void ResetOffsets()
         {
-            nudTrimLeft.Value = nudTrimTop.Value = nudTrimRight.Value = nudTrimBottom.Value = nudCombineVertical.Value = nudCombineLastVertical.Value = 0;
-            Options.TrimLeftEdge = Options.TrimTopEdge = Options.TrimRightEdge = Options.TrimBottomEdge = Options.CombineAdjustmentVertical = Options.CombineAdjustmentLastVertical = 0;
+            nudTrimLeft.Value = nudTrimTop.Value = nudTrimRight.Value = nudTrimBottom.Value = nudCombineVertical.Value = nudCombineLastVertical.Value = nudIgnoreLast.Value = 0;
+            Options.TrimLeftEdge = Options.TrimTopEdge = Options.TrimRightEdge = Options.TrimBottomEdge =
+                Options.CombineAdjustmentVertical = Options.CombineAdjustmentLastVertical = Options.IgnoreLast = 0;
         }
 
         private void CombineAndPreviewImagesFromControl()
@@ -560,7 +569,7 @@ namespace ShareX.ScreenCaptureLib
 
             List<Image> output = new List<Image>();
 
-            for (int i = 0; i < images.Count; i++)
+            for (int i = 0; i < images.Count - Options.IgnoreLast; i++)
             {
                 Image newImage = null;
                 Image image = images[i];
