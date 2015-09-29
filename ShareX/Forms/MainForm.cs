@@ -1583,7 +1583,7 @@ namespace ShareX
             },
             () =>
             {
-                Program.HotkeyManager = new HotkeyManager(this, Program.HotkeysConfig.Hotkeys);
+                Program.HotkeyManager = new HotkeyManager(this, Program.HotkeysConfig.Hotkeys, !Program.NoHotkeys);
                 Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
                 DebugHelper.WriteLine("HotkeyManager started");
 
