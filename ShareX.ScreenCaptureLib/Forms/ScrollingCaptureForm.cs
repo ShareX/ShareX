@@ -265,6 +265,11 @@ namespace ShareX.ScreenCaptureLib
 
                 images.Clear();
             }
+
+            if (Result != null)
+            {
+                Result.Dispose();
+            }
         }
 
         private void CleanPictureBox(Image img = null)
@@ -571,7 +576,7 @@ namespace ShareX.ScreenCaptureLib
 
             for (int i = 0; i < images.Count - Options.IgnoreLast; i++)
             {
-                Image newImage = null;
+                Image newImage;
                 Image image = images[i];
 
                 if (Options.TrimLeftEdge > 0 || Options.TrimTopEdge > 0 || Options.TrimTopEdge > 0 || Options.TrimBottomEdge > 0 ||
@@ -598,8 +603,7 @@ namespace ShareX.ScreenCaptureLib
                         continue;
                     }
                 }
-
-                if (newImage == null)
+                else
                 {
                     newImage = (Image)image.Clone();
                 }
@@ -742,15 +746,7 @@ namespace ShareX.ScreenCaptureLib
                 for (int i = 0; i < images.Count - 2; i++)
                 {
                     int temp = CalculateVerticalOffset(images[i], images[i + 1]);
-
-                    if (i == 0)
-                    {
-                        vertical = temp;
-                    }
-                    else
-                    {
-                        vertical = Math.Max(vertical, temp);
-                    }
+                    vertical = Math.Max(vertical, temp);
                 }
 
                 nudCombineVertical.Value = vertical;
