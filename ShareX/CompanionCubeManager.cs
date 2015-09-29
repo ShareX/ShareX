@@ -46,7 +46,8 @@ namespace ShareX
         private static Timer timer;
         private static Stopwatch startTime;
         private static TimeSpan previousElapsed;
-        private static Rectangle screen;
+        private static Rectangle area;
+        private static Bitmap companionCube;
 
         public static void Toggle()
         {
@@ -65,20 +66,23 @@ namespace ShareX
             if (!IsActive)
             {
                 IsActive = true;
-                screen = CaptureHelpers.GetScreenWorkingArea();
+
+                companionCube = Resources.CompanionCube;
 
                 if (cubesForm != null) cubesForm.Close();
                 cubesForm = new CompanionCubesForm();
                 cubesForm.MouseClick += CubesForm_MouseClick;
                 cubesForm.Show();
 
+                area = new Rectangle(0, 0, cubesForm.Width, cubesForm.Height);
+
                 Cubes = new List<CompanionCube>(CubeCount);
 
                 for (int i = 0; i < CubeCount; i++)
                 {
                     CompanionCube cube = new CompanionCube(MathHelpers.Random(50, 100), MathHelpers.Random(250, 500));
-                    cube.Location = new Point(MathHelpers.Random(screen.X, screen.X + screen.Width - cube.Size.Width),
-                        MathHelpers.Random(screen.Y - cube.Size.Height - 500, screen.Y - cube.Size.Height));
+                    cube.Location = new Point(MathHelpers.Random(area.X, area.X + area.Width - cube.Size.Width),
+                        MathHelpers.Random(area.Y - cube.Size.Height - 500, area.Y - cube.Size.Height));
                     Cubes.Add(cube);
                 }
 
@@ -86,7 +90,7 @@ namespace ShareX
                 startTime = Stopwatch.StartNew();
 
                 timer = new Timer();
-                timer.Interval = 10;
+                timer.Interval = 20;
                 timer.Tick += Timer_Tick;
                 timer.Start();
             }
@@ -114,6 +118,12 @@ namespace ShareX
                 {
                     cubesForm.Close();
                     cubesForm = null;
+                }
+
+                if (companionCube != null)
+                {
+                    companionCube.Dispose();
+                    companionCube = null;
                 }
 
                 if (Cubes != null)
@@ -150,9 +160,9 @@ namespace ShareX
                     }
                 }
 
-                if (!intersect && newLocation.Y + cube.Size.Height > screen.Y + screen.Height)
+                if (!intersect && newLocation.Y + cube.Size.Height > area.Y + area.Height)
                 {
-                    newLocation = new Point(cube.Location.X, screen.Height - cube.Size.Height);
+                    newLocation = new Point(cube.Location.X, area.Height - cube.Size.Height);
                 }
 
                 cube.Location = newLocation;
@@ -163,15 +173,14 @@ namespace ShareX
 
         private static void DrawCubes()
         {
-            using (Bitmap companionCube = Resources.CompanionCube)
-            using (Bitmap surface = new Bitmap(screen.Width, screen.Height))
+            using (Bitmap surface = new Bitmap(area.Width, area.Height))
             using (Graphics g = Graphics.FromImage(surface))
             {
                 foreach (CompanionCube cube in Cubes)
                 {
-                    if (cube.IsActive)
+                    if (cube.IsActive && area.IntersectsWith(cube.Rectangle))
                     {
-                        g.DrawImage(companionCube, new Rectangle(CaptureHelpers.ScreenToClient(cube.Location), cube.Size));
+                        g.DrawImage(companionCube, new Rectangle(cube.Location, cube.Size));
                     }
                 }
 

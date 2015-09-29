@@ -40,7 +40,7 @@ namespace ShareX
         public CompanionCubesForm()
         {
             StartPosition = FormStartPosition.Manual;
-            Bounds = CaptureHelpers.GetScreenBounds();
+            Bounds = CaptureHelpers.GetScreenWorkingArea();
             Shown += CompanionCubesForm_Shown;
         }
 
