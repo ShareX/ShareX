@@ -78,11 +78,11 @@ namespace ShareX.ScreenCaptureLib
             AreaManager = new AreaManager(this);
 
             KeyDown += RectangleRegion_KeyDown;
-            MouseUp += RectangleRegion_MouseUp;
+            MouseDown += RectangleRegion_MouseDown;
             MouseWheel += RectangleRegion_MouseWheel;
         }
 
-        private void RectangleRegion_MouseUp(object sender, MouseEventArgs e)
+        private void RectangleRegion_MouseDown(object sender, MouseEventArgs e)
         {
             if ((OneClickMode || ScreenColorPickerMode) && e.Button == MouseButtons.Left)
             {

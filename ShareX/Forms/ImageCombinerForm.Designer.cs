@@ -170,9 +170,9 @@
             this.lblSpacePixel.AutoSize = true;
             this.lblSpacePixel.Location = new System.Drawing.Point(272, 448);
             this.lblSpacePixel.Name = "lblSpacePixel";
-            this.lblSpacePixel.Size = new System.Drawing.Size(18, 13);
+            this.lblSpacePixel.Size = new System.Drawing.Size(33, 13);
             this.lblSpacePixel.TabIndex = 10;
-            this.lblSpacePixel.Text = "px";
+            this.lblSpacePixel.Text = "pixels";
             // 
             // ImageCombinerForm
             // 

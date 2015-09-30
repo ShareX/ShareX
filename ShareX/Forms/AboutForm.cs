@@ -232,6 +232,7 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
 
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
+#if STEAM
             if (e.Button == MouseButtons.Middle)
             {
                 cLogo.Stop();
@@ -243,6 +244,7 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
             {
                 CompanionCubeManager.Stop();
             }
+#endif
 
             if (!isEasterEggStarted)
             {
