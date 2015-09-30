@@ -826,4 +826,22 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
+  <data name="HotkeyType_IRCClient" xml:space="preserve">
+    <value>IRC client</value>
+  </data>
+  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>Image combiner</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>Video thumbnailer</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
 </root>

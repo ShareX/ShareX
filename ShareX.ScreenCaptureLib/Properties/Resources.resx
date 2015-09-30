@@ -296,4 +296,10 @@ X: {4} Y: {5}</value>
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
     <value>[Hold Alt] Snap selection to preset sizes</value>
   </data>
+  <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
+    <value>Stop capture</value>
+  </data>
+  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
+    <value>Start capture</value>
+  </data>
 </root>

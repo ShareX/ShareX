@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -206,7 +207,7 @@ namespace ShareX.ScreenCaptureLib
         private void StartCapture()
         {
             isCapturing = true;
-            btnCapture.Text = "Stop capture";
+            btnCapture.Text = Resources.ScrollingCaptureForm_StartCapture_Stop_capture;
             WindowState = FormWindowState.Minimized;
             firstCapture = true;
 
@@ -229,7 +230,7 @@ namespace ShareX.ScreenCaptureLib
         private void StopCapture()
         {
             captureTimer.Stop();
-            btnCapture.Text = "Start capture";
+            btnCapture.Text = Resources.ScrollingCaptureForm_StopCapture_Start_capture;
             this.ShowActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
             StartingProcess();

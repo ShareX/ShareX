@@ -1026,6 +1026,7 @@ namespace ShareX
         {
             TaskHelpers.OpenImageCombiner();
         }
+
         private void tsmiVideoThumbnailer_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenVideoThumbnailer();
@@ -1738,6 +1739,9 @@ namespace ShareX
                 case HotkeyType.HashCheck:
                     TaskHelpers.OpenHashCheck();
                     break;
+                case HotkeyType.IRCClient:
+                    TaskHelpers.OpenIRCClient(safeTaskSettings);
+                    break;
                 case HotkeyType.DNSChanger:
                     TaskHelpers.OpenDNSChanger();
                     break;
@@ -1752,6 +1756,12 @@ namespace ShareX
                     break;
                 case HotkeyType.IndexFolder:
                     TaskHelpers.OpenIndexFolder();
+                    break;
+                case HotkeyType.ImageCombiner:
+                    TaskHelpers.OpenImageCombiner(safeTaskSettings);
+                    break;
+                case HotkeyType.VideoThumbnailer:
+                    TaskHelpers.OpenVideoThumbnailer(safeTaskSettings);
                     break;
                 case HotkeyType.FTPClient:
                     TaskHelpers.OpenFTPClient();
@@ -2376,7 +2386,6 @@ namespace ShareX
         {
             CaptureRectangleLight(null, false);
         }
-
 
         private void tsmiTrayRectangleTransparent_Click(object sender, EventArgs e)
         {

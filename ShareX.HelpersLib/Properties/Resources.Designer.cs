@@ -988,6 +988,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image combiner.
+        /// </summary>
+        internal static string HotkeyType_ImageCombiner {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageCombiner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_ImageCombiner_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageCombiner_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image editor.
         /// </summary>
         internal static string HotkeyType_ImageEditor {
@@ -1038,6 +1056,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_IndexFolder_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_IndexFolder_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IRC client.
+        /// </summary>
+        internal static string HotkeyType_IRCClient {
+            get {
+                return ResourceManager.GetString("HotkeyType_IRCClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_IRCClient_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_IRCClient_Category", resourceCulture);
             }
         }
         
@@ -1461,6 +1497,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_UploadURL_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_UploadURL_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video thumbnailer.
+        /// </summary>
+        internal static string HotkeyType_VideoThumbnailer {
+            get {
+                return ResourceManager.GetString("HotkeyType_VideoThumbnailer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_VideoThumbnailer_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_VideoThumbnailer_Category", resourceCulture);
             }
         }
         
