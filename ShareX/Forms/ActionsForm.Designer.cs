@@ -42,6 +42,7 @@
             this.txtExtensions = new System.Windows.Forms.TextBox();
             this.txtOutputExtension = new System.Windows.Forms.TextBox();
             this.lblOutputExtension = new System.Windows.Forms.Label();
+            this.cbHiddenWindow = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -115,11 +116,18 @@
             resources.ApplyResources(this.lblOutputExtension, "lblOutputExtension");
             this.lblOutputExtension.Name = "lblOutputExtension";
             // 
+            // cbHiddenWindow
+            // 
+            resources.ApplyResources(this.cbHiddenWindow, "cbHiddenWindow");
+            this.cbHiddenWindow.Name = "cbHiddenWindow";
+            this.cbHiddenWindow.UseVisualStyleBackColor = true;
+            // 
             // ActionsForm
             // 
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbHiddenWindow);
             this.Controls.Add(this.lblOutputExtension);
             this.Controls.Add(this.txtOutputExtension);
             this.Controls.Add(this.txtExtensions);
@@ -155,5 +163,6 @@
         private System.Windows.Forms.TextBox txtExtensions;
         private System.Windows.Forms.TextBox txtOutputExtension;
         private System.Windows.Forms.Label lblOutputExtension;
+        private System.Windows.Forms.CheckBox cbHiddenWindow;
     }
 }

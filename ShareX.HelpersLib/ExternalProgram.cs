@@ -32,6 +32,7 @@ namespace ShareX.HelpersLib
     public class ExternalProgram
     {
         public bool IsActive { get; set; }
+        public bool HiddenWindow { get; set; }
         public string Name { get; set; }
         public string Path { get; set; }
         public string Args { get; set; }
@@ -60,7 +61,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public string Run(string filePath)
+        public string Run(string filePath, bool hiddenWindow)
         {
             if (!string.IsNullOrEmpty(filePath) && CheckExtensions(filePath) && !string.IsNullOrEmpty(Path) && File.Exists(Path))
             {
@@ -96,6 +97,12 @@ namespace ShareX.HelpersLib
                             }
 
                             psi.Arguments = args;
+                        }
+
+                        if (hiddenWindow)
+                        {
+                            psi.WindowStyle = ProcessWindowStyle.Hidden;
+                            psi.CreateNoWindow = true;
                         }
 
                         process.StartInfo = psi;
