@@ -205,7 +205,7 @@ namespace ShareX
         {
             get
             {
-                string filename = string.Format(LogFileName, FastDateTime.Now);
+                string filename = string.Format(LogFileName, DateTime.Now);
                 return Path.Combine(LogsFolder, filename);
             }
         }

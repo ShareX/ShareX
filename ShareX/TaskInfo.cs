@@ -157,7 +157,7 @@ namespace ShareX
             {
                 Filename = FileName,
                 Filepath = FilePath,
-                DateTimeUtc = UploadTime,
+                DateTime = UploadTime,
                 Type = DataType.ToString(),
                 Host = UploaderHost,
                 URL = Result.URL,

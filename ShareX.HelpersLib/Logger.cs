@@ -54,7 +54,7 @@ namespace ShareX.HelpersLib
             {
                 if (!string.IsNullOrEmpty(message))
                 {
-                    message = string.Format("{0:yyyy-MM-dd HH:mm:ss.fff} - {1}", FastDateTime.Now, message);
+                    message = string.Format("{0:yyyy-MM-dd HH:mm:ss.fff} - {1}", DateTime.Now, message);
                 }
 
                 sbMessages.AppendLine(message);

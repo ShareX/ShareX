@@ -115,7 +115,7 @@ namespace ShareX.HistoryLib
                 }
             }
 
-            return tempHistoryItems.OrderByDescending(x => x.DateTimeUtc).ToArray();
+            return tempHistoryItems.OrderByDescending(x => x.DateTime).ToArray();
         }
 
         private HistoryItem[] him_GetHistoryItems()

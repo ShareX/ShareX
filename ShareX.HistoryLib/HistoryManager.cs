@@ -42,7 +42,7 @@ namespace ShareX.HistoryLib
 
         private bool IsValidHistoryItem(HistoryItem historyItem)
         {
-            return historyItem != null && !string.IsNullOrEmpty(historyItem.Filename) && historyItem.DateTimeUtc != DateTime.MinValue &&
+            return historyItem != null && !string.IsNullOrEmpty(historyItem.Filename) && historyItem.DateTime != DateTime.MinValue &&
                 (!string.IsNullOrEmpty(historyItem.URL) || !string.IsNullOrEmpty(historyItem.Filepath));
         }
 
