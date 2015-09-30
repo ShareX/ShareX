@@ -1124,15 +1124,29 @@ namespace ShareX.HelpersLib
 
         public static string OpenImageFileDialog()
         {
+            string[] images = OpenImageFileDialog(false);
+
+            if (images != null && images.Length > 0)
+            {
+                return images[0];
+            }
+
+            return null;
+        }
+
+        public static string[] OpenImageFileDialog(bool multiselect)
+        {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff|" +
                     "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff|" +
                     "All files (*.*)|*.*";
 
+                ofd.Multiselect = multiselect;
+
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    return ofd.FileName;
+                    return ofd.FileNames;
                 }
             }
 

@@ -588,7 +588,9 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            new ImageCombinerForm(taskSettings.ToolsSettingsReference.ImageCombinerOptions).Show();
+            ImageCombinerForm imageCombinerForm = new ImageCombinerForm(taskSettings.ToolsSettingsReference.ImageCombinerOptions);
+            imageCombinerForm.ProcessRequested += image => UploadManager.RunImageTask(image, taskSettings);
+            imageCombinerForm.Show();
         }
 
         public static void OpenVideoThumbnailer(TaskSettings taskSettings = null)

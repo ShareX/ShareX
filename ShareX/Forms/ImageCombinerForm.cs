@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,32 +38,109 @@ namespace ShareX
 {
     public partial class ImageCombinerForm : BaseForm
     {
+        public event Action<Image> ProcessRequested;
+
         public ImageCombinerOptions Options { get; private set; }
 
         public ImageCombinerForm(ImageCombinerOptions options)
         {
             Options = options;
             InitializeComponent();
+            cbOrientation.Items.AddRange(Enum.GetNames(typeof(Orientation)));
+            cbOrientation.SelectedIndex = (int)Options.Orientation;
+            nudSpace.Value = Options.Space;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string[] images = ImageHelpers.OpenImageFileDialog(true);
+
+            if (images != null)
+            {
+                foreach (string image in images)
+                {
+                    lvImages.Items.Add(image);
+                }
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            if (lvImages.SelectedItems.Count > 0)
+            {
+                foreach (ListViewItem lvi in lvImages.SelectedItems)
+                {
+                    lvImages.Items.Remove(lvi);
+                }
+            }
         }
 
         private void btnMoveUp_Click(object sender, EventArgs e)
         {
+            if (lvImages.SelectedItems.Count > 0)
+            {
+                lvImages.SelectedItems[0].MoveUp();
+            }
         }
 
         private void btnMoveDown_Click(object sender, EventArgs e)
         {
+            if (lvImages.SelectedItems.Count > 0)
+            {
+                lvImages.SelectedItems[0].MoveDown();
+            }
+        }
+
+        private void cbOrientation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.Orientation = (Orientation)cbOrientation.SelectedIndex;
+        }
+
+        private void nudSpace_ValueChanged(object sender, EventArgs e)
+        {
+            Options.Space = (int)nudSpace.Value;
         }
 
         private void btnCombine_Click(object sender, EventArgs e)
         {
+            if (lvImages.Items.Count > 0)
+            {
+                IEnumerable<Image> images = null;
+
+                try
+                {
+                    images = lvImages.Items.Cast<ListViewItem>().Select(x => ImageHelpers.LoadImage(x.Text));
+                    Image output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Space);
+                    OnProcessRequested(output);
+                }
+                catch (Exception ex)
+                {
+                    DebugHelper.WriteException(ex);
+
+                    MessageBox.Show(ex.ToString(), $"ShareX - {Resources.Program_Run_Error}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (images != null)
+                    {
+                        foreach (Image image in images)
+                        {
+                            if (image != null)
+                            {
+                                image.Dispose();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        protected void OnProcessRequested(Image image)
+        {
+            if (ProcessRequested != null)
+            {
+                ProcessRequested(image);
+            }
         }
     }
 }

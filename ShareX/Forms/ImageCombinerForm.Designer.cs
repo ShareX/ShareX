@@ -32,14 +32,15 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnMoveDown = new System.Windows.Forms.Button();
-            this.myListView1 = new ShareX.HelpersLib.MyListView();
+            this.lvImages = new ShareX.HelpersLib.MyListView();
             this.chFilepath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCombine = new System.Windows.Forms.Button();
             this.lblSpace = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudSpace = new System.Windows.Forms.NumericUpDown();
             this.lblOrientation = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.cbOrientation = new System.Windows.Forms.ComboBox();
+            this.lblSpacePixel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -82,21 +83,24 @@
             this.btnMoveDown.UseVisualStyleBackColor = true;
             this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
             // 
-            // myListView1
+            // lvImages
             // 
-            this.myListView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lvImages.AllowDrop = true;
+            this.lvImages.AllowItemDrag = true;
+            this.lvImages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.myListView1.AutoFillColumn = true;
-            this.myListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvImages.AutoFillColumn = true;
+            this.lvImages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chFilepath});
-            this.myListView1.FullRowSelect = true;
-            this.myListView1.Location = new System.Drawing.Point(8, 40);
-            this.myListView1.Name = "myListView1";
-            this.myListView1.Size = new System.Drawing.Size(504, 368);
-            this.myListView1.TabIndex = 4;
-            this.myListView1.UseCompatibleStateImageBehavior = false;
-            this.myListView1.View = System.Windows.Forms.View.Details;
+            this.lvImages.FullRowSelect = true;
+            this.lvImages.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvImages.Location = new System.Drawing.Point(8, 40);
+            this.lvImages.Name = "lvImages";
+            this.lvImages.Size = new System.Drawing.Size(504, 368);
+            this.lvImages.TabIndex = 4;
+            this.lvImages.UseCompatibleStateImageBehavior = false;
+            this.lvImages.View = System.Windows.Forms.View.Details;
             // 
             // chFilepath
             // 
@@ -110,7 +114,7 @@
             this.btnCombine.Name = "btnCombine";
             this.btnCombine.Size = new System.Drawing.Size(504, 31);
             this.btnCombine.TabIndex = 5;
-            this.btnCombine.Text = "Combine images and save/upload";
+            this.btnCombine.Text = "Combine images and save/upload depending on after capture settings";
             this.btnCombine.UseVisualStyleBackColor = true;
             this.btnCombine.Click += new System.EventHandler(this.btnCombine_Click);
             // 
@@ -124,19 +128,20 @@
             this.lblSpace.TabIndex = 6;
             this.lblSpace.Text = "Space between images:";
             // 
-            // numericUpDown1
+            // nudSpace
             // 
-            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.numericUpDown1.Location = new System.Drawing.Point(200, 444);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nudSpace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nudSpace.Location = new System.Drawing.Point(200, 444);
+            this.nudSpace.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(64, 20);
-            this.numericUpDown1.TabIndex = 7;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudSpace.Name = "nudSpace";
+            this.nudSpace.Size = new System.Drawing.Size(64, 20);
+            this.nudSpace.TabIndex = 7;
+            this.nudSpace.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudSpace.ValueChanged += new System.EventHandler(this.nudSpace_ValueChanged);
             // 
             // lblOrientation
             // 
@@ -148,34 +153,47 @@
             this.lblOrientation.TabIndex = 8;
             this.lblOrientation.Text = "Combine orientation:";
             // 
-            // comboBox1
+            // cbOrientation
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(200, 420);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
+            this.cbOrientation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbOrientation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOrientation.FormattingEnabled = true;
+            this.cbOrientation.Location = new System.Drawing.Point(200, 420);
+            this.cbOrientation.Name = "cbOrientation";
+            this.cbOrientation.Size = new System.Drawing.Size(121, 21);
+            this.cbOrientation.TabIndex = 9;
+            this.cbOrientation.SelectedIndexChanged += new System.EventHandler(this.cbOrientation_SelectedIndexChanged);
+            // 
+            // lblSpacePixel
+            // 
+            this.lblSpacePixel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblSpacePixel.AutoSize = true;
+            this.lblSpacePixel.Location = new System.Drawing.Point(272, 448);
+            this.lblSpacePixel.Name = "lblSpacePixel";
+            this.lblSpacePixel.Size = new System.Drawing.Size(18, 13);
+            this.lblSpacePixel.TabIndex = 10;
+            this.lblSpacePixel.Text = "px";
             // 
             // ImageCombinerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 514);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lblSpacePixel);
+            this.Controls.Add(this.cbOrientation);
             this.Controls.Add(this.lblOrientation);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nudSpace);
             this.Controls.Add(this.lblSpace);
             this.Controls.Add(this.btnCombine);
-            this.Controls.Add(this.myListView1);
+            this.Controls.Add(this.lvImages);
             this.Controls.Add(this.btnMoveDown);
             this.Controls.Add(this.btnMoveUp);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Name = "ImageCombinerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Image combiner";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,12 +205,13 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnMoveUp;
         private System.Windows.Forms.Button btnMoveDown;
-        private HelpersLib.MyListView myListView1;
+        private HelpersLib.MyListView lvImages;
         private System.Windows.Forms.Button btnCombine;
         private System.Windows.Forms.Label lblSpace;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudSpace;
         private System.Windows.Forms.Label lblOrientation;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbOrientation;
         private System.Windows.Forms.ColumnHeader chFilepath;
+        private System.Windows.Forms.Label lblSpacePixel;
     }
 }
