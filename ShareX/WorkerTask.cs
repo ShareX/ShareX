@@ -613,7 +613,7 @@ namespace ShareX
 
                         foreach (ExternalProgram fileAction in actions)
                         {
-                            Info.FilePath = fileAction.Run(Info.FilePath, fileAction.HiddenWindow);
+                            Info.FilePath = fileAction.Run(Info.FilePath);
                         }
 
                         LoadFileStream();

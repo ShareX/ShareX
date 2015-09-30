@@ -61,7 +61,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public string Run(string filePath, bool hiddenWindow)
+        public string Run(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath) && CheckExtensions(filePath) && !string.IsNullOrEmpty(Path) && File.Exists(Path))
             {
@@ -99,7 +99,7 @@ namespace ShareX.HelpersLib
                             psi.Arguments = args;
                         }
 
-                        if (hiddenWindow)
+                        if (HiddenWindow)
                         {
                             psi.WindowStyle = ProcessWindowStyle.Hidden;
                             psi.CreateNoWindow = true;

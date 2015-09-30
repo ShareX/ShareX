@@ -1224,21 +1224,46 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Image CombineImages(IEnumerable<Image> images, int space = 0)
+        public static Image CombineImages(IEnumerable<Image> images, Orientation orientation = Orientation.Vertical, int space = 0)
         {
-            int width = images.Max(x => x.Width);
-            int height = images.Sum(x => x.Height);
-            Bitmap bmp = new Bitmap(width, height + (space * (images.Count() - 1)));
+            int width, height;
+
+            int spaceSize = space * (images.Count() - 1);
+
+            if (orientation == Orientation.Vertical)
+            {
+                width = images.Max(x => x.Width);
+                height = images.Sum(x => x.Height) + spaceSize;
+            }
+            else
+            {
+                width = images.Sum(x => x.Width) + spaceSize;
+                height = images.Max(x => x.Height);
+            }
+
+            Bitmap bmp = new Bitmap(width, height);
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.SetHighQuality();
-                int y = 0;
+                int position = 0;
 
                 foreach (Image image in images)
                 {
-                    g.DrawImage(image, 0, y, image.Width, image.Height);
-                    y += image.Height + space;
+                    Rectangle rect;
+
+                    if (orientation == Orientation.Vertical)
+                    {
+                        rect = new Rectangle(0, position, image.Width, image.Height);
+                        position += image.Height + space;
+                    }
+                    else
+                    {
+                        rect = new Rectangle(position, 0, image.Width, image.Height);
+                        position += image.Width + space;
+                    }
+
+                    g.DrawImage(image, rect);
                 }
             }
 
