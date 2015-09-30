@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,7 +51,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
             Dictionary<string, string> args = customUploader.GetArguments(url);
 
-            result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, responseType: customUploader.ResponseType);
+            result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, headers: customUploader.Headers.ToNameValueCollection(), responseType: customUploader.ResponseType);
 
             customUploader.ParseResponse(result, true);
 

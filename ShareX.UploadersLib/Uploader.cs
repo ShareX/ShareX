@@ -382,10 +382,13 @@ namespace ShareX.UploadersLib
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-            if (headers != null && headers["Accept"] != null)
+            if (headers != null)
             {
-                request.Accept = headers["Accept"];
-                headers.Remove("Accept");
+                if (headers["Accept"] != null)
+                {
+                    request.Accept = headers["Accept"];
+                    headers.Remove("Accept");
+                }
             }
 
             request.AllowWriteStreamBuffering = HelpersOptions.CurrentProxy.IsValidProxy();

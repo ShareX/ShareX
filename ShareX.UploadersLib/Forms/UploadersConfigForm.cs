@@ -2368,6 +2368,25 @@ namespace ShareX.UploadersLib
             }
         }
 
+        private void btnCustomUploaderArgAddHeader_Click(object sender, EventArgs e)
+        {
+            string name = txtCustomUploaderArgName.Text;
+            string value = txtCustomUploaderArgValue.Text;
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                var arguments = lvCustomUploaderArguments.Items.Add(name);
+                arguments.SubItems.Add(value);
+                arguments.SubItems.Add("Y", Color.Yellow, Color.Transparent, this.Font);
+
+                txtCustomUploaderArgName.Text = string.Empty;
+                txtCustomUploaderArgValue.Text = string.Empty;
+                txtCustomUploaderArgName.Focus();
+            }
+
+        }
+
+
         private void btnCustomUploaderArgRemove_Click(object sender, EventArgs e)
         {
             if (lvCustomUploaderArguments.SelectedItems.Count > 0)
@@ -2390,17 +2409,7 @@ namespace ShareX.UploadersLib
 
         private void lvCustomUploaderArguments_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = string.Empty;
-            string value = string.Empty;
 
-            if (lvCustomUploaderArguments.SelectedItems.Count > 0)
-            {
-                name = lvCustomUploaderArguments.SelectedItems[0].Text;
-                value = lvCustomUploaderArguments.SelectedItems[0].SubItems[1].Text;
-            }
-
-            txtCustomUploaderArgName.Text = name;
-            txtCustomUploaderArgValue.Text = value;
         }
 
         private void cbCustomUploaderImageUploader_SelectedIndexChanged(object sender, EventArgs e)
@@ -2494,5 +2503,6 @@ namespace ShareX.UploadersLib
         #endregion Custom Uploaders
 
         #endregion Other Uploaders
+
     }
 }

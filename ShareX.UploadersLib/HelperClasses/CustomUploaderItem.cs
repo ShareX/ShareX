@@ -38,17 +38,20 @@ namespace ShareX.UploadersLib
         public string RequestURL { get; set; }
         public string FileFormName { get; set; }
         public Dictionary<string, string> Arguments { get; set; }
+        public Dictionary<string, string> Headers { get; set; }
         public ResponseType ResponseType { get; set; }
         public List<string> RegexList { get; set; }
         public string URL { get; set; }
         public string ThumbnailURL { get; set; }
         public string DeletionURL { get; set; }
+        public string UserAgent { get; set; }
 
         private List<Match> regexResult;
 
         public CustomUploaderItem()
         {
             Arguments = new Dictionary<string, string>();
+            Headers = new Dictionary<string, string>();
             RegexList = new List<string>();
         }
 
@@ -117,6 +120,25 @@ namespace ShareX.UploadersLib
             }
 
             return arguments;
+        }
+
+
+        public Dictionary<string, string> GetHeaders(string input = null)
+        {
+            Dictionary<string, string> headers = new Dictionary<string, string>();
+
+            foreach (KeyValuePair<string, string> header in Headers)
+            {
+                string value = header.Value;
+
+                value = value.Replace("%input", "$input$"); // For backward compatibility
+                value = NameParser.Parse(NameParserType.Text, value);
+                value = value.Replace("$input$", input);
+
+                headers.Add(header.Key, value);
+            }
+
+            return headers;
         }
 
         public void ParseResponse(UploadResult result, bool isShortenedURL = false)
