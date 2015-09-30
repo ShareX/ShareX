@@ -364,6 +364,7 @@ namespace ShareX
     public class TaskSettingsTools
     {
         public IndexerSettings IndexerSettings = new IndexerSettings();
+        public ImageCombinerOptions ImageCombinerOptions = new ImageCombinerOptions();
         public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
         public IRCInfo IRCSettings = new IRCInfo();
     }

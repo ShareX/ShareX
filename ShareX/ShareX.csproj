@@ -166,6 +166,12 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
+    <Compile Include="Forms\ImageCombinerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageCombinerForm.Designer.cs">
+      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ScreenColorPicker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,7 @@
     <Compile Include="Forms\FirstTimeConfigForm.Designer.cs">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageCombinerOptions.cs" />
     <Compile Include="IntegrationHelpers.cs" />
     <Compile Include="ScreenRecordManager.cs" />
     <Compile Include="Forms\ScreenRecordForm.cs">
@@ -647,6 +654,9 @@
     <EmbeddedResource Include="Forms\HotkeySettingsForm.zh-CN.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageCombinerForm.resx">
+      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.de.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1068,6 +1078,7 @@
     <None Include="Resources\ru.png" />
     <None Include="Resources\CompanionCube.png" />
     <None Include="Resources\ui-scroll-pane-image.png" />
+    <None Include="Resources\document-break.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

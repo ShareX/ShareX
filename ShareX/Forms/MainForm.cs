@@ -1022,6 +1022,10 @@ namespace ShareX
             TaskHelpers.OpenIndexFolder();
         }
 
+        private void tsmiImageCombiner_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageCombiner();
+        }
         private void tsmiVideoThumbnailer_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenVideoThumbnailer();
@@ -2372,6 +2376,7 @@ namespace ShareX
         {
             CaptureRectangleLight(null, false);
         }
+
 
         private void tsmiTrayRectangleTransparent_Click(object sender, EventArgs e)
         {

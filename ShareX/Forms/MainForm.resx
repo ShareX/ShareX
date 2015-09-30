@@ -552,6 +552,12 @@
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Index folder...</value>
   </data>
+  <data name="tsmiImageCombiner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>Image combiner...</value>
+  </data>
   <data name="tsmiVideoThumbnailer.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
@@ -1347,6 +1353,12 @@
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Index folder...</value>
   </data>
+  <data name="tsmiTrayImageCombiner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>Image combiner...</value>
+  </data>
   <data name="tsmiTrayVideoThumbnailer.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
@@ -1807,6 +1819,12 @@
     <value>tsmiIndexFolder</value>
   </data>
   <data name="&gt;&gt;tsmiIndexFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiImageCombiner.Name" xml:space="preserve">
+    <value>tsmiImageCombiner</value>
+  </data>
+  <data name="&gt;&gt;tsmiImageCombiner.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiVideoThumbnailer.Name" xml:space="preserve">
@@ -2697,10 +2715,16 @@
   <data name="&gt;&gt;timerTraySingleClick.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayImageCombiner.Name" xml:space="preserve">
+    <value>tsmiTrayImageCombiner</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayImageCombiner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=10.2.6.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

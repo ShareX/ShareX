@@ -584,6 +584,13 @@ namespace ShareX
             UploadManager.IndexFolder();
         }
 
+        public static void OpenImageCombiner(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            new ImageCombinerForm(taskSettings.ToolsSettingsReference.ImageCombinerOptions).Show();
+        }
+
         public static void OpenVideoThumbnailer(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
