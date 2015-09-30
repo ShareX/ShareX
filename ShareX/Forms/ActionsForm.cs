@@ -49,6 +49,7 @@ namespace ShareX
             CodeMenu.Create<ActionsCodeMenuEntry>(txtArguments);
             txtOutputExtension.Text = fileAction.OutputExtension ?? "";
             txtExtensions.Text = fileAction.Extensions ?? "";
+            cbHiddenWindow.Checked = fileAction.HiddenWindow;
         }
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
@@ -75,6 +76,7 @@ namespace ShareX
             FileAction.Args = txtArguments.Text;
             FileAction.Extensions = txtExtensions.Text;
             FileAction.OutputExtension = txtOutputExtension.Text;
+            FileAction.HiddenWindow = cbHiddenWindow.Checked;
             DialogResult = DialogResult.OK;
         }
 
