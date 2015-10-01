@@ -717,19 +717,4 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Sablon</value>
   </data>
-  <data name="chHubicFolderName.Text" xml:space="preserve">
-    <value>Könyvtár neve</value>
-  </data>
-  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
-    <value>Kiválasztott mappa:</value>
-  </data>
-  <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
-    <value>Könyvtár lista frissítése</value>
-  </data>
-  <data name="cbHubicPublishLink.Text" xml:space="preserve">
-    <value>Megosztó link készítése (30 napig érvényes)</value>
-  </data>
-  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
-    <value>Megjegyzés: duplán kattinthatsz a mappa nevére ha bele szeretnél lépni.</value>
-  </data>
 </root>

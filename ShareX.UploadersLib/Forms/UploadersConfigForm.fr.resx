@@ -718,21 +718,6 @@ Cela signifie qu'ils peuvent être perdu d'Amazon S3 à un certain moment.</valu
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Utiliser le stockage de redondance réduite</value>
   </data>
-  <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
-    <value>Rafraîchir la liste des dossiers</value>
-  </data>
-  <data name="cbHubicPublishLink.Text" xml:space="preserve">
-    <value>Création d'un lien de partage (valide pour 30 jours)</value>
-  </data>
-  <data name="chHubicFolderName.Text" xml:space="preserve">
-    <value>Nom du dossier</value>
-  </data>
-  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
-    <value>Dossier sélectionné:</value>
-  </data>
-  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
-    <value>Note: Vous pouvez double-cliquer sur le nom du dossier pour aller dedans.</value>
-  </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Ajouter</value>
   </data>
