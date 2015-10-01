@@ -287,4 +287,10 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
     <value>[Tab] Wissel schalingsanker met {0}</value>
   </data>
+  <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
+    <value>Opname stoppen</value>
+  </data>
+  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
+    <value>Opname starten</value>
+  </data>
 </root>
