@@ -1541,7 +1541,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
@@ -1552,7 +1552,7 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnOpenSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 360</value>
+    <value>405, 360</value>
   </data>
   <data name="btnOpenSteam.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 40</value>
@@ -1585,10 +1585,10 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnHideSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>736, 360</value>
+    <value>728, 360</value>
   </data>
   <data name="btnHideSteam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 40</value>
+    <value>96, 40</value>
   </data>
   <data name="btnHideSteam.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

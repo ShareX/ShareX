@@ -34,6 +34,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblMaximumScrollCount = new System.Windows.Forms.Label();
             this.tcScrollingCapture = new System.Windows.Forms.TabControl();
             this.tpCapture = new System.Windows.Forms.TabPage();
+            this.lblNote = new System.Windows.Forms.Label();
             this.cbStartSelectionAutomatically = new System.Windows.Forms.CheckBox();
             this.cbAutoCombine = new System.Windows.Forms.CheckBox();
             this.lblSelectedRectangle = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput = new System.Windows.Forms.Panel();
             this.lblProcessing = new System.Windows.Forms.Label();
             this.pbOutput = new System.Windows.Forms.PictureBox();
-            this.lblNote = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -177,6 +177,11 @@ namespace ShareX.ScreenCaptureLib
             resources.ApplyResources(this.tpCapture, "tpCapture");
             this.tpCapture.Name = "tpCapture";
             this.tpCapture.UseVisualStyleBackColor = true;
+            // 
+            // lblNote
+            // 
+            resources.ApplyResources(this.lblNote, "lblNote");
+            this.lblNote.Name = "lblNote";
             // 
             // cbStartSelectionAutomatically
             // 
@@ -479,11 +484,6 @@ namespace ShareX.ScreenCaptureLib
             resources.ApplyResources(this.pbOutput, "pbOutput");
             this.pbOutput.Name = "pbOutput";
             this.pbOutput.TabStop = false;
-            // 
-            // lblNote
-            // 
-            resources.ApplyResources(this.lblNote, "lblNote");
-            this.lblNote.Name = "lblNote";
             // 
             // ScrollingCaptureForm
             // 

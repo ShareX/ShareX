@@ -181,7 +181,7 @@
     <value>16, 312</value>
   </data>
   <data name="btnCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 32</value>
+    <value>344, 48</value>
   </data>
   <data name="btnCapture.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -306,6 +306,21 @@
   <data name="&gt;&gt;lblMaximumScrollCount.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <data name="lblNote.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lblNote.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 376</value>
+  </data>
+  <data name="lblNote.Size" type="System.Drawing.Size, System.Drawing">
+    <value>944, 240</value>
+  </data>
+  <data name="lblNote.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Please note that whilst ShareX attempts its best effort to render an accurate scrolling capture it is still not possible for every scrolling content to be captured correctly. Main reasons which can cause issues while combining are movements on screen while capturing e.g. if a web page has animated GIF or having static objects on screen while scrolling e.g. having static menu or buttons on web page which does not change its position but the rest of the web page scrolls.</value>
+  </data>
   <data name="&gt;&gt;lblNote.Name" xml:space="preserve">
     <value>lblNote</value>
   </data>
@@ -317,6 +332,21 @@
   </data>
   <data name="&gt;&gt;lblNote.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 168</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 17</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>Automatically start selecting capture region before opening this window</value>
   </data>
   <data name="&gt;&gt;cbStartSelectionAutomatically.Name" xml:space="preserve">
     <value>cbStartSelectionAutomatically</value>
@@ -330,6 +360,21 @@
   <data name="&gt;&gt;cbStartSelectionAutomatically.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cbAutoCombine.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutoCombine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 288</value>
+  </data>
+  <data name="cbAutoCombine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 17</value>
+  </data>
+  <data name="cbAutoCombine.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>Automatically guess offsets and combine after capture</value>
+  </data>
   <data name="&gt;&gt;cbAutoCombine.Name" xml:space="preserve">
     <value>cbAutoCombine</value>
   </data>
@@ -341,6 +386,18 @@
   </data>
   <data name="&gt;&gt;cbAutoCombine.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="lblSelectedRectangle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSelectedRectangle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 45</value>
+  </data>
+  <data name="lblSelectedRectangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblSelectedRectangle.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;lblSelectedRectangle.Name" xml:space="preserve">
     <value>lblSelectedRectangle</value>
@@ -354,6 +411,24 @@
   <data name="&gt;&gt;lblSelectedRectangle.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnSelectRectangle.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnSelectRectangle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSelectRectangle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="btnSelectRectangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 23</value>
+  </data>
+  <data name="btnSelectRectangle.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(Optional) Select custom region in window...</value>
+  </data>
   <data name="&gt;&gt;btnSelectRectangle.Name" xml:space="preserve">
     <value>btnSelectRectangle</value>
   </data>
@@ -365,6 +440,21 @@
   </data>
   <data name="&gt;&gt;btnSelectRectangle.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="lblStartDelay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStartDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 96</value>
+  </data>
+  <data name="lblStartDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="lblStartDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Start delay:</value>
   </data>
   <data name="&gt;&gt;lblStartDelay.Name" xml:space="preserve">
     <value>lblStartDelay</value>
@@ -378,6 +468,18 @@
   <data name="&gt;&gt;lblStartDelay.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="nudStartDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 92</value>
+  </data>
+  <data name="nudStartDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="nudStartDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="nudStartDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="&gt;&gt;nudStartDelay.Name" xml:space="preserve">
     <value>nudStartDelay</value>
   </data>
@@ -389,6 +491,21 @@
   </data>
   <data name="&gt;&gt;nudStartDelay.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="cbScrollTopBeforeCapture.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbScrollTopBeforeCapture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 216</value>
+  </data>
+  <data name="cbScrollTopBeforeCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 17</value>
+  </data>
+  <data name="cbScrollTopBeforeCapture.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
+    <value>Attempt scrolling to the top before capture</value>
   </data>
   <data name="&gt;&gt;cbScrollTopBeforeCapture.Name" xml:space="preserve">
     <value>cbScrollTopBeforeCapture</value>
@@ -402,6 +519,21 @@
   <data name="&gt;&gt;cbScrollTopBeforeCapture.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="cbStartCaptureAutomatically.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 192</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 17</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>Start scrolling capture immediately after capture region selection</value>
+  </data>
   <data name="&gt;&gt;cbStartCaptureAutomatically.Name" xml:space="preserve">
     <value>cbStartCaptureAutomatically</value>
   </data>
@@ -413,6 +545,21 @@
   </data>
   <data name="&gt;&gt;cbStartCaptureAutomatically.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="cbRemoveDuplicates.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRemoveDuplicates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 264</value>
+  </data>
+  <data name="cbRemoveDuplicates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="cbRemoveDuplicates.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>Remove duplicate images</value>
   </data>
   <data name="&gt;&gt;cbRemoveDuplicates.Name" xml:space="preserve">
     <value>cbRemoveDuplicates</value>
@@ -426,6 +573,21 @@
   <data name="&gt;&gt;cbRemoveDuplicates.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="cbAutoDetectScrollEnd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 240</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 17</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>Automatically detect scroll end</value>
+  </data>
   <data name="&gt;&gt;cbAutoDetectScrollEnd.Name" xml:space="preserve">
     <value>cbAutoDetectScrollEnd</value>
   </data>
@@ -438,6 +600,21 @@
   <data name="&gt;&gt;cbAutoDetectScrollEnd.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="lblScrollMethod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblScrollMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 72</value>
+  </data>
+  <data name="lblScrollMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblScrollMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Scroll method:</value>
+  </data>
   <data name="&gt;&gt;lblScrollMethod.Name" xml:space="preserve">
     <value>lblScrollMethod</value>
   </data>
@@ -449,6 +626,15 @@
   </data>
   <data name="&gt;&gt;lblScrollMethod.ZOrder" xml:space="preserve">
     <value>11</value>
+  </data>
+  <data name="cbScrollMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 68</value>
+  </data>
+  <data name="cbScrollMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 21</value>
+  </data>
+  <data name="cbScrollMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;cbScrollMethod.Name" xml:space="preserve">
     <value>cbScrollMethod</value>
@@ -489,18 +675,6 @@
   <data name="&gt;&gt;tpCapture.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="txtImagesCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 16</value>
-  </data>
-  <data name="txtImagesCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="txtImagesCount.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="txtImagesCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
   <data name="&gt;&gt;txtImagesCount.Name" xml:space="preserve">
     <value>txtImagesCount</value>
   </data>
@@ -512,21 +686,6 @@
   </data>
   <data name="&gt;&gt;txtImagesCount.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="lblImageCount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblImageCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 20</value>
-  </data>
-  <data name="lblImageCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 13</value>
-  </data>
-  <data name="lblImageCount.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblImageCount.Text" xml:space="preserve">
-    <value>Image count:</value>
   </data>
   <data name="&gt;&gt;lblImageCount.Name" xml:space="preserve">
     <value>lblImageCount</value>
@@ -540,18 +699,6 @@
   <data name="&gt;&gt;lblImageCount.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="nudIgnoreLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 40</value>
-  </data>
-  <data name="nudIgnoreLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudIgnoreLast.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="nudIgnoreLast.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
   <data name="&gt;&gt;nudIgnoreLast.Name" xml:space="preserve">
     <value>nudIgnoreLast</value>
   </data>
@@ -563,21 +710,6 @@
   </data>
   <data name="&gt;&gt;nudIgnoreLast.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="lblIgnoreLast.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblIgnoreLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 44</value>
-  </data>
-  <data name="lblIgnoreLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 13</value>
-  </data>
-  <data name="lblIgnoreLast.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblIgnoreLast.Text" xml:space="preserve">
-    <value>Remove last:</value>
   </data>
   <data name="&gt;&gt;lblIgnoreLast.Name" xml:space="preserve">
     <value>lblIgnoreLast</value>
@@ -619,7 +751,7 @@
     <value>False</value>
   </data>
   <data name="btnResetCombine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 96</value>
+    <value>560, 8</value>
   </data>
   <data name="btnResetCombine.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 0, 0</value>
@@ -652,7 +784,7 @@
     <value>False</value>
   </data>
   <data name="btnGuessCombineAdjustments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 40</value>
+    <value>560, 56</value>
   </data>
   <data name="btnGuessCombineAdjustments.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 0, 0</value>
@@ -685,13 +817,13 @@
     <value>False</value>
   </data>
   <data name="btnStartTask.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 64</value>
+    <value>560, 80</value>
   </data>
   <data name="btnStartTask.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 0, 0</value>
   </data>
   <data name="btnStartTask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 23</value>
+    <value>376, 48</value>
   </data>
   <data name="btnStartTask.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -718,7 +850,7 @@
     <value>False</value>
   </data>
   <data name="btnGuessEdges.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 16</value>
+    <value>560, 32</value>
   </data>
   <data name="btnGuessEdges.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 0, 0</value>
@@ -1041,320 +1173,107 @@
   <data name="&gt;&gt;tcScrollingCapture.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cbStartSelectionAutomatically.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="txtImagesCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 16</value>
   </data>
-  <data name="cbStartSelectionAutomatically.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 168</value>
+  <data name="txtImagesCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
   </data>
-  <data name="cbStartSelectionAutomatically.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 17</value>
-  </data>
-  <data name="cbStartSelectionAutomatically.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
-    <value>Automatically start selecting capture region before opening this window</value>
-  </data>
-  <data name="&gt;&gt;cbStartSelectionAutomatically.Name" xml:space="preserve">
-    <value>cbStartSelectionAutomatically</value>
-  </data>
-  <data name="&gt;&gt;cbStartSelectionAutomatically.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbStartSelectionAutomatically.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;cbStartSelectionAutomatically.ZOrder" xml:space="preserve">
+  <data name="txtImagesCount.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="cbAutoCombine.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbAutoCombine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 288</value>
-  </data>
-  <data name="cbAutoCombine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 17</value>
-  </data>
-  <data name="cbAutoCombine.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="cbAutoCombine.Text" xml:space="preserve">
-    <value>Automatically guess offsets and combine after capture</value>
-  </data>
-  <data name="&gt;&gt;cbAutoCombine.Name" xml:space="preserve">
-    <value>cbAutoCombine</value>
-  </data>
-  <data name="&gt;&gt;cbAutoCombine.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAutoCombine.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;cbAutoCombine.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblSelectedRectangle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSelectedRectangle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 45</value>
-  </data>
-  <data name="lblSelectedRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lblSelectedRectangle.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblSelectedRectangle.Name" xml:space="preserve">
-    <value>lblSelectedRectangle</value>
-  </data>
-  <data name="&gt;&gt;lblSelectedRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSelectedRectangle.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;lblSelectedRectangle.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnSelectRectangle.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnSelectRectangle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnSelectRectangle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
-  </data>
-  <data name="btnSelectRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 23</value>
-  </data>
-  <data name="btnSelectRectangle.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnSelectRectangle.Text" xml:space="preserve">
-    <value>(Optional) Select custom region in window...</value>
-  </data>
-  <data name="&gt;&gt;btnSelectRectangle.Name" xml:space="preserve">
-    <value>btnSelectRectangle</value>
-  </data>
-  <data name="&gt;&gt;btnSelectRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSelectRectangle.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;btnSelectRectangle.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblStartDelay.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblStartDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 96</value>
-  </data>
-  <data name="lblStartDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="lblStartDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblStartDelay.Text" xml:space="preserve">
-    <value>Start delay:</value>
-  </data>
-  <data name="&gt;&gt;lblStartDelay.Name" xml:space="preserve">
-    <value>lblStartDelay</value>
-  </data>
-  <data name="&gt;&gt;lblStartDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblStartDelay.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;lblStartDelay.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="nudStartDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 92</value>
-  </data>
-  <data name="nudStartDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 20</value>
-  </data>
-  <data name="nudStartDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="nudStartDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="txtImagesCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;nudStartDelay.Name" xml:space="preserve">
-    <value>nudStartDelay</value>
+  <data name="&gt;&gt;txtImagesCount.Name" xml:space="preserve">
+    <value>txtImagesCount</value>
   </data>
-  <data name="&gt;&gt;nudStartDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtImagesCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nudStartDelay.Parent" xml:space="preserve">
-    <value>tpCapture</value>
+  <data name="&gt;&gt;txtImagesCount.Parent" xml:space="preserve">
+    <value>gbImages</value>
   </data>
-  <data name="&gt;&gt;nudStartDelay.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;txtImagesCount.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblImageCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 216</value>
+  <data name="lblImageCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 20</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 17</value>
+  <data name="lblImageCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="lblImageCount.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Attempt scrolling to the top before capture</value>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>Image count:</value>
   </data>
-  <data name="&gt;&gt;cbScrollTopBeforeCapture.Name" xml:space="preserve">
-    <value>cbScrollTopBeforeCapture</value>
+  <data name="&gt;&gt;lblImageCount.Name" xml:space="preserve">
+    <value>lblImageCount</value>
   </data>
-  <data name="&gt;&gt;cbScrollTopBeforeCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbScrollTopBeforeCapture.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;cbScrollTopBeforeCapture.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="cbStartCaptureAutomatically.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbStartCaptureAutomatically.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 192</value>
-  </data>
-  <data name="cbStartCaptureAutomatically.Size" type="System.Drawing.Size, System.Drawing">
-    <value>325, 17</value>
-  </data>
-  <data name="cbStartCaptureAutomatically.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
-    <value>Start scrolling capture immediately after capture region selection</value>
-  </data>
-  <data name="&gt;&gt;cbStartCaptureAutomatically.Name" xml:space="preserve">
-    <value>cbStartCaptureAutomatically</value>
-  </data>
-  <data name="&gt;&gt;cbStartCaptureAutomatically.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbStartCaptureAutomatically.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;cbStartCaptureAutomatically.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="cbRemoveDuplicates.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRemoveDuplicates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 264</value>
-  </data>
-  <data name="cbRemoveDuplicates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 17</value>
-  </data>
-  <data name="cbRemoveDuplicates.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
-    <value>Remove duplicate images</value>
-  </data>
-  <data name="&gt;&gt;cbRemoveDuplicates.Name" xml:space="preserve">
-    <value>cbRemoveDuplicates</value>
-  </data>
-  <data name="&gt;&gt;cbRemoveDuplicates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRemoveDuplicates.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;cbRemoveDuplicates.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="cbAutoDetectScrollEnd.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbAutoDetectScrollEnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 240</value>
-  </data>
-  <data name="cbAutoDetectScrollEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 17</value>
-  </data>
-  <data name="cbAutoDetectScrollEnd.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
-    <value>Automatically detect scroll end</value>
-  </data>
-  <data name="&gt;&gt;cbAutoDetectScrollEnd.Name" xml:space="preserve">
-    <value>cbAutoDetectScrollEnd</value>
-  </data>
-  <data name="&gt;&gt;cbAutoDetectScrollEnd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAutoDetectScrollEnd.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;cbAutoDetectScrollEnd.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="lblScrollMethod.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblScrollMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
-  </data>
-  <data name="lblScrollMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="lblScrollMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblScrollMethod.Text" xml:space="preserve">
-    <value>Scroll method:</value>
-  </data>
-  <data name="&gt;&gt;lblScrollMethod.Name" xml:space="preserve">
-    <value>lblScrollMethod</value>
-  </data>
-  <data name="&gt;&gt;lblScrollMethod.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblImageCount.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblScrollMethod.Parent" xml:space="preserve">
-    <value>tpCapture</value>
+  <data name="&gt;&gt;lblImageCount.Parent" xml:space="preserve">
+    <value>gbImages</value>
   </data>
-  <data name="&gt;&gt;lblScrollMethod.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;lblImageCount.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="cbScrollMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 68</value>
+  <data name="nudIgnoreLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 40</value>
   </data>
-  <data name="cbScrollMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 21</value>
+  <data name="nudIgnoreLast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
   </data>
-  <data name="cbScrollMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="nudIgnoreLast.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;cbScrollMethod.Name" xml:space="preserve">
-    <value>cbScrollMethod</value>
+  <data name="nudIgnoreLast.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
-  <data name="&gt;&gt;cbScrollMethod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;nudIgnoreLast.Name" xml:space="preserve">
+    <value>nudIgnoreLast</value>
   </data>
-  <data name="&gt;&gt;cbScrollMethod.Parent" xml:space="preserve">
-    <value>tpCapture</value>
+  <data name="&gt;&gt;nudIgnoreLast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbScrollMethod.ZOrder" xml:space="preserve">
-    <value>12</value>
+  <data name="&gt;&gt;nudIgnoreLast.Parent" xml:space="preserve">
+    <value>gbImages</value>
+  </data>
+  <data name="&gt;&gt;nudIgnoreLast.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblIgnoreLast.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblIgnoreLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 44</value>
+  </data>
+  <data name="lblIgnoreLast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="lblIgnoreLast.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Remove last:</value>
+  </data>
+  <data name="&gt;&gt;lblIgnoreLast.Name" xml:space="preserve">
+    <value>lblIgnoreLast</value>
+  </data>
+  <data name="&gt;&gt;lblIgnoreLast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblIgnoreLast.Parent" xml:space="preserve">
+    <value>gbImages</value>
+  </data>
+  <data name="&gt;&gt;lblIgnoreLast.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblCombineLastVertical.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1718,33 +1637,6 @@
   </data>
   <data name="&gt;&gt;pbOutput.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="lblNote.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="lblNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 360</value>
-  </data>
-  <data name="lblNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>944, 256</value>
-  </data>
-  <data name="lblNote.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="lblNote.Text" xml:space="preserve">
-    <value>Please note that whilst ShareX attempts its best effort to render an accurate scrolling capture it is still not possible for every scrolling content to be captured correctly. Main reasons which can cause issues while combining are movements on screen while capturing e.g. if a web page has animated GIF or having static objects on screen while scrolling e.g. having static menu or buttons on web page which does not change its position but the rest of the web page scrolls.</value>
-  </data>
-  <data name="&gt;&gt;lblNote.Name" xml:space="preserve">
-    <value>lblNote</value>
-  </data>
-  <data name="&gt;&gt;lblNote.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNote.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;lblNote.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
