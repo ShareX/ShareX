@@ -24,10 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.ScreenCaptureLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ShareX
 {

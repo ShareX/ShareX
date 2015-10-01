@@ -26,7 +26,6 @@
 using IWshRuntimeLibrary;
 using System;
 using System.IO;
-using System.Windows.Forms;
 using File = System.IO.File;
 
 namespace ShareX.HelpersLib

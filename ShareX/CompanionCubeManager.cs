@@ -25,13 +25,11 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
-using ShareX.ScreenCaptureLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX
