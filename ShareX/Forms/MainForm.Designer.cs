@@ -200,6 +200,7 @@
             this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAutomate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
@@ -230,7 +231,8 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
-            this.tsmiTrayImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnOpenSteam = new ShareX.HelpersLib.GreenlightButton();
+            this.btnHideSteam = new ShareX.HelpersLib.GreenlightButton();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1567,6 +1569,13 @@
             resources.ApplyResources(this.tsmiTrayIndexFolder, "tsmiTrayIndexFolder");
             this.tsmiTrayIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
             // 
+            // tsmiTrayImageCombiner
+            // 
+            this.tsmiTrayImageCombiner.Image = global::ShareX.Properties.Resources.document_break;
+            this.tsmiTrayImageCombiner.Name = "tsmiTrayImageCombiner";
+            resources.ApplyResources(this.tsmiTrayImageCombiner, "tsmiTrayImageCombiner");
+            this.tsmiTrayImageCombiner.Click += new System.EventHandler(this.tsmiImageCombiner_Click);
+            // 
             // tsmiTrayVideoThumbnailer
             // 
             this.tsmiTrayVideoThumbnailer.Image = global::ShareX.Properties.Resources.images_stack;
@@ -1766,12 +1775,19 @@
             // 
             this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
             // 
-            // tsmiTrayImageCombiner
+            // btnOpenSteam
             // 
-            this.tsmiTrayImageCombiner.Image = global::ShareX.Properties.Resources.document_break;
-            this.tsmiTrayImageCombiner.Name = "tsmiTrayImageCombiner";
-            resources.ApplyResources(this.tsmiTrayImageCombiner, "tsmiTrayImageCombiner");
-            this.tsmiTrayImageCombiner.Click += new System.EventHandler(this.tsmiImageCombiner_Click);
+            resources.ApplyResources(this.btnOpenSteam, "btnOpenSteam");
+            this.btnOpenSteam.ForeColor = System.Drawing.Color.White;
+            this.btnOpenSteam.Name = "btnOpenSteam";
+            this.btnOpenSteam.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnOpenSteam_MouseClick);
+            // 
+            // btnHideSteam
+            // 
+            resources.ApplyResources(this.btnHideSteam, "btnHideSteam");
+            this.btnHideSteam.ForeColor = System.Drawing.Color.White;
+            this.btnHideSteam.Name = "btnHideSteam";
+            this.btnHideSteam.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnHideSteam_MouseClick);
             // 
             // MainForm
             // 
@@ -1779,6 +1795,8 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnHideSteam);
+            this.Controls.Add(this.btnOpenSteam);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
             this.DoubleBuffered = true;
@@ -2007,5 +2025,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScrollingCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageCombiner;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageCombiner;
+        private HelpersLib.GreenlightButton btnOpenSteam;
+        private HelpersLib.GreenlightButton btnHideSteam;
     }
 }

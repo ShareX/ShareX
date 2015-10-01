@@ -588,6 +588,10 @@ namespace ShareX
             UpdateToggleHotkeyButton();
 
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
+
+#if !STEAM
+            btnOpenSteam.Visible = btnHideSteam.Visible = Program.Settings.ShowSteamButtons;
+#endif
         }
 
         private void RegisterMenuClosing()
@@ -1293,6 +1297,17 @@ namespace ShareX
             }
 
             e.Handled = true;
+        }
+
+        private void btnOpenSteam_MouseClick(object sender, MouseEventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_STEAM);
+        }
+
+        private void btnHideSteam_MouseClick(object sender, MouseEventArgs e)
+        {
+            Program.Settings.ShowSteamButtons = false;
+            btnOpenSteam.Visible = btnHideSteam.Visible = false;
         }
 
         #region Tray events
