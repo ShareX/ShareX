@@ -126,7 +126,7 @@
   <data name="cbDontShow.Text" xml:space="preserve">
     <value>Toon niet meer tot opnieuw opstarten</value>
   </data>
-  <data name="btnOpenChangelog.Text" xml:space="preserve">
+  <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>Update geschiedenis</value>
   </data>
 </root>

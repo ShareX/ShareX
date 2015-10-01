@@ -125,11 +125,15 @@
     <value>16, 16</value>
   </data>
   <data name="lblText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 64</value>
+    <value>368, 56</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblText.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="&gt;&gt;lblText.Name" xml:space="preserve">
     <value>lblText</value>
@@ -141,13 +145,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblText.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnNo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
   </data>
   <data name="btnNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 120</value>
+    <value>280, 144</value>
   </data>
   <data name="btnNo.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 32</value>
@@ -168,13 +172,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnNo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="btnYes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
   </data>
   <data name="btnYes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 120</value>
+    <value>168, 144</value>
   </data>
   <data name="btnYes.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 32</value>
@@ -195,13 +199,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnYes.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="cbDontShow.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8pt</value>
   </data>
   <data name="cbDontShow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 112</value>
   </data>
   <data name="cbDontShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>368, 32</value>
@@ -224,31 +228,31 @@
   <data name="&gt;&gt;cbDontShow.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="btnOpenChangelog.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 12pt</value>
+  <data name="lblViewChangelog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt, style=Underline</value>
   </data>
-  <data name="btnOpenChangelog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 120</value>
+  <data name="lblViewChangelog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
   </data>
-  <data name="btnOpenChangelog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 32</value>
+  <data name="lblViewChangelog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 24</value>
   </data>
-  <data name="btnOpenChangelog.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblViewChangelog.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="btnOpenChangelog.Text" xml:space="preserve">
-    <value>Changelog</value>
+  <data name="lblViewChangelog.Text" xml:space="preserve">
+    <value>View changelog</value>
   </data>
-  <data name="&gt;&gt;btnOpenChangelog.Name" xml:space="preserve">
-    <value>btnOpenChangelog</value>
+  <data name="&gt;&gt;lblViewChangelog.Name" xml:space="preserve">
+    <value>lblViewChangelog</value>
   </data>
-  <data name="&gt;&gt;btnOpenChangelog.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;lblViewChangelog.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;btnOpenChangelog.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblViewChangelog.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnOpenChangelog.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblViewChangelog.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -258,9 +262,8 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>399, 168</value>
+    <value>400, 192</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
