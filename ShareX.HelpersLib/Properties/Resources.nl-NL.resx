@@ -492,7 +492,7 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
     <value>Afbeeldingshoogte</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Zelf ophogend nummer</value>
+    <value>Zelf ophogend nummer. Voorloopnullen links met {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
     <value>Huidige minuut</value>
@@ -519,10 +519,10 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
     <value>Procesnaam van actief venster</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Willekeurig alfanumeriek karakter</value>
+    <value>Willekeurig alfanumeriek karakter. Meerdere met {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Willekeurig nummer (0-9)</value>
+    <value>Willekeurig nummer (0-9). Meerdere met {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>Huidige seconde</value>
@@ -761,5 +761,65 @@ Wil je deze downloaden en installeren?</value>
   </data>
   <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
     <value>Andere</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>Combineer afbeeldingen</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
+    <value>Hulpmiddelen</value>
+  </data>
+  <data name="HotkeyType_IRCClient" xml:space="preserve">
+    <value>IRC programma</value>
+  </data>
+  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
+    <value>Hulpmiddelen</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>Scrollopname</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
+    <value>Scherm vastleggen</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>Video miniaturen</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
+    <value>Hulpmiddelen</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>Computer</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>Datum en tijd</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>Afbeelding</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>Incrementeel</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>Willekeurig</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
+    <value>Doel</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>Willekeurige GUID</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>Zelf ophogende alfa-numerieke sequentie, niet hoofdlettergevoelig. Voorloopnullen links met {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>Zelf ophogende alfa-numerieke sequentie, hoofdlettergevoelig. Voorloopnullen links met {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>Zelf ophogende sequentie met base {n} (waar n 1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>Zelf ophogend hexadecimaal nummer. Voorloopnullen links met {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>Willekeurig hexadecimaal karakter. Meerdere met {n}</value>
   </data>
 </root>

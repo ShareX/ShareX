@@ -636,4 +636,16 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Videominiatuur...</value>
   </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>Combineer afbeeldingen...</value>
+  </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>Scrollopname...</value>
+  </data>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>Combineer afbeeldingen...</value>
+  </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>Scrollopname...</value>
+  </data>
 </root>
