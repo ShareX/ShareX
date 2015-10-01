@@ -47,7 +47,7 @@ namespace ShareX.IRCLib
         {
             InitializeComponent();
             rtbOutput.AddContextMenu();
-            ((ToolStripDropDownMenu)tsmiColors.DropDown).ShowImageMargin = false;
+            tsmiColors.HideImageMargin();
 
             tabManager = new TabManager(tcMessages);
 

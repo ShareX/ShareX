@@ -47,7 +47,8 @@ namespace ShareX.HelpersLib
                 Select(x => new
                 {
                     Name = x.ToPrefixString(),
-                    Description = x.Description
+                    Description = x.Description,
+                    Category = x.Category
                 });
 
             foreach (var variable in variables)
@@ -58,7 +59,27 @@ namespace ShareX.HelpersLib
                     string text = ((ToolStripMenuItem)sender).Tag.ToString();
                     tb.AppendTextToSelection(text);
                 };
-                cms.Items.Add(tsmi);
+
+                if (string.IsNullOrWhiteSpace(variable.Category))
+                {
+                    cms.Items.Add(tsmi);
+                }
+                else
+                {
+                    ToolStripMenuItem tsmiParent;
+                    int index = cms.Items.IndexOfKey(variable.Category);
+                    if (0 > index)
+                    {
+                        tsmiParent = new ToolStripMenuItem { Text = variable.Category, Tag = variable.Category, Name = variable.Category };
+                        tsmiParent.HideImageMargin();
+                        cms.Items.Add(tsmiParent);
+                    }
+                    else
+                    {
+                        tsmiParent = cms.Items[index] as ToolStripMenuItem;
+                    }
+                    tsmiParent.DropDownItems.Add(tsmi);
+                }
             }
 
             cms.Items.Add(new ToolStripSeparator());

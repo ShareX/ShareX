@@ -3580,7 +3580,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 216</value>
+    <value>8, 224</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>313, 17</value>
@@ -3709,7 +3709,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnResetAutoIncrementNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 184</value>
+    <value>8, 192</value>
   </data>
   <data name="btnResetAutoIncrementNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 23</value>
@@ -4491,24 +4491,6 @@
   <data name="&gt;&gt;tsmiURLSharingServices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chWatchFolderFolderPath.Name" xml:space="preserve">
-    <value>chWatchFolderFolderPath</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFilter.Name" xml:space="preserve">
-    <value>chWatchFolderFilter</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Name" xml:space="preserve">
-    <value>chWatchFolderIncludeSubdirectories</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;chActionsName.Name" xml:space="preserve">
     <value>chActionsName</value>
   </data>
@@ -4531,6 +4513,24 @@
     <value>chActionsExtensions</value>
   </data>
   <data name="&gt;&gt;chActionsExtensions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFolderPath.Name" xml:space="preserve">
+    <value>chWatchFolderFolderPath</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFilter.Name" xml:space="preserve">
+    <value>chWatchFolderFilter</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Name" xml:space="preserve">
+    <value>chWatchFolderIncludeSubdirectories</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

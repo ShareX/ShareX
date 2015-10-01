@@ -12,6 +12,7 @@ DefaultGroupName={#AppName}
 DirExistsWarning=no
 OutputBaseFilename=Recorder-devices-setup
 OutputDir=Output\
+ShowLanguageDialog=no
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"

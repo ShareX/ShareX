@@ -454,5 +454,10 @@ namespace ShareX.HelpersLib
                 NativeMethods.SendMessage(textBox.Handle, (int)NativeMethods.EM_SETCUEBANNER, showCueWhenFocus ? 1 : 0, watermarkText);
             }
         }
+
+        public static void HideImageMargin(this ToolStripDropDownItem tsddi)
+        {
+            ((ToolStripDropDownMenu)tsddi.DropDown).ShowImageMargin = false;
+        }
     }
 }

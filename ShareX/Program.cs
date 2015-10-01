@@ -75,6 +75,7 @@ namespace ShareX
         public static bool IsSilentRun { get; private set; }
         public static bool IsSandbox { get; private set; }
         public static bool IsFirstTimeConfig { get; private set; }
+        public static bool NoHotkeys { get; private set; }
 
         public static ApplicationConfig Settings { get; private set; }
         public static TaskSettings DefaultTaskSettings { get; private set; }
@@ -204,7 +205,7 @@ namespace ShareX
         {
             get
             {
-                string filename = string.Format(LogFileName, FastDateTime.Now);
+                string filename = string.Format(LogFileName, DateTime.Now);
                 return Path.Combine(LogsFolder, filename);
             }
         }
@@ -314,7 +315,11 @@ namespace ShareX
                 }
             }
 
+#if STEAM
             IsFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
+#endif
+
+            NoHotkeys = CLI.IsCommandExist("NoHotkeys");
 
             DebugHelper.WriteLine($"{Title} {Build} build");
             DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);

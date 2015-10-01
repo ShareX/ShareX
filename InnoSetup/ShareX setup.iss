@@ -55,8 +55,7 @@ Name: "CreateStartupIcon"; Description: "Launch {#AppName} automatically at Wind
 Source: "{#AppParentDirectory}\ShareX.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#AppParentDirectory}\ShareX.exe.config"; DestDir: {app}; Flags: ignoreversion
 Source: "{#AppParentDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
-Source: "{#AppParentDirectory}\*.css"; DestDir: {app}; Flags: ignoreversion
-Source: "{#AppParentDirectory}\*.txt"; DestDir: {app}; Flags: ignoreversion
+Source: "..\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
 Source: "Output\Recorder-devices-setup.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "..\..\ShareX_Chrome\ShareX_Chrome\bin\Release\ShareX_Chrome.exe"; DestDir: {app}; Flags: ignoreversion
 

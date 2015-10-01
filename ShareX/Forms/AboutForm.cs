@@ -56,7 +56,10 @@ namespace ShareX
 
             rtbShareXInfo.Text = string.Format(@"{0}: {1}
 {2}: {3}
-{4}: {5}", Resources.AboutForm_AboutForm_Website, Links.URL_WEBSITE, Resources.AboutForm_AboutForm_Project_page, Links.URL_PROJECT, Resources.AboutForm_AboutForm_Issues, Links.URL_ISSUES);
+{4}: {5}
+{6}: {7}",
+Resources.AboutForm_AboutForm_Website, Links.URL_WEBSITE, Resources.AboutForm_AboutForm_Project_page, Links.URL_PROJECT, Resources.AboutForm_AboutForm_Issues, Links.URL_ISSUES,
+Resources.AboutForm_AboutForm_Changelog, Links.URL_CHANGELOG);
 
             rtbCredits.Text = string.Format(@"{0}:
 
@@ -94,16 +97,21 @@ SSH.NET: https://sshnet.codeplex.com
 Icons: http://p.yusukekamiyamane.com
 ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: http://www.ffmpeg.org
-FFmpeg Windows builds: http://ffmpeg.zeranoe.com/builds
+Zeranoe FFmpeg: http://ffmpeg.zeranoe.com/builds
 7-Zip: http://www.7-zip.org
 SevenZipSharp: https://sevenzipsharp.codeplex.com
 DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 QrCode.Net: https://qrcodenet.codeplex.com
 System.Net.FtpClient: https://netftp.codeplex.com
-ResX Resource Manager: https://resxresourcemanager.codeplex.com
-AWSSDK: http://aws.amazon.com/sdk-for-net/
+AWS SDK: http://aws.amazon.com/sdk-for-net/
 CLR Security: http://clrsecurity.codeplex.com
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
+
+Trailer music credits:
+Track Name: Au5 - Inside (feat. Danyka Nadeau)
+Video Link: https://youtu.be/WrkyT-6ivjc
+Buy Link: http://music.monstercat.com/track/inside-feat-danyka-nadeau
+Label Channel: http://www.YouTube.com/Monstercat
 
 Running from:
 {3}
@@ -115,11 +123,6 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
         {
             this.ShowActivate();
             cLogo.Start(50);
-        }
-
-        private void lblProductName_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_CHANGELOG);
         }
 
         private void pbSteam_Click(object sender, EventArgs e)
@@ -140,6 +143,11 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             URLHelpers.OpenURL(e.LinkText);
+        }
+
+        private void AboutForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CompanionCubeManager.Stop();
         }
 
         #region Animation
@@ -224,6 +232,20 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
 
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
+#if STEAM
+            if (e.Button == MouseButtons.Middle)
+            {
+                cLogo.Stop();
+                CompanionCubeManager.Toggle();
+                return;
+            }
+
+            if (CompanionCubeManager.IsActive)
+            {
+                CompanionCubeManager.Stop();
+            }
+#endif
+
             if (!isEasterEggStarted)
             {
                 isPaused = !isPaused;

@@ -162,9 +162,6 @@
   <data name="lblBoxFolderID.Text" xml:space="preserve">
     <value>선택된 폴더:</value>
   </data>
-  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
-    <value>선택된 폴더:</value>
-  </data>
   <data name="btnDropboxShowFiles.Text" xml:space="preserve">
     <value>선택...</value>
   </data>
@@ -317,9 +314,6 @@
   </data>
   <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
     <value>커스텀 도메인:</value>
-  </data>
-  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
-    <value>참고: 폴더 이름을 더블클릭하면 그 폴더 안으로 들어갈 수 있습니다.</value>
   </data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>API 키:</value>
@@ -516,9 +510,6 @@
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>제목</value>
   </data>
-  <data name="chHubicFolderName.Text" xml:space="preserve">
-    <value>폴더 이름</value>
-  </data>
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
     <value>공개 업로드</value>
   </data>
@@ -533,9 +524,6 @@
   </data>
   <data name="cbImgurDirectLink.Text" xml:space="preserve">
     <value>다이렉트 URL 사용하기</value>
-  </data>
-  <data name="cbHubicPublishLink.Text" xml:space="preserve">
-    <value>공유 링크 만들기 (30일간 유효)</value>
   </data>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>파일 이름을 포함하는 긴 링크 사용하기</value>
@@ -709,9 +697,6 @@
   </data>
   <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
     <value>인증 새로고침하기</value>
-  </data>
-  <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
-    <value>폴더 목록 갱신</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>폴더 목록 갱신</value>

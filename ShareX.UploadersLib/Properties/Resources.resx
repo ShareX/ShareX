@@ -458,9 +458,6 @@ Created folders:</value>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Root folder</value>
   </data>
-  <data name="Hubic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\hubic.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CoinURL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\CoinURL.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

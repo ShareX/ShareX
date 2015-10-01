@@ -171,9 +171,6 @@
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Refrescar lista de carpetas</value>
   </data>
-  <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
-    <value>Refrescar lista de carpetas</value>
-  </data>
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
     <value>Refrescar lista de carpetas</value>
   </data>
@@ -317,9 +314,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Título</value>
   </data>
-  <data name="chHubicFolderName.Text" xml:space="preserve">
-    <value>Nombre de la carpeta</value>
-  </data>
   <data name="chImgurDescription.Text" xml:space="preserve">
     <value>Descripción</value>
   </data>
@@ -346,9 +340,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   </data>
   <data name="chkEmailConfirm.Text" xml:space="preserve">
     <value>Confirmar antes de enviar</value>
-  </data>
-  <data name="cbHubicPublishLink.Text" xml:space="preserve">
-    <value>Crear un enlace compartible (válido por 30 días)</value>
   </data>
   <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
     <value>Subir imágenes al álbum seleccionado</value>
@@ -531,9 +522,6 @@ Esto significa que se pueden perder de Amazon S3 en algún momento.</value>
   </data>
   <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
     <value>Dominio personalizado:</value>
-  </data>
-  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
-    <value>Carpeta seleccionada:</value>
   </data>
   <data name="lblImageShackUsername.Text" xml:space="preserve">
     <value>Nombre de usuario:</value>
@@ -729,9 +717,6 @@ Esto significa que se pueden perder de Amazon S3 en algún momento.</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>Identificación del álbum para subir (vacío = No subida álbum):</value>
-  </data>
-  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
-    <value>Nota: Puede hacer doble clic en el nombre de carpeta para ir dentro de esa carpeta.</value>
   </data>
   <data name="lblDropboxPathTip.Text" xml:space="preserve">
     <value>Si utiliza la carpeta "Público", una url compartible ya se generó. No es necesario activar la opción "Crear URL compartible".</value>

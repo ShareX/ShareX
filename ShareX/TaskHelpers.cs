@@ -324,48 +324,7 @@ namespace ShareX
 
         public static bool SelectRegion(out Rectangle rect, TaskSettings taskSettings)
         {
-            using (RectangleRegion surface = new RectangleRegion())
-            {
-                surface.Config = taskSettings.CaptureSettings.SurfaceOptions;
-                surface.Config.ShowTips = false;
-                surface.Config.QuickCrop = true;
-                surface.Config.ForceWindowCapture = true;
-                surface.Prepare();
-                surface.ShowDialog();
-
-                if (surface.Result == SurfaceResult.Region)
-                {
-                    if (surface.AreaManager.IsCurrentAreaValid)
-                    {
-                        rect = CaptureHelpers.ClientToScreen(surface.AreaManager.CurrentArea);
-                        return true;
-                    }
-                }
-                else if (surface.Result == SurfaceResult.Fullscreen)
-                {
-                    rect = CaptureHelpers.GetScreenBounds();
-                    return true;
-                }
-                else if (surface.Result == SurfaceResult.Monitor)
-                {
-                    Screen[] screens = Screen.AllScreens;
-
-                    if (surface.MonitorIndex < screens.Length)
-                    {
-                        Screen screen = screens[surface.MonitorIndex];
-                        rect = screen.Bounds;
-                        return true;
-                    }
-                }
-                else if (surface.Result == SurfaceResult.ActiveMonitor)
-                {
-                    rect = CaptureHelpers.GetActiveScreenBounds();
-                    return true;
-                }
-            }
-
-            rect = Rectangle.Empty;
-            return false;
+            return Surface.SelectRegion(out rect, taskSettings.CaptureSettings.SurfaceOptions);
         }
 
         public static PointInfo SelectPointColor()
@@ -488,6 +447,15 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             ScreenRecordManager.StartStopRecording(outputType, startMethod, taskSettings);
+        }
+
+        public static void OpenScrollingCapture(TaskSettings taskSettings = null, bool forceSelection = false)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions, forceSelection);
+            scrollingCaptureForm.ProcessRequested += image => UploadManager.RunImageTask(image, taskSettings);
+            scrollingCaptureForm.Show();
         }
 
         public static void OpenAutoCapture()
@@ -614,6 +582,15 @@ namespace ShareX
         public static void OpenIndexFolder()
         {
             UploadManager.IndexFolder();
+        }
+
+        public static void OpenImageCombiner(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            ImageCombinerForm imageCombinerForm = new ImageCombinerForm(taskSettings.ToolsSettingsReference.ImageCombinerOptions);
+            imageCombinerForm.ProcessRequested += image => UploadManager.RunImageTask(image, taskSettings);
+            imageCombinerForm.Show();
         }
 
         public static void OpenVideoThumbnailer(TaskSettings taskSettings = null)

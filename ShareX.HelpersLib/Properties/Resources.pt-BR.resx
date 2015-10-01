@@ -641,7 +641,7 @@ Você gostaria de baixar e instalar?</value>
     <value>{0} está atualizado</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>Procurar um arquivo CSS...</value>
+    <value>Procurar por um arquivo CSS...</value>
   </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>Segundo atual</value>

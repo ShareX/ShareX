@@ -201,9 +201,6 @@
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Atualizar lista de pastas</value>
   </data>
-  <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
-    <value>Atualizar lista de pastas</value>
-  </data>
   <data name="btnImageShackLogin.Text" xml:space="preserve">
     <value>Logar</value>
   </data>
@@ -297,7 +294,7 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
     <value>Criar link compartilhável</value>
   </data>
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>URL Direto</value>
+    <value>URL direto</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Criar URL compartilhável:</value>
@@ -310,9 +307,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   </data>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
     <value>Enviar arquivos para pasta selecionada</value>
-  </data>
-  <data name="cbHubicPublishLink.Text" xml:space="preserve">
-    <value>Criar link de compartilhamento (válido por 30 dias)</value>
   </data>
   <data name="cbImageShackIsPublic.Text" xml:space="preserve">
     <value>Upload público?</value>
@@ -364,9 +358,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Título</value>
-  </data>
-  <data name="chHubicFolderName.Text" xml:space="preserve">
-    <value>Nome da pasta</value>
   </data>
   <data name="chImgurDescription.Text" xml:space="preserve">
     <value>Descrição</value>
@@ -465,7 +456,7 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
     <value>Tipo de URL:</value>
   </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>URL de Remoção:</value>
+    <value>URL de remoção:</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>Senha:</value>
@@ -562,9 +553,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   </data>
   <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
     <value>Dominio personalizado:</value>
-  </data>
-  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
-    <value>Pasta selecionada:</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Senha:</value>
@@ -697,9 +685,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   </data>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Caminho de upload:</value>
-  </data>
-  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
-    <value>Dica: Você pode clicar duas vezes no nome da pasta para abri-la.</value>
   </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
     <value>Local:</value>

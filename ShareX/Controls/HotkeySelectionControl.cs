@@ -34,7 +34,7 @@ namespace ShareX
     {
         public event EventHandler HotkeyChanged;
         public event EventHandler SelectedChanged;
-        public event EventHandler LabelDoubleClick;
+        public event EventHandler EditRequested;
 
         public HotkeySettings Setting { get; set; }
 
@@ -61,7 +61,7 @@ namespace ShareX
             }
         }
 
-        public bool Editing { get; private set; }
+        public bool EditingHotkey { get; private set; }
 
         public HotkeySelectionControl(HotkeySettings setting)
         {
@@ -110,7 +110,7 @@ namespace ShareX
 
         private void btnHotkey_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            if (Editing)
+            if (EditingHotkey)
             {
                 // For handle Tab key etc.
                 e.IsInputKey = true;
@@ -121,7 +121,7 @@ namespace ShareX
         {
             e.SuppressKeyPress = true;
 
-            if (Editing)
+            if (EditingHotkey)
             {
                 if (e.KeyData == Keys.Escape)
                 {
@@ -150,7 +150,7 @@ namespace ShareX
         {
             e.SuppressKeyPress = true;
 
-            if (Editing)
+            if (EditingHotkey)
             {
                 // PrintScreen not trigger KeyDown event
                 if (e.KeyCode == Keys.PrintScreen)
@@ -163,7 +163,7 @@ namespace ShareX
 
         private void btnHotkey_MouseClick(object sender, MouseEventArgs e)
         {
-            if (Editing)
+            if (EditingHotkey)
             {
                 StopEditing();
             }
@@ -175,7 +175,7 @@ namespace ShareX
 
         private void btnHotkey_Leave(object sender, EventArgs e)
         {
-            if (Editing)
+            if (EditingHotkey)
             {
                 StopEditing();
             }
@@ -183,7 +183,7 @@ namespace ShareX
 
         private void StartEditing()
         {
-            Editing = true;
+            EditingHotkey = true;
 
             Program.HotkeyManager.IgnoreHotkeys = true;
 
@@ -198,7 +198,7 @@ namespace ShareX
 
         private void StopEditing()
         {
-            Editing = false;
+            EditingHotkey = false;
 
             Program.HotkeyManager.IgnoreHotkeys = false;
 
@@ -231,12 +231,17 @@ namespace ShareX
             }
         }
 
-        protected void OnLabelDoubleClick()
+        protected void OnEditRequested()
         {
-            if (LabelDoubleClick != null)
+            if (EditRequested != null)
             {
-                LabelDoubleClick(this, EventArgs.Empty);
+                EditRequested(this, EventArgs.Empty);
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            OnEditRequested();
         }
 
         private void lblHotkeyDescription_MouseEnter(object sender, EventArgs e)
@@ -269,7 +274,7 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Left)
             {
-                OnLabelDoubleClick();
+                OnEditRequested();
             }
         }
     }

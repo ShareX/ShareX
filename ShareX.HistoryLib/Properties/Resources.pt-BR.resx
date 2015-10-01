@@ -133,7 +133,7 @@
     <value>Copiar</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>URL de Remoção</value>
+    <value>URL de remoção</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>Arquivo</value>
@@ -181,7 +181,7 @@
     <value>Abrir</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>URL Encurtado</value>
+    <value>URL encurtado</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
     <value>Mostrar</value>
@@ -190,7 +190,7 @@
     <value>Texto</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>URL da Miniatura</value>
+    <value>URL da miniatura</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>

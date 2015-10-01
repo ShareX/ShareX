@@ -453,7 +453,7 @@ namespace ShareX.UploadersLib
 
         private string CreateBoundary()
         {
-            return new string('-', 20) + FastDateTime.Now.Ticks.ToString("x");
+            return new string('-', 20) + DateTime.Now.Ticks.ToString("x");
         }
 
         private byte[] MakeInputContent(string boundary, string name, string value)

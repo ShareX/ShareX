@@ -580,6 +580,24 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stop capture.
+        /// </summary>
+        internal static string ScrollingCaptureForm_StartCapture_Stop_capture {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureForm_StartCapture_Stop_capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start capture.
+        /// </summary>
+        internal static string ScrollingCaptureForm_StopCapture_Start_capture {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureForm_StopCapture_Start_capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Region capture.
         /// </summary>
         internal static string Surface_InitializeComponent_Region_capture {

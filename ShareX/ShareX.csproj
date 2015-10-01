@@ -97,6 +97,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanionCube.cs" />
+    <Compile Include="CompanionCubeManager.cs" />
     <Compile Include="Controls\BeforeUploadControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +122,9 @@
     </Compile>
     <Compile Include="Forms\ClipboardFormatForm.Designer.cs">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CompanionCubesForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\EncoderProgramForm.cs">
       <SubType>Form</SubType>
@@ -161,6 +166,12 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
+    <Compile Include="Forms\ImageCombinerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageCombinerForm.Designer.cs">
+      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ScreenColorPicker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +184,7 @@
     <Compile Include="Forms\FirstTimeConfigForm.Designer.cs">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageCombinerOptions.cs" />
     <Compile Include="IntegrationHelpers.cs" />
     <Compile Include="ScreenRecordManager.cs" />
     <Compile Include="Forms\ScreenRecordForm.cs">
@@ -642,6 +654,9 @@
     <EmbeddedResource Include="Forms\HotkeySettingsForm.zh-CN.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageCombinerForm.resx">
+      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.de.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -999,10 +1014,6 @@
     <None Include="Resources\network-ip.png" />
     <None Include="Resources\ruler-triangle.png" />
     <None Include="Resources\application-network.png" />
-    <None Include="..\LICENSE.txt">
-      <Link>LICENSE.txt</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="..\Lib\7z-x64.dll">
       <Link>7z-x64.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1065,6 +1076,9 @@
     <None Include="Resources\cross.png" />
     <None Include="Resources\arrow-270.png" />
     <None Include="Resources\ru.png" />
+    <None Include="Resources\CompanionCube.png" />
+    <None Include="Resources\ui-scroll-pane-image.png" />
+    <None Include="Resources\document-break.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

@@ -123,7 +123,7 @@ namespace ShareX.UploadersLib.HelperClasses
 
                 url = new Uri(link);
 
-                boundary = "----------" + FastDateTime.Now.Ticks.ToString("x");
+                boundary = "----------" + DateTime.Now.Ticks.ToString("x");
                 header = string.Format("--{0}", boundary);
                 footer = string.Format("--{0}--", boundary);
 

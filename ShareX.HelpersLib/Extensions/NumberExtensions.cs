@@ -113,5 +113,29 @@ namespace ShareX.HelpersLib
             if (decimalPlaces > 0) format += "." + new string('0', decimalPlaces);
             return number.ToString(format);
         }
+
+        public static string ToBase(this int value, int radix, string digits)
+        {
+            if (string.IsNullOrEmpty(digits))
+            {
+                throw new ArgumentNullException("digits", string.Format("Digits must contain character value representations"));
+            }
+
+            radix = Math.Abs(radix);
+            if (radix > digits.Length || radix < 2)
+            {
+                throw new ArgumentOutOfRangeException("radix", radix, string.Format("Radix has to be > 2 and < {0}", digits.Length));
+            }
+
+            string result = string.Empty;
+            int quotient = Math.Abs(value);
+            while (0 < quotient)
+            {
+                int temp = quotient % radix;
+                result = digits[temp] + result;
+                quotient /= radix;
+            }
+            return result;
+        }
     }
 }

@@ -115,7 +115,7 @@ namespace ShareX.ImageEffectsLib
         private void AddEffectToContextMenu(string groupName, params Type[] imageEffects)
         {
             ToolStripMenuItem tsmiParent = new ToolStripMenuItem(groupName);
-            ((ToolStripDropDownMenu)tsmiParent.DropDown).ShowImageMargin = false;
+            tsmiParent.HideImageMargin();
 
             cmsEffects.Items.Add(tsmiParent);
 

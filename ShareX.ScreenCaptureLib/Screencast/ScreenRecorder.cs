@@ -35,7 +35,6 @@ namespace ShareX.ScreenCaptureLib
     public class ScreenRecorder : IDisposable
     {
         public bool IsRecording { get; private set; }
-        public bool WriteCompressed { get; set; }
 
         public int FPS
         {

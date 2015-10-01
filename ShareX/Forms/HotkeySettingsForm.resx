@@ -127,10 +127,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 8</value>
+    <value>248, 8</value>
   </data>
   <data name="btnDuplicate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 23</value>
+    <value>80, 23</value>
   </data>
   <data name="btnDuplicate.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -220,10 +220,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 8</value>
+    <value>88, 8</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 23</value>
+    <value>80, 23</value>
   </data>
   <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -250,10 +250,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 8</value>
+    <value>168, 8</value>
   </data>
   <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 23</value>
+    <value>80, 23</value>
   </data>
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -280,7 +280,7 @@
     <value>8, 8</value>
   </data>
   <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 23</value>
+    <value>80, 23</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

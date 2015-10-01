@@ -127,6 +127,11 @@ namespace ShareX.ScreenCaptureLib
             Handle = handle;
         }
 
+        public void Activate()
+        {
+            NativeMethods.ActivateWindow(Handle);
+        }
+
         public override string ToString()
         {
             return Text;

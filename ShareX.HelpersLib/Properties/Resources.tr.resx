@@ -283,10 +283,10 @@
     <value>Aktif pencerenin işlem ismi</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Rastgele alfa sayısal karakter</value>
+    <value>Rastgele alfanumerik karakter. {n} haneli</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Rastgele 0 ile 9 arasında sayı</value>
+    <value>Rastgele 0 ile 9 arasında sayı. {n} haneli</value>
   </data>
   <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
     <value>Aktif pencerenin başlığı</value>
@@ -301,7 +301,7 @@
     <value>Güncel hafta adı (Yerel dil)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Otomatik artan sayı</value>
+    <value>Otomatik artan sayı. {n} başa n kadar 0 ekler</value>
   </data>
   <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
     <value>Elle</value>
@@ -761,5 +761,41 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
     <value>Aktif pencere alanıyla ekran kaydetme (GIF) başlat</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>Bilgisayar</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>Tarih ve zaman</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>Artan</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>Rastgele</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>Rastgele GUID</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>Otomatik artan alfanumerik büyük küçük harfe duyarsız. {n} başa n kadar 0 ekler</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>Otomatik artan alfanumerik büyük küçük harfe duyarlı. {n} başa n kadar 0 ekler</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>Otomatik artan {n} sayı tabanında alfanumerik (1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>Otomatik artan heksadesimal. {n} başa n kadar 0 ekler</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>Rastgele heksadesimal karakter. {n} haneli</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
+    <value>Hedef</value>
   </data>
 </root>

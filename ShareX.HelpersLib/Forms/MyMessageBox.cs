@@ -53,6 +53,8 @@ namespace ShareX.HelpersLib
             MinimizeBox = false;
             MaximizeBox = false;
 
+            Shown += MyMessageBox_Shown;
+
             Label labelText = new Label();
             labelText.Margin = new Padding(0);
             labelText.Font = SystemFonts.MessageBoxFont;
@@ -146,6 +148,11 @@ namespace ShareX.HelpersLib
             panel.Location = new Point(0, labelPanel.Bottom + LabelVerticalPadding);
             panel.Size = new Size(labelPanel.Width + (LabelHorizontalPadding * 2), button1.Height + (ButtonPadding * 2));
             ClientSize = new Size(panel.Width, labelPanel.Height + (LabelVerticalPadding * 2) + panel.Height);
+        }
+
+        private void MyMessageBox_Shown(object sender, System.EventArgs e)
+        {
+            this.ShowActivate();
         }
 
         public static DialogResult Show(string text, string caption, MessageBoxButtons buttons = MessageBoxButtons.OK)

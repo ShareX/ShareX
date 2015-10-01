@@ -92,7 +92,7 @@ namespace ShareX.HistoryLib
                 }
             }
 
-            return tempHistoryItems.OrderByDescending(x => x.DateTimeUtc).ToArray();
+            return tempHistoryItems.OrderByDescending(x => x.DateTime).ToArray();
         }
 
         private void ApplyFiltersAndAdd()
@@ -160,8 +160,7 @@ namespace ShareX.HistoryLib
                 DateTime toDate = dtpFilterTo.Value.Date;
 
                 result = from hi in result
-                         let date = FastDateTime.ToLocalTime(hi.DateTimeUtc).Date
-                         where date >= fromDate && date <= toDate
+                         where hi.DateTime.Date >= fromDate && hi.DateTime.Date <= toDate
                          select hi;
             }
 
@@ -196,7 +195,7 @@ namespace ShareX.HistoryLib
             for (int i = 0; i < historyItems.Length; i++)
             {
                 HistoryItem hi = historyItems[i];
-                ListViewItem lvi = listViewItems[i] = new ListViewItem(hi.DateTimeUtc.ToLocalTime().ToString());
+                ListViewItem lvi = listViewItems[i] = new ListViewItem(hi.DateTime.ToString());
                 lvi.SubItems.Add(hi.Filename);
                 lvi.SubItems.Add(hi.Type);
                 lvi.SubItems.Add(hi.Host);

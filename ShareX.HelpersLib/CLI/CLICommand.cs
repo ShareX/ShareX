@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+
 namespace ShareX.HelpersLib
 {
     public class CLICommand
@@ -35,6 +37,11 @@ namespace ShareX.HelpersLib
         {
             Command = command;
             Parameter = parameter;
+        }
+
+        public bool CheckCommand(string command)
+        {
+            return !string.IsNullOrEmpty(Command) && Command.Equals(command, StringComparison.InvariantCultureIgnoreCase);
         }
 
         public override string ToString()

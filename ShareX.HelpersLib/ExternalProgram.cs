@@ -32,6 +32,7 @@ namespace ShareX.HelpersLib
     public class ExternalProgram
     {
         public bool IsActive { get; set; }
+        public bool HiddenWindow { get; set; }
         public string Name { get; set; }
         public string Path { get; set; }
         public string Args { get; set; }
@@ -96,6 +97,12 @@ namespace ShareX.HelpersLib
                             }
 
                             psi.Arguments = args;
+                        }
+
+                        if (HiddenWindow)
+                        {
+                            psi.WindowStyle = ProcessWindowStyle.Hidden;
+                            psi.CreateNoWindow = true;
                         }
 
                         process.StartInfo = psi;

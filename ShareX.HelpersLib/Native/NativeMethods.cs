@@ -138,6 +138,10 @@ namespace ShareX.HelpersLib
         public static extern IntPtr GetWindow(IntPtr hWnd, GetWindowConstants wCmd);
 
         [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GetScrollInfo(IntPtr hwnd, int fnBar, ref SCROLLINFO lpsi);
+
+        [DllImport("user32.dll")]
         public static extern int GetSystemMetrics(int smIndex);
 
         [DllImport("user32.dll")]

@@ -413,7 +413,7 @@ namespace ShareX.UploadersLib
         {
             if (FTPOutput != null)
             {
-                FTPOutput(string.Format("{0} - {1}", FastDateTime.Now.ToLongTimeString(), text));
+                FTPOutput(string.Format("{0} - {1}", DateTime.Now.ToLongTimeString(), text));
             }
         }
     }
@@ -500,7 +500,7 @@ namespace ShareX.UploadersLib
             if (year.Contains(":"))
             {
                 time = year;
-                year = FastDateTime.Now.Year.ToString();
+                year = DateTime.Now.Year.ToString();
                 TimeInfo = true;
             }
 

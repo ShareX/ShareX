@@ -63,11 +63,11 @@ namespace ShareX.UploadersLib.FileUploaders
                         Token = sendSpace.AuthCreateToken();
                         if (string.IsNullOrEmpty(Token)) throw new Exception("Token is null or empty.");
                     }
-                    if (string.IsNullOrEmpty(SessionKey) || (FastDateTime.Now - LastSessionKey).Minutes > 30)
+                    if (string.IsNullOrEmpty(SessionKey) || (DateTime.Now - LastSessionKey).Minutes > 30)
                     {
                         SessionKey = sendSpace.AuthLogin(Token, username, password).SessionKey;
                         if (string.IsNullOrEmpty(Token)) throw new Exception("SessionKey is null or empty.");
-                        LastSessionKey = FastDateTime.Now;
+                        LastSessionKey = DateTime.Now;
                     }
                     UploadInfo = sendSpace.UploadGetInfo(SessionKey);
                     if (UploadInfo == null) throw new Exception("UploadInfo is null.");

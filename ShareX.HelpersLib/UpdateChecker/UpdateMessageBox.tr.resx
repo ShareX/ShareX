@@ -127,6 +127,6 @@
     <value>ShareX bir sonraki defa açılana kadar tekrar sorma</value>
   </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
-    <value>Değişiklikleri gör</value>
+    <value>Değişim günlüğünü gör</value>
   </data>
 </root>

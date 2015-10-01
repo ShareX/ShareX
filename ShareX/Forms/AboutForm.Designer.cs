@@ -57,10 +57,7 @@
             // 
             resources.ApplyResources(this.lblProductName, "lblProductName");
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
-            this.lblProductName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblProductName.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Click += new System.EventHandler(this.lblProductName_Click);
             // 
             // lblBerk
             // 
@@ -184,6 +181,7 @@
             this.Controls.Add(this.cLogo);
             this.MaximizeBox = false;
             this.Name = "AboutForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AboutForm_FormClosed);
             this.Shown += new System.EventHandler(this.AboutForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).EndInit();

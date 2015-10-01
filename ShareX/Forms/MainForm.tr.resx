@@ -151,7 +151,7 @@
     <value>Bölge</value>
   </data>
   <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Bölge (Objeler)</value>
+    <value>Bölge (Pencereler ve kontroller)</value>
   </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
     <value>Bölge (Dipnot)</value>
@@ -445,7 +445,7 @@
     <value>Bölge</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Bölge (Objeler)</value>
+    <value>Bölge (Pencereler ve kontroller)</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
     <value>Bölge (Dipnot)</value>

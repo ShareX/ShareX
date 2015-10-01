@@ -511,7 +511,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 DateTime time;
                 while (!bw.CancellationPending)
                 {
-                    time = FastDateTime.Now;
+                    time = DateTime.Now;
                     try
                     {
                         progressInfo.ParseResponse(sendSpace.SendRequest(HttpMethod.POST, url));
@@ -526,7 +526,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     catch
                     {
                     }
-                    elapsed = (int)(FastDateTime.Now - time).TotalMilliseconds;
+                    elapsed = (int)(DateTime.Now - time).TotalMilliseconds;
                     if (elapsed < interval)
                     {
                         Thread.Sleep(interval - elapsed);

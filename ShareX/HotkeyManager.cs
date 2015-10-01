@@ -42,7 +42,7 @@ namespace ShareX
 
         private HotkeyForm hotkeyForm;
 
-        public HotkeyManager(HotkeyForm form, List<HotkeySettings> hotkeys)
+        public HotkeyManager(HotkeyForm form, List<HotkeySettings> hotkeys, bool registerHotkeys)
         {
             hotkeyForm = form;
             hotkeyForm.HotkeyPress += hotkeyForm_HotkeyPress;
@@ -50,8 +50,11 @@ namespace ShareX
 
             Hotkeys = hotkeys;
 
-            RegisterAllHotkeys();
-            ShowFailedHotkeys();
+            if (registerHotkeys)
+            {
+                RegisterAllHotkeys();
+                ShowFailedHotkeys();
+            }
         }
 
         private void hotkeyForm_HotkeyPress(ushort id, Keys key, Modifiers modifier)

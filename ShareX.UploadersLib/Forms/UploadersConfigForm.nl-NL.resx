@@ -198,9 +198,6 @@
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Ververs mappenlijst</value>
   </data>
-  <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
-    <value>Ververs mappenlijst</value>
-  </data>
   <data name="btnImageShackLogin.Text" xml:space="preserve">
     <value>Inloggen</value>
   </data>
@@ -307,9 +304,6 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
     <value>Upload bestanden naar geselecteerde map</value>
   </data>
-  <data name="cbHubicPublishLink.Text" xml:space="preserve">
-    <value>Creëer een gedeelde link (geldig voor 30 dagen)</value>
-  </data>
   <data name="cbImageShackIsPublic.Text" xml:space="preserve">
     <value>Is de upload publiek?</value>
   </data>
@@ -354,9 +348,6 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Titel</value>
-  </data>
-  <data name="chHubicFolderName.Text" xml:space="preserve">
-    <value>Mapnaam</value>
   </data>
   <data name="chImgurDescription.Text" xml:space="preserve">
     <value>Beschrijving</value>
@@ -540,12 +531,6 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   </data>
   <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
     <value>Syntax markeren:</value>
-  </data>
-  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
-    <value>Geselecteerde map:</value>
-  </data>
-  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
-    <value>Nota: Je kunt dubbelklikken om in de map te gaan.</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Wachtwoord:</value>

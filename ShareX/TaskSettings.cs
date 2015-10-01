@@ -326,6 +326,12 @@ namespace ShareX
 
         #endregion Capture / Screen recorder
 
+        #region Capture / Scrolling capture
+
+        public ScrollingCaptureOptions ScrollingCaptureOptions = new ScrollingCaptureOptions();
+
+        #endregion Capture / Scrolling capture
+
         #region Capture / Rectangle annotate
 
         public RectangleAnnotateOptions RectangleAnnotateOptions = new RectangleAnnotateOptions();
@@ -358,6 +364,7 @@ namespace ShareX
     public class TaskSettingsTools
     {
         public IndexerSettings IndexerSettings = new IndexerSettings();
+        public ImageCombinerOptions ImageCombinerOptions = new ImageCombinerOptions();
         public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
         public IRCInfo IRCSettings = new IRCInfo();
     }

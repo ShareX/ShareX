@@ -31,7 +31,7 @@ namespace ShareX.HistoryLib
     {
         public string Filename { get; set; }
         public string Filepath { get; set; }
-        public DateTime DateTimeUtc { get; set; }
+        public DateTime DateTime { get; set; }
         public string Type { get; set; }
         public string Host { get; set; }
         public string URL { get; set; }

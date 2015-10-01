@@ -61,6 +61,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Changelog.
+        /// </summary>
+        public static string AboutForm_AboutForm_Changelog {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Changelog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contributors.
         /// </summary>
         public static string AboutForm_AboutForm_Contributors {
@@ -545,6 +554,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CompanionCube {
+            get {
+                object obj = ResourceManager.GetObject("CompanionCube", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap control_record {
             get {
                 object obj = ResourceManager.GetObject("control_record", resourceCulture);
@@ -608,6 +627,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap Diamond {
             get {
                 object obj = ResourceManager.GetObject("Diamond", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap document_break {
+            get {
+                object obj = ResourceManager.GetObject("document-break", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1904,6 +1933,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap Twitter {
             get {
                 object obj = ResourceManager.GetObject("Twitter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ui_scroll_pane_image {
+            get {
+                object obj = ResourceManager.GetObject("ui_scroll_pane_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -146,4 +146,16 @@ namespace ShareX.ScreenCaptureLib
         Triangle,
         Diamond
     }
+
+    public enum ScrollingCaptureScrollMethod
+    {
+        [Description("Automatically try all methods until one works")]
+        Automatic,
+        [Description("Send scroll message to window or control")]
+        SendMessageScroll,
+        [Description("Simulate pressing \"Page down\" key")]
+        KeyPressPageDown,
+        [Description("Simulate mouse wheel scrolling")]
+        MouseWheel
+    }
 }

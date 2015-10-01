@@ -42,21 +42,22 @@ namespace ShareX.Setup
             Steam // Create Steam folder
         }
 
-        private static SetupType Setup = SetupType.Steam;
+        private static readonly SetupType Setup = SetupType.Steam;
 
-        private static string parentDir = @"..\..\..\";
-        private static string binDir = Path.Combine(parentDir, "ShareX", "bin");
-        private static string releaseDir = Path.Combine(binDir, "Release");
-        private static string debugDir = Path.Combine(binDir, "Debug");
-        private static string steamDir = Path.Combine(binDir, "Steam");
-        private static string debugPath = Path.Combine(debugDir, "ShareX.exe");
-        private static string outputDir = Path.Combine(parentDir, "InnoSetup", "Output");
-        private static string portableDir = Path.Combine(outputDir, "ShareX-portable");
-        private static string steamOutputDir = Path.Combine(outputDir, "ShareX");
-        private static string steamLauncherDir = Path.Combine(parentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release");
-        private static string steamUpdatesDir = Path.Combine(steamOutputDir, "Updates");
-        private static string innoSetupPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        private static string innoSetupScriptPath = Path.Combine(parentDir, "InnoSetup", "ShareX setup.iss");
+        private static readonly string parentDir = @"..\..\..\";
+        private static readonly string binDir = Path.Combine(parentDir, "ShareX", "bin");
+        private static readonly string releaseDir = Path.Combine(binDir, "Release");
+        private static readonly string debugDir = Path.Combine(binDir, "Debug");
+        private static readonly string steamDir = Path.Combine(binDir, "Steam");
+        private static readonly string debugPath = Path.Combine(debugDir, "ShareX.exe");
+        private static readonly string outputDir = Path.Combine(parentDir, "InnoSetup", "Output");
+        private static readonly string portableDir = Path.Combine(outputDir, "ShareX-portable");
+        private static readonly string steamOutputDir = Path.Combine(outputDir, "ShareX");
+        private static readonly string steamLauncherDir = Path.Combine(parentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release");
+        private static readonly string steamUpdatesDir = Path.Combine(steamOutputDir, "Updates");
+        private static readonly string chromeReleaseDir = Path.Combine(parentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release");
+        private static readonly string innoSetupPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
+        private static readonly string innoSetupScriptPath = Path.Combine(parentDir, "InnoSetup", "ShareX setup.iss");
 
         private static string ReleaseDirectory => Setup == SetupType.Steam ? steamDir : releaseDir;
 
@@ -135,21 +136,12 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(destination);
 
-            List<string> files = new List<string>();
-
-            string[] endsWith = new string[] { "ShareX.exe", "ShareX.exe.config", ".dll", ".css", ".txt" };
-            string[] ignoreEndsWith = new string[] { };
-
-            foreach (string filepath in Directory.GetFiles((ReleaseDirectory)))
-            {
-                if (endsWith.Any(x => filepath.EndsWith(x, StringComparison.InvariantCultureIgnoreCase)) &&
-                    ignoreEndsWith.All(x => !filepath.EndsWith(x, StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    files.Add(filepath);
-                }
-            }
-
-            CopyFiles(files, destination);
+            CopyFile(Path.Combine(ReleaseDirectory, "ShareX.exe"), destination);
+            CopyFile(Path.Combine(ReleaseDirectory, "ShareX.exe.config"), destination);
+            CopyFiles(ReleaseDirectory, "*.dll", destination);
+            CopyFiles(Path.Combine(parentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
+            CopyFile(Path.Combine(outputDir, "Recorder-devices-setup.exe"), destination);
+            CopyFile(Path.Combine(chromeReleaseDir, "ShareX_Chrome.exe"), destination);
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "tr", "zh-CN" };
 
@@ -164,11 +156,7 @@ namespace ShareX.Setup
                 CopyFile(Path.Combine(parentDir, "Lib", "ffmpeg.exe"), destination);
                 CopyFile(Path.Combine(parentDir, "Lib", "ffmpeg-x64.exe"), destination);
             }
-
-            CopyFile(Path.Combine(outputDir, "Recorder-devices-setup.exe"), destination);
-            CopyFile(Path.Combine(parentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release\ShareX_Chrome.exe"), destination);
-
-            if (Setup != SetupType.Steam)
+            else
             {
                 File.WriteAllText(Path.Combine(destination, "PersonalPath.cfg"), "ShareX", Encoding.UTF8);
 
@@ -192,7 +180,7 @@ namespace ShareX.Setup
             Console.WriteLine("Portable created.");
         }
 
-        private static void CopyFiles(IEnumerable files, string toFolder)
+        private static void CopyFiles(string[] files, string toFolder)
         {
             if (!Directory.Exists(toFolder))
             {

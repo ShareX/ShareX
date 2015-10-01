@@ -655,7 +655,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not create directory, check your path settings..
+        ///   Looks up a localized string similar to Could not create directory..
         /// </summary>
         internal static string Helpers_CreateDirectoryIfNotExist_Create_failed_ {
             get {
@@ -988,6 +988,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image combiner.
+        /// </summary>
+        internal static string HotkeyType_ImageCombiner {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageCombiner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_ImageCombiner_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageCombiner_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image editor.
         /// </summary>
         internal static string HotkeyType_ImageEditor {
@@ -1038,6 +1056,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_IndexFolder_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_IndexFolder_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IRC client.
+        /// </summary>
+        internal static string HotkeyType_IRCClient {
+            get {
+                return ResourceManager.GetString("HotkeyType_IRCClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_IRCClient_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_IRCClient_Category", resourceCulture);
             }
         }
         
@@ -1339,6 +1375,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scrolling capture.
+        /// </summary>
+        internal static string HotkeyType_ScrollingCapture {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScrollingCapture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen capture.
+        /// </summary>
+        internal static string HotkeyType_ScrollingCapture_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScrollingCapture_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start auto capture using last region.
         /// </summary>
         internal static string HotkeyType_StartAutoCapture {
@@ -1443,6 +1497,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_UploadURL_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_UploadURL_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video thumbnailer.
+        /// </summary>
+        internal static string HotkeyType_VideoThumbnailer {
+            get {
+                return ResourceManager.GetString("HotkeyType_VideoThumbnailer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_VideoThumbnailer_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_VideoThumbnailer_Category", resourceCulture);
             }
         }
         
@@ -1637,6 +1709,60 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Computer.
+        /// </summary>
+        internal static string ReplCodeMenuCategory_Computer {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuCategory_Computer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date and time.
+        /// </summary>
+        internal static string ReplCodeMenuCategory_Date_and_Time {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuCategory_Date_and_Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        internal static string ReplCodeMenuCategory_Image {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuCategory_Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incremental.
+        /// </summary>
+        internal static string ReplCodeMenuCategory_Incremental {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuCategory_Incremental", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Random.
+        /// </summary>
+        internal static string ReplCodeMenuCategory_Random {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuCategory_Random", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target.
+        /// </summary>
+        internal static string ReplCodeMenuCategory_Target {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuCategory_Target", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Computer name.
         /// </summary>
         internal static string ReplCodeMenuEntry_cn_Computer_name {
@@ -1651,6 +1777,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ReplCodeMenuEntry_d_Current_day {
             get {
                 return ResourceManager.GetString("ReplCodeMenuEntry_d_Current_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Random GUID.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_guid_Random_guid {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_guid_Random_guid", resourceCulture);
             }
         }
         
@@ -1678,6 +1813,42 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ReplCodeMenuEntry_i_Auto_increment_number {
             get {
                 return ResourceManager.GetString("ReplCodeMenuEntry_i_Auto_increment_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto increment alphanumeric case-insensitive. 0 pad left using {n}.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_ia_Auto_increment_alphanumeric {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_ia_Auto_increment_alphanumeric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto increment alphanumeric case-sensitive. 0 pad left using {n}.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto increment by base {n} using alphanumeric (1 &lt; n &lt; 63).
+        /// </summary>
+        internal static string ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto increment hexadecimal. 0 pad left using {n}.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_ix_Auto_increment_hexadecimal {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_ix_Auto_increment_hexadecimal", resourceCulture);
             }
         }
         
@@ -1768,6 +1939,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ReplCodeMenuEntry_rn_Random_number_0_to_9 {
             get {
                 return ResourceManager.GetString("ReplCodeMenuEntry_rn_Random_number_0_to_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Random hexadecimal char. Repeat using {n}.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_rx_Random_hexadecimal {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_rx_Random_hexadecimal", resourceCulture);
             }
         }
         

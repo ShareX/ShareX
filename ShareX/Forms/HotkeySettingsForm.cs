@@ -109,7 +109,7 @@ namespace ShareX
             control.Margin = new Padding(0, 0, 0, 2);
             control.SelectedChanged += control_SelectedChanged;
             control.HotkeyChanged += control_HotkeyChanged;
-            control.LabelDoubleClick += control_LabelDoubleClick;
+            control.EditRequested += control_EditRequested;
             flpHotkeys.Controls.Add(control);
             return control;
         }
@@ -123,7 +123,7 @@ namespace ShareX
             }
         }
 
-        private void control_LabelDoubleClick(object sender, EventArgs e)
+        private void control_EditRequested(object sender, EventArgs e)
         {
             Edit((HotkeySelectionControl)sender);
         }

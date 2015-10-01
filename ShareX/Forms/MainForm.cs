@@ -95,11 +95,15 @@ namespace ShareX
 
             Text = Program.Title;
 
-            ((ToolStripDropDownMenu)tsddbWorkflows.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayWorkflows.DropDown).ShowImageMargin =
-                ((ToolStripDropDownMenu)tsmiMonitor.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayMonitor.DropDown).ShowImageMargin =
-                ((ToolStripDropDownMenu)tsmiOpen.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiCopy.DropDown).ShowImageMargin =
-                ((ToolStripDropDownMenu)tsmiShortenSelectedURL.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiShareSelectedURL.DropDown).ShowImageMargin =
-                ((ToolStripDropDownMenu)tsmiTrayRecentItems.DropDown).ShowImageMargin = false;
+            tsddbWorkflows.HideImageMargin();
+            tsmiTrayWorkflows.HideImageMargin();
+            tsmiMonitor.HideImageMargin();
+            tsmiTrayMonitor.HideImageMargin();
+            tsmiOpen.HideImageMargin();
+            tsmiCopy.HideImageMargin();
+            tsmiShortenSelectedURL.HideImageMargin();
+            tsmiShareSelectedURL.HideImageMargin();
+            tsmiTrayRecentItems.HideImageMargin();
 
             AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(x),
                 tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
@@ -719,6 +723,8 @@ namespace ShareX
 
         public void UseCommandLineArgs(List<CLICommand> commands)
         {
+            TaskSettings taskSettings = FindCLITask(commands);
+
             foreach (CLICommand command in commands)
             {
                 DebugHelper.WriteLine("CommandLine: " + command.Command);
@@ -730,11 +736,11 @@ namespace ShareX
 
                 if (URLHelpers.IsValidURLRegex(command.Command))
                 {
-                    UploadManager.DownloadAndUploadFile(command.Command);
+                    UploadManager.DownloadAndUploadFile(command.Command, taskSettings);
                 }
                 else
                 {
-                    UploadManager.UploadFile(command.Command);
+                    UploadManager.UploadFile(command.Command, taskSettings);
                 }
             }
         }
@@ -743,7 +749,7 @@ namespace ShareX
         {
             foreach (HotkeyType job in Helpers.GetEnums<HotkeyType>())
             {
-                if (command.Command.Equals(job.ToString(), StringComparison.InvariantCultureIgnoreCase))
+                if (command.CheckCommand(job.ToString()))
                 {
                     ExecuteJob(job);
                     return true;
@@ -755,7 +761,7 @@ namespace ShareX
 
         private bool CheckCLIWorkflow(CLICommand command)
         {
-            if (command.Command.Equals("workflow", StringComparison.InvariantCultureIgnoreCase) && !string.IsNullOrEmpty(command.Parameter) && Program.HotkeysConfig != null)
+            if (Program.HotkeysConfig != null && command.CheckCommand("workflow") && !string.IsNullOrEmpty(command.Parameter))
             {
                 foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
                 {
@@ -771,6 +777,27 @@ namespace ShareX
             }
 
             return false;
+        }
+
+        private TaskSettings FindCLITask(List<CLICommand> commands)
+        {
+            if (Program.HotkeysConfig != null)
+            {
+                CLICommand command = commands.FirstOrDefault(x => x.CheckCommand("task") && !string.IsNullOrEmpty(x.Parameter));
+
+                if (command != null)
+                {
+                    foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
+                    {
+                        if (command.Parameter == hotkeySetting.TaskSettings.ToString())
+                        {
+                            return hotkeySetting.TaskSettings;
+                        }
+                    }
+                }
+            }
+
+            return null;
         }
 
         private WorkerTask[] GetCurrentTasks()
@@ -995,6 +1022,11 @@ namespace ShareX
             TaskHelpers.OpenIndexFolder();
         }
 
+        private void tsmiImageCombiner_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageCombiner();
+        }
+
         private void tsmiVideoThumbnailer_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenVideoThumbnailer();
@@ -1063,6 +1095,11 @@ namespace ShareX
         private void tsmiScreenRecordingGIF_Click(object sender, EventArgs e)
         {
             TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region);
+        }
+
+        private void tsmiScrollingCapture_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenScrollingCapture();
         }
 
         private void tsmiAutoCapture_Click(object sender, EventArgs e)
@@ -1174,7 +1211,11 @@ namespace ShareX
 
         private void tsbDonate_Click(object sender, EventArgs e)
         {
+#if STEAM
+            URLHelpers.OpenURL(Links.URL_STEAM_DONATE);
+#else
             URLHelpers.OpenURL(Links.URL_DONATE);
+#endif
         }
 
         private void lblDragAndDropTip_MouseUp(object sender, MouseEventArgs e)
@@ -1547,7 +1588,7 @@ namespace ShareX
             },
             () =>
             {
-                Program.HotkeyManager = new HotkeyManager(this, Program.HotkeysConfig.Hotkeys);
+                Program.HotkeyManager = new HotkeyManager(this, Program.HotkeysConfig.Hotkeys, !Program.NoHotkeys);
                 Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
                 DebugHelper.WriteLine("HotkeyManager started");
 
@@ -1651,6 +1692,9 @@ namespace ShareX
                 case HotkeyType.LastRegion:
                     CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
                     break;
+                case HotkeyType.ScrollingCapture:
+                    TaskHelpers.OpenScrollingCapture(safeTaskSettings, true);
+                    break;
                 case HotkeyType.CaptureWebpage:
                     TaskHelpers.OpenWebpageCapture(safeTaskSettings);
                     break;
@@ -1695,6 +1739,9 @@ namespace ShareX
                 case HotkeyType.HashCheck:
                     TaskHelpers.OpenHashCheck();
                     break;
+                case HotkeyType.IRCClient:
+                    TaskHelpers.OpenIRCClient(safeTaskSettings);
+                    break;
                 case HotkeyType.DNSChanger:
                     TaskHelpers.OpenDNSChanger();
                     break;
@@ -1709,6 +1756,12 @@ namespace ShareX
                     break;
                 case HotkeyType.IndexFolder:
                     TaskHelpers.OpenIndexFolder();
+                    break;
+                case HotkeyType.ImageCombiner:
+                    TaskHelpers.OpenImageCombiner(safeTaskSettings);
+                    break;
+                case HotkeyType.VideoThumbnailer:
+                    TaskHelpers.OpenVideoThumbnailer(safeTaskSettings);
                     break;
                 case HotkeyType.FTPClient:
                     TaskHelpers.OpenFTPClient();
