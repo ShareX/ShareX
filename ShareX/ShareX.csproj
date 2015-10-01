@@ -660,6 +660,9 @@
     <EmbeddedResource Include="Forms\ImageCombinerForm.resx">
       <DependentUpon>ImageCombinerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageCombinerForm.tr.resx">
+      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.de.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -117,31 +117,103 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>Ad:</value>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>Sol:</value>
   </data>
-  <data name="lblPath.Text" xml:space="preserve">
-    <value>Dosya yolu:</value>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>Sağ:</value>
   </data>
-  <data name="lblArgs.Text" xml:space="preserve">
-    <value>Parametreler:</value>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>Alt:</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>Tamam</value>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>Üst:</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>İptal</value>
-  </data>
-  <data name="lblExtensions.Text" xml:space="preserve">
-    <value>Uzantı süzgeçi: (Örnek: jpg png mp4)</value>
-  </data>
-  <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Çıkış dosya adı uzantısı: (Boş = Aynı dosya uzantısını kullan)</value>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>Yükle/kaydet yakalama sonrası ayarlarına göre</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Aksiyonlar</value>
+    <value>ShareX - Kaydırarak yakalama</value>
   </data>
-  <data name="cbHiddenWindow.Text" xml:space="preserve">
-    <value>Gizli pencere</value>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Yakalamayı başlat</value>
+  </data>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>Resimler</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Dikey:</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>Son dikey:</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>Resim sayısı:</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Çıktı</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Yakala</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Başlangıç gecikmesi:</value>
+  </data>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>Kaydırma gecikmesi:</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Kaydırma yöntemi:</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>İşleniyor...</value>
+  </data>
+  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
+    <value>En fazla kaydırma sayısı:</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Sonuncuları sil:</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>Kenarları kırp</value>
+  </data>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>Birleştirme ayarları</value>
+  </data>
+  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
+    <value>Birleştirme ayarlarını tahmin et ve birleştir</value>
+  </data>
+  <data name="btnGuessEdges.Text" xml:space="preserve">
+    <value>Kenar kırpma değerlerini tahmin et</value>
+  </data>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>Çıktı ayarlarını sıfırla</value>
+  </data>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>Pencere veya kontrol seçin kaydırmak için...</value>
+  </data>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(Opsiyonel) Özel alan seçin pencere içinde...</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>Kaydırma sonuna geldiğini otomatik tespit et</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>Aynı olan resimleri sil</value>
+  </data>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>Yakaladıktan sonra birleştirme ayarlarını tespit et ve birleştir</value>
+  </data>
+  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
+    <value>Yakalama başlamadan önce sayfayı yukarıya kaydırmayı dene</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>Alan seçtikten sonra kaydırarak yakalamayı başlat</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>Bu pencere açılmadan önce alan seçimini başlat</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Lütfen dikkat, ShareX düzgün bir şekilde kaydırarak yakalama için elinden geleni yapsada her durumda kusursuz kaydırarak yakalama yapmak mümkün değildir. Ana nedenlerinden biri kaydırma esnasında ekranda hareket olmasıdır, mesela web sayfası yakalarken ekranda hareketli bir GIF resmi varsa birleştirme esnasında sorun yaratcaktır. Bir diğer nedende ekranda olan sabit objelerdir, mesela web sayfası kaydırırken ekranda hareket etmiyen bir menu veya tuş olması nereden birleştirilceğini hesaplamada zorluk çıkarıcaktır.</value>
   </data>
 </root>

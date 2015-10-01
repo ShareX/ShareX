@@ -1552,16 +1552,16 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnOpenSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>482, 360</value>
+    <value>408, 360</value>
   </data>
   <data name="btnOpenSteam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 40</value>
+    <value>320, 40</value>
   </data>
   <data name="btnOpenSteam.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="btnOpenSteam.Text" xml:space="preserve">
-    <value>ShareX is now released on Steam!</value>
+    <value>ShareX is now available on Steam!</value>
   </data>
   <data name="btnOpenSteam.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1585,10 +1585,10 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnHideSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>764, 360</value>
+    <value>736, 360</value>
   </data>
   <data name="btnHideSteam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 40</value>
+    <value>88, 40</value>
   </data>
   <data name="btnHideSteam.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

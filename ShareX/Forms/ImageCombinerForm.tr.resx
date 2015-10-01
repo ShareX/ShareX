@@ -117,31 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>Ad:</value>
-  </data>
-  <data name="lblPath.Text" xml:space="preserve">
-    <value>Dosya yolu:</value>
-  </data>
-  <data name="lblArgs.Text" xml:space="preserve">
-    <value>Parametreler:</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>Tamam</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>İptal</value>
-  </data>
-  <data name="lblExtensions.Text" xml:space="preserve">
-    <value>Uzantı süzgeçi: (Örnek: jpg png mp4)</value>
-  </data>
-  <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Çıkış dosya adı uzantısı: (Boş = Aynı dosya uzantısını kullan)</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Aksiyonlar</value>
+    <value>ShareX - Resim birleştirici</value>
   </data>
-  <data name="cbHiddenWindow.Text" xml:space="preserve">
-    <value>Gizli pencere</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Ekle...</value>
+  </data>
+  <data name="btnCombine.Text" xml:space="preserve">
+    <value>Resimleri birleştir ve kaydet/yükle yakalama sonrası ayarlarına göre</value>
+  </data>
+  <data name="btnMoveDown.Text" xml:space="preserve">
+    <value>Aşağı taşı</value>
+  </data>
+  <data name="btnMoveUp.Text" xml:space="preserve">
+    <value>Yukarı taşı</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="chFilepath.Text" xml:space="preserve">
+    <value>Resim dosya yolu</value>
+  </data>
+  <data name="lblOrientation.Text" xml:space="preserve">
+    <value>Birleştirme yönü:</value>
+  </data>
+  <data name="lblSpace.Text" xml:space="preserve">
+    <value>Resimler arasındaki boşluk:</value>
+  </data>
+  <data name="lblSpacePixel.Text" xml:space="preserve">
+    <value>piksel olarak</value>
   </data>
 </root>

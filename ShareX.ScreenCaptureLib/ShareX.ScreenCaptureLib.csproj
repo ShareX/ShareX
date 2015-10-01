@@ -145,6 +145,9 @@
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScrollingCaptureForm.tr.resx">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
