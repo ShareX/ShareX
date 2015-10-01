@@ -242,6 +242,8 @@ namespace ShareX
 
         public static string ChromeHostPath => Helpers.GetAbsolutePath("ShareX_Chrome.exe");
 
+        public static string SteamInAppPath => Helpers.GetAbsolutePath("Steam");
+
         #endregion Paths
 
         private static bool restarting;
