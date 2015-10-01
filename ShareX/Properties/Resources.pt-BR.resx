@@ -470,4 +470,7 @@ Tem certeza de que quer continuar?</value>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>Suporte ao Chrome desabilitado.</value>
   </data>
+  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>Notas de atualização</value>
+  </data>
 </root>

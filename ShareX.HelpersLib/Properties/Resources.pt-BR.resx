@@ -667,7 +667,7 @@ Velocidade do download: {1:0.0} KB/s
 Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Char randômico alfanumérico</value>
+    <value>Caractere aleatório alfanumérico</value>
   </data>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Horário UNIX</value>
@@ -694,7 +694,7 @@ Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
     <value>Mês atual (inglês)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Auto incrementar número</value>
+    <value>Auto incrementar número. Acrescentar 0 à esquerda usando {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Milissegundo atual</value>
@@ -761,5 +761,65 @@ Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="GIFQuality_Grayscale" xml:space="preserve">
     <value>Paleta de tons de cinza quantizer 256 cores</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>Mesclar imagens</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="HotkeyType_IRCClient" xml:space="preserve">
+    <value>Cliente IRC</value>
+  </data>
+  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>Captura rolante</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
+    <value>Gravar tela</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>Miniaturizador de vídeo</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>Computador</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>Data e hora</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>Imagem</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>Aleatório</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
+    <value>Destino</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>GUID Aleatório</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>Incremental</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>Auto incrementar caracteres alfanuméricos maiúsculos e minúsculos. Acrescentar 0 à esquerda usando {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>Auto incrementar caracteres alfanuméricos maiúsculos e minúsculos. Acrescentar 0 à esquerda usando {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>Auto incrementar por base {n} usando caracteres alfanuméricos (1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>Auto incrementar usando caracteres hexadecimais. Acrescentar 0 à esquerda usando {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>Caractere hexadecimal aleatório. Repetir usando {n}</value>
   </data>
 </root>
