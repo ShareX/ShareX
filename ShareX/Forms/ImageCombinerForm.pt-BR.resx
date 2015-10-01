@@ -117,16 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnNo.Text" xml:space="preserve">
-    <value>Não</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Mesclar imagens</value>
   </data>
-  <data name="btnYes.Text" xml:space="preserve">
-    <value>Sim</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Adicionar...</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Não perguntar de novo até a próxima inicialização do programa</value>
+  <data name="btnCombine.Text" xml:space="preserve">
+    <value>Mesclar imagens e salvar/enviar dependendo das configurações pós-captura</value>
   </data>
-  <data name="lblViewChangelog.Text" xml:space="preserve">
-    <value>Ver log de mudanças</value>
+  <data name="btnMoveDown.Text" xml:space="preserve">
+    <value>Mover para baixo</value>
+  </data>
+  <data name="btnMoveUp.Text" xml:space="preserve">
+    <value>Mover para cima</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="chFilepath.Text" xml:space="preserve">
+    <value>Local do arquivo de imagem</value>
+  </data>
+  <data name="lblOrientation.Text" xml:space="preserve">
+    <value>Orientação da mesclagem:</value>
+  </data>
+  <data name="lblSpace.Text" xml:space="preserve">
+    <value>Espaço entre imagens:</value>
+  </data>
+  <data name="lblSpacePixel.Text" xml:space="preserve">
+    <value>pixels</value>
   </data>
 </root>
