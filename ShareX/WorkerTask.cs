@@ -1072,6 +1072,9 @@ namespace ShareX
                 case FileDestination.MaxFile:
                     fileUploader = new MaxFile();
                     break;
+                case FileDestination.PomfCat:
+                    fileUploader = new PomfCat();
+                    break;
                 case FileDestination.Dropfile:
                     fileUploader = new Dropfile();
                     break;

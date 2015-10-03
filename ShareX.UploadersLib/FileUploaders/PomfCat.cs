@@ -29,7 +29,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public PomfCat()
         {
-            UploadURL = "https://pomf.cat/static/upload.php";
+            UploadURL = "https://pomf.cat/upload.php";
             ResultURL = "https://a.pomf.cat";
         }
     }
