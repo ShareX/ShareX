@@ -251,11 +251,8 @@ namespace ShareX.ScreenCaptureLib
             EndingProcess();
             isCapturing = false;
 
-            if (Options.AutoUpload)
-            {
-                StartProcess();
-                Close();
-            }
+            if (Options.AutoUpload) StartProcess();
+            if (Options.AutoClose) Close();
         }
 
         private void Clean()
