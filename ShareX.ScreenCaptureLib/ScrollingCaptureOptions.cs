@@ -39,6 +39,7 @@ namespace ShareX
         public bool AutoDetectScrollEnd { get; set; } = true;
         public bool RemoveDuplicates { get; set; } = true;
         public bool AfterCaptureAutomaticallyCombine { get; set; } = true;
+        public bool AutoUpload { get; set; } = false;
 
         public int TrimLeftEdge { get; set; } = 0;
         public int TrimTopEdge { get; set; } = 0;

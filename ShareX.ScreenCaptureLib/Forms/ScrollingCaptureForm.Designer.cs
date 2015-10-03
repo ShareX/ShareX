@@ -74,6 +74,7 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput = new System.Windows.Forms.Panel();
             this.lblProcessing = new System.Windows.Forms.Label();
             this.pbOutput = new System.Windows.Forms.PictureBox();
+            this.chkAutoUpload = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -154,6 +155,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpCapture
             // 
+            this.tpCapture.Controls.Add(this.chkAutoUpload);
             this.tpCapture.Controls.Add(this.lblNote);
             this.tpCapture.Controls.Add(this.cbStartSelectionAutomatically);
             this.tpCapture.Controls.Add(this.cbAutoCombine);
@@ -485,6 +487,13 @@ namespace ShareX.ScreenCaptureLib
             this.pbOutput.Name = "pbOutput";
             this.pbOutput.TabStop = false;
             // 
+            // chkAutoUpload
+            // 
+            resources.ApplyResources(this.chkAutoUpload, "chkAutoUpload");
+            this.chkAutoUpload.Name = "chkAutoUpload";
+            this.chkAutoUpload.UseVisualStyleBackColor = true;
+            this.chkAutoUpload.CheckedChanged += new System.EventHandler(this.chkAutoUpload_CheckedChanged);
+            // 
             // ScrollingCaptureForm
             // 
             resources.ApplyResources(this, "$this");
@@ -570,5 +579,6 @@ namespace ShareX.ScreenCaptureLib
         private GroupBox gbImages;
         private TextBox txtImagesCount;
         private Label lblNote;
+        private CheckBox chkAutoUpload;
     }
 }

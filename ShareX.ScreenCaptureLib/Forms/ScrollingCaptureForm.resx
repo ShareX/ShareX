@@ -145,7 +145,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;btnSelectHandle.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="lblControlText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -169,7 +169,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;lblControlText.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="btnCapture.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -178,7 +178,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 312</value>
+    <value>16, 336</value>
   </data>
   <data name="btnCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 48</value>
@@ -199,7 +199,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;btnCapture.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <metadata name="captureTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -226,7 +226,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;nudScrollDelay.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="nudMaximumScrollCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 140</value>
@@ -250,7 +250,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;nudMaximumScrollCount.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="lblScrollDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -277,7 +277,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;lblScrollDelay.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="lblMaximumScrollCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -304,16 +304,46 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;lblMaximumScrollCount.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
+  </data>
+  <data name="chkAutoUpload.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkAutoUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkAutoUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 312</value>
+  </data>
+  <data name="chkAutoUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 17</value>
+  </data>
+  <data name="chkAutoUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>Automatically upload/save depending on after capture settings and close</value>
+  </data>
+  <data name="&gt;&gt;chkAutoUpload.Name" xml:space="preserve">
+    <value>chkAutoUpload</value>
+  </data>
+  <data name="&gt;&gt;chkAutoUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkAutoUpload.Parent" xml:space="preserve">
+    <value>tpCapture</value>
+  </data>
+  <data name="&gt;&gt;chkAutoUpload.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblNote.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="lblNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 376</value>
+    <value>16, 400</value>
   </data>
   <data name="lblNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>944, 240</value>
+    <value>944, 216</value>
   </data>
   <data name="lblNote.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -331,7 +361,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;lblNote.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbStartSelectionAutomatically.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -358,7 +388,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;cbStartSelectionAutomatically.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbAutoCombine.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -385,7 +415,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;cbAutoCombine.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblSelectedRectangle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -409,7 +439,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;lblSelectedRectangle.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnSelectRectangle.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -439,7 +469,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;btnSelectRectangle.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblStartDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -466,7 +496,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;lblStartDelay.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="nudStartDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 92</value>
@@ -490,7 +520,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;nudStartDelay.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbScrollTopBeforeCapture.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -517,7 +547,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;cbScrollTopBeforeCapture.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbStartCaptureAutomatically.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -544,7 +574,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;cbStartCaptureAutomatically.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="cbRemoveDuplicates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -571,7 +601,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;cbRemoveDuplicates.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="cbAutoDetectScrollEnd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -598,7 +628,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;cbAutoDetectScrollEnd.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblScrollMethod.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -625,7 +655,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;lblScrollMethod.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="cbScrollMethod.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 68</value>
@@ -646,7 +676,7 @@
     <value>tpCapture</value>
   </data>
   <data name="&gt;&gt;cbScrollMethod.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="tpCapture.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -673,6 +703,153 @@
     <value>tcScrollingCapture</value>
   </data>
   <data name="&gt;&gt;tpCapture.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gbImages.Name" xml:space="preserve">
+    <value>gbImages</value>
+  </data>
+  <data name="&gt;&gt;gbImages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbImages.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;gbImages.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnResetCombine.Name" xml:space="preserve">
+    <value>btnResetCombine</value>
+  </data>
+  <data name="&gt;&gt;btnResetCombine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnResetCombine.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;btnResetCombine.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnGuessCombineAdjustments.Name" xml:space="preserve">
+    <value>btnGuessCombineAdjustments</value>
+  </data>
+  <data name="&gt;&gt;btnGuessCombineAdjustments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGuessCombineAdjustments.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;btnGuessCombineAdjustments.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnStartTask.Name" xml:space="preserve">
+    <value>btnStartTask</value>
+  </data>
+  <data name="&gt;&gt;btnStartTask.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStartTask.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;btnStartTask.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnGuessEdges.Name" xml:space="preserve">
+    <value>btnGuessEdges</value>
+  </data>
+  <data name="&gt;&gt;btnGuessEdges.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGuessEdges.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;btnGuessEdges.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;gbCombineAdjustments.Name" xml:space="preserve">
+    <value>gbCombineAdjustments</value>
+  </data>
+  <data name="&gt;&gt;gbCombineAdjustments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbCombineAdjustments.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;gbCombineAdjustments.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;gbTrimEdges.Name" xml:space="preserve">
+    <value>gbTrimEdges</value>
+  </data>
+  <data name="&gt;&gt;gbTrimEdges.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbTrimEdges.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;gbTrimEdges.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;pOutput.Name" xml:space="preserve">
+    <value>pOutput</value>
+  </data>
+  <data name="&gt;&gt;pOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pOutput.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;pOutput.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tpOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpOutput.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>976, 635</value>
+  </data>
+  <data name="tpOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="&gt;&gt;tpOutput.Name" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;tpOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpOutput.Parent" xml:space="preserve">
+    <value>tcScrollingCapture</value>
+  </data>
+  <data name="&gt;&gt;tpOutput.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tcScrollingCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcScrollingCapture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tcScrollingCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>984, 661</value>
+  </data>
+  <data name="tcScrollingCapture.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tcScrollingCapture.Name" xml:space="preserve">
+    <value>tcScrollingCapture</value>
+  </data>
+  <data name="&gt;&gt;tcScrollingCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcScrollingCapture.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcScrollingCapture.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;txtImagesCount.Name" xml:space="preserve">
@@ -746,6 +923,108 @@
   </data>
   <data name="&gt;&gt;gbImages.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="txtImagesCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 16</value>
+  </data>
+  <data name="txtImagesCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="txtImagesCount.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="txtImagesCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txtImagesCount.Name" xml:space="preserve">
+    <value>txtImagesCount</value>
+  </data>
+  <data name="&gt;&gt;txtImagesCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtImagesCount.Parent" xml:space="preserve">
+    <value>gbImages</value>
+  </data>
+  <data name="&gt;&gt;txtImagesCount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblImageCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblImageCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="lblImageCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="lblImageCount.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>Image count:</value>
+  </data>
+  <data name="&gt;&gt;lblImageCount.Name" xml:space="preserve">
+    <value>lblImageCount</value>
+  </data>
+  <data name="&gt;&gt;lblImageCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageCount.Parent" xml:space="preserve">
+    <value>gbImages</value>
+  </data>
+  <data name="&gt;&gt;lblImageCount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudIgnoreLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 40</value>
+  </data>
+  <data name="nudIgnoreLast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="nudIgnoreLast.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="nudIgnoreLast.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudIgnoreLast.Name" xml:space="preserve">
+    <value>nudIgnoreLast</value>
+  </data>
+  <data name="&gt;&gt;nudIgnoreLast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudIgnoreLast.Parent" xml:space="preserve">
+    <value>gbImages</value>
+  </data>
+  <data name="&gt;&gt;nudIgnoreLast.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblIgnoreLast.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblIgnoreLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 44</value>
+  </data>
+  <data name="lblIgnoreLast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="lblIgnoreLast.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Remove last:</value>
+  </data>
+  <data name="&gt;&gt;lblIgnoreLast.Name" xml:space="preserve">
+    <value>lblIgnoreLast</value>
+  </data>
+  <data name="&gt;&gt;lblIgnoreLast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblIgnoreLast.Parent" xml:space="preserve">
+    <value>gbImages</value>
+  </data>
+  <data name="&gt;&gt;lblIgnoreLast.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="btnResetCombine.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -951,6 +1230,108 @@
   <data name="&gt;&gt;gbCombineAdjustments.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="lblCombineLastVertical.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCombineLastVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 44</value>
+  </data>
+  <data name="lblCombineLastVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="lblCombineLastVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>Last vertical:</value>
+  </data>
+  <data name="&gt;&gt;lblCombineLastVertical.Name" xml:space="preserve">
+    <value>lblCombineLastVertical</value>
+  </data>
+  <data name="&gt;&gt;lblCombineLastVertical.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCombineLastVertical.Parent" xml:space="preserve">
+    <value>gbCombineAdjustments</value>
+  </data>
+  <data name="&gt;&gt;lblCombineLastVertical.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblCombineVertical.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCombineVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="lblCombineVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="lblCombineVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Vertical:</value>
+  </data>
+  <data name="&gt;&gt;lblCombineVertical.Name" xml:space="preserve">
+    <value>lblCombineVertical</value>
+  </data>
+  <data name="&gt;&gt;lblCombineVertical.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCombineVertical.Parent" xml:space="preserve">
+    <value>gbCombineAdjustments</value>
+  </data>
+  <data name="&gt;&gt;lblCombineVertical.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudCombineVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 16</value>
+  </data>
+  <data name="nudCombineVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="nudCombineVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nudCombineVertical.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudCombineVertical.Name" xml:space="preserve">
+    <value>nudCombineVertical</value>
+  </data>
+  <data name="&gt;&gt;nudCombineVertical.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudCombineVertical.Parent" xml:space="preserve">
+    <value>gbCombineAdjustments</value>
+  </data>
+  <data name="&gt;&gt;nudCombineVertical.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="nudCombineLastVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 40</value>
+  </data>
+  <data name="nudCombineLastVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="nudCombineLastVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="nudCombineLastVertical.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudCombineLastVertical.Name" xml:space="preserve">
+    <value>nudCombineLastVertical</value>
+  </data>
+  <data name="&gt;&gt;nudCombineLastVertical.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudCombineLastVertical.Parent" xml:space="preserve">
+    <value>gbCombineAdjustments</value>
+  </data>
+  <data name="&gt;&gt;nudCombineLastVertical.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;lblTrimBottom.Name" xml:space="preserve">
     <value>lblTrimBottom</value>
   </data>
@@ -1070,312 +1451,6 @@
   </data>
   <data name="&gt;&gt;gbTrimEdges.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="pOutput.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="pOutput.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lblProcessing.Name" xml:space="preserve">
-    <value>lblProcessing</value>
-  </data>
-  <data name="&gt;&gt;lblProcessing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProcessing.Parent" xml:space="preserve">
-    <value>pOutput</value>
-  </data>
-  <data name="&gt;&gt;lblProcessing.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pbOutput.Name" xml:space="preserve">
-    <value>pbOutput</value>
-  </data>
-  <data name="&gt;&gt;pbOutput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbOutput.Parent" xml:space="preserve">
-    <value>pOutput</value>
-  </data>
-  <data name="&gt;&gt;pbOutput.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 136</value>
-  </data>
-  <data name="pOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>961, 490</value>
-  </data>
-  <data name="pOutput.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;pOutput.Name" xml:space="preserve">
-    <value>pOutput</value>
-  </data>
-  <data name="&gt;&gt;pOutput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pOutput.Parent" xml:space="preserve">
-    <value>tpOutput</value>
-  </data>
-  <data name="&gt;&gt;pOutput.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tpOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpOutput.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>976, 635</value>
-  </data>
-  <data name="tpOutput.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tpOutput.Text" xml:space="preserve">
-    <value>Output</value>
-  </data>
-  <data name="&gt;&gt;tpOutput.Name" xml:space="preserve">
-    <value>tpOutput</value>
-  </data>
-  <data name="&gt;&gt;tpOutput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpOutput.Parent" xml:space="preserve">
-    <value>tcScrollingCapture</value>
-  </data>
-  <data name="&gt;&gt;tpOutput.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tcScrollingCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tcScrollingCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tcScrollingCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 661</value>
-  </data>
-  <data name="tcScrollingCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tcScrollingCapture.Name" xml:space="preserve">
-    <value>tcScrollingCapture</value>
-  </data>
-  <data name="&gt;&gt;tcScrollingCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcScrollingCapture.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tcScrollingCapture.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtImagesCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 16</value>
-  </data>
-  <data name="txtImagesCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="txtImagesCount.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="txtImagesCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;txtImagesCount.Name" xml:space="preserve">
-    <value>txtImagesCount</value>
-  </data>
-  <data name="&gt;&gt;txtImagesCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtImagesCount.Parent" xml:space="preserve">
-    <value>gbImages</value>
-  </data>
-  <data name="&gt;&gt;txtImagesCount.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblImageCount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblImageCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 20</value>
-  </data>
-  <data name="lblImageCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 13</value>
-  </data>
-  <data name="lblImageCount.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblImageCount.Text" xml:space="preserve">
-    <value>Image count:</value>
-  </data>
-  <data name="&gt;&gt;lblImageCount.Name" xml:space="preserve">
-    <value>lblImageCount</value>
-  </data>
-  <data name="&gt;&gt;lblImageCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblImageCount.Parent" xml:space="preserve">
-    <value>gbImages</value>
-  </data>
-  <data name="&gt;&gt;lblImageCount.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="nudIgnoreLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 40</value>
-  </data>
-  <data name="nudIgnoreLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudIgnoreLast.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="nudIgnoreLast.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudIgnoreLast.Name" xml:space="preserve">
-    <value>nudIgnoreLast</value>
-  </data>
-  <data name="&gt;&gt;nudIgnoreLast.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudIgnoreLast.Parent" xml:space="preserve">
-    <value>gbImages</value>
-  </data>
-  <data name="&gt;&gt;nudIgnoreLast.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblIgnoreLast.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblIgnoreLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 44</value>
-  </data>
-  <data name="lblIgnoreLast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 13</value>
-  </data>
-  <data name="lblIgnoreLast.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblIgnoreLast.Text" xml:space="preserve">
-    <value>Remove last:</value>
-  </data>
-  <data name="&gt;&gt;lblIgnoreLast.Name" xml:space="preserve">
-    <value>lblIgnoreLast</value>
-  </data>
-  <data name="&gt;&gt;lblIgnoreLast.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblIgnoreLast.Parent" xml:space="preserve">
-    <value>gbImages</value>
-  </data>
-  <data name="&gt;&gt;lblIgnoreLast.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblCombineLastVertical.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCombineLastVertical.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 44</value>
-  </data>
-  <data name="lblCombineLastVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
-  </data>
-  <data name="lblCombineLastVertical.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblCombineLastVertical.Text" xml:space="preserve">
-    <value>Last vertical:</value>
-  </data>
-  <data name="&gt;&gt;lblCombineLastVertical.Name" xml:space="preserve">
-    <value>lblCombineLastVertical</value>
-  </data>
-  <data name="&gt;&gt;lblCombineLastVertical.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCombineLastVertical.Parent" xml:space="preserve">
-    <value>gbCombineAdjustments</value>
-  </data>
-  <data name="&gt;&gt;lblCombineLastVertical.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblCombineVertical.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCombineVertical.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 20</value>
-  </data>
-  <data name="lblCombineVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
-  </data>
-  <data name="lblCombineVertical.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblCombineVertical.Text" xml:space="preserve">
-    <value>Vertical:</value>
-  </data>
-  <data name="&gt;&gt;lblCombineVertical.Name" xml:space="preserve">
-    <value>lblCombineVertical</value>
-  </data>
-  <data name="&gt;&gt;lblCombineVertical.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCombineVertical.Parent" xml:space="preserve">
-    <value>gbCombineAdjustments</value>
-  </data>
-  <data name="&gt;&gt;lblCombineVertical.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="nudCombineVertical.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 16</value>
-  </data>
-  <data name="nudCombineVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudCombineVertical.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="nudCombineVertical.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudCombineVertical.Name" xml:space="preserve">
-    <value>nudCombineVertical</value>
-  </data>
-  <data name="&gt;&gt;nudCombineVertical.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudCombineVertical.Parent" xml:space="preserve">
-    <value>gbCombineAdjustments</value>
-  </data>
-  <data name="&gt;&gt;nudCombineVertical.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="nudCombineLastVertical.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 40</value>
-  </data>
-  <data name="nudCombineLastVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudCombineLastVertical.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="nudCombineLastVertical.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudCombineLastVertical.Name" xml:space="preserve">
-    <value>nudCombineLastVertical</value>
-  </data>
-  <data name="&gt;&gt;nudCombineLastVertical.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudCombineLastVertical.Parent" xml:space="preserve">
-    <value>gbCombineAdjustments</value>
-  </data>
-  <data name="&gt;&gt;nudCombineLastVertical.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="lblTrimBottom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1579,6 +1654,57 @@
     <value>gbTrimEdges</value>
   </data>
   <data name="&gt;&gt;nudTrimRight.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="pOutput.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="pOutput.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblProcessing.Name" xml:space="preserve">
+    <value>lblProcessing</value>
+  </data>
+  <data name="&gt;&gt;lblProcessing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProcessing.Parent" xml:space="preserve">
+    <value>pOutput</value>
+  </data>
+  <data name="&gt;&gt;lblProcessing.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pbOutput.Name" xml:space="preserve">
+    <value>pbOutput</value>
+  </data>
+  <data name="&gt;&gt;pbOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbOutput.Parent" xml:space="preserve">
+    <value>pOutput</value>
+  </data>
+  <data name="&gt;&gt;pbOutput.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 136</value>
+  </data>
+  <data name="pOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>961, 490</value>
+  </data>
+  <data name="pOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pOutput.Name" xml:space="preserve">
+    <value>pOutput</value>
+  </data>
+  <data name="&gt;&gt;pOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pOutput.Parent" xml:space="preserve">
+    <value>tpOutput</value>
+  </data>
+  <data name="&gt;&gt;pOutput.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="lblProcessing.AutoSize" type="System.Boolean, mscorlib">

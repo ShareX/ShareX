@@ -66,6 +66,7 @@ namespace ShareX.ScreenCaptureLib
             cbAutoDetectScrollEnd.Checked = Options.AutoDetectScrollEnd;
             cbRemoveDuplicates.Checked = Options.RemoveDuplicates;
             cbAutoCombine.Checked = Options.AfterCaptureAutomaticallyCombine;
+            chkAutoUpload.Checked = Options.AutoUpload;
 
             if (forceSelection || Options.StartSelectionAutomatically)
             {
@@ -231,7 +232,7 @@ namespace ShareX.ScreenCaptureLib
         {
             captureTimer.Stop();
             btnCapture.Text = Resources.ScrollingCaptureForm_StopCapture_Start_capture;
-            this.ShowActivate();
+            if (!Options.AutoUpload) this.ShowActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
             StartingProcess();
             if (Options.RemoveDuplicates) RemoveDuplicates();
@@ -246,8 +247,15 @@ namespace ShareX.ScreenCaptureLib
                 GuessCombineAdjustments();
             }
             CombineAndPreviewImages();
+
             EndingProcess();
             isCapturing = false;
+
+            if (Options.AutoUpload)
+            {
+                StartProcess();
+                Close();
+            }
         }
 
         private void Clean()
@@ -511,10 +519,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
-            if (Result != null)
-            {
-                OnProcessRequested((Image)Result.Clone());
-            }
+            StartProcess();
         }
 
         private void StartingProcess()
@@ -523,6 +528,14 @@ namespace ShareX.ScreenCaptureLib
             CleanPictureBox();
             lblProcessing.Visible = true;
             Application.DoEvents();
+        }
+
+        private void StartProcess()
+        {
+            if (Result != null)
+            {
+                OnProcessRequested((Image)Result.Clone());
+            }
         }
 
         private void EndingProcess()
@@ -656,6 +669,11 @@ namespace ShareX.ScreenCaptureLib
             nudTrimTop.Value = result.Top;
             nudTrimRight.Value = result.Right;
             nudTrimBottom.Value = result.Bottom;
+        }
+
+        private void chkAutoUpload_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.AutoUpload = chkAutoUpload.Checked;
         }
 
         private Padding GuessEdges(Image img1, Image img2)
