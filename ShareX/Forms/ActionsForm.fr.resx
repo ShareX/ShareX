@@ -141,4 +141,7 @@
   <data name="lblPath.Text" xml:space="preserve">
     <value>Chemin du fichier:</value>
   </data>
+  <data name="cbHiddenWindow.Text" xml:space="preserve">
+    <value>Fenêtre cachée</value>
+  </data>
 </root>

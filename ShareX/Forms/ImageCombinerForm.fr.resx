@@ -117,16 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnNo.Text" xml:space="preserve">
-    <value>Non</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Ajouter...</value>
   </data>
-  <data name="btnYes.Text" xml:space="preserve">
-    <value>Oui</value>
+  <data name="lblSpacePixel.Text" xml:space="preserve">
+    <value>pixels</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Ne pas demander à nouveau jusqu'au prochain démarrage de ShareX</value>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Supprimer</value>
   </data>
-  <data name="lblViewChangelog.Text" xml:space="preserve">
-    <value>Voir le changelog</value>
+  <data name="btnMoveUp.Text" xml:space="preserve">
+    <value>Monter</value>
+  </data>
+  <data name="btnMoveDown.Text" xml:space="preserve">
+    <value>Descendre</value>
+  </data>
+  <data name="lblSpace.Text" xml:space="preserve">
+    <value>Espace entre les images:</value>
+  </data>
+  <data name="lblOrientation.Text" xml:space="preserve">
+    <value>Orientation de la combinaison :</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Combineur d'image</value>
+  </data>
+  <data name="chFilepath.Text" xml:space="preserve">
+    <value>Chemin vers l'image</value>
+  </data>
+  <data name="btnCombine.Text" xml:space="preserve">
+    <value>Combiner les images et enregistrer/mettre en ligne en fonction des paramètres "Après la capture"</value>
   </data>
 </root>
