@@ -126,6 +126,8 @@ namespace ShareX.UploadersLib
         VideoBin,
         [Description("MaxFile")]
         MaxFile,
+        [Description("Pomf.cat")]
+        PomfCat,
         [Description("Dropfile")]
         Dropfile,
         [Description("Up1")]
