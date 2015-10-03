@@ -117,16 +117,103 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnNo.Text" xml:space="preserve">
-    <value>Non</value>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Capture</value>
   </data>
-  <data name="btnYes.Text" xml:space="preserve">
-    <value>Oui</value>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>Images</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Ne pas demander à nouveau jusqu'au prochain démarrage de ShareX</value>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>Gauche:</value>
   </data>
-  <data name="lblViewChangelog.Text" xml:space="preserve">
-    <value>Voir le changelog</value>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>Droite:</value>
+  </data>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>Bas:</value>
+  </data>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>Haut:</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Démarrer la capture</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>Supprimer les images en double</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Supprimer les dernières:</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>Traitement en cours ...</value>
+  </data>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>Ajuster les combinaisons</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>Détecter automatiquement la fin du défilement</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Résultat</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>Nombre d'images:</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>Ajuster les contours:</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Vertical:</value>
+  </data>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>Réinitialiser les options</value>
+  </data>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>Mettre en ligne/enregistrer en fonction des paramètres "Après la capture"</value>
+  </data>
+  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
+    <value>Nombre maximal de défilement:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Capture avec défilement </value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Méthode de défilement:</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>Commencer la capture avec défilement immédiatement après la sélection de la région à capturer</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>Démarrer automatiquement la sélection de la région à capture avant d'ouvrir cette fenêtre</value>
+  </data>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>Sélectionner la fenêtre à faire défiler...</value>
+  </data>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(Optionnel) Sélectionner une région personnalisée dans la fenêtre...</value>
+  </data>
+  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
+    <value>Essayer de défiler tout en haut avant la capture</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Départ différé:</value>
+  </data>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>Délai entre défilement:</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Merci de noter que même si ShareX fait de son mieux pour rendre la capture de défilement précise, il n'est pas possible de capturer correctement tous les contenus avec défilement. Les principales raisons qui peuvent causer des problèmes pendant la combinaison sont des mouvements sur l'écran lors de la capture. Ex: si une page web a des GIF animés ou des objets statiques sur l'écran pendant le défilement (par exemple un menu statique ou des boutons qui ne changent pas leur position alors que le reste de la page Web défile).</value>
+  </data>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>Deviner automatiquement les décalages et combiner après la capture</value>
+  </data>
+  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
+    <value>Deviner les ajustement des combinaisons &amp; combiner</value>
+  </data>
+  <data name="btnGuessEdges.Text" xml:space="preserve">
+    <value>Deviner les valeurs des contours à ajuster</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>Dernière image:</value>
   </data>
 </root>

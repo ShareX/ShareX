@@ -470,4 +470,7 @@ Appuyez sur Oui pour ouvrir l'image du presse-papier. Sinon, appuyez sur Non pou
   <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
     <value>Personnalisé</value>
   </data>
+  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
 </root>

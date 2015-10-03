@@ -235,7 +235,7 @@
     <value>Dossier personnel ShareX:</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Afficher le bouton "Télécharger en utilisant ShareX" dans le menu contextuel</value>
+    <value>Afficher le bouton "Mettre en ligne avec ShareX" dans le menu contextuel</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Afficher la progression dans l'icône de la barre des tâches</value>
