@@ -200,6 +200,8 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.tpScrollingCapture = new System.Windows.Forms.TabPage();
+            this.pgScrollingCapture = new System.Windows.Forms.PropertyGrid();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -247,6 +249,7 @@
             this.tpVideoThumbnailer.SuspendLayout();
             this.tpIRCClient.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
+            this.tpScrollingCapture.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -786,6 +789,7 @@
             this.tcCapture.Controls.Add(this.tpCaptureGeneral);
             this.tcCapture.Controls.Add(this.tpRegionCapture);
             this.tcCapture.Controls.Add(this.tpScreenRecorder);
+            this.tcCapture.Controls.Add(this.tpScrollingCapture);
             this.tcCapture.Controls.Add(this.tpRectangleAnnotate);
             resources.ApplyResources(this.tcCapture, "tcCapture");
             this.tcCapture.Name = "tcCapture";
@@ -1655,6 +1659,21 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // tpScrollingCapture
+            // 
+            this.tpScrollingCapture.Controls.Add(this.pgScrollingCapture);
+            resources.ApplyResources(this.tpScrollingCapture, "tpScrollingCapture");
+            this.tpScrollingCapture.Name = "tpScrollingCapture";
+            this.tpScrollingCapture.UseVisualStyleBackColor = true;
+            // 
+            // pgScrollingCapture
+            // 
+            this.pgScrollingCapture.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            resources.ApplyResources(this.pgScrollingCapture, "pgScrollingCapture");
+            this.pgScrollingCapture.Name = "pgScrollingCapture";
+            this.pgScrollingCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgScrollingCapture.ToolbarVisible = false;
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1730,6 +1749,7 @@
             this.tpIRCClient.ResumeLayout(false);
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
+            this.tpScrollingCapture.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1906,5 +1926,7 @@
         private System.Windows.Forms.PropertyGrid pgVideoThumbnailer;
         private System.Windows.Forms.TabPage tpIRCClient;
         private System.Windows.Forms.PropertyGrid pgIRCClient;
+        private System.Windows.Forms.TabPage tpScrollingCapture;
+        private System.Windows.Forms.PropertyGrid pgScrollingCapture;
     }
 }

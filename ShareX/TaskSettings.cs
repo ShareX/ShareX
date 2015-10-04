@@ -417,9 +417,6 @@ namespace ShareX
         Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CapturePath { get; set; }
 
-        [Category("Scrolling capture"), DefaultValue(false), Description("Automatically close scrolling capture window after completing the task.")]
-        public bool AutoCloseScrollingCaptureWindow { get; set; }
-
         [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader."),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> ImageExtensions { get; set; }
