@@ -211,7 +211,7 @@
     <value>DNS setzen fehlgeschlagen mit Fehlercode:</value>
   </data>
   <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Handbuch</value>
+    <value>manuell</value>
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
     <value>Fortschritt: {0:0.0}%
@@ -459,7 +459,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Automatisch</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
-    <value>Handbuch</value>
+    <value>manuell</value>
   </data>
   <data name="ProxyMethod_None" xml:space="preserve">
     <value>Keine</value>
