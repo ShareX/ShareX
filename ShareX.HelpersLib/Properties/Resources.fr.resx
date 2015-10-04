@@ -140,7 +140,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Capture automatique</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Incrémentation du numéro automatique</value>
+    <value>Incrémentation automatique du numéro. Ajouter un 0 au début avec {n}</value>
   </data>
   <data name="ProxyMethod_Automatic" xml:space="preserve">
     <value>Automatique</value>
@@ -230,7 +230,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Copier l'URL dans le presse-papier</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
-    <value>Jour actuel</value>
+    <value>Journée en cours</value>
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Heure actuelle</value>
@@ -254,16 +254,16 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Seconde actuelle</value>
   </data>
   <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
-    <value>Nom de la semaine actuelle (en anglais)</value>
+    <value>Nom de la semaine en cours (en anglais)</value>
   </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
-    <value>Nom de la semaine actuelle (dans la langue locale)</value>
+    <value>Nom de la semaine en cours (dans la langue locale)</value>
   </data>
   <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
-    <value>Année actuelle</value>
+    <value>Année en cours</value>
   </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
-    <value>Année actuelle (2 chiffres)</value>
+    <value>Année en cours (2 chiffres)</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Logiciel de mise en ligne de fichiers personnalisé</value>
@@ -463,10 +463,10 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>QR code</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Caractère alphanumérique aléatoire</value>
+    <value>Caractère alphanumérique aléatoire. Recommencer à l'aide de {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Nombre aléatoire de 0 à 9</value>
+    <value>Nombre aléatoire de 0 à 9. Recommencer à l'aide de {n}</value>
   </data>
   <data name="ResponseType_RedirectionURL" xml:space="preserve">
     <value>URL de redirection</value>
@@ -761,5 +761,65 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
   </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>Activer/Désactiver les raccourcis clavier</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>Caractère hexadécimal aléatoire. Recommencer à l'aide de {n}</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="HotkeyType_IRCClient" xml:space="preserve">
+    <value>Client IRC</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>GUID aléatoire</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>Ordinateur</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
+    <value>Capture d'écran</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
+    <value>Cible</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>Date et heure</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>Incrémentation</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>Combineur d'image</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>Générateur de miniatures de vidéo</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>Capture avec défilement</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>Incrémentation hexadécimal automatique . Ajouter un 0 au début avec {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>Incrémentation automatique en base {n} (1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>Incrémentation alphanumérique automatique sensible à la casse. Ajouter un 0 au début avec {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>Incrémentation alphanumérique automatique insensible à la casse. Ajouter un 0 au début avec {n}</value>
   </data>
 </root>

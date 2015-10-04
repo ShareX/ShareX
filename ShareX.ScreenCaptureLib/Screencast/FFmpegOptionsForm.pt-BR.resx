@@ -224,7 +224,7 @@ Da mesma forma, para qualidade de encoding constante, você irá simplesmente ec
     <value>Usar local personalizado</value>
   </data>
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>Padrão é sierra2_41.</value>
+    <value>Padrão é sierra2_4a.</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
     <value>Padrão é cheio.</value>

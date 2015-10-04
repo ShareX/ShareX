@@ -126,4 +126,7 @@
   <data name="cbDontShow.Text" xml:space="preserve">
     <value>Ne pas demander à nouveau jusqu'au prochain démarrage de ShareX</value>
   </data>
+  <data name="lblViewChangelog.Text" xml:space="preserve">
+    <value>Voir le changelog</value>
+  </data>
 </root>

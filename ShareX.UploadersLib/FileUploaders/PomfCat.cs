@@ -23,25 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Drawing;
-
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.UploadersLib.FileUploaders
 {
-    public class SimpleWindowInfo
+    public sealed class PomfCat : Pomf
     {
-        public IntPtr Handle { get; set; }
-        public Rectangle Rectangle { get; set; }
-
-        public SimpleWindowInfo(IntPtr handle)
+        public PomfCat()
         {
-            Handle = handle;
-        }
-
-        public SimpleWindowInfo(IntPtr handle, Rectangle rect)
-        {
-            Handle = handle;
-            Rectangle = rect;
+            UploadURL = "https://pomf.cat/upload.php";
+            ResultURL = "https://a.pomf.cat";
         }
     }
 }

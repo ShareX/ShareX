@@ -529,7 +529,7 @@
     <value>Monitör testi...</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
-    <value>Yaklama sonrası</value>
+    <value>Yakalama sonrası</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>Yükleme sonrası</value>
@@ -635,5 +635,23 @@
   </data>
   <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
     <value>IRC istemcisi...</value>
+  </data>
+  <data name="btnHideSteam.Text" xml:space="preserve">
+    <value>Sakla</value>
+  </data>
+  <data name="btnOpenSteam.Text" xml:space="preserve">
+    <value>ShareX artık Steam de mevcut!</value>
+  </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>Resim birleştirici...</value>
+  </data>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>Resim birleştirici...</value>
+  </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>Kaydırarak yakalama</value>
+  </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>Kaydırarak yakalama...</value>
   </data>
 </root>

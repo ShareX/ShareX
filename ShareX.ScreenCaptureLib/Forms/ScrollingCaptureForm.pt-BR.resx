@@ -118,102 +118,102 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Scrollopname</value>
+    <value>ShareX - Captura rolante</value>
   </data>
   <data name="btnCapture.Text" xml:space="preserve">
-    <value>Opname starten</value>
-  </data>
-  <data name="gbImages.Text" xml:space="preserve">
-    <value>Afbeeldingen</value>
-  </data>
-  <data name="gbTrimEdges.Text" xml:space="preserve">
-    <value>Afsnijrand</value>
-  </data>
-  <data name="lblCombineVertical.Text" xml:space="preserve">
-    <value>Verticaal:</value>
-  </data>
-  <data name="lblIgnoreLast.Text" xml:space="preserve">
-    <value>Verwijder laatste:</value>
-  </data>
-  <data name="lblImageCount.Text" xml:space="preserve">
-    <value>Aantal afbeeldingen:</value>
-  </data>
-  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
-    <value>Maximum aantal scrolls:</value>
-  </data>
-  <data name="lblProcessing.Text" xml:space="preserve">
-    <value>Verwerken...</value>
-  </data>
-  <data name="lblScrollDelay.Text" xml:space="preserve">
-    <value>Scrollvertraging:</value>
-  </data>
-  <data name="lblScrollMethod.Text" xml:space="preserve">
-    <value>Scrollmethode:</value>
-  </data>
-  <data name="lblStartDelay.Text" xml:space="preserve">
-    <value>Startvertraging:</value>
-  </data>
-  <data name="lblTrimBottom.Text" xml:space="preserve">
-    <value>Beneden:</value>
-  </data>
-  <data name="lblTrimLeft.Text" xml:space="preserve">
-    <value>Links:</value>
-  </data>
-  <data name="lblTrimRight.Text" xml:space="preserve">
-    <value>Rechts:</value>
-  </data>
-  <data name="lblTrimTop.Text" xml:space="preserve">
-    <value>Boven:</value>
-  </data>
-  <data name="tpCapture.Text" xml:space="preserve">
-    <value>Opnemen</value>
-  </data>
-  <data name="tpOutput.Text" xml:space="preserve">
-    <value>Resultaat</value>
-  </data>
-  <data name="lblCombineLastVertical.Text" xml:space="preserve">
-    <value>Laatste verticaal:</value>
+    <value>Iniciar captura</value>
   </data>
   <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
-    <value>Raad combinatie parameters en combineer</value>
+    <value>Adivinhar ajustes de combinação &amp; combinar</value>
   </data>
   <data name="btnGuessEdges.Text" xml:space="preserve">
-    <value>Raad randwaardes om af te snijden</value>
+    <value>Adivinhar valores das bordas para apará-las</value>
   </data>
   <data name="btnResetCombine.Text" xml:space="preserve">
-    <value>Wis resultaat instellingen</value>
+    <value>Resetar opções de saída</value>
   </data>
   <data name="btnSelectHandle.Text" xml:space="preserve">
-    <value>Selecteer venster of element om te scrollen...</value>
+    <value>Selecionar janela ou conteúdo para rolar...</value>
   </data>
   <data name="btnSelectRectangle.Text" xml:space="preserve">
-    <value>(Optioneel) Selecteer eigen regio in scherm...</value>
+    <value>(Opcional) Selecionar região personalizada na janela...</value>
   </data>
   <data name="btnStartTask.Text" xml:space="preserve">
-    <value>Upload/opslaan afhankelijk van opname-instellingen</value>
+    <value>Enviar/salvar depenendo das configurações pós-captura</value>
   </data>
-  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
-    <value>Verwijder dubbele afbeeldingen</value>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Saída</value>
   </data>
-  <data name="gbCombineAdjustments.Text" xml:space="preserve">
-    <value>Pas instellingen combinatie aan</value>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Captura</value>
   </data>
-  <data name="cbAutoCombine.Text" xml:space="preserve">
-    <value>Gok offset en combineer na opname</value>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>Superior:</value>
   </data>
-  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
-    <value>Automatische detectie van einde scrollen</value>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>Inferior:</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Probeer naar de top te scrollen voor opname</value>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>Esquerda:</value>
   </data>
-  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
-    <value>Start scrollopname onmiddelijk na regio selectie</value>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>Direita:</value>
   </data>
-  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
-    <value>Start regio opname automatisch voor het openen van dit scherm</value>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Atraso inicial:</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Método de rolagem:</value>
+  </data>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>Atraso de rolagem:</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>Gelieve op te merken dat desondanks het feit dat ShareX probeert een accurate opname inclusief scrollen te maken, het nog steeds kan gebeuren dat niet alles correct opgenomen wordt. De voornaamste reden hiervoor is bewegende elementen op het scherm (zoals een geanimeerde gif, of een menu dat niet meescrollt), die ervoor zorgen dat niet alles meegenomen wordt tijdens het combineren.</value>
+    <value>Por favor note que enquanto o ShareX se esforça para renderizar uma captura rolante precisa, ainda não é possível capturar corretamente todo conteúdo rolante. As principais razões que podem causar problemas enquanto as imagens são mescladas são movimentos na tela enquanto estiver capturando (por exemplo, se uma página da web possui um GIF animado ou objetos estáticos (que não mudam de posição) na tela enquanto estiver rolando).</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>Processando...</value>
+  </data>
+  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
+    <value>Número máximo de rolagens:</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>Número de imagens:</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Remover última:</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Vertical:</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>Última vertical:</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>Aparar bordas</value>
+  </data>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>Imagens</value>
+  </data>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>Mesclar ajustes</value>
+  </data>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>Adivinhar offsets automaticamente e mesclá-los após a captura</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>Detectar automaticamente o fim da rolagem</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>Remover imagens iguais</value>
+  </data>
+  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
+    <value>Tentar rolar para o topo antes de capturar</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>Iniciar captura rolante imediatamente após a seleção da região de captura</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>Iniciar seleção da região de captura automaticamente antes de abrir esta janela</value>
   </data>
 </root>

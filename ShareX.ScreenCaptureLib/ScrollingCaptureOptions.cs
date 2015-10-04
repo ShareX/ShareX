@@ -24,10 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.ScreenCaptureLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ShareX
 {
@@ -43,6 +39,8 @@ namespace ShareX
         public bool AutoDetectScrollEnd { get; set; } = true;
         public bool RemoveDuplicates { get; set; } = true;
         public bool AfterCaptureAutomaticallyCombine { get; set; } = true;
+        public bool AutoUpload { get; set; } = false;
+        public bool AutoClose { get; set; } = false;
 
         public int TrimLeftEdge { get; set; } = 0;
         public int TrimTopEdge { get; set; } = 0;

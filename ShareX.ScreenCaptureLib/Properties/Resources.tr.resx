@@ -287,4 +287,10 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Sağ tık bırak] [Insert] Alan seçimini bitir</value>
   </data>
+  <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
+    <value>Yakalamayı durdur</value>
+  </data>
+  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
+    <value>Yakalamayı başlat</value>
+  </data>
 </root>

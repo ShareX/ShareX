@@ -648,4 +648,10 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Scrollopname...</value>
   </data>
+  <data name="btnHideSteam.Text" xml:space="preserve">
+    <value>Verberg</value>
+  </data>
+  <data name="btnOpenSteam.Text" xml:space="preserve">
+    <value>ShareX is nu beschikbaar op Steam!</value>
+  </data>
 </root>

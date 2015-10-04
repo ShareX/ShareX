@@ -198,9 +198,6 @@
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Enviar</value>
   </data>
-  <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Captura automática...</value>
   </data>
@@ -638,5 +635,23 @@
   </data>
   <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
     <value>Cliente IRC...</value>
+  </data>
+  <data name="btnHideSteam.Text" xml:space="preserve">
+    <value>Esconder</value>
+  </data>
+  <data name="btnOpenSteam.Text" xml:space="preserve">
+    <value>ShareX está disponível na Steam!</value>
+  </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>Mesclar imagens...</value>
+  </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>Captura rolante...</value>
+  </data>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>Mesclar imagens...</value>
+  </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>Captura rolante...</value>
   </data>
 </root>

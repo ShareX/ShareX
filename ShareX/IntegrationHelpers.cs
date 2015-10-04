@@ -26,10 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -78,21 +75,29 @@ namespace ShareX
 
         public static bool CheckSteamShowInApp()
         {
-            string path = Helpers.GetAbsolutePath("Steam");
-            return File.Exists(path);
+            return File.Exists(Program.SteamInAppPath);
         }
 
-        public static void SteamShowInApp(bool inapp)
+        public static void SteamShowInApp(bool showInApp)
         {
-            string path = Helpers.GetAbsolutePath("Steam");
+            string path = Program.SteamInAppPath;
 
-            if (inapp)
+            try
             {
-                File.Create(path).Dispose();
+                if (showInApp)
+                {
+                    File.Create(path).Dispose();
+                }
+                else if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
             }
-            else if (File.Exists(path))
+            catch (Exception e)
             {
-                File.Delete(path);
+                DebugHelper.WriteException(e);
+                MessageBox.Show(e.ToString(), "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             MessageBox.Show(Resources.ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_,

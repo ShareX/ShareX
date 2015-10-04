@@ -24,8 +24,6 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;

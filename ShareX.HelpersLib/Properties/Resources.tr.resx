@@ -798,4 +798,28 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
     <value>Hedef</value>
   </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>Resim birleştirici</value>
+  </data>
+  <data name="HotkeyType_IRCClient" xml:space="preserve">
+    <value>IRC istemcisi</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>Kaydırarak yakalama</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>Video küçük resim yapıcı</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
 </root>
