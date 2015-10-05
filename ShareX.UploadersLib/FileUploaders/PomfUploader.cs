@@ -23,14 +23,24 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public sealed class PomfCat : Pomf
+    public class PomfUploader
     {
-        public PomfCat()
+        public string Name { get; set; }
+        public string UploadURL { get; set; }
+        public string ResultURL { get; set; }
+
+        public PomfUploader(string name, string uploadURL, string resultURL)
         {
-            UploadURL = "https://pomf.cat/upload.php";
-            ResultURL = "https://a.pomf.cat";
+            Name = name;
+            UploadURL = uploadURL;
+            ResultURL = resultURL;
         }
     }
 }

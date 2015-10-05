@@ -32,12 +32,22 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public class Pomf : FileUploader
     {
-        protected string UploadURL = "https://pomf.se/upload.php";
-        protected string ResultURL = "https://a.pomf.se";
+        public static List<PomfUploader> Uploaders = new List<PomfUploader>()
+        {
+            //new PomfUploader("pomf.se", "https://pomf.se/upload.php", "https://a.pomf.se"),
+            new PomfUploader("maxfile.ro", "https://maxfile.ro/static/upload.php", "https://d.maxfile.ro")
+        };
+
+        public PomfUploader Uploader { get; set; }
+
+        public Pomf(PomfUploader uploader)
+        {
+            Uploader = uploader;
+        }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, UploadURL, fileName, "files[]");
+            UploadResult result = UploadData(stream, Uploader.UploadURL, fileName, "files[]");
 
             if (result.IsSuccess)
             {
@@ -45,7 +55,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (response.success && response.files != null && response.files.Count > 0)
                 {
-                    result.URL = URLHelpers.CombineURL(ResultURL, response.files[0].url);
+                    result.URL = URLHelpers.CombineURL(Uploader.ResultURL, response.files[0].url);
                 }
             }
 

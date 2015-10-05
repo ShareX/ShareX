@@ -1069,11 +1069,8 @@ namespace ShareX
                 case FileDestination.VideoBin:
                     fileUploader = new VideoBin();
                     break;
-                case FileDestination.MaxFile:
-                    fileUploader = new MaxFile();
-                    break;
-                case FileDestination.PomfCat:
-                    fileUploader = new PomfCat();
+                case FileDestination.Pomf:
+                    fileUploader = new Pomf(Pomf.Uploaders[0]);
                     break;
                 case FileDestination.Dropfile:
                     fileUploader = new Dropfile();

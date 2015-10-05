@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System.ComponentModel;
 
 namespace ShareX.UploadersLib
@@ -124,10 +125,8 @@ namespace ShareX.UploadersLib
         Imgrush,
         [Description("VideoBin")]
         VideoBin,
-        [Description("MaxFile")]
-        MaxFile,
-        [Description("Pomf.cat")]
-        PomfCat,
+        [Description("Pomf")]
+        Pomf,
         [Description("Dropfile")]
         Dropfile,
         [Description("Up1")]
