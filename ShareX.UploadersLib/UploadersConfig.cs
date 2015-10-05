@@ -250,6 +250,10 @@ namespace ShareX.UploadersLib
 
         public LambdaSettings LambdaSettings = new LambdaSettings();
 
+        // Pomf
+
+        public PomfUploader PomfUploader = null;
+
         #endregion File uploaders
 
         #region URL shorteners

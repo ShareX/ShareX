@@ -36,7 +36,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string UploadURL { get; set; }
         public string ResultURL { get; set; }
 
-        public PomfUploader(string name, string uploadURL, string resultURL)
+        public PomfUploader(string name, string uploadURL, string resultURL = null)
         {
             Name = name;
             UploadURL = uploadURL;

@@ -34,8 +34,16 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
-            //new PomfUploader("pomf.se", "https://pomf.se/upload.php", "https://a.pomf.se"),
-            new PomfUploader("maxfile.ro", "https://maxfile.ro/static/upload.php", "https://d.maxfile.ro")
+            new PomfUploader("1339.cf", "http://1339.cf/upload.php", "http://b.1339.cf"),
+            new PomfUploader("bucket.pw", "https://bucket.pw/upload.php", "https://dl.bucket.pw"),
+            new PomfUploader("maxfile.ro", "https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
+            new PomfUploader("mixtape.moe", "https://mixtape.moe/upload.php"),
+            new PomfUploader("pantsu.cat", "https://pantsu.cat/upload.php"),
+            new PomfUploader("pomf.cat", "https://pomf.cat/upload.php", "http://a.pomf.cat"),
+            new PomfUploader("pomf.hummingbird.moe", "http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
+            new PomfUploader("pomf.io", "http://pomf.io/upload.php"),
+            new PomfUploader("pomf.pl", "http://pomf.pl/upload.php", "http://i.pomf.pl")
+            //new PomfUploader("pomf.se", "https://pomf.se/upload.php", "https://a.pomf.se")
         };
 
         public PomfUploader Uploader { get; set; }
@@ -55,7 +63,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (response.success && response.files != null && response.files.Count > 0)
                 {
-                    result.URL = URLHelpers.CombineURL(Uploader.ResultURL, response.files[0].url);
+                    string url = response.files[0].url;
+
+                    if (!string.IsNullOrEmpty(Uploader.ResultURL))
+                    {
+                        url = URLHelpers.CombineURL(Uploader.ResultURL, url);
+                    }
+
+                    result.URL = url;
                 }
             }
 

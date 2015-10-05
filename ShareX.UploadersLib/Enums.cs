@@ -117,8 +117,6 @@ namespace ShareX.UploadersLib
         Localhostr,
         [Description("JIRA")]
         Jira,
-        //[Description("hubiC")]
-        //Hubic,
         [Description("Lambda")]
         Lambda,
         [Description("Imgrush")]
