@@ -33,6 +33,7 @@ using ShareX.UploadersLib.TextUploaders;
 using ShareX.UploadersLib.URLShorteners;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -1728,6 +1729,13 @@ namespace ShareX.UploadersLib
                 lvCustomUploaderArguments.Items.Add(arg.Key).SubItems.Add(arg.Value);
             }
 
+            foreach (KeyValuePair<string, string> arg in customUploader.Headers)
+            {
+                var arguments = lvCustomUploaderArguments.Items.Add(arg.Key);
+                arguments.SubItems.Add(arg.Value);
+                arguments.SubItems.Add("Y", Color.Yellow, Color.Transparent, this.Font);
+            }
+
             cbCustomUploaderResponseType.SelectedIndex = (int)customUploader.ResponseType;
             txtCustomUploaderRegexp.Text = string.Empty;
             lvCustomUploaderRegexps.Items.Clear();
@@ -1746,6 +1754,14 @@ namespace ShareX.UploadersLib
             CustomUploaderItem item = new CustomUploaderItem(txtCustomUploaderName.Text);
             foreach (ListViewItem lvItem in lvCustomUploaderArguments.Items)
             {
+                if (lvItem.SubItems.Count > 2)
+                {
+                    if (lvItem.SubItems[2].Text == "Y")
+                    {
+                        item.Headers.Add(lvItem.Text, lvItem.SubItems[1].Text);
+                    }
+                }
+                else
                 item.Arguments.Add(lvItem.Text, lvItem.SubItems[1].Text);
             }
 

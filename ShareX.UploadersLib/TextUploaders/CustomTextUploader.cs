@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -56,20 +57,20 @@ namespace ShareX.UploadersLib.TextUploaders
             {
                 if (string.IsNullOrEmpty(customUploader.FileFormName))
                 {
-                    result.Response = SendRequest(HttpMethod.POST, requestURL, args, responseType: customUploader.ResponseType);
+                    result.Response = SendRequest(HttpMethod.POST, requestURL, args, headers: customUploader.Headers.ToNameValueCollection(), responseType: customUploader.ResponseType);
                 }
                 else
                 {
                     byte[] byteArray = Encoding.UTF8.GetBytes(text);
                     using (MemoryStream stream = new MemoryStream(byteArray))
                     {
-                        result = UploadData(stream, requestURL, fileName, customUploader.GetFileFormName(), args, responseType: customUploader.ResponseType);
+                        result = UploadData(stream, requestURL, fileName, customUploader.GetFileFormName(), args, headers: customUploader.Headers.ToNameValueCollection(), responseType: customUploader.ResponseType);
                     }
                 }
             }
             else
             {
-                result.Response = SendRequest(customUploader.GetHttpMethod(), requestURL, args, responseType: customUploader.ResponseType);
+                result.Response = SendRequest(customUploader.GetHttpMethod(), requestURL, args, headers: customUploader.Headers.ToNameValueCollection(), responseType: customUploader.ResponseType);
             }
 
             customUploader.ParseResponse(result);

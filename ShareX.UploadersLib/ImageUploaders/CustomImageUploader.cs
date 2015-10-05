@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.HelperClasses;
 using System;
 using System.IO;
 
@@ -44,7 +45,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 throw new Exception("'Request type' must be 'POST' when using custom image uploader.");
             }
 
-            UploadResult result = UploadData(stream, customUploader.GetRequestURL(), fileName, customUploader.GetFileFormName(), customUploader.GetArguments(), responseType: customUploader.ResponseType);
+            UploadResult result = UploadData(stream, customUploader.GetRequestURL(), fileName, customUploader.GetFileFormName(), customUploader.GetArguments(), headers: customUploader.GetHeaders().ToNameValueCollection(), responseType: customUploader.ResponseType);
 
             if (result.IsSuccess)
             {
