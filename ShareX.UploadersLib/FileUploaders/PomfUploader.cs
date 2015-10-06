@@ -36,11 +36,25 @@ namespace ShareX.UploadersLib.FileUploaders
         public string UploadURL { get; set; }
         public string ResultURL { get; set; }
 
+        public PomfUploader()
+        {
+        }
+
         public PomfUploader(string name, string uploadURL, string resultURL = null)
         {
             Name = name;
             UploadURL = uploadURL;
             ResultURL = resultURL;
+        }
+
+        public override string ToString()
+        {
+            if (!string.IsNullOrEmpty(Name))
+            {
+                return Name;
+            }
+
+            return UploadURL;
         }
     }
 }

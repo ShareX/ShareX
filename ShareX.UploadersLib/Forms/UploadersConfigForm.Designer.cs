@@ -295,6 +295,13 @@
             this.lblLambdaInfo = new System.Windows.Forms.Label();
             this.lblLambdaApiKey = new System.Windows.Forms.Label();
             this.txtLambdaApiKey = new System.Windows.Forms.TextBox();
+            this.tpPomf = new System.Windows.Forms.TabPage();
+            this.txtPomfResultURL = new System.Windows.Forms.TextBox();
+            this.txtPomfUploadURL = new System.Windows.Forms.TextBox();
+            this.lblPomfResultURL = new System.Windows.Forms.Label();
+            this.lblPomfUploadURL = new System.Windows.Forms.Label();
+            this.lblPomfUploaders = new System.Windows.Forms.Label();
+            this.cbPomfUploaders = new System.Windows.Forms.ComboBox();
             this.tpUp1 = new System.Windows.Forms.TabPage();
             this.txtUp1Key = new System.Windows.Forms.TextBox();
             this.txtUp1Host = new System.Windows.Forms.TextBox();
@@ -480,6 +487,7 @@
             this.tpJira.SuspendLayout();
             this.gpJiraServer.SuspendLayout();
             this.tpLambda.SuspendLayout();
+            this.tpPomf.SuspendLayout();
             this.tpUp1.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
@@ -1325,6 +1333,7 @@
             this.tcFileUploaders.Controls.Add(this.tpMinus);
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpLambda);
+            this.tcFileUploaders.Controls.Add(this.tpPomf);
             this.tcFileUploaders.Controls.Add(this.tpUp1);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
@@ -2438,6 +2447,53 @@
             this.txtLambdaApiKey.Name = "txtLambdaApiKey";
             this.txtLambdaApiKey.UseSystemPasswordChar = true;
             this.txtLambdaApiKey.TextChanged += new System.EventHandler(this.txtLambdaApiKey_TextChanged);
+            // 
+            // tpPomf
+            // 
+            this.tpPomf.Controls.Add(this.txtPomfResultURL);
+            this.tpPomf.Controls.Add(this.txtPomfUploadURL);
+            this.tpPomf.Controls.Add(this.lblPomfResultURL);
+            this.tpPomf.Controls.Add(this.lblPomfUploadURL);
+            this.tpPomf.Controls.Add(this.lblPomfUploaders);
+            this.tpPomf.Controls.Add(this.cbPomfUploaders);
+            resources.ApplyResources(this.tpPomf, "tpPomf");
+            this.tpPomf.Name = "tpPomf";
+            this.tpPomf.UseVisualStyleBackColor = true;
+            // 
+            // txtPomfResultURL
+            // 
+            resources.ApplyResources(this.txtPomfResultURL, "txtPomfResultURL");
+            this.txtPomfResultURL.Name = "txtPomfResultURL";
+            this.txtPomfResultURL.TextChanged += new System.EventHandler(this.txtPomfResultURL_TextChanged);
+            // 
+            // txtPomfUploadURL
+            // 
+            resources.ApplyResources(this.txtPomfUploadURL, "txtPomfUploadURL");
+            this.txtPomfUploadURL.Name = "txtPomfUploadURL";
+            this.txtPomfUploadURL.TextChanged += new System.EventHandler(this.txtPomfUploadURL_TextChanged);
+            // 
+            // lblPomfResultURL
+            // 
+            resources.ApplyResources(this.lblPomfResultURL, "lblPomfResultURL");
+            this.lblPomfResultURL.Name = "lblPomfResultURL";
+            // 
+            // lblPomfUploadURL
+            // 
+            resources.ApplyResources(this.lblPomfUploadURL, "lblPomfUploadURL");
+            this.lblPomfUploadURL.Name = "lblPomfUploadURL";
+            // 
+            // lblPomfUploaders
+            // 
+            resources.ApplyResources(this.lblPomfUploaders, "lblPomfUploaders");
+            this.lblPomfUploaders.Name = "lblPomfUploaders";
+            // 
+            // cbPomfUploaders
+            // 
+            this.cbPomfUploaders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPomfUploaders.FormattingEnabled = true;
+            resources.ApplyResources(this.cbPomfUploaders, "cbPomfUploaders");
+            this.cbPomfUploaders.Name = "cbPomfUploaders";
+            this.cbPomfUploaders.SelectedIndexChanged += new System.EventHandler(this.cbPomfUploaders_SelectedIndexChanged);
             // 
             // tpUp1
             // 
@@ -3573,6 +3629,8 @@
             this.gpJiraServer.PerformLayout();
             this.tpLambda.ResumeLayout(false);
             this.tpLambda.PerformLayout();
+            this.tpPomf.ResumeLayout(false);
+            this.tpPomf.PerformLayout();
             this.tpUp1.ResumeLayout(false);
             this.tpUp1.PerformLayout();
             this.tpEmail.ResumeLayout(false);
@@ -4032,5 +4090,12 @@
         private System.Windows.Forms.CheckBox cbImgurUseGIFV;
         private System.Windows.Forms.ListBox lbTwitterAccounts;
         private System.Windows.Forms.Button btnTwitterNameUpdate;
+        private System.Windows.Forms.TabPage tpPomf;
+        private System.Windows.Forms.Label lblPomfResultURL;
+        private System.Windows.Forms.Label lblPomfUploadURL;
+        private System.Windows.Forms.Label lblPomfUploaders;
+        private System.Windows.Forms.ComboBox cbPomfUploaders;
+        private System.Windows.Forms.TextBox txtPomfUploadURL;
+        private System.Windows.Forms.TextBox txtPomfResultURL;
     }
 }

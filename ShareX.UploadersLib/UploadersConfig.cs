@@ -252,7 +252,7 @@ namespace ShareX.UploadersLib
 
         // Pomf
 
-        public PomfUploader PomfUploader = null;
+        public PomfUploader PomfUploader = new PomfUploader();
 
         #endregion File uploaders
 

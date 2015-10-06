@@ -76,9 +76,9 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpAmazonS3, Resources.AmazonS3);
             AddIconToTab(tpBitly, Resources.Bitly);
             AddIconToTab(tpBox, Resources.Box);
-            AddIconToTab(tpCopy, Resources.Copy);
             AddIconToTab(tpChevereto, Resources.Chevereto);
             AddIconToTab(tpCoinURL, Resources.CoinURL);
+            AddIconToTab(tpCopy, Resources.Copy);
             AddIconToTab(tpCustomUploaders, Resources.globe_network);
             AddIconToTab(tpDropbox, Resources.Dropbox);
             AddIconToTab(tpEmail, Resources.mail);
@@ -93,26 +93,27 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpImageShack, Resources.ImageShack);
             AddIconToTab(tpImgur, Resources.Imgur);
             AddIconToTab(tpJira, Resources.jira);
+            AddIconToTab(tpLambda, Resources.Lambda);
             AddIconToTab(tpMediaFire, Resources.MediaFire);
             AddIconToTab(tpMega, Resources.Mega);
             AddIconToTab(tpMinus, Resources.Minus);
             AddIconToTab(tpOneDrive, Resources.OneDrive);
+            AddIconToTab(tpOneTimeSecret, Resources.OneTimeSecret);
             AddIconToTab(tpOwnCloud, Resources.OwnCloud);
-            AddIconToTab(tpPastebin, Resources.Pastebin);
             AddIconToTab(tpPaste_ee, Resources.page_white_text);
+            AddIconToTab(tpPastebin, Resources.Pastebin);
             AddIconToTab(tpPhotobucket, Resources.Photobucket);
             AddIconToTab(tpPicasa, Resources.Picasa);
+            AddIconToTab(tpPolr, Resources.Polr);
+            AddIconToTab(tpPomf, Resources.Pomf);
             AddIconToTab(tpPushbullet, Resources.Pushbullet);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
             AddIconToTab(tpTwitter, Resources.Twitter);
+            AddIconToTab(tpUp1, Resources.Up1);
             AddIconToTab(tpUpaste, Resources.Upaste);
             AddIconToTab(tpYourls, Resources.Yourls);
-            AddIconToTab(tpLambda, Resources.Lambda);
-            AddIconToTab(tpUp1, Resources.Up1);
-            AddIconToTab(tpOneTimeSecret, Resources.OneTimeSecret);
-            AddIconToTab(tpPolr, Resources.Polr);
 
             ttlvMain.ImageList = uploadersImageList;
             ttlvMain.MainTabControl = tcUploaders;
@@ -549,6 +550,13 @@ namespace ShareX.UploadersLib
             // Lambda
 
             txtLambdaApiKey.Text = Config.LambdaSettings.UserAPIKey;
+
+            // Pomf
+
+            if (Config.PomfUploader == null) Config.PomfUploader = new PomfUploader();
+            cbPomfUploaders.Items.AddRange(Pomf.Uploaders.ToArray());
+            txtPomfUploadURL.Text = Config.PomfUploader.UploadURL;
+            txtPomfResultURL.Text = Config.PomfUploader.ResultURL;
 
             #endregion File uploaders
 
@@ -2007,6 +2015,34 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Lambda
+
+        #region Pomf
+
+        private void cbPomfUploaders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbPomfUploaders.SelectedIndex > -1)
+            {
+                PomfUploader uploader = cbPomfUploaders.SelectedItem as PomfUploader;
+
+                if (uploader != null)
+                {
+                    txtPomfUploadURL.Text = uploader.UploadURL;
+                    txtPomfResultURL.Text = uploader.ResultURL;
+                }
+            }
+        }
+
+        private void txtPomfUploadURL_TextChanged(object sender, EventArgs e)
+        {
+            Config.PomfUploader.UploadURL = txtPomfUploadURL.Text;
+        }
+
+        private void txtPomfResultURL_TextChanged(object sender, EventArgs e)
+        {
+            Config.PomfUploader.ResultURL = txtPomfResultURL.Text;
+        }
+
+        #endregion Pomf
 
         #endregion File Uploaders
 
