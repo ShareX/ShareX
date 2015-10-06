@@ -63,7 +63,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (Uploader == null || string.IsNullOrEmpty(Uploader.UploadURL))
             {
-                Errors.Add("Please select one of Pomf uploaders from \"Destination settings -> Pomf tab\".");
+                Errors.Add("Please select one of Pomf uploaders from \"Destination settings window -> Pomf tab\".");
                 return null;
             }
 

@@ -1070,7 +1070,7 @@ namespace ShareX
                     fileUploader = new VideoBin();
                     break;
                 case FileDestination.Pomf:
-                    fileUploader = new Pomf(Pomf.Uploaders[0]);
+                    fileUploader = new Pomf(Program.UploadersConfig.PomfUploader);
                     break;
                 case FileDestination.Dropfile:
                     fileUploader = new Dropfile();
