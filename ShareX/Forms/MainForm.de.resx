@@ -139,16 +139,16 @@
     <value>Fenster</value>
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
-    <value>Rechteck</value>
+    <value>Region</value>
   </data>
   <data name="tsmiWindowRectangle.Text" xml:space="preserve">
     <value>Rechteck (Objekte)</value>
   </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rechteck (Anmerkung)</value>
+    <value>Region (Anmerkung)</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>Rechteck (einfach)</value>
+    <value>Region (Einfach)</value>
   </data>
   <data name="tsmiPolygon.Text" xml:space="preserve">
     <value>Vieleck</value>
@@ -298,10 +298,10 @@
     <value>Hochladen abbrechen</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
-    <value>gekürzter URL</value>
+    <value>Gekürzter URL</value>
   </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
-    <value>Löschung des URLs</value>
+    <value>Löschungs-URL</value>
   </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>Datei</value>
@@ -316,10 +316,10 @@
     <value>Öffnen</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
-    <value>gekürzter URL</value>
+    <value>Gekürzter URL</value>
   </data>
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
-    <value>Löschung der URL</value>
+    <value>Löschungs-URL</value>
   </data>
   <data name="tsmiCopyFile.Text" xml:space="preserve">
     <value>Datei</value>
@@ -409,16 +409,16 @@
     <value>Fenster</value>
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
-    <value>Rechteck</value>
+    <value>Region</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
     <value>Rechteck (Objekte)</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rechteck (Anmerkung)</value>
+    <value>Region (Anmerkung)</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
-    <value>Rechteck (einfach)</value>
+    <value>Region (Einfach)</value>
   </data>
   <data name="tsmiTrayPolygon.Text" xml:space="preserve">
     <value>Vieleck</value>
@@ -568,7 +568,7 @@
     <value>Text</value>
   </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
-    <value>Miniatur-URL</value>
+    <value>Thumbnail-URL</value>
   </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>URL</value>
@@ -602,5 +602,56 @@
   </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>letzte Links</value>
+  </data>
+  <data name="btnHideSteam.Text" xml:space="preserve">
+    <value>Verstecken</value>
+  </data>
+  <data name="btnOpenSteam.Text" xml:space="preserve">
+    <value>ShareX ist jetzt auf Steam verfügbar!</value>
+  </data>
+  <data name="tsmiAutomate.Text" xml:space="preserve">
+    <value>Automatisieren...</value>
+  </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>Bildverbinder...</value>
+  </data>
+  <data name="tsmiIRCClient.Text" xml:space="preserve">
+    <value>IRC-Programm...</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>Region (Transparent)</value>
+  </data>
+  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
+    <value>Automatisieren...</value>
+  </data>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>Bildverbinder...</value>
+  </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>Scroll Aufnahme...</value>
+  </data>
+  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
+    <value>IRC-Programm...</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>Region (Transparent)</value>
+  </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>Scroll Aufnahme...</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>Hotkeys deaktivieren</value>
+  </data>
+  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
+    <value>Webpage Aufnahme...</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>Video thumbnailer...</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>Video Thumbnailer...</value>
+  </data>
+  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
+    <value>Webpage Aufnahme...</value>
   </data>
 </root>

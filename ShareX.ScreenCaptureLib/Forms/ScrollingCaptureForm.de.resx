@@ -118,6 +118,102 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Autorisierung</value>
+    <value>ShareX - Scrollaufnahme</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Aufnahme starten</value>
+  </data>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>Ausgabeoptionen zurücksetzen</value>
+  </data>
+  <data name="btnGuessEdges.Text" xml:space="preserve">
+    <value>Rate abzuschneidende Kantenwerte</value>
+  </data>
+  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
+    <value>Rate Verbindungsanpassungen &amp; Verbinde</value>
+  </data>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>Wähle Fenster oder Steuerung zum Scrollen aus...</value>
+  </data>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(Optional) Wähle angepasste Region im Fenster aus...</value>
+  </data>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>Lade Hoch/Speichere abhängig von den "Nach der Aufnahme" Einstellungen</value>
+  </data>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>Rate automatisch die Abstände und Verbinde nach der Aufnahme</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>Erkenne automatisch das Scrollende</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>Entferne doppelte Bilder</value>
+  </data>
+  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
+    <value>Versuche vor der Aufnahme nach Oben zu scrollen</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>Starte Scrollaufnahme sofort nach der Auswahl der Aufnahmeregion</value>
+  </data>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>Bilder</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>Kanten beschneiden</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>Letzte vertikal:</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Vertikal:</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Entferne letzte:</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>Bildanzahl:</value>
+  </data>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>Verbinde Anpassungen</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>Starte automatisch die Auswahl der Aufnahmeregion vor der Öffnung dieses Fensters</value>
+  </data>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>Lade Hoch/Speichere automatisch abhängig von den "Nach der Aufnahme" Einstellungen und schließe</value>
+  </data>
+  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
+    <value>Maximale Scrollanzahl:</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>Bearbeite...</value>
+  </data>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>Scrollverzögerung:</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Scrollmethode:</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Anfangsverzögerung:</value>
+  </data>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>Unten:</value>
+  </data>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>Links:</value>
+  </data>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>Rechts:</value>
+  </data>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>Oben:</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Aufnehmen</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Ausgabe</value>
   </data>
 </root>

@@ -118,6 +118,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Autorisierung</value>
+    <value>ShareX - Bildverbinder</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Hinzufügen...</value>
+  </data>
+  <data name="btnMoveDown.Text" xml:space="preserve">
+    <value>Nach oben bewegen</value>
+  </data>
+  <data name="btnMoveUp.Text" xml:space="preserve">
+    <value>Nach unten bewegen</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="chFilepath.Text" xml:space="preserve">
+    <value>Bildpfad</value>
+  </data>
+  <data name="lblSpace.Text" xml:space="preserve">
+    <value>Platz zwischen Bildern:</value>
+  </data>
+  <data name="lblSpacePixel.Text" xml:space="preserve">
+    <value>pixel</value>
+  </data>
+  <data name="lblOrientation.Text" xml:space="preserve">
+    <value>Verbindungs-Ausrichtung:</value>
+  </data>
+  <data name="btnCombine.Text" xml:space="preserve">
+    <value>Verbinde Bilder und speichere/lade hoch, abhängig von den "Nach der Aufnahme" Einstellungen</value>
   </data>
 </root>

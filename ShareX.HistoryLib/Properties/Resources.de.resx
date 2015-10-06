@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -201,7 +202,7 @@
     <value>URLs ({0})</value>
   </data>
   <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Name kopieren</value>
+    <value>Namen kopieren</value>
   </data>
   <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
     <value>Wert kopieren</value>
@@ -211,5 +212,11 @@
   </data>
   <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
     <value>Wert</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
+    <value>Fehler beim Lesen der XML Datei: {0}</value>
   </data>
 </root>

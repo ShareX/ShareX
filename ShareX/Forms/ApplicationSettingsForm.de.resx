@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -266,5 +266,11 @@
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
     <value>Erneut versuchen</value>
+  </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>Zeige "In-App" in Steam, während ShareX geöffnet ist</value>
+  </data>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>Chrome-Erweiterung...</value>
   </data>
 </root>

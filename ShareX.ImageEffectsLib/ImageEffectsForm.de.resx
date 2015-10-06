@@ -144,4 +144,13 @@
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Bild speichern...</value>
   </data>
+  <data name="mbLoadImage.Text" xml:space="preserve">
+    <value>Bild laden</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>Aus der Zwischenablage</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>Aus Datei...</value>
+  </data>
 </root>
