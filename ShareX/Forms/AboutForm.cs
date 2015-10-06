@@ -80,7 +80,7 @@ CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://githu
 {1}:
 
 Turkish: https://github.com/Jaex & https://github.com/muratmoon
-German: https://github.com/Starbug2
+German: https://github.com/Starbug2 & https://github.com/Kaeltis
 French: https://github.com/nwies & https://github.com/Shadorc
 Simplified Chinese: https://github.com/jiajiechan
 Hungarian: https://github.com/devBluestar

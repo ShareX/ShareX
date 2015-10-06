@@ -250,4 +250,10 @@ Hergestellte Ordner:</value>
   <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
     <value>Hubic Erneuerung der Ordnerliste fehlgeschlagen</value>
   </data>
+  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>Kann kein gültiges FTP Konto finden.</value>
+  </data>
+  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>Das FTP-Programm unterstützt nur FTP oder FTPS.</value>
+  </data>
 </root>

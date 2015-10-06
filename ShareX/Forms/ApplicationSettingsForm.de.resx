@@ -273,4 +273,7 @@
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Chrome-Erweiterung...</value>
   </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>Integration</value>
+  </data>
 </root>
