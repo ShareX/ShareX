@@ -252,7 +252,7 @@ namespace ShareX.UploadersLib
 
         // Pomf
 
-        public PomfUploader PomfUploader = new PomfUploader();
+        public PomfUploader PomfUploader = Pomf.DefaultUploader;
 
         #endregion File uploaders
 
@@ -421,6 +421,8 @@ namespace ShareX.UploadersLib
                     return OAuthInfo.CheckOAuth(JiraOAuthInfo);
                 case FileDestination.Lambda:
                     return LambdaSettings != null && !string.IsNullOrEmpty(LambdaSettings.UserAPIKey);
+                case FileDestination.Pomf:
+                    return PomfUploader != null && !string.IsNullOrEmpty(PomfUploader.UploadURL);
                 case FileDestination.SharedFolder:
                     return LocalhostAccountList != null && LocalhostAccountList.IsValidIndex(LocalhostSelectedFiles);
                 case FileDestination.Email:

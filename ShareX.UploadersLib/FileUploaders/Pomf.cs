@@ -25,8 +25,10 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -52,7 +54,15 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("up.che.moe", "http://up.che.moe/upload.php", "http://cdn.che.moe")
         };
 
-        public PomfUploader Uploader { get; set; }
+        public static PomfUploader DefaultUploader
+        {
+            get
+            {
+                return Uploaders.FirstOrDefault(x => x.Name.Equals("pomf.cat", StringComparison.InvariantCultureIgnoreCase));
+            }
+        }
+
+        public PomfUploader Uploader { get; private set; }
 
         public Pomf(PomfUploader uploader)
         {
