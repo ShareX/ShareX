@@ -199,7 +199,7 @@
     <value>Gesetzte Dauer:</value>
   </data>
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Screenshot Verzögerung</value>
+    <value>Screenshot Verzögerung:</value>
   </data>
   <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
     <value>Zeige "Nach der Aufnahme Aufgaben" Fenster nachdem die Aufgabe gemacht wurde</value>
@@ -262,19 +262,19 @@
     <value>Benutze Aktionen im Hauptfenster Aufgabeneinstellungen</value>
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Benutze erweiterte Einstellunegn im Hauptfenster Aufgabeneinstellungen </value>
+    <value>Benutze erweiterte Einstellungen in den Hauptfenster Aufgabeneinstellungen </value>
   </data>
   <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Benutze Aufnahmeeinstellungen im Hauptfenster Aufgabeneinstellungen</value>
+    <value>Benutze Aufnahmeeinstellungen in den Hauptfenster Aufgabeneinstellungen</value>
   </data>
   <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Benutze allgemeine Einstellungen im Hauptfenster Aufgabeneinstellungen</value>
+    <value>Benutze allgemeine Einstellungen in den Hauptfenster Aufgabeneinstellungen</value>
   </data>
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Benutze Bildeinstellungen im Hauptfenster Aufgabeneinstellungen</value>
+    <value>Benutze Bildeinstellungen in den Hauptfenster Aufgabeneinstellungen</value>
   </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Benutze Hochladeeinstellungen im Hauptfenster Aufgabeneinstellungen</value>
+    <value>Benutze Hochladeeinstellungen in den Hauptfenster Aufgabeneinstellungen</value>
   </data>
   <data name="chWatchFolderFilter.Text" xml:space="preserve">
     <value>Filter</value>
@@ -419,5 +419,41 @@
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>FFmpeg Optionen...</value>
+  </data>
+  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>Benutze angepasste Zeitzone:</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>Zeige Mauszeiger in der Aufnahme</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
+    <value>Benutze Werkzeugeinstellungen in den Hauptfenster Aufgabeneinstellungen</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>Höhe</value>
+  </data>
+  <data name="lblGIFEncoding.Text" xml:space="preserve">
+    <value>GIF encoder:</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>Breite</value>
+  </data>
+  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
+    <value>Wähle einen Monitor für die angepasste Region aus:</value>
+  </data>
+  <data name="tpIRCClient.Text" xml:space="preserve">
+    <value>IRC-Programm</value>
+  </data>
+  <data name="tpScrollingCapture.Text" xml:space="preserve">
+    <value>Scroll Aufnahme</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>Werkzeuge</value>
+  </data>
+  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
+    <value>Video thumbnailer</value>
   </data>
 </root>

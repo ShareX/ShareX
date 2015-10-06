@@ -188,4 +188,40 @@ Wenn der Output gut aussieht, dann versuche einen höheren Wert und wenn es dann
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>Die Spanne ist 0-10, wobei 10 die höchste Qualität ist. 3-6 ist eine gute Spanne zum Versuchen. Standard ist 3</value>
   </data>
+  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
+    <value>Aufnahmegeräte Installieren</value>
+  </data>
+  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
+    <value>Standard ist "full".</value>
+  </data>
+  <data name="cbGIFDither.ToolTip" xml:space="preserve">
+    <value>Standard ist "sierra2_4a".</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>Angepassten Pfad verwenden</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>FFmpeg Pfad</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Dithering Modus:</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Palette Modus:</value>
+  </data>
+  <data name="lblHelperDevices.Text" xml:space="preserve">
+    <value>Installiert "screen-capture-recorder" und "virtual-audio-capturer" video/audio Quelle.</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Variable Bitrate:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>Variable Bitrate:</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Voreinstellung:</value>
+  </data>
+  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
+    <value>1 ist die höchste Qualität/Dateigröße und 31 die niedrigste Qualität/kleinste Dateigröße.</value>
+  </data>
 </root>

@@ -117,7 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Autorisierung</value>
+  <data name="IRCClientForm_Connect_Disconnect" xml:space="preserve">
+    <value>Trennen</value>
+  </data>
+  <data name="IRCClientForm_Disconnect_Connect" xml:space="preserve">
+    <value>Verbinden</value>
   </data>
 </root>

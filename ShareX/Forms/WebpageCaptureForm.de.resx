@@ -118,6 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Autorisierung</value>
+    <value>ShareX - Webpage Aufnahme</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Aufnahme</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
+  <data name="lblCaptureDelay.Text" xml:space="preserve">
+    <value>Verzögerung:</value>
+  </data>
+  <data name="lblWebpageSize.Text" xml:space="preserve">
+    <value>Browser Größe:</value>
   </data>
 </root>

@@ -123,4 +123,10 @@
   <data name="btnYes.Text" xml:space="preserve">
     <value>Ja</value>
   </data>
+  <data name="lblViewChangelog.Text" xml:space="preserve">
+    <value>Änderungen ansehen</value>
+  </data>
+  <data name="cbDontShow.Text" xml:space="preserve">
+    <value>Nicht erneut bis zum nächsten ShareX Start auffordern</value>
+  </data>
 </root>

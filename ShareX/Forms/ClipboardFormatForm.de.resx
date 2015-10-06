@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -126,9 +127,9 @@
     <value>OK</value>
   </data>
   <data name="lblFilter.Text" xml:space="preserve">
-    <value>Format</value>
+    <value>Format:</value>
   </data>
   <data name="lblFolderPath.Text" xml:space="preserve">
-    <value>Beschreiben</value>
+    <value>Beschreiben:</value>
   </data>
 </root>

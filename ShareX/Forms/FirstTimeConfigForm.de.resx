@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Autorisierung</value>
+  <data name="cbRunStartup.Text" xml:space="preserve">
+    <value>ShareX mit Windows startwn</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Zeige ShareX im "Senden an" Menü</value>
+  </data>
+  <data name="cbShellContextMenuButton.Text" xml:space="preserve">
+    <value>Zeige "Mit ShareX hochladen" im Windows Explorer Kontextmenü</value>
+  </data>
+  <data name="cbSteamInApp.Text" xml:space="preserve">
+    <value>Zeige "In-App" in Steam, während ShareX geöffnet ist</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>ShareX Erstkonfiguration</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Du kannst diese Einstellungen in "Programmeinstellungen -&gt; Integrationen" finden.</value>
   </data>
 </root>
