@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -132,7 +133,7 @@
     <value>Warten, bis Aufgabe fertig ist</value>
   </data>
   <data name="gbRegion.Text" xml:space="preserve">
-    <value>Region:</value>
+    <value>Region</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
     <value>Wiederholzeit:</value>

@@ -118,6 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Autorisierung</value>
+    <value>ShareX - Automatisieren</value>
+  </data>
+  <data name="btnAddMouseMove.Text" xml:space="preserve">
+    <value>Zeigerposition hinzufügen</value>
+  </data>
+  <data name="btnLoadExample.Text" xml:space="preserve">
+    <value>Beispiel laden</value>
+  </data>
+  <data name="btnRemoveScript.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnRun.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="btnSaveScript.Text" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="chScriptName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lblFunctions.Text" xml:space="preserve">
+    <value>Funktionen:</value>
+  </data>
+  <data name="lblKeys.Text" xml:space="preserve">
+    <value>Tasten:</value>
+  </data>
+  <data name="lblLineDelayMiliseconds.Text" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="lblScriptName.Text" xml:space="preserve">
+    <value>Script Name:</value>
+  </data>
+  <data name="lblLineDelay.Text" xml:space="preserve">
+    <value>Zeilenverzögerung:</value>
   </data>
 </root>

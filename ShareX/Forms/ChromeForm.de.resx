@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnInstallExtension.Text" xml:space="preserve">
+    <value>ShareX Chrome-Erweiterung installieren</value>
+  </data>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>Chrome Unterstützung aktivieren</value>
+  </data>
+  <data name="btnUnregister.Text" xml:space="preserve">
+    <value>Chrome Unterstützung deaktivieren</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Autorisierung</value>
+    <value>ShareX - Chrome-Erweiterung</value>
+  </data>
+  <data name="lbl1.Text" xml:space="preserve">
+    <value>1. Aktiviere Chrome Unterstützung, da die Erweiterung sonst nicht mit ShareX interagieren kann.</value>
+  </data>
+  <data name="lbl2.Text" xml:space="preserve">
+    <value>2. Installiere die Chrome-Erweiterung vom Chrome web store.</value>
+  </data>
+  <data name="lbl3.Text" xml:space="preserve">
+    <value>3. In Chrome wird nach einem Rechtsklick auf ein Bild, Video, Audio oder Textauswahl ein "Upload with ShareX" Button im Kontextmenü angezeigt.</value>
   </data>
 </root>
