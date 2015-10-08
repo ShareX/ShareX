@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (response != null && response.Status == 0)
                 {
                     result.URL = response.URL;
-                    result.DeletionURL = response.URL + "+" + response.Access_key;
+                    result.DeletionURL = response.URL.Replace("dropfile.to/", "dropfile.to/api/") + "?delete=" + response.Access_key;
                 }
             }
 
