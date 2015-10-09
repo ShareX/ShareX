@@ -49,7 +49,7 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("pomf.cat", "https://pomf.cat/upload.php", "http://a.pomf.cat"),
             new PomfUploader("pomf.hummingbird.moe", "http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
             new PomfUploader("pomf.io", "http://pomf.io/upload.php"),
-            new PomfUploader("pomf.pl", "http://pomf.pl/upload.php", "http://i.pomf.pl"),
+            new PomfUploader("pomf.pl", "http://pomf.pl/upload.php"),
             //new PomfUploader("pomf.se", "https://pomf.se/upload.php", "https://a.pomf.se"),
             new PomfUploader("up.che.moe", "http://up.che.moe/upload.php", "http://cdn.che.moe")
         };
