@@ -348,6 +348,7 @@ namespace ShareX
             SaveSettings();
             BackupSettings();
 
+            DebugHelper.Logger.Async = false;
             DebugHelper.WriteLine("ShareX closing");
         }
 
