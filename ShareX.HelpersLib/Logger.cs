@@ -36,9 +36,16 @@ namespace ShareX.HelpersLib
 
         public event MessageAddedEventHandler MessageAdded;
 
+        public string LogFilePath { get; private set; }
+
         private readonly object loggerLock = new object();
         private StringBuilder sbMessages = new StringBuilder(4096);
-        private int lastSaveIndex;
+
+        public Logger(string logFilePath)
+        {
+            LogFilePath = logFilePath;
+            Helpers.CreateDirectoryIfNotExist(LogFilePath);
+        }
 
         protected void OnMessageAdded(string message)
         {
@@ -50,16 +57,36 @@ namespace ShareX.HelpersLib
 
         public void WriteLine(string message = "")
         {
-            lock (loggerLock)
+            if (!string.IsNullOrEmpty(message))
             {
-                if (!string.IsNullOrEmpty(message))
+                TaskEx.Run(() =>
                 {
-                    message = string.Format("{0:yyyy-MM-dd HH:mm:ss.fff} - {1}", DateTime.Now, message);
-                }
+                    lock (loggerLock)
+                    {
+                        message = string.Format("{0:yyyy-MM-dd HH:mm:ss.fff} - {1}", DateTime.Now, message);
 
-                sbMessages.AppendLine(message);
-                Debug.WriteLine(message);
-                OnMessageAdded(message);
+                        Debug.WriteLine(message);
+
+                        if (sbMessages != null)
+                        {
+                            sbMessages.AppendLine(message);
+                        }
+
+                        try
+                        {
+                            if (!string.IsNullOrEmpty(LogFilePath))
+                            {
+                                File.AppendAllText(LogFilePath, message, Encoding.UTF8);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.WriteLine(e);
+                        }
+
+                        OnMessageAdded(message);
+                    }
+                });
             }
         }
 
@@ -78,30 +105,14 @@ namespace ShareX.HelpersLib
             WriteException(exception.ToString(), message);
         }
 
-        public void SaveLog(string filepath)
-        {
-            lock (loggerLock)
-            {
-                if (sbMessages != null && sbMessages.Length > 0 && !string.IsNullOrEmpty(filepath))
-                {
-                    string messages = sbMessages.ToString(lastSaveIndex, sbMessages.Length - lastSaveIndex);
-
-                    if (!string.IsNullOrEmpty(messages))
-                    {
-                        Helpers.CreateDirectoryIfNotExist(filepath);
-                        File.AppendAllText(filepath, messages, Encoding.UTF8);
-                        lastSaveIndex = sbMessages.Length;
-                    }
-                }
-            }
-        }
-
         public void Clear()
         {
             lock (loggerLock)
             {
-                sbMessages.Length = 0;
-                lastSaveIndex = 0;
+                if (sbMessages != null)
+                {
+                    sbMessages.Clear();
+                }
             }
         }
 

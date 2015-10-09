@@ -251,6 +251,8 @@ namespace ShareX
         [STAThread]
         private static void Main(string[] args)
         {
+            DebugHelper.Init(LogsFilePath);
+
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
@@ -347,7 +349,6 @@ namespace ShareX
             BackupSettings();
 
             DebugHelper.WriteLine("ShareX closing");
-            DebugHelper.Logger.SaveLog(LogsFilePath);
         }
 
         public static void Restart()
