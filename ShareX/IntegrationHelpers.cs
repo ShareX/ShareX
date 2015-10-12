@@ -33,24 +33,29 @@ namespace ShareX
 {
     public static class IntegrationHelpers
     {
+        private static string GetStartupTargetPath()
+        {
+            string path;
+
+#if STEAM
+            path = Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
+#else
+            path = Application.ExecutablePath;
+#endif
+
+            return path;
+        }
+
         public static bool CheckStartupShortcut()
         {
-            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup); //RegistryHelper.CheckStartWithWindows();
+            string targetPath = GetStartupTargetPath();
+            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, targetPath);
         }
 
         public static void CreateStartupShortcut(bool create)
         {
-            //RegistryHelper.SetStartWithWindows(cbStartWithWindows.Checked);
-
-            string filePath;
-
-#if STEAM
-            filePath = Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
-#else
-            filePath = Application.ExecutablePath;
-#endif
-
-            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, filePath, "-silent");
+            string targetPath = GetStartupTargetPath();
+            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, targetPath, "-silent");
         }
 
         public static bool CheckShellContextMenuButton()
@@ -65,7 +70,7 @@ namespace ShareX
 
         public static bool CheckSendToMenuButton()
         {
-            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo);
+            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo, Application.ExecutablePath);
         }
 
         public static void CreateSendToMenuButton(bool create)

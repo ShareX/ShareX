@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using IWshRuntimeLibrary;
+using Shell32;
 using System;
 using System.IO;
 using File = System.IO.File;
@@ -32,7 +33,40 @@ namespace ShareX.HelpersLib
 {
     public static class ShortcutHelpers
     {
-        public static bool Create(string shortcutPath, string targetPath, string arguments = "")
+        public static bool SetShortcut(bool create, Environment.SpecialFolder specialFolder, string targetPath = "", string arguments = "")
+        {
+            string shortcutPath = GetShortcutPath(specialFolder);
+            return SetShortcut(create, shortcutPath, targetPath, arguments);
+        }
+
+        public static bool SetShortcut(bool create, string shortcutPath, string targetPath = "", string arguments = "")
+        {
+            if (create)
+            {
+                return Create(shortcutPath, targetPath, arguments);
+            }
+
+            return Delete(shortcutPath);
+        }
+
+        public static bool CheckShortcut(Environment.SpecialFolder specialFolder, string checkPath)
+        {
+            string shortcutPath = GetShortcutPath(specialFolder);
+            return CheckShortcut(shortcutPath, checkPath);
+        }
+
+        public static bool CheckShortcut(string shortcutPath, string targetPath)
+        {
+            if (!string.IsNullOrEmpty(shortcutPath) && !string.IsNullOrEmpty(targetPath) && File.Exists(shortcutPath))
+            {
+                string checkPath = GetShortcutTargetPath(shortcutPath);
+                return !string.IsNullOrEmpty(checkPath) && checkPath.Equals(targetPath, StringComparison.InvariantCultureIgnoreCase);
+            }
+
+            return false;
+        }
+
+        private static bool Create(string shortcutPath, string targetPath, string arguments = "")
         {
             if (!string.IsNullOrEmpty(shortcutPath) && !string.IsNullOrEmpty(targetPath) && File.Exists(targetPath))
             {
@@ -56,7 +90,7 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool Delete(string shortcutPath)
+        private static bool Delete(string shortcutPath)
         {
             if (!string.IsNullOrEmpty(shortcutPath) && File.Exists(shortcutPath))
             {
@@ -67,35 +101,35 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool SetShortcut(bool create, Environment.SpecialFolder specialFolder, string filepath = "", string arguments = "")
+        private static string GetShortcutTargetPath(string shortcutPath)
         {
-            string shortcutPath = GetShortcutPath(specialFolder);
+            string directory = Path.GetDirectoryName(shortcutPath);
+            string filename = Path.GetFileName(shortcutPath);
 
-            if (create)
+            try
             {
-                return Create(shortcutPath, filepath, arguments);
+                Shell shell = new ShellClass();
+                Shell32.Folder folder = shell.NameSpace(directory);
+                FolderItem folderItem = folder.ParseName(filename);
+
+                if (folderItem != null)
+                {
+                    ShellLinkObject link = (ShellLinkObject)folderItem.GetLink;
+                    return link.Path;
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
             }
 
-            return Delete(shortcutPath);
-        }
-
-        public static bool CheckShortcut(Environment.SpecialFolder specialFolder)
-        {
-            string shortcutPath = GetShortcutPath(specialFolder);
-            return File.Exists(shortcutPath);
+            return null;
         }
 
         private static string GetShortcutPath(Environment.SpecialFolder specialFolder)
         {
             string folderPath = Environment.GetFolderPath(specialFolder);
-            string shortcutPath = Path.Combine(folderPath, "ShareX");
-
-            if (!Path.GetExtension(shortcutPath).Equals(".lnk", StringComparison.InvariantCultureIgnoreCase))
-            {
-                shortcutPath = Path.ChangeExtension(shortcutPath, "lnk");
-            }
-
-            return shortcutPath;
+            return Path.Combine(folderPath, "ShareX.lnk");
         }
     }
 }

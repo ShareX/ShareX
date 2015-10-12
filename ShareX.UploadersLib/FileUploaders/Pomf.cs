@@ -25,6 +25,7 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -73,7 +74,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (Uploader == null || string.IsNullOrEmpty(Uploader.UploadURL))
             {
-                Errors.Add("Please select one of Pomf uploaders from \"Destination settings window -> Pomf tab\".");
+                Errors.Add(Resources.Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__);
                 return null;
             }
 

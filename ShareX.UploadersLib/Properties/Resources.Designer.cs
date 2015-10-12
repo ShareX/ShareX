@@ -847,6 +847,16 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select one of the Pomf uploaders from &quot;Destination settings window -&gt; Pomf tab&quot;..
+        /// </summary>
+        internal static string Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__ {
+            get {
+                return ResourceManager.GetString("Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_wi" +
+                        "ndow____Pomf_tab__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Pushbullet {
