@@ -28,6 +28,7 @@ using Shell32;
 using System;
 using System.IO;
 using File = System.IO.File;
+using Folder = Shell32.Folder;
 
 namespace ShareX.HelpersLib
 {
@@ -111,7 +112,7 @@ namespace ShareX.HelpersLib
             try
             {
                 Shell shell = new ShellClass();
-                Shell32.Folder folder = shell.NameSpace(directory);
+                Folder folder = shell.NameSpace(directory);
                 FolderItem folderItem = folder.ParseName(filename);
 
                 if (folderItem != null)
@@ -132,6 +133,34 @@ namespace ShareX.HelpersLib
         {
             string folderPath = Environment.GetFolderPath(specialFolder);
             return Path.Combine(folderPath, "ShareX.lnk");
+        }
+
+        public static void PinUnpinTaskBar(string filePath, bool pin)
+        {
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            {
+                string directory = Path.GetDirectoryName(filePath);
+                string filename = Path.GetFileName(filePath);
+
+                Shell shell = new ShellClass();
+                Folder folder = shell.NameSpace(directory);
+                FolderItem folderItem = folder.ParseName(filename);
+
+                FolderItemVerbs verbs = folderItem.Verbs();
+
+                for (int i = 0; i < verbs.Count; i++)
+                {
+                    FolderItemVerb verb = verbs.Item(i);
+                    string verbName = verb.Name.Replace(@"&", string.Empty);
+
+                    if ((pin && verbName.Equals("pin to taskbar", StringComparison.InvariantCultureIgnoreCase)) ||
+                        (!pin && verbName.Equals("unpin from taskbar", StringComparison.InvariantCultureIgnoreCase)))
+                    {
+                        verb.DoIt();
+                        return;
+                    }
+                }
+            }
         }
     }
 }
