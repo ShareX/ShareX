@@ -47,9 +47,10 @@ Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 
 [Tasks]
 Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"
+Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"
 Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescription: "Additional shortcuts:"
 Name: "CreateQuickLaunchIcon"; Description: "Create a quick launch shortcut"; GroupDescription: "Additional shortcuts:"; OnlyBelowVersion: 0,6.1
-Name: "CreateStartupIcon"; Description: "Launch {#AppName} automatically at Windows startup"; GroupDescription: "Other tasks:"
+Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks:"
 
 [Files]
 Source: "{#AppParentDirectory}\ShareX.exe"; DestDir: {app}; Flags: ignoreversion
@@ -87,6 +88,12 @@ Filename: regsvr32; WorkingDir: {app}; Parameters: "/s /u audio_sniffer.dll"; Ch
 Filename: regsvr32; WorkingDir: {app}; Parameters: "/s /u audio_sniffer-x64.dll"; Check: IsWin64
 
 [Registry]
+Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#AppName}"; ValueType: string; ValueData: "Upload with {#AppName}"; Tasks: CreateContextMenuButton
+Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#AppName}"; ValueType: string; ValueName: "Icon"; ValueData: """{app}\{#AppFilename}"",0"; Tasks: CreateContextMenuButton
+Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#AppName}\command"; ValueType: string; ValueData: """{app}\{#AppFilename}"" ""%1"""; Tasks: CreateContextMenuButton
+Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#AppName}"; ValueType: string; ValueData: "Upload with {#AppName}"; Tasks: CreateContextMenuButton
+Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#AppName}"; ValueType: string; ValueName: "Icon"; ValueData: """{app}\{#AppFilename}"",0"; Tasks: CreateContextMenuButton
+Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#AppName}\command"; ValueType: string; ValueData: """{app}\{#AppFilename}"" ""%1"""; Tasks: CreateContextMenuButton
 Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#AppName}"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#AppName}"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\Folder\shell\{#AppName}"; Flags: dontcreatekey uninsdeletekey
