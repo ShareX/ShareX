@@ -70,6 +70,8 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(shortcutPath) && !string.IsNullOrEmpty(targetPath) && File.Exists(targetPath))
             {
+                Delete(shortcutPath);
+
                 try
                 {
                     IWshShell wsh = new WshShellClass();
