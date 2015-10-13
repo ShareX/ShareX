@@ -561,12 +561,12 @@ namespace ShareX.UploadersLib
 
             // Seafile
 
-            txtSeafileAPIURL.Text = Config.SeafileAPIURL;
+            cbSeafileAPIURL.Text = Config.SeafileAPIURL;
             txtSeafileAuthToken.Text = Config.SeafileAuthToken;
             txtSeafileDirectoryPath.Text = Config.SeafilePath;
             txtSeafileLibraryPassword.Text = Config.SeafileEncryptedLibraryPassword;
-            txtSeafileLibraryPassword.ReadOnly = (Config.SeafileIsLibraryEncrypted ? true : false);
-            btnSeafileLibraryPasswordValidate.Enabled = (Config.SeafileIsLibraryEncrypted ? false : true);
+            txtSeafileLibraryPassword.ReadOnly = Config.SeafileIsLibraryEncrypted;
+            btnSeafileLibraryPasswordValidate.Enabled = !Config.SeafileIsLibraryEncrypted;
             cbSeafileCreateShareableURL.Checked = Config.SeafileCreateShareableURL;
             cbSeafileIgnoreInvalidCert.Checked = Config.SeafileIgnoreInvalidCert;
             nudSeafileExpireDays.Value = Config.SeafileShareDaysToExpire;
@@ -2062,19 +2062,19 @@ namespace ShareX.UploadersLib
 
         #region Seafile
 
-        private void txtSeafileAPIURL_TextChanged(object sender, EventArgs e)
+        private void cbSeafileAPIURL_TextChanged(object sender, EventArgs e)
         {
-            Config.SeafileAPIURL = txtSeafileAPIURL.Text;
+            Config.SeafileAPIURL = cbSeafileAPIURL.Text;
         }
 
         private void btnSeafileCheckAPIURL_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSeafileAPIURL.Text))
+            if (string.IsNullOrEmpty(cbSeafileAPIURL.Text))
             {
                 return;
             }
 
-            Seafile sf = new Seafile(txtSeafileAPIURL.Text, null, null);
+            Seafile sf = new Seafile(cbSeafileAPIURL.Text, null, null);
             bool checkReturned = sf.CheckAPIURL();
 
             if (checkReturned)
@@ -2094,12 +2094,12 @@ namespace ShareX.UploadersLib
 
         private void btnSeafileCheckAuthToken_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSeafileAuthToken.Text) || string.IsNullOrEmpty(txtSeafileAPIURL.Text))
+            if (string.IsNullOrEmpty(txtSeafileAuthToken.Text) || string.IsNullOrEmpty(cbSeafileAPIURL.Text))
             {
                 return;
             }
 
-            Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
+            Seafile sf = new Seafile(cbSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
             bool checkReturned = sf.CheckAuthToken();
 
             if (checkReturned)
@@ -2129,7 +2129,7 @@ namespace ShareX.UploadersLib
             {
                 try
                 {
-                    Seafile sf = new Seafile(txtSeafileAPIURL.Text, null, null);
+                    Seafile sf = new Seafile(cbSeafileAPIURL.Text, null, null);
                     string authToken = sf.GetAuthToken(username, password);
 
                     if (!string.IsNullOrEmpty(authToken))
@@ -2168,12 +2168,12 @@ namespace ShareX.UploadersLib
 
         private void btnRefreshSeafileAccInfo_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSeafileAuthToken.Text) || string.IsNullOrEmpty(txtSeafileAPIURL.Text))
+            if (string.IsNullOrEmpty(txtSeafileAuthToken.Text) || string.IsNullOrEmpty(cbSeafileAPIURL.Text))
             {
                 return;
             }
 
-            Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
+            Seafile sf = new Seafile(cbSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
             Seafile.SeafileCheckAccInfoResponse SeafileCheckAccInfoResponse = sf.GetAccountInfo();
 
             if (SeafileCheckAccInfoResponse == null)
@@ -2182,18 +2182,18 @@ namespace ShareX.UploadersLib
                 return;
             }
             txtSeafileAccInfoEmail.Text = SeafileCheckAccInfoResponse.email;
-            txtSeafileAccInfoUsage.Text = HelpersLib.NumberExtensions.ToSizeString(SeafileCheckAccInfoResponse.usage).ToString() + " / " + HelpersLib.NumberExtensions.ToSizeString(SeafileCheckAccInfoResponse.total).ToString();
+            txtSeafileAccInfoUsage.Text = SeafileCheckAccInfoResponse.usage.ToSizeString() + " / " + SeafileCheckAccInfoResponse.total.ToSizeString();
         }
 
         private void txtSeafileUploadLocationRefresh_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSeafileAuthToken.Text) || string.IsNullOrEmpty(txtSeafileAPIURL.Text))
+            if (string.IsNullOrEmpty(txtSeafileAuthToken.Text) || string.IsNullOrEmpty(cbSeafileAPIURL.Text))
             {
                 return;
             }
             lvSeafileLibraries.Items.Clear();
 
-            Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
+            Seafile sf = new Seafile(cbSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
             List<Seafile.SeafileLibraryObj> SeafileLibraries = sf.GetLibraries();
 
             foreach (var SeafileLibrary in SeafileLibraries)
@@ -2203,10 +2203,10 @@ namespace ShareX.UploadersLib
                     ListViewItem libraryItem = lvSeafileLibraries.Items.Add(SeafileLibrary.name);
                     libraryItem.Name = SeafileLibrary.id;
                     libraryItem.Tag = SeafileLibrary;
-                    libraryItem.SubItems.Add(HelpersLib.NumberExtensions.ToSizeString(SeafileLibrary.size));
+                    libraryItem.SubItems.Add(SeafileLibrary.size.ToSizeString());
                     if (SeafileLibrary.encrypted)
                     {
-                        ListViewItem.ListViewSubItem isEncrypt = libraryItem.SubItems.Add("\u221A");
+                        libraryItem.SubItems.Add("\u221A");
                     }
                     if (SeafileLibrary.id == Config.SeafileRepoID)
                     {
@@ -2253,7 +2253,7 @@ namespace ShareX.UploadersLib
                 return;
             }
 
-            Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, Config.SeafileRepoID);
+            Seafile sf = new Seafile(cbSeafileAPIURL.Text, txtSeafileAuthToken.Text, Config.SeafileRepoID);
             bool checkReturned = sf.ValidatePath(txtSeafileDirectoryPath.Text);
 
             if (checkReturned)
@@ -2281,7 +2281,7 @@ namespace ShareX.UploadersLib
                 return;
             }
 
-            Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, Config.SeafileRepoID);
+            Seafile sf = new Seafile(cbSeafileAPIURL.Text, txtSeafileAuthToken.Text, Config.SeafileRepoID);
             bool checkReturned = sf.DecryptLibrary(txtSeafileLibraryPassword.Text);
 
             if (checkReturned)

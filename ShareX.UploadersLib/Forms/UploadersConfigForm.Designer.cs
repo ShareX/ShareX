@@ -308,6 +308,11 @@
             this.lblUp1Key = new System.Windows.Forms.Label();
             this.lblUp1Host = new System.Windows.Forms.Label();
             this.tpSeafile = new System.Windows.Forms.TabPage();
+            this.grpSeafileShareSettings = new System.Windows.Forms.GroupBox();
+            this.txtSeafileSharePassword = new System.Windows.Forms.TextBox();
+            this.lblSeafileSharePassword = new System.Windows.Forms.Label();
+            this.nudSeafileExpireDays = new System.Windows.Forms.NumericUpDown();
+            this.lblSeafileDaysToExpire = new System.Windows.Forms.Label();
             this.btnSeafileLibraryPasswordValidate = new System.Windows.Forms.Button();
             this.txtSeafileLibraryPassword = new System.Windows.Forms.TextBox();
             this.lblSeafileLibraryPassword = new System.Windows.Forms.Label();
@@ -322,8 +327,6 @@
             this.txtSeafileUploadLocationRefresh = new System.Windows.Forms.Button();
             this.lblSeafileSelectLibrary = new System.Windows.Forms.Label();
             this.grpSeafileAccInfo = new System.Windows.Forms.GroupBox();
-            this.myListView1 = new ShareX.HelpersLib.MyListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnRefreshSeafileAccInfo = new System.Windows.Forms.Button();
             this.txtSeafileAccInfoUsage = new System.Windows.Forms.TextBox();
             this.txtSeafileAccInfoEmail = new System.Windows.Forms.TextBox();
@@ -340,7 +343,6 @@
             this.cbSeafileIgnoreInvalidCert = new System.Windows.Forms.CheckBox();
             this.cbSeafileCreateShareableURL = new System.Windows.Forms.CheckBox();
             this.txtSeafileAuthToken = new System.Windows.Forms.TextBox();
-            this.txtSeafileAPIURL = new System.Windows.Forms.TextBox();
             this.lblSeafileAuthToken = new System.Windows.Forms.Label();
             this.lblSeafileAPIURL = new System.Windows.Forms.Label();
             this.tpEmail = new System.Windows.Forms.TabPage();
@@ -484,11 +486,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.grpSeafileShareSettings = new System.Windows.Forms.GroupBox();
-            this.lblSeafileDaysToExpire = new System.Windows.Forms.Label();
-            this.nudSeafileExpireDays = new System.Windows.Forms.NumericUpDown();
-            this.txtSeafileSharePassword = new System.Windows.Forms.TextBox();
-            this.lblSeafileSharePassword = new System.Windows.Forms.Label();
+            this.cbSeafileAPIURL = new System.Windows.Forms.ComboBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -531,6 +529,8 @@
             this.tpPomf.SuspendLayout();
             this.tpUp1.SuspendLayout();
             this.tpSeafile.SuspendLayout();
+            this.grpSeafileShareSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSeafileExpireDays)).BeginInit();
             this.grpSeafileAccInfo.SuspendLayout();
             this.grpSeafileObtainAuthToken.SuspendLayout();
             this.tpEmail.SuspendLayout();
@@ -557,8 +557,6 @@
             this.tpPicasa.SuspendLayout();
             this.tpChevereto.SuspendLayout();
             this.tcUploaders.SuspendLayout();
-            this.grpSeafileShareSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSeafileExpireDays)).BeginInit();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -2576,6 +2574,7 @@
             // 
             // tpSeafile
             // 
+            this.tpSeafile.Controls.Add(this.cbSeafileAPIURL);
             this.tpSeafile.Controls.Add(this.grpSeafileShareSettings);
             this.tpSeafile.Controls.Add(this.btnSeafileLibraryPasswordValidate);
             this.tpSeafile.Controls.Add(this.txtSeafileLibraryPassword);
@@ -2594,12 +2593,59 @@
             this.tpSeafile.Controls.Add(this.cbSeafileIgnoreInvalidCert);
             this.tpSeafile.Controls.Add(this.cbSeafileCreateShareableURL);
             this.tpSeafile.Controls.Add(this.txtSeafileAuthToken);
-            this.tpSeafile.Controls.Add(this.txtSeafileAPIURL);
             this.tpSeafile.Controls.Add(this.lblSeafileAuthToken);
             this.tpSeafile.Controls.Add(this.lblSeafileAPIURL);
             resources.ApplyResources(this.tpSeafile, "tpSeafile");
             this.tpSeafile.Name = "tpSeafile";
             this.tpSeafile.UseVisualStyleBackColor = true;
+            // 
+            // grpSeafileShareSettings
+            // 
+            this.grpSeafileShareSettings.Controls.Add(this.txtSeafileSharePassword);
+            this.grpSeafileShareSettings.Controls.Add(this.lblSeafileSharePassword);
+            this.grpSeafileShareSettings.Controls.Add(this.nudSeafileExpireDays);
+            this.grpSeafileShareSettings.Controls.Add(this.lblSeafileDaysToExpire);
+            resources.ApplyResources(this.grpSeafileShareSettings, "grpSeafileShareSettings");
+            this.grpSeafileShareSettings.Name = "grpSeafileShareSettings";
+            this.grpSeafileShareSettings.TabStop = false;
+            // 
+            // txtSeafileSharePassword
+            // 
+            resources.ApplyResources(this.txtSeafileSharePassword, "txtSeafileSharePassword");
+            this.txtSeafileSharePassword.Name = "txtSeafileSharePassword";
+            this.txtSeafileSharePassword.UseSystemPasswordChar = true;
+            this.txtSeafileSharePassword.TextChanged += new System.EventHandler(this.txtSeafileSharePassword_TextChanged);
+            // 
+            // lblSeafileSharePassword
+            // 
+            resources.ApplyResources(this.lblSeafileSharePassword, "lblSeafileSharePassword");
+            this.lblSeafileSharePassword.Name = "lblSeafileSharePassword";
+            // 
+            // nudSeafileExpireDays
+            // 
+            resources.ApplyResources(this.nudSeafileExpireDays, "nudSeafileExpireDays");
+            this.nudSeafileExpireDays.Maximum = new decimal(new int[] {
+            900,
+            0,
+            0,
+            0});
+            this.nudSeafileExpireDays.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudSeafileExpireDays.Name = "nudSeafileExpireDays";
+            this.nudSeafileExpireDays.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            this.nudSeafileExpireDays.ValueChanged += new System.EventHandler(this.nudSeafileExpireDays_ValueChanged);
+            // 
+            // lblSeafileDaysToExpire
+            // 
+            resources.ApplyResources(this.lblSeafileDaysToExpire, "lblSeafileDaysToExpire");
+            this.lblSeafileDaysToExpire.Name = "lblSeafileDaysToExpire";
             // 
             // btnSeafileLibraryPasswordValidate
             // 
@@ -2686,7 +2732,6 @@
             // 
             // grpSeafileAccInfo
             // 
-            this.grpSeafileAccInfo.Controls.Add(this.myListView1);
             this.grpSeafileAccInfo.Controls.Add(this.btnRefreshSeafileAccInfo);
             this.grpSeafileAccInfo.Controls.Add(this.txtSeafileAccInfoUsage);
             this.grpSeafileAccInfo.Controls.Add(this.txtSeafileAccInfoEmail);
@@ -2695,21 +2740,6 @@
             resources.ApplyResources(this.grpSeafileAccInfo, "grpSeafileAccInfo");
             this.grpSeafileAccInfo.Name = "grpSeafileAccInfo";
             this.grpSeafileAccInfo.TabStop = false;
-            // 
-            // myListView1
-            // 
-            this.myListView1.AutoFillColumn = true;
-            this.myListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.myListView1.FullRowSelect = true;
-            resources.ApplyResources(this.myListView1, "myListView1");
-            this.myListView1.Name = "myListView1";
-            this.myListView1.UseCompatibleStateImageBehavior = false;
-            this.myListView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            resources.ApplyResources(this.columnHeader1, "columnHeader1");
             // 
             // btnRefreshSeafileAccInfo
             // 
@@ -2813,17 +2843,6 @@
             resources.ApplyResources(this.txtSeafileAuthToken, "txtSeafileAuthToken");
             this.txtSeafileAuthToken.Name = "txtSeafileAuthToken";
             this.txtSeafileAuthToken.TextChanged += new System.EventHandler(this.txtSeafileAuthToken_TextChanged);
-            // 
-            // txtSeafileAPIURL
-            // 
-            this.txtSeafileAPIURL.AutoCompleteCustomSource.AddRange(new string[] {
-            resources.GetString("txtSeafileAPIURL.AutoCompleteCustomSource"),
-            resources.GetString("txtSeafileAPIURL.AutoCompleteCustomSource1")});
-            this.txtSeafileAPIURL.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtSeafileAPIURL.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            resources.ApplyResources(this.txtSeafileAPIURL, "txtSeafileAPIURL");
-            this.txtSeafileAPIURL.Name = "txtSeafileAPIURL";
-            this.txtSeafileAPIURL.TextChanged += new System.EventHandler(this.txtSeafileAPIURL_TextChanged);
             // 
             // lblSeafileAuthToken
             // 
@@ -3856,53 +3875,15 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // grpSeafileShareSettings
+            // cbSeafileAPIURL
             // 
-            this.grpSeafileShareSettings.Controls.Add(this.txtSeafileSharePassword);
-            this.grpSeafileShareSettings.Controls.Add(this.lblSeafileSharePassword);
-            this.grpSeafileShareSettings.Controls.Add(this.nudSeafileExpireDays);
-            this.grpSeafileShareSettings.Controls.Add(this.lblSeafileDaysToExpire);
-            resources.ApplyResources(this.grpSeafileShareSettings, "grpSeafileShareSettings");
-            this.grpSeafileShareSettings.Name = "grpSeafileShareSettings";
-            this.grpSeafileShareSettings.TabStop = false;
-            // 
-            // lblSeafileDaysToExpire
-            // 
-            resources.ApplyResources(this.lblSeafileDaysToExpire, "lblSeafileDaysToExpire");
-            this.lblSeafileDaysToExpire.Name = "lblSeafileDaysToExpire";
-            // 
-            // nudSeafileExpireDays
-            // 
-            resources.ApplyResources(this.nudSeafileExpireDays, "nudSeafileExpireDays");
-            this.nudSeafileExpireDays.Maximum = new decimal(new int[] {
-            900,
-            0,
-            0,
-            0});
-            this.nudSeafileExpireDays.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudSeafileExpireDays.Name = "nudSeafileExpireDays";
-            this.nudSeafileExpireDays.Value = new decimal(new int[] {
-            7,
-            0,
-            0,
-            0});
-            this.nudSeafileExpireDays.ValueChanged += new System.EventHandler(this.nudSeafileExpireDays_ValueChanged);
-            // 
-            // txtSeafileSharePassword
-            // 
-            resources.ApplyResources(this.txtSeafileSharePassword, "txtSeafileSharePassword");
-            this.txtSeafileSharePassword.Name = "txtSeafileSharePassword";
-            this.txtSeafileSharePassword.UseSystemPasswordChar = true;
-            this.txtSeafileSharePassword.TextChanged += new System.EventHandler(this.txtSeafileSharePassword_TextChanged);
-            // 
-            // lblSeafileSharePassword
-            // 
-            resources.ApplyResources(this.lblSeafileSharePassword, "lblSeafileSharePassword");
-            this.lblSeafileSharePassword.Name = "lblSeafileSharePassword";
+            this.cbSeafileAPIURL.FormattingEnabled = true;
+            this.cbSeafileAPIURL.Items.AddRange(new object[] {
+            resources.GetString("cbSeafileAPIURL.Items"),
+            resources.GetString("cbSeafileAPIURL.Items1")});
+            resources.ApplyResources(this.cbSeafileAPIURL, "cbSeafileAPIURL");
+            this.cbSeafileAPIURL.Name = "cbSeafileAPIURL";
+            this.cbSeafileAPIURL.TextChanged += new System.EventHandler(this.cbSeafileAPIURL_TextChanged);
             // 
             // UploadersConfigForm
             // 
@@ -3991,6 +3972,9 @@
             this.tpUp1.PerformLayout();
             this.tpSeafile.ResumeLayout(false);
             this.tpSeafile.PerformLayout();
+            this.grpSeafileShareSettings.ResumeLayout(false);
+            this.grpSeafileShareSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSeafileExpireDays)).EndInit();
             this.grpSeafileAccInfo.ResumeLayout(false);
             this.grpSeafileAccInfo.PerformLayout();
             this.grpSeafileObtainAuthToken.ResumeLayout(false);
@@ -4035,9 +4019,6 @@
             this.tpChevereto.ResumeLayout(false);
             this.tpChevereto.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
-            this.grpSeafileShareSettings.ResumeLayout(false);
-            this.grpSeafileShareSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSeafileExpireDays)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4474,7 +4455,6 @@
         private System.Windows.Forms.CheckBox cbSeafileIgnoreInvalidCert;
         private System.Windows.Forms.CheckBox cbSeafileCreateShareableURL;
         private System.Windows.Forms.TextBox txtSeafileAuthToken;
-        private System.Windows.Forms.TextBox txtSeafileAPIURL;
         private System.Windows.Forms.Label lblSeafileAuthToken;
         private System.Windows.Forms.Label lblSeafileAPIURL;
         private System.Windows.Forms.GroupBox grpSeafileAccInfo;
@@ -4491,8 +4471,6 @@
         private System.Windows.Forms.Button btnSeafilePathValidate;
         private System.Windows.Forms.TextBox txtSeafileDirectoryPath;
         private System.Windows.Forms.Label lblSeafilePath;
-        private HelpersLib.MyListView myListView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader colSeafileLibrarySize;
         private System.Windows.Forms.ColumnHeader colSeafileLibraryEncrypted;
         private System.Windows.Forms.Button btnSeafileLibraryPasswordValidate;
@@ -4503,5 +4481,6 @@
         private System.Windows.Forms.Label lblSeafileSharePassword;
         private System.Windows.Forms.NumericUpDown nudSeafileExpireDays;
         private System.Windows.Forms.Label lblSeafileDaysToExpire;
+        private System.Windows.Forms.ComboBox cbSeafileAPIURL;
     }
 }
