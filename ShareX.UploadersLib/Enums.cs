@@ -129,6 +129,8 @@ namespace ShareX.UploadersLib
         Dropfile,
         [Description("Up1")]
         Up1,
+        [Description("Seafile")]
+        Seafile,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized

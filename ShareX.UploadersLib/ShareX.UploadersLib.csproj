@@ -135,6 +135,7 @@
     <Compile Include="FileUploaders\MediaFire.cs" />
     <Compile Include="FileUploaders\Mega.cs" />
     <Compile Include="FileUploaders\OneDrive.cs" />
+    <Compile Include="FileUploaders\Seafile.cs" />
     <Compile Include="FileUploaders\OwnCloud.cs" />
     <Compile Include="FileUploaders\Pomf.cs" />
     <Compile Include="FileUploaders\PomfUploader.cs" />
@@ -799,6 +800,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\Pomf.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\Seafile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

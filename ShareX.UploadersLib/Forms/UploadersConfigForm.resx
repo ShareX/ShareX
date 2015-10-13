@@ -426,7 +426,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
     <value>tpTwitter</value>
   </data>
@@ -2958,7 +2958,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
     <value>tpBitly</value>
   </data>
@@ -3081,7 +3081,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGoogleURLShortener.Text" xml:space="preserve">
     <value>Google</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleURLShortener.Name" xml:space="preserve">
     <value>tpGoogleURLShortener</value>
   </data>
@@ -3258,7 +3258,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
   </data>
@@ -3579,7 +3579,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
     <value>tpAdFly</value>
   </data>
@@ -3759,7 +3759,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpCoinURL.Text" xml:space="preserve">
     <value>CoinURL</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
     <value>tpCoinURL</value>
   </data>
@@ -3882,7 +3882,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
     <value>tpPolr</value>
   </data>
@@ -4119,7 +4119,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFTP.Name" xml:space="preserve">
     <value>tpFTP</value>
   </data>
@@ -4254,7 +4254,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpDropbox.Name" xml:space="preserve">
     <value>tpDropbox</value>
   </data>
@@ -4329,7 +4329,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOneDrive.Name" xml:space="preserve">
     <value>tpOneDrive</value>
   </data>
@@ -4440,7 +4440,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleDrive.Name" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
@@ -4539,7 +4539,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
   </data>
@@ -4857,7 +4857,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAmazonS3.Name" xml:space="preserve">
     <value>tpAmazonS3</value>
   </data>
@@ -5013,7 +5013,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMega.Name" xml:space="preserve">
     <value>tpMega</value>
   </data>
@@ -5184,7 +5184,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
@@ -5295,7 +5295,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMediaFire.Name" xml:space="preserve">
     <value>tpMediaFire</value>
   </data>
@@ -5382,7 +5382,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPushbullet.Name" xml:space="preserve">
     <value>tpPushbullet</value>
   </data>
@@ -5481,7 +5481,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSendSpace.Name" xml:space="preserve">
     <value>tpSendSpace</value>
   </data>
@@ -5580,7 +5580,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGe_tt.Text" xml:space="preserve">
     <value>Ge.tt</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGe_tt.Name" xml:space="preserve">
     <value>tpGe_tt</value>
   </data>
@@ -5667,7 +5667,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHostr.Name" xml:space="preserve">
     <value>tpHostr</value>
   </data>
@@ -5742,7 +5742,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMinus.Text" xml:space="preserve">
     <value>Minus</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMinus.Name" xml:space="preserve">
     <value>tpMinus</value>
   </data>
@@ -5814,7 +5814,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
   </data>
@@ -5877,7 +5877,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpLambda.Name" xml:space="preserve">
     <value>tpLambda</value>
   </data>
@@ -5889,15 +5889,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tpLambda.ZOrder" xml:space="preserve">
     <value>16</value>
-  </data>
-  <data name="txtPomfResultURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
-  </data>
-  <data name="txtPomfResultURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 20</value>
-  </data>
-  <data name="txtPomfResultURL.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="&gt;&gt;txtPomfResultURL.Name" xml:space="preserve">
     <value>txtPomfResultURL</value>
@@ -5911,15 +5902,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtPomfResultURL.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="txtPomfUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="txtPomfUploadURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 20</value>
-  </data>
-  <data name="txtPomfUploadURL.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;txtPomfUploadURL.Name" xml:space="preserve">
     <value>txtPomfUploadURL</value>
   </data>
@@ -5931,21 +5913,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;txtPomfUploadURL.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="lblPomfResultURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPomfResultURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 112</value>
-  </data>
-  <data name="lblPomfResultURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
-  </data>
-  <data name="lblPomfResultURL.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>Result URL:</value>
   </data>
   <data name="&gt;&gt;lblPomfResultURL.Name" xml:space="preserve">
     <value>lblPomfResultURL</value>
@@ -5959,21 +5926,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblPomfResultURL.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblPomfUploadURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPomfUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
-  </data>
-  <data name="lblPomfUploadURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 13</value>
-  </data>
-  <data name="lblPomfUploadURL.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>Upload URL:</value>
-  </data>
   <data name="&gt;&gt;lblPomfUploadURL.Name" xml:space="preserve">
     <value>lblPomfUploadURL</value>
   </data>
@@ -5986,21 +5938,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblPomfUploadURL.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lblPomfUploaders.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPomfUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblPomfUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="lblPomfUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Uploaders:</value>
-  </data>
   <data name="&gt;&gt;lblPomfUploaders.Name" xml:space="preserve">
     <value>lblPomfUploaders</value>
   </data>
@@ -6012,15 +5949,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblPomfUploaders.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="cbPomfUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <data name="cbPomfUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 21</value>
-  </data>
-  <data name="cbPomfUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;cbPomfUploaders.Name" xml:space="preserve">
     <value>cbPomfUploaders</value>
@@ -6048,7 +5976,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPomf.Text" xml:space="preserve">
     <value>Pomf</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPomf.Name" xml:space="preserve">
     <value>tpPomf</value>
   </data>
@@ -6123,7 +6051,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpUp1.Text" xml:space="preserve">
     <value>Up1</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpUp1.Name" xml:space="preserve">
     <value>tpUp1</value>
   </data>
@@ -6135,6 +6063,826 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tpUp1.ZOrder" xml:space="preserve">
     <value>18</value>
+  </data>
+  <data name="txtSeafileSharePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 64</value>
+  </data>
+  <data name="txtSeafileSharePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 20</value>
+  </data>
+  <data name="txtSeafileSharePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileSharePassword.Name" xml:space="preserve">
+    <value>txtSeafileSharePassword</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileSharePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileSharePassword.Parent" xml:space="preserve">
+    <value>grpSeafileShareSettings</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileSharePassword.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSeafileSharePassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileSharePassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileSharePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 68</value>
+  </data>
+  <data name="lblSeafileSharePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="lblSeafileSharePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Share Password:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSharePassword.Name" xml:space="preserve">
+    <value>lblSeafileSharePassword</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSharePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSharePassword.Parent" xml:space="preserve">
+    <value>grpSeafileShareSettings</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSharePassword.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudSeafileExpireDays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 29</value>
+  </data>
+  <data name="nudSeafileExpireDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 20</value>
+  </data>
+  <data name="nudSeafileExpireDays.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;nudSeafileExpireDays.Name" xml:space="preserve">
+    <value>nudSeafileExpireDays</value>
+  </data>
+  <data name="&gt;&gt;nudSeafileExpireDays.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudSeafileExpireDays.Parent" xml:space="preserve">
+    <value>grpSeafileShareSettings</value>
+  </data>
+  <data name="&gt;&gt;nudSeafileExpireDays.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 31</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 13</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Days To Expiration:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileDaysToExpire.Name" xml:space="preserve">
+    <value>lblSeafileDaysToExpire</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileDaysToExpire.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileDaysToExpire.Parent" xml:space="preserve">
+    <value>grpSeafileShareSettings</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileDaysToExpire.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="grpSeafileShareSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 346</value>
+  </data>
+  <data name="grpSeafileShareSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 100</value>
+  </data>
+  <data name="grpSeafileShareSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Seafile Share Settings</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileShareSettings.Name" xml:space="preserve">
+    <value>grpSeafileShareSettings</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileShareSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileShareSettings.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileShareSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 423</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 23</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileLibraryPasswordValidate.Name" xml:space="preserve">
+    <value>btnSeafileLibraryPasswordValidate</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileLibraryPasswordValidate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileLibraryPasswordValidate.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileLibraryPasswordValidate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtSeafileLibraryPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 425</value>
+  </data>
+  <data name="txtSeafileLibraryPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 20</value>
+  </data>
+  <data name="txtSeafileLibraryPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileLibraryPassword.Name" xml:space="preserve">
+    <value>txtSeafileLibraryPassword</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileLibraryPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileLibraryPassword.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileLibraryPassword.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 429</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 13</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Library Password:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileLibraryPassword.Name" xml:space="preserve">
+    <value>lblSeafileLibraryPassword</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileLibraryPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileLibraryPassword.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileLibraryPassword.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lvSeafileLibraries.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 155</value>
+  </data>
+  <data name="lvSeafileLibraries.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 194</value>
+  </data>
+  <data name="lvSeafileLibraries.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;lvSeafileLibraries.Name" xml:space="preserve">
+    <value>lvSeafileLibraries</value>
+  </data>
+  <data name="&gt;&gt;lvSeafileLibraries.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvSeafileLibraries.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;lvSeafileLibraries.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnSeafilePathValidate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSeafilePathValidate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 394</value>
+  </data>
+  <data name="btnSeafilePathValidate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 23</value>
+  </data>
+  <data name="btnSeafilePathValidate.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="btnSeafilePathValidate.Text" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="&gt;&gt;btnSeafilePathValidate.Name" xml:space="preserve">
+    <value>btnSeafilePathValidate</value>
+  </data>
+  <data name="&gt;&gt;btnSeafilePathValidate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSeafilePathValidate.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;btnSeafilePathValidate.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtSeafileDirectoryPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 396</value>
+  </data>
+  <data name="txtSeafileDirectoryPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 20</value>
+  </data>
+  <data name="txtSeafileDirectoryPath.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileDirectoryPath.Name" xml:space="preserve">
+    <value>txtSeafileDirectoryPath</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileDirectoryPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileDirectoryPath.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileDirectoryPath.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 355</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 26</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
+    <value>Libraries without write permissions are hidden.
+Using an encrypted library disables sharing.</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileWritePermNotif.Name" xml:space="preserve">
+    <value>lblSeafileWritePermNotif</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileWritePermNotif.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileWritePermNotif.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileWritePermNotif.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblSeafilePath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafilePath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafilePath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 399</value>
+  </data>
+  <data name="lblSeafilePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblSeafilePath.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblSeafilePath.Text" xml:space="preserve">
+    <value>Path:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePath.Name" xml:space="preserve">
+    <value>lblSeafilePath</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePath.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePath.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 355</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 23</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUploadLocationRefresh.Name" xml:space="preserve">
+    <value>txtSeafileUploadLocationRefresh</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUploadLocationRefresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUploadLocationRefresh.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUploadLocationRefresh.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 139</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
+    <value>Select Library:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSelectLibrary.Name" xml:space="preserve">
+    <value>lblSeafileSelectLibrary</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSelectLibrary.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSelectLibrary.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSelectLibrary.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;myListView1.Name" xml:space="preserve">
+    <value>myListView1</value>
+  </data>
+  <data name="&gt;&gt;myListView1.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;myListView1.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;myListView1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSeafileAccInfo.Name" xml:space="preserve">
+    <value>btnRefreshSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSeafileAccInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSeafileAccInfo.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSeafileAccInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoUsage.Name" xml:space="preserve">
+    <value>txtSeafileAccInfoUsage</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoUsage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoUsage.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoUsage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoEmail.Name" xml:space="preserve">
+    <value>txtSeafileAccInfoEmail</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoEmail.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoEmail.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoEmail.Name" xml:space="preserve">
+    <value>lblSeafileAccInfoEmail</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoEmail.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoEmail.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoUsage.Name" xml:space="preserve">
+    <value>lblSeafileAccInfoUsage</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoUsage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoUsage.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoUsage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="grpSeafileAccInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 181</value>
+  </data>
+  <data name="grpSeafileAccInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 159</value>
+  </data>
+  <data name="grpSeafileAccInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileAccInfo.Name" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileAccInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileAccInfo.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileAccInfo.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="btnSeafileCheckAuthToken.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSeafileCheckAuthToken.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 78</value>
+  </data>
+  <data name="btnSeafileCheckAuthToken.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 23</value>
+  </data>
+  <data name="btnSeafileCheckAuthToken.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileCheckAuthToken.Name" xml:space="preserve">
+    <value>btnSeafileCheckAuthToken</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileCheckAuthToken.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileCheckAuthToken.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileCheckAuthToken.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 30</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 23</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileCheckAPIURL.Name" xml:space="preserve">
+    <value>btnSeafileCheckAPIURL</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileCheckAPIURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileCheckAPIURL.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileCheckAPIURL.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileGetAuthToken.Name" xml:space="preserve">
+    <value>btnSeafileGetAuthToken</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileGetAuthToken.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileGetAuthToken.Parent" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileGetAuthToken.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtSeafilePassword.Name" xml:space="preserve">
+    <value>txtSeafilePassword</value>
+  </data>
+  <data name="&gt;&gt;txtSeafilePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafilePassword.Parent" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;txtSeafilePassword.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUsername.Name" xml:space="preserve">
+    <value>txtSeafileUsername</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUsername.Parent" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUsername.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileUsername.Name" xml:space="preserve">
+    <value>lblSeafileUsername</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileUsername.Parent" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileUsername.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePassword.Name" xml:space="preserve">
+    <value>lblSeafilePassword</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePassword.Parent" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePassword.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 16</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 159</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
+    <value>Obtain Auth Token</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileObtainAuthToken.Name" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileObtainAuthToken.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileObtainAuthToken.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileObtainAuthToken.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 113</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 17</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Ignore invalid SSL certificate</value>
+  </data>
+  <data name="&gt;&gt;cbSeafileIgnoreInvalidCert.Name" xml:space="preserve">
+    <value>cbSeafileIgnoreInvalidCert</value>
+  </data>
+  <data name="&gt;&gt;cbSeafileIgnoreInvalidCert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbSeafileIgnoreInvalidCert.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;cbSeafileIgnoreInvalidCert.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 113</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
+    <value>Create shareable URL</value>
+  </data>
+  <data name="&gt;&gt;cbSeafileCreateShareableURL.Name" xml:space="preserve">
+    <value>cbSeafileCreateShareableURL</value>
+  </data>
+  <data name="&gt;&gt;cbSeafileCreateShareableURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbSeafileCreateShareableURL.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;cbSeafileCreateShareableURL.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="txtSeafileAuthToken.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="txtSeafileAuthToken.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 20</value>
+  </data>
+  <data name="txtSeafileAuthToken.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAuthToken.Name" xml:space="preserve">
+    <value>txtSeafileAuthToken</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAuthToken.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAuthToken.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAuthToken.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="txtSeafileAPIURL.AutoCompleteCustomSource" xml:space="preserve">
+    <value>https://seacloud.cc/api2/</value>
+  </data>
+  <data name="txtSeafileAPIURL.AutoCompleteCustomSource1" xml:space="preserve">
+    <value>https://cloud.mein-seafile.de/api2/</value>
+  </data>
+  <data name="txtSeafileAPIURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="txtSeafileAPIURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 20</value>
+  </data>
+  <data name="txtSeafileAPIURL.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAPIURL.Name" xml:space="preserve">
+    <value>txtSeafileAPIURL</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAPIURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAPIURL.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAPIURL.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="lblSeafileAuthToken.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileAuthToken.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileAuthToken.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 64</value>
+  </data>
+  <data name="lblSeafileAuthToken.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="lblSeafileAuthToken.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblSeafileAuthToken.Text" xml:space="preserve">
+    <value>Auth Token:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAuthToken.Name" xml:space="preserve">
+    <value>lblSeafileAuthToken</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAuthToken.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAuthToken.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAuthToken.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="lblSeafileAPIURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileAPIURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileAPIURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblSeafileAPIURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="lblSeafileAPIURL.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSeafileAPIURL.Text" xml:space="preserve">
+    <value>API URL:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAPIURL.Name" xml:space="preserve">
+    <value>lblSeafileAPIURL</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAPIURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAPIURL.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAPIURL.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="tpSeafile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpSeafile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpSeafile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 475</value>
+  </data>
+  <data name="tpSeafile.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="tpSeafile.Text" xml:space="preserve">
+    <value>Seafile</value>
+  </data>
+  <data name="&gt;&gt;tpSeafile.Name" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;tpSeafile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpSeafile.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpSeafile.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="&gt;&gt;chkEmailConfirm.Name" xml:space="preserve">
     <value>chkEmailConfirm</value>
@@ -6329,7 +7077,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;lblSharedFolderFiles.Name" xml:space="preserve">
     <value>lblSharedFolderFiles</value>
@@ -6440,7 +7188,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -7907,7 +8655,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.Name" xml:space="preserve">
     <value>btnAmazonS3BucketNameOpen</value>
   </data>
@@ -7934,7 +8682,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnAmazonS3AccessKeyOpen.Name" xml:space="preserve">
     <value>btnAmazonS3AccessKeyOpen</value>
   </data>
@@ -10160,7 +10908,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtJiraIssuePrefix.Name" xml:space="preserve">
     <value>txtJiraIssuePrefix</value>
   </data>
@@ -10304,7 +11052,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtJiraHost.Name" xml:space="preserve">
     <value>txtJiraHost</value>
   </data>
@@ -10449,6 +11197,159 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtLambdaApiKey.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="txtPomfResultURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 128</value>
+  </data>
+  <data name="txtPomfResultURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 20</value>
+  </data>
+  <data name="txtPomfResultURL.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtPomfResultURL.Name" xml:space="preserve">
+    <value>txtPomfResultURL</value>
+  </data>
+  <data name="&gt;&gt;txtPomfResultURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPomfResultURL.Parent" xml:space="preserve">
+    <value>tpPomf</value>
+  </data>
+  <data name="&gt;&gt;txtPomfResultURL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtPomfUploadURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="txtPomfUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 20</value>
+  </data>
+  <data name="txtPomfUploadURL.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtPomfUploadURL.Name" xml:space="preserve">
+    <value>txtPomfUploadURL</value>
+  </data>
+  <data name="&gt;&gt;txtPomfUploadURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPomfUploadURL.Parent" xml:space="preserve">
+    <value>tpPomf</value>
+  </data>
+  <data name="&gt;&gt;txtPomfUploadURL.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblPomfResultURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPomfResultURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPomfResultURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 112</value>
+  </data>
+  <data name="lblPomfResultURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="lblPomfResultURL.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>Result URL:</value>
+  </data>
+  <data name="&gt;&gt;lblPomfResultURL.Name" xml:space="preserve">
+    <value>lblPomfResultURL</value>
+  </data>
+  <data name="&gt;&gt;lblPomfResultURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPomfResultURL.Parent" xml:space="preserve">
+    <value>tpPomf</value>
+  </data>
+  <data name="&gt;&gt;lblPomfResultURL.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblPomfUploadURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPomfUploadURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPomfUploadURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 64</value>
+  </data>
+  <data name="lblPomfUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="lblPomfUploadURL.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>Upload URL:</value>
+  </data>
+  <data name="&gt;&gt;lblPomfUploadURL.Name" xml:space="preserve">
+    <value>lblPomfUploadURL</value>
+  </data>
+  <data name="&gt;&gt;lblPomfUploadURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPomfUploadURL.Parent" xml:space="preserve">
+    <value>tpPomf</value>
+  </data>
+  <data name="&gt;&gt;lblPomfUploadURL.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblPomfUploaders.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPomfUploaders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPomfUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblPomfUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="lblPomfUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Uploaders:</value>
+  </data>
+  <data name="&gt;&gt;lblPomfUploaders.Name" xml:space="preserve">
+    <value>lblPomfUploaders</value>
+  </data>
+  <data name="&gt;&gt;lblPomfUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPomfUploaders.Parent" xml:space="preserve">
+    <value>tpPomf</value>
+  </data>
+  <data name="&gt;&gt;lblPomfUploaders.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbPomfUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="cbPomfUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 21</value>
+  </data>
+  <data name="cbPomfUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbPomfUploaders.Name" xml:space="preserve">
+    <value>cbPomfUploaders</value>
+  </data>
+  <data name="&gt;&gt;cbPomfUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPomfUploaders.Parent" xml:space="preserve">
+    <value>tpPomf</value>
+  </data>
+  <data name="&gt;&gt;cbPomfUploaders.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="txtUp1Key.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 96</value>
   </data>
@@ -10562,6 +11463,306 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblUp1Host.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="colSeafileLibraryName.Width" type="System.Int32, mscorlib">
+    <value>237</value>
+  </data>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="colSeafileLibrarySize.Width" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Encrypted</value>
+  </data>
+  <data name="myListView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-323, -6</value>
+  </data>
+  <data name="myListView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 104</value>
+  </data>
+  <data name="myListView1.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;myListView1.Name" xml:space="preserve">
+    <value>myListView1</value>
+  </data>
+  <data name="&gt;&gt;myListView1.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;myListView1.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;myListView1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Folder name</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>435</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 123</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 23</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSeafileAccInfo.Name" xml:space="preserve">
+    <value>btnRefreshSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSeafileAccInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSeafileAccInfo.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSeafileAccInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtSeafileAccInfoUsage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 92</value>
+  </data>
+  <data name="txtSeafileAccInfoUsage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 20</value>
+  </data>
+  <data name="txtSeafileAccInfoUsage.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoUsage.Name" xml:space="preserve">
+    <value>txtSeafileAccInfoUsage</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoUsage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoUsage.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoUsage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtSeafileAccInfoEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 44</value>
+  </data>
+  <data name="txtSeafileAccInfoEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 20</value>
+  </data>
+  <data name="txtSeafileAccInfoEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoEmail.Name" xml:space="preserve">
+    <value>txtSeafileAccInfoEmail</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoEmail.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileAccInfoEmail.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 28</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoEmail.Name" xml:space="preserve">
+    <value>lblSeafileAccInfoEmail</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoEmail.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoEmail.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 76</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
+    <value>Usage:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoUsage.Name" xml:space="preserve">
+    <value>lblSeafileAccInfoUsage</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoUsage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoUsage.Parent" xml:space="preserve">
+    <value>grpSeafileAccInfo</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileAccInfoUsage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 122</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 23</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
+    <value>Get</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileGetAuthToken.Name" xml:space="preserve">
+    <value>btnSeafileGetAuthToken</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileGetAuthToken.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileGetAuthToken.Parent" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;btnSeafileGetAuthToken.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtSeafilePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 92</value>
+  </data>
+  <data name="txtSeafilePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 20</value>
+  </data>
+  <data name="txtSeafilePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtSeafilePassword.Name" xml:space="preserve">
+    <value>txtSeafilePassword</value>
+  </data>
+  <data name="&gt;&gt;txtSeafilePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafilePassword.Parent" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;txtSeafilePassword.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtSeafileUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 44</value>
+  </data>
+  <data name="txtSeafileUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 20</value>
+  </data>
+  <data name="txtSeafileUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUsername.Name" xml:space="preserve">
+    <value>txtSeafileUsername</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUsername.Parent" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileUsername.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblSeafileUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 28</value>
+  </data>
+  <data name="lblSeafileUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="lblSeafileUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblSeafileUsername.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileUsername.Name" xml:space="preserve">
+    <value>lblSeafileUsername</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileUsername.Parent" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileUsername.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblSeafilePassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafilePassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafilePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 76</value>
+  </data>
+  <data name="lblSeafilePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblSeafilePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblSeafilePassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePassword.Name" xml:space="preserve">
+    <value>lblSeafilePassword</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePassword.Parent" xml:space="preserve">
+    <value>grpSeafileObtainAuthToken</value>
+  </data>
+  <data name="&gt;&gt;lblSeafilePassword.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="chkEmailConfirm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11462,7 +12663,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
   </data>
@@ -11903,7 +13104,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
   </data>
@@ -12014,7 +13215,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>Gist</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
   </data>
@@ -12152,7 +13353,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
   </data>
@@ -12308,7 +13509,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
   </data>
@@ -12485,7 +13686,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOneTimeSecret.Name" xml:space="preserve">
     <value>tpOneTimeSecret</value>
   </data>
@@ -12872,7 +14073,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
   </data>
@@ -13244,7 +14445,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
   </data>
@@ -13568,7 +14769,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTinyPic.Text" xml:space="preserve">
     <value>TinyPic</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
     <value>tpTinyPic</value>
   </data>
@@ -13844,7 +15045,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
   </data>
@@ -14060,7 +15261,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
   </data>
@@ -14792,7 +15993,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPicasa.Text" xml:space="preserve">
     <value>Picasa</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
     <value>tpPicasa</value>
   </data>
@@ -15032,7 +16233,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
   </data>
@@ -15092,7 +16293,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCheveretoWebsiteTip.Text" xml:space="preserve">
     <value>/api/1/upload</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCheveretoWebsiteTip.Name" xml:space="preserve">
     <value>lblCheveretoWebsiteTip</value>
   </data>
@@ -15315,6 +16516,179 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 557</value>
   </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAYAICAQAAAAAADoAgAAZgAAABAQEAAAAAAAKAEAAE4DAAAgIAAAAQAIAKgIAAB2BAAAEBAAAAEA
+        CABoBQAAHg0AACAgAAABACAAqBAAAIYSAAAQEAAAAQAgAGgEAAAuIwAAKAAAACAAAABAAAAAAQAEAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAACAgACAAAAAgACAAICAAACAgIAAwMDAAAAA
+        /wAA/wAAAP//AP8AAAD/AP8A//8AAP///wAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIoiI
+        iIiIiIiIiIiIiIiIiIiCIigiIiIozMzMzMzMyCIogiIoIiIiKM7m5ubm5sgiKIIiKCIiIijObm5ubm7I
+        IiiCIigiIiIozubm5ubmyCIogiIoIiIiKM5ubm5ubsgiKIIiKCIiIijO5ubm5ubIIiiIiIiIiIiIzm5u
+        bm5uyCIogRERERERGM7u7u7u7sgiKIHZWVlZWRjMzMzMzMzIIiiB1ZWVlZUYiIiIiIiIiIiIgdlZWVlZ
+        GDMzMzMzMzMzOIHVlZWVlRg/uLi4uLi4uDiB2VlZWVkYP7uLi4uLi4s4gdWVlZWVGD+4uLi4uLi4OIHZ
+        WVlZWRg/u4uLi4uLiziB1ZWVlZUYP7i4uLi4uLg4gdlZWVlZGD+7i4uLi4uLOIHVlZWVlRg/uLi4uLi4
+        uDiB3d3d3d0YP7uLi4uLi4s4gRERERERGD+4uLi4uLi4OIiIiIiIiIg/u4uLi4uLiziCIiIiIiIoP7i4
+        uLi4uLg4giIiIiIiKD+7i4uLi4uLOIIiIiIiIig/uLi4uLi4uDiCIiIiIiIoP7u7u7u7u7s4giIiIiIi
+        KD//////////OIIiIiIiIigzMzMzMzMzMziIiIiIiIiIiIiIiIiIiIiIIiIiIiIiIiIiIiIiIiIiIv//
+        ////////AAAAAHv4AA57+AAOe/gADnv4AA57+AAOe/gADgAAAA4AAAAOAAAADgAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/4AAB/+AAAf/gAAH/4AAB/+AAAf/gAAAAA
+        AAD/////KAAAABAAAAAgAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAACA
+        gACAAAAAgACAAICAAACAgIAAwMDAAAAA/wAA/wAAAP//AP8AAAD/AP8A//8AAP///wAiIiIiIiIiIoiI
+        iIiIiIiIgigijMzMyCiCKCKM5mbIKIiIiIzu7sgogRERjMzMyCiB2ZGIiIiIiIHZkYMzMzM4gdmRg/u7
+        uziB3dGD+7u7OIEREYP7u7s4iIiIg/u7uziCIiKD+7u7OIIiIoP///84giIigzMzMziIiIiIiIiIiP//
+        KCIAACjObALm5mwCIigAAoiIAAKIzgAAbm4AACIoAAAREQAAGM4AAO7uAAAiKHwAWVl8ABjMfADMzAAA
+        IigoAAAAIAAAAEAAAAABAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAA
+        AACAAIAAgIAAAICAgADA3MAA8MqmAKo/KgD/PyoAAF8qAFVfKgCqXyoA/18qAAB/KgBVfyoAqn8qAP9/
+        KgAAnyoAVZ8qAKqfKgD/nyoAAL8qAFW/KgCqvyoA/78qAADfKgBV3yoAqt8qAP/fKgAA/yoAVf8qAKr/
+        KgD//yoAAABVAFUAVQCqAFUA/wBVAAAfVQBVH1UAqh9VAP8fVQAAP1UAVT9VAKo/VQD/P1UAAF9VAFVf
+        VQCqX1UA/19VAAB/VQBVf1UAqn9VAP9/VQAAn1UAVZ9VAKqfVQD/n1UAAL9VAFW/VQCqv1UA/79VAADf
+        VQBV31UAqt9VAP/fVQAA/1UAVf9VAKr/VQD//1UAAAB/AFUAfwCqAH8A/wB/AAAffwBVH38Aqh9/AP8f
+        fwAAP38AVT9/AKo/fwD/P38AAF9/AFVffwCqX38A/19/AAB/fwBVf38Aqn9/AP9/fwAAn38AVZ9/AKqf
+        fwD/n38AAL9/AFW/fwCqv38A/79/AADffwBV338Aqt9/AP/ffwAA/38AVf9/AKr/fwD//38AAACqAFUA
+        qgCqAKoA/wCqAAAfqgBVH6oAqh+qAP8fqgAAP6oAVT+qAKo/qgD/P6oAAF+qAFVfqgCqX6oA/1+qAAB/
+        qgBVf6oAqn+qAP9/qgAAn6oAVZ+qAKqfqgD/n6oAAL+qAFW/qgCqv6oA/7+qAADfqgBV36oAqt+qAP/f
+        qgAA/6oAVf+qAKr/qgD//6oAAADUAFUA1ACqANQA/wDUAAAf1ABVH9QAqh/UAP8f1AAAP9QAVT/UAKo/
+        1AD/P9QAAF/UAFVf1ACqX9QA/1/UAAB/1ABVf9QAqn/UAP9/1AAAn9QAVZ/UAKqf1AD/n9QAAL/UAFW/
+        1ACqv9QA/7/UAADf1ABV39QAqt/UAP/f1AAA/9QAVf/UAKr/1AD//9QAVQD/AKoA/wAAH/8AVR//AKof
+        /wD/H/8AAD//AFU//wCqP/8A/z//AABf/wBVX/8Aql//AP9f/wAAf/8AVX//AKp//wD/f/8AAJ//AFWf
+        /wCqn/8A/5//AAC//wBVv/8Aqr//AP+//wAA3/8AVd//AKrf/wD/3/8AVf//AKr//wD/zMwA/8z/AP//
+        MwD//2YA//+ZAP//zAAAfwAAVX8AAKp/AAD/fwAAAJ8AAFWfAACqnwAA/58AAAC/AABVvwAAqr8AAP+/
+        AAAA3wAAVd8AAKrfAAD/3wAAVf8AAKr/AAAAACoAVQAqAKoAKgD/ACoAAB8qAFUfKgCqHyoA/x8qAAA/
+        KgBVPyoA8Pv/AKSgoACAgIAAAAD/AAD/AAAA//8A/wAAAAAAAAD//wAA////AP39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39qoYIqoYIhqoIqgiqCaoIqgiqhqqGhoYIhoYIqv39/f0I/f39
+        /ar9/f39/YY2Ng4yDg4ODgoOCgoKCgqG/f39/Yb9/f39CP39/f39qjY7Ozs3Nzc3NjMSMjIOCqr9/f39
+        qv39/f2G/f39/f0IN19fOzs3Nzc3NjcODg4KCP39/f0I/f39/ar9/f39/ao6X19fXzs7Ozc3NzY3NgqG
+        /f39/Yb9/f39CP39/f39hl9jY19jX187Ozs7Nzc3Dqr9/f39qv39/f2G/f39/f0IOodjh19jX19fXztf
+        OzcOCP39/f0ICAmqCAiqCKoICapfCYdjh2ODY19fXzs7Ow6q/f39/QhITEwoSCUoKSQoqmMJCYcJCWNj
+        Y2NfY19fNgj9/f39qkyZmZmYmJRwlCmqX19fXl9fX186WzY3Njc2gv39/f0JcJ2dmZmZlJmUJAmqCaoJ
+        hggIqggICKoIqggI/f39/YZwnp2dnZmZmJVMqnx8fHx8fFR8VHhUVFRUVKr9/f39CHChoZ2dnZ2ZmUwJ
+        fKSkxqSkxqSkpKSkpKBUCP39/f2qcKLDoqGdnZ2ZTKp8ysakxqSkxqSkxqSkpFSq/f39/QiUpqbDoqHE
+        nZ1Mq3ykqMakyqSkxqSkpKSkVAj9/f39hpTIyKbHoqGhoXAIfMrLpMqkxqSkxqTGpKRUqv39/f0IlMym
+        yKbIpcShcAh8y6jKpMqkxsqkpKSkxlQI/f39/aqUzMzMyKbIpqJwqnzLy8qpxsqkpMakxqSkeAj9/f39
+        CJSUlJSUlJSUlJQJgMupy8qpysqkyqSkxqRUqv39/f2GCKoIqgiqCKoIhgigrcvPqcuoy8qkxsqkxnyG
+        /f39/ar9/f39/f39/f39qnzPz6nLy8uoyqnKpKTKVAj9/f39CP39/f39/f39/f0IfNDPz8+py8upyqjG
+        yqR8hv39/f2G/f39/f39/f39/Qik0K7P0M+ty8vLy6jKpXyq/f39/ar9/f39/f39/f39CHzQ09Ctz8/P
+        qcupy6jKeAj9/f39CP39/f39/f39/f2qoNPQ0NPQ0M/Qz8vLy6l8CP39/f2G/f39/f39/f39/QmkfKR8
+        oHx8fHx8fHx8fHyG/f39/aoIqgiqCKoIqgiqCKoIqgiqCKoIqgiqCKoIqgj9/f39/f39/f39/f39/f39
+        /f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f3/////////////
+        ///AAAAD3vgAA974AAPe+AAD3vgAA974AAPe+AADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AA
+        AAPAAAADwAAAA8AAAAPAAAADwAAAA9/4AAPf+AAD3/gAA9/4AAPf+AAD3/gAA8AAAAP//////////ygA
+        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
+        ff//p3f//6Jw//+eav//mWT//pRf//qQWv/0i1b/7IVS/+V/Tv+gWC7/wr/B/wAAAAAAAAAAAAAAAAAA
+        AADCv8H/AAAAAAAAAAAAAAAAAAAAAMK/wf8AAAAAAAAAAAAAAAAAAAAAAAAAAMK/wf/apnP//7+d//+7
+        mP//uJL//7WM//+whv//rH///6d4//+jcf//n2v//5ll//+VYP/6kVv/9YxY/6diN//Cv8H/AAAAAAAA
+        AAAAAAAAAAAAAMK/wf/Cv8H/wr/B/8K/wf/Cv8H/wr/B/8K/wf/Cv8H/wr/B/8K/wf/Cv8H/wr/B/96t
+        eP//wqL//8Gi//+/nv//vJn//7mT//+2jv//sYj//66A//+pev//pHP//6Bt//+bZ///l2L/r20//8K/
+        wf8AAAAAAAAAAAAAAAAAAAAAwr/B/xYXev8XF3b/GBVx/xkUbf8ZFGr/GhNm/xoSY/8bEV//HBFd/xwQ
+        W//Cv8H/4K96///Cov//wqL//8Ki///Cov//wJ///72b//+6lf//t4///7KJ//+ugv//qnv//6V0//+h
+        bv+3d0n/wr/B/wAAAAAAAAAAAAAAAAAAAADCv8H/FRqE/0dN1v8/RNL/Nz3Q/y40zv8nLcz/ISfK/xwh
+        yf8WHMf/GxJh/8K/wf/gr3r/4K96/+Cvev/gr3r/3614/9yqdf/apnL/16Nw/9Sea//Rmmj/zZZk/8qR
+        X//GjFz/w4dW/7+CUv/Cv8H/AAAAAAAAAAAAAAAAAAAAAMK/wf8SHZD/WF3a/05U1/9FS9X/PUPS/zU7
+        0P8uM83/JyzL/yAmyf8aFGn/wr/B/8K/wf/Cv8H/wr/B/8K/wf/Cv8H/wr/B/8K/wf/Cv8H/wr/B/8K/
+        wf/Cv8H/wr/B/8K/wf/Cv8H/wr/B/8K/wf8AAAAAAAAAAAAAAAAAAAAAwr/B/xAfnP9obt7/YGTc/1Zb
+        2f9NU9f/RUrU/ztB0v80OdD/LDHO/xgWcv/Cv8H/Dn+n/w18pP8MeqH/DHie/wt1m/8Kc5j/CXGV/wlv
+        k/8JbJD/CGqN/wdpi/8HZ4j/BmWH/wZkhf8GYoP/wr/B/wAAAAAAAAAAAAAAAAAAAADCv8H/DiKp/3l+
+        4/9vdeH/Zmze/11i2/9UWtn/S1HW/0NI1P86P9H/Fhh9/8K/wf8Ogar/Barp/wGo6P8Apef/AKPm/wCi
+        5P8An+L/AJ7h/wCd3/8AnN7/AJnc/wCY2/8AmNn/AJbX/wZjhP/Cv8H/AAAAAAAAAAAAAAAAAAAAAMK/
+        wf8MJbX/iI7n/4CF5v93fOP/bnPg/2Vr3f9bYdv/UljY/0lP1v8UGoj/wr/B/w+Erf8Lrur/Bqvq/wOo
+        6f8Apuf/AKTm/wCi5f8AoOT/AJ/i/wCd4f8AnN//AJrd/wCZ2/8AmNr/BmWH/8K/wf8AAAAAAAAAAAAA
+        AAAAAAAAwr/B/wkowP+WnOz/jpTq/4aL6P9+hOX/dXri/2xx4P9jaN3/WV/b/xEek//Cv8H/EIaw/xay
+        7P8Or+z/Cavr/wWq6v8Bp+j/AKbn/wCj5f8AoeT/AJ/j/wCe4f8AnOD/AJve/wCa3f8HZ4n/wr/B/wAA
+        AAAAAAAAAAAAAAAAAADCv8H/CCrK/6Ko7/+coe7/lZrr/42T6f+Fiub/fIHl/3N54v9rcN//ECGg/8K/
+        wf8QiLP/I7nu/xq07f8Ssez/C63r/war6v8Cqen/AKbo/wCk5v8AouX/AKHk/wCf4f8AneH/AJzf/who
+        i//Cv8H/AAAAAAAAAAAAAAAAAAAAAMK/wf8GLNP/q7Hy/6as8P+hpu//mp/u/5OY6/+LkOj/g4nm/3qA
+        5P8NI6z/wr/B/xCKtv8xvvD/J7rv/x627f8Vsuz/Dq/s/wmr6/8Equn/Aafo/wCl5/8Ao+X/AKHk/wCf
+        4v8AnuH/CGqO/8K/wf8AAAAAAAAAAAAAAAAAAAAAwr/B/wUu2/+vtPP/r7Tz/6qv8v+mq/D/oKXv/5me
+        7f+Sl+v/io/p/wsmt//Cv8H/Eo24/0HF8f82wfD/LLzv/yK47v8atO3/EbHs/wut6/8Gq+r/A6np/wCm
+        6P8Apeb/AKLl/wCh5P8IbJD/wr/B/wAAAAAAAAAAAAAAAAAAAADCv8H/BC/h/wQv3/8FL9z/BS3Z/wYt
+        1v8GLNL/ByvP/wgqy/8IKcb/CSnC/8K/wf8Sjrv/Uszy/0fH8f87w/H/Mb7v/ye67/8et+7/FbPt/w6v
+        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
+</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>
   </data>
@@ -15367,6 +16741,30 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>chBoxFoldersName</value>
   </data>
   <data name="&gt;&gt;chBoxFoldersName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colSeafileLibraryName.Name" xml:space="preserve">
+    <value>colSeafileLibraryName</value>
+  </data>
+  <data name="&gt;&gt;colSeafileLibraryName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colSeafileLibrarySize.Name" xml:space="preserve">
+    <value>colSeafileLibrarySize</value>
+  </data>
+  <data name="&gt;&gt;colSeafileLibrarySize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colSeafileLibraryEncrypted.Name" xml:space="preserve">
+    <value>colSeafileLibraryEncrypted</value>
+  </data>
+  <data name="&gt;&gt;colSeafileLibraryEncrypted.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
+    <value>columnHeader1</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chImgurID.Name" xml:space="preserve">

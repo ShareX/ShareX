@@ -254,6 +254,21 @@ namespace ShareX.UploadersLib
 
         public PomfUploader PomfUploader = Pomf.DefaultUploader;
 
+        // Seafile
+
+        public string SeafileAPIURL = "";
+        public string SeafileAuthToken = "";
+        public string SeafileRepoID = "";
+        public string SeafilePath = "/";
+        public bool SeafileIsLibraryEncrypted = false;
+        public string SeafileEncryptedLibraryPassword = "";
+        public bool SeafileCreateShareableURL = true;
+        public bool SeafileIgnoreInvalidCert = false;
+        public int SeafileShareDaysToExpire = 7;
+        public string SeafileSharePassword = "";
+        public string SeafileAccInfoEmail = "";
+        public string SeafileAccInfoUsage = "";
+
         #endregion File uploaders
 
         #region URL shorteners

@@ -107,6 +107,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpPolr, Resources.Polr);
             AddIconToTab(tpPomf, Resources.Pomf);
             AddIconToTab(tpPushbullet, Resources.Pushbullet);
+            AddIconToTab(tpSeafile, Resources.Seafile);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
@@ -557,6 +558,21 @@ namespace ShareX.UploadersLib
             cbPomfUploaders.Items.AddRange(Pomf.Uploaders.ToArray());
             txtPomfUploadURL.Text = Config.PomfUploader.UploadURL;
             txtPomfResultURL.Text = Config.PomfUploader.ResultURL;
+
+            // Seafile
+
+            txtSeafileAPIURL.Text = Config.SeafileAPIURL;
+            txtSeafileAuthToken.Text = Config.SeafileAuthToken;
+            txtSeafileDirectoryPath.Text = Config.SeafilePath;
+            txtSeafileLibraryPassword.Text = Config.SeafileEncryptedLibraryPassword;
+            txtSeafileLibraryPassword.ReadOnly = (Config.SeafileIsLibraryEncrypted ? true : false);
+            btnSeafileLibraryPasswordValidate.Enabled = (Config.SeafileIsLibraryEncrypted ? false : true);
+            cbSeafileCreateShareableURL.Checked = Config.SeafileCreateShareableURL;
+            cbSeafileIgnoreInvalidCert.Checked = Config.SeafileIgnoreInvalidCert;
+            nudSeafileExpireDays.Value = Config.SeafileShareDaysToExpire;
+            txtSeafileSharePassword.Text = Config.SeafileSharePassword;
+            txtSeafileAccInfoEmail.Text = Config.SeafileAccInfoEmail;
+            txtSeafileAccInfoUsage.Text = Config.SeafileAccInfoUsage;
 
             #endregion File uploaders
 
@@ -2043,6 +2059,252 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Pomf
+
+        #region Seafile
+
+        private void txtSeafileAPIURL_TextChanged(object sender, EventArgs e)
+        {
+            Config.SeafileAPIURL = txtSeafileAPIURL.Text;
+        }
+
+        private void btnSeafileCheckAPIURL_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSeafileAPIURL.Text))
+            {
+                return;
+            }
+
+            Seafile sf = new Seafile(txtSeafileAPIURL.Text, null, null);
+            bool checkReturned = sf.CheckAPIURL();
+
+            if (checkReturned)
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_TestFTPAccount_Connected_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_Error, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSeafileAuthToken_TextChanged(object sender, EventArgs e)
+        {
+            Config.SeafileAuthToken = txtSeafileAuthToken.Text;
+        }
+
+        private void btnSeafileCheckAuthToken_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSeafileAuthToken.Text) || string.IsNullOrEmpty(txtSeafileAPIURL.Text))
+            {
+                return;
+            }
+
+            Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
+            bool checkReturned = sf.CheckAuthToken();
+
+            if (checkReturned)
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_Error, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSeafilePassword_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                btnSeafileGetAuthToken.PerformClick();
+            }
+        }
+
+        private void btnSeafileGetAuthToken_Click(object sender, EventArgs e)
+        {
+            string username = txtSeafileUsername.Text;
+            string password = txtSeafilePassword.Text;
+
+            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
+            {
+                try
+                {
+                    Seafile sf = new Seafile(txtSeafileAPIURL.Text, null, null);
+                    string authToken = sf.GetAuthToken(username, password);
+
+                    if (!string.IsNullOrEmpty(authToken))
+                    {
+                        txtSeafileUsername.Text = "";
+                        txtSeafilePassword.Text = "";
+                        Config.SeafileAuthToken = authToken;
+                        txtSeafileAuthToken.Text = authToken;
+                        btnRefreshSeafileAccInfo.PerformClick();
+                        Config.SeafileRepoID = sf.GetOrMakeDefaultLibrary(authToken);
+                        txtSeafileUploadLocationRefresh.PerformClick();
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DebugHelper.WriteException(ex);
+                    MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void cbSeafileCreateShareableURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SeafileCreateShareableURL = cbSeafileCreateShareableURL.Checked;
+        }
+
+        private void cbSeafileIgnoreInvalidCert_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SeafileIgnoreInvalidCert = cbSeafileIgnoreInvalidCert.Checked;
+        }
+
+        private void btnRefreshSeafileAccInfo_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSeafileAuthToken.Text) || string.IsNullOrEmpty(txtSeafileAPIURL.Text))
+            {
+                return;
+            }
+
+            Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
+            Seafile.SeafileCheckAccInfoResponse SeafileCheckAccInfoResponse = sf.GetAccountInfo();
+
+            if (SeafileCheckAccInfoResponse == null)
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            txtSeafileAccInfoEmail.Text = SeafileCheckAccInfoResponse.email;
+            txtSeafileAccInfoUsage.Text = HelpersLib.NumberExtensions.ToSizeString(SeafileCheckAccInfoResponse.usage).ToString() + " / " + HelpersLib.NumberExtensions.ToSizeString(SeafileCheckAccInfoResponse.total).ToString();
+        }
+
+        private void txtSeafileUploadLocationRefresh_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSeafileAuthToken.Text) || string.IsNullOrEmpty(txtSeafileAPIURL.Text))
+            {
+                return;
+            }
+            lvSeafileLibraries.Items.Clear();
+
+            Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
+            List<Seafile.SeafileLibraryObj> SeafileLibraries = sf.GetLibraries();
+
+            foreach (var SeafileLibrary in SeafileLibraries)
+            {
+                if (SeafileLibrary.permission == "rw")
+                {
+                    ListViewItem libraryItem = lvSeafileLibraries.Items.Add(SeafileLibrary.name);
+                    libraryItem.Name = SeafileLibrary.id;
+                    libraryItem.Tag = SeafileLibrary;
+                    libraryItem.SubItems.Add(HelpersLib.NumberExtensions.ToSizeString(SeafileLibrary.size));
+                    if (SeafileLibrary.encrypted)
+                    {
+                        ListViewItem.ListViewSubItem isEncrypt = libraryItem.SubItems.Add("\u221A");
+                    }
+                    if (SeafileLibrary.id == Config.SeafileRepoID)
+                    {
+                        libraryItem.Selected = true;
+                    }
+                }
+            }
+        }
+
+        private void lvSeafileLibraries_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selIndex = lvSeafileLibraries.SelectedIndex;
+            if (selIndex > -1)
+            {
+                ListViewItem selectedItem = lvSeafileLibraries.Items[selIndex];
+                Config.SeafileRepoID = selectedItem.Name;
+                Seafile.SeafileLibraryObj SealileLibraryInfo = (Seafile.SeafileLibraryObj)selectedItem.Tag;
+                if (SealileLibraryInfo.encrypted)
+                {
+                    Config.SeafileIsLibraryEncrypted = true;
+                    txtSeafileLibraryPassword.ReadOnly = false;
+                    btnSeafileLibraryPasswordValidate.Enabled = true;
+                }
+                else
+                {
+                    Config.SeafileIsLibraryEncrypted = false;
+                    txtSeafileLibraryPassword.ReadOnly = true;
+                    txtSeafileLibraryPassword.Text = "";
+                    Config.SeafileEncryptedLibraryPassword = "";
+                    btnSeafileLibraryPasswordValidate.Enabled = false;
+                }
+            }
+        }
+
+        private void txtSeafileDirectoryPath_TextChanged(object sender, EventArgs e)
+        {
+            Config.SeafilePath = txtSeafileDirectoryPath.Text;
+        }
+
+        private void btnSeafilePathValidate_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Config.SeafilePath) || string.IsNullOrEmpty(Config.SeafileAPIURL) || string.IsNullOrEmpty(Config.SeafileAuthToken) || string.IsNullOrEmpty(Config.SeafileRepoID))
+            {
+                return;
+            }
+
+            Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, Config.SeafileRepoID);
+            bool checkReturned = sf.ValidatePath(txtSeafileDirectoryPath.Text);
+
+            if (checkReturned)
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_TestFTPAccount_Connected_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_Error, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSeafileLibraryPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (Config.SeafileIsLibraryEncrypted)
+            {
+                Config.SeafileEncryptedLibraryPassword = txtSeafileLibraryPassword.Text;
+            }
+        }
+
+        private void btnSeafileLibraryPasswordValidate_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Config.SeafileEncryptedLibraryPassword) || string.IsNullOrEmpty(Config.SeafileAPIURL) || string.IsNullOrEmpty(Config.SeafileAuthToken) || string.IsNullOrEmpty(Config.SeafileRepoID))
+            {
+                return;
+            }
+
+            Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, Config.SeafileRepoID);
+            bool checkReturned = sf.DecryptLibrary(txtSeafileLibraryPassword.Text);
+
+            if (checkReturned)
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_TestFTPAccount_Connected_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_Error, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void nudSeafileExpireDays_ValueChanged(object sender, EventArgs e)
+        {
+            Config.SeafileShareDaysToExpire = (int)nudSeafileExpireDays.Value;
+        }
+
+        private void txtSeafileSharePassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.SeafileSharePassword = txtSeafileSharePassword.Text;
+        }
+
+        #endregion Seafile
 
         #endregion File Uploaders
 
