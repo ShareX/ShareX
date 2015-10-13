@@ -211,7 +211,8 @@ namespace ShareX.UploadersLib
     {
         Text,
         RedirectionURL,
-        Headers
+        Headers,
+        HeaderLocation
     }
 
     public enum FTPProtocol

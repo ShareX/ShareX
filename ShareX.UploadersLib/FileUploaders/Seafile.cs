@@ -455,7 +455,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     if (CreateShareableURL && !IsLibraryEncrypted)
                     {
                         AllowReportProgress = false;
-                        result.URL = ShareFile(Path + fileName, result.Response.Trim('"'));
+                        result.URL = ShareFile(Path + fileName);
                     }
                     else
                     {
@@ -474,15 +474,15 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        public string ShareFile(string path, string id = null)
+        public string ShareFile(string path)
         {
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "repos/" + RepoID + "/file/shared-link/");
+            url = URLHelpers.CombineURL(APIURL, "repos", RepoID, "file/shared-link/");
 
             Dictionary<string, string> args = new Dictionary<string, string>();
-            if (!String.IsNullOrEmpty(SharePassword)) args.Add("password", SharePassword);
             args.Add("p", path);
-            args.Add("format", "json");
+            args.Add("share_type", "download");
+            if (!string.IsNullOrEmpty(SharePassword)) args.Add("password", SharePassword);
             args.Add("expire", ShareDaysToExpire.ToString());
 
             NameValueCollection headers = new NameValueCollection();
@@ -497,75 +497,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                //had to do this to get the ContentLength header to use for the PUT request
-                string boundary = new string('-', 20) + DateTime.Now.Ticks.ToString("x");
-                byte[] POSTDATA;
-                using (MemoryStream stream = new MemoryStream())
-                {
-                    byte[] bytes;
-
-                    if (args != null)
-                    {
-                        foreach (KeyValuePair<string, string> content in args)
-                        {
-                            if (!string.IsNullOrEmpty(content.Key) && !string.IsNullOrEmpty(content.Value))
-                            {
-                                string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}\r\n", boundary, content.Key, content.Value);
-                                bytes = Encoding.UTF8.GetBytes(format);
-                                stream.Write(bytes, 0, bytes.Length);
-                            }
-                        }
-
-                        bytes = Encoding.UTF8.GetBytes(string.Format("--{0}--\r\n", boundary));
-                        stream.Write(bytes, 0, bytes.Length);
-                    }
-
-                    POSTDATA = stream.ToArray();
-                }
-                MemoryStream dataStream = new MemoryStream();
-                dataStream.Write(POSTDATA, 0, POSTDATA.Length);
-
-                HttpWebResponse response = null;
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.ContentLength = POSTDATA.Length;
-                request.Accept = "application/json";
-                request.Method = "PUT";
-                request.Headers.Add(headers);
-
-                request.UserAgent = "ShareX";
-                string contentType = "multipart/form-data";
-                request.AllowWriteStreamBuffering = HelpersOptions.CurrentProxy.IsValidProxy();
-                request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
-                request.ContentLength = dataStream.Length;
-                if (!string.IsNullOrEmpty(boundary)) contentType += "; boundary=" + boundary;
-                request.ContentType = contentType;
-                request.CookieContainer = new CookieContainer();
-                request.KeepAlive = true;
-                request.Pipelined = false;
-                request.ProtocolVersion = HttpVersion.Version11;
-                request.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                request.Timeout = -1;
-
-                using (Stream requestStream = request.GetRequestStream())
-                {
-                    if (!TransferData(dataStream, requestStream))
-                    {
-                    }
-                }
-
-                response = (HttpWebResponse)request.GetResponse();
-
-                string Location = response.Headers["Location"];
-
-                response.Close();
-                dataStream.Close();
-
-                if (!string.IsNullOrEmpty(Location))
-                {
-                    return Location;
-                }
-
-                return null;
+                return SendRequestURLEncoded(url, args, headers, method: HttpMethod.PUT, responseType: ResponseType.HeaderLocation);
             }
             finally
             {
