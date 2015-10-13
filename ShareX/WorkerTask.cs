@@ -1078,6 +1078,16 @@ namespace ShareX
                 case FileDestination.Up1:
                     fileUploader = new Up1(Program.UploadersConfig.Up1Host, Program.UploadersConfig.Up1Key);
                     break;
+                case FileDestination.Seafile:
+                    fileUploader = new Seafile(Program.UploadersConfig.SeafileAPIURL, Program.UploadersConfig.SeafileAuthToken, Program.UploadersConfig.SeafileRepoID)
+                    {
+                        Path = Program.UploadersConfig.SeafilePath,
+                        IsLibraryEncrypted = Program.UploadersConfig.SeafileIsLibraryEncrypted,
+                        EncryptedLibraryPassword = Program.UploadersConfig.SeafileEncryptedLibraryPassword,
+                        CreateShareableURL = Program.UploadersConfig.SeafileCreateShareableURL,
+                        IgnoreInvalidCert = Program.UploadersConfig.SeafileIgnoreInvalidCert
+                    };
+                    break;
             }
 
             if (fileUploader != null)
