@@ -574,6 +574,30 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbTwitterSkipMessageBox.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="oauthTwitter.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="oauthTwitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 72</value>
+  </data>
+  <data name="oauthTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 208</value>
+  </data>
+  <data name="oauthTwitter.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Name" xml:space="preserve">
+    <value>oauthTwitter</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="txtTwitterDescription.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2998,6 +3022,27 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblBitlyDomain.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="oauth2Bitly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2Bitly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 208</value>
+  </data>
+  <data name="oauth2Bitly.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Name" xml:space="preserve">
+    <value>oauth2Bitly</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
+    <value>tpBitly</value>
+  </data>
+  <data name="&gt;&gt;oauth2Bitly.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
     <value>oauth2GoogleURLShortener</value>
   </data>
@@ -3047,6 +3092,48 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tcURLShorteners</value>
   </data>
   <data name="&gt;&gt;tpGoogleURLShortener.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2GoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
+    <value>oauth2GoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.Parent" xml:space="preserve">
+    <value>tpGoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleURLShortener.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 40</value>
+  </data>
+  <data name="atcGoogleURLShortenerAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Name" xml:space="preserve">
+    <value>atcGoogleURLShortenerAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Parent" xml:space="preserve">
+    <value>tpGoogleURLShortener</value>
+  </data>
+  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;txtYourlsPassword.Name" xml:space="preserve">
@@ -5977,11 +6064,137 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpUp1.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="txtSeafileSharePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 64</value>
+  </data>
+  <data name="txtSeafileSharePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 20</value>
+  </data>
+  <data name="txtSeafileSharePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileSharePassword.Name" xml:space="preserve">
+    <value>txtSeafileSharePassword</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileSharePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileSharePassword.Parent" xml:space="preserve">
+    <value>grpSeafileShareSettings</value>
+  </data>
+  <data name="&gt;&gt;txtSeafileSharePassword.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSeafileSharePassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileSharePassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileSharePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 68</value>
+  </data>
+  <data name="lblSeafileSharePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="lblSeafileSharePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Share Password:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSharePassword.Name" xml:space="preserve">
+    <value>lblSeafileSharePassword</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSharePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSharePassword.Parent" xml:space="preserve">
+    <value>grpSeafileShareSettings</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileSharePassword.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudSeafileExpireDays.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 29</value>
+  </data>
+  <data name="nudSeafileExpireDays.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 20</value>
+  </data>
+  <data name="nudSeafileExpireDays.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;nudSeafileExpireDays.Name" xml:space="preserve">
+    <value>nudSeafileExpireDays</value>
+  </data>
+  <data name="&gt;&gt;nudSeafileExpireDays.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudSeafileExpireDays.Parent" xml:space="preserve">
+    <value>grpSeafileShareSettings</value>
+  </data>
+  <data name="&gt;&gt;nudSeafileExpireDays.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 31</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 13</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Days To Expiration:</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileDaysToExpire.Name" xml:space="preserve">
+    <value>lblSeafileDaysToExpire</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileDaysToExpire.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileDaysToExpire.Parent" xml:space="preserve">
+    <value>grpSeafileShareSettings</value>
+  </data>
+  <data name="&gt;&gt;lblSeafileDaysToExpire.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="grpSeafileShareSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 346</value>
+  </data>
+  <data name="grpSeafileShareSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 100</value>
+  </data>
+  <data name="grpSeafileShareSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Seafile Share Settings</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileShareSettings.Name" xml:space="preserve">
+    <value>grpSeafileShareSettings</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileShareSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileShareSettings.Parent" xml:space="preserve">
+    <value>tpSeafile</value>
+  </data>
+  <data name="&gt;&gt;grpSeafileShareSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnSeafileLibraryPasswordValidate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnSeafileLibraryPasswordValidate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 325</value>
+    <value>338, 423</value>
   </data>
   <data name="btnSeafileLibraryPasswordValidate.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 23</value>
@@ -6002,10 +6215,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;btnSeafileLibraryPasswordValidate.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtSeafileLibraryPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 327</value>
+    <value>109, 425</value>
   </data>
   <data name="txtSeafileLibraryPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 20</value>
@@ -6023,7 +6236,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;txtSeafileLibraryPassword.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblSeafileLibraryPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6032,7 +6245,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>NoControl</value>
   </data>
   <data name="lblSeafileLibraryPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 331</value>
+    <value>13, 429</value>
   </data>
   <data name="lblSeafileLibraryPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 13</value>
@@ -6053,13 +6266,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;lblSeafileLibraryPassword.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lvSeafileLibraries.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 155</value>
   </data>
   <data name="lvSeafileLibraries.Size" type="System.Drawing.Size, System.Drawing">
-    <value>375, 106</value>
+    <value>375, 194</value>
   </data>
   <data name="lvSeafileLibraries.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -6074,13 +6287,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnSeafilePathValidate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnSeafilePathValidate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 296</value>
+    <value>338, 394</value>
   </data>
   <data name="btnSeafilePathValidate.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 23</value>
@@ -6101,10 +6314,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;btnSeafilePathValidate.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtSeafileDirectoryPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 298</value>
+    <value>51, 396</value>
   </data>
   <data name="txtSeafileDirectoryPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>272, 20</value>
@@ -6122,7 +6335,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;txtSeafileDirectoryPath.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblSeafileWritePermNotif.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6131,16 +6344,17 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>NoControl</value>
   </data>
   <data name="lblSeafileWritePermNotif.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 272</value>
+    <value>13, 355</value>
   </data>
   <data name="lblSeafileWritePermNotif.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 13</value>
+    <value>221, 26</value>
   </data>
   <data name="lblSeafileWritePermNotif.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
-    <value>Libraries without write permissions are hidden.</value>
+    <value>Libraries without write permissions are hidden.
+Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;lblSeafileWritePermNotif.Name" xml:space="preserve">
     <value>lblSeafileWritePermNotif</value>
@@ -6152,7 +6366,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;lblSeafileWritePermNotif.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblSeafilePath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6161,7 +6375,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>NoControl</value>
   </data>
   <data name="lblSeafilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 302</value>
+    <value>13, 399</value>
   </data>
   <data name="lblSeafilePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -6182,13 +6396,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;lblSeafilePath.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtSeafileUploadLocationRefresh.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="txtSeafileUploadLocationRefresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 267</value>
+    <value>338, 355</value>
   </data>
   <data name="txtSeafileUploadLocationRefresh.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 23</value>
@@ -6209,7 +6423,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;txtSeafileUploadLocationRefresh.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblSeafileSelectLibrary.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6239,7 +6453,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;lblSeafileSelectLibrary.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;myListView1.Name" xml:space="preserve">
     <value>myListView1</value>
@@ -6314,7 +6528,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="grpSeafileAccInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 189</value>
+    <value>406, 181</value>
   </data>
   <data name="grpSeafileAccInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 159</value>
@@ -6335,7 +6549,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;grpSeafileAccInfo.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnSeafileCheckAuthToken.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6362,7 +6576,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;btnSeafileCheckAuthToken.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="btnSeafileCheckAPIURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6389,7 +6603,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;btnSeafileCheckAPIURL.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;btnSeafileGetAuthToken.Name" xml:space="preserve">
     <value>btnSeafileGetAuthToken</value>
@@ -6473,7 +6687,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;grpSeafileObtainAuthToken.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="cbSeafileIgnoreInvalidCert.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6503,7 +6717,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;cbSeafileIgnoreInvalidCert.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="cbSeafileCreateShareableURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6533,7 +6747,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;cbSeafileCreateShareableURL.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="txtSeafileAuthToken.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -6554,7 +6768,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;txtSeafileAuthToken.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="txtSeafileAPIURL.AutoCompleteCustomSource" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
@@ -6581,7 +6795,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;txtSeafileAPIURL.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="lblSeafileAuthToken.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6611,7 +6825,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;lblSeafileAuthToken.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="lblSeafileAPIURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6641,7 +6855,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpSeafile</value>
   </data>
   <data name="&gt;&gt;lblSeafileAPIURL.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="tpSeafile.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
@@ -7228,6 +7442,54 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cboFtpText.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="ucFTPAccounts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="ucFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 40</value>
+  </data>
+  <data name="ucFTPAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="ucFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>792, 414</value>
+  </data>
+  <data name="ucFTPAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ucFTPAccounts.Name" xml:space="preserve">
+    <value>ucFTPAccounts</value>
+  </data>
+  <data name="&gt;&gt;ucFTPAccounts.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucFTPAccounts.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;ucFTPAccounts.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="oauth2Dropbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="oauth2Dropbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 200</value>
+  </data>
+  <data name="oauth2Dropbox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.Name" xml:space="preserve">
+    <value>oauth2Dropbox</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
+    <value>tpDropbox</value>
+  </data>
+  <data name="&gt;&gt;oauth2Dropbox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbDropboxURLType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 368</value>
   </data>
@@ -7647,6 +7909,27 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbOneDriveCreateShareableLink.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="oAuth2OneDrive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oAuth2OneDrive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oAuth2OneDrive.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;oAuth2OneDrive.Name" xml:space="preserve">
+    <value>oAuth2OneDrive</value>
+  </data>
+  <data name="&gt;&gt;oAuth2OneDrive.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oAuth2OneDrive.Parent" xml:space="preserve">
+    <value>tpOneDrive</value>
+  </data>
+  <data name="&gt;&gt;oAuth2OneDrive.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="cbGoogleDriveUseFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7821,6 +8104,27 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbGoogleDriveIsPublic.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
+    <value>oauth2GoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="lblBoxFolderTip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7967,6 +8271,27 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;btnBoxRefreshFolders.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="oauth2Box.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2Box.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2Box.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2Box.Name" xml:space="preserve">
+    <value>oauth2Box</value>
+  </data>
+  <data name="&gt;&gt;oauth2Box.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Box.Parent" xml:space="preserve">
+    <value>tpBox</value>
+  </data>
+  <data name="&gt;&gt;oauth2Box.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="pbCopyLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -8213,6 +8538,27 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;txtCopyPath.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="oAuthCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="oAuthCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 208</value>
+  </data>
+  <data name="oAuthCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;oAuthCopy.Name" xml:space="preserve">
+    <value>oAuthCopy</value>
+  </data>
+  <data name="&gt;&gt;oAuthCopy.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oAuthCopy.Parent" xml:space="preserve">
+    <value>tpCopy</value>
+  </data>
+  <data name="&gt;&gt;oAuthCopy.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="txtAmazonS3CustomDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 272</value>
@@ -9672,6 +10018,27 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtSendSpaceUserName.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="atcSendSpaceAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcSendSpaceAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 40</value>
+  </data>
+  <data name="atcSendSpaceAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;atcSendSpaceAccountType.Name" xml:space="preserve">
+    <value>atcSendSpaceAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcSendSpaceAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcSendSpaceAccountType.Parent" xml:space="preserve">
+    <value>tpSendSpace</value>
+  </data>
+  <data name="&gt;&gt;atcSendSpaceAccountType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="lblGe_ttStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -10728,6 +11095,27 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblJiraHost.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="oAuthJira.Location" type="System.Drawing.Point, System.Drawing">
+    <value>473, 13</value>
+  </data>
+  <data name="oAuthJira.Size" type="System.Drawing.Size, System.Drawing">
+    <value>321, 243</value>
+  </data>
+  <data name="oAuthJira.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;oAuthJira.Name" xml:space="preserve">
+    <value>oAuthJira</value>
+  </data>
+  <data name="&gt;&gt;oAuthJira.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oAuthJira.Parent" xml:space="preserve">
+    <value>tpJira</value>
+  </data>
+  <data name="&gt;&gt;oAuthJira.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="lblLambdaInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -11081,6 +11469,15 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="colSeafileLibraryName.Width" type="System.Int32, mscorlib">
     <value>237</value>
+  </data>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="colSeafileLibrarySize.Width" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Encrypted</value>
   </data>
   <data name="myListView1.Location" type="System.Drawing.Point, System.Drawing">
     <value>-323, -6</value>
@@ -11891,6 +12288,33 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;cboSharedFolderImages.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="ucLocalhostAccounts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="ucLocalhostAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 40</value>
+  </data>
+  <data name="ucLocalhostAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>792, 424</value>
+  </data>
+  <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.Name" xml:space="preserve">
+    <value>ucLocalhostAccounts</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.Parent" xml:space="preserve">
+    <value>tpSharedFolder</value>
+  </data>
+  <data name="&gt;&gt;ucLocalhostAccounts.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="btnCopyShowFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -12834,6 +13258,51 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;chkGistPublishPublic.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="oAuth2Gist.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="oAuth2Gist.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="oAuth2Gist.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 205</value>
+  </data>
+  <data name="oAuth2Gist.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;oAuth2Gist.Name" xml:space="preserve">
+    <value>oAuth2Gist</value>
+  </data>
+  <data name="&gt;&gt;oAuth2Gist.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oAuth2Gist.Parent" xml:space="preserve">
+    <value>tpGist</value>
+  </data>
+  <data name="&gt;&gt;oAuth2Gist.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="atcGistAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcGistAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 40</value>
+  </data>
+  <data name="atcGistAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;atcGistAccountType.Name" xml:space="preserve">
+    <value>atcGistAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcGistAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcGistAccountType.Parent" xml:space="preserve">
+    <value>tpGist</value>
+  </data>
+  <data name="&gt;&gt;atcGistAccountType.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;cbUpasteIsPublic.Name" xml:space="preserve">
     <value>cbUpasteIsPublic</value>
   </data>
@@ -13707,6 +14176,48 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbImgurDirectLink.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="atcImgurAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcImgurAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 40</value>
+  </data>
+  <data name="atcImgurAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;atcImgurAccountType.Name" xml:space="preserve">
+    <value>atcImgurAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
+    <value>tpImgur</value>
+  </data>
+  <data name="&gt;&gt;atcImgurAccountType.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="oauth2Imgur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="oauth2Imgur.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2Imgur.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2Imgur.Name" xml:space="preserve">
+    <value>oauth2Imgur</value>
+  </data>
+  <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
+    <value>tpImgur</value>
+  </data>
+  <data name="&gt;&gt;oauth2Imgur.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="lvImgurAlbumList.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 48</value>
   </data>
@@ -14270,6 +14781,27 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;tpTinyPic.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="atcTinyPicAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="atcTinyPicAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 40</value>
+  </data>
+  <data name="atcTinyPicAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.Name" xml:space="preserve">
+    <value>atcTinyPicAccountType</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.Parent" xml:space="preserve">
+    <value>tpTinyPic</value>
+  </data>
+  <data name="&gt;&gt;atcTinyPicAccountType.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnTinyPicLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -15594,6 +16126,27 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;btnPicasaRefreshAlbumList.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="oauth2Picasa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="oauth2Picasa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 240</value>
+  </data>
+  <data name="oauth2Picasa.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.Name" xml:space="preserve">
+    <value>oauth2Picasa</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.Parent" xml:space="preserve">
+    <value>tpPicasa</value>
+  </data>
+  <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;cbCheveretoDirectURL.Name" xml:space="preserve">
     <value>cbCheveretoDirectURL</value>
   </data>
@@ -15936,429 +16489,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;ttlvMain.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
-    <value>Size</value>
-  </data>
-  <data name="colSeafileLibrarySize.Width" type="System.Int32, mscorlib">
-    <value>74</value>
-  </data>
-  <data name="atcImgurAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcImgurAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 40</value>
-  </data>
-  <data name="atcImgurAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.Name" xml:space="preserve">
-    <value>atcImgurAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;atcImgurAccountType.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="oauth2Imgur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="oauth2Imgur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Imgur.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.Name" xml:space="preserve">
-    <value>oauth2Imgur</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
-    <value>tpImgur</value>
-  </data>
-  <data name="&gt;&gt;oauth2Imgur.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="atcTinyPicAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcTinyPicAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 40</value>
-  </data>
-  <data name="atcTinyPicAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.Name" xml:space="preserve">
-    <value>atcTinyPicAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.Parent" xml:space="preserve">
-    <value>tpTinyPic</value>
-  </data>
-  <data name="&gt;&gt;atcTinyPicAccountType.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="oauth2Picasa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2Picasa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Picasa.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Name" xml:space="preserve">
-    <value>oauth2Picasa</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Parent" xml:space="preserve">
-    <value>tpPicasa</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="oAuth2Gist.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="oAuth2Gist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="oAuth2Gist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 205</value>
-  </data>
-  <data name="oAuth2Gist.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;oAuth2Gist.Name" xml:space="preserve">
-    <value>oAuth2Gist</value>
-  </data>
-  <data name="&gt;&gt;oAuth2Gist.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oAuth2Gist.Parent" xml:space="preserve">
-    <value>tpGist</value>
-  </data>
-  <data name="&gt;&gt;oAuth2Gist.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="atcGistAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcGistAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 40</value>
-  </data>
-  <data name="atcGistAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.Name" xml:space="preserve">
-    <value>atcGistAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.Parent" xml:space="preserve">
-    <value>tpGist</value>
-  </data>
-  <data name="&gt;&gt;atcGistAccountType.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ucFTPAccounts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="ucFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
-  </data>
-  <data name="ucFTPAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="ucFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 414</value>
-  </data>
-  <data name="ucFTPAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ucFTPAccounts.Name" xml:space="preserve">
-    <value>ucFTPAccounts</value>
-  </data>
-  <data name="&gt;&gt;ucFTPAccounts.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucFTPAccounts.Parent" xml:space="preserve">
-    <value>tpFTP</value>
-  </data>
-  <data name="&gt;&gt;ucFTPAccounts.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="oauth2Dropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="oauth2Dropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 200</value>
-  </data>
-  <data name="oauth2Dropbox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.Name" xml:space="preserve">
-    <value>oauth2Dropbox</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
-    <value>tpDropbox</value>
-  </data>
-  <data name="&gt;&gt;oauth2Dropbox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="oAuth2OneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oAuth2OneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oAuth2OneDrive.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;oAuth2OneDrive.Name" xml:space="preserve">
-    <value>oAuth2OneDrive</value>
-  </data>
-  <data name="&gt;&gt;oAuth2OneDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oAuth2OneDrive.Parent" xml:space="preserve">
-    <value>tpOneDrive</value>
-  </data>
-  <data name="&gt;&gt;oAuth2OneDrive.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
-    <value>oauth2GoogleDrive</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
-    <value>tpGoogleDrive</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="oauth2Box.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2Box.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Box.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Box.Name" xml:space="preserve">
-    <value>oauth2Box</value>
-  </data>
-  <data name="&gt;&gt;oauth2Box.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Box.Parent" xml:space="preserve">
-    <value>tpBox</value>
-  </data>
-  <data name="&gt;&gt;oauth2Box.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="oAuthCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="oAuthCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 208</value>
-  </data>
-  <data name="oAuthCopy.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oAuthCopy.Name" xml:space="preserve">
-    <value>oAuthCopy</value>
-  </data>
-  <data name="&gt;&gt;oAuthCopy.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oAuthCopy.Parent" xml:space="preserve">
-    <value>tpCopy</value>
-  </data>
-  <data name="&gt;&gt;oAuthCopy.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="atcSendSpaceAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcSendSpaceAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 40</value>
-  </data>
-  <data name="atcSendSpaceAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcSendSpaceAccountType.Name" xml:space="preserve">
-    <value>atcSendSpaceAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcSendSpaceAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcSendSpaceAccountType.Parent" xml:space="preserve">
-    <value>tpSendSpace</value>
-  </data>
-  <data name="&gt;&gt;atcSendSpaceAccountType.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="oAuthJira.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 13</value>
-  </data>
-  <data name="oAuthJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>321, 243</value>
-  </data>
-  <data name="oAuthJira.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oAuthJira.Name" xml:space="preserve">
-    <value>oAuthJira</value>
-  </data>
-  <data name="&gt;&gt;oAuthJira.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oAuthJira.Parent" xml:space="preserve">
-    <value>tpJira</value>
-  </data>
-  <data name="&gt;&gt;oAuthJira.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="oauthTwitter.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="oauthTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 72</value>
-  </data>
-  <data name="oauthTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 208</value>
-  </data>
-  <data name="oauthTwitter.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.Name" xml:space="preserve">
-    <value>oauthTwitter</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="oauth2Bitly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2Bitly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 208</value>
-  </data>
-  <data name="oauth2Bitly.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Name" xml:space="preserve">
-    <value>oauth2Bitly</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
-    <value>tpBitly</value>
-  </data>
-  <data name="&gt;&gt;oauth2Bitly.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2GoogleURLShortener.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Name" xml:space="preserve">
-    <value>oauth2GoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.Parent" xml:space="preserve">
-    <value>tpGoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleURLShortener.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 40</value>
-  </data>
-  <data name="atcGoogleURLShortenerAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Name" xml:space="preserve">
-    <value>atcGoogleURLShortenerAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.Parent" xml:space="preserve">
-    <value>tpGoogleURLShortener</value>
-  </data>
-  <data name="&gt;&gt;atcGoogleURLShortenerAccountType.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ucLocalhostAccounts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="ucLocalhostAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
-  </data>
-  <data name="ucLocalhostAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 424</value>
-  </data>
-  <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Name" xml:space="preserve">
-    <value>ucLocalhostAccounts</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountsControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.Parent" xml:space="preserve">
-    <value>tpSharedFolder</value>
-  </data>
-  <data name="&gt;&gt;ucLocalhostAccounts.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="actRapidShareAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 16</value>
   </data>
@@ -16373,9 +16503,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;actRapidShareAccountType.Type" xml:space="preserve">
     <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
-    <value>Encrypted</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -16622,6 +16749,18 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;colSeafileLibraryName.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;colSeafileLibrarySize.Name" xml:space="preserve">
+    <value>colSeafileLibrarySize</value>
+  </data>
+  <data name="&gt;&gt;colSeafileLibrarySize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colSeafileLibraryEncrypted.Name" xml:space="preserve">
+    <value>colSeafileLibraryEncrypted</value>
+  </data>
+  <data name="&gt;&gt;colSeafileLibraryEncrypted.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
     <value>columnHeader1</value>
   </data>
@@ -16662,18 +16801,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>chPicasaDescription</value>
   </data>
   <data name="&gt;&gt;chPicasaDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colSeafileLibrarySize.Name" xml:space="preserve">
-    <value>colSeafileLibrarySize</value>
-  </data>
-  <data name="&gt;&gt;colSeafileLibrarySize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colSeafileLibraryEncrypted.Name" xml:space="preserve">
-    <value>colSeafileLibraryEncrypted</value>
-  </data>
-  <data name="&gt;&gt;colSeafileLibraryEncrypted.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

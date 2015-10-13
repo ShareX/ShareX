@@ -569,6 +569,8 @@ namespace ShareX.UploadersLib
             btnSeafileLibraryPasswordValidate.Enabled = (Config.SeafileIsLibraryEncrypted ? false : true);
             cbSeafileCreateShareableURL.Checked = Config.SeafileCreateShareableURL;
             cbSeafileIgnoreInvalidCert.Checked = Config.SeafileIgnoreInvalidCert;
+            nudSeafileExpireDays.Value = Config.SeafileShareDaysToExpire;
+            txtSeafileSharePassword.Text = Config.SeafileSharePassword;
             txtSeafileAccInfoEmail.Text = Config.SeafileAccInfoEmail;
             txtSeafileAccInfoUsage.Text = Config.SeafileAccInfoUsage;
 
@@ -2109,10 +2111,11 @@ namespace ShareX.UploadersLib
                 MessageBox.Show(Resources.UploadersConfigForm_Error, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void txtSeafilePassword_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Return) {
+            if (e.KeyCode == Keys.Return)
+            {
                 btnSeafileGetAuthToken.PerformClick();
             }
         }
@@ -2150,7 +2153,6 @@ namespace ShareX.UploadersLib
                     DebugHelper.WriteException(ex);
                     MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 
@@ -2190,13 +2192,13 @@ namespace ShareX.UploadersLib
                 return;
             }
             lvSeafileLibraries.Items.Clear();
-            
+
             Seafile sf = new Seafile(txtSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
             List<Seafile.SeafileLibraryObj> SeafileLibraries = sf.GetLibraries();
 
             foreach (var SeafileLibrary in SeafileLibraries)
             {
-                if (SeafileLibrary.permission=="rw")
+                if (SeafileLibrary.permission == "rw")
                 {
                     ListViewItem libraryItem = lvSeafileLibraries.Items.Add(SeafileLibrary.name);
                     libraryItem.Name = SeafileLibrary.id;
@@ -2206,11 +2208,10 @@ namespace ShareX.UploadersLib
                     {
                         ListViewItem.ListViewSubItem isEncrypt = libraryItem.SubItems.Add("\u221A");
                     }
-                    if (SeafileLibrary.id==Config.SeafileRepoID)
+                    if (SeafileLibrary.id == Config.SeafileRepoID)
                     {
                         libraryItem.Selected = true;
                     }
-                    
                 }
             }
         }
@@ -2291,6 +2292,16 @@ namespace ShareX.UploadersLib
             {
                 MessageBox.Show(Resources.UploadersConfigForm_Error, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void nudSeafileExpireDays_ValueChanged(object sender, EventArgs e)
+        {
+            Config.SeafileShareDaysToExpire = (int)nudSeafileExpireDays.Value;
+        }
+
+        private void txtSeafileSharePassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.SeafileSharePassword = txtSeafileSharePassword.Text;
         }
 
         #endregion Seafile

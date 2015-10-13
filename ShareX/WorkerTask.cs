@@ -1084,6 +1084,8 @@ namespace ShareX
                         Path = Program.UploadersConfig.SeafilePath,
                         IsLibraryEncrypted = Program.UploadersConfig.SeafileIsLibraryEncrypted,
                         EncryptedLibraryPassword = Program.UploadersConfig.SeafileEncryptedLibraryPassword,
+                        ShareDaysToExpire = Program.UploadersConfig.SeafileShareDaysToExpire,
+                        SharePassword = Program.UploadersConfig.SeafileSharePassword,
                         CreateShareableURL = Program.UploadersConfig.SeafileCreateShareableURL,
                         IgnoreInvalidCert = Program.UploadersConfig.SeafileIgnoreInvalidCert
                     };

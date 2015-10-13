@@ -31,8 +31,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.Linq;
 using System.Net;
+using System.Net.Cache;
 using System.Text;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -45,9 +45,11 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Path { get; set; }
         public bool IsLibraryEncrypted { get; set; }
         public string EncryptedLibraryPassword { get; set; }
+        public int ShareDaysToExpire { get; set; }
+        public string SharePassword { get; set; }
         public bool CreateShareableURL { get; set; }
         public bool IgnoreInvalidCert { get; set; }
-        
+
         public Seafile(string apiurl, string authtoken, string repoid)
         {
             APIURL = apiurl;
@@ -140,7 +142,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     sslBypassHelper = new SSLBypassHelper();
                 }
-                
+
                 string response = SendRequest(HttpMethod.GET, url, null, headers);
 
                 if (!string.IsNullOrEmpty(response))
@@ -162,7 +164,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        #endregion
+        #endregion SeafileChecks
 
         #region SeafileAccountInformation
 
@@ -210,7 +212,7 @@ namespace ShareX.UploadersLib.FileUploaders
             public string email { get; set; }
         }
 
-        #endregion
+        #endregion SeafileAccountInformation
 
         #region SeafileLibraries
 
@@ -220,7 +222,7 @@ namespace ShareX.UploadersLib.FileUploaders
             url = URLHelpers.CombineURL(APIURL, "default-repo/?format=json");
 
             NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Token " + (authtoken==null?AuthToken: authtoken));
+            headers.Add("Authorization", "Token " + (authtoken == null ? AuthToken : authtoken));
 
             SSLBypassHelper sslBypassHelper = null;
 
@@ -236,7 +238,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (!string.IsNullOrEmpty(response))
                 {
                     SeafileDefaultLibraryObj JsonResponse = JsonConvert.DeserializeObject<SeafileDefaultLibraryObj>(response);
-                    
+
                     return JsonResponse.repo_id;
                 }
 
@@ -298,7 +300,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             string url = URLHelpers.FixPrefix(APIURL);
             url = URLHelpers.CombineURL(APIURL, "repos/" + RepoID + "/dir/?p=" + path + "&format=json");
-            
+
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
 
@@ -315,8 +317,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    //List<SeafileLibraryObj> JsonResponse = JsonConvert.DeserializeObject<List<SeafileLibraryObj>>(response);
-                    DebugHelper.WriteLine(response);
                     return true;
                 }
 
@@ -347,7 +347,7 @@ namespace ShareX.UploadersLib.FileUploaders
             public string root { get; set; }
         }
 
-        #endregion
+        #endregion SeafileLibraries
 
         #region SeafileEncryptedLibrary
 
@@ -375,7 +375,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    if (response=="\"success\"")
+                    if (response == "\"success\"")
                     {
                         return true;
                     }
@@ -396,7 +396,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        #endregion
+        #endregion SeafileEncryptedLibrary
 
         #region SeafileUpload
 
@@ -419,7 +419,7 @@ namespace ShareX.UploadersLib.FileUploaders
             else
             {
                 char pathLast = Path[Path.Length - 1];
-                if (pathLast!='/')
+                if (pathLast != '/')
                 {
                     Path += "/";
                 }
@@ -443,7 +443,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 string response = SendRequest(HttpMethod.GET, url, null, headers);
 
                 string responseURL = response.Trim('"');
-                
+
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("filename", fileName);
                 args.Add("parent_dir", Path);
@@ -452,10 +452,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (!IsError)
                 {
-                    if (CreateShareableURL)
+                    if (CreateShareableURL && !IsLibraryEncrypted)
                     {
                         AllowReportProgress = false;
-                        result.URL = ShareFile(Path+fileName, result.Response.Trim('"'));
+                        result.URL = ShareFile(Path + fileName, result.Response.Trim('"'));
                     }
                     else
                     {
@@ -480,10 +480,10 @@ namespace ShareX.UploadersLib.FileUploaders
             url = URLHelpers.CombineURL(APIURL, "repos/" + RepoID + "/file/shared-link/");
 
             Dictionary<string, string> args = new Dictionary<string, string>();
-            if (IsLibraryEncrypted) args.Add("password", EncryptedLibraryPassword);
+            if (!String.IsNullOrEmpty(SharePassword)) args.Add("password", SharePassword);
             args.Add("p", path);
             args.Add("format", "json");
-            args.Add("expire", "7");
+            args.Add("expire", ShareDaysToExpire.ToString());
 
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
@@ -498,35 +498,71 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
 
                 //had to do this to get the ContentLength header to use for the PUT request
+                string boundary = new string('-', 20) + DateTime.Now.Ticks.ToString("x");
+                byte[] POSTDATA;
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    byte[] bytes;
+
+                    if (args != null)
+                    {
+                        foreach (KeyValuePair<string, string> content in args)
+                        {
+                            if (!string.IsNullOrEmpty(content.Key) && !string.IsNullOrEmpty(content.Value))
+                            {
+                                string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}\r\n", boundary, content.Key, content.Value);
+                                bytes = Encoding.UTF8.GetBytes(format);
+                                stream.Write(bytes, 0, bytes.Length);
+                            }
+                        }
+
+                        bytes = Encoding.UTF8.GetBytes(string.Format("--{0}--\r\n", boundary));
+                        stream.Write(bytes, 0, bytes.Length);
+                    }
+
+                    POSTDATA = stream.ToArray();
+                }
+                MemoryStream dataStream = new MemoryStream();
+                dataStream.Write(POSTDATA, 0, POSTDATA.Length);
+
                 HttpWebResponse response = null;
-                url = url + "?" + string.Join("&", args.Select(x => x.Key + "=" + x.Value).ToArray());
-                DebugHelper.WriteLine(url);
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.ContentLength = 0;
+                request.ContentLength = POSTDATA.Length;
+                request.Accept = "application/json";
                 request.Method = "PUT";
                 request.Headers.Add(headers);
-                IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                if (proxy != null) request.Proxy = proxy;
-                request.UserAgent = "ShareX";
-                
-                response = (HttpWebResponse)request.GetResponse();
 
-                string textResponse;
-                using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
+                request.UserAgent = "ShareX";
+                string contentType = "multipart/form-data";
+                request.AllowWriteStreamBuffering = HelpersOptions.CurrentProxy.IsValidProxy();
+                request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+                request.ContentLength = dataStream.Length;
+                if (!string.IsNullOrEmpty(boundary)) contentType += "; boundary=" + boundary;
+                request.ContentType = contentType;
+                request.CookieContainer = new CookieContainer();
+                request.KeepAlive = true;
+                request.Pipelined = false;
+                request.ProtocolVersion = HttpVersion.Version11;
+                request.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+                request.Timeout = -1;
+
+                using (Stream requestStream = request.GetRequestStream())
                 {
-                    textResponse = reader.ReadToEnd();
+                    if (!TransferData(dataStream, requestStream))
+                    {
+                    }
                 }
 
-                DebugHelper.WriteLine(textResponse);
+                response = (HttpWebResponse)request.GetResponse();
+
+                string Location = response.Headers["Location"];
 
                 response.Close();
+                dataStream.Close();
 
-                //string response = SendRequest(HttpMethod.PUT, url, args, headers);
-
-                if (!string.IsNullOrEmpty(textResponse))
+                if (!string.IsNullOrEmpty(Location))
                 {
-                    DebugHelper.WriteLine(textResponse);
-                    return null;
+                    return Location;
                 }
 
                 return null;
