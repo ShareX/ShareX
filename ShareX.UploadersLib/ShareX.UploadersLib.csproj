@@ -420,6 +420,9 @@
     <EmbeddedResource Include="Forms\DropboxFilesForm.pt-BR.resx">
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DropboxFilesForm.ru.resx">
+      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DropboxFilesForm.tr.resx">
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </EmbeddedResource>
