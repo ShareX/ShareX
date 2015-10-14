@@ -6946,7 +6946,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
-    <value>To get an API key, log in to Lambda at https://lambda.sx/ then click on the settings cog at the top right.</value>
+    <value>To get an API key, log in to Lambda at https://lambda.sx/ then click on your username, then click manage account.</value>
   </data>
   <data name="&gt;&gt;lblLambdaInfo.Name" xml:space="preserve">
     <value>lblLambdaInfo</value>

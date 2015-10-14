@@ -2022,7 +2022,7 @@ namespace ShareX.UploadersLib
 
         private void lambdaInfoLabel_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://lambda.sx/usercp");
+            URLHelpers.OpenURL("https://lambda.sx/user/manage");
         }
 
         private void txtLambdaApiKey_TextChanged(object sender, EventArgs e)
