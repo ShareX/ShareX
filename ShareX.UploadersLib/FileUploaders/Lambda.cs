@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Config = config;
         }
 
-        private const string uploadUrl = "https://lambda.sx/upload";
+        private const string uploadUrl = "https://lambda.sx/api/upload";
         private const string responseUrl = "https://λ.pw/";
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -52,23 +52,26 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("apikey", Config.UserAPIKey);
-            UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments);
+            arguments.Add("api_key", Config.UserAPIKey);
+            UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments, method: HttpMethod.PUT);
 
+            if(result.Response == null)
+            {
+                Errors.Add("Upload failed for unknown reason. Check your API key.");
+                return result;
+            }
+
+            LambdaResponse response = JsonConvert.DeserializeObject<LambdaResponse>(result.Response);
             if (result.IsSuccess)
             {
-                LambdaResponse response = JsonConvert.DeserializeObject<LambdaResponse>(result.Response);
 
-                if (response.success)
+                result.URL = responseUrl + response.url;
+            }
+            else
+            {
+                foreach (string e in response.errors)
                 {
-                    result.URL = responseUrl + response.files[0].url;
-                }
-                else
-                {
-                    foreach (string e in response.errors)
-                    {
-                        Errors.Add(e);
-                    }
+                    Errors.Add(e);
                 }
             }
 
@@ -77,8 +80,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         internal class LambdaResponse
         {
-            public bool success { get; set; }
-            public List<LambdaFile> files { get; set; }
+            public string url { get; set; }
             public List<string> errors { get; set; }
         }
 
