@@ -422,6 +422,9 @@
     <EmbeddedResource Include="Forms\AfterUploadForm.pt-BR.resx">
       <DependentUpon>AfterUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterUploadForm.ru.resx">
+      <DependentUpon>AfterUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterUploadForm.tr.resx">
       <DependentUpon>AfterUploadForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -447,6 +450,9 @@
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.pt-BR.resx">
+      <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationSettingsForm.ru.resx">
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.tr.resx">

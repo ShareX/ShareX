@@ -249,9 +249,6 @@
   <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
     <value>Запись экрана</value>
   </data>
-  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
-    <value>Запись экрана</value>
-  </data>
   <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
     <value>Другие</value>
   </data>
@@ -286,21 +283,117 @@
     <value>Запись экрана</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
-    <value>Начать зпись области экрана с активным окном</value>
+    <value>Начать запись области экрана с активным окном</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Запись экрана (GIF)</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
-    <value>Начать зпись области экрана (GIF) с активным окном</value>
+    <value>Начать запись области экрана (GIF) с активным окном</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
-    <value>Начать зпись последней области экрана (GIF)</value>
+    <value>Начать запись последней области экрана (GIF)</value>
   </data>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
-    <value>Начать зпись последней области экрана</value>
+    <value>Начать запись последней области экрана</value>
   </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Захват последней области</value>
+  </data>
+  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
+    <value>Выгрузка</value>
+  </data>
+  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
+    <value>Выгрузка</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
+    <value>Выгрузка</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
+    <value>Выгрузка</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
+    <value>Выгрузка</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
+    <value>Выгрузка из буфера обмена</value>
+  </data>
+  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
+    <value>Выгрузка</value>
+  </data>
+  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
+    <value>Выгрузка</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>Отключить/Включить горячие клавиши</value>
+  </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>Выгрузка со ссылки</value>
+  </data>
+  <data name="HotkeyType_FolderUpload" xml:space="preserve">
+    <value>Выгрузка папки</value>
+  </data>
+  <data name="HotkeyType_FileUpload" xml:space="preserve">
+    <value>Выгрузка файла</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
+    <value>Выгрузка перетаскиванием</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
+    <value>Выгрузка из буфера обмена с предпросмотром</value>
+  </data>
+  <data name="HotkeyType_StopUploads" xml:space="preserve">
+    <value>Остановка всех активных выгрузок</value>
+  </data>
+  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
+    <value>Добавить эффекты/водяной знак</value>
+  </data>
+  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
+    <value>Открыть в редакторе изображений</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
+    <value>Скопировать путь к файлу в буфер обмена</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>Скопировать файл в буфер обмена</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
+    <value>Скопировать изображение в буфер обмена</value>
+  </data>
+  <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
+    <value>Удалить локальный файл</value>
+  </data>
+  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
+    <value>Выполнить действия</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
+    <value>Сохранить изображение в файл</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
+    <value>Сохранить изображение в файл как…</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
+    <value>Сохранить миниатюру в файл</value>
+  </data>
+  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
+    <value>Распечатать изображение</value>
+  </data>
+  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
+    <value>Выгрузить изображение на сервер</value>
+  </data>
+  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
+    <value>Скопировать ссылку в буфер обмена</value>
+  </data>
+  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
+    <value>Перейти по ссылке</value>
+  </data>
+  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
+    <value>Отправить ссылку</value>
+  </data>
+  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
+    <value>Сократить ссылку</value>
+  </data>
+  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
+    <value>Показать окно с QR кодом</value>
   </data>
 </root>

@@ -637,6 +637,9 @@
     <EmbeddedResource Include="Forms\ClipboardContentViewer.resx">
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DebugForm.ru.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.tr.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>

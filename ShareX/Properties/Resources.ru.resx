@@ -136,18 +136,18 @@
     <value>Скачивается</value>
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
-    <value>Вы пытаетесь загрузить большой файл.
+    <value>Вы пытаетесь выгрузить большой файл.
 Уверенны, что хотите продолжить?</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
-    <value>Загружается</value>
+    <value>Выгружается</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
-    <value>Вы уверены, что хотите загрузить этот скриншот?
+    <value>Вы уверены, что хотите выгрузить этот скриншот?
 Нажмите «Нет», чтобы отменить эту загрузку и отключить автозагрузку скриншотов.</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
-    <value>Предупреждение о первой загрузке</value>
+    <value>Предупреждение о первой выгрузке</value>
   </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
     <value>Выберете папку для сохранения</value>
@@ -169,5 +169,49 @@
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
     <value>Вы действительно хотите удалить этот файл?</value>
+  </data>
+  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
+    <value>Тащите
+сюда</value>
+  </data>
+  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
+    <value>Вы можете перетаскивать файлы в это окно.</value>
+  </data>
+  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
+    <value>Текущие горячие клавиши:</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
+    <value>Отключить горячие клавиши</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
+    <value>Включить горячие клавиши</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>Горячие клавиши включены</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>Горячие клавиши отключены</value>
+  </data>
+  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
+    <value>Выберите горячую клавишу…</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
+    <value>Не удалось зарегистрировать {0}:
+
+{1}
+
+Пожалуйста, выберите другую горячую клавишу или завершите конфликтующе приложение и перезапустите ShareX.</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>Не удалось зарегистрировать горячую клавишу</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
+    <value>горячие клавиши</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
+    <value>горячую клавишу</value>
+  </data>
+  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
+    <value>Скрыть меню</value>
   </data>
 </root>
