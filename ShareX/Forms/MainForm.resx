@@ -1494,6 +1494,48 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Image history...</value>
   </data>
+  <data name="tsmiTrayShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
+    <value>Debug log...</value>
+  </data>
+  <data name="tsmiTrayTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
+    <value>Test image upload</value>
+  </data>
+  <data name="tsmiTrayTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
+    <value>Test text upload</value>
+  </data>
+  <data name="tsmiTrayTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
+    <value>Test file upload</value>
+  </data>
+  <data name="tsmiTrayTestURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
+    <value>Test URL shortener</value>
+  </data>
+  <data name="tsmiTrayTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
+    <value>Test URL sharing</value>
+  </data>
+  <data name="tsmiTrayDebug.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="tsmiTrayDebug.Text" xml:space="preserve">
+    <value>Debug</value>
+  </data>
   <data name="tsmiTrayDonate.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 22</value>
   </data>
@@ -1531,7 +1573,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 440</value>
+    <value>189, 462</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -1541,7 +1583,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
@@ -2786,6 +2828,48 @@
   </data>
   <data name="&gt;&gt;timerTraySingleClick.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayDebug.Name" xml:space="preserve">
+    <value>tsmiTrayDebug</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayDebug.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayShowDebugLog.Name" xml:space="preserve">
+    <value>tsmiTrayShowDebugLog</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayShowDebugLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTestImageUpload.Name" xml:space="preserve">
+    <value>tsmiTrayTestImageUpload</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTestImageUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTestTextUpload.Name" xml:space="preserve">
+    <value>tsmiTrayTestTextUpload</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTestTextUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTestFileUpload.Name" xml:space="preserve">
+    <value>tsmiTrayTestFileUpload</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTestFileUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTestURLShortener.Name" xml:space="preserve">
+    <value>tsmiTrayTestURLShortener</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTestURLShortener.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTestURLSharing.Name" xml:space="preserve">
+    <value>tsmiTrayTestURLSharing</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTestURLSharing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

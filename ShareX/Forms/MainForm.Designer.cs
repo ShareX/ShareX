@@ -233,6 +233,13 @@
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.btnOpenSteam = new ShareX.HelpersLib.GreenlightButton();
             this.btnHideSteam = new ShareX.HelpersLib.GreenlightButton();
+            this.tsmiTrayDebug = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayShowDebugLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayTestImageUpload = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayTestTextUpload = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayTestFileUpload = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1272,6 +1279,7 @@
             this.tsmiScreenshotsFolder,
             this.tsmiTrayHistory,
             this.tsmiTrayImageHistory,
+            this.tsmiTrayDebug,
             this.tsmiTrayDonate,
             this.tsmiTrayAbout,
             this.tssTray3,
@@ -1789,6 +1797,61 @@
             this.btnHideSteam.Name = "btnHideSteam";
             this.btnHideSteam.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnHideSteam_MouseClick);
             // 
+            // tsmiTrayDebug
+            // 
+            this.tsmiTrayDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiTrayShowDebugLog,
+            this.tsmiTrayTestImageUpload,
+            this.tsmiTrayTestTextUpload,
+            this.tsmiTrayTestFileUpload,
+            this.tsmiTrayTestURLShortener,
+            this.tsmiTrayTestURLSharing});
+            this.tsmiTrayDebug.Image = global::ShareX.Properties.Resources.traffic_cone;
+            this.tsmiTrayDebug.Name = "tsmiTrayDebug";
+            resources.ApplyResources(this.tsmiTrayDebug, "tsmiTrayDebug");
+            // 
+            // tsmiTrayShowDebugLog
+            // 
+            this.tsmiTrayShowDebugLog.Image = global::ShareX.Properties.Resources.application_monitor;
+            this.tsmiTrayShowDebugLog.Name = "tsmiTrayShowDebugLog";
+            resources.ApplyResources(this.tsmiTrayShowDebugLog, "tsmiTrayShowDebugLog");
+            this.tsmiTrayShowDebugLog.Click += new System.EventHandler(this.tsmiShowDebugLog_Click);
+            // 
+            // tsmiTrayTestImageUpload
+            // 
+            this.tsmiTrayTestImageUpload.Image = global::ShareX.Properties.Resources.image;
+            this.tsmiTrayTestImageUpload.Name = "tsmiTrayTestImageUpload";
+            resources.ApplyResources(this.tsmiTrayTestImageUpload, "tsmiTrayTestImageUpload");
+            this.tsmiTrayTestImageUpload.Click += new System.EventHandler(this.tsmiTestImageUpload_Click);
+            // 
+            // tsmiTrayTestTextUpload
+            // 
+            this.tsmiTrayTestTextUpload.Image = global::ShareX.Properties.Resources.notebook;
+            this.tsmiTrayTestTextUpload.Name = "tsmiTrayTestTextUpload";
+            resources.ApplyResources(this.tsmiTrayTestTextUpload, "tsmiTrayTestTextUpload");
+            this.tsmiTrayTestTextUpload.Click += new System.EventHandler(this.tsmiTestTextUpload_Click);
+            // 
+            // tsmiTrayTestFileUpload
+            // 
+            this.tsmiTrayTestFileUpload.Image = global::ShareX.Properties.Resources.application_block;
+            this.tsmiTrayTestFileUpload.Name = "tsmiTrayTestFileUpload";
+            resources.ApplyResources(this.tsmiTrayTestFileUpload, "tsmiTrayTestFileUpload");
+            this.tsmiTrayTestFileUpload.Click += new System.EventHandler(this.tsmiTestFileUpload_Click);
+            // 
+            // tsmiTrayTestURLShortener
+            // 
+            this.tsmiTrayTestURLShortener.Image = global::ShareX.Properties.Resources.edit_scale;
+            this.tsmiTrayTestURLShortener.Name = "tsmiTrayTestURLShortener";
+            resources.ApplyResources(this.tsmiTrayTestURLShortener, "tsmiTrayTestURLShortener");
+            this.tsmiTrayTestURLShortener.Click += new System.EventHandler(this.tsmiTestURLShortener_Click);
+            // 
+            // tsmiTrayTestURLSharing
+            // 
+            this.tsmiTrayTestURLSharing.Image = global::ShareX.Properties.Resources.globe_share;
+            this.tsmiTrayTestURLSharing.Name = "tsmiTrayTestURLSharing";
+            resources.ApplyResources(this.tsmiTrayTestURLSharing, "tsmiTrayTestURLSharing");
+            this.tsmiTrayTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2027,5 +2090,12 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageCombiner;
         private HelpersLib.GreenlightButton btnOpenSteam;
         private HelpersLib.GreenlightButton btnHideSteam;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayDebug;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayShowDebugLog;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestImageUpload;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestTextUpload;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestFileUpload;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestURLShortener;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestURLSharing;
     }
 }
