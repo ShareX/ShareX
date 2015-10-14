@@ -367,7 +367,7 @@
     <value>Hochladen</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
-    <value>Bild berarbeiten...</value>
+    <value>Bild bearbeiten...</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
     <value>Datei lokal löschen</value>

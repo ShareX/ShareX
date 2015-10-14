@@ -235,6 +235,10 @@ namespace ShareX
             chkRunScreencastCLI.Checked = cboEncoder.Enabled = btnEncoderConfig.Enabled = TaskSettings.CaptureSettings.RunScreencastCLI;
             UpdateVideoEncoders();
 
+            // Capture / Scrolling capture
+            if (TaskSettings.CaptureSettings.ScrollingCaptureOptions == null) TaskSettings.CaptureSettings.ScrollingCaptureOptions = new ScrollingCaptureOptions();
+            pgScrollingCapture.SelectedObject = TaskSettings.CaptureSettings.ScrollingCaptureOptions;
+
             // Actions
             TaskHelpers.AddDefaultExternalPrograms(TaskSettings);
             TaskSettings.ExternalPrograms.ForEach(AddFileAction);
