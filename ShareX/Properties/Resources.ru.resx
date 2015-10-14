@@ -136,18 +136,18 @@
     <value>Скачивается</value>
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
-    <value>Вы пытаетесь выгрузить большой файл.
+    <value>Вы пытаетесь загрузить большой файл.
 Уверенны, что хотите продолжить?</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
-    <value>Выгружается</value>
+    <value>Загружается</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
-    <value>Вы уверены, что хотите выгрузить этот скриншот?
+    <value>Вы уверены, что хотите загрузить этот скриншот?
 Нажмите «Нет», чтобы отменить эту загрузку и отключить автозагрузку скриншотов.</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
-    <value>Предупреждение о первой выгрузке</value>
+    <value>Предупреждение о первой загрузке</value>
   </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
     <value>Выберете папку для сохранения</value>

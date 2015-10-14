@@ -121,7 +121,7 @@
     <value>Захват</value>
   </data>
   <data name="tsddbUpload.Text" xml:space="preserve">
-    <value>Выгрузка</value>
+    <value>Загрузка</value>
   </data>
   <data name="btnHideSteam.Text" xml:space="preserve">
     <value>Скрыть</value>
@@ -145,7 +145,7 @@
     <value>После захвата</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
-    <value>После выгрузки</value>
+    <value>После загрузки</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
     <value>Настройки приложения…</value>
@@ -349,52 +349,52 @@
     <value>Показать ответ...</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>Выгрузить со ссылки…</value>
+    <value>Загрузить со ссылки…</value>
   </data>
   <data name="tsmiUploadFile.Text" xml:space="preserve">
-    <value>Выгрузить файл…</value>
+    <value>Загрузить файл…</value>
   </data>
   <data name="tsmiUploadFolder.Text" xml:space="preserve">
-    <value>Выгрузить папку…</value>
+    <value>Загрузить папку…</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
-    <value>Выгрузить перетаскиванием…</value>
+    <value>Загрузить перетаскиванием…</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
-    <value>Выгрузить из буфера обмена…</value>
+    <value>Загрузить из буфера обмена…</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
-    <value>Выгрузить со ссылки…</value>
+    <value>Загрузить со ссылки…</value>
   </data>
   <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
-    <value>Выгрузить папку…</value>
+    <value>Загрузить папку…</value>
   </data>
   <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
-    <value>Выгрузить файл…</value>
+    <value>Загрузить файл…</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
-    <value>Выгрузить перетаскиванием…</value>
+    <value>Загрузить перетаскиванием…</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
-    <value>Выгрузить из буфера обмена…</value>
+    <value>Загрузить из буфера обмена…</value>
   </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
-    <value>Выгрузка</value>
+    <value>Загрузка</value>
   </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
-    <value>Выгрузить</value>
+    <value>Загрузить</value>
   </data>
   <data name="tsmiTestFileUpload.Text" xml:space="preserve">
-    <value>Проверить выгрузку файла</value>
+    <value>Проверить загрузку файла</value>
   </data>
   <data name="tsmiTestImageUpload.Text" xml:space="preserve">
-    <value>Проверить выгрузку изображения</value>
+    <value>Проверить загрузку изображения</value>
   </data>
   <data name="tsmiTestTextUpload.Text" xml:space="preserve">
-    <value>Проверить выгрузку текста</value>
+    <value>Проверитьзагрузку текста</value>
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
-    <value>Остановить выгрузку</value>
+    <value>Остановить загрузку</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Отключить горячие клавиши</value>
@@ -409,7 +409,7 @@
     <value>Задачи после захвата</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>Задачи после выгрузки</value>
+    <value>Задачи после загрузки</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
     <value>Настройки задач…</value>

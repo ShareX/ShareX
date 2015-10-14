@@ -301,49 +301,49 @@
     <value>Захват последней области</value>
   </data>
   <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
-    <value>Выгрузка</value>
+    <value>Загрузка</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
-    <value>Выгрузка</value>
+    <value>Загрузка</value>
   </data>
   <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
-    <value>Выгрузка</value>
+    <value>Загрузка</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
-    <value>Выгрузка</value>
+    <value>Загрузка</value>
   </data>
   <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
-    <value>Выгрузка</value>
+    <value>Загрузка</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
-    <value>Выгрузка из буфера обмена</value>
+    <value>Загрузка из буфера обмена</value>
   </data>
   <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
-    <value>Выгрузка</value>
+    <value>Загрузка</value>
   </data>
   <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
-    <value>Выгрузка</value>
+    <value>Загрузка</value>
   </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>Отключить/Включить горячие клавиши</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
-    <value>Выгрузка со ссылки</value>
+    <value>Загрузка со ссылки</value>
   </data>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
-    <value>Выгрузка папки</value>
+    <value>Загрузка папки</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
-    <value>Выгрузка файла</value>
+    <value>Загрузка файла</value>
   </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
-    <value>Выгрузка перетаскиванием</value>
+    <value>Загрузка перетаскиванием</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
-    <value>Выгрузка из буфера обмена с предпросмотром</value>
+    <value>Загрузка из буфера обмена с предпросмотром</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
-    <value>Остановка всех активных выгрузок</value>
+    <value>Остановка всех активных загрузок</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Добавить эффекты/водяной знак</value>
@@ -379,7 +379,7 @@
     <value>Распечатать изображение</value>
   </data>
   <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
-    <value>Выгрузить изображение на сервер</value>
+    <value>Загрузить изображение на сервер</value>
   </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>Скопировать ссылку в буфер обмена</value>
