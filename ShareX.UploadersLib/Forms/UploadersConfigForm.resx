@@ -486,7 +486,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
     <value>tpTwitter</value>
   </data>
@@ -1534,9 +1534,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="txtCustomUploaderLog.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
-  <data name="txtCustomUploaderLog.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;txtCustomUploaderLog.Name" xml:space="preserve">
     <value>txtCustomUploaderLog</value>
   </data>
@@ -1698,7 +1695,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCustomUploaderURL.Text" xml:space="preserve">
     <value>URL:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblCustomUploaderURL.Name" xml:space="preserve">
     <value>lblCustomUploaderURL</value>
   </data>
@@ -2055,7 +2052,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
     <value>tpBitly</value>
   </data>
@@ -2124,7 +2121,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGoogleURLShortener.Text" xml:space="preserve">
     <value>Google</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpGoogleURLShortener.Name" xml:space="preserve">
     <value>tpGoogleURLShortener</value>
   </data>
@@ -2358,7 +2355,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblYourlsAPIURL.Name" xml:space="preserve">
     <value>lblYourlsAPIURL</value>
   </data>
@@ -2385,7 +2382,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
   </data>
@@ -2466,7 +2463,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>API UID:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblAdflyAPIUID.Name" xml:space="preserve">
     <value>lblAdflyAPIUID</value>
   </data>
@@ -2544,7 +2541,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
     <value>tpAdFly</value>
   </data>
@@ -2595,7 +2592,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCoinURLUUID.Text" xml:space="preserve">
     <value>UUID:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblCoinURLUUID.Name" xml:space="preserve">
     <value>lblCoinURLUUID</value>
   </data>
@@ -2619,7 +2616,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpCoinURL.Text" xml:space="preserve">
     <value>CoinURL</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
     <value>tpCoinURL</value>
   </data>
@@ -2745,7 +2742,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
     <value>tpPolr</value>
   </data>
@@ -3051,7 +3048,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpFTP.Name" xml:space="preserve">
     <value>tpFTP</value>
   </data>
@@ -3434,7 +3431,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpDropbox.Name" xml:space="preserve">
     <value>tpDropbox</value>
   </data>
@@ -3566,7 +3563,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpOneDrive.Name" xml:space="preserve">
     <value>tpOneDrive</value>
   </data>
@@ -3788,7 +3785,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpGoogleDrive.Name" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
@@ -3983,7 +3980,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
   </data>
@@ -4277,7 +4274,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpCopy.Text" xml:space="preserve">
     <value>Copy</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpCopy.Name" xml:space="preserve">
     <value>tpCopy</value>
   </data>
@@ -4385,7 +4382,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.Name" xml:space="preserve">
     <value>btnAmazonS3BucketNameOpen</value>
   </data>
@@ -4412,7 +4409,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnAmazonS3AccessKeyOpen.Name" xml:space="preserve">
     <value>btnAmazonS3AccessKeyOpen</value>
   </data>
@@ -4694,7 +4691,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpAmazonS3.Name" xml:space="preserve">
     <value>tpAmazonS3</value>
   </data>
@@ -5012,7 +5009,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpMega.Name" xml:space="preserve">
     <value>tpMega</value>
   </data>
@@ -5363,7 +5360,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
@@ -5576,7 +5573,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpMediaFire.Name" xml:space="preserve">
     <value>tpMediaFire</value>
   </data>
@@ -5738,7 +5735,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPushbullet.Name" xml:space="preserve">
     <value>tpPushbullet</value>
   </data>
@@ -5915,7 +5912,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpSendSpace.Name" xml:space="preserve">
     <value>tpSendSpace</value>
   </data>
@@ -6101,7 +6098,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGe_tt.Text" xml:space="preserve">
     <value>Ge.tt</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpGe_tt.Name" xml:space="preserve">
     <value>tpGe_tt</value>
   </data>
@@ -6260,7 +6257,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpHostr.Name" xml:space="preserve">
     <value>tpHostr</value>
   </data>
@@ -6710,7 +6707,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMinus.Text" xml:space="preserve">
     <value>Minus</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpMinus.Name" xml:space="preserve">
     <value>tpMinus</value>
   </data>
@@ -6734,7 +6731,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;txtJiraIssuePrefix.Name" xml:space="preserve">
     <value>txtJiraIssuePrefix</value>
   </data>
@@ -6818,7 +6815,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;txtJiraHost.Name" xml:space="preserve">
     <value>txtJiraHost</value>
   </data>
@@ -6917,7 +6914,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
   </data>
@@ -7076,7 +7073,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpLambda.Name" xml:space="preserve">
     <value>tpLambda</value>
   </data>
@@ -7256,7 +7253,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPomf.Text" xml:space="preserve">
     <value>Pomf</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPomf.Name" xml:space="preserve">
     <value>tpPomf</value>
   </data>
@@ -7397,7 +7394,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpUp1.Text" xml:space="preserve">
     <value>Up1</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpUp1.Name" xml:space="preserve">
     <value>tpUp1</value>
   </data>
@@ -7412,10 +7409,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
     <value>https://cloud.mein-seafile.de/api2/</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="cbSeafileAPIURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
   </data>
@@ -8358,7 +8355,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSeafile.Text" xml:space="preserve">
     <value>Seafile</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpSeafile.Name" xml:space="preserve">
     <value>tpSeafile</value>
   </data>
@@ -9450,7 +9447,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
   </data>
@@ -9528,7 +9525,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
   </data>
@@ -9627,7 +9624,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>Gist</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
   </data>
@@ -9735,7 +9732,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
   </data>
@@ -9864,7 +9861,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
   </data>
@@ -9993,7 +9990,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpOneTimeSecret.Name" xml:space="preserve">
     <value>tpOneTimeSecret</value>
   </data>
@@ -10191,7 +10188,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="chImgurID.Text" xml:space="preserve">
     <value>ID</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Title</value>
   </data>
@@ -10320,7 +10317,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
   </data>
@@ -10560,7 +10557,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
   </data>
@@ -10764,7 +10761,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpTinyPic.Text" xml:space="preserve">
     <value>TinyPic</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
     <value>tpTinyPic</value>
   </data>
@@ -10944,7 +10941,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
   </data>
@@ -11436,7 +11433,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
   </data>
@@ -11502,7 +11499,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="chPicasaID.Width" type="System.Int32, mscorlib">
     <value>135</value>
   </data>
@@ -11604,7 +11601,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPicasa.Text" xml:space="preserve">
     <value>Picasa</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
     <value>tpPicasa</value>
   </data>
@@ -11664,7 +11661,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblCheveretoWebsiteTip.Text" xml:space="preserve">
     <value>/api/1/upload</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblCheveretoWebsiteTip.Name" xml:space="preserve">
     <value>lblCheveretoWebsiteTip</value>
   </data>
@@ -11793,7 +11790,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
   </data>
