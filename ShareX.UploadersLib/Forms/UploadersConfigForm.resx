@@ -6940,7 +6940,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>13, 16</value>
   </data>
   <data name="lblLambdaInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>496, 13</value>
+    <value>554, 13</value>
   </data>
   <data name="lblLambdaInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7010,6 +7010,57 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;txtLambdaApiKey.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="lblLambdaUploadURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblLambdaUploadURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblLambdaUploadURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 86</value>
+  </data>
+  <data name="lblLambdaUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="lblLambdaUploadURL.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>Link URL:</value>
+  </data>
+  <data name="&gt;&gt;lblLambdaUploadURL.Name" xml:space="preserve">
+    <value>lblLambdaUploadURL</value>
+  </data>
+  <data name="&gt;&gt;lblLambdaUploadURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLambdaUploadURL.Parent" xml:space="preserve">
+    <value>tpLambda</value>
+  </data>
+  <data name="&gt;&gt;lblLambdaUploadURL.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbLambdaUploadURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 102</value>
+  </data>
+  <data name="cbLambdaUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 21</value>
+  </data>
+  <data name="cbLambdaUploadURL.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbLambdaUploadURL.Name" xml:space="preserve">
+    <value>cbLambdaUploadURL</value>
+  </data>
+  <data name="&gt;&gt;cbLambdaUploadURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbLambdaUploadURL.Parent" xml:space="preserve">
+    <value>tpLambda</value>
+  </data>
+  <data name="&gt;&gt;cbLambdaUploadURL.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="tpLambda.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>

@@ -551,6 +551,8 @@ namespace ShareX.UploadersLib
             // Lambda
 
             txtLambdaApiKey.Text = Config.LambdaSettings.UserAPIKey;
+            cbLambdaUploadURL.Items.AddRange(Lambda.UploadURLs);
+            cbLambdaUploadURL.SelectedItem = Config.LambdaSettings.UploadURL;
 
             // Pomf
 
@@ -2028,6 +2030,19 @@ namespace ShareX.UploadersLib
         private void txtLambdaApiKey_TextChanged(object sender, EventArgs e)
         {
             Config.LambdaSettings.UserAPIKey = txtLambdaApiKey.Text;
+        }
+
+        private void cbLambdaUploadURL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbLambdaUploadURL.SelectedIndex > -1)
+            {
+                string url = cbLambdaUploadURL.SelectedItem as string;
+
+                if (url != null)
+                {
+                    Config.LambdaSettings.UploadURL = url;
+                }
+            }
         }
 
         #endregion Lambda

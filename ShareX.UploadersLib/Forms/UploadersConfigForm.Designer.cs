@@ -295,6 +295,8 @@
             this.lblLambdaInfo = new System.Windows.Forms.Label();
             this.lblLambdaApiKey = new System.Windows.Forms.Label();
             this.txtLambdaApiKey = new System.Windows.Forms.TextBox();
+            this.lblLambdaUploadURL = new System.Windows.Forms.Label();
+            this.cbLambdaUploadURL = new System.Windows.Forms.ComboBox();
             this.tpPomf = new System.Windows.Forms.TabPage();
             this.txtPomfResultURL = new System.Windows.Forms.TextBox();
             this.txtPomfUploadURL = new System.Windows.Forms.TextBox();
@@ -308,6 +310,7 @@
             this.lblUp1Key = new System.Windows.Forms.Label();
             this.lblUp1Host = new System.Windows.Forms.Label();
             this.tpSeafile = new System.Windows.Forms.TabPage();
+            this.cbSeafileAPIURL = new System.Windows.Forms.ComboBox();
             this.grpSeafileShareSettings = new System.Windows.Forms.GroupBox();
             this.txtSeafileSharePassword = new System.Windows.Forms.TextBox();
             this.lblSeafileSharePassword = new System.Windows.Forms.Label();
@@ -486,7 +489,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbSeafileAPIURL = new System.Windows.Forms.ComboBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2471,6 +2473,8 @@
             this.tpLambda.Controls.Add(this.lblLambdaInfo);
             this.tpLambda.Controls.Add(this.lblLambdaApiKey);
             this.tpLambda.Controls.Add(this.txtLambdaApiKey);
+            this.tpLambda.Controls.Add(this.lblLambdaUploadURL);
+            this.tpLambda.Controls.Add(this.cbLambdaUploadURL);
             resources.ApplyResources(this.tpLambda, "tpLambda");
             this.tpLambda.Name = "tpLambda";
             this.tpLambda.UseVisualStyleBackColor = true;
@@ -2492,6 +2496,19 @@
             this.txtLambdaApiKey.Name = "txtLambdaApiKey";
             this.txtLambdaApiKey.UseSystemPasswordChar = true;
             this.txtLambdaApiKey.TextChanged += new System.EventHandler(this.txtLambdaApiKey_TextChanged);
+            // 
+            // lblLambdaUploadURL
+            // 
+            resources.ApplyResources(this.lblLambdaUploadURL, "lblLambdaUploadURL");
+            this.lblLambdaUploadURL.Name = "lblLambdaUploadURL";
+            // 
+            // cbLambdaUploadURL
+            // 
+            this.cbLambdaUploadURL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLambdaUploadURL.FormattingEnabled = true;
+            resources.ApplyResources(this.cbLambdaUploadURL, "cbLambdaUploadURL");
+            this.cbLambdaUploadURL.Name = "cbLambdaUploadURL";
+            this.cbLambdaUploadURL.SelectedIndexChanged += new System.EventHandler(this.cbLambdaUploadURL_SelectedIndexChanged);
             // 
             // tpPomf
             // 
@@ -2598,6 +2615,16 @@
             resources.ApplyResources(this.tpSeafile, "tpSeafile");
             this.tpSeafile.Name = "tpSeafile";
             this.tpSeafile.UseVisualStyleBackColor = true;
+            // 
+            // cbSeafileAPIURL
+            // 
+            this.cbSeafileAPIURL.FormattingEnabled = true;
+            this.cbSeafileAPIURL.Items.AddRange(new object[] {
+            resources.GetString("cbSeafileAPIURL.Items"),
+            resources.GetString("cbSeafileAPIURL.Items1")});
+            resources.ApplyResources(this.cbSeafileAPIURL, "cbSeafileAPIURL");
+            this.cbSeafileAPIURL.Name = "cbSeafileAPIURL";
+            this.cbSeafileAPIURL.TextChanged += new System.EventHandler(this.cbSeafileAPIURL_TextChanged);
             // 
             // grpSeafileShareSettings
             // 
@@ -3875,16 +3902,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // cbSeafileAPIURL
-            // 
-            this.cbSeafileAPIURL.FormattingEnabled = true;
-            this.cbSeafileAPIURL.Items.AddRange(new object[] {
-            resources.GetString("cbSeafileAPIURL.Items"),
-            resources.GetString("cbSeafileAPIURL.Items1")});
-            resources.ApplyResources(this.cbSeafileAPIURL, "cbSeafileAPIURL");
-            this.cbSeafileAPIURL.Name = "cbSeafileAPIURL";
-            this.cbSeafileAPIURL.TextChanged += new System.EventHandler(this.cbSeafileAPIURL_TextChanged);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4404,6 +4421,8 @@
         private System.Windows.Forms.Label lblLambdaApiKey;
         private System.Windows.Forms.TextBox txtLambdaApiKey;
         private System.Windows.Forms.Label lblLambdaInfo;
+        private System.Windows.Forms.Label lblLambdaUploadURL;
+        private System.Windows.Forms.ComboBox cbLambdaUploadURL;
         private OAuthControl oauthTwitter;
         private System.Windows.Forms.TextBox txtTwitterDescription;
         private System.Windows.Forms.Label lblTwitterDescription;
