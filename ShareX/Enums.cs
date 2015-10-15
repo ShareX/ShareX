@@ -53,14 +53,16 @@ namespace ShareX
         Korean,
         [Description("Português-Brasil (Portuguese-Brazil)")]
         PortugueseBrazil,
-        /*[Description("Русский (Russian)")]
-        Russian,*/
+        [Description("Русский (Russian)")]
+        Russian,
         [Description("简体中文 (Simplified Chinese)")]
         SimplifiedChinese,
         [Description("Español (Spanish)")]
         Spanish,
         [Description("Türkçe (Turkish)")]
-        Turkish
+        Turkish,
+        [Description("? (Vietnamese)")]
+        Vietnamese
     }
 
     public enum TaskJob

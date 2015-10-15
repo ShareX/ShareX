@@ -2169,6 +2169,16 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap vn {
+            get {
+                object obj = ResourceManager.GetObject("vn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose folder path.
         /// </summary>
         public static string WatchFolderForm_btnPathBrowse_Click_Choose_folder_path {

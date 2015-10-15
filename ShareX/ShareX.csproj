@@ -1103,6 +1103,7 @@
     <None Include="Resources\CompanionCube.png" />
     <None Include="Resources\ui-scroll-pane-image.png" />
     <None Include="Resources\document-break.png" />
+    <None Include="Resources\vn.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
