@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Chụp khi cuộn trang</value>
+  </data>
+  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
+    <value>Cuộn tới đầu trang trước khi chụp</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>Bắt đầu chụp khi cuộn trang ngay sau khi chọn vùng</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Vui lòng chú ý rằng mặc dù ShareX cố gắng hết sức để hiển thị ra ảnh chụp khi cuộn trang một cách chính xác nhất nhưng mọi nội dung khi cuộn vẫn có thể được chụp không chính xác. Lý do chính gây ra vấn đề khi tiến hành việc chụp cuộn là những chuyển động trên màn hình. Ví dụ: Trang web có ảnh động GIF hoặc khung tĩnh trên màn hình khi đang cuộn (chẳng hạn như thanh menu tĩnh trên cùng hoặc các nút bấm tĩnh không thay đổi vị trí nhưng các thành phần khác của trang web vẫn được cuộn).</value>
+  </data>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>Tải lên/lưu lại tùy thuộc vào tùy chỉnh sau khi tải lên</value>
+  </data>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>Tự động tải lên/lưu lại tùy thuộc vào thiết lập sau khi chụp ảnh và đóng lại</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Bắt đầu chụp</value>
+  </data>
+  <data name="btnGuessEdges.Text" xml:space="preserve">
+    <value>Tự phỏng đoán giá trị cạnh để cắt</value>
+  </data>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(Tùy chọn) Chọn vùng tự tạo trong cửa sổ...</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Chụp</value>
+  </data>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>Kết hợp các điều chỉnh</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>Xóa các ảnh trùng lặp</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>Số lượng ảnh:</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>Tự động bắt đầu chọn vùng chụp trước khi mở cửa sổ này</value>
+  </data>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>Ảnh</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>Cắt các cạnh</value>
+  </data>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>Trên:</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Bắt đầu sau:</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>Tự động xác định việc cuộn trang kết thúc</value>
+  </data>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>Dưới:</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Dọc:</value>
+  </data>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>Trái:</value>
+  </data>
+  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
+    <value>Số lần cuộn tối đa:</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>Đang xử lý...</value>
+  </data>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>Phải:</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Phương thức cuộn:</value>
+  </data>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>Độ trễ cuộn:</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Xóa lần cuối:</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Đầu ra</value>
+  </data>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>Đặt lại thiết lập đầu ra</value>
+  </data>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>Chọn cửa sổ hoặc vùng điều khiển để cuộn...</value>
+  </data>
+  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
+    <value>Tự kết hợp các điều chỉnh</value>
+  </data>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>Tự động đoán offset và gộp sau khi chụp</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>Hàng dọc cuối:</value>
+  </data>
+</root>
