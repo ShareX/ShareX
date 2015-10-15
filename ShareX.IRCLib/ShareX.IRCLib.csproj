@@ -75,6 +75,9 @@
     <Compile Include="UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="IRCClient\IRCClientForm.de.resx">
+      <DependentUpon>IRCClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IRCClient\IRCClientForm.fr.resx">
       <DependentUpon>IRCClientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +93,7 @@
     <EmbeddedResource Include="IRCClient\IRCClientForm.tr.resx">
       <DependentUpon>IRCClientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
@@ -98,6 +102,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
+    <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">

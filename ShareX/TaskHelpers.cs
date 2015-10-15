@@ -794,11 +794,16 @@ namespace ShareX
 
         public static bool CheckFFmpeg(TaskSettings taskSettings)
         {
-            if (!File.Exists(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath))
-            {
-                string ffmpegText = string.IsNullOrEmpty(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath) ? "ffmpeg.exe" : taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath;
+            string ffmpegPath = taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath;
 
-                if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegText),
+            if (string.IsNullOrEmpty(ffmpegPath))
+            {
+                ffmpegPath = Program.DefaultFFmpegPath;
+            }
+
+            if (!File.Exists(ffmpegPath))
+            {
+                if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegPath),
                     "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     if (FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)

@@ -406,6 +406,9 @@
     <Compile Include="WindowState.cs" />
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
+    <EmbeddedResource Include="Automate\AutomateForm.de.resx">
+      <DependentUpon>AutomateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Automate\AutomateForm.es.resx">
       <DependentUpon>AutomateForm.cs</DependentUpon>
     </EmbeddedResource>

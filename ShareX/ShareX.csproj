@@ -507,6 +507,9 @@
     <EmbeddedResource Include="Forms\BeforeUploadForm.zh-CN.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChromeForm.de.resx">
+      <DependentUpon>ChromeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChromeForm.fr.resx">
       <DependentUpon>ChromeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -615,6 +618,9 @@
     <EmbeddedResource Include="Forms\FileExistForm.zh-CN.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeConfigForm.de.resx">
+      <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.fr.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -653,6 +659,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.zh-CN.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageCombinerForm.de.resx">
+      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageCombinerForm.fr.resx">
+      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageCombinerForm.nl-NL.resx">
       <DependentUpon>ImageCombinerForm.cs</DependentUpon>
@@ -854,6 +866,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.zh-CN.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.de.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.fr.resx">
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>

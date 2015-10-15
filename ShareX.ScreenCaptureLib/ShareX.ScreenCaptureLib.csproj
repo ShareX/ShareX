@@ -139,28 +139,13 @@
     <Content Include="Resources\Crosshair.cur" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.cs.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.de.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.es.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.fr.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.hu.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.ko-KR.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.nl-NL.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.pl.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.pt-BR.resx">
@@ -172,13 +157,6 @@
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.tr.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.vi-VN.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.zh-CN.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.cs.resx" />
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -195,7 +173,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
-    <EmbeddedResource Include="Properties\Resources.pl.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -203,11 +180,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
-    <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.cs.resx">
-      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.de.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,9 +199,6 @@
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.nl-NL.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.pl.resx">
-      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.pt-BR.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,9 +206,6 @@
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.tr.resx">
-      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.vi-VN.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.zh-CN.resx">
