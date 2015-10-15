@@ -161,5 +161,10 @@ namespace ShareX.ScreenCaptureLib
             Vorbis_qscale = 3;
             MP3_qscale = 4;
         }
+
+        public FFmpegOptions(string ffmpegPath) : this()
+        {
+            CLIPath = ffmpegPath;
+        }
     }
 }

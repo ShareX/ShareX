@@ -238,6 +238,8 @@ namespace ShareX
 
         public static string ToolsFolder => Path.Combine(PersonalPath, "Tools");
 
+        public static string DefaultFFmpegPath => Path.Combine(ToolsFolder, "ffmpeg.exe");
+
         public static string ChromeHostManifestPath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
 
         public static string ChromeHostPath => Helpers.GetAbsolutePath("ShareX_Chrome.exe");
