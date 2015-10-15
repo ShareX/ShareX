@@ -396,4 +396,73 @@
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Показать окно с QR кодом</value>
   </data>
+  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
+    <value>Захват области (Примечания)</value>
+  </data>
+  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
+    <value>Захват области произвольной формы</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>Захват с прокруткой</value>
+  </data>
+  <data name="HotkeyType_RectangleLight" xml:space="preserve">
+    <value>Захват области (Светлая)</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Захват области (Прозрачная)</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>Начать автозахват последней области</value>
+  </data>
+  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
+    <value>Захват области (Объекты)</value>
+  </data>
+  <data name="HotkeyType_PolygonRegion" xml:space="preserve">
+    <value>Захват многоугольной области</value>
+  </data>
+  <data name="HotkeyType_None" xml:space="preserve">
+    <value>Не выбрано</value>
+  </data>
+  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
+    <value>Всплывающее уведомление</value>
+  </data>
+  <data name="PopUpNotificationType_None" xml:space="preserve">
+    <value>Ничего</value>
+  </data>
+  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
+    <value>Уведомление с предпросмотром</value>
+  </data>
+  <data name="FileExistAction_Ask" xml:space="preserve">
+    <value>Спросить о действии</value>
+  </data>
+  <data name="FileExistAction_Cancel" xml:space="preserve">
+    <value>Не сохранять</value>
+  </data>
+  <data name="FileExistAction_Overwrite" xml:space="preserve">
+    <value>Перезаписать файл</value>
+  </data>
+  <data name="FileExistAction_UniqueName" xml:space="preserve">
+    <value>Добавить номер к имени файла</value>
+  </data>
+  <data name="GIFQuality_Default" xml:space="preserve">
+    <value>Стандартное кодирование .NET (Быстро со средним качеством)</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>Palette quantizer 256 градаций сегоро</value>
+  </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>Octree quantizer 16 цветов</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>Octree quantizer 256 цветов (Медленно с лучшим качеством)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (Хорошее качество)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (Плохое качество)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>Octree quantizer (Среднее качество)</value>
+  </data>
 </root>

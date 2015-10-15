@@ -118,21 +118,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Горячие клавиши</value>
-  </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Восстановить стандартные горячие клавиши</value>
+    <value>ShareX - Эффекты изображений</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
-    <value>Добавить...</value>
+    <value>Добавить</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Очистить</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Копия</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Изменить...</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Обновить</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Удалить</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>Из буфера обмена</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>Из файла…</value>
   </data>
 </root>

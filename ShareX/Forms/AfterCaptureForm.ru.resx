@@ -132,4 +132,7 @@
   <data name="tpAfterCapture.Text" xml:space="preserve">
     <value>После захвата</value>
   </data>
+  <data name="chAfterCapture.Text" xml:space="preserve">
+    <value>Задачи</value>
+  </data>
 </root>

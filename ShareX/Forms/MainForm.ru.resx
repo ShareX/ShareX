@@ -391,7 +391,7 @@
     <value>Проверить загрузку изображения</value>
   </data>
   <data name="tsmiTestTextUpload.Text" xml:space="preserve">
-    <value>Проверитьзагрузку текста</value>
+    <value>Проверить загрузку текста</value>
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Остановить загрузку</value>
@@ -575,5 +575,53 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Миниатюры из видео…</value>
+  </data>
+  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
+    <value>Область (Примечания)</value>
+  </data>
+  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
+    <value>Область (Примечания)</value>
+  </data>
+  <data name="tsmiFreeHand.Text" xml:space="preserve">
+    <value>Область произвольной формы</value>
+  </data>
+  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
+    <value>Область произвольной формы</value>
+  </data>
+  <data name="tsmiRectangleLight.Text" xml:space="preserve">
+    <value>Область (Светлая)</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>Область (Прозрачная)</value>
+  </data>
+  <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
+    <value>Область (Светлая)</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>Область (Прозрачная)</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Сервисы загрузок</value>
+  </data>
+  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
+    <value>Настройки сервисов…</value>
+  </data>
+  <data name="tsmiDNSChanger.Text" xml:space="preserve">
+    <value>Изменение DNS…</value>
+  </data>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>Сервисы загрузок</value>
+  </data>
+  <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
+    <value>Настройки сервисов…</value>
+  </data>
+  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
+    <value>Изменение DNS…</value>
+  </data>
+  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
+    <value>Сообщение в Twitter…</value>
+  </data>
+  <data name="tsmiTweetMessage.Text" xml:space="preserve">
+    <value>Сообщение в Twitter…</value>
   </data>
 </root>

@@ -129,4 +129,22 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Действия</value>
   </data>
+  <data name="cbHiddenWindow.Text" xml:space="preserve">
+    <value>Спрятать окно</value>
+  </data>
+  <data name="lblArgs.Text" xml:space="preserve">
+    <value>Аргументы:</value>
+  </data>
+  <data name="lblExtensions.Text" xml:space="preserve">
+    <value>Фильтр расширений: (Пример: jpg png mp4)</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="lblOutputExtension.Text" xml:space="preserve">
+    <value>Расширение имени выходного файла: (Пусто = такое же)</value>
+  </data>
+  <data name="lblPath.Text" xml:space="preserve">
+    <value>Путь к файлу:</value>
+  </data>
 </root>
