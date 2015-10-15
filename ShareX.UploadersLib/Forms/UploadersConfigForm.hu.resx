@@ -325,7 +325,7 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
     <value>Megosztható URL létrehozása</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Közvetlen link (hozzáadja a &amp;&amp;download-ot az URL-hez)</value>
+    <value>Közvetlen link (hozzáadja a &amp;download-ot az URL-hez)</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Helytelen SSL tanúsítvány ignorálása</value>

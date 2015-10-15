@@ -326,7 +326,7 @@
     <value>创建共享URL</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>直接链接（又添"&amp;&amp;download"到URL）</value>
+    <value>直接链接（又添"&amp;download"到URL）</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>忽略无效的SSL证书</value>

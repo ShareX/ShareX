@@ -352,7 +352,7 @@
     <value>230, 22</value>
   </data>
   <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Region (Windows &amp;&amp; controls)</value>
+    <value>Region (Windows and controls)</value>
   </data>
   <data name="tsmiRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
@@ -1171,7 +1171,7 @@
     <value>230, 22</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Region (Windows &amp;&amp; controls)</value>
+    <value>Region (Windows and controls)</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
@@ -1583,7 +1583,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>

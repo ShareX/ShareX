@@ -265,7 +265,7 @@
     <value>Cihaz:</value>
   </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>&amp;Kayıt...</value>
+    <value>Kayıt...</value>
   </data>
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
     <value>Albüm ekle</value>
@@ -663,7 +663,7 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
     <value>Yükleme için Albüm ID (Boş = Albüm yok):</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Direkt link (Adrese "&amp;&amp;download" ekler)</value>
+    <value>Direkt link (Adrese "&amp;download" ekler)</value>
   </data>
   <data name="lblPastebinExpiration.Text" xml:space="preserve">
     <value>Son kullanma:</value>

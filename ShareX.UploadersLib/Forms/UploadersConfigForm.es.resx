@@ -351,7 +351,7 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
     <value>Crear URL compartible</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Enlace directo (Añade "&amp;&amp;descargar" a la URL)</value>
+    <value>Enlace directo (Añade "&amp;descargar" a la URL)</value>
   </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
     <value>Crear URL compartible</value>

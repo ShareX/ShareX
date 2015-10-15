@@ -5095,13 +5095,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>16, 232</value>
   </data>
   <data name="cbOwnCloudDirectLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 17</value>
+    <value>214, 17</value>
   </data>
   <data name="cbOwnCloudDirectLink.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Direct link (Adds "&amp;&amp;download" to URL)</value>
+    <value>Direct link (Adds "&amp;download" to URL)</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudDirectLink.Name" xml:space="preserve">
     <value>cbOwnCloudDirectLink</value>
@@ -5764,7 +5764,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>&amp;Register...</value>
+    <value>Register...</value>
   </data>
   <data name="&gt;&gt;btnSendSpaceRegister.Name" xml:space="preserve">
     <value>btnSendSpaceRegister</value>

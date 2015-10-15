@@ -241,7 +241,7 @@
     <value>4</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>&amp;OK</value>
+    <value>OK</value>
   </data>
   <data name="&gt;&gt;btnContinue.Name" xml:space="preserve">
     <value>btnContinue</value>

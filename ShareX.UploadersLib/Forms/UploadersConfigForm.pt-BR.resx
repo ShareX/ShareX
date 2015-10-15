@@ -333,7 +333,7 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
     <value>Criar URL compartilhável</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Link direto (Adiciona "&amp;&amp;download" ao URL)</value>
+    <value>Link direto (Adiciona "&amp;download" ao URL)</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Ignorar certificado SSL inválido</value>

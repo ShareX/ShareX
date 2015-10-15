@@ -223,7 +223,7 @@
     <value>Appareil:</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Lien direct (Ajoute "&amp;&amp;download" à l'URL)</value>
+    <value>Lien direct (Ajoute "&amp;download" à l'URL)</value>
   </data>
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
     <value>URL directe</value>

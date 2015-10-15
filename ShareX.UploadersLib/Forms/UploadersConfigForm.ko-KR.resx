@@ -535,7 +535,7 @@
     <value>공유 가능한 URL 생성하기</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>다이렉트 링크 (URL에 "&amp;&amp;download"를 덧붙임)</value>
+    <value>다이렉트 링크 (URL에 "&amp;download"를 덧붙임)</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>유효하지 않은 SSL 인증서 무시하기</value>

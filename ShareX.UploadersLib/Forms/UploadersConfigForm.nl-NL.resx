@@ -326,7 +326,7 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
     <value>Creëer een deelbare link</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Directe link (Voegt &amp;&amp;download toe aan de URL)</value>
+    <value>Directe link (Voegt &amp;download toe aan de URL)</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Negeer ongeldig SSL certificaat</value>

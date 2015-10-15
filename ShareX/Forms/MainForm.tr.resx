@@ -654,4 +654,25 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Kaydırarak yakalama...</value>
   </data>
+  <data name="tsmiTrayDebug.Text" xml:space="preserve">
+    <value>Hata ayıklama</value>
+  </data>
+  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
+    <value>Hata ayıklama kütüğü...</value>
+  </data>
+  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
+    <value>Dosya yükleme testi</value>
+  </data>
+  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
+    <value>Resim yükleme testi</value>
+  </data>
+  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
+    <value>Yazı yükleme testi</value>
+  </data>
+  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
+    <value>URL paylaşım testi</value>
+  </data>
+  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
+    <value>URL kısaltma testi</value>
+  </data>
 </root>

@@ -1519,7 +1519,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture region (Objects).
+        ///   Looks up a localized string similar to Capture region (Windows and controls).
         /// </summary>
         internal static string HotkeyType_WindowRectangle {
             get {

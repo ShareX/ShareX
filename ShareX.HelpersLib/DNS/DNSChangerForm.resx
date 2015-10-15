@@ -273,7 +273,7 @@
     <value>11</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
-    <value>&amp;Apply</value>
+    <value>Apply</value>
   </data>
   <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
     <value>btnSave</value>
@@ -297,7 +297,7 @@
     <value>12</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;Close</value>
+    <value>Close</value>
   </data>
   <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
     <value>btnCancel</value>

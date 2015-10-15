@@ -2004,6 +2004,7 @@
             // 
             resources.ApplyResources(this.cbOwnCloudDirectLink, "cbOwnCloudDirectLink");
             this.cbOwnCloudDirectLink.Name = "cbOwnCloudDirectLink";
+            this.cbOwnCloudDirectLink.UseMnemonic = false;
             this.cbOwnCloudDirectLink.UseVisualStyleBackColor = true;
             this.cbOwnCloudDirectLink.CheckedChanged += new System.EventHandler(this.cbOwnCloudDirectLink_CheckedChanged);
             // 

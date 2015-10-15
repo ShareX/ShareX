@@ -1075,7 +1075,7 @@
     <value>4</value>
   </data>
   <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
-    <value>Guess combine adjustments &amp; combine</value>
+    <value>Guess combine adjustments and combine</value>
   </data>
   <data name="btnGuessCombineAdjustments.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>

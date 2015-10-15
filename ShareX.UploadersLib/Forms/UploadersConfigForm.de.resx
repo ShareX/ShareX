@@ -323,7 +323,7 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Erstelle teilbare URL</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Direkter Link (Fügt "&amp;&amp;download" zur URL hinzu)</value>
+    <value>Direkter Link (Fügt "&amp;download" zur URL hinzu)</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Ignoriere ungültiges SSL Zertifikat</value>
