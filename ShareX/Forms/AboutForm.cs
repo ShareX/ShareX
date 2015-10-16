@@ -76,6 +76,7 @@ Lambda support: https://github.com/mstojcevich
 VideoBin support: https://github.com/corey-/
 Up1 support: https://github.com/Upload
 CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://github.com/DanielMcAssey
+Seafile support: https://github.com/zikeji
 
 {1}:
 
@@ -88,6 +89,7 @@ Korean: https://github.com/123jimin
 Spanish: https://github.com/ovnisoftware
 Dutch: https://github.com/canihavesomecoffee
 Portuguese (Brazil): https://github.com/athosbr99 & https://github.com/RockyTV
+Vietnamese: https://github.com/thanhpd
 
 {2}:
 
@@ -107,11 +109,7 @@ AWS SDK: http://aws.amazon.com/sdk-for-net/
 CLR Security: http://clrsecurity.codeplex.com
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 
-Trailer music credits:
-Track Name: Au5 - Inside (feat. Danyka Nadeau)
-Video Link: https://youtu.be/WrkyT-6ivjc
-Buy Link: http://music.monstercat.com/track/inside-feat-danyka-nadeau
-Label Channel: http://www.YouTube.com/Monstercat
+Trailer music credits: Track Name: Au5 - Inside (feat. Danyka Nadeau), Video Link: https://youtu.be/WrkyT-6ivjc, Buy Link: http://music.monstercat.com/track/inside-feat-danyka-nadeau, Label Channel: http://www.YouTube.com/Monstercat
 
 Running from:
 {3}
