@@ -2657,11 +2657,6 @@
             0,
             0,
             0});
-            this.nudSeafileExpireDays.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudSeafileExpireDays.Name = "nudSeafileExpireDays";
             this.nudSeafileExpireDays.Value = new decimal(new int[] {
             7,

@@ -264,7 +264,7 @@ namespace ShareX.UploadersLib
         public string SeafileEncryptedLibraryPassword = "";
         public bool SeafileCreateShareableURL = true;
         public bool SeafileIgnoreInvalidCert = false;
-        public int SeafileShareDaysToExpire = 7;
+        public int SeafileShareDaysToExpire = 0;
         public string SeafileSharePassword = "";
         public string SeafileAccInfoEmail = "";
         public string SeafileAccInfoUsage = "";
@@ -438,6 +438,8 @@ namespace ShareX.UploadersLib
                     return LambdaSettings != null && !string.IsNullOrEmpty(LambdaSettings.UserAPIKey);
                 case FileDestination.Pomf:
                     return PomfUploader != null && !string.IsNullOrEmpty(PomfUploader.UploadURL);
+                case FileDestination.Seafile:
+                    return !string.IsNullOrEmpty(SeafileAPIURL) && !string.IsNullOrEmpty(SeafileAuthToken) && !string.IsNullOrEmpty(SeafileRepoID);
                 case FileDestination.SharedFolder:
                     return LocalhostAccountList != null && LocalhostAccountList.IsValidIndex(LocalhostSelectedFiles);
                 case FileDestination.Email:

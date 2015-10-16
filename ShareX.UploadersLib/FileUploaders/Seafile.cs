@@ -483,7 +483,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("p", path);
             args.Add("share_type", "download");
             if (!string.IsNullOrEmpty(SharePassword)) args.Add("password", SharePassword);
-            args.Add("expire", ShareDaysToExpire.ToString());
+            if (ShareDaysToExpire > 0) args.Add("expire", ShareDaysToExpire.ToString());
 
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
