@@ -69,6 +69,14 @@ namespace ShareX
             }
         }
 
+        public static string TitleLong
+        {
+            get
+            {
+                return $"{Title} {Build}";
+            }
+        }
+
         public static CLIManager CLI { get; private set; }
         public static bool IsMultiInstance { get; private set; }
         public static bool IsPortable { get; private set; }
@@ -327,7 +335,7 @@ namespace ShareX
 
             NoHotkeys = CLI.IsCommandExist("NoHotkeys");
 
-            DebugHelper.WriteLine($"{Title} {Build} build");
+            DebugHelper.WriteLine(TitleLong);
             DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);
             DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
             DebugHelper.WriteLine("Personal path: " + PersonalPath);
@@ -523,7 +531,7 @@ namespace ShareX
 
         private static void OnError(Exception e)
         {
-            using (ErrorForm errorForm = new ErrorForm(e, LogsFilePath, Links.URL_ISSUES))
+            using (ErrorForm errorForm = new ErrorForm(e.Message, $"{e}\r\n\r\n{TitleLong}", LogsFilePath, Links.URL_ISSUES))
             {
                 errorForm.ShowDialog();
             }
