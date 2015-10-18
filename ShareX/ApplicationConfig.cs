@@ -120,7 +120,7 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Calculate and show file sizes in binary units (KiB, MiB etc.)")]
         public bool BinaryUnits { get; set; }
 
-        [Category("Application"), DefaultValue(false), Description("Show most recent task first.")]
+        [Category("Application"), DefaultValue(false), Description("Show most recent task first in main window.")]
         public bool ShowMostRecentTaskFirst { get; set; }
 
         [Category("Application"), DefaultValue(false), Description("By default copying \"Bitmap\" to clipboard. Alternative method copying \"PNG and DIB\" to clipboard.")]
@@ -145,12 +145,6 @@ namespace ShareX
 
         [Category("Application"), DefaultValue(true), Description("Show tips in main window list when list is empty.")]
         public bool ShowMainWindowTip { get; set; }
-
-        [Category("Application"), DefaultValue(true), Description("Saves recent links so when ShareX reopened it will remember them.")]
-        public bool RecentLinksRemember { get; set; }
-
-        [Category("Application"), DefaultValue(10), Description("In recent links tray menu max how many links to show.")]
-        public int RecentLinksMaxCount { get; set; }
 
         [Category("Application"), DefaultValue(100), Description("Large file size defined in MiB or MB. ShareX will warn before uploading large files. 0 disables this feature.")]
         public int LargeFileSizeWarning { get; set; }
@@ -187,6 +181,15 @@ namespace ShareX
 
         [Category("Drag and drop window"), DefaultValue(255), Description("When you drag file to drop window then opacity will change to this.")]
         public int DropHoverOpacity { get; set; }
+
+        [Category("Recent links"), DefaultValue(true), Description("Saves recent links so when ShareX reopened it will remember them.")]
+        public bool RecentLinksRemember { get; set; }
+
+        [Category("Recent links"), DefaultValue(10), Description("In recent links tray menu max how many links to show.")]
+        public int RecentLinksMaxCount { get; set; }
+
+        [Category("Recent links"), DefaultValue(false), Description("Show most recent link first in recent links tray menu.")]
+        public bool ShowMostRecentLinkFirst { get; set; }
 
         #endregion Advanced
 
