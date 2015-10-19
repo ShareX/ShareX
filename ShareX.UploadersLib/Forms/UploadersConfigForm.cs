@@ -125,6 +125,7 @@ namespace ShareX.UploadersLib
             CodeMenu.Create(txtAmazonS3ObjectPrefix, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
             CodeMenu.Create(txtMediaFirePath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
             CodeMenu.Create(txtCustomUploaderArgValue, ReplCodeMenuEntry.n);
+            CodeMenu.Create(txtCustomUploaderHeaderValue, ReplCodeMenuEntry.n);
 
             txtCustomUploaderLog.AddContextMenu();
 
@@ -2670,10 +2671,10 @@ namespace ShareX.UploadersLib
         private void btnCustomUploaderArgAdd_Click(object sender, EventArgs e)
         {
             string name = txtCustomUploaderArgName.Text;
-            string value = txtCustomUploaderArgValue.Text;
 
             if (!string.IsNullOrEmpty(name))
             {
+                string value = txtCustomUploaderArgValue.Text;
                 lvCustomUploaderArguments.Items.Add(name).SubItems.Add(value);
                 txtCustomUploaderArgName.Text = string.Empty;
                 txtCustomUploaderArgValue.Text = string.Empty;
@@ -2689,15 +2690,18 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void btnCustomUploaderArgEdit_Click(object sender, EventArgs e)
+        private void btnCustomUploaderArgUpdate_Click(object sender, EventArgs e)
         {
-            string name = txtCustomUploaderArgName.Text;
-            string value = txtCustomUploaderArgValue.Text;
-
-            if (lvCustomUploaderArguments.SelectedItems.Count > 0 && !string.IsNullOrEmpty(name))
+            if (lvCustomUploaderArguments.SelectedItems.Count > 0)
             {
-                lvCustomUploaderArguments.SelectedItems[0].Text = name;
-                lvCustomUploaderArguments.SelectedItems[0].SubItems[1].Text = value;
+                string name = txtCustomUploaderArgName.Text;
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    string value = txtCustomUploaderArgValue.Text;
+                    lvCustomUploaderArguments.SelectedItems[0].Text = name;
+                    lvCustomUploaderArguments.SelectedItems[0].SubItems[1].Text = value;
+                }
             }
         }
 
@@ -2714,6 +2718,58 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderArgName.Text = name;
             txtCustomUploaderArgValue.Text = value;
+        }
+
+        private void btnCustomUploaderHeaderAdd_Click(object sender, EventArgs e)
+        {
+            string name = txtCustomUploaderHeaderName.Text;
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                string value = txtCustomUploaderHeaderValue.Text;
+                lvCustomUploaderHeaders.Items.Add(name).SubItems.Add(value);
+                txtCustomUploaderHeaderName.Text = string.Empty;
+                txtCustomUploaderHeaderValue.Text = string.Empty;
+                txtCustomUploaderHeaderName.Focus();
+            }
+        }
+
+        private void btnCustomUploaderHeaderRemove_Click(object sender, EventArgs e)
+        {
+            if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
+            {
+                lvCustomUploaderHeaders.SelectedItems[0].Remove();
+            }
+        }
+
+        private void btnCustomUploaderHeaderUpdate_Click(object sender, EventArgs e)
+        {
+            if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
+            {
+                string name = txtCustomUploaderHeaderName.Text;
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    string value = txtCustomUploaderHeaderValue.Text;
+                    lvCustomUploaderHeaders.SelectedItems[0].Text = name;
+                    lvCustomUploaderHeaders.SelectedItems[0].SubItems[1].Text = value;
+                }
+            }
+        }
+
+        private void lvCustomUploaderHeaders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = string.Empty;
+            string value = string.Empty;
+
+            if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
+            {
+                name = lvCustomUploaderHeaders.SelectedItems[0].Text;
+                value = lvCustomUploaderHeaders.SelectedItems[0].SubItems[1].Text;
+            }
+
+            txtCustomUploaderHeaderName.Text = name;
+            txtCustomUploaderHeaderValue.Text = value;
         }
 
         private void cbCustomUploaderImageUploader_SelectedIndexChanged(object sender, EventArgs e)

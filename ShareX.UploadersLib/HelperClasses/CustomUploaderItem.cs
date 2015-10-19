@@ -38,6 +38,7 @@ namespace ShareX.UploadersLib
         public string RequestURL { get; set; }
         public string FileFormName { get; set; }
         public Dictionary<string, string> Arguments { get; set; }
+        public Dictionary<string, string> Headers { get; set; }
         public ResponseType ResponseType { get; set; }
         public List<string> RegexList { get; set; }
         public string URL { get; set; }
@@ -49,6 +50,7 @@ namespace ShareX.UploadersLib
         public CustomUploaderItem()
         {
             Arguments = new Dictionary<string, string>();
+            Headers = new Dictionary<string, string>();
             RegexList = new List<string>();
         }
 

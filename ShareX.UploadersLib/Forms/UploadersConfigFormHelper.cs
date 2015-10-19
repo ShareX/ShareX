@@ -1728,6 +1728,14 @@ namespace ShareX.UploadersLib
                 lvCustomUploaderArguments.Items.Add(arg.Key).SubItems.Add(arg.Value);
             }
 
+            txtCustomUploaderHeaderName.Text = string.Empty;
+            txtCustomUploaderHeaderValue.Text = string.Empty;
+            lvCustomUploaderHeaders.Items.Clear();
+            foreach (KeyValuePair<string, string> arg in customUploader.Headers)
+            {
+                lvCustomUploaderHeaders.Items.Add(arg.Key).SubItems.Add(arg.Value);
+            }
+
             cbCustomUploaderResponseType.SelectedIndex = (int)customUploader.ResponseType;
             txtCustomUploaderRegexp.Text = string.Empty;
             lvCustomUploaderRegexps.Items.Clear();
@@ -1744,14 +1752,20 @@ namespace ShareX.UploadersLib
         private CustomUploaderItem GetCustomUploaderFromFields()
         {
             CustomUploaderItem item = new CustomUploaderItem(txtCustomUploaderName.Text);
+
+            item.RequestType = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex;
+            item.RequestURL = txtCustomUploaderRequestURL.Text;
+            item.FileFormName = txtCustomUploaderFileForm.Text;
+
             foreach (ListViewItem lvItem in lvCustomUploaderArguments.Items)
             {
                 item.Arguments.Add(lvItem.Text, lvItem.SubItems[1].Text);
             }
 
-            item.RequestType = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex;
-            item.RequestURL = txtCustomUploaderRequestURL.Text;
-            item.FileFormName = txtCustomUploaderFileForm.Text;
+            foreach (ListViewItem lvItem in lvCustomUploaderHeaders.Items)
+            {
+                item.Headers.Add(lvItem.Text, lvItem.SubItems[1].Text);
+            }
 
             item.ResponseType = (ResponseType)cbCustomUploaderResponseType.SelectedIndex;
             foreach (ListViewItem lvItem in lvCustomUploaderRegexps.Items)
