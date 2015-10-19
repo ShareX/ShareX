@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -119,6 +120,23 @@ namespace ShareX.UploadersLib
             }
 
             return arguments;
+        }
+
+        public NameValueCollection GetHeaders()
+        {
+            if (Headers != null && Headers.Count > 0)
+            {
+                NameValueCollection collection = new NameValueCollection();
+
+                foreach (KeyValuePair<string, string> header in Headers)
+                {
+                    collection.Add(header.Key, header.Value);
+                }
+
+                return collection;
+            }
+
+            return null;
         }
 
         public void ParseResponse(UploadResult result, bool isShortenedURL = false)
