@@ -844,4 +844,7 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>Location header</value>
+  </data>
 </root>

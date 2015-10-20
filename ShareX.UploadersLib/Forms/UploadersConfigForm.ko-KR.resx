@@ -120,9 +120,6 @@
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>URL 단축기</value>
   </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>인자</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 목적지 설정</value>
   </data>
@@ -177,9 +174,6 @@
   <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
     <value>추가</value>
   </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>갱신</value>
-  </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>삭제</value>
   </data>
@@ -197,9 +191,6 @@
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>추가</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>갱신</value>
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>삭제</value>
@@ -498,9 +489,6 @@
   <data name="chImgurDescription.Text" xml:space="preserve">
     <value>설명</value>
   </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>값</value>
-  </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>폴더 이름</value>
   </data>
@@ -721,8 +709,5 @@
   </data>
   <data name="btnFlickrOpenImages.Text" xml:space="preserve">
     <value>포토스트림 보기...</value>
-  </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>이름</value>
   </data>
 </root>

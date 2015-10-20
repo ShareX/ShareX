@@ -129,9 +129,6 @@
   <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
     <value>Adicionar</value>
   </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Remover</value>
   </data>
@@ -155,9 +152,6 @@
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>Atualizar</value>
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Remover</value>
@@ -344,12 +338,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
     <value>Upload público?</value>
   </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>Valor</value>
-  </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Nome da pasta</value>
   </data>
@@ -379,9 +367,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   </data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Nome</value>
-  </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Parâmetros</value>
   </data>
   <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
     <value>Regex da resposta</value>

@@ -129,9 +129,6 @@
   <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
     <value>Hozzáadás</value>
   </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>Frissítés</value>
-  </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Eltávolítás</value>
   </data>
@@ -152,9 +149,6 @@
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Hozzáadás</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>Frissítés</value>
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Eltávolítás</value>
@@ -333,12 +327,6 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
     <value>Publikus feltöltés?</value>
   </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>Név</value>
-  </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>Érték</value>
-  </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Mappa neve</value>
   </data>
@@ -368,9 +356,6 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   </data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Név</value>
-  </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Argumentumok</value>
   </data>
   <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
     <value>Regex a válaszból</value>

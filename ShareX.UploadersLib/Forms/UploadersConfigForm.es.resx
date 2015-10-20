@@ -159,12 +159,6 @@
   <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
     <value>Ejemplos...</value>
   </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>Actualizar</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>Actualizar</value>
-  </data>
   <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
     <value>Actualizar</value>
   </data>
@@ -308,9 +302,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
     <value>¿Es carga pública?</value>
   </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Título</value>
   </data>
@@ -322,9 +313,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Nombre de la carpeta</value>
-  </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>Valor</value>
   </data>
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Título</value>
@@ -369,9 +357,6 @@ Esto significa que se pueden perder de Amazon S3 en algún momento.</value>
   </data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Nombre</value>
-  </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Argumentos</value>
   </data>
   <data name="gpJiraServer.Text" xml:space="preserve">
     <value>Servidor Jira</value>

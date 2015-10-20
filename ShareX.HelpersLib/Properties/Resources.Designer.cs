@@ -2051,6 +2051,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Location header.
+        /// </summary>
+        internal static string ResponseType_LocationHeader {
+            get {
+                return ResourceManager.GetString("ResponseType_LocationHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Redirection URL.
         /// </summary>
         internal static string ResponseType_RedirectionURL {

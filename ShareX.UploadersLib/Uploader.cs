@@ -555,7 +555,7 @@ namespace ShareX.UploadersLib
                                 sbHeaders.AppendFormat("{0}: \"{1}\"{2}", key, value, Environment.NewLine);
                             }
                             return sbHeaders.ToString().Trim();
-                        case ResponseType.HeaderLocation:
+                        case ResponseType.LocationHeader:
                             return response.Headers["Location"];
                     }
                 }

@@ -171,9 +171,6 @@
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Tên</value>
   </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Đối số</value>
-  </data>
   <data name="gpJiraServer.Text" xml:space="preserve">
     <value>Máy chủ Jira</value>
   </data>
@@ -210,9 +207,6 @@
   <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
     <value>Thêm</value>
   </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>Cập nhật</value>
-  </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Xóa</value>
   </data>
@@ -236,9 +230,6 @@
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Thêm</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>Cập nhật</value>
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Xóa</value>
@@ -513,9 +504,6 @@
   <data name="lblMinusUsername.Text" xml:space="preserve">
     <value>Tên tài khoản:</value>
   </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>Giá trị</value>
-  </data>
   <data name="lblEmailPassword.Text" xml:space="preserve">
     <value>Mật khẩu:</value>
   </data>
@@ -725,9 +713,6 @@
   </data>
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
     <value>Mã xác thực: (Lấy mã xác thực từ trang xác thực):</value>
-  </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>Tên</value>
   </data>
   <data name="lblEmailSmtpPort.Text" xml:space="preserve">
     <value>Cổng:</value>
