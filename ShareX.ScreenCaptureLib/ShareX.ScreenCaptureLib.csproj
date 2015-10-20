@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Crosshair.cur" />
+    <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.de.resx">

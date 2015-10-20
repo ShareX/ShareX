@@ -71,6 +71,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exclamation_button {
+            get {
+                object obj = ResourceManager.GetObject("exclamation-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FFmpeg error.
         /// </summary>
         internal static string FFmpegHelper_Record_FFmpeg_error {

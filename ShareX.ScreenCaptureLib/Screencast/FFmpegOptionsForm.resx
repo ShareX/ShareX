@@ -133,7 +133,7 @@
   </data>
   <data name="lblx264CRF.Text" xml:space="preserve">
     <value>CRF:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblx264CRF.Name" xml:space="preserve">
     <value>lblx264CRF</value>
   </data>
@@ -392,7 +392,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>gbCodecs</value>
   </data>
   <data name="&gt;&gt;lblCodec.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cboVideoCodec.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 20</value>
@@ -413,7 +413,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>gbCodecs</value>
   </data>
   <data name="&gt;&gt;cboVideoCodec.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblx264Preset.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -529,33 +529,6 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;gbFFmpegExe.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="cbOverrideFFmpegPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 8</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 17</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
-    <value>Use custom path</value>
-  </data>
-  <data name="&gt;&gt;cbOverrideFFmpegPath.Name" xml:space="preserve">
-    <value>cbOverrideFFmpegPath</value>
-  </data>
-  <data name="&gt;&gt;cbOverrideFFmpegPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbOverrideFFmpegPath.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cbOverrideFFmpegPath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="btnDownload.Location" type="System.Drawing.Point, System.Drawing">
     <value>552, 22</value>
   </data>
@@ -591,7 +564,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="btnFFmpegBrowse.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnFFmpegBrowse.Name" xml:space="preserve">
     <value>btnFFmpegBrowse</value>
   </data>
@@ -624,6 +597,33 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="&gt;&gt;txtFFmpegPath.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 8</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>Use custom path</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideFFmpegPath.Name" xml:space="preserve">
+    <value>cbOverrideFFmpegPath</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideFFmpegPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideFFmpegPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideFFmpegPath.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;cbCustomCommands.Name" xml:space="preserve">
     <value>cbCustomCommands</value>
@@ -798,7 +798,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="btnFFmpegHelp.Text" xml:space="preserve">
     <value>?</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnFFmpegHelp.Name" xml:space="preserve">
     <value>btnFFmpegHelp</value>
   </data>
@@ -902,7 +902,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>gbCodecs</value>
   </data>
   <data name="&gt;&gt;tcFFmpegVideoCodecs.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="tpX264.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -918,7 +918,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="tpX264.Text" xml:space="preserve">
     <value>x264 / x265</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpX264.Name" xml:space="preserve">
     <value>tpX264</value>
   </data>
@@ -978,7 +978,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="tpVpx.Text" xml:space="preserve">
     <value>VP8</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpVpx.Name" xml:space="preserve">
     <value>tpVpx</value>
   </data>
@@ -1008,7 +1008,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
     <value>kbit/s</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblVP8BitrateK.Name" xml:space="preserve">
     <value>lblVP8BitrateK</value>
   </data>
@@ -1083,7 +1083,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="tpXvid.Text" xml:space="preserve">
     <value>Xvid</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpXvid.Name" xml:space="preserve">
     <value>tpXvid</value>
   </data>
@@ -1134,7 +1134,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="tpGIF.Text" xml:space="preserve">
     <value>GIF</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGIF.Name" xml:space="preserve">
     <value>tpGIF</value>
   </data>
@@ -1307,7 +1307,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>gbCodecs</value>
   </data>
   <data name="&gt;&gt;tcFFmpegAudioCodecs.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lblAACQuality.Name" xml:space="preserve">
     <value>lblAACQuality</value>
@@ -1335,7 +1335,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="tpAAC.Text" xml:space="preserve">
     <value>AAC</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAAC.Name" xml:space="preserve">
     <value>tpAAC</value>
   </data>
@@ -1401,7 +1401,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="tpVorbis.Text" xml:space="preserve">
     <value>Vorbis</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpVorbis.Name" xml:space="preserve">
     <value>tpVorbis</value>
   </data>
@@ -1467,7 +1467,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="tpMP3.Text" xml:space="preserve">
     <value>MP3</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMP3.Name" xml:space="preserve">
     <value>tpMP3</value>
   </data>
@@ -1622,7 +1622,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>gbCodecs</value>
   </data>
   <data name="&gt;&gt;cboAudioCodec.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblAudioCodec.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1649,7 +1649,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>gbCodecs</value>
   </data>
   <data name="&gt;&gt;lblAudioCodec.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;btnHelperDevicesHelp.Name" xml:space="preserve">
     <value>btnHelperDevicesHelp</value>
@@ -1734,7 +1734,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
     <value>?</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnHelperDevicesHelp.Name" xml:space="preserve">
     <value>btnHelperDevicesHelp</value>
   </data>
@@ -1821,6 +1821,36 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="&gt;&gt;btnRefreshSources.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="pbAudioCodecWarning.Location" type="System.Drawing.Point, System.Drawing">
+    <value>550, 22</value>
+  </data>
+  <data name="pbAudioCodecWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pbAudioCodecWarning.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pbAudioCodecWarning.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
+    <value>This audio codec is not supported by the selected video container.</value>
+  </data>
+  <data name="pbAudioCodecWarning.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pbAudioCodecWarning.Name" xml:space="preserve">
+    <value>pbAudioCodecWarning</value>
+  </data>
+  <data name="&gt;&gt;pbAudioCodecWarning.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbAudioCodecWarning.Parent" xml:space="preserve">
+    <value>gbCodecs</value>
+  </data>
+  <data name="&gt;&gt;pbAudioCodecWarning.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="gbCodecs.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 168</value>
