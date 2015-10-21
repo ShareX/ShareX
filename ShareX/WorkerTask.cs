@@ -129,7 +129,7 @@ namespace ShareX
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.Job;
             task.Info.DataType = EDataType.Image;
-            task.Info.FileName = TaskHelpers.GetImageFilename(taskSettings, image);
+            task.Info.FileName = TaskHelpers.GetFilename(taskSettings, "bmp", image);
             task.tempImage = image;
             return task;
         }

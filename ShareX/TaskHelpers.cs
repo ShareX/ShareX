@@ -140,59 +140,46 @@ namespace ShareX
             return stream;
         }
 
-        public static string GetFilename(TaskSettings taskSettings, string extension = "")
-        {
-            NameParser nameParser = new NameParser(NameParserType.FileName)
-            {
-                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
-                MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength,
-                CustomTimeZone = taskSettings.UploadSettings.UseCustomTimeZone ? taskSettings.UploadSettings.CustomTimeZone : null
-            };
-
-            string filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern);
-
-            if (!string.IsNullOrEmpty(extension))
-            {
-                filename += "." + extension.TrimStart('.');
-            }
-
-            Program.Settings.NameParserAutoIncrementNumber = nameParser.AutoIncrementNumber;
-
-            return filename;
-        }
-
-        public static string GetImageFilename(TaskSettings taskSettings, Image image)
+        public static string GetFilename(TaskSettings taskSettings, string extension = null, Image image = null)
         {
             string filename;
 
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
-                Picture = image,
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
                 MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
                 MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength,
                 CustomTimeZone = taskSettings.UploadSettings.UseCustomTimeZone ? taskSettings.UploadSettings.CustomTimeZone : null
             };
 
-            ImageTag imageTag = image.Tag as ImageTag;
-
-            if (imageTag != null)
+            if (image != null)
             {
-                nameParser.WindowText = imageTag.ActiveWindowTitle;
-                nameParser.ProcessName = imageTag.ActiveProcessName;
+                nameParser.Picture = image;
+
+                ImageTag imageTag = image.Tag as ImageTag;
+
+                if (imageTag != null)
+                {
+                    nameParser.WindowText = imageTag.ActiveWindowTitle;
+                    nameParser.ProcessName = imageTag.ActiveProcessName;
+                }
             }
 
-            if (string.IsNullOrEmpty(nameParser.WindowText))
+            if (!string.IsNullOrEmpty(nameParser.WindowText))
             {
-                filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern) + ".bmp";
+                filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPatternActiveWindow);
             }
             else
             {
-                filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPatternActiveWindow) + ".bmp";
+                filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern);
             }
 
             Program.Settings.NameParserAutoIncrementNumber = nameParser.AutoIncrementNumber;
+
+            if (!string.IsNullOrEmpty(extension))
+            {
+                filename += "." + extension.TrimStart('.');
+            }
 
             return filename;
         }

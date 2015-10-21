@@ -136,7 +136,7 @@
     <value>3, 3</value>
   </data>
   <data name="lvAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 268</value>
+    <value>290, 272</value>
   </data>
   <data name="lvAfterCaptureTasks.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -156,8 +156,11 @@
   <data name="btnContinue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <data name="btnContinue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnContinue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 312</value>
+    <value>8, 366</value>
   </data>
   <data name="btnContinue.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
@@ -178,13 +181,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnContinue.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 312</value>
+    <value>112, 366</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
@@ -205,7 +211,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="pbImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -214,7 +220,7 @@
     <value>320, 8</value>
   </data>
   <data name="pbImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 336</value>
+    <value>456, 390</value>
   </data>
   <data name="pbImage.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -229,13 +235,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbImage.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btnCopy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <data name="btnCopy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 312</value>
+    <value>216, 366</value>
   </data>
   <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
@@ -256,7 +265,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCopy.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="tcTasks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -268,7 +277,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 274</value>
+    <value>296, 278</value>
   </data>
   <data name="tpAfterCapture.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -295,7 +304,7 @@
     <value>3, 3</value>
   </data>
   <data name="ucBeforeUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 268</value>
+    <value>290, 272</value>
   </data>
   <data name="ucBeforeUpload.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -304,7 +313,7 @@
     <value>ucBeforeUpload</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Type" xml:space="preserve">
-    <value>ShareX.BeforeUploadControl, ShareX, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.BeforeUploadControl, ShareX, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Parent" xml:space="preserve">
     <value>tpBeforeUpload</value>
@@ -319,7 +328,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBeforeUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 274</value>
+    <value>296, 278</value>
   </data>
   <data name="tpBeforeUpload.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -343,10 +352,10 @@
     <value>8, 8</value>
   </data>
   <data name="tcTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 300</value>
+    <value>304, 304</value>
   </data>
   <data name="tcTasks.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;tcTasks.Name" xml:space="preserve">
     <value>tcTasks</value>
@@ -358,6 +367,63 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tcTasks.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblFileName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="lblFileName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFileName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFileName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 317</value>
+  </data>
+  <data name="lblFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="lblFileName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>File name:</value>
+  </data>
+  <data name="&gt;&gt;lblFileName.Name" xml:space="preserve">
+    <value>lblFileName</value>
+  </data>
+  <data name="&gt;&gt;lblFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFileName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblFileName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtFileName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="txtFileName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 336</value>
+  </data>
+  <data name="txtFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 20</value>
+  </data>
+  <data name="txtFileName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtFileName.Name" xml:space="preserve">
+    <value>txtFileName</value>
+  </data>
+  <data name="&gt;&gt;txtFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFileName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtFileName.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -367,10 +433,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>704, 352</value>
+    <value>784, 406</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>720, 368</value>
+    <value>800, 445</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

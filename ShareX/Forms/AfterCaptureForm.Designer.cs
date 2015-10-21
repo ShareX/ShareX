@@ -39,6 +39,8 @@
             this.tpAfterCapture = new System.Windows.Forms.TabPage();
             this.tpBeforeUpload = new System.Windows.Forms.TabPage();
             this.ucBeforeUpload = new ShareX.BeforeUploadControl();
+            this.lblFileName = new System.Windows.Forms.Label();
+            this.txtFileName = new System.Windows.Forms.TextBox();
             this.tcTasks.SuspendLayout();
             this.tpAfterCapture.SuspendLayout();
             this.tpBeforeUpload.SuspendLayout();
@@ -122,11 +124,23 @@
             resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
             this.ucBeforeUpload.Name = "ucBeforeUpload";
             // 
+            // lblFileName
+            // 
+            resources.ApplyResources(this.lblFileName, "lblFileName");
+            this.lblFileName.Name = "lblFileName";
+            // 
+            // txtFileName
+            // 
+            resources.ApplyResources(this.txtFileName, "txtFileName");
+            this.txtFileName.Name = "txtFileName";
+            // 
             // AfterCaptureForm
             // 
             this.AcceptButton = this.btnContinue;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtFileName);
+            this.Controls.Add(this.lblFileName);
             this.Controls.Add(this.tcTasks);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnCancel);
@@ -139,6 +153,7 @@
             this.tpAfterCapture.ResumeLayout(false);
             this.tpBeforeUpload.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -154,5 +169,7 @@
         private System.Windows.Forms.TabPage tpAfterCapture;
         private System.Windows.Forms.TabPage tpBeforeUpload;
         private BeforeUploadControl ucBeforeUpload;
+        private System.Windows.Forms.Label lblFileName;
+        private System.Windows.Forms.TextBox txtFileName;
     }
 }

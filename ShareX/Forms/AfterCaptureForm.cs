@@ -34,6 +34,7 @@ namespace ShareX
     public partial class AfterCaptureForm : BaseForm
     {
         public AfterCaptureTasks AfterCaptureTasks { get; private set; }
+        public string FileName { get; private set; }
         public AfterCaptureFormResult Result { get; private set; }
 
         public AfterCaptureForm(Image img, TaskSettings taskSettings)
@@ -56,6 +57,9 @@ namespace ShareX
             {
                 pbImage.LoadImage(img);
             }
+
+            FileName = TaskHelpers.GetFilename(taskSettings, null, img);
+            txtFileName.Text = FileName;
         }
 
         private void AddAfterCaptureItems(AfterCaptureTasks afterCaptureTasks)
@@ -101,6 +105,7 @@ namespace ShareX
         private void Close(AfterCaptureFormResult result)
         {
             AfterCaptureTasks = GetAfterCaptureTasks();
+            FileName = txtFileName.Text;
             Result = result;
             Close();
         }
