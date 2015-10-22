@@ -124,12 +124,21 @@ namespace ShareX
             return task;
         }
 
-        public static WorkerTask CreateImageUploaderTask(Image image, TaskSettings taskSettings)
+        public static WorkerTask CreateImageUploaderTask(Image image, TaskSettings taskSettings, string customFileName = null)
         {
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.Job;
             task.Info.DataType = EDataType.Image;
-            task.Info.FileName = TaskHelpers.GetFilename(taskSettings, "bmp", image);
+
+            if (!string.IsNullOrEmpty(customFileName))
+            {
+                task.Info.FileName = Helpers.AppendExtension(customFileName, "bmp");
+            }
+            else
+            {
+                task.Info.FileName = TaskHelpers.GetFilename(taskSettings, "bmp", image);
+            }
+
             task.tempImage = image;
             return task;
         }
@@ -164,13 +173,18 @@ namespace ShareX
             return task;
         }
 
-        public static WorkerTask CreateFileJobTask(string filePath, TaskSettings taskSettings)
+        public static WorkerTask CreateFileJobTask(string filePath, TaskSettings taskSettings, string customFileName = null)
         {
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.FilePath = filePath;
             task.Info.DataType = TaskHelpers.FindDataType(task.Info.FilePath, taskSettings);
 
-            if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
+            if (!string.IsNullOrEmpty(customFileName))
+            {
+                string ext = Path.GetExtension(task.Info.FilePath);
+                task.Info.FileName = Helpers.AppendExtension(customFileName, ext);
+            }
+            else if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
                 string ext = Path.GetExtension(task.Info.FilePath);
                 task.Info.FileName = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);

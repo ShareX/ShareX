@@ -190,13 +190,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 366</value>
+    <value>216, 366</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -244,13 +244,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 366</value>
+    <value>112, 366</value>
   </data>
   <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
   </data>
   <data name="btnCopy.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnCopy.Text" xml:space="preserve">
     <value>Copy</value>

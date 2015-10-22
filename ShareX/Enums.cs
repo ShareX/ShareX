@@ -114,13 +114,6 @@ namespace ShareX
         ShowQRCode = 1 << 4
     }
 
-    public enum AfterCaptureFormResult
-    {
-        Cancel,
-        Continue,
-        Copy
-    }
-
     public enum CaptureType
     {
         Screen,

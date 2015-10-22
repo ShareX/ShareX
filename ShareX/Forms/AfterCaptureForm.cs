@@ -33,12 +33,13 @@ namespace ShareX
 {
     public partial class AfterCaptureForm : BaseForm
     {
-        public AfterCaptureTasks AfterCaptureTasks { get; private set; }
+        public TaskSettings TaskSettings { get; private set; }
         public string FileName { get; private set; }
-        public AfterCaptureFormResult Result { get; private set; }
 
         public AfterCaptureForm(Image img, TaskSettings taskSettings)
         {
+            TaskSettings = taskSettings;
+
             InitializeComponent();
 
             ImageList imageList = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
@@ -46,10 +47,9 @@ namespace ShareX
             imageList.Images.Add(Resources.checkbox_check);
             lvAfterCaptureTasks.SmallImageList = imageList;
 
-            ucBeforeUpload.InitCapture(taskSettings);
+            ucBeforeUpload.InitCapture(TaskSettings);
 
-            AfterCaptureTasks = taskSettings.AfterCaptureJob;
-            AddAfterCaptureItems(AfterCaptureTasks);
+            AddAfterCaptureItems(TaskSettings.AfterCaptureJob);
 
             btnCopy.Visible = img != null;
 
@@ -58,7 +58,7 @@ namespace ShareX
                 pbImage.LoadImage(img);
             }
 
-            FileName = TaskHelpers.GetFilename(taskSettings, null, img);
+            FileName = TaskHelpers.GetFilename(TaskSettings, null, img);
             txtFileName.Text = FileName;
         }
 
@@ -102,14 +102,6 @@ namespace ShareX
             return afterCaptureTasks;
         }
 
-        private void Close(AfterCaptureFormResult result)
-        {
-            AfterCaptureTasks = GetAfterCaptureTasks();
-            FileName = txtFileName.Text;
-            Result = result;
-            Close();
-        }
-
         private void lvAfterCaptureTasks_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             e.Item.Selected = false;
@@ -130,17 +122,14 @@ namespace ShareX
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            Close(AfterCaptureFormResult.Continue);
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
+            TaskSettings.AfterCaptureJob = GetAfterCaptureTasks();
+            FileName = txtFileName.Text;
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            Close(AfterCaptureFormResult.Copy);
+            TaskSettings.AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard;
+            FileName = txtFileName.Text;
         }
     }
 }
