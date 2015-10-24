@@ -162,7 +162,7 @@
     <value>Ссылка пуста.</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Операции можно добавить в горячих клавишах...</value>
+    <value>Операции можно добавить в настройках горячих клавишах…</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>Подтверждение удаления фала</value>
@@ -171,7 +171,8 @@
     <value>Вы действительно хотите удалить этот файл?</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
-    <value>Тащите
+    <value>Бросайте
+файлы
 сюда</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
@@ -260,7 +261,7 @@
     <value>После загрузки: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>Сервис сокращения ссылок: {0}</value>
+    <value>Сервис коротких ссылок: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
     <value>Сервис отправки ссылок: {0}</value>
@@ -273,5 +274,11 @@
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Сервис загрузки файлов: {0}</value>
+  </data>
+  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
+    <value>Нажмите левой кнопкой мышли по иконке ShareX в трее, что бы захватить область экрана</value>
+  </data>
+  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
+    <value>Поддержка Chrome включена.</value>
   </data>
 </root>

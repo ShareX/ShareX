@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,4 +117,142 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Основные</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Язык:</value>
+  </data>
+  <data name="llTranslators.Text" xml:space="preserve">
+    <value>Помогите нам с переводом ShareX на ваш язык!</value>
+  </data>
+  <data name="cbShowTray.Text" xml:space="preserve">
+    <value>Показывать иконку в трее</value>
+  </data>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>При запуске сворачивать в трей</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>Запомнить расположение главного окна</value>
+  </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>Запомнить размер главного окна</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Настройки приложения</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>Показывать прогресс на кнопке в панеле задач</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>Показывать прогресс на иконке в трее</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>Интеграции</value>
+  </data>
+  <data name="cbStartWithWindows.Text" xml:space="preserve">
+    <value>Запускать ShareX при старте системы</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>Показывать кнопку "Загрузить с помощью ShareX" в контекстном меню</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Показывать ShareX в меню "Отправить"</value>
+  </data>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>ShareX - расширешие для Chrome...</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Обзор...</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
+    <value>Обзор...</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>Пути к папкам</value>
+  </data>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>Персональная папка ShareX</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>Открыть...</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>Открыть...</value>
+  </data>
+  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
+    <value>Внимание: Для применнения изменений, перезапустите ShareX</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Пользовательская папка для скриншотов:</value>
+  </data>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>Прокси</value>
+  </data>
+  <data name="lblProxyMethod.Text" xml:space="preserve">
+    <value>Настройка прокси:</value>
+  </data>
+  <data name="lblProxyHost.Text" xml:space="preserve">
+    <value>Хост:</value>
+  </data>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>Порт:</value>
+  </data>
+  <data name="lblProxyUsername.Text" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>Размер буфера:</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>Ограничения на одновременные загрузки:</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>Печать</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>Настройки печати изображений...</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>Не показывать диалог настройки печати</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+    <value>Не показывать диалог печати</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Доп. настройки</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Загрузки</value>
+  </data>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>Результаты</value>
+  </data>
+  <data name="tpUploadRetry.Text" xml:space="preserve">
+    <value>Повторы</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>Добавить...</value>
+  </data>
+  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
+    <value>Изменить...</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="gbClipboardFormats.Text" xml:space="preserve">
+    <value>Формат</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>Число повторных попыток, если загрузка не удалась</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>При повторе использовать вторичные сервисы</value>
+  </data>
 </root>

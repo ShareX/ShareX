@@ -379,7 +379,7 @@
     <value>Если в буфере находится ссылка, сократить ее и отправить через сервис отправки ссылок</value>
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>Если в буфере находится ссылка, использовать сокращатель ссылок</value>
+    <value>Если в буфере находится ссылка, использовать сокращение ссылок</value>
   </data>
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
     <value>Если в буфере находится ссылка на файл, скачать его, а потом загрузить</value>

@@ -465,4 +465,25 @@
   <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
     <value>Octree quantizer (Среднее качество)</value>
   </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>Файловый сервис</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>Файловый сервис</value>
+  </data>
+  <data name="ProxyMethod_Manual" xml:space="preserve">
+    <value>Ручная</value>
+  </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>Обойтись без прокси</value>
+  </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>Автоматическая</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
 </root>

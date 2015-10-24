@@ -120,4 +120,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - После загрузки</value>
   </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Описание</value>
+  </data>
 </root>

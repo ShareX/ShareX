@@ -490,7 +490,7 @@
     <value>Наложение эффектов…</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
-    <value>Проиндексировать папку…</value>
+    <value>Индексация папки…</value>
   </data>
   <data name="tsmiIRCClient.Text" xml:space="preserve">
     <value>Клиент IRC…</value>
@@ -520,7 +520,7 @@
     <value>Проверить отправку ссылки</value>
   </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
-    <value>Проверить сокращатель ссылок</value>
+    <value>Проверить сокращение ссылок</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Выход</value>
@@ -538,7 +538,7 @@
     <value>Наложение эффектов…</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>Проиндексировать папку…</value>
+    <value>Индексация папки…</value>
   </data>
   <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
     <value>Клиент IRC…</value>
@@ -623,5 +623,8 @@
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Сообщение в Twitter…</value>
+  </data>
+  <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
+    <value>Сокращатель ссылок</value>
   </data>
 </root>

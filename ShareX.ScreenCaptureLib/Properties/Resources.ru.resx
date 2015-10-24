@@ -129,4 +129,7 @@
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Захват области с примечаниями</value>
   </data>
+  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
+    <value>[Пробел] Полноэкранный захват</value>
+  </data>
 </root>
