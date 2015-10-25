@@ -166,7 +166,7 @@
     <value>150, 17</value>
   </data>
   <data name="cbTrayIconProgressEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
     <value>Show progress in tray icon</value>
@@ -241,7 +241,7 @@
     <value>180, 17</value>
   </data>
   <data name="cbRememberMainFormPosition.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Remember main window position</value>
@@ -331,7 +331,7 @@
     <value>178, 17</value>
   </data>
   <data name="cbTaskbarProgressEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Show progress in taskbar button</value>
@@ -361,7 +361,7 @@
     <value>162, 17</value>
   </data>
   <data name="cbRememberMainFormSize.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Remember main window size</value>
@@ -442,10 +442,10 @@
     <value>16, 24</value>
   </data>
   <data name="cbSteamShowInApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 17</value>
+    <value>247, 17</value>
   </data>
   <data name="cbSteamShowInApp.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>0</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>While ShareX is open, show "In-App" in Steam</value>
@@ -469,11 +469,11 @@
     <value>536, 56</value>
   </data>
   <data name="gbSteam.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>2</value>
   </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
     <value>gbSteam</value>
   </data>
@@ -493,7 +493,7 @@
     <value>224, 24</value>
   </data>
   <data name="btnChromeSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>0</value>
   </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Chrome extension support...</value>
@@ -517,11 +517,11 @@
     <value>536, 64</value>
   </data>
   <data name="gbChrome.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>1</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbChrome.Name" xml:space="preserve">
     <value>gbChrome</value>
   </data>
@@ -547,7 +547,7 @@
     <value>188, 17</value>
   </data>
   <data name="cbStartWithWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Run ShareX when Windows starts</value>
@@ -577,7 +577,7 @@
     <value>181, 17</value>
   </data>
   <data name="cbSendToMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Show ShareX in "Send to" menu</value>
@@ -607,7 +607,7 @@
     <value>359, 17</value>
   </data>
   <data name="cbShellContextMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>1</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Show "Upload with ShareX" button in Windows Explorer context menu</value>
@@ -631,11 +631,11 @@
     <value>536, 104</value>
   </data>
   <data name="gbWindows.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>0</value>
   </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
     <value>gbWindows</value>
   </data>
@@ -749,7 +749,7 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
@@ -992,7 +992,7 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>
@@ -1627,7 +1627,7 @@
     <value>0</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Clipboard formats</value>
+    <value>Clipboard formats - these appear under Copy in the context menu in the main window</value>
   </data>
   <data name="&gt;&gt;gbClipboardFormats.Name" xml:space="preserve">
     <value>gbClipboardFormats</value>
