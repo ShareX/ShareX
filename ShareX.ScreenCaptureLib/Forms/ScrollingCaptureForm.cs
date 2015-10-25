@@ -57,12 +57,13 @@ namespace ShareX.ScreenCaptureLib
 
             cbScrollMethod.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollMethod>());
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
+            cbScrollTopMethodBeforeCapture.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollTopMethod>());
+            cbScrollTopMethodBeforeCapture.SelectedIndex = (int)Options.ScrollTopMethodBeforeCapture;
             nudStartDelay.Value = Options.StartDelay;
             nudScrollDelay.Value = Options.ScrollDelay;
             nudMaximumScrollCount.Value = Options.MaximumScrollCount;
             cbStartSelectionAutomatically.Checked = Options.StartSelectionAutomatically;
             cbStartCaptureAutomatically.Checked = Options.StartCaptureAutomatically;
-            cbScrollTopBeforeCapture.Checked = Options.ScrollTopBeforeCapture;
             cbAutoDetectScrollEnd.Checked = Options.AutoDetectScrollEnd;
             cbRemoveDuplicates.Checked = Options.RemoveDuplicates;
             cbAutoCombine.Checked = Options.AfterCaptureAutomaticallyCombine;
@@ -315,10 +316,18 @@ namespace ShareX.ScreenCaptureLib
                 firstCapture = false;
                 captureTimer.Interval = Options.ScrollDelay;
 
-                if (Options.ScrollTopBeforeCapture)
+                if (Options.ScrollTopMethodBeforeCapture == ScrollingCaptureScrollTopMethod.All || Options.ScrollTopMethodBeforeCapture == ScrollingCaptureScrollTopMethod.KeyPressHome)
                 {
                     InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
+                }
+
+                if (Options.ScrollTopMethodBeforeCapture == ScrollingCaptureScrollTopMethod.All || Options.ScrollTopMethodBeforeCapture == ScrollingCaptureScrollTopMethod.SendMessageTop)
+                {
                     NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
+                }
+
+                if (Options.ScrollTopMethodBeforeCapture != ScrollingCaptureScrollTopMethod.None)
+                {
                     return;
                 }
             }
@@ -377,6 +386,11 @@ namespace ShareX.ScreenCaptureLib
             Options.ScrollMethod = (ScrollingCaptureScrollMethod)cbScrollMethod.SelectedIndex;
         }
 
+        private void cbScrollTopMethodBeforeCapture_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.ScrollTopMethodBeforeCapture = (ScrollingCaptureScrollTopMethod)cbScrollTopMethodBeforeCapture.SelectedIndex;
+        }
+
         private void nudStartDelay_ValueChanged(object sender, EventArgs e)
         {
             Options.StartDelay = (int)nudStartDelay.Value;
@@ -400,11 +414,6 @@ namespace ShareX.ScreenCaptureLib
         private void cbStartCaptureAutomatically_CheckedChanged(object sender, EventArgs e)
         {
             Options.StartCaptureAutomatically = cbStartCaptureAutomatically.Checked;
-        }
-
-        private void cbScrollTopBeforeCapture_CheckedChanged(object sender, EventArgs e)
-        {
-            Options.ScrollTopBeforeCapture = cbScrollTopBeforeCapture.Checked;
         }
 
         private void cbAutoDetectScrollEnd_CheckedChanged(object sender, EventArgs e)
@@ -671,6 +680,11 @@ namespace ShareX.ScreenCaptureLib
         private void chkAutoUpload_CheckedChanged(object sender, EventArgs e)
         {
             Options.AutoUpload = chkAutoUpload.Checked;
+        }
+
+        private void cbAutoClose_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.AutoClose = cbAutoClose.Checked;
         }
 
         private Padding GuessEdges(Image img1, Image img2)

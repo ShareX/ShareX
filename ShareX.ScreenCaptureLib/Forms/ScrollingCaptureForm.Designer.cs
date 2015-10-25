@@ -34,6 +34,7 @@ namespace ShareX.ScreenCaptureLib
             this.lblMaximumScrollCount = new System.Windows.Forms.Label();
             this.tcScrollingCapture = new System.Windows.Forms.TabControl();
             this.tpCapture = new System.Windows.Forms.TabPage();
+            this.chkAutoUpload = new System.Windows.Forms.CheckBox();
             this.lblNote = new System.Windows.Forms.Label();
             this.cbStartSelectionAutomatically = new System.Windows.Forms.CheckBox();
             this.cbAutoCombine = new System.Windows.Forms.CheckBox();
@@ -41,7 +42,6 @@ namespace ShareX.ScreenCaptureLib
             this.btnSelectRectangle = new System.Windows.Forms.Button();
             this.lblStartDelay = new System.Windows.Forms.Label();
             this.nudStartDelay = new System.Windows.Forms.NumericUpDown();
-            this.cbScrollTopBeforeCapture = new System.Windows.Forms.CheckBox();
             this.cbStartCaptureAutomatically = new System.Windows.Forms.CheckBox();
             this.cbRemoveDuplicates = new System.Windows.Forms.CheckBox();
             this.cbAutoDetectScrollEnd = new System.Windows.Forms.CheckBox();
@@ -74,7 +74,12 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput = new System.Windows.Forms.Panel();
             this.lblProcessing = new System.Windows.Forms.Label();
             this.pbOutput = new System.Windows.Forms.PictureBox();
-            this.chkAutoUpload = new System.Windows.Forms.CheckBox();
+            this.lblScrollTopMethodBeforeCapture = new System.Windows.Forms.Label();
+            this.cbScrollTopMethodBeforeCapture = new System.Windows.Forms.ComboBox();
+            this.gbBeforeCapture = new System.Windows.Forms.GroupBox();
+            this.gbWhileCapturing = new System.Windows.Forms.GroupBox();
+            this.gbAfterCapture = new System.Windows.Forms.GroupBox();
+            this.cbAutoClose = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -93,6 +98,9 @@ namespace ShareX.ScreenCaptureLib
             ((System.ComponentModel.ISupportInitialize)(this.nudTrimRight)).BeginInit();
             this.pOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
+            this.gbBeforeCapture.SuspendLayout();
+            this.gbWhileCapturing.SuspendLayout();
+            this.gbAfterCapture.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSelectHandle
@@ -155,30 +163,23 @@ namespace ShareX.ScreenCaptureLib
             // 
             // tpCapture
             // 
-            this.tpCapture.Controls.Add(this.chkAutoUpload);
+            this.tpCapture.Controls.Add(this.gbAfterCapture);
+            this.tpCapture.Controls.Add(this.gbWhileCapturing);
+            this.tpCapture.Controls.Add(this.gbBeforeCapture);
             this.tpCapture.Controls.Add(this.lblNote);
-            this.tpCapture.Controls.Add(this.cbStartSelectionAutomatically);
-            this.tpCapture.Controls.Add(this.cbAutoCombine);
             this.tpCapture.Controls.Add(this.lblSelectedRectangle);
-            this.tpCapture.Controls.Add(this.btnSelectRectangle);
-            this.tpCapture.Controls.Add(this.lblStartDelay);
-            this.tpCapture.Controls.Add(this.nudStartDelay);
-            this.tpCapture.Controls.Add(this.cbScrollTopBeforeCapture);
-            this.tpCapture.Controls.Add(this.cbStartCaptureAutomatically);
-            this.tpCapture.Controls.Add(this.cbRemoveDuplicates);
-            this.tpCapture.Controls.Add(this.cbAutoDetectScrollEnd);
-            this.tpCapture.Controls.Add(this.lblScrollMethod);
-            this.tpCapture.Controls.Add(this.cbScrollMethod);
-            this.tpCapture.Controls.Add(this.btnSelectHandle);
-            this.tpCapture.Controls.Add(this.lblMaximumScrollCount);
             this.tpCapture.Controls.Add(this.lblControlText);
-            this.tpCapture.Controls.Add(this.lblScrollDelay);
             this.tpCapture.Controls.Add(this.btnCapture);
-            this.tpCapture.Controls.Add(this.nudMaximumScrollCount);
-            this.tpCapture.Controls.Add(this.nudScrollDelay);
             resources.ApplyResources(this.tpCapture, "tpCapture");
             this.tpCapture.Name = "tpCapture";
             this.tpCapture.UseVisualStyleBackColor = true;
+            // 
+            // chkAutoUpload
+            // 
+            resources.ApplyResources(this.chkAutoUpload, "chkAutoUpload");
+            this.chkAutoUpload.Name = "chkAutoUpload";
+            this.chkAutoUpload.UseVisualStyleBackColor = true;
+            this.chkAutoUpload.CheckedChanged += new System.EventHandler(this.chkAutoUpload_CheckedChanged);
             // 
             // lblNote
             // 
@@ -226,13 +227,6 @@ namespace ShareX.ScreenCaptureLib
             0});
             this.nudStartDelay.Name = "nudStartDelay";
             this.nudStartDelay.ValueChanged += new System.EventHandler(this.nudStartDelay_ValueChanged);
-            // 
-            // cbScrollTopBeforeCapture
-            // 
-            resources.ApplyResources(this.cbScrollTopBeforeCapture, "cbScrollTopBeforeCapture");
-            this.cbScrollTopBeforeCapture.Name = "cbScrollTopBeforeCapture";
-            this.cbScrollTopBeforeCapture.UseVisualStyleBackColor = true;
-            this.cbScrollTopBeforeCapture.CheckedChanged += new System.EventHandler(this.cbScrollTopBeforeCapture_CheckedChanged);
             // 
             // cbStartCaptureAutomatically
             // 
@@ -487,12 +481,62 @@ namespace ShareX.ScreenCaptureLib
             this.pbOutput.Name = "pbOutput";
             this.pbOutput.TabStop = false;
             // 
-            // chkAutoUpload
+            // lblScrollTopMethodBeforeCapture
             // 
-            resources.ApplyResources(this.chkAutoUpload, "chkAutoUpload");
-            this.chkAutoUpload.Name = "chkAutoUpload";
-            this.chkAutoUpload.UseVisualStyleBackColor = true;
-            this.chkAutoUpload.CheckedChanged += new System.EventHandler(this.chkAutoUpload_CheckedChanged);
+            resources.ApplyResources(this.lblScrollTopMethodBeforeCapture, "lblScrollTopMethodBeforeCapture");
+            this.lblScrollTopMethodBeforeCapture.Name = "lblScrollTopMethodBeforeCapture";
+            // 
+            // cbScrollTopMethodBeforeCapture
+            // 
+            this.cbScrollTopMethodBeforeCapture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbScrollTopMethodBeforeCapture.FormattingEnabled = true;
+            resources.ApplyResources(this.cbScrollTopMethodBeforeCapture, "cbScrollTopMethodBeforeCapture");
+            this.cbScrollTopMethodBeforeCapture.Name = "cbScrollTopMethodBeforeCapture";
+            this.cbScrollTopMethodBeforeCapture.SelectedIndexChanged += new System.EventHandler(this.cbScrollTopMethodBeforeCapture_SelectedIndexChanged);
+            // 
+            // gbBeforeCapture
+            // 
+            resources.ApplyResources(this.gbBeforeCapture, "gbBeforeCapture");
+            this.gbBeforeCapture.Controls.Add(this.lblScrollTopMethodBeforeCapture);
+            this.gbBeforeCapture.Controls.Add(this.cbScrollTopMethodBeforeCapture);
+            this.gbBeforeCapture.Controls.Add(this.lblStartDelay);
+            this.gbBeforeCapture.Controls.Add(this.cbStartSelectionAutomatically);
+            this.gbBeforeCapture.Controls.Add(this.nudStartDelay);
+            this.gbBeforeCapture.Controls.Add(this.cbStartCaptureAutomatically);
+            this.gbBeforeCapture.Controls.Add(this.btnSelectHandle);
+            this.gbBeforeCapture.Controls.Add(this.btnSelectRectangle);
+            this.gbBeforeCapture.Name = "gbBeforeCapture";
+            this.gbBeforeCapture.TabStop = false;
+            // 
+            // gbWhileCapturing
+            // 
+            resources.ApplyResources(this.gbWhileCapturing, "gbWhileCapturing");
+            this.gbWhileCapturing.Controls.Add(this.lblScrollDelay);
+            this.gbWhileCapturing.Controls.Add(this.nudScrollDelay);
+            this.gbWhileCapturing.Controls.Add(this.nudMaximumScrollCount);
+            this.gbWhileCapturing.Controls.Add(this.lblMaximumScrollCount);
+            this.gbWhileCapturing.Controls.Add(this.lblScrollMethod);
+            this.gbWhileCapturing.Controls.Add(this.cbScrollMethod);
+            this.gbWhileCapturing.Controls.Add(this.cbAutoDetectScrollEnd);
+            this.gbWhileCapturing.Name = "gbWhileCapturing";
+            this.gbWhileCapturing.TabStop = false;
+            // 
+            // gbAfterCapture
+            // 
+            resources.ApplyResources(this.gbAfterCapture, "gbAfterCapture");
+            this.gbAfterCapture.Controls.Add(this.cbAutoClose);
+            this.gbAfterCapture.Controls.Add(this.cbRemoveDuplicates);
+            this.gbAfterCapture.Controls.Add(this.cbAutoCombine);
+            this.gbAfterCapture.Controls.Add(this.chkAutoUpload);
+            this.gbAfterCapture.Name = "gbAfterCapture";
+            this.gbAfterCapture.TabStop = false;
+            // 
+            // cbAutoClose
+            // 
+            resources.ApplyResources(this.cbAutoClose, "cbAutoClose");
+            this.cbAutoClose.Name = "cbAutoClose";
+            this.cbAutoClose.UseVisualStyleBackColor = true;
+            this.cbAutoClose.CheckedChanged += new System.EventHandler(this.cbAutoClose_CheckedChanged);
             // 
             // ScrollingCaptureForm
             // 
@@ -523,6 +567,12 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput.ResumeLayout(false);
             this.pOutput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).EndInit();
+            this.gbBeforeCapture.ResumeLayout(false);
+            this.gbBeforeCapture.PerformLayout();
+            this.gbWhileCapturing.ResumeLayout(false);
+            this.gbWhileCapturing.PerformLayout();
+            this.gbAfterCapture.ResumeLayout(false);
+            this.gbAfterCapture.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -565,7 +615,6 @@ namespace ShareX.ScreenCaptureLib
         private CheckBox cbAutoDetectScrollEnd;
         private CheckBox cbRemoveDuplicates;
         private CheckBox cbStartCaptureAutomatically;
-        private CheckBox cbScrollTopBeforeCapture;
         private Label lblProcessing;
         private Label lblImageCount;
         private Label lblStartDelay;
@@ -580,5 +629,11 @@ namespace ShareX.ScreenCaptureLib
         private TextBox txtImagesCount;
         private Label lblNote;
         private CheckBox chkAutoUpload;
+        private Label lblScrollTopMethodBeforeCapture;
+        private ComboBox cbScrollTopMethodBeforeCapture;
+        private GroupBox gbAfterCapture;
+        private GroupBox gbWhileCapturing;
+        private GroupBox gbBeforeCapture;
+        private CheckBox cbAutoClose;
     }
 }

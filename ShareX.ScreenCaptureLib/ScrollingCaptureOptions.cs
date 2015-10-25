@@ -48,8 +48,8 @@ namespace ShareX
         [DefaultValue(false)]
         public bool StartCaptureAutomatically { get; set; } = false;
 
-        [DefaultValue(true)]
-        public bool ScrollTopBeforeCapture { get; set; } = true;
+        [DefaultValue(ScrollingCaptureScrollTopMethod.All)]
+        public ScrollingCaptureScrollTopMethod ScrollTopMethodBeforeCapture { get; set; } = ScrollingCaptureScrollTopMethod.All;
 
         [DefaultValue(true)]
         public bool AutoDetectScrollEnd { get; set; } = true;
