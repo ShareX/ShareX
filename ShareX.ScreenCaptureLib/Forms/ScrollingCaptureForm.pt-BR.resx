@@ -207,9 +207,6 @@
   <data name="cbRemoveDuplicates.Text" xml:space="preserve">
     <value>Remover imagens iguais</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Tentar rolar para o topo antes de capturar</value>
-  </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
     <value>Iniciar captura rolante imediatamente após a seleção da região de captura</value>
   </data>

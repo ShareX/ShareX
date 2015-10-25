@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Chụp khi cuộn trang</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Cuộn tới đầu trang trước khi chụp</value>
-  </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
     <value>Bắt đầu chụp khi cuộn trang ngay sau khi chọn vùng</value>
   </data>

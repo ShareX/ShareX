@@ -204,9 +204,6 @@
   <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
     <value>Automatische detectie van einde scrollen</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Probeer naar de top te scrollen voor opname</value>
-  </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
     <value>Start scrollopname onmiddelijk na regio selectie</value>
   </data>

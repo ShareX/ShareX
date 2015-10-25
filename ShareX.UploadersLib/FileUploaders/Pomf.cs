@@ -35,6 +35,8 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public class Pomf : FileUploader
     {
+        public static PomfUploader DefaultUploader = new PomfUploader("pomf.cat", "https://pomf.cat/upload.php", "http://a.pomf.cat");
+
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             new PomfUploader("1339.cf", "http://1339.cf/upload.php", "http://b.1339.cf"),
@@ -45,24 +47,16 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("matu.red", "http://matu.red/upload.php", "http://x.matu.red"),
             new PomfUploader("maxfile.ro", "https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
             new PomfUploader("mixtape.moe", "https://mixtape.moe/upload.php"),
+            new PomfUploader("nigger.cat", "http://nigger.cat/upload.php"),
             new PomfUploader("openhost.xyz", "http://openhost.xyz/upload.php"),
             new PomfUploader("pantsu.cat", "https://pantsu.cat/upload.php"),
-            new PomfUploader("pomf.cat", "https://pomf.cat/upload.php", "http://a.pomf.cat"),
+            DefaultUploader,
             new PomfUploader("pomf.hummingbird.moe", "http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
             new PomfUploader("pomf.io", "http://pomf.io/upload.php"),
             new PomfUploader("pomf.pl", "http://pomf.pl/upload.php"),
             //new PomfUploader("pomf.se", "https://pomf.se/upload.php", "https://a.pomf.se"),
-            new PomfUploader("up.che.moe", "http://up.che.moe/upload.php", "http://cdn.che.moe"),
-            new PomfUploader("nigger.cat", "http://nigger.cat/upload.php", "http://a.nigger.cat")
+            new PomfUploader("up.che.moe", "http://up.che.moe/upload.php", "http://cdn.che.moe")
         };
-
-        public static PomfUploader DefaultUploader
-        {
-            get
-            {
-                return Uploaders.FirstOrDefault(x => x.Name.Equals("pomf.cat", StringComparison.InvariantCultureIgnoreCase));
-            }
-        }
 
         public PomfUploader Uploader { get; private set; }
 

@@ -204,9 +204,6 @@
   <data name="cbAutoCombine.Text" xml:space="preserve">
     <value>Yakaladıktan sonra birleştirme ayarlarını tespit et ve birleştir</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Yakalama başlamadan önce sayfayı yukarıya kaydırmayı dene</value>
-  </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
     <value>Alan seçtikten sonra kaydırarak yakalamayı başlat</value>
   </data>

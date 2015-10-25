@@ -150,9 +150,6 @@
   <data name="cbRemoveDuplicates.Text" xml:space="preserve">
     <value>Entferne doppelte Bilder</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Versuche vor der Aufnahme nach Oben zu scrollen</value>
-  </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
     <value>Starte Scrollaufnahme sofort nach der Auswahl der Aufnahmeregion</value>
   </data>

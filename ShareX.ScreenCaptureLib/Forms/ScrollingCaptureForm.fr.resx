@@ -192,9 +192,6 @@
   <data name="btnSelectRectangle.Text" xml:space="preserve">
     <value>(Optionnel) Sélectionner une région personnalisée dans la fenêtre...</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Essayer de défiler tout en haut avant la capture</value>
-  </data>
   <data name="lblStartDelay.Text" xml:space="preserve">
     <value>Départ différé:</value>
   </data>
