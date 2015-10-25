@@ -117,13 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Скопировать в буфер обмена</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR код</value>
+    <value>ShareX - Объединитель изображений</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Сохранить как файл изображения…</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Добавить...</value>
+  </data>
+  <data name="btnCombine.Text" xml:space="preserve">
+    <value>Объединить изображения и действовать по сценарию "после захвата" (сохранить/загрузить)</value>
+  </data>
+  <data name="btnMoveDown.Text" xml:space="preserve">
+    <value>Вверх</value>
+  </data>
+  <data name="btnMoveUp.Text" xml:space="preserve">
+    <value>Вниз</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="chFilepath.Text" xml:space="preserve">
+    <value>Путь к файлу изображения</value>
+  </data>
+  <data name="lblOrientation.Text" xml:space="preserve">
+    <value>Ориентация:</value>
+  </data>
+  <data name="lblSpace.Text" xml:space="preserve">
+    <value>Пробел между картинками:</value>
+  </data>
+  <data name="lblSpacePixel.Text" xml:space="preserve">
+    <value>пикселей</value>
   </data>
 </root>

@@ -484,7 +484,7 @@
     <value>Проверка хеша…</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
-    <value>Объедитель изображений…</value>
+    <value>Объединитель изображений…</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Наложение эффектов…</value>
@@ -532,7 +532,7 @@
     <value>Клиент FTP…</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
-    <value>Объедитель изображений…</value>
+    <value>Объединитель изображений…</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Наложение эффектов…</value>
@@ -625,6 +625,33 @@
     <value>Сообщение в Twitter…</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
-    <value>Сокращатель ссылок</value>
+    <value>Сервисы коротких ссылок</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки картинок</value>
+  </data>
+  <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки картинок</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки текстов</value>
+  </data>
+  <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки текстов</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки файлов</value>
+  </data>
+  <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки файлов</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>Сервисы коротких ссылок</value>
+  </data>
+  <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
+    <value>Сервисы отправки ссылок</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>Сервисы отправки ссылок</value>
   </data>
 </root>

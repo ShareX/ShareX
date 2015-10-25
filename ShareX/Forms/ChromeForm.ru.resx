@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Скопировать в буфер обмена</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR код</value>
+    <value>ShareX - Поддержка плагина для Chrome</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Сохранить как файл изображения…</value>
+  <data name="btnInstallExtension.Text" xml:space="preserve">
+    <value>Установить плагин для Chrome</value>
+  </data>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>Включить поддержку Chrome</value>
+  </data>
+  <data name="btnUnregister.Text" xml:space="preserve">
+    <value>Выключить поддержку Chrome</value>
+  </data>
+  <data name="lbl1.Text" xml:space="preserve">
+    <value>1. Включите поддержку Chrome или плагин не сможет работать с ShareX.</value>
+  </data>
+  <data name="lbl2.Text" xml:space="preserve">
+    <value>2. Установите плагин ShareX для Chrome из интернет-магазина Chrome.</value>
+  </data>
+  <data name="lbl3.Text" xml:space="preserve">
+    <value>3. В Chrome нажмите правой кнопкой мыши на картинке, видео, аудио или выделите текст, и вы увидите кнопку "Upload with ShareX" в контекстном меню.</value>
   </data>
 </root>

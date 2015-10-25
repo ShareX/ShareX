@@ -121,7 +121,7 @@
     <value>ShareX - Журнал отладки</value>
   </data>
   <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Скопировать все</value>
+    <value>Все в буфер</value>
   </data>
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
     <value>Загруженные сборки</value>

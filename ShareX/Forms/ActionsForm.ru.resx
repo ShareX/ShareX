@@ -142,7 +142,7 @@
     <value>Имя:</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Расширение имени выходного файла: (Пусто = такое же)</value>
+    <value>Расширение имени итогового файла: (Пусто = такое же)</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
     <value>Путь к файлу:</value>

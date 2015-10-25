@@ -147,4 +147,10 @@
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>Из файла…</value>
   </data>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>Сохранить...</value>
+  </data>
+  <data name="mbLoadImage.Text" xml:space="preserve">
+    <value>Загрузить...</value>
+  </data>
 </root>

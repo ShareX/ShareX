@@ -123,4 +123,25 @@
   <data name="chDescription.Text" xml:space="preserve">
     <value>Описание</value>
   </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>Картинку в буфер</value>
+  </data>
+  <data name="btnCopyLink.Text" xml:space="preserve">
+    <value>Ссылку в буфер</value>
+  </data>
+  <data name="btnOpenFile.Text" xml:space="preserve">
+    <value>Открыть файл</value>
+  </data>
+  <data name="btnOpenFolder.Text" xml:space="preserve">
+    <value>Открыть папку</value>
+  </data>
+  <data name="btnOpenLink.Text" xml:space="preserve">
+    <value>Открыть ссылку</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Формат</value>
+  </data>
 </root>

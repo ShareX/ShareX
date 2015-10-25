@@ -117,13 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Скопировать в буфер обмена</value>
+  <data name="lblHotkeyDescription.Text" xml:space="preserve">
+    <value>Описание</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR код</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Сохранить как файл изображения…</value>
+  <data name="btnHotkey.Text" xml:space="preserve">
+    <value>Клавиша</value>
   </data>
 </root>

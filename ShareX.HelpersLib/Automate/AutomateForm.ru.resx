@@ -117,13 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Скопировать в буфер обмена</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR код</value>
+    <value>ShareX - Автоматизация</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Сохранить как файл изображения…</value>
+  <data name="btnAddMouseMove.Text" xml:space="preserve">
+    <value>Добавить позицию курсора</value>
+  </data>
+  <data name="btnLoadExample.Text" xml:space="preserve">
+    <value>Загрузить пример</value>
+  </data>
+  <data name="btnRemoveScript.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="btnRun.Text" xml:space="preserve">
+    <value>Начать</value>
+  </data>
+  <data name="btnSaveScript.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="chScriptName.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="lblFunctions.Text" xml:space="preserve">
+    <value>Функции:</value>
+  </data>
+  <data name="lblKeys.Text" xml:space="preserve">
+    <value>Клавиши:</value>
+  </data>
+  <data name="lblLineDelay.Text" xml:space="preserve">
+    <value>Задержка между линиями:</value>
+  </data>
+  <data name="lblLineDelayMiliseconds.Text" xml:space="preserve">
+    <value>мс</value>
+  </data>
+  <data name="lblScriptName.Text" xml:space="preserve">
+    <value>Название скрипта:</value>
   </data>
 </root>

@@ -118,6 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tsmiExportClipboard.Text" xml:space="preserve">
-    <value>Скопировать в буфер обмена</value>
+    <value>Скопировать в буфер</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Експорт</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Импорт</value>
+  </data>
+  <data name="tsmiExportFile.Text" xml:space="preserve">
+    <value>Сохранить в файл...</value>
+  </data>
+  <data name="tsmiExportUpload.Text" xml:space="preserve">
+    <value>Загрузить как текст</value>
+  </data>
+  <data name="tsmiImportClipboard.Text" xml:space="preserve">
+    <value>Из буфера</value>
+  </data>
+  <data name="tsmiImportFile.Text" xml:space="preserve">
+    <value>Из файла...</value>
+  </data>
+  <data name="tsmiImportURL.Text" xml:space="preserve">
+    <value>Из ссылки...</value>
   </data>
 </root>

@@ -117,13 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Скопировать в буфер обмена</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR код</value>
+    <value>ShareX - Палитра</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Сохранить как файл изображения…</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="lblAlpha.Text" xml:space="preserve">
+    <value>Альфа:</value>
+  </data>
+  <data name="lblCyan.Text" xml:space="preserve">
+    <value>Голубой:</value>
+  </data>
+  <data name="lblDecimal.Text" xml:space="preserve">
+    <value>Десятичный:</value>
+  </data>
+  <data name="lblMagenta.Text" xml:space="preserve">
+    <value>Пурпурный:</value>
+  </data>
+  <data name="lblYellow.Text" xml:space="preserve">
+    <value>Жёлтый:</value>
+  </data>
+  <data name="lblNew.Text" xml:space="preserve">
+    <value>Новый:</value>
+  </data>
+  <data name="lblOld.Text" xml:space="preserve">
+    <value>Старый:</value>
+  </data>
+  <data name="rbBlue.Text" xml:space="preserve">
+    <value>Синий:</value>
+  </data>
+  <data name="lblKey.Text" xml:space="preserve">
+    <value>Ключевой:</value>
+  </data>
+  <data name="rbBrightness.Text" xml:space="preserve">
+    <value>Яркость:</value>
+  </data>
+  <data name="rbGreen.Text" xml:space="preserve">
+    <value>Зеленый:</value>
+  </data>
+  <data name="rbRed.Text" xml:space="preserve">
+    <value>Красный:</value>
+  </data>
+  <data name="rbHue.Text" xml:space="preserve">
+    <value>Тон:</value>
+  </data>
+  <data name="rbSaturation.Text" xml:space="preserve">
+    <value>Насыщение:</value>
   </data>
 </root>

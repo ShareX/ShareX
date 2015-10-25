@@ -432,4 +432,37 @@
   <data name="btnDestinations.Text" xml:space="preserve">
     <value>Сервисы загрузок…</value>
   </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки картинок</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки текстов</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки файлов</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>Сервисы коротких ссылок</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>Сервисы отправки ссылок</value>
+  </data>
+  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Задача...</value>
+  </data>
+  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
+    <value>Выберите монитор для определения области:</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>Предпросмотр</value>
+  </data>
 </root>

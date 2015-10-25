@@ -120,4 +120,52 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Проверка монитора</value>
   </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="btnColorDialog.Text" xml:space="preserve">
+    <value>Выбор цвета...</value>
+  </data>
+  <data name="btnGradientColor1.Text" xml:space="preserve">
+    <value>Цвет 1</value>
+  </data>
+  <data name="btnGradientColor2.Text" xml:space="preserve">
+    <value>Цвет 2</value>
+  </data>
+  <data name="cbShapes.Items" xml:space="preserve">
+    <value>Шахматная доска</value>
+  </data>
+  <data name="cbShapes.Items1" xml:space="preserve">
+    <value>Горизонтальные полосы</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>Вертикальные полосы</value>
+  </data>
+  <data name="lblBlue.Text" xml:space="preserve">
+    <value>С:</value>
+  </data>
+  <data name="lblGreen.Text" xml:space="preserve">
+    <value>З:</value>
+  </data>
+  <data name="lblRed.Text" xml:space="preserve">
+    <value>К:</value>
+  </data>
+  <data name="lblShapeSize.Text" xml:space="preserve">
+    <value>Размер:</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Вы можете кликать вне панели, чтобы показать/спрятать ее.</value>
+  </data>
+  <data name="rbBlackWhite.Text" xml:space="preserve">
+    <value>Черный, Белый:</value>
+  </data>
+  <data name="rbGradient.Text" xml:space="preserve">
+    <value>Градиент:</value>
+  </data>
+  <data name="rbRedGreenBlue.Text" xml:space="preserve">
+    <value>Красный, Зеленый, Синий:</value>
+  </data>
+  <data name="rbShapes.Text" xml:space="preserve">
+    <value>Фигура:</value>
+  </data>
 </root>

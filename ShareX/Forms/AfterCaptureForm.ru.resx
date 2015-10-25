@@ -135,4 +135,7 @@
   <data name="chAfterCapture.Text" xml:space="preserve">
     <value>Задачи</value>
   </data>
+  <data name="tpBeforeUpload.Text" xml:space="preserve">
+    <value>Перед загрузкой</value>
+  </data>
 </root>

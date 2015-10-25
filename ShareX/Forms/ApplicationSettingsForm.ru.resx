@@ -148,7 +148,7 @@
     <value>Показывать прогресс на иконке в трее</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
-    <value>Интеграции</value>
+    <value>Интеграция</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Запускать ShareX при старте системы</value>
@@ -160,7 +160,7 @@
     <value>Показывать ShareX в меню "Отправить"</value>
   </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>ShareX - расширешие для Chrome...</value>
+    <value>Поддержка расширешия для Chrome...</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Обзор...</value>
@@ -181,7 +181,7 @@
     <value>Открыть...</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Внимание: Для применнения изменений, перезапустите ShareX</value>
+    <value>Заметка: Для применения персональной папки нужно перезапустить ShareX</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Пользовательская папка для скриншотов:</value>
@@ -220,7 +220,7 @@
     <value>Не показывать диалог настройки печати</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>Не показывать диалог печати</value>
+    <value>Не показывать диалог печати Windows</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Доп. настройки</value>
@@ -247,12 +247,33 @@
     <value>Описание</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Формат</value>
+    <value>Форматы содержимого буфера</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Число повторных попыток, если загрузка не удалась</value>
+    <value>Число повторных попыток, если загрузка не удалась:</value>
   </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>При повторе использовать вторичные сервисы</value>
+    <value>При повторе, пробовать вторичные сервисы в указаном порядке</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>Вторичные для картинок</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>Вторичные для текста</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>Вторичные для файлов</value>
+  </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>Пока ShareX открыт, показывать в Steam статус "В приложении"</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Формат</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
+    <value>Шаблон имени подпапок:</value>
+  </data>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 отключает)</value>
   </data>
 </root>

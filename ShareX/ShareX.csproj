@@ -298,6 +298,9 @@
     <EmbeddedResource Include="Controls\HotkeySelectionControl.pt-BR.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HotkeySelectionControl.ru.resx">
+      <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeySelectionControl.tr.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -485,6 +488,9 @@
     <EmbeddedResource Include="Forms\AutoCaptureForm.resx">
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoCaptureForm.ru.resx">
+      <DependentUpon>AutoCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutoCaptureForm.tr.resx">
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -515,6 +521,9 @@
     <EmbeddedResource Include="Forms\BeforeUploadForm.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BeforeUploadForm.ru.resx">
+      <DependentUpon>BeforeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BeforeUploadForm.tr.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -532,6 +541,9 @@
       <DependentUpon>ChromeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChromeForm.resx">
+      <DependentUpon>ChromeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChromeForm.ru.resx">
       <DependentUpon>ChromeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChromeForm.tr.resx">
@@ -559,6 +571,9 @@
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.resx">
+      <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardFormatForm.ru.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.tr.resx">
@@ -594,6 +609,9 @@
     <EmbeddedResource Include="Forms\ActionsForm.resx">
       <DependentUpon>ActionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EncoderProgramForm.ru.resx">
+      <DependentUpon>EncoderProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EncoderProgramForm.tr.resx">
       <DependentUpon>EncoderProgramForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -624,6 +642,9 @@
     <EmbeddedResource Include="Forms\FileExistForm.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileExistForm.ru.resx">
+      <DependentUpon>FileExistForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExistForm.tr.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -637,6 +658,9 @@
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.pt-BR.resx">
+      <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeConfigForm.ru.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.tr.resx">
@@ -679,6 +703,9 @@
       <DependentUpon>ImageCombinerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageCombinerForm.resx">
+      <DependentUpon>ImageCombinerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageCombinerForm.ru.resx">
       <DependentUpon>ImageCombinerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageCombinerForm.tr.resx">
@@ -738,6 +765,9 @@
     <EmbeddedResource Include="Forms\ScreenColorPicker.resx">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScreenColorPicker.ru.resx">
+      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenColorPicker.tr.resx">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>
     </EmbeddedResource>
@@ -773,6 +803,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScreenRecordForm.ru.resx">
+      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenRecordForm.tr.resx">
       <DependentUpon>ScreenRecordForm.cs</DependentUpon>
@@ -834,6 +867,9 @@
     <EmbeddedResource Include="Forms\VideoEncodersForm.pt-BR.resx">
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideoEncodersForm.ru.resx">
+      <DependentUpon>VideoEncodersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoEncodersForm.tr.resx">
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -892,6 +928,9 @@
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.ru.resx">
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.tr.resx">

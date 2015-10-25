@@ -117,13 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Скопировать в буфер обмена</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR код</value>
+    <value>ShareX - Клиент IRC</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Сохранить как файл изображения…</value>
+  <data name="btnCommandSend.Text" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="btnConnect.Text" xml:space="preserve">
+    <value>Подключиться</value>
+  </data>
+  <data name="btnMessageSend.Text" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="lblChannel.Text" xml:space="preserve">
+    <value>Канал/Ник:</value>
+  </data>
+  <data name="lblCommand.Text" xml:space="preserve">
+    <value>Команда:</value>
+  </data>
+  <data name="lblMessage.Text" xml:space="preserve">
+    <value>Сообщение:</value>
+  </data>
+  <data name="tpMain.Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="tpMessages.Text" xml:space="preserve">
+    <value>Сообщения</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Вывод IRC</value>
+  </data>
+  <data name="tsmiColorBlack.Text" xml:space="preserve">
+    <value>Черный</value>
+  </data>
+  <data name="tsmiColorBlue.Text" xml:space="preserve">
+    <value>Синий</value>
+  </data>
+  <data name="tsmiColorBrown.Text" xml:space="preserve">
+    <value>Коричневый</value>
+  </data>
+  <data name="tsmiColorCyan.Text" xml:space="preserve">
+    <value>Голубой</value>
+  </data>
+  <data name="tsmiColorGreen.Text" xml:space="preserve">
+    <value>Зеленый</value>
+  </data>
+  <data name="tsmiColorGrey.Text" xml:space="preserve">
+    <value>Серый</value>
+  </data>
+  <data name="tsmiColorLightBlue.Text" xml:space="preserve">
+    <value>Светлосиний</value>
+  </data>
+  <data name="tsmiColorLightCyan.Text" xml:space="preserve">
+    <value>Светлоголубой</value>
+  </data>
+  <data name="tsmiColorLightGreen.Text" xml:space="preserve">
+    <value>Светлозеленый</value>
+  </data>
+  <data name="tsmiColorLightGrey.Text" xml:space="preserve">
+    <value>Светлосерый</value>
+  </data>
+  <data name="tsmiColorLightRed.Text" xml:space="preserve">
+    <value>Светлокрасный</value>
+  </data>
+  <data name="tsmiColorOrange.Text" xml:space="preserve">
+    <value>Оранжевый</value>
+  </data>
+  <data name="tsmiColorPink.Text" xml:space="preserve">
+    <value>Розовый</value>
+  </data>
+  <data name="tsmiColorPurple.Text" xml:space="preserve">
+    <value>Фиолетовый</value>
+  </data>
+  <data name="tsmiColors.Text" xml:space="preserve">
+    <value>Цвета</value>
+  </data>
+  <data name="tsmiColorWhite.Text" xml:space="preserve">
+    <value>Белый</value>
+  </data>
+  <data name="tsmiColorYellow.Text" xml:space="preserve">
+    <value>Жёлтый</value>
+  </data>
+  <data name="tsmiMessageBold.Text" xml:space="preserve">
+    <value>Жирный</value>
+  </data>
+  <data name="tsmiMessageItalic.Text" xml:space="preserve">
+    <value>Курсив</value>
+  </data>
+  <data name="tsmiMessageNormal.Text" xml:space="preserve">
+    <value>Нормальный</value>
+  </data>
+  <data name="tsmiMessageUnderline.Text" xml:space="preserve">
+    <value>Подчеркнутый</value>
   </data>
 </root>
