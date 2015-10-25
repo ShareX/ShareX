@@ -52,7 +52,8 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("pomf.io", "http://pomf.io/upload.php"),
             new PomfUploader("pomf.pl", "http://pomf.pl/upload.php"),
             //new PomfUploader("pomf.se", "https://pomf.se/upload.php", "https://a.pomf.se"),
-            new PomfUploader("up.che.moe", "http://up.che.moe/upload.php", "http://cdn.che.moe")
+            new PomfUploader("up.che.moe", "http://up.che.moe/upload.php", "http://cdn.che.moe"),
+            new PomfUploader("nigger.cat", "http://nigger.cat/upload.php", "http://a.nigger.cat")
         };
 
         public static PomfUploader DefaultUploader
