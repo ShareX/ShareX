@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Захват</value>
+  </data>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>Загрузка</value>
+  </data>
+  <data name="btnHideSteam.Text" xml:space="preserve">
+    <value>Скрыть</value>
+  </data>
+  <data name="btnOpenSteam.Text" xml:space="preserve">
+    <value>ShareX теперь доступен в Steam!</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="chStatus.Text" xml:space="preserve">
+    <value>Состояние</value>
+  </data>
+  <data name="tsmiTrayCapture.Text" xml:space="preserve">
+    <value>Захват</value>
+  </data>
+  <data name="tsmiTrayAbout.Text" xml:space="preserve">
+    <value>О программе…</value>
+  </data>
+  <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
+    <value>После захвата</value>
+  </data>
+  <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
+    <value>После загрузки</value>
+  </data>
+  <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
+    <value>Настройки приложения…</value>
+  </data>
+  <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
+    <value>Автозахват</value>
+  </data>
+  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
+    <value>Автоматизировать...</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>Палитра</value>
+  </data>
+  <data name="chProgress.Text" xml:space="preserve">
+    <value>Прогресс</value>
+  </data>
+  <data name="chSpeed.Text" xml:space="preserve">
+    <value>Скорость</value>
+  </data>
+  <data name="chElapsed.Text" xml:space="preserve">
+    <value>Затрачено</value>
+  </data>
+  <data name="chRemaining.Text" xml:space="preserve">
+    <value>Осталось</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
+  <data name="tsddbWorkflows.Text" xml:space="preserve">
+    <value>Операции</value>
+  </data>
+  <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
+    <value>Операции</value>
+  </data>
+  <data name="tsbHotkeySettings.Text" xml:space="preserve">
+    <value>Горячие клавиши...</value>
+  </data>
+  <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
+    <value>Горячие клавиши...</value>
+  </data>
+  <data name="tsmiMonitor.Text" xml:space="preserve">
+    <value>Монитор</value>
+  </data>
+  <data name="tsmiMonitorTest.Text" xml:space="preserve">
+    <value>Проверка монитора</value>
+  </data>
+  <data name="tsmiTrayMonitor.Text" xml:space="preserve">
+    <value>Монитор</value>
+  </data>
+  <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
+    <value>Проверка монитора</value>
+  </data>
+  <data name="tsmiTrayWindow.Text" xml:space="preserve">
+    <value>Окно</value>
+  </data>
+  <data name="tsmiWindow.Text" xml:space="preserve">
+    <value>Окно</value>
+  </data>
+  <data name="tsmiTrayShow.Text" xml:space="preserve">
+    <value>Показать окно ShareX</value>
+  </data>
+  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
+    <value>Область (Окна и элементы)</value>
+  </data>
+  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
+    <value>Область (Окна и элементы)</value>
+  </data>
+  <data name="tsmiFullscreen.Text" xml:space="preserve">
+    <value>Весь экран</value>
+  </data>
+  <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
+    <value>Весь экран</value>
+  </data>
+  <data name="tsmiRectangle.Text" xml:space="preserve">
+    <value>Область</value>
+  </data>
+  <data name="tsmiLastRegion.Text" xml:space="preserve">
+    <value>Последняя область</value>
+  </data>
+  <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
+    <value>Последняя область</value>
+  </data>
+  <data name="tsmiTrayRectangle.Text" xml:space="preserve">
+    <value>Область</value>
+  </data>
+  <data name="tsmiAbout.Text" xml:space="preserve">
+    <value>О программе…</value>
+  </data>
+  <data name="tsmiAutoCapture.Text" xml:space="preserve">
+    <value>Автозахват</value>
+  </data>
+  <data name="tsmiAutomate.Text" xml:space="preserve">
+    <value>Автоматизировать...</value>
+  </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>Палитра</value>
+  </data>
+  <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
+    <value>Пипетка</value>
+  </data>
+  <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
+    <value>Пипетка</value>
+  </data>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Скопировать</value>
+  </data>
+  <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
+    <value>Ссылку на удаление</value>
+  </data>
+  <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
+    <value>Ссылку на удаление</value>
+  </data>
+  <data name="tsmiCopyFile.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="tsmiCopyFileName.Text" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
+    <value>Имя файла с расширением</value>
+  </data>
+  <data name="tsmiCopyFilePath.Text" xml:space="preserve">
+    <value>Путь к файлу</value>
+  </data>
+  <data name="tsmiCopyThumbnailFile.Text" xml:space="preserve">
+    <value>Файл миниатюры</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
+    <value>Удалить локальный файл</value>
+  </data>
+  <data name="tsmiOpenFile.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
+    <value>Файл миниатюры</value>
+  </data>
+  <data name="tsmiCopyFolder.Text" xml:space="preserve">
+    <value>Папку</value>
+  </data>
+  <data name="tsmiOpenFolder.Text" xml:space="preserve">
+    <value>Папку</value>
+  </data>
+  <data name="tsmiCopyForumImage.Text" xml:space="preserve">
+    <value>BB код с картинкой для форума</value>
+  </data>
+  <data name="tsmiCopyForumLink.Text" xml:space="preserve">
+    <value>BB код со ссылкой для форума</value>
+  </data>
+  <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
+    <value>BB код с картинкой-ссылкой для форума</value>
+  </data>
+  <data name="tsmiClearList.Text" xml:space="preserve">
+    <value>Очистить список</value>
+  </data>
+  <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
+    <value>HTML код с картинкой</value>
+  </data>
+  <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
+    <value>HTML код со ссылкой</value>
+  </data>
+  <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
+    <value>HTML код с картинкой-ссылкой</value>
+  </data>
+  <data name="tsmiCopyImage.Text" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
+    <value>Сокращенную ссылку</value>
+  </data>
+  <data name="tsmiCopyText.Text" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
+    <value>Миниатюру</value>
+  </data>
+  <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
+    <value>Ссылку на миниатюру</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>Ссылку</value>
+  </data>
+  <data name="tsmiOpen.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
+    <value>Сокращенную ссылку</value>
+  </data>
+  <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
+    <value>Ссылку на миниатюру</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>Ссылку</value>
+  </data>
+  <data name="tsmiShowQRCode.Text" xml:space="preserve">
+    <value>Показать QR код...</value>
+  </data>
+  <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
+    <value>Сократить ссылку</value>
+  </data>
+  <data name="tsmiShowResponse.Text" xml:space="preserve">
+    <value>Показать ответ...</value>
+  </data>
+  <data name="tsmiUploadURL.Text" xml:space="preserve">
+    <value>Загрузить со ссылки…</value>
+  </data>
+  <data name="tsmiUploadFile.Text" xml:space="preserve">
+    <value>Загрузить файл…</value>
+  </data>
+  <data name="tsmiUploadFolder.Text" xml:space="preserve">
+    <value>Загрузить папку…</value>
+  </data>
+  <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
+    <value>Загружать перетаскиванием…</value>
+  </data>
+  <data name="tsmiUploadClipboard.Text" xml:space="preserve">
+    <value>Загрузить из буфера обмена…</value>
+  </data>
+  <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
+    <value>Загрузить со ссылки…</value>
+  </data>
+  <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
+    <value>Загрузить папку…</value>
+  </data>
+  <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
+    <value>Загрузить файл…</value>
+  </data>
+  <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
+    <value>Загружать перетаскиванием…</value>
+  </data>
+  <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
+    <value>Загрузить из буфера обмена…</value>
+  </data>
+  <data name="tsmiTrayUpload.Text" xml:space="preserve">
+    <value>Загрузка</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="tsmiTestFileUpload.Text" xml:space="preserve">
+    <value>Проверить загрузку файла</value>
+  </data>
+  <data name="tsmiTestImageUpload.Text" xml:space="preserve">
+    <value>Проверить загрузку изображения</value>
+  </data>
+  <data name="tsmiTestTextUpload.Text" xml:space="preserve">
+    <value>Проверить загрузку текста</value>
+  </data>
+  <data name="tsmiStopUpload.Text" xml:space="preserve">
+    <value>Остановить загрузку</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>Отключить горячие клавиши</value>
+  </data>
+  <data name="tsmiTrayTools.Text" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
+    <value>Задачи после захвата</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
+    <value>Задачи после загрузки</value>
+  </data>
+  <data name="tsbTaskSettings.Text" xml:space="preserve">
+    <value>Настройки задач…</value>
+  </data>
+  <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
+    <value>Настройки задач…</value>
+  </data>
+  <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
+    <value>Отправить ссылку</value>
+  </data>
+  <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
+    <value>Редактировать изображение…</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>Редактор изображений…</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>Редактор изображений…</value>
+  </data>
+  <data name="tsmiHideMenu.Text" xml:space="preserve">
+    <value>Скрыть меню</value>
+  </data>
+  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
+    <value>Скрыть</value>
+  </data>
+  <data name="tsmiImagePreview.Text" xml:space="preserve">
+    <value>Предпросмотр изображений</value>
+  </data>
+  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
+    <value>Автоматически</value>
+  </data>
+  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
+    <value>Показать</value>
+  </data>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>Настройки приложения…</value>
+  </data>
+  <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
+    <value>Папка скриншотов…</value>
+  </data>
+  <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
+    <value>Папка скриншотов…</value>
+  </data>
+  <data name="tsbHistory.Text" xml:space="preserve">
+    <value>История…</value>
+  </data>
+  <data name="tsmiTrayHistory.Text" xml:space="preserve">
+    <value>История…</value>
+  </data>
+  <data name="tsbImageHistory.Text" xml:space="preserve">
+    <value>История изображений…</value>
+  </data>
+  <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
+    <value>История изображений…</value>
+  </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>Отладка</value>
+  </data>
+  <data name="tsmiShowDebugLog.Text" xml:space="preserve">
+    <value>Журнал отладки…</value>
+  </data>
+  <data name="tsmiDonate.Text" xml:space="preserve">
+    <value>Пожертвовать…</value>
+  </data>
+  <data name="tsmiTrayDonate.Text" xml:space="preserve">
+    <value>Пожертвовать…</value>
+  </data>
+  <data name="tsmiFTPClient.Text" xml:space="preserve">
+    <value>Клиент FTP…</value>
+  </data>
+  <data name="tsmiHashCheck.Text" xml:space="preserve">
+    <value>Проверка хеша…</value>
+  </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>Объединитель изображений…</value>
+  </data>
+  <data name="tsmiImageEffects.Text" xml:space="preserve">
+    <value>Наложение эффектов…</value>
+  </data>
+  <data name="tsmiIndexFolder.Text" xml:space="preserve">
+    <value>Индексация папки…</value>
+  </data>
+  <data name="tsmiIRCClient.Text" xml:space="preserve">
+    <value>Клиент IRC…</value>
+  </data>
+  <data name="tsmiQRCode.Text" xml:space="preserve">
+    <value>QR код…</value>
+  </data>
+  <data name="tsmiPolygon.Text" xml:space="preserve">
+    <value>Многоугольник</value>
+  </data>
+  <data name="tsmiRuler.Text" xml:space="preserve">
+    <value>Линейка…</value>
+  </data>
+  <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
+    <value>Запись экрана (GIF)</value>
+  </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>Захват с прокруткой…</value>
+  </data>
+  <data name="tsmiShowErrors.Text" xml:space="preserve">
+    <value>Показать ошибки</value>
+  </data>
+  <data name="tsmiTestURLSharing.Text" xml:space="preserve">
+    <value>Проверить отправку ссылки</value>
+  </data>
+  <data name="tsmiTestURLShortener.Text" xml:space="preserve">
+    <value>Проверить сокращение ссылок</value>
+  </data>
+  <data name="tsmiTrayExit.Text" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
+    <value>Проверка хеша…</value>
+  </data>
+  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
+    <value>Клиент FTP…</value>
+  </data>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>Объединитель изображений…</value>
+  </data>
+  <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
+    <value>Наложение эффектов…</value>
+  </data>
+  <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
+    <value>Индексация папки…</value>
+  </data>
+  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
+    <value>Клиент IRC…</value>
+  </data>
+  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
+    <value>Многоугольник</value>
+  </data>
+  <data name="tsmiTrayQRCode.Text" xml:space="preserve">
+    <value>QR код…</value>
+  </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>Недавние ссылки</value>
+  </data>
+  <data name="tsmiTrayRuler.Text" xml:space="preserve">
+    <value>Линейка…</value>
+  </data>
+  <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
+    <value>Запись экрана (GIF)</value>
+  </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>Захват с прокруткой…</value>
+  </data>
+  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
+    <value>Захват веб-страницы…</value>
+  </data>
+  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
+    <value>Захват веб-страницы…</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>Миниатюры из видео…</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>Миниатюры из видео…</value>
+  </data>
+  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
+    <value>Область (Примечания)</value>
+  </data>
+  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
+    <value>Область (Примечания)</value>
+  </data>
+  <data name="tsmiFreeHand.Text" xml:space="preserve">
+    <value>Область произвольной формы</value>
+  </data>
+  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
+    <value>Область произвольной формы</value>
+  </data>
+  <data name="tsmiRectangleLight.Text" xml:space="preserve">
+    <value>Область (Облегченный)</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>Область (Прозрачный фон)</value>
+  </data>
+  <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
+    <value>Область (Облегченный)</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>Область (Прозрачный фон)</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Сервисы загрузок</value>
+  </data>
+  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
+    <value>Настройки сервисов…</value>
+  </data>
+  <data name="tsmiDNSChanger.Text" xml:space="preserve">
+    <value>Изменение DNS…</value>
+  </data>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>Сервисы загрузок</value>
+  </data>
+  <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
+    <value>Настройки сервисов…</value>
+  </data>
+  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
+    <value>Изменение DNS…</value>
+  </data>
+  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
+    <value>Сообщение в Twitter…</value>
+  </data>
+  <data name="tsmiTweetMessage.Text" xml:space="preserve">
+    <value>Сообщение в Twitter…</value>
+  </data>
+  <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
+    <value>Сервисы коротких ссылок</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки картинок</value>
+  </data>
+  <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки картинок</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки текстов</value>
+  </data>
+  <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки текстов</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки файлов</value>
+  </data>
+  <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки файлов</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>Сервисы коротких ссылок</value>
+  </data>
+  <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
+    <value>Сервисы отправки ссылок</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>Сервисы отправки ссылок</value>
+  </data>
+</root>
