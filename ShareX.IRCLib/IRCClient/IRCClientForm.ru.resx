@@ -136,7 +136,7 @@
     <value>Команда:</value>
   </data>
   <data name="lblMessage.Text" xml:space="preserve">
-    <value>Сообщение:</value>
+    <value>Написать:</value>
   </data>
   <data name="tpMain.Text" xml:space="preserve">
     <value>Настройки</value>
@@ -166,19 +166,19 @@
     <value>Серый</value>
   </data>
   <data name="tsmiColorLightBlue.Text" xml:space="preserve">
-    <value>Светлосиний</value>
+    <value>Светло-синий</value>
   </data>
   <data name="tsmiColorLightCyan.Text" xml:space="preserve">
-    <value>Светлоголубой</value>
+    <value>Светло-голубой</value>
   </data>
   <data name="tsmiColorLightGreen.Text" xml:space="preserve">
-    <value>Светлозеленый</value>
+    <value>Светло-зеленый</value>
   </data>
   <data name="tsmiColorLightGrey.Text" xml:space="preserve">
-    <value>Светлосерый</value>
+    <value>Светло-серый</value>
   </data>
   <data name="tsmiColorLightRed.Text" xml:space="preserve">
-    <value>Светлокрасный</value>
+    <value>Светло-красный</value>
   </data>
   <data name="tsmiColorOrange.Text" xml:space="preserve">
     <value>Оранжевый</value>

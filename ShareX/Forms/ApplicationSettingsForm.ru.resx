@@ -253,7 +253,7 @@
     <value>Число повторных попыток, если загрузка не удалась:</value>
   </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>При повторе, пробовать вторичные сервисы в указаном порядке</value>
+    <value>При повторе, пробовать вторичные сервисы в указанном порядке</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Вторичные для картинок</value>

@@ -148,7 +148,7 @@
     <value>Тест</value>
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Помошь..</value>
+    <value>Помощь...</value>
   </data>
   <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
     <value>Тест</value>
@@ -244,7 +244,7 @@
     <value>Результат теста:</value>
   </data>
   <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Показать поледний ответ...</value>
+    <value>Показать последний ответ...</value>
   </data>
   <data name="btnGe_ttLogin.Text" xml:space="preserve">
     <value>Войти</value>
@@ -271,7 +271,7 @@
     <value>Состояние входа:</value>
   </data>
   <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Выбрать..</value>
+    <value>Выбрать...</value>
   </data>
   <data name="btnFlickrCheckToken.Text" xml:space="preserve">
     <value>Обновить авторизацию</value>
@@ -280,7 +280,7 @@
     <value>Шаг 2: Завершить авторизацию</value>
   </data>
   <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Шаг 1: Окрыть страницу авторизации...</value>
+    <value>Шаг 1: Открыть страницу авторизации...</value>
   </data>
   <data name="btnFlickrOpenImages.Text" xml:space="preserve">
     <value>Ваш фотопоток...</value>
@@ -310,13 +310,13 @@
     <value>Обновить список альбомов</value>
   </data>
   <data name="btnMegaRegister.Text" xml:space="preserve">
-    <value>Зарегистрироваться...</value>
+    <value>Регистрация...</value>
   </data>
   <data name="btnPastebinRegister.Text" xml:space="preserve">
-    <value>Зарегистрироваться...</value>
+    <value>Регистрация...</value>
   </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>&amp;Зарегистрироваться...</value>
+    <value>&amp;Регистрация...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Открыть мои картинки...</value>
@@ -376,13 +376,13 @@
     <value>Email:</value>
   </data>
   <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>Шаг 1: Окрыть страницу авторизации...</value>
+    <value>Шаг 1: Открыть страницу авторизации...</value>
   </data>
   <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
     <value>Шаг 2: Завершить авторизацию</value>
   </data>
   <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
-    <value>Аккаун пользователя</value>
+    <value>Аккаунт пользователя</value>
   </data>
   <data name="lblImageShackUsername.Text" xml:space="preserve">
     <value>Имя пользователя:</value>
@@ -427,10 +427,10 @@
     <value>Загружать картинки в</value>
   </data>
   <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>Загружать картинки в выбраный альбом</value>
+    <value>Загружать картинки в выбранный альбом</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>Загружать картинки в выбраную папку</value>
+    <value>Загружать картинки в выбранную папку</value>
   </data>
   <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
     <value>Путь загрузки:</value>
@@ -454,25 +454,25 @@
     <value>Создать альбом</value>
   </data>
   <data name="cbBoxShare.Text" xml:space="preserve">
-    <value>Создать обественную ссылку</value>
+    <value>Создать общественную ссылку</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Создать обественный URL:</value>
+    <value>Создать общественный URL:</value>
   </data>
   <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
-    <value>Создать обественную ссылку</value>
+    <value>Создать общественную ссылку</value>
   </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
-    <value>Создать обественный URL:</value>
+    <value>Создать общественный URL:</value>
   </data>
   <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Если вы используете публичную папку, общественая ссылка уже создана. Вам не нужно отмечать "Создать обественный URL".</value>
+    <value>Если вы используете публичную папку, общественная ссылка уже создана. Вам не нужно отмечать "Создать общественный URL".</value>
   </data>
   <data name="chkGistPublishPublic.Text" xml:space="preserve">
     <value>Создать общественный Gist</value>
   </data>
   <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>Имя нового альбома (должно быть от 2 до 50 символов. Могут быть буквами, цифрами, подчеркиванием (_), дефис (-) и пробел )</value>
+    <value>Имя нового альбома (должно быть от 2 до 50 символов. Могут быть буквами, цифрами, подчеркиванием (_), дефис (-) и пробел)</value>
   </data>
   <data name="cbImgurDirectLink.Text" xml:space="preserve">
     <value>Использовать прямую ссылку</value>
@@ -493,7 +493,7 @@
     <value>Публичная загрузка?</value>
   </data>
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Код подстверждения (Получите код на странице авторизации)</value>
+    <value>Код подтверждения (Получите код на странице авторизации)</value>
   </data>
   <data name="lblCheveretoWebsite.Text" xml:space="preserve">
     <value>Веб-сайт:</value>
@@ -520,7 +520,7 @@
     <value>Для получения ключа API, войдите в Lambda на https://lambda.sx/, затем нажмите шестеренку настроек вверху справа.</value>
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
-    <value>Имя хоста API: (например http://example.com/api.php, Оставьте пустым, чтобы использовать polr.me)</value>
+    <value>Имя хоста API: (например, http://example.com/api.php, Оставьте пустым, чтобы использовать polr.me)</value>
   </data>
   <data name="llAdflyLink.Text" xml:space="preserve">
     <value>Здесь можно найти ваши ключ API и UID</value>
@@ -565,7 +565,7 @@
     <value>Использовать длинную ссылку с именем файла</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
-    <value>Совместимост с ownCloud 8.1+</value>
+    <value>Совместимость с ownCloud 8.1+</value>
   </data>
   <data name="chArgumentsName.Text" xml:space="preserve">
     <value>Имя</value>
@@ -589,7 +589,7 @@
     <value>Заголовок</value>
   </data>
   <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>Подстверидить перед отправкой</value>
+    <value>Подтвердить перед отправкой</value>
   </data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Имя</value>
@@ -604,7 +604,7 @@
     <value>Регулярка из ответа</value>
   </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Загрузчики</value>
+    <value>Сервисы</value>
   </data>
   <data name="gbMinusUserPass.Text" xml:space="preserve">
     <value>Аутентификация</value>
@@ -637,7 +637,7 @@
     <value>Тип ответа:</value>
   </data>
   <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Загрузчик текста:</value>
+    <value>Сервис текстов:</value>
   </data>
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Состояние</value>
@@ -661,7 +661,7 @@
     <value>ID папки:</value>
   </data>
   <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
-    <value>Полльзовательский домен:</value>
+    <value>Пользовательский домен:</value>
   </data>
   <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
     <value>Подсветка синтаксиса:</value>
@@ -724,7 +724,7 @@
     <value>Файл:</value>
   </data>
   <data name="lblSharedFolderImages.Text" xml:space="preserve">
-    <value>Изображение:</value>
+    <value>Картинка:</value>
   </data>
   <data name="lblSharedFolderText.Text" xml:space="preserve">
     <value>Текст:</value>
@@ -739,37 +739,37 @@
     <value>Файл из имени:</value>
   </data>
   <data name="lblBoxFolderID.Text" xml:space="preserve">
-    <value>Выбранная пака:</value>
+    <value>Выбранная папка:</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Игнорировать недействительный сертификат SSL</value>
   </data>
   <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Загрузчик фалов:</value>
+    <value>Файловый сервис:</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Загрузчик изображений:</value>
+    <value>Сервис картинок:</value>
   </data>
   <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
-    <value>Пропустить окно твита</value>
+    <value>Пропускать окно твита</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
     <value>Заметка: Двойной клин по имени папки откроет ее.</value>
   </data>
   <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
-    <value>Двойной клик по регулярке, чтобы использовать ее в ссылке</value>
+    <value>Двойной клик добавит регулярку в URL</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Использовать хранилище с меньшей избыточностью</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
-    <value>Используйте эту опци в случае, если у вас есть ведро с пользовательским доменом.
+    <value>Используйте эту опцию в случае, если у вас есть ведро с пользовательским доменом.
 Если текстовое поле пустое, имя ведра будет использовано в качестве ссылки.
-Нпример, если ваше ведро называется bucket.example.com, тоссылка будет http://bucket.example.com/...</value>
+Например, если ваше ведро называется bucket.example.com, то ссылка будет http://bucket.example.com/...</value>
   </data>
   <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
     <value>Используйте класс хранилища с меньшей избыточностью хранимых объектов.
 В этом случае, хранить объекты дешевле, но их прочности 99.99%, вместо 99.999999999%.
-Это значит, что они могут исчезнуть из Amazon S3 в како-то момент.</value>
+Это значит, что они могут исчезнуть из Amazon S3 в какой-то момент.</value>
   </data>
 </root>

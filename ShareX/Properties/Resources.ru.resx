@@ -143,8 +143,8 @@
     <value>Загружается</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
-    <value>Вы уверены, что хотите загрузить этот скриншот?
-Нажмите «Нет», чтобы отменить эту загрузку и отключить автозагрузку скриншотов.</value>
+    <value>Загрузить этот скриншот?
+Нажмите «Нет», чтобы отменить загрузку и отключить автозагрузку скриншотов.</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
     <value>Предупреждение о первой загрузке</value>
@@ -201,7 +201,7 @@
 
 {1}
 
-Пожалуйста, выберите другую горячую клавишу или завершите конфликтующе приложение и перезапустите ShareX.</value>
+Пожалуйста, выберите другую горячую клавишу или завершите конфликтующее приложение и перезапустите ShareX.</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>Не удалось зарегистрировать горячую клавишу</value>
@@ -276,7 +276,7 @@
     <value>Сервис загрузки файлов: {0}</value>
   </data>
   <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
-    <value>Нажмите левой кнопкой мышли по иконке ShareX в трее, что бы захватить область экрана</value>
+    <value>Нажмите левой кнопкой мыши по иконке ShareX в трее, что бы захватить область экрана</value>
   </data>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Поддержка Chrome включена.</value>
@@ -331,7 +331,7 @@
     <value>Поддерживаемые переменные: {0} и другие переменные, такие как {1} и т.д.</value>
   </data>
   <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Разширение не может быть пустым.</value>
+    <value>Расширение не может быть пустым.</value>
   </data>
   <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
     <value>Путь не может быть пустым.</value>
@@ -355,10 +355,10 @@
     <value>Не удалось создать папку:</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Не удалось найти рабочий аккунт FTP.</value>
+    <value>Не удалось найти рабочий аккаунт FTP.</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Не удалось найти рабочий аккунт Twitter.</value>
+    <value>Не удалось найти рабочий аккаунт Twitter.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Нет доступа к файлу "{0}".
@@ -418,7 +418,7 @@
     <value>Ожидание...</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Клиент FTP поддерживает только  протоколы FTP или FTPS.</value>
+    <value>Клиент FTP поддерживает только протоколы FTP или FTPS.</value>
   </data>
   <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
     <value>Редактор изображений - Как загрузить изображение?</value>
@@ -432,7 +432,7 @@
     <value>Скопировано в буфер: {0}</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Твит успешно отпрвлен.</value>
+    <value>Твит успешно отправлен.</value>
   </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
     <value>В очереди</value>
@@ -448,7 +448,7 @@
 {0}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
-    <value>Вы действительно хотите загрузить {0} файлов?</value>
+    <value>Приступить к загрузке файлов ({0} шт.) ?</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Больше не показывать это сообщение</value>

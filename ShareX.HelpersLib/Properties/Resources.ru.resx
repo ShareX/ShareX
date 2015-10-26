@@ -541,13 +541,13 @@
     <value>Закрыть</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Содержимое буфера: Файл (Количество: {0})</value>
+    <value>Содержимое буфера: Файл(ы) (Количество: {0} шт.)</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Содержимое буфера: Изображение (Размер: {0}x{1})</value>
+    <value>Содержимое буфера: Изображение (Размер: {0} x {1} точек)</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Содержимое буфера: Текст (Длина: {0})</value>
+    <value>Содержимое буфера: Текст (Символов: {0})</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>Буфер пуст либо содержит неизвестную информацию.</value>
@@ -609,7 +609,7 @@
     <value>Импорт не удался.</value>
   </data>
   <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
-    <value>Експорт не удался.</value>
+    <value>Экспорт не удался.</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
     <value>Настройки скопированы в буфер.</value>
@@ -645,7 +645,7 @@
     <value>Папка не существует:</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
-    <value>Электронная почта::</value>
+    <value>Электронная почта</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Тон: {0:0.0}°, Насыщение: {1:0.0}%, Яркость: {2:0.0}%</value>
@@ -774,7 +774,7 @@
     <value>Автоматически</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Достпна новая версия {0}</value>
+    <value>Доступна новая версия {0}</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
     <value>{0} в актуальном состоянии</value>
@@ -784,13 +784,13 @@
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>Доступна более новая версия {0}.
-Хотите загрузить и установить?</value>
+Хотите скачать и установить?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Доступно обновление</value>
   </data>
   <data name="URLSharingServices_Email" xml:space="preserve">
-    <value>Електроная почта</value>
+    <value>Электронная почта</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
     <value>Числовой счетчик. Нули слева, {n} задает длину.</value>
@@ -805,7 +805,7 @@
     <value>Счетчик, прибавляющий базовое алфавитно-цифровое {n} (1 &lt; n &lt; 63)</value>
   </data>
   <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>Шестнадцатиричный счетчик. Нули слева, {n} задает длину.</value>
+    <value>Шестнадцатеричный счетчик. Нули слева, {n} задает длину.</value>
   </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
     <value>Текущий день недели (Местный язык)</value>
@@ -820,6 +820,6 @@
     <value>Случайное число от 0 до 9. Повторение задается через {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
-    <value>Случайный шестнадцатиричный символ. Повторение задается через {n}</value>
+    <value>Случайный шестнадцатеричный символ. Повторение задается через {n}</value>
   </data>
 </root>

@@ -130,7 +130,7 @@
     <value>Автоматически свернуть в трей</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>Дождаться завержения задач</value>
+    <value>Дождаться завершения задач</value>
   </data>
   <data name="gbRegion.Text" xml:space="preserve">
     <value>Область</value>

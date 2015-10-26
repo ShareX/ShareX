@@ -173,7 +173,7 @@
     <value>Подключено!</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
-    <value>Ошиька: Результат пуст</value>
+    <value>Ошибка: Результат пуст</value>
   </data>
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} успешно создано.</value>
@@ -188,7 +188,7 @@
     <value>Обновление авторизации не поддерживается.</value>
   </data>
   <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Вход не выолнен.</value>
+    <value>Вход не выполнен.</value>
   </data>
   <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
     <value>Вход выполнен под именем {0}.</value>
@@ -236,7 +236,7 @@
     <value>Необходима аутентификация.</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Не удалось найти рабочий аккунт FTP.</value>
+    <value>Не удалось найти рабочий аккаунт FTP.</value>
   </data>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Ошибка</value>
@@ -251,6 +251,9 @@
     <value>Не удалось обновить список папок Hubic</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Клиент FTP поддерживает только  протоколы FTP или FTPS.</value>
+    <value>Клиент FTP поддерживает только протоколы FTP или FTPS.</value>
+  </data>
+  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
+    <value>Ошибка твита</value>
   </data>
 </root>

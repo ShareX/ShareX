@@ -205,7 +205,7 @@
     <value>Окно</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
-    <value>Показат окно ShareX</value>
+    <value>Показать окно ShareX</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
     <value>Область (Окна и элементы)</value>
@@ -358,7 +358,7 @@
     <value>Загрузить папку…</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
-    <value>Загрузить перетаскиванием…</value>
+    <value>Загружать перетаскиванием…</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>Загрузить из буфера обмена…</value>
@@ -373,7 +373,7 @@
     <value>Загрузить файл…</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
-    <value>Загрузить перетаскиванием…</value>
+    <value>Загружать перетаскиванием…</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
     <value>Загрузить из буфера обмена…</value>

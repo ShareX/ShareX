@@ -124,7 +124,7 @@
     <value>Фильтры</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Adjustments" xml:space="preserve">
-    <value>Регулироваки</value>
+    <value>Регулировки</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
     <value>Обработка</value>

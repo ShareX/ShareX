@@ -121,7 +121,7 @@
     <value>Скопировать в буфер</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>Експорт</value>
+    <value>Экспорт</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
     <value>Импорт</value>

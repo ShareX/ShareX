@@ -232,7 +232,7 @@
     <value>Показать окно эффектов изображения после захвата</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
-    <value>Применть эффекты только при захвате области</value>
+    <value>Применять эффекты только при захвате области</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
     <value>Настройка эффектов изображений</value>
@@ -271,7 +271,7 @@
     <value>Смещение тени</value>
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>Захвачивать клиентскую область при захвате окна или активного окна</value>
+    <value>Захватывать клиентскую область при захвате окна или активного окна</value>
   </data>
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Задержка для скриншота</value>
@@ -361,7 +361,7 @@
     <value>Шаблон имени для захвата активного окна:</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Использовать шаблон имени также и для файловх загрузок (вместо настоящего имени файла)</value>
+    <value>Использовать шаблон имени также и для файловых загрузок (вместо настоящего имени файла)</value>
   </data>
   <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
     <value>Сбросить число автонумерации</value>
@@ -385,13 +385,13 @@
     <value>Если в буфере находится ссылка на файл, скачать его, а потом загрузить</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Использовать настроки «После захвата» по умолчанию</value>
+    <value>Использовать настройки «После захвата» по умолчанию</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Использовать настроки «После загрузки» по умолчанию</value>
+    <value>Использовать настройки «После загрузки» по умолчанию</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
-    <value>Использовать настроки сервисов загрузок по умолчанию</value>
+    <value>Использовать настройки сервисов загрузок по умолчанию</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
     <value>Переопределить аккаунт FTP по умолчанию:</value>

@@ -169,7 +169,7 @@
     <value>Снять фильтры</value>
   </data>
   <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>С учетом регистра</value>
+    <value>Регистр</value>
   </data>
   <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
     <value>Текущий язык</value>

@@ -127,7 +127,7 @@
     <value>Изменить шрифт...</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
-    <value>Печаоть...</value>
+    <value>Печать...</value>
   </data>
   <data name="btnShowPreview.Text" xml:space="preserve">
     <value>Предпросмотр...</value>

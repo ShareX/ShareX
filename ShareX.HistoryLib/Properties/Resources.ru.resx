@@ -139,7 +139,7 @@
     <value>Файл</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>Имя фалй</value>
+    <value>Имя файла</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>Имя файла с расширением</value>

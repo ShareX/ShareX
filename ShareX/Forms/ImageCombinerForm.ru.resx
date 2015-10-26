@@ -127,10 +127,10 @@
     <value>Объединить изображения и действовать по сценарию "после захвата" (сохранить/загрузить)</value>
   </data>
   <data name="btnMoveDown.Text" xml:space="preserve">
-    <value>Вверх</value>
+    <value>Ниже</value>
   </data>
   <data name="btnMoveUp.Text" xml:space="preserve">
-    <value>Вниз</value>
+    <value>Выше</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Удалить</value>

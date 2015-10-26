@@ -136,13 +136,13 @@
     <value>Цвет</value>
   </data>
   <data name="chLocation.Text" xml:space="preserve">
-    <value>Положение</value>
+    <value>Позиция</value>
   </data>
   <data name="lblGradientType.Text" xml:space="preserve">
-    <value>Тип градиента:</value>
+    <value>Тип:</value>
   </data>
   <data name="lblLocation.Text" xml:space="preserve">
-    <value>Положение:</value>
+    <value>Позиция:</value>
   </data>
   <data name="lblPreview.Text" xml:space="preserve">
     <value>Предпросмотр:</value>

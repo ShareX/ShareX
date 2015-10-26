@@ -130,6 +130,6 @@
     <value>&amp;Отмена</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Вы действительно хотите загрузить?</value>
+    <value>Приступить к загрузке?</value>
   </data>
 </root>
