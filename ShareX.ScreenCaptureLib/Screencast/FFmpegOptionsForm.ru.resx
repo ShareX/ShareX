@@ -121,7 +121,7 @@
     <value>ShareX - Настройки записи экрана</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>Скопировать</value>
+    <value>В буфер</value>
   </data>
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Скачать</value>
@@ -136,7 +136,7 @@
     <value>Обновить</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
-    <value>Проверить в консоли</value>
+    <value>Тест в консоли</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Пользовательские команды</value>
@@ -152,5 +152,81 @@
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>Диапазон от 0 до 10, где 10 это наилучшее качество. Попробуйте от 3 до 6. По умолчанию 3.</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>Пользовательский путь</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Предустановка:</value>
+  </data>
+  <data name="cbx264Preset.ToolTip" xml:space="preserve">
+    <value>Предустановка — это набор настроек, которые задают определенное соотношение скорости кодировки и сжатия. Более медленная предустановка задает лучшее сжатие (сжатие — это качество на размер файла).
+Значит при желании получить определенный размер файла при постоянном битрейте, лучшие результаты получаются на более медленных предустановках.
+Соответственно для кодирования с постоянным качеством вы можете попросту уменьшить битрейт, выбрав предустановку помедленнее.</value>
+  </data>
+  <data name="gbCodecs.Text" xml:space="preserve">
+    <value>Кодеки</value>
+  </data>
+  <data name="gbCommandLineArgs.Text" xml:space="preserve">
+    <value>Дополнительные агрумменты</value>
+  </data>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Предпросмотр</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>Путь к FFmpeg</value>
+  </data>
+  <data name="lblAACQuality.Text" xml:space="preserve">
+    <value>Битрейт:</value>
+  </data>
+  <data name="lblAudioCodec.Text" xml:space="preserve">
+    <value>Аудиокодек:</value>
+  </data>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>Звук:</value>
+  </data>
+  <data name="lblCodec.Text" xml:space="preserve">
+    <value>Видеокодек:</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Режим дизеринга:</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Режим палитры:</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Источники</value>
+  </data>
+  <data name="lblHelperDevices.Text" xml:space="preserve">
+    <value>Установит источники видео/аудио "screen-capture-recorder" и "virtual-audio-capturer"</value>
+  </data>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Качество:</value>
+  </data>
+  <data name="lblVideoSource.Text" xml:space="preserve">
+    <value>Видео:</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Качество:</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Переменный битрейт:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>Переменный битрейт:</value>
+  </data>
+  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
+    <value>1 = лучшее качество/наибольший размер файла, а 31 = наихудшее качество/наименьший размер файла.</value>
+  </data>
+  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
+    <value>Диапазон от 0 до 9, где ниже значение — лучше качество. 0-3 обычно производит прозрачные результаты, 4 (изначально) должно быть близко к перцепционной  прозрачности, а 6 производит "приемлимое" качество.</value>
+  </data>
+  <data name="nudx264CRF.ToolTip" xml:space="preserve">
+    <value>Однопроходное сжатие (CRF): диапазон масштаба квантизации от 0 до 51, где 0 = без потерь, 23 по умолчанию, а 51 наихудшее из возможных.
+Низкие значения улучшают качество, разумный диапазон субъективно 18-28.
+Учтите, что 18 будет визуально казаться несжатым или близким к тому: будет выглядеть так же или почти так же, как и входной поток, то технически сжатие есть.
+Диапазон экспоненциален, значит увеличение CRF на 6 уменьшит битрейт грубо говоря в 2 раза, а увеличение на 6 удвоит его.
+В общем выберите наибольшее значение, которое все еще производит приемлемое качество.
+Если вывод выглядит хорошо, попробуйте значение повыше, если плохо, выбирайте более низкое значение.</value>
   </data>
 </root>

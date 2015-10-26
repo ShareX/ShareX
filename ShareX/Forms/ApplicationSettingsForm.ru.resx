@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tpGeneral.Text" xml:space="preserve">
-    <value>Основные</value>
+    <value>Общие</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Язык:</value>
@@ -133,16 +133,16 @@
     <value>При запуске сворачивать в трей</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Запомнить расположение главного окна</value>
+    <value>Запоминать расположение главного окна</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Запомнить размер главного окна</value>
+    <value>Запоминать размер главного окна</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Настройки приложения</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Показывать прогресс на кнопке в панеле задач</value>
+    <value>Показывать прогресс на кнопке в панели задач</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
     <value>Показывать прогресс на иконке в трее</value>
@@ -160,7 +160,7 @@
     <value>Показывать ShareX в меню "Отправить"</value>
   </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Поддержка расширешия для Chrome...</value>
+    <value>Поддержка плагина для Chrome...</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Обзор...</value>
@@ -169,10 +169,10 @@
     <value>Обзор...</value>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
-    <value>Пути к папкам</value>
+    <value>Каталоги</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Персональная папка ShareX</value>
+    <value>Персональная папка ShareX:</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Открыть...</value>
@@ -181,7 +181,7 @@
     <value>Открыть...</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Заметка: Для применения персональной папки нужно перезапустить ShareX</value>
+    <value>Заметка: Для применения персональной папки нужно перезапустить ShareX.</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Пользовательская папка для скриншотов:</value>
@@ -208,7 +208,7 @@
     <value>Размер буфера:</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Ограничения на одновременные загрузки:</value>
+    <value>Лимит одновременных загрузок:</value>
   </data>
   <data name="tpPrint.Text" xml:space="preserve">
     <value>Печать</value>

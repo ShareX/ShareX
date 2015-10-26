@@ -118,30 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Профили кодировщиков</value>
+    <value>История</value>
   </data>
-  <data name="btnEncoderDuplicate.Text" xml:space="preserve">
-    <value>Дублировать</value>
+  <data name="gbFilters.Text" xml:space="preserve">
+    <value>Фильтры</value>
   </data>
-  <data name="btnEncodersAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
+  <data name="cbDateFilter.Text" xml:space="preserve">
+    <value>По дате:</value>
   </data>
-  <data name="btnEncodersEdit.Text" xml:space="preserve">
-    <value>Редактировать</value>
+  <data name="lblFilterTo.Text" xml:space="preserve">
+    <value>До:</value>
   </data>
-  <data name="btnEncodersRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
+  <data name="lblFilterFrom.Text" xml:space="preserve">
+    <value>От:</value>
   </data>
-  <data name="chEncoderArgs.Text" xml:space="preserve">
-    <value>Аргументы</value>
+  <data name="cbFilenameFilter.Text" xml:space="preserve">
+    <value>По имени файла:</value>
   </data>
-  <data name="chEncoderDescription.Text" xml:space="preserve">
-    <value>Описание</value>
+  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
+    <value>Содержит</value>
   </data>
-  <data name="chEncoderPath.Text" xml:space="preserve">
-    <value>Путь</value>
+  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
+    <value>Начинается с</value>
   </data>
-  <data name="chEncoderOutputExtension.Text" xml:space="preserve">
-    <value>Итоговое расширение</value>
+  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
+    <value>Заканчивается на</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
+    <value>Точное совпадение</value>
+  </data>
+  <data name="cbTypeFilter.Text" xml:space="preserve">
+    <value>По типу файла:</value>
+  </data>
+  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
+    <value>Картинка</value>
+  </data>
+  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="cbHostFilter.Text" xml:space="preserve">
+    <value>По хосту:</value>
+  </data>
+  <data name="btnApplyFilters.Text" xml:space="preserve">
+    <value>Применить фильтры</value>
+  </data>
+  <data name="btnRemoveFilters.Text" xml:space="preserve">
+    <value>Снять фильтры</value>
+  </data>
+  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
+    <value>С учетом регистра</value>
+  </data>
+  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
+    <value>Текущий язык</value>
+  </data>
+  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
+    <value>Постоянный язык (English)</value>
+  </data>
+  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
+    <value>Порядковый (English)</value>
+  </data>
+  <data name="chDateTime.Text" xml:space="preserve">
+    <value>Дата и время</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="chHost.Text" xml:space="preserve">
+    <value>Хост</value>
+  </data>
+  <data name="chType.Text" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="tsslStatus.Text" xml:space="preserve">
+    <value>Состояние</value>
   </data>
 </root>

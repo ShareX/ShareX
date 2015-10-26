@@ -406,10 +406,10 @@
     <value>Захват с прокруткой</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Захват области (Светлая)</value>
+    <value>Захват области (Облегченный)</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Захват области (Прозрачная)</value>
+    <value>Захват области (Прозрачный фон)</value>
   </data>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>Начать автозахват последней области</value>
@@ -448,7 +448,7 @@
     <value>Стандартное кодирование .NET (Быстро со средним качеством)</value>
   </data>
   <data name="GIFQuality_Grayscale" xml:space="preserve">
-    <value>Palette quantizer 256 градаций сегоро</value>
+    <value>Palette quantizer 256 градаций серого</value>
   </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 цветов</value>
@@ -678,7 +678,7 @@
     <value>Компьютер</value>
   </data>
   <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
-    <value>Тата и время</value>
+    <value>Дата и время</value>
   </data>
   <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
     <value>Изображение</value>
@@ -791,5 +791,35 @@
   </data>
   <data name="URLSharingServices_Email" xml:space="preserve">
     <value>Електроная почта</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>Числовой счетчик. Нули слева, {n} задает длину.</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>Алфавитно-цифровой счетчик. Нули слева, {n} задает длину.</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>Алфавитно-цифровой счетчик с учетом регистра. Нули слева, {n} задает длину.</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>Счетчик, прибавляющий базовое алфавитно-цифровое {n} (1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>Шестнадцатиричный счетчик. Нули слева, {n} задает длину.</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>Текущий день недели (Местный язык)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>Текущий день недели (Английский)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>Случайный алфавитно-цифровой символ. Повторение задается через {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>Случайное число от 0 до 9. Повторение задается через {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>Случайный шестнадцатиричный символ. Повторение задается через {n}</value>
   </data>
 </root>

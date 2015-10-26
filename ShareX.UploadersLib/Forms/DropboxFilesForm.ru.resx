@@ -120,4 +120,28 @@
   <data name="tsmiCopyPublicLink.Text" xml:space="preserve">
     <value>Скопировать общественную ссылку</value>
   </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="chModified.Text" xml:space="preserve">
+    <value>Изменен</value>
+  </data>
+  <data name="chSize.Text" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="tsbSelectFolder.Text" xml:space="preserve">
+    <value>Выберите путь к текущей папке</value>
+  </data>
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
+    <value>Создать папку...</value>
+  </data>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>Удалить...</value>
+  </data>
+  <data name="tsmiDownloadFile.Text" xml:space="preserve">
+    <value>Скачать...</value>
+  </data>
+  <data name="tsmiRefresh.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
 </root>

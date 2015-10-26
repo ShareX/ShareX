@@ -117,31 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Профили кодировщиков</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Drawings" xml:space="preserve">
+    <value>Рисование</value>
   </data>
-  <data name="btnEncoderDuplicate.Text" xml:space="preserve">
-    <value>Дублировать</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
+    <value>Фильтры</value>
   </data>
-  <data name="btnEncodersAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Adjustments" xml:space="preserve">
+    <value>Регулироваки</value>
   </data>
-  <data name="btnEncodersEdit.Text" xml:space="preserve">
-    <value>Редактировать</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
+    <value>Обработка</value>
   </data>
-  <data name="btnEncodersRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="chEncoderArgs.Text" xml:space="preserve">
-    <value>Аргументы</value>
-  </data>
-  <data name="chEncoderDescription.Text" xml:space="preserve">
-    <value>Описание</value>
-  </data>
-  <data name="chEncoderPath.Text" xml:space="preserve">
-    <value>Путь</value>
-  </data>
-  <data name="chEncoderOutputExtension.Text" xml:space="preserve">
-    <value>Итоговое расширение</value>
+  <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
+    <value>Эффекты изображения - Ширина: {0}, Высота: {1}, Время рендера: {2} мс</value>
   </data>
 </root>

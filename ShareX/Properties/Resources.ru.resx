@@ -252,7 +252,7 @@
     <value>Предпросмотр:</value>
   </data>
   <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Настроить консольный кодировщик видео --&gt;</value>
+    <value>Добавить консольные кодировщики &gt;&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>После захвата: {0}</value>

@@ -117,31 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Профили кодировщиков</value>
+  <data name="HistoryForm_HistoryForm_Current_culture___0__" xml:space="preserve">
+    <value>Текущий язык ({0})</value>
   </data>
-  <data name="btnEncoderDuplicate.Text" xml:space="preserve">
-    <value>Дублировать</value>
+  <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
+    <value>История: {0}</value>
   </data>
-  <data name="btnEncodersAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>Отфильтровано: {0}</value>
   </data>
-  <data name="btnEncodersEdit.Text" xml:space="preserve">
-    <value>Редактировать</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>Всего: {0}</value>
   </data>
-  <data name="btnEncodersRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>Копировать</value>
   </data>
-  <data name="chEncoderArgs.Text" xml:space="preserve">
-    <value>Аргументы</value>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>Ссылку на удаление</value>
   </data>
-  <data name="chEncoderDescription.Text" xml:space="preserve">
-    <value>Описание</value>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>Файл</value>
   </data>
-  <data name="chEncoderPath.Text" xml:space="preserve">
-    <value>Путь</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>Имя фалй</value>
   </data>
-  <data name="chEncoderOutputExtension.Text" xml:space="preserve">
-    <value>Итоговое расширение</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
+    <value>Имя файла с расширением</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>Путь к файлу</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>Папку</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>BB код с картинкой для форума</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>BB код со ссылкой для форума</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>BB код с картинкой-ссылкой для форума</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>HTML код с картинкой</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>HTML код со ссылкой</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
+    <value>HTML код с картинкой-ссылкой</value>
+  </data>
+  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
+    <value>HTML код со ссылкой ({0})</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>Предпросмотр изображения</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>Больше информации</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
+    <value>Показать</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>Короткую ссылку</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>Ссылку на миниатюру</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>Ссылку</value>
+  </data>
+  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
+    <value>Ссылки ({0})</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
+    <value>Ошибка во время чтения XML-фала: {0}</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Скопировать имя</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Скопировать значение</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Значение</value>
   </data>
 </root>

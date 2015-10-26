@@ -118,30 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Профили кодировщиков</value>
-  </data>
-  <data name="btnEncoderDuplicate.Text" xml:space="preserve">
-    <value>Дублировать</value>
-  </data>
-  <data name="btnEncodersAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="btnEncodersEdit.Text" xml:space="preserve">
-    <value>Редактировать</value>
-  </data>
-  <data name="btnEncodersRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="chEncoderArgs.Text" xml:space="preserve">
-    <value>Аргументы</value>
-  </data>
-  <data name="chEncoderDescription.Text" xml:space="preserve">
-    <value>Описание</value>
-  </data>
-  <data name="chEncoderPath.Text" xml:space="preserve">
-    <value>Путь</value>
-  </data>
-  <data name="chEncoderOutputExtension.Text" xml:space="preserve">
-    <value>Итоговое расширение</value>
+    <value>ShareX - Информация об элементе истории</value>
   </data>
 </root>

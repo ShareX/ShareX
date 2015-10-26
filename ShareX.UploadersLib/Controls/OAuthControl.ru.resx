@@ -117,31 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Профили кодировщиков</value>
+  <data name="gbUserAccount.Text" xml:space="preserve">
+    <value>Аккаунт пользователя</value>
   </data>
-  <data name="btnEncoderDuplicate.Text" xml:space="preserve">
-    <value>Дублировать</value>
+  <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
+    <value>Шаг 1: Открыть страницу авторизации...</value>
   </data>
-  <data name="btnEncodersAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
+  <data name="btnRefreshAuthorization.Text" xml:space="preserve">
+    <value>Обновить авторизацию</value>
   </data>
-  <data name="btnEncodersEdit.Text" xml:space="preserve">
-    <value>Редактировать</value>
+  <data name="lblLoginStatus.Text" xml:space="preserve">
+    <value>Состояние</value>
   </data>
-  <data name="btnEncodersRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
+  <data name="btnClearAuthorization.Text" xml:space="preserve">
+    <value>Очистить авторизацию</value>
   </data>
-  <data name="chEncoderArgs.Text" xml:space="preserve">
-    <value>Аргументы</value>
+  <data name="lblVerificationCode.Text" xml:space="preserve">
+    <value>Код подтверждения:</value>
   </data>
-  <data name="chEncoderDescription.Text" xml:space="preserve">
-    <value>Описание</value>
-  </data>
-  <data name="chEncoderPath.Text" xml:space="preserve">
-    <value>Путь</value>
-  </data>
-  <data name="chEncoderOutputExtension.Text" xml:space="preserve">
-    <value>Итоговое расширение</value>
+  <data name="btnCompleteAuthorization.Text" xml:space="preserve">
+    <value>Шаг 2: Завершить авторизацию</value>
   </data>
 </root>

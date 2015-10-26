@@ -589,16 +589,16 @@
     <value>Область произвольной формы</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>Область (Светлая)</value>
+    <value>Область (Облегченный)</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
-    <value>Область (Прозрачная)</value>
+    <value>Область (Прозрачный фон)</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
-    <value>Область (Светлая)</value>
+    <value>Область (Облегченный)</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
-    <value>Область (Прозрачная)</value>
+    <value>Область (Прозрачный фон)</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
     <value>Сервисы загрузок</value>
