@@ -36,10 +36,13 @@ namespace ShareX.ScreenCaptureLib
         public bool IncludeChildWindows { get; set; }
 
         private List<SimpleWindowInfo> windows;
+        private HashSet<IntPtr> parentHandles;
 
         public List<SimpleWindowInfo> GetWindowsRectangleList()
         {
             windows = new List<SimpleWindowInfo>();
+            parentHandles = new HashSet<IntPtr>();
+
             NativeMethods.EnumWindowsProc ewp = EvalWindow;
             NativeMethods.EnumWindows(ewp, IntPtr.Zero);
 
@@ -100,8 +103,10 @@ namespace ShareX.ScreenCaptureLib
                 return true;
             }
 
-            if (IncludeChildWindows)
+            if (IncludeChildWindows && !parentHandles.Contains(handle))
             {
+                parentHandles.Add(handle);
+
                 NativeMethods.EnumWindowsProc ewp = EvalControl;
                 NativeMethods.EnumChildWindows(handle, ewp, IntPtr.Zero);
             }
