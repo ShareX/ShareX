@@ -70,7 +70,7 @@ namespace ShareX
                         cultureName = "pt-BR";
                         break;
                     case SupportedLanguage.Russian:
-                        cultureName = "ru";
+                        cultureName = "ru-RU";
                         break;
                     case SupportedLanguage.SimplifiedChinese:
                         cultureName = "zh-CN";
