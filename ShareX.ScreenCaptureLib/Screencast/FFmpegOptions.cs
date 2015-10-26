@@ -150,7 +150,7 @@ namespace ShareX.ScreenCaptureLib
 
             // Video
             x264_CRF = 30;
-            x264_Preset = FFmpegPreset.veryfast;
+            x264_Preset = FFmpegPreset.ultrafast;
             VPx_bitrate = 3000;
             XviD_qscale = 10;
             GIFStatsMode = FFmpegPaletteGenStatsMode.full;
