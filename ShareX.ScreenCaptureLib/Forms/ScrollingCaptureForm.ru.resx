@@ -171,9 +171,6 @@
   <data name="cbRemoveDuplicates.Text" xml:space="preserve">
     <value>Удалять дубликаты изображений</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Прокручивать до верха перед захватом</value>
-  </data>
   <data name="cbAutoCombine.Text" xml:space="preserve">
     <value>Автоматически угадать сдвиг и объединить после захвата</value>
   </data>

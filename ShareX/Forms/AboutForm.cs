@@ -88,8 +88,9 @@ Hungarian: https://github.com/devBluestar
 Korean: https://github.com/123jimin
 Spanish: https://github.com/ovnisoftware
 Dutch: https://github.com/canihavesomecoffee
-Portuguese (Brazil): https://github.com/athosbr99 & https://github.com/RockyTV
+Portuguese (Brazil): https://github.com/RockyTV & https://github.com/athosbr99
 Vietnamese: https://github.com/thanhpd
+Russian: https://github.com/L1Q
 
 {2}:
 
