@@ -249,7 +249,7 @@ namespace ShareX
 
             if (string.IsNullOrEmpty(personalPath))
             {
-                personalPath = Program.DefaultPersonalPath;
+                personalPath = Program.DefaultPersonalFolder;
             }
             else
             {
@@ -361,7 +361,7 @@ namespace ShareX
 
         private void btnBrowsePersonalFolderPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path, txtPersonalFolderPath, Program.PersonalPath);
+            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path, txtPersonalFolderPath, Program.PersonalFolder);
         }
 
         private void btnOpenPersonalFolder_Click(object sender, EventArgs e)
@@ -383,7 +383,7 @@ namespace ShareX
 
         private void btnBrowseCustomScreenshotsPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path, txtCustomScreenshotsPath, Program.PersonalPath);
+            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path, txtCustomScreenshotsPath, Program.PersonalFolder);
         }
 
         private void txtSaveImageSubFolderPattern_TextChanged(object sender, EventArgs e)

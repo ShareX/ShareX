@@ -74,12 +74,12 @@ namespace ShareX
 
         public static bool CheckSteamShowInApp()
         {
-            return File.Exists(Program.SteamInAppPath);
+            return File.Exists(Program.SteamInAppFilePath);
         }
 
         public static void SteamShowInApp(bool showInApp)
         {
-            string path = Program.SteamInAppPath;
+            string path = Program.SteamInAppFilePath;
 
             try
             {

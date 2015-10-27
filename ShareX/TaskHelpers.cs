@@ -212,7 +212,7 @@ namespace ShareX
 
         public static Image AnnotateImage(Image img, string imgPath)
         {
-            return ImageHelpers.AnnotateImage(img, imgPath, !Program.IsSandbox, Program.PersonalPath,
+            return ImageHelpers.AnnotateImage(img, imgPath, !Program.IsSandbox, Program.PersonalFolder,
                 x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
                 x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
                 (x, filePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)),
@@ -780,7 +780,7 @@ namespace ShareX
 
             if (string.IsNullOrEmpty(ffmpegPath))
             {
-                ffmpegPath = Program.DefaultFFmpegPath;
+                ffmpegPath = Program.DefaultFFmpegFilePath;
             }
 
             if (!File.Exists(ffmpegPath))
@@ -791,7 +791,7 @@ namespace ShareX
                     if (FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
                     {
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
-                            taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Program.DefaultFFmpegPath;
+                            taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Program.DefaultFFmpegFilePath;
 
 #if STEAM
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.OverrideCLIPath =
@@ -810,7 +810,7 @@ namespace ShareX
 
         private static void DownloaderForm_InstallRequested(string filePath)
         {
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, Program.DefaultFFmpegPath);
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, Program.DefaultFFmpegFilePath);
 
             if (result)
             {

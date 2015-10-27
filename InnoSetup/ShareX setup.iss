@@ -67,7 +67,9 @@ Source: "{#AppParentDirectory}\hu\*.resources.dll"; DestDir: {app}\Languages\hu;
 Source: "{#AppParentDirectory}\ko-KR\*.resources.dll"; DestDir: {app}\Languages\ko-KR; Flags: ignoreversion
 Source: "{#AppParentDirectory}\nl-NL\*.resources.dll"; DestDir: {app}\Languages\nl-NL; Flags: ignoreversion
 Source: "{#AppParentDirectory}\pt-BR\*.resources.dll"; DestDir: {app}\Languages\pt-BR; Flags: ignoreversion
+Source: "{#AppParentDirectory}\ru\*.resources.dll"; DestDir: {app}\Languages\ru; Flags: ignoreversion
 Source: "{#AppParentDirectory}\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion
+Source: "{#AppParentDirectory}\vi-VN\*.resources.dll"; DestDir: {app}\Languages\vi-VN; Flags: ignoreversion
 Source: "{#AppParentDirectory}\zh-CN\*.resources.dll"; DestDir: {app}\Languages\zh-CN; Flags: ignoreversion
 
 [Icons]
