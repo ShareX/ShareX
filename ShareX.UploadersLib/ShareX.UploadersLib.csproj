@@ -83,11 +83,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="AWSSDK.S3, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.S3.3.1.3.1\lib\net35\AWSSDK.S3.dll</HintPath>
+      <HintPath>..\packages\AWSSDK.S3.3.1.3.3\lib\net35\AWSSDK.S3.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MegaApiClient, Version=1.1.1.44, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
-      <HintPath>..\packages\MegaApiClient.1.1.1\lib\net40\MegaApiClient.dll</HintPath>
+    <Reference Include="MegaApiClient, Version=1.1.2.70, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
+      <HintPath>..\packages\MegaApiClient.1.1.2\lib\net40\MegaApiClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
