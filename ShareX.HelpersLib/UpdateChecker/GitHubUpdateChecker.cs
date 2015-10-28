@@ -80,9 +80,20 @@ namespace ShareX.HelpersLib
 
                         if (latestRelease.assets != null && latestRelease.assets.Count > 0)
                         {
+                            string extension;
+
+                            if (IsPortable)
+                            {
+                                extension = "portable.zip";
+                            }
+                            else
+                            {
+                                extension = ".exe";
+                            }
+
                             foreach (GitHubAsset asset in latestRelease.assets)
                             {
-                                if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(".exe", StringComparison.InvariantCultureIgnoreCase))
+                                if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(extension, StringComparison.InvariantCultureIgnoreCase))
                                 {
                                     Filename = asset.name;
                                     DownloadURL = asset.url;

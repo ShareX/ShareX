@@ -67,15 +67,7 @@ namespace ShareX.HelpersLib
 
                     if (result == DialogResult.Yes)
                     {
-                        using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
-                        {
-                            updaterForm.ShowDialog();
-
-                            if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
-                            {
-                                Application.Exit();
-                            }
-                        }
+                        updateChecker.DownloadUpdate();
                     }
                 }
                 finally

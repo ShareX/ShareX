@@ -366,6 +366,7 @@ namespace ShareX
         {
             UpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
             updateChecker.IsBeta = Program.IsBeta;
+            updateChecker.IsPortable = Program.IsPortable;
             updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             updateChecker.CheckUpdate();
 
