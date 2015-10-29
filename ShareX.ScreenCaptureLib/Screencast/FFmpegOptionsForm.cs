@@ -178,14 +178,8 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                if (isValidAudioCodec)
-                {
-                    pbAudioCodecWarning.Visible = false;
-                }
-                else
-                {
-                    pbAudioCodecWarning.Visible = true;
-                }
+                pbAudioCodecWarning.Visible = !isValidAudioCodec;
+                pbx264PresetWarning.Visible = (FFmpegPreset)cbx264Preset.SelectedIndex > FFmpegPreset.fast;
 
                 if (!Options.FFmpeg.UseCustomCommands)
                 {

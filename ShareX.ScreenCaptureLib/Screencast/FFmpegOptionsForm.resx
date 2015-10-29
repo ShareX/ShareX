@@ -144,11 +144,8 @@
     <value>tpX264</value>
   </data>
   <data name="&gt;&gt;lblx264CRF.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="nudx264CRF.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 12</value>
   </data>
@@ -162,13 +159,13 @@
   <data name="nudx264CRF.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
+  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constant Rate Factor (CRF): The range of the quantizer scale is 0-51: where 0 is lossless, 23 is default, and 51 is worst possible.
 A lower value is a higher quality and a subjectively sane range is 18-28.
-Consider 18 to be visually lossless or nearly so: it should look the same or nearly the same as the input but it isn't technically lossless.
-The range is exponential, so increasing the CRF value +6 is roughly half the bitrate while -6 is roughly twice the bitrate.
-General usage is to choose the highest CRF value that still provides an acceptable quality.
-If the output looks good, then try a higher value and if it looks bad then choose a lower value.</value>
+Consider 18 to be visually lossless or nearly so: it should look the same or nearly the same as the input but it isn't technically lossless.</value>
   </data>
   <data name="&gt;&gt;nudx264CRF.Name" xml:space="preserve">
     <value>nudx264CRF</value>
@@ -180,11 +177,8 @@ If the output looks good, then try a higher value and if it looks bad then choos
     <value>tpX264</value>
   </data>
   <data name="&gt;&gt;nudx264CRF.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="nudXvidQscale.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 12</value>
   </data>
@@ -222,9 +216,9 @@ If the output looks good, then try a higher value and if it looks bad then choos
     <value>3</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>A preset is a collection of options that will provide a certain encoding speed to compression ratio. A slower preset will provide better compression (compression is quality per filesize).
-This means that, for example, if you target a certain file size or constant bit rate, you will achieve better quality with a slower preset.
-Similarly, for constant quality encoding, you will simply save bitrate by choosing a slower preset.</value>
+    <value>Faster preset = Faster encoding but higher file size.
+Slower preset = Slower encoding but lower file size.
+For real time encoding like screen recording preset must be fast as possible.</value>
   </data>
   <data name="&gt;&gt;cbx264Preset.Name" xml:space="preserve">
     <value>cbx264Preset</value>
@@ -236,7 +230,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>tpX264</value>
   </data>
   <data name="&gt;&gt;cbx264Preset.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tbVorbis_qscale.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -367,6 +361,36 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;cbGIFDither.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="pbAudioCodecWarning.Location" type="System.Drawing.Point, System.Drawing">
+    <value>550, 22</value>
+  </data>
+  <data name="pbAudioCodecWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pbAudioCodecWarning.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pbAudioCodecWarning.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
+    <value>This audio codec is not supported by the selected video container.</value>
+  </data>
+  <data name="pbAudioCodecWarning.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pbAudioCodecWarning.Name" xml:space="preserve">
+    <value>pbAudioCodecWarning</value>
+  </data>
+  <data name="&gt;&gt;pbAudioCodecWarning.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbAudioCodecWarning.Parent" xml:space="preserve">
+    <value>gbCodecs</value>
+  </data>
+  <data name="&gt;&gt;pbAudioCodecWarning.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblCodec.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -440,7 +464,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>tpX264</value>
   </data>
   <data name="&gt;&gt;lblx264Preset.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblXvidQscale.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -835,74 +859,39 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;tbUserArgs.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;tpX264.Name" xml:space="preserve">
+  <data name="pbx264PresetWarning.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbx264PresetWarning.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 38</value>
+  </data>
+  <data name="pbx264PresetWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pbx264PresetWarning.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pbx264PresetWarning.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
+    <value>For real time encoding like screen recording it is recommended to select fast as possible preset.
+Otherwise it can't keep up with recording and alot of frame drops will happen.</value>
+  </data>
+  <data name="pbx264PresetWarning.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pbx264PresetWarning.Name" xml:space="preserve">
+    <value>pbx264PresetWarning</value>
+  </data>
+  <data name="&gt;&gt;pbx264PresetWarning.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbx264PresetWarning.Parent" xml:space="preserve">
     <value>tpX264</value>
   </data>
-  <data name="&gt;&gt;tpX264.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpX264.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpX264.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pbx264PresetWarning.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;tpVpx.Name" xml:space="preserve">
-    <value>tpVpx</value>
-  </data>
-  <data name="&gt;&gt;tpVpx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpVpx.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpVpx.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.Name" xml:space="preserve">
-    <value>tpXvid</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.Name" xml:space="preserve">
-    <value>tpGIF</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tcFFmpegVideoCodecs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 56</value>
-  </data>
-  <data name="tcFFmpegVideoCodecs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 96</value>
-  </data>
-  <data name="tcFFmpegVideoCodecs.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegVideoCodecs.Name" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegVideoCodecs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegVideoCodecs.Parent" xml:space="preserve">
-    <value>gbCodecs</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegVideoCodecs.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="tpX264.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -991,6 +980,102 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;tpVpx.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="tpXvid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpXvid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 70</value>
+  </data>
+  <data name="tpXvid.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpXvid.Text" xml:space="preserve">
+    <value>Xvid</value>
+  </data>
+  <data name="&gt;&gt;tpXvid.Name" xml:space="preserve">
+    <value>tpXvid</value>
+  </data>
+  <data name="&gt;&gt;tpXvid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpXvid.Parent" xml:space="preserve">
+    <value>tcFFmpegVideoCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpXvid.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblGIFDither.Name" xml:space="preserve">
+    <value>lblGIFDither</value>
+  </data>
+  <data name="&gt;&gt;lblGIFDither.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGIFDither.Parent" xml:space="preserve">
+    <value>tpGIF</value>
+  </data>
+  <data name="&gt;&gt;lblGIFDither.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblGIFStatsMode.Name" xml:space="preserve">
+    <value>lblGIFStatsMode</value>
+  </data>
+  <data name="&gt;&gt;lblGIFStatsMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGIFStatsMode.Parent" xml:space="preserve">
+    <value>tpGIF</value>
+  </data>
+  <data name="&gt;&gt;lblGIFStatsMode.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tpGIF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpGIF.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpGIF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 70</value>
+  </data>
+  <data name="tpGIF.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tpGIF.Text" xml:space="preserve">
+    <value>GIF</value>
+  </data>
+  <data name="&gt;&gt;tpGIF.Name" xml:space="preserve">
+    <value>tpGIF</value>
+  </data>
+  <data name="&gt;&gt;tpGIF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpGIF.Parent" xml:space="preserve">
+    <value>tcFFmpegVideoCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpGIF.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tcFFmpegVideoCodecs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 56</value>
+  </data>
+  <data name="tcFFmpegVideoCodecs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 96</value>
+  </data>
+  <data name="tcFFmpegVideoCodecs.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.Name" xml:space="preserve">
+    <value>tcFFmpegVideoCodecs</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.Parent" xml:space="preserve">
+    <value>gbCodecs</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="lblVP8BitrateK.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1071,81 +1156,6 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="&gt;&gt;lblVP8Bitrate.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="tpXvid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpXvid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 70</value>
-  </data>
-  <data name="tpXvid.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpXvid.Text" xml:space="preserve">
-    <value>Xvid</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.Name" xml:space="preserve">
-    <value>tpXvid</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblGIFDither.Name" xml:space="preserve">
-    <value>lblGIFDither</value>
-  </data>
-  <data name="&gt;&gt;lblGIFDither.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGIFDither.Parent" xml:space="preserve">
-    <value>tpGIF</value>
-  </data>
-  <data name="&gt;&gt;lblGIFDither.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblGIFStatsMode.Name" xml:space="preserve">
-    <value>lblGIFStatsMode</value>
-  </data>
-  <data name="&gt;&gt;lblGIFStatsMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGIFStatsMode.Parent" xml:space="preserve">
-    <value>tpGIF</value>
-  </data>
-  <data name="&gt;&gt;lblGIFStatsMode.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tpGIF.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpGIF.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpGIF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 70</value>
-  </data>
-  <data name="tpGIF.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tpGIF.Text" xml:space="preserve">
-    <value>GIF</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.Name" xml:space="preserve">
-    <value>tpGIF</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="lblGIFDither.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1821,36 +1831,6 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="&gt;&gt;btnRefreshSources.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="pbAudioCodecWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>550, 22</value>
-  </data>
-  <data name="pbAudioCodecWarning.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbAudioCodecWarning.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pbAudioCodecWarning.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
-    <value>This audio codec is not supported by the selected video container.</value>
-  </data>
-  <data name="pbAudioCodecWarning.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbAudioCodecWarning.Name" xml:space="preserve">
-    <value>pbAudioCodecWarning</value>
-  </data>
-  <data name="&gt;&gt;pbAudioCodecWarning.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbAudioCodecWarning.Parent" xml:space="preserve">
-    <value>gbCodecs</value>
-  </data>
-  <data name="&gt;&gt;pbAudioCodecWarning.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="gbCodecs.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 168</value>
