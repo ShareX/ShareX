@@ -41,6 +41,7 @@
             this.cbGIFStatsMode = new System.Windows.Forms.ComboBox();
             this.cbGIFDither = new System.Windows.Forms.ComboBox();
             this.pbAudioCodecWarning = new System.Windows.Forms.PictureBox();
+            this.pbx264PresetWarning = new System.Windows.Forms.PictureBox();
             this.lblCodec = new System.Windows.Forms.Label();
             this.cboVideoCodec = new System.Windows.Forms.ComboBox();
             this.lblx264Preset = new System.Windows.Forms.Label();
@@ -89,13 +90,13 @@
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.btnHelp = new System.Windows.Forms.Button();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
-            this.pbx264PresetWarning = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAudioCodecWarning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).BeginInit();
             this.gbFFmpegExe.SuspendLayout();
             this.gbCommandLinePreview.SuspendLayout();
             this.gbCommandLineArgs.SuspendLayout();
@@ -111,7 +112,6 @@
             this.tpMP3.SuspendLayout();
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).BeginInit();
             this.SuspendLayout();
             // 
             // lblx264CRF
@@ -239,6 +239,14 @@
             this.pbAudioCodecWarning.Name = "pbAudioCodecWarning";
             this.pbAudioCodecWarning.TabStop = false;
             this.ttHelpTip.SetToolTip(this.pbAudioCodecWarning, resources.GetString("pbAudioCodecWarning.ToolTip"));
+            // 
+            // pbx264PresetWarning
+            // 
+            this.pbx264PresetWarning.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.exclamation_button;
+            resources.ApplyResources(this.pbx264PresetWarning, "pbx264PresetWarning");
+            this.pbx264PresetWarning.Name = "pbx264PresetWarning";
+            this.pbx264PresetWarning.TabStop = false;
+            this.ttHelpTip.SetToolTip(this.pbx264PresetWarning, resources.GetString("pbx264PresetWarning.ToolTip"));
             // 
             // lblCodec
             // 
@@ -607,14 +615,6 @@
             this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
             this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
             // 
-            // pbx264PresetWarning
-            // 
-            this.pbx264PresetWarning.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.exclamation_button;
-            resources.ApplyResources(this.pbx264PresetWarning, "pbx264PresetWarning");
-            this.pbx264PresetWarning.Name = "pbx264PresetWarning";
-            this.pbx264PresetWarning.TabStop = false;
-            this.ttHelpTip.SetToolTip(this.pbx264PresetWarning, resources.GetString("pbx264PresetWarning.ToolTip"));
-            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -641,6 +641,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAudioCodecWarning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).EndInit();
             this.gbFFmpegExe.ResumeLayout(false);
             this.gbFFmpegExe.PerformLayout();
             this.gbCommandLinePreview.ResumeLayout(false);
@@ -668,7 +669,6 @@
             this.gbSource.PerformLayout();
             this.gbCodecs.ResumeLayout(false);
             this.gbCodecs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

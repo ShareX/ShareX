@@ -163,9 +163,8 @@
     <value>17, 17</value>
   </metadata>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Constant Rate Factor (CRF): The range of the quantizer scale is 0-51: where 0 is lossless, 23 is default, and 51 is worst possible.
-A lower value is a higher quality and a subjectively sane range is 18-28.
-Consider 18 to be visually lossless or nearly so: it should look the same or nearly the same as the input but it isn't technically lossless.</value>
+    <value>Constant Rate Factor (CRF): The value can be between 0-51, where 0 is lossless, 30 is default, and 51 is the worst possible.
+A higher value means bad quality, but a low file size.</value>
   </data>
   <data name="&gt;&gt;nudx264CRF.Name" xml:space="preserve">
     <value>nudx264CRF</value>
@@ -218,7 +217,7 @@ Consider 18 to be visually lossless or nearly so: it should look the same or nea
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
     <value>Faster preset = Faster encoding but higher file size.
 Slower preset = Slower encoding but lower file size.
-For real time encoding like screen recording preset must be fast as possible.</value>
+For real time encoding (e.g. screen recording), the preset must be as fast as possible.</value>
   </data>
   <data name="&gt;&gt;cbx264Preset.Name" xml:space="preserve">
     <value>cbx264Preset</value>
@@ -389,6 +388,40 @@ For real time encoding like screen recording preset must be fast as possible.</v
     <value>gbCodecs</value>
   </data>
   <data name="&gt;&gt;pbAudioCodecWarning.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pbx264PresetWarning.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbx264PresetWarning.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 38</value>
+  </data>
+  <data name="pbx264PresetWarning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pbx264PresetWarning.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pbx264PresetWarning.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
+    <value>For real time encoding like screen recording it is recommended to select fast as possible preset.
+Otherwise it can't keep up with recording and a lot of frame drops will happen.</value>
+  </data>
+  <data name="pbx264PresetWarning.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pbx264PresetWarning.Name" xml:space="preserve">
+    <value>pbx264PresetWarning</value>
+  </data>
+  <data name="&gt;&gt;pbx264PresetWarning.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbx264PresetWarning.Parent" xml:space="preserve">
+    <value>tpX264</value>
+  </data>
+  <data name="&gt;&gt;pbx264PresetWarning.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lblCodec.AutoSize" type="System.Boolean, mscorlib">
@@ -858,40 +891,6 @@ For real time encoding like screen recording preset must be fast as possible.</v
   </data>
   <data name="&gt;&gt;tbUserArgs.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="pbx264PresetWarning.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbx264PresetWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 38</value>
-  </data>
-  <data name="pbx264PresetWarning.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbx264PresetWarning.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pbx264PresetWarning.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
-    <value>For real time encoding like screen recording it is recommended to select fast as possible preset.
-Otherwise it can't keep up with recording and alot of frame drops will happen.</value>
-  </data>
-  <data name="pbx264PresetWarning.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbx264PresetWarning.Name" xml:space="preserve">
-    <value>pbx264PresetWarning</value>
-  </data>
-  <data name="&gt;&gt;pbx264PresetWarning.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbx264PresetWarning.Parent" xml:space="preserve">
-    <value>tpX264</value>
-  </data>
-  <data name="&gt;&gt;pbx264PresetWarning.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="tpX264.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

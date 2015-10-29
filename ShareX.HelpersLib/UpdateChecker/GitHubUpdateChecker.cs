@@ -96,7 +96,16 @@ namespace ShareX.HelpersLib
                                 if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(extension, StringComparison.InvariantCultureIgnoreCase))
                                 {
                                     Filename = asset.name;
-                                    DownloadURL = asset.url;
+
+                                    if (IsPortable)
+                                    {
+                                        DownloadURL = asset.browser_download_url;
+                                    }
+                                    else
+                                    {
+                                        DownloadURL = asset.url;
+                                    }
+
                                     RefreshStatus();
                                     return;
                                 }
@@ -204,5 +213,6 @@ namespace ShareX.HelpersLib
         public int download_count { get; set; }
         public string created_at { get; set; }
         public string updated_at { get; set; }
+        public string browser_download_url { get; set; }
     }
 }
