@@ -77,7 +77,7 @@ namespace Greenshot.Drawing
 
         internal void ChangeText(string newText, bool allowUndoable)
         {
-            if ((text == null && newText != null) || !text.Equals(newText))
+            if ((text == null && newText != null) || (text != null && !text.Equals(newText)))
             {
                 if (makeUndoable && allowUndoable)
                 {
