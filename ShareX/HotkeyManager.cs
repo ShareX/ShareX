@@ -37,8 +37,10 @@ namespace ShareX
         public bool IgnoreHotkeys { get; set; }
 
         public delegate void HotkeyTriggerEventHandler(HotkeySettings hotkeySetting);
+        public delegate void HotkeysToggledEventHandler(bool hotkeysEnabled);
 
         public HotkeyTriggerEventHandler HotkeyTrigger;
+        public HotkeysToggledEventHandler HotkeysToggledTrigger;
 
         private HotkeyForm hotkeyForm;
 
@@ -80,19 +82,22 @@ namespace ShareX
 
         public void RegisterHotkey(HotkeySettings hotkeySetting)
         {
-            UnregisterHotkey(hotkeySetting, false);
-
-            if (hotkeySetting.HotkeyInfo.Status != HotkeyStatus.Registered && hotkeySetting.HotkeyInfo.IsValidHotkey)
+            if (!Program.Settings.DisableHotkeys || hotkeySetting.TaskSettings.Job == HotkeyType.DisableHotkeys)
             {
-                hotkeyForm.RegisterHotkey(hotkeySetting.HotkeyInfo);
+                UnregisterHotkey(hotkeySetting, false);
 
-                if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Registered)
+                if (hotkeySetting.HotkeyInfo.Status != HotkeyStatus.Registered && hotkeySetting.HotkeyInfo.IsValidHotkey)
                 {
-                    DebugHelper.WriteLine("Hotkey registered: " + hotkeySetting);
-                }
-                else if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Failed)
-                {
-                    DebugHelper.WriteLine("Hotkey register failed: " + hotkeySetting);
+                    hotkeyForm.RegisterHotkey(hotkeySetting.HotkeyInfo);
+
+                    if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Registered)
+                    {
+                        DebugHelper.WriteLine("Hotkey registered: " + hotkeySetting);
+                    }
+                    else if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Failed)
+                    {
+                        DebugHelper.WriteLine("Hotkey register failed: " + hotkeySetting);
+                    }
                 }
             }
 
@@ -132,11 +137,31 @@ namespace ShareX
             }
         }
 
-        public void UnregisterAllHotkeys(bool removeFromList = true)
+        public void UnregisterAllHotkeys(bool removeFromList = true, bool temporary = false)
         {
             foreach (HotkeySettings hotkeySetting in Hotkeys.ToArray())
             {
-                UnregisterHotkey(hotkeySetting, removeFromList);
+                if (!temporary || (temporary && hotkeySetting.TaskSettings.Job != HotkeyType.DisableHotkeys))
+                {
+                    UnregisterHotkey(hotkeySetting, removeFromList);
+                }
+            }
+        }
+
+        public void ToggleHotkeys(bool hotkeysDisabled)
+        {
+            if (!hotkeysDisabled)
+            {
+                RegisterAllHotkeys();
+            }
+            else
+            {
+                UnregisterAllHotkeys(false, true);
+            }
+
+            if (HotkeysToggledTrigger != null)
+            {
+                HotkeysToggledTrigger(hotkeysDisabled);
             }
         }
 
@@ -159,6 +184,11 @@ namespace ShareX
             UnregisterAllHotkeys();
             Hotkeys.AddRange(GetDefaultHotkeyList());
             RegisterAllHotkeys();
+
+            if (Program.Settings.DisableHotkeys)
+            {
+                TaskHelpers.ToggleHotkeys();
+            }
         }
 
         public static List<HotkeySettings> GetDefaultHotkeyList()

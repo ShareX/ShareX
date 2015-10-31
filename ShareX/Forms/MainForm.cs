@@ -1620,15 +1620,7 @@ namespace ShareX
 
             if (hotkeySetting.TaskSettings.Job != HotkeyType.None)
             {
-                if (hotkeySetting.TaskSettings.Job == HotkeyType.DisableHotkeys)
-                {
-                    TaskHelpers.ToggleHotkeys();
-                }
-
-                if (!Program.Settings.DisableHotkeys)
-                {
-                    ExecuteJob(hotkeySetting.TaskSettings);
-                }
+                ExecuteJob(hotkeySetting.TaskSettings);
             }
         }
 
@@ -1790,6 +1782,9 @@ namespace ShareX
                 // Other
                 case HotkeyType.OpenScreenshotsFolder:
                     TaskHelpers.OpenScreenshotsFolder();
+                    break;
+                case HotkeyType.DisableHotkeys:
+                    TaskHelpers.ToggleHotkeys();
                     break;
             }
         }
