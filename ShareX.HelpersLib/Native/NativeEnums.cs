@@ -2033,7 +2033,7 @@ namespace ShareX.HelpersLib
         DWM_EC_ENABLECOMPOSITION = 1
     }
 
-    public enum InputType : int
+    public enum InputType 
     {
         InputMouse,
         InputKeyboard,
@@ -2816,7 +2816,7 @@ namespace ShareX.HelpersLib
         SB_ENDSCROLL = 8
     }
 
-    public enum SBOrientation : int
+    public enum SBOrientation 
     {
         SB_HORZ = 0x0,
         SB_VERT = 0x1,
