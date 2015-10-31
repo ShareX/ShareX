@@ -590,7 +590,7 @@ namespace ShareX
                                 else
                                 {
                                     // User cancelled the dialog - stop image saving retries.
-                                    break;
+                                    return false;
                                 }
                             } while (!imageSaved);
                         }
