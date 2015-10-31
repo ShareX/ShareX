@@ -760,19 +760,20 @@ namespace ShareX
 
         public static bool ToggleHotkeys()
         {
-            bool result = !Program.Settings.DisableHotkeys;
-            Program.Settings.DisableHotkeys = result;
+            bool hotkeysDisabled = !Program.Settings.DisableHotkeys;
 
+            Program.Settings.DisableHotkeys = hotkeysDisabled;
+            Program.HotkeyManager.ToggleHotkeys(hotkeysDisabled);
             Program.MainForm.UpdateToggleHotkeyButton();
 
             if (Program.MainForm.niTray.Visible)
             {
                 Program.MainForm.niTray.Tag = null;
-                string balloonTipText = result ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_;
+                string balloonTipText = hotkeysDisabled ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_;
                 Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", balloonTipText, ToolTipIcon.Info);
             }
 
-            return result;
+            return hotkeysDisabled;
         }
 
         public static bool CheckFFmpeg(TaskSettings taskSettings)
