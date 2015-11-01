@@ -26,35 +26,34 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class Pomf : FileUploader
     {
-        public static PomfUploader DefaultUploader = new PomfUploader("pomf.cat", "https://pomf.cat/upload.php", "http://a.pomf.cat");
-
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             new PomfUploader("1339.cf", "http://1339.cf/upload.php", "http://b.1339.cf"),
             new PomfUploader("bucket.pw", "https://bucket.pw/upload.php", "https://dl.bucket.pw"),
+            new PomfUploader("fuwa.se", "https://fuwa.se/api/upload"),
             new PomfUploader("g.zxq.co", "http://g.zxq.co/upload.php", "http://y.zxq.co"),
-            new PomfUploader("kyaa.eu", "http://kyaa.eu/upload.php", "https://r.kyaa.eu"),
+            new PomfUploader("kyaa.sg", "http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
             new PomfUploader("madokami.com", "https://madokami.com/upload"),
             new PomfUploader("matu.red", "http://matu.red/upload.php", "http://x.matu.red"),
             new PomfUploader("maxfile.ro", "https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
             new PomfUploader("mixtape.moe", "https://mixtape.moe/upload.php"),
             new PomfUploader("nigger.cat", "http://nigger.cat/upload.php"),
+            new PomfUploader("nyanimg.com", "http://nyanimg.com/upload.php"),
             new PomfUploader("openhost.xyz", "http://openhost.xyz/upload.php"),
             new PomfUploader("pantsu.cat", "https://pantsu.cat/upload.php"),
-            DefaultUploader,
+            new PomfUploader("pomf.cat", "https://pomf.cat/upload.php", "http://a.pomf.cat"),
             new PomfUploader("pomf.hummingbird.moe", "http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
             new PomfUploader("pomf.io", "http://pomf.io/upload.php"),
             new PomfUploader("pomf.pl", "http://pomf.pl/upload.php"),
             //new PomfUploader("pomf.se", "https://pomf.se/upload.php", "https://a.pomf.se"),
+            new PomfUploader("sheesh.in", "https://sheesh.in/upload.php"),
             new PomfUploader("up.che.moe", "http://up.che.moe/upload.php", "http://cdn.che.moe")
         };
 

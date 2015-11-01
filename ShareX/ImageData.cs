@@ -48,9 +48,7 @@ namespace ShareX
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show(new Form() { WindowState = FormWindowState.Maximized, TopMost = true },
-                    string.Format(Resources.ImageData_Write_Error + "\r\n\r\n" + e, filePath), "ShareX",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(Resources.ImageData_Write_Error + "\r\n\r\n" + e, filePath), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return string.Empty;

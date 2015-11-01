@@ -252,7 +252,7 @@ namespace ShareX.UploadersLib
 
         // Pomf
 
-        public PomfUploader PomfUploader = Pomf.DefaultUploader;
+        public PomfUploader PomfUploader = new PomfUploader() { UploadURL = "https://pomf.cat/upload.php", ResultURL = "http://a.pomf.cat" };
 
         // Seafile
 
