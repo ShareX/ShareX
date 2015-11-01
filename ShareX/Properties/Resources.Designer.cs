@@ -1036,6 +1036,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not write image to path {0}..
+        /// </summary>
+        public static string ImageData_Write_Error {
+            get {
+                return ResourceManager.GetString("ImageData_Write_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap images_stack {
