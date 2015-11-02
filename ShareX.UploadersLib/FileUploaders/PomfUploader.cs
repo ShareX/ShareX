@@ -24,15 +24,11 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class PomfUploader
     {
-        public string Name { get; set; }
         public string UploadURL { get; set; }
         public string ResultURL { get; set; }
 
@@ -40,18 +36,19 @@ namespace ShareX.UploadersLib.FileUploaders
         {
         }
 
-        public PomfUploader(string name, string uploadURL, string resultURL = null)
+        public PomfUploader(string uploadURL, string resultURL = null)
         {
-            Name = name;
             UploadURL = uploadURL;
             ResultURL = resultURL;
         }
 
         public override string ToString()
         {
-            if (!string.IsNullOrEmpty(Name))
+            Uri uri;
+
+            if (Uri.TryCreate(UploadURL, UriKind.Absolute, out uri))
             {
-                return Name;
+                return uri.Host;
             }
 
             return UploadURL;

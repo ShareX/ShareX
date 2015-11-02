@@ -35,26 +35,26 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
-            new PomfUploader("1339.cf", "http://1339.cf/upload.php", "http://b.1339.cf"),
-            new PomfUploader("bucket.pw", "https://bucket.pw/upload.php", "https://dl.bucket.pw"),
-            new PomfUploader("fuwa.se", "https://fuwa.se/api/upload"),
-            new PomfUploader("g.zxq.co", "http://g.zxq.co/upload.php", "http://y.zxq.co"),
-            new PomfUploader("kyaa.sg", "http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
-            new PomfUploader("madokami.com", "https://madokami.com/upload"),
-            new PomfUploader("matu.red", "http://matu.red/upload.php", "http://x.matu.red"),
-            new PomfUploader("maxfile.ro", "https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
-            new PomfUploader("mixtape.moe", "https://mixtape.moe/upload.php"),
-            new PomfUploader("nigger.cat", "http://nigger.cat/upload.php"),
-            new PomfUploader("nyanimg.com", "http://nyanimg.com/upload.php"),
-            new PomfUploader("openhost.xyz", "http://openhost.xyz/upload.php"),
-            new PomfUploader("pantsu.cat", "https://pantsu.cat/upload.php"),
-            new PomfUploader("pomf.cat", "https://pomf.cat/upload.php", "http://a.pomf.cat"),
-            new PomfUploader("pomf.hummingbird.moe", "http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
-            new PomfUploader("pomf.io", "http://pomf.io/upload.php"),
-            new PomfUploader("pomf.pl", "http://pomf.pl/upload.php"),
-            //new PomfUploader("pomf.se", "https://pomf.se/upload.php", "https://a.pomf.se"),
-            new PomfUploader("sheesh.in", "https://sheesh.in/upload.php"),
-            new PomfUploader("up.che.moe", "http://up.che.moe/upload.php", "http://cdn.che.moe")
+            new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
+            new PomfUploader("https://bucket.pw/upload.php", "https://dl.bucket.pw"),
+            new PomfUploader("https://fuwa.se/api/upload"),
+            new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
+            new PomfUploader("http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
+            new PomfUploader("https://madokami.com/upload"),
+            new PomfUploader("http://matu.red/upload.php", "http://x.matu.red"),
+            new PomfUploader("https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
+            new PomfUploader("https://mixtape.moe/upload.php"),
+            new PomfUploader("http://nigger.cat/upload.php"),
+            new PomfUploader("http://nyanimg.com/upload.php"),
+            new PomfUploader("http://openhost.xyz/upload.php"),
+            new PomfUploader("https://pantsu.cat/upload.php"),
+            new PomfUploader("https://pomf.cat/upload.php", "http://a.pomf.cat"),
+            new PomfUploader("http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
+            new PomfUploader("http://pomf.io/upload.php"),
+            new PomfUploader("http://pomf.pl/upload.php"),
+            //new PomfUploader("https://pomf.se/upload.php", "https://a.pomf.se"),
+            new PomfUploader("https://sheesh.in/upload.php"),
+            new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe")
         };
 
         public PomfUploader Uploader { get; private set; }
