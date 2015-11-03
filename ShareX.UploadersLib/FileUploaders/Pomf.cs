@@ -38,9 +38,9 @@ namespace ShareX.UploadersLib.FileUploaders
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
-            new PomfUploader("http://catgirlsare.sexy/upload.php"),
-            // new PomfUploader("http://cuntflaps.me", "http://a.cuntflaps.me"),
             // new PomfUploader("https://bucket.pw/upload.php", "https://dl.bucket.pw"),
+            new PomfUploader("http://catgirlsare.sexy/upload.php"),
+            new PomfUploader("http://cuntflaps.me/upload.php", "http://a.cuntflaps.me"),
             // new PomfUploader("https://fuwa.se/api/upload"),
             new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
             new PomfUploader("http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
