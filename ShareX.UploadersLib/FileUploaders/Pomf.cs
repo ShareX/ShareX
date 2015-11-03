@@ -26,8 +26,10 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -37,17 +39,17 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
             new PomfUploader("http://catgirlsare.sexy/upload.php"),
-            new PomfUploader("http://cuntflaps.me", "http://a.cuntflaps.me"),
+            // new PomfUploader("http://cuntflaps.me", "http://a.cuntflaps.me"),
             // new PomfUploader("https://bucket.pw/upload.php", "https://dl.bucket.pw"),
-            new PomfUploader("https://fuwa.se/api/upload"),
+            // new PomfUploader("https://fuwa.se/api/upload"),
             new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
             new PomfUploader("http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
-            new PomfUploader("https://madokami.com/upload"),
+            // new PomfUploader("https://madokami.com/upload"),
             // new PomfUploader("http://matu.red/upload.php", "http://x.matu.red"),
             new PomfUploader("https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
             new PomfUploader("https://mixtape.moe/upload.php"),
             new PomfUploader("http://nigger.cat/upload.php"),
-            new PomfUploader("http://nyanimg.com/upload.php"),
+            // new PomfUploader("http://nyanimg.com/upload.php"),
             new PomfUploader("http://openhost.xyz/upload.php"),
             // new PomfUploader("https://pantsu.cat/upload.php"),
             new PomfUploader("https://pomf.cat/upload.php", "http://a.pomf.cat"),
@@ -94,6 +96,42 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return result;
+        }
+
+        public static string TestClones()
+        {
+            List<string> successful = new List<string>();
+            List<string> failed = new List<string>();
+
+            foreach (PomfUploader uploader in Uploaders)
+            {
+                try
+                {
+                    Pomf pomf = new Pomf(uploader);
+
+                    byte[] bytes = Encoding.UTF8.GetBytes("Test");
+                    using (MemoryStream ms = new MemoryStream(bytes))
+                    {
+                        UploadResult result = pomf.Upload(ms, "Test.txt");
+
+                        if (result != null && result.IsSuccess && !string.IsNullOrEmpty(result.URL))
+                        {
+                            successful.Add(uploader.ToString());
+                        }
+                        else
+                        {
+                            failed.Add(uploader.ToString());
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    failed.Add(uploader.ToString());
+                }
+            }
+
+            return string.Format("Successful uploads ({0}):\r\n\r\n{1}\r\n\r\nFailed uploads ({2}):\r\n\r\n{3}",
+                successful.Count, string.Join("\r\n", successful), failed.Count, string.Join("\r\n", failed));
         }
 
         private class PomfResponse

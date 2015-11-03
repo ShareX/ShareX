@@ -1921,6 +1921,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="txtCustomUploaderLog.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
+  <data name="txtCustomUploaderLog.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;txtCustomUploaderLog.Name" xml:space="preserve">
     <value>txtCustomUploaderLog</value>
   </data>
@@ -7293,6 +7296,30 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpLambda.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <data name="btnPomfTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 31</value>
+  </data>
+  <data name="btnPomfTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 23</value>
+  </data>
+  <data name="btnPomfTest.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Test all</value>
+  </data>
+  <data name="&gt;&gt;btnPomfTest.Name" xml:space="preserve">
+    <value>btnPomfTest</value>
+  </data>
+  <data name="&gt;&gt;btnPomfTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPomfTest.Parent" xml:space="preserve">
+    <value>tpPomf</value>
+  </data>
+  <data name="&gt;&gt;btnPomfTest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="txtPomfResultURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
   </data>
@@ -7312,7 +7339,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpPomf</value>
   </data>
   <data name="&gt;&gt;txtPomfResultURL.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtPomfUploadURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -7333,7 +7360,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpPomf</value>
   </data>
   <data name="&gt;&gt;txtPomfUploadURL.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblPomfResultURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7363,7 +7390,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpPomf</value>
   </data>
   <data name="&gt;&gt;lblPomfResultURL.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblPomfUploadURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7393,7 +7420,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpPomf</value>
   </data>
   <data name="&gt;&gt;lblPomfUploadURL.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblPomfUploaders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7423,7 +7450,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpPomf</value>
   </data>
   <data name="&gt;&gt;lblPomfUploaders.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbPomfUploaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -7444,7 +7471,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpPomf</value>
   </data>
   <data name="&gt;&gt;cbPomfUploaders.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="tpPomf.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>

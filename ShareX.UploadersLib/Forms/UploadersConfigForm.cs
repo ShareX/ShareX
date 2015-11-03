@@ -2064,6 +2064,31 @@ namespace ShareX.UploadersLib
             }
         }
 
+        private void btnPomfTest_Click(object sender, EventArgs e)
+        {
+            btnPomfTest.Enabled = false;
+            btnPomfTest.Text = "Testing...";
+            string result = null;
+
+            TaskEx.Run(() =>
+            {
+                result = Pomf.TestClones();
+            },
+            () =>
+            {
+                if (!IsDisposed)
+                {
+                    btnPomfTest.Text = "Test all";
+                    btnPomfTest.Enabled = true;
+
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        MessageBox.Show(result, "Pomf test results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            });
+        }
+
         private void txtPomfUploadURL_TextChanged(object sender, EventArgs e)
         {
             Config.PomfUploader.UploadURL = txtPomfUploadURL.Text;
