@@ -126,6 +126,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
                 catch (Exception e)
                 {
+                    DebugHelper.WriteException(e);
                     failed.Add(uploader.ToString());
                 }
             }

@@ -224,15 +224,6 @@
             this.tsmiScreenshotsFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageHistory = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayDonate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiTrayRecentItems = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
-            this.btnOpenSteam = new ShareX.HelpersLib.GreenlightButton();
-            this.btnHideSteam = new ShareX.HelpersLib.GreenlightButton();
             this.tsmiTrayDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayShowDebugLog = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTestImageUpload = new System.Windows.Forms.ToolStripMenuItem();
@@ -240,6 +231,13 @@
             this.tsmiTrayTestFileUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayDonate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiTrayRecentItems = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1740,63 +1738,6 @@
             resources.ApplyResources(this.tsmiTrayImageHistory, "tsmiTrayImageHistory");
             this.tsmiTrayImageHistory.Click += new System.EventHandler(this.tsbImageHistory_Click);
             // 
-            // tsmiTrayDonate
-            // 
-            this.tsmiTrayDonate.Image = global::ShareX.Properties.Resources.heart;
-            this.tsmiTrayDonate.Name = "tsmiTrayDonate";
-            resources.ApplyResources(this.tsmiTrayDonate, "tsmiTrayDonate");
-            this.tsmiTrayDonate.Click += new System.EventHandler(this.tsbDonate_Click);
-            // 
-            // tsmiTrayAbout
-            // 
-            this.tsmiTrayAbout.Image = global::ShareX.Properties.Resources.crown;
-            this.tsmiTrayAbout.Name = "tsmiTrayAbout";
-            resources.ApplyResources(this.tsmiTrayAbout, "tsmiTrayAbout");
-            this.tsmiTrayAbout.Click += new System.EventHandler(this.tsbAbout_Click);
-            // 
-            // tssTray3
-            // 
-            this.tssTray3.Name = "tssTray3";
-            resources.ApplyResources(this.tssTray3, "tssTray3");
-            // 
-            // tsmiTrayRecentItems
-            // 
-            this.tsmiTrayRecentItems.Image = global::ShareX.Properties.Resources.clipboard_list;
-            this.tsmiTrayRecentItems.Name = "tsmiTrayRecentItems";
-            resources.ApplyResources(this.tsmiTrayRecentItems, "tsmiTrayRecentItems");
-            // 
-            // tsmiTrayShow
-            // 
-            this.tsmiTrayShow.Image = global::ShareX.Properties.Resources.tick_button;
-            this.tsmiTrayShow.Name = "tsmiTrayShow";
-            resources.ApplyResources(this.tsmiTrayShow, "tsmiTrayShow");
-            this.tsmiTrayShow.Click += new System.EventHandler(this.tsmiTrayShow_Click);
-            // 
-            // tsmiTrayExit
-            // 
-            this.tsmiTrayExit.Image = global::ShareX.Properties.Resources.cross_button;
-            this.tsmiTrayExit.Name = "tsmiTrayExit";
-            resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
-            this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
-            // 
-            // timerTraySingleClick
-            // 
-            this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
-            // 
-            // btnOpenSteam
-            // 
-            resources.ApplyResources(this.btnOpenSteam, "btnOpenSteam");
-            this.btnOpenSteam.ForeColor = System.Drawing.Color.White;
-            this.btnOpenSteam.Name = "btnOpenSteam";
-            this.btnOpenSteam.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnOpenSteam_MouseClick);
-            // 
-            // btnHideSteam
-            // 
-            resources.ApplyResources(this.btnHideSteam, "btnHideSteam");
-            this.btnHideSteam.ForeColor = System.Drawing.Color.White;
-            this.btnHideSteam.Name = "btnHideSteam";
-            this.btnHideSteam.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnHideSteam_MouseClick);
-            // 
             // tsmiTrayDebug
             // 
             this.tsmiTrayDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1852,14 +1793,55 @@
             resources.ApplyResources(this.tsmiTrayTestURLSharing, "tsmiTrayTestURLSharing");
             this.tsmiTrayTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
             // 
+            // tsmiTrayDonate
+            // 
+            this.tsmiTrayDonate.Image = global::ShareX.Properties.Resources.heart;
+            this.tsmiTrayDonate.Name = "tsmiTrayDonate";
+            resources.ApplyResources(this.tsmiTrayDonate, "tsmiTrayDonate");
+            this.tsmiTrayDonate.Click += new System.EventHandler(this.tsbDonate_Click);
+            // 
+            // tsmiTrayAbout
+            // 
+            this.tsmiTrayAbout.Image = global::ShareX.Properties.Resources.crown;
+            this.tsmiTrayAbout.Name = "tsmiTrayAbout";
+            resources.ApplyResources(this.tsmiTrayAbout, "tsmiTrayAbout");
+            this.tsmiTrayAbout.Click += new System.EventHandler(this.tsbAbout_Click);
+            // 
+            // tssTray3
+            // 
+            this.tssTray3.Name = "tssTray3";
+            resources.ApplyResources(this.tssTray3, "tssTray3");
+            // 
+            // tsmiTrayRecentItems
+            // 
+            this.tsmiTrayRecentItems.Image = global::ShareX.Properties.Resources.clipboard_list;
+            this.tsmiTrayRecentItems.Name = "tsmiTrayRecentItems";
+            resources.ApplyResources(this.tsmiTrayRecentItems, "tsmiTrayRecentItems");
+            // 
+            // tsmiTrayShow
+            // 
+            this.tsmiTrayShow.Image = global::ShareX.Properties.Resources.tick_button;
+            this.tsmiTrayShow.Name = "tsmiTrayShow";
+            resources.ApplyResources(this.tsmiTrayShow, "tsmiTrayShow");
+            this.tsmiTrayShow.Click += new System.EventHandler(this.tsmiTrayShow_Click);
+            // 
+            // tsmiTrayExit
+            // 
+            this.tsmiTrayExit.Image = global::ShareX.Properties.Resources.cross_button;
+            this.tsmiTrayExit.Name = "tsmiTrayExit";
+            resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
+            this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
+            // 
+            // timerTraySingleClick
+            // 
+            this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnHideSteam);
-            this.Controls.Add(this.btnOpenSteam);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
             this.DoubleBuffered = true;
@@ -2088,8 +2070,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScrollingCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageCombiner;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageCombiner;
-        private HelpersLib.GreenlightButton btnOpenSteam;
-        private HelpersLib.GreenlightButton btnHideSteam;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayDebug;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayShowDebugLog;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestImageUpload;
