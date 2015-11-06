@@ -93,7 +93,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                return IsAreaValid(CurrentHoverArea);
+                return !CurrentHoverArea.IsEmpty;
             }
         }
 

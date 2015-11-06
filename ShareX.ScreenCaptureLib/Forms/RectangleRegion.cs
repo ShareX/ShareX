@@ -26,8 +26,10 @@
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -208,13 +210,19 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            RegionInfo[] areas = AreaManager.ValidAreas;
+            List<RegionInfo> areas = AreaManager.ValidAreas.ToList();
+            bool drawAreaExist = areas.Count > 0;
 
-            if (areas.Length > 0 || !AreaManager.CurrentHoverArea.IsEmpty)
+            if (AreaManager.IsCurrentHoverAreaValid && areas.All(area => area.Area != AreaManager.CurrentHoverArea))
+            {
+                areas.Add(AreaManager.GetRegionInfo(AreaManager.CurrentHoverArea));
+            }
+
+            if (areas.Count > 0)
             {
                 UpdateRegionPath();
 
-                if (areas.Length > 0)
+                if (drawAreaExist)
                 {
                     if (Config.UseDimming)
                     {
@@ -671,13 +679,30 @@ namespace ShareX.ScreenCaptureLib
 
         public void UpdateRegionPath()
         {
-            regionFillPath = new GraphicsPath { FillMode = FillMode.Winding };
-            regionDrawPath = new GraphicsPath { FillMode = FillMode.Winding };
-
-            foreach (RegionInfo regionInfo in AreaManager.ValidAreas)
+            if (regionFillPath != null)
             {
-                AddShapePath(regionFillPath, regionInfo);
-                AddShapePath(regionDrawPath, regionInfo, -1);
+                regionFillPath.Dispose();
+                regionFillPath = null;
+            }
+
+            if (regionDrawPath != null)
+            {
+                regionDrawPath.Dispose();
+                regionDrawPath = null;
+            }
+
+            RegionInfo[] areas = AreaManager.ValidAreas;
+
+            if (areas != null && areas.Length > 0)
+            {
+                regionFillPath = new GraphicsPath { FillMode = FillMode.Winding };
+                regionDrawPath = new GraphicsPath { FillMode = FillMode.Winding };
+
+                foreach (RegionInfo regionInfo in AreaManager.ValidAreas)
+                {
+                    AddShapePath(regionFillPath, regionInfo);
+                    AddShapePath(regionDrawPath, regionInfo, -1);
+                }
             }
         }
 
