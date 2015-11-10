@@ -84,7 +84,7 @@ namespace ShareX.IRCLib
         [Category("Options"), Description("When connected automatically join these channels."),
         TypeConverter(typeof(StringCollectionToStringTypeConverter)),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
-        public List<string> AutoJoinChannels { get; set; } = new List<string>() { "#ShareX" };
+        public List<string> AutoJoinChannels { get; set; } = new List<string>();
 
         [Category("Options"), Description("Wait for identify confirmation before auto join channels. Currently only works in Freenode server because each server sends different response after identify."), DefaultValue(false)]
         public bool AutoJoinWaitIdentify { get; set; }

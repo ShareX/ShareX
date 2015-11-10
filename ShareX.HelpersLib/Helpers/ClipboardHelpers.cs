@@ -100,23 +100,21 @@ namespace ShareX.HelpersLib
 
         public static bool CopyImage(Image img)
         {
-            if (HelpersOptions.UseAlternativeCopyImage)
-            {
-                return CopyImageAlternative(img);
-            }
-
-            return CopyImageDefault(img);
-        }
-
-        private static bool CopyImageDefault(Image img)
-        {
             if (img != null)
             {
                 try
                 {
-                    IDataObject data = new DataObject();
-                    data.SetData(DataFormats.Bitmap, true, img);
-                    return CopyData(data);
+                    if (HelpersOptions.UseAlternativeCopyImage)
+                    {
+                        return CopyImageAlternative(img);
+                    }
+
+                    if (HelpersOptions.DefaultClipboardCopyImageFillBackground)
+                    {
+                        return CopyImageDefaultFillBackground(img, Color.White);
+                    }
+
+                    return CopyImageDefault(img);
                 }
                 catch (Exception e)
                 {
@@ -127,32 +125,41 @@ namespace ShareX.HelpersLib
             return false;
         }
 
+        private static bool CopyImageDefault(Image img)
+        {
+            IDataObject data = new DataObject();
+            data.SetData(DataFormats.Bitmap, true, img);
+            return CopyData(data);
+        }
+
+        private static bool CopyImageDefaultFillBackground(Image img, Color background)
+        {
+            using (Bitmap bmp = img.CreateEmptyBitmap(PixelFormat.Format24bppRgb))
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.Clear(background);
+                g.DrawImage(img, 0, 0, img.Width, img.Height);
+
+                IDataObject data = new DataObject();
+                data.SetData(DataFormats.Bitmap, true, bmp);
+                return CopyData(data);
+            }
+        }
+
         private static bool CopyImageAlternative(Image img)
         {
-            if (img != null)
+            IDataObject data = new DataObject();
+            using (MemoryStream msPNG = new MemoryStream())
+            using (MemoryStream msBMP = new MemoryStream())
+            using (MemoryStream msDIB = new MemoryStream())
             {
-                try
-                {
-                    IDataObject data = new DataObject();
-                    using (MemoryStream msPNG = new MemoryStream())
-                    using (MemoryStream msBMP = new MemoryStream())
-                    using (MemoryStream msDIB = new MemoryStream())
-                    {
-                        img.Save(msPNG, ImageFormat.Png);
-                        data.SetData("PNG", false, msPNG);
-                        img.Save(msBMP, ImageFormat.Bmp);
-                        msBMP.CopyStreamTo(msDIB, 14, (int)msBMP.Length - 14);
-                        data.SetData(DataFormats.Dib, true, msDIB);
-                        return CopyData(data);
-                    }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Clipboard copy image alternative failed.");
-                }
+                img.Save(msPNG, ImageFormat.Png);
+                data.SetData("PNG", false, msPNG);
+                img.Save(msBMP, ImageFormat.Bmp);
+                msBMP.CopyStreamTo(msDIB, 14, (int)msBMP.Length - 14);
+                data.SetData(DataFormats.Dib, true, msDIB);
+                return CopyData(data);
             }
-
-            return false;
         }
 
         public static bool CopyFile(string path)

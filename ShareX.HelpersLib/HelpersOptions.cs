@@ -28,6 +28,7 @@ namespace ShareX.HelpersLib
     public static class HelpersOptions
     {
         public static ProxyInfo CurrentProxy = new ProxyInfo();
+        public static bool DefaultClipboardCopyImageFillBackground = true;
         public static bool UseAlternativeCopyImage = false;
         public static string BrowserPath = null;
     }

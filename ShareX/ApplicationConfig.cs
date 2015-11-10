@@ -122,6 +122,9 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show most recent task first in main window.")]
         public bool ShowMostRecentTaskFirst { get; set; }
 
+        [Category("Application"), DefaultValue(true), Description("Because default .NET framework image copying not supports alpha channel instead fill background white.")]
+        public bool DefaultClipboardCopyImageFillBackground { get; set; }
+
         [Category("Application"), DefaultValue(false), Description("By default copying \"Bitmap\" to clipboard. Alternative method copying \"PNG and DIB\" to clipboard.")]
         public bool UseAlternativeClipboardCopyImage { get; set; }
 
