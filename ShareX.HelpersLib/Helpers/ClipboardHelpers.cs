@@ -109,7 +109,7 @@ namespace ShareX.HelpersLib
                         return CopyImageAlternative(img);
                     }
 
-                    if (HelpersOptions.DefaultClipboardCopyImageFillBackground)
+                    if (HelpersOptions.DefaultCopyImageFillBackground)
                     {
                         return CopyImageDefaultFillBackground(img, Color.White);
                     }

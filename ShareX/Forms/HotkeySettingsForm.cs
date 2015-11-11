@@ -50,10 +50,9 @@ namespace ShareX
 
         private void HotkeySettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Program.HotkeyManager.IgnoreHotkeys = false;
-
             if (manager != null)
             {
+                manager.IgnoreHotkeys = false;
                 manager.HotkeysToggledTrigger -= HandleHotkeysToggle;
             }
         }
