@@ -1139,18 +1139,16 @@ namespace ShareX
 
         private void tsbHotkeySettings_Click(object sender, EventArgs e)
         {
-            if (Program.HotkeysConfig == null)
+            if (Program.HotkeyManager != null)
             {
-                Program.HotkeySettingsResetEvent.WaitOne();
-            }
+                using (HotkeySettingsForm hotkeySettingsForm = new HotkeySettingsForm(Program.HotkeyManager))
+                {
+                    hotkeySettingsForm.ShowDialog();
+                }
 
-            using (HotkeySettingsForm hotkeySettingsForm = new HotkeySettingsForm())
-            {
-                hotkeySettingsForm.ShowDialog();
+                UpdateWorkflowsMenu();
+                Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
             }
-
-            UpdateWorkflowsMenu();
-            Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
         }
 
         private void tsmiTrayToggleHotkeys_Click(object sender, EventArgs e)

@@ -38,14 +38,10 @@ namespace ShareX
 
         private HotkeyManager manager;
 
-        public HotkeySettingsForm()
+        public HotkeySettingsForm(HotkeyManager hotkeyManager)
         {
             InitializeComponent();
-
-            if (Program.HotkeyManager != null)
-            {
-                PrepareHotkeys(Program.HotkeyManager);
-            }
+            PrepareHotkeys(hotkeyManager);
         }
 
         private void HotkeySettingsForm_FormClosed(object sender, FormClosedEventArgs e)
