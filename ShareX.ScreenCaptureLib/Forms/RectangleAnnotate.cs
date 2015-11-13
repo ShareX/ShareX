@@ -268,15 +268,26 @@ namespace ShareX.ScreenCaptureLib
 
         private void RectangleAnnotate_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (IsDrawingMode)
+            if (e.Delta > 0)
             {
-                if (e.Delta > 0)
+                if (Mode == RegionAnnotateMode.Pen)
                 {
                     Options.DrawingPenSize++;
                 }
-                else if (e.Delta < 0)
+                else if (Mode == RegionAnnotateMode.Rectangle)
+                {
+                    Options.DrawingRectangleBorderSize++;
+                }
+            }
+            else if (e.Delta < 0)
+            {
+                if (Mode == RegionAnnotateMode.Pen)
                 {
                     Options.DrawingPenSize--;
+                }
+                else if (Mode == RegionAnnotateMode.Rectangle)
+                {
+                    Options.DrawingRectangleBorderSize--;
                 }
             }
         }
@@ -419,10 +430,16 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine("[2] Select pen drawing mode");
             sb.AppendLine("[3] Select rectangle drawing mode");
 
-            if (IsDrawingMode)
+            switch (Mode)
             {
-                sb.AppendLine("[Shift] Change pen color");
-                sb.AppendLine("[Mouse wheel] Change pen size");
+                case RegionAnnotateMode.Pen:
+                    sb.AppendLine("[Shift] Change pen color");
+                    sb.AppendLine("[Mouse wheel] Change pen size");
+                    break;
+                case RegionAnnotateMode.Rectangle:
+                    sb.AppendLine("[Shift] Change border color");
+                    sb.AppendLine("[Mouse wheel] Change border size");
+                    break;
             }
 
             sb.AppendLine("[Space] Fullscreen capture");
@@ -504,9 +521,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawRectangle(Graphics g)
         {
-            using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingPenSize) { Alignment = PenAlignment.Inset })
+            using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingRectangleBorderSize) { Alignment = PenAlignment.Inset })
             {
-                g.DrawRectangleProper(pen, SelectionRectangle.Offset(Options.DrawingPenSize - 1));
+                g.DrawRectangleProper(pen, SelectionRectangle.Offset(Options.DrawingRectangleBorderSize - 1));
             }
         }
 
@@ -531,11 +548,11 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawRectangleMarker(Graphics g)
         {
-            using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingPenSize) { Alignment = PenAlignment.Inset })
+            using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingRectangleBorderSize) { Alignment = PenAlignment.Inset })
             {
                 Point pos = CurrentMousePosition0Based;
                 int offset = 15;
-                g.DrawRectangleProper(pen, new Rectangle(pos.X - offset, pos.Y - offset, offset * 2, offset * 2).Offset(Options.DrawingPenSize - 1));
+                g.DrawRectangleProper(pen, new Rectangle(pos.X - offset, pos.Y - offset, offset * 2, offset * 2).Offset(Options.DrawingRectangleBorderSize - 1));
             }
         }
     }
