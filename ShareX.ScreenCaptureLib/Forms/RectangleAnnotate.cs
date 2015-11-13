@@ -167,8 +167,6 @@ namespace ShareX.ScreenCaptureLib
             MouseWheel += RectangleAnnotate_MouseWheel;
             KeyDown += RectangleAnnotate_KeyDown;
             KeyUp += RectangleAnnotate_KeyUp;
-            FormClosing += RectangleAnnotate_FormClosing;
-            LostFocus += RectangleAnnotate_LostFocus;
 
             ResumeLayout(false);
         }
@@ -195,44 +193,44 @@ namespace ShareX.ScreenCaptureLib
             this.ShowActivate();
         }
 
-        private void RectangleAnnotate_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            CursorShown = true;
-        }
-
-        private void RectangleAnnotate_LostFocus(object sender, EventArgs e)
-        {
-            CursorShown = true;
-        }
-
         private void RectangleAnnotate_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.D1)
             {
                 Mode = RegionAnnotateMode.Capture;
-                CursorShown = true;
             }
             else if (e.KeyCode == Keys.D2)
             {
                 Mode = RegionAnnotateMode.Pen;
-                CursorShown = false;
             }
             else if (e.KeyCode == Keys.D3)
             {
                 Mode = RegionAnnotateMode.Rectangle;
-                CursorShown = false;
+            }
+            else if (e.KeyCode == Keys.ControlKey)
+            {
+                switch (Mode)
+                {
+                    case RegionAnnotateMode.Capture:
+                        Mode = RegionAnnotateMode.Pen;
+                        break;
+                    case RegionAnnotateMode.Pen:
+                        Mode = RegionAnnotateMode.Rectangle;
+                        break;
+                    case RegionAnnotateMode.Rectangle:
+                        Mode = RegionAnnotateMode.Capture;
+                        break;
+                }
             }
             else if (e.KeyCode == Keys.ShiftKey && IsDrawingMode)
             {
                 try
                 {
                     isBusy = true;
-                    CursorShown = true;
                     Options.DrawingPenColor = ColorPickerForm.GetColor(Options.DrawingPenColor);
                 }
                 finally
                 {
-                    CursorShown = false;
                     isBusy = false;
                 }
             }
@@ -263,13 +261,16 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left && isMouseDown)
             {
-                if (IsDrawingMode)
+                isMouseDown = false;
+
+                switch (Mode)
                 {
-                    isMouseDown = false;
-                }
-                else
-                {
-                    DoSelection(SelectionRectangle);
+                    case RegionAnnotateMode.Capture:
+                        DoSelection(SelectionRectangle);
+                        break;
+                    case RegionAnnotateMode.Rectangle:
+                        AddRectangle();
+                        break;
                 }
             }
             else if (e.Button == MouseButtons.Right)
@@ -349,12 +350,12 @@ namespace ShareX.ScreenCaptureLib
             g.InterpolationMode = InterpolationMode.NearestNeighbor;
             g.SmoothingMode = SmoothingMode.HighQuality;
 
-            if (IsDrawingMode && isMouseDown)
+            if (Mode == RegionAnnotateMode.Pen && isMouseDown)
             {
                 using (Graphics gImage = Graphics.FromImage(backgroundImage))
                 {
                     gImage.SmoothingMode = SmoothingMode.HighQuality;
-                    DrawLine(gImage, PreviousMousePosition0Based, CurrentMousePosition0Based, Options.DrawingPenSize, Options.DrawingPenColor);
+                    DrawLine(gImage);
                 }
             }
 
@@ -364,7 +365,12 @@ namespace ShareX.ScreenCaptureLib
 
             if (Mode == RegionAnnotateMode.Pen)
             {
-                DrawDot(g, CurrentMousePosition0Based, Options.DrawingPenSize, Options.DrawingPenColor, true);
+                DrawDot(g);
+            }
+            else if (Mode == RegionAnnotateMode.Rectangle && isMouseDown)
+            {
+                g.SmoothingMode = SmoothingMode.HighSpeed;
+                DrawRectangle(g);
             }
 
             if (Options.ShowTips)
@@ -446,33 +452,46 @@ namespace ShareX.ScreenCaptureLib
             ImageHelpers.DrawTextWithShadow(g, infoText, position, infofont, Color.White, Color.Black);
         }
 
-        private void DrawLine(Graphics g, Point pos1, Point pos2, int size, Color color)
+        private void DrawLine(Graphics g)
         {
-            if (pos1 == pos2)
+            if (CurrentMousePosition0Based == PreviousMousePosition0Based)
             {
-                DrawDot(g, pos1, size, color);
+                DrawDot(g);
             }
             else
             {
-                using (Pen pen = new Pen(color, size) { StartCap = LineCap.Round, EndCap = LineCap.Round })
+                using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingPenSize) { StartCap = LineCap.Round, EndCap = LineCap.Round })
                 {
                     g.DrawLine(pen, PreviousMousePosition0Based, CurrentMousePosition0Based);
                 }
             }
         }
 
-        private void DrawDot(Graphics g, Point pos, int size, Color color, bool border = false)
+        private void DrawRectangle(Graphics g)
         {
-            using (Brush brush = new SolidBrush(color))
+            using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingPenSize) { Alignment = PenAlignment.Inset })
             {
-                RectangleF rect = new RectangleF(pos.X - size / 2f, pos.Y - size / 2f, size, size);
-                g.FillEllipse(brush, rect);
+                g.DrawRectangleProper(pen, SelectionRectangle.Offset(Options.DrawingPenSize - 1));
+            }
+        }
 
-                if (border)
-                {
-                    g.DrawEllipse(Pens.Black, rect);
-                    g.DrawEllipse(Pens.White, new RectangleF(rect.X - 1, rect.Y - 1, rect.Width + 2, rect.Height + 2));
-                }
+        private void AddRectangle()
+        {
+            using (Graphics g = Graphics.FromImage(backgroundImage))
+            {
+                g.SmoothingMode = SmoothingMode.HighSpeed;
+                DrawRectangle(g);
+            }
+        }
+
+        private void DrawDot(Graphics g)
+        {
+            Point pos = CurrentMousePosition0Based;
+
+            using (Brush brush = new SolidBrush(Options.DrawingPenColor))
+            {
+                RectangleF rect = new RectangleF(pos.X - Options.DrawingPenSize / 2f, pos.Y - Options.DrawingPenSize / 2f, Options.DrawingPenSize, Options.DrawingPenSize);
+                g.FillEllipse(brush, rect);
             }
         }
     }
