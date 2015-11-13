@@ -126,5 +126,19 @@ namespace ShareX.HelpersLib
             ulong flagVal = flags.Select(x => Convert.ToUInt64(x)).Aggregate((x, next) => x | next);
             return (T)Enum.ToObject(typeof(T), keysVal ^ flagVal);
         }
+
+        public static T Next<T>(this Enum value)
+        {
+            Array values = Enum.GetValues(value.GetType());
+            int i = Array.IndexOf(values, value) + 1;
+            return i == values.Length ? (T)values.GetValue(0) : (T)values.GetValue(i);
+        }
+
+        public static T Previous<T>(this Enum value)
+        {
+            Array values = Enum.GetValues(value.GetType());
+            int i = Array.IndexOf(values, value) - 1;
+            return i == -1 ? (T)values.GetValue(values.Length - 1) : (T)values.GetValue(i);
+        }
     }
 }

@@ -187,21 +187,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 Mode = RegionAnnotateMode.Rectangle;
             }
-            else if (e.KeyCode == Keys.ControlKey)
-            {
-                switch (Mode)
-                {
-                    case RegionAnnotateMode.Capture:
-                        Mode = RegionAnnotateMode.Pen;
-                        break;
-                    case RegionAnnotateMode.Pen:
-                        Mode = RegionAnnotateMode.Rectangle;
-                        break;
-                    case RegionAnnotateMode.Rectangle:
-                        Mode = RegionAnnotateMode.Capture;
-                        break;
-                }
-            }
             else if (e.KeyCode == Keys.ShiftKey && IsDrawingMode)
             {
                 try
@@ -272,26 +257,40 @@ namespace ShareX.ScreenCaptureLib
 
         private void RectangleAnnotate_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (e.Delta > 0)
+            if (ModifierKeys == Keys.Control)
             {
-                if (Mode == RegionAnnotateMode.Pen)
+                if (e.Delta > 0)
                 {
-                    Options.DrawingPenSize++;
+                    if (Mode == RegionAnnotateMode.Pen)
+                    {
+                        Options.DrawingPenSize++;
+                    }
+                    else if (Mode == RegionAnnotateMode.Rectangle)
+                    {
+                        Options.DrawingRectangleBorderSize++;
+                    }
                 }
-                else if (Mode == RegionAnnotateMode.Rectangle)
+                else if (e.Delta < 0)
                 {
-                    Options.DrawingRectangleBorderSize++;
+                    if (Mode == RegionAnnotateMode.Pen)
+                    {
+                        Options.DrawingPenSize--;
+                    }
+                    else if (Mode == RegionAnnotateMode.Rectangle)
+                    {
+                        Options.DrawingRectangleBorderSize--;
+                    }
                 }
             }
-            else if (e.Delta < 0)
+            else
             {
-                if (Mode == RegionAnnotateMode.Pen)
+                if (e.Delta > 0)
                 {
-                    Options.DrawingPenSize--;
+                    Mode = Mode.Previous<RegionAnnotateMode>();
                 }
-                else if (Mode == RegionAnnotateMode.Rectangle)
+                else if (e.Delta < 0)
                 {
-                    Options.DrawingRectangleBorderSize--;
+                    Mode = Mode.Next<RegionAnnotateMode>();
                 }
             }
         }
@@ -432,25 +431,25 @@ namespace ShareX.ScreenCaptureLib
 
             // TODO: Add resources
             sb.AppendLine();
+            sb.AppendLine("[Mouse wheel] Swap modes");
             if (Mode == RegionAnnotateMode.Capture) sb.Append("-> ");
             sb.AppendLine("[1] Select capture mode");
             if (Mode == RegionAnnotateMode.Pen) sb.Append("-> ");
             sb.AppendLine("[2] Select pen drawing mode");
             if (Mode == RegionAnnotateMode.Rectangle) sb.Append("-> ");
             sb.AppendLine("[3] Select rectangle drawing mode");
-            sb.AppendLine("[Ctrl] Swap modes");
 
             switch (Mode)
             {
                 case RegionAnnotateMode.Pen:
                     sb.AppendLine();
                     sb.AppendLine("[Shift] Change pen color");
-                    sb.AppendLine("[Mouse wheel] Change pen size");
+                    sb.AppendLine("[Ctrl + Mouse wheel] Change pen size");
                     break;
                 case RegionAnnotateMode.Rectangle:
                     sb.AppendLine();
                     sb.AppendLine("[Shift] Change border color");
-                    sb.AppendLine("[Mouse wheel] Change border size");
+                    sb.AppendLine("[Ctrl + Mouse wheel] Change border size");
                     break;
             }
 
