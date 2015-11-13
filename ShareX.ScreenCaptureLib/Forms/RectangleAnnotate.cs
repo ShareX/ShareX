@@ -214,6 +214,10 @@ namespace ShareX.ScreenCaptureLib
                     isBusy = false;
                 }
             }
+            else if (e.KeyCode == Keys.F1)
+            {
+                Options.ShowTips = !Options.ShowTips;
+            }
         }
 
         private void RectangleAnnotate_KeyUp(object sender, KeyEventArgs e)
@@ -424,25 +428,34 @@ namespace ShareX.ScreenCaptureLib
 
         protected virtual void WriteTips(StringBuilder sb)
         {
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__F1__Hide_tips);
+
             // TODO: Add resources
-            sb.AppendLine("[Ctrl] Swap modes");
+            sb.AppendLine();
+            if (Mode == RegionAnnotateMode.Capture) sb.Append("-> ");
             sb.AppendLine("[1] Select capture mode");
+            if (Mode == RegionAnnotateMode.Pen) sb.Append("-> ");
             sb.AppendLine("[2] Select pen drawing mode");
+            if (Mode == RegionAnnotateMode.Rectangle) sb.Append("-> ");
             sb.AppendLine("[3] Select rectangle drawing mode");
+            sb.AppendLine("[Ctrl] Swap modes");
 
             switch (Mode)
             {
                 case RegionAnnotateMode.Pen:
+                    sb.AppendLine();
                     sb.AppendLine("[Shift] Change pen color");
                     sb.AppendLine("[Mouse wheel] Change pen size");
                     break;
                 case RegionAnnotateMode.Rectangle:
+                    sb.AppendLine();
                     sb.AppendLine("[Shift] Change border color");
                     sb.AppendLine("[Mouse wheel] Change border size");
                     break;
             }
 
-            sb.AppendLine("[Space] Fullscreen capture");
+            sb.AppendLine();
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Space__Fullscreen_capture);
         }
 
         private void DrawTips(Graphics g)
