@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -79,34 +80,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private bool cursorShown = true;
-
-        public bool CursorShown
-        {
-            get
-            {
-                return cursorShown;
-            }
-            private set
-            {
-                if (cursorShown == value)
-                {
-                    return;
-                }
-
-                if (value)
-                {
-                    Cursor.Show();
-                }
-                else
-                {
-                    Cursor.Hide();
-                }
-
-                cursorShown = value;
-            }
-        }
-
         public RectangleAnnotateOptions Options { get; private set; }
 
         public RegionAnnotateMode Mode { get; private set; }
@@ -115,11 +88,12 @@ namespace ShareX.ScreenCaptureLib
 
         private Timer timer;
         private Image backgroundImage;
-        private Pen borderDotPen, borderDotPen2;
+        private Pen borderDotPen, borderDotPen2, textBackgroundPenWhite, textBackgroundPenBlack;
+        private Brush textBackgroundBrush;
         private Point positionOnClick;
         private bool isMouseDown, isBusy;
         private Stopwatch penTimer;
-        private Font infofont, tipFont;
+        private Font infoFont, tipFont;
 
         public RectangleAnnotate(RectangleAnnotateOptions options)
         {
@@ -129,7 +103,10 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
-            infofont = new Font("Arial", 15);
+            textBackgroundBrush = new SolidBrush(Color.FromArgb(75, Color.Black));
+            textBackgroundPenWhite = new Pen(Color.FromArgb(50, Color.White));
+            textBackgroundPenBlack = new Pen(Color.FromArgb(150, Color.Black));
+            infoFont = new Font("Verdana", 9);
             tipFont = new Font("Arial", 13);
             penTimer = Stopwatch.StartNew();
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
@@ -182,7 +159,10 @@ namespace ShareX.ScreenCaptureLib
             if (backgroundImage != null) backgroundImage.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
             if (borderDotPen2 != null) borderDotPen2.Dispose();
-            if (infofont != null) infofont.Dispose();
+            if (textBackgroundBrush != null) textBackgroundBrush.Dispose();
+            if (textBackgroundPenWhite != null) textBackgroundPenWhite.Dispose();
+            if (textBackgroundPenBlack != null) textBackgroundPenBlack.Dispose();
+            if (infoFont != null) infoFont.Dispose();
             if (tipFont != null) tipFont.Dispose();
 
             base.Dispose(disposing);
@@ -363,11 +343,19 @@ namespace ShareX.ScreenCaptureLib
             g.DrawImage(backgroundImage, ScreenRectangle0Based);
             g.CompositingMode = CompositingMode.SourceOver;
 
-            if (Mode == RegionAnnotateMode.Pen)
+            if (!isMouseDown)
             {
-                DrawDot(g);
+                if (Mode == RegionAnnotateMode.Pen)
+                {
+                    DrawDot(g);
+                }
+                else if (Mode == RegionAnnotateMode.Rectangle)
+                {
+                    g.SmoothingMode = SmoothingMode.HighSpeed;
+                    DrawRectangleMarker(g);
+                }
             }
-            else if (Mode == RegionAnnotateMode.Rectangle && isMouseDown)
+            else if (Mode == RegionAnnotateMode.Rectangle)
             {
                 g.SmoothingMode = SmoothingMode.HighSpeed;
                 DrawRectangle(g);
@@ -375,7 +363,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (Options.ShowTips)
             {
-                DrawTips(g);
+                DrawTips(g, 10, 10);
             }
 
             if (!IsDrawingMode)
@@ -394,6 +382,52 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void DrawInfoText(Graphics g, string text, Rectangle rect, int padding)
+        {
+            g.FillRectangle(textBackgroundBrush, rect.Offset(-2));
+            g.DrawRectangleProper(textBackgroundPenBlack, rect.Offset(-1));
+            g.DrawRectangleProper(textBackgroundPenWhite, rect);
+
+            ImageHelpers.DrawTextWithShadow(g, text, rect.Offset(-padding).Location, infoFont, Brushes.White, Brushes.Black);
+        }
+
+        private void DrawTips(Graphics g, int offset, int padding)
+        {
+            StringBuilder sb = new StringBuilder();
+            WriteTips(sb);
+            string tipText = sb.ToString().Trim();
+
+            Size textSize = g.MeasureString(tipText, infoFont).ToSize();
+            int rectWidth = textSize.Width + padding * 2 + 2;
+            int rectHeight = textSize.Height + padding * 2;
+            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
+            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + primaryScreenBounds.Width - rectWidth - offset, primaryScreenBounds.Y + offset, rectWidth, rectHeight);
+
+            if (textRectangle.Offset(10).Contains(CurrentMousePosition0Based))
+            {
+                textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
+            }
+
+            DrawInfoText(g, tipText, textRectangle, padding);
+        }
+
+        protected virtual void WriteTips(StringBuilder sb)
+        {
+            // TODO: Add resources
+            sb.AppendLine("[Ctrl] Swap modes");
+            sb.AppendLine("[1] Select capture mode");
+            sb.AppendLine("[2] Select pen drawing mode");
+            sb.AppendLine("[3] Select rectangle drawing mode");
+
+            if (IsDrawingMode)
+            {
+                sb.AppendLine("[Shift] Change pen color");
+                sb.AppendLine("[Mouse wheel] Change pen size");
+            }
+
+            sb.AppendLine("[Space] Fullscreen capture");
+        }
+
         private void DrawTips(Graphics g)
         {
             int offset = 10;
@@ -403,6 +437,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsDrawingMode)
             {
+                // TODO: Delete resources
                 tipText = Resources.RectangleAnnotate_DrawTips_Drawing_mode_on;
             }
             else
@@ -449,7 +484,7 @@ namespace ShareX.ScreenCaptureLib
             int offset = 10;
             Point position = new Point(CurrentMousePosition0Based.X + offset, CurrentMousePosition0Based.Y + offset);
 
-            ImageHelpers.DrawTextWithShadow(g, infoText, position, infofont, Color.White, Color.Black);
+            ImageHelpers.DrawTextWithShadow(g, infoText, position, infoFont, Color.White, Color.Black);
         }
 
         private void DrawLine(Graphics g)
@@ -486,12 +521,21 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawDot(Graphics g)
         {
-            Point pos = CurrentMousePosition0Based;
-
             using (Brush brush = new SolidBrush(Options.DrawingPenColor))
             {
+                Point pos = CurrentMousePosition0Based;
                 RectangleF rect = new RectangleF(pos.X - Options.DrawingPenSize / 2f, pos.Y - Options.DrawingPenSize / 2f, Options.DrawingPenSize, Options.DrawingPenSize);
                 g.FillEllipse(brush, rect);
+            }
+        }
+
+        private void DrawRectangleMarker(Graphics g)
+        {
+            using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingPenSize) { Alignment = PenAlignment.Inset })
+            {
+                Point pos = CurrentMousePosition0Based;
+                int offset = 15;
+                g.DrawRectangleProper(pen, new Rectangle(pos.X - offset, pos.Y - offset, offset * 2, offset * 2).Offset(Options.DrawingPenSize - 1));
             }
         }
     }
