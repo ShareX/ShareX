@@ -75,7 +75,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap exclamation_button {
             get {
-                object obj = ResourceManager.GetObject("exclamation-button", resourceCulture);
+                object obj = ResourceManager.GetObject("exclamation_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -132,24 +132,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string FFmpegOptionsForm_UpdateUI_Quality_ {
             get {
                 return ResourceManager.GetString("FFmpegOptionsForm_UpdateUI_Quality_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ctrl: Drawing mode ░ Space: Fullscreen capture.
-        /// </summary>
-        internal static string RectangleAnnotate_DrawTips_Drawing_mode_off {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_DrawTips_Drawing_mode_off", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ctrl: Region mode ░ Shift: Pen color ░ Mouse wheel: Pen size ░ Space: Fullscreen capture.
-        /// </summary>
-        internal static string RectangleAnnotate_DrawTips_Drawing_mode_on {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_DrawTips_Drawing_mode_on", resourceCulture);
             }
         }
         

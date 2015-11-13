@@ -357,22 +357,20 @@ namespace ShareX.ScreenCaptureLib
             g.DrawImage(backgroundImage, ScreenRectangle0Based);
             g.CompositingMode = CompositingMode.SourceOver;
 
-            if (!isMouseDown)
+            if (Mode == RegionAnnotateMode.Pen)
             {
-                if (Mode == RegionAnnotateMode.Pen)
-                {
-                    DrawDot(g);
-                }
-                else if (Mode == RegionAnnotateMode.Rectangle)
-                {
-                    g.SmoothingMode = SmoothingMode.HighSpeed;
-                    DrawRectangleMarker(g);
-                }
+                DrawDot(g, true);
             }
             else if (Mode == RegionAnnotateMode.Rectangle)
             {
-                g.SmoothingMode = SmoothingMode.HighSpeed;
-                DrawRectangle(g);
+                if (isMouseDown)
+                {
+                    DrawRectangle(g);
+                }
+                else
+                {
+                    DrawRectangleMarker(g);
+                }
             }
 
             if (Options.ShowTips)
@@ -457,46 +455,6 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Space__Fullscreen_capture);
         }
 
-        private void DrawTips(Graphics g)
-        {
-            int offset = 10;
-            int padding = 3;
-
-            string tipText;
-
-            if (IsDrawingMode)
-            {
-                // TODO: Delete resources
-                tipText = Resources.RectangleAnnotate_DrawTips_Drawing_mode_on;
-            }
-            else
-            {
-                tipText = Resources.RectangleAnnotate_DrawTips_Drawing_mode_off;
-            }
-
-            Size textSize = g.MeasureString(tipText, tipFont).ToSize();
-            int rectWidth = textSize.Width + padding * 2;
-            int rectHeight = textSize.Height + padding * 2;
-            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
-            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + (primaryScreenBounds.Width / 2) - (rectWidth / 2), primaryScreenBounds.Y + offset, rectWidth, rectHeight);
-
-            if (textRectangle.Offset(10).Contains(CurrentMousePosition0Based))
-            {
-                textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
-            }
-
-            using (Brush brush = new SolidBrush(Color.FromArgb(175, Color.White)))
-            using (Pen pen = new Pen(Color.FromArgb(175, Color.Black)))
-            {
-                g.DrawRoundedRectangle(brush, pen, textRectangle, 5);
-            }
-
-            using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-            {
-                g.DrawString(tipText, tipFont, Brushes.Black, textRectangle, sf);
-            }
-        }
-
         private void DrawInfo(Graphics g)
         {
             string infoText;
@@ -510,10 +468,10 @@ namespace ShareX.ScreenCaptureLib
                 infoText = string.Format("X: {0} Y: {1}", CurrentMousePosition.X, CurrentMousePosition.Y);
             }
 
-            int offset = 10;
-            Point position = new Point(CurrentMousePosition0Based.X + offset, CurrentMousePosition0Based.Y + offset);
-
-            ImageHelpers.DrawTextWithShadow(g, infoText, position, infoFont, Color.White, Color.Black);
+            int offset = 10, padding = 3;
+            Point pos = CurrentMousePosition0Based;
+            Size textSize = g.MeasureString(infoText, infoFont).ToSize();
+            DrawInfoText(g, infoText, new Rectangle(pos.X + offset, pos.Y + offset, textSize.Width + padding * 2, textSize.Height + padding * 2), padding);
         }
 
         private void DrawLine(Graphics g)
@@ -548,13 +506,19 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DrawDot(Graphics g)
+        private void DrawDot(Graphics g, bool border = false)
         {
             using (Brush brush = new SolidBrush(Options.DrawingPenColor))
             {
                 Point pos = CurrentMousePosition0Based;
-                RectangleF rect = new RectangleF(pos.X - Options.DrawingPenSize / 2f, pos.Y - Options.DrawingPenSize / 2f, Options.DrawingPenSize, Options.DrawingPenSize);
+                Rectangle rect = new Rectangle((int)(pos.X - Options.DrawingPenSize / 2f), (int)(pos.Y - Options.DrawingPenSize / 2f), Options.DrawingPenSize, Options.DrawingPenSize);
                 g.FillEllipse(brush, rect);
+
+                if (border)
+                {
+                    g.DrawEllipse(Pens.Black, rect.Offset(1));
+                    g.DrawEllipse(Pens.White, rect.Offset(2));
+                }
             }
         }
 

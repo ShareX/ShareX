@@ -580,7 +580,7 @@ namespace ShareX.ScreenCaptureLib
                 if (Config.ShowInfo)
                 {
                     infoTextRect.Location = new Point(x + (magnifier.Width / 2) - (infoTextRect.Width / 2), y + magnifier.Height + infoTextOffset);
-                    DrawInfoText(g, infoText, infoTextRect, 3);
+                    DrawInfoText(g, infoText, infoTextRect, infoTextPadding);
                 }
 
                 g.SetHighQuality();
