@@ -31,8 +31,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RectangleAnnotateOptions
     {
-        [DefaultValue(false), Description("Show position and size of selected rectangle area.")]
-        public bool ShowRectangleInfo { get; set; }
+        [DefaultValue(true), Description("Show cursor position and region size.")]
+        public bool ShowInfo { get; set; }
 
         [DefaultValue(true), Description("Show hotkey tips.")]
         public bool ShowTips { get; set; }

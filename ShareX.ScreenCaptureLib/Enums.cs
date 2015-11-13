@@ -147,6 +147,13 @@ namespace ShareX.ScreenCaptureLib
         Diamond
     }
 
+    public enum RegionAnnotateMode
+    {
+        Capture,
+        Pen,
+        Rectangle
+    }
+
     public enum ScrollingCaptureScrollMethod
     {
         [Description("Automatically try all methods until one works")]
