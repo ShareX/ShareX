@@ -260,6 +260,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskManager.cs" />
     <Compile Include="TaskSettings.cs" />
+    <Compile Include="UploadFileWorkerTask.cs" />
     <Compile Include="UploadImageWorkerTask.cs" />
     <Compile Include="UploadInfoParser.cs" />
     <Compile Include="UploadInfoStatus.cs" />

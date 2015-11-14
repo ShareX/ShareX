@@ -64,7 +64,7 @@ namespace ShareX
             }
         }
 
-        public bool StopRequested { get; private set; }
+        public bool StopRequested { get; protected set; }
         public bool RequestSettingUpdate { get; private set; }
 
         public Stream Data { get; private set; }
@@ -101,7 +101,7 @@ namespace ShareX
 
         public static WorkerTask CreateFileUploaderTask(string filePath, TaskSettings taskSettings)
         {
-            WorkerTask task = new WorkerTask(taskSettings);
+            WorkerTask task = new UploadFileWorkerTask(taskSettings);
             task.Info.FilePath = filePath;
             task.Info.DataType = TaskHelpers.FindDataType(task.Info.FilePath, taskSettings);
 
@@ -131,7 +131,7 @@ namespace ShareX
 
         public static WorkerTask CreateImageUploaderTask(Image image, TaskSettings taskSettings, string customFileName = null)
         {
-            WorkerTask task = new WorkerTask(taskSettings);
+            WorkerTask task = new UploadImageWorkerTask(taskSettings);
             task.Info.Job = TaskJob.Job;
             task.Info.DataType = EDataType.Image;
 
@@ -150,7 +150,7 @@ namespace ShareX
 
         public static WorkerTask CreateTextUploaderTask(string text, TaskSettings taskSettings)
         {
-            WorkerTask task = new WorkerTask(taskSettings);
+            WorkerTask task = new UploadTextWorkerTask(taskSettings);
             task.Info.Job = TaskJob.TextUpload;
             task.Info.DataType = EDataType.Text;
             task.Info.FileName = TaskHelpers.GetFilename(taskSettings, taskSettings.AdvancedSettings.TextFileExtension);
@@ -1377,7 +1377,7 @@ namespace ShareX
             return true;
         }
 
-        private FTPAccount GetFTPAccount(int index)
+        protected FTPAccount GetFTPAccount(int index)
         {
             if (Info.TaskSettings.OverrideFTP)
             {
@@ -1387,7 +1387,7 @@ namespace ShareX
             return Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
         }
 
-        private CustomUploaderItem GetCustomUploader(int index)
+        protected CustomUploaderItem GetCustomUploader(int index)
         {
             if (Info.TaskSettings.OverrideCustomUploader)
             {
@@ -1402,7 +1402,7 @@ namespace ShareX
             OnUploadCompleted();
         }
 
-        private void PrepareUploader(Uploader currentUploader)
+        protected void PrepareUploader(Uploader currentUploader)
         {
             uploader = currentUploader;
             uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
