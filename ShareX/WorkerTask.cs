@@ -76,9 +76,14 @@ namespace ShareX
 
         private static string lastSaveAsFolder;
 
+        public virtual UploadResult PerformTask(Stream stream, string fileName)
+        {
+            return null;
+        }
+
         #region Constructors
 
-        private WorkerTask(TaskSettings taskSettings)
+        protected WorkerTask(TaskSettings taskSettings)
         {
             Status = TaskStatus.InQueue;
             Info = new TaskInfo(taskSettings);
@@ -585,7 +590,7 @@ namespace ShareX
                                     if (imageSaved)
                                     {
                                         DebugHelper.WriteLine("Image saved to file with dialog: " + Info.FilePath);
-                                    }   
+                                    }
                                 }
                                 else
                                 {
