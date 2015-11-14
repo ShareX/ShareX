@@ -260,6 +260,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskManager.cs" />
     <Compile Include="TaskSettings.cs" />
+    <Compile Include="UploadImageWorkerTask.cs" />
     <Compile Include="UploadInfoParser.cs" />
     <Compile Include="UploadInfoStatus.cs" />
     <Compile Include="Forms\HotkeySettingsForm.cs">
@@ -274,6 +275,7 @@
     <Compile Include="Forms\VideoEncodersForm.Designer.cs">
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UploadTextWorkerTask.cs" />
     <Compile Include="WatchFolder.cs" />
     <Compile Include="WatchFolderManager.cs" />
     <Compile Include="WatchFolderSettings.cs" />
