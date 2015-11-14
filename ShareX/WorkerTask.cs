@@ -435,18 +435,7 @@ namespace ShareX
 
             try
             {
-                switch (Info.UploadDestination)
-                {
-                    case EDataType.Image:
-                        Info.Result = UploadImage(Data, Info.FileName);
-                        break;
-                    case EDataType.Text:
-                        Info.Result = UploadText(Data, Info.FileName);
-                        break;
-                    case EDataType.File:
-                        Info.Result = UploadFile(Data, Info.FileName);
-                        break;
-                }
+                Info.Result = PerformTask(Data, Info.FileName);
             }
             catch (Exception e)
             {
