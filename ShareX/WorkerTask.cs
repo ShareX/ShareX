@@ -78,7 +78,7 @@ namespace ShareX
 
         public virtual UploadResult PerformTask(Stream stream, string fileName)
         {
-            return null;
+            return Info.Result;
         }
 
         #region Constructors
