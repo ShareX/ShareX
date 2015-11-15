@@ -177,10 +177,11 @@ namespace ShareX
                 string hotkeyText = failedHotkeysList.Count > 1 ? Resources.HotkeyManager_ShowFailedHotkeys_hotkeys : Resources.HotkeyManager_ShowFailedHotkeys_hotkey;
                 string text = string.Format(Resources.HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey, hotkeyText, failedHotkeys);
 
-                string[] processNames = new string[] { "ShareX", "OneDrive", "Dropbox", "Greenshot", "ScreenshotCaptor", "FSCapture" };
+                string[] processNames = new string[] { "ShareX", "OneDrive", "Dropbox", "Greenshot", "ScreenshotCaptor", "FSCapture", "Snagit32", "puush", "Lightshot" };
                 int ignoreProcess = Process.GetCurrentProcess().Id;
-                List<string> conflictProcessNames = Process.GetProcesses().Where(x => x.Id != ignoreProcess).Select(x => x.ProcessName).
-                    Where(x => !string.IsNullOrEmpty(x) && processNames.Any(x2 => x.Equals(x2, StringComparison.InvariantCultureIgnoreCase))).ToList();
+                List<string> conflictProcessNames = Process.GetProcesses().Where(x => x.Id != ignoreProcess && !string.IsNullOrEmpty(x.ProcessName) &&
+                    processNames.Any(x2 => x.ProcessName.Equals(x2, StringComparison.InvariantCultureIgnoreCase))).
+                    Select(x => string.Format("{0} ({1})", x.MainModule.FileVersionInfo.ProductName, x.MainModule.ModuleName)).ToList();
 
                 if (conflictProcessNames != null && conflictProcessNames.Count > 0)
                 {
