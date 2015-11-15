@@ -93,7 +93,7 @@ namespace ShareX.ScreenCaptureLib
         private Point positionOnClick;
         private bool isMouseDown, isBusy;
         private Stopwatch penTimer;
-        private Font infoFont, tipFont;
+        private Font infoFont;
 
         public RectangleAnnotate(RectangleAnnotateOptions options)
         {
@@ -107,7 +107,6 @@ namespace ShareX.ScreenCaptureLib
             textBackgroundPenWhite = new Pen(Color.FromArgb(50, Color.White));
             textBackgroundPenBlack = new Pen(Color.FromArgb(150, Color.Black));
             infoFont = new Font("Verdana", 9);
-            tipFont = new Font("Arial", 13);
             penTimer = Stopwatch.StartNew();
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
 
@@ -163,7 +162,6 @@ namespace ShareX.ScreenCaptureLib
             if (textBackgroundPenWhite != null) textBackgroundPenWhite.Dispose();
             if (textBackgroundPenBlack != null) textBackgroundPenBlack.Dispose();
             if (infoFont != null) infoFont.Dispose();
-            if (tipFont != null) tipFont.Dispose();
 
             base.Dispose(disposing);
         }
@@ -340,10 +338,6 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-            g.InterpolationMode = InterpolationMode.NearestNeighbor;
-            g.SmoothingMode = SmoothingMode.HighQuality;
-
             if (Mode == RegionAnnotateMode.Pen && isMouseDown)
             {
                 using (Graphics gImage = Graphics.FromImage(backgroundImage))
@@ -353,12 +347,17 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
+            Graphics g = e.Graphics;
+            g.InterpolationMode = InterpolationMode.NearestNeighbor;
+            g.SmoothingMode = SmoothingMode.HighQuality;
             g.CompositingMode = CompositingMode.SourceCopy;
             g.DrawImage(backgroundImage, ScreenRectangle0Based);
             g.CompositingMode = CompositingMode.SourceOver;
 
             if (Mode == RegionAnnotateMode.Rectangle)
             {
+                g.SmoothingMode = SmoothingMode.HighSpeed;
+
                 if (isMouseDown)
                 {
                     DrawRectangle(g);
@@ -367,6 +366,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     DrawRectangleMarker(g);
                 }
+
+                g.SmoothingMode = SmoothingMode.HighQuality;
             }
             else if (Mode == RegionAnnotateMode.Pen)
             {
@@ -427,27 +428,26 @@ namespace ShareX.ScreenCaptureLib
         {
             sb.AppendLine(Resources.RectangleRegion_WriteTips__F1__Hide_tips);
 
-            // TODO: Add resources
             sb.AppendLine();
-            sb.AppendLine("[Mouse wheel] Swap modes");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes);
             if (Mode == RegionAnnotateMode.Capture) sb.Append("-> ");
-            sb.AppendLine("[1] Select capture mode");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__1__Select_capture_mode);
             if (Mode == RegionAnnotateMode.Rectangle) sb.Append("-> ");
-            sb.AppendLine("[2] Select rectangle drawing mode");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode);
             if (Mode == RegionAnnotateMode.Pen) sb.Append("-> ");
-            sb.AppendLine("[3] Select pen drawing mode");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode);
 
             switch (Mode)
             {
                 case RegionAnnotateMode.Rectangle:
                     sb.AppendLine();
-                    sb.AppendLine("[Shift] Change border color");
-                    sb.AppendLine("[Ctrl + Mouse wheel] Change border size");
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Shift__Change_border_color);
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size);
                     break;
                 case RegionAnnotateMode.Pen:
                     sb.AppendLine();
-                    sb.AppendLine("[Shift] Change pen color");
-                    sb.AppendLine("[Ctrl + Mouse wheel] Change pen size");
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Shift__Change_pen_color);
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size);
                     break;
             }
 
