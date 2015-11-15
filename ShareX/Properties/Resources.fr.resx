@@ -476,4 +476,7 @@ Appuyez sur Oui pour ouvrir l'image du presse-papier. Sinon, appuyez sur Non pou
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Impossible d'enregistrer l'image pour le chemin {0}.</value>
   </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
+    <value>Ces applications pourraient être en conflit:</value>
+  </data>
 </root>
