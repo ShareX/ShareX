@@ -177,13 +177,14 @@ namespace ShareX
                 string hotkeyText = failedHotkeysList.Count > 1 ? Resources.HotkeyManager_ShowFailedHotkeys_hotkeys : Resources.HotkeyManager_ShowFailedHotkeys_hotkey;
                 string text = string.Format(Resources.HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey, hotkeyText, failedHotkeys);
 
-                string[] processNames = new string[] { "OneDrive", "Dropbox", "Greenshot", "ScreenshotCaptor" };
-                List<string> conflictProcessNames = Process.GetProcesses().Select(x => x.ProcessName).Where(x => !string.IsNullOrEmpty(x) &&
-                    processNames.Any(x2 => x.Equals(x2, StringComparison.InvariantCultureIgnoreCase))).ToList();
+                string[] processNames = new string[] { "ShareX", "OneDrive", "Dropbox", "Greenshot", "ScreenshotCaptor", "FSCapture" };
+                int ignoreProcess = Process.GetCurrentProcess().Id;
+                List<string> conflictProcessNames = Process.GetProcesses().Where(x => x.Id != ignoreProcess).Select(x => x.ProcessName).
+                    Where(x => !string.IsNullOrEmpty(x) && processNames.Any(x2 => x.Equals(x2, StringComparison.InvariantCultureIgnoreCase))).ToList();
 
                 if (conflictProcessNames != null && conflictProcessNames.Count > 0)
                 {
-                    text += "\r\n\r\n" + string.Format("These applications could be conflicting:\r\n\r\n{0}", string.Join("\r\n", conflictProcessNames));
+                    text += "\r\n\r\n" + Resources.HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_ + "\r\n\r\n" + string.Join("\r\n", conflictProcessNames);
                 }
 
                 MessageBox.Show(text, "ShareX - " + Resources.HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed, MessageBoxButtons.OK, MessageBoxIcon.Warning);
