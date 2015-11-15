@@ -123,12 +123,6 @@
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Загрузка</value>
   </data>
-  <data name="btnHideSteam.Text" xml:space="preserve">
-    <value>Скрыть</value>
-  </data>
-  <data name="btnOpenSteam.Text" xml:space="preserve">
-    <value>ShareX теперь доступен в Steam!</value>
-  </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Имя файла</value>
   </data>

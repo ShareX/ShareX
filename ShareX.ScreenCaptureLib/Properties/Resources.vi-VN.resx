@@ -210,9 +210,6 @@
   <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
     <value>Lỗi FFmpeg</value>
   </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: Chế độ vùng ░ Shift: Màu bút ░ Lăn chuột: Kích thước bút ░ Dấu cách: Chụp toàn màn hình</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Thả phím chuột trái] [Insert] Hoàn thất chọn vùng</value>
   </data>
@@ -257,9 +254,6 @@
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Chụp hình chữ nhật kiểu trong suốt</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: Chế độ vẽ ░ Dấu cách: Chụp toàn màn hình</value>
   </data>
   <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
     <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}

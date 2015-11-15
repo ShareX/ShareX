@@ -603,12 +603,6 @@
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>letzte Links</value>
   </data>
-  <data name="btnHideSteam.Text" xml:space="preserve">
-    <value>Verstecken</value>
-  </data>
-  <data name="btnOpenSteam.Text" xml:space="preserve">
-    <value>ShareX ist jetzt auf Steam verfügbar!</value>
-  </data>
   <data name="tsmiAutomate.Text" xml:space="preserve">
     <value>Automatisieren...</value>
   </data>

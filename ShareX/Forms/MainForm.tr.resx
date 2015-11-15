@@ -636,12 +636,6 @@
   <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
     <value>IRC istemcisi...</value>
   </data>
-  <data name="btnHideSteam.Text" xml:space="preserve">
-    <value>Sakla</value>
-  </data>
-  <data name="btnOpenSteam.Text" xml:space="preserve">
-    <value>ShareX artık Steam de mevcut!</value>
-  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Resim birleştirici...</value>
   </data>

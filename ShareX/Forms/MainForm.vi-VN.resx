@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnHideSteam.Text" xml:space="preserve">
-    <value>Ẩn</value>
-  </data>
-  <data name="btnOpenSteam.Text" xml:space="preserve">
-    <value>ShareX đã có mặt trên Steam!</value>
-  </data>
   <data name="chElapsed.Text" xml:space="preserve">
     <value>Trôi qua</value>
   </data>

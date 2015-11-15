@@ -636,12 +636,6 @@
   <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
     <value>Cliente IRC...</value>
   </data>
-  <data name="btnHideSteam.Text" xml:space="preserve">
-    <value>Esconder</value>
-  </data>
-  <data name="btnOpenSteam.Text" xml:space="preserve">
-    <value>ShareX está disponível na Steam!</value>
-  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Mesclar imagens...</value>
   </data>
