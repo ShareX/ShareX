@@ -822,4 +822,11 @@ Wil je deze downloaden en installeren?</value>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Willekeurig hexadecimaal karakter. Meerdere met {n}</value>
   </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>Locatie header</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>Er is een nieuwe versie van {0} beschikbaar.
+Wil je deze downloaden?</value>
+  </data>
 </root>

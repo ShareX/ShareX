@@ -648,4 +648,25 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Scrollopname...</value>
   </data>
+  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
+    <value>Logboek foutopsporing...</value>
+  </data>
+  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
+    <value>Test afbeeldingsupload</value>
+  </data>
+  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
+    <value>Test tekstupload</value>
+  </data>
+  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
+    <value>Test bestandsupload</value>
+  </data>
+  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
+    <value>Test linkverkorter</value>
+  </data>
+  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
+    <value>Test linkdeler</value>
+  </data>
+  <data name="tsmiTrayDebug.Text" xml:space="preserve">
+    <value>Foutopsporing</value>
+  </data>
 </root>
