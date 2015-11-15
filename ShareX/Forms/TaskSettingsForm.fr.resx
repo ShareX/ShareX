@@ -136,7 +136,7 @@
     <value>Paramètres</value>
   </data>
   <data name="tpCapture.Text" xml:space="preserve">
-    <value>Capture</value>
+    <value>Capturer</value>
   </data>
   <data name="lblAfterTaskNotification.Text" xml:space="preserve">
     <value>Après que la tâche soit effectuée:</value>
@@ -449,5 +449,8 @@
   </data>
   <data name="tpVideoThumbnailer.Text" xml:space="preserve">
     <value>Générateur de miniatures de vidéo</value>
+  </data>
+  <data name="tpScrollingCapture.Text" xml:space="preserve">
+    <value>Capture avec défilement</value>
   </data>
 </root>

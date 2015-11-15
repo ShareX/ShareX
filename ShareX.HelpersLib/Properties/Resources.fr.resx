@@ -182,16 +182,16 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Capturer une région en polygone</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Capturer une région rectangulaire</value>
+    <value>Capturer une région</value>
   </data>
   <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Capturer une région rectangulaire (Annoter)</value>
+    <value>Capturer une région (Annoter)</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Capturer une région rectangulaire (Simple)</value>
+    <value>Capturer une région (Simple)</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Capturer une région rectangulaire (Objets)</value>
+    <value>Capturer une région (Fenêtres et objets)</value>
   </data>
   <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
     <value>Choisir le chemin du fichier</value>
@@ -595,7 +595,7 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>Capturer une région personnalisée</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Capturer une région rectangulaire (Transparent)</value>
+    <value>Capturer une région (Transparent)</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Enregistrement d'écran (GIF)</value>
@@ -821,5 +821,12 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Incrémentation alphanumérique automatique insensible à la casse. Ajouter un 0 au début avec {n}</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>Une nouvelle version de {0} est disponible.
+Voulez-vous la télécharger ?</value>
+  </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>En-tête 'location'</value>
   </data>
 </root>
