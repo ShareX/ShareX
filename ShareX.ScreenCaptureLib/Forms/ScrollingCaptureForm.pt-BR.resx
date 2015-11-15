@@ -207,13 +207,28 @@
   <data name="cbRemoveDuplicates.Text" xml:space="preserve">
     <value>Remover imagens iguais</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Tentar rolar para o topo antes de capturar</value>
-  </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
     <value>Iniciar captura rolante imediatamente após a seleção da região de captura</value>
   </data>
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
     <value>Iniciar seleção da região de captura automaticamente antes de abrir esta janela</value>
+  </data>
+  <data name="cbAutoClose.Text" xml:space="preserve">
+    <value>Fechar esta janela após processamento</value>
+  </data>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>Enviar/salvar dependendo das configurações pós-captura</value>
+  </data>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>Pós-captura</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>Pré-captura</value>
+  </data>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>Enquanto estiver capturando</value>
+  </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>Método de rolagem do topo antes da captura:</value>
   </data>
 </root>

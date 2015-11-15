@@ -410,6 +410,11 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
+        public static Bitmap CreateEmptyBitmap(this Image img, PixelFormat pixelFormat)
+        {
+            return img.CreateEmptyBitmap(0, 0, pixelFormat);
+        }
+
         public static string GetDescription(this Type type)
         {
             DescriptionAttribute[] attributes = (DescriptionAttribute[])type.GetCustomAttributes(typeof(DescriptionAttribute), false);

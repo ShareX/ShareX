@@ -230,7 +230,6 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 result.URL = "http://imgur.com/" + imageData.id;
                             }
 
-                            int index = result.URL.LastIndexOf('.');
                             string thumbnail = string.Empty;
 
                             switch (ThumbnailType)
@@ -319,8 +318,6 @@ namespace ShareX.UploadersLib.ImageUploaders
         public bool favorite { get; set; }
         public bool? nsfw { get; set; }
         public string vote { get; set; }
-        public string account_url { get; set; }
-        public int? account_id { get; set; }
         public string comment_preview { get; set; }
     }
 
@@ -334,7 +331,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public string cover_width { get; set; }
         public string cover_height { get; set; }
         public string account_url { get; set; }
-        public int? account_id { get; set; }
+        public long? account_id { get; set; }
         public string privacy { get; set; }
         public string layout { get; set; }
         public int views { get; set; }

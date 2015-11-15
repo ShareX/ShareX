@@ -450,4 +450,7 @@
   <data name="tpVideoThumbnailer.Text" xml:space="preserve">
     <value>Video küçük resim yapıcı</value>
   </data>
+  <data name="tpScrollingCapture.Text" xml:space="preserve">
+    <value>Kaydırarak yakalama</value>
+  </data>
 </root>

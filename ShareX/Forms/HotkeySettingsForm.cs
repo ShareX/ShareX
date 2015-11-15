@@ -38,19 +38,19 @@ namespace ShareX
 
         private HotkeyManager manager;
 
-        public HotkeySettingsForm()
+        public HotkeySettingsForm(HotkeyManager hotkeyManager)
         {
             InitializeComponent();
-
-            if (Program.HotkeyManager != null)
-            {
-                PrepareHotkeys(Program.HotkeyManager);
-            }
+            PrepareHotkeys(hotkeyManager);
         }
 
         private void HotkeySettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Program.HotkeyManager.IgnoreHotkeys = false;
+            if (manager != null)
+            {
+                manager.IgnoreHotkeys = false;
+                manager.HotkeysToggledTrigger -= HandleHotkeysToggle;
+            }
         }
 
         public void PrepareHotkeys(HotkeyManager hotkeyManager)
@@ -58,6 +58,8 @@ namespace ShareX
             if (manager == null)
             {
                 manager = hotkeyManager;
+                manager.HotkeysToggledTrigger += HandleHotkeysToggle;
+
                 AddControls();
             }
         }
@@ -94,6 +96,14 @@ namespace ShareX
             foreach (Control control in flpHotkeys.Controls)
             {
                 ((HotkeySelectionControl)control).Selected = Selected == control;
+            }
+        }
+
+        private void UpdateHotkeyStatus()
+        {
+            foreach (Control control in flpHotkeys.Controls)
+            {
+                ((HotkeySelectionControl)control).UpdateHotkeyStatus();
             }
         }
 
@@ -134,6 +144,11 @@ namespace ShareX
             {
                 Edit(Selected);
             }
+        }
+
+        private void HandleHotkeysToggle(bool hotkeysEnabled)
+        {
+            UpdateHotkeyStatus();
         }
 
         private void flpHotkeys_Layout(object sender, LayoutEventArgs e)

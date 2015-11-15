@@ -35,7 +35,7 @@ namespace ShareX.HelpersLib
 
         public bool ActivateWindow { get; private set; }
 
-        public UpdateMessageBox(bool activateWindow)
+        public UpdateMessageBox(bool activateWindow, bool isPortable = false)
         {
             ActivateWindow = activateWindow;
             InitializeComponent();
@@ -47,7 +47,15 @@ namespace ShareX.HelpersLib
             }
 
             Text = Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
-            lblText.Text = string.Format(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName);
+
+            if (isPortable)
+            {
+                lblText.Text = string.Format(Resources.UpdateMessageBox_UpdateMessageBox_Portable, Application.ProductName);
+            }
+            else
+            {
+                lblText.Text = string.Format(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName);
+            }
         }
 
         public static void Start(UpdateChecker updateChecker, bool activateWindow = true)
@@ -60,22 +68,14 @@ namespace ShareX.HelpersLib
                 {
                     DialogResult result;
 
-                    using (UpdateMessageBox messageBox = new UpdateMessageBox(activateWindow))
+                    using (UpdateMessageBox messageBox = new UpdateMessageBox(activateWindow, updateChecker.IsPortable))
                     {
                         result = messageBox.ShowDialog();
                     }
 
                     if (result == DialogResult.Yes)
                     {
-                        using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
-                        {
-                            updaterForm.ShowDialog();
-
-                            if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
-                            {
-                                Application.Exit();
-                            }
-                        }
+                        updateChecker.DownloadUpdate();
                     }
                 }
                 finally

@@ -129,9 +129,6 @@
   <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
     <value>Добавить</value>
   </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Удалить</value>
   </data>
@@ -224,9 +221,6 @@
   </data>
   <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
     <value>Удалить альбом</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>Обновить</value>
   </data>
   <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
     <value>Обновить</value>
@@ -567,12 +561,6 @@
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Совместимость с ownCloud 8.1+</value>
   </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>Значение</value>
-  </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Имя папки</value>
   </data>
@@ -596,9 +584,6 @@
   </data>
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Описание</value>
-  </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Аргументы</value>
   </data>
   <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
     <value>Регулярка из ответа</value>

@@ -124,7 +124,7 @@
     <value>Uygulamadan çık</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>&amp;Tamam</value>
+    <value>Tamam</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>Hata kütüğünü aç</value>

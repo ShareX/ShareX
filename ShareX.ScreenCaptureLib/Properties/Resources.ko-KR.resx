@@ -128,12 +128,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>품질:</value>
   </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: 그리기 모드 ░ Space: 전체 화면 촬영</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: 영역 모드 ░ Shift: 펜 색상 ░ 마우스 휠: 펜 크기 ░ Space: 전체 화면 촬영</value>
-  </data>
   <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg 에러</value>
   </data>

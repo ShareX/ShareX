@@ -81,6 +81,9 @@ namespace ShareX
                     case SupportedLanguage.Turkish:
                         cultureName = "tr-TR";
                         break;
+                    case SupportedLanguage.Vietnamese:
+                        cultureName = "vi-VN";
+                        break;
                 }
 
                 currentCulture = CultureInfo.GetCultureInfo(cultureName);

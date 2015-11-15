@@ -91,7 +91,7 @@ namespace ShareX
             btnHotkey.Text = Setting.HotkeyInfo.ToString();
         }
 
-        private void UpdateHotkeyStatus()
+        public void UpdateHotkeyStatus()
         {
             switch (Setting.HotkeyInfo.Status)
             {

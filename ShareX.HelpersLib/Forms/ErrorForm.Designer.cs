@@ -75,8 +75,8 @@
             resources.ApplyResources(this.flpMenu, "flpMenu");
             this.flpMenu.Controls.Add(this.btnSendBugReport);
             this.flpMenu.Controls.Add(this.btnOpenLogFile);
-            this.flpMenu.Controls.Add(this.btnClose);
             this.flpMenu.Controls.Add(this.btnContinue);
+            this.flpMenu.Controls.Add(this.btnClose);
             this.flpMenu.Name = "flpMenu";
             // 
             // btnContinue
@@ -94,7 +94,6 @@
             // 
             // ErrorForm
             // 
-            this.AcceptButton = this.btnContinue;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblErrorMessage);

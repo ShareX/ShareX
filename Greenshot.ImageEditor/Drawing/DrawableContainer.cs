@@ -843,7 +843,7 @@ namespace Greenshot.Drawing
                 _parent.Controls.Add(_targetGripper);
             }
             // Normal grippers
-            if (_grippers != null)
+            if (_parent != null && _grippers != null)
             {
                 _parent.Controls.AddRange(_grippers);
             }

@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
+    <value>Các bức ảnh của bạn...</value>
+  </data>
+  <data name="tpSharedFolder.Text" xml:space="preserve">
+    <value>Thư mục được chia sẻ</value>
+  </data>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên văn bản</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>DỊch vụ rút gọn URL</value>
+  </data>
+  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
+    <value>Mẫu biểu</value>
+  </data>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>Trình tải lên ảnh</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>Trình tải lên khác</value>
+  </data>
+  <data name="tpCopy.Text" xml:space="preserve">
+    <value>Sao chép</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>Tùy chỉnh dịch vụ tải lên</value>
+  </data>
+  <data name="tpEmail.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="tpFileUploaders.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên tệp tin</value>
+  </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+  <data name="chkEmailConfirm.Text" xml:space="preserve">
+    <value>Xác nhận trước khi gửi</value>
+  </data>
+  <data name="chkGistPublishPublic.Text" xml:space="preserve">
+    <value>Tạo Gist công khai</value>
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="gpJiraServer.Text" xml:space="preserve">
+    <value>Máy chủ Jira</value>
+  </data>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>API UID:</value>
+  </data>
+  <data name="lblCheveretoWebsite.Text" xml:space="preserve">
+    <value>Website:</value>
+  </data>
+  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="lblBoxFolderTip.Text" xml:space="preserve">
+    <value>Lưu ý: Bạn có thể nhấn đúp vào tên thư mục để vào trong thư mục đó.</value>
+  </data>
+  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
+    <value>Xem trước</value>
+  </data>
+  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
+    <value>URL xem trước:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Thiết lập dịch vụ tải lên</value>
+  </data>
+  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
+    <value>Làm mới danh sách thư mục</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
+    <value>Xóa các trường --&gt;</value>
+  </data>
+  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
+    <value>Xóa các dịch vụ tải lên</value>
+  </data>
+  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
+    <value>Ví dụ...</value>
+  </data>
+  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
+    <value>Trợ giúp...</value>
+  </data>
+  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
+    <value>Hiển thị lần phản hồi cuối</value>
+  </data>
+  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
+    <value>Cập nhật</value>
+  </data>
+  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>Chọn...</value>
+  </data>
+  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
+    <value>Làm mới việc xác thực</value>
+  </data>
+  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
+    <value>Bước 2: Hoàn thành việc xác thực</value>
+  </data>
+  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
+    <value>Bước 1: Mở trang xác thực...</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>Trình...</value>
+  </data>
+  <data name="btnGe_ttLogin.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
+    <value>Làm mới danh sách thư mục</value>
+  </data>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+    <value>Mở trang chứa ảnh của tôi...</value>
+  </data>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>Mở trang cá nhân công khai...</value>
+  </data>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>Làm mới danh sách album</value>
+  </data>
+  <data name="btnMegaLogin.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
+    <value>Làm mới</value>
+  </data>
+  <data name="btnMegaRegister.Text" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="btnMinusAuth.Text" xml:space="preserve">
+    <value>Xác thực</value>
+  </data>
+  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
+    <value>Thêm thư mục</value>
+  </data>
+  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
+    <value>Xóa thư mục</value>
+  </data>
+  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
+    <value>Tải lại danh sách thư mục</value>
+  </data>
+  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
+    <value>Làm mới việc xác thực</value>
+  </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="btnPastebinRegister.Text" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>Thêm album</value>
+  </data>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>Bước 2: Hoàn thành việc xác thực</value>
+  </data>
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>Bước 1: Mở trang xác thực...</value>
+  </data>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>Tạo album</value>
+  </data>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>Xóa album</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>Làm mới danh sách album</value>
+  </data>
+  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
+    <value>Lấy danh sách thiêt bị</value>
+  </data>
+  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
+    <value>Đăng ký...</value>
+  </data>
+  <data name="btnTinyPicLogin.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
+    <value>Mở trang hình ảnh của tôi...</value>
+  </data>
+  <data name="btnTwitterAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+    <value>Cập nhật</value>
+  </data>
+  <data name="btnTwitterRemove.Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
+    <value>Sử dụng domain tùy chỉnh:</value>
+  </data>
+  <data name="cbBoxShare.Text" xml:space="preserve">
+    <value>Tạo liên kết để chia sẻ</value>
+  </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>Tạo liên kết để chia sẻ:</value>
+  </data>
+  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
+    <value>Nhớ địa chỉ người nhận lần trước</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
+    <value>Tải lên công khai?</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>Tải các tệp tới thư mục đã chọn</value>
+  </data>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>Có phải tải lên công khai</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>Tải ảnh lên các album đã chọn</value>
+  </data>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>Dùng liên kết GIFV thay vì GIF</value>
+  </data>
+  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
+    <value>Dùng liên kết dài có cả tên tệp</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>Tạo liên kết để chia sẻ</value>
+  </data>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>Tải lên công khai?</value>
+  </data>
+  <data name="gbMinusUpload.Text" xml:space="preserve">
+    <value>Tải lên ảnh tới</value>
+  </data>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>Tải lên ảnh tới</value>
+  </data>
+  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
+    <value>Đường dẫn tải lên:</value>
+  </data>
+  <data name="lblCopyPath.Text" xml:space="preserve">
+    <value>Đường dẫn tải lên:</value>
+  </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>ID của album để tải lên (Để trống = Không tải lên album)</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>URL tải lên:</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Dịch vụ:</value>
+  </data>
+  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên file:</value>
+  </data>
+  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên ảnh:</value>
+  </data>
+  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên văn bản:</value>
+  </data>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>Đường dẫn tải lên:</value>
+  </data>
+  <data name="lblMediaFirePath.Text" xml:space="preserve">
+    <value>Đường dẫn tải lên:</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên</value>
+  </data>
+  <data name="lblPushbulletDevices.Text" xml:space="preserve">
+    <value>Thiết bị:</value>
+  </data>
+  <data name="lblSendSpacePassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>Tệp:</value>
+  </data>
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
+    <value>Ảnh:</value>
+  </data>
+  <data name="lblSharedFolderText.Text" xml:space="preserve">
+    <value>Văn bản:</value>
+  </data>
+  <data name="lblTinyPicPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
+    <value>Tin nhắn tweet mặc định:</value>
+  </data>
+  <data name="lblTwitterDescription.Text" xml:space="preserve">
+    <value>Tên:</value>
+  </data>
+  <data name="lblYourlsAPIURL.Text" xml:space="preserve">
+    <value>API URL:</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>Lưu ý: Nếu bạn đã có Chữ ký (Signature) thì không cần tên tài khoản/mật khẩu nữa.</value>
+  </data>
+  <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>Chữ ký:</value>
+  </data>
+  <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>Tên tài khoản:</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>Bạn có thể tìm thấy API key và UID ở đấy</value>
+  </data>
+  <data name="lblOwnCloudPath.Text" xml:space="preserve">
+    <value>Đường dẫn:</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>Đường dẫn tới album cha</value>
+  </data>
+  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
+    <value>Trạng thái:</value>
+  </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>Trạng thái:</value>
+  </data>
+  <data name="lblCopyStatus.Text" xml:space="preserve">
+    <value>Trạng thái:</value>
+  </data>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
+    <value>Tên tài khoản:</value>
+  </data>
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>Tên tài khoản:</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>Tên tài khoản:</value>
+  </data>
+  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
+    <value>Tên tài khoản:</value>
+  </data>
+  <data name="lblMinusUsername.Text" xml:space="preserve">
+    <value>Tên tài khoản:</value>
+  </data>
+  <data name="lblEmailPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblGe_ttPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblMediaFirePassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblMegaPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblMinusPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblPastebinPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblMegaEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblMediaFireEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblEmailFrom.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblGe_ttEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
+    <value>Máy chủ SMTP:</value>
+  </data>
+  <data name="lblMinusURLType.Text" xml:space="preserve">
+    <value>Kiểu URL:</value>
+  </data>
+  <data name="lblCopyURLType.Text" xml:space="preserve">
+    <value>Kiểu URL:</value>
+  </data>
+  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>Tạo album mới</value>
+  </data>
+  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
+    <value>Tạo URL chia sẻ</value>
+  </data>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>Tên mặc định của album</value>
+  </data>
+  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
+    <value>Tin nhắn mặc định:</value>
+  </data>
+  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
+    <value>Chủ đề mặc định:</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+  <data name="lblGe_ttStatus.Text" xml:space="preserve">
+    <value>Đăng nhập được yêu cầu.</value>
+  </data>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>Đăng nhập được yêu cầu.</value>
+  </data>
+  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
+    <value>Trạng thái đăng nhập:</value>
+  </data>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>Ảnh:</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>Tệp:</value>
+  </data>
+  <data name="lblMegaFolder.Text" xml:space="preserve">
+    <value>Thư mục:</value>
+  </data>
+  <data name="lblFtpText.Text" xml:space="preserve">
+    <value>Văn bản:</value>
+  </data>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>Tên thư mục</value>
+  </data>
+  <data name="lblCoinURLUUID.Text" xml:space="preserve">
+    <value>UUID</value>
+  </data>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Bỏ qua chứng chỉ SSL không hợp lệ</value>
+  </data>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>Nếu bạn đang dùng thư mục "Public", url chia sẻ đã được tạo ra. Bạn không cần chọn "Tạo URL chia sẻ"</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>URL kết quả:</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>URL yêu cầu:</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>URL để xóa:</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>URL ảnh thu nhỏ:</value>
+  </data>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>Dịch vụ rút gọn URL:</value>
+  </data>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>URL trực tiếp</value>
+  </data>
+  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
+    <value>Liên kết trực tiếp (Thêm "&amp;&amp;download" vào URL)</value>
+  </data>
+  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
+    <value>Nhấn đúp vào biểu thức regex để sử dụng trong URL</value>
+  </data>
+  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
+    <value>Sử dụng URL trực tiếp nếu tồn tại</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>Để lấy API key, đăng nhập Lambda ở https://lambda.sx/ và nhấn vào biểu tượng cài đặt ở phần trên bên phải.</value>
+  </data>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>Kiểu ảnh thu nhỏ:</value>
+  </data>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>Kết quả kiểm tra:</value>
+  </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>Đánh dấu cú pháp</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
+    <value>Bỏ qua hộp tin nhắn tweet</value>
+  </data>
+  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
+    <value>Access key:</value>
+  </data>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>API hostname: (v.d. http://example.com/api.php, Để trống để dùng polr.me)</value>
+  </data>
+  <data name="gbMinusUserPass.Text" xml:space="preserve">
+    <value>Xác thực</value>
+  </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>Domain tùy chỉnh:</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>Domain:</value>
+  </data>
+  <data name="lblPastebinExpiration.Text" xml:space="preserve">
+    <value>Hết hiệu lực:</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>ID thư mục:</value>
+  </data>
+  <data name="lblOwnCloudHost.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>API key người dùng:</value>
+  </data>
+  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
+    <value>API key người dùng:</value>
+  </data>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>Tài khoản người dùng</value>
+  </data>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>User key:</value>
+  </data>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>Mã xác thực: (Lấy mã xác thực từ trang xác thực):</value>
+  </data>
+  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
+    <value>Cổng:</value>
+  </data>
+  <data name="chkMinusPublic.Text" xml:space="preserve">
+    <value>Công khai</value>
+  </data>
+  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
+    <value>Biểu thức regex từ phản hồi</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>Kiểu phản hồi:</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>Kiểu yêu cầu:</value>
+  </data>
+  <data name="lblBoxFolderID.Text" xml:space="preserve">
+    <value>Thư mục đã chọn:</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>Thư mục đa chọn:</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>Dùng liên kết trực tiếp</value>
+  </data>
+  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
+    <value>Secret key:</value>
+  </data>
+  <data name="lblMegaStatus.Text" xml:space="preserve">
+    <value>Đã thiết lập / Chưa thiết lập</value>
+  </data>
+  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
+    <value>Tên bucket:</value>
+  </data>
+  <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
+    <value>Dùng tùy chọn này nếu bạn có một bucket được cài đặt ở domain tùy chỉnh.
+Nếu trường văn bản để trống thì tên bucket sẽ được sử dụng cho URL.
+Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://bucket.example.com/...</value>
+  </data>
+  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
+    <value>Dùng vùng lưu trữ dự phòng đã được giảm</value>
+  </data>
+  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
+    <value>Chế độ:</value>
+  </data>
+  <data name="lblPastebinTitle.Text" xml:space="preserve">
+    <value>Tiêu đề:</value>
+  </data>
+  <data name="lblPastebinSyntax.Text" xml:space="preserve">
+    <value>Cú pháp:</value>
+  </data>
+  <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
+    <value>Tương thích ownCloud 8.1+</value>
+  </data>
+  <data name="lblJiraHost.Text" xml:space="preserve">
+    <value>Jira host: </value>
+  </data>
+  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
+    <value>Jira issue prefix:</value>
+  </data>
+  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
+    <value>Endpoint:</value>
+  </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>Tên album mới (phải từ 2 đến 50 kí tự, chấp nhận chữ, số, dấu gạch dưới (_), dấu gạch ngang (-) và khoảng trống)</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>Tên tệp:</value>
+  </data>
+  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
+    <value>Sử dụng bộ nhớ cấp thấp để lưu trữ dữ liệu.
+Với lựa chọn này, dữ liệu sẽ được lưu trữ với chi phí rẻ hơn, nhưng chỉ có độ bền 99,99% thay vì 99,999999999%.
+Điều này đồng nghĩa với việc nó có thể mất khỏi Amazon S3 ở một thời điểm nào đó.</value>
+  </data>
+</root>

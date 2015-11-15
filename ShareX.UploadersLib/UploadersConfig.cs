@@ -250,6 +250,25 @@ namespace ShareX.UploadersLib
 
         public LambdaSettings LambdaSettings = new LambdaSettings();
 
+        // Pomf
+
+        public PomfUploader PomfUploader = new PomfUploader("https://pomf.cat/upload.php", "http://a.pomf.cat");
+
+        // Seafile
+
+        public string SeafileAPIURL = "";
+        public string SeafileAuthToken = "";
+        public string SeafileRepoID = "";
+        public string SeafilePath = "/";
+        public bool SeafileIsLibraryEncrypted = false;
+        public string SeafileEncryptedLibraryPassword = "";
+        public bool SeafileCreateShareableURL = true;
+        public bool SeafileIgnoreInvalidCert = false;
+        public int SeafileShareDaysToExpire = 0;
+        public string SeafileSharePassword = "";
+        public string SeafileAccInfoEmail = "";
+        public string SeafileAccInfoUsage = "";
+
         #endregion File uploaders
 
         #region URL shorteners
@@ -417,6 +436,10 @@ namespace ShareX.UploadersLib
                     return OAuthInfo.CheckOAuth(JiraOAuthInfo);
                 case FileDestination.Lambda:
                     return LambdaSettings != null && !string.IsNullOrEmpty(LambdaSettings.UserAPIKey);
+                case FileDestination.Pomf:
+                    return PomfUploader != null && !string.IsNullOrEmpty(PomfUploader.UploadURL);
+                case FileDestination.Seafile:
+                    return !string.IsNullOrEmpty(SeafileAPIURL) && !string.IsNullOrEmpty(SeafileAuthToken) && !string.IsNullOrEmpty(SeafileRepoID);
                 case FileDestination.SharedFolder:
                     return LocalhostAccountList != null && LocalhostAccountList.IsValidIndex(LocalhostSelectedFiles);
                 case FileDestination.Email:

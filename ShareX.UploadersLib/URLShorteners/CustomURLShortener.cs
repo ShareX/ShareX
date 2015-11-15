@@ -50,7 +50,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
             Dictionary<string, string> args = customUploader.GetArguments(url);
 
-            result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, responseType: customUploader.ResponseType);
+            result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
 
             customUploader.ParseResponse(result, true);
 

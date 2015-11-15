@@ -120,12 +120,6 @@
   <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
     <value>Монитор {0} (X:{1} Y:{2} Ширина:{3} Высота:{4})</value>
   </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: Режим рисования ░ Пробел: Захват всего экрана</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: Режим области ░ Shift: Цвет пера ░ Колесо мыши: Размер пера ░ Пробел: Захват всего экрана</value>
-  </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Захват области с примечаниями</value>
   </data>

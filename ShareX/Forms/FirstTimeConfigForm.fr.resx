@@ -136,6 +136,6 @@
     <value>Vous pouvez trouver ces paramètres dans "Paramètres de l'application -&gt; Intégration".</value>
   </data>
   <data name="cbSteamInApp.Text" xml:space="preserve">
-    <value>Quand ShareX est ouvert, afficher "Dans une application" dans Steam</value>
+    <value>Quand ShareX est ouvert, afficher "Dans une application" sur Steam</value>
   </data>
 </root>

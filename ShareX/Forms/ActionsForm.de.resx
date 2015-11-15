@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -139,5 +140,8 @@
   </data>
   <data name="lblPath.Text" xml:space="preserve">
     <value>Dateipfad</value>
+  </data>
+  <data name="cbHiddenWindow.Text" xml:space="preserve">
+    <value>Verstecktes Fenster</value>
   </data>
 </root>

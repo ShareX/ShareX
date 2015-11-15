@@ -192,14 +192,15 @@ Kaliteyi arttırmak dosya boyutunu arttırır.</value>
     <value>1 en yüksek kalite / en büyük dosya boyutu ve 31 en küçük kalite / en küçük dosya boyutu.</value>
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>Genel:</value>
+    <value>Ön ayar:</value>
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Değişken bit hızı:</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>Kodlama hızı ile sıkıştırma oranı arasında seçim.
-Ekrandan kayıt yaparken hızlı seçmeniz tavsiye edilir.</value>
+    <value>Hızlı ön ayar = Hızlı kodlama fakat yüksek dosya boyutu.
+Yavaş ön ayar = Yavaş kodlama fakat düşük dosya boyutu.
+Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hızlı olmalıdır.</value>
   </data>
   <data name="gbFFmpegExe.Text" xml:space="preserve">
     <value>FFmpeg yolu</value>
@@ -224,5 +225,12 @@ Ekrandan kayıt yaparken hızlı seçmeniz tavsiye edilir.</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Kişisel dosya yolu kullan</value>
+  </data>
+  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
+    <value>Seçili olan ses çözücü bu video format ı tarafından desteklenmemektedir.</value>
+  </data>
+  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
+    <value>Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hızlı olmalıdır.
+Yoksa yeterince hızlı kaydetemez ve kare kayıpları meydana gelir.</value>
   </data>
 </root>

@@ -133,10 +133,10 @@
     <value>Both</value>
   </data>
   <data name="txtException.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 222</value>
+    <value>569, 320</value>
   </data>
   <data name="txtException.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtException.Name" xml:space="preserve">
     <value>txtException</value>
@@ -157,10 +157,10 @@
     <value>0, 3, 3, 3</value>
   </data>
   <data name="btnSendBugReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 24</value>
+    <value>150, 26</value>
   </data>
   <data name="btnSendBugReport.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
     <value>Send bug report</value>
@@ -181,16 +181,16 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 3</value>
+    <value>438, 3</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 24</value>
+    <value>120, 26</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>Exit application</value>
+    <value>Quit</value>
   </data>
   <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
     <value>btnClose</value>
@@ -202,13 +202,13 @@
     <value>flpMenu</value>
   </data>
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnOpenLogFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 3</value>
+    <value>156, 3</value>
   </data>
   <data name="btnOpenLogFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 24</value>
+    <value>150, 26</value>
   </data>
   <data name="btnOpenLogFile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -232,16 +232,16 @@
     <value>Bottom, Left, Right</value>
   </data>
   <data name="btnContinue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>382, 3</value>
+    <value>312, 3</value>
   </data>
   <data name="btnContinue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 24</value>
+    <value>120, 26</value>
   </data>
   <data name="btnContinue.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>&amp;OK</value>
+    <value>Continue</value>
   </data>
   <data name="&gt;&gt;btnContinue.Name" xml:space="preserve">
     <value>btnContinue</value>
@@ -253,13 +253,13 @@
     <value>flpMenu</value>
   </data>
   <data name="&gt;&gt;btnContinue.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="flpMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 278</value>
+    <value>7, 373</value>
   </data>
   <data name="flpMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 32</value>
+    <value>569, 32</value>
   </data>
   <data name="flpMenu.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -286,7 +286,7 @@
     <value>7, 8</value>
   </data>
   <data name="lblErrorMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 34</value>
+    <value>569, 34</value>
   </data>
   <data name="lblErrorMessage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -314,7 +314,7 @@ Error 2</value>
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>495, 313</value>
+    <value>584, 411</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

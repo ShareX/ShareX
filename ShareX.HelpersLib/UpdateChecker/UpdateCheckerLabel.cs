@@ -103,15 +103,7 @@ namespace ShareX.HelpersLib
         {
             if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
             {
-                using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
-                {
-                    updaterForm.ShowDialog();
-
-                    if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
-                    {
-                        Application.Exit();
-                    }
-                }
+                updateChecker.DownloadUpdate();
             }
         }
     }

@@ -133,7 +133,14 @@ namespace ShareX
                         URLHelpers.OpenURL(link);
                     }
                 };
-                tsmi.DropDownItems.Add(tsmiLink);
+                if (Program.Settings.ShowMostRecentLinkFirst)
+                {
+                    tsmi.DropDownItems.Insert(2, tsmiLink);
+                }
+                else
+                {
+                    tsmi.DropDownItems.Add(tsmiLink);
+                }
             }
         }
     }

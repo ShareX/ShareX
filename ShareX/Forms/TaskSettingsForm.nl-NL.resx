@@ -460,4 +460,7 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="tpVideoThumbnailer.Text" xml:space="preserve">
     <value>Videominiatuur</value>
   </data>
+  <data name="tpScrollingCapture.Text" xml:space="preserve">
+    <value>Scrollopname</value>
+  </data>
 </root>

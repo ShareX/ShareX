@@ -44,7 +44,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 throw new Exception("'Request type' must be 'POST' when using custom file uploader.");
             }
 
-            UploadResult result = UploadData(stream, customUploader.GetRequestURL(), fileName, customUploader.GetFileFormName(), customUploader.GetArguments(), responseType: customUploader.ResponseType);
+            UploadResult result = UploadData(stream, customUploader.GetRequestURL(), fileName, customUploader.GetFileFormName(), customUploader.GetArguments(),
+                customUploader.GetHeaders(), responseType: customUploader.ResponseType);
 
             if (result.IsSuccess)
             {

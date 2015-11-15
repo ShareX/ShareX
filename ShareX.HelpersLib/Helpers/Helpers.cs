@@ -103,6 +103,11 @@ namespace ShareX.HelpersLib
             return filePath;
         }
 
+        public static string AppendExtension(string filePath, string extension)
+        {
+            return filePath.TrimEnd('.') + '.' + extension.TrimStart('.');
+        }
+
         private static bool IsValidFile(string filePath, Type enumType)
         {
             string ext = GetFilenameExtension(filePath);

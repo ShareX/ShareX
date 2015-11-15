@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -205,7 +206,7 @@
     <value>Filtreler</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>Tarih &amp; saat</value>
+    <value>Tarih ve saat</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Dosya adı</value>

@@ -358,7 +358,7 @@
     <value>Pasta de capturas de tela...</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
-    <value>Log de depuração...</value>
+    <value>Registro de depuração...</value>
   </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Mostrar erros</value>
@@ -636,12 +636,6 @@
   <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
     <value>Cliente IRC...</value>
   </data>
-  <data name="btnHideSteam.Text" xml:space="preserve">
-    <value>Esconder</value>
-  </data>
-  <data name="btnOpenSteam.Text" xml:space="preserve">
-    <value>ShareX está disponível na Steam!</value>
-  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Mesclar imagens...</value>
   </data>
@@ -653,5 +647,26 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Captura rolante...</value>
+  </data>
+  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
+    <value>Testar encurtador de URL</value>
+  </data>
+  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
+    <value>Testar compartilhamento de URL</value>
+  </data>
+  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
+    <value>Testar envio de texto</value>
+  </data>
+  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
+    <value>Testar envio de imagem</value>
+  </data>
+  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
+    <value>Testar envio de arquivo</value>
+  </data>
+  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
+    <value>Log de depuração...</value>
+  </data>
+  <data name="tsmiTrayDebug.Text" xml:space="preserve">
+    <value>Depurar</value>
   </data>
 </root>
