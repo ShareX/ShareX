@@ -147,9 +147,6 @@
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
     <value>Clé API:</value>
   </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Arguments</value>
-  </data>
   <data name="gbMinusUserPass.Text" xml:space="preserve">
     <value>Authentification</value>
   </data>
@@ -223,7 +220,7 @@
     <value>Appareil:</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Lien direct (Ajoute "&amp;&amp;download" à l'URL)</value>
+    <value>Lien direct (Ajoute "&amp;download" à l'URL)</value>
   </data>
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
     <value>URL directe</value>
@@ -354,9 +351,6 @@
   <data name="lblMinusAuthStatus.Text" xml:space="preserve">
     <value>État de la connexion:</value>
   </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>Nom</value>
-  </data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Nom</value>
   </data>
@@ -425,9 +419,6 @@
   </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur:</value>
-  </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>Valeur</value>
   </data>
   <data name="cbImgurDirectLink.Text" xml:space="preserve">
     <value>Utiliser le lien direct</value>
@@ -605,12 +596,6 @@
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Titre</value>
-  </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>Actualiser</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>Actualiser</value>
   </data>
   <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
     <value>Actualiser</value>

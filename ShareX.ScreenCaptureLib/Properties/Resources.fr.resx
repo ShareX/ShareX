@@ -123,12 +123,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Parcourir pour ffmpeg.exe</value>
   </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: le mode Dessin ░ Espace: la capture plein écran</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: mode région░ Maj: couleur de la plume░ Molette de la souris: la taille de la plume░ Espace: capture plein écran</value>
-  </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Échec du téléchargement de FFmpeg.</value>
   </data>

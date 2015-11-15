@@ -822,4 +822,7 @@ Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Caractere hexadecimal aleatório. Repetir usando {n}</value>
   </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>Cabeçalho de localização</value>
+  </data>
 </root>

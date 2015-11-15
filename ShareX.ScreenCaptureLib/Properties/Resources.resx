@@ -112,147 +112,142 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crosshair.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
+    <value>[Ctrl + C] Copy position and size</value>
   </data>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg error</value>
+  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
+    <value>[Ctrl + Arrow keys] Move cursor position faster</value>
   </data>
-  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
-    <value>Region capture</value>
+  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
+    <value>Show</value>
   </data>
-  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>Rectangle capture light</value>
-  </data>
-  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>Rectangle capture annotate</value>
-  </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
-    <value>Bitrate: {0}k</value>
+  <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
+    <value>[Right click] [Delete] Cancel region selection</value>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Quality:</value>
   </data>
-  <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
-    <value>Browse for ffmpeg.exe</value>
+  <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
+    <value>RGB: {0}, {1}, {2}
+Hex: {3}
+X: {4} Y: {5}</value>
+    <comment>@Invariant</comment>
+  </data>
+  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
+    <value>Start capture</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
+    <value>[Space] Fullscreen capture</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
+    <value>[Hold Shift] Move selected region instead of resizing</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
+    <value>top left</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
+    <value>[Release left click] [Insert] Finish region selection</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
+    <value>bottom right</value>
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
+    <value>[Hold left click on selection] Move region</value>
+  </data>
+  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
+    <value>Rectangle capture annotate</value>
   </data>
   <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
     <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
 Width: {4} px / Height: {5} px
 Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>Successfully downloaded FFmpeg.</value>
+  <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
+    <value>[Numpad 1] Rectangle shape</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Download of FFmpeg failed.</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: Region mode ░ Shift: Pen color ░ Mouse wheel: Pen size ░ Space: Fullscreen capture</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: Drawing mode ░ Space: Fullscreen capture</value>
-  </data>
-  <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
-    <value>RGB: {0}, {1}, {2}
-Hex: {3}
-X: {4} Y: {5}</value>
-  <comment>@Invariant</comment></data>
-  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
-    <value>Rectangle capture transparent</value>
-  </data>
-  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
-    <value>Monitor {0} (X:{1} Y:{2} Width:{3} Height:{4})</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
-    <value>[F1] Hide tips</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
-    <value>[Right click] [Delete] Cancel region selection</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] Cancel capture</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
-    <value>[Hold left click] [Insert] Start region selection</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Right click] [Esc] Cancel capture</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
-    <value>[Double left click] [Enter] Capture regions</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
-    <value>[Arrow keys] Resize selected region from {0}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
-    <value>bottom right</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
-    <value>top left</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
-    <value>[Tab] Swap resize anchor to {0}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[Hold Shift] Move selected region instead of resizing</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[Hold Ctrl] Resize / Move faster</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
-    <value>[Hold left click on selection] Move region</value>
+  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
+    <value>[Numpad 4] Triangle shape</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Right click on selection] [Delete] Remove region</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
-    <value>[Arrow keys] Move cursor position</value>
+  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
+    <value>[C] {0} screen wide crosshair</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Ctrl + Arrow keys] Move cursor position faster</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
-    <value>[Hold Shift] Proportional resizing</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
-    <value>[Ctrl + C] Copy position and size</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
-    <value>[Ctrl + C] Copy info</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
-    <value>[Ctrl + C] Copy position</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
-    <value>[Space] Fullscreen capture</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
-    <value>[1, 2, 3 ... 0] Monitor capture</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] Active monitor capture</value>
+  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
+    <value>[Arrow keys] Resize selected region from {0}</value>
   </data>
   <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
     <value>[Q] Activate multi region mode</value>
   </data>
+  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
+    <value>[Tab] Swap resize anchor to {0}</value>
+  </data>
+  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>Region capture</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
+    <value>[F1] Hide tips</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
+    <value>[Numpad 5] Diamond shape</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
+    <value>[Numpad + or -] Change triangle angle</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crosshair.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
+    <value>[M] {0} magnifier</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
+    <value>[Hold left click] [Insert] Start region selection</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
+    <value>[Hold Ctrl] Resize / Move faster</value>
+  </data>
+  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
+    <value>Bitrate: {0}k</value>
+  </data>
+  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
+    <value>FFmpeg error</value>
+  </data>
+  <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
+    <value>Stop capture</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
+    <value>[Hold Alt] Snap selection to preset sizes</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
+    <value>[Right click] [Esc] Cancel capture</value>
+  </data>
   <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
     <value>[Q] Activate quick capture mode</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Mouse wheel] Change magnifier pixel count</value>
+  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
+    <value>[Numpad 2] Rounded rectangle shape</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl + Mouse wheel] Change magnifier pixel size</value>
+  <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
+    <value>Browse for ffmpeg.exe</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
+    <value>[Double left click] [Enter] Capture regions</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
+    <value>[Numpad 3] Ellipse shape</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
+    <value>[Ctrl + C] Copy info</value>
   </data>
   <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
     <value>[I] {0} position and size info</value>
@@ -260,46 +255,73 @@ X: {4} Y: {5}</value>
   <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
     <value>Hide</value>
   </data>
-  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
-    <value>Show</value>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>Rectangle capture transparent</value>
   </data>
-  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
-    <value>[M] {0} magnifier</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
-    <value>[C] {0} screen wide crosshair</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
-    <value>[Numpad 1] Rectangle shape</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
-    <value>[Numpad 2] Rounded rectangle shape</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
-    <value>[Numpad 3] Ellipse shape</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[Numpad 4] Triangle shape</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[Numpad 5] Diamond shape</value>
+  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
+    <value>[Ctrl + C] Copy position</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[Numpad + or -] Change rounded rectangle corner radius</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
-    <value>[Numpad + or -] Change triangle angle</value>
+  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
+    <value>Successfully downloaded FFmpeg.</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
-    <value>[Release left click] [Insert] Finish region selection</value>
+  <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
+    <value>[Esc] Cancel capture</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
-    <value>[Hold Alt] Snap selection to preset sizes</value>
+  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
+    <value>Monitor {0} (X:{1} Y:{2} Width:{3} Height:{4})</value>
   </data>
-  <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
-    <value>Stop capture</value>
+  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+    <value>Download of FFmpeg failed.</value>
   </data>
-  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
-    <value>Start capture</value>
+  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
+    <value>[Arrow keys] Move cursor position</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
+    <value>[Mouse wheel] Change magnifier pixel count</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
+    <value>[~] Active monitor capture</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
+    <value>[Hold Shift] Proportional resizing</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
+    <value>[Ctrl + Mouse wheel] Change magnifier pixel size</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>Rectangle capture light</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
+    <value>[1, 2, 3 ... 0] Monitor capture</value>
+  </data>
+  <data name="exclamation_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exclamation-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
+    <value>[Mouse wheel] Swap modes</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
+    <value>[1] Select capture mode</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
+    <value>[2] Select rectangle drawing mode</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
+    <value>[3] Select pen drawing mode</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
+    <value>[Shift] Change border color</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
+    <value>[Ctrl + Mouse wheel] Change border size</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
+    <value>[Shift] Change pen color</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
+    <value>[Ctrl + Mouse wheel] Change pen size</value>
   </data>
 </root>

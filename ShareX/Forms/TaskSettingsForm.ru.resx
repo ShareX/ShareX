@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Настройки задач</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Описание:</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Общие</value>
+  </data>
+  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
+    <value>Использовать общие настройки из настроек задач главного окна</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>Задача</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>Эффекты</value>
+  </data>
+  <data name="tpThumbnail.Text" xml:space="preserve">
+    <value>Миниатюра</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Захват</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>Захват области</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="tpScrollingCapture.Text" xml:space="preserve">
+    <value>Захват с прокруткой</value>
+  </data>
+  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
+    <value>Захват с примечанием</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="tpIRCClient.Text" xml:space="preserve">
+    <value>Клиент IRC</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Загрузка</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>Загрузка из буфера</value>
+  </data>
+  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
+    <value>Миниатюры из видео</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>Следить за папками</value>
+  </data>
+  <data name="tpIndexer.Text" xml:space="preserve">
+    <value>Индексатор</value>
+  </data>
+  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+    <value>Проиграть звук после выполнения захвата</value>
+  </data>
+  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+    <value>Проиграть звук после выполнения задачи</value>
+  </data>
+  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
+    <value>Показать окно «Задачи после захвата» по завершению захвата</value>
+  </data>
+  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
+    <value>Показать окно «После загрузки» по завершению задачи</value>
+  </data>
+  <data name="cbHistorySave.Text" xml:space="preserve">
+    <value>Сохранить информацию о задаче в истории</value>
+  </data>
+  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+    <value>После завершения задачи показать:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>Формат изображения:</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>Качество JPEG:</value>
+  </data>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 - 100</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>Качество GIF:</value>
+  </data>
+  <data name="lblImageFormat2.Text" xml:space="preserve">
+    <value>Формат изображения 2:</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>Если файл уже существует:</value>
+  </data>
+  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
+    <value>Лимит размера изображения для использования формата 2:</value>
+  </data>
+  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
+    <value>кБ  0 - 5000 (0 = без лимита)</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>Вы можете включать/выключать эффекты изображений в «Задачи после захвата -&gt; Добавить эффекты».</value>
+  </data>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Показать окно эффектов изображения после захвата</value>
+  </data>
+  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+    <value>Применять эффекты только при захвате области</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Настройка эффектов изображений</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>Ширина</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>Высота:</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>Высота</value>
+  </data>
+  <data name="lblThumbnailName.Text" xml:space="preserve">
+    <value>Имя миниатюры:</value>
+  </data>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>Создавать миниатюру только если размер изображения больше размера миниатюры</value>
+  </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>Показывать курсор на скриншотах</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>Показывать курсор на записи</value>
+  </data>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>Захватывать окно с прозрачностью</value>
+  </data>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>Захватывать окно с тенями (требуется прозрачность)</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>Смещение тени</value>
+  </data>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>Захватывать клиентскую область при захвате окна или активного окна</value>
+  </data>
+  <data name="cbScreenshotDelay.Text" xml:space="preserve">
+    <value>Задержка для скриншота</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>секунд</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>секунд</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>секунд</value>
+  </data>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>При захвате окна, которое пересекается с панелью задач прятать панель задач</value>
+  </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>Настройки записи экрана</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>Кадров в секунду при записи экрана:</value>
+  </data>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>Кадров в секунду в GIF:</value>
+  </data>
+  <data name="lblGIFEncoding.Text" xml:space="preserve">
+    <value>Кодировщик GIF:</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>Фиксированная длительность:</value>
+  </data>
+  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Начать запись через:</value>
+  </data>
+  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
+    <value>Запустить команду после записи:</value>
+  </data>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>Дублировать</value>
+  </data>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>Путь</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>Аргументы</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>Расширения</value>
+  </data>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>Добавить…</value>
+  </data>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>Следить за папками и загружать все файлы, которые в них появляются</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>Фильтр</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>Путь к папке</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Включить подпапки</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>Использовать другой часовой пояс:</value>
+  </data>
+  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+    <value>Шаблон имени для захвата или загрузки из буфера:</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>Шаблон имени для захвата активного окна:</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>Использовать шаблон имени также и для файловых загрузок (вместо настоящего имени файла)</value>
+  </data>
+  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Сбросить число автонумерации</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>Предпросмотр:</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>Предпросмотр:</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>Если в буфере находится путь к папке, проиндексировать папку и загрузить индекс</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>Если в буфере находится ссылка, сократить ее и отправить через сервис отправки ссылок</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>Если в буфере находится ссылка, использовать сокращение ссылок</value>
+  </data>
+  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Если в буфере находится ссылка на файл, скачать его, а потом загрузить</value>
+  </data>
+  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
+    <value>Использовать настройки «После захвата» по умолчанию</value>
+  </data>
+  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
+    <value>Использовать настройки «После загрузки» по умолчанию</value>
+  </data>
+  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
+    <value>Использовать настройки сервисов загрузок по умолчанию</value>
+  </data>
+  <data name="chkOverrideFTP.Text" xml:space="preserve">
+    <value>Переопределить аккаунт FTP по умолчанию:</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Переопределить сервис загрузок по умолчанию:</value>
+  </data>
+  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
+    <value>Использовать дополнительные настройки задач из настроек задач главного окна</value>
+  </data>
+  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
+    <value>Использовать настройки изображений из настроек задач главного окна</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
+    <value>Использовать настройки инструментов из настроек задач главного окна</value>
+  </data>
+  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
+    <value>Использовать настройки загрузки из настроек задач главного окна</value>
+  </data>
+  <data name="chkUseDefaultActions.Text" xml:space="preserve">
+    <value>Использовать действия из настроек задач главного окна</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
+    <value>Использовать настройки захвата из настроек задач главного окна</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>После захвата…</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>После загрузки…</value>
+  </data>
+  <data name="btnEncoderConfig.Text" xml:space="preserve">
+    <value>Профили…</value>
+  </data>
+  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
+    <value>Показать окно «Перед загрузкой» для выбора сервиса загрузок</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>Сервисы загрузок…</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки картинок</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки текстов</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки файлов</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>Сервисы коротких ссылок</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>Сервисы отправки ссылок</value>
+  </data>
+  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Задача...</value>
+  </data>
+  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
+    <value>Выберите монитор для определения области:</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>Предпросмотр</value>
+  </data>
+</root>

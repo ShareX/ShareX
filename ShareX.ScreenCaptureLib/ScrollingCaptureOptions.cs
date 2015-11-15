@@ -24,30 +24,54 @@
 #endregion License Information (GPL v3)
 
 using ShareX.ScreenCaptureLib;
+using System.ComponentModel;
 
 namespace ShareX
 {
     public class ScrollingCaptureOptions
     {
+        [DefaultValue(ScrollingCaptureScrollMethod.Automatic)]
         public ScrollingCaptureScrollMethod ScrollMethod { get; set; } = ScrollingCaptureScrollMethod.Automatic;
+
+        [DefaultValue(500)]
         public int StartDelay { get; set; } = 500;
+
+        [DefaultValue(500)]
         public int ScrollDelay { get; set; } = 500;
+
+        [DefaultValue(20)]
         public int MaximumScrollCount { get; set; } = 20;
+
+        [DefaultValue(true)]
         public bool StartSelectionAutomatically { get; set; } = true;
+
+        [DefaultValue(false)]
         public bool StartCaptureAutomatically { get; set; } = false;
-        public bool ScrollTopBeforeCapture { get; set; } = true;
+
+        [DefaultValue(ScrollingCaptureScrollTopMethod.All)]
+        public ScrollingCaptureScrollTopMethod ScrollTopMethodBeforeCapture { get; set; } = ScrollingCaptureScrollTopMethod.All;
+
+        [DefaultValue(true)]
         public bool AutoDetectScrollEnd { get; set; } = true;
+
+        [DefaultValue(true)]
         public bool RemoveDuplicates { get; set; } = true;
+
+        [DefaultValue(true)]
         public bool AfterCaptureAutomaticallyCombine { get; set; } = true;
+
+        [DefaultValue(false)]
         public bool AutoUpload { get; set; } = false;
+
+        [DefaultValue(false), Description("Automatically close scrolling capture window after completing the task.")]
         public bool AutoClose { get; set; } = false;
 
-        public int TrimLeftEdge { get; set; } = 0;
-        public int TrimTopEdge { get; set; } = 0;
-        public int TrimRightEdge { get; set; } = 0;
-        public int TrimBottomEdge { get; set; } = 0;
-        public int CombineAdjustmentVertical { get; set; } = 0;
-        public int CombineAdjustmentLastVertical { get; set; } = 0;
-        public int IgnoreLast { get; set; } = 0;
+        public int TrimLeftEdge = 0;
+        public int TrimTopEdge = 0;
+        public int TrimRightEdge = 0;
+        public int TrimBottomEdge = 0;
+        public int CombineAdjustmentVertical = 0;
+        public int CombineAdjustmentLastVertical = 0;
+        public int IgnoreLast = 0;
     }
 }

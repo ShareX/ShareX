@@ -456,7 +456,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Adresten yükle</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Bölge yakala (Objeler)</value>
+    <value>Bölge yakala (Pencereler ve kontroller)</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Özel dosya yükleyici</value>
@@ -821,5 +821,8 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
     <value>Araçlar</value>
+  </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>Konum başlığı</value>
   </data>
 </root>

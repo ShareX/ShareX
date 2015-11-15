@@ -40,15 +40,17 @@
             this.tbAACBitrate = new System.Windows.Forms.TrackBar();
             this.cbGIFStatsMode = new System.Windows.Forms.ComboBox();
             this.cbGIFDither = new System.Windows.Forms.ComboBox();
+            this.pbAudioCodecWarning = new System.Windows.Forms.PictureBox();
+            this.pbx264PresetWarning = new System.Windows.Forms.PictureBox();
             this.lblCodec = new System.Windows.Forms.Label();
             this.cboVideoCodec = new System.Windows.Forms.ComboBox();
             this.lblx264Preset = new System.Windows.Forms.Label();
             this.lblXvidQscale = new System.Windows.Forms.Label();
             this.gbFFmpegExe = new System.Windows.Forms.GroupBox();
-            this.cbOverrideFFmpegPath = new System.Windows.Forms.CheckBox();
             this.btnDownload = new System.Windows.Forms.Button();
             this.btnFFmpegBrowse = new System.Windows.Forms.Button();
             this.txtFFmpegPath = new System.Windows.Forms.TextBox();
+            this.cbOverrideFFmpegPath = new System.Windows.Forms.CheckBox();
             this.gbCommandLinePreview = new System.Windows.Forms.GroupBox();
             this.cbCustomCommands = new System.Windows.Forms.CheckBox();
             this.txtCommandLinePreview = new System.Windows.Forms.TextBox();
@@ -93,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAudioCodecWarning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).BeginInit();
             this.gbFFmpegExe.SuspendLayout();
             this.gbCommandLinePreview.SuspendLayout();
             this.gbCommandLineArgs.SuspendLayout();
@@ -228,6 +232,22 @@
             this.ttHelpTip.SetToolTip(this.cbGIFDither, resources.GetString("cbGIFDither.ToolTip"));
             this.cbGIFDither.SelectedIndexChanged += new System.EventHandler(this.cbGIFDither_SelectedIndexChanged);
             // 
+            // pbAudioCodecWarning
+            // 
+            this.pbAudioCodecWarning.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.exclamation_button;
+            resources.ApplyResources(this.pbAudioCodecWarning, "pbAudioCodecWarning");
+            this.pbAudioCodecWarning.Name = "pbAudioCodecWarning";
+            this.pbAudioCodecWarning.TabStop = false;
+            this.ttHelpTip.SetToolTip(this.pbAudioCodecWarning, resources.GetString("pbAudioCodecWarning.ToolTip"));
+            // 
+            // pbx264PresetWarning
+            // 
+            this.pbx264PresetWarning.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.exclamation_button;
+            resources.ApplyResources(this.pbx264PresetWarning, "pbx264PresetWarning");
+            this.pbx264PresetWarning.Name = "pbx264PresetWarning";
+            this.pbx264PresetWarning.TabStop = false;
+            this.ttHelpTip.SetToolTip(this.pbx264PresetWarning, resources.GetString("pbx264PresetWarning.ToolTip"));
+            // 
             // lblCodec
             // 
             resources.ApplyResources(this.lblCodec, "lblCodec");
@@ -260,13 +280,6 @@
             this.gbFFmpegExe.Name = "gbFFmpegExe";
             this.gbFFmpegExe.TabStop = false;
             // 
-            // cbOverrideFFmpegPath
-            // 
-            resources.ApplyResources(this.cbOverrideFFmpegPath, "cbOverrideFFmpegPath");
-            this.cbOverrideFFmpegPath.Name = "cbOverrideFFmpegPath";
-            this.cbOverrideFFmpegPath.UseVisualStyleBackColor = true;
-            this.cbOverrideFFmpegPath.CheckedChanged += new System.EventHandler(this.cbOverrideFFmpegPath_CheckedChanged);
-            // 
             // btnDownload
             // 
             resources.ApplyResources(this.btnDownload, "btnDownload");
@@ -286,6 +299,13 @@
             resources.ApplyResources(this.txtFFmpegPath, "txtFFmpegPath");
             this.txtFFmpegPath.Name = "txtFFmpegPath";
             this.txtFFmpegPath.TextChanged += new System.EventHandler(this.txtFFmpegPath_TextChanged);
+            // 
+            // cbOverrideFFmpegPath
+            // 
+            resources.ApplyResources(this.cbOverrideFFmpegPath, "cbOverrideFFmpegPath");
+            this.cbOverrideFFmpegPath.Name = "cbOverrideFFmpegPath";
+            this.cbOverrideFFmpegPath.UseVisualStyleBackColor = true;
+            this.cbOverrideFFmpegPath.CheckedChanged += new System.EventHandler(this.cbOverrideFFmpegPath_CheckedChanged);
             // 
             // gbCommandLinePreview
             // 
@@ -344,6 +364,7 @@
             // 
             // tpX264
             // 
+            this.tpX264.Controls.Add(this.pbx264PresetWarning);
             this.tpX264.Controls.Add(this.nudx264CRF);
             this.tpX264.Controls.Add(this.lblx264CRF);
             this.tpX264.Controls.Add(this.cbx264Preset);
@@ -568,6 +589,7 @@
             // 
             // gbCodecs
             // 
+            this.gbCodecs.Controls.Add(this.pbAudioCodecWarning);
             this.gbCodecs.Controls.Add(this.cboAudioCodec);
             this.gbCodecs.Controls.Add(this.lblAudioCodec);
             this.gbCodecs.Controls.Add(this.cboVideoCodec);
@@ -618,6 +640,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAudioCodecWarning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).EndInit();
             this.gbFFmpegExe.ResumeLayout(false);
             this.gbFFmpegExe.PerformLayout();
             this.gbCommandLinePreview.ResumeLayout(false);
@@ -710,5 +734,7 @@
         private System.Windows.Forms.Label lblHelperDevices;
         private System.Windows.Forms.Button btnInstallHelperDevices;
         private System.Windows.Forms.CheckBox cbOverrideFFmpegPath;
+        private System.Windows.Forms.PictureBox pbAudioCodecWarning;
+        private System.Windows.Forms.PictureBox pbx264PresetWarning;
     }
 }

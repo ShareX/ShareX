@@ -302,7 +302,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * 10;
+            borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -10;
         }
 
         protected virtual void Draw(Graphics g)

@@ -1519,7 +1519,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture region (Objects).
+        ///   Looks up a localized string similar to Capture region (Windows and controls).
         /// </summary>
         internal static string HotkeyType_WindowRectangle {
             get {
@@ -2051,6 +2051,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Location header.
+        /// </summary>
+        internal static string ResponseType_LocationHeader {
+            get {
+                return ResourceManager.GetString("ResponseType_LocationHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Redirection URL.
         /// </summary>
         internal static string ResponseType_RedirectionURL {
@@ -2214,6 +2223,16 @@ namespace ShareX.HelpersLib.Properties {
         internal static string UpdateMessageBox_UpdateMessageBox_ {
             get {
                 return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A newer version of {0} is available.
+        ///Would you like to download it?.
+        /// </summary>
+        internal static string UpdateMessageBox_UpdateMessageBox_Portable {
+            get {
+                return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_Portable", resourceCulture);
             }
         }
         

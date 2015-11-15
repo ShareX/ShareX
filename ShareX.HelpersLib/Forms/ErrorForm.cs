@@ -51,8 +51,8 @@ namespace ShareX.HelpersLib
             txtException.Text = errorMessage;
             txtException.SelectionStart = txtException.TextLength;
 
-            btnOpenLogFile.Visible = !string.IsNullOrEmpty(LogPath) && File.Exists(LogPath);
             btnSendBugReport.Visible = !string.IsNullOrEmpty(BugReportPath);
+            btnOpenLogFile.Visible = !string.IsNullOrEmpty(LogPath) && File.Exists(LogPath);
         }
 
         private void ErrorForm_Shown(object sender, EventArgs e)
@@ -60,14 +60,14 @@ namespace ShareX.HelpersLib
             this.ShowActivate();
         }
 
-        private void btnOpenLogFile_Click(object sender, EventArgs e)
-        {
-            Helpers.OpenFile(LogPath);
-        }
-
         private void btnSendBugReport_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(BugReportPath);
+        }
+
+        private void btnOpenLogFile_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenFile(LogPath);
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
@@ -80,11 +80,6 @@ namespace ShareX.HelpersLib
         {
             DebugHelper.WriteLine("ShareX closing. Reason: Unhandled exception");
             Application.Exit();
-        }
-
-        public static void ThrowExceptionForTest()
-        {
-            throw new Exception("Error line one!\r\nError line two!");
         }
     }
 }

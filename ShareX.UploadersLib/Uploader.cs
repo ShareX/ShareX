@@ -231,7 +231,7 @@ namespace ShareX.UploadersLib
         }
 
         protected string SendRequestURLEncoded(string url, Dictionary<string, string> arguments, NameValueCollection headers = null, CookieCollection cookies = null,
-            HttpMethod method = HttpMethod.POST)
+            HttpMethod method = HttpMethod.POST, ResponseType responseType = ResponseType.Text)
         {
             string query = CreateQuery(arguments);
             byte[] data = Encoding.UTF8.GetBytes(query);
@@ -240,16 +240,16 @@ namespace ShareX.UploadersLib
             {
                 stream.Write(data, 0, data.Length);
 
-                return SendRequestStream(url, stream, "application/x-www-form-urlencoded", headers, cookies, method);
+                return SendRequestStream(url, stream, "application/x-www-form-urlencoded", headers, cookies, method, responseType);
             }
         }
 
         protected string SendRequestStream(string url, Stream stream, string contentType, NameValueCollection headers = null,
-            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
+            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST, ResponseType responseType = ResponseType.Text)
         {
             using (HttpWebResponse response = GetResponse(url, stream, null, contentType, headers, cookies, method))
             {
-                return ResponseToString(response);
+                return ResponseToString(response, responseType);
             }
         }
 
@@ -412,6 +412,13 @@ namespace ShareX.UploadersLib
         private HttpWebRequest PrepareWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+
+            if (headers != null && headers["Accept"] != null)
+            {
+                request.Accept = headers["Accept"];
+                headers.Remove("Accept");
+            }
+
             request.Method = method.ToString();
             if (headers != null) request.Headers.Add(headers);
             request.CookieContainer = new CookieContainer();
@@ -548,6 +555,8 @@ namespace ShareX.UploadersLib
                                 sbHeaders.AppendFormat("{0}: \"{1}\"{2}", key, value, Environment.NewLine);
                             }
                             return sbHeaders.ToString().Trim();
+                        case ResponseType.LocationHeader:
+                            return response.Headers["Location"];
                     }
                 }
             }

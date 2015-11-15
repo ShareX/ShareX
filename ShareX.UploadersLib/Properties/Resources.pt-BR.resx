@@ -256,4 +256,7 @@ Pastas criadas:</value>
   <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
     <value>Falha ao atualizar lista de pastas Hubic</value>
   </data>
+  <data name="Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__" xml:space="preserve">
+    <value>Por favor selecione um dos uploaders Pomf em "Configurações de destino -&gt; Pomf".</value>
+  </data>
 </root>

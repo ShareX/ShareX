@@ -311,13 +311,13 @@ namespace ShareX
             }
         }
 
-        public static void RunImageTask(Image img, TaskSettings taskSettings)
+        public static void RunImageTask(Image img, TaskSettings taskSettings, string customFileName = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             if (img != null && taskSettings != null)
             {
-                WorkerTask task = WorkerTask.CreateImageUploaderTask(img, taskSettings);
+                WorkerTask task = WorkerTask.CreateImageUploaderTask(img, taskSettings, customFileName);
                 TaskManager.Start(task);
             }
         }

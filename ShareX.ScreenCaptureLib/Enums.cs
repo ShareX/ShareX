@@ -147,6 +147,13 @@ namespace ShareX.ScreenCaptureLib
         Diamond
     }
 
+    public enum RegionAnnotateMode
+    {
+        Capture,
+        Rectangle,
+        Pen
+    }
+
     public enum ScrollingCaptureScrollMethod
     {
         [Description("Automatically try all methods until one works")]
@@ -157,5 +164,17 @@ namespace ShareX.ScreenCaptureLib
         KeyPressPageDown,
         [Description("Simulate mouse wheel scrolling")]
         MouseWheel
+    }
+
+    public enum ScrollingCaptureScrollTopMethod
+    {
+        [Description("First simulate pressing \"Home\" key then send scroll top message")]
+        All,
+        [Description("Send scroll top message")]
+        SendMessageTop,
+        [Description("Simulate pressing \"Home\" key")]
+        KeyPressHome,
+        [Description("Disable scrolling to top")]
+        None
     }
 }

@@ -53,14 +53,16 @@ namespace ShareX
         Korean,
         [Description("Português-Brasil (Portuguese-Brazil)")]
         PortugueseBrazil,
-        /*[Description("Русский (Russian)")]
-        Russian,*/
+        [Description("Русский (Russian)")]
+        Russian,
         [Description("简体中文 (Simplified Chinese)")]
         SimplifiedChinese,
         [Description("Español (Spanish)")]
         Spanish,
         [Description("Türkçe (Turkish)")]
-        Turkish
+        Turkish,
+        [Description("Tiếng Việt (Vietnamese)")]
+        Vietnamese
     }
 
     public enum TaskJob
@@ -110,13 +112,6 @@ namespace ShareX
         CopyURLToClipboard = 1 << 2,
         OpenURL = 1 << 3,
         ShowQRCode = 1 << 4
-    }
-
-    public enum AfterCaptureFormResult
-    {
-        Cancel,
-        Continue,
-        Copy
     }
 
     public enum CaptureType

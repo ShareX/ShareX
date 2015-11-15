@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System.ComponentModel;
 
 namespace ShareX.UploadersLib
@@ -116,22 +117,20 @@ namespace ShareX.UploadersLib
         Localhostr,
         [Description("JIRA")]
         Jira,
-        //[Description("hubiC")]
-        //Hubic,
         [Description("Lambda")]
         Lambda,
         [Description("Imgrush")]
         Imgrush,
         [Description("VideoBin")]
         VideoBin,
-        [Description("MaxFile")]
-        MaxFile,
-        [Description("Pomf.cat")]
-        PomfCat,
+        [Description("Pomf")]
+        Pomf,
         [Description("Dropfile")]
         Dropfile,
         [Description("Up1")]
         Up1,
+        [Description("Seafile")]
+        Seafile,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
@@ -212,7 +211,8 @@ namespace ShareX.UploadersLib
     {
         Text,
         RedirectionURL,
-        Headers
+        Headers,
+        LocationHeader
     }
 
     public enum FTPProtocol

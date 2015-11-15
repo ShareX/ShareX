@@ -129,9 +129,6 @@
   <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>拆除</value>
   </data>
@@ -152,9 +149,6 @@
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>添加</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>更新</value>
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>删除</value>
@@ -326,19 +320,13 @@
     <value>创建共享URL</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>直接链接（又添"&amp;&amp;download"到URL）</value>
+    <value>直接链接（又添"&amp;download"到URL）</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>忽略无效的SSL证书</value>
   </data>
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
     <value>是公众上传?</value>
-  </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>名字</value>
-  </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>值</value>
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>文件夹名称</value>
@@ -369,9 +357,6 @@
   </data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>名字</value>
-  </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>参数</value>
   </data>
   <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
     <value>从响应正则表达式</value>

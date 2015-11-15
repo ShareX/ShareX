@@ -129,9 +129,6 @@
   <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
     <value>Toevoegen</value>
   </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>Bijwerken</value>
-  </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Verwijder</value>
   </data>
@@ -152,9 +149,6 @@
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Toevoegen</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>Bijwerken</value>
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Verwijder</value>
@@ -326,19 +320,13 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
     <value>Creëer een deelbare link</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Directe link (Voegt &amp;&amp;download toe aan de URL)</value>
+    <value>Directe link (Voegt &amp;download toe aan de URL)</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Negeer ongeldig SSL certificaat</value>
   </data>
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
     <value>Is de upload publiek?</value>
-  </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>Naam</value>
-  </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>Waarde</value>
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Mapnaam</value>
@@ -369,9 +357,6 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   </data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Naam</value>
-  </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Argumenten</value>
   </data>
   <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
     <value>Regex van antwoord</value>

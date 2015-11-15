@@ -129,9 +129,6 @@
   <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Entfernen</value>
   </data>
@@ -152,9 +149,6 @@
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>Update</value>
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Entfernen</value>
@@ -323,19 +317,13 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Erstelle teilbare URL</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Direkter Link (Fügt "&amp;&amp;download" zur URL hinzu)</value>
+    <value>Direkter Link (Fügt "&amp;download" zur URL hinzu)</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Ignoriere ungültiges SSL Zertifikat</value>
   </data>
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
     <value>Ist es ein öffentlicher Upload?</value>
-  </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>Wert:</value>
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Ordnername</value>
@@ -367,9 +355,6 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Parameter</value>
-  </data>
   <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
     <value>Regex Antwort</value>
   </data>
@@ -395,7 +380,7 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Jira Server</value>
   </data>
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>API key</value>
+    <value>API Schlüssel:</value>
   </data>
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
     <value>Zugriffstaste:</value>
@@ -668,7 +653,7 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Email:</value>
   </data>
   <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>Benutzer key:</value>
+    <value>Benutzer Schlüssel:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
     <value>Anmerkung: Wenn du eine Signatur hast brauchst du keinen Benutzernamen/Passwort</value>
@@ -723,5 +708,83 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Um einen API Schlüssel zu bekommen, melde dich bitte bei https://lambda.sx/ an und clicke dann auf das Einstellungsrad oben rechts.</value>
+  </data>
+  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
+    <value>Leere Hochlader</value>
+  </data>
+  <data name="btnTwitterAdd.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="btnTwitterRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>Benutze GIFV Link statt GIF</value>
+  </data>
+  <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
+    <value>ownCloud 8.1+ Unterstützung</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
+    <value>Überspringe Tweet Nachrichtenbox</value>
+  </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>API UID:</value>
+  </data>
+  <data name="lblCoinURLUUID.Text" xml:space="preserve">
+    <value>UUID:</value>
+  </data>
+  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
+    <value>Doppelklick auf regulären Ausdruck zum Verwenden im URL</value>
+  </data>
+  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
+    <value>API Schlüssel:</value>
+  </data>
+  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>API Schlüssel:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>Ergebnis URL:</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Hochlader:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>Hochlade URL:</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>API Hostname: (z.B. http://beispiel.de/api.php, Leer lassen um polr.me zu benutzen)</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
+    <value>Standard Tweet Nachricht:</value>
+  </data>
+  <data name="lblTwitterDescription.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>API Schlüssel:</value>
+  </data>
+  <data name="lblYourlsAPIURL.Text" xml:space="preserve">
+    <value>API URL:</value>
+  </data>
+  <data name="tpCopy.Text" xml:space="preserve">
+    <value>Kopieren</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -367,7 +367,7 @@ Möchtest du es automatisch herunterladen?</value>
 Klicke auf 'Nein', um das derzeitige Hochladen abzubrechen und das automatische Hochladen von Screenshots zu deaktivieren.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
-    <value>Lade hoch</value>
+    <value>Hochladen</value>
   </data>
   <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
     <value>Fertig</value>
@@ -410,5 +410,68 @@ Klicke auf 'Nein', um das derzeitige Hochladen abzubrechen und das automatische 
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>In Zwischenablage kopiert: {0}</value>
+  </data>
+  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
+    <value>Angepasst</value>
+  </data>
+  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
+    <value>Chrome Unterstützung aktiviert.</value>
+  </data>
+  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>Chrome Unterstützung deaktiviert.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>Änderungen</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>Um die Einstellungen zu Übernehmen muss ShareX über Steam neu geöffnet werden.</value>
+  </data>
+  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
+    <value>Mit einem Linksklick auf das ShareX Tray Symbol kannst du eine Regionsaufnahme starten.</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
+    <value>Hotkeys deaktivieren</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
+    <value>Hotkeys aktivieren</value>
+  </data>
+  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
+    <value>Linksklick um den URL zu kopieren. Rechtsklick um den URL zu öffnen.</value>
+  </data>
+  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>FTP-Programm unterstützt nur FTP oder FTPS.</value>
+  </data>
+  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>Kann keinen gültiges FTP Konto finden.</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
+    <value>Bildeditor - Wie soll das Bild geladen werden?</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>Hotkeys deaktiviert.</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>Hotkeys aktiviert.</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>Kann kein gültiges Twitter Konto finden.</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
+    <value>Deine Zwischenablage enthält ein Bild, willst du es im Bildeditor öffnen?
+
+Drücke Ja um das Bild aus der Zwischenablage zu öffnen. Drücke Nein um die Dateiauswahl zu öffnen.</value>
+  </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>Herunterladen</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
+    <value>Du versuchst eine große Datei hochzuladen.
+Sicher weiter?</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Aufnehmen</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Stopp</value>
   </data>
 </root>

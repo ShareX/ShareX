@@ -205,7 +205,7 @@
     <value>15, 219</value>
   </data>
   <data name="rtbCredits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>513, 317</value>
+    <value>560, 333</value>
   </data>
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -232,7 +232,7 @@
     <value>16, 66</value>
   </data>
   <data name="rtbShareXInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 62</value>
+    <value>368, 62</value>
   </data>
   <data name="rtbShareXInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -256,7 +256,7 @@
     <value>Top, Right</value>
   </data>
   <data name="cLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, -8</value>
+    <value>391, -8</value>
   </data>
   <data name="cLogo.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
@@ -481,10 +481,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>537, 545</value>
+    <value>584, 561</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>490, 550</value>
+    <value>600, 600</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

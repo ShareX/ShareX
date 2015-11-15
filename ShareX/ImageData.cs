@@ -24,8 +24,10 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -46,6 +48,7 @@ namespace ShareX
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
+                MessageBox.Show(string.Format(Resources.ImageData_Write_Error + "\r\n\r\n" + e, filePath), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return string.Empty;

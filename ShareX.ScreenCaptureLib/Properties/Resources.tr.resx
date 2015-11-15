@@ -141,12 +141,6 @@
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Dikdörtgen yakalama dipnot</value>
   </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: Çizme modu ░ Boşluk: Tam ekran yakalama</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: Bölge modu ░ Shift: Kalem rengi ░ Fare tekerleği: Kalem boyutu ░ Boşluk: Tam ekran yakalama</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Bit hızı: {0}k</value>
   </data>

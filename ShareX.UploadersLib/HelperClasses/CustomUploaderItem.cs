@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -38,6 +39,7 @@ namespace ShareX.UploadersLib
         public string RequestURL { get; set; }
         public string FileFormName { get; set; }
         public Dictionary<string, string> Arguments { get; set; }
+        public Dictionary<string, string> Headers { get; set; }
         public ResponseType ResponseType { get; set; }
         public List<string> RegexList { get; set; }
         public string URL { get; set; }
@@ -49,6 +51,7 @@ namespace ShareX.UploadersLib
         public CustomUploaderItem()
         {
             Arguments = new Dictionary<string, string>();
+            Headers = new Dictionary<string, string>();
             RegexList = new List<string>();
         }
 
@@ -117,6 +120,23 @@ namespace ShareX.UploadersLib
             }
 
             return arguments;
+        }
+
+        public NameValueCollection GetHeaders()
+        {
+            if (Headers != null && Headers.Count > 0)
+            {
+                NameValueCollection collection = new NameValueCollection();
+
+                foreach (KeyValuePair<string, string> header in Headers)
+                {
+                    collection.Add(header.Key, header.Value);
+                }
+
+                return collection;
+            }
+
+            return null;
         }
 
         public void ParseResponse(UploadResult result, bool isShortenedURL = false)
