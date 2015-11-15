@@ -124,7 +124,7 @@
     <value>Avancé</value>
   </data>
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 désactivé)</value>
+    <value>0 - 25 (0 désactive)</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Parcourir...</value>
@@ -136,7 +136,7 @@
     <value>Taille du buffer:</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formats du presse-papier</value>
+    <value>Formats du presse-papier - ceux-ci apparaissent sous Copier dans le menu contextuel dans la fenêtre principale</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Description</value>
@@ -175,7 +175,7 @@
     <value>Nombre de tentatives si la mise en ligne échoue:</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Démarrer iconisé dans la barre</value>
+    <value>Démarrer iconisé dans la barre des tâches</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Ouvrir...</value>
@@ -199,7 +199,7 @@
     <value>Proxy</value>
   </data>
   <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Configuration du proxy</value>
+    <value>Configuration du proxy:</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Se souvenir de la position de la fenêtre principale</value>
@@ -247,7 +247,7 @@
     <value>Afficher ShareX dans le menu "Envoyer vers"</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Afficher l'icône dans la barre des tâches</value>
+    <value>Afficher l'icône dans la zone de notification</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Limite de mises en ligne simultanées:</value>
@@ -259,19 +259,19 @@
     <value>Mise en ligne</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Utilisez un dossier de captures d'écran personnalisé:</value>
+    <value>Utiliser un dossier personnalisé pour les captures d'écran:</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur:</value>
   </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Utiliser le logiciel de mise en ligne secondaire de préférence lors de la nouvelle tentative</value>
+    <value>Utiliser de préférence le logiciel de mise en ligne secondaire lors de la nouvelle tentative</value>
   </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Support de l'extension pour Chrome...</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>Quand ShareX est ouvert, afficher "Dans une application" dans Steam</value>
+    <value>Quand ShareX est ouvert, afficher "Dans une application" sur Steam</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Intégration</value>

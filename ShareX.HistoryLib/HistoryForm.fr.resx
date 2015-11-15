@@ -130,7 +130,7 @@
     <value>Culture actuelle</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date &amp; heure</value>
+    <value>Date et heure</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtre de date:</value>

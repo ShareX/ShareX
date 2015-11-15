@@ -171,7 +171,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[F1] Masquer les conseils</value>
   </data>
   <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] Annuler la capture</value>
+    <value>[Echap] Annuler la capture</value>
   </data>
   <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
     <value>Afficher</value>
@@ -222,7 +222,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[Pavé numérique + ou -] Modifier le rayon du coin du rectangle arrondi</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
-    <value>[Clic droit] Annuler la sélection de la région</value>
+    <value>[Clic droit] [Suppr] Annuler la sélection de la région</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Clic droit sur la sélection] [Suppr] Supprimer la région</value>
@@ -240,7 +240,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[Molette de la souris] Changer le nombre de pixels de la loupe</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
-    <value>[Maintenir clic gauche] Débuter la sélection de la région</value>
+    <value>[Maintenir clic gauche] [Inser] Débuter la sélection de la région</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
     <value>[Ctrl + Molette de la souris] Changer la taille de la loupe</value>
@@ -286,5 +286,29 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Démarrer la capture</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
+    <value>[Molette de la souris] Changer de mode</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
+    <value>[1] Sélectionnez le mode capture</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
+    <value>[2] Sélectionner le mode dessin rectangulaire</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
+    <value>[3] Sélectionner le mode dessin avec stylo</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
+    <value>[Maj] Changer la couleur des bordures</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
+    <value>[Maj] Changer la couleur du stylo</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
+    <value>[Ctrl + Molette de la souris] Changer la taille des bordures</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
+    <value>[Ctrl + Molette de la souris] Changer la taille du stylo</value>
   </data>
 </root>

@@ -205,12 +205,30 @@
     <value>Deviner automatiquement les décalages et combiner après la capture</value>
   </data>
   <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
-    <value>Deviner les ajustement des combinaisons &amp; combiner</value>
+    <value>Deviner les ajustement des combinaisons et combiner</value>
   </data>
   <data name="btnGuessEdges.Text" xml:space="preserve">
     <value>Deviner les valeurs des contours à ajuster</value>
   </data>
   <data name="lblCombineLastVertical.Text" xml:space="preserve">
     <value>Dernière image:</value>
+  </data>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>Mettre en ligne/enregistrer en fonction des paramètres 'Après la capture'</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>Avant la capture</value>
+  </data>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>Pendant la capture</value>
+  </data>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>Après la capture</value>
+  </data>
+  <data name="cbAutoClose.Text" xml:space="preserve">
+    <value>Fermer cette fenêtre après le traitement</value>
+  </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>Méthode de défilement vers le haut avant la capture:</value>
   </data>
 </root>
