@@ -767,4 +767,119 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
     <value>Değer</value>
   </data>
+  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Hepsini test et</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
+    <value>Doğrula</value>
+  </data>
+  <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
+    <value>Doğrula</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
+    <value>Al</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
+    <value>Denetle</value>
+  </data>
+  <data name="btnSeafilePathValidate.Text" xml:space="preserve">
+    <value>Denetle</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
+    <value>Paylaşılabilir adres yarat</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Geçersiz SSL sertifika hatasını yoksay</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>Değer</value>
+  </data>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Şifreli</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Boyut</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
+    <value>Argümanlar</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
+    <value>Başlıklar</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>Link adresi:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>Sonuç adresi:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>Yükleme adresi:</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Yükleyiciler:</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Paylaşma şifresi:</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Son kullanma (gün):</value>
+  </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Paylaşma ayarları</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Kütüphane şifresi:</value>
+  </data>
+  <data name="lblSeafilePath.Text" xml:space="preserve">
+    <value>Yol:</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
+    <value>Kütüphane seç:</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
+    <value>Kullanım:</value>
+  </data>
+  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
+    <value>Hesap bilgisi</value>
+  </data>
+  <data name="lblSeafileUsername.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblSeafilePassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
+    <value>Yetki fişini al</value>
+  </data>
+  <data name="lblSeafileAuthToken.Text" xml:space="preserve">
+    <value>Yetki fişi:</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
+    <value>Yazma izni olmuyan kütüphaneler gizli.
+Şifreli kütüphane kullanmak paylaşmayı devre dışı bırakır.</value>
+  </data>
 </root>

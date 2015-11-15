@@ -213,4 +213,22 @@
   <data name="lblNote.Text" xml:space="preserve">
     <value>Lütfen dikkat, ShareX düzgün bir şekilde kaydırarak yakalama için elinden geleni yapsada her durumda kusursuz kaydırarak yakalama yapmak mümkün değildir. Ana nedenlerinden biri kaydırma esnasında ekranda hareket olmasıdır, mesela web sayfası yakalarken ekranda hareketli bir GIF resmi varsa birleştirme esnasında sorun yaratcaktır. Bir diğer nedende ekranda olan sabit objelerdir, mesela web sayfası kaydırırken ekranda hareket etmiyen bir menu veya tuş olması nereden birleştirilceğini hesaplamada zorluk çıkarıcaktır.</value>
   </data>
+  <data name="cbAutoClose.Text" xml:space="preserve">
+    <value>İşlemlerden sonra bu pencereyi kapat</value>
+  </data>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>Yükle/kaydet yakalama sonrası ayarlarına göre</value>
+  </data>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>Yakalamadan sonra</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>Yakalamadan önce</value>
+  </data>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>Yakalama esnasında</value>
+  </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>Yukarı kaydırma yöntemi yakalamadan önce:</value>
+  </data>
 </root>

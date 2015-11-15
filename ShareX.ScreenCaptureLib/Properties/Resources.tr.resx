@@ -287,4 +287,28 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Yakalamayı başlat</value>
   </data>
+  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
+    <value>[Fare tekerleği] Mod değiştir</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
+    <value>[Ctrl + Fare tekerleği] Çerçeve kalınlığını değiştir</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
+    <value>[Ctrl + Fare tekerleği] Kalem kalınlığını değiştir</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
+    <value>[1] Yakala mod unu seç</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
+    <value>[2] Dikdörtgen çizim mod unu seç</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
+    <value>[3] Kalem çizim mod unu seç</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
+    <value>[Shift] Çerçeve rengini değiştir</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
+    <value>[Shift] Kalem rengini değiştir</value>
+  </data>
 </root>
