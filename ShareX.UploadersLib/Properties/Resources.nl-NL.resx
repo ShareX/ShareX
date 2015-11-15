@@ -256,4 +256,7 @@ Aangemaakte mappen:</value>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Kan geen geldig FTP account vinden.</value>
   </data>
+  <data name="Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__" xml:space="preserve">
+    <value>Selecteer een van de Pomf uploaders van het venster "Instellingen voor bestemmingen" -&gt; Pomf tabblad.</value>
+  </data>
 </root>
