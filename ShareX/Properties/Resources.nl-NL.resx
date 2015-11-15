@@ -476,4 +476,7 @@ Ben je zeker dat je door wilt gaan?</value>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Kon de afbeelding niet wegschrijven op {0}.</value>
   </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
+    <value>Deze programma's kunnen conflicten veroorzaken:</value>
+  </data>
 </root>
