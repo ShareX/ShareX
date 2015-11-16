@@ -121,7 +121,7 @@
     <value>Ajouter</value>
   </data>
   <data name="chEncoderArgs.Text" xml:space="preserve">
-    <value>Paramètres</value>
+    <value>Arguments</value>
   </data>
   <data name="chEncoderDescription.Text" xml:space="preserve">
     <value>Description</value>

@@ -462,4 +462,7 @@
   <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
     <value>&gt;&gt;</value>
   </data>
+  <data name="tpScrollingCapture.Text" xml:space="preserve">
+    <value>Captura rolante</value>
+  </data>
 </root>

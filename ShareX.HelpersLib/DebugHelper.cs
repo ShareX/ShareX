@@ -32,9 +32,9 @@ namespace ShareX.HelpersLib
     {
         public static Logger Logger { get; private set; }
 
-        static DebugHelper()
+        public static void Init(string logFilePath)
         {
-            Logger = new Logger();
+            Logger = new Logger(logFilePath);
         }
 
         public static void WriteLine(string message = "")

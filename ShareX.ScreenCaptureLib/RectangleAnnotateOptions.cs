@@ -31,18 +31,18 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RectangleAnnotateOptions
     {
-        [DefaultValue(false), Description("Show position and size of selected rectangle area.")]
-        public bool ShowRectangleInfo { get; set; }
+        [DefaultValue(true), Description("Show cursor position and region size.")]
+        public bool ShowInfo { get; set; }
 
         [DefaultValue(true), Description("Show hotkey tips.")]
         public bool ShowTips { get; set; }
 
-        [DefaultValue(typeof(Color), "0, 230, 0"), Description("In drawing mode color of pen.")]
+        [DefaultValue(typeof(Color), "0, 230, 0"), Description("Color of pen and rectangle border.")]
         public Color DrawingPenColor { get; set; }
 
         private int drawingPenSize;
 
-        [DefaultValue(7), Description("In drawing mode size of pen.")]
+        [DefaultValue(7), Description("Size of pen.")]
         public int DrawingPenSize
         {
             get
@@ -52,6 +52,21 @@ namespace ShareX.ScreenCaptureLib
             set
             {
                 drawingPenSize = value.Between(1, 100);
+            }
+        }
+
+        private int drawingRectangleBorderSize;
+
+        [DefaultValue(2), Description("Size of rectangle border.")]
+        public int DrawingRectangleBorderSize
+        {
+            get
+            {
+                return drawingRectangleBorderSize;
+            }
+            set
+            {
+                drawingRectangleBorderSize = value.Between(1, 100);
             }
         }
 

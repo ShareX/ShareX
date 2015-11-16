@@ -588,10 +588,6 @@ namespace ShareX
             UpdateToggleHotkeyButton();
 
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
-
-#if !STEAM
-            btnOpenSteam.Visible = btnHideSteam.Visible = Program.Settings.ShowSteamButtons;
-#endif
         }
 
         private void RegisterMenuClosing()
@@ -610,6 +606,7 @@ namespace ShareX
         private void AfterSettingsJobs()
         {
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
+            HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
             HelpersOptions.UseAlternativeCopyImage = Program.Settings.UseAlternativeClipboardCopyImage;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentLinksMaxCount;
@@ -1142,18 +1139,16 @@ namespace ShareX
 
         private void tsbHotkeySettings_Click(object sender, EventArgs e)
         {
-            if (Program.HotkeysConfig == null)
+            if (Program.HotkeyManager != null)
             {
-                Program.HotkeySettingsResetEvent.WaitOne();
-            }
+                using (HotkeySettingsForm hotkeySettingsForm = new HotkeySettingsForm(Program.HotkeyManager))
+                {
+                    hotkeySettingsForm.ShowDialog();
+                }
 
-            using (HotkeySettingsForm hotkeySettingsForm = new HotkeySettingsForm())
-            {
-                hotkeySettingsForm.ShowDialog();
+                UpdateWorkflowsMenu();
+                Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
             }
-
-            UpdateWorkflowsMenu();
-            Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
         }
 
         private void tsmiTrayToggleHotkeys_Click(object sender, EventArgs e)
@@ -1297,17 +1292,6 @@ namespace ShareX
             }
 
             e.Handled = true;
-        }
-
-        private void btnOpenSteam_MouseClick(object sender, MouseEventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_STEAM);
-        }
-
-        private void btnHideSteam_MouseClick(object sender, MouseEventArgs e)
-        {
-            Program.Settings.ShowSteamButtons = false;
-            btnOpenSteam.Visible = btnHideSteam.Visible = false;
         }
 
         #region Tray events
@@ -1620,15 +1604,7 @@ namespace ShareX
 
             if (hotkeySetting.TaskSettings.Job != HotkeyType.None)
             {
-                if (hotkeySetting.TaskSettings.Job == HotkeyType.DisableHotkeys)
-                {
-                    TaskHelpers.ToggleHotkeys();
-                }
-
-                if (!Program.Settings.DisableHotkeys)
-                {
-                    ExecuteJob(hotkeySetting.TaskSettings);
-                }
+                ExecuteJob(hotkeySetting.TaskSettings);
             }
         }
 
@@ -1791,6 +1767,9 @@ namespace ShareX
                 case HotkeyType.OpenScreenshotsFolder:
                     TaskHelpers.OpenScreenshotsFolder();
                     break;
+                case HotkeyType.DisableHotkeys:
+                    TaskHelpers.ToggleHotkeys();
+                    break;
             }
         }
 
@@ -1895,9 +1874,11 @@ namespace ShareX
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }
 
-                if (TaskHelpers.ShowAfterCaptureForm(taskSettings, img))
+                string customFileName;
+
+                if (TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, img))
                 {
-                    UploadManager.RunImageTask(img, taskSettings);
+                    UploadManager.RunImageTask(img, taskSettings, customFileName);
                 }
             }
         }

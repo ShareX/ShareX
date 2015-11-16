@@ -145,13 +145,13 @@
     <value>Écran</value>
   </data>
   <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Rectangle (Objets)</value>
+    <value>Région (Fenêtres et objets)</value>
   </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rectangle (Annoter)</value>
+    <value>Région (Annoter)</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>Rectangle (Simple)</value>
+    <value>Région (Simple)</value>
   </data>
   <data name="tsmiPolygon.Text" xml:space="preserve">
     <value>Polygone</value>
@@ -172,22 +172,22 @@
     <value>Capture automatique...</value>
   </data>
   <data name="tsmiUploadFile.Text" xml:space="preserve">
-    <value>Mise en ligne d'un fichier...</value>
+    <value>Mettre en ligne un fichier...</value>
   </data>
   <data name="tsmiUploadFolder.Text" xml:space="preserve">
-    <value>Mise en ligne d'un dossier...</value>
+    <value>Mettre en ligne un dossier...</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
-    <value>Mise en ligne depuis le presse-papier...</value>
+    <value>Mettre en ligne depuis le presse-papier...</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>Mise en ligne depuis une URL...</value>
+    <value>Mettre en ligne depuis une URL...</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
-    <value>Mise en ligne par glisser-déposer...</value>
+    <value>Mettre en ligne par glisser-déposer...</value>
   </data>
   <data name="tsddbUpload.Text" xml:space="preserve">
-    <value>Mise en ligne</value>
+    <value>Mettre en ligne</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Sélecteur de couleur de l'écran...</value>
@@ -220,7 +220,7 @@
     <value>Tweeter un message...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
-    <value>Test d'écran...</value>
+    <value>Test d'écrans...</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>Outils</value>
@@ -424,13 +424,13 @@
     <value>Écran</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Rectangle (Objets)</value>
+    <value>Région (Fenêtres et objets)</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rectangle (Annoter)</value>
+    <value>Région (Annoter)</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
-    <value>Rectangle (Simple)</value>
+    <value>Région (Simple)</value>
   </data>
   <data name="tsmiTrayPolygon.Text" xml:space="preserve">
     <value>Polygone</value>
@@ -451,22 +451,22 @@
     <value>Capture automatique...</value>
   </data>
   <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
-    <value>Mise en ligne d'un fichier...</value>
+    <value>Mettre en ligne un fichier...</value>
   </data>
   <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
-    <value>Mise en ligne d'un dossier...</value>
+    <value>Mettre en ligne un dossier...</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
-    <value>Mise en ligne depuis le presse-papier...</value>
+    <value>Mettre en ligne depuis le presse-papier...</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
-    <value>Mise en ligne depuis une URL...</value>
+    <value>Mettre en ligne depuis une URL...</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
-    <value>Mise en ligne par glisser-déposer...</value>
+    <value>Mettre en ligne par glisser-déposer...</value>
   </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
-    <value>Mise en ligne</value>
+    <value>Mettre en ligne</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Sélecteur de couleur de l'écran...</value>
@@ -499,7 +499,7 @@
     <value>Tweeter un message...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
-    <value>Test d'écran...</value>
+    <value>Test d'écrans...</value>
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Outils</value>
@@ -562,7 +562,7 @@
     <value>URL</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>Capture</value>
+    <value>Capturer</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
     <value>Destinations</value>
@@ -583,13 +583,13 @@
     <value>Capturer</value>
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
-    <value>Rectangle</value>
+    <value>Région</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>Destinations</value>
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
-    <value>Rectangle</value>
+    <value>Région</value>
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
@@ -601,7 +601,7 @@
     <value>Sélecteur de couleur...</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
-    <value>Rectangle (Transparent)</value>
+    <value>Région (Transparent)</value>
   </data>
   <data name="tsmiTrayAutomate.Text" xml:space="preserve">
     <value>Automatiser...</value>
@@ -613,7 +613,7 @@
     <value>Liens récents</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
-    <value>Rectangle (Transparent)</value>
+    <value>Région (Transparent)</value>
   </data>
   <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
     <value>Capturer une page Web...</value>
@@ -647,5 +647,26 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Capture avec défilement...</value>
+  </data>
+  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
+    <value>Journal de débogage...</value>
+  </data>
+  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
+    <value>Tester la mise en ligne d'image</value>
+  </data>
+  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
+    <value>Tester la mise en ligne de texte</value>
+  </data>
+  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
+    <value>Tester la mise en ligne de fichier</value>
+  </data>
+  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
+    <value>Tester le raccourcisseur d'URL</value>
+  </data>
+  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
+    <value>Tester le partage d'URL</value>
+  </data>
+  <data name="tsmiTrayDebug.Text" xml:space="preserve">
+    <value>Déboguer</value>
   </data>
 </root>

@@ -1817,7 +1817,7 @@
   </data>
   <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
     <value>&gt;&gt;</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnCaptureTransmitBoundsFromMonitorToCustomBounds.Name" xml:space="preserve">
     <value>btnCaptureTransmitBoundsFromMonitorToCustomBounds</value>
   </data>

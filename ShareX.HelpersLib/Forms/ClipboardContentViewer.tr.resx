@@ -121,10 +121,10 @@
     <value>Yüklemek istediğinize emin misiniz?</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;İptal</value>
+    <value>İptal</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>&amp;Tamam</value>
+    <value>Tamam</value>
   </data>
   <data name="cbDontShowThisWindow.Text" xml:space="preserve">
     <value>Bu pencereyi gösterme</value>

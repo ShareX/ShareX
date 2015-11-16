@@ -37,6 +37,7 @@ namespace ShareX.HelpersLib
         public Version LatestVersion { get; set; }
         public ReleaseChannelType ReleaseType { get; set; }
         public bool IsBeta { get; set; }
+        public bool IsPortable { get; set; }
         public IWebProxy Proxy { get; set; }
 
         private string filename;
@@ -81,5 +82,25 @@ namespace ShareX.HelpersLib
         }
 
         public abstract void CheckUpdate();
+
+        public void DownloadUpdate()
+        {
+            if (IsPortable)
+            {
+                URLHelpers.OpenURL(DownloadURL);
+            }
+            else
+            {
+                using (DownloaderForm updaterForm = new DownloaderForm(this))
+                {
+                    updaterForm.ShowDialog();
+
+                    if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
+                    {
+                        Application.Exit();
+                    }
+                }
+            }
+        }
     }
 }

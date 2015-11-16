@@ -124,12 +124,21 @@ namespace ShareX
             return task;
         }
 
-        public static WorkerTask CreateImageUploaderTask(Image image, TaskSettings taskSettings)
+        public static WorkerTask CreateImageUploaderTask(Image image, TaskSettings taskSettings, string customFileName = null)
         {
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.Job;
             task.Info.DataType = EDataType.Image;
-            task.Info.FileName = TaskHelpers.GetImageFilename(taskSettings, image);
+
+            if (!string.IsNullOrEmpty(customFileName))
+            {
+                task.Info.FileName = Helpers.AppendExtension(customFileName, "bmp");
+            }
+            else
+            {
+                task.Info.FileName = TaskHelpers.GetFilename(taskSettings, "bmp", image);
+            }
+
             task.tempImage = image;
             return task;
         }
@@ -164,13 +173,18 @@ namespace ShareX
             return task;
         }
 
-        public static WorkerTask CreateFileJobTask(string filePath, TaskSettings taskSettings)
+        public static WorkerTask CreateFileJobTask(string filePath, TaskSettings taskSettings, string customFileName = null)
         {
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.FilePath = filePath;
             task.Info.DataType = TaskHelpers.FindDataType(task.Info.FilePath, taskSettings);
 
-            if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
+            if (!string.IsNullOrEmpty(customFileName))
+            {
+                string ext = Path.GetExtension(task.Info.FilePath);
+                task.Info.FileName = Helpers.AppendExtension(customFileName, ext);
+            }
+            else if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
                 string ext = Path.GetExtension(task.Info.FilePath);
                 task.Info.FileName = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
@@ -547,24 +561,38 @@ namespace ShareX
                     {
                         using (SaveFileDialog sfd = new SaveFileDialog())
                         {
-                            if (string.IsNullOrEmpty(lastSaveAsFolder) || !Directory.Exists(lastSaveAsFolder))
-                            {
-                                lastSaveAsFolder = Info.TaskSettings.CaptureFolder;
-                            }
+                            bool imageSaved = false;
 
-                            sfd.InitialDirectory = lastSaveAsFolder;
-                            sfd.FileName = Info.FileName;
-                            sfd.DefaultExt = Path.GetExtension(Info.FileName).Substring(1);
-                            sfd.Filter = string.Format("*{0}|*{0}|All files (*.*)|*.*", Path.GetExtension(Info.FileName));
-                            sfd.Title = Resources.UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save + " " + Path.GetFileName(Info.FileName);
-
-                            if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
+                            do
                             {
-                                Info.FilePath = sfd.FileName;
-                                lastSaveAsFolder = Path.GetDirectoryName(Info.FilePath);
-                                imageData.Write(Info.FilePath);
-                                DebugHelper.WriteLine("Image saved to file with dialog: " + Info.FilePath);
-                            }
+                                if (string.IsNullOrEmpty(lastSaveAsFolder) || !Directory.Exists(lastSaveAsFolder))
+                                {
+                                    lastSaveAsFolder = Info.TaskSettings.CaptureFolder;
+                                }
+
+                                sfd.InitialDirectory = lastSaveAsFolder;
+                                sfd.FileName = Info.FileName;
+                                sfd.DefaultExt = Path.GetExtension(Info.FileName).Substring(1);
+                                sfd.Filter = string.Format("*{0}|*{0}|All files (*.*)|*.*", Path.GetExtension(Info.FileName));
+                                sfd.Title = Resources.UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save + " " + Path.GetFileName(Info.FileName);
+
+                                if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
+                                {
+                                    Info.FilePath = sfd.FileName;
+                                    lastSaveAsFolder = Path.GetDirectoryName(Info.FilePath);
+                                    imageSaved = imageData.Write(Info.FilePath) == Info.FilePath;
+
+                                    if (imageSaved)
+                                    {
+                                        DebugHelper.WriteLine("Image saved to file with dialog: " + Info.FilePath);
+                                    }   
+                                }
+                                else
+                                {
+                                    // User cancelled the dialog - stop image saving retries.
+                                    return false;
+                                }
+                            } while (!imageSaved);
                         }
                     }
 
@@ -1077,6 +1105,18 @@ namespace ShareX
                     break;
                 case FileDestination.Up1:
                     fileUploader = new Up1(Program.UploadersConfig.Up1Host, Program.UploadersConfig.Up1Key);
+                    break;
+                case FileDestination.Seafile:
+                    fileUploader = new Seafile(Program.UploadersConfig.SeafileAPIURL, Program.UploadersConfig.SeafileAuthToken, Program.UploadersConfig.SeafileRepoID)
+                    {
+                        Path = Program.UploadersConfig.SeafilePath,
+                        IsLibraryEncrypted = Program.UploadersConfig.SeafileIsLibraryEncrypted,
+                        EncryptedLibraryPassword = Program.UploadersConfig.SeafileEncryptedLibraryPassword,
+                        ShareDaysToExpire = Program.UploadersConfig.SeafileShareDaysToExpire,
+                        SharePassword = Program.UploadersConfig.SeafileSharePassword,
+                        CreateShareableURL = Program.UploadersConfig.SeafileCreateShareableURL,
+                        IgnoreInvalidCert = Program.UploadersConfig.SeafileIgnoreInvalidCert
+                    };
                     break;
             }
 

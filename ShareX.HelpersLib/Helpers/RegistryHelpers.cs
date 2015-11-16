@@ -96,7 +96,7 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                return CheckRegistry(ShellExtMenuFilesCmd) && CheckRegistry(ShellExtMenuDirectoryCmd);
+                return CheckRegistry(ShellExtMenuFilesCmd, null, ShellExtPath) && CheckRegistry(ShellExtMenuDirectoryCmd, null, ShellExtPath);
             }
             catch (Exception e)
             {

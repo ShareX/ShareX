@@ -964,6 +964,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to These applications could be conflicting:.
+        /// </summary>
+        public static string HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_ {
+            get {
+                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to register {0}:
         ///
         ///{1}
@@ -1032,6 +1041,15 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("image_saturation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not write image to path {0}..
+        /// </summary>
+        public static string ImageData_Write_Error {
+            get {
+                return ResourceManager.GetString("ImageData_Write_Error", resourceCulture);
             }
         }
         
@@ -2164,6 +2182,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap us {
             get {
                 object obj = ResourceManager.GetObject("us", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap vn {
+            get {
+                object obj = ResourceManager.GetObject("vn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

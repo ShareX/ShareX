@@ -154,6 +154,6 @@
     <value>Statut</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>Attendre que les tâches soient finies</value>
+    <value>Attendre que les tâches soient complètes</value>
   </data>
 </root>

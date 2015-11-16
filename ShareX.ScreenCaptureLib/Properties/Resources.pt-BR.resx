@@ -135,12 +135,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Qualidade:</value>
   </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: Modo de desenho ░ Espaço: Captura em tela cheia</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: Modo da região ░ Shift: Cor da caneta ░ Rodela do mouse: Tamanho da caneta ░ Espaço: Captura em tela cheia</value>
-  </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Anotar em captura de retângulo</value>
   </data>

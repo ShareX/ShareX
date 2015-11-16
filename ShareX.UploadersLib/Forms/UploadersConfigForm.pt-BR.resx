@@ -129,9 +129,6 @@
   <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
     <value>Adicionar</value>
   </data>
-  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Remover</value>
   </data>
@@ -155,9 +152,6 @@
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>Atualizar</value>
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Remover</value>
@@ -333,7 +327,7 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
     <value>Criar URL compartilhável</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Link direto (Adiciona "&amp;&amp;download" ao URL)</value>
+    <value>Link direto (Adiciona "&amp;download" ao URL)</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Ignorar certificado SSL inválido</value>
@@ -343,12 +337,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   </data>
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
     <value>Upload público?</value>
-  </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="chArgumentsValue.Text" xml:space="preserve">
-    <value>Valor</value>
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Nome da pasta</value>
@@ -379,9 +367,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   </data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Nome</value>
-  </data>
-  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Parâmetros</value>
   </data>
   <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
     <value>Regex da resposta</value>
@@ -770,6 +755,292 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
     <value>Hostname da API: (e.g http://example.com/api.php, Deixe em branco para usar polr.me)</value>
   </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
+    <value>Validar</value>
+  </data>
+  <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
+    <value>Validar</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
+    <value>Receber</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
+    <value>Validar</value>
+  </data>
+  <data name="btnSeafilePathValidate.Text" xml:space="preserve">
+    <value>Validar</value>
+  </data>
+  <data name="cbSeafileAPIURL.Items" xml:space="preserve">
+    <value>https://seacloud.cc/api2/</value>
+  </data>
+  <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
+    <value>https://cloud.mein-seafile.de/api2/</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Ignorar certificado SSL inválido</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
+    <value>Criar URL compartilhável</value>
+  </data>
+  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Encriptado</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Tamanho</value>
+  </data>
+  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
+    <value>Informação da conta</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
+    <value>Obter token de autenticação</value>
+  </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Opções de compartilhamento do Seafile</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>UID da API:</value>
+  </data>
+  <data name="lblCheveretoWebsiteTip.Text" xml:space="preserve">
+    <value>/api/1/upload</value>
+  </data>
+  <data name="lblCoinURLUUID.Text" xml:space="preserve">
+    <value>UUID:</value>
+  </data>
+  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>URL do Link:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>URL do Resultado:</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Uploaders:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>URL de envio:</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
+    <value>Uso:</value>
+  </data>
+  <data name="lblSeafileAPIURL.Text" xml:space="preserve">
+    <value>URL da API:</value>
+  </data>
+  <data name="lblSeafileAuthToken.Text" xml:space="preserve">
+    <value>Token de autenticação:</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Dias para expirar:</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Senha da biblioteca:</value>
+  </data>
+  <data name="lblSeafilePassword.Text" xml:space="preserve">
+    <value>Senha:</value>
+  </data>
+  <data name="lblSeafilePath.Text" xml:space="preserve">
+    <value>Local:</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
+    <value>Selecionar biblioteca:</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Compartilhar senha:</value>
+  </data>
+  <data name="lblSeafileUsername.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
+    <value>Bibliotecas sem permissão de gravação estão ocultas.
+Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
+  </data>
+  <data name="lblYourlsAPIURL.Text" xml:space="preserve">
+    <value>URL da API:</value>
+  </data>
+  <data name="tpAdFly.Text" xml:space="preserve">
+    <value>adf.ly</value>
+  </data>
+  <data name="tpAmazonS3.Text" xml:space="preserve">
+    <value>Amazon S3</value>
+  </data>
+  <data name="tpBitly.Text" xml:space="preserve">
+    <value>bit.ly</value>
+  </data>
+  <data name="tpBox.Text" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="tpChevereto.Text" xml:space="preserve">
+    <value>Chevereto</value>
+  </data>
+  <data name="tpCoinURL.Text" xml:space="preserve">
+    <value>CoinURL</value>
+  </data>
+  <data name="tpCopy.Text" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
+    <value>Argumentos</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
+    <value>Cabeçalhos</value>
+  </data>
+  <data name="tpDropbox.Text" xml:space="preserve">
+    <value>Dropbox</value>
+  </data>
+  <data name="tpFlickr.Text" xml:space="preserve">
+    <value>Flicker</value>
+  </data>
+  <data name="tpFTP.Text" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="tpGe_tt.Text" xml:space="preserve">
+    <value>Ge.tt</value>
+  </data>
+  <data name="tpGist.Text" xml:space="preserve">
+    <value>Gist</value>
+  </data>
+  <data name="tpGoogleDrive.Text" xml:space="preserve">
+    <value>Google Drive</value>
+  </data>
+  <data name="tpGoogleURLShortener.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="tpHastebin.Text" xml:space="preserve">
+    <value>Hastebin</value>
+  </data>
+  <data name="tpHostr.Text" xml:space="preserve">
+    <value>Hostr</value>
+  </data>
+  <data name="tpImageShack.Text" xml:space="preserve">
+    <value>ImageShack</value>
+  </data>
+  <data name="tpImgur.Text" xml:space="preserve">
+    <value>Imgur</value>
+  </data>
+  <data name="tpJira.Text" xml:space="preserve">
+    <value>Atlassian Jira</value>
+  </data>
+  <data name="tpLambda.Text" xml:space="preserve">
+    <value>Lambda</value>
+  </data>
+  <data name="tpMediaFire.Text" xml:space="preserve">
+    <value>MediaFire</value>
+  </data>
+  <data name="tpMega.Text" xml:space="preserve">
+    <value>MEGA</value>
+  </data>
+  <data name="tpMinus.Text" xml:space="preserve">
+    <value>Minus</value>
+  </data>
+  <data name="tpOneDrive.Text" xml:space="preserve">
+    <value>OneDrive</value>
+  </data>
+  <data name="tpOneTimeSecret.Text" xml:space="preserve">
+    <value>OneTimeSecret</value>
+  </data>
+  <data name="tpOwnCloud.Text" xml:space="preserve">
+    <value>ownCloud</value>
+  </data>
+  <data name="tpPaste_ee.Text" xml:space="preserve">
+    <value>Paste.ee</value>
+  </data>
+  <data name="tpPastebin.Text" xml:space="preserve">
+    <value>Pastebin</value>
+  </data>
+  <data name="tpPhotobucket.Text" xml:space="preserve">
+    <value>Photobucket</value>
+  </data>
+  <data name="tpPicasa.Text" xml:space="preserve">
+    <value>Picasa</value>
+  </data>
+  <data name="tpPolr.Text" xml:space="preserve">
+    <value>Polr</value>
+  </data>
+  <data name="tpPomf.Text" xml:space="preserve">
+    <value>Pomf</value>
+  </data>
+  <data name="tpPushbullet.Text" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="tpSeafile.Text" xml:space="preserve">
+    <value>Seafile</value>
+  </data>
+  <data name="tpSendSpace.Text" xml:space="preserve">
+    <value>SendSpace</value>
+  </data>
+  <data name="tpTinyPic.Text" xml:space="preserve">
+    <value>TinyPic</value>
+  </data>
+  <data name="tpTwitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="tpUp1.Text" xml:space="preserve">
+    <value>Up1</value>
+  </data>
+  <data name="tpUpaste.Text" xml:space="preserve">
+    <value>uPaste</value>
+  </data>
+  <data name="tpYourls.Text" xml:space="preserve">
+    <value>YOURLS</value>
+  </data>
+  <data name="txtJiraHost.Text" xml:space="preserve">
+    <value>http://</value>
+  </data>
+  <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
+    <value>PROJETO-</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
     <value>Atualizar</value>
   </data>
 </root>

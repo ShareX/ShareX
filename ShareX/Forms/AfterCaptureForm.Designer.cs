@@ -39,6 +39,8 @@
             this.tpAfterCapture = new System.Windows.Forms.TabPage();
             this.tpBeforeUpload = new System.Windows.Forms.TabPage();
             this.ucBeforeUpload = new ShareX.BeforeUploadControl();
+            this.lblFileName = new System.Windows.Forms.Label();
+            this.txtFileName = new System.Windows.Forms.TextBox();
             this.tcTasks.SuspendLayout();
             this.tpAfterCapture.SuspendLayout();
             this.tpBeforeUpload.SuspendLayout();
@@ -66,6 +68,7 @@
             // btnContinue
             // 
             resources.ApplyResources(this.btnContinue, "btnContinue");
+            this.btnContinue.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.UseVisualStyleBackColor = true;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
@@ -73,9 +76,9 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pbImage
             // 
@@ -91,6 +94,7 @@
             // btnCopy
             // 
             resources.ApplyResources(this.btnCopy, "btnCopy");
+            this.btnCopy.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
@@ -122,11 +126,23 @@
             resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
             this.ucBeforeUpload.Name = "ucBeforeUpload";
             // 
+            // lblFileName
+            // 
+            resources.ApplyResources(this.lblFileName, "lblFileName");
+            this.lblFileName.Name = "lblFileName";
+            // 
+            // txtFileName
+            // 
+            resources.ApplyResources(this.txtFileName, "txtFileName");
+            this.txtFileName.Name = "txtFileName";
+            // 
             // AfterCaptureForm
             // 
             this.AcceptButton = this.btnContinue;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtFileName);
+            this.Controls.Add(this.lblFileName);
             this.Controls.Add(this.tcTasks);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnCancel);
@@ -139,6 +155,7 @@
             this.tpAfterCapture.ResumeLayout(false);
             this.tpBeforeUpload.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -154,5 +171,7 @@
         private System.Windows.Forms.TabPage tpAfterCapture;
         private System.Windows.Forms.TabPage tpBeforeUpload;
         private BeforeUploadControl ucBeforeUpload;
+        private System.Windows.Forms.Label lblFileName;
+        private System.Windows.Forms.TextBox txtFileName;
     }
 }

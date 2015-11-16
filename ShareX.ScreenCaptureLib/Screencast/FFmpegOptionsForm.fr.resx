@@ -229,4 +229,11 @@ De même, pour l'encodage de qualité constante, vous conserverez simplement le 
   <data name="lblGIFStatsMode.Text" xml:space="preserve">
     <value>Mode de palette:</value>
   </data>
+  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
+    <value>Ce codec audio n'est pas supporté par le récipient vidéo sélectionné.</value>
+  </data>
+  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
+    <value>Pour un encodage en temps réel comme l'enregistrement d'écran, il est recommandé de sélectionner le préréglage le plus rapide possible.
+Sinon, il ne peut pas suivre l'enregistrement et il y aura beaucoup de sauts d'images.</value>
+  </data>
 </root>

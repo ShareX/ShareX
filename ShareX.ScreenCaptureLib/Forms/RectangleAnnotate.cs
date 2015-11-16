@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -79,43 +80,20 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private bool cursorShown = true;
-
-        public bool CursorShown
-        {
-            get
-            {
-                return cursorShown;
-            }
-            private set
-            {
-                if (cursorShown == value)
-                {
-                    return;
-                }
-
-                if (value)
-                {
-                    Cursor.Show();
-                }
-                else
-                {
-                    Cursor.Hide();
-                }
-
-                cursorShown = value;
-            }
-        }
-
         public RectangleAnnotateOptions Options { get; private set; }
+
+        public RegionAnnotateMode Mode { get; private set; }
+
+        public bool IsDrawingMode => Mode != RegionAnnotateMode.Capture && !isBusy;
 
         private Timer timer;
         private Image backgroundImage;
-        private Pen borderDotPen, borderDotPen2;
+        private Pen borderDotPen, borderDotPen2, textBackgroundPenWhite, textBackgroundPenBlack;
+        private Brush textBackgroundBrush;
         private Point positionOnClick;
-        private bool isMouseDown, isDrawingMode;
+        private bool isMouseDown, isBusy;
         private Stopwatch penTimer;
-        private Font rectangleInfofont, tipFont;
+        private Font infoFont;
 
         public RectangleAnnotate(RectangleAnnotateOptions options)
         {
@@ -125,8 +103,10 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
-            rectangleInfofont = new Font("Arial", 17, FontStyle.Bold);
-            tipFont = new Font("Arial", 13);
+            textBackgroundBrush = new SolidBrush(Color.FromArgb(75, Color.Black));
+            textBackgroundPenWhite = new Pen(Color.FromArgb(50, Color.White));
+            textBackgroundPenBlack = new Pen(Color.FromArgb(150, Color.Black));
+            infoFont = new Font("Verdana", 9);
             penTimer = Stopwatch.StartNew();
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
 
@@ -163,8 +143,6 @@ namespace ShareX.ScreenCaptureLib
             MouseWheel += RectangleAnnotate_MouseWheel;
             KeyDown += RectangleAnnotate_KeyDown;
             KeyUp += RectangleAnnotate_KeyUp;
-            FormClosing += RectangleAnnotate_FormClosing;
-            LostFocus += RectangleAnnotate_LostFocus;
 
             ResumeLayout(false);
         }
@@ -180,8 +158,10 @@ namespace ShareX.ScreenCaptureLib
             if (backgroundImage != null) backgroundImage.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
             if (borderDotPen2 != null) borderDotPen2.Dispose();
-            if (rectangleInfofont != null) rectangleInfofont.Dispose();
-            if (tipFont != null) tipFont.Dispose();
+            if (textBackgroundBrush != null) textBackgroundBrush.Dispose();
+            if (textBackgroundPenWhite != null) textBackgroundPenWhite.Dispose();
+            if (textBackgroundPenBlack != null) textBackgroundPenBlack.Dispose();
+            if (infoFont != null) infoFont.Dispose();
 
             base.Dispose(disposing);
         }
@@ -191,36 +171,35 @@ namespace ShareX.ScreenCaptureLib
             this.ShowActivate();
         }
 
-        private void RectangleAnnotate_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            CursorShown = true;
-        }
-
-        private void RectangleAnnotate_LostFocus(object sender, EventArgs e)
-        {
-            CursorShown = true;
-        }
-
         private void RectangleAnnotate_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.ControlKey)
+            if (e.KeyCode == Keys.D1)
             {
-                isDrawingMode = !isDrawingMode;
-                CursorShown = !isDrawingMode;
+                Mode = RegionAnnotateMode.Capture;
             }
-            else if (e.KeyCode == Keys.ShiftKey && isDrawingMode)
+            else if (e.KeyCode == Keys.D2)
             {
-                isDrawingMode = false;
-
+                Mode = RegionAnnotateMode.Rectangle;
+            }
+            else if (e.KeyCode == Keys.D3)
+            {
+                Mode = RegionAnnotateMode.Pen;
+            }
+            else if (e.KeyCode == Keys.ShiftKey && IsDrawingMode)
+            {
                 try
                 {
+                    isBusy = true;
                     Options.DrawingPenColor = ColorPickerForm.GetColor(Options.DrawingPenColor);
                 }
                 finally
                 {
-                    CursorShown = false;
-                    isDrawingMode = true;
+                    isBusy = false;
                 }
+            }
+            else if (e.KeyCode == Keys.F1)
+            {
+                Options.ShowTips = !Options.ShowTips;
             }
         }
 
@@ -249,13 +228,16 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left && isMouseDown)
             {
-                if (isDrawingMode)
+                isMouseDown = false;
+
+                switch (Mode)
                 {
-                    isMouseDown = false;
-                }
-                else
-                {
-                    DoSelection(SelectionRectangle);
+                    case RegionAnnotateMode.Capture:
+                        DoSelection(SelectionRectangle);
+                        break;
+                    case RegionAnnotateMode.Rectangle:
+                        AddRectangle();
+                        break;
                 }
             }
             else if (e.Button == MouseButtons.Right)
@@ -273,15 +255,40 @@ namespace ShareX.ScreenCaptureLib
 
         private void RectangleAnnotate_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (isDrawingMode)
+            if (ModifierKeys == Keys.Control)
             {
                 if (e.Delta > 0)
                 {
-                    Options.DrawingPenSize++;
+                    if (Mode == RegionAnnotateMode.Rectangle)
+                    {
+                        Options.DrawingRectangleBorderSize++;
+                    }
+                    else if (Mode == RegionAnnotateMode.Pen)
+                    {
+                        Options.DrawingPenSize++;
+                    }
                 }
                 else if (e.Delta < 0)
                 {
-                    Options.DrawingPenSize--;
+                    if (Mode == RegionAnnotateMode.Rectangle)
+                    {
+                        Options.DrawingRectangleBorderSize--;
+                    }
+                    else if (Mode == RegionAnnotateMode.Pen)
+                    {
+                        Options.DrawingPenSize--;
+                    }
+                }
+            }
+            else
+            {
+                if (e.Delta > 0)
+                {
+                    Mode = Mode.Previous<RegionAnnotateMode>();
+                }
+                else if (e.Delta < 0)
+                {
+                    Mode = Mode.Next<RegionAnnotateMode>();
                 }
             }
         }
@@ -331,121 +338,191 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-            g.InterpolationMode = InterpolationMode.NearestNeighbor;
-            g.SmoothingMode = SmoothingMode.HighQuality;
-
-            if (isDrawingMode && isMouseDown)
+            if (Mode == RegionAnnotateMode.Pen && isMouseDown)
             {
                 using (Graphics gImage = Graphics.FromImage(backgroundImage))
                 {
                     gImage.SmoothingMode = SmoothingMode.HighQuality;
-                    DrawLine(gImage, PreviousMousePosition0Based, CurrentMousePosition0Based, Options.DrawingPenSize, Options.DrawingPenColor);
+                    DrawLine(gImage);
                 }
             }
 
+            Graphics g = e.Graphics;
+            g.InterpolationMode = InterpolationMode.NearestNeighbor;
+            g.SmoothingMode = SmoothingMode.HighQuality;
             g.CompositingMode = CompositingMode.SourceCopy;
             g.DrawImage(backgroundImage, ScreenRectangle0Based);
             g.CompositingMode = CompositingMode.SourceOver;
 
-            if (isDrawingMode)
+            if (Mode == RegionAnnotateMode.Rectangle)
             {
-                DrawDot(g, CurrentMousePosition0Based, Options.DrawingPenSize, Options.DrawingPenColor, true);
+                g.SmoothingMode = SmoothingMode.HighSpeed;
+
+                if (isMouseDown)
+                {
+                    DrawRectangle(g);
+                }
+                else
+                {
+                    DrawRectangleMarker(g);
+                }
+
+                g.SmoothingMode = SmoothingMode.HighQuality;
+            }
+            else if (Mode == RegionAnnotateMode.Pen)
+            {
+                DrawDot(g);
             }
 
             if (Options.ShowTips)
             {
-                DrawTips(g);
+                DrawTips(g, 10, 10);
             }
 
-            if (isMouseDown && !isDrawingMode)
+            if (!IsDrawingMode)
             {
-                if (Options.ShowRectangleInfo)
+                if (Options.ShowInfo)
                 {
-                    DrawRectangleInfo(g);
+                    DrawInfo(g);
                 }
 
-                g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
-                borderDotPen2.DashOffset = (int)(penTimer.Elapsed.TotalMilliseconds / 100) % 10;
-                g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
+                if (isMouseDown)
+                {
+                    g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
+                    borderDotPen2.DashOffset = (float)penTimer.Elapsed.TotalSeconds * -10;
+                    g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
+                }
             }
         }
 
-        private void DrawTips(Graphics g)
+        private void DrawInfoText(Graphics g, string text, Rectangle rect, int padding)
         {
-            int offset = 10;
-            int padding = 3;
+            g.FillRectangle(textBackgroundBrush, rect.Offset(-2));
+            g.DrawRectangleProper(textBackgroundPenBlack, rect.Offset(-1));
+            g.DrawRectangleProper(textBackgroundPenWhite, rect);
 
-            string tipText;
+            ImageHelpers.DrawTextWithShadow(g, text, rect.Offset(-padding).Location, infoFont, Brushes.White, Brushes.Black);
+        }
 
-            if (isDrawingMode)
-            {
-                tipText = Resources.RectangleAnnotate_DrawTips_Drawing_mode_on;
-            }
-            else
-            {
-                tipText = Resources.RectangleAnnotate_DrawTips_Drawing_mode_off;
-            }
+        private void DrawTips(Graphics g, int offset, int padding)
+        {
+            StringBuilder sb = new StringBuilder();
+            WriteTips(sb);
+            string tipText = sb.ToString().Trim();
 
-            Size textSize = g.MeasureString(tipText, tipFont).ToSize();
-            int rectWidth = textSize.Width + padding * 2;
+            Size textSize = g.MeasureString(tipText, infoFont).ToSize();
+            int rectWidth = textSize.Width + padding * 2 + 2;
             int rectHeight = textSize.Height + padding * 2;
             Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
-            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + (primaryScreenBounds.Width / 2) - (rectWidth / 2), primaryScreenBounds.Y + offset, rectWidth, rectHeight);
+            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + primaryScreenBounds.Width - rectWidth - offset, primaryScreenBounds.Y + offset, rectWidth, rectHeight);
 
             if (textRectangle.Offset(10).Contains(CurrentMousePosition0Based))
             {
                 textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
             }
 
-            using (Brush brush = new SolidBrush(Color.FromArgb(175, Color.White)))
-            using (Pen pen = new Pen(Color.FromArgb(175, Color.Black)))
-            {
-                g.DrawRoundedRectangle(brush, pen, textRectangle, 5);
-            }
-
-            using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-            {
-                g.DrawString(tipText, tipFont, Brushes.Black, textRectangle, sf);
-            }
+            DrawInfoText(g, tipText, textRectangle, padding);
         }
 
-        private void DrawRectangleInfo(Graphics g)
+        protected virtual void WriteTips(StringBuilder sb)
         {
-            int offset = 10;
-            Point position = new Point(CurrentMousePosition0Based.X + offset, CurrentMousePosition0Based.Y + offset);
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__F1__Hide_tips);
 
-            ImageHelpers.DrawTextWithOutline(g, string.Format("X:{0} Y:{1}\r\n{2} x {3}", SelectionRectangle.X, SelectionRectangle.Y,
-                SelectionRectangle.Width, SelectionRectangle.Height), position, rectangleInfofont, Color.White, Color.Black);
+            sb.AppendLine();
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes);
+            if (Mode == RegionAnnotateMode.Capture) sb.Append("-> ");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__1__Select_capture_mode);
+            if (Mode == RegionAnnotateMode.Rectangle) sb.Append("-> ");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode);
+            if (Mode == RegionAnnotateMode.Pen) sb.Append("-> ");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode);
+
+            switch (Mode)
+            {
+                case RegionAnnotateMode.Rectangle:
+                    sb.AppendLine();
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Shift__Change_border_color);
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size);
+                    break;
+                case RegionAnnotateMode.Pen:
+                    sb.AppendLine();
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Shift__Change_pen_color);
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size);
+                    break;
+            }
+
+            sb.AppendLine();
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Space__Fullscreen_capture);
         }
 
-        private void DrawLine(Graphics g, Point pos1, Point pos2, int size, Color color)
+        private void DrawInfo(Graphics g)
         {
-            if (pos1 == pos2)
+            string infoText;
+
+            if (isMouseDown)
             {
-                DrawDot(g, pos1, size, color);
+                infoText = string.Format("X: {0} Y: {1}\r\n{2} x {3}", SelectionRectangle.X, SelectionRectangle.Y, SelectionRectangle.Width, SelectionRectangle.Height);
             }
             else
             {
-                using (Pen pen = new Pen(color, size) { StartCap = LineCap.Round, EndCap = LineCap.Round })
+                infoText = string.Format("X: {0} Y: {1}", CurrentMousePosition.X, CurrentMousePosition.Y);
+            }
+
+            int offset = 10, padding = 3;
+            Point pos = CurrentMousePosition0Based;
+            Size textSize = g.MeasureString(infoText, infoFont).ToSize();
+            DrawInfoText(g, infoText, new Rectangle(pos.X + offset, pos.Y + offset, textSize.Width + padding * 2, textSize.Height + padding * 2), padding);
+        }
+
+        private void DrawLine(Graphics g)
+        {
+            if (CurrentMousePosition0Based == PreviousMousePosition0Based)
+            {
+                DrawDot(g);
+            }
+            else
+            {
+                using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingPenSize) { StartCap = LineCap.Round, EndCap = LineCap.Round })
                 {
                     g.DrawLine(pen, PreviousMousePosition0Based, CurrentMousePosition0Based);
                 }
             }
         }
 
-        private void DrawDot(Graphics g, Point pos, int size, Color color, bool border = false)
+        private void DrawRectangle(Graphics g)
         {
-            using (Brush brush = new SolidBrush(color))
+            using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingRectangleBorderSize) { Alignment = PenAlignment.Inset })
             {
-                RectangleF rect = new RectangleF(pos.X - size / 2f, pos.Y - size / 2f, size, size);
-                g.FillEllipse(brush, rect);
+                g.DrawRectangleProper(pen, SelectionRectangle.Offset(Options.DrawingRectangleBorderSize - 1));
+            }
+        }
 
-                if (border)
-                {
-                    g.DrawEllipse(Pens.Black, rect);
-                    g.DrawEllipse(Pens.White, new RectangleF(rect.X - 1, rect.Y - 1, rect.Width + 2, rect.Height + 2));
-                }
+        private void AddRectangle()
+        {
+            using (Graphics g = Graphics.FromImage(backgroundImage))
+            {
+                g.SmoothingMode = SmoothingMode.HighSpeed;
+                DrawRectangle(g);
+            }
+        }
+
+        private void DrawDot(Graphics g)
+        {
+            using (Brush brush = new SolidBrush(Options.DrawingPenColor))
+            {
+                Point pos = CurrentMousePosition0Based;
+                Rectangle rect = new Rectangle((int)(pos.X - Options.DrawingPenSize / 2f), (int)(pos.Y - Options.DrawingPenSize / 2f), Options.DrawingPenSize, Options.DrawingPenSize);
+                g.FillEllipse(brush, rect);
+            }
+        }
+
+        private void DrawRectangleMarker(Graphics g)
+        {
+            using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingRectangleBorderSize) { Alignment = PenAlignment.Inset })
+            {
+                Point pos = CurrentMousePosition0Based;
+                int offset = 15;
+                g.DrawRectangleProper(pen, new Rectangle(pos.X - offset, pos.Y - offset, offset * 2, offset * 2).Offset(Options.DrawingRectangleBorderSize - 1));
             }
         }
     }

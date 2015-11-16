@@ -473,4 +473,10 @@ Evet tuşuna basarsanız panonuzdaki resim açılır. Veya hayır tuşuna basara
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Değişim günlüğü</value>
   </data>
+  <data name="ImageData_Write_Error" xml:space="preserve">
+    <value>Resim buraya kaydedilemedi: {0}</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
+    <value>Bu uygulamalar çakışıyor olabilir:</value>
+  </data>
 </root>

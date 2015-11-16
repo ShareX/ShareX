@@ -291,9 +291,11 @@ namespace ShareX
             },
             () =>
             {
-                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings))
+                string customFileName;
+
+                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName))
                 {
-                    WorkerTask task = WorkerTask.CreateFileJobTask(path, taskSettings);
+                    WorkerTask task = WorkerTask.CreateFileJobTask(path, taskSettings, customFileName);
                     TaskManager.Start(task);
                 }
 

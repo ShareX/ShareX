@@ -48,7 +48,7 @@ namespace ShareX
             {
                 name = "com.getsharex.sharex",
                 description = "ShareX",
-                path = Program.ChromeHostPath,
+                path = Program.ChromeHostFilePath,
                 type = "stdio",
                 allowed_origins = new string[] { "chrome-extension://nlkoigbdolhchiicbonbihbphgamnaoc/" }
             };
@@ -62,9 +62,9 @@ namespace ShareX
         {
             try
             {
-                CreateChromeHostManifest(Program.ChromeHostManifestPath);
+                CreateChromeHostManifest(Program.ChromeHostManifestFilePath);
 
-                RegistryHelpers.RegisterChromeSupport(Program.ChromeHostManifestPath);
+                RegistryHelpers.RegisterChromeSupport(Program.ChromeHostManifestFilePath);
 
                 MessageBox.Show(Resources.ChromeForm_btnRegister_Click_Chrome_support_enabled_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -78,9 +78,9 @@ namespace ShareX
         {
             try
             {
-                if (File.Exists(Program.ChromeHostManifestPath))
+                if (File.Exists(Program.ChromeHostManifestFilePath))
                 {
-                    File.Delete(Program.ChromeHostManifestPath);
+                    File.Delete(Program.ChromeHostManifestFilePath);
                 }
 
                 RegistryHelpers.UnregisterChromeSupport();

@@ -204,9 +204,6 @@
   <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
     <value>Automatische detectie van einde scrollen</value>
   </data>
-  <data name="cbScrollTopBeforeCapture.Text" xml:space="preserve">
-    <value>Probeer naar de top te scrollen voor opname</value>
-  </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
     <value>Start scrollopname onmiddelijk na regio selectie</value>
   </data>
@@ -215,5 +212,23 @@
   </data>
   <data name="lblNote.Text" xml:space="preserve">
     <value>Gelieve op te merken dat desondanks het feit dat ShareX probeert een accurate opname inclusief scrollen te maken, het nog steeds kan gebeuren dat niet alles correct opgenomen wordt. De voornaamste reden hiervoor is bewegende elementen op het scherm (zoals een geanimeerde gif, of een menu dat niet meescrollt), die ervoor zorgen dat niet alles meegenomen wordt tijdens het combineren.</value>
+  </data>
+  <data name="chkAutoUpload.Text" xml:space="preserve">
+    <value>Upload/Sla op afhankelijk van de "na opname" instelling</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>Voor opname</value>
+  </data>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>Tijdens opnemen</value>
+  </data>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>Na opname</value>
+  </data>
+  <data name="cbAutoClose.Text" xml:space="preserve">
+    <value>Sluit dit venster na verwerken</value>
+  </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>Scroll naar begin methode voor opname:</value>
   </data>
 </root>

@@ -312,9 +312,12 @@ namespace ShareX
         {
             if (IsItemSelected)
             {
-                foreach (string filepath in SelectedItems.Where(x => x.IsFileExist).Select(x => x.Info.FilePath))
+                foreach (string filepath in SelectedItems.Select(x => x.Info.FilePath))
                 {
-                    FileSystem.DeleteFile(filepath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                    if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+                    {
+                        FileSystem.DeleteFile(filepath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                    }
                 }
             }
         }

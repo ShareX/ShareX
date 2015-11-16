@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnSave.Text" xml:space="preserve">
-    <value>&amp;Appliquer</value>
+    <value>Appliquer</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;Fermer</value>
+    <value>Fermer</value>
   </data>
   <data name="lblAlternateDNS.Text" xml:space="preserve">
     <value>Serveur DNS auxiliaire:</value>

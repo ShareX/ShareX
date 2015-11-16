@@ -25,8 +25,11 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -34,25 +37,31 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
-            new PomfUploader("1339.cf", "http://1339.cf/upload.php", "http://b.1339.cf"),
-            new PomfUploader("bucket.pw", "https://bucket.pw/upload.php", "https://dl.bucket.pw"),
-            new PomfUploader("g.zxq.co", "http://g.zxq.co/upload.php", "http://y.zxq.co"),
-            new PomfUploader("kyaa.eu", "http://kyaa.eu/upload.php", "https://r.kyaa.eu"),
-            new PomfUploader("madokami.com", "https://madokami.com/upload"),
-            new PomfUploader("matu.red", "http://matu.red/upload.php", "http://x.matu.red"),
-            new PomfUploader("maxfile.ro", "https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
-            new PomfUploader("mixtape.moe", "https://mixtape.moe/upload.php"),
-            new PomfUploader("openhost.xyz", "http://openhost.xyz/upload.php"),
-            new PomfUploader("pantsu.cat", "https://pantsu.cat/upload.php"),
-            new PomfUploader("pomf.cat", "https://pomf.cat/upload.php", "http://a.pomf.cat"),
-            new PomfUploader("pomf.hummingbird.moe", "http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
-            new PomfUploader("pomf.io", "http://pomf.io/upload.php"),
-            new PomfUploader("pomf.pl", "http://pomf.pl/upload.php", "http://i.pomf.pl"),
-            //new PomfUploader("pomf.se", "https://pomf.se/upload.php", "https://a.pomf.se"),
-            new PomfUploader("up.che.moe", "http://up.che.moe/upload.php", "http://cdn.che.moe")
+            new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
+            // new PomfUploader("https://bucket.pw/upload.php", "https://dl.bucket.pw"),
+            new PomfUploader("http://catgirlsare.sexy/upload.php"),
+            new PomfUploader("http://cuntflaps.me/upload.php", "http://a.cuntflaps.me"),
+            // new PomfUploader("https://fuwa.se/api/upload"),
+            new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
+            new PomfUploader("http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
+            // new PomfUploader("https://madokami.com/upload"),
+            // new PomfUploader("http://matu.red/upload.php", "http://x.matu.red"),
+            new PomfUploader("https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
+            new PomfUploader("https://mixtape.moe/upload.php"),
+            new PomfUploader("http://nigger.cat/upload.php"),
+            // new PomfUploader("http://nyanimg.com/upload.php"),
+            new PomfUploader("http://openhost.xyz/upload.php"),
+            // new PomfUploader("https://pantsu.cat/upload.php"),
+            new PomfUploader("https://pomf.cat/upload.php", "http://a.pomf.cat"),
+            new PomfUploader("http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
+            new PomfUploader("https://pomf.io/upload.php"),
+            new PomfUploader("http://pomf.pl/upload.php"),
+            // new PomfUploader("https://pomf.se/upload.php", "https://a.pomf.se"),
+            // new PomfUploader("https://sheesh.in/upload.php"),
+            new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe")
         };
 
-        public PomfUploader Uploader { get; set; }
+        public PomfUploader Uploader { get; private set; }
 
         public Pomf(PomfUploader uploader)
         {
@@ -63,7 +72,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (Uploader == null || string.IsNullOrEmpty(Uploader.UploadURL))
             {
-                Errors.Add("Please select one of Pomf uploaders from \"Destination settings window -> Pomf tab\".");
+                Errors.Add(Resources.Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__);
                 return null;
             }
 
@@ -87,6 +96,43 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return result;
+        }
+
+        public static string TestClones()
+        {
+            List<string> successful = new List<string>();
+            List<string> failed = new List<string>();
+
+            foreach (PomfUploader uploader in Uploaders)
+            {
+                try
+                {
+                    Pomf pomf = new Pomf(uploader);
+
+                    byte[] bytes = Encoding.UTF8.GetBytes("Test");
+                    using (MemoryStream ms = new MemoryStream(bytes))
+                    {
+                        UploadResult result = pomf.Upload(ms, "Test.txt");
+
+                        if (result != null && result.IsSuccess && !string.IsNullOrEmpty(result.URL))
+                        {
+                            successful.Add(uploader.ToString());
+                        }
+                        else
+                        {
+                            failed.Add(uploader.ToString());
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                    failed.Add(uploader.ToString());
+                }
+            }
+
+            return string.Format("Successful uploads ({0}):\r\n\r\n{1}\r\n\r\nFailed uploads ({2}):\r\n\r\n{3}",
+                successful.Count, string.Join("\r\n", successful), failed.Count, string.Join("\r\n", failed));
         }
 
         private class PomfResponse

@@ -33,24 +33,23 @@ namespace ShareX
 {
     public static class IntegrationHelpers
     {
+        private static string GetStartupTargetPath()
+        {
+#if STEAM
+            return Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
+#else
+            return Application.ExecutablePath;
+#endif
+        }
+
         public static bool CheckStartupShortcut()
         {
-            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup); //RegistryHelper.CheckStartWithWindows();
+            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, GetStartupTargetPath());
         }
 
         public static void CreateStartupShortcut(bool create)
         {
-            //RegistryHelper.SetStartWithWindows(cbStartWithWindows.Checked);
-
-            string filePath;
-
-#if STEAM
-            filePath = Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
-#else
-            filePath = Application.ExecutablePath;
-#endif
-
-            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, filePath, "-silent");
+            ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.Startup, GetStartupTargetPath(), "-silent");
         }
 
         public static bool CheckShellContextMenuButton()
@@ -65,7 +64,7 @@ namespace ShareX
 
         public static bool CheckSendToMenuButton()
         {
-            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo);
+            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo, Application.ExecutablePath);
         }
 
         public static void CreateSendToMenuButton(bool create)
@@ -75,12 +74,12 @@ namespace ShareX
 
         public static bool CheckSteamShowInApp()
         {
-            return File.Exists(Program.SteamInAppPath);
+            return File.Exists(Program.SteamInAppFilePath);
         }
 
         public static void SteamShowInApp(bool showInApp)
         {
-            string path = Program.SteamInAppPath;
+            string path = Program.SteamInAppFilePath;
 
             try
             {

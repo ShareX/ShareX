@@ -40,7 +40,7 @@ namespace ShareX.Setup
             Steam // Create Steam folder
         }
 
-        private static readonly SetupType Setup = SetupType.Steam;
+        private static readonly SetupType Setup = SetupType.Beta;
 
         private static readonly string parentDir = @"..\..\..\";
         private static readonly string binDir = Path.Combine(parentDir, "ShareX", "bin");
@@ -141,7 +141,7 @@ namespace ShareX.Setup
             CopyFile(Path.Combine(outputDir, "Recorder-devices-setup.exe"), destination);
             CopyFile(Path.Combine(chromeReleaseDir, "ShareX_Chrome.exe"), destination);
 
-            string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "tr", "zh-CN" };
+            string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN" };
 
             foreach (string language in languages)
             {
@@ -156,7 +156,7 @@ namespace ShareX.Setup
             }
             else
             {
-                File.WriteAllText(Path.Combine(destination, "PersonalPath.cfg"), "ShareX", Encoding.UTF8);
+                File.Create(Path.Combine(destination, "Portable")).Dispose();
 
                 //FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
                 //string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);

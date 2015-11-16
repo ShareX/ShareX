@@ -165,6 +165,22 @@ namespace ShareX.ScreenCaptureLib
                 lblVorbisQuality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.Vorbis_qscale;
                 lblMP3Quality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.MP3_qscale;
 
+                bool isValidAudioCodec = true;
+                FFmpegVideoCodec videoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
+
+                if (videoCodec == FFmpegVideoCodec.libvpx)
+                {
+                    FFmpegAudioCodec audioCodec = (FFmpegAudioCodec)cboAudioCodec.SelectedIndex;
+
+                    if (audioCodec != FFmpegAudioCodec.libvorbis)
+                    {
+                        isValidAudioCodec = false;
+                    }
+                }
+
+                pbAudioCodecWarning.Visible = !isValidAudioCodec;
+                pbx264PresetWarning.Visible = (FFmpegPreset)cbx264Preset.SelectedIndex > FFmpegPreset.fast;
+
                 if (!Options.FFmpeg.UseCustomCommands)
                 {
                     txtCommandLinePreview.Text = Options.GetFFmpegArgs();

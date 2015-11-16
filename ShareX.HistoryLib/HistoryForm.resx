@@ -592,7 +592,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date &amp; time</value>
+    <value>Date and time</value>
   </data>
   <data name="chDateTime.Width" type="System.Int32, mscorlib">
     <value>122</value>

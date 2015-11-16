@@ -478,7 +478,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Upload from URL</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Capture region (Objects)</value>
+    <value>Capture region (Windows and controls)</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Custom file uploader</value>
@@ -843,5 +843,12 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
     <value>Tools</value>
+  </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>Location header</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>A newer version of {0} is available.
+Would you like to download it?</value>
   </data>
 </root>

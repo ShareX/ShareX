@@ -118,14 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>&amp;OK</value>
+    <value>Continuer</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>Erreur
 Erreur 2</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>Quitter l'application</value>
+    <value>Quitter</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>Ouvrir le fichier journal</value>
