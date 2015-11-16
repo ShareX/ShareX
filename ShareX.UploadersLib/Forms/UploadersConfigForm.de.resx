@@ -270,7 +270,7 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Benutze diese Option wenn du Bucket mit einer eigenen Domain benutzt.
 Wenn das Textfeld leer ist, dann wird der Bucketname für die URL benutzt.
-Z.b.: wenn deine bucket bucket.example.com heißt dann wird die URL http://bucket.example.com/... sein</value>
+z.B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.example.com/... sein</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Benutze geringeren Redundanzspeicher</value>
@@ -278,7 +278,7 @@ Z.b.: wenn deine bucket bucket.example.com heißt dann wird die URL http://bucke
   <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
     <value>Benutze eine geringe Redundanz Speicherklasse für gespeicherte Elemente.
 Mit dieser Option sind Objekte billiger zu speichern, haben aber eine 99,99% Beständigkeit, anstatt von 99,999999999%
-D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
+d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
   <data name="cbBoxShare.Text" xml:space="preserve">
     <value>Erstelle teilbaren Link</value>
@@ -311,7 +311,7 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Benutze direkte URL, wenn sie existiert </value>
   </data>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
-    <value>Benutze langen Link, der den Dateinamen besitzt</value>
+    <value>Benutze langen Link, der den Dateinamen beinhaltet</value>
   </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
     <value>Erstelle teilbare URL</value>
@@ -383,7 +383,7 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>API Schlüssel:</value>
   </data>
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
-    <value>Zugriffstaste:</value>
+    <value>Access Key:</value>
   </data>
   <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
     <value>Bucketname:</value>
@@ -401,7 +401,7 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>URL Vorschau:</value>
   </data>
   <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
-    <value>Gehimkey:</value>
+    <value>Secret Key:</value>
   </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Domain:</value>
@@ -425,7 +425,7 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Status</value>
   </data>
   <data name="lblCopyURLType.Text" xml:space="preserve">
-    <value>URL typ:</value>
+    <value>URL Typ:</value>
   </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
     <value>Löschung der URL:</value>
@@ -503,7 +503,7 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Passwort:</value>
   </data>
   <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Einloggen erfordert</value>
+    <value>Login erforderlich.</value>
   </data>
   <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
     <value>Ordner ID:</value>
@@ -554,7 +554,7 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Passwort:</value>
   </data>
   <data name="lblMegaStatus.Text" xml:space="preserve">
-    <value> Konfiguriert / Nicht Konfiguriert</value>
+    <value>Konfiguriert / Nicht Konfiguriert</value>
   </data>
   <data name="lblMegaStatusTitle.Text" xml:space="preserve">
     <value>Status:</value>
@@ -786,5 +786,123 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
   <data name="tpCopy.Text" xml:space="preserve">
     <value>Kopieren</value>
+  </data>
+  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
+    <value>Wert</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
+    <value>Argumente</value>
+  </data>
+  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>Wert</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>Link URL:</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Alle testen</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>"Teilen" Passwort:</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Tage bis zum Ablauf:</value>
+  </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Seafile "Teilen" Einstellungen:</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
+    <value>Validieren</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Bibliothekspasswort:</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Größe</value>
+  </data>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Verschlüsselt</value>
+  </data>
+  <data name="btnSeafilePathValidate.Text" xml:space="preserve">
+    <value>Validieren</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
+    <value>Bibliotheken ohne Schreibrechte sind versteckt.
+Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
+  </data>
+  <data name="lblSeafilePath.Text" xml:space="preserve">
+    <value>Pfad:</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
+    <value>Bibliothek auswählen:</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
+    <value>E-Mail:</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
+    <value>Benutzung:</value>
+  </data>
+  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
+    <value>Accountinformationen</value>
+  </data>
+  <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
+    <value>Validieren</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
+    <value>Validieren</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
+    <value>Holen</value>
+  </data>
+  <data name="lblSeafileUsername.Text" xml:space="preserve">
+    <value>E-Mail:</value>
+  </data>
+  <data name="lblSeafilePassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
+    <value>Auth-Token abfragen</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Ungültiges SSL-Zertifikat ignorieren</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
+    <value>Teilbare URL erstellen</value>
+  </data>
+  <data name="lblSeafileAuthToken.Text" xml:space="preserve">
+    <value>Auth-Token:</value>
   </data>
 </root>

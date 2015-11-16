@@ -213,4 +213,22 @@
   <data name="tpOutput.Text" xml:space="preserve">
     <value>Ausgabe</value>
   </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Bitte beachte: ShareX versucht bestmöglich eine korrekte Scrollaufnahme zu erstellen, es kann aber nicht jeder Inhalt korrekt aufgenommen werden. Das Hauptproblem sind animierte Objekte (z.B. GIF Bilder) oder statische Inhalte (z.B. Menüs oder Buttons), die Ihre Position nicht verändern wenn die Seite scrollt.</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>Vor der Aufnahme</value>
+  </data>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>Während der Aufnahme</value>
+  </data>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>Nach der Aufnahme</value>
+  </data>
+  <data name="cbAutoClose.Text" xml:space="preserve">
+    <value>Schließe dieses Fenster nach der Verarbeitung</value>
+  </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>Nach oben scroll Methode vor der Aufnahme:</value>
+  </data>
 </root>
