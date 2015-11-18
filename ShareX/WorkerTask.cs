@@ -585,7 +585,7 @@ namespace ShareX
                                     if (imageSaved)
                                     {
                                         DebugHelper.WriteLine("Image saved to file with dialog: " + Info.FilePath);
-                                    }   
+                                    }
                                 }
                                 else
                                 {
@@ -1099,6 +1099,9 @@ namespace ShareX
                     break;
                 case FileDestination.Pomf:
                     fileUploader = new Pomf(Program.UploadersConfig.PomfUploader);
+                    break;
+                case FileDestination.Uguu:
+                    fileUploader = new Uguu();
                     break;
                 case FileDestination.Dropfile:
                     fileUploader = new Dropfile();

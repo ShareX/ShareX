@@ -142,6 +142,7 @@
     <Compile Include="FileUploaders\SFTP.cs" />
     <Compile Include="FileUploaders\Minus.cs" />
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
+    <Compile Include="FileUploaders\Uguu.cs" />
     <Compile Include="FileUploaders\VideoBin.cs" />
     <Compile Include="FTPClient\FTPClientForm.cs">
       <SubType>Form</SubType>
