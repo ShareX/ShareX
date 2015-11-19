@@ -256,4 +256,7 @@
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Ошибка твита</value>
   </data>
+  <data name="Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__" xml:space="preserve">
+    <value>Пожалуйста, выберите один из сервисов Pomf в окне «Настройки сервисов», вкладка «Pomf».</value>
+  </data>
 </root>
