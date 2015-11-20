@@ -48,12 +48,15 @@ namespace ShareX.HelpersLib
 
         public void Start()
         {
-            Stop();
+            if (timer == null || !timer.Enabled)
+            {
+                Stop();
 
-            timer = new Timer();
-            timer.Interval = Interval;
-            timer.Tick += timer_Tick;
-            timer.Start();
+                timer = new Timer();
+                timer.Interval = Interval;
+                timer.Tick += timer_Tick;
+                timer.Start();
+            }
         }
 
         public void Start(int interval)
