@@ -78,7 +78,10 @@ namespace ShareX
             startMethod = recordStartMethod;
 
             showDebugMessage();
-            ConfigurOutputType();
+
+            if (!InitOutputType()) {
+                return;
+            }
 
             captureRectangle = GetCaptureStartMethod();
             captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
@@ -110,13 +113,13 @@ namespace ShareX
             DebugHelper.WriteLine(debugText);
         }
 
-        private static void ConfigurOutputType()
+        private static bool InitOutputType()
         {
             if (taskSettings.CaptureSettings.RunScreencastCLI)
             {
                 if (!IsValidRunScreenCastCLI(taskSettings))
                 {
-                    return;
+                    return false;
                 }
             }
 
@@ -131,9 +134,10 @@ namespace ShareX
             {
                 if (!IsValidOutputFFmpeg(taskSettings))
                 {
-                    return;
+                    return false;
                 }
             }
+            return true;
         }
 
         private static bool IsValidRunScreenCastCLI(TaskSettings taskSettings)
