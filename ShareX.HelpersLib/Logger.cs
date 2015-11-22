@@ -93,7 +93,7 @@ namespace ShareX.HelpersLib
                 {
                     if (!string.IsNullOrEmpty(LogFilePath))
                     {
-                        File.AppendAllText(LogFilePath, message, Encoding.UTF8);
+                        File.AppendAllText(LogFilePath, message + Environment.NewLine, Encoding.UTF8);
                     }
                 }
                 catch (Exception e)
