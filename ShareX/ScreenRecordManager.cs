@@ -40,6 +40,13 @@ namespace ShareX
 
         private static ScreenRecorder screenRecorder;
         private static ScreenRecordForm recordForm;
+        private static TaskSettings taskSettings;
+        private static ScreenRecordOutput outputType;
+        private static ScreenRecordStartMethod startMethod;
+        private static Rectangle captureRectangle;
+        private static string path;
+        private static bool abortRequested;
+        private static float duration;
 
         public static void StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
         {
@@ -64,13 +71,16 @@ namespace ShareX
             }
         }
 
-        private static void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
+        private static void StartRecording(ScreenRecordOutput recordOutputType, TaskSettings recordTaskSettings, ScreenRecordStartMethod recordStartMethod = ScreenRecordStartMethod.Region)
         {
+            taskSettings = recordTaskSettings;
+            outputType = recordOutputType;
+            startMethod = recordStartMethod;
 
-            showDebugMessage(outputType, taskSettings);
-            configOutputType(outputType,taskSettings);      
+            showDebugMessage();
+            configOutputType();      
 
-            Rectangle captureRectangle = getCaptureStartMethod(taskSettings, startMethod);
+            captureRectangle = getCaptureStartMethod();
             captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
 
             if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
@@ -81,13 +91,12 @@ namespace ShareX
             Program.Settings.ScreenRecordRegion = captureRectangle;
 
             IsRecording = true;
-
             Screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
 
-            string path = "";
-            bool abortRequested = false;
 
-            float duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0;
+            abortRequested = false;
+            path = "";
+            duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0;
 
             recordForm = new ScreenRecordForm(captureRectangle, startMethod == ScreenRecordStartMethod.Region, duration);
             recordForm.StopRequested += StopRecording;
@@ -232,7 +241,7 @@ namespace ShareX
             });
         }
 
-        private static void showDebugMessage(ScreenRecordOutput outputType, TaskSettings taskSettings)
+        private static void showDebugMessage()
         {
             string debugText;
 
@@ -251,7 +260,7 @@ namespace ShareX
             DebugHelper.WriteLine(debugText);
         }
 
-        private static void configOutputType(ScreenRecordOutput outputType, TaskSettings taskSettings)
+        private static void configOutputType()
         {
             if (taskSettings.CaptureSettings.RunScreencastCLI)
             {
@@ -314,7 +323,7 @@ namespace ShareX
             return true;
         }
 
-        private static Rectangle getCaptureStartMethod(TaskSettings taskSettings, ScreenRecordStartMethod startMethod)
+        private static Rectangle getCaptureStartMethod()
         {
             Rectangle captureRectangle = Rectangle.Empty;
 
