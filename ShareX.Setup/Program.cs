@@ -167,7 +167,7 @@ namespace ShareX.Setup
                     File.Delete(zipPath);
                 }
 
-                Zip(destination + "\\*.*", zipPath);
+                Zip(destination + "\\*", zipPath);
 
                 if (Directory.Exists(destination))
                 {
