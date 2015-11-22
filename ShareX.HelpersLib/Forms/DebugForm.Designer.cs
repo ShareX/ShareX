@@ -64,7 +64,6 @@
             this.Controls.Add(this.btnCopyAll);
             this.Controls.Add(this.btnLoadedAssemblies);
             this.Name = "DebugForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DebugForm_FormClosing);
             this.ResumeLayout(false);
 
         }
