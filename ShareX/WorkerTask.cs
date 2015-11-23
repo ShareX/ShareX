@@ -580,7 +580,7 @@ namespace ShareX
                                 {
                                     Info.FilePath = sfd.FileName;
                                     lastSaveAsFolder = Path.GetDirectoryName(Info.FilePath);
-                                    imageSaved = imageData.Write(Info.FilePath) == Info.FilePath;
+                                    imageSaved = imageData.Write(Info.FilePath);
 
                                     if (imageSaved)
                                     {
@@ -589,8 +589,7 @@ namespace ShareX
                                 }
                                 else
                                 {
-                                    // User cancelled the dialog - stop image saving retries.
-                                    return false;
+                                    break;
                                 }
                             } while (!imageSaved);
                         }
