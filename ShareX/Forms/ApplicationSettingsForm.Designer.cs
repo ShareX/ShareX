@@ -185,7 +185,6 @@ namespace ShareX
             // 
             resources.ApplyResources(this.btnLanguages, "btnLanguages");
             this.btnLanguages.Menu = this.cmsLanguages;
-            this.btnLanguages.MenuX0 = true;
             this.btnLanguages.Name = "btnLanguages";
             this.btnLanguages.UseVisualStyleBackColor = true;
             // 
