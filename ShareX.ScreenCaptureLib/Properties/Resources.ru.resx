@@ -148,7 +148,7 @@
     <value>Упрощенный захват области</value>
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
-    <value>X: {0} Y: {1} В: {2} Ш: {3}</value>
+    <value>X: {0} Y: {1} Ш: {2} В: {3}</value>
   </data>
   <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
     <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
