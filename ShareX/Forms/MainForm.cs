@@ -599,7 +599,7 @@ namespace ShareX
                 tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices
             })
             {
-                dropDownItem.DropDown.Closing += (sender, e) => e.Cancel = (e.CloseReason == ToolStripDropDownCloseReason.ItemClicked);
+                dropDownItem.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
             }
         }
 

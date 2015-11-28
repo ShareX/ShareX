@@ -105,7 +105,7 @@ namespace ShareX.UploadersLib.HelperClasses
                     {
                         return i - 1;
                     }
-                    if ((i + 1 == str.Length))
+                    if (i + 1 == str.Length)
                     {
                         return i;
                     }

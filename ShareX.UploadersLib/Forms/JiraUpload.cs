@@ -98,7 +98,7 @@ namespace ShareX.UploadersLib.GUI
 
         private void UpdateSummary(string summary)
         {
-            btnUpload.Enabled = (summary != null);
+            btnUpload.Enabled = summary != null;
 
             lblSummary.Text = summary ?? Resources.JiraUpload_ValidateIssueId_Issue_not_found;
             lblSummary.Enabled = summary != null;

@@ -188,7 +188,7 @@ namespace ShareX.UploadersLib
         public const uint BIF_EDITBOX = 0x0010;
         public const uint BIF_VALIDATE = 0x0020;
         public const uint BIF_NEWDIALOGSTYLE = 0x0040;
-        public const uint BIF_USENEWUI = (BIF_NEWDIALOGSTYLE | BIF_EDITBOX);
+        public const uint BIF_USENEWUI = BIF_NEWDIALOGSTYLE | BIF_EDITBOX;
         public const uint BIF_BROWSEINCLUDEURLS = 0x0080;
         public const uint BIF_BROWSEFORCOMPUTER = 0x1000;
         public const uint BIF_BROWSEFORPRINTER = 0x2000;
