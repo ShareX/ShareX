@@ -389,7 +389,7 @@ namespace ShareX.ScreenCaptureLib
                 if (isMouseDown)
                 {
                     g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
-                    borderDotPen2.DashOffset = (float)penTimer.Elapsed.TotalSeconds * -10;
+                    borderDotPen2.DashOffset = (float)penTimer.Elapsed.TotalSeconds * -15;
                     g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
                 }
             }

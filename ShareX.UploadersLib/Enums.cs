@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using System.ComponentModel;
 
 namespace ShareX.UploadersLib
