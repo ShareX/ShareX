@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
@@ -133,7 +134,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     if (result.ocs.data != null && result.ocs.meta.statuscode == 100)
                     {
-                        string link = result.ocs.data.url;
+                        OwnCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<OwnCloudShareResponseData>();
+                        string link = data.url;
                         if (DirectLink) link += (IsCompatibility81 ? "/download" : "&download");
                         return link;
                     }
@@ -155,7 +157,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public class OwnCloudShareResponseOcs
         {
             public OwnCloudShareResponseMeta meta { get; set; }
-            public OwnCloudShareResponseData data { get; set; }
+            public object data { get; set; }
         }
 
         public class OwnCloudShareResponseMeta
