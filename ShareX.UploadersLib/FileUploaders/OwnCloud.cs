@@ -68,8 +68,12 @@ namespace ShareX.UploadersLib.FileUploaders
                 Path = "/";
             }
 
+            // Original, unencoded path. Necessary for shared files
             string path = URLHelpers.CombineURL(Path, fileName);
-            string url = URLHelpers.CombineURL(Host, "remote.php/webdav", path);
+            // Encoded path, necessary when sent in the URL
+            string encodedPath = URLHelpers.CombineURL(Path, URLHelpers.URLEncode(fileName));
+
+            string url = URLHelpers.CombineURL(Host, "remote.php/webdav", encodedPath);
             url = URLHelpers.FixPrefix(url);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
 
