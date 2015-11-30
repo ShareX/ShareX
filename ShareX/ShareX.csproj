@@ -97,6 +97,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaptureActiveMonitor.cs" />
+    <Compile Include="CaptureActiveWindow.cs" />
+    <Compile Include="CaptureCustomRegion.cs" />
+    <Compile Include="CaptureFactory.cs" />
+    <Compile Include="CaptureLastRegion.cs" />
+    <Compile Include="CaptureRegion.cs" />
+    <Compile Include="CaptureScreen.cs" />
+    <Compile Include="CaptureStrategy.cs" />
     <Compile Include="CompanionCube.cs" />
     <Compile Include="CompanionCubeManager.cs" />
     <Compile Include="Controls\BeforeUploadControl.cs">

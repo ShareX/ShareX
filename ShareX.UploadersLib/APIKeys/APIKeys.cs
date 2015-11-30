@@ -31,8 +31,8 @@ namespace ShareX.UploadersLib
         public static string ImageShackKey = "";
         public static string TinyPicID = "";
         public static string TinyPicKey = "";
-        public static string ImgurClientID = "";
-        public static string ImgurClientSecret = "";
+        public static string ImgurClientID = "2a00c2a4245a5ff";
+        public static string ImgurClientSecret = "9cd6de940d5bfce2e69f1505740bac61fe7fb1a0";
         public static string FlickrKey = "";
         public static string FlickrSecret = "";
         public static string PhotobucketConsumerKey = "";
@@ -42,8 +42,8 @@ namespace ShareX.UploadersLib
         public static string SomeImageKey = "";
 
         // File Uploaders
-        public static string DropboxConsumerKey = "";
-        public static string DropboxConsumerSecret = "";
+        public static string DropboxConsumerKey = "x6ia6cva0cmrj4t";
+        public static string DropboxConsumerSecret = "plfyzlpyjdd5z1q";
         public static string CopyConsumerKey = "";
         public static string CopyConsumerSecret = "";
         public static string HubicClientID = "";
@@ -71,9 +71,9 @@ namespace ShareX.UploadersLib
         public static string BitlyClientSecret = "";
 
         // Other Services
-        public static string GoogleAPIKey = "";
-        public static string GoogleClientID = "";
-        public static string GoogleClientSecret = "";
+        public static string GoogleAPIKey = "AIzaSyCt94bmh9Tv_Hw9n6SmN1KAAuVlFH_xoHk";
+        public static string GoogleClientID = "278467917739-ddreaekcnp12cnm4nd21q4avduhok003.apps.googleusercontent.com";
+        public static string GoogleClientSecret = "bjXLccgJE7E0avk1DtHxVqdq";
         public static string TwitterConsumerKey = "";
         public static string TwitterConsumerSecret = "";
     }
