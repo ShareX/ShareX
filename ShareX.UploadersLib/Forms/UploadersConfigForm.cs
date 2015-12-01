@@ -2676,16 +2676,16 @@ namespace ShareX.UploadersLib
                     {
                         if (match.Groups.Count > 1 && !string.IsNullOrEmpty(match.Groups[1].Value))
                         {
-                            syntax = string.Format("${0},{1}$", selectedIndex + 1, match.Groups[1].Value);
+                            syntax = string.Format("$regex:{0},{1}$", selectedIndex + 1, match.Groups[1].Value);
                         }
                         else
                         {
-                            syntax = string.Format("${0},1$", selectedIndex + 1);
+                            syntax = string.Format("$regex:{0},1$", selectedIndex + 1);
                         }
                     }
                     else
                     {
-                        syntax = string.Format("${0}$", selectedIndex + 1);
+                        syntax = string.Format("$regex:{0}$", selectedIndex + 1);
                     }
 
                     txtCustomUploaderURL.AppendText(syntax);
