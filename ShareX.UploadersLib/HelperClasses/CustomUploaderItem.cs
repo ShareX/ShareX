@@ -28,8 +28,10 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml.XPath;
 
 namespace ShareX.UploadersLib
 {
@@ -209,15 +211,20 @@ namespace ShareX.UploadersLib
 
                         string syntaxCheck = url.Substring(i + 1);
 
-                        if (syntaxCheck.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase))
+                        if (syntaxCheck.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase)) // Example: $regex:1,1$
+                        {
+                            parseType = CustomUploaderResponseParseType.Regex;
+                            syntaxStartIndex = i + 7;
+                        }
+                        else if (syntaxCheck.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase)) // Example: $json:Files[0].URL$
                         {
                             parseType = CustomUploaderResponseParseType.Json;
                             syntaxStartIndex = i + 6;
                         }
-                        else if (syntaxCheck.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase))
+                        else if (syntaxCheck.StartsWith("xml:", StringComparison.InvariantCultureIgnoreCase)) // Example: $xml:/Files/File[1]/URL$
                         {
-                            parseType = CustomUploaderResponseParseType.Regex;
-                            syntaxStartIndex = i + 7;
+                            parseType = CustomUploaderResponseParseType.Xml;
+                            syntaxStartIndex = i + 5;
                         }
                         else
                         {
@@ -241,6 +248,9 @@ namespace ShareX.UploadersLib
                                     break;
                                 case CustomUploaderResponseParseType.Json:
                                     resultText = ParseJsonSyntax(parseText);
+                                    break;
+                                case CustomUploaderResponseParseType.Xml:
+                                    resultText = ParseXmlSyntax(parseText);
                                     break;
                             }
 
@@ -309,9 +319,29 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        private string ParseJsonSyntax(string syntax)
+        // http://goessner.net/articles/JsonPath/
+        private string ParseJsonSyntax(string syntaxJsonPath)
         {
-            return (string)JObject.Parse(response).SelectToken(syntax);
+            return (string)JObject.Parse(response).SelectToken("$." + syntaxJsonPath);
+        }
+
+        // http://www.w3schools.com/xsl/xpath_syntax.asp
+        // https://msdn.microsoft.com/en-us/library/ms256086(v=vs.110).aspx
+        private string ParseXmlSyntax(string syntaxXPath)
+        {
+            using (StringReader sr = new StringReader(response))
+            {
+                XPathDocument doc = new XPathDocument(sr);
+                XPathNavigator nav = doc.CreateNavigator();
+                XPathNavigator node = nav.SelectSingleNode(syntaxXPath);
+
+                if (node != null)
+                {
+                    return node.Value;
+                }
+            }
+
+            return null;
         }
     }
 }

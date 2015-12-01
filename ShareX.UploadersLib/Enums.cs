@@ -300,7 +300,8 @@ namespace ShareX.UploadersLib
     public enum CustomUploaderResponseParseType
     {
         Regex,
-        Json
+        Json,
+        Xml
     }
 
     public enum FTPSEncryption
