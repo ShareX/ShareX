@@ -206,6 +206,9 @@ namespace ShareX
                 case FileDestination.Pomf:
                     fileUploader = new Pomf(Program.UploadersConfig.PomfUploader);
                     break;
+                case FileDestination.Uguu:
+                    fileUploader = new Uguu();
+                    break;
                 case FileDestination.Dropfile:
                     fileUploader = new Dropfile();
                     break;
