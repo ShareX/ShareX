@@ -108,6 +108,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpPomf, Resources.Pomf);
             AddIconToTab(tpPushbullet, Resources.Pushbullet);
             AddIconToTab(tpSeafile, Resources.Seafile);
+            AddIconToTab(tpStreamable, Resources.Streamable);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
@@ -576,6 +577,17 @@ namespace ShareX.UploadersLib
             txtSeafileSharePassword.Text = Config.SeafileSharePassword;
             txtSeafileAccInfoEmail.Text = Config.SeafileAccInfoEmail;
             txtSeafileAccInfoUsage.Text = Config.SeafileAccInfoUsage;
+
+            // Streamable
+
+            cbStreamableAnonymous.Checked = Config.StreamableAnonymous;
+            txtStreamablePassword.Text = Config.StreamablePassword;
+            txtStreamableUsername.Text = Config.StreamableUsername;
+            if (Config.StreamableAnonymous)
+            {
+                txtStreamableUsername.Enabled = false;
+                txtStreamablePassword.Enabled = false;
+            }
 
             #endregion File uploaders
 
@@ -2347,6 +2359,27 @@ namespace ShareX.UploadersLib
 
         #endregion Seafile
 
+        #region Streamable
+
+        private void cboxStreamableAnonymous_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.StreamableAnonymous = cbStreamableAnonymous.Checked;
+            txtStreamableUsername.Enabled = !Config.StreamableAnonymous;
+            txtStreamablePassword.Enabled = !Config.StreamableAnonymous;
+        }
+
+        private void txtStreamableUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.StreamableUsername = txtStreamableUsername.Text;
+        }
+
+        private void txtStreamablePassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.StreamablePassword = txtStreamablePassword.Text;
+        }
+
+        #endregion Streamable
+
         #endregion File Uploaders
 
         #region URL Shorteners
@@ -2888,5 +2921,6 @@ namespace ShareX.UploadersLib
         #endregion Custom Uploaders
 
         #endregion Other Uploaders
+
     }
 }
