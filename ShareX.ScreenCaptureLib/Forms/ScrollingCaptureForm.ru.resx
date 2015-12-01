@@ -216,4 +216,19 @@
   <data name="lblTrimTop.Text" xml:space="preserve">
     <value>Сверху:</value>
   </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>Способ прокрутки до верха перед захватом:</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>Перед захватом</value>
+  </data>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>При захвате</value>
+  </data>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>После захвата</value>
+  </data>
+  <data name="cbAutoClose.Text" xml:space="preserve">
+    <value>Закрыть это окно после обработки</value>
+  </data>
 </root>

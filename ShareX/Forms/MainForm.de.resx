@@ -601,13 +601,7 @@
     <value>Farbauswähler...</value>
   </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
-    <value>letzte Links</value>
-  </data>
-  <data name="btnHideSteam.Text" xml:space="preserve">
-    <value>Verstecken</value>
-  </data>
-  <data name="btnOpenSteam.Text" xml:space="preserve">
-    <value>ShareX ist jetzt auf Steam verfügbar!</value>
+    <value>Letzte Links</value>
   </data>
   <data name="tsmiAutomate.Text" xml:space="preserve">
     <value>Automatisieren...</value>
@@ -653,5 +647,26 @@
   </data>
   <data name="tsmiWebpageCapture.Text" xml:space="preserve">
     <value>Webpage Aufnahme...</value>
+  </data>
+  <data name="tsmiTrayDebug.Text" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
+    <value>URL-Teilen Testen</value>
+  </data>
+  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
+    <value>URL-Kürzen Testen</value>
+  </data>
+  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
+    <value>Dateiupload Testen</value>
+  </data>
+  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
+    <value>Textupload Testen</value>
+  </data>
+  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
+    <value>Bildupload Testen</value>
+  </data>
+  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
+    <value>Debug log...</value>
   </data>
 </root>

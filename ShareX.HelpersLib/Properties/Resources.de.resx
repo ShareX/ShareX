@@ -822,4 +822,11 @@ Möchtest du sie herunterladen und installieren?</value>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Automatisch alphanumerisch erhöhen. 0 pad left using {n}</value>
   </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>Eine neuere Version von {0} ist verfügbar.
+Möchtest du sie herunterladen?</value>
+  </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>Location header</value>
+  </data>
 </root>

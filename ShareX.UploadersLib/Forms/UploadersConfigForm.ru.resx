@@ -757,4 +757,131 @@
 В этом случае, хранить объекты дешевле, но их прочности 99.99%, вместо 99.999999999%.
 Это значит, что они могут исчезнуть из Amazon S3 в какой-то момент.</value>
   </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>URL ссылки:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>Ссылка на результат:</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Проверить все</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>Ссылка для загрузки:</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Сервисы:</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Дней до удаления:</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblSeafileUsername.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
+    <value>Библиотеки без права на запись не отображаются.
+Шифрование библиотеки отключает публикацию.</value>
+  </data>
+  <data name="lblSeafileAuthToken.Text" xml:space="preserve">
+    <value>Ключ авторизации:</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Пароль библиотеки:</value>
+  </data>
+  <data name="lblSeafilePassword.Text" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="lblSeafilePath.Text" xml:space="preserve">
+    <value>Путь:</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
+    <value>Выберите библиотеку:</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Пароль публикации:</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
+    <value>Использование:</value>
+  </data>
+  <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
+    <value>Утвердить</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
+    <value>Утвердить</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
+    <value>Утвердить</value>
+  </data>
+  <data name="btnSeafilePathValidate.Text" xml:space="preserve">
+    <value>Утвердить</value>
+  </data>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Настройки публикации</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
+    <value>Получить ключ авторизации</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Игнорировать неверный сертификат SSL</value>
+  </data>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Зашифровано</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
+    <value>Создать публичный URL</value>
+  </data>
+  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
+    <value>Информация об аккаунте</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
+    <value>Получить</value>
+  </data>
+  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
+    <value>Аргументы</value>
+  </data>
+  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
+    <value>Убрать</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
+    <value>Заголовки</value>
+  </data>
+  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
 </root>

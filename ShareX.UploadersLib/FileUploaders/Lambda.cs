@@ -56,7 +56,7 @@ namespace ShareX.UploadersLib.FileUploaders
             arguments.Add("api_key", Config.UserAPIKey);
             UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments, method: HttpMethod.PUT);
 
-            if(result.Response == null)
+            if (result.Response == null)
             {
                 Errors.Add("Upload failed for unknown reason. Check your API key.");
                 return result;
@@ -65,7 +65,6 @@ namespace ShareX.UploadersLib.FileUploaders
             LambdaResponse response = JsonConvert.DeserializeObject<LambdaResponse>(result.Response);
             if (result.IsSuccess)
             {
-
                 result.URL = Config.UploadURL + response.url;
             }
             else

@@ -36,13 +36,13 @@ namespace ShareX
         public MemoryStream ImageStream { get; set; }
         public EImageFormat ImageFormat { get; set; }
 
-        public string Write(string filePath)
+        public bool Write(string filePath)
         {
             try
             {
-                if (ImageStream != null && !string.IsNullOrEmpty(filePath) && ImageStream.WriteToFile(filePath))
+                if (ImageStream != null && !string.IsNullOrEmpty(filePath))
                 {
-                    return filePath;
+                    return ImageStream.WriteToFile(filePath);
                 }
             }
             catch (Exception e)
@@ -51,7 +51,7 @@ namespace ShareX
                 MessageBox.Show(string.Format(Resources.ImageData_Write_Error + "\r\n\r\n" + e, filePath), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return string.Empty;
+            return false;
         }
 
         public void Dispose()

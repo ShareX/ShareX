@@ -150,8 +150,8 @@ namespace ShareX.ScreenCaptureLib
     public enum RegionAnnotateMode
     {
         Capture,
-        Pen,
-        Rectangle
+        Rectangle,
+        Pen
     }
 
     public enum ScrollingCaptureScrollMethod

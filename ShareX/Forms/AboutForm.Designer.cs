@@ -46,11 +46,13 @@
             this.lblTeam = new System.Windows.Forms.Label();
             this.lblSteamBuild = new System.Windows.Forms.Label();
             this.pbSteam = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSteam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProductName
@@ -76,7 +78,7 @@
             // rtbCredits
             // 
             resources.ApplyResources(this.rtbCredits, "rtbCredits");
-            this.rtbCredits.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.rtbCredits.BackColor = System.Drawing.Color.White;
             this.rtbCredits.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbCredits.Name = "rtbCredits";
             this.rtbCredits.ReadOnly = true;
@@ -84,7 +86,7 @@
             // 
             // rtbShareXInfo
             // 
-            this.rtbShareXInfo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.rtbShareXInfo.BackColor = System.Drawing.Color.White;
             this.rtbShareXInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.rtbShareXInfo, "rtbShareXInfo");
             this.rtbShareXInfo.Name = "rtbShareXInfo";
@@ -148,6 +150,7 @@
             // lblSteamBuild
             // 
             resources.ApplyResources(this.lblSteamBuild, "lblSteamBuild");
+            this.lblSteamBuild.BackColor = System.Drawing.Color.Transparent;
             this.lblSteamBuild.Name = "lblSteamBuild";
             // 
             // pbSteam
@@ -160,11 +163,20 @@
             this.pbSteam.TabStop = false;
             this.pbSteam.Click += new System.EventHandler(this.pbSteam_Click);
             // 
+            // pbLogo
+            // 
+            resources.ApplyResources(this.pbLogo, "pbLogo");
+            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.TabStop = false;
+            this.pbLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbLogo_MouseDown);
+            // 
             // AboutForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pbSteam);
             this.Controls.Add(this.lblSteamBuild);
             this.Controls.Add(this.lblTeam);
@@ -188,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSteam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +222,6 @@
         private System.Windows.Forms.Label lblTeam;
         private System.Windows.Forms.Label lblSteamBuild;
         private System.Windows.Forms.PictureBox pbSteam;
+        private System.Windows.Forms.PictureBox pbLogo;
     }
 }

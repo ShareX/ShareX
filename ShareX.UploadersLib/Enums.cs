@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using System.ComponentModel;
 
 namespace ShareX.UploadersLib
@@ -125,6 +124,8 @@ namespace ShareX.UploadersLib
         VideoBin,
         [Description("Pomf")]
         Pomf,
+        [Description("Uguu")]
+        Uguu,
         [Description("Dropfile")]
         Dropfile,
         [Description("Up1")]
@@ -294,6 +295,13 @@ namespace ShareX.UploadersLib
         PUT,
         PATCH,
         DELETE
+    }
+
+    public enum CustomUploaderResponseParseType
+    {
+        Regex,
+        Json,
+        Xml
     }
 
     public enum FTPSEncryption

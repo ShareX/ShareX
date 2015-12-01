@@ -136,7 +136,7 @@ Voulez-vous le télécharger automatiquement ?</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Êtes-vous sûr de vouloir mettre en ligne cette capture d'écran?
-Appuyer sur "Non" pour annuler la mise en ligne et désactiver la mise en ligne automatique.</value>
+Appuyer sur 'Non' pour annuler la mise en ligne et désactiver la mise en ligne automatique.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Impossible d'accéder au fichier "{0}".
@@ -223,7 +223,7 @@ ici</value>
     <value>Erreur FFmpeg</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>Téléchargement du FFmpeg réussi.</value>
+    <value>Téléchargement de FFmpeg réussi.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
     <value>La vidéo et la piste audio source ne peuvent être toutes les deux "Aucune".</value>
@@ -472,5 +472,11 @@ Appuyez sur Oui pour ouvrir l'image du presse-papier. Sinon, appuyez sur Non pou
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Changelog</value>
+  </data>
+  <data name="ImageData_Write_Error" xml:space="preserve">
+    <value>Impossible d'enregistrer l'image pour le chemin {0}.</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
+    <value>Ces applications pourraient être en conflit:</value>
   </data>
 </root>

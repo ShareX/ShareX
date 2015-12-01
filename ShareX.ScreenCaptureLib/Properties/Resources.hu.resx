@@ -135,12 +135,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Minőség:</value>
   </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: Rajzolási mód ░ Space: Teljesméretű felvétel</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: Régió mód ░ Shift: Toll színe ░ Egérgörgő: Toll mérete ░ Space: Teljesképernyős képlopás</value>
-  </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Téglalap lopása annotálva</value>
   </data>

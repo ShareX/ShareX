@@ -138,4 +138,7 @@
   <data name="tpBeforeUpload.Text" xml:space="preserve">
     <value>Vor dem Hochladen</value>
   </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>Dateiname:</value>
+  </data>
 </root>

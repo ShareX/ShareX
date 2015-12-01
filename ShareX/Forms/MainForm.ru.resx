@@ -123,12 +123,6 @@
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Загрузка</value>
   </data>
-  <data name="btnHideSteam.Text" xml:space="preserve">
-    <value>Скрыть</value>
-  </data>
-  <data name="btnOpenSteam.Text" xml:space="preserve">
-    <value>ShareX теперь доступен в Steam!</value>
-  </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Имя файла</value>
   </data>
@@ -653,5 +647,26 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Сервисы отправки ссылок</value>
+  </data>
+  <data name="tsmiTrayDebug.Text" xml:space="preserve">
+    <value>Отладка</value>
+  </data>
+  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
+    <value>Журнал отладки…</value>
+  </data>
+  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
+    <value>Проверить загрузку изображения</value>
+  </data>
+  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
+    <value>Проверить сокращение ссылок</value>
+  </data>
+  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
+    <value>Проверить загрузку файла</value>
+  </data>
+  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
+    <value>Проверить загрузку текста</value>
+  </data>
+  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
+    <value>Проверить отправку ссылки</value>
   </data>
 </root>

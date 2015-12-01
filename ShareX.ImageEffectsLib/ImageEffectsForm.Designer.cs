@@ -170,7 +170,6 @@
             // 
             resources.ApplyResources(this.mbLoadImage, "mbLoadImage");
             this.mbLoadImage.Menu = this.cmsLoadImage;
-            this.mbLoadImage.MenuX0 = true;
             this.mbLoadImage.Name = "mbLoadImage";
             this.mbLoadImage.UseVisualStyleBackColor = true;
             // 

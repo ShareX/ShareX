@@ -133,7 +133,7 @@
   </data>
   <data name="lblx264CRF.Text" xml:space="preserve">
     <value>CRF:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblx264CRF.Name" xml:space="preserve">
     <value>lblx264CRF</value>
   </data>
@@ -621,7 +621,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="btnFFmpegBrowse.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnFFmpegBrowse.Name" xml:space="preserve">
     <value>btnFFmpegBrowse</value>
   </data>
@@ -855,7 +855,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="btnFFmpegHelp.Text" xml:space="preserve">
     <value>?</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnFFmpegHelp.Name" xml:space="preserve">
     <value>btnFFmpegHelp</value>
   </data>
@@ -906,7 +906,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="tpX264.Text" xml:space="preserve">
     <value>x264 / x265</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpX264.Name" xml:space="preserve">
     <value>tpX264</value>
   </data>
@@ -966,7 +966,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="tpVpx.Text" xml:space="preserve">
     <value>VP8</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpVpx.Name" xml:space="preserve">
     <value>tpVpx</value>
   </data>
@@ -990,7 +990,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="tpXvid.Text" xml:space="preserve">
     <value>Xvid</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpXvid.Name" xml:space="preserve">
     <value>tpXvid</value>
   </data>
@@ -1041,7 +1041,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="tpGIF.Text" xml:space="preserve">
     <value>GIF</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpGIF.Name" xml:space="preserve">
     <value>tpGIF</value>
   </data>
@@ -1092,7 +1092,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
     <value>kbit/s</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblVP8BitrateK.Name" xml:space="preserve">
     <value>lblVP8BitrateK</value>
   </data>
@@ -1344,7 +1344,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="tpAAC.Text" xml:space="preserve">
     <value>AAC</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpAAC.Name" xml:space="preserve">
     <value>tpAAC</value>
   </data>
@@ -1410,7 +1410,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="tpVorbis.Text" xml:space="preserve">
     <value>Vorbis</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpVorbis.Name" xml:space="preserve">
     <value>tpVorbis</value>
   </data>
@@ -1476,7 +1476,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="tpMP3.Text" xml:space="preserve">
     <value>MP3</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpMP3.Name" xml:space="preserve">
     <value>tpMP3</value>
   </data>
@@ -1743,7 +1743,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
     <value>?</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnHelperDevicesHelp.Name" xml:space="preserve">
     <value>btnHelperDevicesHelp</value>
   </data>

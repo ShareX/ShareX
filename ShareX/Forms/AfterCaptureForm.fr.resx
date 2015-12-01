@@ -138,4 +138,7 @@
   <data name="chAfterCapture.Text" xml:space="preserve">
     <value>Tâches</value>
   </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>Nom du fichier:</value>
+  </data>
 </root>

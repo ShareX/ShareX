@@ -386,7 +386,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (path.StartsWith("Public/", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    path = URLHelpers.URLPathEncode((path.Substring(7)));
+                    path = URLHelpers.URLPathEncode(path.Substring(7));
                     return URLHelpers.CombineURL(URLPublicDirect, userID.ToString(), path);
                 }
             }

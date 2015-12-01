@@ -1862,12 +1862,12 @@ namespace ShareX.HelpersLib
         /// <summary>
         /// Combines the <see cref="WS_EX_CLIENTEDGE"/> and <see cref="WS_EX_WINDOWEDGE"/> styles.
         /// </summary>
-        WS_EX_OVERLAPPEDWINDOW = (WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE),
+        WS_EX_OVERLAPPEDWINDOW = WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE,
 
         /// <summary>
         /// Combines the <see cref="WS_EX_WINDOWEDGE"/> and <see cref="WS_EX_TOPMOST"/> styles.
         /// </summary>
-        WS_EX_PALETTEWINDOW = (WS_EX_WINDOWEDGE | WS_EX_TOOLWINDOW | WS_EX_TOPMOST),
+        WS_EX_PALETTEWINDOW = WS_EX_WINDOWEDGE | WS_EX_TOOLWINDOW | WS_EX_TOPMOST,
         //#endif /* WINVER >= 0x0400 */
 
         //#if(_WIN32_WINNT >= 0x0500)
@@ -2831,6 +2831,6 @@ namespace ShareX.HelpersLib
         SIF_POS = 0x4,
         SIF_DISABLENOSCROLL = 0x8,
         SIF_TRACKPOS = 0x10,
-        SIF_ALL = (SIF_RANGE | SIF_PAGE | SIF_POS | SIF_TRACKPOS)
+        SIF_ALL = SIF_RANGE | SIF_PAGE | SIF_POS | SIF_TRACKPOS
     }
 }

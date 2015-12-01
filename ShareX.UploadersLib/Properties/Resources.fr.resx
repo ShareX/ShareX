@@ -256,4 +256,7 @@ Dossiers créés:</value>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>Le client FTP prend uniquement en charge FTP ou FTPS.</value>
   </data>
+  <data name="Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__" xml:space="preserve">
+    <value>Merci de sélectionner un des services de mise en ligne Pomf dans la fenêtre "Paramètres de destinations -&gt; Pomf".</value>
+  </data>
 </root>

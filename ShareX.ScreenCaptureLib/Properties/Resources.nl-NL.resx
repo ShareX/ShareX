@@ -135,12 +135,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Kwaliteit:</value>
   </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: Tekenmodus ░ Spatie: Volledig scherm vastleggen</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: Regiomodus ░ Shift: Kleur van pen ░ Muiswiel: Grootte van pen ░ Spatie: Volledig scherm vastleggen</value>
-  </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Rechthoek vastleggen met annotatie</value>
   </data>
@@ -292,5 +286,29 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Opname starten</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
+    <value>[Scrollwiel] Wijzig mode</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
+    <value>[1] Selecteer opname mode</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
+    <value>[2] Selecteer rechthoek modus</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
+    <value>[3] Selecteer vrije-hand modus</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
+    <value>[Shift] Wijzig kleur rand</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
+    <value>[Ctrl + Scrollwiel] Verander grootte rand</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
+    <value>[Shift] Wijzig kleur pen</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
+    <value>[Ctrl + Scrollwiel] Verander grootte pen</value>
   </data>
 </root>

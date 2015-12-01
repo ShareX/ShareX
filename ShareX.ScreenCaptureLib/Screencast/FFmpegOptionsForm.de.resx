@@ -224,4 +224,16 @@ Wenn der Output gut aussieht, dann versuche einen höheren Wert und wenn es dann
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">
     <value>1 ist die höchste Qualität/Dateigröße und 31 die niedrigste Qualität/kleinste Dateigröße.</value>
   </data>
+  <data name="cbx264Preset.ToolTip" xml:space="preserve">
+    <value>"Faster" Voreinstellung = Schneller Enkodierung aber größere Dateien.
+"Slower" Voreinstellung = Langsamere Enkodierung aber kleinere Dateien.
+Für Echtzeitenkodierung (z.B. Bildschirmaufnahmen) muss die Voreinstellung so schnell wie möglich sein.</value>
+  </data>
+  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
+    <value>Dieser Audiocodec wird vom ausgewählten Videocontainer nicht unterstützt.</value>
+  </data>
+  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
+    <value>Für Echtzeitenkodierungen wie Bildschirmaufnahmen sollte die Voreinstellung so schnell wie möglich sein.
+Ansonsten kann es zu vielen Framedrops kommen.</value>
+  </data>
 </root>

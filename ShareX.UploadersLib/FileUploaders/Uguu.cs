@@ -23,49 +23,37 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Threading;
+using System.Collections.Generic;
+using System.IO;
 
-namespace ShareX.HelpersLib
+namespace ShareX.UploadersLib.FileUploaders
 {
-    public class ThreadWorker
+    public class Uguu : FileUploader
     {
-        public event Action DoWork;
-        public event Action Completed;
+        public bool RandomName { get; set; }
+        public string CustomName { get; set; }
 
-        private SynchronizationContext context;
-        private Thread thread;
-
-        public ThreadWorker()
+        public override UploadResult Upload(Stream stream, string fileName)
         {
-            context = SynchronizationContext.Current ?? new SynchronizationContext();
-        }
+            Dictionary<string, string> arguments = new Dictionary<string, string>();
 
-        public void Start(ApartmentState state = ApartmentState.MTA)
-        {
-            if (thread == null)
+            if (RandomName)
             {
-                thread = new Thread(WorkThread);
-                thread.SetApartmentState(state);
-                thread.IsBackground = true;
-                thread.Start();
+                arguments.Add("randomname", "on");
             }
-        }
+            else if (!string.IsNullOrEmpty(CustomName))
+            {
+                arguments.Add("name", CustomName);
+            }
 
-        private void WorkThread()
-        {
-            DoWork();
-            InvokeAsync(Completed);
-        }
+            UploadResult result = UploadData(stream, "https://uguu.se/api.php?d=upload-tool", fileName, "file", arguments);
 
-        public void Invoke(Action action)
-        {
-            context.Send(state => action(), null);
-        }
+            if (result.IsSuccess)
+            {
+                result.URL = result.Response;
+            }
 
-        public void InvokeAsync(Action action)
-        {
-            context.Post(state => action(), null);
+            return result;
         }
     }
 }

@@ -155,10 +155,4 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Captura de rectángulo transparente</value>
   </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: Modo de dibujo ░ Espacio: Captura de pantalla completa</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: Modo de región ░ Mayúsculas: Color de la pluma ░ Rueda del mouse: Tamaño de la pluma ░ Espacio: Captura de pantalla completa</value>
-  </data>
 </root>

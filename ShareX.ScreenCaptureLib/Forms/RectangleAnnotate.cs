@@ -93,7 +93,7 @@ namespace ShareX.ScreenCaptureLib
         private Point positionOnClick;
         private bool isMouseDown, isBusy;
         private Stopwatch penTimer;
-        private Font infoFont, tipFont;
+        private Font infoFont;
 
         public RectangleAnnotate(RectangleAnnotateOptions options)
         {
@@ -107,7 +107,6 @@ namespace ShareX.ScreenCaptureLib
             textBackgroundPenWhite = new Pen(Color.FromArgb(50, Color.White));
             textBackgroundPenBlack = new Pen(Color.FromArgb(150, Color.Black));
             infoFont = new Font("Verdana", 9);
-            tipFont = new Font("Arial", 13);
             penTimer = Stopwatch.StartNew();
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
 
@@ -163,7 +162,6 @@ namespace ShareX.ScreenCaptureLib
             if (textBackgroundPenWhite != null) textBackgroundPenWhite.Dispose();
             if (textBackgroundPenBlack != null) textBackgroundPenBlack.Dispose();
             if (infoFont != null) infoFont.Dispose();
-            if (tipFont != null) tipFont.Dispose();
 
             base.Dispose(disposing);
         }
@@ -181,11 +179,11 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (e.KeyCode == Keys.D2)
             {
-                Mode = RegionAnnotateMode.Pen;
+                Mode = RegionAnnotateMode.Rectangle;
             }
             else if (e.KeyCode == Keys.D3)
             {
-                Mode = RegionAnnotateMode.Rectangle;
+                Mode = RegionAnnotateMode.Pen;
             }
             else if (e.KeyCode == Keys.ShiftKey && IsDrawingMode)
             {
@@ -261,24 +259,24 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (e.Delta > 0)
                 {
-                    if (Mode == RegionAnnotateMode.Pen)
-                    {
-                        Options.DrawingPenSize++;
-                    }
-                    else if (Mode == RegionAnnotateMode.Rectangle)
+                    if (Mode == RegionAnnotateMode.Rectangle)
                     {
                         Options.DrawingRectangleBorderSize++;
+                    }
+                    else if (Mode == RegionAnnotateMode.Pen)
+                    {
+                        Options.DrawingPenSize++;
                     }
                 }
                 else if (e.Delta < 0)
                 {
-                    if (Mode == RegionAnnotateMode.Pen)
-                    {
-                        Options.DrawingPenSize--;
-                    }
-                    else if (Mode == RegionAnnotateMode.Rectangle)
+                    if (Mode == RegionAnnotateMode.Rectangle)
                     {
                         Options.DrawingRectangleBorderSize--;
+                    }
+                    else if (Mode == RegionAnnotateMode.Pen)
+                    {
+                        Options.DrawingPenSize--;
                     }
                 }
             }
@@ -340,10 +338,6 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-            g.InterpolationMode = InterpolationMode.NearestNeighbor;
-            g.SmoothingMode = SmoothingMode.HighQuality;
-
             if (Mode == RegionAnnotateMode.Pen && isMouseDown)
             {
                 using (Graphics gImage = Graphics.FromImage(backgroundImage))
@@ -353,16 +347,17 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
+            Graphics g = e.Graphics;
+            g.InterpolationMode = InterpolationMode.NearestNeighbor;
+            g.SmoothingMode = SmoothingMode.HighQuality;
             g.CompositingMode = CompositingMode.SourceCopy;
             g.DrawImage(backgroundImage, ScreenRectangle0Based);
             g.CompositingMode = CompositingMode.SourceOver;
 
-            if (Mode == RegionAnnotateMode.Pen)
+            if (Mode == RegionAnnotateMode.Rectangle)
             {
-                DrawDot(g, true);
-            }
-            else if (Mode == RegionAnnotateMode.Rectangle)
-            {
+                g.SmoothingMode = SmoothingMode.HighSpeed;
+
                 if (isMouseDown)
                 {
                     DrawRectangle(g);
@@ -371,6 +366,12 @@ namespace ShareX.ScreenCaptureLib
                 {
                     DrawRectangleMarker(g);
                 }
+
+                g.SmoothingMode = SmoothingMode.HighQuality;
+            }
+            else if (Mode == RegionAnnotateMode.Pen)
+            {
+                DrawDot(g);
             }
 
             if (Options.ShowTips)
@@ -388,7 +389,7 @@ namespace ShareX.ScreenCaptureLib
                 if (isMouseDown)
                 {
                     g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
-                    borderDotPen2.DashOffset = (float)penTimer.Elapsed.TotalSeconds * -10;
+                    borderDotPen2.DashOffset = (float)penTimer.Elapsed.TotalSeconds * -15;
                     g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
                 }
             }
@@ -427,27 +428,26 @@ namespace ShareX.ScreenCaptureLib
         {
             sb.AppendLine(Resources.RectangleRegion_WriteTips__F1__Hide_tips);
 
-            // TODO: Add resources
             sb.AppendLine();
-            sb.AppendLine("[Mouse wheel] Swap modes");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes);
             if (Mode == RegionAnnotateMode.Capture) sb.Append("-> ");
-            sb.AppendLine("[1] Select capture mode");
-            if (Mode == RegionAnnotateMode.Pen) sb.Append("-> ");
-            sb.AppendLine("[2] Select pen drawing mode");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__1__Select_capture_mode);
             if (Mode == RegionAnnotateMode.Rectangle) sb.Append("-> ");
-            sb.AppendLine("[3] Select rectangle drawing mode");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode);
+            if (Mode == RegionAnnotateMode.Pen) sb.Append("-> ");
+            sb.AppendLine(Resources.RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode);
 
             switch (Mode)
             {
-                case RegionAnnotateMode.Pen:
-                    sb.AppendLine();
-                    sb.AppendLine("[Shift] Change pen color");
-                    sb.AppendLine("[Ctrl + Mouse wheel] Change pen size");
-                    break;
                 case RegionAnnotateMode.Rectangle:
                     sb.AppendLine();
-                    sb.AppendLine("[Shift] Change border color");
-                    sb.AppendLine("[Ctrl + Mouse wheel] Change border size");
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Shift__Change_border_color);
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size);
+                    break;
+                case RegionAnnotateMode.Pen:
+                    sb.AppendLine();
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Shift__Change_pen_color);
+                    sb.AppendLine(Resources.RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size);
                     break;
             }
 
@@ -506,19 +506,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DrawDot(Graphics g, bool border = false)
+        private void DrawDot(Graphics g)
         {
             using (Brush brush = new SolidBrush(Options.DrawingPenColor))
             {
                 Point pos = CurrentMousePosition0Based;
                 Rectangle rect = new Rectangle((int)(pos.X - Options.DrawingPenSize / 2f), (int)(pos.Y - Options.DrawingPenSize / 2f), Options.DrawingPenSize, Options.DrawingPenSize);
                 g.FillEllipse(brush, rect);
-
-                if (border)
-                {
-                    g.DrawEllipse(Pens.Black, rect.Offset(1));
-                    g.DrawEllipse(Pens.White, rect.Offset(2));
-                }
             }
         }
 

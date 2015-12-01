@@ -31,9 +31,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.Net;
-using System.Net.Cache;
-using System.Text;
 
 namespace ShareX.UploadersLib.FileUploaders
 {

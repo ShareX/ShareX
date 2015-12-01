@@ -135,12 +135,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Qualität:</value>
   </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Strg: Zeichenmodus ░ Leertaste: Vollbildschirmaufnahme</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Strg: Regionsmodus ░ Shift: Stiftfarbe Mausrad: Stiftgröße ░ Leertaste: Vollbildschirmaufnahme</value>
-  </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Rechteckaufnahme Anmerkung</value>
   </data>
@@ -292,5 +286,29 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Rechtsklick auf Auswahl] [Entf] Region entfernen</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
+    <value>[Mausrad] Modi wechseln</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
+    <value>[1] Aufnahmemodus auswählen</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
+    <value>[2] Rechteckzeichenmodus auswählen</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
+    <value>[3] Stiftzeichenmodus auswählen</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
+    <value>[Umschalttaste] Rahmenfarbe ändern</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
+    <value>[Strg + Mausrad] Rahmengröße ändern</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
+    <value>[Umschalttaste] Stiftfarbe ändern</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
+    <value>[Strg + Mausrad] Stiftgröße ändern</value>
   </data>
 </root>

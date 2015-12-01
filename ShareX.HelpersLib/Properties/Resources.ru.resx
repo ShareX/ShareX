@@ -822,4 +822,11 @@
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Случайный шестнадцатеричный символ. Повторение задается через {n}</value>
   </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>Заголовок места</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>Доступна более новая версия {0}.
+Хотите загрузить ее?</value>
+  </data>
 </root>

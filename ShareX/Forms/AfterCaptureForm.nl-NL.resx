@@ -138,4 +138,7 @@
   <data name="tpBeforeUpload.Text" xml:space="preserve">
     <value>Voor uploaden</value>
   </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>Bestandsnaam:</value>
+  </data>
 </root>

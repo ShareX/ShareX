@@ -51,13 +51,13 @@ namespace ShareX.HelpersLib
         public int X
         {
             get { return Left; }
-            set { Right -= (Left - value); Left = value; }
+            set { Right -= Left - value; Left = value; }
         }
 
         public int Y
         {
             get { return Top; }
-            set { Bottom -= (Top - value); Top = value; }
+            set { Bottom -= Top - value; Top = value; }
         }
 
         public int Width
@@ -203,7 +203,7 @@ namespace ShareX.HelpersLib
         public WINDOWINFO(Boolean? filler)
             : this() // Allows automatic initialization of "cbSize" with "new WINDOWINFO(null/true/false)".
         {
-            cbSize = (UInt32)(Marshal.SizeOf(typeof(WINDOWINFO)));
+            cbSize = (UInt32)Marshal.SizeOf(typeof(WINDOWINFO));
         }
     }
 

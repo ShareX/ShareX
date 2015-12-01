@@ -28,8 +28,11 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
-using System.Text;
+using System.Linq;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -38,26 +41,27 @@ namespace ShareX.UploadersLib.FileUploaders
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
-            // new PomfUploader("https://bucket.pw/upload.php", "https://dl.bucket.pw"),
+            //new PomfUploader("https://bucket.pw/upload.php", "https://dl.bucket.pw"),
             new PomfUploader("http://catgirlsare.sexy/upload.php"),
+            new PomfUploader("http://comfy.moe/upload.php"),
             new PomfUploader("http://cuntflaps.me/upload.php", "http://a.cuntflaps.me"),
-            // new PomfUploader("https://fuwa.se/api/upload"),
+            //new PomfUploader("https://fuwa.se/api/upload"),
             new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
             new PomfUploader("http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
-            // new PomfUploader("https://madokami.com/upload"),
-            // new PomfUploader("http://matu.red/upload.php", "http://x.matu.red"),
+            //new PomfUploader("https://madokami.com/upload"),
+            //new PomfUploader("http://matu.red/upload.php", "http://x.matu.red"),
             new PomfUploader("https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
             new PomfUploader("https://mixtape.moe/upload.php"),
             new PomfUploader("http://nigger.cat/upload.php"),
-            // new PomfUploader("http://nyanimg.com/upload.php"),
+            new PomfUploader("http://nyanimg.com/upload.php"),
             new PomfUploader("http://openhost.xyz/upload.php"),
-            // new PomfUploader("https://pantsu.cat/upload.php"),
+            new PomfUploader("https://pantsu.cat/upload.php"),
             new PomfUploader("https://pomf.cat/upload.php", "http://a.pomf.cat"),
             new PomfUploader("http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
             new PomfUploader("https://pomf.io/upload.php"),
             new PomfUploader("http://pomf.pl/upload.php"),
-            // new PomfUploader("https://pomf.se/upload.php", "https://a.pomf.se"),
-            // new PomfUploader("https://sheesh.in/upload.php"),
+            //new PomfUploader("https://pomf.se/upload.php"),
+            //new PomfUploader("https://sheesh.in/upload.php"),
             new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe")
         };
 
@@ -100,39 +104,46 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public static string TestClones()
         {
-            List<string> successful = new List<string>();
-            List<string> failed = new List<string>();
+            List<PomfTest> successful = new List<PomfTest>();
+            List<PomfTest> failed = new List<PomfTest>();
 
-            foreach (PomfUploader uploader in Uploaders)
+            using (MemoryStream ms = new MemoryStream())
             {
-                try
+                using (Image logo = ShareXResources.Logo)
                 {
-                    Pomf pomf = new Pomf(uploader);
+                    logo.Save(ms, ImageFormat.Png);
+                }
 
-                    byte[] bytes = Encoding.UTF8.GetBytes("Test");
-                    using (MemoryStream ms = new MemoryStream(bytes))
+                foreach (PomfUploader uploader in Uploaders)
+                {
+                    try
                     {
-                        UploadResult result = pomf.Upload(ms, "Test.txt");
+                        Pomf pomf = new Pomf(uploader);
+                        string filename = Helpers.GetRandomAlphanumeric(10) + ".png";
+
+                        Stopwatch timer = Stopwatch.StartNew();
+                        UploadResult result = pomf.Upload(ms, filename);
+                        long uploadTime = timer.ElapsedMilliseconds;
 
                         if (result != null && result.IsSuccess && !string.IsNullOrEmpty(result.URL))
                         {
-                            successful.Add(uploader.ToString());
+                            successful.Add(new PomfTest { Name = uploader.ToString(), UploadTime = uploadTime });
                         }
                         else
                         {
-                            failed.Add(uploader.ToString());
+                            failed.Add(new PomfTest { Name = uploader.ToString() });
                         }
                     }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                    failed.Add(uploader.ToString());
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                        failed.Add(new PomfTest { Name = uploader.ToString() });
+                    }
                 }
             }
 
             return string.Format("Successful uploads ({0}):\r\n\r\n{1}\r\n\r\nFailed uploads ({2}):\r\n\r\n{3}",
-                successful.Count, string.Join("\r\n", successful), failed.Count, string.Join("\r\n", failed));
+                successful.Count, string.Join("\r\n", successful.OrderBy(x => x.UploadTime)), failed.Count, string.Join("\r\n", failed));
         }
 
         private class PomfResponse
@@ -148,6 +159,22 @@ namespace ShareX.UploadersLib.FileUploaders
             public string name { get; set; }
             public string url { get; set; }
             public string size { get; set; }
+        }
+
+        private class PomfTest
+        {
+            public string Name { get; set; }
+            public long UploadTime { get; set; } = -1;
+
+            public override string ToString()
+            {
+                if (UploadTime >= 0)
+                {
+                    return $"{Name} ({UploadTime}ms)";
+                }
+
+                return Name;
+            }
         }
     }
 }

@@ -54,7 +54,7 @@ namespace ShareX
             }
         }
 
-        public static bool IsBeta { get; } = true;
+        public static bool IsBeta { get; } = false;
 
         public static string Title
         {
@@ -243,8 +243,6 @@ namespace ShareX
         [STAThread]
         private static void Main(string[] args)
         {
-            DebugHelper.Init(LogsFilePath);
-
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
@@ -258,6 +256,10 @@ namespace ShareX
 #endif
 
             if (CheckAdminTasks()) return; // If ShareX opened just for be able to execute task as Admin
+
+            UpdatePersonalPath();
+
+            DebugHelper.Init(LogsFilePath);
 
             IsMultiInstance = CLI.IsCommandExist("multi", "m");
 
@@ -281,36 +283,6 @@ namespace ShareX
             Application.SetCompatibleTextRenderingDefault(false);
 
             IsSilentRun = CLI.IsCommandExist("silent", "s");
-            IsSandbox = CLI.IsCommandExist("sandbox");
-
-            if (!IsSandbox)
-            {
-                IsPortable = CLI.IsCommandExist("portable", "p");
-
-                if (IsPortable)
-                {
-                    CustomPersonalPath = PortablePersonalFolder;
-                }
-                else
-                {
-                    IsPortable = File.Exists(PortableCheckFilePath);
-                    CheckPersonalPathConfig();
-                }
-
-                if (!Directory.Exists(PersonalFolder))
-                {
-                    try
-                    {
-                        Directory.CreateDirectory(PersonalFolder);
-                    }
-                    catch (Exception e)
-                    {
-                        MessageBox.Show(Resources.Program_Run_Unable_to_create_folder_ + string.Format(" \"{0}\"\r\n\r\n{1}", PersonalFolder, e),
-                            "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        CustomPersonalPath = "";
-                    }
-                }
-            }
 
 #if STEAM
             IsFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
@@ -442,6 +414,40 @@ namespace ShareX
             Helpers.BackupFileWeekly(HotkeysConfigFilePath, BackupFolder);
             Helpers.BackupFileWeekly(UploadersConfigFilePath, BackupFolder);
             Helpers.BackupFileWeekly(HistoryFilePath, BackupFolder);
+        }
+
+        private static void UpdatePersonalPath()
+        {
+            IsSandbox = CLI.IsCommandExist("sandbox");
+
+            if (!IsSandbox)
+            {
+                IsPortable = CLI.IsCommandExist("portable", "p");
+
+                if (IsPortable)
+                {
+                    CustomPersonalPath = PortablePersonalFolder;
+                }
+                else
+                {
+                    IsPortable = File.Exists(PortableCheckFilePath);
+                    CheckPersonalPathConfig();
+                }
+
+                if (!Directory.Exists(PersonalFolder))
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(PersonalFolder);
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(Resources.Program_Run_Unable_to_create_folder_ + string.Format(" \"{0}\"\r\n\r\n{1}", PersonalFolder, e),
+                            "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        CustomPersonalPath = "";
+                    }
+                }
+            }
         }
 
         private static void CheckPersonalPathConfig()
