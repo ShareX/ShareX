@@ -1120,6 +1120,16 @@ namespace ShareX
                         IgnoreInvalidCert = Program.UploadersConfig.SeafileIgnoreInvalidCert
                     };
                     break;
+                case FileDestination.Streamable:
+                    string user = "";
+                    string password = "";
+                    if (!Program.UploadersConfig.StreamableAnonymous) {
+                        user = Program.UploadersConfig.StreamableUsername;
+                        password = Program.UploadersConfig.StreamablePassword;
+                    }
+
+                    fileUploader = new Streamable(user, password);
+                    break;
             }
 
             if (fileUploader != null)
