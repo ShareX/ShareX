@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,7 @@ namespace ShareX.UploadersLib
         public string ThumbnailURL { get; set; }
         public string DeletionURL { get; set; }
 
+        private string response;
         private List<Match> regexResult;
 
         public CustomUploaderItem()
@@ -143,7 +145,8 @@ namespace ShareX.UploadersLib
         {
             if (result != null && !string.IsNullOrEmpty(result.Response))
             {
-                regexResult = ParseRegexList(result.Response);
+                response = result.Response;
+                ParseRegexList();
 
                 string url;
 
@@ -153,7 +156,7 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    url = result.Response;
+                    url = response;
                 }
 
                 if (isShortenedURL)
@@ -170,19 +173,17 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private List<Match> ParseRegexList(string response)
+        private void ParseRegexList()
         {
-            List<Match> result = new List<Match>();
+            regexResult = new List<Match>();
 
             if (RegexList != null)
             {
                 foreach (string regex in RegexList)
                 {
-                    result.Add(Regex.Match(response, regex));
+                    regexResult.Add(Regex.Match(response, regex));
                 }
             }
-
-            return result;
         }
 
         private string ParseURL(string url)
@@ -194,33 +195,65 @@ namespace ShareX.UploadersLib
 
             StringBuilder result = new StringBuilder();
 
-            bool regexStart = false;
-            int regexStartIndex = 0;
+            bool syntaxStart = false;
+            CustomUploaderResponseParseType parseType = CustomUploaderResponseParseType.Regex;
+            int syntaxStartIndex = 0;
 
             for (int i = 0; i < url.Length; i++)
             {
                 if (url[i] == '$')
                 {
-                    if (!regexStart)
+                    if (!syntaxStart)
                     {
-                        regexStart = true;
-                        regexStartIndex = i;
+                        syntaxStart = true;
+
+                        string syntaxCheck = url.Substring(i + 1);
+
+                        if (syntaxCheck.StartsWith("json:", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            parseType = CustomUploaderResponseParseType.Json;
+                            syntaxStartIndex = i + 6;
+                        }
+                        else if (syntaxCheck.StartsWith("regex:", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            parseType = CustomUploaderResponseParseType.Regex;
+                            syntaxStartIndex = i + 7;
+                        }
+                        else
+                        {
+                            parseType = CustomUploaderResponseParseType.Regex;
+                            syntaxStartIndex = i + 1;
+                        }
                     }
                     else
                     {
-                        string regexResult = ParseRegexSyntax(url.Substring(regexStartIndex + 1, i - regexStartIndex - 1));
+                        string parseText = url.Substring(syntaxStartIndex, i - syntaxStartIndex).Trim();
 
-                        if (!string.IsNullOrEmpty(regexResult))
+                        if (!string.IsNullOrEmpty(parseText))
                         {
-                            result.Append(regexResult);
+                            string resultText;
+
+                            switch (parseType)
+                            {
+                                default:
+                                case CustomUploaderResponseParseType.Regex:
+                                    resultText = ParseRegexSyntax(parseText);
+                                    break;
+                                case CustomUploaderResponseParseType.Json:
+                                    resultText = ParseJsonSyntax(parseText);
+                                    break;
+                            }
+
+                            if (!string.IsNullOrEmpty(resultText))
+                            {
+                                result.Append(resultText);
+                            }
                         }
 
-                        regexStart = false;
-                        continue;
+                        syntaxStart = false;
                     }
                 }
-
-                if (!regexStart)
+                else if (!syntaxStart)
                 {
                     result.Append(url[i]);
                 }
@@ -229,54 +262,56 @@ namespace ShareX.UploadersLib
             return result.ToString();
         }
 
-        private string ParseRegexSyntax(string text)
+        private string ParseRegexSyntax(string syntax)
         {
-            if (text.Length > 0)
+            int i = 0;
+            string regexIndexString = "";
+            int regexIndex;
+            bool isGroupRegex = false;
+
+            for (; i < syntax.Length; i++)
             {
-                int i = 0;
-                string regexIndexString = "";
-                int regexIndex;
-                bool isGroupRegex = false;
-
-                for (; i < text.Length; i++)
+                if (char.IsDigit(syntax[i]))
                 {
-                    if (char.IsDigit(text[i]))
-                    {
-                        regexIndexString += text[i];
-                    }
-                    else
-                    {
-                        if (text[i] == ',')
-                        {
-                            isGroupRegex = true;
-                        }
-
-                        break;
-                    }
+                    regexIndexString += syntax[i];
                 }
-
-                if (regexIndexString.Length > 0 && int.TryParse(regexIndexString, out regexIndex))
+                else
                 {
-                    Match match = regexResult[regexIndex - 1];
-
-                    if (isGroupRegex && i + 1 < text.Length)
+                    if (syntax[i] == ',')
                     {
-                        string group = text.Substring(i + 1);
-                        int groupNumber;
-
-                        if (int.TryParse(group, out groupNumber))
-                        {
-                            return match.Groups[groupNumber].Value;
-                        }
-
-                        return match.Groups[group].Value;
+                        isGroupRegex = true;
                     }
 
-                    return match.Value;
+                    break;
                 }
             }
 
+            if (regexIndexString.Length > 0 && int.TryParse(regexIndexString, out regexIndex))
+            {
+                Match match = regexResult[regexIndex - 1];
+
+                if (isGroupRegex && i + 1 < syntax.Length)
+                {
+                    string group = syntax.Substring(i + 1);
+                    int groupNumber;
+
+                    if (int.TryParse(group, out groupNumber))
+                    {
+                        return match.Groups[groupNumber].Value;
+                    }
+
+                    return match.Groups[group].Value;
+                }
+
+                return match.Value;
+            }
+
             return null;
+        }
+
+        private string ParseJsonSyntax(string syntax)
+        {
+            return (string)JObject.Parse(response).SelectToken(syntax);
         }
     }
 }

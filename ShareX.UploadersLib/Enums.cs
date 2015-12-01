@@ -297,6 +297,12 @@ namespace ShareX.UploadersLib
         DELETE
     }
 
+    public enum CustomUploaderResponseParseType
+    {
+        Regex,
+        Json
+    }
+
     public enum FTPSEncryption
     {
         /// <summary>
