@@ -1776,31 +1776,7 @@ namespace ShareX
         public void CaptureScreenshot(CaptureType captureType, TaskSettings taskSettings = null, bool autoHideForm = true)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            switch (captureType)
-            {
-                case CaptureType.Screen:
-                    DoCapture(Screenshot.CaptureFullscreen, CaptureType.Screen, taskSettings, autoHideForm);
-                    break;
-                case CaptureType.ActiveWindow:
-                    CaptureActiveWindow(taskSettings, autoHideForm);
-                    break;
-                case CaptureType.ActiveMonitor:
-                    DoCapture(Screenshot.CaptureActiveMonitor, CaptureType.ActiveMonitor, taskSettings, autoHideForm);
-                    break;
-                case CaptureType.Rectangle:
-                case CaptureType.RectangleWindow:
-                case CaptureType.Polygon:
-                case CaptureType.Freehand:
-                    CaptureRegion(captureType, taskSettings, autoHideForm);
-                    break;
-                case CaptureType.CustomRegion:
-                    CaptureCustomRegion(taskSettings, autoHideForm);
-                    break;
-                case CaptureType.LastRegion:
-                    CaptureLastRegion(taskSettings, autoHideForm);
-                    break;
-            }
+            CaptureFactory.getInstance().getStrategy(captureType, this).capture(captureType, taskSettings, autoHideForm);
         }
 
         private void DoCapture(ScreenCaptureDelegate capture, CaptureType captureType, TaskSettings taskSettings = null, bool autoHideForm = true)
@@ -1888,51 +1864,6 @@ namespace ShareX
             return captureType.HasFlagAny(CaptureType.RectangleWindow, CaptureType.Rectangle, CaptureType.Polygon, CaptureType.Freehand, CaptureType.LastRegion);
         }
 
-        private void CaptureActiveWindow(TaskSettings taskSettings, bool autoHideForm = true)
-        {
-            DoCapture(() =>
-            {
-                Image img;
-                string activeWindowTitle = NativeMethods.GetForegroundWindowText();
-                string activeProcessName = null;
-
-                using (Process process = NativeMethods.GetForegroundWindowProcess())
-                {
-                    if (process != null)
-                    {
-                        activeProcessName = process.ProcessName;
-                    }
-                }
-
-                if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
-                {
-                    img = Screenshot.CaptureActiveWindowTransparent();
-                }
-                else
-                {
-                    img = Screenshot.CaptureActiveWindow();
-                }
-
-                img.Tag = new ImageTag
-                {
-                    ActiveWindowTitle = activeWindowTitle,
-                    ActiveProcessName = activeProcessName
-                };
-
-                return img;
-            }, CaptureType.ActiveWindow, taskSettings, autoHideForm);
-        }
-
-        private void CaptureCustomRegion(TaskSettings taskSettings, bool autoHideForm)
-        {
-            DoCapture(() =>
-            {
-                Rectangle regionBounds = taskSettings.CaptureSettings.CaptureCustomRegion;
-                Image img = Screenshot.CaptureRectangle(regionBounds);
-
-                return img;
-            }, CaptureType.CustomRegion, taskSettings, autoHideForm);
-        }
 
         private void CaptureWindow(IntPtr handle, TaskSettings taskSettings = null, bool autoHideForm = true)
         {
@@ -1959,91 +1890,6 @@ namespace ShareX
             }, CaptureType.Window, taskSettings, autoHideForm);
         }
 
-        private void CaptureRegion(CaptureType captureType, TaskSettings taskSettings, bool autoHideForm = true)
-        {
-            Surface surface;
-
-            switch (captureType)
-            {
-                default:
-                case CaptureType.Rectangle:
-                    surface = new RectangleRegion();
-                    break;
-                case CaptureType.RectangleWindow:
-                    RectangleRegion rectangleRegion = new RectangleRegion();
-                    rectangleRegion.AreaManager.WindowCaptureMode = true;
-                    rectangleRegion.AreaManager.IncludeControls = true;
-                    surface = rectangleRegion;
-                    break;
-                case CaptureType.Polygon:
-                    surface = new PolygonRegion();
-                    break;
-                case CaptureType.Freehand:
-                    surface = new FreeHandRegion();
-                    break;
-            }
-
-            DoCapture(() =>
-            {
-                Image img = null;
-                Image screenshot = Screenshot.CaptureFullscreen();
-
-                try
-                {
-                    surface.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
-                    surface.SurfaceImage = screenshot;
-                    surface.Prepare();
-                    surface.ShowDialog();
-
-                    if (surface.Result == SurfaceResult.Region)
-                    {
-                        using (screenshot)
-                        {
-                            img = surface.GetRegionImage();
-                        }
-                    }
-                    else if (surface.Result == SurfaceResult.Fullscreen)
-                    {
-                        img = screenshot;
-                    }
-                    else if (surface.Result == SurfaceResult.Monitor)
-                    {
-                        Screen[] screens = Screen.AllScreens;
-
-                        if (surface.MonitorIndex < screens.Length)
-                        {
-                            Screen screen = screens[surface.MonitorIndex];
-                            Rectangle screenRect = CaptureHelpers.ScreenToClient(screen.Bounds);
-
-                            using (screenshot)
-                            {
-                                img = ImageHelpers.CropImage(screenshot, screenRect);
-                            }
-                        }
-                    }
-                    else if (surface.Result == SurfaceResult.ActiveMonitor)
-                    {
-                        Rectangle activeScreenRect = CaptureHelpers.GetActiveScreenBounds0Based();
-
-                        using (screenshot)
-                        {
-                            img = ImageHelpers.CropImage(screenshot, activeScreenRect);
-                        }
-                    }
-
-                    if (img != null)
-                    {
-                        lastRegionCaptureType = LastRegionCaptureType.Surface;
-                    }
-                }
-                finally
-                {
-                    surface.Dispose();
-                }
-
-                return img;
-            }, captureType, taskSettings, autoHideForm);
-        }
 
         private void CaptureRectangleAnnotate(TaskSettings taskSettings = null, bool autoHideForm = true)
         {
@@ -2118,77 +1964,6 @@ namespace ShareX
 
                 return img;
             }, CaptureType.Rectangle, taskSettings, autoHideForm);
-        }
-
-        private void CaptureLastRegion(TaskSettings taskSettings, bool autoHideForm = true)
-        {
-            switch (lastRegionCaptureType)
-            {
-                case LastRegionCaptureType.Surface:
-                    if (Surface.LastRegionFillPath != null)
-                    {
-                        DoCapture(() =>
-                        {
-                            using (Image screenshot = Screenshot.CaptureFullscreen())
-                            {
-                                return ShapeCaptureHelpers.GetRegionImage(screenshot, Surface.LastRegionFillPath, Surface.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
-                            }
-                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                    }
-                    else
-                    {
-                        CaptureRegion(CaptureType.Rectangle, taskSettings, autoHideForm);
-                    }
-                    break;
-                case LastRegionCaptureType.Light:
-                    if (!RectangleLight.LastSelectionRectangle0Based.IsEmpty)
-                    {
-                        DoCapture(() =>
-                        {
-                            using (Image screenshot = Screenshot.CaptureFullscreen())
-                            {
-                                return ImageHelpers.CropImage(screenshot, RectangleLight.LastSelectionRectangle0Based);
-                            }
-                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                    }
-                    else
-                    {
-                        CaptureRectangleLight(taskSettings, autoHideForm);
-                    }
-                    break;
-                case LastRegionCaptureType.Transparent:
-                    if (!RectangleTransparent.LastSelectionRectangle0Based.IsEmpty)
-                    {
-                        DoCapture(() =>
-                        {
-                            using (Image screenshot = Screenshot.CaptureFullscreen())
-                            {
-                                return ImageHelpers.CropImage(screenshot, RectangleTransparent.LastSelectionRectangle0Based);
-                            }
-                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                    }
-                    else
-                    {
-                        CaptureRectangleTransparent(taskSettings, autoHideForm);
-                    }
-                    break;
-                case LastRegionCaptureType.Annotate:
-                    if (!RectangleAnnotate.LastSelectionRectangle0Based.IsEmpty)
-                    {
-                        DoCapture(() =>
-                        {
-                            using (Image screenshot = Screenshot.CaptureFullscreen())
-                            {
-                                return ImageHelpers.CropImage(screenshot, RectangleAnnotate.LastSelectionRectangle0Based);
-                            }
-                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                    }
-                    else
-                    {
-                        CaptureRectangleAnnotate(taskSettings, autoHideForm);
-                    }
-                    break;
-            }
         }
 
         private void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)

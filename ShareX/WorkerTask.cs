@@ -64,7 +64,7 @@ namespace ShareX
             }
         }
 
-        public bool StopRequested { get; private set; }
+        public bool StopRequested { get; protected set; }
         public bool RequestSettingUpdate { get; private set; }
 
         public Stream Data { get; private set; }
@@ -76,9 +76,14 @@ namespace ShareX
 
         private static string lastSaveAsFolder;
 
+        public virtual UploadResult PerformTask(Stream stream, string fileName)
+        {
+            return Info.Result;
+        }
+
         #region Constructors
 
-        private WorkerTask(TaskSettings taskSettings)
+        protected WorkerTask(TaskSettings taskSettings)
         {
             Status = TaskStatus.InQueue;
             Info = new TaskInfo(taskSettings);
@@ -96,7 +101,7 @@ namespace ShareX
 
         public static WorkerTask CreateFileUploaderTask(string filePath, TaskSettings taskSettings)
         {
-            WorkerTask task = new WorkerTask(taskSettings);
+            WorkerTask task = new UploadFileWorkerTask(taskSettings);
             task.Info.FilePath = filePath;
             task.Info.DataType = TaskHelpers.FindDataType(task.Info.FilePath, taskSettings);
 
@@ -126,7 +131,7 @@ namespace ShareX
 
         public static WorkerTask CreateImageUploaderTask(Image image, TaskSettings taskSettings, string customFileName = null)
         {
-            WorkerTask task = new WorkerTask(taskSettings);
+            WorkerTask task = new UploadImageWorkerTask(taskSettings);
             task.Info.Job = TaskJob.Job;
             task.Info.DataType = EDataType.Image;
 
@@ -145,7 +150,7 @@ namespace ShareX
 
         public static WorkerTask CreateTextUploaderTask(string text, TaskSettings taskSettings)
         {
-            WorkerTask task = new WorkerTask(taskSettings);
+            WorkerTask task = new UploadTextWorkerTask(taskSettings);
             task.Info.Job = TaskJob.TextUpload;
             task.Info.DataType = EDataType.Text;
             task.Info.FileName = TaskHelpers.GetFilename(taskSettings, taskSettings.AdvancedSettings.TextFileExtension);
@@ -430,18 +435,7 @@ namespace ShareX
 
             try
             {
-                switch (Info.UploadDestination)
-                {
-                    case EDataType.Image:
-                        Info.Result = UploadImage(Data, Info.FileName);
-                        break;
-                    case EDataType.Text:
-                        Info.Result = UploadText(Data, Info.FileName);
-                        break;
-                    case EDataType.File:
-                        Info.Result = UploadFile(Data, Info.FileName);
-                        break;
-                }
+                Info.Result = PerformTask(Data, Info.FileName);
             }
             catch (Exception e)
             {
@@ -753,384 +747,6 @@ namespace ShareX
             }
         }
 
-        public UploadResult UploadImage(Stream stream, string fileName)
-        {
-            ImageUploader imageUploader = null;
-
-            switch (Info.TaskSettings.ImageDestination)
-            {
-                case ImageDestination.Imgur:
-                    if (Program.UploadersConfig.ImgurOAuth2Info == null)
-                    {
-                        Program.UploadersConfig.ImgurOAuth2Info = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
-                    }
-
-                    string albumID = null;
-
-                    if (Program.UploadersConfig.ImgurUploadSelectedAlbum && Program.UploadersConfig.ImgurSelectedAlbum != null)
-                    {
-                        albumID = Program.UploadersConfig.ImgurSelectedAlbum.id;
-                    }
-
-                    imageUploader = new Imgur(Program.UploadersConfig.ImgurOAuth2Info)
-                    {
-                        UploadMethod = Program.UploadersConfig.ImgurAccountType,
-                        DirectLink = Program.UploadersConfig.ImgurDirectLink,
-                        ThumbnailType = Program.UploadersConfig.ImgurThumbnailType,
-                        UseGIFV = Program.UploadersConfig.ImgurUseGIFV,
-                        UploadAlbumID = albumID
-                    };
-                    break;
-                case ImageDestination.ImageShack:
-                    Program.UploadersConfig.ImageShackSettings.ThumbnailWidth = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredWidth;
-                    Program.UploadersConfig.ImageShackSettings.ThumbnailHeight = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredHeight;
-                    imageUploader = new ImageShackUploader(APIKeys.ImageShackKey, Program.UploadersConfig.ImageShackSettings);
-                    break;
-                case ImageDestination.TinyPic:
-                    imageUploader = new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, Program.UploadersConfig.TinyPicAccountType, Program.UploadersConfig.TinyPicRegistrationCode);
-                    break;
-                case ImageDestination.Flickr:
-                    imageUploader = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret, Program.UploadersConfig.FlickrAuthInfo, Program.UploadersConfig.FlickrSettings);
-                    break;
-                case ImageDestination.Photobucket:
-                    imageUploader = new Photobucket(Program.UploadersConfig.PhotobucketOAuthInfo, Program.UploadersConfig.PhotobucketAccountInfo);
-                    break;
-                case ImageDestination.Picasa:
-                    imageUploader = new Picasa(Program.UploadersConfig.PicasaOAuth2Info)
-                    {
-                        AlbumID = Program.UploadersConfig.PicasaAlbumID
-                    };
-                    break;
-                case ImageDestination.Twitter:
-                    OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
-                    imageUploader = new Twitter(twitterOAuth)
-                    {
-                        SkipMessageBox = Program.UploadersConfig.TwitterSkipMessageBox,
-                        DefaultMessage = Program.UploadersConfig.TwitterDefaultMessage ?? string.Empty
-                    };
-                    break;
-                case ImageDestination.Chevereto:
-                    imageUploader = new Chevereto(Program.UploadersConfig.CheveretoWebsite, Program.UploadersConfig.CheveretoAPIKey)
-                    {
-                        DirectURL = Program.UploadersConfig.CheveretoDirectURL
-                    };
-                    break;
-                case ImageDestination.Vgyme:
-                    imageUploader = new VgymeUploader();
-                    break;
-                case ImageDestination.SomeImage:
-                    imageUploader = new SomeImage(APIKeys.SomeImageKey);
-                    break;
-                case ImageDestination.CustomImageUploader:
-                    CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomImageUploaderSelected);
-                    if (customUploader != null)
-                    {
-                        imageUploader = new CustomImageUploader(customUploader);
-                    }
-                    break;
-            }
-
-            if (imageUploader != null)
-            {
-                PrepareUploader(imageUploader);
-                return imageUploader.Upload(stream, fileName);
-            }
-
-            return null;
-        }
-
-        public UploadResult UploadText(Stream stream, string fileName)
-        {
-            TextUploader textUploader = null;
-
-            switch (Info.TaskSettings.TextDestination)
-            {
-                case TextDestination.Pastebin:
-                    PastebinSettings settings = Program.UploadersConfig.PastebinSettings;
-                    if (string.IsNullOrEmpty(settings.TextFormat))
-                    {
-                        settings.TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat;
-                    }
-                    textUploader = new Pastebin(APIKeys.PastebinKey, settings);
-                    break;
-                case TextDestination.Paste2:
-                    textUploader = new Paste2(new Paste2Settings { TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat });
-                    break;
-                case TextDestination.Slexy:
-                    textUploader = new Slexy(new SlexySettings { TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat });
-                    break;
-                case TextDestination.Pastee:
-                    textUploader = new Pastee { Lexer = Info.TaskSettings.AdvancedSettings.TextFormat };
-                    break;
-                case TextDestination.Paste_ee:
-                    textUploader = new Paste_ee(Program.UploadersConfig.Paste_eeUserAPIKey);
-                    break;
-                case TextDestination.Gist:
-                    textUploader = Program.UploadersConfig.GistAnonymousLogin ? new Gist(Program.UploadersConfig.GistPublishPublic) :
-                        new Gist(Program.UploadersConfig.GistPublishPublic, Program.UploadersConfig.GistOAuth2Info);
-                    break;
-                case TextDestination.Upaste:
-                    textUploader = new Upaste(Program.UploadersConfig.UpasteUserKey)
-                    {
-                        IsPublic = Program.UploadersConfig.UpasteIsPublic
-                    };
-                    break;
-                case TextDestination.Hastebin:
-                    textUploader = new Hastebin()
-                    {
-                        CustomDomain = Program.UploadersConfig.HastebinCustomDomain,
-                        SyntaxHighlighting = Program.UploadersConfig.HastebinSyntaxHighlighting
-                    };
-                    break;
-                case TextDestination.OneTimeSecret:
-                    textUploader = new OneTimeSecret()
-                    {
-                        API_KEY = Program.UploadersConfig.OneTimeSecretAPIKey,
-                        API_USERNAME = Program.UploadersConfig.OneTimeSecretAPIUsername
-                    };
-                    break;
-                case TextDestination.CustomTextUploader:
-                    CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomTextUploaderSelected);
-                    if (customUploader != null)
-                    {
-                        textUploader = new CustomTextUploader(customUploader);
-                    }
-                    break;
-            }
-
-            if (textUploader != null)
-            {
-                PrepareUploader(textUploader);
-                return textUploader.UploadText(stream, fileName);
-            }
-
-            return null;
-        }
-
-        public UploadResult UploadFile(Stream stream, string fileName)
-        {
-            FileUploader fileUploader = null;
-
-            FileDestination fileDestination;
-
-            switch (Info.DataType)
-            {
-                case EDataType.Image:
-                    fileDestination = Info.TaskSettings.ImageFileDestination;
-                    break;
-                case EDataType.Text:
-                    fileDestination = Info.TaskSettings.TextFileDestination;
-                    break;
-                default:
-                case EDataType.File:
-                    fileDestination = Info.TaskSettings.FileDestination;
-                    break;
-            }
-
-            switch (fileDestination)
-            {
-                case FileDestination.Dropbox:
-                    fileUploader = new Dropbox(Program.UploadersConfig.DropboxOAuth2Info, Program.UploadersConfig.DropboxAccountInfo)
-                    {
-                        UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(Program.UploadersConfig.DropboxUploadPath)),
-                        AutoCreateShareableLink = Program.UploadersConfig.DropboxAutoCreateShareableLink,
-                        ShareURLType = Program.UploadersConfig.DropboxURLType
-                    };
-                    break;
-                case FileDestination.OneDrive:
-                    fileUploader = new OneDrive(Program.UploadersConfig.OneDriveOAuth2Info)
-                    {
-                        FolderID = Program.UploadersConfig.OneDriveSelectedFolder.id,
-                        AutoCreateShareableLink = Program.UploadersConfig.OneDriveAutoCreateShareableLink
-                    };
-                    break;
-                case FileDestination.GoogleDrive:
-                    fileUploader = new GoogleDrive(Program.UploadersConfig.GoogleDriveOAuth2Info)
-                    {
-                        IsPublic = Program.UploadersConfig.GoogleDriveIsPublic,
-                        FolderID = Program.UploadersConfig.GoogleDriveUseFolder ? Program.UploadersConfig.GoogleDriveFolderID : null
-                    };
-                    break;
-                case FileDestination.Copy:
-                    fileUploader = new Copy(Program.UploadersConfig.CopyOAuthInfo, Program.UploadersConfig.CopyAccountInfo)
-                    {
-                        UploadPath = NameParser.Parse(NameParserType.URL, Copy.TidyUploadPath(Program.UploadersConfig.CopyUploadPath)),
-                        URLType = Program.UploadersConfig.CopyURLType
-                    };
-                    break;
-                /*case FileDestination.Hubic:
-                    fileUploader = new Hubic(Program.UploadersConfig.HubicOAuth2Info, Program.UploadersConfig.HubicOpenstackAuthInfo)
-                    {
-                        SelectedFolder = Program.UploadersConfig.HubicSelectedFolder,
-                        Publish = Program.UploadersConfig.HubicPublish
-                    };
-                    break;*/
-                case FileDestination.SendSpace:
-                    fileUploader = new SendSpace(APIKeys.SendSpaceKey);
-                    switch (Program.UploadersConfig.SendSpaceAccountType)
-                    {
-                        case AccountType.Anonymous:
-                            SendSpaceManager.PrepareUploadInfo(APIKeys.SendSpaceKey);
-                            break;
-                        case AccountType.User:
-                            SendSpaceManager.PrepareUploadInfo(APIKeys.SendSpaceKey, Program.UploadersConfig.SendSpaceUsername, Program.UploadersConfig.SendSpacePassword);
-                            break;
-                    }
-                    break;
-                case FileDestination.Minus:
-                    fileUploader = new Minus(Program.UploadersConfig.MinusConfig, Program.UploadersConfig.MinusOAuth2Info);
-                    break;
-                case FileDestination.Box:
-                    fileUploader = new Box(Program.UploadersConfig.BoxOAuth2Info)
-                    {
-                        FolderID = Program.UploadersConfig.BoxSelectedFolder.id,
-                        Share = Program.UploadersConfig.BoxShare
-                    };
-                    break;
-                case FileDestination.Gfycat:
-                    fileUploader = new GfycatUploader();
-                    break;
-                case FileDestination.Ge_tt:
-                    fileUploader = new Ge_tt(APIKeys.Ge_ttKey)
-                    {
-                        AccessToken = Program.UploadersConfig.Ge_ttLogin.AccessToken
-                    };
-                    break;
-                case FileDestination.Localhostr:
-                    fileUploader = new Hostr(Program.UploadersConfig.LocalhostrEmail, Program.UploadersConfig.LocalhostrPassword)
-                    {
-                        DirectURL = Program.UploadersConfig.LocalhostrDirectURL
-                    };
-                    break;
-                case FileDestination.CustomFileUploader:
-                    CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomFileUploaderSelected);
-                    if (customUploader != null)
-                    {
-                        fileUploader = new CustomFileUploader(customUploader);
-                    }
-                    break;
-                case FileDestination.FTP:
-                    FTPAccount ftpAccount = GetFTPAccount(Program.UploadersConfig.GetFTPIndex(Info.DataType));
-                    if (ftpAccount != null)
-                    {
-                        if (ftpAccount.Protocol == FTPProtocol.FTP || ftpAccount.Protocol == FTPProtocol.FTPS)
-                        {
-                            fileUploader = new FTP(ftpAccount);
-                        }
-                        else if (ftpAccount.Protocol == FTPProtocol.SFTP)
-                        {
-                            fileUploader = new SFTP(ftpAccount);
-                        }
-                    }
-                    break;
-                case FileDestination.SharedFolder:
-                    int idLocalhost = Program.UploadersConfig.GetLocalhostIndex(Info.DataType);
-                    if (Program.UploadersConfig.LocalhostAccountList.IsValidIndex(idLocalhost))
-                    {
-                        fileUploader = new SharedFolderUploader(Program.UploadersConfig.LocalhostAccountList[idLocalhost]);
-                    }
-                    break;
-                case FileDestination.Email:
-                    using (EmailForm emailForm = new EmailForm(Program.UploadersConfig.EmailRememberLastTo ? Program.UploadersConfig.EmailLastTo : string.Empty,
-                        Program.UploadersConfig.EmailDefaultSubject, Program.UploadersConfig.EmailDefaultBody))
-                    {
-                        if (emailForm.ShowDialog() == DialogResult.OK)
-                        {
-                            if (Program.UploadersConfig.EmailRememberLastTo)
-                            {
-                                Program.UploadersConfig.EmailLastTo = emailForm.ToEmail;
-                            }
-
-                            fileUploader = new Email
-                            {
-                                SmtpServer = Program.UploadersConfig.EmailSmtpServer,
-                                SmtpPort = Program.UploadersConfig.EmailSmtpPort,
-                                FromEmail = Program.UploadersConfig.EmailFrom,
-                                Password = Program.UploadersConfig.EmailPassword,
-                                ToEmail = emailForm.ToEmail,
-                                Subject = emailForm.Subject,
-                                Body = emailForm.Body
-                            };
-                        }
-                        else
-                        {
-                            StopRequested = true;
-                        }
-                    }
-                    break;
-                case FileDestination.Jira:
-                    fileUploader = new Jira(Program.UploadersConfig.JiraHost, Program.UploadersConfig.JiraOAuthInfo, Program.UploadersConfig.JiraIssuePrefix);
-                    break;
-                case FileDestination.Mega:
-                    fileUploader = new Mega(Program.UploadersConfig.MegaAuthInfos, Program.UploadersConfig.MegaParentNodeId);
-                    break;
-                case FileDestination.AmazonS3:
-                    fileUploader = new AmazonS3(Program.UploadersConfig.AmazonS3Settings);
-                    break;
-                case FileDestination.OwnCloud:
-                    fileUploader = new OwnCloud(Program.UploadersConfig.OwnCloudHost, Program.UploadersConfig.OwnCloudUsername, Program.UploadersConfig.OwnCloudPassword)
-                    {
-                        Path = Program.UploadersConfig.OwnCloudPath,
-                        CreateShare = Program.UploadersConfig.OwnCloudCreateShare,
-                        DirectLink = Program.UploadersConfig.OwnCloudDirectLink,
-                        IgnoreInvalidCert = Program.UploadersConfig.OwnCloudIgnoreInvalidCert,
-                        IsCompatibility81 = Program.UploadersConfig.OwnCloud81Compatibility
-                    };
-                    break;
-                case FileDestination.Pushbullet:
-                    fileUploader = new Pushbullet(Program.UploadersConfig.PushbulletSettings);
-                    break;
-                case FileDestination.MediaFire:
-                    fileUploader = new MediaFire(APIKeys.MediaFireAppId, APIKeys.MediaFireApiKey, Program.UploadersConfig.MediaFireUsername, Program.UploadersConfig.MediaFirePassword)
-                    {
-                        UploadPath = NameParser.Parse(NameParserType.URL, Program.UploadersConfig.MediaFirePath),
-                        UseLongLink = Program.UploadersConfig.MediaFireUseLongLink
-                    };
-                    break;
-                case FileDestination.Lambda:
-                    fileUploader = new Lambda(Program.UploadersConfig.LambdaSettings);
-                    break;
-                case FileDestination.Imgrush:
-                    fileUploader = new MediaCrushUploader("https://imgrush.com");
-                    break;
-                case FileDestination.VideoBin:
-                    fileUploader = new VideoBin();
-                    break;
-                case FileDestination.Pomf:
-                    fileUploader = new Pomf(Program.UploadersConfig.PomfUploader);
-                    break;
-                case FileDestination.Uguu:
-                    fileUploader = new Uguu();
-                    break;
-                case FileDestination.Dropfile:
-                    fileUploader = new Dropfile();
-                    break;
-                case FileDestination.Up1:
-                    fileUploader = new Up1(Program.UploadersConfig.Up1Host, Program.UploadersConfig.Up1Key);
-                    break;
-                case FileDestination.Seafile:
-                    fileUploader = new Seafile(Program.UploadersConfig.SeafileAPIURL, Program.UploadersConfig.SeafileAuthToken, Program.UploadersConfig.SeafileRepoID)
-                    {
-                        Path = Program.UploadersConfig.SeafilePath,
-                        IsLibraryEncrypted = Program.UploadersConfig.SeafileIsLibraryEncrypted,
-                        EncryptedLibraryPassword = Program.UploadersConfig.SeafileEncryptedLibraryPassword,
-                        ShareDaysToExpire = Program.UploadersConfig.SeafileShareDaysToExpire,
-                        SharePassword = Program.UploadersConfig.SeafileSharePassword,
-                        CreateShareableURL = Program.UploadersConfig.SeafileCreateShareableURL,
-                        IgnoreInvalidCert = Program.UploadersConfig.SeafileIgnoreInvalidCert
-                    };
-                    break;
-            }
-
-            if (fileUploader != null)
-            {
-                PrepareUploader(fileUploader);
-                return fileUploader.Upload(stream, fileName);
-            }
-
-            return null;
-        }
-
         public UploadResult ShortenURL(string url)
         {
             URLShortener urlShortener = null;
@@ -1374,7 +990,7 @@ namespace ShareX
             return true;
         }
 
-        private FTPAccount GetFTPAccount(int index)
+        protected FTPAccount GetFTPAccount(int index)
         {
             if (Info.TaskSettings.OverrideFTP)
             {
@@ -1384,7 +1000,7 @@ namespace ShareX
             return Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
         }
 
-        private CustomUploaderItem GetCustomUploader(int index)
+        protected CustomUploaderItem GetCustomUploader(int index)
         {
             if (Info.TaskSettings.OverrideCustomUploader)
             {
@@ -1399,7 +1015,7 @@ namespace ShareX
             OnUploadCompleted();
         }
 
-        private void PrepareUploader(Uploader currentUploader)
+        protected void PrepareUploader(Uploader currentUploader)
         {
             uploader = currentUploader;
             uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
