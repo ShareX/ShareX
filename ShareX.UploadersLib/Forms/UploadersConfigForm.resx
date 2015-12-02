@@ -8599,6 +8599,177 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpSeafile.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
+<data name="txtStreamablePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 200</value>
+  </data>
+  <data name="txtStreamablePassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="txtStreamablePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>372, 31</value>
+  </data>
+  <data name="txtStreamablePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;txtStreamablePassword.Name" xml:space="preserve">
+    <value>txtStreamablePassword</value>
+  </data>
+  <data name="&gt;&gt;txtStreamablePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtStreamablePassword.Parent" xml:space="preserve">
+    <value>tpStreamable</value>
+  </data>
+  <data name="&gt;&gt;txtStreamablePassword.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtStreamableUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 115</value>
+  </data>
+  <data name="txtStreamableUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="txtStreamableUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>372, 31</value>
+  </data>
+  <data name="txtStreamableUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txtStreamableUsername.Name" xml:space="preserve">
+    <value>txtStreamableUsername</value>
+  </data>
+  <data name="&gt;&gt;txtStreamableUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtStreamableUsername.Parent" xml:space="preserve">
+    <value>tpStreamable</value>
+  </data>
+  <data name="&gt;&gt;txtStreamableUsername.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblStreamableUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStreamableUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblStreamableUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 85</value>
+  </data>
+  <data name="lblStreamableUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
+  </data>
+  <data name="lblStreamableUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 25</value>
+  </data>
+  <data name="lblStreamableUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="&gt;&gt;lblStreamableUsername.Name" xml:space="preserve">
+    <value>lblStreamableUsername</value>
+  </data>
+  <data name="&gt;&gt;lblStreamableUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStreamableUsername.Parent" xml:space="preserve">
+    <value>tpStreamable</value>
+  </data>
+  <data name="&gt;&gt;lblStreamableUsername.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblStreamablePassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStreamablePassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblStreamablePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 169</value>
+  </data>
+  <data name="lblStreamablePassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
+  </data>
+  <data name="lblStreamablePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 25</value>
+  </data>
+  <data name="lblStreamablePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblStreamablePassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblStreamablePassword.Name" xml:space="preserve">
+    <value>lblStreamablePassword</value>
+  </data>
+  <data name="&gt;&gt;lblStreamablePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStreamablePassword.Parent" xml:space="preserve">
+    <value>tpStreamable</value>
+  </data>
+  <data name="&gt;&gt;lblStreamablePassword.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cboxStreamableAnonymous.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cboxStreamableAnonymous.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cboxStreamableAnonymous.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 31</value>
+  </data>
+  <data name="cboxStreamableAnonymous.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="cboxStreamableAnonymous.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 29</value>
+  </data>
+  <data name="cboxStreamableAnonymous.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="cboxStreamableAnonymous.Text" xml:space="preserve">
+    <value>Anonymous</value>
+  </data>
+  <data name="&gt;&gt;cboxStreamableAnonymous.Name" xml:space="preserve">
+    <value>cboxStreamableAnonymous</value>
+  </data>
+  <data name="&gt;&gt;cboxStreamableAnonymous.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboxStreamableAnonymous.Parent" xml:space="preserve">
+    <value>tpStreamable</value>
+  </data>
+  <data name="&gt;&gt;cboxStreamableAnonymous.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpStreamable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 70</value>
+  </data>
+  <data name="tpStreamable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1944, 922</value>
+  </data>
+  <data name="tpStreamable.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="tpStreamable.Text" xml:space="preserve">
+    <value>Streamable</value>
+  </data>
+  <data name="&gt;&gt;tpStreamable.Name" xml:space="preserve">
+    <value>tpStreamable</value>
+  </data>
+  <data name="&gt;&gt;tpStreamable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpStreamable.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpStreamable.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
   <data name="chkEmailConfirm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
