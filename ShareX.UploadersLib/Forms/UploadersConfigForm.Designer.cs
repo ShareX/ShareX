@@ -359,6 +359,12 @@
             this.txtSeafileAuthToken = new System.Windows.Forms.TextBox();
             this.lblSeafileAuthToken = new System.Windows.Forms.Label();
             this.lblSeafileAPIURL = new System.Windows.Forms.Label();
+            this.tpStreamable = new System.Windows.Forms.TabPage();
+            this.txtStreamablePassword = new System.Windows.Forms.TextBox();
+            this.txtStreamableUsername = new System.Windows.Forms.TextBox();
+            this.lblStreamableUsername = new System.Windows.Forms.Label();
+            this.lblStreamablePassword = new System.Windows.Forms.Label();
+            this.cbStreamableAnonymous = new System.Windows.Forms.CheckBox();
             this.tpEmail = new System.Windows.Forms.TabPage();
             this.chkEmailConfirm = new System.Windows.Forms.CheckBox();
             this.lblEmailSmtpServer = new System.Windows.Forms.Label();
@@ -500,12 +506,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.tpStreamable = new System.Windows.Forms.TabPage();
-            this.txtStreamablePassword = new System.Windows.Forms.TextBox();
-            this.txtStreamableUsername = new System.Windows.Forms.TextBox();
-            this.lblStreamableUsername = new System.Windows.Forms.Label();
-            this.lblStreamablePassword = new System.Windows.Forms.Label();
-            this.cbStreamableAnonymous = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -554,6 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSeafileExpireDays)).BeginInit();
             this.grpSeafileAccInfo.SuspendLayout();
             this.grpSeafileObtainAuthToken.SuspendLayout();
+            this.tpStreamable.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
             this.tpSharedFolder.SuspendLayout();
@@ -578,7 +579,6 @@
             this.tpPicasa.SuspendLayout();
             this.tpChevereto.SuspendLayout();
             this.tcUploaders.SuspendLayout();
-            this.tpStreamable.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -2984,6 +2984,47 @@
             resources.ApplyResources(this.lblSeafileAPIURL, "lblSeafileAPIURL");
             this.lblSeafileAPIURL.Name = "lblSeafileAPIURL";
             // 
+            // tpStreamable
+            // 
+            this.tpStreamable.Controls.Add(this.txtStreamablePassword);
+            this.tpStreamable.Controls.Add(this.txtStreamableUsername);
+            this.tpStreamable.Controls.Add(this.lblStreamableUsername);
+            this.tpStreamable.Controls.Add(this.lblStreamablePassword);
+            this.tpStreamable.Controls.Add(this.cbStreamableAnonymous);
+            resources.ApplyResources(this.tpStreamable, "tpStreamable");
+            this.tpStreamable.Name = "tpStreamable";
+            this.tpStreamable.UseVisualStyleBackColor = true;
+            // 
+            // txtStreamablePassword
+            // 
+            resources.ApplyResources(this.txtStreamablePassword, "txtStreamablePassword");
+            this.txtStreamablePassword.Name = "txtStreamablePassword";
+            this.txtStreamablePassword.UseSystemPasswordChar = true;
+            this.txtStreamablePassword.TextChanged += new System.EventHandler(this.txtStreamablePassword_TextChanged);
+            // 
+            // txtStreamableUsername
+            // 
+            resources.ApplyResources(this.txtStreamableUsername, "txtStreamableUsername");
+            this.txtStreamableUsername.Name = "txtStreamableUsername";
+            this.txtStreamableUsername.TextChanged += new System.EventHandler(this.txtStreamableUsername_TextChanged);
+            // 
+            // lblStreamableUsername
+            // 
+            resources.ApplyResources(this.lblStreamableUsername, "lblStreamableUsername");
+            this.lblStreamableUsername.Name = "lblStreamableUsername";
+            // 
+            // lblStreamablePassword
+            // 
+            resources.ApplyResources(this.lblStreamablePassword, "lblStreamablePassword");
+            this.lblStreamablePassword.Name = "lblStreamablePassword";
+            // 
+            // cbStreamableAnonymous
+            // 
+            resources.ApplyResources(this.cbStreamableAnonymous, "cbStreamableAnonymous");
+            this.cbStreamableAnonymous.Name = "cbStreamableAnonymous";
+            this.cbStreamableAnonymous.UseVisualStyleBackColor = true;
+            this.cbStreamableAnonymous.CheckedChanged += new System.EventHandler(this.cboxStreamableAnonymous_CheckedChanged);
+            // 
             // tpEmail
             // 
             this.tpEmail.Controls.Add(this.chkEmailConfirm);
@@ -4005,47 +4046,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // tpStreamable
-            // 
-            this.tpStreamable.Controls.Add(this.txtStreamablePassword);
-            this.tpStreamable.Controls.Add(this.txtStreamableUsername);
-            this.tpStreamable.Controls.Add(this.lblStreamableUsername);
-            this.tpStreamable.Controls.Add(this.lblStreamablePassword);
-            this.tpStreamable.Controls.Add(this.cbStreamableAnonymous);
-            resources.ApplyResources(this.tpStreamable, "tpStreamable");
-            this.tpStreamable.Name = "tpStreamable";
-            this.tpStreamable.UseVisualStyleBackColor = true;
-            // 
-            // txtStreamablePassword
-            // 
-            resources.ApplyResources(this.txtStreamablePassword, "txtStreamablePassword");
-            this.txtStreamablePassword.Name = "txtStreamablePassword";
-            this.txtStreamablePassword.UseSystemPasswordChar = true;
-            this.txtStreamablePassword.TextChanged += new System.EventHandler(this.txtStreamablePassword_TextChanged);
-            // 
-            // txtStreamableUsername
-            // 
-            resources.ApplyResources(this.txtStreamableUsername, "txtStreamableUsername");
-            this.txtStreamableUsername.Name = "txtStreamableUsername";
-            this.txtStreamableUsername.TextChanged += new System.EventHandler(this.txtStreamableUsername_TextChanged);
-            // 
-            // lblStreamableUsername
-            // 
-            resources.ApplyResources(this.lblStreamableUsername, "lblStreamableUsername");
-            this.lblStreamableUsername.Name = "lblStreamableUsername";
-            // 
-            // lblStreamablePassword
-            // 
-            resources.ApplyResources(this.lblStreamablePassword, "lblStreamablePassword");
-            this.lblStreamablePassword.Name = "lblStreamablePassword";
-            // 
-            // cboxStreamableAnonymous
-            // 
-            resources.ApplyResources(this.cbStreamableAnonymous, "cboxStreamableAnonymous");
-            this.cbStreamableAnonymous.Name = "cboxStreamableAnonymous";
-            this.cbStreamableAnonymous.UseVisualStyleBackColor = true;
-            this.cbStreamableAnonymous.CheckedChanged += new System.EventHandler(this.cboxStreamableAnonymous_CheckedChanged);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4143,6 +4143,8 @@
             this.grpSeafileAccInfo.PerformLayout();
             this.grpSeafileObtainAuthToken.ResumeLayout(false);
             this.grpSeafileObtainAuthToken.PerformLayout();
+            this.tpStreamable.ResumeLayout(false);
+            this.tpStreamable.PerformLayout();
             this.tpEmail.ResumeLayout(false);
             this.tpEmail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
@@ -4183,8 +4185,6 @@
             this.tpChevereto.ResumeLayout(false);
             this.tpChevereto.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
-            this.tpStreamable.ResumeLayout(false);
-            this.tpStreamable.PerformLayout();
             this.ResumeLayout(false);
 
         }

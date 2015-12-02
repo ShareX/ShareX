@@ -23,11 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.HelperClasses;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Threading;
@@ -36,9 +34,11 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public class Streamable : FileUploader
     {
-        const string Host = "https://api.streamable.com";
-        string Email;
-        string Password;
+        private const string Host = "https://api.streamable.com";
+
+        public string Email { get; private set; }
+        public string Password { get; private set; }
+
         public Streamable(string email, string password)
         {
             Email = email;
@@ -47,27 +47,25 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            NameValueCollection headers = new NameValueCollection();
-            if (Email != "" && Password != "") {
-                headers.Add("Authorization", "Basic " + System.Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(Email + ":" + Password)));
+            NameValueCollection headers = null;
+
+            if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
+            {
+                headers = CreateAuthenticationHeader(Email, Password);
             }
-           
-            UploadResult result = UploadData(stream, Host + "/upload", fileName, "file", args, headers);
+
+            UploadResult result = UploadData(stream, URLHelpers.CombineURL(Host, "upload"), fileName, headers: headers);
+
             TranscodeFile(result);
+
             return result;
-        }
-
-        private void GetShortcode()
-        {
-
         }
 
         private void TranscodeFile(UploadResult result)
         {
             StreamableTranscodeResponse transcodeResponse = JsonConvert.DeserializeObject<StreamableTranscodeResponse>(result.Response);
 
-            if (transcodeResponse.Shortcode != null)
+            if (!string.IsNullOrEmpty(transcodeResponse.Shortcode))
             {
                 ProgressManager progress = new ProgressManager(100);
 
@@ -78,7 +76,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 while (!StopUploadRequested)
                 {
-                    string statusJson = SendRequest(HttpMethod.GET, Host + "/videos/" + transcodeResponse.Shortcode);
+                    string statusJson = SendRequest(HttpMethod.GET, URLHelpers.CombineURL(Host, "videos", transcodeResponse.Shortcode));
                     StreamableStatusResponse response = JsonConvert.DeserializeObject<StreamableStatusResponse>(statusJson);
 
                     if (response.Status > 2)
@@ -97,7 +95,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         }
 
                         result.IsSuccess = true;
-                        result.URL = "https://streamable.com/" + transcodeResponse.Shortcode;
+                        result.URL = URLHelpers.CombineURL("https://streamable.com", transcodeResponse.Shortcode);
                         break;
                     }
 
@@ -124,6 +122,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Shortcode { get; set; }
         public int Status { get; set; }
     }
+
     public class StreamableStatusResponse
     {
         public int Status { get; set; }
