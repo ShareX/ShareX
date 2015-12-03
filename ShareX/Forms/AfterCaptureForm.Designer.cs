@@ -38,9 +38,9 @@
             this.tcTasks = new System.Windows.Forms.TabControl();
             this.tpAfterCapture = new System.Windows.Forms.TabPage();
             this.tpBeforeUpload = new System.Windows.Forms.TabPage();
-            this.ucBeforeUpload = new ShareX.BeforeUploadControl();
             this.lblFileName = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
+            this.ucBeforeUpload = new ShareX.BeforeUploadControl();
             this.tcTasks.SuspendLayout();
             this.tpAfterCapture.SuspendLayout();
             this.tpBeforeUpload.SuspendLayout();
@@ -48,6 +48,7 @@
             // 
             // lvAfterCaptureTasks
             // 
+            this.lvAfterCaptureTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvAfterCaptureTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chAfterCapture});
             resources.ApplyResources(this.lvAfterCaptureTasks, "lvAfterCaptureTasks");
@@ -121,11 +122,6 @@
             this.tpBeforeUpload.Name = "tpBeforeUpload";
             this.tpBeforeUpload.UseVisualStyleBackColor = true;
             // 
-            // ucBeforeUpload
-            // 
-            resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
-            this.ucBeforeUpload.Name = "ucBeforeUpload";
-            // 
             // lblFileName
             // 
             resources.ApplyResources(this.lblFileName, "lblFileName");
@@ -136,11 +132,17 @@
             resources.ApplyResources(this.txtFileName, "txtFileName");
             this.txtFileName.Name = "txtFileName";
             // 
+            // ucBeforeUpload
+            // 
+            resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
+            this.ucBeforeUpload.Name = "ucBeforeUpload";
+            // 
             // AfterCaptureForm
             // 
             this.AcceptButton = this.btnContinue;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.lblFileName);
             this.Controls.Add(this.tcTasks);
