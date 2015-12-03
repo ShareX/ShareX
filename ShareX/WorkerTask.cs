@@ -367,7 +367,7 @@ namespace ShareX
 
                     DialogResult beforeUploadResult = DialogResult.OK;
 
-                    if (Info.TaskSettings.GeneralSettings.ShowBeforeUploadForm)
+                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowBeforeUploadWindow))
                     {
                         BeforeUploadForm form = new BeforeUploadForm(Info);
                         beforeUploadResult = form.ShowDialog();
@@ -1123,7 +1123,8 @@ namespace ShareX
                 case FileDestination.Streamable:
                     string user = "";
                     string password = "";
-                    if (!Program.UploadersConfig.StreamableAnonymous) {
+                    if (!Program.UploadersConfig.StreamableAnonymous)
+                    {
                         user = Program.UploadersConfig.StreamableUsername;
                         password = Program.UploadersConfig.StreamablePassword;
                     }

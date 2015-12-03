@@ -89,29 +89,32 @@ namespace ShareX
     public enum AfterCaptureTasks // Localized
     {
         None = 0,
-        AddImageEffects = 1,
-        AnnotateImage = 1 << 1,
-        CopyImageToClipboard = 1 << 2,
-        SendImageToPrinter = 1 << 3,
-        SaveImageToFile = 1 << 4,
-        SaveImageToFileWithDialog = 1 << 5,
-        SaveThumbnailImageToFile = 1 << 6,
-        PerformActions = 1 << 7,
-        CopyFileToClipboard = 1 << 8,
-        CopyFilePathToClipboard = 1 << 9,
-        UploadImageToHost = 1 << 10,
-        DeleteFile = 1 << 11
+        ShowAfterCaptureWindow = 1,
+        AddImageEffects = 1 << 1,
+        AnnotateImage = 1 << 2,
+        CopyImageToClipboard = 1 << 3,
+        SendImageToPrinter = 1 << 4,
+        SaveImageToFile = 1 << 5,
+        SaveImageToFileWithDialog = 1 << 6,
+        SaveThumbnailImageToFile = 1 << 7,
+        PerformActions = 1 << 8,
+        CopyFileToClipboard = 1 << 9,
+        CopyFilePathToClipboard = 1 << 10,
+        ShowBeforeUploadWindow = 1 << 11,
+        UploadImageToHost = 1 << 12,
+        DeleteFile = 1 << 13
     }
 
     [Flags]
     public enum AfterUploadTasks // Localized
     {
         None = 0,
-        UseURLShortener = 1,
-        ShareURL = 1 << 1,
-        CopyURLToClipboard = 1 << 2,
-        OpenURL = 1 << 3,
-        ShowQRCode = 1 << 4
+        ShowAfterUploadWindow = 1,
+        UseURLShortener = 1 << 1,
+        ShareURL = 1 << 2,
+        CopyURLToClipboard = 1 << 3,
+        OpenURL = 1 << 4,
+        ShowQRCode = 1 << 5
     }
 
     public enum CaptureType

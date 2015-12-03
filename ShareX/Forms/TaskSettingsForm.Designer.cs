@@ -56,11 +56,8 @@
             this.btnTask = new ShareX.HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.panelGeneral = new System.Windows.Forms.Panel();
-            this.chkShowBeforeUploadForm = new System.Windows.Forms.CheckBox();
             this.lblAfterTaskNotification = new System.Windows.Forms.Label();
             this.cboPopUpNotification = new System.Windows.Forms.ComboBox();
-            this.chkShowAfterUploadForm = new System.Windows.Forms.CheckBox();
-            this.cbShowAfterCaptureTasksForm = new System.Windows.Forms.CheckBox();
             this.cbPlaySoundAfterUpload = new System.Windows.Forms.CheckBox();
             this.cbHistorySave = new System.Windows.Forms.CheckBox();
             this.cbPlaySoundAfterCapture = new System.Windows.Forms.CheckBox();
@@ -144,6 +141,8 @@
             this.cbScreenRecorderFixedDuration = new System.Windows.Forms.CheckBox();
             this.nudGIFFPS = new System.Windows.Forms.NumericUpDown();
             this.lblGIFFPS = new System.Windows.Forms.Label();
+            this.tpScrollingCapture = new System.Windows.Forms.TabPage();
+            this.pgScrollingCapture = new System.Windows.Forms.PropertyGrid();
             this.tpRectangleAnnotate = new System.Windows.Forms.TabPage();
             this.pgRectangleAnnotate = new System.Windows.Forms.PropertyGrid();
             this.tpActions = new System.Windows.Forms.TabPage();
@@ -200,8 +199,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.tpScrollingCapture = new System.Windows.Forms.TabPage();
-            this.pgScrollingCapture = new System.Windows.Forms.PropertyGrid();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -233,6 +230,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).BeginInit();
+            this.tpScrollingCapture.SuspendLayout();
             this.tpRectangleAnnotate.SuspendLayout();
             this.tpActions.SuspendLayout();
             this.pActions.SuspendLayout();
@@ -249,7 +247,6 @@
             this.tpVideoThumbnailer.SuspendLayout();
             this.tpIRCClient.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
-            this.tpScrollingCapture.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -446,23 +443,13 @@
             // 
             // panelGeneral
             // 
-            this.panelGeneral.Controls.Add(this.chkShowBeforeUploadForm);
             this.panelGeneral.Controls.Add(this.lblAfterTaskNotification);
             this.panelGeneral.Controls.Add(this.cboPopUpNotification);
-            this.panelGeneral.Controls.Add(this.chkShowAfterUploadForm);
-            this.panelGeneral.Controls.Add(this.cbShowAfterCaptureTasksForm);
             this.panelGeneral.Controls.Add(this.cbPlaySoundAfterUpload);
             this.panelGeneral.Controls.Add(this.cbHistorySave);
             this.panelGeneral.Controls.Add(this.cbPlaySoundAfterCapture);
             resources.ApplyResources(this.panelGeneral, "panelGeneral");
             this.panelGeneral.Name = "panelGeneral";
-            // 
-            // chkShowBeforeUploadForm
-            // 
-            resources.ApplyResources(this.chkShowBeforeUploadForm, "chkShowBeforeUploadForm");
-            this.chkShowBeforeUploadForm.Name = "chkShowBeforeUploadForm";
-            this.chkShowBeforeUploadForm.UseVisualStyleBackColor = true;
-            this.chkShowBeforeUploadForm.CheckedChanged += new System.EventHandler(this.chkShowBeforeUploadForm_CheckedChanged);
             // 
             // lblAfterTaskNotification
             // 
@@ -476,20 +463,6 @@
             resources.ApplyResources(this.cboPopUpNotification, "cboPopUpNotification");
             this.cboPopUpNotification.Name = "cboPopUpNotification";
             this.cboPopUpNotification.SelectedIndexChanged += new System.EventHandler(this.cboPopUpNotification_SelectedIndexChanged);
-            // 
-            // chkShowAfterUploadForm
-            // 
-            resources.ApplyResources(this.chkShowAfterUploadForm, "chkShowAfterUploadForm");
-            this.chkShowAfterUploadForm.Name = "chkShowAfterUploadForm";
-            this.chkShowAfterUploadForm.UseVisualStyleBackColor = true;
-            this.chkShowAfterUploadForm.CheckedChanged += new System.EventHandler(this.chkShowAfterUploadForm_CheckedChanged);
-            // 
-            // cbShowAfterCaptureTasksForm
-            // 
-            resources.ApplyResources(this.cbShowAfterCaptureTasksForm, "cbShowAfterCaptureTasksForm");
-            this.cbShowAfterCaptureTasksForm.Name = "cbShowAfterCaptureTasksForm";
-            this.cbShowAfterCaptureTasksForm.UseVisualStyleBackColor = true;
-            this.cbShowAfterCaptureTasksForm.CheckedChanged += new System.EventHandler(this.cbShowAfterCaptureTasksForm_CheckedChanged);
             // 
             // cbPlaySoundAfterUpload
             // 
@@ -1238,6 +1211,21 @@
             resources.ApplyResources(this.lblGIFFPS, "lblGIFFPS");
             this.lblGIFFPS.Name = "lblGIFFPS";
             // 
+            // tpScrollingCapture
+            // 
+            this.tpScrollingCapture.Controls.Add(this.pgScrollingCapture);
+            resources.ApplyResources(this.tpScrollingCapture, "tpScrollingCapture");
+            this.tpScrollingCapture.Name = "tpScrollingCapture";
+            this.tpScrollingCapture.UseVisualStyleBackColor = true;
+            // 
+            // pgScrollingCapture
+            // 
+            this.pgScrollingCapture.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            resources.ApplyResources(this.pgScrollingCapture, "pgScrollingCapture");
+            this.pgScrollingCapture.Name = "pgScrollingCapture";
+            this.pgScrollingCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgScrollingCapture.ToolbarVisible = false;
+            // 
             // tpRectangleAnnotate
             // 
             this.tpRectangleAnnotate.Controls.Add(this.pgRectangleAnnotate);
@@ -1659,21 +1647,6 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // tpScrollingCapture
-            // 
-            this.tpScrollingCapture.Controls.Add(this.pgScrollingCapture);
-            resources.ApplyResources(this.tpScrollingCapture, "tpScrollingCapture");
-            this.tpScrollingCapture.Name = "tpScrollingCapture";
-            this.tpScrollingCapture.UseVisualStyleBackColor = true;
-            // 
-            // pgScrollingCapture
-            // 
-            this.pgScrollingCapture.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            resources.ApplyResources(this.pgScrollingCapture, "pgScrollingCapture");
-            this.pgScrollingCapture.Name = "pgScrollingCapture";
-            this.pgScrollingCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgScrollingCapture.ToolbarVisible = false;
-            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1726,6 +1699,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).EndInit();
+            this.tpScrollingCapture.ResumeLayout(false);
             this.tpRectangleAnnotate.ResumeLayout(false);
             this.tpActions.ResumeLayout(false);
             this.tpActions.PerformLayout();
@@ -1749,7 +1723,6 @@
             this.tpIRCClient.ResumeLayout(false);
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
-            this.tpScrollingCapture.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1842,11 +1815,9 @@
         private System.Windows.Forms.Button btnWatchFolderRemove;
         private System.Windows.Forms.Button btnWatchFolderAdd;
         private System.Windows.Forms.TabPage tpGeneral;
-        private System.Windows.Forms.CheckBox cbShowAfterCaptureTasksForm;
         private System.Windows.Forms.CheckBox cbHistorySave;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterCapture;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterUpload;
-        private System.Windows.Forms.CheckBox chkShowAfterUploadForm;
         private System.Windows.Forms.CheckBox chkUseDefaultGeneralSettings;
         private System.Windows.Forms.Panel panelGeneral;
         private System.Windows.Forms.PropertyGrid pgRegionCapture;
@@ -1883,7 +1854,6 @@
         private System.Windows.Forms.CheckBox chkClipboardUploadURLContents;
         private System.Windows.Forms.NumericUpDown nudScreenRecordFPS;
         private System.Windows.Forms.Label lblScreenRecordFPS;
-        private System.Windows.Forms.CheckBox chkShowBeforeUploadForm;
         private System.Windows.Forms.Label lblScreenRecorderFixedDuration;
         private System.Windows.Forms.CheckBox cbClipboardUploadShareURL;
         private System.Windows.Forms.TabPage tpRectangleAnnotate;

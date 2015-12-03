@@ -851,4 +851,13 @@ Would you like to download and install it?</value>
     <value>A newer version of {0} is available.
 Would you like to download it?</value>
   </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>Show "After capture tasks" window</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>Show "Before upload" window</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>Show "After upload" window</value>
+  </data>
 </root>

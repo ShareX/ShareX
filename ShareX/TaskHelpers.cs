@@ -188,7 +188,7 @@ namespace ShareX
         {
             fileName = null;
 
-            if (taskSettings.GeneralSettings.ShowAfterCaptureTasksForm)
+            if (taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowAfterCaptureWindow))
             {
                 using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings))
                 {
