@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -65,12 +66,15 @@ namespace ShareX
         private void AddAfterCaptureItems(AfterCaptureTasks afterCaptureTasks)
         {
             AfterCaptureTasks[] enums = Helpers.GetEnums<AfterCaptureTasks>();
+            AfterCaptureTasks[] ignore = new AfterCaptureTasks[] { AfterCaptureTasks.None, AfterCaptureTasks.ShowAfterCaptureWindow };
 
-            for (int i = 1; i < enums.Length; i++)
+            for (int i = 0; i < enums.Length; i++)
             {
-                ListViewItem lvi = new ListViewItem(enums[i].GetLocalizedDescription());
-                CheckItem(lvi, afterCaptureTasks.HasFlag(1 << (i - 1)));
-                lvi.Tag = enums[i];
+                AfterCaptureTasks task = enums[i];
+                if (ignore.Any(x => x == task)) continue;
+                ListViewItem lvi = new ListViewItem(task.GetLocalizedDescription());
+                CheckItem(lvi, afterCaptureTasks.HasFlag(task));
+                lvi.Tag = task;
                 lvAfterCaptureTasks.Items.Add(lvi);
             }
         }
@@ -95,7 +99,7 @@ namespace ShareX
 
                 if (IsChecked(lvi))
                 {
-                    afterCaptureTasks = afterCaptureTasks.Add((AfterCaptureTasks)(1 << i));
+                    afterCaptureTasks = afterCaptureTasks.Add((AfterCaptureTasks)lvi.Tag);
                 }
             }
 
