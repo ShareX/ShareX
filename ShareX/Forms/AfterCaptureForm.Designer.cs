@@ -161,9 +161,9 @@
             // 
             // lblImageSize
             // 
+            resources.ApplyResources(this.lblImageSize, "lblImageSize");
             this.lblImageSize.BackColor = System.Drawing.Color.White;
             this.lblImageSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.lblImageSize, "lblImageSize");
             this.lblImageSize.Name = "lblImageSize";
             // 
             // ucBeforeUpload
