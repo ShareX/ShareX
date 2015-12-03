@@ -43,6 +43,7 @@
             this.chAfterUpload = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblFileName = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
+            this.lblImageSize = new System.Windows.Forms.Label();
             this.ucBeforeUpload = new ShareX.BeforeUploadControl();
             this.tcTasks.SuspendLayout();
             this.tpAfterCapture.SuspendLayout();
@@ -158,6 +159,13 @@
             resources.ApplyResources(this.txtFileName, "txtFileName");
             this.txtFileName.Name = "txtFileName";
             // 
+            // lblImageSize
+            // 
+            this.lblImageSize.BackColor = System.Drawing.Color.White;
+            this.lblImageSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.lblImageSize, "lblImageSize");
+            this.lblImageSize.Name = "lblImageSize";
+            // 
             // ucBeforeUpload
             // 
             resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
@@ -169,6 +177,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.lblImageSize);
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.lblFileName);
             this.Controls.Add(this.tcTasks);
@@ -205,5 +214,6 @@
         private System.Windows.Forms.ColumnHeader chAfterCapture;
         private HelpersLib.MyListView lvAfterUploadTasks;
         private System.Windows.Forms.ColumnHeader chAfterUpload;
+        private System.Windows.Forms.Label lblImageSize;
     }
 }

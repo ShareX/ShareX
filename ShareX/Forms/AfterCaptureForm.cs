@@ -54,11 +54,12 @@ namespace ShareX
             AddAfterCaptureItems(TaskSettings.AfterCaptureJob);
             AddAfterUploadItems(TaskSettings.AfterUploadJob);
 
-            btnCopy.Visible = img != null;
-
             if (img != null)
             {
                 pbImage.LoadImage(img);
+                btnCopy.Enabled = true;
+                lblImageSize.Visible = true;
+                lblImageSize.Text = $"{img.Width} x {img.Height}";
             }
 
             FileName = TaskHelpers.GetFilename(TaskSettings, null, img);
