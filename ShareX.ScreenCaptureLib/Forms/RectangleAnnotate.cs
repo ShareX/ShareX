@@ -349,15 +349,13 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
             g.InterpolationMode = InterpolationMode.NearestNeighbor;
-            g.SmoothingMode = SmoothingMode.HighQuality;
+            g.SmoothingMode = SmoothingMode.HighSpeed;
             g.CompositingMode = CompositingMode.SourceCopy;
             g.DrawImage(backgroundImage, ScreenRectangle0Based);
             g.CompositingMode = CompositingMode.SourceOver;
 
             if (Mode == RegionAnnotateMode.Rectangle)
             {
-                g.SmoothingMode = SmoothingMode.HighSpeed;
-
                 if (isMouseDown)
                 {
                     DrawRectangle(g);
@@ -366,12 +364,12 @@ namespace ShareX.ScreenCaptureLib
                 {
                     DrawRectangleMarker(g);
                 }
-
-                g.SmoothingMode = SmoothingMode.HighQuality;
             }
             else if (Mode == RegionAnnotateMode.Pen)
             {
+                g.SmoothingMode = SmoothingMode.HighQuality;
                 DrawDot(g);
+                g.SmoothingMode = SmoothingMode.HighSpeed;
             }
 
             if (Options.ShowTips)
@@ -491,9 +489,16 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawRectangle(Graphics g)
         {
+            Rectangle rect = SelectionRectangle0Based.Offset(Options.DrawingRectangleBorderSize - 1);
+
+            if (Options.DrawingRectangleShadow)
+            {
+                g.DrawRectangleShadow(rect.Offset(1), Color.DarkGray, 3, 128, 20, new Padding(1));
+            }
+
             using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingRectangleBorderSize) { Alignment = PenAlignment.Inset })
             {
-                g.DrawRectangleProper(pen, SelectionRectangle0Based.Offset(Options.DrawingRectangleBorderSize - 1));
+                g.DrawRectangleProper(pen, rect);
             }
         }
 
