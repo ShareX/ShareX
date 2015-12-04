@@ -367,7 +367,7 @@ namespace ShareX
 
                     DialogResult beforeUploadResult = DialogResult.OK;
 
-                    if (Info.TaskSettings.GeneralSettings.ShowBeforeUploadForm)
+                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowBeforeUploadWindow))
                     {
                         BeforeUploadForm form = new BeforeUploadForm(Info);
                         beforeUploadResult = form.ShowDialog();
@@ -580,7 +580,7 @@ namespace ShareX
                                 {
                                     Info.FilePath = sfd.FileName;
                                     lastSaveAsFolder = Path.GetDirectoryName(Info.FilePath);
-                                    imageSaved = imageData.Write(Info.FilePath) == Info.FilePath;
+                                    imageSaved = imageData.Write(Info.FilePath);
 
                                     if (imageSaved)
                                     {
@@ -589,8 +589,7 @@ namespace ShareX
                                 }
                                 else
                                 {
-                                    // User cancelled the dialog - stop image saving retries.
-                                    return false;
+                                    break;
                                 }
                             } while (!imageSaved);
                         }
@@ -1120,6 +1119,17 @@ namespace ShareX
                         CreateShareableURL = Program.UploadersConfig.SeafileCreateShareableURL,
                         IgnoreInvalidCert = Program.UploadersConfig.SeafileIgnoreInvalidCert
                     };
+                    break;
+                case FileDestination.Streamable:
+                    string user = "";
+                    string password = "";
+                    if (!Program.UploadersConfig.StreamableAnonymous)
+                    {
+                        user = Program.UploadersConfig.StreamableUsername;
+                        password = Program.UploadersConfig.StreamablePassword;
+                    }
+
+                    fileUploader = new Streamable(user, password);
                     break;
             }
 

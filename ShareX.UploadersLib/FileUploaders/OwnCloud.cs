@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
@@ -67,8 +68,12 @@ namespace ShareX.UploadersLib.FileUploaders
                 Path = "/";
             }
 
+            // Original, unencoded path. Necessary for shared files
             string path = URLHelpers.CombineURL(Path, fileName);
-            string url = URLHelpers.CombineURL(Host, "remote.php/webdav", path);
+            // Encoded path, necessary when sent in the URL
+            string encodedPath = URLHelpers.CombineURL(Path, URLHelpers.URLEncode(fileName));
+
+            string url = URLHelpers.CombineURL(Host, "remote.php/webdav", encodedPath);
             url = URLHelpers.FixPrefix(url);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
 
@@ -133,8 +138,9 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     if (result.ocs.data != null && result.ocs.meta.statuscode == 100)
                     {
-                        string link = result.ocs.data.url;
-                        if (DirectLink) link += (IsCompatibility81 ? "/download" : "&download");
+                        OwnCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<OwnCloudShareResponseData>();
+                        string link = data.url;
+                        if (DirectLink) link += IsCompatibility81 ? "/download" : "&download";
                         return link;
                     }
                     else
@@ -155,7 +161,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public class OwnCloudShareResponseOcs
         {
             public OwnCloudShareResponseMeta meta { get; set; }
-            public OwnCloudShareResponseData data { get; set; }
+            public object data { get; set; }
         }
 
         public class OwnCloudShareResponseMeta

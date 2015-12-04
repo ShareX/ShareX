@@ -47,6 +47,7 @@ namespace ShareX.HelpersLib
             {
                 thread = new Thread(WorkThread);
                 thread.SetApartmentState(state);
+                thread.IsBackground = true;
                 thread.Start();
             }
         }

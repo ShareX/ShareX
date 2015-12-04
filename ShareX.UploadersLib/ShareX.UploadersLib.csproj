@@ -79,11 +79,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AWSSDK.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.Core.3.1.3.5\lib\net35\AWSSDK.Core.dll</HintPath>
+      <HintPath>..\packages\AWSSDK.Core.3.1.3.8\lib\net35\AWSSDK.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AWSSDK.S3, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.S3.3.1.3.5\lib\net35\AWSSDK.S3.dll</HintPath>
+      <HintPath>..\packages\AWSSDK.S3.3.1.3.7\lib\net35\AWSSDK.S3.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MegaApiClient, Version=1.1.2.70, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
@@ -136,6 +136,7 @@
     <Compile Include="FileUploaders\Mega.cs" />
     <Compile Include="FileUploaders\OneDrive.cs" />
     <Compile Include="FileUploaders\Seafile.cs" />
+    <Compile Include="FileUploaders\Streamable.cs" />
     <Compile Include="FileUploaders\OwnCloud.cs" />
     <Compile Include="FileUploaders\Pomf.cs" />
     <Compile Include="FileUploaders\PomfUploader.cs" />
@@ -888,7 +889,7 @@ if not exist APIKeysLocal.cs (
     type nul &gt; APIKeysLocal.cs
 )</PreBuildEvent>
   </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

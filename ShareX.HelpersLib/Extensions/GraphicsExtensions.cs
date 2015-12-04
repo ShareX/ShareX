@@ -25,6 +25,7 @@
 
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -46,6 +47,22 @@ namespace ShareX.HelpersLib
         public static void DrawRectangleProper(this Graphics g, Pen pen, int x, int y, int width, int height)
         {
             DrawRectangleProper(g, pen, new Rectangle(x, y, width, height));
+        }
+
+        public static void DrawRectangleShadow(this Graphics g, Rectangle rect, Color shadowColor, int shadowDepth, int shadowMaxAlpha, int shadowMinAlpha, Padding shadowDirection)
+        {
+            for (int i = 0; i < shadowDepth; i++)
+            {
+                int currentAlpha = (int)MathHelpers.Lerp(shadowMaxAlpha, shadowMinAlpha, (float)i / (shadowDepth - 1));
+
+                using (Pen pen = new Pen(Color.FromArgb(currentAlpha, shadowColor)))
+                {
+                    Rectangle shadowRect = new Rectangle(rect.X + -shadowDirection.Left * i, rect.Y + -shadowDirection.Top * i,
+                        rect.Width + (shadowDirection.Left + shadowDirection.Right) * i, rect.Height + (shadowDirection.Top + shadowDirection.Bottom) * i);
+
+                    g.DrawRectangleProper(pen, shadowRect);
+                }
+            }
         }
 
         public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, Rectangle rect, float radius)

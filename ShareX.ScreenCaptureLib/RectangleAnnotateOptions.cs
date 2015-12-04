@@ -37,12 +37,12 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(true), Description("Show hotkey tips.")]
         public bool ShowTips { get; set; }
 
-        [DefaultValue(typeof(Color), "0, 230, 0"), Description("Color of pen and rectangle border.")]
+        [DefaultValue(typeof(Color), "255, 0, 0"), Description("Color of pen and rectangle border.")]
         public Color DrawingPenColor { get; set; }
 
         private int drawingPenSize;
 
-        [DefaultValue(7), Description("Size of pen.")]
+        [DefaultValue(5), Description("Size of pen.")]
         public int DrawingPenSize
         {
             get
@@ -69,6 +69,9 @@ namespace ShareX.ScreenCaptureLib
                 drawingRectangleBorderSize = value.Between(1, 100);
             }
         }
+
+        [DefaultValue(true), Description("Draw shadow around rectangle.")]
+        public bool DrawingRectangleShadow { get; set; }
 
         public RectangleAnnotateOptions()
         {

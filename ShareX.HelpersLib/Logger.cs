@@ -36,19 +36,22 @@ namespace ShareX.HelpersLib
 
         public event MessageAddedEventHandler MessageAdded;
 
-        public bool Async { get; set; }
+        public bool Async { get; set; } = true;
+        public bool DebugWrite { get; set; } = true;
+        public bool StoreInMemory { get; set; } = true;
+        public bool FileWrite { get; set; } = false;
         public string LogFilePath { get; private set; }
 
         private readonly object loggerLock = new object();
-        private StringBuilder sbMessages = new StringBuilder(4096);
+        private StringBuilder sbMessages = new StringBuilder();
 
         public Logger()
         {
-            Async = true;
         }
 
-        public Logger(string logFilePath) : this()
+        public Logger(string logFilePath)
         {
+            FileWrite = true;
             LogFilePath = logFilePath;
             Helpers.CreateDirectoryIfNotExist(LogFilePath);
         }
@@ -61,7 +64,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void WriteLine(string message = "")
+        public void WriteLine(string message)
         {
             if (!string.IsNullOrEmpty(message))
             {
@@ -80,25 +83,28 @@ namespace ShareX.HelpersLib
         {
             lock (loggerLock)
             {
-                message = string.Format("{0:yyyy-MM-dd HH:mm:ss.fff} - {1}", DateTime.Now, message);
+                message = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss.fff} - {message}";
 
-                Debug.WriteLine(message);
+                if (DebugWrite)
+                {
+                    Debug.WriteLine(message);
+                }
 
-                if (sbMessages != null)
+                if (StoreInMemory && sbMessages != null)
                 {
                     sbMessages.AppendLine(message);
                 }
 
-                try
+                if (FileWrite && !string.IsNullOrEmpty(LogFilePath))
                 {
-                    if (!string.IsNullOrEmpty(LogFilePath))
+                    try
                     {
-                        File.AppendAllText(LogFilePath, message, Encoding.UTF8);
+                        File.AppendAllText(LogFilePath, message + Environment.NewLine, Encoding.UTF8);
                     }
-                }
-                catch (Exception e)
-                {
-                    Debug.WriteLine(e);
+                    catch (Exception e)
+                    {
+                        Debug.WriteLine(e);
+                    }
                 }
 
                 OnMessageAdded(message);

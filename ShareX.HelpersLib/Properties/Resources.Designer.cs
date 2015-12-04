@@ -179,6 +179,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show &quot;After capture&quot; window.
+        /// </summary>
+        internal static string AfterCaptureTasks_ShowAfterCaptureWindow {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_ShowAfterCaptureWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show &quot;Destinations&quot; window.
+        /// </summary>
+        internal static string AfterCaptureTasks_ShowBeforeUploadWindow {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_ShowBeforeUploadWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload image to host.
         /// </summary>
         internal static string AfterCaptureTasks_UploadImageToHost {
@@ -211,6 +229,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string AfterUploadTasks_ShareURL {
             get {
                 return ResourceManager.GetString("AfterUploadTasks_ShareURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show &quot;After upload&quot; window.
+        /// </summary>
+        internal static string AfterUploadTasks_ShowAfterUploadWindow {
+            get {
+                return ResourceManager.GetString("AfterUploadTasks_ShowAfterUploadWindow", resourceCulture);
             }
         }
         

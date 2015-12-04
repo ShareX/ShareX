@@ -46,7 +46,7 @@ namespace ShareX
 
         private HotkeyForm hotkeyForm;
 
-        public HotkeyManager(HotkeyForm form, List<HotkeySettings> hotkeys, bool registerHotkeys)
+        public HotkeyManager(HotkeyForm form, List<HotkeySettings> hotkeys, bool showFailedHotkeys)
         {
             hotkeyForm = form;
             hotkeyForm.HotkeyPress += hotkeyForm_HotkeyPress;
@@ -54,9 +54,10 @@ namespace ShareX
 
             Hotkeys = hotkeys;
 
-            if (registerHotkeys)
+            RegisterAllHotkeys();
+
+            if (showFailedHotkeys)
             {
-                RegisterAllHotkeys();
                 ShowFailedHotkeys();
             }
         }
@@ -208,9 +209,9 @@ namespace ShareX
         {
             return new List<HotkeySettings>
             {
+                new HotkeySettings(HotkeyType.WindowRectangle, Keys.Control | Keys.PrintScreen),
                 new HotkeySettings(HotkeyType.PrintScreen, Keys.PrintScreen),
                 new HotkeySettings(HotkeyType.ActiveWindow, Keys.Alt | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.RectangleRegion, Keys.Control | Keys.PrintScreen),
                 new HotkeySettings(HotkeyType.ScreenRecorder, Keys.Shift | Keys.PrintScreen)
             };
         }

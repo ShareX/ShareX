@@ -33,12 +33,9 @@ namespace ShareX.HelpersLib
 {
     public partial class DebugForm : BaseForm
     {
-        private Logger logger;
-
         public DebugForm(Logger logger)
         {
             InitializeComponent();
-            this.logger = logger;
 
             rtbDebug.Text = logger.ToString();
             rtbDebug.SelectionStart = rtbDebug.TextLength;
@@ -46,11 +43,7 @@ namespace ShareX.HelpersLib
             rtbDebug.AddContextMenu();
 
             logger.MessageAdded += logger_MessageAdded;
-        }
-
-        private void DebugForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            logger.MessageAdded -= logger_MessageAdded;
+            FormClosing += (sender, e) => logger.MessageAdded -= logger_MessageAdded;
         }
 
         private void logger_MessageAdded(string message)

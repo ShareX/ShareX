@@ -57,7 +57,7 @@ namespace ShareX.UploadersLib
 
         // ListView messages
         private const int LVM_FIRST = 0x1000;
-        private const int LVM_GETCOLUMNORDERARRAY = (LVM_FIRST + 59);
+        private const int LVM_GETCOLUMNORDERARRAY = LVM_FIRST + 59;
 
         // Windows Messages that will abort editing
         private const int WM_HSCROLL = 0x114;
@@ -66,9 +66,9 @@ namespace ShareX.UploadersLib
         private const int WM_NOTIFY = 0x4E;
 
         private const int HDN_FIRST = -300;
-        private const int HDN_BEGINDRAG = (HDN_FIRST - 10);
-        private const int HDN_ITEMCHANGINGA = (HDN_FIRST - 0);
-        private const int HDN_ITEMCHANGINGW = (HDN_FIRST - 20);
+        private const int HDN_BEGINDRAG = HDN_FIRST - 10;
+        private const int HDN_ITEMCHANGINGA = HDN_FIRST - 0;
+        private const int HDN_ITEMCHANGINGW = HDN_FIRST - 20;
 
         #endregion Interop structs, imports and constants
 

@@ -57,17 +57,26 @@ namespace ShareX.HelpersLib
                 {
                     lock (obj)
                     {
-                        using (MemoryStream ms = new MemoryStream())
-                        {
-                            Save(obj, ms, type);
+                        string tempFilePath = filePath + ".temp";
 
-                            if (createBackup && File.Exists(filePath))
+                        using (FileStream fs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+                        {
+                            Save(obj, fs, type);
+                        }
+
+                        if (File.Exists(filePath))
+                        {
+                            if (createBackup)
                             {
                                 File.Copy(filePath, filePath + ".bak", true);
                             }
 
-                            isSuccess = ms.WriteToFile(filePath);
+                            File.Delete(filePath);
                         }
+
+                        File.Move(tempFilePath, filePath);
+
+                        isSuccess = true;
                     }
                 }
             }

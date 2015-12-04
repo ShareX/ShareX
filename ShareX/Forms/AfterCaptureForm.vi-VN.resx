@@ -129,9 +129,6 @@
   <data name="btnCopy.Text" xml:space="preserve">
     <value>Sao chép</value>
   </data>
-  <data name="chAfterCapture.Text" xml:space="preserve">
-    <value>Tác vụ</value>
-  </data>
   <data name="tpAfterCapture.Text" xml:space="preserve">
     <value>Sau khi chụp</value>
   </data>

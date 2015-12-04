@@ -269,6 +269,12 @@ namespace ShareX.UploadersLib
         public string SeafileAccInfoEmail = "";
         public string SeafileAccInfoUsage = "";
 
+        // Streamable
+
+        public string StreamableUsername = "";
+        public string StreamablePassword = "";
+        public bool StreamableAnonymous = true;
+
         #endregion File uploaders
 
         #region URL shorteners

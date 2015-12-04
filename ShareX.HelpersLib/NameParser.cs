@@ -177,7 +177,7 @@ namespace ShareX.HelpersLib
                 .Replace(ReplCodeMenuEntry.ms.ToPrefixString(), Helpers.AddZeroes(dt.Millisecond, 3))
                 .Replace(ReplCodeMenuEntry.w2.ToPrefixString(), CultureInfo.InvariantCulture.DateTimeFormat.GetDayName(dt.DayOfWeek))
                 .Replace(ReplCodeMenuEntry.w.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(dt.DayOfWeek))
-                .Replace(ReplCodeMenuEntry.pm.ToPrefixString(), (dt.Hour >= 12 ? "PM" : "AM"));
+                .Replace(ReplCodeMenuEntry.pm.ToPrefixString(), dt.Hour >= 12 ? "PM" : "AM");
 
             sb.Replace(ReplCodeMenuEntry.unix.ToPrefixString(), DateTime.UtcNow.ToUnix().ToString());
 

@@ -108,6 +108,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpPomf, Resources.Pomf);
             AddIconToTab(tpPushbullet, Resources.Pushbullet);
             AddIconToTab(tpSeafile, Resources.Seafile);
+            AddIconToTab(tpStreamable, Resources.Streamable);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
@@ -576,6 +577,17 @@ namespace ShareX.UploadersLib
             txtSeafileSharePassword.Text = Config.SeafileSharePassword;
             txtSeafileAccInfoEmail.Text = Config.SeafileAccInfoEmail;
             txtSeafileAccInfoUsage.Text = Config.SeafileAccInfoUsage;
+
+            // Streamable
+
+            cbStreamableAnonymous.Checked = Config.StreamableAnonymous;
+            txtStreamablePassword.Text = Config.StreamablePassword;
+            txtStreamableUsername.Text = Config.StreamableUsername;
+            if (Config.StreamableAnonymous)
+            {
+                txtStreamableUsername.Enabled = false;
+                txtStreamablePassword.Enabled = false;
+            }
 
             #endregion File uploaders
 
@@ -2347,6 +2359,27 @@ namespace ShareX.UploadersLib
 
         #endregion Seafile
 
+        #region Streamable
+
+        private void cboxStreamableAnonymous_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.StreamableAnonymous = cbStreamableAnonymous.Checked;
+            txtStreamableUsername.Enabled = !Config.StreamableAnonymous;
+            txtStreamablePassword.Enabled = !Config.StreamableAnonymous;
+        }
+
+        private void txtStreamableUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.StreamableUsername = txtStreamableUsername.Text;
+        }
+
+        private void txtStreamablePassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.StreamablePassword = txtStreamablePassword.Text;
+        }
+
+        #endregion Streamable
+
         #endregion File Uploaders
 
         #region URL Shorteners
@@ -2676,16 +2709,16 @@ namespace ShareX.UploadersLib
                     {
                         if (match.Groups.Count > 1 && !string.IsNullOrEmpty(match.Groups[1].Value))
                         {
-                            syntax = string.Format("${0},{1}$", selectedIndex + 1, match.Groups[1].Value);
+                            syntax = string.Format("$regex:{0},{1}$", selectedIndex + 1, match.Groups[1].Value);
                         }
                         else
                         {
-                            syntax = string.Format("${0},1$", selectedIndex + 1);
+                            syntax = string.Format("$regex:{0},1$", selectedIndex + 1);
                         }
                     }
                     else
                     {
-                        syntax = string.Format("${0}$", selectedIndex + 1);
+                        syntax = string.Format("$regex:{0}$", selectedIndex + 1);
                     }
 
                     txtCustomUploaderURL.AppendText(syntax);
@@ -2888,5 +2921,6 @@ namespace ShareX.UploadersLib
         #endregion Custom Uploaders
 
         #endregion Other Uploaders
+
     }
 }

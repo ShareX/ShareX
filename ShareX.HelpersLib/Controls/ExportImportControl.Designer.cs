@@ -104,7 +104,6 @@
             // 
             resources.ApplyResources(this.btnImport, "btnImport");
             this.btnImport.Menu = this.cmsImport;
-            this.btnImport.MenuX0 = true;
             this.btnImport.Name = "btnImport";
             this.btnImport.UseVisualStyleBackColor = true;
             // 
@@ -112,7 +111,6 @@
             // 
             resources.ApplyResources(this.btnExport, "btnExport");
             this.btnExport.Menu = this.cmsExport;
-            this.btnExport.MenuX0 = true;
             this.btnExport.Name = "btnExport";
             this.btnExport.UseVisualStyleBackColor = true;
             // 

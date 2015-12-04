@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using System.ComponentModel;
 
 namespace ShareX.UploadersLib
@@ -133,6 +132,8 @@ namespace ShareX.UploadersLib
         Up1,
         [Description("Seafile")]
         Seafile,
+        [Description("Streamable")]
+        Streamable,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
@@ -296,6 +297,13 @@ namespace ShareX.UploadersLib
         PUT,
         PATCH,
         DELETE
+    }
+
+    public enum CustomUploaderResponseParseType
+    {
+        Regex,
+        Json,
+        Xml
     }
 
     public enum FTPSEncryption

@@ -38,6 +38,7 @@ namespace ShareX
         {
             InitializeComponent();
             lblProductName.Text = Program.Title;
+            pbLogo.Image = ShareXResources.Logo;
 
             rtbShareXInfo.AddContextMenu();
             rtbCredits.AddContextMenu();
@@ -121,7 +122,12 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
         private void AboutForm_Shown(object sender, EventArgs e)
         {
             this.ShowActivate();
+        }
+
+        private void pbLogo_MouseDown(object sender, MouseEventArgs e)
+        {
             cLogo.Start(50);
+            pbLogo.Visible = false;
         }
 
         private void pbSteam_Click(object sender, EventArgs e)
@@ -254,7 +260,6 @@ Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors
                 if (clickCount >= 10)
                 {
                     isEasterEggStarted = true;
-                    cLogo.Stop();
                     RunEasterEgg();
                 }
             }
