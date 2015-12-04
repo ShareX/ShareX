@@ -493,7 +493,7 @@ namespace ShareX.ScreenCaptureLib
         {
             using (Pen pen = new Pen(Options.DrawingPenColor, Options.DrawingRectangleBorderSize) { Alignment = PenAlignment.Inset })
             {
-                g.DrawRectangleProper(pen, SelectionRectangle.Offset(Options.DrawingRectangleBorderSize - 1));
+                g.DrawRectangleProper(pen, SelectionRectangle0Based.Offset(Options.DrawingRectangleBorderSize - 1));
             }
         }
 
