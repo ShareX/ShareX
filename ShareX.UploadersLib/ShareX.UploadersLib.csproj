@@ -880,6 +880,9 @@
   <ItemGroup>
     <None Include="Favicons\Seafile.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question-button.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <PropertyGroup>
