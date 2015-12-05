@@ -2681,6 +2681,11 @@ namespace ShareX.UploadersLib
             }
         }
 
+        private void btnCustomUploaderRegexHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("http://regexone.com");
+        }
+
         private void lvCustomUploaderRegexps_SelectedIndexChanged(object sender, EventArgs e)
         {
             string regex = string.Empty;
@@ -2693,9 +2698,9 @@ namespace ShareX.UploadersLib
             txtCustomUploaderRegexp.Text = regex;
         }
 
-        private void lvCustomUploaderRegexps_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void btnCustomUploaderRegexAddSyntax_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Left && lvCustomUploaderRegexps.SelectedIndices.Count > 0)
+            if (lvCustomUploaderRegexps.SelectedIndices.Count > 0)
             {
                 int selectedIndex = lvCustomUploaderRegexps.SelectedIndices[0];
                 string regex = lvCustomUploaderRegexps.Items[selectedIndex].Text;
@@ -2723,6 +2728,45 @@ namespace ShareX.UploadersLib
 
                     txtCustomUploaderURL.AppendText(syntax);
                 }
+            }
+        }
+
+        private void btnCustomUploadJsonPathHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("http://goessner.net/articles/JsonPath/");
+        }
+
+        private void btnCustomUploaderJsonAddSyntax_Click(object sender, EventArgs e)
+        {
+            string syntax = txtCustomUploaderJsonPath.Text;
+
+            if (!string.IsNullOrEmpty(syntax))
+            {
+                if (syntax.StartsWith("$."))
+                {
+                    syntax = syntax.Substring(2);
+                }
+
+                syntax = string.Format("$json:{0}$", syntax);
+
+                txtCustomUploaderURL.AppendText(syntax);
+            }
+        }
+
+        private void btnCustomUploaderXPathHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("http://www.w3schools.com/xsl/xpath_syntax.asp");
+        }
+
+        private void btnCustomUploaderXmlSyntaxAdd_Click(object sender, EventArgs e)
+        {
+            string syntax = txtCustomUploaderXPath.Text;
+
+            if (!string.IsNullOrEmpty(syntax))
+            {
+                syntax = string.Format("$xml:{0}$", syntax);
+
+                txtCustomUploaderURL.AppendText(syntax);
             }
         }
 
@@ -2921,6 +2965,5 @@ namespace ShareX.UploadersLib
         #endregion Custom Uploaders
 
         #endregion Other Uploaders
-
     }
 }
