@@ -393,17 +393,17 @@ namespace ShareX
             {
                 if (DefaultTaskSettings.GeneralSettings.ShowAfterCaptureTasksForm)
                 {
-                    DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.ShowAfterCaptureWindow);
+                    DefaultTaskSettings.AfterCaptureJob = DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.ShowAfterCaptureWindow);
                 }
 
                 if (DefaultTaskSettings.GeneralSettings.ShowBeforeUploadForm)
                 {
-                    DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.ShowBeforeUploadWindow);
+                    DefaultTaskSettings.AfterCaptureJob = DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.ShowBeforeUploadWindow);
                 }
 
                 if (DefaultTaskSettings.GeneralSettings.ShowAfterUploadForm)
                 {
-                    DefaultTaskSettings.AfterUploadJob.Add(AfterUploadTasks.ShowAfterUploadWindow);
+                    DefaultTaskSettings.AfterUploadJob = DefaultTaskSettings.AfterUploadJob.Add(AfterUploadTasks.ShowAfterUploadWindow);
                 }
             }
         }
