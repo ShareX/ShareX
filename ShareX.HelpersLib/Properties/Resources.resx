@@ -855,7 +855,7 @@ Would you like to download it?</value>
     <value>Show "After capture" window</value>
   </data>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
-    <value>Show "Destinations" window</value>
+    <value>Show "Before upload" window</value>
   </data>
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>Show "After upload" window</value>

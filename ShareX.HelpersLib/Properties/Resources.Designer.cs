@@ -188,7 +188,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show &quot;Destinations&quot; window.
+        ///   Looks up a localized string similar to Show &quot;Before upload&quot; window.
         /// </summary>
         internal static string AfterCaptureTasks_ShowBeforeUploadWindow {
             get {

@@ -51,7 +51,7 @@ namespace ShareX.HelpersLib
         }
 
         [Browsable(false)]
-        public bool IsPreviousVersion
+        public bool IsUpgrade
         {
             get
             {

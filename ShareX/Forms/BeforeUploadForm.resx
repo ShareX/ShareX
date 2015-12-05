@@ -280,7 +280,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Destinations</value>
+    <value>ShareX - Before upload</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>BeforeUploadForm</value>
