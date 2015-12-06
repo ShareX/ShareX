@@ -880,6 +880,7 @@
             // 
             resources.ApplyResources(this.txtCustomUploaderJsonPath, "txtCustomUploaderJsonPath");
             this.txtCustomUploaderJsonPath.Name = "txtCustomUploaderJsonPath";
+            this.txtCustomUploaderJsonPath.TextChanged += new System.EventHandler(this.txtCustomUploaderJsonPath_TextChanged);
             // 
             // tpCustomUploaderXmlParse
             // 
@@ -920,6 +921,7 @@
             // 
             resources.ApplyResources(this.txtCustomUploaderXPath, "txtCustomUploaderXPath");
             this.txtCustomUploaderXPath.Name = "txtCustomUploaderXPath";
+            this.txtCustomUploaderXPath.TextChanged += new System.EventHandler(this.txtCustomUploaderXPath_TextChanged);
             // 
             // tcCustomUploaderArguments
             // 

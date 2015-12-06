@@ -526,6 +526,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;btnCustomUploaderRegexHelp.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="btnCustomUploaderRegexAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -706,6 +709,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpCustomUploaderRegexParse.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="btnCustomUploaderJsonAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -870,6 +876,9 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;tpCustomUploaderJsonParse.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="btnCustomUploaderXmlSyntaxAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1646,7 +1655,7 @@ store.book[0].title</value>
     <value>536, 344</value>
   </data>
   <data name="txtCustomUploaderDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
+    <value>256, 20</value>
   </data>
   <data name="txtCustomUploaderDeletionURL.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -1724,7 +1733,7 @@ store.book[0].title</value>
     <value>624, 376</value>
   </data>
   <data name="btnCustomUploaderShowLastResponse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 23</value>
+    <value>168, 23</value>
   </data>
   <data name="btnCustomUploaderShowLastResponse.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -2132,7 +2141,7 @@ store.book[0].title</value>
     <value>536, 304</value>
   </data>
   <data name="txtCustomUploaderThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
+    <value>256, 20</value>
   </data>
   <data name="txtCustomUploaderThumbnailURL.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -2183,7 +2192,7 @@ store.book[0].title</value>
     <value>536, 24</value>
   </data>
   <data name="cbCustomUploaderResponseType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 21</value>
+    <value>256, 21</value>
   </data>
   <data name="cbCustomUploaderResponseType.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2231,7 +2240,7 @@ store.book[0].title</value>
     <value>536, 264</value>
   </data>
   <data name="txtCustomUploaderURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
+    <value>256, 20</value>
   </data>
   <data name="txtCustomUploaderURL.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -2294,7 +2303,7 @@ store.book[0].title</value>
     <value>272, 408</value>
   </data>
   <data name="txtCustomUploaderLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 72</value>
+    <value>520, 72</value>
   </data>
   <data name="txtCustomUploaderLog.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -12875,6 +12884,6 @@ Using an encrypted library disables sharing.</value>
     <value>UploadersConfigForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -39,7 +39,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class UploadersConfigForm : BaseForm
+    public partial class UploadersConfigForm : Form
     {
         public UploadersConfig Config { get; private set; }
 
@@ -49,6 +49,7 @@ namespace ShareX.UploadersLib
         {
             Config = uploadersConfig;
             InitializeComponent();
+            Icon = ShareXResources.Icon;
 
             if (!string.IsNullOrEmpty(Config.FilePath))
             {
@@ -2696,6 +2697,8 @@ namespace ShareX.UploadersLib
             }
 
             txtCustomUploaderRegexp.Text = regex;
+
+            btnCustomUploaderRegexAddSyntax.Enabled = lvCustomUploaderRegexps.SelectedItems.Count > 0;
         }
 
         private void btnCustomUploaderRegexAddSyntax_Click(object sender, EventArgs e)
@@ -2731,6 +2734,11 @@ namespace ShareX.UploadersLib
             }
         }
 
+        private void txtCustomUploaderJsonPath_TextChanged(object sender, EventArgs e)
+        {
+            btnCustomUploaderJsonAddSyntax.Enabled = !string.IsNullOrEmpty(txtCustomUploaderJsonPath.Text);
+        }
+
         private void btnCustomUploadJsonPathHelp_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL("http://goessner.net/articles/JsonPath/");
@@ -2751,6 +2759,11 @@ namespace ShareX.UploadersLib
 
                 txtCustomUploaderURL.AppendText(syntax);
             }
+        }
+
+        private void txtCustomUploaderXPath_TextChanged(object sender, EventArgs e)
+        {
+            btnCustomUploaderXmlSyntaxAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderXPath.Text);
         }
 
         private void btnCustomUploaderXPathHelp_Click(object sender, EventArgs e)
