@@ -118,8 +118,6 @@ namespace ShareX.UploadersLib
         Jira,
         [Description("Lambda")]
         Lambda,
-        [Description("Imgrush")]
-        Imgrush,
         [Description("VideoBin")]
         VideoBin,
         [Description("Pomf")]
