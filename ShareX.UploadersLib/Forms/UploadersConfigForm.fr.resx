@@ -513,9 +513,6 @@
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
     <value>Rafraîchir la liste des dossiers</value>
   </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>Regex de réponse</value>
-  </data>
   <data name="btnPastebinRegister.Text" xml:space="preserve">
     <value>S'inscrire...</value>
   </data>
@@ -723,9 +720,6 @@ Cela signifie qu'ils peuvent être perdu d'Amazon S3 à un certain moment.</valu
   </data>
   <data name="lblTwitterDescription.Text" xml:space="preserve">
     <value>Nom:</value>
-  </data>
-  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
-    <value>Double-cliquez sur le regex à utiliser dans l'URL</value>
   </data>
   <data name="lblUp1Host.Text" xml:space="preserve">
     <value>Hôte:</value>

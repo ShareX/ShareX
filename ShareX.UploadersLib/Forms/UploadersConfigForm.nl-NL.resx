@@ -358,9 +358,6 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Naam</value>
   </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>Regex van antwoord</value>
-  </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
     <value>Uploaders</value>
   </data>
@@ -723,9 +720,6 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   </data>
   <data name="lblTwitterDescription.Text" xml:space="preserve">
     <value>Naam:</value>
-  </data>
-  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
-    <value>Dubbelklik de regexe om in de link te gebruiken</value>
   </data>
   <data name="lblUp1Host.Text" xml:space="preserve">
     <value>Host:</value>

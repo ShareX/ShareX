@@ -379,9 +379,6 @@ Agregar efectos de imagen".</value>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Ver carpetas y si el nuevo archivo creado luego subirlo</value>
   </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>Mostrar ventana "Tareas después de la captura" después de la captura se hace</value>
-  </data>
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
     <value>Si el portapapeles contiene una dirección de fichero; descargarlo y cargarlo</value>
   </data>
@@ -396,12 +393,6 @@ Agregar efectos de imagen".</value>
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>Iniciar la grabación después:</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>Mostrar ventana "Después de subida" después de que se complete la tarea</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>Mostrar ventana "Antes subida" para cambiar dinámicamente destinación antes de subir</value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>Mostrar ventana de efectos de imagen después la captura</value>

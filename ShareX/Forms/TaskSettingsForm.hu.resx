@@ -201,9 +201,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Képlopás késleltetés:</value>
   </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>"Képlopás utáni feladatok" ablak mutatása a képlopás befejeztével</value>
-  </data>
   <data name="cbShowCursor.Text" xml:space="preserve">
     <value>Egérmutató megjelenítése a képernyőképeken</value>
   </data>
@@ -248,12 +245,6 @@
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>Felvétel indítása ezután:</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>"Feltöltés után" ablak mutatása a feladat végeztével</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>"Feltöltés előtt" ablak mutatása a cél dinamikus módosításához feltöltés előtt </value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>Képeffektek ablak mutatása a képlopás után</value>

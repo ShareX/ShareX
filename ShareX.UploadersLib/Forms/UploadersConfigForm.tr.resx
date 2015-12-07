@@ -324,9 +324,6 @@
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Dizin listesini yenile</value>
   </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>Yanıtdan Regex</value>
-  </data>
   <data name="btnMegaRegister.Text" xml:space="preserve">
     <value>Kayıt...</value>
   </data>
@@ -740,9 +737,6 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
     <value>API anahtarı:</value>
   </data>
-  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
-    <value>Regex çift tıklıyarak URL kısmında kullanabilirsiniz</value>
-  </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>ownCloud 8.1+ uyumluluk</value>
   </data>
@@ -881,5 +875,35 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
     <value>Yazma izni olmuyan kütüphaneler gizli.
 Şifreli kütüphane kullanmak paylaşmayı devre dışı bırakır.</value>
+  </data>
+  <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>Kullanıcı ismi:</value>
+  </data>
+  <data name="lblStreamablePassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
+    <value>Anonim</value>
+  </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>URL bölümüne sözdizimini ekle</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
+    <value>URL bölümüne sözdizimini ekle</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
+    <value>URL bölümüne sözdizimini ekle</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
+    <value>Örnekler:
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
+    <value>Örnekler:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
   </data>
 </root>

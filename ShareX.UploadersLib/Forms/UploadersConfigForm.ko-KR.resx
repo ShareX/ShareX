@@ -210,9 +210,6 @@
   <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
     <value>테스트</value>
   </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>응답에 정규표현식 적용</value>
-  </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
     <value>업로더</value>
   </data>

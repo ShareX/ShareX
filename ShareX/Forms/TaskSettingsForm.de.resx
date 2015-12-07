@@ -201,9 +201,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Screenshot Verzögerung:</value>
   </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>Zeige "Nach der Aufnahme Aufgaben" Fenster nachdem die Aufgabe gemacht wurde</value>
-  </data>
   <data name="cbShowCursor.Text" xml:space="preserve">
     <value>Zeige Maus in Screenshots</value>
   </data>
@@ -248,12 +245,6 @@
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>Starte Aufnahme nach:</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>Zeige "Nach dem Hochladen" Fenster nachdem die Aufgabe beendet wurde</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>Zeige "Vor dem Hochladen" Fenster um dynamisch das Ziel vor dem Hochladen zu ändern</value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>Zeige Bildeffekte Fenster nachdem die Aufnahme geamacht wurde</value>

@@ -357,9 +357,6 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Név</value>
   </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>Regex a válaszból</value>
-  </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
     <value>Feltöltés</value>
   </data>

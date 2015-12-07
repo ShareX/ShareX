@@ -370,9 +370,6 @@ Esto significa que se pueden perder de Amazon S3 en algún momento.</value>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
     <value>Cargadores</value>
   </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>Regex de respuesta</value>
-  </data>
   <data name="gbMinusUpload.Text" xml:space="preserve">
     <value>Subir imágenes a</value>
   </data>

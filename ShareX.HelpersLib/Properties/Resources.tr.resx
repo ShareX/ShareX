@@ -829,4 +829,13 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>{0} yeni sürümü mevcut.
 İndirmek ister misiniz?</value>
   </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>"Yükleme sonrası" penceresini göster</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>"Yakalama sonrası" penceresini göster</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>"Yükleme öncesi" penceresini göster</value>
+  </data>
 </root>

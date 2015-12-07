@@ -355,9 +355,6 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>Regex Antwort</value>
-  </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
     <value>Hochlader</value>
   </data>
@@ -741,9 +738,6 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
   <data name="lblCoinURLUUID.Text" xml:space="preserve">
     <value>UUID:</value>
-  </data>
-  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
-    <value>Doppelklick auf regulären Ausdruck zum Verwenden im URL</value>
   </data>
   <data name="lblCustomUploaderURL.Text" xml:space="preserve">
     <value>URL:</value>

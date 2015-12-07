@@ -585,9 +585,6 @@
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Описание</value>
   </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>Регулярка из ответа</value>
-  </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
     <value>Сервисы</value>
   </data>
@@ -740,9 +737,6 @@
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
     <value>Заметка: Двойной клин по имени папки откроет ее.</value>
-  </data>
-  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
-    <value>Двойной клик добавит регулярку в URL</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Использовать хранилище с меньшей избыточностью</value>

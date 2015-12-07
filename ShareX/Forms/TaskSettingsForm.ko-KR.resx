@@ -363,17 +363,8 @@
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>영역 촬영시에만 효과 적용하기</value>
   </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>촬영 뒤 "촬영 뒤 할 일" 창 띄우기</value>
-  </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>다음 시간동안 기다린 뒤 녹화 시작:</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>작업이 완료된 뒤 "업로드 후" 창 띄우기</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>"업로드 전" 창을 띄워 동적으로 목적지 바꾸기</value>
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
     <value>투명도를 유지한 채로 창을 촬영</value>

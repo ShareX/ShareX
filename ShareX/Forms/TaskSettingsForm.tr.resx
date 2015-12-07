@@ -162,17 +162,8 @@
   <data name="tpTask.Text" xml:space="preserve">
     <value>Görev</value>
   </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>Yükleme öncesi hedefi değiştirebilmek için "Yükleme öncesi" ekranını göster</value>
-  </data>
   <data name="lblAfterTaskNotification.Text" xml:space="preserve">
     <value>Görev bittikten sonra:</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>Görev tamamlandığında "Yükleme sonrası" ekranını göster</value>
-  </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>Yakalama yapıldıktan sonra "Yakalama sonrası görevleri" ekranını göster</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Görev bittikten sonra ses çal</value>

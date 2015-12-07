@@ -201,9 +201,6 @@
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>截图延迟:</value>
   </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>显示截图后的任务选择窗口</value>
-  </data>
   <data name="cbShowCursor.Text" xml:space="preserve">
     <value>在屏幕截图上显示光标（鼠标指针）</value>
   </data>
@@ -248,12 +245,6 @@
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>开始录制后:</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>上传后显示图片链接及代码</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>上传前显示上传目的地</value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>截图后显示图像效果窗口</value>

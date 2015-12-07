@@ -153,12 +153,6 @@
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
     <value>Nếu vùng nhớ tạm có chứa URL của tệp thì tải về máy và tải lên</value>
   </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>Hiện cửa sổ "Sau khi tải lên" sau khi tác vụ được hoàn thành</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>Hiện cửa sổ "Trước khi tải lên" để linh động thay đổi dịch vụ tải lên trước khi thực hiện tải lên</value>
-  </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
     <value>Sử dụng thiết lập tải lên trong thiết lập tác vụ của cửa sổ chính</value>
   </data>
@@ -365,9 +359,6 @@
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
     <value>Ảnh thu nhỏ</value>
-  </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>Hiện cửa sổ "Tác vụ sau khi chụp" sau khi việc chụp được thực hiện</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
     <value>Rộng:</value>

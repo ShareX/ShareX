@@ -189,12 +189,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Проиграть звук после выполнения задачи</value>
   </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>Показать окно «Задачи после захвата» по завершению захвата</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>Показать окно «После загрузки» по завершению задачи</value>
-  </data>
   <data name="cbHistorySave.Text" xml:space="preserve">
     <value>Сохранить информацию о задаче в истории</value>
   </data>
@@ -425,9 +419,6 @@
   </data>
   <data name="btnEncoderConfig.Text" xml:space="preserve">
     <value>Профили…</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>Показать окно «Перед загрузкой» для выбора сервиса загрузок</value>
   </data>
   <data name="btnDestinations.Text" xml:space="preserve">
     <value>Сервисы загрузок…</value>

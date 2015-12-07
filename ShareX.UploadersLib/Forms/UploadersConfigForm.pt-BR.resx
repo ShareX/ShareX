@@ -368,9 +368,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Nome</value>
   </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>Regex da resposta</value>
-  </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
     <value>Serviços</value>
   </data>
@@ -729,9 +726,6 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
   </data>
   <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
     <value>Nome do formulário de arquivos:</value>
-  </data>
-  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
-    <value>Clique duplo para usar regex no URL</value>
   </data>
   <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
     <value>Destaque de sintaxe:</value>

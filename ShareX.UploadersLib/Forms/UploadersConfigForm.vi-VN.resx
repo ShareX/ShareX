@@ -639,9 +639,6 @@
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Liên kết trực tiếp (Thêm "&amp;&amp;download" vào URL)</value>
   </data>
-  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
-    <value>Nhấn đúp vào biểu thức regex để sử dụng trong URL</value>
-  </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Sử dụng URL trực tiếp nếu tồn tại</value>
   </data>
@@ -719,9 +716,6 @@
   </data>
   <data name="chkMinusPublic.Text" xml:space="preserve">
     <value>Công khai</value>
-  </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>Biểu thức regex từ phản hồi</value>
   </data>
   <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
     <value>Kiểu phản hồi:</value>

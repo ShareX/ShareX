@@ -358,9 +358,6 @@
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>名字</value>
   </data>
-  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>从响应正则表达式</value>
-  </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
     <value>上传者</value>
   </data>

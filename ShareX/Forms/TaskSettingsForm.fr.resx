@@ -333,15 +333,6 @@
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>Afficher la fenêtre des effets d'image après la capture</value>
   </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>Afficher la fenêtre "Après la mise en ligne" après que la tâche soit terminée</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>Afficher la fenêtre "Avant la mise en ligne" pour changer dynamiquement la destination avant la mise en ligne</value>
-  </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>Afficher la fenêtre "tâches de post capture" après que la capture soit faite</value>
-  </data>
   <data name="cbShowCursor.Text" xml:space="preserve">
     <value>Afficher le curseur dans les captures d'écran</value>
   </data>
