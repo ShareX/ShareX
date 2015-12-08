@@ -38,6 +38,7 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public class Pomf : FileUploader
     {
+        // https://docs.google.com/spreadsheets/d/1kh1TZdtyX7UlRd55OBxf7DB-JGj2rsfWckI0FPQRYhE
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
@@ -59,6 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("https://pomf.io/upload.php"),
             new PomfUploader("http://pomf.pl/upload.php"),
             //new PomfUploader("https://pomf.se/upload.php"),
+            new PomfUploader("https://sugoi.vidyagam.es/upload.php"),
             new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe")
         };
 
