@@ -44,6 +44,8 @@ namespace ShareX.UploadersLib
         public delegate void ProgressEventHandler(ProgressManager progress);
         public event ProgressEventHandler ProgressChanged;
 
+        public event Action<string> EarlyURLCopyRequested;
+
         public List<string> Errors { get; private set; }
         public bool IsUploading { get; protected set; }
         public int BufferSize { get; set; }
@@ -80,6 +82,14 @@ namespace ShareX.UploadersLib
             if (ProgressChanged != null)
             {
                 ProgressChanged(progress);
+            }
+        }
+
+        protected void OnEarlyURLCopyRequested(string url)
+        {
+            if (EarlyURLCopyRequested != null && !string.IsNullOrEmpty(url))
+            {
+                EarlyURLCopyRequested(url);
             }
         }
 

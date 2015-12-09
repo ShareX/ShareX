@@ -365,15 +365,15 @@ namespace ShareX
 
                     TaskbarManager.SetProgressState(Program.MainForm, TaskbarProgressBarStatus.Normal);
 
-                    DialogResult beforeUploadResult = DialogResult.OK;
+                    bool cancelUpload = false;
 
                     if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowBeforeUploadWindow))
                     {
                         BeforeUploadForm form = new BeforeUploadForm(Info);
-                        beforeUploadResult = form.ShowDialog();
+                        cancelUpload = form.ShowDialog() != DialogResult.OK;
                     }
 
-                    if (beforeUploadResult == DialogResult.OK)
+                    if (!cancelUpload)
                     {
                         if (threadWorker != null)
                         {
@@ -396,7 +396,7 @@ namespace ShareX
                             }
                         }
                     }
-                    else if (beforeUploadResult == DialogResult.Cancel)
+                    else
                     {
                         Info.Result.IsURLExpected = false;
                     }
@@ -561,7 +561,7 @@ namespace ShareX
                     {
                         using (SaveFileDialog sfd = new SaveFileDialog())
                         {
-                            bool imageSaved = false;
+                            bool imageSaved;
 
                             do
                             {
@@ -1412,6 +1412,11 @@ namespace ShareX
             uploader = currentUploader;
             uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
             uploader.ProgressChanged += uploader_ProgressChanged;
+
+            if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard) && Info.TaskSettings.AdvancedSettings.EarlyCopyURL)
+            {
+                uploader.EarlyURLCopyRequested += url => ClipboardHelpers.CopyText(url);
+            }
         }
 
         private void uploader_ProgressChanged(ProgressManager progress)
