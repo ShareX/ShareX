@@ -69,22 +69,24 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string subFolderPath = Account.GetSubFolderPath();
             string path = subFolderPath.CombineURL(fileName);
-            bool uploadResult;
+            string url = Account.GetUriPath(fileName, subFolderPath);
+
+            OnEarlyURLCopyRequested(url);
 
             try
             {
                 IsUploading = true;
-                uploadResult = UploadStream(stream, path);
+                bool uploadResult = UploadStream(stream, path);
+
+                if (uploadResult && !StopUploadRequested && !IsError)
+                {
+                    result.URL = url;
+                }
             }
             finally
             {
                 Dispose();
                 IsUploading = false;
-            }
-
-            if (uploadResult && !StopUploadRequested && !IsError)
-            {
-                result.URL = Account.GetUriPath(fileName, subFolderPath);
             }
 
             return result;
