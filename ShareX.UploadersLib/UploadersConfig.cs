@@ -254,6 +254,10 @@ namespace ShareX.UploadersLib
 
         public PomfUploader PomfUploader = new PomfUploader("https://pomf.cat/upload.php", "http://a.pomf.cat");
 
+        // s-ul
+
+        public string SulAPIKey = string.Empty;
+
         // Seafile
 
         public string SeafileAPIURL = "";
@@ -444,6 +448,8 @@ namespace ShareX.UploadersLib
                     return LambdaSettings != null && !string.IsNullOrEmpty(LambdaSettings.UserAPIKey);
                 case FileDestination.Pomf:
                     return PomfUploader != null && !string.IsNullOrEmpty(PomfUploader.UploadURL);
+                case FileDestination.Sul:
+                    return !string.IsNullOrEmpty(SulAPIKey);
                 case FileDestination.Seafile:
                     return !string.IsNullOrEmpty(SeafileAPIURL) && !string.IsNullOrEmpty(SeafileAuthToken) && !string.IsNullOrEmpty(SeafileRepoID);
                 case FileDestination.SharedFolder:
