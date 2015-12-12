@@ -109,6 +109,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpPomf, Resources.Pomf);
             AddIconToTab(tpPushbullet, Resources.Pushbullet);
             AddIconToTab(tpSeafile, Resources.Seafile);
+            AddIconToTab(tpSul, Resources.Sul);
             AddIconToTab(tpStreamable, Resources.Streamable);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
@@ -2113,6 +2114,15 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Pomf
+
+        #region Sul
+
+        private void txtSulAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.SulAPIKey = txtSulAPIKey.Text;
+        }
+
+        #endregion Sul
 
         #region Seafile
 

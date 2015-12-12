@@ -130,6 +130,8 @@ namespace ShareX.UploadersLib
         Up1,
         [Description("Seafile")]
         Seafile,
+        [Description("s-ul")]
+        Sul,
         [Description("Streamable")]
         Streamable,
         SharedFolder, // Localized
