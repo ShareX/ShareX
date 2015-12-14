@@ -31,6 +31,7 @@ namespace ShareX.HelpersLib
 {
     public partial class ErrorForm : BaseForm
     {
+        public bool IsUnhandledException { get; private set; }
         public string LogPath { get; private set; }
         public string BugReportPath { get; private set; }
 
@@ -39,13 +40,17 @@ namespace ShareX.HelpersLib
         {
         }
 
-        public ErrorForm(string errorTitle, string errorMessage, string logPath, string bugReportPath)
+        public ErrorForm(string errorTitle, string errorMessage, string logPath, string bugReportPath, bool unhandledException = true)
         {
             InitializeComponent();
+            IsUnhandledException = unhandledException;
             LogPath = logPath;
             BugReportPath = bugReportPath;
 
-            DebugHelper.WriteException(errorMessage, "Unhandled exception");
+            if (IsUnhandledException)
+            {
+                DebugHelper.WriteException(errorMessage, "Unhandled exception");
+            }
 
             lblErrorMessage.Text = errorTitle;
             txtException.Text = errorMessage;
@@ -53,6 +58,9 @@ namespace ShareX.HelpersLib
 
             btnSendBugReport.Visible = !string.IsNullOrEmpty(BugReportPath);
             btnOpenLogFile.Visible = !string.IsNullOrEmpty(LogPath) && File.Exists(LogPath);
+            btnContinue.Visible = IsUnhandledException;
+            btnClose.Visible = IsUnhandledException;
+            btnOK.Visible = !IsUnhandledException;
         }
 
         private void ErrorForm_Shown(object sender, EventArgs e)
@@ -80,6 +88,11 @@ namespace ShareX.HelpersLib
         {
             DebugHelper.WriteLine("ShareX closing. Reason: Unhandled exception");
             Application.Exit();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

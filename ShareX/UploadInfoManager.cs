@@ -290,7 +290,7 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(errors))
                 {
-                    using (ErrorForm form = new ErrorForm(Resources.UploadInfoManager_ShowErrors_Upload_errors, errors, Program.LogsFilePath, Links.URL_ISSUES))
+                    using (ErrorForm form = new ErrorForm(Resources.UploadInfoManager_ShowErrors_Upload_errors, errors, Program.LogsFilePath, Links.URL_ISSUES, false))
                     {
                         form.ShowDialog();
                     }

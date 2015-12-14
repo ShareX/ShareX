@@ -36,6 +36,7 @@
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.btnContinue = new System.Windows.Forms.Button();
             this.lblErrorMessage = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
             this.flpMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +78,7 @@
             this.flpMenu.Controls.Add(this.btnOpenLogFile);
             this.flpMenu.Controls.Add(this.btnContinue);
             this.flpMenu.Controls.Add(this.btnClose);
+            this.flpMenu.Controls.Add(this.btnOK);
             this.flpMenu.Name = "flpMenu";
             // 
             // btnContinue
@@ -91,6 +93,14 @@
             // 
             resources.ApplyResources(this.lblErrorMessage, "lblErrorMessage");
             this.lblErrorMessage.Name = "lblErrorMessage";
+            // 
+            // btnOK
+            // 
+            resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.BackColor = System.Drawing.Color.Transparent;
+            this.btnOK.Name = "btnOK";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // ErrorForm
             // 
@@ -117,5 +127,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpMenu;
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Label lblErrorMessage;
+        private System.Windows.Forms.Button btnOK;
     }
 }
