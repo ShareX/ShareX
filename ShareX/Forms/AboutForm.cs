@@ -66,7 +66,6 @@ Resources.AboutForm_AboutForm_Changelog, Links.URL_CHANGELOG);
 
 Mega, Gist and Jira support: https://github.com/gpailler
 Web site: https://github.com/dmxt
-MediaCrush (Imgrush) support: https://github.com/SirCmpwn
 Amazon S3 and DreamObjects support: https://github.com/alanedwardes
 Gfycat support: https://github.com/Dinnerbone
 Copy support: https://github.com/KamilKZ

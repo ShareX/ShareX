@@ -60,12 +60,9 @@ namespace ShareX.UploadersLib.ImageUploaders
         public bool DirectLink { get; set; }
         public bool UseGIFV { get; set; }
 
-        private bool refreshTokenOnError;
-
         public Imgur(OAuth2Info oauth)
         {
             AuthInfo = oauth;
-            refreshTokenOnError = true;
         }
 
         public string GetAuthorizationURL()
@@ -182,6 +179,11 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
+            return InternalUpload(stream, fileName, true);
+        }
+
+        private UploadResult InternalUpload(Stream stream, string fileName, bool refreshTokenOnError)
+        {
             Dictionary<string, string> args = new Dictionary<string, string>();
             NameValueCollection headers;
 
@@ -274,8 +276,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                             {
                                 DebugHelper.WriteLine("Imgur access token refreshed, reuploading image.");
 
-                                refreshTokenOnError = false;
-                                return Upload(stream, fileName);
+                                return InternalUpload(stream, fileName, false);
                             }
 
                             string errorMessage = string.Format("Imgur upload failed: ({0}) {1}", imgurResponse.status, errorData.error);
