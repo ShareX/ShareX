@@ -50,7 +50,8 @@ namespace ShareX.UploadersLib
         public bool IsUploading { get; protected set; }
         public int BufferSize { get; set; }
         public bool AllowReportProgress { get; set; }
-        public bool ThrowWebExceptions { get; set; }
+        public bool WebExceptionReturnResponse { get; set; }
+        public bool WebExceptionThrow { get; set; }
 
         public bool IsError
         {
@@ -67,10 +68,8 @@ namespace ShareX.UploadersLib
         public Uploader()
         {
             Errors = new List<string>();
-            IsUploading = false;
             BufferSize = 8192;
             AllowReportProgress = true;
-            ThrowWebExceptions = false;
 
             ServicePointManager.DefaultConnectionLimit = 25;
             ServicePointManager.Expect100Continue = false;
@@ -215,7 +214,7 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    if (ThrowWebExceptions && e is WebException) throw;
+                    if (WebExceptionThrow && e is WebException) throw;
                     AddWebError(e);
                 }
             }
@@ -311,7 +310,7 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    if (ThrowWebExceptions && e is WebException) throw;
+                    if (WebExceptionThrow && e is WebException) throw;
                     AddWebError(e);
                 }
             }
@@ -372,8 +371,17 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    if (ThrowWebExceptions && e is WebException) throw;
-                    AddWebError(e);
+                    if (WebExceptionThrow && e is WebException)
+                    {
+                        throw;
+                    }
+
+                    string response = AddWebError(e);
+
+                    if (WebExceptionReturnResponse && e is WebException)
+                    {
+                        result.Response = response;
+                    }
                 }
             }
             finally

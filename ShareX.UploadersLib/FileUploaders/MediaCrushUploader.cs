@@ -53,7 +53,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            ThrowWebExceptions = true;
+            WebExceptionThrow = true;
 
             string hash = CreateHash(stream);
 

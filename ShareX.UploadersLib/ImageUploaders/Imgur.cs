@@ -25,7 +25,9 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.HelperClasses;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -58,9 +60,12 @@ namespace ShareX.UploadersLib.ImageUploaders
         public bool DirectLink { get; set; }
         public bool UseGIFV { get; set; }
 
+        private bool refreshTokenOnError;
+
         public Imgur(OAuth2Info oauth)
         {
             AuthInfo = oauth;
+            refreshTokenOnError = true;
         }
 
         public string GetAuthorizationURL()
@@ -200,6 +205,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 headers.Add("Authorization", "Client-ID " + AuthInfo.Client_ID);
             }
 
+            WebExceptionReturnResponse = true;
             UploadResult result = UploadData(stream, "https://api.imgur.com/3/image", fileName, "image", args, headers);
 
             if (!string.IsNullOrEmpty(result.Response))
@@ -260,7 +266,22 @@ namespace ShareX.UploadersLib.ImageUploaders
                     }
                     else
                     {
-                        HandleErrors(imgurResponse);
+                        ImgurErrorData errorData = ((JObject)imgurResponse.data).ToObject<ImgurErrorData>();
+
+                        if (errorData != null)
+                        {
+                            if (refreshTokenOnError && errorData.error.Equals("The access token provided is invalid.", StringComparison.InvariantCultureIgnoreCase) && RefreshAccessToken())
+                            {
+                                DebugHelper.WriteLine("Imgur access token refreshed, reuploading image.");
+
+                                refreshTokenOnError = false;
+                                return Upload(stream, fileName);
+                            }
+
+                            string errorMessage = string.Format("Imgur upload failed: ({0}) {1}", imgurResponse.status, errorData.error);
+                            Errors.Clear();
+                            Errors.Add(errorMessage);
+                        }
                     }
                 }
             }
