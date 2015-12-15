@@ -272,7 +272,8 @@ namespace ShareX.UploadersLib.ImageUploaders
 
                         if (errorData != null)
                         {
-                            if (refreshTokenOnError && errorData.error.Equals("The access token provided is invalid.", StringComparison.InvariantCultureIgnoreCase) && RefreshAccessToken())
+                            if (UploadMethod == AccountType.User && refreshTokenOnError &&
+                                errorData.error.Equals("The access token provided is invalid.", StringComparison.InvariantCultureIgnoreCase) && RefreshAccessToken())
                             {
                                 DebugHelper.WriteLine("Imgur access token refreshed, reuploading image.");
 
