@@ -135,4 +135,10 @@
   <data name="tpBeforeUpload.Text" xml:space="preserve">
     <value>Pré-upload</value>
   </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>Pós-upload</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>Nome do arquivo:</value>
+  </data>
 </root>

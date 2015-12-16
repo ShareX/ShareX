@@ -136,7 +136,7 @@
     <value>Atualizar</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
-    <value>Testar com CMD</value>
+    <value>Testar com Prompt de Comando</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Usar comandos customizados</value>
@@ -175,13 +175,13 @@
     <value>Fonte do vídeo:</value>
   </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Qualidade</value>
+    <value>Qualidade:</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Taxa de bits variável:</value>
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>Pré-definição:</value>
+    <value>Predefinição:</value>
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Taxa de bits variável:</value>
@@ -208,12 +208,8 @@
     <value>Modo de pontilhado:</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Constant Rate Factor (CRF): A variação da escala do quantizador é 0-51: aonde 0 é sem perdas, 23 é padrão e 51 é o pior possível.
-Um valor mais baixo equivale à melhor qualidade, subjetivamente uma escala sensata seria 18-28.
-Considere 18 sendo visualmente sem perdas ou quase: deveria ter a mesma qualidade ou quase a mesma, mas tecnicamente não é sem perdas.
-A escala é exponencial, então aumentando o valor do CRF em +6 é grosseiramente metade do bitrate enquanto -6 é grosseiramente o dobro do bitrate.
-O uso geral é escolher entre um meio termo entre o valor do CRF e uma qualidade aceitável.
-Se o arquivo de saída ficar de acordo com o esperado, tente um valor mais alto e se ficar pior, escolha um valor menor.</value>
+    <value>Constant Rate Factor (CRF): O valor pode ser entre 0-51, onde 0 é sem perdas, 30 é o padrão, e 51 é o pior possível.
+Um valor maior significa uma qualidade pior mas tamanho reduzido.</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
     <value>Um preset é uma coleção de opções que irão fornecer uma certa velocidade de encoding na taxa de compressão. Um preset menor irá fornecer melhor compressão (compressão é qualidade por tamanho de arquivo).
@@ -241,11 +237,8 @@ Da mesma forma, para qualidade de encoding constante, você irá simplesmente ec
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
     <value>kbit/s</value>
   </data>
-  <data name="lblx264CRF.Text" xml:space="preserve">
-    <value>CRF:</value>
-  </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
-    <value>Este codec de áudio não é suportado pelo contâiner de vídeo selecionado.</value>
+    <value>Este codec de áudio não é suportado pelo conteiner de vídeo selecionado.</value>
   </data>
   <data name="tpAAC.Text" xml:space="preserve">
     <value>AAC</value>
@@ -267,5 +260,9 @@ Da mesma forma, para qualidade de encoding constante, você irá simplesmente ec
   </data>
   <data name="tpXvid.Text" xml:space="preserve">
     <value>Xvid</value>
+  </data>
+  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
+    <value>Para codificação em tempo real como gravação de tela é recomendado que se selecione uma predefinição mais rápida.
+Caso contrário a gravação não conseguirá continuar e várias quedas de quadros acontecerão.</value>
   </data>
 </root>

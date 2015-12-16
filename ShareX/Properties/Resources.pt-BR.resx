@@ -353,7 +353,7 @@ Você gostaria de baixar automaticamente?</value>
 Por favor, execute o ShareX como administrador para mudar a pasta de destino.</value>
   </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
-    <value>Clique esquerdo para copiar URL. Clique direito para abrir URL.</value>
+    <value>Botão esquerdo para copiar URL. Botão direito para abrir URL.</value>
   </data>
   <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
     <value>Posição do cursor (X, Y) = {0}, {1}</value>
@@ -472,5 +472,11 @@ Tem certeza de que quer continuar?</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Notas de atualização</value>
+  </data>
+  <data name="ImageData_Write_Error" xml:space="preserve">
+    <value>Não foi possível salvar imagem no local {0}.</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
+    <value>Estes aplicativos podem causar conflitos:</value>
   </data>
 </root>
