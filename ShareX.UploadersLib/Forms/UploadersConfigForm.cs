@@ -44,6 +44,7 @@ namespace ShareX.UploadersLib
         public UploadersConfig Config { get; private set; }
 
         private ImageList uploadersImageList;
+        private URLType urlType = URLType.URL;
 
         public UploadersConfigForm(UploadersConfig uploadersConfig)
         {
@@ -2739,7 +2740,7 @@ namespace ShareX.UploadersLib
                         syntax = string.Format("$regex:{0}$", selectedIndex + 1);
                     }
 
-                    txtCustomUploaderURL.AppendText(syntax);
+                    AddTextToActiveURLField(syntax);
                 }
             }
         }
@@ -2766,8 +2767,7 @@ namespace ShareX.UploadersLib
                 }
 
                 syntax = string.Format("$json:{0}$", syntax);
-
-                txtCustomUploaderURL.AppendText(syntax);
+                AddTextToActiveURLField(syntax);
             }
         }
 
@@ -2788,9 +2788,44 @@ namespace ShareX.UploadersLib
             if (!string.IsNullOrEmpty(syntax))
             {
                 syntax = string.Format("$xml:{0}$", syntax);
-
-                txtCustomUploaderURL.AppendText(syntax);
+                AddTextToActiveURLField(syntax);
             }
+        }
+
+        private void txtCustomUploaderURL_Enter(object sender, EventArgs e)
+        {
+            urlType = URLType.URL;
+        }
+
+        private void txtCustomUploaderThumbnailURL_Enter(object sender, EventArgs e)
+        {
+            urlType = URLType.ThumbnailURL;
+        }
+
+        private void txtCustomUploaderDeletionURL_Enter(object sender, EventArgs e)
+        {
+            urlType = URLType.DeletionURL;
+        }
+
+        private void AddTextToActiveURLField(string text)
+        {
+            TextBox tb;
+
+            switch (urlType)
+            {
+                default:
+                case URLType.URL:
+                    tb = txtCustomUploaderURL;
+                    break;
+                case URLType.ThumbnailURL:
+                    tb = txtCustomUploaderThumbnailURL;
+                    break;
+                case URLType.DeletionURL:
+                    tb = txtCustomUploaderDeletionURL;
+                    break;
+            }
+
+            tb.AppendText(text);
         }
 
         private void btnCustomUploaderArgAdd_Click(object sender, EventArgs e)

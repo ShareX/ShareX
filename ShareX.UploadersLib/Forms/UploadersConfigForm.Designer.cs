@@ -403,6 +403,7 @@
             this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
             this.ucLocalhostAccounts = new ShareX.UploadersLib.AccountsControl();
             this.tpSul = new System.Windows.Forms.TabPage();
+            this.txtSulAPIKey = new System.Windows.Forms.TextBox();
             this.lblSulAPIKey = new System.Windows.Forms.Label();
             this.btnCopyShowFiles = new System.Windows.Forms.Button();
             this.tpTextUploaders = new System.Windows.Forms.TabPage();
@@ -522,7 +523,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.txtSulAPIKey = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -1131,6 +1131,7 @@
             // 
             resources.ApplyResources(this.txtCustomUploaderDeletionURL, "txtCustomUploaderDeletionURL");
             this.txtCustomUploaderDeletionURL.Name = "txtCustomUploaderDeletionURL";
+            this.txtCustomUploaderDeletionURL.Enter += new System.EventHandler(this.txtCustomUploaderDeletionURL_Enter);
             // 
             // cbCustomUploaderFileUploader
             // 
@@ -1263,6 +1264,7 @@
             // 
             resources.ApplyResources(this.txtCustomUploaderThumbnailURL, "txtCustomUploaderThumbnailURL");
             this.txtCustomUploaderThumbnailURL.Name = "txtCustomUploaderThumbnailURL";
+            this.txtCustomUploaderThumbnailURL.Enter += new System.EventHandler(this.txtCustomUploaderThumbnailURL_Enter);
             // 
             // lblCustomUploaderURLShortener
             // 
@@ -1287,6 +1289,7 @@
             // 
             resources.ApplyResources(this.txtCustomUploaderURL, "txtCustomUploaderURL");
             this.txtCustomUploaderURL.Name = "txtCustomUploaderURL";
+            this.txtCustomUploaderURL.Enter += new System.EventHandler(this.txtCustomUploaderURL_Enter);
             // 
             // cbCustomUploaderImageUploader
             // 
@@ -3321,9 +3324,9 @@
             resources.ApplyResources(this.tpSul, "tpSul");
             this.tpSul.Name = "tpSul";
             this.tpSul.UseVisualStyleBackColor = true;
-            //
+            // 
             // txtSulAPIKey
-            //
+            // 
             resources.ApplyResources(this.txtSulAPIKey, "txtSulAPIKey");
             this.txtSulAPIKey.Name = "txtSulAPIKey";
             this.txtSulAPIKey.TextChanged += new System.EventHandler(this.txtSulAPIKey_TextChanged);
@@ -4185,11 +4188,6 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // txtSulAPIKey
-            // 
-            resources.ApplyResources(this.txtSulAPIKey, "txtSulAPIKey");
-            this.txtSulAPIKey.Name = "txtSulAPIKey";
             // 
             // UploadersConfigForm
             // 

@@ -324,4 +324,11 @@ namespace ShareX.UploadersLib
         LoginSuccessful,
         LoginFailed
     }
+
+    public enum URLType
+    {
+        URL,
+        ThumbnailURL,
+        DeletionURL
+    }
 }
