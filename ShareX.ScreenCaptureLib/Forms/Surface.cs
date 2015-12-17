@@ -245,6 +245,11 @@ namespace ShareX.ScreenCaptureLib
             return ShapeCaptureHelpers.GetRegionImage(SurfaceImage, regionFillPath, regionDrawPath, Config);
         }
 
+        public virtual WindowInfo GetWindowInfo()
+        {
+            return null;
+        }
+
         public void Close(SurfaceResult result)
         {
             Result = result;

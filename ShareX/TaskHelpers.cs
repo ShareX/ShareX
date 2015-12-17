@@ -160,8 +160,8 @@ namespace ShareX
 
                 if (imageTag != null)
                 {
-                    nameParser.WindowText = imageTag.ActiveWindowTitle;
-                    nameParser.ProcessName = imageTag.ActiveProcessName;
+                    nameParser.WindowText = imageTag.WindowTitle;
+                    nameParser.ProcessName = imageTag.ProcessName;
                 }
             }
 

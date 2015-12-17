@@ -342,6 +342,21 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
+        public WindowInfo FindSelectedWindowInfo(Point mousePosition)
+        {
+            if (Windows != null)
+            {
+                SimpleWindowInfo windowInfo = Windows.FirstOrDefault(x => x.IsWindow && x.Rectangle.Contains(InputManager.MousePosition));
+
+                if (windowInfo != null)
+                {
+                    return windowInfo.WindowInfo;
+                }
+            }
+
+            return null;
+        }
+
         private void surface_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

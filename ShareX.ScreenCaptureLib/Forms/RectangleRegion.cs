@@ -193,6 +193,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public override WindowInfo GetWindowInfo()
+        {
+            return AreaManager.FindSelectedWindowInfo(CurrentPosition);
+        }
+
         protected override void Update()
         {
             base.Update();

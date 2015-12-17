@@ -1926,8 +1926,8 @@ namespace ShareX
 
                 img.Tag = new ImageTag
                 {
-                    ActiveWindowTitle = activeWindowTitle,
-                    ActiveProcessName = activeProcessName
+                    WindowTitle = activeWindowTitle,
+                    ProcessName = activeProcessName
                 };
 
                 return img;
@@ -2011,6 +2011,17 @@ namespace ShareX
                         using (screenshot)
                         {
                             img = surface.GetRegionImage();
+
+                            WindowInfo windowInfo = surface.GetWindowInfo();
+
+                            if (windowInfo != null)
+                            {
+                                img.Tag = new ImageTag
+                                {
+                                    WindowTitle = windowInfo.Text,
+                                    ProcessName = windowInfo.ProcessName
+                                };
+                            }
                         }
                     }
                     else if (surface.Result == SurfaceResult.Fullscreen)

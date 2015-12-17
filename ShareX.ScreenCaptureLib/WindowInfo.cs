@@ -58,6 +58,21 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public string ProcessName
+        {
+            get
+            {
+                Process process = Process;
+
+                if (process != null)
+                {
+                    return process.ProcessName;
+                }
+
+                return null;
+            }
+        }
+
         public Rectangle Rectangle
         {
             get

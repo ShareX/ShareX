@@ -91,6 +91,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (isWindow)
             {
+                windowInfo.IsWindow = true;
                 windowInfo.Rectangle = CaptureHelpers.GetWindowRectangle(handle);
             }
             else
