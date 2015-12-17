@@ -435,12 +435,6 @@
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 a 100</value>
   </data>
-  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
-    <value>Y</value>
-  </data>
-  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
   <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
     <value>Usar opções de ferramentas nas opções de tarefas da janela principal</value>
   </data>
@@ -449,9 +443,6 @@
   </data>
   <data name="tpVideoThumbnailer.Text" xml:space="preserve">
     <value>Miniaturizador de vídeo</value>
-  </data>
-  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
   </data>
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Captura rolante</value>

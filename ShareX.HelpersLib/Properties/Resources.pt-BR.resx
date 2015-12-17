@@ -825,4 +825,17 @@ Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>Cabeçalho de localização</value>
   </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>Uma nova versão de {0} está disponível.
+Gostaria de baixá-la?</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>Mostrar janela "Pós-captura"</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>Mostrar janela "Pré-upload"</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>Mostrar janela "Pós-upload"</value>
+  </data>
 </root>

@@ -1037,4 +1037,70 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
     <value>Atualizar</value>
   </data>
+  <data name="tpCustomUploaderRegexParse.Text" xml:space="preserve">
+    <value>Regex</value>
+  </data>
+  <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>Adicionar sintaxe ao campo do URL</value>
+  </data>
+  <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
+    <value>JSON</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
+    <value>Adicionar sintaxe ao campo do URL</value>
+  </data>
+  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
+    <value>Exemplos:
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
+    <value>JsonPath:</value>
+  </data>
+  <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
+    <value>XML</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
+    <value>Adicionar sintaxe ao campo do URL</value>
+  </data>
+  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
+    <value>Exemplos:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
+  </data>
+  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
+    <value>XPath:</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Testar todos</value>
+  </data>
+  <data name="tpStreamable.Text" xml:space="preserve">
+    <value>Streamable</value>
+  </data>
+  <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>Usuário:</value>
+  </data>
+  <data name="lblStreamablePassword.Text" xml:space="preserve">
+    <value>Senha:</value>
+  </data>
+  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
+    <value>Anônimo</value>
+  </data>
+  <data name="tpSul.Text" xml:space="preserve">
+    <value>s-ul</value>
+  </data>
+  <data name="lblSulAPIKey.Text" xml:space="preserve">
+    <value>Chave da API:</value>
+  </data>
 </root>

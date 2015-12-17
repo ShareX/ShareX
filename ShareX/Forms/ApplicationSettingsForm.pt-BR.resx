@@ -282,13 +282,4 @@
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integração</value>
   </data>
-  <data name="gbChrome.Text" xml:space="preserve">
-    <value>Chrome</value>
-  </data>
-  <data name="gbSteam.Text" xml:space="preserve">
-    <value>Steam</value>
-  </data>
-  <data name="gbWindows.Text" xml:space="preserve">
-    <value>Windows</value>
-  </data>
 </root>

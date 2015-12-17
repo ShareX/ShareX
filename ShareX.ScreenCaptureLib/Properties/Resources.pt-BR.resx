@@ -175,10 +175,10 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[Esc] Cancelar captura</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Clique direito] [Esc] Cancelar captura</value>
+    <value>[Botão Direito] [Esc] Cancelar captura</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
-    <value>[Clique direito] Cancelar seleção de região</value>
+    <value>[Botão Direito] Cancelar seleção de região</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Espaço] Captura de tela cheia</value>
@@ -205,13 +205,13 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[1, 2, 3 ... 0] Capturar monitor</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
-    <value>[Pressione o botão esquerdo na seleção] Mover região</value>
+    <value>[Segurar botão esquerdo na seleção] Mover região</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
-    <value>[Pressione o botão esquerdo] Iniciar seleção de região</value>
+    <value>[Segurar botão esquerdo][Insert] Iniciar seleção de região</value>
   </data>
   <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
-    <value>[Clique esquerdo duplo] [Enter] Capturar regiões</value>
+    <value>[2x Botão Esquerdo] [Enter] Capturar regiões</value>
   </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
     <value>[Setas do teclado] Mover posição do cursor</value>
@@ -220,7 +220,7 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[Ctrl + Setas do teclado] Mover posição do cursor mais rapido</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Clique direito na seleção] [Delete] Remover região</value>
+    <value>[Botão Direito na seleção] [Delete] Remover região</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
     <value>[Teclado numérico 1] Formato de retângulo</value>
@@ -241,7 +241,7 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[Teclado numérico + ou -] Mudar o ângulo do triângulo</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
-    <value>[Pressione Shift] Redimensionamento proporcional</value>
+    <value>[Segure Shift] Redimensionamento proporcional</value>
   </data>
   <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
     <value>canto inferior direito</value>
@@ -250,7 +250,7 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>canto superior esquerdo</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[Pressione Shift] Mover a região selecionada ao invés de redimensionar</value>
+    <value>[Segure Shift] Mover a região selecionada ao invés de redimensionar</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
     <value>[Segure Ctrl] Redimensionar / Mover rapidamente </value>
@@ -259,7 +259,7 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[Setas do teclado] Redimensionar região selecionada a partir do {0}</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl + Rodela do mouse] Alterar tamanho de pixel da lupa</value>
+    <value>[Ctrl + Scroll] Alterar tamanho de pixel da lupa</value>
   </data>
   <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
     <value>[Tab] Trocar âncora de redimensionamento para {0}</value>
@@ -274,10 +274,10 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[I] {0} informação de tamanho e posição</value>
   </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
-    <value>[Insert] Parar seleção de região</value>
+    <value>[Soltar o botão esquerdo][Insert] Parar seleção de região</value>
   </data>
   <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Rodela do mouse] Alterar contagem de pixels da lupa</value>
+    <value>[Scroll] Alterar contagem de pixels da lupa</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[Numpad + or -] Mudar o raio do canto do retângulo arrendondado</value>
@@ -287,5 +287,29 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Iniciar captura</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
+    <value>[Scroll] Trocar modos</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
+    <value>[1] Selecionar modo de captura</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
+    <value>[2] Selecionar modo de desenho do retângulo</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
+    <value>[3] Selecionar modo de desenho da caneta</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
+    <value>[Shift] Alterar cor da borda</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
+    <value>[Ctrl + Scroll] Alterar tamanho da borda</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
+    <value>[Shift] Alterar cor da caneta</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
+    <value>[Ctrl + Scroll] Alterar tamanho da caneta</value>
   </data>
 </root>
