@@ -93,7 +93,7 @@ namespace ShareX
         public int BufferSizePower = 5;
         public List<ClipboardFormat> ClipboardContentFormats = new List<ClipboardFormat>();
 
-        public int MaxUploadFailRetry = 0;
+        public int MaxUploadFailRetry = 1;
         public bool UseSecondaryUploaders = false;
         public List<ImageDestination> SecondaryImageUploaders = new List<ImageDestination>();
         public List<TextDestination> SecondaryTextUploaders = new List<TextDestination>();

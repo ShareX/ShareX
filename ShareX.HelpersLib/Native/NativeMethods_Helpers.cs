@@ -45,16 +45,23 @@ namespace ShareX.HelpersLib
         {
             if (handle.ToInt32() > 0)
             {
-                int length = GetWindowTextLength(handle);
-
-                if (length > 0)
+                try
                 {
-                    StringBuilder sb = new StringBuilder(length + 1);
+                    int length = GetWindowTextLength(handle);
 
-                    if (GetWindowText(handle, sb, sb.Capacity) > 0)
+                    if (length > 0)
                     {
-                        return sb.ToString();
+                        StringBuilder sb = new StringBuilder(length + 1);
+
+                        if (GetWindowText(handle, sb, sb.Capacity) > 0)
+                        {
+                            return sb.ToString();
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
                 }
             }
 
