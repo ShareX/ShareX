@@ -2012,15 +2012,18 @@ namespace ShareX
                         {
                             img = surface.GetRegionImage();
 
-                            WindowInfo windowInfo = surface.GetWindowInfo();
-
-                            if (windowInfo != null)
+                            if (taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
                             {
-                                img.Tag = new ImageTag
+                                WindowInfo windowInfo = surface.GetWindowInfo();
+
+                                if (windowInfo != null)
                                 {
-                                    WindowTitle = windowInfo.Text,
-                                    ProcessName = windowInfo.ProcessName
-                                };
+                                    img.Tag = new ImageTag
+                                    {
+                                        WindowTitle = windowInfo.Text,
+                                        ProcessName = windowInfo.ProcessName
+                                    };
+                                }
                             }
                         }
                     }

@@ -345,8 +345,9 @@ namespace ShareX
 
         public bool UseCustomTimeZone = false;
         public TimeZoneInfo CustomTimeZone = TimeZoneInfo.Utc;
-        public string NameFormatPattern = "%y-%mo-%d_%h-%mi-%s"; // Test: %y %mo %mon %mon2 %d %h %mi %s %ms %w %w2 %pm %rn %ra %width %height %app %ver
-        public string NameFormatPatternActiveWindow = "%t_%y-%mo-%d_%h-%mi-%s";
+        public string NameFormatPattern = "%y-%mo-%d_%h-%mi-%s";
+        public string NameFormatPatternActiveWindow = "%pn_%y-%mo-%d_%h-%mi-%s";
+        public bool RegionCaptureUseWindowPattern = true;
         public bool FileUploadUseNamePattern = false;
 
         #endregion Upload

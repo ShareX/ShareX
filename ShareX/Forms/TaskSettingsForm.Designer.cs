@@ -199,6 +199,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbRegionCaptureUseWindowPattern = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1413,6 +1414,7 @@
             // 
             // pUpload
             // 
+            this.pUpload.Controls.Add(this.cbRegionCaptureUseWindowPattern);
             this.pUpload.Controls.Add(this.cbNameFormatCustomTimeZone);
             this.pUpload.Controls.Add(this.cbNameFormatTimeZone);
             this.pUpload.Controls.Add(this.lblNameFormatPattern);
@@ -1646,6 +1648,13 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
+            // 
+            // cbRegionCaptureUseWindowPattern
+            // 
+            resources.ApplyResources(this.cbRegionCaptureUseWindowPattern, "cbRegionCaptureUseWindowPattern");
+            this.cbRegionCaptureUseWindowPattern.Name = "cbRegionCaptureUseWindowPattern";
+            this.cbRegionCaptureUseWindowPattern.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureUseWindowPattern.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseWindowPattern_CheckedChanged);
             // 
             // TaskSettingsForm
             // 
@@ -1898,5 +1907,6 @@
         private System.Windows.Forms.PropertyGrid pgIRCClient;
         private System.Windows.Forms.TabPage tpScrollingCapture;
         private System.Windows.Forms.PropertyGrid pgScrollingCapture;
+        private System.Windows.Forms.CheckBox cbRegionCaptureUseWindowPattern;
     }
 }

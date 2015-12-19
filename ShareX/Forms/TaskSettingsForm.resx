@@ -3453,6 +3453,33 @@
   <data name="&gt;&gt;tpWatchFolders.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="cbRegionCaptureUseWindowPattern.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 248</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>474, 17</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>Use window name pattern for region capture (ShareX will try to detect window behind selection)</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Name" xml:space="preserve">
+    <value>cbRegionCaptureUseWindowPattern</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbNameFormatCustomTimeZone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3481,7 +3508,7 @@
     <value>pUpload</value>
   </data>
   <data name="&gt;&gt;cbNameFormatCustomTimeZone.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbNameFormatTimeZone.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 32</value>
@@ -3502,7 +3529,7 @@
     <value>pUpload</value>
   </data>
   <data name="&gt;&gt;cbNameFormatTimeZone.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblNameFormatPattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3511,7 +3538,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNameFormatPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 64</value>
+    <value>5, 64</value>
   </data>
   <data name="lblNameFormatPattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 13</value>
@@ -3532,7 +3559,7 @@
     <value>pUpload</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbFileUploadUseNamePattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3562,7 +3589,7 @@
     <value>pUpload</value>
   </data>
   <data name="&gt;&gt;cbFileUploadUseNamePattern.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3571,7 +3598,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 168</value>
+    <value>5, 168</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -3592,7 +3619,7 @@
     <value>pUpload</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblNameFormatPatternPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3601,7 +3628,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNameFormatPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 104</value>
+    <value>5, 104</value>
   </data>
   <data name="lblNameFormatPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -3622,7 +3649,7 @@
     <value>pUpload</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPatternPreview.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtNameFormatPatternActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 144</value>
@@ -3643,7 +3670,7 @@
     <value>pUpload</value>
   </data>
   <data name="&gt;&gt;txtNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="txtNameFormatPattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 80</value>
@@ -3664,7 +3691,7 @@
     <value>pUpload</value>
   </data>
   <data name="&gt;&gt;txtNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnResetAutoIncrementNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3673,7 +3700,7 @@
     <value>8, 192</value>
   </data>
   <data name="btnResetAutoIncrementNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 23</value>
+    <value>288, 23</value>
   </data>
   <data name="btnResetAutoIncrementNumber.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3691,7 +3718,7 @@
     <value>pUpload</value>
   </data>
   <data name="&gt;&gt;btnResetAutoIncrementNumber.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3700,7 +3727,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 128</value>
+    <value>5, 128</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 13</value>
@@ -3721,7 +3748,7 @@
     <value>pUpload</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="pUpload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
