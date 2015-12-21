@@ -1717,36 +1717,45 @@ namespace ShareX.UploadersLib
 
             cbCustomUploaderRequestType.SelectedIndex = (int)customUploader.RequestType;
             txtCustomUploaderRequestURL.Text = customUploader.RequestURL;
-            txtCustomUploaderFileForm.Text = customUploader.FileFormName;
+            txtCustomUploaderFileForm.Text = customUploader.FileFormName ?? "";
             txtCustomUploaderFileForm.Enabled = customUploader.RequestType == CustomUploaderRequestType.POST;
 
-            txtCustomUploaderArgName.Text = string.Empty;
-            txtCustomUploaderArgValue.Text = string.Empty;
+            txtCustomUploaderArgName.Text = "";
+            txtCustomUploaderArgValue.Text = "";
             lvCustomUploaderArguments.Items.Clear();
-            foreach (KeyValuePair<string, string> arg in customUploader.Arguments)
+            if (customUploader.Arguments != null)
             {
-                lvCustomUploaderArguments.Items.Add(arg.Key).SubItems.Add(arg.Value);
+                foreach (KeyValuePair<string, string> arg in customUploader.Arguments)
+                {
+                    lvCustomUploaderArguments.Items.Add(arg.Key).SubItems.Add(arg.Value);
+                }
             }
 
-            txtCustomUploaderHeaderName.Text = string.Empty;
-            txtCustomUploaderHeaderValue.Text = string.Empty;
+            txtCustomUploaderHeaderName.Text = "";
+            txtCustomUploaderHeaderValue.Text = "";
             lvCustomUploaderHeaders.Items.Clear();
-            foreach (KeyValuePair<string, string> arg in customUploader.Headers)
+            if (customUploader.Headers != null)
             {
-                lvCustomUploaderHeaders.Items.Add(arg.Key).SubItems.Add(arg.Value);
+                foreach (KeyValuePair<string, string> arg in customUploader.Headers)
+                {
+                    lvCustomUploaderHeaders.Items.Add(arg.Key).SubItems.Add(arg.Value);
+                }
             }
 
             cbCustomUploaderResponseType.SelectedIndex = (int)customUploader.ResponseType;
-            txtCustomUploaderRegexp.Text = string.Empty;
+            txtCustomUploaderRegexp.Text = "";
             lvCustomUploaderRegexps.Items.Clear();
-            foreach (string regexp in customUploader.RegexList)
+            if (customUploader.RegexList != null)
             {
-                lvCustomUploaderRegexps.Items.Add(regexp);
+                foreach (string regexp in customUploader.RegexList)
+                {
+                    lvCustomUploaderRegexps.Items.Add(regexp);
+                }
             }
 
-            txtCustomUploaderURL.Text = customUploader.URL;
-            txtCustomUploaderThumbnailURL.Text = customUploader.ThumbnailURL;
-            txtCustomUploaderDeletionURL.Text = customUploader.DeletionURL;
+            txtCustomUploaderURL.Text = customUploader.URL ?? "";
+            txtCustomUploaderThumbnailURL.Text = customUploader.ThumbnailURL ?? "";
+            txtCustomUploaderDeletionURL.Text = customUploader.DeletionURL ?? "";
         }
 
         private CustomUploaderItem GetCustomUploaderFromFields()
@@ -1754,28 +1763,60 @@ namespace ShareX.UploadersLib
             CustomUploaderItem item = new CustomUploaderItem(txtCustomUploaderName.Text);
 
             item.RequestType = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex;
-            item.RequestURL = txtCustomUploaderRequestURL.Text;
-            item.FileFormName = txtCustomUploaderFileForm.Text;
 
-            foreach (ListViewItem lvItem in lvCustomUploaderArguments.Items)
+            item.RequestURL = txtCustomUploaderRequestURL.Text;
+
+            if (!string.IsNullOrEmpty(txtCustomUploaderFileForm.Text))
             {
-                item.Arguments.Add(lvItem.Text, lvItem.SubItems[1].Text);
+                item.FileFormName = txtCustomUploaderFileForm.Text;
             }
 
-            foreach (ListViewItem lvItem in lvCustomUploaderHeaders.Items)
+            if (lvCustomUploaderArguments.Items.Count > 0)
             {
-                item.Headers.Add(lvItem.Text, lvItem.SubItems[1].Text);
+                item.Arguments = new Dictionary<string, string>();
+
+                foreach (ListViewItem lvItem in lvCustomUploaderArguments.Items)
+                {
+                    item.Arguments.Add(lvItem.Text, lvItem.SubItems[1].Text);
+                }
+            }
+
+            if (lvCustomUploaderHeaders.Items.Count > 0)
+            {
+                item.Headers = new Dictionary<string, string>();
+
+                foreach (ListViewItem lvItem in lvCustomUploaderHeaders.Items)
+                {
+                    item.Headers.Add(lvItem.Text, lvItem.SubItems[1].Text);
+                }
             }
 
             item.ResponseType = (ResponseType)cbCustomUploaderResponseType.SelectedIndex;
-            foreach (ListViewItem lvItem in lvCustomUploaderRegexps.Items)
+
+            if (lvCustomUploaderRegexps.Items.Count > 0)
             {
-                item.RegexList.Add(lvItem.Text);
+                item.RegexList = new List<string>();
+
+                foreach (ListViewItem lvItem in lvCustomUploaderRegexps.Items)
+                {
+                    item.RegexList.Add(lvItem.Text);
+                }
             }
 
-            item.URL = txtCustomUploaderURL.Text;
-            item.ThumbnailURL = txtCustomUploaderThumbnailURL.Text;
-            item.DeletionURL = txtCustomUploaderDeletionURL.Text;
+            if (!string.IsNullOrEmpty(txtCustomUploaderURL.Text))
+            {
+                item.URL = txtCustomUploaderURL.Text;
+            }
+
+            if (!string.IsNullOrEmpty(txtCustomUploaderThumbnailURL.Text))
+            {
+                item.ThumbnailURL = txtCustomUploaderThumbnailURL.Text;
+            }
+
+            if (!string.IsNullOrEmpty(txtCustomUploaderDeletionURL.Text))
+            {
+                item.DeletionURL = txtCustomUploaderDeletionURL.Text;
+            }
 
             return item;
         }

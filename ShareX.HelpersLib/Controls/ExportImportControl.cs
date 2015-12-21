@@ -27,6 +27,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using ShareX.HelpersLib.Properties;
 using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Text;
@@ -47,6 +48,9 @@ namespace ShareX.HelpersLib
 
         // Can't use generic class because not works in form designer
         public Type ObjectType { get; set; }
+
+        [DefaultValue(false)]
+        public bool ExportIgnoreNull { get; set; }
 
         public ExportImportControl()
         {
@@ -69,6 +73,7 @@ namespace ShareX.HelpersLib
                         JsonSerializer serializer = new JsonSerializer();
                         serializer.ContractResolver = new WritablePropertiesOnlyResolver();
                         serializer.Converters.Add(new StringEnumConverter());
+                        serializer.NullValueHandling = ExportIgnoreNull ? NullValueHandling.Ignore : NullValueHandling.Include;
                         serializer.TypeNameHandling = TypeNameHandling.Auto;
                         serializer.Serialize(textWriter, obj, ObjectType);
                     }

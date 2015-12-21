@@ -231,7 +231,6 @@
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HelperClasses\CertFileNameEditor.cs" />
-    <Compile Include="HelperClasses\CustomUploaderParse.cs" />
     <Compile Include="HelperClasses\ImageListManager.cs" />
     <Compile Include="FileUploader.cs" />
     <Compile Include="FileUploaders\Dropbox.cs" />

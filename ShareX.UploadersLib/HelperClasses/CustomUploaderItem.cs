@@ -54,13 +54,9 @@ namespace ShareX.UploadersLib
 
         public CustomUploaderItem()
         {
-            Arguments = new Dictionary<string, string>();
-            Headers = new Dictionary<string, string>();
-            RegexList = new List<string>();
         }
 
         public CustomUploaderItem(string name)
-            : this()
         {
             Name = name;
         }
