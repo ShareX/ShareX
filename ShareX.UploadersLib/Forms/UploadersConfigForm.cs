@@ -435,29 +435,6 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            // Custom uploaders
-
-            lbCustomUploaderList.Items.Clear();
-
-            if (Config.CustomUploadersList == null)
-            {
-                Config.CustomUploadersList = new List<CustomUploaderItem>();
-            }
-            else
-            {
-                foreach (CustomUploaderItem customUploader in Config.CustomUploadersList)
-                {
-                    lbCustomUploaderList.Items.Add(customUploader.Name);
-                }
-
-                PrepareCustomUploaderList();
-            }
-
-            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
-            cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
-
-            CustomUploaderClearFields();
-
             // Jira
 
             txtJiraHost.Text = Config.JiraHost;
@@ -594,7 +571,7 @@ namespace ShareX.UploadersLib
 
             #endregion File uploaders
 
-            #region URL Shorteners
+            #region URL shorteners
 
             // Google URL Shortener
 
@@ -636,9 +613,9 @@ namespace ShareX.UploadersLib
             txtPolrAPIHostname.Text = Config.PolrAPIHostname;
             txtPolrAPIKey.Text = Config.PolrAPIKey;
 
-            #endregion URL Shorteners
+            #endregion URL shorteners
 
-            #region Other Services
+            #region Other uploaders
 
             // Twitter
 
@@ -659,7 +636,34 @@ namespace ShareX.UploadersLib
             cbTwitterSkipMessageBox.Checked = Config.TwitterSkipMessageBox;
             txtTwitterDefaultMessage.Text = Config.TwitterDefaultMessage;
 
-            #endregion Other Services
+            // Custom uploaders
+
+            lbCustomUploaderList.Items.Clear();
+
+            if (Config.CustomUploadersList == null)
+            {
+                Config.CustomUploadersList = new List<CustomUploaderItem>();
+            }
+            else
+            {
+                foreach (CustomUploaderItem customUploader in Config.CustomUploadersList)
+                {
+                    lbCustomUploaderList.Items.Add(customUploader.Name);
+                }
+
+                PrepareCustomUploaderList();
+            }
+
+#if DEBUG
+            btnCustomUploadersExportAll.Visible = true;
+#endif
+
+            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
+            cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
+
+            CustomUploaderClearFields();
+
+            #endregion Other uploaders
         }
 
         #region Image Uploaders
@@ -2643,6 +2647,11 @@ namespace ShareX.UploadersLib
         private void eiCustomUploaders_ImportRequested(object obj)
         {
             AddCustomUploader(obj as CustomUploaderItem);
+        }
+
+        private void btnCustomUploadersExportAll_Click(object sender, EventArgs e)
+        {
+            CustomUploaderExportAll();
         }
 
         private void btnCustomUploaderClearUploaders_Click(object sender, EventArgs e)

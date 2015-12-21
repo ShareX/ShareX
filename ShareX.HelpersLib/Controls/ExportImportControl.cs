@@ -57,7 +57,7 @@ namespace ShareX.HelpersLib
             InitializeComponent();
         }
 
-        private string Serialize(object obj)
+        public string Serialize(object obj)
         {
             if (obj != null)
             {
@@ -142,7 +142,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private object Deserialize(string json)
+        public object Deserialize(string json)
         {
             try
             {

@@ -1660,6 +1660,32 @@ namespace ShareX.UploadersLib
             LoadCustomUploader(new CustomUploaderItem());
         }
 
+        private void CustomUploaderExportAll()
+        {
+            if (Config.CustomUploadersList != null)
+            {
+                for (int i = 0; i < lbCustomUploaderList.Items.Count; i++)
+                {
+                    lbCustomUploaderList.SelectedIndex = i;
+                    UpdateCustomUploader();
+                }
+
+                using (FolderSelectDialog fsd = new FolderSelectDialog())
+                {
+                    if (fsd.ShowDialog())
+                    {
+                        foreach (CustomUploaderItem item in Config.CustomUploadersList)
+                        {
+                            string json = eiCustomUploaders.Serialize(item);
+                            string filename = item.Name.Replace("(", "").Replace(")", "") + ".json";
+                            string filepath = Path.Combine(fsd.FileName, filename);
+                            File.WriteAllText(filepath, json, Encoding.UTF8);
+                        }
+                    }
+                }
+            }
+        }
+
         private void CustomUploaderFixSelectedUploader(int removedIndex)
         {
             if (Config.CustomImageUploaderSelected == removedIndex) Config.CustomImageUploaderSelected = 0;
