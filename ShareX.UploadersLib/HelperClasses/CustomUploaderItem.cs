@@ -108,15 +108,18 @@ namespace ShareX.UploadersLib
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
 
-            foreach (KeyValuePair<string, string> arg in Arguments)
+            if (Arguments != null)
             {
-                string value = arg.Value;
+                foreach (KeyValuePair<string, string> arg in Arguments)
+                {
+                    string value = arg.Value;
 
-                value = value.Replace("%input", "$input$"); // For backward compatibility
-                value = NameParser.Parse(NameParserType.Text, value);
-                value = value.Replace("$input$", input);
+                    value = value.Replace("%input", "$input$"); // For backward compatibility
+                    value = NameParser.Parse(NameParserType.Text, value);
+                    value = value.Replace("$input$", input);
 
-                arguments.Add(arg.Key, value);
+                    arguments.Add(arg.Key, value);
+                }
             }
 
             return arguments;
