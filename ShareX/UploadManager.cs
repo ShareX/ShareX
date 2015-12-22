@@ -29,8 +29,10 @@ using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 using System.Windows.Forms;
 
@@ -173,7 +175,35 @@ namespace ShareX
 
             if (Clipboard.ContainsImage())
             {
-                Image img = Clipboard.GetImage();
+                IDataObject data = Clipboard.GetDataObject();
+
+                byte[] stream = ((MemoryStream)Clipboard.GetData(DataFormats.Dib)).ToArray();
+                int w = BitConverter.ToInt32(stream, 4);
+                int h = BitConverter.ToInt32(stream, 8);
+                short bpp = BitConverter.ToInt16(stream, 14);
+
+                Image img = null;
+
+                if (bpp == 32)
+                {
+                    var gch = GCHandle.Alloc(stream, GCHandleType.Pinned);
+                    Bitmap bmp = null;
+
+                    try
+                    {
+                        var ptr = new IntPtr((long)gch.AddrOfPinnedObject() + 40);
+                        bmp = new Bitmap(w, h, w * 4, PixelFormat.Format32bppArgb, ptr);
+                        img = (Image) bmp.Clone();
+                        img.RotateFlip(RotateFlipType.Rotate180FlipX);
+                    } finally
+                    {
+                        gch.Free();
+                        if (bmp != null) bmp.Dispose();
+                    }
+                } else
+                {
+                    img = Clipboard.GetImage();
+                }
 
                 if (img != null)
                 {
