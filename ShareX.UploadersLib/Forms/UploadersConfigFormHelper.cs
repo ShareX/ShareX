@@ -1739,10 +1739,10 @@ namespace ShareX.UploadersLib
 
         private void LoadCustomUploader(CustomUploaderItem customUploader)
         {
-            txtCustomUploaderName.Text = customUploader.Name;
+            txtCustomUploaderName.Text = customUploader.Name ?? "";
 
             cbCustomUploaderRequestType.SelectedIndex = (int)customUploader.RequestType;
-            txtCustomUploaderRequestURL.Text = customUploader.RequestURL;
+            txtCustomUploaderRequestURL.Text = customUploader.RequestURL ?? "";
             txtCustomUploaderFileForm.Text = customUploader.FileFormName ?? "";
             txtCustomUploaderFileForm.Enabled = customUploader.RequestType == CustomUploaderRequestType.POST;
 
@@ -1778,6 +1778,8 @@ namespace ShareX.UploadersLib
                     lvCustomUploaderRegexps.Items.Add(regexp);
                 }
             }
+            txtCustomUploaderJsonPath.Text = "";
+            txtCustomUploaderXPath.Text = "";
 
             txtCustomUploaderURL.Text = customUploader.URL ?? "";
             txtCustomUploaderThumbnailURL.Text = customUploader.ThumbnailURL ?? "";

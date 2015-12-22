@@ -270,12 +270,12 @@ namespace ShareX.UploadersLib
 
         private string ParseRegexSyntax(string syntax)
         {
-            int i = 0;
             string regexIndexString = "";
             int regexIndex;
             bool isGroupRegex = false;
+            int i;
 
-            for (; i < syntax.Length; i++)
+            for (i = 0; i < syntax.Length; i++)
             {
                 if (char.IsDigit(syntax[i]))
                 {
