@@ -829,4 +829,13 @@
     <value>Доступна более новая версия {0}.
 Хотите загрузить ее?</value>
   </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>Показать окно «После захвата»</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>Показать окно «После загрузки»</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>Показать окно «Перед загрузкой»</value>
+  </data>
 </root>
