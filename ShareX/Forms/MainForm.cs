@@ -1221,11 +1221,7 @@ namespace ShareX
 
         private void tsbDonate_Click(object sender, EventArgs e)
         {
-#if STEAM
-            URLHelpers.OpenURL(Links.URL_STEAM_DONATE);
-#else
             URLHelpers.OpenURL(Links.URL_DONATE);
-#endif
         }
 
         private void lblDragAndDropTip_MouseUp(object sender, MouseEventArgs e)
