@@ -233,9 +233,32 @@ namespace ShareX.HelpersLib
 
         public static Image GetImage()
         {
-            if (HelpersOptions.UseAlternativeGetImage)
+            try
             {
-                IDataObject dataObject = Clipboard.GetDataObject();
+                lock (ClipboardLock)
+                {
+                    if (HelpersOptions.UseAlternativeGetImage)
+                    {
+                        return GetImageAlternative();
+                    }
+
+                    return Clipboard.GetImage();
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Clipboard get image failed.");
+            }
+
+            return null;
+        }
+
+        private static Image GetImageAlternative()
+        {
+            IDataObject dataObject = Clipboard.GetDataObject();
+
+            if (dataObject != null)
+            {
                 string[] dataFormats = dataObject.GetFormats(false);
 
                 if (dataFormats.Contains("PNG"))
@@ -245,7 +268,8 @@ namespace ShareX.HelpersLib
                         return (Image)Image.FromStream(ms).Clone();
                     }
                 }
-                else if (dataFormats.Contains(DataFormats.Dib))
+
+                if (dataFormats.Contains(DataFormats.Dib))
                 {
                     byte[] dib;
 
@@ -280,9 +304,11 @@ namespace ShareX.HelpersLib
                         }
                     }
                 }
+
+                return dataObject.GetData(DataFormats.Bitmap, true) as Image;
             }
 
-            return Clipboard.GetImage();
+            return null;
         }
     }
 }
