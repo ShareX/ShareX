@@ -33,6 +33,7 @@ namespace ShareX.HelpersLib
     public partial class HashCheckForm : BaseForm
     {
         private HashCheck hashCheck;
+        private Translator translator;
 
         public HashCheckForm()
         {
@@ -44,7 +45,15 @@ namespace ShareX.HelpersLib
             hashCheck = new HashCheck();
             hashCheck.FileCheckProgressChanged += fileCheck_FileCheckProgressChanged;
             hashCheck.FileCheckCompleted += fileCheck_FileCheckCompleted;
+
+            translator = new Translator();
+
+#if DEBUG
+            if (!Translator.Test()) MessageBox.Show("Text conversion failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+#endif
         }
+
+        #region File hash check
 
         private void btnFilePathBrowse_Click(object sender, EventArgs e)
         {
@@ -72,7 +81,7 @@ namespace ShareX.HelpersLib
         private void fileCheck_FileCheckProgressChanged(float progress)
         {
             pbProgress.Value = (int)progress;
-            lblProgressPercentage.Text = progress.ToString("0.##") + "%";
+            lblProgressPercentage.Text = (int)progress + "%";
         }
 
         private void fileCheck_FileCheckCompleted(string result, bool cancelled)
@@ -128,5 +137,77 @@ namespace ShareX.HelpersLib
                 }
             }
         }
+
+        #endregion File hash check
+
+        #region Text conversions
+
+        private void FillConversionInfo()
+        {
+            if (translator != null)
+            {
+                txtHashCheckText.Text = translator.Text;
+                txtHashCheckBinary.Text = translator.BinaryText;
+                txtHashCheckHex.Text = translator.HexadecimalText;
+                txtHashCheckASCII.Text = translator.ASCIIText;
+                txtHashCheckBase64.Text = translator.Base64;
+                txtHashCheckHash.Text = translator.HashToString();
+            }
+        }
+
+        private void btnHashCheckCopyAll_Click(object sender, EventArgs e)
+        {
+            if (translator != null && !string.IsNullOrEmpty(translator.Text))
+            {
+                string text = translator.ToString();
+
+                if (!string.IsNullOrEmpty(text))
+                {
+                    ClipboardHelpers.CopyText(text);
+                }
+            }
+        }
+
+        private void btnHashCheckEncodeText_Click(object sender, EventArgs e)
+        {
+            if (translator.EncodeText(txtHashCheckText.Text))
+            {
+                FillConversionInfo();
+            }
+        }
+
+        private void btnHashCheckDecodeBinary_Click(object sender, EventArgs e)
+        {
+            if (translator.DecodeBinary(txtHashCheckBinary.Text))
+            {
+                FillConversionInfo();
+            }
+        }
+
+        private void btnHashCheckDecodeHex_Click(object sender, EventArgs e)
+        {
+            if (translator.DecodeHex(txtHashCheckHex.Text))
+            {
+                FillConversionInfo();
+            }
+        }
+
+        private void btnHashCheckDecodeASCII_Click(object sender, EventArgs e)
+        {
+            if (translator.DecodeASCII(txtHashCheckASCII.Text))
+            {
+                FillConversionInfo();
+            }
+        }
+
+        private void btnHashCheckDecodeBase64_Click(object sender, EventArgs e)
+        {
+            if (translator.DecodeBase64(txtHashCheckBase64.Text))
+            {
+                FillConversionInfo();
+            }
+        }
+
+        #endregion Text conversions
     }
 }

@@ -68,6 +68,9 @@ namespace ShareX.HelpersLib
         // http://en.wikipedia.org/wiki/Base64
         public string Base64 { get; private set; }
 
+        // https://en.wikipedia.org/wiki/Cyclic_redundancy_check
+        public string CRC32 { get; private set; }
+
         // http://en.wikipedia.org/wiki/MD5
         public string MD5 { get; private set; }
 
@@ -84,20 +87,27 @@ namespace ShareX.HelpersLib
 
         public bool EncodeText(string text)
         {
-            if (!string.IsNullOrEmpty(text))
+            try
             {
-                Text = text;
-                Binary = TranslatorHelper.TextToBinary(text);
-                Hexadecimal = TranslatorHelper.TextToHexadecimal(text);
-                ASCII = TranslatorHelper.TextToASCII(text);
-                Base64 = TranslatorHelper.TextToBase64(text);
-                MD5 = TranslatorHelper.TextToHash(text, HashType.MD5, true);
-                SHA1 = TranslatorHelper.TextToHash(text, HashType.SHA1, true);
-                SHA256 = TranslatorHelper.TextToHash(text, HashType.SHA256, true);
-                SHA384 = TranslatorHelper.TextToHash(text, HashType.SHA384, true);
-                SHA512 = TranslatorHelper.TextToHash(text, HashType.SHA512, true);
-                RIPEMD160 = TranslatorHelper.TextToHash(text, HashType.RIPEMD160, true);
-                return true;
+                if (!string.IsNullOrEmpty(text))
+                {
+                    Text = text;
+                    Binary = TranslatorHelper.TextToBinary(text);
+                    Hexadecimal = TranslatorHelper.TextToHexadecimal(text);
+                    ASCII = TranslatorHelper.TextToASCII(text);
+                    Base64 = TranslatorHelper.TextToBase64(text);
+                    CRC32 = TranslatorHelper.TextToHash(text, HashType.CRC32, true);
+                    MD5 = TranslatorHelper.TextToHash(text, HashType.MD5, true);
+                    SHA1 = TranslatorHelper.TextToHash(text, HashType.SHA1, true);
+                    SHA256 = TranslatorHelper.TextToHash(text, HashType.SHA256, true);
+                    SHA384 = TranslatorHelper.TextToHash(text, HashType.SHA384, true);
+                    SHA512 = TranslatorHelper.TextToHash(text, HashType.SHA512, true);
+                    RIPEMD160 = TranslatorHelper.TextToHash(text, HashType.RIPEMD160, true);
+                    return true;
+                }
+            }
+            catch
+            {
             }
 
             return false;
@@ -105,26 +115,58 @@ namespace ShareX.HelpersLib
 
         public bool DecodeBinary(string binary)
         {
-            string result = TranslatorHelper.BinaryToText(binary);
-            return EncodeText(result);
+            try
+            {
+                string result = TranslatorHelper.BinaryToText(binary);
+                return EncodeText(result);
+            }
+            catch
+            {
+            }
+
+            return false;
         }
 
         public bool DecodeHex(string hex)
         {
-            string result = TranslatorHelper.HexadecimalToText(hex);
-            return EncodeText(result);
+            try
+            {
+                string result = TranslatorHelper.HexadecimalToText(hex);
+                return EncodeText(result);
+            }
+            catch
+            {
+            }
+
+            return false;
         }
 
         public bool DecodeASCII(string ascii)
         {
-            string result = TranslatorHelper.ASCIIToText(ascii);
-            return EncodeText(result);
+            try
+            {
+                string result = TranslatorHelper.ASCIIToText(ascii);
+                return EncodeText(result);
+            }
+            catch
+            {
+            }
+
+            return false;
         }
 
         public bool DecodeBase64(string base64)
         {
-            string result = TranslatorHelper.Base64ToText(base64);
-            return EncodeText(result);
+            try
+            {
+                string result = TranslatorHelper.Base64ToText(base64);
+                return EncodeText(result);
+            }
+            catch
+            {
+            }
+
+            return false;
         }
 
         public static bool Test()
@@ -147,34 +189,24 @@ namespace ShareX.HelpersLib
         public string HashToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("MD5: ");
-            sb.AppendLine(MD5);
-            sb.Append("SHA1: ");
-            sb.AppendLine(SHA1);
-            sb.Append("SHA256: ");
-            sb.AppendLine(SHA256);
-            sb.Append("SHA384: ");
-            sb.AppendLine(SHA384);
-            sb.Append("SHA512: ");
-            sb.AppendLine(SHA512);
-            sb.Append("RIPEMD160: ");
-            sb.Append(RIPEMD160);
+            sb.AppendLine($"CRC-32: {CRC32}");
+            sb.AppendLine($"MD5: {MD5}");
+            sb.AppendLine($"SHA-1: {SHA1}");
+            sb.AppendLine($"SHA-256: {SHA256}");
+            sb.AppendLine($"SHA-384: {SHA384}");
+            sb.AppendLine($"SHA-512: {SHA512}");
+            sb.Append($"RIPEMD-160: {RIPEMD160}");
             return sb.ToString();
         }
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("Text: ");
-            sb.AppendLine(Text);
-            sb.Append("Binary: ");
-            sb.AppendLine(BinaryText);
-            sb.Append("Hex: ");
-            sb.AppendLine(HexadecimalText);
-            sb.Append("ASCII: ");
-            sb.AppendLine(ASCIIText);
-            sb.Append("Base64: ");
-            sb.AppendLine(Base64);
+            sb.AppendLine($"Text: {Text}");
+            sb.AppendLine($"Binary: {BinaryText}");
+            sb.AppendLine($"Hex: {HexadecimalText}");
+            sb.AppendLine($"ASCII: {ASCIIText}");
+            sb.AppendLine($"Base64: {Base64}");
             sb.Append(HashToString());
             return sb.ToString();
         }
