@@ -125,8 +125,11 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Because default .NET framework image copying not supports alpha channel instead fill background white.")]
         public bool DefaultClipboardCopyImageFillBackground { get; set; }
 
-        [Category("Application"), DefaultValue(false), Description("By default copying \"Bitmap\" to clipboard. Alternative method copying \"PNG and DIB\" to clipboard.")]
+        [Category("Application"), DefaultValue(false), Description("By default copying \"Bitmap\" to clipboard. Alternative method copying \"PNG\" and 32 bit \"DIB\" to clipboard. To be able to keep image transparency.")]
         public bool UseAlternativeClipboardCopyImage { get; set; }
+
+        [Category("Application"), DefaultValue(false), Description("Alternative method checks is clipboard contains \"PNG\" or 32 bit \"DIB\". To be able to keep image transparency.")]
+        public bool UseAlternativeClipboardGetImage { get; set; }
 
         [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
         public bool WorkflowsOnlyShowEdited { get; set; }

@@ -30,6 +30,7 @@ namespace ShareX.HelpersLib
         public static ProxyInfo CurrentProxy = new ProxyInfo();
         public static bool DefaultCopyImageFillBackground = true;
         public static bool UseAlternativeCopyImage = false;
+        public static bool UseAlternativeGetImage = false;
         public static string BrowserPath = null;
     }
 }

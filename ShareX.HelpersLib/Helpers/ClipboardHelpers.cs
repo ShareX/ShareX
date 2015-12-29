@@ -27,6 +27,8 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -227,6 +229,60 @@ namespace ShareX.HelpersLib
             }
 
             return false;
+        }
+
+        public static Image GetImage()
+        {
+            if (HelpersOptions.UseAlternativeGetImage)
+            {
+                IDataObject dataObject = Clipboard.GetDataObject();
+                string[] dataFormats = dataObject.GetFormats(false);
+
+                if (dataFormats.Contains("PNG"))
+                {
+                    using (MemoryStream ms = (MemoryStream)dataObject.GetData("PNG"))
+                    {
+                        return (Image)Image.FromStream(ms).Clone();
+                    }
+                }
+                else if (dataFormats.Contains(DataFormats.Dib))
+                {
+                    byte[] dib;
+
+                    using (MemoryStream ms = (MemoryStream)dataObject.GetData(DataFormats.Dib))
+                    {
+                        dib = ms.ToArray();
+                    }
+
+                    short bpp = BitConverter.ToInt16(dib, 14);
+
+                    if (bpp == 32)
+                    {
+                        GCHandle gch = GCHandle.Alloc(dib, GCHandleType.Pinned);
+
+                        try
+                        {
+                            int width = BitConverter.ToInt32(dib, 4);
+                            int height = BitConverter.ToInt32(dib, 8);
+                            int stride = width * 4;
+                            IntPtr ptr = new IntPtr((long)gch.AddrOfPinnedObject() + 40);
+
+                            using (Bitmap bmp = new Bitmap(width, height, stride, PixelFormat.Format32bppArgb, ptr))
+                            {
+                                Image img = (Image)bmp.Clone();
+                                img.RotateFlip(RotateFlipType.Rotate180FlipX);
+                                return img;
+                            }
+                        }
+                        finally
+                        {
+                            gch.Free();
+                        }
+                    }
+                }
+            }
+
+            return Clipboard.GetImage();
         }
     }
 }

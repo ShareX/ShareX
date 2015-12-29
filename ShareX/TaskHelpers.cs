@@ -608,7 +608,7 @@ namespace ShareX
                     MessageBox.Show(Resources.TaskHelpers_OpenImageEditor_Your_clipboard_contains_image,
                     Resources.TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    using (Image img = Clipboard.GetImage())
+                    using (Image img = ClipboardHelpers.GetImage())
                     {
                         if (img != null)
                         {

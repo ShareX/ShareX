@@ -608,6 +608,7 @@ namespace ShareX
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
             HelpersOptions.UseAlternativeCopyImage = Program.Settings.UseAlternativeClipboardCopyImage;
+            HelpersOptions.UseAlternativeGetImage = Program.Settings.UseAlternativeClipboardGetImage;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentLinksMaxCount;
         }

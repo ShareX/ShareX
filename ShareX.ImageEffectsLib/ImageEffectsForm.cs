@@ -336,7 +336,7 @@ namespace ShareX.ImageEffectsLib
 
         private void tsmiLoadImageFromClipboard_Click(object sender, EventArgs e)
         {
-            Image img = Clipboard.GetImage();
+            Image img = ClipboardHelpers.GetImage();
 
             if (img != null)
             {

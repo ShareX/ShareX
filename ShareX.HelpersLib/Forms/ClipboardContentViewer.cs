@@ -49,7 +49,7 @@ namespace ShareX.HelpersLib
 
             if (Clipboard.ContainsImage())
             {
-                using (Image img = Clipboard.GetImage())
+                using (Image img = ClipboardHelpers.GetImage())
                 {
                     pbClipboard.LoadImage(img);
                     lblQuestion.Text = string.Format(Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__, img.Width, img.Height);
