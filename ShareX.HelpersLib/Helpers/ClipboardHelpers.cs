@@ -152,23 +152,21 @@ namespace ShareX.HelpersLib
 
         private static bool CopyImageAlternative(Image img)
         {
-            IDataObject dataObject = new DataObject();
-
             using (MemoryStream msPNG = new MemoryStream())
-            {
-                img.Save(msPNG, ImageFormat.Png);
-                dataObject.SetData("PNG", false, msPNG);
-            }
-
             using (MemoryStream msBMP = new MemoryStream())
             using (MemoryStream msDIB = new MemoryStream())
             {
+                IDataObject dataObject = new DataObject();
+
+                img.Save(msPNG, ImageFormat.Png);
+                dataObject.SetData("PNG", false, msPNG);
+
                 img.Save(msBMP, ImageFormat.Bmp);
                 msBMP.CopyStreamTo(msDIB, 14, (int)msBMP.Length - 14);
                 dataObject.SetData(DataFormats.Dib, true, msDIB);
-            }
 
-            return CopyData(dataObject);
+                return CopyData(dataObject);
+            }
         }
 
         public static bool CopyFile(string path)
