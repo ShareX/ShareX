@@ -606,9 +606,9 @@ namespace ShareX
         private void AfterSettingsJobs()
         {
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
+            HelpersOptions.UseAlternativeCopyImage = !Program.Settings.UseDefaultClipboardCopyImage;
+            HelpersOptions.UseAlternativeGetImage = !Program.Settings.UseDefaultClipboardGetImage;
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
-            HelpersOptions.UseAlternativeCopyImage = Program.Settings.UseAlternativeClipboardCopyImage;
-            HelpersOptions.UseAlternativeGetImage = Program.Settings.UseAlternativeClipboardGetImage;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentLinksMaxCount;
         }

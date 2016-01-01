@@ -122,14 +122,14 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show most recent task first in main window.")]
         public bool ShowMostRecentTaskFirst { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Because default .NET framework image copying not supports alpha channel instead fill background white.")]
+        [Category("Application"), DefaultValue(false), Description("Default .NET method can't copy image with alpha channel to clipboard. ShareX alternative method copies \"PNG\" and 32 bit \"DIB\" to clipboard to be able to keep image transparency. If this alternative method causing issues then you can use default .NET method.")]
+        public bool UseDefaultClipboardCopyImage { get; set; }
+
+        [Category("Application"), DefaultValue(false), Description("Default .NET method can't get image with alpha channel from clipboard. ShareX alternative method checks is clipboard contains \"PNG\" or 32 bit \"DIB\" to be able to keep image transparency. If this alternative method causing issues then you can use default .NET method.")]
+        public bool UseDefaultClipboardGetImage { get; set; }
+
+        [Category("Application"), DefaultValue(true), Description("Because default .NET image copying not supports alpha channel, background of image will be black. This option will fill background white.")]
         public bool DefaultClipboardCopyImageFillBackground { get; set; }
-
-        [Category("Application"), DefaultValue(false), Description("By default copying \"Bitmap\" to clipboard. Alternative method copying \"PNG\" and 32 bit \"DIB\" to clipboard. To be able to keep image transparency.")]
-        public bool UseAlternativeClipboardCopyImage { get; set; }
-
-        [Category("Application"), DefaultValue(false), Description("Alternative method checks is clipboard contains \"PNG\" or 32 bit \"DIB\". To be able to keep image transparency.")]
-        public bool UseAlternativeClipboardGetImage { get; set; }
 
         [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
         public bool WorkflowsOnlyShowEdited { get; set; }
