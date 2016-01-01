@@ -874,7 +874,7 @@
             // 
             // tsmiDonate
             // 
-            this.tsmiDonate.AnimationSpeed = 0.5F;
+            this.tsmiDonate.AnimationSpeed = 0.75F;
             this.tsmiDonate.Image = global::ShareX.Properties.Resources.heart;
             resources.ApplyResources(this.tsmiDonate, "tsmiDonate");
             this.tsmiDonate.Name = "tsmiDonate";

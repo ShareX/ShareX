@@ -74,15 +74,15 @@ namespace ShareX.ScreenCaptureLib
 
     public enum FFmpegVideoCodec
     {
-        [Description("x264")]
+        [Description("x264 (mp4)")]
         libx264,
-        [Description("VP8 (WebM)")]
+        [Description("VP8 (webm)")]
         libvpx,
-        [Description("Xvid")]
+        [Description("Xvid (avi)")]
         libxvid,
-        [Description("Animated GIF")]
+        [Description("Animated GIF (gif)")]
         gif,
-        [Description("x265")]
+        [Description("x265 (mp4)")]
         libx265
     }
 
