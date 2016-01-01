@@ -129,9 +129,10 @@ namespace ShareX.HelpersLib
 
         private static bool CopyImageDefault(Image img)
         {
-            IDataObject data = new DataObject();
-            data.SetData(DataFormats.Bitmap, true, img);
-            return CopyData(data);
+            IDataObject dataObject = new DataObject();
+            dataObject.SetData(DataFormats.Bitmap, true, img);
+
+            return CopyData(dataObject);
         }
 
         private static bool CopyImageDefaultFillBackground(Image img, Color background)
@@ -142,26 +143,32 @@ namespace ShareX.HelpersLib
                 g.Clear(background);
                 g.DrawImage(img, 0, 0, img.Width, img.Height);
 
-                IDataObject data = new DataObject();
-                data.SetData(DataFormats.Bitmap, true, bmp);
-                return CopyData(data);
+                IDataObject dataObject = new DataObject();
+                dataObject.SetData(DataFormats.Bitmap, true, bmp);
+
+                return CopyData(dataObject);
             }
         }
 
         private static bool CopyImageAlternative(Image img)
         {
-            IDataObject data = new DataObject();
+            IDataObject dataObject = new DataObject();
+
             using (MemoryStream msPNG = new MemoryStream())
+            {
+                img.Save(msPNG, ImageFormat.Png);
+                dataObject.SetData("PNG", false, msPNG);
+            }
+
             using (MemoryStream msBMP = new MemoryStream())
             using (MemoryStream msDIB = new MemoryStream())
             {
-                img.Save(msPNG, ImageFormat.Png);
-                data.SetData("PNG", false, msPNG);
                 img.Save(msBMP, ImageFormat.Bmp);
                 msBMP.CopyStreamTo(msDIB, 14, (int)msBMP.Length - 14);
-                data.SetData(DataFormats.Dib, true, msDIB);
-                return CopyData(data);
+                dataObject.SetData(DataFormats.Dib, true, msDIB);
             }
+
+            return CopyData(dataObject);
         }
 
         public static bool CopyFile(string path)
@@ -180,9 +187,10 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    IDataObject data = new DataObject();
-                    data.SetData(DataFormats.FileDrop, true, paths);
-                    return CopyData(data);
+                    IDataObject dataObject = new DataObject();
+                    dataObject.SetData(DataFormats.FileDrop, true, paths);
+
+                    return CopyData(dataObject);
                 }
                 catch (Exception e)
                 {
@@ -305,7 +313,10 @@ namespace ShareX.HelpersLib
                     }
                 }
 
-                return dataObject.GetData(DataFormats.Bitmap, true) as Image;
+                if (dataFormats.Contains(DataFormats.Bitmap) || dataFormats.Contains(typeof(Bitmap).FullName))
+                {
+                    return dataObject.GetData(DataFormats.Bitmap, true) as Image;
+                }
             }
 
             return null;
