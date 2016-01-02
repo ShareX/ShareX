@@ -39,7 +39,12 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                return Binary.Join();
+                if (Binary != null && Binary.Length > 0)
+                {
+                    return Binary.Join();
+                }
+
+                return null;
             }
         }
 
@@ -50,7 +55,12 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                return Hexadecimal.Join().ToUpperInvariant();
+                if (Hexadecimal != null && Hexadecimal.Length > 0)
+                {
+                    return Hexadecimal.Join().ToUpperInvariant();
+                }
+
+                return null;
             }
         }
 
@@ -61,7 +71,12 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                return ASCII.Join();
+                if (ASCII != null && ASCII.Length > 0)
+                {
+                    return ASCII.Join();
+                }
+
+                return null;
             }
         }
 
@@ -85,10 +100,20 @@ namespace ShareX.HelpersLib
         // http://en.wikipedia.org/wiki/RIPEMD
         public string RIPEMD160 { get; private set; }
 
+        public void Clear()
+        {
+            Text = Base64 = CRC32 = MD5 = SHA1 = SHA256 = SHA384 = SHA512 = RIPEMD160 = null;
+            Binary = null;
+            Hexadecimal = null;
+            ASCII = null;
+        }
+
         public bool EncodeText(string text)
         {
             try
             {
+                Clear();
+
                 if (!string.IsNullOrEmpty(text))
                 {
                     Text = text;
@@ -117,13 +142,14 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                string result = TranslatorHelper.BinaryToText(binary);
-                return EncodeText(result);
+                Text = TranslatorHelper.BinaryToText(binary);
+                return !string.IsNullOrEmpty(Text);
             }
             catch
             {
             }
 
+            Text = null;
             return false;
         }
 
@@ -131,13 +157,14 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                string result = TranslatorHelper.HexadecimalToText(hex);
-                return EncodeText(result);
+                Text = TranslatorHelper.HexadecimalToText(hex);
+                return !string.IsNullOrEmpty(Text);
             }
             catch
             {
             }
 
+            Text = null;
             return false;
         }
 
@@ -145,13 +172,14 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                string result = TranslatorHelper.ASCIIToText(ascii);
-                return EncodeText(result);
+                Text = TranslatorHelper.ASCIIToText(ascii);
+                return !string.IsNullOrEmpty(Text);
             }
             catch
             {
             }
 
+            Text = null;
             return false;
         }
 
@@ -159,31 +187,15 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                string result = TranslatorHelper.Base64ToText(base64);
-                return EncodeText(result);
+                Text = TranslatorHelper.Base64ToText(base64);
+                return !string.IsNullOrEmpty(Text);
             }
             catch
             {
             }
 
+            Text = null;
             return false;
-        }
-
-        public static bool Test()
-        {
-            bool result = true;
-            Translator translator = new Translator();
-            string text = Helpers.GetAllCharacters();
-            translator.EncodeText(text);
-            translator.DecodeBinary(translator.BinaryText);
-            result &= translator.Text == text;
-            translator.DecodeHex(translator.HexadecimalText);
-            result &= translator.Text == text;
-            //translator.DecodeASCII(translator.ASCIIText);
-            //result &= translator.Text == text;
-            translator.DecodeBase64(translator.Base64);
-            result &= translator.Text == text;
-            return result;
         }
 
         public string HashToString()
@@ -204,7 +216,7 @@ namespace ShareX.HelpersLib
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Text: {Text}");
             sb.AppendLine($"Binary: {BinaryText}");
-            sb.AppendLine($"Hex: {HexadecimalText}");
+            sb.AppendLine($"Hexadecimal: {HexadecimalText}");
             sb.AppendLine($"ASCII: {ASCIIText}");
             sb.AppendLine($"Base64: {Base64}");
             sb.Append(HashToString());

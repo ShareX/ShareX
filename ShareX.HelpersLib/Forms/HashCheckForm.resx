@@ -195,7 +195,7 @@
     <value>True</value>
   </data>
   <data name="lblResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 104</value>
+    <value>5, 136</value>
   </data>
   <data name="lblResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -222,7 +222,7 @@
     <value>True</value>
   </data>
   <data name="lblTarget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 152</value>
+    <value>5, 184</value>
   </data>
   <data name="lblTarget.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -249,7 +249,7 @@
     <value>True</value>
   </data>
   <data name="lblProgressPercentage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 76</value>
+    <value>432, 110</value>
   </data>
   <data name="lblProgressPercentage.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 13</value>
@@ -273,7 +273,7 @@
     <value>11</value>
   </data>
   <data name="btnStartHashCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 70</value>
+    <value>8, 104</value>
   </data>
   <data name="btnStartHashCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 24</value>
@@ -300,7 +300,7 @@
     <value>8, 72</value>
   </data>
   <data name="cbHashType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 21</value>
+    <value>128, 21</value>
   </data>
   <data name="cbHashType.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -318,10 +318,10 @@
     <value>7</value>
   </data>
   <data name="pbProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 70</value>
+    <value>144, 104</value>
   </data>
   <data name="pbProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 24</value>
+    <value>280, 24</value>
   </data>
   <data name="pbProgress.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -339,7 +339,7 @@
     <value>6</value>
   </data>
   <data name="txtResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 120</value>
+    <value>8, 152</value>
   </data>
   <data name="txtResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>552, 20</value>
@@ -360,7 +360,7 @@
     <value>4</value>
   </data>
   <data name="txtTarget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 168</value>
+    <value>8, 200</value>
   </data>
   <data name="txtTarget.Size" type="System.Drawing.Size, System.Drawing">
     <value>552, 20</value>
@@ -733,13 +733,13 @@
     <value>5, 120</value>
   </data>
   <data name="lblHashCheckHex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
+    <value>71, 13</value>
   </data>
   <data name="lblHashCheckHex.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value>Hex:</value>
+    <value>Hexadecimal:</value>
   </data>
   <data name="&gt;&gt;lblHashCheckHex.Name" xml:space="preserve">
     <value>lblHashCheckHex</value>

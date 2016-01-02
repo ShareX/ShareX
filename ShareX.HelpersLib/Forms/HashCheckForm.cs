@@ -47,10 +47,6 @@ namespace ShareX.HelpersLib
             hashCheck.FileCheckCompleted += fileCheck_FileCheckCompleted;
 
             translator = new Translator();
-
-#if DEBUG
-            if (!Translator.Test()) MessageBox.Show("Text conversion failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-#endif
         }
 
         #region File hash check
@@ -144,20 +140,34 @@ namespace ShareX.HelpersLib
 
         private void FillConversionInfo()
         {
+            FillConversionInfo(translator.Text);
+        }
+
+        private void FillConversionInfo(string text)
+        {
             if (translator != null)
             {
-                txtHashCheckText.Text = translator.Text;
-                txtHashCheckBinary.Text = translator.BinaryText;
-                txtHashCheckHex.Text = translator.HexadecimalText;
-                txtHashCheckASCII.Text = translator.ASCIIText;
-                txtHashCheckBase64.Text = translator.Base64;
-                txtHashCheckHash.Text = translator.HashToString();
+                if (!string.IsNullOrEmpty(text))
+                {
+                    translator.EncodeText(text);
+                    txtHashCheckText.Text = translator.Text;
+                    txtHashCheckBinary.Text = translator.BinaryText;
+                    txtHashCheckHex.Text = translator.HexadecimalText;
+                    txtHashCheckASCII.Text = translator.ASCIIText;
+                    txtHashCheckBase64.Text = translator.Base64;
+                    txtHashCheckHash.Text = translator.HashToString();
+                }
+                else
+                {
+                    translator.Clear();
+                    txtHashCheckText.Text = txtHashCheckBinary.Text = txtHashCheckHex.Text = txtHashCheckASCII.Text = txtHashCheckBase64.Text = txtHashCheckHash.Text = "";
+                }
             }
         }
 
         private void btnHashCheckCopyAll_Click(object sender, EventArgs e)
         {
-            if (translator != null && !string.IsNullOrEmpty(translator.Text))
+            if (translator != null)
             {
                 string text = translator.ToString();
 
@@ -170,42 +180,39 @@ namespace ShareX.HelpersLib
 
         private void btnHashCheckEncodeText_Click(object sender, EventArgs e)
         {
-            if (translator.EncodeText(txtHashCheckText.Text))
-            {
-                FillConversionInfo();
-            }
+            FillConversionInfo(txtHashCheckText.Text);
         }
 
         private void btnHashCheckDecodeBinary_Click(object sender, EventArgs e)
         {
-            if (translator.DecodeBinary(txtHashCheckBinary.Text))
-            {
-                FillConversionInfo();
-            }
+            string binary = txtHashCheckBinary.Text;
+            translator.DecodeBinary(binary);
+            FillConversionInfo();
+            txtHashCheckBinary.Text = binary;
         }
 
         private void btnHashCheckDecodeHex_Click(object sender, EventArgs e)
         {
-            if (translator.DecodeHex(txtHashCheckHex.Text))
-            {
-                FillConversionInfo();
-            }
+            string hex = txtHashCheckHex.Text;
+            translator.DecodeHex(hex);
+            FillConversionInfo();
+            txtHashCheckHex.Text = hex;
         }
 
         private void btnHashCheckDecodeASCII_Click(object sender, EventArgs e)
         {
-            if (translator.DecodeASCII(txtHashCheckASCII.Text))
-            {
-                FillConversionInfo();
-            }
+            string ascii = txtHashCheckASCII.Text;
+            translator.DecodeASCII(ascii);
+            FillConversionInfo();
+            txtHashCheckASCII.Text = ascii;
         }
 
         private void btnHashCheckDecodeBase64_Click(object sender, EventArgs e)
         {
-            if (translator.DecodeBase64(txtHashCheckBase64.Text))
-            {
-                FillConversionInfo();
-            }
+            string base64 = txtHashCheckBase64.Text;
+            translator.DecodeBase64(base64);
+            FillConversionInfo();
+            txtHashCheckBase64.Text = base64;
         }
 
         #endregion Text conversions
