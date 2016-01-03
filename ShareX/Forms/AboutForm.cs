@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -116,7 +116,7 @@ Trailer music credits: Track Name: Au5 - Inside (feat. Danyka Nadeau), Video Lin
 Running from:
 {3}
 
-Copyright (c) 2007-2015 ShareX Team", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries, Application.ExecutablePath);
+Copyright (c) 2007-2016 ShareX Team", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries, Application.ExecutablePath);
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)
