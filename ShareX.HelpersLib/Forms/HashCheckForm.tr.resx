@@ -1,3 +1,4 @@
+﻿
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -124,9 +125,6 @@
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Hedef:</value>
-  </data>
-  <data name="lblProgress.Text" xml:space="preserve">
-    <value>İlerleme:</value>
   </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>Gözat...</value>

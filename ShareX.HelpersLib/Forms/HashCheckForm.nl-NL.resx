@@ -132,9 +132,6 @@
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Hash type:</value>
   </data>
-  <data name="lblProgress.Text" xml:space="preserve">
-    <value>Vooruitgang:</value>
-  </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Resultaat:</value>
   </data>

@@ -132,9 +132,6 @@
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Kiểu Hash:</value>
   </data>
-  <data name="lblProgress.Text" xml:space="preserve">
-    <value>Tiến độ:</value>
-  </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Kết quả:</value>
   </data>

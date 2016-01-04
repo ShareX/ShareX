@@ -129,9 +129,6 @@
   <data name="lblFile.Text" xml:space="preserve">
     <value>Ruta de archivo:</value>
   </data>
-  <data name="lblProgress.Text" xml:space="preserve">
-    <value>Progreso:</value>
-  </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Resultado:</value>
   </data>
