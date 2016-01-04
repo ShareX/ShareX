@@ -382,30 +382,6 @@ namespace ShareX
         {
             Settings = ApplicationConfig.Load(ApplicationConfigFilePath);
             DefaultTaskSettings = Settings.DefaultTaskSettings;
-
-            TaskSettingsBackwardCompatibility();
-        }
-
-        private static void TaskSettingsBackwardCompatibility()
-        {
-            // TODO: Remove these next version
-            if (Settings.IsUpgrade)
-            {
-                if (DefaultTaskSettings.GeneralSettings.ShowAfterCaptureTasksForm)
-                {
-                    DefaultTaskSettings.AfterCaptureJob = DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.ShowAfterCaptureWindow);
-                }
-
-                if (DefaultTaskSettings.GeneralSettings.ShowBeforeUploadForm)
-                {
-                    DefaultTaskSettings.AfterCaptureJob = DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.ShowBeforeUploadWindow);
-                }
-
-                if (DefaultTaskSettings.GeneralSettings.ShowAfterUploadForm)
-                {
-                    DefaultTaskSettings.AfterUploadJob = DefaultTaskSettings.AfterUploadJob.Add(AfterUploadTasks.ShowAfterUploadWindow);
-                }
-            }
         }
 
         public static void LoadUploadersConfig()
