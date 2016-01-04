@@ -88,7 +88,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     string url = response.files[0].url;
 
-                    if (!string.IsNullOrEmpty(Uploader.ResultURL))
+                    if (!URLHelpers.HasPrefix(url) && !string.IsNullOrEmpty(Uploader.ResultURL))
                     {
                         url = URLHelpers.CombineURL(Uploader.ResultURL, url);
                     }
