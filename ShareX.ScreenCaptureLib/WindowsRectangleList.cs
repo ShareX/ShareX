@@ -27,6 +27,8 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -38,7 +40,32 @@ namespace ShareX.ScreenCaptureLib
         private List<SimpleWindowInfo> windows;
         private HashSet<IntPtr> parentHandles;
 
-        public List<SimpleWindowInfo> GetWindowsRectangleList()
+        public List<SimpleWindowInfo> GetWindowInfoListAsync(int timeout)
+        {
+            List<SimpleWindowInfo> windowInfoList = null;
+
+            Thread t = new Thread(() =>
+            {
+                try
+                {
+                    windowInfoList = GetWindowInfoList();
+                }
+                catch
+                {
+                }
+            });
+
+            t.Start();
+
+            if (!t.Join(timeout))
+            {
+                t.Abort();
+            }
+
+            return windowInfoList;
+        }
+
+        public List<SimpleWindowInfo> GetWindowInfoList()
         {
             windows = new List<SimpleWindowInfo>();
             parentHandles = new HashSet<IntPtr>();

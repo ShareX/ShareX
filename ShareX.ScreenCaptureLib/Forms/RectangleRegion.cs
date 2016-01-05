@@ -182,7 +182,7 @@ namespace ShareX.ScreenCaptureLib
                         WindowsRectangleList wla = new WindowsRectangleList();
                         wla.IgnoreHandle = handle;
                         wla.IncludeChildWindows = AreaManager.IncludeControls;
-                        AreaManager.Windows = wla.GetWindowsRectangleList();
+                        AreaManager.Windows = wla.GetWindowInfoListAsync(3000);
                     });
                 }
             }
