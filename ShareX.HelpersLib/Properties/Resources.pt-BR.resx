@@ -625,9 +625,6 @@ Você gostaria de baixar e instalar?</value>
   <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
     <value>Upload</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Capturar região (objetos)</value>
-  </data>
   <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
     <value>Capturar tela</value>
   </data>

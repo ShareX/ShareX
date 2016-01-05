@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 
@@ -124,7 +125,6 @@ namespace ShareX
         ActiveMonitor,
         Window,
         ActiveWindow,
-        RectangleWindow,
         Rectangle,
         Polygon,
         Freehand,
@@ -139,6 +139,7 @@ namespace ShareX
         LastRegion
     }
 
+    [JsonConverter(typeof(HotkeyTypeEnumConverter))]
     public enum HotkeyType // Localized + Category
     {
         None,
@@ -155,7 +156,6 @@ namespace ShareX
         ActiveWindow,
         ActiveMonitor,
         RectangleRegion,
-        WindowRectangle,
         RectangleAnnotate,
         RectangleLight,
         RectangleTransparent,

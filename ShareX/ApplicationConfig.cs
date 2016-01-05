@@ -142,7 +142,7 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Automatically expand capture menu when you open the tray menu.")]
         public bool TrayAutoExpandCaptureMenu { get; set; }
 
-        [Category("Application"), DefaultValue(HotkeyType.WindowRectangle), Description("You can set which action to happen when you left click tray icon."), TypeConverter(typeof(EnumDescriptionConverter))]
+        [Category("Application"), DefaultValue(HotkeyType.RectangleRegion), Description("You can set which action to happen when you left click tray icon."), TypeConverter(typeof(EnumDescriptionConverter))]
         public HotkeyType TrayLeftClickAction { get; set; }
 
         [Category("Application"), DefaultValue(HotkeyType.PrintScreen), Description("You can set which action to happen when you middle click tray icon."), TypeConverter(typeof(EnumDescriptionConverter))]

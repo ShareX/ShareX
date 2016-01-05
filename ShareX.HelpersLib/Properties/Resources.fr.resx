@@ -190,9 +190,6 @@ Voulez-vous la télécharger et l'installer?</value>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Capturer une région (Simple)</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Capturer une région (Fenêtres et objets)</value>
-  </data>
   <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
     <value>Choisir le chemin du fichier</value>
   </data>

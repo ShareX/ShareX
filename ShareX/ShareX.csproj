@@ -184,6 +184,7 @@
     <Compile Include="Forms\FirstTimeConfigForm.Designer.cs">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HotkeyTypeEnumConverter.cs" />
     <Compile Include="ImageCombinerOptions.cs" />
     <Compile Include="IntegrationHelpers.cs" />
     <Compile Include="ScreenRecordManager.cs" />

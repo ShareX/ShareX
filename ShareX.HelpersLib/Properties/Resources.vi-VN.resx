@@ -765,9 +765,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>Bắt đầu chụp tự động dùng vùng lần trước</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Chụp theo vùng (Vật thể)</value>
-  </data>
   <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
     <value>Đối tượng</value>
   </data>

@@ -201,9 +201,6 @@
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>직사각형 영역 촬영 (어둡지 않게)</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>직사각형 영역 촬영 (창)</value>
-  </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>화면 녹화 (FFmpeg)</value>
   </data>

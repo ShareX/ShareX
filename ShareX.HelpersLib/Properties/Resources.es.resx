@@ -398,9 +398,6 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
     <value>Tweet mensaje</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Capturar región rectángulo (ventana)</value>
-  </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>Cargador de archivos</value>
   </data>

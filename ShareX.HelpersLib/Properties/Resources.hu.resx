@@ -410,9 +410,6 @@ Fájlméret: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Feltöltés URL-ből</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Téglalap terület képlopása (ablak)</value>
-  </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Színárnyalat: {0:0.0}°, Telítettség: {1:0.0}%, Fényerő: {2:0.0}%</value>
   </data>

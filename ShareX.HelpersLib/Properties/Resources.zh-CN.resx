@@ -410,9 +410,6 @@
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>从URL上传</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>截图矩形区域（窗口）</value>
-  </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>色调: {0:0.0}度, 饱和度: {1:0.0}%, 亮度: {2:0.0}%</value>
   </data>

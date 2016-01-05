@@ -422,9 +422,6 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Upload vanaf URL</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Leg rechthoekige regio vast (Venster)</value>
-  </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Tint: {0:0.0}°, Verzadiging: {1:0.0}%, Helderheid: {2:0.0}%</value>
   </data>

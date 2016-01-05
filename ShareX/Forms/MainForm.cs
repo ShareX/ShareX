@@ -1667,9 +1667,6 @@ namespace ShareX
                 case HotkeyType.RectangleRegion:
                     CaptureScreenshot(CaptureType.Rectangle, safeTaskSettings, false);
                     break;
-                case HotkeyType.WindowRectangle:
-                    CaptureScreenshot(CaptureType.RectangleWindow, safeTaskSettings, false);
-                    break;
                 case HotkeyType.RectangleAnnotate:
                     CaptureRectangleAnnotate(safeTaskSettings, false);
                     break;
@@ -1797,7 +1794,6 @@ namespace ShareX
                     DoCapture(Screenshot.CaptureActiveMonitor, CaptureType.ActiveMonitor, taskSettings, autoHideForm);
                     break;
                 case CaptureType.Rectangle:
-                case CaptureType.RectangleWindow:
                 case CaptureType.Polygon:
                 case CaptureType.Freehand:
                     CaptureRegion(captureType, taskSettings, autoHideForm);
@@ -1893,7 +1889,7 @@ namespace ShareX
 
         private bool IsRegionCapture(CaptureType captureType)
         {
-            return captureType.HasFlagAny(CaptureType.RectangleWindow, CaptureType.Rectangle, CaptureType.Polygon, CaptureType.Freehand, CaptureType.LastRegion);
+            return captureType.HasFlagAny(CaptureType.Rectangle, CaptureType.Polygon, CaptureType.Freehand, CaptureType.LastRegion);
         }
 
         private void CaptureActiveWindow(TaskSettings taskSettings, bool autoHideForm = true)
@@ -1975,9 +1971,6 @@ namespace ShareX
             {
                 default:
                 case CaptureType.Rectangle:
-                    surface = new RectangleRegion();
-                    break;
-                case CaptureType.RectangleWindow:
                     RectangleRegion rectangleRegion = new RectangleRegion();
                     rectangleRegion.AreaManager.WindowCaptureMode = true;
                     rectangleRegion.AreaManager.IncludeControls = true;
@@ -2307,11 +2300,6 @@ namespace ShareX
             CaptureScreenshot(CaptureType.Rectangle);
         }
 
-        private void tsmiWindowRectangle_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.RectangleWindow);
-        }
-
         private void tsmiRectangleAnnotate_Click(object sender, EventArgs e)
         {
             CaptureRectangleAnnotate();
@@ -2388,11 +2376,6 @@ namespace ShareX
         private void tsmiTrayRectangle_Click(object sender, EventArgs e)
         {
             CaptureScreenshot(CaptureType.Rectangle, null, false);
-        }
-
-        private void tsmiTrayWindowRectangle_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.RectangleWindow, null, false);
         }
 
         private void tsmiTrayRectangleAnnotate_Click(object sender, EventArgs e)

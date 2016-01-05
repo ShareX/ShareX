@@ -410,9 +410,6 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Hochladen von URL</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Region aufnehmen (Fenster)</value>
-  </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Färbung: {0:0.0}°, Sättigung: {1:0.0}%, Helligkeit: {2:0.0}%</value>
   </data>

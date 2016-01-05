@@ -1546,15 +1546,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture region (Windows and controls).
-        /// </summary>
-        internal static string HotkeyType_WindowRectangle {
-            get {
-                return ResourceManager.GetString("HotkeyType_WindowRectangle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Screen capture.
         /// </summary>
         internal static string HotkeyType_WindowRectangle_Category {

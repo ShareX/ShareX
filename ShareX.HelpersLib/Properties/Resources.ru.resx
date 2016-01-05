@@ -414,9 +414,6 @@
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>Начать автозахват последней области</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Захват области (Объекты)</value>
-  </data>
   <data name="HotkeyType_PolygonRegion" xml:space="preserve">
     <value>Захват многоугольной области</value>
   </data>

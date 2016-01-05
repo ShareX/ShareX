@@ -209,7 +209,7 @@ namespace ShareX
         {
             return new List<HotkeySettings>
             {
-                new HotkeySettings(HotkeyType.WindowRectangle, Keys.Control | Keys.PrintScreen),
+                new HotkeySettings(HotkeyType.RectangleRegion, Keys.Control | Keys.PrintScreen),
                 new HotkeySettings(HotkeyType.PrintScreen, Keys.PrintScreen),
                 new HotkeySettings(HotkeyType.ActiveWindow, Keys.Alt | Keys.PrintScreen),
                 new HotkeySettings(HotkeyType.ScreenRecorder, Keys.Shift | Keys.PrintScreen)

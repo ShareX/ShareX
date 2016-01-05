@@ -477,9 +477,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Upload from URL</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Capture region (Windows and controls)</value>
-  </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Custom file uploader</value>
   </data>

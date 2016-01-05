@@ -455,9 +455,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Adresten yükle</value>
   </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Bölge yakala (Pencereler ve kontroller)</value>
-  </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Özel dosya yükleyici</value>
   </data>
