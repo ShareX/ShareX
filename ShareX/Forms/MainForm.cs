@@ -1971,10 +1971,7 @@ namespace ShareX
             {
                 default:
                 case CaptureType.Rectangle:
-                    RectangleRegion rectangleRegion = new RectangleRegion();
-                    rectangleRegion.AreaManager.WindowCaptureMode = true;
-                    rectangleRegion.AreaManager.IncludeControls = true;
-                    surface = rectangleRegion;
+                    surface = new RectangleRegion();
                     break;
                 case CaptureType.Polygon:
                     surface = new PolygonRegion();

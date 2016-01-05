@@ -37,6 +37,12 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(true), Description("Allow screenshot capture as soon as the mouse is released. This disables the ability to capture multiple shapes and to move and/or resize them.")]
         public bool QuickCrop { get; set; }
 
+        [DefaultValue(true), Description("You can use window capture mode in all rectangle type shapes. Also includes window client area.")]
+        public bool DetectWindows { get; set; }
+
+        [DefaultValue(true), Description("If window capture mode enabled this setting will also allow to capture window controls.")]
+        public bool DetectControls { get; set; }
+
         [DefaultValue(true), Description("Show coordinate and size information.")]
         public bool ShowInfo { get; set; }
 
@@ -73,12 +79,6 @@ namespace ShareX.ScreenCaptureLib
 
         [DefaultValue(false), Description("Result image will have border around the shape(s).")]
         public bool DrawBorder { get; set; }
-
-        [DefaultValue(false), Description("You can use window capture mode in all rectangle type shapes. Also includes window client area.")]
-        public bool ForceWindowCapture { get; set; }
-
-        [DefaultValue(false), Description("If window capture mode enabled this setting will also allow to capture window controls.")]
-        public bool IncludeControls { get; set; }
 
         [DefaultValue(1), Description("Number of pixels to move shape at each arrow key stroke.")]
         public int MinMoveSpeed { get; set; }

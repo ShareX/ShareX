@@ -170,8 +170,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (Config != null)
             {
-                AreaManager.WindowCaptureMode |= Config.ForceWindowCapture;
-                AreaManager.IncludeControls |= Config.IncludeControls;
+                AreaManager.WindowCaptureMode = Config.DetectWindows;
+                AreaManager.IncludeControls = Config.DetectControls;
 
                 if (OneClickMode || AreaManager.WindowCaptureMode)
                 {

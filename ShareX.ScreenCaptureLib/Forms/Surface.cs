@@ -447,7 +447,7 @@ namespace ShareX.ScreenCaptureLib
                 surface.Config = options;
                 surface.Config.ShowTips = false;
                 surface.Config.QuickCrop = true;
-                surface.Config.ForceWindowCapture = true;
+                surface.Config.DetectWindows = true;
                 surface.Prepare();
                 surface.ShowDialog();
 

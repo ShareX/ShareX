@@ -188,8 +188,8 @@ namespace ShareX.ScreenCaptureLib
             using (RectangleRegion surface = new RectangleRegion())
             {
                 surface.OneClickMode = true;
-                surface.Config.ForceWindowCapture = true;
-                surface.Config.IncludeControls = true;
+                surface.Config.DetectWindows = true;
+                surface.Config.DetectControls = true;
                 surface.Config.UseDimming = false;
                 surface.Config.ShowInfo = true;
                 surface.Config.ShowMagnifier = false;
