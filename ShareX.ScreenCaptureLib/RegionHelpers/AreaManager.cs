@@ -346,7 +346,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Windows != null)
             {
-                SimpleWindowInfo windowInfo = Windows.FirstOrDefault(x => x.IsWindow && x.Rectangle.Contains(InputManager.MousePosition));
+                SimpleWindowInfo windowInfo = Windows.FirstOrDefault(x => x.IsWindow && x.Rectangle.Contains(mousePosition));
 
                 if (windowInfo != null)
                 {

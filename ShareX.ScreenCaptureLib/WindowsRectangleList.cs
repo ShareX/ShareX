@@ -83,6 +83,11 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (window2.Rectangle.Contains(window.Rectangle))
                     {
+                        if (window.IsWindow && window.Rectangle == window2.Rectangle)
+                        {
+                            break;
+                        }
+
                         rectVisible = false;
                         break;
                     }
