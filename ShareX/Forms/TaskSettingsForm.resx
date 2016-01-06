@@ -4188,57 +4188,6 @@
   <data name="&gt;&gt;tpVideoThumbnailer.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="pgIRCClient.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pgIRCClient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="pgIRCClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>551, 322</value>
-  </data>
-  <data name="pgIRCClient.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pgIRCClient.Name" xml:space="preserve">
-    <value>pgIRCClient</value>
-  </data>
-  <data name="&gt;&gt;pgIRCClient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgIRCClient.Parent" xml:space="preserve">
-    <value>tpIRCClient</value>
-  </data>
-  <data name="&gt;&gt;pgIRCClient.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpIRCClient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpIRCClient.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpIRCClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 328</value>
-  </data>
-  <data name="tpIRCClient.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpIRCClient.Text" xml:space="preserve">
-    <value>IRC client</value>
-  </data>
-  <data name="&gt;&gt;tpIRCClient.Name" xml:space="preserve">
-    <value>tpIRCClient</value>
-  </data>
-  <data name="&gt;&gt;tpIRCClient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpIRCClient.Parent" xml:space="preserve">
-    <value>tcTools</value>
-  </data>
-  <data name="&gt;&gt;tpIRCClient.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="tcTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>

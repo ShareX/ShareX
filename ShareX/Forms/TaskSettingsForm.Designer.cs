@@ -169,6 +169,7 @@
             this.tcUpload = new System.Windows.Forms.TabControl();
             this.tpUploadNamePattern = new System.Windows.Forms.TabPage();
             this.pUpload = new System.Windows.Forms.Panel();
+            this.cbRegionCaptureUseWindowPattern = new System.Windows.Forms.CheckBox();
             this.cbNameFormatCustomTimeZone = new System.Windows.Forms.CheckBox();
             this.cbNameFormatTimeZone = new System.Windows.Forms.ComboBox();
             this.lblNameFormatPattern = new System.Windows.Forms.Label();
@@ -193,13 +194,10 @@
             this.pgIndexer = new System.Windows.Forms.PropertyGrid();
             this.tpVideoThumbnailer = new System.Windows.Forms.TabPage();
             this.pgVideoThumbnailer = new System.Windows.Forms.PropertyGrid();
-            this.tpIRCClient = new System.Windows.Forms.TabPage();
-            this.pgIRCClient = new System.Windows.Forms.PropertyGrid();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbRegionCaptureUseWindowPattern = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -246,7 +244,6 @@
             this.tpToolsMain.SuspendLayout();
             this.tpIndexer.SuspendLayout();
             this.tpVideoThumbnailer.SuspendLayout();
-            this.tpIRCClient.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1428,6 +1425,13 @@
             resources.ApplyResources(this.pUpload, "pUpload");
             this.pUpload.Name = "pUpload";
             // 
+            // cbRegionCaptureUseWindowPattern
+            // 
+            resources.ApplyResources(this.cbRegionCaptureUseWindowPattern, "cbRegionCaptureUseWindowPattern");
+            this.cbRegionCaptureUseWindowPattern.Name = "cbRegionCaptureUseWindowPattern";
+            this.cbRegionCaptureUseWindowPattern.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureUseWindowPattern.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseWindowPattern_CheckedChanged);
+            // 
             // cbNameFormatCustomTimeZone
             // 
             resources.ApplyResources(this.cbNameFormatCustomTimeZone, "cbNameFormatCustomTimeZone");
@@ -1548,7 +1552,6 @@
             this.tcTools.Controls.Add(this.tpToolsMain);
             this.tcTools.Controls.Add(this.tpIndexer);
             this.tcTools.Controls.Add(this.tpVideoThumbnailer);
-            this.tcTools.Controls.Add(this.tpIRCClient);
             resources.ApplyResources(this.tcTools, "tcTools");
             this.tcTools.Name = "tcTools";
             this.tcTools.SelectedIndex = 0;
@@ -1599,21 +1602,6 @@
             this.pgVideoThumbnailer.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgVideoThumbnailer.ToolbarVisible = false;
             // 
-            // tpIRCClient
-            // 
-            this.tpIRCClient.Controls.Add(this.pgIRCClient);
-            resources.ApplyResources(this.tpIRCClient, "tpIRCClient");
-            this.tpIRCClient.Name = "tpIRCClient";
-            this.tpIRCClient.UseVisualStyleBackColor = true;
-            // 
-            // pgIRCClient
-            // 
-            this.pgIRCClient.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            resources.ApplyResources(this.pgIRCClient, "pgIRCClient");
-            this.pgIRCClient.Name = "pgIRCClient";
-            this.pgIRCClient.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgIRCClient.ToolbarVisible = false;
-            // 
             // tpAdvanced
             // 
             this.tpAdvanced.Controls.Add(this.pgTaskSettings);
@@ -1648,13 +1636,6 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // cbRegionCaptureUseWindowPattern
-            // 
-            resources.ApplyResources(this.cbRegionCaptureUseWindowPattern, "cbRegionCaptureUseWindowPattern");
-            this.cbRegionCaptureUseWindowPattern.Name = "cbRegionCaptureUseWindowPattern";
-            this.cbRegionCaptureUseWindowPattern.UseVisualStyleBackColor = true;
-            this.cbRegionCaptureUseWindowPattern.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseWindowPattern_CheckedChanged);
             // 
             // TaskSettingsForm
             // 
@@ -1729,7 +1710,6 @@
             this.tpToolsMain.PerformLayout();
             this.tpIndexer.ResumeLayout(false);
             this.tpVideoThumbnailer.ResumeLayout(false);
-            this.tpIRCClient.ResumeLayout(false);
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
             this.ResumeLayout(false);
@@ -1903,8 +1883,6 @@
         private System.Windows.Forms.PropertyGrid pgIndexer;
         private System.Windows.Forms.TabPage tpVideoThumbnailer;
         private System.Windows.Forms.PropertyGrid pgVideoThumbnailer;
-        private System.Windows.Forms.TabPage tpIRCClient;
-        private System.Windows.Forms.PropertyGrid pgIRCClient;
         private System.Windows.Forms.TabPage tpScrollingCapture;
         private System.Windows.Forms.PropertyGrid pgScrollingCapture;
         private System.Windows.Forms.CheckBox cbRegionCaptureUseWindowPattern;
