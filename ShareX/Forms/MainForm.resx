@@ -510,12 +510,6 @@
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>Hash check...</value>
   </data>
-  <data name="tsmiIRCClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
-  </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>IRC client...</value>
-  </data>
   <data name="tsmiDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
@@ -1305,12 +1299,6 @@
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
     <value>Hash check...</value>
   </data>
-  <data name="tsmiTrayIRCClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>IRC client...</value>
-  </data>
   <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
@@ -1561,7 +1549,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 462</value>
+    <value>189, 484</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -1807,12 +1795,6 @@
     <value>tsmiHashCheck</value>
   </data>
   <data name="&gt;&gt;tsmiHashCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiIRCClient.Name" xml:space="preserve">
-    <value>tsmiIRCClient</value>
-  </data>
-  <data name="&gt;&gt;tsmiIRCClient.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiDNSChanger.Name" xml:space="preserve">
@@ -2515,12 +2497,6 @@
     <value>tsmiTrayHashCheck</value>
   </data>
   <data name="&gt;&gt;tsmiTrayHashCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayIRCClient.Name" xml:space="preserve">
-    <value>tsmiTrayIRCClient</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayIRCClient.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayDNSChanger.Name" xml:space="preserve">

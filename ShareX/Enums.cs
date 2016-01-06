@@ -180,7 +180,6 @@ namespace ShareX
         ImageEditor,
         ImageEffects,
         HashCheck,
-        IRCClient,
         DNSChanger,
         QRCode,
         Ruler,

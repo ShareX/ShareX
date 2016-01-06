@@ -1050,11 +1050,6 @@ namespace ShareX
             TaskHelpers.OpenFTPClient();
         }
 
-        private void tsmiIRCClient_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenIRCClient();
-        }
-
         private void tsmiTweetMessage_Click(object sender, EventArgs e)
         {
             TaskHelpers.TweetMessage();
@@ -1734,9 +1729,6 @@ namespace ShareX
                     break;
                 case HotkeyType.HashCheck:
                     TaskHelpers.OpenHashCheck();
-                    break;
-                case HotkeyType.IRCClient:
-                    TaskHelpers.OpenIRCClient(safeTaskSettings);
                     break;
                 case HotkeyType.DNSChanger:
                     TaskHelpers.OpenDNSChanger();

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX", "ShareX\ShareX.csproj", "{C5AE4585-E9EC-4FA3-B75A-E1210635ACB6}"
 EndProject
@@ -29,8 +29,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Setup", "ShareX.Setup\ShareX.Setup.csproj", "{3D19A94A-7A58-4451-A686-EE70B471C206}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.MediaLib", "ShareX.MediaLib\ShareX.MediaLib.csproj", "{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.IRCLib", "ShareX.IRCLib\ShareX.IRCLib.csproj", "{EF7FCC3F-B776-4A5E-BDDC-32329AB11A58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,12 +94,6 @@ Global
 		{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}.Steam|Any CPU.ActiveCfg = Steam|Any CPU
 		{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}.Steam|Any CPU.Build.0 = Steam|Any CPU
-		{EF7FCC3F-B776-4A5E-BDDC-32329AB11A58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF7FCC3F-B776-4A5E-BDDC-32329AB11A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF7FCC3F-B776-4A5E-BDDC-32329AB11A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF7FCC3F-B776-4A5E-BDDC-32329AB11A58}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF7FCC3F-B776-4A5E-BDDC-32329AB11A58}.Steam|Any CPU.ActiveCfg = Steam|Any CPU
-		{EF7FCC3F-B776-4A5E-BDDC-32329AB11A58}.Steam|Any CPU.Build.0 = Steam|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

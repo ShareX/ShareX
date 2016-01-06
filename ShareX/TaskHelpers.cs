@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
-using ShareX.IRCLib;
 using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
@@ -699,13 +698,6 @@ namespace ShareX
             }
 
             MessageBox.Show(Resources.TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public static void OpenIRCClient(TaskSettings taskSettings = null)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            new IRCClientForm(taskSettings.ToolsSettingsReference.IRCSettings).Show();
         }
 
         public static void TweetMessage()
