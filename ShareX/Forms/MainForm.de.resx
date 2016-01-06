@@ -141,9 +141,6 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Region</value>
   </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Rechteck (Objekte)</value>
-  </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
     <value>Region (Anmerkung)</value>
   </data>
@@ -411,9 +408,6 @@
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Region</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Rechteck (Objekte)</value>
-  </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
     <value>Region (Anmerkung)</value>
   </data>
@@ -609,9 +603,6 @@
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Bildverbinder...</value>
   </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>IRC-Programm...</value>
-  </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Region (Transparent)</value>
   </data>
@@ -623,9 +614,6 @@
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Scroll Aufnahme...</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>IRC-Programm...</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Region (Transparent)</value>

@@ -435,9 +435,6 @@
   <data name="tpTools.Text" xml:space="preserve">
     <value>Araçlar</value>
   </data>
-  <data name="tpIRCClient.Text" xml:space="preserve">
-    <value>IRC istemcisi</value>
-  </data>
   <data name="tpVideoThumbnailer.Text" xml:space="preserve">
     <value>Video küçük resim yapıcı</value>
   </data>

@@ -609,9 +609,6 @@
   <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
     <value>Captura de página da web...</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Região (objetos)</value>
-  </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
   </data>
@@ -621,20 +618,11 @@
   <data name="tsmiWebpageCapture.Text" xml:space="preserve">
     <value>Captura de página da web...</value>
   </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Região (objetos)</value>
-  </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Miniaturizador de vídeo...</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Miniaturizador de vídeo...</value>
-  </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>Cliente IRC...</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>Cliente IRC...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Mesclar imagens...</value>

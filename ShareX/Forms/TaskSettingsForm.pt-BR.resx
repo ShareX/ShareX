@@ -429,9 +429,6 @@
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Mostrar cursor na gravação</value>
   </data>
-  <data name="tpIRCClient.Text" xml:space="preserve">
-    <value>Cliente IRC</value>
-  </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 a 100</value>
   </data>

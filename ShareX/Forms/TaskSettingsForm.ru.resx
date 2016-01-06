@@ -162,9 +162,6 @@
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Дополнительно</value>
   </data>
-  <data name="tpIRCClient.Text" xml:space="preserve">
-    <value>Клиент IRC</value>
-  </data>
   <data name="tpTools.Text" xml:space="preserve">
     <value>Инструменты</value>
   </data>

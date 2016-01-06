@@ -555,9 +555,6 @@
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>窗口</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>矩形（自动识别窗口）</value>
-  </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>快捷动作</value>
   </data>
@@ -590,8 +587,5 @@
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>窗口</value>
-  </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>矩形（自动识别窗口）</value>
   </data>
 </root>

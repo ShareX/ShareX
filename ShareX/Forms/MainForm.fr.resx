@@ -144,9 +144,6 @@
   <data name="tsmiMonitor.Text" xml:space="preserve">
     <value>Écran</value>
   </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Région (Fenêtres et objets)</value>
-  </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
     <value>Région (Annoter)</value>
   </data>
@@ -423,9 +420,6 @@
   <data name="tsmiTrayMonitor.Text" xml:space="preserve">
     <value>Écran</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Région (Fenêtres et objets)</value>
-  </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
     <value>Région (Annoter)</value>
   </data>
@@ -629,12 +623,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Générateur de miniatures de vidéo...</value>
-  </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>Client IRC...</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>Client IRC...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Combineur d'image...</value>

@@ -429,9 +429,6 @@
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Montrer le curseur dans l'enregistrement</value>
   </data>
-  <data name="tpIRCClient.Text" xml:space="preserve">
-    <value>Client IRC</value>
-  </data>
   <data name="tpTools.Text" xml:space="preserve">
     <value>Outils</value>
   </data>

@@ -147,9 +147,6 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Rectángulo</value>
   </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Rectángulo (Objetos)</value>
-  </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
     <value>Rectángulo (Anotar)</value>
   </data>
@@ -446,9 +443,6 @@
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Rectángulo</value>
-  </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Rectángulo (Objetos)</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
     <value>Rectángulo (Anotar)</value>

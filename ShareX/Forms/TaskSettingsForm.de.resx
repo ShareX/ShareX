@@ -435,9 +435,6 @@
   <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
     <value>Wähle einen Monitor für die angepasste Region aus:</value>
   </data>
-  <data name="tpIRCClient.Text" xml:space="preserve">
-    <value>IRC-Programm</value>
-  </data>
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Scroll Aufnahme</value>
   </data>

@@ -150,9 +150,6 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Bölge</value>
   </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Bölge (Pencereler ve kontroller)</value>
-  </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
     <value>Bölge (Dipnot)</value>
   </data>
@@ -444,9 +441,6 @@
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Bölge</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Bölge (Pencereler ve kontroller)</value>
-  </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
     <value>Bölge (Dipnot)</value>
   </data>
@@ -629,12 +623,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video küçük resim yapıcı...</value>
-  </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>IRC istemcisi...</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>IRC istemcisi...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Resim birleştirici...</value>

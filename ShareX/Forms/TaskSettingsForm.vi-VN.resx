@@ -306,9 +306,6 @@
   <data name="tpTools.Text" xml:space="preserve">
     <value>Công cụ</value>
   </data>
-  <data name="tpIRCClient.Text" xml:space="preserve">
-    <value>Trình IRC</value>
-  </data>
   <data name="tpImage.Text" xml:space="preserve">
     <value>Ảnh</value>
   </data>
