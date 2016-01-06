@@ -28,7 +28,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
-using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -83,11 +82,6 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (window2.Rectangle.Contains(window.Rectangle))
                     {
-                        if (window.IsWindow && window.Rectangle == window2.Rectangle)
-                        {
-                            break;
-                        }
-
                         rectVisible = false;
                         break;
                     }
@@ -148,7 +142,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Rectangle clientRect = NativeMethods.GetClientRect(handle);
 
-                if (clientRect.IsValid())
+                if (clientRect.IsValid() && clientRect != windowInfo.Rectangle)
                 {
                     windows.Add(new SimpleWindowInfo(handle, clientRect));
                 }
