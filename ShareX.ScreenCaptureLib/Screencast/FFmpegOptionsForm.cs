@@ -201,7 +201,18 @@ namespace ShareX.ScreenCaptureLib
             Options.FFmpeg.CLIPath = txtFFmpegPath.Text;
 
 #if !STEAM
-            txtFFmpegPath.BackColor = File.Exists(txtFFmpegPath.Text) ? Color.FromArgb(200, 255, 200) : Color.FromArgb(255, 200, 200);
+            Color backColor = Color.FromArgb(255, 200, 200);
+
+            try
+            {
+                if (File.Exists(Options.FFmpeg.FFmpegPath))
+                {
+                    backColor = Color.FromArgb(200, 255, 200);
+                }
+            }
+            catch { }
+
+            txtFFmpegPath.BackColor = backColor;
 #endif
         }
 
