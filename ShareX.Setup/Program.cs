@@ -36,6 +36,7 @@ namespace ShareX.Setup
         {
             Stable, // Build setup & create portable zip file
             Portable, // Create portable zip file
+            PortableApps, // Create PortableApps folder
             Beta, // Build setup & upload it using "Debug/ShareX.exe"
             Steam // Create Steam folder
         }
@@ -51,6 +52,7 @@ namespace ShareX.Setup
         private static readonly string outputDir = Path.Combine(parentDir, "InnoSetup", "Output");
         private static readonly string portableDir = Path.Combine(outputDir, "ShareX-portable");
         private static readonly string steamOutputDir = Path.Combine(outputDir, "ShareX");
+        private static readonly string portableAppsDir = steamOutputDir;
         private static readonly string steamLauncherDir = Path.Combine(parentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release");
         private static readonly string steamUpdatesDir = Path.Combine(steamOutputDir, "Updates");
         private static readonly string chromeReleaseDir = Path.Combine(parentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release");
@@ -72,6 +74,10 @@ namespace ShareX.Setup
                     break;
                 case SetupType.Portable:
                     CreatePortable(portableDir);
+                    OpenOutputDirectory();
+                    break;
+                case SetupType.PortableApps:
+                    CreatePortable(portableAppsDir);
                     OpenOutputDirectory();
                     break;
                 case SetupType.Beta:
@@ -157,6 +163,10 @@ namespace ShareX.Setup
                 // These git ignored
                 CopyFile(Path.Combine(parentDir, "Lib", "ffmpeg.exe"), destination);
                 CopyFile(Path.Combine(parentDir, "Lib", "ffmpeg-x64.exe"), destination);
+            }
+            else if (Setup == SetupType.PortableApps)
+            {
+                File.Create(Path.Combine(destination, "PortableApps")).Dispose();
             }
             else
             {
