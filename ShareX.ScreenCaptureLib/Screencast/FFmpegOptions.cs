@@ -73,7 +73,7 @@ namespace ShareX.ScreenCaptureLib
                 }
 #endif
 
-                return CLIPath;
+                return Helpers.GetAbsolutePath(CLIPath);
             }
         }
 
