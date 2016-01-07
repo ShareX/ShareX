@@ -80,6 +80,7 @@ namespace ShareX
         public static CLIManager CLI { get; private set; }
         public static bool IsMultiInstance { get; private set; }
         public static bool IsPortable { get; private set; }
+        public static bool IsPortableApps { get; private set; }
         public static bool IsSilentRun { get; private set; }
         public static bool IsSandbox { get; private set; }
         public static bool IsFirstTimeConfig { get; private set; }
@@ -106,8 +107,10 @@ namespace ShareX
 
         public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ShareX");
         private static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath("ShareX");
+        private static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath("../../Data");
         private static readonly string PersonalPathConfigFilePath = Helpers.GetAbsolutePath("PersonalPath.cfg");
         private static readonly string PortableCheckFilePath = Helpers.GetAbsolutePath("Portable");
+        private static readonly string PortableAppsCheckFilePath = Helpers.GetAbsolutePath("PortableApps");
         public static readonly string ChromeHostFilePath = Helpers.GetAbsolutePath("ShareX_Chrome.exe");
         public static readonly string SteamInAppFilePath = Helpers.GetAbsolutePath("Steam");
 
@@ -430,7 +433,8 @@ namespace ShareX
                 }
                 else
                 {
-                    IsPortable = File.Exists(PortableCheckFilePath);
+                    IsPortableApps = File.Exists(PortableAppsCheckFilePath);
+                    IsPortable = IsPortableApps || File.Exists(PortableCheckFilePath);
                     CheckPersonalPathConfig();
                 }
 
@@ -458,6 +462,10 @@ namespace ShareX
             {
                 customPersonalPath = Environment.ExpandEnvironmentVariables(customPersonalPath);
                 CustomPersonalPath = Helpers.GetAbsolutePath(customPersonalPath);
+            }
+            else if (IsPortableApps)
+            {
+                CustomPersonalPath = PortableAppsPersonalFolder;
             }
             else if (IsPortable)
             {

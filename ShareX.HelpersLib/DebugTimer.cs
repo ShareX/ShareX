@@ -52,7 +52,7 @@ namespace ShareX.HelpersLib
                 timeText = text + ": " + timeText;
             }
 
-            DebugHelper.WriteLine(timeText);
+            Debug.WriteLine(timeText);
         }
 
         public void WriteElapsedSeconds(string text = null)

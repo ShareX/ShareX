@@ -691,7 +691,7 @@ namespace ShareX
 #if RELEASE
             lock (updateTimerLock)
             {
-                if (Program.Settings.AutoCheckUpdate)
+                if (!Program.IsPortableApps && Program.Settings.AutoCheckUpdate)
                 {
                     if (updateTimer == null)
                     {

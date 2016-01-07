@@ -48,7 +48,15 @@ namespace ShareX
 #else
             pbSteam.Visible = false;
             lblSteamBuild.Visible = false;
-            uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
+
+            if (!Program.IsPortableApps)
+            {
+                uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
+            }
+            else
+            {
+                uclUpdate.Visible = false;
+            }
 #endif
 
             lblTeam.Text = "ShareX Team:";
