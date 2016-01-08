@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -259,7 +259,7 @@
   </data>
   <data name="lblProgressPercentage.Text" xml:space="preserve">
     <value>0%</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblProgressPercentage.Name" xml:space="preserve">
     <value>lblProgressPercentage</value>
   </data>
@@ -662,7 +662,7 @@
   </data>
   <data name="lblHashCheckASCII.Text" xml:space="preserve">
     <value>ASCII:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblHashCheckASCII.Name" xml:space="preserve">
     <value>lblHashCheckASCII</value>
   </data>

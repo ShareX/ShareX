@@ -1097,7 +1097,7 @@
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
     <value>lblImageJPEGQualityHint</value>
   </data>
@@ -1727,7 +1727,7 @@
   </data>
   <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
     <value>&gt;&gt;</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnCaptureTransmitBoundsFromMonitorToCustomBounds.Name" xml:space="preserve">
     <value>btnCaptureTransmitBoundsFromMonitorToCustomBounds</value>
   </data>
@@ -1817,7 +1817,7 @@
   </data>
   <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
     <value>Y</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblCaptureCustomRegionY.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionY</value>
   </data>
@@ -1847,7 +1847,7 @@
   </data>
   <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
     <value>X</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblCaptureCustomRegionX.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionX</value>
   </data>
