@@ -78,12 +78,15 @@ namespace ShareX.ScreenCaptureLib
             {
                 bool rectVisible = true;
 
-                foreach (SimpleWindowInfo window2 in result)
+                if (!window.IsWindow)
                 {
-                    if (window2.Rectangle.Contains(window.Rectangle))
+                    foreach (SimpleWindowInfo window2 in result)
                     {
-                        rectVisible = false;
-                        break;
+                        if (window2.Rectangle.Contains(window.Rectangle))
+                        {
+                            rectVisible = false;
+                            break;
+                        }
                     }
                 }
 
