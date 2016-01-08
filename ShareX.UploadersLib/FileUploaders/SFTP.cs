@@ -115,8 +115,13 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (client == null)
             {
-                if (!string.IsNullOrEmpty(Account.Keypath) && File.Exists(Account.Keypath))
+                if (!string.IsNullOrEmpty(Account.Keypath))
                 {
+                    if (!File.Exists(Account.Keypath))
+                    {
+                        throw new FileNotFoundException("Key path is invalid: " + Account.Keypath);
+                    }
+
                     PrivateKeyFile keyFile;
 
                     if (string.IsNullOrEmpty(Account.Passphrase))
