@@ -607,7 +607,7 @@
     <value>117, 13</value>
   </data>
   <data name="lblAfterTaskNotification.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="lblAfterTaskNotification.Text" xml:space="preserve">
     <value>After task is completed:</value>
@@ -631,7 +631,7 @@
     <value>224, 21</value>
   </data>
   <data name="cboPopUpNotification.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cboPopUpNotification.Name" xml:space="preserve">
     <value>cboPopUpNotification</value>
@@ -658,7 +658,7 @@
     <value>187, 17</value>
   </data>
   <data name="cbPlaySoundAfterUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Play sound after task is completed</value>
@@ -688,7 +688,7 @@
     <value>139, 17</value>
   </data>
   <data name="cbHistorySave.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="cbHistorySave.Text" xml:space="preserve">
     <value>Save task info to history</value>
@@ -2428,7 +2428,7 @@
     <value>143, 17</value>
   </data>
   <data name="cbScreenRecorderShowCursor.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>13</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Show cursor in recording</value>
@@ -2680,7 +2680,7 @@
     <value>120, 17</value>
   </data>
   <data name="chkRunScreencastCLI.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="chkRunScreencastCLI.Text" xml:space="preserve">
     <value>Run CLI afterwards:</value>
@@ -2707,7 +2707,7 @@
     <value>94, 23</value>
   </data>
   <data name="btnEncoderConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="btnEncoderConfig.Text" xml:space="preserve">
     <value>Profiles...</value>
@@ -2731,7 +2731,7 @@
     <value>224, 21</value>
   </data>
   <data name="cboEncoder.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;cboEncoder.Name" xml:space="preserve">
     <value>cboEncoder</value>
@@ -4048,7 +4048,7 @@
     <value>557, 25</value>
   </data>
   <data name="chkUseDefaultToolsSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
     <value>Use tools settings in main window task settings</value>
@@ -4096,7 +4096,7 @@
     <value>551, 322</value>
   </data>
   <data name="pgIndexer.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;pgIndexer.Name" xml:space="preserve">
     <value>pgIndexer</value>
@@ -4147,7 +4147,7 @@
     <value>551, 322</value>
   </data>
   <data name="pgVideoThumbnailer.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;pgVideoThumbnailer.Name" xml:space="preserve">
     <value>pgVideoThumbnailer</value>

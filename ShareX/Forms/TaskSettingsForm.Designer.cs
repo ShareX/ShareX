@@ -1644,8 +1644,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tcTaskSettings);
             this.Controls.Add(this.tttvMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "TaskSettingsForm";
             this.Resize += new System.EventHandler(this.TaskSettingsForm_Resize);
             this.tcTaskSettings.ResumeLayout(false);
