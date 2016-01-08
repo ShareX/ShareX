@@ -37,10 +37,10 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(true), Description("Allow screenshot capture as soon as the mouse is released. This disables the ability to capture multiple shapes and to move and/or resize them.")]
         public bool QuickCrop { get; set; }
 
-        [DefaultValue(true), Description("You can use window capture mode in all rectangle type shapes. Also includes window client area.")]
+        [DefaultValue(true), Description("Allows selection of window regions in region capture.")]
         public bool DetectWindows { get; set; }
 
-        [DefaultValue(true), Description("If window capture mode enabled this setting will also allow to capture window controls.")]
+        [DefaultValue(true), Description("If detect windows setting is chosen, this setting will also allow detecting window controls.")]
         public bool DetectControls { get; set; }
 
         [DefaultValue(true), Description("Show coordinate and size information.")]
