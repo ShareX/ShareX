@@ -38,13 +38,13 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public class Pomf : FileUploader
     {
-        // https://docs.google.com/spreadsheets/d/1kh1TZdtyX7UlRd55OBxf7DB-JGj2rsfWckI0FPQRYhE
+        // Pomf clones: https://docs.google.com/spreadsheets/d/1kh1TZdtyX7UlRd55OBxf7DB-JGj2rsfWckI0FPQRYhE
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
-            new PomfUploader("http://aishiteru.moe/upload.php"),
             new PomfUploader("http://catgirlsare.sexy/upload.php"),
             new PomfUploader("http://comfy.moe/upload.php"),
+            new PomfUploader("https://cocaine.ninja/upload.php"),
             new PomfUploader("http://cuntflaps.me/upload.php", "http://a.cuntflaps.me"),
             new PomfUploader("http://files.plebeianparty.com/upload.php", "http://a.plebeianparty.com"),
             new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
@@ -53,12 +53,11 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("https://maxfile.ro/static/upload.php", "https://d.maxfile.ro"),
             new PomfUploader("https://mixtape.moe/upload.php"),
             new PomfUploader("https://nigger.cat/upload.php"),
-            new PomfUploader("http://nyanimg.com/upload.php"),
-            new PomfUploader("http://openhost.xyz/upload.php"),
             new PomfUploader("https://pomf.cat/upload.php", "http://a.pomf.cat"),
             new PomfUploader("http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
             new PomfUploader("https://pomf.is/upload.php"),
             //new PomfUploader("https://pomf.se/upload.php"),
+            new PomfUploader("http://reich.io/upload.php"),
             new PomfUploader("https://sugoi.vidyagam.es/upload.php"),
             new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe")
         };
