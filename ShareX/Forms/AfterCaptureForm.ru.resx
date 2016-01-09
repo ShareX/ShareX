@@ -138,4 +138,7 @@
   <data name="lblFileName.Text" xml:space="preserve">
     <value>Имя файла</value>
   </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>После загрузки</value>
+  </data>
 </root>

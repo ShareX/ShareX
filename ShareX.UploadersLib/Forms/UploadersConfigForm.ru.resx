@@ -878,4 +878,40 @@
   <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
     <value>Обновить</value>
   </data>
+  <data name="lblStreamablePassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
+    <value>Добавить синтаксис в поле URL</value>
+  </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>Добавить синтаксис в поле URL</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
+    <value>Добавить синтаксис в поле URL</value>
+  </data>
+  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
+    <value>Все...</value>
+  </data>
+  <data name="lblSulAPIKey.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
+  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
+    <value>Аноним</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
+    <value>Примеры:
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
+    <value>Примеры:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
+  </data>
 </root>
