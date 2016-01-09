@@ -136,4 +136,7 @@
     <value>Hata
 Hata 2</value>
   </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
 </root>

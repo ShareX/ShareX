@@ -441,4 +441,7 @@
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Capture avec défilement</value>
   </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>Utiliser le modèle du nom de la fenêtre pour la capture de région (ShareX va essayer de détecter la fenêtre derrière la sélection)</value>
+  </data>
 </root>

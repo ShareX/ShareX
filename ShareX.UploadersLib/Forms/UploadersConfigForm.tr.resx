@@ -906,4 +906,10 @@ store.book[0].title</value>
 /Files/File[1]/URL
 /store/book[1]/title</value>
   </data>
+  <data name="lblSulAPIKey.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
+  </data>
+  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
+    <value>Hepsi...</value>
+  </data>
 </root>
