@@ -52,7 +52,7 @@ namespace ShareX.Setup
         private static readonly string outputDir = Path.Combine(parentDir, "InnoSetup", "Output");
         private static readonly string portableDir = Path.Combine(outputDir, "ShareX-portable");
         private static readonly string steamOutputDir = Path.Combine(outputDir, "ShareX");
-        private static readonly string portableAppsDir = steamOutputDir;
+        private static readonly string portableAppsDir = Path.Combine(parentDir, @"..\PortableApps\ShareXPortable\App\ShareX");
         private static readonly string steamLauncherDir = Path.Combine(parentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release");
         private static readonly string steamUpdatesDir = Path.Combine(steamOutputDir, "Updates");
         private static readonly string chromeReleaseDir = Path.Combine(parentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release");
