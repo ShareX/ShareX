@@ -127,7 +127,7 @@ Are you sure you want to continue?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>Encoding...</value>
-    <comment>Text must be equal or lower than 54 characters because of tray icon text length limit.</comment>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Are you sure you want to upload {0} files?</value>
@@ -191,7 +191,7 @@ Press 'No' to cancel the current upload and disable screenshot auto uploading.</
     <value>..\Resources\TaskCompletedSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Unable to find valid FTP account.</value>
+    <value>Unable to find a valid FTP account.</value>
   </data>
   <data name="CaptureSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CaptureSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -288,7 +288,7 @@ Please select a different hotkey or quit the conflicting application and reopen 
     <value>Task: {0}</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg video and audio source both can't be "None".</value>
+    <value>FFmpeg video and audio source can't both be "None".</value>
   </data>
   <data name="edit_scale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-scale.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -348,10 +348,10 @@ Would you like to automatically download it?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Waiting...</value>
-    <comment>Text must be equal or lower than 54 characters because of tray icon text length limit.</comment>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
   <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Your clipboard contains image, would you like to open it in image editor?
+    <value>Your clipboard contains an image, would you like to open it in the image editor?
 
 Press yes to open image from clipboard. Alternatively, press no to open image file dialog box.</value>
   </data>
@@ -383,7 +383,7 @@ Press yes to open image from clipboard. Alternatively, press no to open image fi
     <value>Show menu</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
-    <value>URL to download from and upload</value>
+    <value>URL to download and upload</value>
   </data>
   <data name="Diamond" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diamond.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -494,7 +494,7 @@ Please run ShareX as administrator to change personal folder path.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>Click to stop recording.</value>
-    <comment>Text must be equal or lower than 54 characters because of tray icon text length limit.</comment>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>You can add workflows from hotkey settings...</value>
@@ -515,7 +515,7 @@ Please run ShareX as administrator to change personal folder path.</value>
     <value>..\Resources\Rectangle.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX need to be restarted for language changes to apply.
+    <value>ShareX needs to be restarted for the language changes to apply.
 Would you like to restart ShareX?</value>
   </data>
   <data name="layer_shape" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -769,7 +769,7 @@ Would you like to restart ShareX?</value>
     <value>..\Resources\RoundedRectangle.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Unable to find valid Twitter account.</value>
+    <value>Unable to find a valid Twitter account.</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} is about to be uploaded to {1}. You may choose a different destination.</value>
@@ -797,7 +797,7 @@ Would you like to restart ShareX?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
     <value>Click to start recording.</value>
-    <comment>Text must be equal or lower than 54 characters because of tray icon text length limit.</comment>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Download of FFmpeg failed.</value>
@@ -815,6 +815,6 @@ Would you like to restart ShareX?</value>
     <value>Could not write image to path {0}.</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>These applications could be conflicting:</value>
+    <value>There may be an application conflict:</value>
   </data>
 </root>
