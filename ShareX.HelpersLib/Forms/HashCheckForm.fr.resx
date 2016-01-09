@@ -1,4 +1,4 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -124,7 +124,7 @@
     <value>Chemin du fichier:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Vérifier un Hash</value>
+    <value>Vérifier un hash</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Type de Hash:</value>
@@ -137,5 +137,44 @@
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Cible:</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>Copier tout</value>
+  </data>
+  <data name="lblHashCheckBase64.Text" xml:space="preserve">
+    <value>Base64:</value>
+  </data>
+  <data name="lblHashCheckHex.Text" xml:space="preserve">
+    <value>Hexadécimal:</value>
+  </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>Binaire:</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>Texte:</value>
+  </data>
+  <data name="lblHashCheckHash.Text" xml:space="preserve">
+    <value>Hash:</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>Décoder</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>Décoder</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>Décoder</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>Décoder</value>
+  </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>Encoder</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>Conversions de texte</value>
+  </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>Vérifier le hash d'un fichier</value>
   </data>
 </root>
