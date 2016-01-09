@@ -347,7 +347,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Obtention de la taille du fichier.</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
-    <value>Vérifier un Hash</value>
+    <value>Vérifier un hash</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Teinte: {0:0.0}°, Saturation: {1:0.0}%, Luminosité: {2:0.0}%</value>
@@ -825,5 +825,14 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>En-tête 'location'</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>Afficher la fenêtre "Après la mise en ligne"</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>Afficher la fenêtre "Après la capture"</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>Afficher la fenêtre "Avant la mise en ligne"</value>
   </data>
 </root>

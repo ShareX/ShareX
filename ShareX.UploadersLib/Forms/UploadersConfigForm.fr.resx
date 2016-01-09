@@ -878,4 +878,40 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>Logiciels de mise en ligne:</value>
   </data>
+  <data name="lblSulAPIKey.Text" xml:space="preserve">
+    <value>Clé API:</value>
+  </data>
+  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
+    <value>Anonyme</value>
+  </data>
+  <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>Nom d'utilisateur:</value>
+  </data>
+  <data name="lblStreamablePassword.Text" xml:space="preserve">
+    <value>Mot de passe:</value>
+  </data>
+  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
+    <value>Tout...</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
+    <value>Ajouter la syntaxe au champ URL</value>
+  </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>Ajouter la syntaxe au champ URL</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
+    <value>Exemples:
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
+    <value>Exemples:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
+    <value>Ajouter la syntaxe au champ URL</value>
+  </data>
 </root>
