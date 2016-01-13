@@ -185,11 +185,6 @@ namespace ShareX
                     RunImageTask(img, taskSettings);
                 }
             }
-            else if (Clipboard.ContainsFileDropList())
-            {
-                string[] files = Clipboard.GetFileDropList().Cast<string>().ToArray();
-                UploadFile(files, taskSettings);
-            }
             else if (Clipboard.ContainsText())
             {
                 string text = Clipboard.GetText();
@@ -229,6 +224,15 @@ namespace ShareX
                     }
                 }
             }
+            else if (Clipboard.ContainsFileDropList())
+            {
+                string[] files = Clipboard.GetFileDropList().OfType<string>().ToArray();
+
+                if (files.Length > 0)
+                {
+                    UploadFile(files, taskSettings);
+                }
+            }
         }
 
         public static void ClipboardUploadWithContentViewer(TaskSettings taskSettings = null)
@@ -237,7 +241,7 @@ namespace ShareX
 
             using (ClipboardContentViewer ccv = new ClipboardContentViewer())
             {
-                if (ccv.ShowDialog() == DialogResult.OK && !ccv.IsClipboardEmpty)
+                if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
                 {
                     ClipboardUpload(taskSettings);
                 }
@@ -252,7 +256,7 @@ namespace ShareX
             {
                 using (ClipboardContentViewer ccv = new ClipboardContentViewer(true))
                 {
-                    if (ccv.ShowDialog() == DialogResult.OK && !ccv.IsClipboardEmpty)
+                    if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
                     {
                         ClipboardUpload(taskSettings);
                     }

@@ -311,7 +311,7 @@ namespace ShareX.HelpersLib
                     }
                 }
 
-                if (dataObject.GetDataPresent(DataFormats.Bitmap))
+                if (dataObject.GetDataPresent(DataFormats.Bitmap, true))
                 {
                     return dataObject.GetData(DataFormats.Bitmap, true) as Image;
                 }
