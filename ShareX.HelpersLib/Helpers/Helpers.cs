@@ -607,7 +607,7 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool BrowseFolder(string title, TextBox tb, string initialDirectory = "")
+        public static bool BrowseFolder(string title, TextBox tb, string initialDirectory = "", bool detectSpecialFolders = true)
         {
             using (FolderSelectDialog fsd = new FolderSelectDialog())
             {
@@ -626,7 +626,7 @@ namespace ShareX.HelpersLib
 
                 if (fsd.ShowDialog())
                 {
-                    tb.Text = GetVariableFolderPath(fsd.FileName);
+                    tb.Text = detectSpecialFolders ? GetVariableFolderPath(fsd.FileName) : fsd.FileName;
                     return true;
                 }
             }
@@ -636,15 +636,20 @@ namespace ShareX.HelpersLib
 
         public static string GetVariableFolderPath(string folderPath)
         {
-            folderPath = folderPath.Replace(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "%MyPictures%", StringComparison.InvariantCultureIgnoreCase);
-            folderPath = folderPath.Replace(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "%UserProfile%", StringComparison.InvariantCultureIgnoreCase);
+            if (Directory.Exists(folderPath))
+            {
+                Helpers.GetEnums<Environment.SpecialFolder>().ForEach(x => folderPath = folderPath.Replace(Environment.GetFolderPath(x), string.Format("%{0}%", x), StringComparison.InvariantCultureIgnoreCase));
+            }
 
             return folderPath;
         }
 
         public static string ExpandFolderVariables(string folderPath)
         {
-            folderPath = folderPath.Replace("%MyPictures%", Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+            if (Directory.Exists(folderPath))
+            {
+                Helpers.GetEnums<Environment.SpecialFolder>().ForEach(x => folderPath = folderPath.Replace(string.Format("%{0}%", x), Environment.GetFolderPath(x), StringComparison.InvariantCultureIgnoreCase));
+            }
 
             return Environment.ExpandEnvironmentVariables(folderPath);
         }

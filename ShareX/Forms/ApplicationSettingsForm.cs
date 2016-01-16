@@ -253,7 +253,7 @@ namespace ShareX
             }
             else
             {
-                personalPath = Environment.ExpandEnvironmentVariables(personalPath);
+                personalPath = Helpers.ExpandFolderVariables(personalPath);
                 personalPath = Helpers.GetAbsolutePath(personalPath);
             }
 

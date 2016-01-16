@@ -476,7 +476,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(customPersonalPath))
             {
-                customPersonalPath = Environment.ExpandEnvironmentVariables(customPersonalPath);
+                customPersonalPath = Helpers.ExpandFolderVariables(customPersonalPath);
                 CustomPersonalPath = Helpers.GetAbsolutePath(customPersonalPath);
             }
             else if (IsPortableApps)

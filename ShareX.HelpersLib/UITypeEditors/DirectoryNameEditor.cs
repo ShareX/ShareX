@@ -43,7 +43,7 @@ namespace ShareX.HelpersLib
                 dlg.Title = Resources.DirectoryNameEditor_EditValue_Browse_for_a_folder___;
                 if (dlg.ShowDialog())
                 {
-                    value = dlg.FileName;
+                    value = Helpers.GetVariableFolderPath(dlg.FileName);
                 }
             }
             return value;
