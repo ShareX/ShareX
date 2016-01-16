@@ -53,9 +53,29 @@ namespace ShareX.HelpersLib
             {
                 EditMode = true;
                 txtQRCode.Visible = true;
-                txtQRCode.Text = "Text";
+                if (Clipboard.ContainsText())
+                {
+                    text = Clipboard.GetText();
+                    if (!string.IsNullOrEmpty(text) && URLHelpers.IsValidURLRegex(text))
+                    {
+                        txtQRCode.Text = text;
+                    }
+                    else
+                    {
+                        default_Text();
+                    }
+                }
+                else
+                {
+                    default_Text();
+                }
                 txtQRCode.SelectAll();
             }
+        }
+
+        private void default_Text()
+        {
+            txtQRCode.Text = "Input text to convert";
         }
 
         private void txtQRCode_TextChanged(object sender, EventArgs e)
