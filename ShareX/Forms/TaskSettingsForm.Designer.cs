@@ -198,6 +198,7 @@
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.tpFileNaming = new System.Windows.Forms.TabPage();
+            this.lblAutoIncrementNumber = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1623,6 +1624,7 @@
             // 
             // tpFileNaming
             // 
+            this.tpFileNaming.Controls.Add(this.lblAutoIncrementNumber);
             this.tpFileNaming.Controls.Add(this.cbRegionCaptureUseWindowPattern);
             this.tpFileNaming.Controls.Add(this.cbNameFormatCustomTimeZone);
             this.tpFileNaming.Controls.Add(this.lblNameFormatPatternPreview);
@@ -1637,6 +1639,11 @@
             resources.ApplyResources(this.tpFileNaming, "tpFileNaming");
             this.tpFileNaming.Name = "tpFileNaming";
             this.tpFileNaming.UseVisualStyleBackColor = true;
+            // 
+            // lblAutoIncrementNumber
+            // 
+            resources.ApplyResources(this.lblAutoIncrementNumber, "lblAutoIncrementNumber");
+            this.lblAutoIncrementNumber.Name = "lblAutoIncrementNumber";
             // 
             // TaskSettingsForm
             // 
@@ -1885,5 +1892,6 @@
         private System.Windows.Forms.PropertyGrid pgScrollingCapture;
         private System.Windows.Forms.CheckBox cbRegionCaptureUseWindowPattern;
         private System.Windows.Forms.TabPage tpFileNaming;
+        private System.Windows.Forms.Label lblAutoIncrementNumber;
     }
 }
