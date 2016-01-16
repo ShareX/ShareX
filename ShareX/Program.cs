@@ -385,6 +385,22 @@ namespace ShareX
         {
             Settings = ApplicationConfig.Load(ApplicationConfigFilePath);
             DefaultTaskSettings = Settings.DefaultTaskSettings;
+
+            SettingsBackwardCompatibility();
+        }
+
+        // TODO: Remove this method next version
+        private static void SettingsBackwardCompatibility()
+        {
+            if (Settings.IsUpgrade)
+            {
+                Settings.UseDefaultClipboardCopyImage = true;
+
+                if (DefaultTaskSettings.UploadSettings.NameFormatPatternActiveWindow.Equals("%t_%y-%mo-%d_%h-%mi-%s", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    DefaultTaskSettings.UploadSettings.NameFormatPatternActiveWindow = "%pn_%y-%mo-%d_%h-%mi-%s";
+                }
+            }
         }
 
         public static void LoadUploadersConfig()
