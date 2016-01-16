@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.Win32;
+using ShareX.HelpersLib;
 using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -635,8 +636,8 @@ namespace ShareX.HelpersLib
 
         public static string GetVariableFolderPath(string folderPath)
         {
-            folderPath = folderPath.Replace(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "%UserProfile%");
-            folderPath = folderPath.Replace(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "%MyPictures%");
+            folderPath = folderPath.Replace(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "%MyPictures%", StringComparison.InvariantCultureIgnoreCase);
+            folderPath = folderPath.Replace(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "%UserProfile%", StringComparison.InvariantCultureIgnoreCase);
 
             return folderPath;
         }
@@ -644,7 +645,6 @@ namespace ShareX.HelpersLib
         public static string ExpandFolderVariables(string folderPath)
         {
             folderPath = folderPath.Replace("%MyPictures%", Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
-            folderPath = folderPath.Replace("%UserProfile%", Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
 
             return Environment.ExpandEnvironmentVariables(folderPath);
         }

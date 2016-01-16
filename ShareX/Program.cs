@@ -122,7 +122,7 @@ namespace ShareX
             {
                 if (!string.IsNullOrEmpty(CustomPersonalPath))
                 {
-                    return CustomPersonalPath;
+                    return Helpers.ExpandFolderVariables(CustomPersonalPath);
                 }
 
                 return DefaultPersonalFolder;
@@ -152,7 +152,7 @@ namespace ShareX
 
                     if (Settings != null && !string.IsNullOrEmpty(Settings.CustomUploadersConfigPath))
                     {
-                        uploadersConfigFolder = Settings.CustomUploadersConfigPath;
+                        uploadersConfigFolder = Helpers.ExpandFolderVariables(Settings.CustomUploadersConfigPath);
                     }
                     else
                     {
@@ -176,7 +176,7 @@ namespace ShareX
 
                     if (Settings != null && !string.IsNullOrEmpty(Settings.CustomHotkeysConfigPath))
                     {
-                        hotkeysConfigFolder = Settings.CustomHotkeysConfigPath;
+                        hotkeysConfigFolder = Helpers.ExpandFolderVariables(Settings.CustomHotkeysConfigPath);
                     }
                     else
                     {
