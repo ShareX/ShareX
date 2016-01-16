@@ -167,8 +167,7 @@
             this.btnWatchFolderAdd = new System.Windows.Forms.Button();
             this.tpUpload = new System.Windows.Forms.TabPage();
             this.tcUpload = new System.Windows.Forms.TabControl();
-            this.tpUploadNamePattern = new System.Windows.Forms.TabPage();
-            this.pUpload = new System.Windows.Forms.Panel();
+            this.tpUploadMain = new System.Windows.Forms.TabPage();
             this.cbRegionCaptureUseWindowPattern = new System.Windows.Forms.CheckBox();
             this.cbNameFormatCustomTimeZone = new System.Windows.Forms.CheckBox();
             this.cbNameFormatTimeZone = new System.Windows.Forms.ComboBox();
@@ -198,6 +197,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.tpFileNaming = new System.Windows.Forms.TabPage();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -236,8 +236,7 @@
             this.tpWatchFolders.SuspendLayout();
             this.tpUpload.SuspendLayout();
             this.tcUpload.SuspendLayout();
-            this.tpUploadNamePattern.SuspendLayout();
-            this.pUpload.SuspendLayout();
+            this.tpUploadMain.SuspendLayout();
             this.tpUploadClipboard.SuspendLayout();
             this.tpTools.SuspendLayout();
             this.tcTools.SuspendLayout();
@@ -245,6 +244,7 @@
             this.tpIndexer.SuspendLayout();
             this.tpVideoThumbnailer.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
+            this.tpFileNaming.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -300,9 +300,9 @@
             this.tcTaskSettings.Controls.Add(this.tpGeneral);
             this.tcTaskSettings.Controls.Add(this.tpImage);
             this.tcTaskSettings.Controls.Add(this.tpCapture);
+            this.tcTaskSettings.Controls.Add(this.tpUpload);
             this.tcTaskSettings.Controls.Add(this.tpActions);
             this.tcTaskSettings.Controls.Add(this.tpWatchFolders);
-            this.tcTaskSettings.Controls.Add(this.tpUpload);
             this.tcTaskSettings.Controls.Add(this.tpTools);
             this.tcTaskSettings.Controls.Add(this.tpAdvanced);
             resources.ApplyResources(this.tcTaskSettings, "tcTaskSettings");
@@ -1395,35 +1395,19 @@
             // 
             // tcUpload
             // 
-            this.tcUpload.Controls.Add(this.tpUploadNamePattern);
+            this.tcUpload.Controls.Add(this.tpUploadMain);
+            this.tcUpload.Controls.Add(this.tpFileNaming);
             this.tcUpload.Controls.Add(this.tpUploadClipboard);
             resources.ApplyResources(this.tcUpload, "tcUpload");
             this.tcUpload.Name = "tcUpload";
             this.tcUpload.SelectedIndex = 0;
             // 
-            // tpUploadNamePattern
+            // tpUploadMain
             // 
-            this.tpUploadNamePattern.Controls.Add(this.pUpload);
-            this.tpUploadNamePattern.Controls.Add(this.chkUseDefaultUploadSettings);
-            resources.ApplyResources(this.tpUploadNamePattern, "tpUploadNamePattern");
-            this.tpUploadNamePattern.Name = "tpUploadNamePattern";
-            this.tpUploadNamePattern.UseVisualStyleBackColor = true;
-            // 
-            // pUpload
-            // 
-            this.pUpload.Controls.Add(this.cbRegionCaptureUseWindowPattern);
-            this.pUpload.Controls.Add(this.cbNameFormatCustomTimeZone);
-            this.pUpload.Controls.Add(this.cbNameFormatTimeZone);
-            this.pUpload.Controls.Add(this.lblNameFormatPattern);
-            this.pUpload.Controls.Add(this.cbFileUploadUseNamePattern);
-            this.pUpload.Controls.Add(this.lblNameFormatPatternPreviewActiveWindow);
-            this.pUpload.Controls.Add(this.lblNameFormatPatternPreview);
-            this.pUpload.Controls.Add(this.txtNameFormatPatternActiveWindow);
-            this.pUpload.Controls.Add(this.txtNameFormatPattern);
-            this.pUpload.Controls.Add(this.btnResetAutoIncrementNumber);
-            this.pUpload.Controls.Add(this.lblNameFormatPatternActiveWindow);
-            resources.ApplyResources(this.pUpload, "pUpload");
-            this.pUpload.Name = "pUpload";
+            this.tpUploadMain.Controls.Add(this.chkUseDefaultUploadSettings);
+            resources.ApplyResources(this.tpUploadMain, "tpUploadMain");
+            this.tpUploadMain.Name = "tpUploadMain";
+            this.tpUploadMain.UseVisualStyleBackColor = true;
             // 
             // cbRegionCaptureUseWindowPattern
             // 
@@ -1637,6 +1621,23 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // tpFileNaming
+            // 
+            this.tpFileNaming.Controls.Add(this.cbRegionCaptureUseWindowPattern);
+            this.tpFileNaming.Controls.Add(this.cbNameFormatCustomTimeZone);
+            this.tpFileNaming.Controls.Add(this.lblNameFormatPatternPreview);
+            this.tpFileNaming.Controls.Add(this.lblNameFormatPatternActiveWindow);
+            this.tpFileNaming.Controls.Add(this.lblNameFormatPatternPreviewActiveWindow);
+            this.tpFileNaming.Controls.Add(this.cbNameFormatTimeZone);
+            this.tpFileNaming.Controls.Add(this.txtNameFormatPatternActiveWindow);
+            this.tpFileNaming.Controls.Add(this.btnResetAutoIncrementNumber);
+            this.tpFileNaming.Controls.Add(this.cbFileUploadUseNamePattern);
+            this.tpFileNaming.Controls.Add(this.lblNameFormatPattern);
+            this.tpFileNaming.Controls.Add(this.txtNameFormatPattern);
+            resources.ApplyResources(this.tpFileNaming, "tpFileNaming");
+            this.tpFileNaming.Name = "tpFileNaming";
+            this.tpFileNaming.UseVisualStyleBackColor = true;
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1696,10 +1697,8 @@
             this.tpWatchFolders.PerformLayout();
             this.tpUpload.ResumeLayout(false);
             this.tcUpload.ResumeLayout(false);
-            this.tpUploadNamePattern.ResumeLayout(false);
-            this.tpUploadNamePattern.PerformLayout();
-            this.pUpload.ResumeLayout(false);
-            this.pUpload.PerformLayout();
+            this.tpUploadMain.ResumeLayout(false);
+            this.tpUploadMain.PerformLayout();
             this.tpUploadClipboard.ResumeLayout(false);
             this.tpUploadClipboard.PerformLayout();
             this.tpTools.ResumeLayout(false);
@@ -1710,6 +1709,8 @@
             this.tpVideoThumbnailer.ResumeLayout(false);
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
+            this.tpFileNaming.ResumeLayout(false);
+            this.tpFileNaming.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1770,7 +1771,7 @@
         private System.Windows.Forms.ColumnHeader chActionsArgs;
         private System.Windows.Forms.TabPage tpUpload;
         private System.Windows.Forms.TabControl tcUpload;
-        private System.Windows.Forms.TabPage tpUploadNamePattern;
+        private System.Windows.Forms.TabPage tpUploadMain;
         private System.Windows.Forms.CheckBox cbFileUploadUseNamePattern;
         private System.Windows.Forms.Label lblNameFormatPattern;
         private System.Windows.Forms.TextBox txtNameFormatPatternActiveWindow;
@@ -1854,7 +1855,6 @@
         private HelpersLib.TabToTreeView tttvMain;
         private System.Windows.Forms.Panel pImage;
         private System.Windows.Forms.Panel pCapture;
-        private System.Windows.Forms.Panel pUpload;
         private System.Windows.Forms.ComboBox cbOverrideCustomUploader;
         private System.Windows.Forms.CheckBox chkOverrideCustomUploader;
         private System.Windows.Forms.Button btnScreenRecorderFFmpegOptions;
@@ -1884,5 +1884,6 @@
         private System.Windows.Forms.TabPage tpScrollingCapture;
         private System.Windows.Forms.PropertyGrid pgScrollingCapture;
         private System.Windows.Forms.CheckBox cbRegionCaptureUseWindowPattern;
+        private System.Windows.Forms.TabPage tpFileNaming;
     }
 }
