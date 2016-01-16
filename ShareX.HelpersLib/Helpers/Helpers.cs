@@ -625,12 +625,28 @@ namespace ShareX.HelpersLib
 
                 if (fsd.ShowDialog())
                 {
-                    tb.Text = fsd.FileName;
+                    tb.Text = GetVariableFolderPath(fsd.FileName);
                     return true;
                 }
             }
 
             return false;
+        }
+
+        public static string GetVariableFolderPath(string folderPath)
+        {
+            folderPath = folderPath.Replace(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "%UserProfile%");
+            folderPath = folderPath.Replace(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "%MyPictures%");
+
+            return folderPath;
+        }
+
+        public static string ExpandFolderVariables(string folderPath)
+        {
+            folderPath = folderPath.Replace("%MyPictures%", Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+            folderPath = folderPath.Replace("%UserProfile%", Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
+
+            return Environment.ExpandEnvironmentVariables(folderPath);
         }
 
         public static bool WaitWhile(Func<bool> check, int interval, int timeout = -1)

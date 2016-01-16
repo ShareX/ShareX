@@ -219,7 +219,7 @@ namespace ShareX
             {
                 if (Settings != null && Settings.UseCustomScreenshotsPath && !string.IsNullOrEmpty(Settings.CustomScreenshotsPath))
                 {
-                    return Environment.ExpandEnvironmentVariables(Settings.CustomScreenshotsPath);
+                    return Helpers.ExpandFolderVariables(Settings.CustomScreenshotsPath);
                 }
 
                 return Path.Combine(PersonalFolder, "Screenshots");
