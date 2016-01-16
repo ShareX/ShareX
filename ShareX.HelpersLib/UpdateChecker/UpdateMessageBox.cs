@@ -58,16 +58,16 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void Start(UpdateChecker updateChecker, bool activateWindow = true)
+        public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true)
         {
+            DialogResult result = DialogResult.None;
+
             if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
             {
                 IsOpen = true;
 
                 try
                 {
-                    DialogResult result;
-
                     using (UpdateMessageBox messageBox = new UpdateMessageBox(activateWindow, updateChecker.IsPortable))
                     {
                         result = messageBox.ShowDialog();
@@ -83,6 +83,8 @@ namespace ShareX.HelpersLib
                     IsOpen = false;
                 }
             }
+
+            return result;
         }
 
         protected override bool ShowWithoutActivation => !ActivateWindow;
@@ -92,6 +94,14 @@ namespace ShareX.HelpersLib
             if (ActivateWindow)
             {
                 this.ShowActivate();
+            }
+        }
+
+        private void UpdateMessageBox_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult = DialogResult.No;
             }
         }
 

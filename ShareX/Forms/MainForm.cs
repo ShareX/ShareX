@@ -695,7 +695,7 @@ namespace ShareX
                 {
                     if (updateTimer == null)
                     {
-                        updateTimer = new System.Threading.Timer(state => CheckUpdate(), null, 0, 1000 * 60 * 60);
+                        updateTimer = new System.Threading.Timer(state => CheckUpdate(), null, TimeSpan.Zero, TimeSpan.FromHours(1));
                     }
                 }
                 else if (updateTimer != null)
@@ -712,7 +712,13 @@ namespace ShareX
             if (!UpdateMessageBox.DontShow && !UpdateMessageBox.IsOpen)
             {
                 UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
-                UpdateMessageBox.Start(updateChecker, firstUpdateCheck);
+
+                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) == DialogResult.No)
+                {
+                    TimeSpan interval = TimeSpan.FromHours(24);
+                    updateTimer.Change(interval, interval);
+                }
+
                 firstUpdateCheck = false;
             }
         }
