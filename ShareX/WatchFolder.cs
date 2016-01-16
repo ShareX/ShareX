@@ -53,7 +53,7 @@ namespace ShareX
             {
                 context = SynchronizationContext.Current ?? new SynchronizationContext();
 
-                fileWatcher = new FileSystemWatcher(Settings.FolderPath);
+                fileWatcher = new FileSystemWatcher(Helpers.ExpandFolderVariables(Settings.FolderPath));
                 if (!string.IsNullOrEmpty(Settings.Filter)) fileWatcher.Filter = Settings.Filter;
                 fileWatcher.IncludeSubdirectories = Settings.IncludeSubdirectories;
                 fileWatcher.Created += fileWatcher_Created;
