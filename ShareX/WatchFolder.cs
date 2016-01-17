@@ -49,11 +49,12 @@ namespace ShareX
         {
             Dispose();
 
-            if (!string.IsNullOrEmpty(Settings.FolderPath) && Directory.Exists(Settings.FolderPath))
+            string folderPath = Helpers.ExpandFolderVariables(Settings.FolderPath);
+            if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
             {
                 context = SynchronizationContext.Current ?? new SynchronizationContext();
 
-                fileWatcher = new FileSystemWatcher(Helpers.ExpandFolderVariables(Settings.FolderPath));
+                fileWatcher = new FileSystemWatcher(folderPath);
                 if (!string.IsNullOrEmpty(Settings.Filter)) fileWatcher.Filter = Settings.Filter;
                 fileWatcher.IncludeSubdirectories = Settings.IncludeSubdirectories;
                 fileWatcher.Created += fileWatcher_Created;
