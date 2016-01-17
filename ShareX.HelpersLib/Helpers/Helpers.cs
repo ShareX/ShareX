@@ -636,9 +636,16 @@ namespace ShareX.HelpersLib
 
         public static string GetVariableFolderPath(string folderPath)
         {
-            if (Directory.Exists(folderPath))
+            if (!string.IsNullOrEmpty(folderPath))
             {
-                Helpers.GetEnums<Environment.SpecialFolder>().ForEach(x => folderPath = folderPath.Replace(Environment.GetFolderPath(x), string.Format("%{0}%", x), StringComparison.InvariantCultureIgnoreCase));
+                try
+                {
+                    GetEnums<Environment.SpecialFolder>().ForEach(x => folderPath = folderPath.Replace(Environment.GetFolderPath(x), $"%{x}%", StringComparison.InvariantCultureIgnoreCase));
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
             }
 
             return folderPath;
@@ -646,12 +653,20 @@ namespace ShareX.HelpersLib
 
         public static string ExpandFolderVariables(string folderPath)
         {
-            if (Directory.Exists(folderPath))
+            if (!string.IsNullOrEmpty(folderPath))
             {
-                Helpers.GetEnums<Environment.SpecialFolder>().ForEach(x => folderPath = folderPath.Replace(string.Format("%{0}%", x), Environment.GetFolderPath(x), StringComparison.InvariantCultureIgnoreCase));
+                try
+                {
+                    GetEnums<Environment.SpecialFolder>().ForEach(x => folderPath = folderPath.Replace($"%{x}%", Environment.GetFolderPath(x), StringComparison.InvariantCultureIgnoreCase));
+                    folderPath = Environment.ExpandEnvironmentVariables(folderPath);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
             }
 
-            return Environment.ExpandEnvironmentVariables(folderPath);
+            return folderPath;
         }
 
         public static bool WaitWhile(Func<bool> check, int interval, int timeout = -1)
