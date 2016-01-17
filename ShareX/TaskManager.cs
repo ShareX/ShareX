@@ -451,12 +451,12 @@ namespace ShareX
                         DebugHelper.WriteException(e);
                         progress = -1;
                         if (lastIconStatus == progress) return;
-                        icon = ShareXResources.Icon;
+                        icon = TaskHelpers.GetTrayIcon();
                     }
                 }
                 else
                 {
-                    icon = ShareXResources.Icon;
+                    icon = TaskHelpers.GetTrayIcon();
                 }
 
                 using (Icon oldIcon = Program.MainForm.niTray.Icon)

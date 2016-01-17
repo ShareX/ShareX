@@ -332,6 +332,14 @@ namespace ShareX
             return null;
         }
 
+        public static Icon GetTrayIcon()
+        {
+            using (Icon icon = ShareXResources.Icon)
+            {
+                return new Icon(icon, SystemInformation.SmallIconSize);
+            }
+        }
+
         public static Icon GetProgressIcon(int percentage)
         {
             using (Bitmap bmp = new Bitmap(16, 16))
