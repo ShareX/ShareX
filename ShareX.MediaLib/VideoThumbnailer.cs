@@ -158,7 +158,7 @@ namespace ShareX.MediaLib
                     directory = Path.GetDirectoryName(MediaPath);
                     break;
                 case ThumbnailLocationType.CustomFolder:
-                    directory = Options.CustomOutputDirectory;
+                    directory = Helpers.ExpandFolderVariables(Options.CustomOutputDirectory);
                     break;
             }
 
