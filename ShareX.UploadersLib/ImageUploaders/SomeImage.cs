@@ -66,14 +66,14 @@ namespace ShareX.UploadersLib.ImageUploaders
             return result;
         }
     }
-}
 
-public class SomeImageResponse
-{
-    public string success { get; set; }
-    public string imageid { get; set; }
-    public string imagelink { get; set; }
-    public string thumblink { get; set; }
-    public string embedhtml { get; set; }
-    public string embedbb { get; set; }
+    public class SomeImageResponse
+    {
+        public string success { get; set; }
+        public string imageid { get; set; }
+        public string imagelink { get; set; }
+        public string thumblink { get; set; }
+        public string embedhtml { get; set; }
+        public string embedbb { get; set; }
+    }
 }

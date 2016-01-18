@@ -260,6 +260,8 @@ namespace ShareX.ScreenCaptureLib
         {
             currentScrollCount = 0;
 
+            CleanPictureBox();
+
             if (images != null)
             {
                 foreach (Image image in images)
