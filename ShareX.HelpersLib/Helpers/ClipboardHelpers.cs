@@ -37,6 +37,8 @@ namespace ShareX.HelpersLib
     public static class ClipboardHelpers
     {
         private const int RetryTimes = 20, RetryDelay = 100;
+        private const string FORMAT_PNG = "PNG";
+        private const string FORMAT_17 = "Format17";
 
         private static readonly object ClipboardLock = new object();
 
@@ -267,46 +269,44 @@ namespace ShareX.HelpersLib
             {
                 string[] dataFormats = dataObject.GetFormats(false);
 
-                if (dataFormats.Contains("PNG"))
+                if (dataFormats.Contains(FORMAT_PNG))
                 {
-                    using (MemoryStream ms = (MemoryStream)dataObject.GetData("PNG"))
+                    using (MemoryStream ms = dataObject.GetData(FORMAT_PNG) as MemoryStream)
                     {
-                        return (Image)Image.FromStream(ms).Clone();
-                    }
-                }
-
-                if (dataFormats.Contains(DataFormats.Dib))
-                {
-                    byte[] dib;
-
-                    using (MemoryStream ms = (MemoryStream)dataObject.GetData(DataFormats.Dib))
-                    {
-                        dib = ms.ToArray();
-                    }
-
-                    short bpp = BitConverter.ToInt16(dib, 14);
-
-                    if (bpp == 32)
-                    {
-                        GCHandle gch = GCHandle.Alloc(dib, GCHandleType.Pinned);
-
-                        try
+                        if (ms != null)
                         {
-                            int width = BitConverter.ToInt32(dib, 4);
-                            int height = BitConverter.ToInt32(dib, 8);
-                            int stride = width * 4;
-                            IntPtr ptr = new IntPtr((long)gch.AddrOfPinnedObject() + 40);
-
-                            using (Bitmap bmp = new Bitmap(width, height, stride, PixelFormat.Format32bppArgb, ptr))
+                            using (Image img = Image.FromStream(ms))
                             {
-                                Image img = (Image)bmp.Clone();
-                                img.RotateFlip(RotateFlipType.Rotate180FlipX);
-                                return img;
+                                return (Image)img.Clone();
                             }
                         }
-                        finally
+                    }
+                }
+                else
+                {
+                    foreach (string format in new[] { DataFormats.Dib, FORMAT_17 })
+                    {
+                        if (dataFormats.Contains(format))
                         {
-                            gch.Free();
+                            using (MemoryStream ms = dataObject.GetData(format) as MemoryStream)
+                            {
+                                if (ms != null)
+                                {
+                                    try
+                                    {
+                                        Image img = GetDIBImage(ms);
+
+                                        if (img != null)
+                                        {
+                                            return img;
+                                        }
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        DebugHelper.WriteException(e);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -318,6 +318,37 @@ namespace ShareX.HelpersLib
             }
 
             return null;
+        }
+
+        private static Image GetDIBImage(MemoryStream ms)
+        {
+            byte[] dib = ms.ToArray();
+
+            BITMAPINFOHEADER infoHeader = Helpers.ByteArrayToStructure<BITMAPINFOHEADER>(dib);
+
+            IntPtr gcHandle = IntPtr.Zero;
+
+            try
+            {
+                GCHandle handle = GCHandle.Alloc(dib, GCHandleType.Pinned);
+                gcHandle = GCHandle.ToIntPtr(handle);
+
+                if (infoHeader.biSizeImage == 0)
+                {
+                    infoHeader.biSizeImage = (uint)(infoHeader.biWidth * infoHeader.biHeight * (infoHeader.biBitCount >> 3));
+                }
+
+                return new Bitmap(infoHeader.biWidth, infoHeader.biHeight, -(int)(infoHeader.biSizeImage / infoHeader.biHeight),
+                    infoHeader.biBitCount == 32 ? PixelFormat.Format32bppArgb : PixelFormat.Format24bppRgb,
+                    new IntPtr((long)handle.AddrOfPinnedObject() + infoHeader.OffsetToPixels + (infoHeader.biHeight - 1) * (int)(infoHeader.biSizeImage / infoHeader.biHeight)));
+            }
+            finally
+            {
+                if (gcHandle != IntPtr.Zero)
+                {
+                    GCHandle.FromIntPtr(gcHandle).Free();
+                }
+            }
         }
     }
 }
