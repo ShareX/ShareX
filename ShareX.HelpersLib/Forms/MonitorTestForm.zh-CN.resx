@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -139,15 +140,6 @@
   </data>
   <data name="cbShapes.Items2" xml:space="preserve">
     <value>垂直线</value>
-  </data>
-  <data name="lblBlue.Text" xml:space="preserve">
-    <value>B:</value>
-  </data>
-  <data name="lblGreen.Text" xml:space="preserve">
-    <value>G:</value>
-  </data>
-  <data name="lblRed.Text" xml:space="preserve">
-    <value>R:</value>
   </data>
   <data name="lblShapeSize.Text" xml:space="preserve">
     <value>尺寸:</value>

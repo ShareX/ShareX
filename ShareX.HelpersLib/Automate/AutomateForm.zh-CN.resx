@@ -117,23 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnRun.Text" xml:space="preserve">
+    <value>开始</value>
+  </data>
+  <data name="lblFunctions.Text" xml:space="preserve">
+    <value>方法</value>
+  </data>
+  <data name="btnLoadExample.Text" xml:space="preserve">
+    <value>加载实例</value>
+  </data>
+  <data name="btnSaveScript.Text" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="lblScriptName.Text" xml:space="preserve">
+    <value>脚本名称:</value>
+  </data>
+  <data name="btnRemoveScript.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="btnAddMouseMove.Text" xml:space="preserve">
+    <value>添加鼠标指针位置</value>
+  </data>
+  <data name="lblLineDelay.Text" xml:space="preserve">
+    <value>每行延迟:</value>
+  </data>
+  <data name="lblKeys.Text" xml:space="preserve">
+    <value>按键:</value>
+  </data>
+  <data name="chScriptName.Text" xml:space="preserve">
+    <value>名称</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 错误</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>退出</value>
-  </data>
-  <data name="btnContinue.Text" xml:space="preserve">
-    <value>&amp;确定</value>
-  </data>
-  <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>打开日志文件</value>
-  </data>
-  <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>发送错误报告</value>
-  </data>
-  <data name="lblErrorMessage.Text" xml:space="preserve">
-    <value>错误
-错误2</value>
+    <value>ShareX - 自动化</value>
   </data>
 </root>
