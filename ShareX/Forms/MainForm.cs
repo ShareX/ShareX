@@ -515,7 +515,7 @@ namespace ShareX
 
         private void LoadSettings()
         {
-            niTray.Icon = TaskHelpers.GetTrayIcon();
+            niTray.Icon = ShareXResources.Icon;
             niTray.Visible = Program.Settings.ShowTray;
 
             if (Program.Settings.RecentLinksRemember)

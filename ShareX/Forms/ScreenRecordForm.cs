@@ -53,7 +53,7 @@ namespace ShareX
         public ScreenRecordForm(Rectangle regionRectangle, bool activateWindow = true, float duration = 0)
         {
             InitializeComponent();
-            niTray.Icon = TaskHelpers.GetTrayIcon();
+            niTray.Icon = ShareXResources.Icon;
 
             this.activateWindow = activateWindow;
             this.duration = duration;
