@@ -197,6 +197,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show file in explorer.
+        /// </summary>
+        internal static string AfterCaptureTasks_ShowInExplorer {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_ShowInExplorer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload image to host.
         /// </summary>
         internal static string AfterCaptureTasks_UploadImageToHost {

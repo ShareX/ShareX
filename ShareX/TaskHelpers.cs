@@ -857,5 +857,17 @@ namespace ShareX
                 Helpers.PlaySoundAsync(Resources.ErrorSound);
             }
         }
+
+        public static void ShowFileInWindowsExplorer(string filePath)
+        {
+            using (Process p = new Process())
+            {
+                if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+                {
+                    p.StartInfo = new ProcessStartInfo("explorer.exe", string.Format(@"/select, ""{0}""", filePath));
+                    p.Start();
+                }
+            }
+        }
     }
 }

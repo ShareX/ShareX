@@ -655,6 +655,11 @@ namespace ShareX
                 {
                     ClipboardHelpers.CopyText(Info.FilePath);
                 }
+
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowInExplorer))
+                {
+                    TaskHelpers.ShowFileInWindowsExplorer(Info.FilePath);
+                }
             }
         }
 

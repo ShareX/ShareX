@@ -103,7 +103,8 @@ namespace ShareX
         CopyFilePathToClipboard = 1 << 10,
         ShowBeforeUploadWindow = 1 << 11,
         UploadImageToHost = 1 << 12,
-        DeleteFile = 1 << 13
+        DeleteFile = 1 << 13,
+        ShowInExplorer = 1 << 14
     }
 
     [Flags]
