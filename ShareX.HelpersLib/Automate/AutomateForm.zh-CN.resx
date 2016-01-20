@@ -124,7 +124,7 @@
     <value>方法</value>
   </data>
   <data name="btnLoadExample.Text" xml:space="preserve">
-    <value>加载实例</value>
+    <value>加载示例</value>
   </data>
   <data name="btnSaveScript.Text" xml:space="preserve">
     <value>保存</value>

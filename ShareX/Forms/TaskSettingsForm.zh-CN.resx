@@ -358,7 +358,7 @@
     <value>截图</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
-    <value>影响</value>
+    <value>效果</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>常规</value>

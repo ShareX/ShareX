@@ -268,7 +268,7 @@
     <value>文件上传者</value>
   </data>
   <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>写意</value>
+    <value>手绘</value>
   </data>
   <data name="tsmiFTPClient.Text" xml:space="preserve">
     <value>FTP客户端...</value>

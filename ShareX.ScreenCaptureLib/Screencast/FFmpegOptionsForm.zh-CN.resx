@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - FFmpeg的选项</value>
+    <value>ShareX - FFmpeg记录选项</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>复制</value>
@@ -189,5 +189,32 @@
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>范围是0-10,其中10为最高质量. 3-6是一个很好的范围内尝试.默认值是3.</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>预置:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>可变比特率:</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>FFmpeg路径</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>使用自定义路径</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>可变比特率:</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>抖动方式:</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>调色板模式:</value>
+  </data>
+  <data name="lblHelperDevices.Text" xml:space="preserve">
+    <value>安装“屏幕捕捉器”和“虚拟音频捕捉器”视频/音频源。</value>
+  </data>
+  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
+    <value>安装捕捉器</value>
   </data>
 </root>
