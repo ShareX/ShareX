@@ -370,18 +370,18 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (!AutoCreateShareableLink)
-            {
-                CheckEarlyURLCopy(UploadPath, fileName);
-            }
+            CheckEarlyURLCopy(UploadPath, fileName);
 
             return UploadFile(stream, UploadPath, fileName, AutoCreateShareableLink, ShareURLType);
         }
 
         private void CheckEarlyURLCopy(string path, string fileName)
         {
-            string url = GetPublicURL(URLHelpers.CombineURL(path, fileName));
-            OnEarlyURLCopyRequested(url);
+            if (OAuth2Info.CheckOAuth(AuthInfo) && !AutoCreateShareableLink)
+            {
+                string url = GetPublicURL(URLHelpers.CombineURL(path, fileName));
+                OnEarlyURLCopyRequested(url);
+            }
         }
 
         public string GetPublicURL(string path)
