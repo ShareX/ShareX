@@ -658,7 +658,7 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowInExplorer))
                 {
-                    TaskHelpers.ShowFileInWindowsExplorer(Info.FilePath);
+                    Helpers.OpenFolderWithFile(Info.FilePath);
                 }
             }
         }
