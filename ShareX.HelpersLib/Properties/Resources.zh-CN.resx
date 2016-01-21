@@ -820,4 +820,7 @@
   <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
     <value>否</value>
   </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>在资源管理器中显示文件</value>
+  </data>
 </root>
