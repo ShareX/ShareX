@@ -142,7 +142,7 @@
     <value>目的地...</value>
   </data>
   <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>简介...</value>
+    <value>配置文件...</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
     <value>图像效果的配置...</value>
@@ -160,34 +160,34 @@
     <value>删除</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>在做窗口捕捉,   如果窗口相交的任务栏,   然后隐藏任务栏</value>
+    <value>捕捉窗口时，如果窗口与任务栏相交，则隐藏任务栏</value>
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>做窗口或活动窗口捕捉时,   捕捉客户区</value>
+    <value>捕捉窗口或活动窗口时,   捕捉客户区</value>
   </data>
   <data name="cbCaptureShadow.Text" xml:space="preserve">
     <value>拍摄窗口阴影（需要透明度）</value>
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
-    <value>捕捉透明窗口</value>
+    <value>捕捉具有透明度的窗口</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>如果剪贴板中包含的文件夹路径, 则自动索引文件夹并上传索引.</value>
+    <value>如果剪贴板中包含的文件夹路径, 则自动索引文件夹并上传索引。</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>如果剪贴板中包含一个URL链接, 则使用URL共享服务分享.</value>
+    <value>如果剪贴板中包含一个URL链接, 则使用URL共享服务分享。</value>
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>如果剪贴板中包含一个URL链接, 则使用URL短址来缩短.</value>
+    <value>如果剪贴板中包含一个URL链接, 则使用URL短链来缩短。</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>使用以上的文件名格式设置上传, 而不使用实际文件名上传.</value>
   </data>
   <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>保存任务信息历史</value>
+    <value>保存任务信息到历史记录</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
-    <value>只适用效果区域截图</value>
+    <value>只适用于区域截图</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>截图后声音提示</value>
@@ -196,7 +196,7 @@
     <value>上传后声音提示</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
-    <value>固定时间:</value>
+    <value>固定时长:</value>
   </data>
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>截图延迟:</value>
@@ -205,7 +205,7 @@
     <value>在屏幕截图上显示光标（鼠标指针）</value>
   </data>
   <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>创建缩略图只有当图像尺寸大于缩略图大小</value>
+    <value>只有当图像尺寸大于缩略图大小时才创建缩略图</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>使用默认的"截图后"设置</value>
@@ -217,7 +217,7 @@
     <value>使用默认的"目的地"设置</value>
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>监控文件夹, 如果发现新的文件自动上传.</value>
+    <value>监控文件夹, 如果发现新的文件自动上传。</value>
   </data>
   <data name="chActionsArgs.Text" xml:space="preserve">
     <value>参数</value>
@@ -232,7 +232,7 @@
     <value>路径</value>
   </data>
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>如果剪贴板中包含一个文件URL链接, 则自动下载并上传.</value>
+    <value>如果剪贴板中包含一个文件URL链接, 则自动下载并上传。</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>覆盖默认的自定义上传:</value>
@@ -241,7 +241,7 @@
     <value>覆盖默认的FTP帐户:</value>
   </data>
   <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>运行CLI算账:</value>
+    <value>之后运行CLI:</value>
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>开始录制后:</value>
@@ -289,7 +289,7 @@
     <value>GIF FPS:</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>您可以启用/禁用从图像效果"后捕获任务 - &gt;添加图像效果".</value>
+    <value>您可以在"截图后的动作 -&gt;添加图像效果"启用/禁用图像效果。</value>
   </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>如果文件存在:</value>
@@ -331,7 +331,7 @@
     <value>秒</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
-    <value>身高:</value>
+    <value>高:</value>
   </data>
   <data name="lblThumbnailName.Text" xml:space="preserve">
     <value>缩略图的名字:</value>
@@ -340,7 +340,7 @@
     <value>预览</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>宽度:</value>
+    <value>宽:</value>
   </data>
   <data name="lblUseImageFormat2After.Text" xml:space="preserve">
     <value>超出图像大小后使用"图像格式2"设置图片:</value>
@@ -358,10 +358,10 @@
     <value>截图</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
-    <value>影响</value>
+    <value>效果</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
-    <value>一般</value>
+    <value>常规</value>
   </data>
   <data name="tpImage.Text" xml:space="preserve">
     <value>图像</value>
@@ -406,6 +406,45 @@
     <value>URL分享</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL分享服务</value>
+    <value>URL短链</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>使用自定义时区：</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>使用窗口名称模式捕捉区域（ShareX将尝试检测选择区域后面的窗口）</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>文件命名</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>宽</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>高</value>
+  </data>
+  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
+    <value>选择一个用于自定义区域的屏幕：</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>在录像中显示光标（鼠标指针）</value>
+  </data>
+  <data name="lblGIFEncoding.Text" xml:space="preserve">
+    <value>GIF编码器：</value>
+  </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>屏幕录制选项...</value>
+  </data>
+  <data name="tpScrollingCapture.Text" xml:space="preserve">
+    <value>滚动捕捉</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
+    <value>使用主窗口任务设置工具设置</value>
+  </data>
+  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
+    <value>视频缩略图</value>
   </data>
 </root>

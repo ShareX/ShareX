@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HistoryForm_HistoryForm_Current_culture___0__" xml:space="preserve">
-    <value>当前区域性（{0}）</value>
+    <value>当前区域（{0}）</value>
   </data>
   <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
     <value>历史: {0}</value>
@@ -141,22 +142,22 @@
     <value>文件名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>文件名扩展</value>
+    <value>文件扩展名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>文件路径</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>夹</value>
+    <value>文件夹</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>论坛（BB代码）的图像</value>
+    <value>论坛（BBCode）的图像</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>论坛（BB代码）链接</value>
+    <value>论坛（BBCode）链接</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>论坛（BB代码）链接的图像</value>
+    <value>论坛（BBCode）链接的图像</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML图像</value>
@@ -177,13 +178,13 @@
     <value>更多信息</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
-    <value>开放</value>
+    <value>打开</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>缩短的URL</value>
+    <value>URL短链</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>演出</value>
+    <value>显示</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>文本</value>
@@ -198,18 +199,24 @@
     <value>HTML链接（{0}）</value>
   </data>
   <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>网址（{0}）</value>
+    <value>URLs（{0}）</value>
   </data>
   <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>副本名称</value>
+    <value>复制名称</value>
   </data>
   <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
     <value>复制值</value>
   </data>
   <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>名字</value>
+    <value>名称</value>
   </data>
   <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
     <value>值</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
+    <value>读取XML文件({0})时发生错误</value>
   </data>
 </root>

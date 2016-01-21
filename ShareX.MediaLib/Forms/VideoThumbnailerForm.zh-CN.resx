@@ -117,13 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbAccountType.Items" xml:space="preserve">
-    <value>匿名</value>
+  <data name="btnStart.Text" xml:space="preserve">
+    <value>开始截图</value>
   </data>
-  <data name="cbAccountType.Items1" xml:space="preserve">
-    <value>普通用户</value>
-  </data>
-  <data name="lblAccountType.Text" xml:space="preserve">
-    <value>账号类型:</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 视频缩略图</value>
   </data>
 </root>

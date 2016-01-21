@@ -117,13 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbAccountType.Items" xml:space="preserve">
-    <value>匿名</value>
+  <data name="cbRunStartup.Text" xml:space="preserve">
+    <value>开机时自动启动</value>
   </data>
-  <data name="cbAccountType.Items1" xml:space="preserve">
-    <value>普通用户</value>
+  <data name="cbShellContextMenuButton.Text" xml:space="preserve">
+    <value>在Windows资源管理器右键菜单显示“使用ShareX上传”按钮</value>
   </data>
-  <data name="lblAccountType.Text" xml:space="preserve">
-    <value>账号类型:</value>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>在"发送到"菜单显示ShareX</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>你可以在“应用程序设置-&gt;综合”找到这些设置。</value>
+  </data>
+  <data name="cbSteamInApp.Text" xml:space="preserve">
+    <value>当ShareX打开时，在Steam内显示ShareX</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>ShareX首次配置</value>
   </data>
 </root>

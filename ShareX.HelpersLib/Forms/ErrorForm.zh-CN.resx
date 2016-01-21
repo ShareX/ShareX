@@ -121,7 +121,7 @@
     <value>ShareX - 错误</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>Exit应用</value>
+    <value>退出</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
     <value>&amp;确定</value>

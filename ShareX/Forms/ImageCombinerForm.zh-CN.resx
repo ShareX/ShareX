@@ -117,13 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbAccountType.Items" xml:space="preserve">
-    <value>匿名</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>添加</value>
   </data>
-  <data name="cbAccountType.Items1" xml:space="preserve">
-    <value>普通用户</value>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>删除</value>
   </data>
-  <data name="lblAccountType.Text" xml:space="preserve">
-    <value>账号类型:</value>
+  <data name="btnMoveUp.Text" xml:space="preserve">
+    <value>上移</value>
+  </data>
+  <data name="btnMoveDown.Text" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="chFilepath.Text" xml:space="preserve">
+    <value>图像文件路径</value>
+  </data>
+  <data name="btnCombine.Text" xml:space="preserve">
+    <value>合并图像和保存/上传依赖于截图后设置</value>
+  </data>
+  <data name="lblSpace.Text" xml:space="preserve">
+    <value>图像之间的空隙：</value>
+  </data>
+  <data name="lblOrientation.Text" xml:space="preserve">
+    <value>合并方向：</value>
+  </data>
+  <data name="lblSpacePixel.Text" xml:space="preserve">
+    <value>像素</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 图像合并</value>
   </data>
 </root>

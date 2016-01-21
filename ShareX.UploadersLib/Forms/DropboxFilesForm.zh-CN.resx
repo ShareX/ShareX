@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -120,7 +121,7 @@
     <value>文件名</value>
   </data>
   <data name="chModified.Text" xml:space="preserve">
-    <value>改性</value>
+    <value>修改</value>
   </data>
   <data name="chSize.Text" xml:space="preserve">
     <value>尺寸</value>
@@ -129,7 +130,7 @@
     <value>选择当前文件夹路径</value>
   </data>
   <data name="tsmiCopyPublicLink.Text" xml:space="preserve">
-    <value>复制链接公</value>
+    <value>复制公共链接</value>
   </data>
   <data name="tsmiCreateDirectory.Text" xml:space="preserve">
     <value>创建目录...</value>

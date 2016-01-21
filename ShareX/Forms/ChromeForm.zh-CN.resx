@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbAccountType.Items" xml:space="preserve">
-    <value>匿名</value>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>启用Chrome浏览器支持</value>
   </data>
-  <data name="cbAccountType.Items1" xml:space="preserve">
-    <value>普通用户</value>
+  <data name="btnUnregister.Text" xml:space="preserve">
+    <value>禁用Chrome浏览器支持</value>
   </data>
-  <data name="lblAccountType.Text" xml:space="preserve">
-    <value>账号类型:</value>
+  <data name="lbl1.Text" xml:space="preserve">
+    <value>1.启用Chrome浏览器的支持，否则扩展程序不能与ShareX交互。</value>
+  </data>
+  <data name="lbl2.Text" xml:space="preserve">
+    <value>2.从Chrome网络商店安装ShareX Chrome扩展程序。</value>
+  </data>
+  <data name="btnInstallExtension.Text" xml:space="preserve">
+    <value>安装ShareX Chrome浏览器扩展程序</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Chrome浏览器扩展支持</value>
+  </data>
+  <data name="lbl3.Text" xml:space="preserve">
+    <value>3.在Chrome浏览器中，在图片，视频，音频或选定的文本上点击右键，在右键菜单上你会看到“使用ShareX上传”按钮。</value>
   </data>
 </root>

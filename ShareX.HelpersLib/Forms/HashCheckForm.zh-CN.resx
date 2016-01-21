@@ -1,4 +1,4 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -137,5 +137,14 @@
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
     <value>目标:</value>
+  </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>文件哈希（Hash）检查</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>复制全部</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>文本转换</value>
   </data>
 </root>

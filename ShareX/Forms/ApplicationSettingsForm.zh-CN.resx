@@ -148,7 +148,7 @@
     <value>不显示图像的打印设置对话框</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>如果上传失败重试次数:</value>
+    <value>上传失败重试次数:</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
     <value>不显示Windows打印对话框</value>
@@ -160,28 +160,28 @@
     <value>记住主窗口的大小</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>在显示ShareX"发送到"菜单</value>
+    <value>在"发送到"菜单显示ShareX</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>显示"上传使用ShareX"按钮,   在外壳上下文菜单</value>
+    <value>在Windows资源管理器右键菜单显示"使用ShareX上传"按钮</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>显示托盘图标</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>在开始最小化到托盘</value>
+    <value>开始时最小化到托盘</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>运行ShareX Windows启动时</value>
+    <value>Windows启动时运行ShareX </value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>显示在任务栏按钮进度</value>
+    <value>在任务栏显示进度</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>显示在任务栏图标的进展</value>
+    <value>在系统托盘显示进展</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>使用自定义文件夹的截图:</value>
+    <value>使用自定义截图文件夹:</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>描述</value>
@@ -190,19 +190,19 @@
     <value>格式</value>
   </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>使用偏好重试时的二次上传者为了</value>
+    <value>重试时使用辅助上传程序优先级顺序</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>剪贴板格式</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>辅助文件上传者</value>
+    <value>辅助文件上传程序</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>辅助影像上传者</value>
+    <value>辅助图像上传程序</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>辅助文本上传者</value>
+    <value>辅助文本上传程序</value>
   </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>缓冲区大小:</value>
@@ -211,7 +211,7 @@
     <value>语言:</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>注意: 必须重新ShareX的个人文件夹更改生效.</value>
+    <value>注意: 必须重新打开ShareX才能使个人文件夹更改生效.</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX个人文件夹:</value>
@@ -247,7 +247,7 @@
     <value>高级设置</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
-    <value>一般</value>
+    <value>常规</value>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>路径</value>
@@ -266,5 +266,14 @@
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
     <value>重试</value>
+  </data>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>Chrome浏览器扩展支持</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>综合</value>
+  </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>当ShareX打开时，在Steam内显示ShareX</value>
   </data>
 </root>
