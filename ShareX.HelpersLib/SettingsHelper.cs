@@ -59,6 +59,8 @@ namespace ShareX.HelpersLib
                     {
                         string tempFilePath = filePath + ".temp";
 
+                        Helpers.CreateDirectoryIfNotExist(filePath, true);
+
                         using (FileStream fs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.Read))
                         {
                             Save(obj, fs, type);
