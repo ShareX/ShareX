@@ -356,7 +356,6 @@
     </Compile>
     <Compile Include="Printer\PrintTextHelper.cs" />
     <Compile Include="Helpers\RegistryHelpers.cs" />
-    <Compile Include="SettingsHelper.cs" />
     <Compile Include="SingleInstanceApplication\ApplicationInstanceManager.cs" />
     <Compile Include="SingleInstanceApplication\InstanceProxy.cs" />
     <Compile Include="DebugHelper.cs" />
@@ -404,6 +403,7 @@
     <Compile Include="Links.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="WindowState.cs" />
+    <Compile Include="WritablePropertiesOnlyResolver.cs" />
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
     <EmbeddedResource Include="Automate\AutomateForm.de.resx">
