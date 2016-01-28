@@ -36,7 +36,7 @@ namespace ShareX.HelpersLib
         private static readonly SerializationType SerializationType = SerializationType.Json;
 
         [Browsable(false)]
-        public string FilePath { get; private set; }
+        public string FilePath { get; set; }
 
         [Browsable(false)]
         public string ApplicationVersion { get; set; }

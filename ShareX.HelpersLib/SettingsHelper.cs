@@ -57,9 +57,9 @@ namespace ShareX.HelpersLib
                 {
                     lock (obj)
                     {
-                        string tempFilePath = filePath + ".temp";
+                        Helpers.CreateDirectoryIfNotExist(filePath);
 
-                        Helpers.CreateDirectoryIfNotExist(filePath, true);
+                        string tempFilePath = filePath + ".temp";
 
                         using (FileStream fs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.Read))
                         {
@@ -118,7 +118,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static T Load<T>(string path, SerializationType type, bool checkBackup = true) where T : new()
+        public static T Load<T>(string path, SerializationType type, bool checkBackup = true) where T : SettingsBase<T>, new()
         {
             string typeName = typeof(T).Name;
 
@@ -157,7 +157,7 @@ namespace ShareX.HelpersLib
 
             DebugHelper.WriteLine("{0} not found. Loading new instance.", typeName);
 
-            return new T();
+            return new T() { FilePath = path };
         }
 
         public static T Load<T>(Stream stream, SerializationType type)
