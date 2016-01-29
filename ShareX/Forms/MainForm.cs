@@ -853,6 +853,19 @@ namespace ShareX
             }
 
             tsMain.Visible = lblSplitter.Visible = Program.Settings.ShowMenu;
+
+            // TODO: Translate
+            if (Program.Settings.ShowColumns)
+            {
+                tsmiHideColumns.Text = "Hide columns";
+            }
+            else
+            {
+                tsmiHideColumns.Text = "Show columns";
+            }
+
+            lvUploads.HeaderStyle = Program.Settings.ShowColumns ? ColumnHeaderStyle.Nonclickable : ColumnHeaderStyle.None;
+
             Refresh();
         }
 
@@ -1549,6 +1562,12 @@ namespace ShareX
         private void tsmiHideMenu_Click(object sender, EventArgs e)
         {
             Program.Settings.ShowMenu = !Program.Settings.ShowMenu;
+            UpdateMenu();
+        }
+
+        private void tsmiHideColumns_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ShowColumns = !Program.Settings.ShowColumns;
             UpdateMenu();
         }
 

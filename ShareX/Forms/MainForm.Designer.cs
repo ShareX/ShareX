@@ -156,6 +156,7 @@
             this.tsmiClearList = new System.Windows.Forms.ToolStripMenuItem();
             this.tssUploadInfo1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiHideMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiHideColumns = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreview = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreviewShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreviewHide = new System.Windows.Forms.ToolStripMenuItem();
@@ -884,6 +885,7 @@
             this.tsmiClearList,
             this.tssUploadInfo1,
             this.tsmiHideMenu,
+            this.tsmiHideColumns,
             this.tsmiImagePreview});
             this.cmsTaskInfo.Name = "cmsHistory";
             resources.ApplyResources(this.cmsTaskInfo, "cmsTaskInfo");
@@ -1199,6 +1201,13 @@
             this.tsmiHideMenu.Name = "tsmiHideMenu";
             resources.ApplyResources(this.tsmiHideMenu, "tsmiHideMenu");
             this.tsmiHideMenu.Click += new System.EventHandler(this.tsmiHideMenu_Click);
+            // 
+            // tsmiHideColumns
+            // 
+            this.tsmiHideColumns.Image = global::ShareX.Properties.Resources.layout_select;
+            this.tsmiHideColumns.Name = "tsmiHideColumns";
+            resources.ApplyResources(this.tsmiHideColumns, "tsmiHideColumns");
+            this.tsmiHideColumns.Click += new System.EventHandler(this.tsmiHideColumns_Click);
             // 
             // tsmiImagePreview
             // 
@@ -2037,5 +2046,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestFileUpload;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestURLShortener;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestURLSharing;
+        private System.Windows.Forms.ToolStripMenuItem tsmiHideColumns;
     }
 }

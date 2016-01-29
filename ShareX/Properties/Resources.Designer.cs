@@ -251,7 +251,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ShareX need to be restarted for language changes to apply.
+        ///   Looks up a localized string similar to ShareX needs to be restarted for the language changes to apply.
         ///Would you like to restart ShareX?.
         /// </summary>
         public static string ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart {
@@ -636,7 +636,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap document_break {
             get {
-                object obj = ResourceManager.GetObject("document-break", resourceCulture);
+                object obj = ResourceManager.GetObject("document_break", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -964,7 +964,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to These applications could be conflicting:.
+        ///   Looks up a localized string similar to There may be an application conflict:.
         /// </summary>
         public static string HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_ {
             get {
@@ -1209,6 +1209,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap layers_ungroup {
             get {
                 object obj = ResourceManager.GetObject("layers_ungroup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap layout_select {
+            get {
+                object obj = ResourceManager.GetObject("layout_select", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1622,7 +1632,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FFmpeg video and audio source both can&apos;t be &quot;None&quot;..
+        ///   Looks up a localized string similar to FFmpeg video and audio source can&apos;t both be &quot;None&quot;..
         /// </summary>
         public static string ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__ {
             get {
@@ -1687,7 +1697,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to find valid FTP account..
+        ///   Looks up a localized string similar to Unable to find a valid FTP account..
         /// </summary>
         public static string TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_ {
             get {
@@ -1705,7 +1715,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your clipboard contains image, would you like to open it in image editor?
+        ///   Looks up a localized string similar to Your clipboard contains an image, would you like to open it in the image editor?
         ///
         ///Press yes to open image from clipboard. Alternatively, press no to open image file dialog box..
         /// </summary>
@@ -1752,7 +1762,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to find valid Twitter account..
+        ///   Looks up a localized string similar to Unable to find a valid Twitter account..
         /// </summary>
         public static string TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_ {
             get {
@@ -2040,7 +2050,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to URL to download from and upload.
+        ///   Looks up a localized string similar to URL to download and upload.
         /// </summary>
         public static string UploadManager_UploadURL_URL_to_download_from_and_upload {
             get {
