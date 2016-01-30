@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -30,11 +32,8 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    [Serializable]
     public abstract class SettingsBase<T> where T : SettingsBase<T>, new()
     {
-        private static readonly SerializationType SerializationType = SerializationType.Json;
-
         [Browsable(false)]
         public string FilePath { get; private set; }
 
@@ -59,29 +58,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static T Load(string filePath)
-        {
-            T setting = SettingsHelper.Load<T>(filePath, SerializationType);
-            if (setting != null) setting.FilePath = filePath;
-            return setting;
-        }
-
-        public static T Load(Stream stream)
-        {
-            T setting = SettingsHelper.Load<T>(stream, SerializationType);
-            return setting;
-        }
-
         public bool Save(string filePath)
         {
             FilePath = filePath;
             ApplicationVersion = Application.ProductVersion;
-            return SettingsHelper.Save(this, FilePath, SerializationType);
+
+            return SaveInternal(this, FilePath, true);
         }
 
-        public void Save()
+        public bool Save()
         {
-            Save(FilePath);
+            return Save(FilePath);
         }
 
         public void SaveAsync(string filePath)
@@ -94,9 +81,129 @@ namespace ShareX.HelpersLib
             SaveAsync(FilePath);
         }
 
-        public void Save(Stream stream)
+        public static T Load(string filePath)
         {
-            SettingsHelper.Save(this, stream, SerializationType);
+            T setting = LoadInternal(filePath, true);
+
+            if (setting != null)
+            {
+                setting.FilePath = filePath;
+            }
+
+            return setting;
+        }
+
+        private static bool SaveInternal(object obj, string filePath, bool createBackup)
+        {
+            string typeName = obj.GetType().Name;
+            DebugHelper.WriteLine("{0} save started: {1}", typeName, filePath);
+
+            bool isSuccess = false;
+
+            try
+            {
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    lock (obj)
+                    {
+                        Helpers.CreateDirectoryIfNotExist(filePath);
+
+                        string tempFilePath = filePath + ".temp";
+
+                        using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+                        using (StreamWriter streamWriter = new StreamWriter(fileStream))
+                        using (JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter))
+                        {
+                            jsonWriter.Formatting = Formatting.Indented;
+                            JsonSerializer serializer = new JsonSerializer();
+                            serializer.ContractResolver = new WritablePropertiesOnlyResolver();
+                            serializer.Converters.Add(new StringEnumConverter());
+                            serializer.Serialize(jsonWriter, obj);
+                            jsonWriter.Flush();
+                        }
+
+                        if (File.Exists(filePath))
+                        {
+                            if (createBackup)
+                            {
+                                File.Copy(filePath, filePath + ".bak", true);
+                            }
+
+                            File.Delete(filePath);
+                        }
+
+                        File.Move(tempFilePath, filePath);
+
+                        isSuccess = true;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+            finally
+            {
+                DebugHelper.WriteLine("{0} save {1}: {2}", typeName, isSuccess ? "successful" : "failed", filePath);
+            }
+
+            return isSuccess;
+        }
+
+        private static T LoadInternal(string filePath, bool checkBackup)
+        {
+            string typeName = typeof(T).Name;
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                DebugHelper.WriteLine("{0} load started: {1}", typeName, filePath);
+
+                try
+                {
+                    if (File.Exists(filePath))
+                    {
+                        using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                        {
+                            if (fileStream.Length > 0)
+                            {
+                                T settings;
+
+                                using (StreamReader streamReader = new StreamReader(fileStream))
+                                using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
+                                {
+                                    JsonSerializer serializer = new JsonSerializer();
+                                    serializer.Converters.Add(new StringEnumConverter());
+                                    serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
+                                    serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
+                                    settings = serializer.Deserialize<T>(jsonReader);
+                                }
+
+                                if (settings == null)
+                                {
+                                    throw new Exception(typeName + " object is null.");
+                                }
+
+                                DebugHelper.WriteLine("{0} load finished: {1}", typeName, filePath);
+
+                                return settings;
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e, typeName + " load failed: " + filePath);
+                }
+
+                if (checkBackup)
+                {
+                    return LoadInternal(filePath + ".bak", false);
+                }
+            }
+
+            DebugHelper.WriteLine("{0} not found. Loading new instance.", typeName);
+
+            return new T();
         }
     }
 }

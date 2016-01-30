@@ -456,4 +456,7 @@
   <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
     <value>Использовать шаблон имени окна и для захвата области (ShareX угадывает окно за выделенем)</value>
   </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>Имена файлов</value>
+  </data>
 </root>

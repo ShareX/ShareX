@@ -52,6 +52,7 @@ namespace ShareX
         #region Main Form
 
         public bool ShowMenu = true;
+        public bool ShowColumns = true;
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
         public int PreviewSplitterDistance = 335;
 

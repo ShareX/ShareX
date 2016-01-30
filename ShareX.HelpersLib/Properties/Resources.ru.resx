@@ -835,4 +835,7 @@
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>Показать окно «Перед загрузкой»</value>
   </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>Показать файл в проводнике</value>
+  </data>
 </root>

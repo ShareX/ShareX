@@ -43,7 +43,7 @@ namespace ShareX.HelpersLib
             if (!ActivateWindow)
             {
                 WindowState = FormWindowState.Minimized;
-                NativeMethods.FlashWindowEx(this);
+                NativeMethods.FlashWindowEx(this, 10);
             }
 
             Text = Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
