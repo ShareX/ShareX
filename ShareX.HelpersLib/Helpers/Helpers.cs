@@ -219,7 +219,7 @@ namespace ShareX.HelpersLib
             else
             {
                 invalidFileNameChars.ForEach(x => fileName = fileName.Replace(x.ToString(), separator));
-                return fileName.Trim();
+                return fileName.Trim().Replace(separator + separator, separator);
             }
         }
 

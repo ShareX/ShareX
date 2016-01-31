@@ -81,7 +81,7 @@ namespace ShareX.IndexerLib
                 {
                     DirectoryInfo currentDirectoryInfo = new DirectoryInfo(folderPath);
 
-                    foreach (DirectoryInfo directoryInfo in currentDirectoryInfo.GetDirectories())
+                    foreach (DirectoryInfo directoryInfo in currentDirectoryInfo.EnumerateDirectories())
                     {
                         if (config.SkipHiddenFolders && directoryInfo.Attributes.HasFlag(FileAttributes.Hidden))
                         {
@@ -93,7 +93,7 @@ namespace ShareX.IndexerLib
                         subFolderInfo.Parent = folderInfo;
                     }
 
-                    foreach (FileInfo fileInfo in currentDirectoryInfo.GetFiles())
+                    foreach (FileInfo fileInfo in currentDirectoryInfo.EnumerateFiles())
                     {
                         if (config.SkipHiddenFiles && fileInfo.Attributes.HasFlag(FileAttributes.Hidden))
                         {
