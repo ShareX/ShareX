@@ -145,6 +145,28 @@
             this.pgScrollingCapture = new System.Windows.Forms.PropertyGrid();
             this.tpRectangleAnnotate = new System.Windows.Forms.TabPage();
             this.pgRectangleAnnotate = new System.Windows.Forms.PropertyGrid();
+            this.tpUpload = new System.Windows.Forms.TabPage();
+            this.tcUpload = new System.Windows.Forms.TabControl();
+            this.tpUploadMain = new System.Windows.Forms.TabPage();
+            this.chkUseDefaultUploadSettings = new System.Windows.Forms.CheckBox();
+            this.tpFileNaming = new System.Windows.Forms.TabPage();
+            this.lblAutoIncrementNumber = new System.Windows.Forms.Label();
+            this.cbRegionCaptureUseWindowPattern = new System.Windows.Forms.CheckBox();
+            this.cbNameFormatCustomTimeZone = new System.Windows.Forms.CheckBox();
+            this.lblNameFormatPatternPreview = new System.Windows.Forms.Label();
+            this.lblNameFormatPatternActiveWindow = new System.Windows.Forms.Label();
+            this.lblNameFormatPatternPreviewActiveWindow = new System.Windows.Forms.Label();
+            this.cbNameFormatTimeZone = new System.Windows.Forms.ComboBox();
+            this.txtNameFormatPatternActiveWindow = new System.Windows.Forms.TextBox();
+            this.btnResetAutoIncrementNumber = new System.Windows.Forms.Button();
+            this.cbFileUploadUseNamePattern = new System.Windows.Forms.CheckBox();
+            this.lblNameFormatPattern = new System.Windows.Forms.Label();
+            this.txtNameFormatPattern = new System.Windows.Forms.TextBox();
+            this.tpUploadClipboard = new System.Windows.Forms.TabPage();
+            this.cbClipboardUploadShareURL = new System.Windows.Forms.CheckBox();
+            this.chkClipboardUploadURLContents = new System.Windows.Forms.CheckBox();
+            this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
+            this.cbClipboardUploadShortenURL = new System.Windows.Forms.CheckBox();
             this.tpActions = new System.Windows.Forms.TabPage();
             this.pActions = new System.Windows.Forms.Panel();
             this.btnActionsDuplicate = new System.Windows.Forms.Button();
@@ -165,26 +187,6 @@
             this.chWatchFolderIncludeSubdirectories = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnWatchFolderRemove = new System.Windows.Forms.Button();
             this.btnWatchFolderAdd = new System.Windows.Forms.Button();
-            this.tpUpload = new System.Windows.Forms.TabPage();
-            this.tcUpload = new System.Windows.Forms.TabControl();
-            this.tpUploadMain = new System.Windows.Forms.TabPage();
-            this.cbRegionCaptureUseWindowPattern = new System.Windows.Forms.CheckBox();
-            this.cbNameFormatCustomTimeZone = new System.Windows.Forms.CheckBox();
-            this.cbNameFormatTimeZone = new System.Windows.Forms.ComboBox();
-            this.lblNameFormatPattern = new System.Windows.Forms.Label();
-            this.cbFileUploadUseNamePattern = new System.Windows.Forms.CheckBox();
-            this.lblNameFormatPatternPreviewActiveWindow = new System.Windows.Forms.Label();
-            this.lblNameFormatPatternPreview = new System.Windows.Forms.Label();
-            this.txtNameFormatPatternActiveWindow = new System.Windows.Forms.TextBox();
-            this.txtNameFormatPattern = new System.Windows.Forms.TextBox();
-            this.btnResetAutoIncrementNumber = new System.Windows.Forms.Button();
-            this.lblNameFormatPatternActiveWindow = new System.Windows.Forms.Label();
-            this.chkUseDefaultUploadSettings = new System.Windows.Forms.CheckBox();
-            this.tpUploadClipboard = new System.Windows.Forms.TabPage();
-            this.cbClipboardUploadShareURL = new System.Windows.Forms.CheckBox();
-            this.chkClipboardUploadURLContents = new System.Windows.Forms.CheckBox();
-            this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
-            this.cbClipboardUploadShortenURL = new System.Windows.Forms.CheckBox();
             this.tpTools = new System.Windows.Forms.TabPage();
             this.tcTools = new System.Windows.Forms.TabControl();
             this.tpToolsMain = new System.Windows.Forms.TabPage();
@@ -197,8 +199,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.tpFileNaming = new System.Windows.Forms.TabPage();
-            this.lblAutoIncrementNumber = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -232,20 +232,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).BeginInit();
             this.tpScrollingCapture.SuspendLayout();
             this.tpRectangleAnnotate.SuspendLayout();
-            this.tpActions.SuspendLayout();
-            this.pActions.SuspendLayout();
-            this.tpWatchFolders.SuspendLayout();
             this.tpUpload.SuspendLayout();
             this.tcUpload.SuspendLayout();
             this.tpUploadMain.SuspendLayout();
+            this.tpFileNaming.SuspendLayout();
             this.tpUploadClipboard.SuspendLayout();
+            this.tpActions.SuspendLayout();
+            this.pActions.SuspendLayout();
+            this.tpWatchFolders.SuspendLayout();
             this.tpTools.SuspendLayout();
             this.tcTools.SuspendLayout();
             this.tpToolsMain.SuspendLayout();
             this.tpIndexer.SuspendLayout();
             this.tpVideoThumbnailer.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
-            this.tpFileNaming.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -563,13 +563,13 @@
             // 
             resources.ApplyResources(this.nudUseImageFormat2After, "nudUseImageFormat2After");
             this.nudUseImageFormat2After.Maximum = new decimal(new int[] {
-            5000,
+            2048,
             0,
             0,
             0});
             this.nudUseImageFormat2After.Name = "nudUseImageFormat2After";
             this.nudUseImageFormat2After.Value = new decimal(new int[] {
-            1024,
+            2048,
             0,
             0,
             0});
@@ -1240,6 +1240,167 @@
             this.pgRectangleAnnotate.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgRectangleAnnotate.ToolbarVisible = false;
             // 
+            // tpUpload
+            // 
+            this.tpUpload.Controls.Add(this.tcUpload);
+            resources.ApplyResources(this.tpUpload, "tpUpload");
+            this.tpUpload.Name = "tpUpload";
+            this.tpUpload.UseVisualStyleBackColor = true;
+            // 
+            // tcUpload
+            // 
+            this.tcUpload.Controls.Add(this.tpUploadMain);
+            this.tcUpload.Controls.Add(this.tpFileNaming);
+            this.tcUpload.Controls.Add(this.tpUploadClipboard);
+            resources.ApplyResources(this.tcUpload, "tcUpload");
+            this.tcUpload.Name = "tcUpload";
+            this.tcUpload.SelectedIndex = 0;
+            // 
+            // tpUploadMain
+            // 
+            this.tpUploadMain.Controls.Add(this.chkUseDefaultUploadSettings);
+            resources.ApplyResources(this.tpUploadMain, "tpUploadMain");
+            this.tpUploadMain.Name = "tpUploadMain";
+            this.tpUploadMain.UseVisualStyleBackColor = true;
+            // 
+            // chkUseDefaultUploadSettings
+            // 
+            resources.ApplyResources(this.chkUseDefaultUploadSettings, "chkUseDefaultUploadSettings");
+            this.chkUseDefaultUploadSettings.Checked = true;
+            this.chkUseDefaultUploadSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkUseDefaultUploadSettings.Name = "chkUseDefaultUploadSettings";
+            this.chkUseDefaultUploadSettings.UseVisualStyleBackColor = true;
+            this.chkUseDefaultUploadSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultUploadSettings_CheckedChanged);
+            // 
+            // tpFileNaming
+            // 
+            this.tpFileNaming.Controls.Add(this.lblAutoIncrementNumber);
+            this.tpFileNaming.Controls.Add(this.cbRegionCaptureUseWindowPattern);
+            this.tpFileNaming.Controls.Add(this.cbNameFormatCustomTimeZone);
+            this.tpFileNaming.Controls.Add(this.lblNameFormatPatternPreview);
+            this.tpFileNaming.Controls.Add(this.lblNameFormatPatternActiveWindow);
+            this.tpFileNaming.Controls.Add(this.lblNameFormatPatternPreviewActiveWindow);
+            this.tpFileNaming.Controls.Add(this.cbNameFormatTimeZone);
+            this.tpFileNaming.Controls.Add(this.txtNameFormatPatternActiveWindow);
+            this.tpFileNaming.Controls.Add(this.btnResetAutoIncrementNumber);
+            this.tpFileNaming.Controls.Add(this.cbFileUploadUseNamePattern);
+            this.tpFileNaming.Controls.Add(this.lblNameFormatPattern);
+            this.tpFileNaming.Controls.Add(this.txtNameFormatPattern);
+            resources.ApplyResources(this.tpFileNaming, "tpFileNaming");
+            this.tpFileNaming.Name = "tpFileNaming";
+            this.tpFileNaming.UseVisualStyleBackColor = true;
+            // 
+            // lblAutoIncrementNumber
+            // 
+            resources.ApplyResources(this.lblAutoIncrementNumber, "lblAutoIncrementNumber");
+            this.lblAutoIncrementNumber.Name = "lblAutoIncrementNumber";
+            // 
+            // cbRegionCaptureUseWindowPattern
+            // 
+            resources.ApplyResources(this.cbRegionCaptureUseWindowPattern, "cbRegionCaptureUseWindowPattern");
+            this.cbRegionCaptureUseWindowPattern.Name = "cbRegionCaptureUseWindowPattern";
+            this.cbRegionCaptureUseWindowPattern.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureUseWindowPattern.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseWindowPattern_CheckedChanged);
+            // 
+            // cbNameFormatCustomTimeZone
+            // 
+            resources.ApplyResources(this.cbNameFormatCustomTimeZone, "cbNameFormatCustomTimeZone");
+            this.cbNameFormatCustomTimeZone.Name = "cbNameFormatCustomTimeZone";
+            this.cbNameFormatCustomTimeZone.UseVisualStyleBackColor = true;
+            this.cbNameFormatCustomTimeZone.CheckedChanged += new System.EventHandler(this.cbNameFormatCustomTimeZone_CheckedChanged);
+            // 
+            // lblNameFormatPatternPreview
+            // 
+            resources.ApplyResources(this.lblNameFormatPatternPreview, "lblNameFormatPatternPreview");
+            this.lblNameFormatPatternPreview.Name = "lblNameFormatPatternPreview";
+            // 
+            // lblNameFormatPatternActiveWindow
+            // 
+            resources.ApplyResources(this.lblNameFormatPatternActiveWindow, "lblNameFormatPatternActiveWindow");
+            this.lblNameFormatPatternActiveWindow.Name = "lblNameFormatPatternActiveWindow";
+            // 
+            // lblNameFormatPatternPreviewActiveWindow
+            // 
+            resources.ApplyResources(this.lblNameFormatPatternPreviewActiveWindow, "lblNameFormatPatternPreviewActiveWindow");
+            this.lblNameFormatPatternPreviewActiveWindow.Name = "lblNameFormatPatternPreviewActiveWindow";
+            // 
+            // cbNameFormatTimeZone
+            // 
+            this.cbNameFormatTimeZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNameFormatTimeZone.FormattingEnabled = true;
+            resources.ApplyResources(this.cbNameFormatTimeZone, "cbNameFormatTimeZone");
+            this.cbNameFormatTimeZone.Name = "cbNameFormatTimeZone";
+            this.cbNameFormatTimeZone.SelectedIndexChanged += new System.EventHandler(this.cbNameFormatTimeZone_SelectedIndexChanged);
+            // 
+            // txtNameFormatPatternActiveWindow
+            // 
+            resources.ApplyResources(this.txtNameFormatPatternActiveWindow, "txtNameFormatPatternActiveWindow");
+            this.txtNameFormatPatternActiveWindow.Name = "txtNameFormatPatternActiveWindow";
+            this.txtNameFormatPatternActiveWindow.TextChanged += new System.EventHandler(this.txtNameFormatPatternActiveWindow_TextChanged);
+            // 
+            // btnResetAutoIncrementNumber
+            // 
+            resources.ApplyResources(this.btnResetAutoIncrementNumber, "btnResetAutoIncrementNumber");
+            this.btnResetAutoIncrementNumber.Name = "btnResetAutoIncrementNumber";
+            this.btnResetAutoIncrementNumber.UseVisualStyleBackColor = true;
+            this.btnResetAutoIncrementNumber.Click += new System.EventHandler(this.btnResetAutoIncrementNumber_Click);
+            // 
+            // cbFileUploadUseNamePattern
+            // 
+            resources.ApplyResources(this.cbFileUploadUseNamePattern, "cbFileUploadUseNamePattern");
+            this.cbFileUploadUseNamePattern.Name = "cbFileUploadUseNamePattern";
+            this.cbFileUploadUseNamePattern.UseVisualStyleBackColor = true;
+            this.cbFileUploadUseNamePattern.CheckedChanged += new System.EventHandler(this.cbFileUploadUseNamePattern_CheckedChanged);
+            // 
+            // lblNameFormatPattern
+            // 
+            resources.ApplyResources(this.lblNameFormatPattern, "lblNameFormatPattern");
+            this.lblNameFormatPattern.Name = "lblNameFormatPattern";
+            // 
+            // txtNameFormatPattern
+            // 
+            resources.ApplyResources(this.txtNameFormatPattern, "txtNameFormatPattern");
+            this.txtNameFormatPattern.Name = "txtNameFormatPattern";
+            this.txtNameFormatPattern.TextChanged += new System.EventHandler(this.txtNameFormatPattern_TextChanged);
+            // 
+            // tpUploadClipboard
+            // 
+            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadShareURL);
+            this.tpUploadClipboard.Controls.Add(this.chkClipboardUploadURLContents);
+            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadAutoIndexFolder);
+            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadShortenURL);
+            resources.ApplyResources(this.tpUploadClipboard, "tpUploadClipboard");
+            this.tpUploadClipboard.Name = "tpUploadClipboard";
+            this.tpUploadClipboard.UseVisualStyleBackColor = true;
+            // 
+            // cbClipboardUploadShareURL
+            // 
+            resources.ApplyResources(this.cbClipboardUploadShareURL, "cbClipboardUploadShareURL");
+            this.cbClipboardUploadShareURL.Name = "cbClipboardUploadShareURL";
+            this.cbClipboardUploadShareURL.UseVisualStyleBackColor = true;
+            this.cbClipboardUploadShareURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadShareURL_CheckedChanged);
+            // 
+            // chkClipboardUploadURLContents
+            // 
+            resources.ApplyResources(this.chkClipboardUploadURLContents, "chkClipboardUploadURLContents");
+            this.chkClipboardUploadURLContents.Name = "chkClipboardUploadURLContents";
+            this.chkClipboardUploadURLContents.UseVisualStyleBackColor = true;
+            this.chkClipboardUploadURLContents.CheckedChanged += new System.EventHandler(this.chkClipboardUploadContents_CheckedChanged);
+            // 
+            // cbClipboardUploadAutoIndexFolder
+            // 
+            resources.ApplyResources(this.cbClipboardUploadAutoIndexFolder, "cbClipboardUploadAutoIndexFolder");
+            this.cbClipboardUploadAutoIndexFolder.Name = "cbClipboardUploadAutoIndexFolder";
+            this.cbClipboardUploadAutoIndexFolder.UseVisualStyleBackColor = true;
+            this.cbClipboardUploadAutoIndexFolder.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoIndexFolder_CheckedChanged);
+            // 
+            // cbClipboardUploadShortenURL
+            // 
+            resources.ApplyResources(this.cbClipboardUploadShortenURL, "cbClipboardUploadShortenURL");
+            this.cbClipboardUploadShortenURL.Name = "cbClipboardUploadShortenURL";
+            this.cbClipboardUploadShortenURL.UseVisualStyleBackColor = true;
+            this.cbClipboardUploadShortenURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoDetectURL_CheckedChanged);
+            // 
             // tpActions
             // 
             this.tpActions.Controls.Add(this.pActions);
@@ -1387,144 +1548,6 @@
             this.btnWatchFolderAdd.UseVisualStyleBackColor = true;
             this.btnWatchFolderAdd.Click += new System.EventHandler(this.btnWatchFolderAdd_Click);
             // 
-            // tpUpload
-            // 
-            this.tpUpload.Controls.Add(this.tcUpload);
-            resources.ApplyResources(this.tpUpload, "tpUpload");
-            this.tpUpload.Name = "tpUpload";
-            this.tpUpload.UseVisualStyleBackColor = true;
-            // 
-            // tcUpload
-            // 
-            this.tcUpload.Controls.Add(this.tpUploadMain);
-            this.tcUpload.Controls.Add(this.tpFileNaming);
-            this.tcUpload.Controls.Add(this.tpUploadClipboard);
-            resources.ApplyResources(this.tcUpload, "tcUpload");
-            this.tcUpload.Name = "tcUpload";
-            this.tcUpload.SelectedIndex = 0;
-            // 
-            // tpUploadMain
-            // 
-            this.tpUploadMain.Controls.Add(this.chkUseDefaultUploadSettings);
-            resources.ApplyResources(this.tpUploadMain, "tpUploadMain");
-            this.tpUploadMain.Name = "tpUploadMain";
-            this.tpUploadMain.UseVisualStyleBackColor = true;
-            // 
-            // cbRegionCaptureUseWindowPattern
-            // 
-            resources.ApplyResources(this.cbRegionCaptureUseWindowPattern, "cbRegionCaptureUseWindowPattern");
-            this.cbRegionCaptureUseWindowPattern.Name = "cbRegionCaptureUseWindowPattern";
-            this.cbRegionCaptureUseWindowPattern.UseVisualStyleBackColor = true;
-            this.cbRegionCaptureUseWindowPattern.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseWindowPattern_CheckedChanged);
-            // 
-            // cbNameFormatCustomTimeZone
-            // 
-            resources.ApplyResources(this.cbNameFormatCustomTimeZone, "cbNameFormatCustomTimeZone");
-            this.cbNameFormatCustomTimeZone.Name = "cbNameFormatCustomTimeZone";
-            this.cbNameFormatCustomTimeZone.UseVisualStyleBackColor = true;
-            this.cbNameFormatCustomTimeZone.CheckedChanged += new System.EventHandler(this.cbNameFormatCustomTimeZone_CheckedChanged);
-            // 
-            // cbNameFormatTimeZone
-            // 
-            this.cbNameFormatTimeZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbNameFormatTimeZone.FormattingEnabled = true;
-            resources.ApplyResources(this.cbNameFormatTimeZone, "cbNameFormatTimeZone");
-            this.cbNameFormatTimeZone.Name = "cbNameFormatTimeZone";
-            this.cbNameFormatTimeZone.SelectedIndexChanged += new System.EventHandler(this.cbNameFormatTimeZone_SelectedIndexChanged);
-            // 
-            // lblNameFormatPattern
-            // 
-            resources.ApplyResources(this.lblNameFormatPattern, "lblNameFormatPattern");
-            this.lblNameFormatPattern.Name = "lblNameFormatPattern";
-            // 
-            // cbFileUploadUseNamePattern
-            // 
-            resources.ApplyResources(this.cbFileUploadUseNamePattern, "cbFileUploadUseNamePattern");
-            this.cbFileUploadUseNamePattern.Name = "cbFileUploadUseNamePattern";
-            this.cbFileUploadUseNamePattern.UseVisualStyleBackColor = true;
-            this.cbFileUploadUseNamePattern.CheckedChanged += new System.EventHandler(this.cbFileUploadUseNamePattern_CheckedChanged);
-            // 
-            // lblNameFormatPatternPreviewActiveWindow
-            // 
-            resources.ApplyResources(this.lblNameFormatPatternPreviewActiveWindow, "lblNameFormatPatternPreviewActiveWindow");
-            this.lblNameFormatPatternPreviewActiveWindow.Name = "lblNameFormatPatternPreviewActiveWindow";
-            // 
-            // lblNameFormatPatternPreview
-            // 
-            resources.ApplyResources(this.lblNameFormatPatternPreview, "lblNameFormatPatternPreview");
-            this.lblNameFormatPatternPreview.Name = "lblNameFormatPatternPreview";
-            // 
-            // txtNameFormatPatternActiveWindow
-            // 
-            resources.ApplyResources(this.txtNameFormatPatternActiveWindow, "txtNameFormatPatternActiveWindow");
-            this.txtNameFormatPatternActiveWindow.Name = "txtNameFormatPatternActiveWindow";
-            this.txtNameFormatPatternActiveWindow.TextChanged += new System.EventHandler(this.txtNameFormatPatternActiveWindow_TextChanged);
-            // 
-            // txtNameFormatPattern
-            // 
-            resources.ApplyResources(this.txtNameFormatPattern, "txtNameFormatPattern");
-            this.txtNameFormatPattern.Name = "txtNameFormatPattern";
-            this.txtNameFormatPattern.TextChanged += new System.EventHandler(this.txtNameFormatPattern_TextChanged);
-            // 
-            // btnResetAutoIncrementNumber
-            // 
-            resources.ApplyResources(this.btnResetAutoIncrementNumber, "btnResetAutoIncrementNumber");
-            this.btnResetAutoIncrementNumber.Name = "btnResetAutoIncrementNumber";
-            this.btnResetAutoIncrementNumber.UseVisualStyleBackColor = true;
-            this.btnResetAutoIncrementNumber.Click += new System.EventHandler(this.btnResetAutoIncrementNumber_Click);
-            // 
-            // lblNameFormatPatternActiveWindow
-            // 
-            resources.ApplyResources(this.lblNameFormatPatternActiveWindow, "lblNameFormatPatternActiveWindow");
-            this.lblNameFormatPatternActiveWindow.Name = "lblNameFormatPatternActiveWindow";
-            // 
-            // chkUseDefaultUploadSettings
-            // 
-            resources.ApplyResources(this.chkUseDefaultUploadSettings, "chkUseDefaultUploadSettings");
-            this.chkUseDefaultUploadSettings.Checked = true;
-            this.chkUseDefaultUploadSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultUploadSettings.Name = "chkUseDefaultUploadSettings";
-            this.chkUseDefaultUploadSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultUploadSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultUploadSettings_CheckedChanged);
-            // 
-            // tpUploadClipboard
-            // 
-            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadShareURL);
-            this.tpUploadClipboard.Controls.Add(this.chkClipboardUploadURLContents);
-            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadAutoIndexFolder);
-            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadShortenURL);
-            resources.ApplyResources(this.tpUploadClipboard, "tpUploadClipboard");
-            this.tpUploadClipboard.Name = "tpUploadClipboard";
-            this.tpUploadClipboard.UseVisualStyleBackColor = true;
-            // 
-            // cbClipboardUploadShareURL
-            // 
-            resources.ApplyResources(this.cbClipboardUploadShareURL, "cbClipboardUploadShareURL");
-            this.cbClipboardUploadShareURL.Name = "cbClipboardUploadShareURL";
-            this.cbClipboardUploadShareURL.UseVisualStyleBackColor = true;
-            this.cbClipboardUploadShareURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadShareURL_CheckedChanged);
-            // 
-            // chkClipboardUploadURLContents
-            // 
-            resources.ApplyResources(this.chkClipboardUploadURLContents, "chkClipboardUploadURLContents");
-            this.chkClipboardUploadURLContents.Name = "chkClipboardUploadURLContents";
-            this.chkClipboardUploadURLContents.UseVisualStyleBackColor = true;
-            this.chkClipboardUploadURLContents.CheckedChanged += new System.EventHandler(this.chkClipboardUploadContents_CheckedChanged);
-            // 
-            // cbClipboardUploadAutoIndexFolder
-            // 
-            resources.ApplyResources(this.cbClipboardUploadAutoIndexFolder, "cbClipboardUploadAutoIndexFolder");
-            this.cbClipboardUploadAutoIndexFolder.Name = "cbClipboardUploadAutoIndexFolder";
-            this.cbClipboardUploadAutoIndexFolder.UseVisualStyleBackColor = true;
-            this.cbClipboardUploadAutoIndexFolder.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoIndexFolder_CheckedChanged);
-            // 
-            // cbClipboardUploadShortenURL
-            // 
-            resources.ApplyResources(this.cbClipboardUploadShortenURL, "cbClipboardUploadShortenURL");
-            this.cbClipboardUploadShortenURL.Name = "cbClipboardUploadShortenURL";
-            this.cbClipboardUploadShortenURL.UseVisualStyleBackColor = true;
-            this.cbClipboardUploadShortenURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoDetectURL_CheckedChanged);
-            // 
             // tpTools
             // 
             this.tpTools.Controls.Add(this.tcTools);
@@ -1622,29 +1645,6 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // tpFileNaming
-            // 
-            this.tpFileNaming.Controls.Add(this.lblAutoIncrementNumber);
-            this.tpFileNaming.Controls.Add(this.cbRegionCaptureUseWindowPattern);
-            this.tpFileNaming.Controls.Add(this.cbNameFormatCustomTimeZone);
-            this.tpFileNaming.Controls.Add(this.lblNameFormatPatternPreview);
-            this.tpFileNaming.Controls.Add(this.lblNameFormatPatternActiveWindow);
-            this.tpFileNaming.Controls.Add(this.lblNameFormatPatternPreviewActiveWindow);
-            this.tpFileNaming.Controls.Add(this.cbNameFormatTimeZone);
-            this.tpFileNaming.Controls.Add(this.txtNameFormatPatternActiveWindow);
-            this.tpFileNaming.Controls.Add(this.btnResetAutoIncrementNumber);
-            this.tpFileNaming.Controls.Add(this.cbFileUploadUseNamePattern);
-            this.tpFileNaming.Controls.Add(this.lblNameFormatPattern);
-            this.tpFileNaming.Controls.Add(this.txtNameFormatPattern);
-            resources.ApplyResources(this.tpFileNaming, "tpFileNaming");
-            this.tpFileNaming.Name = "tpFileNaming";
-            this.tpFileNaming.UseVisualStyleBackColor = true;
-            // 
-            // lblAutoIncrementNumber
-            // 
-            resources.ApplyResources(this.lblAutoIncrementNumber, "lblAutoIncrementNumber");
-            this.lblAutoIncrementNumber.Name = "lblAutoIncrementNumber";
-            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1697,17 +1697,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).EndInit();
             this.tpScrollingCapture.ResumeLayout(false);
             this.tpRectangleAnnotate.ResumeLayout(false);
+            this.tpUpload.ResumeLayout(false);
+            this.tcUpload.ResumeLayout(false);
+            this.tpUploadMain.ResumeLayout(false);
+            this.tpUploadMain.PerformLayout();
+            this.tpFileNaming.ResumeLayout(false);
+            this.tpFileNaming.PerformLayout();
+            this.tpUploadClipboard.ResumeLayout(false);
+            this.tpUploadClipboard.PerformLayout();
             this.tpActions.ResumeLayout(false);
             this.tpActions.PerformLayout();
             this.pActions.ResumeLayout(false);
             this.tpWatchFolders.ResumeLayout(false);
             this.tpWatchFolders.PerformLayout();
-            this.tpUpload.ResumeLayout(false);
-            this.tcUpload.ResumeLayout(false);
-            this.tpUploadMain.ResumeLayout(false);
-            this.tpUploadMain.PerformLayout();
-            this.tpUploadClipboard.ResumeLayout(false);
-            this.tpUploadClipboard.PerformLayout();
             this.tpTools.ResumeLayout(false);
             this.tcTools.ResumeLayout(false);
             this.tpToolsMain.ResumeLayout(false);
@@ -1716,8 +1718,6 @@
             this.tpVideoThumbnailer.ResumeLayout(false);
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
-            this.tpFileNaming.ResumeLayout(false);
-            this.tpFileNaming.PerformLayout();
             this.ResumeLayout(false);
 
         }
