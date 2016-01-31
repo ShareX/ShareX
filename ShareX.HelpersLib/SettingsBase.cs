@@ -37,6 +37,9 @@ namespace ShareX.HelpersLib
         public delegate void SettingsChangedEventHandler(object sender, EventArgs e);
         public event SettingsChangedEventHandler SettingsChanged;
 
+        public delegate void SettingsSavedEventHandler(object sender, EventArgs e);
+        public event SettingsSavedEventHandler SettingsSaved;
+
         [Browsable(false)]
         public string FilePath { get; private set; }
 
@@ -67,11 +70,18 @@ namespace ShareX.HelpersLib
                 SettingsChanged(this, e);
         }
 
+        protected virtual void OnSettingsSaved(EventArgs e)
+        {
+            if (SettingsSaved != null)
+                SettingsSaved(this, e);
+        }
+
         public bool Save(string filePath)
         {
             FilePath = filePath;
             ApplicationVersion = Application.ProductVersion;
 
+            OnSettingsSaved(EventArgs.Empty);
             return SaveInternal(this, FilePath, true);
         }
 
