@@ -34,6 +34,9 @@ namespace ShareX.HelpersLib
 {
     public abstract class SettingsBase<T> where T : SettingsBase<T>, new()
     {
+        public delegate void SettingsChangedEventHandler(object sender, EventArgs e);
+        public event SettingsChangedEventHandler SettingsChanged;
+
         [Browsable(false)]
         public string FilePath { get; private set; }
 
@@ -56,6 +59,12 @@ namespace ShareX.HelpersLib
             {
                 return !IsFirstTimeRun && Helpers.CompareApplicationVersion(ApplicationVersion) < 0;
             }
+        }
+
+        public virtual void OnSettingsChanged(EventArgs e)
+        {
+            if (SettingsChanged != null)
+                SettingsChanged(this, e);
         }
 
         public bool Save(string filePath)
