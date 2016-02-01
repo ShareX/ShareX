@@ -64,7 +64,11 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public virtual void OnSettingsChanged(EventArgs e)
+        {
+            OnSettingsChanged(EventArgs.Empty);
+        }
+
+        protected virtual void OnSettingsChanged(EventArgs e)
         {
             if (SettingsChanged != null)
                 SettingsChanged(this, e);
@@ -81,8 +85,10 @@ namespace ShareX.HelpersLib
             FilePath = filePath;
             ApplicationVersion = Application.ProductVersion;
 
-            OnSettingsSaved(EventArgs.Empty);
-            return SaveInternal(this, FilePath, true);
+            bool result = SaveInternal(this, FilePath, true);
+            if (result) OnSettingsSaved(EventArgs.Empty);
+
+            return result;
         }
 
         public bool Save()
