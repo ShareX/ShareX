@@ -64,6 +64,7 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void TriggerSettingsChange()
         {
             OnSettingsChanged(EventArgs.Empty);
         }
