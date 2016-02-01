@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ShareX Team")]
-[assembly: AssemblyProduct("ShareX")]
+[assembly: AssemblyProduct("ShareX Directory Indexer")]
 [assembly: AssemblyCopyright("Copyright (c) 2007-2016 ShareX Team")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
