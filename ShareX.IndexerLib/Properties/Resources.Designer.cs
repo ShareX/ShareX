@@ -64,7 +64,8 @@ namespace ShareX.IndexerLib.Properties {
         ///   Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
         ///&lt;head&gt;
-        ///&lt;meta http-equiv=&quot;content-type&quot; content=&quot;application/xhtml+xml; charset=utf-8&quot; /&gt;.
+        ///&lt;meta http-equiv=&quot;content-type&quot; content=&quot;application/xhtml+xml; charset=utf-8&quot; /&gt;
+        ///&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot; /&gt;.
         /// </summary>
         internal static string doctype_xhtml {
             get {
@@ -87,8 +88,13 @@ namespace ShareX.IndexerLib.Properties {
         ///}
         ///
         ///ul {
-        ///    margin: 0px 0px 10px 0px;
-        ///    padding-left: 30px;
+        ///    margin: 0px 0px 8px 0px;
+        ///    list-style-type: none;
+        ///    padding-left: 10px;
+        ///}
+        ///
+        ///li {
+        ///    margin-bottom: 2px;
         ///}
         ///
         ///h1, h2, h3, h4, h5, h6 {
@@ -97,25 +103,11 @@ namespace ShareX.IndexerLib.Properties {
         ///    border-top-right-radius: 5px;
         ///    padding: 4px 0px 4px 10px;
         ///    margin: 0px 10px -10px 10px;
-        ///    color: #FFFFFF;
-        ///    font-family: Arial, Helvetica, sans-serif;
-        ///    fo [rest of string was truncated]&quot;;.
+        ///    color: # [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string IndexerDefault {
             get {
                 return ResourceManager.GetString("IndexerDefault", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///&lt;a href=&quot;http://validator.w3.org/check?uri=referer&quot;&gt;&lt;img src=&quot;http://www.w3.org/Icons/valid-xhtml11-blue&quot; alt=&quot;Valid XHTML 1.1&quot; width=&quot;88&quot; height=&quot;31&quot; /&gt;&lt;/a&gt;
-        ///&lt;a href=&quot;http://jigsaw.w3.org/css-validator/check/referer&quot;&gt;&lt;img src=&quot;http://jigsaw.w3.org/css-validator/images/vcss-blue&quot; alt=&quot;Valid CSS&quot; width=&quot;88&quot; height=&quot;31&quot; /&gt;&lt;/a&gt;
-        ///&lt;/p&gt;.
-        /// </summary>
-        internal static string valid_xhtml {
-            get {
-                return ResourceManager.GetString("valid_xhtml", resourceCulture);
             }
         }
     }

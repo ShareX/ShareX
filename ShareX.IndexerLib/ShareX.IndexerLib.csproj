@@ -96,7 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\valid_xhtml.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\doctype_xhtml.txt" />

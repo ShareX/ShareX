@@ -50,7 +50,6 @@ namespace ShareX.IndexerLib
             string index = base.Index(folderPath).Trim();
             sbHtmlIndex.AppendLine(index);
             if (config.AddFooter) sbHtmlIndex.AppendLine(HtmlHelper.StartTag("div") + GetFooter() + HtmlHelper.EndTag("div"));
-            if (config.AddValidationIcons) sbHtmlIndex.AppendLine(Resources.valid_xhtml);
             sbHtmlIndex.AppendLine(HtmlHelper.EndTag("body"));
             sbHtmlIndex.AppendLine(HtmlHelper.EndTag("html"));
             return sbHtmlIndex.ToString().Trim();

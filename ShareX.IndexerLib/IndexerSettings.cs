@@ -63,9 +63,6 @@ namespace ShareX.IndexerLib
         [Editor(typeof(CssFileNameEditor), typeof(UITypeEditor))]
         public string CustomCSSFilePath { get; set; }
 
-        [Category("Indexer / HTML"), DefaultValue(false), Description("Add W3C validation icons. The W3C validation icons may be used on documents that successfully passed validation for a specific technology, using the W3C validation services.")]
-        public bool AddValidationIcons { get; set; }
-
         [Category("Indexer / XML"), DefaultValue(true), Description("Folder/File information (name, size etc.) will be written as attribute.")]
         public bool UseAttribute { get; set; }
 
