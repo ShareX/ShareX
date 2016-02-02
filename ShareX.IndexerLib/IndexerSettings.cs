@@ -32,7 +32,7 @@ namespace ShareX.IndexerLib
 {
     public class IndexerSettings
     {
-        [Category("Indexer"), DefaultValue(IndexerOutput.Html), Description("Indexer output type.")]
+        [Category("Indexer"), DefaultValue(IndexerOutput.Html), Description("Indexer output type."), TypeConverter(typeof(EnumDescriptionConverter))]
         public IndexerOutput Output { get; set; }
 
         [Category("Indexer"), DefaultValue(true), Description("Don't index hidden folders.")]
