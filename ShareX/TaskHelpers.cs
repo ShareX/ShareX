@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
+using ShareX.IndexerLib;
 using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
@@ -561,9 +562,19 @@ namespace ShareX
             new HashCheckForm().Show();
         }
 
-        public static void OpenIndexFolder()
+        public static void OpenDirectoryIndexer(TaskSettings taskSettings = null)
         {
-            UploadManager.IndexFolder();
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
+            DirectoryIndexerForm form = new DirectoryIndexerForm(taskSettings.ToolsSettings.IndexerSettings);
+            form.UploadRequested += source =>
+            {
+                WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
+                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
+                TaskManager.Start(task);
+            };
+            form.Show();
         }
 
         public static void OpenImageCombiner(TaskSettings taskSettings = null)
