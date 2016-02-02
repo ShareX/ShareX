@@ -117,19 +117,26 @@ namespace ShareX.IndexerLib
 
         protected virtual string GetFolderNameRow(FolderInfo dir, int level = 0)
         {
-            string text = string.Format("{0}{1}", config.IndentationText.Repeat(level), dir.FolderName);
+            string folderNameRow = string.Format("{0}{1}", config.IndentationText.Repeat(level), dir.FolderName);
 
-            if (dir.Size > 0)
+            if (config.ShowSizeInfo && dir.Size > 0)
             {
-                text += string.Format(" [{0}]", dir.Size.ToSizeString(config.BinaryUnits));
+                folderNameRow += string.Format(" [{0}]", dir.Size.ToSizeString(config.BinaryUnits));
             }
 
-            return text;
+            return folderNameRow;
         }
 
         protected virtual string GetFileNameRow(FileInfo fi, int level = 0)
         {
-            return string.Format("{0}{1} [{2}]", config.IndentationText.Repeat(level), fi.Name, fi.Length.ToSizeString(config.BinaryUnits));
+            string fileNameRow = config.IndentationText.Repeat(level) + fi.Name;
+
+            if (config.ShowSizeInfo)
+            {
+                fileNameRow += string.Format(" [{0}]", fi.Length.ToSizeString(config.BinaryUnits));
+            }
+
+            return fileNameRow;
         }
 
         protected virtual string GetFooter()

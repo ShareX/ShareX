@@ -85,41 +85,53 @@ namespace ShareX.IndexerLib
 
         protected override string GetFolderNameRow(FolderInfo dir, int level)
         {
-            int heading = (level + 1).Between(1, 6);
-
-            string folderInfoText = string.Empty;
+            string folderNameRow = "";
 
             if (!dir.IsEmpty)
             {
-                folderInfoText = dir.Size.ToSizeString(config.BinaryUnits) + " (";
+                if (config.ShowSizeInfo)
+                {
+                    folderNameRow += dir.Size.ToSizeString(config.BinaryUnits) + " ";
+                }
+
+                folderNameRow += "(";
 
                 if (dir.TotalFileCount > 0)
                 {
-                    folderInfoText += dir.TotalFileCount + " file" + (dir.TotalFileCount > 1 ? "s" : "");
+                    folderNameRow += dir.TotalFileCount + " file" + (dir.TotalFileCount > 1 ? "s" : "");
                 }
 
                 if (dir.TotalFolderCount > 0)
                 {
                     if (dir.TotalFileCount > 0)
                     {
-                        folderInfoText += ", ";
+                        folderNameRow += ", ";
                     }
 
-                    folderInfoText += dir.TotalFolderCount + " folder" + (dir.TotalFolderCount > 1 ? "s" : "");
+                    folderNameRow += dir.TotalFolderCount + " folder" + (dir.TotalFolderCount > 1 ? "s" : "");
                 }
 
-                folderInfoText += ")";
-                folderInfoText = " " + HtmlHelper.Tag("span", folderInfoText, "", "class=\"FolderInfo\"");
+                folderNameRow += ")";
+                folderNameRow = " " + HtmlHelper.Tag("span", folderNameRow, "", "class=\"FolderInfo\"");
             }
 
-            return HtmlHelper.StartTag("h" + heading) + URLHelpers.HtmlEncode(dir.FolderName) + folderInfoText + HtmlHelper.EndTag("h" + heading);
+            int heading = (level + 1).Between(1, 6);
+
+            return HtmlHelper.StartTag("h" + heading) + URLHelpers.HtmlEncode(dir.FolderName) + folderNameRow + HtmlHelper.EndTag("h" + heading);
         }
 
         protected override string GetFileNameRow(FileInfo fi, int level)
         {
-            string size = " " + HtmlHelper.Tag("span", fi.Length.ToSizeString(config.BinaryUnits), "", "class=\"FileSize\"");
+            string fileNameRow = HtmlHelper.StartTag("li") + URLHelpers.HtmlEncode(fi.Name);
 
-            return HtmlHelper.StartTag("li") + URLHelpers.HtmlEncode(fi.Name) + size + HtmlHelper.EndTag("li");
+            if (config.ShowSizeInfo)
+            {
+                fileNameRow += " " + HtmlHelper.Tag("span", fi.Length.ToSizeString(config.BinaryUnits), "", "class=\"FileSize\"");
+            }
+
+            fileNameRow += HtmlHelper.EndTag("li");
+
+            return fileNameRow;
         }
 
         protected override string GetFooter()

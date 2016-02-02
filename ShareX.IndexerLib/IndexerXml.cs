@@ -70,12 +70,20 @@ namespace ShareX.IndexerLib
             if (config.UseAttribute)
             {
                 xmlWriter.WriteAttributeString("Name", dir.FolderName);
-                if (!dir.IsEmpty) xmlWriter.WriteAttributeString("Size", dir.Size.ToSizeString(config.BinaryUnits));
+
+                if (config.ShowSizeInfo && !dir.IsEmpty)
+                {
+                    xmlWriter.WriteAttributeString("Size", dir.Size.ToSizeString(config.BinaryUnits));
+                }
             }
             else
             {
                 xmlWriter.WriteElementString("Name", dir.FolderName);
-                if (!dir.IsEmpty) xmlWriter.WriteElementString("Size", dir.Size.ToSizeString(config.BinaryUnits));
+
+                if (config.ShowSizeInfo && !dir.IsEmpty)
+                {
+                    xmlWriter.WriteElementString("Size", dir.Size.ToSizeString(config.BinaryUnits));
+                }
             }
 
             if (dir.Files.Count > 0)
@@ -89,12 +97,20 @@ namespace ShareX.IndexerLib
                     if (config.UseAttribute)
                     {
                         xmlWriter.WriteAttributeString("Name", fi.Name);
-                        xmlWriter.WriteAttributeString("Size", fi.Length.ToSizeString(config.BinaryUnits));
+
+                        if (config.ShowSizeInfo)
+                        {
+                            xmlWriter.WriteAttributeString("Size", fi.Length.ToSizeString(config.BinaryUnits));
+                        }
                     }
                     else
                     {
                         xmlWriter.WriteElementString("Name", fi.Name);
-                        xmlWriter.WriteElementString("Size", fi.Length.ToSizeString(config.BinaryUnits));
+
+                        if (config.ShowSizeInfo)
+                        {
+                            xmlWriter.WriteElementString("Size", fi.Length.ToSizeString(config.BinaryUnits));
+                        }
                     }
 
                     xmlWriter.WriteEndElement();

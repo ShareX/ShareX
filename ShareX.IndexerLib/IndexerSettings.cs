@@ -44,6 +44,9 @@ namespace ShareX.IndexerLib
         [Category("Indexer"), DefaultValue(0), Description("Maximum folder depth level for indexing. 0 means unlimited.")]
         public int MaxDepthLevel { get; set; }
 
+        [Category("Indexer"), DefaultValue(true), Description("Write folder and file size.")]
+        public bool ShowSizeInfo { get; set; }
+
         [Category("Indexer"), DefaultValue(true), Description("Add footer information to show application and generated time.")]
         public bool AddFooter { get; set; }
 
