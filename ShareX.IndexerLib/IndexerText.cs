@@ -31,8 +31,7 @@ namespace ShareX.IndexerLib
 {
     public class IndexerText : Indexer
     {
-        public IndexerText(IndexerSettings indexerSettings)
-            : base(indexerSettings)
+        public IndexerText(IndexerSettings indexerSettings) : base(indexerSettings)
         {
         }
 

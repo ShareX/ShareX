@@ -56,6 +56,9 @@ namespace ShareX.IndexerLib
                 case IndexerOutput.Xml:
                     indexer = new IndexerXml(config);
                     break;
+                case IndexerOutput.Json:
+                    indexer = new IndexerJson(config);
+                    break;
             }
 
             return indexer.Index(folderPath);

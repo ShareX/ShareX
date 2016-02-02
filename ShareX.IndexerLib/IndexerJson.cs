@@ -23,19 +23,29 @@
 
 #endregion License Information (GPL v3)
 
-using System.ComponentModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace ShareX.IndexerLib
 {
-    public enum IndexerOutput
+    public class IndexerJson : Indexer
     {
-        [Description("Text")]
-        Txt,
-        [Description("HTML")]
-        Html,
-        [Description("XML")]
-        Xml,
-        [Description("JSON")]
-        Json
+        public IndexerJson(IndexerSettings indexerSettings) : base(indexerSettings)
+        {
+        }
+
+        public override string Index(string folderPath)
+        {
+            FolderInfo folderInfo = GetFolderInfo(folderPath);
+            folderInfo.Update();
+
+            return "";
+        }
+
+        protected override void IndexFolder(FolderInfo dir, int level = 0)
+        {
+        }
     }
 }

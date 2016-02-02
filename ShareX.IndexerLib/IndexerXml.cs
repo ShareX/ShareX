@@ -34,8 +34,7 @@ namespace ShareX.IndexerLib
     {
         private XmlWriter xmlWriter;
 
-        public IndexerXml(IndexerSettings indexerSettings)
-            : base(indexerSettings)
+        public IndexerXml(IndexerSettings indexerSettings) : base(indexerSettings)
         {
         }
 

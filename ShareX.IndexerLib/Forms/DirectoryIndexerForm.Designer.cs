@@ -35,9 +35,9 @@
             this.btnUpload = new System.Windows.Forms.Button();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpPreview = new System.Windows.Forms.TabPage();
+            this.txtPreview = new System.Windows.Forms.TextBox();
             this.tpSettings = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.txtPreview = new System.Windows.Forms.TextBox();
             this.tcMain.SuspendLayout();
             this.tpPreview.SuspendLayout();
             this.tpSettings.SuspendLayout();
@@ -59,7 +59,7 @@
             this.txtFolderPath.Location = new System.Drawing.Point(192, 8);
             this.txtFolderPath.Name = "txtFolderPath";
             this.txtFolderPath.Size = new System.Drawing.Size(682, 20);
-            this.txtFolderPath.TabIndex = 1;
+            this.txtFolderPath.TabIndex = 2;
             this.txtFolderPath.TextChanged += new System.EventHandler(this.txtFolderPath_TextChanged);
             // 
             // btnBrowseFolder
@@ -67,7 +67,7 @@
             this.btnBrowseFolder.Location = new System.Drawing.Point(8, 7);
             this.btnBrowseFolder.Name = "btnBrowseFolder";
             this.btnBrowseFolder.Size = new System.Drawing.Size(176, 23);
-            this.btnBrowseFolder.TabIndex = 0;
+            this.btnBrowseFolder.TabIndex = 1;
             this.btnBrowseFolder.Text = "Browse folder...";
             this.btnBrowseFolder.UseVisualStyleBackColor = true;
             this.btnBrowseFolder.Click += new System.EventHandler(this.btnBrowseFolder_Click);
@@ -78,7 +78,7 @@
             this.btnIndexFolder.Location = new System.Drawing.Point(8, 32);
             this.btnIndexFolder.Name = "btnIndexFolder";
             this.btnIndexFolder.Size = new System.Drawing.Size(344, 23);
-            this.btnIndexFolder.TabIndex = 2;
+            this.btnIndexFolder.TabIndex = 3;
             this.btnIndexFolder.Text = "Index selected folder";
             this.btnIndexFolder.UseVisualStyleBackColor = true;
             this.btnIndexFolder.Click += new System.EventHandler(this.btnIndexFolder_Click);
@@ -89,7 +89,7 @@
             this.btnUpload.Location = new System.Drawing.Point(360, 32);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(344, 23);
-            this.btnUpload.TabIndex = 3;
+            this.btnUpload.TabIndex = 0;
             this.btnUpload.Text = "Upload and close this window";
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
@@ -105,7 +105,7 @@
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
             this.tcMain.Size = new System.Drawing.Size(868, 590);
-            this.tcMain.TabIndex = 5;
+            this.tcMain.TabIndex = 4;
             // 
             // tpPreview
             // 
@@ -117,6 +117,17 @@
             this.tpPreview.TabIndex = 1;
             this.tpPreview.Text = "Preview";
             this.tpPreview.UseVisualStyleBackColor = true;
+            // 
+            // txtPreview
+            // 
+            this.txtPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPreview.Location = new System.Drawing.Point(0, 0);
+            this.txtPreview.Multiline = true;
+            this.txtPreview.Name = "txtPreview";
+            this.txtPreview.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtPreview.Size = new System.Drawing.Size(860, 564);
+            this.txtPreview.TabIndex = 0;
             // 
             // tpSettings
             // 
@@ -136,17 +147,6 @@
             this.pgSettings.Size = new System.Drawing.Size(860, 564);
             this.pgSettings.TabIndex = 0;
             this.pgSettings.ToolbarVisible = false;
-            // 
-            // txtPreview
-            // 
-            this.txtPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPreview.Location = new System.Drawing.Point(0, 0);
-            this.txtPreview.Multiline = true;
-            this.txtPreview.Name = "txtPreview";
-            this.txtPreview.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtPreview.Size = new System.Drawing.Size(860, 564);
-            this.txtPreview.TabIndex = 1;
             // 
             // DirectoryIndexerForm
             // 

@@ -67,6 +67,7 @@
     <Compile Include="HtmlHelper.cs" />
     <Compile Include="Indexer.cs" />
     <Compile Include="IndexerHtml.cs" />
+    <Compile Include="IndexerJson.cs" />
     <Compile Include="IndexerSettings.cs" />
     <Compile Include="IndexerText.cs" />
     <Compile Include="FolderInfo.cs" />
