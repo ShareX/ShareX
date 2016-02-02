@@ -48,12 +48,14 @@ namespace ShareX.IndexerLib
         {
             InitializeComponent();
             Settings = settings;
+            pgSettings.SelectedObject = Settings;
         }
 
         private void btnBrowseFolder_Click(object sender, EventArgs e)
         {
             // Translate
             Helpers.BrowseFolder("ShareX - Choose folder path", txtFolderPath);
+            IndexFolder();
         }
 
         private void txtFolderPath_TextChanged(object sender, EventArgs e)
@@ -62,6 +64,11 @@ namespace ShareX.IndexerLib
         }
 
         private void btnIndexFolder_Click(object sender, EventArgs e)
+        {
+            IndexFolder();
+        }
+
+        private void IndexFolder()
         {
             string folderPath = txtFolderPath.Text;
 
@@ -72,6 +79,7 @@ namespace ShareX.IndexerLib
 
                 if (!string.IsNullOrEmpty(Source))
                 {
+                    tcMain.SelectedTab = tpPreview;
                     wbMain.DocumentText = Source;
                     btnUpload.Enabled = true;
                 }
@@ -83,6 +91,7 @@ namespace ShareX.IndexerLib
             if (!string.IsNullOrEmpty(Source))
             {
                 OnUploadRequested(Source);
+                Close();
             }
         }
 

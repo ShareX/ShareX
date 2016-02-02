@@ -566,12 +566,13 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
-            DirectoryIndexerForm form = new DirectoryIndexerForm(taskSettings.ToolsSettings.IndexerSettings);
+            IndexerSettings indexerSettings = taskSettings.ToolsSettingsReference.IndexerSettings;
+            indexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
+            DirectoryIndexerForm form = new DirectoryIndexerForm(indexerSettings);
             form.UploadRequested += source =>
             {
                 WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
-                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
+                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, indexerSettings.Output.ToString().ToLowerInvariant());
                 TaskManager.Start(task);
             };
             form.Show();
