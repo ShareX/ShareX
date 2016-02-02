@@ -42,7 +42,11 @@ namespace ShareX.IndexerLib
         public override string Index(string folderPath)
         {
             StringBuilder sbHtmlIndex = new StringBuilder();
-            sbHtmlIndex.AppendLine(Resources.doctype_xhtml);
+            sbHtmlIndex.AppendLine("<!DOCTYPE html>");
+            sbHtmlIndex.AppendLine(HtmlHelper.StartTag("html"));
+            sbHtmlIndex.AppendLine(HtmlHelper.StartTag("head"));
+            sbHtmlIndex.AppendLine("<meta charset=\"UTF-8\">");
+            sbHtmlIndex.AppendLine("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">");
             sbHtmlIndex.AppendLine(HtmlHelper.Tag("title", "Index for " + Path.GetFileName(folderPath)));
             sbHtmlIndex.AppendLine(GetCssStyle());
             sbHtmlIndex.AppendLine(HtmlHelper.EndTag("head"));

@@ -61,19 +61,6 @@ namespace ShareX.IndexerLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-        ///&lt;head&gt;
-        ///&lt;meta http-equiv=&quot;content-type&quot; content=&quot;application/xhtml+xml; charset=utf-8&quot; /&gt;
-        ///&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot; /&gt;.
-        /// </summary>
-        internal static string doctype_xhtml {
-            get {
-                return ResourceManager.GetString("doctype_xhtml", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to body {
         ///    font-family: Arial, Helvetica, sans-serif;
         ///    background-color: #F2F2F2;

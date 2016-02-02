@@ -98,9 +98,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\doctype_xhtml.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\IndexerDefault.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
