@@ -12,9 +12,13 @@ a:link, a:visited {
 }
 
 ul {
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 8px 0px;
     list-style-type: none;
     padding-left: 10px;
+}
+
+li {
+    margin-bottom: 2px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,7 +60,7 @@ h6 {
     background-color: #66CCFF;
 }
 
-div.MainFolderBorder, div.FolderBorder {
+.MainFolderBorder, .FolderBorder {
     border-style: solid;
     border-width: 0px 1px 1px 1px;
     border-bottom-left-radius: 5px;
@@ -64,21 +68,21 @@ div.MainFolderBorder, div.FolderBorder {
     padding: 20px 0px 0px 0px;
 }
 
-div.MainFolderBorder {
+.MainFolderBorder {
     margin: 0px 0px 10px 0px;
 }
 
-div.FolderBorder {
+.FolderBorder {
     margin: 0px 10px 10px 10px;
 }
 
-.folderinfo {
+.FolderInfo {
     color: #FFFFFF;
     float: right;
     margin-right: 10px;
     display: block;
 }
 
-.filesize {
+.FileSize {
     color: #3D7AAD;
 }
