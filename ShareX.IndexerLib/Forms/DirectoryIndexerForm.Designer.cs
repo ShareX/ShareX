@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.wbMain = new System.Windows.Forms.WebBrowser();
+            this.wbPreview = new System.Windows.Forms.WebBrowser();
             this.txtFolderPath = new System.Windows.Forms.TextBox();
             this.btnBrowseFolder = new System.Windows.Forms.Button();
             this.btnIndexFolder = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             this.tcMain = new System.Windows.Forms.TabControl();
+            this.tpPreview = new System.Windows.Forms.TabPage();
             this.tpSettings = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.tpPreview = new System.Windows.Forms.TabPage();
+            this.txtPreview = new System.Windows.Forms.TextBox();
             this.tcMain.SuspendLayout();
-            this.tpSettings.SuspendLayout();
             this.tpPreview.SuspendLayout();
+            this.tpSettings.SuspendLayout();
             this.SuspendLayout();
             // 
-            // wbMain
+            // wbPreview
             // 
-            this.wbMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wbMain.Location = new System.Drawing.Point(3, 3);
-            this.wbMain.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbMain.Name = "wbMain";
-            this.wbMain.Size = new System.Drawing.Size(854, 558);
-            this.wbMain.TabIndex = 0;
+            this.wbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wbPreview.Location = new System.Drawing.Point(0, 0);
+            this.wbPreview.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbPreview.Name = "wbPreview";
+            this.wbPreview.Size = new System.Drawing.Size(860, 564);
+            this.wbPreview.TabIndex = 0;
             // 
             // txtFolderPath
             // 
@@ -106,12 +107,22 @@
             this.tcMain.Size = new System.Drawing.Size(868, 590);
             this.tcMain.TabIndex = 5;
             // 
+            // tpPreview
+            // 
+            this.tpPreview.Controls.Add(this.txtPreview);
+            this.tpPreview.Controls.Add(this.wbPreview);
+            this.tpPreview.Location = new System.Drawing.Point(4, 22);
+            this.tpPreview.Name = "tpPreview";
+            this.tpPreview.Size = new System.Drawing.Size(860, 564);
+            this.tpPreview.TabIndex = 1;
+            this.tpPreview.Text = "Preview";
+            this.tpPreview.UseVisualStyleBackColor = true;
+            // 
             // tpSettings
             // 
             this.tpSettings.Controls.Add(this.pgSettings);
             this.tpSettings.Location = new System.Drawing.Point(4, 22);
             this.tpSettings.Name = "tpSettings";
-            this.tpSettings.Padding = new System.Windows.Forms.Padding(3);
             this.tpSettings.Size = new System.Drawing.Size(860, 564);
             this.tpSettings.TabIndex = 0;
             this.tpSettings.Text = "Settings";
@@ -120,22 +131,22 @@
             // pgSettings
             // 
             this.pgSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pgSettings.Location = new System.Drawing.Point(3, 3);
+            this.pgSettings.Location = new System.Drawing.Point(0, 0);
             this.pgSettings.Name = "pgSettings";
-            this.pgSettings.Size = new System.Drawing.Size(854, 558);
+            this.pgSettings.Size = new System.Drawing.Size(860, 564);
             this.pgSettings.TabIndex = 0;
             this.pgSettings.ToolbarVisible = false;
             // 
-            // tpPreview
+            // txtPreview
             // 
-            this.tpPreview.Controls.Add(this.wbMain);
-            this.tpPreview.Location = new System.Drawing.Point(4, 22);
-            this.tpPreview.Name = "tpPreview";
-            this.tpPreview.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPreview.Size = new System.Drawing.Size(860, 564);
-            this.tpPreview.TabIndex = 1;
-            this.tpPreview.Text = "Preview";
-            this.tpPreview.UseVisualStyleBackColor = true;
+            this.txtPreview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPreview.Location = new System.Drawing.Point(0, 0);
+            this.txtPreview.Multiline = true;
+            this.txtPreview.Name = "txtPreview";
+            this.txtPreview.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtPreview.Size = new System.Drawing.Size(860, 564);
+            this.txtPreview.TabIndex = 1;
             // 
             // DirectoryIndexerForm
             // 
@@ -151,8 +162,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Directory indexer";
             this.tcMain.ResumeLayout(false);
-            this.tpSettings.ResumeLayout(false);
             this.tpPreview.ResumeLayout(false);
+            this.tpPreview.PerformLayout();
+            this.tpSettings.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,7 +172,7 @@
 
         #endregion
 
-        private System.Windows.Forms.WebBrowser wbMain;
+        private System.Windows.Forms.WebBrowser wbPreview;
         private System.Windows.Forms.TextBox txtFolderPath;
         private System.Windows.Forms.Button btnBrowseFolder;
         private System.Windows.Forms.Button btnIndexFolder;
@@ -169,5 +181,6 @@
         private System.Windows.Forms.TabPage tpSettings;
         private System.Windows.Forms.PropertyGrid pgSettings;
         private System.Windows.Forms.TabPage tpPreview;
+        private System.Windows.Forms.TextBox txtPreview;
     }
 }

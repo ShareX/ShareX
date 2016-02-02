@@ -88,7 +88,20 @@ namespace ShareX.IndexerLib
                 if (!string.IsNullOrEmpty(Source))
                 {
                     tcMain.SelectedTab = tpPreview;
-                    wbMain.DocumentText = Source;
+
+                    if (Settings.Output == IndexerOutput.Html)
+                    {
+                        txtPreview.Visible = false;
+                        wbPreview.Visible = true;
+                        wbPreview.DocumentText = Source;
+                    }
+                    else
+                    {
+                        wbPreview.Visible = false;
+                        txtPreview.Visible = true;
+                        txtPreview.Text = Source;
+                    }
+
                     btnUpload.Enabled = true;
                 }
             }
