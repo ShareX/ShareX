@@ -49,13 +49,21 @@ namespace ShareX.IndexerLib
             InitializeComponent();
             Settings = settings;
             pgSettings.SelectedObject = Settings;
+            BrowseFolder();
         }
 
         private void btnBrowseFolder_Click(object sender, EventArgs e)
         {
+            BrowseFolder();
+        }
+
+        private void BrowseFolder()
+        {
             // Translate
-            Helpers.BrowseFolder("ShareX - Choose folder path", txtFolderPath);
-            IndexFolder();
+            if (Helpers.BrowseFolder("ShareX - Choose folder path", txtFolderPath))
+            {
+                IndexFolder();
+            }
         }
 
         private void txtFolderPath_TextChanged(object sender, EventArgs e)

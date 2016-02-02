@@ -13,7 +13,8 @@ a:link, a:visited {
 
 ul {
     margin: 0px 0px 10px 0px;
-    padding-left: 30px;
+    list-style-type: none;
+    padding-left: 10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,9 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     background-color: #336699;
-    padding: 4px 0px 4px 0px;
     margin: 0px 0px -10px 0px;
-    text-align: center;
     font-size: x-large;
 }
 
