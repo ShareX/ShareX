@@ -65,6 +65,9 @@ namespace ShareX.IndexerLib
         [Category("Indexer / XML"), DefaultValue(true), Description("Folder/File information (name, size etc.) will be written as attribute.")]
         public bool UseAttribute { get; set; }
 
+        [Category("Indexer / JSON"), DefaultValue(true), Description("Creates parseable but longer json output.")]
+        public bool CreateParseableJson { get; set; }
+
         [JsonIgnore]
         public bool BinaryUnits;
 

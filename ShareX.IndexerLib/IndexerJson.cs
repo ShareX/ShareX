@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -62,6 +63,18 @@ namespace ShareX.IndexerLib
 
         protected override void IndexFolder(FolderInfo dir, int level = 0)
         {
+            if (settings.CreateParseableJson)
+            {
+                IndexFolderParseable(dir, level);
+            }
+            else
+            {
+                IndexFolderSimple(dir, level);
+            }
+        }
+
+        private void IndexFolderSimple(FolderInfo dir, int level)
+        {
             jsonWriter.WritePropertyName(dir.FolderName);
             jsonWriter.WriteStartArray();
 
@@ -78,6 +91,57 @@ namespace ShareX.IndexerLib
             }
 
             jsonWriter.WriteEnd();
+        }
+
+        private void IndexFolderParseable(FolderInfo dir, int level)
+        {
+            jsonWriter.WritePropertyName("Name");
+            jsonWriter.WriteValue(dir.FolderName);
+
+            if (settings.ShowSizeInfo)
+            {
+                jsonWriter.WritePropertyName("Size");
+                jsonWriter.WriteValue(dir.Size.ToSizeString(settings.BinaryUnits));
+            }
+
+            if (dir.Folders.Count > 0)
+            {
+                jsonWriter.WritePropertyName("Folders");
+                jsonWriter.WriteStartArray();
+
+                foreach (FolderInfo subdir in dir.Folders)
+                {
+                    jsonWriter.WriteStartObject();
+                    IndexFolder(subdir);
+                    jsonWriter.WriteEndObject();
+                }
+
+                jsonWriter.WriteEnd();
+            }
+
+            if (dir.Files.Count > 0)
+            {
+                jsonWriter.WritePropertyName("Files");
+                jsonWriter.WriteStartArray();
+
+                foreach (FileInfo fi in dir.Files)
+                {
+                    jsonWriter.WriteStartObject();
+
+                    jsonWriter.WritePropertyName("Name");
+                    jsonWriter.WriteValue(fi.Name);
+
+                    if (settings.ShowSizeInfo)
+                    {
+                        jsonWriter.WritePropertyName("Size");
+                        jsonWriter.WriteValue(fi.Length.ToSizeString(settings.BinaryUnits));
+                    }
+
+                    jsonWriter.WriteEndObject();
+                }
+
+                jsonWriter.WriteEnd();
+            }
         }
     }
 }
