@@ -23,8 +23,10 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -32,6 +34,8 @@ namespace ShareX.IndexerLib
 {
     public class IndexerJson : Indexer
     {
+        private JsonWriter jsonWriter;
+
         public IndexerJson(IndexerSettings indexerSettings) : base(indexerSettings)
         {
         }
@@ -41,11 +45,39 @@ namespace ShareX.IndexerLib
             FolderInfo folderInfo = GetFolderInfo(folderPath);
             folderInfo.Update();
 
-            return "";
+            StringBuilder sbContent = new StringBuilder();
+
+            using (StringWriter sw = new StringWriter(sbContent))
+            using (jsonWriter = new JsonTextWriter(sw))
+            {
+                jsonWriter.Formatting = Formatting.Indented;
+
+                jsonWriter.WriteStartObject();
+                IndexFolder(folderInfo);
+                jsonWriter.WriteEndObject();
+            }
+
+            return sbContent.ToString();
         }
 
         protected override void IndexFolder(FolderInfo dir, int level = 0)
         {
+            jsonWriter.WritePropertyName(dir.FolderName);
+            jsonWriter.WriteStartArray();
+
+            foreach (FolderInfo subdir in dir.Folders)
+            {
+                jsonWriter.WriteStartObject();
+                IndexFolder(subdir);
+                jsonWriter.WriteEndObject();
+            }
+
+            foreach (FileInfo fi in dir.Files)
+            {
+                jsonWriter.WriteValue(fi.Name);
+            }
+
+            jsonWriter.WriteEnd();
         }
     }
 }

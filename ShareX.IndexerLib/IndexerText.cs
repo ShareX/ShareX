@@ -87,7 +87,7 @@ namespace ShareX.IndexerLib
             }
         }
 
-        private string GetFolderNameRow(FolderInfo dir, int level = 0)
+        private string GetFolderNameRow(FolderInfo dir, int level)
         {
             string folderNameRow = string.Format("{0}{1}", settings.IndentationText.Repeat(level), dir.FolderName);
 
@@ -99,7 +99,7 @@ namespace ShareX.IndexerLib
             return folderNameRow;
         }
 
-        private string GetFileNameRow(FileInfo fi, int level = 0)
+        private string GetFileNameRow(FileInfo fi, int level)
         {
             string fileNameRow = settings.IndentationText.Repeat(level) + fi.Name;
 
