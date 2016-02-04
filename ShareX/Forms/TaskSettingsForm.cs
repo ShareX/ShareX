@@ -689,6 +689,7 @@ namespace ShareX
         private void nudUseImageFormat2After_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageSizeLimit = (int)nudUseImageFormat2After.Value;
+            cbImageFormat2.Enabled = TaskSettings.ImageSettings.ImageSizeLimit > 0;
         }
 
         private void cbImageFileExist_SelectedIndexChanged(object sender, EventArgs e)

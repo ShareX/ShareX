@@ -32,10 +32,9 @@ namespace ShareX.IndexerLib
 {
     public class IndexerXml : Indexer
     {
-        private XmlWriter xmlWriter;
+        protected XmlWriter xmlWriter;
 
-        public IndexerXml(IndexerSettings indexerSettings)
-            : base(indexerSettings)
+        public IndexerXml(IndexerSettings indexerSettings) : base(indexerSettings)
         {
         }
 
@@ -67,15 +66,23 @@ namespace ShareX.IndexerLib
         {
             xmlWriter.WriteStartElement("Folder");
 
-            if (config.UseAttribute)
+            if (settings.UseAttribute)
             {
                 xmlWriter.WriteAttributeString("Name", dir.FolderName);
-                if (!dir.IsEmpty) xmlWriter.WriteAttributeString("Size", dir.Size.ToSizeString(config.BinaryUnits));
+
+                if (settings.ShowSizeInfo && !dir.IsEmpty)
+                {
+                    xmlWriter.WriteAttributeString("Size", dir.Size.ToSizeString(settings.BinaryUnits));
+                }
             }
             else
             {
                 xmlWriter.WriteElementString("Name", dir.FolderName);
-                if (!dir.IsEmpty) xmlWriter.WriteElementString("Size", dir.Size.ToSizeString(config.BinaryUnits));
+
+                if (settings.ShowSizeInfo && !dir.IsEmpty)
+                {
+                    xmlWriter.WriteElementString("Size", dir.Size.ToSizeString(settings.BinaryUnits));
+                }
             }
 
             if (dir.Files.Count > 0)
@@ -86,15 +93,23 @@ namespace ShareX.IndexerLib
                 {
                     xmlWriter.WriteStartElement("File");
 
-                    if (config.UseAttribute)
+                    if (settings.UseAttribute)
                     {
                         xmlWriter.WriteAttributeString("Name", fi.Name);
-                        xmlWriter.WriteAttributeString("Size", fi.Length.ToSizeString(config.BinaryUnits));
+
+                        if (settings.ShowSizeInfo)
+                        {
+                            xmlWriter.WriteAttributeString("Size", fi.Length.ToSizeString(settings.BinaryUnits));
+                        }
                     }
                     else
                     {
                         xmlWriter.WriteElementString("Name", fi.Name);
-                        xmlWriter.WriteElementString("Size", fi.Length.ToSizeString(config.BinaryUnits));
+
+                        if (settings.ShowSizeInfo)
+                        {
+                            xmlWriter.WriteElementString("Size", fi.Length.ToSizeString(settings.BinaryUnits));
+                        }
                     }
 
                     xmlWriter.WriteEndElement();

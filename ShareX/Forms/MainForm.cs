@@ -1051,7 +1051,7 @@ namespace ShareX
 
         private void tsmiIndexFolder_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenIndexFolder();
+            TaskHelpers.OpenDirectoryIndexer();
         }
 
         private void tsmiImageCombiner_Click(object sender, EventArgs e)
@@ -1768,7 +1768,7 @@ namespace ShareX
                     TaskHelpers.StartAutomate();
                     break;
                 case HotkeyType.IndexFolder:
-                    TaskHelpers.OpenIndexFolder();
+                    UploadManager.IndexFolder();
                     break;
                 case HotkeyType.ImageCombiner:
                     TaskHelpers.OpenImageCombiner(safeTaskSettings);

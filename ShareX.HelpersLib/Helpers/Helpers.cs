@@ -209,10 +209,18 @@ namespace ShareX.HelpersLib
             return Encoding.UTF8.GetString(Enumerable.Range(1, 255).Select(i => (byte)i).ToArray());
         }
 
-        public static string GetValidFileName(string fileName)
+        public static string GetValidFileName(string fileName, string separator = "")
         {
             char[] invalidFileNameChars = Path.GetInvalidFileNameChars();
-            return new string(fileName.Where(c => !invalidFileNameChars.Contains(c)).ToArray());
+            if (string.IsNullOrEmpty(separator))
+            {
+                return new string(fileName.Where(c => !invalidFileNameChars.Contains(c)).ToArray());
+            }
+            else
+            {
+                invalidFileNameChars.ForEach(x => fileName = fileName.Replace(x.ToString(), separator));
+                return fileName.Trim().Replace(separator + separator, separator);
+            }
         }
 
         public static string GetValidFolderPath(string folderPath)
@@ -608,7 +616,7 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool BrowseFolder(string title, TextBox tb, string initialDirectory = "", bool detectSpecialFolders = true)
+        public static bool BrowseFolder(string title, TextBox tb, string initialDirectory = "", bool detectSpecialFolders = false)
         {
             using (FolderSelectDialog fsd = new FolderSelectDialog())
             {

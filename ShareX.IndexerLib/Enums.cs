@@ -34,6 +34,8 @@ namespace ShareX.IndexerLib
         [Description("HTML")]
         Html,
         [Description("XML")]
-        Xml
+        Xml,
+        [Description("JSON")]
+        Json
     }
 }

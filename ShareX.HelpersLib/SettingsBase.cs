@@ -34,6 +34,9 @@ namespace ShareX.HelpersLib
 {
     public abstract class SettingsBase<T> where T : SettingsBase<T>, new()
     {
+        public delegate void SettingsSavedEventHandler(T settings, string filePath, bool result);
+        public event SettingsSavedEventHandler SettingsSaved;
+
         [Browsable(false)]
         public string FilePath { get; private set; }
 
@@ -58,12 +61,24 @@ namespace ShareX.HelpersLib
             }
         }
 
+        protected virtual void OnSettingsSaved(string filePath, bool result)
+        {
+            if (SettingsSaved != null)
+            {
+                SettingsSaved((T)this, filePath, result);
+            }
+        }
+
         public bool Save(string filePath)
         {
             FilePath = filePath;
             ApplicationVersion = Application.ProductVersion;
 
-            return SaveInternal(this, FilePath, true);
+            bool result = SaveInternal(this, FilePath, true);
+
+            OnSettingsSaved(FilePath, result);
+
+            return result;
         }
 
         public bool Save()

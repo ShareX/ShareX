@@ -65,6 +65,7 @@ namespace ShareX.IndexerLib
         public void Update()
         {
             Folders.ForEach(x => x.Update());
+            Folders.Sort((x, y) => x.FolderName.CompareTo(y.FolderName));
             Size = Folders.Sum(x => x.Size) + Files.Sum(x => x.Length);
             TotalFileCount = Files.Count + Folders.Sum(x => x.TotalFileCount);
             TotalFolderCount = Folders.Count + Folders.Sum(x => x.TotalFolderCount);
