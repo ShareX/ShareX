@@ -252,7 +252,7 @@ namespace ShareX.UploadersLib
 
         // Pomf
 
-        public PomfUploader PomfUploader = new PomfUploader("https://pomf.cat/upload.php", "http://a.pomf.cat");
+        public PomfUploader PomfUploader = new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat");
 
         // s-ul
 
