@@ -172,7 +172,7 @@
     <value>Beim Start in den Infobereich minimieren</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Starte ShareX beim Starten von Windows</value>
+    <value>ShareX beim Starten von Windows ausführen</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Zeige Fortschrittsanzeige in der Taskleiste</value>

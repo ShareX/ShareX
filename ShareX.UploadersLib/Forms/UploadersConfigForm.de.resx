@@ -410,7 +410,7 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Anmerkung: Du kannst auf den Ordner doppelt klicken um in ihn zu gehen</value>
   </data>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
-    <value>API key</value>
+    <value>API Schlüssel:</value>
   </data>
   <data name="lblCheveretoWebsite.Text" xml:space="preserve">
     <value>Webseite:</value>
@@ -434,7 +434,7 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Dateihochlader:</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>BIldhochlader:</value>
+    <value>Bildhochlader:</value>
   </data>
   <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
     <value>Anfragentyp:</value>
@@ -473,7 +473,7 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Standard Betreff:</value>
   </data>
   <data name="lblEmailFrom.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-Mail:</value>
   </data>
   <data name="lblEmailPassword.Text" xml:space="preserve">
     <value>Passwort:</value>
@@ -494,7 +494,7 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Text:</value>
   </data>
   <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-Mail:</value>
   </data>
   <data name="lblGe_ttPassword.Text" xml:space="preserve">
     <value>Passwort:</value>
@@ -527,13 +527,13 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Jira Ausgabe Prefix:</value>
   </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-Mail:</value>
   </data>
   <data name="lblLocalhostrPassword.Text" xml:space="preserve">
     <value>Passwort:</value>
   </data>
   <data name="lblMediaFireEmail.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-Mail:</value>
   </data>
   <data name="lblMediaFirePassword.Text" xml:space="preserve">
     <value>Passwort:</value>
@@ -542,7 +542,7 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Hochladepfad:</value>
   </data>
   <data name="lblMegaEmail.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-Mail:</value>
   </data>
   <data name="lblMegaFolder.Text" xml:space="preserve">
     <value>Ordner:</value>
@@ -581,7 +581,7 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Benutzername:</value>
   </data>
   <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>Benutzer API key:</value>
+    <value>Benutzer API Schlüssel:</value>
   </data>
   <data name="lblPastebinExpiration.Text" xml:space="preserve">
     <value>Verfall:</value>
@@ -626,7 +626,7 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Gerät:</value>
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>Benutzer API key:</value>
+    <value>Benutzer API Schlüssel:</value>
   </data>
   <data name="lblSendSpacePassword.Text" xml:space="preserve">
     <value>Passwort:</value>
@@ -647,7 +647,7 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Passwort:</value>
   </data>
   <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-Mail:</value>
   </data>
   <data name="lblUpasteUserKey.Text" xml:space="preserve">
     <value>Benutzer Schlüssel:</value>
@@ -665,13 +665,13 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Benutzername:</value>
   </data>
   <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>Du kannst deinen API key und UID hier finden</value>
+    <value>Du kannst deinen API Schlüssel und UID hier finden</value>
   </data>
   <data name="tpCustomUploaders.Text" xml:space="preserve">
     <value>Eigener Hochlader</value>
   </data>
   <data name="tpEmail.Text" xml:space="preserve">
-    <value>Email</value>
+    <value>E-Mail</value>
   </data>
   <data name="tpFileUploaders.Text" xml:space="preserve">
     <value>Dateihochlader</value>
@@ -683,7 +683,7 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
     <value>Andere Hochlader</value>
   </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
-    <value>Geteilte Ordner</value>
+    <value>Freigegebene Ordner</value>
   </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
     <value>Texthochlader</value>
@@ -727,26 +727,11 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
     <value>Überspringe Tweet Nachrichtenbox</value>
   </data>
-  <data name="chImgurID.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="chPicasaID.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
-    <value>API UID:</value>
-  </data>
-  <data name="lblCoinURLUUID.Text" xml:space="preserve">
-    <value>UUID:</value>
-  </data>
-  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
-    <value>URL:</value>
-  </data>
   <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
     <value>API Schlüssel:</value>
   </data>
   <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-Mail:</value>
   </data>
   <data name="lblPolrAPIKey.Text" xml:space="preserve">
     <value>API Schlüssel:</value>
@@ -774,12 +759,6 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
   <data name="lblUp1Key.Text" xml:space="preserve">
     <value>API Schlüssel:</value>
-  </data>
-  <data name="lblYourlsAPIURL.Text" xml:space="preserve">
-    <value>API URL:</value>
-  </data>
-  <data name="tpCopy.Text" xml:space="preserve">
-    <value>Kopieren</value>
   </data>
   <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
     <value>Aktualisieren</value>
@@ -898,5 +877,38 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   </data>
   <data name="lblSeafileAuthToken.Text" xml:space="preserve">
     <value>Auth-Token:</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
+    <value>Füge Syntax zum URL Feld hinzu</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
+    <value>Beispiele:
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
+    <value>Füge Syntax zum URL Feld hinzu</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
+    <value>Beispiele:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
+  </data>
+  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
+    <value>Alle...</value>
+  </data>
+  <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>Benutzername:</value>
+  </data>
+  <data name="lblStreamablePassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
+    <value>Anonym</value>
+  </data>
+  <data name="lblSulAPIKey.Text" xml:space="preserve">
+    <value>API Schlüssel:</value>
   </data>
 </root>

@@ -139,7 +139,7 @@
     <value>Platz zwischen Bildern:</value>
   </data>
   <data name="lblSpacePixel.Text" xml:space="preserve">
-    <value>pixel</value>
+    <value>Pixel</value>
   </data>
   <data name="lblOrientation.Text" xml:space="preserve">
     <value>Verbindungs-Ausrichtung:</value>

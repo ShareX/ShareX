@@ -260,7 +260,7 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
 Möchtest du es automatisch herunterladen?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Verschlüssele...</value>
+    <value>Kodiere...</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg-Fehler</value>
@@ -466,7 +466,7 @@ Drücke Ja um das Bild aus der Zwischenablage zu öffnen. Drücke Nein um die Da
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Du versuchst eine große Datei hochzuladen.
-Sicher weiter?</value>
+Sind Sie sich sicher?</value>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Aufnehmen</value>

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -123,16 +124,16 @@
     <value>Nicht speichern</value>
   </data>
   <data name="btnNewName.Text" xml:space="preserve">
-    <value>Benutze neuen Namen</value>
+    <value>Benutze neuen Namen:</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
-    <value>Überschreiben</value>
+    <value>Überschreiben:</value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
     <value>Benutze einzigartigen Namen:</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Es existiert bereits eine Datei mit demselben Namen im Zielverzeichnis.
-Wähle neuen Namen oder Aktion aus:</value>
+Wähle einen neuen Namen oder Aktion aus:</value>
   </data>
 </root>

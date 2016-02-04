@@ -138,4 +138,43 @@
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Ziel:</value>
   </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>Dateihashüberprüfung</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>Kopiere alles</value>
+  </data>
+  <data name="lblHashCheckHash.Text" xml:space="preserve">
+    <value>Hash:</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>Dekodieren</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>Dekodieren</value>
+  </data>
+  <data name="lblHashCheckBase64.Text" xml:space="preserve">
+    <value>Base64:</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>Dekodieren</value>
+  </data>
+  <data name="lblHashCheckHex.Text" xml:space="preserve">
+    <value>Hexadezimal:</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>Dekodieren</value>
+  </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>Kodieren</value>
+  </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>Binär:</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>Text:</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>Textumwandlung</value>
+  </data>
 </root>
