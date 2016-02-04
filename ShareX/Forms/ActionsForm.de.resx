@@ -139,7 +139,7 @@
     <value>Ausgabe Dateinamenserweiterung: (Leer = Benutzt selbe Erweiterung)</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
-    <value>Dateipfad</value>
+    <value>Dateipfad:</value>
   </data>
   <data name="cbHiddenWindow.Text" xml:space="preserve">
     <value>Verstecktes Fenster</value>

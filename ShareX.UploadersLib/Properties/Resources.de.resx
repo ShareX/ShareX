@@ -227,7 +227,7 @@ Hergestellte Ordner:</value>
     <value>Herunterladpfad:</value>
   </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-Mail:</value>
   </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
     <value>Name:</value>
