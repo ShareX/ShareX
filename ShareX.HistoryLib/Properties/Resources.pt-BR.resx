@@ -139,13 +139,13 @@
     <value>Arquivo</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>Nome do arquivo</value>
+    <value>Arquivo</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>Nome do arquivo com extensão</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>Local do arquivo</value>
+    <value>Local</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>Pasta</value>

@@ -133,7 +133,7 @@
     <value>Após captura...</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>Após upload...</value>
+    <value>Após envio...</value>
   </data>
   <data name="btnDestinations.Text" xml:space="preserve">
     <value>Destinos...</value>
@@ -187,10 +187,10 @@
     <value>Ações</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
-    <value>Upload</value>
+    <value>Envio</value>
   </data>
   <data name="tpUploadClipboard.Text" xml:space="preserve">
-    <value>Upload da área de transferência</value>
+    <value>Envio da área de transferência</value>
   </data>
   <data name="tpTask.Text" xml:space="preserve">
     <value>Tarefa</value>
@@ -280,7 +280,7 @@
     <value>Capturar janela com transparência</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
-    <value>Usar fuso-horário diferente:</value>
+    <value>Utilizar fuso-horário diferente:</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Duração fixa:</value>
@@ -352,7 +352,7 @@
     <value>Local da pasta</value>
   </data>
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Se a área de transferência contém um URL: baixar o arquivo e enviá-lo</value>
+    <value>Se a área de transferência conter um URL: baixar o arquivo e enviá-lo</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Substituir serviço customizado padrão:</value>
@@ -379,13 +379,13 @@
     <value>Aplicar efeitos somente em capturas de região</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Usar padrão para envios de arquivo também ao invés de usar o nome do arquivo</value>
+    <value>Utilizar padrão para envio de arquivos ao invés do nome do arquivo</value>
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>Se a área de transferência contém um URL: usar Encurtador de URL</value>
+    <value>Se a área de transferência conter um URL: usar Encurtador de URL</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>Se a área de transferência contém um URL: compartilhar usando serviço de compartilhamento de URL</value>
+    <value>Se a área de transferência conter um URL: compartilhar usando serviço de compartilhamento de URL</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Você pode habilitar/desabilitar efeitos de imagem em "Tarefas pós-captura -&gt; Adicionar efeitos de imagem".</value>
@@ -421,16 +421,16 @@
     <value>Usar opções de imagem nas opções de tarefas da janela principal</value>
   </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Usar opções de upload nas opções de tarefas da janela principal</value>
+    <value>Utilizar opções de upload nas opções de tarefas da janela principal</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>Se a área de transferência contém o local de uma pasta: arquivar a pasta e enviar o índice</value>
+    <value>Se a área de transferência conter o local de uma pasta: arquivar a pasta e enviar o índice</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Mostrar cursor na gravação</value>
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
-    <value>0 a 100</value>
+    <value>0 - 100</value>
   </data>
   <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
     <value>Usar opções de ferramentas nas opções de tarefas da janela principal</value>
@@ -443,5 +443,11 @@
   </data>
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Captura rolante</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>Utilizar nome da janela para captura de região (ShareX tentará detectar a janela atrás da seleção)</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>Nomeação de arquivos</value>
   </data>
 </root>
