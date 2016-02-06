@@ -172,6 +172,18 @@
     <Compile Include="Forms\ImageCombinerForm.Designer.cs">
       <DependentUpon>ImageCombinerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QuickTaskMenuEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuickTaskMenuEditorForm.Designer.cs">
+      <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuickTaskInfoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuickTaskInfoEditForm.Designer.cs">
+      <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ScreenColorPicker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -812,6 +824,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.zh-CN.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.resx">
+      <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.resx">
+      <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenColorPicker.de.resx">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>

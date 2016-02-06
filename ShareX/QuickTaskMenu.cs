@@ -51,14 +51,21 @@ namespace ShareX
             {
                 foreach (QuickTaskInfo taskInfo in Program.Settings.QuickTaskPresets)
                 {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = taskInfo.ToString().Replace("&", "&&"), Tag = taskInfo };
-                    tsmi.Click += (sender, e) =>
+                    if (taskInfo.IsValid)
                     {
-                        QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
-                        cms.Close();
-                        OnTaskInfoSelected(selectedTaskInfo);
-                    };
-                    cms.Items.Add(tsmi);
+                        ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = taskInfo.ToString().Replace("&", "&&"), Tag = taskInfo };
+                        tsmi.Click += (sender, e) =>
+                        {
+                            QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
+                            cms.Close();
+                            OnTaskInfoSelected(selectedTaskInfo);
+                        };
+                        cms.Items.Add(tsmi);
+                    }
+                    else
+                    {
+                        cms.Items.Add(new ToolStripSeparator());
+                    }
                 }
 
                 cms.Items[0].Select();
@@ -68,7 +75,11 @@ namespace ShareX
 
             // Translate
             ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit this menu...");
-            // TODO: tsmiEdit.Click += (sender, e) =>
+            tsmiEdit.Click += (sender, e) =>
+            {
+                cms.Close();
+                new QuickTaskMenuEditorForm().ShowDialog();
+            };
             cms.Items.Add(tsmiEdit);
 
             cms.Items.Add(new ToolStripSeparator());

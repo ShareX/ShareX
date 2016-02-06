@@ -37,6 +37,24 @@ namespace ShareX
         public AfterCaptureTasks AfterCaptureTasks { get; set; }
         public AfterUploadTasks AfterUploadTasks { get; set; }
 
+        public bool IsValid
+        {
+            get
+            {
+                return AfterCaptureTasks != AfterCaptureTasks.None;
+            }
+        }
+
+        public static List<QuickTaskInfo> DefaultPresets = new List<QuickTaskInfo>()
+        {
+            new QuickTaskInfo("Save, upload & copy URL", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard),
+            new QuickTaskInfo("Save & copy image", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.CopyImageToClipboard),
+            new QuickTaskInfo("Annotate, save, upload & copy URL", AfterCaptureTasks.AnnotateImage | AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard),
+            new QuickTaskInfo("Save", AfterCaptureTasks.SaveImageToFile),
+            new QuickTaskInfo("Copy image", AfterCaptureTasks.CopyImageToClipboard),
+            new QuickTaskInfo("Upload & copy URL", AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard)
+        };
+
         public QuickTaskInfo()
         {
         }
@@ -63,7 +81,12 @@ namespace ShareX
 
             if (AfterCaptureTasks.HasFlag(AfterCaptureTasks.UploadImageToHost))
             {
-                result += string.Join(", ", AfterUploadTasks.GetFlags<AfterUploadTasks>().Select(x => x.GetLocalizedDescription()));
+                string[] flags = AfterUploadTasks.GetFlags<AfterUploadTasks>().Select(x => x.GetLocalizedDescription()).ToArray();
+
+                if (flags != null && flags.Length > 0)
+                {
+                    result += ", " + string.Join(", ", flags);
+                }
             }
 
             return result;

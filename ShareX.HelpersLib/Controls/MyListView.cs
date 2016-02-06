@@ -267,7 +267,7 @@ namespace ShareX.HelpersLib
             }
 
             lineIndex = lastLineIndex = -1;
-            Invalidate();
+            Update();
         }
 
         protected void OnItemMoved(int oldIndex, int newIndex)
