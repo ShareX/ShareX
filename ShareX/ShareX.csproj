@@ -187,6 +187,8 @@
     <Compile Include="HotkeyTypeEnumConverter.cs" />
     <Compile Include="ImageCombinerOptions.cs" />
     <Compile Include="IntegrationHelpers.cs" />
+    <Compile Include="QuickTaskInfo.cs" />
+    <Compile Include="QuickTaskMenu.cs" />
     <Compile Include="ScreenRecordManager.cs" />
     <Compile Include="Forms\ScreenRecordForm.cs">
       <SubType>Form</SubType>

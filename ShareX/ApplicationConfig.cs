@@ -43,6 +43,15 @@ namespace ShareX
         public int NameParserAutoIncrementNumber = 0;
         public RecentItem[] RecentLinks = null;
         public bool DisableHotkeys = false;
+        public List<QuickTaskInfo> QuickTaskPresets = new List<QuickTaskInfo>()
+        {
+            new QuickTaskInfo("Save, upload & copy URL", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard),
+            new QuickTaskInfo("Save & copy image", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.CopyImageToClipboard),
+            new QuickTaskInfo("Annotate, save, upload & copy URL", AfterCaptureTasks.AnnotateImage | AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard),
+            new QuickTaskInfo("Save", AfterCaptureTasks.SaveImageToFile),
+            new QuickTaskInfo("Copy image", AfterCaptureTasks.CopyImageToClipboard),
+            new QuickTaskInfo("Upload & copy URL", AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard)
+        };
 
         public ApplicationConfig()
         {
