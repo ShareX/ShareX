@@ -45,14 +45,17 @@ namespace ShareX
             }
         }
 
-        public static List<QuickTaskInfo> DefaultPresets = new List<QuickTaskInfo>()
+        public static List<QuickTaskInfo> DefaultPresets { get; } = new List<QuickTaskInfo>()
         {
-            new QuickTaskInfo("Save, upload & copy URL", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard),
-            new QuickTaskInfo("Save & copy image", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.CopyImageToClipboard),
-            new QuickTaskInfo("Annotate, save, upload & copy URL", AfterCaptureTasks.AnnotateImage | AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard),
+            new QuickTaskInfo("Save, Upload, Copy URL", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard),
+            new QuickTaskInfo("Save, Copy image", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.CopyImageToClipboard),
+            new QuickTaskInfo("Save, Copy image file", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.CopyFileToClipboard),
+            new QuickTaskInfo("Annotate, Save, Upload, Copy URL", AfterCaptureTasks.AnnotateImage | AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard),
+            new QuickTaskInfo(),
+            new QuickTaskInfo("Upload, Copy URL", AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard),
             new QuickTaskInfo("Save", AfterCaptureTasks.SaveImageToFile),
             new QuickTaskInfo("Copy image", AfterCaptureTasks.CopyImageToClipboard),
-            new QuickTaskInfo("Upload & copy URL", AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard)
+            new QuickTaskInfo("Annotate", AfterCaptureTasks.AnnotateImage)
         };
 
         public QuickTaskInfo()

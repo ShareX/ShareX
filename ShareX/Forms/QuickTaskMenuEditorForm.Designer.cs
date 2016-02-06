@@ -35,6 +35,7 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lvPresets
@@ -53,7 +54,7 @@
             this.lvPresets.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvPresets.Location = new System.Drawing.Point(8, 8);
             this.lvPresets.Name = "lvPresets";
-            this.lvPresets.Size = new System.Drawing.Size(448, 352);
+            this.lvPresets.Size = new System.Drawing.Size(448, 328);
             this.lvPresets.TabIndex = 0;
             this.lvPresets.UseCompatibleStateImageBehavior = false;
             this.lvPresets.View = System.Windows.Forms.View.Details;
@@ -98,6 +99,7 @@
             // 
             // btnReset
             // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnReset.Location = new System.Drawing.Point(272, 400);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(184, 23);
@@ -108,6 +110,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClose.Location = new System.Drawing.Point(8, 400);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(256, 23);
@@ -116,21 +119,32 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // QuickTaskPresetsEditorForm
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 344);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(341, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Tip: If you add empty task it will be converted to separator line in menu.";
+            // 
+            // QuickTaskMenuEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 432);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lvPresets);
-            this.Name = "QuickTaskPresetsEditorForm";
+            this.Name = "QuickTaskMenuEditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Quick task menu editor";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -143,5 +157,6 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label1;
     }
 }

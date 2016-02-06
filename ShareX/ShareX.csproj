@@ -97,8 +97,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompanionCube.cs" />
-    <Compile Include="CompanionCubeManager.cs" />
     <Compile Include="Controls\BeforeUploadControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,9 +120,6 @@
     </Compile>
     <Compile Include="Forms\ClipboardFormatForm.Designer.cs">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CompanionCubesForm.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\EncoderProgramForm.cs">
       <SubType>Form</SubType>
@@ -1227,7 +1222,6 @@
     <None Include="Resources\crown.png" />
     <None Include="Resources\layer--pencil.png" />
     <None Include="Resources\globe-share.png" />
-    <None Include="Resources\google_plus.png" />
     <None Include="Resources\document-copy.png" />
     <None Include="Resources\image--pencil.png" />
     <None Include="Resources\exclamation-button.png" />
@@ -1263,7 +1257,6 @@
     <None Include="Resources\cross.png" />
     <None Include="Resources\arrow-270.png" />
     <None Include="Resources\ru.png" />
-    <None Include="Resources\CompanionCube.png" />
     <None Include="Resources\ui-scroll-pane-image.png" />
     <None Include="Resources\document-break.png" />
     <None Include="Resources\vn.png" />
