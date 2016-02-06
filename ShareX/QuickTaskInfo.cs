@@ -37,6 +37,10 @@ namespace ShareX
         public AfterCaptureTasks AfterCaptureTasks { get; set; }
         public AfterUploadTasks AfterUploadTasks { get; set; }
 
+        public QuickTaskInfo()
+        {
+        }
+
         public QuickTaskInfo(string name, AfterCaptureTasks afterCaptureTasks, AfterUploadTasks afterUploadTasks = AfterUploadTasks.None)
         {
             Name = name;

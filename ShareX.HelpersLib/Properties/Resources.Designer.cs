@@ -206,6 +206,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show quick task menu.
+        /// </summary>
+        internal static string AfterCaptureTasks_ShowQuickTaskMenu {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_ShowQuickTaskMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload image to host.
         /// </summary>
         internal static string AfterCaptureTasks_UploadImageToHost {

@@ -40,32 +40,35 @@ namespace ShareX
 
         public void ShowMenu()
         {
-            if (Program.Settings == null) return;
-
             ContextMenuStrip cms = new ContextMenuStrip
             {
                 Font = new Font("Arial", 10f),
                 AutoClose = false,
-                Opacity = 0.9,
                 ShowImageMargin = false
             };
 
-            foreach (QuickTaskInfo taskInfo in Program.Settings.QuickTaskPresets)
+            if (Program.Settings != null && Program.Settings.QuickTaskPresets != null && Program.Settings.QuickTaskPresets.Count > 0)
             {
-                ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = taskInfo.ToString().Replace("&", "&&"), Tag = taskInfo };
-                tsmi.Click += (sender, e) =>
+                foreach (QuickTaskInfo taskInfo in Program.Settings.QuickTaskPresets)
                 {
-                    QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
-                    OnTaskInfoSelected(selectedTaskInfo);
-                };
-                cms.Items.Add(tsmi);
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = taskInfo.ToString().Replace("&", "&&"), Tag = taskInfo };
+                    tsmi.Click += (sender, e) =>
+                    {
+                        QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
+                        cms.Close();
+                        OnTaskInfoSelected(selectedTaskInfo);
+                    };
+                    cms.Items.Add(tsmi);
+                }
+
+                cms.Items[0].Select();
+
+                cms.Items.Add(new ToolStripSeparator());
             }
 
-            cms.Items.Add(new ToolStripSeparator());
-
             // Translate
-            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit presets...");
-            //tsmiEdit.Click += (sender, e) =>
+            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit this menu...");
+            // TODO: tsmiEdit.Click += (sender, e) =>
             cms.Items.Add(tsmiEdit);
 
             cms.Items.Add(new ToolStripSeparator());
@@ -74,10 +77,12 @@ namespace ShareX
             tsmiCancel.Click += (sender, e) => cms.Close();
             cms.Items.Add(tsmiCancel);
 
-            cms.Show(CaptureHelpers.GetCursorPosition());
+            Point cursorPosition = CaptureHelpers.GetCursorPosition();
+            cursorPosition.Offset(-10, -10);
+            cms.Show(cursorPosition);
         }
 
-        public void OnTaskInfoSelected(QuickTaskInfo taskInfo)
+        protected void OnTaskInfoSelected(QuickTaskInfo taskInfo)
         {
             if (TaskInfoSelected != null)
             {
