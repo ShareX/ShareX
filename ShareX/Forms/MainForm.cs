@@ -57,9 +57,8 @@ namespace ShareX
 
         private void MainForm_HandleCreated(object sender, EventArgs e)
         {
-            LoadSettings();
+            UpdateSettings();
             InitHotkeys();
-            ConfigureAutoUpdate();
 
             IsReady = true;
 
@@ -93,6 +92,7 @@ namespace ShareX
         {
             InitializeComponent();
 
+            niTray.Icon = ShareXResources.Icon;
             Text = Program.Title;
 
             tsddbWorkflows.HideImageMargin();
@@ -182,6 +182,16 @@ namespace ShareX
 
             TaskManager.ListViewControl = lvUploads;
             uim = new UploadInfoManager(lvUploads);
+
+            foreach (ToolStripDropDownItem dropDownItem in new ToolStripDropDownItem[]
+            {
+                tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsmiImageUploaders, tsmiImageFileUploaders, tsmiTextUploaders, tsmiTextFileUploaders, tsmiFileUploaders,
+                tsmiURLShorteners, tsmiURLSharingServices, tsmiTrayAfterCaptureTasks, tsmiTrayAfterUploadTasks, tsmiTrayImageUploaders, tsmiTrayImageFileUploaders,
+                tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices
+            })
+            {
+                dropDownItem.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
+            }
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
         }
@@ -513,9 +523,8 @@ namespace ShareX
             }
         }
 
-        private void LoadSettings()
+        private void UpdateSettings()
         {
-            niTray.Icon = ShareXResources.Icon;
             niTray.Visible = Program.Settings.ShowTray;
 
             if (Program.Settings.RecentLinksRemember)
@@ -575,9 +584,6 @@ namespace ShareX
             UpdateMainFormSettings();
             UpdateMenu();
             UpdateUploaderMenuNames();
-            RegisterMenuClosing();
-
-            AfterSettingsJobs();
 
             if (Program.Settings.PreviewSplitterDistance > 0)
             {
@@ -588,19 +594,8 @@ namespace ShareX
             UpdateToggleHotkeyButton();
 
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
-        }
 
-        private void RegisterMenuClosing()
-        {
-            foreach (ToolStripDropDownItem dropDownItem in new ToolStripDropDownItem[]
-            {
-                tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsmiImageUploaders, tsmiImageFileUploaders, tsmiTextUploaders, tsmiTextFileUploaders, tsmiFileUploaders,
-                tsmiURLShorteners, tsmiURLSharingServices, tsmiTrayAfterCaptureTasks, tsmiTrayAfterUploadTasks, tsmiTrayImageUploaders, tsmiTrayImageFileUploaders,
-                tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices
-            })
-            {
-                dropDownItem.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
-            }
+            AfterSettingsJobs();
         }
 
         private void AfterSettingsJobs()
@@ -611,6 +606,8 @@ namespace ShareX
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentLinksMaxCount;
+
+            ConfigureAutoUpdate();
         }
 
         public void UpdateMainFormSettings()
@@ -1150,7 +1147,6 @@ namespace ShareX
             UpdateWorkflowsMenu();
             Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
             Program.ConfigureUploadersConfigWatcher();
-            ConfigureAutoUpdate();
         }
 
         private void tsbTaskSettings_Click(object sender, EventArgs e)
