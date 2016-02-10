@@ -824,8 +824,12 @@ namespace ShareX
                     imageUploader = new VgymeUploader();
                     break;
                 case ImageDestination.SomeImage:
-                    //imageUploader = new SomeImage(APIKeys.SomeImageKey)
-                    imageUploader = new SomeImage(Program.UploadersConfig.SomeImageAPIKey)
+                    String someImageAPIKey = Program.UploadersConfig.SomeImageAPIKey;
+                    if (someImageAPIKey == "")
+                    {
+                        someImageAPIKey = APIKeys.SomeImageKey;
+                    }
+                    imageUploader = new SomeImage(someImageAPIKey)
                     {
                         DirectURL = Program.UploadersConfig.SomeImageDirectURL
                     };

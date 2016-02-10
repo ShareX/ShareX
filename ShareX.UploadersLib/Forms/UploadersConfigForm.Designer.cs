@@ -521,13 +521,14 @@
             this.txtCheveretoAPIKey = new System.Windows.Forms.TextBox();
             this.lblCheveretoAPIKey = new System.Windows.Forms.Label();
             this.tpSomeImage = new System.Windows.Forms.TabPage();
+            this.txtSomeImageAPIKey = new System.Windows.Forms.TextBox();
+            this.lblSomeImageAPIKey = new System.Windows.Forms.Label();
             this.cbSomeImageDirectURL = new System.Windows.Forms.CheckBox();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lblSomeImageAPIKey = new System.Windows.Forms.Label();
-            this.txtSomeImageAPIKey = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -4176,12 +4177,24 @@
             // 
             // tpSomeImage
             // 
+            this.tpSomeImage.Controls.Add(this.label1);
             this.tpSomeImage.Controls.Add(this.txtSomeImageAPIKey);
             this.tpSomeImage.Controls.Add(this.lblSomeImageAPIKey);
             this.tpSomeImage.Controls.Add(this.cbSomeImageDirectURL);
             resources.ApplyResources(this.tpSomeImage, "tpSomeImage");
             this.tpSomeImage.Name = "tpSomeImage";
             this.tpSomeImage.UseVisualStyleBackColor = true;
+            // 
+            // txtSomeImageAPIKey
+            // 
+            resources.ApplyResources(this.txtSomeImageAPIKey, "txtSomeImageAPIKey");
+            this.txtSomeImageAPIKey.Name = "txtSomeImageAPIKey";
+            this.txtSomeImageAPIKey.TextChanged += new System.EventHandler(this.txtSomeImageAPIKey_TextChanged);
+            // 
+            // lblSomeImageAPIKey
+            // 
+            resources.ApplyResources(this.lblSomeImageAPIKey, "lblSomeImageAPIKey");
+            this.lblSomeImageAPIKey.Name = "lblSomeImageAPIKey";
             // 
             // cbSomeImageDirectURL
             // 
@@ -4221,16 +4234,10 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // lblSomeImageAPIKey
+            // label1
             // 
-            resources.ApplyResources(this.lblSomeImageAPIKey, "lblSomeImageAPIKey");
-            this.lblSomeImageAPIKey.Name = "lblSomeImageAPIKey";
-            // 
-            // txtSomeImageAPIKey
-            // 
-            resources.ApplyResources(this.txtSomeImageAPIKey, "txtSomeImageAPIKey");
-            this.txtSomeImageAPIKey.Name = "txtSomeImageAPIKey";
-            this.txtSomeImageAPIKey.TextChanged += new System.EventHandler(this.txtSomeImageAPIKey_TextChanged);
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // UploadersConfigForm
             // 
@@ -4884,5 +4891,6 @@
         private System.Windows.Forms.CheckBox cbSomeImageDirectURL;
         private System.Windows.Forms.TextBox txtSomeImageAPIKey;
         private System.Windows.Forms.Label lblSomeImageAPIKey;
+        private System.Windows.Forms.Label label1;
     }
 }
