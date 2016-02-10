@@ -539,3 +539,4 @@ namespace ShareX.UploadersLib
         #endregion Helper Methods
     }
 }
+
