@@ -36,30 +36,49 @@ namespace ShareX
 {
     public partial class ApplicationSettingsForm : BaseForm
     {
-        private bool loaded;
         private const int MaxBufferSizePower = 14;
+
+        private bool loaded = false;
+        private bool firstLoad = true;
 
         public ApplicationSettingsForm()
         {
             InitializeComponent();
-            LoadSettings();
-            loaded = true;
+            UpdateSettings();
         }
 
-        private void LoadSettings()
+        private void SettingsForm_Shown(object sender, EventArgs e)
         {
+            this.ShowActivate();
+        }
+
+        private void SettingsForm_Resize(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.WritePersonalPathConfig(txtPersonalFolderPath.Text);
+        }
+
+        private void UpdateSettings()
+        {
+            loaded = false;
+
             // General
-
-            foreach (SupportedLanguage language in Helpers.GetEnums<SupportedLanguage>())
+            if (firstLoad)
             {
-                ToolStripMenuItem tsmi = new ToolStripMenuItem(language.GetLocalizedDescription());
-                tsmi.Image = GetLanguageIcon(language);
-                tsmi.ImageScaling = ToolStripItemImageScaling.None;
-                SupportedLanguage lang = language;
-                tsmi.Click += (sender, e) => ChangeLanguage(lang);
-                cmsLanguages.Items.Add(tsmi);
+                foreach (SupportedLanguage language in Helpers.GetEnums<SupportedLanguage>())
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(language.GetLocalizedDescription());
+                    tsmi.Image = GetLanguageIcon(language);
+                    tsmi.ImageScaling = ToolStripItemImageScaling.None;
+                    SupportedLanguage lang = language;
+                    tsmi.Click += (sender, e) => ChangeLanguage(lang);
+                    cmsLanguages.Items.Add(tsmi);
+                }
             }
-
             ChangeLanguage(Program.Settings.Language);
 
             cbShowTray.Checked = Program.Settings.ShowTray;
@@ -88,8 +107,12 @@ namespace ShareX
             cbUseCustomScreenshotsPath.Checked = Program.Settings.UseCustomScreenshotsPath;
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
-            CodeMenu.Create<ReplCodeMenuEntry>(txtSaveImageSubFolderPattern, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn, ReplCodeMenuEntry.i,
-                ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
+
+            if (firstLoad)
+            {
+                CodeMenu.Create(txtSaveImageSubFolderPattern, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn, ReplCodeMenuEntry.i,
+                    ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
+            }
 
             // Export / Import
             cbExportSettings.Checked = Program.Settings.ExportSettings;
@@ -97,7 +120,11 @@ namespace ShareX
             cbExportLogs.Checked = Program.Settings.ExportLogs;
 
             // Proxy
-            cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
+            if (firstLoad)
+            {
+                cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
+            }
+
             cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
             txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
             txtProxyPassword.Text = Program.Settings.ProxySettings.Password;
@@ -108,6 +135,7 @@ namespace ShareX
             // Upload
             nudUploadLimit.Value = Program.Settings.UploadLimit;
 
+            cbBufferSize.Items.Clear();
             for (int i = 0; i < MaxBufferSizePower; i++)
             {
                 string size = ((long)(Math.Pow(2, i) * 1024)).ToSizeString(Program.Settings.BinaryUnits, 0);
@@ -116,6 +144,7 @@ namespace ShareX
 
             cbBufferSize.SelectedIndex = Program.Settings.BufferSizePower.Between(0, MaxBufferSizePower);
 
+            lvClipboardFormats.Items.Clear();
             foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
             {
                 AddClipboardFormat(cf);
@@ -133,8 +162,11 @@ namespace ShareX
             Program.Settings.SecondaryTextUploaders.Where(n => Helpers.GetEnums<TextDestination>().All(e => e != n)).ForEach(x => Program.Settings.SecondaryTextUploaders.Remove(x));
             Program.Settings.SecondaryFileUploaders.Where(n => Helpers.GetEnums<FileDestination>().All(e => e != n)).ForEach(x => Program.Settings.SecondaryFileUploaders.Remove(x));
 
+            lvSecondaryImageUploaders.Items.Clear();
             Program.Settings.SecondaryImageUploaders.ForEach<ImageDestination>(x => lvSecondaryImageUploaders.Items.Add(new ListViewItem(x.GetLocalizedDescription()) { Tag = x }));
+            lvSecondaryTextUploaders.Items.Clear();
             Program.Settings.SecondaryTextUploaders.ForEach<TextDestination>(x => lvSecondaryTextUploaders.Items.Add(new ListViewItem(x.GetLocalizedDescription()) { Tag = x }));
+            lvSecondaryFileUploaders.Items.Clear();
             Program.Settings.SecondaryFileUploaders.ForEach<FileDestination>(x => lvSecondaryFileUploaders.Items.Add(new ListViewItem(x.GetLocalizedDescription()) { Tag = x }));
 
             // Print
@@ -145,6 +177,9 @@ namespace ShareX
             pgSettings.SelectedObject = Program.Settings;
 
             tttvMain.MainTabControl = tcSettings;
+
+            loaded = true;
+            firstLoad = false;
         }
 
         private Image GetLanguageIcon(SupportedLanguage language)
@@ -214,21 +249,6 @@ namespace ShareX
                     Program.Restart();
                 }
             }
-        }
-
-        private void SettingsForm_Shown(object sender, EventArgs e)
-        {
-            this.ShowActivate();
-        }
-
-        private void SettingsForm_Resize(object sender, EventArgs e)
-        {
-            Refresh();
-        }
-
-        private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Program.WritePersonalPathConfig(txtPersonalFolderPath.Text);
         }
 
         private void UpdateProxyControls()
