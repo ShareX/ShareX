@@ -36,28 +36,10 @@ namespace ShareX
 {
     public static class ExportImportManager
     {
-        public static bool Export()
+        public static bool Export(string exportPath)
         {
             try
             {
-                string exportPath;
-
-                using (SaveFileDialog sfd = new SaveFileDialog())
-                {
-                    sfd.DefaultExt = "sxb";
-                    sfd.FileName = "ShareX_backup.sxb";
-                    sfd.Filter = "ShareX backup (*.sxb)|*.sxb|All files (*.*)|*.*";
-
-                    if (sfd.ShowDialog() == DialogResult.OK)
-                    {
-                        exportPath = sfd.FileName;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-
                 Set7ZipLibraryPath();
 
                 SevenZipCompressor zip = new SevenZipCompressor();
@@ -115,26 +97,10 @@ namespace ShareX
             }
         }
 
-        public static bool Import()
+        public static bool Import(string importPath)
         {
             try
             {
-                string importPath;
-
-                using (OpenFileDialog ofd = new OpenFileDialog())
-                {
-                    ofd.Filter = "ShareX backup (*.sxb)|*.sxb|All files (*.*)|*.*";
-
-                    if (ofd.ShowDialog() == DialogResult.OK)
-                    {
-                        importPath = ofd.FileName;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-
                 Set7ZipLibraryPath();
 
                 using (SevenZipExtractor zip = new SevenZipExtractor(importPath))

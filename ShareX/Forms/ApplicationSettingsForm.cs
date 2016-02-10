@@ -423,12 +423,48 @@ namespace ShareX
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            ExportImportManager.Export();
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.DefaultExt = "sxb";
+                sfd.FileName = "ShareX_backup.sxb";
+                sfd.Filter = "ShareX backup (*.sxb)|*.sxb|All files (*.*)|*.*";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    btnExport.Enabled = false;
+                    btnImport.Enabled = false;
+                    pbExportImport.Visible = true;
+
+                    TaskEx.Run(() => ExportImportManager.Export(sfd.FileName), () =>
+                    {
+                        pbExportImport.Visible = false;
+                        btnExport.Enabled = true;
+                        btnImport.Enabled = true;
+                    });
+                }
+            }
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            ExportImportManager.Import();
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "ShareX backup (*.sxb)|*.sxb|All files (*.*)|*.*";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    btnExport.Enabled = false;
+                    btnImport.Enabled = false;
+                    pbExportImport.Visible = true;
+
+                    TaskEx.Run(() => ExportImportManager.Import(ofd.FileName), () =>
+                    {
+                        pbExportImport.Visible = false;
+                        btnExport.Enabled = true;
+                        btnImport.Enabled = true;
+                    });
+                }
+            }
         }
 
         #endregion Export / Import

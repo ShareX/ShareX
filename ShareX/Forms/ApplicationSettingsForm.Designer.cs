@@ -66,6 +66,13 @@ namespace ShareX
             this.lblSaveImageSubFolderPattern = new System.Windows.Forms.Label();
             this.lblSaveImageSubFolderPatternPreview = new System.Windows.Forms.Label();
             this.txtSaveImageSubFolderPattern = new System.Windows.Forms.TextBox();
+            this.tpExportImport = new System.Windows.Forms.TabPage();
+            this.cbExportLogs = new System.Windows.Forms.CheckBox();
+            this.cbExportHistory = new System.Windows.Forms.CheckBox();
+            this.cbExportSettings = new System.Windows.Forms.CheckBox();
+            this.pbExportImport = new System.Windows.Forms.ProgressBar();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.tpProxy = new System.Windows.Forms.TabPage();
             this.cbProxyMethod = new System.Windows.Forms.ComboBox();
             this.lblProxyMethod = new System.Windows.Forms.Label();
@@ -114,12 +121,6 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.tpExportImport = new System.Windows.Forms.TabPage();
-            this.cbExportSettings = new System.Windows.Forms.CheckBox();
-            this.cbExportHistory = new System.Windows.Forms.CheckBox();
-            this.cbExportLogs = new System.Windows.Forms.CheckBox();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -127,6 +128,7 @@ namespace ShareX
             this.gbChrome.SuspendLayout();
             this.gbWindows.SuspendLayout();
             this.tpPaths.SuspendLayout();
+            this.tpExportImport.SuspendLayout();
             this.tpProxy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).BeginInit();
             this.tpUpload.SuspendLayout();
@@ -143,7 +145,6 @@ namespace ShareX
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).BeginInit();
             this.tpPrint.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
-            this.tpExportImport.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcSettings
@@ -404,6 +405,60 @@ namespace ShareX
             resources.ApplyResources(this.txtSaveImageSubFolderPattern, "txtSaveImageSubFolderPattern");
             this.txtSaveImageSubFolderPattern.Name = "txtSaveImageSubFolderPattern";
             this.txtSaveImageSubFolderPattern.TextChanged += new System.EventHandler(this.txtSaveImageSubFolderPattern_TextChanged);
+            // 
+            // tpExportImport
+            // 
+            this.tpExportImport.Controls.Add(this.cbExportLogs);
+            this.tpExportImport.Controls.Add(this.cbExportHistory);
+            this.tpExportImport.Controls.Add(this.cbExportSettings);
+            this.tpExportImport.Controls.Add(this.pbExportImport);
+            this.tpExportImport.Controls.Add(this.btnExport);
+            this.tpExportImport.Controls.Add(this.btnImport);
+            resources.ApplyResources(this.tpExportImport, "tpExportImport");
+            this.tpExportImport.Name = "tpExportImport";
+            this.tpExportImport.UseVisualStyleBackColor = true;
+            // 
+            // cbExportLogs
+            // 
+            resources.ApplyResources(this.cbExportLogs, "cbExportLogs");
+            this.cbExportLogs.Name = "cbExportLogs";
+            this.cbExportLogs.UseVisualStyleBackColor = true;
+            this.cbExportLogs.CheckedChanged += new System.EventHandler(this.cbExportLogs_CheckedChanged);
+            // 
+            // cbExportHistory
+            // 
+            resources.ApplyResources(this.cbExportHistory, "cbExportHistory");
+            this.cbExportHistory.Name = "cbExportHistory";
+            this.cbExportHistory.UseVisualStyleBackColor = true;
+            this.cbExportHistory.CheckedChanged += new System.EventHandler(this.cbExportHistory_CheckedChanged);
+            // 
+            // cbExportSettings
+            // 
+            resources.ApplyResources(this.cbExportSettings, "cbExportSettings");
+            this.cbExportSettings.Name = "cbExportSettings";
+            this.cbExportSettings.UseVisualStyleBackColor = true;
+            this.cbExportSettings.CheckedChanged += new System.EventHandler(this.cbExportSettings_CheckedChanged);
+            // 
+            // pbExportImport
+            // 
+            resources.ApplyResources(this.pbExportImport, "pbExportImport");
+            this.pbExportImport.MarqueeAnimationSpeed = 50;
+            this.pbExportImport.Name = "pbExportImport";
+            this.pbExportImport.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            // 
+            // btnExport
+            // 
+            resources.ApplyResources(this.btnExport, "btnExport");
+            this.btnExport.Name = "btnExport";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnImport
+            // 
+            resources.ApplyResources(this.btnImport, "btnImport");
+            this.btnImport.Name = "btnImport";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // tpProxy
             // 
@@ -777,52 +832,6 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             // 
-            // tpExportImport
-            // 
-            this.tpExportImport.Controls.Add(this.btnImport);
-            this.tpExportImport.Controls.Add(this.btnExport);
-            this.tpExportImport.Controls.Add(this.cbExportLogs);
-            this.tpExportImport.Controls.Add(this.cbExportHistory);
-            this.tpExportImport.Controls.Add(this.cbExportSettings);
-            resources.ApplyResources(this.tpExportImport, "tpExportImport");
-            this.tpExportImport.Name = "tpExportImport";
-            this.tpExportImport.UseVisualStyleBackColor = true;
-            // 
-            // cbExportSettings
-            // 
-            resources.ApplyResources(this.cbExportSettings, "cbExportSettings");
-            this.cbExportSettings.Name = "cbExportSettings";
-            this.cbExportSettings.UseVisualStyleBackColor = true;
-            this.cbExportSettings.CheckedChanged += new System.EventHandler(this.cbExportSettings_CheckedChanged);
-            // 
-            // cbExportHistory
-            // 
-            resources.ApplyResources(this.cbExportHistory, "cbExportHistory");
-            this.cbExportHistory.Name = "cbExportHistory";
-            this.cbExportHistory.UseVisualStyleBackColor = true;
-            this.cbExportHistory.CheckedChanged += new System.EventHandler(this.cbExportHistory_CheckedChanged);
-            // 
-            // cbExportLogs
-            // 
-            resources.ApplyResources(this.cbExportLogs, "cbExportLogs");
-            this.cbExportLogs.Name = "cbExportLogs";
-            this.cbExportLogs.UseVisualStyleBackColor = true;
-            this.cbExportLogs.CheckedChanged += new System.EventHandler(this.cbExportLogs_CheckedChanged);
-            // 
-            // btnExport
-            // 
-            resources.ApplyResources(this.btnExport, "btnExport");
-            this.btnExport.Name = "btnExport";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnImport
-            // 
-            resources.ApplyResources(this.btnImport, "btnImport");
-            this.btnImport.Name = "btnImport";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -846,6 +855,8 @@ namespace ShareX
             this.gbWindows.PerformLayout();
             this.tpPaths.ResumeLayout(false);
             this.tpPaths.PerformLayout();
+            this.tpExportImport.ResumeLayout(false);
+            this.tpExportImport.PerformLayout();
             this.tpProxy.ResumeLayout(false);
             this.tpProxy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).EndInit();
@@ -866,8 +877,6 @@ namespace ShareX
             this.tpPrint.ResumeLayout(false);
             this.tpPrint.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
-            this.tpExportImport.ResumeLayout(false);
-            this.tpExportImport.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -965,5 +974,6 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbExportLogs;
         private System.Windows.Forms.CheckBox cbExportHistory;
         private System.Windows.Forms.CheckBox cbExportSettings;
+        private System.Windows.Forms.ProgressBar pbExportImport;
     }
 }
