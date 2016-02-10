@@ -220,10 +220,10 @@
     <value>Monitortest...</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
-    <value>Nach der Aufnahme Aufgaben</value>
+    <value>Aufgabe nach der Aufnahme</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>Aufgaben nach dem Hochladen</value>
+    <value>Aufgabe nach dem Hochladen</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Bildhochlader</value>
@@ -376,7 +376,7 @@
     <value>URL teilen</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
-    <value>Zeige QR code...</value>
+    <value>Zeige QR-Code...</value>
   </data>
   <data name="tsmiShowResponse.Text" xml:space="preserve">
     <value>Zeige Antwort....</value>
@@ -571,7 +571,7 @@
     <value>Monitor</value>
   </data>
   <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
-    <value>Miniatur-URL</value>
+    <value>Thumbnail-URL</value>
   </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
@@ -628,7 +628,7 @@
     <value>Webpage Aufnahme...</value>
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
-    <value>Video thumbnailer...</value>
+    <value>Video Thumbnailer...</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video Thumbnailer...</value>
@@ -640,21 +640,24 @@
     <value>Debug</value>
   </data>
   <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>URL-Teilen Testen</value>
+    <value>URL-Teilen testen</value>
   </data>
   <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>URL-Kürzen Testen</value>
+    <value>URL-Kürzen testen</value>
   </data>
   <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Dateiupload Testen</value>
+    <value>Dateiupload testen</value>
   </data>
   <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Textupload Testen</value>
+    <value>Textupload testen</value>
   </data>
   <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Bildupload Testen</value>
+    <value>Bildupload testen</value>
   </data>
   <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Debug log...</value>
+    <value>Debug-Log...</value>
+  </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Verstecke Spalten</value>
   </data>
 </root>

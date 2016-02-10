@@ -235,7 +235,7 @@
     <value>Wenn die Zwischenablage eine Datei URL beinhaltet, dann lade es runter und lade es hoch</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Überschreibe den vorgegeben eigenen Hochlader</value>
+    <value>Überschreibe den vorgegebenen eigenen Hochlader:</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
     <value>Überschreibe den vorgegeben FTP account:</value>
@@ -307,7 +307,7 @@
     <value>JPEG Qualität:</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>Namensmuster für Aufnahme oder Zwischenablagen hochladens</value>
+    <value>Namensmuster für Aufnahme oder Zwischenablagen Uploads</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
     <value>Namensmuster für aktive Fenster Aufnahme</value>
@@ -442,6 +442,15 @@
     <value>Werkzeuge</value>
   </data>
   <data name="tpVideoThumbnailer.Text" xml:space="preserve">
-    <value>Video thumbnailer</value>
+    <value>Video Thumbnailer</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>Benutze Fenstertitel für Regionsaufnahmen (ShareX versucht das Fenster hinter der Auswahl zu ermitteln)</value>
+  </data>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 - 100</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>Dateibenennung</value>
   </data>
 </root>

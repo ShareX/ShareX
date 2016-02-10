@@ -169,7 +169,7 @@
     <value>URL Teilen</value>
   </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
-    <value>Zeige QR code Fenster</value>
+    <value>Zeige QR-Code Fenster</value>
   </data>
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
     <value>URL kürzen</value>
@@ -273,10 +273,10 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Eigener Dateihochlader</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
-    <value>Email</value>
+    <value>E-Mail</value>
   </data>
   <data name="FileDestination_SharedFolder" xml:space="preserve">
-    <value>geteilte Ordner</value>
+    <value>Freigegebene Ordner</value>
   </data>
   <data name="FileExistAction_Ask" xml:space="preserve">
     <value>Fragen was jetzt zutun ist</value>
@@ -375,7 +375,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Gesamten Bildschirm aufnehmen</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
-    <value>QR code</value>
+    <value>QR-Code</value>
   </data>
   <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
     <value>Region aufnehmen (Notiz)</value>
@@ -567,7 +567,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Aktualisierungscheck fehlgeschlagen</value>
   </data>
   <data name="URLSharingServices_Email" xml:space="preserve">
-    <value>Email</value>
+    <value>E-Mail</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>Eigener URL-Kürzer</value>
@@ -757,7 +757,7 @@ Möchtest du sie herunterladen und installieren?</value>
     <value>Hochladen</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
-    <value>Video thumbnailer</value>
+    <value>Video Thumbnailer</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
     <value>Werkzeuge</value>
@@ -825,5 +825,17 @@ Möchtest du sie herunterladen?</value>
   </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>Location header</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>Zeige "Nach der Aufnahme" Fenster</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>Zeige "Vor dem Hochladen" Fenster</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>Zeige "Nach dem Hochladen" Fenster</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>Zeige Datei im Windows Explorer</value>
   </data>
 </root>
