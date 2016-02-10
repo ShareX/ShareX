@@ -473,7 +473,7 @@
   </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
     <value>gbSteam</value>
   </data>
@@ -521,7 +521,7 @@
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbChrome.Name" xml:space="preserve">
     <value>gbChrome</value>
   </data>
@@ -635,7 +635,7 @@
   </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
     <value>gbWindows</value>
   </data>
@@ -749,7 +749,7 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
@@ -992,7 +992,7 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>
@@ -1052,6 +1052,171 @@
   </data>
   <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btnImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 128</value>
+  </data>
+  <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 23</value>
+  </data>
+  <data name="btnImport.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Import...</value>
+  </data>
+  <data name="&gt;&gt;btnImport.Name" xml:space="preserve">
+    <value>btnImport</value>
+  </data>
+  <data name="&gt;&gt;btnImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnImport.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnExport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 96</value>
+  </data>
+  <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 23</value>
+  </data>
+  <data name="btnExport.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Export...</value>
+  </data>
+  <data name="&gt;&gt;btnExport.Name" xml:space="preserve">
+    <value>btnExport</value>
+  </data>
+  <data name="&gt;&gt;btnExport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnExport.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;btnExport.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbExportLogs.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbExportLogs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbExportLogs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="cbExportLogs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 17</value>
+  </data>
+  <data name="cbExportLogs.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>Export logs</value>
+  </data>
+  <data name="&gt;&gt;cbExportLogs.Name" xml:space="preserve">
+    <value>cbExportLogs</value>
+  </data>
+  <data name="&gt;&gt;cbExportLogs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbExportLogs.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;cbExportLogs.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbExportHistory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbExportHistory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbExportHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="cbExportHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 17</value>
+  </data>
+  <data name="cbExportHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Export history</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.Name" xml:space="preserve">
+    <value>cbExportHistory</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbExportSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbExportSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="cbExportSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 17</value>
+  </data>
+  <data name="cbExportSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Export settings</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.Name" xml:space="preserve">
+    <value>cbExportSettings</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpExportImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpExportImport.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpExportImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 370</value>
+  </data>
+  <data name="tpExportImport.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>Export / Import</value>
+  </data>
+  <data name="&gt;&gt;tpExportImport.Name" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;tpExportImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpExportImport.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="&gt;&gt;tpExportImport.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -1336,7 +1501,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpProxy.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblUploadLimit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2026,7 +2191,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpUpload.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2140,7 +2305,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpPrint.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="pgSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2191,7 +2356,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpAdvanced.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="tcSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 3</value>

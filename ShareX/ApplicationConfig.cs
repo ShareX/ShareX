@@ -43,6 +43,7 @@ namespace ShareX
         public int NameParserAutoIncrementNumber = 0;
         public RecentItem[] RecentLinks = null;
         public bool DisableHotkeys = false;
+        public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
 
         public ApplicationConfig()
         {
@@ -81,6 +82,14 @@ namespace ShareX
         public string SaveImageSubFolderPattern = "%y-%mo";
 
         #endregion Paths
+
+        #region Export / Import
+
+        public bool ExportSettings = true;
+        public bool ExportHistory = true;
+        public bool ExportLogs = false;
+
+        #endregion Export / Import
 
         #region Proxy
 

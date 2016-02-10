@@ -860,4 +860,7 @@ Would you like to download it?</value>
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>Show "After upload" window</value>
   </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>Show quick task menu</value>
+  </data>
 </root>

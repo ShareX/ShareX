@@ -130,7 +130,7 @@
     <value>Salvar como arquivo...</value>
   </data>
   <data name="tsmiExportUpload.Text" xml:space="preserve">
-    <value>Upload como texto</value>
+    <value>Enviar como texto</value>
   </data>
   <data name="tsmiImportClipboard.Text" xml:space="preserve">
     <value>Da área de transferência</value>

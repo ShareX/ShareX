@@ -62,11 +62,11 @@ namespace ShareX.HelpersLib
             {
                 if (NativeMethods.Is64Bit())
                 {
-                    SevenZipExtractor.SetLibraryPath(Path.Combine(Application.StartupPath, "7z-x64.dll"));
+                    SevenZipExtractor.SetLibraryPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7z-x64.dll"));
                 }
                 else
                 {
-                    SevenZipExtractor.SetLibraryPath(Path.Combine(Application.StartupPath, "7z.dll"));
+                    SevenZipExtractor.SetLibraryPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7z.dll"));
                 }
 
                 Helpers.CreateDirectoryIfNotExist(extractPath);

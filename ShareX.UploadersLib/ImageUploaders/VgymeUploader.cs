@@ -32,7 +32,7 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, "http://vgy.me/upload", fileName);
+            UploadResult result = UploadData(stream, "https://vgy.me/upload", fileName);
 
             if (result.IsSuccess)
             {

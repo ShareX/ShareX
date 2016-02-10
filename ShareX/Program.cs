@@ -203,13 +203,14 @@ namespace ShareX
             }
         }
 
+        public static string LogsFolder => Path.Combine(PersonalFolder, "Logs");
+
         public static string LogsFilePath
         {
             get
             {
-                string logsFolder = Path.Combine(PersonalFolder, "Logs");
                 string filename = string.Format("ShareX-Log-{0:yyyy-MM}.txt", DateTime.Now);
-                return Path.Combine(logsFolder, filename);
+                return Path.Combine(LogsFolder, filename);
             }
         }
 
@@ -235,8 +236,9 @@ namespace ShareX
             }
         }
 
-        private static string BackupFolder => Path.Combine(PersonalFolder, "Backup");
-        private static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
+        public static string BackupFolder => Path.Combine(PersonalFolder, "Backup");
+        public static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
+        public static string GreenshotImageEditorConfigFilePath => Path.Combine(PersonalFolder, "GreenshotImageEditor.ini");
         public static string ScreenRecorderCacheFilePath => Path.Combine(PersonalFolder, "ScreenRecorder.avi");
         public static string DefaultFFmpegFilePath => Path.Combine(ToolsFolder, "ffmpeg.exe");
         public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");

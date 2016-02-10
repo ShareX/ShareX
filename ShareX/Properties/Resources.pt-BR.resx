@@ -235,13 +235,13 @@ Pressione "Não" para cancelar e desabilitar o upload automático.</value>
     <value>Compartilhar URL ({0})</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
-    <value>Upload de pasta</value>
+    <value>Envio de pasta</value>
   </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
     <value>Upload de arquivo</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>Não mostrar esta mensagem de novo.</value>
+    <value>Não mostrar esta mensagem novamente.</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Você tem certeza que deseja fazer o upload de {0} arquivos?</value>
@@ -251,7 +251,7 @@ Pressione "Não" para cancelar e desabilitar o upload automático.</value>
 {0}</value>
   </data>
   <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
-    <value>Erros de upload</value>
+    <value>Erros de envio</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Encurtador de URL: {0}</value>
@@ -266,7 +266,7 @@ Pressione "Não" para cancelar e desabilitar o upload automático.</value>
     <value>Erro</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Não foi encontrada uma conta válida do Twitter.</value>
+    <value>Não foi possível encontrar uma conta válida do Twitter.</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tuíte enviado com sucesso.</value>
@@ -325,10 +325,10 @@ Pressione "Não" para cancelar e desabilitar o upload automático.</value>
 Você gostaria de baixar automaticamente?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Fonte de video e audio para o FFmpeg não pode ser vazio.</value>
+    <value>Fonte de video e áudio do FFmpeg não podem estar vazias.</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Não foi possivel encontar uma conta válida de FTP.</value>
+    <value>Não foi possível encontrar uma conta FTP válida.</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado para a área de transferência: {0}</value>
@@ -366,7 +366,7 @@ Por favor, execute o ShareX como administrador para mudar a pasta de destino.</v
 
 {1}
 
-Por favor, selecione um atalho diferente ou feche a aplicação que está gerando o conflito e re-abra o ShareX.</value>
+Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabra o ShareX.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Depois da captura: {0}</value>
@@ -444,7 +444,7 @@ Por favor, selecione um atalho diferente ou feche a aplicação que está gerand
     <value>Personalizado</value>
   </data>
   <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
-    <value>Você pode clicar com o botão direito no icone do ShareX na bandeja do sistema para iniciar captura por região.</value>
+    <value>Você pode clicar com o botão direito no ícone do ShareX na bandeja do sistema para iniciar uma captura por região.</value>
   </data>
   <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
     <value>Editor de imagem - como carregar a imagem?</value>
@@ -471,7 +471,7 @@ Tem certeza de que quer continuar?</value>
     <value>Suporte ao Chrome desabilitado.</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
-    <value>Notas de atualização</value>
+    <value>Registro de alterações</value>
   </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Não foi possível salvar imagem no local {0}.</value>

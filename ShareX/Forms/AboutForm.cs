@@ -158,11 +158,6 @@ Copyright (c) 2007-2016 ShareX Team", Resources.AboutForm_AboutForm_Contributors
             URLHelpers.OpenURL(e.LinkText);
         }
 
-        private void AboutForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            CompanionCubeManager.Stop();
-        }
-
         #region Animation
 
         private const int w = 200;
@@ -245,20 +240,6 @@ Copyright (c) 2007-2016 ShareX Team", Resources.AboutForm_AboutForm_Contributors
 
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
-#if STEAM
-            if (e.Button == MouseButtons.Middle)
-            {
-                cLogo.Stop();
-                CompanionCubeManager.Toggle();
-                return;
-            }
-
-            if (CompanionCubeManager.IsActive)
-            {
-                CompanionCubeManager.Stop();
-            }
-#endif
-
             if (!isEasterEggStarted)
             {
                 isPaused = !isPaused;

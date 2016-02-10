@@ -78,7 +78,7 @@ namespace ShareX
 
         private void AddAfterCaptureItems(AfterCaptureTasks afterCaptureTasks)
         {
-            AfterCaptureTasks[] ignore = new AfterCaptureTasks[] { AfterCaptureTasks.None, AfterCaptureTasks.ShowAfterCaptureWindow };
+            AfterCaptureTasks[] ignore = new AfterCaptureTasks[] { AfterCaptureTasks.None, AfterCaptureTasks.ShowQuickTaskMenu, AfterCaptureTasks.ShowAfterCaptureWindow };
 
             foreach (AfterCaptureTasks task in Helpers.GetEnums<AfterCaptureTasks>())
             {

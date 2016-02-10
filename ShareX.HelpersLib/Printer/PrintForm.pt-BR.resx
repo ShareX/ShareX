@@ -133,7 +133,7 @@
     <value>Permitir que a imagem alargue</value>
   </data>
   <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>Auto rotação da imagem</value>
+    <value>Girar imagem</value>
   </data>
   <data name="lblMargin.Text" xml:space="preserve">
     <value>Margem:</value>
@@ -142,6 +142,6 @@
     <value>Centralizar posição da imagem</value>
   </data>
   <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Auto escala da imagem</value>
+    <value>Redimensionar imagem</value>
   </data>
 </root>

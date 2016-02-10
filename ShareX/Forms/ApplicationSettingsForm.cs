@@ -91,6 +91,11 @@ namespace ShareX
             CodeMenu.Create<ReplCodeMenuEntry>(txtSaveImageSubFolderPattern, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn, ReplCodeMenuEntry.i,
                 ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
 
+            // Export / Import
+            cbExportSettings.Checked = Program.Settings.ExportSettings;
+            cbExportHistory.Checked = Program.Settings.ExportHistory;
+            cbExportLogs.Checked = Program.Settings.ExportLogs;
+
             // Proxy
             cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
             cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
@@ -398,6 +403,34 @@ namespace ShareX
         }
 
         #endregion Paths
+
+        #region Export / Import
+
+        private void cbExportSettings_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ExportSettings = cbExportSettings.Checked;
+        }
+
+        private void cbExportHistory_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ExportHistory = cbExportHistory.Checked;
+        }
+
+        private void cbExportLogs_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ExportLogs = cbExportLogs.Checked;
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportImportManager.Export();
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+        }
+
+        #endregion Export / Import
 
         #region Proxy
 
