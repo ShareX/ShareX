@@ -423,6 +423,7 @@ namespace ShareX
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            ExportImportManager.Export();
         }
 
         private void btnImport_Click(object sender, EventArgs e)

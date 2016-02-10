@@ -85,6 +85,10 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=20de82c62b055c88, processorArchitecture=MSIL">
+      <HintPath>..\packages\SevenZipSharp.0.64\lib\SevenZipSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -103,6 +107,7 @@
     <Compile Include="Controls\BeforeUploadControl.Designer.cs">
       <DependentUpon>BeforeUploadControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExportImportManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
     </Compile>
