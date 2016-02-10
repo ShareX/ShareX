@@ -526,6 +526,8 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.lblSomeImageAPIKey = new System.Windows.Forms.Label();
+            this.txtSomeImageAPIKey = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -4174,6 +4176,8 @@
             // 
             // tpSomeImage
             // 
+            this.tpSomeImage.Controls.Add(this.txtSomeImageAPIKey);
+            this.tpSomeImage.Controls.Add(this.lblSomeImageAPIKey);
             this.tpSomeImage.Controls.Add(this.cbSomeImageDirectURL);
             resources.ApplyResources(this.tpSomeImage, "tpSomeImage");
             this.tpSomeImage.Name = "tpSomeImage";
@@ -4216,6 +4220,17 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
+            // 
+            // lblSomeImageAPIKey
+            // 
+            resources.ApplyResources(this.lblSomeImageAPIKey, "lblSomeImageAPIKey");
+            this.lblSomeImageAPIKey.Name = "lblSomeImageAPIKey";
+            // 
+            // txtSomeImageAPIKey
+            // 
+            resources.ApplyResources(this.txtSomeImageAPIKey, "txtSomeImageAPIKey");
+            this.txtSomeImageAPIKey.Name = "txtSomeImageAPIKey";
+            this.txtSomeImageAPIKey.TextChanged += new System.EventHandler(this.txtSomeImageAPIKey_TextChanged);
             // 
             // UploadersConfigForm
             // 
@@ -4867,5 +4882,7 @@
         private System.Windows.Forms.Button btnCustomUploadersExportAll;
         private System.Windows.Forms.TabPage tpSomeImage;
         private System.Windows.Forms.CheckBox cbSomeImageDirectURL;
+        private System.Windows.Forms.TextBox txtSomeImageAPIKey;
+        private System.Windows.Forms.Label lblSomeImageAPIKey;
     }
 }

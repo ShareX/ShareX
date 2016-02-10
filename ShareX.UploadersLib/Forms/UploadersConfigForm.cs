@@ -243,6 +243,7 @@ namespace ShareX.UploadersLib
 
             // SomeImage
 
+            txtSomeImageAPIKey.Text = Config.SomeImageAPIKey;
             cbSomeImageDirectURL.Checked = Config.SomeImageDirectURL;
 
             #endregion Image uploaders
@@ -998,6 +999,11 @@ namespace ShareX.UploadersLib
         #endregion Chevereto
 
         #region SomeImage
+
+        private void txtSomeImageAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.SomeImageAPIKey = txtSomeImageAPIKey.Text;
+        }
 
         private void cbSomeImageDirectURL_CheckedChanged(object sender, EventArgs e)
         {

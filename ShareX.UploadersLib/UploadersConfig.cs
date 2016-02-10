@@ -83,7 +83,8 @@ namespace ShareX.UploadersLib
         public bool CheveretoDirectURL = true;
 
         // SomeImage
-        public bool SomeImageDirectURL = false;
+        public string SomeImageAPIKey = string.Empty;
+        public bool SomeImageDirectURL = true;
 
         #endregion Image uploaders
 
@@ -391,6 +392,8 @@ namespace ShareX.UploadersLib
                     return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount) && OAuthInfo.CheckOAuth(TwitterOAuthInfoList[TwitterSelectedAccount]);
                 case ImageDestination.Chevereto:
                     return !string.IsNullOrEmpty(CheveretoWebsite) && !string.IsNullOrEmpty(CheveretoAPIKey);
+                case ImageDestination.SomeImage:
+                    return !string.IsNullOrEmpty(SomeImageAPIKey);
                 case ImageDestination.CustomImageUploader:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomImageUploaderSelected);
             }
