@@ -428,6 +428,7 @@ namespace ShareX
 
         private void btnImport_Click(object sender, EventArgs e)
         {
+            ExportImportManager.Import();
         }
 
         #endregion Export / Import

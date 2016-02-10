@@ -40,13 +40,17 @@ namespace ShareX
         {
             try
             {
-                string exportFolder;
+                string exportPath;
 
-                using (FolderSelectDialog dlg = new FolderSelectDialog())
+                using (SaveFileDialog sfd = new SaveFileDialog())
                 {
-                    if (dlg.ShowDialog())
+                    sfd.DefaultExt = "sxb";
+                    sfd.FileName = "ShareX_backup.sxb";
+                    sfd.Filter = "ShareX backup (*.sxb)|*.sxb|All files (*.*)|*.*";
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
                     {
-                        exportFolder = dlg.FileName;
+                        exportPath = sfd.FileName;
                     }
                     else
                     {
@@ -58,7 +62,7 @@ namespace ShareX
 
                 SevenZipCompressor zip = new SevenZipCompressor();
                 zip.ArchiveFormat = OutArchiveFormat.SevenZip;
-                zip.CompressionLevel = CompressionLevel.Ultra;
+                zip.CompressionLevel = CompressionLevel.Normal;
                 zip.CompressionMethod = CompressionMethod.Lzma2;
 
                 Dictionary<string, string> files = new Dictionary<string, string>();
@@ -83,8 +87,6 @@ namespace ShareX
                     }
                 }
 
-                string exportPath = Path.Combine(exportFolder, "ShareX_backup.sxb");
-
                 zip.CompressFileDictionary(files, exportPath);
 
                 return true;
@@ -100,27 +102,45 @@ namespace ShareX
 
         private static void AddFileToDictionary(Dictionary<string, string> files, string filePath, string subFolder = null)
         {
-            string destinationPath = Path.GetFileName(filePath);
-
-            if (!string.IsNullOrEmpty(subFolder))
+            if (File.Exists(filePath))
             {
-                destinationPath = Path.Combine(subFolder, destinationPath);
-            }
+                string destinationPath = Path.GetFileName(filePath);
 
-            files.Add(destinationPath, filePath);
+                if (!string.IsNullOrEmpty(subFolder))
+                {
+                    destinationPath = Path.Combine(subFolder, destinationPath);
+                }
+
+                files.Add(destinationPath, filePath);
+            }
         }
 
-        public static bool Import(string filePath)
+        public static bool Import()
         {
             try
             {
+                string importPath;
+
+                using (OpenFileDialog ofd = new OpenFileDialog())
+                {
+                    ofd.Filter = "ShareX backup (*.sxb)|*.sxb|All files (*.*)|*.*";
+
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        importPath = ofd.FileName;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
                 Set7ZipLibraryPath();
 
-                Helpers.CreateDirectoryIfNotExist(filePath);
-
-                using (SevenZipExtractor zip = new SevenZipExtractor(filePath))
+                using (SevenZipExtractor zip = new SevenZipExtractor(importPath))
                 {
-                    // TODO
+                    zip.ExtractArchive(Program.PersonalFolder);
+
                     return true;
                 }
             }
