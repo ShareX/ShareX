@@ -315,7 +315,7 @@ namespace ShareX
             Application.Run(MainForm);
 
             if (WatchFolderManager != null) WatchFolderManager.Dispose();
-            SaveSettings();
+            SaveAllSettings();
             BackupSettings();
 
             DebugHelper.Logger.Async = false;
@@ -399,14 +399,21 @@ namespace ShareX
             HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath);
         }
 
-        public static void SaveSettings()
+        public static void LoadAllSettings()
+        {
+            LoadProgramSettings();
+            LoadUploadersConfig();
+            LoadHotkeySettings();
+        }
+
+        public static void SaveAllSettings()
         {
             if (Settings != null) Settings.Save(ApplicationConfigFilePath);
             if (UploadersConfig != null) UploadersConfig.Save(UploadersConfigFilePath);
             if (HotkeysConfig != null) HotkeysConfig.Save(HotkeysConfigFilePath);
         }
 
-        public static void SaveSettingsAsync()
+        public static void SaveAllSettingsAsync()
         {
             if (Settings != null) Settings.SaveAsync(ApplicationConfigFilePath);
             UploadersConfigSaveAsync();

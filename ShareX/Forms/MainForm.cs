@@ -951,7 +951,7 @@ namespace ShareX
             {
                 e.Cancel = true;
                 Hide();
-                Program.SaveSettingsAsync();
+                Program.SaveAllSettingsAsync();
             }
         }
 

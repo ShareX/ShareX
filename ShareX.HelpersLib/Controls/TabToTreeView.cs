@@ -45,9 +45,12 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                mainTabControl = value;
-                FillTreeView(tvMain.Nodes, mainTabControl);
-                tvMain.ExpandAll();
+                if (mainTabControl != value)
+                {
+                    mainTabControl = value;
+                    FillTreeView(tvMain.Nodes, mainTabControl);
+                    tvMain.ExpandAll();
+                }
             }
         }
 

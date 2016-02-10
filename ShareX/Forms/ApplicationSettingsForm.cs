@@ -118,6 +118,7 @@ namespace ShareX
             cbExportSettings.Checked = Program.Settings.ExportSettings;
             cbExportHistory.Checked = Program.Settings.ExportHistory;
             cbExportLogs.Checked = Program.Settings.ExportLogs;
+            UpdateExportButton();
 
             // Proxy
             if (firstLoad)
@@ -285,6 +286,11 @@ namespace ShareX
             lblPreviewPersonalFolderPath.Text = personalPath;
         }
 
+        private void UpdateExportButton()
+        {
+            btnExport.Enabled = Program.Settings.ExportSettings || Program.Settings.ExportHistory || Program.Settings.ExportLogs;
+        }
+
         #region General
 
         private void llTranslators_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -429,16 +435,19 @@ namespace ShareX
         private void cbExportSettings_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.ExportSettings = cbExportSettings.Checked;
+            UpdateExportButton();
         }
 
         private void cbExportHistory_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.ExportHistory = cbExportHistory.Checked;
+            UpdateExportButton();
         }
 
         private void cbExportLogs_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.ExportLogs = cbExportLogs.Checked;
+            UpdateExportButton();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -455,7 +464,12 @@ namespace ShareX
                     btnImport.Enabled = false;
                     pbExportImport.Visible = true;
 
-                    TaskEx.Run(() => ExportImportManager.Export(sfd.FileName), () =>
+                    TaskEx.Run(() =>
+                    {
+                        Program.SaveAllSettings();
+                        ExportImportManager.Export(sfd.FileName);
+                    },
+                    () =>
                     {
                         pbExportImport.Visible = false;
                         btnExport.Enabled = true;
@@ -477,8 +491,14 @@ namespace ShareX
                     btnImport.Enabled = false;
                     pbExportImport.Visible = true;
 
-                    TaskEx.Run(() => ExportImportManager.Import(ofd.FileName), () =>
+                    TaskEx.Run(() =>
                     {
+                        ExportImportManager.Import(ofd.FileName);
+                        Program.LoadAllSettings();
+                    },
+                    () =>
+                    {
+                        UpdateSettings();
                         pbExportImport.Visible = false;
                         btnExport.Enabled = true;
                         btnImport.Enabled = true;
