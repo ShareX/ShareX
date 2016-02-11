@@ -38,13 +38,11 @@ namespace ShareX
     {
         private const int MaxBufferSizePower = 14;
 
-        private bool loaded = false;
-        private bool firstLoad = true;
+        private bool ready;
 
         public ApplicationSettingsForm()
         {
-            InitializeComponent();
-            UpdateSettings();
+            InitializeControls();
         }
 
         private void SettingsForm_Shown(object sender, EventArgs e)
@@ -62,23 +60,32 @@ namespace ShareX
             Program.WritePersonalPathConfig(txtPersonalFolderPath.Text);
         }
 
-        private void UpdateSettings()
+        private void InitializeControls()
         {
-            loaded = false;
+            InitializeComponent();
 
-            // General
-            if (firstLoad)
+            foreach (SupportedLanguage language in Helpers.GetEnums<SupportedLanguage>())
             {
-                foreach (SupportedLanguage language in Helpers.GetEnums<SupportedLanguage>())
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(language.GetLocalizedDescription());
-                    tsmi.Image = GetLanguageIcon(language);
-                    tsmi.ImageScaling = ToolStripItemImageScaling.None;
-                    SupportedLanguage lang = language;
-                    tsmi.Click += (sender, e) => ChangeLanguage(lang);
-                    cmsLanguages.Items.Add(tsmi);
-                }
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(language.GetLocalizedDescription());
+                tsmi.Image = GetLanguageIcon(language);
+                tsmi.ImageScaling = ToolStripItemImageScaling.None;
+                SupportedLanguage lang = language;
+                tsmi.Click += (sender, e) => ChangeLanguage(lang);
+                cmsLanguages.Items.Add(tsmi);
             }
+
+            CodeMenu.Create(txtSaveImageSubFolderPattern, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn, ReplCodeMenuEntry.i, ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
+
+            cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
+
+            UpdateControls();
+
+            ready = true;
+        }
+
+        private void UpdateControls()
+        {
+            // General
             ChangeLanguage(Program.Settings.Language);
 
             cbShowTray.Checked = Program.Settings.ShowTray;
@@ -108,12 +115,6 @@ namespace ShareX
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
 
-            if (firstLoad)
-            {
-                CodeMenu.Create(txtSaveImageSubFolderPattern, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn, ReplCodeMenuEntry.i,
-                    ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
-            }
-
             // Export / Import
             cbExportSettings.Checked = Program.Settings.ExportSettings;
             cbExportHistory.Checked = Program.Settings.ExportHistory;
@@ -121,11 +122,6 @@ namespace ShareX
             UpdateExportButton();
 
             // Proxy
-            if (firstLoad)
-            {
-                cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
-            }
-
             cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
             txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
             txtProxyPassword.Text = Program.Settings.ProxySettings.Password;
@@ -178,9 +174,6 @@ namespace ShareX
             pgSettings.SelectedObject = Program.Settings;
 
             tttvMain.MainTabControl = tcSettings;
-
-            loaded = true;
-            firstLoad = false;
         }
 
         private Image GetLanguageIcon(SupportedLanguage language)
@@ -239,7 +232,7 @@ namespace ShareX
             btnLanguages.Text = language.GetLocalizedDescription();
             btnLanguages.Image = GetLanguageIcon(language);
 
-            if (loaded)
+            if (ready)
             {
                 Program.Settings.Language = language;
 
@@ -302,7 +295,7 @@ namespace ShareX
         {
             Program.Settings.ShowTray = cbShowTray.Checked;
 
-            if (loaded)
+            if (ready)
             {
                 Program.MainForm.niTray.Visible = Program.Settings.ShowTray;
             }
@@ -324,7 +317,7 @@ namespace ShareX
         {
             Program.Settings.TaskbarProgressEnabled = cbTaskbarProgressEnabled.Checked;
 
-            if (loaded)
+            if (ready)
             {
                 TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
             }
@@ -346,7 +339,7 @@ namespace ShareX
 
         private void cbStartWithWindows_CheckedChanged(object sender, EventArgs e)
         {
-            if (loaded)
+            if (ready)
             {
                 IntegrationHelpers.CreateStartupShortcut(cbStartWithWindows.Checked);
             }
@@ -354,7 +347,7 @@ namespace ShareX
 
         private void cbShellContextMenu_CheckedChanged(object sender, EventArgs e)
         {
-            if (loaded)
+            if (ready)
             {
                 IntegrationHelpers.CreateShellContextMenuButton(cbShellContextMenu.Checked);
             }
@@ -362,7 +355,7 @@ namespace ShareX
 
         private void cbSendToMenu_CheckedChanged(object sender, EventArgs e)
         {
-            if (loaded)
+            if (ready)
             {
                 IntegrationHelpers.CreateSendToMenuButton(cbSendToMenu.Checked);
             }
@@ -375,7 +368,7 @@ namespace ShareX
 
         private void cbSteamShowInApp_CheckedChanged(object sender, EventArgs e)
         {
-            if (loaded)
+            if (ready)
             {
                 IntegrationHelpers.SteamShowInApp(cbSteamShowInApp.Checked);
             }
@@ -503,13 +496,13 @@ namespace ShareX
                     {
                         if (!IsDisposed)
                         {
-                            UpdateSettings();
+                            UpdateControls();
                             pbExportImport.Visible = false;
                             btnExport.Enabled = true;
                             btnImport.Enabled = true;
                         }
 
-                        Program.MainForm.UpdateSettings();
+                        Program.MainForm.UpdateControls();
                     });
                 }
             }

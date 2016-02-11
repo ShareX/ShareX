@@ -245,7 +245,7 @@ namespace ShareX
                 {
                     if (task.RequestSettingUpdate)
                     {
-                        Program.MainForm.UpdateMainFormSettings();
+                        Program.MainForm.UpdateCheckStates();
                     }
 
                     TaskInfo info = task.Info;
