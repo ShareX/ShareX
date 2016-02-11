@@ -448,7 +448,7 @@ namespace ShareX
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
                 sfd.DefaultExt = "sxb";
-                sfd.FileName = "ShareX_backup.sxb";
+                sfd.FileName = $"ShareX-{Application.ProductVersion}-backup.sxb";
                 sfd.Filter = "ShareX backup (*.sxb)|*.sxb|All files (*.*)|*.*";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
@@ -497,6 +497,7 @@ namespace ShareX
                         if (!IsDisposed)
                         {
                             UpdateControls();
+
                             pbExportImport.Visible = false;
                             btnExport.Enabled = true;
                             btnImport.Enabled = true;
