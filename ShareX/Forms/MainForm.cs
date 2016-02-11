@@ -523,7 +523,7 @@ namespace ShareX
             }
         }
 
-        private void UpdateSettings()
+        public void UpdateSettings()
         {
             niTray.Visible = Program.Settings.ShowTray;
 

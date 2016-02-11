@@ -471,9 +471,12 @@ namespace ShareX
                     },
                     () =>
                     {
-                        pbExportImport.Visible = false;
-                        btnExport.Enabled = true;
-                        btnImport.Enabled = true;
+                        if (!IsDisposed)
+                        {
+                            pbExportImport.Visible = false;
+                            btnExport.Enabled = true;
+                            btnImport.Enabled = true;
+                        }
                     });
                 }
             }
@@ -498,10 +501,15 @@ namespace ShareX
                     },
                     () =>
                     {
-                        UpdateSettings();
-                        pbExportImport.Visible = false;
-                        btnExport.Enabled = true;
-                        btnImport.Enabled = true;
+                        if (!IsDisposed)
+                        {
+                            UpdateSettings();
+                            pbExportImport.Visible = false;
+                            btnExport.Enabled = true;
+                            btnImport.Enabled = true;
+                        }
+
+                        Program.MainForm.UpdateSettings();
                     });
                 }
             }
