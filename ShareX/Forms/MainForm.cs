@@ -57,9 +57,6 @@ namespace ShareX
         private void MainForm_HandleCreated(object sender, EventArgs e)
         {
             UpdateControls();
-            InitHotkeys();
-
-            IsReady = true;
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
@@ -173,8 +170,10 @@ namespace ShareX
             HandleCreated += MainForm_HandleCreated;
         }
 
-        private void UpdateControls()
+        public void UpdateControls()
         {
+            IsReady = false;
+
             niTray.Visible = Program.Settings.ShowTray;
 
             if (Program.Settings.RecentLinksRemember)
@@ -192,13 +191,8 @@ namespace ShareX
                 isPositionChanged = true;
             }
 
-            // Adjust the menu width to the items
             tsMain.Width = tsMain.PreferredSize.Width;
-
-            // Calculate the required height to view the whole menu
             int height = Size.Height + tsMain.PreferredSize.Height - tsMain.Height;
-
-            // Set the minimum size of the form to prevent menu items from hidding
             MinimumSize = new Size(MinimumSize.Width, height);
 
             if (Program.Settings.RememberMainFormSize && !Program.Settings.MainFormSize.IsEmpty)
@@ -214,7 +208,6 @@ namespace ShareX
             }
             else
             {
-                // Adjust the size to the minimum if not loaded
                 Size = new Size(Size.Width, height);
             }
 
@@ -244,18 +237,10 @@ namespace ShareX
             UpdateContextMenu();
             UpdateToggleHotkeyButton();
             AfterSettingsJobs();
-        }
 
-        public void UpdateAll()
-        {
-            UpdateControls();
+            InitHotkeys();
 
-            if (Program.HotkeyManager != null)
-            {
-                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, true);
-            }
-
-            UpdateWorkflowsMenu();
+            IsReady = true;
         }
 
         private void AfterShownJobs()
@@ -1598,11 +1583,23 @@ namespace ShareX
             },
             () =>
             {
-                Program.HotkeyManager = new HotkeyManager(this, Program.HotkeysConfig.Hotkeys, !Program.NoHotkeys);
-                Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
+                if (Program.HotkeyManager == null)
+                {
+                    Program.HotkeyManager = new HotkeyManager(this);
+                    Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
+                }
+
+                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.NoHotkeys);
+
                 DebugHelper.WriteLine("HotkeyManager started");
 
-                Program.WatchFolderManager = new WatchFolderManager();
+                if (Program.WatchFolderManager == null)
+                {
+                    Program.WatchFolderManager = new WatchFolderManager();
+                }
+
+                Program.WatchFolderManager.UpdateWatchFolders();
+
                 DebugHelper.WriteLine("WatchFolderManager started");
 
                 UpdateWorkflowsMenu();

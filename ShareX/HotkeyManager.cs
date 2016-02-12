@@ -46,13 +46,11 @@ namespace ShareX
 
         private HotkeyForm hotkeyForm;
 
-        public HotkeyManager(HotkeyForm form, List<HotkeySettings> hotkeys, bool showFailedHotkeys)
+        public HotkeyManager(HotkeyForm form)
         {
             hotkeyForm = form;
             hotkeyForm.HotkeyPress += hotkeyForm_HotkeyPress;
             hotkeyForm.FormClosed += (sender, e) => hotkeyForm.InvokeSafe(() => UnregisterAllHotkeys(false));
-
-            UpdateHotkeys(hotkeys, showFailedHotkeys);
         }
 
         public void UpdateHotkeys(List<HotkeySettings> hotkeys, bool showFailedHotkeys)
@@ -152,11 +150,14 @@ namespace ShareX
 
         public void UnregisterAllHotkeys(bool removeFromList = true, bool temporary = false)
         {
-            foreach (HotkeySettings hotkeySetting in Hotkeys.ToArray())
+            if (Hotkeys != null)
             {
-                if (!temporary || (temporary && hotkeySetting.TaskSettings.Job != HotkeyType.DisableHotkeys))
+                foreach (HotkeySettings hotkeySetting in Hotkeys.ToArray())
                 {
-                    UnregisterHotkey(hotkeySetting, removeFromList);
+                    if (!temporary || (temporary && hotkeySetting.TaskSettings.Job != HotkeyType.DisableHotkeys))
+                    {
+                        UnregisterHotkey(hotkeySetting, removeFromList);
+                    }
                 }
             }
         }

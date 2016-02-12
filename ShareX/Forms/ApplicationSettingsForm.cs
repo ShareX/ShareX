@@ -460,6 +460,7 @@ namespace ShareX
                     TaskEx.Run(() =>
                     {
                         Program.SaveAllSettings();
+
                         ExportImportManager.Export(sfd.FileName);
                     },
                     () =>
@@ -490,6 +491,7 @@ namespace ShareX
                     TaskEx.Run(() =>
                     {
                         ExportImportManager.Import(ofd.FileName);
+
                         Program.LoadAllSettings();
                     },
                     () =>
@@ -503,7 +505,7 @@ namespace ShareX
                             btnImport.Enabled = true;
                         }
 
-                        Program.MainForm.UpdateAll();
+                        Program.MainForm.UpdateControls();
                     });
                 }
             }
