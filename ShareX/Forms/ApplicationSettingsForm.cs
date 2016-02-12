@@ -457,11 +457,15 @@ namespace ShareX
                     btnImport.Enabled = false;
                     pbExportImport.Visible = true;
 
+                    string exportPath = sfd.FileName;
+
+                    DebugHelper.WriteLine("Export started: " + exportPath);
+
                     TaskEx.Run(() =>
                     {
                         Program.SaveAllSettings();
 
-                        ExportImportManager.Export(sfd.FileName);
+                        ExportImportManager.Export(exportPath);
                     },
                     () =>
                     {
@@ -471,6 +475,8 @@ namespace ShareX
                             btnExport.Enabled = true;
                             btnImport.Enabled = true;
                         }
+
+                        DebugHelper.WriteLine("Export completed: " + exportPath);
                     });
                 }
             }
@@ -488,9 +494,13 @@ namespace ShareX
                     btnImport.Enabled = false;
                     pbExportImport.Visible = true;
 
+                    string importPath = ofd.FileName;
+
+                    DebugHelper.WriteLine("Import started: " + importPath);
+
                     TaskEx.Run(() =>
                     {
-                        ExportImportManager.Import(ofd.FileName);
+                        ExportImportManager.Import(importPath);
 
                         Program.LoadAllSettings();
                     },
@@ -506,6 +516,8 @@ namespace ShareX
                         }
 
                         Program.MainForm.UpdateControls();
+
+                        DebugHelper.WriteLine("Import completed: " + importPath);
                     });
                 }
             }
