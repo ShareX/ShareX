@@ -23,9 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
-using ShareX.HelpersLib;
-using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -47,6 +44,9 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 using System.Windows.Forms;
+using Microsoft.Win32;
+using ShareX.HelpersLib;
+using ShareX.HelpersLib.Properties;
 
 namespace ShareX.HelpersLib
 {
@@ -578,7 +578,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static bool BrowseFile(string title, TextBox tb, string initialDirectory = "")
+        public static bool BrowseFile(string title, TextBox tb, string initialDirectory = "", bool detectSpecialFolders = false)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -608,7 +608,7 @@ namespace ShareX.HelpersLib
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    tb.Text = ofd.FileName;
+                    tb.Text = detectSpecialFolders ? GetVariableFolderPath(ofd.FileName) : ofd.FileName;
                     return true;
                 }
             }
@@ -643,13 +643,14 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static string GetVariableFolderPath(string folderPath)
+        public static string GetVariableFolderPath(string path)
         {
-            if (!string.IsNullOrEmpty(folderPath))
+            if (!string.IsNullOrEmpty(path))
             {
                 try
                 {
-                    GetEnums<Environment.SpecialFolder>().ForEach(x => folderPath = folderPath.Replace(Environment.GetFolderPath(x), $"%{x}%", StringComparison.InvariantCultureIgnoreCase));
+                    // TODO: folderPath = folderPath.Replace(Program.ToolsFolder, $"%ShareX%", StringComparison.InvariantCultureIgnoreCase));
+                    GetEnums<Environment.SpecialFolder>().ForEach(x => path = path.Replace(Environment.GetFolderPath(x), $"%{x}%", StringComparison.InvariantCultureIgnoreCase));
                 }
                 catch (Exception e)
                 {
@@ -657,17 +658,18 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            return folderPath;
+            return path;
         }
 
-        public static string ExpandFolderVariables(string folderPath)
+        public static string ExpandFolderVariables(string path)
         {
-            if (!string.IsNullOrEmpty(folderPath))
+            if (!string.IsNullOrEmpty(path))
             {
                 try
                 {
-                    GetEnums<Environment.SpecialFolder>().ForEach(x => folderPath = folderPath.Replace($"%{x}%", Environment.GetFolderPath(x), StringComparison.InvariantCultureIgnoreCase));
-                    folderPath = Environment.ExpandEnvironmentVariables(folderPath);
+                    // TODO: folderPath = folderPath.Replace($"%ShareX%", Program.ToolsFolder, StringComparison.InvariantCultureIgnoreCase));
+                    GetEnums<Environment.SpecialFolder>().ForEach(x => path = path.Replace($"%{x}%", Environment.GetFolderPath(x), StringComparison.InvariantCultureIgnoreCase));
+                    path = Environment.ExpandEnvironmentVariables(path);
                 }
                 catch (Exception e)
                 {
@@ -675,7 +677,7 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            return folderPath;
+            return (path);
         }
 
         public static bool WaitWhile(Func<bool> check, int interval, int timeout = -1)
@@ -920,6 +922,8 @@ namespace ShareX.HelpersLib
 
         public static string GetAbsolutePath(string path)
         {
+            path = Helpers.ExpandFolderVariables(path);
+
             if (!Path.IsPathRooted(path)) // Is relative path?
             {
                 path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);

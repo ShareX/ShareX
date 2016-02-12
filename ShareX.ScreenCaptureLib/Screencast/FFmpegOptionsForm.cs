@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
-using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -185,21 +185,13 @@ namespace ShareX.ScreenCaptureLib
                 {
                     txtCommandLinePreview.Text = Options.GetFFmpegArgs();
                 }
+
+                UpdateFFmpegPathUI();
             }
         }
 
-        private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
+        private void UpdateFFmpegPathUI()
         {
-#if STEAM
-            Options.FFmpeg.OverrideCLIPath = cbOverrideFFmpegPath.Checked;
-            gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
-#endif
-        }
-
-        private void txtFFmpegPath_TextChanged(object sender, EventArgs e)
-        {
-            Options.FFmpeg.CLIPath = txtFFmpegPath.Text;
-
 #if !STEAM
             Color backColor = Color.FromArgb(255, 200, 200);
 
@@ -216,9 +208,23 @@ namespace ShareX.ScreenCaptureLib
 #endif
         }
 
+        private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
+        {
+#if STEAM
+            Options.FFmpeg.OverrideCLIPath = cbOverrideFFmpegPath.Checked;
+            gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
+#endif
+        }
+
+        private void txtFFmpegPath_TextChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.CLIPath = txtFFmpegPath.Text;
+            UpdateFFmpegPathUI();
+        }
+
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
         {
-            if (Helpers.BrowseFile(Resources.FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe, txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
+            if (Helpers.BrowseFile(Resources.FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe, txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), true))
             {
                 RefreshSourcesAsync();
             }
@@ -406,7 +412,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 this.InvokeSafe(() =>
                 {
-                    txtFFmpegPath.Text = extractPath;
+                    txtFFmpegPath.Text = Helpers.GetVariableFolderPath(extractPath);
                     RefreshSourcesAsync();
                     UpdateUI();
                 });
