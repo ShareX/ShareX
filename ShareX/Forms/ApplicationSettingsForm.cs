@@ -503,7 +503,7 @@ namespace ShareX
                             btnImport.Enabled = true;
                         }
 
-                        Program.MainForm.UpdateControls();
+                        Program.MainForm.UpdateAll();
                     });
                 }
             }

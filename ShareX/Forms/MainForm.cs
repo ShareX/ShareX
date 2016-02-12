@@ -173,7 +173,7 @@ namespace ShareX
             HandleCreated += MainForm_HandleCreated;
         }
 
-        public void UpdateControls()
+        private void UpdateControls()
         {
             niTray.Visible = Program.Settings.ShowTray;
 
@@ -244,6 +244,18 @@ namespace ShareX
             UpdateContextMenu();
             UpdateToggleHotkeyButton();
             AfterSettingsJobs();
+        }
+
+        public void UpdateAll()
+        {
+            UpdateControls();
+
+            if (Program.HotkeyManager != null)
+            {
+                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, true);
+            }
+
+            UpdateWorkflowsMenu();
         }
 
         private void AfterShownJobs()
