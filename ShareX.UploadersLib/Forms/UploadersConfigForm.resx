@@ -14113,31 +14113,31 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpChevereto.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="linkLblSomeImageAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>378, 46</value>
+  <data name="linkLblSomeImageAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 46</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="linkLblSomeImageAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 17</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="linkLblSomeImageAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
+  <data name="linkLblSomeImageAPIKey.Text" xml:space="preserve">
     <value>To get API key visit https://someimage.com/api</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;linkLblSomeImageAPIKey.Name" xml:space="preserve">
+    <value>linkLblSomeImageAPIKey</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;linkLblSomeImageAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;linkLblSomeImageAPIKey.Parent" xml:space="preserve">
     <value>tpSomeImage</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;linkLblSomeImageAPIKey.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="txtSomeImageAPIKey.Location" type="System.Drawing.Point, System.Drawing">

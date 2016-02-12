@@ -114,6 +114,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpStreamable, Resources.Streamable);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
+            AddIconToTab(tpSomeImage, Resources.SomeImage);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
             AddIconToTab(tpTwitter, Resources.Twitter);
             AddIconToTab(tpUp1, Resources.Up1);
@@ -1008,6 +1009,11 @@ namespace ShareX.UploadersLib
         private void cbSomeImageDirectURL_CheckedChanged(object sender, EventArgs e)
         {
             Config.SomeImageDirectURL = cbSomeImageDirectURL.Checked;
+        }
+
+        private void linkLblSomeImageAPIKey_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://someimage.com/api");
         }
 
         #endregion SomeImage

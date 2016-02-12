@@ -528,7 +528,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.label1 = new System.Windows.Forms.Label();
+            this.linkLblSomeImageAPIKey = new System.Windows.Forms.LinkLabel();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -4177,7 +4177,7 @@
             // 
             // tpSomeImage
             // 
-            this.tpSomeImage.Controls.Add(this.label1);
+            this.tpSomeImage.Controls.Add(this.linkLblSomeImageAPIKey);
             this.tpSomeImage.Controls.Add(this.txtSomeImageAPIKey);
             this.tpSomeImage.Controls.Add(this.lblSomeImageAPIKey);
             this.tpSomeImage.Controls.Add(this.cbSomeImageDirectURL);
@@ -4234,10 +4234,12 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // label1
+            // linkLblSomeImageAPIKey
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.linkLblSomeImageAPIKey, "linkLblSomeImageAPIKey");
+            this.linkLblSomeImageAPIKey.Name = "linkLblSomeImageAPIKey";
+            this.linkLblSomeImageAPIKey.TabStop = true;
+            this.linkLblSomeImageAPIKey.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblSomeImageAPIKey_LinkClicked);
             // 
             // UploadersConfigForm
             // 
@@ -4891,6 +4893,6 @@
         private System.Windows.Forms.CheckBox cbSomeImageDirectURL;
         private System.Windows.Forms.TextBox txtSomeImageAPIKey;
         private System.Windows.Forms.Label lblSomeImageAPIKey;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel linkLblSomeImageAPIKey;
     }
 }
