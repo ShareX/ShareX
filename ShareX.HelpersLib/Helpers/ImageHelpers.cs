@@ -1207,7 +1207,7 @@ namespace ShareX.HelpersLib
                     sfd.FileName = Path.GetFileNameWithoutExtension(filePath);
                 }
 
-                sfd.DefaultExt = ".png";
+                sfd.DefaultExt = "png";
                 sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
 
                 if (sfd.ShowDialog() == DialogResult.OK)

@@ -33,8 +33,13 @@ namespace ShareX
     {
         public List<WatchFolder> WatchFolders { get; private set; }
 
-        public WatchFolderManager()
+        public void UpdateWatchFolders()
         {
+            if (WatchFolders != null)
+            {
+                UnregisterAllWatchFolders();
+            }
+
             WatchFolders = new List<WatchFolder>();
 
             foreach (WatchFolderSettings defaultWatchFolderSetting in Program.DefaultTaskSettings.WatchFolderList)
@@ -113,7 +118,7 @@ namespace ShareX
             }
         }
 
-        public void Dispose()
+        public void UnregisterAllWatchFolders()
         {
             if (WatchFolders != null)
             {
@@ -125,6 +130,11 @@ namespace ShareX
                     }
                 }
             }
+        }
+
+        public void Dispose()
+        {
+            UnregisterAllWatchFolders();
         }
     }
 }
