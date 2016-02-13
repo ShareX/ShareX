@@ -121,14 +121,38 @@
   <data name="tcSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnEditQuickTaskMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 208</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 23</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnEditQuickTaskMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>Edit quick task menu...</value>
+  </data>
+  <data name="&gt;&gt;btnEditQuickTaskMenu.Name" xml:space="preserve">
+    <value>btnEditQuickTaskMenu</value>
+  </data>
+  <data name="&gt;&gt;btnEditQuickTaskMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEditQuickTaskMenu.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;btnEditQuickTaskMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbShowTray.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbShowTray.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbShowTray.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 64</value>
   </data>
@@ -151,7 +175,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbShowTray.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbTrayIconProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -181,7 +205,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayIconProgressEnabled.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnLanguages.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -226,7 +250,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;btnLanguages.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbRememberMainFormPosition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -256,7 +280,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormPosition.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="llTranslators.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -286,7 +310,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;llTranslators.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -316,7 +340,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbSilentRun.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -346,7 +370,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTaskbarProgressEnabled.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -376,7 +400,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormSize.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -406,7 +430,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
