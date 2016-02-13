@@ -884,6 +884,7 @@
     <None Include="Resources\question-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Favicons\SomeImage.png" />
     <Content Include="Favicons\Sul.png" />
   </ItemGroup>
   <ItemGroup>
