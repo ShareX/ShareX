@@ -121,6 +121,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.btnEditQuickTaskMenu = new System.Windows.Forms.Button();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -163,6 +164,7 @@ namespace ShareX
             // 
             // tpGeneral
             // 
+            this.tpGeneral.Controls.Add(this.btnEditQuickTaskMenu);
             this.tpGeneral.Controls.Add(this.cbShowTray);
             this.tpGeneral.Controls.Add(this.cbTrayIconProgressEnabled);
             this.tpGeneral.Controls.Add(this.btnLanguages);
@@ -832,6 +834,13 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             // 
+            // btnEditQuickTaskMenu
+            // 
+            resources.ApplyResources(this.btnEditQuickTaskMenu, "btnEditQuickTaskMenu");
+            this.btnEditQuickTaskMenu.Name = "btnEditQuickTaskMenu";
+            this.btnEditQuickTaskMenu.UseVisualStyleBackColor = true;
+            this.btnEditQuickTaskMenu.Click += new System.EventHandler(this.btnEditQuickTaskMenu_Click);
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -975,5 +984,6 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbExportHistory;
         private System.Windows.Forms.CheckBox cbExportSettings;
         private System.Windows.Forms.ProgressBar pbExportImport;
+        private System.Windows.Forms.Button btnEditQuickTaskMenu;
     }
 }

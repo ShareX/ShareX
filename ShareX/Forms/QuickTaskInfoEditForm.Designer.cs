@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuickTaskInfoEditForm));
             this.mbAfterCaptureTasks = new ShareX.HelpersLib.MenuButton();
-            this.mbAfterUploadTasks = new ShareX.HelpersLib.MenuButton();
             this.cmsAfterCapture = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mbAfterUploadTasks = new ShareX.HelpersLib.MenuButton();
             this.cmsAfterUpload = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblAfterCaptureTasks = new System.Windows.Forms.Label();
             this.lblAfterUploadTasks = new System.Windows.Forms.Label();
@@ -42,85 +43,61 @@
             // 
             // mbAfterCaptureTasks
             // 
-            this.mbAfterCaptureTasks.Location = new System.Drawing.Point(8, 72);
+            resources.ApplyResources(this.mbAfterCaptureTasks, "mbAfterCaptureTasks");
             this.mbAfterCaptureTasks.Menu = this.cmsAfterCapture;
             this.mbAfterCaptureTasks.Name = "mbAfterCaptureTasks";
-            this.mbAfterCaptureTasks.Size = new System.Drawing.Size(424, 23);
-            this.mbAfterCaptureTasks.TabIndex = 0;
-            this.mbAfterCaptureTasks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.mbAfterCaptureTasks.UseVisualStyleBackColor = true;
-            // 
-            // mbAfterUploadTasks
-            // 
-            this.mbAfterUploadTasks.Location = new System.Drawing.Point(8, 120);
-            this.mbAfterUploadTasks.Menu = this.cmsAfterUpload;
-            this.mbAfterUploadTasks.Name = "mbAfterUploadTasks";
-            this.mbAfterUploadTasks.Size = new System.Drawing.Size(424, 23);
-            this.mbAfterUploadTasks.TabIndex = 1;
-            this.mbAfterUploadTasks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mbAfterUploadTasks.UseVisualStyleBackColor = true;
             // 
             // cmsAfterCapture
             // 
             this.cmsAfterCapture.Name = "cmsAfterCapture";
-            this.cmsAfterCapture.Size = new System.Drawing.Size(61, 4);
+            resources.ApplyResources(this.cmsAfterCapture, "cmsAfterCapture");
+            // 
+            // mbAfterUploadTasks
+            // 
+            resources.ApplyResources(this.mbAfterUploadTasks, "mbAfterUploadTasks");
+            this.mbAfterUploadTasks.Menu = this.cmsAfterUpload;
+            this.mbAfterUploadTasks.Name = "mbAfterUploadTasks";
+            this.mbAfterUploadTasks.UseVisualStyleBackColor = true;
             // 
             // cmsAfterUpload
             // 
             this.cmsAfterUpload.Name = "cmsAfterUpload";
-            this.cmsAfterUpload.Size = new System.Drawing.Size(61, 4);
+            resources.ApplyResources(this.cmsAfterUpload, "cmsAfterUpload");
             // 
             // lblAfterCaptureTasks
             // 
-            this.lblAfterCaptureTasks.AutoSize = true;
-            this.lblAfterCaptureTasks.Location = new System.Drawing.Point(5, 56);
+            resources.ApplyResources(this.lblAfterCaptureTasks, "lblAfterCaptureTasks");
             this.lblAfterCaptureTasks.Name = "lblAfterCaptureTasks";
-            this.lblAfterCaptureTasks.Size = new System.Drawing.Size(99, 13);
-            this.lblAfterCaptureTasks.TabIndex = 2;
-            this.lblAfterCaptureTasks.Text = "After capture tasks:";
             // 
             // lblAfterUploadTasks
             // 
-            this.lblAfterUploadTasks.AutoSize = true;
-            this.lblAfterUploadTasks.Location = new System.Drawing.Point(5, 104);
+            resources.ApplyResources(this.lblAfterUploadTasks, "lblAfterUploadTasks");
             this.lblAfterUploadTasks.Name = "lblAfterUploadTasks";
-            this.lblAfterUploadTasks.Size = new System.Drawing.Size(95, 13);
-            this.lblAfterUploadTasks.TabIndex = 3;
-            this.lblAfterUploadTasks.Text = "After upload tasks:";
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(5, 8);
+            resources.ApplyResources(this.lblName, "lblName");
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(57, 13);
-            this.lblName.TabIndex = 4;
-            this.lblName.Text = "Menu text:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(8, 24);
+            resources.ApplyResources(this.txtName, "txtName");
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(424, 20);
-            this.txtName.TabIndex = 5;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(312, 160);
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(120, 23);
-            this.btnOK.TabIndex = 6;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
             // QuickTaskInfoEditForm
             // 
             this.AcceptButton = this.btnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 192);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
@@ -131,8 +108,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "QuickTaskInfoEditForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Edit quick task menu item";
             this.ResumeLayout(false);
             this.PerformLayout();
 

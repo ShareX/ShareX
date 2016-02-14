@@ -23,12 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
@@ -36,6 +30,12 @@ using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
@@ -110,15 +110,15 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpPomf, Resources.Pomf);
             AddIconToTab(tpPushbullet, Resources.Pushbullet);
             AddIconToTab(tpSeafile, Resources.Seafile);
-            AddIconToTab(tpSul, Resources.Sul);
-            AddIconToTab(tpStreamable, Resources.Streamable);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
-            AddIconToTab(tpSomeImage, Resources.SomeImage);
+            AddIconToTab(tpStreamable, Resources.Streamable);
+            AddIconToTab(tpSul, Resources.Sul);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
             AddIconToTab(tpTwitter, Resources.Twitter);
             AddIconToTab(tpUp1, Resources.Up1);
             AddIconToTab(tpUpaste, Resources.Upaste);
+            AddIconToTab(tpVgyme, Resources.Vgyme);
             AddIconToTab(tpYourls, Resources.Yourls);
 
             ttlvMain.ImageList = uploadersImageList;
@@ -242,10 +242,9 @@ namespace ShareX.UploadersLib
             txtCheveretoAPIKey.Text = Config.CheveretoAPIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
 
-            // SomeImage
+            // vgy.me
 
-            txtSomeImageAPIKey.Text = Config.SomeImageAPIKey;
-            cbSomeImageDirectURL.Checked = Config.SomeImageDirectURL;
+            txtVgymeUserKey.Text = Config.VgymeUserKey;
 
             #endregion Image uploaders
 
@@ -999,24 +998,19 @@ namespace ShareX.UploadersLib
 
         #endregion Chevereto
 
-        #region SomeImage
+        #region vgy.me
 
-        private void txtSomeImageAPIKey_TextChanged(object sender, EventArgs e)
+        private void txtVgymeUserKey_TextChanged(object sender, EventArgs e)
         {
-            Config.SomeImageAPIKey = txtSomeImageAPIKey.Text;
+            Config.VgymeUserKey = txtVgymeUserKey.Text;
         }
 
-        private void cbSomeImageDirectURL_CheckedChanged(object sender, EventArgs e)
+        private void llVgymeAccountDetailsPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Config.SomeImageDirectURL = cbSomeImageDirectURL.Checked;
+            URLHelpers.OpenURL("http://vgy.me/account/details");
         }
 
-        private void linkLblSomeImageAPIKey_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://someimage.com/api");
-        }
-
-        #endregion SomeImage
+        #endregion vgy.me
 
         #endregion Image Uploaders
 

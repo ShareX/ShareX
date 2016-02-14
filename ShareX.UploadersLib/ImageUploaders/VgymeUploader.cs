@@ -24,15 +24,21 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.IO;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class VgymeUploader : ImageUploader
     {
+        public string UserKey { get; set; }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, "https://vgy.me/upload", fileName);
+            Dictionary<string, string> arguments = new Dictionary<string, string>();
+            if (!string.IsNullOrEmpty(UserKey)) arguments.Add("userkey", UserKey);
+
+            UploadResult result = UploadData(stream, "https://vgy.me/upload", fileName, arguments: arguments);
 
             if (result.IsSuccess)
             {

@@ -66,6 +66,25 @@ namespace ShareX
             new QuickTaskInfoEditForm(taskInfo).ShowDialog();
         }
 
+        private void EditSelectedItem()
+        {
+            if (lvPresets.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvPresets.SelectedItems[0];
+                QuickTaskInfo taskInfo = lvi.Tag as QuickTaskInfo;
+                Edit(taskInfo);
+                lvi.Text = taskInfo.ToString();
+            }
+        }
+
+        private void lvPresets_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                EditSelectedItem();
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             QuickTaskInfo taskInfo = new QuickTaskInfo();
@@ -79,13 +98,7 @@ namespace ShareX
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (lvPresets.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvPresets.SelectedItems[0];
-                QuickTaskInfo taskInfo = lvi.Tag as QuickTaskInfo;
-                Edit(taskInfo);
-                lvi.Text = taskInfo.ToString();
-            }
+            EditSelectedItem();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

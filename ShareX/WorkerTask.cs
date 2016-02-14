@@ -23,14 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
@@ -40,6 +32,14 @@ using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.TextUploaders;
 using ShareX.UploadersLib.URLShorteners;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -821,18 +821,13 @@ namespace ShareX
                     };
                     break;
                 case ImageDestination.Vgyme:
-                    imageUploader = new VgymeUploader();
+                    imageUploader = new VgymeUploader()
+                    {
+                        UserKey = Program.UploadersConfig.VgymeUserKey
+                    };
                     break;
                 case ImageDestination.SomeImage:
-                    String someImageAPIKey = Program.UploadersConfig.SomeImageAPIKey;
-                    if (someImageAPIKey == "")
-                    {
-                        someImageAPIKey = APIKeys.SomeImageKey;
-                    }
-                    imageUploader = new SomeImage(someImageAPIKey)
-                    {
-                        DirectURL = Program.UploadersConfig.SomeImageDirectURL
-                    };
+                    imageUploader = new SomeImage(APIKeys.SomeImageKey);
                     break;
                 case ImageDestination.CustomImageUploader:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomImageUploaderSelected);

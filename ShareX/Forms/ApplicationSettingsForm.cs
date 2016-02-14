@@ -333,6 +333,11 @@ namespace ShareX
             Program.Settings.RememberMainFormSize = cbRememberMainFormSize.Checked;
         }
 
+        private void btnEditQuickTaskMenu_Click(object sender, EventArgs e)
+        {
+            new QuickTaskMenuEditorForm().ShowDialog();
+        }
+
         #endregion General
 
         #region Integration

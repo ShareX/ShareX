@@ -871,7 +871,7 @@ namespace ShareX.UploadersLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap question_button {
             get {
-                object obj = ResourceManager.GetObject("question-button", resourceCulture);
+                object obj = ResourceManager.GetObject("question_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -902,16 +902,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static System.Drawing.Bitmap server_network {
             get {
                 object obj = ResourceManager.GetObject("server_network", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SomeImage {
-            get {
-                object obj = ResourceManager.GetObject("SomeImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1255,6 +1245,16 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_UpdateDropboxStatus_User_ID_ {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_User_ID_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Vgyme {
+            get {
+                object obj = ResourceManager.GetObject("Vgyme", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

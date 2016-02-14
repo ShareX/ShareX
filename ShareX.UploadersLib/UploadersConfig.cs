@@ -23,14 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Collections.Generic;
 using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.TextUploaders;
+using System;
+using System.Collections.Generic;
 
 namespace ShareX.UploadersLib
 {
@@ -82,9 +82,9 @@ namespace ShareX.UploadersLib
         public string CheveretoAPIKey = string.Empty;
         public bool CheveretoDirectURL = true;
 
-        // SomeImage
-        public string SomeImageAPIKey = string.Empty;
-        public bool SomeImageDirectURL = true;
+        // vgy.me
+
+        public string VgymeUserKey = string.Empty;
 
         #endregion Image uploaders
 
@@ -392,8 +392,6 @@ namespace ShareX.UploadersLib
                     return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount) && OAuthInfo.CheckOAuth(TwitterOAuthInfoList[TwitterSelectedAccount]);
                 case ImageDestination.Chevereto:
                     return !string.IsNullOrEmpty(CheveretoWebsite) && !string.IsNullOrEmpty(CheveretoAPIKey);
-                case ImageDestination.SomeImage:
-                    return !string.IsNullOrEmpty(SomeImageAPIKey);
                 case ImageDestination.CustomImageUploader:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomImageUploaderSelected);
             }
@@ -539,4 +537,3 @@ namespace ShareX.UploadersLib
         #endregion Helper Methods
     }
 }
-
