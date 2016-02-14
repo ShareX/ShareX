@@ -90,6 +90,7 @@
             this.chCustomUploaderHeadersValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCustomUploaderExamples = new System.Windows.Forms.Button();
             this.btnCustomUploaderHelp = new System.Windows.Forms.Button();
+            this.btnCustomUploaderClear = new System.Windows.Forms.Button();
             this.lblCustomUploaderImageUploader = new System.Windows.Forms.Label();
             this.btnCustomUploaderFileUploaderTest = new System.Windows.Forms.Button();
             this.lblCustomUploaderFileUploader = new System.Windows.Forms.Label();
@@ -106,7 +107,6 @@
             this.btnCustomUploaderClearUploaders = new System.Windows.Forms.Button();
             this.eiCustomUploaders = new ShareX.HelpersLib.ExportImportControl();
             this.lbCustomUploaderList = new System.Windows.Forms.ListBox();
-            this.btnCustomUploaderClear = new System.Windows.Forms.Button();
             this.btnCustomUploaderRemove = new System.Windows.Forms.Button();
             this.btnCustomUploaderUpdate = new System.Windows.Forms.Button();
             this.txtCustomUploaderName = new System.Windows.Forms.TextBox();
@@ -501,6 +501,9 @@
             this.txtCheveretoWebsite = new System.Windows.Forms.TextBox();
             this.txtCheveretoAPIKey = new System.Windows.Forms.TextBox();
             this.lblCheveretoAPIKey = new System.Windows.Forms.Label();
+            this.tpVgyme = new System.Windows.Forms.TabPage();
+            this.txtVgymeUserKey = new System.Windows.Forms.TextBox();
+            this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
@@ -524,6 +527,7 @@
             this.atcGoogleURLShortenerAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.ucLocalhostAccounts = new ShareX.UploadersLib.AccountsControl();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.llVgymeAccountDetailsPage = new System.Windows.Forms.LinkLabel();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -600,6 +604,7 @@
             this.gbPhotobucketUserAccount.SuspendLayout();
             this.tpPicasa.SuspendLayout();
             this.tpChevereto.SuspendLayout();
+            this.tpVgyme.SuspendLayout();
             this.tcUploaders.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1091,6 +1096,13 @@
             this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
             this.btnCustomUploaderHelp.Click += new System.EventHandler(this.btnCustomUploaderHelp_Click);
             // 
+            // btnCustomUploaderClear
+            // 
+            resources.ApplyResources(this.btnCustomUploaderClear, "btnCustomUploaderClear");
+            this.btnCustomUploaderClear.Name = "btnCustomUploaderClear";
+            this.btnCustomUploaderClear.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderClear.Click += new System.EventHandler(this.btnCustomUploaderClear_Click);
+            // 
             // lblCustomUploaderImageUploader
             // 
             resources.ApplyResources(this.lblCustomUploaderImageUploader, "lblCustomUploaderImageUploader");
@@ -1202,13 +1214,6 @@
             resources.ApplyResources(this.lbCustomUploaderList, "lbCustomUploaderList");
             this.lbCustomUploaderList.Name = "lbCustomUploaderList";
             this.lbCustomUploaderList.SelectedIndexChanged += new System.EventHandler(this.lbCustomUploaderList_SelectedIndexChanged);
-            // 
-            // btnCustomUploaderClear
-            // 
-            resources.ApplyResources(this.btnCustomUploaderClear, "btnCustomUploaderClear");
-            this.btnCustomUploaderClear.Name = "btnCustomUploaderClear";
-            this.btnCustomUploaderClear.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderClear.Click += new System.EventHandler(this.btnCustomUploaderClear_Click);
             // 
             // btnCustomUploaderRemove
             // 
@@ -3523,6 +3528,7 @@
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
             this.tcImageUploaders.Controls.Add(this.tpPicasa);
             this.tcImageUploaders.Controls.Add(this.tpChevereto);
+            this.tcImageUploaders.Controls.Add(this.tpVgyme);
             resources.ApplyResources(this.tcImageUploaders, "tcImageUploaders");
             this.tcImageUploaders.Name = "tcImageUploaders";
             this.tcImageUploaders.SelectedIndex = 0;
@@ -4015,6 +4021,26 @@
             resources.ApplyResources(this.lblCheveretoAPIKey, "lblCheveretoAPIKey");
             this.lblCheveretoAPIKey.Name = "lblCheveretoAPIKey";
             // 
+            // tpVgyme
+            // 
+            this.tpVgyme.Controls.Add(this.llVgymeAccountDetailsPage);
+            this.tpVgyme.Controls.Add(this.txtVgymeUserKey);
+            this.tpVgyme.Controls.Add(this.lvlVgymeUserKey);
+            resources.ApplyResources(this.tpVgyme, "tpVgyme");
+            this.tpVgyme.Name = "tpVgyme";
+            this.tpVgyme.UseVisualStyleBackColor = true;
+            // 
+            // txtVgymeUserKey
+            // 
+            resources.ApplyResources(this.txtVgymeUserKey, "txtVgymeUserKey");
+            this.txtVgymeUserKey.Name = "txtVgymeUserKey";
+            this.txtVgymeUserKey.TextChanged += new System.EventHandler(this.txtVgymeUserKey_TextChanged);
+            // 
+            // lvlVgymeUserKey
+            // 
+            resources.ApplyResources(this.lvlVgymeUserKey, "lvlVgymeUserKey");
+            this.lvlVgymeUserKey.Name = "lvlVgymeUserKey";
+            // 
             // tcUploaders
             // 
             this.tcUploaders.Controls.Add(this.tpImageUploaders);
@@ -4199,6 +4225,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // llVgymeAccountDetailsPage
+            // 
+            resources.ApplyResources(this.llVgymeAccountDetailsPage, "llVgymeAccountDetailsPage");
+            this.llVgymeAccountDetailsPage.Name = "llVgymeAccountDetailsPage";
+            this.llVgymeAccountDetailsPage.TabStop = true;
+            this.llVgymeAccountDetailsPage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llVgymeAccountDetailsPage_LinkClicked);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4344,6 +4377,8 @@
             this.tpPicasa.PerformLayout();
             this.tpChevereto.ResumeLayout(false);
             this.tpChevereto.PerformLayout();
+            this.tpVgyme.ResumeLayout(false);
+            this.tpVgyme.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -4845,5 +4880,9 @@
         private System.Windows.Forms.Label lblSulAPIKey;
         private System.Windows.Forms.TextBox txtSulAPIKey;
         private System.Windows.Forms.Button btnCustomUploadersExportAll;
+        private System.Windows.Forms.TabPage tpVgyme;
+        private System.Windows.Forms.TextBox txtVgymeUserKey;
+        private System.Windows.Forms.Label lvlVgymeUserKey;
+        private System.Windows.Forms.LinkLabel llVgymeAccountDetailsPage;
     }
 }

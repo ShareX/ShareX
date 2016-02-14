@@ -82,6 +82,10 @@ namespace ShareX.UploadersLib
         public string CheveretoAPIKey = string.Empty;
         public bool CheveretoDirectURL = true;
 
+        // vgy.me
+
+        public string VgymeUserKey = string.Empty;
+
         #endregion Image uploaders
 
         #region Text uploaders

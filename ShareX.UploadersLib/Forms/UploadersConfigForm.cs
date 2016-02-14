@@ -110,14 +110,15 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpPomf, Resources.Pomf);
             AddIconToTab(tpPushbullet, Resources.Pushbullet);
             AddIconToTab(tpSeafile, Resources.Seafile);
-            AddIconToTab(tpSul, Resources.Sul);
-            AddIconToTab(tpStreamable, Resources.Streamable);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
+            AddIconToTab(tpStreamable, Resources.Streamable);
+            AddIconToTab(tpSul, Resources.Sul);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
             AddIconToTab(tpTwitter, Resources.Twitter);
             AddIconToTab(tpUp1, Resources.Up1);
             AddIconToTab(tpUpaste, Resources.Upaste);
+            AddIconToTab(tpVgyme, Resources.Vgyme);
             AddIconToTab(tpYourls, Resources.Yourls);
 
             ttlvMain.ImageList = uploadersImageList;
@@ -240,6 +241,10 @@ namespace ShareX.UploadersLib
             txtCheveretoWebsite.Text = Config.CheveretoWebsite;
             txtCheveretoAPIKey.Text = Config.CheveretoAPIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
+
+            // vgy.me
+
+            txtVgymeUserKey.Text = Config.VgymeUserKey;
 
             #endregion Image uploaders
 
@@ -992,6 +997,20 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Chevereto
+
+        #region vgy.me
+
+        private void txtVgymeUserKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.VgymeUserKey = txtVgymeUserKey.Text;
+        }
+
+        private void llVgymeAccountDetailsPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL("http://vgy.me/account/details");
+        }
+
+        #endregion vgy.me
 
         #endregion Image Uploaders
 

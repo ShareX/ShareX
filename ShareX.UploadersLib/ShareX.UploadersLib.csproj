@@ -884,7 +884,9 @@
     <None Include="Resources\question-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Favicons\Streamable.ico" />
     <Content Include="Favicons\Sul.png" />
+    <Content Include="Favicons\Vgyme.ico" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.3.11\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />

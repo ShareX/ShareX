@@ -821,7 +821,10 @@ namespace ShareX
                     };
                     break;
                 case ImageDestination.Vgyme:
-                    imageUploader = new VgymeUploader();
+                    imageUploader = new VgymeUploader()
+                    {
+                        UserKey = Program.UploadersConfig.VgymeUserKey
+                    };
                     break;
                 case ImageDestination.SomeImage:
                     imageUploader = new SomeImage(APIKeys.SomeImageKey);
