@@ -23,12 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
@@ -36,6 +30,12 @@ using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
@@ -114,7 +114,6 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpStreamable, Resources.Streamable);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
-            AddIconToTab(tpSomeImage, Resources.SomeImage);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
             AddIconToTab(tpTwitter, Resources.Twitter);
             AddIconToTab(tpUp1, Resources.Up1);
@@ -241,11 +240,6 @@ namespace ShareX.UploadersLib
             txtCheveretoWebsite.Text = Config.CheveretoWebsite;
             txtCheveretoAPIKey.Text = Config.CheveretoAPIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
-
-            // SomeImage
-
-            txtSomeImageAPIKey.Text = Config.SomeImageAPIKey;
-            cbSomeImageDirectURL.Checked = Config.SomeImageDirectURL;
 
             #endregion Image uploaders
 
@@ -998,25 +992,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Chevereto
-
-        #region SomeImage
-
-        private void txtSomeImageAPIKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.SomeImageAPIKey = txtSomeImageAPIKey.Text;
-        }
-
-        private void cbSomeImageDirectURL_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.SomeImageDirectURL = cbSomeImageDirectURL.Checked;
-        }
-
-        private void linkLblSomeImageAPIKey_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://someimage.com/api");
-        }
-
-        #endregion SomeImage
 
         #endregion Image Uploaders
 
