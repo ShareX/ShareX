@@ -23,6 +23,12 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
@@ -30,12 +36,6 @@ using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
@@ -112,7 +112,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpSeafile, Resources.Seafile);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
-	    AddIconToTab(tpSomeImage, Resources.SomeImage);
+            AddIconToTab(tpSomeImage, Resources.SomeImage);
             AddIconToTab(tpStreamable, Resources.Streamable);
             AddIconToTab(tpSul, Resources.Sul);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
@@ -243,7 +243,7 @@ namespace ShareX.UploadersLib
             txtCheveretoAPIKey.Text = Config.CheveretoAPIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
 
-	    // SomeImage
+            // SomeImage
 
             txtSomeImageAPIKey.Text = Config.SomeImageAPIKey;
             cbSomeImageDirectURL.Checked = Config.SomeImageDirectURL;
@@ -1004,7 +1004,7 @@ namespace ShareX.UploadersLib
 
         #endregion Chevereto
 
-	#region SomeImage
+        #region SomeImage
 
         private void txtSomeImageAPIKey_TextChanged(object sender, EventArgs e)
         {

@@ -25,10 +25,10 @@
 
 // Credits: https://github.com/DanielMcAssey
 
-using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System;
+using Newtonsoft.Json;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
@@ -61,31 +61,32 @@ namespace ShareX.UploadersLib.ImageUploaders
 
                     if (jsonResponse != null)
                     {
-                      if (DirectURL)
-                      {
-                          if (jsonResponse.imagelink == null)
-                          {
-                              result.URL = null;
-                          }
-                          else {
-                              Uri responseUri = new Uri(jsonResponse.imagelink); // http://someimage.com/asdf
-                              string host = responseUri.Host; // someimage.com
-                              string filename = Path.GetFileName(responseUri.AbsolutePath); // /asdf
-                              if (filename.StartsWith("/"))
-                              {
-                                  filename = filename.Remove(0, 1); // asdf
-                              }
-                              if (host.StartsWith("www."))
-                              {
-                                  host = host.Remove(0, 4);
-                              }
-                              result.URL = "https://i1." + host + "/" + filename + ".jpg";
-                          }
-                    } else
-                    {
-                          result.URL = jsonResponse.imagelink;
+                        if (DirectURL)
+                        {
+                            if (jsonResponse.imagelink == null)
+                            {
+                                result.URL = null;
+                            }
+                            else {
+                                Uri responseUri = new Uri(jsonResponse.imagelink); // http://someimage.com/asdf
+                                string host = responseUri.Host; // someimage.com
+                                string filename = Path.GetFileName(responseUri.AbsolutePath); // /asdf
+                                if (filename.StartsWith("/"))
+                                {
+                                    filename = filename.Remove(0, 1); // asdf
+                                }
+                                if (host.StartsWith("www."))
+                                {
+                                    host = host.Remove(0, 4);
+                                }
+                                result.URL = "https://i1." + host + "/" + filename + ".jpg";
+                            }
+                        }
+                        else
+                        {
+                            result.URL = jsonResponse.imagelink;
+                        }
                     }
-                  }
                 }
             }
 
