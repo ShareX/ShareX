@@ -4027,7 +4027,7 @@
             //
             resources.ApplyResources(this.lblCheveretoAPIKey, "lblCheveretoAPIKey");
             this.lblCheveretoAPIKey.Name = "lblCheveretoAPIKey";
-	    // 
+	        // 
             // tpSomeImage
             // 
             this.tpSomeImage.Controls.Add(this.linkLblSomeImageAPIKey);
@@ -4924,10 +4924,11 @@
         private System.Windows.Forms.Label lblSulAPIKey;
         private System.Windows.Forms.TextBox txtSulAPIKey;
         private System.Windows.Forms.Button btnCustomUploadersExportAll;
-	private System.Windows.Forms.TabPage tpSomeImage;
-	private System.Windows.Forms.CheckBox cbSomeImageDirectURL;
-	private System.Windows.Forms.TextBox txtSomeImageAPIKey;
-	private System.Windows.Forms.Label lblSomeImageAPIKey;
+	    private System.Windows.Forms.TabPage tpSomeImage;
+	    private System.Windows.Forms.CheckBox cbSomeImageDirectURL;
+	    private System.Windows.Forms.TextBox txtSomeImageAPIKey;
+	    private System.Windows.Forms.Label lblSomeImageAPIKey;
+        private System.Windows.Forms.LinkLabel linkLblSomeImageAPIKey;
         private System.Windows.Forms.TabPage tpVgyme;
         private System.Windows.Forms.TextBox txtVgymeUserKey;
         private System.Windows.Forms.Label lvlVgymeUserKey;
