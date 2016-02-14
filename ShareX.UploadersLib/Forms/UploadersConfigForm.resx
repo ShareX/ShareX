@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -12705,6 +12705,141 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;tpChevereto.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="linkLblSomeImageAPIKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLblSomeImageAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 46</value>
+  </data>
+  <data name="linkLblSomeImageAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 17</value>
+  </data>
+  <data name="linkLblSomeImageAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="linkLblSomeImageAPIKey.Text" xml:space="preserve">
+    <value>To get API key visit https://someimage.com/api</value>
+  </data>
+  <data name="&gt;&gt;linkLblSomeImageAPIKey.Name" xml:space="preserve">
+    <value>linkLblSomeImageAPIKey</value>
+  </data>
+  <data name="&gt;&gt;linkLblSomeImageAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLblSomeImageAPIKey.Parent" xml:space="preserve">
+    <value>tpSomeImage</value>
+  </data>
+  <data name="&gt;&gt;linkLblSomeImageAPIKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtSomeImageAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 43</value>
+  </data>
+  <data name="txtSomeImageAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 22</value>
+  </data>
+  <data name="txtSomeImageAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtSomeImageAPIKey.Name" xml:space="preserve">
+    <value>txtSomeImageAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtSomeImageAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSomeImageAPIKey.Parent" xml:space="preserve">
+    <value>tpSomeImage</value>
+  </data>
+  <data name="&gt;&gt;txtSomeImageAPIKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblSomeImageAPIKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSomeImageAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 23</value>
+  </data>
+  <data name="lblSomeImageAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 17</value>
+  </data>
+  <data name="lblSomeImageAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="&gt;&gt;lblSomeImageAPIKey.Name" xml:space="preserve">
+    <value>lblSomeImageAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblSomeImageAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSomeImageAPIKey.Parent" xml:space="preserve">
+    <value>tpSomeImage</value>
+  </data>
+  <data name="&gt;&gt;lblSomeImageAPIKey.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbSomeImageDirectURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbSomeImageDirectURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 88</value>
+  </data>
+  <data name="cbSomeImageDirectURL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="cbSomeImageDirectURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 21</value>
+  </data>
+  <data name="cbSomeImageDirectURL.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
+    <value>Direct URL</value>
+  </data>
+  <data name="&gt;&gt;cbSomeImageDirectURL.Name" xml:space="preserve">
+    <value>cbSomeImageDirectURL</value>
+  </data>
+  <data name="&gt;&gt;cbSomeImageDirectURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbSomeImageDirectURL.Parent" xml:space="preserve">
+    <value>tpSomeImage</value>
+  </data>
+  <data name="&gt;&gt;cbSomeImageDirectURL.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tpSomeImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tpSomeImage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tpSomeImage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tpSomeImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1301, 612</value>
+  </data>
+  <data name="tpSomeImage.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="tpSomeImage.Text" xml:space="preserve">
+    <value>SomeImage</value>
+  </data>
+  <data name="&gt;&gt;tpSomeImage.Name" xml:space="preserve">
+    <value>tpSomeImage</value>
+  </data>
+  <data name="&gt;&gt;tpSomeImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpSomeImage.Parent" xml:space="preserve">
+    <value>tcImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpSomeImage.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="llVgymeAccountDetailsPage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

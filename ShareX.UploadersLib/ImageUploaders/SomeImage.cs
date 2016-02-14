@@ -28,12 +28,15 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class SomeImage : ImageUploader
     {
         private const string API_ENDPOINT = "https://someimage.com/api/2/image/upload";
+
+        public bool DirectURL { get; set; }
 
         private string API_KEY = "";
 
@@ -58,8 +61,31 @@ namespace ShareX.UploadersLib.ImageUploaders
 
                     if (jsonResponse != null)
                     {
-                        result.URL = jsonResponse.imagelink;
+                      if (DirectURL)
+                      {
+                          if (jsonResponse.imagelink == null)
+                          {
+                              result.URL = null;
+                          }
+                          else {
+                              Uri responseUri = new Uri(jsonResponse.imagelink); // http://someimage.com/asdf
+                              string host = responseUri.Host; // someimage.com
+                              string filename = Path.GetFileName(responseUri.AbsolutePath); // /asdf
+                              if (filename.StartsWith("/"))
+                              {
+                                  filename = filename.Remove(0, 1); // asdf
+                              }
+                              if (host.StartsWith("www."))
+                              {
+                                  host = host.Remove(0, 4);
+                              }
+                              result.URL = "https://i1." + host + "/" + filename + ".jpg";
+                          }
+                    } else
+                    {
+                          result.URL = jsonResponse.imagelink;
                     }
+                  }
                 }
             }
 

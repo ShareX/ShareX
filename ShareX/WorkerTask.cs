@@ -827,7 +827,15 @@ namespace ShareX
                     };
                     break;
                 case ImageDestination.SomeImage:
-                    imageUploader = new SomeImage(APIKeys.SomeImageKey);
+		    String someImageAPIKey = Program.UploadersConfig.SomeImageAPIKey;
+                    if (someImageAPIKey == "")
+                    {
+                        someImageAPIKey = APIKeys.SomeImageKey;
+                    }
+                    imageUploader = new SomeImage(someImageAPIKey)
+		    {
+                        DirectURL = Program.UploadersConfig.SomeImageDirectURL
+ 		    };
                     break;
                 case ImageDestination.CustomImageUploader:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomImageUploaderSelected);
