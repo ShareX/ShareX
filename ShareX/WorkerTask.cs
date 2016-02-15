@@ -23,14 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
@@ -40,6 +32,14 @@ using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.TextUploaders;
 using ShareX.UploadersLib.URLShorteners;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -827,8 +827,8 @@ namespace ShareX
                     };
                     break;
                 case ImageDestination.SomeImage:
-                    String someImageAPIKey = Program.UploadersConfig.SomeImageAPIKey;
-                    if (someImageAPIKey == "")
+                    string someImageAPIKey = Program.UploadersConfig.SomeImageAPIKey;
+                    if (string.IsNullOrEmpty(someImageAPIKey))
                     {
                         someImageAPIKey = APIKeys.SomeImageKey;
                     }

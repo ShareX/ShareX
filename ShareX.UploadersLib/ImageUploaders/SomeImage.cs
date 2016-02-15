@@ -25,10 +25,10 @@
 
 // Credits: https://github.com/DanielMcAssey
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
@@ -36,9 +36,8 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         private const string API_ENDPOINT = "https://someimage.com/api/2/image/upload";
 
+        public string API_KEY { get; set; }
         public bool DirectURL { get; set; }
-
-        private string API_KEY = "";
 
         public SomeImage(string apiKey)
         {
@@ -63,11 +62,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                     {
                         if (DirectURL)
                         {
-                            if (jsonResponse.imagelink == null)
+                            if (!string.IsNullOrEmpty(jsonResponse.imagelink))
                             {
-                                result.URL = null;
-                            }
-                            else {
                                 Uri responseUri = new Uri(jsonResponse.imagelink); // http://someimage.com/asdf
                                 string host = responseUri.Host; // someimage.com
                                 string filename = Path.GetFileName(responseUri.AbsolutePath); // /asdf
@@ -79,7 +75,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 {
                                     host = host.Remove(0, 4);
                                 }
-                                result.URL = "https://i1." + host + "/" + filename + ".jpg";
+                                string extension = Path.GetExtension(filename);
+                                result.URL = $"https://i1.{host}/{filename}{extension}";
                             }
                         }
                         else

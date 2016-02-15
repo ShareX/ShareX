@@ -23,6 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Win32;
+using ShareX.HelpersLib;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -44,9 +47,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 using System.Windows.Forms;
-using Microsoft.Win32;
-using ShareX.HelpersLib;
-using ShareX.HelpersLib.Properties;
 
 namespace ShareX.HelpersLib
 {
@@ -677,7 +677,7 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            return (path);
+            return path;
         }
 
         public static bool WaitWhile(Func<bool> check, int interval, int timeout = -1)
