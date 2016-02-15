@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using ShareX.HelpersLib;
-using ShareX.ScreenCaptureLib.Properties;
 
 namespace ShareX.ScreenCaptureLib
 {

@@ -23,18 +23,15 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.IO;
-using System.Collections.Generic;
-using ShareX.HelpersLib;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ShareX.HelpersLib;
+using System.Collections.Generic;
+using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class SulUploader : FileUploader
     {
-
         private string APIKey { get; set; }
 
         public SulUploader(string apiKey)
@@ -44,12 +41,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("wizard", "true");
             args.Add("key", APIKey);
             args.Add("client", "sharex-native");
-
 
             string url = "https://s-ul.eu";
             url = URLHelpers.CombineURL(url, "upload.php");

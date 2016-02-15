@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using System;
 using ShareX.HelpersLib;
+using System;
 
 namespace ShareX.ScreenCaptureLib
 {
