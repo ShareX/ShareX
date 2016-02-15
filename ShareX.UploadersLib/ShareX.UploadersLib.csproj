@@ -884,6 +884,7 @@
     <None Include="Resources\question-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Favicons\SomeImage.png" />
     <Content Include="Favicons\Streamable.ico" />
     <Content Include="Favicons\Sul.png" />
     <Content Include="Favicons\Vgyme.ico" />
