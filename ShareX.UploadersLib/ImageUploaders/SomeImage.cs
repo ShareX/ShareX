@@ -79,7 +79,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 {
                                     host = host.Remove(0, 4);
                                 }
-                                result.URL = "https://i1." + host + "/" + filename + ".jpg";
+                                string extension = Path.GetExtension(fileName);
+                                result.URL = "https://i1." + host + "/" + filename + extension;
                             }
                         }
                         else
