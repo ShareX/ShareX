@@ -23,6 +23,12 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
@@ -30,12 +36,6 @@ using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
@@ -112,6 +112,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpSeafile, Resources.Seafile);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
+            AddIconToTab(tpSomeImage, Resources.SomeImage);
             AddIconToTab(tpStreamable, Resources.Streamable);
             AddIconToTab(tpSul, Resources.Sul);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
@@ -241,6 +242,11 @@ namespace ShareX.UploadersLib
             txtCheveretoWebsite.Text = Config.CheveretoWebsite;
             txtCheveretoAPIKey.Text = Config.CheveretoAPIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
+
+            // SomeImage
+
+            txtSomeImageAPIKey.Text = Config.SomeImageAPIKey;
+            cbSomeImageDirectURL.Checked = Config.SomeImageDirectURL;
 
             // vgy.me
 
@@ -997,6 +1003,25 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Chevereto
+
+        #region SomeImage
+
+        private void txtSomeImageAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.SomeImageAPIKey = txtSomeImageAPIKey.Text;
+        }
+
+        private void cbSomeImageDirectURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SomeImageDirectURL = cbSomeImageDirectURL.Checked;
+        }
+
+        private void linkLblSomeImageAPIKey_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://someimage.com/api");
+        }
+
+        #endregion SomeImage
 
         #region vgy.me
 
