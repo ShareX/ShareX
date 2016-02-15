@@ -79,12 +79,12 @@ namespace ShareX
             cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
 
             UpdateControls();
-
-            ready = true;
         }
 
         private void UpdateControls()
         {
+            ready = false;
+
             // General
             ChangeLanguage(Program.Settings.Language);
 
@@ -174,6 +174,8 @@ namespace ShareX
             pgSettings.SelectedObject = Program.Settings;
 
             tttvMain.MainTabControl = tcSettings;
+
+            ready = true;
         }
 
         private Image GetLanguageIcon(SupportedLanguage language)
@@ -519,6 +521,8 @@ namespace ShareX
                             btnExport.Enabled = true;
                             btnImport.Enabled = true;
                         }
+
+                        LanguageHelper.ChangeLanguage(Program.Settings.Language);
 
                         Program.MainForm.UpdateControls();
 
