@@ -338,9 +338,12 @@ namespace ShareX.HelpersLib
                     infoHeader.biSizeImage = (uint)(infoHeader.biWidth * infoHeader.biHeight * (infoHeader.biBitCount >> 3));
                 }
 
-                return new Bitmap(infoHeader.biWidth, infoHeader.biHeight, -(int)(infoHeader.biSizeImage / infoHeader.biHeight),
+                using (Bitmap bmp = new Bitmap(infoHeader.biWidth, infoHeader.biHeight, -(int)(infoHeader.biSizeImage / infoHeader.biHeight),
                     infoHeader.biBitCount == 32 ? PixelFormat.Format32bppArgb : PixelFormat.Format24bppRgb,
-                    new IntPtr((long)handle.AddrOfPinnedObject() + infoHeader.OffsetToPixels + (infoHeader.biHeight - 1) * (int)(infoHeader.biSizeImage / infoHeader.biHeight)));
+                    new IntPtr((long)handle.AddrOfPinnedObject() + infoHeader.OffsetToPixels + (infoHeader.biHeight - 1) * (int)(infoHeader.biSizeImage / infoHeader.biHeight))))
+                {
+                    return new Bitmap(bmp);
+                }
             }
             finally
             {
