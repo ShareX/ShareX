@@ -32,24 +32,28 @@ namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class Chevereto : ImageUploader
     {
-        public string Website { get; set; }
-        public string APIKey { get; set; }
+        public static List<CheveretoUploader> Uploaders = new List<CheveretoUploader>()
+        {
+            new CheveretoUploader("http://ultraimg.com/api/1/upload", "3374fa58c672fcaad8dab979f7687397"),
+            new CheveretoUploader("http://yukle.at/api/1/upload", "ee24aee90bcd24e39cead57c65044bde")
+        };
+
+        public CheveretoUploader Uploader { get; private set; }
+
         public bool DirectURL { get; set; }
 
-        public Chevereto(string website, string apiKey)
+        public Chevereto(CheveretoUploader uploader)
         {
-            APIKey = apiKey;
-            Website = website;
+            Uploader = uploader;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("key", APIKey);
+            args.Add("key", Uploader.APIKey);
             args.Add("format", "json");
 
-            string url = URLHelpers.FixPrefix(Website);
-            url = URLHelpers.CombineURL(url, "api/1/upload");
+            string url = URLHelpers.FixPrefix(Uploader.UploadURL);
 
             UploadResult result = UploadData(stream, url, fileName, "source", args);
 

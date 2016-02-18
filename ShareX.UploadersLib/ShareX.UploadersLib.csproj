@@ -206,6 +206,7 @@
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
+    <Compile Include="ImageUploaders\CheveretoUploader.cs" />
     <Compile Include="ImageUploaders\SomeImage.cs" />
     <Compile Include="ImageUploaders\VgymeUploader.cs" />
     <Compile Include="TextUploaders\Hastebin.cs" />

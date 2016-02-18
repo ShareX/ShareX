@@ -12517,6 +12517,54 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpPicasa.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="lblCheveretoUploaders.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCheveretoUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblCheveretoUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="lblCheveretoUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
+    <value>Uploaders:</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoUploaders.Name" xml:space="preserve">
+    <value>lblCheveretoUploaders</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoUploaders.Parent" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbCheveretoUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="cbCheveretoUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 21</value>
+  </data>
+  <data name="cbCheveretoUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;cbCheveretoUploaders.Name" xml:space="preserve">
+    <value>cbCheveretoUploaders</value>
+  </data>
+  <data name="&gt;&gt;cbCheveretoUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCheveretoUploaders.Parent" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;cbCheveretoUploaders.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="cbCheveretoDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -12524,7 +12572,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbCheveretoDirectURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>16, 160</value>
   </data>
   <data name="cbCheveretoDirectURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 17</value>
@@ -12545,91 +12593,61 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;cbCheveretoDirectURL.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblCheveretoWebsiteTip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCheveretoWebsiteTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCheveretoWebsiteTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 36</value>
-  </data>
-  <data name="lblCheveretoWebsiteTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="lblCheveretoWebsiteTip.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblCheveretoWebsiteTip.Text" xml:space="preserve">
-    <value>/api/1/upload</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsiteTip.Name" xml:space="preserve">
-    <value>lblCheveretoWebsiteTip</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsiteTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsiteTip.Parent" xml:space="preserve">
-    <value>tpChevereto</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsiteTip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblCheveretoWebsite.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCheveretoWebsite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCheveretoWebsite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblCheveretoWebsite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
-  </data>
-  <data name="lblCheveretoWebsite.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblCheveretoWebsite.Text" xml:space="preserve">
-    <value>Website:</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsite.Name" xml:space="preserve">
-    <value>lblCheveretoWebsite</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsite.Parent" xml:space="preserve">
-    <value>tpChevereto</value>
-  </data>
-  <data name="&gt;&gt;lblCheveretoWebsite.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="txtCheveretoWebsite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
+  <data name="lblCheveretoUploadURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="txtCheveretoWebsite.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblCheveretoUploadURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 64</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="lblCheveretoUploadURL.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
+    <value>Upload URL:</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoUploadURL.Name" xml:space="preserve">
+    <value>lblCheveretoUploadURL</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoUploadURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoUploadURL.Parent" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;lblCheveretoUploadURL.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtCheveretoUploadURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="txtCheveretoUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 20</value>
   </data>
-  <data name="txtCheveretoWebsite.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtCheveretoUploadURL.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;txtCheveretoWebsite.Name" xml:space="preserve">
-    <value>txtCheveretoWebsite</value>
+  <data name="&gt;&gt;txtCheveretoUploadURL.Name" xml:space="preserve">
+    <value>txtCheveretoUploadURL</value>
   </data>
-  <data name="&gt;&gt;txtCheveretoWebsite.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtCheveretoUploadURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtCheveretoWebsite.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtCheveretoUploadURL.Parent" xml:space="preserve">
     <value>tpChevereto</value>
   </data>
-  <data name="&gt;&gt;txtCheveretoWebsite.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;txtCheveretoUploadURL.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="txtCheveretoAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
+    <value>16, 128</value>
   </data>
   <data name="txtCheveretoAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 20</value>
@@ -12647,7 +12665,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;txtCheveretoAPIKey.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblCheveretoAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12656,7 +12674,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblCheveretoAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
+    <value>13, 112</value>
   </data>
   <data name="lblCheveretoAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -12677,7 +12695,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;lblCheveretoAPIKey.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="tpChevereto.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

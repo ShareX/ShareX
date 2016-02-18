@@ -78,8 +78,7 @@ namespace ShareX.UploadersLib
 
         // Chevereto
 
-        public string CheveretoWebsite = string.Empty;
-        public string CheveretoAPIKey = string.Empty;
+        public CheveretoUploader CheveretoUploader = new CheveretoUploader("http://ultraimg.com/api/1/upload", "3374fa58c672fcaad8dab979f7687397");
         public bool CheveretoDirectURL = true;
 
         // SomeImage
@@ -396,7 +395,7 @@ namespace ShareX.UploadersLib
                 case ImageDestination.Twitter:
                     return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount) && OAuthInfo.CheckOAuth(TwitterOAuthInfoList[TwitterSelectedAccount]);
                 case ImageDestination.Chevereto:
-                    return !string.IsNullOrEmpty(CheveretoWebsite) && !string.IsNullOrEmpty(CheveretoAPIKey);
+                    return CheveretoUploader != null && !string.IsNullOrEmpty(CheveretoUploader.UploadURL) && !string.IsNullOrEmpty(CheveretoUploader.APIKey);
                 case ImageDestination.CustomImageUploader:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomImageUploaderSelected);
             }

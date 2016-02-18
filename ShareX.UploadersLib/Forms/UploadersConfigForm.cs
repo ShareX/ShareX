@@ -239,8 +239,10 @@ namespace ShareX.UploadersLib
 
             // Chevereto
 
-            txtCheveretoWebsite.Text = Config.CheveretoWebsite;
-            txtCheveretoAPIKey.Text = Config.CheveretoAPIKey;
+            if (Config.CheveretoUploader == null) Config.CheveretoUploader = new CheveretoUploader();
+            cbCheveretoUploaders.Items.AddRange(Chevereto.Uploaders.ToArray());
+            txtCheveretoUploadURL.Text = Config.CheveretoUploader.UploadURL;
+            txtCheveretoAPIKey.Text = Config.CheveretoUploader.APIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
 
             // SomeImage
@@ -987,14 +989,28 @@ namespace ShareX.UploadersLib
 
         #region Chevereto
 
+        private void cbCheveretoUploaders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCheveretoUploaders.SelectedIndex > -1)
+            {
+                CheveretoUploader uploader = cbCheveretoUploaders.SelectedItem as CheveretoUploader;
+
+                if (uploader != null)
+                {
+                    txtCheveretoUploadURL.Text = uploader.UploadURL;
+                    txtCheveretoAPIKey.Text = uploader.APIKey;
+                }
+            }
+        }
+
         private void txtCheveretoWebsite_TextChanged(object sender, EventArgs e)
         {
-            Config.CheveretoWebsite = txtCheveretoWebsite.Text;
+            Config.CheveretoUploader.UploadURL = txtCheveretoUploadURL.Text;
         }
 
         private void txtCheveretoAPIKey_TextChanged(object sender, EventArgs e)
         {
-            Config.CheveretoAPIKey = txtCheveretoAPIKey.Text;
+            Config.CheveretoUploader.APIKey = txtCheveretoAPIKey.Text;
         }
 
         private void cbCheveretoDirectURL_CheckedChanged(object sender, EventArgs e)

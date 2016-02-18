@@ -815,7 +815,7 @@ namespace ShareX
                     };
                     break;
                 case ImageDestination.Chevereto:
-                    imageUploader = new Chevereto(Program.UploadersConfig.CheveretoWebsite, Program.UploadersConfig.CheveretoAPIKey)
+                    imageUploader = new Chevereto(Program.UploadersConfig.CheveretoUploader)
                     {
                         DirectURL = Program.UploadersConfig.CheveretoDirectURL
                     };
