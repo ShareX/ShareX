@@ -32,6 +32,7 @@
             this.btnLoadedAssemblies = new System.Windows.Forms.Button();
             this.btnCopyAll = new System.Windows.Forms.Button();
             this.rtbDebug = new System.Windows.Forms.RichTextBox();
+            this.btnOpenLogFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLoadedAssemblies
@@ -56,10 +57,18 @@
             this.rtbDebug.ReadOnly = true;
             this.rtbDebug.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbDebug_LinkClicked);
             // 
+            // btnOpenLogFile
+            // 
+            resources.ApplyResources(this.btnOpenLogFile, "btnOpenLogFile");
+            this.btnOpenLogFile.Name = "btnOpenLogFile";
+            this.btnOpenLogFile.UseVisualStyleBackColor = true;
+            this.btnOpenLogFile.Click += new System.EventHandler(this.btnOpenLogFile_Click);
+            // 
             // DebugForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnOpenLogFile);
             this.Controls.Add(this.rtbDebug);
             this.Controls.Add(this.btnCopyAll);
             this.Controls.Add(this.btnLoadedAssemblies);
@@ -73,5 +82,6 @@
         private System.Windows.Forms.Button btnLoadedAssemblies;
         private System.Windows.Forms.Button btnCopyAll;
         private System.Windows.Forms.RichTextBox rtbDebug;
+        private System.Windows.Forms.Button btnOpenLogFile;
     }
 }

@@ -33,17 +33,20 @@ namespace ShareX.HelpersLib
 {
     public partial class DebugForm : BaseForm
     {
+        public Logger Logger { get; private set; }
+
         public DebugForm(Logger logger)
         {
             InitializeComponent();
+            Logger = logger;
 
-            rtbDebug.Text = logger.ToString();
+            rtbDebug.Text = Logger.ToString();
             rtbDebug.SelectionStart = rtbDebug.TextLength;
             rtbDebug.ScrollToCaret();
             rtbDebug.AddContextMenu();
 
-            logger.MessageAdded += logger_MessageAdded;
-            FormClosing += (sender, e) => logger.MessageAdded -= logger_MessageAdded;
+            Logger.MessageAdded += logger_MessageAdded;
+            FormClosing += (sender, e) => Logger.MessageAdded -= logger_MessageAdded;
         }
 
         private void logger_MessageAdded(string message)
@@ -69,6 +72,11 @@ namespace ShareX.HelpersLib
         {
             string text = rtbDebug.Text.Trim();
             ClipboardHelpers.CopyText(text);
+        }
+
+        private void btnOpenLogFile_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenFile(Logger.LogFilePath);
         }
 
         private void btnLoadedAssemblies_Click(object sender, EventArgs e)
