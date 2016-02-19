@@ -121,10 +121,7 @@ Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 
 Trailer music credits: Track Name: Au5 - Inside (feat. Danyka Nadeau), Video Link: https://youtu.be/WrkyT-6ivjc, Buy Link: http://music.monstercat.com/track/inside-feat-danyka-nadeau, Label Channel: http://www.YouTube.com/Monstercat
 
-Running from:
-{3}
-
-Copyright (c) 2007-2016 ShareX Team", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries, Application.ExecutablePath);
+Copyright (c) 2007-2016 ShareX Team", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries);
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)
