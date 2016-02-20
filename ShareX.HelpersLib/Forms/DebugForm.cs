@@ -38,6 +38,7 @@ namespace ShareX.HelpersLib
         public DebugForm(Logger logger)
         {
             InitializeComponent();
+            Text = $"{Application.ExecutablePath} - Debug Log";
             Logger = logger;
 
             rtbDebug.Text = Logger.ToString();
