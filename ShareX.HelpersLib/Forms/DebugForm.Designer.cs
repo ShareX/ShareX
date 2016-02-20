@@ -33,6 +33,10 @@
             this.btnCopyAll = new System.Windows.Forms.Button();
             this.rtbDebug = new System.Windows.Forms.RichTextBox();
             this.btnOpenLogFile = new System.Windows.Forms.Button();
+            this.llRunningFrom = new System.Windows.Forms.LinkLabel();
+            this.flpRunningFrom = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblRunningFrom = new System.Windows.Forms.Label();
+            this.flpRunningFrom.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoadedAssemblies
@@ -64,15 +68,35 @@
             this.btnOpenLogFile.UseVisualStyleBackColor = true;
             this.btnOpenLogFile.Click += new System.EventHandler(this.btnOpenLogFile_Click);
             // 
+            // llRunningFrom
+            // 
+            resources.ApplyResources(this.llRunningFrom, "llRunningFrom");
+            this.llRunningFrom.Name = "llRunningFrom";
+            // 
+            // flpRunningFrom
+            // 
+            resources.ApplyResources(this.flpRunningFrom, "flpRunningFrom");
+            this.flpRunningFrom.Controls.Add(this.lblRunningFrom);
+            this.flpRunningFrom.Controls.Add(this.llRunningFrom);
+            this.flpRunningFrom.Name = "flpRunningFrom";
+            // 
+            // lblRunningFrom
+            // 
+            resources.ApplyResources(this.lblRunningFrom, "lblRunningFrom");
+            this.lblRunningFrom.Name = "lblRunningFrom";
+            // 
             // DebugForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flpRunningFrom);
             this.Controls.Add(this.btnOpenLogFile);
             this.Controls.Add(this.rtbDebug);
             this.Controls.Add(this.btnCopyAll);
             this.Controls.Add(this.btnLoadedAssemblies);
             this.Name = "DebugForm";
+            this.flpRunningFrom.ResumeLayout(false);
+            this.flpRunningFrom.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -83,5 +107,8 @@
         private System.Windows.Forms.Button btnCopyAll;
         private System.Windows.Forms.RichTextBox rtbDebug;
         private System.Windows.Forms.Button btnOpenLogFile;
+        private System.Windows.Forms.LinkLabel llRunningFrom;
+        private System.Windows.Forms.FlowLayoutPanel flpRunningFrom;
+        private System.Windows.Forms.Label lblRunningFrom;
     }
 }

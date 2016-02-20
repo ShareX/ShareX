@@ -38,13 +38,16 @@ namespace ShareX.HelpersLib
         public DebugForm(Logger logger)
         {
             InitializeComponent();
-            Text = $"{Application.ExecutablePath} - Debug Log";
             Logger = logger;
 
             rtbDebug.Text = Logger.ToString();
             rtbDebug.SelectionStart = rtbDebug.TextLength;
             rtbDebug.ScrollToCaret();
             rtbDebug.AddContextMenu();
+
+            string startupPath = AppDomain.CurrentDomain.BaseDirectory;
+            llRunningFrom.Text = startupPath;
+            llRunningFrom.LinkClicked += (sender, e) => Helpers.OpenFolder(startupPath);
 
             Logger.MessageAdded += logger_MessageAdded;
             FormClosing += (sender, e) => Logger.MessageAdded -= logger_MessageAdded;
