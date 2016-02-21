@@ -204,7 +204,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (imgCache != null && imgCache is HardDiskCache && !IsRecording)
             {
-                Helpers.CreateDirectoryIfNotExist(path);
+                Helpers.CreateDirectoryFromFilePath(path);
 
                 HardDiskCache hdCache = imgCache as HardDiskCache;
 
@@ -229,7 +229,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool FFmpegEncodeAsGIF(string path)
         {
-            Helpers.CreateDirectoryIfNotExist(path);
+            Helpers.CreateDirectoryFromFilePath(path);
             return ffmpegCli.EncodeGIF(Options.OutputPath, path);
         }
 

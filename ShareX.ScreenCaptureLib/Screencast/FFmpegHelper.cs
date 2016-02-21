@@ -58,7 +58,7 @@ namespace ShareX.ScreenCaptureLib
             OutputDataReceived += FFmpegHelper_DataReceived;
             ErrorDataReceived += FFmpegHelper_DataReceived;
             Options = options;
-            Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
+            Helpers.CreateDirectoryFromFilePath(Options.OutputPath);
         }
 
         private void FFmpegHelper_DataReceived(object sender, DataReceivedEventArgs e)
