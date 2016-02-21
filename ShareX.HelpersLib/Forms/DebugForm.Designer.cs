@@ -71,6 +71,7 @@
             // llRunningFrom
             // 
             resources.ApplyResources(this.llRunningFrom, "llRunningFrom");
+            this.llRunningFrom.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.llRunningFrom.Name = "llRunningFrom";
             // 
             // flpRunningFrom

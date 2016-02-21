@@ -46,7 +46,6 @@ namespace ShareX.HelpersLib
             rtbDebug.AddContextMenu();
 
             string startupPath = AppDomain.CurrentDomain.BaseDirectory;
-            llRunningFrom.LinkBehavior = LinkBehavior.NeverUnderline;
             llRunningFrom.Text = startupPath;
             llRunningFrom.LinkClicked += (sender, e) => Helpers.OpenFolder(startupPath);
 

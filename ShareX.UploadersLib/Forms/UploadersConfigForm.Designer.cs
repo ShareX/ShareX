@@ -514,6 +514,8 @@
             this.btnPicasaRefreshAlbumList = new System.Windows.Forms.Button();
             this.oauth2Picasa = new ShareX.UploadersLib.OAuthControl();
             this.tpChevereto = new System.Windows.Forms.TabPage();
+            this.lblCheveretoUploaders = new System.Windows.Forms.Label();
+            this.cbCheveretoUploaders = new System.Windows.Forms.ComboBox();
             this.cbCheveretoDirectURL = new System.Windows.Forms.CheckBox();
             this.lblCheveretoUploadURL = new System.Windows.Forms.Label();
             this.txtCheveretoUploadURL = new System.Windows.Forms.TextBox();
@@ -532,8 +534,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbCheveretoUploaders = new System.Windows.Forms.ComboBox();
-            this.lblCheveretoUploaders = new System.Windows.Forms.Label();
+            this.lblCheveretoUploadURLExample = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -4138,6 +4139,7 @@
             // 
             // tpChevereto
             // 
+            this.tpChevereto.Controls.Add(this.lblCheveretoUploadURLExample);
             this.tpChevereto.Controls.Add(this.lblCheveretoUploaders);
             this.tpChevereto.Controls.Add(this.cbCheveretoUploaders);
             this.tpChevereto.Controls.Add(this.cbCheveretoDirectURL);
@@ -4148,6 +4150,19 @@
             resources.ApplyResources(this.tpChevereto, "tpChevereto");
             this.tpChevereto.Name = "tpChevereto";
             this.tpChevereto.UseVisualStyleBackColor = true;
+            // 
+            // lblCheveretoUploaders
+            // 
+            resources.ApplyResources(this.lblCheveretoUploaders, "lblCheveretoUploaders");
+            this.lblCheveretoUploaders.Name = "lblCheveretoUploaders";
+            // 
+            // cbCheveretoUploaders
+            // 
+            this.cbCheveretoUploaders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCheveretoUploaders.FormattingEnabled = true;
+            resources.ApplyResources(this.cbCheveretoUploaders, "cbCheveretoUploaders");
+            this.cbCheveretoUploaders.Name = "cbCheveretoUploaders";
+            this.cbCheveretoUploaders.SelectedIndexChanged += new System.EventHandler(this.cbCheveretoUploaders_SelectedIndexChanged);
             // 
             // cbCheveretoDirectURL
             // 
@@ -4271,18 +4286,10 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // cbCheveretoUploaders
+            // lblCheveretoUploadURLExample
             // 
-            this.cbCheveretoUploaders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCheveretoUploaders.FormattingEnabled = true;
-            resources.ApplyResources(this.cbCheveretoUploaders, "cbCheveretoUploaders");
-            this.cbCheveretoUploaders.Name = "cbCheveretoUploaders";
-            this.cbCheveretoUploaders.SelectedIndexChanged += new System.EventHandler(this.cbCheveretoUploaders_SelectedIndexChanged);
-            // 
-            // lblCheveretoUploaders
-            // 
-            resources.ApplyResources(this.lblCheveretoUploaders, "lblCheveretoUploaders");
-            this.lblCheveretoUploaders.Name = "lblCheveretoUploaders";
+            resources.ApplyResources(this.lblCheveretoUploadURLExample, "lblCheveretoUploadURLExample");
+            this.lblCheveretoUploadURLExample.Name = "lblCheveretoUploadURLExample";
             // 
             // UploadersConfigForm
             // 
@@ -4944,5 +4951,6 @@
         private System.Windows.Forms.LinkLabel llVgymeAccountDetailsPage;
         private System.Windows.Forms.Label lblCheveretoUploaders;
         private System.Windows.Forms.ComboBox cbCheveretoUploaders;
+        private System.Windows.Forms.Label lblCheveretoUploadURLExample;
     }
 }
