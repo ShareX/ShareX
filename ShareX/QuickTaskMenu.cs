@@ -87,7 +87,6 @@ namespace ShareX
             tsmiEdit.Image = Resources.gear;
             tsmiEdit.Click += (sender, e) =>
             {
-                cms.Close();
                 new QuickTaskMenuEditorForm().ShowDialog();
             };
             cms.Items.Add(tsmiEdit);
@@ -96,7 +95,6 @@ namespace ShareX
 
             ToolStripMenuItem tsmiCancel = new ToolStripMenuItem("Cancel");
             tsmiCancel.Image = Resources.cross;
-            tsmiCancel.Click += (sender, e) => cms.Close();
             cms.Items.Add(tsmiCancel);
 
             Point cursorPosition = CaptureHelpers.GetCursorPosition();
