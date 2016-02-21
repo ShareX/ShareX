@@ -1200,9 +1200,6 @@ namespace ShareX
                         Password = Program.UploadersConfig.YourlsPassword
                     };
                     break;
-                case UrlShortenerType.NLCM:
-                    urlShortener = new NlcmURLShortener();
-                    break;
                 case UrlShortenerType.AdFly:
                     urlShortener = new AdFlyURLShortener
                     {

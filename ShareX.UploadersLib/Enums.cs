@@ -156,8 +156,6 @@ namespace ShareX.UploadersLib
         TURL,
         [Description("yourls.org")]
         YOURLS,
-        [Description("nl.cm")]
-        NLCM,
         [Description("adf.ly")]
         AdFly,
         [Description("coinurl.com")]
