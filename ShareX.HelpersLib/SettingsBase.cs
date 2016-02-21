@@ -121,7 +121,7 @@ namespace ShareX.HelpersLib
                 {
                     lock (obj)
                     {
-                        Helpers.CreateDirectoryIfNotExist(filePath);
+                        Helpers.CreateDirectoryFromFilePath(filePath);
 
                         string tempFilePath = filePath + ".temp";
 

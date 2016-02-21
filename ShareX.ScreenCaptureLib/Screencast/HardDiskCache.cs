@@ -52,7 +52,7 @@ namespace ShareX.ScreenCaptureLib
         public HardDiskCache(ScreencastOptions options)
         {
             Options = options;
-            Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
+            Helpers.CreateDirectoryFromFilePath(Options.OutputPath);
             fsCache = new FileStream(Options.OutputPath, FileMode.Create, FileAccess.Write, FileShare.Read);
             indexList = new List<LocationInfo>();
         }

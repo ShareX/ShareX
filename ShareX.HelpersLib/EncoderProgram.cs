@@ -54,7 +54,7 @@ namespace ShareX.HelpersLib
                     targetFilePath += "." + OutputExtension.TrimStart('.');
                 }
 
-                Helpers.CreateDirectoryIfNotExist(targetFilePath);
+                Helpers.CreateDirectoryFromFilePath(targetFilePath);
 
                 using (Process process = new Process())
                 {

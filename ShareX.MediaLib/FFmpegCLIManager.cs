@@ -44,7 +44,7 @@ namespace ShareX.MediaLib
             Output = new StringBuilder();
             OutputDataReceived += FFmpeg_DataReceived;
             ErrorDataReceived += FFmpeg_DataReceived;
-            Helpers.CreateDirectoryIfNotExist(FFmpegPath);
+            Helpers.CreateDirectoryFromFilePath(FFmpegPath);
         }
 
         private void FFmpeg_DataReceived(object sender, DataReceivedEventArgs e)

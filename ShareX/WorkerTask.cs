@@ -672,7 +672,7 @@ namespace ShareX
                 if (!string.IsNullOrEmpty(filePath))
                 {
                     Info.FilePath = filePath;
-                    Helpers.CreateDirectoryIfNotExist(Info.FilePath);
+                    Helpers.CreateDirectoryFromFilePath(Info.FilePath);
                     File.WriteAllText(Info.FilePath, tempText, Encoding.UTF8);
                     DebugHelper.WriteLine("Text saved to file: " + Info.FilePath);
                 }
@@ -1361,7 +1361,7 @@ namespace ShareX
 
                 try
                 {
-                    Helpers.CreateDirectoryIfNotExist(Info.FilePath);
+                    Helpers.CreateDirectoryFromFilePath(Info.FilePath);
 
                     using (WebClient wc = new WebClient())
                     {

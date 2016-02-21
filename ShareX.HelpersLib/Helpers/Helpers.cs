@@ -732,27 +732,27 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static void CreateDirectoryIfNotExist(string path, bool isFilePath = true)
+        public static void CreateDirectoryFromDirectoryPath(string path)
+        {
+            if (!string.IsNullOrEmpty(path) && !Directory.Exists(path))
+            {
+                try
+                {
+                    Directory.CreateDirectory(path);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                    MessageBox.Show(Resources.Helpers_CreateDirectoryIfNotExist_Create_failed_ + "\r\n\r\n" + e, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        public static void CreateDirectoryFromFilePath(string path)
         {
             if (!string.IsNullOrEmpty(path))
             {
-                if (isFilePath)
-                {
-                    path = Path.GetDirectoryName(path);
-                }
-
-                if (!string.IsNullOrEmpty(path) && !Directory.Exists(path))
-                {
-                    try
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                        MessageBox.Show(Resources.Helpers_CreateDirectoryIfNotExist_Create_failed_ + "\r\n\r\n" + e, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                CreateDirectoryFromDirectoryPath(Path.GetDirectoryName(path));
             }
         }
 
@@ -767,7 +767,7 @@ namespace ShareX.HelpersLib
 
                 if (!File.Exists(newFilepath))
                 {
-                    CreateDirectoryIfNotExist(newFilepath);
+                    CreateDirectoryFromFilePath(newFilepath);
                     File.Copy(filepath, newFilepath, false);
                 }
             }
@@ -785,7 +785,7 @@ namespace ShareX.HelpersLib
 
                 if (!File.Exists(newFilepath))
                 {
-                    CreateDirectoryIfNotExist(newFilepath);
+                    CreateDirectoryFromFilePath(newFilepath);
                     File.Copy(filepath, newFilepath, false);
                 }
             }

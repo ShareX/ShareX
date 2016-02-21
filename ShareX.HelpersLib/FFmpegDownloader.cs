@@ -69,7 +69,7 @@ namespace ShareX.HelpersLib
                     SevenZipExtractor.SetLibraryPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7z.dll"));
                 }
 
-                Helpers.CreateDirectoryIfNotExist(extractPath);
+                Helpers.CreateDirectoryFromFilePath(extractPath);
 
                 using (SevenZipExtractor zip = new SevenZipExtractor(zipPath))
                 {
