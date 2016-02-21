@@ -43,7 +43,7 @@ namespace ShareX
             }
         }
 
-        public static List<QuickTaskInfo> DefaultPresets { get; } = new List<QuickTaskInfo>()
+        public static List<QuickTaskInfo> DefaultPresets => new List<QuickTaskInfo>()
         {
             new QuickTaskInfo("Save, Upload, Copy URL", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost, AfterUploadTasks.CopyURLToClipboard),
             new QuickTaskInfo("Save, Copy image", AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.CopyImageToClipboard),
