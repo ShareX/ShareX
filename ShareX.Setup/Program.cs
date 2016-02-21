@@ -41,7 +41,7 @@ namespace ShareX.Setup
             Steam // Create Steam folder
         }
 
-        private static readonly SetupType Setup = SetupType.Stable;
+        private static readonly SetupType Setup = SetupType.Beta;
 
         private static readonly string parentDir = @"..\..\..\";
         private static readonly string binDir = Path.Combine(parentDir, "ShareX", "bin");

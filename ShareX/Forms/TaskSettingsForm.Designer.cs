@@ -563,7 +563,7 @@
             // 
             resources.ApplyResources(this.nudUseImageFormat2After, "nudUseImageFormat2After");
             this.nudUseImageFormat2After.Maximum = new decimal(new int[] {
-            2048,
+            10000,
             0,
             0,
             0});
