@@ -42,7 +42,8 @@ namespace ShareX.UploadersLib.ImageUploaders
             new CheveretoUploader("http://picgur.org/api/1/upload", "0a65553c54cf72127d11281f96518469"),
             new CheveretoUploader("https://pixr.co/api/1/upload", "8fff10a8b0d2852c4167db53aa590e94"),
             new CheveretoUploader("https://sexr.co/api/1/upload", "46b9aa05ec994098c4b6f18b5eed5e36"),
-            new CheveretoUploader("http://lightpics.net/api/1/upload", "7c6238e8f24c19454315d5dc812d4b93")
+            new CheveretoUploader("http://lightpics.net/api/1/upload", "7c6238e8f24c19454315d5dc812d4b93"),
+            new CheveretoUploader("http://imgfly.me/api/1/upload", "c6133147592983996b65dda51ba70255")
         };
 
         public CheveretoUploader Uploader { get; private set; }
