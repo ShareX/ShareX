@@ -732,10 +732,13 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static void CreateDirectoryIfNotExist(string path, bool isFilePath = true)
+        public static void CreateDirectoryIfNotExist(string path, bool isFilePath = true, bool hasFileExt = true)
         {
             if (!string.IsNullOrEmpty(path))
             {
+                if (hasFileExt && !Path.HasExtension(path))
+                    isFilePath = false;
+
                 if (isFilePath)
                 {
                     path = Path.GetDirectoryName(path);
