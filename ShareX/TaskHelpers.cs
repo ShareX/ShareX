@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib;
 using ShareX.ImageEffectsLib;
 using ShareX.IndexerLib;
 using ShareX.MediaLib;
@@ -482,6 +483,13 @@ namespace ShareX
             {
                 Helpers.OpenFolder(Program.ScreenshotsParentFolder);
             }
+        }
+
+        public static void OpenHistory()
+        {
+            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath);
+            Program.Settings.HistoryWindowState.AutoHandleFormState(historyForm);
+            historyForm.Show();
         }
 
         public static void OpenColorPicker()

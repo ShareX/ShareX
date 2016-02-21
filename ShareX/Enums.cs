@@ -194,7 +194,8 @@ namespace ShareX
         MonitorTest,
         // Other
         DisableHotkeys,
-        OpenScreenshotsFolder
+        OpenScreenshotsFolder,
+        OpenHistory
     }
 
     public enum HotkeyStatus

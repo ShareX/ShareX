@@ -863,4 +863,10 @@ Would you like to download it?</value>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>Show quick task menu</value>
   </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>Open history window</value>
+  </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
 </root>

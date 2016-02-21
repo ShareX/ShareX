@@ -1172,9 +1172,7 @@ namespace ShareX
 
         private void tsbHistory_Click(object sender, EventArgs e)
         {
-            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath);
-            Program.Settings.HistoryWindowState.AutoHandleFormState(historyForm);
-            historyForm.Show();
+            TaskHelpers.OpenHistory();
         }
 
         private void tsbImageHistory_Click(object sender, EventArgs e)
@@ -1766,11 +1764,14 @@ namespace ShareX
                     TaskHelpers.OpenMonitorTest();
                     break;
                 // Other
+                case HotkeyType.DisableHotkeys:
+                    TaskHelpers.ToggleHotkeys();
+                    break;
                 case HotkeyType.OpenScreenshotsFolder:
                     TaskHelpers.OpenScreenshotsFolder();
                     break;
-                case HotkeyType.DisableHotkeys:
-                    TaskHelpers.ToggleHotkeys();
+                case HotkeyType.OpenHistory:
+                    TaskHelpers.OpenHistory();
                     break;
             }
         }
