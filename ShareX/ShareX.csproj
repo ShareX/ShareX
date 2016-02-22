@@ -1266,16 +1266,7 @@
     <None Include="Resources\document-break.png" />
     <None Include="Resources\vn.png" />
     <None Include="Resources\layout-select.png" />
-    <None Include="Resources\notification-counter.png" />
-    <None Include="Resources\notification-counter-02.png" />
-    <None Include="Resources\notification-counter-03.png" />
-    <None Include="Resources\notification-counter-04.png" />
-    <None Include="Resources\notification-counter-05.png" />
-    <None Include="Resources\notification-counter-06.png" />
-    <None Include="Resources\notification-counter-07.png" />
-    <None Include="Resources\notification-counter-08.png" />
-    <None Include="Resources\notification-counter-09.png" />
-    <None Include="Resources\notification-counter-00.png" />
+    <None Include="Resources\disk-black.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
