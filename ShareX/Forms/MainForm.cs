@@ -178,7 +178,7 @@ namespace ShareX
 
             if (Program.Settings.RecentLinksRemember)
             {
-                TaskManager.RecentManager.UpdateItems(Program.Settings.RecentLinks);
+                TaskManager.RecentManager.UpdateItems(Program.Settings.RecentTasks);
             }
 
             bool isPositionChanged = false;

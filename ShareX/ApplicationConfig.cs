@@ -41,7 +41,7 @@ namespace ShareX
         public bool ShowMultiUploadWarning = true; // More than 10 files upload warning
         public bool ShowTrayLeftClickTip = true; // Tray icon left click tip
         public int NameParserAutoIncrementNumber = 0;
-        public RecentItem[] RecentLinks = null;
+        public RecentTask[] RecentTasks = null;
         public bool DisableHotkeys = false;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
 

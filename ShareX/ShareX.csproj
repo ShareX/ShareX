@@ -201,6 +201,7 @@
     <Compile Include="IntegrationHelpers.cs" />
     <Compile Include="QuickTaskInfo.cs" />
     <Compile Include="QuickTaskMenu.cs" />
+    <Compile Include="RecentTask.cs" />
     <Compile Include="ScreenRecordManager.cs" />
     <Compile Include="Forms\ScreenRecordForm.cs">
       <SubType>Form</SubType>
@@ -269,7 +270,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="LanguageHelper.cs" />
-    <Compile Include="RecentManager.cs" />
+    <Compile Include="RecentTaskManager.cs" />
     <Compile Include="TaskHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
