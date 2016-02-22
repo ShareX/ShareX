@@ -83,7 +83,8 @@ namespace ShareX
         Preparing,
         Working,
         Stopping,
-        Completed
+        Completed,
+        History
     }
 
     [Flags]

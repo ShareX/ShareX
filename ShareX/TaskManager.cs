@@ -42,7 +42,7 @@ namespace ShareX
         {
             get
             {
-                return Tasks.Count > 0 && Tasks.Any(task => task.Status != TaskStatus.Completed);
+                return Tasks.Count > 0 && Tasks.Any(task => task.IsBusy);
             }
         }
 
@@ -58,12 +58,21 @@ namespace ShareX
             {
                 Tasks.Add(task);
                 UpdateMainFormTip();
-                task.StatusChanged += task_StatusChanged;
-                task.UploadStarted += task_UploadStarted;
-                task.UploadProgressChanged += task_UploadProgressChanged;
-                task.UploadCompleted += task_UploadCompleted;
+
+                if (task.Status != TaskStatus.History)
+                {
+                    task.StatusChanged += task_StatusChanged;
+                    task.UploadStarted += task_UploadStarted;
+                    task.UploadProgressChanged += task_UploadProgressChanged;
+                    task.UploadCompleted += task_UploadCompleted;
+                }
+
                 CreateListViewItem(task);
-                StartTasks();
+
+                if (task.Status != TaskStatus.History)
+                {
+                    StartTasks();
+                }
             }
         }
 
@@ -121,7 +130,7 @@ namespace ShareX
 
         public static void UpdateMainFormTip()
         {
-            Program.MainForm.lblMainFormTip.Visible = Program.Settings.ShowMainWindowTip && (ListViewControl == null || ListViewControl.Items.Count == 0);
+            Program.MainForm.lblMainFormTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
         }
 
         private static ListViewItem FindListViewItem(WorkerTask task)
@@ -161,45 +170,41 @@ namespace ShareX
             {
                 TaskInfo info = task.Info;
 
-                DebugHelper.WriteLine("Task in queue. Job: {0}, Type: {1}, Host: {2}", info.Job, info.UploadDestination, info.UploaderHost);
+                if (task.Status != TaskStatus.History)
+                {
+                    DebugHelper.WriteLine("Task in queue. Job: {0}, Type: {1}, Host: {2}", info.Job, info.UploadDestination, info.UploaderHost);
+                }
 
                 ListViewItem lvi = new ListViewItem();
                 lvi.Tag = task;
                 lvi.Text = info.FileName;
-                lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
-                lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(string.Empty);
-                lvi.ImageIndex = 3;
-                if (Program.Settings.ShowMostRecentTaskFirst)
-                {
-                    ListViewControl.Items.Insert(0, lvi);
-                }
-                else
-                {
-                    ListViewControl.Items.Add(lvi);
-                }
-                lvi.EnsureVisible();
-                ListViewControl.FillLastColumn();
-            }
-        }
 
-        private static void CreateHistoryListViewItem(RecentTask recentTask)
-        {
-            if (ListViewControl != null)
-            {
-                ListViewItem lvi = new ListViewItem();
-                lvi.Text = recentTask.FileName;
-                // TODO: Translate
-                lvi.SubItems.Add("History");
+                if (task.Status == TaskStatus.History)
+                {
+                    // TODO: Translate
+                    lvi.SubItems.Add("History");
+                }
+                else
+                {
+                    lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
+                }
+
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(recentTask.ToString());
-                lvi.ImageIndex = 4;
+
+                if (task.Status == TaskStatus.History)
+                {
+                    lvi.SubItems.Add(task.Info.ToString());
+                    lvi.ImageIndex = 4;
+                }
+                else
+                {
+                    lvi.SubItems.Add(string.Empty);
+                    lvi.ImageIndex = 3;
+                }
+
                 if (Program.Settings.ShowMostRecentTaskFirst)
                 {
                     ListViewControl.Items.Insert(0, lvi);
@@ -208,6 +213,7 @@ namespace ShareX
                 {
                     ListViewControl.Items.Add(lvi);
                 }
+
                 lvi.EnsureVisible();
                 ListViewControl.FillLastColumn();
             }
@@ -498,12 +504,11 @@ namespace ShareX
 
         public static void AddRecentTasksToMainWindow()
         {
-            foreach (RecentTask task in RecentManager.Tasks)
+            foreach (RecentTask recentTask in RecentManager.Tasks)
             {
-                CreateHistoryListViewItem(task);
+                WorkerTask task = WorkerTask.CreateHistoryTask(recentTask);
+                Start(task);
             }
-
-            UpdateMainFormTip();
         }
     }
 }

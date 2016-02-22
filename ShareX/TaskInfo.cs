@@ -151,6 +151,22 @@ namespace ShareX
             Result = new UploadResult();
         }
 
+        public override string ToString()
+        {
+            string text = "";
+
+            if (!string.IsNullOrEmpty(Result.ToString()))
+            {
+                text = Result.ToString();
+            }
+            else if (!string.IsNullOrEmpty(FilePath))
+            {
+                text = FilePath;
+            }
+
+            return text;
+        }
+
         public HistoryItem GetHistoryItem()
         {
             return new HistoryItem

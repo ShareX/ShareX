@@ -56,11 +56,19 @@ namespace ShareX
 
         public TaskStatus Status { get; private set; }
 
+        public bool IsBusy
+        {
+            get
+            {
+                return Status == TaskStatus.InQueue || IsWorking;
+            }
+        }
+
         public bool IsWorking
         {
             get
             {
-                return Status != TaskStatus.InQueue && Status != TaskStatus.Completed;
+                return Status == TaskStatus.Preparing || Status == TaskStatus.Working || Status == TaskStatus.Stopping;
             }
         }
 
@@ -82,6 +90,16 @@ namespace ShareX
         {
             Status = TaskStatus.InQueue;
             Info = new TaskInfo(taskSettings);
+        }
+
+        public static WorkerTask CreateHistoryTask(RecentTask recentTask)
+        {
+            WorkerTask task = new WorkerTask(null);
+            task.Status = TaskStatus.History;
+            task.Info.FilePath = recentTask.FilePath;
+            task.Info.FileName = recentTask.FileName;
+            task.Info.Result.URL = recentTask.URL;
+            return task;
         }
 
         public static WorkerTask CreateDataUploaderTask(EDataType dataType, Stream stream, string fileName, TaskSettings taskSettings)
