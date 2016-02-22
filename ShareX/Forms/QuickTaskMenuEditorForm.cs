@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -44,21 +45,30 @@ namespace ShareX
             UpdateItems();
         }
 
+        private void UpdateItem(ListViewItem lvi, QuickTaskInfo taskInfo)
+        {
+            lvi.BackColor = taskInfo.IsValid ? Color.White : Color.WhiteSmoke;
+            lvi.Tag = taskInfo;
+            lvi.Text = taskInfo.ToString();
+        }
+
         private void UpdateItems()
         {
             lvPresets.Items.Clear();
 
             foreach (QuickTaskInfo taskInfo in Program.Settings.QuickTaskPresets)
             {
-                ListViewItem lvi = new ListViewItem(taskInfo.ToString());
-                lvi.Tag = taskInfo;
+                ListViewItem lvi = new ListViewItem();
+                UpdateItem(lvi, taskInfo);
                 lvPresets.Items.Add(lvi);
             }
         }
 
-        private void Edit(QuickTaskInfo taskInfo)
+        private void Edit(ListViewItem lvi, QuickTaskInfo taskInfo)
         {
             new QuickTaskInfoEditForm(taskInfo).ShowDialog();
+
+            UpdateItem(lvi, taskInfo);
         }
 
         private void EditSelectedItem()
@@ -67,8 +77,7 @@ namespace ShareX
             {
                 ListViewItem lvi = lvPresets.SelectedItems[0];
                 QuickTaskInfo taskInfo = lvi.Tag as QuickTaskInfo;
-                Edit(taskInfo);
-                lvi.Text = taskInfo.ToString();
+                Edit(lvi, taskInfo);
             }
         }
 
@@ -84,11 +93,9 @@ namespace ShareX
         {
             QuickTaskInfo taskInfo = new QuickTaskInfo();
             ListViewItem lvi = new ListViewItem();
-            lvi.Tag = taskInfo;
             Program.Settings.QuickTaskPresets.Add(taskInfo);
             lvPresets.Items.Add(lvi);
-            Edit(taskInfo);
-            lvi.Text = taskInfo.ToString();
+            Edit(lvi, taskInfo);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
