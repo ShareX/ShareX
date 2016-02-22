@@ -415,9 +415,6 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>API sleutel:</value>
   </data>
-  <data name="lblCheveretoWebsite.Text" xml:space="preserve">
-    <value>Website:</value>
-  </data>
   <data name="lblCopyPath.Text" xml:space="preserve">
     <value>Upload pad:</value>
   </data>

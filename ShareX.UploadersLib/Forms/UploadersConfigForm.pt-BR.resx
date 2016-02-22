@@ -425,9 +425,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>Chave de API:</value>
   </data>
-  <data name="lblCheveretoWebsite.Text" xml:space="preserve">
-    <value>Site:</value>
-  </data>
   <data name="lblCopyPath.Text" xml:space="preserve">
     <value>Local de upload:</value>
   </data>
@@ -840,9 +837,6 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
   </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>UID da API:</value>
-  </data>
-  <data name="lblCheveretoWebsiteTip.Text" xml:space="preserve">
-    <value>/api/1/upload</value>
   </data>
   <data name="lblCoinURLUUID.Text" xml:space="preserve">
     <value>UUID:</value>

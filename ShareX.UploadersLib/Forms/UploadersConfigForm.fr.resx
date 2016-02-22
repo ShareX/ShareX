@@ -399,9 +399,6 @@
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
     <value>Note: Vous pouvez double-cliquer sur le nom du dossier pour aller dedans.</value>
   </data>
-  <data name="lblCheveretoWebsite.Text" xml:space="preserve">
-    <value>Site Web:</value>
-  </data>
   <data name="lblYourlsUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur:</value>
   </data>

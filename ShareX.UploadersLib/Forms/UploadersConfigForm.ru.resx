@@ -489,9 +489,6 @@
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
     <value>Код подтверждения (Получите код на странице авторизации)</value>
   </data>
-  <data name="lblCheveretoWebsite.Text" xml:space="preserve">
-    <value>Веб-сайт:</value>
-  </data>
   <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
     <value>Ключ API:</value>
   </data>

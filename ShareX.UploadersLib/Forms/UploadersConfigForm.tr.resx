@@ -303,9 +303,6 @@
   <data name="chImgurDescription.Text" xml:space="preserve">
     <value>Açıklama</value>
   </data>
-  <data name="lblCheveretoWebsite.Text" xml:space="preserve">
-    <value>Web sitesi:</value>
-  </data>
   <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
     <value>Yenile</value>
   </data>

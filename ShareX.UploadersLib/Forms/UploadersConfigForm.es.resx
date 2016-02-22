@@ -406,9 +406,6 @@ Esto significa que se pueden perder de Amazon S3 en algún momento.</value>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>Clave de la API:</value>
   </data>
-  <data name="lblCheveretoWebsite.Text" xml:space="preserve">
-    <value>Sitio web:</value>
-  </data>
   <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
     <value>Vista previa de URL:</value>
   </data>
