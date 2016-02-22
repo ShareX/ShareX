@@ -50,6 +50,8 @@ namespace ShareX.UploadersLib
         Vgyme,
         [Description("SomeImage")]
         SomeImage,
+        [Description("Imgland")]
+        Imgland,
         CustomImageUploader, // Localized
         FileUploader // Localized
     }
