@@ -150,6 +150,7 @@ namespace ShareX
             il.Images.Add(Resources.cross_button);
             il.Images.Add(Resources.tick_button);
             il.Images.Add(Resources.navigation_000_button);
+            il.Images.Add(Resources.clock);
             lvUploads.SmallImageList = il;
 
             TaskManager.ListViewControl = lvUploads;
@@ -179,6 +180,11 @@ namespace ShareX
             if (Program.Settings.RecentLinksRemember)
             {
                 TaskManager.RecentManager.UpdateItems(Program.Settings.RecentTasks);
+
+                if (lvUploads.Items.Count == 0)
+                {
+                    TaskManager.AddRecentTasksToMainWindow();
+                }
             }
 
             bool isPositionChanged = false;

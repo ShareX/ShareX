@@ -121,7 +121,7 @@ namespace ShareX
 
         public static void UpdateMainFormTip()
         {
-            Program.MainForm.lblMainFormTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
+            Program.MainForm.lblMainFormTip.Visible = Program.Settings.ShowMainWindowTip && (ListViewControl == null || ListViewControl.Items.Count == 0);
         }
 
         private static ListViewItem FindListViewItem(WorkerTask task)
@@ -173,6 +173,33 @@ namespace ShareX
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.ImageIndex = 3;
+                if (Program.Settings.ShowMostRecentTaskFirst)
+                {
+                    ListViewControl.Items.Insert(0, lvi);
+                }
+                else
+                {
+                    ListViewControl.Items.Add(lvi);
+                }
+                lvi.EnsureVisible();
+                ListViewControl.FillLastColumn();
+            }
+        }
+
+        private static void CreateHistoryListViewItem(RecentTask recentTask)
+        {
+            if (ListViewControl != null)
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = recentTask.FileName;
+                // TODO: Translate
+                lvi.SubItems.Add("History");
+                lvi.SubItems.Add(string.Empty);
+                lvi.SubItems.Add(string.Empty);
+                lvi.SubItems.Add(string.Empty);
+                lvi.SubItems.Add(string.Empty);
+                lvi.SubItems.Add(recentTask.ToString());
+                lvi.ImageIndex = 4;
                 if (Program.Settings.ShowMostRecentTaskFirst)
                 {
                     ListViewControl.Items.Insert(0, lvi);
@@ -467,6 +494,16 @@ namespace ShareX
 
                 lastIconStatus = progress;
             }
+        }
+
+        public static void AddRecentTasksToMainWindow()
+        {
+            foreach (RecentTask task in RecentManager.Tasks)
+            {
+                CreateHistoryListViewItem(task);
+            }
+
+            UpdateMainFormTip();
         }
     }
 }

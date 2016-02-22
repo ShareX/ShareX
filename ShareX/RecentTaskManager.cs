@@ -127,7 +127,7 @@ namespace ShareX
             foreach (RecentTask task in Tasks)
             {
                 ToolStripMenuItem tsmiLink = new ToolStripMenuItem();
-                tsmiLink.Text = task.GetTrayMenuText();
+                tsmiLink.Text = task.TrayMenuText;
                 string link = task.ToString();
                 tsmiLink.ToolTipText = link;
                 tsmiLink.MouseUp += (sender, e) =>

@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -37,18 +38,33 @@ namespace ShareX
         public string URL { get; set; }
         public DateTime Time { get; set; }
 
+        public string FileName
+        {
+            get
+            {
+                string text = ToString();
+                if (!string.IsNullOrEmpty(text))
+                {
+                    text = Path.GetFileName(text);
+                }
+                return text;
+            }
+        }
+
+        public string TrayMenuText
+        {
+            get
+            {
+                string text = ToString().Truncate(50, "...", false);
+                return string.Format("[{0:HH:mm:ss}] {1}", Time.ToLocalTime(), text);
+            }
+        }
+
         public RecentTask(string filePath, string url)
         {
             FilePath = filePath;
             URL = url;
             Time = DateTime.UtcNow;
-        }
-
-        public string GetTrayMenuText()
-        {
-            string text = ToString().Truncate(50, "...", false);
-
-            return string.Format("[{0:HH:mm:ss}] {1}", Time.ToLocalTime(), text);
         }
 
         public override string ToString()
