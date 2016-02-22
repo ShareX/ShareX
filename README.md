@@ -83,6 +83,7 @@ ShareX supports the following destinations.
 * [Twitter](https://twitter.com)
 * [Chevereto](https://chevereto.com)
 * [vgy.me](http://vgy.me)
+* [Imgland](http://imgland.net)
 * [SomeImage](https://someimage.com)
 * Custom image uploader
 * File uploader
@@ -139,7 +140,6 @@ ShareX supports the following destinations.
 * [tinyurl.com](http://tinyurl.com)
 * [turl.ca](http://turl.ca)
 * [yourls.org](http://yourls.org)
-* [nl.cm](http://nl.cm)
 * [adf.ly](https://adf.ly)
 * [coinurl.com](https://coinurl.com)
 * [qr.net](http://qr.net)

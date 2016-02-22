@@ -837,6 +837,9 @@ namespace ShareX
                         DirectURL = Program.UploadersConfig.SomeImageDirectURL
                     };
                     break;
+                case ImageDestination.Imgland:
+                    imageUploader = new ImglandUploader();
+                    break;
                 case ImageDestination.CustomImageUploader:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomImageUploaderSelected);
                     if (customUploader != null)
