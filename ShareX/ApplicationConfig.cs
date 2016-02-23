@@ -41,7 +41,6 @@ namespace ShareX
         public bool ShowMultiUploadWarning = true; // More than 10 files upload warning
         public bool ShowTrayLeftClickTip = true; // Tray icon left click tip
         public int NameParserAutoIncrementNumber = 0;
-        public RecentTask[] RecentTasks = null;
         public bool DisableHotkeys = false;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
 
@@ -110,6 +109,26 @@ namespace ShareX
         public List<FileDestination> SecondaryFileUploaders = new List<FileDestination>();
 
         #endregion Upload
+
+        #region History
+
+        public bool HistorySaveTasks = true;
+        public bool HistoryCheckURL = false;
+
+        public RecentTask[] RecentTasks = null;
+        public bool RecentTasksSave = true;
+        public int RecentTasksMaxCount = 10;
+        public bool RecentTasksShowInMainWindow = true;
+        public bool RecentTasksShowInTrayMenu = true;
+        public bool RecentTasksTrayMenuMostRecentFirst = false;
+
+        public WindowState HistoryWindowState = new WindowState();
+        public WindowState ImageHistoryWindowState = new WindowState();
+        public int ImageHistoryMaxItemCount = 100;
+        public int ImageHistoryViewMode = 3;
+        public Size ImageHistoryThumbnailSize = new Size(100, 100);
+
+        #endregion History
 
         #region Print
 
@@ -197,28 +216,9 @@ namespace ShareX
         [Category("Drag and drop window"), DefaultValue(255), Description("When you drag file to drop window then opacity will change to this.")]
         public int DropHoverOpacity { get; set; }
 
-        [Category("Recent links"), DefaultValue(true), Description("Saves recent links so when ShareX reopened it will remember them.")]
-        public bool RecentLinksRemember { get; set; }
-
-        [Category("Recent links"), DefaultValue(10), Description("In recent links tray menu max how many links to show.")]
-        public int RecentLinksMaxCount { get; set; }
-
-        [Category("Recent links"), DefaultValue(false), Description("Show most recent link first in recent links tray menu.")]
-        public bool ShowMostRecentLinkFirst { get; set; }
-
         #endregion Advanced
 
         #endregion Settings Form
-
-        #region History Form
-
-        public WindowState HistoryWindowState = new WindowState();
-        public WindowState ImageHistoryWindowState = new WindowState();
-        public int ImageHistoryMaxItemCount = 100;
-        public int ImageHistoryViewMode = 3;
-        public Size ImageHistoryThumbnailSize = new Size(100, 100);
-
-        #endregion History Form
 
         #region AutoCapture Form
 

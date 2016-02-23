@@ -177,11 +177,11 @@ namespace ShareX
 
             niTray.Visible = Program.Settings.ShowTray;
 
-            if (Program.Settings.RecentLinksRemember)
+            if (Program.Settings.RecentTasksSave)
             {
                 TaskManager.RecentManager.UpdateItems(Program.Settings.RecentTasks);
 
-                if (lvUploads.Items.Count == 0)
+                if (Program.Settings.RecentTasksShowInMainWindow && lvUploads.Items.Count == 0)
                 {
                     TaskManager.AddRecentTasksToMainWindow();
                 }
@@ -599,7 +599,7 @@ namespace ShareX
             HelpersOptions.UseAlternativeGetImage = !Program.Settings.UseDefaultClipboardGetImage;
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
-            TaskManager.RecentManager.MaxCount = Program.Settings.RecentLinksMaxCount;
+            TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
             ConfigureAutoUpdate();
         }

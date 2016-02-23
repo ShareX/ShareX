@@ -59,7 +59,6 @@
             this.lblAfterTaskNotification = new System.Windows.Forms.Label();
             this.cboPopUpNotification = new System.Windows.Forms.ComboBox();
             this.cbPlaySoundAfterUpload = new System.Windows.Forms.CheckBox();
-            this.cbHistorySave = new System.Windows.Forms.CheckBox();
             this.cbPlaySoundAfterCapture = new System.Windows.Forms.CheckBox();
             this.chkUseDefaultGeneralSettings = new System.Windows.Forms.CheckBox();
             this.tpImage = new System.Windows.Forms.TabPage();
@@ -445,7 +444,6 @@
             this.panelGeneral.Controls.Add(this.lblAfterTaskNotification);
             this.panelGeneral.Controls.Add(this.cboPopUpNotification);
             this.panelGeneral.Controls.Add(this.cbPlaySoundAfterUpload);
-            this.panelGeneral.Controls.Add(this.cbHistorySave);
             this.panelGeneral.Controls.Add(this.cbPlaySoundAfterCapture);
             resources.ApplyResources(this.panelGeneral, "panelGeneral");
             this.panelGeneral.Name = "panelGeneral";
@@ -469,13 +467,6 @@
             this.cbPlaySoundAfterUpload.Name = "cbPlaySoundAfterUpload";
             this.cbPlaySoundAfterUpload.UseVisualStyleBackColor = true;
             this.cbPlaySoundAfterUpload.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterUpload_CheckedChanged);
-            // 
-            // cbHistorySave
-            // 
-            resources.ApplyResources(this.cbHistorySave, "cbHistorySave");
-            this.cbHistorySave.Name = "cbHistorySave";
-            this.cbHistorySave.UseVisualStyleBackColor = true;
-            this.cbHistorySave.CheckedChanged += new System.EventHandler(this.cbHistorySave_CheckedChanged);
             // 
             // cbPlaySoundAfterCapture
             // 
@@ -1810,7 +1801,6 @@
         private System.Windows.Forms.Button btnWatchFolderRemove;
         private System.Windows.Forms.Button btnWatchFolderAdd;
         private System.Windows.Forms.TabPage tpGeneral;
-        private System.Windows.Forms.CheckBox cbHistorySave;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterCapture;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterUpload;
         private System.Windows.Forms.CheckBox chkUseDefaultGeneralSettings;

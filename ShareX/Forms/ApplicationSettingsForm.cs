@@ -166,6 +166,16 @@ namespace ShareX
             lvSecondaryFileUploaders.Items.Clear();
             Program.Settings.SecondaryFileUploaders.ForEach<FileDestination>(x => lvSecondaryFileUploaders.Items.Add(new ListViewItem(x.GetLocalizedDescription()) { Tag = x }));
 
+            // History
+            cbHistorySaveTasks.Checked = Program.Settings.HistorySaveTasks;
+            cbHistoryCheckURL.Checked = Program.Settings.HistoryCheckURL;
+
+            cbRecentTasksSave.Checked = Program.Settings.RecentTasksSave;
+            nudRecentTasksMaxCount.Value = Program.Settings.RecentTasksMaxCount;
+            cbRecentTasksShowInMainWindow.Checked = Program.Settings.RecentTasksShowInMainWindow;
+            cbRecentTasksShowInTrayMenu.Checked = Program.Settings.RecentTasksShowInTrayMenu;
+            cbRecentTasksTrayMenuMostRecentFirst.Checked = Program.Settings.RecentTasksTrayMenuMostRecentFirst;
+
             // Print
             cbDontShowPrintSettingDialog.Checked = Program.Settings.DontShowPrintSettingsDialog;
             cbPrintDontShowWindowsDialog.Checked = !Program.Settings.PrintSettings.ShowPrintDialog;
@@ -666,6 +676,45 @@ namespace ShareX
         }
 
         #endregion Upload
+
+        #region History
+
+        private void cbHistorySaveTasks_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.HistorySaveTasks = cbHistorySaveTasks.Checked;
+        }
+
+        private void cbHistoryCheckURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.HistoryCheckURL = cbHistoryCheckURL.Checked;
+        }
+
+        private void cbRecentTasksSave_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.RecentTasksSave = cbRecentTasksSave.Checked;
+        }
+
+        private void nudRecentTasksMaxCount_ValueChanged(object sender, EventArgs e)
+        {
+            Program.Settings.RecentTasksMaxCount = (int)nudRecentTasksMaxCount.Value;
+        }
+
+        private void cbRecentTasksShowInMainWindow_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.RecentTasksShowInMainWindow = cbRecentTasksShowInMainWindow.Checked;
+        }
+
+        private void cbRecentTasksShowInTrayMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.RecentTasksShowInTrayMenu = cbRecentTasksShowInTrayMenu.Checked;
+        }
+
+        private void cbRecentTasksTrayMenuMostRecentFirst_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.RecentTasksTrayMenuMostRecentFirst = cbRecentTasksTrayMenuMostRecentFirst.Checked;
+        }
+
+        #endregion History
 
         #region Print
 

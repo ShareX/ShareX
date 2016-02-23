@@ -115,7 +115,7 @@ namespace ShareX
 
         private void UpdateRecentMenu()
         {
-            if (Program.MainForm == null || Program.MainForm.tsmiTrayRecentItems == null || Tasks.Count == 0)
+            if (!Program.Settings.RecentTasksShowInTrayMenu || Program.MainForm == null || Program.MainForm.tsmiTrayRecentItems == null || Tasks.Count == 0)
             {
                 return;
             }
@@ -151,7 +151,7 @@ namespace ShareX
                     }
                 };
 
-                if (Program.Settings.ShowMostRecentLinkFirst)
+                if (Program.Settings.RecentTasksTrayMenuMostRecentFirst)
                 {
                     tsmi.DropDownItems.Insert(2, tsmiLink);
                 }

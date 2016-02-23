@@ -166,7 +166,6 @@ namespace ShareX
             cboPopUpNotification.Items.Clear();
             cboPopUpNotification.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PopUpNotificationType>());
             cboPopUpNotification.SelectedIndex = (int)TaskSettings.GeneralSettings.PopUpNotification;
-            cbHistorySave.Checked = TaskSettings.GeneralSettings.SaveHistory;
 
             // Image - General
             cbImageFormat.Items.AddRange(Enum.GetNames(typeof(EImageFormat)));
@@ -649,11 +648,6 @@ namespace ShareX
         private void cboPopUpNotification_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.PopUpNotification = (PopUpNotificationType)cboPopUpNotification.SelectedIndex;
-        }
-
-        private void cbHistorySave_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.GeneralSettings.SaveHistory = cbHistorySave.Checked;
         }
 
         #endregion General

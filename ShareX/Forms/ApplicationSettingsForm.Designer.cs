@@ -33,6 +33,7 @@ namespace ShareX
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationSettingsForm));
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.btnEditQuickTaskMenu = new System.Windows.Forms.Button();
             this.cbShowTray = new System.Windows.Forms.CheckBox();
             this.cbTrayIconProgressEnabled = new System.Windows.Forms.CheckBox();
             this.btnLanguages = new ShareX.HelpersLib.MenuButton();
@@ -114,6 +115,17 @@ namespace ShareX
             this.chSecondaryTextUploaders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbIfUploadFailRetryOnce = new System.Windows.Forms.Label();
             this.nudRetryUpload = new System.Windows.Forms.NumericUpDown();
+            this.tpHistory = new System.Windows.Forms.TabPage();
+            this.gbHistory = new System.Windows.Forms.GroupBox();
+            this.cbHistoryCheckURL = new System.Windows.Forms.CheckBox();
+            this.cbHistorySaveTasks = new System.Windows.Forms.CheckBox();
+            this.gbRecentLinks = new System.Windows.Forms.GroupBox();
+            this.cbRecentTasksTrayMenuMostRecentFirst = new System.Windows.Forms.CheckBox();
+            this.lblRecentTasksMaxCount = new System.Windows.Forms.Label();
+            this.nudRecentTasksMaxCount = new System.Windows.Forms.NumericUpDown();
+            this.cbRecentTasksShowInTrayMenu = new System.Windows.Forms.CheckBox();
+            this.cbRecentTasksShowInMainWindow = new System.Windows.Forms.CheckBox();
+            this.cbRecentTasksSave = new System.Windows.Forms.CheckBox();
             this.tpPrint = new System.Windows.Forms.TabPage();
             this.cbPrintDontShowWindowsDialog = new System.Windows.Forms.CheckBox();
             this.cbDontShowPrintSettingDialog = new System.Windows.Forms.CheckBox();
@@ -121,7 +133,6 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.btnEditQuickTaskMenu = new System.Windows.Forms.Button();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -144,6 +155,10 @@ namespace ShareX
             this.gbSecondaryFileUploaders.SuspendLayout();
             this.gbSecondaryTextUploaders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).BeginInit();
+            this.tpHistory.SuspendLayout();
+            this.gbHistory.SuspendLayout();
+            this.gbRecentLinks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRecentTasksMaxCount)).BeginInit();
             this.tpPrint.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
             this.SuspendLayout();
@@ -155,9 +170,10 @@ namespace ShareX
             this.tcSettings.Controls.Add(this.tpIntegration);
             this.tcSettings.Controls.Add(this.tpPaths);
             this.tcSettings.Controls.Add(this.tpExportImport);
-            this.tcSettings.Controls.Add(this.tpProxy);
             this.tcSettings.Controls.Add(this.tpUpload);
+            this.tcSettings.Controls.Add(this.tpHistory);
             this.tcSettings.Controls.Add(this.tpPrint);
+            this.tcSettings.Controls.Add(this.tpProxy);
             this.tcSettings.Controls.Add(this.tpAdvanced);
             this.tcSettings.Name = "tcSettings";
             this.tcSettings.SelectedIndex = 0;
@@ -177,6 +193,13 @@ namespace ShareX
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.UseVisualStyleBackColor = true;
+            // 
+            // btnEditQuickTaskMenu
+            // 
+            resources.ApplyResources(this.btnEditQuickTaskMenu, "btnEditQuickTaskMenu");
+            this.btnEditQuickTaskMenu.Name = "btnEditQuickTaskMenu";
+            this.btnEditQuickTaskMenu.UseVisualStyleBackColor = true;
+            this.btnEditQuickTaskMenu.Click += new System.EventHandler(this.btnEditQuickTaskMenu_Click);
             // 
             // cbShowTray
             // 
@@ -780,6 +803,87 @@ namespace ShareX
             this.nudRetryUpload.Name = "nudRetryUpload";
             this.nudRetryUpload.ValueChanged += new System.EventHandler(this.nudRetryUpload_ValueChanged);
             // 
+            // tpHistory
+            // 
+            this.tpHistory.Controls.Add(this.gbHistory);
+            this.tpHistory.Controls.Add(this.gbRecentLinks);
+            resources.ApplyResources(this.tpHistory, "tpHistory");
+            this.tpHistory.Name = "tpHistory";
+            this.tpHistory.UseVisualStyleBackColor = true;
+            // 
+            // gbHistory
+            // 
+            this.gbHistory.Controls.Add(this.cbHistoryCheckURL);
+            this.gbHistory.Controls.Add(this.cbHistorySaveTasks);
+            resources.ApplyResources(this.gbHistory, "gbHistory");
+            this.gbHistory.Name = "gbHistory";
+            this.gbHistory.TabStop = false;
+            // 
+            // cbHistoryCheckURL
+            // 
+            resources.ApplyResources(this.cbHistoryCheckURL, "cbHistoryCheckURL");
+            this.cbHistoryCheckURL.Name = "cbHistoryCheckURL";
+            this.cbHistoryCheckURL.UseVisualStyleBackColor = true;
+            this.cbHistoryCheckURL.CheckedChanged += new System.EventHandler(this.cbHistoryCheckURL_CheckedChanged);
+            // 
+            // cbHistorySaveTasks
+            // 
+            resources.ApplyResources(this.cbHistorySaveTasks, "cbHistorySaveTasks");
+            this.cbHistorySaveTasks.Name = "cbHistorySaveTasks";
+            this.cbHistorySaveTasks.UseVisualStyleBackColor = true;
+            this.cbHistorySaveTasks.CheckedChanged += new System.EventHandler(this.cbHistorySaveTasks_CheckedChanged);
+            // 
+            // gbRecentLinks
+            // 
+            this.gbRecentLinks.Controls.Add(this.cbRecentTasksTrayMenuMostRecentFirst);
+            this.gbRecentLinks.Controls.Add(this.lblRecentTasksMaxCount);
+            this.gbRecentLinks.Controls.Add(this.nudRecentTasksMaxCount);
+            this.gbRecentLinks.Controls.Add(this.cbRecentTasksShowInTrayMenu);
+            this.gbRecentLinks.Controls.Add(this.cbRecentTasksShowInMainWindow);
+            this.gbRecentLinks.Controls.Add(this.cbRecentTasksSave);
+            resources.ApplyResources(this.gbRecentLinks, "gbRecentLinks");
+            this.gbRecentLinks.Name = "gbRecentLinks";
+            this.gbRecentLinks.TabStop = false;
+            // 
+            // cbRecentTasksTrayMenuMostRecentFirst
+            // 
+            resources.ApplyResources(this.cbRecentTasksTrayMenuMostRecentFirst, "cbRecentTasksTrayMenuMostRecentFirst");
+            this.cbRecentTasksTrayMenuMostRecentFirst.Name = "cbRecentTasksTrayMenuMostRecentFirst";
+            this.cbRecentTasksTrayMenuMostRecentFirst.UseVisualStyleBackColor = true;
+            this.cbRecentTasksTrayMenuMostRecentFirst.CheckedChanged += new System.EventHandler(this.cbRecentTasksTrayMenuMostRecentFirst_CheckedChanged);
+            // 
+            // lblRecentTasksMaxCount
+            // 
+            resources.ApplyResources(this.lblRecentTasksMaxCount, "lblRecentTasksMaxCount");
+            this.lblRecentTasksMaxCount.Name = "lblRecentTasksMaxCount";
+            // 
+            // nudRecentTasksMaxCount
+            // 
+            resources.ApplyResources(this.nudRecentTasksMaxCount, "nudRecentTasksMaxCount");
+            this.nudRecentTasksMaxCount.Name = "nudRecentTasksMaxCount";
+            this.nudRecentTasksMaxCount.ValueChanged += new System.EventHandler(this.nudRecentTasksMaxCount_ValueChanged);
+            // 
+            // cbRecentTasksShowInTrayMenu
+            // 
+            resources.ApplyResources(this.cbRecentTasksShowInTrayMenu, "cbRecentTasksShowInTrayMenu");
+            this.cbRecentTasksShowInTrayMenu.Name = "cbRecentTasksShowInTrayMenu";
+            this.cbRecentTasksShowInTrayMenu.UseVisualStyleBackColor = true;
+            this.cbRecentTasksShowInTrayMenu.CheckedChanged += new System.EventHandler(this.cbRecentTasksShowInTrayMenu_CheckedChanged);
+            // 
+            // cbRecentTasksShowInMainWindow
+            // 
+            resources.ApplyResources(this.cbRecentTasksShowInMainWindow, "cbRecentTasksShowInMainWindow");
+            this.cbRecentTasksShowInMainWindow.Name = "cbRecentTasksShowInMainWindow";
+            this.cbRecentTasksShowInMainWindow.UseVisualStyleBackColor = true;
+            this.cbRecentTasksShowInMainWindow.CheckedChanged += new System.EventHandler(this.cbRecentTasksShowInMainWindow_CheckedChanged);
+            // 
+            // cbRecentTasksSave
+            // 
+            resources.ApplyResources(this.cbRecentTasksSave, "cbRecentTasksSave");
+            this.cbRecentTasksSave.Name = "cbRecentTasksSave";
+            this.cbRecentTasksSave.UseVisualStyleBackColor = true;
+            this.cbRecentTasksSave.CheckedChanged += new System.EventHandler(this.cbRecentTasksSave_CheckedChanged);
+            // 
             // tpPrint
             // 
             this.tpPrint.Controls.Add(this.cbPrintDontShowWindowsDialog);
@@ -834,13 +938,6 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             // 
-            // btnEditQuickTaskMenu
-            // 
-            resources.ApplyResources(this.btnEditQuickTaskMenu, "btnEditQuickTaskMenu");
-            this.btnEditQuickTaskMenu.Name = "btnEditQuickTaskMenu";
-            this.btnEditQuickTaskMenu.UseVisualStyleBackColor = true;
-            this.btnEditQuickTaskMenu.Click += new System.EventHandler(this.btnEditQuickTaskMenu_Click);
-            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -883,6 +980,12 @@ namespace ShareX
             this.gbSecondaryFileUploaders.ResumeLayout(false);
             this.gbSecondaryTextUploaders.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).EndInit();
+            this.tpHistory.ResumeLayout(false);
+            this.gbHistory.ResumeLayout(false);
+            this.gbHistory.PerformLayout();
+            this.gbRecentLinks.ResumeLayout(false);
+            this.gbRecentLinks.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRecentTasksMaxCount)).EndInit();
             this.tpPrint.ResumeLayout(false);
             this.tpPrint.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
@@ -985,5 +1088,16 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbExportSettings;
         private System.Windows.Forms.ProgressBar pbExportImport;
         private System.Windows.Forms.Button btnEditQuickTaskMenu;
+        private System.Windows.Forms.TabPage tpHistory;
+        private System.Windows.Forms.GroupBox gbRecentLinks;
+        private System.Windows.Forms.CheckBox cbRecentTasksSave;
+        private System.Windows.Forms.CheckBox cbRecentTasksShowInTrayMenu;
+        private System.Windows.Forms.CheckBox cbRecentTasksShowInMainWindow;
+        private System.Windows.Forms.Label lblRecentTasksMaxCount;
+        private System.Windows.Forms.NumericUpDown nudRecentTasksMaxCount;
+        private System.Windows.Forms.CheckBox cbRecentTasksTrayMenuMostRecentFirst;
+        private System.Windows.Forms.GroupBox gbHistory;
+        private System.Windows.Forms.CheckBox cbHistorySaveTasks;
+        private System.Windows.Forms.CheckBox cbHistoryCheckURL;
     }
 }
