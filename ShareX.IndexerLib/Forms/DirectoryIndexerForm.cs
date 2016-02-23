@@ -52,7 +52,7 @@ namespace ShareX.IndexerLib
 
         private void BrowseFolder()
         {
-            // Translate
+            // TODO: Translate
             if (Helpers.BrowseFolder("ShareX - Choose folder path", txtFolderPath))
             {
                 IndexFolder();

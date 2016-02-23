@@ -35,35 +35,41 @@ namespace ShareX
     public class RecentTask
     {
         public string FilePath { get; set; }
-        public string URL { get; set; }
-        public DateTime Time { get; set; }
 
         public string FileName
         {
             get
             {
                 string text = ToString();
+
                 if (!string.IsNullOrEmpty(text))
                 {
                     text = Path.GetFileName(text);
                 }
+
                 return text;
             }
         }
+
+        public string URL { get; set; }
+        public string ThumbnailURL { get; set; }
+        public string DeletionURL { get; set; }
+        public string ShortenedURL { get; set; }
+
+        public DateTime Time { get; set; }
 
         public string TrayMenuText
         {
             get
             {
                 string text = ToString().Truncate(50, "...", false);
+
                 return string.Format("[{0:HH:mm:ss}] {1}", Time.ToLocalTime(), text);
             }
         }
 
-        public RecentTask(string filePath, string url)
+        public RecentTask()
         {
-            FilePath = filePath;
-            URL = url;
             Time = DateTime.UtcNow;
         }
 
@@ -71,7 +77,11 @@ namespace ShareX
         {
             string text = "";
 
-            if (!string.IsNullOrEmpty(URL))
+            if (!string.IsNullOrEmpty(ShortenedURL))
+            {
+                text = ShortenedURL;
+            }
+            else if (!string.IsNullOrEmpty(URL))
             {
                 text = URL;
             }

@@ -99,6 +99,11 @@ namespace ShareX
             task.Info.FilePath = recentTask.FilePath;
             task.Info.FileName = recentTask.FileName;
             task.Info.Result.URL = recentTask.URL;
+            task.Info.Result.ThumbnailURL = recentTask.ThumbnailURL;
+            task.Info.Result.DeletionURL = recentTask.DeletionURL;
+            task.Info.Result.ShortenedURL = recentTask.ShortenedURL;
+            task.Info.UploadTime = recentTask.Time.ToLocalTime();
+
             return task;
         }
 

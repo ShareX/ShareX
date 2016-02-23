@@ -66,11 +66,20 @@ namespace ShareX
             Tasks = new Queue<RecentTask>();
         }
 
-        public void Add(string filePath, string url)
+        public void Add(WorkerTask task)
         {
-            if (!string.IsNullOrEmpty(filePath) || !string.IsNullOrEmpty(url))
+            string info = task.Info.ToString();
+
+            if (!string.IsNullOrEmpty(info))
             {
-                RecentTask recentItem = new RecentTask(filePath, url);
+                RecentTask recentItem = new RecentTask()
+                {
+                    FilePath = task.Info.FilePath,
+                    URL = task.Info.Result.URL,
+                    ThumbnailURL = task.Info.Result.ThumbnailURL,
+                    DeletionURL = task.Info.Result.DeletionURL,
+                    ShortenedURL = task.Info.Result.ShortenedURL
+                };
 
                 Add(recentItem);
             }

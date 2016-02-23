@@ -183,13 +183,14 @@ namespace ShareX
                 {
                     // TODO: Translate
                     lvi.SubItems.Add("History");
+                    lvi.SubItems.Add(task.Info.UploadTime.ToString());
                 }
                 else
                 {
                     lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
+                    lvi.SubItems.Add(string.Empty);
                 }
 
-                lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
@@ -345,7 +346,7 @@ namespace ShareX
                                     HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
                                 }
 
-                                RecentManager.Add(info.FilePath, info.Result.ToString());
+                                RecentManager.Add(task);
 
                                 if (Program.Settings.RecentLinksRemember)
                                 {

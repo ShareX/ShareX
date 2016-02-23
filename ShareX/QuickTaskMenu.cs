@@ -72,7 +72,7 @@ namespace ShareX
                 cms.Items.Add(new ToolStripSeparator());
             }
 
-            // Translate
+            // TODO: Translate
             ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit this menu...");
             tsmiEdit.Image = Resources.gear;
             tsmiEdit.Click += (sender, e) =>
