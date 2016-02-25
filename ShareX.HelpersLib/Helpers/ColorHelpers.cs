@@ -141,6 +141,41 @@ namespace ShareX.HelpersLib
             return new CMYK(c, m, y, k, color.A);
         }
 
+        public static CIELab ColorToCIELab(Color color)
+        {
+            double[] rgbArray = { color.R / 255.0, color.G / 255.0, color.B / 255.0 };
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (rgbArray[i] > 0.04045)
+                    rgbArray[i] = Math.Pow((rgbArray[i] + 0.055) / 1.055, 2.4);
+                else
+                    rgbArray[i] = rgbArray[i] / 12.92;
+
+                rgbArray[i] = rgbArray[i] * 100.0;
+            }
+
+            double[] xyzArray =
+            {
+                (rgbArray[0] * 0.4124 + rgbArray[1] * 0.3576 + rgbArray[2] * 0.1805) / 95.047,
+                (rgbArray[0] * 0.2126 + rgbArray[1] * 0.7152 + rgbArray[2] * 0.0722) / 100.000,
+                (rgbArray[0] * 0.0193 + rgbArray[1] * 0.1192 + rgbArray[2] * 0.9505) / 108.883
+            };
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (xyzArray[i] > 0.008856)
+                    xyzArray[i] = Math.Pow(xyzArray[i], (1.0 / 3.0));
+                else
+                    xyzArray[i] = 7.787 * xyzArray[i] + 16.0 / 116.0;
+            }
+
+            return new CIELab(116.0 * xyzArray[0] - 16.0,
+                500.0 * (xyzArray[0] - xyzArray[1]),
+                200.0 * (xyzArray[1] - xyzArray[2])
+                );
+        }
+
         #endregion Convert Color to ...
 
         #region Convert Hex to ...
@@ -293,6 +328,48 @@ namespace ShareX.HelpersLib
 
         #endregion Convert CMYK to ...
 
+        #region Convert CIELab to ...
+
+        public static Color CIELabToColor(CIELab lab)
+        {
+            double[] ciexyzD65 = { 95.047, 100.000, 108.883 };
+            double[] labArray =
+            {
+                lab.A / 500.0 + (lab.L + 16.0) / 116.0,
+                (lab.L + 16.0 ) / 116.0,
+                (lab.L + 16.0) / 116.0 - lab.B / 200.0
+            };
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (Math.Pow(labArray[i], 3) > 0.008856)
+                    labArray[i] = Math.Pow(labArray[i], 3);
+                else
+                    labArray[i] = (labArray[i] - 16.0 / 116.0 ) / 7.787;
+                labArray[i] = ciexyzD65[i] * labArray[i] / 100;
+            }
+
+            double[] rgbArray =
+            {
+                labArray[0] * 3.2406 + labArray[1] * -1.5372 + labArray[2] * -0.4986,
+                labArray[0] * -0.9689 + labArray[1] * 1.8758 + labArray[2] * 0.0415,
+                labArray[0] * 0.0557 + labArray[1] * -0.2040 + labArray[2] * 1.0570
+            };
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (rgbArray[i] > 0.0031308)
+                    rgbArray[i] = 1.055 * Math.Pow(rgbArray[i], (1 / 2.4)) - 0.055;
+                else
+                    rgbArray[i] = 12.92 * rgbArray[i];
+                rgbArray[i] = rgbArray[i] * 255.0;
+            }
+
+            return Color.FromArgb((int)rgbArray[0], (int)rgbArray[1], (int)rgbArray[2]);
+        }
+
+        #endregion
+
         public static Color RandomColor()
         {
             return Color.FromArgb(MathHelpers.Random(255), MathHelpers.Random(255), MathHelpers.Random(255));
@@ -300,6 +377,7 @@ namespace ShareX.HelpersLib
 
         public static Color ParseColor(string color)
         {
+            
             if (color.StartsWith("#"))
             {
                 return HexToColor(color);

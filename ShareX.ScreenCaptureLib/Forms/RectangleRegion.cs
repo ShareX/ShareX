@@ -507,7 +507,7 @@ namespace ShareX.ScreenCaptureLib
                         Replace("$y", CurrentPosition.Y.ToString(), StringComparison.InvariantCultureIgnoreCase);
                 }
 
-                return string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y);
+                return string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y, ColorHelpers.ColorToCIELab(color));
             }
 
             return string.Format("X: {0} Y: {1}", CurrentPosition.X, CurrentPosition.Y);
