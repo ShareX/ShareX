@@ -165,7 +165,7 @@ namespace ShareX.HelpersLib
 
     public enum ColorType
     {
-        None, RGBA, HSB, CMYK, Hex, Decimal
+        None, RGBA, HSB, CMYK, Hex, Decimal, CIELab
     }
 
     public enum ColorFormat

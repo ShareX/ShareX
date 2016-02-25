@@ -237,8 +237,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized string similar to RGB: {0}, {1}, {2}
         ///Hex: {3}
-        ///X: {4} Y: {5}
-        ///LAB: {6}.
+        ///X: {4} Y: {5}.
         /// </summary>
         internal static string RectangleRegion_GetColorPickerText {
             get {

@@ -126,6 +126,14 @@ namespace ShareX.HelpersLib
                 txtDecimal.Text = ColorHelpers.ColorToDecimal(color).ToString();
             }
 
+            if (type != ColorType.CIELab)
+            {
+                var cielab = ColorHelpers.ColorToCIELab(color);
+                nudLabL.Value = (decimal)cielab.L;
+                nudLabA.Value = (decimal)cielab.A;
+                nudLabB.Value = (decimal)cielab.B;
+            }
+
             controlChangingColor = false;
         }
 
@@ -231,6 +239,14 @@ namespace ShareX.HelpersLib
             {
                 colorPicker.ChangeColor(new CMYK((double)nudCyan.Value / 100, (double)nudMagenta.Value / 100, (double)nudYellow.Value / 100,
                     (double)nudKey.Value / 100, (int)nudAlpha.Value).ToColor(), ColorType.CMYK);
+            }
+        }
+
+        private void CIELab_ValueChanged(object sender, EventArgs e)
+        {
+            if (!controlChangingColor)
+            {
+                colorPicker.ChangeColor(new CIELab((double)nudLabL.Value, (double)nudLabA.Value, (double)nudLabB.Value));
             }
         }
 

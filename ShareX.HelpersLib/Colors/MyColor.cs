@@ -33,6 +33,7 @@ namespace ShareX.HelpersLib
         public RGBA RGBA;
         public HSB HSB;
         public CMYK CMYK;
+        public CIELab CIELab;
 
         public bool IsTransparent
         {
@@ -47,6 +48,7 @@ namespace ShareX.HelpersLib
             RGBA = color;
             HSB = color;
             CMYK = color;
+            CIELab = color;
         }
 
         public static implicit operator MyColor(Color color)
@@ -73,33 +75,45 @@ namespace ShareX.HelpersLib
         {
             HSB = RGBA;
             CMYK = RGBA;
+            CIELab = RGBA;
         }
 
         public void HSBUpdate()
         {
             RGBA = HSB;
             CMYK = HSB;
+            CIELab = HSB;
         }
 
         public void CMYKUpdate()
         {
             RGBA = CMYK;
             HSB = CMYK;
+            CIELab = CMYK;
+        }
+
+        public void CIELabUpdate()
+        {
+            RGBA = CIELab;
+            HSB = CIELab;
+            CMYK = CIELab;
         }
 
         public override string ToString()
         {
             return String.Format(
-@"RGBA (Red, Green, Blue, Alpha) = {0}, {1}, {2}, {3}
+                @"RGBA (Red, Green, Blue, Alpha) = {0}, {1}, {2}, {3}
 HSB (Hue, Saturation, Brightness) = {4:0.0}°, {5:0.0}%, {6:0.0}%
 CMYK (Cyan, Magenta, Yellow, Key) = {7:0.0}%, {8:0.0}%, {9:0.0}%, {10:0.0}%
 Hex (RGB, RGBA, ARGB) = #{11}, #{12}, #{13}
-Decimal (RGB, RGBA, ARGB) = {14}, {15}, {16}",
+Decimal (RGB, RGBA, ARGB) = {14}, {15}, {16}
+CIE Lab (L, A, B) = {17}, {18}, {19}",
                 RGBA.Red, RGBA.Green, RGBA.Blue, RGBA.Alpha,
                 HSB.Hue360, HSB.Saturation100, HSB.Brightness100,
                 CMYK.Cyan100, CMYK.Magenta100, CMYK.Yellow100, CMYK.Key100,
                 ColorHelpers.ColorToHex(this), ColorHelpers.ColorToHex(this, ColorFormat.RGBA), ColorHelpers.ColorToHex(this, ColorFormat.ARGB),
-                ColorHelpers.ColorToDecimal(this), ColorHelpers.ColorToDecimal(this, ColorFormat.RGBA), ColorHelpers.ColorToDecimal(this, ColorFormat.ARGB));
+                ColorHelpers.ColorToDecimal(this), ColorHelpers.ColorToDecimal(this, ColorFormat.RGBA), ColorHelpers.ColorToDecimal(this, ColorFormat.ARGB),
+                CIELab.L, CIELab.A, CIELab.B);
         }
 
         public override int GetHashCode()

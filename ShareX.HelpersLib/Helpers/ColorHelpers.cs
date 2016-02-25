@@ -143,12 +143,13 @@ namespace ShareX.HelpersLib
 
         public static CIELab ColorToCIELab(Color color)
         {
+            //RGB to CIEXYZ
             double[] rgbArray = { color.R / 255.0, color.G / 255.0, color.B / 255.0 };
 
             for (int i = 0; i < 3; i++)
             {
                 if (rgbArray[i] > 0.04045)
-                    rgbArray[i] = Math.Pow((rgbArray[i] + 0.055) / 1.055, 2.4);
+                    rgbArray[i] = Math.Pow(((rgbArray[i] + 0.055) / 1.055), 2.4);
                 else
                     rgbArray[i] = rgbArray[i] / 12.92;
 
@@ -162,6 +163,7 @@ namespace ShareX.HelpersLib
                 (rgbArray[0] * 0.0193 + rgbArray[1] * 0.1192 + rgbArray[2] * 0.9505) / 108.883
             };
 
+            //CIEXYZ to CIELab
             for (int i = 0; i < 3; i++)
             {
                 if (xyzArray[i] > 0.008856)
@@ -170,7 +172,7 @@ namespace ShareX.HelpersLib
                     xyzArray[i] = 7.787 * xyzArray[i] + 16.0 / 116.0;
             }
 
-            return new CIELab(116.0 * xyzArray[0] - 16.0,
+            return new CIELab(116.0 * xyzArray[1] - 16.0,
                 500.0 * (xyzArray[0] - xyzArray[1]),
                 200.0 * (xyzArray[1] - xyzArray[2])
                 );
@@ -332,28 +334,30 @@ namespace ShareX.HelpersLib
 
         public static Color CIELabToColor(CIELab lab)
         {
+            //CIELab to CIEXYZ
             double[] ciexyzD65 = { 95.047, 100.000, 108.883 };
-            double[] labArray =
+            double[] xyzArray =
             {
-                lab.A / 500.0 + (lab.L + 16.0) / 116.0,
-                (lab.L + 16.0 ) / 116.0,
-                (lab.L + 16.0) / 116.0 - lab.B / 200.0
+                lab.A / 500.0 + (lab.L + 16.0) / 116.0,   //X
+                (lab.L + 16.0) / 116.0,                   //Y
+                (lab.L + 16.0) / 116.0 - lab.B / 200.0    //Z
             };
 
             for (int i = 0; i < 3; i++)
             {
-                if (Math.Pow(labArray[i], 3) > 0.008856)
-                    labArray[i] = Math.Pow(labArray[i], 3);
+                if (Math.Pow(xyzArray[i], 3) > 0.008856)
+                    xyzArray[i] = Math.Pow(xyzArray[i], 3);
                 else
-                    labArray[i] = (labArray[i] - 16.0 / 116.0 ) / 7.787;
-                labArray[i] = ciexyzD65[i] * labArray[i] / 100;
+                    xyzArray[i] = (xyzArray[i] - 16.0 / 116.0 ) / 7.787;
+                xyzArray[i] = ciexyzD65[i] * xyzArray[i];
             }
 
+            //CIEXYZ to RGB
             double[] rgbArray =
             {
-                labArray[0] * 3.2406 + labArray[1] * -1.5372 + labArray[2] * -0.4986,
-                labArray[0] * -0.9689 + labArray[1] * 1.8758 + labArray[2] * 0.0415,
-                labArray[0] * 0.0557 + labArray[1] * -0.2040 + labArray[2] * 1.0570
+                (xyzArray[0] * 3.2406 + xyzArray[1] * -1.5372 + xyzArray[2] * -0.4986) / 100,
+                (xyzArray[0] * -0.9689 + xyzArray[1] * 1.8758 + xyzArray[2] * 0.0415) / 100,
+                (xyzArray[0] * 0.0557 + xyzArray[1] * -0.2040 + xyzArray[2] * 1.0570) / 100
             };
 
             for (int i = 0; i < 3; i++)
@@ -363,6 +367,8 @@ namespace ShareX.HelpersLib
                 else
                     rgbArray[i] = 12.92 * rgbArray[i];
                 rgbArray[i] = rgbArray[i] * 255.0;
+                if (rgbArray[i] > 255 || rgbArray[i] < 0)
+                    return Color.FromArgb(255, 255, 255);
             }
 
             return Color.FromArgb((int)rgbArray[0], (int)rgbArray[1], (int)rgbArray[2]);

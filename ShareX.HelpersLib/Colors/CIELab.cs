@@ -10,7 +10,7 @@ namespace ShareX.HelpersLib
 
         public double B { get; set; }
 
-        public CIELab(double l, double a, double b) : this()
+        public CIELab(double l, double a, double b)
         {
             L = l;
             A = a;

@@ -30,6 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ColorPickerForm));
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblLabB = new System.Windows.Forms.Label();
+            this.lblLabA = new System.Windows.Forms.Label();
+            this.lblLabL = new System.Windows.Forms.Label();
+            this.nudLabB = new System.Windows.Forms.NumericUpDown();
+            this.nudLabA = new System.Windows.Forms.NumericUpDown();
+            this.nudLabL = new System.Windows.Forms.NumericUpDown();
+            this.lblAlpha = new System.Windows.Forms.Label();
+            this.nudAlpha = new System.Windows.Forms.NumericUpDown();
+            this.lblKeyPerc = new System.Windows.Forms.Label();
+            this.lblYellowPerc = new System.Windows.Forms.Label();
+            this.lblMagentaPerc = new System.Windows.Forms.Label();
+            this.lblCyanPerc = new System.Windows.Forms.Label();
+            this.txtDecimal = new System.Windows.Forms.TextBox();
+            this.lblDecimal = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.lblOld = new System.Windows.Forms.Label();
             this.lblNew = new System.Windows.Forms.Label();
@@ -58,16 +72,12 @@
             this.rbBrightness = new System.Windows.Forms.RadioButton();
             this.rbSaturation = new System.Windows.Forms.RadioButton();
             this.rbHue = new System.Windows.Forms.RadioButton();
-            this.lblDecimal = new System.Windows.Forms.Label();
-            this.txtDecimal = new System.Windows.Forms.TextBox();
-            this.lblCyanPerc = new System.Windows.Forms.Label();
-            this.lblMagentaPerc = new System.Windows.Forms.Label();
-            this.lblYellowPerc = new System.Windows.Forms.Label();
-            this.lblKeyPerc = new System.Windows.Forms.Label();
-            this.nudAlpha = new System.Windows.Forms.NumericUpDown();
-            this.lblAlpha = new System.Windows.Forms.Label();
             this.pbColorPreview = new ShareX.HelpersLib.MyPictureBox();
             this.colorPicker = new ShareX.HelpersLib.ColorPicker();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLabB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLabA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLabL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAlpha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudYellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMagenta)).BeginInit();
@@ -78,7 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSaturation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAlpha)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -88,6 +97,129 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // lblLabB
+            // 
+            resources.ApplyResources(this.lblLabB, "lblLabB");
+            this.lblLabB.Name = "lblLabB";
+            // 
+            // lblLabA
+            // 
+            resources.ApplyResources(this.lblLabA, "lblLabA");
+            this.lblLabA.Name = "lblLabA";
+            // 
+            // lblLabL
+            // 
+            resources.ApplyResources(this.lblLabL, "lblLabL");
+            this.lblLabL.Name = "lblLabL";
+            // 
+            // nudLabB
+            // 
+            this.nudLabB.DecimalPlaces = 5;
+            resources.ApplyResources(this.nudLabB, "nudLabB");
+            this.nudLabB.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.nudLabB.Minimum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            -2147483648});
+            this.nudLabB.Name = "nudLabB";
+            this.nudLabB.Value = new decimal(new int[] {
+            1298310103,
+            2423344,
+            0,
+            -2146304000});
+            this.nudLabB.ValueChanged += new System.EventHandler(this.CIELab_ValueChanged);
+            // 
+            // nudLabA
+            // 
+            this.nudLabA.DecimalPlaces = 5;
+            resources.ApplyResources(this.nudLabA, "nudLabA");
+            this.nudLabA.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.nudLabA.Minimum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            -2147483648});
+            this.nudLabA.Name = "nudLabA";
+            this.nudLabA.Value = new decimal(new int[] {
+            -1893550985,
+            122480,
+            0,
+            1114112});
+            this.nudLabA.ValueChanged += new System.EventHandler(this.CIELab_ValueChanged);
+            // 
+            // nudLabL
+            // 
+            this.nudLabL.DecimalPlaces = 5;
+            resources.ApplyResources(this.nudLabL, "nudLabL");
+            this.nudLabL.Name = "nudLabL";
+            this.nudLabL.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudLabL.ValueChanged += new System.EventHandler(this.CIELab_ValueChanged);
+            // 
+            // lblAlpha
+            // 
+            resources.ApplyResources(this.lblAlpha, "lblAlpha");
+            this.lblAlpha.Name = "lblAlpha";
+            // 
+            // nudAlpha
+            // 
+            resources.ApplyResources(this.nudAlpha, "nudAlpha");
+            this.nudAlpha.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudAlpha.Name = "nudAlpha";
+            this.nudAlpha.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudAlpha.ValueChanged += new System.EventHandler(this.RGB_ValueChanged);
+            // 
+            // lblKeyPerc
+            // 
+            resources.ApplyResources(this.lblKeyPerc, "lblKeyPerc");
+            this.lblKeyPerc.Name = "lblKeyPerc";
+            // 
+            // lblYellowPerc
+            // 
+            resources.ApplyResources(this.lblYellowPerc, "lblYellowPerc");
+            this.lblYellowPerc.Name = "lblYellowPerc";
+            // 
+            // lblMagentaPerc
+            // 
+            resources.ApplyResources(this.lblMagentaPerc, "lblMagentaPerc");
+            this.lblMagentaPerc.Name = "lblMagentaPerc";
+            // 
+            // lblCyanPerc
+            // 
+            resources.ApplyResources(this.lblCyanPerc, "lblCyanPerc");
+            this.lblCyanPerc.Name = "lblCyanPerc";
+            // 
+            // txtDecimal
+            // 
+            resources.ApplyResources(this.txtDecimal, "txtDecimal");
+            this.txtDecimal.Name = "txtDecimal";
+            this.txtDecimal.TextChanged += new System.EventHandler(this.txtDecimal_TextChanged);
+            // 
+            // lblDecimal
+            // 
+            resources.ApplyResources(this.lblDecimal, "lblDecimal");
+            this.lblDecimal.Name = "lblDecimal";
             // 
             // btnOK
             // 
@@ -323,64 +455,12 @@
             // 
             // rbHue
             // 
-            this.rbHue.Checked = true;
             resources.ApplyResources(this.rbHue, "rbHue");
+            this.rbHue.Checked = true;
             this.rbHue.Name = "rbHue";
             this.rbHue.TabStop = true;
             this.rbHue.UseVisualStyleBackColor = true;
             this.rbHue.CheckedChanged += new System.EventHandler(this.rbHue_CheckedChanged);
-            // 
-            // lblDecimal
-            // 
-            resources.ApplyResources(this.lblDecimal, "lblDecimal");
-            this.lblDecimal.Name = "lblDecimal";
-            // 
-            // txtDecimal
-            // 
-            resources.ApplyResources(this.txtDecimal, "txtDecimal");
-            this.txtDecimal.Name = "txtDecimal";
-            this.txtDecimal.TextChanged += new System.EventHandler(this.txtDecimal_TextChanged);
-            // 
-            // lblCyanPerc
-            // 
-            resources.ApplyResources(this.lblCyanPerc, "lblCyanPerc");
-            this.lblCyanPerc.Name = "lblCyanPerc";
-            // 
-            // lblMagentaPerc
-            // 
-            resources.ApplyResources(this.lblMagentaPerc, "lblMagentaPerc");
-            this.lblMagentaPerc.Name = "lblMagentaPerc";
-            // 
-            // lblYellowPerc
-            // 
-            resources.ApplyResources(this.lblYellowPerc, "lblYellowPerc");
-            this.lblYellowPerc.Name = "lblYellowPerc";
-            // 
-            // lblKeyPerc
-            // 
-            resources.ApplyResources(this.lblKeyPerc, "lblKeyPerc");
-            this.lblKeyPerc.Name = "lblKeyPerc";
-            // 
-            // nudAlpha
-            // 
-            resources.ApplyResources(this.nudAlpha, "nudAlpha");
-            this.nudAlpha.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudAlpha.Name = "nudAlpha";
-            this.nudAlpha.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudAlpha.ValueChanged += new System.EventHandler(this.RGB_ValueChanged);
-            // 
-            // lblAlpha
-            // 
-            resources.ApplyResources(this.lblAlpha, "lblAlpha");
-            this.lblAlpha.Name = "lblAlpha";
             // 
             // pbColorPreview
             // 
@@ -403,6 +483,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.btnCancel;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.lblLabB);
+            this.Controls.Add(this.lblLabA);
+            this.Controls.Add(this.lblLabL);
+            this.Controls.Add(this.nudLabB);
+            this.Controls.Add(this.nudLabA);
+            this.Controls.Add(this.nudLabL);
             this.Controls.Add(this.pbColorPreview);
             this.Controls.Add(this.lblAlpha);
             this.Controls.Add(this.nudAlpha);
@@ -447,6 +533,10 @@
             this.Name = "ColorPickerForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.nudLabB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLabA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLabL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAlpha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudYellow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMagenta)).EndInit();
@@ -457,7 +547,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSaturation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAlpha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,5 +593,11 @@
         protected System.Windows.Forms.TextBox txtHex;
         protected System.Windows.Forms.Button btnCancel;
         protected System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.NumericUpDown nudLabL;
+        private System.Windows.Forms.NumericUpDown nudLabA;
+        private System.Windows.Forms.NumericUpDown nudLabB;
+        private System.Windows.Forms.Label lblLabL;
+        private System.Windows.Forms.Label lblLabA;
+        private System.Windows.Forms.Label lblLabB;
     }
 }

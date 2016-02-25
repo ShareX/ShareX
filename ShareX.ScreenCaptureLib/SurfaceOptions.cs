@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(false), Description("Allows to show your custom info text near cursor. This way you can show color info too.")]
         public bool UseCustomInfoText { get; set; }
 
-        [DefaultValue("X: $x, Y: $y\r\nR: $r, G: $g, B: $b\r\nHex: $hex"), Description("Show this custom info when color info setting is enabled. Formats: $x, $y, $r, $g, $b, $hex"),
+        [DefaultValue("X: $x, Y: $y\r\nR: $r, G: $g, B: $b\r\nHex: $hex\r\nLab: $lab"), Description("Show this custom info when color info setting is enabled. Formats: $x, $y, $r, $g, $b, $hex, $lab"),
             Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
         public string CustomInfoText { get; set; }
 

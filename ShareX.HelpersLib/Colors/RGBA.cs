@@ -116,7 +116,7 @@ namespace ShareX.HelpersLib
 
         public static implicit operator CIELab(RGBA color)
         {
-            return color.ToCMYK();
+            return color.ToCIELab();
         }
 
         public static bool operator ==(RGBA left, RGBA right)

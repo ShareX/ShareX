@@ -504,10 +504,11 @@ namespace ShareX.ScreenCaptureLib
                         Replace("$b", color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
                         Replace("$hex", ColorHelpers.ColorToHex(color), StringComparison.InvariantCultureIgnoreCase).
                         Replace("$x", CurrentPosition.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                        Replace("$y", CurrentPosition.Y.ToString(), StringComparison.InvariantCultureIgnoreCase);
+                        Replace("$y", CurrentPosition.Y.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                        Replace("$lab", ColorHelpers.ColorToCIELab(color).ToString(), StringComparison.InvariantCultureIgnoreCase);
                 }
 
-                return string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y, ColorHelpers.ColorToCIELab(color));
+                return string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y);
             }
 
             return string.Format("X: {0} Y: {1}", CurrentPosition.X, CurrentPosition.Y);
