@@ -1887,7 +1887,11 @@ namespace ShareX
                     QuickTaskMenu quickTaskMenu = new QuickTaskMenu();
                     quickTaskMenu.TaskInfoSelected += taskInfo =>
                     {
-                        if (taskInfo.IsValid)
+                        if (taskInfo == null)
+                        {
+                            AfterCaptureRunTask(img, taskSettings);
+                        }
+                        else if (taskInfo.IsValid)
                         {
                             taskSettings.AfterCaptureJob = taskInfo.AfterCaptureTasks;
                             taskSettings.AfterUploadJob = taskInfo.AfterUploadTasks;

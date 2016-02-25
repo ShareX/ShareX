@@ -74,7 +74,7 @@ namespace ShareX
 
             // TODO: Translate
             ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit this menu...");
-            tsmiEdit.Image = Resources.gear;
+            tsmiEdit.Image = Resources.pencil;
             tsmiEdit.Click += (sender, e) =>
             {
                 cms.Close();
@@ -83,6 +83,15 @@ namespace ShareX
             cms.Items.Add(tsmiEdit);
 
             cms.Items.Add(new ToolStripSeparator());
+
+            ToolStripMenuItem tsmiContinue = new ToolStripMenuItem("Continue");
+            tsmiContinue.Image = Resources.control;
+            tsmiContinue.Click += (sender, e) =>
+            {
+                cms.Close();
+                OnTaskInfoSelected(null);
+            };
+            cms.Items.Add(tsmiContinue);
 
             ToolStripMenuItem tsmiCancel = new ToolStripMenuItem("Cancel");
             tsmiCancel.Image = Resources.cross;

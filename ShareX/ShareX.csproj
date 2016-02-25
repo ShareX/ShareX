@@ -1268,6 +1268,7 @@
     <None Include="Resources\vn.png" />
     <None Include="Resources\layout-select.png" />
     <None Include="Resources\disk-black.png" />
+    <None Include="Resources\control.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
