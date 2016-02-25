@@ -114,6 +114,11 @@ namespace ShareX.HelpersLib
             return color.ToCMYK();
         }
 
+        public static implicit operator CIELab(RGBA color)
+        {
+            return color.ToCMYK();
+        }
+
         public static bool operator ==(RGBA left, RGBA right)
         {
             return (left.Red == right.Red) && (left.Green == right.Green) && (left.Blue == right.Blue) && (left.Alpha == right.Alpha);
@@ -152,6 +157,11 @@ namespace ShareX.HelpersLib
         public CMYK ToCMYK()
         {
             return ColorHelpers.ColorToCMYK(this);
+        }
+
+        public CIELab ToCIELab()
+        {
+            return ColorHelpers.ColorToCIELab(this);
         }
 
         public override int GetHashCode()

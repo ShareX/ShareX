@@ -190,6 +190,11 @@ namespace ShareX.HelpersLib
             return color.ToColor();
         }
 
+        public static implicit operator CIELab(CMYK color)
+        {
+            return color.ToColor();
+        }
+
         public static bool operator ==(CMYK left, CMYK right)
         {
             return (left.Cyan == right.Cyan) && (left.Magenta == right.Magenta) && (left.Yellow == right.Yellow) && (left.Key == right.Key);

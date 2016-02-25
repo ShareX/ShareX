@@ -163,6 +163,11 @@ namespace ShareX.HelpersLib
             return color.ToColor();
         }
 
+        public static implicit operator CIELab(HSB color)
+        {
+            return color.ToColor();
+        }
+
         public static bool operator ==(HSB left, HSB right)
         {
             return (left.Hue == right.Hue) && (left.Saturation == right.Saturation) && (left.Brightness == right.Brightness);

@@ -135,7 +135,8 @@
   <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
     <value>RGB: {0}, {1}, {2}
 Hex: {3}
-X: {4} Y: {5}</value>
+X: {4} Y: {5}
+LAB: {6}</value>
     <comment>@Invariant</comment>
   </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
