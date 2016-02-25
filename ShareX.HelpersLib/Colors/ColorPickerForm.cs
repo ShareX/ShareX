@@ -38,14 +38,14 @@ namespace ShareX.HelpersLib
         private bool controlChangingColor;
 
         public ColorPickerForm()
-            : this(Color.Empty)
+            : this(Color.Red)
         {
         }
 
         public ColorPickerForm(Color currentColor)
         {
-            NewColor = Color.Red;
-            Initialize(currentColor);
+            InitializeComponent();
+            SetCurrentColor(currentColor, false);
         }
 
         public static Color GetColor(Color currentColor)
@@ -63,24 +63,9 @@ namespace ShareX.HelpersLib
             return currentColor;
         }
 
-        private void Initialize(Color currentColor)
+        public void SetCurrentColor(Color currentColor, bool keepPreviousColor)
         {
-            InitializeComponent();
-
-            if (currentColor.IsEmpty)
-            {
-                colorPicker.DrawCrosshair = lblOld.Visible = oldColorExist;
-                DrawPreviewColors();
-            }
-            else
-            {
-                SetCurrentColor(currentColor);
-            }
-        }
-
-        public void SetCurrentColor(Color currentColor)
-        {
-            oldColorExist = true;
+            oldColorExist = keepPreviousColor;
             colorPicker.DrawCrosshair = lblOld.Visible = oldColorExist;
             NewColor = OldColor = currentColor;
             colorPicker.ChangeColor(currentColor);
