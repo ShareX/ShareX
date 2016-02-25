@@ -38,13 +38,13 @@
             this.lvAfterCaptureTasks = new ShareX.HelpersLib.MyListView();
             this.chAfterCapture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpBeforeUpload = new System.Windows.Forms.TabPage();
+            this.ucBeforeUpload = new ShareX.BeforeUploadControl();
             this.tpAfterUpload = new System.Windows.Forms.TabPage();
             this.lvAfterUploadTasks = new ShareX.HelpersLib.MyListView();
             this.chAfterUpload = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblFileName = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.lblImageSize = new System.Windows.Forms.Label();
-            this.ucBeforeUpload = new ShareX.BeforeUploadControl();
             this.tcTasks.SuspendLayout();
             this.tpAfterCapture.SuspendLayout();
             this.tpBeforeUpload.SuspendLayout();
@@ -125,6 +125,11 @@
             this.tpBeforeUpload.Name = "tpBeforeUpload";
             this.tpBeforeUpload.UseVisualStyleBackColor = true;
             // 
+            // ucBeforeUpload
+            // 
+            resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
+            this.ucBeforeUpload.Name = "ucBeforeUpload";
+            // 
             // tpAfterUpload
             // 
             this.tpAfterUpload.Controls.Add(this.lvAfterUploadTasks);
@@ -165,11 +170,6 @@
             this.lblImageSize.BackColor = System.Drawing.Color.White;
             this.lblImageSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblImageSize.Name = "lblImageSize";
-            // 
-            // ucBeforeUpload
-            // 
-            resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
-            this.ucBeforeUpload.Name = "ucBeforeUpload";
             // 
             // AfterCaptureForm
             // 
