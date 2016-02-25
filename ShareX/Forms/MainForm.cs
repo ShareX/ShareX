@@ -251,6 +251,11 @@ namespace ShareX
 
         private void AfterShownJobs()
         {
+            if (!Program.Settings.ShowMostRecentTaskFirst && lvUploads.Items.Count > 0)
+            {
+                lvUploads.Items[lvUploads.Items.Count - 1].EnsureVisible();
+            }
+
             if (Program.IsFirstTimeConfig)
             {
                 using (FirstTimeConfigForm firstTimeConfigForm = new FirstTimeConfigForm())
