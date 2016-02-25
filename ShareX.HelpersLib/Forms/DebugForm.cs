@@ -31,13 +31,14 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class DebugForm : BaseForm
+    public partial class DebugForm : Form
     {
         public Logger Logger { get; private set; }
 
         public DebugForm(Logger logger)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             Logger = logger;
 
             rtbDebug.Text = Logger.ToString();

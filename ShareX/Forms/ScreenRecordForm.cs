@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ScreenRecordForm : BaseForm
+    public partial class ScreenRecordForm : Form
     {
         public event Action StopRequested;
 
@@ -53,6 +53,7 @@ namespace ShareX
         public ScreenRecordForm(Rectangle regionRectangle, bool activateWindow = true, float duration = 0)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             niTray.Icon = ShareXResources.Icon;
 
             this.activateWindow = activateWindow;

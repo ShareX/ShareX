@@ -28,7 +28,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class TrayForm : BaseForm
+    public class TrayForm : Form
     {
         protected NotifyIcon TrayIcon = null;
 
@@ -37,6 +37,7 @@ namespace ShareX.HelpersLib
         public TrayForm()
         {
             components = new Container();
+            Icon = ShareXResources.Icon;
             TrayIcon = new NotifyIcon(components);
             TrayIcon.Text = "ShareX";
         }

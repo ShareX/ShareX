@@ -25,26 +25,20 @@
 
 // gpailler
 
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.GUI
+namespace ShareX.UploadersLib
 {
-    using ShareX.HelpersLib;
-    using System.Threading.Tasks;
-
-    public partial class JiraUpload : BaseForm
+    public partial class JiraUpload : Form
     {
         public delegate string GetSummaryHandler(string issueId);
 
         private readonly string _issuePrefix;
         private readonly GetSummaryHandler _getSummary;
-
-        public JiraUpload()
-        {
-            InitializeComponent();
-        }
 
         public string IssueId
         {
@@ -52,6 +46,12 @@ namespace ShareX.UploadersLib.GUI
             {
                 return txtIssueId.Text;
             }
+        }
+
+        public JiraUpload()
+        {
+            InitializeComponent();
+            Icon = ShareXResources.Icon;
         }
 
         public JiraUpload(string issuePrefix, GetSummaryHandler getSummary)

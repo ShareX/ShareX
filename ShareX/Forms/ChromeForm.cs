@@ -33,11 +33,12 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ChromeForm : BaseForm
+    public partial class ChromeForm : Form
     {
         public ChromeForm()
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
         }
 
         private void CreateChromeHostManifest(string filepath)

@@ -24,14 +24,16 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System.Windows.Forms;
 
 namespace ShareX.HistoryLib
 {
-    public partial class HistoryItemInfoForm : BaseForm
+    public partial class HistoryItemInfoForm : Form
     {
         public HistoryItemInfoForm(object hi)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             olvMain.SelectObject(hi);
         }
     }

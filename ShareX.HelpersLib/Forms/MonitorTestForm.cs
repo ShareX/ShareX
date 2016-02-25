@@ -30,11 +30,12 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class MonitorTestForm : BaseForm
+    public partial class MonitorTestForm : Form
     {
         public MonitorTestForm()
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
 
             Rectangle screenBounds = CaptureHelpers.GetScreenBounds();
             Location = screenBounds.Location;

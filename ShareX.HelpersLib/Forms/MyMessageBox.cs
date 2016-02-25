@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class MyMessageBox : BaseForm
+    public class MyMessageBox : Form
     {
         private const int LabelHorizontalPadding = 15;
         private const int LabelVerticalPadding = 20;
@@ -42,6 +42,8 @@ namespace ShareX.HelpersLib
 
         public MyMessageBox(string text, string caption, MessageBoxButtons buttons = MessageBoxButtons.OK, string checkBoxText = null, bool isChecked = false)
         {
+            Icon = ShareXResources.Icon;
+
             BackColor = Color.White;
             Width = 180;
             Height = 100;

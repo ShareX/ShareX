@@ -36,7 +36,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleAnnotate : BaseForm
+    public class RectangleAnnotate : Form
     {
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
@@ -111,6 +111,7 @@ namespace ShareX.ScreenCaptureLib
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
 
             InitializeComponent();
+            Icon = ShareXResources.Icon;
 
             using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
             {

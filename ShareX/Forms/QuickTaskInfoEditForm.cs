@@ -30,13 +30,14 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class QuickTaskInfoEditForm : BaseForm
+    public partial class QuickTaskInfoEditForm : Form
     {
         public QuickTaskInfo TaskInfo { get; private set; }
 
         public QuickTaskInfoEditForm(QuickTaskInfo taskInfo)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             TaskInfo = taskInfo;
             txtName.Text = TaskInfo.Name;
             AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskInfo.AfterCaptureTasks = TaskInfo.AfterCaptureTasks.Swap(x), cmsAfterCapture);

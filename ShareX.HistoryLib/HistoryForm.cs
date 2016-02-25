@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HistoryLib
 {
-    public partial class HistoryForm : BaseForm
+    public partial class HistoryForm : Form
     {
         public string HistoryPath { get; private set; }
         public int MaxItemCount { get; set; }
@@ -46,6 +46,7 @@ namespace ShareX.HistoryLib
         public HistoryForm(string historyPath, int maxItemCount = -1)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             Text = "ShareX - " + string.Format(Resources.HistoryForm_HistoryForm_History_, historyPath);
 
             HistoryPath = historyPath;

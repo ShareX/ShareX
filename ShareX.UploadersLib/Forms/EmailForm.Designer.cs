@@ -1,4 +1,4 @@
-﻿namespace ShareX.UploadersLib.GUI
+﻿namespace ShareX.UploadersLib
 {
     partial class EmailForm
     {

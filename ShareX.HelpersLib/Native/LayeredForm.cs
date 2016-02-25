@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class LayeredForm : BaseForm
+    public class LayeredForm : Form
     {
         public LayeredForm()
         {
@@ -39,6 +39,7 @@ namespace ShareX.HelpersLib
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(300, 300);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = ShareXResources.Icon;
             Name = "LayeredForm";
             ShowInTaskbar = false;
             Text = "LayeredForm";

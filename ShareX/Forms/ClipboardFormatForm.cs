@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ClipboardFormatForm : BaseForm
+    public partial class ClipboardFormatForm : Form
     {
         public ClipboardFormat ClipboardFormat { get; private set; }
 
@@ -42,6 +42,8 @@ namespace ShareX
         public ClipboardFormatForm(ClipboardFormat cbf)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+
             ClipboardFormat = cbf;
             txtDescription.Text = cbf.Description ?? "";
             txtFormat.Text = cbf.Format ?? "";

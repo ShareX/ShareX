@@ -29,8 +29,13 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class BlackStyleForm : BaseForm
+    public class BlackStyleForm : Form
     {
+        public BlackStyleForm()
+        {
+            Icon = ShareXResources.Icon;
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;

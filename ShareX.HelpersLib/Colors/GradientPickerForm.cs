@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class GradientPickerForm : BaseForm
+    public partial class GradientPickerForm : Form
     {
         public GradientInfo Gradient { get; set; }
 
@@ -40,6 +40,7 @@ namespace ShareX.HelpersLib
         {
             Gradient = gradient;
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             cbGradientType.Items.AddRange(Helpers.GetEnumNamesProper<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;
             foreach (GradientStop gradientStop in Gradient.Colors)

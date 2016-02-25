@@ -31,11 +31,12 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class QuickTaskMenuEditorForm : BaseForm
+    public partial class QuickTaskMenuEditorForm : Form
     {
         public QuickTaskMenuEditorForm()
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
 
             if (Program.Settings.QuickTaskPresets == null)
             {

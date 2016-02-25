@@ -31,7 +31,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public class NotificationForm : BaseForm
+    public class NotificationForm : Form
     {
         public NotificationFormConfig ToastConfig { get; private set; }
 
@@ -49,6 +49,7 @@ namespace ShareX
         public NotificationForm(int duration, ContentAlignment placement, Size size, NotificationFormConfig config)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 
             ToastConfig = config;

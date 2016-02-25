@@ -37,7 +37,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class Surface : BaseForm
+    public class Surface : Form
     {
         public Image SurfaceImage { get; set; }
         public SurfaceOptions Config { get; set; }
@@ -66,6 +66,7 @@ namespace ShareX.ScreenCaptureLib
             ScreenRectangle0Based = CaptureHelpers.ScreenToClient(ScreenRectangle);
 
             InitializeComponent();
+            Icon = ShareXResources.Icon;
 
             using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
             {

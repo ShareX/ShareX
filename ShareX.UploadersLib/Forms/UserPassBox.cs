@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class UserPassBox : BaseForm
+    public partial class UserPassBox : Form
     {
         public string FullName { get; private set; }
         public string UserName { get; private set; }
@@ -40,6 +40,7 @@ namespace ShareX.UploadersLib
         public UserPassBox(string title, string userName, string password)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             Text = title;
             txtUserName.Text = userName;
             txtPassword.Text = password;

@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class ImageViewer : BaseForm
+    public class ImageViewer : Form
     {
         private Image screenshot;
 
@@ -38,6 +38,7 @@ namespace ShareX.HelpersLib
         {
             screenshot = image;
             InitializeComponent();
+            Icon = ShareXResources.Icon;
         }
 
         public static void ShowImage(Image img)

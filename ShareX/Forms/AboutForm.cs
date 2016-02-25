@@ -32,11 +32,12 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class AboutForm : BaseForm
+    public partial class AboutForm : Form
     {
         public AboutForm()
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             lblProductName.Text = Program.Title;
             pbLogo.Image = ShareXResources.Logo;
 

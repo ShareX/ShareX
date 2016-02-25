@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public class HotkeyForm : BaseForm
+    public class HotkeyForm : Form
     {
         public int HotkeyRepeatLimit { get; set; }
 

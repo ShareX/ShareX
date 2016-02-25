@@ -35,7 +35,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public partial class ScrollingCaptureForm : BaseForm
+    public partial class ScrollingCaptureForm : Form
     {
         public event Action<Image> ProcessRequested;
 
@@ -54,6 +54,7 @@ namespace ShareX.ScreenCaptureLib
             Options = options;
 
             InitializeComponent();
+            Icon = ShareXResources.Icon;
 
             cbScrollMethod.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollMethod>());
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;

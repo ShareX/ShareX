@@ -35,7 +35,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.Forms
 {
-    public partial class DropboxFilesForm : BaseForm
+    public partial class DropboxFilesForm : Form
     {
         public string CurrentFolderPath { get; private set; }
 
@@ -47,7 +47,7 @@ namespace ShareX.UploadersLib.Forms
         public DropboxFilesForm(OAuth2Info oauth, string path, DropboxAccountInfo accountInfo)
         {
             InitializeComponent();
-            Icon = Resources.Dropbox;
+            Icon = ShareXResources.Icon;
 
             dropbox = new Dropbox(oauth);
             dropboxAccountInfo = accountInfo;

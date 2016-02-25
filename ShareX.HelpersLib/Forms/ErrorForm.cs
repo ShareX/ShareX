@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class ErrorForm : BaseForm
+    public partial class ErrorForm : Form
     {
         public bool IsUnhandledException { get; private set; }
         public string LogPath { get; private set; }
@@ -43,6 +43,8 @@ namespace ShareX.HelpersLib
         public ErrorForm(string errorTitle, string errorMessage, string logPath, string bugReportPath, bool unhandledException = true)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+
             IsUnhandledException = unhandledException;
             LogPath = logPath;
             BugReportPath = bugReportPath;

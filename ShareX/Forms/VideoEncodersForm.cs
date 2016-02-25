@@ -30,11 +30,13 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class VideoEncodersForm : BaseForm
+    public partial class VideoEncodersForm : Form
     {
         public VideoEncodersForm()
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+
             Program.Settings.VideoEncoders.ForEach(x => AddVideoEncoder(x));
         }
 

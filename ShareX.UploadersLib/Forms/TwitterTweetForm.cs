@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class TwitterTweetForm : BaseForm
+    public partial class TwitterTweetForm : Form
     {
         public string Message
         {
@@ -99,7 +99,7 @@ namespace ShareX.UploadersLib
         public TwitterTweetForm()
         {
             InitializeComponent();
-            Icon = Resources.Twitter;
+            Icon = ShareXResources.Icon;
             MediaMode = false;
         }
 

@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
-    public partial class WatermarkForm : BaseForm
+    public partial class WatermarkForm : Form
     {
         private WatermarkConfig config;
         private bool IsGuiReady;
@@ -40,6 +40,7 @@ namespace ShareX.ImageEffectsLib
         public WatermarkForm(WatermarkConfig watermarkConfig)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             config = watermarkConfig;
             CodeMenu.Create<ReplCodeMenuEntry>(txtWatermarkText, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
         }

@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ApplicationSettingsForm : BaseForm
+    public partial class ApplicationSettingsForm : Form
     {
         private const int MaxBufferSizePower = 14;
 
@@ -43,6 +43,7 @@ namespace ShareX
         public ApplicationSettingsForm()
         {
             InitializeControls();
+            Icon = ShareXResources.Icon;
         }
 
         private void SettingsForm_Shown(object sender, EventArgs e)

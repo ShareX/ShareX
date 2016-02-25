@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ImageCombinerForm : BaseForm
+    public partial class ImageCombinerForm : Form
     {
         public event Action<Image> ProcessRequested;
 
@@ -43,6 +43,7 @@ namespace ShareX
         {
             Options = options;
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             cbOrientation.Items.AddRange(Enum.GetNames(typeof(Orientation)));
             cbOrientation.SelectedIndex = (int)Options.Orientation;
             nudSpace.Value = Options.Space;

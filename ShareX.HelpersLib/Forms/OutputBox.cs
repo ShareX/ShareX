@@ -28,11 +28,12 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class OutputBox : BaseForm
+    public partial class OutputBox : Form
     {
         public OutputBox(string text, string title)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             Text = "ShareX - " + title;
             txtText.Text = text;
         }

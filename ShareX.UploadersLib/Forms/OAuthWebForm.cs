@@ -29,9 +29,9 @@ using System.Collections.Specialized;
 using System.Web;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.GUI
+namespace ShareX.UploadersLib
 {
-    public partial class OAuthWebForm : BaseForm
+    public partial class OAuthWebForm : Form
     {
         public string AuthorizeURL { get; set; }
         public string CallbackURL { get; set; }
@@ -40,6 +40,7 @@ namespace ShareX.UploadersLib.GUI
         public OAuthWebForm(string authorizeURL, string callbackURL)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             AuthorizeURL = authorizeURL;
             CallbackURL = callbackURL;
             tstbURL.Text = authorizeURL;

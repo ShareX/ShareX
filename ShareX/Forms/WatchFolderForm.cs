@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class WatchFolderForm : BaseForm
+    public partial class WatchFolderForm : Form
     {
         public WatchFolderSettings WatchFolder { get; private set; }
 
@@ -43,6 +43,7 @@ namespace ShareX
         {
             WatchFolder = watchFolder;
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             txtFolderPath.Text = watchFolder.FolderPath ?? "";
             txtFilter.Text = watchFolder.Filter ?? "";
             cbIncludeSubdirectories.Checked = watchFolder.IncludeSubdirectories;

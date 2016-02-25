@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class HotkeySettingsForm : BaseForm
+    public partial class HotkeySettingsForm : Form
     {
         public HotkeySelectionControl Selected { get; private set; }
 
@@ -41,6 +41,7 @@ namespace ShareX
         public HotkeySettingsForm(HotkeyManager hotkeyManager)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             PrepareHotkeys(hotkeyManager);
         }
 

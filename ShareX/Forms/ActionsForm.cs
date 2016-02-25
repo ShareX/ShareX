@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ActionsForm : BaseForm
+    public partial class ActionsForm : Form
     {
         public ExternalProgram FileAction { get; private set; }
 
@@ -42,6 +42,8 @@ namespace ShareX
         public ActionsForm(ExternalProgram fileAction)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+
             FileAction = fileAction;
             txtName.Text = fileAction.Name ?? "";
             txtPath.Text = fileAction.Path ?? "";

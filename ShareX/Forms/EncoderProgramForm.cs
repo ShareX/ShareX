@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class EncoderProgramForm : BaseForm
+    public partial class EncoderProgramForm : Form
     {
         public VideoEncoder encoder { get; private set; }
 
@@ -43,6 +43,7 @@ namespace ShareX
         {
             this.encoder = encoder;
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             txtName.Text = encoder.Name ?? "";
             txtPath.Text = encoder.Path ?? "";
             txtArguments.Text = encoder.Args ?? "";

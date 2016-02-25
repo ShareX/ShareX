@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class PrintTextForm : BaseForm
+    public partial class PrintTextForm : Form
     {
         private PrintHelper printHelper;
         private PrintSettings printSettings;
@@ -38,6 +38,7 @@ namespace ShareX.HelpersLib
         public PrintTextForm(string text, PrintSettings settings)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             printHelper = new PrintHelper(text);
             printHelper.Settings = printSettings = settings;
             LoadSettings();

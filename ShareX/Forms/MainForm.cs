@@ -67,6 +67,7 @@ namespace ShareX
         {
             InitializeComponent();
 
+            Icon = ShareXResources.Icon;
             niTray.Icon = ShareXResources.Icon;
             Text = Program.Title;
 

@@ -143,9 +143,6 @@
     <Compile Include="Extensions\NumberExtensions.cs" />
     <Compile Include="FFmpegDownloader.cs" />
     <Compile Include="FontSafe.cs" />
-    <Compile Include="Forms\BaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\OutputBox.cs">
       <SubType>Form</SubType>
     </Compile>

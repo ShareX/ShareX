@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class ColorPickerForm : BaseForm
+    public partial class ColorPickerForm : Form
     {
         public MyColor NewColor { get; protected set; }
         public MyColor OldColor { get; private set; }
@@ -45,6 +45,8 @@ namespace ShareX.HelpersLib
         public ColorPickerForm(Color currentColor)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+
             SetCurrentColor(currentColor, false);
         }
 
