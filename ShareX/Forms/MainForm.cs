@@ -1637,6 +1637,8 @@ namespace ShareX
 
         private void ExecuteJob(TaskSettings taskSettings, HotkeyType job)
         {
+            DebugHelper.WriteLine("Executing: " + job.GetLocalizedDescription());
+
             TaskSettings safeTaskSettings = TaskSettings.GetSafeTaskSettings(taskSettings);
 
             switch (job)
