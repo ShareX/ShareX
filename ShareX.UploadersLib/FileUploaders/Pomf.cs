@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
-            new PomfUploader("http://catgirlsare.sexy/upload.php"),
+            new PomfUploader("https://catgirlsare.sexy/upload.php"),
             new PomfUploader("http://comfy.moe/upload.php"),
             new PomfUploader("https://cocaine.ninja/upload.php"),
             new PomfUploader("http://cuntflaps.me/upload.php", "http://a.cuntflaps.me"),
