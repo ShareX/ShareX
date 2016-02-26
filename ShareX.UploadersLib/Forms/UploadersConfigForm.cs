@@ -130,8 +130,8 @@ namespace ShareX.UploadersLib
             CodeMenu.Create(txtCopyPath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
             CodeMenu.Create(txtAmazonS3ObjectPrefix, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
             CodeMenu.Create(txtMediaFirePath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
-            CodeMenu.Create(txtCustomUploaderArgValue, ReplCodeMenuEntry.n);
-            CodeMenu.Create(txtCustomUploaderHeaderValue, ReplCodeMenuEntry.n);
+            CodeMenu.Create(txtCustomUploaderArgValue, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create(txtCustomUploaderHeaderValue, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
 
             txtCustomUploaderLog.AddContextMenu();
 
