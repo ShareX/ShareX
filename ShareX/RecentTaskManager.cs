@@ -100,6 +100,15 @@ namespace ShareX
 
                 Add(recentItem);
             }
+
+            if (Program.Settings.RecentTasksSave)
+            {
+                Program.Settings.RecentTasks = Tasks.ToArray();
+            }
+            else
+            {
+                Program.Settings.RecentTasks = null;
+            }
         }
 
         public void Add(RecentTask task)

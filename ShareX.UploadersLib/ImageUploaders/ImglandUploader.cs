@@ -23,9 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+// Credits: https://github.com/jibcore
+
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {

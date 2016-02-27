@@ -348,15 +348,6 @@ namespace ShareX
 
                                 RecentManager.Add(task);
 
-                                if (Program.Settings.RecentTasksSave)
-                                {
-                                    Program.Settings.RecentTasks = RecentManager.Tasks.ToArray();
-                                }
-                                else
-                                {
-                                    Program.Settings.RecentTasks = null;
-                                }
-
                                 if (!info.TaskSettings.AdvancedSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
                                 {
                                     if (info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)

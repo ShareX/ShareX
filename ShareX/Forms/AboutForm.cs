@@ -87,6 +87,8 @@ Up1 support: https://github.com/Upload
 CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://github.com/DanielMcAssey
 Seafile support: https://github.com/zikeji
 Streamable support: https://github.com/streamablevideo
+s-ul support: https://github.com/corin12355
+Imgland support: https://github.com/jibcore
 
 {1}:
 
