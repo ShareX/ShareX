@@ -124,7 +124,7 @@
     <value>Connexion au serveur FTP...</value>
   </data>
   <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Connecter</value>
+    <value>Connexion</value>
   </data>
   <data name="tpConsole.Text" xml:space="preserve">
     <value>Console</value>

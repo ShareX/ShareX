@@ -124,7 +124,7 @@
     <value>Annuler</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>Avant la mise en ligne</value>
+    <value>Destinations</value>
   </data>
   <data name="btnCopy.Text" xml:space="preserve">
     <value>Copier</value>
@@ -133,7 +133,7 @@
     <value>Continuer</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Tâches après la capture</value>
+    <value>ShareX - Après la capture</value>
   </data>
   <data name="lblFileName.Text" xml:space="preserve">
     <value>Nom du fichier:</value>

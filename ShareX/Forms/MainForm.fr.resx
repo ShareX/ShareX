@@ -657,4 +657,7 @@
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>Déboguer</value>
   </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Cacher les colonnes</value>
+  </data>
 </root>

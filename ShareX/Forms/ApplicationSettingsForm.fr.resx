@@ -157,7 +157,7 @@
     <value>Général</value>
   </data>
   <data name="llTranslators.Text" xml:space="preserve">
-    <value>Aidez nous à traduire ShareX dans votre langue!</value>
+    <value>Aidez nous à traduire ShareX dans votre langue !</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Hôte:</value>
@@ -202,10 +202,10 @@
     <value>Configuration du proxy:</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Se souvenir de la position de la fenêtre principale</value>
+    <value>Mémoriser la position de la fenêtre principale</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Se souvenir de la taille de la fenêtre principale</value>
+    <value>Mémoriser la taille de la fenêtre principale</value>
   </data>
   <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
@@ -268,12 +268,63 @@
     <value>Utiliser de préférence le logiciel de mise en ligne secondaire lors de la nouvelle tentative</value>
   </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Support de l'extension pour Chrome...</value>
+    <value>Support de l'extension Chrome...</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>Quand ShareX est ouvert, afficher "Dans une application" sur Steam</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Intégration</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>Modifier le menu des tâches rapides...</value>
+  </data>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>Exporter le journal</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Exporter l'historique</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Exporter les paramètres</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Exporter...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Importer...</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>Exporter / Importer</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>N'enregistrer que si l'URL n'est pas vide</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>Enregistrer les tâches dans l'historique</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>Nombre maximum de tâches à enregistrer:</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>Tâches récentes</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>Enregistrer les tâches récentes</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>Dans le menu de l'icône, afficher les tâches les plus récentes en premières</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>Afficher les tâches récentes dans le menu de l'icône</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>Afficher les tâches récentes dans la fenêtre principale au démarrage</value>
   </data>
 </root>

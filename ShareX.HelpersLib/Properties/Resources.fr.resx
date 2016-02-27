@@ -835,4 +835,16 @@ Voulez-vous la télécharger ?</value>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>Afficher la fenêtre "Avant la mise en ligne"</value>
   </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>Autre</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>Afficher le menu des tâches rapides</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>Afficher la fenêtre de l'historique</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>Afficher le fichier dans l'explorateur</value>
+  </data>
 </root>
