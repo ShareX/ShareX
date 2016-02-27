@@ -505,10 +505,13 @@ namespace ShareX
 
         public static void AddRecentTasksToMainWindow()
         {
-            foreach (RecentTask recentTask in RecentManager.Tasks)
+            if (ListViewControl.Items.Count == 0)
             {
-                WorkerTask task = WorkerTask.CreateHistoryTask(recentTask);
-                Start(task);
+                foreach (RecentTask recentTask in RecentManager.Tasks)
+                {
+                    WorkerTask task = WorkerTask.CreateHistoryTask(recentTask);
+                    Start(task);
+                }
             }
         }
     }

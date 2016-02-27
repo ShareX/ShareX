@@ -53,7 +53,7 @@ namespace ShareX
                         Tasks.Dequeue();
                     }
 
-                    UpdateRecentMenu();
+                    UpdateTrayMenu();
                 }
             }
         }
@@ -65,6 +65,22 @@ namespace ShareX
         public RecentTaskManager()
         {
             Tasks = new Queue<RecentTask>();
+        }
+
+        public void InitItems()
+        {
+            lock (itemsLock)
+            {
+                MaxCount = Program.Settings.RecentTasksMaxCount;
+
+                if (Program.Settings.RecentTasks != null)
+                {
+                    Tasks = new Queue<RecentTask>(Program.Settings.RecentTasks.Take(MaxCount));
+                }
+
+                UpdateTrayMenu();
+                UpdateMainWindowList();
+            }
         }
 
         public void Add(WorkerTask task)
@@ -97,69 +113,63 @@ namespace ShareX
 
                 Tasks.Enqueue(task);
 
-                UpdateRecentMenu();
+                UpdateTrayMenu();
             }
         }
 
-        public void UpdateItems(RecentTask[] tasks)
+        private void UpdateTrayMenu()
         {
-            if (tasks != null)
-            {
-                lock (itemsLock)
-                {
-                    Tasks = new Queue<RecentTask>(tasks.Take(MaxCount));
-
-                    UpdateRecentMenu();
-                }
-            }
-        }
-
-        private void UpdateRecentMenu()
-        {
-            if (!Program.Settings.RecentTasksShowInTrayMenu || Program.MainForm == null || Program.MainForm.tsmiTrayRecentItems == null || Tasks.Count == 0)
-            {
-                return;
-            }
-
             ToolStripMenuItem tsmi = Program.MainForm.tsmiTrayRecentItems;
 
-            if (!tsmi.Visible)
+            if (Program.Settings.RecentTasksSave && Program.Settings.RecentTasksShowInTrayMenu && Tasks.Count > 0)
             {
                 tsmi.Visible = true;
+
+                tsmi.DropDownItems.Clear();
+                ToolStripMenuItem tsmiTip = new ToolStripMenuItem(Resources.RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_);
+                tsmiTip.Enabled = false;
+                tsmi.DropDownItems.Add(tsmiTip);
+                tsmi.DropDownItems.Add(new ToolStripSeparator());
+
+                foreach (RecentTask task in Tasks)
+                {
+                    ToolStripMenuItem tsmiLink = new ToolStripMenuItem();
+                    tsmiLink.Text = task.TrayMenuText;
+                    string link = task.ToString();
+                    tsmiLink.ToolTipText = link;
+                    tsmiLink.MouseUp += (sender, e) =>
+                    {
+                        if (e.Button == MouseButtons.Left)
+                        {
+                            ClipboardHelpers.CopyText(link);
+                        }
+                        else if (e.Button == MouseButtons.Right)
+                        {
+                            URLHelpers.OpenURL(link);
+                        }
+                    };
+
+                    if (Program.Settings.RecentTasksTrayMenuMostRecentFirst)
+                    {
+                        tsmi.DropDownItems.Insert(2, tsmiLink);
+                    }
+                    else
+                    {
+                        tsmi.DropDownItems.Add(tsmiLink);
+                    }
+                }
             }
-
-            tsmi.DropDownItems.Clear();
-            ToolStripMenuItem tsmiTip = new ToolStripMenuItem(Resources.RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_);
-            tsmiTip.Enabled = false;
-            tsmi.DropDownItems.Add(tsmiTip);
-            tsmi.DropDownItems.Add(new ToolStripSeparator());
-
-            foreach (RecentTask task in Tasks)
+            else
             {
-                ToolStripMenuItem tsmiLink = new ToolStripMenuItem();
-                tsmiLink.Text = task.TrayMenuText;
-                string link = task.ToString();
-                tsmiLink.ToolTipText = link;
-                tsmiLink.MouseUp += (sender, e) =>
-                {
-                    if (e.Button == MouseButtons.Left)
-                    {
-                        ClipboardHelpers.CopyText(link);
-                    }
-                    else if (e.Button == MouseButtons.Right)
-                    {
-                        URLHelpers.OpenURL(link);
-                    }
-                };
+                tsmi.Visible = false;
+            }
+        }
 
-                if (Program.Settings.RecentTasksTrayMenuMostRecentFirst)
-                {
-                    tsmi.DropDownItems.Insert(2, tsmiLink);
-                }
-                else
-                {
-                    tsmi.DropDownItems.Add(tsmiLink);
-                }
+        private void UpdateMainWindowList()
+        {
+            if (Program.Settings.RecentTasksSave && Program.Settings.RecentTasksShowInMainWindow && Tasks.Count > 0)
+            {
+                TaskManager.AddRecentTasksToMainWindow();
             }
         }
     }
