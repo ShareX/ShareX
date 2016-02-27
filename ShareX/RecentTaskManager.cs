@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -106,7 +107,7 @@ namespace ShareX
             {
                 lock (itemsLock)
                 {
-                    Tasks = new Queue<RecentTask>(tasks);
+                    Tasks = new Queue<RecentTask>(tasks.Take(MaxCount));
 
                     UpdateRecentMenu();
                 }

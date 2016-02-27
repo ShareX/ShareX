@@ -180,6 +180,7 @@ namespace ShareX
 
             if (Program.Settings.RecentTasksSave)
             {
+                TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
                 TaskManager.RecentManager.UpdateItems(Program.Settings.RecentTasks);
 
                 if (Program.Settings.RecentTasksShowInMainWindow && lvUploads.Items.Count == 0)
