@@ -130,7 +130,7 @@
     <value>Serveurs DNS:</value>
   </data>
   <data name="lblAdapters.Text" xml:space="preserve">
-    <value>Les cartes réseau:</value>
+    <value>Cartes réseau:</value>
   </data>
   <data name="cbAutomatic.Text" xml:space="preserve">
     <value>Obtenir les adresses des serveurs DNS automatiquement</value>

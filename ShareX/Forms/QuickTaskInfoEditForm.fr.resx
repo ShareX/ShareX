@@ -117,43 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbAutoMinimize.Text" xml:space="preserve">
-    <value>Réduire automatiquement dans la barre des tâches</value>
-  </data>
-  <data name="rbCustomRegion.Text" xml:space="preserve">
-    <value>Région personnalisée</value>
-  </data>
-  <data name="rbFullscreen.Text" xml:space="preserve">
-    <value>Plein écran</value>
-  </data>
-  <data name="gbRegion.Text" xml:space="preserve">
-    <value>Région</value>
-  </data>
-  <data name="lblRegion.Text" xml:space="preserve">
-    <value>Région</value>
-  </data>
-  <data name="lblDuration.Text" xml:space="preserve">
-    <value>Temps de répétition:</value>
-  </data>
-  <data name="lblDurationSeconds.Text" xml:space="preserve">
-    <value>secondes</value>
-  </data>
-  <data name="btnRegion.Text" xml:space="preserve">
-    <value>Sélectionner une région</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Capture automatique</value>
+    <value>ShareX - Éditer le menu des tâches rapides</value>
   </data>
-  <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX - Capture automatique</value>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Nom:</value>
   </data>
-  <data name="btnExecute.Text" xml:space="preserve">
-    <value>Démarrer</value>
+  <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
+    <value>Tâches après la capture :</value>
   </data>
-  <data name="ssBar.Text" xml:space="preserve">
-    <value>Statut</value>
-  </data>
-  <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>Attendre que les tâches soient complétées</value>
+  <data name="lblAfterUploadTasks.Text" xml:space="preserve">
+    <value>Tâches après la mise en ligne:</value>
   </data>
 </root>
