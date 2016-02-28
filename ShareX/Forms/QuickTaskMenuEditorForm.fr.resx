@@ -117,43 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cbAutoMinimize.Text" xml:space="preserve">
-    <value>Réduire automatiquement dans la barre des tâches</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Ajouter</value>
   </data>
-  <data name="rbCustomRegion.Text" xml:space="preserve">
-    <value>Région personnalisée</value>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Éditer</value>
   </data>
-  <data name="rbFullscreen.Text" xml:space="preserve">
-    <value>Plein écran</value>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Supprimer</value>
   </data>
-  <data name="gbRegion.Text" xml:space="preserve">
-    <value>Région</value>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Restaurer les paramètres</value>
   </data>
-  <data name="lblRegion.Text" xml:space="preserve">
-    <value>Région</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Fermer</value>
   </data>
-  <data name="lblDuration.Text" xml:space="preserve">
-    <value>Temps de répétition:</value>
-  </data>
-  <data name="lblDurationSeconds.Text" xml:space="preserve">
-    <value>secondes</value>
-  </data>
-  <data name="btnRegion.Text" xml:space="preserve">
-    <value>Sélectionner une région</value>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Astuce: Si vous ajoutez une tâche vide, elle sera convertie en ligne de séparation dans le menu.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Capture automatique</value>
-  </data>
-  <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX - Capture automatique</value>
-  </data>
-  <data name="btnExecute.Text" xml:space="preserve">
-    <value>Démarrer</value>
-  </data>
-  <data name="ssBar.Text" xml:space="preserve">
-    <value>Statut</value>
-  </data>
-  <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>Attendre que les tâches soient complétées</value>
+    <value>ShareX - Éditeur du menu des tâches rapides</value>
   </data>
 </root>

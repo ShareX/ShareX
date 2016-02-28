@@ -658,7 +658,7 @@
     <value>Code de vérification (Obtenir le code de vérification sur la page d'autorisation):</value>
   </data>
   <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>Clé de l'utilisateur:</value>
+    <value>Clé utilisateur:</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Utilisez cette option si vous avez un tampon mis en place avec un nom de domaine personnalisé.
@@ -910,5 +910,29 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
     <value>Ajouter la syntaxe au champ URL</value>
+  </data>
+  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
+    <value>Clé API:</value>
+  </data>
+  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
+    <value>URL direct</value>
+  </data>
+  <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
+    <value>Exemple: http://exemple.com/api/1/upload</value>
+  </data>
+  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
+    <value>Pour obtenir la clé API, visitez https://someimage.com/api</value>
+  </data>
+  <data name="lvlVgymeUserKey.Text" xml:space="preserve">
+    <value>Clé utilisateur:</value>
+  </data>
+  <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
+    <value>Vous pouvez obtenir la clé utilisateur sur la page des détails du compte.</value>
+  </data>
+  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
+    <value>Logiciels de mise en ligne:</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
+    <value>URL de mise en ligne:</value>
   </data>
 </root>
