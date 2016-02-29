@@ -60,9 +60,9 @@ namespace ShareX.ScreenCaptureLib
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
             cbScrollTopMethodBeforeCapture.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollTopMethod>());
             cbScrollTopMethodBeforeCapture.SelectedIndex = (int)Options.ScrollTopMethodBeforeCapture;
-            nudStartDelay.Value = Options.StartDelay;
-            nudScrollDelay.Value = Options.ScrollDelay;
-            nudMaximumScrollCount.Value = Options.MaximumScrollCount;
+            nudStartDelay.SetValue(Options.StartDelay);
+            nudScrollDelay.SetValue(Options.ScrollDelay);
+            nudMaximumScrollCount.SetValue(Options.MaximumScrollCount);
             cbStartSelectionAutomatically.Checked = Options.StartSelectionAutomatically;
             cbStartCaptureAutomatically.Checked = Options.StartCaptureAutomatically;
             cbAutoDetectScrollEnd.Checked = Options.AutoDetectScrollEnd;
@@ -674,10 +674,10 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            nudTrimLeft.Value = result.Left;
-            nudTrimTop.Value = result.Top;
-            nudTrimRight.Value = result.Right;
-            nudTrimBottom.Value = result.Bottom;
+            nudTrimLeft.SetValue(result.Left);
+            nudTrimTop.SetValue(result.Top);
+            nudTrimRight.SetValue(result.Right);
+            nudTrimBottom.SetValue(result.Bottom);
         }
 
         private void chkAutoUpload_CheckedChanged(object sender, EventArgs e)
@@ -782,8 +782,8 @@ namespace ShareX.ScreenCaptureLib
                     vertical = Math.Max(vertical, temp);
                 }
 
-                nudCombineVertical.Value = vertical;
-                nudCombineLastVertical.Value = CalculateVerticalOffset(images[images.Count - 2], images[images.Count - 1]);
+                nudCombineVertical.SetValue(vertical);
+                nudCombineLastVertical.SetValue(CalculateVerticalOffset(images[images.Count - 2], images[images.Count - 1]));
             }
         }
 

@@ -69,7 +69,7 @@ namespace ShareX.HelpersLib
 
         private void LoadSettings()
         {
-            nudMargin.Value = printSettings.Margin;
+            nudMargin.SetValue(printSettings.Margin);
             cbAutoRotate.Checked = printSettings.AutoRotateImage;
             cbAutoScale.Checked = printSettings.AutoScaleImage;
             cbAllowEnlarge.Checked = printSettings.AllowEnlargeImage;

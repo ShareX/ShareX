@@ -291,7 +291,7 @@ KeyPressText ""Loop""";
                 {
                     txtScriptName.Text = scriptInfo.Name;
                     rtbInput.Text = scriptInfo.Script;
-                    nudLineDelay.Value = scriptInfo.LineDelay;
+                    nudLineDelay.SetValue(scriptInfo.LineDelay);
                     Tokenize();
                 }
             }

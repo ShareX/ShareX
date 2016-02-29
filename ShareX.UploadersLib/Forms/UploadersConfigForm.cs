@@ -416,7 +416,7 @@ namespace ShareX.UploadersLib
             // Email
 
             txtEmailSmtpServer.Text = Config.EmailSmtpServer;
-            nudEmailSmtpPort.Value = Config.EmailSmtpPort;
+            nudEmailSmtpPort.SetValue(Config.EmailSmtpPort);
             txtEmailFrom.Text = Config.EmailFrom;
             txtEmailPassword.Text = Config.EmailPassword;
             chkEmailConfirm.Checked = Config.EmailConfirmSend;
@@ -566,7 +566,7 @@ namespace ShareX.UploadersLib
             btnSeafileLibraryPasswordValidate.Enabled = !Config.SeafileIsLibraryEncrypted;
             cbSeafileCreateShareableURL.Checked = Config.SeafileCreateShareableURL;
             cbSeafileIgnoreInvalidCert.Checked = Config.SeafileIgnoreInvalidCert;
-            nudSeafileExpireDays.Value = Config.SeafileShareDaysToExpire;
+            nudSeafileExpireDays.SetValue(Config.SeafileShareDaysToExpire);
             txtSeafileSharePassword.Text = Config.SeafileSharePassword;
             txtSeafileAccInfoEmail.Text = Config.SeafileAccInfoEmail;
             txtSeafileAccInfoUsage.Text = Config.SeafileAccInfoUsage;

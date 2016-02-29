@@ -80,14 +80,14 @@ namespace ShareX.ScreenCaptureLib
             tbUserArgs.Text = Options.FFmpeg.UserArgs;
 
             // x264
-            nudx264CRF.Value = Options.FFmpeg.x264_CRF.Between((int)nudx264CRF.Minimum, (int)nudx264CRF.Maximum);
+            nudx264CRF.SetValue(Options.FFmpeg.x264_CRF);
             cbx264Preset.SelectedIndex = (int)Options.FFmpeg.x264_Preset;
 
             // VPx
-            nudVP8Bitrate.Value = Options.FFmpeg.VPx_bitrate.Between((int)nudVP8Bitrate.Minimum, (int)nudVP8Bitrate.Maximum);
+            nudVP8Bitrate.SetValue(Options.FFmpeg.VPx_bitrate);
 
             // Xvid
-            nudXvidQscale.Value = Options.FFmpeg.XviD_qscale.Between((int)nudXvidQscale.Minimum, (int)nudXvidQscale.Maximum);
+            nudXvidQscale.SetValue(Options.FFmpeg.XviD_qscale);
 
             // GIF
             cbGIFStatsMode.SelectedIndex = (int)Options.FFmpeg.GIFStatsMode;

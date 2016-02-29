@@ -46,7 +46,7 @@ namespace ShareX
             Icon = ShareXResources.Icon;
             cbOrientation.Items.AddRange(Enum.GetNames(typeof(Orientation)));
             cbOrientation.SelectedIndex = (int)Options.Orientation;
-            nudSpace.Value = Options.Space;
+            nudSpace.SetValue(Options.Space);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

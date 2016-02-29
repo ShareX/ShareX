@@ -141,7 +141,7 @@ namespace ShareX.HelpersLib
                 ListViewItem lvi = lvGradientPoints.SelectedItems[0];
                 GradientStop gradientStop = (GradientStop)lvi.Tag;
                 cbtnCurrentColor.Color = gradientStop.Color;
-                nudLocation.Value = (decimal)gradientStop.Location;
+                nudLocation.SetValue((decimal)gradientStop.Location);
             }
         }
 

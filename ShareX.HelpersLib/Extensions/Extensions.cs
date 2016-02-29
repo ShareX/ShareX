@@ -464,5 +464,10 @@ namespace ShareX.HelpersLib
         {
             ((ToolStripDropDownMenu)tsddi.DropDown).ShowImageMargin = false;
         }
+
+        public static void SetValue(this NumericUpDown nud, decimal number)
+        {
+            nud.Value = number.Between(nud.Minimum, nud.Maximum);
+        }
     }
 }

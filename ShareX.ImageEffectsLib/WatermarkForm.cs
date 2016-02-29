@@ -60,7 +60,7 @@ namespace ShareX.ImageEffectsLib
             }
 
             chkWatermarkPosition.SelectedIndex = config.Placement.GetIndex();
-            nudWatermarkOffset.Value = config.Offset;
+            nudWatermarkOffset.SetValue(config.Offset);
             cbWatermarkAutoHide.Checked = config.Text.AutoHide;
 
             txtWatermarkText.Text = config.Text.Text;
@@ -69,7 +69,7 @@ namespace ShareX.ImageEffectsLib
 
             cbWatermarkDrawBackground.Checked = config.Text.DrawBackground;
             btnBorderColor.Color = config.Text.BorderColor;
-            nudWatermarkCornerRadius.Value = config.Text.CornerRadius;
+            nudWatermarkCornerRadius.SetValue(config.Text.CornerRadius);
             btnBackgroundColor.Color = config.Text.BackgroundColor;
             cbWatermarkUseGradient.Checked = config.Text.UseGradient;
             btnBackgroundColor2.Color = config.Text.BackgroundColor2;

@@ -71,7 +71,7 @@ namespace ShareX.HelpersLib
             colorPicker.DrawCrosshair = lblOld.Visible = oldColorExist;
             NewColor = OldColor = currentColor;
             colorPicker.ChangeColor(currentColor);
-            nudAlpha.Value = currentColor.A;
+            nudAlpha.SetValue(currentColor.A);
             DrawPreviewColors();
         }
 
@@ -82,25 +82,25 @@ namespace ShareX.HelpersLib
 
             if (type != ColorType.HSB)
             {
-                nudHue.Value = (decimal)Math.Round(color.HSB.Hue360);
-                nudSaturation.Value = (decimal)Math.Round(color.HSB.Saturation100);
-                nudBrightness.Value = (decimal)Math.Round(color.HSB.Brightness100);
+                nudHue.SetValue((decimal)Math.Round(color.HSB.Hue360));
+                nudSaturation.SetValue((decimal)Math.Round(color.HSB.Saturation100));
+                nudBrightness.SetValue((decimal)Math.Round(color.HSB.Brightness100));
             }
 
             if (type != ColorType.RGBA)
             {
-                nudRed.Value = color.RGBA.Red;
-                nudGreen.Value = color.RGBA.Green;
-                nudBlue.Value = color.RGBA.Blue;
-                nudAlpha.Value = color.RGBA.Alpha;
+                nudRed.SetValue(color.RGBA.Red);
+                nudGreen.SetValue(color.RGBA.Green);
+                nudBlue.SetValue(color.RGBA.Blue);
+                nudAlpha.SetValue(color.RGBA.Alpha);
             }
 
             if (type != ColorType.CMYK)
             {
-                nudCyan.Value = (decimal)color.CMYK.Cyan100;
-                nudMagenta.Value = (decimal)color.CMYK.Magenta100;
-                nudYellow.Value = (decimal)color.CMYK.Yellow100;
-                nudKey.Value = (decimal)color.CMYK.Key100;
+                nudCyan.SetValue((decimal)color.CMYK.Cyan100);
+                nudMagenta.SetValue((decimal)color.CMYK.Magenta100);
+                nudYellow.SetValue((decimal)color.CMYK.Yellow100);
+                nudKey.SetValue((decimal)color.CMYK.Key100);
             }
 
             if (type != ColorType.Hex)

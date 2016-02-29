@@ -171,10 +171,10 @@ namespace ShareX
             // Image - General
             cbImageFormat.Items.AddRange(Enum.GetNames(typeof(EImageFormat)));
             cbImageFormat.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat;
-            nudImageJPEGQuality.Value = TaskSettings.ImageSettings.ImageJPEGQuality;
+            nudImageJPEGQuality.SetValue(TaskSettings.ImageSettings.ImageJPEGQuality);
             cbImageGIFQuality.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<GIFQuality>());
             cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
-            nudUseImageFormat2After.Value = TaskSettings.ImageSettings.ImageSizeLimit;
+            nudUseImageFormat2After.SetValue(TaskSettings.ImageSettings.ImageSizeLimit);
             cbImageFormat2.Items.AddRange(Enum.GetNames(typeof(EImageFormat)));
             cbImageFormat2.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat2;
             cbImageFileExist.Items.Clear();
@@ -186,8 +186,8 @@ namespace ShareX
             cbImageEffectOnlyRegionCapture.Checked = TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture;
 
             // Image - Thumbnail
-            nudThumbnailWidth.Value = TaskSettings.ImageSettings.ThumbnailWidth;
-            nudThumbnailHeight.Value = TaskSettings.ImageSettings.ThumbnailHeight;
+            nudThumbnailWidth.SetValue(TaskSettings.ImageSettings.ThumbnailWidth);
+            nudThumbnailHeight.SetValue(TaskSettings.ImageSettings.ThumbnailHeight);
             txtThumbnailName.Text = TaskSettings.ImageSettings.ThumbnailName;
             lblThumbnailNamePreview.Text = "ImageName" + TaskSettings.ImageSettings.ThumbnailName + ".jpg";
             cbThumbnailIfSmaller.Checked = TaskSettings.ImageSettings.ThumbnailCheckSize;
@@ -197,18 +197,18 @@ namespace ShareX
             cbCaptureTransparent.Checked = TaskSettings.CaptureSettings.CaptureTransparent;
             cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
             cbCaptureShadow.Checked = TaskSettings.CaptureSettings.CaptureShadow;
-            nudCaptureShadowOffset.Value = TaskSettings.CaptureSettings.CaptureShadowOffset;
+            nudCaptureShadowOffset.SetValue(TaskSettings.CaptureSettings.CaptureShadowOffset);
             cbCaptureClientArea.Checked = TaskSettings.CaptureSettings.CaptureClientArea;
             cbScreenshotDelay.Checked = TaskSettings.CaptureSettings.IsDelayScreenshot;
-            nudScreenshotDelay.Value = TaskSettings.CaptureSettings.DelayScreenshot;
+            nudScreenshotDelay.SetValue(TaskSettings.CaptureSettings.DelayScreenshot);
             cbCaptureAutoHideTaskbar.Checked = TaskSettings.CaptureSettings.CaptureAutoHideTaskbar;
             cboCaptureCustomRegionMonitors.Items.Clear();
             cboCaptureCustomRegionMonitors.Items.AddRange(MonitorRegionDefaultCreator.AllMonitorsRegions);
             cboCaptureCustomRegionMonitors.SelectedIndex = 0;
-            nudCaptureCustomRegionX.Value = TaskSettings.CaptureSettings.CaptureCustomRegion.X;
-            nudCaptureCustomRegionY.Value = TaskSettings.CaptureSettings.CaptureCustomRegion.Y;
-            nudCaptureCustomRegionWidth.Value = TaskSettings.CaptureSettings.CaptureCustomRegion.Width;
-            nudCaptureCustomRegionHeight.Value = TaskSettings.CaptureSettings.CaptureCustomRegion.Height;
+            nudCaptureCustomRegionX.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.X);
+            nudCaptureCustomRegionY.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Y);
+            nudCaptureCustomRegionWidth.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Width);
+            nudCaptureCustomRegionHeight.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Height);
 
             // Capture / Region capture
             if (TaskSettings.CaptureSettings.SurfaceOptions == null) TaskSettings.CaptureSettings.SurfaceOptions = new SurfaceOptions();
@@ -219,14 +219,14 @@ namespace ShareX
             pgRectangleAnnotate.SelectedObject = TaskSettings.CaptureSettings.RectangleAnnotateOptions;
 
             // Capture / Screen recorder
-            nudScreenRecordFPS.Value = TaskSettings.CaptureSettings.ScreenRecordFPS.Between((int)nudScreenRecordFPS.Minimum, (int)nudScreenRecordFPS.Maximum);
-            nudGIFFPS.Value = TaskSettings.CaptureSettings.GIFFPS.Between((int)nudGIFFPS.Minimum, (int)nudGIFFPS.Maximum);
+            nudScreenRecordFPS.SetValue(TaskSettings.CaptureSettings.ScreenRecordFPS);
+            nudGIFFPS.SetValue(TaskSettings.CaptureSettings.GIFFPS);
             cbGIFEncoding.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ScreenRecordGIFEncoding>());
             cbGIFEncoding.SelectedIndex = (int)TaskSettings.CaptureSettings.GIFEncoding;
             cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
-            nudScreenRecorderDuration.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordDuration;
+            nudScreenRecorderDuration.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordDuration);
             chkScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
-            nudScreenRecorderStartDelay.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay;
+            nudScreenRecorderStartDelay.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay);
             cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
             chkRunScreencastCLI.Checked = cboEncoder.Enabled = btnEncoderConfig.Enabled = TaskSettings.CaptureSettings.RunScreencastCLI;
             UpdateVideoEncoders();
@@ -788,10 +788,10 @@ namespace ShareX
         private void btnTransmitBoundsFromMonitorToCustomBounds_Click(object sender, EventArgs e)
         {
             MonitorRegion monitorRegionSelected = (MonitorRegion)cboCaptureCustomRegionMonitors.SelectedItem;
-            nudCaptureCustomRegionX.Value = monitorRegionSelected.Bounds.X;
-            nudCaptureCustomRegionY.Value = monitorRegionSelected.Bounds.Y;
-            nudCaptureCustomRegionWidth.Value = monitorRegionSelected.Bounds.Width;
-            nudCaptureCustomRegionHeight.Value = monitorRegionSelected.Bounds.Height;
+            nudCaptureCustomRegionX.SetValue(monitorRegionSelected.Bounds.X);
+            nudCaptureCustomRegionY.SetValue(monitorRegionSelected.Bounds.Y);
+            nudCaptureCustomRegionWidth.SetValue(monitorRegionSelected.Bounds.Width);
+            nudCaptureCustomRegionHeight.SetValue(monitorRegionSelected.Bounds.Height);
         }
 
         private void nudScreenRegionX_ValueChanged(object sender, EventArgs e)

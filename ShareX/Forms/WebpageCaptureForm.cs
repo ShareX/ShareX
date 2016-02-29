@@ -57,11 +57,11 @@ namespace ShareX
 
             Size browserSize = Program.Settings.WebpageCaptureBrowserSize;
             if (browserSize.Width == 0) browserSize.Width = Screen.PrimaryScreen.Bounds.Width;
-            nudWebpageWidth.Value = browserSize.Width.Between((int)nudWebpageWidth.Minimum, (int)nudWebpageWidth.Maximum);
+            nudWebpageWidth.SetValue(browserSize.Width);
             if (browserSize.Height == 0) browserSize.Height = Screen.PrimaryScreen.Bounds.Height;
-            nudWebpageHeight.Value = browserSize.Height.Between((int)nudWebpageHeight.Minimum, (int)nudWebpageHeight.Maximum);
+            nudWebpageHeight.SetValue(browserSize.Height);
 
-            nudCaptureDelay.Value = (decimal)Program.Settings.WebpageCaptureDelay.Between((float)nudCaptureDelay.Minimum, (float)nudCaptureDelay.Maximum);
+            nudCaptureDelay.SetValue((decimal)Program.Settings.WebpageCaptureDelay);
 
             UpdateControls();
         }

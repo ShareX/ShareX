@@ -69,6 +69,13 @@ namespace ShareX.HelpersLib
             return num;
         }
 
+        public static decimal Between(this decimal num, decimal min, decimal max)
+        {
+            if (num <= min) return min;
+            if (num >= max) return max;
+            return num;
+        }
+
         public static bool IsBetween(this int num, int min, int max)
         {
             return num >= min && num <= max;

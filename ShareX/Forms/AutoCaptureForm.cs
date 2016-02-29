@@ -75,7 +75,7 @@ namespace ShareX
 
             customRegion = Program.Settings.AutoCaptureRegion;
             UpdateRegion();
-            nudRepeatTime.Value = Program.Settings.AutoCaptureRepeatTime;
+            nudRepeatTime.SetValue(Program.Settings.AutoCaptureRepeatTime);
             cbAutoMinimize.Checked = Program.Settings.AutoCaptureMinimizeToTray;
             cbWaitUploads.Checked = Program.Settings.AutoCaptureWaitUpload;
 

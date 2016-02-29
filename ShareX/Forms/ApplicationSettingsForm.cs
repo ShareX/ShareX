@@ -127,11 +127,11 @@ namespace ShareX
             txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
             txtProxyPassword.Text = Program.Settings.ProxySettings.Password;
             txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? string.Empty;
-            nudProxyPort.Value = Program.Settings.ProxySettings.Port;
+            nudProxyPort.SetValue(Program.Settings.ProxySettings.Port);
             UpdateProxyControls();
 
             // Upload
-            nudUploadLimit.Value = Program.Settings.UploadLimit;
+            nudUploadLimit.SetValue(Program.Settings.UploadLimit);
 
             cbBufferSize.Items.Clear();
             for (int i = 0; i < MaxBufferSizePower; i++)
@@ -148,7 +148,7 @@ namespace ShareX
                 AddClipboardFormat(cf);
             }
 
-            nudRetryUpload.Value = Program.Settings.MaxUploadFailRetry;
+            nudRetryUpload.SetValue(Program.Settings.MaxUploadFailRetry);
             chkUseSecondaryUploaders.Checked = Program.Settings.UseSecondaryUploaders;
             tlpBackupDestinations.Enabled = Program.Settings.UseSecondaryUploaders;
 
@@ -172,7 +172,7 @@ namespace ShareX
             cbHistoryCheckURL.Checked = Program.Settings.HistoryCheckURL;
 
             cbRecentTasksSave.Checked = Program.Settings.RecentTasksSave;
-            nudRecentTasksMaxCount.Value = Program.Settings.RecentTasksMaxCount;
+            nudRecentTasksMaxCount.SetValue(Program.Settings.RecentTasksMaxCount);
             cbRecentTasksShowInMainWindow.Checked = Program.Settings.RecentTasksShowInMainWindow;
             cbRecentTasksShowInTrayMenu.Checked = Program.Settings.RecentTasksShowInTrayMenu;
             cbRecentTasksTrayMenuMostRecentFirst.Checked = Program.Settings.RecentTasksTrayMenuMostRecentFirst;
@@ -555,7 +555,7 @@ namespace ShareX
             {
                 Program.Settings.ProxySettings.IsValidProxy();
                 txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? string.Empty;
-                nudProxyPort.Value = Program.Settings.ProxySettings.Port;
+                nudProxyPort.SetValue(Program.Settings.ProxySettings.Port);
             }
 
             UpdateProxyControls();
