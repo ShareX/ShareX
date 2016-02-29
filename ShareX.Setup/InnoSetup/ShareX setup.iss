@@ -1,15 +1,16 @@
 #define AppName "ShareX"
 #define AppFilename "ShareX.exe"
-#define AppParentDirectory "..\ShareX\bin\Release"
-#define AppPath AppParentDirectory + "\" + AppFilename
+#define RootDirectory "..\.."
+#define AppParentDirectory RootDirectory + "\ShareX\bin\Release"
+#define AppFilepath AppParentDirectory + "\" + AppFilename
 #dim Version[4]
-#expr ParseVersion(AppPath, Version[0], Version[1], Version[2], Version[3])
+#expr ParseVersion(AppFilepath, Version[0], Version[1], Version[2], Version[3])
 #define AppVersion Str(Version[0]) + "." + Str(Version[1]) + "." + Str(Version[2])
 #define AppPublisher "ShareX Team"
 #define AppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"
 
 [Setup]
-AppCopyright=Copyright (c) 2007-2015 {#AppPublisher}
+AppCopyright=Copyright (c) 2007-2016 {#AppPublisher}
 AppId={#AppId}
 AppMutex={#AppId}
 AppName={#AppName}
@@ -25,7 +26,7 @@ DefaultDirName={pf}\{#AppName}
 DefaultGroupName={#AppName}
 DirExistsWarning=no
 DisableProgramGroupPage=yes
-LicenseFile=..\LICENSE.txt
+LicenseFile={#RootDirectory}\LICENSE.txt
 MinVersion=0,5.01.2600
 OutputBaseFilename={#AppName}-{#AppVersion}-setup
 OutputDir=Output\
@@ -56,10 +57,9 @@ Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupD
 Source: "{#AppParentDirectory}\ShareX.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#AppParentDirectory}\ShareX.exe.config"; DestDir: {app}; Flags: ignoreversion
 Source: "{#AppParentDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
-Source: "..\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
+Source: "{#RootDirectory}\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
 Source: "Output\Recorder-devices-setup.exe"; DestDir: {app}; Flags: ignoreversion
-Source: "..\..\ShareX_Chrome\ShareX_Chrome\bin\Release\ShareX_Chrome.exe"; DestDir: {app}; Flags: ignoreversion
-
+Source: "{#RootDirectory}\..\ShareX_Chrome\ShareX_Chrome\bin\Release\ShareX_Chrome.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#AppParentDirectory}\de\*.resources.dll"; DestDir: {app}\Languages\de; Flags: ignoreversion
 Source: "{#AppParentDirectory}\es\*.resources.dll"; DestDir: {app}\Languages\es; Flags: ignoreversion
 Source: "{#AppParentDirectory}\fr\*.resources.dll"; DestDir: {app}\Languages\fr; Flags: ignoreversion
