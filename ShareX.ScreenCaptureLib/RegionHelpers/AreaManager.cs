@@ -136,7 +136,7 @@ namespace ShareX.ScreenCaptureLib
             RoundedRectangleRadius = 25;
             RoundedRectangleRadiusIncrement = 3;
             TriangleAngle = TriangleAngle.Top;
-            MinimumSize = 10;
+            MinimumSize = 5;
 
             surface.MouseDown += surface_MouseDown;
             surface.MouseUp += surface_MouseUp;
