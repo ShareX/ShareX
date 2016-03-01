@@ -404,35 +404,9 @@
   <data name="&gt;&gt;cbFilenameFilterCase.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <metadata name="ssMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 17</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="ssMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 665</value>
-  </data>
-  <data name="ssMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>920, 22</value>
-  </data>
-  <data name="ssMain.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ssMain.Name" xml:space="preserve">
-    <value>ssMain</value>
-  </data>
-  <data name="&gt;&gt;ssMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ssMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ssMain.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="gbFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="btnRemoveFilters.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 232</value>
@@ -483,10 +457,13 @@
     <value>Image</value>
   </data>
   <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>File</value>
+    <value>Text</value>
   </data>
   <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>Text</value>
+    <value>File</value>
+  </data>
+  <data name="cbTypeFilterSelection.Items3" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="cbTypeFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 172</value>
@@ -564,10 +541,10 @@
     <value>5</value>
   </data>
   <data name="gbFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>592, 360</value>
   </data>
   <data name="gbFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 272</value>
+    <value>384, 272</value>
   </data>
   <data name="gbFilters.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -585,47 +562,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbFilters.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lvHistory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="chIcon.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chIcon.Width" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date and time</value>
+    <value>Date</value>
   </data>
   <data name="chDateTime.Width" type="System.Int32, mscorlib">
-    <value>122</value>
+    <value>115</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Filename</value>
   </data>
   <data name="chFilename.Width" type="System.Int32, mscorlib">
-    <value>172</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="chType.Width" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Host</value>
-  </data>
-  <data name="chHost.Width" type="System.Int32, mscorlib">
-    <value>95</value>
+    <value>170</value>
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
   <comment>@Invariant</comment></data>
   <data name="chURL.Width" type="System.Int32, mscorlib">
-    <value>330</value>
+    <value>250</value>
   </data>
   <data name="lvHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 288</value>
+    <value>8, 8</value>
   </data>
   <data name="lvHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>904, 368</value>
+    <value>576, 624</value>
   </data>
   <data name="lvHistory.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -640,16 +610,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvHistory.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pbThumbnail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Right</value>
   </data>
   <data name="pbThumbnail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 8</value>
+    <value>592, 32</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 272</value>
+    <value>384, 320</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -664,7 +634,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="lblStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="lblStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>589, 10</value>
+  </data>
+  <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
+    <value>lblStatus</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -673,10 +673,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>920, 687</value>
+    <value>984, 641</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>925, 725</value>
+    <value>925, 600</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -684,11 +684,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>History</value>
   </data>
-  <data name="&gt;&gt;tsslStatus.Name" xml:space="preserve">
-    <value>tsslStatus</value>
+  <data name="&gt;&gt;chIcon.Name" xml:space="preserve">
+    <value>chIcon</value>
   </data>
-  <data name="&gt;&gt;tsslStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chDateTime.Name" xml:space="preserve">
     <value>chDateTime</value>
@@ -700,18 +700,6 @@
     <value>chFilename</value>
   </data>
   <data name="&gt;&gt;chFilename.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chType.Name" xml:space="preserve">
-    <value>chType</value>
-  </data>
-  <data name="&gt;&gt;chType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chHost.Name" xml:space="preserve">
-    <value>chHost</value>
-  </data>
-  <data name="&gt;&gt;chHost.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chURL.Name" xml:space="preserve">

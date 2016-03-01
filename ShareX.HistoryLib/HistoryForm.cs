@@ -49,6 +49,14 @@ namespace ShareX.HistoryLib
             Icon = ShareXResources.Icon;
             Text = "ShareX - " + string.Format(Resources.HistoryForm_HistoryForm_History_, historyPath);
 
+            ImageList il = new ImageList();
+            il.ColorDepth = ColorDepth.Depth32Bit;
+            il.Images.Add(Resources.image);
+            il.Images.Add(Resources.notebook);
+            il.Images.Add(Resources.application_block);
+            il.Images.Add(Resources.globe);
+            lvHistory.SmallImageList = il;
+
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;
 
@@ -196,10 +204,27 @@ namespace ShareX.HistoryLib
             for (int i = 0; i < historyItems.Length; i++)
             {
                 HistoryItem hi = historyItems[i];
-                ListViewItem lvi = listViewItems[i] = new ListViewItem(hi.DateTime.ToString());
+                ListViewItem lvi = listViewItems[i] = new ListViewItem();
+
+                if (hi.Type.Equals("Image", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    lvi.ImageIndex = 0;
+                }
+                else if (hi.Type.Equals("Text", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    lvi.ImageIndex = 1;
+                }
+                else if (hi.Type.Equals("File", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    lvi.ImageIndex = 2;
+                }
+                else
+                {
+                    lvi.ImageIndex = 3;
+                }
+
+                lvi.SubItems.Add(hi.DateTime.ToString());
                 lvi.SubItems.Add(hi.Filename);
-                lvi.SubItems.Add(hi.Type);
-                lvi.SubItems.Add(hi.Host);
                 lvi.SubItems.Add(hi.URL);
                 lvi.Tag = hi;
             }
@@ -213,11 +238,11 @@ namespace ShareX.HistoryLib
         {
             StringBuilder status = new StringBuilder();
 
-            status.AppendFormat(Resources.HistoryForm_UpdateItemCount_Total___0_, allHistoryItems.Length);
+            status.AppendFormat(Resources.HistoryForm_UpdateItemCount_Total___0_, allHistoryItems.Length.ToString("N0"));
 
             if (allHistoryItems.Length > historyItems.Length)
             {
-                status.AppendFormat(", " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length);
+                status.AppendFormat(" - " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length.ToString("N0"));
             }
 
             var types = from hi in historyItems
@@ -225,14 +250,14 @@ namespace ShareX.HistoryLib
                         into t
                         let count = t.Count()
                         orderby t.Key
-                        select string.Format(", {0}: {1}", t.Key, count);
+                        select string.Format(" - {0}: {1:N0}", t.Key, count);
 
             foreach (string type in types)
             {
                 status.Append(type);
             }
 
-            tsslStatus.Text = status.ToString();
+            lblStatus.Text = status.ToString();
         }
 
         private void UpdateControls()

@@ -41,8 +41,6 @@
             this.cbFilenameFilterCulture = new System.Windows.Forms.ComboBox();
             this.cbFilenameFilter = new System.Windows.Forms.CheckBox();
             this.cbFilenameFilterCase = new System.Windows.Forms.CheckBox();
-            this.ssMain = new System.Windows.Forms.StatusStrip();
-            this.tsslStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbFilters = new System.Windows.Forms.GroupBox();
             this.btnRemoveFilters = new System.Windows.Forms.Button();
             this.txtHostFilter = new System.Windows.Forms.TextBox();
@@ -50,13 +48,12 @@
             this.cbHostFilter = new System.Windows.Forms.CheckBox();
             this.cbTypeFilter = new System.Windows.Forms.CheckBox();
             this.lvHistory = new ShareX.HelpersLib.MyListView();
+            this.chIcon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chHost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
-            this.ssMain.SuspendLayout();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.gbFilters.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,20 +131,9 @@
             this.cbFilenameFilterCase.Name = "cbFilenameFilterCase";
             this.cbFilenameFilterCase.UseVisualStyleBackColor = true;
             // 
-            // ssMain
-            // 
-            this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsslStatus});
-            resources.ApplyResources(this.ssMain, "ssMain");
-            this.ssMain.Name = "ssMain";
-            // 
-            // tsslStatus
-            // 
-            this.tsslStatus.Name = "tsslStatus";
-            resources.ApplyResources(this.tsslStatus, "tsslStatus");
-            // 
             // gbFilters
             // 
+            resources.ApplyResources(this.gbFilters, "gbFilters");
             this.gbFilters.Controls.Add(this.btnRemoveFilters);
             this.gbFilters.Controls.Add(this.btnApplyFilters);
             this.gbFilters.Controls.Add(this.txtHostFilter);
@@ -164,7 +150,6 @@
             this.gbFilters.Controls.Add(this.cbFilenameFilterCulture);
             this.gbFilters.Controls.Add(this.txtFilenameFilter);
             this.gbFilters.Controls.Add(this.cbFilenameFilterMethod);
-            resources.ApplyResources(this.gbFilters, "gbFilters");
             this.gbFilters.Name = "gbFilters";
             this.gbFilters.TabStop = false;
             // 
@@ -187,7 +172,8 @@
             this.cbTypeFilterSelection.Items.AddRange(new object[] {
             resources.GetString("cbTypeFilterSelection.Items"),
             resources.GetString("cbTypeFilterSelection.Items1"),
-            resources.GetString("cbTypeFilterSelection.Items2")});
+            resources.GetString("cbTypeFilterSelection.Items2"),
+            resources.GetString("cbTypeFilterSelection.Items3")});
             resources.ApplyResources(this.cbTypeFilterSelection, "cbTypeFilterSelection");
             this.cbTypeFilterSelection.Name = "cbTypeFilterSelection";
             // 
@@ -207,11 +193,11 @@
             // 
             this.lvHistory.AllowColumnSort = true;
             resources.ApplyResources(this.lvHistory, "lvHistory");
+            this.lvHistory.AutoFillColumn = true;
             this.lvHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chIcon,
             this.chDateTime,
             this.chFilename,
-            this.chType,
-            this.chHost,
             this.chURL});
             this.lvHistory.FullRowSelect = true;
             this.lvHistory.HideSelection = false;
@@ -223,6 +209,10 @@
             this.lvHistory.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvHistory_MouseDoubleClick);
             this.lvHistory.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvHistory_MouseUp);
             // 
+            // chIcon
+            // 
+            resources.ApplyResources(this.chIcon, "chIcon");
+            // 
             // chDateTime
             // 
             resources.ApplyResources(this.chDateTime, "chDateTime");
@@ -230,14 +220,6 @@
             // chFilename
             // 
             resources.ApplyResources(this.chFilename, "chFilename");
-            // 
-            // chType
-            // 
-            resources.ApplyResources(this.chType, "chType");
-            // 
-            // chHost
-            // 
-            resources.ApplyResources(this.chHost, "chHost");
             // 
             // chURL
             // 
@@ -252,21 +234,24 @@
             this.pbThumbnail.FullscreenOnClick = true;
             this.pbThumbnail.Name = "pbThumbnail";
             // 
+            // lblStatus
+            // 
+            resources.ApplyResources(this.lblStatus, "lblStatus");
+            this.lblStatus.Name = "lblStatus";
+            // 
             // HistoryForm
             // 
             this.AcceptButton = this.btnApplyFilters;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lvHistory);
             this.Controls.Add(this.pbThumbnail);
             this.Controls.Add(this.gbFilters);
-            this.Controls.Add(this.ssMain);
             this.KeyPreview = true;
             this.Name = "HistoryForm";
             this.Shown += new System.EventHandler(this.HistoryForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HistoryForm_KeyDown);
-            this.ssMain.ResumeLayout(false);
-            this.ssMain.PerformLayout();
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
             this.ResumeLayout(false);
@@ -279,8 +264,6 @@
         private ShareX.HelpersLib.MyListView lvHistory;
         private System.Windows.Forms.ColumnHeader chFilename;
         private System.Windows.Forms.ColumnHeader chDateTime;
-        private System.Windows.Forms.ColumnHeader chType;
-        private System.Windows.Forms.ColumnHeader chHost;
         private System.Windows.Forms.ColumnHeader chURL;
         private System.Windows.Forms.DateTimePicker dtpFilterFrom;
         private System.Windows.Forms.CheckBox cbDateFilter;
@@ -294,13 +277,13 @@
         private System.Windows.Forms.CheckBox cbFilenameFilter;
         private System.Windows.Forms.CheckBox cbFilenameFilterCase;
         private ShareX.HelpersLib.MyPictureBox pbThumbnail;
-        private System.Windows.Forms.StatusStrip ssMain;
-        private System.Windows.Forms.ToolStripStatusLabel tsslStatus;
         private System.Windows.Forms.GroupBox gbFilters;
         private System.Windows.Forms.Button btnRemoveFilters;
         private System.Windows.Forms.ComboBox cbTypeFilterSelection;
         private System.Windows.Forms.CheckBox cbHostFilter;
         private System.Windows.Forms.CheckBox cbTypeFilter;
         private System.Windows.Forms.TextBox txtHostFilter;
+        private System.Windows.Forms.ColumnHeader chIcon;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
