@@ -132,9 +132,6 @@
   <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
     <value>History: {0}</value>
   </data>
-  <data name="HistoryForm_HistoryForm_Current_culture___0__" xml:space="preserve">
-    <value>Current culture ({0})</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Open</value>
   </data>

@@ -141,9 +141,6 @@
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Filtrado: {0}</value>
   </data>
-  <data name="HistoryForm_HistoryForm_Current_culture___0__" xml:space="preserve">
-    <value>Cultura actual ({0})</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>Nombre del archivo con extensión</value>
   </data>

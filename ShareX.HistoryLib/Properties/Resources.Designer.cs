@@ -81,15 +81,6 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Current culture ({0}).
-        /// </summary>
-        internal static string HistoryForm_HistoryForm_Current_culture___0__ {
-            get {
-                return ResourceManager.GetString("HistoryForm_HistoryForm_Current_culture___0__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to History: {0}.
         /// </summary>
         internal static string HistoryForm_HistoryForm_History_ {

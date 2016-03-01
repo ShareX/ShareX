@@ -216,7 +216,4 @@
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Thông tin thêm</value>
   </data>
-  <data name="HistoryForm_HistoryForm_Current_culture___0__" xml:space="preserve">
-    <value>Ngôn ngữ hiện tại ({0})</value>
-  </data>
 </root>

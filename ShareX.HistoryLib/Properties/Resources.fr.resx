@@ -126,9 +126,6 @@
   <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
     <value>Copier la valeur</value>
   </data>
-  <data name="HistoryForm_HistoryForm_Current_culture___0__" xml:space="preserve">
-    <value>Culture actuelle ({0})</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>URL de suppression </value>
   </data>

@@ -67,9 +67,7 @@ namespace ShareX.HistoryLib
 
             pbThumbnail.Reset();
             cbFilenameFilterMethod.SelectedIndex = 0; // Contains
-            cbFilenameFilterCulture.SelectedIndex = 1; // Invariant culture
             cbTypeFilterSelection.SelectedIndex = 0; // Image
-            cbFilenameFilterCulture.Items[0] = string.Format(Resources.HistoryForm_HistoryForm_Current_culture___0__, CultureInfo.CurrentCulture.Parent.EnglishName);
             lvHistory.FillLastColumn();
 
             if (splitterDistance > 0)
@@ -149,7 +147,7 @@ namespace ShareX.HistoryLib
 
                 if (!string.IsNullOrEmpty(filenameFilter))
                 {
-                    StringComparison rule = GetStringRule();
+                    StringComparison rule = StringComparison.CurrentCultureIgnoreCase;
 
                     if (cbFilenameFilterMethod.SelectedIndex == 0) // Contains
                     {
@@ -181,23 +179,6 @@ namespace ShareX.HistoryLib
             }
 
             return result.ToArray();
-        }
-
-        private StringComparison GetStringRule()
-        {
-            bool caseSensitive = cbFilenameFilterCase.Checked;
-
-            switch (cbFilenameFilterCulture.SelectedIndex)
-            {
-                case 0:
-                    return caseSensitive ? StringComparison.CurrentCulture : StringComparison.CurrentCultureIgnoreCase;
-                case 1:
-                    return caseSensitive ? StringComparison.InvariantCulture : StringComparison.InvariantCultureIgnoreCase;
-                case 3:
-                    return caseSensitive ? StringComparison.CurrentCulture : StringComparison.CurrentCultureIgnoreCase;
-            }
-
-            return StringComparison.InvariantCultureIgnoreCase;
         }
 
         private void AddHistoryItems(HistoryItem[] historyItems)
