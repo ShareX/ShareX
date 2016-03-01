@@ -1,3 +1,4 @@
+﻿
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -131,18 +132,6 @@
   <data name="cbFilenameFilter.Text" xml:space="preserve">
     <value>Dateinamenfilter:</value>
   </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Case Sensitivität</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Aktuelle Kultur</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Invariantkultur (Englisch)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Ordnungszahl (Englisch)</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Beinhaltet</value>
   </data>
@@ -176,12 +165,6 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>Dateiname</value>
   </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Host</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Typ</value>
-  </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Filter</value>
   </data>
@@ -190,8 +173,5 @@
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>An:</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Status</value>
   </data>
 </root>

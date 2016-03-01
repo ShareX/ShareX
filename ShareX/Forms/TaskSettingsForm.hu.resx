@@ -183,9 +183,6 @@
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Név szabvány használata a fájl feltöltésekhez is, a jelenlegi fájlnév helyett</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>Feladat infó mentése az előzményekbe</value>
-  </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Csak a régió képlopásokhoz alkalmazzon effekteket</value>
   </data>

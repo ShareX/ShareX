@@ -183,9 +183,6 @@
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>使用以上的文件名格式设置上传, 而不使用实际文件名上传.</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>保存任务信息到历史记录</value>
-  </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>只适用于区域截图</value>
   </data>

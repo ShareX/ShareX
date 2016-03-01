@@ -126,15 +126,6 @@
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Quitar filtros</value>
   </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Caso sensible</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Cultura actual</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Ordinal (Inglés)</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Contiene</value>
   </data>
@@ -156,12 +147,6 @@
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Fecha y hora</value>
   </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Host</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Tipo</value>
-  </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nombre del archivo</value>
   </data>
@@ -173,9 +158,6 @@
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Para:</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Estado</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtro de fecha:</value>
@@ -191,8 +173,5 @@
   </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>Desde:</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Cultural invariable (Inglés)</value>
   </data>
 </root>

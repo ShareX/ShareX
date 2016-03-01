@@ -186,9 +186,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Проиграть звук после выполнения задачи</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>Сохранить информацию о задаче в истории</value>
-  </data>
   <data name="lblAfterTaskNotification.Text" xml:space="preserve">
     <value>После завершения задачи показать:</value>
   </data>

@@ -132,18 +132,6 @@
   <data name="cbFilenameFilter.Text" xml:space="preserve">
     <value>Bestandsnaam filter:</value>
   </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Huidige cultuur</value>
-  </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Hoofdlettergevoelig</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Invariante cultuur (Engels)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Rangtelwoord (Engels)</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Bevat</value>
   </data>
@@ -177,12 +165,6 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>Bestandsnaam</value>
   </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Host</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Type</value>
-  </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Filters</value>
   </data>
@@ -191,8 +173,5 @@
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Tot:</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Status</value>
   </data>
 </root>

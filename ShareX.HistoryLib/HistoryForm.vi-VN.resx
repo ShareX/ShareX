@@ -117,14 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Trạng thái:</value>
-  </data>
   <data name="btnApplyFilters.Text" xml:space="preserve">
     <value>Áp dụng bộ lọc</value>
-  </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Phân biệt chữ hoa/thường</value>
   </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Chứa</value>
@@ -137,9 +131,6 @@
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Tới:</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Kiểu</value>
   </data>
   <data name="cbTypeFilterSelection.Items" xml:space="preserve">
     <value>Ảnh</value>
@@ -177,22 +168,10 @@
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>Lọc loại tệp:</value>
   </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Host</value>
-  </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Lọc Host:</value>
   </data>
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Xóa bộ lọc</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Ngôn ngữ hiện tại</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Số thứ tự (Tiếng Anh)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Invariant culture (English)</value>
   </data>
 </root>

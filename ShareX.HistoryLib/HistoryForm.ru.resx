@@ -168,31 +168,10 @@
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Снять фильтры</value>
   </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Регистр</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Текущий язык</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Постоянный язык (English)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Порядковый (English)</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Дата и время</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Имя файла</value>
-  </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Хост</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Тип</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Состояние</value>
   </data>
 </root>

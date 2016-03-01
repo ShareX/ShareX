@@ -357,9 +357,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>다른 시간대 사용:</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>작업 정보를 히스토리에 저장</value>
-  </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>영역 촬영시에만 효과 적용하기</value>
   </data>

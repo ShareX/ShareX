@@ -126,7 +126,7 @@
     <value>16, 210</value>
   </data>
   <data name="btnApplyFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 24</value>
+    <value>144, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnApplyFilters.TabIndex" type="System.Int32, mscorlib">
@@ -152,6 +152,30 @@
   </data>
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="chIcon.Text" xml:space="preserve">
+    <value />
+  <comment>@Invariant</comment></data>
+  <data name="chIcon.Width" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="chDateTime.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="chDateTime.Width" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="chFilename.Width" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  <comment>@Invariant</comment></data>
+  <data name="chURL.Width" type="System.Int32, mscorlib">
+    <value>230</value>
   </data>
   <data name="lvHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -199,7 +223,7 @@
     <value>8, 8</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 368</value>
+    <value>410, 368</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -223,10 +247,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnRemoveFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 210</value>
+    <value>168, 210</value>
   </data>
   <data name="btnRemoveFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 24</value>
+    <value>144, 24</value>
   </data>
   <data name="btnRemoveFilters.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -250,7 +274,7 @@
     <value>168, 177</value>
   </data>
   <data name="txtHostFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
+    <value>144, 20</value>
   </data>
   <data name="txtHostFilter.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -278,12 +302,12 @@
   </data>
   <data name="cbTypeFilterSelection.Items3" xml:space="preserve">
     <value>URL</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="cbTypeFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 150</value>
   </data>
   <data name="cbTypeFilterSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 21</value>
+    <value>144, 21</value>
   </data>
   <data name="cbTypeFilterSelection.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -364,7 +388,7 @@
     <value>88, 46</value>
   </data>
   <data name="dtpFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 20</value>
+    <value>224, 20</value>
   </data>
   <data name="dtpFilterFrom.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -505,7 +529,7 @@
     <value>88, 70</value>
   </data>
   <data name="dtpFilterTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 20</value>
+    <value>224, 20</value>
   </data>
   <data name="dtpFilterTo.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -523,10 +547,10 @@
     <value>11</value>
   </data>
   <data name="txtFilenameFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 119</value>
+    <value>16, 121</value>
   </data>
   <data name="txtFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 20</value>
+    <value>296, 20</value>
   </data>
   <data name="txtFilenameFilter.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -556,10 +580,10 @@
     <value>Exact match</value>
   </data>
   <data name="cbFilenameFilterMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 119</value>
+    <value>168, 96</value>
   </data>
   <data name="cbFilenameFilterMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 21</value>
+    <value>144, 21</value>
   </data>
   <data name="cbFilenameFilterMethod.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -580,7 +604,7 @@
     <value>8, 384</value>
   </data>
   <data name="gbFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 248</value>
+    <value>328, 248</value>
   </data>
   <data name="gbFilters.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -638,30 +662,6 @@
   </data>
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chIcon.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="chIcon.Width" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="chDateTime.Width" type="System.Int32, mscorlib">
-    <value>115</value>
-  </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Filename</value>
-  </data>
-  <data name="chFilename.Width" type="System.Int32, mscorlib">
-    <value>170</value>
-  </data>
-  <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
-  <comment>@Invariant</comment></data>
-  <data name="chURL.Width" type="System.Int32, mscorlib">
-    <value>230</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

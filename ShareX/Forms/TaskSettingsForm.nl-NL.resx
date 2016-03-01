@@ -186,9 +186,6 @@
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Gebruik een patroon voor geüploade bestanden in plaats van de originele bestandsnaam</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>Sla taak info op in geschiedenis</value>
-  </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Effecten alleen toepassen op vastgelegde regio</value>
   </data>

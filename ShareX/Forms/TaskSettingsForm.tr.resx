@@ -168,9 +168,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Görev bittikten sonra ses çal</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>Görev bilgisini geçmişe kaydet</value>
-  </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Yakalama yapıldıktan sonra ses çal</value>
   </data>

@@ -156,9 +156,6 @@
   <data name="btnWatchFolderRemove.Text" xml:space="preserve">
     <value>Remover...</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>Salvar informações da tarefa no histórico</value>
-  </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
     <value>Substituir conta FTP padrão:</value>
   </data>

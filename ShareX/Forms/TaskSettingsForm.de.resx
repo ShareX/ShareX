@@ -183,9 +183,6 @@
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Benutze Namensmuster für das Hochladen von Dateien anstatt vom eigentlichen Dateinamen</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>Speichere Aufgabeninfo zur Chronik</value>
-  </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Benutze Effekte nur für Regionsaufnahme</value>
   </data>

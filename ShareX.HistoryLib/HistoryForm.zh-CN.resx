@@ -132,18 +132,6 @@
   <data name="cbFilenameFilter.Text" xml:space="preserve">
     <value>文件名过滤器:</value>
   </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>区分大小写</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>当前语言</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>默认语言（英文）</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>顺序（英文）</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>包含</value>
   </data>
@@ -177,12 +165,6 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>文件名</value>
   </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>域名</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>类型</value>
-  </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>过滤器</value>
   </data>
@@ -191,8 +173,5 @@
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>到:</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>状态</value>
   </data>
 </root>

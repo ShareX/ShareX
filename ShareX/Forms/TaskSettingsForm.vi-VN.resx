@@ -393,9 +393,6 @@
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Bật nhạc sau khi chụp ảnh được thực hiện</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>Lưu thông tin tác vụ vào lịch sử</value>
-  </data>
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Độ trễ chụp</value>
   </data>

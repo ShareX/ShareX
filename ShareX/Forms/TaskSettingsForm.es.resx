@@ -180,9 +180,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Usar zona horaria personalizada:</value>
   </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
-    <value>Guardar información tarea en la historial</value>
-  </data>
   <data name="chWatchFolderFilter.Text" xml:space="preserve">
     <value>Filtrar</value>
   </data>

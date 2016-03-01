@@ -835,4 +835,16 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>"Yükleme öncesi" penceresini göster</value>
   </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>Geçmiş penceresini aç</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>Dosyayı klasörde göster</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>Hızlı görev menüsünü göster</value>
+  </data>
 </root>

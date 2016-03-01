@@ -126,9 +126,6 @@
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>필터 해제</value>
   </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>상태</value>
-  </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>시작:</value>
   </data>
@@ -146,9 +143,6 @@
   </data>
   <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
     <value>...으로 끝남</value>
-  </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>대소문자 구별</value>
   </data>
   <data name="cbFilenameFilter.Text" xml:space="preserve">
     <value>파일 이름 필터:</value>
@@ -179,20 +173,5 @@
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>파일 이름</value>
-  </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>호스트</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>종류</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>현재 문화권</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>고정 문화권 (영어)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>서수 (영어)</value>
   </data>
 </root>

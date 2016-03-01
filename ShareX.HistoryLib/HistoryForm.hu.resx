@@ -132,18 +132,6 @@
   <data name="cbFilenameFilter.Text" xml:space="preserve">
     <value>Fájlnév szűrő:</value>
   </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Kis/nagybetű érzékeny</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Jelenlegi kultúra</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Konstants kultúra (angol)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Sorrendi (angol)</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Tartalmaz</value>
   </data>
@@ -177,12 +165,6 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>Fájlnév</value>
   </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Hoszt</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Típus</value>
-  </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Szűrők</value>
   </data>
@@ -191,8 +173,5 @@
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Eddig:</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Állapot</value>
   </data>
 </root>
