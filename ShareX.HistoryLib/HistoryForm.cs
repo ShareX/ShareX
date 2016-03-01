@@ -36,6 +36,8 @@ namespace ShareX.HistoryLib
 {
     public partial class HistoryForm : Form
     {
+        public event Action<int> SplitterDistanceChanged;
+
         public string HistoryPath { get; private set; }
         public int MaxItemCount { get; set; }
 
@@ -43,7 +45,7 @@ namespace ShareX.HistoryLib
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
 
-        public HistoryForm(string historyPath, int maxItemCount = -1)
+        public HistoryForm(string historyPath, int splitterDistance = 0, int maxItemCount = -1)
         {
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;
@@ -69,6 +71,11 @@ namespace ShareX.HistoryLib
             cbTypeFilterSelection.SelectedIndex = 0; // Image
             cbFilenameFilterCulture.Items[0] = string.Format(Resources.HistoryForm_HistoryForm_Current_culture___0__, CultureInfo.CurrentCulture.Parent.EnglishName);
             lvHistory.FillLastColumn();
+
+            if (splitterDistance > 0)
+            {
+                scMain.SplitterDistance = splitterDistance;
+            }
         }
 
         private void RefreshHistoryItems()
@@ -298,12 +305,26 @@ namespace ShareX.HistoryLib
             }
         }
 
+        protected void OnSplitterDistanceChanged(int splitterDistance)
+        {
+            if (SplitterDistanceChanged != null)
+            {
+                SplitterDistanceChanged(splitterDistance);
+            }
+        }
+
         #region Form events
 
         private void HistoryForm_Shown(object sender, EventArgs e)
         {
             Refresh();
             RefreshHistoryItems();
+
+            if (lvHistory.Items.Count > 0)
+            {
+                lvHistory.Items[0].Selected = true;
+            }
+
             this.ShowActivate();
         }
 
@@ -321,6 +342,11 @@ namespace ShareX.HistoryLib
                     e.Handled = true;
                     break;
             }
+        }
+
+        private void scMain_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+            OnSplitterDistanceChanged(scMain.SplitterDistance);
         }
 
         private void btnApplyFilters_Click(object sender, EventArgs e)

@@ -83,6 +83,7 @@
             this.scMain.Panel2.Controls.Add(this.pbThumbnail);
             this.scMain.Panel2.Controls.Add(this.gbFilters);
             this.scMain.SplitterColor = System.Drawing.Color.DarkGray;
+            this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
             // 
             // lvHistory
             // 

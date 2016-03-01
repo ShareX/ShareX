@@ -479,7 +479,8 @@ namespace ShareX
 
         public static void OpenHistory()
         {
-            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath);
+            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistorySplitterDistance);
+            historyForm.SplitterDistanceChanged += splitterDistance => Program.Settings.HistorySplitterDistance = splitterDistance;
             Program.Settings.HistoryWindowState.AutoHandleFormState(historyForm);
             historyForm.Show();
         }
