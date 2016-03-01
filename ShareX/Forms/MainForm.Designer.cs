@@ -248,7 +248,6 @@
             // 
             resources.ApplyResources(this.scMain, "scMain");
             this.scMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.scMain.ForeColor = System.Drawing.Color.DarkGray;
             this.scMain.Name = "scMain";
             // 
             // scMain.Panel1
@@ -260,6 +259,7 @@
             // scMain.Panel2
             // 
             this.scMain.Panel2.Controls.Add(this.pbPreview);
+            this.scMain.SplitterColor = System.Drawing.Color.DarkGray;
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
             // 
             // lblMainFormTip

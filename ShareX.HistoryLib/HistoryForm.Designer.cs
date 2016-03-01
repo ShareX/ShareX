@@ -30,58 +30,36 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
-            this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
-            this.cbDateFilter = new System.Windows.Forms.CheckBox();
-            this.lblFilterFrom = new System.Windows.Forms.Label();
-            this.lblFilterTo = new System.Windows.Forms.Label();
-            this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.btnApplyFilters = new System.Windows.Forms.Button();
-            this.txtFilenameFilter = new System.Windows.Forms.TextBox();
-            this.cbFilenameFilterMethod = new System.Windows.Forms.ComboBox();
-            this.cbFilenameFilterCulture = new System.Windows.Forms.ComboBox();
-            this.cbFilenameFilter = new System.Windows.Forms.CheckBox();
-            this.cbFilenameFilterCase = new System.Windows.Forms.CheckBox();
-            this.gbFilters = new System.Windows.Forms.GroupBox();
-            this.btnRemoveFilters = new System.Windows.Forms.Button();
-            this.txtHostFilter = new System.Windows.Forms.TextBox();
-            this.cbTypeFilterSelection = new System.Windows.Forms.ComboBox();
-            this.cbHostFilter = new System.Windows.Forms.CheckBox();
-            this.cbTypeFilter = new System.Windows.Forms.CheckBox();
+            this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.lvHistory = new ShareX.HelpersLib.MyListView();
             this.chIcon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.gbFilters = new System.Windows.Forms.GroupBox();
+            this.btnRemoveFilters = new System.Windows.Forms.Button();
+            this.txtHostFilter = new System.Windows.Forms.TextBox();
+            this.cbTypeFilterSelection = new System.Windows.Forms.ComboBox();
+            this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
+            this.cbDateFilter = new System.Windows.Forms.CheckBox();
+            this.lblFilterFrom = new System.Windows.Forms.Label();
+            this.lblFilterTo = new System.Windows.Forms.Label();
+            this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
+            this.txtFilenameFilter = new System.Windows.Forms.TextBox();
+            this.cbFilenameFilterMethod = new System.Windows.Forms.ComboBox();
+            this.cbFilenameFilterCulture = new System.Windows.Forms.ComboBox();
+            this.cbFilenameFilter = new System.Windows.Forms.CheckBox();
+            this.cbFilenameFilterCase = new System.Windows.Forms.CheckBox();
+            this.cbHostFilter = new System.Windows.Forms.CheckBox();
+            this.cbTypeFilter = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
+            this.scMain.Panel1.SuspendLayout();
+            this.scMain.Panel2.SuspendLayout();
+            this.scMain.SuspendLayout();
             this.gbFilters.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dtpFilterFrom
-            // 
-            resources.ApplyResources(this.dtpFilterFrom, "dtpFilterFrom");
-            this.dtpFilterFrom.Name = "dtpFilterFrom";
-            // 
-            // cbDateFilter
-            // 
-            resources.ApplyResources(this.cbDateFilter, "cbDateFilter");
-            this.cbDateFilter.Name = "cbDateFilter";
-            this.cbDateFilter.UseVisualStyleBackColor = true;
-            // 
-            // lblFilterFrom
-            // 
-            resources.ApplyResources(this.lblFilterFrom, "lblFilterFrom");
-            this.lblFilterFrom.Name = "lblFilterFrom";
-            // 
-            // lblFilterTo
-            // 
-            resources.ApplyResources(this.lblFilterTo, "lblFilterTo");
-            this.lblFilterTo.Name = "lblFilterTo";
-            // 
-            // dtpFilterTo
-            // 
-            resources.ApplyResources(this.dtpFilterTo, "dtpFilterTo");
-            this.dtpFilterTo.Name = "dtpFilterTo";
             // 
             // btnApplyFilters
             // 
@@ -90,46 +68,67 @@
             this.btnApplyFilters.UseVisualStyleBackColor = true;
             this.btnApplyFilters.Click += new System.EventHandler(this.btnApplyFilters_Click);
             // 
-            // txtFilenameFilter
+            // scMain
             // 
-            resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
-            this.txtFilenameFilter.Name = "txtFilenameFilter";
-            this.txtFilenameFilter.TextChanged += new System.EventHandler(this.txtFilenameFilter_TextChanged);
+            resources.ApplyResources(this.scMain, "scMain");
+            this.scMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.scMain.Name = "scMain";
             // 
-            // cbFilenameFilterMethod
+            // scMain.Panel1
             // 
-            this.cbFilenameFilterMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFilenameFilterMethod.FormattingEnabled = true;
-            this.cbFilenameFilterMethod.Items.AddRange(new object[] {
-            resources.GetString("cbFilenameFilterMethod.Items"),
-            resources.GetString("cbFilenameFilterMethod.Items1"),
-            resources.GetString("cbFilenameFilterMethod.Items2"),
-            resources.GetString("cbFilenameFilterMethod.Items3")});
-            resources.ApplyResources(this.cbFilenameFilterMethod, "cbFilenameFilterMethod");
-            this.cbFilenameFilterMethod.Name = "cbFilenameFilterMethod";
+            this.scMain.Panel1.Controls.Add(this.lvHistory);
             // 
-            // cbFilenameFilterCulture
+            // scMain.Panel2
             // 
-            this.cbFilenameFilterCulture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFilenameFilterCulture.FormattingEnabled = true;
-            this.cbFilenameFilterCulture.Items.AddRange(new object[] {
-            resources.GetString("cbFilenameFilterCulture.Items"),
-            resources.GetString("cbFilenameFilterCulture.Items1"),
-            resources.GetString("cbFilenameFilterCulture.Items2")});
-            resources.ApplyResources(this.cbFilenameFilterCulture, "cbFilenameFilterCulture");
-            this.cbFilenameFilterCulture.Name = "cbFilenameFilterCulture";
+            this.scMain.Panel2.Controls.Add(this.pbThumbnail);
+            this.scMain.Panel2.Controls.Add(this.gbFilters);
+            this.scMain.SplitterColor = System.Drawing.Color.DarkGray;
             // 
-            // cbFilenameFilter
+            // lvHistory
             // 
-            resources.ApplyResources(this.cbFilenameFilter, "cbFilenameFilter");
-            this.cbFilenameFilter.Name = "cbFilenameFilter";
-            this.cbFilenameFilter.UseVisualStyleBackColor = true;
+            this.lvHistory.AllowColumnSort = true;
+            this.lvHistory.AutoFillColumn = true;
+            this.lvHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chIcon,
+            this.chDateTime,
+            this.chFilename,
+            this.chURL});
+            resources.ApplyResources(this.lvHistory, "lvHistory");
+            this.lvHistory.FullRowSelect = true;
+            this.lvHistory.HideSelection = false;
+            this.lvHistory.Name = "lvHistory";
+            this.lvHistory.UseCompatibleStateImageBehavior = false;
+            this.lvHistory.View = System.Windows.Forms.View.Details;
+            this.lvHistory.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvHistory_ItemSelectionChanged);
+            this.lvHistory.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvHistory_KeyDown);
+            this.lvHistory.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvHistory_MouseDoubleClick);
+            this.lvHistory.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvHistory_MouseUp);
             // 
-            // cbFilenameFilterCase
+            // chIcon
             // 
-            resources.ApplyResources(this.cbFilenameFilterCase, "cbFilenameFilterCase");
-            this.cbFilenameFilterCase.Name = "cbFilenameFilterCase";
-            this.cbFilenameFilterCase.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.chIcon, "chIcon");
+            // 
+            // chDateTime
+            // 
+            resources.ApplyResources(this.chDateTime, "chDateTime");
+            // 
+            // chFilename
+            // 
+            resources.ApplyResources(this.chFilename, "chFilename");
+            // 
+            // chURL
+            // 
+            resources.ApplyResources(this.chURL, "chURL");
+            // 
+            // pbThumbnail
+            // 
+            resources.ApplyResources(this.pbThumbnail, "pbThumbnail");
+            this.pbThumbnail.BackColor = System.Drawing.Color.White;
+            this.pbThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbThumbnail.DrawCheckeredBackground = true;
+            this.pbThumbnail.FullscreenOnClick = true;
+            this.pbThumbnail.Name = "pbThumbnail";
             // 
             // gbFilters
             // 
@@ -177,6 +176,73 @@
             resources.ApplyResources(this.cbTypeFilterSelection, "cbTypeFilterSelection");
             this.cbTypeFilterSelection.Name = "cbTypeFilterSelection";
             // 
+            // dtpFilterFrom
+            // 
+            resources.ApplyResources(this.dtpFilterFrom, "dtpFilterFrom");
+            this.dtpFilterFrom.Name = "dtpFilterFrom";
+            // 
+            // cbDateFilter
+            // 
+            resources.ApplyResources(this.cbDateFilter, "cbDateFilter");
+            this.cbDateFilter.Name = "cbDateFilter";
+            this.cbDateFilter.UseVisualStyleBackColor = true;
+            // 
+            // lblFilterFrom
+            // 
+            resources.ApplyResources(this.lblFilterFrom, "lblFilterFrom");
+            this.lblFilterFrom.Name = "lblFilterFrom";
+            // 
+            // lblFilterTo
+            // 
+            resources.ApplyResources(this.lblFilterTo, "lblFilterTo");
+            this.lblFilterTo.Name = "lblFilterTo";
+            // 
+            // dtpFilterTo
+            // 
+            resources.ApplyResources(this.dtpFilterTo, "dtpFilterTo");
+            this.dtpFilterTo.Name = "dtpFilterTo";
+            // 
+            // txtFilenameFilter
+            // 
+            resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
+            this.txtFilenameFilter.Name = "txtFilenameFilter";
+            this.txtFilenameFilter.TextChanged += new System.EventHandler(this.txtFilenameFilter_TextChanged);
+            // 
+            // cbFilenameFilterMethod
+            // 
+            this.cbFilenameFilterMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilenameFilterMethod.FormattingEnabled = true;
+            this.cbFilenameFilterMethod.Items.AddRange(new object[] {
+            resources.GetString("cbFilenameFilterMethod.Items"),
+            resources.GetString("cbFilenameFilterMethod.Items1"),
+            resources.GetString("cbFilenameFilterMethod.Items2"),
+            resources.GetString("cbFilenameFilterMethod.Items3")});
+            resources.ApplyResources(this.cbFilenameFilterMethod, "cbFilenameFilterMethod");
+            this.cbFilenameFilterMethod.Name = "cbFilenameFilterMethod";
+            // 
+            // cbFilenameFilterCulture
+            // 
+            this.cbFilenameFilterCulture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilenameFilterCulture.FormattingEnabled = true;
+            this.cbFilenameFilterCulture.Items.AddRange(new object[] {
+            resources.GetString("cbFilenameFilterCulture.Items"),
+            resources.GetString("cbFilenameFilterCulture.Items1"),
+            resources.GetString("cbFilenameFilterCulture.Items2")});
+            resources.ApplyResources(this.cbFilenameFilterCulture, "cbFilenameFilterCulture");
+            this.cbFilenameFilterCulture.Name = "cbFilenameFilterCulture";
+            // 
+            // cbFilenameFilter
+            // 
+            resources.ApplyResources(this.cbFilenameFilter, "cbFilenameFilter");
+            this.cbFilenameFilter.Name = "cbFilenameFilter";
+            this.cbFilenameFilter.UseVisualStyleBackColor = true;
+            // 
+            // cbFilenameFilterCase
+            // 
+            resources.ApplyResources(this.cbFilenameFilterCase, "cbFilenameFilterCase");
+            this.cbFilenameFilterCase.Name = "cbFilenameFilterCase";
+            this.cbFilenameFilterCase.UseVisualStyleBackColor = true;
+            // 
             // cbHostFilter
             // 
             resources.ApplyResources(this.cbHostFilter, "cbHostFilter");
@@ -189,73 +255,24 @@
             this.cbTypeFilter.Name = "cbTypeFilter";
             this.cbTypeFilter.UseVisualStyleBackColor = true;
             // 
-            // lvHistory
-            // 
-            this.lvHistory.AllowColumnSort = true;
-            resources.ApplyResources(this.lvHistory, "lvHistory");
-            this.lvHistory.AutoFillColumn = true;
-            this.lvHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chIcon,
-            this.chDateTime,
-            this.chFilename,
-            this.chURL});
-            this.lvHistory.FullRowSelect = true;
-            this.lvHistory.HideSelection = false;
-            this.lvHistory.Name = "lvHistory";
-            this.lvHistory.UseCompatibleStateImageBehavior = false;
-            this.lvHistory.View = System.Windows.Forms.View.Details;
-            this.lvHistory.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvHistory_ItemSelectionChanged);
-            this.lvHistory.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvHistory_KeyDown);
-            this.lvHistory.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvHistory_MouseDoubleClick);
-            this.lvHistory.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvHistory_MouseUp);
-            // 
-            // chIcon
-            // 
-            resources.ApplyResources(this.chIcon, "chIcon");
-            // 
-            // chDateTime
-            // 
-            resources.ApplyResources(this.chDateTime, "chDateTime");
-            // 
-            // chFilename
-            // 
-            resources.ApplyResources(this.chFilename, "chFilename");
-            // 
-            // chURL
-            // 
-            resources.ApplyResources(this.chURL, "chURL");
-            // 
-            // pbThumbnail
-            // 
-            resources.ApplyResources(this.pbThumbnail, "pbThumbnail");
-            this.pbThumbnail.BackColor = System.Drawing.Color.White;
-            this.pbThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbThumbnail.DrawCheckeredBackground = true;
-            this.pbThumbnail.FullscreenOnClick = true;
-            this.pbThumbnail.Name = "pbThumbnail";
-            // 
-            // lblStatus
-            // 
-            resources.ApplyResources(this.lblStatus, "lblStatus");
-            this.lblStatus.Name = "lblStatus";
-            // 
             // HistoryForm
             // 
             this.AcceptButton = this.btnApplyFilters;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.lvHistory);
-            this.Controls.Add(this.pbThumbnail);
-            this.Controls.Add(this.gbFilters);
+            this.Controls.Add(this.scMain);
             this.KeyPreview = true;
             this.Name = "HistoryForm";
             this.Shown += new System.EventHandler(this.HistoryForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HistoryForm_KeyDown);
+            this.Resize += new System.EventHandler(this.HistoryForm_Resize);
+            this.scMain.Panel1.ResumeLayout(false);
+            this.scMain.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
+            this.scMain.ResumeLayout(false);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -284,6 +301,6 @@
         private System.Windows.Forms.CheckBox cbTypeFilter;
         private System.Windows.Forms.TextBox txtHostFilter;
         private System.Windows.Forms.ColumnHeader chIcon;
-        private System.Windows.Forms.Label lblStatus;
+        private ShareX.HelpersLib.SplitContainerCustomSplitter scMain;
     }
 }
