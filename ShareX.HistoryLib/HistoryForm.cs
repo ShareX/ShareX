@@ -123,12 +123,26 @@ namespace ShareX.HistoryLib
 
             if (cbTypeFilter.Checked)
             {
-                string type = cbTypeFilterSelection.Text;
+                string type;
 
-                if (!string.IsNullOrEmpty(type))
+                switch (cbTypeFilterSelection.SelectedIndex)
                 {
-                    result = result.Where(x => !string.IsNullOrEmpty(x.Type) && x.Type == type);
+                    case 0:
+                        type = "Image";
+                        break;
+                    case 1:
+                        type = "Text";
+                        break;
+                    case 2:
+                        type = "File";
+                        break;
+                    default:
+                    case 3:
+                        type = "URL";
+                        break;
                 }
+
+                result = result.Where(x => !string.IsNullOrEmpty(x.Type) && x.Type.Equals(type, StringComparison.InvariantCultureIgnoreCase));
             }
 
             if (cbHostFilter.Checked)
@@ -147,23 +161,23 @@ namespace ShareX.HistoryLib
 
                 if (!string.IsNullOrEmpty(filenameFilter))
                 {
-                    StringComparison rule = StringComparison.CurrentCultureIgnoreCase;
+                    StringComparison filenameRule = StringComparison.CurrentCultureIgnoreCase;
 
-                    if (cbFilenameFilterMethod.SelectedIndex == 0) // Contains
+                    switch (cbFilenameFilterMethod.SelectedIndex)
                     {
-                        result = result.Where(x => x.Filename.Contains(filenameFilter, rule));
-                    }
-                    else if (cbFilenameFilterMethod.SelectedIndex == 1) // Starts with
-                    {
-                        result = result.Where(x => x.Filename.StartsWith(filenameFilter, rule));
-                    }
-                    else if (cbFilenameFilterMethod.SelectedIndex == 2) // Ends with
-                    {
-                        result = result.Where(x => x.Filename.EndsWith(filenameFilter, rule));
-                    }
-                    else if (cbFilenameFilterMethod.SelectedIndex == 3) // Exact match
-                    {
-                        result = result.Where(x => x.Filename.Equals(filenameFilter, rule));
+                        default:
+                        case 0: // Contains
+                            result = result.Where(x => x.Filename.Contains(filenameFilter, filenameRule));
+                            break;
+                        case 1: // Starts with
+                            result = result.Where(x => x.Filename.StartsWith(filenameFilter, filenameRule));
+                            break;
+                        case 2: // Ends with
+                            result = result.Where(x => x.Filename.EndsWith(filenameFilter, filenameRule));
+                            break;
+                        case 3: // Exact match
+                            result = result.Where(x => x.Filename.Equals(filenameFilter, filenameRule));
+                            break;
                     }
                 }
             }
@@ -173,9 +187,7 @@ namespace ShareX.HistoryLib
                 DateTime fromDate = dtpFilterFrom.Value.Date;
                 DateTime toDate = dtpFilterTo.Value.Date;
 
-                result = from hi in result
-                         where hi.DateTime.Date >= fromDate && hi.DateTime.Date <= toDate
-                         select hi;
+                result = result.Where(x => x.DateTime.Date >= fromDate && x.DateTime.Date <= toDate);
             }
 
             return result.ToArray();
