@@ -119,6 +119,11 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] ApplyFilters(HistoryItem[] historyItems)
         {
+            if (!cbTypeFilter.Checked && !cbHostFilter.Checked && !cbFilenameFilter.Checked && !cbDateFilter.Checked)
+            {
+                return historyItems;
+            }
+
             IEnumerable<HistoryItem> result = historyItems.AsEnumerable();
 
             if (cbTypeFilter.Checked)
