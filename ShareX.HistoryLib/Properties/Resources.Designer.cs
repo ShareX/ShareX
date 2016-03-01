@@ -81,15 +81,6 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to History: {0}.
-        /// </summary>
-        internal static string HistoryForm_HistoryForm_History_ {
-            get {
-                return ResourceManager.GetString("HistoryForm_HistoryForm_History_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Filtered: {0}.
         /// </summary>
         internal static string HistoryForm_UpdateItemCount___Filtered___0_ {

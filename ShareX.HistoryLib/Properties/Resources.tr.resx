@@ -120,9 +120,6 @@
   <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
     <value>Göster</value>
   </data>
-  <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
-    <value>Geçmiş: {0}</value>
-  </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Filtrelenmiş: {0}</value>
   </data>

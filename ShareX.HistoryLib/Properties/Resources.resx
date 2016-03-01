@@ -129,9 +129,6 @@
   <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
     <value>Copy value</value>
   </data>
-  <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
-    <value>History: {0}</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Open</value>
   </data>

@@ -156,9 +156,6 @@
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
     <value>Image liée pour forum (BBCode)</value>
   </data>
-  <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
-    <value>Historique: {0}</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>Image HTML</value>
   </data>

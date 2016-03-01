@@ -166,15 +166,6 @@
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Filtreleri kaldır</value>
   </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>Resim</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>Dosya</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>Yazı</value>
-  </data>
   <data name="cbHostFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 17</value>
   </data>

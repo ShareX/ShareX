@@ -145,7 +145,7 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;btnApplyFilters.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="scMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -199,7 +199,7 @@
     <value>8, 8</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 368</value>
+    <value>412, 368</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -218,6 +218,27 @@
   </data>
   <data name="gbFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
+  </data>
+  <data name="cbHostFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 176</value>
+  </data>
+  <data name="cbHostFilterSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 21</value>
+  </data>
+  <data name="cbHostFilterSelection.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.Name" xml:space="preserve">
+    <value>cbHostFilterSelection</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnRemoveFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -244,41 +265,8 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;btnRemoveFilters.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <data name="txtHostFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 177</value>
-  </data>
-  <data name="txtHostFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 20</value>
-  </data>
-  <data name="txtHostFilter.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;txtHostFilter.Name" xml:space="preserve">
-    <value>txtHostFilter</value>
-  </data>
-  <data name="&gt;&gt;txtHostFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtHostFilter.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;txtHostFilter.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>Image</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>Text</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items3" xml:space="preserve">
-    <value>URL</value>
-  <comment>@Invariant</comment></data>
   <data name="cbTypeFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 150</value>
   </data>
@@ -580,7 +568,7 @@
     <value>8, 384</value>
   </data>
   <data name="gbFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 250</value>
+    <value>412, 250</value>
   </data>
   <data name="gbFilters.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

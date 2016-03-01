@@ -150,15 +150,6 @@
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>Bestandstype filter:</value>
   </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>Afbeelding</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>Bestand</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>Tekst</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Datum &amp; tijd</value>
   </data>

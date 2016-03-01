@@ -150,15 +150,6 @@
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>文件类型过滤器:</value>
   </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>图像</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>文件</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>文本</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>日期时间</value>
   </data>

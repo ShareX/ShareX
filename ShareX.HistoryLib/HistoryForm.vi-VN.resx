@@ -132,12 +132,6 @@
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Tới:</value>
   </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>Ảnh</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>Tệp</value>
-  </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Tên tệp</value>
   </data>
@@ -152,9 +146,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Lịch sử</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>Văn bản</value>
   </data>
   <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
     <value>Kết thúc với</value>

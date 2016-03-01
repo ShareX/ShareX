@@ -67,7 +67,6 @@ namespace ShareX.HistoryLib
 
             pbThumbnail.Reset();
             cbFilenameFilterMethod.SelectedIndex = 0; // Contains
-            cbTypeFilterSelection.SelectedIndex = 0; // Image
             lvHistory.FillLastColumn();
 
             if (splitterDistance > 0)
@@ -128,31 +127,17 @@ namespace ShareX.HistoryLib
 
             if (cbTypeFilter.Checked)
             {
-                string type;
+                string type = cbTypeFilterSelection.Text;
 
-                switch (cbTypeFilterSelection.SelectedIndex)
+                if (!string.IsNullOrEmpty(type))
                 {
-                    case 0:
-                        type = "Image";
-                        break;
-                    case 1:
-                        type = "Text";
-                        break;
-                    case 2:
-                        type = "File";
-                        break;
-                    default:
-                    case 3:
-                        type = "URL";
-                        break;
+                    result = result.Where(x => !string.IsNullOrEmpty(x.Type) && x.Type.Equals(type, StringComparison.InvariantCultureIgnoreCase));
                 }
-
-                result = result.Where(x => !string.IsNullOrEmpty(x.Type) && x.Type.Equals(type, StringComparison.InvariantCultureIgnoreCase));
             }
 
             if (cbHostFilter.Checked)
             {
-                string host = txtHostFilter.Text;
+                string host = cbHostFilterSelection.Text;
 
                 if (!string.IsNullOrEmpty(host))
                 {
@@ -241,13 +226,14 @@ namespace ShareX.HistoryLib
 
         private void UpdateTitle(HistoryItem[] historyItems = null)
         {
-            string title = "ShareX - " + string.Format(Resources.HistoryForm_HistoryForm_History_, HistoryPath);
+            // TODO: Translate
+            string title = "ShareX - History";
 
             if (historyItems != null)
             {
                 StringBuilder status = new StringBuilder();
 
-                status.Append(" - ");
+                status.Append(" (");
                 status.AppendFormat(Resources.HistoryForm_UpdateItemCount_Total___0_, allHistoryItems.Length.ToString("N0"));
 
                 if (allHistoryItems.Length > historyItems.Length)
@@ -259,7 +245,6 @@ namespace ShareX.HistoryLib
                             group hi by hi.Type
                             into t
                             let count = t.Count()
-                            orderby t.Key
                             select string.Format(" - {0}: {1:N0}", t.Key, count);
 
                 foreach (string type in types)
@@ -267,6 +252,7 @@ namespace ShareX.HistoryLib
                     status.Append(type);
                 }
 
+                status.Append(")");
                 title += status.ToString();
             }
 
@@ -316,11 +302,23 @@ namespace ShareX.HistoryLib
         private void HistoryForm_Shown(object sender, EventArgs e)
         {
             Refresh();
+
             RefreshHistoryItems();
 
             if (lvHistory.Items.Count > 0)
             {
                 lvHistory.Items[0].Selected = true;
+
+                cbTypeFilterSelection.Items.Clear();
+                cbTypeFilterSelection.Items.AddRange(allHistoryItems.Select(x => x.Type).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray());
+
+                if (cbTypeFilterSelection.Items.Count > 0)
+                {
+                    cbTypeFilterSelection.SelectedIndex = 0;
+                }
+
+                cbHostFilterSelection.Items.Clear();
+                cbHostFilterSelection.Items.AddRange(allHistoryItems.Select(x => x.Host).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray());
             }
 
             this.ShowActivate();

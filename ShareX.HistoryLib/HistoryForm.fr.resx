@@ -135,9 +135,6 @@
   <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
     <value>Correspondance exacte</value>
   </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>Fichier</value>
-  </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>Filtre du type de fichier:</value>
   </data>
@@ -159,9 +156,6 @@
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Filtre d'hôte:</value>
   </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>Image</value>
-  </data>
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Supprimer les filtres</value>
   </data>
@@ -170,8 +164,5 @@
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>À:</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>Texte</value>
   </data>
 </root>

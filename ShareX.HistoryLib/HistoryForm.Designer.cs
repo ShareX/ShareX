@@ -40,7 +40,6 @@
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.gbFilters = new System.Windows.Forms.GroupBox();
             this.btnRemoveFilters = new System.Windows.Forms.Button();
-            this.txtHostFilter = new System.Windows.Forms.TextBox();
             this.cbTypeFilterSelection = new System.Windows.Forms.ComboBox();
             this.cbHostFilter = new System.Windows.Forms.CheckBox();
             this.cbTypeFilter = new System.Windows.Forms.CheckBox();
@@ -52,6 +51,7 @@
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
             this.cbFilenameFilterMethod = new System.Windows.Forms.ComboBox();
+            this.cbHostFilterSelection = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -132,9 +132,9 @@
             // gbFilters
             // 
             resources.ApplyResources(this.gbFilters, "gbFilters");
+            this.gbFilters.Controls.Add(this.cbHostFilterSelection);
             this.gbFilters.Controls.Add(this.btnRemoveFilters);
             this.gbFilters.Controls.Add(this.btnApplyFilters);
-            this.gbFilters.Controls.Add(this.txtHostFilter);
             this.gbFilters.Controls.Add(this.cbTypeFilterSelection);
             this.gbFilters.Controls.Add(this.cbHostFilter);
             this.gbFilters.Controls.Add(this.cbTypeFilter);
@@ -156,20 +156,10 @@
             this.btnRemoveFilters.UseVisualStyleBackColor = true;
             this.btnRemoveFilters.Click += new System.EventHandler(this.btnRemoveFilters_Click);
             // 
-            // txtHostFilter
-            // 
-            resources.ApplyResources(this.txtHostFilter, "txtHostFilter");
-            this.txtHostFilter.Name = "txtHostFilter";
-            // 
             // cbTypeFilterSelection
             // 
             this.cbTypeFilterSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTypeFilterSelection.FormattingEnabled = true;
-            this.cbTypeFilterSelection.Items.AddRange(new object[] {
-            resources.GetString("cbTypeFilterSelection.Items"),
-            resources.GetString("cbTypeFilterSelection.Items1"),
-            resources.GetString("cbTypeFilterSelection.Items2"),
-            resources.GetString("cbTypeFilterSelection.Items3")});
             resources.ApplyResources(this.cbTypeFilterSelection, "cbTypeFilterSelection");
             this.cbTypeFilterSelection.Name = "cbTypeFilterSelection";
             // 
@@ -235,6 +225,12 @@
             resources.ApplyResources(this.cbFilenameFilterMethod, "cbFilenameFilterMethod");
             this.cbFilenameFilterMethod.Name = "cbFilenameFilterMethod";
             // 
+            // cbHostFilterSelection
+            // 
+            this.cbHostFilterSelection.FormattingEnabled = true;
+            resources.ApplyResources(this.cbHostFilterSelection, "cbHostFilterSelection");
+            this.cbHostFilterSelection.Name = "cbHostFilterSelection";
+            // 
             // HistoryForm
             // 
             this.AcceptButton = this.btnApplyFilters;
@@ -277,8 +273,8 @@
         private System.Windows.Forms.ComboBox cbTypeFilterSelection;
         private System.Windows.Forms.CheckBox cbHostFilter;
         private System.Windows.Forms.CheckBox cbTypeFilter;
-        private System.Windows.Forms.TextBox txtHostFilter;
         private System.Windows.Forms.ColumnHeader chIcon;
         private ShareX.HelpersLib.SplitContainerCustomSplitter scMain;
+        private System.Windows.Forms.ComboBox cbHostFilterSelection;
     }
 }
