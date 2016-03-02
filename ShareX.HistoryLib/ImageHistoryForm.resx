@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Name" xml:space="preserve">
+    <value>tscMain.BottomToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ilvImages.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -136,25 +148,13 @@
     <value>ilvImages</value>
   </data>
   <data name="&gt;&gt;ilvImages.Type" xml:space="preserve">
-    <value>Manina.Windows.Forms.ImageListView, ImageListView, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Manina.Windows.Forms.ImageListView, ImageListView, Version=11.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ilvImages.Parent" xml:space="preserve">
     <value>tscMain.ContentPanel</value>
   </data>
   <data name="&gt;&gt;ilvImages.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Name" xml:space="preserve">
-    <value>tscMain.BottomToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Parent" xml:space="preserve">
-    <value>tscMain</value>
-  </data>
-  <data name="&gt;&gt;tscMain.BottomToolStripPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="tscMain.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>804, 587</value>
@@ -238,31 +238,31 @@
     <value>View mode</value>
   </data>
   <data name="tsmiThumbnailSize75.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiThumbnailSize75.Text" xml:space="preserve">
     <value>75 x 75</value>
   <comment>@Invariant</comment></data>
   <data name="tsmiThumbnailSize100.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiThumbnailSize100.Text" xml:space="preserve">
     <value>100 x 100</value>
   <comment>@Invariant</comment></data>
   <data name="tsmiThumbnailSize150.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiThumbnailSize150.Text" xml:space="preserve">
     <value>150 x 150</value>
   <comment>@Invariant</comment></data>
   <data name="tsmiThumbnailSize200.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiThumbnailSize200.Text" xml:space="preserve">
     <value>200 x 200</value>
   <comment>@Invariant</comment></data>
   <data name="tsmiThumbnailSize250.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiThumbnailSize250.Text" xml:space="preserve">
     <value>250 x 250</value>
@@ -274,7 +274,7 @@
     <value>Thumbnail size</value>
   </data>
   <data name="tsbQuickList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 20</value>
+    <value>150, 20</value>
   </data>
   <data name="tsbQuickList.Text" xml:space="preserve">
     <value>Only show last 100 images</value>
@@ -286,7 +286,7 @@
     <value>3, 1, 3, 1</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 25</value>
+    <value>347, 25</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

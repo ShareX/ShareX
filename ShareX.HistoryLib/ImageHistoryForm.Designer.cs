@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistoryForm));
-            this.ilvImages = new Manina.Windows.Forms.ImageListView();
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
+            this.ilvImages = new Manina.Windows.Forms.ImageListView();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.tsddbViewMode = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiViewModeThumbnails = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +49,20 @@
             this.tsMain.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tscMain
+            // 
+            // 
+            // tscMain.ContentPanel
+            // 
+            this.tscMain.ContentPanel.Controls.Add(this.ilvImages);
+            resources.ApplyResources(this.tscMain.ContentPanel, "tscMain.ContentPanel");
+            resources.ApplyResources(this.tscMain, "tscMain");
+            this.tscMain.Name = "tscMain";
+            // 
+            // tscMain.TopToolStripPanel
+            // 
+            this.tscMain.TopToolStripPanel.Controls.Add(this.tsMain);
+            // 
             // ilvImages
             // 
             this.ilvImages.AllowDuplicateFileNames = true;
@@ -65,20 +79,6 @@
             this.ilvImages.SelectionChanged += new System.EventHandler(this.ilvImages_SelectionChanged);
             this.ilvImages.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ilvImages_KeyDown);
             this.ilvImages.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ilvImages_MouseUp);
-            // 
-            // tscMain
-            // 
-            // 
-            // tscMain.ContentPanel
-            // 
-            this.tscMain.ContentPanel.Controls.Add(this.ilvImages);
-            resources.ApplyResources(this.tscMain.ContentPanel, "tscMain.ContentPanel");
-            resources.ApplyResources(this.tscMain, "tscMain");
-            this.tscMain.Name = "tscMain";
-            // 
-            // tscMain.TopToolStripPanel
-            // 
-            this.tscMain.TopToolStripPanel.Controls.Add(this.tsMain);
             // 
             // tsMain
             // 
@@ -127,6 +127,7 @@
             this.tsmiThumbnailSize150,
             this.tsmiThumbnailSize200,
             this.tsmiThumbnailSize250});
+            this.tsddbThumbnailSize.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
             this.tsddbThumbnailSize.Name = "tsddbThumbnailSize";
             resources.ApplyResources(this.tsddbThumbnailSize, "tsddbThumbnailSize");
             // 
@@ -164,6 +165,7 @@
             // 
             this.tsbQuickList.CheckOnClick = true;
             this.tsbQuickList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbQuickList.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
             this.tsbQuickList.Name = "tsbQuickList";
             resources.ApplyResources(this.tsbQuickList, "tsbQuickList");
             this.tsbQuickList.Click += new System.EventHandler(this.tsbQuickList_Click);

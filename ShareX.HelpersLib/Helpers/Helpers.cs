@@ -62,6 +62,9 @@ namespace ShareX.HelpersLib
         public const string URLPathCharacters = URLCharacters + "/"; // 47
         public const string ValidURLCharacters = URLPathCharacters + ":?#[]@!$&'()*+,;= ";
 
+        public static readonly string[] ImageFileExtensions = new string[] { "jpg", "jpeg", "png", "gif", "bmp", "ico", "tif", "tiff" };
+        public static readonly string[] TextFileExtensions = new string[] { "txt", "log", "nfo", "c", "cpp", "cc", "cxx", "h", "hpp", "hxx", "cs", "vb", "html", "htm", "xhtml", "xht", "xml", "css", "js", "php", "bat", "java", "lua", "py", "pl", "cfg", "ini" };
+
         public static readonly Version OSVersion = Environment.OSVersion.Version;
 
         // Extension without dot
@@ -110,13 +113,13 @@ namespace ShareX.HelpersLib
             return filePath.TrimEnd('.') + '.' + extension.TrimStart('.');
         }
 
-        private static bool IsValidFile(string filePath, Type enumType)
+        private static bool IsValidFile(string filePath, string[] extensionList)
         {
             string ext = GetFilenameExtension(filePath);
 
             if (!string.IsNullOrEmpty(ext))
             {
-                return Enum.GetNames(enumType).Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase));
+                return extensionList.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase));
             }
 
             return false;
@@ -124,12 +127,12 @@ namespace ShareX.HelpersLib
 
         public static bool IsImageFile(string filePath)
         {
-            return IsValidFile(filePath, typeof(ImageFileExtensions));
+            return IsValidFile(filePath, ImageFileExtensions);
         }
 
         public static bool IsTextFile(string filePath)
         {
-            return IsValidFile(filePath, typeof(TextFileExtensions));
+            return IsValidFile(filePath, TextFileExtensions);
         }
 
         public static EDataType FindDataType(string filePath)

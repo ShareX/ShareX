@@ -509,8 +509,8 @@ namespace ShareX
         public TaskSettingsAdvanced()
         {
             this.ApplyDefaultPropertyValues();
-            ImageExtensions = Enum.GetNames(typeof(ImageFileExtensions)).ToList();
-            TextExtensions = Enum.GetNames(typeof(TextFileExtensions)).ToList();
+            ImageExtensions = Helpers.ImageFileExtensions.ToList();
+            TextExtensions = Helpers.TextFileExtensions.ToList();
         }
     }
 }

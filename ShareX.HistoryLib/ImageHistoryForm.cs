@@ -75,7 +75,8 @@ namespace ShareX.HistoryLib
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            Text = "ShareX - " + string.Format("Image history: {0}", historyPath);
+            // TODO: Translate
+            Text = "ShareX - Image history";
 
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;
@@ -104,15 +105,21 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] GetHistoryItems()
         {
-            IEnumerable<HistoryItem> tempHistoryItems = history.GetHistoryItems().Where(x => !string.IsNullOrEmpty(x.Filepath) && Helpers.IsImageFile(x.Filepath) && File.Exists(x.Filepath));
+            List<HistoryItem> tempHistoryItems = new List<HistoryItem>();
 
-            if (MaxItemCount > -1)
+            int itemCount = 0;
+
+            foreach (HistoryItem hi in history.GetHistoryItems())
             {
-                int skip = tempHistoryItems.Count() - MaxItemCount;
-
-                if (skip > 0)
+                if (!string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath) && File.Exists(hi.Filepath))
                 {
-                    tempHistoryItems = tempHistoryItems.Skip(skip);
+                    tempHistoryItems.Add(hi);
+                    itemCount++;
+                }
+
+                if (MaxItemCount > -1 && itemCount >= MaxItemCount)
+                {
+                    break;
                 }
             }
 
