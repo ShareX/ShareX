@@ -105,25 +105,30 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] GetHistoryItems()
         {
-            List<HistoryItem> tempHistoryItems = new List<HistoryItem>();
+            List<HistoryItem> result = new List<HistoryItem>();
+
+            List<HistoryItem> allHistoryItems = history.GetHistoryItems();
 
             int itemCount = 0;
 
-            foreach (HistoryItem hi in history.GetHistoryItems())
+            for (int i = allHistoryItems.Count - 1; i >= 0; i--)
             {
+                HistoryItem hi = allHistoryItems[i];
+
                 if (!string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath) && File.Exists(hi.Filepath))
                 {
-                    tempHistoryItems.Add(hi);
-                    itemCount++;
-                }
+                    result.Add(hi);
 
-                if (MaxItemCount > -1 && itemCount >= MaxItemCount)
-                {
-                    break;
+                    itemCount++;
+
+                    if (MaxItemCount > 0 && itemCount >= MaxItemCount)
+                    {
+                        break;
+                    }
                 }
             }
 
-            return tempHistoryItems.OrderByDescending(x => x.DateTime).ToArray();
+            return result.ToArray();
         }
 
         private HistoryItem[] him_GetHistoryItems()

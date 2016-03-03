@@ -45,7 +45,7 @@ namespace ShareX.HistoryLib
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
 
-        public HistoryForm(string historyPath, int splitterDistance = 0, int maxItemCount = -1)
+        public HistoryForm(string historyPath, int splitterDistance = 0, int maxItemCount = 0)
         {
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;
@@ -94,18 +94,14 @@ namespace ShareX.HistoryLib
         private HistoryItem[] GetHistoryItems()
         {
             IEnumerable<HistoryItem> tempHistoryItems = history.GetHistoryItems();
+            tempHistoryItems = tempHistoryItems.Reverse();
 
-            if (MaxItemCount > -1)
+            if (MaxItemCount > 0)
             {
-                int skip = tempHistoryItems.Count() - MaxItemCount;
-
-                if (skip > 0)
-                {
-                    tempHistoryItems = tempHistoryItems.Skip(skip);
-                }
+                tempHistoryItems = tempHistoryItems.Take(MaxItemCount);
             }
 
-            return tempHistoryItems.OrderByDescending(x => x.DateTime).ToArray();
+            return tempHistoryItems.ToArray();
         }
 
         private void ApplyFiltersAndAdd()

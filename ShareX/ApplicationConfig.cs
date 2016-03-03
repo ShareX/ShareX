@@ -123,6 +123,7 @@ namespace ShareX
         public bool RecentTasksTrayMenuMostRecentFirst = false;
 
         public WindowState HistoryWindowState = new WindowState();
+        public int HistoryMaxItemCount = 0;
         public int HistorySplitterDistance = 550;
 
         public WindowState ImageHistoryWindowState = new WindowState();
