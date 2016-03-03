@@ -39,33 +39,8 @@ namespace ShareX.HistoryLib
     {
         public string HistoryPath { get; private set; }
         public int MaxItemCount { get; set; }
-
-        public int ViewMode
-        {
-            get
-            {
-                return (int)ilvImages.View;
-            }
-            set
-            {
-                if (value.IsBetween(0, 3))
-                {
-                    ilvImages.View = (View)value;
-                }
-            }
-        }
-
-        public Size ThumbnailSize
-        {
-            get
-            {
-                return ilvImages.ThumbnailSize;
-            }
-            set
-            {
-                ilvImages.ThumbnailSize = value;
-            }
-        }
+        public int ViewMode { get; set; }
+        public Size ThumbnailSize { get; set; }
 
         private HistoryManager history;
         private HistoryItemManager him;
@@ -75,15 +50,51 @@ namespace ShareX.HistoryLib
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            // TODO: Translate
-            Text = "ShareX - Image history";
 
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;
-            ViewMode = viewMode;
-            ThumbnailSize = thumbnailSize;
 
-            tsbQuickList.Checked = MaxItemCount > -1;
+            ViewMode = viewMode.Between(0, 3);
+            ilvImages.View = (View)ViewMode;
+
+            switch (ilvImages.View)
+            {
+                default:
+                case View.Thumbnails:
+                    tsmiViewModeThumbnails.RadioCheck();
+                    break;
+                case View.Gallery:
+                    tsmiViewModeGallery.RadioCheck();
+                    break;
+                case View.Pane:
+                    tsmiViewModePane.RadioCheck();
+                    break;
+            }
+
+            ThumbnailSize = thumbnailSize;
+            ilvImages.ThumbnailSize = ThumbnailSize;
+
+            switch (ThumbnailSize.Width)
+            {
+                case 75:
+                    tsmiThumbnailSize75.RadioCheck();
+                    break;
+                default:
+                case 100:
+                    tsmiThumbnailSize100.RadioCheck();
+                    break;
+                case 150:
+                    tsmiThumbnailSize150.RadioCheck();
+                    break;
+                case 200:
+                    tsmiThumbnailSize200.RadioCheck();
+                    break;
+                case 250:
+                    tsmiThumbnailSize250.RadioCheck();
+                    break;
+            }
+
+            tsbQuickList.Checked = MaxItemCount > 0;
 
             him = new HistoryItemManager();
             him.GetHistoryItems += him_GetHistoryItems;
@@ -178,48 +189,56 @@ namespace ShareX.HistoryLib
         {
             tsmiViewModeThumbnails.RadioCheck();
             ilvImages.View = View.Thumbnails;
+            ViewMode = (int)ilvImages.View;
         }
 
         private void tsmiViewModeGallery_Click(object sender, EventArgs e)
         {
             tsmiViewModeGallery.RadioCheck();
             ilvImages.View = View.Gallery;
+            ViewMode = (int)ilvImages.View;
         }
 
         private void tsmiViewModePane_Click(object sender, EventArgs e)
         {
             tsmiViewModePane.RadioCheck();
             ilvImages.View = View.Pane;
+            ViewMode = (int)ilvImages.View;
         }
 
         private void tsmiThumbnailSize75_Click(object sender, EventArgs e)
         {
             tsmiThumbnailSize75.RadioCheck();
             ilvImages.ThumbnailSize = new Size(75, 75);
+            ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
         private void tsmiThumbnailSize100_Click(object sender, EventArgs e)
         {
             tsmiThumbnailSize100.RadioCheck();
             ilvImages.ThumbnailSize = new Size(100, 100);
+            ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
         private void tsmiThumbnailSize150_Click(object sender, EventArgs e)
         {
             tsmiThumbnailSize150.RadioCheck();
             ilvImages.ThumbnailSize = new Size(150, 150);
+            ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
         private void tsmiThumbnailSize200_Click(object sender, EventArgs e)
         {
             tsmiThumbnailSize200.RadioCheck();
             ilvImages.ThumbnailSize = new Size(200, 200);
+            ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
         private void tsmiThumbnailSize250_Click(object sender, EventArgs e)
         {
             tsmiThumbnailSize250.RadioCheck();
             ilvImages.ThumbnailSize = new Size(250, 250);
+            ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
         private void tsbQuickList_Click(object sender, EventArgs e)
@@ -230,7 +249,7 @@ namespace ShareX.HistoryLib
             }
             else
             {
-                MaxItemCount = -1;
+                MaxItemCount = 0;
             }
 
             RefreshHistoryItems();

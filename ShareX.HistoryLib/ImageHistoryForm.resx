@@ -138,7 +138,7 @@
     <value>0, 0</value>
   </data>
   <data name="ilvImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>804, 587</value>
+    <value>834, 636</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ilvImages.TabIndex" type="System.Int32, mscorlib">
@@ -157,7 +157,7 @@
     <value>0</value>
   </data>
   <data name="tscMain.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>804, 587</value>
+    <value>834, 636</value>
   </data>
   <data name="&gt;&gt;tscMain.ContentPanel.Name" xml:space="preserve">
     <value>tscMain.ContentPanel</value>
@@ -202,7 +202,7 @@
     <value>2</value>
   </data>
   <data name="tscMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>804, 612</value>
+    <value>834, 661</value>
   </data>
   <data name="tscMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -214,19 +214,19 @@
     <value>None</value>
   </data>
   <data name="tsmiViewModeThumbnails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>Thumbnails</value>
   </data>
   <data name="tsmiViewModeGallery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
     <value>Gallery</value>
   </data>
   <data name="tsmiViewModePane.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiViewModePane.Text" xml:space="preserve">
     <value>Pane</value>
@@ -334,13 +334,13 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>804, 612</value>
+    <value>834, 661</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Image history</value>
+    <value>ShareX - Image history</value>
   </data>
   <data name="&gt;&gt;tsddbViewMode.Name" xml:space="preserve">
     <value>tsddbViewMode</value>
