@@ -869,4 +869,10 @@ Would you like to download it?</value>
   <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
     <value>Other</value>
   </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Open image history window</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
 </root>

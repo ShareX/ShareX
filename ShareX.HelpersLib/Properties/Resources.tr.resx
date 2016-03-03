@@ -847,4 +847,10 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>Hızlı görev menüsünü göster</value>
   </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Resim geçmişi penceresini aç</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
 </root>

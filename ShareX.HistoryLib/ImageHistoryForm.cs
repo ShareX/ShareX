@@ -46,7 +46,7 @@ namespace ShareX.HistoryLib
         private HistoryItemManager him;
         private HistoryItem[] historyItems;
 
-        public ImageHistoryForm(string historyPath, int viewMode, Size thumbnailSize, int maxItemCount = -1)
+        public ImageHistoryForm(string historyPath, int viewMode, Size thumbnailSize, int maxItemCount)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;

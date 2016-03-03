@@ -1181,19 +1181,7 @@ namespace ShareX
 
         private void tsbImageHistory_Click(object sender, EventArgs e)
         {
-            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
-                Program.Settings.ImageHistoryThumbnailSize, Program.Settings.ImageHistoryMaxItemCount);
-            Program.Settings.ImageHistoryWindowState.AutoHandleFormState(imageHistoryForm);
-            imageHistoryForm.FormClosed += imageHistoryForm_FormClosed;
-            imageHistoryForm.Show();
-        }
-
-        private void imageHistoryForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ImageHistoryForm imageHistoryForm = sender as ImageHistoryForm;
-            Program.Settings.ImageHistoryViewMode = imageHistoryForm.ViewMode;
-            Program.Settings.ImageHistoryThumbnailSize = imageHistoryForm.ThumbnailSize;
-            Program.Settings.ImageHistoryMaxItemCount = imageHistoryForm.MaxItemCount;
+            TaskHelpers.OpenImageHistory();
         }
 
         private void tsbAbout_Click(object sender, EventArgs e)
@@ -1778,6 +1766,9 @@ namespace ShareX
                     break;
                 case HotkeyType.OpenHistory:
                     TaskHelpers.OpenHistory();
+                    break;
+                case HotkeyType.OpenImageHistory:
+                    TaskHelpers.OpenImageHistory();
                     break;
             }
         }

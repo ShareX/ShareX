@@ -479,10 +479,27 @@ namespace ShareX
 
         public static void OpenHistory()
         {
-            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistorySplitterDistance, Program.Settings.HistoryMaxItemCount);
+            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistoryMaxItemCount, Program.Settings.HistorySplitterDistance);
             historyForm.SplitterDistanceChanged += splitterDistance => Program.Settings.HistorySplitterDistance = splitterDistance;
             Program.Settings.HistoryWindowState.AutoHandleFormState(historyForm);
             historyForm.Show();
+        }
+
+        public static void OpenImageHistory()
+        {
+            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
+                Program.Settings.ImageHistoryThumbnailSize, Program.Settings.ImageHistoryMaxItemCount);
+            Program.Settings.ImageHistoryWindowState.AutoHandleFormState(imageHistoryForm);
+            imageHistoryForm.FormClosed += imageHistoryForm_FormClosed;
+            imageHistoryForm.Show();
+        }
+
+        private static void imageHistoryForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ImageHistoryForm imageHistoryForm = sender as ImageHistoryForm;
+            Program.Settings.ImageHistoryViewMode = imageHistoryForm.ViewMode;
+            Program.Settings.ImageHistoryThumbnailSize = imageHistoryForm.ThumbnailSize;
+            Program.Settings.ImageHistoryMaxItemCount = imageHistoryForm.MaxItemCount;
         }
 
         public static void OpenColorPicker()

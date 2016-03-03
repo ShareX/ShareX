@@ -196,7 +196,8 @@ namespace ShareX
         // Other
         DisableHotkeys,
         OpenScreenshotsFolder,
-        OpenHistory
+        OpenHistory,
+        OpenImageHistory
     }
 
     public enum HotkeyStatus

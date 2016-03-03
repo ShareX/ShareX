@@ -45,7 +45,7 @@ namespace ShareX.HistoryLib
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
 
-        public HistoryForm(string historyPath, int splitterDistance = 0, int maxItemCount = 0)
+        public HistoryForm(string historyPath, int maxItemCount, int splitterDistance = 0)
         {
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;
