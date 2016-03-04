@@ -54,8 +54,6 @@ namespace SingleInstanceApplication
                     UpdateRemoteObject(name);
 
                     if (eventWaitHandle != null) eventWaitHandle.Set();
-
-                    semaphore.Release();
                 }
 
                 Environment.Exit(0);
@@ -125,6 +123,8 @@ namespace SingleInstanceApplication
             if (callback == null) return;
 
             callback(state, new InstanceCallbackEventArgs(InstanceProxy.IsFirstInstance, InstanceProxy.CommandLineArgs));
+
+            semaphore.Release();
         }
     }
 }
