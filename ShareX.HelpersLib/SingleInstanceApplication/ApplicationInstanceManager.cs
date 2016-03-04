@@ -34,10 +34,13 @@ namespace SingleInstanceApplication
 {
     public static class ApplicationInstanceManager
     {
+        private static Semaphore semaphore;
+
         [DebuggerStepThrough]
         public static bool CreateSingleInstance(string name, EventHandler<InstanceCallbackEventArgs> callback, string[] args)
         {
             string eventName = string.Format("{0}-{1}", Environment.MachineName, name);
+            string semaphoreName = string.Format("{0}{1}", eventName, "Semaphore");
 
             InstanceProxy.IsFirstInstance = false;
             InstanceProxy.CommandLineArgs = args;
@@ -46,9 +49,13 @@ namespace SingleInstanceApplication
             {
                 using (EventWaitHandle eventWaitHandle = EventWaitHandle.OpenExisting(eventName))
                 {
+                    semaphore = Semaphore.OpenExisting(semaphoreName);
+                    semaphore.WaitOne();
                     UpdateRemoteObject(name);
 
                     if (eventWaitHandle != null) eventWaitHandle.Set();
+
+                    semaphore.Release();
                 }
 
                 Environment.Exit(0);
@@ -59,6 +66,7 @@ namespace SingleInstanceApplication
 
                 using (EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, eventName))
                 {
+                    semaphore = new Semaphore(1, 1, semaphoreName);
                     ThreadPool.RegisterWaitForSingleObject(eventWaitHandle, WaitOrTimerCallback, callback, Timeout.Infinite, false);
                 }
 
@@ -107,6 +115,7 @@ namespace SingleInstanceApplication
             process.Exited += delegate
             {
                 ChannelServices.UnregisterChannel(serverChannel);
+                semaphore.Close();
             };
         }
 
