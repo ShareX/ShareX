@@ -99,7 +99,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        public static string TestClones()
+        public static string TestUploaders()
         {
             List<PomfTest> successful = new List<PomfTest>();
             List<PomfTest> failed = new List<PomfTest>();

@@ -12517,6 +12517,33 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpPicasa.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="btnCheveretoTestAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCheveretoTestAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 31</value>
+  </data>
+  <data name="btnCheveretoTestAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 23</value>
+  </data>
+  <data name="btnCheveretoTestAll.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
+    <value>Test all</value>
+  </data>
+  <data name="&gt;&gt;btnCheveretoTestAll.Name" xml:space="preserve">
+    <value>btnCheveretoTestAll</value>
+  </data>
+  <data name="&gt;&gt;btnCheveretoTestAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCheveretoTestAll.Parent" xml:space="preserve">
+    <value>tpChevereto</value>
+  </data>
+  <data name="&gt;&gt;btnCheveretoTestAll.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblCheveretoUploadURLExample.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -12542,7 +12569,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;lblCheveretoUploadURLExample.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblCheveretoUploaders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12569,7 +12596,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;lblCheveretoUploaders.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbCheveretoUploaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -12590,7 +12617,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;cbCheveretoUploaders.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbCheveretoDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12620,7 +12647,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;cbCheveretoDirectURL.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblCheveretoUploadURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12650,7 +12677,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;lblCheveretoUploadURL.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtCheveretoUploadURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -12671,7 +12698,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;txtCheveretoUploadURL.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtCheveretoAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -12692,7 +12719,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;txtCheveretoAPIKey.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblCheveretoAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -12722,7 +12749,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpChevereto</value>
   </data>
   <data name="&gt;&gt;lblCheveretoAPIKey.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="tpChevereto.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

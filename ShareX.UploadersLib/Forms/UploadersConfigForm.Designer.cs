@@ -514,6 +514,7 @@
             this.btnPicasaRefreshAlbumList = new System.Windows.Forms.Button();
             this.oauth2Picasa = new ShareX.UploadersLib.OAuthControl();
             this.tpChevereto = new System.Windows.Forms.TabPage();
+            this.lblCheveretoUploadURLExample = new System.Windows.Forms.Label();
             this.lblCheveretoUploaders = new System.Windows.Forms.Label();
             this.cbCheveretoUploaders = new System.Windows.Forms.ComboBox();
             this.cbCheveretoDirectURL = new System.Windows.Forms.CheckBox();
@@ -534,7 +535,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lblCheveretoUploadURLExample = new System.Windows.Forms.Label();
+            this.btnCheveretoTestAll = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -4139,6 +4140,7 @@
             // 
             // tpChevereto
             // 
+            this.tpChevereto.Controls.Add(this.btnCheveretoTestAll);
             this.tpChevereto.Controls.Add(this.lblCheveretoUploadURLExample);
             this.tpChevereto.Controls.Add(this.lblCheveretoUploaders);
             this.tpChevereto.Controls.Add(this.cbCheveretoUploaders);
@@ -4150,6 +4152,11 @@
             resources.ApplyResources(this.tpChevereto, "tpChevereto");
             this.tpChevereto.Name = "tpChevereto";
             this.tpChevereto.UseVisualStyleBackColor = true;
+            // 
+            // lblCheveretoUploadURLExample
+            // 
+            resources.ApplyResources(this.lblCheveretoUploadURLExample, "lblCheveretoUploadURLExample");
+            this.lblCheveretoUploadURLExample.Name = "lblCheveretoUploadURLExample";
             // 
             // lblCheveretoUploaders
             // 
@@ -4286,10 +4293,12 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // lblCheveretoUploadURLExample
+            // btnCheveretoTestAll
             // 
-            resources.ApplyResources(this.lblCheveretoUploadURLExample, "lblCheveretoUploadURLExample");
-            this.lblCheveretoUploadURLExample.Name = "lblCheveretoUploadURLExample";
+            resources.ApplyResources(this.btnCheveretoTestAll, "btnCheveretoTestAll");
+            this.btnCheveretoTestAll.Name = "btnCheveretoTestAll";
+            this.btnCheveretoTestAll.UseVisualStyleBackColor = true;
+            this.btnCheveretoTestAll.Click += new System.EventHandler(this.btnCheveretoTestAll_Click);
             // 
             // UploadersConfigForm
             // 
@@ -4952,5 +4961,6 @@
         private System.Windows.Forms.Label lblCheveretoUploaders;
         private System.Windows.Forms.ComboBox cbCheveretoUploaders;
         private System.Windows.Forms.Label lblCheveretoUploadURLExample;
+        private System.Windows.Forms.Button btnCheveretoTestAll;
     }
 }

@@ -1003,6 +1003,31 @@ namespace ShareX.UploadersLib
             }
         }
 
+        private void btnCheveretoTestAll_Click(object sender, EventArgs e)
+        {
+            btnCheveretoTestAll.Enabled = false;
+            btnCheveretoTestAll.Text = "Testing...";
+            string result = null;
+
+            TaskEx.Run(() =>
+            {
+                result = Chevereto.TestUploaders();
+            },
+            () =>
+            {
+                if (!IsDisposed)
+                {
+                    btnCheveretoTestAll.Text = "Test all";
+                    btnCheveretoTestAll.Enabled = true;
+
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        MessageBox.Show(result, "Chevereto test results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            });
+        }
+
         private void txtCheveretoWebsite_TextChanged(object sender, EventArgs e)
         {
             Config.CheveretoUploader.UploadURL = txtCheveretoUploadURL.Text;
@@ -2151,7 +2176,7 @@ namespace ShareX.UploadersLib
 
             TaskEx.Run(() =>
             {
-                result = Pomf.TestClones();
+                result = Pomf.TestUploaders();
             },
             () =>
             {

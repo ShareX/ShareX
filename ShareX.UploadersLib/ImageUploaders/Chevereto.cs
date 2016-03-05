@@ -25,8 +25,13 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
@@ -87,6 +92,50 @@ namespace ShareX.UploadersLib.ImageUploaders
             return result;
         }
 
+        public static string TestUploaders()
+        {
+            List<CheveretoTest> successful = new List<CheveretoTest>();
+            List<CheveretoTest> failed = new List<CheveretoTest>();
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (Image logo = ShareXResources.Logo)
+                {
+                    logo.Save(ms, ImageFormat.Png);
+                }
+
+                foreach (CheveretoUploader uploader in Uploaders)
+                {
+                    try
+                    {
+                        Chevereto chevereto = new Chevereto(uploader);
+                        string filename = Helpers.GetRandomAlphanumeric(10) + ".png";
+
+                        Stopwatch timer = Stopwatch.StartNew();
+                        UploadResult result = chevereto.Upload(ms, filename);
+                        long uploadTime = timer.ElapsedMilliseconds;
+
+                        if (result != null && result.IsSuccess && !string.IsNullOrEmpty(result.URL))
+                        {
+                            successful.Add(new CheveretoTest { Name = uploader.ToString(), UploadTime = uploadTime });
+                        }
+                        else
+                        {
+                            failed.Add(new CheveretoTest { Name = uploader.ToString() });
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                        failed.Add(new CheveretoTest { Name = uploader.ToString() });
+                    }
+                }
+            }
+
+            return string.Format("Successful uploads ({0}):\r\n\r\n{1}\r\n\r\nFailed uploads ({2}):\r\n\r\n{3}",
+                successful.Count, string.Join("\r\n", successful.OrderBy(x => x.UploadTime)), failed.Count, string.Join("\r\n", failed));
+        }
+
         private class CheveretoResponse
         {
             public CheveretoImage Image { get; set; }
@@ -102,6 +151,22 @@ namespace ShareX.UploadersLib.ImageUploaders
         private class CheveretoThumb
         {
             public string URL { get; set; }
+        }
+
+        private class CheveretoTest
+        {
+            public string Name { get; set; }
+            public long UploadTime { get; set; } = -1;
+
+            public override string ToString()
+            {
+                if (UploadTime >= 0)
+                {
+                    return $"{Name} ({UploadTime}ms)";
+                }
+
+                return Name;
+            }
         }
     }
 }
