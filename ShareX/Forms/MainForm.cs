@@ -1320,9 +1320,17 @@ namespace ShareX
             this.ShowActivate();
         }
 
-        private void tsmiTrayExit_Click(object sender, EventArgs e)
+        private void tsmiTrayExit_MouseDown(object sender, MouseEventArgs e)
         {
             ForceClose();
+        }
+
+        private void cmsTray_Closed(object sender, ToolStripDropDownClosedEventArgs e)
+        {
+            if (!forceClose)
+            {
+                Program.SaveAllSettingsAsync();
+            }
         }
 
         #endregion Tray events

@@ -1275,6 +1275,7 @@
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
             resources.ApplyResources(this.cmsTray, "cmsTray");
+            this.cmsTray.Closed += new System.Windows.Forms.ToolStripDropDownClosedEventHandler(this.cmsTray_Closed);
             this.cmsTray.Opened += new System.EventHandler(this.cmsTray_Opened);
             // 
             // tsmiTrayCapture
@@ -1803,7 +1804,7 @@
             this.tsmiTrayExit.Image = global::ShareX.Properties.Resources.cross_button;
             this.tsmiTrayExit.Name = "tsmiTrayExit";
             resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
-            this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
+            this.tsmiTrayExit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tsmiTrayExit_MouseDown);
             // 
             // timerTraySingleClick
             // 
