@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -44,14 +45,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override string ToString()
         {
-            Uri uri;
-
-            if (Uri.TryCreate(UploadURL, UriKind.Absolute, out uri))
-            {
-                return uri.Host;
-            }
-
-            return UploadURL;
+            return URLHelpers.GetShortURL(UploadURL);
         }
     }
 }

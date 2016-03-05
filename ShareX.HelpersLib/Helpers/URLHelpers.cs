@@ -350,5 +350,27 @@ namespace ShareX.HelpersLib
 
             return url;
         }
+
+        public static string GetShortURL(string url)
+        {
+            Uri uri;
+
+            if (Uri.TryCreate(url, UriKind.Absolute, out uri))
+            {
+                string host = uri.Host;
+
+                if (!string.IsNullOrEmpty(host))
+                {
+                    if (host.StartsWith("www.", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        host = host.Substring(4);
+                    }
+
+                    return host;
+                }
+            }
+
+            return url;
+        }
     }
 }
