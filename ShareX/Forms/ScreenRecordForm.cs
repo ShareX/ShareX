@@ -128,7 +128,7 @@ namespace ShareX
         {
             if (activateWindow)
             {
-                this.ShowActivate();
+                this.ForceActivate();
             }
         }
 

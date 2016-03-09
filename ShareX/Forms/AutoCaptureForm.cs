@@ -250,7 +250,7 @@ namespace ShareX
         private void niTray_MouseClick(object sender, MouseEventArgs e)
         {
             niTray.Visible = false;
-            this.ShowActivate();
+            this.ForceActivate();
         }
     }
 }

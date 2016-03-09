@@ -67,7 +67,7 @@ namespace ShareX.HelpersLib
 
         private void ShowScreenshot_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void ShowScreenshot_Deactivate(object sender, EventArgs e)

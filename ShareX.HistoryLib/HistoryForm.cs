@@ -317,7 +317,7 @@ namespace ShareX.HistoryLib
                 cbHostFilterSelection.Items.AddRange(allHistoryItems.Select(x => x.Host).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray());
             }
 
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void HistoryForm_Resize(object sender, EventArgs e)

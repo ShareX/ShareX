@@ -124,7 +124,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void RectangleLight_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void RectangleLight_KeyUp(object sender, KeyEventArgs e)

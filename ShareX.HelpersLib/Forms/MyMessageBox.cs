@@ -154,7 +154,7 @@ namespace ShareX.HelpersLib
 
         private void MyMessageBox_Shown(object sender, System.EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         public static DialogResult Show(string text, string caption, MessageBoxButtons buttons = MessageBoxButtons.OK)

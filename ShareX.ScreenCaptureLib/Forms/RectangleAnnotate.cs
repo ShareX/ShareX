@@ -169,7 +169,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void RectangleAnnotate_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void RectangleAnnotate_KeyDown(object sender, KeyEventArgs e)

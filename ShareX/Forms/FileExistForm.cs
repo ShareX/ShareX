@@ -53,7 +53,7 @@ namespace ShareX
 
         private void FileExistForm_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private string GetNewFilename()

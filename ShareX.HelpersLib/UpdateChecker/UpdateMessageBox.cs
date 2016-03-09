@@ -93,7 +93,7 @@ namespace ShareX.HelpersLib
         {
             if (ActivateWindow)
             {
-                this.ShowActivate();
+                this.ForceActivate();
             }
         }
 

@@ -97,7 +97,7 @@ namespace ShareX.HelpersLib
 
         private void ClipboardContentViewer_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void cbDontShowThisWindow_CheckedChanged(object sender, EventArgs e)

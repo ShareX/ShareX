@@ -307,7 +307,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void ShowActivate(this Form form)
+        public static void ForceActivate(this Form form)
         {
             if (!form.Visible)
             {

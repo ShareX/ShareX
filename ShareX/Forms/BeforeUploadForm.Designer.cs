@@ -87,6 +87,7 @@
             this.Name = "BeforeUploadForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.TopMost = true;
+            this.Shown += new System.EventHandler(this.BeforeUploadForm_Shown);
             this.ResumeLayout(false);
 
         }

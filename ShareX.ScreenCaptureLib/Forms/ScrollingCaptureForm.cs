@@ -147,7 +147,7 @@ namespace ShareX.ScreenCaptureLib
             }
             finally
             {
-                if (!capturing) this.ShowActivate();
+                if (!capturing) this.ForceActivate();
             }
         }
 
@@ -168,7 +168,7 @@ namespace ShareX.ScreenCaptureLib
             }
             finally
             {
-                this.ShowActivate();
+                this.ForceActivate();
             }
         }
 
@@ -234,7 +234,7 @@ namespace ShareX.ScreenCaptureLib
         {
             captureTimer.Stop();
             btnCapture.Text = Resources.ScrollingCaptureForm_StopCapture_Start_capture;
-            if (!Options.AutoUpload) this.ShowActivate();
+            if (!Options.AutoUpload) this.ForceActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
             StartingProcess();
             if (Options.RemoveDuplicates) RemoveDuplicates();

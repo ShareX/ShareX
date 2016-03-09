@@ -49,6 +49,11 @@ namespace ShareX
             ucBeforeUpload.Init(info);
         }
 
+        private void BeforeUploadForm_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
+        }
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;

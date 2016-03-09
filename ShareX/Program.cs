@@ -343,11 +343,11 @@ namespace ShareX
                             MainForm.niTray.Visible = true;
                         }
 
-                        MainForm.ShowActivate();
+                        MainForm.ForceActivate();
                     }
                     else if (MainForm.Visible)
                     {
-                        MainForm.ShowActivate();
+                        MainForm.ForceActivate();
                     }
 
                     CLIManager cli = new CLIManager(args.CommandLineArgs);

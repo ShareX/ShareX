@@ -67,6 +67,11 @@ namespace ShareX
             txtFileName.Text = FileName;
         }
 
+        private void AfterCaptureForm_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
+        }
+
         private void CheckItem(ListViewItem lvi, bool check)
         {
             lvi.ImageIndex = check ? 1 : 0;

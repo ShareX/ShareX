@@ -230,7 +230,7 @@ KeyPressText ""Loop""";
             if (!closing)
             {
                 btnRun.Text = Resources.Start;
-                this.ShowActivate();
+                this.ForceActivate();
             }
         }
 

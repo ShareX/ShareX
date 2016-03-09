@@ -47,7 +47,7 @@ namespace ShareX.HelpersLib
 
         private void InputBox_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
 
             txtInputText.SelectionLength = txtInputText.Text.Length;
         }

@@ -258,7 +258,7 @@ namespace ShareX
             }
             else
             {
-                this.ShowActivate();
+                this.ForceActivate();
             }
 
             if (Program.Settings != null && Program.Settings.ShowTrayLeftClickTip && niTray.Visible && Program.Settings.TrayLeftClickAction == HotkeyType.RectangleRegion)
@@ -1301,7 +1301,7 @@ namespace ShareX
             if (e.Button == MouseButtons.Left)
             {
                 timerTraySingleClick.Stop();
-                this.ShowActivate();
+                this.ForceActivate();
             }
         }
 
@@ -1317,7 +1317,7 @@ namespace ShareX
 
         private void tsmiTrayShow_Click(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void tsmiTrayExit_MouseDown(object sender, MouseEventArgs e)
@@ -1860,7 +1860,7 @@ namespace ShareX
             {
                 if (autoHideForm)
                 {
-                    this.ShowActivate();
+                    this.ForceActivate();
                 }
 
                 AfterCapture(img, captureType, taskSettings);

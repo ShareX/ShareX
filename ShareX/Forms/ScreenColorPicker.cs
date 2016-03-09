@@ -129,7 +129,7 @@ namespace ShareX
             }
             finally
             {
-                this.ShowActivate();
+                this.ForceActivate();
             }
         }
 

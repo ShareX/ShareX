@@ -295,7 +295,7 @@ namespace ShareX.UploadersLib
             using (InputBox ib = new InputBox(Resources.FTPClientForm_FTPCreateDirectory_Directory_name_to_create))
             {
                 ib.ShowDialog();
-                this.ShowActivate();
+                this.ForceActivate();
                 if (ib.DialogResult == DialogResult.OK)
                 {
                     Client.CreateDirectory(URLHelpers.CombineURL(currentDirectory, ib.InputText));

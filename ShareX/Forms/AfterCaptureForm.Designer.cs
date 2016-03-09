@@ -188,6 +188,7 @@
             this.Name = "AfterCaptureForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.TopMost = true;
+            this.Shown += new System.EventHandler(this.AfterCaptureForm_Shown);
             this.tcTasks.ResumeLayout(false);
             this.tpAfterCapture.ResumeLayout(false);
             this.tpBeforeUpload.ResumeLayout(false);

@@ -48,7 +48,7 @@ namespace ShareX
 
         private void SettingsForm_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void SettingsForm_Resize(object sender, EventArgs e)

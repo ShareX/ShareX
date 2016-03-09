@@ -153,7 +153,7 @@ namespace ShareX.UploadersLib
         private void TwitterMsg_Shown(object sender, EventArgs e)
         {
             txtTweet.Select(txtTweet.TextLength, 0);
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void txtTweet_TextChanged(object sender, EventArgs e)

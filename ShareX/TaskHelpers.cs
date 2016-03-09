@@ -415,7 +415,7 @@ namespace ShareX
         public static void OpenDropWindow(TaskSettings taskSettings = null)
         {
             DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity,
-                Program.Settings.DropHoverOpacity, taskSettings).ShowActivate();
+                Program.Settings.DropHoverOpacity, taskSettings).ForceActivate();
         }
 
         public static void StartScreenRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings = null)
@@ -436,7 +436,7 @@ namespace ShareX
 
         public static void OpenAutoCapture()
         {
-            AutoCaptureForm.Instance.ShowActivate();
+            AutoCaptureForm.Instance.ForceActivate();
         }
 
         public static void OpenWebpageCapture(TaskSettings taskSettings = null)
@@ -551,7 +551,7 @@ namespace ShareX
         public static void OpenAutomate()
         {
             AutomateForm form = AutomateForm.GetInstance(Program.Settings.AutomateScripts);
-            form.ShowActivate();
+            form.ForceActivate();
         }
 
         public static void StartAutomate()
@@ -571,7 +571,7 @@ namespace ShareX
             }
             else
             {
-                form.ShowActivate();
+                form.ForceActivate();
             }
         }
 

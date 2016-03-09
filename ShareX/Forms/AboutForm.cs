@@ -129,7 +129,7 @@ Copyright (c) 2007-2016 ShareX Team", Resources.AboutForm_AboutForm_Contributors
 
         private void AboutForm_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void pbLogo_MouseDown(object sender, MouseEventArgs e)

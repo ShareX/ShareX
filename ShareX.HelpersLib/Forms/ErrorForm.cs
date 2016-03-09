@@ -67,7 +67,7 @@ namespace ShareX.HelpersLib
 
         private void ErrorForm_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void btnSendBugReport_Click(object sender, EventArgs e)

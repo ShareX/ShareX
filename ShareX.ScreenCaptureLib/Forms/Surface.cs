@@ -150,7 +150,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void Surface_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void Surface_KeyUp(object sender, KeyEventArgs e)
