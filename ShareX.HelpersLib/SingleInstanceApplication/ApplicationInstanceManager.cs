@@ -35,56 +35,45 @@ namespace SingleInstanceApplication
     public static class ApplicationInstanceManager
     {
         private static Semaphore semaphore;
+        private static string appName = "ShareX";
+        private static string eventName = string.Format("{0}-{1}", Environment.MachineName, appName);
+        private static string semaphoreName = string.Format("{0}{1}", eventName, "Semaphore");
 
-        [DebuggerStepThrough]
-        public static bool CreateSingleInstance(string name, EventHandler<InstanceCallbackEventArgs> callback, string[] args)
+        public static void CreateFirstInstance(EventHandler<InstanceCallbackEventArgs> callback)
         {
-            string eventName = string.Format("{0}-{1}", Environment.MachineName, name);
-            string semaphoreName = string.Format("{0}{1}", eventName, "Semaphore");
+            bool createdNew;
 
-            InstanceProxy.IsFirstInstance = false;
-            InstanceProxy.CommandLineArgs = args;
-
-            try
+            using (EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, eventName, out createdNew))
             {
-                using (EventWaitHandle eventWaitHandle = EventWaitHandle.OpenExisting(eventName))
+                // Mixing single instance and multi instance (via command line parameter) copies of the program can
+                //  result in CreateFirstInstance being called if it isn't really the first one. Make sure this is
+                //  really first instance by detecting if EventWaitHandle was created
+                if (createdNew != true)
                 {
-                    semaphore = Semaphore.OpenExisting(semaphoreName);
-                    semaphore.WaitOne();
-                    UpdateRemoteObject(name);
-
-                    if (eventWaitHandle != null) eventWaitHandle.Set();
+                    return;
                 }
 
-                Environment.Exit(0);
+                semaphore = new Semaphore(1, 1, semaphoreName);
+                ThreadPool.RegisterWaitForSingleObject(eventWaitHandle, WaitOrTimerCallback, callback, Timeout.Infinite, false);
+
+                RegisterRemoteType(appName);
             }
-            catch
-            {
-                InstanceProxy.IsFirstInstance = true;
-
-                using (EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, eventName))
-                {
-                    semaphore = new Semaphore(1, 1, semaphoreName);
-                    ThreadPool.RegisterWaitForSingleObject(eventWaitHandle, WaitOrTimerCallback, callback, Timeout.Infinite, false);
-                }
-
-                RegisterRemoteType(name);
-            }
-
-            return InstanceProxy.IsFirstInstance;
         }
 
-        public static bool CreateSingleInstance(EventHandler<InstanceCallbackEventArgs> callback, string[] args)
+        public static void CreateMultipleInstance(EventHandler<InstanceCallbackEventArgs> callback, string[] args)
         {
-            try
+            InstanceProxy.CommandLineArgs = args;
+
+            using (EventWaitHandle eventWaitHandle = EventWaitHandle.OpenExisting(eventName))
             {
-                return CreateSingleInstance("ShareX", callback, args);
-            }
-            catch
-            {
+                semaphore = Semaphore.OpenExisting(semaphoreName);
+                semaphore.WaitOne();
+                UpdateRemoteObject(appName);
+
+                if (eventWaitHandle != null) eventWaitHandle.Set();
             }
 
-            return true;
+            Environment.Exit(0);
         }
 
         private static void UpdateRemoteObject(string uri)
@@ -96,7 +85,7 @@ namespace SingleInstanceApplication
 
             if (proxy != null)
             {
-                proxy.SetCommandLineArgs(InstanceProxy.IsFirstInstance, InstanceProxy.CommandLineArgs);
+                proxy.SetCommandLineArgs(InstanceProxy.CommandLineArgs);
             }
 
             ChannelServices.UnregisterChannel(clientChannel);
@@ -122,7 +111,7 @@ namespace SingleInstanceApplication
             EventHandler<InstanceCallbackEventArgs> callback = state as EventHandler<InstanceCallbackEventArgs>;
             if (callback == null) return;
 
-            callback(state, new InstanceCallbackEventArgs(InstanceProxy.IsFirstInstance, InstanceProxy.CommandLineArgs));
+            callback(state, new InstanceCallbackEventArgs(InstanceProxy.CommandLineArgs));
 
             semaphore.Release();
         }
