@@ -268,16 +268,39 @@ namespace ShareX
 
             IsMultiInstance = CLI.IsCommandExist("multi", "m");
 
-            if (IsMultiInstance || ApplicationInstanceManager.CreateSingleInstance(SingleInstanceCallback, args))
+            // Ensuring only one instance of program based on http://stackoverflow.com/questions/229565/what-is-a-good-pattern-for-using-a-global-mutex-in-c
+            using (Mutex mutex = new Mutex(false, "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC")) // Specific mutex required for installer
             {
-                using (Mutex mutex = new Mutex(false, "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC")) // Required for installer
+                bool hasHandle = false;
+                try
                 {
-                    Run();
-                }
+                    try
+                    {
+                        hasHandle = mutex.WaitOne(100, false);
+                        if (hasHandle == false && !IsMultiInstance)
+                        {
+                            ApplicationInstanceManager.CreateMultipleInstance(SingleInstanceCallback, args);
+                        }
+                    }
+                    catch (AbandonedMutexException)
+                    {
+                        // Log the mutex was abandoned in another process, it will still get acquired
+                        DebugHelper.WriteLine("Single instance mutex found abandoned from another process");
+                        hasHandle = true;
+                    }
 
-                if (restarting)
+                    ApplicationInstanceManager.CreateFirstInstance(SingleInstanceCallback);
+                    Run();
+
+                    if (restarting)
+                    {
+                        Process.Start(Application.ExecutablePath);
+                    }
+                }
+                finally
                 {
-                    Process.Start(Application.ExecutablePath);
+                    if (hasHandle)
+                        mutex.ReleaseMutex();
                 }
             }
         }
