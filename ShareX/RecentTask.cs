@@ -42,12 +42,7 @@ namespace ShareX
             {
                 string text = ToString();
 
-                if (!string.IsNullOrEmpty(text))
-                {
-                    text = Path.GetFileName(text);
-                }
-
-                return text;
+                return Helpers.GetFilenameSafe(text);
             }
         }
 

@@ -83,6 +83,26 @@ namespace ShareX.HelpersLib
             return null;
         }
 
+        public static string GetFilenameSafe(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                int pos = filePath.LastIndexOf('\\');
+
+                if (pos < 0)
+                {
+                    pos = filePath.LastIndexOf('/');
+                }
+
+                if (pos >= 0)
+                {
+                    return filePath.Substring(pos + 1);
+                }
+            }
+
+            return filePath;
+        }
+
         public static string ChangeFilenameExtension(string filePath, string extension)
         {
             if (!string.IsNullOrEmpty(filePath) && !string.IsNullOrEmpty(extension))
