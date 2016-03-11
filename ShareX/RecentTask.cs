@@ -40,7 +40,16 @@ namespace ShareX
         {
             get
             {
-                string text = ToString();
+                string text = "";
+
+                if (!string.IsNullOrEmpty(FilePath))
+                {
+                    text = FilePath;
+                }
+                else if (!string.IsNullOrEmpty(URL))
+                {
+                    text = URL;
+                }
 
                 return Helpers.GetFilenameSafe(text);
             }
