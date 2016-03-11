@@ -826,7 +826,6 @@
     <None Include="Favicons\Hastebin.png" />
     <None Include="Favicons\Up1.ico" />
     <None Include="Favicons\CoinURL.ico" />
-    <None Include="Favicons\copy.ico" />
     <None Include="Favicons\Lambda.ico" />
     <None Include="Favicons\Mega.ico" />
     <None Include="Favicons\Picasa.ico" />

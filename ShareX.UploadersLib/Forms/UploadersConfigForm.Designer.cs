@@ -208,14 +208,6 @@
             this.lblBoxFolderID = new System.Windows.Forms.Label();
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
-            this.tpCopy = new System.Windows.Forms.TabPage();
-            this.pbCopyLogo = new System.Windows.Forms.PictureBox();
-            this.lblCopyURLType = new System.Windows.Forms.Label();
-            this.cbCopyURLType = new System.Windows.Forms.ComboBox();
-            this.lblCopyStatus = new System.Windows.Forms.Label();
-            this.lblCopyPath = new System.Windows.Forms.Label();
-            this.txtCopyPath = new System.Windows.Forms.TextBox();
-            this.oAuthCopy = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
             this.txtAmazonS3CustomDomain = new System.Windows.Forms.TextBox();
             this.lblAmazonS3PathPreviewLabel = new System.Windows.Forms.Label();
@@ -514,6 +506,7 @@
             this.btnPicasaRefreshAlbumList = new System.Windows.Forms.Button();
             this.oauth2Picasa = new ShareX.UploadersLib.OAuthControl();
             this.tpChevereto = new System.Windows.Forms.TabPage();
+            this.btnCheveretoTestAll = new System.Windows.Forms.Button();
             this.lblCheveretoUploadURLExample = new System.Windows.Forms.Label();
             this.lblCheveretoUploaders = new System.Windows.Forms.Label();
             this.cbCheveretoUploaders = new System.Windows.Forms.ComboBox();
@@ -535,7 +528,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.btnCheveretoTestAll = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -564,8 +556,6 @@
             this.tpOneDrive.SuspendLayout();
             this.tpGoogleDrive.SuspendLayout();
             this.tpBox.SuspendLayout();
-            this.tpCopy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).BeginInit();
             this.tpAmazonS3.SuspendLayout();
             this.tpMega.SuspendLayout();
             this.tpOwnCloud.SuspendLayout();
@@ -1612,7 +1602,6 @@
             this.tcFileUploaders.Controls.Add(this.tpOneDrive);
             this.tcFileUploaders.Controls.Add(this.tpGoogleDrive);
             this.tcFileUploaders.Controls.Add(this.tpBox);
-            this.tcFileUploaders.Controls.Add(this.tpCopy);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
             this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
@@ -1960,65 +1949,6 @@
             this.oauth2Box.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Box_CompleteButtonClicked);
             this.oauth2Box.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Box_ClearButtonClicked);
             this.oauth2Box.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Box_RefreshButtonClicked);
-            // 
-            // tpCopy
-            // 
-            this.tpCopy.Controls.Add(this.pbCopyLogo);
-            this.tpCopy.Controls.Add(this.lblCopyURLType);
-            this.tpCopy.Controls.Add(this.cbCopyURLType);
-            this.tpCopy.Controls.Add(this.lblCopyStatus);
-            this.tpCopy.Controls.Add(this.lblCopyPath);
-            this.tpCopy.Controls.Add(this.txtCopyPath);
-            this.tpCopy.Controls.Add(this.oAuthCopy);
-            resources.ApplyResources(this.tpCopy, "tpCopy");
-            this.tpCopy.Name = "tpCopy";
-            this.tpCopy.UseVisualStyleBackColor = true;
-            // 
-            // pbCopyLogo
-            // 
-            this.pbCopyLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.pbCopyLogo, "pbCopyLogo");
-            this.pbCopyLogo.Name = "pbCopyLogo";
-            this.pbCopyLogo.TabStop = false;
-            this.pbCopyLogo.Click += new System.EventHandler(this.pbCopyLogo_Click);
-            // 
-            // lblCopyURLType
-            // 
-            resources.ApplyResources(this.lblCopyURLType, "lblCopyURLType");
-            this.lblCopyURLType.Name = "lblCopyURLType";
-            // 
-            // cbCopyURLType
-            // 
-            this.cbCopyURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCopyURLType.FormattingEnabled = true;
-            resources.ApplyResources(this.cbCopyURLType, "cbCopyURLType");
-            this.cbCopyURLType.Name = "cbCopyURLType";
-            this.cbCopyURLType.SelectedIndexChanged += new System.EventHandler(this.cbCopyURLType_SelectedIndexChanged);
-            // 
-            // lblCopyStatus
-            // 
-            resources.ApplyResources(this.lblCopyStatus, "lblCopyStatus");
-            this.lblCopyStatus.Name = "lblCopyStatus";
-            // 
-            // lblCopyPath
-            // 
-            resources.ApplyResources(this.lblCopyPath, "lblCopyPath");
-            this.lblCopyPath.Name = "lblCopyPath";
-            // 
-            // txtCopyPath
-            // 
-            resources.ApplyResources(this.txtCopyPath, "txtCopyPath");
-            this.txtCopyPath.Name = "txtCopyPath";
-            this.txtCopyPath.TextChanged += new System.EventHandler(this.txtCopyPath_TextChanged);
-            // 
-            // oAuthCopy
-            // 
-            this.oAuthCopy.IsRefreshable = false;
-            resources.ApplyResources(this.oAuthCopy, "oAuthCopy");
-            this.oAuthCopy.Name = "oAuthCopy";
-            this.oAuthCopy.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
-            this.oAuthCopy.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
-            this.oAuthCopy.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuthCopy_ClearButtonClicked);
             // 
             // tpAmazonS3
             // 
@@ -4153,6 +4083,13 @@
             this.tpChevereto.Name = "tpChevereto";
             this.tpChevereto.UseVisualStyleBackColor = true;
             // 
+            // btnCheveretoTestAll
+            // 
+            resources.ApplyResources(this.btnCheveretoTestAll, "btnCheveretoTestAll");
+            this.btnCheveretoTestAll.Name = "btnCheveretoTestAll";
+            this.btnCheveretoTestAll.UseVisualStyleBackColor = true;
+            this.btnCheveretoTestAll.Click += new System.EventHandler(this.btnCheveretoTestAll_Click);
+            // 
             // lblCheveretoUploadURLExample
             // 
             resources.ApplyResources(this.lblCheveretoUploadURLExample, "lblCheveretoUploadURLExample");
@@ -4293,13 +4230,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // btnCheveretoTestAll
-            // 
-            resources.ApplyResources(this.btnCheveretoTestAll, "btnCheveretoTestAll");
-            this.btnCheveretoTestAll.Name = "btnCheveretoTestAll";
-            this.btnCheveretoTestAll.UseVisualStyleBackColor = true;
-            this.btnCheveretoTestAll.Click += new System.EventHandler(this.btnCheveretoTestAll_Click);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4358,9 +4288,6 @@
             this.tpGoogleDrive.PerformLayout();
             this.tpBox.ResumeLayout(false);
             this.tpBox.PerformLayout();
-            this.tpCopy.ResumeLayout(false);
-            this.tpCopy.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).EndInit();
             this.tpAmazonS3.ResumeLayout(false);
             this.tpAmazonS3.PerformLayout();
             this.tpMega.ResumeLayout(false);
@@ -4543,15 +4470,7 @@
         private System.Windows.Forms.Label lblDropboxPathTip;
         private System.Windows.Forms.Label lblDropboxPath;
         private System.Windows.Forms.TextBox txtDropboxPath;
-        private System.Windows.Forms.TabPage tpCopy;
-        private System.Windows.Forms.Label lblCopyURLType;
-        private System.Windows.Forms.ComboBox cbCopyURLType;
-        private OAuthControl oAuthCopy;
         private System.Windows.Forms.Button btnCopyShowFiles;
-        private System.Windows.Forms.PictureBox pbCopyLogo;
-        private System.Windows.Forms.Label lblCopyStatus;
-        private System.Windows.Forms.Label lblCopyPath;
-        private System.Windows.Forms.TextBox txtCopyPath;
         public System.Windows.Forms.TabPage tpFTP;
         private System.Windows.Forms.Button btnFtpClient;
         private System.Windows.Forms.Label lblFtpFiles;

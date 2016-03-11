@@ -287,9 +287,6 @@ Created folders:</value>
   <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
     <value>Status: Not logged in.</value>
   </data>
-  <data name="Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\copy.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
     <value>Login successful.</value>
   </data>

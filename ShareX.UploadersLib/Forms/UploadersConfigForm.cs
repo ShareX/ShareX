@@ -80,7 +80,6 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpBox, Resources.Box);
             AddIconToTab(tpChevereto, Resources.Chevereto);
             AddIconToTab(tpCoinURL, Resources.CoinURL);
-            AddIconToTab(tpCopy, Resources.Copy);
             AddIconToTab(tpCustomUploaders, Resources.globe_network);
             AddIconToTab(tpDropbox, Resources.Dropbox);
             AddIconToTab(tpEmail, Resources.mail);
@@ -127,7 +126,6 @@ namespace ShareX.UploadersLib
             ttlvMain.FocusListView();
 
             CodeMenu.Create(txtDropboxPath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
-            CodeMenu.Create(txtCopyPath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
             CodeMenu.Create(txtAmazonS3ObjectPrefix, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
             CodeMenu.Create(txtMediaFirePath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
             CodeMenu.Create(txtCustomUploaderArgValue, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
@@ -326,18 +324,6 @@ namespace ShareX.UploadersLib
             cbDropboxURLType.Items.AddRange(Helpers.GetEnumNamesProper<DropboxURLType>());
             cbDropboxURLType.SelectedIndex = (int)Config.DropboxURLType;
             UpdateDropboxStatus();
-
-            // Copy
-
-            if (OAuthInfo.CheckOAuth(Config.CopyOAuthInfo))
-            {
-                oAuthCopy.Status = OAuthLoginStatus.LoginSuccessful;
-            }
-
-            txtCopyPath.Text = Config.CopyUploadPath;
-            cbCopyURLType.Items.AddRange(Helpers.GetEnumNamesProper<CopyURLType>());
-            cbCopyURLType.SelectedIndex = (int)Config.CopyURLType;
-            UpdateCopyStatus();
 
             // Google Drive
 
@@ -1256,41 +1242,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Dropbox
-
-        #region Copy
-
-        private void pbCopyLogo_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://copy.com");
-        }
-
-        private void txtCopyPath_TextChanged(object sender, EventArgs e)
-        {
-            Config.CopyUploadPath = txtCopyPath.Text;
-            UpdateCopyStatus();
-        }
-
-        private void oAuthCopy_OpenButtonClicked()
-        {
-            CopyAuthOpen();
-        }
-
-        private void oAuthCopy_CompleteButtonClicked(string code)
-        {
-            CopyAuthComplete(code);
-        }
-
-        private void oAuthCopy_ClearButtonClicked()
-        {
-            Config.CopyOAuthInfo = null;
-        }
-
-        private void cbCopyURLType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.CopyURLType = (CopyURLType)cbCopyURLType.SelectedIndex;
-        }
-
-        #endregion Copy
 
         #region OneDrive
 
