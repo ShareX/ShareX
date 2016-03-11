@@ -77,7 +77,6 @@ Mega, Gist and Jira support: https://github.com/gpailler
 Web site: https://github.com/dmxt
 Amazon S3 and DreamObjects support: https://github.com/alanedwardes
 Gfycat support: https://github.com/Dinnerbone
-Copy support: https://github.com/KamilKZ
 AdFly support: https://github.com/LRNAB
 MediaFire support: https://github.com/michalx2
 Pushbullet support: https://github.com/BallisticLingonberries
