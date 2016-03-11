@@ -992,13 +992,6 @@ namespace ShareX
                         FolderID = Program.UploadersConfig.GoogleDriveUseFolder ? Program.UploadersConfig.GoogleDriveFolderID : null
                     };
                     break;
-                case FileDestination.Copy:
-                    fileUploader = new Copy(Program.UploadersConfig.CopyOAuthInfo, Program.UploadersConfig.CopyAccountInfo)
-                    {
-                        UploadPath = NameParser.Parse(NameParserType.URL, Copy.TidyUploadPath(Program.UploadersConfig.CopyUploadPath)),
-                        URLType = Program.UploadersConfig.CopyURLType
-                    };
-                    break;
                 /*case FileDestination.Hubic:
                     fileUploader = new Hubic(Program.UploadersConfig.HubicOAuth2Info, Program.UploadersConfig.HubicOpenstackAuthInfo)
                     {

@@ -92,8 +92,6 @@ namespace ShareX.UploadersLib
         OneDrive,
         [Description("Google Drive")]
         GoogleDrive,
-        [Description("Copy")]
-        Copy,
         [Description("Box")]
         Box,
         [Description("MEGA")]

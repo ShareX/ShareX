@@ -426,8 +426,6 @@ namespace ShareX.UploadersLib
                     return OAuth2Info.CheckOAuth(OneDriveOAuth2Info);
                 case FileDestination.GoogleDrive:
                     return OAuth2Info.CheckOAuth(GoogleDriveOAuth2Info);
-                case FileDestination.Copy:
-                    return OAuthInfo.CheckOAuth(CopyOAuthInfo);
                 case FileDestination.Box:
                     return OAuth2Info.CheckOAuth(BoxOAuth2Info);
                 case FileDestination.Mega:
