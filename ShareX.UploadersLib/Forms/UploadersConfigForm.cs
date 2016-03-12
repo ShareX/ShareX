@@ -149,6 +149,11 @@ namespace ShareX.UploadersLib
 
             eiFTP.ObjectType = typeof(FTPAccount);
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
+
+#if DEBUG
+            btnCheveretoTestAll.Visible = true;
+            btnPomfTest.Visible = true;
+#endif
         }
 
         private void AddIconToTab(TabPage tp, Icon icon)
