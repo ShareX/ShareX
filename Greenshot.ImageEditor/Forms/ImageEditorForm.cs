@@ -680,14 +680,6 @@ namespace Greenshot
 
             // remove from the editor list
             editorList.Remove(this);
-
-            surface.Dispose();
-
-            GC.Collect();
-            if (coreConfiguration.MinimizeWorkingSetSize)
-            {
-                PsAPI.EmptyWorkingSet();
-            }
         }
 
         private void ImageEditorFormKeyDown(object sender, KeyEventArgs e)
