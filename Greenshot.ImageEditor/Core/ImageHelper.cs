@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -972,7 +972,7 @@ namespace GreenshotPlugin.Core
             {
                 shadowSize++;
             }
-            bool useGDIBlur = GDIplus.IsBlurPossible(shadowSize);
+            bool useGDIBlur = GDIplus.isBlurPossible(shadowSize);
             // Create "mask" for the shadow
             ColorMatrix maskMatrix = new ColorMatrix();
             maskMatrix.Matrix00 = 0;
@@ -1643,12 +1643,18 @@ namespace GreenshotPlugin.Core
             if (maintainAspectRatio && canvasUseNewSize)
             {
                 newImage = CreateEmpty(newWidth, newHeight, sourceImage.PixelFormat, backgroundColor, sourceImage.HorizontalResolution, sourceImage.VerticalResolution);
-                matrix.Scale((float)newWidth / sourceImage.Width, (float)newHeight / sourceImage.Height, MatrixOrder.Append);
+                if (matrix != null)
+                {
+                    matrix.Scale((float)newWidth / sourceImage.Width, (float)newHeight / sourceImage.Height, MatrixOrder.Append);
+                }
             }
             else
             {
                 newImage = CreateEmpty(destWidth, destHeight, sourceImage.PixelFormat, backgroundColor, sourceImage.HorizontalResolution, sourceImage.VerticalResolution);
-                matrix.Scale((float)destWidth / sourceImage.Width, (float)destHeight / sourceImage.Height, MatrixOrder.Append);
+                if (matrix != null)
+                {
+                    matrix.Scale((float)destWidth / sourceImage.Width, (float)destHeight / sourceImage.Height, MatrixOrder.Append);
+                }
             }
 
             using (Graphics graphics = Graphics.FromImage(newImage))

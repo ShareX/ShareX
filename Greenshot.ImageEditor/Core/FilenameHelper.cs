@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -23,6 +23,7 @@ using Greenshot.IniFile;
 using Greenshot.Plugin;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -31,7 +32,14 @@ namespace GreenshotPlugin.Core
 {
     public static class FilenameHelper
     {
+        // Specify the regular expression for the filename formatting:
+        // Starting with ${
+        // than the varname, which ends with a : or }
+        // If a parameters needs to be supplied, than a ":" should follow the name... everything from the : until the } is considered to be part of the parameters.
+        // The parameter format is a single alpha followed by the value belonging to the parameter, e.g. :
+        // ${capturetime:d"yyyy-MM-dd HH_mm_ss"}
         private static readonly Regex VAR_REGEXP = new Regex(@"\${(?<variable>[^:}]+)[:]?(?<parameters>[^}]*)}", RegexOptions.Compiled);
+
         private static readonly Regex SPLIT_REGEXP = new Regex(";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", RegexOptions.Compiled);
         private const int MAX_TITLE_LENGTH = 80;
         private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
@@ -158,7 +166,7 @@ namespace GreenshotPlugin.Core
             int endIndex = 0;
             char padChar = ' ';
             string dateFormat = "yyyy-MM-dd HH-mm-ss";
-
+            IDictionary<string, string> replacements = new Dictionary<string, string>();
             string replaceValue = "";
             string variable = match.Groups["variable"].Value;
             string parameters = match.Groups["parameters"].Value;
@@ -170,6 +178,7 @@ namespace GreenshotPlugin.Core
                 {
                     switch (parameter.Substring(0, 1))
                     {
+                        // Padding p<width>[,pad-character]
                         case "p":
                             string[] padParams = parameter.Substring(1).Split(new char[] { ',' });
                             try
@@ -184,6 +193,17 @@ namespace GreenshotPlugin.Core
                                 padChar = padParams[1][0];
                             }
                             break;
+                        // replace
+                        // r<old string>,<new string>
+                        case "r":
+                            string[] replaceParameters = parameter.Substring(1).Split(new char[] { ',' });
+                            if (replaceParameters != null && replaceParameters.Length == 2)
+                            {
+                                replacements.Add(replaceParameters[0], replaceParameters[1]);
+                            }
+                            break;
+                        // Dateformat d<format>
+                        // Format can be anything that is used in C# date formatting
                         case "d":
                             dateFormat = parameter.Substring(1);
                             if (dateFormat.StartsWith("\""))
@@ -195,6 +215,8 @@ namespace GreenshotPlugin.Core
                                 dateFormat = dateFormat.Substring(0, dateFormat.Length - 1);
                             }
                             break;
+                        // Substring:
+                        // s<start>[,length]
                         case "s":
                             string range = parameter.Substring(1);
                             string[] rangelist = range.Split(new char[] { ',' });
@@ -436,6 +458,14 @@ namespace GreenshotPlugin.Core
                 }
             }
 
+            // new for feature #697
+            if (replacements.Count > 0)
+            {
+                foreach (string oldValue in replacements.Keys)
+                {
+                    replaceValue = replaceValue.Replace(oldValue, replacements[oldValue]);
+                }
+            }
             return replaceValue;
         }
 
@@ -478,10 +508,10 @@ namespace GreenshotPlugin.Core
             }
 
             return VAR_REGEXP.Replace(pattern,
-                delegate (Match m)
+                new MatchEvaluator(delegate (Match m)
                 {
                     return MatchVarEvaluator(m, null, processVars, userVars, machineVars, filenameSafeMode);
-                }
+                })
             );
         }
 
@@ -489,7 +519,7 @@ namespace GreenshotPlugin.Core
         /// Fill the pattern wit the supplied details
         /// </summary>
         /// <param name="pattern">Pattern</param>
-        /// <param name="captureDetails">CaptureDetails</param>
+        /// <param name="captureDetails">CaptureDetails, can be null</param>
         /// <param name="filenameSafeMode">Should the result be made "filename" safe?</param>
         /// <returns>Filled pattern</returns>
         public static string FillPattern(string pattern, ICaptureDetails captureDetails, bool filenameSafeMode)
@@ -527,19 +557,58 @@ namespace GreenshotPlugin.Core
             try
             {
                 return VAR_REGEXP.Replace(pattern,
-                    delegate (Match m)
+                    new MatchEvaluator(delegate (Match m)
                     {
                         return MatchVarEvaluator(m, captureDetails, processVars, userVars, machineVars, filenameSafeMode);
-                    }
+                    })
                 );
             }
             catch (Exception e)
             {
                 // adding additional data for bug tracking
-                e.Data.Add("title", captureDetails.Title);
+                if (captureDetails != null)
+                {
+                    e.Data.Add("title", captureDetails.Title);
+                }
                 e.Data.Add("pattern", pattern);
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Checks whether a directory name is valid in the current file system
+        /// </summary>
+        /// <param name="directoryName">directory name (not path!)</param>
+        /// <returns>true if directory name is valid</returns>
+        public static bool IsDirectoryNameValid(string directoryName)
+        {
+            var forbiddenChars = Path.GetInvalidPathChars();
+            foreach (var forbiddenChar in forbiddenChars)
+            {
+                if (directoryName == null || directoryName.Contains(forbiddenChar.ToString()))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Checks whether a filename is valid in the current file system
+        /// </summary>
+        /// <param name="filename">name of the file</param>
+        /// <returns>true if filename is valid</returns>
+        public static bool IsFilenameValid(string filename)
+        {
+            var forbiddenChars = Path.GetInvalidFileNameChars();
+            foreach (var forbiddenChar in forbiddenChars)
+            {
+                if (filename == null || filename.Contains(forbiddenChar.ToString()))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

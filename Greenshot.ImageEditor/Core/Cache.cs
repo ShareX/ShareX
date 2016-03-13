@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -49,8 +49,7 @@ namespace GreenshotPlugin.Core
         /// Initialize the cache
         /// </summary>
         /// <param name="expiredCallback"></param>
-        public Cache(CacheObjectExpired expiredCallback)
-            : this()
+        public Cache(CacheObjectExpired expiredCallback) : this()
         {
             this.expiredCallback = expiredCallback;
         }
@@ -59,8 +58,7 @@ namespace GreenshotPlugin.Core
         /// Initialize the cache with a expire setting
         /// </summary>
         /// <param name="secondsToExpire"></param>
-        public Cache(int secondsToExpire)
-            : this()
+        public Cache(int secondsToExpire) : this()
         {
             this.secondsToExpire = secondsToExpire;
         }
@@ -70,8 +68,7 @@ namespace GreenshotPlugin.Core
         /// </summary>
         /// <param name="secondsToExpire"></param>
         /// <param name="expiredCallback"></param>
-        public Cache(int secondsToExpire, CacheObjectExpired expiredCallback)
-            : this(expiredCallback)
+        public Cache(int secondsToExpire, CacheObjectExpired expiredCallback) : this(expiredCallback)
         {
             this.secondsToExpire = secondsToExpire;
         }

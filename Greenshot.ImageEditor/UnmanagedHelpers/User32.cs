@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -23,6 +23,7 @@ using Microsoft.Win32.SafeHandles;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Permissions;
@@ -44,6 +45,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public static class User32
     {
+        private static bool _CanCallGetPhysicalCursorPos = true;
         public const int SC_RESTORE = 0xF120;
         public const int SC_CLOSE = 0xF060;
         public const int SC_MAXIMIZE = 0xF030;
@@ -58,12 +60,14 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public const int MONITOR_DEFAULTTONEAREST = 2;
         public const Int32 CURSOR_SHOWING = 0x00000001;
 
+        #region DllImports
+
         [DllImport("user32", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         public extern static bool IsWindowVisible(IntPtr hWnd);
 
         [DllImport("user32", SetLastError = true)]
-        public static extern IntPtr GetWindowThreadProcessId(IntPtr hWnd, out IntPtr processId);
+        public static extern int GetWindowThreadProcessId(IntPtr hWnd, out int processId);
 
         [DllImport("user32", SetLastError = true)]
         public static extern IntPtr GetParent(IntPtr hWnd);
@@ -80,7 +84,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         [DllImport("user32", CharSet = CharSet.Unicode, SetLastError = true)]
         public extern static int GetWindowText(IntPtr hWnd, StringBuilder lpString, int cch);
 
-        [DllImport("user32", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32", CharSet = CharSet.Unicode, SetLastError = true)]
         public extern static int GetWindowTextLength(IntPtr hWnd);
 
         [DllImport("user32", SetLastError = true)]
@@ -120,9 +124,9 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public extern static int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
 
         [DllImport("user32", SetLastError = true)]
-        public static extern IntPtr GetClassLong(IntPtr hWnd, int nIndex);
+        public static extern uint GetClassLong(IntPtr hWnd, int nIndex);
 
-        [DllImport("user32", SetLastError = true)]
+        [DllImport("user32", SetLastError = true, EntryPoint = "GetClassLongPtr")]
         public static extern IntPtr GetClassLongPtr(IntPtr hWnd, int nIndex);
 
         [DllImport("user32", SetLastError = true)]
@@ -130,16 +134,16 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public static extern bool PrintWindow(IntPtr hwnd, IntPtr hDC, uint nFlags);
 
         [DllImport("user32", SetLastError = true)]
-        public extern static int SendMessage(IntPtr hWnd, int wMsg, IntPtr wParam, IntPtr lParam);
-
-        [DllImport("user32", SetLastError = true, EntryPoint = "SendMessageA")]
-        public static extern IntPtr SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
+        public extern static IntPtr SendMessage(IntPtr hWnd, uint wMsg, IntPtr wParam, IntPtr lParam);
 
         [DllImport("user32", SetLastError = true)]
-        public extern static uint GetWindowLong(IntPtr hwnd, int index);
+        public extern static IntPtr SendMessage(IntPtr hWnd, uint wMsg, IntPtr wParam, [MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
-        [DllImport("user32", SetLastError = true)]
-        public extern static uint GetWindowLongPtr(IntPtr hwnd, int nIndex);
+        [DllImport("user32", SetLastError = true, EntryPoint = "GetWindowLong")]
+        public extern static int GetWindowLong(IntPtr hwnd, int index);
+
+        [DllImport("user32", SetLastError = true, EntryPoint = "GetWindowLongPtr")]
+        public extern static IntPtr GetWindowLongPtr(IntPtr hwnd, int nIndex);
 
         [DllImport("user32", SetLastError = true)]
         public static extern int SetWindowLong(IntPtr hWnd, int index, int styleFlags);
@@ -158,10 +162,10 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public static extern bool GetWindowInfo(IntPtr hwnd, ref WindowInfo pwi);
 
         [DllImport("user32", SetLastError = true)]
-        public extern static int EnumWindows(EnumWindowsProc lpEnumFunc, int lParam);
+        public extern static int EnumWindows(EnumWindowsProc lpEnumFunc, IntPtr lParam);
 
         [DllImport("user32", SetLastError = true)]
-        public extern static int EnumChildWindows(IntPtr hWndParent, EnumWindowsProc lpEnumFunc, int lParam);
+        public extern static int EnumChildWindows(IntPtr hWndParent, EnumWindowsProc lpEnumFunc, IntPtr lParam);
 
         [DllImport("user32", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -173,9 +177,6 @@ namespace GreenshotPlugin.UnmanagedHelpers
 
         [DllImport("user32", SetLastError = true)]
         public static extern int SetScrollPos(IntPtr hWnd, Orientation nBar, int nPos, bool bRedraw);
-
-        [DllImport("user32", SetLastError = true, EntryPoint = "PostMessageA")]
-        public static extern bool PostMessage(IntPtr hWnd, uint msg, int wParam, int lParam);
 
         [DllImport("user32", SetLastError = true)]
         public static extern RegionResult GetWindowRgn(IntPtr hWnd, SafeHandle hRgn);
@@ -191,7 +192,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public static extern IntPtr GetDC(IntPtr hwnd);
 
         [DllImport("user32", SetLastError = true)]
-        public static extern void ReleaseDC(IntPtr dc);
+        public static extern bool ReleaseDC(IntPtr hWnd, IntPtr hDC);
 
         [DllImport("user32", SetLastError = true)]
         public static extern IntPtr GetClipboardOwner();
@@ -199,7 +200,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         [DllImport("user32", SetLastError = true)]
         public static extern IntPtr SetClipboardViewer(IntPtr hWndNewViewer);
 
-        [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
+        [DllImport("user32", SetLastError = true)]
         public static extern bool ChangeClipboardChain(IntPtr hWndRemove, IntPtr hWndNewNext);
 
         // Added for WinEventHook logic, Greenshot 1.2
@@ -210,10 +211,10 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public static extern IntPtr SetWinEventHook(WinEvent eventMin, WinEvent eventMax, IntPtr hmodWinEventProc, WinEventDelegate lpfnWinEventProc, int idProcess, int idThread, WinEventHookFlags dwFlags);
 
         // Added for finding Metro apps, Greenshot 1.1
-        [DllImport("user32", SetLastError = true)]
+        [DllImport("user32", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
-        [DllImport("user32", SetLastError = true)]
+        [DllImport("user32", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
 
         /// uiFlags: 0 - Count of GDI objects
@@ -226,14 +227,14 @@ namespace GreenshotPlugin.UnmanagedHelpers
         [DllImport("user32", SetLastError = true)]
         public static extern uint GetGuiResources(IntPtr hProcess, uint uiFlags);
 
-        [DllImport("user32", EntryPoint = "RegisterWindowMessageA", SetLastError = true)]
+        [DllImport("user32", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern uint RegisterWindowMessage(string lpString);
 
-        [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
+        [DllImport("user32", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern IntPtr SendMessageTimeout(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam, SendMessageTimeoutFlags fuFlags, uint uTimeout, out UIntPtr lpdwResult);
 
         [DllImport("user32", SetLastError = true)]
-        public static extern bool GetPhysicalCursorPos(out POINT cursorLocation);
+        private static extern bool GetPhysicalCursorPos(out POINT cursorLocation);
 
         [DllImport("user32", SetLastError = true)]
         public static extern int MapWindowPoints(IntPtr hwndFrom, IntPtr hwndTo, ref POINT lpPoints, [MarshalAs(UnmanagedType.U4)] int cPoints);
@@ -268,6 +269,48 @@ namespace GreenshotPlugin.UnmanagedHelpers
         [DllImport("user32", SetLastError = true)]
         public static extern IntPtr CreateIconIndirect(ref IconInfo icon);
 
+        [DllImport("user32", SetLastError = true)]
+        public static extern IntPtr OpenInputDesktop(uint dwFlags, bool fInherit, DesktopAccessRight dwDesiredAccess);
+
+        [DllImport("user32", SetLastError = true)]
+        public static extern bool SetThreadDesktop(IntPtr hDesktop);
+
+        [DllImport("user32", SetLastError = true)]
+        public static extern bool CloseDesktop(IntPtr hDesktop);
+
+        #endregion DllImports
+
+        /// <summary>
+        /// Retrieves the cursor location safely, accounting for DPI settings in Vista/Windows 7.
+        /// </summary>
+        /// <returns>Point with cursor location, relative to the origin of the monitor setup
+        /// (i.e. negative coordinates arepossible in multiscreen setups)</returns>
+        public static Point GetCursorLocation()
+        {
+            if (Environment.OSVersion.Version.Major >= 6 && _CanCallGetPhysicalCursorPos)
+            {
+                POINT cursorLocation;
+                try
+                {
+                    if (GetPhysicalCursorPos(out cursorLocation))
+                    {
+                        return new Point(cursorLocation.X, cursorLocation.Y);
+                    }
+                    else
+                    {
+                        Win32Error error = Win32.GetLastErrorCode();
+                        LOG.ErrorFormat("Error retrieving PhysicalCursorPos : {0}", Win32.GetMessage(error));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    LOG.Error("Exception retrieving PhysicalCursorPos, no longer calling this. Cause :", ex);
+                    _CanCallGetPhysicalCursorPos = false;
+                }
+            }
+            return new Point(Cursor.Position.X, Cursor.Position.Y);
+        }
+
         /// <summary>
         /// Wrapper for the GetClassLong which decides if the system is 64-bit or not and calls the right one.
         /// </summary>
@@ -282,7 +325,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
             }
             else
             {
-                return GetClassLong(hWnd, nIndex);
+                return new IntPtr(GetClassLong(hWnd, nIndex));
             }
         }
 
@@ -292,11 +335,11 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// <param name="hwnd"></param>
         /// <param name="nIndex"></param>
         /// <returns></returns>
-        public static uint GetWindowLongWrapper(IntPtr hwnd, int nIndex)
+        public static long GetWindowLongWrapper(IntPtr hwnd, int nIndex)
         {
             if (IntPtr.Size == 8)
             {
-                return GetWindowLongPtr(hwnd, nIndex);
+                return GetWindowLongPtr(hwnd, nIndex).ToInt64();
             }
             else
             {
@@ -324,12 +367,18 @@ namespace GreenshotPlugin.UnmanagedHelpers
 
         public static uint GetGuiResourcesGDICount()
         {
-            return GetGuiResources(Process.GetCurrentProcess().Handle, 0);
+            using (Process currentProcess = Process.GetCurrentProcess())
+            {
+                return GetGuiResources(currentProcess.Handle, 0);
+            }
         }
 
         public static uint GetGuiResourcesUserCount()
         {
-            return GetGuiResources(Process.GetCurrentProcess().Handle, 1);
+            using (Process currentProcess = Process.GetCurrentProcess())
+            {
+                return GetGuiResources(currentProcess.Handle, 1);
+            }
         }
 
         /// <summary>
@@ -358,17 +407,50 @@ namespace GreenshotPlugin.UnmanagedHelpers
     public delegate void WinEventDelegate(IntPtr hWinEventHook, WinEvent eventType, IntPtr hwnd, EventObjects idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
 
     /// <summary>
+    /// A SafeHandle class implementation for the current input desktop
+    /// </summary>
+    public class SafeCurrentInputDesktopHandle : SafeHandleZeroOrMinusOneIsInvalid
+    {
+        public SafeCurrentInputDesktopHandle() : base(true)
+        {
+            IntPtr hDesktop = User32.OpenInputDesktop(0, true, DesktopAccessRight.GENERIC_ALL);
+            if (hDesktop != IntPtr.Zero)
+            {
+                SetHandle(hDesktop);
+                if (User32.SetThreadDesktop(hDesktop))
+                {
+                    LOG.DebugFormat("Switched to desktop {0}", hDesktop);
+                }
+                else
+                {
+                    LOG.WarnFormat("Couldn't switch to desktop {0}", hDesktop);
+                    LOG.Error(User32.CreateWin32Exception("SetThreadDesktop"));
+                }
+            }
+            else
+            {
+                LOG.Warn("Couldn't get current desktop.");
+                LOG.Error(User32.CreateWin32Exception("OpenInputDesktop"));
+            }
+        }
+
+        [SecurityPermission(SecurityAction.LinkDemand, UnmanagedCode = true)]
+        protected override bool ReleaseHandle()
+        {
+            return User32.CloseDesktop(handle);
+        }
+    }
+
+    /// <summary>
     /// A SafeHandle class implementation for the hIcon
     /// </summary>
     public class SafeIconHandle : SafeHandleZeroOrMinusOneIsInvalid
     {
-        private SafeIconHandle()
-            : base(true)
+        private SafeIconHandle() : base(true)
         {
         }
 
-        public SafeIconHandle(IntPtr hIcon)
-            : base(true)
+        public SafeIconHandle(IntPtr hIcon) : base(true)
         {
             SetHandle(hIcon);
         }
@@ -394,14 +476,12 @@ namespace GreenshotPlugin.UnmanagedHelpers
         private IntPtr hWnd;
 
         [SecurityCritical]
-        private SafeWindowDCHandle()
-            : base(true)
+        private SafeWindowDCHandle() : base(true)
         {
         }
 
         [SecurityCritical]
-        public SafeWindowDCHandle(IntPtr hWnd, IntPtr preexistingHandle)
-            : base(true)
+        public SafeWindowDCHandle(IntPtr hWnd, IntPtr preexistingHandle) : base(true)
         {
             this.hWnd = hWnd;
             SetHandle(preexistingHandle);

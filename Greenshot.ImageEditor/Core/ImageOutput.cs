@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -23,6 +23,7 @@ using Greenshot.IniFile;
 using Greenshot.Plugin;
 using GreenshotPlugin.Controls;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -204,6 +205,10 @@ namespace GreenshotPlugin.Core
                     AddTag(imageToSave);
                     // Added for OptiPNG
                     bool processed = false;
+                    if (Equals(imageFormat, ImageFormat.Png) && !string.IsNullOrEmpty(conf.OptimizePNGCommand))
+                    {
+                        processed = ProcessPNGImageExternally(imageToSave, targetStream);
+                    }
                     if (!processed)
                     {
                         imageToSave.Save(targetStream, imageFormat);
@@ -245,6 +250,83 @@ namespace GreenshotPlugin.Core
                     memoryStream.Dispose();
                 }
             }
+        }
+
+        /// <summary>
+        /// Write the passed Image to a tmp-file and call an external process, than read the file back and write it to the targetStream
+        /// </summary>
+        /// <param name="imageToProcess">Image to pass to the external process</param>
+        /// <param name="targetStream">stream to write the processed image to</param>
+        /// <returns></returns>
+        private static bool ProcessPNGImageExternally(Image imageToProcess, Stream targetStream)
+        {
+            if (string.IsNullOrEmpty(conf.OptimizePNGCommand))
+            {
+                return false;
+            }
+            if (!File.Exists(conf.OptimizePNGCommand))
+            {
+                LOG.WarnFormat("Can't find 'OptimizePNGCommand' {0}", conf.OptimizePNGCommand);
+                return false;
+            }
+            string tmpFileName = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName() + ".png");
+            try
+            {
+                using (FileStream tmpStream = File.Create(tmpFileName))
+                {
+                    LOG.DebugFormat("Writing png to tmp file: {0}", tmpFileName);
+                    imageToProcess.Save(tmpStream, ImageFormat.Png);
+                    if (LOG.IsDebugEnabled)
+                    {
+                        LOG.DebugFormat("File size before processing {0}", new FileInfo(tmpFileName).Length);
+                    }
+                }
+                if (LOG.IsDebugEnabled)
+                {
+                    LOG.DebugFormat("Starting : {0}", conf.OptimizePNGCommand);
+                }
+
+                ProcessStartInfo processStartInfo = new ProcessStartInfo(conf.OptimizePNGCommand);
+                processStartInfo.Arguments = string.Format(conf.OptimizePNGCommandArguments, tmpFileName);
+                processStartInfo.CreateNoWindow = true;
+                processStartInfo.RedirectStandardOutput = true;
+                processStartInfo.RedirectStandardError = true;
+                processStartInfo.UseShellExecute = false;
+                using (Process process = Process.Start(processStartInfo))
+                {
+                    if (process != null)
+                    {
+                        process.WaitForExit();
+                        if (process.ExitCode == 0)
+                        {
+                            if (LOG.IsDebugEnabled)
+                            {
+                                LOG.DebugFormat("File size after processing {0}", new FileInfo(tmpFileName).Length);
+                                LOG.DebugFormat("Reading back tmp file: {0}", tmpFileName);
+                            }
+                            byte[] processedImage = File.ReadAllBytes(tmpFileName);
+                            targetStream.Write(processedImage, 0, processedImage.Length);
+                            return true;
+                        }
+                        LOG.ErrorFormat("Error while processing PNG image: {0}", process.ExitCode);
+                        LOG.ErrorFormat("Output: {0}", process.StandardOutput.ReadToEnd());
+                        LOG.ErrorFormat("Error: {0}", process.StandardError.ReadToEnd());
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LOG.Error("Error while processing PNG image: ", e);
+            }
+            finally
+            {
+                if (File.Exists(tmpFileName))
+                {
+                    LOG.DebugFormat("Cleaning up tmp file: {0}", tmpFileName);
+                    File.Delete(tmpFileName);
+                }
+            }
+            return false;
         }
 
         /// <summary>
@@ -294,6 +376,44 @@ namespace GreenshotPlugin.Core
                 }
             }
 
+            // check for color reduction, forced or automatically, only when the DisableReduceColors is false
+            if (outputSettings.DisableReduceColors || (!conf.OutputFileAutoReduceColors && !outputSettings.ReduceColors))
+            {
+                return disposeImage;
+            }
+            bool isAlpha = Image.IsAlphaPixelFormat(imageToSave.PixelFormat);
+            if (outputSettings.ReduceColors || (!isAlpha && conf.OutputFileAutoReduceColors))
+            {
+                using (var quantizer = new WuQuantizer((Bitmap)imageToSave))
+                {
+                    int colorCount = quantizer.GetColorCount();
+                    LOG.InfoFormat("Image with format {0} has {1} colors", imageToSave.PixelFormat, colorCount);
+                    if (!outputSettings.ReduceColors && colorCount >= 256)
+                    {
+                        return disposeImage;
+                    }
+                    try
+                    {
+                        LOG.Info("Reducing colors on bitmap to 256.");
+                        tmpImage = quantizer.GetQuantizedImage(conf.OutputFileReduceColorsTo);
+                        if (disposeImage)
+                        {
+                            imageToSave.Dispose();
+                        }
+                        imageToSave = tmpImage;
+                        // Make sure the "new" image is disposed
+                        disposeImage = true;
+                    }
+                    catch (Exception e)
+                    {
+                        LOG.Warn("Error occurred while Quantizing the image, ignoring and using original. Error: ", e);
+                    }
+                }
+            }
+            else if (isAlpha && !outputSettings.ReduceColors)
+            {
+                LOG.Info("Skipping 'optional' color reduction as the image has alpha");
+            }
             return disposeImage;
         }
 
@@ -460,7 +580,7 @@ namespace GreenshotPlugin.Core
                             QualityDialog qualityDialog = new QualityDialog(outputSettings);
                             qualityDialog.ShowDialog();
                         }
-                        // For now we always overwrite, should be changed
+                        // TODO: For now we always overwrite, should be changed
                         Save(surface, fileNameWithExtension, true, outputSettings, conf.OutputFileCopyPathToClipboard);
                         returnValue = fileNameWithExtension;
                         IniConfig.Save();

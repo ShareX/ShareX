@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -64,15 +64,15 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public static extern int ResumeThread(IntPtr hThread);
 
         [DllImport("kernel32", SetLastError = true)]
-        public static extern IntPtr OpenProcess(ProcessAccessFlags dwDesiredAccess, bool bInheritHandle, IntPtr dwProcessId);
+        public static extern IntPtr OpenProcess(ProcessAccessFlags dwDesiredAccess, bool bInheritHandle, int dwProcessId);
 
-        [DllImport("kernel32", SetLastError = true)]
+        [DllImport("kernel32", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern bool QueryFullProcessImageName(IntPtr hProcess, uint dwFlags, StringBuilder lpExeName, ref uint lpdwSize);
 
-        [DllImport("kernel32", SetLastError = true)]
+        [DllImport("kernel32", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern uint QueryDosDevice(string lpDeviceName, StringBuilder lpTargetPath, uint uuchMax);
 
-        [DllImport("kernel32", SetLastError = true)]
+        [DllImport("kernel32", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern IntPtr GetModuleHandle(string lpModuleName);
 
         [DllImport("kernel32", SetLastError = true)]
@@ -83,7 +83,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// </summary>
         /// <param name="processid"></param>
         /// <returns></returns>
-        public static string GetProcessPath(IntPtr processid)
+        public static string GetProcessPath(int processid)
         {
             StringBuilder _PathBuffer = new StringBuilder(512);
             // Try the GetModuleFileName method first since it's the fastest.

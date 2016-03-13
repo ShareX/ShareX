@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -36,13 +36,11 @@ namespace Greenshot.Drawing
     {
         protected Icon icon;
 
-        public IconContainer(Surface parent)
-            : base(parent)
+        public IconContainer(Surface parent) : base(parent)
         {
         }
 
-        public IconContainer(Surface parent, string filename)
-            : base(parent)
+        public IconContainer(Surface parent, string filename) : base(parent)
         {
             Load(filename);
         }
@@ -66,9 +64,9 @@ namespace Greenshot.Drawing
         }
 
         /**
-         * This Dispose is called from the Dispose and the Destructor.
-         * When disposing==true all non-managed resources should be freed too!
-         */
+		 * This Dispose is called from the Dispose and the Destructor.
+		 * When disposing==true all non-managed resources should be freed too!
+		 */
 
         protected override void Dispose(bool disposing)
         {

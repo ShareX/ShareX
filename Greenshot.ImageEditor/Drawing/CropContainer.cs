@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -31,8 +31,7 @@ namespace Greenshot.Drawing
     /// </summary>
     public class CropContainer : DrawableContainer
     {
-        public CropContainer(Surface parent)
-            : base(parent)
+        public CropContainer(Surface parent) : base(parent)
         {
         }
 

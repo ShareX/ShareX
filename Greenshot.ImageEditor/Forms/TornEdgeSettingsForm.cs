@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -37,7 +37,8 @@ namespace Greenshot.Forms
             InitializeComponent();
             this.Icon = GreenshotResources.getGreenshotIcon();
             shadowCheckbox.Checked = effect.GenerateShadow;
-            shadowDarkness.Value = (int)(effect.Darkness * 40);
+            // Fix to prevent BUG-1753
+            shadowDarkness.Value = Math.Max(shadowDarkness.Minimum, Math.Min(shadowDarkness.Maximum, (int)(effect.Darkness * shadowDarkness.Maximum)));
             offsetX.Value = effect.ShadowOffset.X;
             offsetY.Value = effect.ShadowOffset.Y;
             toothsize.Value = effect.ToothHeight;

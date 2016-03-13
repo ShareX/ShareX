@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -37,8 +37,7 @@ namespace Greenshot.Drawing
 
         private static readonly AdjustableArrowCap ARROW_CAP = new AdjustableArrowCap(4, 6);
 
-        public ArrowContainer(Surface parent)
-            : base(parent)
+        public ArrowContainer(Surface parent) : base(parent)
         {
         }
 
@@ -48,7 +47,8 @@ namespace Greenshot.Drawing
         protected override void InitializeFields()
         {
             AddField(GetType(), FieldType.LINE_THICKNESS, 2);
-            AddField(GetType(), FieldType.LINE_COLOR, DefaultLineColor);
+            AddField(GetType(), FieldType.ARROWHEADS, 2);
+            AddField(GetType(), FieldType.LINE_COLOR, Color.Red);
             AddField(GetType(), FieldType.FILL_COLOR, Color.Transparent);
             AddField(GetType(), FieldType.SHADOW, true);
             AddField(GetType(), FieldType.ARROWHEADS, ArrowHeadCombination.END_POINT);

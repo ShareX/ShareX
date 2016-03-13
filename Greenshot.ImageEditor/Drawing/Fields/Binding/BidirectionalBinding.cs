@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -71,9 +71,8 @@ namespace Greenshot.Drawing.Fields.Binding
         /// <param name="controlPropertyName">Property of 1st object to bind</param>
         /// <param name="fieldObject">Object containing 2nd property to bind</param>
         /// <param name="fieldPropertyName">Property of 2nd object to bind</param>
-        /// <param name="converter">taking care of converting the synchronzied value to the correct target format and back</param>
-        public BidirectionalBinding(INotifyPropertyChanged controlObject, string controlPropertyName, INotifyPropertyChanged fieldObject, string fieldPropertyName, IBindingConverter converter)
-            : this(controlObject, controlPropertyName, fieldObject, fieldPropertyName)
+        /// <param name="converter">taking care of converting the synchronized value to the correct target format and back</param>
+        public BidirectionalBinding(INotifyPropertyChanged controlObject, string controlPropertyName, INotifyPropertyChanged fieldObject, string fieldPropertyName, IBindingConverter converter) : this(controlObject, controlPropertyName, fieldObject, fieldPropertyName)
         {
             this.converter = converter;
         }
@@ -86,9 +85,8 @@ namespace Greenshot.Drawing.Fields.Binding
         /// <param name="controlPropertyName">Property of 1st object to bind</param>
         /// <param name="fieldObject">Object containing 2nd property to bind</param>
         /// <param name="fieldPropertyName">Property of 2nd object to bind</param>
-        /// <param name="validator">validator to intercept synchronisation if the value does not match certain criteria</param>
-        public BidirectionalBinding(INotifyPropertyChanged controlObject, string controlPropertyName, INotifyPropertyChanged fieldObject, string fieldPropertyName, IBindingValidator validator)
-            : this(controlObject, controlPropertyName, fieldObject, fieldPropertyName)
+        /// <param name="validator">validator to intercept synchronization if the value does not match certain criteria</param>
+        public BidirectionalBinding(INotifyPropertyChanged controlObject, string controlPropertyName, INotifyPropertyChanged fieldObject, string fieldPropertyName, IBindingValidator validator) : this(controlObject, controlPropertyName, fieldObject, fieldPropertyName)
         {
             this.validator = validator;
         }
@@ -101,10 +99,9 @@ namespace Greenshot.Drawing.Fields.Binding
         /// <param name="controlPropertyName">Property of 1st object to bind</param>
         /// <param name="fieldObject">Object containing 2nd property to bind</param>
         /// <param name="fieldPropertyName">Property of 2nd object to bind</param>
-        /// <param name="converter">taking care of converting the synchronzied value to the correct target format and back</param>
-        /// <param name="validator">validator to intercept synchronisation if the value does not match certain criteria</param>
-        public BidirectionalBinding(INotifyPropertyChanged controlObject, string controlPropertyName, INotifyPropertyChanged fieldObject, string fieldPropertyName, IBindingConverter converter, IBindingValidator validator)
-            : this(controlObject, controlPropertyName, fieldObject, fieldPropertyName, converter)
+        /// <param name="converter">taking care of converting the synchronized value to the correct target format and back</param>
+        /// <param name="validator">validator to intercept synchronization if the value does not match certain criteria</param>
+        public BidirectionalBinding(INotifyPropertyChanged controlObject, string controlPropertyName, INotifyPropertyChanged fieldObject, string fieldPropertyName, IBindingConverter converter, IBindingValidator validator) : this(controlObject, controlPropertyName, fieldObject, fieldPropertyName, converter)
         {
             this.validator = validator;
         }

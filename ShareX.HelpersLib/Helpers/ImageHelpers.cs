@@ -852,7 +852,7 @@ namespace ShareX.HelpersLib
 
         public static void Blur(Bitmap sourceImage, int radius)
         {
-            if (GDIplus.IsBlurPossible(radius))
+            if (GDIplus.isBlurPossible(radius))
             {
                 GDIplus.ApplyBlur(sourceImage, new Rectangle(0, 0, sourceImage.Width, sourceImage.Height), radius, false);
             }
