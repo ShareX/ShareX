@@ -47,6 +47,9 @@ namespace Greenshot.Drawing
     public abstract class DrawableContainer : AbstractFieldHolderWithChildren, IDrawableContainer
     {
         protected static readonly EditorConfiguration EditorConfig = IniConfig.GetIniSection<EditorConfiguration>();
+
+        protected static readonly Color DefaultLineColor = Color.FromArgb(0, 150, 255);
+
         private bool isMadeUndoable;
         private const int M11 = 0;
         private const int M12 = 1;
