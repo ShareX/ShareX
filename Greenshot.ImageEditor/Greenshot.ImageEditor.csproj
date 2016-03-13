@@ -132,9 +132,6 @@
     <Compile Include="Controls\GreenshotToolStripMenuItem.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\HotkeyControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controls\IGreenshotConfigBindable.cs" />
     <Compile Include="Controls\IGreenshotLanguageBindable.cs" />
     <Compile Include="Controls\NonJumpingPanel.cs">

@@ -1459,6 +1459,7 @@ namespace Greenshot {
             this.shadowButton.Image = ((System.Drawing.Image)(resources.GetObject("shadowButton.Image")));
             this.shadowButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.shadowButton.LanguageKey = "editor_shadow";
+            this.shadowButton.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.shadowButton.Name = "shadowButton";
             this.shadowButton.Text = "Drop shadow";
             // 

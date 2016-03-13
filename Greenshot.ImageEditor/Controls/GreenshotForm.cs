@@ -297,26 +297,6 @@ namespace GreenshotPlugin.Controls
                             radíoButton.Enabled = !iniValue.IsFixed;
                             continue;
                         }
-
-                        TextBox textBox = controlObject as TextBox;
-                        if (textBox != null)
-                        {
-                            HotkeyControl hotkeyControl = controlObject as HotkeyControl;
-                            if (hotkeyControl != null)
-                            {
-                                string hotkeyValue = (string)iniValue.Value;
-                                if (!string.IsNullOrEmpty(hotkeyValue))
-                                {
-                                    hotkeyControl.SetHotkey(hotkeyValue);
-                                    hotkeyControl.Enabled = !iniValue.IsFixed;
-                                }
-                                continue;
-                            }
-                            textBox.Text = iniValue.ToString();
-                            textBox.Enabled = !iniValue.IsFixed;
-                            continue;
-                        }
-
                         GreenshotComboBox comboxBox = controlObject as GreenshotComboBox;
                         if (comboxBox != null)
                         {
@@ -375,20 +355,6 @@ namespace GreenshotPlugin.Controls
                         if (radioButton != null)
                         {
                             iniValue.Value = radioButton.Checked;
-                            iniDirty = true;
-                            continue;
-                        }
-                        TextBox textBox = controlObject as TextBox;
-                        if (textBox != null)
-                        {
-                            HotkeyControl hotkeyControl = controlObject as HotkeyControl;
-                            if (hotkeyControl != null)
-                            {
-                                iniValue.Value = hotkeyControl.ToString();
-                                iniDirty = true;
-                                continue;
-                            }
-                            iniValue.UseValueOrDefault(textBox.Text);
                             iniDirty = true;
                             continue;
                         }
