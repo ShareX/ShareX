@@ -172,7 +172,6 @@ Additional tools to make certain tasks more efficient.
 * Image editor: Based on [Greenshot](http://getgreenshot.org) image editor. It offers functions such as ability to add annotations, highlighting or obfuscations to the screenshot. It allows to draw basic shapes (rectangles, ellipses, lines, arrows and freehand) and add text to a screenshot.
 * Image effects: Allows to apply over 37 different image effects with their own settings to image. Edited images can be saved in PNG or other formats.
 * Hash check: Allows you to check/compare file hash values.
-* IRC client
 * DNS changer: Allows you to quickly change computer DNS settings with popular DNS servers such as [Google DNS](https://developers.google.com/speed/public-dns/).
 * QR code: Open QR code window which you can enter text to get QR code of it. You can copy QR code image to your clipboard or save as file.
 * Ruler: Allows you to get X, Y, width, height, distance and angle information on screen.
