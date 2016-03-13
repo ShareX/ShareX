@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -20,6 +20,7 @@
  */
 
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -30,13 +31,25 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public class PsAPI
     {
-        [DllImport("psapi", SetLastError = true)]
+        [DllImport("psapi", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern uint GetModuleFileNameEx(IntPtr hProcess, IntPtr hModule, StringBuilder lpFilename, uint nSize);
 
-        [DllImport("psapi", SetLastError = true)]
+        [DllImport("psapi", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern uint GetProcessImageFileName(IntPtr hProcess, StringBuilder lpImageFileName, uint nSize);
 
         [DllImport("psapi")]
-        public static extern int EmptyWorkingSet(IntPtr hwProc);
+        private static extern int EmptyWorkingSet(IntPtr hwProc);
+
+        /// <summary>
+        /// Make the process use less memory by emptying the working set
+        /// </summary>
+        public static void EmptyWorkingSet()
+        {
+            LOG.Info("Calling EmptyWorkingSet");
+            using (Process currentProcess = Process.GetCurrentProcess())
+            {
+                EmptyWorkingSet(currentProcess.Handle);
+            }
+        }
     }
 }

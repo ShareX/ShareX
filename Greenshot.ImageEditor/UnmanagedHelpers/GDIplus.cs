@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -186,7 +186,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// </summary>
         /// <param name="radius"></param>
         /// <returns></returns>
-        public static bool IsBlurPossible(int radius)
+        public static bool isBlurPossible(int radius)
         {
             if (!isBlurEnabled)
             {
@@ -209,7 +209,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// <returns>false if there is no GDI+ available or an exception occured</returns>
         public static bool ApplyBlur(Bitmap destinationBitmap, Rectangle area, int radius, bool expandEdges)
         {
-            if (!IsBlurPossible(radius))
+            if (!isBlurPossible(radius))
             {
                 return false;
             }
@@ -281,7 +281,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// <returns>false if there is no GDI+ available or an exception occured</returns>
         public static bool DrawWithBlur(Graphics graphics, Bitmap image, Rectangle source, Matrix transform, ImageAttributes imageAttributes, int radius, bool expandEdges)
         {
-            if (!IsBlurPossible(radius))
+            if (!isBlurPossible(radius))
             {
                 return false;
             }

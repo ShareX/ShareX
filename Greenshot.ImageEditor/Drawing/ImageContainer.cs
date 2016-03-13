@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -53,14 +53,12 @@ namespace Greenshot.Drawing
         [NonSerialized]
         private Point _shadowOffset = new Point(-1, -1);
 
-        public ImageContainer(Surface parent, string filename)
-            : this(parent)
+        public ImageContainer(Surface parent, string filename) : this(parent)
         {
             Load(filename);
         }
 
-        public ImageContainer(Surface parent)
-            : base(parent)
+        public ImageContainer(Surface parent) : base(parent)
         {
             FieldChanged += BitmapContainer_OnFieldChanged;
         }

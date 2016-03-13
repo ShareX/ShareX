@@ -21,12 +21,14 @@
 
 using Greenshot.Drawing.Fields;
 using Greenshot.Helpers;
+using Greenshot.Plugin;
 using Greenshot.Plugin.Drawing;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Runtime.Serialization;
+using System.Windows.Forms;
 
 namespace Greenshot.Drawing
 {
@@ -63,7 +65,7 @@ namespace Greenshot.Drawing
         [OnDeserialized]
         private void SetValuesOnDeserialized(StreamingContext context)
         {
-            InitTargetGripper(Color.Yellow, _storedTargetGripperLocation);
+            InitTargetGripper(Color.Green, _storedTargetGripperLocation);
         }
 
         #endregion TargetGripper serializing code
@@ -79,10 +81,10 @@ namespace Greenshot.Drawing
         protected override void InitializeFields()
         {
             AddField(GetType(), FieldType.LINE_THICKNESS, 2);
-            AddField(GetType(), FieldType.LINE_COLOR, DefaultLineColor);
+            AddField(GetType(), FieldType.LINE_COLOR, Color.Blue);
             AddField(GetType(), FieldType.SHADOW, false);
             AddField(GetType(), FieldType.FONT_ITALIC, false);
-            AddField(GetType(), FieldType.FONT_BOLD, false);
+            AddField(GetType(), FieldType.FONT_BOLD, true);
             AddField(GetType(), FieldType.FILL_COLOR, Color.White);
             AddField(GetType(), FieldType.FONT_FAMILY, FontFamily.GenericSansSerif.Name);
             AddField(GetType(), FieldType.FONT_SIZE, 20f);
@@ -99,7 +101,7 @@ namespace Greenshot.Drawing
             if (TargetGripper == null)
             {
                 _initialGripperPoint = new Point(mouseX, mouseY);
-                InitTargetGripper(Color.Yellow, new Point(mouseX, mouseY));
+                InitTargetGripper(Color.Green, new Point(mouseX, mouseY));
             }
             return base.HandleMouseDown(mouseX, mouseY);
         }

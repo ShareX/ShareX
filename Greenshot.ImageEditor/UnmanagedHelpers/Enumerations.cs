@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -149,9 +149,9 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// Maximizes the specified window.
         /// </summary>
         Maximize = 3, // is this the right value?
-        /// <summary>
-        /// Activates the window and displays it as a maximized window.
-        /// </summary>
+                      /// <summary>
+                      /// Activates the window and displays it as a maximized window.
+                      /// </summary>
         ShowMaximized = 3,
         /// <summary>
         /// Displays a window in its most recent size and position. This value
@@ -893,11 +893,11 @@ namespace GreenshotPlugin.UnmanagedHelpers
     // Get/Set WindowLong Enum See: http://msdn.microsoft.com/en-us/library/ms633591.aspx
     public enum WindowLongIndex : int
     {
-        GWL_EXSTYLE = -20,	// Sets a new extended window style.
-        GWL_HINSTANCE = -6,	// Sets a new application instance handle.
-        GWL_ID = -12,	// Sets a new identifier of the child window. The window cannot be a top-level window.
-        GWL_STYLE = -16,	// Sets a new window style.
-        GWL_USERDATA = -21,	// Sets the user data associated with the window. This data is intended for use by the application that created the window. Its value is initially zero.
+        GWL_EXSTYLE = -20,  // Sets a new extended window style.
+        GWL_HINSTANCE = -6, // Sets a new application instance handle.
+        GWL_ID = -12,   // Sets a new identifier of the child window. The window cannot be a top-level window.
+        GWL_STYLE = -16,    // Sets a new window style.
+        GWL_USERDATA = -21, // Sets the user data associated with the window. This data is intended for use by the application that created the window. Its value is initially zero.
         GWL_WNDPROC = -4 // Sets a new address for the window procedure. You cannot change this attribute if the window does not belong to the same process as the calling thread.
     }
 
@@ -905,21 +905,21 @@ namespace GreenshotPlugin.UnmanagedHelpers
     [Flags]
     public enum WindowPos : int
     {
-        SWP_ASYNCWINDOWPOS = 0x4000,	// If the calling thread and the thread that owns the window are attached to different input queues, the system posts the request to the thread that owns the window. This prevents the calling thread from blocking its execution while other threads process the request.
-        SWP_DEFERERASE = 0x2000,	// Prevents generation of the WM_SYNCPAINT message.
-        SWP_DRAWFRAME = 0x0020,	 // Draws a frame (defined in the window's class description) around the window.
+        SWP_ASYNCWINDOWPOS = 0x4000,    // If the calling thread and the thread that owns the window are attached to different input queues, the system posts the request to the thread that owns the window. This prevents the calling thread from blocking its execution while other threads process the request.
+        SWP_DEFERERASE = 0x2000,    // Prevents generation of the WM_SYNCPAINT message.
+        SWP_DRAWFRAME = 0x0020,  // Draws a frame (defined in the window's class description) around the window.
         SWP_FRAMECHANGED = 0x0020, //Applies new frame styles set using the SetWindowLong function. Sends a WM_NCCALCSIZE message to the window, even if the window's size is not being changed. If this flag is not specified, WM_NCCALCSIZE is sent only when the window's size is being changed.
-        SWP_HIDEWINDOW = 0x0080,	// Hides the window.
-        SWP_NOACTIVATE = 0x0010,	// Does not activate the window. If this flag is not set, the window is activated and moved to the top of either the topmost or non-topmost group (depending on the setting of the hWndInsertAfter parameter).
-        SWP_NOCOPYBITS = 0x0100,	// Discards the entire contents of the client area. If this flag is not specified, the valid contents of the client area are saved and copied back into the client area after the window is sized or repositioned.
-        SWP_NOMOVE = 0x0002,	//Retains the current position (ignores X and Y parameters).
-        SWP_NOOWNERZORDER = 0x0200,	//Does not change the owner window's position in the Z order.
-        SWP_NOREDRAW = 0x0008,	//Does not redraw changes. If this flag is set, no repainting of any kind occurs. This applies to the client area, the nonclient area (including the title bar and scroll bars), and any part of the parent window uncovered as a result of the window being moved. When this flag is set, the application must explicitly invalidate or redraw any parts of the window and parent window that need redrawing.
-        SWP_NOREPOSITION = 0x0200,	// Same as the SWP_NOOWNERZORDER flag.
-        SWP_NOSENDCHANGING = 0x0400,	//Prevents the window from receiving the WM_WINDOWPOSCHANGING message.
-        SWP_NOSIZE = 0x0001,	// Retains the current size (ignores the cx and cy parameters).
-        SWP_NOZORDER = 0x0004,	// Retains the current Z order (ignores the hWndInsertAfter parameter).
-        SWP_SHOWWINDOW = 0x0040	//Displays the window.
+        SWP_HIDEWINDOW = 0x0080,    // Hides the window.
+        SWP_NOACTIVATE = 0x0010,    // Does not activate the window. If this flag is not set, the window is activated and moved to the top of either the topmost or non-topmost group (depending on the setting of the hWndInsertAfter parameter).
+        SWP_NOCOPYBITS = 0x0100,    // Discards the entire contents of the client area. If this flag is not specified, the valid contents of the client area are saved and copied back into the client area after the window is sized or repositioned.
+        SWP_NOMOVE = 0x0002,    //Retains the current position (ignores X and Y parameters).
+        SWP_NOOWNERZORDER = 0x0200, //Does not change the owner window's position in the Z order.
+        SWP_NOREDRAW = 0x0008,  //Does not redraw changes. If this flag is set, no repainting of any kind occurs. This applies to the client area, the nonclient area (including the title bar and scroll bars), and any part of the parent window uncovered as a result of the window being moved. When this flag is set, the application must explicitly invalidate or redraw any parts of the window and parent window that need redrawing.
+        SWP_NOREPOSITION = 0x0200,  // Same as the SWP_NOOWNERZORDER flag.
+        SWP_NOSENDCHANGING = 0x0400,    //Prevents the window from receiving the WM_WINDOWPOSCHANGING message.
+        SWP_NOSIZE = 0x0001,    // Retains the current size (ignores the cx and cy parameters).
+        SWP_NOZORDER = 0x0004,  // Retains the current Z order (ignores the hWndInsertAfter parameter).
+        SWP_SHOWWINDOW = 0x0040 //Displays the window.
     }
 
     public enum ScrollBarDirection : int
@@ -1247,4 +1247,22 @@ namespace GreenshotPlugin.UnmanagedHelpers
         OBJID_VSCROLL = -5,
         OBJID_WINDOW = 0
     }
+
+    [Flags]
+    public enum DesktopAccessRight : uint
+    {
+        DESKTOP_READOBJECTS = 0x00000001,
+        DESKTOP_CREATEWINDOW = 0x00000002,
+        DESKTOP_CREATEMENU = 0x00000004,
+        DESKTOP_HOOKCONTROL = 0x00000008,
+        DESKTOP_JOURNALRECORD = 0x00000010,
+        DESKTOP_JOURNALPLAYBACK = 0x00000020,
+        DESKTOP_ENUMERATE = 0x00000040,
+        DESKTOP_WRITEOBJECTS = 0x00000080,
+        DESKTOP_SWITCHDESKTOP = 0x00000100,
+
+        GENERIC_ALL = (DESKTOP_READOBJECTS | DESKTOP_CREATEWINDOW | DESKTOP_CREATEMENU |
+            DESKTOP_HOOKCONTROL | DESKTOP_JOURNALRECORD | DESKTOP_JOURNALPLAYBACK |
+            DESKTOP_ENUMERATE | DESKTOP_WRITEOBJECTS | DESKTOP_SWITCHDESKTOP)
+    };
 }

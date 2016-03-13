@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -34,8 +34,7 @@ namespace Greenshot.Drawing.Filters
     [Serializable()]
     public class GrayscaleFilter : AbstractFilter
     {
-        public GrayscaleFilter(DrawableContainer parent)
-            : base(parent)
+        public GrayscaleFilter(DrawableContainer parent) : base(parent)
         {
         }
 
@@ -54,10 +53,10 @@ namespace Greenshot.Drawing.Filters
                 graphics.SetClip(applyRect);
                 graphics.ExcludeClip(rect);
             }
-            ColorMatrix grayscaleMatrix = new ColorMatrix(new float[][] {
-                new float[] {.3f, .3f, .3f, 0, 0},
-                new float[] {.59f, .59f, .59f, 0, 0},
-                new float[] {.11f, .11f, .11f, 0, 0},
+            ColorMatrix grayscaleMatrix = new ColorMatrix(new[] {
+                new[] {.3f, .3f, .3f, 0, 0},
+                new[] {.59f, .59f, .59f, 0, 0},
+                new[] {.11f, .11f, .11f, 0, 0},
                 new float[] {0, 0, 0, 1, 0},
                 new float[] {0, 0, 0, 0, 1}
             });

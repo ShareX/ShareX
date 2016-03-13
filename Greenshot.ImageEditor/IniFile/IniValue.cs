@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -245,15 +245,6 @@ namespace Greenshot.IniFile
         {
             string propertyName = attributes.Name;
             string defaultValue = attributes.DefaultValue;
-
-            // Get the value from the ini file, if there is none take the default
-            if (!properties.ContainsKey(propertyName) && defaultValue != null)
-            {
-                // Mark as dirty, we didn't use properties from the file (even defaults from the default file are allowed)
-                containingIniSection.IsDirty = true;
-                //LOG.Debug("Passing default: " + propertyName + "=" + propertyDefaultValue);
-            }
-
             string propertyValue = null;
             if (properties.ContainsKey(propertyName) && properties[propertyName] != null)
             {
@@ -349,7 +340,7 @@ namespace Greenshot.IniFile
                     return;
                 }
             }
-            else if (propertyValue != null)
+            else if (!string.IsNullOrEmpty(propertyValue))
             {
                 if (valueType.IsGenericType && valueType.GetGenericTypeDefinition().Equals(typeof(Nullable<>)))
                 {
@@ -426,6 +417,10 @@ namespace Greenshot.IniFile
             if (valueType == typeof(string))
             {
                 return valueString;
+            }
+            if (string.IsNullOrEmpty(valueString))
+            {
+                return null;
             }
 
             if (valueType.IsGenericType && valueType.GetGenericTypeDefinition() == typeof(List<>))

@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -22,13 +22,10 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-// Information about this assembly is defined by the following
-// attributes.
-//
-// change them to the information which is associated with the assembly
-// you compile.
-
-[assembly: AssemblyTitle("Greenshot ImageEditor")]
+// General Information about an assembly is controlled through the following
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("Greenshot Image Editor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Greenshot")]
@@ -48,4 +45,4 @@ using System.Runtime.InteropServices;
 // You can specify all values by your own or you can build default build and revision
 // numbers with the '*' character (the default):
 
-[assembly: AssemblyVersion("1.2.0.0")]
+[assembly: AssemblyVersion("1.2.9.0")]

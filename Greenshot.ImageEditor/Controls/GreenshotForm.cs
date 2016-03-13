@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -38,9 +38,9 @@ namespace GreenshotPlugin.Controls
         protected static CoreConfiguration coreConfiguration;
         private static IDictionary<Type, FieldInfo[]> reflectionCache = new Dictionary<Type, FieldInfo[]>();
         private IComponentChangeService m_changeService;
-        private bool storeFieldsManually = false;
-        private IDictionary<string, Control> designTimeControls;
-        private IDictionary<string, ToolStripItem> designTimeToolStripItems;
+        private bool _storeFieldsManually = false;
+        private IDictionary<string, Control> _designTimeControls;
+        private IDictionary<string, ToolStripItem> _designTimeToolStripItems;
 
         static GreenshotForm()
         {
@@ -73,12 +73,21 @@ namespace GreenshotPlugin.Controls
         {
             get
             {
-                return storeFieldsManually;
+                return _storeFieldsManually;
             }
             set
             {
-                storeFieldsManually = value;
+                _storeFieldsManually = value;
             }
+        }
+
+        /// <summary>
+        /// When this is set, the form will be brought to the foreground as soon as it is shown.
+        /// </summary>
+        protected bool ToFront
+        {
+            get;
+            set;
         }
 
         /// <summary>
@@ -88,13 +97,16 @@ namespace GreenshotPlugin.Controls
         {
             if (DesignMode)
             {
-                designTimeControls = new Dictionary<string, Control>();
-                designTimeToolStripItems = new Dictionary<string, ToolStripItem>();
+                _designTimeControls = new Dictionary<string, Control>();
+                _designTimeToolStripItems = new Dictionary<string, ToolStripItem>();
             }
         }
 
         protected override void OnLoad(EventArgs e)
         {
+            // Every GreenshotForm should have it's default icon
+            // And it might not ne needed for a Tool Window, but still for the task manager / switcher it's important
+            Icon = GreenshotResources.getGreenshotIcon();
             if (!DesignMode)
             {
                 FillFields();
@@ -109,12 +121,25 @@ namespace GreenshotPlugin.Controls
         }
 
         /// <summary>
+        /// Make sure the form is visible, if this is wanted
+        /// </summary>
+        /// <param name="e">EventArgs</param>
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            if (ToFront)
+            {
+                WindowDetails.ToForeground(Handle);
+            }
+        }
+
+        /// <summary>
         /// check if the form was closed with an OK, if so store the values in the GreenshotControls
         /// </summary>
         /// <param name="e"></param>
         protected override void OnClosed(EventArgs e)
         {
-            if (!DesignMode && !storeFieldsManually)
+            if (!DesignMode && !_storeFieldsManually)
             {
                 if (DialogResult == DialogResult.OK)
                 {
@@ -159,7 +184,7 @@ namespace GreenshotPlugin.Controls
             // Clear our the component change events to prepare for re-siting.
             if (m_changeService != null)
             {
-                m_changeService.ComponentAdded -= OnComponentAdded;
+                m_changeService.ComponentAdded -= new ComponentEventHandler(OnComponentAdded);
             }
         }
 
@@ -168,7 +193,7 @@ namespace GreenshotPlugin.Controls
             // Register the event handlers for the IComponentChangeService events
             if (m_changeService != null)
             {
-                m_changeService.ComponentAdded += OnComponentAdded;
+                m_changeService.ComponentAdded += new ComponentEventHandler(OnComponentAdded);
             }
         }
 
@@ -179,25 +204,25 @@ namespace GreenshotPlugin.Controls
                 Control control = ce.Component as Control;
                 if (control != null)
                 {
-                    if (!designTimeControls.ContainsKey(control.Name))
+                    if (!_designTimeControls.ContainsKey(control.Name))
                     {
-                        designTimeControls.Add(control.Name, control);
+                        _designTimeControls.Add(control.Name, control);
                     }
                     else
                     {
-                        designTimeControls[control.Name] = control;
+                        _designTimeControls[control.Name] = control;
                     }
                 }
                 else if (ce.Component is ToolStripItem)
                 {
                     ToolStripItem item = ce.Component as ToolStripItem;
-                    if (!designTimeControls.ContainsKey(item.Name))
+                    if (!_designTimeControls.ContainsKey(item.Name))
                     {
-                        designTimeToolStripItems.Add(item.Name, item);
+                        _designTimeToolStripItems.Add(item.Name, item);
                     }
                     else
                     {
-                        designTimeToolStripItems[item.Name] = item;
+                        _designTimeToolStripItems[item.Name] = item;
                     }
                 }
             }
@@ -254,7 +279,7 @@ namespace GreenshotPlugin.Controls
                         IniValue iniValue = null;
                         if (!section.Values.TryGetValue(configBindable.PropertyName, out iniValue))
                         {
-                            LOG.WarnFormat("Wrong property '{0}' configured for field '{1}'", configBindable.PropertyName, field.Name);
+                            LOG.DebugFormat("Wrong property '{0}' configured for field '{1}'", configBindable.PropertyName, field.Name);
                             continue;
                         }
 
@@ -276,6 +301,17 @@ namespace GreenshotPlugin.Controls
                         TextBox textBox = controlObject as TextBox;
                         if (textBox != null)
                         {
+                            HotkeyControl hotkeyControl = controlObject as HotkeyControl;
+                            if (hotkeyControl != null)
+                            {
+                                string hotkeyValue = (string)iniValue.Value;
+                                if (!string.IsNullOrEmpty(hotkeyValue))
+                                {
+                                    hotkeyControl.SetHotkey(hotkeyValue);
+                                    hotkeyControl.Enabled = !iniValue.IsFixed;
+                                }
+                                continue;
+                            }
                             textBox.Text = iniValue.ToString();
                             textBox.Enabled = !iniValue.IsFixed;
                             continue;
@@ -345,6 +381,13 @@ namespace GreenshotPlugin.Controls
                         TextBox textBox = controlObject as TextBox;
                         if (textBox != null)
                         {
+                            HotkeyControl hotkeyControl = controlObject as HotkeyControl;
+                            if (hotkeyControl != null)
+                            {
+                                iniValue.Value = hotkeyControl.ToString();
+                                iniDirty = true;
+                                continue;
+                            }
                             iniValue.UseValueOrDefault(textBox.Text);
                             iniDirty = true;
                             continue;

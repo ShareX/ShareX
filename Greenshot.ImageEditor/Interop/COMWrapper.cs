@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -74,6 +74,104 @@ namespace Greenshot.Interop
         #region Construction
 
         /// <summary>
+        /// Gets a COM object and returns the transparent proxy which intercepts all calls to the object
+        /// </summary>
+        /// <param name="T">Interface which defines the method and properties to intercept</param>
+        /// <returns>Transparent proxy to the real proxy for the object</returns>
+        /// <remarks>The <paramref name="type"/> must be an interface decorated with the <see cref="ComProgIdAttribute"/>attribute.</remarks>
+        public static T GetInstance<T>()
+        {
+            Type type = typeof(T);
+            if (null == type)
+            {
+                throw new ArgumentNullException("type");
+            }
+            if (!type.IsInterface)
+            {
+                throw new ArgumentException("The specified type must be an interface.", "type");
+            }
+
+            ComProgIdAttribute progIDAttribute = ComProgIdAttribute.GetAttribute(type);
+            if (null == progIDAttribute || null == progIDAttribute.Value || 0 == progIDAttribute.Value.Length)
+            {
+                throw new ArgumentException("The specified type must define a ComProgId attribute.", "type");
+            }
+            string progId = progIDAttribute.Value;
+
+            object comObject = null;
+
+            // Convert from clsid to Prog ID, if needed
+            if (progId.StartsWith("clsid:"))
+            {
+                Guid guid = new Guid(progId.Substring(6));
+                int result = ProgIDFromCLSID(ref guid, out progId);
+                if (result != 0)
+                {
+                    // Restore progId, as it's overwritten
+                    progId = progIDAttribute.Value;
+
+                    try
+                    {
+                        GetActiveObject(ref guid, IntPtr.Zero, out comObject);
+                    }
+                    catch (Exception)
+                    {
+                        LOG.WarnFormat("Error {0} getting instance for class id {1}", result, progIDAttribute.Value);
+                    }
+                    if (comObject == null)
+                    {
+                        LOG.WarnFormat("Error {0} getting progId {1}", result, progIDAttribute.Value);
+                    }
+                }
+                else
+                {
+                    LOG.InfoFormat("Mapped {0} to progId {1}", progIDAttribute.Value, progId);
+                }
+            }
+
+            if (comObject == null)
+            {
+                try
+                {
+                    comObject = Marshal.GetActiveObject(progId);
+                }
+                catch (COMException comE)
+                {
+                    if (comE.ErrorCode == MK_E_UNAVAILABLE)
+                    {
+                        LOG.DebugFormat("No current instance of {0} object available.", progId);
+                    }
+                    else if (comE.ErrorCode == CO_E_CLASSSTRING)
+                    {
+                        LOG.WarnFormat("Unknown progId {0}", progId);
+                    }
+                    else
+                    {
+                        LOG.Warn("Error getting active object for " + progIDAttribute.Value, comE);
+                    }
+                }
+                catch (Exception e)
+                {
+                    LOG.Warn("Error getting active object for " + progIDAttribute.Value, e);
+                }
+            }
+
+            if (comObject != null)
+            {
+                if (comObject is IDispatch)
+                {
+                    COMWrapper wrapper = new COMWrapper(comObject, type, progIDAttribute.Value);
+                    return (T)wrapper.GetTransparentProxy();
+                }
+                else
+                {
+                    return (T)comObject;
+                }
+            }
+            return default(T);
+        }
+
+        /// <summary>
         /// A simple create instance, doesn't create a wrapper!!
         /// </summary>
         /// <returns>T</returns>
@@ -133,6 +231,7 @@ namespace Greenshot.Interop
                 catch (Exception e)
                 {
                     LOG.WarnFormat("Error {1} creating object for {0}", progId, e.Message);
+                    throw;
                 }
             }
             if (comObject != null)
@@ -140,6 +239,167 @@ namespace Greenshot.Interop
                 return (T)comObject;
             }
             return default(T);
+        }
+
+        /// <summary>
+        /// Gets or creates a COM object and returns the transparent proxy which intercepts all calls to the object
+        /// The ComProgId can be a normal ComProgId or a GUID prefixed with "clsid:"
+        /// </summary>
+        /// <param name="type">Interface which defines the method and properties to intercept</param>
+        /// <returns>Transparent proxy to the real proxy for the object</returns>
+        /// <remarks>The <paramref name="type"/> must be an interface decorated with the <see cref="ComProgIdAttribute"/>attribute.</remarks>
+        public static T GetOrCreateInstance<T>()
+        {
+            Type type = typeof(T);
+            if (null == type)
+            {
+                throw new ArgumentNullException("type");
+            }
+            if (!type.IsInterface)
+            {
+                throw new ArgumentException("The specified type must be an interface.", "type");
+            }
+
+            ComProgIdAttribute progIDAttribute = ComProgIdAttribute.GetAttribute(type);
+            if (null == progIDAttribute || null == progIDAttribute.Value || 0 == progIDAttribute.Value.Length)
+            {
+                throw new ArgumentException("The specified type must define a ComProgId attribute.", "type");
+            }
+
+            object comObject = null;
+            Type comType = null;
+            string progId = progIDAttribute.Value;
+            Guid guid = Guid.Empty;
+
+            // Convert from clsid to Prog ID, if needed
+            if (progId.StartsWith("clsid:"))
+            {
+                guid = new Guid(progId.Substring(6));
+                int result = ProgIDFromCLSID(ref guid, out progId);
+                if (result != 0)
+                {
+                    // Restore progId, as it's overwritten
+                    progId = progIDAttribute.Value;
+                    try
+                    {
+                        GetActiveObject(ref guid, IntPtr.Zero, out comObject);
+                    }
+                    catch (Exception)
+                    {
+                        LOG.WarnFormat("Error {0} getting instance for class id {1}", result, progIDAttribute.Value);
+                    }
+                    if (comObject == null)
+                    {
+                        LOG.WarnFormat("Error {0} getting progId {1}", result, progIDAttribute.Value);
+                    }
+                }
+                else
+                {
+                    LOG.InfoFormat("Mapped {0} to progId {1}", progIDAttribute.Value, progId);
+                }
+            }
+
+            if (comObject == null)
+            {
+                if (!progId.StartsWith("clsid:"))
+                {
+                    try
+                    {
+                        comObject = Marshal.GetActiveObject(progId);
+                    }
+                    catch (COMException comE)
+                    {
+                        if (comE.ErrorCode == MK_E_UNAVAILABLE)
+                        {
+                            LOG.DebugFormat("No current instance of {0} object available.", progId);
+                        }
+                        else if (comE.ErrorCode == CO_E_CLASSSTRING)
+                        {
+                            LOG.WarnFormat("Unknown progId {0} (application not installed)", progId);
+                            return default(T);
+                        }
+                        else
+                        {
+                            LOG.Warn("Error getting active object for " + progId, comE);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        LOG.Warn("Error getting active object for " + progId, e);
+                    }
+                }
+            }
+
+            // Did we get the current instance? If not, try to create a new
+            if (comObject == null)
+            {
+                try
+                {
+                    comType = Type.GetTypeFromProgID(progId, true);
+                }
+                catch (Exception ex)
+                {
+                    if (Guid.Empty != guid)
+                    {
+                        comType = Type.GetTypeFromCLSID(guid);
+                    }
+                    else
+                    {
+                        LOG.Warn("Error type for " + progId, ex);
+                    }
+                }
+
+                if (comType != null)
+                {
+                    try
+                    {
+                        comObject = Activator.CreateInstance(comType);
+                        if (comObject != null)
+                        {
+                            LOG.DebugFormat("Created new instance of {0} object.", progId);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        LOG.Warn("Error creating object for " + progId, e);
+                    }
+                }
+            }
+            if (comObject != null)
+            {
+                if (comObject is IDispatch)
+                {
+                    COMWrapper wrapper = new COMWrapper(comObject, type, progIDAttribute.Value);
+                    return (T)wrapper.GetTransparentProxy();
+                }
+                else
+                {
+                    return (T)comObject;
+                }
+            }
+            return default(T);
+        }
+
+        /// <summary>
+        /// Wrap a com object as COMWrapper
+        /// </summary>
+        /// <param name="comObject">An object to intercept</param>
+        /// <param name="T">Interface which defines the method and properties to intercept</param>
+        /// <returns>Transparent proxy to the real proxy for the object</returns>
+        public static T Wrap<T>(object comObject)
+        {
+            Type type = typeof(T);
+            if (null == comObject)
+            {
+                throw new ArgumentNullException("comObject");
+            }
+            if (null == type)
+            {
+                throw new ArgumentNullException("type");
+            }
+
+            COMWrapper wrapper = new COMWrapper(comObject, type, type.FullName);
+            return (T)wrapper.GetTransparentProxy();
         }
 
         /// <summary>
@@ -220,13 +480,22 @@ namespace Greenshot.Interop
                 {
                     try
                     {
-                        while (Marshal.ReleaseComObject(_COMObject) > 0) ;
+                        int count;
+                        do
+                        {
+                            count = Marshal.ReleaseComObject(_COMObject);
+                            LOG.DebugFormat("RCW count for {0} now is {1}", _InterceptType.ToString(), count);
+                        } while (count > 0);
                     }
                     catch (Exception ex)
                     {
-                        LOG.WarnFormat("Problem releasing {0}", _COMType);
+                        LOG.WarnFormat("Problem releasing COM object {0}", _COMType);
                         LOG.Warn("Error: ", ex);
                     }
+                }
+                else
+                {
+                    LOG.WarnFormat("{0} is not a COM object", _COMType);
                 }
 
                 _COMObject = null;
@@ -340,6 +609,49 @@ namespace Greenshot.Interop
                 return (T)newWrapper.GetTransparentProxy();
             }
             throw new InvalidCastException(string.Format("{0} is not assignable from {1}", oldWrapper._InterceptType, newType));
+        }
+
+        /// <summary>
+        /// Returns the "com" type of the wrapperproxy, making it possible to perform reflection on it.
+        /// </summary>
+        /// <param name="wrapperProxy">wrapperProxy to get the type from</param>
+        /// <returns>Type</returns>
+        public static Type GetUnderlyingTypeForWrapper(object wrapperProxy)
+        {
+            Type returnType = null;
+            COMWrapper wrapper = RemotingServices.GetRealProxy(wrapperProxy) as COMWrapper;
+            if (wrapper != null)
+            {
+                IDispatch dispatch = wrapper._COMObject as IDispatch;
+                if (dispatch != null)
+                {
+                    int result = dispatch.GetTypeInfo(0, 0, out returnType);
+                    if (result != 0)
+                    {
+                        LOG.DebugFormat("GetTypeInfo : 0x{0} ({1})", result.ToString("X"), result);
+                    }
+                }
+            }
+            return returnType;
+        }
+
+        /// <summary>
+        /// Return the Type of a IDispatch
+        /// </summary>
+        /// <param name="dispatch">IDispatch to get the type object for</param>
+        /// <returns>Type of the IDispatch</returns>
+        public static Type GetUnderlyingType(IDispatch dispatch)
+        {
+            Type returnType = null;
+            if (dispatch != null)
+            {
+                int result = dispatch.GetTypeInfo(0, 0, out returnType);
+                if (result != 0)
+                {
+                    LOG.DebugFormat("GetTypeInfo : 0x{0} ({1})", result.ToString("X"), result);
+                }
+            }
+            return returnType;
         }
 
         /// <summary>
@@ -559,6 +871,12 @@ namespace Greenshot.Interop
                     {
                         returnValue = invokeType.InvokeMember(methodName, flags, null, invokeObject, args, argModifiers, null, null);
                         break;
+                    }
+                    catch (InvalidComObjectException icoEx)
+                    {
+                        // Should assist BUG-1616 and others
+                        LOG.WarnFormat("COM object {0} has been separated from its underlying RCW cannot be used. The COM object was released while it was still in use on another thread.", _InterceptType.FullName);
+                        return new ReturnMessage(icoEx, callMessage);
                     }
                     catch (Exception ex)
                     {

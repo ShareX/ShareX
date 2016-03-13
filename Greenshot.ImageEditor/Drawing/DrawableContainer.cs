@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -47,9 +47,6 @@ namespace Greenshot.Drawing
     public abstract class DrawableContainer : AbstractFieldHolderWithChildren, IDrawableContainer
     {
         protected static readonly EditorConfiguration EditorConfig = IniConfig.GetIniSection<EditorConfiguration>();
-
-        protected static readonly Color DefaultLineColor = Color.FromArgb(0, 150, 255);
-
         private bool isMadeUndoable;
         private const int M11 = 0;
         private const int M12 = 1;
@@ -282,7 +279,7 @@ namespace Greenshot.Drawing
         protected Rectangle _boundsBeforeResize = Rectangle.Empty;
 
         [NonSerialized]
-        // "workbench" rectangle - used for calculatoing bounds during resizing (to be applied to this DrawableContainer afterwards)
+        // "workbench" rectangle - used for calculating bounds during resizing (to be applied to this DrawableContainer afterwards)
         protected RectangleF _boundsAfterResize = RectangleF.Empty;
 
         public Rectangle Bounds
