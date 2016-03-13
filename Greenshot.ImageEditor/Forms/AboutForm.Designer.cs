@@ -68,6 +68,7 @@ namespace Greenshot {
             this.lblTitle.Size = new System.Drawing.Size(145, 19);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Greenshot image editor";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLicense
             // 
@@ -166,13 +167,13 @@ namespace Greenshot {
             // 
             // linkLabel1
             // 
-            this.linkLabel1.Location = new System.Drawing.Point(154, 8);
+            this.linkLabel1.Location = new System.Drawing.Point(154, 12);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(130, 23);
+            this.linkLabel1.Size = new System.Drawing.Size(130, 19);
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "http://getgreenshot.org";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelClicked);
             // 
             // lblTranslation
@@ -206,7 +207,7 @@ namespace Greenshot {
             this.MinimizeBox = false;
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Über Greenshot";
+            this.Text = "Greenshot image editor - About";
             this.ResumeLayout(false);
 
 		}

@@ -44,7 +44,7 @@ namespace Greenshot.Drawing
         public const int POSITION_BOTTOM_LEFT = 6;
         public const int POSITION_MIDDLE_LEFT = 7;
 
-        public const int GripperSize = 5;
+        public const int GripperSize = 7;
 
         public int Position
         {

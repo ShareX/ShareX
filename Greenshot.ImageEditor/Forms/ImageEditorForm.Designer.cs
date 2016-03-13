@@ -225,7 +225,7 @@ namespace Greenshot {
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -261,6 +261,7 @@ namespace Greenshot {
                     this.btnResize});
             //check this.toolsToolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolsToolStrip.Name = "toolsToolStrip";
+            this.toolsToolStrip.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.toolsToolStrip.Stretch = true;
             this.toolsToolStrip.TabIndex = 0;
             this.toolsToolStrip.BackColor = System.Drawing.SystemColors.Control;
@@ -495,7 +496,8 @@ namespace Greenshot {
             this.propertiesToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.propertiesToolStrip.MinimumSize = new System.Drawing.Size(150, coreConfiguration.IconSize.Height + 10);
 			this.propertiesToolStrip.Name = "propertiesToolStrip";
-			this.propertiesToolStrip.Stretch = true;
+            this.propertiesToolStrip.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.propertiesToolStrip.Stretch = true;
 			this.propertiesToolStrip.TabIndex = 0;
             this.propertiesToolStrip.Location = new System.Drawing.Point(0, 0);
 			this.propertiesToolStrip.Renderer = new CustomToolStripProfessionalRenderer();
@@ -919,14 +921,14 @@ namespace Greenshot {
             // 
             this.saveElementsToolStripMenuItem.LanguageKey = "editor_save_objects";
             this.saveElementsToolStripMenuItem.Name = "saveElementsToolStripMenuItem";
-            this.saveElementsToolStripMenuItem.Text = "Save Objects to File...";
+            this.saveElementsToolStripMenuItem.Text = "Save objects to file...";
             this.saveElementsToolStripMenuItem.Click += new System.EventHandler(this.SaveElementsToolStripMenuItemClick);
             // 
             // loadElementsToolStripMenuItem
             // 
             this.loadElementsToolStripMenuItem.LanguageKey = "editor_load_objects";
             this.loadElementsToolStripMenuItem.Name = "loadElementsToolStripMenuItem";
-            this.loadElementsToolStripMenuItem.Text = "Load Objects from File...";
+            this.loadElementsToolStripMenuItem.Text = "Load objects from file...";
             this.loadElementsToolStripMenuItem.Click += new System.EventHandler(this.LoadElementsToolStripMenuItemClick);
             // 
             // autoCropToolStripMenuItem
