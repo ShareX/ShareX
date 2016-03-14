@@ -72,7 +72,15 @@ namespace ShareX.UploadersLib.TextUploaders
                 result.Response = SendRequest(customUploader.GetHttpMethod(), requestURL, args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
             }
 
-            customUploader.ParseResponse(result);
+            try
+            {
+                customUploader.ParseResponse(result);
+            }
+            catch (Exception e)
+            {
+                // TODO: Translate
+                Errors.Add("Response parse failed." + Environment.NewLine + e);
+            }
 
             return result;
         }

@@ -52,7 +52,15 @@ namespace ShareX.UploadersLib.URLShorteners
 
             result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
 
-            customUploader.ParseResponse(result, true);
+            try
+            {
+                customUploader.ParseResponse(result, true);
+            }
+            catch (Exception e)
+            {
+                // TODO: Translate
+                Errors.Add("Response parse failed." + Environment.NewLine + e);
+            }
 
             return result;
         }
