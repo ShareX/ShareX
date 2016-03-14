@@ -28,7 +28,7 @@ using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 
-namespace ShareX.HelpersLib
+namespace ShareX.UploadersLib.HelperClasses
 {
     public class SSLBypassHelper : IDisposable
     {

@@ -172,7 +172,6 @@
     <Compile Include="Forms\MonitorTestForm.Designer.cs">
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="Native\NativeConstants.cs" />
     <Compile Include="PingHelper.cs" />
     <Compile Include="PingResult.cs" />

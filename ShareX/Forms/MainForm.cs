@@ -593,6 +593,7 @@ namespace ShareX
         private void AfterSettingsJobs()
         {
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
+            HelpersOptions.AcceptInvalidSSLCertificates = Program.Settings.AcceptInvalidSSLCertificates;
             HelpersOptions.UseAlternativeCopyImage = !Program.Settings.UseDefaultClipboardCopyImage;
             HelpersOptions.UseAlternativeGetImage = !Program.Settings.UseDefaultClipboardGetImage;
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;

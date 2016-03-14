@@ -450,8 +450,15 @@ namespace ShareX
                 }
             }
 
+            SSLBypassHelper sslBypassHelper = null;
+
             try
             {
+                if (HelpersOptions.AcceptInvalidSSLCertificates)
+                {
+                    sslBypassHelper = new SSLBypassHelper();
+                }
+
                 switch (Info.UploadDestination)
                 {
                     case EDataType.Image:
@@ -477,6 +484,11 @@ namespace ShareX
             }
             finally
             {
+                if (sslBypassHelper != null)
+                {
+                    sslBypassHelper.Dispose();
+                }
+
                 if (Info.Result == null) Info.Result = new UploadResult();
                 if (uploader != null) Info.Result.Errors.AddRange(uploader.Errors);
                 isError |= Info.Result.IsError;

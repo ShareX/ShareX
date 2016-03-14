@@ -205,6 +205,7 @@
     <Compile Include="FileUploaders\Pushbullet.cs" />
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
+    <Compile Include="HelperClasses\SSLBypassHelper.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
     <Compile Include="ImageUploaders\CheveretoUploader.cs" />
     <Compile Include="ImageUploaders\ImglandUploader.cs" />
