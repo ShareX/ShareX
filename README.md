@@ -104,8 +104,8 @@ ShareX supports the following destinations.
 * [vgy.me](http://vgy.me)
 * [SomeImage](https://someimage.com)
 * [Imgland](http://imgland.net)
-* Custom image uploader
-* File uploader
+* [Custom image uploader](https://github.com/ShareX/CustomUploaders)
+* [File uploader](#file-uploaders)
 
 #### Text uploaders
 
@@ -118,8 +118,8 @@ ShareX supports the following destinations.
 * [uPaste](http://upaste.me)
 * [Hastebin](http://hastebin.com)
 * [OneTimeSecret](https://onetimesecret.com)
-* Custom text uploader
-* File uploader
+* [Custom text uploader](https://github.com/ShareX/CustomUploaders)
+* [File uploader](#file-uploaders)
 
 #### File uploaders
 
@@ -169,7 +169,7 @@ ShareX supports the following destinations.
 * [Streamable](https://streamable.com)
 * Shared folder
 * [Email](https://en.wikipedia.org/wiki/Email)
-* Custom file uploader
+* [Custom file uploader](https://github.com/ShareX/CustomUploaders)
 
 #### URL shorteners
 
@@ -186,7 +186,7 @@ ShareX supports the following destinations.
 * [vurl.com](http://vurl.com)
 * [2.gp](http://2.gp)
 * [Polr](https://github.com/Cydrobolt/polr)
-* Custom URL shortener
+* [Custom URL shortener](https://github.com/ShareX/CustomUploaders)
 
 #### URL sharing services
 
