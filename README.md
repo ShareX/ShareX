@@ -179,7 +179,6 @@ Additional tools to make certain tasks more efficient.
 * Image editor
 * Image effects
 * Hash check
-* IRC client
 * DNS changer
 * QR code
 * Ruler
