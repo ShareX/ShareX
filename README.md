@@ -1,4 +1,4 @@
-### Website: [getsharex.com](https://getsharex.com)
+### ShareX website: [getsharex.com](https://getsharex.com)
 
 [![](https://getsharex.com/img/ShareX_Screenshot.png)](https://getsharex.com)
 
@@ -14,7 +14,6 @@ ShareX incorporates the following methods to allow screen capture.
 * Window menu
 * Monitor menu
 * Region
-* Region (Windows & controls)
 * Region (Annotate)
 * Region (Light)
 * Region (Transparent)
@@ -32,6 +31,8 @@ ShareX incorporates the following methods to allow screen capture.
 
 You can select any or all of these tasks to be automatically run after each screen capture.
 
+* Show quick task menu
+* Show "After capture" window
 * Add image effects / watermark
 * Open in image editor
 * Copy image to clipboard
@@ -42,6 +43,8 @@ You can select any or all of these tasks to be automatically run after each scre
 * Perform actions
 * Copy file to clipboard
 * Copy file path to clipboard
+* Show file in explorer
+* Show "Before upload" window
 * Upload image to host
 * Delete file locally
 
@@ -62,6 +65,7 @@ ShareX has multiple ways to upload files.
 
 These tasks will automatically run after successful upload to any host.
 
+* Show "After upload" window
 * Shorten URL
 * Share URL
 * Copy URL to clipboard
@@ -84,6 +88,7 @@ ShareX supports the following destinations.
 * [Chevereto](https://chevereto.com)
 * [vgy.me](http://vgy.me)
 * [SomeImage](https://someimage.com)
+* [Imgland](http://imgland.net)
 * Custom image uploader
 * File uploader
 
@@ -121,11 +126,14 @@ ShareX supports the following destinations.
 * [Hostr](https://hostr.co)
 * [JIRA](https://www.atlassian.com/software/jira)
 * [Lambda](http://lambda.sx)
-* [Imgrush](https://imgrush.com)
 * [VideoBin](http://videobin.org)
-* [MaxFile](https://maxfile.ro)
+* [Pomf](https://github.com/nokonoko/Pomf)
+* [Uguu](https://uguu.se)
 * [Dropfile](https://dropfile.to)
 * [Up1](https://up1.ca)
+* [Seafile](https://www.seafile.com)
+* [s-ul](https://s-ul.eu)
+* [Streamable](https://streamable.com)
 * Shared folder
 * [Email](https://en.wikipedia.org/wiki/Email)
 * Custom file uploader
@@ -139,7 +147,6 @@ ShareX supports the following destinations.
 * [tinyurl.com](http://tinyurl.com)
 * [turl.ca](http://turl.ca)
 * [yourls.org](http://yourls.org)
-* [nl.cm](http://nl.cm)
 * [adf.ly](https://adf.ly)
 * [coinurl.com](https://coinurl.com)
 * [qr.net](http://qr.net)
@@ -177,7 +184,7 @@ Additional tools to make certain tasks more efficient.
 * QR code
 * Ruler
 * Automate
-* Index folder
+* Directory indexer
 * Image combiner
 * Video thumbnailer
 * FTP client
