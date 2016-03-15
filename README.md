@@ -8,65 +8,65 @@
 
 ShareX incorporates the following methods to allow screen capture.
 
-* Fullscreen: Creates a screenshot of the entire screen area.
-* Active window: Captures the currently active window.
-* Active monitor: Captures the monitor area where the mouse cursor currently resides.
-* Window menu: Has a list of open windows so you can select which window to take screenshot of.
-* Monitor menu: Has a list of monitors so you can select which monitor to take screenshot from.
-* Region: Allows you to take screenshot from a single rectangle or multiple rectangular areas drawn by the mouse by dragging it from one corner of a rectangle to the diagonally opposite other corner of the rectangle.
-* Region (Windows & controls): Allows you to take screenshot of a rectangle area or when you hovers window or an object it will automatically select rectangular area so you does not need to drag the area using the mouse.
-* Region (Annotate): This rectangle capture similar to Light version but also allows to perform drawing in the capture area.
-* Region (Light): Basic version of rectangle capture designed for slow computers.
-* Region (Transparent): Allows you to do rectangle capture from non frozen screen.
-* Polygon: Allows you to click points on screen to make polygon shape to capture areas inside it.
-* Freehand: Allows you to draw areas similar to drawing with pencil and the inside area will be captured.
-* Last region: Will repeat the screen capture of previous region.
-* Custom region: You can configure custom region to be captured with hotkey from task settings. For example, you can configure second monitor region to be captured with hotkey.
-* Screen recording: You can record a selected area on your screen or the entire screen. [FFmpeg](https://www.ffmpeg.org) allows you to record screen including sound and compress in real time using [x264](https://en.wikipedia.org/wiki/x264), [VP8 (WebM)](https://en.wikipedia.org/wiki/VP8), [Xvid](https://en.wikipedia.org/wiki/Xvid) etc.
-* Screen recording (GIF): You can record a selected area on your screen as an animated GIF.
+* Fullscreen
+* Active window
+* Active monitor
+* Window menu
+* Monitor menu
+* Region
+* Region (Windows & controls)
+* Region (Annotate)
+* Region (Light)
+* Region (Transparent)
+* Polygon
+* Freehand
+* Last region
+* Custom region
+* Screen recording
+* Screen recording (GIF)
 * Scrolling capture
 * Webpage capture
-* Auto capture: Allows you to automatically capture a screen area with specific time interval.
+* Auto capture
 
 #### After capture tasks
 
 You can select any or all of these tasks to be automatically run after each screen capture.
 
-* Add image effects / watermark: You can choose from over 37 image effects including watermark and apply them to an image.
-* Open in image editor: Using [Greenshot](http://getgreenshot.org) image editor to annotate image.
-* Copy image to clipboard: Copies image to clipboard.
-* Print image: Be able to print images with printer device.
-* Save image to file: Saves image as file with your preferred image format.
-* Save image to file as: Shows file dialog before saving so you can select where to write file to.
-* Save thumbnail image to file: Saves resized image as file.
-* Perform actions: You can automatically run other applications with image file path as the parameter so this way you can use Command-line interface applications to accomplish tasks which would have not been possible before. For example, you could open a screenshot in [Paint.NET](http://www.getpaint.net) before uploading it to a remote host.
-* Copy file to clipboard: Copies image file to clipboard.
-* Copy file path to clipboard: Copies image file path to clipboard.
-* Upload image to host: Allows you to automatically upload image file to a host that you selected. For example, you could upload images to [Imgur](http://imgur.com) or upload as a file to [Dropbox](https://www.dropbox.com), [Google Drive](https://drive.google.com) etc.
-* Delete file locally: Deletes local file.
+* Add image effects / watermark
+* Open in image editor
+* Copy image to clipboard
+* Print image
+* Save image to file
+* Save image to file as
+* Save thumbnail image to file
+* Perform actions
+* Copy file to clipboard
+* Copy file path to clipboard
+* Upload image to host
+* Delete file locally
 
 ## Uploading
 
 ShareX has multiple ways to upload files.
 
-* Upload file: Uploads file to selected host according to file data type.
-* Upload folder: Uploads files inside folder.
-* Upload from clipboard: ShareX will automatically detect clipboard format and select tasks accordingly. It will first check if clipboard data format is an image, text or file. If the data format is text then it can check whether it is a URL or plaintext. If it is a URL then it can automatically shorten the URL or upload URL contents by downloading the file from the URL and uploading the content. It can also check whether it is a folder so it can index the contents of the folder. These settings are customizable through “Task settings” and are disabled by default due to privacy reasons.
-* Upload from URL: Downloads file from URL and uploads it to a selected host.
-* Drag and drop upload (drop area or main window): You can drag and drop files to ShareX main window or to the drag & drop box in order to upload them.
-* Upload from Windows shell context menu: In Windows you can right click file and select “Upload with ShareX” to upload that file.
-* Upload from Windows send to menu: Also when you right click file ShareX will be in “Send to” submenu.
-* Watch folder: You can configure to watch specific folders so if new file appear in these folders that file will be automatically uploaded.
+* Upload file
+* Upload folder
+* Upload from clipboard
+* Upload from URL
+* Drag and drop upload (drop area or main window)
+* Upload from Windows shell context menu
+* Upload from Windows send to menu
+* Watch folder
 
 #### After upload tasks
 
 These tasks will automatically run after successful upload to any host.
 
-* Shorten URL: Automatically shortens URL with selected URL shortener service.
-* Share URL: To be able to share URL to URL sharing service.
-* Copy URL to clipboard: Automatically copies URL to clipboard so it will be ready to share.
-* Open URL: URL will be automatically opened in default browser.
-* Show QR code window: URL will be shown as QR code in window. You can open URL in their mobile phone etc.
+* Shorten URL
+* Share URL
+* Copy URL to clipboard
+* Open URL
+* Show QR code window
 
 ## Destinations
 
@@ -167,19 +167,19 @@ ShareX supports the following destinations.
 
 Additional tools to make certain tasks more efficient.
 
-* Color picker: Allows you to select color from color box or screen and provide values of RGB, Hue, Saturation and Brightness from selected color.
-* Screen color picker: As the name suggests, allows you to retrieve the color from anywhere on the screen and copies it to clipboard.
-* Image editor: Based on [Greenshot](http://getgreenshot.org) image editor. It offers functions such as ability to add annotations, highlighting or obfuscations to the screenshot. It allows to draw basic shapes (rectangles, ellipses, lines, arrows and freehand) and add text to a screenshot.
-* Image effects: Allows to apply over 37 different image effects with their own settings to image. Edited images can be saved in PNG or other formats.
-* Hash check: Allows you to check/compare file hash values.
+* Color picker
+* Screen color picker
+* Image editor
+* Image effects
+* Hash check
 * IRC client
-* DNS changer: Allows you to quickly change computer DNS settings with popular DNS servers such as [Google DNS](https://developers.google.com/speed/public-dns/).
-* QR code: Open QR code window which you can enter text to get QR code of it. You can copy QR code image to your clipboard or save as file.
-* Ruler: Allows you to get X, Y, width, height, distance and angle information on screen.
-* Automate: Allows you to write simple script to automate mouse and keyboard commands.
-* Index folder: Allows you to share the index of a folder contents by uploading the index of the selected folder as text, html or xml.
+* DNS changer
+* QR code
+* Ruler
+* Automate
+* Index folder
 * Image combiner
 * Video thumbnailer
-* FTP client: Opens a basic FTP client you interface for the currently configured FTP account.
-* Tweet message: Allows you to post message to Twitter.
-* Monitor test: Allows you to render different colors on the screen which provides you the opportunity to test for bleeding and dead pixels on LCD monitors.
+* FTP client
+* Tweet message
+* Monitor test
