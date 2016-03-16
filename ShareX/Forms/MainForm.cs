@@ -697,12 +697,6 @@ namespace ShareX
             }
         }
 
-        private void ForceClose()
-        {
-            forceClose = true;
-            Close();
-        }
-
         public void UseCommandLineArgs(List<CLICommand> commands)
         {
             TaskSettings taskSettings = FindCLITask(commands);
@@ -1323,12 +1317,16 @@ namespace ShareX
 
         private void tsmiTrayExit_MouseDown(object sender, MouseEventArgs e)
         {
-            ForceClose();
+            forceClose = true;
         }
 
         private void cmsTray_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
-            if (!forceClose)
+            if (forceClose)
+            {
+                Close();
+            }
+            else
             {
                 Program.SaveAllSettingsAsync();
             }

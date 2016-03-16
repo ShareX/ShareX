@@ -1555,7 +1555,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 462</value>
+    <value>189, 484</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -2773,6 +2773,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=10.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=10.8.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
