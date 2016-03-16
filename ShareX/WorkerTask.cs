@@ -232,6 +232,12 @@ namespace ShareX
             filename = URLHelpers.GetFileName(filename);
             filename = Helpers.GetValidFileName(filename);
 
+            if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
+            {
+                string ext = Path.GetExtension(filename);
+                filename = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
+            }
+
             if (string.IsNullOrEmpty(filename))
             {
                 return null;
