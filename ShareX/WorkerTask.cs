@@ -1427,7 +1427,7 @@ namespace ShareX
             }
             catch (Exception e)
             {
-                MessageBox.Show("ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
