@@ -43,7 +43,7 @@ namespace ShareX
     {
         public bool IsReady { get; private set; }
 
-        private bool forceClose, firstUpdateCheck = true;
+        private bool forceClose, trayMenuSaveSettings = true, firstUpdateCheck = true;
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
         private System.Threading.Timer updateTimer;
@@ -1317,19 +1317,23 @@ namespace ShareX
 
         private void tsmiTrayExit_MouseDown(object sender, MouseEventArgs e)
         {
-            forceClose = true;
+            trayMenuSaveSettings = false;
         }
 
         private void cmsTray_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
-            if (forceClose)
-            {
-                Close();
-            }
-            else
+            if (trayMenuSaveSettings)
             {
                 Program.SaveAllSettingsAsync();
             }
+
+            trayMenuSaveSettings = true;
+        }
+
+        private void tsmiTrayExit_Click(object sender, EventArgs e)
+        {
+            forceClose = true;
+            Close();
         }
 
         #endregion Tray events

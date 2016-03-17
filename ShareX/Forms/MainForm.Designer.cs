@@ -1804,6 +1804,7 @@
             this.tsmiTrayExit.Image = global::ShareX.Properties.Resources.cross_button;
             this.tsmiTrayExit.Name = "tsmiTrayExit";
             resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
+            this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
             this.tsmiTrayExit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tsmiTrayExit_MouseDown);
             // 
             // timerTraySingleClick
