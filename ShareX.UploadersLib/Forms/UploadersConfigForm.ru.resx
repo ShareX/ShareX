@@ -429,9 +429,6 @@
   <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
     <value>Путь загрузки:</value>
   </data>
-  <data name="lblCopyPath.Text" xml:space="preserve">
-    <value>Путь загрузки:</value>
-  </data>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Путь загрузки:</value>
   </data>
@@ -521,9 +518,6 @@
   </data>
   <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
     <value>Предпросмотр URL:</value>
-  </data>
-  <data name="lblCopyURLType.Text" xml:space="preserve">
-    <value>Тип ссылки</value>
   </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
     <value>Ссылка на удаление:</value>
@@ -710,9 +704,6 @@
   </data>
   <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
     <value>Тип запроса:</value>
-  </data>
-  <data name="lblCopyStatus.Text" xml:space="preserve">
-    <value>Состояние</value>
   </data>
   <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
     <value>Файл из имени:</value>

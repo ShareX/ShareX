@@ -414,15 +414,6 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>API kulcs:</value>
   </data>
-  <data name="lblCopyPath.Text" xml:space="preserve">
-    <value>Feltöltési útvonal:</value>
-  </data>
-  <data name="lblCopyStatus.Text" xml:space="preserve">
-    <value>Állapot</value>
-  </data>
-  <data name="lblCopyURLType.Text" xml:space="preserve">
-    <value>URL típusa:</value>
-  </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
     <value>Törlési URL:</value>
   </data>

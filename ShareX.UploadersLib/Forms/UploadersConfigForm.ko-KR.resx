@@ -602,15 +602,6 @@
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>업로드할 앨범 ID (빈 칸 = 앨범에 업로드하지 않음):</value>
   </data>
-  <data name="lblCopyPath.Text" xml:space="preserve">
-    <value>업로드 경로:</value>
-  </data>
-  <data name="lblCopyStatus.Text" xml:space="preserve">
-    <value>상태:</value>
-  </data>
-  <data name="lblCopyURLType.Text" xml:space="preserve">
-    <value>URL 종류:</value>
-  </data>
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
     <value>API 키:</value>
   </data>

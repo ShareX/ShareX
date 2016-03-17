@@ -412,15 +412,6 @@ Esto significa que se pueden perder de Amazon S3 en algún momento.</value>
   <data name="lblBoxFolderID.Text" xml:space="preserve">
     <value>Carpeta seleccionada:</value>
   </data>
-  <data name="lblCopyStatus.Text" xml:space="preserve">
-    <value>Estado</value>
-  </data>
-  <data name="lblCopyURLType.Text" xml:space="preserve">
-    <value>Tipo de URL:</value>
-  </data>
-  <data name="lblCopyPath.Text" xml:space="preserve">
-    <value>Ruta de subir:</value>
-  </data>
   <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
     <value>Tipo de solicitud:</value>
   </data>

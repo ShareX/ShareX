@@ -407,15 +407,6 @@
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>API密钥:</value>
   </data>
-  <data name="lblCopyPath.Text" xml:space="preserve">
-    <value>上传路径:</value>
-  </data>
-  <data name="lblCopyStatus.Text" xml:space="preserve">
-    <value>状态</value>
-  </data>
-  <data name="lblCopyURLType.Text" xml:space="preserve">
-    <value>URL类型:</value>
-  </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
     <value>删除URL:</value>
   </data>

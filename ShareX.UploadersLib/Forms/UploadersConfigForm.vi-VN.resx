@@ -393,9 +393,6 @@
   <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
     <value>Đường dẫn tải lên:</value>
   </data>
-  <data name="lblCopyPath.Text" xml:space="preserve">
-    <value>Đường dẫn tải lên:</value>
-  </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>ID của album để tải lên (Để trống = Không tải lên album)</value>
   </data>
@@ -480,9 +477,6 @@
   <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
     <value>Trạng thái:</value>
   </data>
-  <data name="lblCopyStatus.Text" xml:space="preserve">
-    <value>Trạng thái:</value>
-  </data>
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Trạng thái</value>
   </data>
@@ -550,9 +544,6 @@
     <value>Máy chủ SMTP:</value>
   </data>
   <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Kiểu URL:</value>
-  </data>
-  <data name="lblCopyURLType.Text" xml:space="preserve">
     <value>Kiểu URL:</value>
   </data>
   <data name="lblCustomUploaderURL.Text" xml:space="preserve">

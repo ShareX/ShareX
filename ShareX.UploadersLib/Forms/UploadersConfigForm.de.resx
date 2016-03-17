@@ -412,15 +412,6 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>API Schlüssel:</value>
   </data>
-  <data name="lblCopyPath.Text" xml:space="preserve">
-    <value>Hochladepfad:</value>
-  </data>
-  <data name="lblCopyStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="lblCopyURLType.Text" xml:space="preserve">
-    <value>URL Typ:</value>
-  </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
     <value>Löschung der URL:</value>
   </data>

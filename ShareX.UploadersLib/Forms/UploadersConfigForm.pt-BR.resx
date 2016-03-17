@@ -425,15 +425,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>Chave de API:</value>
   </data>
-  <data name="lblCopyPath.Text" xml:space="preserve">
-    <value>Local de upload:</value>
-  </data>
-  <data name="lblCopyStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="lblCopyURLType.Text" xml:space="preserve">
-    <value>Tipo de URL:</value>
-  </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
     <value>URL de remoção:</value>
   </data>

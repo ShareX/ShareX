@@ -426,9 +426,6 @@
   <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
     <value>Compte d'utilisateur</value>
   </data>
-  <data name="lblCopyStatus.Text" xml:space="preserve">
-    <value>Statut</value>
-  </data>
   <data name="lblMegaStatusTitle.Text" xml:space="preserve">
     <value>Statut:</value>
   </data>
@@ -633,9 +630,6 @@
   <data name="lblMediaFirePath.Text" xml:space="preserve">
     <value>Chemin de mise en ligne:</value>
   </data>
-  <data name="lblCopyPath.Text" xml:space="preserve">
-    <value>Chemin de mise en ligne:</value>
-  </data>
   <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
     <value>Chemin de mise en ligne:</value>
   </data>
@@ -649,9 +643,6 @@
     <value>Raccourcisseur d'URL:</value>
   </data>
   <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Type d'URL:</value>
-  </data>
-  <data name="lblCopyURLType.Text" xml:space="preserve">
     <value>Type d'URL:</value>
   </data>
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">

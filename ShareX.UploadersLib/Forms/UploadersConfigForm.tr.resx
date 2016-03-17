@@ -243,9 +243,6 @@
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
     <value>Kullanıcı adı:</value>
   </data>
-  <data name="lblCopyStatus.Text" xml:space="preserve">
-    <value>Durum:</value>
-  </data>
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Durum:</value>
   </data>
@@ -447,9 +444,6 @@
   <data name="lblMediaFirePath.Text" xml:space="preserve">
     <value>Yükleme yolu:</value>
   </data>
-  <data name="lblCopyPath.Text" xml:space="preserve">
-    <value>Yükleme yolu:</value>
-  </data>
   <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
     <value>URL önizleme:</value>
   </data>
@@ -458,9 +452,6 @@
   </data>
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>URL kısaltıcılar</value>
-  </data>
-  <data name="lblCopyURLType.Text" xml:space="preserve">
-    <value>URL türü</value>
   </data>
   <data name="lblMinusURLType.Text" xml:space="preserve">
     <value>URL türü:</value>
