@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
 using System.Runtime.Remoting;
@@ -32,51 +33,88 @@ using System.Threading;
 
 namespace SingleInstanceApplication
 {
-    public static class ApplicationInstanceManager
+    public class ApplicationInstanceManager : IDisposable
     {
-        private static Semaphore semaphore;
-        private static string appName = "ShareX";
-        private static string eventName = string.Format("{0}-{1}", Environment.MachineName, appName);
-        private static string semaphoreName = string.Format("{0}{1}", eventName, "Semaphore");
+        private static string AppName = "ShareX";
+        private static string EventName = string.Format("{0}-{1}", Environment.MachineName, AppName);
+        private static string SemaphoreName = string.Format("{0}{1}", EventName, "Semaphore");
 
-        public static void CreateFirstInstance(EventHandler<InstanceCallbackEventArgs> callback)
+        private Mutex mutex;
+        private bool hasHandle = false;
+        private Semaphore semaphore;
+
+        public ApplicationInstanceManager(bool isMultiInstance, string[] args, EventHandler<InstanceCallbackEventArgs> singleInstanceCallback)
+        {
+            mutex = new Mutex(false, "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"); // Specific mutex required for installer
+
+            try
+            {
+                hasHandle = mutex.WaitOne(100, false);
+
+                if (!hasHandle && !isMultiInstance)
+                {
+                    CreateMultipleInstance(singleInstanceCallback, args);
+                }
+            }
+            catch (AbandonedMutexException)
+            {
+                // Log the mutex was abandoned in another process, it will still get acquired
+                DebugHelper.WriteLine("Single instance mutex found abandoned from another process");
+                hasHandle = true;
+            }
+
+            CreateFirstInstance(singleInstanceCallback);
+        }
+
+        public void Dispose()
+        {
+            if (hasHandle)
+            {
+                mutex.ReleaseMutex();
+            }
+        }
+
+        private void CreateFirstInstance(EventHandler<InstanceCallbackEventArgs> callback)
         {
             bool createdNew;
 
-            using (EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, eventName, out createdNew))
+            using (EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, EventName, out createdNew))
             {
                 // Mixing single instance and multi instance (via command line parameter) copies of the program can
                 //  result in CreateFirstInstance being called if it isn't really the first one. Make sure this is
                 //  really first instance by detecting if EventWaitHandle was created
-                if (createdNew != true)
+                if (!createdNew)
                 {
                     return;
                 }
 
-                semaphore = new Semaphore(1, 1, semaphoreName);
+                semaphore = new Semaphore(1, 1, SemaphoreName);
                 ThreadPool.RegisterWaitForSingleObject(eventWaitHandle, WaitOrTimerCallback, callback, Timeout.Infinite, false);
 
-                RegisterRemoteType(appName);
+                RegisterRemoteType(AppName);
             }
         }
 
-        public static void CreateMultipleInstance(EventHandler<InstanceCallbackEventArgs> callback, string[] args)
+        private void CreateMultipleInstance(EventHandler<InstanceCallbackEventArgs> callback, string[] args)
         {
             InstanceProxy.CommandLineArgs = args;
 
-            using (EventWaitHandle eventWaitHandle = EventWaitHandle.OpenExisting(eventName))
+            using (EventWaitHandle eventWaitHandle = EventWaitHandle.OpenExisting(EventName))
             {
-                semaphore = Semaphore.OpenExisting(semaphoreName);
+                semaphore = Semaphore.OpenExisting(SemaphoreName);
                 semaphore.WaitOne();
-                UpdateRemoteObject(appName);
+                UpdateRemoteObject(AppName);
 
-                if (eventWaitHandle != null) eventWaitHandle.Set();
+                if (eventWaitHandle != null)
+                {
+                    eventWaitHandle.Set();
+                }
             }
 
             Environment.Exit(0);
         }
 
-        private static void UpdateRemoteObject(string uri)
+        private void UpdateRemoteObject(string uri)
         {
             IpcClientChannel clientChannel = new IpcClientChannel();
             ChannelServices.RegisterChannel(clientChannel, true);
@@ -91,7 +129,7 @@ namespace SingleInstanceApplication
             ChannelServices.UnregisterChannel(clientChannel);
         }
 
-        private static void RegisterRemoteType(string uri)
+        private void RegisterRemoteType(string uri)
         {
             IpcServerChannel serverChannel = new IpcServerChannel(Environment.MachineName + uri);
             ChannelServices.RegisterChannel(serverChannel, true);
@@ -106,10 +144,14 @@ namespace SingleInstanceApplication
             };
         }
 
-        private static void WaitOrTimerCallback(object state, bool timedOut)
+        private void WaitOrTimerCallback(object state, bool timedOut)
         {
             EventHandler<InstanceCallbackEventArgs> callback = state as EventHandler<InstanceCallbackEventArgs>;
-            if (callback == null) return;
+
+            if (callback == null)
+            {
+                return;
+            }
 
             callback(state, new InstanceCallbackEventArgs(InstanceProxy.CommandLineArgs));
 
