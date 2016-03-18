@@ -61,6 +61,7 @@ namespace ShareX.ImageEffectsLib
             pbResult.AllowDrop = true;
             mbLoadImage.Visible = true;
             btnSaveImage.Visible = true;
+            btnOK.Visible = false;
         }
 
         private void AddAllEffectsToContextMenu()
