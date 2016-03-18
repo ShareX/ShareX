@@ -931,8 +931,11 @@ namespace ShareX
                     textUploader = new Paste_ee(Program.UploadersConfig.Paste_eeUserAPIKey);
                     break;
                 case TextDestination.Gist:
-                    textUploader = Program.UploadersConfig.GistAnonymousLogin ? new Gist(Program.UploadersConfig.GistPublishPublic) :
-                        new Gist(Program.UploadersConfig.GistPublishPublic, Program.UploadersConfig.GistOAuth2Info);
+                    textUploader = new Gist(Program.UploadersConfig.GistAnonymousLogin ? null : Program.UploadersConfig.GistOAuth2Info)
+                    {
+                        PublicUpload = Program.UploadersConfig.GistPublishPublic,
+                        RawURL = Program.UploadersConfig.GistRawURL
+                    };
                     break;
                 case TextDestination.Upaste:
                     textUploader = new Upaste(Program.UploadersConfig.UpasteUserKey)

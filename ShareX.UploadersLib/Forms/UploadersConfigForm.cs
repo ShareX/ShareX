@@ -282,7 +282,7 @@ namespace ShareX.UploadersLib
                 }
             }
             txtPastebinTitle.Text = Config.PastebinSettings.Title;
-            cbPastebinRaw.Checked = Config.PastebinSettings.Raw;
+            cbPastebinRaw.Checked = Config.PastebinSettings.RawURL;
 
             // Paste.ee
 
@@ -291,12 +291,14 @@ namespace ShareX.UploadersLib
             // Gist
 
             atcGistAccountType.SelectedAccountType = Config.GistAnonymousLogin ? AccountType.Anonymous : AccountType.User;
-            chkGistPublishPublic.Checked = Config.GistPublishPublic;
 
             if (OAuth2Info.CheckOAuth(Config.GistOAuth2Info))
             {
                 oAuth2Gist.Status = OAuthLoginStatus.LoginSuccessful;
             }
+
+            cbGistPublishPublic.Checked = Config.GistPublishPublic;
+            cbGistUseRawURL.Checked = Config.GistRawURL;
 
             // Upaste
 
@@ -411,7 +413,7 @@ namespace ShareX.UploadersLib
             nudEmailSmtpPort.SetValue(Config.EmailSmtpPort);
             txtEmailFrom.Text = Config.EmailFrom;
             txtEmailPassword.Text = Config.EmailPassword;
-            chkEmailConfirm.Checked = Config.EmailConfirmSend;
+            cbEmailConfirm.Checked = Config.EmailConfirmSend;
             cbEmailRememberLastTo.Checked = Config.EmailRememberLastTo;
             txtEmailDefaultSubject.Text = Config.EmailDefaultSubject;
             txtEmailDefaultBody.Text = Config.EmailDefaultBody;
@@ -1118,7 +1120,7 @@ namespace ShareX.UploadersLib
 
         private void cbPastebinRaw_CheckedChanged(object sender, EventArgs e)
         {
-            Config.PastebinSettings.Raw = cbPastebinRaw.Checked;
+            Config.PastebinSettings.RawURL = cbPastebinRaw.Checked;
         }
 
         #endregion Pastebin
@@ -1157,7 +1159,12 @@ namespace ShareX.UploadersLib
 
         private void chkGistPublishPublic_CheckedChanged(object sender, EventArgs e)
         {
-            Config.GistPublishPublic = ((CheckBox)sender).Checked;
+            Config.GistPublishPublic = cbGistPublishPublic.Checked;
+        }
+
+        private void cbGistUseRawURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GistRawURL = cbGistUseRawURL.Checked;
         }
 
         #endregion Gist
@@ -1440,7 +1447,7 @@ namespace ShareX.UploadersLib
             {
                 Config.MinusConfig.FolderID = cboMinusFolders.SelectedIndex;
                 MinusFolder tempMf = Config.MinusConfig.GetActiveFolder();
-                chkMinusPublic.Checked = tempMf.is_public;
+                cbMinusPublic.Checked = tempMf.is_public;
             }
         }
 
@@ -1451,7 +1458,7 @@ namespace ShareX.UploadersLib
                 btnMinusFolderAdd.Enabled = false;
 
                 Minus minus = new Minus(Config.MinusConfig, Config.MinusOAuth2Info);
-                MinusFolder dir = minus.CreateFolder(cboMinusFolders.Text, chkMinusPublic.Checked);
+                MinusFolder dir = minus.CreateFolder(cboMinusFolders.Text, cbMinusPublic.Checked);
                 if (dir != null)
                 {
                     cboMinusFolders.Items.Add(dir);
@@ -1638,7 +1645,7 @@ namespace ShareX.UploadersLib
 
         private void chkEmailConfirm_CheckedChanged(object sender, EventArgs e)
         {
-            Config.EmailConfirmSend = chkEmailConfirm.Checked;
+            Config.EmailConfirmSend = cbEmailConfirm.Checked;
         }
 
         private void cbRememberLastToEmail_CheckedChanged(object sender, EventArgs e)

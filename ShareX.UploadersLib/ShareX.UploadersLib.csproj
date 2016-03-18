@@ -250,7 +250,6 @@
     <Compile Include="HelperClasses\AccountInfo.cs" />
     <Compile Include="HelperClasses\Argument.cs" />
     <Compile Include="HelperClasses\KeyFileNameEditor.cs" />
-    <Compile Include="HelperClasses\JSONHelper.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuth.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuth2.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuth2Basic.cs" />

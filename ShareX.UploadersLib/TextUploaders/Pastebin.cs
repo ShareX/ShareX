@@ -99,7 +99,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
                 if (!string.IsNullOrEmpty(ur.Response) && !ur.Response.StartsWith("Bad API request") && ur.Response.IsValidUrl())
                 {
-                    if (Settings.Raw)
+                    if (Settings.RawURL)
                     {
                         string paste_key = URLHelpers.GetFileName(ur.Response);
                         ur.URL = "http://pastebin.com/raw/" + paste_key;
@@ -480,6 +480,6 @@ zxbasic = ZXBasic";
         public string Title { get; set; }
         public string TextFormat { get; set; } = "text";
         public string UserKey { get; set; }
-        public bool Raw { get; set; }
+        public bool RawURL { get; set; }
     }
 }

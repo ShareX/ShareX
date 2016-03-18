@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.Win32;
+using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
 using ShareX.HelpersLib.Properties;
 using System;
@@ -1048,6 +1049,12 @@ namespace ShareX.HelpersLib
             {
                 handle.Free();
             }
+        }
+
+        // http://goessner.net/articles/JsonPath/
+        public static string ParseJSON(string text, string jsonPath)
+        {
+            return (string)JToken.Parse(text).SelectToken("$." + jsonPath);
         }
     }
 }

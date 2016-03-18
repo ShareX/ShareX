@@ -40,21 +40,15 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public OAuth2Info AuthInfo { get; private set; }
 
-        private readonly bool publishPublic;
+        public bool PublicUpload { get; set; }
+        public bool RawURL { get; set; }
+
+        public Gist()
+        {
+        }
 
         public Gist(OAuth2Info oAuthInfos)
-            : this(false, oAuthInfos)
         {
-        }
-
-        public Gist(bool publishPublic)
-            : this(publishPublic, null)
-        {
-        }
-
-        public Gist(bool publishPublic, OAuth2Info oAuthInfos)
-        {
-            this.publishPublic = publishPublic;
             AuthInfo = oAuthInfos;
         }
 
@@ -102,7 +96,7 @@ namespace ShareX.UploadersLib.TextUploaders
             {
                 var gistUploadObject = new
                 {
-                    @public = publishPublic,
+                    @public = PublicUpload,
                     files = new Dictionary<string, object>
                     {
                         { fileName, new { content = text } }
@@ -122,9 +116,14 @@ namespace ShareX.UploadersLib.TextUploaders
 
                 if (response != null)
                 {
-                    var gistReturnType = new { html_url = string.Empty };
-                    var gistReturnObject = JsonConvert.DeserializeAnonymousType(response, gistReturnType);
-                    ur.URL = gistReturnObject.html_url;
+                    if (RawURL)
+                    {
+                        ur.URL = Helpers.ParseJSON(response, "files.*.raw_url");
+                    }
+                    else
+                    {
+                        ur.URL = Helpers.ParseJSON(response, "html_url");
+                    }
                 }
             }
 

@@ -321,7 +321,7 @@ namespace ShareX.UploadersLib
         // http://goessner.net/articles/JsonPath/
         private string ParseJsonSyntax(string syntaxJsonPath)
         {
-            return (string)JToken.Parse(response).SelectToken("$." + syntaxJsonPath);
+            return Helpers.ParseJSON(response, syntaxJsonPath);
         }
 
         // http://www.w3schools.com/xsl/xpath_syntax.asp
