@@ -39,7 +39,15 @@ namespace ShareX.ImageEffectsLib
 
             if (imageEffects != null && imageEffects.Count > 0)
             {
-                result = imageEffects.Where(x => x.Enabled).Aggregate(result, (current, imageEffect) => imageEffect.Apply(current));
+                foreach (ImageEffect imageEffect in imageEffects.Where(x => x.Enabled))
+                {
+                    result = imageEffect.Apply(result);
+
+                    if (result == null)
+                    {
+                        break;
+                    }
+                }
             }
 
             return result;

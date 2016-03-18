@@ -554,6 +554,12 @@ namespace ShareX
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
                 tempImage = TaskHelpers.AddImageEffects(tempImage, Info.TaskSettings);
+
+                if (tempImage == null)
+                {
+                    DebugHelper.WriteLine("Error: Applying image effects resulted empty image.");
+                    return false;
+                }
             }
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
