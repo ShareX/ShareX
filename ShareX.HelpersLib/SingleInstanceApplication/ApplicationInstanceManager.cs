@@ -39,9 +39,11 @@ namespace SingleInstanceApplication
         private static string EventName = string.Format("{0}-{1}", Environment.MachineName, AppName);
         private static string SemaphoreName = string.Format("{0}{1}", EventName, "Semaphore");
 
+        public bool IsFirstInstance { get; private set; }
+
         private Mutex mutex;
-        private bool hasHandle = false;
         private Semaphore semaphore;
+        private IpcServerChannel serverChannel;
 
         public ApplicationInstanceManager(bool isMultiInstance, string[] args, EventHandler<InstanceCallbackEventArgs> singleInstanceCallback)
         {
@@ -49,9 +51,9 @@ namespace SingleInstanceApplication
 
             try
             {
-                hasHandle = mutex.WaitOne(100, false);
+                IsFirstInstance = mutex.WaitOne(100, false);
 
-                if (!hasHandle && !isMultiInstance)
+                if (!IsFirstInstance && !isMultiInstance)
                 {
                     CreateMultipleInstance(singleInstanceCallback, args);
                 }
@@ -60,7 +62,7 @@ namespace SingleInstanceApplication
             {
                 // Log the mutex was abandoned in another process, it will still get acquired
                 DebugHelper.WriteLine("Single instance mutex found abandoned from another process");
-                hasHandle = true;
+                IsFirstInstance = true;
             }
 
             CreateFirstInstance(singleInstanceCallback);
@@ -68,9 +70,22 @@ namespace SingleInstanceApplication
 
         public void Dispose()
         {
-            if (hasHandle)
+            if (IsFirstInstance)
             {
-                mutex.ReleaseMutex();
+                if (mutex != null)
+                {
+                    mutex.ReleaseMutex();
+                }
+
+                if (serverChannel != null)
+                {
+                    ChannelServices.UnregisterChannel(serverChannel);
+                }
+
+                if (semaphore != null)
+                {
+                    semaphore.Close();
+                }
             }
         }
 
@@ -131,31 +146,30 @@ namespace SingleInstanceApplication
 
         private void RegisterRemoteType(string uri)
         {
-            IpcServerChannel serverChannel = new IpcServerChannel(Environment.MachineName + uri);
+            serverChannel = new IpcServerChannel(Environment.MachineName + uri);
             ChannelServices.RegisterChannel(serverChannel, true);
 
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(InstanceProxy), uri, WellKnownObjectMode.Singleton);
-
-            Process process = Process.GetCurrentProcess();
-            process.Exited += delegate
-            {
-                ChannelServices.UnregisterChannel(serverChannel);
-                semaphore.Close();
-            };
         }
 
         private void WaitOrTimerCallback(object state, bool timedOut)
         {
             EventHandler<InstanceCallbackEventArgs> callback = state as EventHandler<InstanceCallbackEventArgs>;
 
-            if (callback == null)
+            if (callback != null)
             {
-                return;
+                try
+                {
+                    callback(state, new InstanceCallbackEventArgs(InstanceProxy.CommandLineArgs));
+                }
+                finally
+                {
+                    if (semaphore != null)
+                    {
+                        semaphore.Release();
+                    }
+                }
             }
-
-            callback(state, new InstanceCallbackEventArgs(InstanceProxy.CommandLineArgs));
-
-            semaphore.Release();
         }
     }
 }
