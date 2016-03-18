@@ -9655,8 +9655,35 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;btnCopyShowFiles.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="cbPastebinRaw.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPastebinRaw.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 336</value>
+  </data>
+  <data name="cbPastebinRaw.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 17</value>
+  </data>
+  <data name="cbPastebinRaw.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="cbPastebinRaw.Text" xml:space="preserve">
+    <value>Use raw URL</value>
+  </data>
+  <data name="&gt;&gt;cbPastebinRaw.Name" xml:space="preserve">
+    <value>cbPastebinRaw</value>
+  </data>
+  <data name="&gt;&gt;cbPastebinRaw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPastebinRaw.Parent" xml:space="preserve">
+    <value>tpPastebin</value>
+  </data>
+  <data name="&gt;&gt;cbPastebinRaw.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbPastebinSyntax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 240</value>
+    <value>16, 256</value>
   </data>
   <data name="cbPastebinSyntax.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 21</value>
@@ -9674,13 +9701,13 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;cbPastebinSyntax.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnPastebinRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnPastebinRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
+    <value>16, 112</value>
   </data>
   <data name="btnPastebinRegister.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 23</value>
@@ -9701,7 +9728,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;btnPastebinRegister.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblPastebinSyntax.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9710,7 +9737,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblPastebinSyntax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 224</value>
+    <value>13, 240</value>
   </data>
   <data name="lblPastebinSyntax.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -9731,7 +9758,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;lblPastebinSyntax.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblPastebinExpiration.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9740,7 +9767,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblPastebinExpiration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 176</value>
+    <value>13, 192</value>
   </data>
   <data name="lblPastebinExpiration.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -9761,7 +9788,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;lblPastebinExpiration.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblPastebinPrivacy.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9770,7 +9797,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblPastebinPrivacy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 128</value>
+    <value>13, 144</value>
   </data>
   <data name="lblPastebinPrivacy.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -9791,7 +9818,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;lblPastebinPrivacy.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblPastebinTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9800,7 +9827,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblPastebinTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 272</value>
+    <value>13, 288</value>
   </data>
   <data name="lblPastebinTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -9821,7 +9848,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;lblPastebinTitle.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblPastebinPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9830,7 +9857,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblPastebinPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 56</value>
+    <value>13, 64</value>
   </data>
   <data name="lblPastebinPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -9851,7 +9878,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;lblPastebinPassword.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblPastebinUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9881,10 +9908,10 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;lblPastebinUsername.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbPastebinExpiration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 192</value>
+    <value>16, 208</value>
   </data>
   <data name="cbPastebinExpiration.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 21</value>
@@ -9902,10 +9929,10 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;cbPastebinExpiration.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="cbPastebinPrivacy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 144</value>
+    <value>16, 160</value>
   </data>
   <data name="cbPastebinPrivacy.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 21</value>
@@ -9923,10 +9950,10 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;cbPastebinPrivacy.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="txtPastebinTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 288</value>
+    <value>16, 304</value>
   </data>
   <data name="txtPastebinTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 20</value>
@@ -9944,10 +9971,10 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;txtPastebinTitle.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="txtPastebinPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>16, 80</value>
   </data>
   <data name="txtPastebinPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 20</value>
@@ -9965,7 +9992,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;txtPastebinPassword.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="txtPastebinUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -9986,7 +10013,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;txtPastebinUsername.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lblPastebinLoginStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9995,7 +10022,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblPastebinLoginStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 101</value>
+    <value>256, 117</value>
   </data>
   <data name="lblPastebinLoginStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -10016,13 +10043,13 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;lblPastebinLoginStatus.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="btnPastebinLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnPastebinLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 96</value>
+    <value>136, 112</value>
   </data>
   <data name="btnPastebinLogin.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 23</value>
@@ -10043,7 +10070,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpPastebin</value>
   </data>
   <data name="&gt;&gt;btnPastebinLogin.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="tpPastebin.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

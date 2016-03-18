@@ -528,6 +528,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbPastebinRaw = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3316,6 +3317,7 @@
             // 
             // tpPastebin
             // 
+            this.tpPastebin.Controls.Add(this.cbPastebinRaw);
             this.tpPastebin.Controls.Add(this.cbPastebinSyntax);
             this.tpPastebin.Controls.Add(this.btnPastebinRegister);
             this.tpPastebin.Controls.Add(this.lblPastebinSyntax);
@@ -4230,6 +4232,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbPastebinRaw
+            // 
+            resources.ApplyResources(this.cbPastebinRaw, "cbPastebinRaw");
+            this.cbPastebinRaw.Name = "cbPastebinRaw";
+            this.cbPastebinRaw.UseVisualStyleBackColor = true;
+            this.cbPastebinRaw.CheckedChanged += new System.EventHandler(this.cbPastebinRaw_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4881,5 +4890,6 @@
         private System.Windows.Forms.ComboBox cbCheveretoUploaders;
         private System.Windows.Forms.Label lblCheveretoUploadURLExample;
         private System.Windows.Forms.Button btnCheveretoTestAll;
+        private System.Windows.Forms.CheckBox cbPastebinRaw;
     }
 }

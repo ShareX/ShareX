@@ -282,6 +282,7 @@ namespace ShareX.UploadersLib
                 }
             }
             txtPastebinTitle.Text = Config.PastebinSettings.Title;
+            cbPastebinRaw.Checked = Config.PastebinSettings.Raw;
 
             // Paste.ee
 
@@ -1113,6 +1114,11 @@ namespace ShareX.UploadersLib
         private void txtPastebinTitle_TextChanged(object sender, EventArgs e)
         {
             Config.PastebinSettings.Title = txtPastebinTitle.Text;
+        }
+
+        private void cbPastebinRaw_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PastebinSettings.Raw = cbPastebinRaw.Checked;
         }
 
         #endregion Pastebin
