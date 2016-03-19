@@ -438,4 +438,10 @@
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Kaydırarak yakalama</value>
   </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>Dosya adlandırma</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>Bölge yakalamada pencere isim kalıbını kullan (ShareX otomatik seçimdeki pencereyi tespit etmeye çalışır)</value>
+  </data>
 </root>

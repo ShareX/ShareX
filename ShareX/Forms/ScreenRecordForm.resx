@@ -286,7 +286,7 @@
     <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Screen record window</value>
+    <value>ShareX - Screen recording</value>
   </data>
   <data name="&gt;&gt;timerRefresh.Name" xml:space="preserve">
     <value>timerRefresh</value>

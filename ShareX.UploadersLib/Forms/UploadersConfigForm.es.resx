@@ -320,15 +320,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Descripción</value>
   </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>Público</value>
-  </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>Crear Gist pública</value>
-  </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>Confirmar antes de enviar</value>
-  </data>
   <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
     <value>Subir imágenes al álbum seleccionado</value>
   </data>

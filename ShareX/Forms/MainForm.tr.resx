@@ -657,4 +657,7 @@
   <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
     <value>URL kısaltma testi</value>
   </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Kolonları gizle</value>
+  </data>
 </root>

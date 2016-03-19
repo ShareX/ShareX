@@ -156,12 +156,6 @@
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Tiêu đề</value>
   </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>Xác nhận trước khi gửi</value>
-  </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>Tạo Gist công khai</value>
-  </data>
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Mô tả</value>
   </data>
@@ -701,9 +695,6 @@
   </data>
   <data name="lblEmailSmtpPort.Text" xml:space="preserve">
     <value>Cổng:</value>
-  </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>Công khai</value>
   </data>
   <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
     <value>Kiểu phản hồi:</value>

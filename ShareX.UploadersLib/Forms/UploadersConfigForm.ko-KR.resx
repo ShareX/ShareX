@@ -471,15 +471,6 @@
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>설명</value>
   </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>공개</value>
-  </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>공개 Gist 생성</value>
-  </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>보내기 전에 확인</value>
-  </data>
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>제목</value>
   </data>

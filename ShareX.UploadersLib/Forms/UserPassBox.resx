@@ -379,7 +379,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>User/Pass Box</value>
+    <value>ShareX - Account info</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UserPassBox</value>

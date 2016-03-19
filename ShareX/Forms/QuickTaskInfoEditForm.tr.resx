@@ -120,4 +120,16 @@
   <data name="btnOK.Text" xml:space="preserve">
     <value>Tamam</value>
   </data>
+  <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
+    <value>Yakalama sonrası görevleri:</value>
+  </data>
+  <data name="lblAfterUploadTasks.Text" xml:space="preserve">
+    <value>Yükleme sonrası görevleri:</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Menü yazısı:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Hızlı görev menüsü öğesini düzenle</value>
+  </data>
 </root>

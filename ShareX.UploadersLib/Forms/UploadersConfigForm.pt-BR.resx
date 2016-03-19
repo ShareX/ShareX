@@ -353,15 +353,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Título</value>
   </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>Confirmar antes de enviar</value>
-  </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>Criar Gist público</value>
-  </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>Público</value>
-  </data>
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Descrição</value>
   </data>

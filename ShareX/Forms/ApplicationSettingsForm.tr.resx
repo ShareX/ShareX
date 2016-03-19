@@ -276,4 +276,55 @@
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Entegrasyon</value>
   </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>Geçmiş</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>Geçmiş</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>Hızlı görev menüsünü düzenle...</value>
+  </data>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>Kütüğü dışarı aktar</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Geçmişi dışarı aktar</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Ayarları dışarı aktar</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Dışarı aktar...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>İçeri aktar...</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>Dışarı / içeri aktar</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>Adres boş değilse kaydet</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>Görevleri geçmişe kaydet</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>Tepsi menüsünde son görevleri ilk göster</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>En fazla kaydedilecek görev sayısı:</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>Tepsi menüsünde son görevleri göster</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>Açılışta ana pencerede son görevleri göster</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>Son görevleri kaydet</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>Son görevler</value>
+  </data>
 </root>

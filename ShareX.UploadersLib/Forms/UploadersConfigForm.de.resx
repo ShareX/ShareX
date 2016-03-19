@@ -340,15 +340,6 @@ d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Titel</value>
   </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>Bestätige vor dem Senden</value>
-  </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>Erstelle öffentlichen Gist</value>
-  </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>Öffentlich</value>
-  </data>
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Beschreibung</value>
   </data>

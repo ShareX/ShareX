@@ -343,15 +343,6 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Titel</value>
   </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>Bevestig voor verzenden</value>
-  </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>Creëer een publieke 'Gist'</value>
-  </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>Publiek</value>
-  </data>
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Beschrijving</value>
   </data>

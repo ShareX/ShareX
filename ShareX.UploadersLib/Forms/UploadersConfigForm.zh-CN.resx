@@ -341,15 +341,6 @@
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>标题:</value>
   </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>在发送前确认</value>
-  </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>创建公共Gist</value>
-  </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>公开</value>
-  </data>
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>描述</value>
   </data>

@@ -459,9 +459,6 @@
   <data name="lblDropboxPathTip.Text" xml:space="preserve">
     <value>Если вы используете публичную папку, общественная ссылка уже создана. Вам не нужно отмечать "Создать общественный URL".</value>
   </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>Создать общественный Gist</value>
-  </data>
   <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
     <value>Имя нового альбома (должно быть от 2 до 50 символов. Могут быть буквами, цифрами, подчеркиванием (_), дефис (-) и пробел)</value>
   </data>
@@ -567,9 +564,6 @@
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Заголовок</value>
   </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>Подтвердить перед отправкой</value>
-  </data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Имя</value>
   </data>
@@ -590,9 +584,6 @@
   </data>
   <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
     <value>Имя ведра:</value>
-  </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>Общедоступно</value>
   </data>
   <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
     <value>Конечная точка:</value>

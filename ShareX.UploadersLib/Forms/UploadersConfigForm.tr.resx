@@ -414,9 +414,6 @@
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
     <value>Yükleme genel mi?</value>
   </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>Genel</value>
-  </data>
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Açıklama</value>
   </data>
@@ -494,12 +491,6 @@
   </data>
   <data name="lblMegaStatus.Text" xml:space="preserve">
     <value>Ayarlandı / Ayarlanmadı</value>
-  </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>Göndermeden önce onayla</value>
-  </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>Genel Gist oluştur</value>
   </data>
   <data name="cbBoxShare.Text" xml:space="preserve">
     <value>Paylaşılabilir link oluştur</value>
@@ -899,5 +890,47 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
     <value>Hepsi...</value>
+  </data>
+  <data name="cbEmailConfirm.Text" xml:space="preserve">
+    <value>Göndermeden önce onayla</value>
+  </data>
+  <data name="cbGistPublishPublic.Text" xml:space="preserve">
+    <value>Genel Gist oluştur</value>
+  </data>
+  <data name="cbMinusPublic.Text" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
+    <value>Hepsini test et</value>
+  </data>
+  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
+  </data>
+  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
+    <value>Direk adres</value>
+  </data>
+  <data name="cbGistUseRawURL.Text" xml:space="preserve">
+    <value>Saf adres kullan</value>
+  </data>
+  <data name="cbPastebinRaw.Text" xml:space="preserve">
+    <value>Saf adres kullan</value>
+  </data>
+  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
+    <value>Yükleyiciler:</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
+    <value>Yükleme adresi:</value>
+  </data>
+  <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
+    <value>Örnek: http://example.com/api/1/upload</value>
+  </data>
+  <data name="lvlVgymeUserKey.Text" xml:space="preserve">
+    <value>Kullanıcı anahtarı:</value>
+  </data>
+  <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
+    <value>Kullanıcı anahtarını hesap detayları sayfasından alabilirsiniz.</value>
+  </data>
+  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
+    <value>API anahtarını burdan alabilirsiniz: https://someimage.com/api</value>
   </data>
 </root>

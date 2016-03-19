@@ -342,15 +342,6 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Cím</value>
   </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>Megerősítés a küldés előtt</value>
-  </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>Publikus Gist létrehozása</value>
-  </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>Publikus</value>
-  </data>
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Leírás</value>
   </data>

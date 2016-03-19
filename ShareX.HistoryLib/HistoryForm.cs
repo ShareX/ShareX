@@ -44,11 +44,13 @@ namespace ShareX.HistoryLib
         private HistoryManager history;
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
+        private string defaultTitle;
 
         public HistoryForm(string historyPath, int maxItemCount, int splitterDistance = 0)
         {
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;
+            defaultTitle = Text;
 
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -222,8 +224,7 @@ namespace ShareX.HistoryLib
 
         private void UpdateTitle(HistoryItem[] historyItems = null)
         {
-            // TODO: Translate
-            string title = "ShareX - History";
+            string title = defaultTitle;
 
             if (historyItems != null)
             {

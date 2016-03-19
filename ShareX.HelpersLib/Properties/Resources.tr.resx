@@ -256,7 +256,7 @@
     <value>İçeri alma başarısız.</value>
   </data>
   <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
-    <value>Dışarı verme başarısız.</value>
+    <value>Dışarı aktarma başarısız.</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
     <value>Ayarlar panoya kopyalandı.</value>

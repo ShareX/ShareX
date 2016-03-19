@@ -165,9 +165,6 @@
   <data name="lblMegaStatus.Text" xml:space="preserve">
     <value>Configuré / Non configuré</value>
   </data>
-  <data name="chkEmailConfirm.Text" xml:space="preserve">
-    <value>Confirmer avant l'envoi</value>
-  </data>
   <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
     <value>Créer un album</value>
   </data>
@@ -185,9 +182,6 @@
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Créer une URL partageable:</value>
-  </data>
-  <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>Créer un Gist public</value>
   </data>
   <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
     <value>Domaine personnalisé:</value>
@@ -482,9 +476,6 @@
   </data>
   <data name="lblPastebinPrivacy.Text" xml:space="preserve">
     <value>Confidentialité:</value>
-  </data>
-  <data name="chkMinusPublic.Text" xml:space="preserve">
-    <value>Public</value>
   </data>
   <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
     <value>Rafraîchir</value>

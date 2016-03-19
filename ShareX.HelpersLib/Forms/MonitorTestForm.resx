@@ -1,3 +1,4 @@
+﻿
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -891,7 +892,7 @@
     <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Monitor test</value>
+    <value>ShareX - Monitor test</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MonitorTestForm</value>
