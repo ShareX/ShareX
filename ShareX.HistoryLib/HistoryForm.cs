@@ -50,10 +50,10 @@ namespace ShareX.HistoryLib
         {
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;
-            defaultTitle = Text;
 
             InitializeComponent();
             Icon = ShareXResources.Icon;
+            defaultTitle = Text;
             UpdateTitle();
 
             ImageList il = new ImageList();
