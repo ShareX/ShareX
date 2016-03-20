@@ -33,7 +33,7 @@ namespace ShareX.UploadersLib
         ITextUploader CreateUploader(UploadersConfig config, string textFormat);
     }
 
-    public interface IServiceFactory<out TService, in TEnum>
+    public interface IUploadServiceFactory<out TService, in TEnum>
         where TService : IUploadService<TEnum>
     {
         TService GetServiceById(string serviceId);
@@ -43,11 +43,11 @@ namespace ShareX.UploadersLib
         IEnumerable<TService> GetAllServices();
     }
 
-    public interface IURLShortenerServiceFactory : IServiceFactory<IURLShortenerService, UrlShortenerType>
+    public interface IURLShortenerServiceFactory : IUploadServiceFactory<IURLShortenerService, UrlShortenerType>
     {
     }
 
-    internal abstract class UploadServiceFactory<TService, TEnum> : IServiceFactory<TService, TEnum>
+    internal abstract class UploadServiceFactory<TService, TEnum> : IUploadServiceFactory<TService, TEnum>
         where TService : IUploadService<TEnum>
     {
         private readonly IEnumerable<IUploadService<TEnum>> _services;
@@ -87,7 +87,7 @@ namespace ShareX.UploadersLib
         }
     }
 
-    public interface ITextUploadServiceFactory : IServiceFactory<ITextUploadService, TextDestination>
+    public interface ITextUploadServiceFactory : IUploadServiceFactory<ITextUploadService, TextDestination>
     {
     }
 
