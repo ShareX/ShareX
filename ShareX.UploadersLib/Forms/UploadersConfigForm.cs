@@ -77,7 +77,7 @@ namespace ShareX.UploadersLib
             AddControlsToTab(tcTextUploaders, servicesFactory.TextUpload);
         }
 
-        private void AddControlsToTab<TService, TEnum>(TabControl uploadTab, IServiceFactory<TService, TEnum> serviceFactory)
+        private void AddControlsToTab<TService, TEnum>(TabControl uploadTab, IUploadServiceFactory<TService, TEnum> serviceFactory)
             where TService : IUploadService<TEnum>
         {
             IEnumerable<TService> uploadServices = serviceFactory.GetAllServices();
