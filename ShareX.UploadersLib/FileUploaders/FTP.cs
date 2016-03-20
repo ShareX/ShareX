@@ -179,9 +179,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     using (Stream remoteStream = client.OpenWrite(remotePath))
                     {
-                        bool result = TransferData(localStream, remoteStream);
-                        remoteStream.Close();
-                        return result;
+                        return TransferData(localStream, remoteStream);
                     }
                 }
                 catch (FtpCommandException e)
@@ -193,9 +191,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         using (Stream remoteStream = client.OpenWrite(remotePath))
                         {
-                            bool result = TransferData(localStream, remoteStream);
-                            remoteStream.Close();
-                            return result;
+                            return TransferData(localStream, remoteStream);
                         }
                     }
 
@@ -271,7 +267,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 using (Stream remoteStream = client.OpenRead(remotePath))
                 {
                     TransferData(remoteStream, localStream);
-                    remoteStream.Close();
                 }
             }
         }
