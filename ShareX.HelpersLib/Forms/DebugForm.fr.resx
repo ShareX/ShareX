@@ -130,6 +130,6 @@
     <value>Ouvrir le fichier journal</value>
   </data>
   <data name="lblRunningFrom.Text" xml:space="preserve">
-    <value>Chemin de démarrage :</value>
+    <value>Chemin de démarrage:</value>
   </data>
 </root>
