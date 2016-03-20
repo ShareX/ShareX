@@ -29,6 +29,10 @@ namespace ShareX.UploadersLib.TextUploaders.Pastee
     {
         public string ServiceId { get; } = "Pastee";
         public TextDestination EnumValue { get; } = TextDestination.Pastee;
+        public IUploadServiceConfig CreateConfig()
+        {
+            return null;
+        }
 
         public ITextUploader CreateUploader(UploadersConfig config, string textFormat)
         {

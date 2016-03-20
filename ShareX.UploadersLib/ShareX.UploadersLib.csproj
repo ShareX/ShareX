@@ -106,6 +106,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.FtpClient, Version=1.0.5281.14359, Culture=neutral, PublicKeyToken=fa4be07daa57c2b7, processorArchitecture=MSIL">
@@ -124,6 +125,12 @@
   <ItemGroup>
     <Compile Include="APIKeys\APIKeys.cs" />
     <Compile Include="APIKeys\APIKeysLocal.cs" />
+    <Compile Include="Controls\BaseConfigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseConfigControl.Designer.cs">
+      <DependentUpon>BaseConfigControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FileUploaders\AmazonS3Region.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\Box.cs" />
@@ -222,6 +229,12 @@
     <Compile Include="TextUploaders\OneTimeSecret.cs" />
     <Compile Include="TextUploaders\Pastee\PasteeTextUploader.cs" />
     <Compile Include="TextUploaders\Pastee\PasteeTextUploadService.cs" />
+    <Compile Include="TextUploaders\Paste_ee\Paste_eeConfigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextUploaders\Paste_ee\Paste_eeConfigControl.Designer.cs">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextUploaders\Paste_ee\Paste_eeTextUploader.cs" />
     <Compile Include="TextUploaders\Paste_ee\Paste_eeTextUploadService.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />
@@ -398,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountTypeControl.zh-CN.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseConfigControl.resx">
+      <DependentUpon>BaseConfigControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.de.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
@@ -786,6 +802,9 @@
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

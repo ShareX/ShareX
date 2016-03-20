@@ -31,6 +31,10 @@ namespace ShareX.UploadersLib.URLShorteners.AdFly
     {
         public string ServiceId { get; } = "AdFly";
         public UrlShortenerType EnumValue { get; } = UrlShortenerType.AdFly;
+        public IUploadServiceConfig CreateConfig()
+        {
+            return null;
+        }
 
         public IURLShortener CreateShortener(UploadersConfig config)
         {

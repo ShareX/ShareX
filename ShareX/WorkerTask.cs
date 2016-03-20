@@ -909,7 +909,7 @@ namespace ShareX
             ITextUploader textUploader = null;
 
             // Temporary Factory Transition
-            var factory = ServiceLocator.GetInstance<ITextUploaderServiceFactory>();
+            var factory = ServiceLocator.GetInstance<ITextUploadServiceFactory>();
             ITextUploadService urlShortenerService = factory.GetServiceByEnumValue(Info.TaskSettings.TextDestination);
             if (urlShortenerService != null)
             {

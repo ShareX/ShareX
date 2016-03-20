@@ -23,6 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.Controls;
+using ShareX.UploadersLib.Properties;
+
 namespace ShareX.UploadersLib.TextUploaders.Paste_ee
 {
     internal sealed class Paste_eeTextUploadService : ITextUploadService
@@ -30,9 +33,25 @@ namespace ShareX.UploadersLib.TextUploaders.Paste_ee
         public string ServiceId { get; } = "Paste_ee";
         public TextDestination EnumValue { get; } = TextDestination.Paste_ee;
 
+        public IUploadServiceConfig CreateConfig()
+        {
+            return new Paste_eeUploadServiceConfig();
+        }
+
         public ITextUploader CreateUploader(UploadersConfig config, string textFormat)
         {
             return new Paste_eeTextUploader(config.Paste_eeUserAPIKey);
+        }
+    }
+
+    internal sealed class Paste_eeUploadServiceConfig : IUploadServiceConfig
+    {
+        public string TabText { get; } = "Paste.ee";
+        public object TabImage { get; } = Resources.page_white_text;
+
+        public BaseConfigControl CreateConfigControl(UploadersConfig config)
+        {
+            return new Paste_eeConfigControl(config);
         }
     }
 }

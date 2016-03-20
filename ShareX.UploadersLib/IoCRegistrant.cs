@@ -38,7 +38,8 @@ namespace ShareX.UploadersLib
             container.RegisterCollection<ITextUploadService>(uploaderAssembly);
 
             container.RegisterSingleton<IURLShortenerServiceFactory, URLShortenerServiceFactory>();
-            container.RegisterSingleton<ITextUploaderServiceFactory, TextUploadServiceFactory>();
+            container.RegisterSingleton<ITextUploadServiceFactory, TextUploadServiceFactory>();
+            container.RegisterSingleton<IUploadServicesFactory, UploadServicesFactory>();
         }
     }
 }

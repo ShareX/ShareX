@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using ShareX.UploadersLib.Controls;
 
 namespace ShareX.UploadersLib
 {
@@ -10,6 +11,16 @@ namespace ShareX.UploadersLib
         string ServiceId { get; }
 
         TEnum EnumValue { get; }
+
+        IUploadServiceConfig CreateConfig();
+    }
+
+    public interface IUploadServiceConfig
+    {
+        string TabText { get; }
+        object TabImage { get; }
+
+        BaseConfigControl CreateConfigControl(UploadersConfig config);
     }
 
     public interface IURLShortenerService : IUploadService<UrlShortenerType>
@@ -28,6 +39,8 @@ namespace ShareX.UploadersLib
         TService GetServiceById(string serviceId);
 
         TService GetServiceByEnumValue(TEnum enumValue);
+
+        IEnumerable<TService> GetAllServices();
     }
 
     public interface IURLShortenerServiceFactory : IServiceFactory<IURLShortenerService, UrlShortenerType>
@@ -53,6 +66,8 @@ namespace ShareX.UploadersLib
         {
             return (TService)_services.FirstOrDefault(s => enumValue.Equals(s.EnumValue));
         }
+
+        public IEnumerable<TService> GetAllServices() => _services.Cast<TService>();
     }
 
     internal class URLShortenerServiceFactory : UploadServiceFactory<IURLShortenerService, UrlShortenerType>, IURLShortenerServiceFactory
@@ -63,7 +78,7 @@ namespace ShareX.UploadersLib
         }
     }
 
-    internal class TextUploadServiceFactory : UploadServiceFactory<ITextUploadService, TextDestination>, ITextUploaderServiceFactory
+    internal class TextUploadServiceFactory : UploadServiceFactory<ITextUploadService, TextDestination>, ITextUploadServiceFactory
     {
 
         public TextUploadServiceFactory(IEnumerable<ITextUploadService> services)
@@ -72,7 +87,26 @@ namespace ShareX.UploadersLib
         }
     }
 
-    public interface ITextUploaderServiceFactory : IServiceFactory<ITextUploadService, TextDestination>
+    public interface ITextUploadServiceFactory : IServiceFactory<ITextUploadService, TextDestination>
     {
+    }
+
+    public interface IUploadServicesFactory
+    {
+        ITextUploadServiceFactory TextUpload { get; }
+
+        IURLShortenerServiceFactory URLShortener { get; }
+    }
+
+    internal class UploadServicesFactory : IUploadServicesFactory
+    {
+        public ITextUploadServiceFactory TextUpload { get; }
+        public IURLShortenerServiceFactory URLShortener { get; }
+
+        public UploadServicesFactory(ITextUploadServiceFactory textUpload, IURLShortenerServiceFactory urlShortener)
+        {
+            TextUpload = textUpload;
+            URLShortener = urlShortener;
+        }
     }
 }
