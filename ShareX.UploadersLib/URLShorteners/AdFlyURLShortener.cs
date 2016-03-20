@@ -55,4 +55,19 @@ namespace ShareX.UploadersLib.URLShorteners
             return result;
         }
     }
+
+    public class AdFlyURLShortenerService : IURLShortenerService
+    {
+        public string ServiceId { get; } = "AdFly";
+        public UrlShortenerType EnumValue { get; } = UrlShortenerType.AdFly;
+
+        public IURLShortener CreateShortener(UploadersConfig config)
+        {
+            return new AdFlyURLShortener
+            {
+                APIKEY = config.AdFlyAPIKEY,
+                APIUID = config.AdFlyAPIUID
+            };
+        }
+    }
 }

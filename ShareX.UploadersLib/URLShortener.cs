@@ -25,7 +25,7 @@
 
 namespace ShareX.UploadersLib
 {
-    public abstract class URLShortener : Uploader
+    public abstract class URLShortener : Uploader, IURLShortener
     {
         public abstract UploadResult ShortenURL(string url);
     }

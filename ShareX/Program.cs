@@ -32,6 +32,8 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using ShareX.UploadersLib.URLShorteners;
+using SimpleInjector;
 
 namespace ShareX
 {
@@ -283,6 +285,9 @@ namespace ShareX
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Container container = BuildContainer();
+            ServiceLocator.SetContainer(container);
+
             IsSilentRun = CLI.IsCommandExist("silent", "s");
 
 #if STEAM
@@ -305,7 +310,7 @@ namespace ShareX
             LanguageHelper.ChangeLanguage(Settings.Language);
 
             DebugHelper.WriteLine("MainForm init started");
-            MainForm = new MainForm();
+            MainForm = container.GetInstance<MainForm>();
             DebugHelper.WriteLine("MainForm init finished");
 
             Application.Run(MainForm);
@@ -316,6 +321,23 @@ namespace ShareX
 
             DebugHelper.Logger.Async = false;
             DebugHelper.WriteLine("ShareX closing");
+        }
+
+        private static Container BuildContainer()
+        {
+            var container = new Container();
+
+            // Register uploader services
+            ShareX.UploadersLib.IoCRegistrant.Register(container);
+            
+
+            container.RegisterSingleton<MainForm>();
+
+#if DEBUG
+            container.Verify();
+#endif
+
+            return container;
         }
 
         public static void Restart()

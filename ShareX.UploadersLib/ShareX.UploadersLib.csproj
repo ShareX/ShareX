@@ -101,6 +101,10 @@
     <Reference Include="Security.Cryptography">
       <HintPath>..\Lib\Security.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector, Version=3.1.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.1.2\lib\net40-client\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -211,6 +215,9 @@
     <Compile Include="ImageUploaders\ImglandUploader.cs" />
     <Compile Include="ImageUploaders\SomeImage.cs" />
     <Compile Include="ImageUploaders\VgymeUploader.cs" />
+    <Compile Include="IoCRegistrant.cs" />
+    <Compile Include="IURLShortener.cs" />
+    <Compile Include="IURLShortenerService.cs" />
     <Compile Include="TextUploaders\Hastebin.cs" />
     <Compile Include="TextUploaders\OneTimeSecret.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />

@@ -44,4 +44,14 @@ namespace ShareX.UploadersLib.URLShorteners
             return result;
         }
     }
+
+    public class TinyURLShortenerService : IURLShortenerService
+    {
+        public string ServiceId { get; } = "TinyURL";
+        public UrlShortenerType EnumValue { get; } = UrlShortenerType.TINYURL;
+        public IURLShortener CreateShortener(UploadersConfig config)
+        {
+            return new TinyURLShortener();
+        }
+    }
 }
