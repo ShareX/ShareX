@@ -4,17 +4,26 @@ using System.Linq;
 
 namespace ShareX.UploadersLib
 {
-    public interface IURLShortenerService
+    public interface IUploadService<out TEnum>
     {
         [Localizable(false)]
         string ServiceId { get; }
 
-        UrlShortenerType EnumValue { get; }
+        TEnum EnumValue { get; }
+    }
 
+    public interface IURLShortenerService : IUploadService<UrlShortenerType>
+    {
         IURLShortener CreateShortener(UploadersConfig config);
     }
 
+    public interface ITextUploadService : IUploadService<TextDestination>
+    {
+        ITextUploader CreateUploader(UploadersConfig config, string textFormat);
+    }
+
     public interface IServiceFactory<out TService, in TEnum>
+        where TService : IUploadService<TEnum>
     {
         TService GetServiceById(string serviceId);
 
@@ -25,23 +34,45 @@ namespace ShareX.UploadersLib
     {
     }
 
-    internal class URLShortenerServiceFactory : IURLShortenerServiceFactory
+    internal abstract class UploadServiceFactory<TService, TEnum> : IServiceFactory<TService, TEnum>
+        where TService : IUploadService<TEnum>
     {
-        private readonly IEnumerable<IURLShortenerService> _services;
+        private readonly IEnumerable<IUploadService<TEnum>> _services;
 
-        public URLShortenerServiceFactory(IEnumerable<IURLShortenerService> services)
+        protected UploadServiceFactory(IEnumerable<IUploadService<TEnum>> services)
         {
             _services = services;
         }
 
-        public IURLShortenerService GetServiceById(string serviceId)
+        public TService GetServiceById(string serviceId)
         {
-            return _services.FirstOrDefault(s => s.ServiceId == serviceId);
+            return (TService)_services.FirstOrDefault(s => s.ServiceId == serviceId);
         }
 
-        public IURLShortenerService GetServiceByEnumValue(UrlShortenerType enumValue)
+        public TService GetServiceByEnumValue(TEnum enumValue)
         {
-            return _services.FirstOrDefault(s => s.EnumValue == enumValue);
+            return (TService)_services.FirstOrDefault(s => enumValue.Equals(s.EnumValue));
         }
+    }
+
+    internal class URLShortenerServiceFactory : UploadServiceFactory<IURLShortenerService, UrlShortenerType>, IURLShortenerServiceFactory
+    {
+        public URLShortenerServiceFactory(IEnumerable<IURLShortenerService> services)
+            : base (services)
+        {
+        }
+    }
+
+    internal class TextUploadServiceFactory : UploadServiceFactory<ITextUploadService, TextDestination>, ITextUploaderServiceFactory
+    {
+
+        public TextUploadServiceFactory(IEnumerable<ITextUploadService> services)
+            : base(services)
+        {
+        }
+    }
+
+    public interface ITextUploaderServiceFactory : IServiceFactory<ITextUploadService, TextDestination>
+    {
     }
 }

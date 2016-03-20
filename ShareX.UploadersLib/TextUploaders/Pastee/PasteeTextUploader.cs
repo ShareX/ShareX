@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -25,15 +25,15 @@
 
 using System.Collections.Generic;
 
-namespace ShareX.UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders.Pastee
 {
-    public sealed class Pastee : TextUploader
+    public sealed class PasteeTextUploader : TextUploader
     {
         public string Lexer { get; set; }
         public int TimeToLive { get; set; } // Days
         public string Key { get; set; }
 
-        public Pastee()
+        public PasteeTextUploader()
         {
             Lexer = "text";
             TimeToLive = 30;

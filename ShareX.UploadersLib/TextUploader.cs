@@ -28,7 +28,13 @@ using System.Text;
 
 namespace ShareX.UploadersLib
 {
-    public abstract class TextUploader : Uploader
+    public interface ITextUploader : IUploader
+    {
+        UploadResult UploadText(string text, string fileName);
+        UploadResult UploadText(Stream stream, string fileName);
+    }
+
+    public abstract class TextUploader : Uploader, ITextUploader
     {
         public abstract UploadResult UploadText(string text, string fileName);
 

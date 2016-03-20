@@ -23,22 +23,16 @@
 
 #endregion License Information (GPL v3)
 
-using System.Reflection;
-using SimpleInjector;
-
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.TextUploaders.Paste_ee
 {
-    public static class IoCRegistrant
+    internal sealed class Paste_eeTextUploadService : ITextUploadService
     {
-        public static void Register(Container container)
+        public string ServiceId { get; } = "Paste_ee";
+        public TextDestination EnumValue { get; } = TextDestination.Paste_ee;
+
+        public ITextUploader CreateUploader(UploadersConfig config, string textFormat)
         {
-            Assembly[] uploaderAssembly = new[] { typeof(IoCRegistrant).Assembly };
-
-            container.RegisterCollection<IURLShortenerService>(uploaderAssembly);
-            container.RegisterCollection<ITextUploadService>(uploaderAssembly);
-
-            container.RegisterSingleton<IURLShortenerServiceFactory, URLShortenerServiceFactory>();
-            container.RegisterSingleton<ITextUploaderServiceFactory, TextUploadServiceFactory>();
+            return new Paste_eeTextUploader(config.Paste_eeUserAPIKey);
         }
     }
 }

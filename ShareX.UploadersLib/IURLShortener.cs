@@ -1,6 +1,6 @@
 ﻿namespace ShareX.UploadersLib
 {
-    public interface IURLShortener
+    public interface IURLShortener : IUploader
     {
         UploadResult ShortenURL(string url);
     }

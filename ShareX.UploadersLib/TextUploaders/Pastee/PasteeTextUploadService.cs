@@ -23,22 +23,19 @@
 
 #endregion License Information (GPL v3)
 
-using System.Reflection;
-using SimpleInjector;
-
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.TextUploaders.Pastee
 {
-    public static class IoCRegistrant
+    internal class PasteeTextUploadService : ITextUploadService
     {
-        public static void Register(Container container)
+        public string ServiceId { get; } = "Pastee";
+        public TextDestination EnumValue { get; } = TextDestination.Pastee;
+
+        public ITextUploader CreateUploader(UploadersConfig config, string textFormat)
         {
-            Assembly[] uploaderAssembly = new[] { typeof(IoCRegistrant).Assembly };
-
-            container.RegisterCollection<IURLShortenerService>(uploaderAssembly);
-            container.RegisterCollection<ITextUploadService>(uploaderAssembly);
-
-            container.RegisterSingleton<IURLShortenerServiceFactory, URLShortenerServiceFactory>();
-            container.RegisterSingleton<ITextUploaderServiceFactory, TextUploadServiceFactory>();
+            return new PasteeTextUploader
+            {
+                Lexer = textFormat
+            };
         }
     }
 }
