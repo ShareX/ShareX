@@ -352,8 +352,7 @@
     </Compile>
     <Compile Include="Printer\PrintTextHelper.cs" />
     <Compile Include="Helpers\RegistryHelpers.cs" />
-    <Compile Include="SingleInstanceApplication\ApplicationInstanceManager.cs" />
-    <Compile Include="SingleInstanceApplication\InstanceProxy.cs" />
+    <Compile Include="ApplicationInstanceManager.cs" />
     <Compile Include="DebugHelper.cs" />
     <Compile Include="UpdateChecker\UpdateCheckerLabel.cs">
       <SubType>UserControl</SubType>

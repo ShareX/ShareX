@@ -23,15 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System;
-using System.Diagnostics;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Ipc;
+using System.Security.Permissions;
 using System.Threading;
 
-namespace SingleInstanceApplication
+namespace ShareX.HelpersLib
 {
     public class ApplicationInstanceManager : IDisposable
     {
@@ -171,5 +170,27 @@ namespace SingleInstanceApplication
                 }
             }
         }
+    }
+
+    [Serializable]
+    [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
+    internal class InstanceProxy : MarshalByRefObject
+    {
+        public static string[] CommandLineArgs { get; internal set; }
+
+        public void SetCommandLineArgs(string[] commandLineArgs)
+        {
+            CommandLineArgs = commandLineArgs;
+        }
+    }
+
+    public class InstanceCallbackEventArgs : EventArgs
+    {
+        internal InstanceCallbackEventArgs(string[] commandLineArgs)
+        {
+            CommandLineArgs = commandLineArgs;
+        }
+
+        public string[] CommandLineArgs { get; private set; }
     }
 }

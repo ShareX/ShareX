@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
-using SingleInstanceApplication;
 using System;
 using System.Diagnostics;
 using System.IO;
