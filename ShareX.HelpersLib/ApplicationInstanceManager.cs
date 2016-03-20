@@ -34,27 +34,31 @@ namespace ShareX.HelpersLib
 {
     public class ApplicationInstanceManager : IDisposable
     {
-        private static string AppName = "ShareX";
-        private static string EventName = string.Format("{0}-{1}", Environment.MachineName, AppName);
-        private static string SemaphoreName = string.Format("{0}{1}", EventName, "Semaphore");
+        private static readonly string MutexName = "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC";
+        private static readonly string AppName = "ShareX";
+        private static readonly string EventName = string.Format("{0}-{1}", Environment.MachineName, AppName);
+        private static readonly string SemaphoreName = string.Format("{0}{1}", EventName, "Semaphore");
 
+        public bool IsSingleInstance { get; private set; }
         public bool IsFirstInstance { get; private set; }
 
         private Mutex mutex;
         private Semaphore semaphore;
         private IpcServerChannel serverChannel;
 
-        public ApplicationInstanceManager(bool isMultiInstance, string[] args, EventHandler<InstanceCallbackEventArgs> singleInstanceCallback)
+        public ApplicationInstanceManager(bool isSingleInstance, string[] args, EventHandler<InstanceCallbackEventArgs> callback)
         {
-            mutex = new Mutex(false, "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"); // Specific mutex required for installer
+            IsSingleInstance = isSingleInstance;
+
+            mutex = new Mutex(false, MutexName);
 
             try
             {
                 IsFirstInstance = mutex.WaitOne(100, false);
 
-                if (!IsFirstInstance && !isMultiInstance)
+                if (IsSingleInstance && !IsFirstInstance)
                 {
-                    CreateMultipleInstance(singleInstanceCallback, args);
+                    CreateMultipleInstance(callback, args);
                 }
             }
             catch (AbandonedMutexException)
@@ -64,7 +68,7 @@ namespace ShareX.HelpersLib
                 IsFirstInstance = true;
             }
 
-            CreateFirstInstance(singleInstanceCallback);
+            CreateFirstInstance(callback);
         }
 
         public void Dispose()
@@ -186,11 +190,11 @@ namespace ShareX.HelpersLib
 
     public class InstanceCallbackEventArgs : EventArgs
     {
+        public string[] CommandLineArgs { get; private set; }
+
         internal InstanceCallbackEventArgs(string[] commandLineArgs)
         {
             CommandLineArgs = commandLineArgs;
         }
-
-        public string[] CommandLineArgs { get; private set; }
     }
 }
