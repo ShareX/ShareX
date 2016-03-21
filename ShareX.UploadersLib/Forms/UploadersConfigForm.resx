@@ -12409,6 +12409,291 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;cbStreamableAnonymous.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="trvOpenloadFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 58</value>
+  </data>
+  <data name="trvOpenloadFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 209</value>
+  </data>
+  <data name="trvOpenloadFolders.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;trvOpenloadFolders.Name" xml:space="preserve">
+    <value>trvOpenloadFolders</value>
+  </data>
+  <data name="&gt;&gt;trvOpenloadFolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;trvOpenloadFolders.Parent" xml:space="preserve">
+    <value>gbOpenloadFolders</value>
+  </data>
+  <data name="&gt;&gt;trvOpenloadFolders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnOpenloadRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOpenloadRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 23</value>
+  </data>
+  <data name="btnOpenloadRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 23</value>
+  </data>
+  <data name="btnOpenloadRefreshFolders.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnOpenloadRefreshFolders.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="&gt;&gt;btnOpenloadRefreshFolders.Name" xml:space="preserve">
+    <value>btnOpenloadRefreshFolders</value>
+  </data>
+  <data name="&gt;&gt;btnOpenloadRefreshFolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOpenloadRefreshFolders.Parent" xml:space="preserve">
+    <value>gbOpenloadFolders</value>
+  </data>
+  <data name="&gt;&gt;btnOpenloadRefreshFolders.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbOpenloadUploadToFolder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbOpenloadUploadToFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbOpenloadUploadToFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 27</value>
+  </data>
+  <data name="cbOpenloadUploadToFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 17</value>
+  </data>
+  <data name="cbOpenloadUploadToFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbOpenloadUploadToFolder.Text" xml:space="preserve">
+    <value>Upload images to selected folder</value>
+  </data>
+  <data name="&gt;&gt;cbOpenloadUploadToFolder.Name" xml:space="preserve">
+    <value>cbOpenloadUploadToFolder</value>
+  </data>
+  <data name="&gt;&gt;cbOpenloadUploadToFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOpenloadUploadToFolder.Parent" xml:space="preserve">
+    <value>gbOpenloadFolders</value>
+  </data>
+  <data name="&gt;&gt;cbOpenloadUploadToFolder.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gbOpenloadFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 190</value>
+  </data>
+  <data name="gbOpenloadFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 285</value>
+  </data>
+  <data name="gbOpenloadFolders.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="gbOpenloadFolders.Text" xml:space="preserve">
+    <value>Folders</value>
+  </data>
+  <data name="&gt;&gt;gbOpenloadFolders.Name" xml:space="preserve">
+    <value>gbOpenloadFolders</value>
+  </data>
+  <data name="&gt;&gt;gbOpenloadFolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbOpenloadFolders.Parent" xml:space="preserve">
+    <value>tpOpenload</value>
+  </data>
+  <data name="&gt;&gt;gbOpenloadFolders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblOpenloadApiLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpenloadApiLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOpenloadApiLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 124</value>
+  </data>
+  <data name="lblOpenloadApiLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 13</value>
+  </data>
+  <data name="lblOpenloadApiLink.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblOpenloadApiLink.Text" xml:space="preserve">
+    <value>You can get your API keys from your openload.co account panel.</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiLink.Name" xml:space="preserve">
+    <value>lblOpenloadApiLink</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiLink.Parent" xml:space="preserve">
+    <value>gbOpenloadAuthentication</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiLink.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtOpenloadApiKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 92</value>
+  </data>
+  <data name="txtOpenloadApiKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 20</value>
+  </data>
+  <data name="txtOpenloadApiKey.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtOpenloadApiKey.Name" xml:space="preserve">
+    <value>txtOpenloadApiKey</value>
+  </data>
+  <data name="&gt;&gt;txtOpenloadApiKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOpenloadApiKey.Parent" xml:space="preserve">
+    <value>gbOpenloadAuthentication</value>
+  </data>
+  <data name="&gt;&gt;txtOpenloadApiKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblOpenloadApiKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpenloadApiKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOpenloadApiKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 76</value>
+  </data>
+  <data name="lblOpenloadApiKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="lblOpenloadApiKey.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblOpenloadApiKey.Text" xml:space="preserve">
+    <value>API Key:</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiKey.Name" xml:space="preserve">
+    <value>lblOpenloadApiKey</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiKey.Parent" xml:space="preserve">
+    <value>gbOpenloadAuthentication</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiKey.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtOpenloadApiLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 40</value>
+  </data>
+  <data name="txtOpenloadApiLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 20</value>
+  </data>
+  <data name="txtOpenloadApiLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtOpenloadApiLogin.Name" xml:space="preserve">
+    <value>txtOpenloadApiLogin</value>
+  </data>
+  <data name="&gt;&gt;txtOpenloadApiLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOpenloadApiLogin.Parent" xml:space="preserve">
+    <value>gbOpenloadAuthentication</value>
+  </data>
+  <data name="&gt;&gt;txtOpenloadApiLogin.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblOpenloadApiLogin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpenloadApiLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOpenloadApiLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="lblOpenloadApiLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblOpenloadApiLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblOpenloadApiLogin.Text" xml:space="preserve">
+    <value>API Login:</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiLogin.Name" xml:space="preserve">
+    <value>lblOpenloadApiLogin</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiLogin.Parent" xml:space="preserve">
+    <value>gbOpenloadAuthentication</value>
+  </data>
+  <data name="&gt;&gt;lblOpenloadApiLogin.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="gbOpenloadAuthentication.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="gbOpenloadAuthentication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 157</value>
+  </data>
+  <data name="gbOpenloadAuthentication.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbOpenloadAuthentication.Text" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
+  <data name="&gt;&gt;gbOpenloadAuthentication.Name" xml:space="preserve">
+    <value>gbOpenloadAuthentication</value>
+  </data>
+  <data name="&gt;&gt;gbOpenloadAuthentication.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbOpenloadAuthentication.Parent" xml:space="preserve">
+    <value>tpOpenload</value>
+  </data>
+  <data name="&gt;&gt;gbOpenloadAuthentication.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpOpenload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpOpenload.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpOpenload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 475</value>
+  </data>
+  <data name="tpOpenload.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="tpOpenload.Text" xml:space="preserve">
+    <value>openload.co</value>
+  </data>
+  <data name="&gt;&gt;tpOpenload.Name" xml:space="preserve">
+    <value>tpOpenload</value>
+  </data>
+  <data name="&gt;&gt;tpOpenload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpOpenload.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpOpenload.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
   <data name="&gt;&gt;cbEmailConfirm.Name" xml:space="preserve">
     <value>cbEmailConfirm</value>
   </data>
