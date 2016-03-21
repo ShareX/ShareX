@@ -51,6 +51,40 @@ namespace ShareX.UploadersLib.ImageUploaders
         Huge_Thumbnail
     }
 
+    public class ImgurImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Imgur;
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            if (uploadersConfig.ImgurOAuth2Info == null)
+            {
+                uploadersConfig.ImgurOAuth2Info = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
+            }
+
+            string albumID = null;
+
+            if (uploadersConfig.ImgurUploadSelectedAlbum && uploadersConfig.ImgurSelectedAlbum != null)
+            {
+                albumID = uploadersConfig.ImgurSelectedAlbum.id;
+            }
+
+            return new Imgur(uploadersConfig.ImgurOAuth2Info)
+            {
+                UploadMethod = uploadersConfig.ImgurAccountType,
+                DirectLink = uploadersConfig.ImgurDirectLink,
+                ThumbnailType = uploadersConfig.ImgurThumbnailType,
+                UseGIFV = uploadersConfig.ImgurUseGIFV,
+                UploadAlbumID = albumID
+            };
+        }
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.ImgurAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(uploadersConfig.ImgurOAuth2Info);
+        }
+    }
+
     public sealed class Imgur : ImageUploader, IOAuth2
     {
         public AccountType UploadMethod { get; set; }

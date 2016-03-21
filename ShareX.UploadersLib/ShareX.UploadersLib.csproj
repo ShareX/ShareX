@@ -207,11 +207,13 @@
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
     <Compile Include="HelperClasses\SSLBypassHelper.cs" />
+    <Compile Include="ImageUploaderFactory.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
     <Compile Include="ImageUploaders\CheveretoUploader.cs" />
     <Compile Include="ImageUploaders\ImglandUploader.cs" />
     <Compile Include="ImageUploaders\SomeImage.cs" />
     <Compile Include="ImageUploaders\VgymeUploader.cs" />
+    <Compile Include="ImageUploaderService.cs" />
     <Compile Include="TextUploaders\Hastebin.cs" />
     <Compile Include="TextUploaders\OneTimeSecret.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />

@@ -1056,5 +1056,13 @@ namespace ShareX.HelpersLib
         {
             return (string)JToken.Parse(text).SelectToken("$." + jsonPath);
         }
+
+        public static T[] GetInstances<T>() where T : class
+        {
+            return (from t in Assembly.GetExecutingAssembly().GetTypes()
+                    where t.GetInterfaces().Contains(typeof(T))
+                    && t.GetConstructor(Type.EmptyTypes) != null
+                    select Activator.CreateInstance(t) as T).ToArray();
+        }
     }
 }

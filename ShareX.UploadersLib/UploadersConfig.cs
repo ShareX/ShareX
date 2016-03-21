@@ -387,6 +387,13 @@ namespace ShareX.UploadersLib
 
         public bool IsValid(ImageDestination destination)
         {
+            ImageUploaderService service = ImageUploaderFactory.GetServiceByEnum(destination);
+
+            if (service != null)
+            {
+                return service.CheckConfig(this);
+            }
+
             switch (destination)
             {
                 case ImageDestination.Imgur:
