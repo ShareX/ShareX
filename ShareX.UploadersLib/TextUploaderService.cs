@@ -23,18 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
-using System.Linq;
-
 namespace ShareX.UploadersLib
 {
-    public class ImageUploaderFactory
+    public abstract class TextUploaderService : UploaderService
     {
-        private static readonly ImageUploaderService[] services = Helpers.GetInstances<ImageUploaderService>();
+        public abstract TextDestination EnumValue { get; }
 
-        public static ImageUploaderService GetServiceByEnum(ImageDestination enumValue)
-        {
-            return services.FirstOrDefault(x => x.EnumValue == enumValue);
-        }
+        public abstract TextUploader CreateUploader(UploadersConfig uploadersConfig);
     }
 }

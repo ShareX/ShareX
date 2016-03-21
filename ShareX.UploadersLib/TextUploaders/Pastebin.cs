@@ -30,6 +30,25 @@ using System.Linq;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class PastebinTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Pastebin;
+
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            PastebinSettings settings = uploadersConfig.PastebinSettings;
+
+            if (string.IsNullOrEmpty(settings.TextFormat))
+            {
+                settings.TextFormat = uploadersConfig.TextFormat;
+            }
+
+            return new Pastebin(APIKeys.PastebinKey, settings);
+        }
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+    }
+
     public sealed class Pastebin : TextUploader
     {
         private string APIKey;

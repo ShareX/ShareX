@@ -207,7 +207,8 @@
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
     <Compile Include="HelperClasses\SSLBypassHelper.cs" />
-    <Compile Include="ImageUploaderFactory.cs" />
+    <Compile Include="TextUploaderService.cs" />
+    <Compile Include="UploaderFactory.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
     <Compile Include="ImageUploaders\CheveretoUploader.cs" />
     <Compile Include="ImageUploaders\ImglandUploader.cs" />
@@ -266,6 +267,7 @@
     <Compile Include="TextUploaders\CustomTextUploader.cs" />
     <Compile Include="TextUploaders\Gist.cs" />
     <Compile Include="TextUploaders\Paste_ee.cs" />
+    <Compile Include="UploaderService.cs" />
     <Compile Include="UploadResult.cs" />
     <Compile Include="Forms\TwitterTweetForm.cs">
       <SubType>Form</SubType>

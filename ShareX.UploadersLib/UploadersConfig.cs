@@ -94,6 +94,8 @@ namespace ShareX.UploadersLib
 
         #region Text uploaders
 
+        public string TextFormat = "";
+
         // Pastebin
 
         public PastebinSettings PastebinSettings = new PastebinSettings();
@@ -387,7 +389,7 @@ namespace ShareX.UploadersLib
 
         public bool IsValid(ImageDestination destination)
         {
-            ImageUploaderService service = ImageUploaderFactory.GetServiceByEnum(destination);
+            ImageUploaderService service = UploaderFactory.GetImageUploaderServiceByEnum(destination);
 
             if (service != null)
             {
@@ -419,6 +421,13 @@ namespace ShareX.UploadersLib
 
         public bool IsValid(TextDestination destination)
         {
+            TextUploaderService service = UploaderFactory.GetTextUploaderServiceByEnum(destination);
+
+            if (service != null)
+            {
+                return service.CheckConfig(this);
+            }
+
             switch (destination)
             {
                 case TextDestination.CustomTextUploader:
