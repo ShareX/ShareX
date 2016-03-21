@@ -468,12 +468,6 @@ Drücke Ja um das Bild aus der Zwischenablage zu öffnen. Drücke Nein um die Da
     <value>Du versuchst eine große Datei hochzuladen.
 Sind Sie sich sicher?</value>
   </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>Aufnehmen</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Stopp</value>
-  </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Konnte Bild nicht in den Pfad {0} schreiben.</value>
   </data>

@@ -434,12 +434,6 @@ Merci de sélectionner un raccourci différent ou quitter l'application en confl
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Raccourcis clavier activés.</value>
   </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>Capturer</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Arrêter</value>
-  </data>
   <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
     <value>Vous pouvez faire un clic gauche sur l'icône de ShareX pour commencer la capture de région.</value>
   </data>

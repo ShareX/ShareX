@@ -324,4 +324,10 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
     <value>[Ctrl + Mouse wheel] Change pen size</value>
   </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Capture</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
 </root>

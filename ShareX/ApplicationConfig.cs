@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -249,8 +250,7 @@ namespace ShareX
 
         #region Webpage Capture Form
 
-        public Size WebpageCaptureBrowserSize = Size.Empty;
-        public float WebpageCaptureDelay = 0f;
+        public WebpageCaptureOptions WebpageCaptureOptions = new WebpageCaptureOptions();
 
         #endregion Webpage Capture Form
     }

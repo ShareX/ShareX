@@ -72,6 +72,12 @@
     <Compile Include="Forms\ScrollingCaptureForm.Designer.cs">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WebpageCaptureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WebpageCaptureForm.Designer.cs">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MonitorRegion.cs" />
     <Compile Include="MonitorRegionDefaultCreator.cs" />
     <Compile Include="RectangleAnnotateOptions.cs" />
@@ -125,6 +131,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screenshot_Transparent.cs" />
     <Compile Include="WebpageCapture.cs" />
+    <Compile Include="WebpageCaptureOptions.cs" />
     <Compile Include="WindowInfo.cs" />
     <Compile Include="WindowsList.cs" />
     <Compile Include="WindowsRectangleList.cs" />
@@ -166,6 +173,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.zh-CN.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.de.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.fr.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.nl-NL.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.pt-BR.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.ru.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.tr.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.vi-VN.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebpageCaptureForm.zh-CN.resx">
+      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>

@@ -24,28 +24,29 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.Properties;
-using ShareX.ScreenCaptureLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX.ScreenCaptureLib
 {
     public partial class WebpageCaptureForm : Form
     {
         public event Action<Image> OnImageUploadRequested;
         public event Action<Image> OnImageCopyRequested;
 
+        public WebpageCaptureOptions Options { get; set; }
         public bool IsBusy { get; private set; }
 
         private WebpageCapture webpageCapture;
         private bool stopRequested;
 
-        public WebpageCaptureForm()
+        public WebpageCaptureForm(WebpageCaptureOptions options)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
+            Options = options;
             LoadSettings();
             webpageCapture = new WebpageCapture();
             webpageCapture.CaptureCompleted += webpageCapture_CaptureCompleted;
@@ -55,13 +56,13 @@ namespace ShareX
         {
             CheckClipboardURL();
 
-            Size browserSize = Program.Settings.WebpageCaptureBrowserSize;
+            Size browserSize = Options.BrowserSize;
             if (browserSize.Width == 0) browserSize.Width = Screen.PrimaryScreen.Bounds.Width;
             nudWebpageWidth.SetValue(browserSize.Width);
             if (browserSize.Height == 0) browserSize.Height = Screen.PrimaryScreen.Bounds.Height;
             nudWebpageHeight.SetValue(browserSize.Height);
 
-            nudCaptureDelay.SetValue((decimal)Program.Settings.WebpageCaptureDelay);
+            nudCaptureDelay.SetValue((decimal)Options.Delay);
 
             UpdateControls();
         }
@@ -95,17 +96,17 @@ namespace ShareX
 
         private void nudWebpageWidth_ValueChanged(object sender, EventArgs e)
         {
-            Program.Settings.WebpageCaptureBrowserSize.Width = (int)nudWebpageWidth.Value;
+            Options.BrowserSize = new Size((int)nudWebpageWidth.Value, Options.BrowserSize.Height);
         }
 
         private void nudWebpageHeight_ValueChanged(object sender, EventArgs e)
         {
-            Program.Settings.WebpageCaptureBrowserSize.Height = (int)nudWebpageHeight.Value;
+            Options.BrowserSize = new Size(Options.BrowserSize.Width, (int)nudWebpageHeight.Value);
         }
 
         private void nudCaptureDelay_ValueChanged(object sender, EventArgs e)
         {
-            Program.Settings.WebpageCaptureDelay = (float)nudCaptureDelay.Value;
+            Options.Delay = (float)nudCaptureDelay.Value;
         }
 
         private void btnCapture_Click(object sender, EventArgs e)

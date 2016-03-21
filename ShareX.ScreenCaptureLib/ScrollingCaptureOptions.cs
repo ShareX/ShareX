@@ -23,10 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.ScreenCaptureLib;
 using System.ComponentModel;
 
-namespace ShareX
+namespace ShareX.ScreenCaptureLib
 {
     public class ScrollingCaptureOptions
     {

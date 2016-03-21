@@ -1,4 +1,4 @@
-﻿namespace ShareX
+﻿namespace ShareX.ScreenCaptureLib
 {
     partial class WebpageCaptureForm
     {

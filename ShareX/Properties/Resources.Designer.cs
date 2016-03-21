@@ -2216,24 +2216,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture.
-        /// </summary>
-        public static string WebpageCaptureForm_UpdateControls_Capture {
-            get {
-                return ResourceManager.GetString("WebpageCaptureForm_UpdateControls_Capture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stop.
-        /// </summary>
-        public static string WebpageCaptureForm_UpdateControls_Stop {
-            get {
-                return ResourceManager.GetString("WebpageCaptureForm_UpdateControls_Stop", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap wrench_screwdriver {

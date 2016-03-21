@@ -444,7 +444,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            WebpageCaptureForm webpageCaptureForm = new WebpageCaptureForm();
+            WebpageCaptureForm webpageCaptureForm = new WebpageCaptureForm(Program.Settings.WebpageCaptureOptions);
             webpageCaptureForm.OnImageUploadRequested += img => UploadManager.RunImageTask(img, taskSettings);
             webpageCaptureForm.OnImageCopyRequested += img =>
             {

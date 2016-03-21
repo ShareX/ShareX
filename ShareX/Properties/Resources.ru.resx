@@ -468,12 +468,6 @@
   <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
     <value>Выберите путь к папке</value>
   </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>Захват</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Стоп</value>
-  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
     <value>Эти приложения могут быть причиной конфликта:</value>
   </data>

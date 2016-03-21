@@ -440,12 +440,6 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
     <value>Özel</value>
   </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>Yakala</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Durdur</value>
-  </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Büyük bir dosya yüklüyorsunuz.
 Devam etmek istediğinizden emin misiniz?</value>

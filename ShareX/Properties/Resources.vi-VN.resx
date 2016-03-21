@@ -187,12 +187,6 @@ Bạn có muốn khởi động lại ShareX không?</value>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>Hỗ trợ từ Chrome đã tắt</value>
   </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Dừng lại</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>Chụp</value>
-  </data>
   <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
     <value>Chọn đường dẫn thư mục</value>
   </data>

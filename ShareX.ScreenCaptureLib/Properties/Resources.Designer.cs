@@ -669,5 +669,23 @@ namespace ShareX.ScreenCaptureLib.Properties {
                 return ResourceManager.GetString("Surface_InitializeComponent_Region_capture", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture.
+        /// </summary>
+        internal static string WebpageCaptureForm_UpdateControls_Capture {
+            get {
+                return ResourceManager.GetString("WebpageCaptureForm_UpdateControls_Capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        internal static string WebpageCaptureForm_UpdateControls_Stop {
+            get {
+                return ResourceManager.GetString("WebpageCaptureForm_UpdateControls_Stop", resourceCulture);
+            }
+        }
     }
 }

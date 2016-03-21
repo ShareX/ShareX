@@ -311,4 +311,10 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
     <value>[Shift] Kalem rengini değiştir</value>
   </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Yakala</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Durdur</value>
+  </data>
 </root>

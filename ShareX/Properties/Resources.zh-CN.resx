@@ -411,9 +411,6 @@
     <value>你正在尝试上传一个大文件。
 你确定要继续吗？</value>
   </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>停止</value>
-  </data>
   <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
     <value>自定义</value>
   </data>
@@ -436,9 +433,6 @@
     <value>剪贴板中包含一个图像，你想在图像编辑器中打开它吗？
 
 按“Yes”从剪贴板中打开图像。或者，按“No”打开图像文件对话框。</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>捕捉</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
     <value>启用热键</value>

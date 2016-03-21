@@ -145,9 +145,6 @@ Are you sure you want to continue?</value>
     <value>Are you sure you want to upload this screenshot?
 Press 'No' to cancel the current upload and disable screenshot auto uploading.</value>
   </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Stop</value>
-  </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Uploading</value>
   </data>
@@ -366,9 +363,6 @@ Press yes to open image from clipboard. Alternatively, press no to open image fi
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>Task settings for {0}</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>Capture</value>
   </data>
   <data name="tr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tr.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

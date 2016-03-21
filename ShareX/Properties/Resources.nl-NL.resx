@@ -464,12 +464,6 @@ Ben je zeker dat je door wilt gaan?</value>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Downloaden</value>
   </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>Vastleggen</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Stop</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Updategeschiedenis</value>
   </data>
