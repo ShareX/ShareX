@@ -101,7 +101,12 @@
     <Reference Include="Security.Cryptography">
       <HintPath>..\Lib\Security.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector, Version=3.1.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.1.2\lib\net40-client\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.FtpClient, Version=1.0.5281.14359, Culture=neutral, PublicKeyToken=fa4be07daa57c2b7, processorArchitecture=MSIL">
@@ -120,6 +125,12 @@
   <ItemGroup>
     <Compile Include="APIKeys\APIKeys.cs" />
     <Compile Include="APIKeys\APIKeysLocal.cs" />
+    <Compile Include="Controls\BaseConfigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseConfigControl.Designer.cs">
+      <DependentUpon>BaseConfigControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FileUploaders\AmazonS3Region.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\Box.cs" />
@@ -212,8 +223,21 @@
     <Compile Include="ImageUploaders\ImglandUploader.cs" />
     <Compile Include="ImageUploaders\SomeImage.cs" />
     <Compile Include="ImageUploaders\VgymeUploader.cs" />
+    <Compile Include="IoCRegistrant.cs" />
+    <Compile Include="IURLShortener.cs" />
+    <Compile Include="IURLShortenerService.cs" />
     <Compile Include="TextUploaders\Hastebin.cs" />
     <Compile Include="TextUploaders\OneTimeSecret.cs" />
+    <Compile Include="TextUploaders\Pastee\PasteeTextUploader.cs" />
+    <Compile Include="TextUploaders\Pastee\PasteeTextUploadService.cs" />
+    <Compile Include="TextUploaders\Paste_ee\Paste_eeConfigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextUploaders\Paste_ee\Paste_eeConfigControl.Designer.cs">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextUploaders\Paste_ee\Paste_eeTextUploader.cs" />
+    <Compile Include="TextUploaders\Paste_ee\Paste_eeTextUploadService.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />
     <Compile Include="UploadersConfig.cs" />
     <Compile Include="Forms\UserPassBox.cs">
@@ -263,7 +287,6 @@
     <Compile Include="ImageUploaders\Picasa.cs" />
     <Compile Include="TextUploaders\CustomTextUploader.cs" />
     <Compile Include="TextUploaders\Gist.cs" />
-    <Compile Include="TextUploaders\Paste_ee.cs" />
     <Compile Include="UploadResult.cs" />
     <Compile Include="Forms\TwitterTweetForm.cs">
       <SubType>Form</SubType>
@@ -300,13 +323,15 @@
     <Compile Include="TextUploaders\Paste2.cs" />
     <Compile Include="TextUploaders\Pastebin_ca.cs" />
     <Compile Include="TextUploaders\Pastebin.cs" />
-    <Compile Include="TextUploaders\Pastee.cs" />
     <Compile Include="TextUploaders\Slexy.cs" />
     <Compile Include="Uploader.cs" />
     <Compile Include="URLShortener.cs" />
+    <Compile Include="URLShorteners\AdFly\AdFlyURLShortener.cs" />
+    <Compile Include="URLShorteners\AdFly\AdFlyURLShortenerService.cs" />
     <Compile Include="URLShorteners\PolrURLShortener.cs" />
+    <Compile Include="URLShorteners\TinyURL\TinyURLShortener.cs" />
+    <Compile Include="URLShorteners\TinyURL\TinyURLShortenerService.cs" />
     <Compile Include="URLShorteners\TwoGPURLShortener.cs" />
-    <Compile Include="URLShorteners\AdFlyURLShortener.cs" />
     <Compile Include="URLShorteners\BitlyURLShortener.cs" />
     <Compile Include="URLShorteners\CoinURLShortener.cs" />
     <Compile Include="URLShorteners\CustomURLShortener.cs" />
@@ -314,7 +339,6 @@
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
     <Compile Include="URLShorteners\NlcmURLShortener.cs" />
     <Compile Include="URLShorteners\QRnetURLShortener.cs" />
-    <Compile Include="URLShorteners\TinyURLShortener.cs" />
     <Compile Include="URLShorteners\TurlURLShortener.cs" />
     <Compile Include="FileUploaders\MediaCrushUploader.cs" />
     <Compile Include="URLShorteners\VgdURLShortener.cs" />
@@ -388,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountTypeControl.zh-CN.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseConfigControl.resx">
+      <DependentUpon>BaseConfigControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.de.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
@@ -776,6 +803,42 @@
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.de.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.es.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.fr.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.hu.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.ko-KR.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.nl-NL.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.pt-BR.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.ru.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.tr.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.vi-VN.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.zh-CN.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -895,6 +958,7 @@
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.4.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <PropertyGroup>

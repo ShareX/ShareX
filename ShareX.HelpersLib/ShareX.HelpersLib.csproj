@@ -74,6 +74,10 @@
       <HintPath>..\packages\SevenZipSharp.0.64\lib\SevenZipSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleInjector, Version=3.1.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.1.2\lib\net40-client\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -197,6 +201,7 @@
     <Compile Include="Controls\TabToTreeView.Designer.cs">
       <DependentUpon>TabToTreeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServiceLocator.cs" />
     <Compile Include="TaskEx.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />

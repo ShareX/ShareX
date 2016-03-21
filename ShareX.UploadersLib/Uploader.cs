@@ -37,7 +37,23 @@ using System.Web;
 
 namespace ShareX.UploadersLib
 {
-    public class Uploader
+    public interface IUploader
+    {
+        event Uploader.ProgressEventHandler ProgressChanged;
+        event Action<string> EarlyURLCopyRequested;
+        List<string> Errors { get; }
+        bool IsUploading { get; }
+        int BufferSize { get; set; }
+        bool AllowReportProgress { get; set; }
+        bool WebExceptionReturnResponse { get; set; }
+        bool WebExceptionThrow { get; set; }
+        bool IsError { get; }
+        bool StopUploadRequested { get; }
+        string ToErrorString();
+        void StopUpload();
+    }
+
+    public class Uploader : IUploader
     {
         private static readonly string UserAgent = "ShareX";
 

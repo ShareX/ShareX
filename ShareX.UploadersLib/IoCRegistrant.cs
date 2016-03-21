@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,10 +23,23 @@
 
 #endregion License Information (GPL v3)
 
+using System.Reflection;
+using SimpleInjector;
+
 namespace ShareX.UploadersLib
 {
-    public abstract class URLShortener : Uploader, IURLShortener
+    public static class IoCRegistrant
     {
-        public abstract UploadResult ShortenURL(string url);
+        public static void Register(Container container)
+        {
+            Assembly[] uploaderAssembly = new[] { typeof(IoCRegistrant).Assembly };
+
+            container.RegisterCollection<IURLShortenerService>(uploaderAssembly);
+            container.RegisterCollection<ITextUploadService>(uploaderAssembly);
+
+            container.RegisterSingleton<IURLShortenerServiceFactory, URLShortenerServiceFactory>();
+            container.RegisterSingleton<ITextUploadServiceFactory, TextUploadServiceFactory>();
+            container.RegisterSingleton<IUploadServicesFactory, UploadServicesFactory>();
+        }
     }
 }

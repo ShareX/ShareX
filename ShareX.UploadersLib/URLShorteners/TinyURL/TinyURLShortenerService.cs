@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,25 +23,20 @@
 
 #endregion License Information (GPL v3)
 
-using System.Collections.Generic;
-
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners.TinyURL
 {
-    public sealed class TinyURLShortener : URLShortener
+    public class TinyURLShortenerService : IURLShortenerService
     {
-        public override UploadResult ShortenURL(string url)
+        public string ServiceId { get; } = "TinyURL";
+        public UrlShortenerType EnumValue { get; } = UrlShortenerType.TINYURL;
+        public IUploadServiceConfig CreateConfig()
         {
-            UploadResult result = new UploadResult { URL = url };
+            return null;
+        }
 
-            if (!string.IsNullOrEmpty(url))
-            {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("url", url);
-
-                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://tinyurl.com/api-create.php", arguments);
-            }
-
-            return result;
+        public IURLShortener CreateShortener(UploadersConfig config)
+        {
+            return new TinyURLShortener();
         }
     }
 }

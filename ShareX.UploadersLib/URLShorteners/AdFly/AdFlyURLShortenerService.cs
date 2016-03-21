@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,10 +23,26 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib
+// Credits: https://github.com/LRNAB
+
+namespace ShareX.UploadersLib.URLShorteners.AdFly
 {
-    public abstract class URLShortener : Uploader, IURLShortener
+    public class AdFlyURLShortenerService : IURLShortenerService
     {
-        public abstract UploadResult ShortenURL(string url);
+        public string ServiceId { get; } = "AdFly";
+        public UrlShortenerType EnumValue { get; } = UrlShortenerType.AdFly;
+        public IUploadServiceConfig CreateConfig()
+        {
+            return null;
+        }
+
+        public IURLShortener CreateShortener(UploadersConfig config)
+        {
+            return new AdFlyURLShortener
+            {
+                APIKEY = config.AdFlyAPIKEY,
+                APIUID = config.AdFlyAPIUID
+            };
+        }
     }
 }

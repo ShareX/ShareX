@@ -36,6 +36,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using ShareX.UploadersLib.Controls;
 
 namespace ShareX.UploadersLib
 {
@@ -43,11 +44,13 @@ namespace ShareX.UploadersLib
     {
         public UploadersConfig Config { get; private set; }
 
+        private readonly IUploadServicesFactory servicesFactory;
         private ImageList uploadersImageList;
         private URLType urlType = URLType.URL;
 
         public UploadersConfigForm(UploadersConfig uploadersConfig)
         {
+            servicesFactory = ServiceLocator.GetInstance<IUploadServicesFactory>();
             Config = uploadersConfig;
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -69,10 +72,58 @@ namespace ShareX.UploadersLib
             Refresh();
         }
 
+        private void AddControls()
+        {
+            AddControlsToTab(tcTextUploaders, servicesFactory.TextUpload);
+        }
+
+        private void AddControlsToTab<TService, TEnum>(TabControl uploadTab, IUploadServiceFactory<TService, TEnum> serviceFactory)
+            where TService : IUploadService<TEnum>
+        {
+            IEnumerable<TService> uploadServices = serviceFactory.GetAllServices();
+
+            foreach (TService uploadService in uploadServices)
+            {
+                IUploadServiceConfig serviceConfig = uploadService.CreateConfig();
+                if (serviceConfig == null)
+                    continue;
+
+                Control configControl = serviceConfig.CreateConfigControl(Config);
+                configControl.BackColor = Color.Transparent;
+
+                var tabPage = new TabPage();
+                tabPage.Text = serviceConfig.TabText;
+                tabPage.Name = uploadService.ServiceId;
+                tabPage.BackColor = Color.Transparent;
+                tabPage.UseVisualStyleBackColor = true;
+                tabPage.Controls.Add(configControl);
+
+                object tabImage = serviceConfig.TabImage;
+                if (tabImage != null)
+                {
+                    var icon = tabImage as Icon;
+                    if (icon != null)
+                    {
+                        AddIconToTab(tabPage, icon);
+                    }
+
+                    var bitmap = tabImage as Bitmap;
+                    if (bitmap != null)
+                    {
+                        AddIconToTab(tabPage, bitmap);
+                    }
+                }
+
+                uploadTab.Controls.Add(tabPage);
+            }
+        }
+
         private void FormSettings()
         {
             uploadersImageList = new ImageList();
             uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
+
+            AddControls();
 
             AddIconToTab(tpAdFly, Resources.AdFly);
             AddIconToTab(tpAmazonS3, Resources.AmazonS3);
