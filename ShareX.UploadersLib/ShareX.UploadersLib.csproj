@@ -123,6 +123,7 @@
     <Compile Include="FileUploaders\AmazonS3Region.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\Box.cs" />
+    <Compile Include="FileUploaders\OpenloadUploader.cs" />
     <Compile Include="FileUploaders\Sul.cs" />
     <Compile Include="FileUploaders\Dropfile.cs" />
     <Compile Include="FileUploaders\Lambda.cs" />
@@ -885,6 +886,7 @@
     <None Include="Resources\question-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Favicons\Openload.ico" />
     <Content Include="Favicons\SomeImage.ico" />
     <Content Include="Favicons\Streamable.ico" />
     <Content Include="Favicons\Sul.png" />

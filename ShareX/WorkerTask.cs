@@ -1192,6 +1192,15 @@ namespace ShareX
 
                     fileUploader = new Streamable(user, password);
                     break;
+                case FileDestination.Openload:
+                    fileUploader = new OpenloadUploader()
+                    {
+                        APILogin = Program.UploadersConfig.OpenloadAPILogin,
+                        APIKey = Program.UploadersConfig.OpenloadAPIKey,
+                        UploadToFolder = Program.UploadersConfig.OpenloadUploadToSelectedFolder,
+                        FolderID = Program.UploadersConfig.OpenloadSelectedFolderID
+                    };
+                    break;
             }
 
             if (fileUploader != null)
