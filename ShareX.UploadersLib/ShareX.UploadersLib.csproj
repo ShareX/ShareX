@@ -208,6 +208,7 @@
     <Compile Include="ImageUploaders\Chevereto.cs" />
     <Compile Include="ImageUploaders\CheveretoUploader.cs" />
     <Compile Include="ImageUploaders\ImglandUploader.cs" />
+    <Compile Include="FileUploaders\OpenLoadUploader.cs" />
     <Compile Include="ImageUploaders\SomeImage.cs" />
     <Compile Include="ImageUploaders\VgymeUploader.cs" />
     <Compile Include="TextUploaders\Hastebin.cs" />
@@ -886,6 +887,7 @@
     <None Include="Resources\question-button.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Favicons\OpenLoad.ico" />
     <Content Include="Favicons\SomeImage.ico" />
     <Content Include="Favicons\Streamable.ico" />
     <Content Include="Favicons\Sul.png" />

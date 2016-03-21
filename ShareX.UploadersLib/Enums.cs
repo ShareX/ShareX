@@ -134,6 +134,8 @@ namespace ShareX.UploadersLib
         Seafile,
         [Description("s-ul")]
         Sul,
+        [Description("openload.co")]
+        Openload,
         [Description("Streamable")]
         Streamable,
         SharedFolder, // Localized
