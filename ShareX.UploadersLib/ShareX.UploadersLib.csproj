@@ -886,11 +886,11 @@
     <None Include="Resources\question-button.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Favicons\Openload.ico" />
-    <Content Include="Favicons\SomeImage.ico" />
-    <Content Include="Favicons\Streamable.ico" />
-    <Content Include="Favicons\Sul.png" />
-    <Content Include="Favicons\Vgyme.ico" />
+    <None Include="Favicons\Openload.ico" />
+    <None Include="Favicons\SomeImage.ico" />
+    <None Include="Favicons\Streamable.ico" />
+    <None Include="Favicons\Sul.png" />
+    <None Include="Favicons\Vgyme.ico" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.4.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />

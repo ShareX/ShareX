@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+// Credits: https://github.com/Bluecodelf
+
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -31,7 +33,6 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class OpenloadUploader : FileUploader
     {
-
         public string APILogin { get; set; }
         public string APIKey { get; set; }
         public bool UploadToFolder { get; set; }
@@ -119,7 +120,6 @@ namespace ShareX.UploadersLib.FileUploaders
             string uploadURL = GetUploadURL();
             return (string.IsNullOrEmpty(uploadURL)) ? null : UploadToURL(stream, fileName, uploadURL);
         }
-
     }
 
     public class OpenloadFolderNode
@@ -166,5 +166,4 @@ namespace ShareX.UploadersLib.FileUploaders
         public string id { get; set; }
         public string name { get; set; }
     }
-
 }
