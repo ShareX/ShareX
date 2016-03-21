@@ -1059,10 +1059,11 @@ namespace ShareX.HelpersLib
 
         public static T[] GetInstances<T>() where T : class
         {
-            return (from t in Assembly.GetExecutingAssembly().GetTypes()
-                    where t.GetInterfaces().Contains(typeof(T))
-                    && t.GetConstructor(Type.EmptyTypes) != null
-                    select Activator.CreateInstance(t) as T).ToArray();
+            var instances = from t in Assembly.GetCallingAssembly().GetTypes()
+                            where t.IsClass && t.IsSubclassOf(typeof(T)) && t.GetConstructor(Type.EmptyTypes) != null
+                            select Activator.CreateInstance(t) as T;
+
+            return instances.ToArray();
         }
     }
 }

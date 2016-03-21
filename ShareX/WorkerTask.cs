@@ -818,28 +818,6 @@ namespace ShareX
             {
                 switch (Info.TaskSettings.ImageDestination)
                 {
-                    case ImageDestination.Imgur:
-                        if (Program.UploadersConfig.ImgurOAuth2Info == null)
-                        {
-                            Program.UploadersConfig.ImgurOAuth2Info = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
-                        }
-
-                        string albumID = null;
-
-                        if (Program.UploadersConfig.ImgurUploadSelectedAlbum && Program.UploadersConfig.ImgurSelectedAlbum != null)
-                        {
-                            albumID = Program.UploadersConfig.ImgurSelectedAlbum.id;
-                        }
-
-                        imageUploader = new Imgur(Program.UploadersConfig.ImgurOAuth2Info)
-                        {
-                            UploadMethod = Program.UploadersConfig.ImgurAccountType,
-                            DirectLink = Program.UploadersConfig.ImgurDirectLink,
-                            ThumbnailType = Program.UploadersConfig.ImgurThumbnailType,
-                            UseGIFV = Program.UploadersConfig.ImgurUseGIFV,
-                            UploadAlbumID = albumID
-                        };
-                        break;
                     case ImageDestination.ImageShack:
                         Program.UploadersConfig.ImageShackSettings.ThumbnailWidth = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredWidth;
                         Program.UploadersConfig.ImageShackSettings.ThumbnailHeight = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredHeight;

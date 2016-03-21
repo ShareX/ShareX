@@ -396,8 +396,6 @@ namespace ShareX.UploadersLib
 
             switch (destination)
             {
-                case ImageDestination.Imgur:
-                    return ImgurAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(ImgurOAuth2Info);
                 case ImageDestination.ImageShack:
                     return ImageShackSettings != null && !string.IsNullOrEmpty(ImageShackSettings.Auth_token);
                 case ImageDestination.TinyPic:
