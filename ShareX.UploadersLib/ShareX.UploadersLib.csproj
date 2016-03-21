@@ -802,7 +802,40 @@
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.de.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.es.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.fr.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.hu.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.ko-KR.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.nl-NL.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.pt-BR.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.ru.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.tr.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.vi-VN.resx">
+      <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextUploaders\Paste_ee\Paste_eeConfigControl.zh-CN.resx">
       <DependentUpon>Paste_eeConfigControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

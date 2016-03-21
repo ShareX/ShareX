@@ -28,32 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paste_eeConfigControl));
             this.lblPaste_eeUserAPIKey = new System.Windows.Forms.Label();
             this.txtPaste_eeUserAPIKey = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblPaste_eeUserAPIKey
             // 
-            this.lblPaste_eeUserAPIKey.AutoSize = true;
-            this.lblPaste_eeUserAPIKey.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPaste_eeUserAPIKey.Location = new System.Drawing.Point(17, 16);
+            resources.ApplyResources(this.lblPaste_eeUserAPIKey, "lblPaste_eeUserAPIKey");
             this.lblPaste_eeUserAPIKey.Name = "lblPaste_eeUserAPIKey";
-            this.lblPaste_eeUserAPIKey.Size = new System.Drawing.Size(72, 13);
-            this.lblPaste_eeUserAPIKey.TabIndex = 2;
-            this.lblPaste_eeUserAPIKey.Text = "User API key:";
             // 
             // txtPaste_eeUserAPIKey
             // 
-            this.txtPaste_eeUserAPIKey.Location = new System.Drawing.Point(20, 32);
+            resources.ApplyResources(this.txtPaste_eeUserAPIKey, "txtPaste_eeUserAPIKey");
             this.txtPaste_eeUserAPIKey.Name = "txtPaste_eeUserAPIKey";
-            this.txtPaste_eeUserAPIKey.Size = new System.Drawing.Size(296, 20);
-            this.txtPaste_eeUserAPIKey.TabIndex = 3;
             this.txtPaste_eeUserAPIKey.UseSystemPasswordChar = true;
             this.txtPaste_eeUserAPIKey.TextChanged += new System.EventHandler(this.txtPaste_eeUserAPIKey_TextChanged);
             // 
             // Paste_eeConfigControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.lblPaste_eeUserAPIKey);
             this.Controls.Add(this.txtPaste_eeUserAPIKey);
             this.Name = "Paste_eeConfigControl";
