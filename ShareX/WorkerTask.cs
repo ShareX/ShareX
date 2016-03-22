@@ -825,70 +825,20 @@ namespace ShareX
 
         public UploadResult UploadText(Stream stream, string fileName)
         {
-            TextUploader textUploader = null;
-
             Program.UploadersConfig.TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat;
 
             TextUploaderService service = UploaderFactory.GetTextUploaderServiceByEnum(Info.TaskSettings.TextDestination);
 
             if (service != null)
             {
-                textUploader = service.CreateUploader(Program.UploadersConfig);
-            }
-            else
-            {
-                switch (Info.TaskSettings.TextDestination)
-                {
-                    case TextDestination.Slexy:
-                        textUploader = new Slexy(new SlexySettings { TextFormat = Program.UploadersConfig.TextFormat });
-                        break;
-                    case TextDestination.Pastee:
-                        textUploader = new Pastee { Lexer = Program.UploadersConfig.TextFormat };
-                        break;
-                    case TextDestination.Paste_ee:
-                        textUploader = new Paste_ee(Program.UploadersConfig.Paste_eeUserAPIKey);
-                        break;
-                    case TextDestination.Gist:
-                        textUploader = new Gist(Program.UploadersConfig.GistAnonymousLogin ? null : Program.UploadersConfig.GistOAuth2Info)
-                        {
-                            PublicUpload = Program.UploadersConfig.GistPublishPublic,
-                            RawURL = Program.UploadersConfig.GistRawURL
-                        };
-                        break;
-                    case TextDestination.Upaste:
-                        textUploader = new Upaste(Program.UploadersConfig.UpasteUserKey)
-                        {
-                            IsPublic = Program.UploadersConfig.UpasteIsPublic
-                        };
-                        break;
-                    case TextDestination.Hastebin:
-                        textUploader = new Hastebin()
-                        {
-                            CustomDomain = Program.UploadersConfig.HastebinCustomDomain,
-                            SyntaxHighlighting = Program.UploadersConfig.HastebinSyntaxHighlighting
-                        };
-                        break;
-                    case TextDestination.OneTimeSecret:
-                        textUploader = new OneTimeSecret()
-                        {
-                            API_KEY = Program.UploadersConfig.OneTimeSecretAPIKey,
-                            API_USERNAME = Program.UploadersConfig.OneTimeSecretAPIUsername
-                        };
-                        break;
-                    case TextDestination.CustomTextUploader:
-                        CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomTextUploaderSelected);
-                        if (customUploader != null)
-                        {
-                            textUploader = new CustomTextUploader(customUploader);
-                        }
-                        break;
-                }
-            }
+                TextUploader textUploader = service.CreateUploader(Program.UploadersConfig);
 
-            if (textUploader != null)
-            {
-                PrepareUploader(textUploader);
-                return textUploader.UploadText(stream, fileName);
+                if (textUploader != null)
+                {
+                    PrepareUploader(textUploader);
+
+                    return textUploader.UploadText(stream, fileName);
+                }
             }
 
             return null;

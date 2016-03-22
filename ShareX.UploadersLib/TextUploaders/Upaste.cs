@@ -29,6 +29,21 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class UpasteTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Upaste;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Upaste(uploadersConfig.UpasteUserKey)
+            {
+                IsPublic = uploadersConfig.UpasteIsPublic
+            };
+        }
+    }
+
     public sealed class Upaste : TextUploader
     {
         private const string APIURL = "http://upaste.me/api";

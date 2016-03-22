@@ -28,6 +28,22 @@ using ShareX.HelpersLib;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class HastebinTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Hastebin;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Hastebin()
+            {
+                CustomDomain = uploadersConfig.HastebinCustomDomain,
+                SyntaxHighlighting = uploadersConfig.HastebinSyntaxHighlighting
+            };
+        }
+    }
+
     public sealed class Hastebin : TextUploader
     {
         public string CustomDomain { get; set; }

@@ -27,6 +27,18 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class Paste_eeTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Paste_ee;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Paste_ee(uploadersConfig.Paste_eeUserAPIKey);
+        }
+    }
+
     public sealed class Paste_ee : TextUploader
     {
         public string APIKey { get; private set; }

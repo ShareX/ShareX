@@ -33,7 +33,30 @@ using System.Net;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
-    public sealed class Gist : TextUploader, IOAuth2Basic
+    public class GitHubGistTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Gist;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            OAuth2Info oauth = null;
+
+            if (!uploadersConfig.GistAnonymousLogin)
+            {
+                oauth = uploadersConfig.GistOAuth2Info;
+            }
+
+            return new GitHubGist(oauth)
+            {
+                PublicUpload = uploadersConfig.GistPublishPublic,
+                RawURL = uploadersConfig.GistRawURL
+            };
+        }
+    }
+
+    public sealed class GitHubGist : TextUploader, IOAuth2Basic
     {
         private const string URLAPI = "https://api.github.com/";
         private const string URLGists = URLAPI + "gists";
@@ -43,11 +66,11 @@ namespace ShareX.UploadersLib.TextUploaders
         public bool PublicUpload { get; set; }
         public bool RawURL { get; set; }
 
-        public Gist()
+        public GitHubGist()
         {
         }
 
-        public Gist(OAuth2Info oAuthInfos)
+        public GitHubGist(OAuth2Info oAuthInfos)
         {
             AuthInfo = oAuthInfos;
         }

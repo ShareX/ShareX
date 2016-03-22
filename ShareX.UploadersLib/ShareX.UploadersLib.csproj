@@ -266,7 +266,7 @@
     <Compile Include="ImageUploaders\Imgur.cs" />
     <Compile Include="ImageUploaders\Picasa.cs" />
     <Compile Include="TextUploaders\CustomTextUploader.cs" />
-    <Compile Include="TextUploaders\Gist.cs" />
+    <Compile Include="TextUploaders\GitHubGist.cs" />
     <Compile Include="TextUploaders\Paste_ee.cs" />
     <Compile Include="UploaderService.cs" />
     <Compile Include="UploadResult.cs" />

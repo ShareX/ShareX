@@ -34,6 +34,8 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public override TextDestination EnumValue { get; } = TextDestination.Pastebin;
 
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
         public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
         {
             PastebinSettings settings = uploadersConfig.PastebinSettings;
@@ -45,8 +47,6 @@ namespace ShareX.UploadersLib.TextUploaders
 
             return new Pastebin(APIKeys.PastebinKey, settings);
         }
-
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
     }
 
     public sealed class Pastebin : TextUploader

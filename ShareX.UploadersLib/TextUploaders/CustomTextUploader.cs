@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,6 +32,29 @@ using System.Text;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class CustomTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.CustomTextUploader;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.CustomUploadersList != null && uploadersConfig.CustomUploadersList.IsValidIndex(uploadersConfig.CustomTextUploaderSelected);
+        }
+
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            // TODO: Check TaskSettings override index (WorkerTask.GetCustomUploader)
+            CustomUploaderItem customUploader = uploadersConfig.CustomUploadersList.ReturnIfValidIndex(uploadersConfig.CustomTextUploaderSelected);
+
+            if (customUploader != null)
+            {
+                return new CustomTextUploader(customUploader);
+            }
+
+            return null;
+        }
+    }
+
     public sealed class CustomTextUploader : TextUploader
     {
         private CustomUploaderItem customUploader;

@@ -32,6 +32,22 @@ using System.Collections.Specialized;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class OneTimeSecretTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.OneTimeSecret;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new OneTimeSecret()
+            {
+                API_KEY = uploadersConfig.OneTimeSecretAPIKey,
+                API_USERNAME = uploadersConfig.OneTimeSecretAPIUsername
+            };
+        }
+    }
+
     public sealed class OneTimeSecret : TextUploader
     {
         private const string API_ENDPOINT = "https://onetimesecret.com/api/v1/share";

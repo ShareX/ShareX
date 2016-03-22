@@ -408,12 +408,6 @@ namespace ShareX.UploadersLib
                 return service.CheckConfig(this);
             }
 
-            switch (destination)
-            {
-                case TextDestination.CustomTextUploader:
-                    return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomTextUploaderSelected);
-            }
-
             return true;
         }
 

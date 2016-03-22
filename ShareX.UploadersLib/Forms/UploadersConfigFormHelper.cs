@@ -1904,7 +1904,7 @@ namespace ShareX.UploadersLib
             try
             {
                 OAuth2Info oauth = new OAuth2Info(APIKeys.GitHubID, APIKeys.GitHubSecret);
-                string url = new Gist(oauth).GetAuthorizationURL();
+                string url = new GitHubGist(oauth).GetAuthorizationURL();
 
                 if (!string.IsNullOrEmpty(url))
                 {
@@ -1924,7 +1924,7 @@ namespace ShareX.UploadersLib
             {
                 if (!string.IsNullOrEmpty(code) && Config.GistOAuth2Info != null)
                 {
-                    bool result = new Gist(Config.GistOAuth2Info).GetAccessToken(code);
+                    bool result = new GitHubGist(Config.GistOAuth2Info).GetAccessToken(code);
 
                     if (result)
                     {
