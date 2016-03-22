@@ -29,6 +29,24 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class CoinURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.CoinURL;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.CoinURLUUID);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            return new CoinURLShortener
+            {
+                UUID = uploadersConfig.CoinURLUUID
+            };
+        }
+    }
+
     public sealed class CoinURLShortener : URLShortener
     {
         private const string API_ENDPOINT = "https://coinurl.com/api.php";

@@ -432,22 +432,6 @@ namespace ShareX.UploadersLib
                 return service.CheckConfig(this);
             }
 
-            switch (destination)
-            {
-                case UrlShortenerType.Google:
-                    return GoogleURLShortenerAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(GoogleURLShortenerOAuth2Info);
-                case UrlShortenerType.YOURLS:
-                    return !string.IsNullOrEmpty(YourlsAPIURL) && (!string.IsNullOrEmpty(YourlsSignature) || (!string.IsNullOrEmpty(YourlsUsername) && !string.IsNullOrEmpty(YourlsPassword)));
-                case UrlShortenerType.AdFly:
-                    return !string.IsNullOrEmpty(AdFlyAPIKEY) && !string.IsNullOrEmpty(AdFlyAPIUID);
-                case UrlShortenerType.CoinURL:
-                    return !string.IsNullOrEmpty(CoinURLUUID);
-                case UrlShortenerType.Polr:
-                    return !string.IsNullOrEmpty(PolrAPIKey);
-                case UrlShortenerType.CustomURLShortener:
-                    return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomURLShortenerSelected);
-            }
-
             return true;
         }
 

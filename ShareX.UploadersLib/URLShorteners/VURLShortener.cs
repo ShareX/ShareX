@@ -29,6 +29,18 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class VURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.VURL;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            return new VURLShortener();
+        }
+    }
+
     public sealed class VURLShortener : URLShortener
     {
         private const string API_ENDPOINT = "http://vurl.com/api.php";

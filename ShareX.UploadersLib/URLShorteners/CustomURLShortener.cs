@@ -23,12 +23,36 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class CustomURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.CustomURLShortener;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.CustomUploadersList != null && uploadersConfig.CustomUploadersList.IsValidIndex(uploadersConfig.CustomURLShortenerSelected);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            // TODO: Check TaskSettings override index (WorkerTask.GetCustomUploader)
+            CustomUploaderItem customUploader = uploadersConfig.CustomUploadersList.ReturnIfValidIndex(uploadersConfig.CustomURLShortenerSelected);
+
+            if (customUploader != null)
+            {
+                return new CustomURLShortener(customUploader);
+            }
+
+            return null;
+        }
+    }
+
     public sealed class CustomURLShortener : URLShortener
     {
         private CustomUploaderItem customUploader;

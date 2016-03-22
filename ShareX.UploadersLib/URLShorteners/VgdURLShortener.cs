@@ -25,6 +25,18 @@
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class VgdURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.VGD;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            return new VgdURLShortener();
+        }
+    }
+
     public class VgdURLShortener : IsgdURLShortener
     {
         protected override string APIURL { get { return "http://v.gd/create.php"; } }

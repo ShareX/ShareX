@@ -30,6 +30,21 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class GoogleURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Google;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.GoogleURLShortenerAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(uploadersConfig.GoogleURLShortenerOAuth2Info);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            return new GoogleURLShortener(uploadersConfig.GoogleURLShortenerAccountType, APIKeys.GoogleAPIKey, uploadersConfig.GoogleURLShortenerOAuth2Info);
+        }
+    }
+
     public class GoogleURLShortener : URLShortener, IOAuth2
     {
         public AccountType UploadMethod { get; set; }

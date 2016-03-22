@@ -27,6 +27,18 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class TurlURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.TURL;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            return new TurlURLShortener();
+        }
+    }
+
     public sealed class TurlURLShortener : URLShortener
     {
         public override UploadResult ShortenURL(string url)

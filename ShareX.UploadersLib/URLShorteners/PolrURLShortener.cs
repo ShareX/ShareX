@@ -30,6 +30,25 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class PolrURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Polr;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.PolrAPIKey);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            return new PolrURLShortener
+            {
+                API_HOST = uploadersConfig.PolrAPIHostname,
+                API_KEY = uploadersConfig.PolrAPIKey
+            };
+        }
+    }
+
     public sealed class PolrURLShortener : URLShortener
     {
         public string API_HOST { get; set; }

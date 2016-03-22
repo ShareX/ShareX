@@ -29,6 +29,25 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class AdFlyURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.AdFly;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.AdFlyAPIKEY) && !string.IsNullOrEmpty(uploadersConfig.AdFlyAPIUID);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            return new AdFlyURLShortener
+            {
+                APIKEY = uploadersConfig.AdFlyAPIKEY,
+                APIUID = uploadersConfig.AdFlyAPIUID
+            };
+        }
+    }
+
     public class AdFlyURLShortener : URLShortener
     {
         public string APIKEY { get; set; }

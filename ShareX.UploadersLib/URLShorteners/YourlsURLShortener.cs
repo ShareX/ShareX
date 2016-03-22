@@ -28,6 +28,28 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class YourlsURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.YOURLS;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.YourlsAPIURL) && (!string.IsNullOrEmpty(uploadersConfig.YourlsSignature) ||
+                (!string.IsNullOrEmpty(uploadersConfig.YourlsUsername) && !string.IsNullOrEmpty(uploadersConfig.YourlsPassword)));
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            return new YourlsURLShortener
+            {
+                APIURL = uploadersConfig.YourlsAPIURL,
+                Signature = uploadersConfig.YourlsSignature,
+                Username = uploadersConfig.YourlsUsername,
+                Password = uploadersConfig.YourlsPassword
+            };
+        }
+    }
+
     public sealed class YourlsURLShortener : URLShortener
     {
         public string APIURL { get; set; }

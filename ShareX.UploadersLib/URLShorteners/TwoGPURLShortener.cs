@@ -30,6 +30,18 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class TwoGPURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.TwoGP;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            return new TwoGPURLShortener();
+        }
+    }
+
     public sealed class TwoGPURLShortener : URLShortener
     {
         private const string API_ENDPOINT = "http://2.gp/api/short";
