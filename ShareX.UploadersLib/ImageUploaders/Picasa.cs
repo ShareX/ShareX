@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.HelperClasses;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
@@ -33,6 +34,24 @@ using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class PicasaImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Picasa;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return OAuth2Info.CheckOAuth(uploadersConfig.PicasaOAuth2Info);
+        }
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Picasa(uploadersConfig.PicasaOAuth2Info)
+            {
+                AlbumID = uploadersConfig.PicasaAlbumID
+            };
+        }
+    }
+
     public class Picasa : ImageUploader, IOAuth2
     {
         public OAuth2Info AuthInfo { get; set; }

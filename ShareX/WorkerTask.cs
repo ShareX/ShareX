@@ -832,12 +832,6 @@ namespace ShareX
                     case ImageDestination.Photobucket:
                         imageUploader = new Photobucket(Program.UploadersConfig.PhotobucketOAuthInfo, Program.UploadersConfig.PhotobucketAccountInfo);
                         break;
-                    case ImageDestination.Picasa:
-                        imageUploader = new Picasa(Program.UploadersConfig.PicasaOAuth2Info)
-                        {
-                            AlbumID = Program.UploadersConfig.PicasaAlbumID
-                        };
-                        break;
                     case ImageDestination.Twitter:
                         OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
                         imageUploader = new Twitter(twitterOAuth)
@@ -907,9 +901,6 @@ namespace ShareX
             {
                 switch (Info.TaskSettings.TextDestination)
                 {
-                    case TextDestination.Paste2:
-                        textUploader = new Paste2(new Paste2Settings { TextFormat = Program.UploadersConfig.TextFormat });
-                        break;
                     case TextDestination.Slexy:
                         textUploader = new Slexy(new SlexySettings { TextFormat = Program.UploadersConfig.TextFormat });
                         break;

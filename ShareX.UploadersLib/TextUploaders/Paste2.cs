@@ -23,10 +23,25 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class Paste2TextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Paste2;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            Paste2Settings settings = new Paste2Settings();
+            settings.TextFormat = uploadersConfig.TextFormat;
+            return new Paste2(settings);
+        }
+    }
+
     public sealed class Paste2 : TextUploader
     {
         private const string APIURL = "http://paste2.org/new-paste";
