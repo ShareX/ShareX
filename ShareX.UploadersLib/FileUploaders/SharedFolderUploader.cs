@@ -41,7 +41,23 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             // TODO: Check TaskSettings override index (WorkerTask.GetFTPAccount)
             // TODO: Unable to reach Info.DataType
-            int index = uploadersConfig.GetLocalhostIndex(EDataType.File);
+
+            EDataType dataType = EDataType.File;
+            int index;
+
+            switch (dataType)
+            {
+                case EDataType.Image:
+                    index = uploadersConfig.LocalhostSelectedImages;
+                    break;
+                case EDataType.Text:
+                    index = uploadersConfig.LocalhostSelectedText;
+                    break;
+                default:
+                case EDataType.File:
+                    index = uploadersConfig.LocalhostSelectedFiles;
+                    break;
+            }
 
             LocalhostAccount account = uploadersConfig.LocalhostAccountList.ReturnIfValidIndex(index);
 

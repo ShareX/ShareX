@@ -49,7 +49,24 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             // TODO: Check TaskSettings override index (WorkerTask.GetFTPAccount)
             // TODO: Unable to reach Info.DataType
-            int index = uploadersConfig.GetFTPIndex(EDataType.File);
+
+            EDataType dataType = EDataType.File;
+            int index;
+
+            switch (dataType)
+            {
+                case EDataType.Image:
+                    index = uploadersConfig.FTPSelectedImage;
+                    break;
+                case EDataType.Text:
+                    index = uploadersConfig.FTPSelectedText;
+                    break;
+                default:
+                case EDataType.File:
+                    index = uploadersConfig.FTPSelectedFile;
+                    break;
+            }
+
             FTPAccount account = uploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
 
             if (account != null)

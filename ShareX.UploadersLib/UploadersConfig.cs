@@ -451,34 +451,6 @@ namespace ShareX.UploadersLib
             return true;
         }
 
-        public int GetFTPIndex(EDataType dataType)
-        {
-            switch (dataType)
-            {
-                case EDataType.Image:
-                    return FTPSelectedImage;
-                case EDataType.Text:
-                    return FTPSelectedText;
-                default:
-                case EDataType.File:
-                    return FTPSelectedFile;
-            }
-        }
-
-        public int GetLocalhostIndex(EDataType dataType)
-        {
-            switch (dataType)
-            {
-                case EDataType.Image:
-                    return LocalhostSelectedImages;
-                case EDataType.Text:
-                    return LocalhostSelectedText;
-                default:
-                case EDataType.File:
-                    return LocalhostSelectedFiles;
-            }
-        }
-
         #endregion Helper Methods
     }
 }
