@@ -55,6 +55,11 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Imgur;
 
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.ImgurAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(uploadersConfig.ImgurOAuth2Info);
+        }
+
         public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
         {
             if (uploadersConfig.ImgurOAuth2Info == null)
@@ -77,11 +82,6 @@ namespace ShareX.UploadersLib.ImageUploaders
                 UseGIFV = uploadersConfig.ImgurUseGIFV,
                 UploadAlbumID = albumID
             };
-        }
-
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
-        {
-            return uploadersConfig.ImgurAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(uploadersConfig.ImgurOAuth2Info);
         }
     }
 

@@ -38,6 +38,11 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Dropbox;
 
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return OAuth2Info.CheckOAuth(uploadersConfig.DropboxOAuth2Info);
+        }
+
         public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
         {
             return new Dropbox(uploadersConfig.DropboxOAuth2Info, uploadersConfig.DropboxAccountInfo)
@@ -46,11 +51,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 AutoCreateShareableLink = uploadersConfig.DropboxAutoCreateShareableLink,
                 ShareURLType = uploadersConfig.DropboxURLType
             };
-        }
-
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
-        {
-            return OAuth2Info.CheckOAuth(uploadersConfig.DropboxOAuth2Info);
         }
     }
 
