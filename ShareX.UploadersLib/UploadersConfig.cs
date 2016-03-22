@@ -389,11 +389,10 @@ namespace ShareX.UploadersLib
 
         public bool IsValid(ImageDestination destination)
         {
-            ImageUploaderService service = UploaderFactory.GetImageUploaderServiceByEnum(destination);
-
-            if (service != null)
+            if (destination != ImageDestination.FileUploader)
             {
-                return service.CheckConfig(this);
+                ImageUploaderService service = UploaderFactory.GetImageUploaderServiceByEnum(destination);
+                if (service != null) return service.CheckConfig(this);
             }
 
             return true;
@@ -401,11 +400,10 @@ namespace ShareX.UploadersLib
 
         public bool IsValid(TextDestination destination)
         {
-            TextUploaderService service = UploaderFactory.GetTextUploaderServiceByEnum(destination);
-
-            if (service != null)
+            if (destination != TextDestination.FileUploader)
             {
-                return service.CheckConfig(this);
+                TextUploaderService service = UploaderFactory.GetTextUploaderServiceByEnum(destination);
+                if (service != null) return service.CheckConfig(this);
             }
 
             return true;
@@ -414,11 +412,7 @@ namespace ShareX.UploadersLib
         public bool IsValid(FileDestination destination)
         {
             FileUploaderService service = UploaderFactory.GetFileUploaderServiceByEnum(destination);
-
-            if (service != null)
-            {
-                return service.CheckConfig(this);
-            }
+            if (service != null) return service.CheckConfig(this);
 
             return true;
         }
@@ -426,11 +420,7 @@ namespace ShareX.UploadersLib
         public bool IsValid(UrlShortenerType destination)
         {
             URLShortenerService service = UploaderFactory.GetURLShortenerServiceByEnum(destination);
-
-            if (service != null)
-            {
-                return service.CheckConfig(this);
-            }
+            if (service != null) return service.CheckConfig(this);
 
             return true;
         }

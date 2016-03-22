@@ -37,22 +37,22 @@ namespace ShareX.UploadersLib
 
         public static ImageUploaderService GetImageUploaderServiceByEnum(ImageDestination enumValue)
         {
-            return imageUploaderServices.FirstOrDefault(x => x.EnumValue == enumValue);
+            return imageUploaderServices.First(x => x.EnumValue == enumValue);
         }
 
         public static TextUploaderService GetTextUploaderServiceByEnum(TextDestination enumValue)
         {
-            return textUploaderServices.FirstOrDefault(x => x.EnumValue == enumValue);
+            return textUploaderServices.First(x => x.EnumValue == enumValue);
         }
 
         public static FileUploaderService GetFileUploaderServiceByEnum(FileDestination enumValue)
         {
-            return fileUploaderServices.FirstOrDefault(x => x.EnumValue == enumValue);
+            return fileUploaderServices.First(x => x.EnumValue == enumValue);
         }
 
         public static URLShortenerService GetURLShortenerServiceByEnum(UrlShortenerType enumValue)
         {
-            return urlShortenerServices.FirstOrDefault(x => x.EnumValue == enumValue);
+            return urlShortenerServices.First(x => x.EnumValue == enumValue);
         }
     }
 }
