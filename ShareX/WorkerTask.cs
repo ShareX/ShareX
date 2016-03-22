@@ -806,18 +806,13 @@ namespace ShareX
 
         public UploadResult UploadImage(Stream stream, string fileName)
         {
-            ImageUploaderService service = UploaderFactory.GetImageUploaderServiceByEnum(Info.TaskSettings.ImageDestination);
+            ImageUploader imageUploader = UploaderFactory.GetImageUploaderServiceByEnum(Info.TaskSettings.ImageDestination).CreateUploader(Program.UploadersConfig);
 
-            if (service != null)
+            if (imageUploader != null)
             {
-                ImageUploader imageUploader = service.CreateUploader(Program.UploadersConfig);
+                PrepareUploader(imageUploader);
 
-                if (imageUploader != null)
-                {
-                    PrepareUploader(imageUploader);
-
-                    return imageUploader.Upload(stream, fileName);
-                }
+                return imageUploader.Upload(stream, fileName);
             }
 
             return null;
@@ -827,18 +822,13 @@ namespace ShareX
         {
             Program.UploadersConfig.TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat;
 
-            TextUploaderService service = UploaderFactory.GetTextUploaderServiceByEnum(Info.TaskSettings.TextDestination);
+            TextUploader textUploader = UploaderFactory.GetTextUploaderServiceByEnum(Info.TaskSettings.TextDestination).CreateUploader(Program.UploadersConfig);
 
-            if (service != null)
+            if (textUploader != null)
             {
-                TextUploader textUploader = service.CreateUploader(Program.UploadersConfig);
+                PrepareUploader(textUploader);
 
-                if (textUploader != null)
-                {
-                    PrepareUploader(textUploader);
-
-                    return textUploader.UploadText(stream, fileName);
-                }
+                return textUploader.UploadText(stream, fileName);
             }
 
             return null;
@@ -862,18 +852,13 @@ namespace ShareX
                     break;
             }
 
-            FileUploaderService service = UploaderFactory.GetFileUploaderServiceByEnum(fileDestination);
+            FileUploader fileUploader = UploaderFactory.GetFileUploaderServiceByEnum(fileDestination).CreateUploader(Program.UploadersConfig);
 
-            if (service != null)
+            if (fileUploader != null)
             {
-                FileUploader fileUploader = service.CreateUploader(Program.UploadersConfig);
+                PrepareUploader(fileUploader);
 
-                if (fileUploader != null)
-                {
-                    PrepareUploader(fileUploader);
-
-                    return fileUploader.Upload(stream, fileName);
-                }
+                return fileUploader.Upload(stream, fileName);
             }
 
             return null;
@@ -881,16 +866,11 @@ namespace ShareX
 
         public UploadResult ShortenURL(string url)
         {
-            URLShortenerService service = UploaderFactory.GetURLShortenerServiceByEnum(Info.TaskSettings.URLShortenerDestination);
+            URLShortener urlShortener = UploaderFactory.GetURLShortenerServiceByEnum(Info.TaskSettings.URLShortenerDestination).CreateShortener(Program.UploadersConfig);
 
-            if (service != null)
+            if (urlShortener != null)
             {
-                URLShortener urlShortener = service.CreateShortener(Program.UploadersConfig);
-
-                if (urlShortener != null)
-                {
-                    return urlShortener.ShortenURL(url);
-                }
+                return urlShortener.ShortenURL(url);
             }
 
             return null;

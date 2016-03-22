@@ -389,40 +389,24 @@ namespace ShareX.UploadersLib
 
         public bool IsValid(ImageDestination destination)
         {
-            if (destination != ImageDestination.FileUploader)
-            {
-                ImageUploaderService service = UploaderFactory.GetImageUploaderServiceByEnum(destination);
-                if (service != null) return service.CheckConfig(this);
-            }
-
-            return true;
+            if (destination == ImageDestination.FileUploader) return true;
+            return UploaderFactory.GetImageUploaderServiceByEnum(destination).CheckConfig(this);
         }
 
         public bool IsValid(TextDestination destination)
         {
-            if (destination != TextDestination.FileUploader)
-            {
-                TextUploaderService service = UploaderFactory.GetTextUploaderServiceByEnum(destination);
-                if (service != null) return service.CheckConfig(this);
-            }
-
-            return true;
+            if (destination == TextDestination.FileUploader) return true;
+            return UploaderFactory.GetTextUploaderServiceByEnum(destination).CheckConfig(this);
         }
 
         public bool IsValid(FileDestination destination)
         {
-            FileUploaderService service = UploaderFactory.GetFileUploaderServiceByEnum(destination);
-            if (service != null) return service.CheckConfig(this);
-
-            return true;
+            return UploaderFactory.GetFileUploaderServiceByEnum(destination).CheckConfig(this);
         }
 
         public bool IsValid(UrlShortenerType destination)
         {
-            URLShortenerService service = UploaderFactory.GetURLShortenerServiceByEnum(destination);
-            if (service != null) return service.CheckConfig(this);
-
-            return true;
+            return UploaderFactory.GetURLShortenerServiceByEnum(destination).CheckConfig(this);
         }
 
         public bool IsValid(URLSharingServices destination)
