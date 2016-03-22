@@ -35,6 +35,30 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class SeafileFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Seafile;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.SeafileAPIURL) && !string.IsNullOrEmpty(uploadersConfig.SeafileAuthToken) && !string.IsNullOrEmpty(uploadersConfig.SeafileRepoID);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Seafile(uploadersConfig.SeafileAPIURL, uploadersConfig.SeafileAuthToken, uploadersConfig.SeafileRepoID)
+            {
+                Path = uploadersConfig.SeafilePath,
+                IsLibraryEncrypted = uploadersConfig.SeafileIsLibraryEncrypted,
+                EncryptedLibraryPassword = uploadersConfig.SeafileEncryptedLibraryPassword,
+                ShareDaysToExpire = uploadersConfig.SeafileShareDaysToExpire,
+                SharePassword = uploadersConfig.SeafileSharePassword,
+                CreateShareableURL = uploadersConfig.SeafileCreateShareableURL,
+                IgnoreInvalidCert = uploadersConfig.SeafileIgnoreInvalidCert
+            };
+        }
+    }
+
     public sealed class Seafile : FileUploader
     {
         public string APIURL { get; set; }

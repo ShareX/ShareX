@@ -28,6 +28,18 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class UguuFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Uguu;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Uguu();
+        }
+    }
+
     public class Uguu : FileUploader
     {
         public bool RandomName { get; set; }

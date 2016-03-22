@@ -36,6 +36,21 @@ using System.Linq;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class PomfFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Pomf;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.PomfUploader != null && !string.IsNullOrEmpty(uploadersConfig.PomfUploader.UploadURL);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Pomf(uploadersConfig.PomfUploader);
+        }
+    }
+
     public class Pomf : FileUploader
     {
         // Pomf clones: https://docs.google.com/spreadsheets/d/1kh1TZdtyX7UlRd55OBxf7DB-JGj2rsfWckI0FPQRYhE

@@ -32,6 +32,27 @@ using System.Threading;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class StreamableFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Streamable;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            string username = "";
+            string password = "";
+
+            if (!uploadersConfig.StreamableAnonymous)
+            {
+                username = uploadersConfig.StreamableUsername;
+                password = uploadersConfig.StreamablePassword;
+            }
+
+            return new Streamable(username, password);
+        }
+    }
+
     public class Streamable : FileUploader
     {
         private const string Host = "https://api.streamable.com";

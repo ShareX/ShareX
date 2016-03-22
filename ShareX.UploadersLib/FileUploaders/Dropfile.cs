@@ -28,6 +28,18 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class DropfileFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Dropfile;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Dropfile();
+        }
+    }
+
     public sealed class Dropfile : FileUploader
     {
         public override UploadResult Upload(Stream stream, string fileName)

@@ -28,6 +28,32 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class SharedFolderFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.SharedFolder;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.LocalhostAccountList != null && uploadersConfig.LocalhostAccountList.IsValidIndex(uploadersConfig.LocalhostSelectedFiles);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            // TODO: Check TaskSettings override index (WorkerTask.GetFTPAccount)
+            // TODO: Unable to reach Info.DataType
+            int index = uploadersConfig.GetLocalhostIndex(EDataType.File);
+
+            LocalhostAccount account = uploadersConfig.LocalhostAccountList.ReturnIfValidIndex(index);
+
+            if (account != null)
+            {
+                return new SharedFolderUploader(account);
+            }
+
+            return null;
+        }
+    }
+
     public class SharedFolderUploader : FileUploader
     {
         private LocalhostAccount account;

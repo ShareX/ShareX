@@ -33,6 +33,25 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class OneDriveFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.OneDrive;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return OAuth2Info.CheckOAuth(uploadersConfig.OneDriveOAuth2Info);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new OneDrive(uploadersConfig.OneDriveOAuth2Info)
+            {
+                FolderID = uploadersConfig.OneDriveSelectedFolder.id,
+                AutoCreateShareableLink = uploadersConfig.OneDriveAutoCreateShareableLink
+            };
+        }
+    }
+
     public sealed class OneDrive : FileUploader, IOAuth2
     {
         public OAuth2Info AuthInfo { get; set; }

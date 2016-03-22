@@ -32,6 +32,21 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class MinusFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Minus;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.MinusConfig != null && uploadersConfig.MinusConfig.MinusUser != null;
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Minus(uploadersConfig.MinusConfig, uploadersConfig.MinusOAuth2Info);
+        }
+    }
+
     public class Minus : FileUploader
     {
         private const string URL_HOST = "https://minus.com";

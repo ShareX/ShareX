@@ -31,6 +31,24 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class OpenloadFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Openload;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new OpenloadUploader()
+            {
+                APILogin = uploadersConfig.OpenloadAPILogin,
+                APIKey = uploadersConfig.OpenloadAPIKey,
+                UploadToFolder = uploadersConfig.OpenloadUploadToSelectedFolder,
+                FolderID = uploadersConfig.OpenloadSelectedFolderID
+            };
+        }
+    }
+
     public sealed class OpenloadUploader : FileUploader
     {
         public string APILogin { get; set; }

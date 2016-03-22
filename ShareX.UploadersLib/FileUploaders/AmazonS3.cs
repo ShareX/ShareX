@@ -39,6 +39,23 @@ using System.Security.Cryptography;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class AmazonS3FileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.AmazonS3;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.AmazonS3Settings != null && !string.IsNullOrEmpty(uploadersConfig.AmazonS3Settings.AccessKeyID) &&
+                !string.IsNullOrEmpty(uploadersConfig.AmazonS3Settings.SecretAccessKey) && !string.IsNullOrEmpty(uploadersConfig.AmazonS3Settings.Bucket) &&
+                AmazonS3.GetCurrentRegion(uploadersConfig.AmazonS3Settings) != AmazonS3.UnknownEndpoint;
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new AmazonS3(uploadersConfig.AmazonS3Settings);
+        }
+    }
+
     public sealed class AmazonS3 : FileUploader
     {
         public static readonly AmazonS3Region UnknownEndpoint = new AmazonS3Region("Unknown Endpoint");

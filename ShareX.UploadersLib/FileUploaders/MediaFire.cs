@@ -37,6 +37,25 @@ using System.Threading;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class MediaFireFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.MediaFire;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.MediaFireUsername) && !string.IsNullOrEmpty(uploadersConfig.MediaFirePassword);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new MediaFire(APIKeys.MediaFireAppId, APIKeys.MediaFireApiKey, uploadersConfig.MediaFireUsername, uploadersConfig.MediaFirePassword)
+            {
+                UploadPath = NameParser.Parse(NameParserType.URL, uploadersConfig.MediaFirePath),
+                UseLongLink = uploadersConfig.MediaFireUseLongLink
+            };
+        }
+    }
+
     public sealed class MediaFire : FileUploader
     {
         private static readonly string _apiUrl = "https://www.mediafire.com/api/";

@@ -29,6 +29,24 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class HostrFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Localhostr;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.LocalhostrEmail) && !string.IsNullOrEmpty(uploadersConfig.LocalhostrPassword);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Hostr(uploadersConfig.LocalhostrEmail, uploadersConfig.LocalhostrPassword)
+            {
+                DirectURL = uploadersConfig.LocalhostrDirectURL
+            };
+        }
+    }
+
     public sealed class Hostr : FileUploader
     {
         public string Email { get; set; }

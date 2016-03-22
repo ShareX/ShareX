@@ -36,6 +36,38 @@ using System.Text;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class FTPFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.FTP;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.FTPAccountList != null && uploadersConfig.FTPAccountList.IsValidIndex(uploadersConfig.FTPSelectedFile);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            // TODO: Check TaskSettings override index (WorkerTask.GetFTPAccount)
+            // TODO: Unable to reach Info.DataType
+            int index = uploadersConfig.GetFTPIndex(EDataType.File);
+            FTPAccount account = uploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
+
+            if (account != null)
+            {
+                if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
+                {
+                    return new FTP(account);
+                }
+                else if (account.Protocol == FTPProtocol.SFTP)
+                {
+                    return new SFTP(account);
+                }
+            }
+
+            return null;
+        }
+    }
+
     public sealed class FTP : FileUploader, IDisposable
     {
         public FTPAccount Account { get; private set; }

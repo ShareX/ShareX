@@ -32,6 +32,21 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class SulFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Sul;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.SulAPIKey);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new SulUploader(uploadersConfig.SulAPIKey);
+        }
+    }
+
     public sealed class SulUploader : FileUploader
     {
         private string APIKey { get; set; }

@@ -31,6 +31,25 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class GoogleDriveFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.GoogleDrive;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return OAuth2Info.CheckOAuth(uploadersConfig.GoogleDriveOAuth2Info);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new GoogleDrive(uploadersConfig.GoogleDriveOAuth2Info)
+            {
+                IsPublic = uploadersConfig.GoogleDriveIsPublic,
+                FolderID = uploadersConfig.GoogleDriveUseFolder ? uploadersConfig.GoogleDriveFolderID : null
+            };
+        }
+    }
+
     public sealed class GoogleDrive : FileUploader, IOAuth2
     {
         public OAuth2Info AuthInfo { get; set; }

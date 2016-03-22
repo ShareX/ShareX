@@ -31,6 +31,25 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class BoxFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Box;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return OAuth2Info.CheckOAuth(uploadersConfig.BoxOAuth2Info);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Box(uploadersConfig.BoxOAuth2Info)
+            {
+                FolderID = uploadersConfig.BoxSelectedFolder.id,
+                Share = uploadersConfig.BoxShare
+            };
+        }
+    }
+
     public sealed class Box : FileUploader, IOAuth2
     {
         public static BoxFileEntry RootFolder = new BoxFileEntry

@@ -31,6 +31,21 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class LambdaFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Lambda;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.LambdaSettings != null && !string.IsNullOrEmpty(uploadersConfig.LambdaSettings.UserAPIKey);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Lambda(uploadersConfig.LambdaSettings);
+        }
+    }
+
     public sealed class Lambda : FileUploader
     {
         public LambdaSettings Config { get; private set; }

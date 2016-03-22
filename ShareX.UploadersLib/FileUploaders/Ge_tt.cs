@@ -29,6 +29,24 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class Ge_ttFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Ge_tt;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.Ge_ttLogin != null && !string.IsNullOrEmpty(uploadersConfig.Ge_ttLogin.AccessToken);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Ge_tt(APIKeys.Ge_ttKey)
+            {
+                AccessToken = uploadersConfig.Ge_ttLogin.AccessToken
+            };
+        }
+    }
+
     public sealed class Ge_tt : FileUploader
     {
         public string APIKey { get; private set; }

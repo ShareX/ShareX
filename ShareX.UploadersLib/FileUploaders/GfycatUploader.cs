@@ -34,6 +34,18 @@ using System.Threading;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class GfycatFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Gfycat;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new GfycatUploader();
+        }
+    }
+
     public class GfycatUploader : FileUploader
     {
         public bool NoResize { get; set; }

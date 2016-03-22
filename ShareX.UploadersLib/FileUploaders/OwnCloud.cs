@@ -34,6 +34,28 @@ using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class OwnCloudFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.OwnCloud;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.OwnCloudHost) && !string.IsNullOrEmpty(uploadersConfig.OwnCloudUsername) && !string.IsNullOrEmpty(uploadersConfig.OwnCloudPassword);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new OwnCloud(uploadersConfig.OwnCloudHost, uploadersConfig.OwnCloudUsername, uploadersConfig.OwnCloudPassword)
+            {
+                Path = uploadersConfig.OwnCloudPath,
+                CreateShare = uploadersConfig.OwnCloudCreateShare,
+                DirectLink = uploadersConfig.OwnCloudDirectLink,
+                IgnoreInvalidCert = uploadersConfig.OwnCloudIgnoreInvalidCert,
+                IsCompatibility81 = uploadersConfig.OwnCloud81Compatibility
+            };
+        }
+    }
+
     public sealed class OwnCloud : FileUploader
     {
         public string Host { get; set; }

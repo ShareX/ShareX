@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 // Credits: https://github.com/BallisticLingonberries
-// API Information: https://docs.pushbullet.com/http/
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
@@ -36,6 +35,22 @@ using System.Linq;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class PushbulletFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Pushbullet;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.PushbulletSettings != null && !string.IsNullOrEmpty(uploadersConfig.PushbulletSettings.UserAPIKey) &&
+                uploadersConfig.PushbulletSettings.DeviceList != null && uploadersConfig.PushbulletSettings.DeviceList.IsValidIndex(uploadersConfig.PushbulletSettings.SelectedDevice);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Pushbullet(uploadersConfig.PushbulletSettings);
+        }
+    }
+
     public sealed class Pushbullet : FileUploader
     {
         public PushbulletSettings Config { get; private set; }

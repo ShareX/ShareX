@@ -33,6 +33,22 @@ using System.Linq;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class MegaFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Mega;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.MegaAuthInfos != null && uploadersConfig.MegaAuthInfos.Email != null && uploadersConfig.MegaAuthInfos.Hash != null &&
+                uploadersConfig.MegaAuthInfos.PasswordAesKey != null;
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Mega(uploadersConfig.MegaAuthInfos, uploadersConfig.MegaParentNodeId);
+        }
+    }
+
     public sealed class Mega : FileUploader, IWebClient
     {
         private readonly MegaApiClient _megaClient;

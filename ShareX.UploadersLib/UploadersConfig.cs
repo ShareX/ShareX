@@ -420,54 +420,6 @@ namespace ShareX.UploadersLib
                 return service.CheckConfig(this);
             }
 
-            switch (destination)
-            {
-                case FileDestination.FTP:
-                    return FTPAccountList != null && FTPAccountList.IsValidIndex(FTPSelectedFile);
-                case FileDestination.OneDrive:
-                    return OAuth2Info.CheckOAuth(OneDriveOAuth2Info);
-                case FileDestination.GoogleDrive:
-                    return OAuth2Info.CheckOAuth(GoogleDriveOAuth2Info);
-                case FileDestination.Box:
-                    return OAuth2Info.CheckOAuth(BoxOAuth2Info);
-                case FileDestination.Mega:
-                    return MegaAuthInfos != null && MegaAuthInfos.Email != null && MegaAuthInfos.Hash != null && MegaAuthInfos.PasswordAesKey != null;
-                case FileDestination.AmazonS3:
-                    return AmazonS3Settings != null && !string.IsNullOrEmpty(AmazonS3Settings.AccessKeyID) && !string.IsNullOrEmpty(AmazonS3Settings.SecretAccessKey) &&
-                        !string.IsNullOrEmpty(AmazonS3Settings.Bucket) && AmazonS3.GetCurrentRegion(AmazonS3Settings) != AmazonS3.UnknownEndpoint;
-                case FileDestination.OwnCloud:
-                    return !string.IsNullOrEmpty(OwnCloudHost) && !string.IsNullOrEmpty(OwnCloudUsername) && !string.IsNullOrEmpty(OwnCloudPassword);
-                case FileDestination.MediaFire:
-                    return !string.IsNullOrEmpty(MediaFireUsername) && !string.IsNullOrEmpty(MediaFirePassword);
-                case FileDestination.Pushbullet:
-                    return PushbulletSettings != null && !string.IsNullOrEmpty(PushbulletSettings.UserAPIKey) && PushbulletSettings.DeviceList != null &&
-                        PushbulletSettings.DeviceList.IsValidIndex(PushbulletSettings.SelectedDevice);
-                case FileDestination.SendSpace:
-                    return SendSpaceAccountType == AccountType.Anonymous || (!string.IsNullOrEmpty(SendSpaceUsername) && !string.IsNullOrEmpty(SendSpacePassword));
-                case FileDestination.Minus:
-                    return MinusConfig != null && MinusConfig.MinusUser != null;
-                case FileDestination.Ge_tt:
-                    return Ge_ttLogin != null && !string.IsNullOrEmpty(Ge_ttLogin.AccessToken);
-                case FileDestination.Localhostr:
-                    return !string.IsNullOrEmpty(LocalhostrEmail) && !string.IsNullOrEmpty(LocalhostrPassword);
-                case FileDestination.Jira:
-                    return OAuthInfo.CheckOAuth(JiraOAuthInfo);
-                case FileDestination.Lambda:
-                    return LambdaSettings != null && !string.IsNullOrEmpty(LambdaSettings.UserAPIKey);
-                case FileDestination.Pomf:
-                    return PomfUploader != null && !string.IsNullOrEmpty(PomfUploader.UploadURL);
-                case FileDestination.Sul:
-                    return !string.IsNullOrEmpty(SulAPIKey);
-                case FileDestination.Seafile:
-                    return !string.IsNullOrEmpty(SeafileAPIURL) && !string.IsNullOrEmpty(SeafileAuthToken) && !string.IsNullOrEmpty(SeafileRepoID);
-                case FileDestination.SharedFolder:
-                    return LocalhostAccountList != null && LocalhostAccountList.IsValidIndex(LocalhostSelectedFiles);
-                case FileDestination.Email:
-                    return !string.IsNullOrEmpty(EmailSmtpServer) && EmailSmtpPort > 0 && !string.IsNullOrEmpty(EmailFrom) && !string.IsNullOrEmpty(EmailPassword);
-                case FileDestination.CustomFileUploader:
-                    return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomFileUploaderSelected);
-            }
-
             return true;
         }
 

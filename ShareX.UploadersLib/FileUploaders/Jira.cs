@@ -39,6 +39,21 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class JiraFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Jira;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return OAuthInfo.CheckOAuth(uploadersConfig.JiraOAuthInfo);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Jira(uploadersConfig.JiraHost, uploadersConfig.JiraOAuthInfo, uploadersConfig.JiraIssuePrefix);
+        }
+    }
+
     public class Jira : FileUploader, IOAuth
     {
         private const string PathRequestToken = "/plugins/servlet/oauth/request-token";

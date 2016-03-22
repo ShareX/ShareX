@@ -26,9 +26,50 @@
 using System.IO;
 using System.Net;
 using System.Net.Mail;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class EmailFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Email;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.EmailSmtpServer) && uploadersConfig.EmailSmtpPort > 0 && !string.IsNullOrEmpty(uploadersConfig.EmailFrom) &&
+                !string.IsNullOrEmpty(uploadersConfig.EmailPassword);
+        }
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            // TODO: Test lack of StopRequested = true;
+            using (EmailForm emailForm = new EmailForm(uploadersConfig.EmailRememberLastTo ? uploadersConfig.EmailLastTo : string.Empty,
+                uploadersConfig.EmailDefaultSubject, uploadersConfig.EmailDefaultBody))
+            {
+                if (emailForm.ShowDialog() == DialogResult.OK)
+                {
+                    if (uploadersConfig.EmailRememberLastTo)
+                    {
+                        uploadersConfig.EmailLastTo = emailForm.ToEmail;
+                    }
+
+                    return new Email
+                    {
+                        SmtpServer = uploadersConfig.EmailSmtpServer,
+                        SmtpPort = uploadersConfig.EmailSmtpPort,
+                        FromEmail = uploadersConfig.EmailFrom,
+                        Password = uploadersConfig.EmailPassword,
+                        ToEmail = emailForm.ToEmail,
+                        Subject = emailForm.Subject,
+                        Body = emailForm.Body
+                    };
+                }
+            }
+
+            return null;
+        }
+    }
+
     public class Email : FileUploader
     {
         public string SmtpServer { get; set; }
