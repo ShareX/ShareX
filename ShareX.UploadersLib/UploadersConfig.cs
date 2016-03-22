@@ -499,10 +499,15 @@ namespace ShareX.UploadersLib
 
         public bool IsValid(UrlShortenerType destination)
         {
+            URLShortenerService service = UploaderFactory.GetURLShortenerServiceByEnum(destination);
+
+            if (service != null)
+            {
+                return service.CheckConfig(this);
+            }
+
             switch (destination)
             {
-                case UrlShortenerType.BITLY:
-                    return OAuth2Info.CheckOAuth(BitlyOAuth2Info);
                 case UrlShortenerType.Google:
                     return GoogleURLShortenerAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(GoogleURLShortenerOAuth2Info);
                 case UrlShortenerType.YOURLS:

@@ -31,6 +31,29 @@ using System.Web;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class BitlyURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.BITLY;
+
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        {
+            if (uploadersConfig.BitlyOAuth2Info == null)
+            {
+                uploadersConfig.BitlyOAuth2Info = new OAuth2Info(APIKeys.BitlyClientID, APIKeys.BitlyClientSecret);
+            }
+
+            return new BitlyURLShortener(uploadersConfig.BitlyOAuth2Info)
+            {
+                Domain = uploadersConfig.BitlyDomain
+            };
+        }
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return OAuth2Info.CheckOAuth(uploadersConfig.BitlyOAuth2Info);
+        }
+    }
+
     public sealed class BitlyURLShortener : URLShortener, IOAuth2Basic
     {
         private const string URLAPI = "https://api-ssl.bitly.com/";

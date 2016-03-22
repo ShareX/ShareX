@@ -1207,80 +1207,78 @@ namespace ShareX
         {
             URLShortener urlShortener = null;
 
-            switch (Info.TaskSettings.URLShortenerDestination)
-            {
-                case UrlShortenerType.BITLY:
-                    if (Program.UploadersConfig.BitlyOAuth2Info == null)
-                    {
-                        Program.UploadersConfig.BitlyOAuth2Info = new OAuth2Info(APIKeys.BitlyClientID, APIKeys.BitlyClientSecret);
-                    }
+            URLShortenerService service = UploaderFactory.GetURLShortenerServiceByEnum(Info.TaskSettings.URLShortenerDestination);
 
-                    urlShortener = new BitlyURLShortener(Program.UploadersConfig.BitlyOAuth2Info)
-                    {
-                        Domain = Program.UploadersConfig.BitlyDomain
-                    };
-                    break;
-                case UrlShortenerType.Google:
-                    urlShortener = new GoogleURLShortener(Program.UploadersConfig.GoogleURLShortenerAccountType, APIKeys.GoogleAPIKey,
-                        Program.UploadersConfig.GoogleURLShortenerOAuth2Info);
-                    break;
-                case UrlShortenerType.ISGD:
-                    urlShortener = new IsgdURLShortener();
-                    break;
-                case UrlShortenerType.VGD:
-                    urlShortener = new VgdURLShortener();
-                    break;
-                case UrlShortenerType.TINYURL:
-                    urlShortener = new TinyURLShortener();
-                    break;
-                case UrlShortenerType.TURL:
-                    urlShortener = new TurlURLShortener();
-                    break;
-                case UrlShortenerType.YOURLS:
-                    urlShortener = new YourlsURLShortener
-                    {
-                        APIURL = Program.UploadersConfig.YourlsAPIURL,
-                        Signature = Program.UploadersConfig.YourlsSignature,
-                        Username = Program.UploadersConfig.YourlsUsername,
-                        Password = Program.UploadersConfig.YourlsPassword
-                    };
-                    break;
-                case UrlShortenerType.AdFly:
-                    urlShortener = new AdFlyURLShortener
-                    {
-                        APIKEY = Program.UploadersConfig.AdFlyAPIKEY,
-                        APIUID = Program.UploadersConfig.AdFlyAPIUID
-                    };
-                    break;
-                case UrlShortenerType.CoinURL:
-                    urlShortener = new CoinURLShortener
-                    {
-                        UUID = Program.UploadersConfig.CoinURLUUID
-                    };
-                    break;
-                case UrlShortenerType.QRnet:
-                    urlShortener = new QRnetURLShortener();
-                    break;
-                case UrlShortenerType.VURL:
-                    urlShortener = new VURLShortener();
-                    break;
-                case UrlShortenerType.TwoGP:
-                    urlShortener = new TwoGPURLShortener();
-                    break;
-                case UrlShortenerType.Polr:
-                    urlShortener = new PolrURLShortener
-                    {
-                        API_HOST = Program.UploadersConfig.PolrAPIHostname,
-                        API_KEY = Program.UploadersConfig.PolrAPIKey
-                    };
-                    break;
-                case UrlShortenerType.CustomURLShortener:
-                    CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomURLShortenerSelected);
-                    if (customUploader != null)
-                    {
-                        urlShortener = new CustomURLShortener(customUploader);
-                    }
-                    break;
+            if (service != null)
+            {
+                urlShortener = service.CreateShortener(Program.UploadersConfig);
+            }
+            else
+            {
+                switch (Info.TaskSettings.URLShortenerDestination)
+                {
+                    case UrlShortenerType.Google:
+                        urlShortener = new GoogleURLShortener(Program.UploadersConfig.GoogleURLShortenerAccountType, APIKeys.GoogleAPIKey,
+                            Program.UploadersConfig.GoogleURLShortenerOAuth2Info);
+                        break;
+                    case UrlShortenerType.ISGD:
+                        urlShortener = new IsgdURLShortener();
+                        break;
+                    case UrlShortenerType.VGD:
+                        urlShortener = new VgdURLShortener();
+                        break;
+                    case UrlShortenerType.TINYURL:
+                        urlShortener = new TinyURLShortener();
+                        break;
+                    case UrlShortenerType.TURL:
+                        urlShortener = new TurlURLShortener();
+                        break;
+                    case UrlShortenerType.YOURLS:
+                        urlShortener = new YourlsURLShortener
+                        {
+                            APIURL = Program.UploadersConfig.YourlsAPIURL,
+                            Signature = Program.UploadersConfig.YourlsSignature,
+                            Username = Program.UploadersConfig.YourlsUsername,
+                            Password = Program.UploadersConfig.YourlsPassword
+                        };
+                        break;
+                    case UrlShortenerType.AdFly:
+                        urlShortener = new AdFlyURLShortener
+                        {
+                            APIKEY = Program.UploadersConfig.AdFlyAPIKEY,
+                            APIUID = Program.UploadersConfig.AdFlyAPIUID
+                        };
+                        break;
+                    case UrlShortenerType.CoinURL:
+                        urlShortener = new CoinURLShortener
+                        {
+                            UUID = Program.UploadersConfig.CoinURLUUID
+                        };
+                        break;
+                    case UrlShortenerType.QRnet:
+                        urlShortener = new QRnetURLShortener();
+                        break;
+                    case UrlShortenerType.VURL:
+                        urlShortener = new VURLShortener();
+                        break;
+                    case UrlShortenerType.TwoGP:
+                        urlShortener = new TwoGPURLShortener();
+                        break;
+                    case UrlShortenerType.Polr:
+                        urlShortener = new PolrURLShortener
+                        {
+                            API_HOST = Program.UploadersConfig.PolrAPIHostname,
+                            API_KEY = Program.UploadersConfig.PolrAPIKey
+                        };
+                        break;
+                    case UrlShortenerType.CustomURLShortener:
+                        CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomURLShortenerSelected);
+                        if (customUploader != null)
+                        {
+                            urlShortener = new CustomURLShortener(customUploader);
+                        }
+                        break;
+                }
             }
 
             if (urlShortener != null)
