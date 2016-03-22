@@ -396,26 +396,6 @@ namespace ShareX.UploadersLib
                 return service.CheckConfig(this);
             }
 
-            switch (destination)
-            {
-                case ImageDestination.ImageShack:
-                    return ImageShackSettings != null && !string.IsNullOrEmpty(ImageShackSettings.Auth_token);
-                case ImageDestination.TinyPic:
-                    return TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(TinyPicRegistrationCode);
-                case ImageDestination.Flickr:
-                    return !string.IsNullOrEmpty(FlickrAuthInfo.Token);
-                case ImageDestination.Photobucket:
-                    return PhotobucketAccountInfo != null && OAuthInfo.CheckOAuth(PhotobucketOAuthInfo);
-                case ImageDestination.Picasa:
-                    return OAuth2Info.CheckOAuth(PicasaOAuth2Info);
-                case ImageDestination.Twitter:
-                    return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount) && OAuthInfo.CheckOAuth(TwitterOAuthInfoList[TwitterSelectedAccount]);
-                case ImageDestination.Chevereto:
-                    return CheveretoUploader != null && !string.IsNullOrEmpty(CheveretoUploader.UploadURL) && !string.IsNullOrEmpty(CheveretoUploader.APIKey);
-                case ImageDestination.CustomImageUploader:
-                    return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomImageUploaderSelected);
-            }
-
             return true;
         }
 

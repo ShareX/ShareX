@@ -30,6 +30,21 @@ using System.IO;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class ImageShackImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.ImageShack;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.ImageShackSettings != null && !string.IsNullOrEmpty(uploadersConfig.ImageShackSettings.Auth_token);
+        }
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new ImageShackUploader(APIKeys.ImageShackKey, uploadersConfig.ImageShackSettings);
+        }
+    }
+
     public sealed class ImageShackUploader : ImageUploader
     {
         private const string URLAPI = "https://api.imageshack.com/v2/";
@@ -217,7 +232,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public string Password { get; set; }
         public bool IsPublic { get; set; }
         public string Auth_token { get; set; }
-        public int ThumbnailWidth { get; set; }
+        public int ThumbnailWidth { get; set; } = 256;
         public int ThumbnailHeight { get; set; }
     }
 }

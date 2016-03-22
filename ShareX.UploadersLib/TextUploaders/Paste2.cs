@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System;
 using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.TextUploaders
@@ -36,8 +35,11 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
         {
-            Paste2Settings settings = new Paste2Settings();
-            settings.TextFormat = uploadersConfig.TextFormat;
+            Paste2Settings settings = new Paste2Settings()
+            {
+                TextFormat = uploadersConfig.TextFormat
+            };
+
             return new Paste2(settings);
         }
     }

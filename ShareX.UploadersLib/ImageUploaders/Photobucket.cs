@@ -32,6 +32,21 @@ using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class PhotobucketImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Photobucket;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.PhotobucketAccountInfo != null && OAuthInfo.CheckOAuth(uploadersConfig.PhotobucketOAuthInfo);
+        }
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Photobucket(uploadersConfig.PhotobucketOAuthInfo, uploadersConfig.PhotobucketAccountInfo);
+        }
+    }
+
     public sealed class Photobucket : ImageUploader, IOAuth
     {
         private const string URLRequestToken = "http://api.photobucket.com/login/request";

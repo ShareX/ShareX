@@ -33,6 +33,21 @@ using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class FlickrImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Flickr;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return !string.IsNullOrEmpty(uploadersConfig.FlickrAuthInfo.Token);
+        }
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret, uploadersConfig.FlickrAuthInfo, uploadersConfig.FlickrSettings);
+        }
+    }
+
     public class FlickrUploader : ImageUploader
     {
         private string API_Key, API_Secret;

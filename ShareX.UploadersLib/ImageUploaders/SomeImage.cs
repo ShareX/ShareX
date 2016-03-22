@@ -32,6 +32,28 @@ using System.IO;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class SomeImageImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.SomeImage;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            string someImageAPIKey = uploadersConfig.SomeImageAPIKey;
+
+            if (string.IsNullOrEmpty(someImageAPIKey))
+            {
+                someImageAPIKey = APIKeys.SomeImageKey;
+            }
+
+            return new SomeImage(someImageAPIKey)
+            {
+                DirectURL = uploadersConfig.SomeImageDirectURL
+            };
+        }
+    }
+
     public sealed class SomeImage : ImageUploader
     {
         private const string API_ENDPOINT = "https://someimage.com/api/2/image/upload";

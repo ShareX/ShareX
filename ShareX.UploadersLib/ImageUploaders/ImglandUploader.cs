@@ -31,6 +31,18 @@ using System.IO;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class ImglandImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Imgland;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new ImglandUploader();
+        }
+    }
+
     public sealed class ImglandUploader : ImageUploader
     {
         public override UploadResult Upload(Stream stream, string fileName)

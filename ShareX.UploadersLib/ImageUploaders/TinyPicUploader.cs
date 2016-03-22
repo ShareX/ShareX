@@ -31,6 +31,21 @@ using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class TinyPicImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.TinyPic;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(uploadersConfig.TinyPicRegistrationCode);
+        }
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, uploadersConfig.TinyPicAccountType, uploadersConfig.TinyPicRegistrationCode);
+        }
+    }
+
     public sealed class TinyPicUploader : ImageUploader
     {
         public AccountType AccountType { get; private set; }

@@ -35,6 +35,25 @@ using System.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class CheveretoImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Chevereto;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.CheveretoUploader != null && !string.IsNullOrEmpty(uploadersConfig.CheveretoUploader.UploadURL) &&
+                !string.IsNullOrEmpty(uploadersConfig.CheveretoUploader.APIKey);
+        }
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Chevereto(uploadersConfig.CheveretoUploader)
+            {
+                DirectURL = uploadersConfig.CheveretoDirectURL
+            };
+        }
+    }
+
     public sealed class Chevereto : ImageUploader
     {
         public static List<CheveretoUploader> Uploaders = new List<CheveretoUploader>()

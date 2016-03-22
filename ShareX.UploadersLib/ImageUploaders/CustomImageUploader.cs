@@ -23,11 +23,35 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.IO;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class CustomImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.CustomImageUploader;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return uploadersConfig.CustomUploadersList != null && uploadersConfig.CustomUploadersList.IsValidIndex(uploadersConfig.CustomImageUploaderSelected);
+        }
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            // TODO: Check TaskSettings override index (WorkerTask.GetCustomUploader)
+            CustomUploaderItem customUploader = uploadersConfig.CustomUploadersList.ReturnIfValidIndex(uploadersConfig.CustomImageUploaderSelected);
+
+            if (customUploader != null)
+            {
+                return new CustomImageUploader(customUploader);
+            }
+
+            return null;
+        }
+    }
+
     public sealed class CustomImageUploader : ImageUploader
     {
         private CustomUploaderItem customUploader;

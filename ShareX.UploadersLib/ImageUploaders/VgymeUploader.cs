@@ -29,6 +29,21 @@ using System.IO;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class VgymeImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Vgyme;
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new VgymeUploader()
+            {
+                UserKey = uploadersConfig.VgymeUserKey
+            };
+        }
+    }
+
     public sealed class VgymeUploader : ImageUploader
     {
         public string UserKey { get; set; }

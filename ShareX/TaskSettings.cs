@@ -405,12 +405,6 @@ namespace ShareX
         Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
         public string CustomErrorSoundPath { get; set; }
 
-        [Category("Image"), DefaultValue(256), Description("Preferred thumbnail width. 0 means aspect ratio will be used to adjust width according to height.")]
-        public int ThumbnailPreferredWidth { get; set; }
-
-        [Category("Image"), DefaultValue(0), Description("Preferred thumbnail height. 0 means aspect ratio will be used to adjust height according to width.")]
-        public int ThumbnailPreferredHeight { get; set; }
-
         [Category("Paths"), Description("Custom capture path takes precedence over path configured in Application configuration."),
         Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CapturePath { get; set; }

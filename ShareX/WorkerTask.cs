@@ -806,80 +806,18 @@ namespace ShareX
 
         public UploadResult UploadImage(Stream stream, string fileName)
         {
-            ImageUploader imageUploader = null;
-
             ImageUploaderService service = UploaderFactory.GetImageUploaderServiceByEnum(Info.TaskSettings.ImageDestination);
 
             if (service != null)
             {
-                imageUploader = service.CreateUploader(Program.UploadersConfig);
-            }
-            else
-            {
-                switch (Info.TaskSettings.ImageDestination)
-                {
-                    case ImageDestination.ImageShack:
-                        Program.UploadersConfig.ImageShackSettings.ThumbnailWidth = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredWidth;
-                        Program.UploadersConfig.ImageShackSettings.ThumbnailHeight = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredHeight;
-                        imageUploader = new ImageShackUploader(APIKeys.ImageShackKey, Program.UploadersConfig.ImageShackSettings);
-                        break;
-                    case ImageDestination.TinyPic:
-                        imageUploader = new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, Program.UploadersConfig.TinyPicAccountType, Program.UploadersConfig.TinyPicRegistrationCode);
-                        break;
-                    case ImageDestination.Flickr:
-                        imageUploader = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret, Program.UploadersConfig.FlickrAuthInfo, Program.UploadersConfig.FlickrSettings);
-                        break;
-                    case ImageDestination.Photobucket:
-                        imageUploader = new Photobucket(Program.UploadersConfig.PhotobucketOAuthInfo, Program.UploadersConfig.PhotobucketAccountInfo);
-                        break;
-                    case ImageDestination.Twitter:
-                        OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
-                        imageUploader = new Twitter(twitterOAuth)
-                        {
-                            SkipMessageBox = Program.UploadersConfig.TwitterSkipMessageBox,
-                            DefaultMessage = Program.UploadersConfig.TwitterDefaultMessage ?? string.Empty
-                        };
-                        break;
-                    case ImageDestination.Chevereto:
-                        imageUploader = new Chevereto(Program.UploadersConfig.CheveretoUploader)
-                        {
-                            DirectURL = Program.UploadersConfig.CheveretoDirectURL
-                        };
-                        break;
-                    case ImageDestination.Vgyme:
-                        imageUploader = new VgymeUploader()
-                        {
-                            UserKey = Program.UploadersConfig.VgymeUserKey
-                        };
-                        break;
-                    case ImageDestination.SomeImage:
-                        string someImageAPIKey = Program.UploadersConfig.SomeImageAPIKey;
-                        if (string.IsNullOrEmpty(someImageAPIKey))
-                        {
-                            someImageAPIKey = APIKeys.SomeImageKey;
-                        }
-                        imageUploader = new SomeImage(someImageAPIKey)
-                        {
-                            DirectURL = Program.UploadersConfig.SomeImageDirectURL
-                        };
-                        break;
-                    case ImageDestination.Imgland:
-                        imageUploader = new ImglandUploader();
-                        break;
-                    case ImageDestination.CustomImageUploader:
-                        CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomImageUploaderSelected);
-                        if (customUploader != null)
-                        {
-                            imageUploader = new CustomImageUploader(customUploader);
-                        }
-                        break;
-                }
-            }
+                ImageUploader imageUploader = service.CreateUploader(Program.UploadersConfig);
 
-            if (imageUploader != null)
-            {
-                PrepareUploader(imageUploader);
-                return imageUploader.Upload(stream, fileName);
+                if (imageUploader != null)
+                {
+                    PrepareUploader(imageUploader);
+
+                    return imageUploader.Upload(stream, fileName);
+                }
             }
 
             return null;
