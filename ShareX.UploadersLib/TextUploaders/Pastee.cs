@@ -37,7 +37,7 @@ namespace ShareX.UploadersLib.TextUploaders
         {
             return new Pastee
             {
-                Lexer = uploadersConfig.TextFormat
+                Lexer = uploadersConfig.TaskInfo.TextFormat
             };
         }
     }

@@ -43,8 +43,18 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
         {
-            // TODO: Check TaskSettings override index (WorkerTask.GetCustomUploader)
-            CustomUploaderItem customUploader = uploadersConfig.CustomUploadersList.ReturnIfValidIndex(uploadersConfig.CustomTextUploaderSelected);
+            int index;
+
+            if (uploadersConfig.TaskInfo.OverrideCustomUploader)
+            {
+                index = uploadersConfig.TaskInfo.CustomUploaderIndex.BetweenOrDefault(0, uploadersConfig.CustomUploadersList.Count - 1);
+            }
+            else
+            {
+                index = uploadersConfig.CustomTextUploaderSelected;
+            }
+
+            CustomUploaderItem customUploader = uploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
 
             if (customUploader != null)
             {

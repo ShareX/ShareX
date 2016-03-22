@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
             if (string.IsNullOrEmpty(settings.TextFormat))
             {
-                settings.TextFormat = uploadersConfig.TextFormat;
+                settings.TextFormat = uploadersConfig.TaskInfo.TextFormat;
             }
 
             return new Pastebin(APIKeys.PastebinKey, settings);

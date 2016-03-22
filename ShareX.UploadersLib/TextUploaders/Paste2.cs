@@ -37,7 +37,7 @@ namespace ShareX.UploadersLib.TextUploaders
         {
             Paste2Settings settings = new Paste2Settings()
             {
-                TextFormat = uploadersConfig.TextFormat
+                TextFormat = uploadersConfig.TaskInfo.TextFormat
             };
 
             return new Paste2(settings);

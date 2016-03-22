@@ -41,8 +41,18 @@ namespace ShareX.UploadersLib.URLShorteners
 
         public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
         {
-            // TODO: Check TaskSettings override index (WorkerTask.GetCustomUploader)
-            CustomUploaderItem customUploader = uploadersConfig.CustomUploadersList.ReturnIfValidIndex(uploadersConfig.CustomURLShortenerSelected);
+            int index;
+
+            if (uploadersConfig.TaskInfo.OverrideCustomUploader)
+            {
+                index = uploadersConfig.TaskInfo.CustomUploaderIndex.BetweenOrDefault(0, uploadersConfig.CustomUploadersList.Count - 1);
+            }
+            else
+            {
+                index = uploadersConfig.CustomURLShortenerSelected;
+            }
+
+            CustomUploaderItem customUploader = uploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
 
             if (customUploader != null)
             {

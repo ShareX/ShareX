@@ -47,24 +47,27 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
         {
-            // TODO: Check TaskSettings override index (WorkerTask.GetFTPAccount)
-            // TODO: Unable to reach Info.DataType
-
-            EDataType dataType = EDataType.File;
             int index;
 
-            switch (dataType)
+            if (uploadersConfig.TaskInfo.OverrideFTP)
             {
-                case EDataType.Image:
-                    index = uploadersConfig.FTPSelectedImage;
-                    break;
-                case EDataType.Text:
-                    index = uploadersConfig.FTPSelectedText;
-                    break;
-                default:
-                case EDataType.File:
-                    index = uploadersConfig.FTPSelectedFile;
-                    break;
+                index = uploadersConfig.TaskInfo.FTPIndex.BetweenOrDefault(0, uploadersConfig.FTPAccountList.Count - 1);
+            }
+            else
+            {
+                switch (uploadersConfig.TaskInfo.DataType)
+                {
+                    case EDataType.Image:
+                        index = uploadersConfig.FTPSelectedImage;
+                        break;
+                    case EDataType.Text:
+                        index = uploadersConfig.FTPSelectedText;
+                        break;
+                    default:
+                    case EDataType.File:
+                        index = uploadersConfig.FTPSelectedFile;
+                        break;
+                }
             }
 
             FTPAccount account = uploadersConfig.FTPAccountList.ReturnIfValidIndex(index);

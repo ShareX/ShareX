@@ -208,6 +208,7 @@
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
     <Compile Include="HelperClasses\SSLBypassHelper.cs" />
+    <Compile Include="TaskReferenceHelper.cs" />
     <Compile Include="TextUploaderService.cs" />
     <Compile Include="UploaderFactory.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />

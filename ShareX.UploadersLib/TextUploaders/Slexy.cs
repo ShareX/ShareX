@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib.TextUploaders
         {
             SlexySettings settings = new SlexySettings()
             {
-                TextFormat = uploadersConfig.TextFormat
+                TextFormat = uploadersConfig.TaskInfo.TextFormat
             };
 
             return new Slexy(settings);

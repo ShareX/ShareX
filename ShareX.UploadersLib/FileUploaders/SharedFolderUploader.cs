@@ -39,13 +39,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
         {
-            // TODO: Check TaskSettings override index (WorkerTask.GetFTPAccount)
-            // TODO: Unable to reach Info.DataType
-
-            EDataType dataType = EDataType.File;
             int index;
 
-            switch (dataType)
+            switch (uploadersConfig.TaskInfo.DataType)
             {
                 case EDataType.Image:
                     index = uploadersConfig.LocalhostSelectedImages;

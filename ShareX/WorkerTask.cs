@@ -465,6 +465,16 @@ namespace ShareX
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
+                Program.UploadersConfig.TaskInfo = new TaskReferenceHelper()
+                {
+                    DataType = Info.DataType,
+                    OverrideFTP = Info.TaskSettings.OverrideFTP,
+                    FTPIndex = Info.TaskSettings.FTPIndex,
+                    OverrideCustomUploader = Info.TaskSettings.OverrideCustomUploader,
+                    CustomUploaderIndex = Info.TaskSettings.CustomUploaderIndex,
+                    TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat
+                };
+
                 switch (Info.UploadDestination)
                 {
                     case EDataType.Image:
@@ -477,6 +487,8 @@ namespace ShareX
                         Info.Result = UploadFile(Data, Info.FileName);
                         break;
                 }
+
+                StopRequested |= Program.UploadersConfig.TaskInfo.StopRequested;
             }
             catch (Exception e)
             {
@@ -820,8 +832,6 @@ namespace ShareX
 
         public UploadResult UploadText(Stream stream, string fileName)
         {
-            Program.UploadersConfig.TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat;
-
             TextUploader textUploader = UploaderFactory.GetTextUploaderServiceByEnum(Info.TaskSettings.TextDestination).CreateUploader(Program.UploadersConfig);
 
             if (textUploader != null)
@@ -1026,26 +1036,6 @@ namespace ShareX
             }
 
             return true;
-        }
-
-        private FTPAccount GetFTPAccount(int index)
-        {
-            if (Info.TaskSettings.OverrideFTP)
-            {
-                index = Info.TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
-            }
-
-            return Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
-        }
-
-        private CustomUploaderItem GetCustomUploader(int index)
-        {
-            if (Info.TaskSettings.OverrideCustomUploader)
-            {
-                index = Info.TaskSettings.CustomUploaderIndex.BetweenOrDefault(0, Program.UploadersConfig.CustomUploadersList.Count - 1);
-            }
-
-            return Program.UploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
         }
 
         private void ThreadCompleted()

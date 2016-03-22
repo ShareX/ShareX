@@ -42,7 +42,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
         {
-            // TODO: Test lack of StopRequested = true;
             using (EmailForm emailForm = new EmailForm(uploadersConfig.EmailRememberLastTo ? uploadersConfig.EmailLastTo : string.Empty,
                 uploadersConfig.EmailDefaultSubject, uploadersConfig.EmailDefaultBody))
             {
@@ -63,6 +62,10 @@ namespace ShareX.UploadersLib.FileUploaders
                         Subject = emailForm.Subject,
                         Body = emailForm.Body
                     };
+                }
+                else
+                {
+                    uploadersConfig.TaskInfo.StopRequested = true;
                 }
             }
 
