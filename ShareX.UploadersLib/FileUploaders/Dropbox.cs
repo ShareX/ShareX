@@ -34,6 +34,26 @@ using System.Text.RegularExpressions;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class DropboxFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Dropbox;
+
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        {
+            return new Dropbox(uploadersConfig.DropboxOAuth2Info, uploadersConfig.DropboxAccountInfo)
+            {
+                UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(uploadersConfig.DropboxUploadPath)),
+                AutoCreateShareableLink = uploadersConfig.DropboxAutoCreateShareableLink,
+                ShareURLType = uploadersConfig.DropboxURLType
+            };
+        }
+
+        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        {
+            return OAuth2Info.CheckOAuth(uploadersConfig.DropboxOAuth2Info);
+        }
+    }
+
     public sealed class Dropbox : FileUploader, IOAuth2Basic
     {
         public OAuth2Info AuthInfo { get; set; }

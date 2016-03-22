@@ -28,10 +28,11 @@ using System.Linq;
 
 namespace ShareX.UploadersLib
 {
-    public class UploaderFactory
+    public static class UploaderFactory
     {
         private static readonly ImageUploaderService[] imageUploaderServices = Helpers.GetInstances<ImageUploaderService>();
         private static readonly TextUploaderService[] textUploaderServices = Helpers.GetInstances<TextUploaderService>();
+        private static readonly FileUploaderService[] fileUploaderServices = Helpers.GetInstances<FileUploaderService>();
 
         public static ImageUploaderService GetImageUploaderServiceByEnum(ImageDestination enumValue)
         {
@@ -41,6 +42,11 @@ namespace ShareX.UploadersLib
         public static TextUploaderService GetTextUploaderServiceByEnum(TextDestination enumValue)
         {
             return textUploaderServices.FirstOrDefault(x => x.EnumValue == enumValue);
+        }
+
+        public static FileUploaderService GetFileUploaderServiceByEnum(FileDestination enumValue)
+        {
+            return fileUploaderServices.FirstOrDefault(x => x.EnumValue == enumValue);
         }
     }
 }

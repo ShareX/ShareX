@@ -439,10 +439,15 @@ namespace ShareX.UploadersLib
 
         public bool IsValid(FileDestination destination)
         {
+            FileUploaderService service = UploaderFactory.GetFileUploaderServiceByEnum(destination);
+
+            if (service != null)
+            {
+                return service.CheckConfig(this);
+            }
+
             switch (destination)
             {
-                case FileDestination.Dropbox:
-                    return OAuth2Info.CheckOAuth(DropboxOAuth2Info);
                 case FileDestination.FTP:
                     return FTPAccountList != null && FTPAccountList.IsValidIndex(FTPSelectedFile);
                 case FileDestination.OneDrive:
