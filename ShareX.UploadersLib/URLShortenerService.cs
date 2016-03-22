@@ -27,6 +27,6 @@ namespace ShareX.UploadersLib
 {
     public abstract class URLShortenerService : UploaderService<UrlShortenerType>
     {
-        public abstract URLShortener CreateShortener(UploadersConfig uploadersConfig);
+        public abstract URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo);
     }
 }

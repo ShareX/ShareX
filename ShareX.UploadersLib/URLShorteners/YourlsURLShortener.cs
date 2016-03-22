@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 (!string.IsNullOrEmpty(uploadersConfig.YourlsUsername) && !string.IsNullOrEmpty(uploadersConfig.YourlsPassword)));
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new YourlsURLShortener
             {

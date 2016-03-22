@@ -50,7 +50,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 AmazonS3.GetCurrentRegion(uploadersConfig.AmazonS3Settings) != AmazonS3.UnknownEndpoint;
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new AmazonS3(uploadersConfig.AmazonS3Settings);
         }

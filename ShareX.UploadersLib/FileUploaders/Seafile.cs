@@ -44,7 +44,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return !string.IsNullOrEmpty(uploadersConfig.SeafileAPIURL) && !string.IsNullOrEmpty(uploadersConfig.SeafileAuthToken) && !string.IsNullOrEmpty(uploadersConfig.SeafileRepoID);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new Seafile(uploadersConfig.SeafileAPIURL, uploadersConfig.SeafileAuthToken, uploadersConfig.SeafileRepoID)
             {

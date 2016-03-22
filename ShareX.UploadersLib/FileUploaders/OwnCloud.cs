@@ -43,7 +43,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return !string.IsNullOrEmpty(uploadersConfig.OwnCloudHost) && !string.IsNullOrEmpty(uploadersConfig.OwnCloudUsername) && !string.IsNullOrEmpty(uploadersConfig.OwnCloudPassword);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new OwnCloud(uploadersConfig.OwnCloudHost, uploadersConfig.OwnCloudUsername, uploadersConfig.OwnCloudPassword)
             {

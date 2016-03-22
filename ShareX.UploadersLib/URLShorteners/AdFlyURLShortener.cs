@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib.URLShorteners
             return !string.IsNullOrEmpty(uploadersConfig.AdFlyAPIKEY) && !string.IsNullOrEmpty(uploadersConfig.AdFlyAPIUID);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new AdFlyURLShortener
             {

@@ -43,7 +43,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return OAuth2Info.CheckOAuth(uploadersConfig.DropboxOAuth2Info);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new Dropbox(uploadersConfig.DropboxOAuth2Info, uploadersConfig.DropboxAccountInfo)
             {

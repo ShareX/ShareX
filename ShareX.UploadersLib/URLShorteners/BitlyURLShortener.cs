@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.URLShorteners
             return OAuth2Info.CheckOAuth(uploadersConfig.BitlyOAuth2Info);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             if (uploadersConfig.BitlyOAuth2Info == null)
             {

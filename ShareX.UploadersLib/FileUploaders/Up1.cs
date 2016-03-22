@@ -43,7 +43,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new Up1(uploadersConfig.Up1Host, uploadersConfig.Up1Key);
         }

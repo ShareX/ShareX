@@ -39,7 +39,7 @@ namespace ShareX.UploadersLib.URLShorteners
             return uploadersConfig.GoogleURLShortenerAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(uploadersConfig.GoogleURLShortenerOAuth2Info);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new GoogleURLShortener(uploadersConfig.GoogleURLShortenerAccountType, APIKeys.GoogleAPIKey, uploadersConfig.GoogleURLShortenerOAuth2Info);
         }

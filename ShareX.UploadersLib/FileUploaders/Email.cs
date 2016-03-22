@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 !string.IsNullOrEmpty(uploadersConfig.EmailPassword);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             using (EmailForm emailForm = new EmailForm(uploadersConfig.EmailRememberLastTo ? uploadersConfig.EmailLastTo : string.Empty,
                 uploadersConfig.EmailDefaultSubject, uploadersConfig.EmailDefaultBody))
@@ -65,7 +65,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
                 else
                 {
-                    uploadersConfig.TaskInfo.StopRequested = true;
+                    taskInfo.StopRequested = true;
                 }
             }
 

@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return OAuth2Info.CheckOAuth(uploadersConfig.BoxOAuth2Info);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new Box(uploadersConfig.BoxOAuth2Info)
             {

@@ -41,13 +41,13 @@ namespace ShareX.UploadersLib.TextUploaders
             return uploadersConfig.CustomUploadersList != null && uploadersConfig.CustomUploadersList.IsValidIndex(uploadersConfig.CustomTextUploaderSelected);
         }
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             int index;
 
-            if (uploadersConfig.TaskInfo.OverrideCustomUploader)
+            if (taskInfo.OverrideCustomUploader)
             {
-                index = uploadersConfig.TaskInfo.CustomUploaderIndex.BetweenOrDefault(0, uploadersConfig.CustomUploadersList.Count - 1);
+                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, uploadersConfig.CustomUploadersList.Count - 1);
             }
             else
             {

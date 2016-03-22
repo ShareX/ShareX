@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return !string.IsNullOrEmpty(uploadersConfig.SulAPIKey);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new SulUploader(uploadersConfig.SulAPIKey);
         }

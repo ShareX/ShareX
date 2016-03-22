@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using CG.Web.MegaApiClient;
-using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.HelperClasses;
@@ -353,9 +352,6 @@ namespace ShareX.UploadersLib
         #endregion Custom Uploaders
 
         #region Helper Methods
-
-        [JsonIgnore]
-        public TaskReferenceHelper TaskInfo { get; set; }
 
         public bool IsValid<T>(int index)
         {

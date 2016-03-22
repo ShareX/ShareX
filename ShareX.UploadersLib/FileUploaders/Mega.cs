@@ -43,7 +43,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 uploadersConfig.MegaAuthInfos.PasswordAesKey != null;
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new Mega(uploadersConfig.MegaAuthInfos, uploadersConfig.MegaParentNodeId);
         }

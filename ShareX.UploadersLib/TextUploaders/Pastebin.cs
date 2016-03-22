@@ -36,13 +36,13 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             PastebinSettings settings = uploadersConfig.PastebinSettings;
 
             if (string.IsNullOrEmpty(settings.TextFormat))
             {
-                settings.TextFormat = uploadersConfig.TaskInfo.TextFormat;
+                settings.TextFormat = taskInfo.TextFormat;
             }
 
             return new Pastebin(APIKeys.PastebinKey, settings);

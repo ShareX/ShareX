@@ -39,13 +39,13 @@ namespace ShareX.UploadersLib.URLShorteners
             return uploadersConfig.CustomUploadersList != null && uploadersConfig.CustomUploadersList.IsValidIndex(uploadersConfig.CustomURLShortenerSelected);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             int index;
 
-            if (uploadersConfig.TaskInfo.OverrideCustomUploader)
+            if (taskInfo.OverrideCustomUploader)
             {
-                index = uploadersConfig.TaskInfo.CustomUploaderIndex.BetweenOrDefault(0, uploadersConfig.CustomUploadersList.Count - 1);
+                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, uploadersConfig.CustomUploadersList.Count - 1);
             }
             else
             {

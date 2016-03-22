@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             string someImageAPIKey = uploadersConfig.SomeImageAPIKey;
 

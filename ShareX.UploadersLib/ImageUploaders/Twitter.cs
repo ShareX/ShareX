@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 OAuthInfo.CheckOAuth(uploadersConfig.TwitterOAuthInfoList[uploadersConfig.TwitterSelectedAccount]);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             OAuthInfo twitterOAuth = uploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(uploadersConfig.TwitterSelectedAccount);
 

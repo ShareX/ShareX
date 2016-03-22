@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return uploadersConfig.LambdaSettings != null && !string.IsNullOrEmpty(uploadersConfig.LambdaSettings.UserAPIKey);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new Lambda(uploadersConfig.LambdaSettings);
         }

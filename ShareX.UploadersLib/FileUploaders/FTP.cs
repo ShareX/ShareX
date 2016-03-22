@@ -45,17 +45,17 @@ namespace ShareX.UploadersLib.FileUploaders
             return uploadersConfig.FTPAccountList != null && uploadersConfig.FTPAccountList.IsValidIndex(uploadersConfig.FTPSelectedFile);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             int index;
 
-            if (uploadersConfig.TaskInfo.OverrideFTP)
+            if (taskInfo.OverrideFTP)
             {
-                index = uploadersConfig.TaskInfo.FTPIndex.BetweenOrDefault(0, uploadersConfig.FTPAccountList.Count - 1);
+                index = taskInfo.FTPIndex.BetweenOrDefault(0, uploadersConfig.FTPAccountList.Count - 1);
             }
             else
             {
-                switch (uploadersConfig.TaskInfo.DataType)
+                switch (taskInfo.DataType)
                 {
                     case EDataType.Image:
                         index = uploadersConfig.FTPSelectedImage;

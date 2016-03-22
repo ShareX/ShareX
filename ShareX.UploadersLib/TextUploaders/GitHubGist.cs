@@ -39,7 +39,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             OAuth2Info oauth = null;
 

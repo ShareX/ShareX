@@ -37,11 +37,11 @@ namespace ShareX.UploadersLib.FileUploaders
             return uploadersConfig.LocalhostAccountList != null && uploadersConfig.LocalhostAccountList.IsValidIndex(uploadersConfig.LocalhostSelectedFiles);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             int index;
 
-            switch (uploadersConfig.TaskInfo.DataType)
+            switch (taskInfo.DataType)
             {
                 case EDataType.Image:
                     index = uploadersConfig.LocalhostSelectedImages;

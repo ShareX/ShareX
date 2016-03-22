@@ -39,7 +39,7 @@ namespace ShareX.UploadersLib.URLShorteners
             return !string.IsNullOrEmpty(uploadersConfig.PolrAPIKey);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new PolrURLShortener
             {

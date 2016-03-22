@@ -45,7 +45,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return uploadersConfig.PomfUploader != null && !string.IsNullOrEmpty(uploadersConfig.PomfUploader.UploadURL);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new Pomf(uploadersConfig.PomfUploader);
         }

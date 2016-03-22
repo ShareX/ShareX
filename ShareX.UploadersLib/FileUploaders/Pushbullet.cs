@@ -45,7 +45,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 uploadersConfig.PushbulletSettings.DeviceList != null && uploadersConfig.PushbulletSettings.DeviceList.IsValidIndex(uploadersConfig.PushbulletSettings.SelectedDevice);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new Pushbullet(uploadersConfig.PushbulletSettings);
         }

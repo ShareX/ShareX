@@ -33,7 +33,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
         public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig)
+        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new TinyURLShortener();
         }

@@ -44,7 +44,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 (!string.IsNullOrEmpty(uploadersConfig.SendSpaceUsername) && !string.IsNullOrEmpty(uploadersConfig.SendSpacePassword));
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new SendSpace(APIKeys.SendSpaceKey)
             {

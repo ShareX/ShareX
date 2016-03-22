@@ -34,11 +34,11 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             SlexySettings settings = new SlexySettings()
             {
-                TextFormat = uploadersConfig.TaskInfo.TextFormat
+                TextFormat = taskInfo.TextFormat
             };
 
             return new Slexy(settings);

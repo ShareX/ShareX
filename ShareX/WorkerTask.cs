@@ -80,6 +80,7 @@ namespace ShareX
         private string tempText;
         private ThreadWorker threadWorker;
         private Uploader uploader;
+        private TaskReferenceHelper taskReferenceHelper;
 
         private static string lastSaveAsFolder;
 
@@ -315,6 +316,8 @@ namespace ShareX
         {
             Info.StartTime = DateTime.UtcNow;
 
+            CreateTaskReferenceHelper();
+
             try
             {
                 StopRequested = !DoThreadJob();
@@ -347,6 +350,19 @@ namespace ShareX
             }
 
             Info.UploadTime = DateTime.UtcNow;
+        }
+
+        private void CreateTaskReferenceHelper()
+        {
+            taskReferenceHelper = new TaskReferenceHelper()
+            {
+                DataType = Info.DataType,
+                OverrideFTP = Info.TaskSettings.OverrideFTP,
+                FTPIndex = Info.TaskSettings.FTPIndex,
+                OverrideCustomUploader = Info.TaskSettings.OverrideCustomUploader,
+                CustomUploaderIndex = Info.TaskSettings.CustomUploaderIndex,
+                TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat
+            };
         }
 
         private void DoUploadJob()
@@ -465,16 +481,6 @@ namespace ShareX
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                Program.UploadersConfig.TaskInfo = new TaskReferenceHelper()
-                {
-                    DataType = Info.DataType,
-                    OverrideFTP = Info.TaskSettings.OverrideFTP,
-                    FTPIndex = Info.TaskSettings.FTPIndex,
-                    OverrideCustomUploader = Info.TaskSettings.OverrideCustomUploader,
-                    CustomUploaderIndex = Info.TaskSettings.CustomUploaderIndex,
-                    TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat
-                };
-
                 switch (Info.UploadDestination)
                 {
                     case EDataType.Image:
@@ -488,7 +494,7 @@ namespace ShareX
                         break;
                 }
 
-                StopRequested |= Program.UploadersConfig.TaskInfo.StopRequested;
+                StopRequested |= taskReferenceHelper.StopRequested;
             }
             catch (Exception e)
             {
@@ -818,7 +824,7 @@ namespace ShareX
 
         public UploadResult UploadImage(Stream stream, string fileName)
         {
-            ImageUploader imageUploader = UploaderFactory.GetImageUploaderServiceByEnum(Info.TaskSettings.ImageDestination).CreateUploader(Program.UploadersConfig);
+            ImageUploader imageUploader = UploaderFactory.GetImageUploaderServiceByEnum(Info.TaskSettings.ImageDestination).CreateUploader(Program.UploadersConfig, taskReferenceHelper);
 
             if (imageUploader != null)
             {
@@ -832,7 +838,7 @@ namespace ShareX
 
         public UploadResult UploadText(Stream stream, string fileName)
         {
-            TextUploader textUploader = UploaderFactory.GetTextUploaderServiceByEnum(Info.TaskSettings.TextDestination).CreateUploader(Program.UploadersConfig);
+            TextUploader textUploader = UploaderFactory.GetTextUploaderServiceByEnum(Info.TaskSettings.TextDestination).CreateUploader(Program.UploadersConfig, taskReferenceHelper);
 
             if (textUploader != null)
             {
@@ -862,7 +868,7 @@ namespace ShareX
                     break;
             }
 
-            FileUploader fileUploader = UploaderFactory.GetFileUploaderServiceByEnum(fileDestination).CreateUploader(Program.UploadersConfig);
+            FileUploader fileUploader = UploaderFactory.GetFileUploaderServiceByEnum(fileDestination).CreateUploader(Program.UploadersConfig, taskReferenceHelper);
 
             if (fileUploader != null)
             {
@@ -876,7 +882,7 @@ namespace ShareX
 
         public UploadResult ShortenURL(string url)
         {
-            URLShortener urlShortener = UploaderFactory.GetURLShortenerServiceByEnum(Info.TaskSettings.URLShortenerDestination).CreateShortener(Program.UploadersConfig);
+            URLShortener urlShortener = UploaderFactory.GetURLShortenerServiceByEnum(Info.TaskSettings.URLShortenerDestination).CreateShortener(Program.UploadersConfig, taskReferenceHelper);
 
             if (urlShortener != null)
             {
@@ -988,6 +994,18 @@ namespace ShareX
             }
         }
 
+        private void PrepareUploader(Uploader currentUploader)
+        {
+            uploader = currentUploader;
+            uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
+            uploader.ProgressChanged += uploader_ProgressChanged;
+
+            if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard) && Info.TaskSettings.AdvancedSettings.EarlyCopyURL)
+            {
+                uploader.EarlyURLCopyRequested += url => ClipboardHelpers.CopyText(url);
+            }
+        }
+
         private bool DownloadAndUpload()
         {
             string url = Info.Result.URL.Trim();
@@ -1041,18 +1059,6 @@ namespace ShareX
         private void ThreadCompleted()
         {
             OnUploadCompleted();
-        }
-
-        private void PrepareUploader(Uploader currentUploader)
-        {
-            uploader = currentUploader;
-            uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
-            uploader.ProgressChanged += uploader_ProgressChanged;
-
-            if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard) && Info.TaskSettings.AdvancedSettings.EarlyCopyURL)
-            {
-                uploader.EarlyURLCopyRequested += url => ClipboardHelpers.CopyText(url);
-            }
         }
 
         private void uploader_ProgressChanged(ProgressManager progress)

@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             return !string.IsNullOrEmpty(uploadersConfig.FlickrAuthInfo.Token);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret, uploadersConfig.FlickrAuthInfo, uploadersConfig.FlickrSettings);
         }

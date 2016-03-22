@@ -46,7 +46,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return !string.IsNullOrEmpty(uploadersConfig.MediaFireUsername) && !string.IsNullOrEmpty(uploadersConfig.MediaFirePassword);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new MediaFire(APIKeys.MediaFireAppId, APIKeys.MediaFireApiKey, uploadersConfig.MediaFireUsername, uploadersConfig.MediaFirePassword)
             {

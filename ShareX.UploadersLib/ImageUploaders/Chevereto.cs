@@ -45,7 +45,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 !string.IsNullOrEmpty(uploadersConfig.CheveretoUploader.APIKey);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new Chevereto(uploadersConfig.CheveretoUploader)
             {

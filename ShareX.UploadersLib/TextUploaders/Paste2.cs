@@ -33,11 +33,11 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             Paste2Settings settings = new Paste2Settings()
             {
-                TextFormat = uploadersConfig.TaskInfo.TextFormat
+                TextFormat = taskInfo.TextFormat
             };
 
             return new Paste2(settings);

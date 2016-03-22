@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return OAuthInfo.CheckOAuth(uploadersConfig.JiraOAuthInfo);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig)
+        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
         {
             return new Jira(uploadersConfig.JiraHost, uploadersConfig.JiraOAuthInfo, uploadersConfig.JiraIssuePrefix);
         }
