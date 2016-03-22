@@ -25,10 +25,8 @@
 
 namespace ShareX.UploadersLib
 {
-    public abstract class TextUploaderService : UploaderService
+    public abstract class TextUploaderService : UploaderService<TextDestination>
     {
-        public abstract TextDestination EnumValue { get; }
-
         public abstract TextUploader CreateUploader(UploadersConfig uploadersConfig);
     }
 }

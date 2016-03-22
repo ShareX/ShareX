@@ -25,8 +25,10 @@
 
 namespace ShareX.UploadersLib
 {
-    public abstract class UploaderService
+    public abstract class UploaderService<T>
     {
+        public abstract T EnumValue { get; }
+
         // This function is used in destinations menu to show invalid uploaders as disabled.
         // For example if uploader is only allowed to upload with account and if account configuration is not valid then this function should return false.
         public abstract bool CheckConfig(UploadersConfig uploadersConfig);
