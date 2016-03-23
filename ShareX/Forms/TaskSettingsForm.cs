@@ -550,7 +550,7 @@ namespace ShareX
             {
                 for (int i = 0; i < parent.DropDownItems.Count; i++)
                 {
-                    parent.DropDownItems[i].Enabled = Program.UploadersConfig.IsValid<T>(i);
+                    parent.DropDownItems[i].Enabled = UploadersConfigValidator.Validate<T>(i, Program.UploadersConfig);
                 }
             }
         }

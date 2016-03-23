@@ -209,6 +209,7 @@
     <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
     <Compile Include="HelperClasses\SSLBypassHelper.cs" />
     <Compile Include="SharingService.cs" />
+    <Compile Include="SharingServices\DeliciousSharingService.cs" />
     <Compile Include="SharingServices\EmailSharingService.cs" />
     <Compile Include="SharingServices\FacebookSharingService.cs" />
     <Compile Include="SharingServices\GooglePlusSharingService.cs" />
@@ -282,6 +283,7 @@
     <Compile Include="TextUploaders\CustomTextUploader.cs" />
     <Compile Include="TextUploaders\GitHubGist.cs" />
     <Compile Include="TextUploaders\Paste_ee.cs" />
+    <Compile Include="UploadersConfigValidator.cs" />
     <Compile Include="UploaderService.cs" />
     <Compile Include="UploadResult.cs" />
     <Compile Include="Forms\TwitterTweetForm.cs">

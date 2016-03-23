@@ -191,7 +191,7 @@ namespace ShareX
         {
             Enum destination = (Enum)Enum.ToObject(typeof(T), index);
 
-            if (Program.UploadersConfig.IsValid<T>(index))
+            if (UploadersConfigValidator.Validate<T>(index, Program.UploadersConfig))
             {
                 RadioButton rb = new RadioButton() { AutoSize = true };
 
