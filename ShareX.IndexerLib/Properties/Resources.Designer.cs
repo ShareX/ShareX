@@ -61,7 +61,7 @@ namespace ShareX.IndexerLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose folder path.
+        ///   Looks up a localized string similar to Choose folder.
         /// </summary>
         internal static string DirectoryIndexerForm_BrowseFolder_Choose_folder_path {
             get {

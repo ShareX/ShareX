@@ -506,7 +506,7 @@ Please run ShareX as administrator to change personal folder path.</value>
     <value>..\Resources\arrow-090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
-    <value>Choose folder path</value>
+    <value>Choose folder</value>
   </data>
   <data name="Rectangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

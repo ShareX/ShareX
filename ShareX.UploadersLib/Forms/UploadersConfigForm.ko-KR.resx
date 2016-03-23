@@ -149,21 +149,6 @@
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>삭제</value>
   </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>도움말...</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>예시 보기...</value>
-  </data>
-  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
-    <value>제목</value>
-  </data>
-  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
-    <value>설명</value>
-  </data>
-  <data name="chBoxFoldersName.Text" xml:space="preserve">
-    <value>폴더 이름</value>
-  </data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>API 키:</value>
   </data>
@@ -173,517 +158,532 @@
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>API 키:</value>
   </data>
-  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>다이렉트 URL</value>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>공개 업로드</value>
   </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>앨범 목록 갱신하기</value>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>사용자 키:</value>
   </data>
-  <data name="chPicasaDescription.Text" xml:space="preserve">
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>구문 강조:</value>
+  </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>커스텀 도메인:</value>
+  </data>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>텍스트 업로더</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>선택한 앨범에 이미지 업로드하기</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>다이렉트 URL 사용하기</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>제목</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
     <value>설명</value>
   </data>
-  <data name="chPicasaName.Text" xml:space="preserve">
-    <value>이름</value>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>앨범 목록 갱신하기</value>
   </data>
-  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>업로드할 앨범 ID (빈 칸 = 앨범에 업로드하지 않음):</value>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>섬네일 타입:</value>
   </data>
-  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
-    <value>사용자 계정</value>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>로그인</value>
   </data>
-  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>로그인이 필요합니다.</value>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>공개 프로필 페이지 열기...</value>
   </data>
-  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>2단계: 인증 완료하기</value>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>공개 업로드</value>
   </data>
-  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>인증 코드 (인증 페이지에서 코드를 받으세요):</value>
-  </data>
-  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>1단계: 인증 페이지 열기...</value>
-  </data>
-  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
-    <value>기본 앨범 이름</value>
-  </data>
-  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
-    <value>새 앨범 생성</value>
-  </data>
-  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
-    <value>앨범 생성</value>
-  </data>
-  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
-    <value>부모 앨범 경로</value>
-  </data>
-  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>새 앨범 이름 (2글자에서 50글자 사이여야 되며, 알파벳, 숫자, 밑줄 ( _ ), 하이픈 (-), 공백만을 포함해야 함)</value>
-  </data>
-  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
-    <value>업로드할 곳</value>
-  </data>
-  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>앨범 제거</value>
-  </data>
-  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
-    <value>앨범 추가</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>1단계: 인증 페이지 열기...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>2단계: 인증 완료하기</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>인증 새로고침하기</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>포토스트림 보기...</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
     <value>내 이미지 페이지 열기...</value>
   </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>이메일:</value>
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>사용자 ID:</value>
   </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
   </data>
   <data name="btnTinyPicLogin.Text" xml:space="preserve">
     <value>로그인</value>
   </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
+  <data name="lblTinyPicPassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
   </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
+  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+    <value>이메일:</value>
   </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>내 이미지 페이지 열기...</value>
   </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드</value>
+  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
+    <value>포토스트림 보기...</value>
   </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>공개 프로필 페이지 열기...</value>
-  </data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>로그인</value>
-  </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>섬네일 타입:</value>
-  </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
-    <value>앨범 목록 갱신하기</value>
-  </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>설명</value>
-  </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>제목</value>
-  </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>다이렉트 URL 사용하기</value>
-  </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>선택한 앨범에 이미지 업로드하기</value>
-  </data>
-  <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>텍스트 업로더</value>
-  </data>
-  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
-    <value>커스텀 도메인:</value>
-  </data>
-  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>구문 강조:</value>
-  </data>
-  <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>사용자 키:</value>
-  </data>
-  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드</value>
-  </data>
-  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>사용자 API 키:</value>
-  </data>
-  <data name="btnPastebinLogin.Text" xml:space="preserve">
-    <value>로그인</value>
-  </data>
-  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
-    <value>상태:</value>
-  </data>
-  <data name="lblPastebinUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
-  </data>
-  <data name="lblPastebinPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="lblPastebinTitle.Text" xml:space="preserve">
-    <value>이름:</value>
-  </data>
-  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
-    <value>공개 설정:</value>
-  </data>
-  <data name="lblPastebinExpiration.Text" xml:space="preserve">
-    <value>만료 시점:</value>
-  </data>
-  <data name="lblPastebinSyntax.Text" xml:space="preserve">
-    <value>언어:</value>
-  </data>
-  <data name="btnPastebinRegister.Text" xml:space="preserve">
-    <value>등록하기...</value>
-  </data>
-  <data name="tpFileUploaders.Text" xml:space="preserve">
-    <value>파일 업로더</value>
-  </data>
-  <data name="tpEmail.Text" xml:space="preserve">
-    <value>이메일</value>
-  </data>
-  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
-    <value>포트:</value>
-  </data>
-  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
-    <value>기본 메시지:</value>
-  </data>
-  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
-    <value>기본 제목:</value>
-  </data>
-  <data name="lblEmailFrom.Text" xml:space="preserve">
-    <value>이메일:</value>
-  </data>
-  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
-    <value>마지막으로 사용한 수신자 주소 기억하기</value>
-  </data>
-  <data name="lblEmailPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
-    <value>SMTP 서버:</value>
-  </data>
-  <data name="tpSharedFolder.Text" xml:space="preserve">
-    <value>공유된 폴더</value>
-  </data>
-  <data name="lblSharedFolderImages.Text" xml:space="preserve">
-    <value>이미지:</value>
-  </data>
-  <data name="lblSharedFolderText.Text" xml:space="preserve">
-    <value>텍스트:</value>
-  </data>
-  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
-    <value>파일:</value>
-  </data>
-  <data name="lblLambdaInfo.Text" xml:space="preserve">
-    <value>API 키를 얻으려면 https://lambda.sx/ 에서 Lambda에 로그인한 뒤 우측 상단의 설정 톱니바퀴를 클릭하세요.</value>
-  </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Jira 서버</value>
-  </data>
-  <data name="lblJiraHost.Text" xml:space="preserve">
-    <value>Jira 호스트:</value>
-  </data>
-  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
-    <value>템플릿</value>
-  </data>
-  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
-    <value>Jira 이슈 접두사:</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>업로드할 곳</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>폴더 삭제</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>폴더 추가</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>폴더 목록 갱신하기</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>인증</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>인증</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
+  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
     <value>인증 새로고침하기</value>
   </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>로그인 상태:</value>
+  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
+    <value>2단계: 인증 완료하기</value>
   </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL 종류:</value>
+  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
+    <value>1단계: 인증 페이지 열기...</value>
   </data>
-  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
-    <value>이메일:</value>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>앨범 추가</value>
   </data>
-  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>앨범 제거</value>
   </data>
-  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
-    <value>존재한다면 다이렉트 URL 사용하기</value>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>업로드할 곳</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>로그인</value>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>새 앨범 이름 (2글자에서 50글자 사이여야 되며, 알파벳, 숫자, 밑줄 ( _ ), 하이픈 (-), 공백만을 포함해야 함)</value>
   </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>이메일:</value>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>부모 앨범 경로</value>
   </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>앨범 생성</value>
   </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>로그인 필요</value>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>새 앨범 생성</value>
   </data>
-  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>기본 앨범 이름</value>
   </data>
-  <data name="lblSendSpacePassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>1단계: 인증 페이지 열기...</value>
   </data>
-  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>등록...</value>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>인증 코드 (인증 페이지에서 코드를 받으세요):</value>
   </data>
-  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>사용자 API 키:</value>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>2단계: 인증 완료하기</value>
   </data>
-  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
-    <value>장치 목록 가져오기</value>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>로그인이 필요합니다.</value>
   </data>
-  <data name="lblPushbulletDevices.Text" xml:space="preserve">
-    <value>장치:</value>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>사용자 계정</value>
   </data>
-  <data name="lblMediaFireEmail.Text" xml:space="preserve">
-    <value>이메일:</value>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>업로드할 앨범 ID (빈 칸 = 앨범에 업로드하지 않음):</value>
   </data>
-  <data name="lblMediaFirePassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>이름</value>
   </data>
-  <data name="lblMediaFirePath.Text" xml:space="preserve">
-    <value>업로드 경로:</value>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>설명</value>
   </data>
-  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
-    <value>파일 이름을 포함하는 긴 링크 사용하기</value>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>앨범 목록 갱신하기</value>
   </data>
-  <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>호스트:</value>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>다이렉트 URL</value>
   </data>
-  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>폴더 이름</value>
   </data>
-  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
+  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
+    <value>예시 보기...</value>
   </data>
-  <data name="lblOwnCloudPath.Text" xml:space="preserve">
-    <value>경로:</value>
+  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
+    <value>도움말...</value>
   </data>
-  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
-    <value>공유 가능한 URL 생성하기</value>
+  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
+    <value>필드 전부 초기화 --&gt;</value>
   </data>
-  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>다이렉트 링크 (URL에 "&amp;download"를 덧붙임)</value>
+  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
+    <value>이미지 업로더:</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>유효하지 않은 SSL 인증서 무시하기</value>
-  </data>
-  <data name="lblMegaPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="btnMegaLogin.Text" xml:space="preserve">
-    <value>로그인</value>
-  </data>
-  <data name="lblMegaEmail.Text" xml:space="preserve">
-    <value>이메일:</value>
-  </data>
-  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>상태:</value>
-  </data>
-  <data name="lblMegaFolder.Text" xml:space="preserve">
-    <value>폴더:</value>
-  </data>
-  <data name="btnMegaRegister.Text" xml:space="preserve">
-    <value>등록하기...</value>
-  </data>
-  <data name="lblMegaStatus.Text" xml:space="preserve">
-    <value>설정 됨 / 설정되지 않음</value>
-  </data>
-  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
-    <value>새로고침</value>
-  </data>
-  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
-    <value>접근 키:</value>
-  </data>
-  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
-    <value>비밀키:</value>
-  </data>
-  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
-    <value>업로드 경로:</value>
-  </data>
-  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
-    <value>엔드포인트:</value>
-  </data>
-  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
-    <value>버킷 이름:</value>
-  </data>
-  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
-    <value>미리보기</value>
-  </data>
-  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
-    <value>URL 미리보기:</value>
-  </data>
-  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
-    <value>폴더 목록 갱신</value>
-  </data>
-  <data name="lblBoxFolderID.Text" xml:space="preserve">
-    <value>선택된 폴더:</value>
-  </data>
-  <data name="cbBoxShare.Text" xml:space="preserve">
-    <value>공유 가능한 링크 생성하기</value>
-  </data>
-  <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>참고: 폴더 이름을 더블클릭하면 그 폴더 안으로 들어갈 수 있습니다.</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
-    <value>폴더 목록 갱신</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>폴더 ID:</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>선택한 폴더에 파일 업로드하기</value>
-  </data>
-  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
-    <value>공유 가능한 링크 생성하기</value>
-  </data>
-  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>선택된 폴더:</value>
-  </data>
-  <data name="lblDropboxPath.Text" xml:space="preserve">
-    <value>업로드 경로:</value>
-  </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>"Public" 폴더를 쓴다면 공유 가능한 URL은 알아서 이미 생성될 것이기 때문에, "공유 가능한 URL"을 체크할 필요는 없습니다.</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>상태:</value>
-  </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>선택...</value>
-  </data>
-  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>공유 가능한 URL 생성하기:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>이미지:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>텍스트:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>파일:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>클라이언트...</value>
-  </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL 단축기</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>API 키:</value>
-  </data>
-  <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>API 키와 UID는 여기서 찾을 수 있습니다</value>
-  </data>
-  <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>시그내쳐:</value>
-  </data>
-  <data name="lblYourlsUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
-  </data>
-  <data name="lblYourlsPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>참고: 시그내쳐가 있으면 사용자 ID와 비밀번호를 입력하지 않아도 됩니다.</value>
-  </data>
-  <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>도메인:</value>
-  </data>
-  <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>기타 업로더</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>사용자 정의 업로더</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>요청 타입:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>파일 폼 항목명:</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>섬네일 URL:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>테스트</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>URL 단축기:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>테스트</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>요청 URL</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>텍스트 업로더:</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>업로더</value>
-  </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>추가</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>갱신</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>삭제</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>응답 형식:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>마지막 응답 보기...</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>파일 제거 URL:</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>테스트 결과:</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
+  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
     <value>테스트</value>
   </data>
   <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
     <value>파일 업로더:</value>
   </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
+  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
     <value>테스트</value>
   </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>이미지 업로더:</value>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>테스트 결과:</value>
   </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>필드 전부 초기화 --&gt;</value>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>파일 제거 URL:</value>
+  </data>
+  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
+    <value>마지막 응답 보기...</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>응답 형식:</value>
+  </data>
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
+    <value>갱신</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>업로더</value>
+  </data>
+  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
+    <value>텍스트 업로더:</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>요청 URL</value>
+  </data>
+  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
+    <value>테스트</value>
+  </data>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>URL 단축기:</value>
+  </data>
+  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
+    <value>테스트</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>섬네일 URL:</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>파일 폼 항목명:</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>요청 타입:</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>사용자 정의 업로더</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>기타 업로더</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>도메인:</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>참고: 시그내쳐가 있으면 사용자 ID와 비밀번호를 입력하지 않아도 됩니다.</value>
+  </data>
+  <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>사용자 ID:</value>
+  </data>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>시그내쳐:</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>API 키와 UID는 여기서 찾을 수 있습니다</value>
+  </data>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>API 키:</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>URL 단축기</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>클라이언트...</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>파일:</value>
+  </data>
+  <data name="lblFtpText.Text" xml:space="preserve">
+    <value>텍스트:</value>
+  </data>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>이미지:</value>
+  </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>공유 가능한 URL 생성하기:</value>
+  </data>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>선택...</value>
+  </data>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>상태:</value>
+  </data>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>"Public" 폴더를 쓴다면 공유 가능한 URL은 알아서 이미 생성될 것이기 때문에, "공유 가능한 URL"을 체크할 필요는 없습니다.</value>
+  </data>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>업로드 경로:</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>선택된 폴더:</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>공유 가능한 링크 생성하기</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>선택한 폴더에 파일 업로드하기</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>폴더 ID:</value>
+  </data>
+  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
+    <value>제목</value>
+  </data>
+  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
+    <value>폴더 목록 갱신</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
+    <value>공개 업로드</value>
+  </data>
+  <data name="lblBoxFolderTip.Text" xml:space="preserve">
+    <value>참고: 폴더 이름을 더블클릭하면 그 폴더 안으로 들어갈 수 있습니다.</value>
+  </data>
+  <data name="cbBoxShare.Text" xml:space="preserve">
+    <value>공유 가능한 링크 생성하기</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>사용자 ID:</value>
+  </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>상태:</value>
+  </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>사용자 API 키:</value>
+  </data>
+  <data name="lblBoxFolderID.Text" xml:space="preserve">
+    <value>선택된 폴더:</value>
+  </data>
+  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
+    <value>폴더 목록 갱신</value>
+  </data>
+  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
+    <value>URL 미리보기:</value>
+  </data>
+  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
+    <value>미리보기</value>
+  </data>
+  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
+    <value>버킷 이름:</value>
+  </data>
+  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
+    <value>엔드포인트:</value>
+  </data>
+  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
+    <value>업로드 경로:</value>
+  </data>
+  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
+    <value>비밀키:</value>
+  </data>
+  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
+    <value>접근 키:</value>
+  </data>
+  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
+    <value>새로고침</value>
+  </data>
+  <data name="lblMegaStatus.Text" xml:space="preserve">
+    <value>설정 됨 / 설정되지 않음</value>
+  </data>
+  <data name="btnMegaRegister.Text" xml:space="preserve">
+    <value>등록하기...</value>
+  </data>
+  <data name="lblMegaFolder.Text" xml:space="preserve">
+    <value>폴더:</value>
+  </data>
+  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
+    <value>상태:</value>
+  </data>
+  <data name="lblMegaEmail.Text" xml:space="preserve">
+    <value>이메일:</value>
+  </data>
+  <data name="btnMegaLogin.Text" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="lblMegaPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>유효하지 않은 SSL 인증서 무시하기</value>
+  </data>
+  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
+    <value>다이렉트 링크 (URL에 "&amp;download"를 덧붙임)</value>
+  </data>
+  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
+    <value>공유 가능한 URL 생성하기</value>
+  </data>
+  <data name="lblOwnCloudPath.Text" xml:space="preserve">
+    <value>경로:</value>
+  </data>
+  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
+    <value>사용자 ID:</value>
+  </data>
+  <data name="lblOwnCloudHost.Text" xml:space="preserve">
+    <value>호스트:</value>
+  </data>
+  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
+    <value>파일 이름을 포함하는 긴 링크 사용하기</value>
+  </data>
+  <data name="lblMediaFirePath.Text" xml:space="preserve">
+    <value>업로드 경로:</value>
+  </data>
+  <data name="lblMediaFirePassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblMediaFireEmail.Text" xml:space="preserve">
+    <value>이메일:</value>
+  </data>
+  <data name="lblPushbulletDevices.Text" xml:space="preserve">
+    <value>장치:</value>
+  </data>
+  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
+    <value>장치 목록 가져오기</value>
+  </data>
+  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
+    <value>사용자 API 키:</value>
+  </data>
+  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
+    <value>등록...</value>
+  </data>
+  <data name="lblSendSpacePassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
+    <value>사용자 ID:</value>
+  </data>
+  <data name="lblGe_ttStatus.Text" xml:space="preserve">
+    <value>로그인 필요</value>
+  </data>
+  <data name="lblGe_ttPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblGe_ttEmail.Text" xml:space="preserve">
+    <value>이메일:</value>
+  </data>
+  <data name="btnGe_ttLogin.Text" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
+    <value>존재한다면 다이렉트 URL 사용하기</value>
+  </data>
+  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
+    <value>이메일:</value>
+  </data>
+  <data name="lblMinusURLType.Text" xml:space="preserve">
+    <value>URL 종류:</value>
+  </data>
+  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
+    <value>로그인 상태:</value>
+  </data>
+  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
+    <value>인증 새로고침하기</value>
+  </data>
+  <data name="lblMinusPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblMinusUsername.Text" xml:space="preserve">
+    <value>사용자 ID:</value>
+  </data>
+  <data name="btnMinusAuth.Text" xml:space="preserve">
+    <value>인증</value>
+  </data>
+  <data name="gbMinusUserPass.Text" xml:space="preserve">
+    <value>인증</value>
+  </data>
+  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
+    <value>폴더 목록 갱신하기</value>
+  </data>
+  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
+    <value>폴더 추가</value>
+  </data>
+  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
+    <value>폴더 삭제</value>
+  </data>
+  <data name="gbMinusUpload.Text" xml:space="preserve">
+    <value>업로드할 곳</value>
+  </data>
+  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
+    <value>Jira 이슈 접두사:</value>
+  </data>
+  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
+    <value>템플릿</value>
+  </data>
+  <data name="lblJiraHost.Text" xml:space="preserve">
+    <value>Jira 호스트:</value>
+  </data>
+  <data name="gpJiraServer.Text" xml:space="preserve">
+    <value>Jira 서버</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>API 키를 얻으려면 https://lambda.sx/ 에서 Lambda에 로그인한 뒤 우측 상단의 설정 톱니바퀴를 클릭하세요.</value>
+  </data>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>파일:</value>
+  </data>
+  <data name="lblSharedFolderText.Text" xml:space="preserve">
+    <value>텍스트:</value>
+  </data>
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
+    <value>이미지:</value>
+  </data>
+  <data name="tpSharedFolder.Text" xml:space="preserve">
+    <value>공유된 폴더</value>
+  </data>
+  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
+    <value>SMTP 서버:</value>
+  </data>
+  <data name="lblEmailPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
+    <value>마지막으로 사용한 수신자 주소 기억하기</value>
+  </data>
+  <data name="lblEmailFrom.Text" xml:space="preserve">
+    <value>이메일:</value>
+  </data>
+  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
+    <value>기본 제목:</value>
+  </data>
+  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
+    <value>기본 메시지:</value>
+  </data>
+  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
+    <value>포트:</value>
+  </data>
+  <data name="tpEmail.Text" xml:space="preserve">
+    <value>이메일</value>
+  </data>
+  <data name="tpFileUploaders.Text" xml:space="preserve">
+    <value>파일 업로더</value>
+  </data>
+  <data name="btnPastebinRegister.Text" xml:space="preserve">
+    <value>등록하기...</value>
+  </data>
+  <data name="lblPastebinSyntax.Text" xml:space="preserve">
+    <value>언어:</value>
+  </data>
+  <data name="lblPastebinExpiration.Text" xml:space="preserve">
+    <value>만료 시점:</value>
+  </data>
+  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
+    <value>공개 설정:</value>
+  </data>
+  <data name="lblPastebinTitle.Text" xml:space="preserve">
+    <value>이름:</value>
+  </data>
+  <data name="lblPastebinPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
   </data>
 </root>

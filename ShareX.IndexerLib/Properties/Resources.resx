@@ -122,6 +122,6 @@
     <value>..\resources\indexerdefault.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="DirectoryIndexerForm_BrowseFolder_Choose_folder_path" xml:space="preserve">
-    <value>Choose folder path</value>
+    <value>Choose folder</value>
   </data>
 </root>

@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DirectoryIndexerForm_BrowseFolder_Choose_folder_path" xml:space="preserve">
-    <value>Klasör seç</value>
+    <value>Klasör seçin</value>
   </data>
 </root>

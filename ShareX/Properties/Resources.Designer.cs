@@ -2261,7 +2261,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose folder path.
+        ///   Looks up a localized string similar to Choose folder.
         /// </summary>
         public static string WatchFolderForm_btnPathBrowse_Click_Choose_folder_path {
             get {

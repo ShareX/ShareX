@@ -321,7 +321,7 @@ sürükle</value>
     <value>Yükleniyor</value>
   </data>
   <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
-    <value>Dizin yolu seçin</value>
+    <value>Klasör seçin</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
     <value>{0} mevcut değil.
