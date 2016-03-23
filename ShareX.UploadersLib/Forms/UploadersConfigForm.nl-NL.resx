@@ -120,150 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Instellingen voor bestemmingen</value>
   </data>
-  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
-    <value>Ververs mappenlijst</value>
-  </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Verwijder</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Leeg velden --&gt;</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Voorbeelden...</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Help...</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Verwijder</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Verwijder</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Toon laatste antwoord...</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Bijwerken</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Selecteer...</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Ververs toestemming</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Stap 2: Vervolledig toestemming</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Stap 1: Open toestemmingspagina...</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Jouw fotoseries...</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Programma...</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Inloggen</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
-    <value>Ververs mappenlijst</value>
-  </data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>Inloggen</value>
-  </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>Open pagina met mijn afbeeldingen...</value>
-  </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>Open mijn publieke profielpagina...</value>
-  </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
-    <value>Ververs albumlijst</value>
-  </data>
-  <data name="btnMegaLogin.Text" xml:space="preserve">
-    <value>Inloggen</value>
-  </data>
-  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
-    <value>Ververs</value>
-  </data>
-  <data name="btnMegaRegister.Text" xml:space="preserve">
-    <value>Registreer...</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Toestemmen</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Voeg map toe</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Verwijder map</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Herlaad mappenlijst</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Ververs toestemming</value>
-  </data>
-  <data name="btnPastebinLogin.Text" xml:space="preserve">
-    <value>Inloggen</value>
-  </data>
-  <data name="btnPastebinRegister.Text" xml:space="preserve">
-    <value>Registreren...</value>
-  </data>
-  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
-    <value>Voeg album toe</value>
-  </data>
-  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>Stap 2: Vervolledig toestemming</value>
-  </data>
-  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>Stap 1: Open toestemmingspagina...</value>
-  </data>
-  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
-    <value>Maak album toe</value>
-  </data>
-  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>Verwijder album</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>Ververs lijst met albums</value>
-  </data>
-  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
-    <value>Haal lijst met apparaten op</value>
-  </data>
-  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>&amp;Registreren...</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Inloggen</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Open pagina met mijn afbeeldingen...</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Gebruik een aangepaste domeinnaam:</value>
   </data>
@@ -271,6 +127,24 @@
     <value>Gebruik deze optie als je een bucket met een aangepaste domeinnaam hebt ingesteld.
 Als dit veld leeg is zal de naam van de bucket gebruikt worden voor de URL.
 Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http://bucket.example.com...</value>
+  </data>
+  <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+    <value>Bijwerken</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
+    <value>Standaard inhoud tweet:</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
+    <value>Sla venster met tweet bericht over</value>
+  </data>
+  <data name="lblTwitterDescription.Text" xml:space="preserve">
+    <value>Naam:</value>
+  </data>
+  <data name="btnTwitterRemove.Text" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="btnTwitterAdd.Text" xml:space="preserve">
+    <value>Toevoegen</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Gebruik verminderde meervoudige opslag</value>
@@ -280,458 +154,23 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
 Met deze optie kosten objecten minder om op te slaan, maar is er een grotere kans op verlies (99.99% verliesgarantie in plaats van 99.99999999%).
 De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   </data>
-  <data name="cbBoxShare.Text" xml:space="preserve">
-    <value>Maak een deelbare link</value>
-  </data>
-  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>Directe link</value>
-  </data>
-  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Maak een deelbare link:</value>
-  </data>
-  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
-    <value>Herinner laatste geaddresseerde</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Is de upload publiek?</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>Upload bestanden naar geselecteerde map</value>
-  </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>Is de upload publiek?</value>
-  </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>Gebruik een directe link</value>
-  </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>Upload afbeeldingen naar geselecteerd album</value>
-  </data>
-  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
-    <value>Gebruik een directe link als hij bestaat</value>
-  </data>
-  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
-    <value>Gebruik een lange link die de bestandsnaam omvat</value>
-  </data>
-  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
-    <value>Creëer een deelbare link</value>
-  </data>
-  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
-    <value>Creëer een deelbare link</value>
-  </data>
-  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Directe link (Voegt &amp;download toe aan de URL)</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Negeer ongeldig SSL certificaat</value>
-  </data>
-  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>Is de upload publiek?</value>
-  </data>
-  <data name="chBoxFoldersName.Text" xml:space="preserve">
-    <value>Mapnaam</value>
-  </data>
-  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
-    <value>Beschrijving</value>
-  </data>
-  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
-    <value>Titel</value>
-  </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>Beschrijving</value>
-  </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>Titel</value>
-  </data>
-  <data name="chPicasaDescription.Text" xml:space="preserve">
-    <value>Beschrijving</value>
-  </data>
-  <data name="chPicasaName.Text" xml:space="preserve">
-    <value>Naam</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Uploaders</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Upload afbeelding naar</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Authenticatie</value>
-  </data>
-  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
-    <value>Upload afbeeldingen naar</value>
-  </data>
-  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
-    <value>Creëer nieuw album</value>
-  </data>
-  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
-    <value>Gebruikersaccount</value>
-  </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Jira server</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>API sleutel:</value>
-  </data>
-  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
-    <value>Toegangssleutel:</value>
-  </data>
-  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
-    <value>Bucket naam:</value>
-  </data>
-  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
-    <value>Eindpunt:</value>
-  </data>
-  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
-    <value>Upload pad:</value>
-  </data>
-  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
-    <value>Voorbeeld</value>
-  </data>
-  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
-    <value>Linkvoorbeeld:</value>
-  </data>
-  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
-    <value>Geheime sleutel:</value>
-  </data>
-  <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>Domein:</value>
-  </data>
-  <data name="lblBoxFolderID.Text" xml:space="preserve">
-    <value>Geselecteerde map:</value>
-  </data>
-  <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Nota: Je kunt dubbelklikken op de map om in de map te gaan.</value>
-  </data>
-  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
-    <value>API sleutel:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Link om te verwijderen:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Naam van bestandsformulier:</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Bestandsuploader:</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Afbeeldingsuploader:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Type verzoek:</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL verzoek:</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Type respons:</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Testresultaat:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Tekstuploader:</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>Link naar miniatuur:</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Linkverkorter:</value>
-  </data>
-  <data name="lblDropboxPath.Text" xml:space="preserve">
-    <value>Uploadpad:</value>
-  </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Als je een "Publieke" map gebruikt, dan zal de deelbare link automatisch gemaakt worden. "Creëer een deelbare link" moet dan niet aangevinkt worden. </value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
-    <value>Standaard bericht:</value>
-  </data>
-  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
-    <value>Standaard onderwerp:</value>
-  </data>
-  <data name="lblEmailFrom.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblEmailPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
-    <value>Poort:</value>
-  </data>
-  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
-    <value>SMTP server:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Bestand:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Afbeelding:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Tekst:</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Inloggen vereist.</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>Map ID:</value>
-  </data>
-  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
-    <value>Aangepaste domeinnaam:</value>
-  </data>
-  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>Syntax markeren:</value>
-  </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>Gebruikersnaam:</value>
-  </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Miniatuurtype:</value>
-  </data>
-  <data name="lblJiraHost.Text" xml:space="preserve">
-    <value>Jira host:</value>
-  </data>
-  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
-    <value>Jira probleem voorvoegsel:</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API sleutel:</value>
-  </data>
-  <data name="lblLambdaInfo.Text" xml:space="preserve">
-    <value>Om een API sleutel te verkrijgen kun je inloggen op Lambda (https://lambda.sx/) en dan op het tandwiel rechtsboven te klikken.</value>
-  </data>
-  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblMediaFireEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblMediaFirePassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblMediaFirePath.Text" xml:space="preserve">
-    <value>Uploadmap:</value>
-  </data>
-  <data name="lblMegaEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblMegaFolder.Text" xml:space="preserve">
-    <value>Map:</value>
-  </data>
-  <data name="lblMegaPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblMegaStatus.Text" xml:space="preserve">
-    <value>Geconfigureerd / Niet geconfigureerd</value>
-  </data>
-  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>Status:</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Inlogstatus:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL type:</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Gebruikersnaam:</value>
-  </data>
-  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>Geselecteerde map:</value>
-  </data>
-  <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblOwnCloudPath.Text" xml:space="preserve">
-    <value>Pad:</value>
-  </data>
-  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
-    <value>Gebruikersnaam:</value>
-  </data>
-  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>Gebruikers API sleutel:</value>
-  </data>
-  <data name="lblPastebinExpiration.Text" xml:space="preserve">
-    <value>Verloopt:</value>
-  </data>
-  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
-    <value>Status:</value>
-  </data>
-  <data name="lblPastebinPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
-    <value>Privacy:</value>
-  </data>
-  <data name="lblPastebinSyntax.Text" xml:space="preserve">
-    <value>Paste syntax:</value>
-  </data>
-  <data name="lblPastebinTitle.Text" xml:space="preserve">
-    <value>Paste titel:</value>
-  </data>
-  <data name="lblPastebinUsername.Text" xml:space="preserve">
-    <value>Gebruikersnaam:</value>
-  </data>
-  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>Aanmelden vereist.</value>
-  </data>
-  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
-    <value>Standaard naam album</value>
-  </data>
-  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>Nieuwe naam van album (tussen 2-50 tekens lang. Geldige tekens zijn letters, nummers, streepje (-), underscore (_) en spatie)</value>
-  </data>
-  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
-    <value>Pad van bovenstaand album</value>
-  </data>
-  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Verificatiecode (Verificatiecode op authorisatie pagina):</value>
-  </data>
-  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>Album ID voor uploaden (Leeg = Geen upload naar album):</value>
-  </data>
-  <data name="lblPushbulletDevices.Text" xml:space="preserve">
-    <value>Toestel:</value>
-  </data>
-  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>Gebruikers API sleutel:</value>
-  </data>
-  <data name="lblSendSpacePassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
-    <value>Gebruikersnaam:</value>
-  </data>
-  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
-    <value>Bestand:</value>
-  </data>
-  <data name="lblSharedFolderImages.Text" xml:space="preserve">
-    <value>Afbeelding:</value>
-  </data>
-  <data name="lblSharedFolderText.Text" xml:space="preserve">
-    <value>Tekst:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>Gebruikerssleutel:</value>
-  </data>
-  <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Nota: Als je een Handtekening hebt heb je geen Gebruikersnaam/Wacthwoord nodig.</value>
-  </data>
-  <data name="lblYourlsPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>Handtekening:</value>
-  </data>
-  <data name="lblYourlsUsername.Text" xml:space="preserve">
-    <value>Gebruikersnaam:</value>
-  </data>
-  <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>Je kan je API sleutel en UID hier vinden</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Aangepaste uploaders</value>
-  </data>
-  <data name="tpEmail.Text" xml:space="preserve">
-    <value>E-mail</value>
-  </data>
-  <data name="tpFileUploaders.Text" xml:space="preserve">
-    <value>Bestandsuploaders</value>
-  </data>
-  <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>Afbeeldingsuploaders</value>
-  </data>
-  <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>Andere uploaders</value>
-  </data>
-  <data name="tpSharedFolder.Text" xml:space="preserve">
-    <value>Gedeelde map</value>
-  </data>
-  <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>Tekstuploaders</value>
-  </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>Linkverkorters</value>
-  </data>
-  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
-    <value>Sjabloon</value>
-  </data>
-  <data name="btnTwitterAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnTwitterRemove.Text" xml:space="preserve">
-    <value>Verwijderen</value>
-  </data>
-  <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
-    <value>Sla venster met tweet bericht over</value>
-  </data>
-  <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
-    <value>Standaard inhoud tweet:</value>
-  </data>
-  <data name="lblTwitterDescription.Text" xml:space="preserve">
-    <value>Naam:</value>
-  </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>API sleutel:</value>
-  </data>
-  <data name="lblPolrAPIKey.Text" xml:space="preserve">
-    <value>API sleutel:</value>
-  </data>
-  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
-    <value>API url: (bijv. http://example.com/api.php, leeglaten voor polr.me)</value>
-  </data>
-  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
-    <value>API sleutel:</value>
-  </data>
-  <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
-    <value>Compatibiliteit met ownCloud 8.1+</value>
-  </data>
-  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
-    <value>Gebruik een GIFV link in plaats van GIF</value>
-  </data>
-  <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
     <value>Bijwerken</value>
   </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Leeg uploaders</value>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
+    <value>Verwijder</value>
   </data>
   <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
     <value>Bijwerken</value>
+  </data>
+  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
+    <value>Verwijder</value>
   </data>
   <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
     <value>Naam</value>
@@ -739,59 +178,11 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
     <value>Waarde</value>
   </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Argumenten</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>Bijwerken</value>
-  </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>Verwijder</value>
-  </data>
   <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
     <value>Naam</value>
   </data>
   <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
     <value>Waarde</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Headers</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Bijwerken</value>
-  </data>
-  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
-    <value>Link:</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Test alles</value>
-  </data>
-  <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>Link resultaat:</value>
-  </data>
-  <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>Uploadlink:</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Uploaders:</value>
-  </data>
-  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
-    <value>Deel wachtwoord:</value>
-  </data>
-  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
-    <value>Vervalt in (dagen):</value>
-  </data>
-  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
-    <value>Seafile instellingen voor share:</value>
-  </data>
-  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
-    <value>Controleer</value>
-  </data>
-  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
-    <value>Wachtwoord bibliotheek:</value>
   </data>
   <data name="colSeafileLibraryName.Text" xml:space="preserve">
     <value>Naam</value>
@@ -802,59 +193,668 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Versleuteld</value>
   </data>
-  <data name="btnSeafilePathValidate.Text" xml:space="preserve">
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>Afbeeldingsuploaders</value>
+  </data>
+  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
+    <value>API sleutel:</value>
+  </data>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>Directe link</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>Ververs lijst met albums</value>
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>Album ID voor uploaden (Leeg = Geen upload naar album):</value>
+  </data>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>Gebruikersaccount</value>
+  </data>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>Aanmelden vereist.</value>
+  </data>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>Stap 2: Vervolledig toestemming</value>
+  </data>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>Verificatiecode (Verificatiecode op authorisatie pagina):</value>
+  </data>
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>Stap 1: Open toestemmingspagina...</value>
+  </data>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>Standaard naam album</value>
+  </data>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>Creëer nieuw album</value>
+  </data>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>Maak album toe</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>Pad van bovenstaand album</value>
+  </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>Nieuwe naam van album (tussen 2-50 tekens lang. Geldige tekens zijn letters, nummers, streepje (-), underscore (_) en spatie)</value>
+  </data>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>Upload afbeeldingen naar</value>
+  </data>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>Verwijder album</value>
+  </data>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>Voeg album toe</value>
+  </data>
+  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
+    <value>Stap 1: Open toestemmingspagina...</value>
+  </data>
+  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
+    <value>Stap 2: Vervolledig toestemming</value>
+  </data>
+  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
+    <value>Ververs toestemming</value>
+  </data>
+  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
+    <value>Jouw fotoseries...</value>
+  </data>
+  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
+    <value>Open pagina met mijn afbeeldingen...</value>
+  </data>
+  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="lblTinyPicPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="btnTinyPicLogin.Text" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+    <value>Open pagina met mijn afbeeldingen...</value>
+  </data>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>Is de upload publiek?</value>
+  </data>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>Open mijn publieke profielpagina...</value>
+  </data>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>Miniatuurtype:</value>
+  </data>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>Ververs albumlijst</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>Gebruik een directe link</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>Upload afbeeldingen naar geselecteerd album</value>
+  </data>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>Gebruik een GIFV link in plaats van GIF</value>
+  </data>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>Tekstuploaders</value>
+  </data>
+  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
+    <value>API sleutel:</value>
+  </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>Aangepaste domeinnaam:</value>
+  </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>Syntax markeren:</value>
+  </data>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>Gebruikerssleutel:</value>
+  </data>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>Is de upload publiek?</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>Gebruikers API sleutel:</value>
+  </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data name="lblPastebinPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblPastebinTitle.Text" xml:space="preserve">
+    <value>Paste titel:</value>
+  </data>
+  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
+    <value>Privacy:</value>
+  </data>
+  <data name="lblPastebinExpiration.Text" xml:space="preserve">
+    <value>Verloopt:</value>
+  </data>
+  <data name="lblPastebinSyntax.Text" xml:space="preserve">
+    <value>Paste syntax:</value>
+  </data>
+  <data name="btnPastebinRegister.Text" xml:space="preserve">
+    <value>Registreren...</value>
+  </data>
+  <data name="tpFileUploaders.Text" xml:space="preserve">
+    <value>Bestandsuploaders</value>
+  </data>
+  <data name="tpEmail.Text" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
+    <value>Poort:</value>
+  </data>
+  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
+    <value>Standaard bericht:</value>
+  </data>
+  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
+    <value>Standaard onderwerp:</value>
+  </data>
+  <data name="lblEmailFrom.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
+    <value>Herinner laatste geaddresseerde</value>
+  </data>
+  <data name="lblEmailPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
+    <value>SMTP server:</value>
+  </data>
+  <data name="tpSharedFolder.Text" xml:space="preserve">
+    <value>Gedeelde map</value>
+  </data>
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
+    <value>Afbeelding:</value>
+  </data>
+  <data name="lblSharedFolderText.Text" xml:space="preserve">
+    <value>Tekst:</value>
+  </data>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>Bestand:</value>
+  </data>
+  <data name="lblSeafileAuthToken.Text" xml:space="preserve">
+    <value>Authorisatietoken:</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
+    <value>Maak deelbare link</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Negeer ongeldig SSL certificaat</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
+    <value>Haal authorisatietoken op</value>
+  </data>
+  <data name="lblSeafilePassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblSeafileUsername.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
+    <value>Get</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
     <value>Controleer</value>
   </data>
-  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
-    <value>Bibliotheken zonder schrijfbevoegdheid zijn verborgen.
-Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
+  <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
+    <value>Controleer</value>
   </data>
-  <data name="lblSeafilePath.Text" xml:space="preserve">
-    <value>Pad:</value>
+  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
+    <value>Accountinformatie</value>
   </data>
-  <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
+  <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
+    <value>Gebruik:</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
     <value>Ververs</value>
   </data>
   <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
     <value>Selecteer bibliotheek:</value>
   </data>
-  <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
+  <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
     <value>Ververs</value>
   </data>
-  <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
+  <data name="lblSeafilePath.Text" xml:space="preserve">
+    <value>Pad:</value>
   </data>
-  <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
-    <value>Gebruik:</value>
+  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
+    <value>Bibliotheken zonder schrijfbevoegdheid zijn verborgen.
+Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   </data>
-  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
-    <value>Accountinformatie</value>
-  </data>
-  <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
+  <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Controleer</value>
   </data>
-  <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Wachtwoord bibliotheek:</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
     <value>Controleer</value>
   </data>
-  <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
-    <value>Get</value>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Seafile instellingen voor share:</value>
   </data>
-  <data name="lblSeafileUsername.Text" xml:space="preserve">
-    <value>E-mail:</value>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Vervalt in (dagen):</value>
   </data>
-  <data name="lblSeafilePassword.Text" xml:space="preserve">
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Deel wachtwoord:</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>API sleutel:</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Uploaders:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>Uploadlink:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>Link resultaat:</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Test alles</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>Link:</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API sleutel:</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>Om een API sleutel te verkrijgen kun je inloggen op Lambda (https://lambda.sx/) en dan op het tandwiel rechtsboven te klikken.</value>
+  </data>
+  <data name="gpJiraServer.Text" xml:space="preserve">
+    <value>Jira server</value>
+  </data>
+  <data name="lblJiraHost.Text" xml:space="preserve">
+    <value>Jira host:</value>
+  </data>
+  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
+    <value>Sjabloon</value>
+  </data>
+  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
+    <value>Jira probleem voorvoegsel:</value>
+  </data>
+  <data name="gbMinusUpload.Text" xml:space="preserve">
+    <value>Upload afbeelding naar</value>
+  </data>
+  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
+    <value>Verwijder map</value>
+  </data>
+  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
+    <value>Voeg map toe</value>
+  </data>
+  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
+    <value>Herlaad mappenlijst</value>
+  </data>
+  <data name="gbMinusUserPass.Text" xml:space="preserve">
+    <value>Authenticatie</value>
+  </data>
+  <data name="btnMinusAuth.Text" xml:space="preserve">
+    <value>Toestemmen</value>
+  </data>
+  <data name="lblMinusUsername.Text" xml:space="preserve">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data name="lblMinusPassword.Text" xml:space="preserve">
     <value>Wachtwoord:</value>
   </data>
-  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
-    <value>Haal authorisatietoken op</value>
+  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
+    <value>Ververs toestemming</value>
   </data>
-  <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
+  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
+    <value>Inlogstatus:</value>
+  </data>
+  <data name="lblMinusURLType.Text" xml:space="preserve">
+    <value>URL type:</value>
+  </data>
+  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
+    <value>Gebruik een directe link als hij bestaat</value>
+  </data>
+  <data name="btnGe_ttLogin.Text" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="lblGe_ttEmail.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="lblGe_ttPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblGe_ttStatus.Text" xml:space="preserve">
+    <value>Inloggen vereist.</value>
+  </data>
+  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data name="lblSendSpacePassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
+    <value>&amp;Registreren...</value>
+  </data>
+  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
+    <value>Gebruikers API sleutel:</value>
+  </data>
+  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
+    <value>Haal lijst met apparaten op</value>
+  </data>
+  <data name="lblPushbulletDevices.Text" xml:space="preserve">
+    <value>Toestel:</value>
+  </data>
+  <data name="lblMediaFireEmail.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="lblMediaFirePassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblMediaFirePath.Text" xml:space="preserve">
+    <value>Uploadmap:</value>
+  </data>
+  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
+    <value>Gebruik een lange link die de bestandsnaam omvat</value>
+  </data>
+  <data name="lblOwnCloudHost.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblOwnCloudPath.Text" xml:space="preserve">
+    <value>Pad:</value>
+  </data>
+  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
+    <value>Creëer een deelbare link</value>
+  </data>
+  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
+    <value>Directe link (Voegt &amp;download toe aan de URL)</value>
+  </data>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Negeer ongeldig SSL certificaat</value>
   </data>
-  <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
-    <value>Maak deelbare link</value>
+  <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
+    <value>Compatibiliteit met ownCloud 8.1+</value>
   </data>
-  <data name="lblSeafileAuthToken.Text" xml:space="preserve">
-    <value>Authorisatietoken:</value>
+  <data name="lblMegaPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="btnMegaLogin.Text" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="lblMegaEmail.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="lblMegaFolder.Text" xml:space="preserve">
+    <value>Map:</value>
+  </data>
+  <data name="btnMegaRegister.Text" xml:space="preserve">
+    <value>Registreer...</value>
+  </data>
+  <data name="lblMegaStatus.Text" xml:space="preserve">
+    <value>Geconfigureerd / Niet geconfigureerd</value>
+  </data>
+  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
+    <value>Ververs</value>
+  </data>
+  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
+    <value>Toegangssleutel:</value>
+  </data>
+  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
+    <value>Geheime sleutel:</value>
+  </data>
+  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
+    <value>Upload pad:</value>
+  </data>
+  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
+    <value>Eindpunt:</value>
+  </data>
+  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
+    <value>Bucket naam:</value>
+  </data>
+  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
+    <value>Voorbeeld</value>
+  </data>
+  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
+    <value>Linkvoorbeeld:</value>
+  </data>
+  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
+    <value>Ververs mappenlijst</value>
+  </data>
+  <data name="lblBoxFolderID.Text" xml:space="preserve">
+    <value>Geselecteerde map:</value>
+  </data>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>Mapnaam</value>
+  </data>
+  <data name="cbBoxShare.Text" xml:space="preserve">
+    <value>Maak een deelbare link</value>
+  </data>
+  <data name="lblBoxFolderTip.Text" xml:space="preserve">
+    <value>Nota: Je kunt dubbelklikken op de map om in de map te gaan.</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
+    <value>Is de upload publiek?</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
+    <value>Ververs mappenlijst</value>
+  </data>
+  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>Map ID:</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>Upload bestanden naar geselecteerde map</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>Creëer een deelbare link</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>Geselecteerde map:</value>
+  </data>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>Uploadpad:</value>
+  </data>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>Als je een "Publieke" map gebruikt, dan zal de deelbare link automatisch gemaakt worden. "Creëer een deelbare link" moet dan niet aangevinkt worden. </value>
+  </data>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>Selecteer...</value>
+  </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>Maak een deelbare link:</value>
+  </data>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>Afbeelding:</value>
+  </data>
+  <data name="lblFtpText.Text" xml:space="preserve">
+    <value>Tekst:</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>Bestand:</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>Programma...</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>Linkverkorters</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>API url: (bijv. http://example.com/api.php, leeglaten voor polr.me)</value>
+  </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>API sleutel:</value>
+  </data>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>API sleutel:</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>Je kan je API sleutel en UID hier vinden</value>
+  </data>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>Handtekening:</value>
+  </data>
+  <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>Nota: Als je een Handtekening hebt heb je geen Gebruikersnaam/Wacthwoord nodig.</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>Domein:</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>Andere uploaders</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>Aangepaste uploaders</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>Type verzoek:</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>Naam van bestandsformulier:</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>Link naar miniatuur:</value>
+  </data>
+  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>Linkverkorter:</value>
+  </data>
+  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>URL verzoek:</value>
+  </data>
+  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
+    <value>Tekstuploader:</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Uploaders</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
+    <value>Bijwerken</value>
+  </data>
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
+    <value>Verwijder</value>
+  </data>
+  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
+    <value>Leeg uploaders</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>Type respons:</value>
+  </data>
+  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
+    <value>Toon laatste antwoord...</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>Link om te verwijderen:</value>
+  </data>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>Testresultaat:</value>
+  </data>
+  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
+    <value>Bestandsuploader:</value>
+  </data>
+  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
+    <value>Afbeeldingsuploader:</value>
+  </data>
+  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
+    <value>Leeg velden --&gt;</value>
+  </data>
+  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
+    <value>Help...</value>
+  </data>
+  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
+    <value>Voorbeelden...</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
+    <value>Headers</value>
+  </data>
+  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
+    <value>Verwijder</value>
+  </data>
+  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
+    <value>Bijwerken</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
+    <value>Argumenten</value>
   </data>
 </root>

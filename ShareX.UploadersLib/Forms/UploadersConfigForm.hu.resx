@@ -120,149 +120,38 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Cél beállítások</value>
   </data>
-  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
-    <value>Mappák listájának frissítése</value>
+  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
+    <value>Súgó...</value>
   </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Hozzáadás</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Hozzáadás</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Eltávolítás</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Mezők törlése --&gt;</value>
+  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
+    <value>Kép feltöltő:</value>
   </data>
   <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
     <value>Példák...</value>
   </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Teszt</value>
+  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
+    <value>Fájl feltöltő:</value>
   </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Súgó...</value>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>Törlési URL:</value>
   </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Teszt</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Hozzáadás</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Eltávolítás</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Eltávolítás</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Legutóbbi válasz mutatása...</value>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>URL rövidítő:</value>
   </data>
   <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
     <value>Teszt</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Frissítés</value>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>Kérés URL:</value>
   </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Teszt</value>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>Megosztható URL készítése:</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Kiválasztás...</value>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>URL rövidítők</value>
   </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Felhatalmazás frissítése</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Lépés 2: Felhatalmazás befejezése</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Lépés 1: Felhatalmazó oldal megnyitása...</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>A fotó streamed...</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Kliens...</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
-    <value>Mappák listájának frissítése</value>
-  </data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>A képeim oldalának megnyitása...</value>
-  </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>A publikus profil oldal megnyitása...</value>
-  </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
-    <value>Albumok listájának frissítése</value>
-  </data>
-  <data name="btnMegaLogin.Text" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
-  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
-    <value>Frissítés</value>
-  </data>
-  <data name="btnMegaRegister.Text" xml:space="preserve">
-    <value>Regisztrálás...</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Felhatalmazás</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Mappa hozzáadása</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Mappa eltávolítása</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Mappalista frissítése</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Felhatalmazás frissítése</value>
-  </data>
-  <data name="btnPastebinLogin.Text" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
-  <data name="btnPastebinRegister.Text" xml:space="preserve">
-    <value>Regisztrálás...</value>
-  </data>
-  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
-    <value>Album hozzáadása</value>
-  </data>
-  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>Lépés 2: Felhatalmazás befejezése</value>
-  </data>
-  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>Lépés 1: Felhatalmazó oldal megnyitása...</value>
-  </data>
-  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
-    <value>Album létrehozása</value>
-  </data>
-  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>Album eltávolítása</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>Album lista frissítése</value>
-  </data>
-  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
-    <value>Eszközlista megszerzése</value>
-  </data>
-  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>&amp;Regisztrálás...</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>A képeim oldalának megnyitása...</value>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>Mappa ID:</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Tetszőleges domain használata:</value>
@@ -279,68 +168,26 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>Alacsonyabb redundancia tárolótípus használata a tárolt objektumokhoz.
 Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás, szemben a 99.999999999%-al.</value>
   </data>
-  <data name="cbBoxShare.Text" xml:space="preserve">
-    <value>Megosztható link létrehozása</value>
-  </data>
-  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>Közvetetlen URL</value>
-  </data>
-  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Megosztható URL készítése:</value>
-  </data>
-  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
-    <value>Emlékezzen a legutóbbi címzettre</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Publikus feltöltés?</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>Fájlok feltöltése a kiválasztott mappába</value>
-  </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>Publikus feltöltés?</value>
-  </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>Közvetlen link használata</value>
-  </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>Képek feltöltése a kiválasztott albumba</value>
-  </data>
-  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
-    <value>Közvetlen URL használata ha létezik</value>
-  </data>
-  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
-    <value>Hosszú link használata, amely a fájlnevet is tartalmazza</value>
-  </data>
-  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
-    <value>Megosztható link létrehozása</value>
-  </data>
-  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
-    <value>Megosztható URL létrehozása</value>
-  </data>
-  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Közvetlen link (hozzáadja a &amp;download-ot az URL-hez)</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Helytelen SSL tanúsítvány ignorálása</value>
-  </data>
-  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>Publikus feltöltés?</value>
-  </data>
-  <data name="chBoxFoldersName.Text" xml:space="preserve">
-    <value>Mappa neve</value>
+  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
+    <value>Cím</value>
   </data>
   <data name="chGoogleDriveDescription.Text" xml:space="preserve">
     <value>Leírás</value>
   </data>
-  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
-    <value>Cím</value>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>Mappa neve</value>
   </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>Leírás</value>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>Kép feltöltők</value>
   </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>Cím</value>
+  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
+    <value>API kulcs:</value>
+  </data>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>Közvetetlen URL</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>Album lista frissítése</value>
   </data>
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Leírás</value>
@@ -348,104 +195,161 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Név</value>
   </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Feltöltés</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Képek feltöltése ide</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Felhatalmazás</value>
-  </data>
-  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
-    <value>Képek feltöltése ide</value>
-  </data>
-  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
-    <value>Új album létrehozása</value>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>Feltöltendő album ID (üres = nincs album feltöltés):</value>
   </data>
   <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
     <value>Felhasználói fiók</value>
   </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Jira szerver</value>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>Bejelentkezés szükséges.</value>
   </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>API kulcs:</value>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>Lépés 2: Felhatalmazás befejezése</value>
   </data>
-  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
-    <value>Elérési kulcs:</value>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>Ellenőrző kód (a felhatalmazást adó oldalról szerezheted meg):</value>
   </data>
-  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
-    <value>Bucket neve:</value>
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>Lépés 1: Felhatalmazó oldal megnyitása...</value>
   </data>
-  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
-    <value>Végpont:</value>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>Alapértelmezett album név</value>
   </data>
-  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
-    <value>Feltöltési útvonal:</value>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>Új album létrehozása</value>
   </data>
-  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
-    <value>Előnézet</value>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>Album létrehozása</value>
   </data>
-  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
-    <value>URL előnézet:</value>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>Szűlőalbum útvonal</value>
   </data>
-  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
-    <value>Titkos kulcs:</value>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>Új album neve (2 és 50 karakter közötti kell legyen)</value>
   </data>
-  <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>Domain:</value>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>Képek feltöltése ide</value>
   </data>
-  <data name="lblBoxFolderID.Text" xml:space="preserve">
-    <value>Kiválasztott mappa:</value>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>Album eltávolítása</value>
   </data>
-  <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Megjegyzés: Dupla kattintással a mappa nevére beleléphetsz abba.</value>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>Album hozzáadása</value>
   </data>
-  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
-    <value>API kulcs:</value>
+  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
+    <value>Lépés 1: Felhatalmazó oldal megnyitása...</value>
   </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Törlési URL:</value>
+  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
+    <value>Lépés 2: Felhatalmazás befejezése</value>
   </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Fájl form neve:</value>
+  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
+    <value>Felhatalmazás frissítése</value>
   </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Fájl feltöltő:</value>
+  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
+    <value>A fotó streamed...</value>
   </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Kép feltöltő:</value>
+  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
+    <value>A képeim oldalának megnyitása...</value>
   </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Kérés típusa:</value>
+  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+    <value>Email:</value>
   </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>Kérés URL:</value>
+  <data name="lblTinyPicPassword.Text" xml:space="preserve">
+    <value>Jelszó:</value>
   </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Válasz típusa:</value>
+  <data name="btnTinyPicLogin.Text" xml:space="preserve">
+    <value>Bejelentkezés</value>
   </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Teszt eredménye:</value>
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
+    <value>Jelszó:</value>
   </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Szöveges feltöltő:</value>
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>Felhasználónév:</value>
   </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>Előnézet URL:</value>
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+    <value>A képeim oldalának megnyitása...</value>
   </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>URL rövidítő:</value>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>Publikus feltöltés?</value>
   </data>
-  <data name="lblDropboxPath.Text" xml:space="preserve">
-    <value>Feltöltési útvonal:</value>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>A publikus profil oldal megnyitása...</value>
   </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Ha "publikus" mappát használsz, egy megosztható URL már generálódott. Ez esetben nem szükséges külön megosztható URL-t készítened.</value>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>Bejelentkezés</value>
   </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Állapot</value>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>Előnézet típusa:</value>
+  </data>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>Albumok listájának frissítése</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>Leírás</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>Cím</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>Közvetlen link használata</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>Képek feltöltése a kiválasztott albumba</value>
+  </data>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>Szöveg feltöltők</value>
+  </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>Egyéni domain:</value>
+  </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>Szintaktis kiemelés:</value>
+  </data>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>Felhasználói kulcs:</value>
+  </data>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>Publikus feltöltés?</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>Felhasználói API kulcs:</value>
+  </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>Bejelentkezés</value>
+  </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>Állapot:</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>Felhasználónév:</value>
+  </data>
+  <data name="lblPastebinPassword.Text" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="lblPastebinTitle.Text" xml:space="preserve">
+    <value>Beillesztés címe:</value>
+  </data>
+  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
+    <value>Biztonság:</value>
+  </data>
+  <data name="lblPastebinExpiration.Text" xml:space="preserve">
+    <value>Lejárat:</value>
+  </data>
+  <data name="lblPastebinSyntax.Text" xml:space="preserve">
+    <value>Beillesztés szintaxisa:</value>
+  </data>
+  <data name="btnPastebinRegister.Text" xml:space="preserve">
+    <value>Regisztrálás...</value>
+  </data>
+  <data name="tpFileUploaders.Text" xml:space="preserve">
+    <value>Fájl feltöltők</value>
+  </data>
+  <data name="tpEmail.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
+    <value>Port:</value>
   </data>
   <data name="lblEmailDefaultBody.Text" xml:space="preserve">
     <value>Alapértelmezett üzenet:</value>
@@ -456,23 +360,83 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   <data name="lblEmailFrom.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
+  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
+    <value>Emlékezzen a legutóbbi címzettre</value>
+  </data>
   <data name="lblEmailPassword.Text" xml:space="preserve">
     <value>Jelszó:</value>
-  </data>
-  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
-    <value>Port:</value>
   </data>
   <data name="lblEmailSmtpServer.Text" xml:space="preserve">
     <value>SMTP szerver:</value>
   </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Fájl:</value>
+  <data name="tpSharedFolder.Text" xml:space="preserve">
+    <value>Megosztott mappa</value>
   </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
     <value>Kép:</value>
   </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
+  <data name="lblSharedFolderText.Text" xml:space="preserve">
     <value>Szöveg:</value>
+  </data>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>Fájl:</value>
+  </data>
+  <data name="gpJiraServer.Text" xml:space="preserve">
+    <value>Jira szerver</value>
+  </data>
+  <data name="lblJiraHost.Text" xml:space="preserve">
+    <value>Jira hoszt:</value>
+  </data>
+  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
+    <value>Sablon</value>
+  </data>
+  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
+    <value>Jira probléma prefixum:</value>
+  </data>
+  <data name="gbMinusUpload.Text" xml:space="preserve">
+    <value>Képek feltöltése ide</value>
+  </data>
+  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
+    <value>Mappa eltávolítása</value>
+  </data>
+  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
+    <value>Mappa hozzáadása</value>
+  </data>
+  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
+    <value>Mappalista frissítése</value>
+  </data>
+  <data name="gbMinusUserPass.Text" xml:space="preserve">
+    <value>Felhatalmazás</value>
+  </data>
+  <data name="btnMinusAuth.Text" xml:space="preserve">
+    <value>Felhatalmazás</value>
+  </data>
+  <data name="lblMinusUsername.Text" xml:space="preserve">
+    <value>Felhasználónév:</value>
+  </data>
+  <data name="lblMinusPassword.Text" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
+    <value>Felhatalmazás frissítése</value>
+  </data>
+  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
+    <value>Bejelentkezési állapot:</value>
+  </data>
+  <data name="lblMinusURLType.Text" xml:space="preserve">
+    <value>URL típusa:</value>
+  </data>
+  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
+    <value>Közvetlen URL használata ha létezik</value>
+  </data>
+  <data name="btnGe_ttLogin.Text" xml:space="preserve">
+    <value>Bejelentkezés</value>
   </data>
   <data name="lblGe_ttEmail.Text" xml:space="preserve">
     <value>Email:</value>
@@ -483,35 +447,23 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   <data name="lblGe_ttStatus.Text" xml:space="preserve">
     <value>Bejelentkezés szükséges.</value>
   </data>
-  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>Mappa ID:</value>
-  </data>
-  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
-    <value>Egyéni domain:</value>
-  </data>
-  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>Szintaktis kiemelés:</value>
-  </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
+  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Felhasználónév:</value>
   </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Előnézet típusa:</value>
-  </data>
-  <data name="lblJiraHost.Text" xml:space="preserve">
-    <value>Jira hoszt:</value>
-  </data>
-  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
-    <value>Jira probléma prefixum:</value>
-  </data>
-  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
+  <data name="lblSendSpacePassword.Text" xml:space="preserve">
     <value>Jelszó:</value>
+  </data>
+  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
+    <value>&amp;Regisztrálás...</value>
+  </data>
+  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
+    <value>Felhasználói API kulcs:</value>
+  </data>
+  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
+    <value>Eszközlista megszerzése</value>
+  </data>
+  <data name="lblPushbulletDevices.Text" xml:space="preserve">
+    <value>Eszköz:</value>
   </data>
   <data name="lblMediaFireEmail.Text" xml:space="preserve">
     <value>Email:</value>
@@ -522,38 +474,14 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   <data name="lblMediaFirePath.Text" xml:space="preserve">
     <value>Feltöltési útvonal:</value>
   </data>
-  <data name="lblMegaEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblMegaFolder.Text" xml:space="preserve">
-    <value>Mappa:</value>
-  </data>
-  <data name="lblMegaPassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
-  <data name="lblMegaStatus.Text" xml:space="preserve">
-    <value>Beállítva / Nincs beállítva</value>
-  </data>
-  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>Állapot:</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Bejelentkezési állapot:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL típusa:</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Felhasználónév:</value>
-  </data>
-  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>Kiválasztott mappa:</value>
+  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
+    <value>Hosszú link használata, amely a fájlnevet is tartalmazza</value>
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Hoszt:</value>
+  </data>
+  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
+    <value>Felhasználónév:</value>
   </data>
   <data name="lblOwnCloudPassword.Text" xml:space="preserve">
     <value>Jelszó:</value>
@@ -561,121 +489,193 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
     <value>Elérési út:</value>
   </data>
-  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
-    <value>Felhasználónév:</value>
+  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
+    <value>Megosztható URL létrehozása</value>
   </data>
-  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>Felhasználói API kulcs:</value>
+  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
+    <value>Közvetlen link (hozzáadja a &amp;download-ot az URL-hez)</value>
   </data>
-  <data name="lblPastebinExpiration.Text" xml:space="preserve">
-    <value>Lejárat:</value>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Helytelen SSL tanúsítvány ignorálása</value>
   </data>
-  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
-    <value>Állapot:</value>
-  </data>
-  <data name="lblPastebinPassword.Text" xml:space="preserve">
+  <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>Jelszó:</value>
   </data>
-  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
-    <value>Biztonság:</value>
+  <data name="btnMegaLogin.Text" xml:space="preserve">
+    <value>Bejelentkezés</value>
   </data>
-  <data name="lblPastebinSyntax.Text" xml:space="preserve">
-    <value>Beillesztés szintaxisa:</value>
-  </data>
-  <data name="lblPastebinTitle.Text" xml:space="preserve">
-    <value>Beillesztés címe:</value>
-  </data>
-  <data name="lblPastebinUsername.Text" xml:space="preserve">
-    <value>Felhasználónév:</value>
-  </data>
-  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>Bejelentkezés szükséges.</value>
-  </data>
-  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
-    <value>Alapértelmezett album név</value>
-  </data>
-  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>Új album neve (2 és 50 karakter közötti kell legyen)</value>
-  </data>
-  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
-    <value>Szűlőalbum útvonal</value>
-  </data>
-  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Ellenőrző kód (a felhatalmazást adó oldalról szerezheted meg):</value>
-  </data>
-  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>Feltöltendő album ID (üres = nincs album feltöltés):</value>
-  </data>
-  <data name="lblPushbulletDevices.Text" xml:space="preserve">
-    <value>Eszköz:</value>
-  </data>
-  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>Felhasználói API kulcs:</value>
-  </data>
-  <data name="lblSendSpacePassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
-  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
-    <value>Felhasználónév:</value>
-  </data>
-  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
-    <value>Fájl:</value>
-  </data>
-  <data name="lblSharedFolderImages.Text" xml:space="preserve">
-    <value>Kép:</value>
-  </data>
-  <data name="lblSharedFolderText.Text" xml:space="preserve">
-    <value>Szöveg:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+  <data name="lblMegaEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
-  <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>Felhasználói kulcs:</value>
+  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
+    <value>Állapot:</value>
   </data>
-  <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Megjegyzés: ha van aláírásod, nem szükséges jelszó/felhasználónév.</value>
+  <data name="lblMegaFolder.Text" xml:space="preserve">
+    <value>Mappa:</value>
   </data>
-  <data name="lblYourlsPassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
+  <data name="btnMegaRegister.Text" xml:space="preserve">
+    <value>Regisztrálás...</value>
   </data>
-  <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>Aláírás:</value>
+  <data name="lblMegaStatus.Text" xml:space="preserve">
+    <value>Beállítva / Nincs beállítva</value>
   </data>
-  <data name="lblYourlsUsername.Text" xml:space="preserve">
-    <value>Felhasználónév:</value>
+  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
+    <value>Frissítés</value>
   </data>
-  <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>Itt találhatod az API kulcsodat és az UID-det</value>
+  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
+    <value>Elérési kulcs:</value>
   </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Egyéni feltöltők</value>
+  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
+    <value>Titkos kulcs:</value>
   </data>
-  <data name="tpEmail.Text" xml:space="preserve">
-    <value>Email</value>
+  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
+    <value>Feltöltési útvonal:</value>
   </data>
-  <data name="tpFileUploaders.Text" xml:space="preserve">
-    <value>Fájl feltöltők</value>
+  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
+    <value>Végpont:</value>
   </data>
-  <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>Kép feltöltők</value>
+  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
+    <value>Bucket neve:</value>
+  </data>
+  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
+    <value>Előnézet</value>
+  </data>
+  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
+    <value>URL előnézet:</value>
+  </data>
+  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
+    <value>Mappák listájának frissítése</value>
+  </data>
+  <data name="lblBoxFolderID.Text" xml:space="preserve">
+    <value>Kiválasztott mappa:</value>
+  </data>
+  <data name="cbBoxShare.Text" xml:space="preserve">
+    <value>Megosztható link létrehozása</value>
+  </data>
+  <data name="lblBoxFolderTip.Text" xml:space="preserve">
+    <value>Megjegyzés: Dupla kattintással a mappa nevére beleléphetsz abba.</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
+    <value>Publikus feltöltés?</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
+    <value>Mappák listájának frissítése</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>Kiválasztott mappa:</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>Megosztható link létrehozása</value>
+  </data>
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
+    <value>Eltávolítás</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>Hozzáadás</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>Válasz típusa:</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>Egyéb feltöltők</value>
   </data>
-  <data name="tpSharedFolder.Text" xml:space="preserve">
-    <value>Megosztott mappa</value>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>Teszt eredménye:</value>
   </data>
-  <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>Szöveg feltöltők</value>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>Előnézet URL:</value>
   </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL rövidítők</value>
+  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
+    <value>Teszt</value>
   </data>
-  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
-    <value>Sablon</value>
+  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
+    <value>Mezők törlése --&gt;</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>Fájl form neve:</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>Kérés típusa:</value>
+  </data>
+  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
+    <value>Szöveges feltöltő:</value>
+  </data>
+  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
+    <value>Legutóbbi válasz mutatása...</value>
+  </data>
+  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
+    <value>Teszt</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Feltöltés</value>
+  </data>
+  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
+    <value>Teszt</value>
+  </data>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>Ha "publikus" mappát használsz, egy megosztható URL már generálódott. Ez esetben nem szükséges külön megosztható URL-t készítened.</value>
+  </data>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>Feltöltési útvonal:</value>
+  </data>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>Állapot</value>
+  </data>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>Kiválasztás...</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>Kliens...</value>
+  </data>
+  <data name="lblFtpText.Text" xml:space="preserve">
+    <value>Szöveg:</value>
+  </data>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>Kép:</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>Fájl:</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>Fájlok feltöltése a kiválasztott mappába</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>Megjegyzés: ha van aláírásod, nem szükséges jelszó/felhasználónév.</value>
+  </data>
+  <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>Felhasználónév:</value>
+  </data>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>Aláírás:</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>Itt találhatod az API kulcsodat és az UID-det</value>
+  </data>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>API kulcs:</value>
+  </data>
+  <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Hozzáadás</value>
+  </data>
+  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
+    <value>Eltávolítás</value>
+  </data>
+  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
+    <value>Hozzáadás</value>
+  </data>
+  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
+    <value>Eltávolítás</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>Domain:</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>Egyéni feltöltők</value>
   </data>
 </root>
