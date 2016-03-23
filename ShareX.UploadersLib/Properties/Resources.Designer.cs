@@ -937,6 +937,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to find a valid Twitter account..
+        /// </summary>
+        internal static string TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon TinyPic {

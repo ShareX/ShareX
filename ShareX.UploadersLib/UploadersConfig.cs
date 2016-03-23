@@ -409,18 +409,7 @@ namespace ShareX.UploadersLib
 
         public bool IsValid(URLSharingServices destination)
         {
-            switch (destination)
-            {
-                case URLSharingServices.Email:
-                    return !string.IsNullOrEmpty(EmailSmtpServer) && EmailSmtpPort > 0 && !string.IsNullOrEmpty(EmailFrom) && !string.IsNullOrEmpty(EmailPassword);
-                case URLSharingServices.Twitter:
-                    return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount) && OAuthInfo.CheckOAuth(TwitterOAuthInfoList[TwitterSelectedAccount]);
-                case URLSharingServices.Pushbullet:
-                    return PushbulletSettings != null && !string.IsNullOrEmpty(PushbulletSettings.UserAPIKey) && PushbulletSettings.DeviceList != null &&
-                        PushbulletSettings.DeviceList.IsValidIndex(PushbulletSettings.SelectedDevice);
-            }
-
-            return true;
+            return UploaderFactory.GetSharingServiceByEnum(destination).CheckConfig(this);
         }
 
         #endregion Helper Methods

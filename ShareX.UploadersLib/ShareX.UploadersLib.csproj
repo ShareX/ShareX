@@ -208,6 +208,19 @@
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
     <Compile Include="HelperClasses\SSLBypassHelper.cs" />
+    <Compile Include="SharingService.cs" />
+    <Compile Include="SharingServices\EmailSharingService.cs" />
+    <Compile Include="SharingServices\FacebookSharingService.cs" />
+    <Compile Include="SharingServices\GooglePlusSharingService.cs" />
+    <Compile Include="SharingServices\LinkedInSharingService.cs" />
+    <Compile Include="SharingServices\PinterestSharingService.cs" />
+    <Compile Include="SharingServices\PushbulletSharingService.cs" />
+    <Compile Include="SharingServices\RedditSharingService.cs" />
+    <Compile Include="SharingServices\SimpleSharingService.cs" />
+    <Compile Include="SharingServices\StumbleUponSharingService.cs" />
+    <Compile Include="SharingServices\TumblrSharingService.cs" />
+    <Compile Include="SharingServices\TwitterSharingService.cs" />
+    <Compile Include="SharingServices\VkSharingService.cs" />
     <Compile Include="TaskReferenceHelper.cs" />
     <Compile Include="TextUploaderService.cs" />
     <Compile Include="UploaderFactory.cs" />
@@ -902,6 +915,7 @@
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.4.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <PropertyGroup>
