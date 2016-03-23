@@ -894,104 +894,10 @@ namespace ShareX
 
         public void ShareURL(string url)
         {
-            if (!string.IsNullOrEmpty(url))
-            {
-                string encodedUrl = URLHelpers.URLEncode(url);
+            if (string.IsNullOrEmpty(url)) return;
 
-                switch (Info.TaskSettings.URLSharingServiceDestination)
-                {
-                    case URLSharingServices.Email:
-                        if (Program.UploadersConfig.IsValid(URLSharingServices.Email))
-                        {
-                            using (EmailForm emailForm = new EmailForm(Program.UploadersConfig.EmailRememberLastTo ? Program.UploadersConfig.EmailLastTo : string.Empty,
-                                Program.UploadersConfig.EmailDefaultSubject, url))
-                            {
-                                if (emailForm.ShowDialog() == DialogResult.OK)
-                                {
-                                    if (Program.UploadersConfig.EmailRememberLastTo)
-                                    {
-                                        Program.UploadersConfig.EmailLastTo = emailForm.ToEmail;
-                                    }
-
-                                    Email email = new Email
-                                    {
-                                        SmtpServer = Program.UploadersConfig.EmailSmtpServer,
-                                        SmtpPort = Program.UploadersConfig.EmailSmtpPort,
-                                        FromEmail = Program.UploadersConfig.EmailFrom,
-                                        Password = Program.UploadersConfig.EmailPassword
-                                    };
-
-                                    email.Send(emailForm.ToEmail, emailForm.Subject, emailForm.Body);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            URLHelpers.OpenURL("mailto:?body=" + encodedUrl);
-                        }
-                        break;
-                    case URLSharingServices.Twitter:
-                        if (Program.UploadersConfig.IsValid(URLSharingServices.Twitter))
-                        {
-                            OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList[Program.UploadersConfig.TwitterSelectedAccount];
-
-                            if (Program.UploadersConfig.TwitterSkipMessageBox)
-                            {
-                                try
-                                {
-                                    new Twitter(twitterOAuth).TweetMessage(url);
-                                }
-                                catch (Exception ex)
-                                {
-                                    DebugHelper.WriteException(ex);
-                                }
-                            }
-                            else
-                            {
-                                using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth, url))
-                                {
-                                    twitter.ShowDialog();
-                                }
-                            }
-                        }
-                        else
-                        {
-                            //URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
-                            MessageBox.Show(Resources.TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        break;
-                    case URLSharingServices.Facebook:
-                        URLHelpers.OpenURL("https://www.facebook.com/sharer/sharer.php?u=" + encodedUrl);
-                        break;
-                    case URLSharingServices.GooglePlus:
-                        URLHelpers.OpenURL("https://plus.google.com/share?url=" + encodedUrl);
-                        break;
-                    case URLSharingServices.Reddit:
-                        URLHelpers.OpenURL("http://www.reddit.com/submit?url=" + encodedUrl);
-                        break;
-                    case URLSharingServices.Pinterest:
-                        URLHelpers.OpenURL(string.Format("http://pinterest.com/pin/create/button/?url={0}&media={0}", encodedUrl));
-                        break;
-                    case URLSharingServices.Tumblr:
-                        URLHelpers.OpenURL("https://www.tumblr.com/share?v=3&u=" + encodedUrl);
-                        break;
-                    case URLSharingServices.LinkedIn:
-                        URLHelpers.OpenURL("https://www.linkedin.com/shareArticle?url=" + encodedUrl);
-                        break;
-                    case URLSharingServices.StumbleUpon:
-                        URLHelpers.OpenURL("http://www.stumbleupon.com/submit?url=" + encodedUrl);
-                        break;
-                    case URLSharingServices.Delicious:
-                        URLHelpers.OpenURL("https://delicious.com/save?v=5&url=" + encodedUrl);
-                        break;
-                    case URLSharingServices.VK:
-                        URLHelpers.OpenURL("http://vk.com/share.php?url=" + encodedUrl);
-                        break;
-                    case URLSharingServices.Pushbullet:
-                        new Pushbullet(Program.UploadersConfig.PushbulletSettings).PushLink(url, "ShareX: URL Share");
-                        break;
-                }
-            }
+            UploaderFactory.GetSharingServiceByEnum(Info.TaskSettings.URLSharingServiceDestination)
+                .ShareURL(url, Program.UploadersConfig);
         }
 
         private void PrepareUploader(Uploader currentUploader)

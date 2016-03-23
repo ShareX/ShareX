@@ -259,4 +259,7 @@
   <data name="Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__" xml:space="preserve">
     <value>请从“目的地设置窗口 -&gt; Pomf上传程序”中选择其中的一个Pomf上传程序。</value>
   </data>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>无法找到可用的Twitter账号。</value>
+  </data>
 </root>

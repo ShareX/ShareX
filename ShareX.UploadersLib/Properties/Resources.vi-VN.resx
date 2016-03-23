@@ -259,4 +259,7 @@ Các thư mục đã tạo:</value>
   <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
     <value>Làm mới danh sách thư mục thất bại</value>
   </data>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>Không thể tìm thấy tài khoàn Twitter hợp lệ.</value>
+  </data>
 </root>

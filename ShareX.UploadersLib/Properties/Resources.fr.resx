@@ -259,4 +259,7 @@ Dossiers créés:</value>
   <data name="Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__" xml:space="preserve">
     <value>Merci de sélectionner un des services de mise en ligne Pomf dans la fenêtre "Paramètres de destinations -&gt; Pomf".</value>
   </data>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>Impossible de trouver un compte Twitter valide.</value>
+  </data>
 </root>
