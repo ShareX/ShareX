@@ -672,7 +672,6 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    // TODO: folderPath = folderPath.Replace(Program.ToolsFolder, $"%ShareX%", StringComparison.InvariantCultureIgnoreCase));
                     GetEnums<Environment.SpecialFolder>().ForEach(x => path = path.Replace(Environment.GetFolderPath(x), $"%{x}%", StringComparison.InvariantCultureIgnoreCase));
                 }
                 catch (Exception e)
@@ -690,7 +689,6 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    // TODO: folderPath = folderPath.Replace($"%ShareX%", Program.ToolsFolder, StringComparison.InvariantCultureIgnoreCase));
                     GetEnums<Environment.SpecialFolder>().ForEach(x => path = path.Replace($"%{x}%", Environment.GetFolderPath(x), StringComparison.InvariantCultureIgnoreCase));
                     path = Environment.ExpandEnvironmentVariables(path);
                 }

@@ -287,7 +287,7 @@ namespace Greenshot
             else
             {
                 string dateTime = DateTime.Now.ToLongTimeString();
-                // TODO: Fix that we only open files, like in the tooltip
+                // Fix that we only open files, like in the tooltip
                 switch (eventArgs.MessageType)
                 {
                     case SurfaceMessageTyp.FileSaved:
@@ -1188,7 +1188,7 @@ namespace Greenshot
         private void AddDropshadowToolStripMenuItemClick(object sender, EventArgs e)
         {
             DropShadowEffect dropShadowEffect = editorConfiguration.DropShadowEffectSettings;
-            // TODO: Use the dropshadow settings form to make it possible to change the default values
+            // Use the dropshadow settings form to make it possible to change the default values
             DialogResult result = new DropShadowSettingsForm(dropShadowEffect).ShowDialog(this);
             if (result == DialogResult.OK)
             {
@@ -1205,7 +1205,7 @@ namespace Greenshot
         private void BtnResizeClick(object sender, EventArgs e)
         {
             ResizeEffect resizeEffect = new ResizeEffect(surface.Image.Width, surface.Image.Height, true);
-            // TODO: Use the Resize SettingsForm to make it possible to change the default values
+            // Use the Resize SettingsForm to make it possible to change the default values
             DialogResult result = new ResizeSettingsForm(resizeEffect).ShowDialog(this);
             if (result == DialogResult.OK)
             {
@@ -1237,7 +1237,7 @@ namespace Greenshot
         private void TornEdgesToolStripMenuItemClick(object sender, EventArgs e)
         {
             TornEdgeEffect tornEdgeEffect = editorConfiguration.TornEdgeEffectSettings;
-            // TODO: Use the dropshadow settings form to make it possible to change the default values
+            // Use the dropshadow settings form to make it possible to change the default values
             DialogResult result = new TornEdgeSettingsForm(tornEdgeEffect).ShowDialog(this);
             if (result == DialogResult.OK)
             {

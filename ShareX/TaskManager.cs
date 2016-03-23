@@ -181,8 +181,7 @@ namespace ShareX
 
                 if (task.Status == TaskStatus.History)
                 {
-                    // TODO: Translate
-                    lvi.SubItems.Add("History");
+                    lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_History);
                     lvi.SubItems.Add(task.Info.UploadTime.ToString());
                 }
                 else

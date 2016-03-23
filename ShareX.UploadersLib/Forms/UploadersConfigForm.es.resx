@@ -120,39 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Configuración de destino</value>
   </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Cargador de imágenes:</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Cargador de archivos:</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Ejemplos...</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Acortador de URL:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Probar</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL de solicitud:</value>
-  </data>
-  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Crear URL compartible:</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>ID de carpeta:</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Ayuda...</value>
-  </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>Acortadores de URL</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Supresión URL:</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Utilizar un dominio personalizado:</value>
   </data>
@@ -160,6 +127,24 @@
     <value>Utilice esta opción si tiene un balde creado con un dominio personalizado.
 Si el campo de texto está vacío, nombre de balde se utilizará para URL.
 Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://balde.ejemplo.com/...</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
+    <value>Ayuda...</value>
+  </data>
+  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
+    <value>Ejemplos...</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Título</value>
@@ -169,6 +154,9 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Nombre de la carpeta</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>Clave de la API:</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Cargadores de imagenes</value>
@@ -374,9 +362,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Archivo:</value>
   </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>Clave de la API:</value>
-  </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Para obtener una clave de API, inicie sesión en Lambda en https://lambda.sx/ haga clic en la rueda dentada configuración en la parte superior derecha.</value>
   </data>
@@ -560,129 +545,144 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Refrescar lista de carpetas</value>
   </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Utilice almacenaje de redundancia reducida</value>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>ID de carpeta:</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>Subir archivos a la carpeta seleccionada</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>Crear URL compartible</value>
   </data>
   <data name="lblOneDriveFolderID.Text" xml:space="preserve">
     <value>Carpeta seleccionada:</value>
   </data>
-  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
-    <value>Crear URL compartible</value>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>Ruta de subir:</value>
+  </data>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>Si utiliza la carpeta "Público", una url compartible ya se generó. No es necesario activar la opción "Crear URL compartible".</value>
+  </data>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>Seleccionar...</value>
+  </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>Crear URL compartible:</value>
+  </data>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>Imagen:</value>
+  </data>
+  <data name="lblFtpText.Text" xml:space="preserve">
+    <value>Texto:</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>Archivo:</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>Cliente...</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>Acortadores de URL</value>
+  </data>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>Clave de la API:</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>Puede encontrar su clave de API y UID aquí</value>
+  </data>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>Firma de correo:</value>
+  </data>
+  <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>Nota: Si usted tiene una firma de correo, entonces usted no necesita un nombre de usuario / contraseña.</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>Dominio:</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>Otras cargadores</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>Cargadores personalizados</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>Tipo de solicitud:</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>Nombre de archivo formulario:</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>URL miniatura:</value>
+  </data>
+  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
+    <value>Probar</value>
+  </data>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>Acortador de URL:</value>
+  </data>
+  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
+    <value>Probar</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>URL de solicitud:</value>
+  </data>
+  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
+    <value>Cargador de texto:</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Cargadores</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>Tipo de respuesta:</value>
+  </data>
+  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
+    <value>Mostrar última respuesta...</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>Supresión URL:</value>
+  </data>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>Resultado de la prueba:</value>
+  </data>
+  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
+    <value>Probar</value>
+  </data>
+  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
+    <value>Cargador de archivos:</value>
+  </data>
+  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
+    <value>Probar</value>
+  </data>
+  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
+    <value>Cargador de imágenes:</value>
+  </data>
+  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
+    <value>Borrar campos --&gt;</value>
+  </data>
+  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
+    <value>Utilice almacenaje de redundancia reducida</value>
   </data>
   <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
     <value>Utilice una clase de almacenamiento de menor redundancia para los objetos almacenados.
 Con esta opción, los objetos son más barato para almacenar, pero tienen el 99,99% de durabilidad, en lugar de 99.999999999%.
 Esto significa que se pueden perder de Amazon S3 en algún momento.</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Actualizar</value>
-  </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Añadir</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Tipo de respuesta:</value>
-  </data>
-  <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>Otras cargadores</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Nombre de archivo formulario:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Tipo de solicitud:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Cargador de texto:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Mostrar última respuesta...</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Probar</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Cargadores</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Probar</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Borrar campos --&gt;</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>URL miniatura:</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Resultado de la prueba:</value>
-  </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Si utiliza la carpeta "Público", una url compartible ya se generó. No es necesario activar la opción "Crear URL compartible".</value>
-  </data>
-  <data name="lblDropboxPath.Text" xml:space="preserve">
-    <value>Ruta de subir:</value>
-  </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Seleccionar...</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Cliente...</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Archivo:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Texto:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Imagen:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Probar</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>Subir archivos a la carpeta seleccionada</value>
-  </data>
-  <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>Dominio:</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Cargadores personalizados</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Añadir</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Añadir</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
-  </data>
-  <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Nota: Si usted tiene una firma de correo, entonces usted no necesita un nombre de usuario / contraseña.</value>
-  </data>
-  <data name="lblYourlsPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblYourlsUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
-  </data>
-  <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>Firma de correo:</value>
-  </data>
-  <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>Puede encontrar su clave de API y UID aquí</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>Clave de la API:</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Estado</value>
   </data>
 </root>

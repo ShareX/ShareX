@@ -580,7 +580,7 @@ namespace GreenshotPlugin.Core
                             QualityDialog qualityDialog = new QualityDialog(outputSettings);
                             qualityDialog.ShowDialog();
                         }
-                        // TODO: For now we always overwrite, should be changed
+                        // For now we always overwrite, should be changed
                         Save(surface, fileNameWithExtension, true, outputSettings, conf.OutputFileCopyPathToClipboard);
                         returnValue = fileNameWithExtension;
                         IniConfig.Save();

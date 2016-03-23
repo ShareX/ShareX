@@ -203,6 +203,9 @@ store.book[0].title</value>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Chiffré</value>
   </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>Clé API:</value>
+  </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Logiciels de mise en ligne d'images</value>
   </data>
@@ -542,9 +545,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Lien URL:</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>Clé API:</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Pour obtenir une clé API, connectez-vous à Lambda : https://lambda.sx/ puis cliquez sur le rouage paramètres en haut à droite.</value>

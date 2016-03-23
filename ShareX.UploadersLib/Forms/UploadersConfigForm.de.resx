@@ -146,14 +146,6 @@ z.B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.exa
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Benutze geringeren Redundanzspeicher</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Benutze eine geringe Redundanz Speicherklasse für gespeicherte Elemente.
-Mit dieser Option sind Objekte billiger zu speichern, haben aber eine 99,99% Beständigkeit, anstatt von 99,999999999%
-d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
-  </data>
   <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
     <value>Aktualisieren</value>
   </data>
@@ -210,6 +202,9 @@ store.book[0].title</value>
   </data>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Verschlüsselt</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API Schlüssel:</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Bildhochlader</value>
@@ -526,9 +521,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Link URL:</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API Schlüssel:</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Um einen API Schlüssel zu bekommen, melde dich bitte bei https://lambda.sx/ an und clicke dann auf das Einstellungsrad oben rechts.</value>
@@ -889,5 +881,13 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   </data>
   <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
     <value>Argumente</value>
+  </data>
+  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
+    <value>Benutze geringeren Redundanzspeicher</value>
+  </data>
+  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
+    <value>Benutze eine geringe Redundanz Speicherklasse für gespeicherte Elemente.
+Mit dieser Option sind Objekte billiger zu speichern, haben aber eine 99,99% Beständigkeit, anstatt von 99,999999999%
+d.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
 </root>

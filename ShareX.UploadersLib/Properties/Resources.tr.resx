@@ -262,4 +262,7 @@ Oluşturulmuş dizinler:</value>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Geçerli Twitter hesabı bulunamadı.</value>
   </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>Yanıt çözümleme başarısız oldu.</value>
+  </data>
 </root>

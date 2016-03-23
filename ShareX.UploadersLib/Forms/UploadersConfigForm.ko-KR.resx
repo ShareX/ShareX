@@ -117,131 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>도메인:</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>사용자 정의 업로더</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 목적지 설정</value>
   </data>
-  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>공유 가능한 URL 생성하기:</value>
+  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
+    <value>여분 저장소 사용 줄이기</value>
   </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>도움말...</value>
+  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
+    <value>저장된 오브젝트에 대해 여분 저장소 사용을 줄입니다.
+이 설정을 사용하면 오브젝트를 저장하는 비용이 줄어들지만,
+가용성이 99.999999999%에서 99.99%로 줄어듦니다.
+이것은 Amazon S3에서 오브젝트를 잃어버릴 수 있는 가능성이 생긴다는 뜻입니다.</value>
   </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>이미지 업로더:</value>
+  <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
+    <value>커스텀 도메인 사용:</value>
   </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>예시 보기...</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>파일 업로더:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>파일 제거 URL:</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>URL 단축기:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>테스트</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>요청 URL</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>삭제</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>갱신</value>
-  </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>추가</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>응답 형식:</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>테스트 결과:</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>섬네일 URL:</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>테스트</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>필드 전부 초기화 --&gt;</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>파일 폼 항목명:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>요청 타입:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>텍스트 업로더:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>마지막 응답 보기...</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>테스트</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>업로더</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>테스트</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>상태:</value>
-  </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>선택...</value>
-  </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>"Public" 폴더를 쓴다면 공유 가능한 URL은 알아서 이미 생성될 것이기 때문에, "공유 가능한 URL"을 체크할 필요는 없습니다.</value>
-  </data>
-  <data name="lblDropboxPath.Text" xml:space="preserve">
-    <value>업로드 경로:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>클라이언트...</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>텍스트:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>이미지:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>파일:</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>선택한 폴더에 파일 업로드하기</value>
-  </data>
-  <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>참고: 시그내쳐가 있으면 사용자 ID와 비밀번호를 입력하지 않아도 됩니다.</value>
-  </data>
-  <data name="lblYourlsUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
-  </data>
-  <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>시그내쳐:</value>
-  </data>
-  <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>API 키와 UID는 여기서 찾을 수 있습니다</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>API 키:</value>
-  </data>
-  <data name="lblYourlsPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
+  <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
+    <value>커스텀 도메인에 설정된 버킷이 있다면 이 설정을 사용하세요.
+만약 텍스트 항목이 비어있다면 버킷 이름이 URL에 쓰일 것입니다.
+예를 들어 버킷 이름이 bucket.example.com이라면 URL은 http://bucket.example.com/...이 되는 식이죠.</value>
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>추가</value>
@@ -255,6 +149,12 @@
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>삭제</value>
   </data>
+  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
+    <value>도움말...</value>
+  </data>
+  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
+    <value>예시 보기...</value>
+  </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>제목</value>
   </data>
@@ -263,6 +163,9 @@
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>폴더 이름</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API 키:</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>이미지 업로더</value>
@@ -468,9 +371,6 @@
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>파일:</value>
   </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API 키:</value>
-  </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>API 키를 얻으려면 https://lambda.sx/ 에서 Lambda에 로그인한 뒤 우측 상단의 설정 톱니바퀴를 클릭하세요.</value>
   </data>
@@ -654,36 +554,136 @@
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>폴더 목록 갱신</value>
   </data>
-  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>선택된 폴더:</value>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>폴더 ID:</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>선택한 폴더에 파일 업로드하기</value>
   </data>
   <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
     <value>공유 가능한 링크 생성하기</value>
   </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>여분 저장소 사용 줄이기</value>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>선택된 폴더:</value>
   </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>저장된 오브젝트에 대해 여분 저장소 사용을 줄입니다.
-이 설정을 사용하면 오브젝트를 저장하는 비용이 줄어들지만,
-가용성이 99.999999999%에서 99.99%로 줄어듦니다.
-이것은 Amazon S3에서 오브젝트를 잃어버릴 수 있는 가능성이 생긴다는 뜻입니다.</value>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>업로드 경로:</value>
   </data>
-  <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
-    <value>커스텀 도메인 사용:</value>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>"Public" 폴더를 쓴다면 공유 가능한 URL은 알아서 이미 생성될 것이기 때문에, "공유 가능한 URL"을 체크할 필요는 없습니다.</value>
   </data>
-  <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
-    <value>커스텀 도메인에 설정된 버킷이 있다면 이 설정을 사용하세요.
-만약 텍스트 항목이 비어있다면 버킷 이름이 URL에 쓰일 것입니다.
-예를 들어 버킷 이름이 bucket.example.com이라면 URL은 http://bucket.example.com/...이 되는 식이죠.</value>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>상태:</value>
   </data>
-  <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>기타 업로더</value>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>선택...</value>
+  </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>공유 가능한 URL 생성하기:</value>
+  </data>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>이미지:</value>
+  </data>
+  <data name="lblFtpText.Text" xml:space="preserve">
+    <value>텍스트:</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>파일:</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>클라이언트...</value>
   </data>
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>URL 단축기</value>
   </data>
-  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>폴더 ID:</value>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>API 키:</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>API 키와 UID는 여기서 찾을 수 있습니다</value>
+  </data>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>시그내쳐:</value>
+  </data>
+  <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>사용자 ID:</value>
+  </data>
+  <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>참고: 시그내쳐가 있으면 사용자 ID와 비밀번호를 입력하지 않아도 됩니다.</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>도메인:</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>기타 업로더</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>사용자 정의 업로더</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>요청 타입:</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>파일 폼 항목명:</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>섬네일 URL:</value>
+  </data>
+  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
+    <value>테스트</value>
+  </data>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>URL 단축기:</value>
+  </data>
+  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
+    <value>테스트</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>요청 URL</value>
+  </data>
+  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
+    <value>텍스트 업로더:</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>업로더</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
+    <value>갱신</value>
+  </data>
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>응답 형식:</value>
+  </data>
+  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
+    <value>마지막 응답 보기...</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>파일 제거 URL:</value>
+  </data>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>테스트 결과:</value>
+  </data>
+  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
+    <value>테스트</value>
+  </data>
+  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
+    <value>파일 업로더:</value>
+  </data>
+  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
+    <value>테스트</value>
+  </data>
+  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
+    <value>이미지 업로더:</value>
+  </data>
+  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
+    <value>필드 전부 초기화 --&gt;</value>
   </data>
 </root>

@@ -500,4 +500,7 @@ Created folders:</value>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Unable to find a valid Twitter account.</value>
   </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>Response parse failed.</value>
+  </data>
 </root>

@@ -437,7 +437,7 @@ EndSelection:<<<<<<<4
             MemoryStream imageStream = clipboardObject as MemoryStream;
             if (!isValidStream(imageStream))
             {
-                // TODO: add "HTML Format" support here...
+                // add "HTML Format" support here...
                 return clipboardObject as Image;
             }
             else

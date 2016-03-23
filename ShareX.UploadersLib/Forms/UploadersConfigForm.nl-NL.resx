@@ -146,14 +146,6 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Toevoegen</value>
   </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Gebruik verminderde meervoudige opslag</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Gebruik verminderde meervoudige opslag voor opgeslagen objecten.
-Met deze optie kosten objecten minder om op te slaan, maar is er een grotere kans op verlies (99.99% verliesgarantie in plaats van 99.99999999%).
-De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
-  </data>
   <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
     <value>Bijwerken</value>
   </data>
@@ -192,6 +184,9 @@ De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   </data>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Versleuteld</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API sleutel:</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Afbeeldingsuploaders</value>
@@ -496,9 +491,6 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Link:</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API sleutel:</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Om een API sleutel te verkrijgen kun je inloggen op Lambda (https://lambda.sx/) en dan op het tandwiel rechtsboven te klikken.</value>
@@ -856,5 +848,13 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   </data>
   <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
     <value>Argumenten</value>
+  </data>
+  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
+    <value>Gebruik verminderde meervoudige opslag</value>
+  </data>
+  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
+    <value>Gebruik verminderde meervoudige opslag voor opgeslagen objecten.
+Met deze optie kosten objecten minder om op te slaan, maar is er een grotere kans op verlies (99.99% verliesgarantie in plaats van 99.99999999%).
+De bestanden kunnen dus bij Amazon S3 verloren gaan op een bepaald punt.</value>
   </data>
 </root>

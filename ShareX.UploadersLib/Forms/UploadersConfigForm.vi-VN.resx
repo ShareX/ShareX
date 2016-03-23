@@ -117,17 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>Domain:</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Thiết lập dịch vụ tải lên</value>
   </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Tùy chỉnh dịch vụ tải lên</value>
+  <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
+    <value>Sử dụng domain tùy chỉnh:</value>
   </data>
-  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
-    <value>URL</value>
+  <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
+    <value>Dùng tùy chọn này nếu bạn có một bucket được cài đặt ở domain tùy chỉnh.
+Nếu trường văn bản để trống thì tên bucket sẽ được sử dụng cho URL.
+Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://bucket.example.com/...</value>
   </data>
-  <data name="tpCopy.Text" xml:space="preserve">
-    <value>Sao chép</value>
+  <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+    <value>Cập nhật</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
+    <value>Tin nhắn tweet mặc định:</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
+    <value>Bỏ qua hộp tin nhắn tweet</value>
+  </data>
+  <data name="lblTwitterDescription.Text" xml:space="preserve">
+    <value>Tên:</value>
+  </data>
+  <data name="btnTwitterRemove.Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="btnTwitterAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Thêm</value>
@@ -141,59 +158,11 @@
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Xóa</value>
   </data>
-  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
-    <value>API hostname: (v.d. http://example.com/api.php, Để trống để dùng polr.me)</value>
-  </data>
-  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
-    <value>API UID:</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="lblCoinURLUUID.Text" xml:space="preserve">
-    <value>UUID</value>
-  </data>
-  <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>Bạn có thể tìm thấy API key và UID ở đấy</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Thiết lập dịch vụ tải lên</value>
-  </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>Trợ giúp...</value>
   </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên ảnh:</value>
-  </data>
   <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
     <value>Ví dụ...</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên file:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>URL để xóa:</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Dịch vụ rút gọn URL:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL yêu cầu:</value>
-  </data>
-  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Tạo liên kết để chia sẻ:</value>
-  </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>DỊch vụ rút gọn URL</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>ID thư mục:</value>
-  </data>
-  <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
-    <value>Sử dụng domain tùy chỉnh:</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Tiêu đề</value>
@@ -203,6 +172,9 @@
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Tên thư mục</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API key:</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Trình tải lên ảnh</value>
@@ -438,9 +410,6 @@
   <data name="lblPomfResultURL.Text" xml:space="preserve">
     <value>URL kết quả:</value>
   </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Để lấy API key, đăng nhập Lambda ở https://lambda.sx/ và nhấn vào biểu tượng cài đặt ở phần trên bên phải.</value>
   </data>
@@ -627,50 +596,71 @@
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Làm mới danh sách thư mục</value>
   </data>
-  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>Thư mục đa chọn:</value>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>ID thư mục:</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>Tải các tệp tới thư mục đã chọn</value>
   </data>
   <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
     <value>Tạo liên kết để chia sẻ</value>
   </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Xóa các trường --&gt;</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên</value>
-  </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Nếu bạn đang dùng thư mục "Public", url chia sẻ đã được tạo ra. Bạn không cần chọn "Tạo URL chia sẻ"</value>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>Thư mục đa chọn:</value>
   </data>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Đường dẫn tải lên:</value>
   </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Xóa các dịch vụ tải lên</value>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>Nếu bạn đang dùng thư mục "Public", url chia sẻ đã được tạo ra. Bạn không cần chọn "Tạo URL chia sẻ"</value>
   </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Xóa</value>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>Trạng thái</value>
   </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Cập nhật</value>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>Chọn...</value>
   </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Thêm</value>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>Tạo liên kết để chia sẻ:</value>
   </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Kiểu phản hồi:</value>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>Ảnh:</value>
   </data>
-  <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>Chữ ký:</value>
+  <data name="lblFtpText.Text" xml:space="preserve">
+    <value>Văn bản:</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>Tệp:</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>Trình...</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>DỊch vụ rút gọn URL</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>API hostname: (v.d. http://example.com/api.php, Để trống để dùng polr.me)</value>
+  </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="lblCoinURLUUID.Text" xml:space="preserve">
+    <value>UUID</value>
+  </data>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>API UID:</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>Bạn có thể tìm thấy API key và UID ở đấy</value>
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
   </data>
-  <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Lưu ý: Nếu bạn đã có Chữ ký (Signature) thì không cần tên tài khoản/mật khẩu nữa.</value>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>Chữ ký:</value>
   </data>
   <data name="lblYourlsUsername.Text" xml:space="preserve">
     <value>Tên tài khoản:</value>
@@ -678,82 +668,89 @@
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>Mật khẩu:</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Chọn...</value>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>Lưu ý: Nếu bạn đã có Chữ ký (Signature) thì không cần tên tài khoản/mật khẩu nữa.</value>
   </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Kiểu yêu cầu:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Văn bản:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Ảnh:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Trình...</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Tệp:</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Trạng thái</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên văn bản:</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Kết quả kiểm tra:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
-  <data name="lblPolrAPIKey.Text" xml:space="preserve">
-    <value>API key:</value>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>Domain:</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>Trình tải lên khác</value>
   </data>
-  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>Tải các tệp tới thư mục đã chọn</value>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>Tùy chỉnh dịch vụ tải lên</value>
   </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Hiển thị lần phản hồi cuối</value>
+  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>Kiểu yêu cầu:</value>
   </data>
   <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
     <value>Tên tệp:</value>
   </data>
-  <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
-    <value>Dùng tùy chọn này nếu bạn có một bucket được cài đặt ở domain tùy chỉnh.
-Nếu trường văn bản để trống thì tên bucket sẽ được sử dụng cho URL.
-Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://bucket.example.com/...</value>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>URL ảnh thu nhỏ:</value>
   </data>
-  <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>Dịch vụ rút gọn URL:</value>
+  </data>
+  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>URL yêu cầu:</value>
+  </data>
+  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên văn bản:</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
     <value>Cập nhật</value>
   </data>
-  <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
-    <value>Tin nhắn tweet mặc định:</value>
-  </data>
-  <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
-    <value>Bỏ qua hộp tin nhắn tweet</value>
-  </data>
-  <data name="lblTwitterDescription.Text" xml:space="preserve">
-    <value>Tên:</value>
-  </data>
-  <data name="btnTwitterRemove.Text" xml:space="preserve">
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
     <value>Xóa</value>
   </data>
-  <data name="btnTwitterAdd.Text" xml:space="preserve">
-    <value>Thêm</value>
+  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
+    <value>Xóa các dịch vụ tải lên</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>Kiểu phản hồi:</value>
+  </data>
+  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
+    <value>Hiển thị lần phản hồi cuối</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>URL để xóa:</value>
+  </data>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>Kết quả kiểm tra:</value>
+  </data>
+  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên file:</value>
+  </data>
+  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên ảnh:</value>
+  </data>
+  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
+    <value>Xóa các trường --&gt;</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Dùng vùng lưu trữ dự phòng đã được giảm</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>URL ảnh thu nhỏ:</value>
   </data>
   <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
     <value>Sử dụng bộ nhớ cấp thấp để lưu trữ dữ liệu.

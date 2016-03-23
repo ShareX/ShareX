@@ -821,14 +821,13 @@ namespace ShareX
 
             tsMain.Visible = lblSplitter.Visible = Program.Settings.ShowMenu;
 
-            // TODO: Translate
             if (Program.Settings.ShowColumns)
             {
-                tsmiHideColumns.Text = "Hide columns";
+                tsmiHideColumns.Text = Resources.MainForm_UpdateMainWindowLayout_Hide_columns;
             }
             else
             {
-                tsmiHideColumns.Text = "Show columns";
+                tsmiHideColumns.Text = Resources.MainForm_UpdateMainWindowLayout_Show_columns;
             }
 
             lvUploads.HeaderStyle = Program.Settings.ShowColumns ? ColumnHeaderStyle.Nonclickable : ColumnHeaderStyle.None;

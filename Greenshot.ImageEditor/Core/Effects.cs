@@ -184,7 +184,7 @@ namespace Greenshot.Core
 
         public void Reset()
         {
-            // TODO: Modify the threshold to have a default, which is reset here
+            // Modify the threshold to have a default, which is reset here
         }
 
         public Image Apply(Image sourceImage, Matrix matrix)

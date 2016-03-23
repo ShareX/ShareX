@@ -497,7 +497,7 @@ namespace GreenshotPlugin.Core
                 }
                 else
                 {
-                    // TODO: Remove with the release
+                    // Remove with the release
                     ExcludeDestinations.Remove("OneNote");
                 }
             }

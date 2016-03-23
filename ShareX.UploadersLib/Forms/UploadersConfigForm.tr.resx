@@ -212,6 +212,9 @@ store.book[0].title</value>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Şifreli</value>
   </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
+  </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Resim yükleyiciler</value>
   </data>
@@ -464,6 +467,24 @@ store.book[0].title</value>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Dosya:</value>
   </data>
+  <data name="lblOpenloadApiLogin.Text" xml:space="preserve">
+    <value>API girişi:</value>
+  </data>
+  <data name="lblOpenloadApiKey.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
+  </data>
+  <data name="lblOpenloadApiLink.Text" xml:space="preserve">
+    <value>API anahtarınızı openload.co hesap panelinde bulabilirsiniz.</value>
+  </data>
+  <data name="gbOpenloadFolders.Text" xml:space="preserve">
+    <value>Klasörler</value>
+  </data>
+  <data name="cbOpenloadUploadToFolder.Text" xml:space="preserve">
+    <value>Dosyaları seçili klasör e yükle</value>
+  </data>
+  <data name="btnOpenloadRefreshFolders.Text" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
   <data name="cbStreamableAnonymous.Text" xml:space="preserve">
     <value>Anonim</value>
   </data>
@@ -566,9 +587,6 @@ store.book[0].title</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Link adresi:</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API anahtarı:</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>API anahtarını almak için Lambda sitesine giriş yapın https://lambda.sx/ adresinden ve sağ üstteki dişli tuşuna basın.</value>

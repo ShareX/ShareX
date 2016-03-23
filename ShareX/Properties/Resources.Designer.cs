@@ -1299,6 +1299,24 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide columns.
+        /// </summary>
+        public static string MainForm_UpdateMainWindowLayout_Hide_columns {
+            get {
+                return ResourceManager.GetString("MainForm_UpdateMainWindowLayout_Hide_columns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show columns.
+        /// </summary>
+        public static string MainForm_UpdateMainWindowLayout_Show_columns {
+            get {
+                return ResourceManager.GetString("MainForm_UpdateMainWindowLayout_Show_columns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hide menu.
         /// </summary>
         public static string MainForm_UpdateMenu_Hide_menu {
@@ -1458,6 +1476,33 @@ namespace ShareX.Properties {
         public static string Program_WritePersonalPathConfig_Cant_access_to_file {
             get {
                 return ResourceManager.GetString("Program_WritePersonalPathConfig_Cant_access_to_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string QuickTaskMenu_ShowMenu_Cancel {
+            get {
+                return ResourceManager.GetString("QuickTaskMenu_ShowMenu_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continue.
+        /// </summary>
+        public static string QuickTaskMenu_ShowMenu_Continue {
+            get {
+                return ResourceManager.GetString("QuickTaskMenu_ShowMenu_Continue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit this menu....
+        /// </summary>
+        public static string QuickTaskMenu_ShowMenu_Edit_this_menu___ {
+            get {
+                return ResourceManager.GetString("QuickTaskMenu_ShowMenu_Edit_this_menu___", resourceCulture);
             }
         }
         
@@ -1767,6 +1812,15 @@ namespace ShareX.Properties {
         public static string TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_ {
             get {
                 return ResourceManager.GetString("TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        public static string TaskManager_CreateListViewItem_History {
+            get {
+                return ResourceManager.GetString("TaskManager_CreateListViewItem_History", resourceCulture);
             }
         }
         

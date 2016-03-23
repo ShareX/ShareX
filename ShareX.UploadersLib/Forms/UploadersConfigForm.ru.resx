@@ -209,6 +209,9 @@ store.book[0].title</value>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Зашифровано</value>
   </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Сервисы картинок</value>
   </data>
@@ -524,9 +527,6 @@ store.book[0].title</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>URL ссылки:</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>Ключ API:</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Для получения ключа API, войдите в Lambda на https://lambda.sx/, затем нажмите шестеренку настроек вверху справа.</value>

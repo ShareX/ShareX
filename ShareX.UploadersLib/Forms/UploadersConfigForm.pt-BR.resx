@@ -221,6 +221,9 @@ store.book[0].title</value>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Encriptado</value>
   </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>Chave da API:</value>
+  </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Envio de imagens</value>
   </data>
@@ -608,9 +611,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>URL do Link:</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>Chave da API:</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Para obter uma chave de API, logue no Lambda em https://lambda.xs/ e clique no ícone de configurações no canto superior direito.</value>
@@ -1075,8 +1075,5 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
     <value>Usar uma classe de hospedagem de menor redundância para objetos guardados.
 Com esta opção, os objetos são mais baratos de armazenar, mas possuem durabilidade de 99.99%, ao invés de 99.999999999%.
 Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value>
-  </data>
-  <data name="tpCopy.Text" xml:space="preserve">
-    <value>Copiar</value>
   </data>
 </root>

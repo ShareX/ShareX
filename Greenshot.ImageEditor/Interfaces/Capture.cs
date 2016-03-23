@@ -181,7 +181,7 @@ namespace Greenshot.Plugin
         /// <param name="y">y coordinates to move the mouse</param>
         void MoveMouseLocation(int x, int y);
 
-        // / TODO: Enable when the elements are usable again.
+        // / Enable when the elements are usable again.
         ///// <summary>
         ///// Apply a translate to the elements e.g. needed for crop
         ///// </summary>

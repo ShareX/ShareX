@@ -43,6 +43,17 @@ namespace ShareX
                 AutoClose = false
             };
 
+            ToolStripMenuItem tsmiContinue = new ToolStripMenuItem(Resources.QuickTaskMenu_ShowMenu_Continue);
+            tsmiContinue.Image = Resources.control;
+            tsmiContinue.Click += (sender, e) =>
+            {
+                cms.Close();
+                OnTaskInfoSelected(null);
+            };
+            cms.Items.Add(tsmiContinue);
+
+            cms.Items.Add(new ToolStripSeparator());
+
             if (Program.Settings != null && Program.Settings.QuickTaskPresets != null && Program.Settings.QuickTaskPresets.Count > 0)
             {
                 foreach (QuickTaskInfo taskInfo in Program.Settings.QuickTaskPresets)
@@ -70,8 +81,7 @@ namespace ShareX
                 cms.Items.Add(new ToolStripSeparator());
             }
 
-            // TODO: Translate
-            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem("Edit this menu...");
+            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem(Resources.QuickTaskMenu_ShowMenu_Edit_this_menu___);
             tsmiEdit.Image = Resources.pencil;
             tsmiEdit.Click += (sender, e) =>
             {
@@ -82,16 +92,7 @@ namespace ShareX
 
             cms.Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiContinue = new ToolStripMenuItem("Continue");
-            tsmiContinue.Image = Resources.control;
-            tsmiContinue.Click += (sender, e) =>
-            {
-                cms.Close();
-                OnTaskInfoSelected(null);
-            };
-            cms.Items.Add(tsmiContinue);
-
-            ToolStripMenuItem tsmiCancel = new ToolStripMenuItem("Cancel");
+            ToolStripMenuItem tsmiCancel = new ToolStripMenuItem(Resources.QuickTaskMenu_ShowMenu_Cancel);
             tsmiCancel.Image = Resources.cross;
             tsmiCancel.Click += (sender, e) => cms.Close();
             cms.Items.Add(tsmiCancel);

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.IndexerLib.Properties;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -54,8 +55,7 @@ namespace ShareX.IndexerLib
 
         private void BrowseFolder()
         {
-            // TODO: Translate
-            if (Helpers.BrowseFolder("ShareX - Choose folder path", txtFolderPath))
+            if (Helpers.BrowseFolder("ShareX - " + Resources.DirectoryIndexerForm_BrowseFolder_Choose_folder_path, txtFolderPath))
             {
                 IndexFolder();
             }

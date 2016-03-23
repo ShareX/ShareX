@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.IO;
 
@@ -89,8 +90,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 }
                 catch (Exception e)
                 {
-                    // TODO: Translate
-                    Errors.Add("Response parse failed." + Environment.NewLine + e);
+                    Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
                 }
             }
 

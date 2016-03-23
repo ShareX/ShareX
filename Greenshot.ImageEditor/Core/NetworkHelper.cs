@@ -497,7 +497,7 @@ namespace GreenshotPlugin.Core
         /// </summary>
         /// <param name="webRequest">The request object.</param>
         /// <returns>The response data.</returns>
-        /// TODO: This method should handle the StatusCode better!
+        /// This method should handle the StatusCode better!
         public static string GetResponseAsString(HttpWebRequest webRequest)
         {
             return GetResponseAsString(webRequest, false);
