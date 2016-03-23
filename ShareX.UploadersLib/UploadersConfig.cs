@@ -26,7 +26,6 @@
 using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
-using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.TextUploaders;
 using System;

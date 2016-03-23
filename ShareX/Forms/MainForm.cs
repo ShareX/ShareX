@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.HistoryLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;

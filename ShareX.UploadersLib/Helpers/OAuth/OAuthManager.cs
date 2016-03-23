@@ -33,7 +33,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace ShareX.UploadersLib.HelperClasses
+namespace ShareX.UploadersLib
 {
     public static class OAuthManager
     {

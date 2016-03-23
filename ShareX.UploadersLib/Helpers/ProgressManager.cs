@@ -28,7 +28,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 
-namespace ShareX.UploadersLib.HelperClasses
+namespace ShareX.UploadersLib
 {
     public class ProgressManager
     {

@@ -24,40 +24,31 @@
 #endregion License Information (GPL v3)
 
 using ShareX.UploadersLib.Properties;
-using System.Drawing;
-using System.Resources;
+using System;
+using System.ComponentModel;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
-namespace ShareX.UploadersLib.HelperClasses
+namespace ShareX.UploadersLib
 {
-    public class ImageListManager
+    internal class KeyFileNameEditor : FileNameEditor
     {
-        private ImageList il;
-
-        public ImageListManager(ListView listView)
+        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            il = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
-            listView.SmallImageList = il;
-        }
-
-        public string AddImage(string key)
-        {
-            if (!il.Images.ContainsKey(key))
+            if (context == null || provider == null)
             {
-                ResourceManager rm = Resources.ResourceManager;
-                Image img = rm.GetObject(key) as Image;
-
-                if (img != null)
+                return base.EditValue(context, provider, value);
+            }
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = Resources.KeyFileNameEditor_EditValue_Browse_for_a_key_file___;
+                dlg.Filter = "Keyfile (*.*)|*.*";
+                if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    il.Images.Add(key, img);
-                }
-                else
-                {
-                    return string.Empty;
+                    value = dlg.FileName;
                 }
             }
-
-            return key;
+            return value;
         }
     }
 }

@@ -23,11 +23,41 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib.HelperClasses
+using ShareX.UploadersLib.Properties;
+using System.Drawing;
+using System.Resources;
+using System.Windows.Forms;
+
+namespace ShareX.UploadersLib
 {
-    public class AccountInfo
+    public class ImageListManager
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
+        private ImageList il;
+
+        public ImageListManager(ListView listView)
+        {
+            il = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
+            listView.SmallImageList = il;
+        }
+
+        public string AddImage(string key)
+        {
+            if (!il.Images.ContainsKey(key))
+            {
+                ResourceManager rm = Resources.ResourceManager;
+                Image img = rm.GetObject(key) as Image;
+
+                if (img != null)
+                {
+                    il.Images.Add(key, img);
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+
+            return key;
+        }
     }
 }

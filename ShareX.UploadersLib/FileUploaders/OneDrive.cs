@@ -25,7 +25,6 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.ComponentModel;

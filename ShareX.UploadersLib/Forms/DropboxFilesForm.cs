@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
-using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.ComponentModel;

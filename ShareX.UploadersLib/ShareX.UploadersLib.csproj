@@ -120,7 +120,7 @@
   <ItemGroup>
     <Compile Include="APIKeys\APIKeys.cs" />
     <Compile Include="APIKeys\APIKeysLocal.cs" />
-    <Compile Include="FileUploaderService.cs" />
+    <Compile Include="BaseServices\FileUploaderService.cs" />
     <Compile Include="FileUploaders\AmazonS3Region.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\Box.cs" />
@@ -206,9 +206,9 @@
     </Compile>
     <Compile Include="FileUploaders\Pushbullet.cs" />
     <Compile Include="FileUploaders\GfycatUploader.cs" />
-    <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
-    <Compile Include="HelperClasses\SSLBypassHelper.cs" />
-    <Compile Include="URLSharingService.cs" />
+    <Compile Include="Helpers\OAuth\IOAuthBase.cs" />
+    <Compile Include="Helpers\SSLBypassHelper.cs" />
+    <Compile Include="BaseServices\URLSharingService.cs" />
     <Compile Include="SharingServices\DeliciousSharingService.cs" />
     <Compile Include="SharingServices\EmailSharingService.cs" />
     <Compile Include="SharingServices\FacebookSharingService.cs" />
@@ -222,15 +222,15 @@
     <Compile Include="SharingServices\TumblrSharingService.cs" />
     <Compile Include="SharingServices\TwitterSharingService.cs" />
     <Compile Include="SharingServices\VkSharingService.cs" />
-    <Compile Include="TaskReferenceHelper.cs" />
-    <Compile Include="TextUploaderService.cs" />
+    <Compile Include="Helpers\TaskReferenceHelper.cs" />
+    <Compile Include="BaseServices\TextUploaderService.cs" />
     <Compile Include="UploaderFactory.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
     <Compile Include="ImageUploaders\CheveretoUploader.cs" />
     <Compile Include="ImageUploaders\ImglandUploader.cs" />
     <Compile Include="ImageUploaders\SomeImage.cs" />
     <Compile Include="ImageUploaders\VgymeUploader.cs" />
-    <Compile Include="ImageUploaderService.cs" />
+    <Compile Include="BaseServices\ImageUploaderService.cs" />
     <Compile Include="TextUploaders\Hastebin.cs" />
     <Compile Include="TextUploaders\OneTimeSecret.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />
@@ -253,9 +253,9 @@
     <Compile Include="Forms\DropboxFilesForm.Designer.cs">
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelperClasses\CertFileNameEditor.cs" />
-    <Compile Include="HelperClasses\ImageListManager.cs" />
-    <Compile Include="FileUploader.cs" />
+    <Compile Include="Helpers\CertFileNameEditor.cs" />
+    <Compile Include="Helpers\ImageListManager.cs" />
+    <Compile Include="BaseUploaders\FileUploader.cs" />
     <Compile Include="FileUploaders\Dropbox.cs" />
     <Compile Include="FileUploaders\DropIO.cs" />
     <Compile Include="FileUploaders\FileBin.cs" />
@@ -267,16 +267,16 @@
     <Compile Include="FileUploaders\SendSpace.cs" />
     <Compile Include="FileUploaders\SendSpaceManager.cs" />
     <Compile Include="FileUploaders\ShareCX.cs" />
-    <Compile Include="HelperClasses\AccountInfo.cs" />
-    <Compile Include="HelperClasses\Argument.cs" />
-    <Compile Include="HelperClasses\KeyFileNameEditor.cs" />
-    <Compile Include="HelperClasses\OAuth\IOAuth.cs" />
-    <Compile Include="HelperClasses\OAuth\IOAuth2.cs" />
-    <Compile Include="HelperClasses\OAuth\IOAuth2Basic.cs" />
-    <Compile Include="HelperClasses\OAuth\OAuth2Info.cs" />
-    <Compile Include="HelperClasses\OAuth\OAuth2Token.cs" />
-    <Compile Include="HelperClasses\OAuth\OAuthManager.cs" />
-    <Compile Include="HelperClasses\OAuth\OAuthInfo.cs" />
+    <Compile Include="Helpers\AccountInfo.cs" />
+    <Compile Include="Helpers\Argument.cs" />
+    <Compile Include="Helpers\KeyFileNameEditor.cs" />
+    <Compile Include="Helpers\OAuth\IOAuth.cs" />
+    <Compile Include="Helpers\OAuth\IOAuth2.cs" />
+    <Compile Include="Helpers\OAuth\IOAuth2Basic.cs" />
+    <Compile Include="Helpers\OAuth\OAuth2Info.cs" />
+    <Compile Include="Helpers\OAuth\OAuth2Token.cs" />
+    <Compile Include="Helpers\OAuth\OAuthManager.cs" />
+    <Compile Include="Helpers\OAuth\OAuthInfo.cs" />
     <Compile Include="ImageUploaders\CustomImageUploader.cs" />
     <Compile Include="ImageUploaders\Imgur.cs" />
     <Compile Include="ImageUploaders\Picasa.cs" />
@@ -284,7 +284,7 @@
     <Compile Include="TextUploaders\GitHubGist.cs" />
     <Compile Include="TextUploaders\Paste_ee.cs" />
     <Compile Include="UploadersConfigValidator.cs" />
-    <Compile Include="UploaderService.cs" />
+    <Compile Include="BaseServices\UploaderService.cs" />
     <Compile Include="UploadResult.cs" />
     <Compile Include="Forms\TwitterTweetForm.cs">
       <SubType>Form</SubType>
@@ -293,13 +293,13 @@
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
-    <Compile Include="HelperClasses\CustomUploaderItem.cs" />
+    <Compile Include="Helpers\CustomUploaderItem.cs" />
     <Compile Include="ImageUploaders\ImmioUploader.cs" />
     <Compile Include="ImageUploaders\Photobucket.cs" />
     <Compile Include="ImageUploaders\Twitter.cs" />
-    <Compile Include="HelperClasses\ProgressManager.cs" />
-    <Compile Include="HelperClasses\TCPClient.cs" />
-    <Compile Include="ImageUploader.cs" />
+    <Compile Include="Helpers\ProgressManager.cs" />
+    <Compile Include="Helpers\TCPClient.cs" />
+    <Compile Include="BaseUploaders\ImageUploader.cs" />
     <Compile Include="FileUploaders\CustomFileUploader.cs" />
     <Compile Include="ImageUploaders\FlickrUploader.cs" />
     <Compile Include="ImageUploaders\ImageBin.cs" />
@@ -317,15 +317,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TextUploader.cs" />
+    <Compile Include="BaseUploaders\TextUploader.cs" />
     <Compile Include="TextUploaders\Paste2.cs" />
     <Compile Include="TextUploaders\Pastebin_ca.cs" />
     <Compile Include="TextUploaders\Pastebin.cs" />
     <Compile Include="TextUploaders\Pastee.cs" />
     <Compile Include="TextUploaders\Slexy.cs" />
-    <Compile Include="Uploader.cs" />
-    <Compile Include="URLShortener.cs" />
-    <Compile Include="URLShortenerService.cs" />
+    <Compile Include="BaseUploaders\Uploader.cs" />
+    <Compile Include="BaseUploaders\URLShortener.cs" />
+    <Compile Include="BaseServices\URLShortenerService.cs" />
     <Compile Include="URLShorteners\PolrURLShortener.cs" />
     <Compile Include="URLShorteners\TwoGPURLShortener.cs" />
     <Compile Include="URLShorteners\AdFlyURLShortener.cs" />

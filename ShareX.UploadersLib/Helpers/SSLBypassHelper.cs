@@ -23,12 +23,28 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib.HelperClasses
-{
-    public interface IOAuth2 : IOAuth2Basic
-    {
-        bool RefreshAccessToken();
+using System;
+using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 
-        bool CheckAuthorization();
+namespace ShareX.UploadersLib
+{
+    public class SSLBypassHelper : IDisposable
+    {
+        public SSLBypassHelper()
+        {
+            ServicePointManager.ServerCertificateValidationCallback += ServerCertificateValidationCallback;
+        }
+
+        public void Dispose()
+        {
+            ServicePointManager.ServerCertificateValidationCallback -= ServerCertificateValidationCallback;
+        }
+
+        private bool ServerCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+        {
+            return true;
+        }
     }
 }

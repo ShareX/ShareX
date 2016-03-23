@@ -23,32 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.UploadersLib.Properties;
-using System;
-using System.ComponentModel;
-using System.Windows.Forms;
-using System.Windows.Forms.Design;
-
-namespace ShareX.UploadersLib.HelperClasses
+namespace ShareX.UploadersLib
 {
-    internal class CertFileNameEditor : FileNameEditor
+    public interface IOAuth2 : IOAuth2Basic
     {
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
-        {
-            if (context == null || provider == null)
-            {
-                return base.EditValue(context, provider, value);
-            }
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                dlg.Title = Resources.CertFileNameEditor_EditValue_Browse_for_a_certificate_file___;
-                dlg.Filter = "Certification (*.cer)|*.cer";
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    value = dlg.FileName;
-                }
-            }
-            return value;
-        }
+        bool RefreshAccessToken();
+
+        bool CheckAuthorization();
     }
 }

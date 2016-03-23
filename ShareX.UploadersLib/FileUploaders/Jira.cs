@@ -26,7 +26,6 @@
 // Credits: https://github.com/gpailler
 
 using Newtonsoft.Json;
-using ShareX.UploadersLib.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;

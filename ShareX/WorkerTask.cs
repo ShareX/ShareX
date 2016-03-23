@@ -26,11 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
-using ShareX.UploadersLib.FileUploaders;
-using ShareX.UploadersLib.HelperClasses;
-using ShareX.UploadersLib.ImageUploaders;
-using ShareX.UploadersLib.TextUploaders;
-using ShareX.UploadersLib.URLShorteners;
 using System;
 using System.Drawing;
 using System.IO;

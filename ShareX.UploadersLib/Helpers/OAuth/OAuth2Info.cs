@@ -23,32 +23,24 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.UploadersLib.Properties;
-using System;
-using System.ComponentModel;
-using System.Windows.Forms;
-using System.Windows.Forms.Design;
-
-namespace ShareX.UploadersLib.HelperClasses
+namespace ShareX.UploadersLib
 {
-    internal class KeyFileNameEditor : FileNameEditor
+    public class OAuth2Info
     {
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+        public string Client_ID { get; set; }
+        public string Client_Secret { get; set; }
+        public OAuth2Token Token { get; set; }
+
+        public OAuth2Info(string client_id, string client_secret)
         {
-            if (context == null || provider == null)
-            {
-                return base.EditValue(context, provider, value);
-            }
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                dlg.Title = Resources.KeyFileNameEditor_EditValue_Browse_for_a_key_file___;
-                dlg.Filter = "Keyfile (*.*)|*.*";
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    value = dlg.FileName;
-                }
-            }
-            return value;
+            Client_ID = client_id;
+            Client_Secret = client_secret;
+        }
+
+        public static bool CheckOAuth(OAuth2Info oauth)
+        {
+            return oauth != null && !string.IsNullOrEmpty(oauth.Client_ID) && !string.IsNullOrEmpty(oauth.Client_Secret) &&
+                   oauth.Token != null && !string.IsNullOrEmpty(oauth.Token.access_token);
         }
     }
 }

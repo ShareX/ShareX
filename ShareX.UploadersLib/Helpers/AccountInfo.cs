@@ -23,10 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib.HelperClasses
+namespace ShareX.UploadersLib
 {
-    public interface IOAuth2Basic : IOAuthBase
+    public class AccountInfo
     {
-        OAuth2Info AuthInfo { get; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

@@ -32,7 +32,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-namespace ShareX.UploadersLib.HelperClasses
+namespace ShareX.UploadersLib
 {
     public class TCPClient
     {

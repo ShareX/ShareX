@@ -25,7 +25,6 @@
 
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
-using ShareX.HelpersLib;
 using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;

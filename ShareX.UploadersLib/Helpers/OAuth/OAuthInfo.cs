@@ -27,7 +27,7 @@ using ShareX.UploadersLib.Properties;
 using System;
 using System.ComponentModel;
 
-namespace ShareX.UploadersLib.HelperClasses
+namespace ShareX.UploadersLib
 {
     public class OAuthInfo : ICloneable
     {

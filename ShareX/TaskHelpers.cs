@@ -31,7 +31,6 @@ using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
-using ShareX.UploadersLib.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

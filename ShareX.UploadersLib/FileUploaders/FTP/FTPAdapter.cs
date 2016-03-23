@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
