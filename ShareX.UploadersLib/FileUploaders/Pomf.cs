@@ -57,23 +57,23 @@ namespace ShareX.UploadersLib.FileUploaders
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
-            new PomfUploader("https://catgirlsare.sexy/upload.php"),
-            new PomfUploader("http://comfy.moe/upload.php"),
-            new PomfUploader("https://cocaine.ninja/upload.php"),
+            new PomfUploader("https://catgirlsare.sexy/upload.php", "https://a.catgirlsare.sexy"),
+            new PomfUploader("http://comfy.moe/upload.php", "http://comfy.moe"),
+            new PomfUploader("https://cocaine.ninja/upload.php", "https://a.cocaine.ninja"),
             new PomfUploader("http://cuntflaps.me/upload.php", "http://a.cuntflaps.me"),
             new PomfUploader("http://files.plebeianparty.com/upload.php", "http://a.plebeianparty.com"),
             new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
             new PomfUploader("http://glop.me/upload.php", "http://gateway.glop.me/ipfs"),
             new PomfUploader("http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
             new PomfUploader("https://maxfile.ro/static/upload.php", "https://d2.maxfile.ro"),
-            new PomfUploader("https://mixtape.moe/upload.php"),
-            new PomfUploader("https://nigger.cat/upload.php"),
+            new PomfUploader("https://mixtape.moe/upload.php", "https://my.mixtape.moe"),
+            new PomfUploader("https://nigger.cat/upload.php", "http://a.nigger.cat"),
             new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
             new PomfUploader("http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
-            new PomfUploader("https://pomf.is/upload.php"),
+            new PomfUploader("https://pomf.is/upload.php", "https://u.pomf.is"),
             //new PomfUploader("https://pomf.se/upload.php"),
             new PomfUploader("http://reich.io/upload.php"),
-            new PomfUploader("https://sugoi.vidyagam.es/upload.php"),
+            new PomfUploader("https://sugoi.vidyagam.es/upload.php", "https://sugoi.vidyagam.es/qt"),
             new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe")
         };
 
