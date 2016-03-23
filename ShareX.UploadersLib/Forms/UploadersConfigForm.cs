@@ -46,9 +46,9 @@ namespace ShareX.UploadersLib
         private ImageList uploadersImageList;
         private URLType urlType = URLType.URL;
 
-        public UploadersConfigForm(UploadersConfig uploadersConfig)
+        public UploadersConfigForm(UploadersConfig config)
         {
-            Config = uploadersConfig;
+            Config = config;
             InitializeComponent();
             Icon = ShareXResources.Icon;
 

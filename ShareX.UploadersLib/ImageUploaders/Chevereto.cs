@@ -39,17 +39,17 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Chevereto;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.CheveretoUploader != null && !string.IsNullOrEmpty(uploadersConfig.CheveretoUploader.UploadURL) &&
-                !string.IsNullOrEmpty(uploadersConfig.CheveretoUploader.APIKey);
+            return config.CheveretoUploader != null && !string.IsNullOrEmpty(config.CheveretoUploader.UploadURL) &&
+                !string.IsNullOrEmpty(config.CheveretoUploader.APIKey);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Chevereto(uploadersConfig.CheveretoUploader)
+            return new Chevereto(config.CheveretoUploader)
             {
-                DirectURL = uploadersConfig.CheveretoDirectURL
+                DirectURL = config.CheveretoDirectURL
             };
         }
     }

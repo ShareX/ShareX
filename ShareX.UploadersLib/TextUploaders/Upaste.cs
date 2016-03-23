@@ -33,13 +33,13 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public override TextDestination EnumValue { get; } = TextDestination.Upaste;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override TextUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Upaste(uploadersConfig.UpasteUserKey)
+            return new Upaste(config.UpasteUserKey)
             {
-                IsPublic = uploadersConfig.UpasteIsPublic
+                IsPublic = config.UpasteIsPublic
             };
         }
     }

@@ -23,12 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib.SharingServices
+namespace ShareX.UploadersLib
 {
-    public class GooglePlusSharingService : SimpleSharingService
+    /// <summary>
+    /// Defines a service capable of sharing a URL to (eg. Facebook, Twitter)
+    /// </summary>
+    public abstract class URLSharingService : UploaderService<URLSharingServices>
     {
-        public override URLSharingServices EnumValue { get; } = URLSharingServices.GooglePlus;
-        
-        protected override string UrlFormatString { get; } = "https://plus.google.com/share?url={0}";
+        public abstract void ShareURL(string url, UploadersConfig config);
     }
 }

@@ -33,25 +33,25 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.CustomFileUploader;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.CustomUploadersList != null && uploadersConfig.CustomUploadersList.IsValidIndex(uploadersConfig.CustomFileUploaderSelected);
+            return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomFileUploaderSelected);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             int index;
 
             if (taskInfo.OverrideCustomUploader)
             {
-                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, uploadersConfig.CustomUploadersList.Count - 1);
+                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, config.CustomUploadersList.Count - 1);
             }
             else
             {
-                index = uploadersConfig.CustomFileUploaderSelected;
+                index = config.CustomFileUploaderSelected;
             }
 
-            CustomUploaderItem customUploader = uploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
+            CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
 
             if (customUploader != null)
             {

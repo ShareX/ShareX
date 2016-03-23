@@ -55,31 +55,31 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Imgur;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.ImgurAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(uploadersConfig.ImgurOAuth2Info);
+            return config.ImgurAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(config.ImgurOAuth2Info);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            if (uploadersConfig.ImgurOAuth2Info == null)
+            if (config.ImgurOAuth2Info == null)
             {
-                uploadersConfig.ImgurOAuth2Info = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
+                config.ImgurOAuth2Info = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
             }
 
             string albumID = null;
 
-            if (uploadersConfig.ImgurUploadSelectedAlbum && uploadersConfig.ImgurSelectedAlbum != null)
+            if (config.ImgurUploadSelectedAlbum && config.ImgurSelectedAlbum != null)
             {
-                albumID = uploadersConfig.ImgurSelectedAlbum.id;
+                albumID = config.ImgurSelectedAlbum.id;
             }
 
-            return new Imgur(uploadersConfig.ImgurOAuth2Info)
+            return new Imgur(config.ImgurOAuth2Info)
             {
-                UploadMethod = uploadersConfig.ImgurAccountType,
-                DirectLink = uploadersConfig.ImgurDirectLink,
-                ThumbnailType = uploadersConfig.ImgurThumbnailType,
-                UseGIFV = uploadersConfig.ImgurUseGIFV,
+                UploadMethod = config.ImgurAccountType,
+                DirectLink = config.ImgurDirectLink,
+                ThumbnailType = config.ImgurThumbnailType,
+                UseGIFV = config.ImgurUseGIFV,
                 UploadAlbumID = albumID
             };
         }

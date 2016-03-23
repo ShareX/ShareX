@@ -36,14 +36,14 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public override TextDestination EnumValue { get; } = TextDestination.OneTimeSecret;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override TextUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new OneTimeSecret()
             {
-                API_KEY = uploadersConfig.OneTimeSecretAPIKey,
-                API_USERNAME = uploadersConfig.OneTimeSecretAPIUsername
+                API_KEY = config.OneTimeSecretAPIKey,
+                API_USERNAME = config.OneTimeSecretAPIUsername
             };
         }
     }

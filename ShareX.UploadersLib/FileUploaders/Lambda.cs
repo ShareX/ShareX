@@ -35,14 +35,14 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Lambda;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.LambdaSettings != null && !string.IsNullOrEmpty(uploadersConfig.LambdaSettings.UserAPIKey);
+            return config.LambdaSettings != null && !string.IsNullOrEmpty(config.LambdaSettings.UserAPIKey);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Lambda(uploadersConfig.LambdaSettings);
+            return new Lambda(config.LambdaSettings);
         }
     }
 

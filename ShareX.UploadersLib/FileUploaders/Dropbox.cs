@@ -38,18 +38,18 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Dropbox;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(uploadersConfig.DropboxOAuth2Info);
+            return OAuth2Info.CheckOAuth(config.DropboxOAuth2Info);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Dropbox(uploadersConfig.DropboxOAuth2Info, uploadersConfig.DropboxAccountInfo)
+            return new Dropbox(config.DropboxOAuth2Info, config.DropboxAccountInfo)
             {
-                UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(uploadersConfig.DropboxUploadPath)),
-                AutoCreateShareableLink = uploadersConfig.DropboxAutoCreateShareableLink,
-                ShareURLType = uploadersConfig.DropboxURLType
+                UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(config.DropboxUploadPath)),
+                AutoCreateShareableLink = config.DropboxAutoCreateShareableLink,
+                ShareURLType = config.DropboxURLType
             };
         }
     }

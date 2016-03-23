@@ -34,17 +34,17 @@ namespace ShareX.UploadersLib.URLShorteners
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Polr;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(uploadersConfig.PolrAPIKey);
+            return !string.IsNullOrEmpty(config.PolrAPIKey);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new PolrURLShortener
             {
-                API_HOST = uploadersConfig.PolrAPIHostname,
-                API_KEY = uploadersConfig.PolrAPIKey
+                API_HOST = config.PolrAPIHostname,
+                API_KEY = config.PolrAPIKey
             };
         }
     }

@@ -34,11 +34,11 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public override TextDestination EnumValue { get; } = TextDestination.Pastebin;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override TextUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            PastebinSettings settings = uploadersConfig.PastebinSettings;
+            PastebinSettings settings = config.PastebinSettings;
 
             if (string.IsNullOrEmpty(settings.TextFormat))
             {

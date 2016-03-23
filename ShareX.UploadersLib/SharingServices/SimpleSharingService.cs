@@ -1,4 +1,28 @@
-using System.ComponentModel;
+﻿#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2016 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
 using ShareX.HelpersLib;
 
 namespace ShareX.UploadersLib.SharingServices
@@ -6,21 +30,16 @@ namespace ShareX.UploadersLib.SharingServices
     /// <summary>
     /// Base class for services that just open a share dialog in a browser
     /// </summary>
-    public abstract class SimpleSharingService : SharingService
+    public abstract class SimpleSharingService : URLSharingService
     {
-        /// <summary>
-        /// A string formatted URL that opens a share dialog
-        /// </summary>
-        /// <value>a string with a one placeholder for the URL to share</value>
-        [Localizable(false)]
         protected abstract string UrlFormatString { get; }
 
-        public override void ShareURL(string url, UploadersConfig uploadersConfig)
+        public override void ShareURL(string url, UploadersConfig config)
         {
             string encodedUrl = URLHelpers.URLEncode(url);
             URLHelpers.OpenURL(string.Format(UrlFormatString, encodedUrl));
         }
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
     }
 }

@@ -33,16 +33,16 @@ namespace ShareX.UploadersLib.URLShorteners
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.CoinURL;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(uploadersConfig.CoinURLUUID);
+            return !string.IsNullOrEmpty(config.CoinURLUUID);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new CoinURLShortener
             {
-                UUID = uploadersConfig.CoinURLUUID
+                UUID = config.CoinURLUUID
             };
         }
     }

@@ -36,14 +36,14 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Minus;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.MinusConfig != null && uploadersConfig.MinusConfig.MinusUser != null;
+            return config.MinusConfig != null && config.MinusConfig.MinusUser != null;
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Minus(uploadersConfig.MinusConfig, uploadersConfig.MinusOAuth2Info);
+            return new Minus(config.MinusConfig, config.MinusOAuth2Info);
         }
     }
 

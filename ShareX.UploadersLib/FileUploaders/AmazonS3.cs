@@ -43,16 +43,16 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.AmazonS3;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.AmazonS3Settings != null && !string.IsNullOrEmpty(uploadersConfig.AmazonS3Settings.AccessKeyID) &&
-                !string.IsNullOrEmpty(uploadersConfig.AmazonS3Settings.SecretAccessKey) && !string.IsNullOrEmpty(uploadersConfig.AmazonS3Settings.Bucket) &&
-                AmazonS3.GetCurrentRegion(uploadersConfig.AmazonS3Settings) != AmazonS3.UnknownEndpoint;
+            return config.AmazonS3Settings != null && !string.IsNullOrEmpty(config.AmazonS3Settings.AccessKeyID) &&
+                !string.IsNullOrEmpty(config.AmazonS3Settings.SecretAccessKey) && !string.IsNullOrEmpty(config.AmazonS3Settings.Bucket) &&
+                AmazonS3.GetCurrentRegion(config.AmazonS3Settings) != AmazonS3.UnknownEndpoint;
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new AmazonS3(uploadersConfig.AmazonS3Settings);
+            return new AmazonS3(config.AmazonS3Settings);
         }
     }
 

@@ -27,6 +27,6 @@ namespace ShareX.UploadersLib
 {
     public abstract class TextUploaderService : UploaderService<TextDestination>
     {
-        public abstract TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo);
+        public abstract TextUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo);
     }
 }

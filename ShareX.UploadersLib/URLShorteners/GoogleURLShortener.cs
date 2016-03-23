@@ -34,14 +34,14 @@ namespace ShareX.UploadersLib.URLShorteners
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Google;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.GoogleURLShortenerAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(uploadersConfig.GoogleURLShortenerOAuth2Info);
+            return config.GoogleURLShortenerAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(config.GoogleURLShortenerOAuth2Info);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new GoogleURLShortener(uploadersConfig.GoogleURLShortenerAccountType, APIKeys.GoogleAPIKey, uploadersConfig.GoogleURLShortenerOAuth2Info);
+            return new GoogleURLShortener(config.GoogleURLShortenerAccountType, APIKeys.GoogleAPIKey, config.GoogleURLShortenerOAuth2Info);
         }
     }
 

@@ -32,9 +32,9 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public override TextDestination EnumValue { get; } = TextDestination.Slexy;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override TextUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             SlexySettings settings = new SlexySettings()
             {

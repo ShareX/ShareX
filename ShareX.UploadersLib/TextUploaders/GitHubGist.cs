@@ -37,21 +37,21 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public override TextDestination EnumValue { get; } = TextDestination.Gist;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override TextUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             OAuth2Info oauth = null;
 
-            if (!uploadersConfig.GistAnonymousLogin)
+            if (!config.GistAnonymousLogin)
             {
-                oauth = uploadersConfig.GistOAuth2Info;
+                oauth = config.GistOAuth2Info;
             }
 
             return new GitHubGist(oauth)
             {
-                PublicUpload = uploadersConfig.GistPublishPublic,
-                RawURL = uploadersConfig.GistRawURL
+                PublicUpload = config.GistPublishPublic,
+                RawURL = config.GistRawURL
             };
         }
     }

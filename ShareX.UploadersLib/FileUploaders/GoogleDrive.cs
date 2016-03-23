@@ -35,17 +35,17 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.GoogleDrive;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(uploadersConfig.GoogleDriveOAuth2Info);
+            return OAuth2Info.CheckOAuth(config.GoogleDriveOAuth2Info);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new GoogleDrive(uploadersConfig.GoogleDriveOAuth2Info)
+            return new GoogleDrive(config.GoogleDriveOAuth2Info)
             {
-                IsPublic = uploadersConfig.GoogleDriveIsPublic,
-                FolderID = uploadersConfig.GoogleDriveUseFolder ? uploadersConfig.GoogleDriveFolderID : null
+                IsPublic = config.GoogleDriveIsPublic,
+                FolderID = config.GoogleDriveUseFolder ? config.GoogleDriveFolderID : null
             };
         }
     }

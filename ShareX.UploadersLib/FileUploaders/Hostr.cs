@@ -33,16 +33,16 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Localhostr;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(uploadersConfig.LocalhostrEmail) && !string.IsNullOrEmpty(uploadersConfig.LocalhostrPassword);
+            return !string.IsNullOrEmpty(config.LocalhostrEmail) && !string.IsNullOrEmpty(config.LocalhostrPassword);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Hostr(uploadersConfig.LocalhostrEmail, uploadersConfig.LocalhostrPassword)
+            return new Hostr(config.LocalhostrEmail, config.LocalhostrPassword)
             {
-                DirectURL = uploadersConfig.LocalhostrDirectURL
+                DirectURL = config.LocalhostrDirectURL
             };
         }
     }

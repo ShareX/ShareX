@@ -34,30 +34,30 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Email;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(uploadersConfig.EmailSmtpServer) && uploadersConfig.EmailSmtpPort > 0 && !string.IsNullOrEmpty(uploadersConfig.EmailFrom) &&
-                !string.IsNullOrEmpty(uploadersConfig.EmailPassword);
+            return !string.IsNullOrEmpty(config.EmailSmtpServer) && config.EmailSmtpPort > 0 && !string.IsNullOrEmpty(config.EmailFrom) &&
+                !string.IsNullOrEmpty(config.EmailPassword);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            using (EmailForm emailForm = new EmailForm(uploadersConfig.EmailRememberLastTo ? uploadersConfig.EmailLastTo : string.Empty,
-                uploadersConfig.EmailDefaultSubject, uploadersConfig.EmailDefaultBody))
+            using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : string.Empty,
+                config.EmailDefaultSubject, config.EmailDefaultBody))
             {
                 if (emailForm.ShowDialog() == DialogResult.OK)
                 {
-                    if (uploadersConfig.EmailRememberLastTo)
+                    if (config.EmailRememberLastTo)
                     {
-                        uploadersConfig.EmailLastTo = emailForm.ToEmail;
+                        config.EmailLastTo = emailForm.ToEmail;
                     }
 
                     return new Email
                     {
-                        SmtpServer = uploadersConfig.EmailSmtpServer,
-                        SmtpPort = uploadersConfig.EmailSmtpPort,
-                        FromEmail = uploadersConfig.EmailFrom,
-                        Password = uploadersConfig.EmailPassword,
+                        SmtpServer = config.EmailSmtpServer,
+                        SmtpPort = config.EmailSmtpPort,
+                        FromEmail = config.EmailFrom,
+                        Password = config.EmailPassword,
                         ToEmail = emailForm.ToEmail,
                         Subject = emailForm.Subject,
                         Body = emailForm.Body

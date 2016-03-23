@@ -32,30 +32,30 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.SharedFolder;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.LocalhostAccountList != null && uploadersConfig.LocalhostAccountList.IsValidIndex(uploadersConfig.LocalhostSelectedFiles);
+            return config.LocalhostAccountList != null && config.LocalhostAccountList.IsValidIndex(config.LocalhostSelectedFiles);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             int index;
 
             switch (taskInfo.DataType)
             {
                 case EDataType.Image:
-                    index = uploadersConfig.LocalhostSelectedImages;
+                    index = config.LocalhostSelectedImages;
                     break;
                 case EDataType.Text:
-                    index = uploadersConfig.LocalhostSelectedText;
+                    index = config.LocalhostSelectedText;
                     break;
                 default:
                 case EDataType.File:
-                    index = uploadersConfig.LocalhostSelectedFiles;
+                    index = config.LocalhostSelectedFiles;
                     break;
             }
 
-            LocalhostAccount account = uploadersConfig.LocalhostAccountList.ReturnIfValidIndex(index);
+            LocalhostAccount account = config.LocalhostAccountList.ReturnIfValidIndex(index);
 
             if (account != null)
             {

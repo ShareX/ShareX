@@ -37,15 +37,15 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Mega;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.MegaAuthInfos != null && uploadersConfig.MegaAuthInfos.Email != null && uploadersConfig.MegaAuthInfos.Hash != null &&
-                uploadersConfig.MegaAuthInfos.PasswordAesKey != null;
+            return config.MegaAuthInfos != null && config.MegaAuthInfos.Email != null && config.MegaAuthInfos.Hash != null &&
+                config.MegaAuthInfos.PasswordAesKey != null;
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Mega(uploadersConfig.MegaAuthInfos, uploadersConfig.MegaParentNodeId);
+            return new Mega(config.MegaAuthInfos, config.MegaParentNodeId);
         }
     }
 

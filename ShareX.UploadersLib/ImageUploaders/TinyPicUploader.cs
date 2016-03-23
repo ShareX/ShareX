@@ -35,14 +35,14 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.TinyPic;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(uploadersConfig.TinyPicRegistrationCode);
+            return config.TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(config.TinyPicRegistrationCode);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, uploadersConfig.TinyPicAccountType, uploadersConfig.TinyPicRegistrationCode);
+            return new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, config.TinyPicAccountType, config.TinyPicRegistrationCode);
         }
     }
 

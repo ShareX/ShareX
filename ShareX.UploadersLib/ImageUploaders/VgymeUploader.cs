@@ -33,13 +33,13 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Vgyme;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new VgymeUploader()
             {
-                UserKey = uploadersConfig.VgymeUserKey
+                UserKey = config.VgymeUserKey
             };
         }
     }

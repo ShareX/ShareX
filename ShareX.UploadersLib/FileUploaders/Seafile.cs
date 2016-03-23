@@ -39,22 +39,22 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Seafile;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(uploadersConfig.SeafileAPIURL) && !string.IsNullOrEmpty(uploadersConfig.SeafileAuthToken) && !string.IsNullOrEmpty(uploadersConfig.SeafileRepoID);
+            return !string.IsNullOrEmpty(config.SeafileAPIURL) && !string.IsNullOrEmpty(config.SeafileAuthToken) && !string.IsNullOrEmpty(config.SeafileRepoID);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Seafile(uploadersConfig.SeafileAPIURL, uploadersConfig.SeafileAuthToken, uploadersConfig.SeafileRepoID)
+            return new Seafile(config.SeafileAPIURL, config.SeafileAuthToken, config.SeafileRepoID)
             {
-                Path = uploadersConfig.SeafilePath,
-                IsLibraryEncrypted = uploadersConfig.SeafileIsLibraryEncrypted,
-                EncryptedLibraryPassword = uploadersConfig.SeafileEncryptedLibraryPassword,
-                ShareDaysToExpire = uploadersConfig.SeafileShareDaysToExpire,
-                SharePassword = uploadersConfig.SeafileSharePassword,
-                CreateShareableURL = uploadersConfig.SeafileCreateShareableURL,
-                IgnoreInvalidCert = uploadersConfig.SeafileIgnoreInvalidCert
+                Path = config.SeafilePath,
+                IsLibraryEncrypted = config.SeafileIsLibraryEncrypted,
+                EncryptedLibraryPassword = config.SeafileEncryptedLibraryPassword,
+                ShareDaysToExpire = config.SeafileShareDaysToExpire,
+                SharePassword = config.SeafileSharePassword,
+                CreateShareableURL = config.SeafileCreateShareableURL,
+                IgnoreInvalidCert = config.SeafileIgnoreInvalidCert
             };
         }
     }

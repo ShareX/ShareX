@@ -39,15 +39,15 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Pushbullet;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.PushbulletSettings != null && !string.IsNullOrEmpty(uploadersConfig.PushbulletSettings.UserAPIKey) &&
-                uploadersConfig.PushbulletSettings.DeviceList != null && uploadersConfig.PushbulletSettings.DeviceList.IsValidIndex(uploadersConfig.PushbulletSettings.SelectedDevice);
+            return config.PushbulletSettings != null && !string.IsNullOrEmpty(config.PushbulletSettings.UserAPIKey) &&
+                config.PushbulletSettings.DeviceList != null && config.PushbulletSettings.DeviceList.IsValidIndex(config.PushbulletSettings.SelectedDevice);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Pushbullet(uploadersConfig.PushbulletSettings);
+            return new Pushbullet(config.PushbulletSettings);
         }
     }
 

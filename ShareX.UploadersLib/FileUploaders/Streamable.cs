@@ -36,17 +36,17 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Streamable;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             string username = "";
             string password = "";
 
-            if (!uploadersConfig.StreamableAnonymous)
+            if (!config.StreamableAnonymous)
             {
-                username = uploadersConfig.StreamableUsername;
-                password = uploadersConfig.StreamablePassword;
+                username = config.StreamableUsername;
+                password = config.StreamablePassword;
             }
 
             return new Streamable(username, password);

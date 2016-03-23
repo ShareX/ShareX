@@ -36,14 +36,14 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Photobucket;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.PhotobucketAccountInfo != null && OAuthInfo.CheckOAuth(uploadersConfig.PhotobucketOAuthInfo);
+            return config.PhotobucketAccountInfo != null && OAuthInfo.CheckOAuth(config.PhotobucketOAuthInfo);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Photobucket(uploadersConfig.PhotobucketOAuthInfo, uploadersConfig.PhotobucketAccountInfo);
+            return new Photobucket(config.PhotobucketOAuthInfo, config.PhotobucketAccountInfo);
         }
     }
 

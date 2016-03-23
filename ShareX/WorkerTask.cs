@@ -894,10 +894,10 @@ namespace ShareX
 
         public void ShareURL(string url)
         {
-            if (string.IsNullOrEmpty(url)) return;
-
-            UploaderFactory.GetSharingServiceByEnum(Info.TaskSettings.URLSharingServiceDestination)
-                .ShareURL(url, Program.UploadersConfig);
+            if (!string.IsNullOrEmpty(url))
+            {
+                UploaderFactory.GetSharingServiceByEnum(Info.TaskSettings.URLSharingServiceDestination).ShareURL(url, Program.UploadersConfig);
+            }
         }
 
         private void PrepareUploader(Uploader currentUploader)

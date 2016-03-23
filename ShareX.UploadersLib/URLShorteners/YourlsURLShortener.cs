@@ -32,20 +32,20 @@ namespace ShareX.UploadersLib.URLShorteners
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.YOURLS;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(uploadersConfig.YourlsAPIURL) && (!string.IsNullOrEmpty(uploadersConfig.YourlsSignature) ||
-                (!string.IsNullOrEmpty(uploadersConfig.YourlsUsername) && !string.IsNullOrEmpty(uploadersConfig.YourlsPassword)));
+            return !string.IsNullOrEmpty(config.YourlsAPIURL) && (!string.IsNullOrEmpty(config.YourlsSignature) ||
+                (!string.IsNullOrEmpty(config.YourlsUsername) && !string.IsNullOrEmpty(config.YourlsPassword)));
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new YourlsURLShortener
             {
-                APIURL = uploadersConfig.YourlsAPIURL,
-                Signature = uploadersConfig.YourlsSignature,
-                Username = uploadersConfig.YourlsUsername,
-                Password = uploadersConfig.YourlsPassword
+                APIURL = config.YourlsAPIURL,
+                Signature = config.YourlsSignature,
+                Username = config.YourlsUsername,
+                Password = config.YourlsPassword
             };
         }
     }

@@ -33,16 +33,16 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Ge_tt;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.Ge_ttLogin != null && !string.IsNullOrEmpty(uploadersConfig.Ge_ttLogin.AccessToken);
+            return config.Ge_ttLogin != null && !string.IsNullOrEmpty(config.Ge_ttLogin.AccessToken);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new Ge_tt(APIKeys.Ge_ttKey)
             {
-                AccessToken = uploadersConfig.Ge_ttLogin.AccessToken
+                AccessToken = config.Ge_ttLogin.AccessToken
             };
         }
     }

@@ -38,19 +38,19 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.SendSpace;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.SendSpaceAccountType == AccountType.Anonymous ||
-                (!string.IsNullOrEmpty(uploadersConfig.SendSpaceUsername) && !string.IsNullOrEmpty(uploadersConfig.SendSpacePassword));
+            return config.SendSpaceAccountType == AccountType.Anonymous ||
+                (!string.IsNullOrEmpty(config.SendSpaceUsername) && !string.IsNullOrEmpty(config.SendSpacePassword));
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new SendSpace(APIKeys.SendSpaceKey)
             {
-                AccountType = uploadersConfig.SendSpaceAccountType,
-                Username = uploadersConfig.SendSpaceUsername,
-                Password = uploadersConfig.SendSpacePassword
+                AccountType = config.SendSpaceAccountType,
+                Username = config.SendSpaceUsername,
+                Password = config.SendSpacePassword
             };
         }
     }

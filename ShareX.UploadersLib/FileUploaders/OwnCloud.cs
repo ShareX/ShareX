@@ -38,20 +38,20 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.OwnCloud;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(uploadersConfig.OwnCloudHost) && !string.IsNullOrEmpty(uploadersConfig.OwnCloudUsername) && !string.IsNullOrEmpty(uploadersConfig.OwnCloudPassword);
+            return !string.IsNullOrEmpty(config.OwnCloudHost) && !string.IsNullOrEmpty(config.OwnCloudUsername) && !string.IsNullOrEmpty(config.OwnCloudPassword);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new OwnCloud(uploadersConfig.OwnCloudHost, uploadersConfig.OwnCloudUsername, uploadersConfig.OwnCloudPassword)
+            return new OwnCloud(config.OwnCloudHost, config.OwnCloudUsername, config.OwnCloudPassword)
             {
-                Path = uploadersConfig.OwnCloudPath,
-                CreateShare = uploadersConfig.OwnCloudCreateShare,
-                DirectLink = uploadersConfig.OwnCloudDirectLink,
-                IgnoreInvalidCert = uploadersConfig.OwnCloudIgnoreInvalidCert,
-                IsCompatibility81 = uploadersConfig.OwnCloud81Compatibility
+                Path = config.OwnCloudPath,
+                CreateShare = config.OwnCloudCreateShare,
+                DirectLink = config.OwnCloudDirectLink,
+                IgnoreInvalidCert = config.OwnCloudIgnoreInvalidCert,
+                IsCompatibility81 = config.OwnCloud81Compatibility
             };
         }
     }

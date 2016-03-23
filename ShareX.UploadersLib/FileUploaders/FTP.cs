@@ -40,37 +40,37 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.FTP;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.FTPAccountList != null && uploadersConfig.FTPAccountList.IsValidIndex(uploadersConfig.FTPSelectedFile);
+            return config.FTPAccountList != null && config.FTPAccountList.IsValidIndex(config.FTPSelectedFile);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             int index;
 
             if (taskInfo.OverrideFTP)
             {
-                index = taskInfo.FTPIndex.BetweenOrDefault(0, uploadersConfig.FTPAccountList.Count - 1);
+                index = taskInfo.FTPIndex.BetweenOrDefault(0, config.FTPAccountList.Count - 1);
             }
             else
             {
                 switch (taskInfo.DataType)
                 {
                     case EDataType.Image:
-                        index = uploadersConfig.FTPSelectedImage;
+                        index = config.FTPSelectedImage;
                         break;
                     case EDataType.Text:
-                        index = uploadersConfig.FTPSelectedText;
+                        index = config.FTPSelectedText;
                         break;
                     default:
                     case EDataType.File:
-                        index = uploadersConfig.FTPSelectedFile;
+                        index = config.FTPSelectedFile;
                         break;
                 }
             }
 
-            FTPAccount account = uploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
+            FTPAccount account = config.FTPAccountList.ReturnIfValidIndex(index);
 
             if (account != null)
             {

@@ -36,11 +36,11 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.SomeImage;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            string someImageAPIKey = uploadersConfig.SomeImageAPIKey;
+            string someImageAPIKey = config.SomeImageAPIKey;
 
             if (string.IsNullOrEmpty(someImageAPIKey))
             {
@@ -49,7 +49,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             return new SomeImage(someImageAPIKey)
             {
-                DirectURL = uploadersConfig.SomeImageDirectURL
+                DirectURL = config.SomeImageDirectURL
             };
         }
     }

@@ -32,14 +32,14 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public override TextDestination EnumValue { get; } = TextDestination.Hastebin;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override TextUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override TextUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new Hastebin()
             {
-                CustomDomain = uploadersConfig.HastebinCustomDomain,
-                SyntaxHighlighting = uploadersConfig.HastebinSyntaxHighlighting
+                CustomDomain = config.HastebinCustomDomain,
+                SyntaxHighlighting = config.HastebinSyntaxHighlighting
             };
         }
     }

@@ -43,14 +43,14 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Jira;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuthInfo.CheckOAuth(uploadersConfig.JiraOAuthInfo);
+            return OAuthInfo.CheckOAuth(config.JiraOAuthInfo);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Jira(uploadersConfig.JiraHost, uploadersConfig.JiraOAuthInfo, uploadersConfig.JiraIssuePrefix);
+            return new Jira(config.JiraHost, config.JiraOAuthInfo, config.JiraIssuePrefix);
         }
     }
 

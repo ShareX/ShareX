@@ -35,21 +35,21 @@ namespace ShareX.UploadersLib.URLShorteners
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.BITLY;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(uploadersConfig.BitlyOAuth2Info);
+            return OAuth2Info.CheckOAuth(config.BitlyOAuth2Info);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            if (uploadersConfig.BitlyOAuth2Info == null)
+            if (config.BitlyOAuth2Info == null)
             {
-                uploadersConfig.BitlyOAuth2Info = new OAuth2Info(APIKeys.BitlyClientID, APIKeys.BitlyClientSecret);
+                config.BitlyOAuth2Info = new OAuth2Info(APIKeys.BitlyClientID, APIKeys.BitlyClientSecret);
             }
 
-            return new BitlyURLShortener(uploadersConfig.BitlyOAuth2Info)
+            return new BitlyURLShortener(config.BitlyOAuth2Info)
             {
-                Domain = uploadersConfig.BitlyDomain
+                Domain = config.BitlyDomain
             };
         }
     }

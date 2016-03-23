@@ -33,17 +33,17 @@ namespace ShareX.UploadersLib.URLShorteners
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.AdFly;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(uploadersConfig.AdFlyAPIKEY) && !string.IsNullOrEmpty(uploadersConfig.AdFlyAPIUID);
+            return !string.IsNullOrEmpty(config.AdFlyAPIKEY) && !string.IsNullOrEmpty(config.AdFlyAPIUID);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new AdFlyURLShortener
             {
-                APIKEY = uploadersConfig.AdFlyAPIKEY,
-                APIUID = uploadersConfig.AdFlyAPIUID
+                APIKEY = config.AdFlyAPIKEY,
+                APIUID = config.AdFlyAPIUID
             };
         }
     }

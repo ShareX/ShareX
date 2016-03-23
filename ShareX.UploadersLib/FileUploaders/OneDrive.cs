@@ -37,17 +37,17 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.OneDrive;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(uploadersConfig.OneDriveOAuth2Info);
+            return OAuth2Info.CheckOAuth(config.OneDriveOAuth2Info);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new OneDrive(uploadersConfig.OneDriveOAuth2Info)
+            return new OneDrive(config.OneDriveOAuth2Info)
             {
-                FolderID = uploadersConfig.OneDriveSelectedFolder.id,
-                AutoCreateShareableLink = uploadersConfig.OneDriveAutoCreateShareableLink
+                FolderID = config.OneDriveSelectedFolder.id,
+                AutoCreateShareableLink = config.OneDriveAutoCreateShareableLink
             };
         }
     }

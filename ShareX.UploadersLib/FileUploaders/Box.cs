@@ -35,17 +35,17 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Box;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(uploadersConfig.BoxOAuth2Info);
+            return OAuth2Info.CheckOAuth(config.BoxOAuth2Info);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Box(uploadersConfig.BoxOAuth2Info)
+            return new Box(config.BoxOAuth2Info)
             {
-                FolderID = uploadersConfig.BoxSelectedFolder.id,
-                Share = uploadersConfig.BoxShare
+                FolderID = config.BoxSelectedFolder.id,
+                Share = config.BoxShare
             };
         }
     }

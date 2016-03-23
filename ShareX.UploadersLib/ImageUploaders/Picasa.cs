@@ -37,16 +37,16 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Picasa;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(uploadersConfig.PicasaOAuth2Info);
+            return OAuth2Info.CheckOAuth(config.PicasaOAuth2Info);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Picasa(uploadersConfig.PicasaOAuth2Info)
+            return new Picasa(config.PicasaOAuth2Info)
             {
-                AlbumID = uploadersConfig.PicasaAlbumID
+                AlbumID = config.PicasaAlbumID
             };
         }
     }

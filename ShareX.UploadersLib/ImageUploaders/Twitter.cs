@@ -36,20 +36,20 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Twitter;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.TwitterOAuthInfoList != null && uploadersConfig.TwitterOAuthInfoList.IsValidIndex(uploadersConfig.TwitterSelectedAccount) &&
-                OAuthInfo.CheckOAuth(uploadersConfig.TwitterOAuthInfoList[uploadersConfig.TwitterSelectedAccount]);
+            return config.TwitterOAuthInfoList != null && config.TwitterOAuthInfoList.IsValidIndex(config.TwitterSelectedAccount) &&
+                OAuthInfo.CheckOAuth(config.TwitterOAuthInfoList[config.TwitterSelectedAccount]);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            OAuthInfo twitterOAuth = uploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(uploadersConfig.TwitterSelectedAccount);
+            OAuthInfo twitterOAuth = config.TwitterOAuthInfoList.ReturnIfValidIndex(config.TwitterSelectedAccount);
 
             return new Twitter(twitterOAuth)
             {
-                SkipMessageBox = uploadersConfig.TwitterSkipMessageBox,
-                DefaultMessage = uploadersConfig.TwitterDefaultMessage ?? string.Empty
+                SkipMessageBox = config.TwitterSkipMessageBox,
+                DefaultMessage = config.TwitterDefaultMessage ?? string.Empty
             };
         }
     }

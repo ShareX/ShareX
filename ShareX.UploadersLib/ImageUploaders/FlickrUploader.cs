@@ -37,14 +37,14 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Flickr;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(uploadersConfig.FlickrAuthInfo.Token);
+            return !string.IsNullOrEmpty(config.FlickrAuthInfo.Token);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret, uploadersConfig.FlickrAuthInfo, uploadersConfig.FlickrSettings);
+            return new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret, config.FlickrAuthInfo, config.FlickrSettings);
         }
     }
 

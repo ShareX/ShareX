@@ -34,14 +34,14 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.ImageShack;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.ImageShackSettings != null && !string.IsNullOrEmpty(uploadersConfig.ImageShackSettings.Auth_token);
+            return config.ImageShackSettings != null && !string.IsNullOrEmpty(config.ImageShackSettings.Auth_token);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new ImageShackUploader(APIKeys.ImageShackKey, uploadersConfig.ImageShackSettings);
+            return new ImageShackUploader(APIKeys.ImageShackKey, config.ImageShackSettings);
         }
     }
 

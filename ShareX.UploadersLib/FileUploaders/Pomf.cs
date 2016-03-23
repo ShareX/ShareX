@@ -40,14 +40,14 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Pomf;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.PomfUploader != null && !string.IsNullOrEmpty(uploadersConfig.PomfUploader.UploadURL);
+            return config.PomfUploader != null && !string.IsNullOrEmpty(config.PomfUploader.UploadURL);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Pomf(uploadersConfig.PomfUploader);
+            return new Pomf(config.PomfUploader);
         }
     }
 

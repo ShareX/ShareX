@@ -35,16 +35,16 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Openload;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig) => true;
+        public override bool CheckConfig(UploadersConfig config) => true;
 
-        public override FileUploader CreateUploader(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new OpenloadUploader()
             {
-                APILogin = uploadersConfig.OpenloadAPILogin,
-                APIKey = uploadersConfig.OpenloadAPIKey,
-                UploadToFolder = uploadersConfig.OpenloadUploadToSelectedFolder,
-                FolderID = uploadersConfig.OpenloadSelectedFolderID
+                APILogin = config.OpenloadAPILogin,
+                APIKey = config.OpenloadAPIKey,
+                UploadToFolder = config.OpenloadUploadToSelectedFolder,
+                FolderID = config.OpenloadSelectedFolderID
             };
         }
     }

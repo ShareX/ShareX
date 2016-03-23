@@ -34,25 +34,25 @@ namespace ShareX.UploadersLib.URLShorteners
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.CustomURLShortener;
 
-        public override bool CheckConfig(UploadersConfig uploadersConfig)
+        public override bool CheckConfig(UploadersConfig config)
         {
-            return uploadersConfig.CustomUploadersList != null && uploadersConfig.CustomUploadersList.IsValidIndex(uploadersConfig.CustomURLShortenerSelected);
+            return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomURLShortenerSelected);
         }
 
-        public override URLShortener CreateShortener(UploadersConfig uploadersConfig, TaskReferenceHelper taskInfo)
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             int index;
 
             if (taskInfo.OverrideCustomUploader)
             {
-                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, uploadersConfig.CustomUploadersList.Count - 1);
+                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, config.CustomUploadersList.Count - 1);
             }
             else
             {
-                index = uploadersConfig.CustomURLShortenerSelected;
+                index = config.CustomURLShortenerSelected;
             }
 
-            CustomUploaderItem customUploader = uploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
+            CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
 
             if (customUploader != null)
             {
