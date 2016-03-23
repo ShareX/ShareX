@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
             new PomfUploader("https://catgirlsare.sexy/upload.php"),
             new PomfUploader("http://comfy.moe/upload.php"),
-            new PomfUploader("https://cocaine.ninja/upload.php"),
+            new PomfUploader("https://cocaine.ninja/upload.php", "https://a.cocaine.ninja"),
             new PomfUploader("http://cuntflaps.me/upload.php", "http://a.cuntflaps.me"),
             new PomfUploader("http://files.plebeianparty.com/upload.php", "http://a.plebeianparty.com"),
             new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
