@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Instellingen voor bestemmingen</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Gebruik een aangepaste domeinnaam:</value>
   </data>
@@ -169,21 +166,6 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
   </data>
   <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
     <value>Waarde</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Naam</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Waarde</value>
-  </data>
-  <data name="colSeafileLibraryName.Text" xml:space="preserve">
-    <value>Naam</value>
-  </data>
-  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
-    <value>Grootte</value>
-  </data>
-  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
-    <value>Versleuteld</value>
   </data>
   <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
     <value>Argumenten</value>
@@ -422,9 +404,6 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Compatibiliteit met ownCloud 8.1+</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Negeer ongeldig SSL certificaat</value>
-  </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Directe link (Voegt &amp;download toe aan de URL)</value>
   </data>
@@ -542,41 +521,65 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Om een API sleutel te verkrijgen kun je inloggen op Lambda (https://lambda.sx/) en dan op het tandwiel rechtsboven te klikken.</value>
   </data>
-  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
-    <value>Link:</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Test alles</value>
-  </data>
-  <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>Link resultaat:</value>
-  </data>
-  <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>Uploadlink:</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Uploaders:</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>API sleutel:</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Host:</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Instellingen voor bestemmingen</value>
   </data>
-  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
-    <value>Deel wachtwoord:</value>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Negeer ongeldig SSL certificaat</value>
   </data>
-  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
-    <value>Vervalt in (dagen):</value>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Versleuteld</value>
   </data>
-  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
-    <value>Seafile instellingen voor share:</value>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Grootte</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Wachtwoord bibliotheek:</value>
   </data>
   <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
     <value>Controleer</value>
   </data>
-  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
-    <value>Wachtwoord bibliotheek:</value>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Seafile instellingen voor share:</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Vervalt in (dagen):</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Deel wachtwoord:</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>API sleutel:</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Uploaders:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>Uploadlink:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>Link resultaat:</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Test alles</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>Link:</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>Waarde</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>Naam</value>
   </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Controleer</value>
@@ -845,9 +848,6 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Afbeeldingsuploaders</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API sleutel:</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Gebruik verminderde meervoudige opslag</value>

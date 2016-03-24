@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Cél beállítások</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Tetszőleges domain használata:</value>
   </data>
@@ -139,144 +136,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Eltávolítás</value>
-  </data>
-  <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>Kép feltöltők</value>
-  </data>
-  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
-    <value>API kulcs:</value>
-  </data>
-  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>Publikus feltöltés?</value>
-  </data>
-  <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>Felhasználói kulcs:</value>
-  </data>
-  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>Szintaktis kiemelés:</value>
-  </data>
-  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
-    <value>Egyéni domain:</value>
-  </data>
-  <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>Szöveg feltöltők</value>
-  </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>Képek feltöltése a kiválasztott albumba</value>
-  </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>Közvetlen link használata</value>
-  </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>Cím</value>
-  </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>Leírás</value>
-  </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
-    <value>Albumok listájának frissítése</value>
-  </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Előnézet típusa:</value>
-  </data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>A publikus profil oldal megnyitása...</value>
-  </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>Publikus feltöltés?</value>
-  </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>A képeim oldalának megnyitása...</value>
-  </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>Felhasználónév:</value>
-  </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>A képeim oldalának megnyitása...</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>A fotó streamed...</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Felhatalmazás frissítése</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Lépés 2: Felhatalmazás befejezése</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Lépés 1: Felhatalmazó oldal megnyitása...</value>
-  </data>
-  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
-    <value>Album hozzáadása</value>
-  </data>
-  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>Album eltávolítása</value>
-  </data>
-  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
-    <value>Képek feltöltése ide</value>
-  </data>
-  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>Új album neve (2 és 50 karakter közötti kell legyen)</value>
-  </data>
-  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
-    <value>Szűlőalbum útvonal</value>
-  </data>
-  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
-    <value>Album létrehozása</value>
-  </data>
-  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
-    <value>Új album létrehozása</value>
-  </data>
-  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
-    <value>Alapértelmezett album név</value>
-  </data>
-  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>Lépés 1: Felhatalmazó oldal megnyitása...</value>
-  </data>
-  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Ellenőrző kód (a felhatalmazást adó oldalról szerezheted meg):</value>
-  </data>
-  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>Lépés 2: Felhatalmazás befejezése</value>
-  </data>
-  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>Bejelentkezés szükséges.</value>
-  </data>
-  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
-    <value>Felhasználói fiók</value>
-  </data>
-  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>Feltöltendő album ID (üres = nincs album feltöltés):</value>
-  </data>
-  <data name="chPicasaName.Text" xml:space="preserve">
-    <value>Név</value>
-  </data>
-  <data name="chPicasaDescription.Text" xml:space="preserve">
-    <value>Leírás</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>Album lista frissítése</value>
-  </data>
-  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>Közvetetlen URL</value>
-  </data>
-  <data name="chBoxFoldersName.Text" xml:space="preserve">
-    <value>Mappa neve</value>
   </data>
   <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
     <value>Példák...</value>
@@ -434,17 +293,8 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbBoxShare.Text" xml:space="preserve">
     <value>Megosztható link létrehozása</value>
   </data>
-  <data name="lblPastebinUsername.Text" xml:space="preserve">
-    <value>Felhasználónév:</value>
-  </data>
-  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
-    <value>Állapot:</value>
-  </data>
-  <data name="btnPastebinLogin.Text" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
-  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>Felhasználói API kulcs:</value>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>Mappa neve</value>
   </data>
   <data name="lblBoxFolderID.Text" xml:space="preserve">
     <value>Kiválasztott mappa:</value>
@@ -496,9 +346,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>Jelszó:</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Helytelen SSL tanúsítvány ignorálása</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Közvetlen link (hozzáadja a &amp;download-ot az URL-hez)</value>
@@ -613,6 +460,159 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="gpJiraServer.Text" xml:space="preserve">
     <value>Jira szerver</value>
+  </data>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>Kép feltöltők</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Cél beállítások</value>
+  </data>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Helytelen SSL tanúsítvány ignorálása</value>
+  </data>
+  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
+    <value>API kulcs:</value>
+  </data>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>Publikus feltöltés?</value>
+  </data>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>Felhasználói kulcs:</value>
+  </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>Szintaktis kiemelés:</value>
+  </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>Egyéni domain:</value>
+  </data>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>Szöveg feltöltők</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>Képek feltöltése a kiválasztott albumba</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>Közvetlen link használata</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>Cím</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>Leírás</value>
+  </data>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>Albumok listájának frissítése</value>
+  </data>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>Előnézet típusa:</value>
+  </data>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>Bejelentkezés</value>
+  </data>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>A publikus profil oldal megnyitása...</value>
+  </data>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>Publikus feltöltés?</value>
+  </data>
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+    <value>A képeim oldalának megnyitása...</value>
+  </data>
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>Felhasználónév:</value>
+  </data>
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="btnTinyPicLogin.Text" xml:space="preserve">
+    <value>Bejelentkezés</value>
+  </data>
+  <data name="lblTinyPicPassword.Text" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
+    <value>A képeim oldalának megnyitása...</value>
+  </data>
+  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
+    <value>A fotó streamed...</value>
+  </data>
+  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
+    <value>Felhatalmazás frissítése</value>
+  </data>
+  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
+    <value>Lépés 2: Felhatalmazás befejezése</value>
+  </data>
+  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
+    <value>Lépés 1: Felhatalmazó oldal megnyitása...</value>
+  </data>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>Album hozzáadása</value>
+  </data>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>Album eltávolítása</value>
+  </data>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>Képek feltöltése ide</value>
+  </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>Új album neve (2 és 50 karakter közötti kell legyen)</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>Szűlőalbum útvonal</value>
+  </data>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>Album létrehozása</value>
+  </data>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>Új album létrehozása</value>
+  </data>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>Alapértelmezett album név</value>
+  </data>
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>Lépés 1: Felhatalmazó oldal megnyitása...</value>
+  </data>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>Ellenőrző kód (a felhatalmazást adó oldalról szerezheted meg):</value>
+  </data>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>Lépés 2: Felhatalmazás befejezése</value>
+  </data>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>Bejelentkezés szükséges.</value>
+  </data>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>Felhasználói fiók</value>
+  </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>Feltöltendő album ID (üres = nincs album feltöltés):</value>
+  </data>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>Leírás</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>Album lista frissítése</value>
+  </data>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>Közvetetlen URL</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>Felhasználónév:</value>
+  </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>Állapot:</value>
+  </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>Bejelentkezés</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>Felhasználói API kulcs:</value>
   </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Fájl:</value>

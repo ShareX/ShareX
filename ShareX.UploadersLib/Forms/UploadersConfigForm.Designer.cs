@@ -238,7 +238,6 @@
             this.lblMegaPassword = new System.Windows.Forms.Label();
             this.tpOwnCloud = new System.Windows.Forms.TabPage();
             this.cbOwnCloud81Compatibility = new System.Windows.Forms.CheckBox();
-            this.cbOwnCloudIgnoreInvalidCert = new System.Windows.Forms.CheckBox();
             this.cbOwnCloudDirectLink = new System.Windows.Forms.CheckBox();
             this.cbOwnCloudCreateShare = new System.Windows.Forms.CheckBox();
             this.txtOwnCloudPath = new System.Windows.Forms.TextBox();
@@ -2165,7 +2164,6 @@
             // tpOwnCloud
             // 
             this.tpOwnCloud.Controls.Add(this.cbOwnCloud81Compatibility);
-            this.tpOwnCloud.Controls.Add(this.cbOwnCloudIgnoreInvalidCert);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudDirectLink);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudCreateShare);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudPath);
@@ -2186,13 +2184,6 @@
             this.cbOwnCloud81Compatibility.Name = "cbOwnCloud81Compatibility";
             this.cbOwnCloud81Compatibility.UseVisualStyleBackColor = true;
             this.cbOwnCloud81Compatibility.CheckedChanged += new System.EventHandler(this.cbOwnCloud81Compatibility_CheckedChanged);
-            // 
-            // cbOwnCloudIgnoreInvalidCert
-            // 
-            resources.ApplyResources(this.cbOwnCloudIgnoreInvalidCert, "cbOwnCloudIgnoreInvalidCert");
-            this.cbOwnCloudIgnoreInvalidCert.Name = "cbOwnCloudIgnoreInvalidCert";
-            this.cbOwnCloudIgnoreInvalidCert.UseVisualStyleBackColor = true;
-            this.cbOwnCloudIgnoreInvalidCert.CheckedChanged += new System.EventHandler(this.cbOwnCloudIgnoreInvalidCert_CheckedChanged);
             // 
             // cbOwnCloudDirectLink
             // 
@@ -4834,7 +4825,6 @@
         private System.Windows.Forms.CheckBox cbMediaFireUseLongLink;
         private System.Windows.Forms.TabPage tpOneDrive;
         private OAuthControl oAuth2OneDrive;
-        private System.Windows.Forms.CheckBox cbOwnCloudIgnoreInvalidCert;
         private System.Windows.Forms.CheckBox cbImgurUploadSelectedAlbum;
         private System.Windows.Forms.Label lblPastebinLoginStatus;
         private System.Windows.Forms.TextBox txtPastebinTitle;

@@ -196,111 +196,285 @@ This means that they may be lost from Amazon S3 at some point.</value>
 If text field is empty then bucket name will be used for URL.
 For example, if your bucket is called bucket.example.com then URL will be http://bucket.example.com/...</value>
   </data>
+  <data name="&gt;&gt;cbAmazonS3CustomCNAME.Name" xml:space="preserve">
+    <value>cbAmazonS3CustomCNAME</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3CustomCNAME.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3CustomCNAME.Parent" xml:space="preserve">
+    <value>tpAmazonS3</value>
+  </data>
+  <data name="&gt;&gt;cbAmazonS3CustomCNAME.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnTwitterNameUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTwitterNameUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>408, 39</value>
+  </data>
+  <data name="btnTwitterNameUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 23</value>
+  </data>
+  <data name="btnTwitterNameUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
     <value>Update</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterNameUpdate.Name" xml:space="preserve">
+    <value>btnTwitterNameUpdate</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterNameUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterNameUpdate.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterNameUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbTwitterAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="lbTwitterAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 199</value>
+  </data>
+  <data name="lbTwitterAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lbTwitterAccounts.Name" xml:space="preserve">
+    <value>lbTwitterAccounts</value>
+  </data>
+  <data name="&gt;&gt;lbTwitterAccounts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTwitterAccounts.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;lbTwitterAccounts.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 312</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 13</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
     <value>Default tweet message:</value>
   </data>
+  <data name="&gt;&gt;lblTwitterDefaultMessage.Name" xml:space="preserve">
+    <value>lblTwitterDefaultMessage</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDefaultMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDefaultMessage.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDefaultMessage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtTwitterDefaultMessage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 328</value>
+  </data>
+  <data name="txtTwitterDefaultMessage.MaxLength" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="txtTwitterDefaultMessage.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtTwitterDefaultMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 48</value>
+  </data>
+  <data name="txtTwitterDefaultMessage.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDefaultMessage.Name" xml:space="preserve">
+    <value>txtTwitterDefaultMessage</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDefaultMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDefaultMessage.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDefaultMessage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 288</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
     <value>Skip tweet message box</value>
+  </data>
+  <data name="&gt;&gt;cbTwitterSkipMessageBox.Name" xml:space="preserve">
+    <value>cbTwitterSkipMessageBox</value>
+  </data>
+  <data name="&gt;&gt;cbTwitterSkipMessageBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTwitterSkipMessageBox.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;cbTwitterSkipMessageBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="oauthTwitter.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="oauthTwitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 72</value>
+  </data>
+  <data name="oauthTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 208</value>
+  </data>
+  <data name="oauthTwitter.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Name" xml:space="preserve">
+    <value>oauthTwitter</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;oauthTwitter.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtTwitterDescription.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtTwitterDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 40</value>
+  </data>
+  <data name="txtTwitterDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 20</value>
+  </data>
+  <data name="txtTwitterDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDescription.Name" xml:space="preserve">
+    <value>txtTwitterDescription</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDescription.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;txtTwitterDescription.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblTwitterDescription.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTwitterDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblTwitterDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>189, 21</value>
+  </data>
+  <data name="lblTwitterDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lblTwitterDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="lblTwitterDescription.Text" xml:space="preserve">
     <value>Name:</value>
   </data>
+  <data name="&gt;&gt;lblTwitterDescription.Name" xml:space="preserve">
+    <value>lblTwitterDescription</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDescription.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;lblTwitterDescription.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnTwitterRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTwitterRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="btnTwitterRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 23</value>
+  </data>
+  <data name="btnTwitterRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="btnTwitterRemove.Text" xml:space="preserve">
     <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterRemove.Name" xml:space="preserve">
+    <value>btnTwitterRemove</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterRemove.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;btnTwitterRemove.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnTwitterAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTwitterAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="btnTwitterAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 23</value>
+  </data>
+  <data name="btnTwitterAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
-    <value>?</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Add syntax to URL field</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>Add syntax to URL field</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Examples:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>Add syntax to URL field</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Examples:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
-    <value>XPath:</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>Value</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Value</value>
-  </data>
-  <data name="colSeafileLibraryName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
-    <value>Size</value>
-  </data>
-  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
-    <value>Encrypted</value>
-  </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tpCustomUploaderRegexParse.Text" xml:space="preserve">
     <value>Regex</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
     <value>JSON</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
     <value>XML</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
     <value>Arguments</value>
   </data>
@@ -384,7 +558,7 @@ store.book[0].title</value>
   </data>
   <data name="txtCustomUploaderLog.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
     <value>Thumbnail URL:</value>
   </data>
@@ -396,7 +570,7 @@ store.book[0].title</value>
   </data>
   <data name="lblCustomUploaderURL.Text" xml:space="preserve">
     <value>URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tpCustomUploaders.Text" xml:space="preserve">
     <value>Custom uploaders</value>
   </data>
@@ -408,10 +582,10 @@ store.book[0].title</value>
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tpGoogleURLShortener.Text" xml:space="preserve">
     <value>Google</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
     <value>Note: If you have a Signature then you don't need a Username/Password.</value>
   </data>
@@ -426,28 +600,28 @@ store.book[0].title</value>
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="llAdflyLink.Text" xml:space="preserve">
     <value>You can find your API key and UID in here</value>
   </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>API UID:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
     <value>API key:</value>
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblCoinURLUUID.Text" xml:space="preserve">
     <value>UUID:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tpCoinURL.Text" xml:space="preserve">
     <value>CoinURL</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblPolrAPIKey.Text" xml:space="preserve">
     <value>API key:</value>
   </data>
@@ -456,7 +630,7 @@ store.book[0].title</value>
   </data>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>URL shorteners</value>
   </data>
@@ -474,7 +648,7 @@ store.book[0].title</value>
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Create shareable URL:</value>
   </data>
@@ -492,7 +666,7 @@ store.book[0].title</value>
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblOneDriveFolderID.Text" xml:space="preserve">
     <value>Selected folder:</value>
   </data>
@@ -501,7 +675,7 @@ store.book[0].title</value>
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
     <value>Upload files to selected folder</value>
   </data>
@@ -522,7 +696,7 @@ store.book[0].title</value>
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
     <value>Note: You can double click folder name to go inside that folder.</value>
   </data>
@@ -540,7 +714,7 @@ store.book[0].title</value>
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
     <value>URL preview:</value>
   </data>
@@ -549,10 +723,10 @@ store.book[0].title</value>
   </data>
   <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
     <value>Bucket name:</value>
   </data>
@@ -570,7 +744,7 @@ store.book[0].title</value>
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
     <value>Refresh</value>
   </data>
@@ -597,12 +771,9 @@ store.book[0].title</value>
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>ownCloud 8.1+ compatibility</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Ignore invalid SSL certificate</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Direct link (Adds "&amp;download" to URL)</value>
@@ -624,7 +795,7 @@ store.book[0].title</value>
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Use long link which includes file name</value>
   </data>
@@ -639,7 +810,7 @@ store.book[0].title</value>
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblPushbulletDevices.Text" xml:space="preserve">
     <value>Device:</value>
   </data>
@@ -651,7 +822,7 @@ store.book[0].title</value>
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
     <value>Register...</value>
   </data>
@@ -663,7 +834,7 @@ store.book[0].title</value>
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblGe_ttStatus.Text" xml:space="preserve">
     <value>Login required.</value>
   </data>
@@ -678,7 +849,7 @@ store.book[0].title</value>
   </data>
   <data name="tpGe_tt.Text" xml:space="preserve">
     <value>Ge.tt</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Use direct URL if exist</value>
   </data>
@@ -690,7 +861,7 @@ store.book[0].title</value>
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblMinusURLType.Text" xml:space="preserve">
     <value>URL type:</value>
   </data>
@@ -729,10 +900,10 @@ store.book[0].title</value>
   </data>
   <data name="tpMinus.Text" xml:space="preserve">
     <value>Minus</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira issue prefix:</value>
   </data>
@@ -741,7 +912,7 @@ store.book[0].title</value>
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblJiraHost.Text" xml:space="preserve">
     <value>Jira host: </value>
   </data>
@@ -750,718 +921,141 @@ store.book[0].title</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>To get an API key, log in to Lambda at https://lambda.sx/ then click on your username, then click manage account.</value>
-  </data>
-  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
-    <value>Link URL:</value>
-  </data>
-  <data name="tpLambda.Text" xml:space="preserve">
-    <value>Lambda</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Test all</value>
-  </data>
-  <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>Result URL:</value>
-  </data>
-  <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>Upload URL:</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Uploaders:</value>
-  </data>
-  <data name="tpPomf.Text" xml:space="preserve">
-    <value>Pomf</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="tpUp1.Text" xml:space="preserve">
-    <value>Up1</value>
-  <comment>@Invariant</comment></data>
-  <data name="cbSeafileAPIURL.Items" xml:space="preserve">
-    <value>https://seacloud.cc/api2/</value>
-  <comment>@Invariant</comment></data>
-  <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
-    <value>https://cloud.mein-seafile.de/api2/</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
-    <value>Share password:</value>
-  </data>
-  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
-    <value>Days to expiration:</value>
-  </data>
-  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
-    <value>Seafile share settings</value>
-  </data>
-  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
-    <value>Validate</value>
-  </data>
-  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
-    <value>Library password:</value>
-  </data>
-  <data name="btnSeafilePathValidate.Text" xml:space="preserve">
-    <value>Validate</value>
-  </data>
-  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
-    <value>Libraries without write permissions are hidden.
-Using an encrypted library disables sharing.</value>
-  </data>
-  <data name="lblSeafilePath.Text" xml:space="preserve">
-    <value>Path:</value>
-  </data>
-  <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
-    <value>Refresh</value>
-  </data>
-  <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
-    <value>Select library:</value>
-  </data>
-  <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
-    <value>Refresh</value>
-  </data>
-  <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
-    <value>Usage:</value>
-  </data>
-  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
-    <value>Account information</value>
-  </data>
-  <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
-    <value>Validate</value>
-  </data>
-  <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
-    <value>Validate</value>
-  </data>
-  <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
-    <value>Get</value>
-  </data>
-  <data name="lblSeafileUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblSeafilePassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
-    <value>Obtain auth token</value>
-  </data>
-  <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Ignore invalid SSL certificate</value>
-  </data>
-  <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
-    <value>Create shareable URL</value>
-  </data>
-  <data name="lblSeafileAuthToken.Text" xml:space="preserve">
-    <value>Auth token:</value>
-  </data>
-  <data name="lblSeafileAPIURL.Text" xml:space="preserve">
-    <value>API URL:</value>
-  <comment>@Invariant</comment></data>
-  <data name="tpSeafile.Text" xml:space="preserve">
-    <value>Seafile</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblSulAPIKey.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="tpSul.Text" xml:space="preserve">
-    <value>s-ul</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblStreamableUsername.Text" xml:space="preserve">
-    <value>Username:</value>
-  </data>
-  <data name="lblStreamablePassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anonymous</value>
-  </data>
-  <data name="tpStreamable.Text" xml:space="preserve">
-    <value>Streamable</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnOpenloadRefreshFolders.Text" xml:space="preserve">
-    <value>Refresh</value>
-  </data>
-  <data name="cbOpenloadUploadToFolder.Text" xml:space="preserve">
-    <value>Upload files to selected folder</value>
-  </data>
-  <data name="gbOpenloadFolders.Text" xml:space="preserve">
-    <value>Folders</value>
-  </data>
-  <data name="lblOpenloadApiLink.Text" xml:space="preserve">
-    <value>You can get your API keys from your openload.co account panel.</value>
-  </data>
-  <data name="lblOpenloadApiKey.Text" xml:space="preserve">
-    <value>API Key:</value>
-  </data>
-  <data name="lblOpenloadApiLogin.Text" xml:space="preserve">
-    <value>API Login:</value>
-  </data>
-  <data name="gbOpenloadAuthentication.Text" xml:space="preserve">
-    <value>Authentication</value>
-  <comment>@Invariant</comment></data>
-  <data name="tpOpenload.Text" xml:space="preserve">
-    <value>Openload</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
-    <value>File:</value>
-  </data>
-  <data name="lblSharedFolderText.Text" xml:space="preserve">
-    <value>Text:</value>
-  </data>
-  <data name="lblSharedFolderImages.Text" xml:space="preserve">
-    <value>Image:</value>
-  </data>
-  <data name="tpSharedFolder.Text" xml:space="preserve">
-    <value>Shared folder</value>
-  </data>
-  <data name="cbEmailConfirm.Text" xml:space="preserve">
-    <value>Confirm before sending</value>
-  </data>
-  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
-    <value>SMTP server:</value>
-  </data>
-  <data name="lblEmailPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
-    <value>Remember last recipient address</value>
-  </data>
-  <data name="lblEmailFrom.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
-    <value>Default subject:</value>
-  </data>
-  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
-    <value>Default message:</value>
-  </data>
-  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
-    <value>Port:</value>
-  </data>
-  <data name="tpEmail.Text" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="tpFileUploaders.Text" xml:space="preserve">
-    <value>File uploaders</value>
-  </data>
-  <data name="cbPastebinRaw.Text" xml:space="preserve">
-    <value>Use raw URL</value>
-  </data>
-  <data name="btnPastebinRegister.Text" xml:space="preserve">
-    <value>Register...</value>
-  </data>
-  <data name="lblPastebinSyntax.Text" xml:space="preserve">
-    <value>Paste syntax:</value>
-  </data>
-  <data name="lblPastebinExpiration.Text" xml:space="preserve">
-    <value>Expiration:</value>
-  </data>
-  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
-    <value>Privacy:</value>
-  </data>
-  <data name="lblPastebinTitle.Text" xml:space="preserve">
-    <value>Paste title:</value>
-  </data>
-  <data name="lblPastebinPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="lblPastebinUsername.Text" xml:space="preserve">
-    <value>Username:</value>
-  </data>
-  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
-    <value>Status:</value>
-  </data>
-  <data name="btnPastebinLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="tpPastebin.Text" xml:space="preserve">
-    <value>Pastebin</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>User API key:</value>
-  </data>
-  <data name="tpPaste_ee.Text" xml:space="preserve">
-    <value>Paste.ee</value>
-  <comment>@Invariant</comment></data>
-  <data name="cbGistUseRawURL.Text" xml:space="preserve">
-    <value>Use raw URL</value>
-  </data>
-  <data name="cbGistPublishPublic.Text" xml:space="preserve">
-    <value>Create public Gist</value>
-  </data>
-  <data name="tpGist.Text" xml:space="preserve">
-    <value>GitHub Gist</value>
-  <comment>@Invariant</comment></data>
-  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>Is public upload?</value>
-  </data>
-  <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>User key:</value>
-  </data>
-  <data name="tpUpaste.Text" xml:space="preserve">
-    <value>uPaste</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>Syntax highlighting:</value>
-  </data>
-  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
-    <value>Custom domain:</value>
-  </data>
-  <data name="tpHastebin.Text" xml:space="preserve">
-    <value>Hastebin</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="tpOneTimeSecret.Text" xml:space="preserve">
-    <value>OneTimeSecret</value>
-  <comment>@Invariant</comment></data>
-  <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>Text uploaders</value>
-  </data>
-  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
-    <value>Use GIFV link instead of GIF</value>
-  </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>Upload images to selected album</value>
-  </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>Use direct link</value>
-  </data>
-  <data name="chImgurID.Text" xml:space="preserve">
-    <value>ID</value>
-  <comment>@Invariant</comment></data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
-    <value>Refresh album list</value>
-  </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Thumbnail type:</value>
-  </data>
-  <data name="tpImgur.Text" xml:space="preserve">
-    <value>Imgur</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>Open public profile page...</value>
-  </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>Is public upload?</value>
-  </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>Open my images page...</value>
-  </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>Username:</value>
-  </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="tpImageShack.Text" xml:space="preserve">
-    <value>ImageShack</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Open my images page...</value>
-  </data>
-  <data name="tpTinyPic.Text" xml:space="preserve">
-    <value>TinyPic</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Your photostream...</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Refresh authorization</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Step 2: Complete authorization</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Step 1: Open authorize page...</value>
-  </data>
-  <data name="tpFlickr.Text" xml:space="preserve">
-    <value>Flickr</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
-    <value>Add album</value>
-  </data>
-  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>Remove album</value>
-  </data>
-  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
-    <value>Upload images to</value>
-  </data>
-  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>New album name (must be between 2 and 50 characters. Valid characters are letters, numbers, underscore ( _ ), hyphen (-), and space)</value>
-  </data>
-  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
-    <value>Parent album path</value>
-  </data>
-  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
-    <value>Create album</value>
-  </data>
-  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
-    <value>Create new album</value>
-  </data>
-  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
-    <value>Default album name</value>
-  </data>
-  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>Step 1: Open authorize page...</value>
-  </data>
-  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Verification code (Get verification code from authorize page):</value>
-  </data>
-  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>Step 2: Complete authorization</value>
-  </data>
-  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>Login required.</value>
-  </data>
-  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
-    <value>User account</value>
-  </data>
-  <data name="tpPhotobucket.Text" xml:space="preserve">
-    <value>Photobucket</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>Album ID for upload (Empty = No album upload):</value>
-  </data>
-  <data name="chPicasaID.Text" xml:space="preserve">
-    <value>ID</value>
-  <comment>@Invariant</comment></data>
-  <data name="chPicasaName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="chPicasaDescription.Text" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>Refresh album list</value>
-  </data>
-  <data name="tpPicasa.Text" xml:space="preserve">
-    <value>Picasa</value>
-  <comment>@Invariant</comment></data>
-  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
-    <value>Test all</value>
-  </data>
-  <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
-    <value>Example: http://example.com/api/1/upload</value>
-  </data>
-  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
-    <value>Uploaders:</value>
-  </data>
-  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>Direct URL</value>
-  </data>
-  <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
-    <value>Upload URL:</value>
-  </data>
-  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="tpChevereto.Text" xml:space="preserve">
-    <value>Chevereto</value>
-  <comment>@Invariant</comment></data>
-  <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
-    <value>You can get user key from account details page.</value>
-  </data>
-  <data name="lvlVgymeUserKey.Text" xml:space="preserve">
-    <value>User key:</value>
-  </data>
-  <data name="tpVgyme.Text" xml:space="preserve">
-    <value>vgy.me</value>
-  <comment>@Invariant</comment></data>
-  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
-    <value>To get API key visit https://someimage.com/api</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
-    <value>Direct URL</value>
-  </data>
-  <data name="tpSomeImage.Text" xml:space="preserve">
-    <value>SomeImage</value>
-  <comment>@Invariant</comment></data>
-  <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>Image uploaders</value>
   </data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>API key:</value>
   </data>
-  <data name="&gt;&gt;cbAmazonS3CustomCNAME.Name" xml:space="preserve">
-    <value>cbAmazonS3CustomCNAME</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Destination settings</value>
   </data>
-  <data name="&gt;&gt;cbAmazonS3CustomCNAME.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Encrypted</value>
   </data>
-  <data name="&gt;&gt;cbAmazonS3CustomCNAME.Parent" xml:space="preserve">
-    <value>tpAmazonS3</value>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Size</value>
   </data>
-  <data name="&gt;&gt;cbAmazonS3CustomCNAME.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>Name</value>
   </data>
-  <data name="btnTwitterNameUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Library password:</value>
   </data>
-  <data name="btnTwitterNameUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 39</value>
+  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
+    <value>Validate</value>
   </data>
-  <data name="btnTwitterNameUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 23</value>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Seafile share settings</value>
   </data>
-  <data name="btnTwitterNameUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Days to expiration:</value>
   </data>
-  <data name="&gt;&gt;btnTwitterNameUpdate.Name" xml:space="preserve">
-    <value>btnTwitterNameUpdate</value>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Share password:</value>
   </data>
-  <data name="&gt;&gt;btnTwitterNameUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
+    <value>https://cloud.mein-seafile.de/api2/</value>
   </data>
-  <data name="&gt;&gt;btnTwitterNameUpdate.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
+  <data name="cbSeafileAPIURL.Items" xml:space="preserve">
+    <value>https://seacloud.cc/api2/</value>
   </data>
-  <data name="&gt;&gt;btnTwitterNameUpdate.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="tpUp1.Text" xml:space="preserve">
+    <value>Up1</value>
   </data>
-  <data name="lbTwitterAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Host:</value>
   </data>
-  <data name="lbTwitterAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 199</value>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>API key:</value>
   </data>
-  <data name="lbTwitterAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="tpPomf.Text" xml:space="preserve">
+    <value>Pomf</value>
   </data>
-  <data name="&gt;&gt;lbTwitterAccounts.Name" xml:space="preserve">
-    <value>lbTwitterAccounts</value>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Uploaders:</value>
   </data>
-  <data name="&gt;&gt;lbTwitterAccounts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>Upload URL:</value>
   </data>
-  <data name="&gt;&gt;lbTwitterAccounts.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>Result URL:</value>
   </data>
-  <data name="&gt;&gt;lbTwitterAccounts.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Test all</value>
   </data>
-  <data name="lblTwitterDefaultMessage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="tpLambda.Text" xml:space="preserve">
+    <value>Lambda</value>
   </data>
-  <data name="lblTwitterDefaultMessage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>Link URL:</value>
   </data>
-  <data name="lblTwitterDefaultMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 312</value>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>Value</value>
   </data>
-  <data name="lblTwitterDefaultMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 13</value>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>Name</value>
   </data>
-  <data name="lblTwitterDefaultMessage.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
+    <value>Value</value>
   </data>
-  <data name="&gt;&gt;lblTwitterDefaultMessage.Name" xml:space="preserve">
-    <value>lblTwitterDefaultMessage</value>
+  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
+    <value>Name</value>
   </data>
-  <data name="&gt;&gt;lblTwitterDefaultMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
+    <value>Remove</value>
   </data>
-  <data name="&gt;&gt;lblTwitterDefaultMessage.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
+  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
+    <value>Add</value>
   </data>
-  <data name="&gt;&gt;lblTwitterDefaultMessage.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
+    <value>Update</value>
   </data>
-  <data name="txtTwitterDefaultMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 328</value>
+  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
+    <value>XPath:</value>
   </data>
-  <data name="txtTwitterDefaultMessage.MaxLength" type="System.Int32, mscorlib">
-    <value>115</value>
+  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
+    <value>Examples:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
   </data>
-  <data name="txtTwitterDefaultMessage.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
+    <value>?</value>
   </data>
-  <data name="txtTwitterDefaultMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 48</value>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
   </data>
-  <data name="txtTwitterDefaultMessage.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
+    <value>JsonPath:</value>
   </data>
-  <data name="&gt;&gt;txtTwitterDefaultMessage.Name" xml:space="preserve">
-    <value>txtTwitterDefaultMessage</value>
+  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
+    <value>Examples:
+
+Files[0].URL
+store.book[0].title</value>
   </data>
-  <data name="&gt;&gt;txtTwitterDefaultMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
+    <value>?</value>
   </data>
-  <data name="&gt;&gt;txtTwitterDefaultMessage.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
+  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
   </data>
-  <data name="&gt;&gt;txtTwitterDefaultMessage.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
+    <value>Remove</value>
   </data>
-  <data name="cbTwitterSkipMessageBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Add</value>
   </data>
-  <data name="cbTwitterSkipMessageBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
+    <value>Update</value>
   </data>
-  <data name="cbTwitterSkipMessageBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 288</value>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
   </data>
-  <data name="cbTwitterSkipMessageBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
-  </data>
-  <data name="cbTwitterSkipMessageBox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;cbTwitterSkipMessageBox.Name" xml:space="preserve">
-    <value>cbTwitterSkipMessageBox</value>
-  </data>
-  <data name="&gt;&gt;cbTwitterSkipMessageBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTwitterSkipMessageBox.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
-  </data>
-  <data name="&gt;&gt;cbTwitterSkipMessageBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="oauthTwitter.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="oauthTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 72</value>
-  </data>
-  <data name="oauthTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 208</value>
-  </data>
-  <data name="oauthTwitter.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.Name" xml:space="preserve">
-    <value>oauthTwitter</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
-  </data>
-  <data name="&gt;&gt;oauthTwitter.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="txtTwitterDescription.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtTwitterDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 40</value>
-  </data>
-  <data name="txtTwitterDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 20</value>
-  </data>
-  <data name="txtTwitterDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtTwitterDescription.Name" xml:space="preserve">
-    <value>txtTwitterDescription</value>
-  </data>
-  <data name="&gt;&gt;txtTwitterDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtTwitterDescription.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
-  </data>
-  <data name="&gt;&gt;txtTwitterDescription.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="lblTwitterDescription.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblTwitterDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblTwitterDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>189, 21</value>
-  </data>
-  <data name="lblTwitterDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="lblTwitterDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblTwitterDescription.Name" xml:space="preserve">
-    <value>lblTwitterDescription</value>
-  </data>
-  <data name="&gt;&gt;lblTwitterDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTwitterDescription.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
-  </data>
-  <data name="&gt;&gt;lblTwitterDescription.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnTwitterRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnTwitterRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
-  </data>
-  <data name="btnTwitterRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 23</value>
-  </data>
-  <data name="btnTwitterRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnTwitterRemove.Name" xml:space="preserve">
-    <value>btnTwitterRemove</value>
-  </data>
-  <data name="&gt;&gt;btnTwitterRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnTwitterRemove.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
-  </data>
-  <data name="&gt;&gt;btnTwitterRemove.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btnTwitterAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnTwitterAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="btnTwitterAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 23</value>
-  </data>
-  <data name="btnTwitterAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
+    <value>?</value>
   </data>
   <data name="&gt;&gt;btnTwitterAdd.Name" xml:space="preserve">
     <value>btnTwitterAdd</value>
@@ -5987,7 +5581,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 279</value>
+    <value>16, 256</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 17</value>
@@ -6006,33 +5600,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;cbOwnCloud81Compatibility.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 256</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 17</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;cbOwnCloudIgnoreInvalidCert.Name" xml:space="preserve">
-    <value>cbOwnCloudIgnoreInvalidCert</value>
-  </data>
-  <data name="&gt;&gt;cbOwnCloudIgnoreInvalidCert.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbOwnCloudIgnoreInvalidCert.Parent" xml:space="preserve">
-    <value>tpOwnCloud</value>
-  </data>
-  <data name="&gt;&gt;cbOwnCloudIgnoreInvalidCert.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="cbOwnCloudDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6059,7 +5626,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudDirectLink.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="cbOwnCloudCreateShare.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6086,7 +5653,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudCreateShare.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="txtOwnCloudPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 176</value>
@@ -6107,7 +5674,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudPath.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="txtOwnCloudPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -6128,7 +5695,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudPassword.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="txtOwnCloudUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -6149,7 +5716,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudUsername.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="txtOwnCloudHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -6170,7 +5737,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudHost.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="lblOwnCloudPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6197,7 +5764,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPath.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="lblOwnCloudPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6224,7 +5791,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPassword.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="lblOwnCloudUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6251,7 +5818,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudUsername.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="lblOwnCloudHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6278,7 +5845,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudHost.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
@@ -8455,6 +8022,9 @@ Using an encrypted library disables sharing.</value>
   <data name="btnSeafilePathValidate.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
+  <data name="btnSeafilePathValidate.Text" xml:space="preserve">
+    <value>Validate</value>
+  </data>
   <data name="&gt;&gt;btnSeafilePathValidate.Name" xml:space="preserve">
     <value>btnSeafilePathValidate</value>
   </data>
@@ -8503,6 +8073,10 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSeafileWritePermNotif.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
+  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
+    <value>Libraries without write permissions are hidden.
+Using an encrypted library disables sharing.</value>
+  </data>
   <data name="&gt;&gt;lblSeafileWritePermNotif.Name" xml:space="preserve">
     <value>lblSeafileWritePermNotif</value>
   </data>
@@ -8530,6 +8104,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSeafilePath.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
+  <data name="lblSeafilePath.Text" xml:space="preserve">
+    <value>Path:</value>
+  </data>
   <data name="&gt;&gt;lblSeafilePath.Name" xml:space="preserve">
     <value>lblSeafilePath</value>
   </data>
@@ -8553,6 +8130,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="txtSeafileUploadLocationRefresh.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
+    <value>Refresh</value>
   </data>
   <data name="&gt;&gt;txtSeafileUploadLocationRefresh.Name" xml:space="preserve">
     <value>txtSeafileUploadLocationRefresh</value>
@@ -8581,6 +8161,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSeafileSelectLibrary.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
+  <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
+    <value>Select library:</value>
+  </data>
   <data name="&gt;&gt;lblSeafileSelectLibrary.Name" xml:space="preserve">
     <value>lblSeafileSelectLibrary</value>
   </data>
@@ -8604,6 +8187,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnRefreshSeafileAccInfo.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
+    <value>Refresh</value>
   </data>
   <data name="&gt;&gt;btnRefreshSeafileAccInfo.Name" xml:space="preserve">
     <value>btnRefreshSeafileAccInfo</value>
@@ -8674,6 +8260,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSeafileAccInfoEmail.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
+  <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
   <data name="&gt;&gt;lblSeafileAccInfoEmail.Name" xml:space="preserve">
     <value>lblSeafileAccInfoEmail</value>
   </data>
@@ -8701,6 +8290,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSeafileAccInfoUsage.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
+  <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
+    <value>Usage:</value>
+  </data>
   <data name="&gt;&gt;lblSeafileAccInfoUsage.Name" xml:space="preserve">
     <value>lblSeafileAccInfoUsage</value>
   </data>
@@ -8721,6 +8313,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="grpSeafileAccInfo.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
+  </data>
+  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
+    <value>Account information</value>
   </data>
   <data name="&gt;&gt;grpSeafileAccInfo.Name" xml:space="preserve">
     <value>grpSeafileAccInfo</value>
@@ -8746,6 +8341,9 @@ Using an encrypted library disables sharing.</value>
   <data name="btnSeafileCheckAuthToken.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
+  <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
+    <value>Validate</value>
+  </data>
   <data name="&gt;&gt;btnSeafileCheckAuthToken.Name" xml:space="preserve">
     <value>btnSeafileCheckAuthToken</value>
   </data>
@@ -8770,6 +8368,9 @@ Using an encrypted library disables sharing.</value>
   <data name="btnSeafileCheckAPIURL.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
+    <value>Validate</value>
+  </data>
   <data name="&gt;&gt;btnSeafileCheckAPIURL.Name" xml:space="preserve">
     <value>btnSeafileCheckAPIURL</value>
   </data>
@@ -8793,6 +8394,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnSeafileGetAuthToken.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
+    <value>Get</value>
   </data>
   <data name="&gt;&gt;btnSeafileGetAuthToken.Name" xml:space="preserve">
     <value>btnSeafileGetAuthToken</value>
@@ -8863,6 +8467,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSeafileUsername.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
+  <data name="lblSeafileUsername.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
   <data name="&gt;&gt;lblSeafileUsername.Name" xml:space="preserve">
     <value>lblSeafileUsername</value>
   </data>
@@ -8890,6 +8497,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSeafilePassword.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
+  <data name="lblSeafilePassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
   <data name="&gt;&gt;lblSeafilePassword.Name" xml:space="preserve">
     <value>lblSeafilePassword</value>
   </data>
@@ -8910,6 +8520,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="grpSeafileObtainAuthToken.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
+    <value>Obtain auth token</value>
   </data>
   <data name="&gt;&gt;grpSeafileObtainAuthToken.Name" xml:space="preserve">
     <value>grpSeafileObtainAuthToken</value>
@@ -8938,6 +8551,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbSeafileIgnoreInvalidCert.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
+  <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Ignore invalid SSL certificate</value>
+  </data>
   <data name="&gt;&gt;cbSeafileIgnoreInvalidCert.Name" xml:space="preserve">
     <value>cbSeafileIgnoreInvalidCert</value>
   </data>
@@ -8964,6 +8580,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="cbSeafileCreateShareableURL.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
+    <value>Create shareable URL</value>
   </data>
   <data name="&gt;&gt;cbSeafileCreateShareableURL.Name" xml:space="preserve">
     <value>cbSeafileCreateShareableURL</value>
@@ -9013,6 +8632,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSeafileAuthToken.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="lblSeafileAuthToken.Text" xml:space="preserve">
+    <value>Auth token:</value>
+  </data>
   <data name="&gt;&gt;lblSeafileAuthToken.Name" xml:space="preserve">
     <value>lblSeafileAuthToken</value>
   </data>
@@ -9040,6 +8662,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSeafileAPIURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="lblSeafileAPIURL.Text" xml:space="preserve">
+    <value>API URL:</value>
+  </data>
   <data name="&gt;&gt;lblSeafileAPIURL.Name" xml:space="preserve">
     <value>lblSeafileAPIURL</value>
   </data>
@@ -9063,6 +8688,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSeafile.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
+  </data>
+  <data name="tpSeafile.Text" xml:space="preserve">
+    <value>Seafile</value>
   </data>
   <data name="&gt;&gt;tpSeafile.Name" xml:space="preserve">
     <value>tpSeafile</value>
@@ -9112,6 +8740,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSulAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="lblSulAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
   <data name="&gt;&gt;lblSulAPIKey.Name" xml:space="preserve">
     <value>lblSulAPIKey</value>
   </data>
@@ -9135,6 +8766,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSul.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
+  </data>
+  <data name="tpSul.Text" xml:space="preserve">
+    <value>s-ul</value>
   </data>
   <data name="&gt;&gt;tpSul.Name" xml:space="preserve">
     <value>tpSul</value>
@@ -9214,6 +8848,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblStreamableUsername.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
+  <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>Username:</value>
+  </data>
   <data name="&gt;&gt;lblStreamableUsername.Name" xml:space="preserve">
     <value>lblStreamableUsername</value>
   </data>
@@ -9243,6 +8880,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblStreamablePassword.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
+  </data>
+  <data name="lblStreamablePassword.Text" xml:space="preserve">
+    <value>Password:</value>
   </data>
   <data name="&gt;&gt;lblStreamablePassword.Name" xml:space="preserve">
     <value>lblStreamablePassword</value>
@@ -9274,6 +8914,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbStreamableAnonymous.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
+  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
+    <value>Anonymous</value>
+  </data>
   <data name="&gt;&gt;cbStreamableAnonymous.Name" xml:space="preserve">
     <value>cbStreamableAnonymous</value>
   </data>
@@ -9294,6 +8937,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpStreamable.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
+  </data>
+  <data name="tpStreamable.Text" xml:space="preserve">
+    <value>Streamable</value>
   </data>
   <data name="&gt;&gt;tpStreamable.Name" xml:space="preserve">
     <value>tpStreamable</value>
@@ -9340,6 +8986,9 @@ Using an encrypted library disables sharing.</value>
   <data name="btnOpenloadRefreshFolders.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="btnOpenloadRefreshFolders.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
   <data name="&gt;&gt;btnOpenloadRefreshFolders.Name" xml:space="preserve">
     <value>btnOpenloadRefreshFolders</value>
   </data>
@@ -9362,10 +9011,13 @@ Using an encrypted library disables sharing.</value>
     <value>18, 27</value>
   </data>
   <data name="cbOpenloadUploadToFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 17</value>
+    <value>165, 17</value>
   </data>
   <data name="cbOpenloadUploadToFolder.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="cbOpenloadUploadToFolder.Text" xml:space="preserve">
+    <value>Upload files to selected folder</value>
   </data>
   <data name="&gt;&gt;cbOpenloadUploadToFolder.Name" xml:space="preserve">
     <value>cbOpenloadUploadToFolder</value>
@@ -9387,6 +9039,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="gbOpenloadFolders.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="gbOpenloadFolders.Text" xml:space="preserve">
+    <value>Folders</value>
   </data>
   <data name="&gt;&gt;gbOpenloadFolders.Name" xml:space="preserve">
     <value>gbOpenloadFolders</value>
@@ -9414,6 +9069,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblOpenloadApiLink.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="lblOpenloadApiLink.Text" xml:space="preserve">
+    <value>You can get your API keys from your openload.co account panel.</value>
   </data>
   <data name="&gt;&gt;lblOpenloadApiLink.Name" xml:space="preserve">
     <value>lblOpenloadApiLink</value>
@@ -9463,6 +9121,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblOpenloadApiKey.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="lblOpenloadApiKey.Text" xml:space="preserve">
+    <value>API Key:</value>
+  </data>
   <data name="&gt;&gt;lblOpenloadApiKey.Name" xml:space="preserve">
     <value>lblOpenloadApiKey</value>
   </data>
@@ -9511,6 +9172,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblOpenloadApiLogin.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="lblOpenloadApiLogin.Text" xml:space="preserve">
+    <value>API Login:</value>
+  </data>
   <data name="&gt;&gt;lblOpenloadApiLogin.Name" xml:space="preserve">
     <value>lblOpenloadApiLogin</value>
   </data>
@@ -9531,6 +9195,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="gbOpenloadAuthentication.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="gbOpenloadAuthentication.Text" xml:space="preserve">
+    <value>Authentication</value>
   </data>
   <data name="&gt;&gt;gbOpenloadAuthentication.Name" xml:space="preserve">
     <value>gbOpenloadAuthentication</value>
@@ -9555,6 +9222,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpOpenload.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
+  </data>
+  <data name="tpOpenload.Text" xml:space="preserve">
+    <value>Openload</value>
   </data>
   <data name="&gt;&gt;tpOpenload.Name" xml:space="preserve">
     <value>tpOpenload</value>
@@ -9583,6 +9253,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>File:</value>
+  </data>
   <data name="&gt;&gt;lblSharedFolderFiles.Name" xml:space="preserve">
     <value>lblSharedFolderFiles</value>
   </data>
@@ -9609,6 +9282,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblSharedFolderText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="lblSharedFolderText.Text" xml:space="preserve">
+    <value>Text:</value>
   </data>
   <data name="&gt;&gt;lblSharedFolderText.Name" xml:space="preserve">
     <value>lblSharedFolderText</value>
@@ -9657,6 +9333,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
+    <value>Image:</value>
   </data>
   <data name="&gt;&gt;lblSharedFolderImages.Name" xml:space="preserve">
     <value>lblSharedFolderImages</value>
@@ -9751,6 +9430,9 @@ Using an encrypted library disables sharing.</value>
   <data name="tpSharedFolder.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
+  <data name="tpSharedFolder.Text" xml:space="preserve">
+    <value>Shared folder</value>
+  </data>
   <data name="&gt;&gt;tpSharedFolder.Name" xml:space="preserve">
     <value>tpSharedFolder</value>
   </data>
@@ -9777,6 +9459,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="cbEmailConfirm.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="cbEmailConfirm.Text" xml:space="preserve">
+    <value>Confirm before sending</value>
   </data>
   <data name="&gt;&gt;cbEmailConfirm.Name" xml:space="preserve">
     <value>cbEmailConfirm</value>
@@ -9805,6 +9490,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblEmailSmtpServer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
+    <value>SMTP server:</value>
+  </data>
   <data name="&gt;&gt;lblEmailSmtpServer.Name" xml:space="preserve">
     <value>lblEmailSmtpServer</value>
   </data>
@@ -9832,6 +9520,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblEmailPassword.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
+  <data name="lblEmailPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
   <data name="&gt;&gt;lblEmailPassword.Name" xml:space="preserve">
     <value>lblEmailPassword</value>
   </data>
@@ -9858,6 +9549,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="cbEmailRememberLastTo.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
+    <value>Remember last recipient address</value>
   </data>
   <data name="&gt;&gt;cbEmailRememberLastTo.Name" xml:space="preserve">
     <value>cbEmailRememberLastTo</value>
@@ -9952,6 +9646,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblEmailFrom.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="lblEmailFrom.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
   <data name="&gt;&gt;lblEmailFrom.Name" xml:space="preserve">
     <value>lblEmailFrom</value>
   </data>
@@ -10000,6 +9697,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblEmailDefaultSubject.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
+  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
+    <value>Default subject:</value>
+  </data>
   <data name="&gt;&gt;lblEmailDefaultSubject.Name" xml:space="preserve">
     <value>lblEmailDefaultSubject</value>
   </data>
@@ -10026,6 +9726,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblEmailDefaultBody.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
+  </data>
+  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
+    <value>Default message:</value>
   </data>
   <data name="&gt;&gt;lblEmailDefaultBody.Name" xml:space="preserve">
     <value>lblEmailDefaultBody</value>
@@ -10078,6 +9781,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblEmailSmtpPort.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
+    <value>Port:</value>
+  </data>
   <data name="&gt;&gt;lblEmailSmtpPort.Name" xml:space="preserve">
     <value>lblEmailSmtpPort</value>
   </data>
@@ -10122,6 +9828,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpEmail.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
+  </data>
+  <data name="tpEmail.Text" xml:space="preserve">
+    <value>Email</value>
   </data>
   <data name="&gt;&gt;tpEmail.Name" xml:space="preserve">
     <value>tpEmail</value>
@@ -10171,6 +9880,9 @@ Using an encrypted library disables sharing.</value>
   <data name="tpFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="tpFileUploaders.Text" xml:space="preserve">
+    <value>File uploaders</value>
+  </data>
   <data name="&gt;&gt;tpFileUploaders.Name" xml:space="preserve">
     <value>tpFileUploaders</value>
   </data>
@@ -10215,6 +9927,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="cbPastebinRaw.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
+  </data>
+  <data name="cbPastebinRaw.Text" xml:space="preserve">
+    <value>Use raw URL</value>
   </data>
   <data name="&gt;&gt;cbPastebinRaw.Name" xml:space="preserve">
     <value>cbPastebinRaw</value>
@@ -10261,6 +9976,9 @@ Using an encrypted library disables sharing.</value>
   <data name="btnPastebinRegister.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
+  <data name="btnPastebinRegister.Text" xml:space="preserve">
+    <value>Register...</value>
+  </data>
   <data name="&gt;&gt;btnPastebinRegister.Name" xml:space="preserve">
     <value>btnPastebinRegister</value>
   </data>
@@ -10287,6 +10005,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblPastebinSyntax.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
+  </data>
+  <data name="lblPastebinSyntax.Text" xml:space="preserve">
+    <value>Paste syntax:</value>
   </data>
   <data name="&gt;&gt;lblPastebinSyntax.Name" xml:space="preserve">
     <value>lblPastebinSyntax</value>
@@ -10315,6 +10036,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblPastebinExpiration.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
+  <data name="lblPastebinExpiration.Text" xml:space="preserve">
+    <value>Expiration:</value>
+  </data>
   <data name="&gt;&gt;lblPastebinExpiration.Name" xml:space="preserve">
     <value>lblPastebinExpiration</value>
   </data>
@@ -10341,6 +10065,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblPastebinPrivacy.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
+  </data>
+  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
+    <value>Privacy:</value>
   </data>
   <data name="&gt;&gt;lblPastebinPrivacy.Name" xml:space="preserve">
     <value>lblPastebinPrivacy</value>
@@ -10369,6 +10096,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblPastebinTitle.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
+  <data name="lblPastebinTitle.Text" xml:space="preserve">
+    <value>Paste title:</value>
+  </data>
   <data name="&gt;&gt;lblPastebinTitle.Name" xml:space="preserve">
     <value>lblPastebinTitle</value>
   </data>
@@ -10396,6 +10126,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblPastebinPassword.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
+  <data name="lblPastebinPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
   <data name="&gt;&gt;lblPastebinPassword.Name" xml:space="preserve">
     <value>lblPastebinPassword</value>
   </data>
@@ -10422,6 +10155,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblPastebinUsername.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>Username:</value>
   </data>
   <data name="&gt;&gt;lblPastebinUsername.Name" xml:space="preserve">
     <value>lblPastebinUsername</value>
@@ -10555,6 +10291,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblPastebinLoginStatus.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
   <data name="&gt;&gt;lblPastebinLoginStatus.Name" xml:space="preserve">
     <value>lblPastebinLoginStatus</value>
   </data>
@@ -10579,6 +10318,9 @@ Using an encrypted library disables sharing.</value>
   <data name="btnPastebinLogin.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
   <data name="&gt;&gt;btnPastebinLogin.Name" xml:space="preserve">
     <value>btnPastebinLogin</value>
   </data>
@@ -10602,6 +10344,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPastebin.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="tpPastebin.Text" xml:space="preserve">
+    <value>Pastebin</value>
   </data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
@@ -10629,6 +10374,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblPaste_eeUserAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>User API key:</value>
   </data>
   <data name="&gt;&gt;lblPaste_eeUserAPIKey.Name" xml:space="preserve">
     <value>lblPaste_eeUserAPIKey</value>
@@ -10675,6 +10423,9 @@ Using an encrypted library disables sharing.</value>
   <data name="tpPaste_ee.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tpPaste_ee.Text" xml:space="preserve">
+    <value>Paste.ee</value>
+  </data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
   </data>
@@ -10702,6 +10453,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbGistUseRawURL.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
+  <data name="cbGistUseRawURL.Text" xml:space="preserve">
+    <value>Use raw URL</value>
+  </data>
   <data name="&gt;&gt;cbGistUseRawURL.Name" xml:space="preserve">
     <value>cbGistUseRawURL</value>
   </data>
@@ -10728,6 +10482,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="cbGistPublishPublic.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="cbGistPublishPublic.Text" xml:space="preserve">
+    <value>Create public Gist</value>
   </data>
   <data name="&gt;&gt;cbGistPublishPublic.Name" xml:space="preserve">
     <value>cbGistPublishPublic</value>
@@ -10795,6 +10552,9 @@ Using an encrypted library disables sharing.</value>
   <data name="tpGist.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="tpGist.Text" xml:space="preserve">
+    <value>GitHub Gist</value>
+  </data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
   </data>
@@ -10822,6 +10582,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbUpasteIsPublic.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>Is public upload?</value>
+  </data>
   <data name="&gt;&gt;cbUpasteIsPublic.Name" xml:space="preserve">
     <value>cbUpasteIsPublic</value>
   </data>
@@ -10848,6 +10611,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblUpasteUserKey.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>User key:</value>
   </data>
   <data name="&gt;&gt;lblUpasteUserKey.Name" xml:space="preserve">
     <value>lblUpasteUserKey</value>
@@ -10893,6 +10659,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpUpaste.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="tpUpaste.Text" xml:space="preserve">
+    <value>uPaste</value>
   </data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
@@ -10963,6 +10732,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblHastebinSyntaxHighlighting.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>Syntax highlighting:</value>
+  </data>
   <data name="&gt;&gt;lblHastebinSyntaxHighlighting.Name" xml:space="preserve">
     <value>lblHastebinSyntaxHighlighting</value>
   </data>
@@ -10990,6 +10762,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblHastebinCustomDomain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>Custom domain:</value>
+  </data>
   <data name="&gt;&gt;lblHastebinCustomDomain.Name" xml:space="preserve">
     <value>lblHastebinCustomDomain</value>
   </data>
@@ -11013,6 +10788,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpHastebin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="tpHastebin.Text" xml:space="preserve">
+    <value>Hastebin</value>
   </data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
@@ -11041,6 +10819,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblOneTimeSecretAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
+  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
   <data name="&gt;&gt;lblOneTimeSecretAPIKey.Name" xml:space="preserve">
     <value>lblOneTimeSecretAPIKey</value>
   </data>
@@ -11067,6 +10848,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblOneTimeSecretEmail.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
+  </data>
+  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
+    <value>Email:</value>
   </data>
   <data name="&gt;&gt;lblOneTimeSecretEmail.Name" xml:space="preserve">
     <value>lblOneTimeSecretEmail</value>
@@ -11134,6 +10918,9 @@ Using an encrypted library disables sharing.</value>
   <data name="tpOneTimeSecret.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="tpOneTimeSecret.Text" xml:space="preserve">
+    <value>OneTimeSecret</value>
+  </data>
   <data name="&gt;&gt;tpOneTimeSecret.Name" xml:space="preserve">
     <value>tpOneTimeSecret</value>
   </data>
@@ -11182,6 +10969,9 @@ Using an encrypted library disables sharing.</value>
   <data name="tpTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>Text uploaders</value>
+  </data>
   <data name="&gt;&gt;tpTextUploaders.Name" xml:space="preserve">
     <value>tpTextUploaders</value>
   </data>
@@ -11208,6 +10998,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="cbImgurUseGIFV.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
+  </data>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>Use GIFV link instead of GIF</value>
   </data>
   <data name="&gt;&gt;cbImgurUseGIFV.Name" xml:space="preserve">
     <value>cbImgurUseGIFV</value>
@@ -11236,6 +11029,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbImgurUploadSelectedAlbum.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>Upload images to selected album</value>
+  </data>
   <data name="&gt;&gt;cbImgurUploadSelectedAlbum.Name" xml:space="preserve">
     <value>cbImgurUploadSelectedAlbum</value>
   </data>
@@ -11262,6 +11058,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="cbImgurDirectLink.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>Use direct link</value>
   </data>
   <data name="&gt;&gt;cbImgurDirectLink.Name" xml:space="preserve">
     <value>cbImgurDirectLink</value>
@@ -11317,8 +11116,17 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;oauth2Imgur.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
   <data name="chImgurTitle.Width" type="System.Int32, mscorlib">
     <value>150</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>Description</value>
   </data>
   <data name="chImgurDescription.Width" type="System.Int32, mscorlib">
     <value>226</value>
@@ -11358,6 +11166,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnImgurRefreshAlbumList.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
+  </data>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>Refresh album list</value>
   </data>
   <data name="&gt;&gt;btnImgurRefreshAlbumList.Name" xml:space="preserve">
     <value>btnImgurRefreshAlbumList</value>
@@ -11407,6 +11218,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblImgurThumbnailType.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>Thumbnail type:</value>
+  </data>
   <data name="&gt;&gt;lblImgurThumbnailType.Name" xml:space="preserve">
     <value>lblImgurThumbnailType</value>
   </data>
@@ -11430,6 +11244,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImgur.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="tpImgur.Text" xml:space="preserve">
+    <value>Imgur</value>
   </data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
@@ -11455,6 +11272,9 @@ Using an encrypted library disables sharing.</value>
   <data name="btnImageShackLogin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
   <data name="&gt;&gt;btnImageShackLogin.Name" xml:space="preserve">
     <value>btnImageShackLogin</value>
   </data>
@@ -11478,6 +11298,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnImageShackOpenPublicProfile.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
+  </data>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>Open public profile page...</value>
   </data>
   <data name="&gt;&gt;btnImageShackOpenPublicProfile.Name" xml:space="preserve">
     <value>btnImageShackOpenPublicProfile</value>
@@ -11506,6 +11329,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbImageShackIsPublic.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>Is public upload?</value>
+  </data>
   <data name="&gt;&gt;cbImageShackIsPublic.Name" xml:space="preserve">
     <value>cbImageShackIsPublic</value>
   </data>
@@ -11529,6 +11355,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnImageShackOpenMyImages.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
+  </data>
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+    <value>Open my images page...</value>
   </data>
   <data name="&gt;&gt;btnImageShackOpenMyImages.Name" xml:space="preserve">
     <value>btnImageShackOpenMyImages</value>
@@ -11556,6 +11385,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblImageShackUsername.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>Username:</value>
   </data>
   <data name="&gt;&gt;lblImageShackUsername.Name" xml:space="preserve">
     <value>lblImageShackUsername</value>
@@ -11626,6 +11458,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblImageShackPassword.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
   <data name="&gt;&gt;lblImageShackPassword.Name" xml:space="preserve">
     <value>lblImageShackPassword</value>
   </data>
@@ -11649,6 +11484,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImageShack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="tpImageShack.Text" xml:space="preserve">
+    <value>ImageShack</value>
   </data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
@@ -11694,6 +11532,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnTinyPicLogin.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="btnTinyPicLogin.Text" xml:space="preserve">
+    <value>Login</value>
   </data>
   <data name="&gt;&gt;btnTinyPicLogin.Name" xml:space="preserve">
     <value>btnTinyPicLogin</value>
@@ -11743,6 +11584,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblTinyPicPassword.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="lblTinyPicPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
   <data name="&gt;&gt;lblTinyPicPassword.Name" xml:space="preserve">
     <value>lblTinyPicPassword</value>
   </data>
@@ -11791,6 +11635,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblTinyPicUsername.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
   <data name="&gt;&gt;lblTinyPicUsername.Name" xml:space="preserve">
     <value>lblTinyPicUsername</value>
   </data>
@@ -11814,6 +11661,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnTinyPicOpenMyImages.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
+  </data>
+  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
+    <value>Open my images page...</value>
   </data>
   <data name="&gt;&gt;btnTinyPicOpenMyImages.Name" xml:space="preserve">
     <value>btnTinyPicOpenMyImages</value>
@@ -11839,6 +11689,9 @@ Using an encrypted library disables sharing.</value>
   <data name="tpTinyPic.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="tpTinyPic.Text" xml:space="preserve">
+    <value>TinyPic</value>
+  </data>
   <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
     <value>tpTinyPic</value>
   </data>
@@ -11862,6 +11715,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnFlickrOpenImages.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
+    <value>Your photostream...</value>
   </data>
   <data name="&gt;&gt;btnFlickrOpenImages.Name" xml:space="preserve">
     <value>btnFlickrOpenImages</value>
@@ -11929,6 +11785,9 @@ Using an encrypted library disables sharing.</value>
   <data name="btnFlickrCheckToken.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
+    <value>Refresh authorization</value>
+  </data>
   <data name="&gt;&gt;btnFlickrCheckToken.Name" xml:space="preserve">
     <value>btnFlickrCheckToken</value>
   </data>
@@ -11956,6 +11815,9 @@ Using an encrypted library disables sharing.</value>
   <data name="btnFlickrCompleteAuth.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
+    <value>Step 2: Complete authorization</value>
+  </data>
   <data name="&gt;&gt;btnFlickrCompleteAuth.Name" xml:space="preserve">
     <value>btnFlickrCompleteAuth</value>
   </data>
@@ -11979,6 +11841,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnFlickrOpenAuthorize.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
+    <value>Step 1: Open authorize page...</value>
   </data>
   <data name="&gt;&gt;btnFlickrOpenAuthorize.Name" xml:space="preserve">
     <value>btnFlickrOpenAuthorize</value>
@@ -12004,6 +11869,9 @@ Using an encrypted library disables sharing.</value>
   <data name="tpFlickr.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="tpFlickr.Text" xml:space="preserve">
+    <value>Flickr</value>
+  </data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
   </data>
@@ -12027,6 +11895,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnPhotobucketAddAlbum.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>Add album</value>
   </data>
   <data name="&gt;&gt;btnPhotobucketAddAlbum.Name" xml:space="preserve">
     <value>btnPhotobucketAddAlbum</value>
@@ -12054,6 +11925,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnPhotobucketRemoveAlbum.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>Remove album</value>
   </data>
   <data name="&gt;&gt;btnPhotobucketRemoveAlbum.Name" xml:space="preserve">
     <value>btnPhotobucketRemoveAlbum</value>
@@ -12097,6 +11971,9 @@ Using an encrypted library disables sharing.</value>
   <data name="gbPhotobucketAlbumPath.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>Upload images to</value>
+  </data>
   <data name="&gt;&gt;gbPhotobucketAlbumPath.Name" xml:space="preserve">
     <value>gbPhotobucketAlbumPath</value>
   </data>
@@ -12124,6 +12001,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblPhotobucketNewAlbumName.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>New album name (must be between 2 and 50 characters. Valid characters are letters, numbers, underscore ( _ ), hyphen (-), and space)</value>
+  </data>
   <data name="&gt;&gt;lblPhotobucketNewAlbumName.Name" xml:space="preserve">
     <value>lblPhotobucketNewAlbumName</value>
   </data>
@@ -12150,6 +12030,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblPhotobucketParentAlbumPath.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>Parent album path</value>
   </data>
   <data name="&gt;&gt;lblPhotobucketParentAlbumPath.Name" xml:space="preserve">
     <value>lblPhotobucketParentAlbumPath</value>
@@ -12217,6 +12100,9 @@ Using an encrypted library disables sharing.</value>
   <data name="btnPhotobucketCreateAlbum.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>Create album</value>
+  </data>
   <data name="&gt;&gt;btnPhotobucketCreateAlbum.Name" xml:space="preserve">
     <value>btnPhotobucketCreateAlbum</value>
   </data>
@@ -12237,6 +12123,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="gbPhotobucketAlbums.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>Create new album</value>
   </data>
   <data name="&gt;&gt;gbPhotobucketAlbums.Name" xml:space="preserve">
     <value>gbPhotobucketAlbums</value>
@@ -12265,6 +12154,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblPhotobucketDefaultAlbumName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>Default album name</value>
+  </data>
   <data name="&gt;&gt;lblPhotobucketDefaultAlbumName.Name" xml:space="preserve">
     <value>lblPhotobucketDefaultAlbumName</value>
   </data>
@@ -12288,6 +12180,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnPhotobucketAuthOpen.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>Step 1: Open authorize page...</value>
   </data>
   <data name="&gt;&gt;btnPhotobucketAuthOpen.Name" xml:space="preserve">
     <value>btnPhotobucketAuthOpen</value>
@@ -12337,6 +12232,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblPhotobucketVerificationCode.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>Verification code (Get verification code from authorize page):</value>
+  </data>
   <data name="&gt;&gt;lblPhotobucketVerificationCode.Name" xml:space="preserve">
     <value>lblPhotobucketVerificationCode</value>
   </data>
@@ -12360,6 +12258,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnPhotobucketAuthComplete.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>Step 2: Complete authorization</value>
   </data>
   <data name="&gt;&gt;btnPhotobucketAuthComplete.Name" xml:space="preserve">
     <value>btnPhotobucketAuthComplete</value>
@@ -12409,6 +12310,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblPhotobucketAccountStatus.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>Login required.</value>
+  </data>
   <data name="&gt;&gt;lblPhotobucketAccountStatus.Name" xml:space="preserve">
     <value>lblPhotobucketAccountStatus</value>
   </data>
@@ -12429,6 +12333,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="gbPhotobucketUserAccount.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>User account</value>
   </data>
   <data name="&gt;&gt;gbPhotobucketUserAccount.Name" xml:space="preserve">
     <value>gbPhotobucketUserAccount</value>
@@ -12453,6 +12360,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPhotobucket.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="tpPhotobucket.Text" xml:space="preserve">
+    <value>Photobucket</value>
   </data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
@@ -12502,6 +12412,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblPicasaAlbumID.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>Album ID for upload (Empty = No album upload):</value>
+  </data>
   <data name="&gt;&gt;lblPicasaAlbumID.Name" xml:space="preserve">
     <value>lblPicasaAlbumID</value>
   </data>
@@ -12514,11 +12427,20 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;lblPicasaAlbumID.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
   <data name="chPicasaID.Width" type="System.Int32, mscorlib">
     <value>135</value>
   </data>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="chPicasaName.Width" type="System.Int32, mscorlib">
     <value>150</value>
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>Description</value>
   </data>
   <data name="chPicasaDescription.Width" type="System.Int32, mscorlib">
     <value>143</value>
@@ -12558,6 +12480,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>Refresh album list</value>
   </data>
   <data name="&gt;&gt;btnPicasaRefreshAlbumList.Name" xml:space="preserve">
     <value>btnPicasaRefreshAlbumList</value>
@@ -12604,6 +12529,9 @@ Using an encrypted library disables sharing.</value>
   <data name="tpPicasa.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="tpPicasa.Text" xml:space="preserve">
+    <value>Picasa</value>
+  </data>
   <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
     <value>tpPicasa</value>
   </data>
@@ -12627,6 +12555,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnCheveretoTestAll.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
+    <value>Test all</value>
   </data>
   <data name="btnCheveretoTestAll.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -12658,6 +12589,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblCheveretoUploadURLExample.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
+    <value>Example: http://example.com/api/1/upload</value>
+  </data>
   <data name="&gt;&gt;lblCheveretoUploadURLExample.Name" xml:space="preserve">
     <value>lblCheveretoUploadURLExample</value>
   </data>
@@ -12684,6 +12618,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblCheveretoUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
+  </data>
+  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
+    <value>Uploaders:</value>
   </data>
   <data name="&gt;&gt;lblCheveretoUploaders.Name" xml:space="preserve">
     <value>lblCheveretoUploaders</value>
@@ -12733,6 +12670,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbCheveretoDirectURL.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>Direct URL</value>
+  </data>
   <data name="&gt;&gt;cbCheveretoDirectURL.Name" xml:space="preserve">
     <value>cbCheveretoDirectURL</value>
   </data>
@@ -12759,6 +12699,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblCheveretoUploadURL.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
+    <value>Upload URL:</value>
   </data>
   <data name="&gt;&gt;lblCheveretoUploadURL.Name" xml:space="preserve">
     <value>lblCheveretoUploadURL</value>
@@ -12829,6 +12772,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblCheveretoAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
   <data name="&gt;&gt;lblCheveretoAPIKey.Name" xml:space="preserve">
     <value>lblCheveretoAPIKey</value>
   </data>
@@ -12852,6 +12798,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpChevereto.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="tpChevereto.Text" xml:space="preserve">
+    <value>Chevereto</value>
   </data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
@@ -12879,6 +12828,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="llVgymeAccountDetailsPage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
+    <value>You can get user key from account details page.</value>
   </data>
   <data name="&gt;&gt;llVgymeAccountDetailsPage.Name" xml:space="preserve">
     <value>llVgymeAccountDetailsPage</value>
@@ -12928,6 +12880,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lvlVgymeUserKey.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="lvlVgymeUserKey.Text" xml:space="preserve">
+    <value>User key:</value>
+  </data>
   <data name="&gt;&gt;lvlVgymeUserKey.Name" xml:space="preserve">
     <value>lvlVgymeUserKey</value>
   </data>
@@ -12951,6 +12906,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpVgyme.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
+  </data>
+  <data name="tpVgyme.Text" xml:space="preserve">
+    <value>vgy.me</value>
   </data>
   <data name="&gt;&gt;tpVgyme.Name" xml:space="preserve">
     <value>tpVgyme</value>
@@ -12978,6 +12936,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="llSomeImageAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
+    <value>To get API key visit https://someimage.com/api</value>
   </data>
   <data name="&gt;&gt;llSomeImageAPIKey.Name" xml:space="preserve">
     <value>llSomeImageAPIKey</value>
@@ -13027,6 +12988,9 @@ Using an encrypted library disables sharing.</value>
   <data name="lblSomeImageAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
   <data name="&gt;&gt;lblSomeImageAPIKey.Name" xml:space="preserve">
     <value>lblSomeImageAPIKey</value>
   </data>
@@ -13057,6 +13021,9 @@ Using an encrypted library disables sharing.</value>
   <data name="cbSomeImageDirectURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
+    <value>Direct URL</value>
+  </data>
   <data name="&gt;&gt;cbSomeImageDirectURL.Name" xml:space="preserve">
     <value>cbSomeImageDirectURL</value>
   </data>
@@ -13083,6 +13050,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSomeImage.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
+  </data>
+  <data name="tpSomeImage.Text" xml:space="preserve">
+    <value>SomeImage</value>
   </data>
   <data name="&gt;&gt;tpSomeImage.Name" xml:space="preserve">
     <value>tpSomeImage</value>
@@ -13134,6 +13104,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>Image uploaders</value>
   </data>
   <data name="&gt;&gt;tpImageUploaders.Name" xml:space="preserve">
     <value>tpImageUploaders</value>
@@ -13263,9 +13236,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Destination settings</value>
   </data>
   <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
     <value>ttHelpTip</value>

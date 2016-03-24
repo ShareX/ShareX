@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Opções de destino</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Usar domínio customizado:</value>
   </data>
@@ -145,81 +142,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar sintaxe ao campo do URL</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar sintaxe ao campo do URL</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Exemplos:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>Adicionar sintaxe ao campo do URL</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Exemplos:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
-    <value>XPath:</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>Valor</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Valor</value>
-  </data>
-  <data name="colSeafileLibraryName.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
-    <value>Tamanho</value>
-  </data>
-  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
-    <value>Encriptado</value>
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
@@ -527,9 +449,6 @@ store.book[0].title</value>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Compatibilidade com ownCloud 8.1+</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Ignorar certificado SSL inválido</value>
-  </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Link direto (Adiciona "&amp;download" ao URL)</value>
   </data>
@@ -677,56 +596,140 @@ store.book[0].title</value>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Para obter uma chave de API, logue no Lambda em https://lambda.xs/ e clique no ícone de configurações no canto superior direito.</value>
   </data>
-  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
-    <value>URL do Link:</value>
-  </data>
-  <data name="tpLambda.Text" xml:space="preserve">
-    <value>Lambda</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Testar todos</value>
-  </data>
-  <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>URL do Resultado:</value>
-  </data>
-  <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>URL de envio:</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Uploaders:</value>
-  </data>
-  <data name="tpPomf.Text" xml:space="preserve">
-    <value>Pomf</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>Chave da API:</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Hospedagem:</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Opções de destino</value>
   </data>
-  <data name="tpUp1.Text" xml:space="preserve">
-    <value>Up1</value>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Ignorar certificado SSL inválido</value>
   </data>
-  <data name="cbSeafileAPIURL.Items" xml:space="preserve">
-    <value>https://seacloud.cc/api2/</value>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Encriptado</value>
   </data>
-  <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
-    <value>https://cloud.mein-seafile.de/api2/</value>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Tamanho</value>
   </data>
-  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
-    <value>Compartilhar senha:</value>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>Nome</value>
   </data>
-  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
-    <value>Dias para expirar:</value>
-  </data>
-  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
-    <value>Opções de compartilhamento do Seafile</value>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Senha da biblioteca:</value>
   </data>
   <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
     <value>Validar</value>
   </data>
-  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
-    <value>Senha da biblioteca:</value>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Opções de compartilhamento do Seafile</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Dias para expirar:</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Compartilhar senha:</value>
+  </data>
+  <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
+    <value>https://cloud.mein-seafile.de/api2/</value>
+  </data>
+  <data name="cbSeafileAPIURL.Items" xml:space="preserve">
+    <value>https://seacloud.cc/api2/</value>
+  </data>
+  <data name="tpUp1.Text" xml:space="preserve">
+    <value>Up1</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Hospedagem:</value>
+  </data>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>Chave da API:</value>
+  </data>
+  <data name="tpPomf.Text" xml:space="preserve">
+    <value>Pomf</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Uploaders:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>URL de envio:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>URL do Resultado:</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Testar todos</value>
+  </data>
+  <data name="tpLambda.Text" xml:space="preserve">
+    <value>Lambda</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>URL do Link:</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
+    <value>XPath:</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
+    <value>Exemplos:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
+  </data>
+  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
+    <value>Adicionar sintaxe ao campo do URL</value>
+  </data>
+  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
+    <value>JsonPath:</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
+    <value>Exemplos:
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
+    <value>Adicionar sintaxe ao campo do URL</value>
+  </data>
+  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>Adicionar sintaxe ao campo do URL</value>
+  </data>
+  <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
+    <value>?</value>
   </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Validar</value>
@@ -1064,9 +1067,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Envio de imagens</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>Chave da API:</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Usar armazenamento reduzido de redundância</value>

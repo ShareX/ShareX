@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Zieleinstellungen</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Benutze eigene Domain:</value>
   </data>
@@ -187,21 +184,6 @@ store.book[0].title</value>
   </data>
   <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
     <value>Wert</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Wert</value>
-  </data>
-  <data name="colSeafileLibraryName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
-    <value>Größe</value>
-  </data>
-  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
-    <value>Verschlüsselt</value>
   </data>
   <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
     <value>Argumente</value>
@@ -443,9 +425,6 @@ store.book[0].title</value>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>ownCloud 8.1+ Unterstützung</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Ignoriere ungültiges SSL Zertifikat</value>
-  </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Direkter Link (Fügt "&amp;download" zur URL hinzu)</value>
   </data>
@@ -563,41 +542,65 @@ store.book[0].title</value>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Um einen API Schlüssel zu bekommen, melde dich bitte bei https://lambda.sx/ an und clicke dann auf das Einstellungsrad oben rechts.</value>
   </data>
-  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
-    <value>Link URL:</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Alle testen</value>
-  </data>
-  <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>Ergebnis URL:</value>
-  </data>
-  <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>Hochlade URL:</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Hochlader:</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>API Schlüssel:</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Host:</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Zieleinstellungen</value>
   </data>
-  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
-    <value>"Teilen" Passwort:</value>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Ignoriere ungültiges SSL Zertifikat</value>
   </data>
-  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
-    <value>Tage bis zum Ablauf:</value>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Verschlüsselt</value>
   </data>
-  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
-    <value>Seafile "Teilen" Einstellungen:</value>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Größe</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Bibliothekspasswort:</value>
   </data>
   <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
     <value>Validieren</value>
   </data>
-  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
-    <value>Bibliothekspasswort:</value>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Seafile "Teilen" Einstellungen:</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Tage bis zum Ablauf:</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>"Teilen" Passwort:</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>API Schlüssel:</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Hochlader:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>Hochlade URL:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>Ergebnis URL:</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Alle testen</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>Link URL:</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>Wert</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Validieren</value>
@@ -878,9 +881,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Bildhochlader</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API Schlüssel:</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Benutze geringeren Redundanzspeicher</value>

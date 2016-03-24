@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Thiết lập dịch vụ tải lên</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Sử dụng domain tùy chỉnh:</value>
   </data>
@@ -157,162 +154,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Xóa</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>Trình tải lên ảnh</value>
-  </data>
-  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>Tải lên công khai?</value>
-  </data>
-  <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>User key:</value>
-  </data>
-  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>Đánh dấu cú pháp</value>
-  </data>
-  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
-    <value>Domain tùy chỉnh:</value>
-  </data>
-  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên văn bản</value>
-  </data>
-  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
-    <value>Dùng liên kết GIFV thay vì GIF</value>
-  </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>Tải ảnh lên các album đã chọn</value>
-  </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>Dùng liên kết trực tiếp</value>
-  </data>
-  <data name="chImgurID.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>Tiêu đề</value>
-  </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>Mô tả</value>
-  </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
-    <value>Làm mới danh sách album</value>
-  </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Kiểu ảnh thu nhỏ:</value>
-  </data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>Đăng nhập</value>
-  </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>Mở trang cá nhân công khai...</value>
-  </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>Có phải tải lên công khai</value>
-  </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>Mở trang chứa ảnh của tôi...</value>
-  </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>Tên tài khoản:</value>
-  </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>Mật khẩu:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Đăng nhập</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Mật khẩu:</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Mở trang hình ảnh của tôi...</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Các bức ảnh của bạn...</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Làm mới việc xác thực</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Bước 2: Hoàn thành việc xác thực</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Bước 1: Mở trang xác thực...</value>
-  </data>
-  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
-    <value>Thêm album</value>
-  </data>
-  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>Xóa album</value>
-  </data>
-  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
-    <value>Tải lên ảnh tới</value>
-  </data>
-  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>Tên album mới (phải từ 2 đến 50 kí tự, chấp nhận chữ, số, dấu gạch dưới (_), dấu gạch ngang (-) và khoảng trống)</value>
-  </data>
-  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
-    <value>Đường dẫn tới album cha</value>
-  </data>
-  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
-    <value>Tạo album</value>
-  </data>
-  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
-    <value>Tạo album mới</value>
-  </data>
-  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
-    <value>Tên mặc định của album</value>
-  </data>
-  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>Bước 1: Mở trang xác thực...</value>
-  </data>
-  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Mã xác thực: (Lấy mã xác thực từ trang xác thực):</value>
-  </data>
-  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>Bước 2: Hoàn thành việc xác thực</value>
-  </data>
-  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>Đăng nhập được yêu cầu.</value>
-  </data>
-  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
-    <value>Tài khoản người dùng</value>
-  </data>
-  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>ID của album để tải lên (Để trống = Không tải lên album)</value>
-  </data>
-  <data name="chPicasaID.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="chPicasaName.Text" xml:space="preserve">
-    <value>Tên</value>
-  </data>
-  <data name="chPicasaDescription.Text" xml:space="preserve">
-    <value>Mô tả</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>Làm mới danh sách album</value>
-  </data>
-  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>URL trực tiếp</value>
-  </data>
-  <data name="chBoxFoldersName.Text" xml:space="preserve">
-    <value>Tên thư mục</value>
   </data>
   <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
     <value>Ví dụ...</value>
@@ -491,17 +332,8 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="cbBoxShare.Text" xml:space="preserve">
     <value>Tạo liên kết để chia sẻ</value>
   </data>
-  <data name="lblPastebinUsername.Text" xml:space="preserve">
-    <value>Tên tài khoản:</value>
-  </data>
-  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
-    <value>Trạng thái:</value>
-  </data>
-  <data name="btnPastebinLogin.Text" xml:space="preserve">
-    <value>Đăng nhập</value>
-  </data>
-  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>API key người dùng:</value>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>Tên thư mục</value>
   </data>
   <data name="lblBoxFolderID.Text" xml:space="preserve">
     <value>Thư mục đã chọn:</value>
@@ -556,9 +388,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Tương thích ownCloud 8.1+</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Bỏ qua chứng chỉ SSL không hợp lệ</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Liên kết trực tiếp (Thêm "&amp;&amp;download" vào URL)</value>
@@ -677,20 +506,191 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Để lấy API key, đăng nhập Lambda ở https://lambda.sx/ và nhấn vào biểu tượng cài đặt ở phần trên bên phải.</value>
   </data>
-  <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>URL kết quả:</value>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API key:</value>
   </data>
-  <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>URL tải lên:</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Thiết lập dịch vụ tải lên</value>
   </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ:</value>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Bỏ qua chứng chỉ SSL không hợp lệ</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Host:</value>
   </data>
   <data name="lblUp1Key.Text" xml:space="preserve">
     <value>API key:</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Host:</value>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Dịch vụ:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>URL tải lên:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>URL kết quả:</value>
+  </data>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>Trình tải lên ảnh</value>
+  </data>
+  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>Tải lên công khai?</value>
+  </data>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>User key:</value>
+  </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>Đánh dấu cú pháp</value>
+  </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>Domain tùy chỉnh:</value>
+  </data>
+  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên văn bản</value>
+  </data>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>Dùng liên kết GIFV thay vì GIF</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>Tải ảnh lên các album đã chọn</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>Dùng liên kết trực tiếp</value>
+  </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>Làm mới danh sách album</value>
+  </data>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>Kiểu ảnh thu nhỏ:</value>
+  </data>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>Mở trang cá nhân công khai...</value>
+  </data>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>Có phải tải lên công khai</value>
+  </data>
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+    <value>Mở trang chứa ảnh của tôi...</value>
+  </data>
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>Tên tài khoản:</value>
+  </data>
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="btnTinyPicLogin.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="lblTinyPicPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
+    <value>Mở trang hình ảnh của tôi...</value>
+  </data>
+  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
+    <value>Các bức ảnh của bạn...</value>
+  </data>
+  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
+    <value>Làm mới việc xác thực</value>
+  </data>
+  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
+    <value>Bước 2: Hoàn thành việc xác thực</value>
+  </data>
+  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
+    <value>Bước 1: Mở trang xác thực...</value>
+  </data>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>Thêm album</value>
+  </data>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>Xóa album</value>
+  </data>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>Tải lên ảnh tới</value>
+  </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>Tên album mới (phải từ 2 đến 50 kí tự, chấp nhận chữ, số, dấu gạch dưới (_), dấu gạch ngang (-) và khoảng trống)</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>Đường dẫn tới album cha</value>
+  </data>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>Tạo album</value>
+  </data>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>Tạo album mới</value>
+  </data>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>Tên mặc định của album</value>
+  </data>
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>Bước 1: Mở trang xác thực...</value>
+  </data>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>Mã xác thực: (Lấy mã xác thực từ trang xác thực):</value>
+  </data>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>Bước 2: Hoàn thành việc xác thực</value>
+  </data>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>Đăng nhập được yêu cầu.</value>
+  </data>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>Tài khoản người dùng</value>
+  </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>ID của album để tải lên (Để trống = Không tải lên album)</value>
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>Làm mới danh sách album</value>
+  </data>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>URL trực tiếp</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>Tên tài khoản:</value>
+  </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>Trạng thái:</value>
+  </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>API key người dùng:</value>
   </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Tệp:</value>

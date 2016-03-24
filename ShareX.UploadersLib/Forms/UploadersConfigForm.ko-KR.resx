@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 목적지 설정</value>
-  </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>여분 저장소 사용 줄이기</value>
   </data>
@@ -148,147 +145,6 @@
   </data>
   <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>삭제</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API 키:</value>
-  </data>
-  <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>이미지 업로더</value>
-  </data>
-  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
-    <value>API 키:</value>
-  </data>
-  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드</value>
-  </data>
-  <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>사용자 키:</value>
-  </data>
-  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>구문 강조:</value>
-  </data>
-  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
-    <value>커스텀 도메인:</value>
-  </data>
-  <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>텍스트 업로더</value>
-  </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>선택한 앨범에 이미지 업로드하기</value>
-  </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>다이렉트 URL 사용하기</value>
-  </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>제목</value>
-  </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>설명</value>
-  </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
-    <value>앨범 목록 갱신하기</value>
-  </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>섬네일 타입:</value>
-  </data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>로그인</value>
-  </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>공개 프로필 페이지 열기...</value>
-  </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드</value>
-  </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>내 이미지 페이지 열기...</value>
-  </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
-  </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>로그인</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>이메일:</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>내 이미지 페이지 열기...</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>포토스트림 보기...</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>인증 새로고침하기</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>2단계: 인증 완료하기</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>1단계: 인증 페이지 열기...</value>
-  </data>
-  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
-    <value>앨범 추가</value>
-  </data>
-  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>앨범 제거</value>
-  </data>
-  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
-    <value>업로드할 곳</value>
-  </data>
-  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>새 앨범 이름 (2글자에서 50글자 사이여야 되며, 알파벳, 숫자, 밑줄 ( _ ), 하이픈 (-), 공백만을 포함해야 함)</value>
-  </data>
-  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
-    <value>부모 앨범 경로</value>
-  </data>
-  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
-    <value>앨범 생성</value>
-  </data>
-  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
-    <value>새 앨범 생성</value>
-  </data>
-  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
-    <value>기본 앨범 이름</value>
-  </data>
-  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>1단계: 인증 페이지 열기...</value>
-  </data>
-  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>인증 코드 (인증 페이지에서 코드를 받으세요):</value>
-  </data>
-  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>2단계: 인증 완료하기</value>
-  </data>
-  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>로그인이 필요합니다.</value>
-  </data>
-  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
-    <value>사용자 계정</value>
-  </data>
-  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>업로드할 앨범 ID (빈 칸 = 앨범에 업로드하지 않음):</value>
-  </data>
-  <data name="chPicasaName.Text" xml:space="preserve">
-    <value>이름</value>
-  </data>
-  <data name="chPicasaDescription.Text" xml:space="preserve">
-    <value>설명</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>앨범 목록 갱신하기</value>
-  </data>
-  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>다이렉트 URL</value>
-  </data>
-  <data name="chBoxFoldersName.Text" xml:space="preserve">
-    <value>폴더 이름</value>
   </data>
   <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
     <value>예시 보기...</value>
@@ -446,17 +302,8 @@
   <data name="cbBoxShare.Text" xml:space="preserve">
     <value>공유 가능한 링크 생성하기</value>
   </data>
-  <data name="lblPastebinUsername.Text" xml:space="preserve">
-    <value>사용자 ID:</value>
-  </data>
-  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
-    <value>상태:</value>
-  </data>
-  <data name="btnPastebinLogin.Text" xml:space="preserve">
-    <value>로그인</value>
-  </data>
-  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>사용자 API 키:</value>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>폴더 이름</value>
   </data>
   <data name="lblBoxFolderID.Text" xml:space="preserve">
     <value>선택된 폴더:</value>
@@ -508,9 +355,6 @@
   </data>
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
-  </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>유효하지 않은 SSL 인증서 무시하기</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>다이렉트 링크 (URL에 "&amp;download"를 덧붙임)</value>
@@ -628,6 +472,162 @@
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>API 키를 얻으려면 https://lambda.sx/ 에서 Lambda에 로그인한 뒤 우측 상단의 설정 톱니바퀴를 클릭하세요.</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API 키:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 목적지 설정</value>
+  </data>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>유효하지 않은 SSL 인증서 무시하기</value>
+  </data>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>이미지 업로더</value>
+  </data>
+  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
+    <value>API 키:</value>
+  </data>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>공개 업로드</value>
+  </data>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>사용자 키:</value>
+  </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>구문 강조:</value>
+  </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>커스텀 도메인:</value>
+  </data>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>텍스트 업로더</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>선택한 앨범에 이미지 업로드하기</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>다이렉트 URL 사용하기</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>제목</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>앨범 목록 갱신하기</value>
+  </data>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>섬네일 타입:</value>
+  </data>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>공개 프로필 페이지 열기...</value>
+  </data>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>공개 업로드</value>
+  </data>
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+    <value>내 이미지 페이지 열기...</value>
+  </data>
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>사용자 ID:</value>
+  </data>
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="btnTinyPicLogin.Text" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="lblTinyPicPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+    <value>이메일:</value>
+  </data>
+  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
+    <value>내 이미지 페이지 열기...</value>
+  </data>
+  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
+    <value>포토스트림 보기...</value>
+  </data>
+  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
+    <value>인증 새로고침하기</value>
+  </data>
+  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
+    <value>2단계: 인증 완료하기</value>
+  </data>
+  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
+    <value>1단계: 인증 페이지 열기...</value>
+  </data>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>앨범 추가</value>
+  </data>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>앨범 제거</value>
+  </data>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>업로드할 곳</value>
+  </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>새 앨범 이름 (2글자에서 50글자 사이여야 되며, 알파벳, 숫자, 밑줄 ( _ ), 하이픈 (-), 공백만을 포함해야 함)</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>부모 앨범 경로</value>
+  </data>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>앨범 생성</value>
+  </data>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>새 앨범 생성</value>
+  </data>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>기본 앨범 이름</value>
+  </data>
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>1단계: 인증 페이지 열기...</value>
+  </data>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>인증 코드 (인증 페이지에서 코드를 받으세요):</value>
+  </data>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>2단계: 인증 완료하기</value>
+  </data>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>로그인이 필요합니다.</value>
+  </data>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>사용자 계정</value>
+  </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>업로드할 앨범 ID (빈 칸 = 앨범에 업로드하지 않음):</value>
+  </data>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>앨범 목록 갱신하기</value>
+  </data>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>다이렉트 URL</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>사용자 ID:</value>
+  </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>상태:</value>
+  </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>사용자 API 키:</value>
   </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>파일:</value>

@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 目标设定</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>使用自定义域:</value>
   </data>
@@ -176,21 +173,6 @@
   </data>
   <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
     <value>值</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>值</value>
-  </data>
-  <data name="colSeafileLibraryName.Text" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
-    <value>大小</value>
-  </data>
-  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
-    <value>加密</value>
   </data>
   <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
     <value>参数</value>
@@ -423,9 +405,6 @@
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>密码:</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>忽略无效的SSL证书</value>
-  </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>直接链接（又添"&amp;download"到URL）</value>
   </data>
@@ -575,6 +554,21 @@
   </data>
   <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
     <value>库密码:</value>
+  </data>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>加密</value>
+  </data>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>名称</value>
   </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>验证</value>
@@ -849,6 +843,12 @@
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>图片上传者</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 目标设定</value>
+  </data>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>忽略无效的SSL证书</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>采用精简冗余存储</value>

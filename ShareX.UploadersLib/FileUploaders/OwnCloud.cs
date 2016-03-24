@@ -49,7 +49,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 Path = config.OwnCloudPath,
                 CreateShare = config.OwnCloudCreateShare,
                 DirectLink = config.OwnCloudDirectLink,
-                IgnoreInvalidCert = config.OwnCloudIgnoreInvalidCert,
                 IsCompatibility81 = config.OwnCloud81Compatibility
             };
         }
@@ -63,7 +62,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Path { get; set; }
         public bool CreateShare { get; set; }
         public bool DirectLink { get; set; }
-        public bool IgnoreInvalidCert { get; set; }
         public bool IsCompatibility81 { get; set; }
 
         public OwnCloud(string host, string username, string password)
@@ -99,41 +97,24 @@ namespace ShareX.UploadersLib.FileUploaders
             url = URLHelpers.FixPrefix(url);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
 
-            SSLBypassHelper sslBypassHelper = null;
+            string response = SendRequestStream(url, stream, Helpers.GetMimeType(fileName), headers, method: HttpMethod.PUT);
 
-            try
+            UploadResult result = new UploadResult(response);
+
+            if (!IsError)
             {
-                if (IgnoreInvalidCert)
+                if (CreateShare)
                 {
-                    sslBypassHelper = new SSLBypassHelper();
+                    AllowReportProgress = false;
+                    result.URL = ShareFile(path);
                 }
-
-                string response = SendRequestStream(url, stream, Helpers.GetMimeType(fileName), headers, method: HttpMethod.PUT);
-
-                UploadResult result = new UploadResult(response);
-
-                if (!IsError)
+                else
                 {
-                    if (CreateShare)
-                    {
-                        AllowReportProgress = false;
-                        result.URL = ShareFile(path);
-                    }
-                    else
-                    {
-                        result.IsURLExpected = false;
-                    }
-                }
-
-                return result;
-            }
-            finally
-            {
-                if (sslBypassHelper != null)
-                {
-                    sslBypassHelper.Dispose();
+                    result.IsURLExpected = false;
                 }
             }
+
+            return result;
         }
 
         // http://doc.owncloud.org/server/7.0/developer_manual/core/ocs-share-api.html#create-a-new-share
