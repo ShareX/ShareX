@@ -73,6 +73,8 @@ Resources.AboutForm_AboutForm_Changelog, Links.URL_CHANGELOG);
 
             rtbCredits.Text = string.Format(@"{0}:
 
+https://github.com/ShareX/ShareX/graphs/contributors
+
 Mega, Gist and Jira support: https://github.com/gpailler
 Web site: https://github.com/dmxt
 Amazon S3 and DreamObjects support: https://github.com/alanedwardes
@@ -156,6 +158,21 @@ Copyright (c) 2007-2016 ShareX Team", Resources.AboutForm_AboutForm_Contributors
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             URLHelpers.OpenURL(e.LinkText);
+        }
+
+        private void btnShareXLicense_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenFile(Helpers.GetAbsolutePath("Licenses\\ShareX_license.txt"));
+        }
+
+        private void btnLicenses_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenFolder(Helpers.GetAbsolutePath("Licenses"));
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         #region Animation

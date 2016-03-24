@@ -548,9 +548,6 @@ store.book[0].title</value>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Paramètres de destination</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Ignorer les certificats SSL invalides</value>
-  </data>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Chiffré</value>
   </data>

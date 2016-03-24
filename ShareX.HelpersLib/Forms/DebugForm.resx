@@ -220,7 +220,7 @@
     <value>3</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>Open log file</value>
+    <value>Open log file...</value>
   </data>
   <data name="&gt;&gt;btnOpenLogFile.Name" xml:space="preserve">
     <value>btnOpenLogFile</value>

@@ -847,9 +847,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 目标设定</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>忽略无效的SSL证书</value>
-  </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>采用精简冗余存储</value>
   </data>

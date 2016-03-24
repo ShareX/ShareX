@@ -602,9 +602,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Opções de destino</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Ignorar certificado SSL inválido</value>
-  </data>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Encriptado</value>
   </data>

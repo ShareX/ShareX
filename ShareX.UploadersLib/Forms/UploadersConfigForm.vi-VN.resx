@@ -512,9 +512,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Thiết lập dịch vụ tải lên</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Bỏ qua chứng chỉ SSL không hợp lệ</value>
-  </data>
   <data name="lblUp1Host.Text" xml:space="preserve">
     <value>Host:</value>
   </data>

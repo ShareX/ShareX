@@ -853,4 +853,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
     <value>Diğer</value>
   </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>Dosya bulunamadı:</value>
+  </data>
 </root>

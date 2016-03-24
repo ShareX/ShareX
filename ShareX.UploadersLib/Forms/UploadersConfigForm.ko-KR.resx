@@ -479,9 +479,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 목적지 설정</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>유효하지 않은 SSL 인증서 무시하기</value>
-  </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>이미지 업로더</value>
   </data>

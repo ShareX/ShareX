@@ -470,9 +470,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Configuración de destino</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Ignorar certificado SSL inválido</value>
-  </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Cargadores de imagenes</value>
   </data>

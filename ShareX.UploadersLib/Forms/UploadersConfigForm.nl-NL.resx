@@ -527,9 +527,6 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Instellingen voor bestemmingen</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Negeer ongeldig SSL certificaat</value>
-  </data>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Versleuteld</value>
   </data>

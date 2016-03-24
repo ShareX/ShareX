@@ -163,7 +163,7 @@
     <value>0</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>Send bug report</value>
+    <value>Send bug report...</value>
   </data>
   <data name="&gt;&gt;btnSendBugReport.Name" xml:space="preserve">
     <value>btnSendBugReport</value>
@@ -214,7 +214,7 @@
     <value>1</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>Open log file</value>
+    <value>Open log file...</value>
   </data>
   <data name="&gt;&gt;btnOpenLogFile.Name" xml:space="preserve">
     <value>btnOpenLogFile</value>

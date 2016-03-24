@@ -875,4 +875,7 @@ Would you like to download it?</value>
   <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
     <value>Other</value>
   </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>File not exist:</value>
+  </data>
 </root>

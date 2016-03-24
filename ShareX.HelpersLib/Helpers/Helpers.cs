@@ -389,50 +389,70 @@ namespace ShareX.HelpersLib
             return sb.ToString();
         }
 
-        public static void OpenFile(string filePath)
+        public static bool OpenFile(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                TaskEx.Run(() =>
+                try
                 {
-                    try
-                    {
-                        Process.Start(filePath);
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e, $"OpenFile({filePath}) failed");
-                    }
-                });
+                    Process.Start(filePath);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e, $"OpenFile({filePath}) failed.");
+                }
             }
             else
             {
                 MessageBox.Show(Resources.Helpers_OpenFile_File_not_exist_ + Environment.NewLine + filePath, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            return false;
         }
 
-        public static void OpenFolder(string folderPath)
+        public static bool OpenFolder(string folderPath)
         {
             if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
             {
-                Process.Start("explorer.exe", folderPath);
+                try
+                {
+                    Process.Start("explorer.exe", folderPath);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e, $"OpenFolder({folderPath}) failed.");
+                }
             }
             else
             {
                 MessageBox.Show(Resources.Helpers_OpenFolder_Folder_not_exist_ + Environment.NewLine + folderPath, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            return false;
         }
 
-        public static void OpenFolderWithFile(string filePath)
+        public static bool OpenFolderWithFile(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                Process.Start("explorer.exe", $"/select,\"{filePath}\"");
+                try
+                {
+                    Process.Start("explorer.exe", $"/select,\"{filePath}\"");
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e, $"OpenFolderWithFile({filePath}) failed.");
+                }
             }
             else
             {
                 MessageBox.Show(Resources.Helpers_OpenFile_File_not_exist_ + Environment.NewLine + filePath, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            return false;
         }
 
         /// <summary>
@@ -948,7 +968,7 @@ namespace ShareX.HelpersLib
 
         public static string GetAbsolutePath(string path)
         {
-            path = Helpers.ExpandFolderVariables(path);
+            path = ExpandFolderVariables(path);
 
             if (!Path.IsPathRooted(path)) // Is relative path?
             {

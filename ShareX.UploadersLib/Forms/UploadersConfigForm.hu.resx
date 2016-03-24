@@ -467,9 +467,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Cél beállítások</value>
   </data>
-  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
-    <value>Helytelen SSL tanúsítvány ignorálása</value>
-  </data>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>API kulcs:</value>
   </data>
