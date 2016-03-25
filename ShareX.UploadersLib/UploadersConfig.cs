@@ -286,14 +286,6 @@ namespace ShareX.UploadersLib
         public string StreamablePassword = "";
         public bool StreamableAnonymous = true;
 
-        // openload.co
-
-        public string OpenloadAPILogin = string.Empty;
-        public string OpenloadAPIKey = string.Empty;
-        public OpenloadFolderNode OpenloadFolderTree = null;
-        public bool OpenloadUploadToSelectedFolder = false;
-        public string OpenloadSelectedFolderID = string.Empty;
-
         #endregion File uploaders
 
         #region URL shorteners

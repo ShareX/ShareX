@@ -374,17 +374,6 @@
             this.lblStreamableUsername = new System.Windows.Forms.Label();
             this.lblStreamablePassword = new System.Windows.Forms.Label();
             this.cbStreamableAnonymous = new System.Windows.Forms.CheckBox();
-            this.tpOpenload = new System.Windows.Forms.TabPage();
-            this.gbOpenloadFolders = new System.Windows.Forms.GroupBox();
-            this.trvOpenloadFolders = new System.Windows.Forms.TreeView();
-            this.btnOpenloadRefreshFolders = new System.Windows.Forms.Button();
-            this.cbOpenloadUploadToFolder = new System.Windows.Forms.CheckBox();
-            this.gbOpenloadAuthentication = new System.Windows.Forms.GroupBox();
-            this.lblOpenloadApiLink = new System.Windows.Forms.LinkLabel();
-            this.txtOpenloadApiKey = new System.Windows.Forms.TextBox();
-            this.lblOpenloadApiKey = new System.Windows.Forms.Label();
-            this.txtOpenloadApiLogin = new System.Windows.Forms.TextBox();
-            this.lblOpenloadApiLogin = new System.Windows.Forms.Label();
             this.tpSharedFolder = new System.Windows.Forms.TabPage();
             this.lblSharedFolderFiles = new System.Windows.Forms.Label();
             this.lblSharedFolderText = new System.Windows.Forms.Label();
@@ -591,9 +580,6 @@
             this.grpSeafileObtainAuthToken.SuspendLayout();
             this.tpSul.SuspendLayout();
             this.tpStreamable.SuspendLayout();
-            this.tpOpenload.SuspendLayout();
-            this.gbOpenloadFolders.SuspendLayout();
-            this.gbOpenloadAuthentication.SuspendLayout();
             this.tpSharedFolder.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
@@ -1633,7 +1619,6 @@
             this.tcFileUploaders.Controls.Add(this.tpSeafile);
             this.tcFileUploaders.Controls.Add(this.tpSul);
             this.tcFileUploaders.Controls.Add(this.tpStreamable);
-            this.tcFileUploaders.Controls.Add(this.tpOpenload);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
@@ -3130,85 +3115,6 @@
             this.cbStreamableAnonymous.UseVisualStyleBackColor = true;
             this.cbStreamableAnonymous.CheckedChanged += new System.EventHandler(this.cboxStreamableAnonymous_CheckedChanged);
             // 
-            // tpOpenload
-            // 
-            this.tpOpenload.Controls.Add(this.gbOpenloadFolders);
-            this.tpOpenload.Controls.Add(this.gbOpenloadAuthentication);
-            resources.ApplyResources(this.tpOpenload, "tpOpenload");
-            this.tpOpenload.Name = "tpOpenload";
-            this.tpOpenload.UseVisualStyleBackColor = true;
-            // 
-            // gbOpenloadFolders
-            // 
-            this.gbOpenloadFolders.Controls.Add(this.trvOpenloadFolders);
-            this.gbOpenloadFolders.Controls.Add(this.btnOpenloadRefreshFolders);
-            this.gbOpenloadFolders.Controls.Add(this.cbOpenloadUploadToFolder);
-            resources.ApplyResources(this.gbOpenloadFolders, "gbOpenloadFolders");
-            this.gbOpenloadFolders.Name = "gbOpenloadFolders";
-            this.gbOpenloadFolders.TabStop = false;
-            // 
-            // trvOpenloadFolders
-            // 
-            this.trvOpenloadFolders.HideSelection = false;
-            resources.ApplyResources(this.trvOpenloadFolders, "trvOpenloadFolders");
-            this.trvOpenloadFolders.Name = "trvOpenloadFolders";
-            this.trvOpenloadFolders.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvOpenloadFolders_AfterSelect);
-            // 
-            // btnOpenloadRefreshFolders
-            // 
-            resources.ApplyResources(this.btnOpenloadRefreshFolders, "btnOpenloadRefreshFolders");
-            this.btnOpenloadRefreshFolders.Name = "btnOpenloadRefreshFolders";
-            this.btnOpenloadRefreshFolders.UseVisualStyleBackColor = true;
-            this.btnOpenloadRefreshFolders.Click += new System.EventHandler(this.btnOpenloadRefreshFolders_Click);
-            // 
-            // cbOpenloadUploadToFolder
-            // 
-            resources.ApplyResources(this.cbOpenloadUploadToFolder, "cbOpenloadUploadToFolder");
-            this.cbOpenloadUploadToFolder.Name = "cbOpenloadUploadToFolder";
-            this.cbOpenloadUploadToFolder.UseVisualStyleBackColor = true;
-            this.cbOpenloadUploadToFolder.CheckedChanged += new System.EventHandler(this.cbOpenloadUploadToFolder_CheckedChanged);
-            // 
-            // gbOpenloadAuthentication
-            // 
-            this.gbOpenloadAuthentication.Controls.Add(this.lblOpenloadApiLink);
-            this.gbOpenloadAuthentication.Controls.Add(this.txtOpenloadApiKey);
-            this.gbOpenloadAuthentication.Controls.Add(this.lblOpenloadApiKey);
-            this.gbOpenloadAuthentication.Controls.Add(this.txtOpenloadApiLogin);
-            this.gbOpenloadAuthentication.Controls.Add(this.lblOpenloadApiLogin);
-            resources.ApplyResources(this.gbOpenloadAuthentication, "gbOpenloadAuthentication");
-            this.gbOpenloadAuthentication.Name = "gbOpenloadAuthentication";
-            this.gbOpenloadAuthentication.TabStop = false;
-            // 
-            // lblOpenloadApiLink
-            // 
-            resources.ApplyResources(this.lblOpenloadApiLink, "lblOpenloadApiLink");
-            this.lblOpenloadApiLink.Name = "lblOpenloadApiLink";
-            this.lblOpenloadApiLink.TabStop = true;
-            this.lblOpenloadApiLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblOpenloadApiLink_LinkClicked);
-            // 
-            // txtOpenloadApiKey
-            // 
-            resources.ApplyResources(this.txtOpenloadApiKey, "txtOpenloadApiKey");
-            this.txtOpenloadApiKey.Name = "txtOpenloadApiKey";
-            this.txtOpenloadApiKey.UseSystemPasswordChar = true;
-            this.txtOpenloadApiKey.TextChanged += new System.EventHandler(this.txtOpenloadApiKey_TextChanged);
-            // 
-            // lblOpenloadApiKey
-            // 
-            resources.ApplyResources(this.lblOpenloadApiKey, "lblOpenloadApiKey");
-            this.lblOpenloadApiKey.Name = "lblOpenloadApiKey";
-            // 
-            // txtOpenloadApiLogin
-            // 
-            resources.ApplyResources(this.txtOpenloadApiLogin, "txtOpenloadApiLogin");
-            this.txtOpenloadApiLogin.Name = "txtOpenloadApiLogin";
-            this.txtOpenloadApiLogin.TextChanged += new System.EventHandler(this.txtOpenloadApiLogin_TextChanged);
-            // 
-            // lblOpenloadApiLogin
-            // 
-            resources.ApplyResources(this.lblOpenloadApiLogin, "lblOpenloadApiLogin");
-            this.lblOpenloadApiLogin.Name = "lblOpenloadApiLogin";
-            // 
             // tpSharedFolder
             // 
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderFiles);
@@ -4436,11 +4342,6 @@
             this.tpSul.PerformLayout();
             this.tpStreamable.ResumeLayout(false);
             this.tpStreamable.PerformLayout();
-            this.tpOpenload.ResumeLayout(false);
-            this.gbOpenloadFolders.ResumeLayout(false);
-            this.gbOpenloadFolders.PerformLayout();
-            this.gbOpenloadAuthentication.ResumeLayout(false);
-            this.gbOpenloadAuthentication.PerformLayout();
             this.tpSharedFolder.ResumeLayout(false);
             this.tpSharedFolder.PerformLayout();
             this.tpEmail.ResumeLayout(false);
@@ -4990,16 +4891,5 @@
         private System.Windows.Forms.Button btnCheveretoTestAll;
         private System.Windows.Forms.CheckBox cbPastebinRaw;
         private System.Windows.Forms.CheckBox cbGistUseRawURL;
-        private System.Windows.Forms.TabPage tpOpenload;
-        private System.Windows.Forms.GroupBox gbOpenloadAuthentication;
-        private System.Windows.Forms.Label lblOpenloadApiLogin;
-        private System.Windows.Forms.LinkLabel lblOpenloadApiLink;
-        private System.Windows.Forms.TextBox txtOpenloadApiKey;
-        private System.Windows.Forms.Label lblOpenloadApiKey;
-        private System.Windows.Forms.TextBox txtOpenloadApiLogin;
-        private System.Windows.Forms.GroupBox gbOpenloadFolders;
-        private System.Windows.Forms.TreeView trvOpenloadFolders;
-        private System.Windows.Forms.Button btnOpenloadRefreshFolders;
-        private System.Windows.Forms.CheckBox cbOpenloadUploadToFolder;
     }
 }

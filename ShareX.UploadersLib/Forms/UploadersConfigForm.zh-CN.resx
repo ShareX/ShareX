@@ -141,6 +141,435 @@
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>添加</value>
   </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>URL字段加入语法</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>链接URL:</value>
+  </data>
+  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
+    <value>添加文件夹</value>
+  </data>
+  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
+    <value>URL字段加入语法</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
+    <value>URL字段加入语法</value>
+  </data>
+  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
+    <value>参数</value>
+  </data>
+  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
+    <value>头部</value>
+  </data>
+  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
+    <value>例如...</value>
+  </data>
+  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
+    <value>帮助...</value>
+  </data>
+  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
+    <value>清除全部 --&gt;</value>
+  </data>
+  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
+    <value>图片上传:</value>
+  </data>
+  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
+    <value>文件上传:</value>
+  </data>
+  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>测试结果:</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>删除URL:</value>
+  </data>
+  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
+    <value>显示最近回应...</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>响应类型:</value>
+  </data>
+  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
+    <value>全部...</value>
+  </data>
+  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
+    <value>清除上传者</value>
+  </data>
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>上传者</value>
+  </data>
+  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
+    <value>文字上传:</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>请求URL:</value>
+  </data>
+  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>URL短链:</value>
+  </data>
+  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>缩略图网址:</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>文件表单名称:</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>请求类型:</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>自定义上传者</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>其他上传</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>域名:</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>注意: 如果你有一个签名,那么你并不需要一个用户名/密码.</value>
+  </data>
+  <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>用户名:</value>
+  </data>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>签名:</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>在这里你可以找到你的API密钥和UID</value>
+  </data>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>API密钥:</value>
+  </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>API密钥:</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>API主机名:(例如http://example.com/api.php，留空将使用polr.me)</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>URL分享</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>客户端...</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>文件:</value>
+  </data>
+  <data name="lblFtpText.Text" xml:space="preserve">
+    <value>文字:</value>
+  </data>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>图片:</value>
+  </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>创建共享网址:</value>
+  </data>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>选择...</value>
+  </data>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>如果您使用的是"公共"文件夹中,已生成了可共享的URL.你并不需要检查"创建共享URL".</value>
+  </data>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>上传路径:</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>选定的文件夹:</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>创建共享链接</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>上传文件到选定的文件夹</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>文件夹ID:</value>
+  </data>
+  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
+    <value>刷新文件夹列表</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
+    <value>是否公共上传?</value>
+  </data>
+  <data name="lblBoxFolderTip.Text" xml:space="preserve">
+    <value>注意: 您可以双击文件夹的名称进入该文件夹内.</value>
+  </data>
+  <data name="cbBoxShare.Text" xml:space="preserve">
+    <value>创建共享链接</value>
+  </data>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>文件夹名称</value>
+  </data>
+  <data name="lblBoxFolderID.Text" xml:space="preserve">
+    <value>选定的文件夹:</value>
+  </data>
+  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
+    <value>刷新文件夹列表</value>
+  </data>
+  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
+    <value>网址预览:</value>
+  </data>
+  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
+    <value>预览</value>
+  </data>
+  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
+    <value>Bucket名称:</value>
+  </data>
+  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
+    <value>节点:</value>
+  </data>
+  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
+    <value>上传路径:</value>
+  </data>
+  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="lblMegaStatus.Text" xml:space="preserve">
+    <value>配置/未配置</value>
+  </data>
+  <data name="btnMegaRegister.Text" xml:space="preserve">
+    <value>注册...</value>
+  </data>
+  <data name="lblMegaFolder.Text" xml:space="preserve">
+    <value>文件夹:</value>
+  </data>
+  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
+    <value>状态:</value>
+  </data>
+  <data name="lblMegaEmail.Text" xml:space="preserve">
+    <value>电子邮件:</value>
+  </data>
+  <data name="btnMegaLogin.Text" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="lblMegaPassword.Text" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
+    <value>直接链接（又添"&amp;download"到URL）</value>
+  </data>
+  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
+    <value>创建共享URL</value>
+  </data>
+  <data name="lblOwnCloudPath.Text" xml:space="preserve">
+    <value>路径:</value>
+  </data>
+  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
+    <value>用户名:</value>
+  </data>
+  <data name="lblOwnCloudHost.Text" xml:space="preserve">
+    <value>域名:</value>
+  </data>
+  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
+    <value>使用其中包括文件名较长的链接</value>
+  </data>
+  <data name="lblMediaFirePath.Text" xml:space="preserve">
+    <value>上传路径:</value>
+  </data>
+  <data name="lblMediaFirePassword.Text" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="lblMediaFireEmail.Text" xml:space="preserve">
+    <value>电子邮件:</value>
+  </data>
+  <data name="lblPushbulletDevices.Text" xml:space="preserve">
+    <value>设备:</value>
+  </data>
+  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
+    <value>获取设备列表</value>
+  </data>
+  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
+    <value>用户API密钥:</value>
+  </data>
+  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
+    <value>&amp;注册...</value>
+  </data>
+  <data name="lblSendSpacePassword.Text" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
+    <value>用户名:</value>
+  </data>
+  <data name="lblGe_ttStatus.Text" xml:space="preserve">
+    <value>需要登录。</value>
+  </data>
+  <data name="lblGe_ttPassword.Text" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="lblGe_ttEmail.Text" xml:space="preserve">
+    <value>电子邮件:</value>
+  </data>
+  <data name="btnGe_ttLogin.Text" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
+    <value>如果存在则直接使用URL</value>
+  </data>
+  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
+    <value>电子邮件:</value>
+  </data>
+  <data name="lblMinusURLType.Text" xml:space="preserve">
+    <value>URL类型:</value>
+  </data>
+  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
+    <value>登录状态:</value>
+  </data>
+  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
+    <value>刷新授权</value>
+  </data>
+  <data name="lblMinusPassword.Text" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="lblMinusUsername.Text" xml:space="preserve">
+    <value>用户名:</value>
+  </data>
+  <data name="btnMinusAuth.Text" xml:space="preserve">
+    <value>授权</value>
+  </data>
+  <data name="gbMinusUserPass.Text" xml:space="preserve">
+    <value>认证</value>
+  </data>
+  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
+    <value>刷新文件夹列表</value>
+  </data>
+  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
+    <value>删除文件夹</value>
+  </data>
+  <data name="gbMinusUpload.Text" xml:space="preserve">
+    <value>上传图像</value>
+  </data>
+  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
+    <value>JIRA问题的前缀:</value>
+  </data>
+  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
+    <value>模板</value>
+  </data>
+  <data name="lblJiraHost.Text" xml:space="preserve">
+    <value>Jira域名:</value>
+  </data>
+  <data name="gpJiraServer.Text" xml:space="preserve">
+    <value>Jira服务器</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>为了得到一个API密钥，在https://lambda.sx/登录LAMBDA然后点击你的用户名，单击管理帐户。</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>测试全部</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>结果URL:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>上传URL:</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>上传者:</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>域名:</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>共享密码:</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>到期时间:</value>
+  </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Seafile共享设置</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
+    <value>验证</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>库密码:</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>加密</value>
+  </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>验证</value>
   </data>
@@ -417,435 +846,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 目标设定</value>
-  </data>
-  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
-    <value>加密</value>
-  </data>
-  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
-    <value>大小</value>
-  </data>
-  <data name="colSeafileLibraryName.Text" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
-    <value>库密码:</value>
-  </data>
-  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
-    <value>验证</value>
-  </data>
-  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
-    <value>Seafile共享设置</value>
-  </data>
-  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
-    <value>到期时间:</value>
-  </data>
-  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
-    <value>共享密码:</value>
-  </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>域名:</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>上传者:</value>
-  </data>
-  <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>上传URL:</value>
-  </data>
-  <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>结果URL:</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>测试全部</value>
-  </data>
-  <data name="lblLambdaInfo.Text" xml:space="preserve">
-    <value>为了得到一个API密钥，在https://lambda.sx/登录LAMBDA然后点击你的用户名，单击管理帐户。</value>
-  </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Jira服务器</value>
-  </data>
-  <data name="lblJiraHost.Text" xml:space="preserve">
-    <value>Jira域名:</value>
-  </data>
-  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
-    <value>模板</value>
-  </data>
-  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
-    <value>JIRA问题的前缀:</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>上传图像</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>删除文件夹</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>添加文件夹</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>刷新文件夹列表</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>认证</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>授权</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>用户名:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>密码:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>刷新授权</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>登录状态:</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>URL类型:</value>
-  </data>
-  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
-    <value>电子邮件:</value>
-  </data>
-  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
-    <value>密码:</value>
-  </data>
-  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
-    <value>如果存在则直接使用URL</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>登录</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>电子邮件:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>密码:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>需要登录。</value>
-  </data>
-  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
-    <value>用户名:</value>
-  </data>
-  <data name="lblSendSpacePassword.Text" xml:space="preserve">
-    <value>密码:</value>
-  </data>
-  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>&amp;注册...</value>
-  </data>
-  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>用户API密钥:</value>
-  </data>
-  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
-    <value>获取设备列表</value>
-  </data>
-  <data name="lblPushbulletDevices.Text" xml:space="preserve">
-    <value>设备:</value>
-  </data>
-  <data name="lblMediaFireEmail.Text" xml:space="preserve">
-    <value>电子邮件:</value>
-  </data>
-  <data name="lblMediaFirePassword.Text" xml:space="preserve">
-    <value>密码:</value>
-  </data>
-  <data name="lblMediaFirePath.Text" xml:space="preserve">
-    <value>上传路径:</value>
-  </data>
-  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
-    <value>使用其中包括文件名较长的链接</value>
-  </data>
-  <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>域名:</value>
-  </data>
-  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
-    <value>用户名:</value>
-  </data>
-  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
-    <value>密码:</value>
-  </data>
-  <data name="lblOwnCloudPath.Text" xml:space="preserve">
-    <value>路径:</value>
-  </data>
-  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
-    <value>创建共享URL</value>
-  </data>
-  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>直接链接（又添"&amp;download"到URL）</value>
-  </data>
-  <data name="lblMegaPassword.Text" xml:space="preserve">
-    <value>密码:</value>
-  </data>
-  <data name="btnMegaLogin.Text" xml:space="preserve">
-    <value>登录</value>
-  </data>
-  <data name="lblMegaEmail.Text" xml:space="preserve">
-    <value>电子邮件:</value>
-  </data>
-  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>状态:</value>
-  </data>
-  <data name="lblMegaFolder.Text" xml:space="preserve">
-    <value>文件夹:</value>
-  </data>
-  <data name="btnMegaRegister.Text" xml:space="preserve">
-    <value>注册...</value>
-  </data>
-  <data name="lblMegaStatus.Text" xml:space="preserve">
-    <value>配置/未配置</value>
-  </data>
-  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
-    <value>刷新</value>
-  </data>
-  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
-    <value>上传路径:</value>
-  </data>
-  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
-    <value>节点:</value>
-  </data>
-  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
-    <value>Bucket名称:</value>
-  </data>
-  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
-    <value>预览</value>
-  </data>
-  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
-    <value>网址预览:</value>
-  </data>
-  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
-    <value>刷新文件夹列表</value>
-  </data>
-  <data name="lblBoxFolderID.Text" xml:space="preserve">
-    <value>选定的文件夹:</value>
-  </data>
-  <data name="chBoxFoldersName.Text" xml:space="preserve">
-    <value>文件夹名称</value>
-  </data>
-  <data name="cbBoxShare.Text" xml:space="preserve">
-    <value>创建共享链接</value>
-  </data>
-  <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>注意: 您可以双击文件夹的名称进入该文件夹内.</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>是否公共上传?</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
-    <value>刷新文件夹列表</value>
-  </data>
-  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
-    <value>描述</value>
-  </data>
-  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
-    <value>标题</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>文件夹ID:</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>上传文件到选定的文件夹</value>
-  </data>
-  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
-    <value>创建共享链接</value>
-  </data>
-  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>选定的文件夹:</value>
-  </data>
-  <data name="lblDropboxPath.Text" xml:space="preserve">
-    <value>上传路径:</value>
-  </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>如果您使用的是"公共"文件夹中,已生成了可共享的URL.你并不需要检查"创建共享URL".</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>状态</value>
-  </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>选择...</value>
-  </data>
-  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>创建共享网址:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>图片:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>文字:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>文件:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>客户端...</value>
-  </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL分享</value>
-  </data>
-  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
-    <value>API主机名:(例如http://example.com/api.php，留空将使用polr.me)</value>
-  </data>
-  <data name="lblPolrAPIKey.Text" xml:space="preserve">
-    <value>API密钥:</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>API密钥:</value>
-  </data>
-  <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>在这里你可以找到你的API密钥和UID</value>
-  </data>
-  <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>签名:</value>
-  </data>
-  <data name="lblYourlsUsername.Text" xml:space="preserve">
-    <value>用户名:</value>
-  </data>
-  <data name="lblYourlsPassword.Text" xml:space="preserve">
-    <value>密码:</value>
-  </data>
-  <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>注意: 如果你有一个签名,那么你并不需要一个用户名/密码.</value>
-  </data>
-  <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>域名:</value>
-  </data>
-  <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>其他上传</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>自定义上传者</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>请求类型:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>文件表单名称:</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>缩略图网址:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>URL短链:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>请求URL:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>文字上传:</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>上传者</value>
-  </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>删除</value>
-  </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>清除上传者</value>
-  </data>
-  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
-    <value>全部...</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>响应类型:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>显示最近回应...</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>删除URL:</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>测试结果:</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>文件上传:</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>图片上传:</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>清除全部 --&gt;</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>帮助...</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>例如...</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>头部</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>值</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>删除</value>
-  </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>参数</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>值</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>删除</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>URL字段加入语法</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>URL字段加入语法</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>删除</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>URL字段加入语法</value>
-  </data>
-  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
-    <value>链接URL:</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>采用精简冗余存储</value>

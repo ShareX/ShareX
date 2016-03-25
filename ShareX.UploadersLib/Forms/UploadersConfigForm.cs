@@ -99,7 +99,6 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpMinus, Resources.Minus);
             AddIconToTab(tpOneDrive, Resources.OneDrive);
             AddIconToTab(tpOneTimeSecret, Resources.OneTimeSecret);
-            AddIconToTab(tpOpenload, Resources.OpenLoad);
             AddIconToTab(tpOwnCloud, Resources.OwnCloud);
             AddIconToTab(tpPaste_ee, Resources.page_white_text);
             AddIconToTab(tpPastebin, Resources.Pastebin);
@@ -574,13 +573,6 @@ namespace ShareX.UploadersLib
                 txtStreamableUsername.Enabled = false;
                 txtStreamablePassword.Enabled = false;
             }
-
-            // openload.co
-
-            txtOpenloadApiLogin.Text = Config.OpenloadAPILogin;
-            txtOpenloadApiKey.Text = Config.OpenloadAPIKey;
-            cbOpenloadUploadToFolder.Checked = Config.OpenloadUploadToSelectedFolder;
-            OpenloadUpdateFolderTree();
 
             #endregion File uploaders
 
@@ -2450,98 +2442,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Streamable
-
-        #region openload.co
-
-        private void txtOpenloadApiLogin_TextChanged(object sender, EventArgs e)
-        {
-            Config.OpenloadAPILogin = txtOpenloadApiLogin.Text;
-        }
-
-        private void txtOpenloadApiKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.OpenloadAPIKey = txtOpenloadApiKey.Text;
-        }
-
-        private void lblOpenloadApiLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL("https://openload.co/account");
-        }
-
-        private void btnOpenloadRefreshFolders_Click(object sender, EventArgs e)
-        {
-            btnOpenloadRefreshFolders.Enabled = false;
-
-            OpenloadUploader openload = new OpenloadUploader()
-            {
-                APILogin = Config.OpenloadAPILogin,
-                APIKey = Config.OpenloadAPIKey
-            };
-
-            Config.OpenloadFolderTree = openload.GetFolderTree(string.Empty);
-            OpenloadUpdateFolderTree();
-
-            btnOpenloadRefreshFolders.Enabled = true;
-        }
-
-        private void cbOpenloadUploadToFolder_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.OpenloadUploadToSelectedFolder = cbOpenloadUploadToFolder.Checked;
-        }
-
-        private void trvOpenloadFolders_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            Config.OpenloadSelectedFolderID = ((OpenloadFolder)e.Node.Tag).id;
-        }
-
-        private void OpenloadUpdateFolderTree()
-        {
-            trvOpenloadFolders.Nodes.Clear();
-            if (Config.OpenloadFolderTree != null)
-            {
-                foreach (OpenloadFolderNode node in Config.OpenloadFolderTree.subNodes)
-                {
-                    TreeNode treeNode = OpenloadToTreeNode(node);
-                    if (treeNode != null)
-                    {
-                        trvOpenloadFolders.Nodes.Add(treeNode);
-                        if (string.Compare(node.folder.id, Config.OpenloadSelectedFolderID) == 0)
-                            trvOpenloadFolders.SelectedNode = treeNode;
-                    }
-                }
-            }
-        }
-
-        private TreeNode OpenloadToTreeNode(OpenloadFolderNode node)
-        {
-            if (node != null && node.folder != null)
-            {
-                TreeNode treeNode = new TreeNode(node.folder.name);
-                treeNode.Tag = node.folder;
-                foreach (OpenloadFolderNode subNode in node.subNodes)
-                {
-                    TreeNode subTreeNode = OpenloadToTreeNode(subNode);
-                    if (subTreeNode != null)
-                    {
-                        treeNode.Nodes.Add(subTreeNode);
-                        if (string.Compare(subNode.folder.id, Config.OpenloadSelectedFolderID) == 0)
-                        {
-                            trvOpenloadFolders.SelectedNode = subTreeNode;
-                            TreeNode parentNode = treeNode;
-                            while (parentNode != null)
-                            {
-                                parentNode.Expand();
-                                parentNode = parentNode.Parent;
-                            }
-                        }
-                    }
-                }
-                return treeNode;
-            }
-            return null;
-        }
-
-        #endregion openload.co
 
         #endregion File Uploaders
 

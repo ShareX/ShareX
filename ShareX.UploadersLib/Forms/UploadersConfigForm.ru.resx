@@ -146,6 +146,462 @@
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Добавить</value>
   </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>Добавить синтаксис в поле URL</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>URL ссылки:</value>
+  </data>
+  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
+    <value>Добавить папку</value>
+  </data>
+  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
+    <value>Добавить синтаксис в поле URL</value>
+  </data>
+  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
+    <value>Примеры:
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
+    <value>Добавить синтаксис в поле URL</value>
+  </data>
+  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
+    <value>Примеры:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
+  </data>
+  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
+    <value>Аргументы</value>
+  </data>
+  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
+    <value>Убрать</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
+    <value>Заголовки</value>
+  </data>
+  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
+    <value>Примеры</value>
+  </data>
+  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
+    <value>Помощь...</value>
+  </data>
+  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
+    <value>Очистить поля -&gt;</value>
+  </data>
+  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
+    <value>Сервис картинок:</value>
+  </data>
+  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
+    <value>Тест</value>
+  </data>
+  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
+    <value>Файловый сервис:</value>
+  </data>
+  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
+    <value>Тест</value>
+  </data>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>Результат теста:</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>Ссылка на удаление:</value>
+  </data>
+  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
+    <value>Показать последний ответ...</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>Тип ответа:</value>
+  </data>
+  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
+    <value>Все...</value>
+  </data>
+  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
+    <value>Очистить загрузчики</value>
+  </data>
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Сервисы</value>
+  </data>
+  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
+    <value>Сервис текстов:</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>URL запроса:</value>
+  </data>
+  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
+    <value>Тест</value>
+  </data>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>Сервис коротких ссылок:</value>
+  </data>
+  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
+    <value>Тест</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>URL миниатюры:</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>Файл из имени:</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>Тип запроса:</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>Пользовательские</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>Другие сервисы</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>Домен:</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>Заметка: Если у вас есть подпись, вам не нужны логин и пароль</value>
+  </data>
+  <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>Подпись:</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>Здесь можно найти ваши ключ API и UID</value>
+  </data>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>Имя хоста API: (например, http://example.com/api.php, Оставьте пустым, чтобы использовать polr.me)</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>Короткие ссылки</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>Клиент...</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>Файл:</value>
+  </data>
+  <data name="lblFtpText.Text" xml:space="preserve">
+    <value>Текст:</value>
+  </data>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>Картинка:</value>
+  </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>Создать общественный URL:</value>
+  </data>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>Выбрать...</value>
+  </data>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>Состояние</value>
+  </data>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>Если вы используете публичную папку, общественная ссылка уже создана. Вам не нужно отмечать "Создать общественный URL".</value>
+  </data>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>Путь загрузки:</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>Выбранная папка:</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>Создать общественную ссылку</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>Загружать картинки в выбранную папку</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>ID папки:</value>
+  </data>
+  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
+    <value>Заголовок</value>
+  </data>
+  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
+    <value>Обновить список папок</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
+    <value>Публичная загрузка?</value>
+  </data>
+  <data name="lblBoxFolderTip.Text" xml:space="preserve">
+    <value>Заметка: Двойной клин по имени папки откроет ее.</value>
+  </data>
+  <data name="cbBoxShare.Text" xml:space="preserve">
+    <value>Создать общественную ссылку</value>
+  </data>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>Имя папки</value>
+  </data>
+  <data name="lblBoxFolderID.Text" xml:space="preserve">
+    <value>Выбранная папка:</value>
+  </data>
+  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
+    <value>Обновить список папок</value>
+  </data>
+  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
+    <value>Предпросмотр URL:</value>
+  </data>
+  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
+    <value>Предпросмотр</value>
+  </data>
+  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
+    <value>Имя ведра:</value>
+  </data>
+  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
+    <value>Конечная точка:</value>
+  </data>
+  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
+    <value>Путь загрузки:</value>
+  </data>
+  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
+    <value>Секретный ключ:</value>
+  </data>
+  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
+    <value>Ключ доступа:</value>
+  </data>
+  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="lblMegaStatus.Text" xml:space="preserve">
+    <value>Настроено / Не настроено</value>
+  </data>
+  <data name="btnMegaRegister.Text" xml:space="preserve">
+    <value>Регистрация...</value>
+  </data>
+  <data name="lblMegaFolder.Text" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
+    <value>Состояние:</value>
+  </data>
+  <data name="lblMegaEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="btnMegaLogin.Text" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="lblMegaPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
+    <value>Совместимость с ownCloud 8.1+</value>
+  </data>
+  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
+    <value>Прямая ссылка (Добавить "&amp;&amp;download" к адресу)</value>
+  </data>
+  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
+    <value>Создать общественный URL:</value>
+  </data>
+  <data name="lblOwnCloudPath.Text" xml:space="preserve">
+    <value>Путь:</value>
+  </data>
+  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="lblOwnCloudHost.Text" xml:space="preserve">
+    <value>Хост:</value>
+  </data>
+  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
+    <value>Использовать длинную ссылку с именем файла</value>
+  </data>
+  <data name="lblMediaFirePath.Text" xml:space="preserve">
+    <value>Путь загрузки:</value>
+  </data>
+  <data name="lblMediaFirePassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblMediaFireEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblPushbulletDevices.Text" xml:space="preserve">
+    <value>Устройство:</value>
+  </data>
+  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
+    <value>Получить список устройств</value>
+  </data>
+  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
+    <value>Использовать ключ API:</value>
+  </data>
+  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
+    <value>&amp;Регистрация...</value>
+  </data>
+  <data name="lblSendSpacePassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="lblGe_ttStatus.Text" xml:space="preserve">
+    <value>Необходимо войти.</value>
+  </data>
+  <data name="lblGe_ttPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblGe_ttEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="btnGe_ttLogin.Text" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
+    <value>Использовать прямой URL, если он существует</value>
+  </data>
+  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblMinusURLType.Text" xml:space="preserve">
+    <value>Тип ссылки:</value>
+  </data>
+  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
+    <value>Состояние входа:</value>
+  </data>
+  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
+    <value>Обновить авторизацию</value>
+  </data>
+  <data name="lblMinusPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblMinusUsername.Text" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="btnMinusAuth.Text" xml:space="preserve">
+    <value>Авторизация</value>
+  </data>
+  <data name="gbMinusUserPass.Text" xml:space="preserve">
+    <value>Аутентификация</value>
+  </data>
+  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
+    <value>Обновить список папок</value>
+  </data>
+  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
+    <value>Удалить папку</value>
+  </data>
+  <data name="gbMinusUpload.Text" xml:space="preserve">
+    <value>Загружать картинки в</value>
+  </data>
+  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
+    <value>Префикс запрос Jira:</value>
+  </data>
+  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
+    <value>Шаблон</value>
+  </data>
+  <data name="lblJiraHost.Text" xml:space="preserve">
+    <value>Хост Jira:</value>
+  </data>
+  <data name="gpJiraServer.Text" xml:space="preserve">
+    <value>Сервер Jira</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>Для получения ключа API, войдите в Lambda на https://lambda.sx/, затем нажмите шестеренку настроек вверху справа.</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
+  <data name="btnPomfTest.Text" xml:space="preserve">
+    <value>Проверить все</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>Ссылка на результат:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>Ссылка для загрузки:</value>
+  </data>
+  <data name="lblPomfUploaders.Text" xml:space="preserve">
+    <value>Сервисы:</value>
+  </data>
+  <data name="lblUp1Key.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
+  <data name="lblUp1Host.Text" xml:space="preserve">
+    <value>Хост:</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Пароль публикации:</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Дней до удаления:</value>
+  </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>Настройки публикации</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
+    <value>Утвердить</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Пароль библиотеки:</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>Зашифровано</value>
+  </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Утвердить</value>
   </data>
@@ -428,462 +884,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Настройки сервисов</value>
-  </data>
-  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
-    <value>Зашифровано</value>
-  </data>
-  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
-    <value>Размер</value>
-  </data>
-  <data name="colSeafileLibraryName.Text" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
-    <value>Пароль библиотеки:</value>
-  </data>
-  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
-    <value>Утвердить</value>
-  </data>
-  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
-    <value>Настройки публикации</value>
-  </data>
-  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
-    <value>Дней до удаления:</value>
-  </data>
-  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
-    <value>Пароль публикации:</value>
-  </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Хост:</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>Ключ API:</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Сервисы:</value>
-  </data>
-  <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>Ссылка для загрузки:</value>
-  </data>
-  <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>Ссылка на результат:</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Проверить все</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>Ключ API:</value>
-  </data>
-  <data name="lblLambdaInfo.Text" xml:space="preserve">
-    <value>Для получения ключа API, войдите в Lambda на https://lambda.sx/, затем нажмите шестеренку настроек вверху справа.</value>
-  </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Сервер Jira</value>
-  </data>
-  <data name="lblJiraHost.Text" xml:space="preserve">
-    <value>Хост Jira:</value>
-  </data>
-  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
-    <value>Шаблон</value>
-  </data>
-  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
-    <value>Префикс запрос Jira:</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Загружать картинки в</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Удалить папку</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Добавить папку</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Обновить список папок</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Аутентификация</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Авторизация</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Имя пользователя:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Обновить авторизацию</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Состояние входа:</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Тип ссылки:</value>
-  </data>
-  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
-    <value>Использовать прямой URL, если он существует</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Войти</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Необходимо войти.</value>
-  </data>
-  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
-    <value>Имя пользователя:</value>
-  </data>
-  <data name="lblSendSpacePassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>&amp;Регистрация...</value>
-  </data>
-  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>Использовать ключ API:</value>
-  </data>
-  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
-    <value>Получить список устройств</value>
-  </data>
-  <data name="lblPushbulletDevices.Text" xml:space="preserve">
-    <value>Устройство:</value>
-  </data>
-  <data name="lblMediaFireEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblMediaFirePassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="lblMediaFirePath.Text" xml:space="preserve">
-    <value>Путь загрузки:</value>
-  </data>
-  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
-    <value>Использовать длинную ссылку с именем файла</value>
-  </data>
-  <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>Хост:</value>
-  </data>
-  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
-    <value>Имя пользователя:</value>
-  </data>
-  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="lblOwnCloudPath.Text" xml:space="preserve">
-    <value>Путь:</value>
-  </data>
-  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
-    <value>Создать общественный URL:</value>
-  </data>
-  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Прямая ссылка (Добавить "&amp;&amp;download" к адресу)</value>
-  </data>
-  <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
-    <value>Совместимость с ownCloud 8.1+</value>
-  </data>
-  <data name="lblMegaPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="btnMegaLogin.Text" xml:space="preserve">
-    <value>Войти</value>
-  </data>
-  <data name="lblMegaEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>Состояние:</value>
-  </data>
-  <data name="lblMegaFolder.Text" xml:space="preserve">
-    <value>Папка:</value>
-  </data>
-  <data name="btnMegaRegister.Text" xml:space="preserve">
-    <value>Регистрация...</value>
-  </data>
-  <data name="lblMegaStatus.Text" xml:space="preserve">
-    <value>Настроено / Не настроено</value>
-  </data>
-  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
-    <value>Ключ доступа:</value>
-  </data>
-  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
-    <value>Секретный ключ:</value>
-  </data>
-  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
-    <value>Путь загрузки:</value>
-  </data>
-  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
-    <value>Конечная точка:</value>
-  </data>
-  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
-    <value>Имя ведра:</value>
-  </data>
-  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
-    <value>Предпросмотр</value>
-  </data>
-  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
-    <value>Предпросмотр URL:</value>
-  </data>
-  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
-    <value>Обновить список папок</value>
-  </data>
-  <data name="lblBoxFolderID.Text" xml:space="preserve">
-    <value>Выбранная папка:</value>
-  </data>
-  <data name="chBoxFoldersName.Text" xml:space="preserve">
-    <value>Имя папки</value>
-  </data>
-  <data name="cbBoxShare.Text" xml:space="preserve">
-    <value>Создать общественную ссылку</value>
-  </data>
-  <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Заметка: Двойной клин по имени папки откроет ее.</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Публичная загрузка?</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
-    <value>Обновить список папок</value>
-  </data>
-  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
-    <value>Описание</value>
-  </data>
-  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
-    <value>Заголовок</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>ID папки:</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>Загружать картинки в выбранную папку</value>
-  </data>
-  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
-    <value>Создать общественную ссылку</value>
-  </data>
-  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>Выбранная папка:</value>
-  </data>
-  <data name="lblDropboxPath.Text" xml:space="preserve">
-    <value>Путь загрузки:</value>
-  </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Если вы используете публичную папку, общественная ссылка уже создана. Вам не нужно отмечать "Создать общественный URL".</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Состояние</value>
-  </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Выбрать...</value>
-  </data>
-  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Создать общественный URL:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Картинка:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Текст:</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Файл:</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Клиент...</value>
-  </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>Короткие ссылки</value>
-  </data>
-  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
-    <value>Имя хоста API: (например, http://example.com/api.php, Оставьте пустым, чтобы использовать polr.me)</value>
-  </data>
-  <data name="lblPolrAPIKey.Text" xml:space="preserve">
-    <value>Ключ API:</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>Ключ API:</value>
-  </data>
-  <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>Здесь можно найти ваши ключ API и UID</value>
-  </data>
-  <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>Подпись:</value>
-  </data>
-  <data name="lblYourlsUsername.Text" xml:space="preserve">
-    <value>Имя пользователя:</value>
-  </data>
-  <data name="lblYourlsPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Заметка: Если у вас есть подпись, вам не нужны логин и пароль</value>
-  </data>
-  <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>Домен:</value>
-  </data>
-  <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>Другие сервисы</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Пользовательские</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Тип запроса:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Файл из имени:</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>URL миниатюры:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Тест</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Сервис коротких ссылок:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Тест</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL запроса:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Сервис текстов:</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Сервисы</value>
-  </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Очистить загрузчики</value>
-  </data>
-  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
-    <value>Все...</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Тип ответа:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Показать последний ответ...</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Ссылка на удаление:</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Результат теста:</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Тест</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Файловый сервис:</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Тест</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Сервис картинок:</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Очистить поля -&gt;</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Помощь...</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Примеры</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Заголовки</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Значение</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>Убрать</value>
-  </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Аргументы</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>Значение</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Примеры:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Примеры:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
-  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
-    <value>URL ссылки:</value>
   </data>
   <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
     <value>Используйте класс хранилища с меньшей избыточностью хранимых объектов.

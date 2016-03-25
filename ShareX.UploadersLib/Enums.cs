@@ -134,8 +134,6 @@ namespace ShareX.UploadersLib
         Sul,
         [Description("Streamable")]
         Streamable,
-        [Description("Openload")]
-        Openload,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
