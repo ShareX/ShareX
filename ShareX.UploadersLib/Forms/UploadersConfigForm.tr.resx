@@ -149,9 +149,6 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Ekle</value>
   </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>URL bölümüne sözdizimini ekle</value>
-  </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Denetle</value>
   </data>
@@ -236,6 +233,9 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   </data>
   <data name="lblOpenloadApiLogin.Text" xml:space="preserve">
     <value>API girişi:</value>
+  </data>
+  <data name="gbOpenloadAuthentication.Text" xml:space="preserve">
+    <value>Kimlik doğrulama</value>
   </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Dosya:</value>
@@ -944,6 +944,9 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
     <value>Güncelle</value>
+  </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>URL bölümüne sözdizimini ekle</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Link adresi:</value>

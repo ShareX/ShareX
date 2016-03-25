@@ -125,9 +125,6 @@
 Si el campo de texto está vacío, nombre de balde se utilizará para URL.
 Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://balde.ejemplo.com/...</value>
   </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Añadir</value>
-  </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Archivo:</value>
   </data>
@@ -673,6 +670,9 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Quitar</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Añadir</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Utilice almacenaje de redundancia reducida</value>

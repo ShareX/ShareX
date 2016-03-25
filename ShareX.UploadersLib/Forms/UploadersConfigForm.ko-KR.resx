@@ -134,9 +134,6 @@
 만약 텍스트 항목이 비어있다면 버킷 이름이 URL에 쓰일 것입니다.
 예를 들어 버킷 이름이 bucket.example.com이라면 URL은 http://bucket.example.com/...이 되는 식이죠.</value>
   </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>추가</value>
-  </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>파일:</value>
   </data>
@@ -682,5 +679,8 @@
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>삭제</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>추가</value>
   </data>
 </root>

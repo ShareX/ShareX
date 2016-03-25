@@ -367,7 +367,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Install</value>
   </data>
   <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
-    <value>Folder not exist:</value>
+    <value>Folder does not exist:</value>
   </data>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
     <value>Download failed:</value>
@@ -876,6 +876,6 @@ Would you like to download it?</value>
     <value>Other</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
-    <value>File not exist:</value>
+    <value>File does not exist:</value>
   </data>
 </root>

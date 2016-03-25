@@ -140,9 +140,6 @@ Par exemple, si votre tampon est appelé tampon.example.com alors l'URL sera htt
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Ajouter</value>
   </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Ajouter la syntaxe au champ URL</value>
-  </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Valider</value>
   </data>
@@ -899,6 +896,9 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
     <value>Mettre à jour</value>
+  </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>Ajouter la syntaxe au champ URL</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Lien URL:</value>

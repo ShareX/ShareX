@@ -718,7 +718,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File not exist:.
+        ///   Looks up a localized string similar to File does not exist:.
         /// </summary>
         internal static string Helpers_OpenFile_File_not_exist_ {
             get {
@@ -727,7 +727,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Folder not exist:.
+        ///   Looks up a localized string similar to Folder does not exist:.
         /// </summary>
         internal static string Helpers_OpenFolder_Folder_not_exist_ {
             get {

@@ -143,9 +143,6 @@ z.B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.exa
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Aktualisieren</value>
-  </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Validieren</value>
   </data>
@@ -875,6 +872,9 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
+  </data>
+  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Link URL:</value>

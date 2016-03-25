@@ -486,10 +486,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
     <value>?</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Validate</value>
   </data>
@@ -547,16 +547,16 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblSeafileAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tpSeafile.Text" xml:space="preserve">
     <value>Seafile</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblSulAPIKey.Text" xml:space="preserve">
     <value>API key:</value>
   </data>
   <data name="tpSul.Text" xml:space="preserve">
     <value>s-ul</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblStreamableUsername.Text" xml:space="preserve">
     <value>Username:</value>
   </data>
@@ -568,7 +568,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Streamable</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnOpenloadRefreshFolders.Text" xml:space="preserve">
     <value>Refresh</value>
   </data>
@@ -592,7 +592,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpOpenload.Text" xml:space="preserve">
     <value>Openload</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>File:</value>
   </data>
@@ -667,13 +667,13 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
     <value>User API key:</value>
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="cbGistUseRawURL.Text" xml:space="preserve">
     <value>Use raw URL</value>
   </data>
@@ -682,7 +682,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>GitHub Gist</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
     <value>Is public upload?</value>
   </data>
@@ -691,7 +691,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
     <value>Syntax highlighting:</value>
   </data>
@@ -700,7 +700,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
     <value>API key:</value>
   </data>
@@ -709,7 +709,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
     <value>Text uploaders</value>
   </data>
@@ -724,7 +724,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="chImgurID.Text" xml:space="preserve">
     <value>ID</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Title</value>
   </data>
@@ -739,7 +739,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnImageShackLogin.Text" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -760,7 +760,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnTinyPicLogin.Text" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -775,7 +775,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpTinyPic.Text" xml:space="preserve">
     <value>TinyPic</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnFlickrOpenImages.Text" xml:space="preserve">
     <value>Your photostream...</value>
   </data>
@@ -790,7 +790,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
     <value>Add album</value>
   </data>
@@ -832,13 +832,13 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>Album ID for upload (Empty = No album upload):</value>
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -850,7 +850,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPicasa.Text" xml:space="preserve">
     <value>Google Photos (Picasa)</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnCheveretoTestAll.Text" xml:space="preserve">
     <value>Test all</value>
   </data>
@@ -871,7 +871,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
     <value>You can get user key from account details page.</value>
   </data>
@@ -880,7 +880,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpVgyme.Text" xml:space="preserve">
     <value>vgy.me</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="llSomeImageAPIKey.Text" xml:space="preserve">
     <value>To get API key visit https://someimage.com/api</value>
   </data>
@@ -892,7 +892,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSomeImage.Text" xml:space="preserve">
     <value>SomeImage</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Image uploaders</value>
   </data>
@@ -925,13 +925,13 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
     <value>https://cloud.mein-seafile.de/api2/</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tpUp1.Text" xml:space="preserve">
     <value>Up1</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblUp1Host.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
@@ -940,7 +940,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPomf.Text" xml:space="preserve">
     <value>Pomf</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>Uploaders:</value>
   </data>
@@ -955,7 +955,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>API key:</value>
   </data>
@@ -964,7 +964,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="gpJiraServer.Text" xml:space="preserve">
     <value>Jira server</value>
   </data>
@@ -973,7 +973,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Template</value>
   </data>
@@ -982,10 +982,10 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tpMinus.Text" xml:space="preserve">
     <value>Minus</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="gbMinusUpload.Text" xml:space="preserve">
     <value>Upload images to</value>
   </data>
@@ -1024,7 +1024,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -1036,7 +1036,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGe_tt.Text" xml:space="preserve">
     <value>Ge.tt</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnGe_ttLogin.Text" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -1051,7 +1051,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Username:</value>
   </data>
@@ -1063,7 +1063,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
     <value>User API key:</value>
   </data>
@@ -1075,7 +1075,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblMediaFireEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -1090,7 +1090,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
@@ -1114,7 +1114,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
@@ -1141,7 +1141,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
     <value>Access key:</value>
   </data>
@@ -1159,10 +1159,10 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
     <value>Preview</value>
   </data>
@@ -1171,7 +1171,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
     <value>Refresh folders list</value>
   </data>
@@ -1189,7 +1189,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
     <value>Is public upload?</value>
   </data>
@@ -1210,7 +1210,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
     <value>Create shareable link</value>
   </data>
@@ -1219,7 +1219,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Upload path:</value>
   </data>
@@ -1237,7 +1237,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblFtpImages.Text" xml:space="preserve">
     <value>Image:</value>
   </data>
@@ -1255,7 +1255,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
     <value>API hostname: (e.g. http://example.com/api.php, Leave blank to use polr.me)</value>
   </data>
@@ -1264,28 +1264,28 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpCoinURL.Text" xml:space="preserve">
     <value>CoinURL</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblCoinURLUUID.Text" xml:space="preserve">
     <value>UUID:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
     <value>API key:</value>
   </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>API UID:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="llAdflyLink.Text" xml:space="preserve">
     <value>You can find your API key and UID in here</value>
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblYourlsSignature.Text" xml:space="preserve">
     <value>Signature:</value>
   </data>
@@ -1300,10 +1300,10 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGoogleURLShortener.Text" xml:space="preserve">
     <value>Google</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Domain:</value>
   </data>
@@ -1315,7 +1315,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblCustomUploaderURL.Text" xml:space="preserve">
     <value>URL:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
     <value>Request type:</value>
   </data>
@@ -1327,7 +1327,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="txtCustomUploaderLog.Text" xml:space="preserve">
     <value />
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
     <value>Test</value>
   </data>
@@ -1432,10 +1432,10 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
     <value>XML</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
     <value>XPath:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
     <value>Examples:
 
@@ -1444,16 +1444,16 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
     <value>?</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
     <value>Add syntax to URL field</value>
   </data>
   <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
     <value>JSON</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
     <value>JsonPath:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
     <value>Examples:
 
@@ -1462,13 +1462,13 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
     <value>?</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
     <value>Add syntax to URL field</value>
   </data>
   <data name="tpCustomUploaderRegexParse.Text" xml:space="preserve">
     <value>Regex</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Remove</value>
   </data>
@@ -1480,6 +1480,9 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
     <value>Add syntax to URL field</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>Link URL:</value>
   </data>
   <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
     <value>tpTwitter</value>
@@ -7791,9 +7794,6 @@ store.book[0].title</value>
   </data>
   <data name="lblLambdaUploadURL.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
-    <value>Link URL:</value>
   </data>
   <data name="&gt;&gt;lblLambdaUploadURL.Name" xml:space="preserve">
     <value>lblLambdaUploadURL</value>

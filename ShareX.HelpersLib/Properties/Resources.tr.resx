@@ -331,7 +331,7 @@
     <value>İndirme başarısız:</value>
   </data>
   <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
-    <value>Dizin bulunamadı:</value>
+    <value>Klasör bulunamadı:</value>
   </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Ad: {0}, Boyut: {1}</value>

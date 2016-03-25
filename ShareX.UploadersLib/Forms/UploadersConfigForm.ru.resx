@@ -146,9 +146,6 @@
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Добавить</value>
   </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Утвердить</value>
   </data>
@@ -881,6 +878,9 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
     <value>Обновить</value>
+  </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>Добавить синтаксис в поле URL</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>URL ссылки:</value>

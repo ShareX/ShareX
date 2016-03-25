@@ -125,9 +125,6 @@
 Ha a szöveges mező üres, a bucketed neve kerül felhasználására az URL-hez.
 For example, if your bucket is called bucket.example.com then URL will be http://bucket.example.com/...</value>
   </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Hozzáadás</value>
-  </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Fájl:</value>
   </data>
@@ -667,6 +664,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Eltávolítás</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Hozzáadás</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Csökkentett redundanciájú tároló használata</value>

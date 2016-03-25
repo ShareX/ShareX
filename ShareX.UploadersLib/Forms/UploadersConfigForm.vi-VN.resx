@@ -143,9 +143,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Thêm</value>
   </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Thêm</value>
-  </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Tệp:</value>
   </data>
@@ -745,6 +742,9 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Xóa</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Dùng vùng lưu trữ dự phòng đã được giảm</value>

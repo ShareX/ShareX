@@ -143,9 +143,6 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Toevoegen</value>
   </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Bijwerken</value>
-  </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Controleer</value>
   </data>
@@ -842,6 +839,9 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   </data>
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Toevoegen</value>
+  </data>
+  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
+    <value>Bijwerken</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Link:</value>

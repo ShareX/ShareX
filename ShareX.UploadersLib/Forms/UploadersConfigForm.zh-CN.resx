@@ -141,9 +141,6 @@
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>URL字段加入语法</value>
-  </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>验证</value>
   </data>
@@ -843,6 +840,9 @@
   </data>
   <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
     <value>更新</value>
+  </data>
+  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
+    <value>URL字段加入语法</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>链接URL:</value>
