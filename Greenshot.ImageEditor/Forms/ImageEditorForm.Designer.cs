@@ -234,7 +234,7 @@ namespace Greenshot {
             // 
             // toolsToolStrip
             // 
-            this.toolsToolStrip.ImageScalingSize = coreConfiguration.IconSize;
+            this.toolsToolStrip.ImageScalingSize = GreenshotForm.coreConfiguration.IconSize;
             this.toolsToolStrip.ClickThrough = true;
             this.toolsToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.toolsToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -491,10 +491,10 @@ namespace Greenshot {
             // 
 			this.propertiesToolStrip.AutoSize = false;
             this.propertiesToolStrip.ClickThrough = true;
-			this.propertiesToolStrip.ImageScalingSize = coreConfiguration.IconSize;
+			this.propertiesToolStrip.ImageScalingSize = GreenshotForm.coreConfiguration.IconSize;
             this.propertiesToolStrip.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertiesToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-			this.propertiesToolStrip.MinimumSize = new System.Drawing.Size(150, coreConfiguration.IconSize.Height + 10);
+			this.propertiesToolStrip.MinimumSize = new System.Drawing.Size(150, GreenshotForm.coreConfiguration.IconSize.Height + 10);
 			this.propertiesToolStrip.Name = "propertiesToolStrip";
             this.propertiesToolStrip.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.propertiesToolStrip.Stretch = true;
