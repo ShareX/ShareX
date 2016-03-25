@@ -267,7 +267,7 @@ namespace ShareX
 
             IsMultiInstance = CLI.IsCommandExist("multi", "m");
 
-            using (ApplicationInstanceManager instanceManager = new ApplicationInstanceManager(IsMultiInstance, args, SingleInstanceCallback))
+            using (ApplicationInstanceManager instanceManager = new ApplicationInstanceManager(!IsMultiInstance, args, SingleInstanceCallback))
             {
                 Run();
             }
