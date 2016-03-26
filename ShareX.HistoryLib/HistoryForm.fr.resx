@@ -124,7 +124,7 @@
     <value>Contient</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date et heure</value>
+    <value>Date</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtre de date:</value>
@@ -151,7 +151,7 @@
     <value>De:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Historique</value>
+    <value>ShareX - Historique</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Filtre d'hôte:</value>

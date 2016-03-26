@@ -121,10 +121,10 @@
     <value>OK</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Éditer le menu des tâches rapides</value>
+    <value>ShareX - Modifier le menu des tâches rapides</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
-    <value>Nom:</value>
+    <value>Texte du menu:</value>
   </data>
   <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
     <value>Tâches après la capture :</value>

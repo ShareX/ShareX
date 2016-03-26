@@ -136,12 +136,8 @@
     <value>Aperçu de la ligne de commande</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Constante Factor (CRF): La gamme de l'échelle de quantification est 0-51: où 0 est sans perte, 23 est par défaut, et 51 est le pire possible.
-Une valeur plus faible est une qualité supérieure et une gamme subjectivement saine est 18-28.
-Considérez 18 pour être visuellement sans perte ou presque: il devrait ressembler la même ou presque la même que l'entrée mais il n'est techniquement pas sans perte.
-La gamme est exponentielle, augmentant ainsi la valeur CRF de 6 est à peu près la moitié de la vitesse de transmission tandis que -6 est environ deux fois le débit binaire.
-Une utilisation générale est de choisir la valeur CRF la plus haute qui fournit toujours une qualité acceptable.
-Si la sortie semble bonne, alors essayez une valeur plus élevée et si elle est mauvaise, choisissez une valeur inférieure.</value>
+    <value>Constante Rate Factor (CRF): La valeur peut aller de 0 à 51, 0 étant sans perte, 30 est la valeur par défaut et 51 est le pire possible.
+Une valeur élevée signifie une mauvaise qualité mais un fichier léger.</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Copier</value>
@@ -165,10 +161,10 @@ Si la sortie semble bonne, alors essayez une valeur plus élevée et si elle est
     <value>Rafraîchir</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>La gamme va de 0 à 10, 10 étant la plus haute qualité. 3-6 est un bon choix pour essayer. Par défaut : 3.</value>
+    <value>L'intervalle va de 0 à 10, 10 étant la qualité la plus haute. 3-6 est un bon choix pour essayer. La valeur par défaut est 3.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>La gamme va de 0 à 9 où une valeur inférieure est une qualité supérieure. 0-3 produira normalement des résultats transparents, 4 (par défaut) devrait être proche de la transparence perceptuelle, et 6 produit une qualité «acceptable».</value>
+    <value>L'intervalle va de 0 à 9 où une valeur faible est une qualité élevée. 0-3 produira normalement des résultats transparents, 4 (par défaut) devrait être proche de la transparence perceptuelle et 6 produit une qualité «acceptable».</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Source vidéo:</value>
@@ -207,21 +203,21 @@ Si la sortie semble bonne, alors essayez une valeur plus élevée et si elle est
     <value>1 étant la qualité la plus élevée/la taille du fichier la plus grande et 31 étant la qualité la plus faible/la taille du fichier la plus petite.</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>Un préréglage est un ensemble d'options qui apporteront une certaine vitesse d'encodage au taux de compression. Un préréglage lent fournira une meilleure compression (la compression est la qualité par rapport à la taille du fichier).
-Cela signifie que, par exemple, si vous ciblez une taille de fichier ou un certain débit binaire constant, vous obtiendrez une meilleure qualité avec un préréglage plus lent.
-De même, pour l'encodage de qualité constante, vous conserverez simplement le bitrate en choisissant un préréglage plus lent.</value>
+    <value>Préréglage rapide = encodage rapide mais fichier lourd.
+Préréglage lent = encodage lent mais fichier léger.
+Pour un encodage en temps réel (ex: enregistrement d'écran), le préréglage doit être le plus rapide possible.</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Installer l'outil d'enregistrement</value>
+    <value>Installer les dispositifs d'enregistrement</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>Installe la source vidéo/audio "screen-capture-recorder" et "virtual-audio-capturer".</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>La valeur par défaut est "full".</value>
+    <value>'full' par défaut.</value>
   </data>
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>La valeur par défaut est "sierra2_4a".</value>
+    <value>sierra2_4a par défaut.</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Utiliser un chemin personnalisé</value>
@@ -230,7 +226,7 @@ De même, pour l'encodage de qualité constante, vous conserverez simplement le 
     <value>Mode de palette:</value>
   </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
-    <value>Ce codec audio n'est pas supporté par le récipient vidéo sélectionné.</value>
+    <value>Ce codec audio n'est pas supporté par le conteneur vidéo sélectionné.</value>
   </data>
   <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
     <value>Pour un encodage en temps réel comme l'enregistrement d'écran, il est recommandé de sélectionner le préréglage le plus rapide possible.

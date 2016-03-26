@@ -139,7 +139,7 @@
     <value>Capturer</value>
   </data>
   <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Après que la tâche soit effectuée:</value>
+    <value>Après que la tâche soit complétée:</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>Après la mise en ligne...</value>
@@ -169,7 +169,7 @@
     <value>Dupliquer</value>
   </data>
   <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Éditer</value>
+    <value>Modifier</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Effets</value>
@@ -178,7 +178,7 @@
     <value>Extensions</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne de fichiers</value>
+    <value>Services de mise en ligne de fichiers</value>
   </data>
   <data name="chWatchFolderFilter.Text" xml:space="preserve">
     <value>Filtre</value>
@@ -232,7 +232,7 @@
     <value>Taille limite de l'image pour l'utilisation de "Format d'image 2":</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne d'images</value>
+    <value>Services de mise en ligne d'images</value>
   </data>
   <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
     <value>Inclure les sous-dossiers</value>
@@ -259,7 +259,7 @@
     <value>N'appliquer les effets que sur la région capturée</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Remplacer le programme de mise en ligne personnalisé par défaut:</value>
+    <value>Remplacer le service de mise en ligne personnalisé par défaut:</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
     <value>Remplacer le compte FTP par défaut:</value>
@@ -271,7 +271,7 @@
     <value>Jouer un son quand la capture est faite</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
-    <value>Jouer un son quand la tâche est terminée</value>
+    <value>Jouer un son quand la tâche est complétée</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>Prévisualisation</value>
@@ -343,7 +343,7 @@
     <value>Tâche...</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne de textes</value>
+    <value>Services de mise en ligne de textes</value>
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
     <value>Miniature</value>
@@ -361,13 +361,13 @@
     <value>Raccourcisseurs d'URL</value>
   </data>
   <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Utiliser les actions dans les paramètres des tâches de la fenêtre principale</value>
+    <value>Utiliser les actions dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres avancés dans les paramètres des tâches de la fenêtre principale</value>
+    <value>Utiliser les paramètres avancés dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres de capture dans les paramètres des tâches de la fenêtre principale</value>
+    <value>Utiliser les paramètres de capture dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>Utiliser par défaut les paramètres "Après la capture"</value>
@@ -379,16 +379,16 @@
     <value>Utiliser par défaut les paramètres "Destination"</value>
   </data>
   <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres généraux dans les paramètres des tâches de la fenêtre principale</value>
+    <value>Utiliser les paramètres généraux dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres d'image dans les paramètres des tâches de la fenêtre principale</value>
+    <value>Utiliser les paramètres d'images dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Utiliser un modèle de nom aussi pour la mise en ligne de fichiers plutôt que le nom du fichier réel</value>
   </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres de transfert dans les paramètres des tâches de la fenêtre principale</value>
+    <value>Utiliser les paramètres de transfert dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="tpWatchFolders.Text" xml:space="preserve">
     <value>Surveiller les dossiers</value>
@@ -403,7 +403,7 @@
     <value>Largeur:</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>Vous pouvez activer / désactiver les effets d'image de "Après les tâches de capture -&gt; Ajouter des effets d'image".</value>
+    <value>Vous pouvez activer/désactiver les effets d'image de "Après les tâches de capture -&gt; Ajouter des effets d'image".</value>
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>Options de l'enregistrement de l'écran...</value>
@@ -430,7 +430,7 @@
     <value>Outils</value>
   </data>
   <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Utiliser les paramètres d'outils dans les paramètres des tâches de la fenêtre principale</value>
+    <value>Utiliser les paramètres d'outils dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="tpVideoThumbnailer.Text" xml:space="preserve">
     <value>Générateur de miniatures de vidéo</value>

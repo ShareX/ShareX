@@ -121,13 +121,13 @@
     <value>Ajouter</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
-    <value>Éditer</value>
+    <value>Modifier</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Restaurer les paramètres</value>
+    <value>Restaurer par défaut</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Fermer</value>
@@ -136,6 +136,6 @@
     <value>Astuce: Si vous ajoutez une tâche vide, elle sera convertie en ligne de séparation dans le menu.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Éditeur du menu des tâches rapides</value>
+    <value>ShareX - Modifier le menu des tâches rapides</value>
   </data>
 </root>

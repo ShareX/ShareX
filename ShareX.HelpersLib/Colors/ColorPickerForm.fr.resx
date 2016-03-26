@@ -163,7 +163,7 @@
     <value>Jaune:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Sélecteur de couleur</value>
+    <value>ShareX - Sélecteur de couleurs</value>
   </data>
   <data name="rbSaturation.Text" xml:space="preserve">
     <value>Saturation:</value>

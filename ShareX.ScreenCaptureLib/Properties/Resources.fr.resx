@@ -121,7 +121,7 @@
     <value>Bitrate: {0}k</value>
   </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
-    <value>Parcourir pour ffmpeg.exe</value>
+    <value>Chercher ffmpeg.exe</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Échec du téléchargement de FFmpeg.</value>
@@ -141,10 +141,10 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>Qualité:</value>
   </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>Capture rectangle annotée</value>
+    <value>Capture rectangulaire annotée</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>Capture rectangle simple</value>
+    <value>Capture rectangulaire simple</value>
   </data>
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Capturer une région </value>
@@ -291,7 +291,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[Molette de la souris] Changer de mode</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
-    <value>[1] Sélectionnez le mode capture</value>
+    <value>[1] Sélectionner le mode capture</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
     <value>[2] Sélectionner le mode dessin rectangulaire</value>
@@ -310,5 +310,11 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
     <value>[Ctrl + Molette de la souris] Changer la taille du stylo</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Arrêter</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Capturer</value>
   </data>
 </root>

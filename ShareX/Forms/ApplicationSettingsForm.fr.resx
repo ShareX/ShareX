@@ -148,7 +148,7 @@
     <value>Ne pas montrer la boite de dialogue d'impression de Windows</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Éditer...</value>
+    <value>Modifier...</value>
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Format</value>
@@ -163,7 +163,7 @@
     <value>Hôte:</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Paramètres d'impression d'image...</value>
+    <value>Paramètres d'impression d'images...</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Langue:</value>
@@ -220,13 +220,13 @@
     <value>Lancer ShareX au démarrage de Windows</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne de fichiers secondaires</value>
+    <value>Hébergeurs de fichiers secondaires</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne d'images secondaires</value>
+    <value>Hébergeurs d'images secondaires</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne de textes secondaires</value>
+    <value>Hébergeurs de textes secondaires</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Paramètres de l'application</value>
@@ -238,16 +238,16 @@
     <value>Afficher le bouton "Mettre en ligne avec ShareX" dans le menu contextuel</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Afficher la progression dans l'icône de la barre des tâches</value>
+    <value>Afficher la progression sur l'icône de la barre des tâches</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Afficher la progression dans l'icône de la zone de notification</value>
+    <value>Afficher la progression sur l'icône de la zone de notifications</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Afficher ShareX dans le menu "Envoyer vers"</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Afficher l'icône dans la zone de notification</value>
+    <value>Afficher l'icône dans la zone de notifications</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Limite de mises en ligne simultanées:</value>
@@ -265,7 +265,7 @@
     <value>Nom d'utilisateur:</value>
   </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Utiliser de préférence le logiciel de mise en ligne secondaire lors de la nouvelle tentative</value>
+    <value>Utiliser de préférence le service de mise en ligne secondaire lors de la nouvelle tentative</value>
   </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Support de l'extension Chrome...</value>

@@ -185,7 +185,7 @@ Merci de démarrer ShareX en tant qu'Administrateur pour changer le chemin du do
     <value>Position du curseur (X, Y) = {0}, {1}</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
-    <value>Voulez-vous vraiment effacer ce fichier?</value>
+    <value>Voulez-vous vraiment supprimer ce fichier?</value>
   </data>
   <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
     <value>Fini</value>
@@ -229,7 +229,7 @@ ici</value>
     <value>La vidéo et la piste audio source ne peuvent être toutes les deux "Aucune".</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
-    <value>Confirmation de l'effacement d'un fichier</value>
+    <value>Confirmation de la suppression d'un fichier</value>
   </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>Le chemin du fichier ne peut pas être vide.</value>
@@ -308,7 +308,7 @@ Voulez-vous redémarrer ShareX?</value>
     <value>Démarrer</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Démarrer le sélecteur de couleur de l'écran</value>
+    <value>Démarrer le sélecteur de couleurs de l'écran</value>
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Démarrage</value>
@@ -317,7 +317,7 @@ Voulez-vous redémarrer ShareX?</value>
     <value>Arrêter</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Arrêter le sélecteur de couleur de l'écran</value>
+    <value>Arrêter le sélecteur de couleurs de l'écran</value>
   </data>
   <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
     <value>Arrêté</value>
@@ -451,12 +451,12 @@ Merci de sélectionner un raccourci différent ou quitter l'application en confl
 Êtes-vous sûr de vouloir continuer ?</value>
   </data>
   <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Votre presse-papier contient une image, souhaitez-vous l'ouvrir dans l'éditeur d'image?
+    <value>Votre presse-papier contient une image, souhaitez-vous l'ouvrir dans l'éditeur d'images ?
 
 Appuyez sur Oui pour ouvrir l'image du presse-papier. Sinon, appuyez sur Non pour ouvrir la boîte de dialogue pour les images.</value>
   </data>
   <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Éditeur d'image - Comment charger une image ?</value>
+    <value>Éditeur d'images - Comment charger une image ?</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Pour que les réglages prennent effets, ShareX doit être rouvert à partir de Steam.</value>
@@ -472,5 +472,23 @@ Appuyez sur Oui pour ouvrir l'image du presse-papier. Sinon, appuyez sur Non pou
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
     <value>Ces applications pourraient être en conflit:</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
+    <value>Cacher les colonnes</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
+    <value>Afficher les colonnes</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
+    <value>Modifier ce menu...</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>Continuer</value>
   </data>
 </root>

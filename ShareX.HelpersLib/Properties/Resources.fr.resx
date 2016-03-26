@@ -284,7 +284,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Encodage par défaut .NET (Encodage rapide mais de qualité moyenne)</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
-    <value>Effacer le fichier localement</value>
+    <value>Supprimer le fichier local</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
     <value>DNS défini avec succès.</value>
@@ -308,10 +308,10 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Mise en ligne par glisser-déposer</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
-    <value>Email</value>
+    <value>E-mail</value>
   </data>
   <data name="URLSharingServices_Email" xml:space="preserve">
-    <value>Email</value>
+    <value>E-mail</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Erreur</value>
@@ -422,7 +422,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Arrêter</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
-    <value>Ouvrir dans l'éditeur d'image</value>
+    <value>Ouvrir dans l'éditeur d'images</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
     <value>Ouvrir le dossier des captures d'écran</value>
@@ -511,7 +511,7 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>Enregistrer la miniature de l'image comme fichier</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
-    <value>Sélecteur de couleur de l'écran</value>
+    <value>Sélecteur de couleurs de l'écran</value>
   </data>
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
     <value>Raccourcir l'URL</value>
@@ -583,10 +583,10 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>Impossible de créer le dossier; vérifiez votre chemin d'accès.</value>
   </data>
   <data name="HotkeyType_Automate" xml:space="preserve">
-    <value>Démarrer/Arrêter l'outil d'automatisation</value>
+    <value>Ouvrir/Arrêter l'outil d'automatisation</value>
   </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
-    <value>Sélecteur de couleur</value>
+    <value>Sélecteur de couleurs</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Capturer une région personnalisée</value>
@@ -721,7 +721,7 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>Changeur de DNS</value>
   </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
-    <value>Éditeur d'image</value>
+    <value>Éditeur d'images</value>
   </data>
   <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
     <value>Enregistrer l'écran</value>
@@ -799,7 +799,7 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
     <value>Incrémentation</value>
   </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
-    <value>Combineur d'image</value>
+    <value>Combineur d'images</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>Générateur de miniatures de vidéo</value>
@@ -846,5 +846,14 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>Afficher le fichier dans l'explorateur</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
+    <value>Autre</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>Le fichier n'existe pas:</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Ouvrir la fenêtre 'Historique des images'</value>
   </data>
 </root>

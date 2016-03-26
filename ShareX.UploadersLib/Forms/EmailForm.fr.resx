@@ -130,9 +130,9 @@
     <value>Sujet:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Envoyer un Email</value>
+    <value>ShareX - Envoyer un e-mail</value>
   </data>
   <data name="lblToEmail.Text" xml:space="preserve">
-    <value>Email du destinataire:</value>
+    <value>E-mail du destinataire:</value>
   </data>
 </root>

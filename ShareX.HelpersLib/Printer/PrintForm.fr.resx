@@ -124,7 +124,7 @@
     <value>Rotation automatique de l'image</value>
   </data>
   <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Échelle automatique de l'image</value>
+    <value>Mise à l'échelle automatique de l'image</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Annuler</value>
@@ -139,7 +139,7 @@
     <value>Prévisualisation...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Options d'impression</value>
+    <value>ShareX - Options d'impression</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
     <value>Imprimer...</value>

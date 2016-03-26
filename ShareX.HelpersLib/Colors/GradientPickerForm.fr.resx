@@ -127,7 +127,7 @@
     <value>Couleur</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Dégradé</value>
+    <value>ShareX - Dégradé</value>
   </data>
   <data name="lblGradientType.Text" xml:space="preserve">
     <value>Type de dégradé:</value>

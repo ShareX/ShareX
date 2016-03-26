@@ -136,7 +136,7 @@
     <value>Couleur 2</value>
   </data>
   <data name="btnColorDialog.Text" xml:space="preserve">
-    <value>Sélecteur de couleur...</value>
+    <value>Sélecteur de couleurs...</value>
   </data>
   <data name="lblGreen.Text" xml:space="preserve">
     <value>V:</value>
@@ -148,7 +148,7 @@
     <value>Lignes horizontales</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Test d'écran</value>
+    <value>ShareX - Test d'écran</value>
   </data>
   <data name="lblRed.Text" xml:space="preserve">
     <value>R:</value>
@@ -157,7 +157,7 @@
     <value>Rouge, Vert, Bleu:</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>Vous pouvez cliquer à l'extérieur pour masquer / afficher ce panneau.</value>
+    <value>Vous pouvez cliquer en dehors pour masquer/afficher ce panneau.</value>
   </data>
   <data name="rbShapes.Text" xml:space="preserve">
     <value>Forme:</value>
