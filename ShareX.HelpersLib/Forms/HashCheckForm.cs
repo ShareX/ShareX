@@ -54,7 +54,7 @@ namespace ShareX.HelpersLib
 
         private void btnFilePathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile("ShareX - " + Resources.HashCheckForm_btnFilePathBrowse_Click_Choose_file_path, txtFilePath);
+            Helpers.BrowseFile(txtFilePath);
         }
 
         private void btnStartHashCheck_Click(object sender, EventArgs e)

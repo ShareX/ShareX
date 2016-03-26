@@ -61,15 +61,6 @@ namespace ShareX.IndexerLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose folder.
-        /// </summary>
-        internal static string DirectoryIndexerForm_BrowseFolder_Choose_folder_path {
-            get {
-                return ResourceManager.GetString("DirectoryIndexerForm_BrowseFolder_Choose_folder_path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to body {
         ///    font-family: Arial, Helvetica, sans-serif;
         ///    background-color: #F2F2F2;

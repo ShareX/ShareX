@@ -626,6 +626,11 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static bool BrowseFile(TextBox tb, string initialDirectory = "", bool detectSpecialFolders = false)
+        {
+            return BrowseFile("ShareX - " + Resources.Helpers_BrowseFile_Choose_file, tb, initialDirectory, detectSpecialFolders);
+        }
+
         public static bool BrowseFile(string title, TextBox tb, string initialDirectory = "", bool detectSpecialFolders = false)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -662,6 +667,11 @@ namespace ShareX.HelpersLib
             }
 
             return false;
+        }
+
+        public static bool BrowseFolder(TextBox tb, string initialDirectory = "", bool detectSpecialFolders = false)
+        {
+            return BrowseFolder("ShareX - " + Resources.Helpers_BrowseFolder_Choose_folder, tb, initialDirectory, detectSpecialFolders);
         }
 
         public static bool BrowseFolder(string title, TextBox tb, string initialDirectory = "", bool detectSpecialFolders = false)

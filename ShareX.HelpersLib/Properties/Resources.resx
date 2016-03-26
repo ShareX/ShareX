@@ -232,9 +232,6 @@
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Browse for a Cascading Style Sheet...</value>
   </data>
-  <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
-    <value>Choose file path</value>
-  </data>
   <data name="Stop" xml:space="preserve">
     <value>Stop</value>
   </data>
@@ -877,5 +874,11 @@ Would you like to download it?</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
     <value>File does not exist:</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>Choose folder</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>Choose file</value>
   </data>
 </root>

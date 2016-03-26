@@ -117,19 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
-    <value>Après la capture: {0}</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
     <value>{0} n'existe pas.
 
 Voulez-vous le télécharger automatiquement ?</value>
-  </data>
-  <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} va être mis en ligne sur {1}. Vous pouvez choisir une destination différente.</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
-    <value>Après la mise en ligne: {0}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Êtes-vous sûr de vouloir mettre en ligne {0} fichiers ?</value>
@@ -138,86 +129,17 @@ Voulez-vous le télécharger automatiquement ?</value>
     <value>Êtes-vous sûr de vouloir mettre en ligne cette capture d'écran?
 Appuyer sur 'Non' pour annuler la mise en ligne et désactiver la mise en ligne automatique.</value>
   </data>
-  <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
-    <value>Impossible d'accéder au fichier "{0}".
-Merci de démarrer ShareX en tant qu'Administrateur pour changer le chemin du dossier personnel.</value>
-  </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
     <value>Choisir un dossier pour sauvegarde</value>
-  </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Choisir le chemin de l'encodeur</value>
-  </data>
-  <data name="ActionsForm_btnPathBrowse_Click_Choose_file_path" xml:space="preserve">
-    <value>Choisir le chemin du fichier</value>
-  </data>
-  <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
-    <value>Choisir le chemin du dossier</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>Choisir le chemin du dossier pour les captures</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
     <value>Choisir le chemin du dossier personnel pour ShareX</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>Le fichier de l'encodeur video CLI n'existe pas:</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Cliquer pour démarrer l'enregistrement.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Cliquer pour arrêter l'enregistrement.</value>
-  </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Configurer les encodeurs video CLI ---&gt;</value>
-  </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Contributeurs</value>
-  </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Raccourcis clavier actuellement définis :</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Position du curseur (X, Y) = {0}, {1}</value>
-  </data>
-  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer ce fichier?</value>
-  </data>
-  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
-    <value>Fini</value>
-  </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Ne plus montrer ce message.</value>
   </data>
-  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
-    <value>Échec du téléchargement :
-{0}</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Échec du téléchargement du FFmpeg.</value>
-  </data>
-  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
-    <value>Déposer
-ici</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>Encodage...</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Erreur</value>
-  </data>
-  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
-    <value>Erreur</value>
-  </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>L'extension ne peut pas être vide.</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Bibliothèques externes</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
     <value>Erreur FFmpeg</value>
@@ -234,69 +156,23 @@ ici</value>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>Le chemin du fichier ne peut pas être vide.</value>
   </data>
-  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
-    <value>Mise en ligne de fichiers</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>Mise en ligne de fichiers: {0}</value>
-  </data>
-  <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
-    <value>Avertissement pour la première mise en ligne</value>
-  </data>
-  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
-    <value>Dossier mis en ligne</value>
-  </data>
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
     <value>Cacher le menu</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
     <value>raccourci clavier</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
-    <value>La définition du raccourci a échoué</value>
-  </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
-    <value>raccourcis clavier</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Mise en ligne d'images: {0}</value>
-  </data>
-  <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
-    <value>En attente</value>
-  </data>
-  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
-    <value>Problèmes</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Manquant</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
     <value>Le nom ne peut pas être vide.</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Le chemin ne peut pas être vide.</value>
-  </data>
   <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
     <value>Merci de choisir une destination.</value>
   </data>
-  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
-    <value>Préparation</value>
-  </data>
-  <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
-    <value>Prévisualisation:</value>
-  </data>
-  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
-    <value>Page du projet</value>
-  </data>
-  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>Sélectionner un raccourci clavier...</value>
-  </data>
   <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
     <value>Partage d'URL ({0})</value>
-  </data>
-  <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX a besoin d'être redémarré pour que les changements de langue s'appliquent.
-Voulez-vous redémarrer ShareX?</value>
   </data>
   <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
     <value>Raccourcisseur d'URL ({0})</value>
@@ -304,23 +180,11 @@ Voulez-vous redémarrer ShareX?</value>
   <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
     <value>Afficher le menu</value>
   </data>
-  <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
-    <value>Démarrer</value>
-  </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Démarrer le sélecteur de couleurs de l'écran</value>
-  </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Démarrage</value>
   </data>
   <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
     <value>Arrêter</value>
-  </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Arrêter le sélecteur de couleurs de l'écran</value>
-  </data>
-  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
-    <value>Arrêté</value>
   </data>
   <data name="UploadTask_Stop_Stopping" xml:space="preserve">
     <value>Arrêt en cours</value>
@@ -340,26 +204,11 @@ Voulez-vous redémarrer ShareX?</value>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
     <value>Tâche: {0}</value>
   </data>
-  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
-    <value>Test de mise en ligne d'un texte</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>Mise en ligne de textes: {0}</value>
-  </data>
-  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
-    <value>Traducteurs</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>L'envoi du Tweet a réussi.</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
     <value>Il n'y a pas d'encodeur vidéo CLI valide sélectionné.</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Temps restant: {0}s ({1}%) Total: {2}</value>
-  </data>
-  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
-    <value>Impossible de créer le dossier:</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>Impossible d'enregistrer {0}:
@@ -371,56 +220,23 @@ Merci de sélectionner un raccourci différent ou quitter l'application en confl
   <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
     <value>Erreurs de mise en ligne</value>
   </data>
-  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
-    <value>Mise en ligne de fichiers</value>
-  </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Mise en ligne en cours</value>
   </data>
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>L'URL est vide.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>Service de partage d'URL: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>Raccourcisseur d'URL: {0}</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL à télécharger et à mettre en ligne</value>
-  </data>
-  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Utiliser un nouveau nom:</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Attente...</value>
   </data>
-  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
-    <value>Site Web</value>
-  </data>
   <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
     <value>X: {0}, Y: {1}, Largeur: {2}, Hauteur: {3}</value>
   </data>
-  <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Vous pouvez ajouter des workflows à partir des paramètres des raccourcis clavier...</value>
-  </data>
-  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>Vous pouvez glisser et déposer des fichiers dans cette fenêtre.</value>
-  </data>
-  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
-    <value>Clic gauche pour copier l'URL dans le presse-papier. Clic droit pour l'ouvrir.</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Le client FTP prend uniquement en charge FTP ou FTPS.</value>
-  </data>
   <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Impossible de trouver un compte FTP valide.</value>
-  </data>
-  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
-    <value>Copié dans le presse-papier: {0}</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Impossible de trouver un compte Twitter valide.</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Désactiver les raccourcis clavier</value>
@@ -428,50 +244,210 @@ Merci de sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
     <value>Activer les raccourcis clavier</value>
   </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>La définition du raccourci a échoué</value>
+  </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>Raccourcis clavier désactivés.</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
+    <value>Mise en ligne de fichiers</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
+    <value>Sélectionner un raccourci clavier...</value>
+  </data>
+  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
+    <value>Déposer
+ici</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Raccourcis clavier activés.</value>
   </data>
-  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
-    <value>Vous pouvez faire un clic gauche sur l'icône de ShareX pour commencer la capture de région.</value>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
+    <value>raccourcis clavier</value>
   </data>
-  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
-    <value>Téléchargement</value>
+  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
+    <value>Problèmes</value>
   </data>
-  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
-    <value>Support pour Chrome activé.</value>
+  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
+    <value>Le chemin ne peut pas être vide.</value>
   </data>
-  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
-    <value>Support pour Chrome désactivé.</value>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
+    <value>Mise en ligne de fichiers: {0}</value>
   </data>
-  <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
-    <value>Vous êtes sur le point de mettre en ligne un fichier volumineux.
-Êtes-vous sûr de vouloir continuer ?</value>
+  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>Page du projet</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Votre presse-papier contient une image, souhaitez-vous l'ouvrir dans l'éditeur d'images ?
-
-Appuyez sur Oui pour ouvrir l'image du presse-papier. Sinon, appuyez sur Non pour ouvrir la boîte de dialogue pour les images.</value>
+  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
+    <value>L'envoi du Tweet a réussi.</value>
   </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Éditeur d'images - Comment charger une image ?</value>
+  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
+    <value>Choisir le chemin de l'encodeur</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Pour que les réglages prennent effets, ShareX doit être rouvert à partir de Steam.</value>
   </data>
-  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
-    <value>Personnalisé</value>
+  <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
+    <value>Impossible d'accéder au fichier "{0}".
+Merci de démarrer ShareX en tant qu'Administrateur pour changer le chemin du dossier personnel.</value>
   </data>
-  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
-    <value>Changelog</value>
+  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
+    <value>Le fichier de l'encodeur video CLI n'existe pas:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Cliquer pour arrêter l'enregistrement.</value>
+  </data>
+  <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
+    <value>Vous pouvez ajouter des workflows à partir des paramètres des raccourcis clavier...</value>
+  </data>
+  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>Le client FTP prend uniquement en charge FTP ou FTPS.</value>
   </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Impossible d'enregistrer l'image pour le chemin {0}.</value>
   </data>
+  <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
+    <value>ShareX a besoin d'être redémarré pour que les changements de langue s'appliquent.
+Voulez-vous redémarrer ShareX?</value>
+  </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>Copié dans le presse-papier: {0}</value>
+  </data>
+  <data name="Program_Run_Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
+    <value>Utiliser un nouveau nom:</value>
+  </data>
+  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
+    <value>Arrêter le sélecteur de couleurs de l'écran</value>
+  </data>
+  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
+    <value>Vous pouvez glisser et déposer des fichiers dans cette fenêtre.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
+    <value>Manquant</value>
+  </data>
+  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
+    <value>Position du curseur (X, Y) = {0}, {1}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
+    <value>Traducteurs</value>
+  </data>
+  <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
+    <value>Démarrer</value>
+  </data>
+  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
+    <value>L'extension ne peut pas être vide.</value>
+  </data>
+  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
+    <value>Dossier mis en ligne</value>
+  </data>
+  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
+    <value>Bibliothèques externes</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
+    <value>Après la capture: {0}</value>
+  </data>
+  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
+    <value>Configurer les encodeurs video CLI ---&gt;</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
+    <value>Raccourcisseur d'URL: {0}</value>
+  </data>
+  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
+    <value>Impossible de créer le dossier:</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
+    <value>Choisir le chemin du dossier pour les captures</value>
+  </data>
+  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
+    <value>Raccourcis clavier actuellement définis :</value>
+  </data>
+  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
+    <value>Clic gauche pour copier l'URL dans le presse-papier. Clic droit pour l'ouvrir.</value>
+  </data>
+  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+    <value>Échec du téléchargement du FFmpeg.</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
+    <value>En attente</value>
+  </data>
+  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
+    <value>Mise en ligne de fichiers</value>
+  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
     <value>Ces applications pourraient être en conflit:</value>
+  </data>
+  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
+    <value>Démarrer le sélecteur de couleurs de l'écran</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
+    <value>Voulez-vous vraiment supprimer ce fichier?</value>
+  </data>
+  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
+    <value>Échec du téléchargement :
+{0}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
+    <value>Après la mise en ligne: {0}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
+    <value>Mise en ligne de textes: {0}</value>
+  </data>
+  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
+    <value>Préparation</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
+    <value>Avertissement pour la première mise en ligne</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
+    <value>Arrêté</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
+    <value>Service de partage d'URL: {0}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
+    <value>Contributeurs</value>
+  </data>
+  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>Support pour Chrome désactivé.</value>
+  </data>
+  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
+    <value>Support pour Chrome activé.</value>
+  </data>
+  <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
+    <value>Prévisualisation:</value>
+  </data>
+  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
+    <value>Test de mise en ligne d'un texte</value>
+  </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>Téléchargement</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
+    <value>Éditeur d'images - Comment charger une image ?</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
+    <value>Fini</value>
+  </data>
+  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
+    <value>Site Web</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Cliquer pour démarrer l'enregistrement.</value>
+  </data>
+  <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
+    <value>{0} va être mis en ligne sur {1}. Vous pouvez choisir une destination différente.</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>Impossible de trouver un compte Twitter valide.</value>
   </data>
   <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
     <value>Cacher les colonnes</value>
@@ -482,13 +458,31 @@ Appuyez sur Oui pour ouvrir l'image du presse-papier. Sinon, appuyez sur Non pou
   <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
     <value>Modifier ce menu...</value>
   </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>Continuer</value>
+  </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
   <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>Historique</value>
   </data>
-  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
-    <value>Continuer</value>
+  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
+    <value>Vous pouvez faire un clic gauche sur l'icône de ShareX pour commencer la capture de région.</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
+    <value>Vous êtes sur le point de mettre en ligne un fichier volumineux.
+Êtes-vous sûr de vouloir continuer ?</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
+    <value>Votre presse-papier contient une image, souhaitez-vous l'ouvrir dans l'éditeur d'images ?
+
+Appuyez sur Oui pour ouvrir l'image du presse-papier. Sinon, appuyez sur Non pour ouvrir la boîte de dialogue pour les images.</value>
+  </data>
+  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
+    <value>Personnalisé</value>
+  </data>
+  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>Changelog</value>
   </data>
 </root>

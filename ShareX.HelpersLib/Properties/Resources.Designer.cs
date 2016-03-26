@@ -691,11 +691,20 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose file path.
+        ///   Looks up a localized string similar to Choose file.
         /// </summary>
-        internal static string HashCheckForm_btnFilePathBrowse_Click_Choose_file_path {
+        internal static string Helpers_BrowseFile_Choose_file {
             get {
-                return ResourceManager.GetString("HashCheckForm_btnFilePathBrowse_Click_Choose_file_path", resourceCulture);
+                return ResourceManager.GetString("Helpers_BrowseFile_Choose_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose folder.
+        /// </summary>
+        internal static string Helpers_BrowseFolder_Choose_folder {
+            get {
+                return ResourceManager.GetString("Helpers_BrowseFolder_Choose_folder", resourceCulture);
             }
         }
         

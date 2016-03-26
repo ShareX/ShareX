@@ -55,7 +55,7 @@ namespace ShareX.IndexerLib
 
         private void BrowseFolder()
         {
-            if (Helpers.BrowseFolder("ShareX - " + Resources.DirectoryIndexerForm_BrowseFolder_Choose_folder_path, txtFolderPath))
+            if (Helpers.BrowseFolder(txtFolderPath))
             {
                 IndexFolder();
             }

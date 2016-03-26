@@ -142,15 +142,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose file path.
-        /// </summary>
-        public static string ActionsForm_btnPathBrowse_Click_Choose_file_path {
-            get {
-                return ResourceManager.GetString("ActionsForm_btnPathBrowse_Click_Choose_file_path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap application_block {
@@ -2257,15 +2248,6 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("vn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Choose folder.
-        /// </summary>
-        public static string WatchFolderForm_btnPathBrowse_Click_Choose_folder_path {
-            get {
-                return ResourceManager.GetString("WatchFolderForm_btnPathBrowse_Click_Choose_folder_path", resourceCulture);
             }
         }
         

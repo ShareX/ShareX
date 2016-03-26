@@ -56,7 +56,7 @@ namespace ShareX
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile("ShareX - " + Resources.ActionsForm_btnPathBrowse_Click_Choose_file_path, txtPath);
+            Helpers.BrowseFile(txtPath);
         }
 
         private void btnOK_Click(object sender, EventArgs e)

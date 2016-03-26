@@ -94,7 +94,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.tr.resx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
