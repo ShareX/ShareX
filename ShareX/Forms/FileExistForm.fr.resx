@@ -124,7 +124,7 @@
     <value>Écraser:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Comment sauvegarder ?</value>
+    <value>ShareX - Comment enregistrer ?</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Il existe déjà un fichier avec le même nom à cet endroit.

@@ -121,7 +121,7 @@
     <value>Effacer l'autorisation</value>
   </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
-    <value>Compte d'utilisateur</value>
+    <value>Compte utilisateur</value>
   </data>
   <data name="lblLoginStatus.Text" xml:space="preserve">
     <value>Statut</value>

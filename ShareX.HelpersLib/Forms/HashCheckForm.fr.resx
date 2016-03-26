@@ -124,13 +124,13 @@
     <value>Chemin du fichier:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Vérifier un hash</value>
+    <value>ShareX - Vérifier un Hash</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Type de Hash:</value>
   </data>
   <data name="btnStartHashCheck.Text" xml:space="preserve">
-    <value>Démarrer</value>
+    <value>Vérifier</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Résultat:</value>
@@ -172,7 +172,7 @@
     <value>Encoder</value>
   </data>
   <data name="tpTextConversions.Text" xml:space="preserve">
-    <value>Conversions de texte</value>
+    <value>Conversions de textes</value>
   </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>Vérifier le hash d'un fichier</value>

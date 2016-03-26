@@ -139,7 +139,7 @@
     <value>Orientation de la combinaison :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Combineur d'image</value>
+    <value>ShareX - Combineur d'images</value>
   </data>
   <data name="chFilepath.Text" xml:space="preserve">
     <value>Chemin vers l'image</value>

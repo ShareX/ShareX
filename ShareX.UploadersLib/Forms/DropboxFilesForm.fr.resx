@@ -124,7 +124,7 @@
     <value>Créer le dossier...</value>
   </data>
   <data name="tsmiDelete.Text" xml:space="preserve">
-    <value>Effacer...</value>
+    <value>Supprimer...</value>
   </data>
   <data name="tsmiDownloadFile.Text" xml:space="preserve">
     <value>Télécharger...</value>
@@ -139,7 +139,7 @@
     <value>Rafraîchir</value>
   </data>
   <data name="tsbSelectFolder.Text" xml:space="preserve">
-    <value>Sélectionner le chemin du dossier courant</value>
+    <value>Sélectionner le chemin du dossier actuel</value>
   </data>
   <data name="chSize.Text" xml:space="preserve">
     <value>Taille</value>

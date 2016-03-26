@@ -130,13 +130,13 @@
     <value>Console</value>
   </data>
   <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copier l'URL dans le presse-papier</value>
+    <value>Copier les/l'URL(s) dans le presse-papier</value>
   </data>
   <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
     <value>Créer le dossier</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Effacer</value>
+    <value>Supprimer</value>
   </data>
   <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
     <value>Se déconnecter </value>
@@ -172,6 +172,6 @@
     <value>Renommer</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX client FTP</value>
+    <value>ShareX - Client FTP</value>
   </data>
 </root>

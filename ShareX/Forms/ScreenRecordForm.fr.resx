@@ -121,7 +121,7 @@
     <value>Annuler</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Fenêtre d'enregistrement d'écran</value>
+    <value>ShareX - Enregistrement d'écran</value>
   </data>
   <data name="btnStart.Text" xml:space="preserve">
     <value>Démarrer</value>

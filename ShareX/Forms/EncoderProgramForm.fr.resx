@@ -124,7 +124,7 @@
     <value>Annuler</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Programme d'encodage</value>
+    <value>ShareX - Programme d'encodage</value>
   </data>
   <data name="lblExt.Text" xml:space="preserve">
     <value>Extension:</value>

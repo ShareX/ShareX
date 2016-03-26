@@ -127,7 +127,7 @@
     <value>ShareX - Journal de débogage</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>Ouvrir le fichier journal</value>
+    <value>Ouvrir le fichier des logs...</value>
   </data>
   <data name="lblRunningFrom.Text" xml:space="preserve">
     <value>Chemin de démarrage:</value>
