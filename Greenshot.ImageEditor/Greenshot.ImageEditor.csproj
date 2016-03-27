@@ -242,6 +242,12 @@
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\EditorSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditorSettingsForm.Designer.cs">
+      <DependentUpon>EditorSettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interop\IDispatch.cs" />
     <Compile Include="Interop\IUnknown.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -262,6 +268,9 @@
     <Compile Include="UnmanagedHelpers\User32.cs" />
     <Compile Include="UnmanagedHelpers\Win32Errors.cs" />
     <Compile Include="UnmanagedHelpers\WinMM.cs" />
+    <EmbeddedResource Include="Forms\EditorSettingsForm.resx">
+      <DependentUpon>EditorSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

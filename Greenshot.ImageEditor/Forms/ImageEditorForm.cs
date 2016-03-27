@@ -1429,6 +1429,14 @@ namespace Greenshot
             updateUndoRedoSurfaceDependencies();
         }
 
+        private void tsmiSettings_Click(object sender, EventArgs e)
+        {
+            using (EditorSettingsForm settingsForm = new EditorSettingsForm())
+            {
+                settingsForm.ShowDialog();
+            }
+        }
+
         private void tsmiAbout_Click(object sender, EventArgs e)
         {
             using (AboutForm aboutForm = new AboutForm())
