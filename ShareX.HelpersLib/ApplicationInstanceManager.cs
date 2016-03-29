@@ -58,7 +58,7 @@ namespace ShareX.HelpersLib
 
                 if (IsSingleInstance && !IsFirstInstance)
                 {
-                    CreateMultipleInstance(callback, args);
+                    CreateMultipleInstance(args);
                 }
             }
             catch (AbandonedMutexException)
@@ -94,39 +94,53 @@ namespace ShareX.HelpersLib
 
         private void CreateFirstInstance(EventHandler<InstanceCallbackEventArgs> callback)
         {
-            bool createdNew;
-
-            using (EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, EventName, out createdNew))
+            try
             {
-                // Mixing single instance and multi instance (via command line parameter) copies of the program can
-                //  result in CreateFirstInstance being called if it isn't really the first one. Make sure this is
-                //  really first instance by detecting if EventWaitHandle was created
-                if (!createdNew)
+                bool createdNew;
+
+                using (EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, EventName, out createdNew))
                 {
-                    return;
+                    // Mixing single instance and multi instance (via command line parameter) copies of the program can
+                    //  result in CreateFirstInstance being called if it isn't really the first one. Make sure this is
+                    //  really first instance by detecting if EventWaitHandle was created
+                    if (!createdNew)
+                    {
+                        return;
+                    }
+
+                    semaphore = new Semaphore(1, 1, SemaphoreName);
+                    ThreadPool.RegisterWaitForSingleObject(eventWaitHandle, WaitOrTimerCallback, callback, Timeout.Infinite, false);
+
+                    RegisterRemoteType(AppName);
                 }
-
-                semaphore = new Semaphore(1, 1, SemaphoreName);
-                ThreadPool.RegisterWaitForSingleObject(eventWaitHandle, WaitOrTimerCallback, callback, Timeout.Infinite, false);
-
-                RegisterRemoteType(AppName);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
             }
         }
 
-        private void CreateMultipleInstance(EventHandler<InstanceCallbackEventArgs> callback, string[] args)
+        private void CreateMultipleInstance(string[] args)
         {
-            InstanceProxy.CommandLineArgs = args;
-
-            using (EventWaitHandle eventWaitHandle = EventWaitHandle.OpenExisting(EventName))
+            try
             {
-                semaphore = Semaphore.OpenExisting(SemaphoreName);
-                semaphore.WaitOne();
-                UpdateRemoteObject(AppName);
+                InstanceProxy.CommandLineArgs = args;
 
-                if (eventWaitHandle != null)
+                using (EventWaitHandle eventWaitHandle = EventWaitHandle.OpenExisting(EventName))
                 {
-                    eventWaitHandle.Set();
+                    semaphore = Semaphore.OpenExisting(SemaphoreName);
+                    semaphore.WaitOne();
+                    UpdateRemoteObject(AppName);
+
+                    if (eventWaitHandle != null)
+                    {
+                        eventWaitHandle.Set();
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
             }
 
             Environment.Exit(0);
