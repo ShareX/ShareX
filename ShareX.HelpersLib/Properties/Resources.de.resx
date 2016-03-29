@@ -414,7 +414,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Dateipfad in Zwischenablage kopieren</value>
   </data>
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
-    <value>Datei in Zwischenablge kopieren</value>
+    <value>Datei in Zwischenablage kopieren</value>
   </data>
   <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
     <value>Bild in Zwischenablage kopieren</value>
