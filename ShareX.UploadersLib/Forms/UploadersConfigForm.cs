@@ -448,7 +448,7 @@ namespace ShareX.UploadersLib
 
             try
             {
-                txtJiraConfigHelp.Text = string.Format(@"Howto configure your Jira server:
+                txtJiraConfigHelp.Text = string.Format(@"How to configure your Jira server:
 
 - Go to 'Administration' -> 'Add-ons'
 - Select 'Application Links'
