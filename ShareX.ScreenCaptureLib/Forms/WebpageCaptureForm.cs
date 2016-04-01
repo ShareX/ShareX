@@ -33,8 +33,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class WebpageCaptureForm : Form
     {
-        public event Action<Image> OnImageUploadRequested;
-        public event Action<Image> OnImageCopyRequested;
+        public event Action<Image> ImageUploadRequested;
+        public event Action<Image> ImageCopyRequested;
 
         public WebpageCaptureOptions Options { get; set; }
         public bool IsBusy { get; private set; }
@@ -164,6 +164,22 @@ namespace ShareX.ScreenCaptureLib
             btnCapture.Text = IsBusy ? Resources.WebpageCaptureForm_UpdateControls_Stop : Resources.WebpageCaptureForm_UpdateControls_Capture;
             txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = nudWebpageWidth.Enabled = nudWebpageHeight.Enabled = nudCaptureDelay.Enabled = !IsBusy;
             btnCapture.Enabled = txtURL.TextLength > 0;
+        }
+
+        protected void OnImageUploadRequested(Image img)
+        {
+            if (ImageUploadRequested != null)
+            {
+                ImageUploadRequested(img);
+            }
+        }
+
+        protected void OnImageCopyRequested(Image img)
+        {
+            if (ImageCopyRequested != null)
+            {
+                ImageCopyRequested(img);
+            }
         }
 
         private void btnUpload_Click(object sender, EventArgs e)

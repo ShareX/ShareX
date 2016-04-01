@@ -430,7 +430,7 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions, forceSelection);
-            scrollingCaptureForm.ProcessRequested += image => UploadManager.RunImageTask(image, taskSettings);
+            scrollingCaptureForm.ImageProcessRequested += img => UploadManager.RunImageTask(img, taskSettings);
             scrollingCaptureForm.Show();
         }
 
@@ -444,8 +444,8 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             WebpageCaptureForm webpageCaptureForm = new WebpageCaptureForm(Program.Settings.WebpageCaptureOptions);
-            webpageCaptureForm.OnImageUploadRequested += img => UploadManager.RunImageTask(img, taskSettings);
-            webpageCaptureForm.OnImageCopyRequested += img =>
+            webpageCaptureForm.ImageUploadRequested += img => UploadManager.RunImageTask(img, taskSettings);
+            webpageCaptureForm.ImageCopyRequested += img =>
             {
                 using (img)
                 {
@@ -601,7 +601,7 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             ImageCombinerForm imageCombinerForm = new ImageCombinerForm(taskSettings.ToolsSettingsReference.ImageCombinerOptions);
-            imageCombinerForm.ProcessRequested += image => UploadManager.RunImageTask(image, taskSettings);
+            imageCombinerForm.ProcessRequested += img => UploadManager.RunImageTask(img, taskSettings);
             imageCombinerForm.Show();
         }
 

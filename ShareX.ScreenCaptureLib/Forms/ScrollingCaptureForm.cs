@@ -37,7 +37,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class ScrollingCaptureForm : Form
     {
-        public event Action<Image> ProcessRequested;
+        public event Action<Image> ImageProcessRequested;
 
         public ScrollingCaptureOptions Options { get; set; }
         public Image Result { get; set; }
@@ -96,11 +96,11 @@ namespace ShareX.ScreenCaptureLib
             base.Dispose(disposing);
         }
 
-        protected void OnProcessRequested(Image image)
+        protected void OnImageProcessRequested(Image img)
         {
-            if (ProcessRequested != null)
+            if (ImageProcessRequested != null)
             {
-                ProcessRequested(image);
+                ImageProcessRequested(img);
             }
         }
 
@@ -543,7 +543,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Result != null)
             {
-                OnProcessRequested((Image)Result.Clone());
+                OnImageProcessRequested((Image)Result.Clone());
             }
         }
 
