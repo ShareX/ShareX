@@ -890,4 +890,46 @@ store.book[0].title</value>
 В этом случае, хранить объекты дешевле, но их прочности 99.99%, вместо 99.999999999%.
 Это значит, что они могут исчезнуть из Amazon S3 в какой-то момент.</value>
   </data>
+  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
+    <value>Прямая ссылка</value>
+  </data>
+  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
+  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
+    <value>Чтобы получить ключ API, посетите https://someimage.com/api</value>
+  </data>
+  <data name="lvlVgymeUserKey.Text" xml:space="preserve">
+    <value>Ключ пользователя:</value>
+  </data>
+  <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
+    <value>Вы можете получить ключ пользователя со страницы данных аккаунта.</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
+    <value>Ссылка для загрузки:</value>
+  </data>
+  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
+    <value>Сервисы загрузки:</value>
+  </data>
+  <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
+    <value>Пример: http://example.com/api/1/upload</value>
+  </data>
+  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
+    <value>Протестировать все</value>
+  </data>
+  <data name="cbGistPublishPublic.Text" xml:space="preserve">
+    <value>Создать публичный Gist</value>
+  </data>
+  <data name="cbGistUseRawURL.Text" xml:space="preserve">
+    <value>Использовать «сырую» ссылку</value>
+  </data>
+  <data name="cbPastebinRaw.Text" xml:space="preserve">
+    <value>Использовать «сырую» ссылку</value>
+  </data>
+  <data name="cbEmailConfirm.Text" xml:space="preserve">
+    <value>Запрашивать подтверждение перед отправкой</value>
+  </data>
+  <data name="cbMinusPublic.Text" xml:space="preserve">
+    <value>Публичный</value>
+  </data>
 </root>
