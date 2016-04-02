@@ -117,19 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblSteamBuild.Text" xml:space="preserve">
-    <value>Сборка для Steam</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - О программе</value>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Закрыть</value>
   </data>
-  <data name="btnShareXLicense.Text" xml:space="preserve">
-    <value>Лицензия ShareX</value>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Подсказка: если вы добавите пустую задачу, она будет сконвертирована в разделитель.</value>
   </data>
-  <data name="btnLicenses.Text" xml:space="preserve">
-    <value>Лицензии</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Редактор быстрых задач</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Восст. значение по умолчанию</value>
   </data>
 </root>

@@ -657,4 +657,7 @@
   <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
     <value>Проверить отправку ссылки</value>
   </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Скрыть столбцы</value>
+  </data>
 </root>

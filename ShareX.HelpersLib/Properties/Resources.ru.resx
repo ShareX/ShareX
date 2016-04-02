@@ -835,4 +835,28 @@
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
     <value>Случайное число от 0 до 9. Повторение задается через {n}</value>
   </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>Открыть меню быстрых задач</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>Открыть окно истории</value>
+  </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>Файл не существует:</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>Выберите папку</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>Выберите файл</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Открыть окно истории изображений</value>
+  </data>
 </root>

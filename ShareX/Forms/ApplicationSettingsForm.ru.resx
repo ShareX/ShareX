@@ -276,4 +276,55 @@
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
     <value>0 - 25 (0 отключает)</value>
   </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Экспорт...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Импорт...</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>Экспорт / Импорт</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>Сохранять только если ссылка не пуста</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>Сохранять задачи в историю</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>Последние задачи</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>Экспортитовать логи</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Экспортировать историю</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Экспортировать настройки</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>Показывать последние задачи первыми в трее</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>Максимальное количество задач для сохранения</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>Показывать последние задачи в трее</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>Показывать последние задачи в основном окне при запуске</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>Сохранить последние задачи</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>Редактировать меню быстрых задач</value>
+  </data>
 </root>

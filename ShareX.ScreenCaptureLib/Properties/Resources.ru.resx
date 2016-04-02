@@ -311,4 +311,10 @@
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
     <value>[Ctrl + Колесо мыши] Изменить размер пера</value>
   </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Захват</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Стоп</value>
+  </data>
 </root>
