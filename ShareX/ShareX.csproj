@@ -826,6 +826,9 @@
     <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.resx">
       <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.ru.resx">
+      <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.tr.resx">
       <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -833,6 +836,9 @@
       <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.resx">
+      <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.ru.resx">
       <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.tr.resx">
