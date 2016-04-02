@@ -128,9 +128,9 @@ namespace ShareX
         public int HistorySplitterDistance = 550;
 
         public WindowState ImageHistoryWindowState = new WindowState();
-        public int ImageHistoryMaxItemCount = 100;
         public int ImageHistoryViewMode = 3;
         public Size ImageHistoryThumbnailSize = new Size(150, 150);
+        public int ImageHistoryMaxItemCount = 250;
 
         #endregion History
 

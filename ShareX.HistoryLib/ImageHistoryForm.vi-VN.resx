@@ -123,14 +123,14 @@
   <data name="tsbQuickList.Text" xml:space="preserve">
     <value>Chỉ hiện 100 ảnh gần đây nhất</value>
   </data>
-  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
-    <value>Kích thước nhỏ</value>
+  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
+    <value>Thư viện</value>
   </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>Chế độ xem</value>
   </data>
-  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
-    <value>Thư viện</value>
+  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
+    <value>Kích thước nhỏ</value>
   </data>
   <data name="tsmiViewModePane.Text" xml:space="preserve">
     <value>Khung</value>

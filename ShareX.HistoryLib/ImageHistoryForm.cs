@@ -52,7 +52,6 @@ namespace ShareX.HistoryLib
             Icon = ShareXResources.Icon;
 
             HistoryPath = historyPath;
-            MaxItemCount = maxItemCount;
 
             ViewMode = viewMode.Between(0, 3);
             ilvImages.View = (View)ViewMode;
@@ -94,7 +93,24 @@ namespace ShareX.HistoryLib
                     break;
             }
 
-            tsbQuickList.Checked = MaxItemCount > 0;
+            MaxItemCount = maxItemCount;
+
+            if (MaxItemCount <= 0)
+            {
+                tsmiMaxImageLimit0.RadioCheck();
+            }
+            else if (MaxItemCount <= 100)
+            {
+                tsmiMaxImageLimit100.RadioCheck();
+            }
+            else if (MaxItemCount <= 250)
+            {
+                tsmiMaxImageLimit250.RadioCheck();
+            }
+            else
+            {
+                tsmiMaxImageLimit1000.RadioCheck();
+            }
 
             him = new HistoryItemManager();
             him.GetHistoryItems += him_GetHistoryItems;
@@ -241,17 +257,31 @@ namespace ShareX.HistoryLib
             ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
-        private void tsbQuickList_Click(object sender, EventArgs e)
+        private void tsmiMaxImageLimit100_Click(object sender, EventArgs e)
         {
-            if (tsbQuickList.Checked)
-            {
-                MaxItemCount = 100;
-            }
-            else
-            {
-                MaxItemCount = 0;
-            }
+            tsmiMaxImageLimit100.RadioCheck();
+            MaxItemCount = 100;
+            RefreshHistoryItems();
+        }
 
+        private void tsmiMaxImageLimit250_Click(object sender, EventArgs e)
+        {
+            tsmiMaxImageLimit250.RadioCheck();
+            MaxItemCount = 250;
+            RefreshHistoryItems();
+        }
+
+        private void tsmiMaxImageLimit1000_Click(object sender, EventArgs e)
+        {
+            tsmiMaxImageLimit1000.RadioCheck();
+            MaxItemCount = 1000;
+            RefreshHistoryItems();
+        }
+
+        private void tsmiMaxImageLimit0_Click(object sender, EventArgs e)
+        {
+            tsmiMaxImageLimit0.RadioCheck();
+            MaxItemCount = 0;
             RefreshHistoryItems();
         }
 
