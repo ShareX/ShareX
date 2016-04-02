@@ -107,7 +107,16 @@ namespace ShareX
         public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ShareX");
         private static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath("ShareX");
         private static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath("../../Data");
-        private static readonly string PersonalPathConfigFilePath = Helpers.GetAbsolutePath("PersonalPath.cfg");
+
+        private static string PersonalPathConfigFilePath
+        {
+            get
+            {
+                string oldPath = Helpers.GetAbsolutePath("PersonalPath.cfg");
+                return File.Exists(oldPath) ? oldPath : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"ShareX\PersonalPath.cfg");
+            }
+        }
+
         private static readonly string PortableCheckFilePath = Helpers.GetAbsolutePath("Portable");
         private static readonly string PortableAppsCheckFilePath = Helpers.GetAbsolutePath("PortableApps");
         public static readonly string ChromeHostFilePath = Helpers.GetAbsolutePath("ShareX_Chrome.exe");
@@ -509,6 +518,7 @@ namespace ShareX
                 {
                     try
                     {
+                        Helpers.CreateDirectoryFromFilePath(PersonalPathConfigFilePath);
                         File.WriteAllText(PersonalPathConfigFilePath, path, Encoding.UTF8);
                     }
                     catch (UnauthorizedAccessException)
