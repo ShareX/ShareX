@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Bilderchronik</value>
   </data>
-  <data name="tsbQuickList.Text" xml:space="preserve">
-    <value>Nur 100 Bilder anzeigen</value>
-  </data>
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
     <value>Galerie</value>
   </data>

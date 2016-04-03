@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Afbeeldingsgeschiedenis</value>
   </data>
-  <data name="tsbQuickList.Text" xml:space="preserve">
-    <value>Toon enkel de laatste  100 afbeeldingen</value>
-  </data>
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
     <value>Gallerij</value>
   </data>

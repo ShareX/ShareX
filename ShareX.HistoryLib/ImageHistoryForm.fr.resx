@@ -135,7 +135,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Historique des images</value>
   </data>
-  <data name="tsbQuickList.Text" xml:space="preserve">
-    <value>Afficher seulement les 100 dernières images</value>
-  </data>
 </root>

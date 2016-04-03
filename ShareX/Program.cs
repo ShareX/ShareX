@@ -117,7 +117,7 @@ namespace ShareX
             {
                 string oldPath = Helpers.GetAbsolutePath(PersonalPathConfigFileName);
 
-                if (IsPortable || IsPortableApps || File.Exists(oldPath))
+                if (IsPortable || File.Exists(oldPath))
                 {
                     return oldPath;
                 }

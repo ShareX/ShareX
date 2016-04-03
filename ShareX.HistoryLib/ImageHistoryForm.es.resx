@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Historial de la imagen</value>
   </data>
-  <data name="tsbQuickList.Text" xml:space="preserve">
-    <value>Mostrar sólo los últimos 100 imágenes</value>
-  </data>
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
     <value>Galería</value>
   </data>
