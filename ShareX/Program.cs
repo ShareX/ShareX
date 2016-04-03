@@ -104,16 +104,25 @@ namespace ShareX
 
         #region Paths
 
-        public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ShareX");
-        private static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath("ShareX");
+        private const string AppName = "ShareX";
+        private const string PersonalPathConfigFileName = "PersonalPath.cfg";
+
+        public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), AppName);
+        private static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath(AppName);
         private static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath("../../Data");
 
         private static string PersonalPathConfigFilePath
         {
             get
             {
-                string oldPath = Helpers.GetAbsolutePath("PersonalPath.cfg");
-                return File.Exists(oldPath) ? oldPath : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"ShareX\PersonalPath.cfg");
+                string oldPath = Helpers.GetAbsolutePath(PersonalPathConfigFileName);
+
+                if (IsPortable || IsPortableApps || File.Exists(oldPath))
+                {
+                    return oldPath;
+                }
+
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), AppName, PersonalPathConfigFileName);
             }
         }
 
