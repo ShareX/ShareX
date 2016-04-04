@@ -123,14 +123,14 @@
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
     <value>Galería</value>
   </data>
+  <data name="tsmiViewModePane.Text" xml:space="preserve">
+    <value>Ventana</value>
+  </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>Modo de visualización</value>
   </data>
   <data name="tsddbThumbnailSize.Text" xml:space="preserve">
     <value>Tamaño miniatura</value>
-  </data>
-  <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>Ventana</value>
   </data>
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>Miniaturas</value>

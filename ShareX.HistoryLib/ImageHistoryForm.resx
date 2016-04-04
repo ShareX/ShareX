@@ -214,61 +214,37 @@
     <value>None</value>
   </data>
   <data name="tsmiViewModeThumbnails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>137, 22</value>
   </data>
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>Thumbnails</value>
   </data>
   <data name="tsmiViewModeGallery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="tsmiViewModePane.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="tsddbViewMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 20</value>
+    <value>137, 22</value>
   </data>
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
     <value>Gallery</value>
   </data>
-  <data name="tsmiThumbnailSize75.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="tsmiThumbnailSize100.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="tsmiThumbnailSize150.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="tsmiThumbnailSize200.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="tsmiThumbnailSize250.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="tsddbThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+  <data name="tsmiViewModePane.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 22</value>
   </data>
   <data name="tsmiViewModePane.Text" xml:space="preserve">
     <value>Pane</value>
   </data>
-  <data name="tsmiMaxImageLimit100.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="tsmiThumbnailSize75.Text" xml:space="preserve">
-    <value>75 x 75</value>
-  </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>View mode</value>
   </data>
-  <data name="tsmiMaxImageLimit250.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="tsmiThumbnailSize100.Text" xml:space="preserve">
+    <value>100 x 100</value>
   </data>
-  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
-    <value>Last 250</value>
+  <data name="tsmiThumbnailSize150.Text" xml:space="preserve">
+    <value>150 x 150</value>
+  </data>
+  <data name="tsmiThumbnailSize200.Text" xml:space="preserve">
+    <value>200 x 200</value>
   </data>
   <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
-    <value>Image count limit</value>
+    <value>Maximum image limit</value>
   </data>
   <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
     <value>No limit</value>
@@ -276,17 +252,53 @@
   <data name="tsmiMaxImageLimit1000.Text" xml:space="preserve">
     <value>Last 1000</value>
   </data>
+  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
+    <value>Last 250</value>
+  </data>
+  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
+    <value>Last 100</value>
+  </data>
+  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
+    <value>Thumbnail size</value>
+  </data>
+  <data name="tsmiThumbnailSize250.Text" xml:space="preserve">
+    <value>250 x 250</value>
+  </data>
+  <data name="tsmiThumbnailSize75.Text" xml:space="preserve">
+    <value>75 x 75</value>
+  </data>
+  <data name="tsddbViewMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 20</value>
+  </data>
+  <data name="tsmiThumbnailSize75.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiThumbnailSize100.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiThumbnailSize150.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiThumbnailSize200.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiThumbnailSize250.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsddbThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="tsmiMaxImageLimit100.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="tsmiMaxImageLimit250.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
   <data name="tsmiMaxImageLimit1000.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
-  <data name="tsmiThumbnailSize100.Text" xml:space="preserve">
-    <value>100 x 100</value>
-  </data>
   <data name="tsmiMaxImageLimit0.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
-  </data>
-  <data name="tsmiThumbnailSize150.Text" xml:space="preserve">
-    <value>150 x 150</value>
   </data>
   <data name="tsddbMaxImageLimit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -307,19 +319,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbMaxImageLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 20</value>
-  </data>
-  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
-    <value>Last 100</value>
-  </data>
-  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
-    <value>Thumbnail size</value>
-  </data>
-  <data name="tsmiThumbnailSize250.Text" xml:space="preserve">
-    <value>250 x 250</value>
-  </data>
-  <data name="tsmiThumbnailSize200.Text" xml:space="preserve">
-    <value>200 x 200</value>
+    <value>137, 20</value>
   </data>
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
@@ -328,7 +328,7 @@
     <value>3, 1, 3, 1</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 25</value>
+    <value>329, 25</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -450,12 +450,6 @@
   <data name="&gt;&gt;tsddbMaxImageLimit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiMaxImageLimit0.Name" xml:space="preserve">
-    <value>tsmiMaxImageLimit0</value>
-  </data>
-  <data name="&gt;&gt;tsmiMaxImageLimit0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiMaxImageLimit100.Name" xml:space="preserve">
     <value>tsmiMaxImageLimit100</value>
   </data>
@@ -472,6 +466,12 @@
     <value>tsmiMaxImageLimit1000</value>
   </data>
   <data name="&gt;&gt;tsmiMaxImageLimit1000.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiMaxImageLimit0.Name" xml:space="preserve">
+    <value>tsmiMaxImageLimit0</value>
+  </data>
+  <data name="&gt;&gt;tsmiMaxImageLimit0.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

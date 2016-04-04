@@ -123,14 +123,14 @@
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
     <value>Galéria</value>
   </data>
+  <data name="tsmiViewModePane.Text" xml:space="preserve">
+    <value>Osztásmező</value>
+  </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>Nézet mód</value>
   </data>
   <data name="tsddbThumbnailSize.Text" xml:space="preserve">
     <value>Előnézeti kép méret</value>
-  </data>
-  <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>Osztásmező</value>
   </data>
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>Előnézeti képek</value>

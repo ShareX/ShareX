@@ -846,16 +846,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select one of the Pomf uploaders from &quot;Destination settings window -&gt; Pomf tab&quot;..
-        /// </summary>
-        internal static string Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__ {
-            get {
-                return ResourceManager.GetString("Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_wi" +
-                        "ndow____Pomf_tab__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Pushbullet {
@@ -932,15 +922,6 @@ namespace ShareX.UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("Sul", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unable to find a valid Twitter account..
-        /// </summary>
-        internal static string TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_ {
-            get {
-                return ResourceManager.GetString("TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_", resourceCulture);
             }
         }
         

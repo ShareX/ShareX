@@ -35,40 +35,33 @@ namespace ShareX.UploadersLib.SharingServices
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(config.EmailSmtpServer) && config.EmailSmtpPort > 0 && !string.IsNullOrEmpty(config.EmailFrom)
-                && !string.IsNullOrEmpty(config.EmailPassword);
+            return !string.IsNullOrEmpty(config.EmailSmtpServer) && config.EmailSmtpPort > 0 && !string.IsNullOrEmpty(config.EmailFrom) && !string.IsNullOrEmpty(config.EmailPassword);
         }
 
         public override void ShareURL(string url, UploadersConfig config)
         {
-            if (CheckConfig(config))
+            using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : string.Empty, config.EmailDefaultSubject, url))
             {
-                using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : string.Empty,
-                    config.EmailDefaultSubject, url))
+                if (emailForm.ShowDialog() == DialogResult.OK)
                 {
-                    if (emailForm.ShowDialog() == DialogResult.OK)
+                    if (config.EmailRememberLastTo)
                     {
-                        if (config.EmailRememberLastTo)
-                        {
-                            config.EmailLastTo = emailForm.ToEmail;
-                        }
-
-                        Email email = new Email
-                        {
-                            SmtpServer = config.EmailSmtpServer,
-                            SmtpPort = config.EmailSmtpPort,
-                            FromEmail = config.EmailFrom,
-                            Password = config.EmailPassword
-                        };
-
-                        email.Send(emailForm.ToEmail, emailForm.Subject, emailForm.Body);
+                        config.EmailLastTo = emailForm.ToEmail;
                     }
+
+                    Email email = new Email
+                    {
+                        SmtpServer = config.EmailSmtpServer,
+                        SmtpPort = config.EmailSmtpPort,
+                        FromEmail = config.EmailFrom,
+                        Password = config.EmailPassword
+                    };
+
+                    email.Send(emailForm.ToEmail, emailForm.Subject, emailForm.Body);
                 }
             }
-            else
-            {
-                URLHelpers.OpenURL("mailto:?body=" + URLHelpers.URLEncode(url));
-            }
+
+            //URLHelpers.OpenURL("mailto:?body=" + URLHelpers.URLEncode(url));
         }
     }
 }

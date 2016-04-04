@@ -61,12 +61,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(Config.UserAPIKey))
-            {
-                Errors.Add("Missing API key. Set one in destination settings.");
-                return null;
-            }
-
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("api_key", Config.UserAPIKey);
             UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments, method: HttpMethod.PUT);

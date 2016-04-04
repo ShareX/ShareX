@@ -192,12 +192,6 @@ namespace ShareX.UploadersLib.FileUploaders
         // https://www.dropbox.com/developers/core/docs#files_put
         public UploadResult UploadFile(Stream stream, string path, string fileName, bool createShareableURL = false, DropboxURLType urlType = DropboxURLType.Default)
         {
-            if (!OAuth2Info.CheckOAuth(AuthInfo))
-            {
-                Errors.Add("Dropbox login is required.");
-                return null;
-            }
-
             string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
 
             // There's a 150MB limit to all uploads through the API.

@@ -380,6 +380,42 @@ Created folders:</value>
   <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
     <value>Hubic refresh folders list failed</value>
   </data>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>Refresh authorization is not supported.</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>Directory name to create</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>User ID:</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Invalid device name</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Status: Login failed.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Upload path:</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Box refresh folders list failed</value>
+  </data>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
+    <value>Delete file?</value>
+  </data>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Root folder</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Logged in as {0}.</value>
+  </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>Response parse failed.</value>
+  </data>
   <data name="TinyPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\TinyPic.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -388,9 +424,6 @@ Created folders:</value>
   </data>
   <data name="Lambda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Lambda.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__" xml:space="preserve">
-    <value>Please select one of the Pomf uploaders from "Destination settings window -&gt; Pomf tab".</value>
   </data>
   <data name="Pushbullet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Pushbullet.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -404,12 +437,6 @@ Created folders:</value>
   <data name="Polr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Polr.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Refresh authorization is not supported.</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Directory name to create</value>
-  </data>
   <data name="page_white_powerpoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page_white_powerpoint.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -418,9 +445,6 @@ Created folders:</value>
   </data>
   <data name="AdFly" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\AdFly.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>User ID:</value>
   </data>
   <data name="folder_public" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder_public.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -440,38 +464,14 @@ Created folders:</value>
   <data name="AmazonS3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\AmazonS3.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Invalid device name</value>
-  </data>
   <data name="page_white_picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page_white_picture.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Status: Login failed.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Upload path:</value>
-  </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Box refresh folders list failed</value>
-  </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>Delete file?</value>
   </data>
   <data name="OneDrive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\OneDrive.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Root folder</value>
-  </data>
   <data name="page_white_ruby" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page_white_ruby.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Logged in as {0}.</value>
   </data>
   <data name="page_white_cup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page_white_cup.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -493,11 +493,5 @@ Created folders:</value>
   </data>
   <data name="SomeImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\favicons\someimage.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Unable to find a valid Twitter account.</value>
-  </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Response parse failed.</value>
   </data>
 </root>

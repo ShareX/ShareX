@@ -86,12 +86,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (Uploader == null || string.IsNullOrEmpty(Uploader.UploadURL))
-            {
-                Errors.Add(Resources.Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__);
-                return null;
-            }
-
             UploadResult result = UploadData(stream, Uploader.UploadURL, fileName, "files[]");
 
             if (result.IsSuccess)

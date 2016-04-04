@@ -126,9 +126,6 @@
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Authentification requise.</value>
   </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Le rafraichissement de la liste des dossiers Box a échoué</value>
-  </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Chercher un fichier certificat...</value>
   </data>
@@ -151,12 +148,6 @@ Dossiers créés:</value>
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>Connexion à {0}</value>
   </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>Supprimer le fichier ?</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Nom du dossier à créer</value>
-  </data>
   <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
     <value>Nom du dossier à créer</value>
   </data>
@@ -166,23 +157,14 @@ Dossiers créés:</value>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
     <value>Email:</value>
   </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Erreur</value>
-  </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>Erreur: Le résultat est vide.</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
     <value>Authentification invalide</value>
   </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Nom de périphérique non valide</value>
-  </data>
   <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
     <value>Problème non trouvé</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Connecté en tant que {0}.</value>
   </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
     <value>Échec de la connexion.</value>
@@ -214,26 +196,14 @@ Dossiers créés:</value>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Interrogation des dossiers...</value>
   </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Rafraîchir l'autorisation n'est pas supporté.</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Dossier sélectionné:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>ID de l'utilisateur:</value>
-  </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Dossier racine</value>
   </data>
   <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
     <value>Enregistrement SendSpace</value>
   </data>
   <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
     <value>Statut: Connecté.</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Statut: Échec de la connexion.</value>
   </data>
   <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
     <value>Statut: Non connecté.</value>
@@ -244,25 +214,49 @@ Dossiers créés:</value>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX client FTP</value>
   </data>
+  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
+    <value>Le rafraichissement de la liste des dossiers Hubic a échoué</value>
+  </data>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>Rafraîchir l'autorisation n'est pas supporté.</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>Nom du dossier à créer</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>ID de l'utilisateur:</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Nom de périphérique non valide</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Statut: Échec de la connexion.</value>
+  </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
     <value>Chemin de mise en ligne:</value>
   </data>
-  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
-    <value>Le rafraichissement de la liste des dossiers Hubic a échoué</value>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Le rafraichissement de la liste des dossiers Box a échoué</value>
+  </data>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
+    <value>Supprimer le fichier ?</value>
+  </data>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Dossier racine</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Connecté en tant que {0}.</value>
+  </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>L'analyse de la réponse a échoué.</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Impossible de trouver un compte FTP valide.</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>Le client FTP supporte uniquement FTP ou FTPS.</value>
-  </data>
-  <data name="Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__" xml:space="preserve">
-    <value>Merci de sélectionner un des services de mise en ligne Pomf depuis la fenêtre "Paramètres de destinations -&gt; onglet Pomf".</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Impossible de trouver un compte Twitter valide.</value>
-  </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>L'analyse de la réponse a échoué.</value>
   </data>
 </root>

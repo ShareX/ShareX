@@ -43,10 +43,10 @@
             this.tsmiThumbnailSize200 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThumbnailSize250 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsddbMaxImageLimit = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsmiMaxImageLimit0 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMaxImageLimit100 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMaxImageLimit250 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMaxImageLimit1000 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMaxImageLimit0 = new System.Windows.Forms.ToolStripMenuItem();
             this.tscMain.ContentPanel.SuspendLayout();
             this.tscMain.TopToolStripPanel.SuspendLayout();
             this.tscMain.SuspendLayout();
@@ -176,12 +176,6 @@
             resources.ApplyResources(this.tsddbMaxImageLimit, "tsddbMaxImageLimit");
             this.tsddbMaxImageLimit.Name = "tsddbMaxImageLimit";
             // 
-            // tsmiMaxImageLimit0
-            // 
-            this.tsmiMaxImageLimit0.Name = "tsmiMaxImageLimit0";
-            resources.ApplyResources(this.tsmiMaxImageLimit0, "tsmiMaxImageLimit0");
-            this.tsmiMaxImageLimit0.Click += new System.EventHandler(this.tsmiMaxImageLimit0_Click);
-            // 
             // tsmiMaxImageLimit100
             // 
             this.tsmiMaxImageLimit100.Name = "tsmiMaxImageLimit100";
@@ -199,6 +193,12 @@
             this.tsmiMaxImageLimit1000.Name = "tsmiMaxImageLimit1000";
             resources.ApplyResources(this.tsmiMaxImageLimit1000, "tsmiMaxImageLimit1000");
             this.tsmiMaxImageLimit1000.Click += new System.EventHandler(this.tsmiMaxImageLimit1000_Click);
+            // 
+            // tsmiMaxImageLimit0
+            // 
+            this.tsmiMaxImageLimit0.Name = "tsmiMaxImageLimit0";
+            resources.ApplyResources(this.tsmiMaxImageLimit0, "tsmiMaxImageLimit0");
+            this.tsmiMaxImageLimit0.Click += new System.EventHandler(this.tsmiMaxImageLimit0_Click);
             // 
             // ImageHistoryForm
             // 

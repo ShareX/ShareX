@@ -123,14 +123,14 @@
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
     <value>갤러리</value>
   </data>
+  <data name="tsmiViewModePane.Text" xml:space="preserve">
+    <value>구획</value>
+  </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>보기 방식</value>
   </data>
   <data name="tsddbThumbnailSize.Text" xml:space="preserve">
     <value>섬네일 크기</value>
-  </data>
-  <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>구획</value>
   </data>
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>섬네일</value>
