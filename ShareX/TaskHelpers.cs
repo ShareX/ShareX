@@ -154,7 +154,8 @@ namespace ShareX
 
             if (image != null)
             {
-                nameParser.Picture = image;
+                nameParser.ImageWidth = image.Width;
+                nameParser.ImageHeight = image.Height;
 
                 ImageTag imageTag = image.Tag as ImageTag;
 

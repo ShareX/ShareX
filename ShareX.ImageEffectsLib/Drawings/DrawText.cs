@@ -165,7 +165,14 @@ namespace ShareX.ImageEffectsLib
                     return img;
                 }
 
-                NameParser parser = new NameParser(NameParserType.Text) { Picture = img };
+                NameParser parser = new NameParser(NameParserType.Text);
+
+                if (img != null)
+                {
+                    parser.ImageWidth = img.Width;
+                    parser.ImageHeight = img.Height;
+                }
+
                 string parsedText = parser.Parse(Text);
 
                 Size textSize = Helpers.MeasureText(parsedText, textFont);

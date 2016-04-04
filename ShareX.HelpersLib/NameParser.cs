@@ -92,7 +92,8 @@ namespace ShareX.HelpersLib
         public int MaxNameLength { get; set; }
         public int MaxTitleLength { get; set; }
         public int AutoIncrementNumber { get; set; } // %i, %ia, %ib, %iAa, %ix
-        public Image Picture { get; set; } // %width, %height
+        public int ImageWidth { get; set; } // %width
+        public int ImageHeight { get; set; } // %height
         public string WindowText { get; set; } // %t
         public string ProcessName { get; set; } // %pn
         public TimeZoneInfo CustomTimeZone { get; set; }
@@ -137,10 +138,14 @@ namespace ShareX.HelpersLib
 
             string width = string.Empty, height = string.Empty;
 
-            if (Picture != null)
+            if (ImageWidth > 0)
             {
-                width = Picture.Width.ToString();
-                height = Picture.Height.ToString();
+                width = ImageWidth.ToString();
+            }
+
+            if (ImageHeight > 0)
+            {
+                height = ImageHeight.ToString();
             }
 
             sb.Replace(ReplCodeMenuEntry.width.ToPrefixString(), width);

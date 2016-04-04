@@ -344,6 +344,8 @@ namespace ShareX
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
                 WindowText = Text,
                 ProcessName = "ShareX",
+                ImageWidth = 1920,
+                ImageHeight = 1080,
                 MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
                 MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength,
                 CustomTimeZone = TaskSettings.UploadSettings.UseCustomTimeZone ? TaskSettings.UploadSettings.CustomTimeZone : null
