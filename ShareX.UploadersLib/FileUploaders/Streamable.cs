@@ -101,7 +101,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (response.Status > 2)
                     {
-                        result.Errors.Add(response.Message);
+                        Errors.Add(response.Message);
                         result.IsSuccess = false;
                         break;
                     }
@@ -131,7 +131,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
             else
             {
-                result.Errors.Add("Could not create video");
+                Errors.Add("Could not create video");
                 result.IsSuccess = false;
             }
         }

@@ -151,16 +151,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            var validationErrors = new List<string>();
+            if (string.IsNullOrEmpty(s3Settings.AccessKeyID)) Errors.Add("'Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.SecretAccessKey)) Errors.Add("'Secret Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.Bucket)) Errors.Add("'Bucket' must not be empty.");
+            if (GetCurrentRegion(s3Settings) == UnknownEndpoint) Errors.Add("Please select an endpoint.");
 
-            if (string.IsNullOrEmpty(s3Settings.AccessKeyID)) validationErrors.Add("'Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(s3Settings.SecretAccessKey)) validationErrors.Add("'Secret Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(s3Settings.Bucket)) validationErrors.Add("'Bucket' must not be empty.");
-            if (GetCurrentRegion(s3Settings) == UnknownEndpoint) validationErrors.Add("Please select an endpoint.");
-
-            if (validationErrors.Any())
+            if (IsError)
             {
-                return new UploadResult { Errors = validationErrors };
+                return null;
             }
 
             var region = GetCurrentRegion(s3Settings);
@@ -197,13 +195,15 @@ namespace ShareX.UploadersLib.FileUploaders
                 var responseHeaders = SendRequestStreamGetHeaders(client.GetPreSignedURL(putRequest), stream, Helpers.GetMimeType(fileName), requestHeaders, method: HttpMethod.PUT);
                 if (responseHeaders.Count == 0)
                 {
-                    return new UploadResult { Errors = new List<string> { "Upload to Amazon S3 failed. Check your access credentials." } };
+                    Errors.Add("Upload to Amazon S3 failed. Check your access credentials.");
+                    return null;
                 }
 
                 var eTag = responseHeaders.Get("ETag");
                 if (eTag == null)
                 {
-                    return new UploadResult { Errors = new List<string> { "Upload to Amazon S3 failed." } };
+                    Errors.Add("Upload to Amazon S3 failed.");
+                    return null;
                 }
 
                 if (GetMd5Hash(stream) == eTag.Replace("\"", ""))
@@ -211,7 +211,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     return new UploadResult { IsSuccess = true, URL = GetObjectURL(putRequest.Key) };
                 }
 
-                return new UploadResult { Errors = new List<string> { "Upload to Amazon S3 failed, uploaded data did not match." } };
+                Errors.Add("Upload to Amazon S3 failed, uploaded data did not match.");
+                return null;
             }
         }
     }

@@ -230,7 +230,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     UploadResult res = UploadData(stream, query, fileName, headers: headers);
                     if (res.Response.Contains("errorMessages"))
                     {
-                        res.Errors.Add(res.Response);
+                        Errors.Add(res.Response);
                     }
                     else
                     {

@@ -104,7 +104,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (response.Error != null)
                     {
-                        result.Errors.Add(response.Error);
+                        Errors.Add(response.Error);
                         result.IsSuccess = false;
                         break;
                     }
@@ -125,7 +125,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
             else
             {
-                result.Errors.Add(transcodeResponse.Error);
+                Errors.Add(transcodeResponse.Error);
                 result.IsSuccess = false;
             }
         }
