@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return OAuth2Info.CheckOAuth(config.OneDriveOAuth2Info);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new OneDrive(config.OneDriveOAuth2Info)
             {

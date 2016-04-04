@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             return config.TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(config.TinyPicRegistrationCode);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, config.TinyPicAccountType, config.TinyPicRegistrationCode);
         }

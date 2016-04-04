@@ -45,7 +45,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return config.FTPAccountList != null && config.FTPAccountList.IsValidIndex(config.FTPSelectedFile);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             int index;
 

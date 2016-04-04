@@ -23,10 +23,12 @@
 
 #endregion License Information (GPL v3)
 
+using System.IO;
+
 namespace ShareX.UploadersLib
 {
-    public abstract class TextUploaderService : UploaderService<TextDestination>, IGenericUploaderService
+    public abstract class GenericUploader : Uploader
     {
-        public abstract GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo);
+        public abstract UploadResult Upload(Stream stream, string fileName);
     }
 }

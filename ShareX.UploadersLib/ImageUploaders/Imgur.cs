@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             return config.ImgurAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(config.ImgurOAuth2Info);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             if (config.ImgurOAuth2Info == null)
             {

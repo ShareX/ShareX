@@ -39,7 +39,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             return config.ImageShackSettings != null && !string.IsNullOrEmpty(config.ImageShackSettings.Auth_token);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new ImageShackUploader(APIKeys.ImageShackKey, config.ImageShackSettings);
         }

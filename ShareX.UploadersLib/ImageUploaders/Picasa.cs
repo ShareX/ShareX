@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             return OAuth2Info.CheckOAuth(config.PicasaOAuth2Info);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new Picasa(config.PicasaOAuth2Info)
             {

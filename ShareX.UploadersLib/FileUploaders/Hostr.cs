@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return !string.IsNullOrEmpty(config.LocalhostrEmail) && !string.IsNullOrEmpty(config.LocalhostrPassword);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new Hostr(config.LocalhostrEmail, config.LocalhostrPassword)
             {

@@ -30,11 +30,12 @@ namespace ShareX.UploadersLib
 {
     public abstract class ImageUploader : FileUploader
     {
-        public UploadResult Upload(Image image, string fileName)
+        public UploadResult UploadImage(Image image, string fileName)
         {
             using (MemoryStream stream = new MemoryStream())
             {
                 image.Save(stream, image.RawFormat);
+
                 return Upload(stream, fileName);
             }
         }

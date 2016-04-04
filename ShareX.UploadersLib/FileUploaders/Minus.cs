@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return config.MinusConfig != null && config.MinusConfig.MinusUser != null;
         }
 
-        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new Minus(config.MinusConfig, config.MinusOAuth2Info);
         }

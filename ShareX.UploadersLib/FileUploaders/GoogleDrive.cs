@@ -39,7 +39,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return OAuth2Info.CheckOAuth(config.GoogleDriveOAuth2Info);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new GoogleDrive(config.GoogleDriveOAuth2Info)
             {

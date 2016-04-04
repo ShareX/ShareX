@@ -25,9 +25,6 @@
 
 namespace ShareX.UploadersLib
 {
-    /// <summary>
-    /// Defines a service capable of sharing a URL to (eg. Facebook, Twitter)
-    /// </summary>
     public abstract class URLSharingService : UploaderService<URLSharingServices>
     {
         public abstract void ShareURL(string url, UploadersConfig config);

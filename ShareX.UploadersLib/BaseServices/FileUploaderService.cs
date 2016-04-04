@@ -25,8 +25,8 @@
 
 namespace ShareX.UploadersLib
 {
-    public abstract class FileUploaderService : UploaderService<FileDestination>
+    public abstract class FileUploaderService : UploaderService<FileDestination>, IGenericUploaderService
     {
-        public abstract FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo);
+        public abstract GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo);
     }
 }

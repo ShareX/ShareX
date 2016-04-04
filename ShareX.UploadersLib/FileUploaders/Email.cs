@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 !string.IsNullOrEmpty(config.EmailPassword);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : string.Empty,
                 config.EmailDefaultSubject, config.EmailDefaultBody))

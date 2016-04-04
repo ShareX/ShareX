@@ -137,6 +137,19 @@ namespace ShareX
             }
         }
 
+        public string CaptureFolder
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
+                {
+                    return Helpers.ExpandFolderVariables(AdvancedSettings.CapturePath);
+                }
+
+                return Program.ScreenshotsFolder;
+            }
+        }
+
         public static TaskSettings GetDefaultTaskSettings()
         {
             TaskSettings taskSettings = new TaskSettings();
@@ -229,16 +242,17 @@ namespace ShareX
             }
         }
 
-        public string CaptureFolder
+        public FileDestination GetFileDestinationByDataType(EDataType dataType)
         {
-            get
+            switch (dataType)
             {
-                if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
-                {
-                    return Helpers.ExpandFolderVariables(AdvancedSettings.CapturePath);
-                }
-
-                return Program.ScreenshotsFolder;
+                case EDataType.Image:
+                    return ImageFileDestination;
+                case EDataType.Text:
+                    return TextFileDestination;
+                default:
+                case EDataType.File:
+                    return FileDestination;
             }
         }
     }

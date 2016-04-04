@@ -28,11 +28,9 @@ using System.Text;
 
 namespace ShareX.UploadersLib
 {
-    public abstract class TextUploader : Uploader
+    public abstract class TextUploader : GenericUploader
     {
-        public abstract UploadResult UploadText(string text, string fileName);
-
-        public UploadResult UploadText(Stream stream, string fileName)
+        public override UploadResult Upload(Stream stream, string fileName)
         {
             using (StreamReader sr = new StreamReader(stream, Encoding.UTF8))
             {
@@ -40,13 +38,15 @@ namespace ShareX.UploadersLib
             }
         }
 
+        public abstract UploadResult UploadText(string text, string fileName);
+
         public UploadResult UploadTextFile(string filePath)
         {
             if (File.Exists(filePath))
             {
                 using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    return UploadText(stream, Path.GetFileName(filePath));
+                    return Upload(stream, Path.GetFileName(filePath));
                 }
             }
 

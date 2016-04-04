@@ -27,11 +27,9 @@ using System.IO;
 
 namespace ShareX.UploadersLib
 {
-    public abstract class FileUploader : Uploader
+    public abstract class FileUploader : GenericUploader
     {
-        public abstract UploadResult Upload(Stream stream, string fileName);
-
-        public UploadResult Upload(string filePath)
+        public UploadResult UploadFile(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {

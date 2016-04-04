@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return config.Ge_ttLogin != null && !string.IsNullOrEmpty(config.Ge_ttLogin.AccessToken);
         }
 
-        public override FileUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new Ge_tt(APIKeys.Ge_ttKey)
             {

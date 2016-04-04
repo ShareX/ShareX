@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             return config.PhotobucketAccountInfo != null && OAuthInfo.CheckOAuth(config.PhotobucketOAuthInfo);
         }
 
-        public override ImageUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new Photobucket(config.PhotobucketOAuthInfo, config.PhotobucketAccountInfo);
         }

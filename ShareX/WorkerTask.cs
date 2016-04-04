@@ -834,69 +834,44 @@ namespace ShareX
             }
         }
 
-        public UploadResult UploadImage(Stream stream, string fileName)
+        public UploadResult UploadData(IGenericUploaderService service, Stream stream, string fileName)
         {
-            ImageUploaderService imageUploaderService = UploaderFactory.GetImageUploaderServiceByEnum(Info.TaskSettings.ImageDestination);
-
-            if (!imageUploaderService.CheckConfig(Program.UploadersConfig))
+            if (!service.CheckConfig(Program.UploadersConfig))
             {
-                return GetInvalidConfigResult(imageUploaderService);
+                return GetInvalidConfigResult(service);
             }
 
-            ImageUploader imageUploader = imageUploaderService.CreateUploader(Program.UploadersConfig, taskReferenceHelper);
+            GenericUploader uploader = service.CreateUploader(Program.UploadersConfig, taskReferenceHelper);
 
-            if (imageUploader != null)
+            if (uploader != null)
             {
-                PrepareUploader(imageUploader);
+                uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
+                uploader.ProgressChanged += uploader_ProgressChanged;
 
-                return imageUploader.Upload(stream, fileName);
+                if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard) && Info.TaskSettings.AdvancedSettings.EarlyCopyURL)
+                {
+                    uploader.EarlyURLCopyRequested += url => ClipboardHelpers.CopyText(url);
+                }
+
+                return uploader.Upload(stream, fileName);
             }
 
             return null;
+        }
+
+        public UploadResult UploadImage(Stream stream, string fileName)
+        {
+            return UploadData(UploaderFactory.GetImageUploaderServiceByEnum(Info.TaskSettings.ImageDestination), stream, fileName);
         }
 
         public UploadResult UploadText(Stream stream, string fileName)
         {
-            TextUploader textUploader = UploaderFactory.GetTextUploaderServiceByEnum(Info.TaskSettings.TextDestination).CreateUploader(Program.UploadersConfig, taskReferenceHelper);
-
-            if (textUploader != null)
-            {
-                PrepareUploader(textUploader);
-
-                return textUploader.UploadText(stream, fileName);
-            }
-
-            return null;
+            return UploadData(UploaderFactory.GetTextUploaderServiceByEnum(Info.TaskSettings.TextDestination), stream, fileName);
         }
 
         public UploadResult UploadFile(Stream stream, string fileName)
         {
-            FileDestination fileDestination;
-
-            switch (Info.DataType)
-            {
-                case EDataType.Image:
-                    fileDestination = Info.TaskSettings.ImageFileDestination;
-                    break;
-                case EDataType.Text:
-                    fileDestination = Info.TaskSettings.TextFileDestination;
-                    break;
-                default:
-                case EDataType.File:
-                    fileDestination = Info.TaskSettings.FileDestination;
-                    break;
-            }
-
-            FileUploader fileUploader = UploaderFactory.GetFileUploaderServiceByEnum(fileDestination).CreateUploader(Program.UploadersConfig, taskReferenceHelper);
-
-            if (fileUploader != null)
-            {
-                PrepareUploader(fileUploader);
-
-                return fileUploader.Upload(stream, fileName);
-            }
-
-            return null;
+            return UploadData(UploaderFactory.GetFileUploaderServiceByEnum(Info.TaskSettings.GetFileDestinationByDataType(Info.DataType)), stream, fileName);
         }
 
         public UploadResult ShortenURL(string url)
@@ -916,18 +891,6 @@ namespace ShareX
             if (!string.IsNullOrEmpty(url))
             {
                 UploaderFactory.GetSharingServiceByEnum(Info.TaskSettings.URLSharingServiceDestination).ShareURL(url, Program.UploadersConfig);
-            }
-        }
-
-        private void PrepareUploader(Uploader currentUploader)
-        {
-            uploader = currentUploader;
-            uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
-            uploader.ProgressChanged += uploader_ProgressChanged;
-
-            if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard) && Info.TaskSettings.AdvancedSettings.EarlyCopyURL)
-            {
-                uploader.EarlyURLCopyRequested += url => ClipboardHelpers.CopyText(url);
             }
         }
 
