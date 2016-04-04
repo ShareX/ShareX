@@ -121,6 +121,7 @@
     <Compile Include="APIKeys\APIKeys.cs" />
     <Compile Include="APIKeys\APIKeysLocal.cs" />
     <Compile Include="BaseServices\FileUploaderService.cs" />
+    <Compile Include="BaseServices\IUploaderService.cs" />
     <Compile Include="FileUploaders\AmazonS3Region.cs" />
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\Box.cs" />

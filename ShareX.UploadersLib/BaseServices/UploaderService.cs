@@ -23,11 +23,22 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+using System;
+
 namespace ShareX.UploadersLib
 {
-    public abstract class UploaderService<T>
+    public abstract class UploaderService<T> : IUploaderService
     {
         public abstract T EnumValue { get; }
+
+        public string ServiceName
+        {
+            get
+            {
+                return ((Enum)Enum.ToObject(typeof(T), EnumValue)).GetDescription();
+            }
+        }
 
         // This function is used in destinations menu to show invalid uploaders as disabled.
         // For example if uploader is only allowed to upload with account and if account configuration is not valid then this function should return false.

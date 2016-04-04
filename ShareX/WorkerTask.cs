@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -336,7 +337,7 @@ namespace ShareX
             {
                 if (string.IsNullOrEmpty(Info.Result.URL))
                 {
-                    Info.Result.Errors.Add(Resources.UploadTask_ThreadDoWork_URL_is_empty_);
+                    AddErrorMessage(Resources.UploadTask_ThreadDoWork_URL_is_empty_);
                 }
                 else
                 {
@@ -497,8 +498,7 @@ namespace ShareX
                 {
                     DebugHelper.WriteException(e);
                     isError = true;
-                    if (Info.Result == null) Info.Result = new UploadResult();
-                    Info.Result.Errors.Add(e.ToString());
+                    AddErrorMessage(e.ToString());
                 }
             }
             finally
@@ -508,12 +508,30 @@ namespace ShareX
                     sslBypassHelper.Dispose();
                 }
 
-                if (Info.Result == null) Info.Result = new UploadResult();
-                if (uploader != null) Info.Result.Errors.AddRange(uploader.Errors);
+                if (Info.Result == null)
+                {
+                    Info.Result = new UploadResult();
+                }
+
+                if (uploader != null)
+                {
+                    AddErrorMessage(uploader.Errors.ToArray());
+                }
+
                 isError |= Info.Result.IsError;
             }
 
             return isError;
+        }
+
+        private void AddErrorMessage(params string[] errorMessages)
+        {
+            if (Info.Result == null)
+            {
+                Info.Result = new UploadResult();
+            }
+
+            Info.Result.Errors.AddRange(errorMessages);
         }
 
         private bool DoThreadJob()
@@ -812,14 +830,20 @@ namespace ShareX
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                if (Info.Result == null) Info.Result = new UploadResult();
-                Info.Result.Errors.Add(e.ToString());
+                AddErrorMessage(e.ToString());
             }
         }
 
         public UploadResult UploadImage(Stream stream, string fileName)
         {
-            ImageUploader imageUploader = UploaderFactory.GetImageUploaderServiceByEnum(Info.TaskSettings.ImageDestination).CreateUploader(Program.UploadersConfig, taskReferenceHelper);
+            ImageUploaderService imageUploaderService = UploaderFactory.GetImageUploaderServiceByEnum(Info.TaskSettings.ImageDestination);
+
+            if (!imageUploaderService.CheckConfig(Program.UploadersConfig))
+            {
+                return GetInvalidConfigResult(imageUploaderService);
+            }
+
+            ImageUploader imageUploader = imageUploaderService.CreateUploader(Program.UploadersConfig, taskReferenceHelper);
 
             if (imageUploader != null)
             {
@@ -905,6 +929,14 @@ namespace ShareX
             {
                 uploader.EarlyURLCopyRequested += url => ClipboardHelpers.CopyText(url);
             }
+        }
+
+        private UploadResult GetInvalidConfigResult(IUploaderService uploaderService)
+        {
+            UploadResult ur = new UploadResult();
+            ur.Errors.Add(string.Format("{0} configuration is invalid or missing. Please check \"Destination settings\" window to configure it.",
+                uploaderService.ServiceName));
+            return ur;
         }
 
         private bool DownloadAndUpload()
