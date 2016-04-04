@@ -861,22 +861,22 @@ namespace ShareX
 
         public UploadResult UploadImage(Stream stream, string fileName)
         {
-            return UploadData(UploaderFactory.GetImageUploaderServiceByEnum(Info.TaskSettings.ImageDestination), stream, fileName);
+            return UploadData(UploaderFactory.GetImageUploaderService(Info.TaskSettings.ImageDestination), stream, fileName);
         }
 
         public UploadResult UploadText(Stream stream, string fileName)
         {
-            return UploadData(UploaderFactory.GetTextUploaderServiceByEnum(Info.TaskSettings.TextDestination), stream, fileName);
+            return UploadData(UploaderFactory.GetTextUploaderService(Info.TaskSettings.TextDestination), stream, fileName);
         }
 
         public UploadResult UploadFile(Stream stream, string fileName)
         {
-            return UploadData(UploaderFactory.GetFileUploaderServiceByEnum(Info.TaskSettings.GetFileDestinationByDataType(Info.DataType)), stream, fileName);
+            return UploadData(UploaderFactory.GetFileUploaderService(Info.TaskSettings.GetFileDestinationByDataType(Info.DataType)), stream, fileName);
         }
 
         public UploadResult ShortenURL(string url)
         {
-            URLShortener urlShortener = UploaderFactory.GetURLShortenerServiceByEnum(Info.TaskSettings.URLShortenerDestination).CreateShortener(Program.UploadersConfig, taskReferenceHelper);
+            URLShortener urlShortener = UploaderFactory.GetURLShortenerService(Info.TaskSettings.URLShortenerDestination).CreateShortener(Program.UploadersConfig, taskReferenceHelper);
 
             if (urlShortener != null)
             {
@@ -890,15 +890,15 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(url))
             {
-                UploaderFactory.GetSharingServiceByEnum(Info.TaskSettings.URLSharingServiceDestination).ShareURL(url, Program.UploadersConfig);
+                UploaderFactory.GetURLSharingService(Info.TaskSettings.URLSharingServiceDestination).ShareURL(url, Program.UploadersConfig);
             }
         }
 
         private UploadResult GetInvalidConfigResult(IUploaderService uploaderService)
         {
             UploadResult ur = new UploadResult();
-            ur.Errors.Add(string.Format("{0} configuration is invalid or missing. Please check \"Destination settings\" window to configure it.",
-                uploaderService.ServiceName));
+            // TODO: Translate
+            ur.Errors.Add(string.Format("{0} configuration is invalid or missing. Please check \"Destination settings\" window to configure it.", uploaderService.ServiceName));
             return ur;
         }
 

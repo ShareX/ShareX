@@ -36,27 +36,27 @@ namespace ShareX.UploadersLib
         private static readonly URLShortenerService[] urlShortenerServices = Helpers.GetInstances<URLShortenerService>();
         private static readonly URLSharingService[] sharingServices = Helpers.GetInstances<URLSharingService>();
 
-        public static ImageUploaderService GetImageUploaderServiceByEnum(ImageDestination enumValue)
+        public static ImageUploaderService GetImageUploaderService(ImageDestination enumValue)
         {
             return imageUploaderServices.First(x => x.EnumValue == enumValue);
         }
 
-        public static TextUploaderService GetTextUploaderServiceByEnum(TextDestination enumValue)
+        public static TextUploaderService GetTextUploaderService(TextDestination enumValue)
         {
             return textUploaderServices.First(x => x.EnumValue == enumValue);
         }
 
-        public static FileUploaderService GetFileUploaderServiceByEnum(FileDestination enumValue)
+        public static FileUploaderService GetFileUploaderService(FileDestination enumValue)
         {
             return fileUploaderServices.First(x => x.EnumValue == enumValue);
         }
 
-        public static URLShortenerService GetURLShortenerServiceByEnum(UrlShortenerType enumValue)
+        public static URLShortenerService GetURLShortenerService(UrlShortenerType enumValue)
         {
             return urlShortenerServices.First(x => x.EnumValue == enumValue);
         }
 
-        public static URLSharingService GetSharingServiceByEnum(URLSharingServices enumValue)
+        public static URLSharingService GetURLSharingService(URLSharingServices enumValue)
         {
             return sharingServices.First(x => x.EnumValue == enumValue);
         }

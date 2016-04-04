@@ -36,7 +36,7 @@ namespace ShareX.UploadersLib
         {
             get
             {
-                return ((Enum)Enum.ToObject(typeof(T), EnumValue)).GetDescription();
+                return ((Enum)(object)EnumValue).GetDescription();
             }
         }
 
