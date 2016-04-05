@@ -778,13 +778,23 @@ namespace ShareX
                     if (result != null)
                     {
                         Info.Result.ShortenedURL = result.ShortenedURL;
+                        Info.Result.Errors.AddRange(result.Errors);
                     }
                 }
 
                 if (Info.Job != TaskJob.ShortenURL && (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShareURL) || Info.Job == TaskJob.ShareURL))
                 {
-                    ShareURL(Info.Result.ToString());
-                    if (Info.Job == TaskJob.ShareURL) Info.Result.IsURLExpected = false;
+                    UploadResult result = ShareURL(Info.Result.ToString());
+
+                    if (result != null)
+                    {
+                        Info.Result.Errors.AddRange(result.Errors);
+                    }
+
+                    if (Info.Job == TaskJob.ShareURL)
+                    {
+                        Info.Result.IsURLExpected = false;
+                    }
                 }
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard))
@@ -886,7 +896,6 @@ namespace ShareX
 
             if (!service.CheckConfig(Program.UploadersConfig))
             {
-                // TODO: Handle error reporting
                 return GetInvalidConfigResult(service);
             }
 
@@ -900,18 +909,23 @@ namespace ShareX
             return null;
         }
 
-        public void ShareURL(string url)
+        public UploadResult ShareURL(string url)
         {
             if (!string.IsNullOrEmpty(url))
             {
                 URLSharingService service = UploaderFactory.GetURLSharingService(Info.TaskSettings.URLSharingServiceDestination);
 
-                // TODO: Handle error reporting
-                if (service.CheckConfig(Program.UploadersConfig))
+                if (!service.CheckConfig(Program.UploadersConfig))
                 {
-                    service.ShareURL(url, Program.UploadersConfig);
+                    return GetInvalidConfigResult(service);
                 }
+
+                service.ShareURL(url, Program.UploadersConfig);
+
+                return new UploadResult() { URL = url };
             }
+
+            return null;
         }
 
         private UploadResult GetInvalidConfigResult(IUploaderService uploaderService)
