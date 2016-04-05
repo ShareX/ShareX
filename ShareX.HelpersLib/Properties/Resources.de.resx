@@ -835,4 +835,7 @@ Möchtest du sie herunterladen?</value>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Derzeitiges Jahr (2 Ziffern)</value>
   </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>Zeige Schnellzugriff Menü</value>
+  </data>
 </root>

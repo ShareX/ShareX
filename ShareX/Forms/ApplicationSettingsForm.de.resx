@@ -276,4 +276,52 @@
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integration</value>
   </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>Schnellzugriff Menü bearbeiten...</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>Aufgaben in der Chronik speichern</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>Nur speichern, wenn URL nicht leer ist</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>Letzte Aufgaben</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>Letzte Aufgaben speichern</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>Maximale Anzahl zu speichernder Aufgaben:</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>Zeige letzte Aufgaben im Taskleisteninfobereich</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>Zeige letzte Aufgaben im Hauptfenster beim Starten</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>Zeige im Taskleisteninfobereich die aktuellste Aufgabe zuerst</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>Chronik</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>Chronik</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Chronik exportieren</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Einstellungen exportieren</value>
+  </data>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>Logs exportieren</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Exportieren...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Importieren...</value>
+  </data>
 </root>
