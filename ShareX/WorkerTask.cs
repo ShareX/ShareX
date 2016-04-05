@@ -886,6 +886,7 @@ namespace ShareX
 
             if (!service.CheckConfig(Program.UploadersConfig))
             {
+                // TODO: Handle error reporting
                 return GetInvalidConfigResult(service);
             }
 
@@ -905,6 +906,7 @@ namespace ShareX
             {
                 URLSharingService service = UploaderFactory.GetURLSharingService(Info.TaskSettings.URLSharingServiceDestination);
 
+                // TODO: Handle error reporting
                 if (service.CheckConfig(Program.UploadersConfig))
                 {
                     service.ShareURL(url, Program.UploadersConfig);
@@ -916,7 +918,9 @@ namespace ShareX
         {
             UploadResult ur = new UploadResult();
             // TODO: Translate
-            ur.Errors.Add(string.Format("{0} configuration is invalid or missing. Please check \"Destination settings\" window to configure it.", uploaderService.ServiceName));
+            string message = string.Format("{0} configuration is invalid or missing. Please check \"Destination settings\" window to configure it.", uploaderService.ServiceName);
+            DebugHelper.WriteLine(message);
+            ur.Errors.Add(message);
             return ur;
         }
 
