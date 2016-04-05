@@ -121,7 +121,7 @@
     <value>Gefiltert: {0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>Total: {0}</value>
+    <value>Gesamt: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>Kopieren</value>

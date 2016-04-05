@@ -120,4 +120,22 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Schnellzugriff Menü Editor</value>
   </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Tipp: Wenn du eine leere Aufgabe hinzufügst, wird sie als Trennlinie im Menü angezeigt</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Auf Standard zurücksetzen</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
 </root>

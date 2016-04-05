@@ -142,16 +142,16 @@
     <value>Öffnen...</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Bilddruckeinstellungen...</value>
+    <value>Druckoptionen...</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>Zeige nicht das Bilddruckeinstellungsfenster</value>
+    <value>Druckoptionenfenster nicht anzeigen</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Anzahl der erneuten Versuche bei Uploadfehlern:</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>Zeige nicht das Window-Druck-Fenster</value>
+    <value>Windows "Drucken" Dialog nicht anzeigen</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Behalte Hauptfensterposition</value>

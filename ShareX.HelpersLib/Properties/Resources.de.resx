@@ -838,4 +838,16 @@ Möchtest du sie herunterladen?</value>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>Zeige Schnellzugriff Menü</value>
   </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>Andere</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
+    <value>Andere</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>Öffne Chronik Fenster</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Öffne Bildchronik Fenster</value>
+  </data>
 </root>
