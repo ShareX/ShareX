@@ -1770,6 +1770,9 @@ namespace ShareX
                 case HotkeyType.DisableHotkeys:
                     TaskHelpers.ToggleHotkeys();
                     break;
+                case HotkeyType.OpenMainWindow:
+                    this.ForceActivate();
+                    break;
                 case HotkeyType.OpenScreenshotsFolder:
                     TaskHelpers.OpenScreenshotsFolder();
                     break;

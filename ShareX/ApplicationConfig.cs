@@ -73,6 +73,10 @@ namespace ShareX
         public bool RememberMainFormSize = false;
         public Size MainFormSize = Size.Empty;
 
+        public HotkeyType TrayLeftClickAction = HotkeyType.RectangleRegion;
+        public HotkeyType TrayLeftDoubleClickAction = HotkeyType.OpenMainWindow;
+        public HotkeyType TrayMiddleClickAction = HotkeyType.PrintScreen;
+
         #endregion General
 
         #region Paths
@@ -174,12 +178,6 @@ namespace ShareX
 
         [Category("Application"), DefaultValue(true), Description("Automatically expand capture menu when you open the tray menu.")]
         public bool TrayAutoExpandCaptureMenu { get; set; }
-
-        [Category("Application"), DefaultValue(HotkeyType.RectangleRegion), Description("You can set which action to happen when you left click tray icon."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public HotkeyType TrayLeftClickAction { get; set; }
-
-        [Category("Application"), DefaultValue(HotkeyType.PrintScreen), Description("You can set which action to happen when you middle click tray icon."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public HotkeyType TrayMiddleClickAction { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Show tips in main window list when list is empty.")]
         public bool ShowMainWindowTip { get; set; }
