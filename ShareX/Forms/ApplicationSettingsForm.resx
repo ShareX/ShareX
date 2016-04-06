@@ -151,13 +151,13 @@
     <value>13, 264</value>
   </data>
   <data name="lblTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 13</value>
+    <value>122, 13</value>
   </data>
   <data name="lblTrayMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
-    <value>Tray middle click action:</value>
+    <value>Tray middle button click:</value>
   </data>
   <data name="&gt;&gt;lblTrayMiddleClickAction.Name" xml:space="preserve">
     <value>lblTrayMiddleClickAction</value>
@@ -199,13 +199,13 @@
     <value>13, 216</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 13</value>
+    <value>160, 13</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
-    <value>Tray left double click action:</value>
+    <value>Tray primary button double click:</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftDoubleClickAction.Name" xml:space="preserve">
     <value>lblTrayLeftDoubleClickAction</value>
@@ -247,13 +247,13 @@
     <value>13, 240</value>
   </data>
   <data name="lblTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 13</value>
+    <value>125, 13</value>
   </data>
   <data name="lblTrayLeftClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
-    <value>Tray left click action:</value>
+    <value>Tray primary button click:</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftClickAction.Name" xml:space="preserve">
     <value>lblTrayLeftClickAction</value>
