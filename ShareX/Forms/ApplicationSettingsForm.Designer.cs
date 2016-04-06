@@ -133,6 +133,12 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.lblTrayLeftClickAction = new System.Windows.Forms.Label();
+            this.lblTrayLeftDoubleClickAction = new System.Windows.Forms.Label();
+            this.lblTrayMiddleClickAction = new System.Windows.Forms.Label();
+            this.cbTrayLeftClickAction = new System.Windows.Forms.ComboBox();
+            this.cbTrayLeftDoubleClickAction = new System.Windows.Forms.ComboBox();
+            this.cbTrayMiddleClickAction = new System.Windows.Forms.ComboBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -180,6 +186,12 @@ namespace ShareX
             // 
             // tpGeneral
             // 
+            this.tpGeneral.Controls.Add(this.cbTrayMiddleClickAction);
+            this.tpGeneral.Controls.Add(this.lblTrayMiddleClickAction);
+            this.tpGeneral.Controls.Add(this.cbTrayLeftDoubleClickAction);
+            this.tpGeneral.Controls.Add(this.lblTrayLeftDoubleClickAction);
+            this.tpGeneral.Controls.Add(this.cbTrayLeftClickAction);
+            this.tpGeneral.Controls.Add(this.lblTrayLeftClickAction);
             this.tpGeneral.Controls.Add(this.btnEditQuickTaskMenu);
             this.tpGeneral.Controls.Add(this.cbShowTray);
             this.tpGeneral.Controls.Add(this.cbTrayIconProgressEnabled);
@@ -948,6 +960,45 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             // 
+            // lblTrayLeftClickAction
+            // 
+            resources.ApplyResources(this.lblTrayLeftClickAction, "lblTrayLeftClickAction");
+            this.lblTrayLeftClickAction.Name = "lblTrayLeftClickAction";
+            // 
+            // lblTrayLeftDoubleClickAction
+            // 
+            resources.ApplyResources(this.lblTrayLeftDoubleClickAction, "lblTrayLeftDoubleClickAction");
+            this.lblTrayLeftDoubleClickAction.Name = "lblTrayLeftDoubleClickAction";
+            // 
+            // lblTrayMiddleClickAction
+            // 
+            resources.ApplyResources(this.lblTrayMiddleClickAction, "lblTrayMiddleClickAction");
+            this.lblTrayMiddleClickAction.Name = "lblTrayMiddleClickAction";
+            // 
+            // cbTrayLeftClickAction
+            // 
+            this.cbTrayLeftClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTrayLeftClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbTrayLeftClickAction, "cbTrayLeftClickAction");
+            this.cbTrayLeftClickAction.Name = "cbTrayLeftClickAction";
+            this.cbTrayLeftClickAction.SelectedIndexChanged += new System.EventHandler(this.cbTrayLeftClickAction_SelectedIndexChanged);
+            // 
+            // cbTrayLeftDoubleClickAction
+            // 
+            this.cbTrayLeftDoubleClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTrayLeftDoubleClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbTrayLeftDoubleClickAction, "cbTrayLeftDoubleClickAction");
+            this.cbTrayLeftDoubleClickAction.Name = "cbTrayLeftDoubleClickAction";
+            this.cbTrayLeftDoubleClickAction.SelectedIndexChanged += new System.EventHandler(this.cbTrayLeftDoubleClickAction_SelectedIndexChanged);
+            // 
+            // cbTrayMiddleClickAction
+            // 
+            this.cbTrayMiddleClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTrayMiddleClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbTrayMiddleClickAction, "cbTrayMiddleClickAction");
+            this.cbTrayMiddleClickAction.Name = "cbTrayMiddleClickAction";
+            this.cbTrayMiddleClickAction.SelectedIndexChanged += new System.EventHandler(this.cbTrayMiddleClickAction_SelectedIndexChanged);
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1109,5 +1160,11 @@ namespace ShareX
         private System.Windows.Forms.GroupBox gbHistory;
         private System.Windows.Forms.CheckBox cbHistorySaveTasks;
         private System.Windows.Forms.CheckBox cbHistoryCheckURL;
+        private System.Windows.Forms.Label lblTrayMiddleClickAction;
+        private System.Windows.Forms.Label lblTrayLeftDoubleClickAction;
+        private System.Windows.Forms.Label lblTrayLeftClickAction;
+        private System.Windows.Forms.ComboBox cbTrayMiddleClickAction;
+        private System.Windows.Forms.ComboBox cbTrayLeftDoubleClickAction;
+        private System.Windows.Forms.ComboBox cbTrayLeftClickAction;
     }
 }

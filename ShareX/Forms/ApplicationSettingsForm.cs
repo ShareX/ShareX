@@ -75,6 +75,10 @@ namespace ShareX
                 cmsLanguages.Items.Add(tsmi);
             }
 
+            cbTrayLeftDoubleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
+            cbTrayLeftClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
+            cbTrayMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
+
             CodeMenu.Create(txtSaveImageSubFolderPattern, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn, ReplCodeMenuEntry.i, ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
 
             cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
@@ -97,6 +101,10 @@ namespace ShareX
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
             cbRememberMainFormPosition.Checked = Program.Settings.RememberMainFormPosition;
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
+
+            cbTrayLeftDoubleClickAction.SelectedIndex = (int)Program.Settings.TrayLeftDoubleClickAction;
+            cbTrayLeftClickAction.SelectedIndex = (int)Program.Settings.TrayLeftClickAction;
+            cbTrayMiddleClickAction.SelectedIndex = (int)Program.Settings.TrayMiddleClickAction;
 
             // Integration
             cbStartWithWindows.Checked = IntegrationHelpers.CheckStartupShortcut();
@@ -344,6 +352,21 @@ namespace ShareX
         private void cbRememberMainFormSize_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.RememberMainFormSize = cbRememberMainFormSize.Checked;
+        }
+
+        private void cbTrayLeftDoubleClickAction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.TrayLeftDoubleClickAction = (HotkeyType)cbTrayLeftDoubleClickAction.SelectedIndex;
+        }
+
+        private void cbTrayLeftClickAction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.TrayLeftClickAction = (HotkeyType)cbTrayLeftClickAction.SelectedIndex;
+        }
+
+        private void cbTrayMiddleClickAction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.TrayMiddleClickAction = (HotkeyType)cbTrayMiddleClickAction.SelectedIndex;
         }
 
         private void btnEditQuickTaskMenu_Click(object sender, EventArgs e)

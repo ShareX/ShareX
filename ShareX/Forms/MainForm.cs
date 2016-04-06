@@ -1294,7 +1294,7 @@ namespace ShareX
             if (e.Button == MouseButtons.Left)
             {
                 timerTraySingleClick.Stop();
-                this.ForceActivate();
+                ExecuteJob(Program.Settings.TrayLeftDoubleClickAction);
             }
         }
 
