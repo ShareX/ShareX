@@ -1280,8 +1280,15 @@ namespace ShareX
             switch (e.Button)
             {
                 case MouseButtons.Left:
-                    timerTraySingleClick.Interval = (int)(SystemInformation.DoubleClickTime * 1.1);
-                    timerTraySingleClick.Start();
+                    if (Program.Settings.TrayLeftDoubleClickAction == HotkeyType.None)
+                    {
+                        ExecuteJob(Program.Settings.TrayLeftClickAction);
+                    }
+                    else
+                    {
+                        timerTraySingleClick.Interval = (int)(SystemInformation.DoubleClickTime * 1.1);
+                        timerTraySingleClick.Start();
+                    }
                     break;
                 case MouseButtons.Middle:
                     ExecuteJob(Program.Settings.TrayMiddleClickAction);
