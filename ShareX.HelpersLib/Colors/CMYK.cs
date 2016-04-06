@@ -145,8 +145,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public CMYK(double cyan, double magenta, double yellow, double key, int alpha = 255)
-            : this()
+        public CMYK(double cyan, double magenta, double yellow, double key, int alpha = 255) : this()
         {
             Cyan = cyan;
             Magenta = magenta;
@@ -155,8 +154,7 @@ namespace ShareX.HelpersLib
             Alpha = alpha;
         }
 
-        public CMYK(int cyan, int magenta, int yellow, int key, int alpha = 255)
-            : this()
+        public CMYK(int cyan, int magenta, int yellow, int key, int alpha = 255) : this()
         {
             Cyan100 = cyan;
             Magenta100 = magenta;

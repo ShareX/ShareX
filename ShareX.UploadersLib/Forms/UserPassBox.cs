@@ -46,15 +46,13 @@ namespace ShareX.UploadersLib
             txtPassword.Text = password;
         }
 
-        public UserPassBox(string q, string fullName, string userName, string password)
-            : this(q, userName, password)
+        public UserPassBox(string q, string fullName, string userName, string password) : this(q, userName, password)
         {
             txtFullName.Text = fullName;
             txtFullName.Enabled = true;
         }
 
-        public UserPassBox(string q, string fullName, string email, string userName, string password)
-            : this(q, fullName, userName, password)
+        public UserPassBox(string q, string fullName, string email, string userName, string password) : this(q, fullName, userName, password)
         {
             txtEmail.Text = email;
             txtEmail.Enabled = true;

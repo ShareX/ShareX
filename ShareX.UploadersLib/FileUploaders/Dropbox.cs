@@ -84,8 +84,7 @@ namespace ShareX.UploadersLib.FileUploaders
             AuthInfo = oauth;
         }
 
-        public Dropbox(OAuth2Info oauth, DropboxAccountInfo accountInfo)
-            : this(oauth)
+        public Dropbox(OAuth2Info oauth, DropboxAccountInfo accountInfo) : this(oauth)
         {
             AccountInfo = accountInfo;
         }

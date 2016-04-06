@@ -54,8 +54,7 @@ namespace ShareX.UploadersLib
             Icon = ShareXResources.Icon;
         }
 
-        public JiraUpload(string issuePrefix, GetSummaryHandler getSummary)
-            : this()
+        public JiraUpload(string issuePrefix, GetSummaryHandler getSummary) : this()
         {
             if (getSummary == null)
             {

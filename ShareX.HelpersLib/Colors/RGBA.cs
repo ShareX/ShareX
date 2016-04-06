@@ -80,8 +80,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public RGBA(int red, int green, int blue, int alpha = 255)
-            : this()
+        public RGBA(int red, int green, int blue, int alpha = 255) : this()
         {
             Red = red;
             Green = green;
@@ -89,8 +88,7 @@ namespace ShareX.HelpersLib
             Alpha = alpha;
         }
 
-        public RGBA(Color color)
-            : this(color.R, color.G, color.B, color.A)
+        public RGBA(Color color) : this(color.R, color.G, color.B, color.A)
         {
         }
 

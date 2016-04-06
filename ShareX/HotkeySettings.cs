@@ -38,8 +38,7 @@ namespace ShareX
             HotkeyInfo = new HotkeyInfo();
         }
 
-        public HotkeySettings(HotkeyType job, Keys hotkey = Keys.None)
-            : this()
+        public HotkeySettings(HotkeyType job, Keys hotkey = Keys.None) : this()
         {
             TaskSettings = TaskSettings.GetDefaultTaskSettings();
             TaskSettings.Job = job;

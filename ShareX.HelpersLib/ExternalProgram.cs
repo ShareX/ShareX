@@ -45,15 +45,13 @@ namespace ShareX.HelpersLib
             Args = "%input";
         }
 
-        public ExternalProgram(string name, string path)
-            : this()
+        public ExternalProgram(string name, string path) : this()
         {
             Name = name;
             Path = path;
         }
 
-        public ExternalProgram(string name, string path, string args)
-            : this(name, path)
+        public ExternalProgram(string name, string path, string args) : this(name, path)
         {
             if (!string.IsNullOrEmpty(args))
             {

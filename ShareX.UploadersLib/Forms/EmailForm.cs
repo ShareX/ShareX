@@ -41,8 +41,7 @@ namespace ShareX.UploadersLib
             Icon = ShareXResources.Icon;
         }
 
-        public EmailForm(string toEmail, string subject, string body)
-            : this()
+        public EmailForm(string toEmail, string subject, string body) : this()
         {
             txtToEmail.Text = toEmail;
             txtSubject.Text = subject;

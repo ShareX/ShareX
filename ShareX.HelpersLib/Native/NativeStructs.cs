@@ -43,8 +43,7 @@ namespace ShareX.HelpersLib
             Bottom = bottom;
         }
 
-        public RECT(Rectangle r)
-            : this(r.Left, r.Top, r.Right, r.Bottom)
+        public RECT(Rectangle r) : this(r.Left, r.Top, r.Right, r.Bottom)
         {
         }
 
@@ -200,10 +199,9 @@ namespace ShareX.HelpersLib
         public ushort atomWindowType;
         public ushort wCreatorVersion;
 
-        public WINDOWINFO(Boolean? filler)
-            : this() // Allows automatic initialization of "cbSize" with "new WINDOWINFO(null/true/false)".
+        public WINDOWINFO(bool? filler) : this() // Allows automatic initialization of "cbSize" with "new WINDOWINFO(null/true/false)".
         {
-            cbSize = (UInt32)Marshal.SizeOf(typeof(WINDOWINFO));
+            cbSize = (uint)Marshal.SizeOf(typeof(WINDOWINFO));
         }
     }
 
@@ -705,11 +703,11 @@ namespace ShareX.HelpersLib
     [StructLayout(LayoutKind.Sequential)]
     public struct FLASHWINFO
     {
-        public UInt32 cbSize;
+        public uint cbSize;
         public IntPtr hwnd;
-        public UInt32 dwFlags;
-        public UInt32 uCount;
-        public UInt32 dwTimeout;
+        public uint dwFlags;
+        public uint uCount;
+        public uint dwTimeout;
     }
 
     [Serializable, StructLayout(LayoutKind.Sequential)]

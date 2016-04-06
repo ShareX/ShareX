@@ -217,8 +217,7 @@ namespace ShareX.HelpersLib
         /// Constructor
         /// </summary>
         /// <param name="ns">The namespace containing types to be used</param>
-        public Reflector(string ns)
-            : this(ns, ns)
+        public Reflector(string ns) : this(ns, ns)
         {
         }
 

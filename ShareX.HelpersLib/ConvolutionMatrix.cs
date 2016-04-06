@@ -32,8 +32,7 @@ namespace ShareX.HelpersLib
         public int Factor { get; set; }
         public int Offset { get; set; }
 
-        public ConvolutionMatrix()
-            : this(3)
+        public ConvolutionMatrix() : this(3)
         {
         }
 

@@ -73,8 +73,7 @@ namespace ShareX.HelpersLib
             RunInstallerInBackground = true;
         }
 
-        public DownloaderForm(UpdateChecker updateChecker)
-            : this(updateChecker.DownloadURL, updateChecker.Filename)
+        public DownloaderForm(UpdateChecker updateChecker) : this(updateChecker.DownloadURL, updateChecker.Filename)
         {
             Proxy = updateChecker.Proxy;
 
@@ -84,8 +83,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public DownloaderForm(string url, string filename)
-            : this()
+        public DownloaderForm(string url, string filename) : this()
         {
             URL = url;
             Filename = filename;

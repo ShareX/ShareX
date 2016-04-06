@@ -102,14 +102,12 @@ namespace ShareX.UploadersLib
             MediaMode = false;
         }
 
-        public TwitterTweetForm(OAuthInfo oauth)
-            : this()
+        public TwitterTweetForm(OAuthInfo oauth) : this()
         {
             AuthInfo = oauth;
         }
 
-        public TwitterTweetForm(OAuthInfo oauth, string message)
-            : this(oauth)
+        public TwitterTweetForm(OAuthInfo oauth, string message) : this(oauth)
         {
             Message = message;
         }

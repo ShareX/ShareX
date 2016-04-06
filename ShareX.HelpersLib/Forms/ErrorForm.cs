@@ -35,8 +35,7 @@ namespace ShareX.HelpersLib
         public string LogPath { get; private set; }
         public string BugReportPath { get; private set; }
 
-        public ErrorForm(Exception error, string logPath, string bugReportPath)
-            : this(error.Message, error.ToString(), logPath, bugReportPath)
+        public ErrorForm(Exception error, string logPath, string bugReportPath) : this(error.Message, error.ToString(), logPath, bugReportPath)
         {
         }
 

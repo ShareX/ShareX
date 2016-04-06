@@ -120,8 +120,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public HSB(double hue, double saturation, double brightness, int alpha = 255)
-            : this()
+        public HSB(double hue, double saturation, double brightness, int alpha = 255) : this()
         {
             Hue = hue;
             Saturation = saturation;
@@ -129,8 +128,7 @@ namespace ShareX.HelpersLib
             Alpha = alpha;
         }
 
-        public HSB(int hue, int saturation, int brightness, int alpha = 255)
-            : this()
+        public HSB(int hue, int saturation, int brightness, int alpha = 255) : this()
         {
             Hue360 = hue;
             Saturation100 = saturation;

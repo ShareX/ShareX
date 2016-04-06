@@ -34,8 +34,7 @@ namespace ShareX
     {
         public WatchFolderSettings WatchFolder { get; private set; }
 
-        public WatchFolderForm()
-            : this(new WatchFolderSettings())
+        public WatchFolderForm() : this(new WatchFolderSettings())
         {
         }
 

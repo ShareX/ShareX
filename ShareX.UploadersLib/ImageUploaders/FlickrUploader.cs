@@ -65,8 +65,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             API_Secret = secret;
         }
 
-        public FlickrUploader(string key, string secret, FlickrAuthInfo auth, FlickrSettings settings)
-            : this(key, secret)
+        public FlickrUploader(string key, string secret, FlickrAuthInfo auth, FlickrSettings settings) : this(key, secret)
         {
             Auth = auth;
             Settings = settings;
