@@ -97,7 +97,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetEndpoint()
         {
-            return URLHelpers.CombineURL("https://" + GetCurrentRegion(s3Settings).Hostname, s3Settings.Bucket);
+            return URLHelpers.ForcePrefix(URLHelpers.CombineURL(GetCurrentRegion(s3Settings).Hostname, s3Settings.Bucket));
         }
 
         private AWSCredentials GetCurrentCredentials()
@@ -167,7 +167,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (region.AmazonRegion == null)
             {
-                s3ClientConfig.ServiceURL = "https://" + region.Hostname;
+                s3ClientConfig.ServiceURL = URLHelpers.ForcePrefix(region.Hostname);
             }
             else
             {
