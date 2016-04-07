@@ -107,7 +107,7 @@ namespace ShareX
 
                 try
                 {
-                    images = lvImages.Items.Cast<ListViewItem>().Select(x => ImageHelpers.LoadImage(x.Text));
+                    images = lvImages.Items.Cast<ListViewItem>().Select(x => ImageHelpers.LoadImage(x.Text)).Where(x => x != null);
                     Image output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Space);
                     OnProcessRequested(output);
                 }
@@ -138,6 +138,34 @@ namespace ShareX
             if (ProcessRequested != null)
             {
                 ProcessRequested(image);
+            }
+        }
+
+        private void ImageCombinerForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void ImageCombinerForm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
+
+                if (files != null)
+                {
+                    foreach (string file in files)
+                    {
+                        lvImages.Items.Add(file);
+                    }
+                }
             }
         }
     }
