@@ -471,7 +471,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Nummer zum Dateinamen hinzufügen</value>
   </data>
   <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Zeige Trayballonspitze</value>
+    <value>Zeige Tray Tooltip</value>
   </data>
   <data name="PopUpNotificationType_None" xml:space="preserve">
     <value>Nichts anzeigen</value>
@@ -849,5 +849,20 @@ Möchtest du sie herunterladen?</value>
   </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>Öffne Bildchronik Fenster</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>Hauptfenster öffnen</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>Datei existiert nicht:</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>Ordner auswählen</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>Datei auswählen</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
+    <value>Andere</value>
   </data>
 </root>

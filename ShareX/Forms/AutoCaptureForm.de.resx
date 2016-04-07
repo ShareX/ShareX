@@ -127,7 +127,7 @@
     <value>Auswählen der Region</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
-    <value>Automatisch in Taskleisteninfobereich minimieren:</value>
+    <value>Automatisch in Tray minimieren</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
     <value>Warten, bis Aufgabe fertig ist</value>

@@ -151,7 +151,7 @@
     <value>Integration</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>Zeige nicht das Window-Druck-Fenster</value>
+    <value>Windows "Drucken" Dialog nicht anzeigen</value>
   </data>
   <data name="tpHistory.Text" xml:space="preserve">
     <value>Chronik</value>
@@ -163,10 +163,10 @@
     <value>Letzte Aufgaben</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Zeige Taskleistensymbol im Infobereich</value>
+    <value>Zeige Tray Symbol im Infobereich</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Beim Start in den Infobereich minimieren</value>
+    <value>Beim Start in den Infobereich/Tray minimieren</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Zeige ShareX im Menü "Senden an"</value>
@@ -220,7 +220,7 @@
     <value>Drucken</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Bilddruckeinstellungen...</value>
+    <value>Druckoptionen...</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Host:</value>
@@ -241,7 +241,7 @@
     <value>Importieren...</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Zeige Fortschrittsanzeige im Taskleisteninfobereichsymbol </value>
+    <value>Zeige Fortschrittsanzeige im Tray Symbol</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Benutzername:</value>
@@ -253,7 +253,7 @@
     <value>Unterordnermuster:</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>Zeige nicht das Bilddruckeinstellungsfenster</value>
+    <value>Druckoptionen Dialog nicht anzeigen</value>
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Passwort:</value>
@@ -289,13 +289,13 @@
     <value>Zeige letzte Aufgaben im Hauptfenster beim Starten</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
-    <value>Zeige letzte Aufgaben im Taskleisteninfobereich</value>
+    <value>Zeige letzte Aufgaben im Tray Menü</value>
   </data>
   <data name="gbHistory.Text" xml:space="preserve">
     <value>Chronik</value>
   </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
-    <value>Zeige im Taskleisteninfobereich die aktuellste Aufgabe zuerst</value>
+    <value>Zeige im Tray Menü die aktuellste Aufgabe zuerst</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
     <value>Maximale Anzahl zu speichernder Aufgaben:</value>
@@ -323,5 +323,14 @@
   </data>
   <data name="cbExportSettings.Text" xml:space="preserve">
     <value>Einstellungen exportieren</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>Tray Symbol Linksklick Aktion:</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>Tray Symbol Doppelklick Aktion:</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>Tray Symbol Mittelere Maustaste Aktion:</value>
   </data>
 </root>

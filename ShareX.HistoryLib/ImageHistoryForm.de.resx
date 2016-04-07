@@ -135,4 +135,19 @@
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>Thumbnails</value>
   </data>
+  <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
+    <value>Maximale Bildanzahl</value>
+  </data>
+  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
+    <value>Kein Limit</value>
+  </data>
+  <data name="tsmiMaxImageLimit1000.Text" xml:space="preserve">
+    <value>Letzte 1000</value>
+  </data>
+  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
+    <value>Letzte 250</value>
+  </data>
+  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
+    <value>Letzte 100</value>
+  </data>
 </root>

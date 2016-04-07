@@ -311,4 +311,7 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
     <value>[Strg + Mausrad] Stiftgröße ändern</value>
   </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Aufnahme</value>
+  </data>
 </root>

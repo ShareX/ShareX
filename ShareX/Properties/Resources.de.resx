@@ -477,4 +477,7 @@ Sind Sie sich sicher?</value>
   <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
     <value>Dieses Menü bearbeiten...</value>
   </data>
+  <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
+    <value>Chronik</value>
+  </data>
 </root>
