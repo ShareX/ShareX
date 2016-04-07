@@ -120,4 +120,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Schnellzugriff Eintrag bearbeiten</value>
   </data>
+  <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
+    <value>"Nach der Aufnahme" Aufgaben:</value>
+  </data>
+  <data name="lblAfterUploadTasks.Text" xml:space="preserve">
+    <value>"Nach dem Hochladen" Aufgaben</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Menü Text:</value>
+  </data>
 </root>
