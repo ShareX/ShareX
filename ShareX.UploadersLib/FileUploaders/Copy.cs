@@ -60,8 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
             AuthInfo = oauth;
         }
 
-        public Copy(OAuthInfo oauth, CopyAccountInfo accountInfo)
-            : this(oauth)
+        public Copy(OAuthInfo oauth, CopyAccountInfo accountInfo) : this(oauth)
         {
             AccountInfo = accountInfo;
         }

@@ -42,14 +42,12 @@ namespace ShareX.HelpersLib
             Actions = new List<CLICommandAction>();
         }
 
-        public CLIManager(string[] arguments)
-            : this()
+        public CLIManager(string[] arguments) : this()
         {
             Arguments = arguments;
         }
 
-        public CLIManager(string arguments)
-            : this()
+        public CLIManager(string arguments) : this()
         {
             Arguments = ParseCLI(arguments);
         }

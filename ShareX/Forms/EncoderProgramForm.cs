@@ -34,8 +34,7 @@ namespace ShareX
     {
         public VideoEncoder encoder { get; private set; }
 
-        public EncoderProgramForm()
-            : this(new VideoEncoder())
+        public EncoderProgramForm() : this(new VideoEncoder())
         {
         }
 

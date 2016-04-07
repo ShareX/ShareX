@@ -34,8 +34,7 @@ namespace ShareX
     {
         public ClipboardFormat ClipboardFormat { get; private set; }
 
-        public ClipboardFormatForm()
-            : this(new ClipboardFormat())
+        public ClipboardFormatForm() : this(new ClipboardFormat())
         {
         }
 

@@ -42,8 +42,7 @@ namespace ShareX.ScreenCaptureLib
             IgnoreWindows = new List<IntPtr>();
         }
 
-        public WindowsList(IntPtr ignoreWindow)
-            : this()
+        public WindowsList(IntPtr ignoreWindow) : this()
         {
             IgnoreWindows.Add(ignoreWindow);
         }

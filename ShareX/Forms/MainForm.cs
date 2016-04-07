@@ -1280,8 +1280,15 @@ namespace ShareX
             switch (e.Button)
             {
                 case MouseButtons.Left:
-                    timerTraySingleClick.Interval = (int)(SystemInformation.DoubleClickTime * 1.1);
-                    timerTraySingleClick.Start();
+                    if (Program.Settings.TrayLeftDoubleClickAction == HotkeyType.None)
+                    {
+                        ExecuteJob(Program.Settings.TrayLeftClickAction);
+                    }
+                    else
+                    {
+                        timerTraySingleClick.Interval = (int)(SystemInformation.DoubleClickTime * 1.1);
+                        timerTraySingleClick.Start();
+                    }
                     break;
                 case MouseButtons.Middle:
                     ExecuteJob(Program.Settings.TrayMiddleClickAction);
@@ -1294,7 +1301,7 @@ namespace ShareX
             if (e.Button == MouseButtons.Left)
             {
                 timerTraySingleClick.Stop();
-                this.ForceActivate();
+                ExecuteJob(Program.Settings.TrayLeftDoubleClickAction);
             }
         }
 
@@ -1769,6 +1776,9 @@ namespace ShareX
                 // Other
                 case HotkeyType.DisableHotkeys:
                     TaskHelpers.ToggleHotkeys();
+                    break;
+                case HotkeyType.OpenMainWindow:
+                    this.ForceActivate();
                     break;
                 case HotkeyType.OpenScreenshotsFolder:
                     TaskHelpers.OpenScreenshotsFolder();

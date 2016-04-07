@@ -37,8 +37,7 @@ namespace ShareX.HelpersLib
         private bool oldColorExist;
         private bool controlChangingColor;
 
-        public ColorPickerForm()
-            : this(Color.Red)
+        public ColorPickerForm() : this(Color.Red)
         {
         }
 

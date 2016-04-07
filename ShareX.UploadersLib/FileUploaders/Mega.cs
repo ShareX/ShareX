@@ -55,13 +55,11 @@ namespace ShareX.UploadersLib.FileUploaders
         private readonly MegaApiClient.AuthInfos _authInfos;
         private readonly string _parentNodeId;
 
-        public Mega()
-            : this(null, null)
+        public Mega() : this(null, null)
         {
         }
 
-        public Mega(MegaApiClient.AuthInfos authInfos)
-            : this(authInfos, null)
+        public Mega(MegaApiClient.AuthInfos authInfos) : this(authInfos, null)
         {
         }
 

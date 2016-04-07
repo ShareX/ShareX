@@ -77,21 +77,18 @@ namespace ShareX.UploadersLib
             OAuthVersion = "1.0";
         }
 
-        public OAuthInfo(string consumerKey)
-            : this()
+        public OAuthInfo(string consumerKey) : this()
         {
             ConsumerKey = consumerKey;
         }
 
-        public OAuthInfo(string consumerKey, string consumerSecret)
-            : this()
+        public OAuthInfo(string consumerKey, string consumerSecret) : this()
         {
             ConsumerKey = consumerKey;
             ConsumerSecret = consumerSecret;
         }
 
-        public OAuthInfo(string consumerKey, string consumerSecret, string userToken, string userSecret)
-            : this(consumerKey, consumerSecret)
+        public OAuthInfo(string consumerKey, string consumerSecret, string userToken, string userSecret) : this(consumerKey, consumerSecret)
         {
             UserToken = userToken;
             UserSecret = userSecret;

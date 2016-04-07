@@ -529,6 +529,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbStreamableUseDirectURL = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3076,6 +3077,7 @@
             // 
             // tpStreamable
             // 
+            this.tpStreamable.Controls.Add(this.cbStreamableUseDirectURL);
             this.tpStreamable.Controls.Add(this.txtStreamablePassword);
             this.tpStreamable.Controls.Add(this.txtStreamableUsername);
             this.tpStreamable.Controls.Add(this.lblStreamableUsername);
@@ -4239,6 +4241,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbStreamableUseDirectURL
+            // 
+            resources.ApplyResources(this.cbStreamableUseDirectURL, "cbStreamableUseDirectURL");
+            this.cbStreamableUseDirectURL.Name = "cbStreamableUseDirectURL";
+            this.cbStreamableUseDirectURL.UseVisualStyleBackColor = true;
+            this.cbStreamableUseDirectURL.CheckedChanged += new System.EventHandler(this.cbStreamableUseDirectURL_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4891,5 +4900,6 @@
         private System.Windows.Forms.Button btnCheveretoTestAll;
         private System.Windows.Forms.CheckBox cbPastebinRaw;
         private System.Windows.Forms.CheckBox cbGistUseRawURL;
+        private System.Windows.Forms.CheckBox cbStreamableUseDirectURL;
     }
 }

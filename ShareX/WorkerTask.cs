@@ -765,9 +765,9 @@ namespace ShareX
             {
                 if (Info.TaskSettings.AdvancedSettings.ResultForceHTTPS)
                 {
-                    Info.Result.URL = URLHelpers.ForceHTTPS(Info.Result.URL);
-                    Info.Result.ThumbnailURL = URLHelpers.ForceHTTPS(Info.Result.ThumbnailURL);
-                    Info.Result.DeletionURL = URLHelpers.ForceHTTPS(Info.Result.DeletionURL);
+                    Info.Result.URL = URLHelpers.ForcePrefix(Info.Result.URL);
+                    Info.Result.ThumbnailURL = URLHelpers.ForcePrefix(Info.Result.ThumbnailURL);
+                    Info.Result.DeletionURL = URLHelpers.ForcePrefix(Info.Result.DeletionURL);
                 }
 
                 if (Info.Job != TaskJob.ShareURL && (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.UseURLShortener) || Info.Job == TaskJob.ShortenURL ||

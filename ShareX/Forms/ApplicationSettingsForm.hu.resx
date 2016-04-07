@@ -117,53 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Haladó</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Alkalmazás beállítások</value>
   </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Tallózás...</value>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>Proxy</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Tallózás...</value>
   </data>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
-    <value>Hozzáadás...</value>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>Megnyitás...</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
     <value>Szerkesztés...</value>
   </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Eltávolítás</value>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 kikapcsolva)</value>
   </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Megnyitás...</value>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>Puffer méret:</value>
   </data>
-  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
-    <value>Megnyitás...</value>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>ShareX személyes mappa:</value>
   </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Kép nyomtatási beállítások...</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>Ne mutassa a kép nyomtatási beállítás dialógusát</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Újrapróbálkozások száma a feltöltés sikertelensége esetén:</value>
+  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
+    <value>Megjegyzés: Újra kell indítanod a ShareX-et a személyes mappa beállításaid változásainak életbe lépéséhez.</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
     <value>Ne mutassa a Windowsos nyomtatás dialógust</value>
   </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Emlékezzen a főablak pozíciójára</value>
-  </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Emlékezzen a főablak méretére</value>
-  </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Mutassa a ShareX-et a "Küldés" gyorsmenüben</value>
-  </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mutassa a "Feltöltés ShareX használatával" gombot a kontextus menüben</value>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>Másodlagos fájl feltöltők</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Tálca ikon mutatása</value>
@@ -171,50 +159,56 @@
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>Indításkor minimalizálás a tálcára</value>
   </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Mutassa a ShareX-et a "Küldés" gyorsmenüben</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>Mutassa a "Feltöltés ShareX használatával" gombot a kontextus menüben</value>
+  </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>A ShareX futtatása a Windows indításakor</value>
   </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Folyamat haladásának mutatása a tálca ikonon</value>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>Emlékezzen a főablak pozíciójára</value>
   </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Folyamat előrehaladásának kijelzése a tálcán</value>
+  <data name="llTranslators.Text" xml:space="preserve">
+    <value>Segíts, hogy lefordíthassuk a ShareX-et a nyelvedre!</value>
   </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Egyéni képernyőmentés mappa használata:</value>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Tallózás...</value>
   </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Leírás</value>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>Eltávolítás</value>
   </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Formátum</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Másodlagos feltöltők használata a preferálási sorrendben újrapróbálkozáskor</value>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>Hozzáadás...</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>Vágólap formátumok</value>
   </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Másodlagos fájl feltöltők</value>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Leírás</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Másodlagos feltöltők használata a preferálási sorrendben újrapróbálkozáskor</value>
+  </data>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>Eredmények</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Másodlagos kép feltöltők</value>
   </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Másodlagos szöveg feltöltők</value>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>Egyidejű feltöltési limit:</value>
   </data>
-  <data name="lblBufferSize.Text" xml:space="preserve">
-    <value>Puffer méret:</value>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>Folyamat haladásának mutatása a tálca ikonon</value>
   </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Nyelv:</value>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>Nyomtatás</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Megjegyzés: Újra kell indítanod a ShareX-et a személyes mappa beállításaid változásainak életbe lépéséhez.</value>
-  </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX személyes mappa:</value>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>Kép nyomtatási beállítások...</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Hoszt:</value>
@@ -222,49 +216,55 @@
   <data name="lblProxyMethod.Text" xml:space="preserve">
     <value>Proxy beállítások:</value>
   </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
   <data name="lblProxyPort.Text" xml:space="preserve">
     <value>Port:</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Egyéni képernyőmentés mappa használata:</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>Megnyitás...</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>Folyamat előrehaladásának kijelzése a tálcán</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Felhasználónév:</value>
   </data>
-  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Almappa sablon:</value>
-  </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Egyidejű feltöltési limit:</value>
-  </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 kikapcsolva)</value>
-  </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Segíts, hogy lefordíthassuk a ShareX-et a nyelvedre!</value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Haladó</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Nyelv:</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Általános</value>
   </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>Emlékezzen a főablak méretére</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
+    <value>Almappa sablon:</value>
+  </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Elérési útvonalak</value>
   </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Nyomtatás</value>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>Ne mutassa a kép nyomtatási beállítás dialógusát</value>
   </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="tpUploadRetry.Text" xml:space="preserve">
+    <value>Újra</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Feltöltés</value>
   </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Eredmények</value>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>Újrapróbálkozások száma a feltöltés sikertelensége esetén:</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Újra</value>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Formátum</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>Másodlagos szöveg feltöltők</value>
   </data>
 </root>

@@ -195,6 +195,7 @@ namespace ShareX
         MonitorTest,
         // Other
         DisableHotkeys,
+        OpenMainWindow,
         OpenScreenshotsFolder,
         OpenHistory,
         OpenImageHistory

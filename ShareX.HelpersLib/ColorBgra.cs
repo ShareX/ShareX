@@ -45,14 +45,12 @@ namespace ShareX.HelpersLib
 
         public const byte SizeOf = 4;
 
-        public ColorBgra(uint bgra)
-            : this()
+        public ColorBgra(uint bgra) : this()
         {
             Bgra = bgra;
         }
 
-        public ColorBgra(byte b, byte g, byte r, byte a = 255)
-            : this()
+        public ColorBgra(byte b, byte g, byte r, byte a = 255) : this()
         {
             Blue = b;
             Green = g;
@@ -60,8 +58,7 @@ namespace ShareX.HelpersLib
             Alpha = a;
         }
 
-        public ColorBgra(Color color)
-            : this(color.B, color.G, color.R, color.A)
+        public ColorBgra(Color color) : this(color.B, color.G, color.R, color.A)
         {
         }
 

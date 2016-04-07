@@ -34,8 +34,7 @@ namespace ShareX
     {
         public ExternalProgram FileAction { get; private set; }
 
-        public ActionsForm()
-            : this(new ExternalProgram())
+        public ActionsForm() : this(new ExternalProgram())
         {
         }
 

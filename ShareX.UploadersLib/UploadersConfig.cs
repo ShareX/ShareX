@@ -282,9 +282,10 @@ namespace ShareX.UploadersLib
 
         // Streamable
 
+        public bool StreamableAnonymous = true;
         public string StreamableUsername = "";
         public string StreamablePassword = "";
-        public bool StreamableAnonymous = true;
+        public bool StreamableUseDirectURL = false;
 
         #endregion File uploaders
 

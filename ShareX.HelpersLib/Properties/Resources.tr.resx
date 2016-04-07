@@ -859,4 +859,10 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
     <value>Dosya seçiniz</value>
   </data>
+  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>Ana pencereyi aç</value>
+  </data>
 </root>

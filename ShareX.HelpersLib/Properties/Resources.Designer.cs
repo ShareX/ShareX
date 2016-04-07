@@ -1222,6 +1222,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open main window.
+        /// </summary>
+        internal static string HotkeyType_OpenMainWindow {
+            get {
+                return ResourceManager.GetString("HotkeyType_OpenMainWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        internal static string HotkeyType_OpenMainWindow_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_OpenMainWindow_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open screenshots folder.
         /// </summary>
         internal static string HotkeyType_OpenScreenshotsFolder {
