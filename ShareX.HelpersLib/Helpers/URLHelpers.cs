@@ -310,28 +310,28 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        private static readonly string[] URLPrefixes = new string[] { "http://", "https://", "ftp://", "ftps://", "file://" };
+        private static readonly string[] URLPrefixes = new string[] { "http://", "https://", "ftp://", "ftps://", "file://", "//" };
 
         public static bool HasPrefix(string url)
         {
             return URLPrefixes.Any(x => url.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        public static string FixPrefix(string url)
+        public static string FixPrefix(string url, string prefix = "http://")
         {
-            if (!HasPrefix(url))
+            if (!string.IsNullOrEmpty(url) && !HasPrefix(url))
             {
-                return "http://" + url;
+                return prefix + url;
             }
 
             return url;
         }
 
-        public static string ForceHTTPS(string url)
+        public static string ForcePrefix(string url, string prefix = "https://")
         {
-            if (!string.IsNullOrEmpty(url) && url.StartsWith("http://", StringComparison.InvariantCultureIgnoreCase))
+            if (!string.IsNullOrEmpty(url))
             {
-                return "https://" + url.Substring(7);
+                url = prefix + RemovePrefixes(url);
             }
 
             return url;

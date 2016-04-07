@@ -125,11 +125,29 @@
 Si el campo de texto está vacío, nombre de balde se utilizará para URL.
 Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://balde.ejemplo.com/...</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configuración de destino</value>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>Otras cargadores</value>
   </data>
-  <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>Cargadores de imagenes</value>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>Acortadores de URL</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Cargadores</value>
+  </data>
+  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
+    <value>Añadir</value>
   </data>
   <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
     <value>Quitar</value>
@@ -137,14 +155,8 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Añadir</value>
   </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Añadir carpeta</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Añadir</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>Cargadores personalizados</value>
   </data>
   <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
     <value>Ejemplos...</value>
@@ -179,18 +191,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
     <value>Tipo de respuesta:</value>
   </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Actualizar</value>
-  </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Añadir</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Cargadores</value>
-  </data>
   <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
     <value>Cargador de texto:</value>
   </data>
@@ -215,12 +215,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
     <value>Tipo de solicitud:</value>
   </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Cargadores personalizados</value>
-  </data>
-  <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>Otras cargadores</value>
-  </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Dominio:</value>
   </data>
@@ -242,269 +236,8 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
     <value>Clave de la API:</value>
   </data>
-  <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>Acortadores de URL</value>
-  </data>
-  <data name="btnFtpClient.Text" xml:space="preserve">
-    <value>Cliente...</value>
-  </data>
-  <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Archivo:</value>
-  </data>
-  <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Texto:</value>
-  </data>
-  <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Imagen:</value>
-  </data>
-  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Crear URL compartible:</value>
-  </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Seleccionar...</value>
-  </data>
-  <data name="lblDropboxStatus.Text" xml:space="preserve">
-    <value>Estado</value>
-  </data>
-  <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Si utiliza la carpeta "Público", una url compartible ya se generó. No es necesario activar la opción "Crear URL compartible".</value>
-  </data>
-  <data name="lblDropboxPath.Text" xml:space="preserve">
-    <value>Ruta de subir:</value>
-  </data>
-  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>Carpeta seleccionada:</value>
-  </data>
-  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
-    <value>Crear URL compartible</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>Subir archivos a la carpeta seleccionada</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>ID de carpeta:</value>
-  </data>
-  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
-    <value>Título</value>
-  </data>
-  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
-    <value>Refrescar lista de carpetas</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>¿Es carga pública?</value>
-  </data>
-  <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Nota: Puede hacer doble clic en el nombre de carpeta para ir dentro de esa carpeta.</value>
-  </data>
-  <data name="cbBoxShare.Text" xml:space="preserve">
-    <value>Crear un enlace compartible</value>
-  </data>
-  <data name="chBoxFoldersName.Text" xml:space="preserve">
-    <value>Nombre de la carpeta</value>
-  </data>
-  <data name="lblBoxFolderID.Text" xml:space="preserve">
-    <value>Carpeta seleccionada:</value>
-  </data>
-  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
-    <value>Refrescar lista de carpetas</value>
-  </data>
-  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
-    <value>Vista previa de URL:</value>
-  </data>
-  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
-    <value>Vista previa</value>
-  </data>
-  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
-    <value>Nombre del balde:</value>
-  </data>
-  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
-    <value>Punto final:</value>
-  </data>
-  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
-    <value>Ruta de subir:</value>
-  </data>
-  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
-    <value>Clave secreta:</value>
-  </data>
-  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
-    <value>Clave de acceso:</value>
-  </data>
-  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
-    <value>Refrescar</value>
-  </data>
-  <data name="lblMegaStatus.Text" xml:space="preserve">
-    <value>Configurado / No configurado</value>
-  </data>
-  <data name="btnMegaRegister.Text" xml:space="preserve">
-    <value>Registrar...</value>
-  </data>
-  <data name="lblMegaFolder.Text" xml:space="preserve">
-    <value>Carpeta:</value>
-  </data>
-  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>Estado:</value>
-  </data>
-  <data name="lblMegaEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="btnMegaLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="lblMegaPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Enlace directo (Añade "&amp;descargar" a la URL)</value>
-  </data>
-  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
-    <value>Crear URL compartible</value>
-  </data>
-  <data name="lblOwnCloudPath.Text" xml:space="preserve">
-    <value>Ruta:</value>
-  </data>
-  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
-  </data>
-  <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
-    <value>Utilizar enlace de largo que incluye el nombre del archivo</value>
-  </data>
-  <data name="lblMediaFirePath.Text" xml:space="preserve">
-    <value>Ruta de subir:</value>
-  </data>
-  <data name="lblMediaFirePassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblMediaFireEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblPushbulletDevices.Text" xml:space="preserve">
-    <value>Dispositivo:</value>
-  </data>
-  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
-    <value>Obtener lista de equipos</value>
-  </data>
-  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>Clave de API de usuario:</value>
-  </data>
-  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>&amp;Registrar...</value>
-  </data>
-  <data name="lblSendSpacePassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Inicio de sesión necesario.</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
-    <value>Utilice URL directa si existe</value>
-  </data>
-  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Tipo de URL:</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Estado de iniciar sesión:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Refrescar autorización</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Autorizar</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Autenticación</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Recargar lista de carpetas</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Quitar carpeta</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Subir imágenes a</value>
-  </data>
-  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
-    <value>Jira problema prefijo:</value>
-  </data>
-  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
-    <value>Plantilla</value>
-  </data>
-  <data name="lblJiraHost.Text" xml:space="preserve">
-    <value>Host Jira:</value>
-  </data>
-  <data name="gpJiraServer.Text" xml:space="preserve">
-    <value>Servidor Jira</value>
-  </data>
-  <data name="lblLambdaInfo.Text" xml:space="preserve">
-    <value>Para obtener una clave de API, inicie sesión en Lambda en https://lambda.sx/ haga clic en la rueda dentada configuración en la parte superior derecha.</value>
-  </data>
-  <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>Clave de la API:</value>
-  </data>
-  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
-    <value>Archivo:</value>
-  </data>
-  <data name="lblSharedFolderText.Text" xml:space="preserve">
-    <value>Texto:</value>
-  </data>
-  <data name="lblSharedFolderImages.Text" xml:space="preserve">
-    <value>Imagen:</value>
-  </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
     <value>Carpeta compartida</value>
-  </data>
-  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
-    <value>Servidor SMTP:</value>
-  </data>
-  <data name="lblEmailPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
-    <value>Recordar la última dirección del destinatario</value>
-  </data>
-  <data name="lblEmailFrom.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
-    <value>Asunto predeterminado:</value>
-  </data>
-  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
-    <value>Mensaje predeterminado:</value>
-  </data>
-  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
-    <value>Puerto:</value>
   </data>
   <data name="tpEmail.Text" xml:space="preserve">
     <value>Email</value>
@@ -512,167 +245,434 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="tpFileUploaders.Text" xml:space="preserve">
     <value>Cargadores de archivos</value>
   </data>
-  <data name="btnPastebinRegister.Text" xml:space="preserve">
-    <value>Registrar...</value>
-  </data>
-  <data name="lblPastebinSyntax.Text" xml:space="preserve">
-    <value>Pegar sintaxis:</value>
-  </data>
-  <data name="lblPastebinExpiration.Text" xml:space="preserve">
-    <value>Vencimiento:</value>
-  </data>
-  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
-    <value>Privacidad:</value>
-  </data>
-  <data name="lblPastebinTitle.Text" xml:space="preserve">
-    <value>Pegar título:</value>
-  </data>
-  <data name="lblPastebinPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblPastebinUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
-  </data>
-  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
-    <value>Estado:</value>
-  </data>
-  <data name="btnPastebinLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>Clave de API de usuario:</value>
-  </data>
-  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>¿Es carga pública?</value>
-  </data>
-  <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>Clave de usuario:</value>
-  </data>
-  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>Destacando de sintaxis:</value>
-  </data>
-  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
-    <value>Dominio personalizado:</value>
-  </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
     <value>Cargadores de texto</value>
   </data>
-  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>Subir imágenes al álbum seleccionado</value>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>Cargadores de imagenes</value>
   </data>
-  <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>Utilice enlace directo</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Configuración de destino</value>
   </data>
-  <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>Título</value>
+  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
+    <value>Clave de la API:</value>
   </data>
-  <data name="chImgurDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>Enlace directo</value>
   </data>
-  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
     <value>Refrescar lista de álbum</value>
   </data>
-  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Tipo miniatura:</value>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>Descripción</value>
   </data>
-  <data name="btnImageShackLogin.Text" xml:space="preserve">
-    <value>Login</value>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>Nombre</value>
   </data>
-  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>Abrir la página de perfil público</value>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>Identificación del álbum para subir (vacío = No subida álbum):</value>
   </data>
-  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>¿Es carga pública?</value>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>Inicio de sesión es necesario.</value>
   </data>
-  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>Abrir mi página de imágenes</value>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>Paso 2: Completar autorización </value>
   </data>
-  <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>Código de verificación (Obtener el código de verificación de la página autorización):</value>
   </data>
-  <data name="lblImageShackPassword.Text" xml:space="preserve">
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>Paso 1: Abrir la página de autorización...</value>
+  </data>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>Nombre del álbum predeterminado</value>
+  </data>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>Cuenta de usuario</value>
+  </data>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>Crear álbum</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>Ruta álbum de origen</value>
+  </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>Nuevo nombre del álbum (debe estar entre 2 y 50 caracteres.  Los caracteres válidos son letras, números, guión bajo (_), guiones (-), y el espacio)</value>
+  </data>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>Quitar álbum</value>
+  </data>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>Añadir álbum</value>
+  </data>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>Subir imágenes a</value>
+  </data>
+  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
+    <value>Paso 1: Abrir la página de autorización...</value>
+  </data>
+  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
+    <value>Paso 2: Completar autorización</value>
+  </data>
+  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
+    <value>Refrescar autorización</value>
+  </data>
+  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
+    <value>Su photostream...</value>
+  </data>
+  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
+    <value>Abrir mi página de imágenes...</value>
+  </data>
+  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblTinyPicPassword.Text" xml:space="preserve">
     <value>Contraseña:</value>
   </data>
   <data name="btnTinyPicLogin.Text" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Contraseña:</value>
   </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+    <value>Abrir mi página de imágenes</value>
+  </data>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>¿Es carga pública?</value>
+  </data>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>Abrir la página de perfil público</value>
+  </data>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>Tipo miniatura:</value>
+  </data>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>Refrescar lista de álbum</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>Utilice enlace directo</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>Subir imágenes al álbum seleccionado</value>
+  </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>Dominio personalizado:</value>
+  </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>Destacando de sintaxis:</value>
+  </data>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>Clave de usuario:</value>
+  </data>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>¿Es carga pública?</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>Clave de API de usuario:</value>
+  </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>Estado:</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="lblPastebinPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="lblPastebinTitle.Text" xml:space="preserve">
+    <value>Pegar título:</value>
+  </data>
+  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
+    <value>Privacidad:</value>
+  </data>
+  <data name="lblPastebinExpiration.Text" xml:space="preserve">
+    <value>Vencimiento:</value>
+  </data>
+  <data name="lblPastebinSyntax.Text" xml:space="preserve">
+    <value>Pegar sintaxis:</value>
+  </data>
+  <data name="btnPastebinRegister.Text" xml:space="preserve">
+    <value>Registrar...</value>
+  </data>
+  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
+    <value>Puerto:</value>
+  </data>
+  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
+    <value>Mensaje predeterminado:</value>
+  </data>
+  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
+    <value>Asunto predeterminado:</value>
+  </data>
+  <data name="lblEmailFrom.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Abrir mi página de imágenes...</value>
+  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
+    <value>Recordar la última dirección del destinatario</value>
   </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Su photostream...</value>
+  <data name="lblEmailPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
   </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Refrescar autorización</value>
+  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
+    <value>Servidor SMTP:</value>
   </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Paso 2: Completar autorización</value>
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
+    <value>Imagen:</value>
   </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Paso 1: Abrir la página de autorización...</value>
+  <data name="lblSharedFolderText.Text" xml:space="preserve">
+    <value>Texto:</value>
   </data>
-  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
-    <value>Añadir álbum</value>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>Archivo:</value>
   </data>
-  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>Quitar álbum</value>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>Clave de la API:</value>
   </data>
-  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>Para obtener una clave de API, inicie sesión en Lambda en https://lambda.sx/ haga clic en la rueda dentada configuración en la parte superior derecha.</value>
+  </data>
+  <data name="lblJiraHost.Text" xml:space="preserve">
+    <value>Host Jira:</value>
+  </data>
+  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
+    <value>Plantilla</value>
+  </data>
+  <data name="gpJiraServer.Text" xml:space="preserve">
+    <value>Servidor Jira</value>
+  </data>
+  <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
+    <value>Jira problema prefijo:</value>
+  </data>
+  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
+    <value>Quitar carpeta</value>
+  </data>
+  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
+    <value>Añadir carpeta</value>
+  </data>
+  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
+    <value>Recargar lista de carpetas</value>
+  </data>
+  <data name="gbMinusUpload.Text" xml:space="preserve">
     <value>Subir imágenes a</value>
   </data>
-  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>Nuevo nombre del álbum (debe estar entre 2 y 50 caracteres.  Los caracteres válidos son letras, números, guión bajo (_), guiones (-), y el espacio)</value>
+  <data name="btnMinusAuth.Text" xml:space="preserve">
+    <value>Autorizar</value>
   </data>
-  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
-    <value>Ruta álbum de origen</value>
+  <data name="lblMinusUsername.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
   </data>
-  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
-    <value>Crear álbum</value>
+  <data name="lblMinusPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
+    <value>Refrescar autorización</value>
+  </data>
+  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
+    <value>Estado de iniciar sesión:</value>
+  </data>
+  <data name="gbMinusUserPass.Text" xml:space="preserve">
+    <value>Autenticación</value>
+  </data>
+  <data name="lblMinusURLType.Text" xml:space="preserve">
+    <value>Tipo de URL:</value>
+  </data>
+  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
+    <value>Utilice URL directa si existe</value>
+  </data>
+  <data name="btnGe_ttLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="lblGe_ttEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblGe_ttPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="lblGe_ttStatus.Text" xml:space="preserve">
+    <value>Inicio de sesión necesario.</value>
+  </data>
+  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="lblSendSpacePassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
+    <value>&amp;Registrar...</value>
+  </data>
+  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
+    <value>Clave de API de usuario:</value>
+  </data>
+  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
+    <value>Obtener lista de equipos</value>
+  </data>
+  <data name="lblPushbulletDevices.Text" xml:space="preserve">
+    <value>Dispositivo:</value>
+  </data>
+  <data name="lblMediaFireEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblMediaFirePassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="lblMediaFirePath.Text" xml:space="preserve">
+    <value>Ruta de subir:</value>
+  </data>
+  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
+    <value>Utilizar enlace de largo que incluye el nombre del archivo</value>
+  </data>
+  <data name="lblOwnCloudHost.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="lblOwnCloudPath.Text" xml:space="preserve">
+    <value>Ruta:</value>
+  </data>
+  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
+    <value>Crear URL compartible</value>
+  </data>
+  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
+    <value>Enlace directo (Añade "&amp;descargar" a la URL)</value>
+  </data>
+  <data name="lblMegaPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="btnMegaLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="lblMegaEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
+    <value>Estado:</value>
+  </data>
+  <data name="lblMegaFolder.Text" xml:space="preserve">
+    <value>Carpeta:</value>
+  </data>
+  <data name="btnMegaRegister.Text" xml:space="preserve">
+    <value>Registrar...</value>
+  </data>
+  <data name="lblMegaStatus.Text" xml:space="preserve">
+    <value>Configurado / No configurado</value>
+  </data>
+  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
+    <value>Refrescar</value>
+  </data>
+  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
+    <value>Clave de acceso:</value>
+  </data>
+  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
+    <value>Clave secreta:</value>
+  </data>
+  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
+    <value>Ruta de subir:</value>
+  </data>
+  <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
+    <value>Punto final:</value>
+  </data>
+  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
+    <value>Nombre del balde:</value>
+  </data>
+  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
+    <value>Vista previa</value>
+  </data>
+  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
+    <value>Vista previa de URL:</value>
+  </data>
+  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
+    <value>Refrescar lista de carpetas</value>
+  </data>
+  <data name="lblBoxFolderID.Text" xml:space="preserve">
+    <value>Carpeta seleccionada:</value>
+  </data>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>Nombre de la carpeta</value>
+  </data>
+  <data name="cbBoxShare.Text" xml:space="preserve">
+    <value>Crear un enlace compartible</value>
+  </data>
+  <data name="lblBoxFolderTip.Text" xml:space="preserve">
+    <value>Nota: Puede hacer doble clic en el nombre de carpeta para ir dentro de esa carpeta.</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
+    <value>¿Es carga pública?</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
+    <value>Refrescar lista de carpetas</value>
+  </data>
+  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>ID de carpeta:</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>Subir archivos a la carpeta seleccionada</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>Crear URL compartible</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>Carpeta seleccionada:</value>
+  </data>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>Ruta de subir:</value>
+  </data>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>Si utiliza la carpeta "Público", una url compartible ya se generó. No es necesario activar la opción "Crear URL compartible".</value>
+  </data>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>Seleccionar...</value>
+  </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>Crear URL compartible:</value>
+  </data>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>Imagen:</value>
+  </data>
+  <data name="lblFtpText.Text" xml:space="preserve">
+    <value>Texto:</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>Archivo:</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>Cliente...</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Crear nuevo álbum</value>
-  </data>
-  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
-    <value>Nombre del álbum predeterminado</value>
-  </data>
-  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>Paso 1: Abrir la página de autorización...</value>
-  </data>
-  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Código de verificación (Obtener el código de verificación de la página autorización):</value>
-  </data>
-  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>Paso 2: Completar autorización </value>
-  </data>
-  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>Inicio de sesión es necesario.</value>
-  </data>
-  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
-    <value>Cuenta de usuario</value>
-  </data>
-  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>Identificación del álbum para subir (vacío = No subida álbum):</value>
-  </data>
-  <data name="chPicasaName.Text" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="chPicasaDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>Refrescar lista de álbum</value>
-  </data>
-  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>Enlace directo</value>
-  </data>
-  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
-    <value>Clave de la API:</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Utilice almacenaje de redundancia reducida</value>

@@ -568,11 +568,8 @@ namespace ShareX.UploadersLib
             cbStreamableAnonymous.Checked = Config.StreamableAnonymous;
             txtStreamablePassword.Text = Config.StreamablePassword;
             txtStreamableUsername.Text = Config.StreamableUsername;
-            if (Config.StreamableAnonymous)
-            {
-                txtStreamableUsername.Enabled = false;
-                txtStreamablePassword.Enabled = false;
-            }
+            txtStreamableUsername.Enabled = txtStreamablePassword.Enabled = !Config.StreamableAnonymous;
+            cbStreamableUseDirectURL.Checked = Config.StreamableUseDirectURL;
 
             #endregion File uploaders
 
@@ -2439,6 +2436,11 @@ namespace ShareX.UploadersLib
         private void txtStreamablePassword_TextChanged(object sender, EventArgs e)
         {
             Config.StreamablePassword = txtStreamablePassword.Text;
+        }
+
+        private void cbStreamableUseDirectURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.StreamableUseDirectURL = cbStreamableUseDirectURL.Checked;
         }
 
         #endregion Streamable
