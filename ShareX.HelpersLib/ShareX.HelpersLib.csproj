@@ -159,6 +159,8 @@
     <Compile Include="Helpers\URLHelpers.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />
     <Compile Include="CodeMenuEntry.cs" />
+    <Compile Include="ImageLoader.cs" />
+    <Compile Include="ImageLoaderTask.cs" />
     <Compile Include="Input\InputHelpers.cs" />
     <Compile Include="Input\InputManager.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
