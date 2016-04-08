@@ -147,6 +147,8 @@ namespace ShareX.HelpersLib
 
         private bool isImageLoading;
 
+        private ImageLoader imageLoader = new ImageLoader();
+
         public MyPictureBox()
         {
             InitializeComponent();
@@ -236,11 +238,31 @@ namespace ShareX.HelpersLib
             {
                 if (!isImageLoading)
                 {
-                    Reset();
                     isImageLoading = true;
-                    Text = Resources.MyPictureBox_LoadImageAsync_Loading_image___;
                     lblStatus.Visible = true;
-                    pbMain.LoadAsync(path);
+
+                    imageLoader.LoadImage(path, imageLoaded);
+                }
+            }
+        }
+
+        private void imageLoaded(Image img)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action(() => imageLoaded(img)));
+            }
+            else
+            {
+                lock (imageLoadLock)
+                {
+                    Reset();
+                    Image = img;
+
+                    Text = Resources.MyPictureBox_LoadImageAsync_Loading_image___;
+
+                    isImageLoading = false;
+                    lblStatus.Visible = false;
                 }
             }
         }
