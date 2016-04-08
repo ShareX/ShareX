@@ -62,7 +62,6 @@
             // txtClipboard
             // 
             resources.ApplyResources(this.txtClipboard, "txtClipboard");
-            this.txtClipboard.BackColor = System.Drawing.Color.White;
             this.txtClipboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtClipboard.Name = "txtClipboard";
             this.txtClipboard.ReadOnly = true;

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OAuthWebForm));
-            this.wbMain = new System.Windows.Forms.WebBrowser();
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
+            this.wbMain = new System.Windows.Forms.WebBrowser();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.tslURL = new System.Windows.Forms.ToolStripLabel();
             this.tstbURL = new System.Windows.Forms.ToolStripTextBox();
@@ -39,13 +39,6 @@
             this.tscMain.SuspendLayout();
             this.tsMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // wbMain
-            // 
-            resources.ApplyResources(this.wbMain, "wbMain");
-            this.wbMain.Name = "wbMain";
-            this.wbMain.ScriptErrorsSuppressed = true;
-            this.wbMain.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.wbMain_Navigated);
             // 
             // tscMain
             // 
@@ -60,6 +53,13 @@
             // tscMain.TopToolStripPanel
             // 
             this.tscMain.TopToolStripPanel.Controls.Add(this.tsMain);
+            // 
+            // wbMain
+            // 
+            resources.ApplyResources(this.wbMain, "wbMain");
+            this.wbMain.Name = "wbMain";
+            this.wbMain.ScriptErrorsSuppressed = true;
+            this.wbMain.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.wbMain_Navigated);
             // 
             // tsMain
             // 
@@ -87,7 +87,6 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tscMain);
             this.Name = "OAuthWebForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

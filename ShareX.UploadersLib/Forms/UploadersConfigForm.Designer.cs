@@ -369,6 +369,7 @@
             this.txtSulAPIKey = new System.Windows.Forms.TextBox();
             this.lblSulAPIKey = new System.Windows.Forms.Label();
             this.tpStreamable = new System.Windows.Forms.TabPage();
+            this.cbStreamableUseDirectURL = new System.Windows.Forms.CheckBox();
             this.txtStreamablePassword = new System.Windows.Forms.TextBox();
             this.txtStreamableUsername = new System.Windows.Forms.TextBox();
             this.lblStreamableUsername = new System.Windows.Forms.Label();
@@ -529,7 +530,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbStreamableUseDirectURL = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3087,6 +3087,13 @@
             this.tpStreamable.Name = "tpStreamable";
             this.tpStreamable.UseVisualStyleBackColor = true;
             // 
+            // cbStreamableUseDirectURL
+            // 
+            resources.ApplyResources(this.cbStreamableUseDirectURL, "cbStreamableUseDirectURL");
+            this.cbStreamableUseDirectURL.Name = "cbStreamableUseDirectURL";
+            this.cbStreamableUseDirectURL.UseVisualStyleBackColor = true;
+            this.cbStreamableUseDirectURL.CheckedChanged += new System.EventHandler(this.cbStreamableUseDirectURL_CheckedChanged);
+            // 
             // txtStreamablePassword
             // 
             resources.ApplyResources(this.txtStreamablePassword, "txtStreamablePassword");
@@ -4223,7 +4230,7 @@
             // 
             // lblWidthHint
             // 
-            this.lblWidthHint.BackColor = System.Drawing.Color.Black;
+            this.lblWidthHint.BackColor = System.Drawing.SystemColors.Highlight;
             resources.ApplyResources(this.lblWidthHint, "lblWidthHint");
             this.lblWidthHint.Name = "lblWidthHint";
             // 
@@ -4241,18 +4248,10 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // cbStreamableUseDirectURL
-            // 
-            resources.ApplyResources(this.cbStreamableUseDirectURL, "cbStreamableUseDirectURL");
-            this.cbStreamableUseDirectURL.Name = "cbStreamableUseDirectURL";
-            this.cbStreamableUseDirectURL.UseVisualStyleBackColor = true;
-            this.cbStreamableUseDirectURL.CheckedChanged += new System.EventHandler(this.cbStreamableUseDirectURL_CheckedChanged);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblWidthHint);
             this.Controls.Add(this.tcUploaders);
             this.Controls.Add(this.ttlvMain);

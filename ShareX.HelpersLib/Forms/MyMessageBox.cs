@@ -44,7 +44,6 @@ namespace ShareX.HelpersLib
         {
             Icon = ShareXResources.Icon;
 
-            BackColor = Color.White;
             Width = 180;
             Height = 100;
             Text = caption;
@@ -61,7 +60,6 @@ namespace ShareX.HelpersLib
             labelText.Margin = new Padding(0);
             labelText.Font = SystemFonts.MessageBoxFont;
             labelText.TextAlign = ContentAlignment.MiddleLeft;
-            labelText.BackColor = Color.White;
             labelText.AutoSize = true;
             labelText.MinimumSize = new Size(125, 0);
             labelText.MaximumSize = new Size(400, 400);
@@ -121,7 +119,6 @@ namespace ShareX.HelpersLib
             panel.FlowDirection = FlowDirection.RightToLeft;
 
             FlowLayoutPanel labelPanel = new FlowLayoutPanel();
-            labelPanel.BackColor = Color.White;
             labelPanel.FlowDirection = FlowDirection.TopDown;
             labelPanel.AutoSize = true;
             labelPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;

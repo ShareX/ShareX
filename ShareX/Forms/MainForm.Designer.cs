@@ -265,7 +265,7 @@
             // lblMainFormTip
             // 
             resources.ApplyResources(this.lblMainFormTip, "lblMainFormTip");
-            this.lblMainFormTip.BackColor = System.Drawing.Color.White;
+            this.lblMainFormTip.BackColor = System.Drawing.SystemColors.Window;
             this.lblMainFormTip.ForeColor = System.Drawing.Color.LightGray;
             this.lblMainFormTip.Name = "lblMainFormTip";
             this.lblMainFormTip.UseMnemonic = false;
@@ -280,7 +280,6 @@
             // lvUploads
             // 
             this.lvUploads.AutoFillColumn = true;
-            this.lvUploads.BackColor = System.Drawing.Color.White;
             this.lvUploads.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvUploads.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chFilename,
@@ -333,7 +332,6 @@
             // 
             // pbPreview
             // 
-            this.pbPreview.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.pbPreview, "pbPreview");
             this.pbPreview.DrawCheckeredBackground = true;
             this.pbPreview.EnableRightClickMenu = true;
@@ -1816,7 +1814,6 @@
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
             this.DoubleBuffered = true;

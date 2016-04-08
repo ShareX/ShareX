@@ -67,30 +67,26 @@
             // lblBerk
             // 
             resources.ApplyResources(this.lblBerk, "lblBerk");
-            this.lblBerk.BackColor = System.Drawing.Color.Transparent;
-            this.lblBerk.ForeColor = System.Drawing.Color.Black;
             this.lblBerk.Name = "lblBerk";
             // 
             // lblMike
             // 
             resources.ApplyResources(this.lblMike, "lblMike");
-            this.lblMike.BackColor = System.Drawing.Color.Transparent;
-            this.lblMike.ForeColor = System.Drawing.Color.Black;
             this.lblMike.Name = "lblMike";
             // 
             // rtbCredits
             // 
             resources.ApplyResources(this.rtbCredits, "rtbCredits");
-            this.rtbCredits.BackColor = System.Drawing.Color.White;
             this.rtbCredits.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbCredits.ForeColor = System.Drawing.SystemColors.ControlText;
             this.rtbCredits.Name = "rtbCredits";
             this.rtbCredits.ReadOnly = true;
             this.rtbCredits.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);
             // 
             // rtbShareXInfo
             // 
-            this.rtbShareXInfo.BackColor = System.Drawing.Color.White;
             this.rtbShareXInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbShareXInfo.ForeColor = System.Drawing.SystemColors.ControlText;
             resources.ApplyResources(this.rtbShareXInfo, "rtbShareXInfo");
             this.rtbShareXInfo.Name = "rtbShareXInfo";
             this.rtbShareXInfo.ReadOnly = true;
@@ -164,6 +160,7 @@
             // btnClose
             // 
             resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Name = "btnClose";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -199,7 +196,6 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
             this.Controls.Add(this.btnLicenses);
             this.Controls.Add(this.btnShareXLicense);

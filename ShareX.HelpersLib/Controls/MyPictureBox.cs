@@ -151,6 +151,7 @@ namespace ShareX.HelpersLib
         {
             InitializeComponent();
             Text = string.Empty;
+            pbMain.BackColor = SystemColors.Control;
             pbMain.InitialImage = Resources.Loading;
             pbMain.ErrorImage = Resources.cross;
             pbMain.LoadProgressChanged += pbMain_LoadProgressChanged;

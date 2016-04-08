@@ -41,6 +41,7 @@
             // qrMain
             // 
             resources.ApplyResources(this.qrMain, "qrMain");
+            this.qrMain.BackColor = System.Drawing.Color.White;
             this.qrMain.ContextMenuStrip = this.cmsQR;
             this.qrMain.ErrorCorrectLevel = Gma.QrCodeNet.Encoding.ErrorCorrectionLevel.M;
             this.qrMain.Name = "qrMain";
@@ -79,7 +80,6 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtQRCode);
             this.Controls.Add(this.qrMain);
             this.Name = "QRCodeForm";

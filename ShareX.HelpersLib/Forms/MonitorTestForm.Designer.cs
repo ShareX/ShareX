@@ -65,7 +65,6 @@
             // 
             // pSettings
             // 
-            this.pSettings.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pSettings.Controls.Add(this.btnGradientColor2);
             this.pSettings.Controls.Add(this.btnGradientColor1);
@@ -269,7 +268,6 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
             this.Controls.Add(this.pSettings);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
