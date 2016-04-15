@@ -74,7 +74,8 @@ namespace ShareX.UploadersLib.FileUploaders
             //new PomfUploader("https://pomf.se/upload.php"),
             new PomfUploader("http://reich.io/upload.php"),
             new PomfUploader("https://sugoi.vidyagam.es/upload.php"),
-            new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe")
+            new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe"),
+            new PomfUploader("https://filebunker.pw/upload.php")
         };
 
         public PomfUploader Uploader { get; private set; }
