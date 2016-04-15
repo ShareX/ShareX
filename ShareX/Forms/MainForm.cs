@@ -591,6 +591,15 @@ namespace ShareX
 
         private void AfterSettingsJobs()
         {
+            if (Program.Settings.TrayTextMoreInfo)
+            {
+                niTray.Text = $"{Program.Title} ({Program.Build})";
+            }
+            else
+            {
+                niTray.Text = "ShareX";
+            }
+
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
             HelpersOptions.AcceptInvalidSSLCertificates = Program.Settings.AcceptInvalidSSLCertificates;
             HelpersOptions.UseAlternativeCopyImage = !Program.Settings.UseDefaultClipboardCopyImage;

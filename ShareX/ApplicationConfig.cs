@@ -192,6 +192,9 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settings to memory.")]
         public bool DetectUploaderConfigFileChanges { get; set; }
 
+        [Category("Application"), DefaultValue(false), Description("Show version and build info in tray text so if you are running more than one ShareX build you can differentiate them in tray bar.")]
+        public bool TrayTextMoreInfo { get; set; }
+
         [Category("Upload"), DefaultValue(false), Description("Accept invalid SSL certificates when uploading.")]
         public bool AcceptInvalidSSLCertificates { get; set; }
 
