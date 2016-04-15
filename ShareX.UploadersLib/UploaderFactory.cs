@@ -24,41 +24,22 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ShareX.UploadersLib
 {
     public static class UploaderFactory
     {
-        private static readonly ImageUploaderService[] imageUploaderServices = Helpers.GetInstances<ImageUploaderService>();
-        private static readonly TextUploaderService[] textUploaderServices = Helpers.GetInstances<TextUploaderService>();
-        private static readonly FileUploaderService[] fileUploaderServices = Helpers.GetInstances<FileUploaderService>();
-        private static readonly URLShortenerService[] urlShortenerServices = Helpers.GetInstances<URLShortenerService>();
-        private static readonly URLSharingService[] urlSharingServices = Helpers.GetInstances<URLSharingService>();
+        public static Dictionary<ImageDestination, ImageUploaderService> ImageUploaderServices { get; } = CacheServices<ImageDestination, ImageUploaderService>();
+        public static Dictionary<TextDestination, TextUploaderService> TextUploaderServices { get; } = CacheServices<TextDestination, TextUploaderService>();
+        public static Dictionary<FileDestination, FileUploaderService> FileUploaderServices { get; } = CacheServices<FileDestination, FileUploaderService>();
+        public static Dictionary<UrlShortenerType, URLShortenerService> URLShortenerServices { get; } = CacheServices<UrlShortenerType, URLShortenerService>();
+        public static Dictionary<URLSharingServices, URLSharingService> URLSharingServices { get; } = CacheServices<URLSharingServices, URLSharingService>();
 
-        public static ImageUploaderService GetImageUploaderService(ImageDestination enumValue)
+        private static Dictionary<T, T2> CacheServices<T, T2>() where T2 : UploaderService<T>
         {
-            return imageUploaderServices.First(x => x.EnumValue == enumValue);
-        }
-
-        public static TextUploaderService GetTextUploaderService(TextDestination enumValue)
-        {
-            return textUploaderServices.First(x => x.EnumValue == enumValue);
-        }
-
-        public static FileUploaderService GetFileUploaderService(FileDestination enumValue)
-        {
-            return fileUploaderServices.First(x => x.EnumValue == enumValue);
-        }
-
-        public static URLShortenerService GetURLShortenerService(UrlShortenerType enumValue)
-        {
-            return urlShortenerServices.First(x => x.EnumValue == enumValue);
-        }
-
-        public static URLSharingService GetURLSharingService(URLSharingServices enumValue)
-        {
-            return urlSharingServices.First(x => x.EnumValue == enumValue);
+            return Helpers.GetInstances<T2>().ToDictionary(x => x.EnumValue, x => x);
         }
     }
 }

@@ -75,7 +75,7 @@ namespace ShareX
         private Image tempImage;
         private string tempText;
         private ThreadWorker threadWorker;
-        private Uploader uploader;
+        private GenericUploader uploader;
         private TaskReferenceHelper taskReferenceHelper;
 
         private static string lastSaveAsFolder;
@@ -851,7 +851,7 @@ namespace ShareX
                 return GetInvalidConfigResult(service);
             }
 
-            GenericUploader uploader = service.CreateUploader(Program.UploadersConfig, taskReferenceHelper);
+            uploader = service.CreateUploader(Program.UploadersConfig, taskReferenceHelper);
 
             if (uploader != null)
             {
@@ -871,28 +871,28 @@ namespace ShareX
 
         public UploadResult UploadImage(Stream stream, string fileName)
         {
-            ImageUploaderService service = UploaderFactory.GetImageUploaderService(Info.TaskSettings.ImageDestination);
+            ImageUploaderService service = UploaderFactory.ImageUploaderServices[Info.TaskSettings.ImageDestination];
 
             return UploadData(service, stream, fileName);
         }
 
         public UploadResult UploadText(Stream stream, string fileName)
         {
-            TextUploaderService service = UploaderFactory.GetTextUploaderService(Info.TaskSettings.TextDestination);
+            TextUploaderService service = UploaderFactory.TextUploaderServices[Info.TaskSettings.TextDestination];
 
             return UploadData(service, stream, fileName);
         }
 
         public UploadResult UploadFile(Stream stream, string fileName)
         {
-            FileUploaderService service = UploaderFactory.GetFileUploaderService(Info.TaskSettings.GetFileDestinationByDataType(Info.DataType));
+            FileUploaderService service = UploaderFactory.FileUploaderServices[Info.TaskSettings.GetFileDestinationByDataType(Info.DataType)];
 
             return UploadData(service, stream, fileName);
         }
 
         public UploadResult ShortenURL(string url)
         {
-            URLShortenerService service = UploaderFactory.GetURLShortenerService(Info.TaskSettings.URLShortenerDestination);
+            URLShortenerService service = UploaderFactory.URLShortenerServices[Info.TaskSettings.URLShortenerDestination];
 
             if (!service.CheckConfig(Program.UploadersConfig))
             {
@@ -913,7 +913,7 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(url))
             {
-                URLSharingService service = UploaderFactory.GetURLSharingService(Info.TaskSettings.URLSharingServiceDestination);
+                URLSharingService service = UploaderFactory.URLSharingServices[Info.TaskSettings.URLSharingServiceDestination];
 
                 if (!service.CheckConfig(Program.UploadersConfig))
                 {

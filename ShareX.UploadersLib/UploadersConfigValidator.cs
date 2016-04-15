@@ -64,28 +64,28 @@ namespace ShareX.UploadersLib
         public static bool Validate(ImageDestination destination, UploadersConfig config)
         {
             if (destination == ImageDestination.FileUploader) return true;
-            return UploaderFactory.GetImageUploaderService(destination).CheckConfig(config);
+            return UploaderFactory.ImageUploaderServices[destination].CheckConfig(config);
         }
 
         public static bool Validate(TextDestination destination, UploadersConfig config)
         {
             if (destination == TextDestination.FileUploader) return true;
-            return UploaderFactory.GetTextUploaderService(destination).CheckConfig(config);
+            return UploaderFactory.TextUploaderServices[destination].CheckConfig(config);
         }
 
         public static bool Validate(FileDestination destination, UploadersConfig config)
         {
-            return UploaderFactory.GetFileUploaderService(destination).CheckConfig(config);
+            return UploaderFactory.FileUploaderServices[destination].CheckConfig(config);
         }
 
         public static bool Validate(UrlShortenerType destination, UploadersConfig config)
         {
-            return UploaderFactory.GetURLShortenerService(destination).CheckConfig(config);
+            return UploaderFactory.URLShortenerServices[destination].CheckConfig(config);
         }
 
         public static bool Validate(URLSharingServices destination, UploadersConfig config)
         {
-            return UploaderFactory.GetURLSharingService(destination).CheckConfig(config);
+            return UploaderFactory.URLSharingServices[destination].CheckConfig(config);
         }
     }
 }
