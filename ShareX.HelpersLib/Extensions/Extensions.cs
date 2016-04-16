@@ -469,5 +469,10 @@ namespace ShareX.HelpersLib
         {
             nud.Value = number.Between(nud.Minimum, nud.Maximum);
         }
+
+        public static bool IsValidImage(this PictureBox pb)
+        {
+            return pb.Image != null && pb.Image != pb.InitialImage && pb.Image != pb.ErrorImage;
+        }
     }
 }

@@ -139,7 +139,7 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                return !isImageLoading && Image != null && Image != pbMain.InitialImage && Image != pbMain.ErrorImage;
+                return !isImageLoading && pbMain.IsValidImage();
             }
         }
 
