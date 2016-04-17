@@ -195,7 +195,7 @@ namespace ShareX.UploadersLib
         public const uint BIF_BROWSEINCLUDEFILES = 0x4000;
         public const uint BIF_SHAREABLE = 0x8000;
 
-        [StructLayout(LayoutKind.Sequential)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct SHFILEINFO
         {
             public IntPtr hIcon;
@@ -229,7 +229,7 @@ namespace ShareX.UploadersLib
         public const uint FILE_ATTRIBUTE_DIRECTORY = 0x00000010;
         public const uint FILE_ATTRIBUTE_NORMAL = 0x00000080;
 
-        [DllImport("shell32.dll")]
+        [DllImport("shell32.dll", CharSet = CharSet.Unicode)]
         public static extern IntPtr SHGetFileInfo(string pszPath, uint dwFileAttributes, ref SHFILEINFO psfi, uint cbFileInfo, uint uFlags);
     }
 }
