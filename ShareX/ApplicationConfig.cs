@@ -195,6 +195,9 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show version and build info in tray text so if you are running more than one ShareX build you can differentiate them in tray bar.")]
         public bool TrayTextMoreInfo { get; set; }
 
+        [Category("Upload"), DefaultValue(false), Description("Can be used to disable uploading application wide.")]
+        public bool DisableUpload { get; set; }
+
         [Category("Upload"), DefaultValue(false), Description("Accept invalid SSL certificates when uploading.")]
         public bool AcceptInvalidSSLCertificates { get; set; }
 

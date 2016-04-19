@@ -320,7 +320,14 @@ namespace ShareX
 
                 if (!StopRequested)
                 {
-                    DoUploadJob();
+                    if (Info.IsUploadJob && !Program.Settings.DisableUpload)
+                    {
+                        DoUploadJob();
+                    }
+                    else
+                    {
+                        Info.Result.IsURLExpected = false;
+                    }
                 }
             }
             finally
@@ -363,88 +370,81 @@ namespace ShareX
 
         private void DoUploadJob()
         {
-            if (Info.IsUploadJob)
+            if (Program.Settings.ShowUploadWarning && MessageBox.Show(
+                Resources.UploadTask_DoUploadJob_First_time_upload_warning_text,
+                "ShareX - " + Resources.UploadTask_DoUploadJob_First_time_upload_warning,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             {
-                if (Program.Settings.ShowUploadWarning && MessageBox.Show(
-                    Resources.UploadTask_DoUploadJob_First_time_upload_warning_text,
-                    "ShareX - " + Resources.UploadTask_DoUploadJob_First_time_upload_warning,
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                Program.Settings.ShowUploadWarning = false;
+                Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                RequestSettingUpdate = true;
+                Stop();
+            }
+
+            if (Program.Settings.LargeFileSizeWarning > 0)
+            {
+                long dataSize = Program.Settings.BinaryUnits ? Program.Settings.LargeFileSizeWarning * 1024 * 1024 : Program.Settings.LargeFileSizeWarning * 1000 * 1000;
+                if (Data != null && Data.Length > dataSize)
                 {
-                    Program.Settings.ShowUploadWarning = false;
-                    Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
-                    RequestSettingUpdate = true;
-                    Stop();
-                }
-
-                if (Program.Settings.LargeFileSizeWarning > 0)
-                {
-                    long dataSize = Program.Settings.BinaryUnits ? Program.Settings.LargeFileSizeWarning * 1024 * 1024 : Program.Settings.LargeFileSizeWarning * 1000 * 1000;
-                    if (Data != null && Data.Length > dataSize)
+                    using (MyMessageBox msgbox = new MyMessageBox(Resources.UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file, "ShareX",
+                        MessageBoxButtons.YesNo, Resources.UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_))
                     {
-                        using (MyMessageBox msgbox = new MyMessageBox(Resources.UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file, "ShareX",
-                            MessageBoxButtons.YesNo, Resources.UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_))
-                        {
-                            msgbox.ShowDialog();
-                            if (msgbox.IsChecked) Program.Settings.LargeFileSizeWarning = 0;
-                            if (msgbox.DialogResult == DialogResult.No) Stop();
-                        }
-                    }
-                }
-
-                if (!StopRequested)
-                {
-                    Program.Settings.ShowUploadWarning = false;
-
-                    if (Program.UploadersConfig == null)
-                    {
-                        Program.UploaderSettingsResetEvent.WaitOne();
-                    }
-
-                    Status = TaskStatus.Working;
-                    Info.Status = Resources.UploadTask_DoUploadJob_Uploading;
-
-                    TaskbarManager.SetProgressState(Program.MainForm, TaskbarProgressBarStatus.Normal);
-
-                    bool cancelUpload = false;
-
-                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowBeforeUploadWindow))
-                    {
-                        BeforeUploadForm form = new BeforeUploadForm(Info);
-                        cancelUpload = form.ShowDialog() != DialogResult.OK;
-                    }
-
-                    if (!cancelUpload)
-                    {
-                        if (threadWorker != null)
-                        {
-                            threadWorker.InvokeAsync(OnUploadStarted);
-                        }
-                        else
-                        {
-                            OnUploadStarted();
-                        }
-
-                        bool isError = DoUpload();
-
-                        if (isError && Program.Settings.MaxUploadFailRetry > 0)
-                        {
-                            DebugHelper.WriteLine("Upload failed. Retrying upload.");
-
-                            for (int retry = 1; isError && retry <= Program.Settings.MaxUploadFailRetry; retry++)
-                            {
-                                isError = DoUpload(retry);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Info.Result.IsURLExpected = false;
+                        msgbox.ShowDialog();
+                        if (msgbox.IsChecked) Program.Settings.LargeFileSizeWarning = 0;
+                        if (msgbox.DialogResult == DialogResult.No) Stop();
                     }
                 }
             }
-            else
+
+            if (!StopRequested)
             {
-                Info.Result.IsURLExpected = false;
+                Program.Settings.ShowUploadWarning = false;
+
+                if (Program.UploadersConfig == null)
+                {
+                    Program.UploaderSettingsResetEvent.WaitOne();
+                }
+
+                Status = TaskStatus.Working;
+                Info.Status = Resources.UploadTask_DoUploadJob_Uploading;
+
+                TaskbarManager.SetProgressState(Program.MainForm, TaskbarProgressBarStatus.Normal);
+
+                bool cancelUpload = false;
+
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowBeforeUploadWindow))
+                {
+                    BeforeUploadForm form = new BeforeUploadForm(Info);
+                    cancelUpload = form.ShowDialog() != DialogResult.OK;
+                }
+
+                if (!cancelUpload)
+                {
+                    if (threadWorker != null)
+                    {
+                        threadWorker.InvokeAsync(OnUploadStarted);
+                    }
+                    else
+                    {
+                        OnUploadStarted();
+                    }
+
+                    bool isError = DoUpload();
+
+                    if (isError && Program.Settings.MaxUploadFailRetry > 0)
+                    {
+                        DebugHelper.WriteLine("Upload failed. Retrying upload.");
+
+                        for (int retry = 1; isError && retry <= Program.Settings.MaxUploadFailRetry; retry++)
+                        {
+                            isError = DoUpload(retry);
+                        }
+                    }
+                }
+                else
+                {
+                    Info.Result.IsURLExpected = false;
+                }
             }
         }
 
@@ -541,12 +541,9 @@ namespace ShareX
                 ClipboardHelpers.Clear();
             }
 
-            if (Info.Job == TaskJob.DownloadUpload)
+            if (Info.Job == TaskJob.DownloadUpload && !DownloadAndUpload())
             {
-                if (!DownloadAndUpload())
-                {
-                    return false;
-                }
+                return false;
             }
 
             if (Info.Job == TaskJob.Job)
