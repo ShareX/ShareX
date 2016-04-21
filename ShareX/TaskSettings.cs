@@ -405,12 +405,18 @@ namespace ShareX
         Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
         public string CustomCaptureSoundPath { get; set; }
 
+        [Category("Sound"), DefaultValue(""), Description("If this text is not empty then when the screen is captured text to speech engine will say the phrase entered instead of playing the default sound.")]
+        public string SpeechCapture { get; set; }
+
         [Category("Sound"), DefaultValue(false), Description("Enable/disable custom task complete sound.")]
         public bool UseCustomTaskCompletedSound { get; set; }
 
         [Category("Sound"), DefaultValue(""), Description("Task complete sound file path."),
         Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
         public string CustomTaskCompletedSoundPath { get; set; }
+
+        [Category("Sound"), DefaultValue(""), Description("If this text is not empty then when a task is completed text to speech engine will say the phrase entered instead of playing the default sound.")]
+        public string SpeechTaskCompleted { get; set; }
 
         [Category("Sound"), DefaultValue(false), Description("Enable/disable custom error sound.")]
         public bool UseCustomErrorSound { get; set; }
