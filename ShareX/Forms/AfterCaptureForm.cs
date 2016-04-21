@@ -59,8 +59,6 @@ namespace ShareX
             {
                 pbImage.LoadImage(img);
                 btnCopy.Enabled = true;
-                lblImageSize.Visible = true;
-                lblImageSize.Text = $"{img.Width} x {img.Height}";
             }
 
             FileName = TaskHelpers.GetFilename(TaskSettings, null, img);

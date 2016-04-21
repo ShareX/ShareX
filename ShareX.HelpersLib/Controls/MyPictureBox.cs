@@ -93,6 +93,9 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool EnableRightClickMenu { get; set; }
 
+        [DefaultValue(false)]
+        public bool ShowImageSizeLabel { get; set; }
+
         public new event MouseEventHandler MouseDown
         {
             add
@@ -158,7 +161,22 @@ namespace ShareX.HelpersLib
             pbMain.LoadCompleted += pbMain_LoadCompleted;
             pbMain.Resize += pbMain_Resize;
             pbMain.MouseUp += MyPictureBox_MouseUp;
+            pbMain.MouseEnter += PbMain_MouseEnter;
+            pbMain.MouseLeave += PbMain_MouseLeave;
             MouseDown += MyPictureBox_MouseDown;
+        }
+
+        private void PbMain_MouseEnter(object sender, EventArgs e)
+        {
+            if (ShowImageSizeLabel && IsValidImage)
+            {
+                lblImageSize.Visible = true;
+            }
+        }
+
+        private void PbMain_MouseLeave(object sender, EventArgs e)
+        {
+            lblImageSize.Visible = false;
         }
 
         private void pbMain_Resize(object sender, EventArgs e)
@@ -291,6 +309,8 @@ namespace ShareX.HelpersLib
         {
             if (IsValidImage)
             {
+                lblImageSize.Text = $"{Image.Width} x {Image.Height}";
+
                 if (Image.Width > pbMain.ClientSize.Width || Image.Height > pbMain.ClientSize.Height)
                 {
                     pbMain.SizeMode = PictureBoxSizeMode.Zoom;

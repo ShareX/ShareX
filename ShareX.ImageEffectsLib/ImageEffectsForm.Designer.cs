@@ -157,6 +157,7 @@
             this.pbResult.EnableRightClickMenu = true;
             this.pbResult.FullscreenOnClick = true;
             this.pbResult.Name = "pbResult";
+            this.pbResult.ShowImageSizeLabel = true;
             this.pbResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbResult_DragDrop);
             this.pbResult.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbResult_DragEnter);
             // 

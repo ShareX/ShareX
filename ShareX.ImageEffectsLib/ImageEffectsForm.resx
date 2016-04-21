@@ -171,6 +171,9 @@
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
+  <data name="chEffect.Width" type="System.Int32, mscorlib">
+    <value>164</value>
+  </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
   </data>
@@ -191,9 +194,6 @@
   </data>
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
     <value>14</value>
-  </data>
-  <data name="chEffect.Width" type="System.Int32, mscorlib">
-    <value>164</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 8</value>
@@ -447,6 +447,18 @@
   <metadata name="cmsLoadImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>From file...</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>From clipboard</value>
+  </data>
   <data name="cmsLoadImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 48</value>
   </data>
@@ -476,18 +488,6 @@
   </data>
   <data name="&gt;&gt;mbLoadImage.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
-  </data>
-  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
-    <value>From file...</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>From clipboard</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

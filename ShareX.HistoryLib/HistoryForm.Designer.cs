@@ -39,6 +39,7 @@
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.gbFilters = new System.Windows.Forms.GroupBox();
+            this.cbHostFilterSelection = new System.Windows.Forms.ComboBox();
             this.btnRemoveFilters = new System.Windows.Forms.Button();
             this.cbTypeFilterSelection = new System.Windows.Forms.ComboBox();
             this.cbHostFilter = new System.Windows.Forms.CheckBox();
@@ -51,7 +52,6 @@
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
             this.cbFilenameFilterMethod = new System.Windows.Forms.ComboBox();
-            this.cbHostFilterSelection = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -128,6 +128,7 @@
             this.pbThumbnail.DrawCheckeredBackground = true;
             this.pbThumbnail.FullscreenOnClick = true;
             this.pbThumbnail.Name = "pbThumbnail";
+            this.pbThumbnail.ShowImageSizeLabel = true;
             // 
             // gbFilters
             // 
@@ -148,6 +149,12 @@
             this.gbFilters.Controls.Add(this.cbFilenameFilterMethod);
             this.gbFilters.Name = "gbFilters";
             this.gbFilters.TabStop = false;
+            // 
+            // cbHostFilterSelection
+            // 
+            this.cbHostFilterSelection.FormattingEnabled = true;
+            resources.ApplyResources(this.cbHostFilterSelection, "cbHostFilterSelection");
+            this.cbHostFilterSelection.Name = "cbHostFilterSelection";
             // 
             // btnRemoveFilters
             // 
@@ -224,12 +231,6 @@
             resources.GetString("cbFilenameFilterMethod.Items3")});
             resources.ApplyResources(this.cbFilenameFilterMethod, "cbFilenameFilterMethod");
             this.cbFilenameFilterMethod.Name = "cbFilenameFilterMethod";
-            // 
-            // cbHostFilterSelection
-            // 
-            this.cbHostFilterSelection.FormattingEnabled = true;
-            resources.ApplyResources(this.cbHostFilterSelection, "cbHostFilterSelection");
-            this.cbHostFilterSelection.Name = "cbHostFilterSelection";
             // 
             // HistoryForm
             // 

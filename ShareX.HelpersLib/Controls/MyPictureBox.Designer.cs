@@ -34,6 +34,7 @@
             this.pbMain = new System.Windows.Forms.PictureBox();
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCopyImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblImageSize = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.cmsMenu.SuspendLayout();
             this.SuspendLayout();
@@ -66,10 +67,18 @@
             resources.ApplyResources(this.tsmiCopyImage, "tsmiCopyImage");
             this.tsmiCopyImage.Click += new System.EventHandler(this.tsmiCopyImage_Click);
             // 
+            // lblImageSize
+            // 
+            resources.ApplyResources(this.lblImageSize, "lblImageSize");
+            this.lblImageSize.BackColor = System.Drawing.Color.White;
+            this.lblImageSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblImageSize.Name = "lblImageSize";
+            // 
             // MyPictureBox
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblImageSize);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.pbMain);
             this.Name = "MyPictureBox";
@@ -85,5 +94,6 @@
         private System.Windows.Forms.PictureBox pbMain;
         private System.Windows.Forms.ContextMenuStrip cmsMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyImage;
+        private System.Windows.Forms.Label lblImageSize;
     }
 }

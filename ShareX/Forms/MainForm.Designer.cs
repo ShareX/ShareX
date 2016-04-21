@@ -337,6 +337,7 @@
             this.pbPreview.EnableRightClickMenu = true;
             this.pbPreview.FullscreenOnClick = true;
             this.pbPreview.Name = "pbPreview";
+            this.pbPreview.ShowImageSizeLabel = true;
             // 
             // tsMain
             // 

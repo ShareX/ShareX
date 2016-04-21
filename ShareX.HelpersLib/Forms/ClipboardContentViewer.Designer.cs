@@ -87,6 +87,7 @@
             this.pbClipboard.DrawCheckeredBackground = true;
             this.pbClipboard.FullscreenOnClick = true;
             this.pbClipboard.Name = "pbClipboard";
+            this.pbClipboard.ShowImageSizeLabel = true;
             // 
             // ClipboardContentViewer
             // 

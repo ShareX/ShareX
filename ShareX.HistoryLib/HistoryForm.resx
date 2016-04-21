@@ -153,6 +153,30 @@
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="chIcon.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chIcon.Width" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="chDateTime.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="chDateTime.Width" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="chFilename.Width" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="chURL.Width" type="System.Int32, mscorlib">
+    <value>230</value>
+  </data>
   <data name="lvHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -199,7 +223,7 @@
     <value>8, 8</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 368</value>
+    <value>410, 368</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -568,7 +592,7 @@
     <value>8, 384</value>
   </data>
   <data name="gbFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 250</value>
+    <value>410, 250</value>
   </data>
   <data name="gbFilters.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -626,30 +650,6 @@
   </data>
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chIcon.Text" xml:space="preserve">
-    <value />
-  <comment>@Invariant</comment></data>
-  <data name="chIcon.Width" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="chDateTime.Width" type="System.Int32, mscorlib">
-    <value>115</value>
-  </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Filename</value>
-  </data>
-  <data name="chFilename.Width" type="System.Int32, mscorlib">
-    <value>170</value>
-  </data>
-  <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
-  <comment>@Invariant</comment></data>
-  <data name="chURL.Width" type="System.Int32, mscorlib">
-    <value>230</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
