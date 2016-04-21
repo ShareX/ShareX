@@ -887,4 +887,16 @@ Would you like to download it?</value>
   <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
     <value>Other</value>
   </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>Start screen recording using custom region</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>Start screen recording (GIF) using custom region</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
 </root>

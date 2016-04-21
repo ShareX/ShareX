@@ -139,6 +139,7 @@ namespace ShareX
     {
         Region,
         ActiveWindow,
+        CustomRegion,
         LastRegion
     }
 
@@ -173,9 +174,11 @@ namespace ShareX
         // Screen record
         ScreenRecorder,
         ScreenRecorderActiveWindow,
+        ScreenRecorderCustomRegion,
         StartScreenRecorder,
         ScreenRecorderGIF,
         ScreenRecorderGIFActiveWindow,
+        ScreenRecorderGIFCustomRegion,
         StartScreenRecorderGIF,
         // Tools
         ColorPicker,

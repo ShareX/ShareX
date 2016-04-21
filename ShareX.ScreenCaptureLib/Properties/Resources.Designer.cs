@@ -635,15 +635,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monitor {0} (X:{1} Y:{2} Width:{3} Height:{4}).
-        /// </summary>
-        internal static string ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_ {
-            get {
-                return ResourceManager.GetString("ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Stop capture.
         /// </summary>
         internal static string ScrollingCaptureForm_StartCapture_Stop_capture {

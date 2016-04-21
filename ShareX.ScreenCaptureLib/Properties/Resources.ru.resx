@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
-    <value>Монитор {0} (X:{1} Y:{2} Ширина:{3} Высота:{4})</value>
-  </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Захват области с примечаниями</value>
   </data>
@@ -132,9 +129,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Выберите ffmpeg.exe</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value> Загрузка FFmpeg не удалась.</value>
-  </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value> FFmpeg успешно загружен.</value>
   </data>
@@ -144,9 +138,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Качество:</value>
   </data>
-  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>Упрощенный захват области</value>
-  </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} Ш: {2} В: {3}</value>
   </data>
@@ -154,15 +145,6 @@
     <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
 Ширина: {4} px / Высота: {5} px
 Расстояние: {6:0.00} px / Угол: {7:0.00}°</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] Захват активного монитора</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
-    <value>[1, 2, 3 ... 0] Захват монитора</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
-    <value>[Клавиши со стрелками] Двигать курсор</value>
   </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
     <value>[Клавиши со стрелками] Масштабировать выделенную область {0}</value>
@@ -212,14 +194,65 @@
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
     <value>[Ctrl + C] Скопировать позицию и размер</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl + Колесо мыши] Размер пикселей лупы</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
     <value>[Двойной ЛКМ] [Enter] Захват областей</value>
   </data>
   <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
     <value>[Esc] Отменить захват</value>
+  </data>
+  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+    <value> Загрузка FFmpeg не удалась.</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
+    <value>[Клавиши со стрелками] Двигать курсор</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
+    <value>[Колесо мыши] Изменить количество пикселей лупы</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
+    <value>[~] Захват активного монитора</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
+    <value>[Удерживание Shift] Пропорциональное масштабирование</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
+    <value>[Ctrl + Колесо мыши] Размер пикселей лупы</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>Упрощенный захват области</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
+    <value>[1, 2, 3 ... 0] Захват монитора</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
+    <value>[Колесо мыши] Менять режимы</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
+    <value>[1] Выбрать режим захвата</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
+    <value>[2] Выбрать режим отрисовки квадрата</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
+    <value>[3] Выбрать режим отрисовки пера</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
+    <value>[Shift] Сменить цвет рамки</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
+    <value>[Ctrl + Колесо мыши] Изменить размер рамки</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
+    <value>[Shift] Изменить цвет пера</value>
+  </data>
+  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
+    <value>[Ctrl + Колесо мыши] Изменить размер пера</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Захват</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Стоп</value>
   </data>
   <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
     <value>[F1] Спрятать подсказки</value>
@@ -239,9 +272,6 @@
   <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
     <value>[Удерживание Shift] Двигать выбранную область вместо масштабирования</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
-    <value>[Удерживание Shift] Пропорциональное масштабирование</value>
-  </data>
   <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
     <value>[I] {0} информацию о позиции и размере</value>
   </data>
@@ -250,9 +280,6 @@
   </data>
   <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
     <value>[M] {0} лупу</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Колесо мыши] Изменить количество пикселей лупы</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[+ или - на циф. клавиатуре] Изменить радиус скругления</value>
@@ -286,35 +313,5 @@
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Захват области с прозрачным фоном</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
-    <value>[Колесо мыши] Менять режимы</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
-    <value>[1] Выбрать режим захвата</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
-    <value>[2] Выбрать режим отрисовки квадрата</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
-    <value>[3] Выбрать режим отрисовки пера</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
-    <value>[Shift] Сменить цвет рамки</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
-    <value>[Ctrl + Колесо мыши] Изменить размер рамки</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
-    <value>[Shift] Изменить цвет пера</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
-    <value>[Ctrl + Колесо мыши] Изменить размер пера</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>Захват</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Стоп</value>
   </data>
 </root>

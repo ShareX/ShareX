@@ -123,9 +123,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>浏览ffmpeg.exe</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg下载失败。</value>
-  </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>FFmpeg下载成功。</value>
   </data>
@@ -137,9 +134,6 @@
   </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>矩形捕捉标注</value>
-  </data>
-  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>矩形捕捉光</value>
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
@@ -266,8 +260,8 @@
   <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
     <value>[Esc] 取消捕捉</value>
   </data>
-  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
-    <value>显示器 {0} (X:{1} Y:{2} 宽:{3} 高:{4})</value>
+  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+    <value>FFmpeg下载失败。</value>
   </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
     <value>[方向键]移动光标的位置</value>
@@ -283,6 +277,9 @@
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
     <value>[Ctrl +鼠标滚轮]更改放大镜像素大小</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>矩形捕捉光</value>
   </data>
   <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
     <value>[1，2，3...0]捕获显示器</value>

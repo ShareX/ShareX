@@ -1456,6 +1456,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start screen recording using custom region.
+        /// </summary>
+        internal static string HotkeyType_ScreenRecorderCustomRegion {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScreenRecorderCustomRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen record.
+        /// </summary>
+        internal static string HotkeyType_ScreenRecorderCustomRegion_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScreenRecorderCustomRegion_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Screen recording (GIF).
         /// </summary>
         internal static string HotkeyType_ScreenRecorderGIF {
@@ -1488,6 +1506,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_ScreenRecorderGIFActiveWindow_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_ScreenRecorderGIFActiveWindow_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start screen recording (GIF) using custom region.
+        /// </summary>
+        internal static string HotkeyType_ScreenRecorderGIFCustomRegion {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScreenRecorderGIFCustomRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen record.
+        /// </summary>
+        internal static string HotkeyType_ScreenRecorderGIFCustomRegion_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScreenRecorderGIFCustomRegion_Category", resourceCulture);
             }
         }
         

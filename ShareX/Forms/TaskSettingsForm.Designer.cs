@@ -98,7 +98,7 @@
             this.tcCapture = new System.Windows.Forms.TabControl();
             this.tpCaptureGeneral = new System.Windows.Forms.TabPage();
             this.pCapture = new System.Windows.Forms.Panel();
-            this.btnCaptureTransmitBoundsFromMonitorToCustomBounds = new System.Windows.Forms.Button();
+            this.lblCaptureCustomRegion = new System.Windows.Forms.Label();
             this.lblCaptureCustomRegionWidth = new System.Windows.Forms.Label();
             this.lblCaptureCustomRegionHeight = new System.Windows.Forms.Label();
             this.lblCaptureCustomRegionY = new System.Windows.Forms.Label();
@@ -107,8 +107,6 @@
             this.nudCaptureCustomRegionWidth = new System.Windows.Forms.NumericUpDown();
             this.nudCaptureCustomRegionY = new System.Windows.Forms.NumericUpDown();
             this.nudCaptureCustomRegionX = new System.Windows.Forms.NumericUpDown();
-            this.lblCaptureCustomRegionSelectedMonitor = new System.Windows.Forms.Label();
-            this.cboCaptureCustomRegionMonitors = new System.Windows.Forms.ComboBox();
             this.cbShowCursor = new System.Windows.Forms.CheckBox();
             this.lblCaptureShadowOffset = new System.Windows.Forms.Label();
             this.cbCaptureTransparent = new System.Windows.Forms.CheckBox();
@@ -198,6 +196,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.btnCaptureCustomRegionSelectRectangle = new System.Windows.Forms.Button();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -768,7 +767,8 @@
             // 
             // pCapture
             // 
-            this.pCapture.Controls.Add(this.btnCaptureTransmitBoundsFromMonitorToCustomBounds);
+            this.pCapture.Controls.Add(this.btnCaptureCustomRegionSelectRectangle);
+            this.pCapture.Controls.Add(this.lblCaptureCustomRegion);
             this.pCapture.Controls.Add(this.lblCaptureCustomRegionWidth);
             this.pCapture.Controls.Add(this.lblCaptureCustomRegionHeight);
             this.pCapture.Controls.Add(this.lblCaptureCustomRegionY);
@@ -777,8 +777,6 @@
             this.pCapture.Controls.Add(this.nudCaptureCustomRegionWidth);
             this.pCapture.Controls.Add(this.nudCaptureCustomRegionY);
             this.pCapture.Controls.Add(this.nudCaptureCustomRegionX);
-            this.pCapture.Controls.Add(this.lblCaptureCustomRegionSelectedMonitor);
-            this.pCapture.Controls.Add(this.cboCaptureCustomRegionMonitors);
             this.pCapture.Controls.Add(this.cbShowCursor);
             this.pCapture.Controls.Add(this.lblCaptureShadowOffset);
             this.pCapture.Controls.Add(this.cbCaptureTransparent);
@@ -792,12 +790,10 @@
             resources.ApplyResources(this.pCapture, "pCapture");
             this.pCapture.Name = "pCapture";
             // 
-            // btnCaptureTransmitBoundsFromMonitorToCustomBounds
+            // lblCaptureCustomRegion
             // 
-            resources.ApplyResources(this.btnCaptureTransmitBoundsFromMonitorToCustomBounds, "btnCaptureTransmitBoundsFromMonitorToCustomBounds");
-            this.btnCaptureTransmitBoundsFromMonitorToCustomBounds.Name = "btnCaptureTransmitBoundsFromMonitorToCustomBounds";
-            this.btnCaptureTransmitBoundsFromMonitorToCustomBounds.UseVisualStyleBackColor = true;
-            this.btnCaptureTransmitBoundsFromMonitorToCustomBounds.Click += new System.EventHandler(this.btnTransmitBoundsFromMonitorToCustomBounds_Click);
+            resources.ApplyResources(this.lblCaptureCustomRegion, "lblCaptureCustomRegion");
+            this.lblCaptureCustomRegion.Name = "lblCaptureCustomRegion";
             // 
             // lblCaptureCustomRegionWidth
             // 
@@ -882,18 +878,6 @@
             -2147483648});
             this.nudCaptureCustomRegionX.Name = "nudCaptureCustomRegionX";
             this.nudCaptureCustomRegionX.ValueChanged += new System.EventHandler(this.nudScreenRegionX_ValueChanged);
-            // 
-            // lblCaptureCustomRegionSelectedMonitor
-            // 
-            resources.ApplyResources(this.lblCaptureCustomRegionSelectedMonitor, "lblCaptureCustomRegionSelectedMonitor");
-            this.lblCaptureCustomRegionSelectedMonitor.Name = "lblCaptureCustomRegionSelectedMonitor";
-            // 
-            // cboCaptureCustomRegionMonitors
-            // 
-            this.cboCaptureCustomRegionMonitors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCaptureCustomRegionMonitors.FormattingEnabled = true;
-            resources.ApplyResources(this.cboCaptureCustomRegionMonitors, "cboCaptureCustomRegionMonitors");
-            this.cboCaptureCustomRegionMonitors.Name = "cboCaptureCustomRegionMonitors";
             // 
             // cbShowCursor
             // 
@@ -1636,6 +1620,13 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // btnCaptureCustomRegionSelectRectangle
+            // 
+            resources.ApplyResources(this.btnCaptureCustomRegionSelectRectangle, "btnCaptureCustomRegionSelectRectangle");
+            this.btnCaptureCustomRegionSelectRectangle.Name = "btnCaptureCustomRegionSelectRectangle";
+            this.btnCaptureCustomRegionSelectRectangle.UseVisualStyleBackColor = true;
+            this.btnCaptureCustomRegionSelectRectangle.Click += new System.EventHandler(this.btnCaptureCustomRegionSelectRectangle_Click);
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1856,8 +1847,6 @@
         private System.Windows.Forms.Button btnScreenRecorderFFmpegOptions;
         private System.Windows.Forms.ComboBox cbNameFormatTimeZone;
         private System.Windows.Forms.CheckBox cbNameFormatCustomTimeZone;
-        private System.Windows.Forms.Label lblCaptureCustomRegionSelectedMonitor;
-        private System.Windows.Forms.ComboBox cboCaptureCustomRegionMonitors;
         private System.Windows.Forms.Label lblCaptureCustomRegionWidth;
         private System.Windows.Forms.Label lblCaptureCustomRegionHeight;
         private System.Windows.Forms.Label lblCaptureCustomRegionY;
@@ -1866,7 +1855,6 @@
         private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionWidth;
         private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionY;
         private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionX;
-        private System.Windows.Forms.Button btnCaptureTransmitBoundsFromMonitorToCustomBounds;
         private System.Windows.Forms.ComboBox cbGIFEncoding;
         private System.Windows.Forms.Label lblGIFEncoding;
         private System.Windows.Forms.CheckBox cbScreenRecorderShowCursor;
@@ -1882,5 +1870,7 @@
         private System.Windows.Forms.CheckBox cbRegionCaptureUseWindowPattern;
         private System.Windows.Forms.TabPage tpFileNaming;
         private System.Windows.Forms.Label lblAutoIncrementNumber;
+        private System.Windows.Forms.Label lblCaptureCustomRegion;
+        private System.Windows.Forms.Button btnCaptureCustomRegionSelectRectangle;
     }
 }

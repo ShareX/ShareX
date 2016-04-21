@@ -126,9 +126,6 @@
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
     <value>[Ctrl + C] Sao chép vị trí và kích thước</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
-    <value>[Phím mũi tên] Dịch chuyển vị trí con trỏ</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
     <value>[Ctrl + Phím mũi tên] Dịch chuyển vị trí con trỏ nhanh hơn</value>
   </data>
@@ -147,32 +144,41 @@
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Chụp theo vùng</value>
   </data>
-  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
-    <value>Màn hình {0} (X:{1} Y:{2} Rộng:{3} Cao:{4})</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Tải về FFmpeg thất bại</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] Chụp màn hình đang hoạt động</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
-    <value>[1, 2, 3 ... 0] Chụp màn hình theo thứ tự</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
     <value>[Phím mũi tên] Thay đổi kích thước vùng được chọn từ {0}</value>
   </data>
   <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
     <value>[C] {0} hồng tâm toàn màn hình</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl + Lăn chuột] Thay đổi kích thước pixel của kính lúp</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
     <value>[Nhấn đúp chuột trái] [Enter] Chụp các vùng</value>
   </data>
   <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
     <value>[Esc] Hủy chụp</value>
+  </data>
+  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+    <value>Tải về FFmpeg thất bại</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
+    <value>[Phím mũi tên] Dịch chuyển vị trí con trỏ</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
+    <value>[Con lăn chuột] Thay đổi lượng pixel trong kính lúp</value>
+  </data>
+  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
+    <value>[~] Chụp màn hình đang hoạt động</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
+    <value>[Giữ phím Shift] Thay đổi kích thước theo tỉ lệ</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
+    <value>[Ctrl + Lăn chuột] Thay đổi kích thước pixel của kính lúp</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>Chụp hình chữ nhật (Bản nhẹ)</value>
+  </data>
+  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
+    <value>[1, 2, 3 ... 0] Chụp màn hình theo thứ tự</value>
   </data>
   <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
     <value>[F1] Ẩn trợ giúp</value>
@@ -191,9 +197,6 @@
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
     <value>[Giữ phím Shift] Di chuyển vùng đã chọn thay vì thay đổi kích thước</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
-    <value>[Giữ phím Shift] Thay đổi kích thước theo tỉ lệ</value>
   </data>
   <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
     <value>[I] Vị trí và kích thước của {0}</value>
@@ -246,9 +249,6 @@
   <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
     <value>[Q] Kích hoạt chế độ chụp nhanh</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Con lăn chuột] Thay đổi lượng pixel trong kính lúp</value>
-  </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
   </data>
@@ -280,9 +280,6 @@ Khoảng cách: {6:0.00} px / Góc: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
     <value>[Numpad + hoặc -] Thay đổi góc tam giác</value>
-  </data>
-  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>Chụp hình chữ nhật (Bản nhẹ)</value>
   </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Chụp hình chữ nhật (Đánh dấu)</value>

@@ -129,260 +129,74 @@
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Açıklama:</value>
   </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>FTP hesabını değiştir:</value>
-  </data>
-  <data name="btnAfterCapture.Text" xml:space="preserve">
-    <value>Yakalama sonrası...</value>
-  </data>
-  <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>Yükleme sonrası...</value>
-  </data>
-  <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>Resim yükleyiciler</value>
-  </data>
-  <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>Yazı yükleyiciler</value>
-  </data>
-  <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>Dosya yükleyiciler</value>
-  </data>
-  <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL kısaltıcılar</value>
-  </data>
-  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>URL paylaşım servisleri</value>
-  </data>
-  <data name="btnDestinations.Text" xml:space="preserve">
-    <value>Hedefler...</value>
-  </data>
-  <data name="btnTask.Text" xml:space="preserve">
-    <value>Görev...</value>
-  </data>
   <data name="tpTask.Text" xml:space="preserve">
     <value>Görev</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Görev bittikten sonra:</value>
-  </data>
-  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
-    <value>Görev bittikten sonra ses çal</value>
-  </data>
-  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
-    <value>Yakalama yapıldıktan sonra ses çal</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>Varsayılan genel ayarları kullan</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Genel</value>
   </data>
-  <data name="lblImageFileExist.Text" xml:space="preserve">
-    <value>Dosya varsa:</value>
-  </data>
-  <data name="lblImageFormat.Text" xml:space="preserve">
-    <value>Resim biçimi:</value>
-  </data>
-  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
-    <value>kB  0 - 5000 (0 iptal eder)</value>
-  </data>
-  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
-    <value>JPEG kalitesi:</value>
-  </data>
-  <data name="lblImageGIFQuality.Text" xml:space="preserve">
-    <value>GIF kalitesi:</value>
-  </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>Resim biçim 2:</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>"Resim biçim 2" için resim boyutu limiti:</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Yakalama sonrası resim efektleri ekranını göster</value>
-  </data>
-  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
-    <value>Efektleri sadece yakalama bölgesine uygula</value>
-  </data>
-  <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>Resim efektleri ayarları...</value>
-  </data>
-  <data name="tpEffects.Text" xml:space="preserve">
-    <value>Efekt</value>
-  </data>
-  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>Küçük resimi sadece resim boyutu küçük resim boyutundan büyükse oluştur</value>
-  </data>
-  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
-    <value>Ön izleme</value>
-  </data>
-  <data name="lblThumbnailName.Text" xml:space="preserve">
-    <value>Küçük resim adı:</value>
-  </data>
-  <data name="lblThumbnailHeight.Text" xml:space="preserve">
-    <value>Boy:</value>
-  </data>
-  <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>En:</value>
-  </data>
-  <data name="tpThumbnail.Text" xml:space="preserve">
-    <value>Küçük resim</value>
-  </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Varsayılan resim ayarlarını kullan</value>
-  </data>
   <data name="tpImage.Text" xml:space="preserve">
     <value>Resim</value>
   </data>
-  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>Pencere yakalama sırasında pencere görev çubuğu ile kesişirse görev çubuğunu gizle</value>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>Genişlik</value>
   </data>
-  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
-    <value>saniye</value>
-  </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Beklemesi süresi:</value>
-  </data>
-  <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>Pencere veya aktif pencere yakalama sırasında başlık çubuğunu yakalama</value>
-  </data>
-  <data name="cbCaptureShadow.Text" xml:space="preserve">
-    <value>Pencereyi gölge ile yakala (şeffaflık gerektirir)</value>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>Yükseklik</value>
   </data>
   <data name="cbShowCursor.Text" xml:space="preserve">
     <value>Ekran görüntülerinde imleç göster</value>
   </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>Gölge çıkıntısı:</value>
+  </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
     <value>Pencereyi şeffaflık ile yakala</value>
   </data>
-  <data name="tpRegionCapture.Text" xml:space="preserve">
-    <value>Bölge yakala</value>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>Pencere yakalama sırasında pencere görev çubuğu ile kesişirse görev çubuğunu gizle</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Dikdörtgen dipnot</value>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>Pencereyi gölge ile yakala (şeffaflık gerektirir)</value>
   </data>
-  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>saniye</value>
   </data>
-  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>Ekran kayıt FPS:</value>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>Pencere veya aktif pencere yakalama sırasında başlık çubuğunu yakalama</value>
   </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Ardından CLI çalıştır:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profiller...</value>
-  </data>
-  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
-    <value>saniye sonra</value>
-  </data>
-  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
-    <value>Sabit süre:</value>
-  </data>
-  <data name="tpScreenRecorder.Text" xml:space="preserve">
-    <value>Ekran kaydedici</value>
+  <data name="cbScreenshotDelay.Text" xml:space="preserve">
+    <value>Beklemesi süresi:</value>
   </data>
   <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
     <value>Varsayılan yakalama ayarlarını kullan</value>
   </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>Bölge yakala</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>Ekran kaydedici</value>
+  </data>
+  <data name="tpScrollingCapture.Text" xml:space="preserve">
+    <value>Kaydırarak yakalama</value>
+  </data>
+  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
+    <value>Dikdörtgen dipnot</value>
+  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Yakalama</value>
-  </data>
-  <data name="btnActionsDuplicate.Text" xml:space="preserve">
-    <value>Kopyala</value>
-  </data>
-  <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
-  </data>
-  <data name="chActionsName.Text" xml:space="preserve">
-    <value>Ad</value>
-  </data>
-  <data name="chActionsPath.Text" xml:space="preserve">
-    <value>Yol</value>
-  </data>
-  <data name="chActionsArgs.Text" xml:space="preserve">
-    <value>Parametreler</value>
-  </data>
-  <data name="chActionsExtensions.Text" xml:space="preserve">
-    <value>Uzantılar</value>
-  </data>
-  <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Düzenle</value>
-  </data>
-  <data name="btnActionsRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Varsayılan aksiyon ayarlarını kullan</value>
-  </data>
-  <data name="tpActions.Text" xml:space="preserve">
-    <value>Aksiyon</value>
-  </data>
-  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>Dizinleri takip et ve eğer yeni dosya yaratılırsa onu yükle</value>
-  </data>
-  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
-    <value>Dizin yolu</value>
-  </data>
-  <data name="chWatchFolderFilter.Text" xml:space="preserve">
-    <value>Süzgeç</value>
-  </data>
-  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
-    <value>Alt dizinleri de dahil et</value>
-  </data>
-  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
-    <value>Ekle...</value>
-  </data>
-  <data name="tpWatchFolders.Text" xml:space="preserve">
-    <value>Dizinleri takip et</value>
-  </data>
-  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Dosya yükleme için de gerçek dosya ismi yerine isim deseni kullan</value>
-  </data>
-  <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>Yakalama veya panodan yükleme için isim deseni:</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Otomatik artan sayıyı sıfırla</value>
-  </data>
-  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>Aktif pencere yakalama için isim deseni:</value>
-  </data>
-  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
-    <value>Ön izleme:</value>
-  </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
-    <value>Ön izleme:</value>
-  </data>
-  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>Pano URL içeriyorsa URL paylaşım servisi ile paylaş</value>
-  </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Eğer pano dosya URL bilgisi içeriyorsa indir ve yükle</value>
-  </data>
-  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>Pano dizin yolu içeriyorsa dizini indeksle ve indeksi yükle</value>
-  </data>
-  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>Pano URL içeriyorsa URL kısaltıcı kullan</value>
-  </data>
-  <data name="tpUploadClipboard.Text" xml:space="preserve">
-    <value>Panodan yükleme</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Varsayılan yükleme ayarlarını kullan</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Yükleme</value>
   </data>
-  <data name="tpIndexer.Text" xml:space="preserve">
-    <value>İndeksleyici</value>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>Aksiyon</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Varsayılan gelişmiş ayarları kullan</value>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>Dizinleri takip et</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>Araçlar</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Gelişmiş</value>
@@ -390,58 +204,244 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Görev ayarları</value>
   </data>
-  <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>GIF FPS:</value>
-  </data>
-  <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>"Yakalama sonrası -&gt; Resim efekti ekle" menüsünden resim efektlerini açıp kapatabilirsiniz.</value>
-  </data>
-  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
-    <value>Gölge çıkıntısı:</value>
-  </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Kaydetmeye başla:</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Özel yükleyiciyi değiştir:</value>
-  </data>
-  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
-    <value>Ekran kayıt ayarları...</value>
-  </data>
-  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
-    <value>Kişisel zaman dilimi kullan:</value>
-  </data>
-  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
-    <value>Yükseklik</value>
-  </data>
-  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
-    <value>Genişlik</value>
-  </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>Monitor seç özel bölge için:</value>
-  </data>
-  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
-    <value>Ekran kaydında imleç göster</value>
-  </data>
-  <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF kodlayıcı:</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Varsayılan araç ayarlarını kullan</value>
-  </data>
-  <data name="tpTools.Text" xml:space="preserve">
-    <value>Araçlar</value>
+  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
+    <value>Varsayılan gelişmiş ayarları kullan</value>
   </data>
   <data name="tpVideoThumbnailer.Text" xml:space="preserve">
     <value>Video küçük resim yapıcı</value>
   </data>
-  <data name="tpScrollingCapture.Text" xml:space="preserve">
-    <value>Kaydırarak yakalama</value>
+  <data name="tpIndexer.Text" xml:space="preserve">
+    <value>İndeksleyici</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
+    <value>Varsayılan araç ayarlarını kullan</value>
+  </data>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>Ekle...</value>
+  </data>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Alt dizinleri de dahil et</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>Süzgeç</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>Dizin yolu</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>Dizinleri takip et ve eğer yeni dosya yaratılırsa onu yükle</value>
+  </data>
+  <data name="chkUseDefaultActions.Text" xml:space="preserve">
+    <value>Varsayılan aksiyon ayarlarını kullan</value>
+  </data>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>Uzantılar</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>Parametreler</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>Yol</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>Kopyala</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>Pano URL içeriyorsa URL kısaltıcı kullan</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>Pano dizin yolu içeriyorsa dizini indeksle ve indeksi yükle</value>
+  </data>
+  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Eğer pano dosya URL bilgisi içeriyorsa indir ve yükle</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>Pano URL içeriyorsa URL paylaşım servisi ile paylaş</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>Panodan yükleme</value>
+  </data>
+  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+    <value>Yakalama veya panodan yükleme için isim deseni:</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>Dosya yükleme için de gerçek dosya ismi yerine isim deseni kullan</value>
+  </data>
+  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Otomatik artan sayıyı sıfırla</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>Ön izleme:</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>Aktif pencere yakalama için isim deseni:</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>Ön izleme:</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>Kişisel zaman dilimi kullan:</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>Bölge yakalamada pencere isim kalıbını kullan (ShareX otomatik seçimdeki pencereyi tespit etmeye çalışır)</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Dosya adlandırma</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Bölge yakalamada pencere isim kalıbını kullan (ShareX otomatik seçimdeki pencereyi tespit etmeye çalışır)</value>
+  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
+    <value>Varsayılan yükleme ayarlarını kullan</value>
+  </data>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>GIF FPS:</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>Sabit süre:</value>
+  </data>
+  <data name="btnEncoderConfig.Text" xml:space="preserve">
+    <value>Profiller...</value>
+  </data>
+  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
+    <value>Ardından CLI çalıştır:</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>Ekran kayıt FPS:</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>saniye</value>
+  </data>
+  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Kaydetmeye başla:</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>saniye sonra</value>
+  </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>Ekran kayıt ayarları...</value>
+  </data>
+  <data name="lblGIFEncoding.Text" xml:space="preserve">
+    <value>GIF kodlayıcı:</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>Ekran kaydında imleç göster</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>En:</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>Boy:</value>
+  </data>
+  <data name="lblThumbnailName.Text" xml:space="preserve">
+    <value>Küçük resim adı:</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>Ön izleme</value>
+  </data>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>Küçük resimi sadece resim boyutu küçük resim boyutundan büyükse oluştur</value>
+  </data>
+  <data name="tpThumbnail.Text" xml:space="preserve">
+    <value>Küçük resim</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Resim efektleri ayarları...</value>
+  </data>
+  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+    <value>Efektleri sadece yakalama bölgesine uygula</value>
+  </data>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Yakalama sonrası resim efektleri ekranını göster</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>"Yakalama sonrası -&gt; Resim efekti ekle" menüsünden resim efektlerini açıp kapatabilirsiniz.</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>Efekt</value>
+  </data>
+  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
+    <value>Varsayılan resim ayarlarını kullan</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>JPEG kalitesi:</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>GIF kalitesi:</value>
+  </data>
+  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
+    <value>kB  0 - 5000 (0 iptal eder)</value>
+  </data>
+  <data name="lblImageFormat2.Text" xml:space="preserve">
+    <value>Resim biçim 2:</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>Dosya varsa:</value>
+  </data>
+  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
+    <value>"Resim biçim 2" için resim boyutu limiti:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>Resim biçimi:</value>
+  </data>
+  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
+    <value>Varsayılan genel ayarları kullan</value>
+  </data>
+  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+    <value>Yakalama yapıldıktan sonra ses çal</value>
+  </data>
+  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+    <value>Görev bittikten sonra ses çal</value>
+  </data>
+  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+    <value>Görev bittikten sonra:</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Görev...</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>URL paylaşım servisleri</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>URL kısaltıcılar</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Dosya yükleyiciler</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Yazı yükleyiciler</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Resim yükleyiciler</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>Hedefler...</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>Yükleme sonrası...</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>Yakalama sonrası...</value>
+  </data>
+  <data name="chkOverrideFTP.Text" xml:space="preserve">
+    <value>FTP hesabını değiştir:</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Özel yükleyiciyi değiştir:</value>
+  </data>
+  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
+    <value>Monitor seç özel bölge için:</value>
   </data>
 </root>

@@ -202,9 +202,6 @@ namespace ShareX
             cbScreenshotDelay.Checked = TaskSettings.CaptureSettings.IsDelayScreenshot;
             nudScreenshotDelay.SetValue(TaskSettings.CaptureSettings.DelayScreenshot);
             cbCaptureAutoHideTaskbar.Checked = TaskSettings.CaptureSettings.CaptureAutoHideTaskbar;
-            cboCaptureCustomRegionMonitors.Items.Clear();
-            cboCaptureCustomRegionMonitors.Items.AddRange(MonitorRegionDefaultCreator.AllMonitorsRegions);
-            cboCaptureCustomRegionMonitors.SelectedIndex = 0;
             nudCaptureCustomRegionX.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.X);
             nudCaptureCustomRegionY.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Y);
             nudCaptureCustomRegionWidth.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Width);
@@ -787,15 +784,6 @@ namespace ShareX
             cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
         }
 
-        private void btnTransmitBoundsFromMonitorToCustomBounds_Click(object sender, EventArgs e)
-        {
-            MonitorRegion monitorRegionSelected = (MonitorRegion)cboCaptureCustomRegionMonitors.SelectedItem;
-            nudCaptureCustomRegionX.SetValue(monitorRegionSelected.Bounds.X);
-            nudCaptureCustomRegionY.SetValue(monitorRegionSelected.Bounds.Y);
-            nudCaptureCustomRegionWidth.SetValue(monitorRegionSelected.Bounds.Width);
-            nudCaptureCustomRegionHeight.SetValue(monitorRegionSelected.Bounds.Height);
-        }
-
         private void nudScreenRegionX_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.CaptureCustomRegion.X = (int)nudCaptureCustomRegionX.Value;
@@ -814,6 +802,19 @@ namespace ShareX
         private void nudScreenRegionHeight_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.CaptureCustomRegion.Height = (int)nudCaptureCustomRegionHeight.Value;
+        }
+
+        private void btnCaptureCustomRegionSelectRectangle_Click(object sender, EventArgs e)
+        {
+            Rectangle rect;
+
+            if (TaskHelpers.SelectRegion(out rect, TaskSettings))
+            {
+                nudCaptureCustomRegionX.Value = rect.X;
+                nudCaptureCustomRegionY.Value = rect.Y;
+                nudCaptureCustomRegionWidth.Value = rect.Width;
+                nudCaptureCustomRegionHeight.Value = rect.Height;
+            }
         }
 
         #endregion Capture

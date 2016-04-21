@@ -78,8 +78,6 @@
     <Compile Include="Forms\WebpageCaptureForm.Designer.cs">
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MonitorRegion.cs" />
-    <Compile Include="MonitorRegionDefaultCreator.cs" />
     <Compile Include="RectangleAnnotateOptions.cs" />
     <Compile Include="RegionHelpers\ColorBlinkAnimation.cs" />
     <Compile Include="RegionHelpers\RegionInfo.cs" />
