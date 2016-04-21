@@ -523,7 +523,7 @@ namespace ShareX.HelpersLib
 
         public static Image DrawCheckers(Image img)
         {
-            return DrawCheckers(img, 8, Color.LightGray, Color.White);
+            return DrawCheckers(img, 10, Color.LightGray, Color.White);
         }
 
         public static Image DrawCheckers(Image img, int size, Color color1, Color color2)
@@ -548,13 +548,18 @@ namespace ShareX.HelpersLib
             Bitmap bmp = new Bitmap(width, height);
 
             using (Graphics g = Graphics.FromImage(bmp))
-            using (Image checker = CreateCheckers(8, Color.LightGray, Color.White))
+            using (Image checker = CreateCheckers())
             using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
             {
                 g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmp.Width, bmp.Height));
             }
 
             return bmp;
+        }
+
+        public static Image CreateCheckers()
+        {
+            return CreateCheckers(10, Color.LightGray, Color.White);
         }
 
         public static Image CreateCheckers(int size, Color color1, Color color2)

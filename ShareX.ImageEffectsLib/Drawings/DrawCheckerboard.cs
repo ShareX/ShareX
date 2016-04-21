@@ -35,7 +35,7 @@ namespace ShareX.ImageEffectsLib
     {
         private int size;
 
-        [DefaultValue(8)]
+        [DefaultValue(10)]
         public int Size
         {
             get

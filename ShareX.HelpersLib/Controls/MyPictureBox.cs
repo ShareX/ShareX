@@ -174,7 +174,7 @@ namespace ShareX.HelpersLib
                 if (pbMain.BackgroundImage == null || pbMain.BackgroundImage.Size != pbMain.ClientSize)
                 {
                     if (pbMain.BackgroundImage != null) pbMain.BackgroundImage.Dispose();
-                    pbMain.BackgroundImage = ImageHelpers.CreateCheckers(8, Color.LightGray, Color.White);
+                    pbMain.BackgroundImage = ImageHelpers.CreateCheckers();
                 }
             }
             else
