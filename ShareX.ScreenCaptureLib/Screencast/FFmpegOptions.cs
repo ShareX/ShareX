@@ -154,7 +154,7 @@ namespace ShareX.ScreenCaptureLib
             ShowError = true;
 
             // Video
-            x264_CRF = 30;
+            x264_CRF = 28;
             x264_Preset = FFmpegPreset.ultrafast;
             VPx_bitrate = 3000;
             XviD_qscale = 10;
