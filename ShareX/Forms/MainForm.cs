@@ -1278,12 +1278,18 @@ namespace ShareX
 
         private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)
         {
-            TaskInfo task = GetCurrentUploadInfo();
+            ListViewItem item = e.Item as ListViewItem;
 
-            if (task != null && !string.IsNullOrEmpty(task.FilePath) && File.Exists(task.FilePath))
+            if (item != null)
             {
-                AllowDrop = false;
-                lvUploads.DoDragDrop(new DataObject(DataFormats.FileDrop, new string[] { task.FilePath }), DragDropEffects.Copy);
+                WorkerTask task = item.Tag as WorkerTask;
+
+                if (task != null && task.Info != null && !string.IsNullOrEmpty(task.Info.FilePath) && File.Exists(task.Info.FilePath))
+                {
+                    AllowDrop = false;
+
+                    lvUploads.DoDragDrop(new DataObject(DataFormats.FileDrop, new string[] { task.Info.FilePath }), DragDropEffects.Copy);
+                }
             }
         }
 
