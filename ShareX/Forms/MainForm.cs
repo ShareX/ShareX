@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -796,15 +797,14 @@ namespace ShareX
 
         private TaskInfo GetCurrentUploadInfo()
         {
-            TaskInfo info = null;
             WorkerTask[] tasks = GetCurrentTasks();
 
             if (tasks != null && tasks.Length > 0)
             {
-                info = tasks[0].Info;
+                return tasks[0].Info;
             }
 
-            return info;
+            return null;
         }
 
         private void RemoveSelectedItems()
@@ -1274,6 +1274,25 @@ namespace ShareX
             }
 
             e.Handled = true;
+        }
+
+        private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            TaskInfo task = GetCurrentUploadInfo();
+
+            if (task != null && !string.IsNullOrEmpty(task.FilePath) && File.Exists(task.FilePath))
+            {
+                AllowDrop = false;
+                lvUploads.DoDragDrop(new DataObject(DataFormats.FileDrop, new string[] { task.FilePath }), DragDropEffects.Copy);
+            }
+        }
+
+        private void lvUploads_QueryContinueDrag(object sender, QueryContinueDragEventArgs e)
+        {
+            if (e.Action != DragAction.Continue)
+            {
+                AllowDrop = true;
+            }
         }
 
         #region Tray events
