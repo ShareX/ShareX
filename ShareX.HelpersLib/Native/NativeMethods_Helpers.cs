@@ -122,11 +122,11 @@ namespace ShareX.HelpersLib
         {
             IntPtr iconHandle;
 
-            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, ICON_SMALL2, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
+            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, (IntPtr)ICON_SMALL2, IntPtr.Zero, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
 
             if (iconHandle == IntPtr.Zero)
             {
-                SendMessageTimeout(handle, (int)WindowsMessages.GETICON, ICON_SMALL, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
+                SendMessageTimeout(handle, (int)WindowsMessages.GETICON, (IntPtr)ICON_SMALL, IntPtr.Zero, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
 
                 if (iconHandle == IntPtr.Zero)
                 {
@@ -134,7 +134,7 @@ namespace ShareX.HelpersLib
 
                     if (iconHandle == IntPtr.Zero)
                     {
-                        SendMessageTimeout(handle, (int)WindowsMessages.QUERYDRAGICON, 0, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
+                        SendMessageTimeout(handle, (int)WindowsMessages.QUERYDRAGICON, IntPtr.Zero, IntPtr.Zero, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
                     }
                 }
             }
@@ -151,7 +151,7 @@ namespace ShareX.HelpersLib
         {
             IntPtr iconHandle;
 
-            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, ICON_BIG, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
+            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, (IntPtr)ICON_BIG, IntPtr.Zero, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
 
             if (iconHandle == IntPtr.Zero)
             {

@@ -326,7 +326,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Options.ScrollTopMethodBeforeCapture == ScrollingCaptureScrollTopMethod.All || Options.ScrollTopMethodBeforeCapture == ScrollingCaptureScrollTopMethod.SendMessageTop)
                 {
-                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
+                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (IntPtr)ScrollBarCommands.SB_TOP, IntPtr.Zero);
                 }
 
                 if (Options.ScrollTopMethodBeforeCapture != ScrollingCaptureScrollTopMethod.None)
@@ -371,7 +371,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 case ScrollingCaptureScrollMethod.Automatic:
                 case ScrollingCaptureScrollMethod.SendMessageScroll:
-                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_PAGEDOWN, 0);
+                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (IntPtr)ScrollBarCommands.SB_PAGEDOWN, IntPtr.Zero);
                     break;
                 case ScrollingCaptureScrollMethod.KeyPressPageDown:
                     InputHelpers.SendKeyPress(VirtualKeyCode.NEXT);

@@ -49,11 +49,11 @@ namespace ShareX.UploadersLib
             public Int32 code;
         }
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wPar, IntPtr lPar);
 
-        [DllImport("user32.dll", CharSet = CharSet.Ansi)]
-        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, int len, ref int[] order);
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr len, ref int[] order);
 
         // ListView messages
         private const int LVM_FIRST = 0x1000;
