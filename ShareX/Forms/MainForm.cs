@@ -1278,14 +1278,37 @@ namespace ShareX
 
         private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)
         {
-            TaskInfo[] taskInfos = GetCurrentTasks().Select(x => x.Info).Where(x => x != null && !string.IsNullOrEmpty(x.FilePath) && File.Exists(x.FilePath)).ToArray();
+            TaskInfo[] taskInfos = GetCurrentTasks().Select(x => x.Info).Where(x => x != null).ToArray();
 
             if (taskInfos.Length > 0)
             {
-                AllowDrop = false;
+                IDataObject dataObject = null;
 
-                IDataObject dataObject = new DataObject(DataFormats.FileDrop, taskInfos.Select(x => x.FilePath).ToArray());
-                lvUploads.DoDragDrop(dataObject, DragDropEffects.Copy);
+                if (ModifierKeys.HasFlag(Keys.Control))
+                {
+                    string[] urls = taskInfos.Select(x => x.ToString()).Where(x => !string.IsNullOrEmpty(x)).ToArray();
+
+                    if (urls.Length > 0)
+                    {
+                        dataObject = new DataObject(DataFormats.Text, string.Join(Environment.NewLine, urls));
+                    }
+                }
+                else
+                {
+                    string[] files = taskInfos.Select(x => x.FilePath).Where(x => !string.IsNullOrEmpty(x) && File.Exists(x)).ToArray();
+
+                    if (files.Length > 0)
+                    {
+                        dataObject = new DataObject(DataFormats.FileDrop, files);
+                    }
+                }
+
+                if (dataObject != null)
+                {
+                    AllowDrop = false;
+
+                    lvUploads.DoDragDrop(dataObject, DragDropEffects.Copy);
+                }
             }
         }
 

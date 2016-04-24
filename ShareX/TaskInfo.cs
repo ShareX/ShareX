@@ -152,13 +152,9 @@ namespace ShareX
 
         public override string ToString()
         {
-            string text = "";
+            string text = Result.ToString();
 
-            if (!string.IsNullOrEmpty(Result.ToString()))
-            {
-                text = Result.ToString();
-            }
-            else if (!string.IsNullOrEmpty(FilePath))
+            if (string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(FilePath))
             {
                 text = FilePath;
             }
