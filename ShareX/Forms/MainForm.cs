@@ -1327,12 +1327,15 @@ namespace ShareX
             }
         }
 
-        private void pbTips_MouseEnter(object sender, EventArgs e)
+        private void pbTips_MouseUp(object sender, MouseEventArgs e)
         {
-            pTips.Visible = true;
+            if (e.Button == MouseButtons.Left)
+            {
+                pTips.Visible = !pTips.Visible;
+            }
         }
 
-        private void pbTips_MouseLeave(object sender, EventArgs e)
+        private void lblTips_Click(object sender, EventArgs e)
         {
             pTips.Visible = false;
         }

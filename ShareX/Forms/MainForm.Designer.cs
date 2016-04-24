@@ -272,11 +272,11 @@
             // 
             resources.ApplyResources(this.pbTips, "pbTips");
             this.pbTips.BackColor = System.Drawing.Color.Transparent;
+            this.pbTips.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbTips.Image = global::ShareX.Properties.Resources.information;
             this.pbTips.Name = "pbTips";
             this.pbTips.TabStop = false;
-            this.pbTips.MouseEnter += new System.EventHandler(this.pbTips_MouseEnter);
-            this.pbTips.MouseLeave += new System.EventHandler(this.pbTips_MouseLeave);
+            this.pbTips.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbTips_MouseUp);
             // 
             // lblMainFormTip
             // 
@@ -1833,13 +1833,17 @@
             resources.ApplyResources(this.pTips, "pTips");
             this.pTips.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pTips.Controls.Add(this.lblTips);
+            this.pTips.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pTips.Name = "pTips";
+            this.pTips.Click += new System.EventHandler(this.lblTips_Click);
             // 
             // lblTips
             // 
             resources.ApplyResources(this.lblTips, "lblTips");
+            this.lblTips.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTips.Name = "lblTips";
             this.lblTips.UseMnemonic = false;
+            this.lblTips.Click += new System.EventHandler(this.lblTips_Click);
             // 
             // MainForm
             // 
