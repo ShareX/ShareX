@@ -328,9 +328,6 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
     <value>Ekrandan renk seçiciyi durdur</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>Dosyaları bu pencereye sürükleyip bırakabilirsiniz.</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Eksik</value>
   </data>

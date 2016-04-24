@@ -301,23 +301,25 @@ namespace ShareX
         {
             TaskManager.UpdateMainFormTip();
 
-            StringBuilder sb = new StringBuilder(Resources.MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_);
-
             List<HotkeySettings> hotkeys = Program.HotkeysConfig.Hotkeys.Where(x => x.HotkeyInfo.IsValidHotkey).ToList();
 
             if (hotkeys.Count > 0)
             {
-                sb.AppendLine();
-                sb.AppendLine();
+                StringBuilder sb = new StringBuilder();
+
                 sb.AppendLine(Resources.MainForm_UpdateMainFormTip_Currently_configured_hotkeys_);
 
                 foreach (HotkeySettings hotkey in hotkeys)
                 {
                     sb.AppendFormat("{0}  |  {1}\r\n", hotkey.HotkeyInfo, hotkey.TaskSettings);
                 }
-            }
 
-            lblMainFormTip.Text = sb.ToString().Trim();
+                lblMainFormTip.Text = sb.ToString().Trim();
+            }
+            else
+            {
+                lblMainFormTip.Text = "";
+            }
         }
 
         private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)

@@ -1021,15 +1021,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hubic refresh folders list failed.
-        /// </summary>
-        internal static string UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Authentication required..
         /// </summary>
         internal static string UploadersConfigForm_ListFolders_Authentication_required_ {

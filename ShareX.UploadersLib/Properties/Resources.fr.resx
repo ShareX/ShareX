@@ -148,6 +148,42 @@ Dossiers créés:</value>
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>Connexion à {0}</value>
   </data>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>Rafraîchir l'autorisation n'est pas supporté.</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>Nom du dossier à créer</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>ID de l'utilisateur:</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Nom de périphérique non valide</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Statut: Échec de la connexion.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Chemin de mise en ligne:</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Le rafraichissement de la liste des dossiers Box a échoué</value>
+  </data>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
+    <value>Supprimer le fichier ?</value>
+  </data>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Dossier racine</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Connecté en tant que {0}.</value>
+  </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>L'analyse de la réponse a échoué.</value>
+  </data>
   <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
     <value>Nom du dossier à créer</value>
   </data>
@@ -213,45 +249,6 @@ Dossiers créés:</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX client FTP</value>
-  </data>
-  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
-    <value>Le rafraichissement de la liste des dossiers Hubic a échoué</value>
-  </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Rafraîchir l'autorisation n'est pas supporté.</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Nom du dossier à créer</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>ID de l'utilisateur:</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Nom de périphérique non valide</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Statut: Échec de la connexion.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Chemin de mise en ligne:</value>
-  </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Le rafraichissement de la liste des dossiers Box a échoué</value>
-  </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Erreur</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>Supprimer le fichier ?</value>
-  </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Dossier racine</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Connecté en tant que {0}.</value>
-  </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>L'analyse de la réponse a échoué.</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Impossible de trouver un compte FTP valide.</value>

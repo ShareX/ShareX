@@ -129,6 +129,39 @@
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>Csatlakozás ide: {0}</value>
   </data>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>A felhatalmazás frissítése nem támogatott.</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>Létrehozandó mappa</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>Felhasználó ID:</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Helytelen eszköznév</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Állapot: Sikertelen bejelentkezés.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Feltöltési útvonal:</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Bo mappalista frissítés sikertelen</value>
+  </data>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Hiba</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
+    <value>Fájl törlése?</value>
+  </data>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Gyökér könyvtár</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Bejelentkezve a következőként: {0}.</value>
+  </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX FTP kliens</value>
   </data>
@@ -213,41 +246,5 @@ Létrehozott mappák:</value>
   </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
     <value>Név:</value>
-  </data>
-  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
-    <value>Hubic könyvtár frissítés sikertelen</value>
-  </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>A felhatalmazás frissítése nem támogatott.</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Létrehozandó mappa</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>Felhasználó ID:</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Helytelen eszköznév</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Állapot: Sikertelen bejelentkezés.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Feltöltési útvonal:</value>
-  </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Bo mappalista frissítés sikertelen</value>
-  </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Hiba</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>Fájl törlése?</value>
-  </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Gyökér könyvtár</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Bejelentkezve a következőként: {0}.</value>
   </data>
 </root>

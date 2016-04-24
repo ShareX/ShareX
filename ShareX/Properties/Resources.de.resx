@@ -333,9 +333,6 @@ Soll ShareX neu gestartet werden?</value>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
     <value>stoppe Bildschirmfarbauswähler</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>Du kannst Dateien via Drag &amp; Drop in dieses Fenster verschieben</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Fehlt</value>
   </data>
@@ -456,6 +453,18 @@ Soll ShareX neu gestartet werden?</value>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Kann kein gültiges Twitter Konto finden.</value>
   </data>
+  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
+    <value>Dieses Menü bearbeiten...</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>Fortsetzen</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
+    <value>Chronik</value>
+  </data>
   <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Kann keinen gültiges FTP Konto finden.</value>
   </data>
@@ -467,17 +476,5 @@ Drücke Ja um das Bild aus der Zwischenablage zu öffnen. Drücke Nein um die Da
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Du versuchst eine große Datei hochzuladen.
 Sind Sie sich sicher?</value>
-  </data>
-  <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
-    <value>Abbrechen</value>
-  </data>
-  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
-    <value>Fortsetzen</value>
-  </data>
-  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
-    <value>Dieses Menü bearbeiten...</value>
-  </data>
-  <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
-    <value>Chronik</value>
   </data>
 </root>

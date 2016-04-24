@@ -123,6 +123,42 @@
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>Подключение к {0}</value>
   </data>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>Обновление авторизации не поддерживается.</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>Имя создаваемой папки</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>ID пользователя:</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Неверное имя устройства</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Состояние: вход не удался.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Путь загрузки:</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Не удалось обновить список папок Box.</value>
+  </data>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
+    <value>Удалить файл?</value>
+  </data>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Корневая директория</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Вход выполнен под именем {0}.</value>
+  </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>Ошибка при парсинге ответа.</value>
+  </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>FTP клиент ShareX</value>
   </data>
@@ -213,45 +249,6 @@
   </data>
   <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
     <value>Вход успешен, но получить информацию об аккаунте не удалось.</value>
-  </data>
-  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
-    <value>Не удалось обновить список папок Hubic</value>
-  </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Обновление авторизации не поддерживается.</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Имя создаваемой папки</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>ID пользователя:</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Неверное имя устройства</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Состояние: вход не удался.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Путь загрузки:</value>
-  </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Не удалось обновить список папок Box.</value>
-  </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Ошибка</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>Удалить файл?</value>
-  </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Корневая директория</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Вход выполнен под именем {0}.</value>
-  </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Ошибка при парсинге ответа.</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>Клиент FTP поддерживает только протоколы FTP или FTPS.</value>

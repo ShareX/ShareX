@@ -282,9 +282,6 @@ Kérlek futtasd a ShareX-et adminisztrátori jogosultságokkal a személyes mapp
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
     <value>Színszedő leállítása</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>Húzz és vonj fájlokat ebbe az ablakba.</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Hiányzik</value>
   </data>

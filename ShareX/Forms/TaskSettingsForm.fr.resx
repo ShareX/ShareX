@@ -432,9 +432,6 @@
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Remplacer le service de mise en ligne personnalisé par défaut:</value>
   </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>Sélectionnez un écran pour une région personnalisée:</value>
-  </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>Utiliser par défaut les paramètres "Après la capture"</value>
   </data>

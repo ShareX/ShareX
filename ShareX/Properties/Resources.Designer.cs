@@ -1281,15 +1281,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can drag and drop files to this window..
-        /// </summary>
-        public static string MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_ {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Hide columns.
         /// </summary>
         public static string MainForm_UpdateMainWindowLayout_Hide_columns {

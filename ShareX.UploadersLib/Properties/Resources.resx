@@ -377,9 +377,6 @@ Created folders:</value>
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>Connecting to {0}</value>
   </data>
-  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
-    <value>Hubic refresh folders list failed</value>
-  </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Refresh authorization is not supported.</value>
   </data>

@@ -210,9 +210,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Taak instellingen</value>
   </data>
-  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
-  </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>Gebruik geavanceerde instellingen in het algemene taakvenster</value>
   </data>
@@ -444,8 +441,5 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Vervang de standaard aangepaste uploader:</value>
-  </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>Selecteer een monitor voor een aangepaste regio:</value>
   </data>
 </root>

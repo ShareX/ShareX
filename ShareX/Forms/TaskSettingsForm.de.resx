@@ -204,9 +204,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Aufgabeneinstellungen</value>
   </data>
-  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
-  </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>Benutze erweiterte Einstellungen in den Hauptfenster Aufgabeneinstellungen </value>
   </data>
@@ -446,8 +443,5 @@
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Überschreibe den vorgegebenen eigenen Hochlader:</value>
-  </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>Wähle einen Monitor für die angepasste Region aus:</value>
   </data>
 </root>

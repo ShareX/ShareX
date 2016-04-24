@@ -325,9 +325,6 @@ Voulez-vous redémarrer ShareX?</value>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
     <value>Arrêter le sélecteur de couleurs de l'écran</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>Vous pouvez glisser et déposer des fichiers dans cette fenêtre.</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Manquant</value>
   </data>

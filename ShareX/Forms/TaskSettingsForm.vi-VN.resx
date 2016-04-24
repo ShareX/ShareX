@@ -204,9 +204,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Thiết lập tác vụ</value>
   </data>
-  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
-  </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>Sử dụng thiết lập nâng cao ở phần thiết lập tác vụ của cửa sổ chính</value>
   </data>
@@ -437,8 +434,5 @@
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Đè lên dịch vụ tải lên tùy chỉnh</value>
-  </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>Chọn màn hình để chọn vùng tùy chỉnh:</value>
   </data>
 </root>

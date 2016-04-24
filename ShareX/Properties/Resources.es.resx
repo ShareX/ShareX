@@ -288,9 +288,6 @@ Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta pers
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
     <value>Detener selector de color de la pantalla</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>Puede arrastrar y soltar los archivos a esta ventana.</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Le falta</value>
   </data>

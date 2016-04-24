@@ -129,6 +129,39 @@
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>Đang kết nối tới {0}</value>
   </data>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>Làm mới quá trình xác thực không được hỗ trợ.</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>Tên đường dẫn sẽ tạo</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>User ID:</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Tên thiết bị không hợp lệ</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Trạng thái: Đăng nhập thất bại.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Đường dẫn tải lên:</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Làm mới danh sách thư mục thất bại</value>
+  </data>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
+    <value>Xóa tệp tin?</value>
+  </data>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Thư mục gốc</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Đăng nhập với tư cách {0}.</value>
+  </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>Trình FTP ShareX</value>
   </data>
@@ -219,41 +252,5 @@ Các thư mục đã tạo:</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>Nhấn nút làm mới</value>
-  </data>
-  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
-    <value>Làm mới danh sách thư mục thất bại</value>
-  </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Làm mới quá trình xác thực không được hỗ trợ.</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Tên đường dẫn sẽ tạo</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>User ID:</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Tên thiết bị không hợp lệ</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Trạng thái: Đăng nhập thất bại.</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Đường dẫn tải lên:</value>
-  </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Làm mới danh sách thư mục thất bại</value>
-  </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Lỗi</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>Xóa tệp tin?</value>
-  </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Thư mục gốc</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Đăng nhập với tư cách {0}.</value>
   </data>
 </root>

@@ -441,7 +441,4 @@
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>覆盖默认的自定义上传:</value>
   </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>选择一个用于自定义区域的屏幕：</value>
-  </data>
 </root>

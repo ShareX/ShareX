@@ -441,7 +441,4 @@
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Özel yükleyiciyi değiştir:</value>
   </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>Monitor seç özel bölge için:</value>
-  </data>
 </root>

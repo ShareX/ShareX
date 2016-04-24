@@ -201,9 +201,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Настройки задач</value>
   </data>
-  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
-    <value>&gt;&gt;</value>
-  </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>Использовать дополнительные настройки задач из настроек задач главного окна</value>
   </data>
@@ -443,9 +440,6 @@
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Переопределить сервис загрузок по умолчанию:</value>
-  </data>
-  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
-    <value>Выберите монитор для определения области:</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>Использовать настройки «После захвата» по умолчанию</value>

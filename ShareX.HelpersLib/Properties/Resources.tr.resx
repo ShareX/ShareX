@@ -865,4 +865,16 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
     <value>Ana pencereyi aç</value>
   </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>Ekran kaydetme</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>Ekran kaydetme</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>Özel alan ile ekran kaydetme başlat</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>Özel alan ile ekran kaydetme (GIF) başlat</value>
+  </data>
 </root>
