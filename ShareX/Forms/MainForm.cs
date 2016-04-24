@@ -157,6 +157,10 @@ namespace ShareX
             TaskManager.ListViewControl = lvUploads;
             uim = new UploadInfoManager(lvUploads);
 
+            // Required for BackColor Transparent to work
+            lblMainFormTip.Parent = lvUploads;
+            pbTips.Parent = lvUploads;
+
             foreach (ToolStripDropDownItem dropDownItem in new ToolStripDropDownItem[]
             {
                 tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsmiImageUploaders, tsmiImageFileUploaders, tsmiTextUploaders, tsmiTextFileUploaders, tsmiFileUploaders,
@@ -308,6 +312,7 @@ namespace ShareX
                 StringBuilder sb = new StringBuilder();
 
                 sb.AppendLine(Resources.MainForm_UpdateMainFormTip_Currently_configured_hotkeys_);
+                sb.AppendLine();
 
                 foreach (HotkeySettings hotkey in hotkeys)
                 {
@@ -1253,15 +1258,15 @@ namespace ShareX
                 case Keys.Control | Keys.Enter:
                     uim.OpenFile();
                     break;
-                case Keys.Control | Keys.X:
-                    uim.TryCopy();
-                    RemoveSelectedItems();
-                    break;
                 case Keys.Control | Keys.C:
                     uim.TryCopy();
                     break;
                 case Keys.Control | Keys.Shift | Keys.C:
                     uim.CopyFilePath();
+                    break;
+                case Keys.Control | Keys.X:
+                    uim.TryCopy();
+                    RemoveSelectedItems();
                     break;
                 case Keys.Control | Keys.V:
                     UploadManager.ClipboardUploadMainWindow();
@@ -1320,6 +1325,16 @@ namespace ShareX
             {
                 AllowDrop = true;
             }
+        }
+
+        private void pbTips_MouseEnter(object sender, EventArgs e)
+        {
+            pTips.Visible = true;
+        }
+
+        private void pbTips_MouseLeave(object sender, EventArgs e)
+        {
+            pTips.Visible = false;
         }
 
         #region Tray events

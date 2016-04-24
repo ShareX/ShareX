@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
+            this.pbTips = new System.Windows.Forms.PictureBox();
             this.lblMainFormTip = new System.Windows.Forms.Label();
             this.lblSplitter = new System.Windows.Forms.Label();
             this.lvUploads = new ShareX.HelpersLib.MyListView();
@@ -235,13 +236,17 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
+            this.pTips = new System.Windows.Forms.Panel();
+            this.lblTips = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTips)).BeginInit();
             this.tsMain.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
+            this.pTips.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -252,6 +257,7 @@
             // 
             // scMain.Panel1
             // 
+            this.scMain.Panel1.Controls.Add(this.pbTips);
             this.scMain.Panel1.Controls.Add(this.lblMainFormTip);
             this.scMain.Panel1.Controls.Add(this.lblSplitter);
             this.scMain.Panel1.Controls.Add(this.lvUploads);
@@ -262,10 +268,20 @@
             this.scMain.SplitterColor = System.Drawing.Color.DarkGray;
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
             // 
+            // pbTips
+            // 
+            resources.ApplyResources(this.pbTips, "pbTips");
+            this.pbTips.BackColor = System.Drawing.Color.Transparent;
+            this.pbTips.Image = global::ShareX.Properties.Resources.information;
+            this.pbTips.Name = "pbTips";
+            this.pbTips.TabStop = false;
+            this.pbTips.MouseEnter += new System.EventHandler(this.pbTips_MouseEnter);
+            this.pbTips.MouseLeave += new System.EventHandler(this.pbTips_MouseLeave);
+            // 
             // lblMainFormTip
             // 
             resources.ApplyResources(this.lblMainFormTip, "lblMainFormTip");
-            this.lblMainFormTip.BackColor = System.Drawing.SystemColors.Window;
+            this.lblMainFormTip.BackColor = System.Drawing.Color.Transparent;
             this.lblMainFormTip.ForeColor = System.Drawing.Color.LightGray;
             this.lblMainFormTip.Name = "lblMainFormTip";
             this.lblMainFormTip.UseMnemonic = false;
@@ -1812,11 +1828,25 @@
             // 
             this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
             // 
+            // pTips
+            // 
+            resources.ApplyResources(this.pTips, "pTips");
+            this.pTips.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pTips.Controls.Add(this.lblTips);
+            this.pTips.Name = "pTips";
+            // 
+            // lblTips
+            // 
+            resources.ApplyResources(this.lblTips, "lblTips");
+            this.lblTips.Name = "lblTips";
+            this.lblTips.UseMnemonic = false;
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pTips);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
             this.DoubleBuffered = true;
@@ -1834,10 +1864,13 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbTips)).EndInit();
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
             this.cmsTaskInfo.ResumeLayout(false);
             this.cmsTray.ResumeLayout(false);
+            this.pTips.ResumeLayout(false);
+            this.pTips.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2049,5 +2082,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestURLShortener;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTestURLSharing;
         private System.Windows.Forms.ToolStripMenuItem tsmiHideColumns;
+        private System.Windows.Forms.PictureBox pbTips;
+        private System.Windows.Forms.Panel pTips;
+        private System.Windows.Forms.Label lblTips;
     }
 }
