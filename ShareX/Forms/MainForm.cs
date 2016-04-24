@@ -1261,6 +1261,9 @@ namespace ShareX
                 case Keys.Control | Keys.C:
                     uim.TryCopy();
                     break;
+                case Keys.Shift | Keys.C:
+                    uim.CopyFile();
+                    break;
                 case Keys.Control | Keys.Shift | Keys.C:
                     uim.CopyFilePath();
                     break;
@@ -1280,7 +1283,7 @@ namespace ShareX
                     break;
             }
 
-            e.Handled = true;
+            e.Handled = e.SuppressKeyPress = true;
         }
 
         private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)

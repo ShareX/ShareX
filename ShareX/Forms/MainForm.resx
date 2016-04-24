@@ -1621,7 +1621,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="lblTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>716, 340</value>
+    <value>716, 356</value>
   </data>
   <data name="lblTips.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1635,6 +1635,7 @@ Main window task list hotkeys:
 [Enter] Open URL or file.
 [Ctrl + Enter] Open file.
 [Ctrl + C] Copy URL or file path.
+[Shift + C] Copy file.
 [Ctrl + Shift + C] Copy file path.
 [Ctrl + X] Copy URL or file path then remove selected items from list.
 [Ctrl + V] Opens clipboard content viewer so you can upload your clipboard content.
