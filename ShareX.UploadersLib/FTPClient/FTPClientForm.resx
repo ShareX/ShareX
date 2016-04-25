@@ -117,11 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ssStatus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="statusStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="ssStatus.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -131,26 +131,26 @@
   <data name="lblStatus.Text" xml:space="preserve">
     <value>status</value>
   </data>
-  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ssStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ssStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>952, 22</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+  <data name="ssStatus.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
-    <value>statusStrip1</value>
+  <data name="&gt;&gt;ssStatus.Name" xml:space="preserve">
+    <value>ssStatus</value>
   </data>
-  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ssStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ssStatus.Parent" xml:space="preserve">
     <value>toolStripContainer1.BottomToolStripPanel</value>
   </data>
-  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ssStatus.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Name" xml:space="preserve">
@@ -190,70 +190,70 @@
     <value>150</value>
   </data>
   <metadata name="cmsRightClickMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>133, 17</value>
+    <value>112, 17</value>
   </metadata>
-  <data name="connectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+  <data name="tsmiConnect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
   </data>
-  <data name="connectToolStripMenuItem.Text" xml:space="preserve">
+  <data name="tsmiConnect.Text" xml:space="preserve">
     <value>Connect</value>
   </data>
-  <data name="disconnectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+  <data name="tsmiDisconnect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
   </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
+  <data name="tsmiDisconnect.Text" xml:space="preserve">
     <value>Disconnect</value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 6</value>
+  <data name="tssRightClickMenu1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 6</value>
   </data>
-  <data name="downloadToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+  <data name="tsmiDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
   </data>
-  <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
+  <data name="tsmiDownload.Text" xml:space="preserve">
     <value>Download</value>
   </data>
-  <data name="openURLToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+  <data name="tsmiOpenURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
   </data>
-  <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>Open URL</value>
   </data>
-  <data name="renameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+  <data name="tsmiRename.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
   </data>
-  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
+  <data name="tsmiRename.Text" xml:space="preserve">
     <value>Rename</value>
   </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+  <data name="tsmiDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
   </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+  <data name="tsmiDelete.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 6</value>
+  <data name="tssRightClickMenu2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 6</value>
   </data>
-  <data name="refreshToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+  <data name="tsmiRefresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
   </data>
-  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
+  <data name="tsmiRefresh.Text" xml:space="preserve">
     <value>Refresh</value>
   </data>
-  <data name="createDirectoryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+  <data name="tsmiCreateDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
   </data>
-  <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
     <value>Create directory</value>
   </data>
-  <data name="copyURLsToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+  <data name="tsmiCopyURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
   </data>
-  <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>Copy URL(s) to clipboard</value>
   </data>
   <data name="cmsRightClickMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 214</value>
+    <value>182, 214</value>
   </data>
   <data name="&gt;&gt;cmsRightClickMenu.Name" xml:space="preserve">
     <value>cmsRightClickMenu</value>
@@ -271,7 +271,7 @@
     <value>0, 0</value>
   </data>
   <data name="lvFTPList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 481</value>
+    <value>952, 506</value>
   </data>
   <data name="lvFTPList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -289,7 +289,7 @@
     <value>0</value>
   </data>
   <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 481</value>
+    <value>952, 506</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -358,7 +358,7 @@
     <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
+    <value>scMain.Panel2</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -387,16 +387,16 @@
   <data name="&gt;&gt;txtRename.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="scMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="splitContainer1.IsSplitterFixed" type="System.Boolean, mscorlib">
+  <data name="scMain.IsSplitterFixed" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+  <data name="scMain.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
   <data name="cbDirectoryList.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -418,24 +418,24 @@
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbDirectoryList.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+    <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;cbDirectoryList.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+  <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
+    <value>scMain.Panel1</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;scMain.Panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
+  <data name="&gt;&gt;scMain.Panel1.Parent" xml:space="preserve">
+    <value>scMain</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;scMain.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="splitContainer1.Panel1MinSize" type="System.Int32, mscorlib">
+  <data name="scMain.Panel1MinSize" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="lblConnecting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -471,28 +471,28 @@
   <data name="&gt;&gt;lblConnecting.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="progressBar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="pbConnecting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="pbConnecting.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 31</value>
   </data>
-  <data name="progressBar1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="pbConnecting.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 24</value>
   </data>
-  <data name="progressBar1.TabIndex" type="System.Int32, mscorlib">
+  <data name="pbConnecting.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;progressBar1.Name" xml:space="preserve">
-    <value>progressBar1</value>
+  <data name="&gt;&gt;pbConnecting.Name" xml:space="preserve">
+    <value>pbConnecting</value>
   </data>
-  <data name="&gt;&gt;progressBar1.Type" xml:space="preserve">
+  <data name="&gt;&gt;pbConnecting.Type" xml:space="preserve">
     <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;progressBar1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pbConnecting.Parent" xml:space="preserve">
     <value>pConnecting</value>
   </data>
-  <data name="&gt;&gt;progressBar1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pbConnecting.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="pConnecting.Location" type="System.Drawing.Point, System.Drawing">
@@ -514,42 +514,42 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pConnecting.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
+    <value>scMain.Panel2</value>
   </data>
   <data name="&gt;&gt;pConnecting.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
+  <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
+    <value>scMain.Panel2</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;scMain.Panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
+  <data name="&gt;&gt;scMain.Panel2.Parent" xml:space="preserve">
+    <value>scMain</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;scMain.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>952, 557</value>
   </data>
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+  <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+  <data name="scMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
-    <value>splitContainer1</value>
+  <data name="&gt;&gt;scMain.Name" xml:space="preserve">
+    <value>scMain</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+  <data name="&gt;&gt;scMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>tpMain</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tpMain.Location" type="System.Drawing.Point, System.Drawing">
@@ -849,70 +849,70 @@
   <data name="&gt;&gt;chLastModified.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;connectToolStripMenuItem.Name" xml:space="preserve">
-    <value>connectToolStripMenuItem</value>
+  <data name="&gt;&gt;tsmiConnect.Name" xml:space="preserve">
+    <value>tsmiConnect</value>
   </data>
-  <data name="&gt;&gt;connectToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiConnect.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;disconnectToolStripMenuItem.Name" xml:space="preserve">
-    <value>disconnectToolStripMenuItem</value>
+  <data name="&gt;&gt;tsmiDisconnect.Name" xml:space="preserve">
+    <value>tsmiDisconnect</value>
   </data>
-  <data name="&gt;&gt;disconnectToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiDisconnect.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
+  <data name="&gt;&gt;tssRightClickMenu1.Name" xml:space="preserve">
+    <value>tssRightClickMenu1</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+  <data name="&gt;&gt;tssRightClickMenu1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;downloadToolStripMenuItem.Name" xml:space="preserve">
-    <value>downloadToolStripMenuItem</value>
+  <data name="&gt;&gt;tsmiDownload.Name" xml:space="preserve">
+    <value>tsmiDownload</value>
   </data>
-  <data name="&gt;&gt;downloadToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiDownload.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openURLToolStripMenuItem.Name" xml:space="preserve">
-    <value>openURLToolStripMenuItem</value>
+  <data name="&gt;&gt;tsmiOpenURL.Name" xml:space="preserve">
+    <value>tsmiOpenURL</value>
   </data>
-  <data name="&gt;&gt;openURLToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiOpenURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;renameToolStripMenuItem.Name" xml:space="preserve">
-    <value>renameToolStripMenuItem</value>
+  <data name="&gt;&gt;tsmiRename.Name" xml:space="preserve">
+    <value>tsmiRename</value>
   </data>
-  <data name="&gt;&gt;renameToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiRename.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;deleteToolStripMenuItem.Name" xml:space="preserve">
-    <value>deleteToolStripMenuItem</value>
+  <data name="&gt;&gt;tsmiDelete.Name" xml:space="preserve">
+    <value>tsmiDelete</value>
   </data>
-  <data name="&gt;&gt;deleteToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiDelete.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
+  <data name="&gt;&gt;tssRightClickMenu2.Name" xml:space="preserve">
+    <value>tssRightClickMenu2</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+  <data name="&gt;&gt;tssRightClickMenu2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;refreshToolStripMenuItem.Name" xml:space="preserve">
-    <value>refreshToolStripMenuItem</value>
+  <data name="&gt;&gt;tsmiRefresh.Name" xml:space="preserve">
+    <value>tsmiRefresh</value>
   </data>
-  <data name="&gt;&gt;refreshToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiRefresh.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;createDirectoryToolStripMenuItem.Name" xml:space="preserve">
-    <value>createDirectoryToolStripMenuItem</value>
+  <data name="&gt;&gt;tsmiCreateDirectory.Name" xml:space="preserve">
+    <value>tsmiCreateDirectory</value>
   </data>
-  <data name="&gt;&gt;createDirectoryToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiCreateDirectory.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;copyURLsToClipboardToolStripMenuItem.Name" xml:space="preserve">
-    <value>copyURLsToClipboardToolStripMenuItem</value>
+  <data name="&gt;&gt;tsmiCopyURL.Name" xml:space="preserve">
+    <value>tsmiCopyURL</value>
   </data>
-  <data name="&gt;&gt;copyURLsToClipboardToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiCopyURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

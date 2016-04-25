@@ -68,7 +68,6 @@
             // pInput
             // 
             resources.ApplyResources(this.pInput, "pInput");
-            this.pInput.BackColor = System.Drawing.Color.White;
             this.pInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pInput.Controls.Add(this.rtbInput);
             this.pInput.Name = "pInput";
@@ -190,6 +189,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblKeys);
             this.Controls.Add(this.cbKeys);
             this.Controls.Add(this.lblLineDelayMiliseconds);

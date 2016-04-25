@@ -872,7 +872,7 @@
             // 
             // tsmiDonate
             // 
-            this.tsmiDonate.AnimationSpeed = 0.75F;
+            this.tsmiDonate.AnimationSpeed = 0.8F;
             this.tsmiDonate.Image = global::ShareX.Properties.Resources.heart;
             resources.ApplyResources(this.tsmiDonate, "tsmiDonate");
             this.tsmiDonate.Name = "tsmiDonate";
@@ -1850,6 +1850,7 @@
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.pTips);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);

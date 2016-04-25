@@ -56,7 +56,7 @@ namespace ShareX
                 }
                 else
                 {
-                    lblHotkeyDescription.BackColor = SystemColors.Control;
+                    lblHotkeyDescription.BackColor = SystemColors.Window;
                 }
             }
         }
@@ -256,7 +256,7 @@ namespace ShareX
         {
             if (!Selected)
             {
-                lblHotkeyDescription.BackColor = SystemColors.Control;
+                lblHotkeyDescription.BackColor = SystemColors.Window;
             }
         }
 

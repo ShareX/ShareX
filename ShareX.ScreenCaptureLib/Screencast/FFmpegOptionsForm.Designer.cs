@@ -140,7 +140,7 @@
             // 
             this.ttHelpTip.AutomaticDelay = 0;
             this.ttHelpTip.AutoPopDelay = 30000;
-            this.ttHelpTip.BackColor = System.Drawing.Color.White;
+            this.ttHelpTip.BackColor = System.Drawing.SystemColors.Window;
             this.ttHelpTip.InitialDelay = 500;
             this.ttHelpTip.IsBalloon = true;
             this.ttHelpTip.ReshowDelay = 100;
@@ -180,6 +180,7 @@
             // 
             // tbVorbis_qscale
             // 
+            this.tbVorbis_qscale.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbVorbis_qscale, "tbVorbis_qscale");
             this.tbVorbis_qscale.LargeChange = 1;
             this.tbVorbis_qscale.Name = "tbVorbis_qscale";
@@ -190,6 +191,7 @@
             // 
             // tbMP3_qscale
             // 
+            this.tbMP3_qscale.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbMP3_qscale, "tbMP3_qscale");
             this.tbMP3_qscale.LargeChange = 1;
             this.tbMP3_qscale.Maximum = 9;
@@ -201,6 +203,7 @@
             // 
             // tbAACBitrate
             // 
+            this.tbAACBitrate.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbAACBitrate, "tbAACBitrate");
             this.tbAACBitrate.LargeChange = 1;
             this.tbAACBitrate.Maximum = 16;
@@ -616,6 +619,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.cbOverrideFFmpegPath);
             this.Controls.Add(this.eiFFmpeg);
             this.Controls.Add(this.btnHelp);

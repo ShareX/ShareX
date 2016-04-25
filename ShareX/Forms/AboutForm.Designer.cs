@@ -77,6 +77,7 @@
             // rtbCredits
             // 
             resources.ApplyResources(this.rtbCredits, "rtbCredits");
+            this.rtbCredits.BackColor = System.Drawing.SystemColors.Window;
             this.rtbCredits.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbCredits.ForeColor = System.Drawing.SystemColors.ControlText;
             this.rtbCredits.Name = "rtbCredits";
@@ -85,6 +86,7 @@
             // 
             // rtbShareXInfo
             // 
+            this.rtbShareXInfo.BackColor = System.Drawing.SystemColors.Window;
             this.rtbShareXInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbShareXInfo.ForeColor = System.Drawing.SystemColors.ControlText;
             resources.ApplyResources(this.rtbShareXInfo, "rtbShareXInfo");
@@ -196,6 +198,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
             this.Controls.Add(this.btnLicenses);
             this.Controls.Add(this.btnShareXLicense);

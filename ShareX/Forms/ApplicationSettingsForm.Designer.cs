@@ -1003,6 +1003,7 @@ namespace ShareX
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tcSettings);
             this.Controls.Add(this.tttvMain);
             this.Name = "ApplicationSettingsForm";

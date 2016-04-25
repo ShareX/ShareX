@@ -80,6 +80,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.btnInstallExtension);
             this.Controls.Add(this.lbl2);

@@ -248,7 +248,7 @@
   </data>
   <data name="txtHex.Text" xml:space="preserve">
     <value>FF00FF00</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="txtHex.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -281,7 +281,7 @@
   </data>
   <data name="lblHex.Text" xml:space="preserve">
     <value>Hex:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblHex.Name" xml:space="preserve">
     <value>lblHex</value>
   </data>
@@ -530,7 +530,7 @@
   </data>
   <data name="lblHue.Text" xml:space="preserve">
     <value>°</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblHue.Name" xml:space="preserve">
     <value>lblHue</value>
   </data>
@@ -563,7 +563,7 @@
   </data>
   <data name="lblBrightnessPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblBrightnessPerc.Name" xml:space="preserve">
     <value>lblBrightnessPerc</value>
   </data>
@@ -596,7 +596,7 @@
   </data>
   <data name="lblSaturationPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSaturationPerc.Name" xml:space="preserve">
     <value>lblSaturationPerc</value>
   </data>
@@ -974,7 +974,7 @@
   </data>
   <data name="txtDecimal.Text" xml:space="preserve">
     <value>12345678</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="txtDecimal.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -1010,7 +1010,7 @@
   </data>
   <data name="lblCyanPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCyanPerc.Name" xml:space="preserve">
     <value>lblCyanPerc</value>
   </data>
@@ -1043,7 +1043,7 @@
   </data>
   <data name="lblMagentaPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblMagentaPerc.Name" xml:space="preserve">
     <value>lblMagentaPerc</value>
   </data>
@@ -1076,7 +1076,7 @@
   </data>
   <data name="lblYellowPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblYellowPerc.Name" xml:space="preserve">
     <value>lblYellowPerc</value>
   </data>
@@ -1109,7 +1109,7 @@
   </data>
   <data name="lblKeyPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblKeyPerc.Name" xml:space="preserve">
     <value>lblKeyPerc</value>
   </data>

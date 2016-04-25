@@ -106,7 +106,7 @@ namespace ShareX.HelpersLib
             }
             else
             {
-                txtTarget.BackColor = Color.White;
+                txtTarget.BackColor = SystemColors.Window;
             }
         }
 

@@ -80,7 +80,6 @@
             // 
             // pbResult
             // 
-            this.pbResult.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.pbResult, "pbResult");
             this.pbResult.Name = "pbResult";
             this.pbResult.TabStop = false;
@@ -88,7 +87,6 @@
             // pResult
             // 
             resources.ApplyResources(this.pResult, "pResult");
-            this.pResult.BackColor = System.Drawing.Color.White;
             this.pResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pResult.Controls.Add(this.pbResult);
             this.pResult.Name = "pResult";
@@ -186,6 +184,7 @@
             this.AcceptButton = this.btnCapture;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.nudCaptureDelay);

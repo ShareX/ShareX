@@ -56,6 +56,7 @@
             // rtbDebug
             // 
             resources.ApplyResources(this.rtbDebug, "rtbDebug");
+            this.rtbDebug.BackColor = System.Drawing.SystemColors.Window;
             this.rtbDebug.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbDebug.Name = "rtbDebug";
             this.rtbDebug.ReadOnly = true;
@@ -90,6 +91,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.flpRunningFrom);
             this.Controls.Add(this.btnOpenLogFile);
             this.Controls.Add(this.rtbDebug);

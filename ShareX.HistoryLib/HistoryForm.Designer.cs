@@ -123,7 +123,6 @@
             // pbThumbnail
             // 
             resources.ApplyResources(this.pbThumbnail, "pbThumbnail");
-            this.pbThumbnail.BackColor = System.Drawing.Color.White;
             this.pbThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbThumbnail.DrawCheckeredBackground = true;
             this.pbThumbnail.FullscreenOnClick = true;
@@ -237,6 +236,7 @@
             this.AcceptButton = this.btnApplyFilters;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.scMain);
             this.KeyPreview = true;
             this.Name = "HistoryForm";

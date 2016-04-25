@@ -123,7 +123,14 @@ namespace ShareX.HelpersLib
             this.pbPreview = new MyPictureBox();
             this.SuspendLayout();
 
-            this.pbPreview.BackColor = System.Drawing.Color.White;
+            this.BackColor = SystemColors.Window;
+            this.Bounds = CaptureHelpers.GetScreenBounds();
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Text = "ShareX - Image viewer";
+            this.TopMost = true;
+            this.WindowState = FormWindowState.Maximized;
+
             this.pbPreview.Cursor = Cursors.Hand;
             this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbPreview.DrawCheckeredBackground = true;
@@ -133,14 +140,6 @@ namespace ShareX.HelpersLib
             this.pbPreview.Size = new System.Drawing.Size(96, 100);
             this.pbPreview.TabIndex = 0;
             this.pbPreview.LoadImage(screenshot);
-
-            this.BackColor = Color.White;
-            this.Bounds = CaptureHelpers.GetScreenBounds();
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Text = "ShareX - Image viewer";
-            this.TopMost = true;
-            this.WindowState = FormWindowState.Maximized;
             this.Controls.Add(this.pbPreview);
 
             this.Shown += new System.EventHandler(this.ShowScreenshot_Shown);

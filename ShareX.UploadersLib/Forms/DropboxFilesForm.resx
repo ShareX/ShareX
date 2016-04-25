@@ -284,7 +284,7 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Dropbox</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tsbSelectFolder.Name" xml:space="preserve">
     <value>tsbSelectFolder</value>
   </data>

@@ -509,8 +509,8 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            downloadToolStripMenuItem.Enabled = renameToolStripMenuItem.Enabled = deleteToolStripMenuItem.Enabled =
-                copyURLsToClipboardToolStripMenuItem.Enabled = openURLToolStripMenuItem.Enabled = enabled;
+            tsmiDownload.Enabled = tsmiRename.Enabled = tsmiDelete.Enabled =
+                tsmiCopyURL.Enabled = tsmiOpenURL.Enabled = enabled;
 
             CheckFiles(lvFTPList.SelectedItems.Count > 0);
         }

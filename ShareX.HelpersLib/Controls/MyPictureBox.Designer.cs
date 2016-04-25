@@ -48,7 +48,6 @@
             // 
             // pbMain
             // 
-            this.pbMain.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.pbMain, "pbMain");
             this.pbMain.Name = "pbMain";
             this.pbMain.TabStop = false;
@@ -70,7 +69,7 @@
             // lblImageSize
             // 
             resources.ApplyResources(this.lblImageSize, "lblImageSize");
-            this.lblImageSize.BackColor = System.Drawing.Color.White;
+            this.lblImageSize.BackColor = System.Drawing.SystemColors.Window;
             this.lblImageSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblImageSize.Name = "lblImageSize";
             // 
@@ -78,6 +77,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblImageSize);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.pbMain);

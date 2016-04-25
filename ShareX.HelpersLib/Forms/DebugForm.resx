@@ -188,7 +188,7 @@
   </data>
   <data name="rtbDebug.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rtbDebug.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -264,24 +264,6 @@
   <data name="flpRunningFrom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
-  <data name="lblRunningFrom.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRunningFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="lblRunningFrom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="lblRunningFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="lblRunningFrom.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblRunningFrom.Text" xml:space="preserve">
-    <value>Startup path:</value>
-  </data>
   <data name="&gt;&gt;lblRunningFrom.Name" xml:space="preserve">
     <value>lblRunningFrom</value>
   </data>
@@ -316,6 +298,36 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flpRunningFrom.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRunningFrom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRunningFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblRunningFrom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lblRunningFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="lblRunningFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblRunningFrom.Text" xml:space="preserve">
+    <value>Startup path:</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.Name" xml:space="preserve">
+    <value>lblRunningFrom</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.Parent" xml:space="preserve">
+    <value>flpRunningFrom</value>
+  </data>
+  <data name="&gt;&gt;lblRunningFrom.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

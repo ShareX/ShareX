@@ -82,7 +82,6 @@
             // pbClipboard
             // 
             resources.ApplyResources(this.pbClipboard, "pbClipboard");
-            this.pbClipboard.BackColor = System.Drawing.Color.White;
             this.pbClipboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbClipboard.DrawCheckeredBackground = true;
             this.pbClipboard.FullscreenOnClick = true;
@@ -94,6 +93,7 @@
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.pbClipboard);
             this.Controls.Add(this.cbDontShowThisWindow);
             this.Controls.Add(this.btnCancel);

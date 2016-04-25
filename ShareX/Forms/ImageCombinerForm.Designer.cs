@@ -138,6 +138,7 @@
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblSpacePixel);
             this.Controls.Add(this.cbOrientation);
             this.Controls.Add(this.lblOrientation);

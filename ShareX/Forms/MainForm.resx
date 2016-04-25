@@ -129,7 +129,7 @@
     <value>Top, Right</value>
   </data>
   <data name="pbTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 0</value>
+    <value>311, 0</value>
   </data>
   <data name="pbTips.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>

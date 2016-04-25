@@ -397,7 +397,7 @@
   </data>
   <data name="btnPingPrimary.Text" xml:space="preserve">
     <value>Ping</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnPingPrimary.Name" xml:space="preserve">
     <value>btnPingPrimary</value>
   </data>
@@ -421,7 +421,7 @@
   </data>
   <data name="btnPingSecondary.Text" xml:space="preserve">
     <value>Ping</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnPingSecondary.Name" xml:space="preserve">
     <value>btnPingSecondary</value>
   </data>

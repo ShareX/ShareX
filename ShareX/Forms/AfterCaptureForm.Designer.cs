@@ -34,15 +34,15 @@
             this.btnCopy = new System.Windows.Forms.Button();
             this.tcTasks = new System.Windows.Forms.TabControl();
             this.tpAfterCapture = new System.Windows.Forms.TabPage();
-            this.tpBeforeUpload = new System.Windows.Forms.TabPage();
-            this.tpAfterUpload = new System.Windows.Forms.TabPage();
-            this.lblFileName = new System.Windows.Forms.Label();
-            this.txtFileName = new System.Windows.Forms.TextBox();
             this.lvAfterCaptureTasks = new ShareX.HelpersLib.MyListView();
             this.chAfterCapture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tpBeforeUpload = new System.Windows.Forms.TabPage();
             this.ucBeforeUpload = new ShareX.BeforeUploadControl();
+            this.tpAfterUpload = new System.Windows.Forms.TabPage();
             this.lvAfterUploadTasks = new ShareX.HelpersLib.MyListView();
             this.chAfterUpload = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblFileName = new System.Windows.Forms.Label();
+            this.txtFileName = new System.Windows.Forms.TextBox();
             this.pbImage = new ShareX.HelpersLib.MyPictureBox();
             this.tcTasks.SuspendLayout();
             this.tpAfterCapture.SuspendLayout();
@@ -89,30 +89,6 @@
             this.tpAfterCapture.Name = "tpAfterCapture";
             this.tpAfterCapture.UseVisualStyleBackColor = true;
             // 
-            // tpBeforeUpload
-            // 
-            this.tpBeforeUpload.Controls.Add(this.ucBeforeUpload);
-            resources.ApplyResources(this.tpBeforeUpload, "tpBeforeUpload");
-            this.tpBeforeUpload.Name = "tpBeforeUpload";
-            this.tpBeforeUpload.UseVisualStyleBackColor = true;
-            // 
-            // tpAfterUpload
-            // 
-            this.tpAfterUpload.Controls.Add(this.lvAfterUploadTasks);
-            resources.ApplyResources(this.tpAfterUpload, "tpAfterUpload");
-            this.tpAfterUpload.Name = "tpAfterUpload";
-            this.tpAfterUpload.UseVisualStyleBackColor = true;
-            // 
-            // lblFileName
-            // 
-            resources.ApplyResources(this.lblFileName, "lblFileName");
-            this.lblFileName.Name = "lblFileName";
-            // 
-            // txtFileName
-            // 
-            resources.ApplyResources(this.txtFileName, "txtFileName");
-            this.txtFileName.Name = "txtFileName";
-            // 
             // lvAfterCaptureTasks
             // 
             this.lvAfterCaptureTasks.AutoFillColumn = true;
@@ -130,10 +106,24 @@
             this.lvAfterCaptureTasks.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvAfterCaptureTasks_ItemSelectionChanged);
             this.lvAfterCaptureTasks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvAfterCaptureTasks_MouseDown);
             // 
+            // tpBeforeUpload
+            // 
+            this.tpBeforeUpload.Controls.Add(this.ucBeforeUpload);
+            resources.ApplyResources(this.tpBeforeUpload, "tpBeforeUpload");
+            this.tpBeforeUpload.Name = "tpBeforeUpload";
+            this.tpBeforeUpload.UseVisualStyleBackColor = true;
+            // 
             // ucBeforeUpload
             // 
             resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
             this.ucBeforeUpload.Name = "ucBeforeUpload";
+            // 
+            // tpAfterUpload
+            // 
+            this.tpAfterUpload.Controls.Add(this.lvAfterUploadTasks);
+            resources.ApplyResources(this.tpAfterUpload, "tpAfterUpload");
+            this.tpAfterUpload.Name = "tpAfterUpload";
+            this.tpAfterUpload.UseVisualStyleBackColor = true;
             // 
             // lvAfterUploadTasks
             // 
@@ -152,10 +142,19 @@
             this.lvAfterUploadTasks.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvAfterUploadTasks_ItemSelectionChanged);
             this.lvAfterUploadTasks.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvAfterUploadTasks_MouseDown);
             // 
+            // lblFileName
+            // 
+            resources.ApplyResources(this.lblFileName, "lblFileName");
+            this.lblFileName.Name = "lblFileName";
+            // 
+            // txtFileName
+            // 
+            resources.ApplyResources(this.txtFileName, "txtFileName");
+            this.txtFileName.Name = "txtFileName";
+            // 
             // pbImage
             // 
             resources.ApplyResources(this.pbImage, "pbImage");
-            this.pbImage.BackColor = System.Drawing.Color.White;
             this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbImage.Cursor = System.Windows.Forms.Cursors.Default;
             this.pbImage.DrawCheckeredBackground = true;
@@ -169,6 +168,7 @@
             this.AcceptButton = this.btnContinue;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.lblFileName);

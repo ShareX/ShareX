@@ -618,7 +618,7 @@
             // 
             this.ttHelpTip.AutomaticDelay = 0;
             this.ttHelpTip.AutoPopDelay = 30000;
-            this.ttHelpTip.BackColor = System.Drawing.Color.White;
+            this.ttHelpTip.BackColor = System.Drawing.SystemColors.Window;
             this.ttHelpTip.InitialDelay = 500;
             this.ttHelpTip.IsBalloon = true;
             this.ttHelpTip.ReshowDelay = 100;
@@ -4252,6 +4252,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblWidthHint);
             this.Controls.Add(this.tcUploaders);
             this.Controls.Add(this.ttlvMain);

@@ -280,7 +280,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Encoder Profiles</value>
+    <value>ShareX - Encoder profiles</value>
   </data>
   <data name="&gt;&gt;chEncoderDescription.Name" xml:space="preserve">
     <value>chEncoderDescription</value>

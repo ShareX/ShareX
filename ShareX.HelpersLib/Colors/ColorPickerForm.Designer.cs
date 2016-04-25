@@ -323,8 +323,8 @@
             // 
             // rbHue
             // 
-            this.rbHue.Checked = true;
             resources.ApplyResources(this.rbHue, "rbHue");
+            this.rbHue.Checked = true;
             this.rbHue.Name = "rbHue";
             this.rbHue.TabStop = true;
             this.rbHue.UseVisualStyleBackColor = true;
@@ -384,7 +384,6 @@
             // 
             // pbColorPreview
             // 
-            this.pbColorPreview.BackColor = System.Drawing.Color.White;
             this.pbColorPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbColorPreview.DrawCheckeredBackground = true;
             resources.ApplyResources(this.pbColorPreview, "pbColorPreview");
@@ -401,6 +400,7 @@
             // ColorPickerForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.pbColorPreview);

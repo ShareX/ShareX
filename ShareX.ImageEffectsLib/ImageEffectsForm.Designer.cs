@@ -151,7 +151,6 @@
             // pbResult
             // 
             resources.ApplyResources(this.pbResult, "pbResult");
-            this.pbResult.BackColor = System.Drawing.Color.White;
             this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbResult.DrawCheckeredBackground = true;
             this.pbResult.EnableRightClickMenu = true;
@@ -199,6 +198,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.mbLoadImage);
             this.Controls.Add(this.eiImageEffects);
             this.Controls.Add(this.btnSaveImage);

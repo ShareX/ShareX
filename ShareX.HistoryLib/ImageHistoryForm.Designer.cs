@@ -204,6 +204,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tscMain);
             this.KeyPreview = true;
             this.Name = "ImageHistoryForm";
