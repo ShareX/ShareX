@@ -117,7 +117,7 @@ namespace ShareX
                     taskSettings.UseDefaultAdvancedSettings = false;
                     taskSettings.AdvancedSettings.DisableNotifications = true;
 
-                    UploadManager.RunImageTask(img, taskSettings);
+                    UploadManager.RunImageTask(img, taskSettings, true, true);
                 }
             }
         }

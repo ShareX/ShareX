@@ -290,12 +290,42 @@ namespace ShareX
             }
         }
 
-        public static void RunImageTask(Image img, TaskSettings taskSettings, string customFileName = null)
+        public static void RunImageTask(Image img, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             if (img != null && taskSettings != null)
             {
+                if (!skipQuickTaskMenu && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowQuickTaskMenu))
+                {
+                    QuickTaskMenu quickTaskMenu = new QuickTaskMenu();
+
+                    quickTaskMenu.TaskInfoSelected += taskInfo =>
+                    {
+                        if (taskInfo == null)
+                        {
+                            RunImageTask(img, taskSettings, true);
+                        }
+                        else if (taskInfo.IsValid)
+                        {
+                            taskSettings.AfterCaptureJob = taskInfo.AfterCaptureTasks;
+                            taskSettings.AfterUploadJob = taskInfo.AfterUploadTasks;
+                            RunImageTask(img, taskSettings, true);
+                        }
+                    };
+
+                    quickTaskMenu.ShowMenu();
+
+                    return;
+                }
+
+                string customFileName = null;
+
+                if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, img))
+                {
+                    return;
+                }
+
                 WorkerTask task = WorkerTask.CreateImageUploaderTask(img, taskSettings, customFileName);
                 TaskManager.Start(task);
             }
