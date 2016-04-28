@@ -66,11 +66,18 @@ namespace ShareX.HelpersLib
 
         public IWebProxy GetWebProxy()
         {
-            if (IsValidProxy())
+            try
             {
-                NetworkCredential credentials = new NetworkCredential(Username, Password);
-                string address = string.Format("{0}:{1}", Host, Port);
-                return new WebProxy(address, true, null, credentials);
+                if (IsValidProxy())
+                {
+                    NetworkCredential credentials = new NetworkCredential(Username, Password);
+                    string address = string.Format("{0}:{1}", Host, Port);
+                    return new WebProxy(address, true, null, credentials);
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "GetWebProxy failed");
             }
 
             return null;
