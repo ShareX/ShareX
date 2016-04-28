@@ -1621,33 +1621,10 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="lblTips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>716, 356</value>
+    <value>20, 36</value>
   </data>
   <data name="lblTips.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="lblTips.Text" xml:space="preserve">
-    <value>Main window tips:
-- Drag files, image or text to main window to be able to upload them.
-- Drag items from task list to copy files to anywhere. Hold "Ctrl" before dragging to copy URL or file path instead of file.
-
-Main window task list hotkeys:
-[Enter] Open URL or file.
-[Ctrl + Enter] Open file.
-[Ctrl + C] Copy URL or file path.
-[Shift + C] Copy file.
-[Ctrl + Shift + C] Copy file path.
-[Ctrl + X] Copy URL or file path then remove selected items from list.
-[Ctrl + V] Opens clipboard content viewer so you can upload your clipboard content.
-[Delete] Remove selected items from list.
-[Shift + Delete] Delete files locally then remove them from list.
-[Esc] Close main window
-
-Tray icon tips:
-- Primary mouse click to start region capture.
-- Double primary mouse click to open main window.
-- Middle mouse click to capture fullscreen.
-- You can change these tray icon tasks from "Application settings" window.</value>
   </data>
   <data name="&gt;&gt;lblTips.Name" xml:space="preserve">
     <value>lblTips</value>
