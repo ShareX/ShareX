@@ -350,6 +350,7 @@
             // 
             // pbPreview
             // 
+            this.pbPreview.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.pbPreview, "pbPreview");
             this.pbPreview.DrawCheckeredBackground = true;
             this.pbPreview.EnableRightClickMenu = true;
@@ -1851,9 +1852,9 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.pTips);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
+            this.Controls.Add(this.pTips);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
