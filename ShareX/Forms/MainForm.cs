@@ -161,6 +161,8 @@ namespace ShareX
             lblMainFormTip.Parent = lvUploads;
             pbTips.Parent = lvUploads;
 
+            pTips.BringToFront();
+
             foreach (ToolStripDropDownItem dropDownItem in new ToolStripDropDownItem[]
             {
                 tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsmiImageUploaders, tsmiImageFileUploaders, tsmiTextUploaders, tsmiTextFileUploaders, tsmiFileUploaders,
