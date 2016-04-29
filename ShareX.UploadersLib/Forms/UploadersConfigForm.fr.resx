@@ -119,7 +119,7 @@
   </resheader>
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Utilisez cette option si vous avez un bucket mis en place avec un nom de domaine personnalisé.
-Si le champ de texte est vide, le nom de bucket sera utilisé pour l'URL.
+Si le champ est vide, le nom de bucket sera utilisé pour l'URL.
 Par exemple, si votre bucket est appelé bucket.example.com alors l'URL sera http://bucket.example.com/...</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
@@ -183,7 +183,7 @@ Par exemple, si votre bucket est appelé bucket.example.com alors l'URL sera htt
     <value>Arguments</value>
   </data>
   <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Exemples:
+    <value>Exemples :
 
 /Files/File[1]/URL
 /store/book[1]/title</value>
@@ -192,7 +192,7 @@ Par exemple, si votre bucket est appelé bucket.example.com alors l'URL sera htt
     <value>Ajouter la syntaxe au champ URL</value>
   </data>
   <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Exemples:
+    <value>Exemples :
 
 Files[0].URL
 store.book[0].title</value>
@@ -222,13 +222,13 @@ store.book[0].title</value>
     <value>Supprimer</value>
   </data>
   <data name="lblTwitterDescription.Text" xml:space="preserve">
-    <value>Nom:</value>
+    <value>Nom :</value>
   </data>
   <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
     <value>Ignorer la boîte de message du tweet</value>
   </data>
   <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
-    <value>Message par défaut du tweet:</value>
+    <value>Message par défaut du tweet :</value>
   </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
     <value>Mettre à jour</value>
@@ -243,19 +243,19 @@ store.book[0].title</value>
     <value>Vider les champs ci-dessous</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Service de mise en ligne d'images:</value>
+    <value>Service de mise en ligne d'images :</value>
   </data>
   <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
     <value>Tester</value>
   </data>
   <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Service de mise en ligne de fichiers:</value>
+    <value>Service de mise en ligne de fichiers :</value>
   </data>
   <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
     <value>Tester</value>
   </data>
   <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Résultat du test:</value>
+    <value>Résultat du test :</value>
   </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
     <value>URL de suppression:</value>
@@ -264,7 +264,7 @@ store.book[0].title</value>
     <value>Afficher la dernière réponse...</value>
   </data>
   <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Type de réponse:</value>
+    <value>Type de réponse :</value>
   </data>
   <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
     <value>Service de mise en ligne de textes:</value>
@@ -276,52 +276,52 @@ store.book[0].title</value>
     <value>Tester</value>
   </data>
   <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Raccourcisseur d'URL:</value>
+    <value>Raccourcisseur d'URL :</value>
   </data>
   <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
     <value>Tester</value>
   </data>
   <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>URL de la miniature:</value>
+    <value>URL de la miniature :</value>
   </data>
   <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Nom de la forme du fichier:</value>
+    <value>Nom de la forme du fichier :</value>
   </data>
   <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Type de requête:</value>
+    <value>Type de requête :</value>
   </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
-    <value>Domaine:</value>
+    <value>Domaine :</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Remarque: Si vous avez une Signature alors vous n'avez pas besoin d'un nom d'utilisateur/mot de passe.</value>
+    <value>Remarque : Si vous avez une signature, vous n'avez pas besoin d'un nom d'utilisateur/mot de passe.</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="lblYourlsUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur:</value>
+    <value>Nom d'utilisateur :</value>
   </data>
   <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>Signature:</value>
+    <value>Signature :</value>
   </data>
   <data name="llAdflyLink.Text" xml:space="preserve">
     <value>Vous pouvez trouver votre clé API et UID ici</value>
   </data>
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>Clé API:</value>
+    <value>Clé API :</value>
   </data>
   <data name="lblPolrAPIKey.Text" xml:space="preserve">
-    <value>Clé API:</value>
+    <value>Clé API :</value>
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
-    <value>Nom d'hôte de l'API: (ex: http://exemple.com/api.php, Laisser blanc pour utiliser polr.me)</value>
+    <value>Nom d'hôte de l'API : (ex: http://exemple.com/api.php - laissez ce champ vide pour utiliser polr.me)</value>
   </data>
   <data name="lblStreamableUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur:</value>
+    <value>Nom d'utilisateur :</value>
   </data>
   <data name="lblStreamablePassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="cbStreamableAnonymous.Text" xml:space="preserve">
     <value>Anonyme</value>
@@ -330,49 +330,49 @@ store.book[0].title</value>
     <value>Dossier partagé</value>
   </data>
   <data name="tpEmail.Text" xml:space="preserve">
-    <value>Email</value>
+    <value>Adresse e-mail</value>
   </data>
   <data name="tpFileUploaders.Text" xml:space="preserve">
     <value>Services de mise en ligne de fichiers</value>
   </data>
   <data name="lblEmailSmtpPort.Text" xml:space="preserve">
-    <value>Port:</value>
+    <value>Port :</value>
   </data>
   <data name="lblEmailDefaultBody.Text" xml:space="preserve">
-    <value>Message par défaut:</value>
+    <value>Message par défaut :</value>
   </data>
   <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
-    <value>Sujet par défaut:</value>
+    <value>Sujet par défaut :</value>
   </data>
   <data name="lblEmailFrom.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>Adresse e-mail :</value>
   </data>
   <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
     <value>Se souvenir de l'adresse du dernier destinataire</value>
   </data>
   <data name="lblEmailPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="lblEmailSmtpServer.Text" xml:space="preserve">
-    <value>Serveur SMTP:</value>
+    <value>Serveur SMTP :</value>
   </data>
   <data name="cbEmailConfirm.Text" xml:space="preserve">
     <value>Confirmer avant l'envoi</value>
   </data>
   <data name="lblSharedFolderImages.Text" xml:space="preserve">
-    <value>Image:</value>
+    <value>Image :</value>
   </data>
   <data name="lblSharedFolderText.Text" xml:space="preserve">
-    <value>Texte:</value>
+    <value>Texte :</value>
   </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
-    <value>Fichier:</value>
+    <value>Fichier :</value>
   </data>
   <data name="lblSulAPIKey.Text" xml:space="preserve">
-    <value>Clé API:</value>
+    <value>Clé API :</value>
   </data>
   <data name="lblSeafileAuthToken.Text" xml:space="preserve">
-    <value>Token d'authentification:</value>
+    <value>Jeton d'authentification :</value>
   </data>
   <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
     <value>Créer une URL partageable</value>
@@ -381,10 +381,10 @@ store.book[0].title</value>
     <value>Ignorer les certificats SSL invalides</value>
   </data>
   <data name="lblSeafilePassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="lblSeafileUsername.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>Adresse e-mail :</value>
   </data>
   <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
     <value>Obtenir</value>
@@ -399,10 +399,10 @@ store.book[0].title</value>
     <value>Valider</value>
   </data>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
-    <value>Usage:</value>
+    <value>Utilisation :</value>
   </data>
   <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>Adresse e-mail :</value>
   </data>
   <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
     <value>Rafraichir</value>
@@ -411,13 +411,13 @@ store.book[0].title</value>
     <value>Informations du compte</value>
   </data>
   <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
-    <value>Sélectionner une librairie:</value>
+    <value>Sélectionnez une librairie :</value>
   </data>
   <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
     <value>Rafraichir</value>
   </data>
   <data name="lblSeafilePath.Text" xml:space="preserve">
-    <value>Chemin:</value>
+    <value>Chemin :</value>
   </data>
   <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
     <value>Les librairies sans permission d'écriture sont cachées.
@@ -436,49 +436,49 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Nom</value>
   </data>
   <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
-    <value>Mot de passe de la librairie:</value>
+    <value>Mot de passe de la librairie :</value>
   </data>
   <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
     <value>Valider</value>
   </data>
   <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
-    <value>Jours avant expiration:</value>
+    <value>Nombre de jours avant expiration :</value>
   </data>
   <data name="lblSeafileSharePassword.Text" xml:space="preserve">
-    <value>Partager le mot de passe:</value>
+    <value>Partager le mot de passe :</value>
   </data>
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Paramètres de partage Seafile</value>
   </data>
   <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Hôte:</value>
+    <value>Hôte : </value>
   </data>
   <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>Clé API:</value>
+    <value>Clé API :</value>
   </data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Services de mise en ligne:</value>
+    <value>Services de mise en ligne :</value>
   </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>URL de mise en ligne:</value>
+    <value>URL de mise en ligne :</value>
   </data>
   <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>URL du résultat:</value>
+    <value>URL du résultat :</value>
   </data>
   <data name="btnPomfTest.Text" xml:space="preserve">
     <value>Tester tout</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
-    <value>Lien URL:</value>
+    <value>Lien URL :</value>
   </data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>Clé API:</value>
+    <value>Clé API :</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
-    <value>Pour obtenir une clé API, connectez-vous à Lambda : https://lambda.sx/ puis cliquez sur votre nom d'utilisateur et sur "gérer son compte".</value>
+    <value>Pour obtenir votre clé API, connectez-vous à Lambda : https://lambda.sx/ puis cliquez sur votre nom d'utilisateur et sur « Manage Account ».</value>
   </data>
   <data name="lblJiraHost.Text" xml:space="preserve">
-    <value>Hôte Jira:</value>
+    <value>Hôte Jira :</value>
   </data>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Modèle</value>
@@ -487,7 +487,7 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Serveur Jira</value>
   </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
-    <value>Préfixe du problème Jira:</value>
+    <value>Préfixe du problème Jira :</value>
   </data>
   <data name="btnMinusFolderRemove.Text" xml:space="preserve">
     <value>Supprimer un dossier</value>
@@ -508,28 +508,28 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Autoriser</value>
   </data>
   <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur:</value>
+    <value>Nom d'utilisateur :</value>
   </data>
   <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
     <value>Rafraîchir l'autorisation</value>
   </data>
   <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>État de la connexion:</value>
+    <value>État de la connexion :</value>
   </data>
   <data name="gbMinusUserPass.Text" xml:space="preserve">
     <value>Authentification</value>
   </data>
   <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Type d'URL:</value>
+    <value>Type d'URL :</value>
   </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>Adresse e-mail :</value>
   </data>
   <data name="lblLocalhostrPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Utiliser l'URL directe si elle existe</value>
@@ -538,19 +538,19 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Connexion</value>
   </data>
   <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>Adresse e-mail :</value>
   </data>
   <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="lblGe_ttStatus.Text" xml:space="preserve">
     <value>Connexion requise.</value>
   </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur:</value>
+    <value>Nom d'utilisateur :</value>
   </data>
   <data name="lblSendSpacePassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
     <value>S'inscrire...</value>
@@ -562,55 +562,55 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Obtenir la liste des périphériques</value>
   </data>
   <data name="lblPushbulletDevices.Text" xml:space="preserve">
-    <value>Appareil:</value>
+    <value>Appareil :</value>
   </data>
   <data name="lblMediaFireEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>Adresse e-mail :</value>
   </data>
   <data name="lblMediaFirePassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="lblMediaFirePath.Text" xml:space="preserve">
-    <value>Chemin de mise en ligne:</value>
+    <value>Chemin de mise en ligne :</value>
   </data>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Utiliser un lien long qui inclut le nom de fichier</value>
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>Hôte:</value>
+    <value>Hôte :</value>
   </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur:</value>
+    <value>Nom d'utilisateur :</value>
   </data>
   <data name="lblOwnCloudPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
-    <value>Chemin:</value>
+    <value>Chemin :</value>
   </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
     <value>Créer une URL partageable</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Lien direct (Ajoute "&amp;download" à l'URL)</value>
+    <value>Lien direct (Ajoute « &amp;download » à l'URL)</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Compatibilité ownCloud 8.1+</value>
   </data>
   <data name="lblMegaPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="btnMegaLogin.Text" xml:space="preserve">
     <value>Connexion</value>
   </data>
   <data name="lblMegaEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>Adresse e-mail :</value>
   </data>
   <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>Statut:</value>
+    <value>Statut :</value>
   </data>
   <data name="lblMegaFolder.Text" xml:space="preserve">
-    <value>Dossier:</value>
+    <value>Dossier :</value>
   </data>
   <data name="btnMegaRegister.Text" xml:space="preserve">
     <value>S'inscrire...</value>
@@ -622,31 +622,31 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Rafraîchir</value>
   </data>
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
-    <value>Clé d'accès:</value>
+    <value>Clé d'accès :</value>
   </data>
   <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
-    <value>Clé secrète:</value>
+    <value>Clé secrète :</value>
   </data>
   <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
-    <value>Chemin de mise en ligne:</value>
+    <value>Chemin de mise en ligne :</value>
   </data>
   <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
-    <value>Adresse:</value>
+    <value>Adresse :</value>
   </data>
   <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
-    <value>Nom du Bucket:</value>
+    <value>Nom du Bucket :</value>
   </data>
   <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
     <value>Prévisualisation</value>
   </data>
   <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
-    <value>Prévisualisation d'URL:</value>
+    <value>Prévisualisation d'URL :</value>
   </data>
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
     <value>Rafraîchir la liste des dossiers</value>
   </data>
   <data name="lblBoxFolderID.Text" xml:space="preserve">
-    <value>Dossier sélectionné:</value>
+    <value>Dossier sélectionné :</value>
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Nom du dossier</value>
@@ -655,10 +655,10 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Créer un lien partageable</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Note: Vous pouvez double-cliquer sur le nom du dossier pour entrer dedans.</value>
+    <value>Remarque : Vous pouvez effectuer un double clic sur le nom du dossier pour voir son contenu.</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Est-ce une mise en ligne publique?</value>
+    <value>Est-ce une mise en ligne publique ?</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Rafraîchir la liste des dossiers</value>
@@ -670,7 +670,7 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Titre</value>
   </data>
   <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>ID du dossier:</value>
+    <value>ID du dossier :</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
     <value>Mettre en ligne des fichiers vers le dossier sélectionné</value>
@@ -679,13 +679,13 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Créer un lien partageable</value>
   </data>
   <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>Dossier sélectionné:</value>
+    <value>Dossier sélectionné :</value>
   </data>
   <data name="lblDropboxPath.Text" xml:space="preserve">
-    <value>Chemin de mise en ligne:</value>
+    <value>Chemin de mise en ligne :</value>
   </data>
   <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Si vous utilisez le dossier "Public", une url partageable est déjà générée. Vous n'avez pas besoin de cliquer sur "Créer une URL partageable".</value>
+    <value>Si vous utilisez le dossier « Public », une URL partageable est déjà générée. Vous n'avez pas besoin de cliquer sur « Créer une URL partageable ».</value>
   </data>
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Statut</value>
@@ -694,16 +694,16 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Sélectionner...</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Créer une URL partageable:</value>
+    <value>Créer une URL partageable :</value>
   </data>
   <data name="lblFtpImages.Text" xml:space="preserve">
-    <value>Image:</value>
+    <value>Image :</value>
   </data>
   <data name="lblFtpText.Text" xml:space="preserve">
-    <value>Texte:</value>
+    <value>Texte :</value>
   </data>
   <data name="lblFtpFiles.Text" xml:space="preserve">
-    <value>Fichier:</value>
+    <value>Fichier :</value>
   </data>
   <data name="btnFtpClient.Text" xml:space="preserve">
     <value>Client...</value>
@@ -718,31 +718,31 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>URL direct</value>
   </data>
   <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
-    <value>Clé API:</value>
+    <value>Clé API :</value>
   </data>
   <data name="llSomeImageAPIKey.Text" xml:space="preserve">
     <value>Pour obtenir la clé API, visitez https://someimage.com/api</value>
   </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
-    <value>Clé utilisateur:</value>
+    <value>Clé utilisateur :</value>
   </data>
   <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
     <value>Vous pouvez obtenir la clé utilisateur sur la page des détails du compte.</value>
   </data>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
-    <value>Clé API:</value>
+    <value>Clé API :</value>
   </data>
   <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
-    <value>URL de mise en ligne:</value>
+    <value>URL de mise en ligne :</value>
   </data>
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
     <value>URL directe</value>
   </data>
   <data name="lblCheveretoUploaders.Text" xml:space="preserve">
-    <value>Services de mise en ligne:</value>
+    <value>Services de mise en ligne :</value>
   </data>
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
-    <value>Exemple: http://exemple.com/api/1/upload</value>
+    <value>Exemple : http://exemple.com/api/1/upload</value>
   </data>
   <data name="btnCheveretoTestAll.Text" xml:space="preserve">
     <value>Tester tout</value>
@@ -757,19 +757,19 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Nom</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>ID de l'album pour la mise en ligne (Vide = Aucun album mis en ligne):</value>
+    <value>ID de l'album pour la mise en ligne (Vide = Aucun album mis en ligne) :</value>
   </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
     <value>Connexion requise.</value>
   </data>
   <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>Étape 2: Compléter l'autorisation</value>
+    <value>Étape 2 : Complétez l'autorisation</value>
   </data>
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Code de vérification (Obtenir le code de vérification sur la page d'autorisation):</value>
+    <value>Code de vérification (Le code de vérification est disponible sur la page d'autorisation) :</value>
   </data>
   <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>Étape 1: Ouvrir la page d'autorisation...</value>
+    <value>Étape 1 : Ouvrez la page d'autorisation...</value>
   </data>
   <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
     <value>Nom de l'album par défaut</value>
@@ -787,7 +787,7 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Nouveau nom d'album (doit être compris entre 2 et 50 caractères. Les caractères valides sont les lettres, les chiffres, les tirets bas (_), les tirets (-) et les espaces)</value>
   </data>
   <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>Supprimer un album</value>
+    <value>Supprimer l'album</value>
   </data>
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
     <value>Ajouter un album</value>
@@ -796,10 +796,10 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Mettre en ligne les images vers</value>
   </data>
   <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Étape 1: Ouvrir la page d'autorisation...</value>
+    <value>Étape 1 : Ouvrez la page d'autorisation...</value>
   </data>
   <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Étape 2: Compléter l'autorisation</value>
+    <value>Étape 2 : Complétez l'autorisation</value>
   </data>
   <data name="btnFlickrCheckToken.Text" xml:space="preserve">
     <value>Rafraîchir l'autorisation</value>
@@ -808,28 +808,28 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Votre photostream...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Ouvrir ma page des images...</value>
+    <value>Ouvrir ma page d'images...</value>
   </data>
   <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>Adresse e-mail</value>
   </data>
   <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="btnTinyPicLogin.Text" xml:space="preserve">
     <value>Connexion</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur:</value>
+    <value>Nom d'utilisateur :</value>
   </data>
   <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
     <value>Ouvrir ma page des images...</value>
   </data>
   <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>Est-ce une mise en ligne publique?</value>
+    <value>Est-ce une mise en ligne publique ?</value>
   </data>
   <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
     <value>Ouvrir la page de mon profil public...</value>
@@ -838,7 +838,7 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Connexion</value>
   </data>
   <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Type de la miniature:</value>
+    <value>Type de miniature :</value>
   </data>
   <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
     <value>Rafraîchir la liste des albums</value>
@@ -856,7 +856,7 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Mettre en ligne les images vers l'album sélectionné</value>
   </data>
   <data name="cbImgurUseGIFV.Text" xml:space="preserve">
-    <value>Utiliser des liens GIFV au lieu de GIF</value>
+    <value>Utiliser des liens GIFV au lieu de liens GIF</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Créer un nouvel album</value>
@@ -867,7 +867,7 @@ Avec cette option, les objets coûtent moins chers en espace disque, mais ont 99
 Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
-    <value>Utiliser un domaine personnalisé:</value>
+    <value>Utiliser un domaine personnalisé :</value>
   </data>
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Utiliser le stockage de redondance réduite</value>
@@ -876,22 +876,22 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
     <value>Services de mise en ligne de textes</value>
   </data>
   <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>Adresse e-mail :</value>
   </data>
   <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
-    <value>Clé API:</value>
+    <value>Clé API :</value>
   </data>
   <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
-    <value>Domaine personnalisé:</value>
+    <value>Domaine personnalisé :</value>
   </data>
   <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>Coloration syntaxique:</value>
+    <value>Coloration syntaxique :</value>
   </data>
   <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>Clé utilisateur:</value>
+    <value>Clé utilisateur :</value>
   </data>
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>Est-ce une mise en ligne publique?</value>
+    <value>Est-ce une mise en ligne publique ?</value>
   </data>
   <data name="cbGistPublishPublic.Text" xml:space="preserve">
     <value>Créer un Gist public</value>
@@ -900,31 +900,31 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
     <value>Utiliser l'URL brute</value>
   </data>
   <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>Clé API de l'utilisateur:</value>
+    <value>Clé API de l'utilisateur :</value>
   </data>
   <data name="btnPastebinLogin.Text" xml:space="preserve">
     <value>Connexion</value>
   </data>
   <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
-    <value>Statut:</value>
+    <value>Statut :</value>
   </data>
   <data name="lblPastebinUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur:</value>
+    <value>Nom d'utilisateur :</value>
   </data>
   <data name="lblPastebinPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="lblPastebinTitle.Text" xml:space="preserve">
-    <value>Coller le titre:</value>
+    <value>Coller le titre :</value>
   </data>
   <data name="lblPastebinPrivacy.Text" xml:space="preserve">
-    <value>Confidentialité:</value>
+    <value>Confidentialité :</value>
   </data>
   <data name="lblPastebinExpiration.Text" xml:space="preserve">
-    <value>Expiration:</value>
+    <value>Expiration :</value>
   </data>
   <data name="lblPastebinSyntax.Text" xml:space="preserve">
-    <value>Coller la syntaxe:</value>
+    <value>Coller la syntaxe :</value>
   </data>
   <data name="btnPastebinRegister.Text" xml:space="preserve">
     <value>S'inscrire...</value>

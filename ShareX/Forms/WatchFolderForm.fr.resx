@@ -124,10 +124,10 @@
     <value>Exemple : *.png</value>
   </data>
   <data name="lblFilter.Text" xml:space="preserve">
-    <value>Filtre:</value>
+    <value>Filtre :</value>
   </data>
   <data name="lblFolderPath.Text" xml:space="preserve">
-    <value>Chemin du dossier:</value>
+    <value>Chemin du dossier :</value>
   </data>
   <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
     <value>Inclure les sous-dossiers</value>

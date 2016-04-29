@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>Autoriser l'image à être agrandie</value>
+    <value>Autoriser l'agrandissement de l'image</value>
   </data>
   <data name="cbAutoRotate.Text" xml:space="preserve">
     <value>Rotation automatique de l'image</value>
@@ -133,7 +133,7 @@
     <value>Centrer la position de l'image</value>
   </data>
   <data name="lblMargin.Text" xml:space="preserve">
-    <value>Marge:</value>
+    <value>Marge :</value>
   </data>
   <data name="btnShowPreview.Text" xml:space="preserve">
     <value>Prévisualisation...</value>

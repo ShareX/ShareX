@@ -124,19 +124,19 @@
     <value>Fermer</value>
   </data>
   <data name="lblAlternateDNS.Text" xml:space="preserve">
-    <value>Serveur DNS auxiliaire:</value>
+    <value>Serveur DNS auxiliaire :</value>
   </data>
   <data name="lblDNS.Text" xml:space="preserve">
-    <value>Serveurs DNS:</value>
+    <value>Serveurs DNS :</value>
   </data>
   <data name="lblAdapters.Text" xml:space="preserve">
-    <value>Cartes réseau:</value>
+    <value>Cartes réseau :</value>
   </data>
   <data name="cbAutomatic.Text" xml:space="preserve">
     <value>Obtenir les adresses des serveurs DNS automatiquement</value>
   </data>
   <data name="lblPreferredDNS.Text" xml:space="preserve">
-    <value>Serveur DNS préféré:</value>
+    <value>Serveur DNS préféré :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Changeur de DNS</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblDescription.Text" xml:space="preserve">
-    <value>Description:</value>
+    <value>Description :</value>
   </data>
   <data name="tpTask.Text" xml:space="preserve">
     <value>Tâche</value>
@@ -139,13 +139,13 @@
     <value>Afficher le curseur dans les captures d'écran</value>
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
-    <value>Décalage de l'ombre:</value>
+    <value>Décalage de l'ombre :</value>
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
     <value>Capturer la fenêtre avec la transparence</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>Lors de la capture d'une fenêtre, si la fenêtre croise la barre des tâches alors cacher la barre des tâches</value>
+    <value>Lors de la capture d'une fenêtre, cacher la barre des tâches si la fenêtre croise celle-ci</value>
   </data>
   <data name="cbCaptureShadow.Text" xml:space="preserve">
     <value>Capturer la fenêtre avec ombrage (transparence nécessaire)</value>
@@ -157,7 +157,7 @@
     <value>Capturer la zone client pendant la capture d'une fenêtre ou d'une fenêtre active</value>
   </data>
   <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Délai de la capture d'écran:</value>
+    <value>Délai de la capture d'écran :</value>
   </data>
   <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
     <value>Utiliser les paramètres de capture dans la fenêtre principale des paramètres des tâches</value>
@@ -223,7 +223,7 @@
     <value>Chemin du dossier</value>
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>Surveiller le dossier et si un nouveau fichier est créé alors le mettre en ligne</value>
+    <value>Surveiller le dossier et si un nouveau fichier est créé, le mettre en ligne</value>
   </data>
   <data name="chkUseDefaultActions.Text" xml:space="preserve">
     <value>Utiliser les actions dans la fenêtre principale des paramètres des tâches</value>
@@ -253,16 +253,16 @@
     <value>Dupliquer</value>
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>Si le presse-papier contient une URL alors utiliser le raccourcisseur d'URL</value>
+    <value>Si le presse-papier contient une URL, utiliser le raccourcisseur d'URL</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>Si le presse-papier contient un chemin de dossier alors indexer ce dossier et mettre en ligne l'index</value>
+    <value>Si le presse-papier contient un chemin de dossier, indexer ce dossier et mettre en ligne l'index</value>
   </data>
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Si le presse-papier contient l'URL d'un fichier alors le télécharger et le mettre en ligne</value>
+    <value>Si le presse-papier contient l'URL d'un fichier, le télécharger et le mettre en ligne</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>Si le presse-papier contient une URL alors la partager en utilisant le service de partage de URL</value>
+    <value>Si le presse-papier contient une URL, la partager en utilisant le service de partage de URL</value>
   </data>
   <data name="tpUploadClipboard.Text" xml:space="preserve">
     <value>Mise en ligne du presse-papier</value>
@@ -271,25 +271,25 @@
     <value>Modèle de nom pour la mise en ligne de la capture ou du presse-papier:</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Utiliser un modèle de nom aussi pour la mise en ligne de fichiers plutôt que le nom du fichier réel</value>
+    <value>Utiliser un modèle de nom pour la mise en ligne de fichiers plutôt que le nom du fichier réel</value>
   </data>
   <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
     <value>Remettre à zéro le compteur incrémental automatique</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
-    <value>Prévisualisation:</value>
+    <value>Prévisualisation :</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>Modèle de nom pour la capture de la fenêtre active:</value>
+    <value>Modèle de nom pour la capture de la fenêtre active :</value>
   </data>
   <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
-    <value>Prévisualisation:</value>
+    <value>Prévisualisation :</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
-    <value>Utiliser un fuseau horaire personnalisé:</value>
+    <value>Utiliser un fuseau horaire personnalisé :</value>
   </data>
   <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Utiliser le modèle du nom de la fenêtre pour la capture de région (ShareX va essayer de détecter la fenêtre derrière la sélection)</value>
+    <value>Utiliser le modèle du nom de la fenêtre pour la capture de région (ShareX essayera de détecter la fenêtre derrière la sélection)</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Nommage des fichiers</value>
@@ -298,25 +298,25 @@
     <value>Utiliser les paramètres de transfert dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>GIF FPS:</value>
+    <value>FPS (IPS) des GIFs :</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
-    <value>Durée fixée:</value>
+    <value>Durée fixée :</value>
   </data>
   <data name="btnEncoderConfig.Text" xml:space="preserve">
     <value>Profils...</value>
   </data>
   <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Exécuter CLI après:</value>
+    <value>Exécuter CLI après :</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>FPS de l'enregistrement d'écran:</value>
+    <value>IPS (FPS) de l'enregistrement d'écran :</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>secondes</value>
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Démarrer l'enregistrement après:</value>
+    <value>Démarrer l'enregistrement après :</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>secondes</value>
@@ -325,16 +325,16 @@
     <value>Options de l'enregistrement de l'écran...</value>
   </data>
   <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF encodeur:</value>
+    <value>Encodeur GIF :</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
-    <value>Montrer le curseur dans l'enregistrement</value>
+    <value>Montrer le curseur durant l'enregistrement</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>Largeur:</value>
+    <value>Largeur :</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
-    <value>Hauteur:</value>
+    <value>Hauteur :</value>
   </data>
   <data name="lblThumbnailName.Text" xml:space="preserve">
     <value>Nom de la miniature</value>
@@ -358,7 +358,7 @@
     <value>Afficher la fenêtre des effets d'image après la capture</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>Vous pouvez activer/désactiver les effets d'image de "Après les tâches de capture -&gt; Ajouter des effets d'image".</value>
+    <value>Vous pouvez activer/désactiver les effets d'image grâce au menu « Après les tâches de capture » -&gt; « Ajouter des effets d'image ».</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Effets</value>
@@ -367,37 +367,37 @@
     <value>Utiliser les paramètres d'images dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
-    <value>Qualité JPEG:</value>
+    <value>Qualité JPEG :</value>
   </data>
   <data name="lblImageGIFQuality.Text" xml:space="preserve">
-    <value>Qualité GIF:</value>
+    <value>Qualité GIF :</value>
   </data>
   <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
-    <value>Ko (0 désactive)</value>
+    <value>Ko (0 = désactivé)</value>
   </data>
   <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>Format d'image 2:</value>
+    <value>Format d'image 2 :</value>
   </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
-    <value>Si le fichier existe:</value>
+    <value>Si le fichier existe :</value>
   </data>
   <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Taille limite de l'image pour l'utilisation de "Format d'image 2":</value>
+    <value>Taille limite de l'image pour l'utilisation de l'option « Format d'image 2 » :</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
-    <value>Format d'image:</value>
+    <value>Format d'image :</value>
   </data>
   <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
     <value>Utiliser les paramètres généraux dans la fenêtre principale des paramètres des tâches</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
-    <value>Jouer un son quand la capture est faite</value>
+    <value>Jouer un son après une capture</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Jouer un son quand la tâche est complétée</value>
   </data>
   <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Après que la tâche soit complétée:</value>
+    <value>Après que la tâche soit complétée :</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tâche...</value>
@@ -427,10 +427,10 @@
     <value>Après la capture...</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Remplacer le compte FTP par défaut:</value>
+    <value>Remplacer le compte FTP par défaut :</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Remplacer le service de mise en ligne personnalisé par défaut:</value>
+    <value>Remplacer le service de mise en ligne personnalisé par défaut :</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>Utiliser par défaut les paramètres "Après la capture"</value>

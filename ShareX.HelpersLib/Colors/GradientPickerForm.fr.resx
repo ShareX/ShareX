@@ -130,13 +130,13 @@
     <value>ShareX - Dégradé</value>
   </data>
   <data name="lblGradientType.Text" xml:space="preserve">
-    <value>Type de dégradé:</value>
+    <value>Type de dégradé :</value>
   </data>
   <data name="chLocation.Text" xml:space="preserve">
     <value>Emplacement</value>
   </data>
   <data name="lblLocation.Text" xml:space="preserve">
-    <value>Emplacement:</value>
+    <value>Emplacement :</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>

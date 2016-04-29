@@ -136,13 +136,13 @@
     <value>Nom du fichier</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>Nom du fichier avec l'extension</value>
+    <value>Nom du fichier (extension comprise)</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>Chemin du fichier</value>
   </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>Filtré: {0}</value>
+    <value>Filtré : {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>Dossier</value>
@@ -193,7 +193,7 @@
     <value>Afficher</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>Total: {0}</value>
+    <value>Total : {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>URL de la miniature</value>
@@ -211,6 +211,6 @@
     <value>Erreur</value>
   </data>
   <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>Une erreur est survenue pendant la lecture du fichier XML: {0}</value>
+    <value>Une erreur est survenue lors de la lecture du fichier XML : {0}</value>
   </data>
 </root>
