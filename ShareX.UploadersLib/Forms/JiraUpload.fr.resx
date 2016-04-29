@@ -121,7 +121,7 @@
     <value>Annuler</value>
   </data>
   <data name="lblIssueId.Text" xml:space="preserve">
-    <value>ID du problème:</value>
+    <value>ID du problème :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Mise en ligne de fichiers Jira</value>

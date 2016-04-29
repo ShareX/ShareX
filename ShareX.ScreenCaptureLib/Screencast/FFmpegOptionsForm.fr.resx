@@ -121,13 +121,13 @@
     <value>Arguments supplémentaires en ligne de commande</value>
   </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>Codec audio:</value>
+    <value>Codec audio :</value>
   </data>
   <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>Source audio:</value>
+    <value>Source audio :</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>Bitrate:</value>
+    <value>Bitrate :</value>
   </data>
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>Codecs</value>
@@ -136,14 +136,14 @@
     <value>Aperçu de la ligne de commande</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Constante Rate Factor (CRF): La valeur peut aller de 0 à 51, 0 étant sans perte, 30 est la valeur par défaut et 51 est le pire possible.
-Une valeur élevée signifie une mauvaise qualité mais un fichier léger.</value>
+    <value>Constante Rate Factor (CRF) : La valeur peut être comprise entre 0 à 51, 0 étant sans perte, 30 étant la valeur par défaut et 51 étant la pire possible.
+Une valeur élevée signifie une mauvaise qualité d'image mais un fichier léger.</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Copier</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>128k par défaut.</value>
+    <value>Par défaut : 128k</value>
   </data>
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Télécharger</value>
@@ -152,28 +152,28 @@ Une valeur élevée signifie une mauvaise qualité mais un fichier léger.</valu
     <value>Aide...</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>Qualité:</value>
+    <value>Qualité :</value>
   </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Qualité:</value>
+    <value>Qualité :</value>
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Rafraîchir</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>L'intervalle va de 0 à 10, 10 étant la qualité la plus haute. 3-6 est un bon choix pour essayer. La valeur par défaut est 3.</value>
+    <value>Peut être compris entre 0 à 10, 10 étant la qualité la plus haute. 3-6 étant un bon choix : à vous d'essayer. La valeur par défaut est 3.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>L'intervalle va de 0 à 9 où une valeur faible est une qualité élevée. 0-3 produira normalement des résultats transparents, 4 (par défaut) devrait être proche de la transparence perceptuelle et 6 produit une qualité «acceptable».</value>
+    <value>Peut être compris entre 0 à 9. Plus la valeur sera faible, plus la qualité sera élevée. 0-3 produira normalement des résultats transparents, 4 (par défaut) devrait être proche de la transparence perceptuelle et 6 produit une qualité « acceptable ».</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>Source vidéo:</value>
+    <value>Source vidéo :</value>
   </data>
   <data name="lblCodec.Text" xml:space="preserve">
-    <value>Codec vidéo:</value>
+    <value>Codec vidéo :</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
-    <value>Tester avec CMD</value>
+    <value>Tester avec le CMD</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Options d'enregistrement de l'écran</value>
@@ -185,19 +185,19 @@ Une valeur élevée signifie une mauvaise qualité mais un fichier léger.</valu
     <value>Utiliser des commandes personnalisées</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>Bitrate variable:</value>
+    <value>Bitrate variable :</value>
   </data>
   <data name="gbFFmpegExe.Text" xml:space="preserve">
     <value>Chemin vers FFmpeg</value>
   </data>
   <data name="lblGIFDither.Text" xml:space="preserve">
-    <value>Mode de tramage:</value>
+    <value>Mode de tramage :</value>
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>Préréglage:</value>
+    <value>Préréglage :</value>
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
-    <value>Bitrate variable:</value>
+    <value>Bitrate variable :</value>
   </data>
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">
     <value>1 étant la qualité la plus élevée/la taille du fichier la plus grande et 31 étant la qualité la plus faible/la taille du fichier la plus petite.</value>
@@ -205,31 +205,31 @@ Une valeur élevée signifie une mauvaise qualité mais un fichier léger.</valu
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
     <value>Préréglage rapide = encodage rapide mais fichier lourd.
 Préréglage lent = encodage lent mais fichier léger.
-Pour un encodage en temps réel (ex: enregistrement d'écran), le préréglage doit être le plus rapide possible.</value>
+Pour un encodage en temps réel (ex : enregistrement d'écran), le préréglage doit être le plus rapide possible.</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>Installer les dispositifs d'enregistrement</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>Installe la source vidéo/audio "screen-capture-recorder" et "virtual-audio-capturer".</value>
+    <value>Installe la source vidéo/audio « screen-capture-recorder » et « virtual-audio-capturer ».</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>'full' par défaut.</value>
+    <value>Par défaut : full</value>
   </data>
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>sierra2_4a par défaut.</value>
+    <value>Par défaut : sierra2_4a</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Utiliser un chemin personnalisé</value>
   </data>
   <data name="lblGIFStatsMode.Text" xml:space="preserve">
-    <value>Mode de palette:</value>
+    <value>Mode de palette :</value>
   </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
-    <value>Ce codec audio n'est pas supporté par le conteneur vidéo sélectionné.</value>
+    <value>Ce codec audio n'est pas pris en charge par le conteneur vidéo sélectionné.</value>
   </data>
   <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
     <value>Pour un encodage en temps réel comme l'enregistrement d'écran, il est recommandé de sélectionner le préréglage le plus rapide possible.
-Sinon, il ne peut pas suivre l'enregistrement et il y aura beaucoup de sauts d'images.</value>
+Autrement, il ne pourra pas suivre l'enregistrement : il y aura donc beaucoup de sauts d'images.</value>
   </data>
 </root>

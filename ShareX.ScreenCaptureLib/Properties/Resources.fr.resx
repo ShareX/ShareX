@@ -127,12 +127,12 @@
     <value>Erreur FFmpeg</value>
   </data>
   <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-Largeur: {4} px / Hauteur: {5} px
-Distance: {6:0.00} px / Angle: {7:0.00}°</value>
+    <value>X : {0} / Y : {1} / X2 : {2} / Y2 : {3}
+Largeur : {4} px / Hauteur : {5} px
+Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
-    <value>X: {0} Y: {1} L: {2} H: {3}</value>
+    <value>X : {0} Y : {1} L : {2} H : {3}</value>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Qualité:</value>
@@ -288,7 +288,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[Maintenir Maj] Déplacer la région sélectionnée au lieu de la redimensionner</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Ctrl + Touches fléchées] Déplacer la position du curseur plus rapidement</value>
+    <value>[Ctrl + Touches fléchées] Déplacer le curseur plus rapidement</value>
   </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
     <value>[Touches fléchées] Redimensionner la région sélectionnée à partir du {0}</value>
