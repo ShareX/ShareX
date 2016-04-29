@@ -127,7 +127,7 @@
     <value>Date</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>Filtre de date:</value>
+    <value>Filtre de date :</value>
   </data>
   <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
     <value>Se termine par</value>
@@ -136,25 +136,25 @@
     <value>Correspondance exacte</value>
   </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>Filtre du type de fichier:</value>
+    <value>Filtre du type de fichier :</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nom du fichier</value>
   </data>
   <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Filtre des noms de fichier:</value>
+    <value>Filtre des noms de fichier :</value>
   </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Filtres</value>
   </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
-    <value>De:</value>
+    <value>De :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Historique</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>Filtre d'hôte:</value>
+    <value>Filtre d'hôte :</value>
   </data>
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Supprimer les filtres</value>
@@ -163,6 +163,6 @@
     <value>Commence par</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>À:</value>
+    <value>À :</value>
   </data>
 </root>

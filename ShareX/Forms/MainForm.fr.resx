@@ -196,7 +196,7 @@
     <value>Effets d'image...</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Vérifier un Hash...</value>
+    <value>Vérifier un hash...</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>Changeur de DNS...</value>
@@ -364,7 +364,7 @@
     <value>Nom du fichier</value>
   </data>
   <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
-    <value>Nom du fichier avec l'extension</value>
+    <value>Nom du fichier (extension comprise)</value>
   </data>
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>Dossier</value>
@@ -472,7 +472,7 @@
     <value>Effets d'image...</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Vérifier un Hash...</value>
+    <value>Vérifier un hash...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>Changeur de DNS...</value>
@@ -622,7 +622,7 @@
     <value>Générateur de miniatures de vidéo...</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
-    <value>Générateur de miniatures de vidéo...</value>
+    <value>Générateur de miniatures vidéo...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Combineur d'images...</value>

@@ -124,16 +124,16 @@
     <value>Activer le support pour Chrome</value>
   </data>
   <data name="lbl1.Text" xml:space="preserve">
-    <value>1. Activer le support pour Chrome sinon l'extension ne pourra pas interagir avec ShareX.</value>
+    <value>1. Activez le support pour Chrome. Autrement, l'extension ne pourra pas interagir avec ShareX.</value>
   </data>
   <data name="lbl2.Text" xml:space="preserve">
-    <value>2. Installer l'extension de ShareX pour Chrome depuis le web store de Chrome.</value>
+    <value>2. Installez l'extension de ShareX pour Chrome depuis le Chrome Web Store.</value>
   </data>
   <data name="btnInstallExtension.Text" xml:space="preserve">
-    <value>Installer l'extension de ShareX pour Chrome</value>
+    <value>Installez l'extension de ShareX pour Chrome</value>
   </data>
   <data name="lbl3.Text" xml:space="preserve">
-    <value>3. Dans Chrome, faites un clic droit sur une image, une vidéo, de l'audio ou un texte sélectionné et vous verrez le bouton "Mettre en ligne avec ShareX" dans le menu contextuel.</value>
+    <value>3. Dans Chrome, effectuez un clic droit sur une image, une vidéo, de l'audio ou un texte sélectionné. Un bouton « Mettre en ligne avec ShareX » sera disponible dans le menu contextuel.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Support de l'extension pour Chrome</value>

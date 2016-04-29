@@ -124,18 +124,18 @@
     <value>Lancer ShareX au démarrage de Windows</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Afficher ShareX dans le menu "Envoyer vers"</value>
+    <value>Afficher ShareX dans le menu « Envoyer vers »</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Première configuration de ShareX</value>
   </data>
   <data name="cbShellContextMenuButton.Text" xml:space="preserve">
-    <value>Afficher "Mettre en ligne avec ShareX" dans le menu contextuel de Windows</value>
+    <value>Afficher « Mettre en ligne avec ShareX » dans le menu contextuel de l'explorateur Windows</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>Vous pouvez trouver ces paramètres dans "Paramètres de l'application -&gt; Intégration".</value>
+    <value>Vous pourrez retrouver ces paramètres dans le menu « Paramètres de l'application » -&gt; « Intégration ».</value>
   </data>
   <data name="cbSteamInApp.Text" xml:space="preserve">
-    <value>Quand ShareX est ouvert, afficher "Dans une application" sur Steam</value>
+    <value>Lorsque ShareX est ouvert, afficher le statut « Dans une application » sur Steam</value>
   </data>
 </root>

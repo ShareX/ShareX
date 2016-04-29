@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
-    <value>Gallerie</value>
+    <value>Galerie</value>
   </data>
   <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>Carreau</value>
+    <value>Vue en grille</value>
   </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>Mode de vue</value>
   </data>
   <data name="tsddbThumbnailSize.Text" xml:space="preserve">
-    <value>Taille de la miniature</value>
+    <value>Taille des miniatures</value>
   </data>
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>Miniatures</value>

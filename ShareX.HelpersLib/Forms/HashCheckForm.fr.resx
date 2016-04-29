@@ -121,40 +121,40 @@
     <value>Parcourir...</value>
   </data>
   <data name="lblFile.Text" xml:space="preserve">
-    <value>Chemin du fichier:</value>
+    <value>Chemin du fichier :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Vérifier un Hash</value>
+    <value>ShareX - Vérifier un hash</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
-    <value>Type de Hash:</value>
+    <value>Type de hash :</value>
   </data>
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>Vérifier</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
-    <value>Résultat:</value>
+    <value>Résultat :</value>
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
-    <value>Cible:</value>
+    <value>Cible :</value>
   </data>
   <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
     <value>Copier tout</value>
   </data>
   <data name="lblHashCheckBase64.Text" xml:space="preserve">
-    <value>Base64:</value>
+    <value>Codage base64 :</value>
   </data>
   <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value>Hexadécimal:</value>
+    <value>Codage hexadécimal :</value>
   </data>
   <data name="lblHashCheckBinary.Text" xml:space="preserve">
-    <value>Binaire:</value>
+    <value>Codage binaire :</value>
   </data>
   <data name="lblHashCheckText.Text" xml:space="preserve">
-    <value>Texte:</value>
+    <value>Texte :</value>
   </data>
   <data name="lblHashCheckHash.Text" xml:space="preserve">
-    <value>Hash:</value>
+    <value>Hash :</value>
   </data>
   <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
     <value>Décoder</value>
@@ -176,5 +176,8 @@
   </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>Vérifier le hash d'un fichier</value>
+  </data>
+  <data name="lblHashCheckASCII.Text" xml:space="preserve">
+    <value>Codage ASCII :</value>
   </data>
 </root>

@@ -136,7 +136,7 @@
     <value>ShareX - Après la capture</value>
   </data>
   <data name="lblFileName.Text" xml:space="preserve">
-    <value>Nom du fichier:</value>
+    <value>Nom du fichier :</value>
   </data>
   <data name="tpAfterUpload.Text" xml:space="preserve">
     <value>Après la mise en ligne</value>
