@@ -29,6 +29,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
@@ -52,6 +53,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                 DirectURL = config.SomeImageDirectURL
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSomeImage;
     }
 
     public sealed class SomeImage : ImageUploader

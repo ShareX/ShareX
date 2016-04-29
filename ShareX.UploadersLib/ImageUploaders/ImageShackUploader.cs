@@ -27,6 +27,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
@@ -43,6 +44,8 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             return new ImageShackUploader(APIKeys.ImageShackKey, config.ImageShackSettings);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpImageShack;
     }
 
     public sealed class ImageShackUploader : ImageUploader

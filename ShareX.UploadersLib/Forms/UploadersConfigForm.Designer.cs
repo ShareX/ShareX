@@ -4630,7 +4630,6 @@
         private System.Windows.Forms.TextBox txtUpasteUserKey;
         private System.Windows.Forms.TabPage tpImageUploaders;
         private System.Windows.Forms.TabControl tcImageUploaders;
-        private System.Windows.Forms.TabPage tpImgur;
         private OAuthControl oauth2Imgur;
         private System.Windows.Forms.ListView lvImgurAlbumList;
         private System.Windows.Forms.ColumnHeader chImgurID;
@@ -4640,7 +4639,6 @@
         private System.Windows.Forms.ComboBox cbImgurThumbnailType;
         private System.Windows.Forms.Label lblImgurThumbnailType;
         private AccountTypeControl atcImgurAccountType;
-        private System.Windows.Forms.TabPage tpImageShack;
         private System.Windows.Forms.Button btnImageShackLogin;
         internal System.Windows.Forms.Button btnImageShackOpenPublicProfile;
         private System.Windows.Forms.CheckBox cbImageShackIsPublic;
@@ -4649,7 +4647,6 @@
         private System.Windows.Forms.TextBox txtImageShackUsername;
         private System.Windows.Forms.TextBox txtImageShackPassword;
         internal System.Windows.Forms.Label lblImageShackPassword;
-        private System.Windows.Forms.TabPage tpTinyPic;
         private AccountTypeControl atcTinyPicAccountType;
         private System.Windows.Forms.Button btnTinyPicLogin;
         private System.Windows.Forms.TextBox txtTinyPicPassword;
@@ -4657,14 +4654,12 @@
         private System.Windows.Forms.TextBox txtTinyPicUsername;
         private System.Windows.Forms.Label lblTinyPicUsername;
         internal System.Windows.Forms.Button btnTinyPicOpenMyImages;
-        private System.Windows.Forms.TabPage tpFlickr;
         private System.Windows.Forms.Button btnFlickrOpenImages;
         private System.Windows.Forms.PropertyGrid pgFlickrAuthInfo;
         private System.Windows.Forms.PropertyGrid pgFlickrSettings;
         private System.Windows.Forms.Button btnFlickrCheckToken;
         private System.Windows.Forms.Button btnFlickrCompleteAuth;
         private System.Windows.Forms.Button btnFlickrOpenAuthorize;
-        private System.Windows.Forms.TabPage tpPhotobucket;
         private System.Windows.Forms.GroupBox gbPhotobucketAlbumPath;
         private System.Windows.Forms.Button btnPhotobucketAddAlbum;
         private System.Windows.Forms.Button btnPhotobucketRemoveAlbum;
@@ -4683,7 +4678,6 @@
         private System.Windows.Forms.Button btnPhotobucketAuthComplete;
         private System.Windows.Forms.TextBox txtPhotobucketVerificationCode;
         private System.Windows.Forms.Label lblPhotobucketAccountStatus;
-        private System.Windows.Forms.TabPage tpPicasa;
         private System.Windows.Forms.TextBox txtPicasaAlbumID;
         private System.Windows.Forms.Label lblPicasaAlbumID;
         private System.Windows.Forms.ListView lvPicasaAlbumList;
@@ -4749,7 +4743,6 @@
         private System.Windows.Forms.ComboBox cbPastebinPrivacy;
         private System.Windows.Forms.Label lblPastebinSyntax;
         private System.Windows.Forms.Button btnPastebinRegister;
-        private System.Windows.Forms.TabPage tpChevereto;
         private System.Windows.Forms.Label lblCheveretoUploadURL;
         private System.Windows.Forms.TextBox txtCheveretoUploadURL;
         private System.Windows.Forms.TextBox txtCheveretoAPIKey;
@@ -4885,12 +4878,10 @@
         private System.Windows.Forms.Label lblSulAPIKey;
         private System.Windows.Forms.TextBox txtSulAPIKey;
         private System.Windows.Forms.Button btnCustomUploadersExportAll;
-	    private System.Windows.Forms.TabPage tpSomeImage;
 	    private System.Windows.Forms.CheckBox cbSomeImageDirectURL;
 	    private System.Windows.Forms.TextBox txtSomeImageAPIKey;
 	    private System.Windows.Forms.Label lblSomeImageAPIKey;
         private System.Windows.Forms.LinkLabel llSomeImageAPIKey;
-        private System.Windows.Forms.TabPage tpVgyme;
         private System.Windows.Forms.TextBox txtVgymeUserKey;
         private System.Windows.Forms.Label lvlVgymeUserKey;
         private System.Windows.Forms.LinkLabel llVgymeAccountDetailsPage;
@@ -4901,5 +4892,14 @@
         private System.Windows.Forms.CheckBox cbPastebinRaw;
         private System.Windows.Forms.CheckBox cbGistUseRawURL;
         private System.Windows.Forms.CheckBox cbStreamableUseDirectURL;
+        public System.Windows.Forms.TabPage tpImgur;
+        public System.Windows.Forms.TabPage tpImageShack;
+        public System.Windows.Forms.TabPage tpTinyPic;
+        public System.Windows.Forms.TabPage tpFlickr;
+        public System.Windows.Forms.TabPage tpPhotobucket;
+        public System.Windows.Forms.TabPage tpPicasa;
+        public System.Windows.Forms.TabPage tpChevereto;
+        public System.Windows.Forms.TabPage tpSomeImage;
+        public System.Windows.Forms.TabPage tpVgyme;
     }
 }

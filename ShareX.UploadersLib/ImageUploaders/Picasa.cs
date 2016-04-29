@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
@@ -48,6 +49,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                 AlbumID = config.PicasaAlbumID
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPicasa;
     }
 
     public class Picasa : ImageUploader, IOAuth2

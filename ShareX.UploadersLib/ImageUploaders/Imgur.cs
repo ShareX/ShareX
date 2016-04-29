@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
@@ -82,6 +83,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                 UploadAlbumID = albumID
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpImgur;
     }
 
     public sealed class Imgur : ImageUploader, IOAuth2

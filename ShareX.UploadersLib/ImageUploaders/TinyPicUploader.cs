@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.IO;
 using System.Web;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
@@ -44,6 +45,8 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             return new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, config.TinyPicAccountType, config.TinyPicRegistrationCode);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTinyPic;
     }
 
     public sealed class TinyPicUploader : ImageUploader

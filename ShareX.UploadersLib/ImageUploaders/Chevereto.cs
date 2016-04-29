@@ -32,6 +32,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
@@ -52,6 +53,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                 DirectURL = config.CheveretoDirectURL
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpChevereto;
     }
 
     public sealed class Chevereto : ImageUploader

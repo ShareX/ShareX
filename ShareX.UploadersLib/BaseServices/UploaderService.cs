@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
@@ -41,5 +42,10 @@ namespace ShareX.UploadersLib
         }
 
         public abstract bool CheckConfig(UploadersConfig config);
+
+        public virtual TabPage GetUploadersConfigTabPage(UploadersConfigForm form)
+        {
+            return null;
+        }
     }
 }

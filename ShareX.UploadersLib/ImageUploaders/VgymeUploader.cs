@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
@@ -42,6 +43,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                 UserKey = config.VgymeUserKey
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpVgyme;
     }
 
     public sealed class VgymeUploader : ImageUploader

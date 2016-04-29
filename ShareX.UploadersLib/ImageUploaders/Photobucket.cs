@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
@@ -44,6 +45,8 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             return new Photobucket(config.PhotobucketOAuthInfo, config.PhotobucketAccountInfo);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPhotobucket;
     }
 
     public sealed class Photobucket : ImageUploader, IOAuth
