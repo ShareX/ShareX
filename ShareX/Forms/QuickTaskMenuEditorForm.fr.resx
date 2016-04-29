@@ -133,7 +133,7 @@
     <value>Fermer</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>Astuce: Si vous ajoutez une tâche vide, elle sera convertie en ligne de séparation dans le menu.</value>
+    <value>Astuce : Si vous ajoutez une tâche vide, elle sera convertie en ligne de séparation dans le menu.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Modifier le menu des tâches rapides</value>

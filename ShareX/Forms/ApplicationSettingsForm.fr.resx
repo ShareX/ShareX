@@ -121,7 +121,7 @@
     <value>Modifier...</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Nom d'utilisateur:</value>
+    <value>Nom d'utilisateur :</value>
   </data>
   <data name="tpExportImport.Text" xml:space="preserve">
     <value>Exporter / Importer</value>
@@ -133,7 +133,7 @@
     <value>Parcourir...</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Limite de mises en ligne simultanées:</value>
+    <value>Limite de mises en ligne simultanées :</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Description</value>
@@ -148,7 +148,7 @@
     <value>Tâches récentes</value>
   </data>
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 désactive)</value>
+    <value>0 - 25 (0 = désactivé)</value>
   </data>
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Ajouter...</value>
@@ -166,7 +166,7 @@
     <value>Ne pas montrer la boite de dialogue d'impression de Windows</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Afficher la progression sur l'icône de la barre des tâches</value>
+    <value>Afficher la progression sur l'icône de la barre des tâches et de la zone de notifications</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>Hébergeurs de fichiers secondaires</value>
@@ -175,28 +175,28 @@
     <value>Mémoriser la position de la fenêtre principale</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Dossier personnel ShareX:</value>
+    <value>Dossier personnel ShareX :</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Note: Vous devez redémarrer ShareX pour que les changements du dossier personnel soient pris en compte</value>
+    <value>Remarque : Vous devez redémarrer ShareX pour que les changements du dossier personnel soient pris en compte</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Intégration</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Hôte:</value>
+    <value>Hôte :</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Modèle de sous-dossier:</value>
+    <value>Modèle de sous-dossier :</value>
   </data>
   <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Configuration du proxy:</value>
+    <value>Configuration du proxy :</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
     <value>Ne pas montrer la boite de dialogue des paramètres d'impression de l'image</value>
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
     <value>Paramètres d'impression d'images...</value>
@@ -205,10 +205,10 @@
     <value>Afficher l'icône dans la zone de notifications</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Démarrer iconisé dans la barre des tâches</value>
+    <value>Démarrer ShareX sous forme d'icône dans la zone de notifications</value>
   </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
-    <value>Taille du buffer:</value>
+    <value>Taille du buffer :</value>
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Format</value>
@@ -238,13 +238,13 @@
     <value>Proxy</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Afficher ShareX dans le menu "Envoyer vers"</value>
+    <value>Afficher ShareX dans le menu « Envoyer vers »</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Lancer ShareX au démarrage de Windows</value>
   </data>
   <data name="llTranslators.Text" xml:space="preserve">
-    <value>Aidez nous à traduire ShareX dans votre langue !</value>
+    <value>Aidez-nous à traduire ShareX dans votre langue !</value>
   </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Modifier le menu des tâches rapides...</value>
@@ -253,34 +253,34 @@
     <value>Importer...</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Utiliser un dossier personnalisé pour les captures d'écran:</value>
+    <value>Utiliser un dossier personnalisé pour les captures d'écran :</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Ouvrir...</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Nombre de tentatives si la mise en ligne échoue:</value>
+    <value>Nombre de nouvelles tentatives si la mise en ligne échoue :</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Parcourir...</value>
   </data>
   <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Port:</value>
+    <value>Port :</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>Formats du presse-papier - ceux-ci apparaissent sous Copier dans le menu contextuel dans la fenêtre principale</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>Quand ShareX est ouvert, afficher "Dans une application" sur Steam</value>
+    <value>Lorsque ShareX est ouvert, afficher le statut « Dans une application » sur Steam</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Général</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Langue:</value>
+    <value>Langue :</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Afficher le bouton "Mettre en ligne avec ShareX" dans le menu contextuel</value>
+    <value>Afficher le bouton « Mettre en ligne avec ShareX » dans le menu contextuel de l'explorateur Windows</value>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Chemins</value>
@@ -316,15 +316,15 @@
     <value>Afficher les tâches récentes dans la fenêtre principale au démarrage</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
-    <value>Afficher les tâches récentes dans le menu de l'icône</value>
+    <value>Afficher les tâches récentes dans la zone de notifications</value>
   </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
     <value>Enregistrer les tâches dans l'historique</value>
   </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
-    <value>Dans le menu de l'icône, afficher les tâches les plus récentes en premières</value>
+    <value>Dans la zone de notifications, afficher les tâches les plus récentes en premier</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
-    <value>Nombre maximum de tâches à enregistrer:</value>
+    <value>Nombre maximum de tâches à enregistrer :</value>
   </data>
 </root>

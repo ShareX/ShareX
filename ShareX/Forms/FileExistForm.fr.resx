@@ -121,19 +121,19 @@
     <value>Ne pas sauvegarder</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
-    <value>Écraser:</value>
+    <value>Écraser :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Comment enregistrer ?</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Il existe déjà un fichier avec le même nom à cet endroit.
-Sélectionnez un nouveau nom ou une action:</value>
+Sélectionnez un nouveau nom ou une action :</value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>Utiliser un nom unique:</value>
+    <value>Utiliser un nom unique :</value>
   </data>
   <data name="btnNewName.Text" xml:space="preserve">
-    <value>Uiliser un nouveau nom:</value>
+    <value>Uiliser un nouveau nom :</value>
   </data>
 </root>

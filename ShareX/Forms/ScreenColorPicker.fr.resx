@@ -121,7 +121,7 @@
     <value>Copier tout</value>
   </data>
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
-    <value>Appuyez sur la touche "Ctrl" lorsque cette fenêtre est active pour arrêter le sélecteur de couleurs.</value>
+    <value>Appuyez sur la touche "CTRL" lorsque cette fenêtre est active pour arrêter le sélecteur de couleurs.</value>
   </data>
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Démarrer le sélecteur de couleurs de l'écran</value>
