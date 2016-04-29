@@ -1193,17 +1193,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         private void tsbDestinationSettings_Click(object sender, EventArgs e)
         {
-            if (Program.UploadersConfig == null)
-            {
-                Program.UploaderSettingsResetEvent.WaitOne();
-            }
-
-            using (UploadersConfigForm uploadersConfigForm = new UploadersConfigForm(Program.UploadersConfig))
-            {
-                uploadersConfigForm.ShowDialog();
-            }
-
-            Program.UploadersConfigSaveAsync();
+            TaskHelpers.OpenUploadersConfigWindow();
         }
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)

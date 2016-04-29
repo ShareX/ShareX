@@ -141,11 +141,11 @@ namespace ShareX.HelpersLib
             {
                 ListViewItem lvi = lvMain.SelectedItems[0];
                 TabPage tabPage = lvi.Tag as TabPage;
-                NavigateToTabPage(tabPage);
+                LoadTabPage(tabPage);
             }
         }
 
-        public void NavigateToTabPage(TabPage tabPage)
+        private void LoadTabPage(TabPage tabPage)
         {
             if (tabPage != null && !tcMain.TabPages.Contains(tabPage))
             {
@@ -155,6 +155,23 @@ namespace ShareX.HelpersLib
                 tabPage.ImageKey = tabPage.ImageKey;
                 tabPage.Refresh();
                 lvMain.Focus();
+            }
+        }
+
+        public void NavigateToTabPage(TabPage tabPage)
+        {
+            if (tabPage != null)
+            {
+                foreach (ListViewItem lvi in lvMain.Items)
+                {
+                    TabPage currentTabPage = lvi.Tag as TabPage;
+
+                    if (currentTabPage == tabPage)
+                    {
+                        lvi.Selected = true;
+                        return;
+                    }
+                }
             }
         }
 

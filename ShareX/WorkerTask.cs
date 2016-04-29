@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -41,11 +40,13 @@ namespace ShareX
     public class WorkerTask : IDisposable
     {
         public delegate void TaskEventHandler(WorkerTask task);
+        public delegate void UploaderServiceEventHandler(IUploaderService uploaderService);
 
         public event TaskEventHandler StatusChanged;
         public event TaskEventHandler UploadStarted;
         public event TaskEventHandler UploadProgressChanged;
         public event TaskEventHandler UploadCompleted;
+        public event UploaderServiceEventHandler UploadersConfigWindowRequested;
 
         public TaskInfo Info { get; private set; }
 
@@ -251,21 +252,11 @@ namespace ShareX
         {
             if (Status == TaskStatus.InQueue && !StopRequested)
             {
-                Prepare();
                 threadWorker = new ThreadWorker();
+                Prepare();
                 threadWorker.DoWork += ThreadDoWork;
                 threadWorker.Completed += ThreadCompleted;
                 threadWorker.Start(ApartmentState.STA);
-            }
-        }
-
-        public void StartSync()
-        {
-            if (Status == TaskStatus.InQueue && !StopRequested)
-            {
-                Prepare();
-                ThreadDoWork();
-                ThreadCompleted();
             }
         }
 
@@ -420,14 +411,7 @@ namespace ShareX
 
                 if (!cancelUpload)
                 {
-                    if (threadWorker != null)
-                    {
-                        threadWorker.InvokeAsync(OnUploadStarted);
-                    }
-                    else
-                    {
-                        OnUploadStarted();
-                    }
+                    OnUploadStarted();
 
                     bool isError = DoUpload();
 
@@ -932,6 +916,9 @@ namespace ShareX
             string message = string.Format("{0} configuration is invalid or missing. Please check \"Destination settings\" window to configure it.", uploaderService.ServiceName);
             DebugHelper.WriteLine(message);
             ur.Errors.Add(message);
+
+            OnUploadersConfigWindowRequested(uploaderService);
+
             return ur;
         }
 
@@ -996,14 +983,7 @@ namespace ShareX
             {
                 Info.Progress = progress;
 
-                if (threadWorker != null)
-                {
-                    threadWorker.InvokeAsync(OnUploadProgressChanged);
-                }
-                else
-                {
-                    OnUploadProgressChanged();
-                }
+                OnUploadProgressChanged();
             }
         }
 
@@ -1011,14 +991,7 @@ namespace ShareX
         {
             if (StatusChanged != null)
             {
-                if (threadWorker != null)
-                {
-                    threadWorker.InvokeAsync(() => StatusChanged(this));
-                }
-                else
-                {
-                    StatusChanged(this);
-                }
+                threadWorker.InvokeAsync(() => StatusChanged(this));
             }
         }
 
@@ -1026,7 +999,7 @@ namespace ShareX
         {
             if (UploadStarted != null)
             {
-                UploadStarted(this);
+                threadWorker.InvokeAsync(() => UploadStarted(this));
             }
         }
 
@@ -1034,7 +1007,7 @@ namespace ShareX
         {
             if (UploadProgressChanged != null)
             {
-                UploadProgressChanged(this);
+                threadWorker.InvokeAsync(() => UploadProgressChanged(this));
             }
         }
 
@@ -1057,6 +1030,14 @@ namespace ShareX
             }
 
             Dispose();
+        }
+
+        private void OnUploadersConfigWindowRequested(IUploaderService uploaderService)
+        {
+            if (UploadersConfigWindowRequested != null)
+            {
+                threadWorker.InvokeAsync(() => UploadersConfigWindowRequested(uploaderService));
+            }
         }
 
         public void Dispose()

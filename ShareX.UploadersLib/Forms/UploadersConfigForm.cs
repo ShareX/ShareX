@@ -49,17 +49,11 @@ namespace ShareX.UploadersLib
         {
             Config = config;
             InitializeComponent();
-            Icon = ShareXResources.Icon;
-
-            if (!string.IsNullOrEmpty(Config.FilePath))
-            {
-                Text += " - " + Config.FilePath;
-            }
+            InitializeControls();
         }
 
         private void UploadersConfigForm_Shown(object sender, EventArgs e)
         {
-            FormSettings();
             LoadSettings();
         }
 
@@ -68,8 +62,15 @@ namespace ShareX.UploadersLib
             Refresh();
         }
 
-        private void FormSettings()
+        private void InitializeControls()
         {
+            Icon = ShareXResources.Icon;
+
+            if (!string.IsNullOrEmpty(Config.FilePath))
+            {
+                Text += " - " + Config.FilePath;
+            }
+
             uploadersImageList = new ImageList();
             uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
 
@@ -165,6 +166,14 @@ namespace ShareX.UploadersLib
         {
             uploadersImageList.Images.Add(tp.Name, bitmap);
             tp.ImageKey = tp.Name;
+        }
+
+        public void NavigateToTabPage(TabPage tp)
+        {
+            if (tp != null)
+            {
+                ttlvMain.NavigateToTabPage(tp);
+            }
         }
 
         public void LoadSettings()

@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.Properties;
+using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -65,6 +66,7 @@ namespace ShareX
                     task.UploadStarted += task_UploadStarted;
                     task.UploadProgressChanged += task_UploadProgressChanged;
                     task.UploadCompleted += task_UploadCompleted;
+                    task.UploadersConfigWindowRequested += Task_UploadersConfigWindowRequested;
                 }
 
                 CreateListViewItem(task);
@@ -414,6 +416,11 @@ namespace ShareX
                     UpdateProgressUI();
                 }
             }
+        }
+
+        private static void Task_UploadersConfigWindowRequested(IUploaderService uploaderService)
+        {
+            TaskHelpers.OpenUploadersConfigWindow(uploaderService);
         }
 
         public static void UpdateProgressUI()

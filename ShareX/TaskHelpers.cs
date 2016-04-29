@@ -908,5 +908,25 @@ namespace ShareX
                 }
             });
         }
+
+        public static void OpenUploadersConfigWindow(IUploaderService uploaderService = null)
+        {
+            if (Program.UploadersConfig == null)
+            {
+                Program.UploaderSettingsResetEvent.WaitOne();
+            }
+
+            using (UploadersConfigForm uploadersConfigForm = new UploadersConfigForm(Program.UploadersConfig))
+            {
+                if (uploaderService != null)
+                {
+                    uploadersConfigForm.NavigateToTabPage(uploaderService.GetUploadersConfigTabPage(uploadersConfigForm));
+                }
+
+                uploadersConfigForm.ShowDialog();
+            }
+
+            Program.UploadersConfigSaveAsync();
+        }
     }
 }
