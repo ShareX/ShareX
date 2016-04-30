@@ -40,16 +40,33 @@ namespace ShareX.UploadersLib
 {
     public partial class UploadersConfigForm : Form
     {
+        private static UploadersConfigForm instance;
+
         public UploadersConfig Config { get; private set; }
 
         private ImageList uploadersImageList;
-        private URLType urlType = URLType.URL;
+        private URLType customUploaderURLType = URLType.URL;
 
-        public UploadersConfigForm(UploadersConfig config)
+        private UploadersConfigForm(UploadersConfig config)
         {
             Config = config;
             InitializeComponent();
             InitializeControls();
+        }
+
+        public static UploadersConfigForm GetFormInstance(UploadersConfig config, out bool firstInstance)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new UploadersConfigForm(config);
+                firstInstance = true;
+            }
+            else
+            {
+                firstInstance = false;
+            }
+
+            return instance;
         }
 
         private void UploadersConfigForm_Shown(object sender, EventArgs e)
@@ -2861,24 +2878,24 @@ namespace ShareX.UploadersLib
 
         private void txtCustomUploaderURL_Enter(object sender, EventArgs e)
         {
-            urlType = URLType.URL;
+            customUploaderURLType = URLType.URL;
         }
 
         private void txtCustomUploaderThumbnailURL_Enter(object sender, EventArgs e)
         {
-            urlType = URLType.ThumbnailURL;
+            customUploaderURLType = URLType.ThumbnailURL;
         }
 
         private void txtCustomUploaderDeletionURL_Enter(object sender, EventArgs e)
         {
-            urlType = URLType.DeletionURL;
+            customUploaderURLType = URLType.DeletionURL;
         }
 
         private void AddTextToActiveURLField(string text)
         {
             TextBox tb;
 
-            switch (urlType)
+            switch (customUploaderURLType)
             {
                 default:
                 case URLType.URL:

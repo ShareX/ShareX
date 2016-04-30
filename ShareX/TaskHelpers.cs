@@ -916,17 +916,29 @@ namespace ShareX
                 Program.UploaderSettingsResetEvent.WaitOne();
             }
 
-            using (UploadersConfigForm uploadersConfigForm = new UploadersConfigForm(Program.UploadersConfig))
+            bool firstInstance;
+            UploadersConfigForm form = UploadersConfigForm.GetFormInstance(Program.UploadersConfig, out firstInstance);
+
+            if (firstInstance)
+            {
+                form.FormClosed += (sender, e) => Program.UploadersConfigSaveAsync();
+
+                if (uploaderService != null)
+                {
+                    form.NavigateToTabPage(uploaderService.GetUploadersConfigTabPage(form));
+                }
+
+                form.Show();
+            }
+            else
             {
                 if (uploaderService != null)
                 {
-                    uploadersConfigForm.NavigateToTabPage(uploaderService.GetUploadersConfigTabPage(uploadersConfigForm));
+                    form.NavigateToTabPage(uploaderService.GetUploadersConfigTabPage(form));
                 }
 
-                uploadersConfigForm.ShowDialog();
+                form.ForceActivate();
             }
-
-            Program.UploadersConfigSaveAsync();
         }
     }
 }
