@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -47,6 +48,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Up1(config.Up1Host, config.Up1Key);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpUp1;
     }
 
     public sealed class Up1 : FileUploader

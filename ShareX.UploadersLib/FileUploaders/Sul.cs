@@ -29,6 +29,7 @@ using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -45,6 +46,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new SulUploader(config.SulAPIKey);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSul;
     }
 
     public sealed class SulUploader : FileUploader

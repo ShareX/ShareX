@@ -28,6 +28,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -44,6 +45,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Lambda(config.LambdaSettings);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpLambda;
     }
 
     public sealed class Lambda : FileUploader

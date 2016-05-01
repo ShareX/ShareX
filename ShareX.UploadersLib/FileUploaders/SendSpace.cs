@@ -30,6 +30,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -53,6 +54,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 Password = config.SendSpacePassword
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSendSpace;
     }
 
     public sealed class SendSpace : FileUploader

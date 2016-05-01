@@ -29,6 +29,7 @@ using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -49,6 +50,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 AutoCreateShareableLink = config.OneDriveAutoCreateShareableLink
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpOneDrive;
     }
 
     public sealed class OneDrive : FileUploader, IOAuth2

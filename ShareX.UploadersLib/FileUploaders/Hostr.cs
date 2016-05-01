@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using System.Collections.Specialized;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -45,6 +46,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 DirectURL = config.LocalhostrDirectURL
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpHostr;
     }
 
     public sealed class Hostr : FileUploader

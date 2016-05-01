@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using System.Collections.Specialized;
 using System.IO;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -53,6 +54,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 UseDirectURL = config.StreamableUseDirectURL
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpStreamable;
     }
 
     public class Streamable : FileUploader

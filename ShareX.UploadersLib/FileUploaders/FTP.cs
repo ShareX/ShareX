@@ -33,6 +33,7 @@ using System.Net.FtpClient;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -86,6 +87,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return null;
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFTP;
     }
 
     public sealed class FTP : FileUploader, IDisposable

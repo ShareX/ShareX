@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -45,6 +46,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 AccessToken = config.Ge_ttLogin.AccessToken
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGe_tt;
     }
 
     public sealed class Ge_tt : FileUploader

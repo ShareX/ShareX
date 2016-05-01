@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -56,6 +57,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 IgnoreInvalidCert = config.SeafileIgnoreInvalidCert
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSeafile;
     }
 
     public sealed class Seafile : FileUploader

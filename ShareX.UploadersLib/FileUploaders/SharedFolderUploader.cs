@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -64,6 +65,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return null;
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSharedFolder;
     }
 
     public class SharedFolderUploader : FileUploader

@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -44,6 +45,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Minus(config.MinusConfig, config.MinusOAuth2Info);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpMinus;
     }
 
     public class Minus : FileUploader

@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -47,6 +48,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Mega(config.MegaAuthInfos, config.MegaParentNodeId);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpMega;
     }
 
     public sealed class Mega : FileUploader, IWebClient

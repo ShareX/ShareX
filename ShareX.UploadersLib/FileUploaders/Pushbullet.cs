@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -49,6 +50,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Pushbullet(config.PushbulletSettings);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPushbullet;
     }
 
     public sealed class Pushbullet : FileUploader

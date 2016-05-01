@@ -27,6 +27,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -47,6 +48,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 FolderID = config.GoogleDriveUseFolder ? config.GoogleDriveFolderID : null
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGoogleDrive;
     }
 
     public sealed class GoogleDrive : FileUploader, IOAuth2

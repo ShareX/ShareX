@@ -51,6 +51,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Jira(config.JiraHost, config.JiraOAuthInfo, config.JiraIssuePrefix);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpJira;
     }
 
     public class Jira : FileUploader, IOAuth

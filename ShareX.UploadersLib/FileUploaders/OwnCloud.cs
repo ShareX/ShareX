@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -52,6 +53,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 IsCompatibility81 = config.OwnCloud81Compatibility
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpOwnCloud;
     }
 
     public sealed class OwnCloud : FileUploader

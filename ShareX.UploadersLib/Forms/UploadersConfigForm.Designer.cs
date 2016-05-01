@@ -4479,7 +4479,6 @@
         private System.Windows.Forms.Label lblYourlsAPIURL;
         public System.Windows.Forms.TabPage tpFileUploaders;
         public System.Windows.Forms.TabControl tcFileUploaders;
-        private System.Windows.Forms.TabPage tpDropbox;
         private System.Windows.Forms.ComboBox cbDropboxURLType;
         private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
         private System.Windows.Forms.Button btnDropboxShowFiles;
@@ -4498,7 +4497,6 @@
         private System.Windows.Forms.ComboBox cboFtpFiles;
         private System.Windows.Forms.ComboBox cboFtpText;
         private AccountsControl ucFTPAccounts;
-        private System.Windows.Forms.TabPage tpMega;
         private System.Windows.Forms.Label lblMegaStatus;
         private System.Windows.Forms.Button btnMegaRefreshFolders;
         private System.Windows.Forms.Button btnMegaRegister;
@@ -4510,7 +4508,6 @@
         private System.Windows.Forms.TextBox txtMegaPassword;
         private System.Windows.Forms.Button btnMegaLogin;
         private System.Windows.Forms.Label lblMegaStatusTitle;
-        private System.Windows.Forms.TabPage tpAmazonS3;
         private System.Windows.Forms.TextBox txtAmazonS3CustomDomain;
         private System.Windows.Forms.Label lblAmazonS3PathPreviewLabel;
         private System.Windows.Forms.Label lblAmazonS3PathPreview;
@@ -4528,16 +4525,13 @@
         private System.Windows.Forms.Label lblAmazonS3SecretKey;
         private System.Windows.Forms.Label lblAmazonS3AccessKey;
         private System.Windows.Forms.TextBox txtAmazonS3AccessKey;
-        private System.Windows.Forms.TabPage tpPushbullet;
         private System.Windows.Forms.Label lblPushbulletDevices;
         private System.Windows.Forms.ComboBox cboPushbulletDevices;
         private System.Windows.Forms.Button btnPushbulletGetDeviceList;
         private System.Windows.Forms.Label lblPushbulletUserKey;
         private System.Windows.Forms.TextBox txtPushbulletUserKey;
-        private System.Windows.Forms.TabPage tpGoogleDrive;
         private System.Windows.Forms.CheckBox cbGoogleDriveIsPublic;
         private OAuthControl oauth2GoogleDrive;
-        private System.Windows.Forms.TabPage tpBox;
         private System.Windows.Forms.Label lblBoxFolderTip;
         private System.Windows.Forms.CheckBox cbBoxShare;
         private ShareX.HelpersLib.MyListView lvBoxFolders;
@@ -4545,27 +4539,23 @@
         private System.Windows.Forms.Label lblBoxFolderID;
         private System.Windows.Forms.Button btnBoxRefreshFolders;
         private OAuthControl oauth2Box;
-        private System.Windows.Forms.TabPage tpSendSpace;
         private System.Windows.Forms.Button btnSendSpaceRegister;
         private System.Windows.Forms.Label lblSendSpacePassword;
         private System.Windows.Forms.Label lblSendSpaceUsername;
         private System.Windows.Forms.TextBox txtSendSpacePassword;
         private System.Windows.Forms.TextBox txtSendSpaceUserName;
         private AccountTypeControl atcSendSpaceAccountType;
-        private System.Windows.Forms.TabPage tpGe_tt;
         private System.Windows.Forms.Label lblGe_ttStatus;
         private System.Windows.Forms.Label lblGe_ttPassword;
         private System.Windows.Forms.Label lblGe_ttEmail;
         private System.Windows.Forms.Button btnGe_ttLogin;
         private System.Windows.Forms.TextBox txtGe_ttPassword;
         private System.Windows.Forms.TextBox txtGe_ttEmail;
-        private System.Windows.Forms.TabPage tpHostr;
         private System.Windows.Forms.CheckBox cbLocalhostrDirectURL;
         private System.Windows.Forms.Label lblLocalhostrPassword;
         private System.Windows.Forms.Label lblLocalhostrEmail;
         private System.Windows.Forms.TextBox txtLocalhostrPassword;
         private System.Windows.Forms.TextBox txtLocalhostrEmail;
-        private System.Windows.Forms.TabPage tpMinus;
         private System.Windows.Forms.Label lblMinusURLType;
         private System.Windows.Forms.ComboBox cbMinusURLType;
         private System.Windows.Forms.GroupBox gbMinusUserPass;
@@ -4582,7 +4572,6 @@
         private System.Windows.Forms.Button btnMinusFolderAdd;
         private System.Windows.Forms.Button btnMinusFolderRemove;
         private System.Windows.Forms.ComboBox cboMinusFolders;
-        private System.Windows.Forms.TabPage tpJira;
         private System.Windows.Forms.TextBox txtJiraIssuePrefix;
         private System.Windows.Forms.Label lblJiraIssuePrefix;
         private System.Windows.Forms.GroupBox gpJiraServer;
@@ -4590,7 +4579,6 @@
         private System.Windows.Forms.TextBox txtJiraHost;
         private System.Windows.Forms.Label lblJiraHost;
         private OAuthControl oAuthJira;
-        private System.Windows.Forms.TabPage tpEmail;
         private System.Windows.Forms.CheckBox cbEmailConfirm;
         private System.Windows.Forms.Label lblEmailSmtpServer;
         private System.Windows.Forms.Label lblEmailPassword;
@@ -4605,7 +4593,6 @@
         private System.Windows.Forms.NumericUpDown nudEmailSmtpPort;
         private System.Windows.Forms.Label lblEmailSmtpPort;
         private System.Windows.Forms.TextBox txtEmailDefaultSubject;
-        private System.Windows.Forms.TabPage tpSharedFolder;
         internal AccountsControl ucLocalhostAccounts;
         private System.Windows.Forms.Label lblSharedFolderFiles;
         private System.Windows.Forms.Label lblSharedFolderText;
@@ -4697,7 +4684,6 @@
         private System.Windows.Forms.CheckBox cbGoogleDriveUseFolder;
         private System.Windows.Forms.Label lblWidthHint;
         private System.Windows.Forms.Button btnCustomUploaderExamples;
-        private System.Windows.Forms.TabPage tpOwnCloud;
         private System.Windows.Forms.TextBox txtOwnCloudPath;
         private System.Windows.Forms.TextBox txtOwnCloudPassword;
         private System.Windows.Forms.TextBox txtOwnCloudUsername;
@@ -4715,7 +4701,6 @@
         private System.Windows.Forms.Label lblAdflyAPIKEY;
         private System.Windows.Forms.LinkLabel llAdflyLink;
         private System.Windows.Forms.CheckBox cbImgurDirectLink;
-        private System.Windows.Forms.TabPage tpMediaFire;
         private System.Windows.Forms.TextBox txtMediaFirePassword;
         private System.Windows.Forms.TextBox txtMediaFireEmail;
         private System.Windows.Forms.Label lblMediaFirePassword;
@@ -4723,7 +4708,6 @@
         private System.Windows.Forms.TextBox txtMediaFirePath;
         private System.Windows.Forms.Label lblMediaFirePath;
         private System.Windows.Forms.CheckBox cbMediaFireUseLongLink;
-        private System.Windows.Forms.TabPage tpOneDrive;
         private OAuthControl oAuth2OneDrive;
         private System.Windows.Forms.CheckBox cbImgurUploadSelectedAlbum;
         private System.Windows.Forms.Label lblPastebinLoginStatus;
@@ -4752,7 +4736,6 @@
         private System.Windows.Forms.CheckBox cbOneDriveCreateShareableLink;
         private System.Windows.Forms.Label lblOneDriveFolderID;
         private System.Windows.Forms.TreeView tvOneDrive;
-        private System.Windows.Forms.TabPage tpLambda;
         private System.Windows.Forms.Label lblLambdaApiKey;
         private System.Windows.Forms.TextBox txtLambdaApiKey;
         private System.Windows.Forms.Label lblLambdaInfo;
@@ -4766,7 +4749,6 @@
         private System.Windows.Forms.Label lblTwitterDefaultMessage;
         private System.Windows.Forms.TextBox txtTwitterDefaultMessage;
         private System.Windows.Forms.CheckBox cbTwitterSkipMessageBox;
-        private System.Windows.Forms.TabPage tpUp1;
         private System.Windows.Forms.TextBox txtUp1Key;
         private System.Windows.Forms.TextBox txtUp1Host;
         private System.Windows.Forms.Label lblUp1Key;
@@ -4788,14 +4770,12 @@
         private System.Windows.Forms.CheckBox cbImgurUseGIFV;
         private System.Windows.Forms.ListBox lbTwitterAccounts;
         private System.Windows.Forms.Button btnTwitterNameUpdate;
-        private System.Windows.Forms.TabPage tpPomf;
         private System.Windows.Forms.Label lblPomfResultURL;
         private System.Windows.Forms.Label lblPomfUploadURL;
         private System.Windows.Forms.Label lblPomfUploaders;
         private System.Windows.Forms.ComboBox cbPomfUploaders;
         private System.Windows.Forms.TextBox txtPomfUploadURL;
         private System.Windows.Forms.TextBox txtPomfResultURL;
-        private System.Windows.Forms.TabPage tpSeafile;
         private System.Windows.Forms.Button btnSeafileCheckAuthToken;
         private System.Windows.Forms.Button btnSeafileCheckAPIURL;
         private System.Windows.Forms.GroupBox grpSeafileObtainAuthToken;
@@ -4846,7 +4826,6 @@
         internal System.Windows.Forms.ColumnHeader chCustomUploaderHeadersName;
         internal System.Windows.Forms.ColumnHeader chCustomUploaderHeadersValue;
         private System.Windows.Forms.Button btnPomfTest;
-        private System.Windows.Forms.TabPage tpStreamable;
         private System.Windows.Forms.TextBox txtStreamablePassword;
         private System.Windows.Forms.TextBox txtStreamableUsername;
         private System.Windows.Forms.Label lblStreamableUsername;
@@ -4868,7 +4847,6 @@
         private System.Windows.Forms.Label lblCustomUploaderXPath;
         private System.Windows.Forms.TextBox txtCustomUploaderXPath;
         private System.Windows.Forms.Button btnCustomUploaderRegexHelp;
-        private System.Windows.Forms.TabPage tpSul;
         private System.Windows.Forms.Label lblSulAPIKey;
         private System.Windows.Forms.TextBox txtSulAPIKey;
         private System.Windows.Forms.Button btnCustomUploadersExportAll;
@@ -4901,5 +4879,27 @@
         public System.Windows.Forms.TabPage tpUpaste;
         public System.Windows.Forms.TabPage tpHastebin;
         public System.Windows.Forms.TabPage tpOneTimeSecret;
+        public System.Windows.Forms.TabPage tpDropbox;
+        public System.Windows.Forms.TabPage tpOneDrive;
+        public System.Windows.Forms.TabPage tpGoogleDrive;
+        public System.Windows.Forms.TabPage tpBox;
+        public System.Windows.Forms.TabPage tpAmazonS3;
+        public System.Windows.Forms.TabPage tpMega;
+        public System.Windows.Forms.TabPage tpOwnCloud;
+        public System.Windows.Forms.TabPage tpMediaFire;
+        public System.Windows.Forms.TabPage tpPushbullet;
+        public System.Windows.Forms.TabPage tpSendSpace;
+        public System.Windows.Forms.TabPage tpGe_tt;
+        public System.Windows.Forms.TabPage tpHostr;
+        public System.Windows.Forms.TabPage tpMinus;
+        public System.Windows.Forms.TabPage tpJira;
+        public System.Windows.Forms.TabPage tpLambda;
+        public System.Windows.Forms.TabPage tpPomf;
+        public System.Windows.Forms.TabPage tpUp1;
+        public System.Windows.Forms.TabPage tpSeafile;
+        public System.Windows.Forms.TabPage tpSul;
+        public System.Windows.Forms.TabPage tpStreamable;
+        public System.Windows.Forms.TabPage tpSharedFolder;
+        public System.Windows.Forms.TabPage tpEmail;
     }
 }

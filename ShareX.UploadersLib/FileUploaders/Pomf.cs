@@ -33,6 +33,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -49,6 +50,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Pomf(config.PomfUploader);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPomf;
     }
 
     public class Pomf : FileUploader
@@ -56,6 +59,7 @@ namespace ShareX.UploadersLib.FileUploaders
         // Pomf clones: https://docs.google.com/spreadsheets/d/1kh1TZdtyX7UlRd55OBxf7DB-JGj2rsfWckI0FPQRYhE
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
+            //new PomfUploader("https://pomf.se/upload.php"),
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
             new PomfUploader("https://catgirlsare.sexy/upload.php"),
             new PomfUploader("http://comfy.moe/upload.php"),
@@ -71,7 +75,6 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
             new PomfUploader("http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
             new PomfUploader("https://pomf.is/upload.php"),
-            //new PomfUploader("https://pomf.se/upload.php"),
             new PomfUploader("http://reich.io/upload.php"),
             new PomfUploader("https://sugoi.vidyagam.es/upload.php"),
             new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe"),

@@ -71,6 +71,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return null;
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpEmail;
     }
 
     public class Email : FileUploader
