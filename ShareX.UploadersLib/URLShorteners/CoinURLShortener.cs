@@ -26,6 +26,7 @@
 // Credits: https://github.com/DanielMcAssey
 
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
@@ -45,6 +46,8 @@ namespace ShareX.UploadersLib.URLShorteners
                 UUID = config.CoinURLUUID
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpCoinURL;
     }
 
     public sealed class CoinURLShortener : URLShortener

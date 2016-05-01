@@ -25,6 +25,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
@@ -48,6 +49,8 @@ namespace ShareX.UploadersLib.URLShorteners
                 Password = config.YourlsPassword
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpYourls;
     }
 
     public sealed class YourlsURLShortener : URLShortener

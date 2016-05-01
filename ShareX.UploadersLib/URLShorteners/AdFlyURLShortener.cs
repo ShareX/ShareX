@@ -26,6 +26,7 @@
 // Credits: https://github.com/LRNAB
 
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
@@ -46,6 +47,8 @@ namespace ShareX.UploadersLib.URLShorteners
                 APIUID = config.AdFlyAPIUID
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAdFly;
     }
 
     public class AdFlyURLShortener : URLShortener

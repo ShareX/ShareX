@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
@@ -42,6 +43,8 @@ namespace ShareX.UploadersLib.URLShorteners
         {
             return new GoogleURLShortener(config.GoogleURLShortenerAccountType, APIKeys.GoogleAPIKey, config.GoogleURLShortenerOAuth2Info);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGoogleURLShortener;
     }
 
     public class GoogleURLShortener : URLShortener, IOAuth2

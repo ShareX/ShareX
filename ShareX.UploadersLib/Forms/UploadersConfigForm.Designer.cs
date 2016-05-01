@@ -4462,12 +4462,9 @@
         internal System.Windows.Forms.TextBox txtCustomUploaderArgName;
         private System.Windows.Forms.TabPage tpURLShorteners;
         private System.Windows.Forms.TabControl tcURLShorteners;
-        private System.Windows.Forms.TabPage tpBitly;
         private OAuthControl oauth2Bitly;
-        private System.Windows.Forms.TabPage tpGoogleURLShortener;
         private OAuthControl oauth2GoogleURLShortener;
         private AccountTypeControl atcGoogleURLShortenerAccountType;
-        private System.Windows.Forms.TabPage tpYourls;
         private System.Windows.Forms.TextBox txtYourlsPassword;
         private System.Windows.Forms.TextBox txtYourlsUsername;
         private System.Windows.Forms.TextBox txtYourlsSignature;
@@ -4694,7 +4691,6 @@
         private System.Windows.Forms.Label lblOwnCloudHost;
         private System.Windows.Forms.CheckBox cbOwnCloudCreateShare;
         private System.Windows.Forms.CheckBox cbOwnCloudDirectLink;
-        private System.Windows.Forms.TabPage tpAdFly;
         private System.Windows.Forms.TextBox txtAdflyAPIUID;
         private System.Windows.Forms.Label lblAdflyAPIUID;
         private System.Windows.Forms.TextBox txtAdflyAPIKEY;
@@ -4753,7 +4749,6 @@
         private System.Windows.Forms.TextBox txtUp1Host;
         private System.Windows.Forms.Label lblUp1Key;
         private System.Windows.Forms.Label lblUp1Host;
-        private System.Windows.Forms.TabPage tpCoinURL;
         private System.Windows.Forms.TextBox txtCoinURLUUID;
         private System.Windows.Forms.Label lblCoinURLUUID;
         private System.Windows.Forms.CheckBox cbOwnCloud81Compatibility;
@@ -4762,7 +4757,6 @@
         private System.Windows.Forms.Label lblOneTimeSecretEmail;
         private System.Windows.Forms.TextBox txtOneTimeSecretAPIKey;
         private System.Windows.Forms.TextBox txtOneTimeSecretEmail;
-        private System.Windows.Forms.TabPage tpPolr;
         private System.Windows.Forms.TextBox txtPolrAPIKey;
         private System.Windows.Forms.Label lblPolrAPIKey;
         private System.Windows.Forms.TextBox txtPolrAPIHostname;
@@ -4901,5 +4895,11 @@
         public System.Windows.Forms.TabPage tpStreamable;
         public System.Windows.Forms.TabPage tpSharedFolder;
         public System.Windows.Forms.TabPage tpEmail;
+        public System.Windows.Forms.TabPage tpBitly;
+        public System.Windows.Forms.TabPage tpGoogleURLShortener;
+        public System.Windows.Forms.TabPage tpYourls;
+        public System.Windows.Forms.TabPage tpAdFly;
+        public System.Windows.Forms.TabPage tpCoinURL;
+        public System.Windows.Forms.TabPage tpPolr;
     }
 }

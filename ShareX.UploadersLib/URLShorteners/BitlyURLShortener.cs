@@ -27,6 +27,7 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Web;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
@@ -51,6 +52,8 @@ namespace ShareX.UploadersLib.URLShorteners
                 Domain = config.BitlyDomain
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpBitly;
     }
 
     public sealed class BitlyURLShortener : URLShortener, IOAuth2Basic

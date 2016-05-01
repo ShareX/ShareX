@@ -27,6 +27,7 @@
 
 using ShareX.HelpersLib;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
@@ -47,6 +48,8 @@ namespace ShareX.UploadersLib.URLShorteners
                 API_KEY = config.PolrAPIKey
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPolr;
     }
 
     public sealed class PolrURLShortener : URLShortener
