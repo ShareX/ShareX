@@ -328,6 +328,7 @@ namespace ShareX
                 lblMainFormTip.Text = "";
             }
 
+            // TODO: Translate
             lblTips.Text = string.Format(
 @"Main window tips:
 - Drag files, image or text to main window to be able to upload them.
