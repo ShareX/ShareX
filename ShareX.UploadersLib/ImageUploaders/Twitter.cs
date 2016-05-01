@@ -51,6 +51,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                 DefaultMessage = config.TwitterDefaultMessage ?? string.Empty
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTwitter;
     }
 
     public class Twitter : ImageUploader, IOAuth

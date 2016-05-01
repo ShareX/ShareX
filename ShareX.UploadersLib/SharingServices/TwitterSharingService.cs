@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.ImageUploaders;
 using System;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.SharingServices
 {
@@ -64,5 +65,7 @@ namespace ShareX.UploadersLib.SharingServices
 
             //URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTwitter;
     }
 }

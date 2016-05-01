@@ -4407,8 +4407,6 @@
         private ShareX.HelpersLib.TabToListView ttlvMain;
         private System.Windows.Forms.TabPage tpOtherUploaders;
         private System.Windows.Forms.TabControl tcOtherUploaders;
-        private System.Windows.Forms.TabPage tpTwitter;
-        private System.Windows.Forms.TabPage tpCustomUploaders;
         private System.Windows.Forms.Button btnCustomUploaderHelp;
         private System.Windows.Forms.Label lblCustomUploaderImageUploader;
         internal System.Windows.Forms.Button btnCustomUploaderFileUploaderTest;
@@ -4901,5 +4899,7 @@
         public System.Windows.Forms.TabPage tpAdFly;
         public System.Windows.Forms.TabPage tpCoinURL;
         public System.Windows.Forms.TabPage tpPolr;
+        public System.Windows.Forms.TabPage tpTwitter;
+        public System.Windows.Forms.TabPage tpCustomUploaders;
     }
 }

@@ -27,9 +27,6 @@ using ShareX.HelpersLib;
 
 namespace ShareX.UploadersLib.SharingServices
 {
-    /// <summary>
-    /// Base class for services that just open a share dialog in a browser
-    /// </summary>
     public abstract class SimpleSharingService : URLSharingService
     {
         protected abstract string UrlFormatString { get; }

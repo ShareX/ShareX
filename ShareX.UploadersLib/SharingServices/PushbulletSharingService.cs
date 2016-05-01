@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.SharingServices
 {
@@ -36,13 +37,15 @@ namespace ShareX.UploadersLib.SharingServices
         {
             PushbulletSettings pushbulletSettings = config.PushbulletSettings;
 
-            return pushbulletSettings != null && !string.IsNullOrEmpty(pushbulletSettings.UserAPIKey) && pushbulletSettings.DeviceList != null
-                   && pushbulletSettings.DeviceList.IsValidIndex(pushbulletSettings.SelectedDevice);
+            return pushbulletSettings != null && !string.IsNullOrEmpty(pushbulletSettings.UserAPIKey) && pushbulletSettings.DeviceList != null &&
+                pushbulletSettings.DeviceList.IsValidIndex(pushbulletSettings.SelectedDevice);
         }
 
         public override void ShareURL(string url, UploadersConfig config)
         {
             new Pushbullet(config.PushbulletSettings).PushLink(url, "ShareX: URL share");
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPushbullet;
     }
 }
