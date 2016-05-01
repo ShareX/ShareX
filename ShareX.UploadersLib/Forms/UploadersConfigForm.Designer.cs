@@ -4615,16 +4615,12 @@
         private System.Windows.Forms.ComboBox cboSharedFolderImages;
         private System.Windows.Forms.TabPage tpTextUploaders;
         private System.Windows.Forms.TabControl tcTextUploaders;
-        private System.Windows.Forms.TabPage tpPastebin;
         private System.Windows.Forms.Button btnPastebinLogin;
-        private System.Windows.Forms.TabPage tpPaste_ee;
         private System.Windows.Forms.Label lblPaste_eeUserAPIKey;
         private System.Windows.Forms.TextBox txtPaste_eeUserAPIKey;
-        private System.Windows.Forms.TabPage tpGist;
         private System.Windows.Forms.CheckBox cbGistPublishPublic;
         private OAuthControl oAuth2Gist;
         private AccountTypeControl atcGistAccountType;
-        private System.Windows.Forms.TabPage tpUpaste;
         private System.Windows.Forms.CheckBox cbUpasteIsPublic;
         private System.Windows.Forms.Label lblUpasteUserKey;
         private System.Windows.Forms.TextBox txtUpasteUserKey;
@@ -4749,7 +4745,6 @@
         private System.Windows.Forms.Label lblCheveretoAPIKey;
         private System.Windows.Forms.CheckBox cbCheveretoDirectURL;
         private System.Windows.Forms.ComboBox cbPastebinSyntax;
-        private System.Windows.Forms.TabPage tpHastebin;
         private System.Windows.Forms.TextBox txtHastebinSyntaxHighlighting;
         private System.Windows.Forms.TextBox txtHastebinCustomDomain;
         private System.Windows.Forms.Label lblHastebinSyntaxHighlighting;
@@ -4781,7 +4776,6 @@
         private System.Windows.Forms.Label lblCoinURLUUID;
         private System.Windows.Forms.CheckBox cbOwnCloud81Compatibility;
         private System.Windows.Forms.Button btnCustomUploaderClearUploaders;
-        private System.Windows.Forms.TabPage tpOneTimeSecret;
         private System.Windows.Forms.Label lblOneTimeSecretAPIKey;
         private System.Windows.Forms.Label lblOneTimeSecretEmail;
         private System.Windows.Forms.TextBox txtOneTimeSecretAPIKey;
@@ -4901,5 +4895,11 @@
         public System.Windows.Forms.TabPage tpChevereto;
         public System.Windows.Forms.TabPage tpSomeImage;
         public System.Windows.Forms.TabPage tpVgyme;
+        public System.Windows.Forms.TabPage tpPastebin;
+        public System.Windows.Forms.TabPage tpPaste_ee;
+        public System.Windows.Forms.TabPage tpGist;
+        public System.Windows.Forms.TabPage tpUpaste;
+        public System.Windows.Forms.TabPage tpHastebin;
+        public System.Windows.Forms.TabPage tpOneTimeSecret;
     }
 }

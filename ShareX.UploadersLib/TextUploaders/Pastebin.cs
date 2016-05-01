@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
@@ -47,6 +48,8 @@ namespace ShareX.UploadersLib.TextUploaders
 
             return new Pastebin(APIKeys.PastebinKey, settings);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPastebin;
     }
 
     public sealed class Pastebin : TextUploader

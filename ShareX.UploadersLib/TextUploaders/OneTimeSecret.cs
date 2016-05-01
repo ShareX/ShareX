@@ -29,6 +29,7 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
@@ -46,6 +47,8 @@ namespace ShareX.UploadersLib.TextUploaders
                 API_USERNAME = config.OneTimeSecretAPIUsername
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpOneTimeSecret;
     }
 
     public sealed class OneTimeSecret : TextUploader

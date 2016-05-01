@@ -29,6 +29,7 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Net;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
@@ -53,6 +54,8 @@ namespace ShareX.UploadersLib.TextUploaders
                 RawURL = config.GistRawURL
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGist;
     }
 
     public sealed class GitHubGist : TextUploader, IOAuth2Basic

@@ -25,6 +25,7 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
@@ -42,6 +43,8 @@ namespace ShareX.UploadersLib.TextUploaders
                 SyntaxHighlighting = config.HastebinSyntaxHighlighting
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpHastebin;
     }
 
     public sealed class Hastebin : TextUploader

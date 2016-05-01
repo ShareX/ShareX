@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
@@ -37,6 +38,8 @@ namespace ShareX.UploadersLib.TextUploaders
         {
             return new Paste_ee(config.Paste_eeUserAPIKey);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPaste_ee;
     }
 
     public sealed class Paste_ee : TextUploader

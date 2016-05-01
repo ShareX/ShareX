@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
@@ -42,6 +43,8 @@ namespace ShareX.UploadersLib.TextUploaders
                 IsPublic = config.UpasteIsPublic
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpUpaste;
     }
 
     public sealed class Upaste : TextUploader
