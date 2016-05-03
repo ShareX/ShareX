@@ -241,7 +241,7 @@ namespace ShareX.ScreenCaptureLib
             Invalidate();
         }
 
-        public virtual Image GetRegionImage()
+        public virtual Image GetResultImage()
         {
             return ShapeCaptureHelpers.GetRegionImage(SurfaceImage, regionFillPath, regionDrawPath, Config);
         }

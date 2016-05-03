@@ -2107,7 +2107,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     {
                         using (screenshot)
                         {
-                            img = surface.GetRegionImage();
+                            img = surface.GetResultImage();
 
                             if (taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
                             {

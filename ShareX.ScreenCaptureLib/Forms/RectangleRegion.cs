@@ -478,6 +478,12 @@ namespace ShareX.ScreenCaptureLib
             if (AreaManager.CurrentShapeType == ShapeType.RegionDiamond) sb.Append("-> ");
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_5__Diamond_shape);
 
+            //TODO: Translate
+            if (AreaManager.CurrentShapeType == ShapeType.DrawingRectangle) sb.Append("-> ");
+            sb.AppendLine("[Numpad 7] Rectangle drawing");
+            if (AreaManager.CurrentShapeType == ShapeType.DrawingRoundedRectangle) sb.Append("-> ");
+            sb.AppendLine("[Numpad 8] Rounded rectangle drawing");
+
             switch (AreaManager.CurrentShapeType)
             {
                 case ShapeType.RegionRoundedRectangle:
@@ -719,6 +725,25 @@ namespace ShareX.ScreenCaptureLib
                     regionShape.AddShapePath(regionDrawPath, -1);
                 }
             }
+        }
+
+        public override Image GetResultImage()
+        {
+            if (SurfaceImage != null)
+            {
+                using (Graphics g = Graphics.FromImage(SurfaceImage))
+                {
+                    foreach (BaseDrawingShape shape in AreaManager.DrawingShapes)
+                    {
+                        if (shape != null)
+                        {
+                            shape.Draw(g);
+                        }
+                    }
+                }
+            }
+
+            return base.GetResultImage();
         }
 
         protected override void Dispose(bool disposing)
