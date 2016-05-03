@@ -112,7 +112,7 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public Color BorderColor { get; set; } = Color.Red;
-        public int BorderSize { get; set; } = 2;
+        public int BorderSize { get; set; } = 1;
         public Color FillColor { get; set; } = Color.Transparent;
 
         public float RoundedRectangleRadius { get; set; } = 25;

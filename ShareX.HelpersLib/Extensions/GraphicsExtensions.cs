@@ -55,14 +55,22 @@ namespace ShareX.HelpersLib
             {
                 int currentAlpha = (int)MathHelpers.Lerp(shadowMaxAlpha, shadowMinAlpha, (float)i / (shadowDepth - 1));
 
-                using (Pen pen = new Pen(Color.FromArgb(currentAlpha, shadowColor)))
+                if (currentAlpha > 0)
                 {
-                    Rectangle shadowRect = new Rectangle(rect.X + -shadowDirection.Left * i, rect.Y + -shadowDirection.Top * i,
-                        rect.Width + (shadowDirection.Left + shadowDirection.Right) * i, rect.Height + (shadowDirection.Top + shadowDirection.Bottom) * i);
+                    using (Pen pen = new Pen(Color.FromArgb(currentAlpha, shadowColor)))
+                    {
+                        Rectangle shadowRect = new Rectangle(rect.X + -shadowDirection.Left * i, rect.Y + -shadowDirection.Top * i,
+                            rect.Width + (shadowDirection.Left + shadowDirection.Right) * i, rect.Height + (shadowDirection.Top + shadowDirection.Bottom) * i);
 
-                    g.DrawRectangleProper(pen, shadowRect);
+                        g.DrawRectangleProper(pen, shadowRect);
+                    }
                 }
             }
+        }
+
+        public static void DrawRoundedRectangle(this Graphics g, Pen pen, Rectangle rect, float radius)
+        {
+            g.DrawRoundedRectangle(null, pen, rect, radius);
         }
 
         public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, Rectangle rect, float radius)

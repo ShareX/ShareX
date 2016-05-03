@@ -27,8 +27,10 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -46,11 +48,15 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (BorderColor != Color.Transparent)
+            if (BorderColor != Color.Transparent && BorderSize > 0)
             {
-                using (Pen pen = new Pen(BorderColor, BorderSize))
+                Rectangle rect = Rectangle.Offset(BorderSize - 1);
+
+                g.DrawRectangleShadow(rect.Offset(1), Color.FromArgb(150, 150, 150), 3, 100, 10, new Padding(1));
+
+                using (Pen pen = new Pen(BorderColor, BorderSize) { Alignment = PenAlignment.Inset })
                 {
-                    g.DrawRectangleProper(pen, Rectangle);
+                    g.DrawRectangleProper(pen, rect);
                 }
             }
         }

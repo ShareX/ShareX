@@ -35,9 +35,9 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseDrawingShape : BaseShape
     {
-        public Color BorderColor { get; set; } = Color.Red;
-        public Color FillColor { get; set; } = Color.Transparent;
-        public int BorderSize { get; set; } = 2;
+        public Color BorderColor { get; set; }
+        public Color FillColor { get; set; }
+        public int BorderSize { get; set; }
 
         public abstract void Draw(Graphics g);
 
