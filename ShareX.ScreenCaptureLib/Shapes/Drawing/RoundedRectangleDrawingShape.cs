@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 
@@ -55,7 +56,9 @@ namespace ShareX.ScreenCaptureLib
                     pen = new Pen(BorderColor, BorderSize);
                 }
 
+                g.SmoothingMode = SmoothingMode.HighQuality;
                 g.DrawRoundedRectangle(brush, pen, Rectangle, Radius);
+                g.SmoothingMode = SmoothingMode.None;
             }
             finally
             {

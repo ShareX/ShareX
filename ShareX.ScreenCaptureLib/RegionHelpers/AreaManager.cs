@@ -115,7 +115,7 @@ namespace ShareX.ScreenCaptureLib
         public int BorderSize { get; set; } = 1;
         public Color FillColor { get; set; } = Color.Transparent;
 
-        public float RoundedRectangleRadius { get; set; } = 25;
+        public float RoundedRectangleRadius { get; set; } = 15;
         public int RoundedRectangleRadiusIncrement { get; set; } = 3;
         public TriangleAngle TriangleAngle { get; set; } = TriangleAngle.Top;
 
