@@ -33,19 +33,7 @@ using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public abstract class BaseRegionShape : BaseShape
+    public class BaseRegionShape : BaseShape
     {
-        public abstract void AddShapePath(GraphicsPath gp, Rectangle rect);
-
-        public void AddShapePath(GraphicsPath gp)
-        {
-            AddShapePath(gp, Rectangle);
-        }
-
-        public void AddShapePath(GraphicsPath gp, int sizeOffset)
-        {
-            Rectangle rect = Rectangle.SizeOffset(sizeOffset);
-            AddShapePath(gp, rect);
-        }
     }
 }

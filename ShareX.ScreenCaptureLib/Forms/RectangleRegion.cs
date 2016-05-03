@@ -215,12 +215,13 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            List<BaseRegionShape> areas = AreaManager.ValidRegions.ToList();
+            List<BaseShape> areas = AreaManager.ValidRegions.ToList();
             bool drawAreaExist = areas.Count > 0;
 
             if (AreaManager.IsCurrentHoverAreaValid && areas.All(area => area.Rectangle != AreaManager.CurrentHoverRectangle))
             {
-                areas.Add(AreaManager.GetRegionInfo(AreaManager.CurrentHoverRectangle));
+                BaseShape shape = AreaManager.CreateRegionShape(AreaManager.CurrentHoverRectangle);
+                areas.Add(shape);
             }
 
             if (areas.Count > 0)
@@ -263,7 +264,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
                     {
-                        AreaManager.GetRegionInfo(AreaManager.CurrentHoverRectangle).AddShapePath(hoverDrawPath, -1);
+                        AreaManager.CreateRegionShape(AreaManager.CurrentHoverRectangle).AddShapePath(hoverDrawPath, -1);
 
                         g.DrawPath(borderPen, hoverDrawPath);
                         g.DrawPath(borderDotPen, hoverDrawPath);
@@ -457,26 +458,26 @@ namespace ShareX.ScreenCaptureLib
 
             sb.AppendLine();
 
-            /*if (Config.CurrentRegionShape == RegionShape.Rectangle) sb.Append("-> ");
+            if (AreaManager.CurrentShapeType == ShapeType.RegionRectangle) sb.Append("-> ");
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_1__Rectangle_shape);
-            if (Config.CurrentRegionShape == RegionShape.RoundedRectangle) sb.Append("-> ");
+            if (AreaManager.CurrentShapeType == ShapeType.RegionRoundedRectangle) sb.Append("-> ");
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape);
-            if (Config.CurrentRegionShape == RegionShape.Ellipse) sb.Append("-> ");
+            if (AreaManager.CurrentShapeType == ShapeType.RegionEllipse) sb.Append("-> ");
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_3__Ellipse_shape);
-            if (Config.CurrentRegionShape == RegionShape.Triangle) sb.Append("-> ");
+            if (AreaManager.CurrentShapeType == ShapeType.RegionTriangle) sb.Append("-> ");
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_4__Triangle_shape);
-            if (Config.CurrentRegionShape == RegionShape.Diamond) sb.Append("-> ");
+            if (AreaManager.CurrentShapeType == ShapeType.RegionDiamond) sb.Append("-> ");
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_5__Diamond_shape);
 
-            switch (Config.CurrentRegionShape)
+            switch (AreaManager.CurrentShapeType)
             {
-                case RegionShape.RoundedRectangle:
+                case ShapeType.RegionRoundedRectangle:
                     sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius);
                     break;
-                case RegionShape.Triangle:
+                case ShapeType.RegionTriangle:
                     sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle);
                     break;
-            }*/
+            }
         }
 
         private string GetAreaText(Rectangle area)
@@ -706,7 +707,7 @@ namespace ShareX.ScreenCaptureLib
                 foreach (BaseRegionShape regionShape in AreaManager.ValidRegions)
                 {
                     regionShape.AddShapePath(regionFillPath);
-                    regionShape.AddShapePath(regionFillPath, -1);
+                    regionShape.AddShapePath(regionDrawPath, -1);
                 }
             }
         }

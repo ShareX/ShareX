@@ -38,6 +38,8 @@ namespace ShareX.ScreenCaptureLib
 
         public BaseShape CurrentShape { get; private set; }
 
+        public ShapeType CurrentShapeType { get; set; } = ShapeType.RegionRectangle;
+
         public Rectangle CurrentRectangle
         {
             get
@@ -58,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public BaseRegionShape[] Regions
+        public BaseShape[] Regions
         {
             get
             {
@@ -66,7 +68,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public BaseRegionShape[] ValidRegions
+        public BaseShape[] ValidRegions
         {
             get
             {
@@ -167,58 +169,89 @@ namespace ShareX.ScreenCaptureLib
                     IsSnapResizing = true;
                     break;
                 case Keys.NumPad1:
-                    //ChangeCurrentShape(RegionShape.Rectangle);
+                    CurrentShapeType = ShapeType.RegionRectangle;
                     break;
                 case Keys.NumPad2:
-                    //ChangeCurrentShape(RegionShape.RoundedRectangle);
+                    CurrentShapeType = ShapeType.RegionRoundedRectangle;
                     break;
                 case Keys.NumPad3:
-                    //ChangeCurrentShape(RegionShape.Ellipse);
+                    CurrentShapeType = ShapeType.RegionEllipse;
                     break;
                 case Keys.NumPad4:
-                    //ChangeCurrentShape(RegionShape.Triangle);
+                    CurrentShapeType = ShapeType.RegionTriangle;
                     break;
                 case Keys.NumPad5:
-                    //ChangeCurrentShape(RegionShape.Diamond);
+                    CurrentShapeType = ShapeType.RegionDiamond;
                     break;
-                    /*case Keys.Add:
-                        switch (surface.Config.CurrentRegionShape)
-                        {
-                            case RegionShape.RoundedRectangle:
-                                RoundedRectangleRadius += RoundedRectangleRadiusIncrement;
-                                break;
-                            case RegionShape.Triangle:
-                                if (TriangleAngle == TriangleAngle.Left)
-                                {
-                                    TriangleAngle = TriangleAngle.Top;
-                                }
-                                else
-                                {
-                                    TriangleAngle++;
-                                }
-                                break;
-                        }
-                        UpdateCurrentRegionInfo();
-                        break;
-                    case Keys.Subtract:
-                        switch (surface.Config.CurrentRegionShape)
-                        {
-                            case RegionShape.RoundedRectangle:
-                                RoundedRectangleRadius = Math.Max(0, RoundedRectangleRadius - RoundedRectangleRadiusIncrement);
-                                break;
-                            case RegionShape.Triangle:
-                                if (TriangleAngle == TriangleAngle.Top)
-                                {
-                                    TriangleAngle = TriangleAngle.Left;
-                                }
-                                else
-                                {
-                                    TriangleAngle--;
-                                }
-                                break;
-                        }
-                        UpdateCurrentRegionInfo();
-                        break;*/
+                case Keys.NumPad0:
+                    CurrentShapeType = ShapeType.DrawingRectangle;
+                    break;
+                case Keys.Add:
+                    switch (CurrentShapeType)
+                    {
+                        case ShapeType.RegionRoundedRectangle:
+                            RoundedRectangleRadius += RoundedRectangleRadiusIncrement;
+                            UpdateRoundedRectangle();
+                            break;
+                        case ShapeType.RegionTriangle:
+                            if (TriangleAngle == TriangleAngle.Left)
+                            {
+                                TriangleAngle = TriangleAngle.Top;
+                            }
+                            else
+                            {
+                                TriangleAngle++;
+                            }
+                            UpdateTriangle();
+                            break;
+                    }
+                    break;
+                case Keys.Subtract:
+                    switch (CurrentShapeType)
+                    {
+                        case ShapeType.RegionRoundedRectangle:
+                            RoundedRectangleRadius = Math.Max(0, RoundedRectangleRadius - RoundedRectangleRadiusIncrement);
+                            UpdateRoundedRectangle();
+                            break;
+                        case ShapeType.RegionTriangle:
+                            if (TriangleAngle == TriangleAngle.Top)
+                            {
+                                TriangleAngle = TriangleAngle.Left;
+                            }
+                            else
+                            {
+                                TriangleAngle--;
+                            }
+                            UpdateTriangle();
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        private void UpdateRoundedRectangle()
+        {
+            if (CurrentShape != null)
+            {
+                RoundedRectangleRegionShape roundedRectangleShape = CurrentShape as RoundedRectangleRegionShape;
+
+                if (roundedRectangleShape != null)
+                {
+                    roundedRectangleShape.Radius = RoundedRectangleRadius;
+                }
+            }
+        }
+
+        private void UpdateTriangle()
+        {
+            if (CurrentShape != null)
+            {
+                TriangleRegionShape triangleShape = CurrentShape as TriangleRegionShape;
+
+                if (triangleShape != null)
+                {
+                    triangleShape.Angle = TriangleAngle;
+                }
             }
         }
 
@@ -415,7 +448,7 @@ namespace ShareX.ScreenCaptureLib
                     rect = new Rectangle(location, new Size(1, 1));
                 }
 
-                AddRegionInfo(rect);
+                AddRegionShape(rect);
             }
         }
 
@@ -444,7 +477,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (!CurrentHoverRectangle.IsEmpty)
             {
-                AddRegionInfo(CurrentHoverRectangle);
+                AddRegionShape(CurrentHoverRectangle);
 
                 if (surface.Config.QuickCrop)
                 {
@@ -473,40 +506,52 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void ChangeCurrentShape(BaseShape shape)
+        private void AddRegionShape(Rectangle rect)
         {
-            surface.Config.CurrentRegionShape = shape;
-            UpdateCurrentRegionInfo();
+            BaseShape shape = CreateRegionShape(rect);
+            Shapes.Add(shape);
+            CurrentShape = shape;
         }
 
-        private void AddRegionInfo(Rectangle rect)
+        public BaseShape CreateRegionShape(Rectangle rect)
         {
-            Shapes.Add(GetRegionInfo(rect));
-            CurrentShape = Shapes[Shapes.Count - 1];
-        }
+            BaseShape shape;
 
-        public BaseRegionShape GetRegionInfo(Rectangle rect)
-        {
-            BaseRegionShape regionInfo = new RectangleRegionShape()
+            switch (CurrentShapeType)
             {
-                Rectangle = rect
-            };
-            //surface.Config.CurrentRegionShape
-            //regionInfo.RoundedRectangleRadius = RoundedRectangleRadius;
-            //regionInfo.TriangleAngle = TriangleAngle;
-            return regionInfo;
-        }
-
-        private void UpdateCurrentRegionInfo()
-        {
-            BaseShape regionInfo = CurrentShape;
-
-            if (regionInfo != null)
-            {
-                /*regionInfo.Shape = surface.Config.CurrentRegionShape;
-                regionInfo.RoundedRectangleRadius = RoundedRectangleRadius;
-                regionInfo.TriangleAngle = TriangleAngle;*/
+                default:
+                case ShapeType.RegionRectangle:
+                    shape = new RectangleRegionShape();
+                    break;
+                case ShapeType.RegionRoundedRectangle:
+                    shape = new RoundedRectangleRegionShape()
+                    {
+                        Radius = RoundedRectangleRadius
+                    };
+                    break;
+                case ShapeType.RegionEllipse:
+                    shape = new EllipseRegionShape();
+                    break;
+                case ShapeType.RegionTriangle:
+                    shape = new TriangleRegionShape()
+                    {
+                        Angle = TriangleAngle
+                    };
+                    break;
+                case ShapeType.RegionDiamond:
+                    shape = new DiamondRegionShape();
+                    break;
+                case ShapeType.DrawingRectangle:
+                    shape = new RectangleDrawingShape();
+                    break;
+                case ShapeType.DrawingRoundedRectangle:
+                    shape = new RoundedRectangleDrawingShape();
+                    break;
             }
+
+            shape.Rectangle = rect;
+
+            return shape;
         }
 
         private void SelectArea()

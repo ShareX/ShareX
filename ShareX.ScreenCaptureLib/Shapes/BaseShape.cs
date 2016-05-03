@@ -23,7 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -38,6 +40,22 @@ namespace ShareX.ScreenCaptureLib
         public BaseShape(Rectangle rect)
         {
             Rectangle = rect;
+        }
+
+        public virtual void AddShapePath(GraphicsPath gp, Rectangle rect)
+        {
+            gp.AddRectangle(rect);
+        }
+
+        public void AddShapePath(GraphicsPath gp)
+        {
+            AddShapePath(gp, Rectangle);
+        }
+
+        public void AddShapePath(GraphicsPath gp, int sizeOffset)
+        {
+            Rectangle rect = Rectangle.SizeOffset(sizeOffset);
+            AddShapePath(gp, rect);
         }
     }
 }
