@@ -35,6 +35,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RoundedRectangleRegionShape : BaseRegionShape
     {
+        public override ShapeType ShapeType { get; } = ShapeType.RegionRoundedRectangle;
+
         public float Radius { get; set; }
 
         public override void AddShapePath(GraphicsPath gp, Rectangle rect)

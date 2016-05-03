@@ -31,6 +31,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseShape
     {
+        public abstract ShapeType ShapeType { get; }
+
         public Rectangle Rectangle { get; set; }
 
         public BaseShape()

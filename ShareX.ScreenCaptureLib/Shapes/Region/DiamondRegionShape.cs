@@ -35,6 +35,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public class DiamondRegionShape : BaseRegionShape
     {
+        public override ShapeType ShapeType { get; } = ShapeType.RegionDiamond;
+
         public override void AddShapePath(GraphicsPath gp, Rectangle rect)
         {
             gp.AddDiamond(rect);

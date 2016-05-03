@@ -35,6 +35,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public class TriangleRegionShape : BaseRegionShape
     {
+        public override ShapeType ShapeType { get; } = ShapeType.RegionTriangle;
+
         public TriangleAngle Angle { get; set; }
 
         public override void AddShapePath(GraphicsPath gp, Rectangle rect)

@@ -440,7 +440,7 @@ namespace ShareX.ScreenCaptureLib
 
             PositionOnClick = InputManager.MousePosition0Based;
 
-            if (shape != null) // Select area
+            if (shape != null && shape.ShapeType == CurrentShapeType) // Select area
             {
                 IsMoving = true;
                 CurrentShape = shape;

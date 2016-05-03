@@ -34,6 +34,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public class EllipseRegionShape : BaseRegionShape
     {
+        public override ShapeType ShapeType { get; } = ShapeType.RegionEllipse;
+
         public override void AddShapePath(GraphicsPath gp, Rectangle rect)
         {
             gp.AddEllipse(rect);

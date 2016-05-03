@@ -34,6 +34,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RoundedRectangleDrawingShape : BaseDrawingShape
     {
+        public override ShapeType ShapeType { get; } = ShapeType.DrawingRoundedRectangle;
+
         public float Radius { get; set; }
 
         public override void Draw(Graphics g)

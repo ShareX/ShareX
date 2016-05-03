@@ -34,6 +34,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RectangleDrawingShape : BaseDrawingShape
     {
+        public override ShapeType ShapeType { get; } = ShapeType.DrawingRectangle;
+
         public override void Draw(Graphics g)
         {
             if (FillColor != Color.Transparent)
