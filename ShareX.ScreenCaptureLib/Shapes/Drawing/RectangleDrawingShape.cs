@@ -23,8 +23,10 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -32,5 +34,23 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RectangleDrawingShape : BaseDrawingShape
     {
+        public override void Draw(Graphics g)
+        {
+            if (BackgroundColor != Color.Transparent)
+            {
+                using (Brush brush = new SolidBrush(BackgroundColor))
+                {
+                    g.FillRectangle(brush, Rectangle);
+                }
+            }
+
+            if (ForegroundColor != Color.Transparent)
+            {
+                using (Pen pen = new Pen(ForegroundColor))
+                {
+                    g.DrawRectangleProper(pen, Rectangle);
+                }
+            }
+        }
     }
 }

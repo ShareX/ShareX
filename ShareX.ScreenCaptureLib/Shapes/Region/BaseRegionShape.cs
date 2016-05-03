@@ -33,7 +33,7 @@ using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class BaseRegionShape : BaseShape
+    public abstract class BaseRegionShape : BaseShape
     {
     }
 }

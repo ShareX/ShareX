@@ -218,11 +218,11 @@ namespace ShareX.ScreenCaptureLib
             List<BaseShape> areas = AreaManager.ValidRegions.ToList();
             bool drawAreaExist = areas.Count > 0;
 
-            if (AreaManager.IsCurrentHoverAreaValid && areas.All(area => area.Rectangle != AreaManager.CurrentHoverRectangle))
+            /*if (AreaManager.IsCurrentHoverAreaValid && areas.All(area => area.Rectangle != AreaManager.CurrentHoverRectangle))
             {
                 BaseShape shape = AreaManager.CreateRegionShape(AreaManager.CurrentHoverRectangle);
                 areas.Add(shape);
-            }
+            }*/
 
             if (areas.Count > 0)
             {
@@ -259,7 +259,15 @@ namespace ShareX.ScreenCaptureLib
                     }
                     */
                 }
+            }
 
+            foreach (BaseDrawingShape drawingShape in AreaManager.DrawingShapes)
+            {
+                drawingShape.Draw(g);
+            }
+
+            if (areas.Count > 0)
+            {
                 if (AreaManager.IsCurrentHoverAreaValid)
                 {
                     using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
@@ -704,7 +712,7 @@ namespace ShareX.ScreenCaptureLib
                 regionFillPath = new GraphicsPath { FillMode = FillMode.Winding };
                 regionDrawPath = new GraphicsPath { FillMode = FillMode.Winding };
 
-                foreach (BaseRegionShape regionShape in AreaManager.ValidRegions)
+                foreach (BaseShape regionShape in AreaManager.ValidRegions)
                 {
                     regionShape.AddShapePath(regionFillPath);
                     regionShape.AddShapePath(regionDrawPath, -1);

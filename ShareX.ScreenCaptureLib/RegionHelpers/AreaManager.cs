@@ -68,6 +68,14 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public BaseDrawingShape[] DrawingShapes
+        {
+            get
+            {
+                return Shapes.OfType<BaseDrawingShape>().ToArray();
+            }
+        }
+
         public BaseShape[] ValidRegions
         {
             get
@@ -80,12 +88,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                if (CurrentShape is BaseRegionShape)
-                {
-                    return IsAreaValid(CurrentRectangle);
-                }
-
-                return false;
+                return IsAreaValid(CurrentRectangle);
             }
         }
 
@@ -183,8 +186,11 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.NumPad5:
                     CurrentShapeType = ShapeType.RegionDiamond;
                     break;
-                case Keys.NumPad0:
+                case Keys.NumPad7:
                     CurrentShapeType = ShapeType.DrawingRectangle;
+                    break;
+                case Keys.NumPad8:
+                    CurrentShapeType = ShapeType.DrawingRoundedRectangle;
                     break;
                 case Keys.Add:
                     switch (CurrentShapeType)

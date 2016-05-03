@@ -23,8 +23,10 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -32,5 +34,32 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RoundedRectangleDrawingShape : BaseDrawingShape
     {
+        public float Radius { get; set; }
+
+        public override void Draw(Graphics g)
+        {
+            Brush brush = null;
+            Pen pen = null;
+
+            try
+            {
+                if (BackgroundColor != Color.Transparent)
+                {
+                    brush = new SolidBrush(BackgroundColor);
+                }
+
+                if (ForegroundColor != Color.Transparent)
+                {
+                    pen = new Pen(ForegroundColor);
+                }
+
+                g.DrawRoundedRectangle(brush, pen, Rectangle, Radius);
+            }
+            finally
+            {
+                if (brush != null) brush.Dispose();
+                if (pen != null) pen.Dispose();
+            }
+        }
     }
 }
