@@ -154,6 +154,7 @@ namespace ShareX.UploadersLib
         public bool GoogleDriveIsPublic = true;
         public bool GoogleDriveUseFolder = false;
         public string GoogleDriveFolderID = string.Empty;
+        public bool GoogleDriveDirectLinks = false;
 
         // SendSpace
 

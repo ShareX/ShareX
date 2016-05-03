@@ -5886,6 +5886,33 @@ store.book[0].title</value>
   <data name="&gt;&gt;cbGoogleDriveIsPublic.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="cbGoogleDriveDirectLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 287</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 17</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
+    <value>Direct link</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveDirectLink.Name" xml:space="preserve">
+    <value>cbGoogleDriveDirectLink</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveDirectLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveDirectLink.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveDirectLink.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
     <value>oauth2GoogleDrive</value>
   </data>
