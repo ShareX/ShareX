@@ -181,25 +181,25 @@ namespace ShareX.ScreenCaptureLib
                     IsSnapResizing = true;
                     break;
                 case Keys.NumPad1:
-                    CurrentShapeType = ShapeType.RegionRectangle;
+                    ChangeCurrentShapeType(ShapeType.RegionRectangle);
                     break;
                 case Keys.NumPad2:
-                    CurrentShapeType = ShapeType.RegionRoundedRectangle;
+                    ChangeCurrentShapeType(ShapeType.RegionRoundedRectangle);
                     break;
                 case Keys.NumPad3:
-                    CurrentShapeType = ShapeType.RegionEllipse;
+                    ChangeCurrentShapeType(ShapeType.RegionEllipse);
                     break;
                 case Keys.NumPad4:
-                    CurrentShapeType = ShapeType.RegionTriangle;
+                    ChangeCurrentShapeType(ShapeType.RegionTriangle);
                     break;
                 case Keys.NumPad5:
-                    CurrentShapeType = ShapeType.RegionDiamond;
+                    ChangeCurrentShapeType(ShapeType.RegionDiamond);
                     break;
                 case Keys.NumPad7:
-                    CurrentShapeType = ShapeType.DrawingRectangle;
+                    ChangeCurrentShapeType(ShapeType.DrawingRectangle);
                     break;
                 case Keys.NumPad8:
-                    CurrentShapeType = ShapeType.DrawingRoundedRectangle;
+                    ChangeCurrentShapeType(ShapeType.DrawingRoundedRectangle);
                     break;
                 case Keys.Add:
                     switch (CurrentShapeType)
@@ -242,6 +242,13 @@ namespace ShareX.ScreenCaptureLib
                     }
                     break;
             }
+        }
+
+        private void ChangeCurrentShapeType(ShapeType shapeType)
+        {
+            CurrentShapeType = shapeType;
+            surface.Config.CurrentShapeType = shapeType;
+            DeselectArea();
         }
 
         private void UpdateRoundedRectangle()
@@ -560,7 +567,10 @@ namespace ShareX.ScreenCaptureLib
                     shape = new RectangleDrawingShape();
                     break;
                 case ShapeType.DrawingRoundedRectangle:
-                    shape = new RoundedRectangleDrawingShape();
+                    shape = new RoundedRectangleDrawingShape()
+                    {
+                        Radius = RoundedRectangleRadius
+                    };
                     break;
             }
 
@@ -603,9 +613,11 @@ namespace ShareX.ScreenCaptureLib
         {
             for (int i = Shapes.Count - 1; i >= 0; i--)
             {
-                if (Shapes[i].Rectangle.Contains(mousePosition))
+                BaseShape shape = Shapes[i];
+
+                if (shape.ShapeType == CurrentShapeType && shape.Rectangle.Contains(mousePosition))
                 {
-                    return Shapes[i];
+                    return shape;
                 }
             }
 
