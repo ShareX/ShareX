@@ -36,17 +36,17 @@ namespace ShareX.ScreenCaptureLib
     {
         public override void Draw(Graphics g)
         {
-            if (BackgroundColor != Color.Transparent)
+            if (FillColor != Color.Transparent)
             {
-                using (Brush brush = new SolidBrush(BackgroundColor))
+                using (Brush brush = new SolidBrush(FillColor))
                 {
                     g.FillRectangle(brush, Rectangle);
                 }
             }
 
-            if (ForegroundColor != Color.Transparent)
+            if (BorderColor != Color.Transparent)
             {
-                using (Pen pen = new Pen(ForegroundColor))
+                using (Pen pen = new Pen(BorderColor, BorderSize))
                 {
                     g.DrawRectangleProper(pen, Rectangle);
                 }

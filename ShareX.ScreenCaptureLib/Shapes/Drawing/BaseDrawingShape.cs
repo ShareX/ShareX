@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 
@@ -34,9 +35,15 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseDrawingShape : BaseShape
     {
-        public Color ForegroundColor { get; set; } = Color.Red;
-        public Color BackgroundColor { get; set; } = Color.Transparent;
+        public Color BorderColor { get; set; } = Color.Red;
+        public Color FillColor { get; set; } = Color.Transparent;
+        public int BorderSize { get; set; } = 2;
 
         public abstract void Draw(Graphics g);
+
+        public override void AddShapePath(GraphicsPath gp, Rectangle rect)
+        {
+            gp.AddRectangle(rect);
+        }
     }
 }

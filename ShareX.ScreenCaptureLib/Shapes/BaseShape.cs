@@ -29,7 +29,7 @@ using System.Drawing.Drawing2D;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class BaseShape
+    public abstract class BaseShape
     {
         public Rectangle Rectangle { get; set; }
 
@@ -42,10 +42,7 @@ namespace ShareX.ScreenCaptureLib
             Rectangle = rect;
         }
 
-        public virtual void AddShapePath(GraphicsPath gp, Rectangle rect)
-        {
-            gp.AddRectangle(rect);
-        }
+        public abstract void AddShapePath(GraphicsPath gp, Rectangle rect);
 
         public void AddShapePath(GraphicsPath gp)
         {

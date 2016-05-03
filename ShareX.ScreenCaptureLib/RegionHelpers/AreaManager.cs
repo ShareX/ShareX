@@ -102,6 +102,15 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public bool IsCurrentShapeTypeRegion
+        {
+            get
+            {
+                return CurrentShapeType == ShapeType.RegionRectangle || CurrentShapeType == ShapeType.RegionRoundedRectangle || CurrentShapeType == ShapeType.RegionEllipse ||
+                    CurrentShapeType == ShapeType.RegionTriangle || CurrentShapeType == ShapeType.RegionDiamond;
+            }
+        }
+
         public float RoundedRectangleRadius { get; set; } = 25;
         public int RoundedRectangleRadiusIncrement { get; set; } = 3;
         public TriangleAngle TriangleAngle { get; set; } = TriangleAngle.Top;

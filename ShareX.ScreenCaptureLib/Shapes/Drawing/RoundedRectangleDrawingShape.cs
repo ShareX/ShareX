@@ -43,14 +43,14 @@ namespace ShareX.ScreenCaptureLib
 
             try
             {
-                if (BackgroundColor != Color.Transparent)
+                if (FillColor != Color.Transparent)
                 {
-                    brush = new SolidBrush(BackgroundColor);
+                    brush = new SolidBrush(FillColor);
                 }
 
-                if (ForegroundColor != Color.Transparent)
+                if (BorderColor != Color.Transparent)
                 {
-                    pen = new Pen(ForegroundColor);
+                    pen = new Pen(BorderColor, BorderSize);
                 }
 
                 g.DrawRoundedRectangle(brush, pen, Rectangle, Radius);

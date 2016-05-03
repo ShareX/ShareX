@@ -218,11 +218,11 @@ namespace ShareX.ScreenCaptureLib
             List<BaseShape> areas = AreaManager.ValidRegions.ToList();
             bool drawAreaExist = areas.Count > 0;
 
-            /*if (AreaManager.IsCurrentHoverAreaValid && areas.All(area => area.Rectangle != AreaManager.CurrentHoverRectangle))
+            if (AreaManager.IsCurrentShapeTypeRegion && AreaManager.IsCurrentHoverAreaValid && areas.All(area => area.Rectangle != AreaManager.CurrentHoverRectangle))
             {
                 BaseShape shape = AreaManager.CreateRegionShape(AreaManager.CurrentHoverRectangle);
                 areas.Add(shape);
-            }*/
+            }
 
             if (areas.Count > 0)
             {
@@ -266,7 +266,7 @@ namespace ShareX.ScreenCaptureLib
                 drawingShape.Draw(g);
             }
 
-            if (areas.Count > 0)
+            if (areas.Count > 0 && AreaManager.IsCurrentShapeTypeRegion)
             {
                 if (AreaManager.IsCurrentHoverAreaValid)
                 {
@@ -283,7 +283,6 @@ namespace ShareX.ScreenCaptureLib
                 {
                     g.DrawRectangleProper(borderPen, AreaManager.CurrentRectangle);
                     g.DrawRectangleProper(borderDotPen, AreaManager.CurrentRectangle);
-                    DrawObjects(g);
 
                     if (RulerMode)
                     {
@@ -309,6 +308,8 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
+
+            DrawObjects(g);
 
             if (Config.ShowTips)
             {
