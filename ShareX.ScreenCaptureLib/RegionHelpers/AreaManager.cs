@@ -189,11 +189,13 @@ namespace ShareX.ScreenCaptureLib
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
                         BorderColor = dialogColor.NewColor;
+                        tsmiChangeBorderColor.Image = ImageHelpers.CreateColorPickerIcon(BorderColor, new Rectangle(0, 0, 16, 16));
                     }
                 }
 
                 surface.Resume();
             };
+            tsmiChangeBorderColor.Image = ImageHelpers.CreateColorPickerIcon(BorderColor, new Rectangle(0, 0, 16, 16));
             cmsShapeMenu.Items.Add(tsmiChangeBorderColor);
 
             ToolStripLabel tslChangeBorderSize = new ToolStripLabel("Border size:");
@@ -221,11 +223,13 @@ namespace ShareX.ScreenCaptureLib
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
                         FillColor = dialogColor.NewColor;
+                        tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(FillColor, new Rectangle(0, 0, 16, 16));
                     }
                 }
 
                 surface.Resume();
             };
+            tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(FillColor, new Rectangle(0, 0, 16, 16));
             cmsShapeMenu.Items.Add(tsmiChangeFillColor);
 
             cmsShapeMenu.Items.Add(new ToolStripSeparator());

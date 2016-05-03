@@ -1288,5 +1288,35 @@ namespace ShareX.HelpersLib
 
             return bmp;
         }
+
+        public static Image CreateColorPickerIcon(Color color, Rectangle rect)
+        {
+            Bitmap bmp = new Bitmap(rect.Width, rect.Height);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                DrawColorPickerIcon(g, color, rect);
+            }
+
+            return bmp;
+        }
+
+        public static void DrawColorPickerIcon(Graphics g, Color color, Rectangle rect)
+        {
+            if (color.A < 255)
+            {
+                using (Image checker = CreateCheckers(rect.Width / 2, rect.Height / 2, Color.LightGray, Color.White))
+                {
+                    g.DrawImage(checker, rect);
+                }
+            }
+
+            using (SolidBrush brush = new SolidBrush(color))
+            {
+                g.FillRectangle(brush, rect);
+            }
+
+            g.DrawRectangleProper(Pens.Black, rect);
+        }
     }
 }
