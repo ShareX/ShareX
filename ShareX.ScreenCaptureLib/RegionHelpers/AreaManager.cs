@@ -34,13 +34,13 @@ namespace ShareX.ScreenCaptureLib
 {
     public class AreaManager
     {
-        public List<BaseShape> Shapesa { get; private set; }
+        public List<BaseShape> Shapes { get; private set; }
 
         public BaseRegionShape[] Regions
         {
             get
             {
-                return Shapesa.OfType<BaseRegionShape>().ToArray();
+                return Shapes.OfType<BaseRegionShape>().ToArray();
             }
         }
 
@@ -139,7 +139,7 @@ namespace ShareX.ScreenCaptureLib
             this.surface = surface;
             ResizeManager = new ResizeManager(surface, this);
 
-            Shapesa = new List<BaseShape>();
+            Shapes = new List<BaseShape>();
             SelectedAreaIndex = -1;
             RoundedRectangleRadius = 25;
             RoundedRectangleRadiusIncrement = 3;
@@ -494,7 +494,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void AddRegionInfo(Rectangle rect)
         {
-            Shapesa.Add(GetRegionInfo(rect));
+            Shapes.Add(GetRegionInfo(rect));
             SelectedAreaIndex = Regions.Length - 1;
         }
 
@@ -542,7 +542,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null)
             {
-                Shapesa.Remove(shape);
+                Shapes.Remove(shape);
                 DeselectArea();
             }
         }

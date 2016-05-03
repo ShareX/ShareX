@@ -37,7 +37,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public TriangleAngle Angle { get; set; }
 
-        public override void AddShape(GraphicsPath gp, Rectangle rect)
+        public override void AddShapePath(GraphicsPath gp, Rectangle rect)
         {
             gp.AddTriangle(rect, Angle);
         }

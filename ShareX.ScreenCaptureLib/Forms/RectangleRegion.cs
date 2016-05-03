@@ -263,7 +263,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
                     {
-                        AddShapePath(hoverDrawPath, AreaManager.GetRegionInfo(AreaManager.CurrentHoverArea), -1);
+                        AreaManager.GetRegionInfo(AreaManager.CurrentHoverArea).AddShapePath(hoverDrawPath, -1);
 
                         g.DrawPath(borderPen, hoverDrawPath);
                         g.DrawPath(borderDotPen, hoverDrawPath);
@@ -703,18 +703,12 @@ namespace ShareX.ScreenCaptureLib
                 regionFillPath = new GraphicsPath { FillMode = FillMode.Winding };
                 regionDrawPath = new GraphicsPath { FillMode = FillMode.Winding };
 
-                foreach (BaseRegionShape regionInfo in AreaManager.ValidRegionAreas)
+                foreach (BaseRegionShape regionShape in AreaManager.ValidRegionAreas)
                 {
-                    AddShapePath(regionFillPath, regionInfo);
-                    AddShapePath(regionDrawPath, regionInfo, -1);
+                    regionShape.AddShapePath(regionFillPath);
+                    regionShape.AddShapePath(regionFillPath, -1);
                 }
             }
-        }
-
-        protected virtual void AddShapePath(GraphicsPath gp, BaseRegionShape shape, int sizeOffset = 0)
-        {
-            Rectangle rect = shape.Rectangle.SizeOffset(sizeOffset);
-            shape.AddShape(gp, rect);
         }
 
         protected override void Dispose(bool disposing)

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -34,11 +35,17 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseRegionShape : BaseShape
     {
-        public abstract void AddShape(GraphicsPath gp, Rectangle rect);
+        public abstract void AddShapePath(GraphicsPath gp, Rectangle rect);
 
-        public void AddShape(GraphicsPath gp)
+        public void AddShapePath(GraphicsPath gp)
         {
-            AddShape(gp, Rectangle);
+            AddShapePath(gp, Rectangle);
+        }
+
+        public void AddShapePath(GraphicsPath gp, int sizeOffset)
+        {
+            Rectangle rect = Rectangle.SizeOffset(sizeOffset);
+            AddShapePath(gp, rect);
         }
     }
 }
