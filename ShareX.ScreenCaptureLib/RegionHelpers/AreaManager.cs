@@ -111,6 +111,10 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public Color BorderColor { get; set; } = Color.Red;
+        public int BorderSize { get; set; } = 2;
+        public Color FillColor { get; set; } = Color.Transparent;
+
         public float RoundedRectangleRadius { get; set; } = 25;
         public int RoundedRectangleRadiusIncrement { get; set; } = 3;
         public TriangleAngle TriangleAngle { get; set; } = TriangleAngle.Top;
@@ -175,11 +179,53 @@ namespace ShareX.ScreenCaptureLib
 
             cmsShapeMenu.Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiChangeBorderColor = new ToolStripMenuItem("Change border color...");
+            ToolStripMenuItem tsmiChangeBorderColor = new ToolStripMenuItem("Border color...");
+            tsmiChangeBorderColor.Click += (sender, e) =>
+            {
+                surface.Pause();
+
+                using (ColorPickerForm dialogColor = new ColorPickerForm(BorderColor))
+                {
+                    if (dialogColor.ShowDialog() == DialogResult.OK)
+                    {
+                        BorderColor = dialogColor.NewColor;
+                    }
+                }
+
+                surface.Resume();
+            };
             cmsShapeMenu.Items.Add(tsmiChangeBorderColor);
-            ToolStripMenuItem tsmiChangeBorderSize = new ToolStripMenuItem("Change border size...");
-            cmsShapeMenu.Items.Add(tsmiChangeBorderSize);
-            ToolStripMenuItem tsmiChangeFillColor = new ToolStripMenuItem("Change fill color...");
+
+            ToolStripLabel tslChangeBorderSize = new ToolStripLabel("Border size:");
+            cmsShapeMenu.Items.Add(tslChangeBorderSize);
+
+            ToolStripComboBox tscbBorderSize = new ToolStripComboBox();
+            tscbBorderSize.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            for (int i = 1; i <= 10; i++)
+            {
+                tscbBorderSize.Items.Add(i);
+            }
+
+            tscbBorderSize.SelectedIndexChanged += (sender, e) => BorderSize = tscbBorderSize.SelectedIndex + 1;
+            tscbBorderSize.SelectedIndex = 0;
+            cmsShapeMenu.Items.Add(tscbBorderSize);
+
+            ToolStripMenuItem tsmiChangeFillColor = new ToolStripMenuItem("Fill color...");
+            tsmiChangeFillColor.Click += (sender, e) =>
+            {
+                surface.Pause();
+
+                using (ColorPickerForm dialogColor = new ColorPickerForm(FillColor))
+                {
+                    if (dialogColor.ShowDialog() == DialogResult.OK)
+                    {
+                        FillColor = dialogColor.NewColor;
+                    }
+                }
+
+                surface.Resume();
+            };
             cmsShapeMenu.Items.Add(tsmiChangeFillColor);
 
             cmsShapeMenu.Items.Add(new ToolStripSeparator());
@@ -605,11 +651,19 @@ namespace ShareX.ScreenCaptureLib
                     shape = new DiamondRegionShape();
                     break;
                 case ShapeType.DrawingRectangle:
-                    shape = new RectangleDrawingShape();
+                    shape = new RectangleDrawingShape()
+                    {
+                        BorderColor = BorderColor,
+                        BorderSize = BorderSize,
+                        FillColor = FillColor
+                    };
                     break;
                 case ShapeType.DrawingRoundedRectangle:
                     shape = new RoundedRectangleDrawingShape()
                     {
+                        BorderColor = BorderColor,
+                        BorderSize = BorderSize,
+                        FillColor = FillColor,
                         Radius = RoundedRectangleRadius
                     };
                     break;

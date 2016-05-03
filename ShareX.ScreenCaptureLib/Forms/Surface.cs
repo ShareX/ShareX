@@ -60,6 +60,8 @@ namespace ShareX.ScreenCaptureLib
 
         public static GraphicsPath LastRegionFillPath, LastRegionDrawPath;
 
+        private bool pause;
+
         public Surface()
         {
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
@@ -216,6 +218,17 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public void Pause()
+        {
+            pause = true;
+        }
+
+        public void Resume()
+        {
+            pause = false;
+            Invalidate();
+        }
+
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             //base.OnPaintBackground(e);
@@ -238,7 +251,10 @@ namespace ShareX.ScreenCaptureLib
                 DrawInfo(g);
             }
 
-            Invalidate();
+            if (!pause)
+            {
+                Invalidate();
+            }
         }
 
         public virtual Image GetResultImage()
