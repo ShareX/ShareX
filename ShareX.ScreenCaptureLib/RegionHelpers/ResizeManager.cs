@@ -99,7 +99,7 @@ namespace ShareX.ScreenCaptureLib
 
                             if (!InputManager.IsBeforeMouseDown(MouseButtons.Left))
                             {
-                                tempRect = areaManager.CurrentArea;
+                                tempRect = areaManager.CurrentRectangle;
                             }
 
                             NodePosition nodePosition = (NodePosition)i;
@@ -138,7 +138,7 @@ namespace ShareX.ScreenCaptureLib
                                     break;
                             }
 
-                            areaManager.CurrentArea = CaptureHelpers.FixRectangle(tempRect);
+                            areaManager.CurrentRectangle = CaptureHelpers.FixRectangle(tempRect);
 
                             break;
                         }
@@ -180,7 +180,7 @@ namespace ShareX.ScreenCaptureLib
             int x = IsLeftPressed && IsRightPressed ? 0 : IsRightPressed ? speed : IsLeftPressed ? -speed : 0;
 
             // Move the cursor
-            if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
+            if (!areaManager.IsCurrentRegionValid || areaManager.IsCreating)
             {
                 Cursor.Position = new Point(Cursor.Position.X + x, Cursor.Position.Y + y);
             }
@@ -235,7 +235,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void UpdateNodePositions()
         {
-            UpdateNodePositions(areaManager.CurrentArea);
+            UpdateNodePositions(areaManager.CurrentRectangle);
         }
 
         private void UpdateNodePositions(Rectangle rect)
@@ -260,20 +260,20 @@ namespace ShareX.ScreenCaptureLib
 
         public void MoveCurrentArea(int x, int y)
         {
-            areaManager.CurrentArea = new Rectangle(new Point(areaManager.CurrentArea.X + x, areaManager.CurrentArea.Y + y), areaManager.CurrentArea.Size);
+            areaManager.CurrentRectangle = new Rectangle(new Point(areaManager.CurrentRectangle.X + x, areaManager.CurrentRectangle.Y + y), areaManager.CurrentRectangle.Size);
         }
 
         public void ResizeCurrentArea(int x, int y, bool isBottomRightMoving)
         {
             if (isBottomRightMoving)
             {
-                areaManager.CurrentArea = new Rectangle(areaManager.CurrentArea.X, areaManager.CurrentArea.Y,
-                    areaManager.CurrentArea.Width + x, areaManager.CurrentArea.Height + y);
+                areaManager.CurrentRectangle = new Rectangle(areaManager.CurrentRectangle.X, areaManager.CurrentRectangle.Y,
+                    areaManager.CurrentRectangle.Width + x, areaManager.CurrentRectangle.Height + y);
             }
             else
             {
-                areaManager.CurrentArea = new Rectangle(areaManager.CurrentArea.X + x, areaManager.CurrentArea.Y + y,
-                    areaManager.CurrentArea.Width - x, areaManager.CurrentArea.Height - y);
+                areaManager.CurrentRectangle = new Rectangle(areaManager.CurrentRectangle.X + x, areaManager.CurrentRectangle.Y + y,
+                    areaManager.CurrentRectangle.Width - x, areaManager.CurrentRectangle.Height - y);
             }
         }
     }

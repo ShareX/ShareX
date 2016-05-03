@@ -34,7 +34,29 @@ namespace ShareX.ScreenCaptureLib
 {
     public class AreaManager
     {
-        public List<BaseShape> Shapes { get; private set; }
+        public List<BaseShape> Shapes { get; private set; } = new List<BaseShape>();
+
+        public BaseShape CurrentShape { get; private set; }
+
+        public Rectangle CurrentRectangle
+        {
+            get
+            {
+                if (CurrentShape != null)
+                {
+                    return CurrentShape.Rectangle;
+                }
+
+                return Rectangle.Empty;
+            }
+            set
+            {
+                if (CurrentShape != null)
+                {
+                    CurrentShape.Rectangle = value;
+                }
+            }
+        }
 
         public BaseRegionShape[] Regions
         {
@@ -44,7 +66,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public BaseRegionShape[] ValidRegionAreas
+        public BaseRegionShape[] ValidRegions
         {
             get
             {
@@ -52,62 +74,32 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public int SelectedAreaIndex { get; private set; }
-
-        public BaseRegionShape CurrentRegionInfo
+        public bool IsCurrentRegionValid
         {
             get
             {
-                if (SelectedAreaIndex > -1)
+                if (CurrentShape is BaseRegionShape)
                 {
-                    return Regions[SelectedAreaIndex];
+                    return IsAreaValid(CurrentRectangle);
                 }
 
-                return null;
+                return false;
             }
         }
 
-        public Rectangle CurrentArea
-        {
-            get
-            {
-                if (SelectedAreaIndex > -1)
-                {
-                    return Regions[SelectedAreaIndex].Rectangle;
-                }
-
-                return Rectangle.Empty;
-            }
-            set
-            {
-                if (SelectedAreaIndex > -1)
-                {
-                    Regions[SelectedAreaIndex].Rectangle = value;
-                }
-            }
-        }
-
-        public bool IsCurrentAreaValid
-        {
-            get
-            {
-                return IsAreaValid(CurrentArea);
-            }
-        }
-
-        public Rectangle CurrentHoverArea { get; private set; }
+        public Rectangle CurrentHoverRectangle { get; private set; }
 
         public bool IsCurrentHoverAreaValid
         {
             get
             {
-                return !CurrentHoverArea.IsEmpty;
+                return !CurrentHoverRectangle.IsEmpty;
             }
         }
 
-        public float RoundedRectangleRadius { get; set; }
-        public int RoundedRectangleRadiusIncrement { get; set; }
-        public TriangleAngle TriangleAngle { get; set; }
+        public float RoundedRectangleRadius { get; set; } = 25;
+        public int RoundedRectangleRadiusIncrement { get; set; } = 3;
+        public TriangleAngle TriangleAngle { get; set; } = TriangleAngle.Top;
 
         public Point CurrentPosition { get; private set; }
         public Point PositionOnClick { get; private set; }
@@ -130,21 +122,15 @@ namespace ShareX.ScreenCaptureLib
         public List<SimpleWindowInfo> Windows { get; set; }
         public bool WindowCaptureMode { get; set; }
         public bool IncludeControls { get; set; }
-        public int MinimumSize { get; set; }
+        public int MinimumSize { get; set; } = 3;
 
         private RectangleRegion surface;
 
         public AreaManager(RectangleRegion surface)
         {
             this.surface = surface;
-            ResizeManager = new ResizeManager(surface, this);
 
-            Shapes = new List<BaseShape>();
-            SelectedAreaIndex = -1;
-            RoundedRectangleRadius = 25;
-            RoundedRectangleRadiusIncrement = 3;
-            TriangleAngle = TriangleAngle.Top;
-            MinimumSize = 3;
+            ResizeManager = new ResizeManager(surface, this);
 
             surface.MouseDown += surface_MouseDown;
             surface.MouseUp += surface_MouseUp;
@@ -163,12 +149,12 @@ namespace ShareX.ScreenCaptureLib
                     }
                     else
                     {
-                        int areaIndex = SelectedAreaIndex;
                         if (ResizeManager.Visible)
                         {
                             DeselectArea();
                         }
-                        if (0 > areaIndex || areaIndex != AreaIntersect())
+
+                        if (CurrentShape == null || CurrentShape != AreaIntersect())
                         {
                             RegionSelection(InputManager.MousePosition);
                         }
@@ -260,13 +246,13 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsMoving)
             {
-                Rectangle rect = CurrentArea;
+                Rectangle rect = CurrentRectangle;
                 rect.X += InputManager.MouseVelocity.X;
                 rect.Y += InputManager.MouseVelocity.Y;
-                CurrentArea = rect;
+                CurrentRectangle = rect;
             }
 
-            if (IsCreating && !CurrentArea.IsEmpty)
+            if (IsCreating && !CurrentRectangle.IsEmpty)
             {
                 CurrentPosition = InputManager.MousePosition0Based;
 
@@ -282,7 +268,7 @@ namespace ShareX.ScreenCaptureLib
                     newPosition = SnapPosition(PositionOnClick, newPosition);
                 }
 
-                CurrentArea = CaptureHelpers.CreateRectangle(PositionOnClick, newPosition);
+                CurrentRectangle = CaptureHelpers.CreateRectangle(PositionOnClick, newPosition);
             }
 
             CheckHover();
@@ -317,7 +303,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void CheckHover()
         {
-            CurrentHoverArea = Rectangle.Empty;
+            CurrentHoverRectangle = Rectangle.Empty;
 
             if (!ResizeManager.IsCursorOnNode() && !IsCreating && !IsMoving && !IsResizing)
             {
@@ -325,7 +311,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!hoverArea.IsEmpty)
                 {
-                    CurrentHoverArea = hoverArea;
+                    CurrentHoverRectangle = hoverArea;
                 }
                 else
                 {
@@ -334,7 +320,7 @@ namespace ShareX.ScreenCaptureLib
                     if (window != null && !window.Rectangle.IsEmpty)
                     {
                         hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
-                        CurrentHoverArea = Rectangle.Intersect(surface.ScreenRectangle0Based, hoverArea);
+                        CurrentHoverRectangle = Rectangle.Intersect(surface.ScreenRectangle0Based, hoverArea);
                     }
                 }
             }
@@ -402,13 +388,14 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
-            int areaIndex = AreaIntersect(InputManager.MousePosition0Based);
+            BaseShape shape = AreaIntersect(InputManager.MousePosition0Based);
+
             PositionOnClick = InputManager.MousePosition0Based;
 
-            if (areaIndex > -1) // Select area
+            if (shape != null) // Select area
             {
                 IsMoving = true;
-                SelectedAreaIndex = areaIndex;
+                CurrentShape = shape;
                 SelectArea();
             }
             else if (!IsCreating) // Create new area
@@ -437,9 +424,9 @@ namespace ShareX.ScreenCaptureLib
             IsCreating = false;
             IsMoving = false;
 
-            if (!CurrentArea.IsEmpty)
+            if (!CurrentRectangle.IsEmpty)
             {
-                if (!IsCurrentAreaValid)
+                if (!IsCurrentRegionValid)
                 {
                     RemoveCurrentArea();
                     CheckHover();
@@ -455,9 +442,9 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (!CurrentHoverArea.IsEmpty)
+            if (!CurrentHoverRectangle.IsEmpty)
             {
-                AddRegionInfo(CurrentHoverArea);
+                AddRegionInfo(CurrentHoverRectangle);
 
                 if (surface.Config.QuickCrop)
                 {
@@ -473,11 +460,11 @@ namespace ShareX.ScreenCaptureLib
 
         private void CancelRegionSelection()
         {
-            int areaIndex = AreaIntersect();
+            BaseShape shape = AreaIntersect();
 
-            if (areaIndex > -1)
+            if (shape != null)
             {
-                //Areas.RemoveAt(areaIndex);
+                Shapes.Remove(shape);
                 DeselectArea();
             }
             else
@@ -495,7 +482,7 @@ namespace ShareX.ScreenCaptureLib
         private void AddRegionInfo(Rectangle rect)
         {
             Shapes.Add(GetRegionInfo(rect));
-            SelectedAreaIndex = Regions.Length - 1;
+            CurrentShape = Shapes[Shapes.Count - 1];
         }
 
         public BaseRegionShape GetRegionInfo(Rectangle rect)
@@ -512,7 +499,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateCurrentRegionInfo()
         {
-            BaseShape regionInfo = CurrentRegionInfo;
+            BaseShape regionInfo = CurrentShape;
 
             if (regionInfo != null)
             {
@@ -524,7 +511,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void SelectArea()
         {
-            if (!CurrentArea.IsEmpty && !surface.Config.IsFixedSize)
+            if (!CurrentRectangle.IsEmpty && !surface.Config.IsFixedSize)
             {
                 ResizeManager.Show();
             }
@@ -532,13 +519,13 @@ namespace ShareX.ScreenCaptureLib
 
         private void DeselectArea()
         {
-            SelectedAreaIndex = -1;
+            CurrentShape = null;
             ResizeManager.Hide();
         }
 
         private void RemoveCurrentArea()
         {
-            BaseShape shape = CurrentRegionInfo;
+            BaseShape shape = CurrentShape;
 
             if (shape != null)
             {
@@ -552,31 +539,31 @@ namespace ShareX.ScreenCaptureLib
             return !rect.IsEmpty && rect.Width >= MinimumSize && rect.Height >= MinimumSize;
         }
 
-        public int AreaIntersect(Point mousePosition)
+        public BaseShape AreaIntersect(Point mousePosition)
         {
-            for (int i = Regions.Length - 1; i >= 0; i--)
+            for (int i = Shapes.Count - 1; i >= 0; i--)
             {
-                if (Regions[i].Rectangle.Contains(mousePosition))
+                if (Shapes[i].Rectangle.Contains(mousePosition))
                 {
-                    return i;
+                    return Shapes[i];
                 }
             }
 
-            return -1;
+            return null;
         }
 
-        public int AreaIntersect()
+        public BaseShape AreaIntersect()
         {
             return AreaIntersect(InputManager.MousePosition0Based);
         }
 
         public Rectangle GetAreaIntersectWithMouse()
         {
-            int areaIndex = AreaIntersect();
+            BaseShape shape = AreaIntersect();
 
-            if (areaIndex > -1)
+            if (shape != null)
             {
-                return Regions[areaIndex].Rectangle;
+                return shape.Rectangle;
             }
 
             return Rectangle.Empty;
@@ -584,12 +571,12 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsAreaIntersect()
         {
-            return AreaIntersect() > -1;
+            return AreaIntersect() != null;
         }
 
         public Rectangle CombineAreas()
         {
-            BaseShape[] areas = ValidRegionAreas;
+            BaseShape[] areas = ValidRegions;
 
             if (areas.Length > 0)
             {
