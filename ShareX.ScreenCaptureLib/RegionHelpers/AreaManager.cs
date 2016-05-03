@@ -139,10 +139,13 @@ namespace ShareX.ScreenCaptureLib
         public int MinimumSize { get; set; } = 3;
 
         private RectangleRegion surface;
+        private ContextMenuStrip cmsShapeMenu;
 
         public AreaManager(RectangleRegion surface)
         {
             this.surface = surface;
+
+            CurrentShapeType = surface.Config.CurrentShapeType;
 
             ResizeManager = new ResizeManager(surface, this);
 
@@ -150,6 +153,40 @@ namespace ShareX.ScreenCaptureLib
             surface.MouseUp += surface_MouseUp;
             surface.KeyDown += surface_KeyDown;
             surface.KeyUp += surface_KeyUp;
+
+            CreateShapeMenu();
+        }
+
+        private void CreateShapeMenu()
+        {
+            cmsShapeMenu = new ContextMenuStrip();
+
+            foreach (ShapeType shapeType in Helpers.GetEnums<ShapeType>())
+            {
+                ToolStripMenuItem tsmiShapeType = new ToolStripMenuItem(shapeType.GetLocalizedDescription());
+                tsmiShapeType.Checked = shapeType == CurrentShapeType;
+                tsmiShapeType.Click += (sender, e) =>
+                {
+                    tsmiShapeType.RadioCheck();
+                    ChangeCurrentShapeType(shapeType);
+                };
+                cmsShapeMenu.Items.Add(tsmiShapeType);
+            }
+
+            cmsShapeMenu.Items.Add(new ToolStripSeparator());
+
+            ToolStripMenuItem tsmiChangeBorderColor = new ToolStripMenuItem("Change border color...");
+            cmsShapeMenu.Items.Add(tsmiChangeBorderColor);
+            ToolStripMenuItem tsmiChangeBorderSize = new ToolStripMenuItem("Change border size...");
+            cmsShapeMenu.Items.Add(tsmiChangeBorderSize);
+            ToolStripMenuItem tsmiChangeFillColor = new ToolStripMenuItem("Change fill color...");
+            cmsShapeMenu.Items.Add(tsmiChangeFillColor);
+
+            cmsShapeMenu.Items.Add(new ToolStripSeparator());
+
+            ToolStripMenuItem tsmiCloseMenu = new ToolStripMenuItem("Close");
+            tsmiCloseMenu.Click += (sender, e) => cmsShapeMenu.Close();
+            cmsShapeMenu.Items.Add(tsmiCloseMenu);
         }
 
         private void surface_KeyDown(object sender, KeyEventArgs e)
@@ -433,6 +470,10 @@ namespace ShareX.ScreenCaptureLib
                 {
                     EndRegionSelection();
                 }
+            }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                cmsShapeMenu.Show(surface, e.Location);
             }
         }
 

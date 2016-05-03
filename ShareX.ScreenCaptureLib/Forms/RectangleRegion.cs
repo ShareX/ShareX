@@ -729,7 +729,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override Image GetResultImage()
         {
-            if (SurfaceImage != null)
+            if (SurfaceImage != null && AreaManager.DrawingShapes.Length > 0)
             {
                 using (Graphics g = Graphics.FromImage(SurfaceImage))
                 {

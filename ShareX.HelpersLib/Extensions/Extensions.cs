@@ -281,7 +281,7 @@ namespace ShareX.HelpersLib
         {
             ToolStrip parent = tsmi.GetCurrentParent();
 
-            foreach (ToolStripMenuItem tsmiParent in parent.Items)
+            foreach (ToolStripMenuItem tsmiParent in parent.Items.OfType<ToolStripMenuItem>())
             {
                 if (tsmiParent != tsmi)
                 {
