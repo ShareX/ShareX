@@ -210,7 +210,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             tscbBorderSize.SelectedIndexChanged += (sender, e) => BorderSize = tscbBorderSize.SelectedIndex + 1;
-            tscbBorderSize.SelectedIndex = 0;
+            tscbBorderSize.SelectedIndex = (BorderSize - 1).Between(0, tscbBorderSize.Items.Count - 1);
             cmsShapeMenu.Items.Add(tscbBorderSize);
 
             ToolStripMenuItem tsmiChangeFillColor = new ToolStripMenuItem("Fill color...");
@@ -516,6 +516,7 @@ namespace ShareX.ScreenCaptureLib
             else if (e.Button == MouseButtons.Right)
             {
                 CancelRegionSelection();
+
                 if (IsCreating)
                 {
                     EndRegionSelection();
@@ -577,7 +578,7 @@ namespace ShareX.ScreenCaptureLib
                     RemoveCurrentArea();
                     CheckHover();
                 }
-                else if (surface.Config.QuickCrop)
+                else if (surface.Config.QuickCrop && IsCurrentShapeTypeRegion)
                 {
                     surface.UpdateRegionPath();
                     surface.Close(SurfaceResult.Region);
@@ -592,7 +593,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 AddRegionShape(CurrentHoverRectangle);
 
-                if (surface.Config.QuickCrop)
+                if (surface.Config.QuickCrop && IsCurrentShapeTypeRegion)
                 {
                     surface.UpdateRegionPath();
                     surface.Close(SurfaceResult.Region);
