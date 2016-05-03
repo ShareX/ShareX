@@ -23,22 +23,21 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RegionInfo
+    public class BaseShape
     {
-        public Rectangle Area { get; set; }
-        public RegionShape Shape { get; set; }
-        public float RoundedRectangleRadius { get; set; }
-        public TriangleAngle TriangleAngle { get; set; }
+        public Rectangle Rectangle { get; set; }
 
-        public RegionInfo(Rectangle area, RegionShape shape)
+        public BaseShape()
         {
-            Area = area;
-            Shape = shape;
+        }
+
+        public BaseShape(Rectangle rect)
+        {
+            Rectangle = rect;
         }
     }
 }

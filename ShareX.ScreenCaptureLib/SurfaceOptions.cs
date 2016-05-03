@@ -98,8 +98,8 @@ namespace ShareX.ScreenCaptureLib
         [Description("How close to a snap size you must be for it to snap.")]
         public List<SnapSize> SnapSizes { get; set; }
 
-        [DefaultValue(RegionShape.Rectangle), Description("Current region shape.")]
-        public RegionShape CurrentRegionShape { get; set; }
+        [Description("Current region shape.")]
+        public BaseShape CurrentRegionShape { get; set; } = new RectangleRegionShape();
 
         public SurfaceOptions()
         {

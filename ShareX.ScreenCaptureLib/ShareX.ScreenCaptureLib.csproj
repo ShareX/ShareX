@@ -80,7 +80,14 @@
     </Compile>
     <Compile Include="RectangleAnnotateOptions.cs" />
     <Compile Include="RegionHelpers\ColorBlinkAnimation.cs" />
-    <Compile Include="RegionHelpers\RegionInfo.cs" />
+    <Compile Include="Shapes\BaseShape.cs" />
+    <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\RectangleDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\RoundedRectangleDrawingShape.cs" />
+    <Compile Include="Shapes\Region\DiamondRegionShape.cs" />
+    <Compile Include="Shapes\Region\EllipseRegionShape.cs" />
+    <Compile Include="Shapes\Region\RectangleRegionShape.cs" />
+    <Compile Include="Shapes\Region\BaseRegionShape.cs" />
     <Compile Include="Screencast\FFmpegOptions.cs" />
     <Compile Include="Screencast\FFmpegHelper.cs" />
     <Compile Include="Screencast\FFmpegOptionsForm.cs">
@@ -120,6 +127,8 @@
     <Compile Include="RegionHelpers\ResizeManager.cs" />
     <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
     <Compile Include="ScrollingCaptureOptions.cs" />
+    <Compile Include="Shapes\Region\RoundedRectangleRegionShape.cs" />
+    <Compile Include="Shapes\Region\TriangleRegionShape.cs" />
     <Compile Include="SimpleWindowInfo.cs" />
     <Compile Include="SnapSize.cs" />
     <Compile Include="SurfaceOptions.cs" />
@@ -262,6 +271,7 @@
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
