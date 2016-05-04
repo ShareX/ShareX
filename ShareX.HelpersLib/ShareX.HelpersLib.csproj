@@ -120,10 +120,19 @@
     <Compile Include="Controls\GreenlightButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\LabeledNumericUpDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LabeledNumericUpDown.Designer.cs">
+      <DependentUpon>LabeledNumericUpDown.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LabelNoCopy.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\ToolStripButtonColorAnimation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolStripLabeledNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ConvolutionMatrix.cs" />
@@ -538,6 +547,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.zh-CN.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LabeledNumericUpDown.resx">
+      <DependentUpon>LabeledNumericUpDown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.de.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
