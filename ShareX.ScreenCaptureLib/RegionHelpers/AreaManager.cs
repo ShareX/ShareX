@@ -245,6 +245,29 @@ namespace ShareX.ScreenCaptureLib
             tsmiFullscreenCapture.Click += (sender, e) => surface.Close(SurfaceResult.Fullscreen);
             cmsShapeMenu.Items.Add(tsmiFullscreenCapture);
 
+            ToolStripMenuItem tsmiMonitorCapture = new ToolStripMenuItem("Capture monitor");
+            cmsShapeMenu.Items.Add(tsmiMonitorCapture);
+
+            tsmiMonitorCapture.DropDownItems.Clear();
+
+            Screen[] screens = Screen.AllScreens;
+
+            for (int i = 0; i < screens.Length; i++)
+            {
+                Screen screen = screens[i];
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height));
+                tsmi.Click += (sender, e) =>
+                {
+                    surface.MonitorIndex = i;
+                    surface.Close(SurfaceResult.Monitor);
+                };
+                tsmiMonitorCapture.DropDownItems.Add(tsmi);
+            }
+
+            ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem("Capture active monitor");
+            tsmiActiveMonitorCapture.Click += (sender, e) => surface.Close(SurfaceResult.ActiveMonitor);
+            cmsShapeMenu.Items.Add(tsmiActiveMonitorCapture);
+
             cmsShapeMenu.Items.Add(new ToolStripSeparator());
 
             ToolStripMenuItem tsmiCloseMenu = new ToolStripMenuItem("Close");

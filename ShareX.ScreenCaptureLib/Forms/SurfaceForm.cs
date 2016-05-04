@@ -45,7 +45,7 @@ namespace ShareX.ScreenCaptureLib
         public Rectangle ScreenRectangle { get; private set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
         public SurfaceResult Result { get; private set; }
-        public int MonitorIndex { get; private set; }
+        public int MonitorIndex { get; set; }
 
         protected List<DrawableObject> DrawableObjects { get; set; }
 
