@@ -164,6 +164,13 @@ namespace ShareX.ScreenCaptureLib
         private void CreateShapeMenu()
         {
             cmsShapeMenu = new ContextMenuStrip();
+            cmsShapeMenu.KeyDown += (sender, e) =>
+            {
+                if (e.KeyCode == Keys.Space)
+                {
+                    cmsShapeMenu.Close();
+                }
+            };
 
             foreach (ShapeType shapeType in Helpers.GetEnums<ShapeType>())
             {
@@ -231,6 +238,12 @@ namespace ShareX.ScreenCaptureLib
             };
             tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(FillColor, new Rectangle(0, 0, 16, 16));
             cmsShapeMenu.Items.Add(tsmiChangeFillColor);
+
+            cmsShapeMenu.Items.Add(new ToolStripSeparator());
+
+            ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem("Capture fullscreen");
+            tsmiFullscreenCapture.Click += (sender, e) => surface.Close(SurfaceResult.Fullscreen);
+            cmsShapeMenu.Items.Add(tsmiFullscreenCapture);
 
             cmsShapeMenu.Items.Add(new ToolStripSeparator());
 
@@ -327,6 +340,9 @@ namespace ShareX.ScreenCaptureLib
                             UpdateTriangle();
                             break;
                     }
+                    break;
+                case Keys.Space:
+                    cmsShapeMenu.Show(Cursor.Position.X, Cursor.Position.Y);
                     break;
             }
         }
@@ -521,10 +537,6 @@ namespace ShareX.ScreenCaptureLib
                 {
                     EndRegionSelection();
                 }
-            }
-            else if (e.Button == MouseButtons.Middle)
-            {
-                cmsShapeMenu.Show(surface, e.Location);
             }
         }
 

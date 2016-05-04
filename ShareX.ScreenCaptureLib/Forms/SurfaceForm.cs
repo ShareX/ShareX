@@ -181,9 +181,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Escape:
                     Close(SurfaceResult.Close);
                     break;
-                case Keys.Space:
-                    Close(SurfaceResult.Fullscreen);
-                    break;
                 case Keys.Enter:
                     Close(SurfaceResult.Region);
                     break;
