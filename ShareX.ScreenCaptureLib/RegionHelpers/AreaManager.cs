@@ -337,11 +337,12 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (IsCreating)
                 {
+                    CancelRegionSelection();
                     EndRegionSelection();
                 }
                 else
                 {
-                    cmsContextMenu.Show(surface, e.Location.Add(-cmsContextMenu.Width / 2, -10));
+                    cmsContextMenu.Show(surface, e.Location.Add(-10, -10));
                 }
             }
         }
@@ -660,8 +661,7 @@ namespace ShareX.ScreenCaptureLib
                     SelectArea();
                 }
             }
-
-            if (!CurrentHoverRectangle.IsEmpty)
+            else if (!CurrentHoverRectangle.IsEmpty)
             {
                 AddRegionShape(CurrentHoverRectangle);
 
@@ -679,17 +679,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void CancelRegionSelection()
         {
-            // TODO
             BaseShape shape = AreaIntersect();
 
             if (shape != null)
             {
                 Shapes.Remove(shape);
                 DeselectArea();
-            }
-            else
-            {
-                surface.Close(SurfaceResult.Close);
             }
         }
 
