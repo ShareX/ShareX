@@ -37,7 +37,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class Surface : Form
+    public abstract class SurfaceForm : Form
     {
         public Image SurfaceImage { get; set; }
         public SurfaceOptions Config { get; set; }
@@ -62,7 +62,7 @@ namespace ShareX.ScreenCaptureLib
 
         private bool pause;
 
-        public Surface()
+        public SurfaceForm()
         {
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
             ScreenRectangle0Based = CaptureHelpers.ScreenToClient(ScreenRectangle);
@@ -459,7 +459,7 @@ namespace ShareX.ScreenCaptureLib
 
         public static bool SelectRegion(out Rectangle rect, SurfaceOptions options)
         {
-            using (RectangleRegion surface = new RectangleRegion())
+            using (RectangleRegionForm surface = new RectangleRegionForm())
             {
                 surface.Config = options;
                 surface.Config.ShowTips = false;

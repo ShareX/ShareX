@@ -31,14 +31,14 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class FreeHandRegion : Surface
+    public class FreeHandRegionForm : SurfaceForm
     {
         private NodeObject lastNode;
         private List<Point> points;
         private bool isAreaCreated;
         private Rectangle currentArea;
 
-        public FreeHandRegion()
+        public FreeHandRegionForm()
         {
             points = new List<Point>(128);
             regionFillPath = new GraphicsPath();

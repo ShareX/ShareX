@@ -160,7 +160,7 @@ namespace ShareX.ScreenCaptureLib
                 Thread.Sleep(250);
 
                 Rectangle rect;
-                if (Surface.SelectRegion(out rect))
+                if (SurfaceForm.SelectRegion(out rect))
                 {
                     selectedRectangle = rect;
                     lblSelectedRectangle.Text = selectedRectangle.ToString();
@@ -186,7 +186,7 @@ namespace ShareX.ScreenCaptureLib
 
         private SimpleWindowInfo GetWindowInfo()
         {
-            using (RectangleRegion surface = new RectangleRegion())
+            using (RectangleRegionForm surface = new RectangleRegionForm())
             {
                 surface.OneClickMode = true;
                 surface.Config.DetectWindows = true;

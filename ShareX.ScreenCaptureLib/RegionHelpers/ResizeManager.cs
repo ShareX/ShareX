@@ -65,7 +65,7 @@ namespace ShareX.ScreenCaptureLib
         private NodeObject[] nodes;
         private Rectangle tempRect;
 
-        public ResizeManager(Surface surface, AreaManager areaManager)
+        public ResizeManager(SurfaceForm surface, AreaManager areaManager)
         {
             this.areaManager = areaManager;
 

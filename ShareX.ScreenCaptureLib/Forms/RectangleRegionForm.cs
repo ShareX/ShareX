@@ -35,7 +35,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleRegion : Surface
+    public class RectangleRegionForm : SurfaceForm
     {
         public AreaManager AreaManager { get; private set; }
 
@@ -75,7 +75,7 @@ namespace ShareX.ScreenCaptureLib
 
         private ColorBlinkAnimation colorBlinkAnimation = new ColorBlinkAnimation();
 
-        public RectangleRegion()
+        public RectangleRegionForm()
         {
             AreaManager = new AreaManager(this);
 

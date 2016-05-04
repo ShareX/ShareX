@@ -142,10 +142,10 @@ namespace ShareX.ScreenCaptureLib
         public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; } = 3;
 
-        private RectangleRegion surface;
+        private RectangleRegionForm surface;
         private ContextMenuStrip cmsShapeMenu;
 
-        public AreaManager(RectangleRegion surface)
+        public AreaManager(RectangleRegionForm surface)
         {
             this.surface = surface;
 

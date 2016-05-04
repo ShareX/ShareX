@@ -32,13 +32,13 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class PolygonRegion : Surface
+    public class PolygonRegionForm : SurfaceForm
     {
         private List<NodeObject> nodes;
         private bool isAreaCreated;
         private Rectangle currentArea;
 
-        public PolygonRegion()
+        public PolygonRegionForm()
         {
             nodes = new List<NodeObject>();
             MouseDown += PolygonRegionSurface_MouseDown;

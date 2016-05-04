@@ -308,12 +308,12 @@ namespace ShareX
 
         public static bool SelectRegion(out Rectangle rect, TaskSettings taskSettings)
         {
-            return Surface.SelectRegion(out rect, taskSettings.CaptureSettings.SurfaceOptions);
+            return SurfaceForm.SelectRegion(out rect, taskSettings.CaptureSettings.SurfaceOptions);
         }
 
         public static PointInfo SelectPointColor()
         {
-            using (RectangleRegion surface = new RectangleRegion())
+            using (RectangleRegionForm surface = new RectangleRegionForm())
             {
                 surface.ScreenColorPickerMode = true;
                 surface.Config.DetectWindows = false;
@@ -538,7 +538,7 @@ namespace ShareX
 
         public static void OpenRuler()
         {
-            using (RectangleRegion surface = new RectangleRegion())
+            using (RectangleRegionForm surface = new RectangleRegionForm())
             {
                 surface.RulerMode = true;
                 surface.Config.ShowTips = false;

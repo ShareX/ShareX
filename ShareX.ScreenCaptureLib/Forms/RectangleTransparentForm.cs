@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleLight : Form
+    public class RectangleTransparentForm : LayeredForm
     {
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
@@ -58,26 +58,50 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private Rectangle PreviousSelectionRectangle { get; set; }
+
+        private Rectangle PreviousSelectionRectangle0Based
+        {
+            get
+            {
+                return new Rectangle(PreviousSelectionRectangle.X - ScreenRectangle.X, PreviousSelectionRectangle.Y - ScreenRectangle.Y,
+                    PreviousSelectionRectangle.Width, PreviousSelectionRectangle.Height);
+            }
+        }
+
         private Timer timer;
-        private Image backgroundImage;
-        private TextureBrush backgroundBrush;
-        private Pen borderDotPen, borderDotPen2;
+        private Bitmap surface;
+        private Graphics gSurface;
+        private Pen clearPen, borderDotPen, borderDotPen2;
         private Point currentPosition, positionOnClick;
         private bool isMouseDown;
         private Stopwatch penTimer;
 
-        public RectangleLight()
+        public RectangleTransparentForm()
         {
-            backgroundImage = Screenshot.CaptureFullscreen();
-            backgroundBrush = new TextureBrush(backgroundImage);
+            clearPen = new Pen(Color.FromArgb(1, 0, 0, 0));
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
             penTimer = Stopwatch.StartNew();
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
 
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
+            surface = new Bitmap(ScreenRectangle.Width, ScreenRectangle.Height);
+            gSurface = Graphics.FromImage(surface);
+            gSurface.InterpolationMode = InterpolationMode.NearestNeighbor;
+            gSurface.SmoothingMode = SmoothingMode.HighSpeed;
+            gSurface.CompositingMode = CompositingMode.SourceCopy;
+            gSurface.CompositingQuality = CompositingQuality.HighSpeed;
+            gSurface.Clear(Color.FromArgb(1, 0, 0, 0));
+
+            StartPosition = FormStartPosition.Manual;
+            Bounds = ScreenRectangle;
+            Text = "ShareX - " + Resources.RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent;
+
+            Shown += RectangleLight_Shown;
+            KeyUp += RectangleLight_KeyUp;
+            MouseDown += RectangleLight_MouseDown;
+            MouseUp += RectangleLight_MouseUp;
 
             using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
             {
@@ -92,34 +116,13 @@ namespace ShareX.ScreenCaptureLib
         protected override void Dispose(bool disposing)
         {
             if (timer != null) timer.Dispose();
-            if (backgroundImage != null) backgroundImage.Dispose();
-            if (backgroundBrush != null) backgroundBrush.Dispose();
+            if (clearPen != null) clearPen.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
             if (borderDotPen2 != null) borderDotPen2.Dispose();
+            if (gSurface != null) gSurface.Dispose();
+            if (surface != null) surface.Dispose();
 
             base.Dispose(disposing);
-        }
-
-        private void InitializeComponent()
-        {
-            SuspendLayout();
-
-            AutoScaleDimensions = new SizeF(6F, 13F);
-            AutoScaleMode = AutoScaleMode.Font;
-            StartPosition = FormStartPosition.Manual;
-            Bounds = ScreenRectangle;
-            FormBorderStyle = FormBorderStyle.None;
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Text = "ShareX - " + Resources.RectangleLight_InitializeComponent_Rectangle_capture_light;
-            ShowInTaskbar = false;
-            TopMost = true;
-
-            Shown += RectangleLight_Shown;
-            KeyUp += RectangleLight_KeyUp;
-            MouseDown += RectangleLight_MouseDown;
-            MouseUp += RectangleLight_MouseUp;
-
-            ResumeLayout(false);
         }
 
         private void RectangleLight_Shown(object sender, EventArgs e)
@@ -164,7 +167,6 @@ namespace ShareX.ScreenCaptureLib
                 if (isMouseDown)
                 {
                     isMouseDown = false;
-                    Refresh();
                 }
                 else
                 {
@@ -179,12 +181,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (rect.Width > 0 && rect.Height > 0)
             {
-                if (rect.X == 0 && rect.Y == 0 && rect.Width == backgroundImage.Width && rect.Height == backgroundImage.Height)
-                {
-                    return (Image)backgroundImage.Clone();
-                }
-
-                return ImageHelpers.CropImage(backgroundImage, rect);
+                return Screenshot.CaptureRectangle(SelectionRectangle);
             }
 
             return null;
@@ -193,31 +190,31 @@ namespace ShareX.ScreenCaptureLib
         private void timer_Tick(object sender, EventArgs e)
         {
             currentPosition = CaptureHelpers.GetCursorPosition();
+            PreviousSelectionRectangle = SelectionRectangle;
             SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
 
-            Refresh();
+            try
+            {
+                RefreshSurface();
+            }
+            catch
+            {
+            }
         }
 
-        protected override void OnPaintBackground(PaintEventArgs e)
+        private void RefreshSurface()
         {
-            //base.OnPaintBackground(e);
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            g.InterpolationMode = InterpolationMode.NearestNeighbor;
-            g.SmoothingMode = SmoothingMode.HighSpeed;
-            g.CompositingMode = CompositingMode.SourceCopy;
-            g.CompositingQuality = CompositingQuality.HighSpeed;
-            g.FillRectangle(backgroundBrush, ScreenRectangle0Based);
+            // Clear previous rectangle selection
+            gSurface.DrawRectangleProper(clearPen, PreviousSelectionRectangle0Based);
 
             if (isMouseDown)
             {
                 borderDotPen2.DashOffset = (float)penTimer.Elapsed.TotalSeconds * -15;
-                g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
-                g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
+                gSurface.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
+                gSurface.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
             }
+
+            SelectBitmap(surface);
         }
     }
 }

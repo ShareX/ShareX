@@ -2075,19 +2075,19 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         private void CaptureRegion(CaptureType captureType, TaskSettings taskSettings, bool autoHideForm = true)
         {
-            Surface surface;
+            SurfaceForm surface;
 
             switch (captureType)
             {
                 default:
                 case CaptureType.Rectangle:
-                    surface = new RectangleRegion();
+                    surface = new RectangleRegionForm();
                     break;
                 case CaptureType.Polygon:
-                    surface = new PolygonRegion();
+                    surface = new PolygonRegionForm();
                     break;
                 case CaptureType.Freehand:
-                    surface = new FreeHandRegion();
+                    surface = new FreeHandRegionForm();
                     break;
             }
 
@@ -2175,7 +2175,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             {
                 Image img = null;
 
-                using (RectangleAnnotate rectangleAnnotate = new RectangleAnnotate(taskSettings.CaptureSettingsReference.RectangleAnnotateOptions))
+                using (RectangleAnnotateForm rectangleAnnotate = new RectangleAnnotateForm(taskSettings.CaptureSettingsReference.RectangleAnnotateOptions))
                 {
                     if (rectangleAnnotate.ShowDialog() == DialogResult.OK)
                     {
@@ -2200,7 +2200,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             {
                 Image img = null;
 
-                using (RectangleLight rectangleLight = new RectangleLight())
+                using (RectangleLightForm rectangleLight = new RectangleLightForm())
                 {
                     if (rectangleLight.ShowDialog() == DialogResult.OK)
                     {
@@ -2225,7 +2225,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             {
                 Image img = null;
 
-                using (RectangleTransparent rectangleTransparent = new RectangleTransparent())
+                using (RectangleTransparentForm rectangleTransparent = new RectangleTransparentForm())
                 {
                     if (rectangleTransparent.ShowDialog() == DialogResult.OK)
                     {
@@ -2247,13 +2247,13 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             switch (lastRegionCaptureType)
             {
                 case LastRegionCaptureType.Surface:
-                    if (Surface.LastRegionFillPath != null)
+                    if (SurfaceForm.LastRegionFillPath != null)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = Screenshot.CaptureFullscreen())
                             {
-                                return ShapeCaptureHelpers.GetRegionImage(screenshot, Surface.LastRegionFillPath, Surface.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
+                                return ShapeCaptureHelpers.GetRegionImage(screenshot, SurfaceForm.LastRegionFillPath, SurfaceForm.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
@@ -2263,13 +2263,13 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     }
                     break;
                 case LastRegionCaptureType.Light:
-                    if (!RectangleLight.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RectangleLightForm.LastSelectionRectangle0Based.IsEmpty)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = Screenshot.CaptureFullscreen())
                             {
-                                return ImageHelpers.CropImage(screenshot, RectangleLight.LastSelectionRectangle0Based);
+                                return ImageHelpers.CropImage(screenshot, RectangleLightForm.LastSelectionRectangle0Based);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
@@ -2279,13 +2279,13 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     }
                     break;
                 case LastRegionCaptureType.Transparent:
-                    if (!RectangleTransparent.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RectangleTransparentForm.LastSelectionRectangle0Based.IsEmpty)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = Screenshot.CaptureFullscreen())
                             {
-                                return ImageHelpers.CropImage(screenshot, RectangleTransparent.LastSelectionRectangle0Based);
+                                return ImageHelpers.CropImage(screenshot, RectangleTransparentForm.LastSelectionRectangle0Based);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
@@ -2295,13 +2295,13 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     }
                     break;
                 case LastRegionCaptureType.Annotate:
-                    if (!RectangleAnnotate.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RectangleAnnotateForm.LastSelectionRectangle0Based.IsEmpty)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = Screenshot.CaptureFullscreen())
                             {
-                                return ImageHelpers.CropImage(screenshot, RectangleAnnotate.LastSelectionRectangle0Based);
+                                return ImageHelpers.CropImage(screenshot, RectangleAnnotateForm.LastSelectionRectangle0Based);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }

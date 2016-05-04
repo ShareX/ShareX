@@ -36,7 +36,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleAnnotate : Form
+    public class RectangleAnnotateForm : Form
     {
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
@@ -95,7 +95,7 @@ namespace ShareX.ScreenCaptureLib
         private Stopwatch penTimer;
         private Font infoFont;
 
-        public RectangleAnnotate(RectangleAnnotateOptions options)
+        public RectangleAnnotateForm(RectangleAnnotateOptions options)
         {
             Options = options;
 

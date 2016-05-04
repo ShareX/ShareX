@@ -60,10 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums.cs" />
-    <Compile Include="Forms\RectangleAnnotate.cs">
+    <Compile Include="Forms\RectangleAnnotateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RectangleTransparent.cs">
+    <Compile Include="Forms\RectangleTransparentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ScrollingCaptureForm.cs">
@@ -97,10 +97,10 @@
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screencast\ScreencastOptions.cs" />
-    <Compile Include="Forms\RectangleLight.cs">
+    <Compile Include="Forms\RectangleLightForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Surface.cs">
+    <Compile Include="Forms\SurfaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screencast\ImageCache.cs" />
@@ -112,13 +112,13 @@
     </Compile>
     <Compile Include="RegionHelpers\AreaManager.cs" />
     <Compile Include="RegionHelpers\DrawObject.cs" />
-    <Compile Include="Forms\FreeHandRegion.cs">
+    <Compile Include="Forms\FreeHandRegionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PolygonRegion.cs">
+    <Compile Include="Forms\PolygonRegionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RectangleRegion.cs">
+    <Compile Include="Forms\RectangleRegionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegionHelpers\InputManager.cs" />
