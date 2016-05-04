@@ -152,9 +152,6 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
     <value>[Pijltjestoetsen] Pas geselecteerde regio aan van {0}</value>
   </data>
-  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
-    <value>[C] {0} schermbreed vizier</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
     <value>[Ctrl + Pijltjestoetsen] Verplaats muis sneller</value>
   </data>
@@ -179,17 +176,11 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
     <value>[Pijltjestoetsen] Verplaats positie muis</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Scrollwiel] Verander schaal vergrootglas</value>
-  </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
     <value>[~] Neem actief scherm op</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
     <value>[Shift ingedrukt houden] Proportioneel schalen</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl + scrollwiel] Wijzig grootte vergrootglas</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Rechthoek vastleggen (snel)</value>
@@ -236,23 +227,11 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Linkermuisknop ingedrukt houden bij selectie] Verplaats regio</value>
   </data>
-  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
-    <value>[M] {0} vergroting</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
-    <value>[I] Informatie over {0} positie en grootte</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
     <value>[Shift ingedrukt houden] Verplaats gelecteerde regio in plaats van schalen</value>
   </data>
   <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
     <value>rechtsbeneden</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
-    <value>Verberg</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
-    <value>Toon</value>
   </data>
   <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
     <value>linksboven</value>
@@ -280,12 +259,6 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
     <value>[Numpad 5] Diamantvorm</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
-    <value>[Q] Activeer multi regio modus</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
-    <value>[Q] Activeer snel vastleggen modus</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
     <value>[Rechterklik] [Esc] Annuleer vastleggen</value>

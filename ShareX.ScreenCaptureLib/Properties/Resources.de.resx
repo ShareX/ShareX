@@ -149,9 +149,6 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
     <value>[Pfeiltasten] Größe der Ausgewählten Region von {0} ändern</value>
   </data>
-  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
-    <value>[C] {0} bildschirmweites Fadenkreuz</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
     <value>[Strg + Pfeiltasten] Zeigerposition schneller ändern</value>
   </data>
@@ -176,17 +173,11 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
     <value>[Pfeiltasten] Zeigerposition ändern</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Mausrad] Pixelanzahl der Lupe ändern</value>
-  </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
     <value>[~] Aufnahme aktiver Bildschirm</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
     <value>[Umschalttaste halten] Größe proportional ändern</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Strg + Mausrad] Pixelgröße der Lupe ändern</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Rechteckaufnahme leicht</value>
@@ -239,14 +230,8 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
     <value>[Umschalttaste halten] Ausgewählte Region verschieben statt Größe zu ändern</value>
   </data>
-  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
-    <value>[I] {0} Positions- und Größeninformation</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Linksklick loslassen] [Einf] Regionsauswahl beenden</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
-    <value>[M] {0} Lupe</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[Numpad + oder -] Radius der abgerundeten Rechteck Ecken ändern</value>
@@ -278,12 +263,6 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
     <value>unten rechts</value>
   </data>
-  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
-    <value>Verstecken</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
-    <value>Zeigen</value>
-  </data>
   <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
     <value>oben links</value>
   </data>
@@ -295,12 +274,6 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Leertaste] Vollbild Aufnahme</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
-    <value>[Q] Multi-Regionen Modus aktivieren</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
-    <value>[Q] Schnellaufnahme Modus aktivieren</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
     <value>[Rechtsklick] [Esc] Aufnahme abbrechen</value>

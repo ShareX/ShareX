@@ -293,15 +293,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [C] {0} screen wide crosshair.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__C___0__screen_wide_crosshair {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__C___0__screen_wide_crosshair", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to [Ctrl + Arrow keys] Move cursor position faster.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster {
@@ -334,15 +325,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size {
             get {
                 return ResourceManager.GetString("RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Ctrl + Mouse wheel] Change magnifier pixel size.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size", resourceCulture);
             }
         }
         
@@ -428,38 +410,11 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [I] {0} position and size info.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__I___0__position_and_size_info {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__I___0__position_and_size_info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to [Release left click] [Insert] Finish region selection.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Insert__Stop_region_selection {
             get {
                 return ResourceManager.GetString("RectangleRegion_WriteTips__Insert__Stop_region_selection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [M] {0} magnifier.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__M___0__magnifier {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__M___0__magnifier", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Mouse wheel] Change magnifier pixel count.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count", resourceCulture);
             }
         }
         
@@ -527,24 +482,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Q] Activate multi region mode.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Q__Activate_multi_region_mode {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Q__Activate_multi_region_mode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Q] Activate quick capture mode.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Q__Activate_quick_capture_mode {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Q__Activate_quick_capture_mode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to [Right click] [Esc] Cancel capture.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture {
@@ -595,24 +532,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string RectangleRegion_WriteTips_bottom_right {
             get {
                 return ResourceManager.GetString("RectangleRegion_WriteTips_bottom_right", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hide.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips_Hide {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips_Hide", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips_Show {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips_Show", resourceCulture);
             }
         }
         

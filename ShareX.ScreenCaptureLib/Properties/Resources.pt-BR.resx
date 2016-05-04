@@ -153,12 +153,6 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] Copiar informações</value>
   </data>
-  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
-    <value>Esconder</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
-    <value>Mostrar</value>
-  </data>
   <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
     <value>[F1] Esconder dicas</value>
   </data>
@@ -171,17 +165,11 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
     <value>[Setas do teclado] Mover posição do cursor</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Scroll] Alterar contagem de pixels da lupa</value>
-  </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
     <value>[~] Ativar captura de monitor</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
     <value>[Segure Shift] Redimensionamento proporcional</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl + Scroll] Alterar tamanho de pixel da lupa</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Captura de retângulo leve</value>
@@ -227,15 +215,6 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
     <value>[Ctrl + C] Copiar posição e tamanho</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
-    <value>[M] {0} lupa</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
-    <value>[Q] Ativar modo de região múltipla</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
-    <value>[Q] Ativar modo de captura rápida</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Segurar botão esquerdo na seleção] Mover região</value>
@@ -288,14 +267,8 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
     <value>[Tab] Trocar âncora de redimensionamento para {0}</value>
   </data>
-  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
-    <value>[C] {0} cruz do tamanho da tela</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
     <value>[Segure Alt] Travar redimensionamento para tamanhos pré-definidos</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
-    <value>[I] {0} informação de tamanho e posição</value>
   </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Soltar o botão esquerdo][Insert] Parar seleção de região</value>

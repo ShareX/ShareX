@@ -187,9 +187,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Oemtilde:
                     Close(SurfaceResult.ActiveMonitor);
                     break;
-                case Keys.Q:
-                    Config.QuickCrop = !Config.QuickCrop;
-                    break;
             }
         }
 

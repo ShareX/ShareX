@@ -123,9 +123,6 @@
   <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
     <value>[Ctrl + Arrow keys] Move cursor position faster</value>
   </data>
-  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
-    <value>Show</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Right click] [Delete] Cancel region selection</value>
   </data>
@@ -179,14 +176,8 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Right click on selection] [Delete] Remove region</value>
   </data>
-  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
-    <value>[C] {0} screen wide crosshair</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
     <value>[Arrow keys] Resize selected region from {0}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
-    <value>[Q] Activate multi region mode</value>
   </data>
   <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
     <value>[Tab] Swap resize anchor to {0}</value>
@@ -206,9 +197,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Crosshair.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
-    <value>[M] {0} magnifier</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[Hold left click] [Insert] Start region selection</value>
@@ -231,9 +219,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
     <value>[Right click] [Esc] Cancel capture</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
-    <value>[Q] Activate quick capture mode</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
     <value>[Numpad 2] Rounded rectangle shape</value>
   </data>
@@ -248,12 +233,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] Copy info</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
-    <value>[I] {0} position and size info</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
-    <value>Hide</value>
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Rectangle capture transparent</value>
@@ -276,17 +255,11 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
     <value>[Arrow keys] Move cursor position</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Mouse wheel] Change magnifier pixel count</value>
-  </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
     <value>[~] Active monitor capture</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
     <value>[Hold Shift] Proportional resizing</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl + Mouse wheel] Change magnifier pixel size</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Rectangle capture light</value>

@@ -155,23 +155,8 @@
   <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
     <value>сверху слева</value>
   </data>
-  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
-    <value>[C] {0} полноэкранный курсор</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
-    <value>Спрятать</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
-    <value>Показать</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
     <value>[Tab] Якорь масштабирования {0}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
-    <value>[Q] Режим "Несколько областей"</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
-    <value>[Q] Режим "Быстрый захват"</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
     <value>[ПКМ] [Esc] Отменить захват</value>
@@ -206,17 +191,11 @@
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
     <value>[Клавиши со стрелками] Двигать курсор</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Колесо мыши] Изменить количество пикселей лупы</value>
-  </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
     <value>[~] Захват активного монитора</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
     <value>[Удерживание Shift] Пропорциональное масштабирование</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl + Колесо мыши] Размер пикселей лупы</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Упрощенный захват области</value>
@@ -272,14 +251,8 @@
   <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
     <value>[Удерживание Shift] Двигать выбранную область вместо масштабирования</value>
   </data>
-  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
-    <value>[I] {0} информацию о позиции и размере</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Отпустить ЛКМ] [Insert] Закончить выбор области</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
-    <value>[M] {0} лупу</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[+ или - на циф. клавиатуре] Изменить радиус скругления</value>

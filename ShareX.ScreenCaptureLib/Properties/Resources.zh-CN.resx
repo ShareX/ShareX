@@ -152,9 +152,6 @@
   <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
     <value>[Ctrl + 方向键] 快速移动光标位置</value>
   </data>
-  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
-    <value>显示</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Right click] [Delete] 取消区域选择</value>
   </data>
@@ -188,14 +185,8 @@
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[右键单击选择区域][Delete]删除区域</value>
   </data>
-  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
-    <value>[C]{0}屏宽十字线</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
     <value>[方向键]从{0}调整所选区域</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
-    <value>[Q]启动多区域模式</value>
   </data>
   <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
     <value>[Tab]互换调整锚点大小至{0}</value>
@@ -208,9 +199,6 @@
   </data>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
     <value>[数字键盘+或 - ]更改三角形夹角</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
-    <value>[M]{0}放大镜</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[按住左键] [Insert]启动区域选择</value>
@@ -227,9 +215,6 @@
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
     <value>[点击右键] [Esc]取消捕捉</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
-    <value>[Q]启动快速捕捉模式</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
     <value>[小键盘2]圆角矩形</value>
   </data>
@@ -241,12 +226,6 @@
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] 复制信息</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
-    <value>[I]{0}位置和大小信息</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
-    <value>隐藏</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
     <value>[Ctrl + C] 复制位置信息</value>
@@ -266,17 +245,11 @@
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
     <value>[方向键]移动光标的位置</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[鼠标滚轮]更改放大镜像素大小</value>
-  </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
     <value>[〜]捕获活动显示器</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
     <value>[按住Shift]比例调整</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl +鼠标滚轮]更改放大镜像素大小</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>矩形捕捉光</value>

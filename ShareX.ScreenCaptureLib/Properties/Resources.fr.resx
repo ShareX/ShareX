@@ -149,9 +149,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Capture rectangle transparent</value>
   </data>
-  <data name="RectangleRegion_WriteTips_Hide" xml:space="preserve">
-    <value>Cacher</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
     <value>[Ctrl + C] Copier la position</value>
   </data>
@@ -170,17 +167,11 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
     <value>[Touches fléchées] Déplacer la position du curseur</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count" xml:space="preserve">
-    <value>[Molette de la souris] Changer le nombre de pixels de la loupe</value>
-  </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
     <value>[~] [ù] Capturer l'écran actif</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
     <value>[Maintenir Maj] Redimensionnement proportionnel</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size" xml:space="preserve">
-    <value>[Ctrl + Molette de la souris] Changer la taille de la loupe</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Capture rectangulaire simple</value>
@@ -218,17 +209,11 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>Arrêter</value>
   </data>
-  <data name="RectangleRegion_WriteTips_Show" xml:space="preserve">
-    <value>Afficher</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
     <value>[Clic droit] [Echap] Annuler la capture</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Espace] Capture plein écran</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__M___0__magnifier" xml:space="preserve">
-    <value>[M] {0} la loupe</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
     <value>[Pavé numérique 3] Forme elliptique</value>
@@ -245,17 +230,8 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
     <value>[Pavé numérique 5] Forme de losange</value>
   </data>
-  <data name="RectangleRegion_WriteTips__I___0__position_and_size_info" xml:space="preserve">
-    <value>[I] {0} les infos sur la position et la taille</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] Copier les infos</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_quick_capture_mode" xml:space="preserve">
-    <value>[Q] Activer le mode de capture rapide</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Q__Activate_multi_region_mode" xml:space="preserve">
-    <value>[Q] Activer le mode de capture de plusieurs régions</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[Pavé numérique + ou -] Modifier le rayon du coin du rectangle arrondi</value>
@@ -274,9 +250,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[Maintenir clic gauche] [Inser] Débuter la sélection de la région</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__C___0__screen_wide_crosshair" xml:space="preserve">
-    <value>[C] {0} le réticule</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
     <value>[Maintenir Ctrl] Redimensionner / Déplacer plus rapidement</value>

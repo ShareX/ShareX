@@ -104,15 +104,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.F1:
                     Config.ShowTips = !Config.ShowTips;
                     break;
-                case Keys.I:
-                    Config.ShowInfo = !Config.ShowInfo;
-                    break;
-                case Keys.C:
-                    Config.ShowCrosshair = !Config.ShowCrosshair;
-                    break;
-                case Keys.M:
-                    Config.ShowMagnifier = !Config.ShowMagnifier;
-                    break;
                 case Keys.Control | Keys.C:
                     CopyAreaInfo();
                     break;
@@ -443,26 +434,10 @@ namespace ShareX.ScreenCaptureLib
 
             sb.AppendLine();
 
+            // TODO: Find new hotkey
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Space__Fullscreen_capture);
             sb.AppendLine(Resources.RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture);
             sb.AppendLine(Resources.RectangleRegion_WriteTips_____Active_monitor_capture);
-
-            sb.AppendLine();
-
-            if (Config.QuickCrop)
-            {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Q__Activate_multi_region_mode);
-            }
-            else
-            {
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Q__Activate_quick_capture_mode);
-            }
-
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__Mouse_wheel__Change_magnifier_pixel_count);
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_pixel_size);
-            sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__I___0__position_and_size_info, Config.ShowInfo ? Resources.RectangleRegion_WriteTips_Hide : Resources.RectangleRegion_WriteTips_Show));
-            sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__M___0__magnifier, Config.ShowMagnifier ? Resources.RectangleRegion_WriteTips_Hide : Resources.RectangleRegion_WriteTips_Show));
-            sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__C___0__screen_wide_crosshair, Config.ShowCrosshair ? Resources.RectangleRegion_WriteTips_Hide : Resources.RectangleRegion_WriteTips_Show));
 
             sb.AppendLine();
 
@@ -477,7 +452,7 @@ namespace ShareX.ScreenCaptureLib
             if (AreaManager.CurrentShapeType == ShapeType.RegionDiamond) sb.Append("-> ");
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_5__Diamond_shape);
 
-            //TODO: Translate
+            // TODO: Translate
             if (AreaManager.CurrentShapeType == ShapeType.DrawingRectangle) sb.Append("-> ");
             sb.AppendLine("[Numpad 7] Rectangle drawing");
             if (AreaManager.CurrentShapeType == ShapeType.DrawingRoundedRectangle) sb.Append("-> ");
