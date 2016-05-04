@@ -77,8 +77,6 @@ namespace ShareX.ScreenCaptureLib
 
         public RectangleRegionForm()
         {
-            AreaManager = new AreaManager(this);
-
             KeyDown += RectangleRegion_KeyDown;
             MouseDown += RectangleRegion_MouseDown;
             MouseWheel += RectangleRegion_MouseWheel;
@@ -170,6 +168,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (Config != null)
             {
+                AreaManager = new AreaManager(this);
                 AreaManager.WindowCaptureMode = Config.DetectWindows;
                 AreaManager.IncludeControls = Config.DetectControls;
 
@@ -185,11 +184,11 @@ namespace ShareX.ScreenCaptureLib
                         AreaManager.Windows = wla.GetWindowInfoListAsync(5000);
                     });
                 }
-            }
 
-            if (Config.UseCustomInfoText || ScreenColorPickerMode)
-            {
-                bmpSurfaceImage = new Bitmap(SurfaceImage);
+                if (Config.UseCustomInfoText || ScreenColorPickerMode)
+                {
+                    bmpSurfaceImage = new Bitmap(SurfaceImage);
+                }
             }
         }
 

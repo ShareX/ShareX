@@ -84,6 +84,18 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public decimal Increment
+        {
+            get
+            {
+                return nudValue.Increment;
+            }
+            set
+            {
+                nudValue.Increment = value;
+            }
+        }
+
         public EventHandler ValueChanged;
 
         public LabeledNumericUpDown()
