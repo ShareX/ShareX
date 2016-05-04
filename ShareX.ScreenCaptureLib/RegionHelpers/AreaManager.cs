@@ -484,6 +484,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.Delete:
                     RemoveCurrentArea();
+
                     if (IsCreating)
                     {
                         EndRegionSelection();
@@ -677,17 +678,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void CancelRegionSelection()
-        {
-            BaseShape shape = AreaIntersect();
-
-            if (shape != null)
-            {
-                Shapes.Remove(shape);
-                DeselectArea();
-            }
-        }
-
         private void AddRegionShape(Rectangle rect)
         {
             BaseShape shape = CreateRegionShape(rect);
@@ -759,6 +749,17 @@ namespace ShareX.ScreenCaptureLib
         {
             CurrentShape = null;
             ResizeManager.Hide();
+        }
+
+        private void CancelRegionSelection()
+        {
+            BaseShape shape = AreaIntersect();
+
+            if (shape != null)
+            {
+                Shapes.Remove(shape);
+                DeselectArea();
+            }
         }
 
         private void RemoveCurrentArea()

@@ -261,13 +261,13 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
     <value>[Numpad 5] Diamantvorm</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Rechterklik] [Esc] Annuleer vastleggen</value>
+    <value>[Esc] Annuleer vastleggen</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Rechterklik] [Delete] Annuleer selectie regio</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Rechterklik op selectie] [Delete] Verwijder regio</value>
+    <value>[Delete] Verwijder regio</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Spatie] Leg volledig scherm vast</value>

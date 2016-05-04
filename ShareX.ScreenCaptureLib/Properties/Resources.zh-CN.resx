@@ -183,7 +183,7 @@
     <value>[小键盘4]三角形状</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[右键单击选择区域][Delete]删除区域</value>
+    <value>[Delete]删除区域</value>
   </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
     <value>[方向键]从{0}调整所选区域</value>
@@ -213,7 +213,7 @@
     <value>[按住Alt键]重置捕捉选择区域至预设大小</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[点击右键] [Esc]取消捕捉</value>
+    <value>[Esc]取消捕捉</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
     <value>[小键盘2]圆角矩形</value>

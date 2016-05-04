@@ -276,12 +276,12 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
     <value>[Leertaste] Vollbild Aufnahme</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Rechtsklick] [Esc] Aufnahme abbrechen</value>
+    <value>[Esc] Aufnahme abbrechen</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Rechtsklick] [Entf] Regionsauswahl abbrechen</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Rechtsklick auf Auswahl] [Entf] Region entfernen</value>
+    <value>[Entf] Region entfernen</value>
   </data>
 </root>

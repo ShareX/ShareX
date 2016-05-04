@@ -261,13 +261,13 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
     <value>[Tuş takımı 5] Elmas şekli</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Sağ tık] [Esc] Yakalamayı iptal et</value>
+    <value>[Esc] Yakalamayı iptal et</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Sağ tık] Alan seçimini iptal et</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Sağ tık seçim üstünde] [Delete] Alanı sil</value>
+    <value>[Delete] Alanı sil</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Space] Tam ekran yakala</value>

@@ -210,7 +210,7 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
     <value>Arrêter</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Clic droit] [Echap] Annuler la capture</value>
+    <value>[Echap] Annuler la capture</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Espace] Capture plein écran</value>
@@ -240,7 +240,7 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
     <value>[Clic droit] [Suppr] Annuler la sélection de la région</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Clic droit sur la sélection] [Suppr] Supprimer la région</value>
+    <value>[Suppr] Supprimer la région</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
     <value>[Pavé numérique + ou -] Changer l'angle du triangle</value>

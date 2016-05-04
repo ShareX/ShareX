@@ -386,6 +386,8 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection);
+                // TODO: Translate
+                sb.AppendLine("[Right click] Open region capture menu");
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture);
             }
 

@@ -202,7 +202,7 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[Ctrl + Scroll] Alterar tamanho da caneta</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Botão Direito] [Esc] Cancelar captura</value>
+    <value>[Esc] Cancelar captura</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Botão Direito] Cancelar seleção de região</value>
@@ -229,7 +229,7 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>[Ctrl + Setas do teclado] Mover posição do cursor mais rapido</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Botão Direito na seleção] [Delete] Remover região</value>
+    <value>[Delete] Remover região</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
     <value>[Teclado numérico 1] Formato de retângulo</value>

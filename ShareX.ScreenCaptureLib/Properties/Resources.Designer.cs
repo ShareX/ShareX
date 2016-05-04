@@ -482,7 +482,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Right click] [Esc] Cancel capture.
+        ///   Looks up a localized string similar to [Esc] Cancel capture.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture {
             get {
@@ -500,7 +500,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Right click on selection] [Delete] Remove region.
+        ///   Looks up a localized string similar to [Delete] Remove region.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region {
             get {
