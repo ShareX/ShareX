@@ -461,6 +461,7 @@ namespace ShareX.ScreenCaptureLib
             switch (AreaManager.CurrentShapeType)
             {
                 case ShapeType.RegionRoundedRectangle:
+                case ShapeType.DrawingRoundedRectangle:
                     sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius);
                     break;
                 case ShapeType.RegionTriangle:

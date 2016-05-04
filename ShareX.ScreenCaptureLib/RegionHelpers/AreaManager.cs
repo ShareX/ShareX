@@ -166,13 +166,6 @@ namespace ShareX.ScreenCaptureLib
         private void CreateContextMenu()
         {
             cmsContextMenu = new ContextMenuStrip();
-            cmsContextMenu.KeyDown += (sender, e) =>
-            {
-                if (e.KeyCode == Keys.Space)
-                {
-                    cmsContextMenu.Close();
-                }
-            };
 
             foreach (ShapeType shapeType in Helpers.GetEnums<ShapeType>())
             {
@@ -405,9 +398,6 @@ namespace ShareX.ScreenCaptureLib
                             break;
                     }
                     break;
-                case Keys.Space:
-                    cmsContextMenu.Show(Cursor.Position.X, Cursor.Position.Y);
-                    break;
             }
         }
 
@@ -595,11 +585,13 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (e.Button == MouseButtons.Right)
             {
-                CancelRegionSelection();
-
                 if (IsCreating)
                 {
                     EndRegionSelection();
+                }
+                else
+                {
+                    cmsContextMenu.Show(surface, e.Location);
                 }
             }
         }
@@ -683,6 +675,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void CancelRegionSelection()
         {
+            // TODO
             BaseShape shape = AreaIntersect();
 
             if (shape != null)
