@@ -434,7 +434,6 @@ namespace ShareX.ScreenCaptureLib
 
             sb.AppendLine();
 
-            // TODO: Find new hotkey
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Space__Fullscreen_capture);
             sb.AppendLine(Resources.RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture);
             sb.AppendLine(Resources.RectangleRegion_WriteTips_____Active_monitor_capture);

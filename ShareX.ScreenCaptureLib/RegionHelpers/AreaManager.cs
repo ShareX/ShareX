@@ -167,6 +167,16 @@ namespace ShareX.ScreenCaptureLib
         {
             cmsContextMenu = new ContextMenuStrip();
 
+            ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem("Cancel capture");
+            tsmiCancelCapture.Click += (sender, e) => surface.Close(SurfaceResult.Close);
+            cmsContextMenu.Items.Add(tsmiCancelCapture);
+
+            ToolStripMenuItem tsmiCloseMenu = new ToolStripMenuItem("Close menu");
+            tsmiCloseMenu.Click += (sender, e) => cmsContextMenu.Close();
+            cmsContextMenu.Items.Add(tsmiCloseMenu);
+
+            cmsContextMenu.Items.Add(new ToolStripSeparator());
+
             foreach (ShapeType shapeType in Helpers.GetEnums<ShapeType>())
             {
                 ToolStripMenuItem tsmiShapeType = new ToolStripMenuItem(shapeType.GetLocalizedDescription());
@@ -301,12 +311,39 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowCrosshair.CheckOnClick = true;
             tsmiShowCrosshair.Click += (sender, e) => config.ShowCrosshair = tsmiShowCrosshair.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowCrosshair);
+        }
 
-            cmsContextMenu.Items.Add(new ToolStripSeparator());
+        private void surface_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (!IsCreating)
+                {
+                    RegionSelection(e.Location);
+                }
+            }
+        }
 
-            ToolStripMenuItem tsmiCloseMenu = new ToolStripMenuItem("Close menu");
-            tsmiCloseMenu.Click += (sender, e) => cmsContextMenu.Close();
-            cmsContextMenu.Items.Add(tsmiCloseMenu);
+        private void surface_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (IsMoving || IsCreating)
+                {
+                    EndRegionSelection();
+                }
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                if (IsCreating)
+                {
+                    EndRegionSelection();
+                }
+                else
+                {
+                    cmsContextMenu.Show(surface, e.Location.Add(-cmsContextMenu.Width / 2, -10));
+                }
+            }
         }
 
         private void surface_KeyDown(object sender, KeyEventArgs e)
@@ -561,39 +598,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return null;
-        }
-
-        private void surface_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                if (!IsCreating)
-                {
-                    RegionSelection(e.Location);
-                }
-            }
-        }
-
-        private void surface_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                if (IsMoving || IsCreating)
-                {
-                    EndRegionSelection();
-                }
-            }
-            else if (e.Button == MouseButtons.Right)
-            {
-                if (IsCreating)
-                {
-                    EndRegionSelection();
-                }
-                else
-                {
-                    cmsContextMenu.Show(surface, e.Location);
-                }
-            }
         }
 
         private void RegionSelection(Point location)

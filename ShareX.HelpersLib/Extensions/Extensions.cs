@@ -141,6 +141,16 @@ namespace ShareX.HelpersLib
             return rect.Width > 0 && rect.Height > 0;
         }
 
+        public static Point Add(this Point point, int offset)
+        {
+            return point.Add(offset, offset);
+        }
+
+        public static Point Add(this Point point, int offsetX, int offsetY)
+        {
+            return new Point(point.X + offsetX, point.Y + offsetY);
+        }
+
         public static Size Offset(this Size size, int offset)
         {
             return new Size(size.Width + offset, size.Height + offset);
