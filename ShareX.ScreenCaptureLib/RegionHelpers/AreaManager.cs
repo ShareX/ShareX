@@ -668,7 +668,8 @@ namespace ShareX.ScreenCaptureLib
                     SelectArea();
                 }
             }
-            else if (!CurrentHoverRectangle.IsEmpty)
+
+            if (!CurrentHoverRectangle.IsEmpty)
             {
                 AddRegionShape(CurrentHoverRectangle);
 
