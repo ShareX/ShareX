@@ -38,7 +38,7 @@ namespace ShareX.ScreenCaptureLib
 
         public BaseShape CurrentShape { get; private set; }
 
-        public ShapeType CurrentShapeType { get; set; } = ShapeType.RegionRectangle;
+        public ShapeType CurrentShapeType { get; private set; } = ShapeType.RegionRectangle;
 
         public Rectangle CurrentRectangle
         {
@@ -50,13 +50,6 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 return Rectangle.Empty;
-            }
-            set
-            {
-                if (CurrentShape != null)
-                {
-                    CurrentShape.Rectangle = value;
-                }
             }
         }
 
@@ -110,9 +103,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public float RoundedRectangleRadius { get; set; } = 15;
-        public int RoundedRectangleRadiusIncrement { get; set; } = 3;
-
         public Point CurrentPosition { get; private set; }
         public Point PositionOnClick { get; private set; }
 
@@ -135,6 +125,9 @@ namespace ShareX.ScreenCaptureLib
         public bool WindowCaptureMode { get; set; }
         public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; } = 3;
+
+        public float RoundedRectangleRadius { get; set; } = 15;
+        public int RoundedRectangleRadiusIncrement { get; set; } = 3;
 
         private RectangleRegionForm surface;
         private SurfaceOptions config;
@@ -457,34 +450,33 @@ namespace ShareX.ScreenCaptureLib
 
         public void Update()
         {
-            if (IsMoving)
+            if (CurrentShape != null)
             {
-                Rectangle rect = CurrentRectangle;
-                rect.X += InputManager.MouseVelocity.X;
-                rect.Y += InputManager.MouseVelocity.Y;
-                CurrentRectangle = rect;
-            }
-
-            if (IsCreating && !CurrentRectangle.IsEmpty)
-            {
-                CurrentPosition = InputManager.MousePosition0Based;
-
-                Point newPosition = CurrentPosition;
-
-                if (IsProportionalResizing)
+                if (IsMoving)
                 {
-                    newPosition = CaptureHelpers.ProportionalPosition(PositionOnClick, CurrentPosition);
+                    Rectangle rect = CurrentRectangle;
+                    rect.X += InputManager.MouseVelocity.X;
+                    rect.Y += InputManager.MouseVelocity.Y;
+                    CurrentShape.Rectangle = rect;
                 }
 
-                if (IsSnapResizing)
+                if (IsCreating && !CurrentRectangle.IsEmpty)
                 {
-                    newPosition = SnapPosition(PositionOnClick, newPosition);
-                }
+                    CurrentPosition = InputManager.MousePosition0Based;
 
-                if (CurrentShape != null)
-                {
+                    Point newPosition = CurrentPosition;
+
+                    if (IsProportionalResizing)
+                    {
+                        newPosition = CaptureHelpers.ProportionalPosition(PositionOnClick, CurrentPosition);
+                    }
+
+                    if (IsSnapResizing)
+                    {
+                        newPosition = SnapPosition(PositionOnClick, newPosition);
+                    }
+
                     CurrentShape.EndPosition = newPosition;
-                    CurrentShape.Rectangle = CaptureHelpers.CreateRectangle(PositionOnClick, newPosition);
                 }
             }
 

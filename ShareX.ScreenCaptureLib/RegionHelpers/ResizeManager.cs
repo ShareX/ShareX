@@ -177,11 +177,13 @@ namespace ShareX.ScreenCaptureLib
                         if (nodes[(int)NodePosition.TopLeft].IsDragging)
                         {
                             IsResizing = true;
+
                             shape.StartPosition = new Point(InputManager.MousePosition0Based.X, InputManager.MousePosition0Based.Y);
                         }
                         else if (nodes[(int)NodePosition.BottomRight].IsDragging)
                         {
                             IsResizing = true;
+
                             shape.EndPosition = new Point(InputManager.MousePosition0Based.X, InputManager.MousePosition0Based.Y);
                         }
                     }
@@ -312,20 +314,29 @@ namespace ShareX.ScreenCaptureLib
 
         public void MoveCurrentArea(int x, int y)
         {
-            areaManager.CurrentRectangle = new Rectangle(new Point(areaManager.CurrentRectangle.X + x, areaManager.CurrentRectangle.Y + y), areaManager.CurrentRectangle.Size);
+            BaseShape shape = areaManager.CurrentShape;
+
+            if (shape != null)
+            {
+                shape.StartPosition = shape.StartPosition.Add(x, y);
+                shape.EndPosition = shape.EndPosition.Add(x, y);
+            }
         }
 
         public void ResizeCurrentArea(int x, int y, bool isBottomRightMoving)
         {
-            if (isBottomRightMoving)
+            BaseShape shape = areaManager.CurrentShape;
+
+            if (shape != null)
             {
-                areaManager.CurrentRectangle = new Rectangle(areaManager.CurrentRectangle.X, areaManager.CurrentRectangle.Y,
-                    areaManager.CurrentRectangle.Width + x, areaManager.CurrentRectangle.Height + y);
-            }
-            else
-            {
-                areaManager.CurrentRectangle = new Rectangle(areaManager.CurrentRectangle.X + x, areaManager.CurrentRectangle.Y + y,
-                    areaManager.CurrentRectangle.Width - x, areaManager.CurrentRectangle.Height - y);
+                if (isBottomRightMoving)
+                {
+                    shape.Rectangle = shape.Rectangle.SizeOffset(x, y);
+                }
+                else
+                {
+                    shape.Rectangle = shape.Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
+                }
             }
         }
     }

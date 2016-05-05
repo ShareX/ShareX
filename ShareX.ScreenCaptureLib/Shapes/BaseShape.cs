@@ -35,8 +35,38 @@ namespace ShareX.ScreenCaptureLib
         public virtual NodeType NodeType { get; } = NodeType.Rectangle;
 
         public Rectangle Rectangle { get; set; }
-        public Point StartPosition { get; set; }
-        public Point EndPosition { get; set; }
+
+        private Point startPosition;
+
+        public Point StartPosition
+        {
+            get
+            {
+                return startPosition;
+            }
+            set
+            {
+                startPosition = value;
+
+                Rectangle = CaptureHelpers.CreateRectangle(StartPosition, EndPosition);
+            }
+        }
+
+        private Point endPosition;
+
+        public Point EndPosition
+        {
+            get
+            {
+                return endPosition;
+            }
+            set
+            {
+                endPosition = value;
+
+                Rectangle = CaptureHelpers.CreateRectangle(StartPosition, EndPosition);
+            }
+        }
 
         public BaseShape()
         {
