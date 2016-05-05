@@ -35,6 +35,7 @@ namespace ShareX.ScreenCaptureLib
     public class LineDrawingShape : BaseDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingLine;
+        public override NodeType NodeType { get; } = NodeType.Line;
 
         public override void Draw(Graphics g)
         {

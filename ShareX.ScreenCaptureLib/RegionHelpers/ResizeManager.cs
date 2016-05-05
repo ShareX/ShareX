@@ -44,9 +44,33 @@ namespace ShareX.ScreenCaptureLib
             {
                 visible = value;
 
-                foreach (NodeObject node in nodes)
+                if (!visible)
                 {
-                    node.Visible = visible;
+                    foreach (NodeObject node in nodes)
+                    {
+                        node.Visible = visible;
+                    }
+                }
+                else
+                {
+                    BaseShape shape = areaManager.CurrentShape;
+
+                    if (shape != null)
+                    {
+                        if (shape.NodeType == NodeType.Rectangle)
+                        {
+                            foreach (NodeObject node in nodes)
+                            {
+                                node.Shape = NodeShape.Square;
+                                node.Visible = visible;
+                            }
+                        }
+                        else if (shape.NodeType == NodeType.Line)
+                        {
+                            nodes[(int)NodePosition.TopLeft].Shape = nodes[(int)NodePosition.BottomRight].Shape = NodeShape.Circle;
+                            nodes[(int)NodePosition.TopLeft].Visible = nodes[(int)NodePosition.BottomRight].Visible = true;
+                        }
+                    }
                 }
             }
         }
@@ -235,27 +259,40 @@ namespace ShareX.ScreenCaptureLib
 
         public void UpdateNodePositions()
         {
-            UpdateNodePositions(areaManager.CurrentRectangle);
+            UpdateNodePositions(areaManager.CurrentShape);
         }
 
-        private void UpdateNodePositions(Rectangle rect)
+        private void UpdateNodePositions(BaseShape shape)
         {
-            float xStart = rect.X;
-            float xMid = rect.X + rect.Width / 2;
-            float xEnd = rect.X + rect.Width - 1;
+            if (shape != null)
+            {
+                if (shape.NodeType == NodeType.Rectangle)
+                {
+                    Rectangle rect = shape.Rectangle;
 
-            float yStart = rect.Y;
-            float yMid = rect.Y + rect.Height / 2;
-            float yEnd = rect.Y + rect.Height - 1;
+                    float xStart = rect.X;
+                    float xMid = rect.X + rect.Width / 2;
+                    float xEnd = rect.X + rect.Width - 1;
 
-            nodes[(int)NodePosition.TopLeft].Position = new PointF(xStart, yStart);
-            nodes[(int)NodePosition.Top].Position = new PointF(xMid, yStart);
-            nodes[(int)NodePosition.TopRight].Position = new PointF(xEnd, yStart);
-            nodes[(int)NodePosition.Right].Position = new PointF(xEnd, yMid);
-            nodes[(int)NodePosition.BottomRight].Position = new PointF(xEnd, yEnd);
-            nodes[(int)NodePosition.Bottom].Position = new PointF(xMid, yEnd);
-            nodes[(int)NodePosition.BottomLeft].Position = new PointF(xStart, yEnd);
-            nodes[(int)NodePosition.Left].Position = new PointF(xStart, yMid);
+                    float yStart = rect.Y;
+                    float yMid = rect.Y + rect.Height / 2;
+                    float yEnd = rect.Y + rect.Height - 1;
+
+                    nodes[(int)NodePosition.TopLeft].Position = new PointF(xStart, yStart);
+                    nodes[(int)NodePosition.Top].Position = new PointF(xMid, yStart);
+                    nodes[(int)NodePosition.TopRight].Position = new PointF(xEnd, yStart);
+                    nodes[(int)NodePosition.Right].Position = new PointF(xEnd, yMid);
+                    nodes[(int)NodePosition.BottomRight].Position = new PointF(xEnd, yEnd);
+                    nodes[(int)NodePosition.Bottom].Position = new PointF(xMid, yEnd);
+                    nodes[(int)NodePosition.BottomLeft].Position = new PointF(xStart, yEnd);
+                    nodes[(int)NodePosition.Left].Position = new PointF(xStart, yMid);
+                }
+                else if (shape.NodeType == NodeType.Line)
+                {
+                    nodes[(int)NodePosition.TopLeft].Position = shape.StartPosition;
+                    nodes[(int)NodePosition.BottomRight].Position = shape.EndPosition;
+                }
+            }
         }
 
         public void MoveCurrentArea(int x, int y)

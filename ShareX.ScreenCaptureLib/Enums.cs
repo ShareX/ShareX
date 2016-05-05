@@ -55,6 +55,13 @@ namespace ShareX.ScreenCaptureLib
         ActiveMonitor
     }
 
+    public enum NodeType
+    {
+        None,
+        Rectangle,
+        Line
+    }
+
     internal enum NodePosition
     {
         TopLeft,
