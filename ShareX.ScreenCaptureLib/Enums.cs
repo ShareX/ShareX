@@ -140,6 +140,12 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ShapeType
     {
+        [Description("Region: Rectangle")]
+        RegionRectangle,
+        [Description("Region: Rounded rectangle")]
+        RegionRoundedRectangle,
+        [Description("Region: Ellipse")]
+        RegionEllipse,
         [Description("Drawing: Rectangle")]
         DrawingRectangle,
         [Description("Drawing: Rounded rectangle")]
@@ -149,17 +155,7 @@ namespace ShareX.ScreenCaptureLib
         [Description("Drawing: Line")]
         DrawingLine,
         [Description("Drawing: Arrow")]
-        DrawingArrow,
-        [Description("Region: Rectangle")]
-        RegionRectangle,
-        [Description("Region: Rounded rectangle")]
-        RegionRoundedRectangle,
-        [Description("Region: Ellipse")]
-        RegionEllipse,
-        [Description("Region: Triangle")]
-        RegionTriangle,
-        [Description("Region: Diamond")]
-        RegionDiamond
+        DrawingArrow
     }
 
     public enum RegionAnnotateMode

@@ -224,12 +224,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
     <value>[Pavé numérique 2] Forme rectangulaire arrondie</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[Pavé numérique 4] Forme triangulaire</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[Pavé numérique 5] Forme de losange</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] Copier les infos</value>
   </data>
@@ -241,9 +235,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Suppr] Supprimer la région</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
-    <value>[Pavé numérique + ou -] Changer l'angle du triangle</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Maintenir clic gauche sur la sélection] Déplacer la région</value>

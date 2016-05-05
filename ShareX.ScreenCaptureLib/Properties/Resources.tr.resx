@@ -242,9 +242,6 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[Tuş takımı + veya -] Yuvarlatılmış dikdörtgen kenar yarıçapını değiştir</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
-    <value>[Tuş takımı + veya -] Üçgen açısını değiştir</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
     <value>[Tuş takımı 1] Dikdörtgen şekli</value>
   </data>
@@ -253,12 +250,6 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
     <value>[Tuş takımı 3] Elips şekli</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[Tuş takımı 4] Üçgen şekli</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[Tuş takımı 5] Elmas şekli</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
     <value>[Esc] Yakalamayı iptal et</value>

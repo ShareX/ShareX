@@ -257,9 +257,6 @@
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[+ или - на циф. клавиатуре] Изменить радиус скругления</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
-    <value>[+ или - на циф. клавиатуре] Изменить угол поворота треугольника</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
     <value>[1 на циф. клавиатуре] Прямоугольник</value>
   </data>
@@ -268,12 +265,6 @@
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
     <value>[3 на циф. клавиатуре] Эллипс</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[4 на циф. клавиатуре] Треугольник</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[5 на циф. клавиатуре] Ромб</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Остановить захват</value>

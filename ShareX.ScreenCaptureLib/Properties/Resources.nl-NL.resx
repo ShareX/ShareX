@@ -242,9 +242,6 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[Numpad + of -] Pas diameter afgeronde rechthoek aan</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
-    <value>[Numpad + of -] Pas hoek driehoek aan</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
     <value>[Numpad 1] Rechthoekige vorm</value>
   </data>
@@ -253,12 +250,6 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
     <value>[Numpad 3] Ellipsvorm</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[Numpad 4] Driehoekige vorm</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[Numpad 5] Diamantvorm</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
     <value>[Esc] Annuleer vastleggen</value>

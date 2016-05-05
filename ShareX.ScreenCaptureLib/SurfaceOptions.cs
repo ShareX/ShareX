@@ -113,10 +113,7 @@ namespace ShareX.ScreenCaptureLib
                 new SnapSize(1280, 720), // 720p
                 new SnapSize(1920, 1080), // 1080p
                 new SnapSize(2560, 1440), // 1440p
-                new SnapSize(3840, 2160), // 2160p
-                new SnapSize(800, 600), // SVGA
-                new SnapSize(1024, 768), // XGA
-                new SnapSize(4096, 2160) // 4K
+                new SnapSize(3840, 2160) // 2160p
             };
         }
     }

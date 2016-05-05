@@ -448,25 +448,24 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape);
             if (AreaManager.CurrentShapeType == ShapeType.RegionEllipse) sb.Append("-> ");
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_3__Ellipse_shape);
-            if (AreaManager.CurrentShapeType == ShapeType.RegionTriangle) sb.Append("-> ");
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_4__Triangle_shape);
-            if (AreaManager.CurrentShapeType == ShapeType.RegionDiamond) sb.Append("-> ");
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_5__Diamond_shape);
 
             // TODO: Translate
             if (AreaManager.CurrentShapeType == ShapeType.DrawingRectangle) sb.Append("-> ");
-            sb.AppendLine("[Numpad 7] Rectangle drawing");
+            sb.AppendLine("[Numpad 4] Rectangle drawing");
             if (AreaManager.CurrentShapeType == ShapeType.DrawingRoundedRectangle) sb.Append("-> ");
-            sb.AppendLine("[Numpad 8] Rounded rectangle drawing");
+            sb.AppendLine("[Numpad 5] Rounded rectangle drawing");
+            if (AreaManager.CurrentShapeType == ShapeType.DrawingEllipse) sb.Append("-> ");
+            sb.AppendLine("[Numpad 6] Ellipse drawing");
+            if (AreaManager.CurrentShapeType == ShapeType.DrawingLine) sb.Append("-> ");
+            sb.AppendLine("[Numpad 7] Line drawing");
+            if (AreaManager.CurrentShapeType == ShapeType.DrawingArrow) sb.Append("-> ");
+            sb.AppendLine("[Numpad 8] Arrow drawing");
 
             switch (AreaManager.CurrentShapeType)
             {
                 case ShapeType.RegionRoundedRectangle:
                 case ShapeType.DrawingRoundedRectangle:
                     sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius);
-                    break;
-                case ShapeType.RegionTriangle:
-                    sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle);
                     break;
             }
         }

@@ -234,20 +234,11 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
     <value>[Teclado numérico 1] Formato de retângulo</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[Teclado numérico 4] Formato de triângulo</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[Teclado numérico 5] Formato de diamante</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
     <value>[Teclado numérico 3] Formato de elipse</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
     <value>[Teclado numérico 2] Formato de retângulo arredondado</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
-    <value>[Teclado numérico + ou -] Mudar o ângulo do triângulo</value>
   </data>
   <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
     <value>canto inferior direito</value>

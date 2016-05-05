@@ -236,9 +236,6 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[Numpad + oder -] Radius der abgerundeten Rechteck Ecken ändern</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
-    <value>[Numpad + oder -] Dreieck Winkel ändern</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
     <value>[Numpad 1] Rechteckform</value>
   </data>
@@ -247,12 +244,6 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
     <value>[Numpad 3] Ellipsenform</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[Numpad 4] Dreieckform</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[Numpad 5] Diamantform</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Aufnahme Stoppen</value>

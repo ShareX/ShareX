@@ -106,8 +106,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                return CurrentShapeType == ShapeType.RegionRectangle || CurrentShapeType == ShapeType.RegionRoundedRectangle || CurrentShapeType == ShapeType.RegionEllipse ||
-                    CurrentShapeType == ShapeType.RegionTriangle || CurrentShapeType == ShapeType.RegionDiamond;
+                return CurrentShapeType == ShapeType.RegionRectangle || CurrentShapeType == ShapeType.RegionRoundedRectangle || CurrentShapeType == ShapeType.RegionEllipse;
             }
         }
 
@@ -117,7 +116,6 @@ namespace ShareX.ScreenCaptureLib
 
         public float RoundedRectangleRadius { get; set; } = 15;
         public int RoundedRectangleRadiusIncrement { get; set; } = 3;
-        public TriangleAngle TriangleAngle { get; set; } = TriangleAngle.Top;
 
         public Point CurrentPosition { get; private set; }
         public Point PositionOnClick { get; private set; }
@@ -385,16 +383,19 @@ namespace ShareX.ScreenCaptureLib
                     ChangeCurrentShapeType(ShapeType.RegionEllipse);
                     break;
                 case Keys.NumPad4:
-                    ChangeCurrentShapeType(ShapeType.RegionTriangle);
-                    break;
-                case Keys.NumPad5:
-                    ChangeCurrentShapeType(ShapeType.RegionDiamond);
-                    break;
-                case Keys.NumPad7:
                     ChangeCurrentShapeType(ShapeType.DrawingRectangle);
                     break;
-                case Keys.NumPad8:
+                case Keys.NumPad5:
                     ChangeCurrentShapeType(ShapeType.DrawingRoundedRectangle);
+                    break;
+                case Keys.NumPad6:
+                    ChangeCurrentShapeType(ShapeType.DrawingEllipse);
+                    break;
+                case Keys.NumPad7:
+                    ChangeCurrentShapeType(ShapeType.DrawingLine);
+                    break;
+                case Keys.NumPad8:
+                    ChangeCurrentShapeType(ShapeType.DrawingArrow);
                     break;
                 case Keys.Add:
                     switch (CurrentShapeType)
@@ -402,17 +403,6 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.RegionRoundedRectangle:
                             RoundedRectangleRadius += RoundedRectangleRadiusIncrement;
                             UpdateRoundedRectangle();
-                            break;
-                        case ShapeType.RegionTriangle:
-                            if (TriangleAngle == TriangleAngle.Left)
-                            {
-                                TriangleAngle = TriangleAngle.Top;
-                            }
-                            else
-                            {
-                                TriangleAngle++;
-                            }
-                            UpdateTriangle();
                             break;
                     }
                     break;
@@ -422,17 +412,6 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.RegionRoundedRectangle:
                             RoundedRectangleRadius = Math.Max(0, RoundedRectangleRadius - RoundedRectangleRadiusIncrement);
                             UpdateRoundedRectangle();
-                            break;
-                        case ShapeType.RegionTriangle:
-                            if (TriangleAngle == TriangleAngle.Top)
-                            {
-                                TriangleAngle = TriangleAngle.Left;
-                            }
-                            else
-                            {
-                                TriangleAngle--;
-                            }
-                            UpdateTriangle();
                             break;
                     }
                     break;
@@ -455,19 +434,6 @@ namespace ShareX.ScreenCaptureLib
                 if (roundedRectangleShape != null)
                 {
                     roundedRectangleShape.Radius = RoundedRectangleRadius;
-                }
-            }
-        }
-
-        private void UpdateTriangle()
-        {
-            if (CurrentShape != null)
-            {
-                TriangleRegionShape triangleShape = CurrentShape as TriangleRegionShape;
-
-                if (triangleShape != null)
-                {
-                    triangleShape.Angle = TriangleAngle;
                 }
             }
         }
@@ -710,15 +676,6 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.RegionEllipse:
                     shape = new EllipseRegionShape();
-                    break;
-                case ShapeType.RegionTriangle:
-                    shape = new TriangleRegionShape()
-                    {
-                        Angle = TriangleAngle
-                    };
-                    break;
-                case ShapeType.RegionDiamond:
-                    shape = new DiamondRegionShape();
                     break;
                 case ShapeType.DrawingRectangle:
                     shape = new RectangleDrawingShape();

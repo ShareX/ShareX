@@ -87,7 +87,6 @@
     <Compile Include="Shapes\Drawing\LineDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\RectangleDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\RoundedRectangleDrawingShape.cs" />
-    <Compile Include="Shapes\Region\DiamondRegionShape.cs" />
     <Compile Include="Shapes\Region\EllipseRegionShape.cs" />
     <Compile Include="Shapes\Region\RectangleRegionShape.cs" />
     <Compile Include="Shapes\Region\BaseRegionShape.cs" />
@@ -131,7 +130,6 @@
     <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
     <Compile Include="ScrollingCaptureOptions.cs" />
     <Compile Include="Shapes\Region\RoundedRectangleRegionShape.cs" />
-    <Compile Include="Shapes\Region\TriangleRegionShape.cs" />
     <Compile Include="SimpleWindowInfo.cs" />
     <Compile Include="SnapSize.cs" />
     <Compile Include="SurfaceOptions.cs" />

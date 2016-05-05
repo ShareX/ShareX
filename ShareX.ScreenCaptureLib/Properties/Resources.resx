@@ -168,10 +168,7 @@ Width: {4} px / Height: {5} px
 Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
-    <value>[Numpad 1] Rectangle shape</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[Numpad 4] Triangle shape</value>
+    <value>[Numpad 1] Rectangle region</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Delete] Remove region</value>
@@ -187,12 +184,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
     <value>[F1] Hide tips</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[Numpad 5] Diamond shape</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
-    <value>[Numpad + or -] Change triangle angle</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -220,7 +211,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[Esc] Cancel capture</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
-    <value>[Numpad 2] Rounded rectangle shape</value>
+    <value>[Numpad 2] Rounded rectangle region</value>
   </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Browse for ffmpeg.exe</value>
@@ -229,7 +220,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[Double left click] [Enter] Capture regions</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
-    <value>[Numpad 3] Ellipse shape</value>
+    <value>[Numpad 3] Ellipse region</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] Copy info</value>

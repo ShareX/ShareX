@@ -236,12 +236,6 @@ Khoảng cách: {6:0.00} px / Góc: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
     <value>[Numpad + hoặc -] Thay đổi độ tròn của góc ở hình chữ nhật</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad_5__Diamond_shape" xml:space="preserve">
-    <value>[Numpad 5] Hình kim cương</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_4__Triangle_shape" xml:space="preserve">
-    <value>[Numpad 4] Hình tam giác</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
     <value>[Numpad 3] Hình ellipse</value>
   </data>
@@ -250,9 +244,6 @@ Khoảng cách: {6:0.00} px / Góc: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
     <value>[Numpad 1] Hình chữ nhật</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle" xml:space="preserve">
-    <value>[Numpad + hoặc -] Thay đổi góc tam giác</value>
   </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Chụp hình chữ nhật (Đánh dấu)</value>

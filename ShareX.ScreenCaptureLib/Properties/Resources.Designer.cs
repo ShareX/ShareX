@@ -428,16 +428,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Numpad + or -] Change triangle angle.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Numpad___or____Change_triangle_angle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Numpad 1] Rectangle shape.
+        ///   Looks up a localized string similar to [Numpad 1] Rectangle region.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Numpad_1__Rectangle_shape {
             get {
@@ -446,7 +437,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Numpad 2] Rounded rectangle shape.
+        ///   Looks up a localized string similar to [Numpad 2] Rounded rectangle region.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape {
             get {
@@ -455,29 +446,11 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Numpad 3] Ellipse shape.
+        ///   Looks up a localized string similar to [Numpad 3] Ellipse region.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Numpad_3__Ellipse_shape {
             get {
                 return ResourceManager.GetString("RectangleRegion_WriteTips__Numpad_3__Ellipse_shape", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Numpad 4] Triangle shape.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Numpad_4__Triangle_shape {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Numpad_4__Triangle_shape", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Numpad 5] Diamond shape.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Numpad_5__Diamond_shape {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Numpad_5__Diamond_shape", resourceCulture);
             }
         }
         
