@@ -110,10 +110,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Color BorderColor { get; set; } = Color.Red;
-        public int BorderSize { get; set; } = 2;
-        public Color FillColor { get; set; } = Color.Transparent;
-
         public float RoundedRectangleRadius { get; set; } = 15;
         public int RoundedRectangleRadiusIncrement { get; set; } = 3;
 
@@ -194,26 +190,26 @@ namespace ShareX.ScreenCaptureLib
             {
                 surface.Pause();
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(BorderColor))
+                using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeBorderColor))
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        BorderColor = dialogColor.NewColor;
-                        tsmiChangeBorderColor.Image = ImageHelpers.CreateColorPickerIcon(BorderColor, new Rectangle(0, 0, 16, 16));
+                        config.ShapeBorderColor = dialogColor.NewColor;
+                        tsmiChangeBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
                     }
                 }
 
                 surface.Resume();
             };
-            tsmiChangeBorderColor.Image = ImageHelpers.CreateColorPickerIcon(BorderColor, new Rectangle(0, 0, 16, 16));
+            tsmiChangeBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiChangeBorderColor);
 
             ToolStripLabeledNumericUpDown tslnudBorderSize = new ToolStripLabeledNumericUpDown();
             tslnudBorderSize.LabeledNumericUpDownControl.Text = "Border size:";
             tslnudBorderSize.LabeledNumericUpDownControl.Minimum = 1;
             tslnudBorderSize.LabeledNumericUpDownControl.Maximum = 20;
-            tslnudBorderSize.LabeledNumericUpDownControl.Value = BorderSize;
-            tslnudBorderSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) => BorderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
+            tslnudBorderSize.LabeledNumericUpDownControl.Value = config.ShapeBorderSize;
+            tslnudBorderSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) => config.ShapeBorderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
             cmsContextMenu.Items.Add(tslnudBorderSize);
 
             ToolStripMenuItem tsmiChangeFillColor = new ToolStripMenuItem("Fill color...");
@@ -221,18 +217,18 @@ namespace ShareX.ScreenCaptureLib
             {
                 surface.Pause();
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(FillColor))
+                using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeFillColor))
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        FillColor = dialogColor.NewColor;
-                        tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(FillColor, new Rectangle(0, 0, 16, 16));
+                        config.ShapeFillColor = dialogColor.NewColor;
+                        tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
                     }
                 }
 
                 surface.Resume();
             };
-            tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(FillColor, new Rectangle(0, 0, 16, 16));
+            tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiChangeFillColor);
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());
@@ -702,9 +698,9 @@ namespace ShareX.ScreenCaptureLib
             if (shape is BaseDrawingShape)
             {
                 BaseDrawingShape baseDrawingShape = (BaseDrawingShape)shape;
-                baseDrawingShape.BorderColor = BorderColor;
-                baseDrawingShape.BorderSize = BorderSize;
-                baseDrawingShape.FillColor = FillColor;
+                baseDrawingShape.BorderColor = config.ShapeBorderColor;
+                baseDrawingShape.BorderSize = config.ShapeBorderSize;
+                baseDrawingShape.FillColor = config.ShapeFillColor;
             }
 
             return shape;
