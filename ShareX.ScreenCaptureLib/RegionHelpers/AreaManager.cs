@@ -519,7 +519,11 @@ namespace ShareX.ScreenCaptureLib
                     newPosition = SnapPosition(PositionOnClick, newPosition);
                 }
 
-                CurrentRectangle = CaptureHelpers.CreateRectangle(PositionOnClick, newPosition);
+                if (CurrentShape != null)
+                {
+                    CurrentShape.EndPosition = newPosition;
+                    CurrentShape.Rectangle = CaptureHelpers.CreateRectangle(PositionOnClick, newPosition);
+                }
             }
 
             CheckHover();
@@ -637,6 +641,8 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 AddRegionShape(rect);
+
+                CurrentShape.StartPosition = PositionOnClick;
             }
         }
 
@@ -728,6 +734,14 @@ namespace ShareX.ScreenCaptureLib
                         BorderSize = BorderSize,
                         FillColor = FillColor,
                         Radius = RoundedRectangleRadius
+                    };
+                    break;
+                case ShapeType.DrawingArrow:
+                    shape = new ArrowDrawingShape()
+                    {
+                        BorderColor = BorderColor,
+                        BorderSize = BorderSize,
+                        FillColor = FillColor
                     };
                     break;
             }

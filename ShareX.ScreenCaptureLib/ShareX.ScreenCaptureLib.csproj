@@ -81,6 +81,7 @@
     <Compile Include="RectangleAnnotateOptions.cs" />
     <Compile Include="RegionHelpers\ColorBlinkAnimation.cs" />
     <Compile Include="Shapes\BaseShape.cs" />
+    <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\RectangleDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\RoundedRectangleDrawingShape.cs" />

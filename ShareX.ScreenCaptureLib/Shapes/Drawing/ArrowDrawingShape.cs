@@ -23,40 +23,34 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
+using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public abstract class BaseShape
+    public class ArrowDrawingShape : BaseDrawingShape
     {
-        public abstract ShapeType ShapeType { get; }
+        public override ShapeType ShapeType { get; } = ShapeType.DrawingArrow;
 
-        public Rectangle Rectangle { get; set; }
-        public Point StartPosition { get; set; }
-        public Point EndPosition { get; set; }
-
-        public BaseShape()
+        public override void Draw(Graphics g)
         {
-        }
+            if (BorderColor != Color.Transparent && BorderSize > 0)
+            {
+                g.SmoothingMode = SmoothingMode.HighQuality;
 
-        public BaseShape(Rectangle rect)
-        {
-            Rectangle = rect;
-        }
+                using (Pen pen = new Pen(BorderColor, BorderSize))
+                using (AdjustableArrowCap arrowCap = new AdjustableArrowCap(4, 6))
+                {
+                    pen.CustomEndCap = arrowCap;
+                    g.DrawLine(pen, StartPosition, EndPosition);
+                }
 
-        public abstract void AddShapePath(GraphicsPath gp, Rectangle rect);
-
-        public void AddShapePath(GraphicsPath gp)
-        {
-            AddShapePath(gp, Rectangle);
-        }
-
-        public void AddShapePath(GraphicsPath gp, int sizeOffset)
-        {
-            Rectangle rect = Rectangle.SizeOffset(sizeOffset);
-            AddShapePath(gp, rect);
+                g.SmoothingMode = SmoothingMode.None;
+            }
         }
     }
 }
