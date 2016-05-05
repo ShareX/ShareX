@@ -103,7 +103,9 @@ namespace ShareX.ScreenCaptureLib
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Text = "ShareX - " + Resources.Surface_InitializeComponent_Region_capture;
             ShowInTaskbar = false;
+#if !DEBUG
             TopMost = true;
+#endif
             Shown += Surface_Shown;
             KeyUp += Surface_KeyUp;
             MouseDoubleClick += Surface_MouseDoubleClick;

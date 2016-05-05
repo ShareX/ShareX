@@ -720,33 +720,31 @@ namespace ShareX.ScreenCaptureLib
                     shape = new DiamondRegionShape();
                     break;
                 case ShapeType.DrawingRectangle:
-                    shape = new RectangleDrawingShape()
-                    {
-                        BorderColor = BorderColor,
-                        BorderSize = BorderSize,
-                        FillColor = FillColor
-                    };
+                    shape = new RectangleDrawingShape();
                     break;
                 case ShapeType.DrawingRoundedRectangle:
                     shape = new RoundedRectangleDrawingShape()
                     {
-                        BorderColor = BorderColor,
-                        BorderSize = BorderSize,
-                        FillColor = FillColor,
                         Radius = RoundedRectangleRadius
                     };
                     break;
                 case ShapeType.DrawingArrow:
-                    shape = new ArrowDrawingShape()
-                    {
-                        BorderColor = BorderColor,
-                        BorderSize = BorderSize,
-                        FillColor = FillColor
-                    };
+                    shape = new ArrowDrawingShape();
+                    break;
+                case ShapeType.DrawingLine:
+                    shape = new LineDrawingShape();
                     break;
             }
 
             shape.Rectangle = rect;
+
+            if (shape is BaseDrawingShape)
+            {
+                BaseDrawingShape baseDrawingShape = (BaseDrawingShape)shape;
+                baseDrawingShape.BorderColor = BorderColor;
+                baseDrawingShape.BorderSize = BorderSize;
+                baseDrawingShape.FillColor = FillColor;
+            }
 
             return shape;
         }

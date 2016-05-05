@@ -144,6 +144,8 @@ namespace ShareX.ScreenCaptureLib
         DrawingRectangle,
         [Description("Drawing: Rounded rectangle")]
         DrawingRoundedRectangle,
+        [Description("Drawing: Line")]
+        DrawingLine,
         [Description("Drawing: Arrow")]
         DrawingArrow,
         [Description("Region: Rectangle")]
