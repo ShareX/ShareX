@@ -1669,7 +1669,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         private delegate Image ScreenCaptureDelegate();
 
-        private enum LastRegionCaptureType { Surface, Light, Transparent, Annotate }
+        private enum LastRegionCaptureType { Surface, Light, Transparent }
 
         private LastRegionCaptureType lastRegionCaptureType = LastRegionCaptureType.Surface;
 
@@ -1769,9 +1769,6 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     break;
                 case HotkeyType.RectangleRegion:
                     CaptureScreenshot(CaptureType.Rectangle, safeTaskSettings, false);
-                    break;
-                case HotkeyType.RectangleAnnotate:
-                    CaptureRectangleAnnotate(safeTaskSettings, false);
                     break;
                 case HotkeyType.RectangleLight:
                     CaptureRectangleLight(safeTaskSettings, false);
@@ -2167,31 +2164,6 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             }, captureType, taskSettings, autoHideForm);
         }
 
-        private void CaptureRectangleAnnotate(TaskSettings taskSettings = null, bool autoHideForm = true)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            DoCapture(() =>
-            {
-                Image img = null;
-
-                using (RectangleAnnotateForm rectangleAnnotate = new RectangleAnnotateForm(taskSettings.CaptureSettingsReference.RectangleAnnotateOptions))
-                {
-                    if (rectangleAnnotate.ShowDialog() == DialogResult.OK)
-                    {
-                        img = rectangleAnnotate.GetAreaImage();
-
-                        if (img != null)
-                        {
-                            lastRegionCaptureType = LastRegionCaptureType.Annotate;
-                        }
-                    }
-                }
-
-                return img;
-            }, CaptureType.Rectangle, taskSettings, autoHideForm);
-        }
-
         private void CaptureRectangleLight(TaskSettings taskSettings = null, bool autoHideForm = true)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -2294,22 +2266,6 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                         CaptureRectangleTransparent(taskSettings, autoHideForm);
                     }
                     break;
-                case LastRegionCaptureType.Annotate:
-                    if (!RectangleAnnotateForm.LastSelectionRectangle0Based.IsEmpty)
-                    {
-                        DoCapture(() =>
-                        {
-                            using (Image screenshot = Screenshot.CaptureFullscreen())
-                            {
-                                return ImageHelpers.CropImage(screenshot, RectangleAnnotateForm.LastSelectionRectangle0Based);
-                            }
-                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                    }
-                    else
-                    {
-                        CaptureRectangleAnnotate(taskSettings, autoHideForm);
-                    }
-                    break;
             }
         }
 
@@ -2407,11 +2363,6 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             CaptureScreenshot(CaptureType.Rectangle);
         }
 
-        private void tsmiRectangleAnnotate_Click(object sender, EventArgs e)
-        {
-            CaptureRectangleAnnotate();
-        }
-
         private void tsmiRectangleLight_Click(object sender, EventArgs e)
         {
             CaptureRectangleLight();
@@ -2483,11 +2434,6 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
         private void tsmiTrayRectangle_Click(object sender, EventArgs e)
         {
             CaptureScreenshot(CaptureType.Rectangle, null, false);
-        }
-
-        private void tsmiTrayRectangleAnnotate_Click(object sender, EventArgs e)
-        {
-            CaptureRectangleAnnotate(null, false);
         }
 
         private void tsmiTrayRectangleLight_Click(object sender, EventArgs e)

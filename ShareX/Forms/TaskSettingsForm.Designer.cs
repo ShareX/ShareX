@@ -141,8 +141,6 @@
             this.lblGIFFPS = new System.Windows.Forms.Label();
             this.tpScrollingCapture = new System.Windows.Forms.TabPage();
             this.pgScrollingCapture = new System.Windows.Forms.PropertyGrid();
-            this.tpRectangleAnnotate = new System.Windows.Forms.TabPage();
-            this.pgRectangleAnnotate = new System.Windows.Forms.PropertyGrid();
             this.tpUpload = new System.Windows.Forms.TabPage();
             this.tcUpload = new System.Windows.Forms.TabControl();
             this.tpUploadMain = new System.Windows.Forms.TabPage();
@@ -229,7 +227,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).BeginInit();
             this.tpScrollingCapture.SuspendLayout();
-            this.tpRectangleAnnotate.SuspendLayout();
             this.tpUpload.SuspendLayout();
             this.tcUpload.SuspendLayout();
             this.tpUploadMain.SuspendLayout();
@@ -752,7 +749,6 @@
             this.tcCapture.Controls.Add(this.tpRegionCapture);
             this.tcCapture.Controls.Add(this.tpScreenRecorder);
             this.tcCapture.Controls.Add(this.tpScrollingCapture);
-            this.tcCapture.Controls.Add(this.tpRectangleAnnotate);
             resources.ApplyResources(this.tcCapture, "tcCapture");
             this.tcCapture.Name = "tcCapture";
             this.tcCapture.SelectedIndex = 0;
@@ -1206,21 +1202,6 @@
             this.pgScrollingCapture.Name = "pgScrollingCapture";
             this.pgScrollingCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgScrollingCapture.ToolbarVisible = false;
-            // 
-            // tpRectangleAnnotate
-            // 
-            this.tpRectangleAnnotate.Controls.Add(this.pgRectangleAnnotate);
-            resources.ApplyResources(this.tpRectangleAnnotate, "tpRectangleAnnotate");
-            this.tpRectangleAnnotate.Name = "tpRectangleAnnotate";
-            this.tpRectangleAnnotate.UseVisualStyleBackColor = true;
-            // 
-            // pgRectangleAnnotate
-            // 
-            this.pgRectangleAnnotate.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            resources.ApplyResources(this.pgRectangleAnnotate, "pgRectangleAnnotate");
-            this.pgRectangleAnnotate.Name = "pgRectangleAnnotate";
-            this.pgRectangleAnnotate.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgRectangleAnnotate.ToolbarVisible = false;
             // 
             // tpUpload
             // 
@@ -1678,7 +1659,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).EndInit();
             this.tpScrollingCapture.ResumeLayout(false);
-            this.tpRectangleAnnotate.ResumeLayout(false);
             this.tpUpload.ResumeLayout(false);
             this.tcUpload.ResumeLayout(false);
             this.tpUploadMain.ResumeLayout(false);
@@ -1832,8 +1812,6 @@
         private System.Windows.Forms.Label lblScreenRecordFPS;
         private System.Windows.Forms.Label lblScreenRecorderFixedDuration;
         private System.Windows.Forms.CheckBox cbClipboardUploadShareURL;
-        private System.Windows.Forms.TabPage tpRectangleAnnotate;
-        private System.Windows.Forms.PropertyGrid pgRectangleAnnotate;
         private System.Windows.Forms.ColumnHeader chActionsExtensions;
         private System.Windows.Forms.Button btnActionsDuplicate;
         private System.Windows.Forms.Label lblImageEffectsNote;

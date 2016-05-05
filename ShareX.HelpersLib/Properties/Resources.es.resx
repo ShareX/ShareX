@@ -347,9 +347,6 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR código</value>
   </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Capturar región rectángulo (Anotar)</value>
-  </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Capturar región rectángulo (ligero)</value>
   </data>

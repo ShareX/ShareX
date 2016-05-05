@@ -378,12 +378,6 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Region</value>
   </data>
-  <data name="tsmiRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Region (Annotate)</value>
-  </data>
   <data name="tsmiRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
   </data>
@@ -1191,12 +1185,6 @@
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Region</value>
   </data>
-  <data name="tsmiTrayRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Region (Annotate)</value>
-  </data>
   <data name="tsmiTrayRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
   </data>
@@ -1585,7 +1573,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 462</value>
+    <value>189, 484</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -1750,12 +1738,6 @@
     <value>tsmiRectangle</value>
   </data>
   <data name="&gt;&gt;tsmiRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiRectangleAnnotate.Name" xml:space="preserve">
-    <value>tsmiRectangleAnnotate</value>
-  </data>
-  <data name="&gt;&gt;tsmiRectangleAnnotate.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiRectangleLight.Name" xml:space="preserve">
@@ -2460,12 +2442,6 @@
   <data name="&gt;&gt;tsmiTrayRectangle.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayRectangleAnnotate.Name" xml:space="preserve">
-    <value>tsmiTrayRectangleAnnotate</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayRectangleAnnotate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiTrayRectangleLight.Name" xml:space="preserve">
     <value>tsmiTrayRectangleLight</value>
   </data>
@@ -2866,6 +2842,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=10.9.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

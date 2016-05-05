@@ -2898,57 +2898,6 @@
   <data name="&gt;&gt;tpScrollingCapture.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="pgRectangleAnnotate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pgRectangleAnnotate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="pgRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>551, 322</value>
-  </data>
-  <data name="pgRectangleAnnotate.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pgRectangleAnnotate.Name" xml:space="preserve">
-    <value>pgRectangleAnnotate</value>
-  </data>
-  <data name="&gt;&gt;pgRectangleAnnotate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgRectangleAnnotate.Parent" xml:space="preserve">
-    <value>tpRectangleAnnotate</value>
-  </data>
-  <data name="&gt;&gt;pgRectangleAnnotate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpRectangleAnnotate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpRectangleAnnotate.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 328</value>
-  </data>
-  <data name="tpRectangleAnnotate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rectangle annotate</value>
-  </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.Name" xml:space="preserve">
-    <value>tpRectangleAnnotate</value>
-  </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.Parent" xml:space="preserve">
-    <value>tcCapture</value>
-  </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="tcCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>

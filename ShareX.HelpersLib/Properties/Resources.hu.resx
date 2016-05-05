@@ -341,9 +341,6 @@ Fájlméret: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR kód</value>
   </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Téglalap régió képlopás (annotált)</value>
-  </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Téglalap régió képlopás (finom)</value>
   </data>

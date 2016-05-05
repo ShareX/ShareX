@@ -341,9 +341,6 @@
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>二维码</value>
   </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>捕捉矩形区域（画笔）</value>
-  </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>捕捉矩形区域（光）</value>
   </data>
@@ -587,9 +584,6 @@
   </data>
   <data name="HotkeyType_QRCode_Category" xml:space="preserve">
     <value>工具</value>
-  </data>
-  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
-    <value>屏幕捕捉</value>
   </data>
   <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
     <value>屏幕捕捉</value>

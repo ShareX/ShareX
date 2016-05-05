@@ -1219,7 +1219,6 @@
     <None Include="Resources\clock.png" />
     <None Include="Resources\heart.png" />
     <None Include="Resources\crown.png" />
-    <None Include="Resources\layer--pencil.png" />
     <None Include="Resources\globe-share.png" />
     <None Include="Resources\document-copy.png" />
     <None Include="Resources\image--pencil.png" />

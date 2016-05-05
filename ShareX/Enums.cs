@@ -160,7 +160,6 @@ namespace ShareX
         ActiveWindow,
         ActiveMonitor,
         RectangleRegion,
-        RectangleAnnotate,
         RectangleLight,
         RectangleTransparent,
         PolygonRegion,

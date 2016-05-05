@@ -341,9 +341,6 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR code</value>
   </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Leg rechthoekige regio vast (met annotatie)</value>
-  </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Leg rechthoekige regio vast (Snel)</value>
   </data>
@@ -584,9 +581,6 @@ Wil je deze downloaden en installeren?</value>
   </data>
   <data name="HotkeyType_QRCode_Category" xml:space="preserve">
     <value>Hulpmiddelen</value>
-  </data>
-  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
-    <value>Scherm vastleggen</value>
   </data>
   <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
     <value>Scherm vastleggen</value>

@@ -447,9 +447,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR code</value>
   </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Capture region (Annotate)</value>
-  </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Capture region (Light)</value>
   </data>
@@ -693,9 +690,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_QRCode_Category" xml:space="preserve">
     <value>Tools</value>
-  </data>
-  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
-    <value>Screen capture</value>
   </data>
   <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
     <value>Screen capture</value>

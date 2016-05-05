@@ -371,9 +371,6 @@ Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>Código QR</value>
   </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Capturar região (anotar)</value>
-  </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Capturar região (leve)</value>
   </data>
@@ -614,9 +611,6 @@ Você gostaria de baixar e instalar?</value>
   </data>
   <data name="HotkeyType_QRCode_Category" xml:space="preserve">
     <value>Ferramentas</value>
-  </data>
-  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
-    <value>Capturar tela</value>
   </data>
   <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
     <value>Capturar tela</value>
