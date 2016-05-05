@@ -284,31 +284,30 @@ namespace ShareX.ScreenCaptureLib
 
             DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
 
-            if (objects.All(x => x.Visible && !x.IsDragging))
+            if (objects.All(x => !x.IsDragging))
             {
                 for (int i = 0; i < objects.Count(); i++)
                 {
                     DrawableObject obj = objects[i];
 
-                    obj.IsMouseHover = obj.Rectangle.Contains(InputManager.MousePosition0Based);
-
-                    if (obj.IsMouseHover)
+                    if (obj.Visible)
                     {
-                        for (int y = i + 1; y < objects.Count(); y++)
+                        obj.IsMouseHover = obj.Rectangle.Contains(InputManager.MousePosition0Based);
+
+                        if (obj.IsMouseHover)
                         {
-                            objects[y].IsMouseHover = false;
+                            if (InputManager.IsMousePressed(MouseButtons.Left))
+                            {
+                                obj.IsDragging = true;
+                            }
+
+                            for (int y = i + 1; y < objects.Count(); y++)
+                            {
+                                objects[y].IsMouseHover = false;
+                            }
+
+                            break;
                         }
-
-                        break;
-                    }
-                }
-
-                foreach (DrawableObject obj in objects)
-                {
-                    if (obj.IsMouseHover && InputManager.IsMousePressed(MouseButtons.Left))
-                    {
-                        obj.IsDragging = true;
-                        break;
                     }
                 }
             }
