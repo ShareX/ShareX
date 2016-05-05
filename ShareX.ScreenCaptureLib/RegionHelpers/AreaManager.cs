@@ -728,6 +728,9 @@ namespace ShareX.ScreenCaptureLib
                         Radius = RoundedRectangleRadius
                     };
                     break;
+                case ShapeType.DrawingEllipse:
+                    shape = new EllipseDrawingShape();
+                    break;
                 case ShapeType.DrawingArrow:
                     shape = new ArrowDrawingShape();
                     break;
