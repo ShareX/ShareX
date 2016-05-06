@@ -38,7 +38,21 @@ namespace ShareX.ScreenCaptureLib
 
         public BaseShape CurrentShape { get; private set; }
 
-        public ShapeType CurrentShapeType { get; private set; } = ShapeType.RegionRectangle;
+        private ShapeType currentShapeType = ShapeType.RegionRectangle;
+
+        public ShapeType CurrentShapeType
+        {
+            get
+            {
+                return currentShapeType;
+            }
+            private set
+            {
+                currentShapeType = value;
+                config.CurrentShapeType = CurrentShapeType;
+                DeselectArea();
+            }
+        }
 
         public Rectangle CurrentRectangle
         {
@@ -145,8 +159,21 @@ namespace ShareX.ScreenCaptureLib
             surface.MouseUp += surface_MouseUp;
             surface.KeyDown += surface_KeyDown;
             surface.KeyUp += surface_KeyUp;
+            surface.MouseWheel += surface_MouseWheel;
 
             CreateContextMenu();
+        }
+
+        private void surface_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                CurrentShapeType = CurrentShapeType.Previous<ShapeType>();
+            }
+            else if (e.Delta < 0)
+            {
+                CurrentShapeType = CurrentShapeType.Next<ShapeType>();
+            }
         }
 
         private void CreateContextMenu()
@@ -170,7 +197,7 @@ namespace ShareX.ScreenCaptureLib
                 tsmiShapeType.Click += (sender, e) =>
                 {
                     tsmiShapeType.RadioCheck();
-                    ChangeCurrentShapeType(shapeType);
+                    CurrentShapeType = shapeType;
                 };
                 cmsContextMenu.Items.Add(tsmiShapeType);
             }
@@ -370,28 +397,28 @@ namespace ShareX.ScreenCaptureLib
                     IsSnapResizing = true;
                     break;
                 case Keys.NumPad1:
-                    ChangeCurrentShapeType(ShapeType.RegionRectangle);
+                    CurrentShapeType = ShapeType.RegionRectangle;
                     break;
                 case Keys.NumPad2:
-                    ChangeCurrentShapeType(ShapeType.RegionRoundedRectangle);
+                    CurrentShapeType = ShapeType.RegionRoundedRectangle;
                     break;
                 case Keys.NumPad3:
-                    ChangeCurrentShapeType(ShapeType.RegionEllipse);
+                    CurrentShapeType = ShapeType.RegionEllipse;
                     break;
                 case Keys.NumPad4:
-                    ChangeCurrentShapeType(ShapeType.DrawingRectangle);
+                    CurrentShapeType = ShapeType.DrawingRectangle;
                     break;
                 case Keys.NumPad5:
-                    ChangeCurrentShapeType(ShapeType.DrawingRoundedRectangle);
+                    CurrentShapeType = ShapeType.DrawingRoundedRectangle;
                     break;
                 case Keys.NumPad6:
-                    ChangeCurrentShapeType(ShapeType.DrawingEllipse);
+                    CurrentShapeType = ShapeType.DrawingEllipse;
                     break;
                 case Keys.NumPad7:
-                    ChangeCurrentShapeType(ShapeType.DrawingLine);
+                    CurrentShapeType = ShapeType.DrawingLine;
                     break;
                 case Keys.NumPad8:
-                    ChangeCurrentShapeType(ShapeType.DrawingArrow);
+                    CurrentShapeType = ShapeType.DrawingArrow;
                     break;
                 case Keys.Add:
                     switch (CurrentShapeType)
@@ -414,13 +441,6 @@ namespace ShareX.ScreenCaptureLib
                     }
                     break;
             }
-        }
-
-        private void ChangeCurrentShapeType(ShapeType shapeType)
-        {
-            CurrentShapeType = shapeType;
-            config.CurrentShapeType = CurrentShapeType;
-            DeselectArea();
         }
 
         private void surface_KeyUp(object sender, KeyEventArgs e)

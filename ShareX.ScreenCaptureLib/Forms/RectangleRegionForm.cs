@@ -79,7 +79,6 @@ namespace ShareX.ScreenCaptureLib
         {
             KeyDown += RectangleRegion_KeyDown;
             MouseDown += RectangleRegion_MouseDown;
-            MouseWheel += RectangleRegion_MouseWheel;
         }
 
         private void RectangleRegion_MouseDown(object sender, MouseEventArgs e)
@@ -125,32 +124,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             ClipboardHelpers.CopyText(clipboardText);
-        }
-
-        private void RectangleRegion_MouseWheel(object sender, MouseEventArgs e)
-        {
-            if (e.Delta > 0)
-            {
-                if (ModifierKeys.HasFlag(Keys.Control))
-                {
-                    if (Config.MagnifierPixelSize < 30) Config.MagnifierPixelSize++;
-                }
-                else
-                {
-                    if (Config.MagnifierPixelCount < 41) Config.MagnifierPixelCount += 2;
-                }
-            }
-            else if (e.Delta < 0)
-            {
-                if (ModifierKeys.HasFlag(Keys.Control))
-                {
-                    if (Config.MagnifierPixelSize > 2) Config.MagnifierPixelSize--;
-                }
-                else
-                {
-                    if (Config.MagnifierPixelCount > 2) Config.MagnifierPixelCount -= 2;
-                }
-            }
         }
 
         public override void Prepare()
@@ -441,6 +414,9 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(Resources.RectangleRegion_WriteTips_____Active_monitor_capture);
 
             sb.AppendLine();
+
+            // TODO: Translate
+            sb.AppendLine("[Mouse wheel] Change current tool");
 
             if (AreaManager.CurrentShapeType == ShapeType.RegionRectangle) sb.Append("-> ");
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_1__Rectangle_shape);

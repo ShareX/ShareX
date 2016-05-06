@@ -46,7 +46,7 @@ namespace ShareX
         private bool forceClose, trayMenuSaveSettings = true, firstUpdateCheck = true;
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
-        private System.Threading.Timer updateTimer;
+        private System.Threading.Timer updateTimer = null;
         private static readonly object updateTimerLock = new object();
 
         public MainForm()
