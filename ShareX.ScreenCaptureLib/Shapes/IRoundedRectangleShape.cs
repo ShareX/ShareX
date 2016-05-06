@@ -23,48 +23,15 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RoundedRectangleDrawingShape : BaseDrawingShape, IRoundedRectangleShape
+    public interface IRoundedRectangleShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingRoundedRectangle;
-
-        public float Radius { get; set; }
-
-        public override void Draw(Graphics g)
-        {
-            Brush brush = null;
-            Pen pen = null;
-
-            try
-            {
-                if (FillColor != Color.Transparent)
-                {
-                    brush = new SolidBrush(FillColor);
-                }
-
-                if (BorderColor != Color.Transparent && BorderSize > 0)
-                {
-                    pen = new Pen(BorderColor, BorderSize);
-                }
-
-                g.SmoothingMode = SmoothingMode.HighQuality;
-                g.DrawRoundedRectangle(brush, pen, Rectangle, Radius);
-                g.SmoothingMode = SmoothingMode.None;
-            }
-            finally
-            {
-                if (brush != null) brush.Dispose();
-                if (pen != null) pen.Dispose();
-            }
-        }
+        float Radius { get; set; }
     }
 }

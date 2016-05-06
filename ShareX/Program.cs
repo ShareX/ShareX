@@ -53,7 +53,7 @@ namespace ShareX
             }
         }
 
-        public static bool IsBeta { get; } = false;
+        public static bool IsBeta { get; } = true;
 
         public static string Title
         {

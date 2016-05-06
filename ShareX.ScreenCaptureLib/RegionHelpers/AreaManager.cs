@@ -188,7 +188,9 @@ namespace ShareX.ScreenCaptureLib
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
                         config.ShapeBorderColor = dialogColor.NewColor;
+                        if (tsmiChangeBorderColor.Image != null) tsmiChangeBorderColor.Image.Dispose();
                         tsmiChangeBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
+                        UpdateShape();
                     }
                 }
 
@@ -202,7 +204,11 @@ namespace ShareX.ScreenCaptureLib
             tslnudBorderSize.LabeledNumericUpDownControl.Minimum = 1;
             tslnudBorderSize.LabeledNumericUpDownControl.Maximum = 20;
             tslnudBorderSize.LabeledNumericUpDownControl.Value = config.ShapeBorderSize;
-            tslnudBorderSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) => config.ShapeBorderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
+            tslnudBorderSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
+            {
+                config.ShapeBorderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
+                UpdateShape();
+            };
             cmsContextMenu.Items.Add(tslnudBorderSize);
 
             ToolStripMenuItem tsmiChangeFillColor = new ToolStripMenuItem("Fill color...");
@@ -215,7 +221,9 @@ namespace ShareX.ScreenCaptureLib
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
                         config.ShapeFillColor = dialogColor.NewColor;
+                        if (tsmiChangeFillColor.Image != null) tsmiChangeFillColor.Image.Dispose();
                         tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
+                        UpdateShape();
                     }
                 }
 
@@ -687,15 +695,34 @@ namespace ShareX.ScreenCaptureLib
 
             shape.Rectangle = rect;
 
-            if (shape is BaseDrawingShape)
-            {
-                BaseDrawingShape baseDrawingShape = (BaseDrawingShape)shape;
-                baseDrawingShape.BorderColor = config.ShapeBorderColor;
-                baseDrawingShape.BorderSize = config.ShapeBorderSize;
-                baseDrawingShape.FillColor = config.ShapeFillColor;
-            }
+            UpdateShape(shape);
 
             return shape;
+        }
+
+        private void UpdateShape()
+        {
+            UpdateShape(CurrentShape);
+        }
+
+        private void UpdateShape(BaseShape shape)
+        {
+            if (shape != null)
+            {
+                if (shape is BaseDrawingShape)
+                {
+                    BaseDrawingShape baseDrawingShape = (BaseDrawingShape)shape;
+                    baseDrawingShape.BorderColor = config.ShapeBorderColor;
+                    baseDrawingShape.BorderSize = config.ShapeBorderSize;
+                    baseDrawingShape.FillColor = config.ShapeFillColor;
+                }
+
+                if (shape is IRoundedRectangleShape)
+                {
+                    IRoundedRectangleShape roundedRectangleShape = (IRoundedRectangleShape)shape;
+                    roundedRectangleShape.Radius = RoundedRectangleRadius;
+                }
+            }
         }
 
         private void SelectArea()

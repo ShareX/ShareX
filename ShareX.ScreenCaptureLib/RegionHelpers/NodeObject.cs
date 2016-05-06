@@ -60,11 +60,6 @@ namespace ShareX.ScreenCaptureLib
         {
             Rectangle rect = new Rectangle((int)Rectangle.X, (int)Rectangle.Y, (int)Rectangle.Width - 1, (int)Rectangle.Height - 1);
 
-            if (IsMouseHover)
-            {
-                rect.Inflate(1, 1);
-            }
-
             switch (Shape)
             {
                 case NodeShape.Square:

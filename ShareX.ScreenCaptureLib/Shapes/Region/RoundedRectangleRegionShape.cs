@@ -33,7 +33,7 @@ using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RoundedRectangleRegionShape : BaseRegionShape
+    public class RoundedRectangleRegionShape : BaseRegionShape, IRoundedRectangleShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.RegionRoundedRectangle;
 
