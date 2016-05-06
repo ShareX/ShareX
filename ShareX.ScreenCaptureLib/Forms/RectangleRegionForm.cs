@@ -682,13 +682,14 @@ namespace ShareX.ScreenCaptureLib
         {
             if (SurfaceImage != null && AreaManager.DrawingShapes.Length > 0)
             {
+                using (Bitmap surfaceCopy = (Bitmap)SurfaceImage.Clone())
                 using (Graphics g = Graphics.FromImage(SurfaceImage))
                 {
                     foreach (BaseDrawingShape shape in AreaManager.DrawingShapes)
                     {
                         if (shape != null)
                         {
-                            shape.Draw(g);
+                            shape.DrawOutput(g, surfaceCopy);
                         }
                     }
                 }

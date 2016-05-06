@@ -30,25 +30,39 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public abstract class BaseDrawingShape : BaseShape
+    public class BlurDrawingShape : BaseDrawingShape
     {
-        public Color BorderColor { get; set; }
-        public Color FillColor { get; set; }
-        public int BorderSize { get; set; }
+        public override ShapeType ShapeType { get; } = ShapeType.DrawingBlur;
 
-        public abstract void Draw(Graphics g);
-
-        public virtual void DrawOutput(Graphics g, Bitmap bmp)
+        public override void Draw(Graphics g)
         {
-            Draw(g);
+            using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
+            {
+                g.FillRectangle(brush, Rectangle);
+            }
+
+            if (Rectangle.Width > 10 && Rectangle.Height > 10)
+            {
+                using (Font font = new Font("Verdana", 15, FontStyle.Bold))
+                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                {
+                    g.DrawString("Blur", font, Brushes.White, Rectangle, sf);
+                }
+            }
         }
 
-        public override void AddShapePath(GraphicsPath gp, Rectangle rect)
+        public override void DrawOutput(Graphics g, Bitmap bmp)
         {
-            gp.AddRectangle(rect);
+            using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
+            {
+                ImageHelpers.Blur(croppedImage, 20);
+
+                g.DrawImage(croppedImage, Rectangle);
+            }
         }
     }
 }
