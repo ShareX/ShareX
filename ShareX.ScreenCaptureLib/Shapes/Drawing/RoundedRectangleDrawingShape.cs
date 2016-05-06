@@ -46,12 +46,12 @@ namespace ShareX.ScreenCaptureLib
 
             try
             {
-                if (FillColor != Color.Transparent)
+                if (FillColor.A > 0)
                 {
                     brush = new SolidBrush(FillColor);
                 }
 
-                if (BorderColor != Color.Transparent && BorderSize > 0)
+                if (BorderColor.A > 0 && BorderSize > 0)
                 {
                     pen = new Pen(BorderColor, BorderSize);
                 }

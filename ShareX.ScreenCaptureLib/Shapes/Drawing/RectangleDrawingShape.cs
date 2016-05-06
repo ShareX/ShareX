@@ -40,7 +40,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Draw(Graphics g)
         {
-            if (FillColor != Color.Transparent)
+            if (FillColor.A > 0)
             {
                 using (Brush brush = new SolidBrush(FillColor))
                 {
@@ -48,7 +48,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (BorderColor != Color.Transparent && BorderSize > 0)
+            if (BorderColor.A > 0 && BorderSize > 0)
             {
                 Rectangle rect = Rectangle.Offset(BorderSize - 1);
 

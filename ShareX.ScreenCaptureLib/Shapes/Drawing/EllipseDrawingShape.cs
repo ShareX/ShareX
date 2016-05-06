@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
         {
             g.SmoothingMode = SmoothingMode.HighQuality;
 
-            if (FillColor != Color.Transparent)
+            if (FillColor.A > 0)
             {
                 using (Brush brush = new SolidBrush(FillColor))
                 {
@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (BorderColor != Color.Transparent && BorderSize > 0)
+            if (BorderColor.A > 0 && BorderSize > 0)
             {
                 using (Pen pen = new Pen(BorderColor, BorderSize))
                 {

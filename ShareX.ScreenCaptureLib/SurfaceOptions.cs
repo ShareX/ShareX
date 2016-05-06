@@ -107,8 +107,8 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(2)]
         public int ShapeBorderSize { get; set; } = 2;
 
-        [DefaultValue(typeof(Color), "Transparent")]
-        public Color ShapeFillColor { get; set; } = Color.Transparent;
+        [DefaultValue(typeof(Color), "0, 0, 0, 0")]
+        public Color ShapeFillColor { get; set; } = Color.FromArgb(0, 0, 0, 0);
 
         public SurfaceOptions()
         {

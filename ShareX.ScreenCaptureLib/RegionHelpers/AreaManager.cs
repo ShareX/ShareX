@@ -398,8 +398,9 @@ namespace ShareX.ScreenCaptureLib
                     switch (CurrentShapeType)
                     {
                         case ShapeType.RegionRoundedRectangle:
+                        case ShapeType.DrawingRoundedRectangle:
                             RoundedRectangleRadius += RoundedRectangleRadiusIncrement;
-                            UpdateRoundedRectangle();
+                            UpdateShape();
                             break;
                     }
                     break;
@@ -407,8 +408,9 @@ namespace ShareX.ScreenCaptureLib
                     switch (CurrentShapeType)
                     {
                         case ShapeType.RegionRoundedRectangle:
+                        case ShapeType.DrawingRoundedRectangle:
                             RoundedRectangleRadius = Math.Max(0, RoundedRectangleRadius - RoundedRectangleRadiusIncrement);
-                            UpdateRoundedRectangle();
+                            UpdateShape();
                             break;
                     }
                     break;
@@ -420,19 +422,6 @@ namespace ShareX.ScreenCaptureLib
             CurrentShapeType = shapeType;
             //config.CurrentShapeType = shapeType;
             DeselectArea();
-        }
-
-        private void UpdateRoundedRectangle()
-        {
-            if (CurrentShape != null)
-            {
-                RoundedRectangleRegionShape roundedRectangleShape = CurrentShape as RoundedRectangleRegionShape;
-
-                if (roundedRectangleShape != null)
-                {
-                    roundedRectangleShape.Radius = RoundedRectangleRadius;
-                }
-            }
         }
 
         private void surface_KeyUp(object sender, KeyEventArgs e)
