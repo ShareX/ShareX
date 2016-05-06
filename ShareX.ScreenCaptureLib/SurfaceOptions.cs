@@ -110,6 +110,9 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(typeof(Color), "0, 0, 0, 0")]
         public Color ShapeFillColor { get; set; } = Color.FromArgb(0, 0, 0, 0);
 
+        [DefaultValue(15)]
+        public float RoundedRectangleRadius { get; set; } = 15;
+
         public SurfaceOptions()
         {
             this.ApplyDefaultPropertyValues();

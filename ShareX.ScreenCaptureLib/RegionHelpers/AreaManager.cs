@@ -126,8 +126,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; } = 3;
 
-        public float RoundedRectangleRadius { get; set; } = 15;
-        public int RoundedRectangleRadiusIncrement { get; set; } = 3;
+        public int RoundedRectangleRadiusIncrement { get; } = 3;
 
         private RectangleRegionForm surface;
         private SurfaceOptions config;
@@ -399,7 +398,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         case ShapeType.RegionRoundedRectangle:
                         case ShapeType.DrawingRoundedRectangle:
-                            RoundedRectangleRadius += RoundedRectangleRadiusIncrement;
+                            config.RoundedRectangleRadius += RoundedRectangleRadiusIncrement;
                             UpdateShape();
                             break;
                     }
@@ -409,7 +408,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         case ShapeType.RegionRoundedRectangle:
                         case ShapeType.DrawingRoundedRectangle:
-                            RoundedRectangleRadius = Math.Max(0, RoundedRectangleRadius - RoundedRectangleRadiusIncrement);
+                            config.RoundedRectangleRadius = Math.Max(0, config.RoundedRectangleRadius - RoundedRectangleRadiusIncrement);
                             UpdateShape();
                             break;
                     }
@@ -420,7 +419,7 @@ namespace ShareX.ScreenCaptureLib
         private void ChangeCurrentShapeType(ShapeType shapeType)
         {
             CurrentShapeType = shapeType;
-            //config.CurrentShapeType = shapeType;
+            config.CurrentShapeType = CurrentShapeType;
             DeselectArea();
         }
 
@@ -654,10 +653,7 @@ namespace ShareX.ScreenCaptureLib
                     shape = new RectangleRegionShape();
                     break;
                 case ShapeType.RegionRoundedRectangle:
-                    shape = new RoundedRectangleRegionShape()
-                    {
-                        Radius = RoundedRectangleRadius
-                    };
+                    shape = new RoundedRectangleRegionShape();
                     break;
                 case ShapeType.RegionEllipse:
                     shape = new EllipseRegionShape();
@@ -666,19 +662,16 @@ namespace ShareX.ScreenCaptureLib
                     shape = new RectangleDrawingShape();
                     break;
                 case ShapeType.DrawingRoundedRectangle:
-                    shape = new RoundedRectangleDrawingShape()
-                    {
-                        Radius = RoundedRectangleRadius
-                    };
+                    shape = new RoundedRectangleDrawingShape();
                     break;
                 case ShapeType.DrawingEllipse:
                     shape = new EllipseDrawingShape();
                     break;
-                case ShapeType.DrawingArrow:
-                    shape = new ArrowDrawingShape();
-                    break;
                 case ShapeType.DrawingLine:
                     shape = new LineDrawingShape();
+                    break;
+                case ShapeType.DrawingArrow:
+                    shape = new ArrowDrawingShape();
                     break;
             }
 
@@ -709,7 +702,7 @@ namespace ShareX.ScreenCaptureLib
                 if (shape is IRoundedRectangleShape)
                 {
                     IRoundedRectangleShape roundedRectangleShape = (IRoundedRectangleShape)shape;
-                    roundedRectangleShape.Radius = RoundedRectangleRadius;
+                    roundedRectangleShape.Radius = config.RoundedRectangleRadius;
                 }
             }
         }
