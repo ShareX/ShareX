@@ -41,7 +41,7 @@ namespace Greenshot.Drawing.Filters
 
         public BlurFilter(DrawableContainer parent) : base(parent)
         {
-            AddField(GetType(), FieldType.BLUR_RADIUS, 3);
+            AddField(GetType(), FieldType.BLUR_RADIUS, 15);
             AddField(GetType(), FieldType.PREVIEW_QUALITY, 1.0d);
         }
 

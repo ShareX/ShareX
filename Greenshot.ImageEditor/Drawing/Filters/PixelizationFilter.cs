@@ -34,7 +34,7 @@ namespace Greenshot.Drawing.Filters
     {
         public PixelizationFilter(DrawableContainer parent) : base(parent)
         {
-            AddField(GetType(), FieldType.PIXEL_SIZE, 5);
+            AddField(GetType(), FieldType.PIXEL_SIZE, 7);
         }
 
         public override void Apply(Graphics graphics, Bitmap applyBitmap, Rectangle rect, RenderMode renderMode)
