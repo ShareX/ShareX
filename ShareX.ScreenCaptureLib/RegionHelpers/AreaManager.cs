@@ -425,7 +425,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         case ShapeType.RegionRoundedRectangle:
                         case ShapeType.DrawingRoundedRectangle:
-                            config.RoundedRectangleRadius += RoundedRectangleRadiusIncrement;
+                            config.ShapeRoundedRectangleRadius += RoundedRectangleRadiusIncrement;
                             UpdateShape();
                             break;
                     }
@@ -435,7 +435,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         case ShapeType.RegionRoundedRectangle:
                         case ShapeType.DrawingRoundedRectangle:
-                            config.RoundedRectangleRadius = Math.Max(0, config.RoundedRectangleRadius - RoundedRectangleRadiusIncrement);
+                            config.ShapeRoundedRectangleRadius = Math.Max(0, config.ShapeRoundedRectangleRadius - RoundedRectangleRadiusIncrement);
                             UpdateShape();
                             break;
                     }
@@ -728,7 +728,17 @@ namespace ShareX.ScreenCaptureLib
                 if (shape is IRoundedRectangleShape)
                 {
                     IRoundedRectangleShape roundedRectangleShape = (IRoundedRectangleShape)shape;
-                    roundedRectangleShape.Radius = config.RoundedRectangleRadius;
+                    roundedRectangleShape.Radius = config.ShapeRoundedRectangleRadius;
+                }
+                else if (shape is BlurDrawingShape)
+                {
+                    BlurDrawingShape blurDrawingShape = (BlurDrawingShape)shape;
+                    blurDrawingShape.BlurRadius = config.ShapeBlurRadius;
+                }
+                else if (shape is PixelateDrawingShape)
+                {
+                    PixelateDrawingShape pixelateDrawingShape = (PixelateDrawingShape)shape;
+                    pixelateDrawingShape.PixelSize = config.ShapePixelSize;
                 }
             }
         }

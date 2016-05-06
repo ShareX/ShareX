@@ -38,6 +38,8 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingBlur;
 
+        public int PixelSize { get; set; }
+
         public override void Draw(Graphics g)
         {
             using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
@@ -58,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
         public override void DrawOutput(Graphics g, Bitmap bmp)
         {
             using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
-            using (Bitmap pixelatedImage = ImageHelpers.Pixelate(croppedImage, 7))
+            using (Bitmap pixelatedImage = ImageHelpers.Pixelate(croppedImage, PixelSize))
             {
                 g.DrawImage(pixelatedImage, Rectangle);
             }

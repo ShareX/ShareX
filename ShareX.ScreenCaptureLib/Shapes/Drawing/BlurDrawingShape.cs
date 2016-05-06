@@ -38,6 +38,8 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingBlur;
 
+        public int BlurRadius { get; set; }
+
         public override void Draw(Graphics g)
         {
             using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
@@ -59,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
         {
             using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
             {
-                ImageHelpers.Blur(croppedImage, 20);
+                ImageHelpers.Blur(croppedImage, BlurRadius);
 
                 g.DrawImage(croppedImage, Rectangle);
             }

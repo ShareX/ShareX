@@ -98,20 +98,13 @@ namespace ShareX.ScreenCaptureLib
         [Description("How close to a snap size you must be for it to snap.")]
         public List<SnapSize> SnapSizes { get; set; }
 
-        [DefaultValue(ShapeType.RegionRectangle)]
-        public ShapeType CurrentShapeType { get; set; } = ShapeType.RegionRectangle;
-
-        [DefaultValue(typeof(Color), "Red")]
-        public Color ShapeBorderColor { get; set; } = Color.Red;
-
-        [DefaultValue(2)]
-        public int ShapeBorderSize { get; set; } = 2;
-
-        [DefaultValue(typeof(Color), "0, 0, 0, 0")]
-        public Color ShapeFillColor { get; set; } = Color.FromArgb(0, 0, 0, 0);
-
-        [DefaultValue(15)]
-        public float RoundedRectangleRadius { get; set; } = 15;
+        public ShapeType CurrentShapeType = ShapeType.RegionRectangle;
+        public Color ShapeBorderColor = Color.Red;
+        public int ShapeBorderSize = 2;
+        public Color ShapeFillColor = Color.FromArgb(0, 0, 0, 0);
+        public float ShapeRoundedRectangleRadius = 15;
+        public int ShapeBlurRadius = 15;
+        public int ShapePixelSize = 7;
 
         public SurfaceOptions()
         {
