@@ -696,6 +696,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingBlur:
                     shape = new BlurDrawingShape();
                     break;
+                case ShapeType.DrawingPixelate:
+                    shape = new PixelateDrawingShape();
+                    break;
             }
 
             shape.Rectangle = rect;
