@@ -38,9 +38,11 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingHighlight;
 
+        public Color HighlightColor { get; set; }
+
         public override void Draw(Graphics g)
         {
-            using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.Yellow)))
+            using (Brush brush = new SolidBrush(Color.FromArgb(150, HighlightColor)))
             {
                 g.FillRectangle(brush, Rectangle);
             }
@@ -59,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
         {
             using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
             {
-                ImageHelpers.HighlightImage(croppedImage);
+                ImageHelpers.HighlightImage(croppedImage, HighlightColor);
 
                 g.DrawImage(croppedImage, Rectangle);
             }

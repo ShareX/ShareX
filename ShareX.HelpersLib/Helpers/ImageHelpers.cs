@@ -1324,6 +1324,11 @@ namespace ShareX.HelpersLib
             HighlightImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
         }
 
+        public static void HighlightImage(Bitmap bmp, Color highlightColor)
+        {
+            HighlightImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), highlightColor);
+        }
+
         public static void HighlightImage(Bitmap bmp, Rectangle rect)
         {
             HighlightImage(bmp, rect, Color.Yellow);

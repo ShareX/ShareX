@@ -294,6 +294,27 @@ namespace ShareX.ScreenCaptureLib
             };
             cmsContextMenu.Items.Add(tslnudPixelateSize);
 
+            ToolStripMenuItem tsmiHighlightColor = new ToolStripMenuItem("Highlight color...");
+            tsmiHighlightColor.Click += (sender, e) =>
+            {
+                surface.Pause();
+
+                using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeHighlightColor))
+                {
+                    if (dialogColor.ShowDialog() == DialogResult.OK)
+                    {
+                        config.ShapeHighlightColor = dialogColor.NewColor;
+                        if (tsmiHighlightColor.Image != null) tsmiHighlightColor.Image.Dispose();
+                        tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeHighlightColor, new Rectangle(0, 0, 16, 16));
+                        UpdateCurrentShape();
+                    }
+                }
+
+                surface.Resume();
+            };
+            tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeHighlightColor, new Rectangle(0, 0, 16, 16));
+            cmsContextMenu.Items.Add(tsmiHighlightColor);
+
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
             ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem("Capture fullscreen");
@@ -384,6 +405,7 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingArrow:
                     case ShapeType.DrawingBlur:
                     case ShapeType.DrawingPixelate:
+                    case ShapeType.DrawingHighlight:
                         tssShapeOptions.Visible = true;
                         break;
                 }
@@ -419,6 +441,7 @@ namespace ShareX.ScreenCaptureLib
                 tslnudRoundedRectangleRadius.Visible = CurrentShapeType == ShapeType.RegionRoundedRectangle || CurrentShapeType == ShapeType.DrawingRoundedRectangle;
                 tslnudBlurRadius.Visible = CurrentShapeType == ShapeType.DrawingBlur;
                 tslnudPixelateSize.Visible = CurrentShapeType == ShapeType.DrawingPixelate;
+                tsmiHighlightColor.Visible = CurrentShapeType == ShapeType.DrawingHighlight;
             };
         }
 
@@ -813,6 +836,11 @@ namespace ShareX.ScreenCaptureLib
                 {
                     PixelateDrawingShape pixelateDrawingShape = (PixelateDrawingShape)shape;
                     pixelateDrawingShape.PixelSize = config.ShapePixelateSize;
+                }
+                else if (shape is HighlightDrawingShape)
+                {
+                    HighlightDrawingShape highlightDrawingShape = (HighlightDrawingShape)shape;
+                    highlightDrawingShape.HighlightColor = config.ShapeHighlightColor;
                 }
             }
         }

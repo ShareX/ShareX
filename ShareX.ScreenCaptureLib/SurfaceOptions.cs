@@ -105,6 +105,7 @@ namespace ShareX.ScreenCaptureLib
         public int ShapeRoundedRectangleRadius = 15;
         public int ShapeBlurRadius = 15;
         public int ShapePixelateSize = 7;
+        public Color ShapeHighlightColor = Color.Yellow;
 
         public SurfaceOptions()
         {
