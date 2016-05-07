@@ -200,10 +200,11 @@ namespace ShareX.ScreenCaptureLib
                 cmsContextMenu.Items.Add(tsmiShapeType);
             }
 
-            cmsContextMenu.Items.Add(new ToolStripSeparator());
+            ToolStripSeparator tssShapeOptions = new ToolStripSeparator();
+            cmsContextMenu.Items.Add(tssShapeOptions);
 
-            ToolStripMenuItem tsmiChangeBorderColor = new ToolStripMenuItem("Border color...");
-            tsmiChangeBorderColor.Click += (sender, e) =>
+            ToolStripMenuItem tsmiBorderColor = new ToolStripMenuItem("Border color...");
+            tsmiBorderColor.Click += (sender, e) =>
             {
                 surface.Pause();
 
@@ -212,16 +213,16 @@ namespace ShareX.ScreenCaptureLib
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
                         config.ShapeBorderColor = dialogColor.NewColor;
-                        if (tsmiChangeBorderColor.Image != null) tsmiChangeBorderColor.Image.Dispose();
-                        tsmiChangeBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
+                        if (tsmiBorderColor.Image != null) tsmiBorderColor.Image.Dispose();
+                        tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
                         UpdateCurrentShape();
                     }
                 }
 
                 surface.Resume();
             };
-            tsmiChangeBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
-            cmsContextMenu.Items.Add(tsmiChangeBorderColor);
+            tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
+            cmsContextMenu.Items.Add(tsmiBorderColor);
 
             ToolStripLabeledNumericUpDown tslnudBorderSize = new ToolStripLabeledNumericUpDown();
             tslnudBorderSize.LabeledNumericUpDownControl.Text = "Border size:";
@@ -235,8 +236,8 @@ namespace ShareX.ScreenCaptureLib
             };
             cmsContextMenu.Items.Add(tslnudBorderSize);
 
-            ToolStripMenuItem tsmiChangeFillColor = new ToolStripMenuItem("Fill color...");
-            tsmiChangeFillColor.Click += (sender, e) =>
+            ToolStripMenuItem tsmiFillColor = new ToolStripMenuItem("Fill color...");
+            tsmiFillColor.Click += (sender, e) =>
             {
                 surface.Pause();
 
@@ -245,16 +246,16 @@ namespace ShareX.ScreenCaptureLib
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
                         config.ShapeFillColor = dialogColor.NewColor;
-                        if (tsmiChangeFillColor.Image != null) tsmiChangeFillColor.Image.Dispose();
-                        tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
+                        if (tsmiFillColor.Image != null) tsmiFillColor.Image.Dispose();
+                        tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
                         UpdateCurrentShape();
                     }
                 }
 
                 surface.Resume();
             };
-            tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
-            cmsContextMenu.Items.Add(tsmiChangeFillColor);
+            tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
+            cmsContextMenu.Items.Add(tsmiFillColor);
 
             ToolStripLabeledNumericUpDown tslnudRoundedRectangleRadius = new ToolStripLabeledNumericUpDown();
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Text = "Corner radius:";
@@ -281,17 +282,17 @@ namespace ShareX.ScreenCaptureLib
             };
             cmsContextMenu.Items.Add(tslnudBlurRadius);
 
-            ToolStripLabeledNumericUpDown tslnudPixelSize = new ToolStripLabeledNumericUpDown();
-            tslnudPixelSize.LabeledNumericUpDownControl.Text = "Pixel size:";
-            tslnudPixelSize.LabeledNumericUpDownControl.Minimum = 2;
-            tslnudPixelSize.LabeledNumericUpDownControl.Maximum = 100;
-            tslnudPixelSize.LabeledNumericUpDownControl.Value = config.ShapeRoundedRectangleRadius;
-            tslnudPixelSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
+            ToolStripLabeledNumericUpDown tslnudPixelateSize = new ToolStripLabeledNumericUpDown();
+            tslnudPixelateSize.LabeledNumericUpDownControl.Text = "Pixel size:";
+            tslnudPixelateSize.LabeledNumericUpDownControl.Minimum = 2;
+            tslnudPixelateSize.LabeledNumericUpDownControl.Maximum = 100;
+            tslnudPixelateSize.LabeledNumericUpDownControl.Value = config.ShapeRoundedRectangleRadius;
+            tslnudPixelateSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
-                config.ShapePixelateSize = (int)tslnudPixelSize.LabeledNumericUpDownControl.Value;
+                config.ShapePixelateSize = (int)tslnudPixelateSize.LabeledNumericUpDownControl.Value;
                 UpdateCurrentShape();
             };
-            cmsContextMenu.Items.Add(tslnudPixelSize);
+            cmsContextMenu.Items.Add(tslnudPixelateSize);
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
@@ -367,6 +368,58 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowCrosshair.CheckOnClick = true;
             tsmiShowCrosshair.Click += (sender, e) => config.ShowCrosshair = tsmiShowCrosshair.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowCrosshair);
+
+            cmsContextMenu.Opening += (sender, e) =>
+            {
+                switch (CurrentShapeType)
+                {
+                    default:
+                        tssShapeOptions.Visible = false;
+                        break;
+                    case ShapeType.RegionRoundedRectangle:
+                    case ShapeType.DrawingRectangle:
+                    case ShapeType.DrawingRoundedRectangle:
+                    case ShapeType.DrawingEllipse:
+                    case ShapeType.DrawingLine:
+                    case ShapeType.DrawingArrow:
+                    case ShapeType.DrawingBlur:
+                    case ShapeType.DrawingPixelate:
+                        tssShapeOptions.Visible = true;
+                        break;
+                }
+
+                switch (CurrentShapeType)
+                {
+                    default:
+                        tsmiBorderColor.Visible = false;
+                        tslnudBorderSize.Visible = false;
+                        break;
+                    case ShapeType.DrawingRectangle:
+                    case ShapeType.DrawingRoundedRectangle:
+                    case ShapeType.DrawingEllipse:
+                    case ShapeType.DrawingLine:
+                    case ShapeType.DrawingArrow:
+                        tsmiBorderColor.Visible = true;
+                        tslnudBorderSize.Visible = true;
+                        break;
+                }
+
+                switch (CurrentShapeType)
+                {
+                    default:
+                        tsmiFillColor.Visible = false;
+                        break;
+                    case ShapeType.DrawingRectangle:
+                    case ShapeType.DrawingRoundedRectangle:
+                    case ShapeType.DrawingEllipse:
+                        tsmiFillColor.Visible = true;
+                        break;
+                }
+
+                tslnudRoundedRectangleRadius.Visible = CurrentShapeType == ShapeType.RegionRoundedRectangle || CurrentShapeType == ShapeType.DrawingRoundedRectangle;
+                tslnudBlurRadius.Visible = CurrentShapeType == ShapeType.DrawingBlur;
+                tslnudPixelateSize.Visible = CurrentShapeType == ShapeType.DrawingPixelate;
+            };
         }
 
         private void surface_MouseDown(object sender, MouseEventArgs e)
