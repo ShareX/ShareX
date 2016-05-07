@@ -417,39 +417,28 @@ namespace ShareX.ScreenCaptureLib
 
             // TODO: Translate
             sb.AppendLine("[Mouse wheel] Change current tool");
-
             if (AreaManager.CurrentShapeType == ShapeType.RegionRectangle) sb.Append("-> ");
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_1__Rectangle_shape);
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 0", ShapeType.RegionRectangle.GetLocalizedDescription()));
             if (AreaManager.CurrentShapeType == ShapeType.RegionRoundedRectangle) sb.Append("-> ");
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape);
+            sb.AppendLine(ShapeType.RegionRoundedRectangle.GetLocalizedDescription());
             if (AreaManager.CurrentShapeType == ShapeType.RegionEllipse) sb.Append("-> ");
-            sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad_3__Ellipse_shape);
-
-            // TODO: Translate
+            sb.AppendLine(ShapeType.RegionEllipse.GetLocalizedDescription());
             if (AreaManager.CurrentShapeType == ShapeType.DrawingRectangle) sb.Append("-> ");
-            sb.AppendLine("[Numpad 4] Rectangle drawing");
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 1", ShapeType.DrawingRectangle.GetLocalizedDescription()));
             if (AreaManager.CurrentShapeType == ShapeType.DrawingRoundedRectangle) sb.Append("-> ");
-            sb.AppendLine("[Numpad 5] Rounded rectangle drawing");
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 2", ShapeType.DrawingRoundedRectangle.GetLocalizedDescription()));
             if (AreaManager.CurrentShapeType == ShapeType.DrawingEllipse) sb.Append("-> ");
-            sb.AppendLine("[Numpad 6] Ellipse drawing");
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 3", ShapeType.DrawingEllipse.GetLocalizedDescription()));
             if (AreaManager.CurrentShapeType == ShapeType.DrawingLine) sb.Append("-> ");
-            sb.AppendLine("[Numpad 7] Line drawing");
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 4", ShapeType.DrawingLine.GetLocalizedDescription()));
             if (AreaManager.CurrentShapeType == ShapeType.DrawingArrow) sb.Append("-> ");
-            sb.AppendLine("[Numpad 8] Arrow drawing");
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 5", ShapeType.DrawingArrow.GetLocalizedDescription()));
             if (AreaManager.CurrentShapeType == ShapeType.DrawingBlur) sb.Append("-> ");
-            sb.AppendLine("[Numpad 9] Blur drawing");
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6", ShapeType.DrawingBlur.GetLocalizedDescription()));
             if (AreaManager.CurrentShapeType == ShapeType.DrawingPixelate) sb.Append("-> ");
-            sb.AppendLine("Pixelate drawing");
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 7", ShapeType.DrawingPixelate.GetLocalizedDescription()));
             if (AreaManager.CurrentShapeType == ShapeType.DrawingHighlight) sb.Append("-> ");
-            sb.AppendLine("Highlight drawing");
-
-            switch (AreaManager.CurrentShapeType)
-            {
-                case ShapeType.RegionRoundedRectangle:
-                case ShapeType.DrawingRoundedRectangle:
-                    sb.AppendLine(Resources.RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius);
-                    break;
-            }
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8", ShapeType.DrawingHighlight.GetLocalizedDescription()));
         }
 
         private string GetAreaText(Rectangle area)

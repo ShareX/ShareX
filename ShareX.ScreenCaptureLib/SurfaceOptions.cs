@@ -102,9 +102,9 @@ namespace ShareX.ScreenCaptureLib
         public Color ShapeBorderColor = Color.Red;
         public int ShapeBorderSize = 2;
         public Color ShapeFillColor = Color.FromArgb(0, 0, 0, 0);
-        public float ShapeRoundedRectangleRadius = 15;
+        public int ShapeRoundedRectangleRadius = 15;
         public int ShapeBlurRadius = 15;
-        public int ShapePixelSize = 7;
+        public int ShapePixelateSize = 7;
 
         public SurfaceOptions()
         {

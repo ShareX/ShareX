@@ -42,27 +42,33 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Draw(Graphics g)
         {
-            using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
+            if (PixelSize > 1)
             {
-                g.FillRectangle(brush, Rectangle);
-            }
-
-            if (Rectangle.Width > 10 && Rectangle.Height > 10)
-            {
-                using (Font font = new Font("Verdana", 14))
-                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
                 {
-                    g.DrawString("Pixelate", font, Brushes.White, Rectangle, sf);
+                    g.FillRectangle(brush, Rectangle);
+                }
+
+                if (Rectangle.Width > 10 && Rectangle.Height > 10)
+                {
+                    using (Font font = new Font("Verdana", 14))
+                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    {
+                        g.DrawString("Pixelate", font, Brushes.White, Rectangle, sf);
+                    }
                 }
             }
         }
 
         public override void DrawOutput(Graphics g, Bitmap bmp)
         {
-            using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
-            using (Bitmap pixelatedImage = ImageHelpers.Pixelate(croppedImage, PixelSize))
+            if (PixelSize > 1)
             {
-                g.DrawImage(pixelatedImage, Rectangle);
+                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
+                using (Bitmap pixelatedImage = ImageHelpers.Pixelate(croppedImage, PixelSize))
+                {
+                    g.DrawImage(pixelatedImage, Rectangle);
+                }
             }
         }
     }

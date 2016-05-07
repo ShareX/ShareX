@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleLightForm : Form
+    public class RectangleRegionLightForm : Form
     {
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
@@ -66,7 +66,7 @@ namespace ShareX.ScreenCaptureLib
         private bool isMouseDown;
         private Stopwatch penTimer;
 
-        public RectangleLightForm()
+        public RectangleRegionLightForm()
         {
             backgroundImage = Screenshot.CaptureFullscreen();
             backgroundBrush = new TextureBrush(backgroundImage);

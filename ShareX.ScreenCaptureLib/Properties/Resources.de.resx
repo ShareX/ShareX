@@ -233,18 +233,6 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Linksklick loslassen] [Einf] Regionsauswahl beenden</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
-    <value>[Numpad + oder -] Radius der abgerundeten Rechteck Ecken ändern</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
-    <value>[Numpad 1] Rechteckform</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
-    <value>[Numpad 2] abgerundete Rechteckform</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
-    <value>[Numpad 3] Ellipsenform</value>
-  </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Aufnahme Stoppen</value>
   </data>

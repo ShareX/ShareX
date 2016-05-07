@@ -60,10 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums.cs" />
-    <Compile Include="Forms\RectangleAnnotateForm.cs">
+    <Compile Include="Forms\RectangleRegionAnnotateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RectangleTransparentForm.cs">
+    <Compile Include="Forms\RectangleRegionTransparentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ScrollingCaptureForm.cs">
@@ -103,7 +103,7 @@
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screencast\ScreencastOptions.cs" />
-    <Compile Include="Forms\RectangleLightForm.cs">
+    <Compile Include="Forms\RectangleRegionLightForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SurfaceForm.cs">

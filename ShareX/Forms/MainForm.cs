@@ -2172,7 +2172,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             {
                 Image img = null;
 
-                using (RectangleLightForm rectangleLight = new RectangleLightForm())
+                using (RectangleRegionLightForm rectangleLight = new RectangleRegionLightForm())
                 {
                     if (rectangleLight.ShowDialog() == DialogResult.OK)
                     {
@@ -2197,7 +2197,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             {
                 Image img = null;
 
-                using (RectangleTransparentForm rectangleTransparent = new RectangleTransparentForm())
+                using (RectangleRegionTransparentForm rectangleTransparent = new RectangleRegionTransparentForm())
                 {
                     if (rectangleTransparent.ShowDialog() == DialogResult.OK)
                     {
@@ -2235,13 +2235,13 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     }
                     break;
                 case LastRegionCaptureType.Light:
-                    if (!RectangleLightForm.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RectangleRegionLightForm.LastSelectionRectangle0Based.IsEmpty)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = Screenshot.CaptureFullscreen())
                             {
-                                return ImageHelpers.CropImage(screenshot, RectangleLightForm.LastSelectionRectangle0Based);
+                                return ImageHelpers.CropImage(screenshot, RectangleRegionLightForm.LastSelectionRectangle0Based);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
@@ -2251,13 +2251,13 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     }
                     break;
                 case LastRegionCaptureType.Transparent:
-                    if (!RectangleTransparentForm.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RectangleRegionTransparentForm.LastSelectionRectangle0Based.IsEmpty)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = Screenshot.CaptureFullscreen())
                             {
-                                return ImageHelpers.CropImage(screenshot, RectangleTransparentForm.LastSelectionRectangle0Based);
+                                return ImageHelpers.CropImage(screenshot, RectangleRegionTransparentForm.LastSelectionRectangle0Based);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }

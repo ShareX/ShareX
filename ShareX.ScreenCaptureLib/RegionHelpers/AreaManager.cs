@@ -140,8 +140,6 @@ namespace ShareX.ScreenCaptureLib
         public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; } = 3;
 
-        public int RoundedRectangleRadiusIncrement { get; } = 3;
-
         private RectangleRegionForm surface;
         private SurfaceOptions config;
         private ContextMenuStrip cmsContextMenu;
@@ -216,7 +214,7 @@ namespace ShareX.ScreenCaptureLib
                         config.ShapeBorderColor = dialogColor.NewColor;
                         if (tsmiChangeBorderColor.Image != null) tsmiChangeBorderColor.Image.Dispose();
                         tsmiChangeBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
-                        UpdateShape();
+                        UpdateCurrentShape();
                     }
                 }
 
@@ -233,7 +231,7 @@ namespace ShareX.ScreenCaptureLib
             tslnudBorderSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
                 config.ShapeBorderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
-                UpdateShape();
+                UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudBorderSize);
 
@@ -249,7 +247,7 @@ namespace ShareX.ScreenCaptureLib
                         config.ShapeFillColor = dialogColor.NewColor;
                         if (tsmiChangeFillColor.Image != null) tsmiChangeFillColor.Image.Dispose();
                         tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
-                        UpdateShape();
+                        UpdateCurrentShape();
                     }
                 }
 
@@ -257,6 +255,43 @@ namespace ShareX.ScreenCaptureLib
             };
             tsmiChangeFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiChangeFillColor);
+
+            ToolStripLabeledNumericUpDown tslnudRoundedRectangleRadius = new ToolStripLabeledNumericUpDown();
+            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Text = "Corner radius:";
+            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Minimum = 0;
+            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Maximum = 150;
+            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Increment = 3;
+            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value = config.ShapeRoundedRectangleRadius;
+            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
+            {
+                config.ShapeRoundedRectangleRadius = (int)tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value;
+                UpdateCurrentShape();
+            };
+            cmsContextMenu.Items.Add(tslnudRoundedRectangleRadius);
+
+            ToolStripLabeledNumericUpDown tslnudBlurRadius = new ToolStripLabeledNumericUpDown();
+            tslnudBlurRadius.LabeledNumericUpDownControl.Text = "Blur radius:";
+            tslnudBlurRadius.LabeledNumericUpDownControl.Minimum = 2;
+            tslnudBlurRadius.LabeledNumericUpDownControl.Maximum = 100;
+            tslnudBlurRadius.LabeledNumericUpDownControl.Value = config.ShapeBlurRadius;
+            tslnudBlurRadius.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
+            {
+                config.ShapeBlurRadius = (int)tslnudBlurRadius.LabeledNumericUpDownControl.Value;
+                UpdateCurrentShape();
+            };
+            cmsContextMenu.Items.Add(tslnudBlurRadius);
+
+            ToolStripLabeledNumericUpDown tslnudPixelSize = new ToolStripLabeledNumericUpDown();
+            tslnudPixelSize.LabeledNumericUpDownControl.Text = "Pixel size:";
+            tslnudPixelSize.LabeledNumericUpDownControl.Minimum = 2;
+            tslnudPixelSize.LabeledNumericUpDownControl.Maximum = 100;
+            tslnudPixelSize.LabeledNumericUpDownControl.Value = config.ShapeRoundedRectangleRadius;
+            tslnudPixelSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
+            {
+                config.ShapePixelateSize = (int)tslnudPixelSize.LabeledNumericUpDownControl.Value;
+                UpdateCurrentShape();
+            };
+            cmsContextMenu.Items.Add(tslnudPixelSize);
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
@@ -396,49 +431,32 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Menu:
                     IsSnapResizing = true;
                     break;
-                case Keys.NumPad1:
+                case Keys.NumPad0:
                     CurrentShapeType = ShapeType.RegionRectangle;
                     break;
-                case Keys.NumPad2:
-                    CurrentShapeType = ShapeType.RegionRoundedRectangle;
-                    break;
-                case Keys.NumPad3:
-                    CurrentShapeType = ShapeType.RegionEllipse;
-                    break;
-                case Keys.NumPad4:
+                case Keys.NumPad1:
                     CurrentShapeType = ShapeType.DrawingRectangle;
                     break;
-                case Keys.NumPad5:
+                case Keys.NumPad2:
                     CurrentShapeType = ShapeType.DrawingRoundedRectangle;
                     break;
-                case Keys.NumPad6:
+                case Keys.NumPad3:
                     CurrentShapeType = ShapeType.DrawingEllipse;
                     break;
-                case Keys.NumPad7:
+                case Keys.NumPad4:
                     CurrentShapeType = ShapeType.DrawingLine;
                     break;
-                case Keys.NumPad8:
+                case Keys.NumPad5:
                     CurrentShapeType = ShapeType.DrawingArrow;
                     break;
-                case Keys.Add:
-                    switch (CurrentShapeType)
-                    {
-                        case ShapeType.RegionRoundedRectangle:
-                        case ShapeType.DrawingRoundedRectangle:
-                            config.ShapeRoundedRectangleRadius += RoundedRectangleRadiusIncrement;
-                            UpdateShape();
-                            break;
-                    }
+                case Keys.NumPad6:
+                    CurrentShapeType = ShapeType.DrawingBlur;
                     break;
-                case Keys.Subtract:
-                    switch (CurrentShapeType)
-                    {
-                        case ShapeType.RegionRoundedRectangle:
-                        case ShapeType.DrawingRoundedRectangle:
-                            config.ShapeRoundedRectangleRadius = Math.Max(0, config.ShapeRoundedRectangleRadius - RoundedRectangleRadiusIncrement);
-                            UpdateShape();
-                            break;
-                    }
+                case Keys.NumPad7:
+                    CurrentShapeType = ShapeType.DrawingPixelate;
+                    break;
+                case Keys.NumPad8:
+                    CurrentShapeType = ShapeType.DrawingHighlight;
                     break;
             }
         }
@@ -711,7 +729,7 @@ namespace ShareX.ScreenCaptureLib
             return shape;
         }
 
-        private void UpdateShape()
+        private void UpdateCurrentShape()
         {
             UpdateShape(CurrentShape);
         }
@@ -741,7 +759,7 @@ namespace ShareX.ScreenCaptureLib
                 else if (shape is PixelateDrawingShape)
                 {
                     PixelateDrawingShape pixelateDrawingShape = (PixelateDrawingShape)shape;
-                    pixelateDrawingShape.PixelSize = config.ShapePixelSize;
+                    pixelateDrawingShape.PixelSize = config.ShapePixelateSize;
                 }
             }
         }

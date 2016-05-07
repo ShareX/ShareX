@@ -254,18 +254,6 @@
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Отпустить ЛКМ] [Insert] Закончить выбор области</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
-    <value>[+ или - на циф. клавиатуре] Изменить радиус скругления</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
-    <value>[1 на циф. клавиатуре] Прямоугольник</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
-    <value>[2 на циф. клавиатуре] Скругленный прямоугольник</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
-    <value>[3 на циф. клавиатуре] Эллипс</value>
-  </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Остановить захват</value>
   </data>

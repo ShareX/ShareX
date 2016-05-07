@@ -419,42 +419,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Numpad + or -] Change rounded rectangle corner radius.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Numpad 1] Rectangle region.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Numpad_1__Rectangle_shape {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Numpad_1__Rectangle_shape", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Numpad 2] Rounded rectangle region.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Numpad 3] Ellipse region.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Numpad_3__Ellipse_shape {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Numpad_3__Ellipse_shape", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to [Esc] Cancel capture.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture {

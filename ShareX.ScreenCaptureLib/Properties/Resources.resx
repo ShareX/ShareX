@@ -167,9 +167,6 @@ X: {4} Y: {5}</value>
 Width: {4} px / Height: {5} px
 Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
-    <value>[Numpad 1] Rectangle region</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Delete] Remove region</value>
   </data>
@@ -210,17 +207,11 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
     <value>[Esc] Cancel capture</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
-    <value>[Numpad 2] Rounded rectangle region</value>
-  </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Browse for ffmpeg.exe</value>
   </data>
   <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
     <value>[Double left click] [Enter] Capture regions</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
-    <value>[Numpad 3] Ellipse region</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] Copy info</value>
@@ -230,9 +221,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
     <value>[Ctrl + C] Copy position</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
-    <value>[Numpad + or -] Change rounded rectangle corner radius</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>Successfully downloaded FFmpeg.</value>

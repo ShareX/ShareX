@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleTransparentForm : LayeredForm
+    public class RectangleRegionTransparentForm : LayeredForm
     {
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
@@ -77,7 +77,7 @@ namespace ShareX.ScreenCaptureLib
         private bool isMouseDown;
         private Stopwatch penTimer;
 
-        public RectangleTransparentForm()
+        public RectangleRegionTransparentForm()
         {
             clearPen = new Pen(Color.FromArgb(1, 0, 0, 0));
             borderDotPen = new Pen(Color.Black, 1);

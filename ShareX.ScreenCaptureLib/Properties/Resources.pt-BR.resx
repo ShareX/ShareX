@@ -231,15 +231,6 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Delete] Remover região</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Numpad_1__Rectangle_shape" xml:space="preserve">
-    <value>[Teclado numérico 1] Formato de retângulo</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_3__Ellipse_shape" xml:space="preserve">
-    <value>[Teclado numérico 3] Formato de elipse</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad_2__Rounded_rectangle_shape" xml:space="preserve">
-    <value>[Teclado numérico 2] Formato de retângulo arredondado</value>
-  </data>
   <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
     <value>canto inferior direito</value>
   </data>
@@ -263,9 +254,6 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Soltar o botão esquerdo][Insert] Parar seleção de região</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Numpad___or____Change_rounded_rectangle_corner_radius" xml:space="preserve">
-    <value>[Numpad + or -] Mudar o raio do canto do retângulo arrendondado</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Parar captura</value>

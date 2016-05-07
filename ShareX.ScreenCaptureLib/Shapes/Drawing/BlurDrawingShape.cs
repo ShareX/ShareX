@@ -42,28 +42,34 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Draw(Graphics g)
         {
-            using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
+            if (BlurRadius > 1)
             {
-                g.FillRectangle(brush, Rectangle);
-            }
-
-            if (Rectangle.Width > 10 && Rectangle.Height > 10)
-            {
-                using (Font font = new Font("Verdana", 14))
-                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
                 {
-                    g.DrawString("Blur", font, Brushes.White, Rectangle, sf);
+                    g.FillRectangle(brush, Rectangle);
+                }
+
+                if (Rectangle.Width > 10 && Rectangle.Height > 10)
+                {
+                    using (Font font = new Font("Verdana", 14))
+                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    {
+                        g.DrawString("Blur", font, Brushes.White, Rectangle, sf);
+                    }
                 }
             }
         }
 
         public override void DrawOutput(Graphics g, Bitmap bmp)
         {
-            using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
+            if (BlurRadius > 1)
             {
-                ImageHelpers.Blur(croppedImage, BlurRadius);
+                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
+                {
+                    ImageHelpers.Blur(croppedImage, BlurRadius);
 
-                g.DrawImage(croppedImage, Rectangle);
+                    g.DrawImage(croppedImage, Rectangle);
+                }
             }
         }
     }
