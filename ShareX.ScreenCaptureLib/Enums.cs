@@ -166,7 +166,9 @@ namespace ShareX.ScreenCaptureLib
         [Description("Drawing: Blur")]
         DrawingBlur,
         [Description("Drawing: Pixelate")]
-        DrawingPixelate
+        DrawingPixelate,
+        [Description("Drawing: Highlight")]
+        DrawingHighlight
     }
 
     public enum RegionAnnotateMode

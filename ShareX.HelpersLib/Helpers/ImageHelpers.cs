@@ -1318,5 +1318,33 @@ namespace ShareX.HelpersLib
 
             g.DrawRectangleProper(Pens.Black, rect);
         }
+
+        public static void HighlightImage(Bitmap bmp)
+        {
+            HighlightImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+        }
+
+        public static void HighlightImage(Bitmap bmp, Rectangle rect)
+        {
+            HighlightImage(bmp, rect, Color.Yellow);
+        }
+
+        public static void HighlightImage(Bitmap bmp, Rectangle rect, Color highlightColor)
+        {
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+            {
+                for (int y = rect.Y; y < rect.Height; y++)
+                {
+                    for (int x = rect.X; x < rect.Width; x++)
+                    {
+                        ColorBgra color = unsafeBitmap.GetPixel(x, y);
+                        color.Red = Math.Min(color.Red, highlightColor.R);
+                        color.Green = Math.Min(color.Green, highlightColor.G);
+                        color.Blue = Math.Min(color.Blue, highlightColor.B);
+                        unsafeBitmap.SetPixel(x, y, color);
+                    }
+                }
+            }
+        }
     }
 }

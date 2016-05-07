@@ -436,6 +436,12 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine("[Numpad 7] Line drawing");
             if (AreaManager.CurrentShapeType == ShapeType.DrawingArrow) sb.Append("-> ");
             sb.AppendLine("[Numpad 8] Arrow drawing");
+            if (AreaManager.CurrentShapeType == ShapeType.DrawingBlur) sb.Append("-> ");
+            sb.AppendLine("[Numpad 9] Blur drawing");
+            if (AreaManager.CurrentShapeType == ShapeType.DrawingPixelate) sb.Append("-> ");
+            sb.AppendLine("Pixelate drawing");
+            if (AreaManager.CurrentShapeType == ShapeType.DrawingHighlight) sb.Append("-> ");
+            sb.AppendLine("Highlight drawing");
 
             switch (AreaManager.CurrentShapeType)
             {

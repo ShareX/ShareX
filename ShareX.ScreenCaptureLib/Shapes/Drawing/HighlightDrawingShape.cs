@@ -34,15 +34,13 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class PixelateDrawingShape : BaseDrawingShape
+    public class HighlightDrawingShape : BaseDrawingShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingBlur;
-
-        public int PixelSize { get; set; }
+        public override ShapeType ShapeType { get; } = ShapeType.DrawingHighlight;
 
         public override void Draw(Graphics g)
         {
-            using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
+            using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.Yellow)))
             {
                 g.FillRectangle(brush, Rectangle);
             }
@@ -52,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
                 using (Font font = new Font("Verdana", 12, FontStyle.Bold))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
-                    g.DrawString("Pixelate", font, Brushes.White, Rectangle, sf);
+                    g.DrawString("Highlight", font, Brushes.Black, Rectangle, sf);
                 }
             }
         }
@@ -60,9 +58,10 @@ namespace ShareX.ScreenCaptureLib
         public override void DrawOutput(Graphics g, Bitmap bmp)
         {
             using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
-            using (Bitmap pixelatedImage = ImageHelpers.Pixelate(croppedImage, PixelSize))
             {
-                g.DrawImage(pixelatedImage, Rectangle);
+                ImageHelpers.HighlightImage(croppedImage);
+
+                g.DrawImage(croppedImage, Rectangle);
             }
         }
     }

@@ -85,6 +85,7 @@
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BlurDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\EllipseDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\HighlightDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\LineDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\PixelateDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\RectangleDrawingShape.cs" />
