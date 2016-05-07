@@ -94,6 +94,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void InitializeComponent()
         {
+            components = new Container();
+
             SuspendLayout();
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -413,7 +415,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private IContainer components = null;
+        public IContainer components = null;
 
         protected override void Dispose(bool disposing)
         {

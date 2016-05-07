@@ -51,7 +51,7 @@ namespace ShareX.ScreenCaptureLib
                 currentShapeType = value;
                 config.CurrentShapeType = CurrentShapeType;
                 DeselectArea();
-                UpdateMenuShapeType();
+                OnCurrentShapeTypeChanged(CurrentShapeType);
             }
         }
 
@@ -141,6 +141,8 @@ namespace ShareX.ScreenCaptureLib
         public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; } = 3;
 
+        public event Action<ShapeType> CurrentShapeTypeChanged;
+
         private RectangleRegionForm surface;
         private SurfaceOptions config;
         private ContextMenuStrip cmsContextMenu;
@@ -149,8 +151,6 @@ namespace ShareX.ScreenCaptureLib
         {
             this.surface = surface;
             config = surface.Config;
-
-            //CurrentShapeType = config.CurrentShapeType;
 
             ResizeManager = new ResizeManager(surface, this);
 
@@ -161,6 +161,9 @@ namespace ShareX.ScreenCaptureLib
             surface.MouseWheel += surface_MouseWheel;
 
             CreateContextMenu();
+
+            //CurrentShapeType = config.CurrentShapeType;
+            CurrentShapeType = ShapeType.RegionRectangle;
         }
 
         private void surface_MouseWheel(object sender, MouseEventArgs e)
@@ -177,7 +180,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void CreateContextMenu()
         {
-            cmsContextMenu = new ContextMenuStrip();
+            cmsContextMenu = new ContextMenuStrip(surface.components);
 
             ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem("Cancel capture");
             tsmiCancelCapture.Click += (sender, e) => surface.Close(SurfaceResult.Close);
@@ -393,9 +396,18 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowCrosshair.Click += (sender, e) => config.ShowCrosshair = tsmiShowCrosshair.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowCrosshair);
 
-            cmsContextMenu.Opening += (sender, e) =>
+            CurrentShapeTypeChanged += shapeType =>
             {
-                switch (CurrentShapeType)
+                foreach (ToolStripMenuItem tsmi in cmsContextMenu.Items.OfType<ToolStripMenuItem>().Where(x => x.Tag is ShapeType))
+                {
+                    if ((ShapeType)tsmi.Tag == shapeType)
+                    {
+                        tsmi.RadioCheck();
+                        break;
+                    }
+                }
+
+                switch (shapeType)
                 {
                     default:
                         tssShapeOptions.Visible = false;
@@ -413,7 +425,7 @@ namespace ShareX.ScreenCaptureLib
                         break;
                 }
 
-                switch (CurrentShapeType)
+                switch (shapeType)
                 {
                     default:
                         tsmiBorderColor.Visible = false;
@@ -429,7 +441,7 @@ namespace ShareX.ScreenCaptureLib
                         break;
                 }
 
-                switch (CurrentShapeType)
+                switch (shapeType)
                 {
                     default:
                         tsmiFillColor.Visible = false;
@@ -441,10 +453,10 @@ namespace ShareX.ScreenCaptureLib
                         break;
                 }
 
-                tslnudRoundedRectangleRadius.Visible = CurrentShapeType == ShapeType.RegionRoundedRectangle || CurrentShapeType == ShapeType.DrawingRoundedRectangle;
-                tslnudBlurRadius.Visible = CurrentShapeType == ShapeType.DrawingBlur;
-                tslnudPixelateSize.Visible = CurrentShapeType == ShapeType.DrawingPixelate;
-                tsmiHighlightColor.Visible = CurrentShapeType == ShapeType.DrawingHighlight;
+                tslnudRoundedRectangleRadius.Visible = shapeType == ShapeType.RegionRoundedRectangle || shapeType == ShapeType.DrawingRoundedRectangle;
+                tslnudBlurRadius.Visible = shapeType == ShapeType.DrawingBlur;
+                tslnudPixelateSize.Visible = shapeType == ShapeType.DrawingPixelate;
+                tsmiHighlightColor.Visible = shapeType == ShapeType.DrawingHighlight;
             };
         }
 
@@ -848,20 +860,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void UpdateMenuShapeType()
-        {
-            foreach (ToolStripMenuItem tsmi in cmsContextMenu.Items.OfType<ToolStripMenuItem>().Where(x => x.Tag is ShapeType))
-            {
-                ShapeType shapeType = (ShapeType)tsmi.Tag;
-
-                if (shapeType == CurrentShapeType)
-                {
-                    tsmi.RadioCheck();
-                    return;
-                }
-            }
-        }
-
         private void SelectArea()
         {
             if (!CurrentRectangle.IsEmpty && !config.IsFixedSize)
@@ -957,6 +955,14 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return Rectangle.Empty;
+        }
+
+        private void OnCurrentShapeTypeChanged(ShapeType shapeType)
+        {
+            if (CurrentShapeTypeChanged != null)
+            {
+                CurrentShapeTypeChanged(shapeType);
+            }
         }
     }
 }
