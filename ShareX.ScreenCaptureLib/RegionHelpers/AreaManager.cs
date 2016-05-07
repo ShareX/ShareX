@@ -51,6 +51,7 @@ namespace ShareX.ScreenCaptureLib
                 currentShapeType = value;
                 config.CurrentShapeType = CurrentShapeType;
                 DeselectArea();
+                UpdateMenuShapeType();
             }
         }
 
@@ -192,6 +193,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 ToolStripMenuItem tsmiShapeType = new ToolStripMenuItem(shapeType.GetLocalizedDescription());
                 tsmiShapeType.Checked = shapeType == CurrentShapeType;
+                tsmiShapeType.Tag = shapeType;
                 tsmiShapeType.Click += (sender, e) =>
                 {
                     tsmiShapeType.RadioCheck();
@@ -322,6 +324,7 @@ namespace ShareX.ScreenCaptureLib
             cmsContextMenu.Items.Add(tsmiFullscreenCapture);
 
             ToolStripMenuItem tsmiMonitorCapture = new ToolStripMenuItem("Capture monitor");
+            tsmiMonitorCapture.HideImageMargin();
             cmsContextMenu.Items.Add(tsmiMonitorCapture);
 
             tsmiMonitorCapture.DropDownItems.Clear();
@@ -841,6 +844,20 @@ namespace ShareX.ScreenCaptureLib
                 {
                     HighlightDrawingShape highlightDrawingShape = (HighlightDrawingShape)shape;
                     highlightDrawingShape.HighlightColor = config.ShapeHighlightColor;
+                }
+            }
+        }
+
+        private void UpdateMenuShapeType()
+        {
+            foreach (ToolStripMenuItem tsmi in cmsContextMenu.Items.OfType<ToolStripMenuItem>().Where(x => x.Tag is ShapeType))
+            {
+                ShapeType shapeType = (ShapeType)tsmi.Tag;
+
+                if (shapeType == CurrentShapeType)
+                {
+                    tsmi.RadioCheck();
+                    return;
                 }
             }
         }
