@@ -276,7 +276,12 @@ namespace ShareX.ScreenCaptureLib
 
             if (Config.ShowTips)
             {
-                DrawTips(g, 10, 10);
+                DrawTips(g);
+            }
+
+            if (Config.ShowMenuTip)
+            {
+                DrawMenuTip(g);
             }
 
             if (Config.ShowMagnifier)
@@ -290,13 +295,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DrawInfoText(Graphics g, string text, Rectangle rect, int padding)
+        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
         {
             g.FillRectangle(textBackgroundBrush, rect.Offset(-2));
             g.DrawRectangleProper(textBackgroundPenBlack, rect.Offset(-1));
             g.DrawRectangleProper(textBackgroundPenWhite, rect);
 
-            ImageHelpers.DrawTextWithShadow(g, text, rect.Offset(-padding).Location, infoFont, Brushes.White, Brushes.Black);
+            ImageHelpers.DrawTextWithShadow(g, text, rect.Offset(-padding).Location, font, Brushes.White, Brushes.Black);
         }
 
         private void DrawAreaText(Graphics g, string text, Rectangle area)
@@ -322,16 +327,18 @@ namespace ShareX.ScreenCaptureLib
 
             Rectangle backgroundRect = new Rectangle(textPos.X - backgroundPadding, textPos.Y - backgroundPadding, textSize.Width + backgroundPadding * 2, textSize.Height + backgroundPadding * 2);
 
-            DrawInfoText(g, text, backgroundRect, backgroundPadding);
+            DrawInfoText(g, text, backgroundRect, infoFont, backgroundPadding);
         }
 
-        private void DrawTips(Graphics g, int offset, int padding)
+        private void DrawTips(Graphics g)
         {
             StringBuilder sb = new StringBuilder();
             WriteTips(sb);
             string tipText = sb.ToString().Trim();
 
             Size textSize = g.MeasureString(tipText, infoFont).ToSize();
+            int offset = 10;
+            int padding = 10;
             int rectWidth = textSize.Width + padding * 2 + 2;
             int rectHeight = textSize.Height + padding * 2;
             Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
@@ -342,7 +349,21 @@ namespace ShareX.ScreenCaptureLib
                 textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
             }
 
-            DrawInfoText(g, tipText, textRectangle, padding);
+            DrawInfoText(g, tipText, textRectangle, infoFont, padding);
+        }
+
+        private void DrawMenuTip(Graphics g)
+        {
+            // TODO: Translate
+            string tipText = "Tip: Right click to open tool menu.";
+            Size textSize = g.MeasureString(tipText, textFont).ToSize();
+            int offset = 10;
+            int padding = 3;
+            int rectWidth = textSize.Width + padding * 2;
+            int rectHeight = textSize.Height + padding * 2;
+            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
+            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + (primaryScreenBounds.Width / 2) - (rectWidth / 2), primaryScreenBounds.Y + offset, rectWidth, rectHeight);
+            DrawInfoText(g, tipText, textRectangle, textFont, padding);
         }
 
         protected virtual void WriteTips(StringBuilder sb)
@@ -547,7 +568,7 @@ namespace ShareX.ScreenCaptureLib
                 if (Config.ShowInfo)
                 {
                     infoTextRect.Location = new Point(x + (magnifier.Width / 2) - (infoTextRect.Width / 2), y + magnifier.Height + infoTextOffset);
-                    DrawInfoText(g, infoText, infoTextRect, infoTextPadding);
+                    DrawInfoText(g, infoText, infoTextRect, infoFont, infoTextPadding);
                 }
 
                 g.SetHighQuality();

@@ -490,6 +490,7 @@ namespace ShareX.ScreenCaptureLib
                 else
                 {
                     cmsContextMenu.Show(surface, e.Location.Add(-10, -10));
+                    config.ShowMenuTip = false;
                 }
             }
         }

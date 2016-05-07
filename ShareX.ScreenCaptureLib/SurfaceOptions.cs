@@ -98,6 +98,8 @@ namespace ShareX.ScreenCaptureLib
         [Description("How close to a snap size you must be for it to snap.")]
         public List<SnapSize> SnapSizes { get; set; }
 
+        public bool ShowMenuTip = true;
+
         public ShapeType CurrentShapeType = ShapeType.RegionRectangle;
         public Color ShapeBorderColor = Color.Red;
         public int ShapeBorderSize = 2;
