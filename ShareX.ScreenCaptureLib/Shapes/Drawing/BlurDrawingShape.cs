@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (Rectangle.Width > 10 && Rectangle.Height > 10)
             {
-                using (Font font = new Font("Verdana", 12, FontStyle.Bold))
+                using (Font font = new Font("Verdana", 14))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
                     g.DrawString("Blur", font, Brushes.White, Rectangle, sf);

@@ -34,7 +34,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public static Image GetRegionImage(Image surfaceImage, GraphicsPath regionFillPath, GraphicsPath regionDrawPath, SurfaceOptions options)
         {
-            if (regionFillPath != null)
+            if (surfaceImage != null && regionFillPath != null)
             {
                 Image img;
 
