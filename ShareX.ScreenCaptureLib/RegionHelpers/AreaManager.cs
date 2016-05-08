@@ -338,9 +338,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 Screen screen = screens[i];
                 ToolStripMenuItem tsmi = new ToolStripMenuItem(string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height));
+                int index = i;
                 tsmi.Click += (sender, e) =>
                 {
-                    surface.MonitorIndex = i;
+                    surface.MonitorIndex = index;
                     surface.Close(SurfaceResult.Monitor);
                 };
                 tsmiMonitorCapture.DropDownItems.Add(tsmi);
