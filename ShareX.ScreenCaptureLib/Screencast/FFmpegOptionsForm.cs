@@ -499,5 +499,15 @@ namespace ShareX.ScreenCaptureLib
                 SettingsLoad();
             }
         }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void gbCommandLinePreview_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

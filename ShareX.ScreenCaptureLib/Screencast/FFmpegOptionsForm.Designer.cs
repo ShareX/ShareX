@@ -90,6 +90,7 @@
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.btnHelp = new System.Windows.Forms.Button();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
+            this.btnApply = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -314,6 +315,7 @@
             resources.ApplyResources(this.gbCommandLinePreview, "gbCommandLinePreview");
             this.gbCommandLinePreview.Name = "gbCommandLinePreview";
             this.gbCommandLinePreview.TabStop = false;
+            this.gbCommandLinePreview.Enter += new System.EventHandler(this.gbCommandLinePreview_Enter);
             // 
             // cbCustomCommands
             // 
@@ -615,11 +617,21 @@
             this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
             this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
             // 
+            // btnApply
+            // 
+            resources.ApplyResources(this.btnApply, "btnApply");
+            this.btnApply.Name = "btnApply";
+            this.ttHelpTip.SetToolTip(this.btnApply, resources.GetString("btnApply.ToolTip"));
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
             // FFmpegOptionsForm
             // 
+            this.AcceptButton = this.btnApply;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnApply);
             this.Controls.Add(this.cbOverrideFFmpegPath);
             this.Controls.Add(this.eiFFmpeg);
             this.Controls.Add(this.btnHelp);
@@ -736,5 +748,6 @@
         private System.Windows.Forms.CheckBox cbOverrideFFmpegPath;
         private System.Windows.Forms.PictureBox pbAudioCodecWarning;
         private System.Windows.Forms.PictureBox pbx264PresetWarning;
+        private System.Windows.Forms.Button btnApply;
     }
 }
