@@ -362,13 +362,13 @@ namespace ShareX.ScreenCaptureLib
             tsmiQuickCrop.Click += (sender, e) => config.QuickCrop = !tsmiQuickCrop.Checked;
             tsmiOptions.DropDownItems.Add(tsmiQuickCrop);
 
-            ToolStripMenuItem tsmiShowInfo = new ToolStripMenuItem("Position and size info");
+            ToolStripMenuItem tsmiShowInfo = new ToolStripMenuItem("Show position and size info");
             tsmiShowInfo.Checked = config.ShowInfo;
             tsmiShowInfo.CheckOnClick = true;
             tsmiShowInfo.Click += (sender, e) => config.ShowInfo = tsmiShowInfo.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowInfo);
 
-            ToolStripMenuItem tsmiShowMagnifier = new ToolStripMenuItem("Magnifier");
+            ToolStripMenuItem tsmiShowMagnifier = new ToolStripMenuItem("Show magnifier");
             tsmiShowMagnifier.Checked = config.ShowMagnifier;
             tsmiShowMagnifier.CheckOnClick = true;
             tsmiShowMagnifier.Click += (sender, e) => config.ShowMagnifier = tsmiShowMagnifier.Checked;
@@ -397,11 +397,17 @@ namespace ShareX.ScreenCaptureLib
             tslnudMagnifierPixelSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) => config.MagnifierPixelSize = (int)tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Value;
             tsmiOptions.DropDownItems.Add(tslnudMagnifierPixelSize);
 
-            ToolStripMenuItem tsmiShowCrosshair = new ToolStripMenuItem("Screen wide crosshair");
+            ToolStripMenuItem tsmiShowCrosshair = new ToolStripMenuItem("Show screen wide crosshair");
             tsmiShowCrosshair.Checked = config.ShowCrosshair;
             tsmiShowCrosshair.CheckOnClick = true;
             tsmiShowCrosshair.Click += (sender, e) => config.ShowCrosshair = tsmiShowCrosshair.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowCrosshair);
+
+            ToolStripMenuItem tsmiShowFPS = new ToolStripMenuItem("Show FPS");
+            tsmiShowFPS.Checked = config.ShowFPS;
+            tsmiShowFPS.CheckOnClick = true;
+            tsmiShowFPS.Click += (sender, e) => config.ShowFPS = tsmiShowFPS.Checked;
+            tsmiOptions.DropDownItems.Add(tsmiShowFPS);
 
             CurrentShapeTypeChanged += shapeType =>
             {

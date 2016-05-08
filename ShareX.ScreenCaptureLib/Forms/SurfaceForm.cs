@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
         protected GraphicsPath regionFillPath, regionDrawPath;
         protected Pen borderPen, borderDotPen, textBackgroundPenWhite, textBackgroundPenBlack, markerPen;
         protected Brush nodeBackgroundBrush, textBackgroundBrush;
-        protected Font textFont, infoFont;
+        protected Font infoFont, infoFontMedium, infoFontBig;
         protected Stopwatch timerStart, timerFPS;
         protected int frameCount;
         protected bool isKeyAllowed;
@@ -84,8 +84,9 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen = new Pen(Color.White);
             borderDotPen.DashPattern = new float[] { 5, 5 };
             nodeBackgroundBrush = new SolidBrush(Color.White);
-            textFont = new Font("Verdana", 12);
             infoFont = new Font("Verdana", 9);
+            infoFontMedium = new Font("Verdana", 12);
+            infoFontBig = new Font("Verdana", 16, FontStyle.Bold);
             textBackgroundBrush = new SolidBrush(Color.FromArgb(75, Color.Black));
             textBackgroundPenWhite = new Pen(Color.FromArgb(50, Color.White));
             textBackgroundPenBlack = new Pen(Color.FromArgb(150, Color.Black));
@@ -249,7 +250,7 @@ namespace ShareX.ScreenCaptureLib
             if (Config.ShowFPS)
             {
                 CheckFPS();
-                DrawInfo(g);
+                DrawFPS(g);
             }
 
             if (!pause)
@@ -397,13 +398,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DrawInfo(Graphics g)
+        private void DrawFPS(Graphics g)
         {
             string text = "FPS: " + FPS;
 
-            SizeF textSize = g.MeasureString(text, textFont);
+            SizeF textSize = g.MeasureString(text, infoFontBig);
 
-            int offset = 30;
+            int offset = 10;
 
             Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
             Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + offset, primaryScreenBounds.Y + offset, (int)textSize.Width, (int)textSize.Height);
@@ -413,7 +414,7 @@ namespace ShareX.ScreenCaptureLib
                 textRectangle.Y = primaryScreenBounds.Height - textRectangle.Height - offset;
             }
 
-            ImageHelpers.DrawTextWithOutline(g, text, textRectangle.Location, textFont, Color.White, Color.Black);
+            ImageHelpers.DrawTextWithOutline(g, text, textRectangle.Location, infoFontBig, Color.White, Color.Black);
         }
 
         protected Rectangle CalculateAreaFromNodes()
@@ -470,8 +471,9 @@ namespace ShareX.ScreenCaptureLib
             if (borderPen != null) borderPen.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
             if (nodeBackgroundBrush != null) nodeBackgroundBrush.Dispose();
-            if (textFont != null) textFont.Dispose();
             if (infoFont != null) infoFont.Dispose();
+            if (infoFontMedium != null) infoFontMedium.Dispose();
+            if (infoFontBig != null) infoFontBig.Dispose();
             if (textBackgroundBrush != null) textBackgroundBrush.Dispose();
             if (textBackgroundPenWhite != null) textBackgroundPenWhite.Dispose();
             if (textBackgroundPenBlack != null) textBackgroundPenBlack.Dispose();
