@@ -355,7 +355,7 @@ namespace ShareX.ScreenCaptureLib
         private void DrawMenuTip(Graphics g)
         {
             // TODO: Translate
-            string tipText = "Tip: Right click to open tool menu.";
+            string tipText = "Tip: Right click to open options menu.";
             Size textSize = g.MeasureString(tipText, textFont).ToSize();
             int offset = 10;
             int padding = 3;

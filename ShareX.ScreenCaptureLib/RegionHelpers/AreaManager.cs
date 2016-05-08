@@ -373,6 +373,12 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowMagnifier.Click += (sender, e) => config.ShowMagnifier = tsmiShowMagnifier.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowMagnifier);
 
+            ToolStripMenuItem tsmiUseSquareMagnifier = new ToolStripMenuItem("Square shape magnifier");
+            tsmiUseSquareMagnifier.Checked = config.UseSquareMagnifier;
+            tsmiUseSquareMagnifier.CheckOnClick = true;
+            tsmiUseSquareMagnifier.Click += (sender, e) => config.UseSquareMagnifier = tsmiUseSquareMagnifier.Checked;
+            tsmiOptions.DropDownItems.Add(tsmiUseSquareMagnifier);
+
             ToolStripLabeledNumericUpDown tslnudMagnifierPixelCount = new ToolStripLabeledNumericUpDown();
             tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Text = "Magnifier pixel count:";
             tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Minimum = 1;
