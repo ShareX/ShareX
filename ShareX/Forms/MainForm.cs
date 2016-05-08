@@ -2091,73 +2091,49 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             DoCapture(() =>
             {
                 Image img = null;
-                Image screenshot = Screenshot.CaptureFullscreen();
+                Image screenshot = null;
 
                 try
                 {
+                    screenshot = Screenshot.CaptureFullscreen();
+
                     surface.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
                     surface.SurfaceImage = screenshot;
                     surface.Prepare();
                     surface.ShowDialog();
 
-                    if (surface.Result == SurfaceResult.Region)
-                    {
-                        using (screenshot)
-                        {
-                            img = surface.GetResultImage();
-
-                            if (taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
-                            {
-                                WindowInfo windowInfo = surface.GetWindowInfo();
-
-                                if (windowInfo != null)
-                                {
-                                    img.Tag = new ImageTag
-                                    {
-                                        WindowTitle = windowInfo.Text,
-                                        ProcessName = windowInfo.ProcessName
-                                    };
-                                }
-                            }
-                        }
-                    }
-                    else if (surface.Result == SurfaceResult.Fullscreen)
-                    {
-                        img = screenshot;
-                    }
-                    else if (surface.Result == SurfaceResult.Monitor)
-                    {
-                        Screen[] screens = Screen.AllScreens;
-
-                        if (surface.MonitorIndex < screens.Length)
-                        {
-                            Screen screen = screens[surface.MonitorIndex];
-                            Rectangle screenRect = CaptureHelpers.ScreenToClient(screen.Bounds);
-
-                            using (screenshot)
-                            {
-                                img = ImageHelpers.CropImage(screenshot, screenRect);
-                            }
-                        }
-                    }
-                    else if (surface.Result == SurfaceResult.ActiveMonitor)
-                    {
-                        Rectangle activeScreenRect = CaptureHelpers.GetActiveScreenBounds0Based();
-
-                        using (screenshot)
-                        {
-                            img = ImageHelpers.CropImage(screenshot, activeScreenRect);
-                        }
-                    }
+                    img = surface.GetResultImage();
 
                     if (img != null)
                     {
+                        if (surface.Result == SurfaceResult.Region && taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
+                        {
+                            WindowInfo windowInfo = surface.GetWindowInfo();
+
+                            if (windowInfo != null)
+                            {
+                                img.Tag = new ImageTag
+                                {
+                                    WindowTitle = windowInfo.Text,
+                                    ProcessName = windowInfo.ProcessName
+                                };
+                            }
+                        }
+
                         lastRegionCaptureType = LastRegionCaptureType.Surface;
                     }
                 }
                 finally
                 {
-                    surface.Dispose();
+                    if (surface != null)
+                    {
+                        surface.Dispose();
+                    }
+
+                    if (screenshot != null)
+                    {
+                        screenshot.Dispose();
+                    }
                 }
 
                 return img;

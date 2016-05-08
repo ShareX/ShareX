@@ -694,31 +694,26 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override Image GetResultImage()
+        protected override Image GetOutputImage()
         {
-            if (SurfaceImage != null)
-            {
-                if (AreaManager.DrawingShapes.Length > 0)
-                {
-                    using (Bitmap bmp = new Bitmap(SurfaceImage))
-                    using (Graphics g = Graphics.FromImage(bmp))
-                    {
-                        foreach (BaseDrawingShape shape in AreaManager.DrawingShapes)
-                        {
-                            if (shape != null)
-                            {
-                                shape.DrawOutput(g, bmp);
-                            }
-                        }
+            Image img = base.GetOutputImage();
 
-                        return ShapeCaptureHelpers.GetRegionImage(bmp, regionFillPath, regionDrawPath, Config);
+            if (AreaManager.DrawingShapes.Length > 0)
+            {
+                using (Bitmap bmpCopy = new Bitmap(img))
+                using (Graphics g = Graphics.FromImage(img))
+                {
+                    foreach (BaseDrawingShape shape in AreaManager.DrawingShapes)
+                    {
+                        if (shape != null)
+                        {
+                            shape.DrawOutput(g, bmpCopy);
+                        }
                     }
                 }
-
-                return ShapeCaptureHelpers.GetRegionImage(SurfaceImage, regionFillPath, regionDrawPath, Config);
             }
 
-            return null;
+            return img;
         }
 
         protected override void Dispose(bool disposing)

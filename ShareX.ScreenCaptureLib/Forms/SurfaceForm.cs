@@ -139,7 +139,7 @@ namespace ShareX.ScreenCaptureLib
                 using (Bitmap darkBackground = (Bitmap)SurfaceImage.Clone())
                 using (Graphics g = Graphics.FromImage(darkBackground))
                 {
-                    using (Brush brush = new SolidBrush(Color.FromArgb(50, Color.Black)))
+                    using (Brush brush = new SolidBrush(Color.FromArgb(40, Color.Black)))
                     {
                         g.FillRectangle(brush, 0, 0, darkBackground.Width, darkBackground.Height);
                     }
@@ -260,7 +260,48 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual Image GetResultImage()
         {
-            return ShapeCaptureHelpers.GetRegionImage(SurfaceImage, regionFillPath, regionDrawPath, Config);
+            if (Result == SurfaceResult.Region)
+            {
+                using (Image img = GetOutputImage())
+                {
+                    return ShapeCaptureHelpers.GetRegionImage(img, regionFillPath, regionDrawPath, Config);
+                }
+            }
+            else if (Result == SurfaceResult.Fullscreen)
+            {
+                return GetOutputImage();
+            }
+            else if (Result == SurfaceResult.Monitor)
+            {
+                Screen[] screens = Screen.AllScreens;
+
+                if (MonitorIndex < screens.Length)
+                {
+                    Screen screen = screens[MonitorIndex];
+                    Rectangle screenRect = CaptureHelpers.ScreenToClient(screen.Bounds);
+
+                    using (Image img = GetOutputImage())
+                    {
+                        return ImageHelpers.CropImage(img, screenRect);
+                    }
+                }
+            }
+            else if (Result == SurfaceResult.ActiveMonitor)
+            {
+                Rectangle activeScreenRect = CaptureHelpers.GetActiveScreenBounds0Based();
+
+                using (Image img = GetOutputImage())
+                {
+                    return ImageHelpers.CropImage(img, activeScreenRect);
+                }
+            }
+
+            return null;
+        }
+
+        protected virtual Image GetOutputImage()
+        {
+            return (Image)SurfaceImage.Clone();
         }
 
         public virtual WindowInfo GetWindowInfo()
