@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -114,6 +115,49 @@ namespace ShareX.HelpersLib
 
                 // Left
                 g.DrawLine(pen, rect.X, rect.Y - crossSize, rect.X, rect.Bottom + crossSize);
+            }
+        }
+
+        public static void DrawCornerLines(this Graphics g, Rectangle rect, Pen pen, int lineSize)
+        {
+            if (rect.Width <= lineSize * 2)
+            {
+                g.DrawLine(pen, rect.X, rect.Y, rect.Right - 1, rect.Y);
+                g.DrawLine(pen, rect.X, rect.Bottom - 1, rect.Right - 1, rect.Bottom - 1);
+            }
+            else
+            {
+                // Top left
+                g.DrawLine(pen, rect.X, rect.Y, rect.X + lineSize, rect.Y);
+
+                // Top right
+                g.DrawLine(pen, rect.Right - 1, rect.Y, rect.Right - 1 - lineSize, rect.Y);
+
+                // Bottom left
+                g.DrawLine(pen, rect.X, rect.Bottom - 1, rect.X + lineSize, rect.Bottom - 1);
+
+                // Bottom right
+                g.DrawLine(pen, rect.Right - 1, rect.Bottom - 1, rect.Right - 1 - lineSize, rect.Bottom - 1);
+            }
+
+            if (rect.Height <= lineSize * 2)
+            {
+                g.DrawLine(pen, rect.X, rect.Y, rect.X, rect.Bottom - 1);
+                g.DrawLine(pen, rect.Right - 1, rect.Y, rect.Right - 1, rect.Bottom - 1);
+            }
+            else
+            {
+                // Top left
+                g.DrawLine(pen, rect.X, rect.Y, rect.X, rect.Y + lineSize);
+
+                // Top right
+                g.DrawLine(pen, rect.Right - 1, rect.Y, rect.Right - 1, rect.Y + lineSize);
+
+                // Bottom left
+                g.DrawLine(pen, rect.X, rect.Bottom - 1, rect.X, rect.Bottom - 1 - lineSize);
+
+                // Bottom right
+                g.DrawLine(pen, rect.Right - 1, rect.Bottom - 1, rect.Right - 1, rect.Bottom - 1 - lineSize);
             }
         }
 

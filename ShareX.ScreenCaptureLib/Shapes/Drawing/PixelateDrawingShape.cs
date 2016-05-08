@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public class PixelateDrawingShape : BaseDrawingShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingBlur;
+        public override ShapeType ShapeType { get; } = ShapeType.DrawingPixelate;
 
         public int PixelSize { get; set; }
 
@@ -47,6 +47,11 @@ namespace ShareX.ScreenCaptureLib
                 using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
                 {
                     g.FillRectangle(brush, Rectangle);
+                }
+
+                using (Pen pen = new Pen(Color.FromArgb(200, Color.White)))
+                {
+                    g.DrawCornerLines(Rectangle, pen, 20);
                 }
 
                 if (Rectangle.Width > 10 && Rectangle.Height > 10)

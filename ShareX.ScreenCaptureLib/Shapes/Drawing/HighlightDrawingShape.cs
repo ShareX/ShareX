@@ -47,6 +47,11 @@ namespace ShareX.ScreenCaptureLib
                 g.FillRectangle(brush, Rectangle);
             }
 
+            using (Pen pen = new Pen(Color.FromArgb(200, Color.Black)))
+            {
+                g.DrawCornerLines(Rectangle, pen, 20);
+            }
+
             if (Rectangle.Width > 10 && Rectangle.Height > 10)
             {
                 using (Font font = new Font("Verdana", 14))
