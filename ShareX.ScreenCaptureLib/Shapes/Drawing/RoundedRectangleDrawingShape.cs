@@ -66,5 +66,10 @@ namespace ShareX.ScreenCaptureLib
                 if (pen != null) pen.Dispose();
             }
         }
+
+        public override void AddShapePath(GraphicsPath gp, Rectangle rect)
+        {
+            gp.AddRoundedRectangle(rect, Radius);
+        }
     }
 }

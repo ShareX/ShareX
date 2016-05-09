@@ -37,7 +37,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RectangleRegionForm : SurfaceForm
     {
-        public AreaManager AreaManager { get; private set; }
+        public ShapeManager AreaManager { get; private set; }
 
         #region Screen color picker
 
@@ -132,7 +132,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (Config != null)
             {
-                AreaManager = new AreaManager(this);
+                AreaManager = new ShapeManager(this);
                 AreaManager.WindowCaptureMode = Config.DetectWindows;
                 AreaManager.IncludeControls = Config.DetectControls;
 

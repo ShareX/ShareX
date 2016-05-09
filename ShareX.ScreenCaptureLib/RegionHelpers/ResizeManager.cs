@@ -85,11 +85,11 @@ namespace ShareX.ScreenCaptureLib
         private bool IsLeftPressed { get; set; }
         private bool IsRightPressed { get; set; }
 
-        private AreaManager areaManager;
+        private ShapeManager areaManager;
         private NodeObject[] nodes;
         private Rectangle tempRect;
 
-        public ResizeManager(SurfaceForm surface, AreaManager areaManager)
+        public ResizeManager(SurfaceForm surface, ShapeManager areaManager)
         {
             this.areaManager = areaManager;
 

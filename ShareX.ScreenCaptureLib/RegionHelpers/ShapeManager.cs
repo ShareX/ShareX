@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class AreaManager
+    public class ShapeManager
     {
         public List<BaseShape> Shapes { get; private set; } = new List<BaseShape>();
 
@@ -147,7 +147,7 @@ namespace ShareX.ScreenCaptureLib
         private SurfaceOptions config;
         private ContextMenuStrip cmsContextMenu;
 
-        public AreaManager(RectangleRegionForm surface)
+        public ShapeManager(RectangleRegionForm surface)
         {
             this.surface = surface;
             config = surface.Config;
