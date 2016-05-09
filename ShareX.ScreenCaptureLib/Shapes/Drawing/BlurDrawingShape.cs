@@ -59,7 +59,7 @@ namespace ShareX.ScreenCaptureLib
                     using (Font font = new Font("Verdana", 14))
                     using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                     {
-                        g.DrawString("Blur", font, Brushes.White, Rectangle, sf);
+                        g.DrawString($"Blur ({BlurRadius})", font, Brushes.White, Rectangle, sf);
                     }
                 }
             }
