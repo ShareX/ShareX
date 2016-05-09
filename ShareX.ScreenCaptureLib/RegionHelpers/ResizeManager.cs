@@ -318,7 +318,15 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null)
             {
-                shape.Rectangle = shape.Rectangle.LocationOffset(x, y);
+                if (shape.NodeType == NodeType.Rectangle)
+                {
+                    shape.Rectangle = shape.Rectangle.LocationOffset(x, y);
+                }
+                else if (shape.NodeType == NodeType.Line)
+                {
+                    shape.StartPosition = shape.StartPosition.Add(x, y);
+                    shape.EndPosition = shape.EndPosition.Add(x, y);
+                }
             }
         }
 
@@ -328,13 +336,27 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null)
             {
-                if (isBottomRightMoving)
+                if (shape.NodeType == NodeType.Rectangle)
                 {
-                    shape.Rectangle = shape.Rectangle.SizeOffset(x, y);
+                    if (isBottomRightMoving)
+                    {
+                        shape.Rectangle = shape.Rectangle.SizeOffset(x, y);
+                    }
+                    else
+                    {
+                        shape.Rectangle = shape.Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
+                    }
                 }
-                else
+                else if (shape.NodeType == NodeType.Line)
                 {
-                    shape.Rectangle = shape.Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
+                    if (isBottomRightMoving)
+                    {
+                        shape.StartPosition = shape.StartPosition.Add(x, y);
+                    }
+                    else
+                    {
+                        shape.EndPosition = shape.EndPosition.Add(x, y);
+                    }
                 }
             }
         }

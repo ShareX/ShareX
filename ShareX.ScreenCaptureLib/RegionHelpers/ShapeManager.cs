@@ -589,17 +589,15 @@ namespace ShareX.ScreenCaptureLib
 
         public void Update()
         {
-            if (CurrentShape != null)
+            BaseShape shape = CurrentShape;
+
+            if (shape != null)
             {
                 if (IsMoving)
                 {
-                    Rectangle rect = CurrentRectangle;
-                    rect.X += InputManager.MouseVelocity.X;
-                    rect.Y += InputManager.MouseVelocity.Y;
-                    CurrentShape.Rectangle = rect;
+                    ResizeManager.MoveCurrentArea(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
                 }
-
-                if (IsCreating && !CurrentRectangle.IsEmpty)
+                else if (IsCreating && !CurrentRectangle.IsEmpty)
                 {
                     CurrentPosition = InputManager.MousePosition0Based;
 
@@ -615,7 +613,7 @@ namespace ShareX.ScreenCaptureLib
                         newPosition = SnapPosition(PositionOnClick, newPosition);
                     }
 
-                    CurrentShape.EndPosition = newPosition;
+                    shape.EndPosition = newPosition;
                 }
             }
 
