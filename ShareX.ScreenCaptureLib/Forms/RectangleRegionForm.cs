@@ -169,6 +169,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void Draw(Graphics g)
         {
+            // Draw snap rectangles
             if (AreaManager.IsCreating && AreaManager.IsSnapResizing)
             {
                 foreach (Size size in Config.SnapSizes)
@@ -179,116 +180,108 @@ namespace ShareX.ScreenCaptureLib
             }
 
             List<BaseShape> areas = AreaManager.ValidRegions.ToList();
-            bool drawAreaExist = areas.Count > 0;
-
-            if (AreaManager.IsCurrentShapeTypeRegion && AreaManager.IsCurrentHoverAreaValid && areas.All(area => area.Rectangle != AreaManager.CurrentHoverRectangle))
-            {
-                BaseShape shape = AreaManager.CreateRegionShape(AreaManager.CurrentHoverRectangle);
-                areas.Add(shape);
-            }
 
             if (areas.Count > 0)
             {
+                // Create graphics path from all regions
                 UpdateRegionPath();
 
-                if (drawAreaExist)
+                // If background is dimmed then draw non dimmed background to region selections
+                if (Config.UseDimming)
                 {
-                    if (Config.UseDimming)
+                    using (Region region = new Region(regionDrawPath))
                     {
-                        using (Region region = new Region(regionDrawPath))
-                        {
-                            g.Clip = region;
-                            g.FillRectangle(lightBackgroundBrush, ScreenRectangle0Based);
-                            g.ResetClip();
-                        }
+                        g.Clip = region;
+                        g.FillRectangle(lightBackgroundBrush, ScreenRectangle0Based);
+                        g.ResetClip();
                     }
+                }
 
-                    using (Pen blinkBorderPen = new Pen(colorBlinkAnimation.GetColor()))
-                    {
-                        g.DrawPath(blinkBorderPen, regionDrawPath);
-                    }
-
-                    /*
-                    if (areas.Count > 1)
-                    {
-                        Rectangle totalArea = AreaManager.CombineAreas();
-                        g.DrawCrossRectangle(borderPen, totalArea, 15);
-
-                        if (Config.ShowInfo)
-                        {
-                            ImageHelpers.DrawTextWithOutline(g, string.Format("X: {0} / Y: {1} / W: {2} / H: {3}", totalArea.X, totalArea.Y,
-                                totalArea.Width, totalArea.Height), new PointF(totalArea.X + 5, totalArea.Y - 25), textFont, Color.White, Color.Black);
-                        }
-                    }
-                    */
+                // Blink borders of all regions slightly to make non active regions to be visible in both dark and light backgrounds
+                using (Pen blinkBorderPen = new Pen(colorBlinkAnimation.GetColor()))
+                {
+                    g.DrawPath(blinkBorderPen, regionDrawPath);
                 }
             }
 
+            // Draw drawing shapes
             foreach (BaseDrawingShape drawingShape in AreaManager.DrawingShapes)
             {
                 drawingShape.Draw(g);
             }
 
-            if (areas.Count > 0 && AreaManager.IsCurrentShapeTypeRegion)
+            // Draw animated rectangle on hover area
+            if (AreaManager.IsCurrentHoverAreaValid)
             {
-                if (AreaManager.IsCurrentHoverAreaValid)
+                using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
                 {
-                    using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
-                    {
-                        AreaManager.CreateRegionShape(AreaManager.CurrentHoverRectangle).AddShapePath(hoverDrawPath, -1);
+                    AreaManager.CreateRegionShape(AreaManager.CurrentHoverRectangle).AddShapePath(hoverDrawPath, -1);
 
-                        g.DrawPath(borderPen, hoverDrawPath);
-                        g.DrawPath(borderDotPen, hoverDrawPath);
-                    }
+                    g.DrawPath(borderPen, hoverDrawPath);
+                    g.DrawPath(borderDotPen, hoverDrawPath);
+                }
+            }
+
+            // Draw animated rectangle on selection area
+            if (AreaManager.IsCurrentShapeTypeRegion && AreaManager.IsCurrentRegionValid)
+            {
+                g.DrawRectangleProper(borderPen, AreaManager.CurrentRectangle);
+                g.DrawRectangleProper(borderDotPen, AreaManager.CurrentRectangle);
+
+                if (RulerMode)
+                {
+                    DrawRuler(g, AreaManager.CurrentRectangle, borderPen, 5, 10);
+                    DrawRuler(g, AreaManager.CurrentRectangle, borderPen, 15, 100);
+
+                    Point centerPos = new Point(AreaManager.CurrentRectangle.X + AreaManager.CurrentRectangle.Width / 2, AreaManager.CurrentRectangle.Y + AreaManager.CurrentRectangle.Height / 2);
+                    int markSize = 10;
+                    g.DrawLine(borderPen, centerPos.X, centerPos.Y - markSize, centerPos.X, centerPos.Y + markSize);
+                    g.DrawLine(borderPen, centerPos.X - markSize, centerPos.Y, centerPos.X + markSize, centerPos.Y);
+                }
+            }
+
+            // Draw all regions rectangle info
+            if (Config.ShowInfo)
+            {
+                // Add hover area to list so rectangle info can be shown
+                if (AreaManager.IsCurrentShapeTypeRegion && AreaManager.IsCurrentHoverAreaValid && areas.All(area => area.Rectangle != AreaManager.CurrentHoverRectangle))
+                {
+                    BaseShape shape = AreaManager.CreateRegionShape(AreaManager.CurrentHoverRectangle);
+                    areas.Add(shape);
                 }
 
-                if (AreaManager.IsCurrentRegionValid)
+                foreach (BaseShape regionInfo in areas)
                 {
-                    g.DrawRectangleProper(borderPen, AreaManager.CurrentRectangle);
-                    g.DrawRectangleProper(borderDotPen, AreaManager.CurrentRectangle);
-
-                    if (RulerMode)
+                    if (regionInfo.Rectangle.IsValid())
                     {
-                        DrawRuler(g, AreaManager.CurrentRectangle, borderPen, 5, 10);
-                        DrawRuler(g, AreaManager.CurrentRectangle, borderPen, 15, 100);
-
-                        Point centerPos = new Point(AreaManager.CurrentRectangle.X + AreaManager.CurrentRectangle.Width / 2, AreaManager.CurrentRectangle.Y + AreaManager.CurrentRectangle.Height / 2);
-                        int markSize = 10;
-                        g.DrawLine(borderPen, centerPos.X, centerPos.Y - markSize, centerPos.X, centerPos.Y + markSize);
-                        g.DrawLine(borderPen, centerPos.X - markSize, centerPos.Y, centerPos.X + markSize, centerPos.Y);
-                    }
-                }
-
-                if (Config.ShowInfo)
-                {
-                    foreach (BaseShape regionInfo in areas)
-                    {
-                        if (regionInfo.Rectangle.IsValid())
-                        {
-                            string areaText = GetAreaText(regionInfo.Rectangle);
-                            DrawAreaText(g, areaText, regionInfo.Rectangle);
-                        }
+                        string areaText = GetAreaText(regionInfo.Rectangle);
+                        DrawAreaText(g, areaText, regionInfo.Rectangle);
                     }
                 }
             }
 
+            // Draw resize nodes
             DrawObjects(g);
 
+            // Draw F1 tips
             if (Config.ShowTips)
             {
                 DrawTips(g);
             }
 
+            // Draw right click menu tip
             if (Config.ShowMenuTip)
             {
                 DrawMenuTip(g);
             }
 
+            // Draw magnifier
             if (Config.ShowMagnifier)
             {
                 DrawMagnifier(g);
             }
 
+            // Draw screen wide crosshair
             if (Config.ShowCrosshair)
             {
                 DrawCrosshair(g);

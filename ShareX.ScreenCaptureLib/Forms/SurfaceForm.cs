@@ -140,7 +140,7 @@ namespace ShareX.ScreenCaptureLib
                 using (Bitmap darkBackground = (Bitmap)SurfaceImage.Clone())
                 using (Graphics g = Graphics.FromImage(darkBackground))
                 {
-                    using (Brush brush = new SolidBrush(Color.FromArgb(40, Color.Black)))
+                    using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
                     {
                         g.FillRectangle(brush, 0, 0, darkBackground.Width, darkBackground.Height);
                     }
