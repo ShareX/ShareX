@@ -334,12 +334,12 @@ namespace ShareX.ScreenCaptureLib
             int padding = 10;
             int rectWidth = textSize.Width + padding * 2 + 2;
             int rectHeight = textSize.Height + padding * 2;
-            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
-            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + primaryScreenBounds.Width - rectWidth - offset, primaryScreenBounds.Y + offset, rectWidth, rectHeight);
+            Rectangle screenBounds = CaptureHelpers.GetActiveScreenBounds0Based();
+            Rectangle textRectangle = new Rectangle(screenBounds.X + screenBounds.Width - rectWidth - offset, screenBounds.Y + offset, rectWidth, rectHeight);
 
             if (textRectangle.Offset(10).Contains(InputManager.MousePosition0Based))
             {
-                textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
+                textRectangle.Y = screenBounds.Height - rectHeight - offset;
             }
 
             DrawInfoText(g, tipText, textRectangle, infoFont, padding);
@@ -354,8 +354,8 @@ namespace ShareX.ScreenCaptureLib
             int padding = 3;
             int rectWidth = textSize.Width + padding * 2;
             int rectHeight = textSize.Height + padding * 2;
-            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
-            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + (primaryScreenBounds.Width / 2) - (rectWidth / 2), primaryScreenBounds.Y + offset, rectWidth, rectHeight);
+            Rectangle screenBounds = CaptureHelpers.GetActiveScreenBounds0Based();
+            Rectangle textRectangle = new Rectangle(screenBounds.X + (screenBounds.Width / 2) - (rectWidth / 2), screenBounds.Y + offset, rectWidth, rectHeight);
             DrawInfoText(g, tipText, textRectangle, infoFontMedium, padding);
         }
 
