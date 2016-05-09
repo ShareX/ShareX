@@ -224,9 +224,9 @@ namespace ShareX.ScreenCaptureLib
             int x = IsLeftPressed && IsRightPressed ? 0 : IsRightPressed ? speed : IsLeftPressed ? -speed : 0;
 
             // Move the cursor
-            if (!areaManager.IsCurrentRegionValid || areaManager.IsCreating)
+            if (areaManager.CurrentShape == null || areaManager.IsCreating)
             {
-                Cursor.Position = new Point(Cursor.Position.X + x, Cursor.Position.Y + y);
+                Cursor.Position = Cursor.Position.Add(x, y);
             }
             else
             {
@@ -318,8 +318,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null)
             {
-                shape.StartPosition = shape.StartPosition.Add(x, y);
-                shape.EndPosition = shape.EndPosition.Add(x, y);
+                shape.Rectangle = shape.Rectangle.LocationOffset(x, y);
             }
         }
 
