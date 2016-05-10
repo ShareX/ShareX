@@ -78,7 +78,10 @@ namespace ShareX.ScreenCaptureLib
             Rectangle = rect;
         }
 
-        public abstract void AddShapePath(GraphicsPath gp, Rectangle rect);
+        public virtual void AddShapePath(GraphicsPath gp, Rectangle rect)
+        {
+            gp.AddRectangle(rect);
+        }
 
         public void AddShapePath(GraphicsPath gp)
         {

@@ -204,6 +204,12 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
+            // Draw effect shapes
+            foreach (BaseEffectShape effectShape in AreaManager.EffectShapes)
+            {
+                effectShape.Draw(g);
+            }
+
             // Draw drawing shapes
             foreach (BaseDrawingShape drawingShape in AreaManager.DrawingShapes)
             {
@@ -691,16 +697,24 @@ namespace ShareX.ScreenCaptureLib
         {
             Image img = base.GetOutputImage();
 
-            if (AreaManager.DrawingShapes.Length > 0)
+            if (AreaManager.DrawingShapes.Length > 0 || AreaManager.EffectShapes.Length > 0)
             {
                 using (Bitmap bmpCopy = new Bitmap(img))
                 using (Graphics g = Graphics.FromImage(img))
                 {
+                    foreach (BaseEffectShape shape in AreaManager.EffectShapes)
+                    {
+                        if (shape != null)
+                        {
+                            shape.DrawFinal(g, bmpCopy);
+                        }
+                    }
+
                     foreach (BaseDrawingShape shape in AreaManager.DrawingShapes)
                     {
                         if (shape != null)
                         {
-                            shape.DrawOutput(g, bmpCopy);
+                            shape.Draw(g);
                         }
                     }
                 }

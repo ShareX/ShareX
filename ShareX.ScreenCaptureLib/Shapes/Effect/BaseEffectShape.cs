@@ -26,14 +26,18 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleRegionShape : BaseRegionShape
+    public abstract class BaseEffectShape : BaseShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.RegionRectangle;
+        public abstract void Draw(Graphics g);
+
+        public virtual void DrawFinal(Graphics g, Bitmap bmp)
+        {
+            Draw(g);
+        }
     }
 }

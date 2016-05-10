@@ -83,13 +83,14 @@
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
-    <Compile Include="Shapes\Drawing\BlurDrawingShape.cs" />
+    <Compile Include="Shapes\Effect\BlurEffectShape.cs" />
     <Compile Include="Shapes\Drawing\EllipseDrawingShape.cs" />
-    <Compile Include="Shapes\Drawing\HighlightDrawingShape.cs" />
+    <Compile Include="Shapes\Effect\HighlightEffectShape.cs" />
     <Compile Include="Shapes\Drawing\LineDrawingShape.cs" />
-    <Compile Include="Shapes\Drawing\PixelateDrawingShape.cs" />
+    <Compile Include="Shapes\Effect\PixelateEffectShape.cs" />
     <Compile Include="Shapes\Drawing\RectangleDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\RoundedRectangleDrawingShape.cs" />
+    <Compile Include="Shapes\Effect\BaseEffectShape.cs" />
     <Compile Include="Shapes\IRoundedRectangleShape.cs" />
     <Compile Include="Shapes\Region\EllipseRegionShape.cs" />
     <Compile Include="Shapes\Region\RectangleRegionShape.cs" />

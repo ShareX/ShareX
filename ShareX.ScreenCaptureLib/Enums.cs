@@ -163,11 +163,11 @@ namespace ShareX.ScreenCaptureLib
         DrawingLine,
         [Description("Drawing: Arrow")]
         DrawingArrow,
-        [Description("Drawing: Blur")]
+        [Description("Effect: Blur")]
         DrawingBlur,
-        [Description("Drawing: Pixelate")]
+        [Description("Effect: Pixelate")]
         DrawingPixelate,
-        [Description("Drawing: Highlight")]
+        [Description("Effect: Highlight")]
         DrawingHighlight
     }
 

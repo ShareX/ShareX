@@ -34,15 +34,15 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class BlurDrawingShape : BaseDrawingShape
+    public class PixelateEffectShape : BaseEffectShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingBlur;
+        public override ShapeType ShapeType { get; } = ShapeType.DrawingPixelate;
 
-        public int BlurRadius { get; set; }
+        public int PixelSize { get; set; }
 
         public override void Draw(Graphics g)
         {
-            if (BlurRadius > 1)
+            if (PixelSize > 1)
             {
                 using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
                 {
@@ -59,21 +59,20 @@ namespace ShareX.ScreenCaptureLib
                     using (Font font = new Font("Verdana", 14))
                     using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                     {
-                        g.DrawString($"Blur ({BlurRadius})", font, Brushes.White, Rectangle, sf);
+                        g.DrawString($"Pixelate ({PixelSize})", font, Brushes.White, Rectangle, sf);
                     }
                 }
             }
         }
 
-        public override void DrawOutput(Graphics g, Bitmap bmp)
+        public override void DrawFinal(Graphics g, Bitmap bmp)
         {
-            if (BlurRadius > 1)
+            if (PixelSize > 1)
             {
                 using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
+                using (Bitmap pixelatedImage = ImageHelpers.Pixelate(croppedImage, PixelSize))
                 {
-                    ImageHelpers.Blur(croppedImage, BlurRadius);
-
-                    g.DrawImage(croppedImage, Rectangle);
+                    g.DrawImage(pixelatedImage, Rectangle);
                 }
             }
         }

@@ -40,15 +40,5 @@ namespace ShareX.ScreenCaptureLib
         public int BorderSize { get; set; }
 
         public abstract void Draw(Graphics g);
-
-        public virtual void DrawOutput(Graphics g, Bitmap bmp)
-        {
-            Draw(g);
-        }
-
-        public override void AddShapePath(GraphicsPath gp, Rectangle rect)
-        {
-            gp.AddRectangle(rect);
-        }
     }
 }

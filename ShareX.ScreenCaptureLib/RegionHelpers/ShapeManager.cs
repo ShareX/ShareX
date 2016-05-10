@@ -84,6 +84,14 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public BaseEffectShape[] EffectShapes
+        {
+            get
+            {
+                return Shapes.OfType<BaseEffectShape>().ToArray();
+            }
+        }
+
         public BaseShape[] ValidRegions
         {
             get
@@ -815,13 +823,13 @@ namespace ShareX.ScreenCaptureLib
                     shape = new ArrowDrawingShape();
                     break;
                 case ShapeType.DrawingBlur:
-                    shape = new BlurDrawingShape();
+                    shape = new BlurEffectShape();
                     break;
                 case ShapeType.DrawingPixelate:
-                    shape = new PixelateDrawingShape();
+                    shape = new PixelateEffectShape();
                     break;
                 case ShapeType.DrawingHighlight:
-                    shape = new HighlightDrawingShape();
+                    shape = new HighlightEffectShape();
                     break;
             }
 
@@ -854,19 +862,19 @@ namespace ShareX.ScreenCaptureLib
                     IRoundedRectangleShape roundedRectangleShape = (IRoundedRectangleShape)shape;
                     roundedRectangleShape.Radius = config.ShapeRoundedRectangleRadius;
                 }
-                else if (shape is BlurDrawingShape)
+                else if (shape is BlurEffectShape)
                 {
-                    BlurDrawingShape blurDrawingShape = (BlurDrawingShape)shape;
+                    BlurEffectShape blurDrawingShape = (BlurEffectShape)shape;
                     blurDrawingShape.BlurRadius = config.ShapeBlurRadius;
                 }
-                else if (shape is PixelateDrawingShape)
+                else if (shape is PixelateEffectShape)
                 {
-                    PixelateDrawingShape pixelateDrawingShape = (PixelateDrawingShape)shape;
+                    PixelateEffectShape pixelateDrawingShape = (PixelateEffectShape)shape;
                     pixelateDrawingShape.PixelSize = config.ShapePixelateSize;
                 }
-                else if (shape is HighlightDrawingShape)
+                else if (shape is HighlightEffectShape)
                 {
-                    HighlightDrawingShape highlightDrawingShape = (HighlightDrawingShape)shape;
+                    HighlightEffectShape highlightDrawingShape = (HighlightEffectShape)shape;
                     highlightDrawingShape.HighlightColor = config.ShapeHighlightColor;
                 }
             }

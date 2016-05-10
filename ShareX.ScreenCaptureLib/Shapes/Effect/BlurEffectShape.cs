@@ -34,41 +34,47 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class HighlightDrawingShape : BaseDrawingShape
+    public class BlurEffectShape : BaseEffectShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingHighlight;
+        public override ShapeType ShapeType { get; } = ShapeType.DrawingBlur;
 
-        public Color HighlightColor { get; set; }
+        public int BlurRadius { get; set; }
 
         public override void Draw(Graphics g)
         {
-            using (Brush brush = new SolidBrush(Color.FromArgb(150, HighlightColor)))
+            if (BlurRadius > 1)
             {
-                g.FillRectangle(brush, Rectangle);
-            }
-
-            using (Pen pen = new Pen(Color.FromArgb(200, Color.Black)))
-            {
-                g.DrawCornerLines(Rectangle, pen, 20);
-            }
-
-            if (Rectangle.Width > 10 && Rectangle.Height > 10)
-            {
-                using (Font font = new Font("Verdana", 14))
-                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
                 {
-                    g.DrawString("Highlight", font, Brushes.Black, Rectangle, sf);
+                    g.FillRectangle(brush, Rectangle);
+                }
+
+                using (Pen pen = new Pen(Color.FromArgb(200, Color.White)))
+                {
+                    g.DrawCornerLines(Rectangle, pen, 20);
+                }
+
+                if (Rectangle.Width > 10 && Rectangle.Height > 10)
+                {
+                    using (Font font = new Font("Verdana", 14))
+                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    {
+                        g.DrawString($"Blur ({BlurRadius})", font, Brushes.White, Rectangle, sf);
+                    }
                 }
             }
         }
 
-        public override void DrawOutput(Graphics g, Bitmap bmp)
+        public override void DrawFinal(Graphics g, Bitmap bmp)
         {
-            using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
+            if (BlurRadius > 1)
             {
-                ImageHelpers.HighlightImage(croppedImage, HighlightColor);
+                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
+                {
+                    ImageHelpers.Blur(croppedImage, BlurRadius);
 
-                g.DrawImage(croppedImage, Rectangle);
+                    g.DrawImage(croppedImage, Rectangle);
+                }
             }
         }
     }

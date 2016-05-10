@@ -34,46 +34,41 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class PixelateDrawingShape : BaseDrawingShape
+    public class HighlightEffectShape : BaseEffectShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingPixelate;
+        public override ShapeType ShapeType { get; } = ShapeType.DrawingHighlight;
 
-        public int PixelSize { get; set; }
+        public Color HighlightColor { get; set; }
 
         public override void Draw(Graphics g)
         {
-            if (PixelSize > 1)
+            using (Brush brush = new SolidBrush(Color.FromArgb(150, HighlightColor)))
             {
-                using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
-                {
-                    g.FillRectangle(brush, Rectangle);
-                }
+                g.FillRectangle(brush, Rectangle);
+            }
 
-                using (Pen pen = new Pen(Color.FromArgb(200, Color.White)))
-                {
-                    g.DrawCornerLines(Rectangle, pen, 20);
-                }
+            using (Pen pen = new Pen(Color.FromArgb(200, Color.Black)))
+            {
+                g.DrawCornerLines(Rectangle, pen, 20);
+            }
 
-                if (Rectangle.Width > 10 && Rectangle.Height > 10)
+            if (Rectangle.Width > 10 && Rectangle.Height > 10)
+            {
+                using (Font font = new Font("Verdana", 14))
+                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
-                    using (Font font = new Font("Verdana", 14))
-                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-                    {
-                        g.DrawString($"Pixelate ({PixelSize})", font, Brushes.White, Rectangle, sf);
-                    }
+                    g.DrawString("Highlight", font, Brushes.Black, Rectangle, sf);
                 }
             }
         }
 
-        public override void DrawOutput(Graphics g, Bitmap bmp)
+        public override void DrawFinal(Graphics g, Bitmap bmp)
         {
-            if (PixelSize > 1)
+            using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
             {
-                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
-                using (Bitmap pixelatedImage = ImageHelpers.Pixelate(croppedImage, PixelSize))
-                {
-                    g.DrawImage(pixelatedImage, Rectangle);
-                }
+                ImageHelpers.HighlightImage(croppedImage, HighlightColor);
+
+                g.DrawImage(croppedImage, Rectangle);
             }
         }
     }
