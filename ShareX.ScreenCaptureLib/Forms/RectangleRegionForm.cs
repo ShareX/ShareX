@@ -695,18 +695,17 @@ namespace ShareX.ScreenCaptureLib
 
         protected override Image GetOutputImage()
         {
-            Image img = base.GetOutputImage();
-
             if (AreaManager.DrawingShapes.Length > 0 || AreaManager.EffectShapes.Length > 0)
             {
-                using (Bitmap bmpCopy = new Bitmap(img))
-                using (Graphics g = Graphics.FromImage(img))
+                Bitmap bmp = new Bitmap(SurfaceImage);
+
+                using (Graphics g = Graphics.FromImage(bmp))
                 {
                     foreach (BaseEffectShape shape in AreaManager.EffectShapes)
                     {
                         if (shape != null)
                         {
-                            shape.DrawFinal(g, bmpCopy);
+                            shape.DrawFinal(g, bmp);
                         }
                     }
 
@@ -718,9 +717,11 @@ namespace ShareX.ScreenCaptureLib
                         }
                     }
                 }
+
+                return bmp;
             }
 
-            return img;
+            return base.GetOutputImage();
         }
 
         protected override void Dispose(bool disposing)
