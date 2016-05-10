@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    BaseShape shape = areaManager.CurrentShape;
+                    BaseShape shape = shapeManager.CurrentShape;
 
                     if (shape != null)
                     {
@@ -85,13 +85,13 @@ namespace ShareX.ScreenCaptureLib
         private bool IsLeftPressed { get; set; }
         private bool IsRightPressed { get; set; }
 
-        private ShapeManager areaManager;
+        private ShapeManager shapeManager;
         private NodeObject[] nodes;
         private Rectangle tempRect;
 
-        public ResizeManager(SurfaceForm surface, ShapeManager areaManager)
+        public ResizeManager(SurfaceForm surface, ShapeManager shapeManager)
         {
-            this.areaManager = areaManager;
+            this.shapeManager = shapeManager;
 
             MinMoveSpeed = surface.Config.MinMoveSpeed;
             MaxMoveSpeed = surface.Config.MaxMoveSpeed;
@@ -111,7 +111,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void Update()
         {
-            BaseShape shape = areaManager.CurrentShape;
+            BaseShape shape = shapeManager.CurrentShape;
 
             if (shape != null && Visible && nodes != null)
             {
@@ -224,7 +224,7 @@ namespace ShareX.ScreenCaptureLib
             int x = IsLeftPressed && IsRightPressed ? 0 : IsRightPressed ? speed : IsLeftPressed ? -speed : 0;
 
             // Move the cursor
-            if (areaManager.CurrentShape == null || areaManager.IsCreating)
+            if (shapeManager.CurrentShape == null || shapeManager.IsCreating)
             {
                 Cursor.Position = Cursor.Position.Add(x, y);
             }
@@ -279,7 +279,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateNodePositions()
         {
-            BaseShape shape = areaManager.CurrentShape;
+            BaseShape shape = shapeManager.CurrentShape;
 
             if (shape != null)
             {
@@ -314,7 +314,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void MoveCurrentArea(int x, int y)
         {
-            BaseShape shape = areaManager.CurrentShape;
+            BaseShape shape = shapeManager.CurrentShape;
 
             if (shape != null)
             {
@@ -332,7 +332,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void ResizeCurrentArea(int x, int y, bool isBottomRightMoving)
         {
-            BaseShape shape = areaManager.CurrentShape;
+            BaseShape shape = shapeManager.CurrentShape;
 
             if (shape != null)
             {

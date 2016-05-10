@@ -544,7 +544,7 @@ namespace ShareX
                 surface.Config.ShowTips = false;
                 surface.Config.QuickCrop = false;
                 surface.Config.ShowInfo = true;
-                surface.AreaManager.MinimumSize = 3;
+                surface.ShapeManager.MinimumSize = 3;
                 surface.Prepare();
                 surface.ShowDialog();
             }

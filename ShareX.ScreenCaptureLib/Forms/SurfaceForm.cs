@@ -513,9 +513,9 @@ namespace ShareX.ScreenCaptureLib
 
                 if (surface.Result == SurfaceResult.Region)
                 {
-                    if (surface.AreaManager.IsCurrentRegionValid)
+                    if (surface.ShapeManager.IsCurrentRegionValid)
                     {
-                        rect = CaptureHelpers.ClientToScreen(surface.AreaManager.CurrentRectangle);
+                        rect = CaptureHelpers.ClientToScreen(surface.ShapeManager.CurrentRectangle);
                         return true;
                     }
                 }

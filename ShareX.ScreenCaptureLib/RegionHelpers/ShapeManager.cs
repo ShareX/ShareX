@@ -880,6 +880,35 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public Image RenderOutputImage(Image img)
+        {
+            Bitmap bmp = new Bitmap(img);
+
+            if (DrawingShapes.Length > 0 || EffectShapes.Length > 0)
+            {
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    foreach (BaseEffectShape shape in EffectShapes)
+                    {
+                        if (shape != null)
+                        {
+                            shape.DrawFinal(g, bmp);
+                        }
+                    }
+
+                    foreach (BaseDrawingShape shape in DrawingShapes)
+                    {
+                        if (shape != null)
+                        {
+                            shape.Draw(g);
+                        }
+                    }
+                }
+            }
+
+            return bmp;
+        }
+
         private void SelectArea()
         {
             if (!CurrentRectangle.IsEmpty && !config.IsFixedSize)
