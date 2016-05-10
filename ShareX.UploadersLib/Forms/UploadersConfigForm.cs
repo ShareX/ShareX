@@ -370,8 +370,10 @@ namespace ShareX.UploadersLib
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
             cbGoogleDriveUseFolder.Checked = Config.GoogleDriveUseFolder;
+            cbGoogleDriveDirectLink.Checked = Config.GoogleDriveDirectLinks;
             txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Text = Config.GoogleDriveFolderID;
+            
 
             // OneDrive
 
@@ -1361,6 +1363,11 @@ namespace ShareX.UploadersLib
         {
             Config.GoogleDriveUseFolder = cbGoogleDriveUseFolder.Checked;
             txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
+        }
+
+        private void cbGoogleDriveDirectLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleDriveDirectLinks = cbGoogleDriveDirectLink.Checked;
         }
 
         private void txtGoogleDriveFolderID_TextChanged(object sender, EventArgs e)
@@ -3107,5 +3114,6 @@ namespace ShareX.UploadersLib
         #endregion Custom Uploaders
 
         #endregion Other Uploaders
+
     }
 }

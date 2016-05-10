@@ -45,6 +45,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return new GoogleDrive(config.GoogleDriveOAuth2Info)
             {
                 IsPublic = config.GoogleDriveIsPublic,
+                DirectLink = config.GoogleDriveDirectLinks,
                 FolderID = config.GoogleDriveUseFolder ? config.GoogleDriveFolderID : null
             };
         }
@@ -57,6 +58,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public OAuth2Info AuthInfo { get; set; }
         public bool IsPublic { get; set; }
         public string FolderID { get; set; }
+        public bool DirectLink { get; set; }
 
         public GoogleDrive(OAuth2Info oauth)
         {
@@ -258,7 +260,11 @@ namespace ShareX.UploadersLib.FileUploaders
                         SetPermissions(upload.id, GoogleDrivePermissionRole.reader, GoogleDrivePermissionType.anyone, "", true);
                     }
 
-                    result.URL = upload.alternateLink;
+
+                    if (DirectLink)
+                        result.URL = upload.webContentLink;
+                    else
+                        result.URL = upload.alternateLink;
                 }
             }
 
@@ -269,6 +275,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             public string id { get; set; }
             public string alternateLink { get; set; }
+            public string webContentLink { get; set; }
             public string title { get; set; }
             public string description { get; set; }
         }
