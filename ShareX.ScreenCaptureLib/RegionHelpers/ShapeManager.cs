@@ -36,9 +36,22 @@ namespace ShareX.ScreenCaptureLib
     {
         public List<BaseShape> Shapes { get; private set; } = new List<BaseShape>();
 
-        public BaseShape CurrentShape { get; private set; }
+        private BaseShape currentShape;
 
-        private ShapeType currentShapeType = ShapeType.RegionRectangle;
+        public BaseShape CurrentShape
+        {
+            get
+            {
+                return currentShape;
+            }
+            private set
+            {
+                currentShape = value;
+                OnCurrentShapeChanged(currentShape);
+            }
+        }
+
+        private ShapeType currentShapeType;
 
         public ShapeType CurrentShapeType
         {
@@ -49,9 +62,9 @@ namespace ShareX.ScreenCaptureLib
             private set
             {
                 currentShapeType = value;
-                config.CurrentShapeType = CurrentShapeType;
+                config.CurrentShapeType = currentShapeType;
                 DeselectArea();
-                OnCurrentShapeTypeChanged(CurrentShapeType);
+                OnCurrentShapeTypeChanged(currentShapeType);
             }
         }
 
@@ -149,6 +162,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; } = 3;
 
+        public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
         private RectangleRegionForm surface;
@@ -170,6 +184,7 @@ namespace ShareX.ScreenCaptureLib
 
             CreateContextMenu();
 
+            CurrentShape = null;
             //CurrentShapeType = config.CurrentShapeType;
             CurrentShapeType = ShapeType.RegionRectangle;
         }
@@ -197,6 +212,17 @@ namespace ShareX.ScreenCaptureLib
             ToolStripMenuItem tsmiCloseMenu = new ToolStripMenuItem("Close menu");
             tsmiCloseMenu.Click += (sender, e) => cmsContextMenu.Close();
             cmsContextMenu.Items.Add(tsmiCloseMenu);
+
+            ToolStripSeparator tssObjectOptions = new ToolStripSeparator();
+            cmsContextMenu.Items.Add(tssObjectOptions);
+
+            ToolStripMenuItem tsmiDeleteSelected = new ToolStripMenuItem("Delete selected object");
+            tsmiDeleteSelected.Click += (sender, e) => RemoveCurrentArea();
+            cmsContextMenu.Items.Add(tsmiDeleteSelected);
+
+            ToolStripMenuItem tsmiDeleteAll = new ToolStripMenuItem("Delete all objects");
+            tsmiDeleteAll.Click += (sender, e) => ClearAll();
+            cmsContextMenu.Items.Add(tsmiDeleteAll);
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
@@ -416,6 +442,12 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowFPS.CheckOnClick = true;
             tsmiShowFPS.Click += (sender, e) => config.ShowFPS = tsmiShowFPS.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowFPS);
+
+            CurrentShapeChanged += shape =>
+            {
+                tssObjectOptions.Visible = tsmiDeleteAll.Visible = Shapes.Count > 0;
+                tsmiDeleteSelected.Visible = shape != null;
+            };
 
             CurrentShapeTypeChanged += shapeType =>
             {
@@ -945,6 +977,12 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void ClearAll()
+        {
+            Shapes.Clear();
+            DeselectArea();
+        }
+
         private bool IsAreaValid(Rectangle rect)
         {
             return !rect.IsEmpty && rect.Width >= MinimumSize && rect.Height >= MinimumSize;
@@ -1004,6 +1042,14 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return Rectangle.Empty;
+        }
+
+        private void OnCurrentShapeChanged(BaseShape shape)
+        {
+            if (CurrentShapeChanged != null)
+            {
+                CurrentShapeChanged(shape);
+            }
         }
 
         private void OnCurrentShapeTypeChanged(ShapeType shapeType)
