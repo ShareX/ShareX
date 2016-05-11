@@ -156,6 +156,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\weather-snowflake.png" />
+    <None Include="Resources\highlighter-text.png" />
+    <None Include="Resources\water.png" />
+    <None Include="Resources\monitor-window.png" />
+    <None Include="Resources\monitor.png" />
+    <None Include="Resources\layer-shape-line.png" />
+    <None Include="Resources\layer-shape-ellipse.png" />
+    <None Include="Resources\layer-shape-round.png" />
+    <None Include="Resources\layer-shape.png" />
+    <None Include="Resources\layer--minus.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\prohibition.png" />
+    <None Include="Resources\cross.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -206,10 +207,12 @@ namespace ShareX.ScreenCaptureLib
             cmsContextMenu = new ContextMenuStrip(surface.components);
 
             ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem("Cancel capture");
+            tsmiCancelCapture.Image = Resources.prohibition;
             tsmiCancelCapture.Click += (sender, e) => surface.Close(SurfaceResult.Close);
             cmsContextMenu.Items.Add(tsmiCancelCapture);
 
             ToolStripMenuItem tsmiCloseMenu = new ToolStripMenuItem("Close menu");
+            tsmiCloseMenu.Image = Resources.cross;
             tsmiCloseMenu.Click += (sender, e) => cmsContextMenu.Close();
             cmsContextMenu.Items.Add(tsmiCloseMenu);
 
@@ -217,10 +220,12 @@ namespace ShareX.ScreenCaptureLib
             cmsContextMenu.Items.Add(tssObjectOptions);
 
             ToolStripMenuItem tsmiDeleteSelected = new ToolStripMenuItem("Delete selected object");
+            tsmiDeleteSelected.Image = Resources.layer__minus;
             tsmiDeleteSelected.Click += (sender, e) => RemoveCurrentArea();
             cmsContextMenu.Items.Add(tsmiDeleteSelected);
 
             ToolStripMenuItem tsmiDeleteAll = new ToolStripMenuItem("Delete all objects");
+            tsmiDeleteAll.Image = Resources.minus;
             tsmiDeleteAll.Click += (sender, e) => ClearAll();
             cmsContextMenu.Items.Add(tsmiDeleteAll);
 
@@ -229,6 +234,38 @@ namespace ShareX.ScreenCaptureLib
             foreach (ShapeType shapeType in Helpers.GetEnums<ShapeType>())
             {
                 ToolStripMenuItem tsmiShapeType = new ToolStripMenuItem(shapeType.GetLocalizedDescription());
+
+                Image img = null;
+
+                switch (shapeType)
+                {
+                    case ShapeType.DrawingRectangle:
+                        img = Resources.layer_shape;
+                        break;
+                    case ShapeType.DrawingRoundedRectangle:
+                        img = Resources.layer_shape_round;
+                        break;
+                    case ShapeType.DrawingEllipse:
+                        img = Resources.layer_shape_ellipse;
+                        break;
+                    case ShapeType.DrawingLine:
+                        img = Resources.layer_shape_line;
+                        break;
+                    case ShapeType.DrawingArrow:
+                        break;
+                    case ShapeType.DrawingBlur:
+                        img = Resources.water;
+                        break;
+                    case ShapeType.DrawingPixelate:
+                        img = Resources.weather_snowflake;
+                        break;
+                    case ShapeType.DrawingHighlight:
+                        img = Resources.highlighter_text;
+                        break;
+                }
+
+                tsmiShapeType.Image = img;
+
                 tsmiShapeType.Checked = shapeType == CurrentShapeType;
                 tsmiShapeType.Tag = shapeType;
                 tsmiShapeType.Click += (sender, e) =>
@@ -360,8 +397,14 @@ namespace ShareX.ScreenCaptureLib
             tsmiFullscreenCapture.Click += (sender, e) => surface.Close(SurfaceResult.Fullscreen);
             cmsContextMenu.Items.Add(tsmiFullscreenCapture);
 
+            ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem("Capture active monitor");
+            tsmiActiveMonitorCapture.Image = Resources.monitor;
+            tsmiActiveMonitorCapture.Click += (sender, e) => surface.Close(SurfaceResult.ActiveMonitor);
+            cmsContextMenu.Items.Add(tsmiActiveMonitorCapture);
+
             ToolStripMenuItem tsmiMonitorCapture = new ToolStripMenuItem("Capture monitor");
             tsmiMonitorCapture.HideImageMargin();
+            tsmiMonitorCapture.Image = Resources.monitor_window;
             cmsContextMenu.Items.Add(tsmiMonitorCapture);
 
             tsmiMonitorCapture.DropDownItems.Clear();
@@ -380,10 +423,6 @@ namespace ShareX.ScreenCaptureLib
                 };
                 tsmiMonitorCapture.DropDownItems.Add(tsmi);
             }
-
-            ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem("Capture active monitor");
-            tsmiActiveMonitorCapture.Click += (sender, e) => surface.Close(SurfaceResult.ActiveMonitor);
-            cmsContextMenu.Items.Add(tsmiActiveMonitorCapture);
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
