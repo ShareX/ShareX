@@ -239,6 +239,15 @@ namespace ShareX.ScreenCaptureLib
 
                 switch (shapeType)
                 {
+                    case ShapeType.RegionRectangle:
+                        img = Resources.layer_shape_region;
+                        break;
+                    case ShapeType.RegionRoundedRectangle:
+                        img = Resources.layer_shape_round_region;
+                        break;
+                    case ShapeType.RegionEllipse:
+                        img = Resources.layer_shape_ellipse_region;
+                        break;
                     case ShapeType.DrawingRectangle:
                         img = Resources.layer_shape;
                         break;
@@ -252,12 +261,13 @@ namespace ShareX.ScreenCaptureLib
                         img = Resources.layer_shape_line;
                         break;
                     case ShapeType.DrawingArrow:
+                        img = Resources.layer_shape_arrow;
                         break;
                     case ShapeType.DrawingBlur:
-                        img = Resources.water;
+                        img = Resources.layer_shade;
                         break;
                     case ShapeType.DrawingPixelate:
-                        img = Resources.weather_snowflake;
+                        img = Resources.grid;
                         break;
                     case ShapeType.DrawingHighlight:
                         img = Resources.highlighter_text;
@@ -394,6 +404,7 @@ namespace ShareX.ScreenCaptureLib
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
             ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem("Capture fullscreen");
+            tsmiFullscreenCapture.Image = Resources.layer;
             tsmiFullscreenCapture.Click += (sender, e) => surface.Close(SurfaceResult.Fullscreen);
             cmsContextMenu.Items.Add(tsmiFullscreenCapture);
 

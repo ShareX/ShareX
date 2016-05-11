@@ -156,9 +156,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\weather-snowflake.png" />
+    <None Include="Resources\layer.png" />
+    <None Include="Resources\layer-shade.png" />
+    <None Include="Resources\layer-shape-ellipse-region.png" />
+    <None Include="Resources\layer-shape-round-region.png" />
+    <None Include="Resources\layer-shape-region.png" />
+    <None Include="Resources\layer-shape-arrow.png" />
+    <None Include="Resources\grid.png" />
     <None Include="Resources\highlighter-text.png" />
-    <None Include="Resources\water.png" />
     <None Include="Resources\monitor-window.png" />
     <None Include="Resources\monitor.png" />
     <None Include="Resources\layer-shape-line.png" />
