@@ -404,7 +404,7 @@ namespace ShareX.ScreenCaptureLib
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
             ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem("Capture fullscreen");
-            tsmiFullscreenCapture.Image = Resources.layer;
+            tsmiFullscreenCapture.Image = Resources.layer_fullscreen;
             tsmiFullscreenCapture.Click += (sender, e) => surface.Close(SurfaceResult.Fullscreen);
             cmsContextMenu.Items.Add(tsmiFullscreenCapture);
 
@@ -438,6 +438,7 @@ namespace ShareX.ScreenCaptureLib
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
             ToolStripMenuItem tsmiOptions = new ToolStripMenuItem("Options");
+            tsmiOptions.Image = Resources.gear;
             cmsContextMenu.Items.Add(tsmiOptions);
 
             ToolStripMenuItem tsmiQuickCrop = new ToolStripMenuItem("Multi region mode");

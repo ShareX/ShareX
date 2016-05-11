@@ -1108,13 +1108,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Resources\RoundedRectangle.png" />
     <None Include="Resources\Rectangle.png" />
-    <None Include="Resources\Polygon.png" />
-    <None Include="Resources\Fullscreen.png" />
-    <None Include="Resources\FreeHand.png" />
-    <None Include="Resources\Ellipse.png" />
-    <None Include="Resources\Triangle.png" />
     <None Include="Resources\camera.png" />
     <None Include="Resources\navigation-090-button.png" />
     <None Include="Resources\cross-button.png" />
@@ -1123,7 +1117,6 @@
     <None Include="Resources\application-block.png" />
     <None Include="Resources\edit-scale.png" />
     <None Include="Resources\drive-globe.png" />
-    <None Include="Resources\diamond.png" />
     <None Include="Resources\notebook.png" />
     <None Include="Resources\image.png" />
     <None Include="Resources\application-browser.png" />
@@ -1160,19 +1153,10 @@
     <None Include="Resources\layer-shape-curve.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\layer-shape-ellipse.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\layer-shape-round.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\layer-shape-polygon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\layer-shape.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\layers-ungroup.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\monitor.png" />
@@ -1182,9 +1166,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\layer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\layers-arrange.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\control-record.png" />
@@ -1262,6 +1243,8 @@
     <None Include="Resources\disk-black.png" />
     <None Include="Resources\control.png" />
     <None Include="Resources\information.png" />
+    <None Include="Resources\layer_fullscreen.png" />
+    <None Include="Resources\layers.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

@@ -156,7 +156,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\layer.png" />
+    <None Include="Resources\gear.png" />
+    <None Include="Resources\layer_fullscreen.png" />
     <None Include="Resources\layer-shade.png" />
     <None Include="Resources\layer-shape-ellipse-region.png" />
     <None Include="Resources\layer-shape-round-region.png" />

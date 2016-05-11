@@ -148,6 +148,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gear {
+            get {
+                object obj = ResourceManager.GetObject("gear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grid {
             get {
                 object obj = ResourceManager.GetObject("grid", resourceCulture);
@@ -168,9 +178,9 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap layer {
+        internal static System.Drawing.Bitmap layer__minus {
             get {
-                object obj = ResourceManager.GetObject("layer", resourceCulture);
+                object obj = ResourceManager.GetObject("layer__minus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -178,9 +188,9 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap layer__minus {
+        internal static System.Drawing.Bitmap layer_fullscreen {
             get {
-                object obj = ResourceManager.GetObject("layer__minus", resourceCulture);
+                object obj = ResourceManager.GetObject("layer_fullscreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

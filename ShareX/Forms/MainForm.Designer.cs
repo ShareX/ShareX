@@ -409,7 +409,7 @@
             // 
             // tsmiFullscreen
             // 
-            this.tsmiFullscreen.Image = global::ShareX.Properties.Resources.layer;
+            this.tsmiFullscreen.Image = global::ShareX.Properties.Resources.layer_fullscreen;
             this.tsmiFullscreen.Name = "tsmiFullscreen";
             resources.ApplyResources(this.tsmiFullscreen, "tsmiFullscreen");
             this.tsmiFullscreen.Click += new System.EventHandler(this.tsmiFullscreen_Click);
@@ -463,7 +463,7 @@
             // 
             // tsmiLastRegion
             // 
-            this.tsmiLastRegion.Image = global::ShareX.Properties.Resources.layers_arrange;
+            this.tsmiLastRegion.Image = global::ShareX.Properties.Resources.layers;
             this.tsmiLastRegion.Name = "tsmiLastRegion";
             resources.ApplyResources(this.tsmiLastRegion, "tsmiLastRegion");
             this.tsmiLastRegion.Click += new System.EventHandler(this.tsmiLastRegion_Click);
@@ -1310,7 +1310,7 @@
             // 
             // tsmiTrayFullscreen
             // 
-            this.tsmiTrayFullscreen.Image = global::ShareX.Properties.Resources.layer;
+            this.tsmiTrayFullscreen.Image = global::ShareX.Properties.Resources.layer_fullscreen;
             this.tsmiTrayFullscreen.Name = "tsmiTrayFullscreen";
             resources.ApplyResources(this.tsmiTrayFullscreen, "tsmiTrayFullscreen");
             this.tsmiTrayFullscreen.Click += new System.EventHandler(this.tsmiTrayFullscreen_Click);
@@ -1364,7 +1364,7 @@
             // 
             // tsmiTrayLastRegion
             // 
-            this.tsmiTrayLastRegion.Image = global::ShareX.Properties.Resources.layers_arrange;
+            this.tsmiTrayLastRegion.Image = global::ShareX.Properties.Resources.layers;
             this.tsmiTrayLastRegion.Name = "tsmiTrayLastRegion";
             resources.ApplyResources(this.tsmiTrayLastRegion, "tsmiTrayLastRegion");
             this.tsmiTrayLastRegion.Click += new System.EventHandler(this.tsmiTrayLastRegion_Click);
