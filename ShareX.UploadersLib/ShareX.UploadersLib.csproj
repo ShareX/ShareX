@@ -102,6 +102,7 @@
       <HintPath>..\Lib\Security.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.FtpClient, Version=1.0.5281.14359, Culture=neutral, PublicKeyToken=fa4be07daa57c2b7, processorArchitecture=MSIL">
@@ -150,6 +151,12 @@
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
     <Compile Include="FileUploaders\Uguu.cs" />
     <Compile Include="FileUploaders\VideoBin.cs" />
+    <Compile Include="Forms\OCRSpaceResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OCRSpaceResultForm.Designer.cs">
+      <DependentUpon>OCRSpaceResultForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FTPClient\FTPClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -578,6 +585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OAuthWebForm.zh-CN.resx">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OCRSpaceResultForm.resx">
+      <DependentUpon>OCRSpaceResultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.de.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>

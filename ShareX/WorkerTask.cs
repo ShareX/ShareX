@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Drawing;
 using System.IO;
@@ -548,6 +549,11 @@ namespace ShareX
                 DoFileJobs();
             }
 
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.DoOCR))
+            {
+                DoOCR();
+            }
+
             if (Info.IsUploadJob && Data != null && Data.CanSeek)
             {
                 Data.Position = 0;
@@ -595,7 +601,8 @@ namespace ShareX
                 TaskHelpers.PrintImage(tempImage);
             }
 
-            if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog, AfterCaptureTasks.UploadImageToHost))
+            if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog, AfterCaptureTasks.DoOCR,
+                AfterCaptureTasks.UploadImageToHost))
             {
                 using (tempImage)
                 {
@@ -955,6 +962,21 @@ namespace ShareX
             }
 
             return false;
+        }
+
+        private void DoOCR()
+        {
+            if (Data != null && Info.DataType == EDataType.Image)
+            {
+                OCRSpace ocr = new OCRSpace()
+                {
+                    Language = OCRSpaceLanguages.eng,
+                    Overlay = false,
+                    ShowResultWindow = true
+                };
+
+                ocr.DoOCR(Data, Info.FileName);
+            }
         }
 
         private bool LoadFileStream()

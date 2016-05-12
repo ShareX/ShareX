@@ -86,19 +86,33 @@ namespace ShareX.UploadersLib.OtherServices
         private const string APIURLEurope = "https://apipro3.ocr.space/parse/image"; // Frankfurt
         private const string APIURLAsia = "https://apipro8.ocr.space/parse/image"; // Tokyo
 
-        public OCRSpaceResponse DoOCR(Stream stream, string fileName, OCRSpaceLanguages language, bool overlay = false)
+        public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
+        public bool Overlay { get; set; }
+        public bool ShowResultWindow { get; set; }
+
+        public OCRSpaceResponse DoOCR(Stream stream, string fileName)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("apikey", APIKeys.OCRSpaceAPIKey);
             //arguments.Add("url", "");
-            arguments.Add("language", language.ToString());
-            arguments.Add("isOverlayRequired", overlay.ToString());
+            arguments.Add("language", Language.ToString());
+            arguments.Add("isOverlayRequired", Overlay.ToString());
 
             UploadResult ur = UploadData(stream, APIURLEurope, fileName, "file", arguments);
 
             if (ur.IsSuccess)
             {
-                return JsonConvert.DeserializeObject<OCRSpaceResponse>(ur.Response);
+                OCRSpaceResponse response = JsonConvert.DeserializeObject<OCRSpaceResponse>(ur.Response);
+
+                if (response != null && !response.IsErroredOnProcessing && ShowResultWindow)
+                {
+                    using (OCRSpaceResultForm resultForm = new OCRSpaceResultForm(response.ParsedResults[0].ParsedText, Language))
+                    {
+                        resultForm.ShowDialog();
+                    }
+                }
+
+                return response;
             }
 
             return null;
