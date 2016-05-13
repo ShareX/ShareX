@@ -1140,14 +1140,33 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             TaskHelpers.OpenScrollingCapture();
         }
 
-        private void tsmiAutoCapture_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenAutoCapture();
-        }
-
         private void tsmiWebpageCapture_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenWebpageCapture();
+        }
+
+        private void tsmiTextCapture_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Thread.Sleep(250);
+
+            try
+            {
+                TaskHelpers.OpenOCR();
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+            finally
+            {
+                this.ForceActivate();
+            }
+        }
+
+        private void tsmiAutoCapture_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenAutoCapture();
         }
 
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
@@ -2435,6 +2454,11 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
         private void tsmiTrayLastRegion_Click(object sender, EventArgs e)
         {
             CaptureScreenshot(CaptureType.LastRegion, null, false);
+        }
+
+        private void tsmiTrayTextCapture_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenOCR();
         }
 
         #endregion Tray events

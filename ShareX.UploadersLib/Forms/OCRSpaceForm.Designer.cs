@@ -1,6 +1,6 @@
 ﻿namespace ShareX.UploadersLib
 {
-    partial class OCRSpaceResultForm
+    partial class OCRSpaceForm
     {
         /// <summary>
         /// Required designer variable.
@@ -79,12 +79,12 @@
             // 
             this.llAttribution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.llAttribution.AutoSize = true;
-            this.llAttribution.Location = new System.Drawing.Point(488, 8);
+            this.llAttribution.Location = new System.Drawing.Point(440, 8);
             this.llAttribution.Name = "llAttribution";
-            this.llAttribution.Size = new System.Drawing.Size(64, 13);
+            this.llAttribution.Size = new System.Drawing.Size(114, 13);
             this.llAttribution.TabIndex = 4;
             this.llAttribution.TabStop = true;
-            this.llAttribution.Text = "OCR.Space";
+            this.llAttribution.Text = "Using OCR.Space API";
             this.llAttribution.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llAttribution_LinkClicked);
             // 
             // btnStartOCR
@@ -97,7 +97,7 @@
             this.btnStartOCR.UseVisualStyleBackColor = true;
             this.btnStartOCR.Click += new System.EventHandler(this.btnStartOCR_Click);
             // 
-            // OCRSpaceResultForm
+            // OCRSpaceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,7 +108,7 @@
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblLanguage);
             this.Controls.Add(this.cbLanguages);
-            this.Name = "OCRSpaceResultForm";
+            this.Name = "OCRSpaceForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Optical character recognition";

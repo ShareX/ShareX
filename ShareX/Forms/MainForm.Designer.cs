@@ -58,6 +58,7 @@
             this.tsmiScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScrollingCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWebpageCapture = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTextCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsddbUpload = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiUploadFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -236,6 +237,7 @@
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.pTips = new System.Windows.Forms.Panel();
             this.lblTips = new System.Windows.Forms.Label();
+            this.tsmiTrayTextCapture = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -401,6 +403,7 @@
             this.tsmiScreenRecordingGIF,
             this.tsmiScrollingCapture,
             this.tsmiWebpageCapture,
+            this.tsmiTextCapture,
             this.tsmiAutoCapture});
             this.tsddbCapture.Image = global::ShareX.Properties.Resources.camera;
             resources.ApplyResources(this.tsddbCapture, "tsddbCapture");
@@ -495,6 +498,13 @@
             this.tsmiWebpageCapture.Name = "tsmiWebpageCapture";
             resources.ApplyResources(this.tsmiWebpageCapture, "tsmiWebpageCapture");
             this.tsmiWebpageCapture.Click += new System.EventHandler(this.tsmiWebpageCapture_Click);
+            // 
+            // tsmiTextCapture
+            // 
+            this.tsmiTextCapture.Image = global::ShareX.Properties.Resources.edit_drop_cap;
+            this.tsmiTextCapture.Name = "tsmiTextCapture";
+            resources.ApplyResources(this.tsmiTextCapture, "tsmiTextCapture");
+            this.tsmiTextCapture.Click += new System.EventHandler(this.tsmiTextCapture_Click);
             // 
             // tsmiAutoCapture
             // 
@@ -1302,6 +1312,7 @@
             this.tsmiTrayScreenRecordingGIF,
             this.tsmiTrayScrollingCapture,
             this.tsmiTrayWebpageCapture,
+            this.tsmiTrayTextCapture,
             this.tsmiTrayAutoCapture});
             this.tsmiTrayCapture.Image = global::ShareX.Properties.Resources.camera;
             this.tsmiTrayCapture.Name = "tsmiTrayCapture";
@@ -1828,6 +1839,13 @@
             this.lblTips.UseMnemonic = false;
             this.lblTips.Click += new System.EventHandler(this.lblTips_Click);
             // 
+            // tsmiTrayTextCapture
+            // 
+            this.tsmiTrayTextCapture.Image = global::ShareX.Properties.Resources.edit_drop_cap;
+            this.tsmiTrayTextCapture.Name = "tsmiTrayTextCapture";
+            resources.ApplyResources(this.tsmiTrayTextCapture, "tsmiTrayTextCapture");
+            this.tsmiTrayTextCapture.Click += new System.EventHandler(this.tsmiTrayTextCapture_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2071,5 +2089,7 @@
         private System.Windows.Forms.PictureBox pbTips;
         private System.Windows.Forms.Panel pTips;
         private System.Windows.Forms.Label lblTips;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTextCapture;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTextCapture;
     }
 }

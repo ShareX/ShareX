@@ -151,11 +151,11 @@
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
     <Compile Include="FileUploaders\Uguu.cs" />
     <Compile Include="FileUploaders\VideoBin.cs" />
-    <Compile Include="Forms\OCRSpaceResultForm.cs">
+    <Compile Include="Forms\OCRSpaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OCRSpaceResultForm.Designer.cs">
-      <DependentUpon>OCRSpaceResultForm.cs</DependentUpon>
+    <Compile Include="Forms\OCRSpaceForm.Designer.cs">
+      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FTPClient\FTPClientForm.cs">
       <SubType>Form</SubType>
@@ -586,8 +586,8 @@
     <EmbeddedResource Include="Forms\OAuthWebForm.zh-CN.resx">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceResultForm.resx">
-      <DependentUpon>OCRSpaceResultForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OCRSpaceForm.resx">
+      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.de.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>

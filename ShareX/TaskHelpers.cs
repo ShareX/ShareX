@@ -117,6 +117,11 @@ namespace ShareX
 
         public static MemoryStream SaveImage(Image img, EImageFormat imageFormat, TaskSettings taskSettings)
         {
+            return SaveImage(img, imageFormat, taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
+        }
+
+        public static MemoryStream SaveImage(Image img, EImageFormat imageFormat, int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
+        {
             MemoryStream stream = new MemoryStream();
 
             switch (imageFormat)
@@ -125,10 +130,10 @@ namespace ShareX
                     img.Save(stream, ImageFormat.Png);
                     break;
                 case EImageFormat.JPEG:
-                    img.SaveJPG(stream, taskSettings.ImageSettings.ImageJPEGQuality);
+                    img.SaveJPG(stream, jpegQuality);
                     break;
                 case EImageFormat.GIF:
-                    img.SaveGIF(stream, taskSettings.ImageSettings.ImageGIFQuality);
+                    img.SaveGIF(stream, gifQuality);
                     break;
                 case EImageFormat.BMP:
                     img.Save(stream, ImageFormat.Bmp);
@@ -334,6 +339,19 @@ namespace ShareX
             }
 
             return null;
+        }
+
+        public static Image GetRegionImage()
+        {
+            using (RectangleRegionForm form = new RectangleRegionForm())
+            using (Image screenshot = Screenshot.CaptureFullscreen())
+            {
+                form.SurfaceImage = screenshot;
+                form.Prepare();
+                form.ShowDialog();
+
+                return form.GetResultImage();
+            }
         }
 
         public static Icon GetProgressIcon(int percentage)
@@ -706,6 +724,26 @@ namespace ShareX
         public static void OpenQRCode()
         {
             new QRCodeForm().Show();
+        }
+
+        public static void OpenOCR()
+        {
+            using (Image img = GetRegionImage())
+            {
+                if (img != null)
+                {
+                    using (Stream stream = SaveImage(img, EImageFormat.JPEG, 90))
+                    {
+                        if (stream != null)
+                        {
+                            using (OCRSpaceForm form = new OCRSpaceForm(stream, "ShareX.jpg"))
+                            {
+                                form.ShowDialog();
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         public static void OpenFTPClient()

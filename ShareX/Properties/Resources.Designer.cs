@@ -685,6 +685,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap edit_drop_cap {
+            get {
+                object obj = ResourceManager.GetObject("edit-drop-cap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap edit_scale {
             get {
                 object obj = ResourceManager.GetObject("edit_scale", resourceCulture);

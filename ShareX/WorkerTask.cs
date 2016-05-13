@@ -968,7 +968,7 @@ namespace ShareX
         {
             if (Data != null && Info.DataType == EDataType.Image)
             {
-                using (OCRSpaceResultForm ocrForm = new OCRSpaceResultForm(Data, Info.FileName))
+                using (OCRSpaceForm ocrForm = new OCRSpaceForm(Data, Info.FileName))
                 {
                     ocrForm.ShowDialog();
                 }

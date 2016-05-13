@@ -37,24 +37,25 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class OCRSpaceResultForm : Form
+    public partial class OCRSpaceForm : Form
     {
-        public Stream Data { get; private set; }
-        public string Filename { get; private set; }
         public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
-        public string Result { get; set; }
+        public string Result { get; private set; }
 
-        public OCRSpaceResultForm()
+        private Stream data;
+        private string filename;
+
+        public OCRSpaceForm()
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             cbLanguages.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
         }
 
-        public OCRSpaceResultForm(Stream data, string filename) : this()
+        public OCRSpaceForm(Stream data, string filename) : this()
         {
-            Data = data;
-            Filename = filename;
+            this.data = data;
+            this.filename = filename;
         }
 
         private void OCRSpaceResultForm_Shown(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace ShareX.UploadersLib
 
             if (string.IsNullOrEmpty(Result))
             {
-                StartOCR();
+                StartOCR(data, filename);
             }
         }
 
@@ -76,12 +77,12 @@ namespace ShareX.UploadersLib
                 txtResult.Text = Result;
             }
 
-            btnStartOCR.Visible = Data != null && Data.Length > 0 && !string.IsNullOrEmpty(Filename);
+            btnStartOCR.Visible = data != null && data.Length > 0 && !string.IsNullOrEmpty(filename);
         }
 
-        private void StartOCR()
+        private void StartOCR(Stream stream, string filename)
         {
-            if (Data != null && Data.Length > 0 && !string.IsNullOrEmpty(Filename))
+            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(filename))
             {
                 cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = false;
 
@@ -90,7 +91,7 @@ namespace ShareX.UploadersLib
                     try
                     {
                         OCRSpace ocr = new OCRSpace(Language, false);
-                        OCRSpaceResponse response = ocr.DoOCR(Data, Filename);
+                        OCRSpaceResponse response = ocr.DoOCR(stream, filename);
 
                         if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
                         {
@@ -120,7 +121,7 @@ namespace ShareX.UploadersLib
 
         private void btnStartOCR_Click(object sender, EventArgs e)
         {
-            StartOCR();
+            StartOCR(data, filename);
         }
 
         private void llAttribution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
