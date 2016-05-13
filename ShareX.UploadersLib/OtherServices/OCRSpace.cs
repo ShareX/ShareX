@@ -88,7 +88,12 @@ namespace ShareX.UploadersLib.OtherServices
 
         public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
         public bool Overlay { get; set; }
-        public bool ShowResultWindow { get; set; }
+
+        public OCRSpace(OCRSpaceLanguages language = OCRSpaceLanguages.eng, bool overlay = false)
+        {
+            Language = language;
+            Overlay = overlay;
+        }
 
         public OCRSpaceResponse DoOCR(Stream stream, string fileName)
         {
@@ -102,17 +107,7 @@ namespace ShareX.UploadersLib.OtherServices
 
             if (ur.IsSuccess)
             {
-                OCRSpaceResponse response = JsonConvert.DeserializeObject<OCRSpaceResponse>(ur.Response);
-
-                if (response != null && !response.IsErroredOnProcessing && ShowResultWindow)
-                {
-                    using (OCRSpaceResultForm resultForm = new OCRSpaceResultForm(response.ParsedResults[0].ParsedText, Language))
-                    {
-                        resultForm.ShowDialog();
-                    }
-                }
-
-                return response;
+                return JsonConvert.DeserializeObject<OCRSpaceResponse>(ur.Response);
             }
 
             return null;

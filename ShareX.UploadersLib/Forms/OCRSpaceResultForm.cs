@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -38,17 +39,80 @@ namespace ShareX.UploadersLib
 {
     public partial class OCRSpaceResultForm : Form
     {
-        public OCRSpaceResultForm(string result, OCRSpaceLanguages language = OCRSpaceLanguages.eng)
+        public Stream Data { get; private set; }
+        public string Filename { get; private set; }
+        public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
+        public string Result { get; set; }
+
+        public OCRSpaceResultForm()
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             cbLanguages.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
-            cbLanguages.SelectedIndex = (int)language;
+        }
 
-            if (!string.IsNullOrEmpty(result))
+        public OCRSpaceResultForm(Stream data, string filename) : this()
+        {
+            Data = data;
+            Filename = filename;
+        }
+
+        private void OCRSpaceResultForm_Shown(object sender, EventArgs e)
+        {
+            UpdateValues();
+
+            if (string.IsNullOrEmpty(Result))
             {
-                txtResult.Text = result;
+                StartOCR();
             }
+        }
+
+        public void UpdateValues()
+        {
+            cbLanguages.SelectedIndex = (int)Language;
+
+            if (!string.IsNullOrEmpty(Result))
+            {
+                txtResult.Text = Result;
+            }
+
+            btnStartOCR.Visible = Data != null && Data.Length > 0 && !string.IsNullOrEmpty(Filename);
+        }
+
+        private void StartOCR()
+        {
+            if (Data != null && Data.Length > 0 && !string.IsNullOrEmpty(Filename))
+            {
+                cbLanguages.Enabled = btnStartOCR.Enabled = false;
+
+                try
+                {
+                    OCRSpace ocr = new OCRSpace(Language, false);
+                    OCRSpaceResponse response = ocr.DoOCR(Data, Filename);
+
+                    if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
+                    {
+                        Result = response.ParsedResults[0].ParsedText;
+                        UpdateValues();
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+
+                cbLanguages.Enabled = btnStartOCR.Enabled = true;
+            }
+        }
+
+        private void cbLanguages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Language = (OCRSpaceLanguages)cbLanguages.SelectedIndex;
+        }
+
+        private void btnStartOCR_Click(object sender, EventArgs e)
+        {
+            StartOCR();
         }
 
         private void llAttribution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

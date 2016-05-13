@@ -33,6 +33,7 @@
             this.txtResult = new System.Windows.Forms.TextBox();
             this.lblResult = new System.Windows.Forms.Label();
             this.llAttribution = new System.Windows.Forms.LinkLabel();
+            this.btnStartOCR = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbLanguages
@@ -43,6 +44,7 @@
             this.cbLanguages.Name = "cbLanguages";
             this.cbLanguages.Size = new System.Drawing.Size(152, 21);
             this.cbLanguages.TabIndex = 0;
+            this.cbLanguages.SelectedIndexChanged += new System.EventHandler(this.cbLanguages_SelectedIndexChanged);
             // 
             // lblLanguage
             // 
@@ -85,19 +87,32 @@
             this.llAttribution.Text = "OCR.Space";
             this.llAttribution.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llAttribution_LinkClicked);
             // 
+            // btnStartOCR
+            // 
+            this.btnStartOCR.Location = new System.Drawing.Point(168, 22);
+            this.btnStartOCR.Name = "btnStartOCR";
+            this.btnStartOCR.Size = new System.Drawing.Size(136, 24);
+            this.btnStartOCR.TabIndex = 5;
+            this.btnStartOCR.Text = "Start OCR";
+            this.btnStartOCR.UseVisualStyleBackColor = true;
+            this.btnStartOCR.Click += new System.EventHandler(this.btnStartOCR_Click);
+            // 
             // OCRSpaceResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 446);
+            this.ClientSize = new System.Drawing.Size(560, 448);
+            this.Controls.Add(this.btnStartOCR);
             this.Controls.Add(this.llAttribution);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblLanguage);
             this.Controls.Add(this.cbLanguages);
             this.Name = "OCRSpaceResultForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Optical character recognition";
+            this.Shown += new System.EventHandler(this.OCRSpaceResultForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +125,6 @@
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.LinkLabel llAttribution;
+        private System.Windows.Forms.Button btnStartOCR;
     }
 }
