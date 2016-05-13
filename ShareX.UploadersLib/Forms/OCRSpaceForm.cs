@@ -85,6 +85,7 @@ namespace ShareX.UploadersLib
             if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(filename))
             {
                 cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = false;
+                pbProgress.Visible = true;
 
                 TaskEx.Run(() =>
                 {
@@ -109,6 +110,7 @@ namespace ShareX.UploadersLib
                     {
                         UpdateControls();
                         cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = true;
+                        pbProgress.Visible = false;
                     }
                 });
             }

@@ -34,6 +34,7 @@
             this.lblResult = new System.Windows.Forms.Label();
             this.llAttribution = new System.Windows.Forms.LinkLabel();
             this.btnStartOCR = new System.Windows.Forms.Button();
+            this.pbProgress = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // cbLanguages
@@ -63,6 +64,7 @@
             this.txtResult.Location = new System.Drawing.Point(8, 72);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
+            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtResult.Size = new System.Drawing.Size(544, 368);
             this.txtResult.TabIndex = 2;
             // 
@@ -97,17 +99,28 @@
             this.btnStartOCR.UseVisualStyleBackColor = true;
             this.btnStartOCR.Click += new System.EventHandler(this.btnStartOCR_Click);
             // 
+            // pbProgress
+            // 
+            this.pbProgress.Location = new System.Drawing.Point(168, 22);
+            this.pbProgress.MarqueeAnimationSpeed = 50;
+            this.pbProgress.Name = "pbProgress";
+            this.pbProgress.Size = new System.Drawing.Size(136, 24);
+            this.pbProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pbProgress.TabIndex = 6;
+            this.pbProgress.Visible = false;
+            // 
             // OCRSpaceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 448);
-            this.Controls.Add(this.btnStartOCR);
             this.Controls.Add(this.llAttribution);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblLanguage);
             this.Controls.Add(this.cbLanguages);
+            this.Controls.Add(this.pbProgress);
+            this.Controls.Add(this.btnStartOCR);
             this.Name = "OCRSpaceForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -126,5 +139,6 @@
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.LinkLabel llAttribution;
         private System.Windows.Forms.Button btnStartOCR;
+        private System.Windows.Forms.ProgressBar pbProgress;
     }
 }
