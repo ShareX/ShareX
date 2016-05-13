@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib
 
         private void OCRSpaceResultForm_Shown(object sender, EventArgs e)
         {
-            UpdateValues();
+            UpdateControls();
 
             if (string.IsNullOrEmpty(Result))
             {
@@ -67,7 +67,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void UpdateValues()
+        private void UpdateControls()
         {
             cbLanguages.SelectedIndex = (int)Language;
 
@@ -83,25 +83,33 @@ namespace ShareX.UploadersLib
         {
             if (Data != null && Data.Length > 0 && !string.IsNullOrEmpty(Filename))
             {
-                cbLanguages.Enabled = btnStartOCR.Enabled = false;
+                cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = false;
 
-                try
+                TaskEx.Run(() =>
                 {
-                    OCRSpace ocr = new OCRSpace(Language, false);
-                    OCRSpaceResponse response = ocr.DoOCR(Data, Filename);
-
-                    if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
+                    try
                     {
-                        Result = response.ParsedResults[0].ParsedText;
-                        UpdateValues();
-                    }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                }
+                        OCRSpace ocr = new OCRSpace(Language, false);
+                        OCRSpaceResponse response = ocr.DoOCR(Data, Filename);
 
-                cbLanguages.Enabled = btnStartOCR.Enabled = true;
+                        if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
+                        {
+                            Result = response.ParsedResults[0].ParsedText;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                    }
+                },
+                () =>
+                {
+                    if (!IsDisposed)
+                    {
+                        UpdateControls();
+                        cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = true;
+                    }
+                });
             }
         }
 
