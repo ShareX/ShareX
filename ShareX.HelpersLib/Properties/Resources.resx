@@ -893,4 +893,7 @@ Would you like to download it?</value>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
     <value>Screen record</value>
   </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>Recognize text (OCR)</value>
+  </data>
 </root>

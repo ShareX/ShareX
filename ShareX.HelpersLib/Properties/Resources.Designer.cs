@@ -134,6 +134,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recognize text (OCR).
+        /// </summary>
+        internal static string AfterCaptureTasks_DoOCR {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_DoOCR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Perform actions.
         /// </summary>
         internal static string AfterCaptureTasks_PerformActions {
