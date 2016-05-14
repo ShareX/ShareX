@@ -37,6 +37,9 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(true), Description("Allow screenshot capture as soon as the mouse is released. This disables the ability to capture multiple shapes and to move and/or resize them.")]
         public bool QuickCrop { get; set; }
 
+        [DefaultValue(true), Description("If annotation is disabled then right click will cancel screen capture instead of opening options menu.")]
+        public bool AnnotationEnabled { get; set; }
+
         [DefaultValue(true), Description("Allows selection of window regions in region capture.")]
         public bool DetectWindows { get; set; }
 

@@ -561,7 +561,6 @@ namespace ShareX
                 form.Config.QuickCrop = false;
                 form.Config.ShowInfo = true;
                 form.Config.ShowTips = false;
-                form.ShapeManager.MinimumSize = 3;
                 form.Prepare();
                 form.ShowDialog();
             }
