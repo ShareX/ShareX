@@ -160,7 +160,8 @@ namespace ShareX.ScreenCaptureLib
                 Thread.Sleep(250);
 
                 Rectangle rect;
-                if (SurfaceForm.SelectRegion(out rect))
+
+                if (RectangleRegionForm.SelectRegion(out rect))
                 {
                     selectedRectangle = rect;
                     lblSelectedRectangle.Text = selectedRectangle.ToString();
@@ -186,21 +187,22 @@ namespace ShareX.ScreenCaptureLib
 
         private SimpleWindowInfo GetWindowInfo()
         {
-            using (RectangleRegionForm surface = new RectangleRegionForm())
+            using (RectangleRegionForm form = new RectangleRegionForm())
             {
-                surface.OneClickMode = true;
-                surface.Config.DetectWindows = true;
-                surface.Config.DetectControls = true;
-                surface.Config.UseDimming = false;
-                surface.Config.ShowInfo = true;
-                surface.Config.ShowMagnifier = false;
-                surface.Config.ShowTips = false;
-                surface.Prepare();
-                surface.ShowDialog();
+                form.OneClickMode = true;
+                form.AnnotationEnabled = false;
+                form.Config.DetectWindows = true;
+                form.Config.DetectControls = true;
+                form.Config.UseDimming = false;
+                form.Config.ShowInfo = true;
+                form.Config.ShowMagnifier = false;
+                form.Config.ShowTips = false;
+                form.Prepare();
+                form.ShowDialog();
 
-                if (surface.Result == SurfaceResult.Region)
+                if (form.Result == SurfaceResult.Region)
                 {
-                    return surface.SelectedWindow;
+                    return form.SelectedWindow;
                 }
             }
 

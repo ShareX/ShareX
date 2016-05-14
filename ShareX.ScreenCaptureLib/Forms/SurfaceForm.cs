@@ -494,56 +494,5 @@ namespace ShareX.ScreenCaptureLib
 
             base.Dispose(disposing);
         }
-
-        public static bool SelectRegion(out Rectangle rect)
-        {
-            return SelectRegion(out rect, new SurfaceOptions());
-        }
-
-        public static bool SelectRegion(out Rectangle rect, SurfaceOptions options)
-        {
-            using (RectangleRegionForm surface = new RectangleRegionForm())
-            {
-                surface.Config = options;
-                surface.Config.ShowTips = false;
-                surface.Config.QuickCrop = true;
-                surface.Config.DetectWindows = true;
-                surface.Prepare();
-                surface.ShowDialog();
-
-                if (surface.Result == SurfaceResult.Region)
-                {
-                    if (surface.ShapeManager.IsCurrentRegionValid)
-                    {
-                        rect = CaptureHelpers.ClientToScreen(surface.ShapeManager.CurrentRectangle);
-                        return true;
-                    }
-                }
-                else if (surface.Result == SurfaceResult.Fullscreen)
-                {
-                    rect = CaptureHelpers.GetScreenBounds();
-                    return true;
-                }
-                else if (surface.Result == SurfaceResult.Monitor)
-                {
-                    Screen[] screens = Screen.AllScreens;
-
-                    if (surface.MonitorIndex < screens.Length)
-                    {
-                        Screen screen = screens[surface.MonitorIndex];
-                        rect = screen.Bounds;
-                        return true;
-                    }
-                }
-                else if (surface.Result == SurfaceResult.ActiveMonitor)
-                {
-                    rect = CaptureHelpers.GetActiveScreenBounds();
-                    return true;
-                }
-            }
-
-            rect = Rectangle.Empty;
-            return false;
-        }
     }
 }

@@ -166,24 +166,27 @@ namespace ShareX.ScreenCaptureLib
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
-        private RectangleRegionForm surface;
+        private RectangleRegionForm form;
         private SurfaceOptions config;
         private ContextMenuStrip cmsContextMenu;
 
-        public ShapeManager(RectangleRegionForm surface)
+        public ShapeManager(RectangleRegionForm form)
         {
-            this.surface = surface;
-            config = surface.Config;
+            this.form = form;
+            config = form.Config;
 
-            ResizeManager = new ResizeManager(surface, this);
+            ResizeManager = new ResizeManager(form, this);
 
-            surface.MouseDown += surface_MouseDown;
-            surface.MouseUp += surface_MouseUp;
-            surface.KeyDown += surface_KeyDown;
-            surface.KeyUp += surface_KeyUp;
-            surface.MouseWheel += surface_MouseWheel;
+            form.MouseDown += surface_MouseDown;
+            form.MouseUp += surface_MouseUp;
+            form.KeyDown += surface_KeyDown;
+            form.KeyUp += surface_KeyUp;
+            form.MouseWheel += surface_MouseWheel;
 
-            CreateContextMenu();
+            if (form.AnnotationEnabled)
+            {
+                CreateContextMenu();
+            }
 
             CurrentShape = null;
             //CurrentShapeType = config.CurrentShapeType;
@@ -204,11 +207,11 @@ namespace ShareX.ScreenCaptureLib
 
         private void CreateContextMenu()
         {
-            cmsContextMenu = new ContextMenuStrip(surface.components);
+            cmsContextMenu = new ContextMenuStrip(form.components);
 
             ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem("Cancel capture");
             tsmiCancelCapture.Image = Resources.prohibition;
-            tsmiCancelCapture.Click += (sender, e) => surface.Close(SurfaceResult.Close);
+            tsmiCancelCapture.Click += (sender, e) => form.Close(SurfaceResult.Close);
             cmsContextMenu.Items.Add(tsmiCancelCapture);
 
             ToolStripMenuItem tsmiCloseMenu = new ToolStripMenuItem("Close menu");
@@ -292,7 +295,7 @@ namespace ShareX.ScreenCaptureLib
             ToolStripMenuItem tsmiBorderColor = new ToolStripMenuItem("Border color...");
             tsmiBorderColor.Click += (sender, e) =>
             {
-                surface.Pause();
+                form.Pause();
 
                 using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeBorderColor))
                 {
@@ -305,7 +308,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                surface.Resume();
+                form.Resume();
             };
             tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiBorderColor);
@@ -325,7 +328,7 @@ namespace ShareX.ScreenCaptureLib
             ToolStripMenuItem tsmiFillColor = new ToolStripMenuItem("Fill color...");
             tsmiFillColor.Click += (sender, e) =>
             {
-                surface.Pause();
+                form.Pause();
 
                 using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeFillColor))
                 {
@@ -338,7 +341,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                surface.Resume();
+                form.Resume();
             };
             tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiFillColor);
@@ -383,7 +386,7 @@ namespace ShareX.ScreenCaptureLib
             ToolStripMenuItem tsmiHighlightColor = new ToolStripMenuItem("Highlight color...");
             tsmiHighlightColor.Click += (sender, e) =>
             {
-                surface.Pause();
+                form.Pause();
 
                 using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeHighlightColor))
                 {
@@ -396,7 +399,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                surface.Resume();
+                form.Resume();
             };
             tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeHighlightColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiHighlightColor);
@@ -405,12 +408,12 @@ namespace ShareX.ScreenCaptureLib
 
             ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem("Capture fullscreen");
             tsmiFullscreenCapture.Image = Resources.layer_fullscreen;
-            tsmiFullscreenCapture.Click += (sender, e) => surface.Close(SurfaceResult.Fullscreen);
+            tsmiFullscreenCapture.Click += (sender, e) => form.Close(SurfaceResult.Fullscreen);
             cmsContextMenu.Items.Add(tsmiFullscreenCapture);
 
             ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem("Capture active monitor");
             tsmiActiveMonitorCapture.Image = Resources.monitor;
-            tsmiActiveMonitorCapture.Click += (sender, e) => surface.Close(SurfaceResult.ActiveMonitor);
+            tsmiActiveMonitorCapture.Click += (sender, e) => form.Close(SurfaceResult.ActiveMonitor);
             cmsContextMenu.Items.Add(tsmiActiveMonitorCapture);
 
             ToolStripMenuItem tsmiMonitorCapture = new ToolStripMenuItem("Capture monitor");
@@ -429,8 +432,8 @@ namespace ShareX.ScreenCaptureLib
                 int index = i;
                 tsmi.Click += (sender, e) =>
                 {
-                    surface.MonitorIndex = index;
-                    surface.Close(SurfaceResult.Monitor);
+                    form.MonitorIndex = index;
+                    form.Close(SurfaceResult.Monitor);
                 };
                 tsmiMonitorCapture.DropDownItems.Add(tsmi);
             }
@@ -591,10 +594,14 @@ namespace ShareX.ScreenCaptureLib
                     CancelRegionSelection();
                     EndRegionSelection();
                 }
+                else if (form.AnnotationEnabled && cmsContextMenu != null)
+                {
+                    cmsContextMenu.Show(form, e.Location.Add(-10, -10));
+                    config.ShowMenuTip = false;
+                }
                 else
                 {
-                    cmsContextMenu.Show(surface, e.Location.Add(-10, -10));
-                    config.ShowMenuTip = false;
+                    form.Close(SurfaceResult.Close);
                 }
             }
         }
@@ -730,7 +737,7 @@ namespace ShareX.ScreenCaptureLib
 
             Rectangle newRect = CaptureHelpers.CreateRectangle(posOnClick, newPosition);
 
-            if (surface.ScreenRectangle0Based.Contains(newRect))
+            if (form.ScreenRectangle0Based.Contains(newRect))
             {
                 return newPosition;
             }
@@ -757,7 +764,7 @@ namespace ShareX.ScreenCaptureLib
                     if (window != null && !window.Rectangle.IsEmpty)
                     {
                         hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
-                        CurrentHoverRectangle = Rectangle.Intersect(surface.ScreenRectangle0Based, hoverArea);
+                        CurrentHoverRectangle = Rectangle.Intersect(form.ScreenRectangle0Based, hoverArea);
                     }
                 }
             }
@@ -842,8 +849,8 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else if (config.QuickCrop && IsCurrentShapeTypeRegion)
                 {
-                    surface.UpdateRegionPath();
-                    surface.Close(SurfaceResult.Region);
+                    form.UpdateRegionPath();
+                    form.Close(SurfaceResult.Region);
                 }
                 else
                 {
@@ -857,8 +864,8 @@ namespace ShareX.ScreenCaptureLib
 
                 if (config.QuickCrop && IsCurrentShapeTypeRegion)
                 {
-                    surface.UpdateRegionPath();
-                    surface.Close(SurfaceResult.Region);
+                    form.UpdateRegionPath();
+                    form.Close(SurfaceResult.Region);
                 }
                 else
                 {

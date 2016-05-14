@@ -313,27 +313,28 @@ namespace ShareX
 
         public static bool SelectRegion(out Rectangle rect, TaskSettings taskSettings)
         {
-            return SurfaceForm.SelectRegion(out rect, taskSettings.CaptureSettings.SurfaceOptions);
+            return RectangleRegionForm.SelectRegion(out rect, taskSettings.CaptureSettings.SurfaceOptions);
         }
 
         public static PointInfo SelectPointColor()
         {
-            using (RectangleRegionForm surface = new RectangleRegionForm())
+            using (RectangleRegionForm form = new RectangleRegionForm())
             {
-                surface.ScreenColorPickerMode = true;
-                surface.Config.DetectWindows = false;
-                surface.Config.UseDimming = false;
-                surface.Config.ShowInfo = true;
-                surface.Config.ShowMagnifier = true;
-                surface.Config.ShowTips = false;
-                surface.Prepare();
-                surface.ShowDialog();
+                form.ScreenColorPickerMode = true;
+                form.AnnotationEnabled = false;
+                form.Config.DetectWindows = false;
+                form.Config.UseDimming = false;
+                form.Config.ShowInfo = true;
+                form.Config.ShowMagnifier = true;
+                form.Config.ShowTips = false;
+                form.Prepare();
+                form.ShowDialog();
 
-                if (surface.Result == SurfaceResult.Region)
+                if (form.Result == SurfaceResult.Region)
                 {
                     PointInfo pointInfo = new PointInfo();
-                    pointInfo.Position = surface.CurrentPosition;
-                    pointInfo.Color = surface.CurrentColor;
+                    pointInfo.Position = form.CurrentPosition;
+                    pointInfo.Color = form.CurrentColor;
                     return pointInfo;
                 }
             }
@@ -346,6 +347,7 @@ namespace ShareX
             using (RectangleRegionForm form = new RectangleRegionForm())
             using (Image screenshot = Screenshot.CaptureFullscreen())
             {
+                form.AnnotationEnabled = false;
                 form.SurfaceImage = screenshot;
                 form.Prepare();
                 form.ShowDialog();
@@ -556,15 +558,16 @@ namespace ShareX
 
         public static void OpenRuler()
         {
-            using (RectangleRegionForm surface = new RectangleRegionForm())
+            using (RectangleRegionForm form = new RectangleRegionForm())
             {
-                surface.RulerMode = true;
-                surface.Config.ShowTips = false;
-                surface.Config.QuickCrop = false;
-                surface.Config.ShowInfo = true;
-                surface.ShapeManager.MinimumSize = 3;
-                surface.Prepare();
-                surface.ShowDialog();
+                form.RulerMode = true;
+                form.AnnotationEnabled = false;
+                form.Config.ShowTips = false;
+                form.Config.QuickCrop = false;
+                form.Config.ShowInfo = true;
+                form.ShapeManager.MinimumSize = 3;
+                form.Prepare();
+                form.ShowDialog();
             }
         }
 

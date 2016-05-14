@@ -38,6 +38,7 @@ namespace ShareX.ScreenCaptureLib
     public class RectangleRegionForm : SurfaceForm
     {
         public ShapeManager ShapeManager { get; private set; }
+        public bool AnnotationEnabled { get; set; } = true;
 
         #region Screen color picker
 
@@ -276,7 +277,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Draw right click menu tip
-            if (Config.ShowMenuTip)
+            if (AnnotationEnabled && Config.ShowMenuTip)
             {
                 DrawMenuTip(g);
             }
@@ -706,6 +707,58 @@ namespace ShareX.ScreenCaptureLib
             }
 
             base.Dispose(disposing);
+        }
+
+        public static bool SelectRegion(out Rectangle rect)
+        {
+            return SelectRegion(out rect, new SurfaceOptions());
+        }
+
+        public static bool SelectRegion(out Rectangle rect, SurfaceOptions options)
+        {
+            using (RectangleRegionForm form = new RectangleRegionForm())
+            {
+                form.AnnotationEnabled = false;
+                form.Config = options;
+                form.Config.ShowTips = false;
+                form.Config.QuickCrop = true;
+                form.Config.DetectWindows = true;
+                form.Prepare();
+                form.ShowDialog();
+
+                if (form.Result == SurfaceResult.Region)
+                {
+                    if (form.ShapeManager.IsCurrentRegionValid)
+                    {
+                        rect = CaptureHelpers.ClientToScreen(form.ShapeManager.CurrentRectangle);
+                        return true;
+                    }
+                }
+                else if (form.Result == SurfaceResult.Fullscreen)
+                {
+                    rect = CaptureHelpers.GetScreenBounds();
+                    return true;
+                }
+                else if (form.Result == SurfaceResult.Monitor)
+                {
+                    Screen[] screens = Screen.AllScreens;
+
+                    if (form.MonitorIndex < screens.Length)
+                    {
+                        Screen screen = screens[form.MonitorIndex];
+                        rect = screen.Bounds;
+                        return true;
+                    }
+                }
+                else if (form.Result == SurfaceResult.ActiveMonitor)
+                {
+                    rect = CaptureHelpers.GetActiveScreenBounds();
+                    return true;
+                }
+            }
+
+            rect = Rectangle.Empty;
+            return false;
         }
     }
 }
