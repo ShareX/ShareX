@@ -187,10 +187,8 @@ namespace ShareX.ScreenCaptureLib
 
         private SimpleWindowInfo GetWindowInfo()
         {
-            using (RectangleRegionForm form = new RectangleRegionForm())
+            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.OneClick))
             {
-                form.OneClickMode = true;
-                form.AnnotationEnabled = false;
                 form.Config.DetectWindows = true;
                 form.Config.DetectControls = true;
                 form.Config.UseDimming = false;

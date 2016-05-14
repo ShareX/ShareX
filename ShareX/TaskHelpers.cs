@@ -318,10 +318,8 @@ namespace ShareX
 
         public static PointInfo SelectPointColor()
         {
-            using (RectangleRegionForm form = new RectangleRegionForm())
+            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.ScreenColorPicker))
             {
-                form.ScreenColorPickerMode = true;
-                form.AnnotationEnabled = false;
                 form.Config.DetectWindows = false;
                 form.Config.UseDimming = false;
                 form.Config.ShowInfo = true;
@@ -344,10 +342,10 @@ namespace ShareX
 
         public static Image GetRegionImage()
         {
-            using (RectangleRegionForm form = new RectangleRegionForm())
+            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Default))
             using (Image screenshot = Screenshot.CaptureFullscreen())
             {
-                form.AnnotationEnabled = false;
+                form.Config.ShowTips = false;
                 form.SurfaceImage = screenshot;
                 form.Prepare();
                 form.ShowDialog();
@@ -558,13 +556,11 @@ namespace ShareX
 
         public static void OpenRuler()
         {
-            using (RectangleRegionForm form = new RectangleRegionForm())
+            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Ruler))
             {
-                form.RulerMode = true;
-                form.AnnotationEnabled = false;
-                form.Config.ShowTips = false;
                 form.Config.QuickCrop = false;
                 form.Config.ShowInfo = true;
+                form.Config.ShowTips = false;
                 form.ShapeManager.MinimumSize = 3;
                 form.Prepare();
                 form.ShowDialog();

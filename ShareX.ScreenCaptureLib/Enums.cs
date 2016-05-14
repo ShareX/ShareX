@@ -145,6 +145,15 @@ namespace ShareX.ScreenCaptureLib
         sierra2_4a
     }
 
+    public enum RectangleRegionMode
+    {
+        Default,
+        Annotation,
+        ScreenColorPicker,
+        Ruler,
+        OneClick
+    }
+
     public enum ShapeType
     {
         [Description("Region: Rectangle")]

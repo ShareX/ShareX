@@ -183,7 +183,7 @@ namespace ShareX.ScreenCaptureLib
             form.KeyUp += surface_KeyUp;
             form.MouseWheel += surface_MouseWheel;
 
-            if (form.AnnotationEnabled)
+            if (form.Mode == RectangleRegionMode.Annotation)
             {
                 CreateContextMenu();
             }
@@ -594,7 +594,7 @@ namespace ShareX.ScreenCaptureLib
                     CancelRegionSelection();
                     EndRegionSelection();
                 }
-                else if (form.AnnotationEnabled && cmsContextMenu != null)
+                else if (form.Mode == RectangleRegionMode.Annotation && cmsContextMenu != null)
                 {
                     cmsContextMenu.Show(form, e.Location.Add(-10, -10));
                     config.ShowMenuTip = false;

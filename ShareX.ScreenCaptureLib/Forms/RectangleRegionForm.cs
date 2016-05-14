@@ -37,12 +37,9 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RectangleRegionForm : SurfaceForm
     {
+        public RectangleRegionMode Mode { get; private set; }
+
         public ShapeManager ShapeManager { get; private set; }
-        public bool AnnotationEnabled { get; set; } = true;
-
-        #region Screen color picker
-
-        public bool ScreenColorPickerMode { get; set; }
 
         public Point CurrentPosition { get; set; }
 
@@ -61,34 +58,26 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private Bitmap bmpSurfaceImage;
-
-        #endregion Screen color picker
-
-        #region Screen ruler
-
-        public bool RulerMode { get; set; }
-
-        #endregion Screen ruler
-
-        public bool OneClickMode { get; set; }
         public SimpleWindowInfo SelectedWindow { get; set; }
 
         private ColorBlinkAnimation colorBlinkAnimation = new ColorBlinkAnimation();
+        private Bitmap bmpSurfaceImage;
 
-        public RectangleRegionForm()
+        public RectangleRegionForm(RectangleRegionMode mode)
         {
+            Mode = mode;
+
             KeyDown += RectangleRegion_KeyDown;
             MouseDown += RectangleRegion_MouseDown;
         }
 
         private void RectangleRegion_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((OneClickMode || ScreenColorPickerMode) && e.Button == MouseButtons.Left)
+            if ((Mode == RectangleRegionMode.OneClick || Mode == RectangleRegionMode.ScreenColorPicker) && e.Button == MouseButtons.Left)
             {
                 CurrentPosition = InputManager.MousePosition;
 
-                if (OneClickMode)
+                if (Mode == RectangleRegionMode.OneClick)
                 {
                     SelectedWindow = ShapeManager.FindSelectedWindow();
                 }
@@ -137,7 +126,7 @@ namespace ShareX.ScreenCaptureLib
                 ShapeManager.WindowCaptureMode = Config.DetectWindows;
                 ShapeManager.IncludeControls = Config.DetectControls;
 
-                if (OneClickMode || ShapeManager.WindowCaptureMode)
+                if (Mode == RectangleRegionMode.OneClick || ShapeManager.WindowCaptureMode)
                 {
                     IntPtr handle = Handle;
 
@@ -150,7 +139,7 @@ namespace ShareX.ScreenCaptureLib
                     });
                 }
 
-                if (Config.UseCustomInfoText || ScreenColorPickerMode)
+                if (Config.UseCustomInfoText || Mode == RectangleRegionMode.ScreenColorPicker)
                 {
                     bmpSurfaceImage = new Bitmap(SurfaceImage);
                 }
@@ -235,7 +224,7 @@ namespace ShareX.ScreenCaptureLib
                 g.DrawRectangleProper(borderPen, ShapeManager.CurrentRectangle);
                 g.DrawRectangleProper(borderDotPen, ShapeManager.CurrentRectangle);
 
-                if (RulerMode)
+                if (Mode == RectangleRegionMode.Ruler)
                 {
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 5, 10);
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 15, 100);
@@ -277,7 +266,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Draw right click menu tip
-            if (AnnotationEnabled && Config.ShowMenuTip)
+            if (Mode == RectangleRegionMode.Annotation && Config.ShowMenuTip)
             {
                 DrawMenuTip(g);
             }
@@ -464,7 +453,7 @@ namespace ShareX.ScreenCaptureLib
 
         private string GetAreaText(Rectangle area)
         {
-            if (RulerMode)
+            if (Mode == RectangleRegionMode.Ruler)
             {
                 Point endPos = new Point(area.Right - 1, area.Bottom - 1);
                 return string.Format(Resources.RectangleRegion_GetRulerText_Ruler_info, area.X, area.Y, endPos.X, endPos.Y,
@@ -476,11 +465,11 @@ namespace ShareX.ScreenCaptureLib
 
         private string GetInfoText()
         {
-            if (ScreenColorPickerMode || Config.UseCustomInfoText)
+            if (Mode == RectangleRegionMode.ScreenColorPicker || Config.UseCustomInfoText)
             {
                 Color color = CurrentColor;
 
-                if (!ScreenColorPickerMode && !string.IsNullOrEmpty(Config.CustomInfoText))
+                if (Mode != RectangleRegionMode.ScreenColorPicker && !string.IsNullOrEmpty(Config.CustomInfoText))
                 {
                     return Config.CustomInfoText.Replace("$r", color.R.ToString(), StringComparison.InvariantCultureIgnoreCase).
                         Replace("$g", color.G.ToString(), StringComparison.InvariantCultureIgnoreCase).
@@ -716,9 +705,8 @@ namespace ShareX.ScreenCaptureLib
 
         public static bool SelectRegion(out Rectangle rect, SurfaceOptions options)
         {
-            using (RectangleRegionForm form = new RectangleRegionForm())
+            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Default))
             {
-                form.AnnotationEnabled = false;
                 form.Config = options;
                 form.Config.ShowTips = false;
                 form.Config.QuickCrop = true;
