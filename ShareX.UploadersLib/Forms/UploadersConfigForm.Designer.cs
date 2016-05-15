@@ -313,12 +313,6 @@
             this.txtLambdaApiKey = new System.Windows.Forms.TextBox();
             this.lblLambdaUploadURL = new System.Windows.Forms.Label();
             this.cbLambdaUploadURL = new System.Windows.Forms.ComboBox();
-            this.tpLithiio = new System.Windows.Forms.TabPage();
-            this.lblLithiioInfo = new System.Windows.Forms.Label();
-            this.lblLithiioApiKey = new System.Windows.Forms.Label();
-            this.txtLithiioApiKey = new System.Windows.Forms.TextBox();
-            this.lblLithiioUploadURL = new System.Windows.Forms.Label();
-            this.cbLithiioUploadURL = new System.Windows.Forms.ComboBox();
             this.tpPomf = new System.Windows.Forms.TabPage();
             this.btnPomfTest = new System.Windows.Forms.Button();
             this.txtPomfResultURL = new System.Windows.Forms.TextBox();
@@ -371,9 +365,6 @@
             this.txtSeafileAuthToken = new System.Windows.Forms.TextBox();
             this.lblSeafileAuthToken = new System.Windows.Forms.Label();
             this.lblSeafileAPIURL = new System.Windows.Forms.Label();
-            this.tpSul = new System.Windows.Forms.TabPage();
-            this.txtSulAPIKey = new System.Windows.Forms.TextBox();
-            this.lblSulAPIKey = new System.Windows.Forms.Label();
             this.tpStreamable = new System.Windows.Forms.TabPage();
             this.cbStreamableUseDirectURL = new System.Windows.Forms.CheckBox();
             this.txtStreamablePassword = new System.Windows.Forms.TextBox();
@@ -381,6 +372,15 @@
             this.lblStreamableUsername = new System.Windows.Forms.Label();
             this.lblStreamablePassword = new System.Windows.Forms.Label();
             this.cbStreamableAnonymous = new System.Windows.Forms.CheckBox();
+            this.tpSul = new System.Windows.Forms.TabPage();
+            this.txtSulAPIKey = new System.Windows.Forms.TextBox();
+            this.lblSulAPIKey = new System.Windows.Forms.Label();
+            this.tpLithiio = new System.Windows.Forms.TabPage();
+            this.lblLithiioInfo = new System.Windows.Forms.Label();
+            this.lblLithiioApiKey = new System.Windows.Forms.Label();
+            this.txtLithiioApiKey = new System.Windows.Forms.TextBox();
+            this.lblLithiioUploadURL = new System.Windows.Forms.Label();
+            this.cbLithiioUploadURL = new System.Windows.Forms.ComboBox();
             this.tpSharedFolder = new System.Windows.Forms.TabPage();
             this.lblSharedFolderFiles = new System.Windows.Forms.Label();
             this.lblSharedFolderText = new System.Windows.Forms.Label();
@@ -578,7 +578,6 @@
             this.tpJira.SuspendLayout();
             this.gpJiraServer.SuspendLayout();
             this.tpLambda.SuspendLayout();
-            this.tpLithiio.SuspendLayout();
             this.tpPomf.SuspendLayout();
             this.tpUp1.SuspendLayout();
             this.tpSeafile.SuspendLayout();
@@ -586,8 +585,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSeafileExpireDays)).BeginInit();
             this.grpSeafileAccInfo.SuspendLayout();
             this.grpSeafileObtainAuthToken.SuspendLayout();
-            this.tpSul.SuspendLayout();
             this.tpStreamable.SuspendLayout();
+            this.tpSul.SuspendLayout();
+            this.tpLithiio.SuspendLayout();
             this.tpSharedFolder.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
@@ -1622,12 +1622,12 @@
             this.tcFileUploaders.Controls.Add(this.tpMinus);
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpLambda);
-            this.tcFileUploaders.Controls.Add(this.tpLithiio);
             this.tcFileUploaders.Controls.Add(this.tpPomf);
             this.tcFileUploaders.Controls.Add(this.tpUp1);
             this.tcFileUploaders.Controls.Add(this.tpSeafile);
-            this.tcFileUploaders.Controls.Add(this.tpSul);
             this.tcFileUploaders.Controls.Add(this.tpStreamable);
+            this.tcFileUploaders.Controls.Add(this.tpSul);
+            this.tcFileUploaders.Controls.Add(this.tpLithiio);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
@@ -2690,48 +2690,6 @@
             this.cbLambdaUploadURL.Name = "cbLambdaUploadURL";
             this.cbLambdaUploadURL.SelectedIndexChanged += new System.EventHandler(this.cbLambdaUploadURL_SelectedIndexChanged);
             // 
-            // tpLithiio
-            // 
-            this.tpLithiio.Controls.Add(this.lblLithiioInfo);
-            this.tpLithiio.Controls.Add(this.lblLithiioApiKey);
-            this.tpLithiio.Controls.Add(this.txtLithiioApiKey);
-            this.tpLithiio.Controls.Add(this.lblLithiioUploadURL);
-            this.tpLithiio.Controls.Add(this.cbLithiioUploadURL);
-            resources.ApplyResources(this.tpLithiio, "tpLithiio");
-            this.tpLithiio.Name = "tpLithiio";
-            this.tpLithiio.UseVisualStyleBackColor = true;
-            // 
-            // lblLithiioInfo
-            // 
-            resources.ApplyResources(this.lblLithiioInfo, "lblLithiioInfo");
-            this.lblLithiioInfo.Name = "lblLithiioInfo";
-            this.lblLithiioInfo.Click += new System.EventHandler(this.lithiioInfoLabel_Click);
-            // 
-            // lblLithiioApiKey
-            // 
-            resources.ApplyResources(this.lblLithiioApiKey, "lblLithiioApiKey");
-            this.lblLithiioApiKey.Name = "lblLithiioApiKey";
-            // 
-            // txtLithiioApiKey
-            // 
-            resources.ApplyResources(this.txtLithiioApiKey, "txtLithiioApiKey");
-            this.txtLithiioApiKey.Name = "txtLithiioApiKey";
-            this.txtLithiioApiKey.UseSystemPasswordChar = true;
-            this.txtLithiioApiKey.TextChanged += new System.EventHandler(this.txtLithiioApiKey_TextChanged);
-            // 
-            // lblLithiioUploadURL
-            // 
-            resources.ApplyResources(this.lblLithiioUploadURL, "lblLithiioUploadURL");
-            this.lblLithiioUploadURL.Name = "lblLithiioUploadURL";
-            // 
-            // cbLithiioUploadURL
-            // 
-            this.cbLithiioUploadURL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLithiioUploadURL.FormattingEnabled = true;
-            resources.ApplyResources(this.cbLithiioUploadURL, "cbLithiioUploadURL");
-            this.cbLithiioUploadURL.Name = "cbLithiioUploadURL";
-            this.cbLithiioUploadURL.SelectedIndexChanged += new System.EventHandler(this.cbLithiioUploadURL_SelectedIndexChanged);
-            // 
             // tpPomf
             // 
             this.tpPomf.Controls.Add(this.btnPomfTest);
@@ -3106,25 +3064,6 @@
             resources.ApplyResources(this.lblSeafileAPIURL, "lblSeafileAPIURL");
             this.lblSeafileAPIURL.Name = "lblSeafileAPIURL";
             // 
-            // tpSul
-            // 
-            this.tpSul.Controls.Add(this.txtSulAPIKey);
-            this.tpSul.Controls.Add(this.lblSulAPIKey);
-            resources.ApplyResources(this.tpSul, "tpSul");
-            this.tpSul.Name = "tpSul";
-            this.tpSul.UseVisualStyleBackColor = true;
-            // 
-            // txtSulAPIKey
-            // 
-            resources.ApplyResources(this.txtSulAPIKey, "txtSulAPIKey");
-            this.txtSulAPIKey.Name = "txtSulAPIKey";
-            this.txtSulAPIKey.TextChanged += new System.EventHandler(this.txtSulAPIKey_TextChanged);
-            // 
-            // lblSulAPIKey
-            // 
-            resources.ApplyResources(this.lblSulAPIKey, "lblSulAPIKey");
-            this.lblSulAPIKey.Name = "lblSulAPIKey";
-            // 
             // tpStreamable
             // 
             this.tpStreamable.Controls.Add(this.cbStreamableUseDirectURL);
@@ -3173,6 +3112,68 @@
             this.cbStreamableAnonymous.Name = "cbStreamableAnonymous";
             this.cbStreamableAnonymous.UseVisualStyleBackColor = true;
             this.cbStreamableAnonymous.CheckedChanged += new System.EventHandler(this.cboxStreamableAnonymous_CheckedChanged);
+            // 
+            // tpSul
+            // 
+            this.tpSul.Controls.Add(this.txtSulAPIKey);
+            this.tpSul.Controls.Add(this.lblSulAPIKey);
+            resources.ApplyResources(this.tpSul, "tpSul");
+            this.tpSul.Name = "tpSul";
+            this.tpSul.UseVisualStyleBackColor = true;
+            // 
+            // txtSulAPIKey
+            // 
+            resources.ApplyResources(this.txtSulAPIKey, "txtSulAPIKey");
+            this.txtSulAPIKey.Name = "txtSulAPIKey";
+            this.txtSulAPIKey.TextChanged += new System.EventHandler(this.txtSulAPIKey_TextChanged);
+            // 
+            // lblSulAPIKey
+            // 
+            resources.ApplyResources(this.lblSulAPIKey, "lblSulAPIKey");
+            this.lblSulAPIKey.Name = "lblSulAPIKey";
+            // 
+            // tpLithiio
+            // 
+            this.tpLithiio.Controls.Add(this.lblLithiioInfo);
+            this.tpLithiio.Controls.Add(this.lblLithiioApiKey);
+            this.tpLithiio.Controls.Add(this.txtLithiioApiKey);
+            this.tpLithiio.Controls.Add(this.lblLithiioUploadURL);
+            this.tpLithiio.Controls.Add(this.cbLithiioUploadURL);
+            resources.ApplyResources(this.tpLithiio, "tpLithiio");
+            this.tpLithiio.Name = "tpLithiio";
+            this.tpLithiio.UseVisualStyleBackColor = true;
+            // 
+            // lblLithiioInfo
+            // 
+            resources.ApplyResources(this.lblLithiioInfo, "lblLithiioInfo");
+            this.lblLithiioInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLithiioInfo.Name = "lblLithiioInfo";
+            this.lblLithiioInfo.Click += new System.EventHandler(this.lithiioInfoLabel_Click);
+            // 
+            // lblLithiioApiKey
+            // 
+            resources.ApplyResources(this.lblLithiioApiKey, "lblLithiioApiKey");
+            this.lblLithiioApiKey.Name = "lblLithiioApiKey";
+            // 
+            // txtLithiioApiKey
+            // 
+            resources.ApplyResources(this.txtLithiioApiKey, "txtLithiioApiKey");
+            this.txtLithiioApiKey.Name = "txtLithiioApiKey";
+            this.txtLithiioApiKey.UseSystemPasswordChar = true;
+            this.txtLithiioApiKey.TextChanged += new System.EventHandler(this.txtLithiioApiKey_TextChanged);
+            // 
+            // lblLithiioUploadURL
+            // 
+            resources.ApplyResources(this.lblLithiioUploadURL, "lblLithiioUploadURL");
+            this.lblLithiioUploadURL.Name = "lblLithiioUploadURL";
+            // 
+            // cbLithiioUploadURL
+            // 
+            this.cbLithiioUploadURL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLithiioUploadURL.FormattingEnabled = true;
+            resources.ApplyResources(this.cbLithiioUploadURL, "cbLithiioUploadURL");
+            this.cbLithiioUploadURL.Name = "cbLithiioUploadURL";
+            this.cbLithiioUploadURL.SelectedIndexChanged += new System.EventHandler(this.cbLithiioUploadURL_SelectedIndexChanged);
             // 
             // tpSharedFolder
             // 
@@ -4384,8 +4385,6 @@
             this.gpJiraServer.PerformLayout();
             this.tpLambda.ResumeLayout(false);
             this.tpLambda.PerformLayout();
-            this.tpLithiio.ResumeLayout(false);
-            this.tpLithiio.PerformLayout();
             this.tpPomf.ResumeLayout(false);
             this.tpPomf.PerformLayout();
             this.tpUp1.ResumeLayout(false);
@@ -4399,10 +4398,12 @@
             this.grpSeafileAccInfo.PerformLayout();
             this.grpSeafileObtainAuthToken.ResumeLayout(false);
             this.grpSeafileObtainAuthToken.PerformLayout();
-            this.tpSul.ResumeLayout(false);
-            this.tpSul.PerformLayout();
             this.tpStreamable.ResumeLayout(false);
             this.tpStreamable.PerformLayout();
+            this.tpSul.ResumeLayout(false);
+            this.tpSul.PerformLayout();
+            this.tpLithiio.ResumeLayout(false);
+            this.tpLithiio.PerformLayout();
             this.tpSharedFolder.ResumeLayout(false);
             this.tpSharedFolder.PerformLayout();
             this.tpEmail.ResumeLayout(false);

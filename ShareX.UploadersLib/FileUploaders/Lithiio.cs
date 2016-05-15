@@ -23,10 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-// Copied Lambda.cs FileUploader and modified it a little to work with https://lithi.io/.
-// To-do: add the other domains to the dropdown menu.
-// Credits: https://github.com/mstojcevich
-// Minor changes: https://github.com/lithium720
+// Credits: https://github.com/lithium720
 
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -63,6 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private const string uploadUrl = "http://api.lithi.io/upload.php";
 
+        // TODO: Add the other domains to the dropdown menu.
         public static string[] UploadURLs = new string[] { "https://lithi.io/" };
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -99,7 +97,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class LithiioSettings
     {
-        public string UserAPIKey = string.Empty;
-        public string UploadURL = "https://lithi.io/";
+        public string UserAPIKey { get; set; } = string.Empty;
+        public string UploadURL { get; set; } = "https://lithi.io/";
     }
 }

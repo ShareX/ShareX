@@ -118,8 +118,6 @@ namespace ShareX.UploadersLib
         Jira,
         [Description("Lambda")]
         Lambda,
-        [Description("Lithiio")]
-        Lithiio,
         [Description("VideoBin")]
         VideoBin,
         [Description("Pomf")]
@@ -132,10 +130,12 @@ namespace ShareX.UploadersLib
         Up1,
         [Description("Seafile")]
         Seafile,
-        [Description("s-ul")]
-        Sul,
         [Description("Streamable")]
         Streamable,
+        [Description("s-ul")]
+        Sul,
+        [Description("Lithiio")]
+        Lithiio,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
