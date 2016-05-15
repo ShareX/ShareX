@@ -25,7 +25,7 @@
 
 using System.Drawing;
 
-namespace ShareX
+namespace ShareX.ScreenCaptureLib
 {
     public class PointInfo
     {

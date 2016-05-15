@@ -1052,7 +1052,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         private void tsmiRuler_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenRuler();
+            RegionCaptureHelpers.ShowScreenRuler();
         }
 
         private void tsmiAutomate_Click(object sender, EventArgs e)
@@ -1867,7 +1867,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     TaskHelpers.OpenQRCode();
                     break;
                 case HotkeyType.Ruler:
-                    TaskHelpers.OpenRuler();
+                    RegionCaptureHelpers.ShowScreenRuler();
                     break;
                 case HotkeyType.Automate:
                     TaskHelpers.StartAutomate();
@@ -2212,7 +2212,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                         {
                             using (Image screenshot = Screenshot.CaptureFullscreen())
                             {
-                                return RegionCaptureHelpers.GetRegionImage(screenshot, BaseRegionForm.LastRegionFillPath, BaseRegionForm.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
+                                return RegionCaptureHelpers.ApplyRegionPathToImage(screenshot, BaseRegionForm.LastRegionFillPath, BaseRegionForm.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }

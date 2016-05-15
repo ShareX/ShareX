@@ -124,7 +124,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Thread.Sleep(250);
 
-                SimpleWindowInfo simpleWindowInfo = GetWindowInfo();
+                SimpleWindowInfo simpleWindowInfo = RegionCaptureHelpers.GetWindowInfo();
 
                 if (simpleWindowInfo != null)
                 {
@@ -161,7 +161,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Rectangle rect;
 
-                if (RegionCaptureHelpers.SelectRegion(out rect))
+                if (RegionCaptureHelpers.GetRectangleRegion(out rect))
                 {
                     selectedRectangle = rect;
                     lblSelectedRectangle.Text = selectedRectangle.ToString();
@@ -183,26 +183,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 StartCapture();
             }
-        }
-
-        private SimpleWindowInfo GetWindowInfo()
-        {
-            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.OneClick))
-            {
-                form.Config.UseDimming = false;
-                form.Config.ShowMagnifier = false;
-                form.Config.ShowTips = false;
-
-                form.Prepare();
-                form.ShowDialog();
-
-                if (form.Result == RegionResult.Region)
-                {
-                    return form.SelectedWindow;
-                }
-            }
-
-            return null;
         }
 
         private void StartCapture()

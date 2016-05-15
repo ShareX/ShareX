@@ -248,7 +248,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (Image img = GetOutputImage())
                 {
-                    return RegionCaptureHelpers.GetRegionImage(img, regionFillPath, regionDrawPath, Config);
+                    return RegionCaptureHelpers.ApplyRegionPathToImage(img, regionFillPath, regionDrawPath, Config);
                 }
             }
             else if (Result == RegionResult.Fullscreen)
