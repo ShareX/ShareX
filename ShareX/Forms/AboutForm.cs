@@ -83,6 +83,7 @@ AdFly support: https://github.com/LRNAB
 MediaFire support: https://github.com/michalx2
 Pushbullet support: https://github.com/BallisticLingonberries
 Lambda support: https://github.com/mstojcevich
+Lithiio support: https://github.com/lithium720
 VideoBin support: https://github.com/corey-/
 Up1 support: https://github.com/Upload
 CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://github.com/DanielMcAssey

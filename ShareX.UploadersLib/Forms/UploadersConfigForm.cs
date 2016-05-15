@@ -112,6 +112,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpImgur, Resources.Imgur);
             AddIconToTab(tpJira, Resources.jira);
             AddIconToTab(tpLambda, Resources.Lambda);
+            AddIconToTab(tpLithiio, Resources.Lithiio);
             AddIconToTab(tpMediaFire, Resources.MediaFire);
             AddIconToTab(tpMega, Resources.Mega);
             AddIconToTab(tpMinus, Resources.Minus);
@@ -566,6 +567,12 @@ namespace ShareX.UploadersLib
             txtLambdaApiKey.Text = Config.LambdaSettings.UserAPIKey;
             cbLambdaUploadURL.Items.AddRange(Lambda.UploadURLs);
             cbLambdaUploadURL.SelectedItem = Config.LambdaSettings.UploadURL;
+
+            // Lithiio
+
+            txtLithiioApiKey.Text = Config.LithiioSettings.UserAPIKey;
+            cbLithiioUploadURL.Items.AddRange(Lithiio.UploadURLs);
+            cbLithiioUploadURL.SelectedItem = Config.LithiioSettings.UploadURL;
 
             // Pomf
 
@@ -2136,6 +2143,33 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Lambda
+
+        #region Lithiio
+
+        private void lithiioInfoLabel_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://lithi.io/");
+        }
+
+        private void txtLithiioApiKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.LithiioSettings.UserAPIKey = txtLithiioApiKey.Text;
+        }
+
+        private void cbLithiioUploadURL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbLithiioUploadURL.SelectedIndex > -1)
+            {
+                string url = cbLithiioUploadURL.SelectedItem as string;
+
+                if (url != null)
+                {
+                    Config.LithiioSettings.UploadURL = url;
+                }
+            }
+        }
+
+        #endregion Lithiio
 
         #region Pomf
 

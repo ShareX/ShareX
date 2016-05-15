@@ -80,13 +80,13 @@
             // llAttribution
             // 
             this.llAttribution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.llAttribution.Location = new System.Drawing.Point(320, 8);
+            this.llAttribution.AutoSize = true;
+            this.llAttribution.Location = new System.Drawing.Point(440, 8);
             this.llAttribution.Name = "llAttribution";
-            this.llAttribution.Size = new System.Drawing.Size(232, 24);
+            this.llAttribution.Size = new System.Drawing.Size(114, 13);
             this.llAttribution.TabIndex = 4;
             this.llAttribution.TabStop = true;
-            this.llAttribution.Text = "Powered by OCR.Space API";
-            this.llAttribution.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.llAttribution.Text = "Using OCR.Space API";
             this.llAttribution.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llAttribution_LinkClicked);
             // 
             // btnStartOCR

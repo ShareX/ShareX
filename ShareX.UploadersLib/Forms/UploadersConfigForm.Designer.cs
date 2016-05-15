@@ -313,6 +313,12 @@
             this.txtLambdaApiKey = new System.Windows.Forms.TextBox();
             this.lblLambdaUploadURL = new System.Windows.Forms.Label();
             this.cbLambdaUploadURL = new System.Windows.Forms.ComboBox();
+            this.tpLithiio = new System.Windows.Forms.TabPage();
+            this.lblLithiioInfo = new System.Windows.Forms.Label();
+            this.lblLithiioApiKey = new System.Windows.Forms.Label();
+            this.txtLithiioApiKey = new System.Windows.Forms.TextBox();
+            this.lblLithiioUploadURL = new System.Windows.Forms.Label();
+            this.cbLithiioUploadURL = new System.Windows.Forms.ComboBox();
             this.tpPomf = new System.Windows.Forms.TabPage();
             this.btnPomfTest = new System.Windows.Forms.Button();
             this.txtPomfResultURL = new System.Windows.Forms.TextBox();
@@ -572,6 +578,7 @@
             this.tpJira.SuspendLayout();
             this.gpJiraServer.SuspendLayout();
             this.tpLambda.SuspendLayout();
+            this.tpLithiio.SuspendLayout();
             this.tpPomf.SuspendLayout();
             this.tpUp1.SuspendLayout();
             this.tpSeafile.SuspendLayout();
@@ -1615,6 +1622,7 @@
             this.tcFileUploaders.Controls.Add(this.tpMinus);
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpLambda);
+            this.tcFileUploaders.Controls.Add(this.tpLithiio);
             this.tcFileUploaders.Controls.Add(this.tpPomf);
             this.tcFileUploaders.Controls.Add(this.tpUp1);
             this.tcFileUploaders.Controls.Add(this.tpSeafile);
@@ -2681,6 +2689,48 @@
             resources.ApplyResources(this.cbLambdaUploadURL, "cbLambdaUploadURL");
             this.cbLambdaUploadURL.Name = "cbLambdaUploadURL";
             this.cbLambdaUploadURL.SelectedIndexChanged += new System.EventHandler(this.cbLambdaUploadURL_SelectedIndexChanged);
+            // 
+            // tpLithiio
+            // 
+            this.tpLithiio.Controls.Add(this.lblLithiioInfo);
+            this.tpLithiio.Controls.Add(this.lblLithiioApiKey);
+            this.tpLithiio.Controls.Add(this.txtLithiioApiKey);
+            this.tpLithiio.Controls.Add(this.lblLithiioUploadURL);
+            this.tpLithiio.Controls.Add(this.cbLithiioUploadURL);
+            resources.ApplyResources(this.tpLithiio, "tpLithiio");
+            this.tpLithiio.Name = "tpLithiio";
+            this.tpLithiio.UseVisualStyleBackColor = true;
+            // 
+            // lblLithiioInfo
+            // 
+            resources.ApplyResources(this.lblLithiioInfo, "lblLithiioInfo");
+            this.lblLithiioInfo.Name = "lblLithiioInfo";
+            this.lblLithiioInfo.Click += new System.EventHandler(this.lithiioInfoLabel_Click);
+            // 
+            // lblLithiioApiKey
+            // 
+            resources.ApplyResources(this.lblLithiioApiKey, "lblLithiioApiKey");
+            this.lblLithiioApiKey.Name = "lblLithiioApiKey";
+            // 
+            // txtLithiioApiKey
+            // 
+            resources.ApplyResources(this.txtLithiioApiKey, "txtLithiioApiKey");
+            this.txtLithiioApiKey.Name = "txtLithiioApiKey";
+            this.txtLithiioApiKey.UseSystemPasswordChar = true;
+            this.txtLithiioApiKey.TextChanged += new System.EventHandler(this.txtLithiioApiKey_TextChanged);
+            // 
+            // lblLithiioUploadURL
+            // 
+            resources.ApplyResources(this.lblLithiioUploadURL, "lblLithiioUploadURL");
+            this.lblLithiioUploadURL.Name = "lblLithiioUploadURL";
+            // 
+            // cbLithiioUploadURL
+            // 
+            this.cbLithiioUploadURL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLithiioUploadURL.FormattingEnabled = true;
+            resources.ApplyResources(this.cbLithiioUploadURL, "cbLithiioUploadURL");
+            this.cbLithiioUploadURL.Name = "cbLithiioUploadURL";
+            this.cbLithiioUploadURL.SelectedIndexChanged += new System.EventHandler(this.cbLithiioUploadURL_SelectedIndexChanged);
             // 
             // tpPomf
             // 
@@ -4334,6 +4384,8 @@
             this.gpJiraServer.PerformLayout();
             this.tpLambda.ResumeLayout(false);
             this.tpLambda.PerformLayout();
+            this.tpLithiio.ResumeLayout(false);
+            this.tpLithiio.PerformLayout();
             this.tpPomf.ResumeLayout(false);
             this.tpPomf.PerformLayout();
             this.tpUp1.ResumeLayout(false);
@@ -4735,6 +4787,11 @@
         private System.Windows.Forms.Label lblLambdaInfo;
         private System.Windows.Forms.Label lblLambdaUploadURL;
         private System.Windows.Forms.ComboBox cbLambdaUploadURL;
+        private System.Windows.Forms.Label lblLithiioApiKey;
+        private System.Windows.Forms.TextBox txtLithiioApiKey;
+        private System.Windows.Forms.Label lblLithiioInfo;
+        private System.Windows.Forms.Label lblLithiioUploadURL;
+        private System.Windows.Forms.ComboBox cbLithiioUploadURL;
         private OAuthControl oauthTwitter;
         private System.Windows.Forms.TextBox txtTwitterDescription;
         private System.Windows.Forms.Label lblTwitterDescription;
@@ -4886,6 +4943,7 @@
         public System.Windows.Forms.TabPage tpMinus;
         public System.Windows.Forms.TabPage tpJira;
         public System.Windows.Forms.TabPage tpLambda;
+        public System.Windows.Forms.TabPage tpLithiio;
         public System.Windows.Forms.TabPage tpPomf;
         public System.Windows.Forms.TabPage tpUp1;
         public System.Windows.Forms.TabPage tpSeafile;
