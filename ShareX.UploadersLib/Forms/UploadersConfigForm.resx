@@ -4148,7 +4148,7 @@ store.book[0].title</value>
     <value>13, 40</value>
   </data>
   <data name="lblAdflyAPIKEY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+    <value>47, 13</value>
   </data>
   <data name="lblAdflyAPIKEY.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
