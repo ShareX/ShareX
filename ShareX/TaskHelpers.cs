@@ -321,10 +321,9 @@ namespace ShareX
             using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.ScreenColorPicker))
             {
                 form.Config.DetectWindows = false;
-                form.Config.UseDimming = false;
-                form.Config.ShowInfo = true;
-                form.Config.ShowMagnifier = true;
                 form.Config.ShowTips = false;
+                form.Config.UseDimming = false;
+
                 form.Prepare();
                 form.ShowDialog();
 
@@ -343,10 +342,9 @@ namespace ShareX
         public static Image GetRegionImage()
         {
             using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Default))
-            using (Image screenshot = Screenshot.CaptureFullscreen())
             {
                 form.Config.ShowTips = false;
-                form.SurfaceImage = screenshot;
+
                 form.Prepare();
                 form.ShowDialog();
 
@@ -559,8 +557,8 @@ namespace ShareX
             using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Ruler))
             {
                 form.Config.QuickCrop = false;
-                form.Config.ShowInfo = true;
                 form.Config.ShowTips = false;
+
                 form.Prepare();
                 form.ShowDialog();
             }

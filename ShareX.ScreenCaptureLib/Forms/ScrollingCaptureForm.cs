@@ -189,12 +189,10 @@ namespace ShareX.ScreenCaptureLib
         {
             using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.OneClick))
             {
-                form.Config.DetectWindows = true;
-                form.Config.DetectControls = true;
                 form.Config.UseDimming = false;
-                form.Config.ShowInfo = true;
                 form.Config.ShowMagnifier = false;
                 form.Config.ShowTips = false;
+
                 form.Prepare();
                 form.ShowDialog();
 

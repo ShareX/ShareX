@@ -41,7 +41,7 @@ namespace ShareX.ScreenCaptureLib
 
         public ShapeManager ShapeManager { get; private set; }
 
-        public Point CurrentPosition { get; set; }
+        public Point CurrentPosition { get; private set; }
 
         public Color CurrentColor
         {
@@ -58,7 +58,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public SimpleWindowInfo SelectedWindow { get; set; }
+        public SimpleWindowInfo SelectedWindow { get; private set; }
 
         private ColorBlinkAnimation colorBlinkAnimation = new ColorBlinkAnimation();
         private Bitmap bmpSurfaceImage;
@@ -141,7 +141,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Config.UseCustomInfoText || Mode == RectangleRegionMode.ScreenColorPicker)
                 {
-                    bmpSurfaceImage = new Bitmap(SurfaceImage);
+                    bmpSurfaceImage = new Bitmap(backgroundImage);
                 }
             }
         }
@@ -538,7 +538,7 @@ namespace ShareX.ScreenCaptureLib
                 infoTextRect.Size = new Size(textSize.Width + infoTextPadding * 2, textSize.Height + infoTextPadding * 2);
             }
 
-            using (Bitmap magnifier = Magnifier(SurfaceImage, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize))
+            using (Bitmap magnifier = Magnifier(backgroundImage, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize))
             {
                 int x = mousePos.X + offsetX;
 
@@ -685,7 +685,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected override Image GetOutputImage()
         {
-            return ShapeManager.RenderOutputImage(SurfaceImage);
+            return ShapeManager.RenderOutputImage(backgroundImage);
         }
 
         protected override void Dispose(bool disposing)
@@ -698,19 +698,19 @@ namespace ShareX.ScreenCaptureLib
             base.Dispose(disposing);
         }
 
-        public static bool SelectRegion(out Rectangle rect)
-        {
-            return SelectRegion(out rect, new SurfaceOptions());
-        }
-
-        public static bool SelectRegion(out Rectangle rect, SurfaceOptions options)
+        public static bool SelectRegion(out Rectangle rect, SurfaceOptions options = null)
         {
             using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Default))
             {
-                form.Config = options;
-                form.Config.ShowTips = false;
-                form.Config.QuickCrop = true;
+                if (options != null)
+                {
+                    form.Config = options;
+                }
+
                 form.Config.DetectWindows = true;
+                form.Config.QuickCrop = true;
+                form.Config.ShowTips = false;
+
                 form.Prepare();
                 form.ShowDialog();
 

@@ -2111,14 +2111,10 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             DoCapture(() =>
             {
                 Image img = null;
-                Image screenshot = null;
 
                 try
                 {
-                    screenshot = Screenshot.CaptureFullscreen();
-
                     surface.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
-                    surface.SurfaceImage = screenshot;
                     surface.Prepare();
                     surface.ShowDialog();
 
@@ -2148,11 +2144,6 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     if (surface != null)
                     {
                         surface.Dispose();
-                    }
-
-                    if (screenshot != null)
-                    {
-                        screenshot.Dispose();
                     }
                 }
 
