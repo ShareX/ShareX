@@ -257,6 +257,10 @@ namespace ShareX.UploadersLib
 
         public LambdaSettings LambdaSettings = new LambdaSettings();
 
+        // Lithiio
+
+        public LithiioSettings LithiioSettings = new LithiioSettings();
+
         // Pomf
 
         public PomfUploader PomfUploader = new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat");

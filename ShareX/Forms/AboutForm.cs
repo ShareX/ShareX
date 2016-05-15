@@ -90,6 +90,7 @@ Seafile support: https://github.com/zikeji
 Streamable support: https://github.com/streamablevideo
 s-ul support: https://github.com/corin12355
 Imgland support: https://github.com/jibcore
+Lithiio support: https://github.com/lithium720
 
 {1}:
 
