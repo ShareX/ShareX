@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -4670,6 +4670,18 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLambda.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;tpLithiio.Name" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;tpLithiio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpLithiio.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpLithiio.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
   <data name="&gt;&gt;tpPomf.Name" xml:space="preserve">
@@ -10282,6 +10294,226 @@ store.book[0].title</value>
     <value>tpLambda</value>
   </data>
   <data name="&gt;&gt;cbLambdaUploadURL.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioInfo.Name" xml:space="preserve">
+    <value>lblLithiioInfo</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioInfo.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioApiKey.Name" xml:space="preserve">
+    <value>lblLithiioApiKey</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioApiKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioApiKey.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioApiKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtLithiioApiKey.Name" xml:space="preserve">
+    <value>txtLithiioApiKey</value>
+  </data>
+  <data name="&gt;&gt;txtLithiioApiKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtLithiioApiKey.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;txtLithiioApiKey.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioUploadURL.Name" xml:space="preserve">
+    <value>lblLithiioUploadURL</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioUploadURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioUploadURL.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioUploadURL.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbLithiioUploadURL.Name" xml:space="preserve">
+    <value>cbLithiioUploadURL</value>
+  </data>
+  <data name="&gt;&gt;cbLithiioUploadURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbLithiioUploadURL.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;cbLithiioUploadURL.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpLithiio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpLithiio.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpLithiio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 475</value>
+  </data>
+  <data name="tpLithiio.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="tpLithiio.Text" xml:space="preserve">
+    <value>Lithiio</value>
+  </data>
+  <data name="&gt;&gt;tpLithiio.Name" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;tpLithiio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpLithiio.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpLithiio.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="lblLithiioInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblLithiioInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblLithiioInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblLithiioInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 13</value>
+  </data>
+  <data name="lblLithiioInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblLithiioInfo.Text" xml:space="preserve">
+    <value>For anonymous usage, leave the API field blank. 50 MB max per upload, files expire after 3 months minimum.
+Otherwise, for file management options and a larger file upload size, visit https://lithi.io/ and sign in through Steam to get an API key.</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioInfo.Name" xml:space="preserve">
+    <value>lblLithiioInfo</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioInfo.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblLithiioApiKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblLithiioApiKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblLithiioApiKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 52</value>
+  </data>
+  <data name="lblLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="lblLithiioApiKey.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblLithiioApiKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioApiKey.Name" xml:space="preserve">
+    <value>lblLithiioApiKey</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioApiKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioApiKey.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioApiKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtLithiioApiKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 69</value>
+  </data>
+  <data name="txtLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 20</value>
+  </data>
+  <data name="txtLithiioApiKey.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtLithiioApiKey.Name" xml:space="preserve">
+    <value>txtLithiioApiKey</value>
+  </data>
+  <data name="&gt;&gt;txtLithiioApiKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtLithiioApiKey.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;txtLithiioApiKey.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblLithiioUploadURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblLithiioUploadURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 98</value>
+  </data>
+  <data name="lblLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="lblLithiioUploadURL.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblLithiioUploadURL.Text" xml:space="preserve">
+    <value>Link URL:</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioUploadURL.Name" xml:space="preserve">
+    <value>lblLithiioUploadURL</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioUploadURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioUploadURL.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;lblLithiioUploadURL.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 114</value>
+  </data>
+  <data name="cbLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 21</value>
+  </data>
+  <data name="cbLithiioUploadURL.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbLithiioUploadURL.Name" xml:space="preserve">
+    <value>cbLithiioUploadURL</value>
+  </data>
+  <data name="&gt;&gt;cbLithiioUploadURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbLithiioUploadURL.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;cbLithiioUploadURL.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="&gt;&gt;btnPomfTest.Name" xml:space="preserve">
