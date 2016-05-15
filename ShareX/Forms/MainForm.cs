@@ -1688,9 +1688,9 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         private delegate Image ScreenCaptureDelegate();
 
-        private enum LastRegionCaptureType { Surface, Light, Transparent }
+        private enum LastRegionCaptureType { Default, Light, Transparent }
 
-        private LastRegionCaptureType lastRegionCaptureType = LastRegionCaptureType.Surface;
+        private LastRegionCaptureType lastRegionCaptureType = LastRegionCaptureType.Default;
 
         private void InitHotkeys()
         {
@@ -2091,20 +2091,20 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         private void CaptureRegion(CaptureType captureType, TaskSettings taskSettings, bool autoHideForm = true)
         {
-            SurfaceForm surface;
+            BaseRegionForm form;
 
             switch (captureType)
             {
                 default:
                 case CaptureType.Rectangle:
                     RectangleRegionMode mode = taskSettings.CaptureSettings.SurfaceOptions.AnnotationEnabled ? RectangleRegionMode.Annotation : RectangleRegionMode.Default;
-                    surface = new RectangleRegionForm(mode);
+                    form = new RectangleRegionForm(mode);
                     break;
                 case CaptureType.Polygon:
-                    surface = new PolygonRegionForm();
+                    form = new PolygonRegionForm();
                     break;
                 case CaptureType.Freehand:
-                    surface = new FreeHandRegionForm();
+                    form = new FreeHandRegionForm();
                     break;
             }
 
@@ -2114,17 +2114,17 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
                 try
                 {
-                    surface.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
-                    surface.Prepare();
-                    surface.ShowDialog();
+                    form.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
+                    form.Prepare();
+                    form.ShowDialog();
 
-                    img = surface.GetResultImage();
+                    img = form.GetResultImage();
 
                     if (img != null)
                     {
-                        if (surface.Result == SurfaceResult.Region && taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
+                        if (form.Result == RegionResult.Region && taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
                         {
-                            WindowInfo windowInfo = surface.GetWindowInfo();
+                            WindowInfo windowInfo = form.GetWindowInfo();
 
                             if (windowInfo != null)
                             {
@@ -2136,14 +2136,14 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                             }
                         }
 
-                        lastRegionCaptureType = LastRegionCaptureType.Surface;
+                        lastRegionCaptureType = LastRegionCaptureType.Default;
                     }
                 }
                 finally
                 {
-                    if (surface != null)
+                    if (form != null)
                     {
-                        surface.Dispose();
+                        form.Dispose();
                     }
                 }
 
@@ -2205,14 +2205,14 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
         {
             switch (lastRegionCaptureType)
             {
-                case LastRegionCaptureType.Surface:
-                    if (SurfaceForm.LastRegionFillPath != null)
+                case LastRegionCaptureType.Default:
+                    if (BaseRegionForm.LastRegionFillPath != null)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = Screenshot.CaptureFullscreen())
                             {
-                                return ShapeCaptureHelpers.GetRegionImage(screenshot, SurfaceForm.LastRegionFillPath, SurfaceForm.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
+                                return RegionCaptureHelpers.GetRegionImage(screenshot, BaseRegionForm.LastRegionFillPath, BaseRegionForm.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }

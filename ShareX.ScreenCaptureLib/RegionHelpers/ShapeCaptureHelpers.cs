@@ -27,14 +27,15 @@ using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public static class ShapeCaptureHelpers
+    public static class RegionCaptureHelpers
     {
-        public static Image GetRegionImage(Image surfaceImage, GraphicsPath regionFillPath, GraphicsPath regionDrawPath, SurfaceOptions options)
+        public static Image GetRegionImage(Image backgroundImage, GraphicsPath regionFillPath, GraphicsPath regionDrawPath, SurfaceOptions options)
         {
-            if (surfaceImage != null && regionFillPath != null)
+            if (backgroundImage != null && regionFillPath != null)
             {
                 Image img;
 
@@ -45,7 +46,7 @@ namespace ShareX.ScreenCaptureLib
                 using (GraphicsPath gp = (GraphicsPath)regionFillPath.Clone())
                 {
                     MoveGraphicsPath(gp, -Math.Max(0, regionArea.X), -Math.Max(0, regionArea.Y));
-                    img = ImageHelpers.CropImage(surfaceImage, newRegionArea, gp);
+                    img = ImageHelpers.CropImage(backgroundImage, newRegionArea, gp);
 
                     if (options.DrawBorder)
                     {
@@ -73,6 +74,57 @@ namespace ShareX.ScreenCaptureLib
                 matrix.Translate(x, y);
                 gp.Transform(matrix);
             }
+        }
+
+        public static bool SelectRegion(out Rectangle rect, SurfaceOptions options = null)
+        {
+            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Default))
+            {
+                if (options != null)
+                {
+                    form.Config = options;
+                }
+
+                form.Config.DetectWindows = true;
+                form.Config.QuickCrop = true;
+                form.Config.ShowTips = false;
+
+                form.Prepare();
+                form.ShowDialog();
+
+                if (form.Result == RegionResult.Region)
+                {
+                    if (form.ShapeManager.IsCurrentRegionValid)
+                    {
+                        rect = CaptureHelpers.ClientToScreen(form.ShapeManager.CurrentRectangle);
+                        return true;
+                    }
+                }
+                else if (form.Result == RegionResult.Fullscreen)
+                {
+                    rect = CaptureHelpers.GetScreenBounds();
+                    return true;
+                }
+                else if (form.Result == RegionResult.Monitor)
+                {
+                    Screen[] screens = Screen.AllScreens;
+
+                    if (form.MonitorIndex < screens.Length)
+                    {
+                        Screen screen = screens[form.MonitorIndex];
+                        rect = screen.Bounds;
+                        return true;
+                    }
+                }
+                else if (form.Result == RegionResult.ActiveMonitor)
+                {
+                    rect = CaptureHelpers.GetActiveScreenBounds();
+                    return true;
+                }
+            }
+
+            rect = Rectangle.Empty;
+            return false;
         }
     }
 }

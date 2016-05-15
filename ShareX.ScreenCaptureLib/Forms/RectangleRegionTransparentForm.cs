@@ -70,8 +70,8 @@ namespace ShareX.ScreenCaptureLib
         }
 
         private Timer timer;
-        private Bitmap surface;
-        private Graphics gSurface;
+        private Bitmap backgroundImage;
+        private Graphics gBackgroundImage;
         private Pen clearPen, borderDotPen, borderDotPen2;
         private Point currentPosition, positionOnClick;
         private bool isMouseDown;
@@ -86,13 +86,13 @@ namespace ShareX.ScreenCaptureLib
             penTimer = Stopwatch.StartNew();
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
 
-            surface = new Bitmap(ScreenRectangle.Width, ScreenRectangle.Height);
-            gSurface = Graphics.FromImage(surface);
-            gSurface.InterpolationMode = InterpolationMode.NearestNeighbor;
-            gSurface.SmoothingMode = SmoothingMode.HighSpeed;
-            gSurface.CompositingMode = CompositingMode.SourceCopy;
-            gSurface.CompositingQuality = CompositingQuality.HighSpeed;
-            gSurface.Clear(Color.FromArgb(1, 0, 0, 0));
+            backgroundImage = new Bitmap(ScreenRectangle.Width, ScreenRectangle.Height);
+            gBackgroundImage = Graphics.FromImage(backgroundImage);
+            gBackgroundImage.InterpolationMode = InterpolationMode.NearestNeighbor;
+            gBackgroundImage.SmoothingMode = SmoothingMode.HighSpeed;
+            gBackgroundImage.CompositingMode = CompositingMode.SourceCopy;
+            gBackgroundImage.CompositingQuality = CompositingQuality.HighSpeed;
+            gBackgroundImage.Clear(Color.FromArgb(1, 0, 0, 0));
 
             StartPosition = FormStartPosition.Manual;
             Bounds = ScreenRectangle;
@@ -119,8 +119,8 @@ namespace ShareX.ScreenCaptureLib
             if (clearPen != null) clearPen.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
             if (borderDotPen2 != null) borderDotPen2.Dispose();
-            if (gSurface != null) gSurface.Dispose();
-            if (surface != null) surface.Dispose();
+            if (gBackgroundImage != null) gBackgroundImage.Dispose();
+            if (backgroundImage != null) backgroundImage.Dispose();
 
             base.Dispose(disposing);
         }
@@ -195,26 +195,27 @@ namespace ShareX.ScreenCaptureLib
 
             try
             {
-                RefreshSurface();
+                UpdateBackgroundImage();
             }
             catch
             {
             }
         }
 
-        private void RefreshSurface()
+        private void UpdateBackgroundImage()
         {
             // Clear previous rectangle selection
-            gSurface.DrawRectangleProper(clearPen, PreviousSelectionRectangle0Based);
+            gBackgroundImage.DrawRectangleProper(clearPen, PreviousSelectionRectangle0Based);
 
             if (isMouseDown)
             {
                 borderDotPen2.DashOffset = (float)penTimer.Elapsed.TotalSeconds * -15;
-                gSurface.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
-                gSurface.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
+
+                gBackgroundImage.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
+                gBackgroundImage.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
             }
 
-            SelectBitmap(surface);
+            SelectBitmap(backgroundImage);
         }
     }
 }

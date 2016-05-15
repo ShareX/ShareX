@@ -161,7 +161,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Rectangle rect;
 
-                if (RectangleRegionForm.SelectRegion(out rect))
+                if (RegionCaptureHelpers.SelectRegion(out rect))
                 {
                     selectedRectangle = rect;
                     lblSelectedRectangle.Text = selectedRectangle.ToString();
@@ -196,7 +196,7 @@ namespace ShareX.ScreenCaptureLib
                 form.Prepare();
                 form.ShowDialog();
 
-                if (form.Result == SurfaceResult.Region)
+                if (form.Result == RegionResult.Region)
                 {
                     return form.SelectedWindow;
                 }

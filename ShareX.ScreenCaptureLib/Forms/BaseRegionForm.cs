@@ -37,7 +37,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public abstract class SurfaceForm : Form
+    public abstract class BaseRegionForm : Form
     {
         public static GraphicsPath LastRegionFillPath { get; protected set; }
         public static GraphicsPath LastRegionDrawPath { get; protected set; }
@@ -46,7 +46,7 @@ namespace ShareX.ScreenCaptureLib
         public int FPS { get; private set; }
         public Rectangle ScreenRectangle { get; private set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
-        public SurfaceResult Result { get; private set; }
+        public RegionResult Result { get; private set; }
         public int MonitorIndex { get; set; }
 
         protected Image backgroundImage;
@@ -60,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
         protected bool pause, isKeyAllowed;
         protected List<DrawableObject> drawableObjects;
 
-        public SurfaceForm()
+        public BaseRegionForm()
         {
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
             ScreenRectangle0Based = CaptureHelpers.ScreenToClient(ScreenRectangle);
@@ -107,9 +107,9 @@ namespace ShareX.ScreenCaptureLib
 #if !DEBUG
             TopMost = true;
 #endif
-            Shown += Surface_Shown;
-            KeyUp += Surface_KeyUp;
-            MouseDoubleClick += Surface_MouseDoubleClick;
+            Shown += BaseRegionForm_Shown;
+            KeyUp += BaseRegionForm_KeyUp;
+            MouseDoubleClick += BaseRegionForm_MouseDoubleClick;
             ResumeLayout(false);
         }
 
@@ -120,18 +120,6 @@ namespace ShareX.ScreenCaptureLib
 
             if (Config.UseDimming)
             {
-                /*
-                using (Image darkSurfaceImage = ColorMatrixManager.Contrast(0.9f).Apply(SurfaceImage))
-                {
-                    darkBackgroundBrush = new TextureBrush(darkSurfaceImage) { WrapMode = WrapMode.Clamp };
-                }
-
-                using (Image lightSurfaceImage = ColorMatrixManager.Contrast(1.1f).Apply(SurfaceImage))
-                {
-                    lightBackgroundBrush = new TextureBrush(lightSurfaceImage) { WrapMode = WrapMode.Clamp };
-                }
-                */
-
                 using (Bitmap darkBackground = (Bitmap)backgroundImage.Clone())
                 using (Graphics g = Graphics.FromImage(darkBackground))
                 {
@@ -150,12 +138,12 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void Surface_Shown(object sender, EventArgs e)
+        private void BaseRegionForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
         }
 
-        private void Surface_KeyUp(object sender, KeyEventArgs e)
+        private void BaseRegionForm_KeyUp(object sender, KeyEventArgs e)
         {
             if (!isKeyAllowed && timerStart.ElapsedMilliseconds < 1000)
             {
@@ -179,16 +167,16 @@ namespace ShareX.ScreenCaptureLib
             switch (e.KeyData)
             {
                 case Keys.Escape:
-                    Close(SurfaceResult.Close);
+                    Close(RegionResult.Close);
                     break;
                 case Keys.Space:
-                    Close(SurfaceResult.Fullscreen);
+                    Close(RegionResult.Fullscreen);
                     break;
                 case Keys.Enter:
-                    Close(SurfaceResult.Region);
+                    Close(RegionResult.Region);
                     break;
                 case Keys.Oemtilde:
-                    Close(SurfaceResult.ActiveMonitor);
+                    Close(RegionResult.ActiveMonitor);
                     break;
             }
         }
@@ -204,14 +192,14 @@ namespace ShareX.ScreenCaptureLib
 
             MonitorIndex = index;
 
-            Close(SurfaceResult.Monitor);
+            Close(RegionResult.Monitor);
         }
 
-        private void Surface_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void BaseRegionForm_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                Close(SurfaceResult.Region);
+                Close(RegionResult.Region);
             }
         }
 
@@ -256,18 +244,18 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual Image GetResultImage()
         {
-            if (Result == SurfaceResult.Region)
+            if (Result == RegionResult.Region)
             {
                 using (Image img = GetOutputImage())
                 {
-                    return ShapeCaptureHelpers.GetRegionImage(img, regionFillPath, regionDrawPath, Config);
+                    return RegionCaptureHelpers.GetRegionImage(img, regionFillPath, regionDrawPath, Config);
                 }
             }
-            else if (Result == SurfaceResult.Fullscreen)
+            else if (Result == RegionResult.Fullscreen)
             {
                 return GetOutputImage();
             }
-            else if (Result == SurfaceResult.Monitor)
+            else if (Result == RegionResult.Monitor)
             {
                 Screen[] screens = Screen.AllScreens;
 
@@ -282,7 +270,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
-            else if (Result == SurfaceResult.ActiveMonitor)
+            else if (Result == RegionResult.ActiveMonitor)
             {
                 Rectangle activeScreenRect = CaptureHelpers.GetActiveScreenBounds0Based();
 
@@ -305,7 +293,7 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public void Close(SurfaceResult result)
+        public void Close(RegionResult result)
         {
             Result = result;
             Close();

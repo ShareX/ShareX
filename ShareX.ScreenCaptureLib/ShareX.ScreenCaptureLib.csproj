@@ -107,7 +107,7 @@
     <Compile Include="Forms\RectangleRegionLightForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SurfaceForm.cs">
+    <Compile Include="Forms\BaseRegionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screencast\ImageCache.cs" />

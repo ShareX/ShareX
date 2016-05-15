@@ -177,11 +177,11 @@ namespace ShareX.ScreenCaptureLib
 
             ResizeManager = new ResizeManager(form, this);
 
-            form.MouseDown += surface_MouseDown;
-            form.MouseUp += surface_MouseUp;
-            form.KeyDown += surface_KeyDown;
-            form.KeyUp += surface_KeyUp;
-            form.MouseWheel += surface_MouseWheel;
+            form.MouseDown += form_MouseDown;
+            form.MouseUp += form_MouseUp;
+            form.KeyDown += form_KeyDown;
+            form.KeyUp += form_KeyUp;
+            form.MouseWheel += form_MouseWheel;
 
             if (form.Mode == RectangleRegionMode.Annotation)
             {
@@ -189,20 +189,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             CurrentShape = null;
-            //CurrentShapeType = config.CurrentShapeType;
-            CurrentShapeType = ShapeType.RegionRectangle;
-        }
-
-        private void surface_MouseWheel(object sender, MouseEventArgs e)
-        {
-            if (e.Delta > 0)
-            {
-                CurrentShapeType = CurrentShapeType.Previous<ShapeType>();
-            }
-            else if (e.Delta < 0)
-            {
-                CurrentShapeType = CurrentShapeType.Next<ShapeType>();
-            }
+            CurrentShapeType = ShapeType.RegionRectangle; //config.CurrentShapeType;
         }
 
         private void CreateContextMenu()
@@ -211,7 +198,7 @@ namespace ShareX.ScreenCaptureLib
 
             ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem("Cancel capture");
             tsmiCancelCapture.Image = Resources.prohibition;
-            tsmiCancelCapture.Click += (sender, e) => form.Close(SurfaceResult.Close);
+            tsmiCancelCapture.Click += (sender, e) => form.Close(RegionResult.Close);
             cmsContextMenu.Items.Add(tsmiCancelCapture);
 
             ToolStripMenuItem tsmiCloseMenu = new ToolStripMenuItem("Close menu");
@@ -408,12 +395,12 @@ namespace ShareX.ScreenCaptureLib
 
             ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem("Capture fullscreen");
             tsmiFullscreenCapture.Image = Resources.layer_fullscreen;
-            tsmiFullscreenCapture.Click += (sender, e) => form.Close(SurfaceResult.Fullscreen);
+            tsmiFullscreenCapture.Click += (sender, e) => form.Close(RegionResult.Fullscreen);
             cmsContextMenu.Items.Add(tsmiFullscreenCapture);
 
             ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem("Capture active monitor");
             tsmiActiveMonitorCapture.Image = Resources.monitor;
-            tsmiActiveMonitorCapture.Click += (sender, e) => form.Close(SurfaceResult.ActiveMonitor);
+            tsmiActiveMonitorCapture.Click += (sender, e) => form.Close(RegionResult.ActiveMonitor);
             cmsContextMenu.Items.Add(tsmiActiveMonitorCapture);
 
             ToolStripMenuItem tsmiMonitorCapture = new ToolStripMenuItem("Capture monitor");
@@ -433,7 +420,7 @@ namespace ShareX.ScreenCaptureLib
                 tsmi.Click += (sender, e) =>
                 {
                     form.MonitorIndex = index;
-                    form.Close(SurfaceResult.Monitor);
+                    form.Close(RegionResult.Monitor);
                 };
                 tsmiMonitorCapture.DropDownItems.Add(tsmi);
             }
@@ -567,7 +554,7 @@ namespace ShareX.ScreenCaptureLib
             };
         }
 
-        private void surface_MouseDown(object sender, MouseEventArgs e)
+        private void form_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -578,7 +565,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void surface_MouseUp(object sender, MouseEventArgs e)
+        private void form_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -601,12 +588,12 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    form.Close(SurfaceResult.Close);
+                    form.Close(RegionResult.Close);
                 }
             }
         }
 
-        private void surface_KeyDown(object sender, KeyEventArgs e)
+        private void form_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
@@ -664,7 +651,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void surface_KeyUp(object sender, KeyEventArgs e)
+        private void form_KeyUp(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
@@ -682,6 +669,18 @@ namespace ShareX.ScreenCaptureLib
                         EndRegionSelection();
                     }
                     break;
+            }
+        }
+
+        private void form_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                CurrentShapeType = CurrentShapeType.Previous<ShapeType>();
+            }
+            else if (e.Delta < 0)
+            {
+                CurrentShapeType = CurrentShapeType.Next<ShapeType>();
             }
         }
 
@@ -850,7 +849,7 @@ namespace ShareX.ScreenCaptureLib
                 else if (config.QuickCrop && IsCurrentShapeTypeRegion)
                 {
                     form.UpdateRegionPath();
-                    form.Close(SurfaceResult.Region);
+                    form.Close(RegionResult.Region);
                 }
                 else
                 {
@@ -865,7 +864,7 @@ namespace ShareX.ScreenCaptureLib
                 if (config.QuickCrop && IsCurrentShapeTypeRegion)
                 {
                     form.UpdateRegionPath();
-                    form.Close(SurfaceResult.Region);
+                    form.Close(RegionResult.Region);
                 }
                 else
                 {

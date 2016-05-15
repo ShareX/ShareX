@@ -313,7 +313,7 @@ namespace ShareX
 
         public static bool SelectRegion(out Rectangle rect, TaskSettings taskSettings)
         {
-            return RectangleRegionForm.SelectRegion(out rect, taskSettings.CaptureSettings.SurfaceOptions);
+            return RegionCaptureHelpers.SelectRegion(out rect, taskSettings.CaptureSettings.SurfaceOptions);
         }
 
         public static PointInfo SelectPointColor()
@@ -327,7 +327,7 @@ namespace ShareX
                 form.Prepare();
                 form.ShowDialog();
 
-                if (form.Result == SurfaceResult.Region)
+                if (form.Result == RegionResult.Region)
                 {
                     PointInfo pointInfo = new PointInfo();
                     pointInfo.Position = form.CurrentPosition;
