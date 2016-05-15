@@ -131,7 +131,7 @@ namespace ShareX.HelpersLib
 
         private void DrawText(Graphics g)
         {
-            TextRenderer.DrawText(g, Text, Font, new Rectangle(ClientRectangle.X, ClientRectangle.Y + 1, ClientRectangle.Width, ClientRectangle.Height + 1), Color.Black);
+            TextRenderer.DrawText(g, Text, Font, new Rectangle(ClientRectangle.X, ClientRectangle.Y + 1, ClientRectangle.Width, ClientRectangle.Height), Color.Black);
             TextRenderer.DrawText(g, Text, Font, ClientRectangle, ForeColor);
         }
 

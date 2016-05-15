@@ -135,6 +135,12 @@
     <Compile Include="Controls\ToolStripLabeledNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\BlackStyle\UpdatePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BlackStyle\UpdatePanel.Designer.cs">
+      <DependentUpon>UpdatePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
     <Compile Include="DNS\AdapterInfo.cs" />
@@ -589,6 +595,9 @@
     <EmbeddedResource Include="Controls\MyPictureBox.zh-CN.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BlackStyle\UpdatePanel.resx">
+      <DependentUpon>UpdatePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DNS\DNSChangerForm.de.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>

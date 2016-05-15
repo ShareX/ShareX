@@ -611,18 +611,14 @@ namespace ShareX.HelpersLib
             g.SmoothingMode = tempMode;
         }
 
-        public static void DrawTextWithShadow(Graphics g, string text, PointF position, Font font, Color textColor, Color shadowColor, int shadowOffset = 1)
+        public static void DrawTextWithShadow(Graphics g, string text, PointF position, Font font, Brush textBrush, Brush shadowBrush)
         {
-            using (Brush textBrush = new SolidBrush(textColor))
-            using (Brush shadowBrush = new SolidBrush(shadowColor))
-            {
-                DrawTextWithShadow(g, text, position, font, textBrush, shadowBrush, shadowOffset);
-            }
+            DrawTextWithShadow(g, text, position, font, textBrush, shadowBrush, new Point(1, 1));
         }
 
-        public static void DrawTextWithShadow(Graphics g, string text, PointF position, Font font, Brush textBrush, Brush shadowBrush, int shadowOffset = 1)
+        public static void DrawTextWithShadow(Graphics g, string text, PointF position, Font font, Brush textBrush, Brush shadowBrush, Point shadowOffset)
         {
-            g.DrawString(text, font, shadowBrush, position.X + shadowOffset, position.Y + shadowOffset);
+            g.DrawString(text, font, shadowBrush, position.X + shadowOffset.X, position.Y + shadowOffset.Y);
             g.DrawString(text, font, textBrush, position.X, position.Y);
         }
 

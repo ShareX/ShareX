@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
+            this.upUpdate = new ShareX.HelpersLib.UpdatePanel();
             this.pbTips = new System.Windows.Forms.PictureBox();
             this.lblMainFormTip = new System.Windows.Forms.Label();
             this.lblSplitter = new System.Windows.Forms.Label();
@@ -178,6 +179,7 @@
             this.tsmiTrayScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScrollingCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayWebpageCapture = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayTextCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -237,7 +239,6 @@
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.pTips = new System.Windows.Forms.Panel();
             this.lblTips = new System.Windows.Forms.Label();
-            this.tsmiTrayTextCapture = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -257,6 +258,7 @@
             // 
             // scMain.Panel1
             // 
+            this.scMain.Panel1.Controls.Add(this.upUpdate);
             this.scMain.Panel1.Controls.Add(this.pbTips);
             this.scMain.Panel1.Controls.Add(this.lblMainFormTip);
             this.scMain.Panel1.Controls.Add(this.lblSplitter);
@@ -267,6 +269,11 @@
             this.scMain.Panel2.Controls.Add(this.pbPreview);
             this.scMain.SplitterColor = System.Drawing.Color.DarkGray;
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
+            // 
+            // upUpdate
+            // 
+            resources.ApplyResources(this.upUpdate, "upUpdate");
+            this.upUpdate.Name = "upUpdate";
             // 
             // pbTips
             // 
@@ -1408,6 +1415,13 @@
             resources.ApplyResources(this.tsmiTrayWebpageCapture, "tsmiTrayWebpageCapture");
             this.tsmiTrayWebpageCapture.Click += new System.EventHandler(this.tsmiWebpageCapture_Click);
             // 
+            // tsmiTrayTextCapture
+            // 
+            this.tsmiTrayTextCapture.Image = global::ShareX.Properties.Resources.edit_drop_cap;
+            this.tsmiTrayTextCapture.Name = "tsmiTrayTextCapture";
+            resources.ApplyResources(this.tsmiTrayTextCapture, "tsmiTrayTextCapture");
+            this.tsmiTrayTextCapture.Click += new System.EventHandler(this.tsmiTrayTextCapture_Click);
+            // 
             // tsmiTrayAutoCapture
             // 
             this.tsmiTrayAutoCapture.Image = global::ShareX.Properties.Resources.clock;
@@ -1839,13 +1853,6 @@
             this.lblTips.UseMnemonic = false;
             this.lblTips.Click += new System.EventHandler(this.lblTips_Click);
             // 
-            // tsmiTrayTextCapture
-            // 
-            this.tsmiTrayTextCapture.Image = global::ShareX.Properties.Resources.edit_drop_cap;
-            this.tsmiTrayTextCapture.Name = "tsmiTrayTextCapture";
-            resources.ApplyResources(this.tsmiTrayTextCapture, "tsmiTrayTextCapture");
-            this.tsmiTrayTextCapture.Click += new System.EventHandler(this.tsmiTrayTextCapture_Click);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2091,5 +2098,6 @@
         private System.Windows.Forms.Label lblTips;
         private System.Windows.Forms.ToolStripMenuItem tsmiTextCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTextCapture;
+        private HelpersLib.UpdatePanel upUpdate;
     }
 }
