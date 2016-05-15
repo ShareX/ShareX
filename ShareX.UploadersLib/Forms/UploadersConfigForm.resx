@@ -10399,8 +10399,8 @@ store.book[0].title</value>
     <value>0</value>
   </data>
   <data name="lblLithiioInfo.Text" xml:space="preserve">
-    <value>For anonymous usage at 50MB max per upload, use PUBLIC as the API key.
-Otherwise, for file management options and a larger file upload size, visit https://lithi.io/ and sign in through Steam.</value>
+    <value>For anonymous usage at 50MB max per upload, leave the API field blank.
+Otherwise, for file management options and a larger file upload size, visit https://lithi.io/ and sign in through Steam to get an API key.</value>
   </data>
   <data name="&gt;&gt;lblLithiioInfo.Name" xml:space="preserve">
     <value>lblLithiioInfo</value>
