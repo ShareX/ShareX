@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,9 +25,50 @@
 
 using ShareX.HelpersLib;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class SharedFolderFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.SharedFolder;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.LocalhostAccountList != null && config.LocalhostAccountList.IsValidIndex(config.LocalhostSelectedFiles);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            int index;
+
+            switch (taskInfo.DataType)
+            {
+                case EDataType.Image:
+                    index = config.LocalhostSelectedImages;
+                    break;
+                case EDataType.Text:
+                    index = config.LocalhostSelectedText;
+                    break;
+                default:
+                case EDataType.File:
+                    index = config.LocalhostSelectedFiles;
+                    break;
+            }
+
+            LocalhostAccount account = config.LocalhostAccountList.ReturnIfValidIndex(index);
+
+            if (account != null)
+            {
+                return new SharedFolderUploader(account);
+            }
+
+            return null;
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSharedFolder;
+    }
+
     public class SharedFolderUploader : FileUploader
     {
         private LocalhostAccount account;
@@ -43,7 +84,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string filePath = account.GetLocalhostPath(fileName);
 
-            Helpers.CreateDirectoryIfNotExist(filePath);
+            Helpers.CreateDirectoryFromFilePath(filePath);
 
             using (FileStream fs = new FileStream(filePath, FileMode.Create))
             {

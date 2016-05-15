@@ -127,7 +127,7 @@
     <value>Filtres</value>
   </data>
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
-    <value>Effets d'image - Largeur: {0}, Hauteur: {1}, Temps de rendu: {2} ms</value>
+    <value>Effets d'image - Largeur : {0}, Hauteur : {1}, Temps de rendu:  {2} ms</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
     <value>Manipulations</value>

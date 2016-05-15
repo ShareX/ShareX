@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,9 +24,24 @@
 #endregion License Information (GPL v3)
 
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class Paste_eeTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Paste_ee;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Paste_ee(config.Paste_eeUserAPIKey);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPaste_ee;
+    }
+
     public sealed class Paste_ee : TextUploader
     {
         public string APIKey { get; private set; }

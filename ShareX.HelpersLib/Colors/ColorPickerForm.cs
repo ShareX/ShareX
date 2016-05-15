@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class ColorPickerForm : BaseForm
+    public partial class ColorPickerForm : Form
     {
         public MyColor NewColor { get; protected set; }
         public MyColor OldColor { get; private set; }
@@ -37,15 +37,16 @@ namespace ShareX.HelpersLib
         private bool oldColorExist;
         private bool controlChangingColor;
 
-        public ColorPickerForm()
-            : this(Color.Empty)
+        public ColorPickerForm() : this(Color.Red)
         {
         }
 
         public ColorPickerForm(Color currentColor)
         {
-            NewColor = Color.Red;
-            Initialize(currentColor);
+            InitializeComponent();
+            Icon = ShareXResources.Icon;
+
+            SetCurrentColor(currentColor, false);
         }
 
         public static Color GetColor(Color currentColor)
@@ -63,28 +64,13 @@ namespace ShareX.HelpersLib
             return currentColor;
         }
 
-        private void Initialize(Color currentColor)
+        public void SetCurrentColor(Color currentColor, bool keepPreviousColor)
         {
-            InitializeComponent();
-
-            if (currentColor.IsEmpty)
-            {
-                colorPicker.DrawCrosshair = lblOld.Visible = oldColorExist;
-                DrawPreviewColors();
-            }
-            else
-            {
-                SetCurrentColor(currentColor);
-            }
-        }
-
-        public void SetCurrentColor(Color currentColor)
-        {
-            oldColorExist = true;
+            oldColorExist = keepPreviousColor;
             colorPicker.DrawCrosshair = lblOld.Visible = oldColorExist;
             NewColor = OldColor = currentColor;
             colorPicker.ChangeColor(currentColor);
-            nudAlpha.Value = currentColor.A;
+            nudAlpha.SetValue(currentColor.A);
             DrawPreviewColors();
         }
 
@@ -95,25 +81,25 @@ namespace ShareX.HelpersLib
 
             if (type != ColorType.HSB)
             {
-                nudHue.Value = (decimal)Math.Round(color.HSB.Hue360);
-                nudSaturation.Value = (decimal)Math.Round(color.HSB.Saturation100);
-                nudBrightness.Value = (decimal)Math.Round(color.HSB.Brightness100);
+                nudHue.SetValue((decimal)Math.Round(color.HSB.Hue360));
+                nudSaturation.SetValue((decimal)Math.Round(color.HSB.Saturation100));
+                nudBrightness.SetValue((decimal)Math.Round(color.HSB.Brightness100));
             }
 
             if (type != ColorType.RGBA)
             {
-                nudRed.Value = color.RGBA.Red;
-                nudGreen.Value = color.RGBA.Green;
-                nudBlue.Value = color.RGBA.Blue;
-                nudAlpha.Value = color.RGBA.Alpha;
+                nudRed.SetValue(color.RGBA.Red);
+                nudGreen.SetValue(color.RGBA.Green);
+                nudBlue.SetValue(color.RGBA.Blue);
+                nudAlpha.SetValue(color.RGBA.Alpha);
             }
 
             if (type != ColorType.CMYK)
             {
-                nudCyan.Value = (decimal)color.CMYK.Cyan100;
-                nudMagenta.Value = (decimal)color.CMYK.Magenta100;
-                nudYellow.Value = (decimal)color.CMYK.Yellow100;
-                nudKey.Value = (decimal)color.CMYK.Key100;
+                nudCyan.SetValue((decimal)color.CMYK.Cyan100);
+                nudMagenta.SetValue((decimal)color.CMYK.Magenta100);
+                nudYellow.SetValue((decimal)color.CMYK.Yellow100);
+                nudKey.SetValue((decimal)color.CMYK.Key100);
             }
 
             if (type != ColorType.Hex)

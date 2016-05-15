@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,6 +30,18 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class TwoGPURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.TwoGP;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new TwoGPURLShortener();
+        }
+    }
+
     public sealed class TwoGPURLShortener : URLShortener
     {
         private const string API_ENDPOINT = "http://2.gp/api/short";

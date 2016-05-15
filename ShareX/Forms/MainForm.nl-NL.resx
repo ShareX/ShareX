@@ -147,9 +147,6 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Rechthoek</value>
   </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Rechthoek (Objecten)</value>
-  </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
     <value>Rechthoek (Annotatie)</value>
   </data>
@@ -426,9 +423,6 @@
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Rechthoek</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Rechthoek (Objecten)</value>
-  </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
     <value>Rechthoek (Annotatie)</value>
   </data>
@@ -620,12 +614,6 @@
   </data>
   <data name="tsmiWebpageCapture.Text" xml:space="preserve">
     <value>Webpagina vastleggen...</value>
-  </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>IRC programma...</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>IRC programma...</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Schakel sneltoetsen uit</value>

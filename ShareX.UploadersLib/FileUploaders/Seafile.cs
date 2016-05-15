@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,9 +31,36 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class SeafileFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Seafile;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.SeafileAPIURL) && !string.IsNullOrEmpty(config.SeafileAuthToken) && !string.IsNullOrEmpty(config.SeafileRepoID);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Seafile(config.SeafileAPIURL, config.SeafileAuthToken, config.SeafileRepoID)
+            {
+                Path = config.SeafilePath,
+                IsLibraryEncrypted = config.SeafileIsLibraryEncrypted,
+                EncryptedLibraryPassword = config.SeafileEncryptedLibraryPassword,
+                ShareDaysToExpire = config.SeafileShareDaysToExpire,
+                SharePassword = config.SeafileSharePassword,
+                CreateShareableURL = config.SeafileCreateShareableURL,
+                IgnoreInvalidCert = config.SeafileIgnoreInvalidCert
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSeafile;
+    }
+
     public sealed class Seafile : FileUploader
     {
         public string APIURL { get; set; }

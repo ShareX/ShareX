@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.Properties;
+using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -42,13 +43,13 @@ namespace ShareX
         {
             get
             {
-                return Tasks.Count > 0 && Tasks.Any(task => task.Status != TaskStatus.Completed);
+                return Tasks.Count > 0 && Tasks.Any(task => task.IsBusy);
             }
         }
 
         private static readonly List<WorkerTask> Tasks = new List<WorkerTask>();
 
-        public static readonly RecentManager RecentManager = new RecentManager();
+        public static readonly RecentTaskManager RecentManager = new RecentTaskManager();
 
         private static int lastIconStatus = -1;
 
@@ -58,12 +59,22 @@ namespace ShareX
             {
                 Tasks.Add(task);
                 UpdateMainFormTip();
-                task.StatusChanged += task_StatusChanged;
-                task.UploadStarted += task_UploadStarted;
-                task.UploadProgressChanged += task_UploadProgressChanged;
-                task.UploadCompleted += task_UploadCompleted;
+
+                if (task.Status != TaskStatus.History)
+                {
+                    task.StatusChanged += task_StatusChanged;
+                    task.UploadStarted += task_UploadStarted;
+                    task.UploadProgressChanged += task_UploadProgressChanged;
+                    task.UploadCompleted += task_UploadCompleted;
+                    task.UploadersConfigWindowRequested += Task_UploadersConfigWindowRequested;
+                }
+
                 CreateListViewItem(task);
-                StartTasks();
+
+                if (task.Status != TaskStatus.History)
+                {
+                    StartTasks();
+                }
             }
         }
 
@@ -161,18 +172,41 @@ namespace ShareX
             {
                 TaskInfo info = task.Info;
 
-                DebugHelper.WriteLine("Task in queue. Job: {0}, Type: {1}, Host: {2}", info.Job, info.UploadDestination, info.UploaderHost);
+                if (task.Status != TaskStatus.History)
+                {
+                    DebugHelper.WriteLine("Task in queue. Job: {0}, Type: {1}, Host: {2}", info.Job, info.UploadDestination, info.UploaderHost);
+                }
 
                 ListViewItem lvi = new ListViewItem();
                 lvi.Tag = task;
                 lvi.Text = info.FileName;
-                lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
+
+                if (task.Status == TaskStatus.History)
+                {
+                    lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_History);
+                    lvi.SubItems.Add(task.Info.UploadTime.ToString());
+                }
+                else
+                {
+                    lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
+                    lvi.SubItems.Add(string.Empty);
+                }
+
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(string.Empty);
-                lvi.ImageIndex = 3;
+
+                if (task.Status == TaskStatus.History)
+                {
+                    lvi.SubItems.Add(task.Info.ToString());
+                    lvi.ImageIndex = 4;
+                }
+                else
+                {
+                    lvi.SubItems.Add(string.Empty);
+                    lvi.ImageIndex = 3;
+                }
+
                 if (Program.Settings.ShowMostRecentTaskFirst)
                 {
                     ListViewControl.Items.Insert(0, lvi);
@@ -181,6 +215,7 @@ namespace ShareX
                 {
                     ListViewControl.Items.Add(lvi);
                 }
+
                 lvi.EnsureVisible();
                 ListViewControl.FillLastColumn();
             }
@@ -245,7 +280,7 @@ namespace ShareX
                 {
                     if (task.RequestSettingUpdate)
                     {
-                        Program.MainForm.UpdateMainFormSettings();
+                        Program.MainForm.UpdateCheckStates();
                     }
 
                     TaskInfo info = task.Info;
@@ -306,22 +341,13 @@ namespace ShareX
 
                             if (!task.StopRequested && !string.IsNullOrEmpty(result))
                             {
-                                if (info.TaskSettings.GeneralSettings.SaveHistory && (!info.TaskSettings.AdvancedSettings.HistorySaveOnlyURL ||
+                                if (Program.Settings.HistorySaveTasks && (!Program.Settings.HistoryCheckURL ||
                                    (!string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL))))
                                 {
                                     HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
                                 }
 
-                                RecentManager.Add(result);
-
-                                if (Program.Settings.RecentLinksRemember)
-                                {
-                                    Program.Settings.RecentLinks = RecentManager.Items.ToArray();
-                                }
-                                else
-                                {
-                                    Program.Settings.RecentLinks = null;
-                                }
+                                RecentManager.Add(task);
 
                                 if (!info.TaskSettings.AdvancedSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
                                 {
@@ -390,6 +416,11 @@ namespace ShareX
                     UpdateProgressUI();
                 }
             }
+        }
+
+        private static void Task_UploadersConfigWindowRequested(IUploaderService uploaderService)
+        {
+            TaskHelpers.OpenUploadersConfigWindow(uploaderService);
         }
 
         public static void UpdateProgressUI()
@@ -466,6 +497,18 @@ namespace ShareX
                 }
 
                 lastIconStatus = progress;
+            }
+        }
+
+        public static void AddRecentTasksToMainWindow()
+        {
+            if (ListViewControl.Items.Count == 0)
+            {
+                foreach (RecentTask recentTask in RecentManager.Tasks)
+                {
+                    WorkerTask task = WorkerTask.CreateHistoryTask(recentTask);
+                    Start(task);
+                }
             }
         }
     }

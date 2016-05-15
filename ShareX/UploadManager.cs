@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -142,38 +142,13 @@ namespace ShareX
             }
         }
 
-        public static void IndexFolder(TaskSettings taskSettings = null)
-        {
-            using (FolderSelectDialog dlg = new FolderSelectDialog())
-            {
-                if (dlg.ShowDialog())
-                {
-                    IndexFolder(dlg.FileName, taskSettings);
-                }
-            }
-        }
-
-        public static void IndexFolder(string folderPath, TaskSettings taskSettings = null)
-        {
-            if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
-            {
-                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-                taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
-                string text = Indexer.Index(folderPath, taskSettings.ToolsSettings.IndexerSettings);
-                WorkerTask task = WorkerTask.CreateTextUploaderTask(text, taskSettings);
-                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
-                TaskManager.Start(task);
-            }
-        }
-
         public static void ClipboardUpload(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             if (Clipboard.ContainsImage())
             {
-                Image img = Clipboard.GetImage();
+                Image img = ClipboardHelpers.GetImage();
 
                 if (img != null)
                 {
@@ -184,11 +159,6 @@ namespace ShareX
 
                     RunImageTask(img, taskSettings);
                 }
-            }
-            else if (Clipboard.ContainsFileDropList())
-            {
-                string[] files = Clipboard.GetFileDropList().Cast<string>().ToArray();
-                UploadFile(files, taskSettings);
             }
             else if (Clipboard.ContainsText())
             {
@@ -229,6 +199,15 @@ namespace ShareX
                     }
                 }
             }
+            else if (Clipboard.ContainsFileDropList())
+            {
+                string[] files = Clipboard.GetFileDropList().OfType<string>().ToArray();
+
+                if (files.Length > 0)
+                {
+                    UploadFile(files, taskSettings);
+                }
+            }
         }
 
         public static void ClipboardUploadWithContentViewer(TaskSettings taskSettings = null)
@@ -237,7 +216,7 @@ namespace ShareX
 
             using (ClipboardContentViewer ccv = new ClipboardContentViewer())
             {
-                if (ccv.ShowDialog() == DialogResult.OK && !ccv.IsClipboardEmpty)
+                if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
                 {
                     ClipboardUpload(taskSettings);
                 }
@@ -252,7 +231,7 @@ namespace ShareX
             {
                 using (ClipboardContentViewer ccv = new ClipboardContentViewer(true))
                 {
-                    if (ccv.ShowDialog() == DialogResult.OK && !ccv.IsClipboardEmpty)
+                    if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
                     {
                         ClipboardUpload(taskSettings);
                     }
@@ -311,12 +290,42 @@ namespace ShareX
             }
         }
 
-        public static void RunImageTask(Image img, TaskSettings taskSettings, string customFileName = null)
+        public static void RunImageTask(Image img, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             if (img != null && taskSettings != null)
             {
+                if (!skipQuickTaskMenu && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowQuickTaskMenu))
+                {
+                    QuickTaskMenu quickTaskMenu = new QuickTaskMenu();
+
+                    quickTaskMenu.TaskInfoSelected += taskInfo =>
+                    {
+                        if (taskInfo == null)
+                        {
+                            RunImageTask(img, taskSettings, true);
+                        }
+                        else if (taskInfo.IsValid)
+                        {
+                            taskSettings.AfterCaptureJob = taskInfo.AfterCaptureTasks;
+                            taskSettings.AfterUploadJob = taskInfo.AfterUploadTasks;
+                            RunImageTask(img, taskSettings, true);
+                        }
+                    };
+
+                    quickTaskMenu.ShowMenu();
+
+                    return;
+                }
+
+                string customFileName = null;
+
+                if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, img))
+                {
+                    return;
+                }
+
                 WorkerTask task = WorkerTask.CreateImageUploaderTask(img, taskSettings, customFileName);
                 TaskManager.Start(task);
             }
@@ -444,6 +453,31 @@ namespace ShareX
                 {
                     TaskManager.Start(task);
                 }
+            }
+        }
+
+        public static void IndexFolder(TaskSettings taskSettings = null)
+        {
+            using (FolderSelectDialog dlg = new FolderSelectDialog())
+            {
+                if (dlg.ShowDialog())
+                {
+                    IndexFolder(dlg.FileName, taskSettings);
+                }
+            }
+        }
+
+        public static void IndexFolder(string folderPath, TaskSettings taskSettings = null)
+        {
+            if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
+            {
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
+                string source = Indexer.Index(folderPath, taskSettings.ToolsSettings.IndexerSettings);
+                WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
+                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
+                TaskManager.Start(task);
             }
         }
     }

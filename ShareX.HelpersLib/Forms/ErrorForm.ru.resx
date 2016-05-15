@@ -136,4 +136,7 @@
     <value>Ошибка
 Ошибка 2</value>
   </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>ОК</value>
+  </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -310,28 +310,28 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        private static readonly string[] URLPrefixes = new string[] { "http://", "https://", "ftp://", "ftps://", "file://" };
+        private static readonly string[] URLPrefixes = new string[] { "http://", "https://", "ftp://", "ftps://", "file://", "//" };
 
         public static bool HasPrefix(string url)
         {
             return URLPrefixes.Any(x => url.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        public static string FixPrefix(string url)
+        public static string FixPrefix(string url, string prefix = "http://")
         {
-            if (!HasPrefix(url))
+            if (!string.IsNullOrEmpty(url) && !HasPrefix(url))
             {
-                return "http://" + url;
+                return prefix + url;
             }
 
             return url;
         }
 
-        public static string ForceHTTPS(string url)
+        public static string ForcePrefix(string url, string prefix = "https://")
         {
-            if (!string.IsNullOrEmpty(url) && url.StartsWith("http://", StringComparison.InvariantCultureIgnoreCase))
+            if (!string.IsNullOrEmpty(url))
             {
-                return "https://" + url.Substring(7);
+                url = prefix + RemovePrefixes(url);
             }
 
             return url;
@@ -345,6 +345,28 @@ namespace ShareX.HelpersLib
                 {
                     url = url.Remove(0, prefix.Length);
                     break;
+                }
+            }
+
+            return url;
+        }
+
+        public static string GetShortURL(string url)
+        {
+            Uri uri;
+
+            if (Uri.TryCreate(url, UriKind.Absolute, out uri))
+            {
+                string host = uri.Host;
+
+                if (!string.IsNullOrEmpty(host))
+                {
+                    if (host.StartsWith("www.", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        host = host.Substring(4);
+                    }
+
+                    return host;
                 }
             }
 

@@ -126,4 +126,10 @@
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
     <value>Yüklenen kütüphaneler</value>
   </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>Kütük dosyasını aç...</value>
+  </data>
+  <data name="lblRunningFrom.Text" xml:space="preserve">
+    <value>Başlama yolu:</value>
+  </data>
 </root>

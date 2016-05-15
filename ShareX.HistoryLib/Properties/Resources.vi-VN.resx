@@ -162,9 +162,6 @@
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
     <value>Ảnh kèm đường dẫn cho Forum (BBCode)</value>
   </data>
-  <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
-    <value>Lịch sử: {0}</value>
-  </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Đã lọc: {0}</value>
   </data>
@@ -215,8 +212,5 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Thông tin thêm</value>
-  </data>
-  <data name="HistoryForm_HistoryForm_Current_culture___0__" xml:space="preserve">
-    <value>Ngôn ngữ hiện tại ({0})</value>
   </data>
 </root>

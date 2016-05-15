@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -652,7 +652,7 @@ namespace GreenshotPlugin.Core
                 // the cube cannot be cut at bottom (this would lead to empty cube)
                 if (halfWeight != 0)
                 {
-                    Single halfDistance = halfRed * halfRed + halfGreen * halfGreen + halfBlue * halfBlue;
+                    Single halfDistance = (Single)halfRed * halfRed + (Single)halfGreen * halfGreen + (Single)halfBlue * halfBlue;
                     Single temp = halfDistance / halfWeight;
 
                     halfRed = wholeRed - halfRed;
@@ -662,7 +662,7 @@ namespace GreenshotPlugin.Core
 
                     if (halfWeight != 0)
                     {
-                        halfDistance = halfRed * halfRed + halfGreen * halfGreen + halfBlue * halfBlue;
+                        halfDistance = (Single)halfRed * halfRed + (Single)halfGreen * halfGreen + (Single)halfBlue * halfBlue;
                         temp += halfDistance / halfWeight;
 
                         if (temp > result)

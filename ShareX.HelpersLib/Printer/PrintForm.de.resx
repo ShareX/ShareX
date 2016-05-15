@@ -1,3 +1,4 @@
+﻿
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -129,18 +130,18 @@
     <value>Vorschau...</value>
   </data>
   <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>Erlauben das Bild zuvergrößern</value>
+    <value>Erlauben das Bild zu vergrößern</value>
   </data>
   <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>Automatisch Bild drehen</value>
+    <value>Bild automatisch drehen</value>
   </data>
   <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Automatisch Bild schneiden</value>
-  </data>
-  <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>Bildposition zentrieren</value>
+    <value>Bild automatisch skalieren</value>
   </data>
   <data name="lblMargin.Text" xml:space="preserve">
     <value>Rand:</value>
+  </data>
+  <data name="cbCenterImage.Text" xml:space="preserve">
+    <value>Bildposition zentrieren</value>
   </data>
 </root>

@@ -35,15 +35,14 @@
             this.btnOpenLogFile = new System.Windows.Forms.Button();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.btnContinue = new System.Windows.Forms.Button();
-            this.lblErrorMessage = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             this.flpMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtException
             // 
             resources.ApplyResources(this.txtException, "txtException");
-            this.txtException.BackColor = System.Drawing.Color.White;
             this.txtException.Name = "txtException";
             this.txtException.ReadOnly = true;
             // 
@@ -89,11 +88,6 @@
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
-            // lblErrorMessage
-            // 
-            resources.ApplyResources(this.lblErrorMessage, "lblErrorMessage");
-            this.lblErrorMessage.Name = "lblErrorMessage";
-            // 
             // btnOK
             // 
             resources.ApplyResources(this.btnOK, "btnOK");
@@ -102,10 +96,16 @@
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // lblErrorMessage
+            // 
+            resources.ApplyResources(this.lblErrorMessage, "lblErrorMessage");
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            // 
             // ErrorForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.flpMenu);
             this.Controls.Add(this.txtException);

@@ -121,19 +121,19 @@
     <value>Gasto</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
-    <value>Nome do arquivo</value>
+    <value>Arquivo</value>
   </data>
   <data name="chProgress.Text" xml:space="preserve">
     <value>Progresso</value>
   </data>
   <data name="chRemaining.Text" xml:space="preserve">
-    <value>Restando</value>
+    <value>Restante</value>
   </data>
   <data name="chSpeed.Text" xml:space="preserve">
     <value>Velocidade</value>
   </data>
   <data name="chStatus.Text" xml:space="preserve">
-    <value>Status</value>
+    <value>Estado</value>
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
@@ -160,7 +160,7 @@
     <value>Tarefas pós-captura</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>Tarefas pós-upload</value>
+    <value>Tarefas pós-envio</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
     <value>Capturar</value>
@@ -208,7 +208,7 @@
     <value>Limpar lista</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
-    <value>Escolher cor...</value>
+    <value>Seletor de cores...</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
     <value>Copiar</value>
@@ -220,13 +220,13 @@
     <value>Arquivo</value>
   </data>
   <data name="tsmiCopyFileName.Text" xml:space="preserve">
-    <value>Nome do arquivo</value>
+    <value>Nome</value>
   </data>
   <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
     <value>Nome do arquivo com extensão</value>
   </data>
   <data name="tsmiCopyFilePath.Text" xml:space="preserve">
-    <value>Local do arquivo</value>
+    <value>Local</value>
   </data>
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>Pasta</value>
@@ -238,16 +238,16 @@
     <value>Link para fórum (BBCode)</value>
   </data>
   <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
-    <value>Imagem para fórum com link embutido (BBCode)</value>
+    <value>Imagem para fórum com link (BBCode)</value>
   </data>
   <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
-    <value>Imagem para HTML</value>
+    <value>Imagem HTML</value>
   </data>
   <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
-    <value>Link para HTML</value>
+    <value>Link HTML</value>
   </data>
   <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
-    <value>Imagem com link para HTML</value>
+    <value>Imagem com link HTML</value>
   </data>
   <data name="tsmiCopyImage.Text" xml:space="preserve">
     <value>Imagem</value>
@@ -322,19 +322,19 @@
     <value>URL</value>
   </data>
   <data name="tsmiUploadFile.Text" xml:space="preserve">
-    <value>Upload de arquivo...</value>
+    <value>Envio de arquivo...</value>
   </data>
   <data name="tsmiUploadFolder.Text" xml:space="preserve">
-    <value>Upload de pasta...</value>
+    <value>Envio de pasta...</value>
   </data>
   <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
-    <value>Upload de arquivo...</value>
+    <value>Envio de arquivo...</value>
   </data>
   <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
-    <value>Upload de pasta...</value>
+    <value>Envio de pasta...</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
-    <value>Upload do URL...</value>
+    <value>Envio do URL...</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
     <value>Encurtadores de URL</value>
@@ -343,10 +343,10 @@
     <value>Tuitar mensagem...</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
-    <value>Upload da área de transferencia...</value>
+    <value>Envio da área de transferência...</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
-    <value>Upload de arrastar e soltar...</value>
+    <value>Arrastar e soltar para enviar...</value>
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Compartilhar URL</value>
@@ -364,7 +364,7 @@
     <value>Mostrar erros</value>
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
-    <value>Parar upload</value>
+    <value>Parar envio</value>
   </data>
   <data name="tsmiTrayAbout.Text" xml:space="preserve">
     <value>Sobre...</value>
@@ -376,13 +376,13 @@
     <value>Testar compartilhamento de URL</value>
   </data>
   <data name="tsmiTestTextUpload.Text" xml:space="preserve">
-    <value>Testar upload de texto</value>
+    <value>Testar envio de texto</value>
   </data>
   <data name="tsmiTestImageUpload.Text" xml:space="preserve">
-    <value>Testar upload de imagem</value>
+    <value>Testar envio de imagem</value>
   </data>
   <data name="tsmiTestFileUpload.Text" xml:space="preserve">
-    <value>Testar upload de arquivo</value>
+    <value>Testar envio de arquivo</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Captura</value>
@@ -397,22 +397,22 @@
     <value>Régua...</value>
   </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
-    <value>Upload</value>
+    <value>Enviar</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tuitar mensagem...</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
-    <value>Upload da área de transferencia...</value>
+    <value>Envio de arquivo da área de transferência...</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
-    <value>Upload de arrastar e soltar...</value>
+    <value>Arrastar e soltar para enviar...</value>
   </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Janela</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>Upload do URL...</value>
+    <value>Envio do URL...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Teste de monitor...</value>
@@ -481,10 +481,10 @@
     <value>Envio de arquivos</value>
   </data>
   <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>Desenho à mão livre</value>
+    <value>Mão livre</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Verificação de hash...</value>
+    <value>Conferir hash...</value>
   </data>
   <data name="tsmiImagePreview.Text" xml:space="preserve">
     <value>Prévia de imagem</value>
@@ -514,16 +514,16 @@
     <value>Região</value>
   </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Região (anotar)</value>
+    <value>Região (Anotar)</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>Região (leve)</value>
+    <value>Região (Leve)</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
-    <value>Região (transparente)</value>
+    <value>Região (Transparente)</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
-    <value>Seleção de cor da tela</value>
+    <value>Seletor de cores da tela</value>
   </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>Gravar tela</value>
@@ -538,7 +538,7 @@
     <value>Envio de texto</value>
   </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
-    <value>Seleção de cores...</value>
+    <value>Seletor de cores...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>Trocador de DNS...</value>
@@ -550,7 +550,7 @@
     <value>Desenho à mão livre</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Verificação de hash</value>
+    <value>Conferir hash</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Efeitos de imagem...</value>
@@ -589,7 +589,7 @@
     <value>Região (transparente)</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
-    <value>Seleção de cores da tela...</value>
+    <value>Seletor de cores da tela...</value>
   </data>
   <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>Gravar tela</value>
@@ -607,10 +607,7 @@
     <value>Serviços de compartilhamento de URLs</value>
   </data>
   <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Captura de página da web...</value>
-  </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Região (objetos)</value>
+    <value>Capturar página da web...</value>
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
@@ -621,20 +618,11 @@
   <data name="tsmiWebpageCapture.Text" xml:space="preserve">
     <value>Captura de página da web...</value>
   </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Região (objetos)</value>
-  </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Miniaturizador de vídeo...</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Miniaturizador de vídeo...</value>
-  </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>Cliente IRC...</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>Cliente IRC...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Mesclar imagens...</value>
@@ -668,5 +656,8 @@
   </data>
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>Depurar</value>
+  </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Esconder colunas</value>
   </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Automatiser</value>
+    <value>ShareX - Automate</value>
   </data>
   <data name="btnAddMouseMove.Text" xml:space="preserve">
     <value>Ajouter la position du curseur</value>
@@ -139,18 +139,18 @@
     <value>Nom</value>
   </data>
   <data name="lblFunctions.Text" xml:space="preserve">
-    <value>Fonctions:</value>
+    <value>Fonctions :</value>
   </data>
   <data name="lblKeys.Text" xml:space="preserve">
-    <value>Clés:</value>
+    <value>Clés :</value>
   </data>
   <data name="lblLineDelay.Text" xml:space="preserve">
-    <value>Délai entre chaque ligne:</value>
+    <value>Délai entre chaque ligne :</value>
   </data>
   <data name="lblLineDelayMiliseconds.Text" xml:space="preserve">
     <value>ms</value>
   </data>
   <data name="lblScriptName.Text" xml:space="preserve">
-    <value>Nom du script:</value>
+    <value>Nom du script :</value>
   </data>
 </root>

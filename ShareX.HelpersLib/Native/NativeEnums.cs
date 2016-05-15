@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -2832,5 +2832,15 @@ namespace ShareX.HelpersLib
         SIF_DISABLENOSCROLL = 0x8,
         SIF_TRACKPOS = 0x10,
         SIF_ALL = SIF_RANGE | SIF_PAGE | SIF_POS | SIF_TRACKPOS
+    }
+
+    public enum BI_COMPRESSION : int
+    {
+        BI_RGB = 0,
+        BI_RLE8 = 1,
+        BI_RLE4 = 2,
+        BI_BITFIELDS = 3,
+        BI_JPEG = 4,
+        BI_PNG = 5
     }
 }

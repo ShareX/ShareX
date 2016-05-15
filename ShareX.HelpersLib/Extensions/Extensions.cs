@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -139,6 +139,16 @@ namespace ShareX.HelpersLib
         public static bool IsValid(this Rectangle rect)
         {
             return rect.Width > 0 && rect.Height > 0;
+        }
+
+        public static Point Add(this Point point, int offset)
+        {
+            return point.Add(offset, offset);
+        }
+
+        public static Point Add(this Point point, int offsetX, int offsetY)
+        {
+            return new Point(point.X + offsetX, point.Y + offsetY);
         }
 
         public static Size Offset(this Size size, int offset)
@@ -281,7 +291,7 @@ namespace ShareX.HelpersLib
         {
             ToolStrip parent = tsmi.GetCurrentParent();
 
-            foreach (ToolStripMenuItem tsmiParent in parent.Items)
+            foreach (ToolStripMenuItem tsmiParent in parent.Items.OfType<ToolStripMenuItem>())
             {
                 if (tsmiParent != tsmi)
                 {
@@ -307,7 +317,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void ShowActivate(this Form form)
+        public static void ForceActivate(this Form form)
         {
             if (!form.Visible)
             {
@@ -463,6 +473,16 @@ namespace ShareX.HelpersLib
         public static void HideImageMargin(this ToolStripDropDownItem tsddi)
         {
             ((ToolStripDropDownMenu)tsddi.DropDown).ShowImageMargin = false;
+        }
+
+        public static void SetValue(this NumericUpDown nud, decimal number)
+        {
+            nud.Value = number.Between(nud.Minimum, nud.Maximum);
+        }
+
+        public static bool IsValidImage(this PictureBox pb)
+        {
+            return pb.Image != null && pb.Image != pb.InitialImage && pb.Image != pb.ErrorImage;
         }
     }
 }

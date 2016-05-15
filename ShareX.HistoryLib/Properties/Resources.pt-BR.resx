@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryForm_HistoryForm_Current_culture___0__" xml:space="preserve">
-    <value>Cultura atual: {0}</value>
-  </data>
-  <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
-    <value>Histórico: {0}</value>
-  </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Filtrados: {0}</value>
   </data>
@@ -139,13 +133,13 @@
     <value>Arquivo</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
-    <value>Nome do arquivo</value>
+    <value>Arquivo</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
     <value>Nome do arquivo com extensão</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
-    <value>Local do arquivo</value>
+    <value>Local</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>Pasta</value>

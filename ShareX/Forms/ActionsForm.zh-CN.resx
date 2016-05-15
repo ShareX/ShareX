@@ -1,3 +1,4 @@
+﻿
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Actions</value>
+    <value>ShareX - 动作</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消</value>
@@ -139,5 +140,8 @@
   </data>
   <data name="lblPath.Text" xml:space="preserve">
     <value>文件路径:</value>
+  </data>
+  <data name="cbHiddenWindow.Text" xml:space="preserve">
+    <value>隐藏窗口</value>
   </data>
 </root>

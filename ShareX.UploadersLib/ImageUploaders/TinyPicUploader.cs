@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,10 +27,28 @@ using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.IO;
 using System.Web;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class TinyPicImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.TinyPic;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(config.TinyPicRegistrationCode);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, config.TinyPicAccountType, config.TinyPicRegistrationCode);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTinyPic;
+    }
+
     public sealed class TinyPicUploader : ImageUploader
     {
         public AccountType AccountType { get; private set; }

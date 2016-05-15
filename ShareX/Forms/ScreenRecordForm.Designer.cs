@@ -60,7 +60,6 @@
             // pInfo
             // 
             resources.ApplyResources(this.pInfo, "pInfo");
-            this.pInfo.BackColor = System.Drawing.Color.White;
             this.pInfo.Controls.Add(this.btnAbort);
             this.pInfo.Controls.Add(this.btnStart);
             this.pInfo.Controls.Add(this.lblTimer);
@@ -98,6 +97,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.pInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ScreenRecordForm";

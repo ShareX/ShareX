@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,9 +26,30 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class Ge_ttFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Ge_tt;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.Ge_ttLogin != null && !string.IsNullOrEmpty(config.Ge_ttLogin.AccessToken);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Ge_tt(APIKeys.Ge_ttKey)
+            {
+                AccessToken = config.Ge_ttLogin.AccessToken
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGe_tt;
+    }
+
     public sealed class Ge_tt : FileUploader
     {
         public string APIKey { get; private set; }

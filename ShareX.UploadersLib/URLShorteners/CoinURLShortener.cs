@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,9 +26,30 @@
 // Credits: https://github.com/DanielMcAssey
 
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class CoinURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.CoinURL;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.CoinURLUUID);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new CoinURLShortener
+            {
+                UUID = config.CoinURLUUID
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpCoinURL;
+    }
+
     public sealed class CoinURLShortener : URLShortener
     {
         private const string API_ENDPOINT = "https://coinurl.com/api.php";

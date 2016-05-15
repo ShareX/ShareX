@@ -130,7 +130,7 @@
   </data>
   <data name="btnPathBrowse.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnPathBrowse.Name" xml:space="preserve">
     <value>btnPathBrowse</value>
   </data>
@@ -355,12 +355,12 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Watch folder</value>
+    <value>ShareX - Watch folder</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>WatchFolderForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,11 +36,12 @@ namespace ShareX.Setup
         {
             Stable, // Build setup & create portable zip file
             Portable, // Create portable zip file
+            PortableApps, // Create PortableApps folder
             Beta, // Build setup & upload it using "Debug/ShareX.exe"
             Steam // Create Steam folder
         }
 
-        private static readonly SetupType Setup = SetupType.Stable;
+        private static readonly SetupType Setup = SetupType.Beta;
 
         private static readonly string parentDir = @"..\..\..\";
         private static readonly string binDir = Path.Combine(parentDir, "ShareX", "bin");
@@ -48,14 +49,17 @@ namespace ShareX.Setup
         private static readonly string debugDir = Path.Combine(binDir, "Debug");
         private static readonly string steamDir = Path.Combine(binDir, "Steam");
         private static readonly string debugPath = Path.Combine(debugDir, "ShareX.exe");
-        private static readonly string outputDir = Path.Combine(parentDir, "InnoSetup", "Output");
+        private static readonly string innoSetupDir = Path.Combine(parentDir, @"ShareX.Setup\InnoSetup");
+        private static readonly string outputDir = Path.Combine(innoSetupDir, "Output");
         private static readonly string portableDir = Path.Combine(outputDir, "ShareX-portable");
         private static readonly string steamOutputDir = Path.Combine(outputDir, "ShareX");
+        private static readonly string portableAppsDir = Path.Combine(parentDir, @"..\PortableApps\ShareXPortable\App\ShareX");
         private static readonly string steamLauncherDir = Path.Combine(parentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release");
         private static readonly string steamUpdatesDir = Path.Combine(steamOutputDir, "Updates");
         private static readonly string chromeReleaseDir = Path.Combine(parentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release");
-        private static readonly string innoSetupPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        private static readonly string innoSetupScriptPath = Path.Combine(parentDir, "InnoSetup", "ShareX setup.iss");
+        private static readonly string innoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
+        private static readonly string innoSetupScriptPath = Path.Combine(innoSetupDir, "ShareX-setup.iss");
+        private static readonly string zipPath = @"C:\Program Files\7-Zip\7z.exe";
 
         private static string ReleaseDirectory => Setup == SetupType.Steam ? steamDir : releaseDir;
 
@@ -72,6 +76,10 @@ namespace ShareX.Setup
                     break;
                 case SetupType.Portable:
                     CreatePortable(portableDir);
+                    OpenOutputDirectory();
+                    break;
+                case SetupType.PortableApps:
+                    CreatePortable(portableAppsDir);
                     OpenOutputDirectory();
                     break;
                 case SetupType.Beta:
@@ -106,7 +114,7 @@ namespace ShareX.Setup
         private static void CompileSetup()
         {
             Console.WriteLine("Compiling setup...");
-            Process.Start(innoSetupPath, string.Format("\"{0}\"", innoSetupScriptPath)).WaitForExit();
+            Process.Start(innoSetupCompilerPath, string.Format("\"{0}\"", innoSetupScriptPath)).WaitForExit();
             Console.WriteLine("Setup file created.");
         }
 
@@ -157,6 +165,10 @@ namespace ShareX.Setup
                 // These git ignored
                 CopyFile(Path.Combine(parentDir, "Lib", "ffmpeg.exe"), destination);
                 CopyFile(Path.Combine(parentDir, "Lib", "ffmpeg-x64.exe"), destination);
+            }
+            else if (Setup == SetupType.PortableApps)
+            {
+                File.Create(Path.Combine(destination, "PortableApps")).Dispose();
             }
             else
             {
@@ -210,7 +222,7 @@ namespace ShareX.Setup
         private static void Zip(string source, string target)
         {
             ProcessStartInfo p = new ProcessStartInfo();
-            p.FileName = "7za.exe";
+            p.FileName = zipPath;
             p.Arguments = string.Format("a -tzip \"{0}\" \"{1}\" -r -mx=9", target, source);
             p.WindowStyle = ProcessWindowStyle.Hidden;
             Process process = Process.Start(p);

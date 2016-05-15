@@ -117,104 +117,110 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Einstellungen</value>
   </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Durchsuchen...</value>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>Proxy</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Durchsuchen...</value>
   </data>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
-    <value>Hinzufügen...</value>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>Öffnen...</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
     <value>Bearbeiten...</value>
   </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Entfernen</value>
-  </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Öffnen...</value>
-  </data>
-  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
-    <value>Öffnen...</value>
-  </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Bilddruckeinstellungen...</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>Zeige nicht das Bilddruckeinstellungsfenster</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Anzahl der erneuten Versuche bei Uploadfehlern:</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>Zeige nicht das Window-Druck-Fenster</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Behalte Hauptfensterposition</value>
-  </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Behalte Hauptfenstergröße</value>
-  </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Zeige ShareX im Menü "Senden an"</value>
-  </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Zeige "Hochladen über ShareX"-Eintrag im Kontextmenü</value>
-  </data>
-  <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Zeige Taskleistensymbol im Infobereich</value>
-  </data>
-  <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Beim Start in den Infobereich minimieren</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Starte ShareX beim Starten von Windows</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Zeige Fortschrittsanzeige in der Taskleiste</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Zeige Fortschrittsanzeige im Taskleisteninfobereichsymbol </value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Benutze eigenen Screenshotordner:</value>
-  </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Beschreibung</value>
-  </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Format</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Benutze Ersatzhochlader der Wahl beim Wiederholen des Hochladens</value>
-  </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Zwischenablagenformate</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Ersatzdateihochlader</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Ersatzbildhochlader</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Ersatztexthochlader</value>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 deaktiviert)</value>
   </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>Puffergröße:</value>
   </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Sprache:</value>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>ShareX' Eigene Dateien:</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
     <value>Anmerkung: ShareX muss neu gestartet werden, damit die Änderung am persönlichen Ordner in Kraft treten </value>
   </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX' Eigene Dateien:</value>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>Integration</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+    <value>Windows "Drucken" Dialog nicht anzeigen</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>Chronik</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>Ersatzdateihochlader</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>Letzte Aufgaben</value>
+  </data>
+  <data name="cbShowTray.Text" xml:space="preserve">
+    <value>Zeige Tray Symbol im Infobereich</value>
+  </data>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>Beim Start in den Infobereich/Tray minimieren</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Zeige ShareX im Menü "Senden an"</value>
+  </data>
+  <data name="cbStartWithWindows.Text" xml:space="preserve">
+    <value>ShareX beim Starten von Windows ausführen</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>Behalte Hauptfensterposition</value>
+  </data>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>Chrome-Erweiterung...</value>
+  </data>
+  <data name="llTranslators.Text" xml:space="preserve">
+    <value>Hilf uns, ShareX in deine Sprache zu übersetzen!</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>Schnellzugriff Menü bearbeiten...</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Durchsuchen...</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>Hinzufügen...</value>
+  </data>
+  <data name="gbClipboardFormats.Text" xml:space="preserve">
+    <value>Zwischenablagenformate</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Benutze Ersatzhochlader der Wahl beim Wiederholen des Hochladens</value>
+  </data>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>Ergebnisse</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>Ersatzbildhochlader</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>Begrenzung für gleichzeitiges Hochladen</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>Zeige Fortschrittsanzeige in der Taskleiste</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>Drucken</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>Druckoptionen...</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Host:</value>
@@ -222,58 +228,109 @@
   <data name="lblProxyMethod.Text" xml:space="preserve">
     <value>Proxykonfiguration:</value>
   </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Passwort:</value>
-  </data>
   <data name="lblProxyPort.Text" xml:space="preserve">
     <value>Port:</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Benutze eigenen Screenshotordner:</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>Öffnen...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Importieren...</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>Zeige Fortschrittsanzeige im Tray Symbol</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Benutzername:</value>
   </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>Behalte Hauptfenstergröße</value>
+  </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Unterordnermuster:</value>
   </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Begrenzung für gleichzeitiges Hochladen</value>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>Druckoptionen Dialog nicht anzeigen</value>
   </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 deaktiviert)</value>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Hilf uns, ShareX in deine Sprache zu übersetzen!</value>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>Anzahl der erneuten Versuche bei Uploadfehlern:</value>
   </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Erweitert</value>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>Ersatztexthochlader</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Allgemein</value>
   </data>
-  <data name="tpPaths.Text" xml:space="preserve">
-    <value>Pfade</value>
-  </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Drucken</value>
-  </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
-  </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Hochladen</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Ergebnisse</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Erneut versuchen</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Sprache:</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>Zeige "In-App" in Steam, während ShareX geöffnet ist</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Chrome-Erweiterung...</value>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>Zeige "Hochladen über ShareX"-Eintrag im Kontextmenü</value>
   </data>
-  <data name="tpIntegration.Text" xml:space="preserve">
-    <value>Integration</value>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
+  <data name="tpUploadRetry.Text" xml:space="preserve">
+    <value>Erneut versuchen</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>Zeige letzte Aufgaben im Hauptfenster beim Starten</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>Zeige letzte Aufgaben im Tray Menü</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>Chronik</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>Zeige im Tray Menü die aktuellste Aufgabe zuerst</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>Maximale Anzahl zu speichernder Aufgaben:</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>Aufgaben in der Chronik speichern</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>Nur speichern, wenn URL nicht leer ist</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>Letzte Aufgaben speichern</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>Pfade</value>
+  </data>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>Logs exportieren</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Chronik exportieren</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Exportieren...</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Einstellungen exportieren</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>Tray Symbol Linksklick Aktion:</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>Tray Symbol Doppelklick Aktion:</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>Tray Symbol Mittelere Maustaste Aktion:</value>
   </data>
 </root>

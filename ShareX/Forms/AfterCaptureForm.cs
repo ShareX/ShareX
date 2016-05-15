@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class AfterCaptureForm : BaseForm
+    public partial class AfterCaptureForm : Form
     {
         public TaskSettings TaskSettings { get; private set; }
         public string FileName { get; private set; }
@@ -42,6 +42,7 @@ namespace ShareX
             TaskSettings = taskSettings;
 
             InitializeComponent();
+            Icon = ShareXResources.Icon;
 
             ImageList imageList = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
             imageList.Images.Add(Resources.checkbox_uncheck);
@@ -58,12 +59,15 @@ namespace ShareX
             {
                 pbImage.LoadImage(img);
                 btnCopy.Enabled = true;
-                lblImageSize.Visible = true;
-                lblImageSize.Text = $"{img.Width} x {img.Height}";
             }
 
             FileName = TaskHelpers.GetFilename(TaskSettings, null, img);
             txtFileName.Text = FileName;
+        }
+
+        private void AfterCaptureForm_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
         }
 
         private void CheckItem(ListViewItem lvi, bool check)
@@ -78,7 +82,7 @@ namespace ShareX
 
         private void AddAfterCaptureItems(AfterCaptureTasks afterCaptureTasks)
         {
-            AfterCaptureTasks[] ignore = new AfterCaptureTasks[] { AfterCaptureTasks.None, AfterCaptureTasks.ShowAfterCaptureWindow };
+            AfterCaptureTasks[] ignore = new AfterCaptureTasks[] { AfterCaptureTasks.None, AfterCaptureTasks.ShowQuickTaskMenu, AfterCaptureTasks.ShowAfterCaptureWindow };
 
             foreach (AfterCaptureTasks task in Helpers.GetEnums<AfterCaptureTasks>())
             {

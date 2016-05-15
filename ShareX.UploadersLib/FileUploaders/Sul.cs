@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright © 2007-2015 ShareX Developers
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,18 +23,35 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.IO;
-using System.Collections.Generic;
-using ShareX.HelpersLib;
-using Newtonsoft.Json;
+// Credits: https://github.com/corin12355
+
 using Newtonsoft.Json.Linq;
+using ShareX.HelpersLib;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class SulFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Sul;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.SulAPIKey);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new SulUploader(config.SulAPIKey);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSul;
+    }
+
     public sealed class SulUploader : FileUploader
     {
-
         private string APIKey { get; set; }
 
         public SulUploader(string apiKey)
@@ -44,12 +61,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("wizard", "true");
             args.Add("key", APIKey);
             args.Add("client", "sharex-native");
-
 
             string url = "https://s-ul.eu";
             url = URLHelpers.CombineURL(url, "upload.php");

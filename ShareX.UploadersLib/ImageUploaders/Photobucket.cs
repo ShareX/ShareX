@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,14 +24,31 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class PhotobucketImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Photobucket;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.PhotobucketAccountInfo != null && OAuthInfo.CheckOAuth(config.PhotobucketOAuthInfo);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Photobucket(config.PhotobucketOAuthInfo, config.PhotobucketAccountInfo);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPhotobucket;
+    }
+
     public sealed class Photobucket : ImageUploader, IOAuth
     {
         private const string URLRequestToken = "http://api.photobucket.com/login/request";

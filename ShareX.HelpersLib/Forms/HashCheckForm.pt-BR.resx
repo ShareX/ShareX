@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Verificação de hash</value>
+    <value>Conferir hash</value>
   </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>Procurar...</value>
@@ -132,13 +132,40 @@
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Tipo de hash:</value>
   </data>
-  <data name="lblProgress.Text" xml:space="preserve">
-    <value>Progresso:</value>
-  </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Resultado:</value>
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Destino:</value>
+  </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>Verificar hash de arquivo</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>Copiar tudo</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>Decifrar</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>Decifrar</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>Decifrar</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>Decifrar</value>
+  </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>Binário:</value>
+  </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>Codificar</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>Texto:</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>Conversões de texto</value>
   </data>
 </root>

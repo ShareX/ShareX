@@ -201,12 +201,6 @@
   <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
     <value>값</value>
   </data>
-  <data name="HistoryForm_HistoryForm_Current_culture___0__" xml:space="preserve">
-    <value>현재 문화권 ({0})</value>
-  </data>
-  <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
-    <value>히스토리: {0}</value>
-  </data>
   <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
     <value>HTML 링크 ({0})</value>
   </data>

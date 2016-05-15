@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,9 +29,28 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class OneTimeSecretTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.OneTimeSecret;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new OneTimeSecret()
+            {
+                API_KEY = config.OneTimeSecretAPIKey,
+                API_USERNAME = config.OneTimeSecretAPIUsername
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpOneTimeSecret;
+    }
+
     public sealed class OneTimeSecret : TextUploader
     {
         private const string API_ENDPOINT = "https://onetimesecret.com/api/v1/share";

@@ -117,137 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnApplyFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dtpFilterFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 46</value>
-  </data>
-  <data name="dtpFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 20</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="dtpFilterFrom.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterFrom.Name" xml:space="preserve">
-    <value>dtpFilterFrom</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterFrom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterFrom.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterFrom.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="cbDateFilter.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbDateFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
-  </data>
-  <data name="cbDateFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 17</value>
-  </data>
-  <data name="cbDateFilter.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>Date filter:</value>
-  </data>
-  <data name="&gt;&gt;cbDateFilter.Name" xml:space="preserve">
-    <value>cbDateFilter</value>
-  </data>
-  <data name="&gt;&gt;cbDateFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbDateFilter.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;cbDateFilter.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="lblFilterFrom.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblFilterFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 50</value>
-  </data>
-  <data name="lblFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 13</value>
-  </data>
-  <data name="lblFilterFrom.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblFilterFrom.Text" xml:space="preserve">
-    <value>From:</value>
-  </data>
-  <data name="&gt;&gt;lblFilterFrom.Name" xml:space="preserve">
-    <value>lblFilterFrom</value>
-  </data>
-  <data name="&gt;&gt;lblFilterFrom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFilterFrom.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;lblFilterFrom.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lblFilterTo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblFilterTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 74</value>
-  </data>
-  <data name="lblFilterTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 13</value>
-  </data>
-  <data name="lblFilterTo.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>To:</value>
-  </data>
-  <data name="&gt;&gt;lblFilterTo.Name" xml:space="preserve">
-    <value>lblFilterTo</value>
-  </data>
-  <data name="&gt;&gt;lblFilterTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFilterTo.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;lblFilterTo.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="dtpFilterTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 70</value>
-  </data>
-  <data name="dtpFilterTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 20</value>
-  </data>
-  <data name="dtpFilterTo.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterTo.Name" xml:space="preserve">
-    <value>dtpFilterTo</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterTo.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterTo.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="btnApplyFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 232</value>
+    <value>16, 210</value>
   </data>
   <data name="btnApplyFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 24</value>
+    <value>144, 24</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnApplyFilters.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
@@ -264,181 +145,133 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;btnApplyFilters.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="scMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="chIcon.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chIcon.Width" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="chDateTime.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="chDateTime.Width" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="chFilename.Width" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="chURL.Width" type="System.Int32, mscorlib">
+    <value>230</value>
+  </data>
+  <data name="lvHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lvHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 641</value>
+  </data>
+  <data name="lvHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.Name" xml:space="preserve">
+    <value>lvHistory</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
+    <value>scMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
+    <value>scMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel1.Parent" xml:space="preserve">
+    <value>scMain</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scMain.Panel1MinSize" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="pbThumbnail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="pbThumbnail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 368</value>
+  </data>
+  <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="txtFilenameFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 119</value>
+  <data name="&gt;&gt;pbThumbnail.Name" xml:space="preserve">
+    <value>pbThumbnail</value>
   </data>
-  <data name="txtFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 20</value>
+  <data name="&gt;&gt;pbThumbnail.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="txtFilenameFilter.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;pbThumbnail.Parent" xml:space="preserve">
+    <value>scMain.Panel2</value>
   </data>
-  <data name="&gt;&gt;txtFilenameFilter.Name" xml:space="preserve">
-    <value>txtFilenameFilter</value>
+  <data name="&gt;&gt;pbThumbnail.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;txtFilenameFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="gbFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;txtFilenameFilter.Parent" xml:space="preserve">
-    <value>gbFilters</value>
+  <data name="cbHostFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 176</value>
   </data>
-  <data name="&gt;&gt;txtFilenameFilter.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="cbHostFilterSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 21</value>
   </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Contains</value>
+  <data name="cbHostFilterSelection.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Starts with</value>
+  <data name="&gt;&gt;cbHostFilterSelection.Name" xml:space="preserve">
+    <value>cbHostFilterSelection</value>
   </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Ends with</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Exact match</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 119</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 21</value>
-  </data>
-  <data name="cbFilenameFilterMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterMethod.Name" xml:space="preserve">
-    <value>cbFilenameFilterMethod</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterMethod.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbHostFilterSelection.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbFilenameFilterMethod.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbHostFilterSelection.Parent" xml:space="preserve">
     <value>gbFilters</value>
   </data>
-  <data name="&gt;&gt;cbFilenameFilterMethod.ZOrder" xml:space="preserve">
-    <value>15</value>
+  <data name="&gt;&gt;cbHostFilterSelection.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Current culture</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Invariant culture (English)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Ordinal (English)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 145</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 21</value>
-  </data>
-  <data name="cbFilenameFilterCulture.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterCulture.Name" xml:space="preserve">
-    <value>cbFilenameFilterCulture</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterCulture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterCulture.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterCulture.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="cbFilenameFilter.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbFilenameFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
-  </data>
-  <data name="cbFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 17</value>
-  </data>
-  <data name="cbFilenameFilter.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Filename filter:</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilter.Name" xml:space="preserve">
-    <value>cbFilenameFilter</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilter.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilter.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="cbFilenameFilterCase.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbFilenameFilterCase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 146</value>
-  </data>
-  <data name="cbFilenameFilterCase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 17</value>
-  </data>
-  <data name="cbFilenameFilterCase.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Case sensitive</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterCase.Name" xml:space="preserve">
-    <value>cbFilenameFilterCase</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterCase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterCase.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;cbFilenameFilterCase.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <metadata name="ssMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 17</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="ssMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 665</value>
-  </data>
-  <data name="ssMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>920, 22</value>
-  </data>
-  <data name="ssMain.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ssMain.Name" xml:space="preserve">
-    <value>ssMain</value>
-  </data>
-  <data name="&gt;&gt;ssMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ssMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ssMain.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="btnRemoveFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnRemoveFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 232</value>
+    <value>168, 210</value>
   </data>
   <data name="btnRemoveFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 24</value>
+    <value>144, 24</value>
   </data>
   <data name="btnRemoveFilters.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -456,43 +289,13 @@
     <value>gbFilters</value>
   </data>
   <data name="&gt;&gt;btnRemoveFilters.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtHostFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 199</value>
-  </data>
-  <data name="txtHostFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
-  </data>
-  <data name="txtHostFilter.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;txtHostFilter.Name" xml:space="preserve">
-    <value>txtHostFilter</value>
-  </data>
-  <data name="&gt;&gt;txtHostFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtHostFilter.Parent" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;txtHostFilter.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>Image</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>Text</value>
+    <value>1</value>
   </data>
   <data name="cbTypeFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 172</value>
+    <value>168, 150</value>
   </data>
   <data name="cbTypeFilterSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 21</value>
+    <value>144, 21</value>
   </data>
   <data name="cbTypeFilterSelection.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -512,8 +315,11 @@
   <data name="cbHostFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbHostFilter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbHostFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 201</value>
+    <value>16, 179</value>
   </data>
   <data name="cbHostFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 17</value>
@@ -539,17 +345,20 @@
   <data name="cbTypeFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbTypeFilter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbTypeFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 174</value>
+    <value>16, 152</value>
   </data>
   <data name="cbTypeFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 17</value>
+    <value>75, 17</value>
   </data>
   <data name="cbTypeFilter.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>File type filter:</value>
+    <value>Type filter:</value>
   </data>
   <data name="&gt;&gt;cbTypeFilter.Name" xml:space="preserve">
     <value>cbTypeFilter</value>
@@ -563,11 +372,227 @@
   <data name="&gt;&gt;cbTypeFilter.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="dtpFilterFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 46</value>
+  </data>
+  <data name="dtpFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 20</value>
+  </data>
+  <data name="dtpFilterFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.Name" xml:space="preserve">
+    <value>dtpFilterFrom</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblFilterFrom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFilterFrom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFilterFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 50</value>
+  </data>
+  <data name="lblFilterFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="lblFilterFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblFilterFrom.Text" xml:space="preserve">
+    <value>From:</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.Name" xml:space="preserve">
+    <value>lblFilterFrom</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cbFilenameFilter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFilenameFilter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbFilenameFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 96</value>
+  </data>
+  <data name="cbFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 17</value>
+  </data>
+  <data name="cbFilenameFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbFilenameFilter.Text" xml:space="preserve">
+    <value>Filename filter:</value>
+  </data>
+  <data name="&gt;&gt;cbFilenameFilter.Name" xml:space="preserve">
+    <value>cbFilenameFilter</value>
+  </data>
+  <data name="&gt;&gt;cbFilenameFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFilenameFilter.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;cbFilenameFilter.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblFilterTo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFilterTo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFilterTo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 74</value>
+  </data>
+  <data name="lblFilterTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="lblFilterTo.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblFilterTo.Text" xml:space="preserve">
+    <value>To:</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.Name" xml:space="preserve">
+    <value>lblFilterTo</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="cbDateFilter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbDateFilter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbDateFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="cbDateFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 17</value>
+  </data>
+  <data name="cbDateFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbDateFilter.Text" xml:space="preserve">
+    <value>Date filter:</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.Name" xml:space="preserve">
+    <value>cbDateFilter</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="dtpFilterTo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 70</value>
+  </data>
+  <data name="dtpFilterTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 20</value>
+  </data>
+  <data name="dtpFilterTo.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.Name" xml:space="preserve">
+    <value>dtpFilterTo</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="txtFilenameFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 121</value>
+  </data>
+  <data name="txtFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 20</value>
+  </data>
+  <data name="txtFilenameFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.Name" xml:space="preserve">
+    <value>txtFilenameFilter</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
+    <value>Contains</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
+    <value>Starts with</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
+    <value>Ends with</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
+    <value>Exact match</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 96</value>
+  </data>
+  <data name="cbFilenameFilterMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 21</value>
+  </data>
+  <data name="cbFilenameFilterMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbFilenameFilterMethod.Name" xml:space="preserve">
+    <value>cbFilenameFilterMethod</value>
+  </data>
+  <data name="&gt;&gt;cbFilenameFilterMethod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFilenameFilterMethod.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;cbFilenameFilterMethod.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
   <data name="gbFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>8, 384</value>
   </data>
   <data name="gbFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 272</value>
+    <value>406, 250</value>
   </data>
   <data name="gbFilters.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -582,89 +607,49 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbFilters.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>scMain.Panel2</value>
   </data>
   <data name="&gt;&gt;gbFilters.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lvHistory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date and time</value>
-  </data>
-  <data name="chDateTime.Width" type="System.Int32, mscorlib">
-    <value>122</value>
-  </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Filename</value>
-  </data>
-  <data name="chFilename.Width" type="System.Int32, mscorlib">
-    <value>172</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="chType.Width" type="System.Int32, mscorlib">
-    <value>56</value>
-  </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Host</value>
-  </data>
-  <data name="chHost.Width" type="System.Int32, mscorlib">
-    <value>95</value>
-  </data>
-  <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
-  <comment>@Invariant</comment></data>
-  <data name="chURL.Width" type="System.Int32, mscorlib">
-    <value>330</value>
-  </data>
-  <data name="lvHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 288</value>
-  </data>
-  <data name="lvHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>904, 368</value>
-  </data>
-  <data name="lvHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.Name" xml:space="preserve">
-    <value>lvHistory</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pbThumbnail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="pbThumbnail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 8</value>
-  </data>
-  <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 272</value>
-  </data>
-  <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;pbThumbnail.Name" xml:space="preserve">
-    <value>pbThumbnail</value>
+  <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
+    <value>scMain.Panel2</value>
   </data>
-  <data name="&gt;&gt;pbThumbnail.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;scMain.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pbThumbnail.Parent" xml:space="preserve">
+  <data name="&gt;&gt;scMain.Panel2.Parent" xml:space="preserve">
+    <value>scMain</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="scMain.Panel2MinSize" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>984, 641</value>
+  </data>
+  <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
+    <value>550</value>
+  </data>
+  <data name="scMain.SplitterWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="scMain.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;scMain.Name" xml:space="preserve">
+    <value>scMain</value>
+  </data>
+  <data name="&gt;&gt;scMain.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;pbThumbnail.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -673,22 +658,22 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>920, 687</value>
+    <value>984, 641</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>925, 725</value>
+    <value>500, 500</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>History</value>
+    <value>ShareX - History</value>
   </data>
-  <data name="&gt;&gt;tsslStatus.Name" xml:space="preserve">
-    <value>tsslStatus</value>
+  <data name="&gt;&gt;chIcon.Name" xml:space="preserve">
+    <value>chIcon</value>
   </data>
-  <data name="&gt;&gt;tsslStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chDateTime.Name" xml:space="preserve">
     <value>chDateTime</value>
@@ -702,18 +687,6 @@
   <data name="&gt;&gt;chFilename.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chType.Name" xml:space="preserve">
-    <value>chType</value>
-  </data>
-  <data name="&gt;&gt;chType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chHost.Name" xml:space="preserve">
-    <value>chHost</value>
-  </data>
-  <data name="&gt;&gt;chHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;chURL.Name" xml:space="preserve">
     <value>chURL</value>
   </data>
@@ -724,6 +697,6 @@
     <value>HistoryForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

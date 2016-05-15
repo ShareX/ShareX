@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,15 +25,37 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class DropboxFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Dropbox;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return OAuth2Info.CheckOAuth(config.DropboxOAuth2Info);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Dropbox(config.DropboxOAuth2Info, config.DropboxAccountInfo)
+            {
+                UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(config.DropboxUploadPath)),
+                AutoCreateShareableLink = config.DropboxAutoCreateShareableLink,
+                ShareURLType = config.DropboxURLType
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpDropbox;
+    }
+
     public sealed class Dropbox : FileUploader, IOAuth2Basic
     {
         public OAuth2Info AuthInfo { get; set; }
@@ -65,8 +87,7 @@ namespace ShareX.UploadersLib.FileUploaders
             AuthInfo = oauth;
         }
 
-        public Dropbox(OAuth2Info oauth, DropboxAccountInfo accountInfo)
-            : this(oauth)
+        public Dropbox(OAuth2Info oauth, DropboxAccountInfo accountInfo) : this(oauth)
         {
             AccountInfo = accountInfo;
         }
@@ -173,12 +194,6 @@ namespace ShareX.UploadersLib.FileUploaders
         // https://www.dropbox.com/developers/core/docs#files_put
         public UploadResult UploadFile(Stream stream, string path, string fileName, bool createShareableURL = false, DropboxURLType urlType = DropboxURLType.Default)
         {
-            if (!OAuth2Info.CheckOAuth(AuthInfo))
-            {
-                Errors.Add("Dropbox login is required.");
-                return null;
-            }
-
             string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
 
             // There's a 150MB limit to all uploads through the API.
@@ -370,18 +385,18 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (!AutoCreateShareableLink)
-            {
-                CheckEarlyURLCopy(UploadPath, fileName);
-            }
+            CheckEarlyURLCopy(UploadPath, fileName);
 
             return UploadFile(stream, UploadPath, fileName, AutoCreateShareableLink, ShareURLType);
         }
 
         private void CheckEarlyURLCopy(string path, string fileName)
         {
-            string url = GetPublicURL(URLHelpers.CombineURL(path, fileName));
-            OnEarlyURLCopyRequested(url);
+            if (OAuth2Info.CheckOAuth(AuthInfo) && !AutoCreateShareableLink)
+            {
+                string url = GetPublicURL(URLHelpers.CombineURL(path, fileName));
+                OnEarlyURLCopyRequested(url);
+            }
         }
 
         public string GetPublicURL(string path)

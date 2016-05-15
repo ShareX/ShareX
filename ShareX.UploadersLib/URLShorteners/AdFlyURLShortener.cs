@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,9 +26,31 @@
 // Credits: https://github.com/LRNAB
 
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class AdFlyURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.AdFly;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.AdFlyAPIKEY) && !string.IsNullOrEmpty(config.AdFlyAPIUID);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new AdFlyURLShortener
+            {
+                APIKEY = config.AdFlyAPIKEY,
+                APIUID = config.AdFlyAPIUID
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAdFly;
+    }
+
     public class AdFlyURLShortener : URLShortener
     {
         public string APIKEY { get; set; }

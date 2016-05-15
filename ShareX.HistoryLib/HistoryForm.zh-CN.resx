@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>历史</value>
+    <value>历史记录</value>
   </data>
   <data name="btnApplyFilters.Text" xml:space="preserve">
     <value>使用过滤器</value>
@@ -131,23 +132,11 @@
   <data name="cbFilenameFilter.Text" xml:space="preserve">
     <value>文件名过滤器:</value>
   </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>区分大小写</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>当前区域</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>不变的文化（英文）</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>序（英文）</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>包含</value>
   </data>
   <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>与开始</value>
+    <value>开始</value>
   </data>
   <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
     <value>结尾</value>
@@ -161,37 +150,19 @@
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>文件类型过滤器:</value>
   </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>图像</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>文件</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>文本</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>日期和时间</value>
+    <value>日期时间</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>文件名</value>
-  </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>域名</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>类型</value>
   </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>过滤器</value>
   </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
-    <value>来自:</value>
+    <value>从:</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>要:</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>状态</value>
+    <value>到:</value>
   </data>
 </root>

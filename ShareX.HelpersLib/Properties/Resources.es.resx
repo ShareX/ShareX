@@ -120,38 +120,304 @@
   <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
     <value>Ruta de archivo</value>
   </data>
-  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
-    <value>Abrir en editor de imágenes</value>
+  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
+    <value>Ruta de archivos sin extensión + "Extension de nombre de archivo de salida"</value>
   </data>
-  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
-    <value>Imprimir imagen</value>
+  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
+    <value>Manual</value>
   </data>
-  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
-    <value>Subir imagen a host</value>
+  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
+    <value>Buscar carpetas...</value>
   </data>
-  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
-    <value>Abrir URL</value>
+  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
+    <value>Buscar por una hoja de estilo en cascada...</value>
   </data>
-  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
-    <value>Compartir URL</value>
+  <data name="Stop" xml:space="preserve">
+    <value>Detener</value>
   </data>
-  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
-    <value>Acortar URL</value>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>El contenido del portapapeles: Imagen: (Tamaño: {0}x{1})</value>
   </data>
-  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
-    <value>Mostrar ventana de QR código</value>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>El contenido del portapapeles: Texto (Longitud: {0})</value>
   </data>
-  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
-    <value>Copiar URL al portapapeles</value>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>El contenido del portapapeles: Archivo (Número: {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Portapapeles está vacío o contiene datos desconocidos.</value>
+  </data>
+  <data name="RegistryHelpers_ShellExtDesc_Upload_with__0_" xml:space="preserve">
+    <value>Subir con {0}</value>
+  </data>
+  <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
+    <value>Nombre: {0}, Tamaño: {1}</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
+    <value>Actualización de verificación falló</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
+    <value>Una nueva versión de {0} está disponible</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
+    <value>{0} está actualizado</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
+    <value>Esperando.</value>
+  </data>
+  <data name="CodeMenu_Create_Close" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
+    <value>Seleccione una carpeta</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
+    <value>Imprimir</value>
+  </data>
+  <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
+    <value>Exportación ha fallado.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
+    <value>Configuración copiados al portapapeles.</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
+    <value>Nombre del archivo: {0}</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="HSB_ToString_" xml:space="preserve">
+    <value>Hue: {0:0.0}°, Saturación: {1:0.0}%, Brillo: {2:0.0}%</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>Cian: {0:0.0}%, Magenta: {1:0.0}%, Amarillo: {2:0.0}%, Clave: {3:0.0}%</value>
+  </data>
+  <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
+    <value>Importación ha fallado.</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
+    <value>DNS configurado con éxito.</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
+    <value>DNS configurado correctamente. Es necesario reiniciar.</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
+    <value>Configuración DNS falló con código de error:</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
+    <value>Configuración DNS falló.</value>
+  </data>
+  <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
+    <value>Estado: {0}</value>
+  </data>
+  <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
+    <value>Progreso: {0:0.0}%
+Velocidad de descarga: {1:0.0} KB/s
+Tamaño de archivo: {2:n0} / {3:n0} KB</value>
+  </data>
+  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
+    <value>Cargando imagen...</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
+    <value>Cortar</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
+    <value>Pegar</value>
+  </data>
+  <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
+    <value>URL para descargar los ajustes de</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
+    <value>Descargando.</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
+    <value>Obtener el tamaño del archivo.</value>
+  </data>
+  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
+    <value>Cargando imagen: {0}%</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
+    <value>Descarga completa</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
+    <value>Instalar</value>
+  </data>
+  <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
+    <value>Carpeta no existe:</value>
+  </data>
+  <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
+    <value>Descarga fallida:</value>
+  </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>16 colores de Octree cuantificador</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>256 colores de Octree cuantificador (Codificación lenta pero de mejor calidad)</value>
+  </data>
+  <data name="GIFQuality_Default" xml:space="preserve">
+    <value>Codificación predeterminada .NET (Codificación rápida pero de calidad media)</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>Paleta cuantificador escala de grises 256 colores</value>
+  </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="ProxyMethod_Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
+    <value>Capturar monitor activo</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
+    <value>Capturar ventana activa</value>
+  </data>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>Captura automática</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
+    <value>Subir desde el portapapeles</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
+    <value>Subir desde el portapapeles con visor de contenido</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
+    <value>Arrastrar y soltar subida</value>
+  </data>
+  <data name="HotkeyType_FileUpload" xml:space="preserve">
+    <value>Subir archivo</value>
+  </data>
+  <data name="HotkeyType_FolderUpload" xml:space="preserve">
+    <value>Carpeta de subir</value>
+  </data>
+  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
+    <value>Capturar región a mano alzada</value>
+  </data>
+  <data name="HotkeyType_FTPClient" xml:space="preserve">
+    <value>Cliente FTP</value>
+  </data>
+  <data name="HotkeyType_HashCheck" xml:space="preserve">
+    <value>Verificación hash</value>
+  </data>
+  <data name="HotkeyType_ImageEffects" xml:space="preserve">
+    <value>Efectos de imagen</value>
+  </data>
+  <data name="HotkeyType_IndexFolder" xml:space="preserve">
+    <value>Carpeta de índice</value>
+  </data>
+  <data name="HotkeyType_LastRegion" xml:space="preserve">
+    <value>Capturar última región</value>
+  </data>
+  <data name="HotkeyType_None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
+    <value>Abrir la carpeta de capturas de pantalla</value>
+  </data>
+  <data name="HotkeyType_PolygonRegion" xml:space="preserve">
+    <value>Capturar región poligonal</value>
+  </data>
+  <data name="HotkeyType_PrintScreen" xml:space="preserve">
+    <value>Capturar pantalla completa</value>
+  </data>
+  <data name="HotkeyType_QRCode" xml:space="preserve">
+    <value>QR código</value>
+  </data>
+  <data name="HotkeyType_RectangleLight" xml:space="preserve">
+    <value>Capturar región rectángulo (ligero)</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
+    <value>Capturar región rectángulo</value>
+  </data>
+  <data name="HotkeyType_Ruler" xml:space="preserve">
+    <value>Regla</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
+    <value>Pantalla de selector de color</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
+    <value>Grabación de la pantalla (FFmpeg)</value>
+  </data>
+  <data name="HotkeyType_StopUploads" xml:space="preserve">
+    <value>Detener todas las subidas activos</value>
+  </data>
+  <data name="HotkeyType_TweetMessage" xml:space="preserve">
+    <value>Tweet mensaje</value>
+  </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>Subir desde URL</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>Cargador de archivos personalizado</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>Carpeta compartida</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>Cargador de imágenes personalizados</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>Cargador de archivos</value>
+  </data>
+  <data name="ResponseType_Headers" xml:space="preserve">
+    <value>Cabeceras de respuesta</value>
+  </data>
+  <data name="ResponseType_RedirectionURL" xml:space="preserve">
+    <value>URL de redirección</value>
+  </data>
+  <data name="ResponseType_Text" xml:space="preserve">
+    <value>Texto respuesta</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>Cargador de texto personalizado</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>Cargador de archivos</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>Acortador de URL personalizado</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Añadir efectos de imagen / marca de agua</value>
   </data>
-  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
-    <value>Copiar el archivo al portapapeles</value>
+  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
+    <value>Abrir en editor de imágenes</value>
   </data>
   <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
     <value>Copiar la ruta del archivo al portapapeles</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>Copiar el archivo al portapapeles</value>
   </data>
   <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
     <value>Copiar imagen al portapapeles</value>
@@ -171,292 +437,84 @@
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>Guardar imagen en miniatura a archivo</value>
   </data>
-  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
-    <value>Ruta de archivos sin extensión + "Extension de nombre de archivo de salida"</value>
+  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
+    <value>Imprimir imagen</value>
   </data>
-  <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
-    <value>Estado: {0}</value>
+  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
+    <value>Subir imagen a host</value>
   </data>
-  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
-    <value>Esperando.</value>
+  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
+    <value>Copiar URL al portapapeles</value>
   </data>
-  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
-    <value>Descarga completa</value>
+  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
+    <value>Abrir URL</value>
   </data>
-  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
-    <value>Instalar</value>
+  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
+    <value>Compartir URL</value>
   </data>
-  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
+    <value>Mostrar ventana de QR código</value>
   </data>
-  <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
-    <value>Descargando.</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
-    <value>Obtener el tamaño del archivo.</value>
-  </data>
-  <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
-    <value>Nombre del archivo: {0}</value>
-  </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Manual</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>Configuración DNS falló.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>DNS configurado con éxito.</value>
-  </data>
-  <data name="CodeMenu_Create_Close" xml:space="preserve">
-    <value>Cerrar</value>
-  </data>
-  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
-    <value>Cian: {0:0.0}%, Magenta: {1:0.0}%, Amarillo: {2:0.0}%, Clave: {3:0.0}%</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>El contenido del portapapeles: Archivo (Número: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>El contenido del portapapeles: Imagen: (Tamaño: {0}x{1})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>El contenido del portapapeles: Texto (Longitud: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Portapapeles está vacío o contiene datos desconocidos.</value>
-  </data>
-  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>Buscar carpetas...</value>
-  </data>
-  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>Buscar por una hoja de estilo en cascada...</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS configurado correctamente. Es necesario reiniciar.</value>
-  </data>
-  <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
-    <value>Progreso: {0:0.0}%
-Velocidad de descarga: {1:0.0} KB/s
-Tamaño de archivo: {2:n0} / {3:n0} KB</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
-    <value>Copiar</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
-    <value>Cortar</value>
-  </data>
-  <data name="FileDestination_Email" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
-    <value>Pegar</value>
-  </data>
-  <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
-    <value>Importación ha fallado.</value>
-  </data>
-  <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
-    <value>Exportación ha fallado.</value>
-  </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>Buscar por un ejecutable...</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>Configuración DNS falló con código de error:</value>
-  </data>
-  <data name="FileExistAction_Cancel" xml:space="preserve">
-    <value>No guardar</value>
+  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
+    <value>Acortar URL</value>
   </data>
   <data name="FileExistAction_Ask" xml:space="preserve">
     <value>Preguntarle qué hacer</value>
   </data>
-  <data name="FileDestination_SharedFolder" xml:space="preserve">
-    <value>Carpeta compartida</value>
-  </data>
-  <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
-    <value>Configuración copiados al portapapeles.</value>
-  </data>
-  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Cargador de archivos personalizado</value>
-  </data>
-  <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
-    <value>URL para descargar los ajustes de</value>
-  </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Cliente FTP</value>
-  </data>
-  <data name="HotkeyType_HashCheck" xml:space="preserve">
-    <value>Verificación hash</value>
-  </data>
-  <data name="HotkeyType_FileUpload" xml:space="preserve">
-    <value>Subir archivo</value>
-  </data>
-  <data name="HotkeyType_FolderUpload" xml:space="preserve">
-    <value>Carpeta de subir</value>
-  </data>
-  <data name="HotkeyType_ColorPicker" xml:space="preserve">
-    <value>Selector de color</value>
-  </data>
-  <data name="HotkeyType_AutoCapture" xml:space="preserve">
-    <value>Captura automática</value>
-  </data>
-  <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
-    <value>Descarga fallida:</value>
-  </data>
-  <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
-    <value>Carpeta no existe:</value>
-  </data>
-  <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
-    <value>Elegir la ruta del archivo</value>
+  <data name="FileExistAction_Cancel" xml:space="preserve">
+    <value>No guardar</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
     <value>Sobrescribir archivo</value>
   </data>
-  <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
-    <value>Seleccione una carpeta</value>
-  </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>Anexar número al nombre de archivo</value>
   </data>
-  <data name="GIFQuality_Bit4" xml:space="preserve">
-    <value>16 colores de Octree cuantificador</value>
-  </data>
-  <data name="GIFQuality_Bit8" xml:space="preserve">
-    <value>256 colores de Octree cuantificador (Codificación lenta pero de mejor calidad)</value>
-  </data>
-  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
-    <value>Arrastrar y soltar subida</value>
-  </data>
-  <data name="HotkeyType_QRCode" xml:space="preserve">
-    <value>QR código</value>
-  </data>
-  <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Regla</value>
-  </data>
-  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
-    <value>No</value>
-  </data>
-  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
-    <value>Sí</value>
-  </data>
-  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
-  <data name="GIFQuality_Default" xml:space="preserve">
-    <value>Codificación predeterminada .NET (Codificación rápida pero de calidad media)</value>
-  </data>
-  <data name="GIFQuality_Grayscale" xml:space="preserve">
-    <value>Paleta cuantificador escala de grises 256 colores</value>
-  </data>
-  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
-    <value>Capturar monitor activo</value>
-  </data>
-  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
-    <value>Capturar ventana activa</value>
-  </data>
-  <data name="HotkeyType_Automate" xml:space="preserve">
-    <value>Abrir / Parar herramienta de automatización</value>
-  </data>
-  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
-    <value>Subir desde el portapapeles</value>
-  </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
-    <value>Subir desde el portapapeles con visor de contenido</value>
-  </data>
-  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>Capturar región a mano alzada</value>
-  </data>
-  <data name="HotkeyType_ImageEffects" xml:space="preserve">
-    <value>Efectos de imagen</value>
-  </data>
-  <data name="HotkeyType_None" xml:space="preserve">
-    <value>Ninguno</value>
-  </data>
-  <data name="HotkeyType_LastRegion" xml:space="preserve">
-    <value>Capturar última región</value>
-  </data>
-  <data name="HotkeyType_IndexFolder" xml:space="preserve">
-    <value>Carpeta de índice</value>
-  </data>
-  <data name="HotkeyType_PolygonRegion" xml:space="preserve">
-    <value>Capturar región poligonal</value>
-  </data>
-  <data name="HotkeyType_PrintScreen" xml:space="preserve">
-    <value>Capturar pantalla completa</value>
-  </data>
-  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
-    <value>Abrir la carpeta de capturas de pantalla</value>
-  </data>
-  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
-    <value>No se pudo crear el directorio, comprobar la configuración de ruta.</value>
-  </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tweet mensaje</value>
-  </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Capturar región rectángulo (ventana)</value>
-  </data>
-  <data name="ImageDestination_FileUploader" xml:space="preserve">
-    <value>Cargador de archivos</value>
-  </data>
-  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Cargador de imágenes personalizados</value>
-  </data>
-  <data name="HSB_ToString_" xml:space="preserve">
-    <value>Hue: {0:0.0}°, Saturación: {1:0.0}%, Brillo: {2:0.0}%</value>
-  </data>
-  <data name="HotkeyType_UploadURL" xml:space="preserve">
-    <value>Subir desde URL</value>
-  </data>
-  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
-    <value>Pantalla de selector de color</value>
-  </data>
-  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Capturar región rectángulo</value>
-  </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Capturar región rectángulo (ligero)</value>
-  </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Capturar región rectángulo (Anotar)</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
-    <value>Grabación de la pantalla (FFmpeg)</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
-    <value>Grabación de la pantalla (GIF)</value>
-  </data>
-  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
-    <value>Imprimir</value>
-  </data>
-  <data name="ProxyMethod_Manual" xml:space="preserve">
-    <value>Manual</value>
-  </data>
-  <data name="ProxyMethod_None" xml:space="preserve">
-    <value>Ninguno</value>
-  </data>
-  <data name="ProxyMethod_Automatic" xml:space="preserve">
-    <value>Automático</value>
+  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
+    <value>Mostrar tooltip en la bandeja</value>
   </data>
   <data name="PopUpNotificationType_None" xml:space="preserve">
     <value>Mostrar nada</value>
   </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Cargando imagen...</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Cargando imagen: {0}%</value>
-  </data>
   <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
     <value>Mostrar notificación toast con vista previa</value>
   </data>
-  <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
-    <value>Nombre: {0}, Tamaño: {1}</value>
+  <data name="SupportedLanguage_Automatic" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>Iniciar captura automática utilizando última región</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>Iniciar grabación de la pantalla (FFmpeg) utilizando la última región</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>Una nueva versión de {0} está disponible.
+¿Quieres descargar e instalarlo?</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>Actualización está disponible</value>
+  </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>No se pudo crear el directorio, comprobar la configuración de ruta.</value>
+  </data>
+  <data name="HotkeyType_ColorPicker" xml:space="preserve">
+    <value>Selector de color</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
+    <value>Grabación de la pantalla (GIF)</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
+    <value>Iniciar grabación de la pantalla (GIF) utilizando la última región</value>
+  </data>
+  <data name="HotkeyType_Automate" xml:space="preserve">
+    <value>Abrir / Parar herramienta de automatización</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Capturar región rectángulo transparente</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>Buscar por un ejecutable...</value>
   </data>
   <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
     <value>Nombre de equipo</value>
@@ -478,24 +536,6 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
     <value>Incrementar numero automaticamente</value>
-  </data>
-  <data name="RegistryHelpers_ShellExtDesc_Upload_with__0_" xml:space="preserve">
-    <value>Subir con {0}</value>
-  </data>
-  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
-    <value>Iniciar captura automática utilizando última región</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
-    <value>Iniciar grabación de la pantalla (FFmpeg) utilizando la última región</value>
-  </data>
-  <data name="HotkeyType_StopUploads" xml:space="preserve">
-    <value>Detener todas las subidas activos</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
-    <value>Iniciar grabación de la pantalla (GIF) utilizando la última región</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Mostrar tooltip en la bandeja</value>
   </data>
   <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
     <value>Nombre del mes actual (lengua local)</value>
@@ -545,59 +585,10 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Año actual (2 dígitos)</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Iniciar</value>
-  </data>
   <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
     <value>Nombre de la semana actual (Inglés)</value>
   </data>
   <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
     <value>Nombre de inicio de sesión de usuario</value>
-  </data>
-  <data name="SupportedLanguage_Automatic" xml:space="preserve">
-    <value>Automático</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} está actualizado</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Actualización de verificación falló</value>
-  </data>
-  <data name="TextDestination_FileUploader" xml:space="preserve">
-    <value>Cargador de archivos</value>
-  </data>
-  <data name="Stop" xml:space="preserve">
-    <value>Detener</value>
-  </data>
-  <data name="ResponseType_Text" xml:space="preserve">
-    <value>Texto respuesta</value>
-  </data>
-  <data name="ResponseType_Headers" xml:space="preserve">
-    <value>Cabeceras de respuesta</value>
-  </data>
-  <data name="ResponseType_RedirectionURL" xml:space="preserve">
-    <value>URL de redirección</value>
-  </data>
-  <data name="URLSharingServices_Email" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
-    <value>Actualización está disponible</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Una nueva versión de {0} está disponible</value>
-  </data>
-  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>Cargador de texto personalizado</value>
-  </data>
-  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Una nueva versión de {0} está disponible.
-¿Quieres descargar e instalarlo?</value>
-  </data>
-  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Acortador de URL personalizado</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Capturar región rectángulo transparente</value>
   </data>
 </root>

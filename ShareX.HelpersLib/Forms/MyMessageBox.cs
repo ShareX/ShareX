@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class MyMessageBox : BaseForm
+    public class MyMessageBox : Form
     {
         private const int LabelHorizontalPadding = 15;
         private const int LabelVerticalPadding = 20;
@@ -42,7 +42,8 @@ namespace ShareX.HelpersLib
 
         public MyMessageBox(string text, string caption, MessageBoxButtons buttons = MessageBoxButtons.OK, string checkBoxText = null, bool isChecked = false)
         {
-            BackColor = Color.White;
+            Icon = ShareXResources.Icon;
+
             Width = 180;
             Height = 100;
             Text = caption;
@@ -59,7 +60,6 @@ namespace ShareX.HelpersLib
             labelText.Margin = new Padding(0);
             labelText.Font = SystemFonts.MessageBoxFont;
             labelText.TextAlign = ContentAlignment.MiddleLeft;
-            labelText.BackColor = Color.White;
             labelText.AutoSize = true;
             labelText.MinimumSize = new Size(125, 0);
             labelText.MaximumSize = new Size(400, 400);
@@ -119,7 +119,6 @@ namespace ShareX.HelpersLib
             panel.FlowDirection = FlowDirection.RightToLeft;
 
             FlowLayoutPanel labelPanel = new FlowLayoutPanel();
-            labelPanel.BackColor = Color.White;
             labelPanel.FlowDirection = FlowDirection.TopDown;
             labelPanel.AutoSize = true;
             labelPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -152,7 +151,7 @@ namespace ShareX.HelpersLib
 
         private void MyMessageBox_Shown(object sender, System.EventArgs e)
         {
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         public static DialogResult Show(string text, string caption, MessageBoxButtons buttons = MessageBoxButtons.OK)
@@ -161,6 +160,19 @@ namespace ShareX.HelpersLib
             {
                 return messageBox.ShowDialog();
             }
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // MyMessageBox
+            // 
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "MyMessageBox";
+            this.ResumeLayout(false);
+
         }
     }
 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,6 +28,23 @@ using System.ComponentModel;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class SlexyTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Slexy;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            SlexySettings settings = new SlexySettings()
+            {
+                TextFormat = taskInfo.TextFormat
+            };
+
+            return new Slexy(settings);
+        }
+    }
+
     public sealed class Slexy : TextUploader
     {
         private const string APIURL = "http://slexy.org/index.php/submit";

@@ -117,20 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
+    <value>Conexión a {0}</value>
+  </data>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>Autorización de refrescar no es compatible.</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>Nombre del directorio para crear</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>ID de usuario:</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Nombre del equipo no es válido</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Estado: Inicio de sesión fallido.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Ruta de subir:</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Cuadro de lista de carpetas de refrescar falló</value>
+  </data>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
     <value>¿Eliminar archivo?</value>
   </data>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Conexión a {0}</value>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Carpeta raíz</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Conectado como {0}.</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX cliente FTP</value>
   </data>
   <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
     <value>Ruta no existe:</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Nombre del directorio para crear</value>
   </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
     <value>¿Está seguro de que desea borrar "{0}" de su Dropbox?</value>
@@ -147,9 +174,6 @@
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Error Tweet</value>
   </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Carpeta raíz</value>
-  </data>
   <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
     <value>Estado: No ha iniciado sesión.</value>
   </data>
@@ -159,23 +183,11 @@
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Buscar un archivo de clave...</value>
   </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Estado: Inicio de sesión fallido.</value>
-  </data>
   <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
     <value>Nombre del directorio para crear</value>
   </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Nombre del equipo no es válido</value>
-  </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Se requiere autenticación</value>
-  </data>
-  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
-    <value>Error en lista de carpetas Hubic</value>
   </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
     <value>Inicio de sesión fallido</value>
@@ -205,14 +217,8 @@ Creado carpetas:</value>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
     <value>Nombre:</value>
   </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>ID de usuario:</value>
-  </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Download_path_" xml:space="preserve">
     <value>Descargar ruta:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Ruta de subir:</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>Error: El resultado está vacía.</value>
@@ -232,9 +238,6 @@ Creado carpetas:</value>
   <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
     <value>Sin iniciar sesión.</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Conectado como {0}.</value>
-  </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Consulta carpetas...</value>
   </data>
@@ -243,11 +246,5 @@ Creado carpetas:</value>
   </data>
   <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
     <value>Registro de SendSpace</value>
-  </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Autorización de refrescar no es compatible.</value>
-  </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Cuadro de lista de carpetas de refrescar falló</value>
   </data>
 </root>

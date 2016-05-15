@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,18 +30,19 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ActionsForm : BaseForm
+    public partial class ActionsForm : Form
     {
         public ExternalProgram FileAction { get; private set; }
 
-        public ActionsForm()
-            : this(new ExternalProgram())
+        public ActionsForm() : this(new ExternalProgram())
         {
         }
 
         public ActionsForm(ExternalProgram fileAction)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+
             FileAction = fileAction;
             txtName.Text = fileAction.Name ?? "";
             txtPath.Text = fileAction.Path ?? "";
@@ -54,7 +55,7 @@ namespace ShareX
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile("ShareX - " + Resources.ActionsForm_btnPathBrowse_Click_Choose_file_path, txtPath);
+            Helpers.BrowseFile(txtPath);
         }
 
         private void btnOK_Click(object sender, EventArgs e)

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cbRunStartup.Text" xml:space="preserve">
-    <value>ShareX mit Windows startwn</value>
+    <value>ShareX mit Windows starten</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Zeige ShareX im "Senden an" Menü</value>

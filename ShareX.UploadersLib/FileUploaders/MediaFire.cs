@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,9 +34,31 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class MediaFireFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.MediaFire;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.MediaFireUsername) && !string.IsNullOrEmpty(config.MediaFirePassword);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new MediaFire(APIKeys.MediaFireAppId, APIKeys.MediaFireApiKey, config.MediaFireUsername, config.MediaFirePassword)
+            {
+                UploadPath = NameParser.Parse(NameParserType.URL, config.MediaFirePath),
+                UseLongLink = config.MediaFireUseLongLink
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpMediaFire;
+    }
+
     public sealed class MediaFire : FileUploader
     {
         private static readonly string _apiUrl = "https://www.mediafire.com/api/";

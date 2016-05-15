@@ -120,20 +120,14 @@
   <data name="btnApplyFilters.Text" xml:space="preserve">
     <value>Appliquer les filtres</value>
   </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Sensible aux majuscules et minuscules</value>
-  </data>
   <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
     <value>Contient</value>
   </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Culture actuelle</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date et heure</value>
+    <value>Date</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>Filtre de date:</value>
+    <value>Filtre de date :</value>
   </data>
   <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
     <value>Se termine par</value>
@@ -141,44 +135,26 @@
   <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
     <value>Correspondance exacte</value>
   </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>Fichier</value>
-  </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>Filtre du type de fichier:</value>
+    <value>Filtre du type de fichier :</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nom du fichier</value>
   </data>
   <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Filtre des noms de fichier:</value>
+    <value>Filtre des noms de fichier :</value>
   </data>
   <data name="gbFilters.Text" xml:space="preserve">
     <value>Filtres</value>
   </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
-    <value>De:</value>
+    <value>De :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Historique</value>
-  </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Hôte</value>
+    <value>ShareX - Historique</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>Filtre d'hôte:</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>Image</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Culture invariante (Anglais)</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Statut</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Ordinale (Anglais)</value>
+    <value>Filtre d'hôte :</value>
   </data>
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Supprimer les filtres</value>
@@ -187,12 +163,6 @@
     <value>Commence par</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>À:</value>
-  </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>Texte</value>
+    <value>À :</value>
   </data>
 </root>

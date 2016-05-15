@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -55,6 +55,13 @@ namespace ShareX.ScreenCaptureLib
         ActiveMonitor
     }
 
+    public enum NodeType
+    {
+        None,
+        Rectangle,
+        Line
+    }
+
     internal enum NodePosition
     {
         TopLeft,
@@ -74,15 +81,15 @@ namespace ShareX.ScreenCaptureLib
 
     public enum FFmpegVideoCodec
     {
-        [Description("x264")]
+        [Description("x264 (mp4)")]
         libx264,
-        [Description("VP8 (WebM)")]
+        [Description("VP8 (webm)")]
         libvpx,
-        [Description("Xvid")]
+        [Description("Xvid (avi)")]
         libxvid,
-        [Description("Animated GIF")]
+        [Description("Animated GIF (gif)")]
         gif,
-        [Description("x265")]
+        [Description("x265 (mp4)")]
         libx265
     }
 
@@ -138,13 +145,39 @@ namespace ShareX.ScreenCaptureLib
         sierra2_4a
     }
 
-    public enum RegionShape
+    public enum RectangleRegionMode
     {
-        Rectangle,
-        RoundedRectangle,
-        Ellipse,
-        Triangle,
-        Diamond
+        Default,
+        Annotation,
+        ScreenColorPicker,
+        Ruler,
+        OneClick
+    }
+
+    public enum ShapeType
+    {
+        [Description("Region: Rectangle")]
+        RegionRectangle,
+        [Description("Region: Rounded rectangle")]
+        RegionRoundedRectangle,
+        [Description("Region: Ellipse")]
+        RegionEllipse,
+        [Description("Drawing: Rectangle")]
+        DrawingRectangle,
+        [Description("Drawing: Rounded rectangle")]
+        DrawingRoundedRectangle,
+        [Description("Drawing: Ellipse")]
+        DrawingEllipse,
+        [Description("Drawing: Line")]
+        DrawingLine,
+        [Description("Drawing: Arrow")]
+        DrawingArrow,
+        [Description("Effect: Blur")]
+        DrawingBlur,
+        [Description("Effect: Pixelate")]
+        DrawingPixelate,
+        [Description("Effect: Highlight")]
+        DrawingHighlight
     }
 
     public enum RegionAnnotateMode

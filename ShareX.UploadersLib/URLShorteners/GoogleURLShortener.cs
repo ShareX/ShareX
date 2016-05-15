@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,11 +25,28 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class GoogleURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Google;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.GoogleURLShortenerAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(config.GoogleURLShortenerOAuth2Info);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new GoogleURLShortener(config.GoogleURLShortenerAccountType, APIKeys.GoogleAPIKey, config.GoogleURLShortenerOAuth2Info);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGoogleURLShortener;
+    }
+
     public class GoogleURLShortener : URLShortener, IOAuth2
     {
         public AccountType UploadMethod { get; set; }

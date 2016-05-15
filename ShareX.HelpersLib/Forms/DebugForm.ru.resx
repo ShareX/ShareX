@@ -126,4 +126,10 @@
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
     <value>Загруженные сборки</value>
   </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>Открыть лог...</value>
+  </data>
+  <data name="lblRunningFrom.Text" xml:space="preserve">
+    <value>Рабочая папка:</value>
+  </data>
 </root>

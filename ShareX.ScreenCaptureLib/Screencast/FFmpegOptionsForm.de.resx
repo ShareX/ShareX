@@ -142,7 +142,7 @@
     <value>Codecs</value>
   </data>
   <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Ergänzende Befehlszeilen Paramter</value>
+    <value>Ergänzende Befehlszeilenparameter</value>
   </data>
   <data name="gbCommandLinePreview.Text" xml:space="preserve">
     <value>Befehlszeilenvorschau</value>
@@ -172,10 +172,10 @@
     <value>Qualität:</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Constant Rate Factor (CRF): Die Weite des Multiplikators ist 0-51: wo 0 verlustfrei ist; 23 standard; und 51 das schlechteste
+    <value>Constant Rate Factor (CRF): Die Spanne des Multiplikators ist 0-51: wobei 0 verlustfrei ist; 23 standard; und 51 das schlechteste
 Ein kleinerer Wert heißt bessere Qualität und die subjektiv angemessenste Weite ist 18-28.
 Man kann annehmen das 18 augenscheinlicherweise verlustfrei ist, oder fast: es sollte ganz oder fast wie der Input aussehen, ist aber theoretisch nicht verlustfrei.
-Die Weite ist Expotentzial, also wenn man den Wert um +6 erhöht ist es grob die halbe Bitrate, während -6 die doppelte ist.
+Der Bereich ist exponentiell, also wenn man den Wert um +6 erhöht entspricht das grob der halben Bitrate, während -6 der Doppelten entspricht.
 Normalerweise wählt man den höchsten CRF Wert, der noch akzeptable Ergebnisse erzielt.
 Wenn der Output gut aussieht, dann versuche einen höheren Wert und wenn es dann schlecht aussieht benutze wieder den niedrigeren Wert.</value>
   </data>
@@ -183,7 +183,7 @@ Wenn der Output gut aussieht, dann versuche einen höheren Wert und wenn es dann
     <value>Standard sind 128k.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>Die Spanne ist 0-9, wobei ein kleinerer Wert höherer Qualität entspricht. 0-3 produzieren normalerweise transparente Ergebnisse. 4 (Standard) sollte nah zu wahrnehmender Transparenz sein, 6 produziert "annehmbare Ergebnisse"</value>
+    <value>Die Spanne ist 0-9, wobei ein kleinerer Wert höherer Qualität entspricht. 0-3 produzieren normalerweise transparente Ergebnisse. 4 (Standard) sollte wahrnehmbar nahezu Transparenz entsprechen, 6 produziert "annehmbare Ergebnisse"</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>Die Spanne ist 0-10, wobei 10 die höchste Qualität ist. 3-6 ist eine gute Spanne zum Versuchen. Standard ist 3</value>
@@ -210,7 +210,7 @@ Wenn der Output gut aussieht, dann versuche einen höheren Wert und wenn es dann
     <value>Palette Modus:</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>Installiert "screen-capture-recorder" und "virtual-audio-capturer" video/audio Quelle.</value>
+    <value>Installiert die "screen-capture-recorder" und "virtual-audio-capturer" Video/Audio Quellen.</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Variable Bitrate:</value>
@@ -225,7 +225,7 @@ Wenn der Output gut aussieht, dann versuche einen höheren Wert und wenn es dann
     <value>1 ist die höchste Qualität/Dateigröße und 31 die niedrigste Qualität/kleinste Dateigröße.</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>"Faster" Voreinstellung = Schneller Enkodierung aber größere Dateien.
+    <value>"Faster" Voreinstellung = Schnelle Enkodierung aber größere Dateien.
 "Slower" Voreinstellung = Langsamere Enkodierung aber kleinere Dateien.
 Für Echtzeitenkodierung (z.B. Bildschirmaufnahmen) muss die Voreinstellung so schnell wie möglich sein.</value>
   </data>

@@ -127,13 +127,16 @@
     <value>Tamam</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>Hata kütüğünü aç</value>
+    <value>Kütük dosyasını aç...</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>Hata raporu gönder</value>
+    <value>Hata raporu gönder...</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>Hata
 Hata 2</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Tamam</value>
   </data>
 </root>

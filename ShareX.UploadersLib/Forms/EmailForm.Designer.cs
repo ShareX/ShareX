@@ -1,4 +1,4 @@
-﻿namespace ShareX.UploadersLib.GUI
+﻿namespace ShareX.UploadersLib
 {
     partial class EmailForm
     {
@@ -86,8 +86,10 @@
             // 
             // EmailForm
             // 
+            this.AcceptButton = this.btnSend;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSend);

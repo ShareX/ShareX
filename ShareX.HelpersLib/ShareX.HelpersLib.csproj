@@ -66,8 +66,8 @@
       <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net40\Gma.QrCodeNet.Encoding.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=20de82c62b055c88, processorArchitecture=MSIL">
@@ -120,10 +120,19 @@
     <Compile Include="Controls\GreenlightButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\LabeledNumericUpDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LabeledNumericUpDown.Designer.cs">
+      <DependentUpon>LabeledNumericUpDown.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LabelNoCopy.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\ToolStripButtonColorAnimation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolStripLabeledNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ConvolutionMatrix.cs" />
@@ -143,9 +152,6 @@
     <Compile Include="Extensions\NumberExtensions.cs" />
     <Compile Include="FFmpegDownloader.cs" />
     <Compile Include="FontSafe.cs" />
-    <Compile Include="Forms\BaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\OutputBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,7 +181,6 @@
     <Compile Include="Forms\MonitorTestForm.Designer.cs">
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="Native\NativeConstants.cs" />
     <Compile Include="PingHelper.cs" />
     <Compile Include="PingResult.cs" />
@@ -356,9 +361,7 @@
     </Compile>
     <Compile Include="Printer\PrintTextHelper.cs" />
     <Compile Include="Helpers\RegistryHelpers.cs" />
-    <Compile Include="SettingsHelper.cs" />
-    <Compile Include="SingleInstanceApplication\ApplicationInstanceManager.cs" />
-    <Compile Include="SingleInstanceApplication\InstanceProxy.cs" />
+    <Compile Include="ApplicationInstanceManager.cs" />
     <Compile Include="DebugHelper.cs" />
     <Compile Include="UpdateChecker\UpdateCheckerLabel.cs">
       <SubType>UserControl</SubType>
@@ -404,6 +407,7 @@
     <Compile Include="Links.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="WindowState.cs" />
+    <Compile Include="WritablePropertiesOnlyResolver.cs" />
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
     <EmbeddedResource Include="Automate\AutomateForm.de.resx">
@@ -434,6 +438,9 @@
       <DependentUpon>AutomateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Automate\AutomateForm.vi-VN.resx">
+      <DependentUpon>AutomateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Automate\AutomateForm.zh-CN.resx">
       <DependentUpon>AutomateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colors\ColorPickerForm.de.resx">
@@ -540,6 +547,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.zh-CN.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LabeledNumericUpDown.resx">
+      <DependentUpon>LabeledNumericUpDown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.de.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,9 +36,29 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class AmazonS3FileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.AmazonS3;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.AmazonS3Settings != null && !string.IsNullOrEmpty(config.AmazonS3Settings.AccessKeyID) &&
+                !string.IsNullOrEmpty(config.AmazonS3Settings.SecretAccessKey) && !string.IsNullOrEmpty(config.AmazonS3Settings.Bucket) &&
+                AmazonS3.GetCurrentRegion(config.AmazonS3Settings) != AmazonS3.UnknownEndpoint;
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new AmazonS3(config.AmazonS3Settings);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAmazonS3;
+    }
+
     public sealed class AmazonS3 : FileUploader
     {
         public static readonly AmazonS3Region UnknownEndpoint = new AmazonS3Region("Unknown Endpoint");
@@ -80,7 +100,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetEndpoint()
         {
-            return URLHelpers.CombineURL("https://" + GetCurrentRegion(s3Settings).Hostname, s3Settings.Bucket);
+            return URLHelpers.ForcePrefix(URLHelpers.CombineURL(GetCurrentRegion(s3Settings).Hostname, s3Settings.Bucket));
         }
 
         private AWSCredentials GetCurrentCredentials()
@@ -134,16 +154,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            var validationErrors = new List<string>();
+            if (string.IsNullOrEmpty(s3Settings.AccessKeyID)) Errors.Add("'Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.SecretAccessKey)) Errors.Add("'Secret Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.Bucket)) Errors.Add("'Bucket' must not be empty.");
+            if (GetCurrentRegion(s3Settings) == UnknownEndpoint) Errors.Add("Please select an endpoint.");
 
-            if (string.IsNullOrEmpty(s3Settings.AccessKeyID)) validationErrors.Add("'Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(s3Settings.SecretAccessKey)) validationErrors.Add("'Secret Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(s3Settings.Bucket)) validationErrors.Add("'Bucket' must not be empty.");
-            if (GetCurrentRegion(s3Settings) == UnknownEndpoint) validationErrors.Add("Please select an endpoint.");
-
-            if (validationErrors.Any())
+            if (IsError)
             {
-                return new UploadResult { Errors = validationErrors };
+                return null;
             }
 
             var region = GetCurrentRegion(s3Settings);
@@ -152,7 +170,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (region.AmazonRegion == null)
             {
-                s3ClientConfig.ServiceURL = "https://" + region.Hostname;
+                s3ClientConfig.ServiceURL = URLHelpers.ForcePrefix(region.Hostname);
             }
             else
             {
@@ -180,13 +198,15 @@ namespace ShareX.UploadersLib.FileUploaders
                 var responseHeaders = SendRequestStreamGetHeaders(client.GetPreSignedURL(putRequest), stream, Helpers.GetMimeType(fileName), requestHeaders, method: HttpMethod.PUT);
                 if (responseHeaders.Count == 0)
                 {
-                    return new UploadResult { Errors = new List<string> { "Upload to Amazon S3 failed. Check your access credentials." } };
+                    Errors.Add("Upload to Amazon S3 failed. Check your access credentials.");
+                    return null;
                 }
 
                 var eTag = responseHeaders.Get("ETag");
                 if (eTag == null)
                 {
-                    return new UploadResult { Errors = new List<string> { "Upload to Amazon S3 failed." } };
+                    Errors.Add("Upload to Amazon S3 failed.");
+                    return null;
                 }
 
                 if (GetMd5Hash(stream) == eTag.Replace("\"", ""))
@@ -194,7 +214,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     return new UploadResult { IsSuccess = true, URL = GetObjectURL(putRequest.Key) };
                 }
 
-                return new UploadResult { Errors = new List<string> { "Upload to Amazon S3 failed, uploaded data did not match." } };
+                Errors.Add("Upload to Amazon S3 failed, uploaded data did not match.");
+                return null;
             }
         }
     }

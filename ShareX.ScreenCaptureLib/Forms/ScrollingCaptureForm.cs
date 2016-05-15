@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -35,9 +35,9 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public partial class ScrollingCaptureForm : BaseForm
+    public partial class ScrollingCaptureForm : Form
     {
-        public event Action<Image> ProcessRequested;
+        public event Action<Image> ImageProcessRequested;
 
         public ScrollingCaptureOptions Options { get; set; }
         public Image Result { get; set; }
@@ -54,14 +54,15 @@ namespace ShareX.ScreenCaptureLib
             Options = options;
 
             InitializeComponent();
+            Icon = ShareXResources.Icon;
 
             cbScrollMethod.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollMethod>());
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
             cbScrollTopMethodBeforeCapture.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollTopMethod>());
             cbScrollTopMethodBeforeCapture.SelectedIndex = (int)Options.ScrollTopMethodBeforeCapture;
-            nudStartDelay.Value = Options.StartDelay;
-            nudScrollDelay.Value = Options.ScrollDelay;
-            nudMaximumScrollCount.Value = Options.MaximumScrollCount;
+            nudStartDelay.SetValue(Options.StartDelay);
+            nudScrollDelay.SetValue(Options.ScrollDelay);
+            nudMaximumScrollCount.SetValue(Options.MaximumScrollCount);
             cbStartSelectionAutomatically.Checked = Options.StartSelectionAutomatically;
             cbStartCaptureAutomatically.Checked = Options.StartCaptureAutomatically;
             cbAutoDetectScrollEnd.Checked = Options.AutoDetectScrollEnd;
@@ -95,11 +96,11 @@ namespace ShareX.ScreenCaptureLib
             base.Dispose(disposing);
         }
 
-        protected void OnProcessRequested(Image image)
+        protected void OnImageProcessRequested(Image img)
         {
-            if (ProcessRequested != null)
+            if (ImageProcessRequested != null)
             {
-                ProcessRequested(image);
+                ImageProcessRequested(img);
             }
         }
 
@@ -146,7 +147,7 @@ namespace ShareX.ScreenCaptureLib
             }
             finally
             {
-                if (!capturing) this.ShowActivate();
+                if (!capturing) this.ForceActivate();
             }
         }
 
@@ -159,7 +160,8 @@ namespace ShareX.ScreenCaptureLib
                 Thread.Sleep(250);
 
                 Rectangle rect;
-                if (Surface.SelectRegion(out rect))
+
+                if (RectangleRegionForm.SelectRegion(out rect))
                 {
                     selectedRectangle = rect;
                     lblSelectedRectangle.Text = selectedRectangle.ToString();
@@ -167,7 +169,7 @@ namespace ShareX.ScreenCaptureLib
             }
             finally
             {
-                this.ShowActivate();
+                this.ForceActivate();
             }
         }
 
@@ -185,21 +187,20 @@ namespace ShareX.ScreenCaptureLib
 
         private SimpleWindowInfo GetWindowInfo()
         {
-            using (RectangleRegion surface = new RectangleRegion())
+            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.OneClick))
             {
-                surface.OneClickMode = true;
-                surface.Config.ForceWindowCapture = true;
-                surface.Config.IncludeControls = true;
-                surface.Config.UseDimming = false;
-                surface.Config.ShowInfo = true;
-                surface.Config.ShowMagnifier = false;
-                surface.Config.ShowTips = false;
-                surface.Prepare();
-                surface.ShowDialog();
+                form.Config.DetectWindows = true;
+                form.Config.DetectControls = true;
+                form.Config.UseDimming = false;
+                form.Config.ShowInfo = true;
+                form.Config.ShowMagnifier = false;
+                form.Config.ShowTips = false;
+                form.Prepare();
+                form.ShowDialog();
 
-                if (surface.Result == SurfaceResult.Region)
+                if (form.Result == SurfaceResult.Region)
                 {
-                    return surface.SelectedWindow;
+                    return form.SelectedWindow;
                 }
             }
 
@@ -233,7 +234,7 @@ namespace ShareX.ScreenCaptureLib
         {
             captureTimer.Stop();
             btnCapture.Text = Resources.ScrollingCaptureForm_StopCapture_Start_capture;
-            if (!Options.AutoUpload) this.ShowActivate();
+            if (!Options.AutoUpload) this.ForceActivate();
             tcScrollingCapture.SelectedTab = tpOutput;
             StartingProcess();
             if (Options.RemoveDuplicates) RemoveDuplicates();
@@ -259,6 +260,8 @@ namespace ShareX.ScreenCaptureLib
         private void Clean()
         {
             currentScrollCount = 0;
+
+            CleanPictureBox();
 
             if (images != null)
             {
@@ -540,7 +543,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Result != null)
             {
-                OnProcessRequested((Image)Result.Clone());
+                OnImageProcessRequested((Image)Result.Clone());
             }
         }
 
@@ -671,10 +674,10 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            nudTrimLeft.Value = result.Left;
-            nudTrimTop.Value = result.Top;
-            nudTrimRight.Value = result.Right;
-            nudTrimBottom.Value = result.Bottom;
+            nudTrimLeft.SetValue(result.Left);
+            nudTrimTop.SetValue(result.Top);
+            nudTrimRight.SetValue(result.Right);
+            nudTrimBottom.SetValue(result.Bottom);
         }
 
         private void chkAutoUpload_CheckedChanged(object sender, EventArgs e)
@@ -779,8 +782,8 @@ namespace ShareX.ScreenCaptureLib
                     vertical = Math.Max(vertical, temp);
                 }
 
-                nudCombineVertical.Value = vertical;
-                nudCombineLastVertical.Value = CalculateVerticalOffset(images[images.Count - 2], images[images.Count - 1]);
+                nudCombineVertical.SetValue(vertical);
+                nudCombineLastVertical.SetValue(CalculateVerticalOffset(images[images.Count - 2], images[images.Count - 1]));
             }
         }
 

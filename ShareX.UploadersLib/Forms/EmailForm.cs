@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,9 +27,9 @@ using ShareX.HelpersLib;
 using System;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.GUI
+namespace ShareX.UploadersLib
 {
-    public partial class EmailForm : BaseForm
+    public partial class EmailForm : Form
     {
         public string ToEmail { get; private set; }
         public string Subject { get; private set; }
@@ -38,10 +38,10 @@ namespace ShareX.UploadersLib.GUI
         public EmailForm()
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
         }
 
-        public EmailForm(string toEmail, string subject, string body)
-            : this()
+        public EmailForm(string toEmail, string subject, string body) : this()
         {
             txtToEmail.Text = toEmail;
             txtSubject.Text = subject;

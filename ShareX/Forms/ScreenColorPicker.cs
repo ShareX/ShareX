@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -106,7 +106,7 @@ namespace ShareX
 
         private void btnColorPicker_Click(object sender, EventArgs e)
         {
-            if (!colorTimer.Enabled) SetCurrentColor(NewColor);
+            if (!colorTimer.Enabled) SetCurrentColor(NewColor, true);
             UpdateControls(!colorTimer.Enabled);
         }
 
@@ -114,7 +114,7 @@ namespace ShareX
         {
             try
             {
-                SetCurrentColor(NewColor);
+                SetCurrentColor(NewColor, true);
                 UpdateControls(false);
 
                 Hide();
@@ -129,7 +129,7 @@ namespace ShareX
             }
             finally
             {
-                this.ShowActivate();
+                this.ForceActivate();
             }
         }
 
@@ -151,7 +151,7 @@ namespace ShareX
             if (e.KeyCode == Keys.ControlKey && !txtHex.Focused)
             {
                 btnColorPicker.Focus();
-                if (!colorTimer.Enabled) SetCurrentColor(NewColor);
+                if (!colorTimer.Enabled) SetCurrentColor(NewColor, true);
                 UpdateControls(!colorTimer.Enabled);
                 e.SuppressKeyPress = true;
             }

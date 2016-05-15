@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class AutomateForm : BaseForm
+    public partial class AutomateForm : Form
     {
         private static AutomateForm instance;
 
@@ -49,6 +49,8 @@ namespace ShareX.HelpersLib
         private AutomateForm(List<ScriptInfo> scripts)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+
             rtbInput.AddContextMenu();
             tokenizer.Keywords = FunctionManager.Functions.Select(x => x.Key).ToArray();
             cbFunctions.Items.AddRange(tokenizer.Keywords);
@@ -228,7 +230,7 @@ KeyPressText ""Loop""";
             if (!closing)
             {
                 btnRun.Text = Resources.Start;
-                this.ShowActivate();
+                this.ForceActivate();
             }
         }
 
@@ -289,7 +291,7 @@ KeyPressText ""Loop""";
                 {
                     txtScriptName.Text = scriptInfo.Name;
                     rtbInput.Text = scriptInfo.Script;
-                    nudLineDelay.Value = scriptInfo.LineDelay;
+                    nudLineDelay.SetValue(scriptInfo.LineDelay);
                     Tokenize();
                 }
             }

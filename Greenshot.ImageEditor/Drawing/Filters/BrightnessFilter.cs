@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -32,8 +32,7 @@ namespace Greenshot.Drawing.Filters
     [Serializable()]
     public class BrightnessFilter : AbstractFilter
     {
-        public BrightnessFilter(DrawableContainer parent)
-            : base(parent)
+        public BrightnessFilter(DrawableContainer parent) : base(parent)
         {
             AddField(GetType(), FieldType.BRIGHTNESS, 0.9d);
         }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -523,7 +523,7 @@ namespace ShareX.HelpersLib
 
         public static Image DrawCheckers(Image img)
         {
-            return DrawCheckers(img, 8, Color.LightGray, Color.White);
+            return DrawCheckers(img, 10, Color.LightGray, Color.White);
         }
 
         public static Image DrawCheckers(Image img, int size, Color color1, Color color2)
@@ -548,13 +548,18 @@ namespace ShareX.HelpersLib
             Bitmap bmp = new Bitmap(width, height);
 
             using (Graphics g = Graphics.FromImage(bmp))
-            using (Image checker = CreateCheckers(8, Color.LightGray, Color.White))
+            using (Image checker = CreateCheckers())
             using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
             {
                 g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmp.Width, bmp.Height));
             }
 
             return bmp;
+        }
+
+        public static Image CreateCheckers()
+        {
+            return CreateCheckers(10, Color.LightGray, Color.White);
         }
 
         public static Image CreateCheckers(int size, Color color1, Color color2)
@@ -852,7 +857,7 @@ namespace ShareX.HelpersLib
 
         public static void Blur(Bitmap sourceImage, int radius)
         {
-            if (GDIplus.IsBlurPossible(radius))
+            if (GDIplus.isBlurPossible(radius))
             {
                 GDIplus.ApplyBlur(sourceImage, new Rectangle(0, 0, sourceImage.Width, sourceImage.Height), radius, false);
             }
@@ -1207,7 +1212,7 @@ namespace ShareX.HelpersLib
                     sfd.FileName = Path.GetFileNameWithoutExtension(filePath);
                 }
 
-                sfd.DefaultExt = ".png";
+                sfd.DefaultExt = "png";
                 sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
@@ -1282,6 +1287,69 @@ namespace ShareX.HelpersLib
             }
 
             return bmp;
+        }
+
+        public static Image CreateColorPickerIcon(Color color, Rectangle rect)
+        {
+            Bitmap bmp = new Bitmap(rect.Width, rect.Height);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                DrawColorPickerIcon(g, color, rect);
+            }
+
+            return bmp;
+        }
+
+        public static void DrawColorPickerIcon(Graphics g, Color color, Rectangle rect)
+        {
+            if (color.A < 255)
+            {
+                using (Image checker = CreateCheckers(rect.Width / 2, rect.Height / 2, Color.LightGray, Color.White))
+                {
+                    g.DrawImage(checker, rect);
+                }
+            }
+
+            using (SolidBrush brush = new SolidBrush(color))
+            {
+                g.FillRectangle(brush, rect);
+            }
+
+            g.DrawRectangleProper(Pens.Black, rect);
+        }
+
+        public static void HighlightImage(Bitmap bmp)
+        {
+            HighlightImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+        }
+
+        public static void HighlightImage(Bitmap bmp, Color highlightColor)
+        {
+            HighlightImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), highlightColor);
+        }
+
+        public static void HighlightImage(Bitmap bmp, Rectangle rect)
+        {
+            HighlightImage(bmp, rect, Color.Yellow);
+        }
+
+        public static void HighlightImage(Bitmap bmp, Rectangle rect, Color highlightColor)
+        {
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+            {
+                for (int y = rect.Y; y < rect.Height; y++)
+                {
+                    for (int x = rect.X; x < rect.Width; x++)
+                    {
+                        ColorBgra color = unsafeBitmap.GetPixel(x, y);
+                        color.Red = Math.Min(color.Red, highlightColor.R);
+                        color.Green = Math.Min(color.Green, highlightColor.G);
+                        color.Blue = Math.Min(color.Blue, highlightColor.B);
+                        unsafeBitmap.SetPixel(x, y, color);
+                    }
+                }
+            }
         }
     }
 }

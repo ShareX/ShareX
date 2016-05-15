@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,13 +27,24 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class GfycatFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Gfycat;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new GfycatUploader();
+        }
+    }
+
     public class GfycatUploader : FileUploader
     {
         public bool NoResize { get; set; }
@@ -93,7 +104,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (response.Error != null)
                     {
-                        result.Errors.Add(response.Error);
+                        Errors.Add(response.Error);
                         result.IsSuccess = false;
                         break;
                     }
@@ -114,7 +125,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
             else
             {
-                result.Errors.Add(transcodeResponse.Error);
+                Errors.Add(transcodeResponse.Error);
                 result.IsSuccess = false;
             }
         }

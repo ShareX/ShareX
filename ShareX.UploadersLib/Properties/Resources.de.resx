@@ -123,17 +123,44 @@
   <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
     <value>Pfad existiert nicht:</value>
   </data>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
+    <value>Bist du dir sicher, dass du {0} aus deiner Dropbox löschen willst?</value>
+  </data>
+  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
+    <value>Verbinde zu {0}</value>
+  </data>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>Aktualisiere Autorisierung ist nicht unterstüzt</value>
+  </data>
   <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
     <value>zu erstellender Verzeichnisname</value>
   </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
-    <value>Bist du dir sicher, dass du {0} aus deiner Dropbox löschen willst?</value>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>Benutzer ID:</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Ungültiger Gerätename</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Status: Login fehlgeschlagen</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Hochladepfad:</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Box Aktualisierung der Ordnerliste fehlgeschlagen</value>
+  </data>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Fehler</value>
   </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
     <value>Datei löschen?</value>
   </data>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Verbinde zu {0}</value>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Rootordner</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Eingeloggt als {0}.</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX FTP Gerät</value>
@@ -150,9 +177,6 @@
   <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
     <value>Status: Eingeloggt</value>
   </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Status: Login fehlgeschlagen</value>
-  </data>
   <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
     <value>Status: Nicht eingeloggt</value>
   </data>
@@ -162,17 +186,8 @@
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Twitter Fehler:</value>
   </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Box Aktualisierung der Ordnerliste fehlgeschlagen</value>
-  </data>
   <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
     <value>Einloggen erfolgreich aber Zugriff auf Accountinfo fehlgeschlagen</value>
-  </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Fehler</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Ungültiger Gerätename</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
     <value>Ursprünglicher Albumpfad z.B.</value>
@@ -198,14 +213,8 @@
   <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
     <value>Nicht konfiguriert</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Eingeloggt als {0}.</value>
-  </data>
   <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
     <value>Nicht eingeloggt.</value>
-  </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Aktualisiere Autorisierung ist nicht unterstüzt</value>
   </data>
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} erfolgreich erstellt</value>
@@ -227,19 +236,10 @@ Hergestellte Ordner:</value>
     <value>Herunterladpfad:</value>
   </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
-    <value>Email:</value>
+    <value>E-Mail:</value>
   </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
     <value>Name:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Hochladepfad:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>Benutzer ID:</value>
-  </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Rootordner</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Authentifizierung erfoderlich.</value>
@@ -247,16 +247,10 @@ Hergestellte Ordner:</value>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Ordner abfragen...</value>
   </data>
-  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
-    <value>Hubic Erneuerung der Ordnerliste fehlgeschlagen</value>
-  </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Kann kein gültiges FTP Konto finden.</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>Das FTP-Programm unterstützt nur FTP oder FTPS.</value>
-  </data>
-  <data name="Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__" xml:space="preserve">
-    <value>Bitte wähle einen der Pomf Hochlader vom Pomf Tab im Zieleinstellungs-Fenster aus.</value>
   </data>
 </root>

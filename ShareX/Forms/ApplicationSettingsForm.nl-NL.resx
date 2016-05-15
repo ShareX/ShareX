@@ -117,53 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Geavanceerd</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Instellingen programma</value>
   </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Blader...</value>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>Proxy</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Blader...</value>
   </data>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
-    <value>Toevoegen...</value>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>Openen...</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
     <value>Bewerken...</value>
   </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Verwijder</value>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 zonder limiet)</value>
   </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Openen...</value>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>Buffergrootte:</value>
   </data>
-  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
-    <value>Openen...</value>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>ShareX persoonlijke map:</value>
   </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Afdrukinstellingen afbeeldingen...</value>
+  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
+    <value>Opgelet: Je moet ShareX heropstarten alvorens de aangebrachte wijzigingen effect zullen hebben.</value>
   </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>Toon geen afdrukdialoog voor afbeeldingen</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Aantal keer opnieuw proberen bij mislukte upload:</value>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>Integratie</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
     <value>Toon geen Windows dialoog voor afdrukken</value>
   </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Onthoud de positie van het algemene venster</value>
-  </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Onthoud de grootte van het algemene venster</value>
-  </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Toon ShareX in het "Verzenden naar" menu</value>
-  </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Toon een "Upload met ShareX" knop in het context menu</value>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>Tweede bestandsuploaders</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Toon tray icoon</value>
@@ -171,50 +162,56 @@
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>Minimaliseer naar tray bij opstarten</value>
   </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Toon ShareX in het "Verzenden naar" menu</value>
+  </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Start ShareX als Windows start</value>
   </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Toon vooruitgang in de taakbalk knop</value>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>Onthoud de positie van het algemene venster</value>
   </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Toon vooruitgang in het tray icoon</value>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>Ondersteuning voor Chrome extensie...</value>
   </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Gebruik een aangepaste map voor screenshots:</value>
+  <data name="llTranslators.Text" xml:space="preserve">
+    <value>Help ons om ShareX naar uw taal te vertalen!</value>
   </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Beschrijving</value>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Blader...</value>
   </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Formaat</value>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>Verwijder</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Gebruik secundaire uploaders in de volgende volgorde tijdens herproberen</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Tweede bestandsuploaders</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Tweede afbeeldingsuploaders</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Tweede tekstuploaders</value>
-  </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Taal:</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Opgelet: Je moet ShareX heropstarten alvorens de aangebrachte wijzigingen effect zullen hebben.</value>
-  </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX persoonlijke map:</value>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>Toevoegen...</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>Klembord formaten</value>
   </data>
-  <data name="lblBufferSize.Text" xml:space="preserve">
-    <value>Buffergrootte:</value>
+  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Gebruik secundaire uploaders in de volgende volgorde tijdens herproberen</value>
+  </data>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>Resultaten</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>Tweede afbeeldingsuploaders</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>Toon vooruitgang in de taakbalk knop</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>Maximum simultane uploads:</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>Afdrukken</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>Afdrukinstellingen afbeeldingen...</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Host:</value>
@@ -222,58 +219,61 @@
   <data name="lblProxyMethod.Text" xml:space="preserve">
     <value>Proxy configuratie:</value>
   </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
   <data name="lblProxyPort.Text" xml:space="preserve">
     <value>Poort:</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Gebruik een aangepaste map voor screenshots:</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>Openen...</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>Toon vooruitgang in het tray icoon</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Gebruikersnaam:</value>
   </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>Onthoud de grootte van het algemene venster</value>
+  </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Patroon voor deelmappen:</value>
-  </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Maximum simultane uploads:</value>
-  </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 zonder limiet)</value>
-  </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Help ons om ShareX naar uw taal te vertalen!</value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Geavanceerd</value>
-  </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>Algemeen</value>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Paden</value>
   </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Afdrukken</value>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>Toon geen afdrukdialoog voor afbeeldingen</value>
   </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
-  </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Uploaden</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultaten</value>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
     <value>Opnieuw proberen</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Ondersteuning voor Chrome extensie...</value>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Uploaden</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>Aantal keer opnieuw proberen bij mislukte upload:</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Formaat</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>Tweede tekstuploaders</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>Toon "In-App" op Steam zolang ShareX open is</value>
   </data>
-  <data name="tpIntegration.Text" xml:space="preserve">
-    <value>Integratie</value>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Algemeen</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Taal:</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>Toon een "Upload met ShareX" knop in het context menu</value>
   </data>
 </root>

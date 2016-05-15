@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,6 +36,15 @@ namespace ShareX.ScreenCaptureLib
     {
         [DefaultValue(true), Description("Allow screenshot capture as soon as the mouse is released. This disables the ability to capture multiple shapes and to move and/or resize them.")]
         public bool QuickCrop { get; set; }
+
+        [DefaultValue(true), Description("If annotation is disabled then right click will cancel screen capture instead of opening options menu.")]
+        public bool AnnotationEnabled { get; set; }
+
+        [DefaultValue(true), Description("Allows selection of window regions in region capture.")]
+        public bool DetectWindows { get; set; }
+
+        [DefaultValue(true), Description("If detect windows setting is chosen, this setting will also allow detecting window controls.")]
+        public bool DetectControls { get; set; }
 
         [DefaultValue(true), Description("Show coordinate and size information.")]
         public bool ShowInfo { get; set; }
@@ -74,12 +83,6 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(false), Description("Result image will have border around the shape(s).")]
         public bool DrawBorder { get; set; }
 
-        [DefaultValue(false), Description("You can use window capture mode in all rectangle type shapes. Also includes window client area.")]
-        public bool ForceWindowCapture { get; set; }
-
-        [DefaultValue(false), Description("If window capture mode enabled this setting will also allow to capture window controls.")]
-        public bool IncludeControls { get; set; }
-
         [DefaultValue(1), Description("Number of pixels to move shape at each arrow key stroke.")]
         public int MinMoveSpeed { get; set; }
 
@@ -98,8 +101,16 @@ namespace ShareX.ScreenCaptureLib
         [Description("How close to a snap size you must be for it to snap.")]
         public List<SnapSize> SnapSizes { get; set; }
 
-        [DefaultValue(RegionShape.Rectangle), Description("Current region shape.")]
-        public RegionShape CurrentRegionShape { get; set; }
+        public bool ShowMenuTip = true;
+
+        public ShapeType CurrentShapeType = ShapeType.RegionRectangle;
+        public Color ShapeBorderColor = Color.Red;
+        public int ShapeBorderSize = 2;
+        public Color ShapeFillColor = Color.FromArgb(0, 0, 0, 0);
+        public int ShapeRoundedRectangleRadius = 15;
+        public int ShapeBlurRadius = 15;
+        public int ShapePixelateSize = 7;
+        public Color ShapeHighlightColor = Color.Yellow;
 
         public SurfaceOptions()
         {
@@ -113,10 +124,7 @@ namespace ShareX.ScreenCaptureLib
                 new SnapSize(1280, 720), // 720p
                 new SnapSize(1920, 1080), // 1080p
                 new SnapSize(2560, 1440), // 1440p
-                new SnapSize(3840, 2160), // 2160p
-                new SnapSize(800, 600), // SVGA
-                new SnapSize(1024, 768), // XGA
-                new SnapSize(4096, 2160) // 4K
+                new SnapSize(3840, 2160) // 2160p
             };
         }
     }

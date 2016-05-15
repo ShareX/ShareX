@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -465,19 +465,13 @@ namespace ShareX.HelpersLib
             return retVal;
         }
 
-        /// <summary>
-        /// Flashes a window until the window comes to the foreground
-        /// Receives the form that will flash
-        /// </summary>
-        /// <param name="hWnd">The handle to the window to flash</param>
-        /// <returns>whether or not the window needed flashing</returns>
-        public static bool FlashWindowEx(Form frm)
+        public static bool FlashWindowEx(Form frm, uint flashCount = uint.MaxValue)
         {
             FLASHWINFO fInfo = new FLASHWINFO();
             fInfo.cbSize = Convert.ToUInt32(Marshal.SizeOf(fInfo));
             fInfo.hwnd = frm.Handle;
             fInfo.dwFlags = (uint)FlashWindow.FLASHW_ALL | (uint)FlashWindow.FLASHW_TIMERNOFG;
-            fInfo.uCount = uint.MaxValue;
+            fInfo.uCount = flashCount;
             fInfo.dwTimeout = 0;
 
             return FlashWindowEx(ref fInfo);

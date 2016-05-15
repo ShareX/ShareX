@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,10 +29,28 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class FlickrImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Flickr;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.FlickrAuthInfo.Token);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret, config.FlickrAuthInfo, config.FlickrSettings);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFlickr;
+    }
+
     public class FlickrUploader : ImageUploader
     {
         private string API_Key, API_Secret;
@@ -50,8 +68,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             API_Secret = secret;
         }
 
-        public FlickrUploader(string key, string secret, FlickrAuthInfo auth, FlickrSettings settings)
-            : this(key, secret)
+        public FlickrUploader(string key, string secret, FlickrAuthInfo auth, FlickrSettings settings) : this(key, secret)
         {
             Auth = auth;
             Settings = settings;

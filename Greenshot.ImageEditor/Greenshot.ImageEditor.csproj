@@ -63,15 +63,13 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomMarshalers" />
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\EditorConfiguration.cs" />
-    <Compile Include="Controls\AnimatingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Controls\BackgroundForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +88,7 @@
     <Compile Include="Controls\ColorButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\CustomToolStripProfessionalRenderer.cs" />
     <Compile Include="Controls\FormWithoutActivation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,22 +168,26 @@
     <Compile Include="Controls\Pipette.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Core\WindowsHelper.cs" />
     <Compile Include="Core\BinaryStructHelper.cs" />
     <Compile Include="Core\Cache.cs" />
+    <Compile Include="Core\CaptureHandler.cs" />
     <Compile Include="Core\ClipboardHelper.cs" />
     <Compile Include="Configuration\CoreConfiguration.cs" />
     <Compile Include="Core\Effects.cs" />
-    <Compile Include="Core\EncryptionHelper.cs" />
     <Compile Include="Core\EnumExtensions.cs" />
+    <Compile Include="Core\EventDelay.cs" />
     <Compile Include="Core\FastBitmap.cs" />
     <Compile Include="Core\FilenameHelper.cs" />
     <Compile Include="Core\GreenshotResources.cs" />
     <Compile Include="Core\ImageHelper.cs" />
     <Compile Include="Core\ImageOutput.cs" />
+    <Compile Include="Core\NetworkHelper.cs" />
     <Compile Include="Core\Objects.cs" />
+    <Compile Include="Core\PluginUtils.cs" />
     <Compile Include="Core\QuantizerHelper.cs" />
+    <Compile Include="Core\StringExtensions.cs" />
     <Compile Include="Core\WindowCapture.cs" />
-    <Compile Include="Core\WindowsHelper.cs" />
     <Compile Include="Drawing\ArrowContainer.cs" />
     <Compile Include="Drawing\ImageContainer.cs" />
     <Compile Include="Drawing\CropContainer.cs" />
@@ -239,6 +242,14 @@
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\EditorSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditorSettingsForm.Designer.cs">
+      <DependentUpon>EditorSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interop\IDispatch.cs" />
+    <Compile Include="Interop\IUnknown.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\LOG.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -257,6 +268,9 @@
     <Compile Include="UnmanagedHelpers\User32.cs" />
     <Compile Include="UnmanagedHelpers\Win32Errors.cs" />
     <Compile Include="UnmanagedHelpers\WinMM.cs" />
+    <EmbeddedResource Include="Forms\EditorSettingsForm.resx">
+      <DependentUpon>EditorSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

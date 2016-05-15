@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public partial class FFmpegOptionsForm : BaseForm
+    public partial class FFmpegOptionsForm : Form
     {
         public ScreencastOptions Options { get; private set; }
         public string DefaultToolsPath { get; set; }
@@ -43,6 +43,7 @@ namespace ShareX.ScreenCaptureLib
         public FFmpegOptionsForm(ScreencastOptions options)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             Options = options;
 
             eiFFmpeg.ObjectType = typeof(FFmpegOptions);
@@ -79,14 +80,14 @@ namespace ShareX.ScreenCaptureLib
             tbUserArgs.Text = Options.FFmpeg.UserArgs;
 
             // x264
-            nudx264CRF.Value = Options.FFmpeg.x264_CRF.Between((int)nudx264CRF.Minimum, (int)nudx264CRF.Maximum);
+            nudx264CRF.SetValue(Options.FFmpeg.x264_CRF);
             cbx264Preset.SelectedIndex = (int)Options.FFmpeg.x264_Preset;
 
             // VPx
-            nudVP8Bitrate.Value = Options.FFmpeg.VPx_bitrate.Between((int)nudVP8Bitrate.Minimum, (int)nudVP8Bitrate.Maximum);
+            nudVP8Bitrate.SetValue(Options.FFmpeg.VPx_bitrate);
 
             // Xvid
-            nudXvidQscale.Value = Options.FFmpeg.XviD_qscale.Between((int)nudXvidQscale.Minimum, (int)nudXvidQscale.Maximum);
+            nudXvidQscale.SetValue(Options.FFmpeg.XviD_qscale);
 
             // GIF
             cbGIFStatsMode.SelectedIndex = (int)Options.FFmpeg.GIFStatsMode;
@@ -185,7 +186,27 @@ namespace ShareX.ScreenCaptureLib
                 {
                     txtCommandLinePreview.Text = Options.GetFFmpegArgs();
                 }
+
+                UpdateFFmpegPathUI();
             }
+        }
+
+        private void UpdateFFmpegPathUI()
+        {
+#if !STEAM
+            Color backColor = Color.FromArgb(255, 200, 200);
+
+            try
+            {
+                if (File.Exists(Options.FFmpeg.FFmpegPath))
+                {
+                    backColor = Color.FromArgb(200, 255, 200);
+                }
+            }
+            catch { }
+
+            txtFFmpegPath.BackColor = backColor;
+#endif
         }
 
         private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
@@ -199,15 +220,12 @@ namespace ShareX.ScreenCaptureLib
         private void txtFFmpegPath_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.CLIPath = txtFFmpegPath.Text;
-
-#if !STEAM
-            txtFFmpegPath.BackColor = File.Exists(txtFFmpegPath.Text) ? Color.FromArgb(200, 255, 200) : Color.FromArgb(255, 200, 200);
-#endif
+            UpdateFFmpegPathUI();
         }
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
         {
-            if (Helpers.BrowseFile(Resources.FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe, txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
+            if (Helpers.BrowseFile(Resources.FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe, txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), true))
             {
                 RefreshSourcesAsync();
             }
@@ -395,7 +413,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 this.InvokeSafe(() =>
                 {
-                    txtFFmpegPath.Text = extractPath;
+                    txtFFmpegPath.Text = Helpers.GetVariableFolderPath(extractPath);
                     RefreshSourcesAsync();
                     UpdateUI();
                 });

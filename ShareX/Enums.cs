@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 
@@ -82,27 +83,31 @@ namespace ShareX
         Preparing,
         Working,
         Stopping,
-        Completed
+        Completed,
+        History
     }
 
     [Flags]
     public enum AfterCaptureTasks // Localized
     {
         None = 0,
-        ShowAfterCaptureWindow = 1,
-        AddImageEffects = 1 << 1,
-        AnnotateImage = 1 << 2,
-        CopyImageToClipboard = 1 << 3,
-        SendImageToPrinter = 1 << 4,
-        SaveImageToFile = 1 << 5,
-        SaveImageToFileWithDialog = 1 << 6,
-        SaveThumbnailImageToFile = 1 << 7,
-        PerformActions = 1 << 8,
-        CopyFileToClipboard = 1 << 9,
-        CopyFilePathToClipboard = 1 << 10,
-        ShowBeforeUploadWindow = 1 << 11,
-        UploadImageToHost = 1 << 12,
-        DeleteFile = 1 << 13
+        ShowQuickTaskMenu = 1,
+        ShowAfterCaptureWindow = 1 << 1,
+        AddImageEffects = 1 << 2,
+        AnnotateImage = 1 << 3,
+        CopyImageToClipboard = 1 << 4,
+        SendImageToPrinter = 1 << 5,
+        SaveImageToFile = 1 << 6,
+        SaveImageToFileWithDialog = 1 << 7,
+        SaveThumbnailImageToFile = 1 << 8,
+        PerformActions = 1 << 9,
+        CopyFileToClipboard = 1 << 10,
+        CopyFilePathToClipboard = 1 << 11,
+        ShowInExplorer = 1 << 12,
+        DoOCR = 1 << 13,
+        ShowBeforeUploadWindow = 1 << 14,
+        UploadImageToHost = 1 << 15,
+        DeleteFile = 1 << 16
     }
 
     [Flags]
@@ -124,7 +129,6 @@ namespace ShareX
         ActiveMonitor,
         Window,
         ActiveWindow,
-        RectangleWindow,
         Rectangle,
         Polygon,
         Freehand,
@@ -136,9 +140,11 @@ namespace ShareX
     {
         Region,
         ActiveWindow,
+        CustomRegion,
         LastRegion
     }
 
+    [JsonConverter(typeof(HotkeyTypeEnumConverter))]
     public enum HotkeyType // Localized + Category
     {
         None,
@@ -155,8 +161,6 @@ namespace ShareX
         ActiveWindow,
         ActiveMonitor,
         RectangleRegion,
-        WindowRectangle,
-        RectangleAnnotate,
         RectangleLight,
         RectangleTransparent,
         PolygonRegion,
@@ -170,9 +174,11 @@ namespace ShareX
         // Screen record
         ScreenRecorder,
         ScreenRecorderActiveWindow,
+        ScreenRecorderCustomRegion,
         StartScreenRecorder,
         ScreenRecorderGIF,
         ScreenRecorderGIFActiveWindow,
+        ScreenRecorderGIFCustomRegion,
         StartScreenRecorderGIF,
         // Tools
         ColorPicker,
@@ -180,7 +186,6 @@ namespace ShareX
         ImageEditor,
         ImageEffects,
         HashCheck,
-        IRCClient,
         DNSChanger,
         QRCode,
         Ruler,
@@ -193,7 +198,10 @@ namespace ShareX
         MonitorTest,
         // Other
         DisableHotkeys,
-        OpenScreenshotsFolder
+        OpenMainWindow,
+        OpenScreenshotsFolder,
+        OpenHistory,
+        OpenImageHistory
     }
 
     public enum HotkeyStatus

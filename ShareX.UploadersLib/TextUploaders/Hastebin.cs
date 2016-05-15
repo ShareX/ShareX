@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,9 +25,28 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class HastebinTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Hastebin;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Hastebin()
+            {
+                CustomDomain = config.HastebinCustomDomain,
+                SyntaxHighlighting = config.HastebinSyntaxHighlighting
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpHastebin;
+    }
+
     public sealed class Hastebin : TextUploader
     {
         public string CustomDomain { get; set; }

@@ -201,12 +201,6 @@
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Показать окно ShareX</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Область (Окна и элементы)</value>
-  </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Область (Окна и элементы)</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Весь экран</value>
   </data>
@@ -486,9 +480,6 @@
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Индексация папки…</value>
   </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>Клиент IRC…</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR код…</value>
   </data>
@@ -533,9 +524,6 @@
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Индексация папки…</value>
-  </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>Клиент IRC…</value>
   </data>
   <data name="tsmiTrayPolygon.Text" xml:space="preserve">
     <value>Многоугольник</value>
@@ -668,5 +656,8 @@
   </data>
   <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
     <value>Проверить отправку ссылки</value>
+  </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Скрыть столбцы</value>
   </data>
 </root>

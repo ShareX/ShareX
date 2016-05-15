@@ -397,7 +397,7 @@
   </data>
   <data name="btnPingPrimary.Text" xml:space="preserve">
     <value>Ping</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnPingPrimary.Name" xml:space="preserve">
     <value>btnPingPrimary</value>
   </data>
@@ -421,7 +421,7 @@
   </data>
   <data name="btnPingSecondary.Text" xml:space="preserve">
     <value>Ping</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnPingSecondary.Name" xml:space="preserve">
     <value>btnPingSecondary</value>
   </data>
@@ -448,12 +448,12 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX DNS Changer</value>
+    <value>ShareX - DNS Changer</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>DNSChangerForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

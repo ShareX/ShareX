@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
-    <value>Réduction automatique dans la barre des tâches</value>
+    <value>Réduire automatiquement dans la barre des tâches</value>
   </data>
   <data name="rbCustomRegion.Text" xml:space="preserve">
     <value>Région personnalisée</value>
@@ -133,7 +133,7 @@
     <value>Région</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
-    <value>Temps de répétition:</value>
+    <value>Temps de répétition :</value>
   </data>
   <data name="lblDurationSeconds.Text" xml:space="preserve">
     <value>secondes</value>
@@ -154,6 +154,6 @@
     <value>Statut</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>Attendre que les tâches soient complètes</value>
+    <value>Attendre que les tâches soient complétées</value>
   </data>
 </root>

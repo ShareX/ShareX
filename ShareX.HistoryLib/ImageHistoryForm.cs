@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -35,53 +35,82 @@ using View = Manina.Windows.Forms.View;
 
 namespace ShareX.HistoryLib
 {
-    public partial class ImageHistoryForm : BaseForm
+    public partial class ImageHistoryForm : Form
     {
         public string HistoryPath { get; private set; }
         public int MaxItemCount { get; set; }
-
-        public int ViewMode
-        {
-            get
-            {
-                return (int)ilvImages.View;
-            }
-            set
-            {
-                if (value.IsBetween(0, 3))
-                {
-                    ilvImages.View = (View)value;
-                }
-            }
-        }
-
-        public Size ThumbnailSize
-        {
-            get
-            {
-                return ilvImages.ThumbnailSize;
-            }
-            set
-            {
-                ilvImages.ThumbnailSize = value;
-            }
-        }
+        public int ViewMode { get; set; }
+        public Size ThumbnailSize { get; set; }
 
         private HistoryManager history;
         private HistoryItemManager him;
         private HistoryItem[] historyItems;
 
-        public ImageHistoryForm(string historyPath, int viewMode, Size thumbnailSize, int maxItemCount = -1)
+        public ImageHistoryForm(string historyPath, int viewMode, Size thumbnailSize, int maxItemCount)
         {
             InitializeComponent();
-            Text = "ShareX - " + string.Format("Image history: {0}", historyPath);
+            Icon = ShareXResources.Icon;
 
             HistoryPath = historyPath;
-            MaxItemCount = maxItemCount;
-            ViewMode = viewMode;
-            ThumbnailSize = thumbnailSize;
 
-            tsbQuickList.Checked = MaxItemCount > -1;
+            ViewMode = viewMode.Between(0, 3);
+            ilvImages.View = (View)ViewMode;
+
+            switch (ilvImages.View)
+            {
+                default:
+                case View.Thumbnails:
+                    tsmiViewModeThumbnails.RadioCheck();
+                    break;
+                case View.Gallery:
+                    tsmiViewModeGallery.RadioCheck();
+                    break;
+                case View.Pane:
+                    tsmiViewModePane.RadioCheck();
+                    break;
+            }
+
+            ThumbnailSize = thumbnailSize;
+            ilvImages.ThumbnailSize = ThumbnailSize;
+
+            switch (ThumbnailSize.Width)
+            {
+                case 75:
+                    tsmiThumbnailSize75.RadioCheck();
+                    break;
+                default:
+                case 100:
+                    tsmiThumbnailSize100.RadioCheck();
+                    break;
+                case 150:
+                    tsmiThumbnailSize150.RadioCheck();
+                    break;
+                case 200:
+                    tsmiThumbnailSize200.RadioCheck();
+                    break;
+                case 250:
+                    tsmiThumbnailSize250.RadioCheck();
+                    break;
+            }
+
+            MaxItemCount = maxItemCount;
+
+            if (MaxItemCount <= 0)
+            {
+                tsmiMaxImageLimit0.RadioCheck();
+            }
+            else if (MaxItemCount <= 100)
+            {
+                tsmiMaxImageLimit100.RadioCheck();
+            }
+            else if (MaxItemCount <= 250)
+            {
+                tsmiMaxImageLimit250.RadioCheck();
+            }
+            else
+            {
+                tsmiMaxImageLimit1000.RadioCheck();
+            }
 
             him = new HistoryItemManager();
             him.GetHistoryItems += him_GetHistoryItems;
@@ -103,19 +132,30 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] GetHistoryItems()
         {
-            IEnumerable<HistoryItem> tempHistoryItems = history.GetHistoryItems().Where(x => !string.IsNullOrEmpty(x.Filepath) && Helpers.IsImageFile(x.Filepath) && File.Exists(x.Filepath));
+            List<HistoryItem> result = new List<HistoryItem>();
 
-            if (MaxItemCount > -1)
+            List<HistoryItem> allHistoryItems = history.GetHistoryItems();
+
+            int itemCount = 0;
+
+            for (int i = allHistoryItems.Count - 1; i >= 0; i--)
             {
-                int skip = tempHistoryItems.Count() - MaxItemCount;
+                HistoryItem hi = allHistoryItems[i];
 
-                if (skip > 0)
+                if (!string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath) && File.Exists(hi.Filepath))
                 {
-                    tempHistoryItems = tempHistoryItems.Skip(skip);
+                    result.Add(hi);
+
+                    itemCount++;
+
+                    if (MaxItemCount > 0 && itemCount >= MaxItemCount)
+                    {
+                        break;
+                    }
                 }
             }
 
-            return tempHistoryItems.OrderByDescending(x => x.DateTime).ToArray();
+            return result.ToArray();
         }
 
         private HistoryItem[] him_GetHistoryItems()
@@ -128,7 +168,7 @@ namespace ShareX.HistoryLib
         private void ImageHistoryForm_Shown(object sender, EventArgs e)
         {
             Application.DoEvents();
-            this.ShowActivate();
+            this.ForceActivate();
             RefreshHistoryItems();
         }
 
@@ -165,61 +205,83 @@ namespace ShareX.HistoryLib
         {
             tsmiViewModeThumbnails.RadioCheck();
             ilvImages.View = View.Thumbnails;
+            ViewMode = (int)ilvImages.View;
         }
 
         private void tsmiViewModeGallery_Click(object sender, EventArgs e)
         {
             tsmiViewModeGallery.RadioCheck();
             ilvImages.View = View.Gallery;
+            ViewMode = (int)ilvImages.View;
         }
 
         private void tsmiViewModePane_Click(object sender, EventArgs e)
         {
             tsmiViewModePane.RadioCheck();
             ilvImages.View = View.Pane;
+            ViewMode = (int)ilvImages.View;
         }
 
         private void tsmiThumbnailSize75_Click(object sender, EventArgs e)
         {
             tsmiThumbnailSize75.RadioCheck();
             ilvImages.ThumbnailSize = new Size(75, 75);
+            ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
         private void tsmiThumbnailSize100_Click(object sender, EventArgs e)
         {
             tsmiThumbnailSize100.RadioCheck();
             ilvImages.ThumbnailSize = new Size(100, 100);
+            ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
         private void tsmiThumbnailSize150_Click(object sender, EventArgs e)
         {
             tsmiThumbnailSize150.RadioCheck();
             ilvImages.ThumbnailSize = new Size(150, 150);
+            ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
         private void tsmiThumbnailSize200_Click(object sender, EventArgs e)
         {
             tsmiThumbnailSize200.RadioCheck();
             ilvImages.ThumbnailSize = new Size(200, 200);
+            ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
         private void tsmiThumbnailSize250_Click(object sender, EventArgs e)
         {
             tsmiThumbnailSize250.RadioCheck();
             ilvImages.ThumbnailSize = new Size(250, 250);
+            ThumbnailSize = ilvImages.ThumbnailSize;
         }
 
-        private void tsbQuickList_Click(object sender, EventArgs e)
+        private void tsmiMaxImageLimit100_Click(object sender, EventArgs e)
         {
-            if (tsbQuickList.Checked)
-            {
-                MaxItemCount = 100;
-            }
-            else
-            {
-                MaxItemCount = -1;
-            }
+            tsmiMaxImageLimit100.RadioCheck();
+            MaxItemCount = 100;
+            RefreshHistoryItems();
+        }
 
+        private void tsmiMaxImageLimit250_Click(object sender, EventArgs e)
+        {
+            tsmiMaxImageLimit250.RadioCheck();
+            MaxItemCount = 250;
+            RefreshHistoryItems();
+        }
+
+        private void tsmiMaxImageLimit1000_Click(object sender, EventArgs e)
+        {
+            tsmiMaxImageLimit1000.RadioCheck();
+            MaxItemCount = 1000;
+            RefreshHistoryItems();
+        }
+
+        private void tsmiMaxImageLimit0_Click(object sender, EventArgs e)
+        {
+            tsmiMaxImageLimit0.RadioCheck();
+            MaxItemCount = 0;
             RefreshHistoryItems();
         }
 

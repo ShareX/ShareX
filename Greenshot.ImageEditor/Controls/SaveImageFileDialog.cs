@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -104,11 +104,13 @@ namespace GreenshotPlugin.Controls
             prepareFilterOptions();
             string fdf = "";
             int preselect = 0;
+            var outputFileFormatAsString = Enum.GetName(typeof(OutputFormat), conf.OutputFileFormat);
             for (int i = 0; i < filterOptions.Length; i++)
             {
                 FilterOption fo = filterOptions[i];
                 fdf += fo.Label + "|*." + fo.Extension + "|";
-                if (conf.OutputFileAsFullpath.EndsWith(fo.Extension, StringComparison.CurrentCultureIgnoreCase)) preselect = i;
+                if (outputFileFormatAsString == fo.Extension)
+                    preselect = i;
             }
             fdf = fdf.Substring(0, fdf.Length - 1);
             saveFileDialog.Filter = fdf;

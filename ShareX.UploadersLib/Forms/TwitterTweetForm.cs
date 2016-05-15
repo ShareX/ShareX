@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
 using System;
@@ -32,7 +31,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class TwitterTweetForm : BaseForm
+    public partial class TwitterTweetForm : Form
     {
         public string Message
         {
@@ -99,18 +98,16 @@ namespace ShareX.UploadersLib
         public TwitterTweetForm()
         {
             InitializeComponent();
-            Icon = Resources.Twitter;
+            Icon = ShareXResources.Icon;
             MediaMode = false;
         }
 
-        public TwitterTweetForm(OAuthInfo oauth)
-            : this()
+        public TwitterTweetForm(OAuthInfo oauth) : this()
         {
             AuthInfo = oauth;
         }
 
-        public TwitterTweetForm(OAuthInfo oauth, string message)
-            : this(oauth)
+        public TwitterTweetForm(OAuthInfo oauth, string message) : this(oauth)
         {
             Message = message;
         }
@@ -153,7 +150,7 @@ namespace ShareX.UploadersLib
         private void TwitterMsg_Shown(object sender, EventArgs e)
         {
             txtTweet.Select(txtTweet.TextLength, 0);
-            this.ShowActivate();
+            this.ForceActivate();
         }
 
         private void txtTweet_TextChanged(object sender, EventArgs e)

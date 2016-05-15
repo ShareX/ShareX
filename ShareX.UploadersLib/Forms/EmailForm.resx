@@ -280,7 +280,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnSend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 232</value>
+    <value>136, 232</value>
   </data>
   <data name="btnSend.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 24</value>
@@ -307,7 +307,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 232</value>
+    <value>216, 232</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 24</value>
@@ -339,6 +339,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>298, 265</value>
   </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Send Email</value>
   </data>
@@ -346,6 +349,6 @@
     <value>EmailForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

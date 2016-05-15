@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,7 +36,7 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public partial class FTPClientForm : BaseForm
+    public partial class FTPClientForm : Form
     {
         private const string Root = "/";
 
@@ -49,6 +49,7 @@ namespace ShareX.UploadersLib
         public FTPClientForm(FTPAccount account)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
 
             lblStatus.Text = string.Empty;
             lvFTPList.SubItemEndEditing += lvFTPList_SubItemEndEditing;
@@ -294,7 +295,7 @@ namespace ShareX.UploadersLib
             using (InputBox ib = new InputBox(Resources.FTPClientForm_FTPCreateDirectory_Directory_name_to_create))
             {
                 ib.ShowDialog();
-                this.ShowActivate();
+                this.ForceActivate();
                 if (ib.DialogResult == DialogResult.OK)
                 {
                     Client.CreateDirectory(URLHelpers.CombineURL(currentDirectory, ib.InputText));
@@ -508,8 +509,8 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            downloadToolStripMenuItem.Enabled = renameToolStripMenuItem.Enabled = deleteToolStripMenuItem.Enabled =
-                copyURLsToClipboardToolStripMenuItem.Enabled = openURLToolStripMenuItem.Enabled = enabled;
+            tsmiDownload.Enabled = tsmiRename.Enabled = tsmiDelete.Enabled =
+                tsmiCopyURL.Enabled = tsmiOpenURL.Enabled = enabled;
 
             CheckFiles(lvFTPList.SelectedItems.Count > 0);
         }

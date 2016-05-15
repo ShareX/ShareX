@@ -117,292 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>외부 라이브러리</value>
-  </data>
-  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
-    <value>문제점</value>
-  </data>
-  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
-    <value>프로젝트 페이지</value>
-  </data>
-  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
-    <value>번역자</value>
-  </data>
-  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
-    <value>웹사이트</value>
+  <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
+    <value>남은 시간: {0}초 ({1}%) 총: {2}</value>
   </data>
   <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
     <value>기여자</value>
   </data>
-  <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
-    <value>파일 경로는 비어 있을 수 없습니다.</value>
-  </data>
-  <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
-    <value>이름은 비어 있을 수 없습니다.</value>
-  </data>
-  <data name="ActionsForm_btnPathBrowse_Click_Choose_file_path" xml:space="preserve">
-    <value>파일 경로 선택</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>스크린샷 폴더 경로 선택</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>ShareX 개인 폴더 선택</value>
-  </data>
-  <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>언어 설정을 변경하려면 ShareX를 재시작해야 합니다.
-ShareX를 재시작할까요?</value>
-  </data>
-  <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
-    <value>시작</value>
-  </data>
-  <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
-    <value>중지</value>
-  </data>
-  <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
-    <value>X: {0}, Y: {1}, 너비: {2}, 높이: {3}</value>
-  </data>
-  <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
-    <value>남은 시간: {0}초 ({1}%) 총: {2}</value>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>녹화를 시작하려면 클릭.</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} 파일이 {1}에 업로드 될 것입니다. 다른 목적지를 선택할 수 있습니다.</value>
   </data>
-  <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
-    <value>목적지를 선택해 주세요.</value>
-  </data>
-  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
-    <value>이곳에
-끌어다
-놓기</value>
-  </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>확장자는 비어 있을 수 없습니다.</value>
-  </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>경로는 비어 있을 수 없습니다.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>인코딩 중...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg 오류</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg 비디오와 오디오 소스는 둘 다 없을 수 없습니다.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} 파일이 존재하지 않습니다.
-
-자동으로 내려받을까요?</value>
-  </data>
-  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>단축키 누르기...</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>커서 위치 (X, Y) = {0}, {1}</value>
-  </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>닫기</value>
-  </data>
-  <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
-    <value>"{0}" 파일에 접근할 수 없습니다.
-개인 폴더를 변경하려면 ShareX를 관리자 권한으로 실행해 주세요.</value>
-  </data>
-  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
-    <value>폴더를 생성할 수 없음:</value>
-  </data>
-  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
-    <value>정말로 이 파일을 제거할까요?</value>
-  </data>
-  <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
-    <value>파일 제거 확인</value>
-  </data>
-  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
-    <value>텍스트 업로드 테스트</value>
-  </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>현재 설정된 단축키:</value>
-  </data>
-  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>파일을 끌어서 이 창에 놓을 수 있습니다.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>메뉴 숨기기</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>메뉴 보이기</value>
-  </data>
-  <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>단축키 설정에서 워크플로우 추가하기...</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>오류</value>
-  </data>
-  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
-    <value>파일 업로드</value>
-  </data>
-  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
-    <value>폴더 업로드</value>
-  </data>
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>URL이 비어있습니다.</value>
   </data>
-  <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
-    <value>업로드 중</value>
-  </data>
-  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
-    <value>완료</value>
-  </data>
-  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
-    <value>중지</value>
-  </data>
-  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
-    <value>준비 중</value>
-  </data>
-  <data name="UploadTask_Prepare_Starting" xml:space="preserve">
-    <value>시작 중</value>
-  </data>
-  <data name="UploadTask_Stop_Stopping" xml:space="preserve">
-    <value>중지하는 중</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>작업: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
-    <value>촬영 뒤: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
-    <value>업로드 뒤: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
-    <value>미리보기:</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>파일 업로더: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>이미지 업로더: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>텍스트 업로더: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>URL 공유 서비스: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>URL 단축기: {0}</value>
-  </data>
-  <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
-    <value>대기열에서 대기 중</value>
-  </data>
-  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
-    <value>오류</value>
-  </data>
-  <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
-    <value>작업 완료</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>CLI 비디오 인코더 설정 ---&gt;</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>대기 중...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>선택된 올바른 CLI 비디오 인코더가 없습니다.</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>성공적으로 트윗 날림.</value>
-  </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>화면 색상 선택기 시작</value>
-  </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>화면 색상 선택기 중단</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg 다운로드 실패.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>녹화를 시작하려면 클릭.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>녹화를 중단하려면 클릭.</value>
-  </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
-    <value>단축키 등록 실패</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>다음 CLI 비디오 인코더 파일이 존재하지 않습니다:</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg 다운로드 성공.</value>
-  </data>
-  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
-    <value>클립보드에 복사됨: {0}</value>
-  </data>
-  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
-    <value>다운로드 실패:
-{0}</value>
-  </data>
-  <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>이 메시지를 다시 보이지 않기.</value>
-  </data>
-  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
-    <value>URL 공유하기 ({0})</value>
-  </data>
-  <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
-    <value>폴더 경로 선택</value>
-  </data>
-  <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
-    <value>정말로 이 스크린샷을 업로드할까요?
-"아니요"를 누르면 현재 업로드가 취소되고 스크린샷 자동 업로드 기능이 해제됩니다.</value>
-  </data>
-  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
-    <value>저장할 폴더 고르기</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
-    <value>작업 설정</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
-    <value>{0} 작업 설정</value>
-  </data>
-  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
-    <value>업로드 오류</value>
-  </data>
-  <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
-    <value>파일 {0}개를 정말로 업로드할까요?</value>
-  </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>인코더 경로 선턱</value>
-  </data>
-  <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
-    <value>처음 업로드 경고</value>
-  </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
-    <value>단축키</value>
-  </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
-    <value>단축키</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>찾을 수 없음:</value>
-  </data>
-  <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
-    <value>URL 단축하기 ({0})</value>
-  </data>
-  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
-    <value>파일 업로드하기</value>
-  </data>
-  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>새 이름 사용:</value>
-  </data>
-  <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
-    <value>지원되는 변수: {0}과 {1} 등과 같은 다른 변수들.</value>
-  </data>
-  <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
-    <value>업로드 하기 위해 다운로드 받을 URL</value>
+  <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
+    <value>ShareX 개인 폴더 선택</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>{0} 단축키를 등록할 수 없습니다:
@@ -410,5 +141,265 @@ ShareX를 재시작할까요?</value>
 {1}
 
 다른 단축키를 사용하거나 충돌하는 어플리케이션을 종료한 뒤 ShareX를 다시 실행해 주세요.</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
+    <value>파일 제거 확인</value>
+  </data>
+  <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
+    <value>중지</value>
+  </data>
+  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
+    <value>URL 공유하기 ({0})</value>
+  </data>
+  <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
+    <value>X: {0}, Y: {1}, 너비: {2}, 높이: {3}</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
+    <value>이 메시지를 다시 보이지 않기.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
+    <value>작업: {0}</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>FFmpeg 비디오와 오디오 소스는 둘 다 없을 수 없습니다.</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
+    <value>단축키</value>
+  </data>
+  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
+    <value>단축키 누르기...</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
+    <value>작업 설정</value>
+  </data>
+  <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
+    <value>목적지를 선택해 주세요.</value>
+  </data>
+  <data name="UploadTask_Prepare_Starting" xml:space="preserve">
+    <value>시작 중</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
+    <value>{0} 파일이 존재하지 않습니다.
+
+자동으로 내려받을까요?</value>
+  </data>
+  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
+    <value>외부 라이브러리</value>
+  </data>
+  <data name="Program_Run_Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>녹화를 중단하려면 클릭.</value>
+  </data>
+  <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
+    <value>단축키 설정에서 워크플로우 추가하기...</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
+    <value>언어 설정을 변경하려면 ShareX를 재시작해야 합니다.
+ShareX를 재시작할까요?</value>
+  </data>
+  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
+    <value>화면 색상 선택기 시작</value>
+  </data>
+  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
+    <value>새 이름 사용:</value>
+  </data>
+  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
+    <value>화면 색상 선택기 중단</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
+    <value>찾을 수 없음:</value>
+  </data>
+  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
+    <value>커서 위치 (X, Y) = {0}, {1}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
+    <value>번역자</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
+    <value>처음 업로드 경고</value>
+  </data>
+  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
+    <value>확장자는 비어 있을 수 없습니다.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
+    <value>촬영 뒤: {0}</value>
+  </data>
+  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
+    <value>CLI 비디오 인코더 설정 ---&gt;</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
+    <value>URL 단축기: {0}</value>
+  </data>
+  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
+    <value>업로드 오류</value>
+  </data>
+  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
+    <value>폴더를 생성할 수 없음:</value>
+  </data>
+  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
+    <value>현재 설정된 단축키:</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
+    <value>대기열에서 대기 중</value>
+  </data>
+  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
+    <value>파일 업로드</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
+    <value>정말로 이 파일을 제거할까요?</value>
+  </data>
+  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
+    <value>다운로드 실패:
+{0}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
+    <value>텍스트 업로더: {0}</value>
+  </data>
+  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
+    <value>준비 중</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
+    <value>중지</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
+    <value>URL 공유 서비스: {0}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
+    <value>문제점</value>
+  </data>
+  <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
+    <value>미리보기:</value>
+  </data>
+  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
+    <value>텍스트 업로드 테스트</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
+    <value>{0} 작업 설정</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
+    <value>완료</value>
+  </data>
+  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
+    <value>웹사이트</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
+    <value>업로드 뒤: {0}</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
+    <value>스크린샷 폴더 경로 선택</value>
+  </data>
+  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+    <value>FFmpeg 다운로드 실패.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>대기 중...</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
+    <value>이미지 업로더: {0}</value>
+  </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>클립보드에 복사됨: {0}</value>
+  </data>
+  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
+    <value>메뉴 숨기기</value>
+  </data>
+  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
+    <value>메뉴 보이기</value>
+  </data>
+  <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
+    <value>업로드 하기 위해 다운로드 받을 URL</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
+    <value>파일 경로는 비어 있을 수 없습니다.</value>
+  </data>
+  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
+    <value>저장할 폴더 고르기</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>단축키 등록 실패</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
+    <value>파일 업로드하기</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
+    <value>지원되는 변수: {0}과 {1} 등과 같은 다른 변수들.</value>
+  </data>
+  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
+    <value>이곳에
+끌어다
+놓기</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
+    <value>단축키</value>
+  </data>
+  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
+    <value>경로는 비어 있을 수 없습니다.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
+    <value>파일 업로더: {0}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>프로젝트 페이지</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
+    <value>성공적으로 트윗 날림.</value>
+  </data>
+  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
+    <value>인코더 경로 선턱</value>
+  </data>
+  <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
+    <value>"{0}" 파일에 접근할 수 없습니다.
+개인 폴더를 변경하려면 ShareX를 관리자 권한으로 실행해 주세요.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
+    <value>다음 CLI 비디오 인코더 파일이 존재하지 않습니다:</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
+    <value>이름은 비어 있을 수 없습니다.</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
+    <value>작업 완료</value>
+  </data>
+  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
+    <value>폴더 업로드</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>인코딩 중...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
+    <value>FFmpeg 오류</value>
+  </data>
+  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
+    <value>FFmpeg 다운로드 성공.</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
+    <value>파일 {0}개를 정말로 업로드할까요?</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
+    <value>업로드 중</value>
+  </data>
+  <data name="UploadTask_Stop_Stopping" xml:space="preserve">
+    <value>중지하는 중</value>
+  </data>
+  <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
+    <value>URL 단축하기 ({0})</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
+    <value>정말로 이 스크린샷을 업로드할까요?
+"아니요"를 누르면 현재 업로드가 취소되고 스크린샷 자동 업로드 기능이 해제됩니다.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
+    <value>선택된 올바른 CLI 비디오 인코더가 없습니다.</value>
   </data>
 </root>

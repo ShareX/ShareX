@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,9 +33,64 @@ using System.Net.FtpClient;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class FTPFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.FTP;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.FTPAccountList != null && config.FTPAccountList.IsValidIndex(config.FTPSelectedFile);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            int index;
+
+            if (taskInfo.OverrideFTP)
+            {
+                index = taskInfo.FTPIndex.BetweenOrDefault(0, config.FTPAccountList.Count - 1);
+            }
+            else
+            {
+                switch (taskInfo.DataType)
+                {
+                    case EDataType.Image:
+                        index = config.FTPSelectedImage;
+                        break;
+                    case EDataType.Text:
+                        index = config.FTPSelectedText;
+                        break;
+                    default:
+                    case EDataType.File:
+                        index = config.FTPSelectedFile;
+                        break;
+                }
+            }
+
+            FTPAccount account = config.FTPAccountList.ReturnIfValidIndex(index);
+
+            if (account != null)
+            {
+                if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
+                {
+                    return new FTP(account);
+                }
+                else if (account.Protocol == FTPProtocol.SFTP)
+                {
+                    return new SFTP(account);
+                }
+            }
+
+            return null;
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFTP;
+    }
+
     public sealed class FTP : FileUploader, IDisposable
     {
         public FTPAccount Account { get; private set; }

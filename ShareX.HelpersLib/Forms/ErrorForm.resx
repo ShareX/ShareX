@@ -163,7 +163,7 @@
     <value>0</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>Send bug report</value>
+    <value>Send bug report...</value>
   </data>
   <data name="&gt;&gt;btnSendBugReport.Name" xml:space="preserve">
     <value>btnSendBugReport</value>
@@ -214,7 +214,7 @@
     <value>1</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>Open log file</value>
+    <value>Open log file...</value>
   </data>
   <data name="&gt;&gt;btnOpenLogFile.Name" xml:space="preserve">
     <value>btnOpenLogFile</value>
@@ -356,6 +356,6 @@ Error 2</value>
     <value>ErrorForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

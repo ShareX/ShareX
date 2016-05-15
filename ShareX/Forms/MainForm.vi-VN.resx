@@ -312,9 +312,6 @@
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh</value>
   </data>
-  <data name="tsmiIRCClient.Text" xml:space="preserve">
-    <value>Trình IRC</value>
-  </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Vùng chọn lần trước</value>
   </data>
@@ -495,9 +492,6 @@
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải ảnh lên</value>
   </data>
-  <data name="tsmiTrayIRCClient.Text" xml:space="preserve">
-    <value>Trình IRC</value>
-  </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>VỊ trí </value>
   </data>
@@ -606,9 +600,6 @@
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Cửa sổ</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>Vùng (Các cửa sổ &amp;&amp; phần điều khiển)</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tin nhắn tweet</value>
   </data>
@@ -623,9 +614,6 @@
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>Cửa sổ</value>
-  </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>Vùng (Các cửa sổ &amp;&amp; phần điều khiển)</value>
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Công cụ</value>

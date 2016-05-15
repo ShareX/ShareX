@@ -85,6 +85,8 @@
             this.lvImages.Name = "lvImages";
             this.lvImages.UseCompatibleStateImageBehavior = false;
             this.lvImages.View = System.Windows.Forms.View.Details;
+            this.lvImages.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImageCombinerForm_DragDrop);
+            this.lvImages.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImageCombinerForm_DragEnter);
             // 
             // chFilepath
             // 
@@ -133,8 +135,10 @@
             // 
             // ImageCombinerForm
             // 
+            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblSpacePixel);
             this.Controls.Add(this.cbOrientation);
             this.Controls.Add(this.lblOrientation);
@@ -147,6 +151,8 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Name = "ImageCombinerForm";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImageCombinerForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImageCombinerForm_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

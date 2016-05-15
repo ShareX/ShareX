@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -44,9 +44,33 @@ namespace ShareX.ScreenCaptureLib
             {
                 visible = value;
 
-                foreach (NodeObject node in nodes)
+                if (!visible)
                 {
-                    node.Visible = visible;
+                    foreach (NodeObject node in nodes)
+                    {
+                        node.Visible = visible;
+                    }
+                }
+                else
+                {
+                    BaseShape shape = shapeManager.CurrentShape;
+
+                    if (shape != null)
+                    {
+                        if (shape.NodeType == NodeType.Rectangle)
+                        {
+                            foreach (NodeObject node in nodes)
+                            {
+                                node.Shape = NodeShape.Square;
+                                node.Visible = visible;
+                            }
+                        }
+                        else if (shape.NodeType == NodeType.Line)
+                        {
+                            nodes[(int)NodePosition.TopLeft].Shape = nodes[(int)NodePosition.BottomRight].Shape = NodeShape.Circle;
+                            nodes[(int)NodePosition.TopLeft].Visible = nodes[(int)NodePosition.BottomRight].Visible = true;
+                        }
+                    }
                 }
             }
         }
@@ -61,13 +85,13 @@ namespace ShareX.ScreenCaptureLib
         private bool IsLeftPressed { get; set; }
         private bool IsRightPressed { get; set; }
 
-        private AreaManager areaManager;
+        private ShapeManager shapeManager;
         private NodeObject[] nodes;
         private Rectangle tempRect;
 
-        public ResizeManager(Surface surface, AreaManager areaManager)
+        public ResizeManager(SurfaceForm surface, ShapeManager shapeManager)
         {
-            this.areaManager = areaManager;
+            this.shapeManager = shapeManager;
 
             MinMoveSpeed = surface.Config.MinMoveSpeed;
             MaxMoveSpeed = surface.Config.MaxMoveSpeed;
@@ -87,60 +111,80 @@ namespace ShareX.ScreenCaptureLib
 
         public void Update()
         {
-            if (Visible && nodes != null)
+            BaseShape shape = shapeManager.CurrentShape;
+
+            if (shape != null && Visible && nodes != null)
             {
                 if (InputManager.IsMouseDown(MouseButtons.Left))
                 {
-                    for (int i = 0; i < 8; i++)
+                    if (shape.NodeType == NodeType.Rectangle)
                     {
-                        if (nodes[i].IsDragging)
+                        for (int i = 0; i < 8; i++)
+                        {
+                            if (nodes[i].IsDragging)
+                            {
+                                IsResizing = true;
+
+                                if (!InputManager.IsBeforeMouseDown(MouseButtons.Left))
+                                {
+                                    tempRect = shape.Rectangle;
+                                }
+
+                                NodePosition nodePosition = (NodePosition)i;
+
+                                int x = InputManager.MouseVelocity.X;
+
+                                switch (nodePosition)
+                                {
+                                    case NodePosition.TopLeft:
+                                    case NodePosition.Left:
+                                    case NodePosition.BottomLeft:
+                                        tempRect.X += x;
+                                        tempRect.Width -= x;
+                                        break;
+                                    case NodePosition.TopRight:
+                                    case NodePosition.Right:
+                                    case NodePosition.BottomRight:
+                                        tempRect.Width += x;
+                                        break;
+                                }
+
+                                int y = InputManager.MouseVelocity.Y;
+
+                                switch (nodePosition)
+                                {
+                                    case NodePosition.TopLeft:
+                                    case NodePosition.Top:
+                                    case NodePosition.TopRight:
+                                        tempRect.Y += y;
+                                        tempRect.Height -= y;
+                                        break;
+                                    case NodePosition.BottomLeft:
+                                    case NodePosition.Bottom:
+                                    case NodePosition.BottomRight:
+                                        tempRect.Height += y;
+                                        break;
+                                }
+
+                                shape.Rectangle = CaptureHelpers.FixRectangle(tempRect);
+
+                                break;
+                            }
+                        }
+                    }
+                    else if (shape.NodeType == NodeType.Line)
+                    {
+                        if (nodes[(int)NodePosition.TopLeft].IsDragging)
                         {
                             IsResizing = true;
 
-                            if (!InputManager.IsBeforeMouseDown(MouseButtons.Left))
-                            {
-                                tempRect = areaManager.CurrentArea;
-                            }
+                            shape.StartPosition = new Point(InputManager.MousePosition0Based.X, InputManager.MousePosition0Based.Y);
+                        }
+                        else if (nodes[(int)NodePosition.BottomRight].IsDragging)
+                        {
+                            IsResizing = true;
 
-                            NodePosition nodePosition = (NodePosition)i;
-
-                            int x = InputManager.MouseVelocity.X;
-
-                            switch (nodePosition)
-                            {
-                                case NodePosition.TopLeft:
-                                case NodePosition.Left:
-                                case NodePosition.BottomLeft:
-                                    tempRect.X += x;
-                                    tempRect.Width -= x;
-                                    break;
-                                case NodePosition.TopRight:
-                                case NodePosition.Right:
-                                case NodePosition.BottomRight:
-                                    tempRect.Width += x;
-                                    break;
-                            }
-
-                            int y = InputManager.MouseVelocity.Y;
-
-                            switch (nodePosition)
-                            {
-                                case NodePosition.TopLeft:
-                                case NodePosition.Top:
-                                case NodePosition.TopRight:
-                                    tempRect.Y += y;
-                                    tempRect.Height -= y;
-                                    break;
-                                case NodePosition.BottomLeft:
-                                case NodePosition.Bottom:
-                                case NodePosition.BottomRight:
-                                    tempRect.Height += y;
-                                    break;
-                            }
-
-                            areaManager.CurrentArea = CaptureHelpers.FixRectangle(tempRect);
-
-                            break;
+                            shape.EndPosition = new Point(InputManager.MousePosition0Based.X, InputManager.MousePosition0Based.Y);
                         }
                     }
                 }
@@ -180,9 +224,9 @@ namespace ShareX.ScreenCaptureLib
             int x = IsLeftPressed && IsRightPressed ? 0 : IsRightPressed ? speed : IsLeftPressed ? -speed : 0;
 
             // Move the cursor
-            if (!areaManager.IsCurrentAreaValid || areaManager.IsCreating)
+            if (shapeManager.CurrentShape == null || shapeManager.IsCreating)
             {
-                Cursor.Position = new Point(Cursor.Position.X + x, Cursor.Position.Y + y);
+                Cursor.Position = Cursor.Position.Add(x, y);
             }
             else
             {
@@ -233,47 +277,87 @@ namespace ShareX.ScreenCaptureLib
             Visible = false;
         }
 
-        public void UpdateNodePositions()
+        private void UpdateNodePositions()
         {
-            UpdateNodePositions(areaManager.CurrentArea);
-        }
+            BaseShape shape = shapeManager.CurrentShape;
 
-        private void UpdateNodePositions(Rectangle rect)
-        {
-            float xStart = rect.X;
-            float xMid = rect.X + rect.Width / 2;
-            float xEnd = rect.X + rect.Width - 1;
+            if (shape != null)
+            {
+                if (shape.NodeType == NodeType.Rectangle)
+                {
+                    Rectangle rect = shape.Rectangle;
 
-            float yStart = rect.Y;
-            float yMid = rect.Y + rect.Height / 2;
-            float yEnd = rect.Y + rect.Height - 1;
+                    float xStart = rect.X;
+                    float xMid = rect.X + rect.Width / 2;
+                    float xEnd = rect.X + rect.Width - 1;
 
-            nodes[(int)NodePosition.TopLeft].Position = new PointF(xStart, yStart);
-            nodes[(int)NodePosition.Top].Position = new PointF(xMid, yStart);
-            nodes[(int)NodePosition.TopRight].Position = new PointF(xEnd, yStart);
-            nodes[(int)NodePosition.Right].Position = new PointF(xEnd, yMid);
-            nodes[(int)NodePosition.BottomRight].Position = new PointF(xEnd, yEnd);
-            nodes[(int)NodePosition.Bottom].Position = new PointF(xMid, yEnd);
-            nodes[(int)NodePosition.BottomLeft].Position = new PointF(xStart, yEnd);
-            nodes[(int)NodePosition.Left].Position = new PointF(xStart, yMid);
+                    float yStart = rect.Y;
+                    float yMid = rect.Y + rect.Height / 2;
+                    float yEnd = rect.Y + rect.Height - 1;
+
+                    nodes[(int)NodePosition.TopLeft].Position = new PointF(xStart, yStart);
+                    nodes[(int)NodePosition.Top].Position = new PointF(xMid, yStart);
+                    nodes[(int)NodePosition.TopRight].Position = new PointF(xEnd, yStart);
+                    nodes[(int)NodePosition.Right].Position = new PointF(xEnd, yMid);
+                    nodes[(int)NodePosition.BottomRight].Position = new PointF(xEnd, yEnd);
+                    nodes[(int)NodePosition.Bottom].Position = new PointF(xMid, yEnd);
+                    nodes[(int)NodePosition.BottomLeft].Position = new PointF(xStart, yEnd);
+                    nodes[(int)NodePosition.Left].Position = new PointF(xStart, yMid);
+                }
+                else if (shape.NodeType == NodeType.Line)
+                {
+                    nodes[(int)NodePosition.TopLeft].Position = shape.StartPosition;
+                    nodes[(int)NodePosition.BottomRight].Position = shape.EndPosition;
+                }
+            }
         }
 
         public void MoveCurrentArea(int x, int y)
         {
-            areaManager.CurrentArea = new Rectangle(new Point(areaManager.CurrentArea.X + x, areaManager.CurrentArea.Y + y), areaManager.CurrentArea.Size);
+            BaseShape shape = shapeManager.CurrentShape;
+
+            if (shape != null)
+            {
+                if (shape.NodeType == NodeType.Rectangle)
+                {
+                    shape.Rectangle = shape.Rectangle.LocationOffset(x, y);
+                }
+                else if (shape.NodeType == NodeType.Line)
+                {
+                    shape.StartPosition = shape.StartPosition.Add(x, y);
+                    shape.EndPosition = shape.EndPosition.Add(x, y);
+                }
+            }
         }
 
         public void ResizeCurrentArea(int x, int y, bool isBottomRightMoving)
         {
-            if (isBottomRightMoving)
+            BaseShape shape = shapeManager.CurrentShape;
+
+            if (shape != null)
             {
-                areaManager.CurrentArea = new Rectangle(areaManager.CurrentArea.X, areaManager.CurrentArea.Y,
-                    areaManager.CurrentArea.Width + x, areaManager.CurrentArea.Height + y);
-            }
-            else
-            {
-                areaManager.CurrentArea = new Rectangle(areaManager.CurrentArea.X + x, areaManager.CurrentArea.Y + y,
-                    areaManager.CurrentArea.Width - x, areaManager.CurrentArea.Height - y);
+                if (shape.NodeType == NodeType.Rectangle)
+                {
+                    if (isBottomRightMoving)
+                    {
+                        shape.Rectangle = shape.Rectangle.SizeOffset(x, y);
+                    }
+                    else
+                    {
+                        shape.Rectangle = shape.Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
+                    }
+                }
+                else if (shape.NodeType == NodeType.Line)
+                {
+                    if (isBottomRightMoving)
+                    {
+                        shape.StartPosition = shape.StartPosition.Add(x, y);
+                    }
+                    else
+                    {
+                        shape.EndPosition = shape.EndPosition.Add(x, y);
+                    }
+                }
             }
         }
     }

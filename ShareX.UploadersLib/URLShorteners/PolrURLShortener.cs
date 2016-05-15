@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,9 +27,31 @@
 
 using ShareX.HelpersLib;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class PolrURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Polr;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.PolrAPIKey);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new PolrURLShortener
+            {
+                API_HOST = config.PolrAPIHostname,
+                API_KEY = config.PolrAPIKey
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPolr;
+    }
+
     public sealed class PolrURLShortener : URLShortener
     {
         public string API_HOST { get; set; }

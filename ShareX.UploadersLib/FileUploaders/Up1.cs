@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,21 +34,36 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    /*
-     * Up1 is an encrypted image uploader. The idea is that any URL (for example, https://up1.ca/#hsd2mdSuIkzTUR6saZpn1Q) contains
-     * what is called a "seed". In this case, the seed is "hsd2mdSuIkzTUR6saZpn1Q". With this, we use sha512(seed) (output 64 bytes)
-     * in order to derive an AES key (32 bytes), a CCM IV (16 bytes), and a server-side identifier (16 bytes). These are used to
-     * encrypt and store the data.
-     *
-     * Within the encrypted blob, There is a double-null-terminated UTF-16 JSON object that contains metadata like the filename and mimetype.
-     * This is prepended to the image data.
-     */
+    public class Up1FileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Up1;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Up1(config.Up1Host, config.Up1Key);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpUp1;
+    }
 
     public sealed class Up1 : FileUploader
     {
+        /*
+         * Up1 is an encrypted image uploader. The idea is that any URL (for example, https://up1.ca/#hsd2mdSuIkzTUR6saZpn1Q) contains
+         * what is called a "seed". In this case, the seed is "hsd2mdSuIkzTUR6saZpn1Q". With this, we use sha512(seed) (output 64 bytes)
+         * in order to derive an AES key (32 bytes), a CCM IV (16 bytes), and a server-side identifier (16 bytes). These are used to
+         * encrypt and store the data.
+         *
+         * Within the encrypted blob, There is a double-null-terminated UTF-16 JSON object that contains metadata like the filename and mimetype.
+         * This is prepended to the image data.
+         */
+
         private const int MacSize = 64;
 
         public string SystemUrl { get; set; }

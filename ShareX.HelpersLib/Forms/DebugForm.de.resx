@@ -1,3 +1,4 @@
+﻿
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -124,5 +125,8 @@
   </data>
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
     <value>geladene Gruppen</value>
+  </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>Log Datei öffnen...</value>
   </data>
 </root>

@@ -133,6 +133,12 @@
     <value>截图后</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>上传前</value>
+    <value>目的地</value>
+  </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>上传后</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>文件名:</value>
   </data>
 </root>

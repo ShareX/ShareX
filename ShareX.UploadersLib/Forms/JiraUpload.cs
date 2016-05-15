@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,26 +25,20 @@
 
 // gpailler
 
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.GUI
+namespace ShareX.UploadersLib
 {
-    using ShareX.HelpersLib;
-    using System.Threading.Tasks;
-
-    public partial class JiraUpload : BaseForm
+    public partial class JiraUpload : Form
     {
         public delegate string GetSummaryHandler(string issueId);
 
         private readonly string _issuePrefix;
         private readonly GetSummaryHandler _getSummary;
-
-        public JiraUpload()
-        {
-            InitializeComponent();
-        }
 
         public string IssueId
         {
@@ -54,8 +48,13 @@ namespace ShareX.UploadersLib.GUI
             }
         }
 
-        public JiraUpload(string issuePrefix, GetSummaryHandler getSummary)
-            : this()
+        public JiraUpload()
+        {
+            InitializeComponent();
+            Icon = ShareXResources.Icon;
+        }
+
+        public JiraUpload(string issuePrefix, GetSummaryHandler getSummary) : this()
         {
             if (getSummary == null)
             {

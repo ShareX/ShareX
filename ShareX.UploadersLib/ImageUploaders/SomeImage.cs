@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,16 +26,43 @@
 // Credits: https://github.com/DanielMcAssey
 
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class SomeImageImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.SomeImage;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            string someImageAPIKey = config.SomeImageAPIKey;
+
+            if (string.IsNullOrEmpty(someImageAPIKey))
+            {
+                someImageAPIKey = APIKeys.SomeImageKey;
+            }
+
+            return new SomeImage(someImageAPIKey)
+            {
+                DirectURL = config.SomeImageDirectURL
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSomeImage;
+    }
+
     public sealed class SomeImage : ImageUploader
     {
         private const string API_ENDPOINT = "https://someimage.com/api/2/image/upload";
 
-        private string API_KEY = "";
+        public string API_KEY { get; set; }
+        public bool DirectURL { get; set; }
 
         public SomeImage(string apiKey)
         {
@@ -58,7 +85,29 @@ namespace ShareX.UploadersLib.ImageUploaders
 
                     if (jsonResponse != null)
                     {
-                        result.URL = jsonResponse.imagelink;
+                        if (DirectURL)
+                        {
+                            if (!string.IsNullOrEmpty(jsonResponse.imagelink))
+                            {
+                                Uri responseUri = new Uri(jsonResponse.imagelink); // http://someimage.com/asdf
+                                string host = responseUri.Host; // someimage.com
+                                string filename = Path.GetFileName(responseUri.AbsolutePath); // /asdf
+                                if (filename.StartsWith("/"))
+                                {
+                                    filename = filename.Remove(0, 1); // asdf
+                                }
+                                if (host.StartsWith("www."))
+                                {
+                                    host = host.Remove(0, 4);
+                                }
+                                string extension = Path.GetExtension(fileName);
+                                result.URL = $"https://i1.{host}/{filename}{extension}";
+                            }
+                        }
+                        else
+                        {
+                            result.URL = jsonResponse.imagelink;
+                        }
                     }
                 }
             }
@@ -66,14 +115,14 @@ namespace ShareX.UploadersLib.ImageUploaders
             return result;
         }
     }
-}
 
-public class SomeImageResponse
-{
-    public string success { get; set; }
-    public string imageid { get; set; }
-    public string imagelink { get; set; }
-    public string thumblink { get; set; }
-    public string embedhtml { get; set; }
-    public string embedbb { get; set; }
+    public class SomeImageResponse
+    {
+        public string success { get; set; }
+        public string imageid { get; set; }
+        public string imagelink { get; set; }
+        public string thumblink { get; set; }
+        public string embedhtml { get; set; }
+        public string embedbb { get; set; }
+    }
 }

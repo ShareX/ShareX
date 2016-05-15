@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -31,8 +31,7 @@ namespace Greenshot.Drawing.Filters
     [Serializable()]
     public class HighlightFilter : AbstractFilter
     {
-        public HighlightFilter(DrawableContainer parent)
-            : base(parent)
+        public HighlightFilter(DrawableContainer parent) : base(parent)
         {
             AddField(GetType(), FieldType.FILL_COLOR, Color.Yellow);
         }

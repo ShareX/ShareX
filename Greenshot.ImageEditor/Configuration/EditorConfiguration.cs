@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -19,6 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Greenshot.Core;
 using Greenshot.Drawing.Fields;
 using Greenshot.IniFile;
 using GreenshotPlugin.UnmanagedHelpers;
@@ -50,15 +51,29 @@ namespace Greenshot.Configuration
         public Point WindowMinPosition;
         [IniProperty("WindowMaxPosition", Description = "Position of maximized window", DefaultValue = "-1,-1")]
         public Point WindowMaxPosition;
-        [IniProperty("WindowNormalPosition", Description = "Position of normal window", DefaultValue = "100,100,600,500")]
+        [IniProperty("WindowNormalPosition", Description = "Position of normal window", DefaultValue = "100,100,400,400")]
         public Rectangle WindowNormalPosition;
         [IniProperty("ReuseEditor", Description = "Reuse already open editor", DefaultValue = "false")]
         public bool ReuseEditor;
         [IniProperty("FreehandSensitivity", Description = "The smaller this number, the less smoothing is used. Decrease for detailed drawing, e.g. when using a pen. Increase for smoother lines. e.g. when you want to draw a smooth line.", DefaultValue = "3")]
         public int FreehandSensitivity;
-
         [IniProperty("SuppressSaveDialogAtClose", Description = "Suppressed the 'do you want to save' dialog when closing the editor.", DefaultValue = "False")]
         public bool SuppressSaveDialogAtClose;
+
+        [IniProperty("DropShadowEffectSettings", Description = "Settings for the drop shadow effect.")]
+        public DropShadowEffect DropShadowEffectSettings;
+
+        [IniProperty("TornEdgeEffectSettings", Description = "Settings for the torn edge effect.")]
+        public TornEdgeEffect TornEdgeEffectSettings;
+
+        public override void AfterLoad()
+        {
+            base.AfterLoad();
+            if (RecentColors == null)
+            {
+                RecentColors = new List<Color>();
+            }
+        }
 
         /// <param name="requestingType">Type of the class for which to create the field</param>
         /// <param name="fieldType">FieldType of the field to construct</param>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -49,11 +49,12 @@ namespace ShareX
         {
             Dispose();
 
-            if (!string.IsNullOrEmpty(Settings.FolderPath) && Directory.Exists(Settings.FolderPath))
+            string folderPath = Helpers.ExpandFolderVariables(Settings.FolderPath);
+            if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
             {
                 context = SynchronizationContext.Current ?? new SynchronizationContext();
 
-                fileWatcher = new FileSystemWatcher(Settings.FolderPath);
+                fileWatcher = new FileSystemWatcher(folderPath);
                 if (!string.IsNullOrEmpty(Settings.Filter)) fileWatcher.Filter = Settings.Filter;
                 fileWatcher.IncludeSubdirectories = Settings.IncludeSubdirectories;
                 fileWatcher.Created += fileWatcher_Created;

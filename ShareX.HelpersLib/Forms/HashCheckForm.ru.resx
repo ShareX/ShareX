@@ -132,13 +132,49 @@
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Тип хеша:</value>
   </data>
-  <data name="lblProgress.Text" xml:space="preserve">
-    <value>Прогресс:</value>
-  </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Результат:</value>
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Цель:</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>Декодировать</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>Декодировать</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>Декодировать</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>Декодировать</value>
+  </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>Кодировать</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>Скопировать все</value>
+  </data>
+  <data name="lblHashCheckBase64.Text" xml:space="preserve">
+    <value>Base64:</value>
+  </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>Двоичный:</value>
+  </data>
+  <data name="lblHashCheckHash.Text" xml:space="preserve">
+    <value>Хеш:</value>
+  </data>
+  <data name="lblHashCheckHex.Text" xml:space="preserve">
+    <value>Шестнадцатеричный:	</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>Текст:</value>
+  </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>Проверка хеша файла</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>Преобразования текста</value>
   </data>
 </root>

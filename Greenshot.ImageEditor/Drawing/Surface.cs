@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -458,8 +458,7 @@ namespace Greenshot.Drawing
         /// <summary>
         /// Base Surface constructor
         /// </summary>
-        public Surface()
-            : base()
+        public Surface() : base()
         {
             Count++;
             _elements = new DrawableContainerList(_uniqueId);
@@ -508,8 +507,7 @@ namespace Greenshot.Drawing
         /// Surface constructor with an image
         /// </summary>
         /// <param name="newImage"></param>
-        public Surface(Image newImage)
-            : this()
+        public Surface(Image newImage) : this()
         {
             LOG.DebugFormat("Got image with dimensions {0} and format {1}", newImage.Size, newImage.PixelFormat);
             SetImage(newImage, true);
@@ -519,8 +517,7 @@ namespace Greenshot.Drawing
         /// Surface contructor with a capture
         /// </summary>
         /// <param name="capture"></param>
-        public Surface(ICapture capture)
-            : this(capture.Image)
+        public Surface(ICapture capture) : this(capture.Image)
         {
             // check if cursor is captured, and visible
             if (capture.Cursor != null && capture.CursorVisible)
@@ -898,6 +895,22 @@ namespace Greenshot.Drawing
         private void OnDragDrop(object sender, DragEventArgs e)
         {
             Point mouse = PointToClient(new Point(e.X, e.Y));
+            if (e.Data.GetDataPresent("Text"))
+            {
+                string possibleUrl = ClipboardHelper.GetText(e.Data);
+                // Test if it's an url and try to download the image so we have it in the original form
+                if (possibleUrl != null && possibleUrl.StartsWith("http"))
+                {
+                    using (Image image = NetworkHelper.DownloadImage(possibleUrl))
+                    {
+                        if (image != null)
+                        {
+                            AddImageContainer(image, mouse.X, mouse.Y);
+                            return;
+                        }
+                    }
+                }
+            }
 
             foreach (Image image in ClipboardHelper.GetImages(e.Data))
             {
@@ -1622,6 +1635,7 @@ namespace Greenshot.Drawing
             {
                 return;
             }
+
             if (LOG.IsDebugEnabled)
             {
                 LOG.Debug("List of clipboard formats available for pasting:");
@@ -1906,8 +1920,8 @@ namespace Greenshot.Drawing
                         ConfirmSelectedConfirmableElements(false);
                         break;
                     /*case Keys.Delete:
-                        RemoveSelectedElements();
-                        break;*/
+						RemoveSelectedElements();
+						break;*/
                     default:
                         return false;
                 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,10 +32,9 @@ namespace ShareX.IndexerLib
 {
     public class IndexerXml : Indexer
     {
-        private XmlWriter xmlWriter;
+        protected XmlWriter xmlWriter;
 
-        public IndexerXml(IndexerSettings indexerSettings)
-            : base(indexerSettings)
+        public IndexerXml(IndexerSettings indexerSettings) : base(indexerSettings)
         {
         }
 
@@ -67,15 +66,23 @@ namespace ShareX.IndexerLib
         {
             xmlWriter.WriteStartElement("Folder");
 
-            if (config.UseAttribute)
+            if (settings.UseAttribute)
             {
                 xmlWriter.WriteAttributeString("Name", dir.FolderName);
-                if (!dir.IsEmpty) xmlWriter.WriteAttributeString("Size", dir.Size.ToSizeString(config.BinaryUnits));
+
+                if (settings.ShowSizeInfo && !dir.IsEmpty)
+                {
+                    xmlWriter.WriteAttributeString("Size", dir.Size.ToSizeString(settings.BinaryUnits));
+                }
             }
             else
             {
                 xmlWriter.WriteElementString("Name", dir.FolderName);
-                if (!dir.IsEmpty) xmlWriter.WriteElementString("Size", dir.Size.ToSizeString(config.BinaryUnits));
+
+                if (settings.ShowSizeInfo && !dir.IsEmpty)
+                {
+                    xmlWriter.WriteElementString("Size", dir.Size.ToSizeString(settings.BinaryUnits));
+                }
             }
 
             if (dir.Files.Count > 0)
@@ -86,15 +93,23 @@ namespace ShareX.IndexerLib
                 {
                     xmlWriter.WriteStartElement("File");
 
-                    if (config.UseAttribute)
+                    if (settings.UseAttribute)
                     {
                         xmlWriter.WriteAttributeString("Name", fi.Name);
-                        xmlWriter.WriteAttributeString("Size", fi.Length.ToSizeString(config.BinaryUnits));
+
+                        if (settings.ShowSizeInfo)
+                        {
+                            xmlWriter.WriteAttributeString("Size", fi.Length.ToSizeString(settings.BinaryUnits));
+                        }
                     }
                     else
                     {
                         xmlWriter.WriteElementString("Name", fi.Name);
-                        xmlWriter.WriteElementString("Size", fi.Length.ToSizeString(config.BinaryUnits));
+
+                        if (settings.ShowSizeInfo)
+                        {
+                            xmlWriter.WriteElementString("Size", fi.Length.ToSizeString(settings.BinaryUnits));
+                        }
                     }
 
                     xmlWriter.WriteEndElement();

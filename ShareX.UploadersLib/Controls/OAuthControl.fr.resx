@@ -121,7 +121,7 @@
     <value>Effacer l'autorisation</value>
   </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
-    <value>Compte d'utilisateur</value>
+    <value>Compte utilisateur</value>
   </data>
   <data name="lblLoginStatus.Text" xml:space="preserve">
     <value>Statut</value>
@@ -130,12 +130,12 @@
     <value>Rafraîchir l'autorisation</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>Étape 1: Ouvrir la page d'autorisation...</value>
+    <value>Étape 1 : Ouvrez la page d'autorisation...</value>
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>Étape 2: Compléter l'autorisation</value>
+    <value>Étape 2 : Complétez l'autorisation</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
-    <value>Code de vérification:</value>
+    <value>Code de vérification :</value>
   </data>
 </root>

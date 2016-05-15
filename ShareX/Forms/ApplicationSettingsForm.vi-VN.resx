@@ -117,104 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Nâng cao</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Thiết lập ứng dụng</value>
   </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Duyệt...</value>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>Proxy</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Duyệt...</value>
   </data>
-  <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Hỗ trợ tiện ích mở rộng của Chrome...</value>
-  </data>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
-    <value>Thêm...</value>
-  </data>
-  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Sửa...</value>
-  </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Xóa</value>
-  </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Mở...</value>
-  </data>
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Mở...</value>
-  </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Thiết lập cho in ấn</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>Không hiện hộp thoại thiết lập in ấn</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Số lần thử lại nếu tải lên không thành công:</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>Không hiện hộp thoại in của Windows</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Nhớ vị trí cửa sổ chính</value>
-  </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Nhớ kích thước cửa sổ chính</value>
-  </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Hiện ShareX trong menu "Send to"</value>
-  </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Hiện nút "Upload with ShareX" trong menu ngữ cảnh của Windows Explorer</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Chạy ShareX cùng Windows</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>Khi ShareX đang chạy, hiện "In-App" trong Steam</value>
   </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Hiện tiến độ ở nút taskbar</value>
+  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
+    <value>Sửa...</value>
   </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Mô tả</value>
-  </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Định dạng</value>
-  </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Định dạng cho vùng nhớ tạm</value>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 đã tắt)</value>
   </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>Kích thước buffer:</value>
   </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Ngôn ngữ:</value>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>Thư mục riêng của ShareX:</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
     <value>Lưu ý: Bạn cần mở lại ShareX để các thay đổi thư mục riêng có hiệu lực</value>
   </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Thư mục riêng của ShareX:</value>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>Tích hợp</value>
   </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Mật khẩu:</value>
+  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+    <value>Không hiện hộp thoại in của Windows</value>
   </data>
-  <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Thiết lập Proxy:</value>
-  </data>
-  <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Tên đăng nhập:</value>
-  </data>
-  <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Cổng:</value>
-  </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Giúp đỡ chúng tôi dịch ShareX sang ngôn ngữ của bạn!</value>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên tệp tin phụ</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Hiện icon ở khay hệ thống</value>
@@ -222,58 +165,115 @@
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>Khi khởi động thu nhỏ xuống khay hệ thống</value>
   </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Hiện tiến độ ở icon trong khay hệ thống</value>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Hiện ShareX trong menu "Send to"</value>
   </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Lưu ảnh chụp vào thư mục riêng:</value>
+  <data name="cbStartWithWindows.Text" xml:space="preserve">
+    <value>Chạy ShareX cùng Windows</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Sử dụng các dịch vụ thứ cấp theo thứ tự trong danh sách khi thử lại</value>
-  </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Giới hạn tải lên đồng thời:</value>
-  </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 đã tắt)</value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Nâng cao</value>
+  <data name="btnChromeSupport.Text" xml:space="preserve">
+    <value>Hỗ trợ tiện ích mở rộng của Chrome...</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Tổng quan</value>
   </data>
-  <data name="tpIntegration.Text" xml:space="preserve">
-    <value>Tích hợp</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Ngôn ngữ:</value>
   </data>
-  <data name="tpPaths.Text" xml:space="preserve">
-    <value>Đường dẫn</value>
+  <data name="llTranslators.Text" xml:space="preserve">
+    <value>Giúp đỡ chúng tôi dịch ShareX sang ngôn ngữ của bạn!</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>Thêm...</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>Giới hạn tải lên đồng thời:</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>Hiện tiến độ ở nút taskbar</value>
+  </data>
+  <data name="lblProxyHost.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>Thiết lập cho in ấn</value>
   </data>
   <data name="tpPrint.Text" xml:space="preserve">
     <value>In</value>
   </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>Cổng:</value>
   </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Tải lên</value>
+  <data name="lblProxyMethod.Text" xml:space="preserve">
+    <value>Thiết lập Proxy:</value>
   </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Kết quả</value>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>Hiện tiến độ ở icon trong khay hệ thống</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>Nhớ vị trí cửa sổ chính</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Duyệt...</value>
+  </data>
+  <data name="gbClipboardFormats.Text" xml:space="preserve">
+    <value>Định dạng cho vùng nhớ tạm</value>
+  </data>
+  <data name="lblProxyUsername.Text" xml:space="preserve">
+    <value>Tên đăng nhập:</value>
+  </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>Nhớ kích thước cửa sổ chính</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>Hiện nút "Upload with ShareX" trong menu ngữ cảnh của Windows Explorer</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
+    <value>Định dạng tên thư mục phụ</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>Đường dẫn</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>Không hiện hộp thoại thiết lập in ấn</value>
+  </data>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
     <value>Thử lại</value>
   </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên tệp tin phụ</value>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Tải lên</value>
   </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên ảnh phụ</value>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>Số lần thử lại nếu tải lên không thành công:</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Định dạng</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên văn bản phụ</value>
   </data>
-  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Định dạng tên thư mục phụ</value>
+  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Sử dụng các dịch vụ thứ cấp theo thứ tự trong danh sách khi thử lại</value>
+  </data>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>Kết quả</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>Dịch vụ tải lên ảnh phụ</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Lưu ảnh chụp vào thư mục riêng:</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>Mở...</value>
   </data>
 </root>

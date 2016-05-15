@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,7 +32,7 @@ namespace ShareX.IndexerLib
 {
     public class IndexerSettings
     {
-        [Category("Indexer"), DefaultValue(IndexerOutput.Html), Description("Indexer output type.")]
+        [Category("Indexer"), DefaultValue(IndexerOutput.Html), Description("Indexer output type."), TypeConverter(typeof(EnumDescriptionConverter))]
         public IndexerOutput Output { get; set; }
 
         [Category("Indexer"), DefaultValue(true), Description("Don't index hidden folders.")]
@@ -43,6 +43,9 @@ namespace ShareX.IndexerLib
 
         [Category("Indexer"), DefaultValue(0), Description("Maximum folder depth level for indexing. 0 means unlimited.")]
         public int MaxDepthLevel { get; set; }
+
+        [Category("Indexer"), DefaultValue(true), Description("Write folder and file size.")]
+        public bool ShowSizeInfo { get; set; }
 
         [Category("Indexer"), DefaultValue(true), Description("Add footer information to show application and generated time.")]
         public bool AddFooter { get; set; }
@@ -56,15 +59,14 @@ namespace ShareX.IndexerLib
         [Category("Indexer / HTML"), DefaultValue(false), Description("Use custom Cascading Style Sheet file.")]
         public bool UseCustomCSSFile { get; set; }
 
-        [Category("Indexer / HTML"), DefaultValue(""), Description("Custom Cascading Style Sheet file path.")]
-        [Editor(typeof(CssFileNameEditor), typeof(UITypeEditor))]
+        [Category("Indexer / HTML"), DefaultValue(""), Description("Custom Cascading Style Sheet file path."), Editor(typeof(CssFileNameEditor), typeof(UITypeEditor))]
         public string CustomCSSFilePath { get; set; }
-
-        [Category("Indexer / HTML"), DefaultValue(false), Description("Add W3C validation icons. The W3C validation icons may be used on documents that successfully passed validation for a specific technology, using the W3C validation services.")]
-        public bool AddValidationIcons { get; set; }
 
         [Category("Indexer / XML"), DefaultValue(true), Description("Folder/File information (name, size etc.) will be written as attribute.")]
         public bool UseAttribute { get; set; }
+
+        [Category("Indexer / JSON"), DefaultValue(true), Description("Creates parseable but longer json output.")]
+        public bool CreateParseableJson { get; set; }
 
         [JsonIgnore]
         public bool BinaryUnits;

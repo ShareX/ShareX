@@ -195,9 +195,8 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 
-# Additional
-InnoSetup/Output/
-ShareX/GitHash.txt
+# ShareX
+ShareX.Setup/InnoSetup/Output/
 ShareX.UploadersLib/APIKeys/APIKeysLocal.cs
 Lib/ffmpeg.exe
 Lib/ffmpeg-x64.exe

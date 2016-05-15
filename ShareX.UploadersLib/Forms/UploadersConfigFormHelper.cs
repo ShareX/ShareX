@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.Forms;
-using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
@@ -544,102 +543,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Dropbox
-
-        #region Copy
-
-        public void CopyAuthOpen()
-        {
-            try
-            {
-                OAuthInfo oauth = new OAuthInfo(APIKeys.CopyConsumerKey, APIKeys.CopyConsumerSecret);
-
-                string url = new Copy(oauth).GetAuthorizationURL();
-
-                if (!string.IsNullOrEmpty(url))
-                {
-                    Config.CopyOAuthInfo = oauth;
-                    URLHelpers.OpenURL(url);
-                    DebugHelper.WriteLine("CopyAuthOpen - Authorization URL is opened: " + url);
-                }
-                else
-                {
-                    DebugHelper.WriteLine("CopyAuthOpen - Authorization URL is empty.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        public void CopyAuthComplete(string code)
-        {
-            try
-            {
-                if (Config.CopyOAuthInfo != null && !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthToken) && !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthSecret) && !string.IsNullOrEmpty(code))
-                {
-                    Copy copy = new Copy(Config.CopyOAuthInfo);
-                    bool result = copy.GetAccessToken(code);
-
-                    if (result)
-                    {
-                        Config.CopyAccountInfo = copy.GetAccountInfo();
-                        UpdateCopyStatus();
-
-                        oAuthCopy.Status = OAuthLoginStatus.LoginSuccessful;
-
-                        if (Config.CopyAccountInfo != null)
-                        {
-                            MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show(Resources.UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_, "ShareX",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
-                        return;
-                    }
-                    else
-                    {
-                        oAuthCopy.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-                Config.CopyOAuthInfo = null;
-                UpdateCopyStatus();
-            }
-            catch (Exception ex)
-            {
-                DebugHelper.WriteException(ex);
-                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void UpdateCopyStatus()
-        {
-            if (OAuthInfo.CheckOAuth(Config.CopyOAuthInfo) && Config.CopyAccountInfo != null)
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Email_ + " " + Config.CopyAccountInfo.email);
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Name_ + " " + Config.CopyAccountInfo.first_name + " " + Config.CopyAccountInfo.last_name);
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_User_ID_ + " " + Config.CopyAccountInfo.id.ToString());
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Upload_path_ + " " + GetCopyUploadPath());
-                lblCopyStatus.Text = sb.ToString();
-            }
-            else
-            {
-                lblCopyStatus.Text = string.Empty;
-            }
-        }
-
-        private string GetCopyUploadPath()
-        {
-            return NameParser.Parse(NameParserType.URL, Copy.TidyUploadPath(Config.CopyUploadPath));
-        }
-
-        #endregion Copy
 
         #region Amazon S3
 
@@ -1677,8 +1580,7 @@ namespace ShareX.UploadersLib
                         foreach (CustomUploaderItem item in Config.CustomUploadersList)
                         {
                             string json = eiCustomUploaders.Serialize(item);
-                            string filename = item.Name.Replace("(", "").Replace(")", "") + ".json";
-                            string filepath = Path.Combine(fsd.FileName, filename);
+                            string filepath = Path.Combine(fsd.FileName, item.Name + ".json");
                             File.WriteAllText(filepath, json, Encoding.UTF8);
                         }
                     }
@@ -2001,7 +1903,7 @@ namespace ShareX.UploadersLib
             try
             {
                 OAuth2Info oauth = new OAuth2Info(APIKeys.GitHubID, APIKeys.GitHubSecret);
-                string url = new Gist(oauth).GetAuthorizationURL();
+                string url = new GitHubGist(oauth).GetAuthorizationURL();
 
                 if (!string.IsNullOrEmpty(url))
                 {
@@ -2021,7 +1923,7 @@ namespace ShareX.UploadersLib
             {
                 if (!string.IsNullOrEmpty(code) && Config.GistOAuth2Info != null)
                 {
-                    bool result = new Gist(Config.GistOAuth2Info).GetAccessToken(code);
+                    bool result = new GitHubGist(Config.GistOAuth2Info).GetAccessToken(code);
 
                     if (result)
                     {

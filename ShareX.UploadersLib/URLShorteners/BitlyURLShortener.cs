@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,12 +25,37 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.HelperClasses;
 using System.Collections.Generic;
 using System.Web;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
+    public class BitlyURLShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.BITLY;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return OAuth2Info.CheckOAuth(config.BitlyOAuth2Info);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            if (config.BitlyOAuth2Info == null)
+            {
+                config.BitlyOAuth2Info = new OAuth2Info(APIKeys.BitlyClientID, APIKeys.BitlyClientSecret);
+            }
+
+            return new BitlyURLShortener(config.BitlyOAuth2Info)
+            {
+                Domain = config.BitlyDomain
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpBitly;
+    }
+
     public sealed class BitlyURLShortener : URLShortener, IOAuth2Basic
     {
         private const string URLAPI = "https://api-ssl.bitly.com/";

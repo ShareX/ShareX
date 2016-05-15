@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,13 +24,37 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.UploadersLib.HelperClasses;
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
+    public class TwitterImageUploaderService : ImageUploaderService
+    {
+        public override ImageDestination EnumValue { get; } = ImageDestination.Twitter;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.TwitterOAuthInfoList != null && config.TwitterOAuthInfoList.IsValidIndex(config.TwitterSelectedAccount) &&
+                OAuthInfo.CheckOAuth(config.TwitterOAuthInfoList[config.TwitterSelectedAccount]);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            OAuthInfo twitterOAuth = config.TwitterOAuthInfoList.ReturnIfValidIndex(config.TwitterSelectedAccount);
+
+            return new Twitter(twitterOAuth)
+            {
+                SkipMessageBox = config.TwitterSkipMessageBox,
+                DefaultMessage = config.TwitterDefaultMessage ?? string.Empty
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTwitter;
+    }
+
     public class Twitter : ImageUploader, IOAuth
     {
         private const string APIVersion = "1.1";

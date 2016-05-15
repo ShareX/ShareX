@@ -151,15 +151,6 @@
   <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
     <value>Tam eşleşme</value>
   </data>
-  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>Aktif kültür</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
-    <value>Değişmez kültür (İngilizce)</value>
-  </data>
-  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
-    <value>Sıra (İngilizce)</value>
-  </data>
   <data name="cbFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 17</value>
   </data>
@@ -169,26 +160,11 @@
   <data name="cbFilenameFilterCase.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 17</value>
   </data>
-  <data name="cbFilenameFilterCase.Text" xml:space="preserve">
-    <value>Büyük küçük duyarlı</value>
-  </data>
   <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 17</value>
   </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Durum</value>
-  </data>
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Filtreleri kaldır</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items" xml:space="preserve">
-    <value>Resim</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items1" xml:space="preserve">
-    <value>Dosya</value>
-  </data>
-  <data name="cbTypeFilterSelection.Items2" xml:space="preserve">
-    <value>Yazı</value>
   </data>
   <data name="cbHostFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 17</value>
@@ -211,13 +187,7 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>Dosya adı</value>
   </data>
-  <data name="chType.Text" xml:space="preserve">
-    <value>Tür</value>
-  </data>
-  <data name="chHost.Text" xml:space="preserve">
-    <value>Sunucu</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Geçmiş</value>
+    <value>ShareX - Geçmiş</value>
   </data>
 </root>

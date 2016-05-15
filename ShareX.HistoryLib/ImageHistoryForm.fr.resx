@@ -118,24 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tsmiViewModeGallery.Text" xml:space="preserve">
-    <value>Gallerie</value>
+    <value>Galerie</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Historique des images</value>
+  <data name="tsmiViewModePane.Text" xml:space="preserve">
+    <value>Vue en grille</value>
   </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>Mode de vue</value>
   </data>
-  <data name="tsbQuickList.Text" xml:space="preserve">
-    <value>Afficher seulement les 100 dernières images</value>
-  </data>
-  <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>Carreau</value>
-  </data>
   <data name="tsddbThumbnailSize.Text" xml:space="preserve">
-    <value>Taille de la miniature</value>
+    <value>Taille des miniatures</value>
   </data>
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>Miniatures</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Historique des images</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,19 +31,27 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class DebugForm : BaseForm
+    public partial class DebugForm : Form
     {
+        public Logger Logger { get; private set; }
+
         public DebugForm(Logger logger)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+            Logger = logger;
 
-            rtbDebug.Text = logger.ToString();
+            rtbDebug.Text = Logger.ToString();
             rtbDebug.SelectionStart = rtbDebug.TextLength;
             rtbDebug.ScrollToCaret();
             rtbDebug.AddContextMenu();
 
-            logger.MessageAdded += logger_MessageAdded;
-            FormClosing += (sender, e) => logger.MessageAdded -= logger_MessageAdded;
+            string startupPath = AppDomain.CurrentDomain.BaseDirectory;
+            llRunningFrom.Text = startupPath;
+            llRunningFrom.LinkClicked += (sender, e) => Helpers.OpenFolder(startupPath);
+
+            Logger.MessageAdded += logger_MessageAdded;
+            FormClosing += (sender, e) => Logger.MessageAdded -= logger_MessageAdded;
         }
 
         private void logger_MessageAdded(string message)
@@ -69,6 +77,11 @@ namespace ShareX.HelpersLib
         {
             string text = rtbDebug.Text.Trim();
             ClipboardHelpers.CopyText(text);
+        }
+
+        private void btnOpenLogFile_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenFile(Logger.LogFilePath);
         }
 
         private void btnLoadedAssemblies_Click(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ImageCombinerForm : BaseForm
+    public partial class ImageCombinerForm : Form
     {
         public event Action<Image> ProcessRequested;
 
@@ -43,9 +43,10 @@ namespace ShareX
         {
             Options = options;
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             cbOrientation.Items.AddRange(Enum.GetNames(typeof(Orientation)));
             cbOrientation.SelectedIndex = (int)Options.Orientation;
-            nudSpace.Value = Options.Space;
+            nudSpace.SetValue(Options.Space);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -106,7 +107,7 @@ namespace ShareX
 
                 try
                 {
-                    images = lvImages.Items.Cast<ListViewItem>().Select(x => ImageHelpers.LoadImage(x.Text));
+                    images = lvImages.Items.Cast<ListViewItem>().Select(x => ImageHelpers.LoadImage(x.Text)).Where(x => x != null);
                     Image output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Space);
                     OnProcessRequested(output);
                 }
@@ -137,6 +138,34 @@ namespace ShareX
             if (ProcessRequested != null)
             {
                 ProcessRequested(image);
+            }
+        }
+
+        private void ImageCombinerForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void ImageCombinerForm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
+
+                if (files != null)
+                {
+                    foreach (string file in files)
+                    {
+                        lvImages.Items.Add(file);
+                    }
+                }
             }
         }
     }

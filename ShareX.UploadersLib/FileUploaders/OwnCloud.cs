@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,9 +30,33 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
+    public class OwnCloudFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.OwnCloud;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.OwnCloudHost) && !string.IsNullOrEmpty(config.OwnCloudUsername) && !string.IsNullOrEmpty(config.OwnCloudPassword);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new OwnCloud(config.OwnCloudHost, config.OwnCloudUsername, config.OwnCloudPassword)
+            {
+                Path = config.OwnCloudPath,
+                CreateShare = config.OwnCloudCreateShare,
+                DirectLink = config.OwnCloudDirectLink,
+                IsCompatibility81 = config.OwnCloud81Compatibility
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpOwnCloud;
+    }
+
     public sealed class OwnCloud : FileUploader
     {
         public string Host { get; set; }
@@ -41,7 +65,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Path { get; set; }
         public bool CreateShare { get; set; }
         public bool DirectLink { get; set; }
-        public bool IgnoreInvalidCert { get; set; }
         public bool IsCompatibility81 { get; set; }
 
         public OwnCloud(string host, string username, string password)
@@ -77,41 +100,24 @@ namespace ShareX.UploadersLib.FileUploaders
             url = URLHelpers.FixPrefix(url);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
 
-            SSLBypassHelper sslBypassHelper = null;
+            string response = SendRequestStream(url, stream, Helpers.GetMimeType(fileName), headers, method: HttpMethod.PUT);
 
-            try
+            UploadResult result = new UploadResult(response);
+
+            if (!IsError)
             {
-                if (IgnoreInvalidCert)
+                if (CreateShare)
                 {
-                    sslBypassHelper = new SSLBypassHelper();
+                    AllowReportProgress = false;
+                    result.URL = ShareFile(path);
                 }
-
-                string response = SendRequestStream(url, stream, Helpers.GetMimeType(fileName), headers, method: HttpMethod.PUT);
-
-                UploadResult result = new UploadResult(response);
-
-                if (!IsError)
+                else
                 {
-                    if (CreateShare)
-                    {
-                        AllowReportProgress = false;
-                        result.URL = ShareFile(path);
-                    }
-                    else
-                    {
-                        result.IsURLExpected = false;
-                    }
-                }
-
-                return result;
-            }
-            finally
-            {
-                if (sslBypassHelper != null)
-                {
-                    sslBypassHelper.Dispose();
+                    result.IsURLExpected = false;
                 }
             }
+
+            return result;
         }
 
         // http://doc.owncloud.org/server/7.0/developer_manual/core/ocs-share-api.html#create-a-new-share

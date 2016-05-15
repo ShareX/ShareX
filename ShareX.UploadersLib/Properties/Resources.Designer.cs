@@ -130,12 +130,11 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized string similar to Response parse failed..
         /// </summary>
-        internal static System.Drawing.Icon Copy {
+        internal static string CustomFileUploader_Upload_Response_parse_failed_ {
             get {
-                object obj = ResourceManager.GetObject("Copy", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ResourceManager.GetString("CustomFileUploader_Upload_Response_parse_failed_", resourceCulture);
             }
         }
         
@@ -847,16 +846,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select one of the Pomf uploaders from &quot;Destination settings window -&gt; Pomf tab&quot;..
-        /// </summary>
-        internal static string Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_window____Pomf_tab__ {
-            get {
-                return ResourceManager.GetString("Pomf_Upload_Please_select_one_of_the_Pomf_uploaders_from__Destination_settings_wi" +
-                        "ndow____Pomf_tab__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Pushbullet {
@@ -871,7 +860,7 @@ namespace ShareX.UploadersLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap question_button {
             get {
-                object obj = ResourceManager.GetObject("question-button", resourceCulture);
+                object obj = ResourceManager.GetObject("question_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -903,6 +892,16 @@ namespace ShareX.UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("server_network", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon SomeImage {
+            get {
+                object obj = ResourceManager.GetObject("SomeImage", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -1018,15 +1017,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_ {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hubic refresh folders list failed.
-        /// </summary>
-        internal static string UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed", resourceCulture);
             }
         }
         
@@ -1245,6 +1235,16 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_UpdateDropboxStatus_User_ID_ {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_User_ID_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Vgyme {
+            get {
+                object obj = ResourceManager.GetObject("Vgyme", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

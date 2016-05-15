@@ -232,9 +232,6 @@
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Browse for a Cascading Style Sheet...</value>
   </data>
-  <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
-    <value>Choose file path</value>
-  </data>
   <data name="Stop" xml:space="preserve">
     <value>Stop</value>
   </data>
@@ -367,7 +364,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Install</value>
   </data>
   <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
-    <value>Folder not exist:</value>
+    <value>Folder does not exist:</value>
   </data>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
     <value>Download failed:</value>
@@ -450,9 +447,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR code</value>
   </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Capture region (Annotate)</value>
-  </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Capture region (Light)</value>
   </data>
@@ -476,9 +470,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Upload from URL</value>
-  </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Capture region (Windows and controls)</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Custom file uploader</value>
@@ -542,6 +533,9 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
     <value>Save image to file as...</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>Show file in explorer</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>Save thumbnail image to file</value>
@@ -696,9 +690,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_QRCode_Category" xml:space="preserve">
     <value>Tools</value>
-  </data>
-  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
-    <value>Screen capture</value>
   </data>
   <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
     <value>Screen capture</value>
@@ -859,5 +850,50 @@ Would you like to download it?</value>
   </data>
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>Show "After upload" window</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>Show quick task menu</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>Open history window</value>
+  </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Open image history window</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>File does not exist:</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>Choose folder</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>Choose file</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>Open main window</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>Start screen recording using custom region</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>Start screen recording (GIF) using custom region</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>Recognize text (OCR)</value>
   </data>
 </root>

@@ -117,88 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Bijdragen door:</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Externe bibliotheken</value>
-  </data>
-  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
-    <value>Problemen</value>
-  </data>
-  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
-    <value>Projectpagina</value>
-  </data>
-  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
-    <value>Vertalers</value>
-  </data>
-  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
-    <value>Website</value>
-  </data>
-  <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
-    <value>Bestandspad kan niet leeg zijn.</value>
-  </data>
-  <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
-    <value>De naam kan niet leeg zijn.</value>
-  </data>
-  <data name="ActionsForm_btnPathBrowse_Click_Choose_file_path" xml:space="preserve">
-    <value>Kies bestandspad</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>Kies een map voor de screenshots</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Kies de persoonlijke map voor ShareX</value>
-  </data>
-  <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX moet opnieuw opgestart worden om de taal te wijzigen.
-Wil je ShareX opnieuw opstarten?</value>
-  </data>
-  <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
-    <value>X: {0}, Y: {1}, Width: {2}, Height: {3}</value>
-  </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Resterende tijd: {0}s ({1}%) Totaal: {2}</value>
   </data>
-  <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} zal geüpload worden naar {1}. Je kunt een andere bestemming kiezen.</value>
+  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
+    <value>Bijdragen door:</value>
   </data>
-  <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
-    <value>Gelieve een bestemming te kiezen.</value>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>Kan geen geldig Twitter account vinden.</value>
   </data>
-  <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
-    <value>Ondersteunde variabelen: {0} en andere variabelen zoals {1} etc.</value>
+  <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
+    <value>URL is leeg.</value>
   </data>
-  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
-    <value>Sleep bestand
-naar hier</value>
-  </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Extensie kan niet leeg zijn.</value>
-  </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Pad kan niet leeg zijn.</value>
-  </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Kies een pad voor het conversieprogramma</value>
-  </data>
-  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Gebruik een nieuwe naam:</value>
-  </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
-    <value>sneltoets</value>
-  </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
-    <value>Sneltoets registratie mislukt</value>
-  </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
-    <value>sneltoetsen</value>
+  <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
+    <value>Kies de persoonlijke map voor ShareX</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>Kan {0} niet registreren:
@@ -207,23 +139,209 @@ naar hier</value>
 
 Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma af en start ShareX opnieuw op.</value>
   </data>
-  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>Selecteer een sneltoets...</value>
-  </data>
-  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
-    <value>Ben je zeker dat je dit bestand wilt verwijderen?</value>
-  </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>Bevestiging van verwijderen bestand</value>
   </data>
-  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
-    <value>Tekst upload test</value>
+  <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
+    <value>Deel link ({0})</value>
+  </data>
+  <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
+    <value>X: {0}, Y: {1}, Width: {2}, Height: {3}</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
+    <value>Toon dit bericht niet opnieuw.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
+    <value>Taak: {0}</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>de FFmpeg video en audio bron kunnen niet "None" zijn.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>Updategeschiedenis</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
+    <value>sneltoets</value>
+  </data>
+  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
+    <value>Selecteer een sneltoets...</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
+    <value>Taak eigenschappen</value>
+  </data>
+  <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
+    <value>Gelieve een bestemming te kiezen.</value>
+  </data>
+  <data name="UploadTask_Prepare_Starting" xml:space="preserve">
+    <value>Starten</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
+    <value>{0} bestaat niet.
+
+Wil je het automatisch downloaden?</value>
+  </data>
+  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
+    <value>Je kunt regio vastleggen starten door een linkse enkele muisklik op het tray icoon</value>
+  </data>
+  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
+    <value>Externe bibliotheken</value>
+  </data>
+  <data name="Program_Run_Error" xml:space="preserve">
+    <value>Fout</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Klik om opname te stoppen.</value>
+  </data>
+  <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
+    <value>Je kunt workflows toevoegen via de sneltoets instellingen...</value>
+  </data>
+  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>FTP programma ondersteund alleen FTP of FTPS.</value>
+  </data>
+  <data name="ImageData_Write_Error" xml:space="preserve">
+    <value>Kon de afbeelding niet wegschrijven op {0}.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
+    <value>ShareX moet opnieuw opgestart worden om de taal te wijzigen.
+Wil je ShareX opnieuw opstarten?</value>
+  </data>
+  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
+    <value>Start kleurenkiezer op scherm</value>
+  </data>
+  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
+    <value>Gebruik een nieuwe naam:</value>
+  </data>
+  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
+    <value>Stop kleurenkiezer op scherm</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
+    <value>Ontbrekend</value>
+  </data>
+  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
+    <value>Muispositie (X,Y) = {0},{1}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
+    <value>Vertalers</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
+    <value>Waarschuwing eerste upload</value>
+  </data>
+  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
+    <value>Chrome ondersteuning is ingeschakeld.</value>
+  </data>
+  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
+    <value>Extensie kan niet leeg zijn.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
+    <value>Na vastleggen: {0}</value>
+  </data>
+  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
+    <value>Configureer CLI video omzetters ---&gt;</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
+    <value>Linkverkorter: {0}</value>
+  </data>
+  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
+    <value>Upload fouten</value>
+  </data>
+  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
+    <value>Kan de map niet aanmaken:</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
     <value>Huidige geconfigureerde sneltoetsen:</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>Je kunt bestanden naar dit venster slepen om deze te uploaden.</value>
+  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
+    <value>Links klikken om de link naar het klembord te kopiëren. Rechtsklikken om de link te openen.</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
+    <value>In wachtrij</value>
+  </data>
+  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
+    <value>Bestandsupload</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
+    <value>Ben je zeker dat je dit bestand wilt verwijderen?</value>
+  </data>
+  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
+    <value>Download mislukt:
+{0}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
+    <value>Tekstuploader: {0}</value>
+  </data>
+  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
+    <value>Voorbereiden</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
+    <value>Gestopt</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
+    <value>dienst voor delen links: {0}</value>
+  </data>
+  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>Chrome ondersteuning is uitgeschakeld.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
+    <value>Problemen</value>
+  </data>
+  <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
+    <value>Sluit</value>
+  </data>
+  <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
+    <value>Voorbeeld:</value>
+  </data>
+  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
+    <value>Tekst upload test</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
+    <value>Taak eigenschappen voor {0}</value>
+  </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>Downloaden</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
+    <value>Afbeeldingsbewerker - Hoe laad je de afbeelding in?</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
+    <value>Klaar</value>
+  </data>
+  <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
+    <value>{0} zal geüpload worden naar {1}. Je kunt een andere bestemming kiezen.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
+    <value>Na uploaden: {0}</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
+    <value>Kies een map voor de screenshots</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Klik om opname te starten.</value>
+  </data>
+  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+    <value>Downloaden van FFmpeg mislukt.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Wachten...</value>
+  </data>
+  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
+    <value>Je klembord bevat een afbeelding, wil je deze openen met de afbeeldingsbewerker?
+
+Klik op ja om de afbeelding van het klembord te openen. Klik nee om een afbeelding te selecteren.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
+    <value>Afbeeldingsuploader: {0}</value>
+  </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>Gekopieerd naar klembord: {0}</value>
   </data>
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
     <value>Verberg menu</value>
@@ -231,50 +349,85 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
     <value>Toon menu</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
+  <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
+    <value>URL om te downloaden en dan te uploaden</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
+    <value>Bestandspad kan niet leeg zijn.</value>
+  </data>
+  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
+    <value>Kies een map om op te slaan</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
+    <value>Schakel sneltoetsen in</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>Sneltoets registratie mislukt</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>Sneltoetsen uitgeschakeld.</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
+    <value>Upload bestanden</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
+    <value>Deze programma's kunnen conflicten veroorzaken:</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>Fout</value>
   </data>
-  <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Je kunt workflows toevoegen via de sneltoets instellingen...</value>
+  <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
+    <value>Ondersteunde variabelen: {0} en andere variabelen zoals {1} etc.</value>
   </data>
-  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
-    <value>Kan de map niet aanmaken:</value>
+  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
+    <value>Sleep bestand
+naar hier</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>Sneltoetsen ingeschakeld.</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
+    <value>sneltoetsen</value>
+  </data>
+  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
+    <value>Pad kan niet leeg zijn.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
+    <value>Bestandsuploader: {0}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>Projectpagina</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
+    <value>Tweet succesvol verzonden.</value>
+  </data>
+  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
+    <value>Kies een pad voor het conversieprogramma</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Kan het bestand "{0}" niet benaderen.
 Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
   </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Muispositie (X,Y) = {0},{1}</value>
-  </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>Sluit</value>
-  </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Start kleurenkiezer op scherm</value>
-  </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Stop kleurenkiezer op scherm</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Downloaden van FFmpeg mislukt.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg succesvol gedownload.</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
     <value>het CLI videoconversie bestand bestaat niet:</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Klik om opname te starten.</value>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>Om de instellingen toe te passen moet ShareX vanuit Steam heropgestart worden.</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Klik om opname te stoppen.</value>
+  <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
+    <value>De naam kan niet leeg zijn.</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} bestaat niet.
-
-Wil je het automatisch downloaden?</value>
+  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
+    <value>Schakel sneltoetsen uit</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
+    <value>Taak afgewerkt</value>
+  </data>
+  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
+    <value>Map uploaden</value>
+  </data>
+  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
+    <value>FFmpeg succesvol gedownload.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>Converteren...</value>
@@ -282,105 +435,17 @@ Wil je het automatisch downloaden?</value>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg fout</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>de FFmpeg video en audio bron kunnen niet "None" zijn.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Ontbrekend</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>Er is geen geldige CLI videoconverteerder geselecteerd.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Wachten...</value>
-  </data>
-  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
-    <value>Gekopieerd naar klembord: {0}</value>
-  </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet succesvol verzonden.</value>
-  </data>
-  <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
-    <value>In wachtrij</value>
-  </data>
-  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
-    <value>Fout</value>
-  </data>
-  <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
-    <value>Taak afgewerkt</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Configureer CLI video omzetters ---&gt;</value>
-  </data>
-  <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
-    <value>Voorbeeld:</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
-    <value>Na vastleggen: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
-    <value>Na uploaden: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>Bestandsuploader: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>Afbeeldingsuploader: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Taak: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>Tekstuploader: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>dienst voor delen links: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>Linkverkorter: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
-    <value>Taak eigenschappen</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
-    <value>Taak eigenschappen voor {0}</value>
-  </data>
-  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
-    <value>Upload fouten</value>
-  </data>
-  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
-    <value>Download mislukt:
-{0}</value>
-  </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Ben je zeker dat je {0} bestanden wilt uploaden?</value>
   </data>
-  <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>Toon dit bericht niet opnieuw.</value>
+  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
+    <value>Aangepast</value>
   </data>
-  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
-    <value>Upload bestanden</value>
-  </data>
-  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
-    <value>Bestandsupload</value>
-  </data>
-  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
-    <value>Map uploaden</value>
-  </data>
-  <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
-    <value>URL om te downloaden en dan te uploaden</value>
-  </data>
-  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
-    <value>Deel link ({0})</value>
+  <data name="UploadTask_Stop_Stopping" xml:space="preserve">
+    <value>Stoppen</value>
   </data>
   <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
     <value>Verkort link ({0})</value>
-  </data>
-  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
-    <value>Kies een map om op te slaan</value>
-  </data>
-  <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
-    <value>Waarschuwing eerste upload</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Ben je zeker dat je deze schermopname wilt uploaden?
@@ -389,94 +454,14 @@ Klik op "Nee" om de huidige upload te annuleren en het automatisch uploaden uit 
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Uploaden</value>
   </data>
-  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
-    <value>Klaar</value>
-  </data>
-  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
-    <value>Gestopt</value>
-  </data>
-  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
-    <value>Voorbereiden</value>
-  </data>
-  <data name="UploadTask_Prepare_Starting" xml:space="preserve">
-    <value>Starten</value>
-  </data>
-  <data name="UploadTask_Stop_Stopping" xml:space="preserve">
-    <value>Stoppen</value>
-  </data>
-  <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
-    <value>URL is leeg.</value>
-  </data>
-  <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
-    <value>Kies een map</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>FTP programma ondersteund alleen FTP of FTPS.</value>
+  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
+    <value>Er is geen geldige CLI videoconverteerder geselecteerd.</value>
   </data>
   <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Kan geen geldig FTP account vinden.</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Kan geen geldig Twitter account vinden.</value>
-  </data>
-  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
-    <value>Links klikken om de link naar het klembord te kopiëren. Rechtsklikken om de link te openen.</value>
-  </data>
-  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
-    <value>Schakel sneltoetsen uit</value>
-  </data>
-  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
-    <value>Schakel sneltoetsen in</value>
-  </data>
-  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
-    <value>Sneltoetsen uitgeschakeld.</value>
-  </data>
-  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
-    <value>Sneltoetsen ingeschakeld.</value>
-  </data>
-  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>Om de instellingen toe te passen moet ShareX vanuit Steam heropgestart worden.</value>
-  </data>
-  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
-    <value>Aangepast</value>
-  </data>
-  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
-    <value>Chrome ondersteuning is ingeschakeld.</value>
-  </data>
-  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
-    <value>Chrome ondersteuning is uitgeschakeld.</value>
-  </data>
-  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
-    <value>Je kunt regio vastleggen starten door een linkse enkele muisklik op het tray icoon</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Afbeeldingsbewerker - Hoe laad je de afbeelding in?</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Je klembord bevat een afbeelding, wil je deze openen met de afbeeldingsbewerker?
-
-Klik op ja om de afbeelding van het klembord te openen. Klik nee om een afbeelding te selecteren.</value>
-  </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Je probeert een groot bestand te uploaden.
 Ben je zeker dat je door wilt gaan?</value>
-  </data>
-  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
-    <value>Downloaden</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>Vastleggen</value>
-  </data>
-  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
-    <value>Updategeschiedenis</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Kon de afbeelding niet wegschrijven op {0}.</value>
-  </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Deze programma's kunnen conflicten veroorzaken:</value>
   </data>
 </root>

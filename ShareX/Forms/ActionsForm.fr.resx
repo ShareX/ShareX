@@ -127,19 +127,19 @@
     <value>OK</value>
   </data>
   <data name="lblArgs.Text" xml:space="preserve">
-    <value>Arguments:</value>
+    <value>Arguments :</value>
   </data>
   <data name="lblExtensions.Text" xml:space="preserve">
-    <value>Filtre d'extensions: (Exemple: jpg png mp4)</value>
+    <value>Filtre d'extensions: (Exemple : jpg., png., mp4...)</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>Nom:</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Extension du fichier de sortie: (Vide = utilise le même nom de fichier)</value>
+    <value>Extension du fichier de sortie: (Vide = Utilise le même nom de fichier)</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
-    <value>Chemin du fichier:</value>
+    <value>Chemin du fichier :</value>
   </data>
   <data name="cbHiddenWindow.Text" xml:space="preserve">
     <value>Fenêtre cachée</value>

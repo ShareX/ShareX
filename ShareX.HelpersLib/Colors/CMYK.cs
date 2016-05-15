@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -145,8 +145,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public CMYK(double cyan, double magenta, double yellow, double key, int alpha = 255)
-            : this()
+        public CMYK(double cyan, double magenta, double yellow, double key, int alpha = 255) : this()
         {
             Cyan = cyan;
             Magenta = magenta;
@@ -155,8 +154,7 @@ namespace ShareX.HelpersLib
             Alpha = alpha;
         }
 
-        public CMYK(int cyan, int magenta, int yellow, int key, int alpha = 255)
-            : this()
+        public CMYK(int cyan, int magenta, int yellow, int key, int alpha = 255) : this()
         {
             Cyan100 = cyan;
             Magenta100 = magenta;

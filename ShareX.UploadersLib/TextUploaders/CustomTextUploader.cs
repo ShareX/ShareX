@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,14 +23,52 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
+    public class CustomTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.CustomTextUploader;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomTextUploaderSelected);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            int index;
+
+            if (taskInfo.OverrideCustomUploader)
+            {
+                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, config.CustomUploadersList.Count - 1);
+            }
+            else
+            {
+                index = config.CustomTextUploaderSelected;
+            }
+
+            CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
+
+            if (customUploader != null)
+            {
+                return new CustomTextUploader(customUploader);
+            }
+
+            return null;
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpCustomUploaders;
+    }
+
     public sealed class CustomTextUploader : TextUploader
     {
         private CustomUploaderItem customUploader;
@@ -72,7 +110,14 @@ namespace ShareX.UploadersLib.TextUploaders
                 result.Response = SendRequest(customUploader.GetHttpMethod(), requestURL, args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
             }
 
-            customUploader.ParseResponse(result);
+            try
+            {
+                customUploader.ParseResponse(result);
+            }
+            catch (Exception e)
+            {
+                Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
+            }
 
             return result;
         }

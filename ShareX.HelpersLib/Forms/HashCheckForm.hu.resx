@@ -132,9 +132,6 @@
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Hash típusa:</value>
   </data>
-  <data name="lblProgress.Text" xml:space="preserve">
-    <value>Folyamat:</value>
-  </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Eredmény:</value>
   </data>

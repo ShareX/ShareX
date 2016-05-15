@@ -591,12 +591,6 @@
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>직사각형 (어둡지 않게)</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>직사각형 (창 자동 식별)</value>
-  </data>
-  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>직사각형 (창 자동 식별)</value>
-  </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
     <value>직사각형 (주석 달기)</value>
   </data>

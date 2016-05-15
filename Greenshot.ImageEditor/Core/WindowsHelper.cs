@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -26,7 +26,6 @@ using GreenshotPlugin.UnmanagedHelpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
@@ -79,7 +78,7 @@ namespace GreenshotPlugin.Core
         /// <summary>
         /// Gets all child windows of the specified window
         /// </summary>
-        /// <param name="hWndParent">Window Handle to get children for</param>
+        /// <param name="parent">Window Handle to get children for</param>
         public WindowsEnumerator GetWindows(WindowDetails parent)
         {
             if (parent != null)
@@ -102,7 +101,7 @@ namespace GreenshotPlugin.Core
         {
             items = new List<WindowDetails>();
             List<WindowDetails> windows = new List<WindowDetails>();
-            User32.EnumChildWindows(hWndParent, WindowEnum, 0);
+            User32.EnumChildWindows(hWndParent, new EnumWindowsProc(WindowEnum), IntPtr.Zero);
 
             bool hasParent = !IntPtr.Zero.Equals(hWndParent);
             string parentText = null;
@@ -190,17 +189,14 @@ namespace GreenshotPlugin.Core
     /// Provides details about a Window returned by the
     /// enumeration
     /// </summary>
-    [SuppressMessage("Microsoft.Design", "CA1049:TypesThatOwnNativeResourcesShouldBeDisposable")]
     public class WindowDetails : IEquatable<WindowDetails>
     {
         private const string METRO_WINDOWS_CLASS = "Windows.UI.Core.CoreWindow";
         private const string METRO_APPLAUNCHER_CLASS = "ImmersiveLauncher";
         private const string METRO_GUTTER_CLASS = "ImmersiveGutter";
 
-        private static Dictionary<string, List<string>> classnameTree = new Dictionary<string, List<string>>();
         private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
         private static List<IntPtr> ignoreHandles = new List<IntPtr>();
-        private static Dictionary<string, Image> iconCache = new Dictionary<string, Image>();
         private static List<string> excludeProcessesFromFreeze = new List<string>();
         private static IAppVisibility appVisibility = null;
 
@@ -208,7 +204,7 @@ namespace GreenshotPlugin.Core
         {
             try
             {
-                // Only try to instanciate when Windows 8 or later.
+                // Only try to instantiate when Windows 8 or later.
                 if (Environment.OSVersion.Version.Major >= 6 && Environment.OSVersion.Version.Minor >= 2)
                 {
                     appVisibility = COMWrapper.CreateInstance<IAppVisibility>();
@@ -338,7 +334,7 @@ namespace GreenshotPlugin.Core
                     return string.Empty;
                 }
                 // Get the process id
-                IntPtr processid;
+                int processid;
                 User32.GetWindowThreadProcessId(Handle, out processid);
                 return Kernel32.GetProcessPath(processid);
             }
@@ -373,20 +369,7 @@ namespace GreenshotPlugin.Core
                 }
                 try
                 {
-                    string filename = ProcessPath;
-                    if (!iconCache.ContainsKey(filename))
-                    {
-                        Image icon = null;
-                        using (Icon appIcon = Shell32.ExtractAssociatedIcon(filename))
-                        {
-                            if (appIcon != null)
-                            {
-                                icon = appIcon.ToBitmap();
-                            }
-                        }
-                        iconCache.Add(filename, icon);
-                    }
-                    return iconCache[filename];
+                    return PluginUtils.GetCachedExeIcon(ProcessPath, 0);
                 }
                 catch (Exception ex)
                 {
@@ -404,14 +387,26 @@ namespace GreenshotPlugin.Core
         /// <returns></returns>
         private static Icon GetAppIcon(IntPtr hwnd)
         {
-            const int ICON_SMALL = 0;
-            const int ICON_BIG = 1;
-            const int ICON_SMALL2 = 2;
+            IntPtr ICON_SMALL = IntPtr.Zero;
+            IntPtr ICON_BIG = new IntPtr(1);
+            IntPtr ICON_SMALL2 = new IntPtr(2);
 
-            IntPtr iconHandle = User32.SendMessage(hwnd, (int)WindowsMessages.WM_GETICON, ICON_SMALL2, 0);
+            IntPtr iconHandle = User32.SendMessage(hwnd, (int)WindowsMessages.WM_GETICON, ICON_BIG, IntPtr.Zero);
+            if (conf.UseLargeIcons)
+            {
+                iconHandle = User32.SendMessage(hwnd, (int)WindowsMessages.WM_GETICON, ICON_BIG, IntPtr.Zero);
+                if (iconHandle == IntPtr.Zero)
+                {
+                    iconHandle = User32.GetClassLongWrapper(hwnd, (int)ClassLongIndex.GCL_HICON);
+                }
+            }
+            else
+            {
+                iconHandle = User32.SendMessage(hwnd, (int)WindowsMessages.WM_GETICON, ICON_SMALL2, IntPtr.Zero);
+            }
             if (iconHandle == IntPtr.Zero)
             {
-                iconHandle = User32.SendMessage(hwnd, (int)WindowsMessages.WM_GETICON, ICON_SMALL, 0);
+                iconHandle = User32.SendMessage(hwnd, (int)WindowsMessages.WM_GETICON, ICON_SMALL, IntPtr.Zero);
             }
             if (iconHandle == IntPtr.Zero)
             {
@@ -419,7 +414,7 @@ namespace GreenshotPlugin.Core
             }
             if (iconHandle == IntPtr.Zero)
             {
-                iconHandle = User32.SendMessage(hwnd, (int)WindowsMessages.WM_GETICON, ICON_BIG, 0);
+                iconHandle = User32.SendMessage(hwnd, (int)WindowsMessages.WM_GETICON, ICON_BIG, IntPtr.Zero);
             }
             if (iconHandle == IntPtr.Zero)
             {
@@ -502,7 +497,7 @@ namespace GreenshotPlugin.Core
         }
 
         /// <summary>
-        /// Retrieve the child with mathing classname
+        /// Retrieve the child with matching classname
         /// </summary>
         public WindowDetails GetChild(string childClassname)
         {
@@ -517,7 +512,7 @@ namespace GreenshotPlugin.Core
         }
 
         /// <summary>
-        /// Retrieve the children with mathing classname
+        /// Retrieve the children with matching classname
         /// </summary>
         public IEnumerable<WindowDetails> GetChilden(string childClassname)
         {
@@ -610,7 +605,7 @@ namespace GreenshotPlugin.Core
         /// </summary>
         /// <param name="titlePattern">The regexp to look for in the title</param>
         /// <param name="classnamePattern">The regexp to look for in the classname</param>
-        /// <returns>List<WindowDetails> with all the found windows, or an emptry list</returns>
+        /// <returns>List<WindowDetails> with all the found windows, or an empty list</returns>
         public List<WindowDetails> FindChildren(string titlePattern, string classnamePattern)
         {
             return FindWindow(Children, titlePattern, classnamePattern);
@@ -766,7 +761,7 @@ namespace GreenshotPlugin.Core
         }
 
         /// <summary>
-        /// Gets/Sets whether the window is iconic (mimimised) or not.
+        /// Gets/Sets whether the window is iconic (mimimized) or not.
         /// </summary>
         public bool Iconic
         {
@@ -874,7 +869,7 @@ namespace GreenshotPlugin.Core
                             }
                             else
                             {
-                                // Is only partly on the screen, when this happens the app is allways visible!
+                                // Is only partly on the screen, when this happens the app is always visible!
                                 return true;
                             }
                         }
@@ -903,11 +898,11 @@ namespace GreenshotPlugin.Core
             }
         }
 
-        public IntPtr ProcessId
+        public int ProcessId
         {
             get
             {
-                IntPtr processId;
+                int processId;
                 User32.GetWindowThreadProcessId(Handle, out processId);
                 return processId;
             }
@@ -919,9 +914,9 @@ namespace GreenshotPlugin.Core
             {
                 try
                 {
-                    IntPtr processId;
+                    int processId;
                     User32.GetWindowThreadProcessId(Handle, out processId);
-                    Process process = Process.GetProcessById(processId.ToInt32());
+                    Process process = Process.GetProcessById(processId);
                     if (process != null)
                     {
                         return process;
@@ -960,7 +955,7 @@ namespace GreenshotPlugin.Core
                     if (previousWindowRectangle.IsEmpty || now - lastWindowRectangleRetrieveTime > CACHE_TIME)
                     {
                         Rectangle windowRect = Rectangle.Empty;
-                        if (!HasParent && DWM.isDWMEnabled())
+                        if (DWM.isDWMEnabled())
                         {
                             GetExtendedFrameBounds(out windowRect);
                         }
@@ -1210,7 +1205,7 @@ namespace GreenshotPlugin.Core
                     // Correct capture size for maximized window by offsetting the X,Y with the border size
                     captureRectangle.X += borderSize.Width;
                     captureRectangle.Y += borderSize.Height;
-                    // and subtrackting the border from the size (2 times, as we move right/down for the capture without resizing)
+                    // and subtracting the border from the size (2 times, as we move right/down for the capture without resizing)
                     captureRectangle.Width -= 2 * borderSize.Width;
                     captureRectangle.Height -= 2 * borderSize.Height;
                 }
@@ -1220,10 +1215,13 @@ namespace GreenshotPlugin.Core
                     if (!doesCaptureFit)
                     {
                         // if GDI is allowed.. (a screenshot won't be better than we comes if we continue)
-                        if (!isMetroApp && WindowCapture.isGDIAllowed(Process))
+                        using (Process thisWindowProcess = Process)
                         {
-                            // we return null which causes the capturing code to try another method.
-                            return null;
+                            if (!isMetroApp && WindowCapture.IsGdiAllowed(thisWindowProcess))
+                            {
+                                // we return null which causes the capturing code to try another method.
+                                return null;
+                            }
                         }
                     }
                 }
@@ -1268,7 +1266,7 @@ namespace GreenshotPlugin.Core
                                     // Make sure the application window is active, so the colors & buttons are right
                                     ToForeground();
                                 }
-                                // Make sure all changes are processed and visisble
+                                // Make sure all changes are processed and visible
                                 Application.DoEvents();
                                 using (Bitmap blackBitmap = WindowCapture.CaptureRectangle(captureRectangle))
                                 {
@@ -1279,7 +1277,7 @@ namespace GreenshotPlugin.Core
                         catch (Exception e)
                         {
                             LOG.Debug("Exception: ", e);
-                            // Some problem occured, cleanup and make a normal capture
+                            // Some problem occurred, cleanup and make a normal capture
                             if (capturedBitmap != null)
                             {
                                 capturedBitmap.Dispose();
@@ -1309,7 +1307,7 @@ namespace GreenshotPlugin.Core
                             // Make sure the application window is active, so the colors & buttons are right
                             ToForeground();
                         }
-                        // Make sure all changes are processed and visisble
+                        // Make sure all changes are processed and visible
                         Application.DoEvents();
                         // Capture from the screen
                         capturedBitmap = WindowCapture.CaptureRectangle(captureRectangle);
@@ -1393,7 +1391,7 @@ namespace GreenshotPlugin.Core
         /// <summary>
         /// Apply transparency by comparing a transparent capture with a black and white background
         /// A "Math.min" makes sure there is no overflow, but this could cause the picture to have shifted colors.
-        /// The pictures should have been taken without differency, exect for the colors.
+        /// The pictures should have been taken without differency, except for the colors.
         /// </summary>
         /// <param name="blackBitmap">Bitmap with the black image</param>
         /// <param name="whiteBitmap">Bitmap with the black image</param>
@@ -1588,32 +1586,34 @@ namespace GreenshotPlugin.Core
         /// </summary>
         private bool FreezeWindow()
         {
-            Process proc = Process.GetProcessById(ProcessId.ToInt32());
-            string processName = proc.ProcessName;
-            if (!CanFreezeOrUnfreeze(processName))
-            {
-                LOG.DebugFormat("Not freezing {0}", processName);
-                return false;
-            }
-            if (!CanFreezeOrUnfreeze(Text))
-            {
-                LOG.DebugFormat("Not freezing {0}", processName);
-                return false;
-            }
-            LOG.DebugFormat("Freezing process: {0}", processName);
-
             bool frozen = false;
-
-            foreach (ProcessThread pT in proc.Threads)
+            using (Process proc = Process.GetProcessById(ProcessId))
             {
-                IntPtr pOpenThread = Kernel32.OpenThread(ThreadAccess.SUSPEND_RESUME, false, (uint)pT.Id);
-
-                if (pOpenThread == IntPtr.Zero)
+                string processName = proc.ProcessName;
+                if (!CanFreezeOrUnfreeze(processName))
                 {
-                    break;
+                    LOG.DebugFormat("Not freezing {0}", processName);
+                    return false;
                 }
-                frozen = true;
-                Kernel32.SuspendThread(pOpenThread);
+                if (!CanFreezeOrUnfreeze(Text))
+                {
+                    LOG.DebugFormat("Not freezing {0}", processName);
+                    return false;
+                }
+                LOG.DebugFormat("Freezing process: {0}", processName);
+
+                foreach (ProcessThread pT in proc.Threads)
+                {
+                    IntPtr pOpenThread = Kernel32.OpenThread(ThreadAccess.SUSPEND_RESUME, false, (uint)pT.Id);
+
+                    if (pOpenThread == IntPtr.Zero)
+                    {
+                        break;
+                    }
+                    frozen = true;
+                    Kernel32.SuspendThread(pOpenThread);
+                    pT.Dispose();
+                }
             }
             return frozen;
         }
@@ -1623,36 +1623,37 @@ namespace GreenshotPlugin.Core
         /// </summary>
         public void UnfreezeWindow()
         {
-            Process proc = Process.GetProcessById(ProcessId.ToInt32());
-
-            string processName = proc.ProcessName;
-            if (!CanFreezeOrUnfreeze(processName))
+            using (Process proc = Process.GetProcessById(ProcessId))
             {
-                LOG.DebugFormat("Not unfreezing {0}", processName);
-                return;
-            }
-            if (!CanFreezeOrUnfreeze(Text))
-            {
-                LOG.DebugFormat("Not unfreezing {0}", processName);
-                return;
-            }
-            LOG.DebugFormat("Unfreezing process: {0}", processName);
-
-            foreach (ProcessThread pT in proc.Threads)
-            {
-                IntPtr pOpenThread = Kernel32.OpenThread(ThreadAccess.SUSPEND_RESUME, false, (uint)pT.Id);
-
-                if (pOpenThread == IntPtr.Zero)
+                string processName = proc.ProcessName;
+                if (!CanFreezeOrUnfreeze(processName))
                 {
-                    break;
+                    LOG.DebugFormat("Not unfreezing {0}", processName);
+                    return;
                 }
+                if (!CanFreezeOrUnfreeze(Text))
+                {
+                    LOG.DebugFormat("Not unfreezing {0}", processName);
+                    return;
+                }
+                LOG.DebugFormat("Unfreezing process: {0}", processName);
 
-                Kernel32.ResumeThread(pOpenThread);
+                foreach (ProcessThread pT in proc.Threads)
+                {
+                    IntPtr pOpenThread = Kernel32.OpenThread(ThreadAccess.SUSPEND_RESUME, false, (uint)pT.Id);
+
+                    if (pOpenThread == IntPtr.Zero)
+                    {
+                        break;
+                    }
+
+                    Kernel32.ResumeThread(pOpenThread);
+                }
             }
         }
 
         /// <summary>
-        /// Return an Image representating the Window!
+        /// Return an Image representing the Window!
         /// As GDI+ draws it, it will be without Aero borders!
         /// </summary>
         public Image PrintWindow()
@@ -1672,19 +1673,14 @@ namespace GreenshotPlugin.Core
                 returnImage = new Bitmap(windowRect.Width, windowRect.Height, pixelFormat);
                 using (Graphics graphics = Graphics.FromImage(returnImage))
                 {
-                    IntPtr hDCDest = graphics.GetHdc();
-                    try
+                    using (SafeDeviceContextHandle graphicsDC = graphics.GetSafeDeviceContext())
                     {
-                        bool printSucceeded = User32.PrintWindow(Handle, hDCDest, 0x0);
+                        bool printSucceeded = User32.PrintWindow(Handle, graphicsDC.DangerousGetHandle(), 0x0);
                         if (!printSucceeded)
                         {
                             // something went wrong, most likely a "0x80004005" (Acess Denied) when using UAC
                             exceptionOccured = User32.CreateWin32Exception("PrintWindow");
                         }
-                    }
-                    finally
-                    {
-                        graphics.ReleaseHdc(hDCDest);
                     }
 
                     // Apply the region "transparency"
@@ -1765,7 +1761,10 @@ namespace GreenshotPlugin.Core
                 {
                     if (!isMetroApp)
                     {
-                        return "Greenshot".Equals(Process.MainModule.FileVersionInfo.ProductName);
+                        using (Process thisWindowProcess = Process)
+                        {
+                            return "Greenshot".Equals(thisWindowProcess.MainModule.FileVersionInfo.ProductName);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -1777,9 +1776,9 @@ namespace GreenshotPlugin.Core
         }
 
         /// <summary>
-        /// Gets the Destop window
+        /// Gets the Desktop window
         /// </summary>
-        /// <returns>WindowDetails for the destop window</returns>
+        /// <returns>WindowDetails for the desktop window</returns>
         public static WindowDetails GetDesktopWindow()
         {
             return new WindowDetails(User32.GetDesktopWindow());
@@ -1830,7 +1829,7 @@ namespace GreenshotPlugin.Core
         /// </summary>
         /// <param name="hWnd">IntPtr with the windows handle</param>
         /// <returns>String with ClassName</returns>
-        public static String GetClassName(IntPtr hWnd)
+        public static string GetClassName(IntPtr hWnd)
         {
             StringBuilder classNameBuilder = new StringBuilder(260, 260);
             User32.GetClassName(hWnd, classNameBuilder, classNameBuilder.Capacity);
@@ -1979,7 +1978,7 @@ namespace GreenshotPlugin.Core
         /// <returns></returns>
         public static WindowDetails GetLinkedWindow(WindowDetails windowToLinkTo)
         {
-            IntPtr processIdSelectedWindow = windowToLinkTo.ProcessId;
+            int processIdSelectedWindow = windowToLinkTo.ProcessId;
             foreach (WindowDetails window in GetAllWindows())
             {
                 // Ignore windows without title

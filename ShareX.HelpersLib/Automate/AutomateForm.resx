@@ -161,7 +161,7 @@
   </data>
   <data name="rtbInput.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;rtbInput.Name" xml:space="preserve">
     <value>rtbInput</value>
   </data>
@@ -552,12 +552,6 @@
   <data name="lvScripts.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
   </data>
-  <data name="chScriptName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="chScriptName.Width" type="System.Int32, mscorlib">
-    <value>130</value>
-  </data>
   <data name="lvScripts.Location" type="System.Drawing.Point, System.Drawing">
     <value>520, 104</value>
   </data>
@@ -578,6 +572,12 @@
   </data>
   <data name="&gt;&gt;lvScripts.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="chScriptName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="chScriptName.Width" type="System.Int32, mscorlib">
+    <value>130</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -604,6 +604,6 @@
     <value>AutomateForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BaseForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

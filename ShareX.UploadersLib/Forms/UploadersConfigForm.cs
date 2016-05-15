@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2015 ShareX Team
+    Copyright (c) 2007-2016 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,7 +26,6 @@
 using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
-using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
@@ -41,26 +40,37 @@ namespace ShareX.UploadersLib
 {
     public partial class UploadersConfigForm : Form
     {
+        private static UploadersConfigForm instance;
+
         public UploadersConfig Config { get; private set; }
 
         private ImageList uploadersImageList;
-        private URLType urlType = URLType.URL;
+        private URLType customUploaderURLType = URLType.URL;
 
-        public UploadersConfigForm(UploadersConfig uploadersConfig)
+        private UploadersConfigForm(UploadersConfig config)
         {
-            Config = uploadersConfig;
+            Config = config;
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            InitializeControls();
+        }
 
-            if (!string.IsNullOrEmpty(Config.FilePath))
+        public static UploadersConfigForm GetFormInstance(UploadersConfig config, out bool firstInstance)
+        {
+            if (instance == null || instance.IsDisposed)
             {
-                Text += " - " + Config.FilePath;
+                instance = new UploadersConfigForm(config);
+                firstInstance = true;
             }
+            else
+            {
+                firstInstance = false;
+            }
+
+            return instance;
         }
 
         private void UploadersConfigForm_Shown(object sender, EventArgs e)
         {
-            FormSettings();
             LoadSettings();
         }
 
@@ -69,8 +79,15 @@ namespace ShareX.UploadersLib
             Refresh();
         }
 
-        private void FormSettings()
+        private void InitializeControls()
         {
+            Icon = ShareXResources.Icon;
+
+            if (!string.IsNullOrEmpty(Config.FilePath))
+            {
+                Text += " - " + Config.FilePath;
+            }
+
             uploadersImageList = new ImageList();
             uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
 
@@ -80,7 +97,6 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpBox, Resources.Box);
             AddIconToTab(tpChevereto, Resources.Chevereto);
             AddIconToTab(tpCoinURL, Resources.CoinURL);
-            AddIconToTab(tpCopy, Resources.Copy);
             AddIconToTab(tpCustomUploaders, Resources.globe_network);
             AddIconToTab(tpDropbox, Resources.Dropbox);
             AddIconToTab(tpEmail, Resources.mail);
@@ -110,14 +126,16 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpPomf, Resources.Pomf);
             AddIconToTab(tpPushbullet, Resources.Pushbullet);
             AddIconToTab(tpSeafile, Resources.Seafile);
-            AddIconToTab(tpSul, Resources.Sul);
-            AddIconToTab(tpStreamable, Resources.Streamable);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
+            AddIconToTab(tpSomeImage, Resources.SomeImage);
+            AddIconToTab(tpStreamable, Resources.Streamable);
+            AddIconToTab(tpSul, Resources.Sul);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
             AddIconToTab(tpTwitter, Resources.Twitter);
             AddIconToTab(tpUp1, Resources.Up1);
             AddIconToTab(tpUpaste, Resources.Upaste);
+            AddIconToTab(tpVgyme, Resources.Vgyme);
             AddIconToTab(tpYourls, Resources.Yourls);
 
             ttlvMain.ImageList = uploadersImageList;
@@ -125,11 +143,10 @@ namespace ShareX.UploadersLib
             ttlvMain.FocusListView();
 
             CodeMenu.Create(txtDropboxPath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
-            CodeMenu.Create(txtCopyPath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
             CodeMenu.Create(txtAmazonS3ObjectPrefix, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
             CodeMenu.Create(txtMediaFirePath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
-            CodeMenu.Create(txtCustomUploaderArgValue, ReplCodeMenuEntry.n);
-            CodeMenu.Create(txtCustomUploaderHeaderValue, ReplCodeMenuEntry.n);
+            CodeMenu.Create(txtCustomUploaderArgValue, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create(txtCustomUploaderHeaderValue, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
 
             txtCustomUploaderLog.AddContextMenu();
 
@@ -149,6 +166,11 @@ namespace ShareX.UploadersLib
 
             eiFTP.ObjectType = typeof(FTPAccount);
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
+
+#if DEBUG
+            btnCheveretoTestAll.Visible = true;
+            btnPomfTest.Visible = true;
+#endif
         }
 
         private void AddIconToTab(TabPage tp, Icon icon)
@@ -161,6 +183,14 @@ namespace ShareX.UploadersLib
         {
             uploadersImageList.Images.Add(tp.Name, bitmap);
             tp.ImageKey = tp.Name;
+        }
+
+        public void NavigateToTabPage(TabPage tp)
+        {
+            if (tp != null)
+            {
+                ttlvMain.NavigateToTabPage(tp);
+            }
         }
 
         public void LoadSettings()
@@ -237,9 +267,20 @@ namespace ShareX.UploadersLib
 
             // Chevereto
 
-            txtCheveretoWebsite.Text = Config.CheveretoWebsite;
-            txtCheveretoAPIKey.Text = Config.CheveretoAPIKey;
+            if (Config.CheveretoUploader == null) Config.CheveretoUploader = new CheveretoUploader();
+            cbCheveretoUploaders.Items.AddRange(Chevereto.Uploaders.ToArray());
+            txtCheveretoUploadURL.Text = Config.CheveretoUploader.UploadURL;
+            txtCheveretoAPIKey.Text = Config.CheveretoUploader.APIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
+
+            // SomeImage
+
+            txtSomeImageAPIKey.Text = Config.SomeImageAPIKey;
+            cbSomeImageDirectURL.Checked = Config.SomeImageDirectURL;
+
+            // vgy.me
+
+            txtVgymeUserKey.Text = Config.VgymeUserKey;
 
             #endregion Image uploaders
 
@@ -266,6 +307,7 @@ namespace ShareX.UploadersLib
                 }
             }
             txtPastebinTitle.Text = Config.PastebinSettings.Title;
+            cbPastebinRaw.Checked = Config.PastebinSettings.RawURL;
 
             // Paste.ee
 
@@ -274,12 +316,14 @@ namespace ShareX.UploadersLib
             // Gist
 
             atcGistAccountType.SelectedAccountType = Config.GistAnonymousLogin ? AccountType.Anonymous : AccountType.User;
-            chkGistPublishPublic.Checked = Config.GistPublishPublic;
 
             if (OAuth2Info.CheckOAuth(Config.GistOAuth2Info))
             {
                 oAuth2Gist.Status = OAuthLoginStatus.LoginSuccessful;
             }
+
+            cbGistPublishPublic.Checked = Config.GistPublishPublic;
+            cbGistUseRawURL.Checked = Config.GistRawURL;
 
             // Upaste
 
@@ -313,18 +357,6 @@ namespace ShareX.UploadersLib
             cbDropboxURLType.Items.AddRange(Helpers.GetEnumNamesProper<DropboxURLType>());
             cbDropboxURLType.SelectedIndex = (int)Config.DropboxURLType;
             UpdateDropboxStatus();
-
-            // Copy
-
-            if (OAuthInfo.CheckOAuth(Config.CopyOAuthInfo))
-            {
-                oAuthCopy.Status = OAuthLoginStatus.LoginSuccessful;
-            }
-
-            txtCopyPath.Text = Config.CopyUploadPath;
-            cbCopyURLType.Items.AddRange(Helpers.GetEnumNamesProper<CopyURLType>());
-            cbCopyURLType.SelectedIndex = (int)Config.CopyURLType;
-            UpdateCopyStatus();
 
             // Google Drive
 
@@ -403,10 +435,10 @@ namespace ShareX.UploadersLib
             // Email
 
             txtEmailSmtpServer.Text = Config.EmailSmtpServer;
-            nudEmailSmtpPort.Value = Config.EmailSmtpPort;
+            nudEmailSmtpPort.SetValue(Config.EmailSmtpPort);
             txtEmailFrom.Text = Config.EmailFrom;
             txtEmailPassword.Text = Config.EmailPassword;
-            chkEmailConfirm.Checked = Config.EmailConfirmSend;
+            cbEmailConfirm.Checked = Config.EmailConfirmSend;
             cbEmailRememberLastTo.Checked = Config.EmailRememberLastTo;
             txtEmailDefaultSubject.Text = Config.EmailDefaultSubject;
             txtEmailDefaultBody.Text = Config.EmailDefaultBody;
@@ -442,7 +474,7 @@ namespace ShareX.UploadersLib
 
             try
             {
-                txtJiraConfigHelp.Text = string.Format(@"Howto configure your Jira server:
+                txtJiraConfigHelp.Text = string.Format(@"How to configure your Jira server:
 
 - Go to 'Administration' -> 'Add-ons'
 - Select 'Application Links'
@@ -515,7 +547,6 @@ namespace ShareX.UploadersLib
             txtOwnCloudPath.Text = Config.OwnCloudPath;
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
-            cbOwnCloudIgnoreInvalidCert.Checked = Config.OwnCloudIgnoreInvalidCert;
             cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
 
             // MediaFire
@@ -553,7 +584,7 @@ namespace ShareX.UploadersLib
             btnSeafileLibraryPasswordValidate.Enabled = !Config.SeafileIsLibraryEncrypted;
             cbSeafileCreateShareableURL.Checked = Config.SeafileCreateShareableURL;
             cbSeafileIgnoreInvalidCert.Checked = Config.SeafileIgnoreInvalidCert;
-            nudSeafileExpireDays.Value = Config.SeafileShareDaysToExpire;
+            nudSeafileExpireDays.SetValue(Config.SeafileShareDaysToExpire);
             txtSeafileSharePassword.Text = Config.SeafileSharePassword;
             txtSeafileAccInfoEmail.Text = Config.SeafileAccInfoEmail;
             txtSeafileAccInfoUsage.Text = Config.SeafileAccInfoUsage;
@@ -563,11 +594,8 @@ namespace ShareX.UploadersLib
             cbStreamableAnonymous.Checked = Config.StreamableAnonymous;
             txtStreamablePassword.Text = Config.StreamablePassword;
             txtStreamableUsername.Text = Config.StreamableUsername;
-            if (Config.StreamableAnonymous)
-            {
-                txtStreamableUsername.Enabled = false;
-                txtStreamablePassword.Enabled = false;
-            }
+            txtStreamableUsername.Enabled = txtStreamablePassword.Enabled = !Config.StreamableAnonymous;
+            cbStreamableUseDirectURL.Checked = Config.StreamableUseDirectURL;
 
             #endregion File uploaders
 
@@ -976,14 +1004,53 @@ namespace ShareX.UploadersLib
 
         #region Chevereto
 
+        private void cbCheveretoUploaders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCheveretoUploaders.SelectedIndex > -1)
+            {
+                CheveretoUploader uploader = cbCheveretoUploaders.SelectedItem as CheveretoUploader;
+
+                if (uploader != null)
+                {
+                    txtCheveretoUploadURL.Text = uploader.UploadURL;
+                    txtCheveretoAPIKey.Text = uploader.APIKey;
+                }
+            }
+        }
+
+        private void btnCheveretoTestAll_Click(object sender, EventArgs e)
+        {
+            btnCheveretoTestAll.Enabled = false;
+            btnCheveretoTestAll.Text = "Testing...";
+            string result = null;
+
+            TaskEx.Run(() =>
+            {
+                result = Chevereto.TestUploaders();
+            },
+            () =>
+            {
+                if (!IsDisposed)
+                {
+                    btnCheveretoTestAll.Text = "Test all";
+                    btnCheveretoTestAll.Enabled = true;
+
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        MessageBox.Show(result, "Chevereto test results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            });
+        }
+
         private void txtCheveretoWebsite_TextChanged(object sender, EventArgs e)
         {
-            Config.CheveretoWebsite = txtCheveretoWebsite.Text;
+            Config.CheveretoUploader.UploadURL = txtCheveretoUploadURL.Text;
         }
 
         private void txtCheveretoAPIKey_TextChanged(object sender, EventArgs e)
         {
-            Config.CheveretoAPIKey = txtCheveretoAPIKey.Text;
+            Config.CheveretoUploader.APIKey = txtCheveretoAPIKey.Text;
         }
 
         private void cbCheveretoDirectURL_CheckedChanged(object sender, EventArgs e)
@@ -992,6 +1059,39 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Chevereto
+
+        #region SomeImage
+
+        private void txtSomeImageAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.SomeImageAPIKey = txtSomeImageAPIKey.Text;
+        }
+
+        private void cbSomeImageDirectURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SomeImageDirectURL = cbSomeImageDirectURL.Checked;
+        }
+
+        private void linkLblSomeImageAPIKey_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL("https://someimage.com/api");
+        }
+
+        #endregion SomeImage
+
+        #region vgy.me
+
+        private void txtVgymeUserKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.VgymeUserKey = txtVgymeUserKey.Text;
+        }
+
+        private void llVgymeAccountDetailsPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL("http://vgy.me/account/details");
+        }
+
+        #endregion vgy.me
 
         #endregion Image Uploaders
 
@@ -1039,6 +1139,11 @@ namespace ShareX.UploadersLib
             Config.PastebinSettings.Title = txtPastebinTitle.Text;
         }
 
+        private void cbPastebinRaw_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PastebinSettings.RawURL = cbPastebinRaw.Checked;
+        }
+
         #endregion Pastebin
 
         #region Paste.ee
@@ -1075,7 +1180,12 @@ namespace ShareX.UploadersLib
 
         private void chkGistPublishPublic_CheckedChanged(object sender, EventArgs e)
         {
-            Config.GistPublishPublic = ((CheckBox)sender).Checked;
+            Config.GistPublishPublic = cbGistPublishPublic.Checked;
+        }
+
+        private void cbGistUseRawURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GistRawURL = cbGistUseRawURL.Checked;
         }
 
         #endregion Gist
@@ -1171,41 +1281,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Dropbox
-
-        #region Copy
-
-        private void pbCopyLogo_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://copy.com");
-        }
-
-        private void txtCopyPath_TextChanged(object sender, EventArgs e)
-        {
-            Config.CopyUploadPath = txtCopyPath.Text;
-            UpdateCopyStatus();
-        }
-
-        private void oAuthCopy_OpenButtonClicked()
-        {
-            CopyAuthOpen();
-        }
-
-        private void oAuthCopy_CompleteButtonClicked(string code)
-        {
-            CopyAuthComplete(code);
-        }
-
-        private void oAuthCopy_ClearButtonClicked()
-        {
-            Config.CopyOAuthInfo = null;
-        }
-
-        private void cbCopyURLType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.CopyURLType = (CopyURLType)cbCopyURLType.SelectedIndex;
-        }
-
-        #endregion Copy
 
         #region OneDrive
 
@@ -1393,7 +1468,7 @@ namespace ShareX.UploadersLib
             {
                 Config.MinusConfig.FolderID = cboMinusFolders.SelectedIndex;
                 MinusFolder tempMf = Config.MinusConfig.GetActiveFolder();
-                chkMinusPublic.Checked = tempMf.is_public;
+                cbMinusPublic.Checked = tempMf.is_public;
             }
         }
 
@@ -1404,7 +1479,7 @@ namespace ShareX.UploadersLib
                 btnMinusFolderAdd.Enabled = false;
 
                 Minus minus = new Minus(Config.MinusConfig, Config.MinusOAuth2Info);
-                MinusFolder dir = minus.CreateFolder(cboMinusFolders.Text, chkMinusPublic.Checked);
+                MinusFolder dir = minus.CreateFolder(cboMinusFolders.Text, cbMinusPublic.Checked);
                 if (dir != null)
                 {
                     cboMinusFolders.Items.Add(dir);
@@ -1591,7 +1666,7 @@ namespace ShareX.UploadersLib
 
         private void chkEmailConfirm_CheckedChanged(object sender, EventArgs e)
         {
-            Config.EmailConfirmSend = chkEmailConfirm.Checked;
+            Config.EmailConfirmSend = cbEmailConfirm.Checked;
         }
 
         private void cbRememberLastToEmail_CheckedChanged(object sender, EventArgs e)
@@ -1886,11 +1961,6 @@ namespace ShareX.UploadersLib
             Config.OwnCloudDirectLink = cbOwnCloudDirectLink.Checked;
         }
 
-        private void cbOwnCloudIgnoreInvalidCert_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.OwnCloudIgnoreInvalidCert = cbOwnCloudIgnoreInvalidCert.Checked;
-        }
-
         private void cbOwnCloud81Compatibility_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloud81Compatibility = cbOwnCloud81Compatibility.Checked;
@@ -2091,7 +2161,7 @@ namespace ShareX.UploadersLib
 
             TaskEx.Run(() =>
             {
-                result = Pomf.TestClones();
+                result = Pomf.TestUploaders();
             },
             () =>
             {
@@ -2392,6 +2462,11 @@ namespace ShareX.UploadersLib
         private void txtStreamablePassword_TextChanged(object sender, EventArgs e)
         {
             Config.StreamablePassword = txtStreamablePassword.Text;
+        }
+
+        private void cbStreamableUseDirectURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.StreamableUseDirectURL = cbStreamableUseDirectURL.Checked;
         }
 
         #endregion Streamable
@@ -2803,24 +2878,24 @@ namespace ShareX.UploadersLib
 
         private void txtCustomUploaderURL_Enter(object sender, EventArgs e)
         {
-            urlType = URLType.URL;
+            customUploaderURLType = URLType.URL;
         }
 
         private void txtCustomUploaderThumbnailURL_Enter(object sender, EventArgs e)
         {
-            urlType = URLType.ThumbnailURL;
+            customUploaderURLType = URLType.ThumbnailURL;
         }
 
         private void txtCustomUploaderDeletionURL_Enter(object sender, EventArgs e)
         {
-            urlType = URLType.DeletionURL;
+            customUploaderURLType = URLType.DeletionURL;
         }
 
         private void AddTextToActiveURLField(string text)
         {
             TextBox tb;
 
-            switch (urlType)
+            switch (customUploaderURLType)
             {
                 default:
                 case URLType.URL:

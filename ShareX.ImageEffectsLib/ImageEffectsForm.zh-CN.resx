@@ -127,7 +127,7 @@
     <value>取消</value>
   </data>
   <data name="btnClear.Text" xml:space="preserve">
-    <value>明确</value>
+    <value>清除</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>复制</value>
@@ -143,5 +143,14 @@
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>保存图像...</value>
+  </data>
+  <data name="mbLoadImage.Text" xml:space="preserve">
+    <value>加载图像...</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>从文件...</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>从剪切板...</value>
   </data>
 </root>

@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2015 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -181,6 +181,7 @@ namespace Greenshot.Plugin
         /// <param name="y">y coordinates to move the mouse</param>
         void MoveMouseLocation(int x, int y);
 
+        // / Enable when the elements are usable again.
         ///// <summary>
         ///// Apply a translate to the elements e.g. needed for crop
         ///// </summary>
