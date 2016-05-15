@@ -118,6 +118,8 @@ namespace ShareX.UploadersLib
         Jira,
         [Description("Lambda")]
         Lambda,
+        [Description("Lithiio")]
+        Lithiio,
         [Description("VideoBin")]
         VideoBin,
         [Description("Pomf")]

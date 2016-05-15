@@ -1,4 +1,4 @@
-﻿namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib
 {
     partial class OCRSpaceForm
     {
