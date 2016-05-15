@@ -43,7 +43,7 @@ namespace ShareX.ScreenCaptureLib
             points = new List<Point>(128);
             regionFillPath = new GraphicsPath();
             lastNode = new NodeObject() { Shape = NodeShape.Circle };
-            DrawableObjects.Add(lastNode);
+            drawableObjects.Add(lastNode);
         }
 
         protected override void Update()

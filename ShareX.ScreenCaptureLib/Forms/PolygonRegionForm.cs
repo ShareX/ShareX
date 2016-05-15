@@ -48,7 +48,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (DrawableObjects.Cast<NodeObject>().Any(node => node.IsMouseHover || node.IsDragging))
+                if (drawableObjects.Cast<NodeObject>().Any(node => node.IsMouseHover || node.IsDragging))
                 {
                     return;
                 }
@@ -71,14 +71,14 @@ namespace ShareX.ScreenCaptureLib
                         if (node.IsMouseHover)
                         {
                             nodes.Remove(node);
-                            DrawableObjects.Remove(node);
+                            drawableObjects.Remove(node);
                             return;
                         }
                     }
 
                     isAreaCreated = false;
                     nodes.Clear();
-                    DrawableObjects.Clear();
+                    drawableObjects.Clear();
                 }
                 else
                 {
@@ -149,7 +149,7 @@ namespace ShareX.ScreenCaptureLib
             NodeObject newNode = new NodeObject() { Shape = NodeShape.Diamond };
             ActivateNode(newNode);
             nodes.Add(newNode);
-            DrawableObjects.Add(newNode);
+            drawableObjects.Add(newNode);
         }
 
         private void ActivateNode(NodeObject node)

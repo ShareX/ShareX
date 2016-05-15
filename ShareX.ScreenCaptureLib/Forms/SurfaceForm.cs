@@ -39,7 +39,9 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class SurfaceForm : Form
     {
-        public Image SurfaceImage { get; set; }
+        public static GraphicsPath LastRegionFillPath { get; protected set; }
+        public static GraphicsPath LastRegionDrawPath { get; protected set; }
+
         public SurfaceOptions Config { get; set; }
         public int FPS { get; private set; }
         public Rectangle ScreenRectangle { get; private set; }
@@ -47,8 +49,7 @@ namespace ShareX.ScreenCaptureLib
         public SurfaceResult Result { get; private set; }
         public int MonitorIndex { get; set; }
 
-        protected List<DrawableObject> DrawableObjects { get; set; }
-
+        protected Image backgroundImage;
         protected TextureBrush darkBackgroundBrush, lightBackgroundBrush;
         protected GraphicsPath regionFillPath, regionDrawPath;
         protected Pen borderPen, borderDotPen, textBackgroundPenWhite, textBackgroundPenBlack, markerPen;
@@ -56,11 +57,8 @@ namespace ShareX.ScreenCaptureLib
         protected Font infoFont, infoFontMedium, infoFontBig;
         protected Stopwatch timerStart, timerFPS;
         protected int frameCount;
-        protected bool isKeyAllowed;
-
-        public static GraphicsPath LastRegionFillPath, LastRegionDrawPath;
-
-        private bool pause;
+        protected bool pause, isKeyAllowed;
+        protected List<DrawableObject> drawableObjects;
 
         public SurfaceForm()
         {
@@ -75,7 +73,7 @@ namespace ShareX.ScreenCaptureLib
                 Cursor = new Cursor(cursorStream);
             }
 
-            DrawableObjects = new List<DrawableObject>();
+            drawableObjects = new List<DrawableObject>();
             Config = new SurfaceOptions();
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
@@ -118,10 +116,7 @@ namespace ShareX.ScreenCaptureLib
         /// <summary>Must be called before show form</summary>
         public virtual void Prepare()
         {
-            if (SurfaceImage == null)
-            {
-                SurfaceImage = Screenshot.CaptureFullscreen();
-            }
+            backgroundImage = Screenshot.CaptureFullscreen();
 
             if (Config.UseDimming)
             {
@@ -137,7 +132,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 */
 
-                using (Bitmap darkBackground = (Bitmap)SurfaceImage.Clone())
+                using (Bitmap darkBackground = (Bitmap)backgroundImage.Clone())
                 using (Graphics g = Graphics.FromImage(darkBackground))
                 {
                     using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
@@ -146,12 +141,12 @@ namespace ShareX.ScreenCaptureLib
                     }
 
                     darkBackgroundBrush = new TextureBrush(darkBackground) { WrapMode = WrapMode.Clamp };
-                    lightBackgroundBrush = new TextureBrush(SurfaceImage) { WrapMode = WrapMode.Clamp };
+                    lightBackgroundBrush = new TextureBrush(backgroundImage) { WrapMode = WrapMode.Clamp };
                 }
             }
             else
             {
-                darkBackgroundBrush = new TextureBrush(SurfaceImage) { WrapMode = WrapMode.Clamp };
+                darkBackgroundBrush = new TextureBrush(backgroundImage) { WrapMode = WrapMode.Clamp };
             }
         }
 
@@ -302,7 +297,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected virtual Image GetOutputImage()
         {
-            return (Image)SurfaceImage.Clone();
+            return (Image)backgroundImage.Clone();
         }
 
         public virtual WindowInfo GetWindowInfo()
@@ -326,7 +321,7 @@ namespace ShareX.ScreenCaptureLib
 
             InputManager.Update();
 
-            DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
+            DrawableObject[] objects = drawableObjects.OrderByDescending(x => x.Order).ToArray();
 
             if (objects.All(x => !x.IsDragging))
             {
@@ -376,7 +371,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawObjects(Graphics g)
         {
-            foreach (DrawableObject drawObject in DrawableObjects)
+            foreach (DrawableObject drawObject in drawableObjects)
             {
                 if (drawObject.Visible)
                 {
@@ -419,7 +414,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected Rectangle CalculateAreaFromNodes()
         {
-            IEnumerable<NodeObject> nodes = DrawableObjects.OfType<NodeObject>().Where(x => x.Visible);
+            IEnumerable<NodeObject> nodes = drawableObjects.OfType<NodeObject>().Where(x => x.Visible);
 
             if (nodes.Count() > 1)
             {
@@ -437,13 +432,13 @@ namespace ShareX.ScreenCaptureLib
         internal NodeObject MakeNode()
         {
             NodeObject node = new NodeObject();
-            DrawableObjects.Add(node);
+            drawableObjects.Add(node);
             return node;
         }
 
         protected void ShowNodes()
         {
-            foreach (NodeObject node in DrawableObjects.OfType<NodeObject>())
+            foreach (NodeObject node in drawableObjects.OfType<NodeObject>())
             {
                 node.Visible = true;
             }
@@ -451,7 +446,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected void HideNodes()
         {
-            foreach (NodeObject node in DrawableObjects.OfType<NodeObject>())
+            foreach (NodeObject node in drawableObjects.OfType<NodeObject>())
             {
                 node.Visible = false;
             }
@@ -491,6 +486,8 @@ namespace ShareX.ScreenCaptureLib
                 if (regionFillPath != null) regionFillPath.Dispose();
                 if (regionDrawPath != null) regionDrawPath.Dispose();
             }
+
+            if (backgroundImage != null) backgroundImage.Dispose();
 
             base.Dispose(disposing);
         }
