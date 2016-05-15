@@ -968,9 +968,11 @@ namespace ShareX
         {
             if (Data != null && Info.DataType == EDataType.Image)
             {
-                using (OCRSpaceForm ocrForm = new OCRSpaceForm(Data, Info.FileName))
+                using (OCRSpaceForm form = new OCRSpaceForm(Data, Info.FileName))
                 {
-                    ocrForm.ShowDialog();
+                    form.Language = Program.Settings.OCRLanguage;
+                    form.ShowDialog();
+                    Program.Settings.OCRLanguage = form.Language;
                 }
             }
         }

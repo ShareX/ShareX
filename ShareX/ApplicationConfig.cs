@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.OtherServices;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -257,5 +258,11 @@ namespace ShareX
         public WebpageCaptureOptions WebpageCaptureOptions = new WebpageCaptureOptions();
 
         #endregion Webpage Capture Form
+
+        #region OCR Form
+
+        public OCRSpaceLanguages OCRLanguage = OCRSpaceLanguages.eng;
+
+        #endregion OCR Form
     }
 }
