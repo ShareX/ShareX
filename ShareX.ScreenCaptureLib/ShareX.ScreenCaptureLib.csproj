@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="RectangleAnnotateOptions.cs" />
     <Compile Include="RegionHelpers\ColorBlinkAnimation.cs" />
+    <Compile Include="RegionHelpers\PointInfo.cs" />
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
@@ -107,7 +108,7 @@
     <Compile Include="Forms\RectangleRegionLightForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SurfaceForm.cs">
+    <Compile Include="Forms\BaseRegionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screencast\ImageCache.cs" />
@@ -132,7 +133,7 @@
     <Compile Include="RegionHelpers\MouseState.cs" />
     <Compile Include="RegionHelpers\NodeObject.cs" />
     <Compile Include="RegionHelpers\ResizeManager.cs" />
-    <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
+    <Compile Include="RegionHelpers\RegionCaptureHelpers.cs" />
     <Compile Include="ScrollingCaptureOptions.cs" />
     <Compile Include="Shapes\Region\RoundedRectangleRegionShape.cs" />
     <Compile Include="SimpleWindowInfo.cs" />

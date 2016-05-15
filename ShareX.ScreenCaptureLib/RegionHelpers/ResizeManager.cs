@@ -89,21 +89,21 @@ namespace ShareX.ScreenCaptureLib
         private NodeObject[] nodes;
         private Rectangle tempRect;
 
-        public ResizeManager(SurfaceForm surface, ShapeManager shapeManager)
+        public ResizeManager(BaseRegionForm form, ShapeManager shapeManager)
         {
             this.shapeManager = shapeManager;
 
-            MinMoveSpeed = surface.Config.MinMoveSpeed;
-            MaxMoveSpeed = surface.Config.MaxMoveSpeed;
+            MinMoveSpeed = form.Config.MinMoveSpeed;
+            MaxMoveSpeed = form.Config.MaxMoveSpeed;
 
-            surface.KeyDown += surface_KeyDown;
-            surface.KeyUp += surface_KeyUp;
+            form.KeyDown += form_KeyDown;
+            form.KeyUp += form_KeyUp;
 
             nodes = new NodeObject[8];
 
             for (int i = 0; i < 8; i++)
             {
-                nodes[i] = surface.MakeNode();
+                nodes[i] = form.MakeNode();
             }
 
             nodes[(int)NodePosition.BottomRight].Order = 10;
@@ -197,7 +197,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void surface_KeyDown(object sender, KeyEventArgs e)
+        private void form_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
@@ -241,7 +241,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void surface_KeyUp(object sender, KeyEventArgs e)
+        private void form_KeyUp(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {

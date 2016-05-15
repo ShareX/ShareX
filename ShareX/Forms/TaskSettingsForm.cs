@@ -804,7 +804,7 @@ namespace ShareX
         {
             Rectangle rect;
 
-            if (TaskHelpers.SelectRegion(out rect, TaskSettings))
+            if (RegionCaptureHelpers.GetRectangleRegion(out rect))
             {
                 nudCaptureCustomRegionX.Value = rect.X;
                 nudCaptureCustomRegionY.Value = rect.Y;

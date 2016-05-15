@@ -126,7 +126,7 @@ namespace ShareX
         {
             Rectangle rect;
 
-            if (TaskHelpers.SelectRegion(out rect, taskSettings))
+            if (RegionCaptureHelpers.GetRectangleRegion(out rect))
             {
                 Program.Settings.AutoCaptureRegion = rect;
                 UpdateRegion();

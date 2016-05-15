@@ -311,47 +311,6 @@ namespace ShareX
             }
         }
 
-        public static bool SelectRegion(out Rectangle rect, TaskSettings taskSettings)
-        {
-            return RectangleRegionForm.SelectRegion(out rect, taskSettings.CaptureSettings.SurfaceOptions);
-        }
-
-        public static PointInfo SelectPointColor()
-        {
-            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.ScreenColorPicker))
-            {
-                form.Config.DetectWindows = false;
-                form.Config.ShowTips = false;
-                form.Config.UseDimming = false;
-
-                form.Prepare();
-                form.ShowDialog();
-
-                if (form.Result == SurfaceResult.Region)
-                {
-                    PointInfo pointInfo = new PointInfo();
-                    pointInfo.Position = form.CurrentPosition;
-                    pointInfo.Color = form.CurrentColor;
-                    return pointInfo;
-                }
-            }
-
-            return null;
-        }
-
-        public static Image GetRegionImage()
-        {
-            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Default))
-            {
-                form.Config.ShowTips = false;
-
-                form.Prepare();
-                form.ShowDialog();
-
-                return form.GetResultImage();
-            }
-        }
-
         public static Icon GetProgressIcon(int percentage)
         {
             using (Bitmap bmp = new Bitmap(16, 16))
@@ -529,7 +488,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            PointInfo pointInfo = SelectPointColor();
+            PointInfo pointInfo = RegionCaptureHelpers.GetPointInfo();
 
             if (pointInfo != null)
             {
@@ -549,18 +508,6 @@ namespace ShareX
                     Program.MainForm.niTray.Tag = null;
                     Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info);
                 }
-            }
-        }
-
-        public static void OpenRuler()
-        {
-            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Ruler))
-            {
-                form.Config.QuickCrop = false;
-                form.Config.ShowTips = false;
-
-                form.Prepare();
-                form.ShowDialog();
             }
         }
 
@@ -724,17 +671,19 @@ namespace ShareX
 
         public static void OpenOCR()
         {
-            using (Image img = GetRegionImage())
+            using (Image img = RegionCaptureHelpers.GetRegionImage())
             {
                 if (img != null)
                 {
-                    using (Stream stream = SaveImage(img, EImageFormat.JPEG, 90))
+                    using (Stream stream = SaveImage(img, EImageFormat.JPEG, 95))
                     {
                         if (stream != null)
                         {
                             using (OCRSpaceForm form = new OCRSpaceForm(stream, "ShareX.jpg"))
                             {
+                                form.Language = Program.Settings.OCRLanguage;
                                 form.ShowDialog();
+                                Program.Settings.OCRLanguage = form.Language;
                             }
                         }
                     }

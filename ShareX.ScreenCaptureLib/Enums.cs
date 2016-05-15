@@ -45,7 +45,7 @@ namespace ShareX.ScreenCaptureLib
         OctreeQuantizer
     }
 
-    public enum SurfaceResult
+    public enum RegionResult
     {
         None,
         Close,

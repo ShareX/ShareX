@@ -31,7 +31,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class FreeHandRegionForm : SurfaceForm
+    public class FreeHandRegionForm : BaseRegionForm
     {
         private NodeObject lastNode;
         private List<Point> points;
@@ -61,13 +61,13 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    Close(SurfaceResult.Close);
+                    Close(RegionResult.Close);
                 }
             }
 
             if (Config.QuickCrop && isAreaCreated && InputManager.IsMouseReleased(MouseButtons.Left))
             {
-                Close(SurfaceResult.Region);
+                Close(RegionResult.Region);
             }
 
             if (!isAreaCreated && InputManager.IsMouseDown(MouseButtons.Left))

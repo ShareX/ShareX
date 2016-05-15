@@ -35,7 +35,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleRegionForm : SurfaceForm
+    public class RectangleRegionForm : BaseRegionForm
     {
         public RectangleRegionMode Mode { get; private set; }
 
@@ -47,11 +47,11 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                if (bmpSurfaceImage != null && !CurrentPosition.IsEmpty)
+                if (bmpBackgroundImage != null && !CurrentPosition.IsEmpty)
                 {
                     Point position = CaptureHelpers.ScreenToClient(CurrentPosition);
 
-                    return bmpSurfaceImage.GetPixel(position.X, position.Y);
+                    return bmpBackgroundImage.GetPixel(position.X, position.Y);
                 }
 
                 return Color.Empty;
@@ -61,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
         public SimpleWindowInfo SelectedWindow { get; private set; }
 
         private ColorBlinkAnimation colorBlinkAnimation = new ColorBlinkAnimation();
-        private Bitmap bmpSurfaceImage;
+        private Bitmap bmpBackgroundImage;
 
         public RectangleRegionForm(RectangleRegionMode mode)
         {
@@ -82,7 +82,7 @@ namespace ShareX.ScreenCaptureLib
                     SelectedWindow = ShapeManager.FindSelectedWindow();
                 }
 
-                Close(SurfaceResult.Region);
+                Close(RegionResult.Region);
             }
         }
 
@@ -141,7 +141,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Config.UseCustomInfoText || Mode == RectangleRegionMode.ScreenColorPicker)
                 {
-                    bmpSurfaceImage = new Bitmap(backgroundImage);
+                    bmpBackgroundImage = new Bitmap(backgroundImage);
                 }
             }
         }
@@ -690,63 +690,12 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void Dispose(bool disposing)
         {
-            if (bmpSurfaceImage != null)
+            if (bmpBackgroundImage != null)
             {
-                bmpSurfaceImage.Dispose();
+                bmpBackgroundImage.Dispose();
             }
 
             base.Dispose(disposing);
-        }
-
-        public static bool SelectRegion(out Rectangle rect, SurfaceOptions options = null)
-        {
-            using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Default))
-            {
-                if (options != null)
-                {
-                    form.Config = options;
-                }
-
-                form.Config.DetectWindows = true;
-                form.Config.QuickCrop = true;
-                form.Config.ShowTips = false;
-
-                form.Prepare();
-                form.ShowDialog();
-
-                if (form.Result == SurfaceResult.Region)
-                {
-                    if (form.ShapeManager.IsCurrentRegionValid)
-                    {
-                        rect = CaptureHelpers.ClientToScreen(form.ShapeManager.CurrentRectangle);
-                        return true;
-                    }
-                }
-                else if (form.Result == SurfaceResult.Fullscreen)
-                {
-                    rect = CaptureHelpers.GetScreenBounds();
-                    return true;
-                }
-                else if (form.Result == SurfaceResult.Monitor)
-                {
-                    Screen[] screens = Screen.AllScreens;
-
-                    if (form.MonitorIndex < screens.Length)
-                    {
-                        Screen screen = screens[form.MonitorIndex];
-                        rect = screen.Bounds;
-                        return true;
-                    }
-                }
-                else if (form.Result == SurfaceResult.ActiveMonitor)
-                {
-                    rect = CaptureHelpers.GetActiveScreenBounds();
-                    return true;
-                }
-            }
-
-            rect = Rectangle.Empty;
-            return false;
         }
     }
 }

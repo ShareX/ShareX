@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class PolygonRegionForm : SurfaceForm
+    public class PolygonRegionForm : BaseRegionForm
     {
         private List<NodeObject> nodes;
         private bool isAreaCreated;
@@ -41,10 +41,11 @@ namespace ShareX.ScreenCaptureLib
         public PolygonRegionForm()
         {
             nodes = new List<NodeObject>();
-            MouseDown += PolygonRegionSurface_MouseDown;
+
+            MouseDown += PolygonRegionForm_MouseDown;
         }
 
-        private void PolygonRegionSurface_MouseDown(object sender, MouseEventArgs e)
+        private void PolygonRegionForm_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -82,7 +83,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    Close(SurfaceResult.Close);
+                    Close(RegionResult.Close);
                 }
             }
         }

@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
 using System.Threading;
@@ -120,7 +121,7 @@ namespace ShareX
                 Hide();
                 Thread.Sleep(250);
 
-                PointInfo pointInfo = TaskHelpers.SelectPointColor();
+                PointInfo pointInfo = RegionCaptureHelpers.GetPointInfo();
 
                 if (pointInfo != null)
                 {
