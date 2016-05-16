@@ -125,34 +125,6 @@
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 0</value>
   </data>
-  <data name="upUpdate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="upUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 366</value>
-  </data>
-  <data name="upUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 41</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="upUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="upUpdate.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;upUpdate.Name" xml:space="preserve">
-    <value>upUpdate</value>
-  </data>
-  <data name="&gt;&gt;upUpdate.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.UpdatePanel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;upUpdate.Parent" xml:space="preserve">
-    <value>scMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;upUpdate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="pbTips.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -165,6 +137,7 @@
   <data name="pbTips.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pbTips.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -178,7 +151,7 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;pbTips.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="lblMainFormTip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -211,7 +184,7 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;lblMainFormTip.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblSplitter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -235,7 +208,7 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;lblSplitter.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Filename</value>
@@ -298,7 +271,7 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;lvUploads.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
     <value>scMain.Panel1</value>

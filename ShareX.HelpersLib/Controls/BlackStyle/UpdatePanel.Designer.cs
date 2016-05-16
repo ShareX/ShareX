@@ -37,7 +37,7 @@
             this.btnChangelog.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnChangelog.Font = new System.Drawing.Font("Arial", 12F);
             this.btnChangelog.ForeColor = System.Drawing.Color.White;
-            this.btnChangelog.Location = new System.Drawing.Point(186, 4);
+            this.btnChangelog.Location = new System.Drawing.Point(184, 5);
             this.btnChangelog.Name = "btnChangelog";
             this.btnChangelog.Size = new System.Drawing.Size(154, 32);
             this.btnChangelog.TabIndex = 1;
@@ -48,7 +48,7 @@
             this.btnDownload.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnDownload.Font = new System.Drawing.Font("Arial", 12F);
             this.btnDownload.ForeColor = System.Drawing.Color.White;
-            this.btnDownload.Location = new System.Drawing.Point(344, 4);
+            this.btnDownload.Location = new System.Drawing.Point(342, 5);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(154, 32);
             this.btnDownload.TabIndex = 0;
@@ -61,7 +61,7 @@
             this.Controls.Add(this.btnChangelog);
             this.Controls.Add(this.btnDownload);
             this.Name = "UpdatePanel";
-            this.Size = new System.Drawing.Size(502, 39);
+            this.Size = new System.Drawing.Size(500, 41);
             this.ResumeLayout(false);
 
         }

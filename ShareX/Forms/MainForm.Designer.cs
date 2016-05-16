@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
-            this.upUpdate = new ShareX.HelpersLib.UpdatePanel();
             this.pbTips = new System.Windows.Forms.PictureBox();
             this.lblMainFormTip = new System.Windows.Forms.Label();
             this.lblSplitter = new System.Windows.Forms.Label();
@@ -258,7 +257,6 @@
             // 
             // scMain.Panel1
             // 
-            this.scMain.Panel1.Controls.Add(this.upUpdate);
             this.scMain.Panel1.Controls.Add(this.pbTips);
             this.scMain.Panel1.Controls.Add(this.lblMainFormTip);
             this.scMain.Panel1.Controls.Add(this.lblSplitter);
@@ -269,11 +267,6 @@
             this.scMain.Panel2.Controls.Add(this.pbPreview);
             this.scMain.SplitterColor = System.Drawing.Color.DarkGray;
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
-            // 
-            // upUpdate
-            // 
-            resources.ApplyResources(this.upUpdate, "upUpdate");
-            this.upUpdate.Name = "upUpdate";
             // 
             // pbTips
             // 
@@ -2098,6 +2091,5 @@
         private System.Windows.Forms.Label lblTips;
         private System.Windows.Forms.ToolStripMenuItem tsmiTextCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTextCapture;
-        private HelpersLib.UpdatePanel upUpdate;
     }
 }
