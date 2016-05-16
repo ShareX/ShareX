@@ -169,6 +169,7 @@ namespace ShareX
         LastRegion,
         ScrollingCapture,
         CaptureWebpage,
+        TextCapture,
         AutoCapture,
         StartAutoCapture,
         // Screen record

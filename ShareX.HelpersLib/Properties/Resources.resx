@@ -896,4 +896,10 @@ Would you like to download it?</value>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Recognize text (OCR)</value>
   </data>
+  <data name="HotkeyType_TextCapture" xml:space="preserve">
+    <value>Text capture (OCR)</value>
+  </data>
+  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
+    <value>Screen capture</value>
+  </data>
 </root>

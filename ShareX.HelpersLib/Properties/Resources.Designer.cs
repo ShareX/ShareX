@@ -1609,6 +1609,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Text capture (OCR).
+        /// </summary>
+        internal static string HotkeyType_TextCapture {
+            get {
+                return ResourceManager.GetString("HotkeyType_TextCapture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen capture.
+        /// </summary>
+        internal static string HotkeyType_TextCapture_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_TextCapture_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tweet message.
         /// </summary>
         internal static string HotkeyType_TweetMessage {

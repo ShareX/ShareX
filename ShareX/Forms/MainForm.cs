@@ -1813,6 +1813,9 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                 case HotkeyType.CaptureWebpage:
                     TaskHelpers.OpenWebpageCapture(safeTaskSettings);
                     break;
+                case HotkeyType.TextCapture:
+                    TaskHelpers.OpenOCR();
+                    break;
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();
                     break;
