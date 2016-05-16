@@ -686,6 +686,18 @@ namespace ShareX.ScreenCaptureLib
             {
                 CurrentShapeType = CurrentShapeType.Next<ShapeType>();
             }
+
+            if (Control.ModifierKeys.HasFlag(Keys.Control))
+            {
+                if (e.Delta > 0)
+                {
+                    if (config.MagnifierPixelCount < 41) config.MagnifierPixelCount += 2;
+                }
+                else if (e.Delta < 0)
+                {
+                    if (config.MagnifierPixelCount > 2) config.MagnifierPixelCount -= 2;
+                }
+            }
         }
 
         public void Update()
