@@ -64,7 +64,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 currentShapeType = value;
                 config.CurrentShapeType = currentShapeType;
-                DeselectArea();
+                DeselectShape();
                 OnCurrentShapeTypeChanged(currentShapeType);
             }
         }
@@ -211,7 +211,7 @@ namespace ShareX.ScreenCaptureLib
 
             ToolStripMenuItem tsmiDeleteSelected = new ToolStripMenuItem("Delete selected object");
             tsmiDeleteSelected.Image = Resources.layer__minus;
-            tsmiDeleteSelected.Click += (sender, e) => RemoveCurrentArea();
+            tsmiDeleteSelected.Click += (sender, e) => DeleteSelectedShape();
             cmsContextMenu.Items.Add(tsmiDeleteSelected);
 
             ToolStripMenuItem tsmiDeleteAll = new ToolStripMenuItem("Delete all objects");
@@ -578,13 +578,17 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (IsCreating)
                 {
-                    CancelRegionSelection();
+                    DeleteSelectedShape();
                     EndRegionSelection();
                 }
                 else if (form.Mode == RectangleRegionMode.Annotation && cmsContextMenu != null)
                 {
                     cmsContextMenu.Show(form, e.Location.Add(-10, -10));
                     config.ShowMenuTip = false;
+                }
+                else if (IsAreaIntersect())
+                {
+                    DeleteIntersectShape();
                 }
                 else
                 {
@@ -606,7 +610,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (ResizeManager.Visible)
                         {
-                            DeselectArea();
+                            DeselectShape();
                         }
 
                         if (CurrentShape == null || CurrentShape != AreaIntersect())
@@ -662,7 +666,7 @@ namespace ShareX.ScreenCaptureLib
                     IsSnapResizing = false;
                     break;
                 case Keys.Delete:
-                    RemoveCurrentArea();
+                    DeleteSelectedShape();
 
                     if (IsCreating)
                     {
@@ -809,11 +813,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 IsMoving = true;
                 CurrentShape = shape;
-                SelectArea();
+                SelectShape();
             }
             else if (!IsCreating) // Create new area
             {
-                DeselectArea();
+                DeselectShape();
 
                 Rectangle rect;
 
@@ -843,7 +847,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (!IsCurrentRegionValid)
                 {
-                    RemoveCurrentArea();
+                    DeleteSelectedShape();
                     CheckHover();
                 }
                 else if (config.QuickCrop && IsCurrentShapeTypeRegion)
@@ -853,7 +857,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    SelectArea();
+                    SelectShape();
                 }
             }
 
@@ -868,7 +872,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    SelectArea();
+                    SelectShape();
                 }
             }
         }
@@ -998,7 +1002,7 @@ namespace ShareX.ScreenCaptureLib
             return bmp;
         }
 
-        private void SelectArea()
+        private void SelectShape()
         {
             if (!CurrentRectangle.IsEmpty && !config.IsFixedSize)
             {
@@ -1006,38 +1010,38 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DeselectArea()
+        private void DeselectShape()
         {
             CurrentShape = null;
             ResizeManager.Hide();
         }
 
-        private void CancelRegionSelection()
-        {
-            BaseShape shape = AreaIntersect();
-
-            if (shape != null)
-            {
-                Shapes.Remove(shape);
-                DeselectArea();
-            }
-        }
-
-        private void RemoveCurrentArea()
+        private void DeleteSelectedShape()
         {
             BaseShape shape = CurrentShape;
 
             if (shape != null)
             {
                 Shapes.Remove(shape);
-                DeselectArea();
+                DeselectShape();
+            }
+        }
+
+        private void DeleteIntersectShape()
+        {
+            BaseShape shape = AreaIntersect();
+
+            if (shape != null)
+            {
+                Shapes.Remove(shape);
+                DeselectShape();
             }
         }
 
         private void ClearAll()
         {
             Shapes.Clear();
-            DeselectArea();
+            DeselectShape();
         }
 
         private bool IsAreaValid(Rectangle rect)
