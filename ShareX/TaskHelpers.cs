@@ -675,11 +675,11 @@ namespace ShareX
             {
                 if (img != null)
                 {
-                    using (Stream stream = SaveImage(img, EImageFormat.JPEG, 95))
+                    using (Stream stream = SaveImage(img, EImageFormat.PNG))
                     {
                         if (stream != null)
                         {
-                            using (OCRSpaceForm form = new OCRSpaceForm(stream, "ShareX.jpg"))
+                            using (OCRSpaceForm form = new OCRSpaceForm(stream, "ShareX.png"))
                             {
                                 form.Language = Program.Settings.OCRLanguage;
                                 form.ShowDialog();
