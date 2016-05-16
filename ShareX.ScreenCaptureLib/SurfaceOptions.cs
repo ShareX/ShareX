@@ -80,9 +80,6 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(false), Description("Show frames per second.")]
         public bool ShowFPS { get; set; }
 
-        [DefaultValue(false), Description("Result image will have border around the shape(s).")]
-        public bool DrawBorder { get; set; }
-
         [DefaultValue(1), Description("Number of pixels to move shape at each arrow key stroke.")]
         public int MinMoveSpeed { get; set; }
 

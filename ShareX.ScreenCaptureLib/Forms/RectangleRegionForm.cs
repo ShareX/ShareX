@@ -417,6 +417,8 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position);
             }
 
+            // TODO: CTRL + Mouse wheel magnifier pixel size
+
             sb.AppendLine();
 
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Space__Fullscreen_capture);

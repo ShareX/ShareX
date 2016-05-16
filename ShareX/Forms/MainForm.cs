@@ -2215,7 +2215,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                         {
                             using (Image screenshot = Screenshot.CaptureFullscreen())
                             {
-                                return RegionCaptureHelpers.ApplyRegionPathToImage(screenshot, BaseRegionForm.LastRegionFillPath, BaseRegionForm.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
+                                return RegionCaptureHelpers.ApplyRegionPathToImage(screenshot, BaseRegionForm.LastRegionFillPath, taskSettings.CaptureSettings.SurfaceOptions);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }

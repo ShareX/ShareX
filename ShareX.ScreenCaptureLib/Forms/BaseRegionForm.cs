@@ -40,7 +40,6 @@ namespace ShareX.ScreenCaptureLib
     public abstract class BaseRegionForm : Form
     {
         public static GraphicsPath LastRegionFillPath { get; protected set; }
-        public static GraphicsPath LastRegionDrawPath { get; protected set; }
 
         public SurfaceOptions Config { get; set; }
         public int FPS { get; private set; }
@@ -248,7 +247,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (Image img = GetOutputImage())
                 {
-                    return RegionCaptureHelpers.ApplyRegionPathToImage(img, regionFillPath, regionDrawPath, Config);
+                    return RegionCaptureHelpers.ApplyRegionPathToImage(img, regionFillPath, Config);
                 }
             }
             else if (Result == RegionResult.Fullscreen)
@@ -466,8 +465,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (LastRegionFillPath != null) LastRegionFillPath.Dispose();
                 LastRegionFillPath = regionFillPath;
-                if (LastRegionDrawPath != null) LastRegionDrawPath.Dispose();
-                LastRegionDrawPath = regionDrawPath;
             }
             else
             {

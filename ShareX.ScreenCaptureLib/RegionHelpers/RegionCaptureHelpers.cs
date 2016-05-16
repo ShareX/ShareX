@@ -145,7 +145,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static Image ApplyRegionPathToImage(Image backgroundImage, GraphicsPath regionFillPath, GraphicsPath regionDrawPath, SurfaceOptions options)
+        public static Image ApplyRegionPathToImage(Image backgroundImage, GraphicsPath regionFillPath, SurfaceOptions options)
         {
             if (backgroundImage != null && regionFillPath != null)
             {
@@ -157,35 +157,20 @@ namespace ShareX.ScreenCaptureLib
 
                 using (GraphicsPath gp = (GraphicsPath)regionFillPath.Clone())
                 {
-                    MoveGraphicsPath(gp, -Math.Max(0, regionArea.X), -Math.Max(0, regionArea.Y));
-                    img = ImageHelpers.CropImage(backgroundImage, newRegionArea, gp);
-
-                    if (options.DrawBorder)
+                    using (Matrix matrix = new Matrix())
                     {
-                        GraphicsPath gpOutline = regionDrawPath ?? regionFillPath;
-
-                        using (GraphicsPath gp2 = (GraphicsPath)gpOutline.Clone())
-                        {
-                            MoveGraphicsPath(gp2, -Math.Max(0, regionArea.X), -Math.Max(0, regionArea.Y));
-                            img = ImageHelpers.DrawOutline(img, gp2);
-                        }
+                        gp.CloseFigure();
+                        matrix.Translate(-Math.Max(0, regionArea.X), -Math.Max(0, regionArea.Y));
+                        gp.Transform(matrix);
                     }
+
+                    img = ImageHelpers.CropImage(backgroundImage, newRegionArea, gp);
                 }
 
                 return img;
             }
 
             return null;
-        }
-
-        private static void MoveGraphicsPath(GraphicsPath gp, int x, int y)
-        {
-            using (Matrix matrix = new Matrix())
-            {
-                gp.CloseFigure();
-                matrix.Translate(x, y);
-                gp.Transform(matrix);
-            }
         }
     }
 }
