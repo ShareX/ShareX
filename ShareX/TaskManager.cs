@@ -414,6 +414,11 @@ namespace ShareX
                 {
                     StartTasks();
                     UpdateProgressUI();
+
+                    if (!IsBusy)
+                    {
+                        Program.SaveAllSettingsAsync();
+                    }
                 }
             }
         }
