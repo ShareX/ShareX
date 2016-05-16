@@ -60,8 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private const string uploadUrl = "http://api.lithi.io/upload.php";
 
-        // TODO: Add the other domains to the dropdown menu.
-        public static string[] UploadURLs = new string[] { "https://lithi.io/" };
+        public static string[] UploadURLs = new string[] { "https://i.lithi.io/", "https://lithi.io/i/", "https://i.mugi.io/", "https://mugi.io/i/"};
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
@@ -77,7 +76,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (result.IsSuccess)
             {
-                result.URL = result.Response;
+                result.URL = Config.UploadURL + result.Response;
             }
 
             return result;
@@ -98,6 +97,6 @@ namespace ShareX.UploadersLib.FileUploaders
     public class LithiioSettings
     {
         public string UserAPIKey { get; set; } = string.Empty;
-        public string UploadURL { get; set; } = "https://lithi.io/";
+        public string UploadURL { get; set; } = "https://i.lithi.io/";
     }
 }
