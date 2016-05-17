@@ -65,7 +65,7 @@ namespace ShareX
                     task.StatusChanged += task_StatusChanged;
                     task.UploadStarted += task_UploadStarted;
                     task.UploadProgressChanged += task_UploadProgressChanged;
-                    task.UploadCompleted += task_UploadCompleted;
+                    task.TaskCompleted += task_TaskCompleted;
                     task.UploadersConfigWindowRequested += Task_UploadersConfigWindowRequested;
                 }
 
@@ -272,7 +272,7 @@ namespace ShareX
             }
         }
 
-        private static void task_UploadCompleted(WorkerTask task)
+        private static void task_TaskCompleted(WorkerTask task)
         {
             try
             {
@@ -415,7 +415,7 @@ namespace ShareX
                     StartTasks();
                     UpdateProgressUI();
 
-                    if (!IsBusy)
+                    if (Program.Settings.SaveSettingsAfterTaskCompleted && !IsBusy)
                     {
                         Program.SaveAllSettingsAsync();
                     }

@@ -46,7 +46,7 @@ namespace ShareX
         public event TaskEventHandler StatusChanged;
         public event TaskEventHandler UploadStarted;
         public event TaskEventHandler UploadProgressChanged;
-        public event TaskEventHandler UploadCompleted;
+        public event TaskEventHandler TaskCompleted;
         public event UploaderServiceEventHandler UploadersConfigWindowRequested;
 
         public TaskInfo Info { get; private set; }
@@ -288,7 +288,7 @@ namespace ShareX
             switch (Status)
             {
                 case TaskStatus.InQueue:
-                    OnUploadCompleted();
+                    OnTaskCompleted();
                     break;
                 case TaskStatus.Preparing:
                 case TaskStatus.Working:
@@ -994,7 +994,7 @@ namespace ShareX
 
         private void ThreadCompleted()
         {
-            OnUploadCompleted();
+            OnTaskCompleted();
         }
 
         private void uploader_ProgressChanged(ProgressManager progress)
@@ -1031,7 +1031,7 @@ namespace ShareX
             }
         }
 
-        private void OnUploadCompleted()
+        private void OnTaskCompleted()
         {
             Status = TaskStatus.Completed;
 
@@ -1044,9 +1044,9 @@ namespace ShareX
                 Info.Status = Resources.UploadTask_OnUploadCompleted_Done;
             }
 
-            if (UploadCompleted != null)
+            if (TaskCompleted != null)
             {
-                UploadCompleted(this);
+                TaskCompleted(this);
             }
 
             Dispose();

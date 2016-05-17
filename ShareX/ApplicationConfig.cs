@@ -202,6 +202,9 @@ namespace ShareX
         [Category("Upload"), DefaultValue(false), Description("Accept invalid SSL certificates when uploading.")]
         public bool AcceptInvalidSSLCertificates { get; set; }
 
+        [Category("Application"), DefaultValue(true), Description("Save settings after task completed but only if there is no other active tasks. This setting will be handy for situations where setting save fails when Windows shutdown and not let ShareX to save in time.")]
+        public bool SaveSettingsAfterTaskCompleted { get; set; }
+
         [Category("Clipboard upload"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
         public bool ShowClipboardContentViewer { get; set; }
 
