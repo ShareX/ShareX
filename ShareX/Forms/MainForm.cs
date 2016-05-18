@@ -1319,9 +1319,40 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     uim.DeleteFiles();
                     RemoveSelectedItems();
                     break;
+                case Keys.Apps:
+                    if (lvUploads.SelectedItems.Count > 0)
+                    {
+                        UpdateContextMenu();
+                        cmsTaskInfo.Show(lvUploads, lvUploads.SelectedItems[0].Position);
+                    }
+                    break;
             }
 
             e.Handled = e.SuppressKeyPress = true;
+        }
+
+        private void cmsTaskInfo_Closing(object sender, ToolStripDropDownClosingEventArgs e)
+        {
+            switch (e.CloseReason)
+            {
+                default:
+                    return;
+                case ToolStripDropDownCloseReason.Keyboard:
+                    e.Cancel = !(NativeMethods.GetKeyState((int)Keys.Apps) < 0 || NativeMethods.GetKeyState((int)Keys.F10) < 0 || NativeMethods.GetKeyState((int)Keys.Escape) < 0);
+                    break;
+            }
+        }
+
+        private void cmsTaskInfo_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            switch (e.KeyData)
+            {
+                default:
+                    return;
+                case Keys.Apps:
+                    cmsTaskInfo.Close();
+                    break;
+            }
         }
 
         private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)
