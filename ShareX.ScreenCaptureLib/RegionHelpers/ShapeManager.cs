@@ -678,15 +678,6 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (e.Delta > 0)
-            {
-                CurrentShapeType = CurrentShapeType.Previous<ShapeType>();
-            }
-            else if (e.Delta < 0)
-            {
-                CurrentShapeType = CurrentShapeType.Next<ShapeType>();
-            }
-
             if (Control.ModifierKeys.HasFlag(Keys.Control))
             {
                 if (e.Delta > 0)
@@ -696,6 +687,17 @@ namespace ShareX.ScreenCaptureLib
                 else if (e.Delta < 0)
                 {
                     if (config.MagnifierPixelCount > 2) config.MagnifierPixelCount -= 2;
+                }
+            }
+            else
+            {
+                if (e.Delta > 0)
+                {
+                    CurrentShapeType = CurrentShapeType.Previous<ShapeType>();
+                }
+                else if (e.Delta < 0)
+                {
+                    CurrentShapeType = CurrentShapeType.Next<ShapeType>();
                 }
             }
         }
