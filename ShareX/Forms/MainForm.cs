@@ -1323,7 +1323,8 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     if (lvUploads.SelectedItems.Count > 0)
                     {
                         UpdateContextMenu();
-                        cmsTaskInfo.Show(lvUploads, lvUploads.SelectedItems[0].Position);
+                        Rectangle rect = lvUploads.GetItemRect(lvUploads.SelectedIndex);
+                        cmsTaskInfo.Show(lvUploads, new Point(rect.X, rect.Bottom));
                     }
                     break;
             }
@@ -1333,25 +1334,17 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         private void cmsTaskInfo_Closing(object sender, ToolStripDropDownClosingEventArgs e)
         {
-            switch (e.CloseReason)
+            if (e.CloseReason == ToolStripDropDownCloseReason.Keyboard)
             {
-                default:
-                    return;
-                case ToolStripDropDownCloseReason.Keyboard:
-                    e.Cancel = !(NativeMethods.GetKeyState((int)Keys.Apps) < 0 || NativeMethods.GetKeyState((int)Keys.F10) < 0 || NativeMethods.GetKeyState((int)Keys.Escape) < 0);
-                    break;
+                e.Cancel = !(NativeMethods.GetKeyState((int)Keys.Apps) < 0 || NativeMethods.GetKeyState((int)Keys.F10) < 0 || NativeMethods.GetKeyState((int)Keys.Escape) < 0);
             }
         }
 
         private void cmsTaskInfo_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            switch (e.KeyData)
+            if (e.KeyData == Keys.Apps)
             {
-                default:
-                    return;
-                case Keys.Apps:
-                    cmsTaskInfo.Close();
-                    break;
+                cmsTaskInfo.Close();
             }
         }
 
