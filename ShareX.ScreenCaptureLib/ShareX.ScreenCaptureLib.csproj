@@ -72,6 +72,12 @@
     <Compile Include="Forms\ScrollingCaptureForm.Designer.cs">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TextDrawingInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TextDrawingInputBox.Designer.cs">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WebpageCaptureForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.zh-CN.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.de.resx">
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>

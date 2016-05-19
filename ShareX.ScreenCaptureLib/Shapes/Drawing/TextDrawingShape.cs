@@ -39,6 +39,7 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingText;
 
         public string Text { get; set; }
+        public int TextSize { get; set; } = 18;
 
         public override void Draw(Graphics g)
         {
@@ -60,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawText(Graphics g)
         {
-            using (Font font = new Font("Verdana", 18))
+            using (Font font = new Font("Verdana", TextSize))
             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
             {
                 using (Brush textBrush = new SolidBrush(BorderColor))
@@ -72,11 +73,14 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateText()
         {
-            string text = InputBox.GetInputText(null, Text);
-
-            if (text != null)
+            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, BorderColor, TextSize))
             {
-                Text = text;
+                if (inputBox.ShowDialog() == DialogResult.OK)
+                {
+                    Text = inputBox.InputText;
+                    BorderColor = inputBox.TextColor;
+                    TextSize = inputBox.TextSize;
+                }
             }
         }
 
