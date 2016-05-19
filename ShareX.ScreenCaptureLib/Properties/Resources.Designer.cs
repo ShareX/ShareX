@@ -609,7 +609,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Esc] Cancel capture.
+        ///   Looks up a localized string similar to [Middle click] [Esc] Cancel capture.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture {
             get {

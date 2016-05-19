@@ -240,7 +240,7 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
     <value>[Shift basılı tut] Seçili alanı taşı boyutlandırmak yerine</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] Yakalamayı iptal et</value>
+    <value>[Orta tık] [Esc] Yakalamayı iptal et</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Sağ tık] Alan seçimini iptal et</value>

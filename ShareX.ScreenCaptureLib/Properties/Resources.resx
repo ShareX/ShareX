@@ -205,7 +205,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[Hold Alt] Snap selection to preset sizes</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] Cancel capture</value>
+    <value>[Middle click] [Esc] Cancel capture</value>
   </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Browse for ffmpeg.exe</value>

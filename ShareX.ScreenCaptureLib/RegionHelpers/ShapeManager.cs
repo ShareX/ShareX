@@ -595,6 +595,10 @@ namespace ShareX.ScreenCaptureLib
                     form.Close(RegionResult.Close);
                 }
             }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                form.Close(RegionResult.Close);
+            }
         }
 
         private void form_KeyDown(object sender, KeyEventArgs e)
