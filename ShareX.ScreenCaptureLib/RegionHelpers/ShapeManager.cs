@@ -286,7 +286,7 @@ namespace ShareX.ScreenCaptureLib
             ToolStripMenuItem tsmiBorderColor = new ToolStripMenuItem("Border color...");
             tsmiBorderColor.Click += (sender, e) =>
             {
-                form.Pause();
+                PauseForm();
 
                 using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeBorderColor))
                 {
@@ -299,7 +299,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                form.Resume();
+                ResumeForm();
             };
             tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiBorderColor);
@@ -319,7 +319,7 @@ namespace ShareX.ScreenCaptureLib
             ToolStripMenuItem tsmiFillColor = new ToolStripMenuItem("Fill color...");
             tsmiFillColor.Click += (sender, e) =>
             {
-                form.Pause();
+                PauseForm();
 
                 using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeFillColor))
                 {
@@ -332,7 +332,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                form.Resume();
+                ResumeForm();
             };
             tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiFillColor);
@@ -377,7 +377,7 @@ namespace ShareX.ScreenCaptureLib
             ToolStripMenuItem tsmiHighlightColor = new ToolStripMenuItem("Highlight color...");
             tsmiHighlightColor.Click += (sender, e) =>
             {
-                form.Pause();
+                PauseForm();
 
                 using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeHighlightColor))
                 {
@@ -390,7 +390,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                form.Resume();
+                ResumeForm();
             };
             tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeHighlightColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiHighlightColor);
@@ -979,6 +979,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
+            shape.Manager = this;
             shape.Rectangle = rect;
 
             UpdateShape(shape);
@@ -1156,6 +1157,16 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return Rectangle.Empty;
+        }
+
+        public void PauseForm()
+        {
+            form.Pause();
+        }
+
+        public void ResumeForm()
+        {
+            form.Resume();
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)

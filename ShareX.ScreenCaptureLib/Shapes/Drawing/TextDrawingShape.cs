@@ -30,6 +30,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -39,7 +40,11 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingText;
 
         public string Text { get; set; }
+        public string TextFont { get; set; } = "Verdana";
         public int TextSize { get; set; } = 18;
+        public bool TextBold { get; set; }
+        public bool TextItalic { get; set; }
+        public bool TextUnderline { get; set; }
 
         public override void Draw(Graphics g)
         {
@@ -61,7 +66,24 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawText(Graphics g)
         {
-            using (Font font = new Font("Verdana", TextSize))
+            FontStyle fontStyle = FontStyle.Regular;
+
+            if (TextBold)
+            {
+                fontStyle |= FontStyle.Bold;
+            }
+
+            if (TextItalic)
+            {
+                fontStyle |= FontStyle.Italic;
+            }
+
+            if (TextUnderline)
+            {
+                fontStyle |= FontStyle.Underline;
+            }
+
+            using (Font font = new Font(TextFont, TextSize, fontStyle))
             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
             {
                 using (Brush textBrush = new SolidBrush(BorderColor))
@@ -73,15 +95,22 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateText()
         {
-            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, BorderColor, TextSize))
+            Manager.PauseForm();
+
+            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextFont, BorderColor, TextSize))
             {
                 if (inputBox.ShowDialog() == DialogResult.OK)
                 {
                     Text = inputBox.InputText;
                     BorderColor = inputBox.TextColor;
                     TextSize = inputBox.TextSize;
+                    TextBold = inputBox.TextBold;
+                    TextItalic = inputBox.TextItalic;
+                    TextUnderline = inputBox.TextUnderline;
                 }
             }
+
+            Manager.ResumeForm();
         }
 
         public override void OnShapeCreated()

@@ -37,6 +37,8 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle Rectangle { get; set; }
 
+        public ShapeManager Manager { get; set; }
+
         private Point startPosition;
 
         public Point StartPosition
@@ -67,15 +69,6 @@ namespace ShareX.ScreenCaptureLib
 
                 Rectangle = CaptureHelpers.CreateRectangle(StartPosition, EndPosition);
             }
-        }
-
-        public BaseShape()
-        {
-        }
-
-        public BaseShape(Rectangle rect)
-        {
-            Rectangle = rect;
         }
 
         public virtual void AddShapePath(GraphicsPath gp, Rectangle rect)

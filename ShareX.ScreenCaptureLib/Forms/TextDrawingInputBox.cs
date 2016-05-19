@@ -38,27 +38,81 @@ namespace ShareX.ScreenCaptureLib
     internal partial class TextDrawingInputBox : Form
     {
         public string InputText { get; private set; }
+        public string TextFont { get; private set; }
         public Color TextColor { get; private set; }
         public int TextSize { get; private set; }
+        public bool TextBold { get; private set; }
+        public bool TextItalic { get; private set; }
+        public bool TextUnderline { get; private set; }
 
-        public TextDrawingInputBox(string inputText, Color textColor, int textSize)
+        public TextDrawingInputBox(string inputText, string textFont, Color textColor, int textSize)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            if (inputText != null)
+            InputText = inputText;
+            TextFont = textFont;
+            TextColor = textColor;
+            TextSize = textSize;
+
+            if (InputText != null)
             {
-                txtInput.Text = inputText;
+                txtInput.Text = InputText;
             }
 
-            txtInput.Font = new Font(txtInput.Font.FontFamily, textSize);
-            btnTextColor.Color = textColor;
-            nudTextSize.Value = textSize;
+            UpdateInputBox();
+
+            btnTextColor.Color = TextColor;
+            nudTextSize.Value = TextSize;
         }
 
         private void nudTextSize_ValueChanged(object sender, EventArgs e)
         {
-            txtInput.Font = new Font(txtInput.Font.FontFamily, (float)nudTextSize.Value);
+            UpdateInputBox();
+        }
+
+        private void cbBold_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateInputBox();
+        }
+
+        private void cbItalic_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateInputBox();
+        }
+
+        private void cbUnderline_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateInputBox();
+        }
+
+        private void btnTextColor_ColorChanged(Color color)
+        {
+            UpdateInputBox();
+        }
+
+        private void UpdateInputBox()
+        {
+            FontStyle fontStyle = FontStyle.Regular;
+
+            if (cbBold.Checked)
+            {
+                fontStyle |= FontStyle.Bold;
+            }
+
+            if (cbItalic.Checked)
+            {
+                fontStyle |= FontStyle.Italic;
+            }
+
+            if (cbUnderline.Checked)
+            {
+                fontStyle |= FontStyle.Underline;
+            }
+
+            txtInput.Font = new Font(TextFont, (float)nudTextSize.Value, fontStyle);
+
+            txtInput.ForeColor = btnTextColor.Color;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -66,6 +120,9 @@ namespace ShareX.ScreenCaptureLib
             InputText = txtInput.Text;
             TextColor = btnTextColor.Color;
             TextSize = (int)nudTextSize.Value;
+            TextBold = cbBold.Checked;
+            TextItalic = cbItalic.Checked;
+            TextUnderline = cbUnderline.Checked;
 
             DialogResult = DialogResult.OK;
         }

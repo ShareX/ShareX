@@ -30,12 +30,15 @@
         {
             this.txtInput = new System.Windows.Forms.TextBox();
             this.btnTextColor = new ShareX.HelpersLib.ColorButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpProperties = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTextSize = new System.Windows.Forms.Label();
             this.nudTextSize = new System.Windows.Forms.NumericUpDown();
+            this.cbBold = new System.Windows.Forms.CheckBox();
+            this.cbItalic = new System.Windows.Forms.CheckBox();
+            this.cbUnderline = new System.Windows.Forms.CheckBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flpProperties.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTextSize)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,30 +55,34 @@
             // 
             this.btnTextColor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnTextColor.Color = System.Drawing.Color.Empty;
-            this.btnTextColor.Location = new System.Drawing.Point(0, 3);
-            this.btnTextColor.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.btnTextColor.Location = new System.Drawing.Point(204, 3);
             this.btnTextColor.Name = "btnTextColor";
-            this.btnTextColor.Size = new System.Drawing.Size(120, 23);
+            this.btnTextColor.Size = new System.Drawing.Size(120, 24);
             this.btnTextColor.TabIndex = 1;
             this.btnTextColor.Text = "Text color";
             this.btnTextColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTextColor.UseVisualStyleBackColor = true;
+            this.btnTextColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnTextColor_ColorChanged);
             // 
-            // flowLayoutPanel1
+            // flpProperties
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btnTextColor);
-            this.flowLayoutPanel1.Controls.Add(this.lblTextSize);
-            this.flowLayoutPanel1.Controls.Add(this.nudTextSize);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 8);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(472, 32);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.flpProperties.Controls.Add(this.lblTextSize);
+            this.flpProperties.Controls.Add(this.nudTextSize);
+            this.flpProperties.Controls.Add(this.cbBold);
+            this.flpProperties.Controls.Add(this.cbItalic);
+            this.flpProperties.Controls.Add(this.cbUnderline);
+            this.flpProperties.Controls.Add(this.btnTextColor);
+            this.flpProperties.Location = new System.Drawing.Point(8, 5);
+            this.flpProperties.Name = "flpProperties";
+            this.flpProperties.Size = new System.Drawing.Size(472, 32);
+            this.flpProperties.TabIndex = 2;
             // 
             // lblTextSize
             // 
             this.lblTextSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTextSize.AutoSize = true;
-            this.lblTextSize.Location = new System.Drawing.Point(126, 8);
+            this.lblTextSize.Location = new System.Drawing.Point(0, 8);
+            this.lblTextSize.Margin = new System.Windows.Forms.Padding(0);
             this.lblTextSize.Name = "lblTextSize";
             this.lblTextSize.Size = new System.Drawing.Size(52, 13);
             this.lblTextSize.TabIndex = 2;
@@ -84,7 +91,7 @@
             // nudTextSize
             // 
             this.nudTextSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudTextSize.Location = new System.Drawing.Point(184, 4);
+            this.nudTextSize.Location = new System.Drawing.Point(55, 5);
             this.nudTextSize.Minimum = new decimal(new int[] {
             5,
             0,
@@ -100,6 +107,39 @@
             0,
             0});
             this.nudTextSize.ValueChanged += new System.EventHandler(this.nudTextSize_ValueChanged);
+            // 
+            // cbBold
+            // 
+            this.cbBold.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cbBold.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_bold;
+            this.cbBold.Location = new System.Drawing.Point(114, 3);
+            this.cbBold.Name = "cbBold";
+            this.cbBold.Size = new System.Drawing.Size(24, 24);
+            this.cbBold.TabIndex = 4;
+            this.cbBold.UseVisualStyleBackColor = true;
+            this.cbBold.CheckedChanged += new System.EventHandler(this.cbBold_CheckedChanged);
+            // 
+            // cbItalic
+            // 
+            this.cbItalic.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cbItalic.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_italic;
+            this.cbItalic.Location = new System.Drawing.Point(144, 3);
+            this.cbItalic.Name = "cbItalic";
+            this.cbItalic.Size = new System.Drawing.Size(24, 24);
+            this.cbItalic.TabIndex = 5;
+            this.cbItalic.UseVisualStyleBackColor = true;
+            this.cbItalic.CheckedChanged += new System.EventHandler(this.cbItalic_CheckedChanged);
+            // 
+            // cbUnderline
+            // 
+            this.cbUnderline.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cbUnderline.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_underline;
+            this.cbUnderline.Location = new System.Drawing.Point(174, 3);
+            this.cbUnderline.Name = "cbUnderline";
+            this.cbUnderline.Size = new System.Drawing.Size(24, 24);
+            this.cbUnderline.TabIndex = 6;
+            this.cbUnderline.UseVisualStyleBackColor = true;
+            this.cbUnderline.CheckedChanged += new System.EventHandler(this.cbUnderline_CheckedChanged);
             // 
             // btnOK
             // 
@@ -128,15 +168,17 @@
             this.ClientSize = new System.Drawing.Size(488, 360);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flpProperties);
             this.Controls.Add(this.txtInput);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TextDrawingInputBox";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Text input";
             this.TopMost = true;
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.flpProperties.ResumeLayout(false);
+            this.flpProperties.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTextSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -147,10 +189,13 @@
 
         private System.Windows.Forms.TextBox txtInput;
         private HelpersLib.ColorButton btnTextColor;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpProperties;
         private System.Windows.Forms.Label lblTextSize;
         private System.Windows.Forms.NumericUpDown nudTextSize;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox cbBold;
+        private System.Windows.Forms.CheckBox cbItalic;
+        private System.Windows.Forms.CheckBox cbUnderline;
     }
 }

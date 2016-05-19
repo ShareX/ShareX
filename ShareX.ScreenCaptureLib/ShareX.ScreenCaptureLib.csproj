@@ -165,6 +165,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\edit-underline.png" />
+    <None Include="Resources\edit-italic.png" />
+    <None Include="Resources\edit-bold.png" />
     <None Include="Resources\layer-shape-text.png" />
     <None Include="Resources\gear.png" />
     <None Include="Resources\layer_fullscreen.png" />
