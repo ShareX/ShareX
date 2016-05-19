@@ -85,6 +85,7 @@
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\TextDrawingShape.cs" />
     <Compile Include="Shapes\Effect\BlurEffectShape.cs" />
     <Compile Include="Shapes\Drawing\EllipseDrawingShape.cs" />
     <Compile Include="Shapes\Effect\HighlightEffectShape.cs" />
@@ -158,6 +159,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\layer-shape-text.png" />
     <None Include="Resources\gear.png" />
     <None Include="Resources\layer_fullscreen.png" />
     <None Include="Resources\layer-shade.png" />

@@ -179,9 +179,10 @@ namespace ShareX.ScreenCaptureLib
 
             form.MouseDown += form_MouseDown;
             form.MouseUp += form_MouseUp;
+            form.MouseDoubleClick += form_MouseDoubleClick;
+            form.MouseWheel += form_MouseWheel;
             form.KeyDown += form_KeyDown;
             form.KeyUp += form_KeyUp;
-            form.MouseWheel += form_MouseWheel;
 
             if (form.Mode == RectangleRegionMode.Annotation)
             {
@@ -252,6 +253,9 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ShapeType.DrawingArrow:
                         img = Resources.layer_shape_arrow;
+                        break;
+                    case ShapeType.DrawingText:
+                        img = Resources.layer_shape_text;
                         break;
                     case ShapeType.DrawingBlur:
                         img = Resources.layer_shade;
@@ -601,6 +605,47 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void form_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (IsCurrentShapeTypeRegion)
+                {
+                    form.Close(RegionResult.Region);
+                }
+                else if (CurrentShape != null)
+                {
+                    CurrentShape.OnShapeDoubleClicked();
+                }
+            }
+        }
+
+        private void form_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (Control.ModifierKeys.HasFlag(Keys.Control))
+            {
+                if (e.Delta > 0)
+                {
+                    if (config.MagnifierPixelCount < 41) config.MagnifierPixelCount += 2;
+                }
+                else if (e.Delta < 0)
+                {
+                    if (config.MagnifierPixelCount > 2) config.MagnifierPixelCount -= 2;
+                }
+            }
+            else
+            {
+                if (e.Delta > 0)
+                {
+                    CurrentShapeType = CurrentShapeType.Previous<ShapeType>();
+                }
+                else if (e.Delta < 0)
+                {
+                    CurrentShapeType = CurrentShapeType.Next<ShapeType>();
+                }
+            }
+        }
+
         private void form_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -677,32 +722,6 @@ namespace ShareX.ScreenCaptureLib
                         EndRegionSelection();
                     }
                     break;
-            }
-        }
-
-        private void form_MouseWheel(object sender, MouseEventArgs e)
-        {
-            if (Control.ModifierKeys.HasFlag(Keys.Control))
-            {
-                if (e.Delta > 0)
-                {
-                    if (config.MagnifierPixelCount < 41) config.MagnifierPixelCount += 2;
-                }
-                else if (e.Delta < 0)
-                {
-                    if (config.MagnifierPixelCount > 2) config.MagnifierPixelCount -= 2;
-                }
-            }
-            else
-            {
-                if (e.Delta > 0)
-                {
-                    CurrentShapeType = CurrentShapeType.Previous<ShapeType>();
-                }
-                else if (e.Delta < 0)
-                {
-                    CurrentShapeType = CurrentShapeType.Next<ShapeType>();
-                }
             }
         }
 
@@ -858,10 +877,14 @@ namespace ShareX.ScreenCaptureLib
 
         private void EndRegionSelection()
         {
+            bool wasCreating = IsCreating;
+
             IsCreating = false;
             IsMoving = false;
 
-            if (!CurrentRectangle.IsEmpty)
+            BaseShape shape = CurrentShape;
+
+            if (shape != null)
             {
                 if (!IsCurrentRegionValid)
                 {
@@ -875,7 +898,14 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
+                    if (wasCreating)
+                    {
+                        shape.OnShapeCreated();
+                    }
+
                     SelectShape();
+
+                    return;
                 }
             }
 
@@ -932,6 +962,9 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.DrawingArrow:
                     shape = new ArrowDrawingShape();
+                    break;
+                case ShapeType.DrawingText:
+                    shape = new TextDrawingShape();
                     break;
                 case ShapeType.DrawingBlur:
                     shape = new BlurEffectShape();
@@ -1011,7 +1044,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (shape != null)
                         {
-                            shape.Draw(g);
+                            shape.DrawFinal(g, bmp);
                         }
                     }
                 }

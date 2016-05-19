@@ -39,6 +39,21 @@ namespace ShareX.ScreenCaptureLib
         public Color FillColor { get; set; }
         public int BorderSize { get; set; }
 
-        public abstract void Draw(Graphics g);
+        public virtual void Draw(Graphics g)
+        {
+            using (Pen borderPen = new Pen(Color.Black))
+            using (Pen borderDotPen = new Pen(Color.White))
+            {
+                borderDotPen.DashPattern = new float[] { 2, 2 };
+
+                g.DrawRectangleProper(borderPen, Rectangle);
+                g.DrawRectangleProper(borderDotPen, Rectangle);
+            }
+        }
+
+        public virtual void DrawFinal(Graphics g, Bitmap bmp)
+        {
+            Draw(g);
+        }
     }
 }

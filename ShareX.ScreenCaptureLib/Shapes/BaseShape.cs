@@ -93,5 +93,13 @@ namespace ShareX.ScreenCaptureLib
             Rectangle rect = Rectangle.SizeOffset(sizeOffset);
             AddShapePath(gp, rect);
         }
+
+        public virtual void OnShapeCreated()
+        {
+        }
+
+        public virtual void OnShapeDoubleClicked()
+        {
+        }
     }
 }
