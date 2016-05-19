@@ -42,22 +42,24 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Draw(Graphics g)
         {
-            using (Brush brush = new SolidBrush(Color.FromArgb(150, HighlightColor)))
+            using (Brush brush = new SolidBrush(Color.FromArgb(100, HighlightColor)))
             {
                 g.FillRectangle(brush, Rectangle);
             }
 
-            using (Pen pen = new Pen(Color.FromArgb(200, Color.Black)))
-            {
-                g.DrawCornerLines(Rectangle, pen, 20);
-            }
+            g.DrawCornerLines(Rectangle.Offset(1), Pens.Black, 20);
 
-            if (Rectangle.Width > 10 && Rectangle.Height > 10)
+            using (Font font = new Font("Verdana", 12))
             {
-                using (Font font = new Font("Verdana", 14))
-                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                string text = "Highlight";
+                Size textSize = g.MeasureString(text, font).ToSize();
+
+                if (Rectangle.Width > textSize.Width && Rectangle.Height > textSize.Height)
                 {
-                    g.DrawString("Highlight", font, Brushes.Black, Rectangle, sf);
+                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    {
+                        g.DrawString(text, font, Brushes.Black, Rectangle, sf);
+                    }
                 }
             }
         }
