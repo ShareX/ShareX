@@ -63,8 +63,10 @@ namespace ShareX.ScreenCaptureLib
             using (Font font = new Font("Verdana", 18))
             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
             {
-                g.DrawString(Text, font, Brushes.Black, Rectangle.LocationOffset(1, 1), sf);
-                g.DrawString(Text, font, Brushes.White, Rectangle, sf);
+                using (Brush textBrush = new SolidBrush(BorderColor))
+                {
+                    g.DrawString(Text, font, textBrush, Rectangle, sf);
+                }
             }
         }
 

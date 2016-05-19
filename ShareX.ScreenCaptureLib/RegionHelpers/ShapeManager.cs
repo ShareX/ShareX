@@ -615,6 +615,8 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else if (CurrentShape != null)
                 {
+                    EndRegionSelection();
+
                     CurrentShape.OnShapeDoubleClicked();
                 }
             }
