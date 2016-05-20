@@ -1012,20 +1012,25 @@ namespace ShareX.ScreenCaptureLib
                     IRoundedRectangleShape roundedRectangleShape = (IRoundedRectangleShape)shape;
                     roundedRectangleShape.Radius = config.ShapeRoundedRectangleRadius;
                 }
+                else if (shape is TextDrawingShape)
+                {
+                    TextDrawingShape textDrawingShape = (TextDrawingShape)shape;
+                    textDrawingShape.Options = config.ShapeTextOptions;
+                }
                 else if (shape is BlurEffectShape)
                 {
-                    BlurEffectShape blurDrawingShape = (BlurEffectShape)shape;
-                    blurDrawingShape.BlurRadius = config.ShapeBlurRadius;
+                    BlurEffectShape blurEffectShape = (BlurEffectShape)shape;
+                    blurEffectShape.BlurRadius = config.ShapeBlurRadius;
                 }
                 else if (shape is PixelateEffectShape)
                 {
-                    PixelateEffectShape pixelateDrawingShape = (PixelateEffectShape)shape;
-                    pixelateDrawingShape.PixelSize = config.ShapePixelateSize;
+                    PixelateEffectShape pixelateEffectShape = (PixelateEffectShape)shape;
+                    pixelateEffectShape.PixelSize = config.ShapePixelateSize;
                 }
                 else if (shape is HighlightEffectShape)
                 {
-                    HighlightEffectShape highlightDrawingShape = (HighlightEffectShape)shape;
-                    highlightDrawingShape.HighlightColor = config.ShapeHighlightColor;
+                    HighlightEffectShape highlightEffectShape = (HighlightEffectShape)shape;
+                    highlightEffectShape.HighlightColor = config.ShapeHighlightColor;
                 }
             }
         }
