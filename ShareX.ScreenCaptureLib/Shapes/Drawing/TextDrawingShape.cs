@@ -40,7 +40,7 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingText;
 
         public string Text { get; set; }
-        public string TextFont { get; set; } = "Verdana";
+        public string TextFont { get; set; } = "Arial";
         public int TextSize { get; set; } = 18;
         public bool TextBold { get; set; }
         public bool TextItalic { get; set; }
@@ -102,8 +102,9 @@ namespace ShareX.ScreenCaptureLib
                 if (inputBox.ShowDialog() == DialogResult.OK)
                 {
                     Text = inputBox.InputText;
-                    BorderColor = inputBox.TextColor;
+                    TextFont = inputBox.TextFont;
                     TextSize = inputBox.TextSize;
+                    BorderColor = inputBox.TextColor;
                     TextBold = inputBox.TextBold;
                     TextItalic = inputBox.TextItalic;
                     TextUnderline = inputBox.TextUnderline;

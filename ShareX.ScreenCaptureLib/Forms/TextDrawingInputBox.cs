@@ -62,11 +62,32 @@ namespace ShareX.ScreenCaptureLib
 
             UpdateInputBox();
 
-            btnTextColor.Color = TextColor;
+            cbFonts.Items.AddRange(FontFamily.Families.Select(x => x.Name).ToArray());
+
+            if (cbFonts.Items.Contains(textFont))
+            {
+                cbFonts.SelectedItem = textFont;
+            }
+            else
+            {
+                cbFonts.SelectedItem = "Arial";
+            }
+
             nudTextSize.Value = TextSize;
+            btnTextColor.Color = TextColor;
+        }
+
+        private void cbFonts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateInputBox();
         }
 
         private void nudTextSize_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateInputBox();
+        }
+
+        private void btnTextColor_ColorChanged(Color color)
         {
             UpdateInputBox();
         }
@@ -82,11 +103,6 @@ namespace ShareX.ScreenCaptureLib
         }
 
         private void cbUnderline_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateInputBox();
-        }
-
-        private void btnTextColor_ColorChanged(Color color)
         {
             UpdateInputBox();
         }
@@ -110,7 +126,7 @@ namespace ShareX.ScreenCaptureLib
                 fontStyle |= FontStyle.Underline;
             }
 
-            txtInput.Font = new Font(TextFont, (float)nudTextSize.Value, fontStyle);
+            txtInput.Font = new Font(cbFonts.SelectedItem as string, (float)nudTextSize.Value, fontStyle);
 
             txtInput.ForeColor = btnTextColor.Color;
         }
@@ -118,8 +134,9 @@ namespace ShareX.ScreenCaptureLib
         private void btnOK_Click(object sender, EventArgs e)
         {
             InputText = txtInput.Text;
-            TextColor = btnTextColor.Color;
+            TextFont = cbFonts.SelectedItem as string;
             TextSize = (int)nudTextSize.Value;
+            TextColor = btnTextColor.Color;
             TextBold = cbBold.Checked;
             TextItalic = cbItalic.Checked;
             TextUnderline = cbUnderline.Checked;
