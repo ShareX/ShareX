@@ -174,6 +174,7 @@ namespace ShareX.ScreenCaptureLib
         {
             txtInput.Font = new Font(Options.Font, Options.Size, Options.Style);
             txtInput.ForeColor = Options.Color;
+            txtInput.BackColor = ColorHelpers.VisibleColor(Options.Color, Color.White, Color.FromArgb(50, 50, 50));
 
             HorizontalAlignment horizontalAlignment;
 
