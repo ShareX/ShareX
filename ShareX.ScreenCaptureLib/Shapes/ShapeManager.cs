@@ -596,6 +596,7 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingEllipse:
                     case ShapeType.DrawingLine:
                     case ShapeType.DrawingArrow:
+                    case ShapeType.DrawingText:
                     case ShapeType.DrawingBlur:
                     case ShapeType.DrawingPixelate:
                     case ShapeType.DrawingHighlight:
@@ -614,6 +615,7 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingEllipse:
                     case ShapeType.DrawingLine:
                     case ShapeType.DrawingArrow:
+                    case ShapeType.DrawingText:
                         tsmiBorderColor.Visible = true;
                         tslnudBorderSize.Visible = true;
                         break;
@@ -627,6 +629,7 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingRectangle:
                     case ShapeType.DrawingRoundedRectangle:
                     case ShapeType.DrawingEllipse:
+                    case ShapeType.DrawingText:
                         tsmiFillColor.Visible = true;
                         break;
                 }

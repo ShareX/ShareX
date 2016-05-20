@@ -39,8 +39,8 @@ namespace ShareX.ScreenCaptureLib
         public bool Bold { get; set; } = false;
         public bool Italic { get; set; } = false;
         public bool Underline { get; set; } = false;
-        public StringAlignment AlignmentHorizontal { get; set; } = StringAlignment.Near;
-        public StringAlignment AlignmentVertical { get; set; } = StringAlignment.Near;
+        public StringAlignment AlignmentHorizontal { get; set; } = StringAlignment.Center;
+        public StringAlignment AlignmentVertical { get; set; } = StringAlignment.Center;
 
         public FontStyle Style
         {
