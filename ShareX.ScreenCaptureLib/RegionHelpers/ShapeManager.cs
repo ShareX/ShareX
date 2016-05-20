@@ -306,7 +306,7 @@ namespace ShareX.ScreenCaptureLib
 
             ToolStripLabeledNumericUpDown tslnudBorderSize = new ToolStripLabeledNumericUpDown();
             tslnudBorderSize.LabeledNumericUpDownControl.Text = "Border size:";
-            tslnudBorderSize.LabeledNumericUpDownControl.Minimum = 1;
+            tslnudBorderSize.LabeledNumericUpDownControl.Minimum = 0;
             tslnudBorderSize.LabeledNumericUpDownControl.Maximum = 20;
             tslnudBorderSize.LabeledNumericUpDownControl.Value = config.ShapeBorderSize;
             tslnudBorderSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>

@@ -48,11 +48,9 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (BorderColor.A > 0 && BorderSize > 0)
+            if (BorderSize > 0 && BorderColor.A > 0)
             {
                 Rectangle rect = Rectangle.Offset(BorderSize - 1);
-
-                //g.DrawRectangleShadow(rect.Offset(1), Color.FromArgb(150, 150, 150), 3, 100, 10, new Padding(1));
 
                 using (Pen pen = new Pen(BorderColor, BorderSize) { Alignment = PenAlignment.Inset })
                 {

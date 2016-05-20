@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (BorderColor.A > 0 && BorderSize > 0)
+            if (BorderSize > 0 && BorderColor.A > 0)
             {
                 using (Pen pen = new Pen(BorderColor, BorderSize))
                 {

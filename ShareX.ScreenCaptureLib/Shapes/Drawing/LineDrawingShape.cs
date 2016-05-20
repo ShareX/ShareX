@@ -39,7 +39,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Draw(Graphics g)
         {
-            if (BorderColor.A > 0 && BorderSize > 0)
+            if (BorderSize > 0 && BorderColor.A > 0)
             {
                 g.SmoothingMode = SmoothingMode.HighQuality;
 

@@ -51,7 +51,7 @@ namespace ShareX.ScreenCaptureLib
                     brush = new SolidBrush(FillColor);
                 }
 
-                if (BorderColor.A > 0 && BorderSize > 0)
+                if (BorderSize > 0 && BorderColor.A > 0)
                 {
                     pen = new Pen(BorderColor, BorderSize);
                 }
