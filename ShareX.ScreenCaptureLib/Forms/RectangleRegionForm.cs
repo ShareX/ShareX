@@ -498,12 +498,14 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(string.Format("[{0}] {1}", "Numpad 4", ShapeType.DrawingLine.GetLocalizedDescription()));
             if (ShapeManager.CurrentShapeType == ShapeType.DrawingArrow) sb.Append("-> ");
             sb.AppendLine(string.Format("[{0}] {1}", "Numpad 5", ShapeType.DrawingArrow.GetLocalizedDescription()));
+            if (ShapeManager.CurrentShapeType == ShapeType.DrawingText) sb.Append("-> ");
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6", ShapeType.DrawingText.GetLocalizedDescription()));
             if (ShapeManager.CurrentShapeType == ShapeType.DrawingBlur) sb.Append("-> ");
-            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6", ShapeType.DrawingBlur.GetLocalizedDescription()));
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 7", ShapeType.DrawingBlur.GetLocalizedDescription()));
             if (ShapeManager.CurrentShapeType == ShapeType.DrawingPixelate) sb.Append("-> ");
-            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 7", ShapeType.DrawingPixelate.GetLocalizedDescription()));
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8", ShapeType.DrawingPixelate.GetLocalizedDescription()));
             if (ShapeManager.CurrentShapeType == ShapeType.DrawingHighlight) sb.Append("-> ");
-            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8", ShapeType.DrawingHighlight.GetLocalizedDescription()));
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 9", ShapeType.DrawingHighlight.GetLocalizedDescription()));
         }
 
         private string GetAreaText(Rectangle area)

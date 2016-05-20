@@ -695,12 +695,15 @@ namespace ShareX.ScreenCaptureLib
                     CurrentShapeType = ShapeType.DrawingArrow;
                     break;
                 case Keys.NumPad6:
-                    CurrentShapeType = ShapeType.DrawingBlur;
+                    CurrentShapeType = ShapeType.DrawingText;
                     break;
                 case Keys.NumPad7:
-                    CurrentShapeType = ShapeType.DrawingPixelate;
+                    CurrentShapeType = ShapeType.DrawingBlur;
                     break;
                 case Keys.NumPad8:
+                    CurrentShapeType = ShapeType.DrawingPixelate;
+                    break;
+                case Keys.NumPad9:
                     CurrentShapeType = ShapeType.DrawingHighlight;
                     break;
             }
