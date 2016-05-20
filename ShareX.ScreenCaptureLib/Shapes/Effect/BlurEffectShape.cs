@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void UpdateShapeConfig()
         {
-            BlurRadius = Config.ShapeBlurRadius;
+            BlurRadius = AnnotationOptions.BlurRadius;
         }
 
         public override void Draw(Graphics g)

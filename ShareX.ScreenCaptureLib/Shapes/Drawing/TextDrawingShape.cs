@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void UpdateShapeConfig()
         {
-            Options = Config.ShapeTextOptions.Copy();
+            Options = AnnotationOptions.TextOptions.Copy();
         }
 
         public override void Draw(Graphics g)
@@ -82,7 +82,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 inputBox.ShowDialog();
                 Text = inputBox.InputText;
-                Config.ShapeTextOptions = Options;
+                AnnotationOptions.TextOptions = Options;
             }
 
             Manager.ResumeForm();

@@ -63,7 +63,6 @@ namespace ShareX.ScreenCaptureLib
             private set
             {
                 currentShapeType = value;
-                Config.CurrentShapeType = currentShapeType;
                 DeselectShape();
                 OnCurrentShapeTypeChanged(currentShapeType);
             }
@@ -165,6 +164,14 @@ namespace ShareX.ScreenCaptureLib
 
         public SurfaceOptions Config { get; private set; }
 
+        public AnnotationOptions AnnotationOptions
+        {
+            get
+            {
+                return Config.AnnotationOptions;
+            }
+        }
+
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
@@ -191,7 +198,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             CurrentShape = null;
-            CurrentShapeType = ShapeType.RegionRectangle; //config.CurrentShapeType;
+            CurrentShapeType = ShapeType.RegionRectangle;
         }
 
         private void CreateContextMenu()
@@ -289,30 +296,30 @@ namespace ShareX.ScreenCaptureLib
             {
                 PauseForm();
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(Config.ShapeBorderColor))
+                using (ColorPickerForm dialogColor = new ColorPickerForm(AnnotationOptions.BorderColor))
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        Config.ShapeBorderColor = dialogColor.NewColor;
+                        AnnotationOptions.BorderColor = dialogColor.NewColor;
                         if (tsmiBorderColor.Image != null) tsmiBorderColor.Image.Dispose();
-                        tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(Config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
+                        tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.BorderColor, new Rectangle(0, 0, 16, 16));
                         UpdateCurrentShape();
                     }
                 }
 
                 ResumeForm();
             };
-            tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(Config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
+            tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.BorderColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiBorderColor);
 
             ToolStripLabeledNumericUpDown tslnudBorderSize = new ToolStripLabeledNumericUpDown();
             tslnudBorderSize.LabeledNumericUpDownControl.Text = "Border size:";
             tslnudBorderSize.LabeledNumericUpDownControl.Minimum = 0;
             tslnudBorderSize.LabeledNumericUpDownControl.Maximum = 20;
-            tslnudBorderSize.LabeledNumericUpDownControl.Value = Config.ShapeBorderSize;
+            tslnudBorderSize.LabeledNumericUpDownControl.Value = AnnotationOptions.BorderSize;
             tslnudBorderSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
-                Config.ShapeBorderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
+                AnnotationOptions.BorderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudBorderSize);
@@ -322,20 +329,20 @@ namespace ShareX.ScreenCaptureLib
             {
                 PauseForm();
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(Config.ShapeFillColor))
+                using (ColorPickerForm dialogColor = new ColorPickerForm(AnnotationOptions.FillColor))
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        Config.ShapeFillColor = dialogColor.NewColor;
+                        AnnotationOptions.FillColor = dialogColor.NewColor;
                         if (tsmiFillColor.Image != null) tsmiFillColor.Image.Dispose();
-                        tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(Config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
+                        tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.FillColor, new Rectangle(0, 0, 16, 16));
                         UpdateCurrentShape();
                     }
                 }
 
                 ResumeForm();
             };
-            tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(Config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
+            tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.FillColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiFillColor);
 
             ToolStripLabeledNumericUpDown tslnudRoundedRectangleRadius = new ToolStripLabeledNumericUpDown();
@@ -343,10 +350,10 @@ namespace ShareX.ScreenCaptureLib
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Minimum = 0;
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Maximum = 150;
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Increment = 3;
-            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value = Config.ShapeRoundedRectangleRadius;
+            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value = AnnotationOptions.RoundedRectangleRadius;
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
-                Config.ShapeRoundedRectangleRadius = (int)tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value;
+                AnnotationOptions.RoundedRectangleRadius = (int)tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value;
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudRoundedRectangleRadius);
@@ -355,10 +362,10 @@ namespace ShareX.ScreenCaptureLib
             tslnudBlurRadius.LabeledNumericUpDownControl.Text = "Blur radius:";
             tslnudBlurRadius.LabeledNumericUpDownControl.Minimum = 2;
             tslnudBlurRadius.LabeledNumericUpDownControl.Maximum = 100;
-            tslnudBlurRadius.LabeledNumericUpDownControl.Value = Config.ShapeBlurRadius;
+            tslnudBlurRadius.LabeledNumericUpDownControl.Value = AnnotationOptions.BlurRadius;
             tslnudBlurRadius.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
-                Config.ShapeBlurRadius = (int)tslnudBlurRadius.LabeledNumericUpDownControl.Value;
+                AnnotationOptions.BlurRadius = (int)tslnudBlurRadius.LabeledNumericUpDownControl.Value;
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudBlurRadius);
@@ -367,10 +374,10 @@ namespace ShareX.ScreenCaptureLib
             tslnudPixelateSize.LabeledNumericUpDownControl.Text = "Pixel size:";
             tslnudPixelateSize.LabeledNumericUpDownControl.Minimum = 2;
             tslnudPixelateSize.LabeledNumericUpDownControl.Maximum = 100;
-            tslnudPixelateSize.LabeledNumericUpDownControl.Value = Config.ShapeRoundedRectangleRadius;
+            tslnudPixelateSize.LabeledNumericUpDownControl.Value = AnnotationOptions.RoundedRectangleRadius;
             tslnudPixelateSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
-                Config.ShapePixelateSize = (int)tslnudPixelateSize.LabeledNumericUpDownControl.Value;
+                AnnotationOptions.PixelateSize = (int)tslnudPixelateSize.LabeledNumericUpDownControl.Value;
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudPixelateSize);
@@ -380,20 +387,20 @@ namespace ShareX.ScreenCaptureLib
             {
                 PauseForm();
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(Config.ShapeHighlightColor))
+                using (ColorPickerForm dialogColor = new ColorPickerForm(AnnotationOptions.HighlightColor))
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        Config.ShapeHighlightColor = dialogColor.NewColor;
+                        AnnotationOptions.HighlightColor = dialogColor.NewColor;
                         if (tsmiHighlightColor.Image != null) tsmiHighlightColor.Image.Dispose();
-                        tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(Config.ShapeHighlightColor, new Rectangle(0, 0, 16, 16));
+                        tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
                         UpdateCurrentShape();
                     }
                 }
 
                 ResumeForm();
             };
-            tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(Config.ShapeHighlightColor, new Rectangle(0, 0, 16, 16));
+            tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiHighlightColor);
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());

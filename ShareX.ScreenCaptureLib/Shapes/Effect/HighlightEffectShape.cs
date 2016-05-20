@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void UpdateShapeConfig()
         {
-            HighlightColor = Config.ShapeHighlightColor;
+            HighlightColor = AnnotationOptions.HighlightColor;
         }
 
         public override void Draw(Graphics g)

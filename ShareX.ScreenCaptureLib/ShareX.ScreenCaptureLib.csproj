@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnnotationOptions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Forms\RectangleRegionAnnotateForm.cs">
       <SubType>Form</SubType>

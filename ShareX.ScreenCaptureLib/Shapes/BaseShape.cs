@@ -39,11 +39,11 @@ namespace ShareX.ScreenCaptureLib
 
         public ShapeManager Manager { get; set; }
 
-        protected SurfaceOptions Config
+        protected AnnotationOptions AnnotationOptions
         {
             get
             {
-                return Manager.Config;
+                return Manager.Config.AnnotationOptions;
             }
         }
 

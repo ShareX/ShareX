@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void UpdateShapeConfig()
         {
-            PixelSize = Config.ShapePixelateSize;
+            PixelSize = AnnotationOptions.PixelateSize;
         }
 
         public override void Draw(Graphics g)

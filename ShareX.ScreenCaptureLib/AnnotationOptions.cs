@@ -23,44 +23,23 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public abstract class BaseDrawingShape : BaseShape
+    public class AnnotationOptions
     {
-        public Color BorderColor { get; set; }
-        public Color FillColor { get; set; }
-        public int BorderSize { get; set; }
-
-        public override void UpdateShapeConfig()
-        {
-            BorderColor = AnnotationOptions.BorderColor;
-            BorderSize = AnnotationOptions.BorderSize;
-            FillColor = AnnotationOptions.FillColor;
-        }
-
-        public virtual void Draw(Graphics g)
-        {
-            using (Pen borderPen = new Pen(Color.Black))
-            using (Pen borderDotPen = new Pen(Color.White))
-            {
-                borderDotPen.DashPattern = new float[] { 2, 2 };
-
-                g.DrawRectangleProper(borderPen, Rectangle);
-                g.DrawRectangleProper(borderDotPen, Rectangle);
-            }
-        }
-
-        public virtual void DrawFinal(Graphics g, Bitmap bmp)
-        {
-            Draw(g);
-        }
+        public Color BorderColor { get; set; } = Color.Red;
+        public int BorderSize { get; set; } = 2;
+        public Color FillColor { get; set; } = Color.FromArgb(0, 0, 0, 0);
+        public int RoundedRectangleRadius { get; set; } = 15;
+        public TextDrawingOptions TextOptions { get; set; } = new TextDrawingOptions();
+        public int BlurRadius { get; set; } = 15;
+        public int PixelateSize { get; set; } = 7;
+        public Color HighlightColor { get; set; } = Color.Yellow;
     }
 }
