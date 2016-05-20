@@ -67,6 +67,9 @@ namespace ShareX.ScreenCaptureLib
 
             nudTextSize.Value = Options.Size;
             btnTextColor.Color = Options.Color;
+            cbBold.Checked = Options.Bold;
+            cbItalic.Checked = Options.Italic;
+            cbUnderline.Checked = Options.Underline;
 
             UpdateHorizontalAlignmentImage();
             UpdateVerticalAlignmentImage();
@@ -160,6 +163,11 @@ namespace ShareX.ScreenCaptureLib
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
             Options.Text = txtInput.Text;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void UpdateInputBox()

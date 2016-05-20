@@ -41,8 +41,7 @@
             this.cbUnderline = new System.Windows.Forms.CheckBox();
             this.btnAlignmentHorizontal = new System.Windows.Forms.Button();
             this.btnAlignmentVertical = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.cmsAlignmentHorizontal = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiAlignmentLeft = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAlignmentCenter = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +73,7 @@
             // 
             this.btnTextColor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnTextColor.Color = System.Drawing.Color.Empty;
-            this.btnTextColor.Location = new System.Drawing.Point(319, 3);
+            this.btnTextColor.Location = new System.Drawing.Point(316, 3);
             this.btnTextColor.Name = "btnTextColor";
             this.btnTextColor.Size = new System.Drawing.Size(24, 24);
             this.btnTextColor.TabIndex = 1;
@@ -106,8 +105,8 @@
             // 
             this.lblFont.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFont.AutoSize = true;
-            this.lblFont.Location = new System.Drawing.Point(3, 8);
-            this.lblFont.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.lblFont.Location = new System.Drawing.Point(0, 8);
+            this.lblFont.Margin = new System.Windows.Forms.Padding(0);
             this.lblFont.Name = "lblFont";
             this.lblFont.Size = new System.Drawing.Size(31, 13);
             this.lblFont.TabIndex = 7;
@@ -118,7 +117,7 @@
             this.cbFonts.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbFonts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFonts.FormattingEnabled = true;
-            this.cbFonts.Location = new System.Drawing.Point(37, 4);
+            this.cbFonts.Location = new System.Drawing.Point(34, 4);
             this.cbFonts.Name = "cbFonts";
             this.cbFonts.Size = new System.Drawing.Size(184, 21);
             this.cbFonts.TabIndex = 8;
@@ -128,7 +127,7 @@
             // 
             this.lblTextSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTextSize.AutoSize = true;
-            this.lblTextSize.Location = new System.Drawing.Point(227, 8);
+            this.lblTextSize.Location = new System.Drawing.Point(224, 8);
             this.lblTextSize.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.lblTextSize.Name = "lblTextSize";
             this.lblTextSize.Size = new System.Drawing.Size(30, 13);
@@ -138,7 +137,7 @@
             // nudTextSize
             // 
             this.nudTextSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudTextSize.Location = new System.Drawing.Point(260, 5);
+            this.nudTextSize.Location = new System.Drawing.Point(257, 5);
             this.nudTextSize.Minimum = new decimal(new int[] {
             5,
             0,
@@ -160,7 +159,7 @@
             this.cbBold.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbBold.Appearance = System.Windows.Forms.Appearance.Button;
             this.cbBold.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_bold;
-            this.cbBold.Location = new System.Drawing.Point(349, 3);
+            this.cbBold.Location = new System.Drawing.Point(346, 3);
             this.cbBold.Name = "cbBold";
             this.cbBold.Size = new System.Drawing.Size(24, 24);
             this.cbBold.TabIndex = 4;
@@ -172,7 +171,7 @@
             this.cbItalic.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbItalic.Appearance = System.Windows.Forms.Appearance.Button;
             this.cbItalic.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_italic;
-            this.cbItalic.Location = new System.Drawing.Point(379, 3);
+            this.cbItalic.Location = new System.Drawing.Point(376, 3);
             this.cbItalic.Name = "cbItalic";
             this.cbItalic.Size = new System.Drawing.Size(24, 24);
             this.cbItalic.TabIndex = 5;
@@ -184,7 +183,7 @@
             this.cbUnderline.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbUnderline.Appearance = System.Windows.Forms.Appearance.Button;
             this.cbUnderline.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_underline;
-            this.cbUnderline.Location = new System.Drawing.Point(409, 3);
+            this.cbUnderline.Location = new System.Drawing.Point(406, 3);
             this.cbUnderline.Name = "cbUnderline";
             this.cbUnderline.Size = new System.Drawing.Size(24, 24);
             this.cbUnderline.TabIndex = 6;
@@ -195,7 +194,7 @@
             // 
             this.btnAlignmentHorizontal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAlignmentHorizontal.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_alignment_center;
-            this.btnAlignmentHorizontal.Location = new System.Drawing.Point(439, 3);
+            this.btnAlignmentHorizontal.Location = new System.Drawing.Point(436, 3);
             this.btnAlignmentHorizontal.Name = "btnAlignmentHorizontal";
             this.btnAlignmentHorizontal.Size = new System.Drawing.Size(24, 24);
             this.btnAlignmentHorizontal.TabIndex = 9;
@@ -206,34 +205,23 @@
             // 
             this.btnAlignmentVertical.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAlignmentVertical.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_vertical_alignment_middle;
-            this.btnAlignmentVertical.Location = new System.Drawing.Point(469, 3);
+            this.btnAlignmentVertical.Location = new System.Drawing.Point(466, 3);
             this.btnAlignmentVertical.Name = "btnAlignmentVertical";
             this.btnAlignmentVertical.Size = new System.Drawing.Size(24, 24);
             this.btnAlignmentVertical.TabIndex = 10;
             this.btnAlignmentVertical.UseVisualStyleBackColor = true;
             this.btnAlignmentVertical.Click += new System.EventHandler(this.btnAlignmentVertical_Click);
             // 
-            // btnOK
+            // btnClose
             // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(310, 329);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(104, 24);
-            this.btnOK.TabIndex = 3;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(422, 329);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(104, 24);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(422, 327);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(104, 26);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // cmsAlignmentHorizontal
             // 
@@ -281,7 +269,7 @@
             // 
             this.tsmiAlignmentTop.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_vertical_alignment_top;
             this.tsmiAlignmentTop.Name = "tsmiAlignmentTop";
-            this.tsmiAlignmentTop.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAlignmentTop.Size = new System.Drawing.Size(114, 22);
             this.tsmiAlignmentTop.Text = "Top";
             this.tsmiAlignmentTop.Click += new System.EventHandler(this.tsmiAlignmentTop_Click);
             // 
@@ -289,7 +277,7 @@
             // 
             this.tsmiAlignmentMiddle.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_vertical_alignment_middle;
             this.tsmiAlignmentMiddle.Name = "tsmiAlignmentMiddle";
-            this.tsmiAlignmentMiddle.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAlignmentMiddle.Size = new System.Drawing.Size(114, 22);
             this.tsmiAlignmentMiddle.Text = "Middle";
             this.tsmiAlignmentMiddle.Click += new System.EventHandler(this.tsmiAlignmentMiddle_Click);
             // 
@@ -297,7 +285,7 @@
             // 
             this.tsmiAlignmentBottom.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_vertical_alignment;
             this.tsmiAlignmentBottom.Name = "tsmiAlignmentBottom";
-            this.tsmiAlignmentBottom.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAlignmentBottom.Size = new System.Drawing.Size(114, 22);
             this.tsmiAlignmentBottom.Text = "Bottom";
             this.tsmiAlignmentBottom.Click += new System.EventHandler(this.tsmiAlignmentBottom_Click);
             // 
@@ -306,8 +294,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 361);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.flpProperties);
             this.Controls.Add(this.txtInput);
             this.MaximizeBox = false;
@@ -334,8 +321,7 @@
         private System.Windows.Forms.FlowLayoutPanel flpProperties;
         private System.Windows.Forms.Label lblTextSize;
         private System.Windows.Forms.NumericUpDown nudTextSize;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.CheckBox cbBold;
         private System.Windows.Forms.CheckBox cbItalic;
         private System.Windows.Forms.CheckBox cbUnderline;
