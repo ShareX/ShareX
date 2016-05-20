@@ -40,6 +40,11 @@ namespace ShareX.ScreenCaptureLib
 
         public int PixelSize { get; set; }
 
+        public override void UpdateShapeConfig()
+        {
+            PixelSize = Config.ShapePixelateSize;
+        }
+
         public override void Draw(Graphics g)
         {
             if (PixelSize > 1)

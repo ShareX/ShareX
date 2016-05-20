@@ -222,7 +222,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
                 {
-                    ShapeManager.CreateRegionShape(ShapeManager.CurrentHoverRectangle).AddShapePath(hoverDrawPath, -1);
+                    ShapeManager.CreateShape(ShapeManager.CurrentHoverRectangle).AddShapePath(hoverDrawPath, -1);
 
                     g.DrawPath(borderPen, hoverDrawPath);
                     g.DrawPath(borderDotPen, hoverDrawPath);
@@ -253,7 +253,7 @@ namespace ShareX.ScreenCaptureLib
                 // Add hover area to list so rectangle info can be shown
                 if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentHoverAreaValid && areas.All(area => area.Rectangle != ShapeManager.CurrentHoverRectangle))
                 {
-                    BaseShape shape = ShapeManager.CreateRegionShape(ShapeManager.CurrentHoverRectangle);
+                    BaseShape shape = ShapeManager.CreateShape(ShapeManager.CurrentHoverRectangle);
                     areas.Add(shape);
                 }
 

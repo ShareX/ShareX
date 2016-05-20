@@ -875,7 +875,7 @@ namespace ShareX.ScreenCaptureLib
                     rect = new Rectangle(location, new Size(1, 1));
                 }
 
-                AddRegionShape(rect);
+                AddShape(rect);
 
                 CurrentShape.StartPosition = PositionOnClick;
             }
@@ -917,7 +917,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (!CurrentHoverRectangle.IsEmpty)
             {
-                AddRegionShape(CurrentHoverRectangle);
+                AddShape(CurrentHoverRectangle);
 
                 if (Config.QuickCrop && IsCurrentShapeTypeRegion)
                 {
@@ -936,14 +936,14 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void AddRegionShape(Rectangle rect)
+        private void AddShape(Rectangle rect)
         {
-            BaseShape shape = CreateRegionShape(rect);
+            BaseShape shape = CreateShape(rect);
             Shapes.Add(shape);
             CurrentShape = shape;
         }
 
-        public BaseShape CreateRegionShape(Rectangle rect)
+        public BaseShape CreateShape(Rectangle rect)
         {
             BaseShape shape;
 
@@ -991,54 +991,14 @@ namespace ShareX.ScreenCaptureLib
             shape.Manager = this;
             shape.Rectangle = rect;
 
-            UpdateShape(shape);
+            shape.UpdateShapeConfig();
 
             return shape;
         }
 
         private void UpdateCurrentShape()
         {
-            UpdateShape(CurrentShape);
-        }
-
-        private void UpdateShape(BaseShape shape)
-        {
-            if (shape != null)
-            {
-                if (shape is BaseDrawingShape)
-                {
-                    BaseDrawingShape baseDrawingShape = (BaseDrawingShape)shape;
-                    baseDrawingShape.BorderColor = Config.ShapeBorderColor;
-                    baseDrawingShape.BorderSize = Config.ShapeBorderSize;
-                    baseDrawingShape.FillColor = Config.ShapeFillColor;
-                }
-
-                if (shape is IRoundedRectangleShape)
-                {
-                    IRoundedRectangleShape roundedRectangleShape = (IRoundedRectangleShape)shape;
-                    roundedRectangleShape.Radius = Config.ShapeRoundedRectangleRadius;
-                }
-                else if (shape is TextDrawingShape)
-                {
-                    TextDrawingShape textDrawingShape = (TextDrawingShape)shape;
-                    textDrawingShape.Options = Config.ShapeTextOptions.Copy();
-                }
-                else if (shape is BlurEffectShape)
-                {
-                    BlurEffectShape blurEffectShape = (BlurEffectShape)shape;
-                    blurEffectShape.BlurRadius = Config.ShapeBlurRadius;
-                }
-                else if (shape is PixelateEffectShape)
-                {
-                    PixelateEffectShape pixelateEffectShape = (PixelateEffectShape)shape;
-                    pixelateEffectShape.PixelSize = Config.ShapePixelateSize;
-                }
-                else if (shape is HighlightEffectShape)
-                {
-                    HighlightEffectShape highlightEffectShape = (HighlightEffectShape)shape;
-                    highlightEffectShape.HighlightColor = Config.ShapeHighlightColor;
-                }
-            }
+            CurrentShape.UpdateShapeConfig();
         }
 
         public Image RenderOutputImage(Image img)

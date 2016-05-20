@@ -39,6 +39,14 @@ namespace ShareX.ScreenCaptureLib
 
         public ShapeManager Manager { get; set; }
 
+        protected SurfaceOptions Config
+        {
+            get
+            {
+                return Manager.Config;
+            }
+        }
+
         private Point startPosition;
 
         public Point StartPosition
@@ -85,6 +93,10 @@ namespace ShareX.ScreenCaptureLib
         {
             Rectangle rect = Rectangle.SizeOffset(sizeOffset);
             AddShapePath(gp, rect);
+        }
+
+        public virtual void UpdateShapeConfig()
+        {
         }
 
         public virtual void OnShapeCreated()

@@ -42,14 +42,16 @@ namespace ShareX.ScreenCaptureLib
         public string Text { get; set; }
         public TextDrawingOptions Options { get; set; } = new TextDrawingOptions();
 
+        public override void UpdateShapeConfig()
+        {
+            Options = Config.ShapeTextOptions.Copy();
+        }
+
         public override void Draw(Graphics g)
         {
             base.Draw(g);
 
-            if (!string.IsNullOrEmpty(Text))
-            {
-                DrawText(g);
-            }
+            DrawFinal(g, null);
         }
 
         public override void DrawFinal(Graphics g, Bitmap bmp)
@@ -80,7 +82,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 inputBox.ShowDialog();
                 Text = inputBox.InputText;
-                Manager.Config.ShapeTextOptions = Options;
+                Config.ShapeTextOptions = Options;
             }
 
             Manager.ResumeForm();

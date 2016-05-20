@@ -33,11 +33,16 @@ using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RoundedRectangleDrawingShape : BaseDrawingShape, IRoundedRectangleShape
+    public class RoundedRectangleDrawingShape : BaseDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingRoundedRectangle;
 
         public float Radius { get; set; }
+
+        public override void UpdateShapeConfig()
+        {
+            Radius = Config.ShapeRoundedRectangleRadius;
+        }
 
         public override void Draw(Graphics g)
         {

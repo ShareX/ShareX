@@ -39,6 +39,13 @@ namespace ShareX.ScreenCaptureLib
         public Color FillColor { get; set; }
         public int BorderSize { get; set; }
 
+        public override void UpdateShapeConfig()
+        {
+            BorderColor = Config.ShapeBorderColor;
+            BorderSize = Config.ShapeBorderSize;
+            FillColor = Config.ShapeFillColor;
+        }
+
         public virtual void Draw(Graphics g)
         {
             using (Pen borderPen = new Pen(Color.Black))

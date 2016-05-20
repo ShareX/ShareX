@@ -40,6 +40,11 @@ namespace ShareX.ScreenCaptureLib
 
         public int BlurRadius { get; set; }
 
+        public override void UpdateShapeConfig()
+        {
+            BlurRadius = Config.ShapeBlurRadius;
+        }
+
         public override void Draw(Graphics g)
         {
             if (BlurRadius > 1)

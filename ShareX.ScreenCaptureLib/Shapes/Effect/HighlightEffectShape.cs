@@ -40,6 +40,11 @@ namespace ShareX.ScreenCaptureLib
 
         public Color HighlightColor { get; set; }
 
+        public override void UpdateShapeConfig()
+        {
+            HighlightColor = Config.ShapeHighlightColor;
+        }
+
         public override void Draw(Graphics g)
         {
             using (Brush brush = new SolidBrush(Color.FromArgb(100, HighlightColor)))
