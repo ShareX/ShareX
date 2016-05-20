@@ -38,18 +38,20 @@ namespace ShareX.ScreenCaptureLib
 {
     internal partial class TextDrawingInputBox : Form
     {
+        public string InputText { get; private set; }
         public TextDrawingOptions Options { get; private set; }
 
-        public TextDrawingInputBox(TextDrawingOptions options)
+        public TextDrawingInputBox(string text, TextDrawingOptions options)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
+            InputText = text;
             Options = options;
 
-            if (Options.Text != null)
+            if (InputText != null)
             {
-                txtInput.Text = Options.Text;
+                txtInput.Text = InputText;
             }
 
             UpdateInputBox();
@@ -162,7 +164,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
-            Options.Text = txtInput.Text;
+            InputText = txtInput.Text;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

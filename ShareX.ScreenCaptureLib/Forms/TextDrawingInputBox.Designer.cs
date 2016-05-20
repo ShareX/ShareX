@@ -303,7 +303,7 @@
             this.Name = "TextDrawingInputBox";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Text input";
+            this.InputText = "ShareX - Text input";
             this.TopMost = true;
             this.flpProperties.ResumeLayout(false);
             this.flpProperties.PerformLayout();

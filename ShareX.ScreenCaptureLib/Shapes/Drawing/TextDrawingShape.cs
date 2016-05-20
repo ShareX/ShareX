@@ -39,13 +39,14 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingText;
 
+        public string Text { get; set; }
         public TextDrawingOptions Options { get; set; } = new TextDrawingOptions();
 
         public override void Draw(Graphics g)
         {
             base.Draw(g);
 
-            if (!string.IsNullOrEmpty(Options.Text))
+            if (!string.IsNullOrEmpty(Text))
             {
                 DrawText(g);
             }
@@ -53,7 +54,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void DrawFinal(Graphics g, Bitmap bmp)
         {
-            if (!string.IsNullOrEmpty(Options.Text))
+            if (!string.IsNullOrEmpty(Text))
             {
                 DrawText(g);
             }
@@ -66,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (Brush textBrush = new SolidBrush(Options.Color))
                 {
-                    g.DrawString(Options.Text, font, textBrush, Rectangle, sf);
+                    g.DrawString(Text, font, textBrush, Rectangle, sf);
                 }
             }
         }
@@ -75,9 +76,10 @@ namespace ShareX.ScreenCaptureLib
         {
             Manager.PauseForm();
 
-            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Options))
+            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, Options))
             {
                 inputBox.ShowDialog();
+                Text = inputBox.InputText;
             }
 
             Manager.ResumeForm();

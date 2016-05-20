@@ -33,7 +33,6 @@ namespace ShareX.ScreenCaptureLib
 {
     public class TextDrawingOptions
     {
-        public string Text { get; set; }
         public string Font { get; set; } = "Arial";
         public int Size { get; set; } = 18;
         public Color Color { get; set; } = Color.Black;
