@@ -67,16 +67,6 @@ namespace ShareX.ScreenCaptureLib
 
         public override void DrawFinal(Graphics g, Bitmap bmp)
         {
-            if (!string.IsNullOrEmpty(Text) && Rectangle.Width > 10 && Rectangle.Height > 10)
-            {
-                using (Font font = new Font(Options.Font, Options.Size, Options.Style))
-                using (Brush textBrush = new SolidBrush(Options.Color))
-                using (StringFormat sf = new StringFormat { Alignment = Options.AlignmentHorizontal, LineAlignment = Options.AlignmentVertical })
-                {
-                    g.DrawString(Text, font, textBrush, Rectangle, sf);
-                }
-            }
-
             if (FillColor.A > 0)
             {
                 using (Brush brush = new SolidBrush(FillColor))
@@ -92,6 +82,16 @@ namespace ShareX.ScreenCaptureLib
                 using (Pen pen = new Pen(BorderColor, BorderSize) { Alignment = PenAlignment.Inset })
                 {
                     g.DrawRectangleProper(pen, rect);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Text) && Rectangle.Width > 10 && Rectangle.Height > 10)
+            {
+                using (Font font = new Font(Options.Font, Options.Size, Options.Style))
+                using (Brush textBrush = new SolidBrush(Options.Color))
+                using (StringFormat sf = new StringFormat { Alignment = Options.AlignmentHorizontal, LineAlignment = Options.AlignmentVertical })
+                {
+                    g.DrawString(Text, font, textBrush, Rectangle, sf);
                 }
             }
         }
