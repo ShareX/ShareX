@@ -40,11 +40,17 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingText;
 
         public string Text { get; set; }
-        public TextDrawingOptions Options { get; set; } = new TextDrawingOptions();
+        public TextDrawingOptions Options { get; set; }
+        public Color TextBorderColor { get; set; }
+        public int TextBorderSize { get; set; }
+        public Color TextFillColor { get; set; }
 
         public override void UpdateShapeConfig()
         {
             Options = AnnotationOptions.TextOptions.Copy();
+            TextBorderColor = AnnotationOptions.TextBorderColor;
+            TextBorderSize = AnnotationOptions.TextBorderSize;
+            TextFillColor = AnnotationOptions.TextFillColor;
         }
 
         public override void Draw(Graphics g)
@@ -58,17 +64,30 @@ namespace ShareX.ScreenCaptureLib
         {
             if (!string.IsNullOrEmpty(Text) && Rectangle.Width > 10 && Rectangle.Height > 10)
             {
-                DrawText(g);
+                using (Font font = new Font(Options.Font, Options.Size, Options.Style))
+                using (Brush textBrush = new SolidBrush(Options.Color))
+                using (StringFormat sf = new StringFormat { Alignment = Options.AlignmentHorizontal, LineAlignment = Options.AlignmentVertical })
+                {
+                    g.DrawString(Text, font, textBrush, Rectangle, sf);
+                }
             }
-        }
 
-        private void DrawText(Graphics g)
-        {
-            using (Font font = new Font(Options.Font, Options.Size, Options.Style))
-            using (Brush textBrush = new SolidBrush(Options.Color))
-            using (StringFormat sf = new StringFormat { Alignment = Options.AlignmentHorizontal, LineAlignment = Options.AlignmentVertical })
+            if (TextFillColor.A > 0)
             {
-                g.DrawString(Text, font, textBrush, Rectangle, sf);
+                using (Brush brush = new SolidBrush(TextFillColor))
+                {
+                    g.FillRectangle(brush, Rectangle);
+                }
+            }
+
+            if (TextBorderSize > 0 && TextBorderColor.A > 0)
+            {
+                Rectangle rect = Rectangle.Offset(TextBorderSize - 1);
+
+                using (Pen pen = new Pen(TextBorderColor, TextBorderSize) { Alignment = PenAlignment.Inset })
+                {
+                    g.DrawRectangleProper(pen, rect);
+                }
             }
         }
 

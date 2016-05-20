@@ -127,7 +127,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegionHelpers\ShapeManager.cs" />
+    <Compile Include="Shapes\ShapeManager.cs" />
     <Compile Include="RegionHelpers\DrawObject.cs" />
     <Compile Include="Forms\FreeHandRegionForm.cs">
       <SubType>Form</SubType>

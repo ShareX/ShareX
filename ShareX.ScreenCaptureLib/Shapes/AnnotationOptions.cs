@@ -33,13 +33,27 @@ namespace ShareX.ScreenCaptureLib
 {
     public class AnnotationOptions
     {
+        // Drawing
         public Color BorderColor { get; set; } = Color.Red;
         public int BorderSize { get; set; } = 2;
         public Color FillColor { get; set; } = Color.FromArgb(0, 0, 0, 0);
+
+        // Rounded rectangle region, rounded rectangle drawing
         public int RoundedRectangleRadius { get; set; } = 15;
+
+        // Text drawing
         public TextDrawingOptions TextOptions { get; set; } = new TextDrawingOptions();
+        public Color TextBorderColor { get; set; } = Color.Red;
+        public int TextBorderSize { get; set; } = 2;
+        public Color TextFillColor { get; set; } = Color.White;
+
+        // Blur effect
         public int BlurRadius { get; set; } = 15;
+
+        // Pixelate effect
         public int PixelateSize { get; set; } = 7;
+
+        // Highlight effect
         public Color HighlightColor { get; set; } = Color.Yellow;
     }
 }
