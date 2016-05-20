@@ -313,8 +313,8 @@ namespace ShareX.UploadersLib
         public string YourlsPassword = string.Empty;
 
         // adf.ly
-        public string AdFlyAPIKEY = String.Empty;
-        public string AdFlyAPIUID = String.Empty;
+        public string AdFlyAPIKEY = string.Empty;
+        public string AdFlyAPIUID = string.Empty;
 
         // coinurl.com
         public string CoinURLUUID = string.Empty;

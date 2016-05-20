@@ -145,7 +145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>16</value>
   </data>
   <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>17</value>
   </data>
   <data name="lblOld.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOld.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>18</value>
   </data>
   <data name="lblNew.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -232,10 +232,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblNew.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>19</value>
   </data>
   <data name="txtHex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 173</value>
+    <value>560, 174</value>
   </data>
   <data name="txtHex.MaxLength" type="System.Int32, mscorlib">
     <value>9</value>
@@ -262,7 +262,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtHex.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>20</value>
   </data>
   <data name="lblHex.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -271,7 +271,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 177</value>
+    <value>488, 178</value>
   </data>
   <data name="lblHex.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 13</value>
@@ -292,10 +292,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblHex.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>21</value>
   </data>
   <data name="nudKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 141</value>
+    <value>560, 142</value>
   </data>
   <data name="nudKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -316,10 +316,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudKey.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>22</value>
   </data>
   <data name="nudYellow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 109</value>
+    <value>560, 108</value>
   </data>
   <data name="nudYellow.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -340,10 +340,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudYellow.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>23</value>
   </data>
   <data name="nudMagenta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 77</value>
+    <value>560, 78</value>
   </data>
   <data name="nudMagenta.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -364,10 +364,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudMagenta.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>24</value>
   </data>
   <data name="nudCyan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 45</value>
+    <value>560, 46</value>
   </data>
   <data name="nudCyan.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -388,7 +388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudCyan.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>25</value>
   </data>
   <data name="lblKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -397,7 +397,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 145</value>
+    <value>488, 146</value>
   </data>
   <data name="lblKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -418,7 +418,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblKey.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>26</value>
   </data>
   <data name="lblYellow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -427,7 +427,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblYellow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 113</value>
+    <value>488, 112</value>
   </data>
   <data name="lblYellow.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -448,7 +448,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblYellow.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>27</value>
   </data>
   <data name="lblMagenta.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -457,7 +457,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblMagenta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 81</value>
+    <value>488, 82</value>
   </data>
   <data name="lblMagenta.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -478,7 +478,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMagenta.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>28</value>
   </data>
   <data name="lblCyan.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -487,7 +487,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblCyan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 49</value>
+    <value>488, 50</value>
   </data>
   <data name="lblCyan.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -508,7 +508,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCyan.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>29</value>
   </data>
   <data name="lblHue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -520,7 +520,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 17</value>
+    <value>460, 112</value>
   </data>
   <data name="lblHue.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -541,7 +541,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblHue.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>30</value>
   </data>
   <data name="lblBrightnessPerc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -553,7 +553,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblBrightnessPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 81</value>
+    <value>460, 178</value>
   </data>
   <data name="lblBrightnessPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -574,7 +574,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblBrightnessPerc.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>31</value>
   </data>
   <data name="lblSaturationPerc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -586,7 +586,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSaturationPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 49</value>
+    <value>460, 146</value>
   </data>
   <data name="lblSaturationPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -607,10 +607,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblSaturationPerc.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>32</value>
   </data>
   <data name="nudBlue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 173</value>
+    <value>408, 78</value>
   </data>
   <data name="nudBlue.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -631,10 +631,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudBlue.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>0</value>
   </data>
   <data name="nudGreen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 141</value>
+    <value>408, 46</value>
   </data>
   <data name="nudGreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -655,10 +655,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudGreen.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>1</value>
   </data>
   <data name="nudRed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 109</value>
+    <value>408, 14</value>
   </data>
   <data name="nudRed.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -679,10 +679,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudRed.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>2</value>
   </data>
   <data name="nudBrightness.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 77</value>
+    <value>408, 174</value>
   </data>
   <data name="nudBrightness.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -703,10 +703,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudBrightness.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>33</value>
   </data>
   <data name="nudSaturation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 45</value>
+    <value>408, 142</value>
   </data>
   <data name="nudSaturation.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -727,10 +727,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudSaturation.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>34</value>
   </data>
   <data name="nudHue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 13</value>
+    <value>408, 108</value>
   </data>
   <data name="nudHue.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -751,7 +751,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudHue.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>35</value>
   </data>
   <data name="rbBlue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -760,7 +760,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbBlue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 175</value>
+    <value>312, 80</value>
   </data>
   <data name="rbBlue.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 17</value>
@@ -781,7 +781,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rbBlue.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>3</value>
   </data>
   <data name="rbGreen.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -790,7 +790,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbGreen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 143</value>
+    <value>312, 48</value>
   </data>
   <data name="rbGreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 17</value>
@@ -811,7 +811,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rbGreen.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>4</value>
   </data>
   <data name="rbRed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -820,7 +820,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbRed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 111</value>
+    <value>312, 16</value>
   </data>
   <data name="rbRed.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 17</value>
@@ -841,7 +841,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rbRed.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>5</value>
   </data>
   <data name="rbBrightness.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -850,7 +850,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbBrightness.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 79</value>
+    <value>312, 176</value>
   </data>
   <data name="rbBrightness.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 17</value>
@@ -880,7 +880,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbSaturation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 47</value>
+    <value>312, 144</value>
   </data>
   <data name="rbSaturation.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 17</value>
@@ -910,7 +910,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbHue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 15</value>
+    <value>312, 112</value>
   </data>
   <data name="rbHue.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 17</value>
@@ -961,7 +961,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblDecimal.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>14</value>
   </data>
   <data name="txtDecimal.Location" type="System.Drawing.Point, System.Drawing">
     <value>560, 204</value>
@@ -988,7 +988,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtDecimal.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>13</value>
   </data>
   <data name="lblCyanPerc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1000,7 +1000,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblCyanPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 49</value>
+    <value>618, 50</value>
   </data>
   <data name="lblCyanPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -1021,7 +1021,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCyanPerc.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>12</value>
   </data>
   <data name="lblMagentaPerc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1033,7 +1033,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblMagentaPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 81</value>
+    <value>618, 82</value>
   </data>
   <data name="lblMagentaPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -1054,7 +1054,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMagentaPerc.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>11</value>
   </data>
   <data name="lblYellowPerc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1066,7 +1066,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblYellowPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 113</value>
+    <value>618, 112</value>
   </data>
   <data name="lblYellowPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -1087,7 +1087,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblYellowPerc.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>10</value>
   </data>
   <data name="lblKeyPerc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1099,7 +1099,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblKeyPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 145</value>
+    <value>618, 146</value>
   </data>
   <data name="lblKeyPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -1120,10 +1120,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblKeyPerc.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>9</value>
   </data>
   <data name="nudAlpha.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 13</value>
+    <value>560, 14</value>
   </data>
   <data name="nudAlpha.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -1144,7 +1144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudAlpha.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>8</value>
   </data>
   <data name="lblAlpha.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1153,7 +1153,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblAlpha.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 17</value>
+    <value>488, 18</value>
   </data>
   <data name="lblAlpha.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -1174,7 +1174,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAlpha.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>7</value>
   </data>
   <data name="pbColorPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>376, 208</value>
@@ -1195,7 +1195,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbColorPreview.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>6</value>
   </data>
   <data name="colorPicker.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1219,7 +1219,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;colorPicker.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>15</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

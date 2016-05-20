@@ -124,7 +124,7 @@ namespace ShareX.HelpersLib
 
         public override string ToString()
         {
-            return String.Format("R: {0}, G: {1}, B: {2}, A: {3}", Red, Green, Blue, Alpha);
+            return $"R: {Red}, G: {Green}, B: {Blue}, A: {Alpha}";
         }
 
         public Color ToColor()

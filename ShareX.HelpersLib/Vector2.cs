@@ -82,7 +82,7 @@ namespace ShareX.HelpersLib
 
         public override string ToString()
         {
-            return String.Format("X={0}, Y={1}", x, y);
+            return $"X={x}, Y={y}";
         }
 
         public static bool operator ==(Vector2 u, Vector2 v)
