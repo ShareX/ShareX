@@ -925,6 +925,11 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
+                    if (wasCreating)
+                    {
+                        shape.OnShapeCreated();
+                    }
+
                     SelectShape();
                 }
             }
