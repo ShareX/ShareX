@@ -45,6 +45,8 @@ namespace ShareX.ScreenCaptureLib
         public bool TextBold { get; set; }
         public bool TextItalic { get; set; }
         public bool TextUnderline { get; set; }
+        public StringAlignment AlignmentHorizontal { get; set; }
+        public StringAlignment AlignmentVertical { get; set; }
 
         public override void Draw(Graphics g)
         {
@@ -84,7 +86,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             using (Font font = new Font(TextFont, TextSize, fontStyle))
-            using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+            using (StringFormat sf = new StringFormat { Alignment = AlignmentHorizontal, LineAlignment = AlignmentVertical })
             {
                 using (Brush textBrush = new SolidBrush(BorderColor))
                 {
@@ -108,6 +110,8 @@ namespace ShareX.ScreenCaptureLib
                     TextBold = inputBox.TextBold;
                     TextItalic = inputBox.TextItalic;
                     TextUnderline = inputBox.TextUnderline;
+                    AlignmentHorizontal = inputBox.AlignmentHorizontal;
+                    AlignmentVertical = inputBox.AlignmentVertical;
                 }
             }
 

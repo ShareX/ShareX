@@ -83,6 +83,36 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_alignment {
+            get {
+                object obj = ResourceManager.GetObject("edit-alignment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_alignment_center {
+            get {
+                object obj = ResourceManager.GetObject("edit-alignment-center", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_alignment_right {
+            get {
+                object obj = ResourceManager.GetObject("edit-alignment-right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_bold {
             get {
                 object obj = ResourceManager.GetObject("edit-bold", resourceCulture);
@@ -106,6 +136,36 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap edit_underline {
             get {
                 object obj = ResourceManager.GetObject("edit-underline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment {
+            get {
+                object obj = ResourceManager.GetObject("edit-vertical-alignment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment_middle {
+            get {
+                object obj = ResourceManager.GetObject("edit-vertical-alignment-middle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment_top {
+            get {
+                object obj = ResourceManager.GetObject("edit-vertical-alignment-top", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
