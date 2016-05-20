@@ -80,6 +80,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 inputBox.ShowDialog();
                 Text = inputBox.InputText;
+                Manager.Config.ShapeTextOptions = Options;
             }
 
             Manager.ResumeForm();
