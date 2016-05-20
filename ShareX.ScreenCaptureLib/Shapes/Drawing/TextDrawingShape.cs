@@ -56,7 +56,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void DrawFinal(Graphics g, Bitmap bmp)
         {
-            if (!string.IsNullOrEmpty(Text))
+            if (!string.IsNullOrEmpty(Text) && Rectangle.Width > 10 && Rectangle.Height > 10)
             {
                 DrawText(g);
             }
@@ -65,12 +65,10 @@ namespace ShareX.ScreenCaptureLib
         private void DrawText(Graphics g)
         {
             using (Font font = new Font(Options.Font, Options.Size, Options.Style))
+            using (Brush textBrush = new SolidBrush(Options.Color))
             using (StringFormat sf = new StringFormat { Alignment = Options.AlignmentHorizontal, LineAlignment = Options.AlignmentVertical })
             {
-                using (Brush textBrush = new SolidBrush(Options.Color))
-                {
-                    g.DrawString(Text, font, textBrush, Rectangle, sf);
-                }
+                g.DrawString(Text, font, textBrush, Rectangle, sf);
             }
         }
 

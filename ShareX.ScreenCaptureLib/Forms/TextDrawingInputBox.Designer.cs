@@ -240,6 +240,7 @@
             this.Name = "TextDrawingInputBox";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.TopMost = true;
+            this.Shown += new System.EventHandler(this.TextDrawingInputBox_Shown);
             this.flpProperties.ResumeLayout(false);
             this.flpProperties.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTextSize)).EndInit();

@@ -77,6 +77,11 @@ namespace ShareX.ScreenCaptureLib
             UpdateVerticalAlignmentImage();
         }
 
+        private void TextDrawingInputBox_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
+        }
+
         private void cbFonts_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.Font = cbFonts.SelectedItem as string;
