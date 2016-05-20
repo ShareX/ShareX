@@ -91,6 +91,7 @@
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\TextDrawingOptions.cs" />
     <Compile Include="Shapes\Drawing\TextDrawingShape.cs" />
     <Compile Include="Shapes\Effect\BlurEffectShape.cs" />
     <Compile Include="Shapes\Drawing\EllipseDrawingShape.cs" />

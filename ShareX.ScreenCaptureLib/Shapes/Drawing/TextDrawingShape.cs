@@ -39,20 +39,13 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingText;
 
-        public string Text { get; set; }
-        public string TextFont { get; set; } = "Arial";
-        public int TextSize { get; set; } = 18;
-        public bool TextBold { get; set; }
-        public bool TextItalic { get; set; }
-        public bool TextUnderline { get; set; }
-        public StringAlignment AlignmentHorizontal { get; set; }
-        public StringAlignment AlignmentVertical { get; set; }
+        public TextDrawingOptions Options { get; set; } = new TextDrawingOptions();
 
         public override void Draw(Graphics g)
         {
             base.Draw(g);
 
-            if (!string.IsNullOrEmpty(Text))
+            if (!string.IsNullOrEmpty(Options.Text))
             {
                 DrawText(g);
             }
@@ -60,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void DrawFinal(Graphics g, Bitmap bmp)
         {
-            if (!string.IsNullOrEmpty(Text))
+            if (!string.IsNullOrEmpty(Options.Text))
             {
                 DrawText(g);
             }
@@ -68,29 +61,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawText(Graphics g)
         {
-            FontStyle fontStyle = FontStyle.Regular;
-
-            if (TextBold)
+            using (Font font = new Font(Options.Font, Options.Size, Options.Style))
+            using (StringFormat sf = new StringFormat { Alignment = Options.AlignmentHorizontal, LineAlignment = Options.AlignmentVertical })
             {
-                fontStyle |= FontStyle.Bold;
-            }
-
-            if (TextItalic)
-            {
-                fontStyle |= FontStyle.Italic;
-            }
-
-            if (TextUnderline)
-            {
-                fontStyle |= FontStyle.Underline;
-            }
-
-            using (Font font = new Font(TextFont, TextSize, fontStyle))
-            using (StringFormat sf = new StringFormat { Alignment = AlignmentHorizontal, LineAlignment = AlignmentVertical })
-            {
-                using (Brush textBrush = new SolidBrush(BorderColor))
+                using (Brush textBrush = new SolidBrush(Options.Color))
                 {
-                    g.DrawString(Text, font, textBrush, Rectangle, sf);
+                    g.DrawString(Options.Text, font, textBrush, Rectangle, sf);
                 }
             }
         }
@@ -99,20 +75,9 @@ namespace ShareX.ScreenCaptureLib
         {
             Manager.PauseForm();
 
-            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextFont, BorderColor, TextSize))
+            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Options))
             {
-                if (inputBox.ShowDialog() == DialogResult.OK)
-                {
-                    Text = inputBox.InputText;
-                    TextFont = inputBox.TextFont;
-                    TextSize = inputBox.TextSize;
-                    BorderColor = inputBox.TextColor;
-                    TextBold = inputBox.TextBold;
-                    TextItalic = inputBox.TextItalic;
-                    TextUnderline = inputBox.TextUnderline;
-                    AlignmentHorizontal = inputBox.AlignmentHorizontal;
-                    AlignmentVertical = inputBox.AlignmentVertical;
-                }
+                inputBox.ShowDialog();
             }
 
             Manager.ResumeForm();

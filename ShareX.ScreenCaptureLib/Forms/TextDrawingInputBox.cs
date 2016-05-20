@@ -38,46 +38,35 @@ namespace ShareX.ScreenCaptureLib
 {
     internal partial class TextDrawingInputBox : Form
     {
-        public string InputText { get; private set; }
-        public string TextFont { get; private set; }
-        public Color TextColor { get; private set; }
-        public int TextSize { get; private set; }
-        public bool TextBold { get; private set; }
-        public bool TextItalic { get; private set; }
-        public bool TextUnderline { get; private set; }
-        public StringAlignment AlignmentHorizontal { get; private set; }
-        public StringAlignment AlignmentVertical { get; private set; }
+        public TextDrawingOptions Options { get; private set; }
 
-        public TextDrawingInputBox(string inputText, string textFont, Color textColor, int textSize)
+        public TextDrawingInputBox(TextDrawingOptions options)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            InputText = inputText;
-            TextFont = textFont;
-            TextColor = textColor;
-            TextSize = textSize;
+            Options = options;
 
-            if (InputText != null)
+            if (Options.Text != null)
             {
-                txtInput.Text = InputText;
+                txtInput.Text = Options.Text;
             }
 
             UpdateInputBox();
 
             cbFonts.Items.AddRange(FontFamily.Families.Select(x => x.Name).ToArray());
 
-            if (cbFonts.Items.Contains(TextFont))
+            if (cbFonts.Items.Contains(Options.Font))
             {
-                cbFonts.SelectedItem = TextFont;
+                cbFonts.SelectedItem = Options.Font;
             }
             else
             {
                 cbFonts.SelectedItem = "Arial";
             }
 
-            nudTextSize.Value = TextSize;
-            btnTextColor.Color = TextColor;
+            nudTextSize.Value = Options.Size;
+            btnTextColor.Color = Options.Color;
 
             UpdateHorizontalAlignmentImage();
             UpdateVerticalAlignmentImage();
@@ -85,37 +74,37 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbFonts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextFont = cbFonts.SelectedItem as string;
+            Options.Font = cbFonts.SelectedItem as string;
             UpdateInputBox();
         }
 
         private void nudTextSize_ValueChanged(object sender, EventArgs e)
         {
-            TextSize = (int)nudTextSize.Value;
+            Options.Size = (int)nudTextSize.Value;
             UpdateInputBox();
         }
 
         private void btnTextColor_ColorChanged(Color color)
         {
-            TextColor = btnTextColor.Color;
+            Options.Color = btnTextColor.Color;
             UpdateInputBox();
         }
 
         private void cbBold_CheckedChanged(object sender, EventArgs e)
         {
-            TextBold = cbBold.Checked;
+            Options.Bold = cbBold.Checked;
             UpdateInputBox();
         }
 
         private void cbItalic_CheckedChanged(object sender, EventArgs e)
         {
-            TextItalic = cbItalic.Checked;
+            Options.Italic = cbItalic.Checked;
             UpdateInputBox();
         }
 
         private void cbUnderline_CheckedChanged(object sender, EventArgs e)
         {
-            TextUnderline = cbUnderline.Checked;
+            Options.Underline = cbUnderline.Checked;
             UpdateInputBox();
         }
 
@@ -126,21 +115,21 @@ namespace ShareX.ScreenCaptureLib
 
         private void tsmiAlignmentLeft_Click(object sender, EventArgs e)
         {
-            AlignmentHorizontal = StringAlignment.Near;
+            Options.AlignmentHorizontal = StringAlignment.Near;
             UpdateHorizontalAlignmentImage();
             UpdateInputBox();
         }
 
         private void tsmiAlignmentCenter_Click(object sender, EventArgs e)
         {
-            AlignmentHorizontal = StringAlignment.Center;
+            Options.AlignmentHorizontal = StringAlignment.Center;
             UpdateHorizontalAlignmentImage();
             UpdateInputBox();
         }
 
         private void tsmiAlignmentRight_Click(object sender, EventArgs e)
         {
-            AlignmentHorizontal = StringAlignment.Far;
+            Options.AlignmentHorizontal = StringAlignment.Far;
             UpdateHorizontalAlignmentImage();
             UpdateInputBox();
         }
@@ -152,52 +141,35 @@ namespace ShareX.ScreenCaptureLib
 
         private void tsmiAlignmentTop_Click(object sender, EventArgs e)
         {
-            AlignmentVertical = StringAlignment.Near;
+            Options.AlignmentVertical = StringAlignment.Near;
             UpdateVerticalAlignmentImage();
         }
 
         private void tsmiAlignmentMiddle_Click(object sender, EventArgs e)
         {
-            AlignmentVertical = StringAlignment.Center;
+            Options.AlignmentVertical = StringAlignment.Center;
             UpdateVerticalAlignmentImage();
         }
 
         private void tsmiAlignmentBottom_Click(object sender, EventArgs e)
         {
-            AlignmentVertical = StringAlignment.Far;
+            Options.AlignmentVertical = StringAlignment.Far;
             UpdateVerticalAlignmentImage();
         }
 
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
-            InputText = txtInput.Text;
+            Options.Text = txtInput.Text;
         }
 
         private void UpdateInputBox()
         {
-            FontStyle fontStyle = FontStyle.Regular;
-
-            if (TextBold)
-            {
-                fontStyle |= FontStyle.Bold;
-            }
-
-            if (TextItalic)
-            {
-                fontStyle |= FontStyle.Italic;
-            }
-
-            if (TextUnderline)
-            {
-                fontStyle |= FontStyle.Underline;
-            }
-
-            txtInput.Font = new Font(TextFont, TextSize, fontStyle);
-            txtInput.ForeColor = TextColor;
+            txtInput.Font = new Font(Options.Font, Options.Size, Options.Style);
+            txtInput.ForeColor = Options.Color;
 
             HorizontalAlignment horizontalAlignment;
 
-            switch (AlignmentHorizontal)
+            switch (Options.AlignmentHorizontal)
             {
                 default:
                 case StringAlignment.Near:
@@ -216,7 +188,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateHorizontalAlignmentImage()
         {
-            switch (AlignmentHorizontal)
+            switch (Options.AlignmentHorizontal)
             {
                 default:
                 case StringAlignment.Near:
@@ -233,7 +205,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateVerticalAlignmentImage()
         {
-            switch (AlignmentVertical)
+            switch (Options.AlignmentVertical)
             {
                 default:
                 case StringAlignment.Near:
@@ -246,16 +218,6 @@ namespace ShareX.ScreenCaptureLib
                     btnAlignmentVertical.Image = Resources.edit_vertical_alignment;
                     break;
             }
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
         }
     }
 }
