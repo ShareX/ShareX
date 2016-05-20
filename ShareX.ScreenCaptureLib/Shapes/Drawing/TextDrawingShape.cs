@@ -41,16 +41,21 @@ namespace ShareX.ScreenCaptureLib
 
         public string Text { get; set; }
         public TextDrawingOptions Options { get; set; }
-        public Color TextBorderColor { get; set; }
-        public int TextBorderSize { get; set; }
-        public Color TextFillColor { get; set; }
 
         public override void UpdateShapeConfig()
         {
             Options = AnnotationOptions.TextOptions.Copy();
-            TextBorderColor = AnnotationOptions.TextBorderColor;
-            TextBorderSize = AnnotationOptions.TextBorderSize;
-            TextFillColor = AnnotationOptions.TextFillColor;
+            BorderColor = AnnotationOptions.TextBorderColor;
+            BorderSize = AnnotationOptions.TextBorderSize;
+            FillColor = AnnotationOptions.TextFillColor;
+        }
+
+        public override void ApplyShapeConfig()
+        {
+            AnnotationOptions.TextOptions = Options;
+            AnnotationOptions.TextBorderColor = BorderColor;
+            AnnotationOptions.TextBorderSize = BorderSize;
+            AnnotationOptions.TextFillColor = FillColor;
         }
 
         public override void Draw(Graphics g)
@@ -72,19 +77,19 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (TextFillColor.A > 0)
+            if (FillColor.A > 0)
             {
-                using (Brush brush = new SolidBrush(TextFillColor))
+                using (Brush brush = new SolidBrush(FillColor))
                 {
                     g.FillRectangle(brush, Rectangle);
                 }
             }
 
-            if (TextBorderSize > 0 && TextBorderColor.A > 0)
+            if (BorderSize > 0 && BorderColor.A > 0)
             {
-                Rectangle rect = Rectangle.Offset(TextBorderSize - 1);
+                Rectangle rect = Rectangle.Offset(BorderSize - 1);
 
-                using (Pen pen = new Pen(TextBorderColor, TextBorderSize) { Alignment = PenAlignment.Inset })
+                using (Pen pen = new Pen(BorderColor, BorderSize) { Alignment = PenAlignment.Inset })
                 {
                     g.DrawRectangleProper(pen, rect);
                 }
@@ -99,7 +104,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 inputBox.ShowDialog();
                 Text = inputBox.InputText;
-                AnnotationOptions.TextOptions = Options;
+                ApplyShapeConfig();
             }
 
             Manager.ResumeForm();

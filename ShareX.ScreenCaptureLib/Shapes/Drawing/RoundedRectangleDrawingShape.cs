@@ -45,6 +45,12 @@ namespace ShareX.ScreenCaptureLib
             Radius = AnnotationOptions.RoundedRectangleRadius;
         }
 
+        public override void ApplyShapeConfig()
+        {
+            base.ApplyShapeConfig();
+            AnnotationOptions.RoundedRectangleRadius = (int)Radius;
+        }
+
         public override void Draw(Graphics g)
         {
             Brush brush = null;

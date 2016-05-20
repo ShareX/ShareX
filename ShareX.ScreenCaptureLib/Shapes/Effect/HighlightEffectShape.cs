@@ -45,6 +45,11 @@ namespace ShareX.ScreenCaptureLib
             HighlightColor = AnnotationOptions.HighlightColor;
         }
 
+        public override void ApplyShapeConfig()
+        {
+            AnnotationOptions.HighlightColor = HighlightColor;
+        }
+
         public override void Draw(Graphics g)
         {
             using (Brush brush = new SolidBrush(Color.FromArgb(100, HighlightColor)))

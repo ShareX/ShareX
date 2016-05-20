@@ -48,6 +48,12 @@ namespace ShareX.ScreenCaptureLib
             private set
             {
                 currentShape = value;
+
+                if (currentShape != null)
+                {
+                    currentShape.ApplyShapeConfig();
+                }
+
                 OnCurrentShapeChanged(currentShape);
             }
         }
@@ -205,6 +211,8 @@ namespace ShareX.ScreenCaptureLib
         {
             cmsContextMenu = new ContextMenuStrip(form.components);
 
+            #region Main
+
             ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem("Cancel capture");
             tsmiCancelCapture.Image = Resources.prohibition;
             tsmiCancelCapture.Click += (sender, e) => form.Close(RegionResult.Close);
@@ -214,6 +222,10 @@ namespace ShareX.ScreenCaptureLib
             tsmiCloseMenu.Image = Resources.cross;
             tsmiCloseMenu.Click += (sender, e) => cmsContextMenu.Close();
             cmsContextMenu.Items.Add(tsmiCloseMenu);
+
+            #endregion Main
+
+            #region Selected object
 
             ToolStripSeparator tssObjectOptions = new ToolStripSeparator();
             cmsContextMenu.Items.Add(tssObjectOptions);
@@ -227,6 +239,10 @@ namespace ShareX.ScreenCaptureLib
             tsmiDeleteAll.Image = Resources.minus;
             tsmiDeleteAll.Click += (sender, e) => ClearAll();
             cmsContextMenu.Items.Add(tsmiDeleteAll);
+
+            #endregion Selected object
+
+            #region Tools
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
@@ -288,6 +304,10 @@ namespace ShareX.ScreenCaptureLib
                 cmsContextMenu.Items.Add(tsmiShapeType);
             }
 
+            #endregion Tools
+
+            #region Shape options
+
             ToolStripSeparator tssShapeOptions = new ToolStripSeparator();
             cmsContextMenu.Items.Add(tssShapeOptions);
 
@@ -309,14 +329,12 @@ namespace ShareX.ScreenCaptureLib
 
                 ResumeForm();
             };
-            tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.BorderColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiBorderColor);
 
             ToolStripLabeledNumericUpDown tslnudBorderSize = new ToolStripLabeledNumericUpDown();
             tslnudBorderSize.LabeledNumericUpDownControl.Text = "Border size:";
             tslnudBorderSize.LabeledNumericUpDownControl.Minimum = 0;
             tslnudBorderSize.LabeledNumericUpDownControl.Maximum = 20;
-            tslnudBorderSize.LabeledNumericUpDownControl.Value = AnnotationOptions.BorderSize;
             tslnudBorderSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
                 AnnotationOptions.BorderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
@@ -342,7 +360,6 @@ namespace ShareX.ScreenCaptureLib
 
                 ResumeForm();
             };
-            tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.FillColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiFillColor);
 
             ToolStripLabeledNumericUpDown tslnudRoundedRectangleRadius = new ToolStripLabeledNumericUpDown();
@@ -350,7 +367,6 @@ namespace ShareX.ScreenCaptureLib
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Minimum = 0;
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Maximum = 150;
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Increment = 3;
-            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value = AnnotationOptions.RoundedRectangleRadius;
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
                 AnnotationOptions.RoundedRectangleRadius = (int)tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value;
@@ -362,7 +378,6 @@ namespace ShareX.ScreenCaptureLib
             tslnudBlurRadius.LabeledNumericUpDownControl.Text = "Blur radius:";
             tslnudBlurRadius.LabeledNumericUpDownControl.Minimum = 2;
             tslnudBlurRadius.LabeledNumericUpDownControl.Maximum = 100;
-            tslnudBlurRadius.LabeledNumericUpDownControl.Value = AnnotationOptions.BlurRadius;
             tslnudBlurRadius.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
                 AnnotationOptions.BlurRadius = (int)tslnudBlurRadius.LabeledNumericUpDownControl.Value;
@@ -374,7 +389,6 @@ namespace ShareX.ScreenCaptureLib
             tslnudPixelateSize.LabeledNumericUpDownControl.Text = "Pixel size:";
             tslnudPixelateSize.LabeledNumericUpDownControl.Minimum = 2;
             tslnudPixelateSize.LabeledNumericUpDownControl.Maximum = 100;
-            tslnudPixelateSize.LabeledNumericUpDownControl.Value = AnnotationOptions.RoundedRectangleRadius;
             tslnudPixelateSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
                 AnnotationOptions.PixelateSize = (int)tslnudPixelateSize.LabeledNumericUpDownControl.Value;
@@ -400,8 +414,11 @@ namespace ShareX.ScreenCaptureLib
 
                 ResumeForm();
             };
-            tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiHighlightColor);
+
+            #endregion Shape options
+
+            #region Capture
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
@@ -436,6 +453,10 @@ namespace ShareX.ScreenCaptureLib
                 };
                 tsmiMonitorCapture.DropDownItems.Add(tsmi);
             }
+
+            #endregion Capture
+
+            #region Options
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
@@ -496,11 +517,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowFPS.Click += (sender, e) => Config.ShowFPS = tsmiShowFPS.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowFPS);
 
-            CurrentShapeChanged += shape =>
-            {
-                tssObjectOptions.Visible = tsmiDeleteAll.Visible = Shapes.Count > 0;
-                tsmiDeleteSelected.Visible = shape != null;
-            };
+            #endregion Options
 
             CurrentShapeTypeChanged += shapeType =>
             {
@@ -512,6 +529,61 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     }
                 }
+            };
+
+            cmsContextMenu.Opening += (sender, e) =>
+            {
+                tssObjectOptions.Visible = tsmiDeleteAll.Visible = Shapes.Count > 0;
+                tsmiDeleteSelected.Visible = CurrentShape != null;
+
+                ShapeType shapeType = CurrentShapeType;
+
+                Color borderColor;
+
+                if (shapeType == ShapeType.DrawingText)
+                {
+                    borderColor = AnnotationOptions.TextBorderColor;
+                }
+                else
+                {
+                    borderColor = AnnotationOptions.BorderColor;
+                }
+
+                tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(borderColor, new Rectangle(0, 0, 16, 16));
+
+                int borderSize;
+
+                if (shapeType == ShapeType.DrawingText)
+                {
+                    borderSize = AnnotationOptions.TextBorderSize;
+                }
+                else
+                {
+                    borderSize = AnnotationOptions.BorderSize;
+                }
+
+                tslnudBorderSize.LabeledNumericUpDownControl.Value = borderSize;
+
+                Color fillColor;
+
+                if (shapeType == ShapeType.DrawingText)
+                {
+                    fillColor = AnnotationOptions.TextFillColor;
+                }
+                else
+                {
+                    fillColor = AnnotationOptions.FillColor;
+                }
+
+                tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(fillColor, new Rectangle(0, 0, 16, 16));
+
+                tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value = AnnotationOptions.RoundedRectangleRadius;
+
+                tslnudBlurRadius.LabeledNumericUpDownControl.Value = AnnotationOptions.BlurRadius;
+
+                tslnudPixelateSize.LabeledNumericUpDownControl.Value = AnnotationOptions.PixelateSize;
+
+                tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
 
                 switch (shapeType)
                 {
@@ -1005,7 +1077,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateCurrentShape()
         {
-            CurrentShape.UpdateShapeConfig();
+            BaseShape shape = CurrentShape;
+
+            if (shape != null)
+            {
+                shape.UpdateShapeConfig();
+            }
         }
 
         public Image RenderOutputImage(Image img)

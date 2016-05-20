@@ -99,6 +99,10 @@ namespace ShareX.ScreenCaptureLib
         {
         }
 
+        public virtual void ApplyShapeConfig()
+        {
+        }
+
         public virtual void OnShapeCreated()
         {
         }

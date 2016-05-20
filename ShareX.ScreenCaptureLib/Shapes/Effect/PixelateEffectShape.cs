@@ -45,6 +45,11 @@ namespace ShareX.ScreenCaptureLib
             PixelSize = AnnotationOptions.PixelateSize;
         }
 
+        public override void ApplyShapeConfig()
+        {
+            AnnotationOptions.PixelateSize = PixelSize;
+        }
+
         public override void Draw(Graphics g)
         {
             if (PixelSize > 1)

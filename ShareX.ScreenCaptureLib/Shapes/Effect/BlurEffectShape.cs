@@ -45,6 +45,11 @@ namespace ShareX.ScreenCaptureLib
             BlurRadius = AnnotationOptions.BlurRadius;
         }
 
+        public override void ApplyShapeConfig()
+        {
+            AnnotationOptions.BlurRadius = BlurRadius;
+        }
+
         public override void Draw(Graphics g)
         {
             if (BlurRadius > 1)
