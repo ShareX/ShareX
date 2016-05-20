@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextDrawingInputBox));
             this.txtInput = new System.Windows.Forms.TextBox();
             this.btnTextColor = new ShareX.HelpersLib.ColorButton();
             this.flpProperties = new System.Windows.Forms.FlowLayoutPanel();
@@ -58,34 +59,22 @@
             // 
             // txtInput
             // 
-            this.txtInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.txtInput, "txtInput");
             this.txtInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtInput.Location = new System.Drawing.Point(8, 40);
-            this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
-            this.txtInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtInput.Size = new System.Drawing.Size(518, 281);
-            this.txtInput.TabIndex = 0;
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
             // 
             // btnTextColor
             // 
-            this.btnTextColor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.btnTextColor, "btnTextColor");
             this.btnTextColor.Color = System.Drawing.Color.Empty;
-            this.btnTextColor.Location = new System.Drawing.Point(316, 3);
             this.btnTextColor.Name = "btnTextColor";
-            this.btnTextColor.Size = new System.Drawing.Size(24, 24);
-            this.btnTextColor.TabIndex = 1;
-            this.btnTextColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTextColor.UseVisualStyleBackColor = true;
             this.btnTextColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnTextColor_ColorChanged);
             // 
             // flpProperties
             // 
-            this.flpProperties.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.flpProperties, "flpProperties");
             this.flpProperties.Controls.Add(this.lblFont);
             this.flpProperties.Controls.Add(this.cbFonts);
             this.flpProperties.Controls.Add(this.lblTextSize);
@@ -96,58 +85,35 @@
             this.flpProperties.Controls.Add(this.cbUnderline);
             this.flpProperties.Controls.Add(this.btnAlignmentHorizontal);
             this.flpProperties.Controls.Add(this.btnAlignmentVertical);
-            this.flpProperties.Location = new System.Drawing.Point(8, 5);
             this.flpProperties.Name = "flpProperties";
-            this.flpProperties.Size = new System.Drawing.Size(518, 32);
-            this.flpProperties.TabIndex = 2;
-            this.flpProperties.WrapContents = false;
             // 
             // lblFont
             // 
-            this.lblFont.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblFont.AutoSize = true;
-            this.lblFont.Location = new System.Drawing.Point(0, 8);
-            this.lblFont.Margin = new System.Windows.Forms.Padding(0);
+            resources.ApplyResources(this.lblFont, "lblFont");
             this.lblFont.Name = "lblFont";
-            this.lblFont.Size = new System.Drawing.Size(31, 13);
-            this.lblFont.TabIndex = 7;
-            this.lblFont.Text = "Font:";
             // 
             // cbFonts
             // 
-            this.cbFonts.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.cbFonts, "cbFonts");
             this.cbFonts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFonts.FormattingEnabled = true;
-            this.cbFonts.Location = new System.Drawing.Point(34, 4);
             this.cbFonts.Name = "cbFonts";
-            this.cbFonts.Size = new System.Drawing.Size(184, 21);
-            this.cbFonts.TabIndex = 8;
             this.cbFonts.SelectedIndexChanged += new System.EventHandler(this.cbFonts_SelectedIndexChanged);
             // 
             // lblTextSize
             // 
-            this.lblTextSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblTextSize.AutoSize = true;
-            this.lblTextSize.Location = new System.Drawing.Point(224, 8);
-            this.lblTextSize.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            resources.ApplyResources(this.lblTextSize, "lblTextSize");
             this.lblTextSize.Name = "lblTextSize";
-            this.lblTextSize.Size = new System.Drawing.Size(30, 13);
-            this.lblTextSize.TabIndex = 2;
-            this.lblTextSize.Text = "Size:";
             // 
             // nudTextSize
             // 
-            this.nudTextSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudTextSize.Location = new System.Drawing.Point(257, 5);
+            resources.ApplyResources(this.nudTextSize, "nudTextSize");
             this.nudTextSize.Minimum = new decimal(new int[] {
             5,
             0,
             0,
             0});
             this.nudTextSize.Name = "nudTextSize";
-            this.nudTextSize.Size = new System.Drawing.Size(53, 20);
-            this.nudTextSize.TabIndex = 3;
-            this.nudTextSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudTextSize.Value = new decimal(new int[] {
             10,
             0,
@@ -157,70 +123,48 @@
             // 
             // cbBold
             // 
-            this.cbBold.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbBold.Appearance = System.Windows.Forms.Appearance.Button;
+            resources.ApplyResources(this.cbBold, "cbBold");
             this.cbBold.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_bold;
-            this.cbBold.Location = new System.Drawing.Point(346, 3);
             this.cbBold.Name = "cbBold";
-            this.cbBold.Size = new System.Drawing.Size(24, 24);
-            this.cbBold.TabIndex = 4;
             this.cbBold.UseVisualStyleBackColor = true;
             this.cbBold.CheckedChanged += new System.EventHandler(this.cbBold_CheckedChanged);
             // 
             // cbItalic
             // 
-            this.cbItalic.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbItalic.Appearance = System.Windows.Forms.Appearance.Button;
+            resources.ApplyResources(this.cbItalic, "cbItalic");
             this.cbItalic.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_italic;
-            this.cbItalic.Location = new System.Drawing.Point(376, 3);
             this.cbItalic.Name = "cbItalic";
-            this.cbItalic.Size = new System.Drawing.Size(24, 24);
-            this.cbItalic.TabIndex = 5;
             this.cbItalic.UseVisualStyleBackColor = true;
             this.cbItalic.CheckedChanged += new System.EventHandler(this.cbItalic_CheckedChanged);
             // 
             // cbUnderline
             // 
-            this.cbUnderline.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbUnderline.Appearance = System.Windows.Forms.Appearance.Button;
+            resources.ApplyResources(this.cbUnderline, "cbUnderline");
             this.cbUnderline.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_underline;
-            this.cbUnderline.Location = new System.Drawing.Point(406, 3);
             this.cbUnderline.Name = "cbUnderline";
-            this.cbUnderline.Size = new System.Drawing.Size(24, 24);
-            this.cbUnderline.TabIndex = 6;
             this.cbUnderline.UseVisualStyleBackColor = true;
             this.cbUnderline.CheckedChanged += new System.EventHandler(this.cbUnderline_CheckedChanged);
             // 
             // btnAlignmentHorizontal
             // 
-            this.btnAlignmentHorizontal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.btnAlignmentHorizontal, "btnAlignmentHorizontal");
             this.btnAlignmentHorizontal.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_alignment_center;
-            this.btnAlignmentHorizontal.Location = new System.Drawing.Point(436, 3);
             this.btnAlignmentHorizontal.Name = "btnAlignmentHorizontal";
-            this.btnAlignmentHorizontal.Size = new System.Drawing.Size(24, 24);
-            this.btnAlignmentHorizontal.TabIndex = 9;
             this.btnAlignmentHorizontal.UseVisualStyleBackColor = true;
             this.btnAlignmentHorizontal.Click += new System.EventHandler(this.btnAlignmentHorizontal_Click);
             // 
             // btnAlignmentVertical
             // 
-            this.btnAlignmentVertical.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.btnAlignmentVertical, "btnAlignmentVertical");
             this.btnAlignmentVertical.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_vertical_alignment_middle;
-            this.btnAlignmentVertical.Location = new System.Drawing.Point(466, 3);
             this.btnAlignmentVertical.Name = "btnAlignmentVertical";
-            this.btnAlignmentVertical.Size = new System.Drawing.Size(24, 24);
-            this.btnAlignmentVertical.TabIndex = 10;
             this.btnAlignmentVertical.UseVisualStyleBackColor = true;
             this.btnAlignmentVertical.Click += new System.EventHandler(this.btnAlignmentVertical_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(422, 327);
+            resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(104, 26);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -231,30 +175,27 @@
             this.tsmiAlignmentCenter,
             this.tsmiAlignmentRight});
             this.cmsAlignmentHorizontal.Name = "cmsAlignmentHorizontal";
-            this.cmsAlignmentHorizontal.Size = new System.Drawing.Size(110, 70);
+            resources.ApplyResources(this.cmsAlignmentHorizontal, "cmsAlignmentHorizontal");
             // 
             // tsmiAlignmentLeft
             // 
             this.tsmiAlignmentLeft.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_alignment;
             this.tsmiAlignmentLeft.Name = "tsmiAlignmentLeft";
-            this.tsmiAlignmentLeft.Size = new System.Drawing.Size(109, 22);
-            this.tsmiAlignmentLeft.Text = "Left";
+            resources.ApplyResources(this.tsmiAlignmentLeft, "tsmiAlignmentLeft");
             this.tsmiAlignmentLeft.Click += new System.EventHandler(this.tsmiAlignmentLeft_Click);
             // 
             // tsmiAlignmentCenter
             // 
             this.tsmiAlignmentCenter.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_alignment_center;
             this.tsmiAlignmentCenter.Name = "tsmiAlignmentCenter";
-            this.tsmiAlignmentCenter.Size = new System.Drawing.Size(109, 22);
-            this.tsmiAlignmentCenter.Text = "Center";
+            resources.ApplyResources(this.tsmiAlignmentCenter, "tsmiAlignmentCenter");
             this.tsmiAlignmentCenter.Click += new System.EventHandler(this.tsmiAlignmentCenter_Click);
             // 
             // tsmiAlignmentRight
             // 
             this.tsmiAlignmentRight.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_alignment_right;
             this.tsmiAlignmentRight.Name = "tsmiAlignmentRight";
-            this.tsmiAlignmentRight.Size = new System.Drawing.Size(109, 22);
-            this.tsmiAlignmentRight.Text = "Right";
+            resources.ApplyResources(this.tsmiAlignmentRight, "tsmiAlignmentRight");
             this.tsmiAlignmentRight.Click += new System.EventHandler(this.tsmiAlignmentRight_Click);
             // 
             // cmsAlignmentVertical
@@ -264,37 +205,33 @@
             this.tsmiAlignmentMiddle,
             this.tsmiAlignmentBottom});
             this.cmsAlignmentVertical.Name = "cmsAlignmentVertical";
-            this.cmsAlignmentVertical.Size = new System.Drawing.Size(115, 70);
+            resources.ApplyResources(this.cmsAlignmentVertical, "cmsAlignmentVertical");
             // 
             // tsmiAlignmentTop
             // 
             this.tsmiAlignmentTop.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_vertical_alignment_top;
             this.tsmiAlignmentTop.Name = "tsmiAlignmentTop";
-            this.tsmiAlignmentTop.Size = new System.Drawing.Size(114, 22);
-            this.tsmiAlignmentTop.Text = "Top";
+            resources.ApplyResources(this.tsmiAlignmentTop, "tsmiAlignmentTop");
             this.tsmiAlignmentTop.Click += new System.EventHandler(this.tsmiAlignmentTop_Click);
             // 
             // tsmiAlignmentMiddle
             // 
             this.tsmiAlignmentMiddle.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_vertical_alignment_middle;
             this.tsmiAlignmentMiddle.Name = "tsmiAlignmentMiddle";
-            this.tsmiAlignmentMiddle.Size = new System.Drawing.Size(114, 22);
-            this.tsmiAlignmentMiddle.Text = "Middle";
+            resources.ApplyResources(this.tsmiAlignmentMiddle, "tsmiAlignmentMiddle");
             this.tsmiAlignmentMiddle.Click += new System.EventHandler(this.tsmiAlignmentMiddle_Click);
             // 
             // tsmiAlignmentBottom
             // 
             this.tsmiAlignmentBottom.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.edit_vertical_alignment;
             this.tsmiAlignmentBottom.Name = "tsmiAlignmentBottom";
-            this.tsmiAlignmentBottom.Size = new System.Drawing.Size(114, 22);
-            this.tsmiAlignmentBottom.Text = "Bottom";
+            resources.ApplyResources(this.tsmiAlignmentBottom, "tsmiAlignmentBottom");
             this.tsmiAlignmentBottom.Click += new System.EventHandler(this.tsmiAlignmentBottom_Click);
             // 
             // TextDrawingInputBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 361);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.flpProperties);
             this.Controls.Add(this.txtInput);
@@ -302,8 +239,6 @@
             this.MinimizeBox = false;
             this.Name = "TextDrawingInputBox";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.InputText = "ShareX - Text input";
             this.TopMost = true;
             this.flpProperties.ResumeLayout(false);
             this.flpProperties.PerformLayout();
