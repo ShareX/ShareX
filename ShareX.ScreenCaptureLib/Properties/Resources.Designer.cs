@@ -85,7 +85,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap edit_alignment {
             get {
-                object obj = ResourceManager.GetObject("edit-alignment", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_alignment", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap edit_alignment_center {
             get {
-                object obj = ResourceManager.GetObject("edit-alignment-center", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_alignment_center", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +105,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap edit_alignment_right {
             get {
-                object obj = ResourceManager.GetObject("edit-alignment-right", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_alignment_right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +115,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap edit_bold {
             get {
-                object obj = ResourceManager.GetObject("edit-bold", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_bold", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +125,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap edit_italic {
             get {
-                object obj = ResourceManager.GetObject("edit-italic", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_italic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +135,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap edit_underline {
             get {
-                object obj = ResourceManager.GetObject("edit-underline", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_underline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -145,7 +145,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap edit_vertical_alignment {
             get {
-                object obj = ResourceManager.GetObject("edit-vertical-alignment", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_vertical_alignment", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -155,7 +155,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap edit_vertical_alignment_middle {
             get {
-                object obj = ResourceManager.GetObject("edit-vertical-alignment-middle", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_vertical_alignment_middle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -165,7 +165,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap edit_vertical_alignment_top {
             get {
-                object obj = ResourceManager.GetObject("edit-vertical-alignment-top", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_vertical_alignment_top", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

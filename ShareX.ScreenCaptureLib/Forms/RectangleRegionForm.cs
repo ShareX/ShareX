@@ -469,7 +469,8 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position);
             }
 
-            // TODO: CTRL + Mouse wheel magnifier pixel size
+            // TODO: Translate
+            sb.AppendLine("[Ctrl + Mouse wheel] Change magnifier size");
 
             sb.AppendLine();
 

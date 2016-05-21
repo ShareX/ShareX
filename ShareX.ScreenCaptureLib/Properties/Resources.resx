@@ -133,7 +133,7 @@ X: {4} Y: {5}</value>
   <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
     <value>[Double left click] [Enter] Capture regions</value>
   </data>
-  <data name="edit-italic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edit_italic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-italic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
@@ -175,16 +175,16 @@ X: {4} Y: {5}</value>
   <data name="layer_shape_ellipse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-ellipse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit-underline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edit_underline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-underline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit-vertical-alignment-top" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edit_vertical_alignment_top" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-vertical-alignment-top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
     <value>[F1] Hide tips</value>
   </data>
-  <data name="edit-alignment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edit_alignment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exclamation_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -193,7 +193,7 @@ X: {4} Y: {5}</value>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>Successfully downloaded FFmpeg.</value>
   </data>
-  <data name="edit-alignment-center" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edit_alignment_center" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment-center.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
@@ -259,7 +259,7 @@ X: {4} Y: {5}</value>
   <data name="grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit-vertical-alignment-middle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edit_vertical_alignment_middle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-vertical-alignment-middle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
@@ -309,7 +309,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Download of FFmpeg failed.</value>
   </data>
-  <data name="edit-bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edit_bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-bold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
@@ -336,7 +336,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="prohibition" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prohibition.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit-alignment-right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edit_alignment_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="monitor_window" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -360,7 +360,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="layer_shape_ellipse_region" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-ellipse-region.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit-vertical-alignment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edit_vertical_alignment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-vertical-alignment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
