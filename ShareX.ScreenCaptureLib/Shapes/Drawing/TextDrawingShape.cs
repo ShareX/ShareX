@@ -58,14 +58,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.TextFillColor = FillColor;
         }
 
-        public override void Draw(Graphics g)
-        {
-            base.Draw(g);
-
-            DrawFinal(g, null);
-        }
-
-        public override void DrawFinal(Graphics g, Bitmap bmp)
+        public override void OnDraw(Graphics g)
         {
             if (FillColor.A > 0)
             {
@@ -96,6 +89,16 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public override void OnShapeCreated()
+        {
+            UpdateText();
+        }
+
+        public override void OnShapeDoubleClicked()
+        {
+            UpdateText();
+        }
+
         private void UpdateText()
         {
             Manager.PauseForm();
@@ -108,16 +111,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Manager.ResumeForm();
-        }
-
-        public override void OnShapeCreated()
-        {
-            UpdateText();
-        }
-
-        public override void OnShapeDoubleClicked()
-        {
-            UpdateText();
         }
     }
 }

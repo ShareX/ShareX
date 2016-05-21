@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.BlurRadius = BlurRadius;
         }
 
-        public override void Draw(Graphics g)
+        public override void OnDraw(Graphics g)
         {
             if (BlurRadius > 1)
             {
@@ -77,7 +77,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void DrawFinal(Graphics g, Bitmap bmp)
+        public override void OnDrawFinal(Graphics g, Bitmap bmp)
         {
             if (BlurRadius > 1)
             {

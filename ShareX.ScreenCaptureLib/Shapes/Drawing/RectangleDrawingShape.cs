@@ -38,7 +38,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingRectangle;
 
-        public override void Draw(Graphics g)
+        public override void OnDraw(Graphics g)
         {
             if (FillColor.A > 0)
             {

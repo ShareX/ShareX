@@ -37,24 +37,19 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingLine;
         public override NodeType NodeType { get; } = NodeType.Line;
 
-        public override void Draw(Graphics g)
+        public override void OnDraw(Graphics g)
         {
             if (BorderSize > 0 && BorderColor.A > 0)
             {
                 g.SmoothingMode = SmoothingMode.HighQuality;
 
-                using (Pen pen = CreatePen())
+                using (Pen pen = new Pen(BorderColor, BorderSize))
                 {
                     g.DrawLine(pen, StartPosition, EndPosition);
                 }
 
                 g.SmoothingMode = SmoothingMode.None;
             }
-        }
-
-        public virtual Pen CreatePen()
-        {
-            return new Pen(BorderColor, BorderSize);
         }
     }
 }

@@ -1159,7 +1159,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (shape != null)
                         {
-                            shape.DrawFinal(g, bmp);
+                            shape.OnDrawFinal(g, bmp);
                         }
                     }
 
@@ -1167,7 +1167,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (shape != null)
                         {
-                            shape.DrawFinal(g, bmp);
+                            shape.OnDraw(g);
                         }
                     }
                 }

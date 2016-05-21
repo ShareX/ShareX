@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.PixelateSize = PixelSize;
         }
 
-        public override void Draw(Graphics g)
+        public override void OnDraw(Graphics g)
         {
             if (PixelSize > 1)
             {
@@ -77,7 +77,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void DrawFinal(Graphics g, Bitmap bmp)
+        public override void OnDrawFinal(Graphics g, Bitmap bmp)
         {
             if (PixelSize > 1)
             {

@@ -208,13 +208,13 @@ namespace ShareX.ScreenCaptureLib
             // Draw effect shapes
             foreach (BaseEffectShape effectShape in ShapeManager.EffectShapes)
             {
-                effectShape.Draw(g);
+                effectShape.OnDraw(g);
             }
 
             // Draw drawing shapes
             foreach (BaseDrawingShape drawingShape in ShapeManager.DrawingShapes)
             {
-                drawingShape.Draw(g);
+                drawingShape.OnDraw(g);
             }
 
             // Draw animated rectangle on hover area
