@@ -214,9 +214,6 @@ X: {4} Y: {5}</value>
   <data name="layer_shape" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Middle click] [Esc] Cancel capture</value>
-  </data>
   <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
     <value>[2] Select rectangle drawing mode</value>
   </data>
@@ -349,7 +346,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>Region capture</value>
   </data>
   <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] Cancel capture</value>
+    <value>[Middle click] [Esc] Cancel capture</value>
   </data>
   <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg error</value>

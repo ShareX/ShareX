@@ -201,9 +201,6 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
     <value>[Ctrl + Scroll] Alterar tamanho da caneta</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] Cancelar captura</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Botão Direito] Cancelar seleção de região</value>
   </data>

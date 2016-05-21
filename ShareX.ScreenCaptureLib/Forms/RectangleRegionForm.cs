@@ -411,7 +411,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Insert__Stop_region_selection);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click__Cancel_region_selection);
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
             }
             else
             {
@@ -422,10 +421,10 @@ namespace ShareX.ScreenCaptureLib
                     // TODO: Translate
                     sb.AppendLine("[Right click] Open options menu");
                 }
-
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture);
-                // TODO: Also right click when non annotation mode
             }
+
+            // TODO: Also right click when non annotation mode
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
 
             if (!Config.QuickCrop && ShapeManager.Regions.Length > 0)
             {

@@ -628,7 +628,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Esc] Cancel capture.
+        ///   Looks up a localized string similar to [Middle click] [Esc] Cancel capture.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Esc__Cancel_capture {
             get {
@@ -705,15 +705,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string RectangleRegion_WriteTips__Insert__Stop_region_selection {
             get {
                 return ResourceManager.GetString("RectangleRegion_WriteTips__Insert__Stop_region_selection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Middle click] [Esc] Cancel capture.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture", resourceCulture);
             }
         }
         
