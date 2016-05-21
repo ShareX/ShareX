@@ -453,7 +453,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                 for (int i = 0; i < enums.Length; i++)
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
-                    tsmi.Image = FindMenuIcon<T>(i + 1);
+                    tsmi.Image = TaskHelpers.FindMenuIcon<T>(i + 1);
 
                     int index = i;
 
@@ -610,72 +610,6 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
             cmsTaskInfo.ResumeLayout();
             Refresh();
-        }
-
-        private Image FindMenuIcon<T>(int index)
-        {
-            T e = Helpers.GetEnumFromIndex<T>(index);
-
-            if (e is AfterCaptureTasks)
-            {
-                switch ((AfterCaptureTasks)(object)e)
-                {
-                    case AfterCaptureTasks.ShowQuickTaskMenu:
-                        return Resources.ui_menu_blue;
-                    case AfterCaptureTasks.ShowAfterCaptureWindow:
-                        return Resources.application_text_image;
-                    case AfterCaptureTasks.AddImageEffects:
-                        return Resources.image_saturation;
-                    case AfterCaptureTasks.AnnotateImage:
-                        return Resources.image_pencil;
-                    case AfterCaptureTasks.CopyImageToClipboard:
-                        return Resources.clipboard_paste_image;
-                    case AfterCaptureTasks.SendImageToPrinter:
-                        return Resources.printer;
-                    case AfterCaptureTasks.SaveImageToFile:
-                        return Resources.disk;
-                    case AfterCaptureTasks.SaveImageToFileWithDialog:
-                        return Resources.disk_rename;
-                    case AfterCaptureTasks.SaveThumbnailImageToFile:
-                        return Resources.disk_small;
-                    case AfterCaptureTasks.PerformActions:
-                        return Resources.application_terminal;
-                    case AfterCaptureTasks.CopyFileToClipboard:
-                        return Resources.clipboard_block;
-                    case AfterCaptureTasks.CopyFilePathToClipboard:
-                        return Resources.clipboard_list;
-                    case AfterCaptureTasks.ShowInExplorer:
-                        return Resources.folder_stand;
-                    case AfterCaptureTasks.DoOCR:
-                        return Resources.edit_drop_cap;
-                    case AfterCaptureTasks.ShowBeforeUploadWindow:
-                        return Resources.application__arrow;
-                    case AfterCaptureTasks.UploadImageToHost:
-                        return Resources.upload_cloud;
-                    case AfterCaptureTasks.DeleteFile:
-                        return Resources.bin;
-                }
-            }
-            else if (e is AfterUploadTasks)
-            {
-                switch ((AfterUploadTasks)(object)e)
-                {
-                    case AfterUploadTasks.ShowAfterUploadWindow:
-                        return Resources.application_browser;
-                    case AfterUploadTasks.UseURLShortener:
-                        return Resources.edit_scale;
-                    case AfterUploadTasks.ShareURL:
-                        return Resources.globe_share;
-                    case AfterUploadTasks.CopyURLToClipboard:
-                        return Resources.clipboard_paste_document_text;
-                    case AfterUploadTasks.OpenURL:
-                        return Resources.globe__arrow;
-                    case AfterUploadTasks.ShowQRCode:
-                        return Resources.barcode_2d;
-                }
-            }
-
-            return null;
         }
 
         private void CleanCustomClipboardFormats()

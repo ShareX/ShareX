@@ -463,6 +463,7 @@ namespace ShareX
                 for (int i = 0; i < enums.Length; i++)
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
+                    tsmi.Image = TaskHelpers.FindMenuIcon<T>(i + 1);
 
                     int index = i;
 
