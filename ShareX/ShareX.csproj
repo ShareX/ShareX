@@ -1245,6 +1245,17 @@
     <None Include="Resources\layer_fullscreen.png" />
     <None Include="Resources\layers.png" />
     <None Include="Resources\edit-drop-cap.png" />
+    <None Include="Resources\ui-menu-blue.png" />
+    <None Include="Resources\application-text-image.png" />
+    <None Include="Resources\clipboard-paste-image.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\disk.png" />
+    <None Include="Resources\disk-rename.png" />
+    <None Include="Resources\disk-small.png" />
+    <None Include="Resources\application-terminal.png" />
+    <None Include="Resources\clipboard-block.png" />
+    <None Include="Resources\folder-stand.png" />
+    <None Include="Resources\application--arrow.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
