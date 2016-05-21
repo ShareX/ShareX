@@ -1256,6 +1256,8 @@
     <None Include="Resources\clipboard-block.png" />
     <None Include="Resources\folder-stand.png" />
     <None Include="Resources\application--arrow.png" />
+    <None Include="Resources\clipboard-paste-document-text.png" />
+    <None Include="Resources\globe--arrow.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

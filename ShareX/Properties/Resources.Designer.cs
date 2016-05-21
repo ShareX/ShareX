@@ -545,6 +545,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap clipboard_paste_document_text {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_paste_document_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap clipboard_paste_image {
             get {
                 object obj = ResourceManager.GetObject("clipboard_paste_image", resourceCulture);
@@ -953,6 +963,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap globe {
             get {
                 object obj = ResourceManager.GetObject("globe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap globe__arrow {
+            get {
+                object obj = ResourceManager.GetObject("globe__arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

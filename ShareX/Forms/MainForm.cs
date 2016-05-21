@@ -618,9 +618,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
             if (e is AfterCaptureTasks)
             {
-                AfterCaptureTasks afterCaptureTask = (AfterCaptureTasks)(object)e;
-
-                switch (afterCaptureTask)
+                switch ((AfterCaptureTasks)(object)e)
                 {
                     case AfterCaptureTasks.ShowQuickTaskMenu:
                         return Resources.ui_menu_blue;
@@ -656,6 +654,24 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                         return Resources.upload_cloud;
                     case AfterCaptureTasks.DeleteFile:
                         return Resources.bin;
+                }
+            }
+            else if (e is AfterUploadTasks)
+            {
+                switch ((AfterUploadTasks)(object)e)
+                {
+                    case AfterUploadTasks.ShowAfterUploadWindow:
+                        return Resources.application_browser;
+                    case AfterUploadTasks.UseURLShortener:
+                        return Resources.edit_scale;
+                    case AfterUploadTasks.ShareURL:
+                        return Resources.globe_share;
+                    case AfterUploadTasks.CopyURLToClipboard:
+                        return Resources.clipboard_paste_document_text;
+                    case AfterUploadTasks.OpenURL:
+                        return Resources.globe__arrow;
+                    case AfterUploadTasks.ShowQRCode:
+                        return Resources.barcode_2d;
                 }
             }
 
