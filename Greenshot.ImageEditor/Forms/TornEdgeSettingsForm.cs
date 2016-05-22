@@ -29,7 +29,7 @@ namespace Greenshot.Forms
 {
     public partial class TornEdgeSettingsForm : BaseForm
     {
-        private TornEdgeEffect effect;
+        private readonly TornEdgeEffect effect;
 
         public TornEdgeSettingsForm(TornEdgeEffect effect)
         {

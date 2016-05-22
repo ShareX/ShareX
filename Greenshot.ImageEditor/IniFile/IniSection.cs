@@ -35,9 +35,9 @@ namespace Greenshot.IniFile
     public abstract class IniSection
     {
         [NonSerialized]
-        private IDictionary<string, IniValue> values = new Dictionary<string, IniValue>();
+        private readonly IDictionary<string, IniValue> values = new Dictionary<string, IniValue>();
         [NonSerialized]
-        private IniSectionAttribute iniSectionAttribute = null;
+        private IniSectionAttribute iniSectionAttribute;
         public IniSectionAttribute IniSectionAttribute
         {
             get

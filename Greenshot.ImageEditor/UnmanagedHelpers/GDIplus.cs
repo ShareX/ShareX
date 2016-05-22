@@ -111,7 +111,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true)]
         private static extern int GdipDeleteEffect(IntPtr effect);
 
-        private static Guid BlurEffectGuid = new Guid("{633C80A4-1843-482B-9EF2-BE2834C5FDD4}");
+        private static readonly Guid BlurEffectGuid = new Guid("{633C80A4-1843-482B-9EF2-BE2834C5FDD4}");
 
         // Constant "FieldInfo" for getting the nativeImage from the Bitmap
         private static readonly FieldInfo FIELD_INFO_NATIVE_IMAGE = typeof(Bitmap).GetField("nativeImage", BindingFlags.GetField | BindingFlags.Instance | BindingFlags.NonPublic);
@@ -122,7 +122,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         // Constant "FieldInfo" for getting the nativeImageAttributes from the ImageAttributes
         private static readonly FieldInfo FIELD_INFO_NATIVE_IMAGEATTRIBUTES = typeof(ImageAttributes).GetField("nativeImageAttributes", BindingFlags.GetField | BindingFlags.Instance | BindingFlags.NonPublic);
 
-        private static bool isBlurEnabled = Environment.OSVersion.Version.Major >= 6;
+        private static bool _isBlurEnabled = Environment.OSVersion.Version.Major >= 6;
 
         /// <summary>
         /// Get the nativeImage field from the bitmap
@@ -186,9 +186,9 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// </summary>
         /// <param name="radius"></param>
         /// <returns></returns>
-        public static bool isBlurPossible(int radius)
+        public static bool IsBlurPossible(int radius)
         {
-            if (!isBlurEnabled)
+            if (!_isBlurEnabled)
             {
                 return false;
             }
@@ -209,7 +209,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// <returns>false if there is no GDI+ available or an exception occured</returns>
         public static bool ApplyBlur(Bitmap destinationBitmap, Rectangle area, int radius, bool expandEdges)
         {
-            if (!isBlurPossible(radius))
+            if (!IsBlurPossible(radius))
             {
                 return false;
             }
@@ -248,7 +248,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
             }
             catch (Exception ex)
             {
-                isBlurEnabled = false;
+                _isBlurEnabled = false;
                 LOG.Error("Problem using GdipBitmapApplyEffect: ", ex);
                 return false;
             }
@@ -269,7 +269,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
                 }
                 catch (Exception ex)
                 {
-                    isBlurEnabled = false;
+                    _isBlurEnabled = false;
                     LOG.Error("Problem cleaning up ApplyBlur: ", ex);
                 }
             }
@@ -281,7 +281,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// <returns>false if there is no GDI+ available or an exception occured</returns>
         public static bool DrawWithBlur(Graphics graphics, Bitmap image, Rectangle source, Matrix transform, ImageAttributes imageAttributes, int radius, bool expandEdges)
         {
-            if (!isBlurPossible(radius))
+            if (!IsBlurPossible(radius))
             {
                 return false;
             }
@@ -325,7 +325,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
             }
             catch (Exception ex)
             {
-                isBlurEnabled = false;
+                _isBlurEnabled = false;
                 LOG.Error("Problem using GdipDrawImageFX: ", ex);
                 return false;
             }
@@ -346,7 +346,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
                 }
                 catch (Exception ex)
                 {
-                    isBlurEnabled = false;
+                    _isBlurEnabled = false;
                     LOG.Error("Problem cleaning up DrawWithBlur: ", ex);
                 }
             }

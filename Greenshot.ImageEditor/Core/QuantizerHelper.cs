@@ -83,23 +83,23 @@ namespace GreenshotPlugin.Core
         private const Int32 MAXVOLUME = SIDESIZE * SIDESIZE * SIDESIZE;
 
         // To count the colors
-        private int colorCount = 0;
+        private readonly int colorCount;
 
         private Int32[] reds;
         private Int32[] greens;
         private Int32[] blues;
         private Int32[] sums;
 
-        private Int64[,,] weights;
-        private Int64[,,] momentsRed;
-        private Int64[,,] momentsGreen;
-        private Int64[,,] momentsBlue;
-        private Single[,,] moments;
+        private readonly Int64[,,] weights;
+        private readonly Int64[,,] momentsRed;
+        private readonly Int64[,,] momentsGreen;
+        private readonly Int64[,,] momentsBlue;
+        private readonly Single[,,] moments;
 
         private byte[] tag;
 
-        private WuColorCube[] cubes;
-        private Bitmap sourceBitmap;
+        private readonly WuColorCube[] cubes;
+        private readonly Bitmap sourceBitmap;
         private Bitmap resultBitmap;
 
         public void Dispose()

@@ -28,10 +28,6 @@ namespace Greenshot.Drawing.Fields.Binding
     /// </summary>
     public abstract class AbstractBindingConverter<T1, T2> : IBindingConverter
     {
-        public AbstractBindingConverter()
-        {
-        }
-
         public object convert(object o)
         {
             if (o == null)

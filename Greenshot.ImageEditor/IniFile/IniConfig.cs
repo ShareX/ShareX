@@ -38,24 +38,24 @@ namespace Greenshot.IniFile
         /// <summary>
         /// A lock object for the ini file saving
         /// </summary>
-        private static object iniLock = new object();
+        private static readonly object iniLock = new object();
 
         /// <summary>
         /// As the ini implementation is kept someone generic, for reusing, this holds the name of the application
         /// </summary>
-        private static string applicationName = null;
+        private static string applicationName;
 
         /// <summary>
         /// As the ini implementation is kept someone generic, for reusing, this holds the name of the configuration
         /// </summary>
-        private static string configName = null;
+        private static string configName;
 
         private static string configFolderPath = null;
 
         /// <summary>
         /// A Dictionary with all the sections stored by section name
         /// </summary>
-        private static Dictionary<string, IniSection> sectionMap = new Dictionary<string, IniSection>();
+        private static readonly Dictionary<string, IniSection> sectionMap = new Dictionary<string, IniSection>();
 
         /// <summary>
         /// A Dictionary with the properties for a section stored by section name
@@ -65,7 +65,7 @@ namespace Greenshot.IniFile
         /// <summary>
         /// A Dictionary with the fixed-properties for a section stored by section name
         /// </summary>
-        private static Dictionary<string, Dictionary<string, string>> fixedProperties = null;
+        private static Dictionary<string, Dictionary<string, string>> fixedProperties;
 
         /// <summary>
         /// Is the configuration portable (meaning we don't store it in the AppData directory)

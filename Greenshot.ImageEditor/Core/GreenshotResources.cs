@@ -29,7 +29,7 @@ namespace GreenshotPlugin.Core
     /// </summary>
     public static class GreenshotResources
     {
-        private static ComponentResourceManager greenshotResources = new ComponentResourceManager(typeof(GreenshotResources));
+        private static readonly ComponentResourceManager greenshotResources = new ComponentResourceManager(typeof(GreenshotResources));
 
         public static Image getImage(string imageName)
         {

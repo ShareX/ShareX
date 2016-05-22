@@ -505,7 +505,7 @@ namespace Greenshot {
 			this.propertiesToolStrip.Renderer = new CustomToolStripProfessionalRenderer();
 			this.propertiesToolStrip.BackColor = System.Drawing.SystemColors.Control;
 			this.propertiesToolStrip.OverflowButton.DropDown.BackColor = System.Drawing.SystemColors.Control;
-			this.propertiesToolStrip.Paint += propertiesToolStrip_Paint;
+			this.propertiesToolStrip.Paint += PropertiesToolStrip_Paint;
             this.propertiesToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
                     this.tsbSaveClose,
                     this.tsbClose,

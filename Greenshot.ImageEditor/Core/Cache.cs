@@ -32,10 +32,10 @@ namespace GreenshotPlugin.Core
     /// <typeparam name="TV">Type of value</typeparam>
     public class Cache<TK, TV>
     {
-        private IDictionary<TK, TV> internalCache = new Dictionary<TK, TV>();
-        private object lockObject = new object();
-        private int secondsToExpire = 10;
-        private CacheObjectExpired expiredCallback = null;
+        private readonly IDictionary<TK, TV> internalCache = new Dictionary<TK, TV>();
+        private readonly object lockObject = new object();
+        private readonly int secondsToExpire = 10;
+        private readonly CacheObjectExpired expiredCallback = null;
         public delegate void CacheObjectExpired(TK key, TV cacheValue);
 
         /// <summary>
@@ -82,9 +82,12 @@ namespace GreenshotPlugin.Core
             {
                 List<TV> elements = new List<TV>();
 
-                foreach (TV element in internalCache.Values)
+                lock (lockObject)
                 {
-                    elements.Add(element);
+                    foreach (TV element in internalCache.Values)
+                    {
+                        elements.Add(element);
+                    }
                 }
                 foreach (TV element in elements)
                 {
@@ -121,7 +124,10 @@ namespace GreenshotPlugin.Core
         /// <returns>true if the cache contains the key</returns>
         public bool Contains(TK key)
         {
-            return internalCache.ContainsKey(key);
+            lock (lockObject)
+            {
+                return internalCache.ContainsKey(key);
+            }
         }
 
         /// <summary>
@@ -198,7 +204,7 @@ namespace GreenshotPlugin.Core
         private class CachedItem
         {
             public event CacheObjectExpired Expired;
-            private int secondsToExpire;
+            private readonly int secondsToExpire;
             private readonly Timer _timerEvent;
 
             public CachedItem(TK key, TV item, int secondsToExpire)

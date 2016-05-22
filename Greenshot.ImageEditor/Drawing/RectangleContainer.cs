@@ -74,7 +74,7 @@ namespace Greenshot.Drawing
             graphics.CompositingQuality = CompositingQuality.HighQuality;
             graphics.PixelOffsetMode = PixelOffsetMode.None;
 
-            bool lineVisible = (lineThickness > 0 && Colors.IsVisible(lineColor));
+            bool lineVisible = lineThickness > 0 && Colors.IsVisible(lineColor);
             if (shadow && (lineVisible || Colors.IsVisible(fillColor)))
             {
                 //draw shadow first
@@ -94,7 +94,7 @@ namespace Greenshot.Drawing
                             rect.Height);
                         graphics.DrawRectangle(shadowPen, shadowRect);
                         currentStep++;
-                        alpha = alpha - (basealpha / steps);
+                        alpha = alpha - basealpha / steps;
                     }
                 }
             }

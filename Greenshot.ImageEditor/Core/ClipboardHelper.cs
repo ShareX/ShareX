@@ -396,11 +396,11 @@ EndSelection:<<<<<<<4
                 {
                     // Outlook ??
                     LOG.Info("Most likely the current clipboard contents come from Outlook, as this has a problem with PNG and others we place the DIB format to the front...");
-                    retrieveFormats = new string[] { DataFormats.Dib, FORMAT_BITMAP, FORMAT_FILECONTENTS, FORMAT_PNG_OFFICEART, FORMAT_PNG, FORMAT_JFIF_OFFICEART, FORMAT_JPG, FORMAT_JFIF, DataFormats.Tiff, FORMAT_GIF };
+                    retrieveFormats = new[] { DataFormats.Dib, FORMAT_BITMAP, FORMAT_FILECONTENTS, FORMAT_PNG_OFFICEART, FORMAT_PNG, FORMAT_JFIF_OFFICEART, FORMAT_JPG, FORMAT_JFIF, DataFormats.Tiff, FORMAT_GIF };
                 }
                 else
                 {
-                    retrieveFormats = new string[] { FORMAT_PNG_OFFICEART, FORMAT_PNG, FORMAT_17, FORMAT_JFIF_OFFICEART, FORMAT_JPG, FORMAT_JFIF, DataFormats.Tiff, DataFormats.Dib, FORMAT_BITMAP, FORMAT_FILECONTENTS, FORMAT_GIF };
+                    retrieveFormats = new[] { FORMAT_PNG_OFFICEART, FORMAT_PNG, FORMAT_17, FORMAT_JFIF_OFFICEART, FORMAT_JPG, FORMAT_JFIF, DataFormats.Tiff, DataFormats.Dib, FORMAT_BITMAP, FORMAT_FILECONTENTS, FORMAT_GIF };
                 }
                 foreach (string currentFormat in retrieveFormats)
                 {
@@ -867,7 +867,7 @@ EndSelection:<<<<<<<4
         /// <returns>true if one the format is found</returns>
         public static bool ContainsFormat(string format)
         {
-            return ContainsFormat(GetDataObject(), new string[] { format });
+            return ContainsFormat(GetDataObject(), new[] { format });
         }
 
         /// <summary>
@@ -877,7 +877,7 @@ EndSelection:<<<<<<<4
         /// <returns>true if one the format is found</returns>
         public static bool ContainsFormat(IDataObject dataObject, string format)
         {
-            return ContainsFormat(dataObject, new string[] { format });
+            return ContainsFormat(dataObject, new[] { format });
         }
 
         /// <summary>

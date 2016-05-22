@@ -39,10 +39,11 @@ namespace GreenshotPlugin.Core
         // The parameter format is a single alpha followed by the value belonging to the parameter, e.g. :
         // ${capturetime:d"yyyy-MM-dd HH_mm_ss"}
         private static readonly Regex VAR_REGEXP = new Regex(@"\${(?<variable>[^:}]+)[:]?(?<parameters>[^}]*)}", RegexOptions.Compiled);
+        private static readonly Regex CMD_VAR_REGEXP = new Regex(@"%(?<variable>[^%]+)%", RegexOptions.Compiled);
 
         private static readonly Regex SPLIT_REGEXP = new Regex(";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", RegexOptions.Compiled);
         private const int MAX_TITLE_LENGTH = 80;
-        private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
+        private static readonly CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
         private const string UNSAFE_REPLACEMENT = "_";
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace GreenshotPlugin.Core
         /// <summary>
         /// Remove invalid characters from the path
         /// </summary>
-        /// <param name="fullpath">string with the full path to a file</param>
+        /// <param name="path">string with the full path to a file</param>
         /// <returns>string with the full path to a file, without invalid characters</returns>
         public static string MakePathSafe(string path)
         {
@@ -180,7 +181,7 @@ namespace GreenshotPlugin.Core
                     {
                         // Padding p<width>[,pad-character]
                         case "p":
-                            string[] padParams = parameter.Substring(1).Split(new char[] { ',' });
+                            string[] padParams = parameter.Substring(1).Split(new[] { ',' });
                             try
                             {
                                 padWidth = int.Parse(padParams[0]);
@@ -196,7 +197,7 @@ namespace GreenshotPlugin.Core
                         // replace
                         // r<old string>,<new string>
                         case "r":
-                            string[] replaceParameters = parameter.Substring(1).Split(new char[] { ',' });
+                            string[] replaceParameters = parameter.Substring(1).Split(new[] { ',' });
                             if (replaceParameters != null && replaceParameters.Length == 2)
                             {
                                 replacements.Add(replaceParameters[0], replaceParameters[1]);
@@ -219,7 +220,7 @@ namespace GreenshotPlugin.Core
                         // s<start>[,length]
                         case "s":
                             string range = parameter.Substring(1);
-                            string[] rangelist = range.Split(new char[] { ',' });
+                            string[] rangelist = range.Split(new[] { ',' });
                             if (rangelist.Length > 0)
                             {
                                 try
@@ -472,6 +473,51 @@ namespace GreenshotPlugin.Core
         /// <summary>
         /// "Simply" fill the pattern with environment variables
         /// </summary>
+		/// <param name="pattern">String with pattern %var%</param>
+ 		/// <param name="filenameSafeMode">true to make sure everything is filenamesafe</param>
+ 		/// <returns>Filled string</returns>
+ 		public static string FillCmdVariables(string pattern, bool filenameSafeMode)
+        {
+            IDictionary processVars = null;
+            IDictionary userVars = null;
+            IDictionary machineVars = null;
+            try
+            {
+                processVars = Environment.GetEnvironmentVariables(EnvironmentVariableTarget.Process);
+            }
+            catch (Exception e)
+            {
+                LOG.Error("Error retrieving EnvironmentVariableTarget.Process", e);
+            }
+
+            try
+            {
+                userVars = Environment.GetEnvironmentVariables(EnvironmentVariableTarget.User);
+            }
+            catch (Exception e)
+            {
+                LOG.Error("Error retrieving EnvironmentVariableTarget.User", e);
+            }
+
+            try
+            {
+                machineVars = Environment.GetEnvironmentVariables(EnvironmentVariableTarget.Machine);
+            }
+            catch (Exception e)
+            {
+                LOG.Error("Error retrieving EnvironmentVariableTarget.Machine", e);
+            }
+
+            return CMD_VAR_REGEXP.Replace(pattern,
+                delegate (Match m) {
+                    return MatchVarEvaluator(m, null, processVars, userVars, machineVars, filenameSafeMode);
+                }
+            );
+        }
+
+        /// <summary>
+        /// "Simply" fill the pattern with environment variables
+        /// </summary>
         /// <param name="pattern">String with pattern ${var}</param>
         /// <param name="filenameSafeMode">true to make sure everything is filenamesafe</param>
         /// <returns>Filled string</returns>
@@ -508,10 +554,10 @@ namespace GreenshotPlugin.Core
             }
 
             return VAR_REGEXP.Replace(pattern,
-                new MatchEvaluator(delegate (Match m)
+                delegate (Match m)
                 {
                     return MatchVarEvaluator(m, null, processVars, userVars, machineVars, filenameSafeMode);
-                })
+                }
             );
         }
 
@@ -557,10 +603,10 @@ namespace GreenshotPlugin.Core
             try
             {
                 return VAR_REGEXP.Replace(pattern,
-                    new MatchEvaluator(delegate (Match m)
+                    delegate (Match m)
                     {
                         return MatchVarEvaluator(m, captureDetails, processVars, userVars, machineVars, filenameSafeMode);
-                    })
+                    }
                 );
             }
             catch (Exception e)

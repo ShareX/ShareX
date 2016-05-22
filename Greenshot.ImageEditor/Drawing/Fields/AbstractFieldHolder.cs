@@ -35,7 +35,7 @@ namespace Greenshot.Drawing.Fields
     [Serializable]
     public abstract class AbstractFieldHolder : IFieldHolder
     {
-        private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
+        private static readonly EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
 
         /// <summary>
         /// called when a field's value has changed
@@ -52,11 +52,7 @@ namespace Greenshot.Drawing.Fields
         // this allows us to use default serialization
         [NonSerialized]
         private Dictionary<FieldType, Field> fieldsByType = new Dictionary<FieldType, Field>();
-        private List<Field> fields = new List<Field>();
-
-        public AbstractFieldHolder()
-        {
-        }
+        private readonly List<Field> fields = new List<Field>();
 
         [OnDeserialized]
         private void OnDeserialized(StreamingContext context)

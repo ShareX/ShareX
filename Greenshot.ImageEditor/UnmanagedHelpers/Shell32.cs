@@ -43,44 +43,16 @@ namespace GreenshotPlugin.UnmanagedHelpers
 
         #region Structs
 
-        [StructLayout(LayoutKind.Sequential)]
-        private struct SHITEMID
-        {
-            public ushort cb;
-            [MarshalAs(UnmanagedType.LPArray)]
-            public byte[] abID;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct ITEMIDLIST
-        {
-            public SHITEMID mkid;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct BROWSEINFO
-        {
-            public IntPtr hwndOwner;
-            public IntPtr pidlRoot;
-            public IntPtr pszDisplayName;
-            [MarshalAs(UnmanagedType.LPTStr)]
-            public string lpszTitle;
-            public uint ulFlags;
-            public IntPtr lpfn;
-            public int lParam;
-            public IntPtr iImage;
-        }
-
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         private struct SHFILEINFO
         {
-            public IntPtr hIcon;
-            public int iIcon;
-            public uint dwAttributes;
+            public readonly IntPtr hIcon;
+            public readonly int iIcon;
+            public readonly uint dwAttributes;
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
-            public string szDisplayName;
+            public readonly string szDisplayName;
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 80)]
-            public string szTypeName;
+            public readonly string szTypeName;
         };
 
         #endregion Structs
@@ -160,7 +132,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// Returns an icon for a given file extension - indicated by the name parameter.
         /// See: http://msdn.microsoft.com/en-us/library/windows/desktop/bb762179(v=vs.85).aspx
         /// </summary>
-        /// <param name="name">Filename</param>
+        /// <param name="filename">Filename</param>
         /// <param name="size">Large or small</param>
         /// <param name="linkOverlay">Whether to include the link icon</param>
         /// <returns>System.Drawing.Icon</returns>
@@ -168,24 +140,24 @@ namespace GreenshotPlugin.UnmanagedHelpers
         {
             SHFILEINFO shfi = new SHFILEINFO();
             // SHGFI_USEFILEATTRIBUTES makes it simulate, just gets the icon for the extension
-            uint flags = Shell32.SHGFI_ICON | Shell32.SHGFI_USEFILEATTRIBUTES;
+            uint flags = SHGFI_ICON | SHGFI_USEFILEATTRIBUTES;
 
-            if (true == linkOverlay)
+            if (linkOverlay)
             {
-                flags += Shell32.SHGFI_LINKOVERLAY;
+                flags += SHGFI_LINKOVERLAY;
             }
 
             // Check the size specified for return.
             if (IconSize.Small == size)
             {
-                flags += Shell32.SHGFI_SMALLICON;
+                flags += SHGFI_SMALLICON;
             }
             else
             {
-                flags += Shell32.SHGFI_LARGEICON;
+                flags += SHGFI_LARGEICON;
             }
 
-            SHGetFileInfo(Path.GetFileName(filename), Shell32.FILE_ATTRIBUTE_NORMAL, ref shfi, (uint)Marshal.SizeOf(shfi), flags);
+            SHGetFileInfo(Path.GetFileName(filename), FILE_ATTRIBUTE_NORMAL, ref shfi, (uint)Marshal.SizeOf(shfi), flags);
 
             // Only return an icon if we really got one
             if (shfi.hIcon != IntPtr.Zero)

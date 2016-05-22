@@ -67,6 +67,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public static extern IntPtr OpenProcess(ProcessAccessFlags dwDesiredAccess, bool bInheritHandle, int dwProcessId);
 
         [DllImport("kernel32", SetLastError = true, CharSet = CharSet.Unicode)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool QueryFullProcessImageName(IntPtr hProcess, uint dwFlags, StringBuilder lpExeName, ref uint lpdwSize);
 
         [DllImport("kernel32", SetLastError = true, CharSet = CharSet.Unicode)]
@@ -76,6 +77,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public static extern IntPtr GetModuleHandle(string lpModuleName);
 
         [DllImport("kernel32", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool CloseHandle(IntPtr hObject);
 
         /// <summary>

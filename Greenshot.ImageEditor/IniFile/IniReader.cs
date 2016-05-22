@@ -30,7 +30,7 @@ namespace Greenshot.IniFile
         private const string SECTION_START = "[";
         private const string SECTION_END = "]";
         private const string COMMENT = ";";
-        private static char[] ASSIGNMENT = new char[] { '=' };
+        private static readonly char[] ASSIGNMENT = new[] { '=' };
 
         /**
          * Read an ini file to a Dictionary, each key is a section and the value is a Dictionary with name and values.

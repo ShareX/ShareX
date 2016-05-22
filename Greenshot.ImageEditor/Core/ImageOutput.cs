@@ -44,7 +44,7 @@ namespace GreenshotPlugin.Core
     {
         private static readonly CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
         private static readonly int PROPERTY_TAG_SOFTWARE_USED = 0x0131;
-        private static Cache<string, string> tmpFileCache = new Cache<string, string>(10 * 60 * 60, RemoveExpiredTmpFile);
+        private static readonly Cache<string, string> tmpFileCache = new Cache<string, string>(10 * 60 * 60, RemoveExpiredTmpFile);
 
         /// <summary>
         /// Creates a PropertyItem (Metadata) to store with the image.
