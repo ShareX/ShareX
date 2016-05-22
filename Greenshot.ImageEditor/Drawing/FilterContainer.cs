@@ -58,7 +58,7 @@ namespace Greenshot.Drawing
             int lineThickness = GetFieldValueAsInt(FieldType.LINE_THICKNESS);
             Color lineColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
             bool shadow = GetFieldValueAsBool(FieldType.SHADOW);
-            bool lineVisible = (lineThickness > 0 && Colors.IsVisible(lineColor));
+            bool lineVisible = lineThickness > 0 && Colors.IsVisible(lineColor);
             if (lineVisible)
             {
                 graphics.SmoothingMode = SmoothingMode.HighSpeed;
@@ -79,7 +79,7 @@ namespace Greenshot.Drawing
                             Rectangle shadowRect = GuiRectangle.GetGuiRectangle(Left + currentStep, Top + currentStep, Width, Height);
                             graphics.DrawRectangle(shadowPen, shadowRect);
                             currentStep++;
-                            alpha = alpha - (basealpha / steps);
+                            alpha = alpha - basealpha / steps;
                         }
                     }
                 }

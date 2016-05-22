@@ -54,12 +54,17 @@ namespace GreenshotPlugin.Core
 
         static NetworkHelper()
         {
-            // Disable certificate checking
-            ServicePointManager.ServerCertificateValidationCallback +=
-            delegate
+            try
             {
-                return true;
-            };
+                // Disable certificate checking
+                ServicePointManager.ServerCertificateValidationCallback += delegate {
+                    return true;
+                };
+            }
+            catch (Exception ex)
+            {
+                LOG.Warn("An error has occured while allowing self-signed certificates:", ex);
+            }
         }
 
         /// <summary>
@@ -157,15 +162,18 @@ namespace GreenshotPlugin.Core
                         {
                             content = streamReader.ReadLine();
                         }
-                        Regex imageUrlRegex = new Regex(@"(http|https)://.*(\.png|\.gif|\.jpg|\.tiff|\.jpeg|\.bmp)");
-                        Match match = imageUrlRegex.Match(content);
-                        if (match.Success)
+                        if (!string.IsNullOrEmpty(content))
                         {
-                            using (MemoryStream memoryStream2 = GetAsMemoryStream(match.Value))
+                            Regex imageUrlRegex = new Regex(@"(http|https)://.*(\.png|\.gif|\.jpg|\.tiff|\.jpeg|\.bmp)");
+                            Match match = imageUrlRegex.Match(content);
+                            if (match.Success)
                             {
-                                using (Image image = Image.FromStream(memoryStream2))
+                                using (MemoryStream memoryStream2 = GetAsMemoryStream(match.Value))
                                 {
-                                    return ImageHelper.Clone(image, PixelFormat.Format32bppArgb);
+                                    using (Image image = Image.FromStream(memoryStream2))
+                                    {
+                                        return ImageHelper.Clone(image, PixelFormat.Format32bppArgb);
+                                    }
                                 }
                             }
                         }
@@ -222,15 +230,7 @@ namespace GreenshotPlugin.Core
         public static HttpWebRequest CreateWebRequest(Uri uri)
         {
             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(uri);
-            if (Config.UseProxy)
-            {
-                webRequest.Proxy = CreateProxy(uri);
-            }
-            else
-            {
-                // BUG-1655: Fix that Greenshot always uses the default proxy even if the "use default proxy" checkbox is unset
-                webRequest.Proxy = null;
-            }
+            webRequest.Proxy = Config.UseProxy ? CreateProxy(uri) : null;
             // Make sure the default credentials are available
             webRequest.Credentials = CredentialCache.DefaultCredentials;
 
@@ -463,10 +463,11 @@ namespace GreenshotPlugin.Core
         /// Post the parameters "x-www-form-urlencoded"
         /// </summary>
         /// <param name="webRequest"></param>
+        /// <param name="parameters"></param>
         public static void UploadFormUrlEncoded(HttpWebRequest webRequest, IDictionary<string, object> parameters)
         {
             webRequest.ContentType = "application/x-www-form-urlencoded";
-            string urlEncoded = NetworkHelper.GenerateQueryParameters(parameters);
+            string urlEncoded = GenerateQueryParameters(parameters);
 
             byte[] data = Encoding.UTF8.GetBytes(urlEncoded);
             using (var requestStream = webRequest.GetRequestStream())
@@ -533,6 +534,7 @@ namespace GreenshotPlugin.Core
         ///
         /// </summary>
         /// <param name="webRequest"></param>
+        /// <param name="alsoReturnContentOnError"></param>
         /// <returns></returns>
         public static string GetResponseAsString(HttpWebRequest webRequest, bool alsoReturnContentOnError)
         {
@@ -639,10 +641,10 @@ namespace GreenshotPlugin.Core
     /// </summary>
     public class ByteContainer : IBinaryContainer
     {
-        private byte[] file;
-        private string fileName;
-        private string contentType;
-        private int fileSize;
+        private readonly byte[] _file;
+        private readonly string _fileName;
+        private readonly string _contentType;
+        private readonly int _fileSize;
 
         public ByteContainer(byte[] file) : this(file, null)
         {
@@ -658,17 +660,10 @@ namespace GreenshotPlugin.Core
 
         public ByteContainer(byte[] file, string filename, string contenttype, int filesize)
         {
-            this.file = file;
-            fileName = filename;
-            contentType = contenttype;
-            if (filesize == 0)
-            {
-                fileSize = file.Length;
-            }
-            else
-            {
-                fileSize = filesize;
-            }
+            _file = file;
+            _fileName = filename;
+            _contentType = contenttype;
+            _fileSize = filesize == 0 ? file.Length : filesize;
         }
 
         /// <summary>
@@ -677,7 +672,7 @@ namespace GreenshotPlugin.Core
         /// <returns>string</returns>
         public string ToBase64String(Base64FormattingOptions formattingOptions)
         {
-            return Convert.ToBase64String(file, 0, fileSize, formattingOptions);
+            return Convert.ToBase64String(_file, 0, _fileSize, formattingOptions);
         }
 
         /// <summary>
@@ -686,7 +681,7 @@ namespace GreenshotPlugin.Core
         /// <returns>byte[]</returns>
         public byte[] ToByteArray()
         {
-            return file;
+            return _file;
         }
 
         /// <summary>
@@ -701,13 +696,13 @@ namespace GreenshotPlugin.Core
             string header = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{2}\";\r\nContent-Type: {3}\r\n\r\n",
                 boundary,
                 name,
-                fileName ?? name,
-                contentType ?? "application/octet-stream");
+                _fileName ?? name,
+                _contentType ?? "application/octet-stream");
 
             formDataStream.Write(Encoding.UTF8.GetBytes(header), 0, Encoding.UTF8.GetByteCount(header));
 
             // Write the file data directly to the Stream, rather than serializing it to a string.
-            formDataStream.Write(file, 0, fileSize);
+            formDataStream.Write(_file, 0, _fileSize);
         }
 
         /// <summary>
@@ -717,7 +712,7 @@ namespace GreenshotPlugin.Core
         public void WriteToStream(Stream dataStream)
         {
             // Write the file data directly to the Stream, rather than serializing it to a string.
-            dataStream.Write(file, 0, fileSize);
+            dataStream.Write(_file, 0, _fileSize);
         }
 
         /// <summary>
@@ -726,8 +721,8 @@ namespace GreenshotPlugin.Core
         /// <param name="webRequest"></param>
         public void Upload(HttpWebRequest webRequest)
         {
-            webRequest.ContentType = contentType;
-            webRequest.ContentLength = fileSize;
+            webRequest.ContentType = _contentType;
+            webRequest.ContentLength = _fileSize;
             using (var requestStream = webRequest.GetRequestStream())
             {
                 WriteToStream(requestStream);
@@ -740,15 +735,15 @@ namespace GreenshotPlugin.Core
     /// </summary>
     public class BitmapContainer : IBinaryContainer
     {
-        private Bitmap bitmap;
-        private SurfaceOutputSettings outputSettings;
-        private string fileName;
+        private readonly Bitmap _bitmap;
+        private readonly SurfaceOutputSettings _outputSettings;
+        private readonly string _fileName;
 
         public BitmapContainer(Bitmap bitmap, SurfaceOutputSettings outputSettings, string filename)
         {
-            this.bitmap = bitmap;
-            this.outputSettings = outputSettings;
-            fileName = filename;
+            _bitmap = bitmap;
+            _outputSettings = outputSettings;
+            _fileName = filename;
         }
 
         /// <summary>
@@ -760,7 +755,7 @@ namespace GreenshotPlugin.Core
         {
             using (MemoryStream stream = new MemoryStream())
             {
-                ImageOutput.SaveToStream(bitmap, null, stream, outputSettings);
+                ImageOutput.SaveToStream(_bitmap, null, stream, _outputSettings);
                 return Convert.ToBase64String(stream.GetBuffer(), 0, (int)stream.Length, formattingOptions);
             }
         }
@@ -774,7 +769,7 @@ namespace GreenshotPlugin.Core
         {
             using (MemoryStream stream = new MemoryStream())
             {
-                ImageOutput.SaveToStream(bitmap, null, stream, outputSettings);
+                ImageOutput.SaveToStream(_bitmap, null, stream, _outputSettings);
                 return stream.ToArray();
             }
         }
@@ -791,11 +786,11 @@ namespace GreenshotPlugin.Core
             string header = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{2}\";\r\nContent-Type: {3}\r\n\r\n",
                 boundary,
                 name,
-                fileName ?? name,
-                "image/" + outputSettings.Format.ToString());
+                _fileName ?? name,
+                "image/" + _outputSettings.Format);
 
             formDataStream.Write(Encoding.UTF8.GetBytes(header), 0, Encoding.UTF8.GetByteCount(header));
-            ImageOutput.SaveToStream(bitmap, null, formDataStream, outputSettings);
+            ImageOutput.SaveToStream(_bitmap, null, formDataStream, _outputSettings);
         }
 
         /// <summary>
@@ -805,7 +800,7 @@ namespace GreenshotPlugin.Core
         public void WriteToStream(Stream dataStream)
         {
             // Write the file data directly to the Stream, rather than serializing it to a string.
-            ImageOutput.SaveToStream(bitmap, null, dataStream, outputSettings);
+            ImageOutput.SaveToStream(_bitmap, null, dataStream, _outputSettings);
         }
 
         /// <summary>
@@ -814,7 +809,7 @@ namespace GreenshotPlugin.Core
         /// <param name="webRequest"></param>
         public void Upload(HttpWebRequest webRequest)
         {
-            webRequest.ContentType = "image/" + outputSettings.Format.ToString();
+            webRequest.ContentType = "image/" + _outputSettings.Format;
             using (var requestStream = webRequest.GetRequestStream())
             {
                 WriteToStream(requestStream);
@@ -827,15 +822,15 @@ namespace GreenshotPlugin.Core
     /// </summary>
     public class SurfaceContainer : IBinaryContainer
     {
-        private ISurface surface;
-        private SurfaceOutputSettings outputSettings;
-        private string fileName;
+        private readonly ISurface _surface;
+        private readonly SurfaceOutputSettings _outputSettings;
+        private readonly string _fileName;
 
         public SurfaceContainer(ISurface surface, SurfaceOutputSettings outputSettings, string filename)
         {
-            this.surface = surface;
-            this.outputSettings = outputSettings;
-            fileName = filename;
+            _surface = surface;
+            _outputSettings = outputSettings;
+            _fileName = filename;
         }
 
         /// <summary>
@@ -847,7 +842,7 @@ namespace GreenshotPlugin.Core
         {
             using (MemoryStream stream = new MemoryStream())
             {
-                ImageOutput.SaveToStream(surface, stream, outputSettings);
+                ImageOutput.SaveToStream(_surface, stream, _outputSettings);
                 return Convert.ToBase64String(stream.GetBuffer(), 0, (int)stream.Length, formattingOptions);
             }
         }
@@ -861,7 +856,7 @@ namespace GreenshotPlugin.Core
         {
             using (MemoryStream stream = new MemoryStream())
             {
-                ImageOutput.SaveToStream(surface, stream, outputSettings);
+                ImageOutput.SaveToStream(_surface, stream, _outputSettings);
                 return stream.ToArray();
             }
         }
@@ -878,11 +873,11 @@ namespace GreenshotPlugin.Core
             string header = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{2}\";\r\nContent-Type: {3}\r\n\r\n",
                 boundary,
                 name,
-                fileName ?? name,
-                "image/" + outputSettings.Format);
+                _fileName ?? name,
+                "image/" + _outputSettings.Format);
 
             formDataStream.Write(Encoding.UTF8.GetBytes(header), 0, Encoding.UTF8.GetByteCount(header));
-            ImageOutput.SaveToStream(surface, formDataStream, outputSettings);
+            ImageOutput.SaveToStream(_surface, formDataStream, _outputSettings);
         }
 
         /// <summary>
@@ -892,7 +887,7 @@ namespace GreenshotPlugin.Core
         public void WriteToStream(Stream dataStream)
         {
             // Write the file data directly to the Stream, rather than serializing it to a string.
-            ImageOutput.SaveToStream(surface, dataStream, outputSettings);
+            ImageOutput.SaveToStream(_surface, dataStream, _outputSettings);
         }
 
         /// <summary>
@@ -901,7 +896,7 @@ namespace GreenshotPlugin.Core
         /// <param name="webRequest"></param>
         public void Upload(HttpWebRequest webRequest)
         {
-            webRequest.ContentType = "image/" + outputSettings.Format.ToString();
+            webRequest.ContentType = "image/" + _outputSettings.Format.ToString();
             using (var requestStream = webRequest.GetRequestStream())
             {
                 WriteToStream(requestStream);

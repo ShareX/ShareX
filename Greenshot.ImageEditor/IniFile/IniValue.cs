@@ -34,10 +34,10 @@ namespace Greenshot.IniFile
     /// </summary>
     public class IniValue
     {
-        private PropertyInfo propertyInfo;
-        private FieldInfo fieldInfo;
-        private IniSection containingIniSection;
-        private IniPropertyAttribute attributes;
+        private readonly PropertyInfo propertyInfo;
+        private readonly FieldInfo fieldInfo;
+        private readonly IniSection containingIniSection;
+        private readonly IniPropertyAttribute attributes;
 
         public IniValue(IniSection containingIniSection, PropertyInfo propertyInfo, IniPropertyAttribute iniPropertyAttribute)
         {
@@ -226,7 +226,7 @@ namespace Greenshot.IniFile
                 while ((bool)moveNext.Invoke(enumerator, null))
                 {
                     var key = current.Invoke(enumerator, null);
-                    var valueObject = item.GetValue(myValue, new object[] { key });
+                    var valueObject = item.GetValue(myValue, new[] { key });
                     // Write to ini file!
                     writer.WriteLine("{0}.{1}={2}", attributes.Name, ConvertValueToString(valueType1, key, attributes.Separator), ConvertValueToString(valueType2, valueObject, attributes.Separator));
                 }
@@ -324,7 +324,7 @@ namespace Greenshot.IniFile
                             LOG.Warn(ex);
                             //LOG.Error("Problem converting " + stringValue + " to type " + type2.FullName, e);
                         }
-                        addMethodInfo.Invoke(dictionary, new object[] { newValue1, newValue2 });
+                        addMethodInfo.Invoke(dictionary, new[] { newValue1, newValue2 });
                         addedElements = true;
                     }
                 }
@@ -428,7 +428,7 @@ namespace Greenshot.IniFile
                 string arraySeparator = separator;
                 object list = Activator.CreateInstance(valueType);
                 // Logic for List<>
-                string[] arrayValues = valueString.Split(new string[] { arraySeparator }, StringSplitOptions.None);
+                string[] arrayValues = valueString.Split(new[] { arraySeparator }, StringSplitOptions.None);
                 if (arrayValues == null || arrayValues.Length == 0)
                 {
                     return list;
@@ -450,7 +450,7 @@ namespace Greenshot.IniFile
                         }
                         if (newValue != null)
                         {
-                            addMethodInfo.Invoke(list, new object[] { newValue });
+                            addMethodInfo.Invoke(list, new[] { newValue });
                         }
                     }
                 }
@@ -460,7 +460,7 @@ namespace Greenshot.IniFile
             if (valueType == typeof(object) && valueString.Length > 0)
             {
                 //LOG.Debug("Parsing: " + valueString);
-                string[] values = valueString.Split(new Char[] { ':' });
+                string[] values = valueString.Split(new[] { ':' });
                 //LOG.Debug("Type: " + values[0]);
                 //LOG.Debug("Value: " + values[1]);
                 Type fieldTypeForValue = Type.GetType(values[0], true);

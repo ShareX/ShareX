@@ -8993,8 +8993,17 @@ Using an encrypted library disables sharing.</value>
     <value>0</value>
   </data>
   <data name="lblLithiioInfo.Text" xml:space="preserve">
-    <value>For anonymous usage, leave the API field blank. 50 MB max per upload, files expire after 3 months minimum.
-Otherwise, for file management options and a larger file upload size, visit https://lithi.io/ and sign in through Steam to get an API key.</value>
+    <value>Leave the API key blank for anonymous usage or sign in through Steam
+at https://lithi.io/ to become a Lithiio member and get an API key.
+
+Anonymous:
+    - 50 MB max per upload
+    - Files expire after 3 months
+
+Lithiio Member:
+    - 100 MB max per upload
+    - No expiration on files
+    - File management on website (List + Delete files)</value>
   </data>
   <data name="&gt;&gt;lblLithiioInfo.Name" xml:space="preserve">
     <value>lblLithiioInfo</value>
@@ -9015,7 +9024,7 @@ Otherwise, for file management options and a larger file upload size, visit http
     <value>NoControl</value>
   </data>
   <data name="lblLithiioApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 52</value>
+    <value>13, 172</value>
   </data>
   <data name="lblLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -9039,7 +9048,7 @@ Otherwise, for file management options and a larger file upload size, visit http
     <value>1</value>
   </data>
   <data name="txtLithiioApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 69</value>
+    <value>16, 189</value>
   </data>
   <data name="txtLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 20</value>
@@ -9066,7 +9075,7 @@ Otherwise, for file management options and a larger file upload size, visit http
     <value>NoControl</value>
   </data>
   <data name="lblLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 98</value>
+    <value>13, 218</value>
   </data>
   <data name="lblLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -9090,7 +9099,7 @@ Otherwise, for file management options and a larger file upload size, visit http
     <value>3</value>
   </data>
   <data name="cbLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 114</value>
+    <value>16, 234</value>
   </data>
   <data name="cbLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 21</value>

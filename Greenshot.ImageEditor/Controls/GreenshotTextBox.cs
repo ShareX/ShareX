@@ -26,19 +26,8 @@ namespace GreenshotPlugin.Controls
 {
     internal class GreenshotTextBox : TextBox, IGreenshotConfigBindable
     {
-        private string sectionName = "Core";
         [Category("Greenshot"), DefaultValue("Core"), Description("Specifies the Ini-Section to map this control with.")]
-        public string SectionName
-        {
-            get
-            {
-                return sectionName;
-            }
-            set
-            {
-                sectionName = value;
-            }
-        }
+        public string SectionName { get; set; } = "Core";
 
         [Category("Greenshot"), DefaultValue(null), Description("Specifies the property name to map the configuration.")]
         public string PropertyName

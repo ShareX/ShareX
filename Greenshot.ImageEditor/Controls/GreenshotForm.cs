@@ -36,9 +36,9 @@ namespace GreenshotPlugin.Controls
     public class GreenshotForm : Form, IGreenshotLanguageBindable
     {
         protected static CoreConfiguration coreConfiguration;
-        private static IDictionary<Type, FieldInfo[]> reflectionCache = new Dictionary<Type, FieldInfo[]>();
+        private static readonly IDictionary<Type, FieldInfo[]> reflectionCache = new Dictionary<Type, FieldInfo[]>();
         private IComponentChangeService m_changeService;
-        private bool _storeFieldsManually = false;
+        private bool _storeFieldsManually;
         private IDictionary<string, Control> _designTimeControls;
         private IDictionary<string, ToolStripItem> _designTimeToolStripItems;
 
@@ -184,7 +184,7 @@ namespace GreenshotPlugin.Controls
             // Clear our the component change events to prepare for re-siting.
             if (m_changeService != null)
             {
-                m_changeService.ComponentAdded -= new ComponentEventHandler(OnComponentAdded);
+                m_changeService.ComponentAdded -= OnComponentAdded;
             }
         }
 
@@ -193,7 +193,7 @@ namespace GreenshotPlugin.Controls
             // Register the event handlers for the IComponentChangeService events
             if (m_changeService != null)
             {
-                m_changeService.ComponentAdded += new ComponentEventHandler(OnComponentAdded);
+                m_changeService.ComponentAdded += OnComponentAdded;
             }
         }
 
@@ -303,7 +303,6 @@ namespace GreenshotPlugin.Controls
                             comboxBox.Populate(iniValue.ValueType);
                             comboxBox.SetValue((Enum)iniValue.Value);
                             comboxBox.Enabled = !iniValue.IsFixed;
-                            continue;
                         }
                     }
                 }

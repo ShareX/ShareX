@@ -29,7 +29,7 @@ namespace Greenshot.Forms
 {
     public partial class DropShadowSettingsForm : BaseForm
     {
-        private DropShadowEffect effect;
+        private readonly DropShadowEffect effect;
 
         public DropShadowSettingsForm(DropShadowEffect effect)
         {

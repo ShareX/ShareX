@@ -30,7 +30,7 @@ namespace Greenshot.Memento
     public class TextChangeMemento : IMemento
     {
         private TextContainer textContainer;
-        private string oldText;
+        private readonly string oldText;
 
         public TextChangeMemento(TextContainer textContainer)
         {

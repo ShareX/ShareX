@@ -37,9 +37,9 @@ namespace GreenshotPlugin.Core
     /// </summary>
     public static class PluginUtils
     {
-        private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
+        private static readonly CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
         private const string PATH_KEY = @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\";
-        private static IDictionary<string, Image> exeIconCache = new Dictionary<string, Image>();
+        private static readonly IDictionary<string, Image> exeIconCache = new Dictionary<string, Image>();
 
         static PluginUtils()
         {
@@ -126,16 +126,19 @@ namespace GreenshotPlugin.Core
         {
             string cacheKey = string.Format("{0}:{1}", path, index);
             Image returnValue;
-            if (!exeIconCache.TryGetValue(cacheKey, out returnValue))
+            lock (exeIconCache)
             {
-                lock (exeIconCache)
+                if (!exeIconCache.TryGetValue(cacheKey, out returnValue))
                 {
-                    if (!exeIconCache.TryGetValue(cacheKey, out returnValue))
+                    lock (exeIconCache)
                     {
-                        returnValue = GetExeIcon(path, index);
-                        if (returnValue != null)
+                        if (!exeIconCache.TryGetValue(cacheKey, out returnValue))
                         {
-                            exeIconCache.Add(cacheKey, returnValue);
+                            returnValue = GetExeIcon(path, index);
+                            if (returnValue != null)
+                            {
+                                exeIconCache.Add(cacheKey, returnValue);
+                            }
                         }
                     }
                 }

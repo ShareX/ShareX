@@ -80,7 +80,7 @@ namespace Greenshot.Helpers
                     newRect.X = (targetRect.Width - currentRect.Width) / 2;
                     break;
                 case ContentAlignment.TopRight:
-                    newRect.X = (targetRect.Width - currentRect.Width);
+                    newRect.X = targetRect.Width - currentRect.Width;
                     break;
                 case ContentAlignment.MiddleLeft:
                     newRect.Y = (targetRect.Height - currentRect.Height) / 2;
@@ -91,18 +91,18 @@ namespace Greenshot.Helpers
                     break;
                 case ContentAlignment.MiddleRight:
                     newRect.Y = (targetRect.Height - currentRect.Height) / 2;
-                    newRect.X = (targetRect.Width - currentRect.Width);
+                    newRect.X = targetRect.Width - currentRect.Width;
                     break;
                 case ContentAlignment.BottomLeft:
-                    newRect.Y = (targetRect.Height - currentRect.Height);
+                    newRect.Y = targetRect.Height - currentRect.Height;
                     break;
                 case ContentAlignment.BottomCenter:
-                    newRect.Y = (targetRect.Height - currentRect.Height);
+                    newRect.Y = targetRect.Height - currentRect.Height;
                     newRect.X = (targetRect.Width - currentRect.Width) / 2;
                     break;
                 case ContentAlignment.BottomRight:
-                    newRect.Y = (targetRect.Height - currentRect.Height);
-                    newRect.X = (targetRect.Width - currentRect.Width);
+                    newRect.Y = targetRect.Height - currentRect.Height;
+                    newRect.X = targetRect.Width - currentRect.Width;
                     break;
             }
             return newRect;
@@ -351,7 +351,7 @@ namespace Greenshot.Helpers
         public static ScaleOptions GetScaleOptions()
         {
             bool anchorAtCenter = (Control.ModifierKeys & Keys.Control) != 0;
-            bool maintainAspectRatio = ((Control.ModifierKeys & Keys.Shift) != 0);
+            bool maintainAspectRatio = (Control.ModifierKeys & Keys.Shift) != 0;
             ScaleOptions opts = ScaleOptions.Default;
             if (anchorAtCenter) opts |= ScaleOptions.Centered;
             if (maintainAspectRatio) opts |= ScaleOptions.Rational;
@@ -393,7 +393,7 @@ namespace Greenshot.Helpers
 
         public class FixedAngleRoundBehavior : IDoubleProcessor
         {
-            private double fixedAngle;
+            private readonly double fixedAngle;
 
             public FixedAngleRoundBehavior(double fixedAngle)
             {

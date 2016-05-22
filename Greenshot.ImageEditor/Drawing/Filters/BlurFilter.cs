@@ -45,7 +45,7 @@ namespace Greenshot.Drawing.Filters
             AddField(GetType(), FieldType.PREVIEW_QUALITY, 1.0d);
         }
 
-        public unsafe override void Apply(Graphics graphics, Bitmap applyBitmap, Rectangle rect, RenderMode renderMode)
+        public override void Apply(Graphics graphics, Bitmap applyBitmap, Rectangle rect, RenderMode renderMode)
         {
             int blurRadius = GetFieldValueAsInt(FieldType.BLUR_RADIUS);
             Rectangle applyRect = ImageHelper.CreateIntersectRectangle(applyBitmap.Size, rect, Invert);
@@ -59,7 +59,7 @@ namespace Greenshot.Drawing.Filters
                 graphics.SetClip(applyRect);
                 graphics.ExcludeClip(rect);
             }
-            if (GDIplus.isBlurPossible(blurRadius))
+            if (GDIplus.IsBlurPossible(blurRadius))
             {
                 GDIplus.DrawWithBlur(graphics, applyBitmap, applyRect, null, null, blurRadius, false);
             }
@@ -72,7 +72,6 @@ namespace Greenshot.Drawing.Filters
                 }
             }
             graphics.Restore(state);
-            return;
         }
     }
 }

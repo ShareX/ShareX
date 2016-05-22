@@ -37,7 +37,7 @@ namespace Greenshot
     public partial class ColorDialog : BaseForm
     {
         private static ColorDialog uniqueInstance;
-        private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
+        private static readonly EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
 
         private ColorDialog()
         {
@@ -62,7 +62,7 @@ namespace Greenshot
         private readonly List<Button> _colorButtons = new List<Button>();
         private readonly List<Button> _recentColorButtons = new List<Button>();
         private readonly ToolTip _toolTip = new ToolTip();
-        private bool _updateInProgress = false;
+        private bool _updateInProgress;
 
         public Color Color
         {

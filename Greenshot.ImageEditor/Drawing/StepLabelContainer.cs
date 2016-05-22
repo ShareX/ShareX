@@ -136,7 +136,7 @@ namespace Greenshot.Drawing
         /// </summary>
         public override bool HandleMouseDown(int mouseX, int mouseY)
         {
-            return base.HandleMouseDown(mouseX - (Width / 2), mouseY - (Height / 2));
+            return base.HandleMouseDown(mouseX - Width / 2, mouseY - Height / 2);
         }
 
         /// <summary>
@@ -169,8 +169,8 @@ namespace Greenshot.Drawing
         public override bool HandleMouseMove(int x, int y)
         {
             Invalidate();
-            Left = x - (Width / 2);
-            Top = y - (Height / 2);
+            Left = x - Width / 2;
+            Top = y - Height / 2;
             Invalidate();
             return true;
         }
@@ -191,7 +191,7 @@ namespace Greenshot.Drawing
 
             int widthAfter = rect.Width;
             int heightAfter = rect.Height;
-            float factor = (((float)widthAfter / widthBefore) + ((float)heightAfter / heightBefore)) / 2;
+            float factor = ((float)widthAfter / widthBefore + (float)heightAfter / heightBefore) / 2;
 
             fontSize *= factor;
         }
