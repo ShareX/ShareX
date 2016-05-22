@@ -239,9 +239,6 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Laat linkermuisknop los] [Insert] Beëindig regio selectie</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] Annuleer vastleggen</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Rechterklik] [Delete] Annuleer selectie regio</value>
   </data>

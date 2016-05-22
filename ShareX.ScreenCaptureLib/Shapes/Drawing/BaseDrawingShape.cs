@@ -36,9 +36,23 @@ namespace ShareX.ScreenCaptureLib
     public abstract class BaseDrawingShape : BaseShape
     {
         public Color BorderColor { get; set; }
-        public Color FillColor { get; set; }
         public int BorderSize { get; set; }
+        public Color FillColor { get; set; }
 
-        public abstract void Draw(Graphics g);
+        public override void UpdateShapeConfig()
+        {
+            BorderColor = AnnotationOptions.BorderColor;
+            BorderSize = AnnotationOptions.BorderSize;
+            FillColor = AnnotationOptions.FillColor;
+        }
+
+        public override void ApplyShapeConfig()
+        {
+            AnnotationOptions.BorderColor = BorderColor;
+            AnnotationOptions.BorderSize = BorderSize;
+            AnnotationOptions.FillColor = FillColor;
+        }
+
+        public abstract void OnDraw(Graphics g);
     }
 }

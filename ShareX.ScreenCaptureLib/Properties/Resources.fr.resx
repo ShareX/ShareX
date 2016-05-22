@@ -209,9 +209,6 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>Arrêter</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Echap] Annuler la capture</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Espace] Capture plein écran</value>
   </data>

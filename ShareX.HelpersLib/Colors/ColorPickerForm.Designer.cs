@@ -384,6 +384,7 @@
             // 
             // pbColorPreview
             // 
+            this.pbColorPreview.BackColor = System.Drawing.SystemColors.Window;
             this.pbColorPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbColorPreview.DrawCheckeredBackground = true;
             resources.ApplyResources(this.pbColorPreview, "pbColorPreview");
@@ -403,6 +404,12 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.nudBlue);
+            this.Controls.Add(this.nudGreen);
+            this.Controls.Add(this.nudRed);
+            this.Controls.Add(this.rbBlue);
+            this.Controls.Add(this.rbGreen);
+            this.Controls.Add(this.rbRed);
             this.Controls.Add(this.pbColorPreview);
             this.Controls.Add(this.lblAlpha);
             this.Controls.Add(this.nudAlpha);
@@ -430,15 +437,9 @@
             this.Controls.Add(this.lblHue);
             this.Controls.Add(this.lblBrightnessPerc);
             this.Controls.Add(this.lblSaturationPerc);
-            this.Controls.Add(this.nudBlue);
-            this.Controls.Add(this.nudGreen);
-            this.Controls.Add(this.nudRed);
             this.Controls.Add(this.nudBrightness);
             this.Controls.Add(this.nudSaturation);
             this.Controls.Add(this.nudHue);
-            this.Controls.Add(this.rbBlue);
-            this.Controls.Add(this.rbGreen);
-            this.Controls.Add(this.rbRed);
             this.Controls.Add(this.rbBrightness);
             this.Controls.Add(this.rbSaturation);
             this.Controls.Add(this.rbHue);

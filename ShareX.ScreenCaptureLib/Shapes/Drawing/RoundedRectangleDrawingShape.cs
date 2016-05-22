@@ -33,13 +33,25 @@ using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RoundedRectangleDrawingShape : BaseDrawingShape, IRoundedRectangleShape
+    public class RoundedRectangleDrawingShape : BaseDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingRoundedRectangle;
 
         public float Radius { get; set; }
 
-        public override void Draw(Graphics g)
+        public override void UpdateShapeConfig()
+        {
+            base.UpdateShapeConfig();
+            Radius = AnnotationOptions.RoundedRectangleRadius;
+        }
+
+        public override void ApplyShapeConfig()
+        {
+            base.ApplyShapeConfig();
+            AnnotationOptions.RoundedRectangleRadius = (int)Radius;
+        }
+
+        public override void OnDraw(Graphics g)
         {
             Brush brush = null;
             Pen pen = null;
@@ -51,7 +63,7 @@ namespace ShareX.ScreenCaptureLib
                     brush = new SolidBrush(FillColor);
                 }
 
-                if (BorderColor.A > 0 && BorderSize > 0)
+                if (BorderSize > 0 && BorderColor.A > 0)
                 {
                     pen = new Pen(BorderColor, BorderSize);
                 }

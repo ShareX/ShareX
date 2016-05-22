@@ -32,15 +32,27 @@ using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class ArrowDrawingShape : LineDrawingShape
+    public class ArrowDrawingShape : BaseDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingArrow;
+        public override NodeType NodeType { get; } = NodeType.Line;
 
-        public override Pen CreatePen()
+        public override void OnDraw(Graphics g)
         {
-            Pen pen = base.CreatePen();
-            pen.CustomEndCap = new AdjustableArrowCap(4, 6);
-            return pen;
+            if (BorderSize > 0 && BorderColor.A > 0)
+            {
+                g.SmoothingMode = SmoothingMode.HighQuality;
+
+                using (Pen pen = new Pen(BorderColor, BorderSize))
+                using (AdjustableArrowCap arrowCap = new AdjustableArrowCap(4, 6))
+                {
+                    pen.CustomEndCap = arrowCap;
+
+                    g.DrawLine(pen, StartPosition, EndPosition);
+                }
+
+                g.SmoothingMode = SmoothingMode.None;
+            }
         }
     }
 }

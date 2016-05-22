@@ -61,6 +61,7 @@ namespace ShareX.ScreenCaptureLib
         public SimpleWindowInfo SelectedWindow { get; private set; }
 
         private ColorBlinkAnimation colorBlinkAnimation = new ColorBlinkAnimation();
+        private TextAnimation shapeTypeTextAnimation = new TextAnimation(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.5));
         private Bitmap bmpBackgroundImage;
 
         public RectangleRegionForm(RectangleRegionMode mode)
@@ -69,6 +70,11 @@ namespace ShareX.ScreenCaptureLib
 
             KeyDown += RectangleRegion_KeyDown;
             MouseDown += RectangleRegion_MouseDown;
+        }
+
+        private void ShapeManager_CurrentShapeTypeChanged(ShapeType shapeType)
+        {
+            shapeTypeTextAnimation.Start(shapeType.GetLocalizedDescription());
         }
 
         private void RectangleRegion_MouseDown(object sender, MouseEventArgs e)
@@ -125,6 +131,11 @@ namespace ShareX.ScreenCaptureLib
                 ShapeManager = new ShapeManager(this);
                 ShapeManager.WindowCaptureMode = Config.DetectWindows;
                 ShapeManager.IncludeControls = Config.DetectControls;
+
+                if (Mode == RectangleRegionMode.Annotation)
+                {
+                    ShapeManager.CurrentShapeTypeChanged += ShapeManager_CurrentShapeTypeChanged;
+                }
 
                 if (Mode == RectangleRegionMode.OneClick || ShapeManager.WindowCaptureMode)
                 {
@@ -197,13 +208,13 @@ namespace ShareX.ScreenCaptureLib
             // Draw effect shapes
             foreach (BaseEffectShape effectShape in ShapeManager.EffectShapes)
             {
-                effectShape.Draw(g);
+                effectShape.OnDraw(g);
             }
 
             // Draw drawing shapes
             foreach (BaseDrawingShape drawingShape in ShapeManager.DrawingShapes)
             {
-                drawingShape.Draw(g);
+                drawingShape.OnDraw(g);
             }
 
             // Draw animated rectangle on hover area
@@ -211,7 +222,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
                 {
-                    ShapeManager.CreateRegionShape(ShapeManager.CurrentHoverRectangle).AddShapePath(hoverDrawPath, -1);
+                    ShapeManager.CreateShape(ShapeManager.CurrentHoverRectangle).AddShapePath(hoverDrawPath, -1);
 
                     g.DrawPath(borderPen, hoverDrawPath);
                     g.DrawPath(borderDotPen, hoverDrawPath);
@@ -242,7 +253,7 @@ namespace ShareX.ScreenCaptureLib
                 // Add hover area to list so rectangle info can be shown
                 if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentHoverAreaValid && areas.All(area => area.Rectangle != ShapeManager.CurrentHoverRectangle))
                 {
-                    BaseShape shape = ShapeManager.CreateRegionShape(ShapeManager.CurrentHoverRectangle);
+                    BaseShape shape = ShapeManager.CreateShape(ShapeManager.CurrentHoverRectangle);
                     areas.Add(shape);
                 }
 
@@ -265,10 +276,18 @@ namespace ShareX.ScreenCaptureLib
                 DrawTips(g);
             }
 
-            // Draw right click menu tip
-            if (Mode == RectangleRegionMode.Annotation && Config.ShowMenuTip)
+            if (Mode == RectangleRegionMode.Annotation)
             {
-                DrawMenuTip(g);
+                if (Config.ShowMenuTip)
+                {
+                    // Draw right click menu tip
+                    DrawMenuTip(g);
+                }
+                else
+                {
+                    // If current shape changed then draw it temporary
+                    DrawCurrentShapeText(g);
+                }
             }
 
             // Draw magnifier
@@ -286,11 +305,17 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
         {
-            g.FillRectangle(textBackgroundBrush, rect.Offset(-2));
-            g.DrawRectangleProper(textBackgroundPenBlack, rect.Offset(-1));
-            g.DrawRectangleProper(textBackgroundPenWhite, rect);
+            DrawInfoText(g, text, rect, font, padding, textBackgroundBrush, textBackgroundPenWhite, textBackgroundPenBlack, Brushes.White, Brushes.Black);
+        }
 
-            ImageHelpers.DrawTextWithShadow(g, text, rect.Offset(-padding).Location, font, Brushes.White, Brushes.Black);
+        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding,
+            Brush backgroundBrush, Pen outerBorderPen, Pen innerBorderPen, Brush textBrush, Brush textShadowBrush)
+        {
+            g.FillRectangle(backgroundBrush, rect.Offset(-2));
+            g.DrawRectangleProper(innerBorderPen, rect.Offset(-1));
+            g.DrawRectangleProper(outerBorderPen, rect);
+
+            ImageHelpers.DrawTextWithShadow(g, text, rect.Offset(-padding).Location, font, textBrush, textShadowBrush);
         }
 
         private void DrawAreaText(Graphics g, string text, Rectangle area)
@@ -341,18 +366,40 @@ namespace ShareX.ScreenCaptureLib
             DrawInfoText(g, tipText, textRectangle, infoFont, padding);
         }
 
-        private void DrawMenuTip(Graphics g)
+        private void DrawTopCenterTip(Graphics g, string text, double opacity = 1)
         {
-            // TODO: Translate
-            string tipText = "Tip: Right click to open options menu";
-            Size textSize = g.MeasureString(tipText, infoFontMedium).ToSize();
+            Size textSize = g.MeasureString(text, infoFontMedium).ToSize();
             int offset = 10;
             int padding = 3;
             int rectWidth = textSize.Width + padding * 2;
             int rectHeight = textSize.Height + padding * 2;
             Rectangle screenBounds = CaptureHelpers.GetActiveScreenBounds0Based();
             Rectangle textRectangle = new Rectangle(screenBounds.X + (screenBounds.Width / 2) - (rectWidth / 2), screenBounds.Y + offset, rectWidth, rectHeight);
-            DrawInfoText(g, tipText, textRectangle, infoFontMedium, padding);
+
+            using (Brush backgroundBrush = new SolidBrush(Color.FromArgb((int)(opacity * 75), Color.Black)))
+            using (Pen outerBorderPen = new Pen(Color.FromArgb((int)(opacity * 50), Color.White)))
+            using (Pen innerBorderPen = new Pen(Color.FromArgb((int)(opacity * 150), Color.Black)))
+            using (Brush textBrush = new SolidBrush(Color.FromArgb((int)(opacity * 255), Color.White)))
+            using (Brush textShadowBrush = new SolidBrush(Color.FromArgb((int)(opacity * 255), Color.Black)))
+            {
+                DrawInfoText(g, text, textRectangle, infoFontMedium, padding, backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
+            }
+        }
+
+        private void DrawMenuTip(Graphics g)
+        {
+            // TODO: Translate
+            DrawTopCenterTip(g, "Tip: Right click to open options menu");
+        }
+
+        private void DrawCurrentShapeText(Graphics g)
+        {
+            shapeTypeTextAnimation.Update();
+
+            if (shapeTypeTextAnimation.Active)
+            {
+                DrawTopCenterTip(g, shapeTypeTextAnimation.Text, shapeTypeTextAnimation.Opacity);
+            }
         }
 
         protected virtual void WriteTips(StringBuilder sb)
@@ -364,15 +411,20 @@ namespace ShareX.ScreenCaptureLib
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Insert__Stop_region_selection);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click__Cancel_region_selection);
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
             }
             else
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection);
-                // TODO: Translate
-                sb.AppendLine("[Right click] Open options menu");
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture);
+
+                if (Mode == RectangleRegionMode.Annotation)
+                {
+                    // TODO: Translate
+                    sb.AppendLine("[Right click] Open options menu");
+                }
             }
+
+            // TODO: Also right click when non annotation mode
+            sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
 
             if (!Config.QuickCrop && ShapeManager.Regions.Length > 0)
             {
@@ -417,7 +469,8 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position);
             }
 
-            // TODO: CTRL + Mouse wheel magnifier pixel size
+            // TODO: Translate
+            sb.AppendLine("[Ctrl + Mouse wheel] Change magnifier size");
 
             sb.AppendLine();
 
@@ -445,12 +498,14 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(string.Format("[{0}] {1}", "Numpad 4", ShapeType.DrawingLine.GetLocalizedDescription()));
             if (ShapeManager.CurrentShapeType == ShapeType.DrawingArrow) sb.Append("-> ");
             sb.AppendLine(string.Format("[{0}] {1}", "Numpad 5", ShapeType.DrawingArrow.GetLocalizedDescription()));
+            if (ShapeManager.CurrentShapeType == ShapeType.DrawingText) sb.Append("-> ");
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6", ShapeType.DrawingText.GetLocalizedDescription()));
             if (ShapeManager.CurrentShapeType == ShapeType.DrawingBlur) sb.Append("-> ");
-            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6", ShapeType.DrawingBlur.GetLocalizedDescription()));
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 7", ShapeType.DrawingBlur.GetLocalizedDescription()));
             if (ShapeManager.CurrentShapeType == ShapeType.DrawingPixelate) sb.Append("-> ");
-            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 7", ShapeType.DrawingPixelate.GetLocalizedDescription()));
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8", ShapeType.DrawingPixelate.GetLocalizedDescription()));
             if (ShapeManager.CurrentShapeType == ShapeType.DrawingHighlight) sb.Append("-> ");
-            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8", ShapeType.DrawingHighlight.GetLocalizedDescription()));
+            sb.AppendLine(string.Format("[{0}] {1}", "Numpad 9", ShapeType.DrawingHighlight.GetLocalizedDescription()));
         }
 
         private string GetAreaText(Rectangle area)

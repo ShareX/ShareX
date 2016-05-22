@@ -37,13 +37,13 @@
             this.lvAfterCaptureTasks = new ShareX.HelpersLib.MyListView();
             this.chAfterCapture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpBeforeUpload = new System.Windows.Forms.TabPage();
-            this.ucBeforeUpload = new ShareX.BeforeUploadControl();
             this.tpAfterUpload = new System.Windows.Forms.TabPage();
             this.lvAfterUploadTasks = new ShareX.HelpersLib.MyListView();
             this.chAfterUpload = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblFileName = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.pbImage = new ShareX.HelpersLib.MyPictureBox();
+            this.ucBeforeUpload = new ShareX.BeforeUploadControl();
             this.tcTasks.SuspendLayout();
             this.tpAfterCapture.SuspendLayout();
             this.tpBeforeUpload.SuspendLayout();
@@ -100,7 +100,6 @@
             this.lvAfterCaptureTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvAfterCaptureTasks.MultiSelect = false;
             this.lvAfterCaptureTasks.Name = "lvAfterCaptureTasks";
-            this.lvAfterCaptureTasks.Scrollable = false;
             this.lvAfterCaptureTasks.UseCompatibleStateImageBehavior = false;
             this.lvAfterCaptureTasks.View = System.Windows.Forms.View.Details;
             this.lvAfterCaptureTasks.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvAfterCaptureTasks_ItemSelectionChanged);
@@ -112,11 +111,6 @@
             resources.ApplyResources(this.tpBeforeUpload, "tpBeforeUpload");
             this.tpBeforeUpload.Name = "tpBeforeUpload";
             this.tpBeforeUpload.UseVisualStyleBackColor = true;
-            // 
-            // ucBeforeUpload
-            // 
-            resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
-            this.ucBeforeUpload.Name = "ucBeforeUpload";
             // 
             // tpAfterUpload
             // 
@@ -136,7 +130,6 @@
             this.lvAfterUploadTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvAfterUploadTasks.MultiSelect = false;
             this.lvAfterUploadTasks.Name = "lvAfterUploadTasks";
-            this.lvAfterUploadTasks.Scrollable = false;
             this.lvAfterUploadTasks.UseCompatibleStateImageBehavior = false;
             this.lvAfterUploadTasks.View = System.Windows.Forms.View.Details;
             this.lvAfterUploadTasks.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvAfterUploadTasks_ItemSelectionChanged);
@@ -155,6 +148,7 @@
             // pbImage
             // 
             resources.ApplyResources(this.pbImage, "pbImage");
+            this.pbImage.BackColor = System.Drawing.SystemColors.Window;
             this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbImage.Cursor = System.Windows.Forms.Cursors.Default;
             this.pbImage.DrawCheckeredBackground = true;
@@ -162,6 +156,11 @@
             this.pbImage.FullscreenOnClick = true;
             this.pbImage.Name = "pbImage";
             this.pbImage.ShowImageSizeLabel = true;
+            // 
+            // ucBeforeUpload
+            // 
+            resources.ApplyResources(this.ucBeforeUpload, "ucBeforeUpload");
+            this.ucBeforeUpload.Name = "ucBeforeUpload";
             // 
             // AfterCaptureForm
             // 

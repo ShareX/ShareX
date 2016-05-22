@@ -453,6 +453,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                 for (int i = 0; i < enums.Length; i++)
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
+                    tsmi.Image = TaskHelpers.FindMenuIcon<T>(i + 1);
 
                     int index = i;
 
@@ -1319,9 +1320,33 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     uim.DeleteFiles();
                     RemoveSelectedItems();
                     break;
+                case Keys.Apps:
+                    if (lvUploads.SelectedItems.Count > 0)
+                    {
+                        UpdateContextMenu();
+                        Rectangle rect = lvUploads.GetItemRect(lvUploads.SelectedIndex);
+                        cmsTaskInfo.Show(lvUploads, new Point(rect.X, rect.Bottom));
+                    }
+                    break;
             }
 
             e.Handled = e.SuppressKeyPress = true;
+        }
+
+        private void cmsTaskInfo_Closing(object sender, ToolStripDropDownClosingEventArgs e)
+        {
+            if (e.CloseReason == ToolStripDropDownCloseReason.Keyboard)
+            {
+                e.Cancel = !(NativeMethods.GetKeyState((int)Keys.Apps) < 0 || NativeMethods.GetKeyState((int)Keys.F10) < 0 || NativeMethods.GetKeyState((int)Keys.Escape) < 0);
+            }
+        }
+
+        private void cmsTaskInfo_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Apps)
+            {
+                cmsTaskInfo.Close();
+            }
         }
 
         private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)

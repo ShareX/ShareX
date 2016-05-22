@@ -200,9 +200,6 @@
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
     <value>[按住Alt键]重置捕捉选择区域至预设大小</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Right_click___Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc]取消捕捉</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
     <value>[左键双击] [Enter]捕捉区域</value>
   </data>

@@ -37,6 +37,16 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle Rectangle { get; set; }
 
+        public ShapeManager Manager { get; set; }
+
+        protected AnnotationOptions AnnotationOptions
+        {
+            get
+            {
+                return Manager.Config.AnnotationOptions;
+            }
+        }
+
         private Point startPosition;
 
         public Point StartPosition
@@ -69,15 +79,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public BaseShape()
-        {
-        }
-
-        public BaseShape(Rectangle rect)
-        {
-            Rectangle = rect;
-        }
-
         public virtual void AddShapePath(GraphicsPath gp, Rectangle rect)
         {
             gp.AddRectangle(rect);
@@ -92,6 +93,22 @@ namespace ShareX.ScreenCaptureLib
         {
             Rectangle rect = Rectangle.SizeOffset(sizeOffset);
             AddShapePath(gp, rect);
+        }
+
+        public virtual void UpdateShapeConfig()
+        {
+        }
+
+        public virtual void ApplyShapeConfig()
+        {
+        }
+
+        public virtual void OnShapeCreated()
+        {
+        }
+
+        public virtual void OnShapeDoubleClicked()
+        {
         }
     }
 }

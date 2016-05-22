@@ -40,29 +40,41 @@ namespace ShareX.ScreenCaptureLib
 
         public Color HighlightColor { get; set; }
 
-        public override void Draw(Graphics g)
+        public override void UpdateShapeConfig()
         {
-            using (Brush brush = new SolidBrush(Color.FromArgb(150, HighlightColor)))
+            HighlightColor = AnnotationOptions.HighlightColor;
+        }
+
+        public override void ApplyShapeConfig()
+        {
+            AnnotationOptions.HighlightColor = HighlightColor;
+        }
+
+        public override void OnDraw(Graphics g)
+        {
+            using (Brush brush = new SolidBrush(Color.FromArgb(100, HighlightColor)))
             {
                 g.FillRectangle(brush, Rectangle);
             }
 
-            using (Pen pen = new Pen(Color.FromArgb(200, Color.Black)))
-            {
-                g.DrawCornerLines(Rectangle, pen, 20);
-            }
+            g.DrawCornerLines(Rectangle.Offset(1), Pens.Black, 20);
 
-            if (Rectangle.Width > 10 && Rectangle.Height > 10)
+            using (Font font = new Font("Verdana", 12))
             {
-                using (Font font = new Font("Verdana", 14))
-                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                string text = "Highlight";
+                Size textSize = g.MeasureString(text, font).ToSize();
+
+                if (Rectangle.Width > textSize.Width && Rectangle.Height > textSize.Height)
                 {
-                    g.DrawString("Highlight", font, Brushes.Black, Rectangle, sf);
+                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    {
+                        g.DrawString(text, font, Brushes.Black, Rectangle, sf);
+                    }
                 }
             }
         }
 
-        public override void DrawFinal(Graphics g, Bitmap bmp)
+        public override void OnDrawFinal(Graphics g, Bitmap bmp)
         {
             using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
             {

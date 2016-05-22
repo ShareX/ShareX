@@ -43,6 +43,7 @@ namespace ShareX.ScreenCaptureLib
             nodes = new List<NodeObject>();
 
             MouseDown += PolygonRegionForm_MouseDown;
+            MouseDoubleClick += PolygonRegionForm_MouseDoubleClick;
         }
 
         private void PolygonRegionForm_MouseDown(object sender, MouseEventArgs e)
@@ -85,6 +86,14 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Close(RegionResult.Close);
                 }
+            }
+        }
+
+        private void PolygonRegionForm_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Close(RegionResult.Region);
             }
         }
 

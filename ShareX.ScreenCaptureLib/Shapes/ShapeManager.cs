@@ -48,6 +48,12 @@ namespace ShareX.ScreenCaptureLib
             private set
             {
                 currentShape = value;
+
+                if (currentShape != null)
+                {
+                    currentShape.ApplyShapeConfig();
+                }
+
                 OnCurrentShapeChanged(currentShape);
             }
         }
@@ -63,7 +69,6 @@ namespace ShareX.ScreenCaptureLib
             private set
             {
                 currentShapeType = value;
-                config.CurrentShapeType = currentShapeType;
                 DeselectShape();
                 OnCurrentShapeTypeChanged(currentShapeType);
             }
@@ -163,25 +168,35 @@ namespace ShareX.ScreenCaptureLib
         public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; } = 3;
 
+        public SurfaceOptions Config { get; private set; }
+
+        public AnnotationOptions AnnotationOptions
+        {
+            get
+            {
+                return Config.AnnotationOptions;
+            }
+        }
+
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
         private RectangleRegionForm form;
-        private SurfaceOptions config;
         private ContextMenuStrip cmsContextMenu;
 
         public ShapeManager(RectangleRegionForm form)
         {
             this.form = form;
-            config = form.Config;
+            Config = form.Config;
 
             ResizeManager = new ResizeManager(form, this);
 
             form.MouseDown += form_MouseDown;
             form.MouseUp += form_MouseUp;
+            form.MouseDoubleClick += form_MouseDoubleClick;
+            form.MouseWheel += form_MouseWheel;
             form.KeyDown += form_KeyDown;
             form.KeyUp += form_KeyUp;
-            form.MouseWheel += form_MouseWheel;
 
             if (form.Mode == RectangleRegionMode.Annotation)
             {
@@ -189,12 +204,18 @@ namespace ShareX.ScreenCaptureLib
             }
 
             CurrentShape = null;
-            CurrentShapeType = ShapeType.RegionRectangle; //config.CurrentShapeType;
+            CurrentShapeType = ShapeType.RegionRectangle;
         }
+
+        private ToolStripSeparator tssObjectOptions, tssShapeOptions;
+        private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor;
+        private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudRoundedRectangleRadius, tslnudBlurRadius, tslnudPixelateSize;
 
         private void CreateContextMenu()
         {
             cmsContextMenu = new ContextMenuStrip(form.components);
+
+            #region Main
 
             ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem("Cancel capture");
             tsmiCancelCapture.Image = Resources.prohibition;
@@ -206,18 +227,26 @@ namespace ShareX.ScreenCaptureLib
             tsmiCloseMenu.Click += (sender, e) => cmsContextMenu.Close();
             cmsContextMenu.Items.Add(tsmiCloseMenu);
 
-            ToolStripSeparator tssObjectOptions = new ToolStripSeparator();
+            #endregion Main
+
+            #region Selected object
+
+            tssObjectOptions = new ToolStripSeparator();
             cmsContextMenu.Items.Add(tssObjectOptions);
 
-            ToolStripMenuItem tsmiDeleteSelected = new ToolStripMenuItem("Delete selected object");
+            tsmiDeleteSelected = new ToolStripMenuItem("Delete selected object");
             tsmiDeleteSelected.Image = Resources.layer__minus;
             tsmiDeleteSelected.Click += (sender, e) => DeleteSelectedShape();
             cmsContextMenu.Items.Add(tsmiDeleteSelected);
 
-            ToolStripMenuItem tsmiDeleteAll = new ToolStripMenuItem("Delete all objects");
+            tsmiDeleteAll = new ToolStripMenuItem("Delete all objects");
             tsmiDeleteAll.Image = Resources.minus;
             tsmiDeleteAll.Click += (sender, e) => ClearAll();
             cmsContextMenu.Items.Add(tsmiDeleteAll);
+
+            #endregion Selected object
+
+            #region Tools
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
@@ -253,6 +282,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingArrow:
                         img = Resources.layer_shape_arrow;
                         break;
+                    case ShapeType.DrawingText:
+                        img = Resources.layer_shape_text;
+                        break;
                     case ShapeType.DrawingBlur:
                         img = Resources.layer_shade;
                         break;
@@ -276,120 +308,172 @@ namespace ShareX.ScreenCaptureLib
                 cmsContextMenu.Items.Add(tsmiShapeType);
             }
 
-            ToolStripSeparator tssShapeOptions = new ToolStripSeparator();
+            #endregion Tools
+
+            #region Shape options
+
+            tssShapeOptions = new ToolStripSeparator();
             cmsContextMenu.Items.Add(tssShapeOptions);
 
-            ToolStripMenuItem tsmiBorderColor = new ToolStripMenuItem("Border color...");
+            tsmiBorderColor = new ToolStripMenuItem("Border color...");
             tsmiBorderColor.Click += (sender, e) =>
             {
-                form.Pause();
+                PauseForm();
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeBorderColor))
+                ShapeType shapeType = CurrentShapeType;
+
+                Color borderColor;
+
+                if (shapeType == ShapeType.DrawingText)
+                {
+                    borderColor = AnnotationOptions.TextBorderColor;
+                }
+                else
+                {
+                    borderColor = AnnotationOptions.BorderColor;
+                }
+
+                using (ColorPickerForm dialogColor = new ColorPickerForm(borderColor))
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        config.ShapeBorderColor = dialogColor.NewColor;
-                        if (tsmiBorderColor.Image != null) tsmiBorderColor.Image.Dispose();
-                        tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
+                        if (shapeType == ShapeType.DrawingText)
+                        {
+                            AnnotationOptions.TextBorderColor = dialogColor.NewColor;
+                        }
+                        else
+                        {
+                            AnnotationOptions.BorderColor = dialogColor.NewColor;
+                        }
+
+                        UpdateContextMenu();
                         UpdateCurrentShape();
                     }
                 }
 
-                form.Resume();
+                ResumeForm();
             };
-            tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeBorderColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiBorderColor);
 
-            ToolStripLabeledNumericUpDown tslnudBorderSize = new ToolStripLabeledNumericUpDown();
+            tslnudBorderSize = new ToolStripLabeledNumericUpDown();
             tslnudBorderSize.LabeledNumericUpDownControl.Text = "Border size:";
-            tslnudBorderSize.LabeledNumericUpDownControl.Minimum = 1;
+            tslnudBorderSize.LabeledNumericUpDownControl.Minimum = 0;
             tslnudBorderSize.LabeledNumericUpDownControl.Maximum = 20;
-            tslnudBorderSize.LabeledNumericUpDownControl.Value = config.ShapeBorderSize;
             tslnudBorderSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
-                config.ShapeBorderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
+                ShapeType shapeType = CurrentShapeType;
+
+                int borderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
+
+                if (shapeType == ShapeType.DrawingText)
+                {
+                    AnnotationOptions.TextBorderSize = borderSize;
+                }
+                else
+                {
+                    AnnotationOptions.BorderSize = borderSize;
+                }
+
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudBorderSize);
 
-            ToolStripMenuItem tsmiFillColor = new ToolStripMenuItem("Fill color...");
+            tsmiFillColor = new ToolStripMenuItem("Fill color...");
             tsmiFillColor.Click += (sender, e) =>
             {
-                form.Pause();
+                PauseForm();
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeFillColor))
+                ShapeType shapeType = CurrentShapeType;
+
+                Color fillColor;
+
+                if (shapeType == ShapeType.DrawingText)
+                {
+                    fillColor = AnnotationOptions.TextFillColor;
+                }
+                else
+                {
+                    fillColor = AnnotationOptions.FillColor;
+                }
+
+                using (ColorPickerForm dialogColor = new ColorPickerForm(fillColor))
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        config.ShapeFillColor = dialogColor.NewColor;
-                        if (tsmiFillColor.Image != null) tsmiFillColor.Image.Dispose();
-                        tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
+                        if (shapeType == ShapeType.DrawingText)
+                        {
+                            AnnotationOptions.TextFillColor = dialogColor.NewColor;
+                        }
+                        else
+                        {
+                            AnnotationOptions.FillColor = dialogColor.NewColor;
+                        }
+
+                        UpdateContextMenu();
                         UpdateCurrentShape();
                     }
                 }
 
-                form.Resume();
+                ResumeForm();
             };
-            tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeFillColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiFillColor);
 
-            ToolStripLabeledNumericUpDown tslnudRoundedRectangleRadius = new ToolStripLabeledNumericUpDown();
+            tslnudRoundedRectangleRadius = new ToolStripLabeledNumericUpDown();
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Text = "Corner radius:";
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Minimum = 0;
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Maximum = 150;
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Increment = 3;
-            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value = config.ShapeRoundedRectangleRadius;
             tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
-                config.ShapeRoundedRectangleRadius = (int)tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value;
+                AnnotationOptions.RoundedRectangleRadius = (int)tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value;
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudRoundedRectangleRadius);
 
-            ToolStripLabeledNumericUpDown tslnudBlurRadius = new ToolStripLabeledNumericUpDown();
+            tslnudBlurRadius = new ToolStripLabeledNumericUpDown();
             tslnudBlurRadius.LabeledNumericUpDownControl.Text = "Blur radius:";
             tslnudBlurRadius.LabeledNumericUpDownControl.Minimum = 2;
             tslnudBlurRadius.LabeledNumericUpDownControl.Maximum = 100;
-            tslnudBlurRadius.LabeledNumericUpDownControl.Value = config.ShapeBlurRadius;
             tslnudBlurRadius.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
-                config.ShapeBlurRadius = (int)tslnudBlurRadius.LabeledNumericUpDownControl.Value;
+                AnnotationOptions.BlurRadius = (int)tslnudBlurRadius.LabeledNumericUpDownControl.Value;
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudBlurRadius);
 
-            ToolStripLabeledNumericUpDown tslnudPixelateSize = new ToolStripLabeledNumericUpDown();
+            tslnudPixelateSize = new ToolStripLabeledNumericUpDown();
             tslnudPixelateSize.LabeledNumericUpDownControl.Text = "Pixel size:";
             tslnudPixelateSize.LabeledNumericUpDownControl.Minimum = 2;
             tslnudPixelateSize.LabeledNumericUpDownControl.Maximum = 100;
-            tslnudPixelateSize.LabeledNumericUpDownControl.Value = config.ShapeRoundedRectangleRadius;
             tslnudPixelateSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
             {
-                config.ShapePixelateSize = (int)tslnudPixelateSize.LabeledNumericUpDownControl.Value;
+                AnnotationOptions.PixelateSize = (int)tslnudPixelateSize.LabeledNumericUpDownControl.Value;
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudPixelateSize);
 
-            ToolStripMenuItem tsmiHighlightColor = new ToolStripMenuItem("Highlight color...");
+            tsmiHighlightColor = new ToolStripMenuItem("Highlight color...");
             tsmiHighlightColor.Click += (sender, e) =>
             {
-                form.Pause();
+                PauseForm();
 
-                using (ColorPickerForm dialogColor = new ColorPickerForm(config.ShapeHighlightColor))
+                using (ColorPickerForm dialogColor = new ColorPickerForm(AnnotationOptions.HighlightColor))
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        config.ShapeHighlightColor = dialogColor.NewColor;
-                        if (tsmiHighlightColor.Image != null) tsmiHighlightColor.Image.Dispose();
-                        tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeHighlightColor, new Rectangle(0, 0, 16, 16));
+                        AnnotationOptions.HighlightColor = dialogColor.NewColor;
+                        UpdateContextMenu();
                         UpdateCurrentShape();
                     }
                 }
 
-                form.Resume();
+                ResumeForm();
             };
-            tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(config.ShapeHighlightColor, new Rectangle(0, 0, 16, 16));
             cmsContextMenu.Items.Add(tsmiHighlightColor);
+
+            #endregion Shape options
+
+            #region Capture
 
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
@@ -425,6 +509,10 @@ namespace ShareX.ScreenCaptureLib
                 tsmiMonitorCapture.DropDownItems.Add(tsmi);
             }
 
+            #endregion Capture
+
+            #region Options
+
             cmsContextMenu.Items.Add(new ToolStripSeparator());
 
             ToolStripMenuItem tsmiOptions = new ToolStripMenuItem("Options");
@@ -432,27 +520,27 @@ namespace ShareX.ScreenCaptureLib
             cmsContextMenu.Items.Add(tsmiOptions);
 
             ToolStripMenuItem tsmiQuickCrop = new ToolStripMenuItem("Multi region mode");
-            tsmiQuickCrop.Checked = !config.QuickCrop;
+            tsmiQuickCrop.Checked = !Config.QuickCrop;
             tsmiQuickCrop.CheckOnClick = true;
-            tsmiQuickCrop.Click += (sender, e) => config.QuickCrop = !tsmiQuickCrop.Checked;
+            tsmiQuickCrop.Click += (sender, e) => Config.QuickCrop = !tsmiQuickCrop.Checked;
             tsmiOptions.DropDownItems.Add(tsmiQuickCrop);
 
             ToolStripMenuItem tsmiShowInfo = new ToolStripMenuItem("Show position and size info");
-            tsmiShowInfo.Checked = config.ShowInfo;
+            tsmiShowInfo.Checked = Config.ShowInfo;
             tsmiShowInfo.CheckOnClick = true;
-            tsmiShowInfo.Click += (sender, e) => config.ShowInfo = tsmiShowInfo.Checked;
+            tsmiShowInfo.Click += (sender, e) => Config.ShowInfo = tsmiShowInfo.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowInfo);
 
             ToolStripMenuItem tsmiShowMagnifier = new ToolStripMenuItem("Show magnifier");
-            tsmiShowMagnifier.Checked = config.ShowMagnifier;
+            tsmiShowMagnifier.Checked = Config.ShowMagnifier;
             tsmiShowMagnifier.CheckOnClick = true;
-            tsmiShowMagnifier.Click += (sender, e) => config.ShowMagnifier = tsmiShowMagnifier.Checked;
+            tsmiShowMagnifier.Click += (sender, e) => Config.ShowMagnifier = tsmiShowMagnifier.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowMagnifier);
 
             ToolStripMenuItem tsmiUseSquareMagnifier = new ToolStripMenuItem("Square shape magnifier");
-            tsmiUseSquareMagnifier.Checked = config.UseSquareMagnifier;
+            tsmiUseSquareMagnifier.Checked = Config.UseSquareMagnifier;
             tsmiUseSquareMagnifier.CheckOnClick = true;
-            tsmiUseSquareMagnifier.Click += (sender, e) => config.UseSquareMagnifier = tsmiUseSquareMagnifier.Checked;
+            tsmiUseSquareMagnifier.Click += (sender, e) => Config.UseSquareMagnifier = tsmiUseSquareMagnifier.Checked;
             tsmiOptions.DropDownItems.Add(tsmiUseSquareMagnifier);
 
             ToolStripLabeledNumericUpDown tslnudMagnifierPixelCount = new ToolStripLabeledNumericUpDown();
@@ -460,98 +548,156 @@ namespace ShareX.ScreenCaptureLib
             tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Minimum = 1;
             tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Maximum = 35;
             tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Increment = 2;
-            tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Value = config.MagnifierPixelCount;
-            tslnudMagnifierPixelCount.LabeledNumericUpDownControl.ValueChanged = (sender, e) => config.MagnifierPixelCount = (int)tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Value;
+            tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Value = Config.MagnifierPixelCount;
+            tslnudMagnifierPixelCount.LabeledNumericUpDownControl.ValueChanged = (sender, e) => Config.MagnifierPixelCount = (int)tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Value;
             tsmiOptions.DropDownItems.Add(tslnudMagnifierPixelCount);
 
             ToolStripLabeledNumericUpDown tslnudMagnifierPixelSize = new ToolStripLabeledNumericUpDown();
             tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Text = "Magnifier pixel size:";
             tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Minimum = 2;
             tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Maximum = 30;
-            tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Value = config.MagnifierPixelSize;
-            tslnudMagnifierPixelSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) => config.MagnifierPixelSize = (int)tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Value;
+            tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Value = Config.MagnifierPixelSize;
+            tslnudMagnifierPixelSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) => Config.MagnifierPixelSize = (int)tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Value;
             tsmiOptions.DropDownItems.Add(tslnudMagnifierPixelSize);
 
             ToolStripMenuItem tsmiShowCrosshair = new ToolStripMenuItem("Show screen wide crosshair");
-            tsmiShowCrosshair.Checked = config.ShowCrosshair;
+            tsmiShowCrosshair.Checked = Config.ShowCrosshair;
             tsmiShowCrosshair.CheckOnClick = true;
-            tsmiShowCrosshair.Click += (sender, e) => config.ShowCrosshair = tsmiShowCrosshair.Checked;
+            tsmiShowCrosshair.Click += (sender, e) => Config.ShowCrosshair = tsmiShowCrosshair.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowCrosshair);
 
             ToolStripMenuItem tsmiShowFPS = new ToolStripMenuItem("Show FPS");
-            tsmiShowFPS.Checked = config.ShowFPS;
+            tsmiShowFPS.Checked = Config.ShowFPS;
             tsmiShowFPS.CheckOnClick = true;
-            tsmiShowFPS.Click += (sender, e) => config.ShowFPS = tsmiShowFPS.Checked;
+            tsmiShowFPS.Click += (sender, e) => Config.ShowFPS = tsmiShowFPS.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowFPS);
 
-            CurrentShapeChanged += shape =>
+            #endregion Options
+
+            CurrentShapeTypeChanged += shapeType => UpdateContextMenu();
+
+            CurrentShapeChanged += shape => UpdateContextMenu();
+        }
+
+        private void UpdateContextMenu()
+        {
+            ShapeType shapeType = CurrentShapeType;
+
+            tssObjectOptions.Visible = tsmiDeleteAll.Visible = Shapes.Count > 0;
+            tsmiDeleteSelected.Visible = CurrentShape != null;
+
+            foreach (ToolStripMenuItem tsmi in cmsContextMenu.Items.OfType<ToolStripMenuItem>().Where(x => x.Tag is ShapeType))
             {
-                tssObjectOptions.Visible = tsmiDeleteAll.Visible = Shapes.Count > 0;
-                tsmiDeleteSelected.Visible = shape != null;
-            };
+                if ((ShapeType)tsmi.Tag == shapeType)
+                {
+                    tsmi.RadioCheck();
+                    break;
+                }
+            }
 
-            CurrentShapeTypeChanged += shapeType =>
+            Color borderColor;
+
+            if (shapeType == ShapeType.DrawingText)
             {
-                foreach (ToolStripMenuItem tsmi in cmsContextMenu.Items.OfType<ToolStripMenuItem>().Where(x => x.Tag is ShapeType))
-                {
-                    if ((ShapeType)tsmi.Tag == shapeType)
-                    {
-                        tsmi.RadioCheck();
-                        break;
-                    }
-                }
+                borderColor = AnnotationOptions.TextBorderColor;
+            }
+            else
+            {
+                borderColor = AnnotationOptions.BorderColor;
+            }
 
-                switch (shapeType)
-                {
-                    default:
-                        tssShapeOptions.Visible = false;
-                        break;
-                    case ShapeType.RegionRoundedRectangle:
-                    case ShapeType.DrawingRectangle:
-                    case ShapeType.DrawingRoundedRectangle:
-                    case ShapeType.DrawingEllipse:
-                    case ShapeType.DrawingLine:
-                    case ShapeType.DrawingArrow:
-                    case ShapeType.DrawingBlur:
-                    case ShapeType.DrawingPixelate:
-                    case ShapeType.DrawingHighlight:
-                        tssShapeOptions.Visible = true;
-                        break;
-                }
+            if (tsmiBorderColor.Image != null) tsmiBorderColor.Image.Dispose();
+            tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(borderColor, new Rectangle(0, 0, 16, 16));
 
-                switch (shapeType)
-                {
-                    default:
-                        tsmiBorderColor.Visible = false;
-                        tslnudBorderSize.Visible = false;
-                        break;
-                    case ShapeType.DrawingRectangle:
-                    case ShapeType.DrawingRoundedRectangle:
-                    case ShapeType.DrawingEllipse:
-                    case ShapeType.DrawingLine:
-                    case ShapeType.DrawingArrow:
-                        tsmiBorderColor.Visible = true;
-                        tslnudBorderSize.Visible = true;
-                        break;
-                }
+            int borderSize;
 
-                switch (shapeType)
-                {
-                    default:
-                        tsmiFillColor.Visible = false;
-                        break;
-                    case ShapeType.DrawingRectangle:
-                    case ShapeType.DrawingRoundedRectangle:
-                    case ShapeType.DrawingEllipse:
-                        tsmiFillColor.Visible = true;
-                        break;
-                }
+            if (shapeType == ShapeType.DrawingText)
+            {
+                borderSize = AnnotationOptions.TextBorderSize;
+            }
+            else
+            {
+                borderSize = AnnotationOptions.BorderSize;
+            }
 
-                tslnudRoundedRectangleRadius.Visible = shapeType == ShapeType.RegionRoundedRectangle || shapeType == ShapeType.DrawingRoundedRectangle;
-                tslnudBlurRadius.Visible = shapeType == ShapeType.DrawingBlur;
-                tslnudPixelateSize.Visible = shapeType == ShapeType.DrawingPixelate;
-                tsmiHighlightColor.Visible = shapeType == ShapeType.DrawingHighlight;
-            };
+            tslnudBorderSize.LabeledNumericUpDownControl.Value = borderSize;
+
+            Color fillColor;
+
+            if (shapeType == ShapeType.DrawingText)
+            {
+                fillColor = AnnotationOptions.TextFillColor;
+            }
+            else
+            {
+                fillColor = AnnotationOptions.FillColor;
+            }
+
+            if (tsmiFillColor.Image != null) tsmiFillColor.Image.Dispose();
+            tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(fillColor, new Rectangle(0, 0, 16, 16));
+
+            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value = AnnotationOptions.RoundedRectangleRadius;
+
+            tslnudBlurRadius.LabeledNumericUpDownControl.Value = AnnotationOptions.BlurRadius;
+
+            tslnudPixelateSize.LabeledNumericUpDownControl.Value = AnnotationOptions.PixelateSize;
+
+            if (tsmiHighlightColor.Image != null) tsmiHighlightColor.Image.Dispose();
+            tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
+
+            switch (shapeType)
+            {
+                default:
+                    tssShapeOptions.Visible = false;
+                    break;
+                case ShapeType.RegionRoundedRectangle:
+                case ShapeType.DrawingRectangle:
+                case ShapeType.DrawingRoundedRectangle:
+                case ShapeType.DrawingEllipse:
+                case ShapeType.DrawingLine:
+                case ShapeType.DrawingArrow:
+                case ShapeType.DrawingText:
+                case ShapeType.DrawingBlur:
+                case ShapeType.DrawingPixelate:
+                case ShapeType.DrawingHighlight:
+                    tssShapeOptions.Visible = true;
+                    break;
+            }
+
+            switch (shapeType)
+            {
+                default:
+                    tsmiBorderColor.Visible = false;
+                    tslnudBorderSize.Visible = false;
+                    break;
+                case ShapeType.DrawingRectangle:
+                case ShapeType.DrawingRoundedRectangle:
+                case ShapeType.DrawingEllipse:
+                case ShapeType.DrawingLine:
+                case ShapeType.DrawingArrow:
+                case ShapeType.DrawingText:
+                    tsmiBorderColor.Visible = true;
+                    tslnudBorderSize.Visible = true;
+                    break;
+            }
+
+            switch (shapeType)
+            {
+                default:
+                    tsmiFillColor.Visible = false;
+                    break;
+                case ShapeType.DrawingRectangle:
+                case ShapeType.DrawingRoundedRectangle:
+                case ShapeType.DrawingEllipse:
+                case ShapeType.DrawingText:
+                    tsmiFillColor.Visible = true;
+                    break;
+            }
+
+            tslnudRoundedRectangleRadius.Visible = shapeType == ShapeType.RegionRoundedRectangle || shapeType == ShapeType.DrawingRoundedRectangle;
+            tslnudBlurRadius.Visible = shapeType == ShapeType.DrawingBlur;
+            tslnudPixelateSize.Visible = shapeType == ShapeType.DrawingPixelate;
+            tsmiHighlightColor.Visible = shapeType == ShapeType.DrawingHighlight;
         }
 
         private void form_MouseDown(object sender, MouseEventArgs e)
@@ -584,7 +730,7 @@ namespace ShareX.ScreenCaptureLib
                 else if (form.Mode == RectangleRegionMode.Annotation && cmsContextMenu != null)
                 {
                     cmsContextMenu.Show(form, e.Location.Add(-10, -10));
-                    config.ShowMenuTip = false;
+                    Config.ShowMenuTip = false;
                 }
                 else if (IsAreaIntersect())
                 {
@@ -593,6 +739,53 @@ namespace ShareX.ScreenCaptureLib
                 else
                 {
                     form.Close(RegionResult.Close);
+                }
+            }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                form.Close(RegionResult.Close);
+            }
+        }
+
+        private void form_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (IsCurrentShapeTypeRegion)
+                {
+                    form.Close(RegionResult.Region);
+                }
+                else if (CurrentShape != null)
+                {
+                    EndRegionSelection();
+
+                    CurrentShape.OnShapeDoubleClicked();
+                }
+            }
+        }
+
+        private void form_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (Control.ModifierKeys.HasFlag(Keys.Control))
+            {
+                if (e.Delta > 0)
+                {
+                    if (Config.MagnifierPixelCount < 41) Config.MagnifierPixelCount += 2;
+                }
+                else if (e.Delta < 0)
+                {
+                    if (Config.MagnifierPixelCount > 2) Config.MagnifierPixelCount -= 2;
+                }
+            }
+            else
+            {
+                if (e.Delta > 0)
+                {
+                    CurrentShapeType = CurrentShapeType.Previous<ShapeType>();
+                }
+                else if (e.Delta < 0)
+                {
+                    CurrentShapeType = CurrentShapeType.Next<ShapeType>();
                 }
             }
         }
@@ -644,12 +837,15 @@ namespace ShareX.ScreenCaptureLib
                     CurrentShapeType = ShapeType.DrawingArrow;
                     break;
                 case Keys.NumPad6:
-                    CurrentShapeType = ShapeType.DrawingBlur;
+                    CurrentShapeType = ShapeType.DrawingText;
                     break;
                 case Keys.NumPad7:
-                    CurrentShapeType = ShapeType.DrawingPixelate;
+                    CurrentShapeType = ShapeType.DrawingBlur;
                     break;
                 case Keys.NumPad8:
+                    CurrentShapeType = ShapeType.DrawingPixelate;
+                    break;
+                case Keys.NumPad9:
                     CurrentShapeType = ShapeType.DrawingHighlight;
                     break;
             }
@@ -673,30 +869,6 @@ namespace ShareX.ScreenCaptureLib
                         EndRegionSelection();
                     }
                     break;
-            }
-        }
-
-        private void form_MouseWheel(object sender, MouseEventArgs e)
-        {
-            if (e.Delta > 0)
-            {
-                CurrentShapeType = CurrentShapeType.Previous<ShapeType>();
-            }
-            else if (e.Delta < 0)
-            {
-                CurrentShapeType = CurrentShapeType.Next<ShapeType>();
-            }
-
-            if (Control.ModifierKeys.HasFlag(Keys.Control))
-            {
-                if (e.Delta > 0)
-                {
-                    if (config.MagnifierPixelCount < 41) config.MagnifierPixelCount += 2;
-                }
-                else if (e.Delta < 0)
-                {
-                    if (config.MagnifierPixelCount > 2) config.MagnifierPixelCount -= 2;
-                }
             }
         }
 
@@ -740,10 +912,10 @@ namespace ShareX.ScreenCaptureLib
             Rectangle currentRect = CaptureHelpers.CreateRectangle(posOnClick, posCurrent);
             Point newPosition = posCurrent;
 
-            foreach (SnapSize size in config.SnapSizes)
+            foreach (SnapSize size in Config.SnapSizes)
             {
-                if (currentRect.Width.IsBetween(size.Width - config.SnapDistance, size.Width + config.SnapDistance) ||
-                    currentRect.Height.IsBetween(size.Height - config.SnapDistance, size.Height + config.SnapDistance))
+                if (currentRect.Width.IsBetween(size.Width - Config.SnapDistance, size.Width + Config.SnapDistance) ||
+                    currentRect.Height.IsBetween(size.Height - Config.SnapDistance, size.Height + Config.SnapDistance))
                 {
                     newPosition = CaptureHelpers.CalculateNewPosition(posOnClick, posCurrent, size);
                     break;
@@ -833,10 +1005,10 @@ namespace ShareX.ScreenCaptureLib
 
                 Rectangle rect;
 
-                if (config.IsFixedSize)
+                if (Config.IsFixedSize)
                 {
                     IsMoving = true;
-                    rect = new Rectangle(new Point(location.X - config.FixedSize.Width / 2, location.Y - config.FixedSize.Height / 2), config.FixedSize);
+                    rect = new Rectangle(new Point(location.X - Config.FixedSize.Width / 2, location.Y - Config.FixedSize.Height / 2), Config.FixedSize);
                 }
                 else
                 {
@@ -844,7 +1016,7 @@ namespace ShareX.ScreenCaptureLib
                     rect = new Rectangle(location, new Size(1, 1));
                 }
 
-                AddRegionShape(rect);
+                AddShape(rect);
 
                 CurrentShape.StartPosition = PositionOnClick;
             }
@@ -852,51 +1024,67 @@ namespace ShareX.ScreenCaptureLib
 
         private void EndRegionSelection()
         {
+            bool wasCreating = IsCreating;
+
             IsCreating = false;
             IsMoving = false;
 
-            if (!CurrentRectangle.IsEmpty)
+            BaseShape shape = CurrentShape;
+
+            if (shape != null)
             {
                 if (!IsCurrentRegionValid)
                 {
                     DeleteSelectedShape();
                     CheckHover();
                 }
-                else if (config.QuickCrop && IsCurrentShapeTypeRegion)
+                else if (Config.QuickCrop && IsCurrentShapeTypeRegion)
                 {
                     form.UpdateRegionPath();
                     form.Close(RegionResult.Region);
                 }
                 else
                 {
+                    if (wasCreating)
+                    {
+                        shape.OnShapeCreated();
+                    }
+
                     SelectShape();
+
+                    return;
                 }
             }
 
             if (!CurrentHoverRectangle.IsEmpty)
             {
-                AddRegionShape(CurrentHoverRectangle);
+                AddShape(CurrentHoverRectangle);
 
-                if (config.QuickCrop && IsCurrentShapeTypeRegion)
+                if (Config.QuickCrop && IsCurrentShapeTypeRegion)
                 {
                     form.UpdateRegionPath();
                     form.Close(RegionResult.Region);
                 }
                 else
                 {
+                    if (wasCreating)
+                    {
+                        shape.OnShapeCreated();
+                    }
+
                     SelectShape();
                 }
             }
         }
 
-        private void AddRegionShape(Rectangle rect)
+        private void AddShape(Rectangle rect)
         {
-            BaseShape shape = CreateRegionShape(rect);
+            BaseShape shape = CreateShape(rect);
             Shapes.Add(shape);
             CurrentShape = shape;
         }
 
-        public BaseShape CreateRegionShape(Rectangle rect)
+        public BaseShape CreateShape(Rectangle rect)
         {
             BaseShape shape;
 
@@ -927,6 +1115,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingArrow:
                     shape = new ArrowDrawingShape();
                     break;
+                case ShapeType.DrawingText:
+                    shape = new TextDrawingShape();
+                    break;
                 case ShapeType.DrawingBlur:
                     shape = new BlurEffectShape();
                     break;
@@ -938,50 +1129,21 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
+            shape.Manager = this;
             shape.Rectangle = rect;
 
-            UpdateShape(shape);
+            shape.UpdateShapeConfig();
 
             return shape;
         }
 
         private void UpdateCurrentShape()
         {
-            UpdateShape(CurrentShape);
-        }
+            BaseShape shape = CurrentShape;
 
-        private void UpdateShape(BaseShape shape)
-        {
             if (shape != null)
             {
-                if (shape is BaseDrawingShape)
-                {
-                    BaseDrawingShape baseDrawingShape = (BaseDrawingShape)shape;
-                    baseDrawingShape.BorderColor = config.ShapeBorderColor;
-                    baseDrawingShape.BorderSize = config.ShapeBorderSize;
-                    baseDrawingShape.FillColor = config.ShapeFillColor;
-                }
-
-                if (shape is IRoundedRectangleShape)
-                {
-                    IRoundedRectangleShape roundedRectangleShape = (IRoundedRectangleShape)shape;
-                    roundedRectangleShape.Radius = config.ShapeRoundedRectangleRadius;
-                }
-                else if (shape is BlurEffectShape)
-                {
-                    BlurEffectShape blurDrawingShape = (BlurEffectShape)shape;
-                    blurDrawingShape.BlurRadius = config.ShapeBlurRadius;
-                }
-                else if (shape is PixelateEffectShape)
-                {
-                    PixelateEffectShape pixelateDrawingShape = (PixelateEffectShape)shape;
-                    pixelateDrawingShape.PixelSize = config.ShapePixelateSize;
-                }
-                else if (shape is HighlightEffectShape)
-                {
-                    HighlightEffectShape highlightDrawingShape = (HighlightEffectShape)shape;
-                    highlightDrawingShape.HighlightColor = config.ShapeHighlightColor;
-                }
+                shape.UpdateShapeConfig();
             }
         }
 
@@ -997,7 +1159,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (shape != null)
                         {
-                            shape.DrawFinal(g, bmp);
+                            shape.OnDrawFinal(g, bmp);
                         }
                     }
 
@@ -1005,7 +1167,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (shape != null)
                         {
-                            shape.Draw(g);
+                            shape.OnDraw(g);
                         }
                     }
                 }
@@ -1016,7 +1178,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void SelectShape()
         {
-            if (!CurrentRectangle.IsEmpty && !config.IsFixedSize)
+            if (!CurrentRectangle.IsEmpty && !Config.IsFixedSize)
             {
                 ResizeManager.Show();
             }
@@ -1115,6 +1277,16 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return Rectangle.Empty;
+        }
+
+        public void PauseForm()
+        {
+            form.Pause();
+        }
+
+        public void ResumeForm()
+        {
+            form.Resume();
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)

@@ -907,6 +907,8 @@
             this.tsmiImagePreview});
             this.cmsTaskInfo.Name = "cmsHistory";
             resources.ApplyResources(this.cmsTaskInfo, "cmsTaskInfo");
+            this.cmsTaskInfo.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.cmsTaskInfo_Closing);
+            this.cmsTaskInfo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cmsTaskInfo_PreviewKeyDown);
             // 
             // tsmiShowErrors
             // 

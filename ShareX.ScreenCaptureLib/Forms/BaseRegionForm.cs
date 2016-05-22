@@ -108,7 +108,6 @@ namespace ShareX.ScreenCaptureLib
 #endif
             Shown += BaseRegionForm_Shown;
             KeyUp += BaseRegionForm_KeyUp;
-            MouseDoubleClick += BaseRegionForm_MouseDoubleClick;
             ResumeLayout(false);
         }
 
@@ -192,14 +191,6 @@ namespace ShareX.ScreenCaptureLib
             MonitorIndex = index;
 
             Close(RegionResult.Monitor);
-        }
-
-        private void BaseRegionForm_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                Close(RegionResult.Region);
-            }
         }
 
         public void Pause()

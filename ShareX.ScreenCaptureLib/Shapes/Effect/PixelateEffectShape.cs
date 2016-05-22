@@ -40,32 +40,44 @@ namespace ShareX.ScreenCaptureLib
 
         public int PixelSize { get; set; }
 
-        public override void Draw(Graphics g)
+        public override void UpdateShapeConfig()
+        {
+            PixelSize = AnnotationOptions.PixelateSize;
+        }
+
+        public override void ApplyShapeConfig()
+        {
+            AnnotationOptions.PixelateSize = PixelSize;
+        }
+
+        public override void OnDraw(Graphics g)
         {
             if (PixelSize > 1)
             {
-                using (Brush brush = new SolidBrush(Color.FromArgb(200, Color.Black)))
+                using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
                 {
                     g.FillRectangle(brush, Rectangle);
                 }
 
-                using (Pen pen = new Pen(Color.FromArgb(200, Color.White)))
-                {
-                    g.DrawCornerLines(Rectangle, pen, 20);
-                }
+                g.DrawCornerLines(Rectangle.Offset(1), Pens.White, 20);
 
-                if (Rectangle.Width > 10 && Rectangle.Height > 10)
+                using (Font font = new Font("Verdana", 12))
                 {
-                    using (Font font = new Font("Verdana", 14))
-                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    string text = $"Pixelate ({PixelSize})";
+                    Size textSize = g.MeasureString(text, font).ToSize();
+
+                    if (Rectangle.Width > textSize.Width && Rectangle.Height > textSize.Height)
                     {
-                        g.DrawString($"Pixelate ({PixelSize})", font, Brushes.White, Rectangle, sf);
+                        using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                        {
+                            g.DrawString(text, font, Brushes.White, Rectangle, sf);
+                        }
                     }
                 }
             }
         }
 
-        public override void DrawFinal(Graphics g, Bitmap bmp)
+        public override void OnDrawFinal(Graphics g, Bitmap bmp)
         {
             if (PixelSize > 1)
             {

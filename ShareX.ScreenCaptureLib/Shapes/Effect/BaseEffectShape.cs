@@ -33,11 +33,11 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseEffectShape : BaseShape
     {
-        public abstract void Draw(Graphics g);
+        public abstract void OnDraw(Graphics g);
 
-        public virtual void DrawFinal(Graphics g, Bitmap bmp)
+        public virtual void OnDrawFinal(Graphics g, Bitmap bmp)
         {
-            Draw(g);
+            OnDraw(g);
         }
     }
 }

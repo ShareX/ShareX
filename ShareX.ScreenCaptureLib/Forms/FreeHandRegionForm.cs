@@ -44,6 +44,16 @@ namespace ShareX.ScreenCaptureLib
             regionFillPath = new GraphicsPath();
             lastNode = new NodeObject() { Shape = NodeShape.Circle };
             drawableObjects.Add(lastNode);
+
+            MouseDoubleClick += FreeHandRegionForm_MouseDoubleClick;
+        }
+
+        private void FreeHandRegionForm_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Close(RegionResult.Region);
+            }
         }
 
         protected override void Update()

@@ -351,24 +351,24 @@ namespace ShareX.HelpersLib
             return Color.FromArgb(a / count, r / count, g / count, b / count);
         }
 
-        public static int PerceivedBrightness(Color c)
+        public static int PerceivedBrightness(Color color)
         {
-            return (int)Math.Sqrt(
-                c.R * c.R * .299 +
-                c.G * c.G * .587 +
-                c.B * c.B * .114);
+            return (int)Math.Sqrt(color.R * color.R * .299 + color.G * color.G * .587 + color.B * color.B * .114);
         }
 
-        public static Color VisibleTextColor(Color c)
+        public static Color VisibleColor(Color color)
         {
-            return PerceivedBrightness(c) > 130 ? Color.Black : Color.White;
+            return VisibleColor(color, Color.White, Color.Black);
+        }
+
+        public static Color VisibleColor(Color color, Color lightColor, Color darkColor)
+        {
+            return PerceivedBrightness(color) > 130 ? darkColor : lightColor;
         }
 
         public static Color Lerp(Color from, Color to, float amount)
         {
-            return Color.FromArgb((int)MathHelpers.Lerp(from.R, to.R, amount),
-                (int)MathHelpers.Lerp(from.G, to.G, amount),
-                (int)MathHelpers.Lerp(from.B, to.B, amount));
+            return Color.FromArgb((int)MathHelpers.Lerp(from.R, to.R, amount), (int)MathHelpers.Lerp(from.G, to.G, amount), (int)MathHelpers.Lerp(from.B, to.B, amount));
         }
     }
 }

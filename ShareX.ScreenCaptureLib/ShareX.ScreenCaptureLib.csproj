@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Shapes\AnnotationOptions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Forms\RectangleRegionAnnotateForm.cs">
       <SubType>Form</SubType>
@@ -72,6 +73,12 @@
     <Compile Include="Forms\ScrollingCaptureForm.Designer.cs">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TextDrawingInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TextDrawingInputBox.Designer.cs">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WebpageCaptureForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,9 +88,12 @@
     <Compile Include="RectangleAnnotateOptions.cs" />
     <Compile Include="RegionHelpers\ColorBlinkAnimation.cs" />
     <Compile Include="RegionHelpers\PointInfo.cs" />
+    <Compile Include="RegionHelpers\TextAnimation.cs" />
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
+    <Compile Include="Shapes\TextDrawingOptions.cs" />
+    <Compile Include="Shapes\Drawing\TextDrawingShape.cs" />
     <Compile Include="Shapes\Effect\BlurEffectShape.cs" />
     <Compile Include="Shapes\Drawing\EllipseDrawingShape.cs" />
     <Compile Include="Shapes\Effect\HighlightEffectShape.cs" />
@@ -92,7 +102,6 @@
     <Compile Include="Shapes\Drawing\RectangleDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\RoundedRectangleDrawingShape.cs" />
     <Compile Include="Shapes\Effect\BaseEffectShape.cs" />
-    <Compile Include="Shapes\IRoundedRectangleShape.cs" />
     <Compile Include="Shapes\Region\EllipseRegionShape.cs" />
     <Compile Include="Shapes\Region\RectangleRegionShape.cs" />
     <Compile Include="Shapes\Region\BaseRegionShape.cs" />
@@ -118,7 +127,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegionHelpers\ShapeManager.cs" />
+    <Compile Include="Shapes\ShapeManager.cs" />
     <Compile Include="RegionHelpers\DrawObject.cs" />
     <Compile Include="Forms\FreeHandRegionForm.cs">
       <SubType>Form</SubType>
@@ -157,6 +166,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\edit-vertical-alignment.png" />
+    <None Include="Resources\edit-vertical-alignment-top.png" />
+    <None Include="Resources\edit-alignment-right.png" />
+    <None Include="Resources\edit-alignment.png" />
+    <None Include="Resources\edit-vertical-alignment-middle.png" />
+    <None Include="Resources\edit-alignment-center.png" />
+    <None Include="Resources\edit-underline.png" />
+    <None Include="Resources\edit-italic.png" />
+    <None Include="Resources\edit-bold.png" />
+    <None Include="Resources\layer-shape-text.png" />
     <None Include="Resources\gear.png" />
     <None Include="Resources\layer_fullscreen.png" />
     <None Include="Resources\layer-shade.png" />
@@ -206,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.zh-CN.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WebpageCaptureForm.de.resx">
       <DependentUpon>WebpageCaptureForm.cs</DependentUpon>

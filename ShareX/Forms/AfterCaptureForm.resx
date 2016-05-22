@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnContinue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 386</value>
+    <value>8, 401</value>
   </data>
   <data name="btnContinue.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 386</value>
+    <value>216, 401</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
@@ -190,7 +190,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 386</value>
+    <value>112, 401</value>
   </data>
   <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 32</value>
@@ -226,7 +226,7 @@
     <value>3, 5</value>
   </data>
   <data name="lvAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 290</value>
+    <value>290, 305</value>
   </data>
   <data name="lvAfterCaptureTasks.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -250,7 +250,7 @@
     <value>3, 5, 3, 3</value>
   </data>
   <data name="tpAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 298</value>
+    <value>296, 313</value>
   </data>
   <data name="tpAfterCapture.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -277,7 +277,7 @@
     <value>3, 3</value>
   </data>
   <data name="ucBeforeUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 292</value>
+    <value>290, 307</value>
   </data>
   <data name="ucBeforeUpload.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -286,7 +286,7 @@
     <value>ucBeforeUpload</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Type" xml:space="preserve">
-    <value>ShareX.BeforeUploadControl, ShareX, Version=10.9.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.BeforeUploadControl, ShareX, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Parent" xml:space="preserve">
     <value>tpBeforeUpload</value>
@@ -301,7 +301,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBeforeUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 298</value>
+    <value>296, 313</value>
   </data>
   <data name="tpBeforeUpload.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -331,7 +331,7 @@
     <value>3, 5</value>
   </data>
   <data name="lvAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 290</value>
+    <value>290, 305</value>
   </data>
   <data name="lvAfterUploadTasks.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -355,7 +355,7 @@
     <value>3, 5, 3, 3</value>
   </data>
   <data name="tpAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 298</value>
+    <value>296, 313</value>
   </data>
   <data name="tpAfterUpload.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -379,7 +379,7 @@
     <value>8, 8</value>
   </data>
   <data name="tcTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 324</value>
+    <value>304, 339</value>
   </data>
   <data name="tcTasks.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -406,7 +406,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 337</value>
+    <value>6, 352</value>
   </data>
   <data name="lblFileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -433,7 +433,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="txtFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 356</value>
+    <value>8, 371</value>
   </data>
   <data name="txtFileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 20</value>
@@ -460,7 +460,7 @@
     <value>320, 8</value>
   </data>
   <data name="pbImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 410</value>
+    <value>456, 425</value>
   </data>
   <data name="pbImage.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -484,7 +484,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>784, 426</value>
+    <value>784, 441</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 445</value>

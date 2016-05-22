@@ -200,7 +200,7 @@ namespace ShareX.HelpersLib
 
         public override string ToString()
         {
-            return String.Format(Resources.CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__, Cyan100, Magenta100, Yellow100, Key100);
+            return string.Format(Resources.CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__, Cyan100, Magenta100, Yellow100, Key100);
         }
 
         public Color ToColor()

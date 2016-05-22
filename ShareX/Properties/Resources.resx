@@ -793,7 +793,46 @@ Would you like to restart ShareX?</value>
   <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
     <value>Start screen color picker</value>
   </data>
-  <data name="edit-drop-cap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edit_drop_cap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-drop-cap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="application_terminal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\application-terminal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="application_text_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\application-text-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="application__arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\application--arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clipboard_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clipboard-block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clipboard_paste_document_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clipboard-paste-document-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clipboard_paste_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clipboard-paste-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="disk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="disk_rename" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disk-rename.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="disk_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disk-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_stand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-stand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="globe__arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\globe--arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ui_menu_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ui-menu-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

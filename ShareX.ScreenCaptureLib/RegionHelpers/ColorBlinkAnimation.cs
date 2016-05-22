@@ -30,7 +30,7 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class ColorBlinkAnimation
+    internal class ColorBlinkAnimation
     {
         public float Max { get; set; }
         public float Min { get; set; }

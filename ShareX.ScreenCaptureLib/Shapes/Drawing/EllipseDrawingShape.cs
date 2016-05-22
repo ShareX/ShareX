@@ -38,7 +38,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingEllipse;
 
-        public override void Draw(Graphics g)
+        public override void OnDraw(Graphics g)
         {
             g.SmoothingMode = SmoothingMode.HighQuality;
 
@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (BorderColor.A > 0 && BorderSize > 0)
+            if (BorderSize > 0 && BorderColor.A > 0)
             {
                 using (Pen pen = new Pen(BorderColor, BorderSize))
                 {

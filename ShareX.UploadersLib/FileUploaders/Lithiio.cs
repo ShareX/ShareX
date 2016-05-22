@@ -25,7 +25,7 @@
 
 // Credits: https://github.com/lithium720
 
-using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -76,7 +76,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (result.IsSuccess)
             {
-                result.URL = Config.UploadURL + result.Response;
+                result.URL = URLHelpers.CombineURL(Config.UploadURL, result.Response);
             }
 
             return result;

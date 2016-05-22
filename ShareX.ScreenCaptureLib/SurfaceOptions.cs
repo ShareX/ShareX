@@ -100,14 +100,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool ShowMenuTip = true;
 
-        public ShapeType CurrentShapeType = ShapeType.RegionRectangle;
-        public Color ShapeBorderColor = Color.Red;
-        public int ShapeBorderSize = 2;
-        public Color ShapeFillColor = Color.FromArgb(0, 0, 0, 0);
-        public int ShapeRoundedRectangleRadius = 15;
-        public int ShapeBlurRadius = 15;
-        public int ShapePixelateSize = 7;
-        public Color ShapeHighlightColor = Color.Yellow;
+        public AnnotationOptions AnnotationOptions = new AnnotationOptions();
 
         public SurfaceOptions()
         {

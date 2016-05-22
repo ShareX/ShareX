@@ -23,10 +23,37 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+
 namespace ShareX.ScreenCaptureLib
 {
-    public interface IRoundedRectangleShape
+    public class AnnotationOptions
     {
-        float Radius { get; set; }
+        // Drawing
+        public Color BorderColor { get; set; } = Color.Red;
+        public int BorderSize { get; set; } = 2;
+        public Color FillColor { get; set; } = Color.FromArgb(0, 0, 0, 0);
+
+        // Rounded rectangle region, rounded rectangle drawing
+        public int RoundedRectangleRadius { get; set; } = 15;
+
+        // Text drawing
+        public TextDrawingOptions TextOptions { get; set; } = new TextDrawingOptions();
+        public Color TextBorderColor { get; set; } = Color.Black;
+        public int TextBorderSize { get; set; } = 1;
+        public Color TextFillColor { get; set; } = Color.FromArgb(150, Color.Black);
+
+        // Blur effect
+        public int BlurRadius { get; set; } = 15;
+
+        // Pixelate effect
+        public int PixelateSize { get; set; } = 7;
+
+        // Highlight effect
+        public Color HighlightColor { get; set; } = Color.Yellow;
     }
 }

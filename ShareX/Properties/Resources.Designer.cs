@@ -144,6 +144,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap application__arrow {
+            get {
+                object obj = ResourceManager.GetObject("application__arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap application_block {
             get {
                 object obj = ResourceManager.GetObject("application_block", resourceCulture);
@@ -217,6 +227,26 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap application_task {
             get {
                 object obj = ResourceManager.GetObject("application_task", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap application_terminal {
+            get {
+                object obj = ResourceManager.GetObject("application_terminal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap application_text_image {
+            get {
+                object obj = ResourceManager.GetObject("application_text_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -495,9 +525,39 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap clipboard_block {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_block", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap clipboard_list {
             get {
                 object obj = ResourceManager.GetObject("clipboard_list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap clipboard_paste_document_text {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_paste_document_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap clipboard_paste_image {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_paste_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -615,9 +675,39 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap disk {
+            get {
+                object obj = ResourceManager.GetObject("disk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap disk_black {
             get {
                 object obj = ResourceManager.GetObject("disk_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap disk_rename {
+            get {
+                object obj = ResourceManager.GetObject("disk_rename", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap disk_small {
+            get {
+                object obj = ResourceManager.GetObject("disk_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -687,7 +777,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap edit_drop_cap {
             get {
-                object obj = ResourceManager.GetObject("edit-drop-cap", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_drop_cap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -820,6 +910,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap folder_stand {
+            get {
+                object obj = ResourceManager.GetObject("folder_stand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap folder_tree {
             get {
                 object obj = ResourceManager.GetObject("folder_tree", resourceCulture);
@@ -863,6 +963,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap globe {
             get {
                 object obj = ResourceManager.GetObject("globe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap globe__arrow {
+            get {
+                object obj = ResourceManager.GetObject("globe__arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1359,6 +1469,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap pipette {
             get {
                 object obj = ResourceManager.GetObject("pipette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap printer {
+            get {
+                object obj = ResourceManager.GetObject("printer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1907,6 +2027,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap Twitter {
             get {
                 object obj = ResourceManager.GetObject("Twitter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ui_menu_blue {
+            get {
+                object obj = ResourceManager.GetObject("ui_menu_blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

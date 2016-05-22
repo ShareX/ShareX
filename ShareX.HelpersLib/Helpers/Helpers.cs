@@ -267,7 +267,7 @@ namespace ShareX.HelpersLib
 
         public static string GetXMLValue(string input, string tag)
         {
-            return Regex.Match(input, String.Format("(?<={0}>).+?(?=</{0})", tag)).Value;
+            return Regex.Match(input, string.Format("(?<={0}>).+?(?=</{0})", tag)).Value;
         }
 
         public static string GetMimeType(string fileName)
