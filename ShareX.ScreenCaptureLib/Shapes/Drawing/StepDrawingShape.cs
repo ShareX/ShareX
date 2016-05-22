@@ -73,9 +73,20 @@ namespace ShareX.ScreenCaptureLib
 
             if (Rectangle.Width > 20 && Rectangle.Height > 20)
             {
-                int fontSize = Math.Min(Rectangle.Width, Rectangle.Height) - 10;
+                int offset;
 
-                using (Font font = new Font("Verdana", fontSize, GraphicsUnit.Pixel))
+                if (Number > 9)
+                {
+                    offset = 15;
+                }
+                else
+                {
+                    offset = 10;
+                }
+
+                int fontSize = Math.Min(Rectangle.Width, Rectangle.Height) - offset;
+
+                using (Font font = new Font("Arial", fontSize, GraphicsUnit.Pixel))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
                     g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
