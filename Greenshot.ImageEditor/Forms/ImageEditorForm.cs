@@ -192,6 +192,7 @@ namespace Greenshot
                 SurfaceSizeChanged(Surface, null);
 
                 BindFieldControls();
+                _surface.DrawingMode = DrawingModes.Rect;
                 RefreshEditorControls();
                 // Fix title
                 if (_surface != null && _surface.CaptureDetails != null && _surface.CaptureDetails.Title != null)
