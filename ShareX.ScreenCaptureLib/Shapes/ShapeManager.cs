@@ -1315,6 +1315,16 @@ namespace ShareX.ScreenCaptureLib
             form.Resume();
         }
 
+        public void OrderStepShapes()
+        {
+            int i = 1;
+
+            foreach (StepDrawingShape shape in Shapes.OfType<StepDrawingShape>())
+            {
+                shape.Number = i++;
+            }
+        }
+
         private void OnCurrentShapeChanged(BaseShape shape)
         {
             if (CurrentShapeChanged != null)
