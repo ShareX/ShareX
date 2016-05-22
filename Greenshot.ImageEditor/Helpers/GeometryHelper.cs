@@ -41,9 +41,9 @@ namespace Greenshot.Helpers
             //Our end result
             int result = 0;
             //Take x2-x1, then square it
-            double part1 = Math.Pow((x2 - x1), 2);
+            double part1 = Math.Pow(x2 - x1, 2);
             //Take y2-y1, then square it
-            double part2 = Math.Pow((y2 - y1), 2);
+            double part2 = Math.Pow(y2 - y1, 2);
             //Add both of the parts together
             double underRadical = part1 + part2;
             //Get the square root of the parts

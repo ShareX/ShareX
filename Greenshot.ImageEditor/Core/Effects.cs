@@ -97,7 +97,7 @@ namespace Greenshot.Core
     [TypeConverter(typeof(EffectConverter))]
     public class TornEdgeEffect : DropShadowEffect
     {
-        public TornEdgeEffect() : base()
+        public TornEdgeEffect()
         {
             Reset();
         }
@@ -135,7 +135,7 @@ namespace Greenshot.Core
             ToothHeight = 12;
             HorizontalToothRange = 20;
             VerticalToothRange = 20;
-            Edges = new bool[] { true, true, true, true };
+            Edges = new[] { true, true, true, true };
             GenerateShadow = true;
         }
 
@@ -174,12 +174,12 @@ namespace Greenshot.Core
     /// </summary>
     public class MonochromeEffect : IEffect
     {
-        private byte threshold;
+        private readonly byte _threshold;
 
         /// <param name="threshold">Threshold for monochrome filter (0 - 255), lower value means less black</param>
         public MonochromeEffect(byte threshold)
         {
-            this.threshold = threshold;
+            _threshold = threshold;
         }
 
         public void Reset()
@@ -189,7 +189,7 @@ namespace Greenshot.Core
 
         public Image Apply(Image sourceImage, Matrix matrix)
         {
-            return ImageHelper.CreateMonochrome(sourceImage, threshold);
+            return ImageHelper.CreateMonochrome(sourceImage, _threshold);
         }
     }
 
@@ -198,7 +198,7 @@ namespace Greenshot.Core
     /// </summary>
     public class AdjustEffect : IEffect
     {
-        public AdjustEffect() : base()
+        public AdjustEffect()
         {
             Reset();
         }
@@ -237,7 +237,7 @@ namespace Greenshot.Core
     /// </summary>
     public class ReduceColorsEffect : IEffect
     {
-        public ReduceColorsEffect() : base()
+        public ReduceColorsEffect()
         {
             Reset();
         }
@@ -460,9 +460,9 @@ namespace Greenshot.Core
     public class EffectConverter : TypeConverter
     {
         // Fix to prevent BUG-1753
-        private NumberFormatInfo numberFormatInfo = new NumberFormatInfo();
+        private readonly NumberFormatInfo numberFormatInfo = new NumberFormatInfo();
 
-        public EffectConverter() : base()
+        public EffectConverter()
         {
             numberFormatInfo.NumberDecimalSeparator = ".";
             numberFormatInfo.NumberGroupSeparator = ",";
@@ -494,7 +494,7 @@ namespace Greenshot.Core
             return base.CanConvertTo(context, destinationType);
         }
 
-        public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType)
+        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
             // to string
             if (destinationType == typeof(string))
@@ -516,7 +516,7 @@ namespace Greenshot.Core
                 }
             }
             // from string
-            if (value.GetType() == typeof(string))
+            if (value is string)
             {
                 string settings = value as string;
                 if (destinationType == typeof(DropShadowEffect))
@@ -536,19 +536,16 @@ namespace Greenshot.Core
             return base.ConvertTo(context, culture, value, destinationType);
         }
 
-        public override object ConvertFrom(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
-            if (value != null && value.GetType() == typeof(string))
+            if (value != null && value is string)
             {
                 string settings = value as string;
                 if (settings.Contains("ToothHeight"))
                 {
                     return ConvertTo(context, culture, value, typeof(TornEdgeEffect));
                 }
-                else
-                {
-                    return ConvertTo(context, culture, value, typeof(DropShadowEffect));
-                }
+                return ConvertTo(context, culture, value, typeof(DropShadowEffect));
             }
             return base.ConvertFrom(context, culture, value);
         }

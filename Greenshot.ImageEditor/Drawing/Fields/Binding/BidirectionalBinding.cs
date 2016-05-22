@@ -32,14 +32,14 @@ namespace Greenshot.Drawing.Fields.Binding
     /// </summary>
     public class BidirectionalBinding
     {
-        private INotifyPropertyChanged controlObject;
-        private INotifyPropertyChanged fieldObject;
-        private string controlPropertyName;
-        private string fieldPropertyName;
-        private bool updatingControl = false;
-        private bool updatingField = false;
-        private IBindingConverter converter;
-        private IBindingValidator validator;
+        private readonly INotifyPropertyChanged _controlObject;
+        private readonly INotifyPropertyChanged _fieldObject;
+        private readonly string _controlPropertyName;
+        private readonly string _fieldPropertyName;
+        private bool _updatingControl = false;
+        private bool _updatingField = false;
+        private IBindingConverter _converter;
+        private readonly IBindingValidator _validator;
 
         /// <summary>
         /// Whether or not null values are passed on to the other object.
@@ -49,19 +49,19 @@ namespace Greenshot.Drawing.Fields.Binding
         /// <summary>
         /// Bind properties of two objects bidirectionally
         /// </summary>
-        /// <param name="object1">Object containing 1st property to bind</param>
-        /// <param name="property1">Property of 1st object to bind</param>
-        /// <param name="object2">Object containing 2nd property to bind</param>
-        /// <param name="property2">Property of 2nd object to bind</param>
+        /// <param name="controlObject">Object containing 1st property to bind</param>
+        /// <param name="controlPropertyName">Property of 1st object to bind</param>
+        /// <param name="fieldObject">Object containing 2nd property to bind</param>
+        /// <param name="fieldPropertyName">Property of 2nd object to bind</param>
         public BidirectionalBinding(INotifyPropertyChanged controlObject, string controlPropertyName, INotifyPropertyChanged fieldObject, string fieldPropertyName)
         {
-            this.controlObject = controlObject;
-            this.fieldObject = fieldObject;
-            this.controlPropertyName = controlPropertyName;
-            this.fieldPropertyName = fieldPropertyName;
+            _controlObject = controlObject;
+            _fieldObject = fieldObject;
+            _controlPropertyName = controlPropertyName;
+            _fieldPropertyName = fieldPropertyName;
 
-            this.controlObject.PropertyChanged += ControlPropertyChanged;
-            this.fieldObject.PropertyChanged += FieldPropertyChanged;
+            _controlObject.PropertyChanged += ControlPropertyChanged;
+            _fieldObject.PropertyChanged += FieldPropertyChanged;
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Greenshot.Drawing.Fields.Binding
         /// <param name="converter">taking care of converting the synchronized value to the correct target format and back</param>
         public BidirectionalBinding(INotifyPropertyChanged controlObject, string controlPropertyName, INotifyPropertyChanged fieldObject, string fieldPropertyName, IBindingConverter converter) : this(controlObject, controlPropertyName, fieldObject, fieldPropertyName)
         {
-            this.converter = converter;
+            _converter = converter;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Greenshot.Drawing.Fields.Binding
         /// <param name="validator">validator to intercept synchronization if the value does not match certain criteria</param>
         public BidirectionalBinding(INotifyPropertyChanged controlObject, string controlPropertyName, INotifyPropertyChanged fieldObject, string fieldPropertyName, IBindingValidator validator) : this(controlObject, controlPropertyName, fieldObject, fieldPropertyName)
         {
-            this.validator = validator;
+            _validator = validator;
         }
 
         /// <summary>
@@ -103,56 +103,56 @@ namespace Greenshot.Drawing.Fields.Binding
         /// <param name="validator">validator to intercept synchronization if the value does not match certain criteria</param>
         public BidirectionalBinding(INotifyPropertyChanged controlObject, string controlPropertyName, INotifyPropertyChanged fieldObject, string fieldPropertyName, IBindingConverter converter, IBindingValidator validator) : this(controlObject, controlPropertyName, fieldObject, fieldPropertyName, converter)
         {
-            this.validator = validator;
+            _validator = validator;
         }
 
         public void ControlPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (!updatingControl && e.PropertyName.Equals(controlPropertyName))
+            if (!_updatingControl && e.PropertyName.Equals(_controlPropertyName))
             {
-                updatingField = true;
-                synchronize(controlObject, controlPropertyName, fieldObject, fieldPropertyName);
-                updatingField = false;
+                _updatingField = true;
+                Synchronize(_controlObject, _controlPropertyName, _fieldObject, _fieldPropertyName);
+                _updatingField = false;
             }
         }
 
         public void FieldPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (!updatingField && e.PropertyName.Equals(fieldPropertyName))
+            if (!_updatingField && e.PropertyName.Equals(_fieldPropertyName))
             {
-                updatingControl = true;
-                synchronize(fieldObject, fieldPropertyName, controlObject, controlPropertyName);
-                updatingControl = false;
+                _updatingControl = true;
+                Synchronize(_fieldObject, _fieldPropertyName, _controlObject, _controlPropertyName);
+                _updatingControl = false;
             }
         }
 
-        private void synchronize(INotifyPropertyChanged sourceObject, string sourceProperty, INotifyPropertyChanged targetObject, string targetProperty)
+        private void Synchronize(INotifyPropertyChanged sourceObject, string sourceProperty, INotifyPropertyChanged targetObject, string targetProperty)
         {
-            PropertyInfo targetPropertyInfo = resolvePropertyInfo(targetObject, targetProperty);
-            PropertyInfo sourcePropertyInfo = resolvePropertyInfo(sourceObject, sourceProperty);
+            PropertyInfo targetPropertyInfo = ResolvePropertyInfo(targetObject, targetProperty);
+            PropertyInfo sourcePropertyInfo = ResolvePropertyInfo(sourceObject, sourceProperty);
 
             if (sourcePropertyInfo != null && targetPropertyInfo != null && targetPropertyInfo.CanWrite)
             {
                 object bValue = sourcePropertyInfo.GetValue(sourceObject, null);
-                if (converter != null && bValue != null)
+                if (_converter != null && bValue != null)
                 {
-                    bValue = converter.convert(bValue);
+                    bValue = _converter.convert(bValue);
                 }
                 try
                 {
-                    if (validator == null || validator.validate(bValue))
+                    if (_validator == null || _validator.validate(bValue))
                     {
                         targetPropertyInfo.SetValue(targetObject, bValue, null);
                     }
                 }
                 catch (Exception e)
                 {
-                    throw new MemberAccessException("Could not set property '" + targetProperty + "' to '" + bValue + "' [" + ((bValue != null) ? bValue.GetType().Name : "") + "] on " + targetObject + ". Probably other type than expected, IBindingCoverter to the rescue.", e);
+                    throw new MemberAccessException("Could not set property '" + targetProperty + "' to '" + bValue + "' [" + (bValue != null ? bValue.GetType().Name : "") + "] on " + targetObject + ". Probably other type than expected, IBindingCoverter to the rescue.", e);
                 }
             }
         }
 
-        private PropertyInfo resolvePropertyInfo(object obj, string property)
+        private static PropertyInfo ResolvePropertyInfo(object obj, string property)
         {
             PropertyInfo ret = null;
             string[] properties = property.Split(".".ToCharArray());
@@ -170,8 +170,8 @@ namespace Greenshot.Drawing.Fields.Binding
 
         public IBindingConverter Converter
         {
-            get { return converter; }
-            set { converter = value; }
+            get { return _converter; }
+            set { _converter = value; }
         }
     }
 }

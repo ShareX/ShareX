@@ -27,21 +27,11 @@ namespace GreenshotPlugin.Controls
 {
     internal class GreenshotComboBox : ComboBox, IGreenshotConfigBindable
     {
-        private Type enumType = null;
-        private Enum selectedEnum = null;
-        private string sectionName = "Core";
+        private Type _enumType = null;
+        private Enum _selectedEnum = null;
+        
         [Category("Greenshot"), DefaultValue("Core"), Description("Specifies the Ini-Section to map this control with.")]
-        public string SectionName
-        {
-            get
-            {
-                return sectionName;
-            }
-            set
-            {
-                sectionName = value;
-            }
-        }
+        public string SectionName { get; set; } = "Core";
 
         [Category("Greenshot"), DefaultValue(null), Description("Specifies the property name to map the configuration.")]
         public string PropertyName
@@ -62,7 +52,7 @@ namespace GreenshotPlugin.Controls
         {
             if (currentValue != null)
             {
-                selectedEnum = currentValue;
+                _selectedEnum = currentValue;
                 SelectedItem = currentValue;
             }
         }
@@ -75,11 +65,10 @@ namespace GreenshotPlugin.Controls
         public void Populate(Type enumType)
         {
             // Store the enum-type, so we can work with it
-            this.enumType = enumType;
+            _enumType = enumType;
 
             var availableValues = Enum.GetValues(enumType);
             Items.Clear();
-            string enumTypeName = enumType.Name;
             foreach (var enumValue in availableValues)
             {
                 Items.Add(enumValue);
@@ -91,20 +80,20 @@ namespace GreenshotPlugin.Controls
         /// </summary>
         private void StoreSelectedEnum()
         {
-            string enumTypeName = enumType.Name;
+            string enumTypeName = _enumType.Name;
             string selectedValue = SelectedItem as string;
-            var availableValues = Enum.GetValues(enumType);
+            var availableValues = Enum.GetValues(_enumType);
             object returnValue = null;
 
             try
             {
-                returnValue = Enum.Parse(enumType, selectedValue);
+                returnValue = Enum.Parse(_enumType, selectedValue);
             }
             catch (Exception)
             {
             }
 
-            selectedEnum = (Enum)returnValue;
+            _selectedEnum = (Enum)returnValue;
         }
 
         /// <summary>
@@ -113,7 +102,7 @@ namespace GreenshotPlugin.Controls
         /// <returns>The enum value of the combobox</returns>
         public Enum GetSelectedEnum()
         {
-            return selectedEnum;
+            return _selectedEnum;
         }
     }
 }

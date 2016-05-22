@@ -57,7 +57,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// <returns>SafeDeviceContextHandle</returns>
         public static SafeDeviceContextHandle GetSafeDeviceContext(this Graphics graphics)
         {
-            return SafeDeviceContextHandle.fromGraphics(graphics);
+            return SafeDeviceContextHandle.FromGraphics(graphics);
         }
     }
 
@@ -67,6 +67,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
     public abstract class SafeObjectHandle : SafeHandleZeroOrMinusOneIsInvalid
     {
         [DllImport("gdi32", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool DeleteObject(IntPtr hObject);
 
         protected SafeObjectHandle(bool ownsHandle) : base(ownsHandle)
@@ -84,9 +85,13 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public class SafeHBitmapHandle : SafeObjectHandle
     {
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeHBitmapHandle() : base(true)
+        public SafeHBitmapHandle() : base(true)
         {
+
         }
 
         [SecurityCritical]
@@ -101,8 +106,11 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public class SafeRegionHandle : SafeObjectHandle
     {
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeRegionHandle() : base(true)
+        public SafeRegionHandle() : base(true)
         {
         }
 
@@ -118,8 +126,11 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public class SafeDibSectionHandle : SafeObjectHandle
     {
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeDibSectionHandle() : base(true)
+        public SafeDibSectionHandle() : base(true)
         {
         }
 
@@ -139,23 +150,26 @@ namespace GreenshotPlugin.UnmanagedHelpers
         [DllImport("gdi32", SetLastError = true)]
         private static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObject);
 
-        private SafeHandle hdc;
+        private readonly SafeHandle _hdc;
 
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeSelectObjectHandle() : base(true)
+        public SafeSelectObjectHandle() : base(true)
         {
         }
 
         [SecurityCritical]
         public SafeSelectObjectHandle(SafeDCHandle hdc, SafeHandle newHandle) : base(true)
         {
-            this.hdc = hdc;
+            _hdc = hdc;
             SetHandle(SelectObject(hdc.DangerousGetHandle(), newHandle.DangerousGetHandle()));
         }
 
         protected override bool ReleaseHandle()
         {
-            SelectObject(hdc.DangerousGetHandle(), handle);
+            SelectObject(_hdc.DangerousGetHandle(), handle);
             return true;
         }
     }
@@ -173,10 +187,14 @@ namespace GreenshotPlugin.UnmanagedHelpers
     public class SafeCompatibleDCHandle : SafeDCHandle
     {
         [DllImport("gdi32", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool DeleteDC(IntPtr hDC);
 
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeCompatibleDCHandle() : base(true)
+        public SafeCompatibleDCHandle() : base(true)
         {
         }
 
@@ -202,23 +220,26 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public class SafeDeviceContextHandle : SafeDCHandle
     {
-        private Graphics graphics = null;
+        private readonly Graphics _graphics;
 
+        /// <summary>
+        /// Needed for marshalling return values
+        /// </summary>
         [SecurityCritical]
-        private SafeDeviceContextHandle() : base(true)
+        public SafeDeviceContextHandle() : base(true)
         {
         }
 
         [SecurityCritical]
         public SafeDeviceContextHandle(Graphics graphics, IntPtr preexistingHandle) : base(true)
         {
-            this.graphics = graphics;
+            _graphics = graphics;
             SetHandle(preexistingHandle);
         }
 
         protected override bool ReleaseHandle()
         {
-            graphics.ReleaseHdc(handle);
+            _graphics.ReleaseHdc(handle);
             return true;
         }
 
@@ -227,7 +248,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
             return new SafeSelectObjectHandle(this, newHandle);
         }
 
-        public static SafeDeviceContextHandle fromGraphics(Graphics graphics)
+        public static SafeDeviceContextHandle FromGraphics(Graphics graphics)
         {
             return new SafeDeviceContextHandle(graphics, graphics.GetHdc());
         }
@@ -261,51 +282,6 @@ namespace GreenshotPlugin.UnmanagedHelpers
 
         [DllImport("gdi32", SetLastError = true)]
         public static extern int GetDeviceCaps(SafeHandle hdc, DeviceCaps nIndex);
-
-        /// <summary>
-        /// StretchBlt extension for the graphics object
-        /// Doesn't work?
-        /// </summary>
-        /// <param name="target"></param>
-        /// <param name="source"></param>
-        public static void StretchBlt(this Graphics target, Bitmap sourceBitmap, Rectangle source, Rectangle destination)
-        {
-            using (SafeDeviceContextHandle targetDC = target.GetSafeDeviceContext())
-            {
-                using (SafeCompatibleDCHandle safeCompatibleDCHandle = CreateCompatibleDC(targetDC))
-                {
-                    using (SafeHBitmapHandle hBitmapHandle = new SafeHBitmapHandle(sourceBitmap.GetHbitmap()))
-                    {
-                        using (safeCompatibleDCHandle.SelectObject(hBitmapHandle))
-                        {
-                            StretchBlt(targetDC, destination.X, destination.Y, destination.Width, destination.Height, safeCompatibleDCHandle, source.Left, source.Top, source.Width, source.Height, CopyPixelOperation.SourceCopy);
-                        }
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Bitblt extension for the graphics object
-        /// </summary>
-        /// <param name="target"></param>
-        /// <param name="source"></param>
-        public static void BitBlt(this Graphics target, Bitmap sourceBitmap, Rectangle source, Point destination, CopyPixelOperation rop)
-        {
-            using (SafeDeviceContextHandle targetDC = target.GetSafeDeviceContext())
-            {
-                using (SafeCompatibleDCHandle safeCompatibleDCHandle = CreateCompatibleDC(targetDC))
-                {
-                    using (SafeHBitmapHandle hBitmapHandle = new SafeHBitmapHandle(sourceBitmap.GetHbitmap()))
-                    {
-                        using (safeCompatibleDCHandle.SelectObject(hBitmapHandle))
-                        {
-                            BitBlt(targetDC, destination.X, destination.Y, source.Width, source.Height, safeCompatibleDCHandle, source.Left, source.Top, rop);
-                        }
-                    }
-                }
-            }
-        }
     }
 
     [StructLayout(LayoutKind.Sequential, Pack = 2)]
@@ -441,10 +417,12 @@ namespace GreenshotPlugin.UnmanagedHelpers
             bV5BlueMask = (uint)255;
             bV5AlphaMask = (uint)255 << 24;
             bV5CSType = 1934772034; // sRGB
-            bV5Endpoints = new CIEXYZTRIPLE();
-            bV5Endpoints.ciexyzBlue = new CIEXYZ(0);
-            bV5Endpoints.ciexyzGreen = new CIEXYZ(0);
-            bV5Endpoints.ciexyzRed = new CIEXYZ(0);
+            bV5Endpoints = new CIEXYZTRIPLE
+            {
+                ciexyzBlue = new CIEXYZ(0),
+                ciexyzGreen = new CIEXYZ(0),
+                ciexyzRed = new CIEXYZ(0)
+            };
             bV5GammaRed = 0;
             bV5GammaGreen = 0;
             bV5GammaBlue = 0;

@@ -31,7 +31,7 @@ namespace Greenshot.Memento
     public class DeleteElementMemento : IMemento
     {
         private IDrawableContainer drawableContainer;
-        private Surface surface;
+        private readonly Surface surface;
 
         public DeleteElementMemento(Surface surface, IDrawableContainer drawableContainer)
         {

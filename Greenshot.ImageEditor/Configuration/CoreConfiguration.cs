@@ -205,6 +205,9 @@ namespace GreenshotPlugin.Core
 
         [IniProperty("OptimizeForRDP", Description = "Make some optimizations for usage with remote desktop", DefaultValue = "False")]
         public bool OptimizeForRDP;
+		[IniProperty("DisableRDPOptimizing", Description = "Disable all optimizations for usage with remote desktop", DefaultValue = "False")]
+ 		public bool DisableRDPOptimizing;
+
         [IniProperty("MinimizeWorkingSetSize", Description = "Optimize memory footprint, but with a performance penalty!", DefaultValue = "False")]
         public bool MinimizeWorkingSetSize;
 

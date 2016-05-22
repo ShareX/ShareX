@@ -40,13 +40,10 @@ namespace Greenshot.Drawing.Fields
     /// </summary>
     public class FieldAggregator : AbstractFieldHolder
     {
-        private List<IDrawableContainer> boundContainers;
-        private bool internalUpdateRunning = false;
+        private readonly List<IDrawableContainer> boundContainers;
+        private bool internalUpdateRunning;
 
-        private enum Status
-        { IDLE, BINDING, UPDATING };
-
-        private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
+        private static readonly EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
 
         public FieldAggregator()
         {

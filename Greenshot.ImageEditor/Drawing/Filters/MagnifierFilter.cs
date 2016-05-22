@@ -60,7 +60,7 @@ namespace Greenshot.Drawing.Filters
             int halfHeight = rect.Height / 2;
             int newWidth = rect.Width / magnificationFactor;
             int newHeight = rect.Height / magnificationFactor;
-            Rectangle source = new Rectangle(rect.X + halfWidth - (newWidth / 2), rect.Y + halfHeight - (newHeight / 2), newWidth, newHeight);
+            Rectangle source = new Rectangle(rect.X + halfWidth - newWidth / 2, rect.Y + halfHeight - newHeight / 2, newWidth, newHeight);
             graphics.DrawImage(applyBitmap, rect, source, GraphicsUnit.Pixel);
             graphics.Restore(state);
         }

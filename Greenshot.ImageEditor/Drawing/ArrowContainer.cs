@@ -89,7 +89,7 @@ namespace Greenshot.Drawing
                                     Top + currentStep + Height);
 
                                 currentStep++;
-                                alpha = alpha - (basealpha / steps);
+                                alpha = alpha - basealpha / steps;
                             }
                         }
                     }

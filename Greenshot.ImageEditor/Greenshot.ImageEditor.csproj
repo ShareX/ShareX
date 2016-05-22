@@ -168,6 +168,7 @@
     <Compile Include="Controls\Pipette.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Core\OperatingSystemExtensions.cs" />
     <Compile Include="Core\WindowsHelper.cs" />
     <Compile Include="Core\BinaryStructHelper.cs" />
     <Compile Include="Core\Cache.cs" />

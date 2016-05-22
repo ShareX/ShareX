@@ -29,7 +29,7 @@ namespace Greenshot.Interop
     [AttributeUsage(AttributeTargets.Interface, Inherited = false, AllowMultiple = false)]
     public sealed class ComProgIdAttribute : Attribute
     {
-        private string _value;
+        private readonly string _value;
 
         /// <summary>
         /// Extracts the attribute from the specified type.

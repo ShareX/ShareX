@@ -154,7 +154,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// Helper method for an easy DWM check
         /// </summary>
         /// <returns>bool true if DWM is available AND active</returns>
-        public static bool isDWMEnabled()
+        public static bool IsDwmEnabled()
         {
             // According to: http://technet.microsoft.com/en-us/subscriptions/aa969538%28v=vs.85%29.aspx
             // And: http://msdn.microsoft.com/en-us/library/windows/desktop/aa969510%28v=vs.85%29.aspx

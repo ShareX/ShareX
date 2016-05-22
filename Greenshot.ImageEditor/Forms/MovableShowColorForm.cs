@@ -100,9 +100,9 @@ namespace Greenshot.Forms
         /// </summary>
         /// <param name="screenCoordinates">Point with the coordinates</param>
         /// <returns>Color at the specified screenCoordinates</returns>
-        static private Color GetPixelColor(Point screenCoordinates)
+        private static Color GetPixelColor(Point screenCoordinates)
         {
-            using (SafeWindowDCHandle screenDC = SafeWindowDCHandle.fromDesktop())
+            using (SafeWindowDCHandle screenDC = SafeWindowDCHandle.FromDesktop())
             {
                 try
                 {

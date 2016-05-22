@@ -31,7 +31,7 @@ namespace GreenshotPlugin.Controls
     /// </summary>
     internal partial class PleaseWaitForm : Form
     {
-        private Thread waitFor = null;
+        private Thread waitFor;
         private string title;
 
         public PleaseWaitForm()
