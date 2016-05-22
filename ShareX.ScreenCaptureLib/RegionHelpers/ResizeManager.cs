@@ -318,7 +318,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null)
             {
-                if (shape.NodeType == NodeType.Rectangle)
+                if (shape.NodeType == NodeType.Rectangle || shape.NodeType == NodeType.Point)
                 {
                     shape.Rectangle = shape.Rectangle.LocationOffset(x, y);
                 }

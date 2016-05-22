@@ -712,7 +712,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (!IsCreating)
                 {
-                    RegionSelection(e.Location);
+                    RegionSelection(InputManager.MousePosition0Based);
                 }
             }
         }
@@ -814,7 +814,7 @@ namespace ShareX.ScreenCaptureLib
 
                         if (CurrentShape == null || CurrentShape != AreaIntersect())
                         {
-                            RegionSelection(InputManager.MousePosition);
+                            RegionSelection(InputManager.MousePosition0Based);
                         }
                     }
                     break;
@@ -913,6 +913,189 @@ namespace ShareX.ScreenCaptureLib
             ResizeManager.Update();
         }
 
+        private void RegionSelection(Point location)
+        {
+            if (ResizeManager.IsCursorOnNode())
+            {
+                return;
+            }
+
+            BaseShape shape = AreaIntersect(location);
+
+            PositionOnClick = location;
+
+            if (shape != null && shape.ShapeType == CurrentShapeType) // Select area
+            {
+                IsMoving = true;
+                CurrentShape = shape;
+                SelectShape();
+            }
+            else if (!IsCreating) // Create new area
+            {
+                DeselectShape();
+
+                shape = AddShape();
+
+                if (shape.NodeType == NodeType.Point)
+                {
+                    IsMoving = true;
+                    shape.Rectangle = new Rectangle(new Point(location.X - shape.Rectangle.Width / 2, location.Y - shape.Rectangle.Height / 2), shape.Rectangle.Size);
+                }
+                else if (Config.IsFixedSize && IsCurrentShapeTypeRegion)
+                {
+                    IsMoving = true;
+                    shape.Rectangle = new Rectangle(new Point(location.X - Config.FixedSize.Width / 2, location.Y - Config.FixedSize.Height / 2), Config.FixedSize);
+                }
+                else
+                {
+                    IsCreating = true;
+                    shape.StartPosition = location;
+                }
+            }
+        }
+
+        private void EndRegionSelection()
+        {
+            bool wasCreating = IsCreating;
+
+            IsCreating = false;
+            IsMoving = false;
+
+            BaseShape shape = CurrentShape;
+
+            if (shape != null)
+            {
+                if (!IsCurrentRegionValid)
+                {
+                    DeleteSelectedShape();
+                    CheckHover();
+                }
+                else if (Config.QuickCrop && IsCurrentShapeTypeRegion)
+                {
+                    form.UpdateRegionPath();
+                    form.Close(RegionResult.Region);
+                }
+                else
+                {
+                    if (wasCreating)
+                    {
+                        shape.OnShapeCreated();
+                    }
+
+                    SelectShape();
+
+                    return;
+                }
+            }
+
+            if (!CurrentHoverRectangle.IsEmpty)
+            {
+                AddShape(CurrentHoverRectangle);
+
+                if (Config.QuickCrop && IsCurrentShapeTypeRegion)
+                {
+                    form.UpdateRegionPath();
+                    form.Close(RegionResult.Region);
+                }
+                else
+                {
+                    if (wasCreating)
+                    {
+                        shape.OnShapeCreated();
+                    }
+
+                    SelectShape();
+                }
+            }
+        }
+
+        private BaseShape AddShape(Rectangle rect)
+        {
+            BaseShape shape = AddShape();
+            shape.Rectangle = rect;
+            return shape;
+        }
+
+        private BaseShape AddShape()
+        {
+            BaseShape shape = CreateShape();
+            Shapes.Add(shape);
+            CurrentShape = shape;
+            return shape;
+        }
+
+        public BaseShape CreateShape(Rectangle rect)
+        {
+            BaseShape shape = CreateShape();
+            shape.Rectangle = rect;
+            return shape;
+        }
+
+        public BaseShape CreateShape()
+        {
+            BaseShape shape;
+
+            switch (CurrentShapeType)
+            {
+                default:
+                case ShapeType.RegionRectangle:
+                    shape = new RectangleRegionShape();
+                    break;
+                case ShapeType.RegionRoundedRectangle:
+                    shape = new RoundedRectangleRegionShape();
+                    break;
+                case ShapeType.RegionEllipse:
+                    shape = new EllipseRegionShape();
+                    break;
+                case ShapeType.DrawingRectangle:
+                    shape = new RectangleDrawingShape();
+                    break;
+                case ShapeType.DrawingRoundedRectangle:
+                    shape = new RoundedRectangleDrawingShape();
+                    break;
+                case ShapeType.DrawingEllipse:
+                    shape = new EllipseDrawingShape();
+                    break;
+                case ShapeType.DrawingLine:
+                    shape = new LineDrawingShape();
+                    break;
+                case ShapeType.DrawingArrow:
+                    shape = new ArrowDrawingShape();
+                    break;
+                case ShapeType.DrawingText:
+                    shape = new TextDrawingShape();
+                    break;
+                case ShapeType.DrawingStep:
+                    shape = new StepDrawingShape();
+                    break;
+                case ShapeType.DrawingBlur:
+                    shape = new BlurEffectShape();
+                    break;
+                case ShapeType.DrawingPixelate:
+                    shape = new PixelateEffectShape();
+                    break;
+                case ShapeType.DrawingHighlight:
+                    shape = new HighlightEffectShape();
+                    break;
+            }
+
+            shape.Manager = this;
+
+            shape.UpdateShapeConfig();
+
+            return shape;
+        }
+
+        private void UpdateCurrentShape()
+        {
+            BaseShape shape = CurrentShape;
+
+            if (shape != null)
+            {
+                shape.UpdateShapeConfig();
+            }
+        }
+
         private Point SnapPosition(Point posOnClick, Point posCurrent)
         {
             Rectangle currentRect = CaptureHelpers.CreateRectangle(posOnClick, posCurrent);
@@ -988,174 +1171,6 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        private void RegionSelection(Point location)
-        {
-            if (ResizeManager.IsCursorOnNode())
-            {
-                return;
-            }
-
-            BaseShape shape = AreaIntersect(InputManager.MousePosition0Based);
-
-            PositionOnClick = InputManager.MousePosition0Based;
-
-            if (shape != null && shape.ShapeType == CurrentShapeType) // Select area
-            {
-                IsMoving = true;
-                CurrentShape = shape;
-                SelectShape();
-            }
-            else if (!IsCreating) // Create new area
-            {
-                DeselectShape();
-
-                Rectangle rect;
-
-                if (Config.IsFixedSize)
-                {
-                    IsMoving = true;
-                    rect = new Rectangle(new Point(location.X - Config.FixedSize.Width / 2, location.Y - Config.FixedSize.Height / 2), Config.FixedSize);
-                }
-                else
-                {
-                    IsCreating = true;
-                    rect = new Rectangle(location, new Size(1, 1));
-                }
-
-                AddShape(rect);
-
-                CurrentShape.StartPosition = PositionOnClick;
-            }
-        }
-
-        private void EndRegionSelection()
-        {
-            bool wasCreating = IsCreating;
-
-            IsCreating = false;
-            IsMoving = false;
-
-            BaseShape shape = CurrentShape;
-
-            if (shape != null)
-            {
-                if (!IsCurrentRegionValid)
-                {
-                    DeleteSelectedShape();
-                    CheckHover();
-                }
-                else if (Config.QuickCrop && IsCurrentShapeTypeRegion)
-                {
-                    form.UpdateRegionPath();
-                    form.Close(RegionResult.Region);
-                }
-                else
-                {
-                    if (wasCreating)
-                    {
-                        shape.OnShapeCreated();
-                    }
-
-                    SelectShape();
-
-                    return;
-                }
-            }
-
-            if (!CurrentHoverRectangle.IsEmpty)
-            {
-                AddShape(CurrentHoverRectangle);
-
-                if (Config.QuickCrop && IsCurrentShapeTypeRegion)
-                {
-                    form.UpdateRegionPath();
-                    form.Close(RegionResult.Region);
-                }
-                else
-                {
-                    if (wasCreating)
-                    {
-                        shape.OnShapeCreated();
-                    }
-
-                    SelectShape();
-                }
-            }
-        }
-
-        private void AddShape(Rectangle rect)
-        {
-            BaseShape shape = CreateShape(rect);
-            Shapes.Add(shape);
-            CurrentShape = shape;
-        }
-
-        public BaseShape CreateShape(Rectangle rect)
-        {
-            BaseShape shape;
-
-            switch (CurrentShapeType)
-            {
-                default:
-                case ShapeType.RegionRectangle:
-                    shape = new RectangleRegionShape();
-                    break;
-                case ShapeType.RegionRoundedRectangle:
-                    shape = new RoundedRectangleRegionShape();
-                    break;
-                case ShapeType.RegionEllipse:
-                    shape = new EllipseRegionShape();
-                    break;
-                case ShapeType.DrawingRectangle:
-                    shape = new RectangleDrawingShape();
-                    break;
-                case ShapeType.DrawingRoundedRectangle:
-                    shape = new RoundedRectangleDrawingShape();
-                    break;
-                case ShapeType.DrawingEllipse:
-                    shape = new EllipseDrawingShape();
-                    break;
-                case ShapeType.DrawingLine:
-                    shape = new LineDrawingShape();
-                    break;
-                case ShapeType.DrawingArrow:
-                    shape = new ArrowDrawingShape();
-                    break;
-                case ShapeType.DrawingText:
-                    shape = new TextDrawingShape();
-                    break;
-                case ShapeType.DrawingStep:
-                    shape = new StepDrawingShape();
-                    break;
-                case ShapeType.DrawingBlur:
-                    shape = new BlurEffectShape();
-                    break;
-                case ShapeType.DrawingPixelate:
-                    shape = new PixelateEffectShape();
-                    break;
-                case ShapeType.DrawingHighlight:
-                    shape = new HighlightEffectShape();
-                    break;
-            }
-
-            shape.Manager = this;
-            shape.Rectangle = rect;
-
-            shape.UpdateShapeConfig();
-
-            return shape;
-        }
-
-        private void UpdateCurrentShape()
-        {
-            BaseShape shape = CurrentShape;
-
-            if (shape != null)
-            {
-                shape.UpdateShapeConfig();
-            }
-        }
-
         public Image RenderOutputImage(Image img)
         {
             Bitmap bmp = new Bitmap(img);
@@ -1187,7 +1202,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void SelectShape()
         {
-            if (!CurrentRectangle.IsEmpty && !Config.IsFixedSize)
+            BaseShape shape = CurrentShape;
+
+            if (shape != null && !CurrentRectangle.IsEmpty && !Config.IsFixedSize && shape.NodeType != NodeType.Point)
             {
                 ResizeManager.Show();
             }

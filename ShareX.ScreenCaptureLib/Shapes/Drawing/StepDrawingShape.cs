@@ -38,8 +38,16 @@ namespace ShareX.ScreenCaptureLib
     public class StepDrawingShape : BaseDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingStep;
+        public override NodeType NodeType { get; } = NodeType.Point;
 
         public int Number { get; set; }
+
+        private const int DefaultSize = 30;
+
+        public StepDrawingShape()
+        {
+            Rectangle = new Rectangle(0, 0, DefaultSize, DefaultSize);
+        }
 
         public override void OnDraw(Graphics g)
         {
@@ -61,6 +69,8 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
+            g.SmoothingMode = SmoothingMode.None;
+
             if (Rectangle.Width > 20 && Rectangle.Height > 20)
             {
                 int fontSize = Math.Min(Rectangle.Width, Rectangle.Height) - 10;
@@ -69,13 +79,11 @@ namespace ShareX.ScreenCaptureLib
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
                     g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    g.DrawString(Number.ToString(), font, Brushes.Black, Rectangle.LocationOffset(1, 1), sf);
+                    //g.DrawString(Number.ToString(), font, Brushes.Black, Rectangle.LocationOffset(1, 1), sf);
                     g.DrawString(Number.ToString(), font, Brushes.White, Rectangle, sf);
                     g.TextRenderingHint = TextRenderingHint.SystemDefault;
                 }
             }
-
-            g.SmoothingMode = SmoothingMode.None;
         }
 
         public override void AddShapePath(GraphicsPath gp, Rectangle rect)
