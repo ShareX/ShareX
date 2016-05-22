@@ -71,6 +71,9 @@ namespace ShareX
             niTray.Icon = ShareXResources.Icon;
             Text = Program.Title;
 
+            tsMain.Renderer = new ToolStripCheckedBoldRenderer();
+            cmsTray.Renderer = new ToolStripCheckedBoldRenderer();
+
             tsddbWorkflows.HideImageMargin();
             tsmiTrayWorkflows.HideImageMargin();
             tsmiMonitor.HideImageMargin();

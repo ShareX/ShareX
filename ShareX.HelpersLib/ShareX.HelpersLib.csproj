@@ -129,6 +129,7 @@
     <Compile Include="Controls\LabelNoCopy.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ToolStripCheckedBoldRenderer.cs" />
     <Compile Include="Controls\ToolStripButtonColorAnimation.cs">
       <SubType>Component</SubType>
     </Compile>
