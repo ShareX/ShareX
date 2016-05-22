@@ -92,6 +92,7 @@
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\StepDrawingShape.cs" />
     <Compile Include="Shapes\TextDrawingOptions.cs" />
     <Compile Include="Shapes\Drawing\TextDrawingShape.cs" />
     <Compile Include="Shapes\Effect\BlurEffectShape.cs" />
@@ -195,6 +196,7 @@
     <None Include="Resources\minus.png" />
     <None Include="Resources\prohibition.png" />
     <None Include="Resources\cross.png" />
+    <None Include="Resources\counter-reset.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>

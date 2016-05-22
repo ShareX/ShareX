@@ -285,6 +285,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingText:
                         img = Resources.layer_shape_text;
                         break;
+                    case ShapeType.DrawingStep:
+                        img = Resources.counter_reset;
+                        break;
                     case ShapeType.DrawingBlur:
                         img = Resources.layer_shade;
                         break;
@@ -657,6 +660,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
                 case ShapeType.DrawingText:
+                case ShapeType.DrawingStep:
                 case ShapeType.DrawingBlur:
                 case ShapeType.DrawingPixelate:
                 case ShapeType.DrawingHighlight:
@@ -676,6 +680,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
                 case ShapeType.DrawingText:
+                case ShapeType.DrawingStep:
                     tsmiBorderColor.Visible = true;
                     tslnudBorderSize.Visible = true;
                     break;
@@ -690,6 +695,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingRoundedRectangle:
                 case ShapeType.DrawingEllipse:
                 case ShapeType.DrawingText:
+                case ShapeType.DrawingStep:
                     tsmiFillColor.Visible = true;
                     break;
             }
@@ -1117,6 +1123,9 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.DrawingText:
                     shape = new TextDrawingShape();
+                    break;
+                case ShapeType.DrawingStep:
+                    shape = new StepDrawingShape();
                     break;
                 case ShapeType.DrawingBlur:
                     shape = new BlurEffectShape();
