@@ -28,6 +28,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -84,7 +85,9 @@ namespace ShareX.ScreenCaptureLib
                 using (Brush textBrush = new SolidBrush(Options.Color))
                 using (StringFormat sf = new StringFormat { Alignment = Options.AlignmentHorizontal, LineAlignment = Options.AlignmentVertical })
                 {
+                    g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
                     g.DrawString(Text, font, textBrush, Rectangle, sf);
+                    g.TextRenderingHint = TextRenderingHint.SystemDefault;
                 }
             }
         }
