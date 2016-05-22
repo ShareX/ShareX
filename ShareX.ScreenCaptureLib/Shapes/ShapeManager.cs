@@ -115,7 +115,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                return Regions.Where(x => IsAreaValid(x.Rectangle)).ToArray();
+                return Regions.Where(x => IsShapeAreaValid(x.Rectangle)).ToArray();
             }
         }
 
@@ -123,7 +123,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                return IsAreaValid(CurrentRectangle);
+                return IsShapeAreaValid(CurrentRectangle);
             }
         }
 
@@ -236,7 +236,7 @@ namespace ShareX.ScreenCaptureLib
 
             tsmiDeleteSelected = new ToolStripMenuItem("Delete selected object");
             tsmiDeleteSelected.Image = Resources.layer__minus;
-            tsmiDeleteSelected.Click += (sender, e) => DeleteSelectedShape();
+            tsmiDeleteSelected.Click += (sender, e) => DeleteCurrentShape();
             cmsContextMenu.Items.Add(tsmiDeleteSelected);
 
             tsmiDeleteAll = new ToolStripMenuItem("Delete all objects");
@@ -730,7 +730,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (IsCreating)
                 {
-                    DeleteSelectedShape();
+                    DeleteCurrentShape();
                     EndRegionSelection();
                 }
                 else if (form.Mode == RectangleRegionMode.Annotation && cmsContextMenu != null)
@@ -738,7 +738,7 @@ namespace ShareX.ScreenCaptureLib
                     cmsContextMenu.Show(form, e.Location.Add(-10, -10));
                     Config.ShowMenuTip = false;
                 }
-                else if (IsAreaIntersect())
+                else if (IsShapeIntersect())
                 {
                     DeleteIntersectShape();
                 }
@@ -812,7 +812,7 @@ namespace ShareX.ScreenCaptureLib
                             DeselectShape();
                         }
 
-                        if (CurrentShape == null || CurrentShape != AreaIntersect())
+                        if (CurrentShape == null || CurrentShape != GetShapeIntersect())
                         {
                             RegionSelection(InputManager.MousePosition0Based);
                         }
@@ -868,7 +868,7 @@ namespace ShareX.ScreenCaptureLib
                     IsSnapResizing = false;
                     break;
                 case Keys.Delete:
-                    DeleteSelectedShape();
+                    DeleteCurrentShape();
 
                     if (IsCreating)
                     {
@@ -920,17 +920,17 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
-            BaseShape shape = AreaIntersect(location);
-
             PositionOnClick = location;
 
-            if (shape != null && shape.ShapeType == CurrentShapeType) // Select area
+            BaseShape shape = GetShapeIntersect(location);
+
+            if (shape != null && shape.ShapeType == CurrentShapeType) // Select shape
             {
                 IsMoving = true;
                 CurrentShape = shape;
                 SelectShape();
             }
-            else if (!IsCreating) // Create new area
+            else if (!IsCreating) // Create new shape
             {
                 DeselectShape();
 
@@ -967,44 +967,36 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (!IsCurrentRegionValid)
                 {
-                    DeleteSelectedShape();
+                    shape.Rectangle = Rectangle.Empty;
+
                     CheckHover();
-                }
-                else if (Config.QuickCrop && IsCurrentShapeTypeRegion)
-                {
-                    form.UpdateRegionPath();
-                    form.Close(RegionResult.Region);
-                }
-                else
-                {
-                    if (wasCreating)
+
+                    if (IsCurrentHoverAreaValid)
                     {
-                        shape.OnShapeCreated();
+                        shape.Rectangle = CurrentHoverRectangle;
                     }
-
-                    SelectShape();
-
-                    return;
-                }
-            }
-
-            if (!CurrentHoverRectangle.IsEmpty)
-            {
-                AddShape(CurrentHoverRectangle);
-
-                if (Config.QuickCrop && IsCurrentShapeTypeRegion)
-                {
-                    form.UpdateRegionPath();
-                    form.Close(RegionResult.Region);
-                }
-                else
-                {
-                    if (wasCreating)
+                    else
                     {
-                        shape.OnShapeCreated();
+                        DeleteCurrentShape();
                     }
+                }
 
-                    SelectShape();
+                if (shape != null)
+                {
+                    if (Config.QuickCrop && IsCurrentShapeTypeRegion)
+                    {
+                        form.UpdateRegionPath();
+                        form.Close(RegionResult.Region);
+                    }
+                    else
+                    {
+                        if (wasCreating)
+                        {
+                            shape.OnShapeCreated();
+                        }
+
+                        SelectShape();
+                    }
                 }
             }
         }
@@ -1127,11 +1119,11 @@ namespace ShareX.ScreenCaptureLib
 
             if (!ResizeManager.IsCursorOnNode() && !IsCreating && !IsMoving && !IsResizing)
             {
-                Rectangle hoverArea = GetAreaIntersectWithMouse();
+                BaseShape shape = GetShapeIntersect();
 
-                if (!hoverArea.IsEmpty)
+                if (shape != null && !shape.Rectangle.IsEmpty)
                 {
-                    CurrentHoverRectangle = hoverArea;
+                    CurrentHoverRectangle = shape.Rectangle;
                 }
                 else
                 {
@@ -1139,7 +1131,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (window != null && !window.Rectangle.IsEmpty)
                     {
-                        hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
+                        Rectangle hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
                         CurrentHoverRectangle = Rectangle.Intersect(form.ScreenRectangle0Based, hoverArea);
                     }
                 }
@@ -1216,7 +1208,7 @@ namespace ShareX.ScreenCaptureLib
             ResizeManager.Hide();
         }
 
-        private void DeleteSelectedShape()
+        private void DeleteCurrentShape()
         {
             BaseShape shape = CurrentShape;
 
@@ -1229,7 +1221,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void DeleteIntersectShape()
         {
-            BaseShape shape = AreaIntersect();
+            BaseShape shape = GetShapeIntersect();
 
             if (shape != null)
             {
@@ -1244,12 +1236,12 @@ namespace ShareX.ScreenCaptureLib
             DeselectShape();
         }
 
-        private bool IsAreaValid(Rectangle rect)
+        private bool IsShapeAreaValid(Rectangle rect)
         {
             return !rect.IsEmpty && rect.Width >= MinimumSize && rect.Height >= MinimumSize;
         }
 
-        public BaseShape AreaIntersect(Point mousePosition)
+        public BaseShape GetShapeIntersect(Point mousePosition)
         {
             for (int i = Shapes.Count - 1; i >= 0; i--)
             {
@@ -1264,26 +1256,14 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public BaseShape AreaIntersect()
+        public BaseShape GetShapeIntersect()
         {
-            return AreaIntersect(InputManager.MousePosition0Based);
+            return GetShapeIntersect(InputManager.MousePosition0Based);
         }
 
-        public Rectangle GetAreaIntersectWithMouse()
+        public bool IsShapeIntersect()
         {
-            BaseShape shape = AreaIntersect();
-
-            if (shape != null)
-            {
-                return shape.Rectangle;
-            }
-
-            return Rectangle.Empty;
-        }
-
-        public bool IsAreaIntersect()
-        {
-            return AreaIntersect() != null;
+            return GetShapeIntersect() != null;
         }
 
         public Rectangle CombineAreas()

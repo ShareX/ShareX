@@ -581,7 +581,7 @@ namespace ShareX.ScreenCaptureLib
         private void DrawMagnifier(Graphics g)
         {
             Point mousePos = InputManager.MousePosition0Based;
-            Rectangle currentScreenRect0Based = CaptureHelpers.ScreenToClient(Screen.FromPoint(InputManager.MousePosition).Bounds);
+            Rectangle currentScreenRect0Based = CaptureHelpers.GetActiveScreenBounds0Based();
             int offsetX = 10, offsetY = 10, infoTextOffset = 0, infoTextPadding = 3;
             Rectangle infoTextRect = Rectangle.Empty;
             string infoText = string.Empty;
