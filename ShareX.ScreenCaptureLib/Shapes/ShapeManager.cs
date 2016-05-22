@@ -1133,6 +1133,14 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
+                    switch (CurrentShapeType)
+                    {
+                        case ShapeType.DrawingLine:
+                        case ShapeType.DrawingArrow:
+                        case ShapeType.DrawingStep:
+                            return;
+                    }
+
                     SimpleWindowInfo window = FindSelectedWindow();
 
                     if (window != null && !window.Rectangle.IsEmpty)
