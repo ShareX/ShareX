@@ -57,7 +57,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (form.Result == RegionResult.Region)
                 {
-                    if (form.ShapeManager.IsCurrentRegionValid)
+                    if (form.ShapeManager.IsCurrentRectangleValid)
                     {
                         rect = CaptureHelpers.ClientToScreen(form.ShapeManager.CurrentRectangle);
                         return true;

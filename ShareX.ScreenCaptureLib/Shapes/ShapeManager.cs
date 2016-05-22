@@ -69,7 +69,9 @@ namespace ShareX.ScreenCaptureLib
             private set
             {
                 currentShapeType = value;
+
                 DeselectShape();
+
                 OnCurrentShapeTypeChanged(currentShapeType);
             }
         }
@@ -84,6 +86,19 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 return Rectangle.Empty;
+            }
+        }
+
+        public bool IsCurrentRectangleValid
+        {
+            get
+            {
+                if (CurrentShape != null)
+                {
+                    return CurrentShape.IsRectangleValid;
+                }
+
+                return false;
             }
         }
 
@@ -115,15 +130,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                return Regions.Where(x => IsShapeAreaValid(x.Rectangle)).ToArray();
-            }
-        }
-
-        public bool IsCurrentRegionValid
-        {
-            get
-            {
-                return IsShapeAreaValid(CurrentRectangle);
+                return Regions.Where(x => x.IsRectangleValid).ToArray();
             }
         }
 
@@ -166,7 +173,6 @@ namespace ShareX.ScreenCaptureLib
         public List<SimpleWindowInfo> Windows { get; set; }
         public bool WindowCaptureMode { get; set; }
         public bool IncludeControls { get; set; }
-        public int MinimumSize { get; set; } = 3;
 
         public SurfaceOptions Config { get; private set; }
 
@@ -182,7 +188,11 @@ namespace ShareX.ScreenCaptureLib
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
         private RectangleRegionForm form;
+
         private ContextMenuStrip cmsContextMenu;
+        private ToolStripSeparator tssObjectOptions, tssShapeOptions;
+        private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor;
+        private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudRoundedRectangleRadius, tslnudBlurRadius, tslnudPixelateSize;
 
         public ShapeManager(RectangleRegionForm form)
         {
@@ -206,10 +216,6 @@ namespace ShareX.ScreenCaptureLib
             CurrentShape = null;
             CurrentShapeType = ShapeType.RegionRectangle;
         }
-
-        private ToolStripSeparator tssObjectOptions, tssShapeOptions;
-        private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor;
-        private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudRoundedRectangleRadius, tslnudBlurRadius, tslnudPixelateSize;
 
         private void CreateContextMenu()
         {
@@ -965,7 +971,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null)
             {
-                if (!IsCurrentRegionValid)
+                if (!IsCurrentRectangleValid)
                 {
                     shape.Rectangle = Rectangle.Empty;
 
@@ -1234,11 +1240,6 @@ namespace ShareX.ScreenCaptureLib
         {
             Shapes.Clear();
             DeselectShape();
-        }
-
-        private bool IsShapeAreaValid(Rectangle rect)
-        {
-            return !rect.IsEmpty && rect.Width >= MinimumSize && rect.Height >= MinimumSize;
         }
 
         public BaseShape GetShapeIntersect(Point mousePosition)

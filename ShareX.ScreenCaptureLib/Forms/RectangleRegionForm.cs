@@ -109,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
         {
             string clipboardText;
 
-            if (ShapeManager.IsCurrentRegionValid)
+            if (ShapeManager.IsCurrentRectangleValid)
             {
                 clipboardText = GetAreaText(ShapeManager.CurrentRectangle);
             }
@@ -232,7 +232,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Draw animated rectangle on selection area
-            if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentRegionValid)
+            if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentRectangleValid)
             {
                 g.DrawRectangleProper(borderPen, ShapeManager.CurrentRectangle);
                 g.DrawRectangleProper(borderDotPen, ShapeManager.CurrentRectangle);
@@ -458,7 +458,7 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes);
             }
 
-            if (ShapeManager.IsCurrentRegionValid)
+            if (ShapeManager.IsCurrentRectangleValid)
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size);
             }

@@ -31,6 +31,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseShape
     {
+        private const int MinimumSize = 3;
+
         public abstract ShapeType ShapeType { get; }
 
         public virtual NodeType NodeType { get; } = NodeType.Rectangle;
@@ -76,6 +78,14 @@ namespace ShareX.ScreenCaptureLib
                 endPosition = value;
 
                 Rectangle = CaptureHelpers.CreateRectangle(StartPosition, EndPosition);
+            }
+        }
+
+        public bool IsRectangleValid
+        {
+            get
+            {
+                return !Rectangle.IsEmpty && Rectangle.Width >= MinimumSize && Rectangle.Height >= MinimumSize;
             }
         }
 
