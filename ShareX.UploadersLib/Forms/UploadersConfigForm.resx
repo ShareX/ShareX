@@ -8993,6 +8993,17 @@ Using an encrypted library disables sharing.</value>
     <value>0</value>
   </data>
   <data name="lblLithiioInfo.Text" xml:space="preserve">
+    <value>Leave the API key blank for anonymous usage or sign in through Steam
+at https://lithi.io/ to become a Lithiio member and get an API key.
+
+Anonymous:
+    - 50 MB max per upload
+    - Files expire after 3 months
+
+Lithiio Member:
+    - 100 MB max per upload
+    - No expiration on files
+    - File management on website (List + Delete files)</value>
   </data>
   <data name="&gt;&gt;lblLithiioInfo.Name" xml:space="preserve">
     <value>lblLithiioInfo</value>
