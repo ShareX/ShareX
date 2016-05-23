@@ -37,16 +37,30 @@ namespace ShareX.ScreenCaptureLib
 {
     public class StepDrawingShape : BaseDrawingShape
     {
+        private const int DefaultSize = 30;
+
         public override ShapeType ShapeType { get; } = ShapeType.DrawingStep;
         public override NodeType NodeType { get; } = NodeType.Point;
 
         public int Number { get; set; }
 
-        private const int DefaultSize = 30;
-
         public StepDrawingShape()
         {
             Rectangle = new Rectangle(0, 0, DefaultSize, DefaultSize);
+        }
+
+        public override void UpdateShapeConfig()
+        {
+            BorderColor = AnnotationOptions.StepBorderColor;
+            BorderSize = AnnotationOptions.StepBorderSize;
+            FillColor = AnnotationOptions.StepFillColor;
+        }
+
+        public override void ApplyShapeConfig()
+        {
+            AnnotationOptions.StepBorderColor = BorderColor;
+            AnnotationOptions.StepBorderSize = BorderSize;
+            AnnotationOptions.StepFillColor = FillColor;
         }
 
         public override void OnDraw(Graphics g)
@@ -63,6 +77,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (BorderSize > 0 && BorderColor.A > 0)
             {
+                //g.DrawEllipse(Pens.Black, Rectangle.LocationOffset(0, 1));
+
                 using (Pen pen = new Pen(BorderColor, BorderSize))
                 {
                     g.DrawEllipse(pen, Rectangle);

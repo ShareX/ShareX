@@ -337,6 +337,10 @@ namespace ShareX.ScreenCaptureLib
                 {
                     borderColor = AnnotationOptions.TextBorderColor;
                 }
+                else if (shapeType == ShapeType.DrawingStep)
+                {
+                    borderColor = AnnotationOptions.StepBorderColor;
+                }
                 else
                 {
                     borderColor = AnnotationOptions.BorderColor;
@@ -349,6 +353,10 @@ namespace ShareX.ScreenCaptureLib
                         if (shapeType == ShapeType.DrawingText)
                         {
                             AnnotationOptions.TextBorderColor = dialogColor.NewColor;
+                        }
+                        else if (shapeType == ShapeType.DrawingStep)
+                        {
+                            AnnotationOptions.StepBorderColor = dialogColor.NewColor;
                         }
                         else
                         {
@@ -378,6 +386,10 @@ namespace ShareX.ScreenCaptureLib
                 {
                     AnnotationOptions.TextBorderSize = borderSize;
                 }
+                else if (shapeType == ShapeType.DrawingStep)
+                {
+                    AnnotationOptions.StepBorderSize = borderSize;
+                }
                 else
                 {
                     AnnotationOptions.BorderSize = borderSize;
@@ -400,6 +412,10 @@ namespace ShareX.ScreenCaptureLib
                 {
                     fillColor = AnnotationOptions.TextFillColor;
                 }
+                else if (shapeType == ShapeType.DrawingStep)
+                {
+                    fillColor = AnnotationOptions.StepFillColor;
+                }
                 else
                 {
                     fillColor = AnnotationOptions.FillColor;
@@ -412,6 +428,10 @@ namespace ShareX.ScreenCaptureLib
                         if (shapeType == ShapeType.DrawingText)
                         {
                             AnnotationOptions.TextFillColor = dialogColor.NewColor;
+                        }
+                        else if (shapeType == ShapeType.DrawingStep)
+                        {
+                            AnnotationOptions.StepFillColor = dialogColor.NewColor;
                         }
                         else
                         {
@@ -610,6 +630,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 borderColor = AnnotationOptions.TextBorderColor;
             }
+            else if (shapeType == ShapeType.DrawingStep)
+            {
+                borderColor = AnnotationOptions.StepBorderColor;
+            }
             else
             {
                 borderColor = AnnotationOptions.BorderColor;
@@ -624,6 +648,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 borderSize = AnnotationOptions.TextBorderSize;
             }
+            else if (shapeType == ShapeType.DrawingStep)
+            {
+                borderSize = AnnotationOptions.StepBorderSize;
+            }
             else
             {
                 borderSize = AnnotationOptions.BorderSize;
@@ -636,6 +664,10 @@ namespace ShareX.ScreenCaptureLib
             if (shapeType == ShapeType.DrawingText)
             {
                 fillColor = AnnotationOptions.TextFillColor;
+            }
+            else if (shapeType == ShapeType.DrawingStep)
+            {
+                fillColor = AnnotationOptions.StepFillColor;
             }
             else
             {

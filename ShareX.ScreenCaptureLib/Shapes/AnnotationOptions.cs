@@ -43,9 +43,14 @@ namespace ShareX.ScreenCaptureLib
 
         // Text drawing
         public TextDrawingOptions TextOptions { get; set; } = new TextDrawingOptions();
-        public Color TextBorderColor { get; set; } = Color.Black;
-        public int TextBorderSize { get; set; } = 1;
+        public Color TextBorderColor { get; set; } = Color.White;
+        public int TextBorderSize { get; set; } = 0;
         public Color TextFillColor { get; set; } = Color.FromArgb(150, Color.Black);
+
+        // Step drawing
+        public Color StepBorderColor { get; set; } = Color.White;
+        public int StepBorderSize { get; set; } = 0;
+        public Color StepFillColor { get; set; } = Color.Red;
 
         // Blur effect
         public int BlurRadius { get; set; } = 15;
