@@ -220,6 +220,7 @@ namespace ShareX.ScreenCaptureLib
         private void CreateContextMenu()
         {
             cmsContextMenu = new ContextMenuStrip(form.components);
+            cmsContextMenu.Renderer = new ToolStripCheckedBoldRenderer();
 
             #region Main
 
