@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -36,6 +37,14 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingLine;
         public override NodeType NodeType { get; } = NodeType.Line;
+
+        public override bool IsValidShape
+        {
+            get
+            {
+                return MathHelpers.Distance(StartPosition, EndPosition) > MinimumSize;
+            }
+        }
 
         public override void OnDraw(Graphics g)
         {

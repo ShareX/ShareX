@@ -31,7 +31,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseShape
     {
-        private const int MinimumSize = 3;
+        protected const int MinimumSize = 3;
 
         public abstract ShapeType ShapeType { get; }
 
@@ -81,7 +81,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool IsRectangleValid
+        public virtual bool IsValidShape
         {
             get
             {

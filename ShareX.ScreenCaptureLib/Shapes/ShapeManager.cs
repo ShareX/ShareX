@@ -95,7 +95,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (CurrentShape != null)
                 {
-                    return CurrentShape.IsRectangleValid;
+                    return CurrentShape.IsValidShape;
                 }
 
                 return false;
@@ -130,7 +130,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                return Regions.Where(x => x.IsRectangleValid).ToArray();
+                return Regions.Where(x => x.IsValidShape).ToArray();
             }
         }
 
