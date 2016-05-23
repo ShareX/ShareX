@@ -935,7 +935,14 @@ namespace ShareX.ScreenCaptureLib
 
                     if (IsProportionalResizing)
                     {
-                        newPosition = CaptureHelpers.ProportionalPosition(PositionOnClick, CurrentPosition);
+                        if (shape.NodeType == NodeType.Rectangle)
+                        {
+                            newPosition = CaptureHelpers.SnapPositionToDegree(PositionOnClick, CurrentPosition, 90, 45);
+                        }
+                        else if (shape.NodeType == NodeType.Line)
+                        {
+                            newPosition = CaptureHelpers.SnapPositionToDegree(PositionOnClick, CurrentPosition, 45, 0);
+                        }
                     }
 
                     if (IsSnapResizing)

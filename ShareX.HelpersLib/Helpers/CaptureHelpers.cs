@@ -282,6 +282,16 @@ namespace ShareX.HelpersLib
             return newPosition;
         }
 
+        public static Point SnapPositionToDegree(Point pos, Point pos2, float degree, float startDegree)
+        {
+            float angle = MathHelpers.LookAtRadian(pos, pos2);
+            float startAngle = MathHelpers.DegreeToRadian(startDegree);
+            float snapAngle = MathHelpers.DegreeToRadian(degree);
+            float newAngle = (float)Math.Round((angle + startAngle) / snapAngle) * snapAngle - startAngle;
+            float distance = MathHelpers.Distance(pos, pos2);
+            return (Point)(pos + MathHelpers.RadianToVector2(newAngle, distance));
+        }
+
         public static Point CalculateNewPosition(Point posOnClick, Point posCurrent, Size size)
         {
             if (posCurrent.X > posOnClick.X)
