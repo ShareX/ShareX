@@ -36,7 +36,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class TextDrawingShape : BaseDrawingShape
+    public class TextDrawingShape : RectangleDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingText;
 
@@ -61,23 +61,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            if (FillColor.A > 0)
-            {
-                using (Brush brush = new SolidBrush(FillColor))
-                {
-                    g.FillRectangle(brush, Rectangle);
-                }
-            }
-
-            if (BorderSize > 0 && BorderColor.A > 0)
-            {
-                Rectangle rect = Rectangle.Offset(BorderSize - 1);
-
-                using (Pen pen = new Pen(BorderColor, BorderSize) { Alignment = PenAlignment.Inset })
-                {
-                    g.DrawRectangleProper(pen, rect);
-                }
-            }
+            base.OnDraw(g);
 
             if (!string.IsNullOrEmpty(Text) && Rectangle.Width > 10 && Rectangle.Height > 10)
             {

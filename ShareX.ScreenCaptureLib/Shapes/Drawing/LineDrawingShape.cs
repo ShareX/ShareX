@@ -54,11 +54,16 @@ namespace ShareX.ScreenCaptureLib
 
                 using (Pen pen = new Pen(BorderColor, BorderSize))
                 {
-                    g.DrawLine(pen, StartPosition, EndPosition);
+                    DrawLine(g, pen);
                 }
 
                 g.SmoothingMode = SmoothingMode.None;
             }
+        }
+
+        protected virtual void DrawLine(Graphics g, Pen pen)
+        {
+            g.DrawLine(pen, StartPosition, EndPosition);
         }
     }
 }
