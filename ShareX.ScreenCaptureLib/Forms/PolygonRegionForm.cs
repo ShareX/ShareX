@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (drawableObjects.Cast<NodeObject>().Any(node => node.IsMouseHover || node.IsDragging))
+                if (drawableObjects.Cast<NodeObject>().Any(node => node.IsCursorHover || node.IsDragging))
                 {
                     return;
                 }
@@ -70,7 +70,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     foreach (NodeObject node in nodes)
                     {
-                        if (node.IsMouseHover)
+                        if (node.IsCursorHover)
                         {
                             nodes.Remove(node);
                             drawableObjects.Remove(node);

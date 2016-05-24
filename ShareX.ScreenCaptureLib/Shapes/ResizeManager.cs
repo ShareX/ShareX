@@ -262,7 +262,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsCursorOnNode()
         {
-            return Visible && nodes.Any(node => node.IsMouseHover);
+            return Visible && nodes.Any(node => node.IsCursorHover);
         }
 
         public void Show()
@@ -287,22 +287,22 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Rectangle rect = shape.Rectangle;
 
-                    float xStart = rect.X;
-                    float xMid = rect.X + rect.Width / 2;
-                    float xEnd = rect.X + rect.Width - 1;
+                    int xStart = rect.X;
+                    int xMid = rect.X + rect.Width / 2;
+                    int xEnd = rect.X + rect.Width - 1;
 
-                    float yStart = rect.Y;
-                    float yMid = rect.Y + rect.Height / 2;
-                    float yEnd = rect.Y + rect.Height - 1;
+                    int yStart = rect.Y;
+                    int yMid = rect.Y + rect.Height / 2;
+                    int yEnd = rect.Y + rect.Height - 1;
 
-                    nodes[(int)NodePosition.TopLeft].Position = new PointF(xStart, yStart);
-                    nodes[(int)NodePosition.Top].Position = new PointF(xMid, yStart);
-                    nodes[(int)NodePosition.TopRight].Position = new PointF(xEnd, yStart);
-                    nodes[(int)NodePosition.Right].Position = new PointF(xEnd, yMid);
-                    nodes[(int)NodePosition.BottomRight].Position = new PointF(xEnd, yEnd);
-                    nodes[(int)NodePosition.Bottom].Position = new PointF(xMid, yEnd);
-                    nodes[(int)NodePosition.BottomLeft].Position = new PointF(xStart, yEnd);
-                    nodes[(int)NodePosition.Left].Position = new PointF(xStart, yMid);
+                    nodes[(int)NodePosition.TopLeft].Position = new Point(xStart, yStart);
+                    nodes[(int)NodePosition.Top].Position = new Point(xMid, yStart);
+                    nodes[(int)NodePosition.TopRight].Position = new Point(xEnd, yStart);
+                    nodes[(int)NodePosition.Right].Position = new Point(xEnd, yMid);
+                    nodes[(int)NodePosition.BottomRight].Position = new Point(xEnd, yEnd);
+                    nodes[(int)NodePosition.Bottom].Position = new Point(xMid, yEnd);
+                    nodes[(int)NodePosition.BottomLeft].Position = new Point(xStart, yEnd);
+                    nodes[(int)NodePosition.Left].Position = new Point(xStart, yMid);
                 }
                 else if (shape.NodeType == NodeType.Line)
                 {

@@ -309,9 +309,9 @@ namespace ShareX.ScreenCaptureLib
 
                     if (obj.Visible)
                     {
-                        obj.IsMouseHover = obj.Rectangle.Contains(InputManager.MousePosition0Based);
+                        obj.IsCursorHover = obj.Rectangle.Contains(InputManager.MousePosition0Based);
 
-                        if (obj.IsMouseHover)
+                        if (obj.IsCursorHover)
                         {
                             if (InputManager.IsMousePressed(MouseButtons.Left))
                             {
@@ -320,7 +320,7 @@ namespace ShareX.ScreenCaptureLib
 
                             for (int y = i + 1; y < objects.Count(); y++)
                             {
-                                objects[y].IsMouseHover = false;
+                                objects[y].IsCursorHover = false;
                             }
 
                             break;

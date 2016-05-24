@@ -30,24 +30,14 @@ namespace ShareX.ScreenCaptureLib
     public class DrawableObject
     {
         public bool Visible { get; set; }
-        public RectangleF Rectangle { get; set; }
-        public bool IsMouseHover { get; set; }
+        public Rectangle Rectangle { get; set; }
+        public bool IsCursorHover { get; set; }
         public bool IsDragging { get; set; }
         public int Order { get; set; }
 
-        public void Show()
-        {
-            Visible = true;
-        }
-
-        public void Hide()
-        {
-            Visible = false;
-        }
-
         public virtual void Draw(Graphics g)
         {
-            if (IsMouseHover)
+            if (IsCursorHover)
             {
                 g.FillRectangle(Brushes.Green, Rectangle);
             }

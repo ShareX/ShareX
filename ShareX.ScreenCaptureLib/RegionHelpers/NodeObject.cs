@@ -30,9 +30,9 @@ namespace ShareX.ScreenCaptureLib
 {
     internal class NodeObject : DrawableObject
     {
-        private PointF position;
+        private Point position;
 
-        public PointF Position
+        public Point Position
         {
             get
             {
@@ -41,24 +41,25 @@ namespace ShareX.ScreenCaptureLib
             set
             {
                 position = value;
-                Rectangle = new RectangleF(position.X - (NodeSize - 1) / 2, position.Y - (NodeSize - 1) / 2, NodeSize, NodeSize);
+
+                Rectangle = new Rectangle(position.X - (NodeSize - 1) / 2, position.Y - (NodeSize - 1) / 2, NodeSize, NodeSize);
             }
         }
 
-        public float NodeSize { get; set; }
+        public int NodeSize { get; set; }
 
         public NodeShape Shape { get; set; }
 
-        public NodeObject(float x = 0, float y = 0)
+        public NodeObject(int x = 0, int y = 0)
         {
             NodeSize = 13;
             Shape = NodeShape.Square;
-            Position = new PointF(x, y);
+            Position = new Point(x, y);
         }
 
         public override void Draw(Graphics g)
         {
-            Rectangle rect = new Rectangle((int)Rectangle.X, (int)Rectangle.Y, (int)Rectangle.Width - 1, (int)Rectangle.Height - 1);
+            Rectangle rect = new Rectangle(Rectangle.X, Rectangle.Y, Rectangle.Width - 1, Rectangle.Height - 1);
 
             switch (Shape)
             {

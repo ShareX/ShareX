@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
 
         // Step drawing
         public Color StepBorderColor { get; set; } = Color.White;
-        public int StepBorderSize { get; set; } = 2;
+        public int StepBorderSize { get; set; } = 0;
         public Color StepFillColor { get; set; } = Color.Red;
 
         // Blur effect
