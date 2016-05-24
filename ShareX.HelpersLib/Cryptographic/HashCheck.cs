@@ -70,7 +70,7 @@ namespace ShareX.HelpersLib
 
             if (FileCheckCompleted != null)
             {
-                string result = string.Empty;
+                string result = "";
 
                 if (!e.Cancelled)
                 {

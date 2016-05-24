@@ -31,14 +31,14 @@ namespace ShareX.IndexerLib
     {
         public static string StartTag(string tag, string style = "", string otherFields = "")
         {
-            string css = string.Empty;
+            string css = "";
 
             if (!string.IsNullOrEmpty(style))
             {
                 css = string.Format(" style=\"{0}\"", style);
             }
 
-            string fields = string.Empty;
+            string fields = "";
 
             if (!string.IsNullOrEmpty(otherFields))
             {

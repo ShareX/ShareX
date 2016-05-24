@@ -236,7 +236,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class PushbulletSettings
     {
-        public string UserAPIKey = string.Empty;
+        public string UserAPIKey = "";
         public List<PushbulletDevice> DeviceList = new List<PushbulletDevice>();
         public int SelectedDevice = 0;
 

@@ -59,7 +59,7 @@ namespace ShareX
 
         private void CopyToClipboard(object sender, EventArgs e)
         {
-            string text = string.Empty;
+            string text = "";
 
             if (sender is NumericUpDown)
             {

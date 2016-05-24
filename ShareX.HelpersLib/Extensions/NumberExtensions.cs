@@ -134,7 +134,7 @@ namespace ShareX.HelpersLib
                 throw new ArgumentOutOfRangeException("radix", radix, string.Format("Radix has to be > 2 and < {0}", digits.Length));
             }
 
-            string result = string.Empty;
+            string result = "";
             int quotient = Math.Abs(value);
             while (0 < quotient)
             {

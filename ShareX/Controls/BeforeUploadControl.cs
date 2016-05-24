@@ -178,7 +178,7 @@ namespace ShareX
             if (InitCompleted != null)
             {
                 RadioButton rbDestination = flp.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
-                string currentDestination = string.Empty;
+                string currentDestination = "";
                 if (rbDestination != null)
                 {
                     currentDestination = rbDestination.Text;

@@ -59,7 +59,7 @@ namespace ShareX
             }
             else
             {
-                tbDescription.Text = TaskSettings.Description ?? string.Empty;
+                tbDescription.Text = TaskSettings.Description ?? "";
                 cbUseDefaultAfterCaptureSettings.Checked = TaskSettings.UseDefaultAfterCaptureJob;
                 cbUseDefaultAfterUploadSettings.Checked = TaskSettings.UseDefaultAfterUploadJob;
                 cbUseDefaultDestinationSettings.Checked = TaskSettings.UseDefaultDestinations;

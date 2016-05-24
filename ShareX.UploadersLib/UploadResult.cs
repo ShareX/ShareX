@@ -86,7 +86,7 @@ namespace ShareX.UploadersLib
                 return URL;
             }
 
-            return string.Empty;
+            return "";
         }
 
         public string ErrorsToString()

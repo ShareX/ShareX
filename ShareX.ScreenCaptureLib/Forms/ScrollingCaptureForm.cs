@@ -129,7 +129,7 @@ namespace ShareX.ScreenCaptureLib
                 if (simpleWindowInfo != null)
                 {
                     selectedWindow = new WindowInfo(simpleWindowInfo.Handle);
-                    lblControlText.Text = selectedWindow.ClassName ?? string.Empty;
+                    lblControlText.Text = selectedWindow.ClassName ?? "";
                     selectedRectangle = simpleWindowInfo.Rectangle;
                     lblSelectedRectangle.Text = selectedRectangle.ToString();
                     btnSelectRectangle.Enabled = btnCapture.Enabled = true;

@@ -462,7 +462,7 @@ namespace ShareX.UploadersLib
     /// </summary>
     public class SubItemEndEditingEventArgs : SubItemEventArgs
     {
-        private string _text = string.Empty;
+        private string _text = "";
         private bool _cancel = true;
 
         public SubItemEndEditingEventArgs(ListViewItem item, int subItem, string display, bool cancel) :

@@ -46,7 +46,7 @@ namespace ShareX.MediaLib
             Options = options;
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            txtMediaPath.Text = Options.LastVideoPath ?? string.Empty;
+            txtMediaPath.Text = Options.LastVideoPath ?? "";
             pgOptions.SelectedObject = Options;
         }
 

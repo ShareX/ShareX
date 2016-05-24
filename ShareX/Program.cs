@@ -503,14 +503,14 @@ namespace ShareX
                 return File.ReadAllText(PersonalPathConfigFilePath, Encoding.UTF8).Trim();
             }
 
-            return string.Empty;
+            return "";
         }
 
         public static void WritePersonalPathConfig(string path)
         {
             if (path == null)
             {
-                path = string.Empty;
+                path = "";
             }
             else
             {

@@ -274,7 +274,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 result.URL = "http://imgur.com/" + imageData.id;
                             }
 
-                            string thumbnail = string.Empty;
+                            string thumbnail = "";
 
                             switch (ThumbnailType)
                             {

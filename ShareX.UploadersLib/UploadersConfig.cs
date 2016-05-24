@@ -55,9 +55,9 @@ namespace ShareX.UploadersLib
         // TinyPic
 
         public AccountType TinyPicAccountType = AccountType.Anonymous;
-        public string TinyPicRegistrationCode = string.Empty;
-        public string TinyPicUsername = string.Empty;
-        public string TinyPicPassword = string.Empty;
+        public string TinyPicRegistrationCode = "";
+        public string TinyPicUsername = "";
+        public string TinyPicPassword = "";
         public bool TinyPicRememberUserPass = false;
 
         // Flickr
@@ -73,7 +73,7 @@ namespace ShareX.UploadersLib
         // Picasa
 
         public OAuth2Info PicasaOAuth2Info = null;
-        public string PicasaAlbumID = string.Empty;
+        public string PicasaAlbumID = "";
 
         // Chevereto
 
@@ -82,12 +82,12 @@ namespace ShareX.UploadersLib
 
         // SomeImage
 
-        public string SomeImageAPIKey = string.Empty;
+        public string SomeImageAPIKey = "";
         public bool SomeImageDirectURL = true;
 
         // vgy.me
 
-        public string VgymeUserKey = string.Empty;
+        public string VgymeUserKey = "";
 
         #endregion Image uploaders
 
@@ -110,7 +110,7 @@ namespace ShareX.UploadersLib
 
         // uPaste
 
-        public string UpasteUserKey = string.Empty;
+        public string UpasteUserKey = "";
         public bool UpasteIsPublic = false;
 
         // Hastebin
@@ -120,8 +120,8 @@ namespace ShareX.UploadersLib
 
         // OneTimeSecret
 
-        public string OneTimeSecretAPIKey = string.Empty;
-        public string OneTimeSecretAPIUsername = string.Empty;
+        public string OneTimeSecretAPIKey = "";
+        public string OneTimeSecretAPIUsername = "";
 
         #endregion Text uploaders
 
@@ -153,13 +153,13 @@ namespace ShareX.UploadersLib
         public OAuth2Info GoogleDriveOAuth2Info = null;
         public bool GoogleDriveIsPublic = true;
         public bool GoogleDriveUseFolder = false;
-        public string GoogleDriveFolderID = string.Empty;
+        public string GoogleDriveFolderID = "";
 
         // SendSpace
 
         public AccountType SendSpaceAccountType = AccountType.Anonymous;
-        public string SendSpaceUsername = string.Empty;
-        public string SendSpacePassword = string.Empty;
+        public string SendSpaceUsername = "";
+        public string SendSpacePassword = "";
 
         // Minus
 
@@ -178,8 +178,8 @@ namespace ShareX.UploadersLib
 
         // Localhostr
 
-        public string LocalhostrEmail = string.Empty;
-        public string LocalhostrPassword = string.Empty;
+        public string LocalhostrEmail = "";
+        public string LocalhostrPassword = "";
         public bool LocalhostrDirectURL = true;
 
         // FTP Server
@@ -201,10 +201,9 @@ namespace ShareX.UploadersLib
         public string EmailSmtpServer = "smtp.gmail.com";
         public int EmailSmtpPort = 587;
         public string EmailFrom = "...@gmail.com";
-        public string EmailPassword = string.Empty;
+        public string EmailPassword = "";
         public bool EmailRememberLastTo = true;
-        public bool EmailConfirmSend = true;
-        public string EmailLastTo = string.Empty;
+        public string EmailLastTo = "";
         public string EmailDefaultSubject = "Sending email from ShareX";
         public string EmailDefaultBody = "Screenshot is attached.";
 
@@ -267,7 +266,7 @@ namespace ShareX.UploadersLib
 
         // s-ul
 
-        public string SulAPIKey = string.Empty;
+        public string SulAPIKey = "";
 
         // Seafile
 
@@ -298,7 +297,7 @@ namespace ShareX.UploadersLib
         // bit.ly
 
         public OAuth2Info BitlyOAuth2Info = null;
-        public string BitlyDomain = string.Empty;
+        public string BitlyDomain = "";
 
         // Google URL Shortener
 
@@ -308,20 +307,20 @@ namespace ShareX.UploadersLib
         // yourls.org
 
         public string YourlsAPIURL = "http://yoursite.com/yourls-api.php";
-        public string YourlsSignature = string.Empty;
-        public string YourlsUsername = string.Empty;
-        public string YourlsPassword = string.Empty;
+        public string YourlsSignature = "";
+        public string YourlsUsername = "";
+        public string YourlsPassword = "";
 
         // adf.ly
-        public string AdFlyAPIKEY = string.Empty;
-        public string AdFlyAPIUID = string.Empty;
+        public string AdFlyAPIKEY = "";
+        public string AdFlyAPIUID = "";
 
         // coinurl.com
-        public string CoinURLUUID = string.Empty;
+        public string CoinURLUUID = "";
 
         // polr
-        public string PolrAPIHostname = string.Empty;
-        public string PolrAPIKey = string.Empty;
+        public string PolrAPIHostname = "";
+        public string PolrAPIKey = "";
 
         #endregion URL shorteners
 
@@ -332,7 +331,7 @@ namespace ShareX.UploadersLib
         public List<OAuthInfo> TwitterOAuthInfoList = new List<OAuthInfo>();
         public int TwitterSelectedAccount = 0;
         public bool TwitterSkipMessageBox = false;
-        public string TwitterDefaultMessage = string.Empty;
+        public string TwitterDefaultMessage = "";
 
         #endregion URL sharing services
 

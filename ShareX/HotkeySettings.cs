@@ -52,7 +52,7 @@ namespace ShareX
                 return string.Format("Hotkey: {0}, Description: {1}, Job: {2}", HotkeyInfo, TaskSettings, TaskSettings.Job);
             }
 
-            return string.Empty;
+            return "";
         }
     }
 }

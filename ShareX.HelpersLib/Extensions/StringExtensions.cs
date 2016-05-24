@@ -38,28 +38,28 @@ namespace ShareX.HelpersLib
 
         public static string Left(this string str, int length)
         {
-            if (length < 1) return string.Empty;
+            if (length < 1) return "";
             if (length < str.Length) return str.Substring(0, length);
             return str;
         }
 
         public static string Right(this string str, int length)
         {
-            if (length < 1) return string.Empty;
+            if (length < 1) return "";
             if (length < str.Length) return str.Substring(str.Length - length);
             return str;
         }
 
         public static string RemoveLeft(this string str, int length)
         {
-            if (length < 1) return string.Empty;
+            if (length < 1) return "";
             if (length < str.Length) return str.Remove(0, length);
             return str;
         }
 
         public static string RemoveRight(this string str, int length)
         {
-            if (length < 1) return string.Empty;
+            if (length < 1) return "";
             if (length < str.Length) return str.Remove(str.Length - length);
             return str;
         }

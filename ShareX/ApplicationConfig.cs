@@ -83,7 +83,7 @@ namespace ShareX
         #region Paths
 
         public bool UseCustomScreenshotsPath = false;
-        public string CustomScreenshotsPath = string.Empty;
+        public string CustomScreenshotsPath = "";
         public string SaveImageSubFolderPattern = "%y-%mo";
 
         #endregion Paths

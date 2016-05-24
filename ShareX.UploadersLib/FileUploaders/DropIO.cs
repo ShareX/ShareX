@@ -60,7 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public override UploadResult Upload(Stream stream, string fileName)
         {
             DropName = "ShareX_" + Helpers.GetRandomAlphanumeric(10);
-            DropDescription = string.Empty;
+            DropDescription = "";
             Drop drop = CreateDrop(DropName, DropDescription, false, false, false);
 
             Dictionary<string, string> args = new Dictionary<string, string>();

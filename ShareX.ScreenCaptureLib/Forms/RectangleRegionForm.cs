@@ -584,7 +584,7 @@ namespace ShareX.ScreenCaptureLib
             Rectangle currentScreenRect0Based = CaptureHelpers.GetActiveScreenBounds0Based();
             int offsetX = 10, offsetY = 10, infoTextOffset = 0, infoTextPadding = 3;
             Rectangle infoTextRect = Rectangle.Empty;
-            string infoText = string.Empty;
+            string infoText = "";
 
             if (Config.ShowInfo)
             {

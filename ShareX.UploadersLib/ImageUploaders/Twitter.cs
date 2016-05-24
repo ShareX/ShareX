@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             return new Twitter(twitterOAuth)
             {
                 SkipMessageBox = config.TwitterSkipMessageBox,
-                DefaultMessage = config.TwitterDefaultMessage ?? string.Empty
+                DefaultMessage = config.TwitterDefaultMessage ?? ""
             };
         }
 

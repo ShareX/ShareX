@@ -2788,7 +2788,7 @@ namespace ShareX.UploadersLib
             if (!string.IsNullOrEmpty(regexp))
             {
                 lvCustomUploaderRegexps.Items.Add(regexp);
-                txtCustomUploaderRegexp.Text = string.Empty;
+                txtCustomUploaderRegexp.Text = "";
                 txtCustomUploaderRegexp.Focus();
             }
         }
@@ -2818,7 +2818,7 @@ namespace ShareX.UploadersLib
 
         private void lvCustomUploaderRegexps_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string regex = string.Empty;
+            string regex = "";
 
             if (lvCustomUploaderRegexps.SelectedItems.Count > 0)
             {
@@ -2954,8 +2954,8 @@ namespace ShareX.UploadersLib
             {
                 string value = txtCustomUploaderArgValue.Text;
                 lvCustomUploaderArguments.Items.Add(name).SubItems.Add(value);
-                txtCustomUploaderArgName.Text = string.Empty;
-                txtCustomUploaderArgValue.Text = string.Empty;
+                txtCustomUploaderArgName.Text = "";
+                txtCustomUploaderArgValue.Text = "";
                 txtCustomUploaderArgName.Focus();
             }
         }
@@ -2985,8 +2985,8 @@ namespace ShareX.UploadersLib
 
         private void lvCustomUploaderArguments_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = string.Empty;
-            string value = string.Empty;
+            string name = "";
+            string value = "";
 
             if (lvCustomUploaderArguments.SelectedItems.Count > 0)
             {
@@ -3006,8 +3006,8 @@ namespace ShareX.UploadersLib
             {
                 string value = txtCustomUploaderHeaderValue.Text;
                 lvCustomUploaderHeaders.Items.Add(name).SubItems.Add(value);
-                txtCustomUploaderHeaderName.Text = string.Empty;
-                txtCustomUploaderHeaderValue.Text = string.Empty;
+                txtCustomUploaderHeaderName.Text = "";
+                txtCustomUploaderHeaderValue.Text = "";
                 txtCustomUploaderHeaderName.Focus();
             }
         }
@@ -3037,8 +3037,8 @@ namespace ShareX.UploadersLib
 
         private void lvCustomUploaderHeaders_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = string.Empty;
-            string value = string.Empty;
+            string name = "";
+            string value = "";
 
             if (lvCustomUploaderHeaders.SelectedItems.Count > 0)
             {

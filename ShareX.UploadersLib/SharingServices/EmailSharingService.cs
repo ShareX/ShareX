@@ -39,7 +39,7 @@ namespace ShareX.UploadersLib.SharingServices
 
         public override void ShareURL(string url, UploadersConfig config)
         {
-            using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : string.Empty, config.EmailDefaultSubject, url))
+            using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : "", config.EmailDefaultSubject, url))
             {
                 if (emailForm.ShowDialog() == DialogResult.OK)
                 {

@@ -60,7 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private const string uploadUrl = "http://api.lithi.io/upload.php";
 
-        public static string[] UploadURLs = new string[] { "https://i.lithi.io/", "https://lithi.io/i/", "https://i.mugi.io/", "https://mugi.io/i/"};
+        public static string[] UploadURLs = new string[] { "https://i.lithi.io/", "https://lithi.io/i/", "https://i.mugi.io/", "https://mugi.io/i/" };
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
@@ -96,7 +96,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class LithiioSettings
     {
-        public string UserAPIKey { get; set; } = string.Empty;
+        public string UserAPIKey { get; set; } = "";
         public string UploadURL { get; set; } = "https://i.lithi.io/";
     }
 }

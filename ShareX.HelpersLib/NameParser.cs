@@ -116,7 +116,7 @@ namespace ShareX.HelpersLib
         {
             if (string.IsNullOrEmpty(pattern))
             {
-                return string.Empty;
+                return "";
             }
 
             StringBuilder sb = new StringBuilder(pattern);
@@ -136,7 +136,7 @@ namespace ShareX.HelpersLib
                 sb.Replace(ReplCodeMenuEntry.pn.ToPrefixString(), ProcessName);
             }
 
-            string width = string.Empty, height = string.Empty;
+            string width = "", height = "";
 
             if (ImageWidth > 0)
             {

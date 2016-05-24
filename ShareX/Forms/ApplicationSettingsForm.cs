@@ -134,7 +134,7 @@ namespace ShareX
             cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
             txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
             txtProxyPassword.Text = Program.Settings.ProxySettings.Password;
-            txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? string.Empty;
+            txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? "";
             nudProxyPort.SetValue(Program.Settings.ProxySettings.Port);
             UpdateProxyControls();
 
@@ -577,7 +577,7 @@ namespace ShareX
             if (Program.Settings.ProxySettings.ProxyMethod == ProxyMethod.Automatic)
             {
                 Program.Settings.ProxySettings.IsValidProxy();
-                txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? string.Empty;
+                txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? "";
                 nudProxyPort.SetValue(Program.Settings.ProxySettings.Port);
             }
 

@@ -427,7 +427,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return uploadPath.Trim().Replace('\\', '/').Trim('/') + "/";
             }
 
-            return string.Empty;
+            return "";
         }
     }
 

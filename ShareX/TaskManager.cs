@@ -189,12 +189,12 @@ namespace ShareX
                 else
                 {
                     lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
-                    lvi.SubItems.Add(string.Empty);
+                    lvi.SubItems.Add("");
                 }
 
-                lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(string.Empty);
+                lvi.SubItems.Add("");
+                lvi.SubItems.Add("");
+                lvi.SubItems.Add("");
 
                 if (task.Status == TaskStatus.History)
                 {
@@ -203,7 +203,7 @@ namespace ShareX
                 }
                 else
                 {
-                    lvi.SubItems.Add(string.Empty);
+                    lvi.SubItems.Add("");
                     lvi.ImageIndex = 3;
                 }
 
@@ -298,7 +298,7 @@ namespace ShareX
                             if (lvi != null)
                             {
                                 lvi.SubItems[1].Text = Resources.TaskManager_task_UploadCompleted_Error;
-                                lvi.SubItems[6].Text = string.Empty;
+                                lvi.SubItems[6].Text = "";
                                 lvi.ImageIndex = 1;
                             }
 

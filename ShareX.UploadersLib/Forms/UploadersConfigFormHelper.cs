@@ -533,7 +533,7 @@ namespace ShareX.UploadersLib
             }
             else
             {
-                lblDropboxStatus.Text = string.Empty;
+                lblDropboxStatus.Text = "";
             }
         }
 
@@ -1066,7 +1066,7 @@ namespace ShareX.UploadersLib
 
         public static void TestFTPAccount(FTPAccount account)
         {
-            string msg = string.Empty;
+            string msg = "";
             string remotePath = account.GetSubFolderPath();
             List<string> directories = new List<string>();
 
@@ -1283,7 +1283,7 @@ namespace ShareX.UploadersLib
             }
 
             txtTwitterDescription.Enabled = false;
-            txtTwitterDescription.Text = string.Empty;
+            txtTwitterDescription.Text = "";
             oauthTwitter.Enabled = false;
             return false;
         }
@@ -1331,7 +1331,7 @@ namespace ShareX.UploadersLib
 
                         if (result)
                         {
-                            oauth.AuthVerifier = string.Empty;
+                            oauth.AuthVerifier = "";
                             oauthTwitter.Status = OAuthLoginStatus.LoginSuccessful;
                             MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }

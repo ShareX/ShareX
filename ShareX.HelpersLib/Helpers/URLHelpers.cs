@@ -142,7 +142,7 @@ namespace ShareX.HelpersLib
 
             if (url1Empty && url2Empty)
             {
-                return string.Empty;
+                return "";
             }
 
             if (url1Empty)
@@ -296,7 +296,7 @@ namespace ShareX.HelpersLib
         public static List<string> GetPaths(string path)
         {
             List<string> result = new List<string>();
-            string temp = string.Empty;
+            string temp = "";
             string[] dirs = path.Split('/');
             foreach (string dir in dirs)
             {

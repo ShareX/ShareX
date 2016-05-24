@@ -69,7 +69,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("key", APIKey);
-                arguments.Add("description", string.Empty);
+                arguments.Add("description", "");
                 arguments.Add("paste", text);
                 arguments.Add("format", "simple");
                 arguments.Add("return", "link");

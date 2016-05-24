@@ -151,7 +151,7 @@ namespace ShareX.HelpersLib
                 for (int i = 0; i < verbs.Count; i++)
                 {
                     FolderItemVerb verb = verbs.Item(i);
-                    string verbName = verb.Name.Replace(@"&", string.Empty);
+                    string verbName = verb.Name.Replace(@"&", "");
 
                     if ((pin && verbName.Equals("pin to taskbar", StringComparison.InvariantCultureIgnoreCase)) ||
                         (!pin && verbName.Equals("unpin from taskbar", StringComparison.InvariantCultureIgnoreCase)))

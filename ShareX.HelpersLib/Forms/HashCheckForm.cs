@@ -70,7 +70,7 @@ namespace ShareX.HelpersLib
                 if (hashCheck.Start(txtFilePath.Text, hashType))
                 {
                     btnStartHashCheck.Text = Resources.Stop;
-                    txtResult.Text = string.Empty;
+                    txtResult.Text = "";
                 }
             }
         }

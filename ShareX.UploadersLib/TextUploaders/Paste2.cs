@@ -88,7 +88,7 @@ namespace ShareX.UploadersLib.TextUploaders
         public Paste2Settings()
         {
             TextFormat = "text";
-            Description = string.Empty;
+            Description = "";
         }
     }
 }

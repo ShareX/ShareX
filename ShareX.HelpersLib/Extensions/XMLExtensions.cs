@@ -155,7 +155,7 @@ namespace ShareX.HelpersLib
                 if (xeItem != null) return xeItem.Value;
             }
 
-            return string.Empty;
+            return "";
         }
 
         public static string GetAttributeValue(this XElement xe, string name)
@@ -166,7 +166,7 @@ namespace ShareX.HelpersLib
                 if (xaItem != null) return xaItem.Value;
             }
 
-            return string.Empty;
+            return "";
         }
 
         public static string GetAttributeFirstValue(this XElement xe, params string[] names)
@@ -181,7 +181,7 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            return string.Empty;
+            return "";
         }
 
         public static XmlNode AppendElement(this XmlNode parent, string tagName)

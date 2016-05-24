@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             arguments.Add("description", "test");
             arguments.Add("adult", "t");
             arguments.Add("sfile", "Upload");
-            arguments.Add("url", string.Empty);
+            arguments.Add("url", "");
 
             UploadResult result = UploadData(stream, "http://imagebin.ca/upload.php", fileName, "f", arguments);
 

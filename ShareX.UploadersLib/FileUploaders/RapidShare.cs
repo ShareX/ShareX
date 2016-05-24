@@ -103,7 +103,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return string.Format(rapidshareUploadURL, response);
             }
 
-            return string.Empty;
+            return "";
         }
 
         public RapidShareFolderInfo GetRootFolderWithChilds()

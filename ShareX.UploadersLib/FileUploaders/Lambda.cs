@@ -104,7 +104,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class LambdaSettings
     {
-        public string UserAPIKey = string.Empty;
+        public string UserAPIKey = "";
         public string UploadURL = "https://λ.pw/";
     }
 }

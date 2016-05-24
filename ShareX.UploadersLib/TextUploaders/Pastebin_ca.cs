@@ -121,13 +121,13 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public PastebinCaSettings()
         {
-            Author = string.Empty;
-            Description = string.Empty;
-            Tags = string.Empty;
+            Author = "";
+            Description = "";
+            Tags = "";
             TextFormat = "1";
             ExpireTime = "1 month";
             Encrypt = false;
-            EncryptPassword = string.Empty;
+            EncryptPassword = "";
         }
     }
 }

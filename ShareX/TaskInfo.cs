@@ -62,7 +62,7 @@ namespace ShareX
 
                 if (string.IsNullOrEmpty(filePath))
                 {
-                    FileName = string.Empty;
+                    FileName = "";
                 }
                 else
                 {
@@ -122,7 +122,7 @@ namespace ShareX
                     }
                 }
 
-                return string.Empty;
+                return "";
             }
         }
 

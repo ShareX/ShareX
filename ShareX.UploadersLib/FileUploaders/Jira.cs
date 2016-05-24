@@ -87,7 +87,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 byte[] pfx = new byte[stream.Length];
                 stream.Read(pfx, 0, pfx.Length);
-                _jiraCertificate = new X509Certificate2(pfx, string.Empty, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable);
+                _jiraCertificate = new X509Certificate2(pfx, "", X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable);
             }
         }
 

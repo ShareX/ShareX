@@ -242,7 +242,7 @@ namespace ShareX
                 }
             }
 
-            return string.Empty;
+            return "";
         }
 
         #endregion TaskInfo helper methods

@@ -153,7 +153,7 @@ namespace ShareX.HelpersLib
         public MyPictureBox()
         {
             InitializeComponent();
-            Text = string.Empty;
+            Text = "";
             pbMain.BackColor = SystemColors.Control;
             pbMain.InitialImage = Resources.Loading;
             pbMain.ErrorImage = Resources.cross;

@@ -98,7 +98,7 @@ namespace ShareX.UploadersLib
                 return string.Join(Environment.NewLine, Errors);
             }
 
-            return string.Empty;
+            return "";
         }
 
         public virtual void StopUpload()
@@ -588,7 +588,7 @@ namespace ShareX.UploadersLib
                 return string.Join("&", args.Select(x => x.Key + "=" + HttpUtility.UrlEncode(x.Value)).ToArray());
             }
 
-            return string.Empty;
+            return "";
         }
 
         protected string CreateQuery(string url, Dictionary<string, string> args)
@@ -612,7 +612,7 @@ namespace ShareX.UploadersLib
                 foreach (string key in args.AllKeys)
                 {
                     string[] values = args.GetValues(key);
-                    string isArray = values.Length > 1 ? "[]" : string.Empty;
+                    string isArray = values.Length > 1 ? "[]" : "";
 
                     commands.AddRange(values.Select(value => key + isArray + "=" + HttpUtility.UrlEncode(value)));
                 }
@@ -620,7 +620,7 @@ namespace ShareX.UploadersLib
                 return string.Join("&", commands.ToArray());
             }
 
-            return string.Empty;
+            return "";
         }
 
         protected string CreateQuery(string url, NameValueCollection args)

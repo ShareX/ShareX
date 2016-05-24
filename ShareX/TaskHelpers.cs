@@ -381,7 +381,7 @@ namespace ShareX
                         filepath = Helpers.GetUniqueFilePath(filepath);
                         break;
                     case FileExistAction.Cancel:
-                        filepath = string.Empty;
+                        filepath = "";
                         break;
                 }
             }

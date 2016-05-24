@@ -165,7 +165,7 @@ namespace ShareX.HelpersLib
                 return sb.ToString();
             }
 
-            return string.Empty;
+            return "";
         }
 
         private void CheckIdentifier(Token token)

@@ -184,7 +184,7 @@ namespace ShareX.UploadersLib
             using (HMACSHA1 hmacsha1 = new HMACSHA1())
             {
                 string key = string.Format("{0}&{1}", Uri.EscapeDataString(consumerSecret),
-                    string.IsNullOrEmpty(userSecret) ? string.Empty : Uri.EscapeDataString(userSecret));
+                    string.IsNullOrEmpty(userSecret) ? "" : Uri.EscapeDataString(userSecret));
 
                 hmacsha1.Key = Encoding.ASCII.GetBytes(key);
 
@@ -236,7 +236,7 @@ namespace ShareX.UploadersLib
 
             if (Uri.TryCreate(url, UriKind.Absolute, out uri))
             {
-                string port = string.Empty;
+                string port = "";
 
                 if (uri.Scheme == "http" && uri.Port != 80 ||
                     uri.Scheme == "https" && uri.Port != 443 ||

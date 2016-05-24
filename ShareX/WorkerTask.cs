@@ -932,7 +932,7 @@ namespace ShareX
         private bool DownloadAndUpload()
         {
             string url = Info.Result.URL.Trim();
-            Info.Result.URL = string.Empty;
+            Info.Result.URL = "";
             Info.FilePath = TaskHelpers.CheckFilePath(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
 
             if (!string.IsNullOrEmpty(Info.FilePath))

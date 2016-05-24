@@ -65,7 +65,7 @@ namespace ShareX
                 return newFilename + Path.GetExtension(Filepath);
             }
 
-            return string.Empty;
+            return "";
         }
 
         private void btnNewName_Click(object sender, EventArgs e)
@@ -99,7 +99,7 @@ namespace ShareX
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Filepath = string.Empty;
+            Filepath = "";
             Close();
         }
     }

@@ -71,7 +71,7 @@ namespace ShareX.UploadersLib
             {
                 if (string.IsNullOrEmpty(LocalhostRoot))
                 {
-                    return string.Empty;
+                    return "";
                 }
 
                 return new Uri(Helpers.ExpandFolderVariables(LocalhostRoot)).AbsoluteUri;
@@ -101,10 +101,10 @@ namespace ShareX.UploadersLib
         public LocalhostAccount()
         {
             Name = "New account";
-            LocalhostRoot = string.Empty;
+            LocalhostRoot = "";
             Port = 80;
-            SubFolderPath = string.Empty;
-            HttpHomePath = string.Empty;
+            SubFolderPath = "";
+            HttpHomePath = "";
             HttpHomePathAutoAddSubFolderPath = true;
             HttpHomePathNoExtension = false;
             RemoteProtocol = BrowserProtocol.file;
@@ -133,7 +133,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(LocalhostRoot))
             {
-                return string.Empty;
+                return "";
             }
 
             if (HttpHomePathNoExtension)
@@ -186,7 +186,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(LocalhostRoot))
             {
-                return string.Empty;
+                return "";
             }
             return Path.Combine(Path.Combine(Helpers.ExpandFolderVariables(LocalhostRoot), GetSubFolderPath()), fileName);
         }
@@ -197,7 +197,7 @@ namespace ShareX.UploadersLib
 
             if (string.IsNullOrEmpty(localhostAddress))
             {
-                return string.Empty;
+                return "";
             }
 
             return URLHelpers.CombineURL(localhostAddress, GetSubFolderPath(), fileName);

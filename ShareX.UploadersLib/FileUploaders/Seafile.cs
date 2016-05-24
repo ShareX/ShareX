@@ -103,7 +103,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return AuthResult.token;
             }
 
-            return string.Empty;
+            return "";
         }
 
         public class SeafileAuthResponse

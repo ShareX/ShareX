@@ -76,7 +76,7 @@ namespace ShareX.UploadersLib
             {
                 if (string.IsNullOrEmpty(Host))
                 {
-                    return string.Empty;
+                    return "";
                 }
 
                 string serverProtocol;
@@ -139,14 +139,14 @@ namespace ShareX.UploadersLib
             Name = "New account";
             Host = "host";
             Port = 21;
-            SubFolderPath = string.Empty;
+            SubFolderPath = "";
             BrowserProtocol = BrowserProtocol.http;
-            HttpHomePath = string.Empty;
+            HttpHomePath = "";
             HttpHomePathAutoAddSubFolderPath = true;
             HttpHomePathNoExtension = false;
             IsActive = false;
             FTPSEncryption = FTPSEncryption.Explicit;
-            FTPSCertificateLocation = string.Empty;
+            FTPSCertificateLocation = "";
         }
 
         public string GetSubFolderPath(string filename = null, NameParserType nameParserType = NameParserType.URL)
@@ -171,7 +171,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(Host))
             {
-                return string.Empty;
+                return "";
             }
 
             if (HttpHomePathNoExtension)
@@ -249,7 +249,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(FTPAddress))
             {
-                return string.Empty;
+                return "";
             }
 
             return URLHelpers.CombineURL(FTPAddress, GetSubFolderPath(filemame, NameParserType.FolderPath));

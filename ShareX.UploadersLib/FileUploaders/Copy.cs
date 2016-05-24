@@ -230,7 +230,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return GetLinkURL(link, path, urlType);
             }
 
-            return string.Empty;
+            return "";
         }
 
         public string GetPublicURL(string path, CopyURLType urlType = CopyURLType.Default)
@@ -246,7 +246,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
             }
 
-            return string.Empty;
+            return "";
         }
 
         public static string TidyUploadPath(string uploadPath)
@@ -256,7 +256,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return uploadPath.Trim().Replace('\\', '/').Trim('/') + "/";
             }
 
-            return string.Empty;
+            return "";
         }
     }
 

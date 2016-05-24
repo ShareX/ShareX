@@ -130,7 +130,7 @@ namespace ShareX
 
         public override string ToString()
         {
-            string text = string.Empty;
+            string text = "";
 
             if (Control)
             {

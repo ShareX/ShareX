@@ -494,7 +494,7 @@ namespace ShareX.UploadersLib
 
         public void SetDateTime(string year, string month, string day)
         {
-            string time = string.Empty;
+            string time = "";
 
             if (year.Contains(":"))
             {

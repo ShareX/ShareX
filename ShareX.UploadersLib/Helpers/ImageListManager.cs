@@ -53,7 +53,7 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    return string.Empty;
+                    return "";
                 }
             }
 

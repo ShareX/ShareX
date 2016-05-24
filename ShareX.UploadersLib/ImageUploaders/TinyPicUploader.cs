@@ -93,7 +93,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 arguments.Add("responsetype", "XML");
                 arguments.Add("upk", upk);
                 arguments.Add("type", "image");
-                arguments.Add("tags", string.Empty);
+                arguments.Add("tags", "");
 
                 result = UploadData(stream, URLAPI, fileName, "uploadfile", arguments);
 
@@ -129,7 +129,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 return HttpUtility.HtmlEncode(result);
             }
 
-            return string.Empty;
+            return "";
         }
 
         private string GetUploadKey(string action, string tpid, string tpk)

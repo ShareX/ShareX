@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : string.Empty,
+            using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : "",
                 config.EmailDefaultSubject, config.EmailDefaultBody))
             {
                 if (emailForm.ShowDialog() == DialogResult.OK)

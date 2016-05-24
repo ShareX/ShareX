@@ -190,7 +190,7 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(url))
             {
-                return string.Empty;
+                return "";
             }
 
             StringBuilder result = new StringBuilder();
