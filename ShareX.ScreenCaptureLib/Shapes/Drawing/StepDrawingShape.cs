@@ -102,7 +102,7 @@ namespace ShareX.ScreenCaptureLib
 
                 int fontSize = Math.Min(Rectangle.Width, Rectangle.Height) - offset;
 
-                using (Font font = new Font("Arial", fontSize, GraphicsUnit.Pixel))
+                using (Font font = new Font(FontFamily.GenericSansSerif, fontSize, FontStyle.Bold, GraphicsUnit.Pixel))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
                     g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
