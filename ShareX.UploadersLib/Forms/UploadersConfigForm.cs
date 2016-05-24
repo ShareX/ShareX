@@ -439,10 +439,12 @@ namespace ShareX.UploadersLib
             nudEmailSmtpPort.SetValue(Config.EmailSmtpPort);
             txtEmailFrom.Text = Config.EmailFrom;
             txtEmailPassword.Text = Config.EmailPassword;
-            cbEmailConfirm.Checked = Config.EmailConfirmSend;
             cbEmailRememberLastTo.Checked = Config.EmailRememberLastTo;
             txtEmailDefaultSubject.Text = Config.EmailDefaultSubject;
             txtEmailDefaultBody.Text = Config.EmailDefaultBody;
+            cbEmailAutomaticSend.Checked = Config.EmailAutomaticSend;
+            txtEmailAutomaticSendTo.Enabled = Config.EmailAutomaticSend;
+            txtEmailAutomaticSendTo.Text = Config.EmailAutomaticSendTo;
 
             // SendSpace
 
@@ -1671,11 +1673,6 @@ namespace ShareX.UploadersLib
             Config.EmailPassword = txtEmailPassword.Text;
         }
 
-        private void chkEmailConfirm_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.EmailConfirmSend = cbEmailConfirm.Checked;
-        }
-
         private void cbRememberLastToEmail_CheckedChanged(object sender, EventArgs e)
         {
             Config.EmailRememberLastTo = cbEmailRememberLastTo.Checked;
@@ -1689,6 +1686,17 @@ namespace ShareX.UploadersLib
         private void txtDefaultBody_TextChanged(object sender, EventArgs e)
         {
             Config.EmailDefaultBody = txtEmailDefaultBody.Text;
+        }
+
+        private void cbEmailAutomaticSend_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.EmailAutomaticSend = cbEmailAutomaticSend.Checked;
+            txtEmailAutomaticSendTo.Enabled = Config.EmailAutomaticSend;
+        }
+
+        private void txtEmailAutomaticSendTo_TextChanged(object sender, EventArgs e)
+        {
+            Config.EmailAutomaticSendTo = txtEmailAutomaticSendTo.Text;
         }
 
         #endregion Email

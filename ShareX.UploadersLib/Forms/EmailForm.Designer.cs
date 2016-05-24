@@ -100,6 +100,8 @@
             this.Controls.Add(this.txtToEmail);
             this.Controls.Add(this.lblToEmail);
             this.Name = "EmailForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Shown += new System.EventHandler(this.EmailForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

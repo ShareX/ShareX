@@ -206,6 +206,8 @@ namespace ShareX.UploadersLib
         public string EmailLastTo = "";
         public string EmailDefaultSubject = "Sending email from ShareX";
         public string EmailDefaultBody = "Screenshot is attached.";
+        public bool EmailAutomaticSend = false;
+        public string EmailAutomaticSendTo = "";
 
         // Jira
 

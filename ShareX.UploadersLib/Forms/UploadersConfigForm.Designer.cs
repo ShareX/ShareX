@@ -390,7 +390,6 @@
             this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
             this.ucLocalhostAccounts = new ShareX.UploadersLib.AccountsControl();
             this.tpEmail = new System.Windows.Forms.TabPage();
-            this.cbEmailConfirm = new System.Windows.Forms.CheckBox();
             this.lblEmailSmtpServer = new System.Windows.Forms.Label();
             this.lblEmailPassword = new System.Windows.Forms.Label();
             this.cbEmailRememberLastTo = new System.Windows.Forms.CheckBox();
@@ -536,6 +535,8 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbEmailAutomaticSend = new System.Windows.Forms.CheckBox();
+            this.txtEmailAutomaticSendTo = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3234,7 +3235,8 @@
             // 
             // tpEmail
             // 
-            this.tpEmail.Controls.Add(this.cbEmailConfirm);
+            this.tpEmail.Controls.Add(this.txtEmailAutomaticSendTo);
+            this.tpEmail.Controls.Add(this.cbEmailAutomaticSend);
             this.tpEmail.Controls.Add(this.lblEmailSmtpServer);
             this.tpEmail.Controls.Add(this.lblEmailPassword);
             this.tpEmail.Controls.Add(this.cbEmailRememberLastTo);
@@ -3251,13 +3253,6 @@
             resources.ApplyResources(this.tpEmail, "tpEmail");
             this.tpEmail.Name = "tpEmail";
             this.tpEmail.UseVisualStyleBackColor = true;
-            // 
-            // cbEmailConfirm
-            // 
-            resources.ApplyResources(this.cbEmailConfirm, "cbEmailConfirm");
-            this.cbEmailConfirm.Name = "cbEmailConfirm";
-            this.cbEmailConfirm.UseVisualStyleBackColor = true;
-            this.cbEmailConfirm.CheckedChanged += new System.EventHandler(this.chkEmailConfirm_CheckedChanged);
             // 
             // lblEmailSmtpServer
             // 
@@ -4299,6 +4294,19 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbEmailAutomaticSend
+            // 
+            resources.ApplyResources(this.cbEmailAutomaticSend, "cbEmailAutomaticSend");
+            this.cbEmailAutomaticSend.Name = "cbEmailAutomaticSend";
+            this.cbEmailAutomaticSend.UseVisualStyleBackColor = true;
+            this.cbEmailAutomaticSend.CheckedChanged += new System.EventHandler(this.cbEmailAutomaticSend_CheckedChanged);
+            // 
+            // txtEmailAutomaticSendTo
+            // 
+            resources.ApplyResources(this.txtEmailAutomaticSendTo, "txtEmailAutomaticSendTo");
+            this.txtEmailAutomaticSendTo.Name = "txtEmailAutomaticSendTo";
+            this.txtEmailAutomaticSendTo.TextChanged += new System.EventHandler(this.txtEmailAutomaticSendTo_TextChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4627,7 +4635,6 @@
         private System.Windows.Forms.TextBox txtJiraHost;
         private System.Windows.Forms.Label lblJiraHost;
         private OAuthControl oAuthJira;
-        private System.Windows.Forms.CheckBox cbEmailConfirm;
         private System.Windows.Forms.Label lblEmailSmtpServer;
         private System.Windows.Forms.Label lblEmailPassword;
         private System.Windows.Forms.CheckBox cbEmailRememberLastTo;
@@ -4960,5 +4967,7 @@
         public System.Windows.Forms.TabPage tpPolr;
         public System.Windows.Forms.TabPage tpTwitter;
         public System.Windows.Forms.TabPage tpCustomUploaders;
+        private System.Windows.Forms.TextBox txtEmailAutomaticSendTo;
+        private System.Windows.Forms.CheckBox cbEmailAutomaticSend;
     }
 }

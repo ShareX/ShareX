@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblToEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 16</value>
+    <value>5, 8</value>
   </data>
   <data name="lblToEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
@@ -148,16 +148,16 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtToEmail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="txtToEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 12</value>
+    <value>8, 24</value>
   </data>
   <data name="txtToEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 20</value>
+    <value>296, 20</value>
   </data>
   <data name="txtToEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtToEmail.Name" xml:space="preserve">
     <value>txtToEmail</value>
@@ -175,7 +175,7 @@
     <value>True</value>
   </data>
   <data name="lblSubject.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 40</value>
+    <value>5, 48</value>
   </data>
   <data name="lblSubject.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -199,16 +199,16 @@
     <value>5</value>
   </data>
   <data name="txtSubject.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="txtSubject.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 36</value>
+    <value>8, 64</value>
   </data>
   <data name="txtSubject.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 20</value>
+    <value>296, 20</value>
   </data>
   <data name="txtSubject.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;txtSubject.Name" xml:space="preserve">
     <value>txtSubject</value>
@@ -226,7 +226,7 @@
     <value>True</value>
   </data>
   <data name="lblMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 64</value>
+    <value>5, 88</value>
   </data>
   <data name="lblMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -253,16 +253,16 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="txtMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 60</value>
+    <value>8, 104</value>
   </data>
   <data name="txtMessage.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 164</value>
+    <value>296, 160</value>
   </data>
   <data name="txtMessage.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;txtMessage.Name" xml:space="preserve">
     <value>txtMessage</value>
@@ -280,13 +280,13 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnSend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 232</value>
+    <value>104, 272</value>
   </data>
   <data name="btnSend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>96, 24</value>
   </data>
   <data name="btnSend.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btnSend.Text" xml:space="preserve">
     <value>Send</value>
@@ -307,13 +307,13 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 232</value>
+    <value>208, 272</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>96, 24</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -337,7 +337,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>298, 265</value>
+    <value>312, 304</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

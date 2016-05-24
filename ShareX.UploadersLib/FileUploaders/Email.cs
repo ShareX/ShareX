@@ -36,36 +36,50 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(config.EmailSmtpServer) && config.EmailSmtpPort > 0 && !string.IsNullOrEmpty(config.EmailFrom) &&
-                !string.IsNullOrEmpty(config.EmailPassword);
+            return !string.IsNullOrEmpty(config.EmailSmtpServer) && config.EmailSmtpPort > 0 && !string.IsNullOrEmpty(config.EmailFrom) && !string.IsNullOrEmpty(config.EmailPassword);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : "",
-                config.EmailDefaultSubject, config.EmailDefaultBody))
+            if (config.EmailAutomaticSend && !string.IsNullOrEmpty(config.EmailAutomaticSendTo))
             {
-                if (emailForm.ShowDialog() == DialogResult.OK)
+                return new Email()
                 {
-                    if (config.EmailRememberLastTo)
+                    SmtpServer = config.EmailSmtpServer,
+                    SmtpPort = config.EmailSmtpPort,
+                    FromEmail = config.EmailFrom,
+                    Password = config.EmailPassword,
+                    ToEmail = config.EmailAutomaticSendTo,
+                    Subject = config.EmailDefaultSubject,
+                    Body = config.EmailDefaultBody
+                };
+            }
+            else
+            {
+                using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : "", config.EmailDefaultSubject, config.EmailDefaultBody))
+                {
+                    if (emailForm.ShowDialog() == DialogResult.OK)
                     {
-                        config.EmailLastTo = emailForm.ToEmail;
-                    }
+                        if (config.EmailRememberLastTo)
+                        {
+                            config.EmailLastTo = emailForm.ToEmail;
+                        }
 
-                    return new Email
+                        return new Email()
+                        {
+                            SmtpServer = config.EmailSmtpServer,
+                            SmtpPort = config.EmailSmtpPort,
+                            FromEmail = config.EmailFrom,
+                            Password = config.EmailPassword,
+                            ToEmail = emailForm.ToEmail,
+                            Subject = emailForm.Subject,
+                            Body = emailForm.Body
+                        };
+                    }
+                    else
                     {
-                        SmtpServer = config.EmailSmtpServer,
-                        SmtpPort = config.EmailSmtpPort,
-                        FromEmail = config.EmailFrom,
-                        Password = config.EmailPassword,
-                        ToEmail = emailForm.ToEmail,
-                        Subject = emailForm.Subject,
-                        Body = emailForm.Body
-                    };
-                }
-                else
-                {
-                    taskInfo.StopRequested = true;
+                        taskInfo.StopRequested = true;
+                    }
                 }
             }
 
@@ -86,6 +100,11 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Subject { get; set; }
         public string Body { get; set; }
 
+        public void Send()
+        {
+            Send(ToEmail, Subject, Body);
+        }
+
         public void Send(string toEmail, string subject, string body)
         {
             Send(toEmail, subject, body, null, null);
@@ -93,7 +112,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public void Send(string toEmail, string subject, string body, Stream stream, string fileName)
         {
-            SmtpClient smtp = new SmtpClient
+            using (SmtpClient smtp = new SmtpClient()
             {
                 Host = SmtpServer,
                 Port = SmtpPort,
@@ -101,20 +120,21 @@ namespace ShareX.UploadersLib.FileUploaders
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(FromEmail, Password)
-            };
-
-            using (MailMessage message = new MailMessage(FromEmail, toEmail))
+            })
             {
-                message.Subject = subject;
-                message.Body = body;
-
-                if (stream != null)
+                using (MailMessage message = new MailMessage(FromEmail, toEmail))
                 {
-                    Attachment attachment = new Attachment(stream, fileName);
-                    message.Attachments.Add(attachment);
-                }
+                    message.Subject = subject;
+                    message.Body = body;
 
-                smtp.Send(message);
+                    if (stream != null)
+                    {
+                        Attachment attachment = new Attachment(stream, fileName);
+                        message.Attachments.Add(attachment);
+                    }
+
+                    smtp.Send(message);
+                }
             }
         }
 

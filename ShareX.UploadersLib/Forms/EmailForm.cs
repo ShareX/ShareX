@@ -48,6 +48,11 @@ namespace ShareX.UploadersLib
             txtMessage.Text = body;
         }
 
+        private void EmailForm_Shown(object sender, EventArgs e)
+        {
+            txtMessage.Focus();
+        }
+
         private void btnSend_Click(object sender, EventArgs e)
         {
             ToEmail = txtToEmail.Text;
