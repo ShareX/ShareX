@@ -91,7 +91,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 int offset;
 
-                if (Number > 9)
+                if (Number > 99)
+                {
+                    offset = 20;
+                }
+                else if (Number > 9)
                 {
                     offset = 15;
                 }
