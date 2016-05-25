@@ -599,10 +599,10 @@ namespace ShareX.ScreenCaptureLib
             ToolStripDoubleLabeledNumericUpDown tslnudFixedSize = new ToolStripDoubleLabeledNumericUpDown("Width:", "Height:");
             tslnudFixedSize.Content.Minimum = 5;
             tslnudFixedSize.Content.Maximum = 10000;
+            tslnudFixedSize.Content.Increment = 10;
             tslnudFixedSize.Content.Value = Config.FixedSize.Width;
             tslnudFixedSize.Content.Value2 = Config.FixedSize.Height;
-            tslnudFixedSize.Content.ValueChanged = tslnudFixedSize.Content.Value2Changed =
-                (sender, e) => Config.FixedSize = new Size((int)tslnudFixedSize.Content.Value, (int)tslnudFixedSize.Content.Value2);
+            tslnudFixedSize.Content.ValueChanged = (sender, e) => Config.FixedSize = new Size((int)tslnudFixedSize.Content.Value, (int)tslnudFixedSize.Content.Value2);
             tsmiOptions.DropDownItems.Add(tslnudFixedSize);
 
             ToolStripMenuItem tsmiShowFPS = new ToolStripMenuItem("Show FPS");
@@ -1190,12 +1190,20 @@ namespace ShareX.ScreenCaptureLib
                             return;
                     }
 
-                    SimpleWindowInfo window = FindSelectedWindow();
-
-                    if (window != null && !window.Rectangle.IsEmpty)
+                    if (Config.IsFixedSize && IsCurrentShapeTypeRegion)
                     {
-                        Rectangle hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
-                        CurrentHoverRectangle = Rectangle.Intersect(form.ScreenRectangle0Based, hoverArea);
+                        Point location = InputManager.MousePosition0Based;
+                        CurrentHoverRectangle = new Rectangle(new Point(location.X - Config.FixedSize.Width / 2, location.Y - Config.FixedSize.Height / 2), Config.FixedSize);
+                    }
+                    else
+                    {
+                        SimpleWindowInfo window = FindSelectedWindow();
+
+                        if (window != null && !window.Rectangle.IsEmpty)
+                        {
+                            Rectangle hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
+                            CurrentHoverRectangle = Rectangle.Intersect(form.ScreenRectangle0Based, hoverArea);
+                        }
                     }
                 }
             }

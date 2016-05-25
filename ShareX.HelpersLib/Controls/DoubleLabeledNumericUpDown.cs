@@ -121,13 +121,12 @@ namespace ShareX.HelpersLib
         }
 
         public EventHandler ValueChanged;
-        public EventHandler Value2Changed;
 
         public DoubleLabeledNumericUpDown()
         {
             InitializeComponent();
             nudValue.ValueChanged += OnValueChanged;
-            nudValue2.ValueChanged += OnValue2Changed;
+            nudValue2.ValueChanged += OnValueChanged;
         }
 
         private void OnValueChanged(object sender, EventArgs e)
@@ -135,14 +134,6 @@ namespace ShareX.HelpersLib
             if (ValueChanged != null)
             {
                 ValueChanged(sender, e);
-            }
-        }
-
-        private void OnValue2Changed(object sender, EventArgs e)
-        {
-            if (Value2Changed != null)
-            {
-                Value2Changed(sender, e);
             }
         }
     }
