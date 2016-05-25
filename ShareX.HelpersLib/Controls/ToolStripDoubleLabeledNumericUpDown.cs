@@ -33,19 +33,20 @@ using System.Windows.Forms.Design;
 namespace ShareX.HelpersLib
 {
     [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.MenuStrip | ToolStripItemDesignerAvailability.ContextMenuStrip)]
-    public class ToolStripLabeledNumericUpDown : ToolStripControlHost
+    public class ToolStripDoubleLabeledNumericUpDown : ToolStripControlHost
     {
-        public LabeledNumericUpDown Content
+        public DoubleLabeledNumericUpDown Content
         {
             get
             {
-                return Control as LabeledNumericUpDown;
+                return Control as DoubleLabeledNumericUpDown;
             }
         }
 
-        public ToolStripLabeledNumericUpDown(string text) : base(new LabeledNumericUpDown())
+        public ToolStripDoubleLabeledNumericUpDown(string text, string text2) : base(new DoubleLabeledNumericUpDown())
         {
             Content.Text = text;
+            Content.Text2 = text2;
         }
     }
 }

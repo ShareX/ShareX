@@ -373,15 +373,14 @@ namespace ShareX.ScreenCaptureLib
             };
             cmsContextMenu.Items.Add(tsmiBorderColor);
 
-            tslnudBorderSize = new ToolStripLabeledNumericUpDown();
-            tslnudBorderSize.LabeledNumericUpDownControl.Text = "Border size:";
-            tslnudBorderSize.LabeledNumericUpDownControl.Minimum = 0;
-            tslnudBorderSize.LabeledNumericUpDownControl.Maximum = 20;
-            tslnudBorderSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
+            tslnudBorderSize = new ToolStripLabeledNumericUpDown("Border size:");
+            tslnudBorderSize.Content.Minimum = 0;
+            tslnudBorderSize.Content.Maximum = 20;
+            tslnudBorderSize.Content.ValueChanged = (sender, e) =>
             {
                 ShapeType shapeType = CurrentShapeType;
 
-                int borderSize = (int)tslnudBorderSize.LabeledNumericUpDownControl.Value;
+                int borderSize = (int)tslnudBorderSize.Content.Value;
 
                 if (shapeType == ShapeType.DrawingText)
                 {
@@ -448,36 +447,33 @@ namespace ShareX.ScreenCaptureLib
             };
             cmsContextMenu.Items.Add(tsmiFillColor);
 
-            tslnudRoundedRectangleRadius = new ToolStripLabeledNumericUpDown();
-            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Text = "Corner radius:";
-            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Minimum = 0;
-            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Maximum = 150;
-            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Increment = 3;
-            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
+            tslnudRoundedRectangleRadius = new ToolStripLabeledNumericUpDown("Corner radius:");
+            tslnudRoundedRectangleRadius.Content.Minimum = 0;
+            tslnudRoundedRectangleRadius.Content.Maximum = 150;
+            tslnudRoundedRectangleRadius.Content.Increment = 3;
+            tslnudRoundedRectangleRadius.Content.ValueChanged = (sender, e) =>
             {
-                AnnotationOptions.RoundedRectangleRadius = (int)tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value;
+                AnnotationOptions.RoundedRectangleRadius = (int)tslnudRoundedRectangleRadius.Content.Value;
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudRoundedRectangleRadius);
 
-            tslnudBlurRadius = new ToolStripLabeledNumericUpDown();
-            tslnudBlurRadius.LabeledNumericUpDownControl.Text = "Blur radius:";
-            tslnudBlurRadius.LabeledNumericUpDownControl.Minimum = 2;
-            tslnudBlurRadius.LabeledNumericUpDownControl.Maximum = 100;
-            tslnudBlurRadius.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
+            tslnudBlurRadius = new ToolStripLabeledNumericUpDown("Blur radius:");
+            tslnudBlurRadius.Content.Minimum = 2;
+            tslnudBlurRadius.Content.Maximum = 100;
+            tslnudBlurRadius.Content.ValueChanged = (sender, e) =>
             {
-                AnnotationOptions.BlurRadius = (int)tslnudBlurRadius.LabeledNumericUpDownControl.Value;
+                AnnotationOptions.BlurRadius = (int)tslnudBlurRadius.Content.Value;
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudBlurRadius);
 
-            tslnudPixelateSize = new ToolStripLabeledNumericUpDown();
-            tslnudPixelateSize.LabeledNumericUpDownControl.Text = "Pixel size:";
-            tslnudPixelateSize.LabeledNumericUpDownControl.Minimum = 2;
-            tslnudPixelateSize.LabeledNumericUpDownControl.Maximum = 100;
-            tslnudPixelateSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) =>
+            tslnudPixelateSize = new ToolStripLabeledNumericUpDown("Pixel size:");
+            tslnudPixelateSize.Content.Minimum = 2;
+            tslnudPixelateSize.Content.Maximum = 100;
+            tslnudPixelateSize.Content.ValueChanged = (sender, e) =>
             {
-                AnnotationOptions.PixelateSize = (int)tslnudPixelateSize.LabeledNumericUpDownControl.Value;
+                AnnotationOptions.PixelateSize = (int)tslnudPixelateSize.Content.Value;
                 UpdateCurrentShape();
             };
             cmsContextMenu.Items.Add(tslnudPixelateSize);
@@ -573,21 +569,19 @@ namespace ShareX.ScreenCaptureLib
             tsmiUseSquareMagnifier.Click += (sender, e) => Config.UseSquareMagnifier = tsmiUseSquareMagnifier.Checked;
             tsmiOptions.DropDownItems.Add(tsmiUseSquareMagnifier);
 
-            ToolStripLabeledNumericUpDown tslnudMagnifierPixelCount = new ToolStripLabeledNumericUpDown();
-            tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Text = "Magnifier pixel count:";
-            tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Minimum = 1;
-            tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Maximum = 35;
-            tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Increment = 2;
-            tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Value = Config.MagnifierPixelCount;
-            tslnudMagnifierPixelCount.LabeledNumericUpDownControl.ValueChanged = (sender, e) => Config.MagnifierPixelCount = (int)tslnudMagnifierPixelCount.LabeledNumericUpDownControl.Value;
+            ToolStripLabeledNumericUpDown tslnudMagnifierPixelCount = new ToolStripLabeledNumericUpDown("Magnifier pixel count:");
+            tslnudMagnifierPixelCount.Content.Minimum = 1;
+            tslnudMagnifierPixelCount.Content.Maximum = 35;
+            tslnudMagnifierPixelCount.Content.Increment = 2;
+            tslnudMagnifierPixelCount.Content.Value = Config.MagnifierPixelCount;
+            tslnudMagnifierPixelCount.Content.ValueChanged = (sender, e) => Config.MagnifierPixelCount = (int)tslnudMagnifierPixelCount.Content.Value;
             tsmiOptions.DropDownItems.Add(tslnudMagnifierPixelCount);
 
-            ToolStripLabeledNumericUpDown tslnudMagnifierPixelSize = new ToolStripLabeledNumericUpDown();
-            tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Text = "Magnifier pixel size:";
-            tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Minimum = 2;
-            tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Maximum = 30;
-            tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Value = Config.MagnifierPixelSize;
-            tslnudMagnifierPixelSize.LabeledNumericUpDownControl.ValueChanged = (sender, e) => Config.MagnifierPixelSize = (int)tslnudMagnifierPixelSize.LabeledNumericUpDownControl.Value;
+            ToolStripLabeledNumericUpDown tslnudMagnifierPixelSize = new ToolStripLabeledNumericUpDown("Magnifier pixel size:");
+            tslnudMagnifierPixelSize.Content.Minimum = 2;
+            tslnudMagnifierPixelSize.Content.Maximum = 30;
+            tslnudMagnifierPixelSize.Content.Value = Config.MagnifierPixelSize;
+            tslnudMagnifierPixelSize.Content.ValueChanged = (sender, e) => Config.MagnifierPixelSize = (int)tslnudMagnifierPixelSize.Content.Value;
             tsmiOptions.DropDownItems.Add(tslnudMagnifierPixelSize);
 
             ToolStripMenuItem tsmiShowCrosshair = new ToolStripMenuItem("Show screen wide crosshair");
@@ -595,6 +589,21 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowCrosshair.CheckOnClick = true;
             tsmiShowCrosshair.Click += (sender, e) => Config.ShowCrosshair = tsmiShowCrosshair.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowCrosshair);
+
+            ToolStripMenuItem tsmiFixedSize = new ToolStripMenuItem("Fixed size mode");
+            tsmiFixedSize.Checked = Config.IsFixedSize;
+            tsmiFixedSize.CheckOnClick = true;
+            tsmiFixedSize.Click += (sender, e) => Config.IsFixedSize = tsmiFixedSize.Checked;
+            tsmiOptions.DropDownItems.Add(tsmiFixedSize);
+
+            ToolStripDoubleLabeledNumericUpDown tslnudFixedSize = new ToolStripDoubleLabeledNumericUpDown("Width:", "Height:");
+            tslnudFixedSize.Content.Minimum = 5;
+            tslnudFixedSize.Content.Maximum = 10000;
+            tslnudFixedSize.Content.Value = Config.FixedSize.Width;
+            tslnudFixedSize.Content.Value2 = Config.FixedSize.Height;
+            tslnudFixedSize.Content.ValueChanged = tslnudFixedSize.Content.Value2Changed =
+                (sender, e) => Config.FixedSize = new Size((int)tslnudFixedSize.Content.Value, (int)tslnudFixedSize.Content.Value2);
+            tsmiOptions.DropDownItems.Add(tslnudFixedSize);
 
             ToolStripMenuItem tsmiShowFPS = new ToolStripMenuItem("Show FPS");
             tsmiShowFPS.Checked = Config.ShowFPS;
@@ -658,7 +667,7 @@ namespace ShareX.ScreenCaptureLib
                 borderSize = AnnotationOptions.BorderSize;
             }
 
-            tslnudBorderSize.LabeledNumericUpDownControl.Value = borderSize;
+            tslnudBorderSize.Content.Value = borderSize;
 
             Color fillColor;
 
@@ -678,11 +687,11 @@ namespace ShareX.ScreenCaptureLib
             if (tsmiFillColor.Image != null) tsmiFillColor.Image.Dispose();
             tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(fillColor, new Rectangle(0, 0, 16, 16));
 
-            tslnudRoundedRectangleRadius.LabeledNumericUpDownControl.Value = AnnotationOptions.RoundedRectangleRadius;
+            tslnudRoundedRectangleRadius.Content.Value = AnnotationOptions.RoundedRectangleRadius;
 
-            tslnudBlurRadius.LabeledNumericUpDownControl.Value = AnnotationOptions.BlurRadius;
+            tslnudBlurRadius.Content.Value = AnnotationOptions.BlurRadius;
 
-            tslnudPixelateSize.LabeledNumericUpDownControl.Value = AnnotationOptions.PixelateSize;
+            tslnudPixelateSize.Content.Value = AnnotationOptions.PixelateSize;
 
             if (tsmiHighlightColor.Image != null) tsmiHighlightColor.Image.Dispose();
             tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));

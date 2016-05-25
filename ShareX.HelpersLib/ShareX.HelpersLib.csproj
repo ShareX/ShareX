@@ -120,6 +120,12 @@
     <Compile Include="Controls\GreenlightButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\DoubleLabeledNumericUpDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DoubleLabeledNumericUpDown.Designer.cs">
+      <DependentUpon>DoubleLabeledNumericUpDown.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LabeledNumericUpDown.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </Compile>
     <Compile Include="Controls\ToolStripCheckedBoldRenderer.cs" />
     <Compile Include="Controls\ToolStripButtonColorAnimation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolStripDoubleLabeledNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\ToolStripLabeledNumericUpDown.cs">
@@ -554,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.zh-CN.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DoubleLabeledNumericUpDown.resx">
+      <DependentUpon>DoubleLabeledNumericUpDown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LabeledNumericUpDown.resx">
       <DependentUpon>LabeledNumericUpDown.cs</DependentUpon>
