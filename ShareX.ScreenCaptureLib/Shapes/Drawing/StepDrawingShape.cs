@@ -104,10 +104,11 @@ namespace ShareX.ScreenCaptureLib
 
                 using (Font font = new Font(FontFamily.GenericSansSerif, fontSize, FontStyle.Bold, GraphicsUnit.Pixel))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                using (Brush textBrush = new SolidBrush(BorderColor))
                 {
                     g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
                     //g.DrawString(Number.ToString(), font, Brushes.Black, Rectangle.LocationOffset(1, 1), sf);
-                    g.DrawString(Number.ToString(), font, Brushes.White, Rectangle, sf);
+                    g.DrawString(Number.ToString(), font, textBrush, Rectangle, sf);
                     g.TextRenderingHint = TextRenderingHint.SystemDefault;
                 }
             }
