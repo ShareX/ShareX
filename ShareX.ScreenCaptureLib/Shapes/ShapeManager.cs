@@ -222,6 +222,22 @@ namespace ShareX.ScreenCaptureLib
             cmsContextMenu = new ContextMenuStrip(form.components);
             cmsContextMenu.Renderer = new ToolStripCheckedBoldRenderer();
 
+            cmsContextMenu.PreviewKeyDown += (sender, e) =>
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    e.IsInputKey = true;
+                }
+            };
+
+            cmsContextMenu.KeyUp += (sender, e) =>
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    cmsContextMenu.Close();
+                }
+            };
+
             #region Main
 
             ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem("Cancel capture");
