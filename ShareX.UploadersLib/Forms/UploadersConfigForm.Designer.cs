@@ -390,6 +390,8 @@
             this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
             this.ucLocalhostAccounts = new ShareX.UploadersLib.AccountsControl();
             this.tpEmail = new System.Windows.Forms.TabPage();
+            this.txtEmailAutomaticSendTo = new System.Windows.Forms.TextBox();
+            this.cbEmailAutomaticSend = new System.Windows.Forms.CheckBox();
             this.lblEmailSmtpServer = new System.Windows.Forms.Label();
             this.lblEmailPassword = new System.Windows.Forms.Label();
             this.cbEmailRememberLastTo = new System.Windows.Forms.CheckBox();
@@ -535,8 +537,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbEmailAutomaticSend = new System.Windows.Forms.CheckBox();
-            this.txtEmailAutomaticSendTo = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3254,6 +3254,19 @@
             this.tpEmail.Name = "tpEmail";
             this.tpEmail.UseVisualStyleBackColor = true;
             // 
+            // txtEmailAutomaticSendTo
+            // 
+            resources.ApplyResources(this.txtEmailAutomaticSendTo, "txtEmailAutomaticSendTo");
+            this.txtEmailAutomaticSendTo.Name = "txtEmailAutomaticSendTo";
+            this.txtEmailAutomaticSendTo.TextChanged += new System.EventHandler(this.txtEmailAutomaticSendTo_TextChanged);
+            // 
+            // cbEmailAutomaticSend
+            // 
+            resources.ApplyResources(this.cbEmailAutomaticSend, "cbEmailAutomaticSend");
+            this.cbEmailAutomaticSend.Name = "cbEmailAutomaticSend";
+            this.cbEmailAutomaticSend.UseVisualStyleBackColor = true;
+            this.cbEmailAutomaticSend.CheckedChanged += new System.EventHandler(this.cbEmailAutomaticSend_CheckedChanged);
+            // 
             // lblEmailSmtpServer
             // 
             resources.ApplyResources(this.lblEmailSmtpServer, "lblEmailSmtpServer");
@@ -4293,19 +4306,6 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // cbEmailAutomaticSend
-            // 
-            resources.ApplyResources(this.cbEmailAutomaticSend, "cbEmailAutomaticSend");
-            this.cbEmailAutomaticSend.Name = "cbEmailAutomaticSend";
-            this.cbEmailAutomaticSend.UseVisualStyleBackColor = true;
-            this.cbEmailAutomaticSend.CheckedChanged += new System.EventHandler(this.cbEmailAutomaticSend_CheckedChanged);
-            // 
-            // txtEmailAutomaticSendTo
-            // 
-            resources.ApplyResources(this.txtEmailAutomaticSendTo, "txtEmailAutomaticSendTo");
-            this.txtEmailAutomaticSendTo.Name = "txtEmailAutomaticSendTo";
-            this.txtEmailAutomaticSendTo.TextChanged += new System.EventHandler(this.txtEmailAutomaticSendTo_TextChanged);
             // 
             // UploadersConfigForm
             // 

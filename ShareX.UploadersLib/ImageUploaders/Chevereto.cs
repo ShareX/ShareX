@@ -76,7 +76,8 @@ namespace ShareX.UploadersLib.ImageUploaders
             new CheveretoUploader("http://www.upsieutoc.com/api/1/upload", "c692ca0925f8da5990e8c795602bf942"),
             new CheveretoUploader("http://www.storemypic.com/api/1/upload", "995269492c2a19902715d5cc3ed810fa"),
             new CheveretoUploader("http://i.tlthings.net/api/1/upload", "a7yk23ty0k13ralyh32p64hx22p7ek49tt"),
-            new CheveretoUploader("https://picuza.com/api/1/upload", "f613c791e4fc79ada8ec629a9ac34d90")
+            new CheveretoUploader("https://picuza.com/api/1/upload", "f613c791e4fc79ada8ec629a9ac34d90"),
+            new CheveretoUploader("https://bobblepic.com/api/1/upload", "5f3d45874194ad6a6e8c7400932b824f")
         };
 
         public CheveretoUploader Uploader { get; private set; }
