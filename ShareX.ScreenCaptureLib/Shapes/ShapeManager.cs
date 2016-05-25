@@ -551,6 +551,12 @@ namespace ShareX.ScreenCaptureLib
             tsmiQuickCrop.Click += (sender, e) => Config.QuickCrop = !tsmiQuickCrop.Checked;
             tsmiOptions.DropDownItems.Add(tsmiQuickCrop);
 
+            ToolStripMenuItem tsmiTips = new ToolStripMenuItem("Show tips");
+            tsmiTips.Checked = Config.ShowTips;
+            tsmiTips.CheckOnClick = true;
+            tsmiTips.Click += (sender, e) => Config.ShowTips = tsmiTips.Checked;
+            tsmiOptions.DropDownItems.Add(tsmiTips);
+
             ToolStripMenuItem tsmiShowInfo = new ToolStripMenuItem("Show position and size info");
             tsmiShowInfo.Checked = Config.ShowInfo;
             tsmiShowInfo.CheckOnClick = true;
