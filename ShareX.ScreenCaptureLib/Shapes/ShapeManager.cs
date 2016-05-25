@@ -590,7 +590,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiShowCrosshair.Click += (sender, e) => Config.ShowCrosshair = tsmiShowCrosshair.Checked;
             tsmiOptions.DropDownItems.Add(tsmiShowCrosshair);
 
-            ToolStripMenuItem tsmiFixedSize = new ToolStripMenuItem("Fixed size mode");
+            ToolStripMenuItem tsmiFixedSize = new ToolStripMenuItem("Fixed size region mode");
             tsmiFixedSize.Checked = Config.IsFixedSize;
             tsmiFixedSize.CheckOnClick = true;
             tsmiFixedSize.Click += (sender, e) => Config.IsFixedSize = tsmiFixedSize.Checked;
@@ -1267,7 +1267,7 @@ namespace ShareX.ScreenCaptureLib
         {
             BaseShape shape = CurrentShape;
 
-            if (shape != null && !CurrentRectangle.IsEmpty && !Config.IsFixedSize && shape.NodeType != NodeType.Point)
+            if (shape != null && !CurrentRectangle.IsEmpty && shape.NodeType != NodeType.Point)
             {
                 ResizeManager.Show();
             }
