@@ -156,12 +156,6 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
-            /*if (e.KeyData >= Keys.NumPad0 && e.KeyData <= Keys.NumPad9)
-            {
-                MonitorKey(e.KeyData - Keys.NumPad0);
-                return;
-            }*/
-
             switch (e.KeyData)
             {
                 case Keys.Escape:
