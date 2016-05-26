@@ -484,5 +484,23 @@ namespace ShareX.HelpersLib
         {
             return pb.Image != null && pb.Image != pb.InitialImage && pb.Image != pb.ErrorImage;
         }
+
+        public static void IgnoreSeparatorClick(this ContextMenuStrip cms)
+        {
+            bool cancelClose = false;
+
+            cms.ItemClicked += (sender, e) =>
+            {
+                cancelClose = e.ClickedItem is ToolStripSeparator;
+            };
+
+            cms.Closing += (sender, e) =>
+            {
+                if (e.CloseReason == ToolStripDropDownCloseReason.ItemClicked && cancelClose)
+                {
+                    e.Cancel = true;
+                }
+            };
+        }
     }
 }

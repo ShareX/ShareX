@@ -221,6 +221,7 @@ namespace ShareX.ScreenCaptureLib
         {
             cmsContextMenu = new ContextMenuStrip(form.components);
             cmsContextMenu.Renderer = new ToolStripCheckedBoldRenderer();
+            cmsContextMenu.IgnoreSeparatorClick();
 
             cmsContextMenu.PreviewKeyDown += (sender, e) =>
             {
