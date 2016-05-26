@@ -73,6 +73,8 @@ namespace ShareX
 
             tsMain.Renderer = new ToolStripCheckedBoldRenderer();
             cmsTray.Renderer = new ToolStripCheckedBoldRenderer();
+            cmsTray.IgnoreSeparatorClick();
+            cmsTaskInfo.IgnoreSeparatorClick();
 
             tsddbWorkflows.HideImageMargin();
             tsmiTrayWorkflows.HideImageMargin();
