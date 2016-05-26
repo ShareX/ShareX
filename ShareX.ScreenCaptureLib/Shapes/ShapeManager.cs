@@ -854,7 +854,7 @@ namespace ShareX.ScreenCaptureLib
                     if (Config.MagnifierPixelCount > 2) Config.MagnifierPixelCount -= 2;
                 }
             }
-            else
+            else if (form.Mode == RectangleRegionMode.Annotation)
             {
                 if (e.Delta > 0)
                 {
@@ -895,36 +895,43 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Menu:
                     IsSnapResizing = true;
                     break;
-                case Keys.NumPad0:
-                    CurrentShapeType = ShapeType.RegionRectangle;
-                    break;
-                case Keys.NumPad1:
-                    CurrentShapeType = ShapeType.DrawingRectangle;
-                    break;
-                case Keys.NumPad2:
-                    CurrentShapeType = ShapeType.DrawingRoundedRectangle;
-                    break;
-                case Keys.NumPad3:
-                    CurrentShapeType = ShapeType.DrawingEllipse;
-                    break;
-                case Keys.NumPad4:
-                    CurrentShapeType = ShapeType.DrawingLine;
-                    break;
-                case Keys.NumPad5:
-                    CurrentShapeType = ShapeType.DrawingArrow;
-                    break;
-                case Keys.NumPad6:
-                    CurrentShapeType = ShapeType.DrawingText;
-                    break;
-                case Keys.NumPad7:
-                    CurrentShapeType = ShapeType.DrawingStep;
-                    break;
-                case Keys.NumPad8:
-                    CurrentShapeType = ShapeType.DrawingBlur;
-                    break;
-                case Keys.NumPad9:
-                    CurrentShapeType = ShapeType.DrawingPixelate;
-                    break;
+            }
+
+            if (form.Mode == RectangleRegionMode.Annotation)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.NumPad0:
+                        CurrentShapeType = ShapeType.RegionRectangle;
+                        break;
+                    case Keys.NumPad1:
+                        CurrentShapeType = ShapeType.DrawingRectangle;
+                        break;
+                    case Keys.NumPad2:
+                        CurrentShapeType = ShapeType.DrawingRoundedRectangle;
+                        break;
+                    case Keys.NumPad3:
+                        CurrentShapeType = ShapeType.DrawingEllipse;
+                        break;
+                    case Keys.NumPad4:
+                        CurrentShapeType = ShapeType.DrawingLine;
+                        break;
+                    case Keys.NumPad5:
+                        CurrentShapeType = ShapeType.DrawingArrow;
+                        break;
+                    case Keys.NumPad6:
+                        CurrentShapeType = ShapeType.DrawingText;
+                        break;
+                    case Keys.NumPad7:
+                        CurrentShapeType = ShapeType.DrawingStep;
+                        break;
+                    case Keys.NumPad8:
+                        CurrentShapeType = ShapeType.DrawingBlur;
+                        break;
+                    case Keys.NumPad9:
+                        CurrentShapeType = ShapeType.DrawingPixelate;
+                        break;
+                }
             }
         }
 
