@@ -537,6 +537,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.btnLithiioGetAPIKey = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3135,6 +3136,7 @@
             // 
             // tpLithiio
             // 
+            this.tpLithiio.Controls.Add(this.btnLithiioGetAPIKey);
             this.tpLithiio.Controls.Add(this.lblLithiioInfo);
             this.tpLithiio.Controls.Add(this.lblLithiioApiKey);
             this.tpLithiio.Controls.Add(this.txtLithiioApiKey);
@@ -3147,9 +3149,7 @@
             // lblLithiioInfo
             // 
             resources.ApplyResources(this.lblLithiioInfo, "lblLithiioInfo");
-            this.lblLithiioInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblLithiioInfo.Name = "lblLithiioInfo";
-            this.lblLithiioInfo.Click += new System.EventHandler(this.lithiioInfoLabel_Click);
             // 
             // lblLithiioApiKey
             // 
@@ -4307,6 +4307,13 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // btnLithiioGetAPIKey
+            // 
+            resources.ApplyResources(this.btnLithiioGetAPIKey, "btnLithiioGetAPIKey");
+            this.btnLithiioGetAPIKey.Name = "btnLithiioGetAPIKey";
+            this.btnLithiioGetAPIKey.UseVisualStyleBackColor = true;
+            this.btnLithiioGetAPIKey.Click += new System.EventHandler(this.btnLithiioGetAPIKey_Click);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4969,5 +4976,6 @@
         public System.Windows.Forms.TabPage tpCustomUploaders;
         private System.Windows.Forms.TextBox txtEmailAutomaticSendTo;
         private System.Windows.Forms.CheckBox cbEmailAutomaticSend;
+        private System.Windows.Forms.Button btnLithiioGetAPIKey;
     }
 }

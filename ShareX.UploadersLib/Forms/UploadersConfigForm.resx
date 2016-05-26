@@ -8977,6 +8977,30 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpSul.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
+  <data name="btnLithiioGetAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 27</value>
+  </data>
+  <data name="btnLithiioGetAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 26</value>
+  </data>
+  <data name="btnLithiioGetAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
+    <value>Get API Key...</value>
+  </data>
+  <data name="&gt;&gt;btnLithiioGetAPIKey.Name" xml:space="preserve">
+    <value>btnLithiioGetAPIKey</value>
+  </data>
+  <data name="&gt;&gt;btnLithiioGetAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLithiioGetAPIKey.Parent" xml:space="preserve">
+    <value>tpLithiio</value>
+  </data>
+  <data name="&gt;&gt;btnLithiioGetAPIKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblLithiioInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -8984,17 +9008,16 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblLithiioInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
+    <value>21, 69</value>
   </data>
   <data name="lblLithiioInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 143</value>
+    <value>248, 130</value>
   </data>
   <data name="lblLithiioInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="lblLithiioInfo.Text" xml:space="preserve">
-    <value>Leave the API key blank for anonymous usage or sign in through Steam
-at https://lithi.io/ to become a Lithiio member and get an API key.
+    <value>Leave the API key blank for anonymous usage.
 
 Anonymous:
     - 50 MB max per upload
@@ -9015,7 +9038,7 @@ Lithiio Member:
     <value>tpLithiio</value>
   </data>
   <data name="&gt;&gt;lblLithiioInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblLithiioApiKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9024,7 +9047,7 @@ Lithiio Member:
     <value>NoControl</value>
   </data>
   <data name="lblLithiioApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 172</value>
+    <value>21, 225</value>
   </data>
   <data name="lblLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -9045,10 +9068,10 @@ Lithiio Member:
     <value>tpLithiio</value>
   </data>
   <data name="&gt;&gt;lblLithiioApiKey.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtLithiioApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 189</value>
+    <value>24, 242</value>
   </data>
   <data name="txtLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 20</value>
@@ -9066,7 +9089,7 @@ Lithiio Member:
     <value>tpLithiio</value>
   </data>
   <data name="&gt;&gt;txtLithiioApiKey.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblLithiioUploadURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9075,7 +9098,7 @@ Lithiio Member:
     <value>NoControl</value>
   </data>
   <data name="lblLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 218</value>
+    <value>21, 271</value>
   </data>
   <data name="lblLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -9096,10 +9119,10 @@ Lithiio Member:
     <value>tpLithiio</value>
   </data>
   <data name="&gt;&gt;lblLithiioUploadURL.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 234</value>
+    <value>24, 287</value>
   </data>
   <data name="cbLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 21</value>
@@ -9117,7 +9140,7 @@ Lithiio Member:
     <value>tpLithiio</value>
   </data>
   <data name="&gt;&gt;cbLithiioUploadURL.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="tpLithiio.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>

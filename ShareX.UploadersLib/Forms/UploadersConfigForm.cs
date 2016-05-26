@@ -2154,7 +2154,7 @@ namespace ShareX.UploadersLib
 
         #region Lithiio
 
-        private void lithiioInfoLabel_Click(object sender, EventArgs e)
+        private void btnLithiioGetAPIKey_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL("https://lithi.io/");
         }
