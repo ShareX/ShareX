@@ -336,7 +336,7 @@ namespace ShareX
             // TODO: Translate
             lblTips.Text = string.Format(
 @"Main window tips:
-- Drag files, image or text to main window to be able to upload them.
+- Drag files, image or text to main window to upload them.
 - Drag items from task list to copy files to anywhere. Hold ""Ctrl"" before dragging to copy URL or file path instead of file.
 
 Main window task list hotkeys:
@@ -346,15 +346,15 @@ Main window task list hotkeys:
 [Shift + C] Copy file
 [Ctrl + Shift + C] Copy file path
 [Ctrl + X] Copy URL or file path then remove selected items from list
-[Ctrl + V] Opens clipboard content viewer so you can upload your clipboard content
+[Ctrl + V] Open clipboard content viewer so you can upload your clipboard content
 [Delete] Remove selected items from list
 [Shift + Delete] Delete files locally then remove them from list
 [Esc] Close main window
 
 Tray icon tasks:
-[Primary mouse click] {0}
-[Double primary mouse click] {1}
-[Middle mouse click] {2}
+[Left click] {0}
+[Double left click] {1}
+[Middle click] {2}
 - You can change these tray icon tasks from ""Application settings"" window.",
 Program.Settings.TrayLeftClickAction.GetLocalizedDescription(),
 Program.Settings.TrayLeftDoubleClickAction.GetLocalizedDescription(),
