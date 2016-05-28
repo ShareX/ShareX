@@ -1430,7 +1430,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     }
                     else
                     {
-                        timerTraySingleClick.Interval = (int)(SystemInformation.DoubleClickTime * 1.1);
+                        timerTraySingleClick.Interval = SystemInformation.DoubleClickTime;
                         timerTraySingleClick.Start();
                     }
                     break;
