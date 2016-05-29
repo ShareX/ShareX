@@ -69,12 +69,9 @@
             // 
             // txtFilePath
             // 
-            this.txtFilePath.AllowDrop = true;
             this.txtFilePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtFilePath, "txtFilePath");
             this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtFilePath_DragDrop);
-            this.txtFilePath.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtFilePath_DragEnter);
             // 
             // btnFilePathBrowse
             // 
@@ -135,7 +132,7 @@
             this.txtTarget.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtTarget, "txtTarget");
             this.txtTarget.Name = "txtTarget";
-            this.txtTarget.TextChanged += new System.EventHandler(this.txtResult_TextChanged);
+            this.txtTarget.TextChanged += new System.EventHandler(this.txtTarget_TextChanged);
             // 
             // lblFile
             // 
@@ -152,6 +149,7 @@
             // 
             // tpFileHashCheck
             // 
+            this.tpFileHashCheck.AllowDrop = true;
             this.tpFileHashCheck.Controls.Add(this.lblFile);
             this.tpFileHashCheck.Controls.Add(this.txtFilePath);
             this.tpFileHashCheck.Controls.Add(this.txtTarget);
@@ -167,6 +165,8 @@
             resources.ApplyResources(this.tpFileHashCheck, "tpFileHashCheck");
             this.tpFileHashCheck.Name = "tpFileHashCheck";
             this.tpFileHashCheck.UseVisualStyleBackColor = true;
+            this.tpFileHashCheck.DragDrop += new System.Windows.Forms.DragEventHandler(this.tpFileHashCheck_DragDrop);
+            this.tpFileHashCheck.DragEnter += new System.Windows.Forms.DragEventHandler(this.tpFileHashCheck_DragEnter);
             // 
             // tpTextConversions
             // 
