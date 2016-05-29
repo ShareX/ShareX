@@ -89,6 +89,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public virtual bool Intersects(Point position)
+        {
+            return Rectangle.Contains(position);
+        }
+
         public virtual void AddShapePath(GraphicsPath gp, Rectangle rect)
         {
             gp.AddRectangle(rect);

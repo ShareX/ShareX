@@ -998,16 +998,16 @@ namespace ShareX.ScreenCaptureLib
             ResizeManager.Update();
         }
 
-        private void RegionSelection(Point location)
+        private void RegionSelection(Point position)
         {
             if (ResizeManager.IsCursorOnNode())
             {
                 return;
             }
 
-            PositionOnClick = location;
+            PositionOnClick = position;
 
-            BaseShape shape = GetShapeIntersect(location);
+            BaseShape shape = GetShapeIntersect();
 
             if (shape != null && shape.ShapeType == CurrentShapeType) // Select shape
             {
@@ -1024,17 +1024,17 @@ namespace ShareX.ScreenCaptureLib
                 if (shape.NodeType == NodeType.Point)
                 {
                     IsMoving = true;
-                    shape.Rectangle = new Rectangle(new Point(location.X - shape.Rectangle.Width / 2, location.Y - shape.Rectangle.Height / 2), shape.Rectangle.Size);
+                    shape.Rectangle = new Rectangle(new Point(position.X - shape.Rectangle.Width / 2, position.Y - shape.Rectangle.Height / 2), shape.Rectangle.Size);
                 }
                 else if (Config.IsFixedSize && IsCurrentShapeTypeRegion)
                 {
                     IsMoving = true;
-                    shape.Rectangle = new Rectangle(new Point(location.X - Config.FixedSize.Width / 2, location.Y - Config.FixedSize.Height / 2), Config.FixedSize);
+                    shape.Rectangle = new Rectangle(new Point(position.X - Config.FixedSize.Width / 2, position.Y - Config.FixedSize.Height / 2), Config.FixedSize);
                 }
                 else
                 {
                     IsCreating = true;
-                    shape.StartPosition = location;
+                    shape.StartPosition = position;
                 }
             }
         }
@@ -1249,11 +1249,11 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public WindowInfo FindSelectedWindowInfo(Point mousePosition)
+        public WindowInfo FindSelectedWindowInfo(Point position)
         {
             if (Windows != null)
             {
-                SimpleWindowInfo windowInfo = Windows.FirstOrDefault(x => x.IsWindow && x.Rectangle.Contains(mousePosition));
+                SimpleWindowInfo windowInfo = Windows.FirstOrDefault(x => x.IsWindow && x.Rectangle.Contains(position));
 
                 if (windowInfo != null)
                 {
@@ -1337,13 +1337,13 @@ namespace ShareX.ScreenCaptureLib
             DeselectShape();
         }
 
-        public BaseShape GetShapeIntersect(Point mousePosition)
+        public BaseShape GetShapeIntersect(Point position)
         {
             for (int i = Shapes.Count - 1; i >= 0; i--)
             {
                 BaseShape shape = Shapes[i];
 
-                if (shape.ShapeType == CurrentShapeType && shape.Rectangle.Contains(mousePosition))
+                if (shape.ShapeType == CurrentShapeType && shape.Intersects(position))
                 {
                     return shape;
                 }
