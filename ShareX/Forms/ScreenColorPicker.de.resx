@@ -120,9 +120,6 @@
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Starte Bildschirmfarben Auswähler</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Alles Kopieren</value>
-  </data>
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>Drücke die "Strg" Taste wenn dieses Fenster aktiv ist um den Bildschirmfarben Auswähler zu stoppen.</value>
   </data>

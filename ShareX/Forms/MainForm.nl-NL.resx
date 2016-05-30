@@ -147,9 +147,6 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Rechthoek</value>
   </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rechthoek (Annotatie)</value>
-  </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Rechthoek (snel)</value>
   </data>
@@ -422,9 +419,6 @@
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Rechthoek</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rechthoek (Annotatie)</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Rechthoek (Snel)</value>

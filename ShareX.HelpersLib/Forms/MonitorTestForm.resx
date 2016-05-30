@@ -341,7 +341,7 @@
   </data>
   <data name="lblShapeSizeValue.Text" xml:space="preserve">
     <value>1</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblShapeSizeValue.Name" xml:space="preserve">
     <value>lblShapeSizeValue</value>
   </data>
@@ -518,7 +518,7 @@
   </data>
   <data name="lblBlueValue.Text" xml:space="preserve">
     <value>0</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblBlueValue.Name" xml:space="preserve">
     <value>lblBlueValue</value>
   </data>
@@ -608,7 +608,7 @@
   </data>
   <data name="lblGreenValue.Text" xml:space="preserve">
     <value>0</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblGreenValue.Name" xml:space="preserve">
     <value>lblGreenValue</value>
   </data>
@@ -698,7 +698,7 @@
   </data>
   <data name="lblRedValue.Text" xml:space="preserve">
     <value>0</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblRedValue.Name" xml:space="preserve">
     <value>lblRedValue</value>
   </data>
@@ -788,7 +788,7 @@
   </data>
   <data name="lblBlackWhiteValue.Text" xml:space="preserve">
     <value>0</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblBlackWhiteValue.Name" xml:space="preserve">
     <value>lblBlackWhiteValue</value>
   </data>

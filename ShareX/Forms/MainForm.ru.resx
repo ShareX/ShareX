@@ -558,12 +558,6 @@
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Миниатюры из видео…</value>
   </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Область (Примечания)</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Область (Примечания)</value>
-  </data>
   <data name="tsmiFreeHand.Text" xml:space="preserve">
     <value>Область произвольной формы</value>
   </data>

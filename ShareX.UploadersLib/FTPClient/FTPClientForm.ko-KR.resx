@@ -144,34 +144,7 @@
   <data name="tpAccount.Text" xml:space="preserve">
     <value>계정</value>
   </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>제거</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>연결 끊기</value>
-  </data>
-  <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
-    <value>다운로드</value>
-  </data>
-  <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>폴더 생성</value>
-  </data>
-  <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>URL을 클립보드에 복사</value>
-  </data>
-  <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>연결</value>
-  </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>상태</value>
-  </data>
-  <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
-    <value>URL 열기</value>
-  </data>
-  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
-    <value>새로고침</value>
-  </data>
-  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
-    <value>이름 변경</value>
   </data>
 </root>

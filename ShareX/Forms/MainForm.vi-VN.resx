@@ -360,9 +360,6 @@
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
     <value>URL để xóa</value>
   </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Vùng (Đánh dấu)</value>
-  </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Vùng (Bản nhẹ hơn)</value>
   </data>
@@ -518,9 +515,6 @@
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Vùng</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Vùng (Đánh dấu)</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Vùng (Phiên bản nhẹ)</value>

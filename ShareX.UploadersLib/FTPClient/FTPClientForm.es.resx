@@ -129,29 +129,11 @@
   <data name="chFiletype.Text" xml:space="preserve">
     <value>Tipo de archivo</value>
   </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Eliminar</value>
-  </data>
-  <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
-    <value>Descargar</value>
-  </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>Estado</value>
   </data>
-  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
-    <value>Refrescar</value>
-  </data>
   <data name="tpAccount.Text" xml:space="preserve">
     <value>Cuenta</value>
-  </data>
-  <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
-    <value>Abrir URL</value>
-  </data>
-  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
-    <value>Renombrar</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Desconectar</value>
   </data>
   <data name="tpMain.Text" xml:space="preserve">
     <value>Archivos</value>
@@ -159,19 +141,10 @@
   <data name="tpConsole.Text" xml:space="preserve">
     <value>Consola</value>
   </data>
-  <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Conectar</value>
-  </data>
-  <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Crear directorio</value>
-  </data>
   <data name="chLastModified.Text" xml:space="preserve">
     <value>Ultima modificacion</value>
   </data>
   <data name="lblConnecting.Text" xml:space="preserve">
     <value>Conectando con el servidor FTP</value>
-  </data>
-  <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copiar URL(s) al portapapeles</value>
   </data>
 </root>

@@ -1,3 +1,4 @@
+﻿
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -131,38 +132,11 @@
   <data name="chLastModified.Text" xml:space="preserve">
     <value>Zuletzt geändert</value>
   </data>
-  <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Vebinden</value>
-  </data>
-  <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Kopiere URL(s) in die Zwischenablage</value>
-  </data>
-  <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Erstelle Verzeichnis</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Löschen</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Trennen</value>
-  </data>
-  <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
-    <value>Herunterladen</value>
-  </data>
   <data name="lblConnecting.Text" xml:space="preserve">
     <value>Verbinde zu FTP Server...</value>
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>Status</value>
-  </data>
-  <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
-    <value>Öffne URL</value>
-  </data>
-  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
-    <value>Aktualisieren</value>
-  </data>
-  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
-    <value>Umbennen</value>
   </data>
   <data name="tpAccount.Text" xml:space="preserve">
     <value>Account</value>

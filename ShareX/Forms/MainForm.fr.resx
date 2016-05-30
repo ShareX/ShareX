@@ -144,9 +144,6 @@
   <data name="tsmiMonitor.Text" xml:space="preserve">
     <value>Écran</value>
   </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Région (Annoter)</value>
-  </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Région (Simple)</value>
   </data>
@@ -419,9 +416,6 @@
   </data>
   <data name="tsmiTrayMonitor.Text" xml:space="preserve">
     <value>Écran</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Région (Annoter)</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Région (Simple)</value>

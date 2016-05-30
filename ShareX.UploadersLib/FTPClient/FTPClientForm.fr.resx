@@ -123,26 +123,8 @@
   <data name="lblConnecting.Text" xml:space="preserve">
     <value>Connexion au serveur FTP...</value>
   </data>
-  <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Connexion</value>
-  </data>
   <data name="tpConsole.Text" xml:space="preserve">
     <value>Console</value>
-  </data>
-  <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copier les/l'URL(s) dans le presse-papier</value>
-  </data>
-  <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Créer le dossier</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Supprimer</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Se déconnecter </value>
-  </data>
-  <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
-    <value>Télécharger</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nom du fichier</value>
@@ -161,15 +143,6 @@
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>statut</value>
-  </data>
-  <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ouvrir l'URL</value>
-  </data>
-  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
-    <value>Rafraîchir</value>
-  </data>
-  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
-    <value>Renommer</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Client FTP</value>

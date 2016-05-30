@@ -221,7 +221,7 @@
   </data>
   <data name="tslURL.Text" xml:space="preserve">
     <value>URL:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tstbURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>800, 23</value>
   </data>

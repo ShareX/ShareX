@@ -869,7 +869,7 @@ namespace Greenshot.Drawing
 
         public override int GetHashCode()
         {
-            // TODO: This actually doesn't make sense...
+            // This actually doesn't make sense...
             // Place the container in a list, and you can't find it :)
             return left.GetHashCode() ^ top.GetHashCode() ^ width.GetHashCode() ^ height.GetHashCode() ^ GetFields().GetHashCode();
         }

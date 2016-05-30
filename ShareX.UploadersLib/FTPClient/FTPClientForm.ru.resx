@@ -132,38 +132,11 @@
   <data name="chLastModified.Text" xml:space="preserve">
     <value>Изменен</value>
   </data>
-  <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Подключиться</value>
-  </data>
-  <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Скопировать ссылку(и)</value>
-  </data>
-  <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Создать папку</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Отключиться</value>
-  </data>
-  <data name="downloadToolStripMenuItem.Text" xml:space="preserve">
-    <value>Скачать</value>
-  </data>
   <data name="lblConnecting.Text" xml:space="preserve">
     <value>Подключение к серверу FTP...</value>
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>состояние</value>
-  </data>
-  <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
-    <value>Открыть ссылку</value>
-  </data>
-  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
-    <value>Переименовать</value>
   </data>
   <data name="tpAccount.Text" xml:space="preserve">
     <value>Аккаунт</value>

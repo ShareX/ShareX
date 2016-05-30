@@ -356,9 +356,6 @@ store.book[0].title</value>
   <data name="lblEmailSmtpServer.Text" xml:space="preserve">
     <value>Serveur SMTP :</value>
   </data>
-  <data name="cbEmailConfirm.Text" xml:space="preserve">
-    <value>Confirmer avant l'envoi</value>
-  </data>
   <data name="lblSharedFolderImages.Text" xml:space="preserve">
     <value>Image :</value>
   </data>

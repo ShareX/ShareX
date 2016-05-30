@@ -150,9 +150,6 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Bölge</value>
   </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Bölge (Dipnot)</value>
-  </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Bölge (Basit)</value>
   </data>
@@ -441,9 +438,6 @@
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Bölge</value>
   </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Bölge (Dipnot)</value>
-  </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Bölge (Basit)</value>
   </data>
@@ -659,5 +653,11 @@
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Kolonları gizle</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>Yazı yakalama (OCR)...</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>Yazı yakalama (OCR)...</value>
   </data>
 </root>

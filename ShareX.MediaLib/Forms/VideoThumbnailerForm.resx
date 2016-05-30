@@ -196,7 +196,7 @@
   </data>
   <data name="btnBrowse.Text" xml:space="preserve">
     <value>...</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
     <value>btnBrowse</value>
   </data>

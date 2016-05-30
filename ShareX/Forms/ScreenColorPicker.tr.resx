@@ -123,10 +123,10 @@
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Ekran rengi seçmeye başla</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Kopyala</value>
-  </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>İmleç pozisyonu:</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Kopyala</value>
   </data>
 </root>

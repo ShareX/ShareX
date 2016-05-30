@@ -8978,16 +8978,16 @@ Using an encrypted library disables sharing.</value>
     <value>20</value>
   </data>
   <data name="btnLithiioGetAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 27</value>
+    <value>368, 55</value>
   </data>
   <data name="btnLithiioGetAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 26</value>
+    <value>152, 23</value>
   </data>
   <data name="btnLithiioGetAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
-    <value>Get API Key...</value>
+    <value>Get API key...</value>
   </data>
   <data name="&gt;&gt;btnLithiioGetAPIKey.Name" xml:space="preserve">
     <value>btnLithiioGetAPIKey</value>
@@ -9008,25 +9008,16 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblLithiioInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 69</value>
+    <value>13, 16</value>
   </data>
   <data name="lblLithiioInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 130</value>
+    <value>231, 13</value>
   </data>
   <data name="lblLithiioInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="lblLithiioInfo.Text" xml:space="preserve">
-    <value>Leave the API key blank for anonymous usage.
-
-Anonymous:
-    - 50 MB max per upload
-    - Files expire after 3 months
-
-Lithiio Member:
-    - 100 MB max per upload
-    - No expiration on files
-    - File management on website (List + Delete files)</value>
+    <value>Leave the API key blank for anonymous usage.</value>
   </data>
   <data name="&gt;&gt;lblLithiioInfo.Name" xml:space="preserve">
     <value>lblLithiioInfo</value>
@@ -9047,7 +9038,7 @@ Lithiio Member:
     <value>NoControl</value>
   </data>
   <data name="lblLithiioApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 225</value>
+    <value>13, 40</value>
   </data>
   <data name="lblLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -9071,7 +9062,7 @@ Lithiio Member:
     <value>2</value>
   </data>
   <data name="txtLithiioApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 242</value>
+    <value>16, 56</value>
   </data>
   <data name="txtLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 20</value>
@@ -9098,7 +9089,7 @@ Lithiio Member:
     <value>NoControl</value>
   </data>
   <data name="lblLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 271</value>
+    <value>13, 88</value>
   </data>
   <data name="lblLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -9122,7 +9113,7 @@ Lithiio Member:
     <value>4</value>
   </data>
   <data name="cbLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 287</value>
+    <value>16, 104</value>
   </data>
   <data name="cbLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 21</value>

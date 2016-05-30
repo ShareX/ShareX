@@ -180,9 +180,6 @@
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Kaydırarak yakalama</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Dikdörtgen dipnot</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Yakalama</value>
   </data>

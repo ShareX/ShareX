@@ -171,9 +171,6 @@
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Képernyő felvevő</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Téglalap annotáció</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Képlopás</value>
   </data>

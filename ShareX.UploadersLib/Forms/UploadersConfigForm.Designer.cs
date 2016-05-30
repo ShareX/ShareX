@@ -376,6 +376,7 @@
             this.txtSulAPIKey = new System.Windows.Forms.TextBox();
             this.lblSulAPIKey = new System.Windows.Forms.Label();
             this.tpLithiio = new System.Windows.Forms.TabPage();
+            this.btnLithiioGetAPIKey = new System.Windows.Forms.Button();
             this.lblLithiioInfo = new System.Windows.Forms.Label();
             this.lblLithiioApiKey = new System.Windows.Forms.Label();
             this.txtLithiioApiKey = new System.Windows.Forms.TextBox();
@@ -537,7 +538,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.btnLithiioGetAPIKey = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3146,6 +3146,13 @@
             this.tpLithiio.Name = "tpLithiio";
             this.tpLithiio.UseVisualStyleBackColor = true;
             // 
+            // btnLithiioGetAPIKey
+            // 
+            resources.ApplyResources(this.btnLithiioGetAPIKey, "btnLithiioGetAPIKey");
+            this.btnLithiioGetAPIKey.Name = "btnLithiioGetAPIKey";
+            this.btnLithiioGetAPIKey.UseVisualStyleBackColor = true;
+            this.btnLithiioGetAPIKey.Click += new System.EventHandler(this.btnLithiioGetAPIKey_Click);
+            // 
             // lblLithiioInfo
             // 
             resources.ApplyResources(this.lblLithiioInfo, "lblLithiioInfo");
@@ -4306,13 +4313,6 @@
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // btnLithiioGetAPIKey
-            // 
-            resources.ApplyResources(this.btnLithiioGetAPIKey, "btnLithiioGetAPIKey");
-            this.btnLithiioGetAPIKey.Name = "btnLithiioGetAPIKey";
-            this.btnLithiioGetAPIKey.UseVisualStyleBackColor = true;
-            this.btnLithiioGetAPIKey.Click += new System.EventHandler(this.btnLithiioGetAPIKey_Click);
             // 
             // UploadersConfigForm
             // 

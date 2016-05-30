@@ -120,9 +120,6 @@
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Start kleurenkiezr voor scherm</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Kopieer alles</value>
-  </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>Muispositie:</value>
   </data>

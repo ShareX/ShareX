@@ -120,9 +120,6 @@
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Színszedő indítása</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Összes másolása</value>
-  </data>
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>Mikor ez az ablak aktív, nyomd meg a "Ctrl" billentyűt a színszedő bezárásához.</value>
   </data>

@@ -120,9 +120,6 @@
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>启动屏幕的颜色选择器</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>全部复制</value>
-  </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>光标位置:</value>
   </data>
