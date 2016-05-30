@@ -28,6 +28,7 @@ using ShareX.Properties;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.OtherServices;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -46,6 +47,7 @@ namespace ShareX
         public event TaskEventHandler StatusChanged;
         public event TaskEventHandler UploadStarted;
         public event TaskEventHandler UploadProgressChanged;
+        public event TaskEventHandler UploadCompleted;
         public event TaskEventHandler TaskCompleted;
         public event UploaderServiceEventHandler UploadersConfigWindowRequested;
 
@@ -253,6 +255,8 @@ namespace ShareX
         {
             if (Status == TaskStatus.InQueue && !StopRequested)
             {
+                Info.TaskStartTime = DateTime.UtcNow;
+
                 threadWorker = new ThreadWorker();
                 Prepare();
                 threadWorker.DoWork += ThreadDoWork;
@@ -302,8 +306,6 @@ namespace ShareX
 
         private void ThreadDoWork()
         {
-            Info.TaskStartTime = DateTime.UtcNow;
-
             CreateTaskReferenceHelper();
 
             try
@@ -343,8 +345,6 @@ namespace ShareX
                     DoAfterUploadJobs();
                 }
             }
-
-            Info.TaskEndTime = DateTime.UtcNow;
         }
 
         private void CreateTaskReferenceHelper()
@@ -424,6 +424,11 @@ namespace ShareX
                         {
                             isError = DoUpload(retry);
                         }
+                    }
+
+                    if (!isError)
+                    {
+                        OnUploadCompleted();
                     }
                 }
                 else
@@ -851,7 +856,13 @@ namespace ShareX
                     uploader.EarlyURLCopyRequested += url => ClipboardHelpers.CopyText(url);
                 }
 
-                return uploader.Upload(stream, fileName);
+                Info.UploadDuration = Stopwatch.StartNew();
+
+                UploadResult result = uploader.Upload(stream, fileName);
+
+                Info.UploadDuration.Stop();
+
+                return result;
             }
 
             return null;
@@ -1023,6 +1034,14 @@ namespace ShareX
             }
         }
 
+        private void OnUploadCompleted()
+        {
+            if (UploadCompleted != null)
+            {
+                threadWorker.InvokeAsync(() => UploadCompleted(this));
+            }
+        }
+
         private void OnUploadProgressChanged()
         {
             if (UploadProgressChanged != null)
@@ -1033,6 +1052,8 @@ namespace ShareX
 
         private void OnTaskCompleted()
         {
+            Info.TaskEndTime = DateTime.UtcNow;
+
             Status = TaskStatus.Completed;
 
             if (StopRequested)

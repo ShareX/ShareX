@@ -1758,7 +1758,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         private void HandleHotkeys(HotkeySettings hotkeySetting)
         {
-            DebugHelper.WriteLine("Hotkey triggered: " + hotkeySetting);
+            DebugHelper.WriteLine("Hotkey triggered. " + hotkeySetting);
 
             if (hotkeySetting.TaskSettings.Job != HotkeyType.None)
             {
