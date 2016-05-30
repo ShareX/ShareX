@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.UploadersLib;
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace ShareX
@@ -126,14 +127,14 @@ namespace ShareX
             }
         }
 
-        public DateTime StartTime { get; set; }
-        public DateTime UploadTime { get; set; }
+        public DateTime TaskStartTime { get; set; }
+        public DateTime TaskEndTime { get; set; }
 
-        public TimeSpan UploadDuration
+        public TimeSpan TaskDuration
         {
             get
             {
-                return UploadTime - StartTime;
+                return TaskEndTime - TaskStartTime;
             }
         }
 
@@ -168,7 +169,7 @@ namespace ShareX
             {
                 Filename = FileName,
                 Filepath = FilePath,
-                DateTime = UploadTime,
+                DateTime = TaskEndTime,
                 Type = DataType.ToString(),
                 Host = UploaderHost,
                 URL = Result.URL,

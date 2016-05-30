@@ -69,7 +69,7 @@ namespace ShareX
                 pattern = pattern.Replace("$thumbnailfilenamenoext", !string.IsNullOrEmpty(info.ThumbnailFilePath) ? Path.GetFileNameWithoutExtension(info.ThumbnailFilePath) : "");
                 pattern = pattern.Replace("$thumbnailfilename", !string.IsNullOrEmpty(info.ThumbnailFilePath) ? Path.GetFileName(info.ThumbnailFilePath) : "");
 
-                pattern = pattern.Replace("$uploadtime", ((int)info.UploadDuration.TotalMilliseconds).ToString());
+                pattern = pattern.Replace("$uploadtime", ((int)info.TaskDuration.TotalMilliseconds).ToString());
             }
 
             return pattern;
