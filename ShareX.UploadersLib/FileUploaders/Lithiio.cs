@@ -67,24 +67,18 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("key", Config.UserAPIKey);
             arguments.Add("linktype", Config.UploadURL);
-            UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments, method: HttpMethod.POST);
-            LithiioResponse Response = JsonConvert.DeserializeObject<LithiioResponse>(result.Response);
-
-            if (result.Response == null)
-            {
-                Errors.Add("Upload failed for unknown reason.");
-                return result;
-            }
+            UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments);
 
             if (result.IsSuccess)
             {
-                if (Response.Success)
+                LithiioResponse response = JsonConvert.DeserializeObject<LithiioResponse>(result.Response);
+                if (response.Success)
                 {
-                    result.URL = Response.URL;
+                    result.URL = response.URL;
                 }
                 else
                 {
-                    Errors.Add(Response.Error);
+                    Errors.Add(response.Error);
                 }
             }
 
