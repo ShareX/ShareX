@@ -184,7 +184,7 @@ namespace ShareX
                 if (task.Status == TaskStatus.History)
                 {
                     lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_History);
-                    lvi.SubItems.Add(task.Info.UploadTime.ToString());
+                    lvi.SubItems.Add(task.Info.TaskEndTime.ToString());
                 }
                 else
                 {
@@ -318,7 +318,7 @@ namespace ShareX
                         }
                         else
                         {
-                            DebugHelper.WriteLine("Task completed. Filename: {0}, URL: {1}, Duration: {2} ms", info.FileName, info.Result.ToString(), (int)info.UploadDuration.TotalMilliseconds);
+                            DebugHelper.WriteLine($"Task completed. Filename: {info.FileName}, URL: {info.Result}, Duration: {info.TaskDuration.TotalMilliseconds:d} ms");
 
                             string result = info.Result.ToString();
 

@@ -100,7 +100,7 @@ namespace ShareX
             task.Info.Result.ThumbnailURL = recentTask.ThumbnailURL;
             task.Info.Result.DeletionURL = recentTask.DeletionURL;
             task.Info.Result.ShortenedURL = recentTask.ShortenedURL;
-            task.Info.UploadTime = recentTask.Time.ToLocalTime();
+            task.Info.TaskEndTime = recentTask.Time.ToLocalTime();
 
             return task;
         }
@@ -302,7 +302,7 @@ namespace ShareX
 
         private void ThreadDoWork()
         {
-            Info.StartTime = DateTime.UtcNow;
+            Info.TaskStartTime = DateTime.UtcNow;
 
             CreateTaskReferenceHelper();
 
@@ -344,7 +344,7 @@ namespace ShareX
                 }
             }
 
-            Info.UploadTime = DateTime.UtcNow;
+            Info.TaskEndTime = DateTime.UtcNow;
         }
 
         private void CreateTaskReferenceHelper()
