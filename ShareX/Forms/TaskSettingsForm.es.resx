@@ -162,9 +162,6 @@
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Grabador de pantalla</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rectángulo annotate</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Captura</value>
   </data>

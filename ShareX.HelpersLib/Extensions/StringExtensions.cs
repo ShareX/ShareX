@@ -25,6 +25,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ShareX.HelpersLib
@@ -168,14 +169,7 @@ namespace ShareX.HelpersLib
 
         public static string RemoveWhiteSpaces(this string str)
         {
-            StringBuilder result = new StringBuilder();
-
-            foreach (char c in str)
-            {
-                if (!Char.IsWhiteSpace(c)) result.Append(c);
-            }
-
-            return result.ToString();
+            return new string(str.Where(c => !char.IsWhiteSpace(c)).ToArray());
         }
 
         public static string Reverse(this string str)

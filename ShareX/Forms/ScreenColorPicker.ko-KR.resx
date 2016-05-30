@@ -120,9 +120,6 @@
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>화면 색상 선택기 시작</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>전부 복사</value>
-  </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>커서 위치:</value>
   </data>

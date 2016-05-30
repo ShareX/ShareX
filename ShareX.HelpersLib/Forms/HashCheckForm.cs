@@ -52,6 +52,25 @@ namespace ShareX.HelpersLib
 
         #region File hash check
 
+        private void UpdateResult()
+        {
+            if (!string.IsNullOrEmpty(txtResult.Text) && !string.IsNullOrEmpty(txtTarget.Text))
+            {
+                if (txtResult.Text.Equals(txtTarget.Text, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    txtTarget.BackColor = Color.FromArgb(200, 255, 200);
+                }
+                else
+                {
+                    txtTarget.BackColor = Color.FromArgb(255, 200, 200);
+                }
+            }
+            else
+            {
+                txtTarget.BackColor = SystemColors.Window;
+            }
+        }
+
         private void btnFilePathBrowse_Click(object sender, EventArgs e)
         {
             Helpers.BrowseFile(txtFilePath);
@@ -85,32 +104,27 @@ namespace ShareX.HelpersLib
         {
             btnStartHashCheck.Text = Resources.Start;
             txtResult.Text = result.ToUpperInvariant();
-            if (!string.IsNullOrEmpty(txtTarget.Text))
-            {
-                txtTarget.Text = txtTarget.Text.ToUpperInvariant();
-            }
         }
 
         private void txtResult_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtResult.Text) && !string.IsNullOrEmpty(txtTarget.Text))
-            {
-                if (txtResult.Text.Equals(txtTarget.Text, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    txtTarget.BackColor = Color.FromArgb(200, 255, 200);
-                }
-                else
-                {
-                    txtTarget.BackColor = Color.FromArgb(255, 200, 200);
-                }
-            }
-            else
-            {
-                txtTarget.BackColor = SystemColors.Window;
-            }
+            UpdateResult();
         }
 
-        private void txtFilePath_DragEnter(object sender, DragEventArgs e)
+        private void txtTarget_TextChanged(object sender, EventArgs e)
+        {
+            string target = txtTarget.Text;
+
+            if (!string.IsNullOrEmpty(target))
+            {
+                txtTarget.Text = target.RemoveWhiteSpaces().ToUpperInvariant();
+                txtTarget.Select(txtTarget.TextLength, 0);
+            }
+
+            UpdateResult();
+        }
+
+        private void tpFileHashCheck_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
             {
@@ -122,7 +136,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void txtFilePath_DragDrop(object sender, DragEventArgs e)
+        private void tpFileHashCheck_DragDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
             {

@@ -854,7 +854,7 @@ namespace ShareX.ScreenCaptureLib
                     if (Config.MagnifierPixelCount > 2) Config.MagnifierPixelCount -= 2;
                 }
             }
-            else
+            else if (form.Mode == RectangleRegionMode.Annotation)
             {
                 if (e.Delta > 0)
                 {
@@ -895,36 +895,43 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Menu:
                     IsSnapResizing = true;
                     break;
-                case Keys.NumPad0:
-                    CurrentShapeType = ShapeType.RegionRectangle;
-                    break;
-                case Keys.NumPad1:
-                    CurrentShapeType = ShapeType.DrawingRectangle;
-                    break;
-                case Keys.NumPad2:
-                    CurrentShapeType = ShapeType.DrawingRoundedRectangle;
-                    break;
-                case Keys.NumPad3:
-                    CurrentShapeType = ShapeType.DrawingEllipse;
-                    break;
-                case Keys.NumPad4:
-                    CurrentShapeType = ShapeType.DrawingLine;
-                    break;
-                case Keys.NumPad5:
-                    CurrentShapeType = ShapeType.DrawingArrow;
-                    break;
-                case Keys.NumPad6:
-                    CurrentShapeType = ShapeType.DrawingText;
-                    break;
-                case Keys.NumPad7:
-                    CurrentShapeType = ShapeType.DrawingStep;
-                    break;
-                case Keys.NumPad8:
-                    CurrentShapeType = ShapeType.DrawingBlur;
-                    break;
-                case Keys.NumPad9:
-                    CurrentShapeType = ShapeType.DrawingPixelate;
-                    break;
+            }
+
+            if (form.Mode == RectangleRegionMode.Annotation)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.NumPad0:
+                        CurrentShapeType = ShapeType.RegionRectangle;
+                        break;
+                    case Keys.NumPad1:
+                        CurrentShapeType = ShapeType.DrawingRectangle;
+                        break;
+                    case Keys.NumPad2:
+                        CurrentShapeType = ShapeType.DrawingRoundedRectangle;
+                        break;
+                    case Keys.NumPad3:
+                        CurrentShapeType = ShapeType.DrawingEllipse;
+                        break;
+                    case Keys.NumPad4:
+                        CurrentShapeType = ShapeType.DrawingLine;
+                        break;
+                    case Keys.NumPad5:
+                        CurrentShapeType = ShapeType.DrawingArrow;
+                        break;
+                    case Keys.NumPad6:
+                        CurrentShapeType = ShapeType.DrawingText;
+                        break;
+                    case Keys.NumPad7:
+                        CurrentShapeType = ShapeType.DrawingStep;
+                        break;
+                    case Keys.NumPad8:
+                        CurrentShapeType = ShapeType.DrawingBlur;
+                        break;
+                    case Keys.NumPad9:
+                        CurrentShapeType = ShapeType.DrawingPixelate;
+                        break;
+                }
             }
         }
 
@@ -991,16 +998,16 @@ namespace ShareX.ScreenCaptureLib
             ResizeManager.Update();
         }
 
-        private void RegionSelection(Point location)
+        private void RegionSelection(Point position)
         {
             if (ResizeManager.IsCursorOnNode())
             {
                 return;
             }
 
-            PositionOnClick = location;
+            PositionOnClick = position;
 
-            BaseShape shape = GetShapeIntersect(location);
+            BaseShape shape = GetShapeIntersect();
 
             if (shape != null && shape.ShapeType == CurrentShapeType) // Select shape
             {
@@ -1017,17 +1024,17 @@ namespace ShareX.ScreenCaptureLib
                 if (shape.NodeType == NodeType.Point)
                 {
                     IsMoving = true;
-                    shape.Rectangle = new Rectangle(new Point(location.X - shape.Rectangle.Width / 2, location.Y - shape.Rectangle.Height / 2), shape.Rectangle.Size);
+                    shape.Rectangle = new Rectangle(new Point(position.X - shape.Rectangle.Width / 2, position.Y - shape.Rectangle.Height / 2), shape.Rectangle.Size);
                 }
                 else if (Config.IsFixedSize && IsCurrentShapeTypeRegion)
                 {
                     IsMoving = true;
-                    shape.Rectangle = new Rectangle(new Point(location.X - Config.FixedSize.Width / 2, location.Y - Config.FixedSize.Height / 2), Config.FixedSize);
+                    shape.Rectangle = new Rectangle(new Point(position.X - Config.FixedSize.Width / 2, position.Y - Config.FixedSize.Height / 2), Config.FixedSize);
                 }
                 else
                 {
                     IsCreating = true;
-                    shape.StartPosition = location;
+                    shape.StartPosition = position;
                 }
             }
         }
@@ -1242,11 +1249,11 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public WindowInfo FindSelectedWindowInfo(Point mousePosition)
+        public WindowInfo FindSelectedWindowInfo(Point position)
         {
             if (Windows != null)
             {
-                SimpleWindowInfo windowInfo = Windows.FirstOrDefault(x => x.IsWindow && x.Rectangle.Contains(mousePosition));
+                SimpleWindowInfo windowInfo = Windows.FirstOrDefault(x => x.IsWindow && x.Rectangle.Contains(position));
 
                 if (windowInfo != null)
                 {
@@ -1330,13 +1337,13 @@ namespace ShareX.ScreenCaptureLib
             DeselectShape();
         }
 
-        public BaseShape GetShapeIntersect(Point mousePosition)
+        public BaseShape GetShapeIntersect(Point position)
         {
             for (int i = Shapes.Count - 1; i >= 0; i--)
             {
                 BaseShape shape = Shapes[i];
 
-                if (shape.ShapeType == CurrentShapeType && shape.Rectangle.Contains(mousePosition))
+                if (shape.ShapeType == CurrentShapeType && shape.Intersects(position))
                 {
                     return shape;
                 }

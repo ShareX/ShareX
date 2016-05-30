@@ -162,9 +162,6 @@
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>화면 녹화</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>직사각형 영역 주석</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>촬영</value>
   </data>

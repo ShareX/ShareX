@@ -188,7 +188,7 @@
   </data>
   <data name="rtbDebug.Text" xml:space="preserve">
     <value />
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="rtbDebug.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>

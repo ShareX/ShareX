@@ -28,11 +28,11 @@ namespace ShareX.UploadersLib
     public static partial class APIKeys
     {
         // Image Uploaders
+        public static string ImgurClientID = "";
+        public static string ImgurClientSecret = "";
         public static string ImageShackKey = "";
         public static string TinyPicID = "";
         public static string TinyPicKey = "";
-        public static string ImgurClientID = "";
-        public static string ImgurClientSecret = "";
         public static string FlickrKey = "";
         public static string FlickrSecret = "";
         public static string PhotobucketConsumerKey = "";
@@ -40,6 +40,8 @@ namespace ShareX.UploadersLib
         public static string TwitsnapsKey = "";
         public static string TwitPicKey = "";
         public static string SomeImageKey = "";
+        public static string SlimgClientID = "";
+        public static string SlimgClientSecret = "";
 
         // File Uploaders
         public static string DropboxConsumerKey = "";

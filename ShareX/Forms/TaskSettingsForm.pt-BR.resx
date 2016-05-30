@@ -180,9 +180,6 @@
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Captura rolante</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Região de anotações</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Capturar</value>
   </data>

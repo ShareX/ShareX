@@ -147,9 +147,6 @@
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Téglalap</value>
   </data>
-  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>Téglalap (annotált)</value>
-  </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Téglalap (finom)</value>
   </data>
@@ -428,9 +425,6 @@
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Téglalap</value>
-  </data>
-  <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>Téglalap (annotált)</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Téglalap (finom)</value>

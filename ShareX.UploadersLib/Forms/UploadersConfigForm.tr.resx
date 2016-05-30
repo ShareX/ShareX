@@ -365,9 +365,6 @@ store.book[0].title</value>
   <data name="lblEmailSmtpServer.Text" xml:space="preserve">
     <value>SMTP sunucusu:</value>
   </data>
-  <data name="cbEmailConfirm.Text" xml:space="preserve">
-    <value>Göndermeden önce onayla</value>
-  </data>
   <data name="lblSharedFolderImages.Text" xml:space="preserve">
     <value>Resim:</value>
   </data>

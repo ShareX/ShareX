@@ -180,9 +180,6 @@
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Scroll Aufnahme</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rechteck mit Anmerkung</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Aufnehmen</value>
   </data>

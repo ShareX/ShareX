@@ -155,7 +155,7 @@
   </data>
   <data name="chIcon.Text" xml:space="preserve">
     <value />
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="chIcon.Width" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
@@ -173,7 +173,7 @@
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="chURL.Width" type="System.Int32, mscorlib">
     <value>230</value>
   </data>

@@ -180,9 +180,6 @@
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Chụp khi cuộn trang</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Đánh dấu hình chữ nhật</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Chụp</value>
   </data>

@@ -171,9 +171,6 @@
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Capture avec défilement</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rectangle annoté</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Capturer</value>
   </data>

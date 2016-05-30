@@ -52,6 +52,8 @@ namespace ShareX.UploadersLib
         SomeImage,
         [Description("Imgland")]
         Imgland,
+        [Description("SLiMG")]
+        Slimg,
         CustomImageUploader, // Localized
         FileUploader // Localized
     }

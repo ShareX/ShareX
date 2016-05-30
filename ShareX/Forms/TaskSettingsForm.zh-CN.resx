@@ -180,9 +180,6 @@
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>滚动捕捉</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>屏幕画笔</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>截图</value>
   </data>

@@ -177,9 +177,6 @@
   <data name="tpScrollingCapture.Text" xml:space="preserve">
     <value>Захват с прокруткой</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Захват с примечанием</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Захват</value>
   </data>
