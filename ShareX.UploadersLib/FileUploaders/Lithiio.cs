@@ -25,7 +25,7 @@
 
 // Credits: https://github.com/lithium720
 
-using ShareX.HelpersLib;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -58,7 +58,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Config = config;
         }
 
-        private const string uploadUrl = "http://api.lithi.io/upload.php";
+        private const string uploadUrl = "http://api.lithi.io/v2/";
 
         public static string[] UploadURLs = new string[] { "https://i.lithi.io/", "https://lithi.io/i/", "https://i.mugi.io/", "https://mugi.io/i/" };
 
@@ -66,31 +66,30 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("key", Config.UserAPIKey);
-            UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments, method: HttpMethod.POST);
-
-            if (result.Response == null)
-            {
-                Errors.Add("Upload failed for unknown reason. Check your API key.");
-                return result;
-            }
+            arguments.Add("linktype", Config.UploadURL);
+            UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments);
 
             if (result.IsSuccess)
             {
-                result.URL = URLHelpers.CombineURL(Config.UploadURL, result.Response);
+                LithiioResponse response = JsonConvert.DeserializeObject<LithiioResponse>(result.Response);
+                if (response.Success)
+                {
+                    result.URL = response.URL;
+                }
+                else
+                {
+                    Errors.Add(response.Error);
+                }
             }
 
             return result;
         }
 
-        internal class LithiioResponse
+        public class LithiioResponse
         {
-            public string url { get; set; }
-            public List<string> errors { get; set; }
-        }
-
-        internal class LithiioFile
-        {
-            public string url { get; set; }
+            public bool Success { get; set; }
+            public string URL { get; set; }
+            public string Error { get; set; }
         }
     }
 
