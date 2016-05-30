@@ -65,6 +65,7 @@ namespace ShareX
                     task.StatusChanged += task_StatusChanged;
                     task.UploadStarted += task_UploadStarted;
                     task.UploadProgressChanged += task_UploadProgressChanged;
+                    task.UploadCompleted += task_UploadCompleted;
                     task.TaskCompleted += task_TaskCompleted;
                     task.UploadersConfigWindowRequested += Task_UploadersConfigWindowRequested;
                 }
@@ -272,6 +273,28 @@ namespace ShareX
             }
         }
 
+        private static void task_UploadCompleted(WorkerTask task)
+        {
+            TaskInfo info = task.Info;
+
+            if (info != null && info.Result != null && !info.Result.IsError)
+            {
+                string url = info.Result.ToString();
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    string text = $"Upload completed. URL: {url}";
+
+                    if (info.UploadDuration != null)
+                    {
+                        text += $", Duration: {info.UploadDuration.ElapsedMilliseconds} ms";
+                    }
+
+                    DebugHelper.WriteLine(text);
+                }
+            }
+        }
+
         private static void task_TaskCompleted(WorkerTask task)
         {
             try
@@ -318,7 +341,7 @@ namespace ShareX
                         }
                         else
                         {
-                            DebugHelper.WriteLine($"Task completed. Filename: {info.FileName}, URL: {info.Result}, Duration: {info.TaskDuration.TotalMilliseconds:d} ms");
+                            DebugHelper.WriteLine($"Task completed. Filename: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
 
                             string result = info.Result.ToString();
 

@@ -138,6 +138,8 @@ namespace ShareX
             }
         }
 
+        public Stopwatch UploadDuration { get; set; }
+
         public UploadResult Result { get; set; }
 
         public TaskInfo(TaskSettings taskSettings)
