@@ -183,9 +183,6 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
 
 Você gostaria de baixar automaticamente?</value>
   </data>
-  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
-    <value>Você pode clicar com o botão direito no ícone do ShareX na bandeja do sistema para iniciar uma captura por região.</value>
-  </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
     <value>Bibliotecas externas</value>
   </data>

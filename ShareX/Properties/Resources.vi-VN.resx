@@ -183,9 +183,6 @@ Vui lòng chọn hotkey khác hoặc thoát ứng dụng đang gây lỗi và m�
 
 Bạn có muốn tự động tải nó xuống không?</value>
   </data>
-  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
-    <value>Bạn có thể bấm chuột trái vào biểu tượng ShareX ở khay hệ thống để bắt đầu chụp theo vùng.</value>
-  </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
     <value>Các thư viện bên ngoài</value>
   </data>

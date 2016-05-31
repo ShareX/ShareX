@@ -1285,16 +1285,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can single left click the ShareX tray icon to start region capture..
-        /// </summary>
-        public static string MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_ {
-            get {
-                return ResourceManager.GetString("MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_r" +
-                        "egion_capture_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Do you really want to delete this file?.
         /// </summary>
         public static string MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_ {

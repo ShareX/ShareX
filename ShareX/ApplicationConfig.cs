@@ -41,7 +41,6 @@ namespace ShareX
         public string FileUploadDefaultDirectory = "";
         public bool ShowUploadWarning = true; // First time upload warning
         public bool ShowMultiUploadWarning = true; // More than 10 files upload warning
-        public bool ShowTrayLeftClickTip = true; // Tray icon left click tip
         public int NameParserAutoIncrementNumber = 0;
         public bool DisableHotkeys = false;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;

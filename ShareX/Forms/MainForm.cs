@@ -271,12 +271,6 @@ namespace ShareX
             {
                 this.ForceActivate();
             }
-
-            if (Program.Settings != null && Program.Settings.ShowTrayLeftClickTip && niTray.Visible && Program.Settings.TrayLeftClickAction == HotkeyType.RectangleRegion)
-            {
-                niTray.ShowBalloonTip(5000, "ShareX", Resources.MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_, ToolTipIcon.Info);
-                Program.Settings.ShowTrayLeftClickTip = false;
-            }
         }
 
         private void UpdateWorkflowsMenu()

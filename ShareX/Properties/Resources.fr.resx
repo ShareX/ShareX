@@ -317,9 +317,6 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
 
 Voulez-vous le télécharger automatiquement ?</value>
   </data>
-  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
-    <value>Vous pouvez effectuer un clic gauche sur l'icône de ShareX pour commencer la capture de région.</value>
-  </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
     <value>Bibliothèques externes</value>
   </data>

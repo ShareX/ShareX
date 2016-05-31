@@ -280,9 +280,6 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
 
 Möchtest du es automatisch herunterladen?</value>
   </data>
-  <data name="MainForm_AfterShownJobs_You_can_single_left_click_the_ShareX_tray_icon_to_start_region_capture_" xml:space="preserve">
-    <value>Mit einem Linksklick auf das ShareX Tray Symbol kannst du eine Regionsaufnahme starten.</value>
-  </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
     <value>Externe Bibliotheken</value>
   </data>
