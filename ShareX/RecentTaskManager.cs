@@ -125,6 +125,18 @@ namespace ShareX
             }
         }
 
+        public void Clear()
+        {
+            lock (itemsLock)
+            {
+                Tasks.Clear();
+
+                Program.Settings.RecentTasks = null;
+
+                UpdateTrayMenu();
+            }
+        }
+
         private void UpdateTrayMenu()
         {
             ToolStripMenuItem tsmi = Program.MainForm.tsmiTrayRecentItems;

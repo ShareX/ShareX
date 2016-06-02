@@ -1669,6 +1669,8 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
         private void tsmiClearList_Click(object sender, EventArgs e)
         {
             RemoveAllItems();
+
+            TaskManager.RecentManager.Clear();
         }
 
         private void tsmiHideMenu_Click(object sender, EventArgs e)
