@@ -35,13 +35,14 @@ namespace ShareX.Setup
         private enum SetupType
         {
             Stable, // Build setup & create portable zip file
-            Portable, // Create portable zip file
+            BuildSetup, // Build setup
+            CreatePortable, // Create portable zip file
             PortableApps, // Create PortableApps folder
             Beta, // Build setup & upload it using "Debug/ShareX.exe"
             Steam // Create Steam folder
         }
 
-        private static readonly SetupType Setup = SetupType.Beta;
+        private static readonly SetupType Setup = SetupType.BuildSetup;
 
         private static readonly string parentDir = @"..\..\..\";
         private static readonly string binDir = Path.Combine(parentDir, "ShareX", "bin");
@@ -74,7 +75,11 @@ namespace ShareX.Setup
                     CreatePortable(portableDir);
                     OpenOutputDirectory();
                     break;
-                case SetupType.Portable:
+                case SetupType.BuildSetup:
+                    CompileSetup();
+                    OpenOutputDirectory();
+                    break;
+                case SetupType.CreatePortable:
                     CreatePortable(portableDir);
                     OpenOutputDirectory();
                     break;
@@ -93,7 +98,6 @@ namespace ShareX.Setup
             }
 
             Console.WriteLine("Done.");
-            //Console.Read();
         }
 
         private static void OpenOutputDirectory()
