@@ -405,6 +405,7 @@ namespace ShareX
                                                     URL = result
                                                 };
                                                 NotificationForm.Show((int)(info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
+                                                    (int)(info.TaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
                                                     info.TaskSettings.AdvancedSettings.ToastWindowPlacement,
                                                     info.TaskSettings.AdvancedSettings.ToastWindowSize, toastConfig);
                                                 break;

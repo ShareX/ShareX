@@ -35,22 +35,29 @@ namespace ShareX
     {
         public NotificationFormConfig ToastConfig { get; private set; }
 
+        public int Duration { get; private set; }
+        public int FadeDuration { get; private set; }
+
         private int windowOffset = 3;
         private bool isMouseInside;
         private bool isDurationEnd;
-        private bool closingAnimation = true;
-        private int closingAnimationDuration = 2000;
-        private int closingAnimationInterval = 50;
+        private int fadeInterval = 50;
+        private float opacityDecrement;
         private Font textFont;
         private int textPadding = 5;
         private int urlPadding = 3;
         private Size textRenderSize;
 
-        public NotificationForm(int duration, ContentAlignment placement, Size size, NotificationFormConfig config)
+        public NotificationForm(int duration, int fadeDuration, ContentAlignment placement, Size size, NotificationFormConfig config)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+
+            Duration = duration;
+            FadeDuration = fadeDuration;
+
+            opacityDecrement = (float)fadeInterval / FadeDuration;
 
             ToastConfig = config;
             textFont = new Font("Arial", 10);
@@ -72,13 +79,13 @@ namespace ShareX
             NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X + Screen.PrimaryScreen.WorkingArea.X,
                 position.Y + Screen.PrimaryScreen.WorkingArea.Y, size.Width, size.Height, SetWindowPosFlags.SWP_NOACTIVATE);
 
-            if (duration <= 0)
+            if (Duration <= 0)
             {
                 DurationEnd();
             }
             else
             {
-                tDuration.Interval = duration;
+                tDuration.Interval = Duration;
                 tDuration.Start();
             }
         }
@@ -101,22 +108,20 @@ namespace ShareX
 
         private void StartClosing()
         {
-            if (closingAnimation)
+            if (FadeDuration <= 0)
             {
-                Opacity = 1;
-                tOpacity.Interval = closingAnimationInterval;
-                tOpacity.Start();
+                Close();
             }
             else
             {
-                Close();
+                Opacity = 1;
+                tOpacity.Interval = fadeInterval;
+                tOpacity.Start();
             }
         }
 
         private void tOpacity_Tick(object sender, EventArgs e)
         {
-            float opacityDecrement = (float)closingAnimationInterval / closingAnimationDuration;
-
             if (Opacity > opacityDecrement)
             {
                 Opacity -= opacityDecrement;
@@ -164,15 +169,15 @@ namespace ShareX
             g.DrawRectangleProper(Pens.Black, rect);
         }
 
-        public static void Show(int duration, ContentAlignment placement, Size size, NotificationFormConfig config)
+        public static void Show(int duration, int fadeDuration, ContentAlignment placement, Size size, NotificationFormConfig config)
         {
-            if (size.Width > 0 && size.Height > 0)
+            if ((duration > 0 || fadeDuration > 0) && size.Width > 0 && size.Height > 0)
             {
                 config.Image = ImageHelpers.LoadImage(config.FilePath);
 
                 if (config.Image != null || !string.IsNullOrEmpty(config.Text))
                 {
-                    NotificationForm form = new NotificationForm(duration, placement, size, config);
+                    NotificationForm form = new NotificationForm(duration, fadeDuration, placement, size, config);
                     NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
                 }
             }

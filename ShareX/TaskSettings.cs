@@ -461,7 +461,22 @@ namespace ShareX
             }
             set
             {
-                toastWindowDuration = Math.Max(value, 0f);
+                toastWindowDuration = value.Between(0, 30);
+            }
+        }
+
+        private float toastWindowFadeDuration;
+
+        [Category("After upload / Notifications"), DefaultValue(1f), Description("After toast window duration end, toast window will start fading, specify duration of this fade animation (in seconds).")]
+        public float ToastWindowFadeDuration
+        {
+            get
+            {
+                return toastWindowFadeDuration;
+            }
+            set
+            {
+                toastWindowFadeDuration = value.Between(0, 30);
             }
         }
 
