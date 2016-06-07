@@ -282,6 +282,14 @@ namespace ShareX.HelpersLib
             DrawSelectedShape();
         }
 
+        private void btnScreenTearingTest_Click(object sender, EventArgs e)
+        {
+            using (ScreenTearingTestForm screenTearingTestForm = new ScreenTearingTestForm())
+            {
+                screenTearingTestForm.ShowDialog();
+            }
+        }
+
         #endregion Form events
     }
 }

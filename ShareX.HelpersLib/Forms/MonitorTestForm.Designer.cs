@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonitorTestForm));
             this.pSettings = new System.Windows.Forms.Panel();
-            this.btnGradientColor2 = new ShareX.HelpersLib.ColorButton();
-            this.btnGradientColor1 = new ShareX.HelpersLib.ColorButton();
+            this.btnScreenTearingTest = new System.Windows.Forms.Button();
             this.lblTip = new System.Windows.Forms.Label();
             this.cbGradient = new System.Windows.Forms.ComboBox();
             this.rbGradient = new System.Windows.Forms.RadioButton();
@@ -55,6 +54,8 @@
             this.lblBlackWhiteValue = new System.Windows.Forms.Label();
             this.tbBlackWhite = new System.Windows.Forms.TrackBar();
             this.rbBlackWhite = new System.Windows.Forms.RadioButton();
+            this.btnGradientColor2 = new ShareX.HelpersLib.ColorButton();
+            this.btnGradientColor1 = new ShareX.HelpersLib.ColorButton();
             this.pSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbShapeSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBlue)).BeginInit();
@@ -67,6 +68,7 @@
             // 
             this.pSettings.BackColor = System.Drawing.SystemColors.Window;
             this.pSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pSettings.Controls.Add(this.btnScreenTearingTest);
             this.pSettings.Controls.Add(this.btnGradientColor2);
             this.pSettings.Controls.Add(this.btnGradientColor1);
             this.pSettings.Controls.Add(this.lblTip);
@@ -95,21 +97,12 @@
             resources.ApplyResources(this.pSettings, "pSettings");
             this.pSettings.Name = "pSettings";
             // 
-            // btnGradientColor2
+            // btnScreenTearingTest
             // 
-            this.btnGradientColor2.Color = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.btnGradientColor2, "btnGradientColor2");
-            this.btnGradientColor2.Name = "btnGradientColor2";
-            this.btnGradientColor2.UseVisualStyleBackColor = true;
-            this.btnGradientColor2.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor2_ColorChanged);
-            // 
-            // btnGradientColor1
-            // 
-            this.btnGradientColor1.Color = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.btnGradientColor1, "btnGradientColor1");
-            this.btnGradientColor1.Name = "btnGradientColor1";
-            this.btnGradientColor1.UseVisualStyleBackColor = true;
-            this.btnGradientColor1.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor1_ColorChanged);
+            resources.ApplyResources(this.btnScreenTearingTest, "btnScreenTearingTest");
+            this.btnScreenTearingTest.Name = "btnScreenTearingTest";
+            this.btnScreenTearingTest.UseVisualStyleBackColor = true;
+            this.btnScreenTearingTest.Click += new System.EventHandler(this.btnScreenTearingTest_Click);
             // 
             // lblTip
             // 
@@ -265,6 +258,22 @@
             this.rbBlackWhite.UseVisualStyleBackColor = true;
             this.rbBlackWhite.CheckedChanged += new System.EventHandler(this.rbBlackWhite_CheckedChanged);
             // 
+            // btnGradientColor2
+            // 
+            this.btnGradientColor2.Color = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.btnGradientColor2, "btnGradientColor2");
+            this.btnGradientColor2.Name = "btnGradientColor2";
+            this.btnGradientColor2.UseVisualStyleBackColor = true;
+            this.btnGradientColor2.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor2_ColorChanged);
+            // 
+            // btnGradientColor1
+            // 
+            this.btnGradientColor1.Color = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.btnGradientColor1, "btnGradientColor1");
+            this.btnGradientColor1.Name = "btnGradientColor1";
+            this.btnGradientColor1.UseVisualStyleBackColor = true;
+            this.btnGradientColor1.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor1_ColorChanged);
+            // 
             // MonitorTestForm
             // 
             resources.ApplyResources(this, "$this");
@@ -318,6 +327,6 @@
         private System.Windows.Forms.Label lblTip;
         private ColorButton btnGradientColor2;
         private ColorButton btnGradientColor1;
-
+        private System.Windows.Forms.Button btnScreenTearingTest;
     }
 }

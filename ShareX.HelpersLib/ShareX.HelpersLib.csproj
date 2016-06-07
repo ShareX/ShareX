@@ -180,6 +180,9 @@
     <Compile Include="Forms\QRCodeForm.Designer.cs">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ScreenTearingTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HelpersOptions.cs" />
     <Compile Include="Helpers\URLHelpers.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />
