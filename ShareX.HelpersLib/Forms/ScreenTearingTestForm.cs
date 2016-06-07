@@ -38,6 +38,7 @@ namespace ShareX.HelpersLib
         private TimeSpan lastElapsed;
         private int rectangleSize = 50;
         private float animationSpeed = 500, minSpeed = 100, maxSpeed = 2000, speedChange = 50, currentPosition;
+        private bool isVerticalLines = true;
 
         public ScreenTearingTestForm()
         {
@@ -84,7 +85,14 @@ namespace ShareX.HelpersLib
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
-            Close();
+            if (isVerticalLines)
+            {
+                isVerticalLines = false;
+            }
+            else
+            {
+                Close();
+            }
         }
 
         protected override void OnMouseWheel(MouseEventArgs e)
@@ -116,9 +124,19 @@ namespace ShareX.HelpersLib
             int nextPosition = rectangleSize * 2;
             int startOffset = (int)(currentPosition % nextPosition);
 
-            for (int x = startOffset - rectangleSize; x < screenRectangle.Width; x += nextPosition)
+            if (isVerticalLines)
             {
-                g.FillRectangle(Brushes.Black, x, 0, rectangleSize, screenRectangle.Height);
+                for (int x = startOffset - rectangleSize; x < screenRectangle.Width; x += nextPosition)
+                {
+                    g.FillRectangle(Brushes.Black, x, 0, rectangleSize, screenRectangle.Height);
+                }
+            }
+            else
+            {
+                for (int y = startOffset - rectangleSize; y < screenRectangle.Height; y += nextPosition)
+                {
+                    g.FillRectangle(Brushes.Black, 0, y, screenRectangle.Width, rectangleSize);
+                }
             }
 
             TimeSpan elapsed = animationTime.Elapsed - lastElapsed;
