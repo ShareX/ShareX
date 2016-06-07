@@ -39,11 +39,12 @@ namespace ShareX.HelpersLib
     public class ScreenTearingTestForm : Form
     {
         private Rectangle screenRectangle, screenRectangle0Based;
-        private TextureBrush brush;
-        private Timer timer;
-        private Stopwatch stopwatch;
+        private Timer drawTimer;
+        private Stopwatch animationTime;
         private TimeSpan lastElapsed;
-        private float animationSpeed = 200;
+        private int rectangleSize = 50;
+        private float animationSpeed = 500, minSpeed = 100, maxSpeed = 2000, speedChange = 50;
+        private float currentPosition;
 
         public ScreenTearingTestForm()
         {
@@ -56,6 +57,7 @@ namespace ShareX.HelpersLib
             AutoScaleMode = AutoScaleMode.Font;
             StartPosition = FormStartPosition.Manual;
             Bounds = screenRectangle;
+            Cursor = Cursors.Hand;
             FormBorderStyle = FormBorderStyle.None;
             Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
@@ -65,13 +67,11 @@ namespace ShareX.HelpersLib
 
             ResumeLayout(false);
 
-            brush = CreateVerticalLineBrush(50, screenRectangle.Height, Color.Black, Color.White);
+            animationTime = Stopwatch.StartNew();
 
-            stopwatch = Stopwatch.StartNew();
-
-            timer = new Timer { Interval = 10 };
-            timer.Tick += timer_Tick;
-            timer.Start();
+            drawTimer = new Timer { Interval = 5 };
+            drawTimer.Tick += timer_Tick;
+            drawTimer.Start();
         }
 
         protected override void OnShown(EventArgs e)
@@ -89,6 +89,20 @@ namespace ShareX.HelpersLib
             }
 
             base.OnKeyUp(e);
+        }
+
+        protected override void OnMouseWheel(MouseEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                animationSpeed = (animationSpeed + speedChange).Between(minSpeed, maxSpeed);
+            }
+            else if (e.Delta < 0)
+            {
+                animationSpeed = (animationSpeed - speedChange).Between(minSpeed, maxSpeed);
+            }
+
+            base.OnMouseWheel(e);
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
@@ -111,44 +125,28 @@ namespace ShareX.HelpersLib
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.InterpolationMode = InterpolationMode.NearestNeighbor;
             g.SmoothingMode = SmoothingMode.HighSpeed;
 
-            g.FillRectangle(brush, screenRectangle0Based);
+            g.Clear(Color.White);
 
-            TimeSpan elapsed = stopwatch.Elapsed - lastElapsed;
+            int nextPosition = rectangleSize * 2;
+            int startOffset = (int)(currentPosition % nextPosition);
 
-            float x = (float)(elapsed.TotalSeconds * animationSpeed);
-            brush.TranslateTransform(x, 0);
-
-            lastElapsed = stopwatch.Elapsed;
-        }
-
-        private TextureBrush CreateVerticalLineBrush(int size, int height, Color color1, Color color2)
-        {
-            using (Bitmap bmp = new Bitmap(size * 2, height))
-            using (Graphics g = Graphics.FromImage(bmp))
+            for (int x = startOffset - rectangleSize; x < screenRectangle.Width; x += nextPosition)
             {
-                g.SmoothingMode = SmoothingMode.HighSpeed;
-
-                using (Brush brush1 = new SolidBrush(color1))
-                {
-                    g.FillRectangle(brush1, 0, 0, size, height);
-                }
-
-                using (Brush brush2 = new SolidBrush(color2))
-                {
-                    g.FillRectangle(brush2, size, 0, size, height);
-                }
-
-                return new TextureBrush(bmp, WrapMode.Tile);
+                g.FillRectangle(Brushes.Black, x, 0, rectangleSize, screenRectangle.Height);
             }
+
+            TimeSpan elapsed = animationTime.Elapsed - lastElapsed;
+
+            currentPosition += (float)(elapsed.TotalSeconds * animationSpeed);
+
+            lastElapsed = animationTime.Elapsed;
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (timer != null) timer.Dispose();
-            if (brush != null) brush.Dispose();
+            if (drawTimer != null) drawTimer.Dispose();
 
             base.Dispose(disposing);
         }
