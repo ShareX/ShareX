@@ -24,14 +24,9 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -39,12 +34,10 @@ namespace ShareX.HelpersLib
     public class ScreenTearingTestForm : Form
     {
         private Rectangle screenRectangle, screenRectangle0Based;
-        private Timer drawTimer;
         private Stopwatch animationTime;
         private TimeSpan lastElapsed;
         private int rectangleSize = 50;
-        private float animationSpeed = 500, minSpeed = 100, maxSpeed = 2000, speedChange = 50;
-        private float currentPosition;
+        private float animationSpeed = 500, minSpeed = 100, maxSpeed = 2000, speedChange = 50, currentPosition;
 
         public ScreenTearingTestForm()
         {
@@ -68,10 +61,6 @@ namespace ShareX.HelpersLib
             ResumeLayout(false);
 
             animationTime = Stopwatch.StartNew();
-
-            drawTimer = new Timer { Interval = 5 };
-            drawTimer.Tick += timer_Tick;
-            drawTimer.Start();
         }
 
         protected override void OnShown(EventArgs e)
@@ -87,8 +76,15 @@ namespace ShareX.HelpersLib
             {
                 Close();
             }
+            else
+            {
+                base.OnKeyUp(e);
+            }
+        }
 
-            base.OnKeyUp(e);
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            Close();
         }
 
         protected override void OnMouseWheel(MouseEventArgs e)
@@ -103,18 +99,6 @@ namespace ShareX.HelpersLib
             }
 
             base.OnMouseWheel(e);
-        }
-
-        protected override void OnMouseUp(MouseEventArgs e)
-        {
-            Close();
-
-            base.OnMouseUp(e);
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            Refresh();
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -142,12 +126,12 @@ namespace ShareX.HelpersLib
             currentPosition += (float)(elapsed.TotalSeconds * animationSpeed);
 
             lastElapsed = animationTime.Elapsed;
+
+            Invalidate();
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (drawTimer != null) drawTimer.Dispose();
-
             base.Dispose(disposing);
         }
     }
