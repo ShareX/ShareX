@@ -436,13 +436,13 @@
     <value>10</value>
   </data>
   <data name="cbShapes.Items" xml:space="preserve">
-    <value>Checker</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Horizontal lines</value>
   </data>
-  <data name="cbShapes.Items2" xml:space="preserve">
+  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Vertical lines</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>Checker</value>
   </data>
   <data name="cbShapes.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 295</value>

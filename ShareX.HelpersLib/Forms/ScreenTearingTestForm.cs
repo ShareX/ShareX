@@ -33,12 +33,13 @@ namespace ShareX.HelpersLib
 {
     public class ScreenTearingTestForm : Form
     {
+        public ScreenTearingTestMode Mode { get; set; } = ScreenTearingTestMode.VerticalLines;
+
         private Rectangle screenRectangle, screenRectangle0Based;
         private Stopwatch animationTime;
         private TimeSpan lastElapsed;
         private int rectangleSize = 50;
         private float animationSpeed = 500, minSpeed = 100, maxSpeed = 2000, speedChange = 50, currentPosition;
-        private bool isVerticalLines = true;
 
         public ScreenTearingTestForm()
         {
@@ -85,9 +86,9 @@ namespace ShareX.HelpersLib
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
-            if (isVerticalLines)
+            if (Mode == ScreenTearingTestMode.VerticalLines)
             {
-                isVerticalLines = false;
+                Mode = ScreenTearingTestMode.HorizontalLines;
             }
             else
             {
@@ -124,14 +125,14 @@ namespace ShareX.HelpersLib
             int nextPosition = rectangleSize * 2;
             int startOffset = (int)(currentPosition % nextPosition);
 
-            if (isVerticalLines)
+            if (Mode == ScreenTearingTestMode.VerticalLines)
             {
                 for (int x = startOffset - rectangleSize; x < screenRectangle.Width; x += nextPosition)
                 {
                     g.FillRectangle(Brushes.Black, x, 0, rectangleSize, screenRectangle.Height);
                 }
             }
-            else
+            else if (Mode == ScreenTearingTestMode.HorizontalLines)
             {
                 for (int y = startOffset - rectangleSize; y < screenRectangle.Height; y += nextPosition)
                 {

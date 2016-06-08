@@ -49,7 +49,7 @@ namespace ShareX.HelpersLib
             btnGradientColor1.Color = Color.DarkGray;
             btnGradientColor2.Color = Color.Black;
             cbShapes.SelectedIndex = 0;
-            tbShapeSize.Value = 3;
+            tbShapeSize.Value = 5;
         }
 
         private void SetBackColor()
@@ -173,13 +173,13 @@ namespace ShareX.HelpersLib
                 switch (cbShapes.SelectedIndex)
                 {
                     case 0:
-                        BackgroundImage = DrawChecker(shapeSize, Color.Black);
-                        break;
-                    case 1:
                         BackgroundImage = DrawHorizontalLine(shapeSize, Color.Black);
                         break;
-                    case 2:
+                    case 1:
                         BackgroundImage = DrawVerticalLine(shapeSize, Color.Black);
+                        break;
+                    case 2:
+                        BackgroundImage = DrawChecker(shapeSize, Color.Black);
                         break;
                 }
             }

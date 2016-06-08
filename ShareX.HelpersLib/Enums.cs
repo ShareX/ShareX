@@ -173,4 +173,10 @@ namespace ShareX.HelpersLib
         Prefix,
         Suffix
     }
+
+    public enum ScreenTearingTestMode
+    {
+        VerticalLines,
+        HorizontalLines
+    }
 }
