@@ -1050,7 +1050,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null)
             {
-                if (!IsCurrentRectangleValid)
+                if (!shape.IsValidShape)
                 {
                     shape.Rectangle = Rectangle.Empty;
 
@@ -1063,6 +1063,7 @@ namespace ShareX.ScreenCaptureLib
                     else
                     {
                         DeleteCurrentShape();
+                        shape = null;
                     }
                 }
 
