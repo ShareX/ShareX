@@ -36,5 +36,6 @@ namespace ShareX.HelpersLib
         public const string URL_BERK = "https://github.com/Jaex";
         public const string URL_MIKE = "https://github.com/McoreD";
         public const string URL_STEAM = "http://store.steampowered.com/app/400040/";
+        public const string URL_PATREON = "https://www.patreon.com/ShareX";
     }
 }

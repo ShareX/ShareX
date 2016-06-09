@@ -189,6 +189,8 @@ namespace ShareX
 
             niTray.Visible = Program.Settings.ShowTray;
 
+            flpPatreon.Visible = Program.Settings.ShowPatreonButton;
+
             TaskManager.RecentManager.InitItems();
 
             bool isPositionChanged = false;
@@ -2455,6 +2457,17 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
         private void tsmiTrayRectangleLight_Click(object sender, EventArgs e)
         {
             CaptureRectangleLight(null, false);
+        }
+
+        private void pbPatreonOpen_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_PATREON);
+        }
+
+        private void pbPatreonHide_Click(object sender, EventArgs e)
+        {
+            flpPatreon.Visible = false;
+            Program.Settings.ShowPatreonButton = false;
         }
 
         private void tsmiTrayRectangleTransparent_Click(object sender, EventArgs e)

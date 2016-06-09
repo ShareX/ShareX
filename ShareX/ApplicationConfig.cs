@@ -44,6 +44,7 @@ namespace ShareX
         public int NameParserAutoIncrementNumber = 0;
         public bool DisableHotkeys = false;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
+        public bool ShowPatreonButton = true;
 
         public ApplicationConfig()
         {
