@@ -832,10 +832,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     form.Close(RegionResult.Region);
                 }
-                else if (CurrentShape != null)
+                else if (CurrentShape != null && !IsCreating)
                 {
-                    EndRegionSelection();
-
                     CurrentShape.OnShapeDoubleClicked();
                 }
             }
