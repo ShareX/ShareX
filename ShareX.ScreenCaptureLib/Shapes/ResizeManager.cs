@@ -219,7 +219,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Calculate cursor movement
-            int speed = e.Control ? MaxMoveSpeed : MinMoveSpeed;
+            int speed = e.Shift ? MaxMoveSpeed : MinMoveSpeed;
             int y = IsUpPressed && IsDownPressed ? 0 : IsDownPressed ? speed : IsUpPressed ? -speed : 0;
             int x = IsLeftPressed && IsRightPressed ? 0 : IsRightPressed ? speed : IsLeftPressed ? -speed : 0;
 
@@ -230,7 +230,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                if (e.Shift)
+                if (e.Control)
                 {
                     MoveCurrentArea(x, y);
                 }
