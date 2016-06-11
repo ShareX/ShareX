@@ -36,6 +36,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RectangleRegionLightForm : Form
     {
+        private const int MinimumRectangleSize = 3;
+
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
         public Rectangle ScreenRectangle { get; private set; }
@@ -112,7 +114,9 @@ namespace ShareX.ScreenCaptureLib
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Text = "ShareX - " + Resources.RectangleLight_InitializeComponent_Rectangle_capture_light;
             ShowInTaskbar = false;
+#if !DEBUG
             TopMost = true;
+#endif
 
             Shown += RectangleLight_Shown;
             KeyUp += RectangleLight_KeyUp;
@@ -131,7 +135,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.KeyCode == Keys.Escape)
             {
-                Close();
+                DialogResult = DialogResult.Cancel;
             }
         }
 
@@ -148,15 +152,14 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (isMouseDown)
+                if (isMouseDown && SelectionRectangle0Based.Width > MinimumRectangleSize && SelectionRectangle0Based.Height > MinimumRectangleSize)
                 {
-                    if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
-                    {
-                        LastSelectionRectangle0Based = SelectionRectangle0Based;
-                        DialogResult = DialogResult.OK;
-                    }
-
-                    Close();
+                    LastSelectionRectangle0Based = SelectionRectangle0Based;
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    isMouseDown = false;
                 }
             }
             else
@@ -168,7 +171,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    Close();
+                    DialogResult = DialogResult.Cancel;
                 }
             }
         }
@@ -212,9 +215,10 @@ namespace ShareX.ScreenCaptureLib
             g.CompositingQuality = CompositingQuality.HighSpeed;
             g.FillRectangle(backgroundBrush, ScreenRectangle0Based);
 
-            if (isMouseDown)
+            if (isMouseDown && SelectionRectangle0Based.Width > MinimumRectangleSize && SelectionRectangle0Based.Height > MinimumRectangleSize)
             {
                 borderDotPen2.DashOffset = (float)penTimer.Elapsed.TotalSeconds * -15;
+
                 g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
                 g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
             }
