@@ -1,0 +1,137 @@
+﻿#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2016 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+using System.Collections.Generic;
+using System.IO;
+
+namespace ShareX.UploadersLib.FileUploaders
+{
+    public class PuushFileUploaderService : FileUploaderService
+    {
+        public override FileDestination EnumValue { get; } = FileDestination.Puush;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.PuushAPIKey);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new Puush()
+            {
+                APIKey = config.PuushAPIKey
+            };
+        }
+    }
+
+    public class Puush : FileUploader
+    {
+        public const string PuushURL = "https://puush.me";
+        public const string PuushAPIURL = PuushURL + "/api";
+        public const string PuushAPILoginURL = PuushAPIURL + "/auth";
+        public const string PuushAPIUploadURL = PuushAPIURL + "/up";
+        public const string PuushRegisterURL = PuushURL + "/register";
+        public const string PuushResetPasswordURL = PuushURL + "/reset_password";
+
+        public string APIKey { get; set; }
+
+        public string Login(string email, string password)
+        {
+            Dictionary<string, string> arguments = new Dictionary<string, string>();
+            arguments.Add("e", email);
+            arguments.Add("p", password);
+            arguments.Add("z", "ShareX");
+
+            string response = SendRequest(HttpMethod.POST, PuushAPILoginURL, arguments);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                string[] values = response.Split(',');
+
+                if (values != null && values.Length > 1)
+                {
+                    int status;
+
+                    if (int.TryParse(values[0], out status) && status >= 0)
+                    {
+                        return values[1];
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public override UploadResult Upload(Stream stream, string fileName)
+        {
+            Dictionary<string, string> arguments = new Dictionary<string, string>();
+            arguments.Add("k", APIKey);
+            arguments.Add("z", "ShareX");
+
+            UploadResult result = UploadData(stream, PuushAPIUploadURL, fileName, "f", arguments);
+
+            if (result.IsSuccess)
+            {
+                string[] values = result.Response.Split(',');
+
+                if (values != null && values.Length > 1)
+                {
+                    int status;
+
+                    if (!int.TryParse(values[0], out status))
+                    {
+                        status = -2;
+                    }
+
+                    if (status < 0)
+                    {
+                        switch (status)
+                        {
+                            case -1:
+                                Errors.Add("Authentication failure.");
+                                break;
+                            default:
+                            case -2:
+                                Errors.Add("Connection error.");
+                                break;
+                            case -3:
+                                Errors.Add("Checksum error.");
+                                break;
+                            case -4:
+                                Errors.Add("Insufficient account storage remaining.");
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        result.URL = values[1];
+                    }
+                }
+            }
+
+            return result;
+        }
+    }
+}

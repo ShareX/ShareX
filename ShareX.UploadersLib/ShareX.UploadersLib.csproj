@@ -129,6 +129,7 @@
     <Compile Include="FileUploaders\AmazonS3Settings.cs" />
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\Lithiio.cs" />
+    <Compile Include="FileUploaders\Puush.cs" />
     <Compile Include="FileUploaders\Sul.cs" />
     <Compile Include="FileUploaders\Dropfile.cs" />
     <Compile Include="FileUploaders\Lambda.cs" />
@@ -157,6 +158,12 @@
     </Compile>
     <Compile Include="Forms\OCRSpaceForm.Designer.cs">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PuushLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PuushLoginForm.Designer.cs">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FTPClient\FTPClientForm.cs">
       <SubType>Form</SubType>
@@ -591,6 +598,9 @@
     <EmbeddedResource Include="Forms\OCRSpaceForm.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.de.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -933,6 +943,9 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.7.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\puush.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
