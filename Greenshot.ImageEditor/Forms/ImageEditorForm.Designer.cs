@@ -286,9 +286,7 @@ namespace Greenshot {
             // 
             // btnRect
             // 
-            this.btnRect.Checked = true;
             this.btnRect.CheckOnClick = true;
-            this.btnRect.CheckState = System.Windows.Forms.CheckState.Checked;
             this.btnRect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnRect.Image = ((System.Drawing.Image)(resources.GetObject("btnRect.Image")));
             this.btnRect.ImageTransparentColor = System.Drawing.Color.Magenta;
