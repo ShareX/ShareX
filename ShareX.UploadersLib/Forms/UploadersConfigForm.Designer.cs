@@ -4986,6 +4986,6 @@
         private System.Windows.Forms.TextBox txtEmailAutomaticSendTo;
         private System.Windows.Forms.CheckBox cbEmailAutomaticSend;
         private System.Windows.Forms.Button btnLithiioGetAPIKey;
-		private System.Windows.Forms.CheckBox cbGoogleDriveDirectLink;
-	}
+        private System.Windows.Forms.CheckBox cbGoogleDriveDirectLink;
+    }
 }
