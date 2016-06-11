@@ -153,7 +153,6 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public Point CurrentPosition { get; private set; }
-        public Point PositionOnClick { get; private set; }
 
         public ResizeManager ResizeManager { get; private set; }
         public bool IsCreating { get; private set; }
@@ -981,21 +980,20 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (shape.NodeType == NodeType.Rectangle)
                         {
-                            newPosition = CaptureHelpers.SnapPositionToDegree(PositionOnClick, CurrentPosition, 90, 45);
+                            newPosition = CaptureHelpers.SnapPositionToDegree(shape.StartPosition, CurrentPosition, 90, 45);
                         }
                         else if (shape.NodeType == NodeType.Line)
                         {
-                            newPosition = CaptureHelpers.SnapPositionToDegree(PositionOnClick, CurrentPosition, 45, 0);
+                            newPosition = CaptureHelpers.SnapPositionToDegree(shape.StartPosition, CurrentPosition, 45, 0);
                         }
                     }
                     else if (IsCornerMoving)
                     {
-                        PositionOnClick = PositionOnClick.Add(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
-                        shape.StartPosition = PositionOnClick;
+                        shape.StartPosition = shape.StartPosition.Add(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
                     }
                     else if (IsSnapResizing)
                     {
-                        newPosition = SnapPosition(PositionOnClick, newPosition);
+                        newPosition = SnapPosition(shape.StartPosition, newPosition);
                     }
 
                     shape.EndPosition = newPosition;
@@ -1013,8 +1011,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 return;
             }
-
-            PositionOnClick = position;
 
             BaseShape shape = GetShapeIntersect();
 

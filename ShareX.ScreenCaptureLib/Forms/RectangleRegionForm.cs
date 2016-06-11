@@ -173,10 +173,15 @@ namespace ShareX.ScreenCaptureLib
             // Draw snap rectangles
             if (ShapeManager.IsCreating && ShapeManager.IsSnapResizing)
             {
-                foreach (Size size in Config.SnapSizes)
+                BaseShape shape = ShapeManager.CurrentShape;
+
+                if (shape != null)
                 {
-                    Rectangle snapRect = CaptureHelpers.CalculateNewRectangle(ShapeManager.PositionOnClick, ShapeManager.CurrentPosition, size);
-                    g.DrawRectangleProper(markerPen, snapRect);
+                    foreach (Size size in Config.SnapSizes)
+                    {
+                        Rectangle snapRect = CaptureHelpers.CalculateNewRectangle(shape.StartPosition, ShapeManager.CurrentPosition, size);
+                        g.DrawRectangleProper(markerPen, snapRect);
+                    }
                 }
             }
 
