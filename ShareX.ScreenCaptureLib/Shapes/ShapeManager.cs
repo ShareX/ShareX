@@ -199,6 +199,7 @@ namespace ShareX.ScreenCaptureLib
 
             ResizeManager = new ResizeManager(form, this);
 
+            form.LostFocus += form_LostFocus;
             form.MouseDown += form_MouseDown;
             form.MouseUp += form_MouseUp;
             form.MouseDoubleClick += form_MouseDoubleClick;
@@ -773,6 +774,11 @@ namespace ShareX.ScreenCaptureLib
             tslnudBlurRadius.Visible = shapeType == ShapeType.DrawingBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.DrawingPixelate;
             tsmiHighlightColor.Visible = shapeType == ShapeType.DrawingHighlight;
+        }
+
+        private void form_LostFocus(object sender, EventArgs e)
+        {
+            IsProportionalResizing = IsCornerMoving = IsSnapResizing = false;
         }
 
         private void form_MouseDown(object sender, MouseEventArgs e)
