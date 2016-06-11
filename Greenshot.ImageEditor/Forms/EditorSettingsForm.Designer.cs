@@ -34,6 +34,7 @@
             this.cbSuppressSaveDialogAtClose = new System.Windows.Forms.CheckBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cbRememberLastDrawingMode = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudIconSize)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +98,16 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // cbRememberLastDrawingMode
+            // 
+            this.cbRememberLastDrawingMode.AutoSize = true;
+            this.cbRememberLastDrawingMode.Location = new System.Drawing.Point(16, 87);
+            this.cbRememberLastDrawingMode.Name = "cbRememberLastDrawingMode";
+            this.cbRememberLastDrawingMode.Size = new System.Drawing.Size(226, 17);
+            this.cbRememberLastDrawingMode.TabIndex = 4;
+            this.cbRememberLastDrawingMode.Text = "Remember the last drawing mode selected";
+            this.cbRememberLastDrawingMode.UseVisualStyleBackColor = true;
+            // 
             // EditorSettingsForm
             // 
             this.AcceptButton = this.btnOK;
@@ -106,6 +117,7 @@
             this.ClientSize = new System.Drawing.Size(330, 186);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.cbRememberLastDrawingMode);
             this.Controls.Add(this.cbSuppressSaveDialogAtClose);
             this.Controls.Add(this.cbMatchSizeToCapture);
             this.Controls.Add(this.nudIconSize);
@@ -129,5 +141,6 @@
         private System.Windows.Forms.CheckBox cbSuppressSaveDialogAtClose;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox cbRememberLastDrawingMode;
     }
 }

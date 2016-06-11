@@ -192,7 +192,7 @@ namespace Greenshot
                 SurfaceSizeChanged(Surface, null);
 
                 BindFieldControls();
-                _surface.DrawingMode = DrawingModes.Rect;
+                _surface.DrawingMode = EditorConfiguration.RememberLastDrawingMode ? EditorConfiguration.LastDrawingMode : EditorConfiguration.DefaultDrawingMode;
                 RefreshEditorControls();
                 // Fix title
                 if (_surface != null && _surface.CaptureDetails != null && _surface.CaptureDetails.Title != null)
@@ -684,6 +684,8 @@ namespace Greenshot
 
             // persist our geometry string.
             EditorConfiguration.SetEditorPlacement(new WindowDetails(Handle).WindowPlacement);
+            // save last used drawing mode
+            EditorConfiguration.LastDrawingMode = _surface.DrawingMode;
             IniConfig.Save();
 
             // remove from the editor list
@@ -1011,7 +1013,8 @@ namespace Greenshot
             FieldAggregator props = _surface.FieldAggregator;
             // if a confirmable element is selected, we must disable most of the controls
             // since we demand confirmation or cancel for confirmable element
-            if (props.HasFieldValue(FieldType.FLAGS) && ((FieldType.Flag)props.GetFieldValue(FieldType.FLAGS) & FieldType.Flag.CONFIRMABLE) == FieldType.Flag.CONFIRMABLE)
+            if (props.HasFieldValue(FieldType.FLAGS) && ((FieldType.Flag)props.GetFieldValue(FieldType.FLAGS) & FieldType.Flag.CONFIRMABLE) == FieldType.Flag.CONFIRMABLE
+                && _surface.HasSelectedElements) // if nothing is selected, there is nothing to cancel, so don't disable controls
             {
                 // disable most controls
                 if (!_controlsDisabledDueToConfirmable)
