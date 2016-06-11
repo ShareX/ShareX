@@ -22,6 +22,7 @@
 using Greenshot.Core;
 using Greenshot.Drawing.Fields;
 using Greenshot.IniFile;
+using Greenshot.Plugin;
 using GreenshotPlugin.UnmanagedHelpers;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,13 @@ namespace Greenshot.Configuration
     {
         [IniProperty("RecentColors", Separator = "|", Description = "Last used colors")]
         public List<Color> RecentColors;
+
+        [IniProperty("DefaultDrawingMode", Separator = "|", Description = "Default drawing mode:None,Rect,Ellipse,Line,Arrow,Path,Text,SpeechBubble,StepLabel,Highlight,Obfuscate,Crop", DefaultValue = "Rect", FixedValue = true)]
+        public DrawingModes DefaultDrawingMode;
+        [IniProperty("RememberLastDrawingMode", Description = "Remember last drawing mode used and select it next time", DefaultValue = "False")]
+        public bool RememberLastDrawingMode;
+        [IniProperty("LastDrawingMode", Separator = "|", Description = "Last drawing mode used", DefaultValue = "Rect")]
+        public DrawingModes LastDrawingMode;
 
         [IniProperty("LastFieldValue", Separator = "|", Description = "Field values, make sure the last used settings are re-used")]
         public Dictionary<string, object> LastUsedFieldValues;

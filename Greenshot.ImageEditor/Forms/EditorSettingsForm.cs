@@ -24,6 +24,7 @@ namespace Greenshot
             nudIconSize.Value = (int)Math.Round(coreConfiguration.IconSize.Width / 16.0) * 16;
             cbMatchSizeToCapture.Checked = editorConfiguration.MatchSizeToCapture;
             cbSuppressSaveDialogAtClose.Checked = editorConfiguration.SuppressSaveDialogAtClose;
+            cbRememberLastDrawingMode.Checked = editorConfiguration.RememberLastDrawingMode;
         }
 
         private void SaveSettings()
@@ -31,6 +32,7 @@ namespace Greenshot
             coreConfiguration.IconSize = new Size((int)nudIconSize.Value, (int)nudIconSize.Value);
             editorConfiguration.MatchSizeToCapture = cbMatchSizeToCapture.Checked;
             editorConfiguration.SuppressSaveDialogAtClose = cbSuppressSaveDialogAtClose.Checked;
+            editorConfiguration.RememberLastDrawingMode = cbRememberLastDrawingMode.Checked;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
