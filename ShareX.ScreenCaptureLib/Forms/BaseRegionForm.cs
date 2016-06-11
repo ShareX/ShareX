@@ -87,7 +87,7 @@ namespace ShareX.ScreenCaptureLib
             textBackgroundBrush = new SolidBrush(Color.FromArgb(75, Color.Black));
             textBackgroundPenWhite = new Pen(Color.FromArgb(50, Color.White));
             textBackgroundPenBlack = new Pen(Color.FromArgb(150, Color.Black));
-            markerPen = new Pen(Color.FromArgb(200, Color.Red)) { DashStyle = DashStyle.Dash };
+            markerPen = new Pen(Color.FromArgb(200, Color.Red));
         }
 
         private void InitializeComponent()
