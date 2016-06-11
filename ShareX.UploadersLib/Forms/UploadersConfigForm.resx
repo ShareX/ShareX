@@ -486,7 +486,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
     <value>tpTwitter</value>
   </data>
@@ -513,7 +513,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
     <value>?</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnCustomUploaderRegexHelp.Name" xml:space="preserve">
     <value>btnCustomUploaderRegexHelp</value>
   </data>
@@ -696,7 +696,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpCustomUploaderRegexParse.Text" xml:space="preserve">
     <value>Regex</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpCustomUploaderRegexParse.Name" xml:space="preserve">
     <value>tpCustomUploaderRegexParse</value>
   </data>
@@ -753,7 +753,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
     <value>?</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnCustomUploadJsonPathHelp.Name" xml:space="preserve">
     <value>btnCustomUploadJsonPathHelp</value>
   </data>
@@ -816,7 +816,7 @@ store.book[0].title</value>
   </data>
   <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
     <value>JsonPath:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCustomUploaderJsonPath.Name" xml:space="preserve">
     <value>lblCustomUploaderJsonPath</value>
   </data>
@@ -864,7 +864,7 @@ store.book[0].title</value>
   </data>
   <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
     <value>JSON</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpCustomUploaderJsonParse.Name" xml:space="preserve">
     <value>tpCustomUploaderJsonParse</value>
   </data>
@@ -921,7 +921,7 @@ store.book[0].title</value>
   </data>
   <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
     <value>?</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnCustomUploaderXPathHelp.Name" xml:space="preserve">
     <value>btnCustomUploaderXPathHelp</value>
   </data>
@@ -984,7 +984,7 @@ store.book[0].title</value>
   </data>
   <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
     <value>XPath:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCustomUploaderXPath.Name" xml:space="preserve">
     <value>lblCustomUploaderXPath</value>
   </data>
@@ -1032,7 +1032,7 @@ store.book[0].title</value>
   </data>
   <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
     <value>XML</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpCustomUploaderXmlParse.Name" xml:space="preserve">
     <value>tpCustomUploaderXmlParse</value>
   </data>
@@ -2340,7 +2340,7 @@ store.book[0].title</value>
   </data>
   <data name="txtCustomUploaderLog.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtCustomUploaderLog.Name" xml:space="preserve">
     <value>txtCustomUploaderLog</value>
   </data>
@@ -2502,7 +2502,7 @@ store.book[0].title</value>
   </data>
   <data name="lblCustomUploaderURL.Text" xml:space="preserve">
     <value>URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCustomUploaderURL.Name" xml:space="preserve">
     <value>lblCustomUploaderURL</value>
   </data>
@@ -2679,7 +2679,7 @@ store.book[0].title</value>
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
     <value>tpBitly</value>
   </data>
@@ -2748,7 +2748,7 @@ store.book[0].title</value>
   </data>
   <data name="tpGoogleURLShortener.Text" xml:space="preserve">
     <value>Google</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleURLShortener.Name" xml:space="preserve">
     <value>tpGoogleURLShortener</value>
   </data>
@@ -2982,7 +2982,7 @@ store.book[0].title</value>
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblYourlsAPIURL.Name" xml:space="preserve">
     <value>lblYourlsAPIURL</value>
   </data>
@@ -3009,7 +3009,7 @@ store.book[0].title</value>
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
   </data>
@@ -3090,7 +3090,7 @@ store.book[0].title</value>
   </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>API UID:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblAdflyAPIUID.Name" xml:space="preserve">
     <value>lblAdflyAPIUID</value>
   </data>
@@ -3168,7 +3168,7 @@ store.book[0].title</value>
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
     <value>tpAdFly</value>
   </data>
@@ -3219,7 +3219,7 @@ store.book[0].title</value>
   </data>
   <data name="lblCoinURLUUID.Text" xml:space="preserve">
     <value>UUID:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCoinURLUUID.Name" xml:space="preserve">
     <value>lblCoinURLUUID</value>
   </data>
@@ -3243,7 +3243,7 @@ store.book[0].title</value>
   </data>
   <data name="tpCoinURL.Text" xml:space="preserve">
     <value>CoinURL</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpCoinURL.Name" xml:space="preserve">
     <value>tpCoinURL</value>
   </data>
@@ -3369,7 +3369,7 @@ store.book[0].title</value>
   </data>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
     <value>tpPolr</value>
   </data>
@@ -3675,7 +3675,7 @@ store.book[0].title</value>
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFTP.Name" xml:space="preserve">
     <value>tpFTP</value>
   </data>
@@ -4058,7 +4058,7 @@ store.book[0].title</value>
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpDropbox.Name" xml:space="preserve">
     <value>tpDropbox</value>
   </data>
@@ -4190,7 +4190,7 @@ store.book[0].title</value>
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOneDrive.Name" xml:space="preserve">
     <value>tpOneDrive</value>
   </data>
@@ -4213,7 +4213,7 @@ store.book[0].title</value>
     <value>16, 287</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 17</value>
+    <value>93, 17</value>
   </data>
   <data name="cbGoogleDriveDirectLink.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -4261,7 +4261,7 @@ store.book[0].title</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveUseFolder.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 88</value>
@@ -4282,7 +4282,7 @@ store.book[0].title</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;txtGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblGoogleDriveFolderID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4312,7 +4312,7 @@ store.book[0].title</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lblGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Title</value>
@@ -4345,7 +4345,7 @@ store.book[0].title</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4375,7 +4375,7 @@ store.book[0].title</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;btnGoogleDriveRefreshFolders.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbGoogleDriveIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4405,7 +4405,7 @@ store.book[0].title</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveIsPublic.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -4426,7 +4426,7 @@ store.book[0].title</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
@@ -4442,7 +4442,7 @@ store.book[0].title</value>
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleDrive.Name" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
@@ -4454,6 +4454,255 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;tpGoogleDrive.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="lblPuushAPIKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPuushAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 200</value>
+  </data>
+  <data name="lblPuushAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="lblPuushAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblPuushAPIKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="&gt;&gt;lblPuushAPIKey.Name" xml:space="preserve">
+    <value>lblPuushAPIKey</value>
+  </data>
+  <data name="&gt;&gt;lblPuushAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPuushAPIKey.Parent" xml:space="preserve">
+    <value>tpPuush</value>
+  </data>
+  <data name="&gt;&gt;lblPuushAPIKey.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtPuushAPIKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 216</value>
+  </data>
+  <data name="txtPuushAPIKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 20</value>
+  </data>
+  <data name="txtPuushAPIKey.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txtPuushAPIKey.Name" xml:space="preserve">
+    <value>txtPuushAPIKey</value>
+  </data>
+  <data name="&gt;&gt;txtPuushAPIKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPuushAPIKey.Parent" xml:space="preserve">
+    <value>tpPuush</value>
+  </data>
+  <data name="&gt;&gt;txtPuushAPIKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="llPuushCreateAccount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="llPuushCreateAccount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="llPuushCreateAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="llPuushCreateAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="llPuushCreateAccount.Text" xml:space="preserve">
+    <value>Create an account...</value>
+  </data>
+  <data name="&gt;&gt;llPuushCreateAccount.Name" xml:space="preserve">
+    <value>llPuushCreateAccount</value>
+  </data>
+  <data name="&gt;&gt;llPuushCreateAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;llPuushCreateAccount.Parent" xml:space="preserve">
+    <value>tpPuush</value>
+  </data>
+  <data name="&gt;&gt;llPuushCreateAccount.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="llPuushForgottenPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="llPuushForgottenPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 136</value>
+  </data>
+  <data name="llPuushForgottenPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 13</value>
+  </data>
+  <data name="llPuushForgottenPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="llPuushForgottenPassword.Text" xml:space="preserve">
+    <value>Forgotten password?</value>
+  </data>
+  <data name="&gt;&gt;llPuushForgottenPassword.Name" xml:space="preserve">
+    <value>llPuushForgottenPassword</value>
+  </data>
+  <data name="&gt;&gt;llPuushForgottenPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;llPuushForgottenPassword.Parent" xml:space="preserve">
+    <value>tpPuush</value>
+  </data>
+  <data name="&gt;&gt;llPuushForgottenPassword.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnPuushLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 160</value>
+  </data>
+  <data name="btnPuushLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 32</value>
+  </data>
+  <data name="btnPuushLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnPuushLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;btnPuushLogin.Name" xml:space="preserve">
+    <value>btnPuushLogin</value>
+  </data>
+  <data name="&gt;&gt;btnPuushLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPuushLogin.Parent" xml:space="preserve">
+    <value>tpPuush</value>
+  </data>
+  <data name="&gt;&gt;btnPuushLogin.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtPuushPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 104</value>
+  </data>
+  <data name="txtPuushPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 20</value>
+  </data>
+  <data name="txtPuushPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtPuushPassword.Name" xml:space="preserve">
+    <value>txtPuushPassword</value>
+  </data>
+  <data name="&gt;&gt;txtPuushPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPuushPassword.Parent" xml:space="preserve">
+    <value>tpPuush</value>
+  </data>
+  <data name="&gt;&gt;txtPuushPassword.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtPuushEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 56</value>
+  </data>
+  <data name="txtPuushEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 20</value>
+  </data>
+  <data name="txtPuushEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtPuushEmail.Name" xml:space="preserve">
+    <value>txtPuushEmail</value>
+  </data>
+  <data name="&gt;&gt;txtPuushEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPuushEmail.Parent" xml:space="preserve">
+    <value>tpPuush</value>
+  </data>
+  <data name="&gt;&gt;txtPuushEmail.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblPuushEmail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPuushEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 40</value>
+  </data>
+  <data name="lblPuushEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="lblPuushEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblPuushEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="&gt;&gt;lblPuushEmail.Name" xml:space="preserve">
+    <value>lblPuushEmail</value>
+  </data>
+  <data name="&gt;&gt;lblPuushEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPuushEmail.Parent" xml:space="preserve">
+    <value>tpPuush</value>
+  </data>
+  <data name="&gt;&gt;lblPuushEmail.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblPuushPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPuushPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 88</value>
+  </data>
+  <data name="lblPuushPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblPuushPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblPuushPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblPuushPassword.Name" xml:space="preserve">
+    <value>lblPuushPassword</value>
+  </data>
+  <data name="&gt;&gt;lblPuushPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPuushPassword.Parent" xml:space="preserve">
+    <value>tpPuush</value>
+  </data>
+  <data name="&gt;&gt;lblPuushPassword.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tpPuush.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpPuush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 475</value>
+  </data>
+  <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="tpPuush.Text" xml:space="preserve">
+    <value>puush</value>
+  </data>
+  <data name="&gt;&gt;tpPuush.Name" xml:space="preserve">
+    <value>tpPuush</value>
+  </data>
+  <data name="&gt;&gt;tpPuush.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpPuush.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpPuush.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="lblBoxFolderTip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4637,7 +4886,7 @@ store.book[0].title</value>
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
   </data>
@@ -4648,7 +4897,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtAmazonS3CustomDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 272</value>
@@ -4745,7 +4994,7 @@ store.book[0].title</value>
   </data>
   <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.Name" xml:space="preserve">
     <value>btnAmazonS3BucketNameOpen</value>
   </data>
@@ -4772,7 +5021,7 @@ store.book[0].title</value>
   </data>
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnAmazonS3AccessKeyOpen.Name" xml:space="preserve">
     <value>btnAmazonS3AccessKeyOpen</value>
   </data>
@@ -5054,7 +5303,7 @@ store.book[0].title</value>
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAmazonS3.Name" xml:space="preserve">
     <value>tpAmazonS3</value>
   </data>
@@ -5065,7 +5314,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpAmazonS3.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnMegaRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5372,7 +5621,7 @@ store.book[0].title</value>
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMega.Name" xml:space="preserve">
     <value>tpMega</value>
   </data>
@@ -5383,7 +5632,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbOwnCloud81Compatibility.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5693,7 +5942,7 @@ store.book[0].title</value>
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
@@ -5704,7 +5953,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpOwnCloud.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbMediaFireUseLongLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5906,7 +6155,7 @@ store.book[0].title</value>
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMediaFire.Name" xml:space="preserve">
     <value>tpMediaFire</value>
   </data>
@@ -5917,7 +6166,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpMediaFire.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblPushbulletDevices.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6068,7 +6317,7 @@ store.book[0].title</value>
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPushbullet.Name" xml:space="preserve">
     <value>tpPushbullet</value>
   </data>
@@ -6079,7 +6328,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPushbullet.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnSendSpaceRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6245,7 +6494,7 @@ store.book[0].title</value>
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSendSpace.Name" xml:space="preserve">
     <value>tpSendSpace</value>
   </data>
@@ -6256,7 +6505,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSendSpace.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblGe_ttStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6431,7 +6680,7 @@ store.book[0].title</value>
   </data>
   <data name="tpGe_tt.Text" xml:space="preserve">
     <value>Ge.tt</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGe_tt.Name" xml:space="preserve">
     <value>tpGe_tt</value>
   </data>
@@ -6442,7 +6691,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpGe_tt.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="cbLocalhostrDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6590,7 +6839,7 @@ store.book[0].title</value>
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHostr.Name" xml:space="preserve">
     <value>tpHostr</value>
   </data>
@@ -6601,7 +6850,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpHostr.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lblMinusURLType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7040,7 +7289,7 @@ store.book[0].title</value>
   </data>
   <data name="tpMinus.Text" xml:space="preserve">
     <value>Minus</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMinus.Name" xml:space="preserve">
     <value>tpMinus</value>
   </data>
@@ -7051,7 +7300,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpMinus.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="txtJiraIssuePrefix.Location" type="System.Drawing.Point, System.Drawing">
     <value>472, 277</value>
@@ -7064,7 +7313,7 @@ store.book[0].title</value>
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtJiraIssuePrefix.Name" xml:space="preserve">
     <value>txtJiraIssuePrefix</value>
   </data>
@@ -7148,7 +7397,7 @@ store.book[0].title</value>
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtJiraHost.Name" xml:space="preserve">
     <value>txtJiraHost</value>
   </data>
@@ -7247,7 +7496,7 @@ store.book[0].title</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
   </data>
@@ -7258,7 +7507,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpJira.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lblLambdaInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7406,7 +7655,7 @@ store.book[0].title</value>
   </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpLambda.Name" xml:space="preserve">
     <value>tpLambda</value>
   </data>
@@ -7417,7 +7666,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLambda.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="btnPomfTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7616,7 +7865,7 @@ store.book[0].title</value>
   </data>
   <data name="tpPomf.Text" xml:space="preserve">
     <value>Pomf</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPomf.Name" xml:space="preserve">
     <value>tpPomf</value>
   </data>
@@ -7627,7 +7876,7 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPomf.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="txtUp1Key.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 96</value>
@@ -7757,7 +8006,7 @@ store.book[0].title</value>
   </data>
   <data name="tpUp1.Text" xml:space="preserve">
     <value>Up1</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpUp1.Name" xml:space="preserve">
     <value>tpUp1</value>
   </data>
@@ -7768,14 +8017,14 @@ store.book[0].title</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpUp1.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
     <value>https://cloud.mein-seafile.de/api2/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbSeafileAPIURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
   </data>
@@ -8691,7 +8940,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="lblSeafileAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSeafileAPIURL.Name" xml:space="preserve">
     <value>lblSeafileAPIURL</value>
   </data>
@@ -8718,7 +8967,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSeafile.Text" xml:space="preserve">
     <value>Seafile</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSeafile.Name" xml:space="preserve">
     <value>tpSeafile</value>
   </data>
@@ -8729,7 +8978,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSeafile.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="cbStreamableUseDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8916,7 +9165,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Streamable</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpStreamable.Name" xml:space="preserve">
     <value>tpStreamable</value>
   </data>
@@ -8927,7 +9176,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpStreamable.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="txtSulAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 34</value>
@@ -8994,7 +9243,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSul.Text" xml:space="preserve">
     <value>s-ul</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSul.Name" xml:space="preserve">
     <value>tpSul</value>
   </data>
@@ -9005,7 +9254,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSul.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="btnLithiioGetAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>368, 55</value>
@@ -9177,7 +9426,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpLithiio.Text" xml:space="preserve">
     <value>Lithiio</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpLithiio.Name" xml:space="preserve">
     <value>tpLithiio</value>
   </data>
@@ -9188,7 +9437,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLithiio.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="lblSharedFolderFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9395,7 +9644,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 408</value>
@@ -9812,7 +10061,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -10317,7 +10566,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
   </data>
@@ -10395,7 +10644,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
   </data>
@@ -10524,7 +10773,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>GitHub Gist</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
   </data>
@@ -10632,7 +10881,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
   </data>
@@ -10761,7 +11010,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
   </data>
@@ -10890,7 +11139,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOneTimeSecret.Name" xml:space="preserve">
     <value>tpOneTimeSecret</value>
   </data>
@@ -11088,7 +11337,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="chImgurID.Text" xml:space="preserve">
     <value>ID</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Title</value>
   </data>
@@ -11217,7 +11466,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
   </data>
@@ -11457,7 +11706,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
   </data>
@@ -11661,7 +11910,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpTinyPic.Text" xml:space="preserve">
     <value>TinyPic</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
     <value>tpTinyPic</value>
   </data>
@@ -11841,7 +12090,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
   </data>
@@ -12333,7 +12582,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
   </data>
@@ -12399,7 +12648,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="chPicasaID.Width" type="System.Int32, mscorlib">
     <value>135</value>
   </data>
@@ -12501,7 +12750,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPicasa.Text" xml:space="preserve">
     <value>Google Photos (Picasa)</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
     <value>tpPicasa</value>
   </data>
@@ -12771,7 +13020,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
   </data>
@@ -12879,7 +13128,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpVgyme.Text" xml:space="preserve">
     <value>vgy.me</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpVgyme.Name" xml:space="preserve">
     <value>tpVgyme</value>
   </data>
@@ -13023,7 +13272,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSomeImage.Text" xml:space="preserve">
     <value>SomeImage</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSomeImage.Name" xml:space="preserve">
     <value>tpSomeImage</value>
   </data>
