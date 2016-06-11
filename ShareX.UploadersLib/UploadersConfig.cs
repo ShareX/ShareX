@@ -152,6 +152,7 @@ namespace ShareX.UploadersLib
 
         public OAuth2Info GoogleDriveOAuth2Info = null;
         public bool GoogleDriveIsPublic = true;
+        public bool GoogleDriveDirectLink = false;
         public bool GoogleDriveUseFolder = false;
         public string GoogleDriveFolderID = "";
 
