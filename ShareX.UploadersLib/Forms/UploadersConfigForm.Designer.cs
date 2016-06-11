@@ -5070,7 +5070,6 @@
         private System.Windows.Forms.CheckBox cbEmailAutomaticSend;
         private System.Windows.Forms.Button btnLithiioGetAPIKey;
         private System.Windows.Forms.CheckBox cbGoogleDriveDirectLink;
-        private System.Windows.Forms.TabPage tpPuush;
         private System.Windows.Forms.Label lblPuushAPIKey;
         private System.Windows.Forms.TextBox txtPuushAPIKey;
         private System.Windows.Forms.LinkLabel llPuushCreateAccount;
@@ -5080,5 +5079,6 @@
         private System.Windows.Forms.TextBox txtPuushEmail;
         private System.Windows.Forms.Label lblPuushEmail;
         private System.Windows.Forms.Label lblPuushPassword;
+        public System.Windows.Forms.TabPage tpPuush;
     }
 }

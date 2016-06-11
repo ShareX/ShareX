@@ -25,6 +25,7 @@
 
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -44,6 +45,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 APIKey = config.PuushAPIKey
             };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPuush;
     }
 
     public class Puush : FileUploader
