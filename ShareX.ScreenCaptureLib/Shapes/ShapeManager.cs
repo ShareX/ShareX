@@ -168,6 +168,7 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public bool IsProportionalResizing { get; private set; }
+        public bool IsCornerMoving { get; private set; }
         public bool IsSnapResizing { get; private set; }
 
         public List<SimpleWindowInfo> Windows { get; set; }
@@ -890,6 +891,9 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.ShiftKey:
                     IsProportionalResizing = true;
                     break;
+                case Keys.ControlKey:
+                    IsCornerMoving = true;
+                    break;
                 case Keys.Menu:
                     IsSnapResizing = true;
                     break;
@@ -940,6 +944,9 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.ShiftKey:
                     IsProportionalResizing = false;
                     break;
+                case Keys.ControlKey:
+                    IsCornerMoving = false;
+                    break;
                 case Keys.Menu:
                     IsSnapResizing = false;
                     break;
@@ -981,8 +988,12 @@ namespace ShareX.ScreenCaptureLib
                             newPosition = CaptureHelpers.SnapPositionToDegree(PositionOnClick, CurrentPosition, 45, 0);
                         }
                     }
-
-                    if (IsSnapResizing)
+                    else if (IsCornerMoving)
+                    {
+                        PositionOnClick = PositionOnClick.Add(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+                        shape.StartPosition = PositionOnClick;
+                    }
+                    else if (IsSnapResizing)
                     {
                         newPosition = SnapPosition(PositionOnClick, newPosition);
                     }
