@@ -179,7 +179,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     foreach (Size size in Config.SnapSizes)
                     {
-                        Rectangle snapRect = CaptureHelpers.CalculateNewRectangle(shape.StartPosition, ShapeManager.CurrentPosition, size);
+                        Rectangle snapRect = CaptureHelpers.CalculateNewRectangle(shape.StartPosition, shape.EndPosition, size);
                         g.DrawRectangleProper(markerPen, snapRect);
                     }
                 }

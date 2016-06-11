@@ -152,8 +152,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Point CurrentPosition { get; private set; }
-
         public ResizeManager ResizeManager { get; private set; }
         public bool IsCreating { get; private set; }
         public bool IsMoving { get; private set; }
@@ -972,19 +970,17 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else if (IsCreating && !CurrentRectangle.IsEmpty)
                 {
-                    CurrentPosition = InputManager.MousePosition0Based;
-
-                    Point newPosition = CurrentPosition;
+                    Point currentPosition = InputManager.MousePosition0Based;
 
                     if (IsProportionalResizing)
                     {
                         if (shape.NodeType == NodeType.Rectangle)
                         {
-                            newPosition = CaptureHelpers.SnapPositionToDegree(shape.StartPosition, CurrentPosition, 90, 45);
+                            currentPosition = CaptureHelpers.SnapPositionToDegree(shape.StartPosition, currentPosition, 90, 45);
                         }
                         else if (shape.NodeType == NodeType.Line)
                         {
-                            newPosition = CaptureHelpers.SnapPositionToDegree(shape.StartPosition, CurrentPosition, 45, 0);
+                            currentPosition = CaptureHelpers.SnapPositionToDegree(shape.StartPosition, currentPosition, 45, 0);
                         }
                     }
                     else if (IsCornerMoving)
@@ -993,10 +989,10 @@ namespace ShareX.ScreenCaptureLib
                     }
                     else if (IsSnapResizing)
                     {
-                        newPosition = SnapPosition(shape.StartPosition, newPosition);
+                        currentPosition = SnapPosition(shape.StartPosition, currentPosition);
                     }
 
-                    shape.EndPosition = newPosition;
+                    shape.EndPosition = currentPosition;
                 }
             }
 
