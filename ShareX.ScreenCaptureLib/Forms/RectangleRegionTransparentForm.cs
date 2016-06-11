@@ -36,38 +36,23 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RectangleRegionTransparentForm : LayeredForm
     {
+        private const int MinimumRectangleSize = 3;
+
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
         public Rectangle ScreenRectangle { get; private set; }
 
-        public Rectangle ScreenRectangle0Based
-        {
-            get
-            {
-                return new Rectangle(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
-            }
-        }
+        public Rectangle ScreenRectangle0Based => new Rectangle(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
 
         public Rectangle SelectionRectangle { get; private set; }
 
-        public Rectangle SelectionRectangle0Based
-        {
-            get
-            {
-                return new Rectangle(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y, SelectionRectangle.Width, SelectionRectangle.Height);
-            }
-        }
+        public Rectangle SelectionRectangle0Based => new Rectangle(SelectionRectangle.X - ScreenRectangle.X,
+            SelectionRectangle.Y - ScreenRectangle.Y, SelectionRectangle.Width, SelectionRectangle.Height);
 
         private Rectangle PreviousSelectionRectangle { get; set; }
 
-        private Rectangle PreviousSelectionRectangle0Based
-        {
-            get
-            {
-                return new Rectangle(PreviousSelectionRectangle.X - ScreenRectangle.X, PreviousSelectionRectangle.Y - ScreenRectangle.Y,
-                    PreviousSelectionRectangle.Width, PreviousSelectionRectangle.Height);
-            }
-        }
+        private Rectangle PreviousSelectionRectangle0Based => new Rectangle(PreviousSelectionRectangle.X - ScreenRectangle.X, PreviousSelectionRectangle.Y - ScreenRectangle.Y,
+            PreviousSelectionRectangle.Width, PreviousSelectionRectangle.Height);
 
         private Timer timer;
         private Bitmap backgroundImage;
@@ -134,7 +119,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.KeyCode == Keys.Escape)
             {
-                Close();
+                DialogResult = DialogResult.Cancel;
             }
         }
 
@@ -151,15 +136,14 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (isMouseDown)
+                if (isMouseDown && SelectionRectangle0Based.Width > MinimumRectangleSize && SelectionRectangle0Based.Height > MinimumRectangleSize)
                 {
-                    if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
-                    {
-                        LastSelectionRectangle0Based = SelectionRectangle0Based;
-                        DialogResult = DialogResult.OK;
-                    }
-
-                    Close();
+                    LastSelectionRectangle0Based = SelectionRectangle0Based;
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    isMouseDown = false;
                 }
             }
             else
@@ -170,7 +154,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    Close();
+                    DialogResult = DialogResult.Cancel;
                 }
             }
         }
@@ -193,13 +177,7 @@ namespace ShareX.ScreenCaptureLib
             PreviousSelectionRectangle = SelectionRectangle;
             SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
 
-            try
-            {
-                UpdateBackgroundImage();
-            }
-            catch
-            {
-            }
+            UpdateBackgroundImage();
         }
 
         private void UpdateBackgroundImage()
@@ -207,7 +185,7 @@ namespace ShareX.ScreenCaptureLib
             // Clear previous rectangle selection
             gBackgroundImage.DrawRectangleProper(clearPen, PreviousSelectionRectangle0Based);
 
-            if (isMouseDown)
+            if (isMouseDown && SelectionRectangle0Based.Width > MinimumRectangleSize && SelectionRectangle0Based.Height > MinimumRectangleSize)
             {
                 borderDotPen2.DashOffset = (float)penTimer.Elapsed.TotalSeconds * -15;
 

@@ -42,23 +42,12 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle ScreenRectangle { get; private set; }
 
-        public Rectangle ScreenRectangle0Based
-        {
-            get
-            {
-                return new Rectangle(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
-            }
-        }
+        public Rectangle ScreenRectangle0Based => new Rectangle(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
 
         public Rectangle SelectionRectangle { get; private set; }
 
-        public Rectangle SelectionRectangle0Based
-        {
-            get
-            {
-                return new Rectangle(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y, SelectionRectangle.Width, SelectionRectangle.Height);
-            }
-        }
+        public Rectangle SelectionRectangle0Based => new Rectangle(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y,
+            SelectionRectangle.Width, SelectionRectangle.Height);
 
         private Timer timer;
         private Image backgroundImage;
