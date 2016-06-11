@@ -370,6 +370,7 @@ namespace ShareX.UploadersLib
             }
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
+            cbGoogleDriveDirectLink.Checked = Config.GoogleDriveDirectLink;
             cbGoogleDriveUseFolder.Checked = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Text = Config.GoogleDriveFolderID;
@@ -1364,6 +1365,11 @@ namespace ShareX.UploadersLib
         private void cbGoogleDriveIsPublic_CheckedChanged(object sender, EventArgs e)
         {
             Config.GoogleDriveIsPublic = cbGoogleDriveIsPublic.Checked;
+        }
+
+        private void cbGoogleDriveDirectLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleDriveDirectLink = cbGoogleDriveDirectLink.Checked;
         }
 
         private void cbGoogleDriveUseFolder_CheckedChanged(object sender, EventArgs e)

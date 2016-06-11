@@ -191,6 +191,7 @@
             this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
+            this.cbGoogleDriveDirectLink = new System.Windows.Forms.CheckBox();
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
             this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
             this.lblGoogleDriveFolderID = new System.Windows.Forms.Label();
@@ -1826,6 +1827,7 @@
             // 
             // tpGoogleDrive
             // 
+            this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveDirectLink);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveUseFolder);
             this.tpGoogleDrive.Controls.Add(this.txtGoogleDriveFolderID);
             this.tpGoogleDrive.Controls.Add(this.lblGoogleDriveFolderID);
@@ -1836,6 +1838,13 @@
             resources.ApplyResources(this.tpGoogleDrive, "tpGoogleDrive");
             this.tpGoogleDrive.Name = "tpGoogleDrive";
             this.tpGoogleDrive.UseVisualStyleBackColor = true;
+            // 
+            // cbGoogleDriveDirectLink
+            // 
+            resources.ApplyResources(this.cbGoogleDriveDirectLink, "cbGoogleDriveDirectLink");
+            this.cbGoogleDriveDirectLink.Name = "cbGoogleDriveDirectLink";
+            this.cbGoogleDriveDirectLink.UseVisualStyleBackColor = true;
+            this.cbGoogleDriveDirectLink.CheckedChanged += new System.EventHandler(this.cbGoogleDriveDirectLink_CheckedChanged);
             // 
             // cbGoogleDriveUseFolder
             // 
@@ -4977,5 +4986,6 @@
         private System.Windows.Forms.TextBox txtEmailAutomaticSendTo;
         private System.Windows.Forms.CheckBox cbEmailAutomaticSend;
         private System.Windows.Forms.Button btnLithiioGetAPIKey;
-    }
+		private System.Windows.Forms.CheckBox cbGoogleDriveDirectLink;
+	}
 }
