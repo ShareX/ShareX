@@ -213,12 +213,9 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Right:
                     IsRightPressed = true;
                     break;
-                case Keys.Home:
-                    IsBottomRightResizing = false;
-                    return;
-                case Keys.End:
+                case Keys.Menu:
                     IsBottomRightResizing = true;
-                    return;
+                    break;
             }
 
             // Calculate cursor movement
@@ -259,6 +256,9 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.Right:
                     IsRightPressed = false;
+                    break;
+                case Keys.Menu:
+                    IsBottomRightResizing = false;
                     break;
             }
         }
