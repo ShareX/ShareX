@@ -70,6 +70,15 @@ namespace ShareX.ScreenCaptureLib
             {
                 currentShapeType = value;
 
+                if (IsCurrentShapeTypeRegion)
+                {
+                    LastRegionTool = CurrentShapeType;
+                }
+                else
+                {
+                    LastAnnotationTool = CurrentShapeType;
+                }
+
                 DeselectShape();
 
                 OnCurrentShapeTypeChanged(currentShapeType);
@@ -151,6 +160,10 @@ namespace ShareX.ScreenCaptureLib
                 return CurrentShapeType == ShapeType.RegionRectangle || CurrentShapeType == ShapeType.RegionRoundedRectangle || CurrentShapeType == ShapeType.RegionEllipse;
             }
         }
+
+        public ShapeType LastRegionTool { get; set; } = ShapeType.RegionRectangle;
+
+        public ShapeType LastAnnotationTool { get; set; } = ShapeType.DrawingRectangle;
 
         public ResizeManager ResizeManager { get; private set; }
         public bool IsCreating { get; private set; }
@@ -906,6 +919,16 @@ namespace ShareX.ScreenCaptureLib
             {
                 switch (e.KeyCode)
                 {
+                    case Keys.Tab:
+                        if (IsCurrentShapeTypeRegion)
+                        {
+                            CurrentShapeType = LastAnnotationTool;
+                        }
+                        else
+                        {
+                            CurrentShapeType = LastRegionTool;
+                        }
+                        break;
                     case Keys.NumPad0:
                         CurrentShapeType = ShapeType.RegionRectangle;
                         break;
