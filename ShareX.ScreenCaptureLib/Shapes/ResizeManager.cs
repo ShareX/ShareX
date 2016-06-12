@@ -213,7 +213,7 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Right:
                     IsRightPressed = true;
                     break;
-                case Keys.Tab:
+                case Keys.Menu:
                     IsBottomRightResizing = !IsBottomRightResizing;
                     return;
             }
