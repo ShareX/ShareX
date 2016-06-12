@@ -70,13 +70,16 @@ namespace ShareX.ScreenCaptureLib
             {
                 currentShapeType = value;
 
-                if (IsCurrentShapeTypeRegion)
+                if (form.Mode == RectangleRegionMode.Annotation)
                 {
-                    Config.LastRegionTool = CurrentShapeType;
-                }
-                else
-                {
-                    Config.LastAnnotationTool = CurrentShapeType;
+                    if (IsCurrentShapeTypeRegion)
+                    {
+                        Config.LastRegionTool = CurrentShapeType;
+                    }
+                    else
+                    {
+                        Config.LastAnnotationTool = CurrentShapeType;
+                    }
                 }
 
                 DeselectShape();
@@ -195,7 +198,6 @@ namespace ShareX.ScreenCaptureLib
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
         private RectangleRegionForm form;
-
         private ContextMenuStrip cmsContextMenu;
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
         private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor;
@@ -843,6 +845,13 @@ namespace ShareX.ScreenCaptureLib
             {
                 form.Close(RegionResult.Close);
             }
+            else if (e.Button == MouseButtons.XButton1)
+            {
+                if (form.Mode == RectangleRegionMode.Annotation)
+                {
+                    SwapShapeType();
+                }
+            }
         }
 
         private void form_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -924,14 +933,7 @@ namespace ShareX.ScreenCaptureLib
                 switch (e.KeyCode)
                 {
                     case Keys.Tab:
-                        if (IsCurrentShapeTypeRegion)
-                        {
-                            CurrentShapeType = Config.LastAnnotationTool;
-                        }
-                        else
-                        {
-                            CurrentShapeType = Config.LastRegionTool;
-                        }
+                        SwapShapeType();
                         break;
                     case Keys.NumPad0:
                         CurrentShapeType = ShapeType.RegionRectangle;
@@ -1205,6 +1207,18 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null)
             {
                 shape.UpdateShapeConfig();
+            }
+        }
+
+        private void SwapShapeType()
+        {
+            if (IsCurrentShapeTypeRegion)
+            {
+                CurrentShapeType = Config.LastAnnotationTool;
+            }
+            else
+            {
+                CurrentShapeType = Config.LastRegionTool;
             }
         }
 
