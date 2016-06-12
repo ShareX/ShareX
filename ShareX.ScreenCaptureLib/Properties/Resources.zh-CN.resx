@@ -149,9 +149,6 @@
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
     <value>[Ctrl + C] 复制位置和大小</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Ctrl + 方向键] 快速移动光标位置</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Right click] [Delete] 取消区域选择</value>
   </data>
@@ -161,17 +158,8 @@
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[空格] 全屏捕捉</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[按住Shift] 移动选中区域而不是改变大小</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
-    <value>左上</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[松开左键] [插入]完成区域选择</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
-    <value>右下</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[按住左键单击选择]移动区域</value>
@@ -179,20 +167,11 @@
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Delete]删除区域</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
-    <value>[方向键]从{0}调整所选区域</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
-    <value>[Tab]互换调整锚点大小至{0}</value>
-  </data>
   <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
     <value>[F1]隐藏提示</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[按住左键] [Insert]启动区域选择</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[按住Ctrl键]调整大小/快速移动</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>停止捕捉</value>

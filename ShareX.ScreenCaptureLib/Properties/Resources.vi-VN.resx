@@ -126,9 +126,6 @@
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
     <value>[Ctrl + C] Sao chép vị trí và kích thước</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Ctrl + Phím mũi tên] Dịch chuyển vị trí con trỏ nhanh hơn</value>
-  </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Bắt đầu chụp</value>
   </data>
@@ -137,9 +134,6 @@
   </data>
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Chụp theo vùng</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
-    <value>[Phím mũi tên] Thay đổi kích thước vùng được chọn từ {0}</value>
   </data>
   <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
     <value>[Nhấn đúp chuột trái] [Enter] Chụp các vùng</value>
@@ -171,17 +165,11 @@
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
     <value>[Giữ phím Alt] Khóa khu vực đã chọn vào kích thước sẵn có</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[Giữ Ctrl] Thay đổi kích thước / Di chuyển nhanh hơn</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Giữ chuột trái ở vùng được chọn] Di chuyển vùng</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[Giữ chuột trái] [Insert] Bắt đầu chọn vùng</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[Giữ phím Shift] Di chuyển vùng đã chọn thay vì thay đổi kích thước</value>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Chất lượng:</value>
@@ -201,20 +189,11 @@
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Delete] Xóa vùng</value>
   </data>
-  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
-    <value>trên bên trái</value>
-  </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>Tải về FFmpeg thành công.</value>
   </data>
-  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
-    <value>dưới bên phải</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Bitrate: {0}k</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
-    <value>[Tab] Thay ghim thay đổi kích thước tới {0}</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Dấu cách] Chụp toàn màn hình</value>

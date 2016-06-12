@@ -227,29 +227,8 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[Maintenir clic gauche] [Inser] Débuter la sélection de la région</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[Maintenir Ctrl] Redimensionner / Déplacer plus rapidement</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
     <value>[Double clic gauche] [Entrée] Capturer les régions</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[Maintenir Maj] Déplacer la région sélectionnée au lieu de la redimensionner</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Ctrl + Touches fléchées] Déplacer le curseur plus rapidement</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
-    <value>[Touches fléchées] Redimensionner la région sélectionnée à partir du {0}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
-    <value>bas à droite</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
-    <value>haut à gauche</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
-    <value>[Tab] Définir le point d'encrage du redimensionnement à partir du {0}</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
     <value>[Maintenir Alt] Aligner la sélection avec des tailles prédéfinies</value>

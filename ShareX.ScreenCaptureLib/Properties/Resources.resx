@@ -142,9 +142,6 @@ X: {4} Y: {5}</value>
   <data name="layer_shade" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[Hold Shift] Move selected region instead of resizing</value>
-  </data>
   <data name="layer_shape_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,9 +150,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
     <value>[Hold Shift] Proportional resizing</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[Hold Ctrl] Resize / Move faster</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Space] Fullscreen capture</value>
@@ -202,9 +196,6 @@ X: {4} Y: {5}</value>
   <data name="layer_shape_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
-    <value>bottom right</value>
-  </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Stop capture</value>
   </data>
@@ -240,9 +231,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="layer_shape_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
-    <value>[Tab] Swap resize anchor to {0}</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Right click] [Delete] Cancel region selection</value>
@@ -312,9 +300,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="edit_bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-bold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Ctrl + Arrow keys] Move cursor position faster</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Quality:</value>
   </data>
@@ -324,14 +309,8 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="highlighter_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\highlighter-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
-    <value>[Arrow keys] Resize selected region from {0}</value>
-  </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
-    <value>top left</value>
   </data>
   <data name="prohibition" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prohibition.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

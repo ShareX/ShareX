@@ -146,26 +146,11 @@
 Ширина: {4} px / Высота: {5} px
 Расстояние: {6:0.00} px / Угол: {7:0.00}°</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
-    <value>[Клавиши со стрелками] Масштабировать выделенную область {0}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
-    <value>снизу справа</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
-    <value>сверху слева</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
-    <value>[Tab] Якорь масштабирования {0}</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[ПКМ] [Delete] Отменить выделение области</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
     <value>[Delete] Удалить область</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Ctrl + Клавиши со стрелками] Двигать курсор быстрее</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] Скопировать информацию</value>
@@ -236,17 +221,11 @@
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
     <value>[Удерживание Alt] Привязывать выделение к заготовленным размерам</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[Удерживание Ctrl] Масштаб / Ускорить движение</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[Удерживание ЛКМ] [Insert] Начать выбор области</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Удерживание ЛКМ на выделении] Двигать область</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[Удерживание Shift] Двигать выбранную область вместо масштабирования</value>
   </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Отпустить ЛКМ] [Insert] Закончить выбор области</value>

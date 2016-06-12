@@ -917,18 +917,18 @@ namespace ShareX.ScreenCaptureLib
                         }
                     }
                     break;
-                case Keys.ShiftKey:
-                    IsProportionalResizing = true;
-                    break;
                 case Keys.ControlKey:
                     IsCornerMoving = true;
+                    break;
+                case Keys.ShiftKey:
+                    IsProportionalResizing = true;
                     break;
                 case Keys.Menu:
                     IsSnapResizing = true;
                     break;
             }
 
-            if (form.Mode == RectangleRegionMode.Annotation)
+            if (form.Mode == RectangleRegionMode.Annotation && !IsCreating)
             {
                 switch (e.KeyCode)
                 {
@@ -973,11 +973,11 @@ namespace ShareX.ScreenCaptureLib
         {
             switch (e.KeyCode)
             {
-                case Keys.ShiftKey:
-                    IsProportionalResizing = false;
-                    break;
                 case Keys.ControlKey:
                     IsCornerMoving = false;
+                    break;
+                case Keys.ShiftKey:
+                    IsProportionalResizing = false;
                     break;
                 case Keys.Menu:
                     IsSnapResizing = false;
@@ -1007,7 +1007,11 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Point currentPosition = InputManager.MousePosition0Based;
 
-                    if (IsProportionalResizing)
+                    if (IsCornerMoving)
+                    {
+                        shape.StartPosition = shape.StartPosition.Add(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+                    }
+                    else if (IsProportionalResizing)
                     {
                         if (shape.NodeType == NodeType.Rectangle)
                         {
@@ -1017,10 +1021,6 @@ namespace ShareX.ScreenCaptureLib
                         {
                             currentPosition = CaptureHelpers.SnapPositionToDegree(shape.StartPosition, currentPosition, 45, 0);
                         }
-                    }
-                    else if (IsCornerMoving)
-                    {
-                        shape.StartPosition = shape.StartPosition.Add(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
                     }
                     else if (IsSnapResizing)
                     {

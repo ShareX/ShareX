@@ -409,6 +409,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        // TODO: Translate
         protected virtual void WriteTips(StringBuilder sb)
         {
             sb.AppendLine(Resources.RectangleRegion_WriteTips__F1__Hide_tips);
@@ -425,7 +426,6 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Mode == RectangleRegionMode.Annotation)
                 {
-                    // TODO: Translate
                     sb.AppendLine("[Right click] Open options menu");
                 }
             }
@@ -443,25 +443,26 @@ namespace ShareX.ScreenCaptureLib
             if ((!Config.QuickCrop || !ShapeManager.IsCurrentShapeTypeRegion) && ShapeManager.CurrentShape != null && !ShapeManager.IsCreating)
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region);
-                sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_, ShapeManager.ResizeManager.IsBottomRightResizing ?
-                    Resources.RectangleRegion_WriteTips_bottom_right : Resources.RectangleRegion_WriteTips_top_left));
-                sb.AppendLine(string.Format(Resources.RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_, ShapeManager.ResizeManager.IsBottomRightResizing ?
-                    Resources.RectangleRegion_WriteTips_top_left : Resources.RectangleRegion_WriteTips_bottom_right));
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing);
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster);
+                sb.AppendLine("[Arrow keys] Resize region from top left corner");
+                sb.AppendLine("[Hold Alt + Arrow keys] Resize region from bottom right corner");
+                sb.AppendLine("[Hold Ctrl + Arrow keys] Move region");
+                sb.AppendLine("[Hold Shift + Arrow keys] Resize or move region faster");
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region);
             }
             else
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position);
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster);
+                sb.AppendLine("[Hold Shift + Arrow keys] Move cursor position faster");
             }
 
             if (ShapeManager.IsCreating)
             {
+                sb.AppendLine("[Hold Ctrl] Move selection");
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes);
             }
+
+            sb.AppendLine();
 
             if (ShapeManager.IsCurrentRectangleValid)
             {
@@ -476,7 +477,6 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position);
             }
 
-            // TODO: Translate
             sb.AppendLine("[Ctrl + Mouse wheel] Change magnifier size");
 
             sb.AppendLine();
@@ -485,11 +485,18 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(Resources.RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture);
             sb.AppendLine(Resources.RectangleRegion_WriteTips_____Active_monitor_capture);
 
-            if (Mode == RectangleRegionMode.Annotation)
+            if (Mode == RectangleRegionMode.Annotation && !ShapeManager.IsCreating)
             {
                 sb.AppendLine();
 
-                // TODO: Translate
+                if (ShapeManager.IsCurrentShapeTypeRegion)
+                {
+                    sb.AppendLine("[Tab] [Mouse 4 click] Select last annotation tool");
+                }
+                else
+                {
+                    sb.AppendLine("[Tab] [Mouse 4 click] Select last region tool");
+                }
                 sb.AppendLine("[Mouse wheel] Change current tool");
                 if (ShapeManager.CurrentShapeType == ShapeType.RegionRectangle) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 0", ShapeType.RegionRectangle.GetLocalizedDescription()));

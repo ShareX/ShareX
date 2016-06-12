@@ -149,12 +149,6 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Regio vastleggen</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
-    <value>[Pijltjestoetsen] Pas geselecteerde regio aan van {0}</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Ctrl + Pijltjestoetsen] Verplaats muis sneller</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] Kopieer info</value>
   </data>
@@ -218,23 +212,11 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
     <value>[Alt ingedrukt houden] Stel standaard grootte in</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[Ctrl ingedrukt houden] Grootte aanpassen / Sneller bewegen</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[Linkermuisknop ingedrukt houden] [Insert] Start selectie van regio</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Linkermuisknop ingedrukt houden bij selectie] Verplaats regio</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[Shift ingedrukt houden] Verplaats gelecteerde regio in plaats van schalen</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
-    <value>rechtsbeneden</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
-    <value>linksboven</value>
   </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Laat linkermuisknop los] [Insert] Beëindig regio selectie</value>
@@ -247,9 +229,6 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Spatie] Leg volledig scherm vast</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
-    <value>[Tab] Wissel schalingsanker met {0}</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Opname stoppen</value>

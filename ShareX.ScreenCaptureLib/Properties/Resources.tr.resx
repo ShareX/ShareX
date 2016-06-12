@@ -149,18 +149,6 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Dikdörtgen yakalama saydam</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
-    <value>[Yön tuşları] Seçili alanı {0} boyutlandır</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
-    <value>sağ aşağıdan</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
-    <value>sol üstten</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[C + Yön tuşları] İmleci daha hızlı hareket ettir</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] Bilgiyi kopyala</value>
   </data>
@@ -227,17 +215,11 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
     <value>[F1] Bu bilgileri gizle</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[Ctrl basılı tut] Daha hızlı boyutlandır/taşı</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[Sol tık basılı tut] Alan seçimini başlat</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Sol tık basılı tut alan seçiliyken] Alanı taşı</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[Shift basılı tut] Seçili alanı taşı boyutlandırmak yerine</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
     <value>[Sağ tık] Alan seçimini iptal et</value>
@@ -247,9 +229,6 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Space] Tam ekran yakala</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
-    <value>[Tab] Boyutlandırma noktasını {0} olarak değiştir</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
     <value>[Alt basılı tut] Seçimi önceden ayarlı boyutlara hizala</value>

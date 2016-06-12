@@ -146,12 +146,6 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Regionsaufnahme</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Resize_selected_region_from__0_" xml:space="preserve">
-    <value>[Pfeiltasten] Größe der Ausgewählten Region von {0} ändern</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[Strg + Pfeiltasten] Zeigerposition schneller ändern</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Strg + C] Info kopieren</value>
   </data>
@@ -218,17 +212,11 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
     <value>[Alt halten] Raste Auswahl auf vorgefertigte Größen ein</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Ctrl__Resize___Move_faster" xml:space="preserve">
-    <value>[Strg halten] Vergrößere / Bewege schneller</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[Linksklick halten] [Einf] Beginne Regionsauswahl</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[Linksklick auf Auswahl halten] Verschiebe Region</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Move_selected_region_instead_of_resizing" xml:space="preserve">
-    <value>[Umschalttaste halten] Ausgewählte Region verschieben statt Größe zu ändern</value>
   </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
     <value>[Linksklick loslassen] [Einf] Regionsauswahl beenden</value>
@@ -239,17 +227,8 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Aufnahme Starten</value>
   </data>
-  <data name="RectangleRegion_WriteTips_bottom_right" xml:space="preserve">
-    <value>unten rechts</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_top_left" xml:space="preserve">
-    <value>oben links</value>
-  </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Rechteckaufnahme Transparent</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Tab__Swap_resize_anchor_to__0_" xml:space="preserve">
-    <value>[Tab] Wechsle Größenänderungs-Anker zu {0}</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
     <value>[Leertaste] Vollbild Aufnahme</value>
