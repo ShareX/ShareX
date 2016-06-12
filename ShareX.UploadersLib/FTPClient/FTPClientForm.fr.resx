@@ -147,4 +147,31 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Client FTP</value>
   </data>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="tsmiDownload.Text" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="tsmiConnect.Text" xml:space="preserve">
+    <value>Connexion</value>
+  </data>
+  <data name="tsmiDisconnect.Text" xml:space="preserve">
+    <value>Se déconnecter</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>Ouvrir l'URL</value>
+  </data>
+  <data name="tsmiRename.Text" xml:space="preserve">
+    <value>Renommer</value>
+  </data>
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
+    <value>Créer le dossier</value>
+  </data>
+  <data name="tsmiRefresh.Text" xml:space="preserve">
+    <value>Rafraîchir</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>Copier le(s) URL(s) dans le presse-papiers</value>
+  </data>
 </root>

@@ -327,4 +327,13 @@
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
     <value>Nombre maximum de tâches à enregistrer :</value>
   </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>Lors d'un clic gauche sur l'icône :</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>Lors d'un double clic gauche sur l'icône:</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>Lors d'un clic de la molette sur l'icône:</value>
+  </data>
 </root>
