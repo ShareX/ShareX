@@ -72,11 +72,11 @@ namespace ShareX.ScreenCaptureLib
 
                 if (IsCurrentShapeTypeRegion)
                 {
-                    LastRegionTool = CurrentShapeType;
+                    Config.LastRegionTool = CurrentShapeType;
                 }
                 else
                 {
-                    LastAnnotationTool = CurrentShapeType;
+                    Config.LastAnnotationTool = CurrentShapeType;
                 }
 
                 DeselectShape();
@@ -161,10 +161,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public ShapeType LastRegionTool { get; set; } = ShapeType.RegionRectangle;
-
-        public ShapeType LastAnnotationTool { get; set; } = ShapeType.DrawingRectangle;
-
         public ResizeManager ResizeManager { get; private set; }
         public bool IsCreating { get; private set; }
         public bool IsMoving { get; private set; }
@@ -226,7 +222,15 @@ namespace ShareX.ScreenCaptureLib
             }
 
             CurrentShape = null;
-            CurrentShapeType = ShapeType.RegionRectangle;
+
+            if (form.Mode == RectangleRegionMode.Annotation)
+            {
+                CurrentShapeType = Config.LastRegionTool;
+            }
+            else
+            {
+                CurrentShapeType = ShapeType.RegionRectangle;
+            }
         }
 
         private void CreateContextMenu()
@@ -922,11 +926,11 @@ namespace ShareX.ScreenCaptureLib
                     case Keys.Tab:
                         if (IsCurrentShapeTypeRegion)
                         {
-                            CurrentShapeType = LastAnnotationTool;
+                            CurrentShapeType = Config.LastAnnotationTool;
                         }
                         else
                         {
-                            CurrentShapeType = LastRegionTool;
+                            CurrentShapeType = Config.LastRegionTool;
                         }
                         break;
                     case Keys.NumPad0:

@@ -100,6 +100,10 @@ namespace ShareX.ScreenCaptureLib
 
         public bool ShowMenuTip = true;
 
+        public ShapeType LastRegionTool = ShapeType.RegionRectangle;
+
+        public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
+
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
 
         public SurfaceOptions()
