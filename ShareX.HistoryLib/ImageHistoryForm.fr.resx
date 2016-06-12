@@ -135,4 +135,19 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Historique des images</value>
   </data>
+  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
+    <value>100 derniers</value>
+  </data>
+  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
+    <value>250 derniers</value>
+  </data>
+  <data name="tsmiMaxImageLimit1000.Text" xml:space="preserve">
+    <value>1000 derniers</value>
+  </data>
+  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
+    <value>Pas de limite</value>
+  </data>
+  <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
+    <value>Limite maximale d'images</value>
+  </data>
 </root>

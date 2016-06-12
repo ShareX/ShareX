@@ -169,6 +169,6 @@
     <value>Saturation :</value>
   </data>
   <data name="lblHex.Text" xml:space="preserve">
-    <value>Code héxadécimal :</value>
+    <value>Code hexadécimal :</value>
   </data>
 </root>

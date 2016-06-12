@@ -847,7 +847,7 @@ Utiliser une librairie chiffrée désactive le partage.</value>
     <value>Titre</value>
   </data>
   <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>Utiliser le lien direct</value>
+    <value>Utiliser les liens directs</value>
   </data>
   <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
     <value>Mettre en ligne les images vers l'album sélectionné</value>
@@ -928,5 +928,56 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   </data>
   <data name="cbPastebinRaw.Text" xml:space="preserve">
     <value>Utiliser l'URL brute</value>
+  </data>
+  <data name="llPuushCreateAccount.Text" xml:space="preserve">
+    <value>Créer un compte...</value>
+  </data>
+  <data name="lblPuushEmail.Text" xml:space="preserve">
+    <value>Adresse e-mail :</value>
+  </data>
+  <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
+    <value>Obtenir la clé API...</value>
+  </data>
+  <data name="llPuushForgottenPassword.Text" xml:space="preserve">
+    <value>Mot de passe oublié ?</value>
+  </data>
+  <data name="lblPuushAPIKey.Text" xml:space="preserve">
+    <value>Clé API:</value>
+  </data>
+  <data name="btnPuushLogin.Text" xml:space="preserve">
+    <value>Connexion</value>
+  </data>
+  <data name="lblYourlsAPIURL.Text" xml:space="preserve">
+    <value>URL de l'API:</value>
+  </data>
+  <data name="lblSeafileAPIURL.Text" xml:space="preserve">
+    <value>URL de l'API:</value>
+  </data>
+  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
+    <value>Utiliser les liens directs</value>
+  </data>
+  <data name="lblPuushPassword.Text" xml:space="preserve">
+    <value>Mot de passe:</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>UID de l'API:</value>
+  </data>
+  <data name="lblLithiioApiKey.Text" xml:space="preserve">
+    <value>Clé API :</value>
+  </data>
+  <data name="lblLithiioInfo.Text" xml:space="preserve">
+    <value>Laissez 'Clé API' vide pour une utilisation anonyme.</value>
+  </data>
+  <data name="lblLithiioUploadURL.Text" xml:space="preserve">
+    <value>Lien URL :</value>
+  </data>
+  <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
+    <value>Utiliser les liens directs</value>
+  </data>
+  <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
+    <value>Envoyer des e-mails sans afficher de boite de dialogue pour cette adresse e-mail:</value>
   </data>
 </root>

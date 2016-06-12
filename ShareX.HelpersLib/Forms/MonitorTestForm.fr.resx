@@ -168,4 +168,7 @@
   <data name="lblShapeSize.Text" xml:space="preserve">
     <value>Taille :</value>
   </data>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>Tester le déchirement d'écran</value>
+  </data>
 </root>

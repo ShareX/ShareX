@@ -438,4 +438,10 @@
   <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
     <value>Utiliser par défaut les paramètres "Destination"</value>
   </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>Séléctionner une région...</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>Région personnalisée:</value>
+  </data>
 </root>
