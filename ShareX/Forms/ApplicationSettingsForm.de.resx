@@ -325,12 +325,12 @@
     <value>Einstellungen exportieren</value>
   </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
-    <value>Tray Symbol Linksklick Aktion:</value>
+    <value>Tray Symbol Mittelere Maustaste Aktion:</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
     <value>Tray Symbol Doppelklick Aktion:</value>
   </data>
   <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
-    <value>Tray Symbol Mittelere Maustaste Aktion:</value>
+    <value>Tray Symbol Linksklick Aktion:</value>
   </data>
 </root>
