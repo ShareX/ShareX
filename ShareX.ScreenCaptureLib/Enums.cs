@@ -155,6 +155,26 @@ namespace ShareX.ScreenCaptureLib
         OneClick
     }
 
+    public enum RegionCaptureAction
+    {
+        [Description("Do nothing")]
+        None,
+        [Description("Cancel capture")]
+        CancelCapture,
+        [Description("Remove shape or cancel capture")]
+        RemoveShapeCancelCapture,
+        [Description("Remove shape")]
+        RemoveShape,
+        [Description("Open options menu")]
+        OpenOptionsMenu,
+        [Description("Swap tool type")]
+        SwapToolType,
+        [Description("Capture fullscreen")]
+        CaptureFullscreen,
+        [Description("Capture active monitor")]
+        CaptureActiveMonitor
+    }
+
     public enum ShapeType
     {
         [Description("Region: Rectangle")]

@@ -1067,7 +1067,7 @@
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
     <value>lblImageJPEGQualityHint</value>
   </data>
@@ -1811,7 +1811,7 @@
   </data>
   <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
     <value>Y</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCaptureCustomRegionY.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionY</value>
   </data>
@@ -1841,7 +1841,7 @@
   </data>
   <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
     <value>X</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCaptureCustomRegionX.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionX</value>
   </data>
@@ -3020,7 +3020,7 @@
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
     <value>0</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblAutoIncrementNumber.Name" xml:space="preserve">
     <value>lblAutoIncrementNumber</value>
   </data>

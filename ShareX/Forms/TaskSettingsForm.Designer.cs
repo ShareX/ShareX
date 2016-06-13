@@ -1616,6 +1616,7 @@
             this.Controls.Add(this.tcTaskSettings);
             this.Controls.Add(this.tttvMain);
             this.Name = "TaskSettingsForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Resize += new System.EventHandler(this.TaskSettingsForm_Resize);
             this.tcTaskSettings.ResumeLayout(false);
             this.tpTask.ResumeLayout(false);

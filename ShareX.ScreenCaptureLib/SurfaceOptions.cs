@@ -37,6 +37,18 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(true), Description("Allow screenshot capture as soon as the mouse is released. This disables the ability to capture multiple shapes and to move and/or resize them.")]
         public bool QuickCrop { get; set; }
 
+        [DefaultValue(RegionCaptureAction.OpenOptionsMenu), Description("What should happen when you right click in region capture?"), TypeConverter(typeof(EnumDescriptionConverter))]
+        public RegionCaptureAction MouseRightClickAction { get; set; }
+
+        [DefaultValue(RegionCaptureAction.CancelCapture), Description("What should happen when you middle click in region capture?"), TypeConverter(typeof(EnumDescriptionConverter))]
+        public RegionCaptureAction MouseMiddleClickAction { get; set; }
+
+        [DefaultValue(RegionCaptureAction.SwapToolType), Description("What should happen when you mouse 4 click in region capture?"), TypeConverter(typeof(EnumDescriptionConverter))]
+        public RegionCaptureAction Mouse4ClickAction { get; set; }
+
+        [DefaultValue(RegionCaptureAction.CaptureFullscreen), Description("What should happen when you mouse 5 click in region capture?"), TypeConverter(typeof(EnumDescriptionConverter))]
+        public RegionCaptureAction Mouse5ClickAction { get; set; }
+
         [DefaultValue(true), Description("If annotation is disabled then right click will cancel screen capture instead of opening options menu.")]
         public bool AnnotationEnabled { get; set; }
 

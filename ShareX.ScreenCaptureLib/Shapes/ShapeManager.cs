@@ -827,10 +827,9 @@ namespace ShareX.ScreenCaptureLib
                     DeleteCurrentShape();
                     EndRegionSelection();
                 }
-                else if (form.Mode == RectangleRegionMode.Annotation && cmsContextMenu != null)
+                else if (form.Mode == RectangleRegionMode.Annotation)
                 {
-                    cmsContextMenu.Show(form, e.Location.Add(-10, -10));
-                    Config.ShowMenuTip = false;
+                    RunRegionCaptureAction(Config.MouseRightClickAction);
                 }
                 else if (IsShapeIntersect())
                 {
@@ -843,14 +842,15 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (e.Button == MouseButtons.Middle)
             {
-                form.Close(RegionResult.Close);
+                RunRegionCaptureAction(Config.MouseMiddleClickAction);
             }
             else if (e.Button == MouseButtons.XButton1)
             {
-                if (form.Mode == RectangleRegionMode.Annotation)
-                {
-                    SwapShapeType();
-                }
+                RunRegionCaptureAction(Config.Mouse4ClickAction);
+            }
+            else if (e.Button == MouseButtons.XButton2)
+            {
+                RunRegionCaptureAction(Config.Mouse5ClickAction);
             }
         }
 
@@ -989,6 +989,51 @@ namespace ShareX.ScreenCaptureLib
                     {
                         EndRegionSelection();
                     }
+                    break;
+            }
+        }
+
+        private void RunRegionCaptureAction(RegionCaptureAction action)
+        {
+            switch (action)
+            {
+                case RegionCaptureAction.CancelCapture:
+                    form.Close(RegionResult.Close);
+                    break;
+                case RegionCaptureAction.RemoveShapeCancelCapture:
+                    if (IsShapeIntersect())
+                    {
+                        DeleteIntersectShape();
+                    }
+                    else
+                    {
+                        form.Close(RegionResult.Close);
+                    }
+                    break;
+                case RegionCaptureAction.RemoveShape:
+                    if (IsShapeIntersect())
+                    {
+                        DeleteIntersectShape();
+                    }
+                    break;
+                case RegionCaptureAction.OpenOptionsMenu:
+                    if (form.Mode == RectangleRegionMode.Annotation && cmsContextMenu != null)
+                    {
+                        cmsContextMenu.Show(form, InputManager.MousePosition0Based.Add(-10, -10));
+                        Config.ShowMenuTip = false;
+                    }
+                    break;
+                case RegionCaptureAction.SwapToolType:
+                    if (form.Mode == RectangleRegionMode.Annotation)
+                    {
+                        SwapShapeType();
+                    }
+                    break;
+                case RegionCaptureAction.CaptureFullscreen:
+                    form.Close(RegionResult.Fullscreen);
+                    break;
+                case RegionCaptureAction.CaptureActiveMonitor:
+                    form.Close(RegionResult.ActiveMonitor);
                     break;
             }
         }
