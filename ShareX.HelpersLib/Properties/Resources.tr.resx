@@ -438,7 +438,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Renk seçici ekranı</value>
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
-    <value>Ekran kaydetme</value>
+    <value>Ekran kaydetme başlat/durdur</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Tüm aktif yüklemeleri durdur</value>
@@ -583,7 +583,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Renk seçici</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
-    <value>Ekran kaydetme (GIF)</value>
+    <value>Ekran kaydetme (GIF) başlat/durdur</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Son bölgeyi kullanarak ekran kaydet (GIF)</value>

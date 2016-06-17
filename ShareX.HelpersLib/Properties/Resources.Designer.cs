@@ -1411,7 +1411,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Screen recording.
+        ///   Looks up a localized string similar to Start/stop screen recording.
         /// </summary>
         internal static string HotkeyType_ScreenRecorder {
             get {
@@ -1465,7 +1465,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Screen recording (GIF).
+        ///   Looks up a localized string similar to Start/stop screen recording (GIF).
         /// </summary>
         internal static string HotkeyType_ScreenRecorderGIF {
             get {
