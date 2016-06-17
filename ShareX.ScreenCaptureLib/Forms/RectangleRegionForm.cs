@@ -298,9 +298,9 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Draw magnifier
-            if (Config.ShowMagnifier)
+            if (Config.ShowMagnifier || Config.ShowInfo)
             {
-                DrawMagnifier(g);
+                DrawCursorGraphics(g);
             }
 
             // Draw screen wide crosshair
@@ -595,66 +595,89 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DrawMagnifier(Graphics g)
+        private void DrawCursorGraphics(Graphics g)
         {
             Point mousePos = InputManager.MousePosition0Based;
             Rectangle currentScreenRect0Based = CaptureHelpers.GetActiveScreenBounds0Based();
-            int offsetX = 10, offsetY = 10, infoTextOffset = 0, infoTextPadding = 3;
+            int cursorOffsetX = 10, cursorOffsetY = 10, itemGap = 10, itemCount = 0;
+            Size totalSize = Size.Empty;
+
+            int magnifierPosition = 0;
+            Bitmap magnifier = null;
+
+            if (Config.ShowMagnifier)
+            {
+                if (itemCount > 0) totalSize.Height += itemGap;
+                magnifierPosition = totalSize.Height;
+
+                magnifier = Magnifier(backgroundImage, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize);
+                totalSize.Width = Math.Max(totalSize.Width, magnifier.Width);
+
+                totalSize.Height += magnifier.Height;
+                itemCount++;
+            }
+
+            int infoTextPadding = 3;
+            int infoTextPosition = 0;
             Rectangle infoTextRect = Rectangle.Empty;
             string infoText = "";
 
             if (Config.ShowInfo)
             {
-                infoTextOffset = 10;
+                if (itemCount > 0) totalSize.Height += itemGap;
+                infoTextPosition = totalSize.Height;
 
                 CurrentPosition = InputManager.MousePosition;
-
                 infoText = GetInfoText();
                 Size textSize = g.MeasureString(infoText, infoFont).ToSize();
                 infoTextRect.Size = new Size(textSize.Width + infoTextPadding * 2, textSize.Height + infoTextPadding * 2);
+                totalSize.Width = Math.Max(totalSize.Width, infoTextRect.Width);
+
+                totalSize.Height += infoTextRect.Height;
+                itemCount++;
             }
 
-            using (Bitmap magnifier = Magnifier(backgroundImage, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize))
+            int x = mousePos.X + cursorOffsetX;
+
+            if (x + totalSize.Width > currentScreenRect0Based.Right)
             {
-                int x = mousePos.X + offsetX;
+                x = mousePos.X - cursorOffsetX - totalSize.Width;
+            }
 
-                if (x + magnifier.Width > currentScreenRect0Based.Right)
-                {
-                    x = mousePos.X - offsetX - magnifier.Width;
-                }
+            int y = mousePos.Y + cursorOffsetY;
 
-                int y = mousePos.Y + offsetY;
+            if (y + totalSize.Height > currentScreenRect0Based.Bottom)
+            {
+                y = mousePos.Y - cursorOffsetY - totalSize.Height;
+            }
 
-                if (y + magnifier.Height + infoTextOffset + infoTextRect.Height > currentScreenRect0Based.Bottom)
-                {
-                    y = mousePos.Y - offsetY - magnifier.Height - infoTextOffset - infoTextRect.Height;
-                }
-
-                if (Config.ShowInfo)
-                {
-                    infoTextRect.Location = new Point(x + (magnifier.Width / 2) - (infoTextRect.Width / 2), y + magnifier.Height + infoTextOffset);
-                    DrawInfoText(g, infoText, infoTextRect, infoFont, infoTextPadding);
-                }
-
+            if (Config.ShowMagnifier)
+            {
                 g.SetHighQuality();
 
                 using (TextureBrush brush = new TextureBrush(magnifier))
                 {
-                    brush.TranslateTransform(x, y);
+                    brush.TranslateTransform(x, y + magnifierPosition);
 
                     if (Config.UseSquareMagnifier)
                     {
-                        g.FillRectangle(brush, x, y, magnifier.Width, magnifier.Height);
-                        g.DrawRectangleProper(Pens.White, x - 1, y - 1, magnifier.Width + 2, magnifier.Height + 2);
-                        g.DrawRectangleProper(Pens.Black, x, y, magnifier.Width, magnifier.Height);
+                        g.FillRectangle(brush, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
+                        g.DrawRectangleProper(Pens.White, x - 1, y + magnifierPosition - 1, magnifier.Width + 2, magnifier.Height + 2);
+                        g.DrawRectangleProper(Pens.Black, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
                     }
                     else
                     {
-                        g.FillEllipse(brush, x, y, magnifier.Width, magnifier.Height);
-                        g.DrawEllipse(Pens.White, x - 1, y - 1, magnifier.Width + 2, magnifier.Height + 2);
-                        g.DrawEllipse(Pens.Black, x, y, magnifier.Width, magnifier.Height);
+                        g.FillEllipse(brush, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
+                        g.DrawEllipse(Pens.White, x - 1, y + magnifierPosition - 1, magnifier.Width + 2, magnifier.Height + 2);
+                        g.DrawEllipse(Pens.Black, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
                     }
                 }
+            }
+
+            if (Config.ShowInfo)
+            {
+                infoTextRect.Location = new Point(x + (totalSize.Width / 2) - (infoTextRect.Width / 2), y + infoTextPosition);
+                DrawInfoText(g, infoText, infoTextRect, infoFont, infoTextPadding);
             }
         }
 
