@@ -49,9 +49,6 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(RegionCaptureAction.CaptureFullscreen), Description("What should happen when you mouse 5 click in region capture?"), TypeConverter(typeof(EnumDescriptionConverter))]
         public RegionCaptureAction Mouse5ClickAction { get; set; }
 
-        [DefaultValue(true), Description("If annotation is disabled then right click will cancel screen capture instead of opening options menu.")]
-        public bool AnnotationEnabled { get; set; }
-
         [DefaultValue(true), Description("Allows selection of window regions in region capture.")]
         public bool DetectWindows { get; set; }
 

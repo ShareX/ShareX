@@ -2128,8 +2128,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             {
                 default:
                 case CaptureType.Rectangle:
-                    RectangleRegionMode mode = taskSettings.CaptureSettings.SurfaceOptions.AnnotationEnabled ? RectangleRegionMode.Annotation : RectangleRegionMode.Default;
-                    form = new RectangleRegionForm(mode);
+                    form = new RectangleRegionForm(RectangleRegionMode.Annotation);
                     break;
                 case CaptureType.Polygon:
                     form = new PolygonRegionForm();
