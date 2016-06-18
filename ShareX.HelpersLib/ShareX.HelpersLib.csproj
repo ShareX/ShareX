@@ -183,6 +183,7 @@
     <Compile Include="Forms\ScreenTearingTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GraphicsQualityManager.cs" />
     <Compile Include="HelpersOptions.cs" />
     <Compile Include="Helpers\URLHelpers.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />

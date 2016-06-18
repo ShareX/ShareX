@@ -653,8 +653,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (Config.ShowMagnifier)
             {
-                g.SetHighQuality();
-
+                using (GraphicsQualityManager quality = new GraphicsQualityManager(g))
                 using (TextureBrush brush = new TextureBrush(magnifier))
                 {
                     brush.TranslateTransform(x, y + magnifierPosition);
