@@ -30,7 +30,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.Forms
+namespace ShareX.UploadersLib
 {
     public partial class PuushLoginForm : Form
     {
@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib.Forms
             Icon = Resources.puush;
         }
 
-        private bool CheckValidation()
+        private bool ValidationCheck()
         {
             bool result = true;
 
@@ -51,19 +51,22 @@ namespace ShareX.UploadersLib.Forms
                 txtEmail.BackColor = Color.FromArgb(255, 200, 200);
                 result = false;
             }
+            else
+            {
+                txtEmail.BackColor = SystemColors.Window;
+            }
 
             if (string.IsNullOrEmpty(txtPassword.Text))
             {
                 txtPassword.BackColor = Color.FromArgb(255, 200, 200);
                 result = false;
             }
+            else
+            {
+                txtPassword.BackColor = SystemColors.Window;
+            }
 
             return result;
-        }
-
-        private void llCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL(Puush.PuushRegisterURL);
         }
 
         private void llForgottenPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -73,7 +76,7 @@ namespace ShareX.UploadersLib.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (CheckValidation())
+            if (ValidationCheck())
             {
                 APIKey = new Puush().Login(txtEmail.Text, txtPassword.Text);
 

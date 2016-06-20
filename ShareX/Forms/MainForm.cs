@@ -56,6 +56,8 @@ namespace ShareX
 
         private void MainForm_HandleCreated(object sender, EventArgs e)
         {
+            RunPuushTasks();
+
             UpdateControls();
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
@@ -893,6 +895,34 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             {
                 tsmiTrayToggleHotkeys.Text = Resources.MainForm_UpdateToggleHotkeyButton_Disable_hotkeys;
                 tsmiTrayToggleHotkeys.Image = Resources.keyboard__minus;
+            }
+        }
+
+        private void RunPuushTasks()
+        {
+            if (Program.IsPuushMode && Program.Settings.IsFirstTimeRun)
+            {
+                using (PuushLoginForm puushLoginForm = new PuushLoginForm())
+                {
+                    if (puushLoginForm.ShowDialog() == DialogResult.OK)
+                    {
+                        Program.DefaultTaskSettings.ImageDestination = ImageDestination.FileUploader;
+                        Program.DefaultTaskSettings.ImageFileDestination = FileDestination.Puush;
+                        Program.DefaultTaskSettings.TextDestination = TextDestination.FileUploader;
+                        Program.DefaultTaskSettings.TextFileDestination = FileDestination.Puush;
+                        Program.DefaultTaskSettings.FileDestination = FileDestination.Puush;
+
+                        if (Program.UploadersConfig == null)
+                        {
+                            Program.UploaderSettingsResetEvent.WaitOne(5000);
+                        }
+
+                        if (Program.UploadersConfig != null)
+                        {
+                            Program.UploadersConfig.PuushAPIKey = puushLoginForm.APIKey;
+                        }
+                    }
+                }
             }
         }
 
@@ -1737,7 +1767,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
                 }
 
-                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.NoHotkeys);
+                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IsNoHotkeyMode);
 
                 DebugHelper.WriteLine("HotkeyManager started");
 

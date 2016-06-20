@@ -83,7 +83,8 @@ namespace ShareX
         public static bool IsSilentRun { get; private set; }
         public static bool IsSandbox { get; private set; }
         public static bool IsFirstTimeConfig { get; private set; }
-        public static bool NoHotkeys { get; private set; }
+        public static bool IsNoHotkeyMode { get; private set; }
+        public static bool IsPuushMode { get; private set; }
 
         public static ApplicationConfig Settings { get; private set; }
         public static TaskSettings DefaultTaskSettings { get; private set; }
@@ -285,6 +286,8 @@ namespace ShareX
 
             IsMultiInstance = CLI.IsCommandExist("multi", "m");
 
+            CheckPuushMode();
+
             using (ApplicationInstanceManager instanceManager = new ApplicationInstanceManager(!IsMultiInstance, args, SingleInstanceCallback))
             {
                 Run();
@@ -307,7 +310,7 @@ namespace ShareX
             IsFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
 #endif
 
-            NoHotkeys = CLI.IsCommandExist("NoHotkeys");
+            IsNoHotkeyMode = CLI.IsCommandExist("NoHotkeys");
 
             DebugHelper.WriteLine(TitleLong);
             DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);
@@ -634,6 +637,13 @@ namespace ShareX
             }
 
             return false;
+        }
+
+        private static bool CheckPuushMode()
+        {
+            string puushPath = Helpers.GetAbsolutePath("puush");
+            IsPuushMode = File.Exists(puushPath);
+            return IsPuushMode;
         }
     }
 }
