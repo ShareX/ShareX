@@ -25,6 +25,7 @@ ArchitecturesInstallIn64BitMode=x64 ia64
 DefaultDirName={pf}\{#AppName}
 DefaultGroupName={#AppName}
 DirExistsWarning=no
+DisableReadyPage=yes
 DisableProgramGroupPage=yes
 LicenseFile={#RootDirectory}\LICENSE.txt
 MinVersion=0,5.01.2600
