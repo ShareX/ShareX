@@ -44,22 +44,10 @@ namespace ShareX.HelpersLib
         public string ApplicationVersion { get; set; }
 
         [Browsable(false)]
-        public bool IsFirstTimeRun
-        {
-            get
-            {
-                return string.IsNullOrEmpty(ApplicationVersion);
-            }
-        }
+        public bool IsFirstTimeRun { get; private set; }
 
         [Browsable(false)]
-        public bool IsUpgrade
-        {
-            get
-            {
-                return !IsFirstTimeRun && Helpers.CompareApplicationVersion(ApplicationVersion) < 0;
-            }
-        }
+        public bool IsUpgrade { get; private set; }
 
         protected virtual void OnSettingsSaved(string filePath, bool result)
         {
@@ -103,6 +91,8 @@ namespace ShareX.HelpersLib
             if (setting != null)
             {
                 setting.FilePath = filePath;
+                setting.IsFirstTimeRun = string.IsNullOrEmpty(setting.ApplicationVersion);
+                setting.IsUpgrade = !setting.IsFirstTimeRun && Helpers.CompareApplicationVersion(setting.ApplicationVersion) < 0;
             }
 
             return setting;
