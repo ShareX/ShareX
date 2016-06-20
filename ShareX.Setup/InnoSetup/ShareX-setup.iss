@@ -71,6 +71,7 @@ Source: "{#AppParentDirectory}\ru\*.resources.dll"; DestDir: {app}\Languages\ru;
 Source: "{#AppParentDirectory}\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion
 Source: "{#AppParentDirectory}\vi-VN\*.resources.dll"; DestDir: {app}\Languages\vi-VN; Flags: ignoreversion
 Source: "{#AppParentDirectory}\zh-CN\*.resources.dll"; DestDir: {app}\Languages\zh-CN; Flags: ignoreversion
+Source: "puush"; DestDir: {app}; Check: IsPuushMode
 
 [Icons]
 Name: "{group}\{#AppName}"; Filename: "{app}\{#AppFilename}"; WorkingDir: "{app}"
@@ -125,4 +126,22 @@ end;
 function DesktopIconExists(): Boolean;
 begin
   Result := FileExists(ExpandConstant('{userdesktop}\{#AppName}.lnk'));
+end;
+
+function CmdLineParamExists(const value: string): Boolean;
+var
+  i: Integer;  
+begin
+  Result := False;
+  for i := 1 to ParamCount do
+    if CompareText(ParamStr(i), value) = 0 then
+    begin
+      Result := True;
+      Exit;
+    end;
+end;
+
+function IsPuushMode: Boolean;
+begin
+  Result := CmdLineParamExists('-puush');
 end;
