@@ -93,6 +93,7 @@ namespace ShareX.UploadersLib
 
             AddIconToTab(tpAdFly, Resources.AdFly);
             AddIconToTab(tpAmazonS3, Resources.AmazonS3);
+            AddIconToTab(tpAzureStorage, Resources.AzureStorage);
             AddIconToTab(tpBitly, Resources.Bitly);
             AddIconToTab(tpBox, Resources.Box);
             AddIconToTab(tpChevereto, Resources.Chevereto);
@@ -543,10 +544,23 @@ namespace ShareX.UploadersLib
             txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
             cbAmazonS3UseRRS.Checked = Config.AmazonS3Settings.UseReducedRedundancyStorage;
 
-            cbAmazonS3Endpoint.Items.AddRange(AmazonS3.RegionEndpoints.ToArray());
+            cbAmazonS3Endpoint.DataSource = AmazonS3.RegionEndpoints.ToArray();
             cbAmazonS3Endpoint.SelectedItem = AmazonS3.GetCurrentRegion(Config.AmazonS3Settings);
             cbAmazonS3Endpoint.DisplayMember = "Name";
             UpdateAmazonS3Status();
+
+            // Azure Storage
+
+            txtAzureStorageDefaultEndpointsProtocol.Text = Config.AzureStorageSettings.DefaultEndpointsProtocol;
+            txtAzureStorageAccountName.Text = Config.AzureStorageSettings.AccountName;
+            txtAzureStorageAccountKey.Text = Config.AzureStorageSettings.AccountKey;
+            txtAzureStorageContainerName.Text = Config.AzureStorageSettings.ContainerName;
+            txtAzureStorageUploadPath.Text = Config.AzureStorageSettings.ObjectPrefix;
+            cbAzureStorageUseDeveloperStorage.Checked = Config.AzureStorageSettings.IsDevelopmentStorageAccount;
+            cbAzureStorageUploadSecurity.DataSource = Helpers.GetEnums<AzureStorageFileUploaderService.UploadType>().Select(x => new EnumInfo(x)).ToArray();
+            cbAzureStorageUploadSecurity.DisplayMember = "Description";
+            cbAzureStorageUploadSecurity.ValueMember = "Value";
+            cbAzureStorageUploadSecurity.SelectedItem = Config.AzureStorageSettings.UploadSecurityType;
 
             // ownCloud
 
@@ -2006,6 +2020,49 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Amazon S3
+
+        #region Azure Storage
+        
+        private void cbAzureStorageUseDeveloperStorage_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageSettings.IsDevelopmentStorageAccount = cbAzureStorageUseDeveloperStorage.Checked;
+
+            txtAzureStorageAccountKey.Enabled = !Config.AzureStorageSettings.IsDevelopmentStorageAccount;
+            txtAzureStorageAccountName.Enabled = !Config.AzureStorageSettings.IsDevelopmentStorageAccount;
+            txtAzureStorageDefaultEndpointsProtocol.Enabled = !Config.AzureStorageSettings.IsDevelopmentStorageAccount;
+        }
+
+        private void txtAzureStorageDefaultEndpointsProtocol_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageSettings.DefaultEndpointsProtocol = txtAzureStorageDefaultEndpointsProtocol.Text;
+        }
+
+        private void txtAzureStorageAccountName_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageSettings.AccountName = txtAzureStorageAccountName.Text;
+        }
+
+        private void txtAzureStorageAccountKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageSettings.AccountKey = txtAzureStorageAccountKey.Text;
+        }
+
+        private void txtAzureStorageContainerName_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageSettings.ContainerName = txtAzureStorageContainerName.Text;
+        }
+
+        private void txtAzureStorageUploadPath_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageSettings.ObjectPrefix = txtAzureStorageUploadPath.Text;
+        }
+
+        private void cbAzureStorageUploadSecurity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageSettings.UploadSecurityType = (AzureStorageFileUploaderService.UploadType) (cbAzureStorageUploadSecurity.SelectedItem as EnumInfo).Value;
+        }
+
+        #endregion Azure Storage
 
         #region ownCloud
 
