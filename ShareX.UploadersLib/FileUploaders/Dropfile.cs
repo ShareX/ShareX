@@ -44,7 +44,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, "https://dropfile.to/upload", fileName);
+            UploadResult result = UploadData(stream, "https://d1.dropfile.to/upload", fileName);
 
             if (result.IsSuccess)
             {
