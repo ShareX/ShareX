@@ -230,6 +230,7 @@ namespace ShareX.UploadersLib
 
         public AzureStorageSettings AzureStorageSettings = new AzureStorageSettings()
         {
+            UploadSecurityType = AzureStorageFileUploaderService.UploadType.SharedAccessSignature,
             DefaultEndpointsProtocol = "https",
             ObjectPrefix = "ShareX/%y/%mo"
         };
