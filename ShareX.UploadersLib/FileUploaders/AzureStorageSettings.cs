@@ -23,15 +23,18 @@
 
 #endregion License Information (GPL v3)
 
+using static ShareX.UploadersLib.FileUploaders.AzureStorageFileUploaderService;
+
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class AzureStorageSettings
     {
+        public bool IsDevelopmentStorageAccount { get; set; }
         public string DefaultEndpointsProtocol { get; set; }
         public string AccountKey { get; set; }
         public string AccountName { get; set; }
         public string ContainerName { get; set; }
-        public string CustomDomain { get; set; }
         public string ObjectPrefix { get; set; }
+        public UploadType UploadSecurityType { get; set; }
     }
 }
