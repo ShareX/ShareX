@@ -49,11 +49,32 @@
             // 
             // nudIconSize
             // 
+            this.nudIconSize.Increment = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.nudIconSize.Location = new System.Drawing.Point(72, 12);
+            this.nudIconSize.Maximum = new decimal(new int[] {
+            256,
+            0,
+            0,
+            0});
+            this.nudIconSize.Minimum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
             this.nudIconSize.Name = "nudIconSize";
+            this.nudIconSize.ReadOnly = true;
             this.nudIconSize.Size = new System.Drawing.Size(48, 20);
             this.nudIconSize.TabIndex = 1;
             this.nudIconSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudIconSize.Value = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
             // 
             // cbMatchSizeToCapture
             // 
