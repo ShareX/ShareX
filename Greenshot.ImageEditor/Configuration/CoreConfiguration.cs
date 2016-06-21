@@ -291,7 +291,7 @@ namespace GreenshotPlugin.Core
                     {
                         newSize.Width = 256;
                     }
-                    newSize.Width = (newSize.Width / 16) * 16;
+                    newSize.Width = (newSize.Width / 8) * 8;
                     if (newSize.Height < 16)
                     {
                         newSize.Height = 16;
@@ -300,7 +300,7 @@ namespace GreenshotPlugin.Core
                     {
                         newSize.Height = 256;
                     }
-                    newSize.Height = (newSize.Height / 16) * 16;
+                    newSize.Height = (newSize.Height / 8) * 8;
                 }
                 if (_iconSize != newSize)
                 {
