@@ -902,4 +902,10 @@ Would you like to download it?</value>
   <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
+  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
+    <value>Capture region (Simple annotate)</value>
+  </data>
+  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
+    <value>Screen capture</value>
+  </data>
 </root>

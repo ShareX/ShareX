@@ -880,4 +880,10 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Yazı tanı (OCR)</value>
   </data>
+  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
+    <value>Ekran yakalama</value>
+  </data>
+  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
+    <value>Bölge yakalama (Basit dipnot)</value>
+  </data>
 </root>

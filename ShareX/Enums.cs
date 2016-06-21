@@ -163,6 +163,7 @@ namespace ShareX
         RectangleRegion,
         RectangleLight,
         RectangleTransparent,
+        RectangleAnnotate,
         PolygonRegion,
         FreeHandRegion,
         CustomRegion,

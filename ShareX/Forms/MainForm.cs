@@ -1746,7 +1746,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         private delegate Image ScreenCaptureDelegate();
 
-        private enum LastRegionCaptureType { Default, Light, Transparent }
+        private enum LastRegionCaptureType { Default, Light, Transparent, Annotate }
 
         private LastRegionCaptureType lastRegionCaptureType = LastRegionCaptureType.Default;
 
@@ -1852,6 +1852,9 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     break;
                 case HotkeyType.RectangleTransparent:
                     CaptureRectangleTransparent(safeTaskSettings, false);
+                    break;
+                case HotkeyType.RectangleAnnotate:
+                    CaptureRectangleAnnotate(safeTaskSettings, false);
                     break;
                 case HotkeyType.PolygonRegion:
                     CaptureScreenshot(CaptureType.Polygon, safeTaskSettings, false);
@@ -2261,6 +2264,31 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
             }, CaptureType.Rectangle, taskSettings, autoHideForm);
         }
 
+        private void CaptureRectangleAnnotate(TaskSettings taskSettings = null, bool autoHideForm = true)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            DoCapture(() =>
+             {
+                 Image img = null;
+
+                 using (RectangleRegionAnnotateForm rectangleAnnotate = new RectangleRegionAnnotateForm(taskSettings.CaptureSettingsReference.RectangleAnnotateOptions))
+                 {
+                     if (rectangleAnnotate.ShowDialog() == DialogResult.OK)
+                     {
+                         img = rectangleAnnotate.GetAreaImage();
+
+                         if (img != null)
+                         {
+                             lastRegionCaptureType = LastRegionCaptureType.Annotate;
+                         }
+                     }
+                 }
+
+                 return img;
+             }, CaptureType.Rectangle, taskSettings, autoHideForm);
+        }
+
         private void CaptureLastRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
             switch (lastRegionCaptureType)
@@ -2311,6 +2339,22 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     else
                     {
                         CaptureRectangleTransparent(taskSettings, autoHideForm);
+                    }
+                    break;
+                case LastRegionCaptureType.Annotate:
+                    if (!RectangleRegionAnnotateForm.LastSelectionRectangle0Based.IsEmpty)
+                    {
+                        DoCapture(() =>
+                         {
+                             using (Image screenshot = Screenshot.CaptureFullscreen())
+                             {
+                                 return ImageHelpers.CropImage(screenshot, RectangleRegionAnnotateForm.LastSelectionRectangle0Based);
+                             }
+                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
+                    }
+                    else
+                    {
+                        CaptureRectangleAnnotate(taskSettings, autoHideForm);
                     }
                     break;
             }
