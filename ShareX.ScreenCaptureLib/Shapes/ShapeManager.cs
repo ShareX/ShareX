@@ -829,7 +829,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else if (form.Mode == RectangleRegionMode.Annotation)
                 {
-                    RunRegionCaptureAction(Config.MouseRightClickAction);
+                    RunAction(Config.MouseRightClickAction);
                 }
                 else if (IsShapeIntersect())
                 {
@@ -842,15 +842,15 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (e.Button == MouseButtons.Middle)
             {
-                RunRegionCaptureAction(Config.MouseMiddleClickAction);
+                RunAction(Config.MouseMiddleClickAction);
             }
             else if (e.Button == MouseButtons.XButton1)
             {
-                RunRegionCaptureAction(Config.Mouse4ClickAction);
+                RunAction(Config.Mouse4ClickAction);
             }
             else if (e.Button == MouseButtons.XButton2)
             {
-                RunRegionCaptureAction(Config.Mouse5ClickAction);
+                RunAction(Config.Mouse5ClickAction);
             }
         }
 
@@ -990,10 +990,13 @@ namespace ShareX.ScreenCaptureLib
                         EndRegionSelection();
                     }
                     break;
+                case Keys.Apps:
+                    OpenOptionsMenu();
+                    break;
             }
         }
 
-        private void RunRegionCaptureAction(RegionCaptureAction action)
+        private void RunAction(RegionCaptureAction action)
         {
             switch (action)
             {
@@ -1011,23 +1014,13 @@ namespace ShareX.ScreenCaptureLib
                     }
                     break;
                 case RegionCaptureAction.RemoveShape:
-                    if (IsShapeIntersect())
-                    {
-                        DeleteIntersectShape();
-                    }
+                    DeleteIntersectShape();
                     break;
                 case RegionCaptureAction.OpenOptionsMenu:
-                    if (form.Mode == RectangleRegionMode.Annotation && cmsContextMenu != null)
-                    {
-                        cmsContextMenu.Show(form, InputManager.MousePosition0Based.Add(-10, -10));
-                        Config.ShowMenuTip = false;
-                    }
+                    OpenOptionsMenu();
                     break;
                 case RegionCaptureAction.SwapToolType:
-                    if (form.Mode == RectangleRegionMode.Annotation)
-                    {
-                        SwapShapeType();
-                    }
+                    SwapShapeType();
                     break;
                 case RegionCaptureAction.CaptureFullscreen:
                     form.Close(RegionResult.Fullscreen);
@@ -1257,13 +1250,25 @@ namespace ShareX.ScreenCaptureLib
 
         private void SwapShapeType()
         {
-            if (IsCurrentShapeTypeRegion)
+            if (form.Mode == RectangleRegionMode.Annotation)
             {
-                CurrentShapeType = Config.LastAnnotationTool;
+                if (IsCurrentShapeTypeRegion)
+                {
+                    CurrentShapeType = Config.LastAnnotationTool;
+                }
+                else
+                {
+                    CurrentShapeType = Config.LastRegionTool;
+                }
             }
-            else
+        }
+
+        private void OpenOptionsMenu()
+        {
+            if (form.Mode == RectangleRegionMode.Annotation && cmsContextMenu != null)
             {
-                CurrentShapeType = Config.LastRegionTool;
+                cmsContextMenu.Show(form, InputManager.MousePosition0Based.Add(-10, -10));
+                Config.ShowMenuTip = false;
             }
         }
 

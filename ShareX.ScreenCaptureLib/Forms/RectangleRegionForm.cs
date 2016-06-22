@@ -426,7 +426,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Mode == RectangleRegionMode.Annotation)
                 {
-                    sb.AppendLine("[Right click] Open options menu");
+                    sb.AppendLine("[Right click][Menu] Open options menu");
                 }
             }
 
