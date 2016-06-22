@@ -41,7 +41,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public static GraphicsPath LastRegionFillPath { get; protected set; }
 
-        public SurfaceOptions Config { get; set; }
+        public RegionCaptureOptions Config { get; set; }
         public int FPS { get; private set; }
         public Rectangle ScreenRectangle { get; private set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
@@ -73,7 +73,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             drawableObjects = new List<DrawableObject>();
-            Config = new SurfaceOptions();
+            Config = new RegionCaptureOptions();
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
 

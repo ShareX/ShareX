@@ -184,7 +184,7 @@ namespace ShareX.ScreenCaptureLib
         public bool WindowCaptureMode { get; set; }
         public bool IncludeControls { get; set; }
 
-        public SurfaceOptions Config { get; private set; }
+        public RegionCaptureOptions Config { get; private set; }
 
         public AnnotationOptions AnnotationOptions
         {

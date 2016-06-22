@@ -318,7 +318,7 @@ namespace ShareX
 
         #region Capture / Region capture
 
-        public SurfaceOptions SurfaceOptions = new SurfaceOptions();
+        public RegionCaptureOptions SurfaceOptions = new RegionCaptureOptions();
 
         #endregion Capture / Region capture
 

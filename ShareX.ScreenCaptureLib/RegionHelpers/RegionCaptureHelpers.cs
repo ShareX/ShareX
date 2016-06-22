@@ -145,7 +145,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static Image ApplyRegionPathToImage(Image backgroundImage, GraphicsPath regionFillPath, SurfaceOptions options)
+        public static Image ApplyRegionPathToImage(Image backgroundImage, GraphicsPath regionFillPath, RegionCaptureOptions options)
         {
             if (backgroundImage != null && regionFillPath != null)
             {

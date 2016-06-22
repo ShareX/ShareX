@@ -208,7 +208,7 @@ namespace ShareX
             nudCaptureCustomRegionHeight.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Height);
 
             // Capture / Region capture
-            if (TaskSettings.CaptureSettings.SurfaceOptions == null) TaskSettings.CaptureSettings.SurfaceOptions = new SurfaceOptions();
+            if (TaskSettings.CaptureSettings.SurfaceOptions == null) TaskSettings.CaptureSettings.SurfaceOptions = new RegionCaptureOptions();
             pgRegionCapture.SelectedObject = TaskSettings.CaptureSettings.SurfaceOptions;
 
             // Capture / Screen recorder
