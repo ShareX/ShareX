@@ -146,7 +146,7 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Transparante rechthoek vastleggen</value>
   </data>
-  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Regio vastleggen</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">

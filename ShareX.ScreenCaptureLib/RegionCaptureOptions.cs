@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
         public bool DetectControls = true;
         public bool UseDimming = true;
         public bool UseCustomInfoText = false;
-        public string CustomInfoText = "X: $x, Y: $y\r\nR: $r, G: $g, B: $b\r\nHex: $hex"; // Formats: $x, $y, $r, $g, $b, $hex
+        public string CustomInfoText = "X: $x, Y: $y$nR: $r, G: $g, B: $b$nHex: $hex"; // Formats: $x, $y, $r, $g, $b, $hex, $n
         public List<SnapSize> SnapSizes = new List<SnapSize>()
         {
             new SnapSize(426, 240), // 240p

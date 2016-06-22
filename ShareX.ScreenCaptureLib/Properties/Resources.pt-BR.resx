@@ -147,7 +147,7 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
     <value>Captura de retângulo transparente
 </value>
   </data>
-  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Captura de região</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">

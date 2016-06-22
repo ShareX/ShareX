@@ -61,6 +61,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Region capture.
+        /// </summary>
+        internal static string BaseRegionForm_InitializeComponent_Region_capture {
+            get {
+                return ResourceManager.GetString("BaseRegionForm_InitializeComponent_Region_capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap counter_reset {
@@ -733,15 +742,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ScrollingCaptureForm_StopCapture_Start_capture {
             get {
                 return ResourceManager.GetString("ScrollingCaptureForm_StopCapture_Start_capture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Region capture.
-        /// </summary>
-        internal static string Surface_InitializeComponent_Region_capture {
-            get {
-                return ResourceManager.GetString("Surface_InitializeComponent_Region_capture", resourceCulture);
             }
         }
         

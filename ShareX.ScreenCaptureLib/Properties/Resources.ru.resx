@@ -236,7 +236,7 @@
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Начать захват</value>
   </data>
-  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Захват области</value>
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">

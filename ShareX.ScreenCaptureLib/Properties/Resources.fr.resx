@@ -140,7 +140,7 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Capture rectangulaire annotée</value>
   </data>
-  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Capturer une région </value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">

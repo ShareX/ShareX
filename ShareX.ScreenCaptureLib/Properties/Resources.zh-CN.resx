@@ -143,7 +143,7 @@
 宽度: {4} PX/高度: {5} PX
 距离: {6:0.00} px / 角度: {7:0.00}°</value>
   </data>
-  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>区域捕捉</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">

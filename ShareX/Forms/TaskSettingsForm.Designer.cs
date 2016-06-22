@@ -120,7 +120,20 @@
             this.cbScreenshotDelay = new System.Windows.Forms.CheckBox();
             this.chkUseDefaultCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
-            this.pgRegionCapture = new System.Windows.Forms.PropertyGrid();
+            this.txtRegionCaptureUseCustomInfoText = new System.Windows.Forms.TextBox();
+            this.cbRegionCaptureUseCustomInfoText = new System.Windows.Forms.CheckBox();
+            this.cbRegionCaptureUseDimming = new System.Windows.Forms.CheckBox();
+            this.cbRegionCaptureDetectControls = new System.Windows.Forms.CheckBox();
+            this.cbRegionCaptureDetectWindows = new System.Windows.Forms.CheckBox();
+            this.cbRegionCaptureMouse5ClickAction = new System.Windows.Forms.ComboBox();
+            this.lblRegionCaptureMouse5ClickAction = new System.Windows.Forms.Label();
+            this.cbRegionCaptureMouse4ClickAction = new System.Windows.Forms.ComboBox();
+            this.lblRegionCaptureMouse4ClickAction = new System.Windows.Forms.Label();
+            this.cbRegionCaptureMouseMiddleClickAction = new System.Windows.Forms.ComboBox();
+            this.lblRegionCaptureMouseMiddleClickAction = new System.Windows.Forms.Label();
+            this.cbRegionCaptureMouseRightClickAction = new System.Windows.Forms.ComboBox();
+            this.lblRegionCaptureMouseRightClickAction = new System.Windows.Forms.Label();
+            this.cbRegionCaptureMultiRegionMode = new System.Windows.Forms.CheckBox();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
             this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
             this.cbGIFEncoding = new System.Windows.Forms.ComboBox();
@@ -195,6 +208,8 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.lblRegionCaptureSnapSizes = new System.Windows.Forms.Label();
+            this.cbRegionCaptureSnapSizes = new System.Windows.Forms.ComboBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -978,18 +993,118 @@
             // 
             // tpRegionCapture
             // 
-            this.tpRegionCapture.Controls.Add(this.pgRegionCapture);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureSnapSizes);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureSnapSizes);
+            this.tpRegionCapture.Controls.Add(this.txtRegionCaptureUseCustomInfoText);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureUseCustomInfoText);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureUseDimming);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureDetectControls);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureDetectWindows);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureMouse5ClickAction);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureMouse5ClickAction);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureMouse4ClickAction);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureMouse4ClickAction);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureMouseMiddleClickAction);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureMouseMiddleClickAction);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureMouseRightClickAction);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureMouseRightClickAction);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureMultiRegionMode);
             resources.ApplyResources(this.tpRegionCapture, "tpRegionCapture");
             this.tpRegionCapture.Name = "tpRegionCapture";
             this.tpRegionCapture.UseVisualStyleBackColor = true;
             // 
-            // pgRegionCapture
+            // txtRegionCaptureUseCustomInfoText
             // 
-            this.pgRegionCapture.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            resources.ApplyResources(this.pgRegionCapture, "pgRegionCapture");
-            this.pgRegionCapture.Name = "pgRegionCapture";
-            this.pgRegionCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgRegionCapture.ToolbarVisible = false;
+            resources.ApplyResources(this.txtRegionCaptureUseCustomInfoText, "txtRegionCaptureUseCustomInfoText");
+            this.txtRegionCaptureUseCustomInfoText.Name = "txtRegionCaptureUseCustomInfoText";
+            this.txtRegionCaptureUseCustomInfoText.TextChanged += new System.EventHandler(this.txtRegionCaptureUseCustomInfoText_TextChanged);
+            // 
+            // cbRegionCaptureUseCustomInfoText
+            // 
+            resources.ApplyResources(this.cbRegionCaptureUseCustomInfoText, "cbRegionCaptureUseCustomInfoText");
+            this.cbRegionCaptureUseCustomInfoText.Name = "cbRegionCaptureUseCustomInfoText";
+            this.cbRegionCaptureUseCustomInfoText.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureUseCustomInfoText.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseCustomInfoText_CheckedChanged);
+            // 
+            // cbRegionCaptureUseDimming
+            // 
+            resources.ApplyResources(this.cbRegionCaptureUseDimming, "cbRegionCaptureUseDimming");
+            this.cbRegionCaptureUseDimming.Name = "cbRegionCaptureUseDimming";
+            this.cbRegionCaptureUseDimming.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureUseDimming.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseDimming_CheckedChanged);
+            // 
+            // cbRegionCaptureDetectControls
+            // 
+            resources.ApplyResources(this.cbRegionCaptureDetectControls, "cbRegionCaptureDetectControls");
+            this.cbRegionCaptureDetectControls.Name = "cbRegionCaptureDetectControls";
+            this.cbRegionCaptureDetectControls.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureDetectControls.CheckedChanged += new System.EventHandler(this.cbRegionCaptureDetectControls_CheckedChanged);
+            // 
+            // cbRegionCaptureDetectWindows
+            // 
+            resources.ApplyResources(this.cbRegionCaptureDetectWindows, "cbRegionCaptureDetectWindows");
+            this.cbRegionCaptureDetectWindows.Name = "cbRegionCaptureDetectWindows";
+            this.cbRegionCaptureDetectWindows.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureDetectWindows.CheckedChanged += new System.EventHandler(this.cbRegionCaptureDetectWindows_CheckedChanged);
+            // 
+            // cbRegionCaptureMouse5ClickAction
+            // 
+            this.cbRegionCaptureMouse5ClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRegionCaptureMouse5ClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbRegionCaptureMouse5ClickAction, "cbRegionCaptureMouse5ClickAction");
+            this.cbRegionCaptureMouse5ClickAction.Name = "cbRegionCaptureMouse5ClickAction";
+            this.cbRegionCaptureMouse5ClickAction.SelectedIndexChanged += new System.EventHandler(this.cbRegionCaptureMouse5ClickAction_SelectedIndexChanged);
+            // 
+            // lblRegionCaptureMouse5ClickAction
+            // 
+            resources.ApplyResources(this.lblRegionCaptureMouse5ClickAction, "lblRegionCaptureMouse5ClickAction");
+            this.lblRegionCaptureMouse5ClickAction.Name = "lblRegionCaptureMouse5ClickAction";
+            // 
+            // cbRegionCaptureMouse4ClickAction
+            // 
+            this.cbRegionCaptureMouse4ClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRegionCaptureMouse4ClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbRegionCaptureMouse4ClickAction, "cbRegionCaptureMouse4ClickAction");
+            this.cbRegionCaptureMouse4ClickAction.Name = "cbRegionCaptureMouse4ClickAction";
+            this.cbRegionCaptureMouse4ClickAction.SelectedIndexChanged += new System.EventHandler(this.cbRegionCaptureMouse4ClickAction_SelectedIndexChanged);
+            // 
+            // lblRegionCaptureMouse4ClickAction
+            // 
+            resources.ApplyResources(this.lblRegionCaptureMouse4ClickAction, "lblRegionCaptureMouse4ClickAction");
+            this.lblRegionCaptureMouse4ClickAction.Name = "lblRegionCaptureMouse4ClickAction";
+            // 
+            // cbRegionCaptureMouseMiddleClickAction
+            // 
+            this.cbRegionCaptureMouseMiddleClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRegionCaptureMouseMiddleClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbRegionCaptureMouseMiddleClickAction, "cbRegionCaptureMouseMiddleClickAction");
+            this.cbRegionCaptureMouseMiddleClickAction.Name = "cbRegionCaptureMouseMiddleClickAction";
+            this.cbRegionCaptureMouseMiddleClickAction.SelectedIndexChanged += new System.EventHandler(this.cbRegionCaptureMouseMiddleClickAction_SelectedIndexChanged);
+            // 
+            // lblRegionCaptureMouseMiddleClickAction
+            // 
+            resources.ApplyResources(this.lblRegionCaptureMouseMiddleClickAction, "lblRegionCaptureMouseMiddleClickAction");
+            this.lblRegionCaptureMouseMiddleClickAction.Name = "lblRegionCaptureMouseMiddleClickAction";
+            // 
+            // cbRegionCaptureMouseRightClickAction
+            // 
+            this.cbRegionCaptureMouseRightClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRegionCaptureMouseRightClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbRegionCaptureMouseRightClickAction, "cbRegionCaptureMouseRightClickAction");
+            this.cbRegionCaptureMouseRightClickAction.Name = "cbRegionCaptureMouseRightClickAction";
+            this.cbRegionCaptureMouseRightClickAction.SelectedIndexChanged += new System.EventHandler(this.cbRegionCaptureMouseRightClickAction_SelectedIndexChanged);
+            // 
+            // lblRegionCaptureMouseRightClickAction
+            // 
+            resources.ApplyResources(this.lblRegionCaptureMouseRightClickAction, "lblRegionCaptureMouseRightClickAction");
+            this.lblRegionCaptureMouseRightClickAction.Name = "lblRegionCaptureMouseRightClickAction";
+            // 
+            // cbRegionCaptureMultiRegionMode
+            // 
+            resources.ApplyResources(this.cbRegionCaptureMultiRegionMode, "cbRegionCaptureMultiRegionMode");
+            this.cbRegionCaptureMultiRegionMode.Name = "cbRegionCaptureMultiRegionMode";
+            this.cbRegionCaptureMultiRegionMode.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureMultiRegionMode.CheckedChanged += new System.EventHandler(this.cbRegionCaptureMultiRegionMode_CheckedChanged);
             // 
             // tpScreenRecorder
             // 
@@ -1608,6 +1723,18 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // lblRegionCaptureSnapSizes
+            // 
+            resources.ApplyResources(this.lblRegionCaptureSnapSizes, "lblRegionCaptureSnapSizes");
+            this.lblRegionCaptureSnapSizes.Name = "lblRegionCaptureSnapSizes";
+            // 
+            // cbRegionCaptureSnapSizes
+            // 
+            this.cbRegionCaptureSnapSizes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRegionCaptureSnapSizes.FormattingEnabled = true;
+            resources.ApplyResources(this.cbRegionCaptureSnapSizes, "cbRegionCaptureSnapSizes");
+            this.cbRegionCaptureSnapSizes.Name = "cbRegionCaptureSnapSizes";
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1653,6 +1780,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpRegionCapture.ResumeLayout(false);
+            this.tpRegionCapture.PerformLayout();
             this.tpScreenRecorder.ResumeLayout(false);
             this.tpScreenRecorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).EndInit();
@@ -1777,7 +1905,6 @@
         private System.Windows.Forms.CheckBox cbPlaySoundAfterUpload;
         private System.Windows.Forms.CheckBox chkUseDefaultGeneralSettings;
         private System.Windows.Forms.Panel panelGeneral;
-        private System.Windows.Forms.PropertyGrid pgRegionCapture;
         private System.Windows.Forms.TabPage tpTools;
         private System.Windows.Forms.NumericUpDown nudScreenRecorderStartDelay;
         private System.Windows.Forms.Button btnImageEffects;
@@ -1852,5 +1979,21 @@
         private System.Windows.Forms.Label lblAutoIncrementNumber;
         private System.Windows.Forms.Label lblCaptureCustomRegion;
         private System.Windows.Forms.Button btnCaptureCustomRegionSelectRectangle;
+        private System.Windows.Forms.CheckBox cbRegionCaptureMultiRegionMode;
+        private System.Windows.Forms.Label lblRegionCaptureMouseRightClickAction;
+        private System.Windows.Forms.ComboBox cbRegionCaptureMouse5ClickAction;
+        private System.Windows.Forms.Label lblRegionCaptureMouse5ClickAction;
+        private System.Windows.Forms.ComboBox cbRegionCaptureMouse4ClickAction;
+        private System.Windows.Forms.Label lblRegionCaptureMouse4ClickAction;
+        private System.Windows.Forms.ComboBox cbRegionCaptureMouseMiddleClickAction;
+        private System.Windows.Forms.Label lblRegionCaptureMouseMiddleClickAction;
+        private System.Windows.Forms.ComboBox cbRegionCaptureMouseRightClickAction;
+        private System.Windows.Forms.CheckBox cbRegionCaptureDetectWindows;
+        private System.Windows.Forms.CheckBox cbRegionCaptureDetectControls;
+        private System.Windows.Forms.CheckBox cbRegionCaptureUseDimming;
+        private System.Windows.Forms.CheckBox cbRegionCaptureUseCustomInfoText;
+        private System.Windows.Forms.TextBox txtRegionCaptureUseCustomInfoText;
+        private System.Windows.Forms.Label lblRegionCaptureSnapSizes;
+        private System.Windows.Forms.ComboBox cbRegionCaptureSnapSizes;
     }
 }
