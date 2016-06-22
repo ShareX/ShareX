@@ -226,6 +226,15 @@ namespace ShareX.UploadersLib
             UseReducedRedundancyStorage = true
         };
 
+        // Azure Storage
+
+        public AzureStorageSettings AzureStorageSettings = new AzureStorageSettings()
+        {
+            UploadSecurityType = AzureStorageFileUploaderService.UploadType.SharedAccessSignature,
+            DefaultEndpointsProtocol = "https",
+            ObjectPrefix = "ShareX/%y/%mo"
+        };
+
         // ownCloud
 
         public string OwnCloudHost = "";
