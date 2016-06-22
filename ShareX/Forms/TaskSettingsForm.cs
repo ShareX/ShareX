@@ -247,8 +247,9 @@ namespace ShareX
             cbRegionCaptureDetectControls.Checked = TaskSettings.CaptureSettings.SurfaceOptions.DetectControls;
             cbRegionCaptureUseDimming.Checked = TaskSettings.CaptureSettings.SurfaceOptions.UseDimming;
             cbRegionCaptureUseCustomInfoText.Checked = TaskSettings.CaptureSettings.SurfaceOptions.UseCustomInfoText;
+            txtRegionCaptureCustomInfoText.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.UseCustomInfoText;
             TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText = TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText.Replace("\r\n", "$n").Replace("\n", "$n");
-            txtRegionCaptureUseCustomInfoText.Text = TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText;
+            txtRegionCaptureCustomInfoText.Text = TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText;
             cbRegionCaptureSnapSizes.Items.AddRange(TaskSettings.CaptureSettings.SurfaceOptions.SnapSizes.ToArray());
 
             #endregion Region capture
@@ -900,11 +901,43 @@ namespace ShareX
         private void cbRegionCaptureUseCustomInfoText_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.SurfaceOptions.UseCustomInfoText = cbRegionCaptureUseCustomInfoText.Checked;
+            txtRegionCaptureCustomInfoText.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.UseCustomInfoText;
         }
 
-        private void txtRegionCaptureUseCustomInfoText_TextChanged(object sender, EventArgs e)
+        private void txtRegionCaptureCustomInfoText_TextChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText = txtRegionCaptureUseCustomInfoText.Text;
+            TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText = txtRegionCaptureCustomInfoText.Text;
+        }
+
+        private void btnRegionCaptureSnapSizesAdd_Click(object sender, EventArgs e)
+        {
+            pRegionCaptureSnapSizes.Visible = true;
+        }
+
+        private void btnRegionCaptureSnapSizesRemove_Click(object sender, EventArgs e)
+        {
+            int index = cbRegionCaptureSnapSizes.SelectedIndex;
+
+            if (index > -1)
+            {
+                TaskSettings.CaptureSettings.SurfaceOptions.SnapSizes.RemoveAt(index);
+                cbRegionCaptureSnapSizes.Items.RemoveAt(index);
+                cbRegionCaptureSnapSizes.SelectedIndex = cbRegionCaptureSnapSizes.Items.Count - 1;
+            }
+        }
+
+        private void btnRegionCaptureSnapSizesDialogAdd_Click(object sender, EventArgs e)
+        {
+            pRegionCaptureSnapSizes.Visible = false;
+            SnapSize size = new SnapSize((int)nudRegionCaptureSnapSizesWidth.Value, (int)nudRegionCaptureSnapSizesHeight.Value);
+            TaskSettings.CaptureSettings.SurfaceOptions.SnapSizes.Add(size);
+            cbRegionCaptureSnapSizes.Items.Add(size);
+            cbRegionCaptureSnapSizes.SelectedIndex = cbRegionCaptureSnapSizes.Items.Count - 1;
+        }
+
+        private void btnRegionCaptureSnapSizesDialogCancel_Click(object sender, EventArgs e)
+        {
+            pRegionCaptureSnapSizes.Visible = false;
         }
 
         #endregion Region capture

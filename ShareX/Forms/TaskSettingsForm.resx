@@ -552,11 +552,62 @@
   <data name="&gt;&gt;tpCaptureGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnRegionCaptureSnapSizesRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>528, 218</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesRemove.Name" xml:space="preserve">
+    <value>btnRegionCaptureSnapSizesRemove</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesRemove.Parent" xml:space="preserve">
+    <value>tpRegionCapture</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesRemove.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>504, 218</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesAdd.Name" xml:space="preserve">
+    <value>btnRegionCaptureSnapSizesAdd</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesAdd.Parent" xml:space="preserve">
+    <value>tpRegionCapture</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesAdd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="cbRegionCaptureSnapSizes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 220</value>
+    <value>336, 220</value>
   </data>
   <data name="cbRegionCaptureSnapSizes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 21</value>
+    <value>167, 21</value>
   </data>
   <data name="cbRegionCaptureSnapSizes.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -571,7 +622,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureSnapSizes.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblRegionCaptureSnapSizes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -598,28 +649,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;lblRegionCaptureSnapSizes.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtRegionCaptureUseCustomInfoText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 198</value>
-  </data>
-  <data name="txtRegionCaptureUseCustomInfoText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 20</value>
-  </data>
-  <data name="txtRegionCaptureUseCustomInfoText.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;txtRegionCaptureUseCustomInfoText.Name" xml:space="preserve">
-    <value>txtRegionCaptureUseCustomInfoText</value>
-  </data>
-  <data name="&gt;&gt;txtRegionCaptureUseCustomInfoText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtRegionCaptureUseCustomInfoText.Parent" xml:space="preserve">
-    <value>tpRegionCapture</value>
-  </data>
-  <data name="&gt;&gt;txtRegionCaptureUseCustomInfoText.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbRegionCaptureUseCustomInfoText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -646,33 +676,6 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureUseCustomInfoText.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cbRegionCaptureUseDimming.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRegionCaptureUseDimming.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 176</value>
-  </data>
-  <data name="cbRegionCaptureUseDimming.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 17</value>
-  </data>
-  <data name="cbRegionCaptureUseDimming.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Dim background so selection can be diffrentiated easily (affects startup speed)</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseDimming.Name" xml:space="preserve">
-    <value>cbRegionCaptureUseDimming</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseDimming.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseDimming.Parent" xml:space="preserve">
-    <value>tpRegionCapture</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseDimming.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="cbRegionCaptureDetectControls.AutoSize" type="System.Boolean, mscorlib">
@@ -730,10 +733,10 @@
     <value>6</value>
   </data>
   <data name="cbRegionCaptureMouse5ClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 100</value>
+    <value>336, 100</value>
   </data>
   <data name="cbRegionCaptureMouse5ClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 21</value>
+    <value>216, 21</value>
   </data>
   <data name="cbRegionCaptureMouse5ClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -781,10 +784,10 @@
     <value>8</value>
   </data>
   <data name="cbRegionCaptureMouse4ClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 76</value>
+    <value>336, 76</value>
   </data>
   <data name="cbRegionCaptureMouse4ClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 21</value>
+    <value>216, 21</value>
   </data>
   <data name="cbRegionCaptureMouse4ClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -832,10 +835,10 @@
     <value>10</value>
   </data>
   <data name="cbRegionCaptureMouseMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 52</value>
+    <value>336, 52</value>
   </data>
   <data name="cbRegionCaptureMouseMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 21</value>
+    <value>216, 21</value>
   </data>
   <data name="cbRegionCaptureMouseMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -883,10 +886,10 @@
     <value>12</value>
   </data>
   <data name="cbRegionCaptureMouseRightClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 28</value>
+    <value>336, 28</value>
   </data>
   <data name="cbRegionCaptureMouseRightClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 21</value>
+    <value>216, 21</value>
   </data>
   <data name="cbRegionCaptureMouseRightClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -956,6 +959,231 @@
   </data>
   <data name="&gt;&gt;cbRegionCaptureMultiRegionMode.ZOrder" xml:space="preserve">
     <value>15</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 48</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 24</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogCancel.Name" xml:space="preserve">
+    <value>btnRegionCaptureSnapSizesDialogCancel</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogCancel.Parent" xml:space="preserve">
+    <value>pRegionCaptureSnapSizes</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 48</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 24</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogAdd.Name" xml:space="preserve">
+    <value>btnRegionCaptureSnapSizesDialogAdd</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogAdd.Parent" xml:space="preserve">
+    <value>pRegionCaptureSnapSizes</value>
+  </data>
+  <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogAdd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudRegionCaptureSnapSizesHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 24</value>
+  </data>
+  <data name="nudRegionCaptureSnapSizesHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 20</value>
+  </data>
+  <data name="nudRegionCaptureSnapSizesHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="nudRegionCaptureSnapSizesHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureSnapSizesHeight.Name" xml:space="preserve">
+    <value>nudRegionCaptureSnapSizesHeight</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureSnapSizesHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureSnapSizesHeight.Parent" xml:space="preserve">
+    <value>pRegionCaptureSnapSizes</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureSnapSizesHeight.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 8</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="&gt;&gt;RegionCaptureSnapSizesHeight.Name" xml:space="preserve">
+    <value>RegionCaptureSnapSizesHeight</value>
+  </data>
+  <data name="&gt;&gt;RegionCaptureSnapSizesHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RegionCaptureSnapSizesHeight.Parent" xml:space="preserve">
+    <value>pRegionCaptureSnapSizes</value>
+  </data>
+  <data name="&gt;&gt;RegionCaptureSnapSizesHeight.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="nudRegionCaptureSnapSizesWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="nudRegionCaptureSnapSizesWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 20</value>
+  </data>
+  <data name="nudRegionCaptureSnapSizesWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nudRegionCaptureSnapSizesWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureSnapSizesWidth.Name" xml:space="preserve">
+    <value>nudRegionCaptureSnapSizesWidth</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureSnapSizesWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureSnapSizesWidth.Parent" xml:space="preserve">
+    <value>pRegionCaptureSnapSizes</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureSnapSizesWidth.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>Width:</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureSnapSizesWidth.Name" xml:space="preserve">
+    <value>lblRegionCaptureSnapSizesWidth</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureSnapSizesWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureSnapSizesWidth.Parent" xml:space="preserve">
+    <value>pRegionCaptureSnapSizes</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureSnapSizesWidth.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="pRegionCaptureSnapSizes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 136</value>
+  </data>
+  <data name="pRegionCaptureSnapSizes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 112</value>
+  </data>
+  <data name="pRegionCaptureSnapSizes.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="pRegionCaptureSnapSizes.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pRegionCaptureSnapSizes.Name" xml:space="preserve">
+    <value>pRegionCaptureSnapSizes</value>
+  </data>
+  <data name="&gt;&gt;pRegionCaptureSnapSizes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pRegionCaptureSnapSizes.Parent" xml:space="preserve">
+    <value>tpRegionCapture</value>
+  </data>
+  <data name="&gt;&gt;pRegionCaptureSnapSizes.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 176</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 17</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
+    <value>Dim background so selection can be diffrentiated easily (affects startup speed)</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseDimming.Name" xml:space="preserve">
+    <value>cbRegionCaptureUseDimming</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseDimming.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseDimming.Parent" xml:space="preserve">
+    <value>tpRegionCapture</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseDimming.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="txtRegionCaptureCustomInfoText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 198</value>
+  </data>
+  <data name="txtRegionCaptureCustomInfoText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 20</value>
+  </data>
+  <data name="txtRegionCaptureCustomInfoText.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtRegionCaptureCustomInfoText.Name" xml:space="preserve">
+    <value>txtRegionCaptureCustomInfoText</value>
+  </data>
+  <data name="&gt;&gt;txtRegionCaptureCustomInfoText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtRegionCaptureCustomInfoText.Parent" xml:space="preserve">
+    <value>tpRegionCapture</value>
+  </data>
+  <data name="&gt;&gt;txtRegionCaptureCustomInfoText.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="tpRegionCapture.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
