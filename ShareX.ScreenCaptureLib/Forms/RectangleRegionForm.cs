@@ -552,7 +552,8 @@ namespace ShareX.ScreenCaptureLib
                         Replace("$b", color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
                         Replace("$hex", ColorHelpers.ColorToHex(color), StringComparison.InvariantCultureIgnoreCase).
                         Replace("$x", CurrentPosition.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                        Replace("$y", CurrentPosition.Y.ToString(), StringComparison.InvariantCultureIgnoreCase);
+                        Replace("$y", CurrentPosition.Y.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                        Replace("$n", Environment.NewLine, StringComparison.InvariantCultureIgnoreCase);
                 }
 
                 return string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y);
