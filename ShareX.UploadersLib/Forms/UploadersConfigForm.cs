@@ -144,11 +144,11 @@ namespace ShareX.UploadersLib
             ttlvMain.MainTabControl = tcUploaders;
             ttlvMain.FocusListView();
 
-            CodeMenu.Create(txtDropboxPath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
-            CodeMenu.Create(txtAmazonS3ObjectPrefix, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
-            CodeMenu.Create(txtMediaFirePath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
-            CodeMenu.Create(txtCustomUploaderArgValue, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
-            CodeMenu.Create(txtCustomUploaderHeaderValue, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtDropboxPath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtAmazonS3ObjectPrefix, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtMediaFirePath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtCustomUploaderArgValue, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtCustomUploaderHeaderValue, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
 
             txtCustomUploaderLog.AddContextMenu();
 

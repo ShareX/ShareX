@@ -176,7 +176,7 @@ namespace ShareX.HelpersLib
         {
             char[] chars = str.ToCharArray();
             Array.Reverse(chars);
-            return new String(chars);
+            return new string(chars);
         }
 
         public static string Truncate(this string str, int maxLength)

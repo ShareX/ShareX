@@ -41,7 +41,7 @@ namespace ShareX.HelpersLib
         public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
             Point pos = Cursor.Position;
-            CodeMenu.Create<ReplCodeMenuEntry>(ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn).Show(pos.X, pos.Y);
+            CodeMenu.Create(ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn).Show(pos.X, pos.Y);
             return value;
         }
     }

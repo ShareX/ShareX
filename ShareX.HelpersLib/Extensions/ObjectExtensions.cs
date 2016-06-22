@@ -37,7 +37,7 @@ namespace ShareX.HelpersLib
 
         public static bool IsPrimitive(this Type type)
         {
-            if (type == typeof(String)) return true;
+            if (type == typeof(string)) return true;
             return type.IsValueType & type.IsPrimitive;
         }
 

@@ -32,8 +32,7 @@ namespace ShareX.HelpersLib
 {
     public static class CodeMenu
     {
-        public static ContextMenuStrip Create<TEntry>(TextBox tb, params TEntry[] ignoreList)
-            where TEntry : CodeMenuEntry
+        public static ContextMenuStrip Create<TEntry>(TextBox tb, params TEntry[] ignoreList) where TEntry : CodeMenuEntry
         {
             ContextMenuStrip cms = new ContextMenuStrip
             {
@@ -117,8 +116,7 @@ namespace ShareX.HelpersLib
             return cms;
         }
 
-        public static ContextMenuStrip Create<TEntry>(params TEntry[] ignoreList)
-            where TEntry : CodeMenuEntry
+        public static ContextMenuStrip Create<TEntry>(params TEntry[] ignoreList) where TEntry : CodeMenuEntry
         {
             ContextMenuStrip cms = new ContextMenuStrip
             {

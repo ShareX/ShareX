@@ -88,7 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionsCodeMenuEntry.cs" />
+    <Compile Include="NameParser\ActionsCodeMenuEntry.cs" />
     <Compile Include="Automate\AutomateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,7 +99,7 @@
     <Compile Include="Automate\FunctionManager.cs" />
     <Compile Include="Automate\ScriptInfo.cs" />
     <Compile Include="ClipboardFormat.cs" />
-    <Compile Include="CodeMenu.cs" />
+    <Compile Include="NameParser\CodeMenu.cs" />
     <Compile Include="ColorMatrixManager.cs" />
     <Compile Include="Colors\CMYK.cs" />
     <Compile Include="Colors\ColorEventHandler.cs" />
@@ -187,11 +187,12 @@
     <Compile Include="HelpersOptions.cs" />
     <Compile Include="Helpers\URLHelpers.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />
-    <Compile Include="CodeMenuEntry.cs" />
+    <Compile Include="NameParser\CodeMenuEntry.cs" />
     <Compile Include="Input\InputHelpers.cs" />
     <Compile Include="Input\InputManager.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="MimeTypes.cs" />
+    <Compile Include="NameParser\RegionCaptureInfoTextCodeMenuEntry.cs" />
     <Compile Include="Native\LayeredForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +227,7 @@
     <Compile Include="Controls\TabToTreeView.Designer.cs">
       <DependentUpon>TabToTreeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="NameParser\ReplCodeMenuEntry.cs" />
     <Compile Include="TaskEx.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
@@ -406,7 +408,7 @@
     <Compile Include="FastDateTime.cs" />
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Logger.cs" />
-    <Compile Include="NameParser.cs" />
+    <Compile Include="NameParser\NameParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\StreamExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

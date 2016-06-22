@@ -23,25 +23,23 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Properties;
 using System;
 
 namespace ShareX.HelpersLib
 {
-    public abstract class CodeMenuEntry
+    public class ActionsCodeMenuEntry : CodeMenuEntry
     {
-        protected readonly String _value, _description, _category;
-
-        public CodeMenuEntry(string value, string description, string category = default(string))
+        public ActionsCodeMenuEntry(string value, string description) : base(value, description)
         {
-            _value = value;
-            _description = description;
-            _category = category;
         }
 
-        public String Value { get { return _value; } }
-        public String Description { get { return _description; } }
-        public String Category { get { return _category; } }
+        public override string ToPrefixString()
+        {
+            return '%' + _value;
+        }
 
-        public abstract string ToPrefixString();
+        public static readonly ActionsCodeMenuEntry FilePath = new ActionsCodeMenuEntry("input", Resources.ActionsCodeMenuEntry_FilePath_File_path);
+        public static readonly ActionsCodeMenuEntry OutputFilePath = new ActionsCodeMenuEntry("output", Resources.ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_);
     }
 }

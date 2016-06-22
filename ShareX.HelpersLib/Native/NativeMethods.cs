@@ -442,7 +442,7 @@ namespace ShareX.HelpersLib
         ///
         /// <returns>Returns zero on success or error code otherwise.</returns>
         [DllImport("avifil32.dll", CharSet = CharSet.Unicode)]
-        public static extern int AVIFileOpen(out IntPtr aviHandler, String fileName, OpenFileMode mode, IntPtr handler);
+        public static extern int AVIFileOpen(out IntPtr aviHandler, string fileName, OpenFileMode mode, IntPtr handler);
 
         /// <summary>
         /// Release an open AVI stream.

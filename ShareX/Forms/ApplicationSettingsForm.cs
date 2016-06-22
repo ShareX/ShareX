@@ -79,7 +79,7 @@ namespace ShareX
             cbTrayLeftClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
             cbTrayMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
 
-            CodeMenu.Create(txtSaveImageSubFolderPattern, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn, ReplCodeMenuEntry.i, ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtSaveImageSubFolderPattern, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn, ReplCodeMenuEntry.i, ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
 
             cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
 
