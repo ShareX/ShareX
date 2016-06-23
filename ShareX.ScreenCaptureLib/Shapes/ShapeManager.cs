@@ -638,7 +638,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiOptions.DropDownItems.Add(tsmiFixedSize);
 
             ToolStripDoubleLabeledNumericUpDown tslnudFixedSize = new ToolStripDoubleLabeledNumericUpDown("Width:", "Height:");
-            tslnudFixedSize.Content.Minimum = 5;
+            tslnudFixedSize.Content.Minimum = 10;
             tslnudFixedSize.Content.Maximum = 10000;
             tslnudFixedSize.Content.Increment = 10;
             tslnudFixedSize.Content.Value = Config.FixedSize.Width;

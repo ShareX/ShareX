@@ -120,11 +120,11 @@
             this.cbScreenshotDelay = new System.Windows.Forms.CheckBox();
             this.chkUseDefaultCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
+            this.btnRegionCaptureSnapSizesRemove = new System.Windows.Forms.Button();
+            this.btnRegionCaptureSnapSizesAdd = new System.Windows.Forms.Button();
             this.cbRegionCaptureSnapSizes = new System.Windows.Forms.ComboBox();
             this.lblRegionCaptureSnapSizes = new System.Windows.Forms.Label();
-            this.txtRegionCaptureCustomInfoText = new System.Windows.Forms.TextBox();
             this.cbRegionCaptureUseCustomInfoText = new System.Windows.Forms.CheckBox();
-            this.cbRegionCaptureUseDimming = new System.Windows.Forms.CheckBox();
             this.cbRegionCaptureDetectControls = new System.Windows.Forms.CheckBox();
             this.cbRegionCaptureDetectWindows = new System.Windows.Forms.CheckBox();
             this.cbRegionCaptureMouse5ClickAction = new System.Windows.Forms.ComboBox();
@@ -136,6 +136,15 @@
             this.cbRegionCaptureMouseRightClickAction = new System.Windows.Forms.ComboBox();
             this.lblRegionCaptureMouseRightClickAction = new System.Windows.Forms.Label();
             this.cbRegionCaptureMultiRegionMode = new System.Windows.Forms.CheckBox();
+            this.pRegionCaptureSnapSizes = new System.Windows.Forms.Panel();
+            this.btnRegionCaptureSnapSizesDialogCancel = new System.Windows.Forms.Button();
+            this.btnRegionCaptureSnapSizesDialogAdd = new System.Windows.Forms.Button();
+            this.nudRegionCaptureSnapSizesHeight = new System.Windows.Forms.NumericUpDown();
+            this.RegionCaptureSnapSizesHeight = new System.Windows.Forms.Label();
+            this.nudRegionCaptureSnapSizesWidth = new System.Windows.Forms.NumericUpDown();
+            this.lblRegionCaptureSnapSizesWidth = new System.Windows.Forms.Label();
+            this.cbRegionCaptureUseDimming = new System.Windows.Forms.CheckBox();
+            this.txtRegionCaptureCustomInfoText = new System.Windows.Forms.TextBox();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
             this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
             this.cbGIFEncoding = new System.Windows.Forms.ComboBox();
@@ -210,15 +219,22 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.btnRegionCaptureSnapSizesAdd = new System.Windows.Forms.Button();
-            this.btnRegionCaptureSnapSizesRemove = new System.Windows.Forms.Button();
-            this.pRegionCaptureSnapSizes = new System.Windows.Forms.Panel();
-            this.lblRegionCaptureSnapSizesWidth = new System.Windows.Forms.Label();
-            this.nudRegionCaptureSnapSizesWidth = new System.Windows.Forms.NumericUpDown();
-            this.RegionCaptureSnapSizesHeight = new System.Windows.Forms.Label();
-            this.nudRegionCaptureSnapSizesHeight = new System.Windows.Forms.NumericUpDown();
-            this.btnRegionCaptureSnapSizesDialogAdd = new System.Windows.Forms.Button();
-            this.btnRegionCaptureSnapSizesDialogCancel = new System.Windows.Forms.Button();
+            this.cbRegionCaptureShowTips = new System.Windows.Forms.CheckBox();
+            this.cbRegionCaptureShowInfo = new System.Windows.Forms.CheckBox();
+            this.cbRegionCaptureShowMagnifier = new System.Windows.Forms.CheckBox();
+            this.cbRegionCaptureUseSquareMagnifier = new System.Windows.Forms.CheckBox();
+            this.lblRegionCaptureMagnifierPixelCount = new System.Windows.Forms.Label();
+            this.nudRegionCaptureMagnifierPixelCount = new System.Windows.Forms.NumericUpDown();
+            this.lblRegionCaptureMagnifierPixelSize = new System.Windows.Forms.Label();
+            this.nudRegionCaptureMagnifierPixelSize = new System.Windows.Forms.NumericUpDown();
+            this.cbRegionCaptureShowCrosshair = new System.Windows.Forms.CheckBox();
+            this.cbRegionCaptureIsFixedSize = new System.Windows.Forms.CheckBox();
+            this.flpRegionCaptureFixedSize = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblRegionCaptureFixedSizeWidth = new System.Windows.Forms.Label();
+            this.nudRegionCaptureFixedSizeWidth = new System.Windows.Forms.NumericUpDown();
+            this.lblRegionCaptureFixedSizeHeight = new System.Windows.Forms.Label();
+            this.nudRegionCaptureFixedSizeHeight = new System.Windows.Forms.NumericUpDown();
+            this.cbRegionCaptureShowFPS = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -245,6 +261,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
             this.tpRegionCapture.SuspendLayout();
+            this.pRegionCaptureSnapSizes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesWidth)).BeginInit();
             this.tpScreenRecorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
@@ -265,9 +284,11 @@
             this.tpIndexer.SuspendLayout();
             this.tpVideoThumbnailer.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
-            this.pRegionCaptureSnapSizes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelSize)).BeginInit();
+            this.flpRegionCaptureFixedSize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeHeight)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -1005,6 +1026,19 @@
             // 
             // tpRegionCapture
             // 
+            resources.ApplyResources(this.tpRegionCapture, "tpRegionCapture");
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowFPS);
+            this.tpRegionCapture.Controls.Add(this.flpRegionCaptureFixedSize);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureIsFixedSize);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowCrosshair);
+            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelSize);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureMagnifierPixelSize);
+            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelCount);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureMagnifierPixelCount);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureUseSquareMagnifier);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowMagnifier);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowInfo);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowTips);
             this.tpRegionCapture.Controls.Add(this.btnRegionCaptureSnapSizesRemove);
             this.tpRegionCapture.Controls.Add(this.btnRegionCaptureSnapSizesAdd);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureSnapSizes);
@@ -1024,9 +1058,22 @@
             this.tpRegionCapture.Controls.Add(this.pRegionCaptureSnapSizes);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureUseDimming);
             this.tpRegionCapture.Controls.Add(this.txtRegionCaptureCustomInfoText);
-            resources.ApplyResources(this.tpRegionCapture, "tpRegionCapture");
             this.tpRegionCapture.Name = "tpRegionCapture";
             this.tpRegionCapture.UseVisualStyleBackColor = true;
+            // 
+            // btnRegionCaptureSnapSizesRemove
+            // 
+            resources.ApplyResources(this.btnRegionCaptureSnapSizesRemove, "btnRegionCaptureSnapSizesRemove");
+            this.btnRegionCaptureSnapSizesRemove.Name = "btnRegionCaptureSnapSizesRemove";
+            this.btnRegionCaptureSnapSizesRemove.UseVisualStyleBackColor = true;
+            this.btnRegionCaptureSnapSizesRemove.Click += new System.EventHandler(this.btnRegionCaptureSnapSizesRemove_Click);
+            // 
+            // btnRegionCaptureSnapSizesAdd
+            // 
+            resources.ApplyResources(this.btnRegionCaptureSnapSizesAdd, "btnRegionCaptureSnapSizesAdd");
+            this.btnRegionCaptureSnapSizesAdd.Name = "btnRegionCaptureSnapSizesAdd";
+            this.btnRegionCaptureSnapSizesAdd.UseVisualStyleBackColor = true;
+            this.btnRegionCaptureSnapSizesAdd.Click += new System.EventHandler(this.btnRegionCaptureSnapSizesAdd_Click);
             // 
             // cbRegionCaptureSnapSizes
             // 
@@ -1040,25 +1087,12 @@
             resources.ApplyResources(this.lblRegionCaptureSnapSizes, "lblRegionCaptureSnapSizes");
             this.lblRegionCaptureSnapSizes.Name = "lblRegionCaptureSnapSizes";
             // 
-            // txtRegionCaptureCustomInfoText
-            // 
-            resources.ApplyResources(this.txtRegionCaptureCustomInfoText, "txtRegionCaptureCustomInfoText");
-            this.txtRegionCaptureCustomInfoText.Name = "txtRegionCaptureCustomInfoText";
-            this.txtRegionCaptureCustomInfoText.TextChanged += new System.EventHandler(this.txtRegionCaptureCustomInfoText_TextChanged);
-            // 
             // cbRegionCaptureUseCustomInfoText
             // 
             resources.ApplyResources(this.cbRegionCaptureUseCustomInfoText, "cbRegionCaptureUseCustomInfoText");
             this.cbRegionCaptureUseCustomInfoText.Name = "cbRegionCaptureUseCustomInfoText";
             this.cbRegionCaptureUseCustomInfoText.UseVisualStyleBackColor = true;
             this.cbRegionCaptureUseCustomInfoText.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseCustomInfoText_CheckedChanged);
-            // 
-            // cbRegionCaptureUseDimming
-            // 
-            resources.ApplyResources(this.cbRegionCaptureUseDimming, "cbRegionCaptureUseDimming");
-            this.cbRegionCaptureUseDimming.Name = "cbRegionCaptureUseDimming";
-            this.cbRegionCaptureUseDimming.UseVisualStyleBackColor = true;
-            this.cbRegionCaptureUseDimming.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseDimming_CheckedChanged);
             // 
             // cbRegionCaptureDetectControls
             // 
@@ -1132,6 +1166,95 @@
             this.cbRegionCaptureMultiRegionMode.Name = "cbRegionCaptureMultiRegionMode";
             this.cbRegionCaptureMultiRegionMode.UseVisualStyleBackColor = true;
             this.cbRegionCaptureMultiRegionMode.CheckedChanged += new System.EventHandler(this.cbRegionCaptureMultiRegionMode_CheckedChanged);
+            // 
+            // pRegionCaptureSnapSizes
+            // 
+            this.pRegionCaptureSnapSizes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pRegionCaptureSnapSizes.Controls.Add(this.btnRegionCaptureSnapSizesDialogCancel);
+            this.pRegionCaptureSnapSizes.Controls.Add(this.btnRegionCaptureSnapSizesDialogAdd);
+            this.pRegionCaptureSnapSizes.Controls.Add(this.nudRegionCaptureSnapSizesHeight);
+            this.pRegionCaptureSnapSizes.Controls.Add(this.RegionCaptureSnapSizesHeight);
+            this.pRegionCaptureSnapSizes.Controls.Add(this.nudRegionCaptureSnapSizesWidth);
+            this.pRegionCaptureSnapSizes.Controls.Add(this.lblRegionCaptureSnapSizesWidth);
+            resources.ApplyResources(this.pRegionCaptureSnapSizes, "pRegionCaptureSnapSizes");
+            this.pRegionCaptureSnapSizes.Name = "pRegionCaptureSnapSizes";
+            // 
+            // btnRegionCaptureSnapSizesDialogCancel
+            // 
+            resources.ApplyResources(this.btnRegionCaptureSnapSizesDialogCancel, "btnRegionCaptureSnapSizesDialogCancel");
+            this.btnRegionCaptureSnapSizesDialogCancel.Name = "btnRegionCaptureSnapSizesDialogCancel";
+            this.btnRegionCaptureSnapSizesDialogCancel.UseVisualStyleBackColor = true;
+            this.btnRegionCaptureSnapSizesDialogCancel.Click += new System.EventHandler(this.btnRegionCaptureSnapSizesDialogCancel_Click);
+            // 
+            // btnRegionCaptureSnapSizesDialogAdd
+            // 
+            resources.ApplyResources(this.btnRegionCaptureSnapSizesDialogAdd, "btnRegionCaptureSnapSizesDialogAdd");
+            this.btnRegionCaptureSnapSizesDialogAdd.Name = "btnRegionCaptureSnapSizesDialogAdd";
+            this.btnRegionCaptureSnapSizesDialogAdd.UseVisualStyleBackColor = true;
+            this.btnRegionCaptureSnapSizesDialogAdd.Click += new System.EventHandler(this.btnRegionCaptureSnapSizesDialogAdd_Click);
+            // 
+            // nudRegionCaptureSnapSizesHeight
+            // 
+            resources.ApplyResources(this.nudRegionCaptureSnapSizesHeight, "nudRegionCaptureSnapSizesHeight");
+            this.nudRegionCaptureSnapSizesHeight.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureSnapSizesHeight.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureSnapSizesHeight.Name = "nudRegionCaptureSnapSizesHeight";
+            this.nudRegionCaptureSnapSizesHeight.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // RegionCaptureSnapSizesHeight
+            // 
+            resources.ApplyResources(this.RegionCaptureSnapSizesHeight, "RegionCaptureSnapSizesHeight");
+            this.RegionCaptureSnapSizesHeight.Name = "RegionCaptureSnapSizesHeight";
+            // 
+            // nudRegionCaptureSnapSizesWidth
+            // 
+            resources.ApplyResources(this.nudRegionCaptureSnapSizesWidth, "nudRegionCaptureSnapSizesWidth");
+            this.nudRegionCaptureSnapSizesWidth.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureSnapSizesWidth.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureSnapSizesWidth.Name = "nudRegionCaptureSnapSizesWidth";
+            this.nudRegionCaptureSnapSizesWidth.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // lblRegionCaptureSnapSizesWidth
+            // 
+            resources.ApplyResources(this.lblRegionCaptureSnapSizesWidth, "lblRegionCaptureSnapSizesWidth");
+            this.lblRegionCaptureSnapSizesWidth.Name = "lblRegionCaptureSnapSizesWidth";
+            // 
+            // cbRegionCaptureUseDimming
+            // 
+            resources.ApplyResources(this.cbRegionCaptureUseDimming, "cbRegionCaptureUseDimming");
+            this.cbRegionCaptureUseDimming.Name = "cbRegionCaptureUseDimming";
+            this.cbRegionCaptureUseDimming.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureUseDimming.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseDimming_CheckedChanged);
+            // 
+            // txtRegionCaptureCustomInfoText
+            // 
+            resources.ApplyResources(this.txtRegionCaptureCustomInfoText, "txtRegionCaptureCustomInfoText");
+            this.txtRegionCaptureCustomInfoText.Name = "txtRegionCaptureCustomInfoText";
+            this.txtRegionCaptureCustomInfoText.TextChanged += new System.EventHandler(this.txtRegionCaptureCustomInfoText_TextChanged);
             // 
             // tpScreenRecorder
             // 
@@ -1750,95 +1873,171 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // btnRegionCaptureSnapSizesAdd
+            // cbRegionCaptureShowTips
             // 
-            resources.ApplyResources(this.btnRegionCaptureSnapSizesAdd, "btnRegionCaptureSnapSizesAdd");
-            this.btnRegionCaptureSnapSizesAdd.Name = "btnRegionCaptureSnapSizesAdd";
-            this.btnRegionCaptureSnapSizesAdd.UseVisualStyleBackColor = true;
-            this.btnRegionCaptureSnapSizesAdd.Click += new System.EventHandler(this.btnRegionCaptureSnapSizesAdd_Click);
+            resources.ApplyResources(this.cbRegionCaptureShowTips, "cbRegionCaptureShowTips");
+            this.cbRegionCaptureShowTips.Name = "cbRegionCaptureShowTips";
+            this.cbRegionCaptureShowTips.UseVisualStyleBackColor = true;
             // 
-            // btnRegionCaptureSnapSizesRemove
+            // cbRegionCaptureShowInfo
             // 
-            resources.ApplyResources(this.btnRegionCaptureSnapSizesRemove, "btnRegionCaptureSnapSizesRemove");
-            this.btnRegionCaptureSnapSizesRemove.Name = "btnRegionCaptureSnapSizesRemove";
-            this.btnRegionCaptureSnapSizesRemove.UseVisualStyleBackColor = true;
-            this.btnRegionCaptureSnapSizesRemove.Click += new System.EventHandler(this.btnRegionCaptureSnapSizesRemove_Click);
+            resources.ApplyResources(this.cbRegionCaptureShowInfo, "cbRegionCaptureShowInfo");
+            this.cbRegionCaptureShowInfo.Name = "cbRegionCaptureShowInfo";
+            this.cbRegionCaptureShowInfo.UseVisualStyleBackColor = true;
             // 
-            // pRegionCaptureSnapSizes
+            // cbRegionCaptureShowMagnifier
             // 
-            this.pRegionCaptureSnapSizes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pRegionCaptureSnapSizes.Controls.Add(this.btnRegionCaptureSnapSizesDialogCancel);
-            this.pRegionCaptureSnapSizes.Controls.Add(this.btnRegionCaptureSnapSizesDialogAdd);
-            this.pRegionCaptureSnapSizes.Controls.Add(this.nudRegionCaptureSnapSizesHeight);
-            this.pRegionCaptureSnapSizes.Controls.Add(this.RegionCaptureSnapSizesHeight);
-            this.pRegionCaptureSnapSizes.Controls.Add(this.nudRegionCaptureSnapSizesWidth);
-            this.pRegionCaptureSnapSizes.Controls.Add(this.lblRegionCaptureSnapSizesWidth);
-            resources.ApplyResources(this.pRegionCaptureSnapSizes, "pRegionCaptureSnapSizes");
-            this.pRegionCaptureSnapSizes.Name = "pRegionCaptureSnapSizes";
+            resources.ApplyResources(this.cbRegionCaptureShowMagnifier, "cbRegionCaptureShowMagnifier");
+            this.cbRegionCaptureShowMagnifier.Name = "cbRegionCaptureShowMagnifier";
+            this.cbRegionCaptureShowMagnifier.UseVisualStyleBackColor = true;
             // 
-            // lblRegionCaptureSnapSizesWidth
+            // cbRegionCaptureUseSquareMagnifier
             // 
-            resources.ApplyResources(this.lblRegionCaptureSnapSizesWidth, "lblRegionCaptureSnapSizesWidth");
-            this.lblRegionCaptureSnapSizesWidth.Name = "lblRegionCaptureSnapSizesWidth";
+            resources.ApplyResources(this.cbRegionCaptureUseSquareMagnifier, "cbRegionCaptureUseSquareMagnifier");
+            this.cbRegionCaptureUseSquareMagnifier.Name = "cbRegionCaptureUseSquareMagnifier";
+            this.cbRegionCaptureUseSquareMagnifier.UseVisualStyleBackColor = true;
             // 
-            // nudRegionCaptureSnapSizesWidth
+            // lblRegionCaptureMagnifierPixelCount
             // 
-            resources.ApplyResources(this.nudRegionCaptureSnapSizesWidth, "nudRegionCaptureSnapSizesWidth");
-            this.nudRegionCaptureSnapSizesWidth.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.nudRegionCaptureSnapSizesWidth.Minimum = new decimal(new int[] {
+            resources.ApplyResources(this.lblRegionCaptureMagnifierPixelCount, "lblRegionCaptureMagnifierPixelCount");
+            this.lblRegionCaptureMagnifierPixelCount.Name = "lblRegionCaptureMagnifierPixelCount";
+            // 
+            // nudRegionCaptureMagnifierPixelCount
+            // 
+            this.nudRegionCaptureMagnifierPixelCount.Increment = new decimal(new int[] {
             2,
             0,
             0,
             0});
-            this.nudRegionCaptureSnapSizesWidth.Name = "nudRegionCaptureSnapSizesWidth";
-            this.nudRegionCaptureSnapSizesWidth.Value = new decimal(new int[] {
-            100,
+            resources.ApplyResources(this.nudRegionCaptureMagnifierPixelCount, "nudRegionCaptureMagnifierPixelCount");
+            this.nudRegionCaptureMagnifierPixelCount.Maximum = new decimal(new int[] {
+            35,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureMagnifierPixelCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureMagnifierPixelCount.Name = "nudRegionCaptureMagnifierPixelCount";
+            this.nudRegionCaptureMagnifierPixelCount.Value = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             // 
-            // RegionCaptureSnapSizesHeight
+            // lblRegionCaptureMagnifierPixelSize
             // 
-            resources.ApplyResources(this.RegionCaptureSnapSizesHeight, "RegionCaptureSnapSizesHeight");
-            this.RegionCaptureSnapSizesHeight.Name = "RegionCaptureSnapSizesHeight";
+            resources.ApplyResources(this.lblRegionCaptureMagnifierPixelSize, "lblRegionCaptureMagnifierPixelSize");
+            this.lblRegionCaptureMagnifierPixelSize.Name = "lblRegionCaptureMagnifierPixelSize";
             // 
-            // nudRegionCaptureSnapSizesHeight
+            // nudRegionCaptureMagnifierPixelSize
             // 
-            resources.ApplyResources(this.nudRegionCaptureSnapSizesHeight, "nudRegionCaptureSnapSizesHeight");
-            this.nudRegionCaptureSnapSizesHeight.Maximum = new decimal(new int[] {
-            10000,
+            resources.ApplyResources(this.nudRegionCaptureMagnifierPixelSize, "nudRegionCaptureMagnifierPixelSize");
+            this.nudRegionCaptureMagnifierPixelSize.Maximum = new decimal(new int[] {
+            30,
             0,
             0,
             0});
-            this.nudRegionCaptureSnapSizesHeight.Minimum = new decimal(new int[] {
+            this.nudRegionCaptureMagnifierPixelSize.Minimum = new decimal(new int[] {
             2,
             0,
             0,
             0});
-            this.nudRegionCaptureSnapSizesHeight.Name = "nudRegionCaptureSnapSizesHeight";
-            this.nudRegionCaptureSnapSizesHeight.Value = new decimal(new int[] {
-            100,
+            this.nudRegionCaptureMagnifierPixelSize.Name = "nudRegionCaptureMagnifierPixelSize";
+            this.nudRegionCaptureMagnifierPixelSize.Value = new decimal(new int[] {
+            2,
             0,
             0,
             0});
             // 
-            // btnRegionCaptureSnapSizesDialogAdd
+            // cbRegionCaptureShowCrosshair
             // 
-            resources.ApplyResources(this.btnRegionCaptureSnapSizesDialogAdd, "btnRegionCaptureSnapSizesDialogAdd");
-            this.btnRegionCaptureSnapSizesDialogAdd.Name = "btnRegionCaptureSnapSizesDialogAdd";
-            this.btnRegionCaptureSnapSizesDialogAdd.UseVisualStyleBackColor = true;
-            this.btnRegionCaptureSnapSizesDialogAdd.Click += new System.EventHandler(this.btnRegionCaptureSnapSizesDialogAdd_Click);
+            resources.ApplyResources(this.cbRegionCaptureShowCrosshair, "cbRegionCaptureShowCrosshair");
+            this.cbRegionCaptureShowCrosshair.Name = "cbRegionCaptureShowCrosshair";
+            this.cbRegionCaptureShowCrosshair.UseVisualStyleBackColor = true;
             // 
-            // btnRegionCaptureSnapSizesDialogCancel
+            // cbRegionCaptureIsFixedSize
             // 
-            resources.ApplyResources(this.btnRegionCaptureSnapSizesDialogCancel, "btnRegionCaptureSnapSizesDialogCancel");
-            this.btnRegionCaptureSnapSizesDialogCancel.Name = "btnRegionCaptureSnapSizesDialogCancel";
-            this.btnRegionCaptureSnapSizesDialogCancel.UseVisualStyleBackColor = true;
-            this.btnRegionCaptureSnapSizesDialogCancel.Click += new System.EventHandler(this.btnRegionCaptureSnapSizesDialogCancel_Click);
+            resources.ApplyResources(this.cbRegionCaptureIsFixedSize, "cbRegionCaptureIsFixedSize");
+            this.cbRegionCaptureIsFixedSize.Name = "cbRegionCaptureIsFixedSize";
+            this.cbRegionCaptureIsFixedSize.UseVisualStyleBackColor = true;
+            // 
+            // flpRegionCaptureFixedSize
+            // 
+            resources.ApplyResources(this.flpRegionCaptureFixedSize, "flpRegionCaptureFixedSize");
+            this.flpRegionCaptureFixedSize.Controls.Add(this.lblRegionCaptureFixedSizeWidth);
+            this.flpRegionCaptureFixedSize.Controls.Add(this.nudRegionCaptureFixedSizeWidth);
+            this.flpRegionCaptureFixedSize.Controls.Add(this.lblRegionCaptureFixedSizeHeight);
+            this.flpRegionCaptureFixedSize.Controls.Add(this.nudRegionCaptureFixedSizeHeight);
+            this.flpRegionCaptureFixedSize.Name = "flpRegionCaptureFixedSize";
+            // 
+            // lblRegionCaptureFixedSizeWidth
+            // 
+            resources.ApplyResources(this.lblRegionCaptureFixedSizeWidth, "lblRegionCaptureFixedSizeWidth");
+            this.lblRegionCaptureFixedSizeWidth.Name = "lblRegionCaptureFixedSizeWidth";
+            // 
+            // nudRegionCaptureFixedSizeWidth
+            // 
+            this.nudRegionCaptureFixedSizeWidth.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.nudRegionCaptureFixedSizeWidth, "nudRegionCaptureFixedSizeWidth");
+            this.nudRegionCaptureFixedSizeWidth.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureFixedSizeWidth.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureFixedSizeWidth.Name = "nudRegionCaptureFixedSizeWidth";
+            this.nudRegionCaptureFixedSizeWidth.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // lblRegionCaptureFixedSizeHeight
+            // 
+            resources.ApplyResources(this.lblRegionCaptureFixedSizeHeight, "lblRegionCaptureFixedSizeHeight");
+            this.lblRegionCaptureFixedSizeHeight.Name = "lblRegionCaptureFixedSizeHeight";
+            // 
+            // nudRegionCaptureFixedSizeHeight
+            // 
+            this.nudRegionCaptureFixedSizeHeight.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.nudRegionCaptureFixedSizeHeight, "nudRegionCaptureFixedSizeHeight");
+            this.nudRegionCaptureFixedSizeHeight.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureFixedSizeHeight.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureFixedSizeHeight.Name = "nudRegionCaptureFixedSizeHeight";
+            this.nudRegionCaptureFixedSizeHeight.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // cbRegionCaptureShowFPS
+            // 
+            resources.ApplyResources(this.cbRegionCaptureShowFPS, "cbRegionCaptureShowFPS");
+            this.cbRegionCaptureShowFPS.Name = "cbRegionCaptureShowFPS";
+            this.cbRegionCaptureShowFPS.UseVisualStyleBackColor = true;
             // 
             // TaskSettingsForm
             // 
@@ -1886,6 +2085,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpRegionCapture.ResumeLayout(false);
             this.tpRegionCapture.PerformLayout();
+            this.pRegionCaptureSnapSizes.ResumeLayout(false);
+            this.pRegionCaptureSnapSizes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesWidth)).EndInit();
             this.tpScreenRecorder.ResumeLayout(false);
             this.tpScreenRecorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).EndInit();
@@ -1914,10 +2117,12 @@
             this.tpVideoThumbnailer.ResumeLayout(false);
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
-            this.pRegionCaptureSnapSizes.ResumeLayout(false);
-            this.pRegionCaptureSnapSizes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureSnapSizesHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelSize)).EndInit();
+            this.flpRegionCaptureFixedSize.ResumeLayout(false);
+            this.flpRegionCaptureFixedSize.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeHeight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2113,5 +2318,21 @@
         private System.Windows.Forms.Label RegionCaptureSnapSizesHeight;
         private System.Windows.Forms.NumericUpDown nudRegionCaptureSnapSizesWidth;
         private System.Windows.Forms.Label lblRegionCaptureSnapSizesWidth;
+        private System.Windows.Forms.CheckBox cbRegionCaptureShowTips;
+        private System.Windows.Forms.CheckBox cbRegionCaptureShowInfo;
+        private System.Windows.Forms.CheckBox cbRegionCaptureShowMagnifier;
+        private System.Windows.Forms.Label lblRegionCaptureMagnifierPixelCount;
+        private System.Windows.Forms.CheckBox cbRegionCaptureUseSquareMagnifier;
+        private System.Windows.Forms.NumericUpDown nudRegionCaptureMagnifierPixelCount;
+        private System.Windows.Forms.NumericUpDown nudRegionCaptureMagnifierPixelSize;
+        private System.Windows.Forms.Label lblRegionCaptureMagnifierPixelSize;
+        private System.Windows.Forms.CheckBox cbRegionCaptureShowCrosshair;
+        private System.Windows.Forms.FlowLayoutPanel flpRegionCaptureFixedSize;
+        private System.Windows.Forms.Label lblRegionCaptureFixedSizeWidth;
+        private System.Windows.Forms.NumericUpDown nudRegionCaptureFixedSizeWidth;
+        private System.Windows.Forms.Label lblRegionCaptureFixedSizeHeight;
+        private System.Windows.Forms.CheckBox cbRegionCaptureIsFixedSize;
+        private System.Windows.Forms.NumericUpDown nudRegionCaptureFixedSizeHeight;
+        private System.Windows.Forms.CheckBox cbRegionCaptureShowFPS;
     }
 }

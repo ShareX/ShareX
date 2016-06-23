@@ -76,7 +76,6 @@ Resources.AboutForm_AboutForm_Changelog, Links.URL_CHANGELOG);
 https://github.com/ShareX/ShareX/graphs/contributors
 
 Mega, Gist and Jira support: https://github.com/gpailler
-Web site: https://github.com/dmxt
 Amazon S3 and DreamObjects support: https://github.com/alanedwardes
 Gfycat support: https://github.com/Dinnerbone
 AdFly support: https://github.com/LRNAB

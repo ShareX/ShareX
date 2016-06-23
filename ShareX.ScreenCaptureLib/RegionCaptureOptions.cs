@@ -31,8 +31,6 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RegionCaptureOptions
     {
-        // Settings in task settings window
-
         public bool QuickCrop = true;
         public RegionCaptureAction MouseRightClickAction = RegionCaptureAction.OpenOptionsMenu;
         public RegionCaptureAction MouseMiddleClickAction = RegionCaptureAction.CancelCapture;
@@ -52,8 +50,6 @@ namespace ShareX.ScreenCaptureLib
             new SnapSize(1920, 1080) // 1080p
         };
 
-        // Settings in region capture right click menu
-
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
         public bool ShowTips = true;
         public bool ShowInfo = true;
@@ -65,8 +61,6 @@ namespace ShareX.ScreenCaptureLib
         public bool IsFixedSize = false;
         public Size FixedSize = new Size(250, 250);
         public bool ShowFPS = false;
-
-        // Settings not changeable from UI
 
         public ShapeType LastRegionTool = ShapeType.RegionRectangle;
         public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
