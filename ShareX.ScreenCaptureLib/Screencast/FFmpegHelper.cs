@@ -105,8 +105,15 @@ namespace ShareX.ScreenCaptureLib
 
                 if (result)
                 {
-                    // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
-                    result = Run(Options.FFmpeg.FFmpegPath, string.Format("-y -i \"{0}\" -i \"{1}\" -lavfi \"paletteuse=dither={3}\" \"{2}\"", input, palettePath, output, Options.FFmpeg.GIFDither));
+                    if (File.Exists(palettePath))
+                    {
+                        // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
+                        result = Run(Options.FFmpeg.FFmpegPath, string.Format("-y -i \"{0}\" -i \"{1}\" -lavfi \"paletteuse=dither={3}\" \"{2}\"", input, palettePath, output, Options.FFmpeg.GIFDither));
+                    }
+                    else
+                    {
+                        result = false;
+                    }
                 }
             }
             finally
