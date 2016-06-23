@@ -78,12 +78,15 @@ namespace ShareX
             FileAction.Extensions = txtExtensions.Text;
             FileAction.OutputExtension = txtOutputExtension.Text;
             FileAction.HiddenWindow = cbHiddenWindow.Checked;
+
             DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

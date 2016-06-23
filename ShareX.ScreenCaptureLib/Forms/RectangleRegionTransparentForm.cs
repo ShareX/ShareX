@@ -83,10 +83,10 @@ namespace ShareX.ScreenCaptureLib
             Bounds = ScreenRectangle;
             Text = "ShareX - " + Resources.RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent;
 
-            Shown += RectangleLight_Shown;
-            KeyUp += RectangleLight_KeyUp;
-            MouseDown += RectangleLight_MouseDown;
-            MouseUp += RectangleLight_MouseUp;
+            Shown += RectangleTransparent_Shown;
+            KeyUp += RectangleTransparent_KeyUp;
+            MouseDown += RectangleTransparent_MouseDown;
+            MouseUp += RectangleTransparent_MouseUp;
 
             using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
             {
@@ -110,20 +110,21 @@ namespace ShareX.ScreenCaptureLib
             base.Dispose(disposing);
         }
 
-        private void RectangleLight_Shown(object sender, EventArgs e)
+        private void RectangleTransparent_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
         }
 
-        private void RectangleLight_KeyUp(object sender, KeyEventArgs e)
+        private void RectangleTransparent_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
                 DialogResult = DialogResult.Cancel;
+                Close();
             }
         }
 
-        private void RectangleLight_MouseDown(object sender, MouseEventArgs e)
+        private void RectangleTransparent_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -132,7 +133,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void RectangleLight_MouseUp(object sender, MouseEventArgs e)
+        private void RectangleTransparent_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -140,13 +141,14 @@ namespace ShareX.ScreenCaptureLib
                 {
                     LastSelectionRectangle0Based = SelectionRectangle0Based;
                     DialogResult = DialogResult.OK;
+                    Close();
                 }
                 else
                 {
                     isMouseDown = false;
                 }
             }
-            else
+            else if (e.Button == MouseButtons.Right)
             {
                 if (isMouseDown)
                 {
@@ -155,6 +157,7 @@ namespace ShareX.ScreenCaptureLib
                 else
                 {
                     DialogResult = DialogResult.Cancel;
+                    Close();
                 }
             }
         }

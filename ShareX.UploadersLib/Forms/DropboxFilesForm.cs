@@ -145,6 +145,7 @@ namespace ShareX.UploadersLib.Forms
         private void tsbSelectFolder_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void tsmiCopyPublicLink_Click(object sender, EventArgs e)

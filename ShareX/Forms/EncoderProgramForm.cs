@@ -74,11 +74,13 @@ namespace ShareX
             encoder.OutputExtension = txtExtension.Text;
 
             DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

@@ -125,6 +125,7 @@ namespace ShareX.ScreenCaptureLib
             if (e.KeyCode == Keys.Escape)
             {
                 DialogResult = DialogResult.Cancel;
+                Close();
             }
         }
 
@@ -145,13 +146,14 @@ namespace ShareX.ScreenCaptureLib
                 {
                     LastSelectionRectangle0Based = SelectionRectangle0Based;
                     DialogResult = DialogResult.OK;
+                    Close();
                 }
                 else
                 {
                     isMouseDown = false;
                 }
             }
-            else
+            else if (e.Button == MouseButtons.Right)
             {
                 if (isMouseDown)
                 {
@@ -161,6 +163,7 @@ namespace ShareX.ScreenCaptureLib
                 else
                 {
                     DialogResult = DialogResult.Cancel;
+                    Close();
                 }
             }
         }

@@ -415,6 +415,7 @@ namespace ShareX.ImageEffectsLib
         private void btnOK_Click(object sender, EventArgs e)
         {
             Effects = GetImageEffects();
+
             DialogResult = DialogResult.OK;
             Close();
         }

@@ -58,12 +58,15 @@ namespace ShareX.UploadersLib
             ToEmail = txtToEmail.Text;
             Subject = txtSubject.Text;
             Body = txtMessage.Text;
+
             DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

@@ -69,6 +69,7 @@ namespace ShareX.UploadersLib
                     if (!string.IsNullOrEmpty(Code))
                     {
                         DialogResult = DialogResult.OK;
+                        Close();
                     }
                 }
             }

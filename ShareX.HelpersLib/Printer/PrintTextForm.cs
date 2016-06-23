@@ -75,6 +75,7 @@ namespace ShareX.HelpersLib
         private void btnPrint_Click(object sender, EventArgs e)
         {
             printHelper.Print();
+
             DialogResult = DialogResult.OK;
             Close();
         }
