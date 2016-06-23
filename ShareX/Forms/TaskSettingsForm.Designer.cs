@@ -1878,24 +1878,28 @@
             resources.ApplyResources(this.cbRegionCaptureShowTips, "cbRegionCaptureShowTips");
             this.cbRegionCaptureShowTips.Name = "cbRegionCaptureShowTips";
             this.cbRegionCaptureShowTips.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureShowTips.CheckedChanged += new System.EventHandler(this.cbRegionCaptureShowTips_CheckedChanged);
             // 
             // cbRegionCaptureShowInfo
             // 
             resources.ApplyResources(this.cbRegionCaptureShowInfo, "cbRegionCaptureShowInfo");
             this.cbRegionCaptureShowInfo.Name = "cbRegionCaptureShowInfo";
             this.cbRegionCaptureShowInfo.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureShowInfo.CheckedChanged += new System.EventHandler(this.cbRegionCaptureShowInfo_CheckedChanged);
             // 
             // cbRegionCaptureShowMagnifier
             // 
             resources.ApplyResources(this.cbRegionCaptureShowMagnifier, "cbRegionCaptureShowMagnifier");
             this.cbRegionCaptureShowMagnifier.Name = "cbRegionCaptureShowMagnifier";
             this.cbRegionCaptureShowMagnifier.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureShowMagnifier.CheckedChanged += new System.EventHandler(this.cbRegionCaptureShowMagnifier_CheckedChanged);
             // 
             // cbRegionCaptureUseSquareMagnifier
             // 
             resources.ApplyResources(this.cbRegionCaptureUseSquareMagnifier, "cbRegionCaptureUseSquareMagnifier");
             this.cbRegionCaptureUseSquareMagnifier.Name = "cbRegionCaptureUseSquareMagnifier";
             this.cbRegionCaptureUseSquareMagnifier.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureUseSquareMagnifier.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseSquareMagnifier_CheckedChanged);
             // 
             // lblRegionCaptureMagnifierPixelCount
             // 
@@ -1926,6 +1930,7 @@
             0,
             0,
             0});
+            this.nudRegionCaptureMagnifierPixelCount.ValueChanged += new System.EventHandler(this.nudRegionCaptureMagnifierPixelCount_ValueChanged);
             // 
             // lblRegionCaptureMagnifierPixelSize
             // 
@@ -1951,18 +1956,21 @@
             0,
             0,
             0});
+            this.nudRegionCaptureMagnifierPixelSize.ValueChanged += new System.EventHandler(this.nudRegionCaptureMagnifierPixelSize_ValueChanged);
             // 
             // cbRegionCaptureShowCrosshair
             // 
             resources.ApplyResources(this.cbRegionCaptureShowCrosshair, "cbRegionCaptureShowCrosshair");
             this.cbRegionCaptureShowCrosshair.Name = "cbRegionCaptureShowCrosshair";
             this.cbRegionCaptureShowCrosshair.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureShowCrosshair.CheckedChanged += new System.EventHandler(this.cbRegionCaptureShowCrosshair_CheckedChanged);
             // 
             // cbRegionCaptureIsFixedSize
             // 
             resources.ApplyResources(this.cbRegionCaptureIsFixedSize, "cbRegionCaptureIsFixedSize");
             this.cbRegionCaptureIsFixedSize.Name = "cbRegionCaptureIsFixedSize";
             this.cbRegionCaptureIsFixedSize.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureIsFixedSize.CheckedChanged += new System.EventHandler(this.cbRegionCaptureIsFixedSize_CheckedChanged);
             // 
             // flpRegionCaptureFixedSize
             // 
@@ -2002,6 +2010,7 @@
             0,
             0,
             0});
+            this.nudRegionCaptureFixedSizeWidth.ValueChanged += new System.EventHandler(this.nudRegionCaptureFixedSizeWidth_ValueChanged);
             // 
             // lblRegionCaptureFixedSizeHeight
             // 
@@ -2032,12 +2041,14 @@
             0,
             0,
             0});
+            this.nudRegionCaptureFixedSizeHeight.ValueChanged += new System.EventHandler(this.nudRegionCaptureFixedSizeHeight_ValueChanged);
             // 
             // cbRegionCaptureShowFPS
             // 
             resources.ApplyResources(this.cbRegionCaptureShowFPS, "cbRegionCaptureShowFPS");
             this.cbRegionCaptureShowFPS.Name = "cbRegionCaptureShowFPS";
             this.cbRegionCaptureShowFPS.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureShowFPS.CheckedChanged += new System.EventHandler(this.cbRegionCaptureShowFPS_CheckedChanged);
             // 
             // TaskSettingsForm
             // 
