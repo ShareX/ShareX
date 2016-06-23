@@ -549,6 +549,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.pbPuush = new System.Windows.Forms.PictureBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -628,6 +629,7 @@
             this.tpVgyme.SuspendLayout();
             this.tpSomeImage.SuspendLayout();
             this.tcUploaders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).BeginInit();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -1923,6 +1925,7 @@
             // 
             // tpPuush
             // 
+            this.tpPuush.Controls.Add(this.pbPuush);
             this.tpPuush.Controls.Add(this.lblPuushAPIKey);
             this.tpPuush.Controls.Add(this.txtPuushAPIKey);
             this.tpPuush.Controls.Add(this.llPuushCreateAccount);
@@ -4404,6 +4407,15 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // pbPuush
+            // 
+            this.pbPuush.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbPuush.Image = global::ShareX.UploadersLib.Properties.Resources.puush_256;
+            resources.ApplyResources(this.pbPuush, "pbPuush");
+            this.pbPuush.Name = "pbPuush";
+            this.pbPuush.TabStop = false;
+            this.pbPuush.Click += new System.EventHandler(this.pbPuush_Click);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4555,6 +4567,7 @@
             this.tpSomeImage.ResumeLayout(false);
             this.tpSomeImage.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5080,5 +5093,6 @@
         private System.Windows.Forms.Label lblPuushEmail;
         private System.Windows.Forms.Label lblPuushPassword;
         public System.Windows.Forms.TabPage tpPuush;
+        private System.Windows.Forms.PictureBox pbPuush;
     }
 }

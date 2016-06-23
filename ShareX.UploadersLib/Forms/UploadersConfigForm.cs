@@ -1509,6 +1509,38 @@ namespace ShareX.UploadersLib
 
         #region puush
 
+        private bool PuushValidationCheck()
+        {
+            bool result = true;
+
+            if (string.IsNullOrEmpty(txtPuushEmail.Text))
+            {
+                txtPuushEmail.BackColor = Color.FromArgb(255, 200, 200);
+                result = false;
+            }
+            else
+            {
+                txtPuushEmail.BackColor = SystemColors.Window;
+            }
+
+            if (string.IsNullOrEmpty(txtPuushPassword.Text))
+            {
+                txtPuushPassword.BackColor = Color.FromArgb(255, 200, 200);
+                result = false;
+            }
+            else
+            {
+                txtPuushPassword.BackColor = SystemColors.Window;
+            }
+
+            return result;
+        }
+
+        private void pbPuush_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Puush.PuushURL);
+        }
+
         private void llPuushCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             URLHelpers.OpenURL(Puush.PuushRegisterURL);
@@ -1521,21 +1553,7 @@ namespace ShareX.UploadersLib
 
         private void btnPuushLogin_Click(object sender, EventArgs e)
         {
-            bool result = true;
-
-            if (string.IsNullOrEmpty(txtPuushEmail.Text))
-            {
-                txtPuushEmail.BackColor = Color.FromArgb(255, 200, 200);
-                result = false;
-            }
-
-            if (string.IsNullOrEmpty(txtPuushPassword.Text))
-            {
-                txtPuushPassword.BackColor = Color.FromArgb(255, 200, 200);
-                result = false;
-            }
-
-            if (result)
+            if (PuushValidationCheck())
             {
                 txtPuushAPIKey.Text = "";
 
