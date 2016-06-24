@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -53,8 +54,6 @@ namespace ShareX
             }
         }
 
-        public static bool IsBeta { get; } = false;
-
         public static string Title
         {
             get
@@ -62,6 +61,7 @@ namespace ShareX
                 Version version = Version.Parse(Application.ProductVersion);
                 string title = string.Format("ShareX {0}.{1}", version.Major, version.Minor);
                 if (version.Build > 0) title += "." + version.Build;
+                if (version.Revision > 0) title += "." + version.Revision;
                 if (IsPortable) title += " Portable";
                 if (IsBeta) title += " Beta";
                 return title;
@@ -72,17 +72,17 @@ namespace ShareX
         {
             get
             {
-                return $"{Title} {Build}";
+                return $"{Title} ({Build})";
             }
         }
 
-        public static CLIManager CLI { get; private set; }
+        public static bool IsBeta { get; } = true;
         public static bool IsMultiInstance { get; private set; }
         public static bool IsPortable { get; private set; }
         public static bool IsPortableApps { get; private set; }
         public static bool IsSilentRun { get; private set; }
         public static bool IsSandbox { get; private set; }
-        public static bool IsFirstTimeConfig { get; private set; }
+        public static bool IsSteamFirstTimeConfig { get; private set; }
         public static bool IsNoHotkeyMode { get; private set; }
         public static bool IsPuushMode { get; private set; }
 
@@ -98,6 +98,7 @@ namespace ShareX
         public static Stopwatch StartTimer { get; private set; }
         public static HotkeyManager HotkeyManager { get; set; }
         public static WatchFolderManager WatchFolderManager { get; set; }
+        public static CLIManager CLI { get; private set; }
 
         private static bool restarting;
         private static FileSystemWatcher uploaderConfigWatcher;
@@ -286,8 +287,6 @@ namespace ShareX
 
             IsMultiInstance = CLI.IsCommandExist("multi", "m");
 
-            CheckPuushMode();
-
             using (ApplicationInstanceManager instanceManager = new ApplicationInstanceManager(!IsMultiInstance, args, SingleInstanceCallback))
             {
                 Run();
@@ -304,18 +303,23 @@ namespace ShareX
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            DebugHelper.WriteLine(Title);
+            DebugHelper.WriteLine("Build: " + Build);
+            DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
+            DebugHelper.WriteLine("Personal path: " + PersonalFolder);
+            DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);
+
             IsSilentRun = CLI.IsCommandExist("silent", "s");
 
 #if STEAM
-            IsFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
+            IsSteamFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
 #endif
 
             IsNoHotkeyMode = CLI.IsCommandExist("NoHotkeys");
 
-            DebugHelper.WriteLine(TitleLong);
-            DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);
-            DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
-            DebugHelper.WriteLine("Personal path: " + PersonalFolder);
+            CheckPuushMode();
+
+            DebugWriteActiveFlags();
 
             LoadProgramSettings();
 
@@ -644,6 +648,28 @@ namespace ShareX
             string puushPath = Helpers.GetAbsolutePath("puush");
             IsPuushMode = File.Exists(puushPath);
             return IsPuushMode;
+        }
+
+        private static void DebugWriteActiveFlags()
+        {
+            List<string> flags = new List<string>();
+
+            if (IsBeta) flags.Add(nameof(IsBeta));
+            if (IsMultiInstance) flags.Add(nameof(IsMultiInstance));
+            if (IsPortable) flags.Add(nameof(IsPortable));
+            if (IsPortableApps) flags.Add(nameof(IsPortableApps));
+            if (IsSilentRun) flags.Add(nameof(IsSilentRun));
+            if (IsSandbox) flags.Add(nameof(IsSandbox));
+            if (IsSteamFirstTimeConfig) flags.Add(nameof(IsSteamFirstTimeConfig));
+            if (IsNoHotkeyMode) flags.Add(nameof(IsNoHotkeyMode));
+            if (IsPuushMode) flags.Add(nameof(IsPuushMode));
+
+            string output = string.Join(", ", flags);
+
+            if (!string.IsNullOrEmpty(output))
+            {
+                DebugHelper.WriteLine("Active flags: " + output);
+            }
         }
     }
 }

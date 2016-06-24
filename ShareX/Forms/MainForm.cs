@@ -264,7 +264,7 @@ namespace ShareX
                 lvUploads.Items[lvUploads.Items.Count - 1].EnsureVisible();
             }
 
-            if (Program.IsFirstTimeConfig)
+            if (Program.IsSteamFirstTimeConfig)
             {
                 using (FirstTimeConfigForm firstTimeConfigForm = new FirstTimeConfigForm())
                 {
@@ -634,7 +634,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
         {
             if (Program.Settings.TrayTextMoreInfo)
             {
-                niTray.Text = $"{Program.Title} ({Program.Build})";
+                niTray.Text = Program.TitleLong;
             }
             else
             {
