@@ -858,8 +858,9 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (IsCurrentShapeTypeRegion)
+                if (IsCurrentShapeTypeRegion && ValidRegions.Length > 0)
                 {
+                    form.UpdateRegionPath();
                     form.Close(RegionResult.Region);
                 }
                 else if (CurrentShape != null && !IsCreating)
