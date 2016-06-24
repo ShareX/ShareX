@@ -83,7 +83,7 @@ namespace ShareX
         public static bool SilentRun { get; private set; }
         public static bool Sandbox { get; private set; }
         public static bool SteamFirstTimeConfig { get; private set; }
-        public static bool NoHotkeyMode { get; private set; }
+        public static bool IgnoreHotkeyWarning { get; private set; }
         public static bool PuushMode { get; private set; }
 
         public static ApplicationConfig Settings { get; private set; }
@@ -315,11 +315,11 @@ namespace ShareX
             SteamFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
 #endif
 
-            NoHotkeyMode = CLI.IsCommandExist("NoHotkeys");
+            IgnoreHotkeyWarning = CLI.IsCommandExist("NoHotkeys");
 
             CheckPuushMode();
 
-            DebugWriteActiveFlags();
+            DebugWriteFlags();
 
             LoadProgramSettings();
 
@@ -650,7 +650,7 @@ namespace ShareX
             return PuushMode;
         }
 
-        private static void DebugWriteActiveFlags()
+        private static void DebugWriteFlags()
         {
             List<string> flags = new List<string>();
 
@@ -661,14 +661,14 @@ namespace ShareX
             if (SilentRun) flags.Add(nameof(SilentRun));
             if (Sandbox) flags.Add(nameof(Sandbox));
             if (SteamFirstTimeConfig) flags.Add(nameof(SteamFirstTimeConfig));
-            if (NoHotkeyMode) flags.Add(nameof(NoHotkeyMode));
+            if (IgnoreHotkeyWarning) flags.Add(nameof(IgnoreHotkeyWarning));
             if (PuushMode) flags.Add(nameof(PuushMode));
 
             string output = string.Join(", ", flags);
 
             if (!string.IsNullOrEmpty(output))
             {
-                DebugHelper.WriteLine("Active flags: " + output);
+                DebugHelper.WriteLine("Flags: " + output);
             }
         }
     }

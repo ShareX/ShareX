@@ -1767,7 +1767,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
                 }
 
-                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.NoHotkeyMode);
+                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
 
                 DebugHelper.WriteLine("HotkeyManager started");
 
