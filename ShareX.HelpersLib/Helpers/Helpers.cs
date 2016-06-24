@@ -1097,5 +1097,28 @@ namespace ShareX.HelpersLib
 
             return instances.ToArray();
         }
+
+        public static string GetWindowsProductName()
+        {
+            try
+            {
+                RegistryKey rk = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+
+                if (rk != null)
+                {
+                    string productName = rk.GetValue("ProductName") as string;
+
+                    if (!string.IsNullOrEmpty(productName))
+                    {
+                        return productName;
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+            return Environment.OSVersion.VersionString;
+        }
     }
 }

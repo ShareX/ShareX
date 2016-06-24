@@ -264,7 +264,7 @@ namespace ShareX
                 lvUploads.Items[lvUploads.Items.Count - 1].EnsureVisible();
             }
 
-            if (Program.IsSteamFirstTimeConfig)
+            if (Program.SteamFirstTimeConfig)
             {
                 using (FirstTimeConfigForm firstTimeConfigForm = new FirstTimeConfigForm())
                 {
@@ -900,7 +900,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         private void RunPuushTasks()
         {
-            if (Program.IsPuushMode && Program.Settings.IsFirstTimeRun)
+            if (Program.PuushMode && Program.Settings.IsFirstTimeRun)
             {
                 using (PuushLoginForm puushLoginForm = new PuushLoginForm())
                 {
@@ -930,7 +930,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 
         protected override void SetVisibleCore(bool value)
         {
-            if (value && !IsHandleCreated && (Program.IsSilentRun || Program.Settings.SilentRun) && Program.Settings.ShowTray)
+            if (value && !IsHandleCreated && (Program.SilentRun || Program.Settings.SilentRun) && Program.Settings.ShowTray)
             {
                 CreateHandle();
                 value = false;
@@ -1767,7 +1767,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
                     Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
                 }
 
-                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IsNoHotkeyMode);
+                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.NoHotkeyMode);
 
                 DebugHelper.WriteLine("HotkeyManager started");
 

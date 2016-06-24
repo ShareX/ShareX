@@ -50,7 +50,7 @@ namespace ShareX
             pbSteam.Visible = false;
             lblSteamBuild.Visible = false;
 
-            if (!Program.IsPortableApps)
+            if (!Program.PortableApps)
             {
                 uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
             }

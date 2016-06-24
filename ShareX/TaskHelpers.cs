@@ -219,7 +219,7 @@ namespace ShareX
 
         public static Image AnnotateImage(Image img, string imgPath)
         {
-            return ImageHelpers.AnnotateImage(img, imgPath, !Program.IsSandbox, Program.PersonalFolder,
+            return ImageHelpers.AnnotateImage(img, imgPath, !Program.Sandbox, Program.PersonalFolder,
                 x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
                 x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
                 (x, filePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)),
@@ -343,8 +343,8 @@ namespace ShareX
         public static UpdateChecker CheckUpdate()
         {
             UpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
-            updateChecker.IsBeta = Program.IsBeta;
-            updateChecker.IsPortable = Program.IsPortable;
+            updateChecker.IsBeta = Program.Beta;
+            updateChecker.IsPortable = Program.Portable;
             updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             updateChecker.CheckUpdate();
 
