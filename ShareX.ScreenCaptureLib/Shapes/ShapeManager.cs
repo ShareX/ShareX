@@ -1109,7 +1109,7 @@ namespace ShareX.ScreenCaptureLib
                 else
                 {
                     IsCreating = true;
-                    shape.StartPosition = position;
+                    shape.StartPosition = shape.EndPosition = position;
                 }
             }
         }
