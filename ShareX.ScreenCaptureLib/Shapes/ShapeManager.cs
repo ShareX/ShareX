@@ -197,6 +197,8 @@ namespace ShareX.ScreenCaptureLib
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
+        private const int SnapDistance = 30;
+
         private RectangleRegionForm form;
         private ContextMenuStrip cmsContextMenu;
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
@@ -1280,7 +1282,7 @@ namespace ShareX.ScreenCaptureLib
 
             SnapSize snapSize = (from size in Config.SnapSizes
                                  let distance = MathHelpers.Distance(vector, new Vector2(size.Width, size.Height))
-                                 where distance > 0 && distance < Config.SnapDistance
+                                 where distance > 0 && distance < SnapDistance
                                  orderby distance
                                  select size).FirstOrDefault();
 

@@ -32,9 +32,6 @@ namespace ShareX.ScreenCaptureLib
 {
     public class ResizeManager
     {
-        public const int MinMoveSpeed = 1;
-        public const int MaxMoveSpeed = 10;
-
         private bool visible;
 
         public bool Visible
@@ -80,6 +77,9 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsResizing { get; private set; }
         public bool IsBottomRightResizing { get; set; }
+
+        private const int MinMoveSpeed = 1;
+        private const int MaxMoveSpeed = 10;
 
         private ShapeManager shapeManager;
         private NodeObject[] nodes;
