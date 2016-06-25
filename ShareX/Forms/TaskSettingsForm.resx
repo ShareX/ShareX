@@ -400,7 +400,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 360</value>
+    <value>571, 429</value>
   </data>
   <data name="tpTask.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -535,7 +535,7 @@
     <value>4, 22</value>
   </data>
   <data name="tpCaptureGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 328</value>
+    <value>557, 397</value>
   </data>
   <data name="tpCaptureGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -552,17 +552,11 @@
   <data name="&gt;&gt;tpCaptureGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tpRegionCapture.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tpRegionCapture.AutoScrollMinSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 450</value>
-  </data>
   <data name="cbRegionCaptureShowFPS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbRegionCaptureShowFPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 426</value>
+    <value>8, 440</value>
   </data>
   <data name="cbRegionCaptureShowFPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 17</value>
@@ -640,7 +634,7 @@
     <value>3</value>
   </data>
   <data name="flpRegionCaptureFixedSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 397</value>
+    <value>312, 411</value>
   </data>
   <data name="flpRegionCaptureFixedSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 26</value>
@@ -667,7 +661,7 @@
     <value>True</value>
   </data>
   <data name="cbRegionCaptureIsFixedSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 402</value>
+    <value>8, 416</value>
   </data>
   <data name="cbRegionCaptureIsFixedSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 17</value>
@@ -694,7 +688,7 @@
     <value>True</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 381</value>
+    <value>8, 392</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 17</value>
@@ -718,7 +712,7 @@
     <value>3</value>
   </data>
   <data name="nudRegionCaptureMagnifierPixelSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 362</value>
+    <value>312, 364</value>
   </data>
   <data name="nudRegionCaptureMagnifierPixelSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -745,7 +739,7 @@
     <value>True</value>
   </data>
   <data name="lblRegionCaptureMagnifierPixelSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 362</value>
+    <value>5, 368</value>
   </data>
   <data name="lblRegionCaptureMagnifierPixelSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 13</value>
@@ -769,7 +763,7 @@
     <value>5</value>
   </data>
   <data name="nudRegionCaptureMagnifierPixelCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 338</value>
+    <value>312, 340</value>
   </data>
   <data name="nudRegionCaptureMagnifierPixelCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -796,7 +790,7 @@
     <value>True</value>
   </data>
   <data name="lblRegionCaptureMagnifierPixelCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 342</value>
+    <value>5, 344</value>
   </data>
   <data name="lblRegionCaptureMagnifierPixelCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 13</value>
@@ -823,7 +817,7 @@
     <value>True</value>
   </data>
   <data name="cbRegionCaptureUseSquareMagnifier.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 318</value>
+    <value>8, 320</value>
   </data>
   <data name="cbRegionCaptureUseSquareMagnifier.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 17</value>
@@ -850,7 +844,7 @@
     <value>True</value>
   </data>
   <data name="cbRegionCaptureShowMagnifier.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 294</value>
+    <value>8, 296</value>
   </data>
   <data name="cbRegionCaptureShowMagnifier.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 17</value>
@@ -877,7 +871,7 @@
     <value>True</value>
   </data>
   <data name="cbRegionCaptureShowInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 270</value>
+    <value>8, 272</value>
   </data>
   <data name="cbRegionCaptureShowInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 17</value>
@@ -904,7 +898,7 @@
     <value>True</value>
   </data>
   <data name="cbRegionCaptureShowTips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 246</value>
+    <value>8, 248</value>
   </data>
   <data name="cbRegionCaptureShowTips.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 17</value>
@@ -1408,7 +1402,7 @@
     <value>5</value>
   </data>
   <data name="pRegionCaptureSnapSizes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 136</value>
+    <value>304, 208</value>
   </data>
   <data name="pRegionCaptureSnapSizes.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 112</value>
@@ -1486,7 +1480,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpRegionCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 328</value>
+    <value>557, 447</value>
   </data>
   <data name="tpRegionCapture.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1717,7 +1711,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpScreenRecorder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 328</value>
+    <value>557, 397</value>
   </data>
   <data name="tpScreenRecorder.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1783,7 +1777,7 @@
     <value>3, 3</value>
   </data>
   <data name="tcCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>565, 354</value>
+    <value>565, 473</value>
   </data>
   <data name="tcCapture.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1807,7 +1801,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 360</value>
+    <value>571, 479</value>
   </data>
   <data name="tpCapture.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2083,10 +2077,10 @@
     <value>Right</value>
   </data>
   <data name="tcTaskSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 3</value>
+    <value>202, 3</value>
   </data>
   <data name="tcTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>579, 386</value>
+    <value>579, 505</value>
   </data>
   <data name="tcTaskSettings.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4081,7 +4075,7 @@
     <value>0, 25</value>
   </data>
   <data name="pCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 303</value>
+    <value>557, 372</value>
   </data>
   <data name="pCapture.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4677,8 +4671,122 @@
   <data name="&gt;&gt;chkUseDefaultCaptureSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 6</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>Width:</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureFixedSizeWidth.Name" xml:space="preserve">
+    <value>lblRegionCaptureFixedSizeWidth</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureFixedSizeWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureFixedSizeWidth.Parent" xml:space="preserve">
+    <value>flpRegionCaptureFixedSize</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureFixedSizeWidth.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudRegionCaptureFixedSizeWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 3</value>
+  </data>
+  <data name="nudRegionCaptureFixedSizeWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="nudRegionCaptureFixedSizeWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nudRegionCaptureFixedSizeWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureFixedSizeWidth.Name" xml:space="preserve">
+    <value>nudRegionCaptureFixedSizeWidth</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureFixedSizeWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureFixedSizeWidth.Parent" xml:space="preserve">
+    <value>flpRegionCaptureFixedSize</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureFixedSizeWidth.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 6</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureFixedSizeHeight.Name" xml:space="preserve">
+    <value>lblRegionCaptureFixedSizeHeight</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureFixedSizeHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureFixedSizeHeight.Parent" xml:space="preserve">
+    <value>flpRegionCaptureFixedSize</value>
+  </data>
+  <data name="&gt;&gt;lblRegionCaptureFixedSizeHeight.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="nudRegionCaptureFixedSizeHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 3</value>
+  </data>
+  <data name="nudRegionCaptureFixedSizeHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="nudRegionCaptureFixedSizeHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="nudRegionCaptureFixedSizeHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureFixedSizeHeight.Name" xml:space="preserve">
+    <value>nudRegionCaptureFixedSizeHeight</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureFixedSizeHeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureFixedSizeHeight.Parent" xml:space="preserve">
+    <value>flpRegionCaptureFixedSize</value>
+  </data>
+  <data name="&gt;&gt;nudRegionCaptureFixedSizeHeight.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="btnRegionCaptureSnapSizesDialogCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 48</value>
+    <value>120, 80</value>
   </data>
   <data name="btnRegionCaptureSnapSizesDialogCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 24</value>
@@ -4702,7 +4810,7 @@
     <value>0</value>
   </data>
   <data name="btnRegionCaptureSnapSizesDialogAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 48</value>
+    <value>8, 80</value>
   </data>
   <data name="btnRegionCaptureSnapSizesDialogAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 24</value>
@@ -4726,7 +4834,7 @@
     <value>1</value>
   </data>
   <data name="nudRegionCaptureSnapSizesHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 24</value>
+    <value>120, 56</value>
   </data>
   <data name="nudRegionCaptureSnapSizesHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 20</value>
@@ -4753,7 +4861,7 @@
     <value>True</value>
   </data>
   <data name="RegionCaptureSnapSizesHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 8</value>
+    <value>117, 40</value>
   </data>
   <data name="RegionCaptureSnapSizesHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -4777,7 +4885,7 @@
     <value>3</value>
   </data>
   <data name="nudRegionCaptureSnapSizesWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
+    <value>8, 56</value>
   </data>
   <data name="nudRegionCaptureSnapSizesWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 20</value>
@@ -4807,7 +4915,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblRegionCaptureSnapSizesWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
+    <value>5, 40</value>
   </data>
   <data name="lblRegionCaptureSnapSizesWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -6865,7 +6973,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tttvMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>768, 386</value>
+    <value>778, 505</value>
   </data>
   <data name="tttvMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6882,120 +6990,6 @@
   <data name="&gt;&gt;tttvMain.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="lblRegionCaptureFixedSizeWidth.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeWidth.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 6</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeWidth.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
-    <value>Width:</value>
-  </data>
-  <data name="&gt;&gt;lblRegionCaptureFixedSizeWidth.Name" xml:space="preserve">
-    <value>lblRegionCaptureFixedSizeWidth</value>
-  </data>
-  <data name="&gt;&gt;lblRegionCaptureFixedSizeWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRegionCaptureFixedSizeWidth.Parent" xml:space="preserve">
-    <value>flpRegionCaptureFixedSize</value>
-  </data>
-  <data name="&gt;&gt;lblRegionCaptureFixedSizeWidth.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="nudRegionCaptureFixedSizeWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 3</value>
-  </data>
-  <data name="nudRegionCaptureFixedSizeWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="nudRegionCaptureFixedSizeWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="nudRegionCaptureFixedSizeWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudRegionCaptureFixedSizeWidth.Name" xml:space="preserve">
-    <value>nudRegionCaptureFixedSizeWidth</value>
-  </data>
-  <data name="&gt;&gt;nudRegionCaptureFixedSizeWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudRegionCaptureFixedSizeWidth.Parent" xml:space="preserve">
-    <value>flpRegionCaptureFixedSize</value>
-  </data>
-  <data name="&gt;&gt;nudRegionCaptureFixedSizeWidth.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeHeight.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeHeight.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 6</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeHeight.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
-    <value>Height:</value>
-  </data>
-  <data name="&gt;&gt;lblRegionCaptureFixedSizeHeight.Name" xml:space="preserve">
-    <value>lblRegionCaptureFixedSizeHeight</value>
-  </data>
-  <data name="&gt;&gt;lblRegionCaptureFixedSizeHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRegionCaptureFixedSizeHeight.Parent" xml:space="preserve">
-    <value>flpRegionCaptureFixedSize</value>
-  </data>
-  <data name="&gt;&gt;lblRegionCaptureFixedSizeHeight.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="nudRegionCaptureFixedSizeHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 3</value>
-  </data>
-  <data name="nudRegionCaptureFixedSizeHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="nudRegionCaptureFixedSizeHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="nudRegionCaptureFixedSizeHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudRegionCaptureFixedSizeHeight.Name" xml:space="preserve">
-    <value>nudRegionCaptureFixedSizeHeight</value>
-  </data>
-  <data name="&gt;&gt;nudRegionCaptureFixedSizeHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudRegionCaptureFixedSizeHeight.Parent" xml:space="preserve">
-    <value>flpRegionCaptureFixedSize</value>
-  </data>
-  <data name="&gt;&gt;nudRegionCaptureFixedSizeHeight.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -7003,7 +6997,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>774, 392</value>
+    <value>784, 511</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 550</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
