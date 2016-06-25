@@ -1275,24 +1275,25 @@ namespace ShareX.ScreenCaptureLib
 
         private Point SnapPosition(Point posOnClick, Point posCurrent)
         {
-            Rectangle currentRect = CaptureHelpers.CreateRectangle(posOnClick, posCurrent);
-            Point newPosition = posCurrent;
+            Size currentSize = CaptureHelpers.CreateRectangle(posOnClick, posCurrent).Size;
+            Vector2 vector = new Vector2(currentSize.Width, currentSize.Height);
 
-            foreach (SnapSize size in Config.SnapSizes)
+            SnapSize snapSize = (from size in Config.SnapSizes
+                                 let distance = MathHelpers.Distance(vector, new Vector2(size.Width, size.Height))
+                                 where distance > 0 && distance < Config.SnapDistance
+                                 orderby distance
+                                 select size).FirstOrDefault();
+
+            if (snapSize != null)
             {
-                if (currentRect.Width.IsBetween(size.Width - Config.SnapDistance, size.Width + Config.SnapDistance) ||
-                    currentRect.Height.IsBetween(size.Height - Config.SnapDistance, size.Height + Config.SnapDistance))
+                Point posNew = CaptureHelpers.CalculateNewPosition(posOnClick, posCurrent, snapSize);
+
+                Rectangle newRect = CaptureHelpers.CreateRectangle(posOnClick, posNew);
+
+                if (form.ScreenRectangle0Based.Contains(newRect))
                 {
-                    newPosition = CaptureHelpers.CalculateNewPosition(posOnClick, posCurrent, size);
-                    break;
+                    return posNew;
                 }
-            }
-
-            Rectangle newRect = CaptureHelpers.CreateRectangle(posOnClick, newPosition);
-
-            if (form.ScreenRectangle0Based.Contains(newRect))
-            {
-                return newPosition;
             }
 
             return posCurrent;
