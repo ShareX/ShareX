@@ -32,6 +32,9 @@ namespace ShareX.ScreenCaptureLib
 {
     public class ResizeManager
     {
+        public const int MinMoveSpeed = 1;
+        public const int MaxMoveSpeed = 10;
+
         private bool visible;
 
         public bool Visible
@@ -76,25 +79,16 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public bool IsResizing { get; private set; }
-        public int MaxMoveSpeed { get; set; }
-        public int MinMoveSpeed { get; set; }
         public bool IsBottomRightResizing { get; set; }
-
-        private bool IsUpPressed { get; set; }
-        private bool IsDownPressed { get; set; }
-        private bool IsLeftPressed { get; set; }
-        private bool IsRightPressed { get; set; }
 
         private ShapeManager shapeManager;
         private NodeObject[] nodes;
+        private bool isUpPressed, isDownPressed, isLeftPressed, isRightPressed;
         private Rectangle tempRect;
 
         public ResizeManager(BaseRegionForm form, ShapeManager shapeManager)
         {
             this.shapeManager = shapeManager;
-
-            MinMoveSpeed = form.Config.MinMoveSpeed;
-            MaxMoveSpeed = form.Config.MaxMoveSpeed;
 
             form.KeyDown += form_KeyDown;
             form.KeyUp += form_KeyUp;
@@ -202,16 +196,16 @@ namespace ShareX.ScreenCaptureLib
             switch (e.KeyCode)
             {
                 case Keys.Up:
-                    IsUpPressed = true;
+                    isUpPressed = true;
                     break;
                 case Keys.Down:
-                    IsDownPressed = true;
+                    isDownPressed = true;
                     break;
                 case Keys.Left:
-                    IsLeftPressed = true;
+                    isLeftPressed = true;
                     break;
                 case Keys.Right:
-                    IsRightPressed = true;
+                    isRightPressed = true;
                     break;
                 case Keys.Menu:
                     IsBottomRightResizing = true;
@@ -220,8 +214,8 @@ namespace ShareX.ScreenCaptureLib
 
             // Calculate cursor movement
             int speed = e.Shift ? MaxMoveSpeed : MinMoveSpeed;
-            int y = IsUpPressed && IsDownPressed ? 0 : IsDownPressed ? speed : IsUpPressed ? -speed : 0;
-            int x = IsLeftPressed && IsRightPressed ? 0 : IsRightPressed ? speed : IsLeftPressed ? -speed : 0;
+            int y = isUpPressed && isDownPressed ? 0 : isDownPressed ? speed : isUpPressed ? -speed : 0;
+            int x = isLeftPressed && isRightPressed ? 0 : isRightPressed ? speed : isLeftPressed ? -speed : 0;
 
             // Move the cursor
             if (shapeManager.CurrentShape == null || shapeManager.IsCreating)
@@ -246,16 +240,16 @@ namespace ShareX.ScreenCaptureLib
             switch (e.KeyCode)
             {
                 case Keys.Up:
-                    IsUpPressed = false;
+                    isUpPressed = false;
                     break;
                 case Keys.Down:
-                    IsDownPressed = false;
+                    isDownPressed = false;
                     break;
                 case Keys.Left:
-                    IsLeftPressed = false;
+                    isLeftPressed = false;
                     break;
                 case Keys.Right:
-                    IsRightPressed = false;
+                    isRightPressed = false;
                     break;
                 case Keys.Menu:
                     IsBottomRightResizing = false;

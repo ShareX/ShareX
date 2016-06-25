@@ -49,6 +49,7 @@ namespace ShareX.ScreenCaptureLib
             new SnapSize(1280, 720), // 720p
             new SnapSize(1920, 1080) // 1080p
         };
+        public int SnapDistance = 30;
 
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
         public bool ShowTips = true;
@@ -65,8 +66,5 @@ namespace ShareX.ScreenCaptureLib
         public ShapeType LastRegionTool = ShapeType.RegionRectangle;
         public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
         public bool ShowMenuTip = true;
-        public int MinMoveSpeed = 1;
-        public int MaxMoveSpeed = 10;
-        public int SnapDistance = 20;
     }
 }
