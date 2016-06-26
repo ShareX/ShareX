@@ -133,10 +133,10 @@
     <value>Pós-captura</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>Pré-upload</value>
+    <value>Pré-envio</value>
   </data>
   <data name="tpAfterUpload.Text" xml:space="preserve">
-    <value>Pós-upload</value>
+    <value>Pós-envio</value>
   </data>
   <data name="lblFileName.Text" xml:space="preserve">
     <value>Nome do arquivo:</value>

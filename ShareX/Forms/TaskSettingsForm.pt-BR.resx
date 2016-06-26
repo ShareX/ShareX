@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Usar configurações padrões de "Após captura"</value>
+    <value>Usar configurações padrões de "Pós-captura"</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>Usar configurações padrões de "Após upload"</value>
+    <value>Usar configurações padrões de "Pós-envio"</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
     <value>Usar configurações padrões de "Destino"</value>
@@ -440,5 +440,89 @@
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Substituir serviço customizado padrão:</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>Mostrar QPS no canto superior esquerdo</value>
+  </data>
+  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
+    <value>Modo de região de tamanho fixo:</value>
+  </data>
+  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
+    <value>Mostrar mira do tamanho da tela:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>Tamanho do pixel da lente de aumento:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>Quantidade de pixels da lente de aumento</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>Usar forma quadrada da lente de aumento</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>Mostrar lente próxima ao cursor</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>Mostrar informações de posição e tamanho</value>
+  </data>
+  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
+    <value>Mostrar atalhos e dicas no canto superior direito</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>Usar texto personalizado no canto superior direito</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>Detectar regiões de controle dentro das janelas</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>Botão de scroll:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>Botão direito:</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>Mouse 4:</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>Mouse 5:</value>
+  </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>Selecionar região...</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>Região personalizada:</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>Largura:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>Altura:</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>Altura:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>Largura:</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>0</value>
   </data>
 </root>
