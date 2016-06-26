@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="chElapsed.Text" xml:space="preserve">
-    <value>Gasto</value>
+    <value>Transcorrido</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Arquivo</value>
@@ -133,7 +133,7 @@
     <value>Velocidade</value>
   </data>
   <data name="chStatus.Text" xml:space="preserve">
-    <value>Estado</value>
+    <value>Status</value>
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
@@ -265,7 +265,7 @@
     <value>URL</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Deletar arquivo localmente...</value>
+    <value>Deletar arquivo local...</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>Configurações de destino...</value>
@@ -346,7 +346,7 @@
     <value>Envio da área de transferência...</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
-    <value>Arrastar e soltar para enviar...</value>
+    <value>Arraste e solte para enviar...</value>
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Compartilhar URL</value>
@@ -406,7 +406,7 @@
     <value>Envio de arquivo da área de transferência...</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
-    <value>Arrastar e soltar para enviar...</value>
+    <value>Arraste e solte para enviar...</value>
   </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Janela</value>
@@ -520,7 +520,7 @@
     <value>Região (Transparente)</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
-    <value>Seletor de cores da tela</value>
+    <value>Seletor de cores da tela...</value>
   </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>Gravar tela</value>
@@ -592,7 +592,7 @@
     <value>Gravar tela (GIF)</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
-    <value>Mostrar janela do ShareX</value>
+    <value>Abrir janela principal</value>
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
     <value>Envio de arquivos</value>
@@ -653,5 +653,20 @@
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Esconder colunas</value>
+  </data>
+  <data name="pbTips.ToolTip" xml:space="preserve">
+    <value>Mostrar dicas e atalhos</value>
+  </data>
+  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
+    <value>Abrir página do Patreon do ShareX</value>
+  </data>
+  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
+    <value>Esconder botão do Patreon permanentemente</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>Captura de texto (OCR)...</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>Captura de texto (OCR)...</value>
   </data>
 </root>

@@ -154,7 +154,7 @@
     <value>Hospedagem de arquivos alternativa</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Mostrar ícone da bandeja do sistema</value>
+    <value>Mostrar ícone da área de notificações</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>Ao iniciar minimizar para a bandeja</value>
@@ -163,7 +163,7 @@
     <value>Lembrar posição da janela principal</value>
   </data>
   <data name="btnChromeSupport.Text" xml:space="preserve">
-    <value>Suporte para extensões do Chrome...</value>
+    <value>Extensão do Chrome...</value>
   </data>
   <data name="llTranslators.Text" xml:space="preserve">
     <value>Ajude-nos a traduzir o ShareX para o seu idioma! </value>
@@ -265,7 +265,7 @@
     <value>Hospedagem de texto alternativa</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: é necessário reiniciar o programa para que as alterações de pastas pessoais façam efeito.</value>
+    <value>Nota: é necessário reiniciar o programa para que as alterações façam efeito.</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Pasta de capturas de tela customizada</value>
@@ -280,6 +280,66 @@
     <value>Idioma:</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostrar botão "Enviar usando ShareX" no menu da shell</value>
+    <value>Mostrar botão "Enviar usando ShareX" no menu contextual do Windows Explorer</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>Clique com botão de scroll no ícone da bandeja:</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>Duplo clique no ícone da bandeja:</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>Clique no ícone da bandeja:</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>Editar menu de tarefas rápidas...</value>
+  </data>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>Exportar registros</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Exportar histórico</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Exportar configurações</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Exportar...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Importar...</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>Exportar / Importar</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>Salvar somente se o URL não estiver vazio</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>Salvar tarefas no histórico</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>Histórico</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>Mostrar tarefas mais recentes primeiro no menu da bandeja</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>Número máximo de tarefas para salvar:</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>Mostrar tarefas recentes no menu da bandeja</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>Mostrar tarefas recentes na janela principal ao iniciar</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>Salvar tarefas recentes</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>Tarefas recentes</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>Histórico</value>
   </data>
 </root>
