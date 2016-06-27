@@ -25,6 +25,8 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
@@ -32,6 +34,8 @@ namespace ShareX.UploadersLib.TextUploaders
     public class HastebinTextUploaderService : TextUploaderService
     {
         public override TextDestination EnumValue { get; } = TextDestination.Hastebin;
+
+        public override Image ServiceImage => Resources.Hastebin;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 

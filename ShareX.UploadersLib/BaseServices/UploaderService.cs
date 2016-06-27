@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -40,6 +41,10 @@ namespace ShareX.UploadersLib
                 return ((Enum)(object)EnumValue).GetDescription();
             }
         }
+
+        public virtual Icon ServiceIcon { get; }
+
+        public virtual Image ServiceImage { get; }
 
         public abstract bool CheckConfig(UploadersConfig config);
 

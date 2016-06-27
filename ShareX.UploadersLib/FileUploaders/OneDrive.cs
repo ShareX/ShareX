@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -36,6 +37,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class OneDriveFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.OneDrive;
+
+        public override Icon ServiceIcon => Resources.OneDrive;
 
         public override bool CheckConfig(UploadersConfig config)
         {

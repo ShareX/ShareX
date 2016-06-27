@@ -25,8 +25,10 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -36,6 +38,8 @@ namespace ShareX.UploadersLib.ImageUploaders
     public class PicasaImageUploaderService : ImageUploaderService
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Picasa;
+
+        public override Icon ServiceIcon => Resources.Picasa;
 
         public override bool CheckConfig(UploadersConfig config)
         {

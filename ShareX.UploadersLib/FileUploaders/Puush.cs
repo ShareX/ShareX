@@ -23,7 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -32,6 +34,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class PuushFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Puush;
+
+        public override Icon ServiceIcon => Resources.puush;
 
         public override bool CheckConfig(UploadersConfig config)
         {

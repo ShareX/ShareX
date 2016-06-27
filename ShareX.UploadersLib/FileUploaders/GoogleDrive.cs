@@ -24,9 +24,11 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Web;
 using System.Windows.Forms;
@@ -36,6 +38,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class GoogleDriveFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.GoogleDrive;
+
+        public override Icon ServiceIcon => Resources.GoogleDrive;
 
         public override bool CheckConfig(UploadersConfig config)
         {

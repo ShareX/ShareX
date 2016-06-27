@@ -26,8 +26,10 @@
 // Credits: https://github.com/gpailler
 
 using CG.Web.MegaApiClient;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -37,6 +39,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class MegaFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Mega;
+
+        public override Icon ServiceIcon => Resources.Mega;
 
         public override bool CheckConfig(UploadersConfig config)
         {

@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Web;
 using System.Windows.Forms;
@@ -35,6 +37,8 @@ namespace ShareX.UploadersLib.ImageUploaders
     public class TinyPicImageUploaderService : ImageUploaderService
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.TinyPic;
+
+        public override Icon ServiceIcon => Resources.TinyPic;
 
         public override bool CheckConfig(UploadersConfig config)
         {

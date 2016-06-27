@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -30,6 +31,10 @@ namespace ShareX.UploadersLib
     public interface IUploaderService
     {
         string ServiceName { get; }
+
+        Icon ServiceIcon { get; }
+
+        Image ServiceImage { get; }
 
         bool CheckConfig(UploadersConfig config);
 

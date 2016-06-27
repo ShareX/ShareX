@@ -27,8 +27,10 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
@@ -36,6 +38,8 @@ namespace ShareX.UploadersLib.TextUploaders
     public class OneTimeSecretTextUploaderService : TextUploaderService
     {
         public override TextDestination EnumValue { get; } = TextDestination.OneTimeSecret;
+
+        public override Icon ServiceIcon => Resources.OneTimeSecret;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 

@@ -26,7 +26,9 @@
 // Credits: https://github.com/DanielMcAssey
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
@@ -34,6 +36,8 @@ namespace ShareX.UploadersLib.URLShorteners
     public class PolrURLShortenerService : URLShortenerService
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Polr;
+
+        public override Icon ServiceIcon => Resources.Polr;
 
         public override bool CheckConfig(UploadersConfig config)
         {

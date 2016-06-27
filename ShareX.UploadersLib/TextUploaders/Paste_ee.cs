@@ -23,7 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
@@ -31,6 +33,8 @@ namespace ShareX.UploadersLib.TextUploaders
     public class Paste_eeTextUploaderService : TextUploaderService
     {
         public override TextDestination EnumValue { get; } = TextDestination.Paste_ee;
+
+        public override Image ServiceImage => Resources.page_white_text;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 

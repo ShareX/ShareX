@@ -91,54 +91,7 @@ namespace ShareX.UploadersLib
             uploadersImageList = new ImageList();
             uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
 
-            AddIconToTab(tpAdFly, Resources.AdFly);
-            AddIconToTab(tpAmazonS3, Resources.AmazonS3);
-            AddIconToTab(tpBitly, Resources.Bitly);
-            AddIconToTab(tpBox, Resources.Box);
-            AddIconToTab(tpChevereto, Resources.Chevereto);
-            AddIconToTab(tpCoinURL, Resources.CoinURL);
-            AddIconToTab(tpCustomUploaders, Resources.globe_network);
-            AddIconToTab(tpDropbox, Resources.Dropbox);
-            AddIconToTab(tpEmail, Resources.mail);
-            AddIconToTab(tpFlickr, Resources.Flickr);
-            AddIconToTab(tpFTP, Resources.folder_network);
-            AddIconToTab(tpGe_tt, Resources.Gett);
-            AddIconToTab(tpGist, Resources.GitHub);
-            AddIconToTab(tpGoogleDrive, Resources.GoogleDrive);
-            AddIconToTab(tpGoogleURLShortener, Resources.Google);
-            AddIconToTab(tpHastebin, Resources.Hastebin);
-            AddIconToTab(tpHostr, Resources.Hostr);
-            AddIconToTab(tpImageShack, Resources.ImageShack);
-            AddIconToTab(tpImgur, Resources.Imgur);
-            AddIconToTab(tpJira, Resources.jira);
-            AddIconToTab(tpLambda, Resources.Lambda);
-            AddIconToTab(tpLithiio, Resources.Lithiio);
-            AddIconToTab(tpMediaFire, Resources.MediaFire);
-            AddIconToTab(tpMega, Resources.Mega);
-            AddIconToTab(tpMinus, Resources.Minus);
-            AddIconToTab(tpOneDrive, Resources.OneDrive);
-            AddIconToTab(tpOneTimeSecret, Resources.OneTimeSecret);
-            AddIconToTab(tpOwnCloud, Resources.OwnCloud);
-            AddIconToTab(tpPaste_ee, Resources.page_white_text);
-            AddIconToTab(tpPastebin, Resources.Pastebin);
-            AddIconToTab(tpPhotobucket, Resources.Photobucket);
-            AddIconToTab(tpPicasa, Resources.Picasa);
-            AddIconToTab(tpPolr, Resources.Polr);
-            AddIconToTab(tpPomf, Resources.Pomf);
-            AddIconToTab(tpPushbullet, Resources.Pushbullet);
-            AddIconToTab(tpPuush, Resources.puush);
-            AddIconToTab(tpSeafile, Resources.Seafile);
-            AddIconToTab(tpSendSpace, Resources.SendSpace);
-            AddIconToTab(tpSharedFolder, Resources.server_network);
-            AddIconToTab(tpSomeImage, Resources.SomeImage);
-            AddIconToTab(tpStreamable, Resources.Streamable);
-            AddIconToTab(tpSul, Resources.Sul);
-            AddIconToTab(tpTinyPic, Resources.TinyPic);
-            AddIconToTab(tpTwitter, Resources.Twitter);
-            AddIconToTab(tpUp1, Resources.Up1);
-            AddIconToTab(tpUpaste, Resources.Upaste);
-            AddIconToTab(tpVgyme, Resources.Vgyme);
-            AddIconToTab(tpYourls, Resources.Yourls);
+            AddIconToTabs();
 
             ttlvMain.ImageList = uploadersImageList;
             ttlvMain.MainTabControl = tcUploaders;
@@ -175,16 +128,33 @@ namespace ShareX.UploadersLib
 #endif
         }
 
-        private void AddIconToTab(TabPage tp, Icon icon)
+        private void AddIconToTabs()
         {
-            uploadersImageList.Images.Add(tp.Name, icon);
-            tp.ImageKey = tp.Name;
-        }
+            foreach (IUploaderService uploaderService in UploaderFactory.AllServices)
+            {
+                TabPage tp = uploaderService.GetUploadersConfigTabPage(this);
 
-        private void AddIconToTab(TabPage tp, Bitmap bitmap)
-        {
-            uploadersImageList.Images.Add(tp.Name, bitmap);
-            tp.ImageKey = tp.Name;
+                if (tp != null)
+                {
+                    Icon icon = uploaderService.ServiceIcon;
+
+                    if (icon != null)
+                    {
+                        uploadersImageList.Images.Add(tp.Name, icon);
+                        tp.ImageKey = tp.Name;
+                    }
+                    else
+                    {
+                        Image img = uploaderService.ServiceImage;
+
+                        if (img != null)
+                        {
+                            uploadersImageList.Images.Add(tp.Name, img);
+                            tp.ImageKey = tp.Name;
+                        }
+                    }
+                }
+            }
         }
 
         public void NavigateToTabPage(TabPage tp)

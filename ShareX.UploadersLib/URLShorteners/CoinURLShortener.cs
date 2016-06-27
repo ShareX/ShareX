@@ -25,7 +25,9 @@
 
 // Credits: https://github.com/DanielMcAssey
 
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
@@ -33,6 +35,8 @@ namespace ShareX.UploadersLib.URLShorteners
     public class CoinURLShortenerService : URLShortenerService
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.CoinURL;
+
+        public override Icon ServiceIcon => Resources.CoinURL;
 
         public override bool CheckConfig(UploadersConfig config)
         {

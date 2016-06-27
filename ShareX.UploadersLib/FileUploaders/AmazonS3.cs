@@ -30,9 +30,11 @@ using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -43,6 +45,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class AmazonS3FileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.AmazonS3;
+
+        public override Icon ServiceIcon => Resources.AmazonS3;
 
         public override bool CheckConfig(UploadersConfig config)
         {

@@ -31,6 +31,7 @@ namespace ShareX.UploadersLib
 {
     public static class UploaderFactory
     {
+        public static List<IUploaderService> AllServices { get; } = new List<IUploaderService>();
         public static Dictionary<ImageDestination, ImageUploaderService> ImageUploaderServices { get; } = CacheServices<ImageDestination, ImageUploaderService>();
         public static Dictionary<TextDestination, TextUploaderService> TextUploaderServices { get; } = CacheServices<TextDestination, TextUploaderService>();
         public static Dictionary<FileDestination, FileUploaderService> FileUploaderServices { get; } = CacheServices<FileDestination, FileUploaderService>();
@@ -39,7 +40,11 @@ namespace ShareX.UploadersLib
 
         private static Dictionary<T, T2> CacheServices<T, T2>() where T2 : UploaderService<T>
         {
-            return Helpers.GetInstances<T2>().ToDictionary(x => x.EnumValue, x => x);
+            T2[] instances = Helpers.GetInstances<T2>();
+
+            AllServices.AddRange(instances.Cast<IUploaderService>());
+
+            return instances.ToDictionary(x => x.EnumValue, x => x);
         }
     }
 }

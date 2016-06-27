@@ -27,9 +27,11 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -38,6 +40,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class SeafileFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Seafile;
+
+        public override Image ServiceImage => Resources.Seafile;
 
         public override bool CheckConfig(UploadersConfig config)
         {

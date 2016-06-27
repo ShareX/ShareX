@@ -41,6 +41,8 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Pomf;
 
+        public override Icon ServiceIcon => Resources.Pomf;
+
         public override bool CheckConfig(UploadersConfig config)
         {
             return config.PomfUploader != null && !string.IsNullOrEmpty(config.PomfUploader.UploadURL);

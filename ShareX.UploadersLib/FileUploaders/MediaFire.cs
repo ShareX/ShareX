@@ -27,7 +27,9 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -41,6 +43,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class MediaFireFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.MediaFire;
+
+        public override Icon ServiceIcon => Resources.MediaFire;
 
         public override bool CheckConfig(UploadersConfig config)
         {

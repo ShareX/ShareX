@@ -23,8 +23,10 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
@@ -32,6 +34,8 @@ namespace ShareX.UploadersLib.URLShorteners
     public class YourlsURLShortenerService : URLShortenerService
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.YOURLS;
+
+        public override Icon ServiceIcon => Resources.Yourls;
 
         public override bool CheckConfig(UploadersConfig config)
         {

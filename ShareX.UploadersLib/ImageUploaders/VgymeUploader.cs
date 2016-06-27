@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -33,6 +35,8 @@ namespace ShareX.UploadersLib.ImageUploaders
     public class VgymeImageUploaderService : ImageUploaderService
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Vgyme;
+
+        public override Icon ServiceIcon => Resources.Vgyme;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 

@@ -26,10 +26,12 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -54,6 +56,8 @@ namespace ShareX.UploadersLib.ImageUploaders
     public class ImgurImageUploaderService : ImageUploaderService
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Imgur;
+
+        public override Icon ServiceIcon => Resources.Imgur;
 
         public override bool CheckConfig(UploadersConfig config)
         {

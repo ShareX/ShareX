@@ -25,7 +25,9 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -34,6 +36,8 @@ namespace ShareX.UploadersLib.ImageUploaders
     public class TwitterImageUploaderService : ImageUploaderService
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Twitter;
+
+        public override Icon ServiceIcon => Resources.Twitter;
 
         public override bool CheckConfig(UploadersConfig config)
         {

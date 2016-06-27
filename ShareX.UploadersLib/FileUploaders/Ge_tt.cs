@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -33,6 +35,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class Ge_ttFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Ge_tt;
+
+        public override Icon ServiceIcon => Resources.Gett;
 
         public override bool CheckConfig(UploadersConfig config)
         {

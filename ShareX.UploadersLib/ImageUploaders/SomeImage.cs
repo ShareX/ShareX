@@ -26,8 +26,10 @@
 // Credits: https://github.com/DanielMcAssey
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -36,6 +38,8 @@ namespace ShareX.UploadersLib.ImageUploaders
     public class SomeImageImageUploaderService : ImageUploaderService
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.SomeImage;
+
+        public override Icon ServiceIcon => Resources.SomeImage;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 

@@ -27,7 +27,9 @@
 
 using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -36,6 +38,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class SulFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Sul;
+
+        public override Image ServiceImage => Resources.Sul;
 
         public override bool CheckConfig(UploadersConfig config)
         {

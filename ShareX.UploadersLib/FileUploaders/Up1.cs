@@ -28,8 +28,10 @@
 using Newtonsoft.Json;
 using Security.Cryptography;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -41,6 +43,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class Up1FileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Up1;
+
+        public override Icon ServiceIcon => Resources.Up1;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 

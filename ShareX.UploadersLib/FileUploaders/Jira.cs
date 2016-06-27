@@ -26,9 +26,11 @@
 // Credits: https://github.com/gpailler
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -41,6 +43,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class JiraFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Jira;
+
+        public override Image ServiceImage => Resources.jira;
 
         public override bool CheckConfig(UploadersConfig config)
         {

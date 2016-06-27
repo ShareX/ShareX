@@ -24,9 +24,11 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -38,6 +40,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class SendSpaceFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.SendSpace;
+
+        public override Icon ServiceIcon => Resources.SendSpace;
 
         public override bool CheckConfig(UploadersConfig config)
         {

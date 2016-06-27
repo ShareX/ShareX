@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -40,6 +41,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class FTPFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.FTP;
+
+        public override Image ServiceImage => Resources.folder_network;
 
         public override bool CheckConfig(UploadersConfig config)
         {

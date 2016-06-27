@@ -26,7 +26,9 @@
 // Credits: https://github.com/mstojcevich
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -35,6 +37,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class LambdaFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Lambda;
+
+        public override Icon ServiceIcon => Resources.Lambda;
 
         public override bool CheckConfig(UploadersConfig config)
         {

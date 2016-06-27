@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -34,6 +35,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class CustomFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.CustomFileUploader;
+
+        public override Image ServiceImage => Resources.globe_network;
 
         public override bool CheckConfig(UploadersConfig config)
         {

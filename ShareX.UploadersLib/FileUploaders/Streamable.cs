@@ -25,7 +25,9 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
@@ -35,6 +37,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class StreamableFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Streamable;
+
+        public override Icon ServiceIcon => Resources.Streamable;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 
