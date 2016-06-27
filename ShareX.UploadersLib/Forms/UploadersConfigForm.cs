@@ -88,9 +88,6 @@ namespace ShareX.UploadersLib
                 Text += " - " + Config.FilePath;
             }
 
-            uploadersImageList = new ImageList();
-            uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
-
             AddIconToTabs();
 
             ttlvMain.ImageList = uploadersImageList;
@@ -130,11 +127,14 @@ namespace ShareX.UploadersLib
 
         private void AddIconToTabs()
         {
+            uploadersImageList = new ImageList();
+            uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
+
             foreach (IUploaderService uploaderService in UploaderFactory.AllServices)
             {
                 TabPage tp = uploaderService.GetUploadersConfigTabPage(this);
 
-                if (tp != null)
+                if (tp != null && string.IsNullOrEmpty(tp.ImageKey))
                 {
                     Icon icon = uploaderService.ServiceIcon;
 
