@@ -68,21 +68,26 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool AutoCreateShareableLink { get; set; }
         public DropboxURLType ShareURLType { get; set; }
 
-        private const string APIVersion = "1";
-        private const string Root = "dropbox"; // dropbox or sandbox
+        private const string APIVersion = "2";
+        private const string Root = "dropbox";
 
-        private const string URLWEB = "https://www.dropbox.com/" + APIVersion;
-        private const string URLAPI = "https://api.dropbox.com/" + APIVersion;
-        private const string URLAPIContent = "https://api-content.dropbox.com/" + APIVersion;
+        private const string URLWEB = "https://www.dropbox.com/";
+        private const string URLAPI = "https://api.dropboxapi.com/" + APIVersion;
+        private const string URLContent = "https://content.dropboxapi.com/" + APIVersion;
 
-        private const string URLAccountInfo = URLAPI + "/account/info";
-        private const string URLFiles = URLAPIContent + "/files/" + Root;
-        private const string URLMetaData = URLAPI + "/metadata/" + Root;
-        private const string URLShares = URLAPI + "/shares/" + Root;
-        private const string URLCopy = URLAPI + "/fileops/copy";
-        private const string URLCreateFolder = URLAPI + "/fileops/create_folder";
-        private const string URLDelete = URLAPI + "/fileops/delete";
-        private const string URLMove = URLAPI + "/fileops/move";
+        private const string URLOAuth2Authorize = URLWEB + "/oauth2/authorize";
+        private const string URLOAuth2Token = URLAPI + "/oauth2/token";
+
+        private const string URLGetCurrentAccount = URLAPI + "/users/get_current_account";
+        private const string URLDownload = URLContent + "/files/download";
+        private const string URLUpload = URLContent + "/files/upload";
+        private const string URLGetMetadata = URLAPI + "/files/get_metadata";
+        private const string URLCreateSharedLink = URLAPI + "/sharing/create_shared_link_with_settings";
+        private const string URLCopy = URLAPI + "/files/copy";
+        private const string URLCreateFolder = URLAPI + "/files/create_folder";
+        private const string URLDelete = URLAPI + "/files/delete";
+        private const string URLMove = URLAPI + "/files/move";
+
         private const string URLPublicDirect = "https://dl.dropboxusercontent.com/u";
         private const string URLShareDirect = "https://dl.dropboxusercontent.com/s";
 
@@ -96,17 +101,15 @@ namespace ShareX.UploadersLib.FileUploaders
             AccountInfo = accountInfo;
         }
 
-        // https://www.dropbox.com/developers/core/docs#oa2-authorize
         public string GetAuthorizationURL()
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
 
-            return CreateQuery(URLWEB + "/oauth2/authorize", args);
+            return CreateQuery(URLOAuth2Authorize, args);
         }
 
-        // https://www.dropbox.com/developers/core/docs#oa2-token
         public bool GetAccessToken(string code)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
@@ -115,7 +118,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("grant_type", "authorization_code");
             args.Add("code", code);
 
-            string response = SendRequest(HttpMethod.POST, URLAPI + "/oauth2/token", args);
+            string response = SendRequest(HttpMethod.POST, URLOAuth2Token, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -138,32 +141,15 @@ namespace ShareX.UploadersLib.FileUploaders
             return headers;
         }
 
-        /* OAuth 1.0
-        // https://www.dropbox.com/developers/core/docs#request-token
-        // https://www.dropbox.com/developers/core/docs#authorize
-        public string GetAuthorizationURL()
-        {
-            return GetAuthorizationURL(URLAPI + "/oauth/request_token", URLWEB + "/oauth/authorize", AuthInfo);
-        }
-
-        // https://www.dropbox.com/developers/core/docs#access-token
-        public bool GetAccessToken(string verificationCode = null)
-        {
-            AuthInfo.AuthVerifier = verificationCode;
-            return GetAccessToken(URLAPI + "/oauth/access_token", AuthInfo);
-        }
-        */
-
         #region Dropbox accounts
 
-        // https://www.dropbox.com/developers/core/docs#account-info
         public DropboxAccountInfo GetAccountInfo()
         {
             DropboxAccountInfo account = null;
 
             if (OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string response = SendRequest(HttpMethod.GET, URLAccountInfo, headers: GetAuthHeaders());
+                string response = SendRequest(HttpMethod.GET, URLGetCurrentAccount, headers: GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -183,22 +169,20 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region Files and metadata
 
-        // https://www.dropbox.com/developers/core/docs#files-GET
         public bool DownloadFile(string path, Stream downloadStream)
         {
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
+                string url = URLHelpers.CombineURL(URLDownload, URLHelpers.URLPathEncode(path));
                 return SendRequest(HttpMethod.GET, downloadStream, url, headers: GetAuthHeaders());
             }
 
             return false;
         }
 
-        // https://www.dropbox.com/developers/core/docs#files_put
         public UploadResult UploadFile(Stream stream, string path, string fileName, bool createShareableURL = false, DropboxURLType urlType = DropboxURLType.Default)
         {
-            string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
+            string url = URLHelpers.CombineURL(URLUpload, URLHelpers.URLPathEncode(path));
 
             // There's a 150MB limit to all uploads through the API.
             UploadResult result = UploadData(stream, url, fileName, headers: GetAuthHeaders());
@@ -224,14 +208,13 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        // https://www.dropbox.com/developers/core/docs#metadata
         public DropboxContentInfo GetMetadata(string path, bool list)
         {
             DropboxContentInfo contentInfo = null;
 
             if (OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string url = URLHelpers.CombineURL(URLMetaData, URLHelpers.URLPathEncode(path));
+                string url = URLHelpers.CombineURL(URLGetMetadata, URLHelpers.URLPathEncode(path));
 
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("list", list ? "true" : "false");
@@ -253,12 +236,11 @@ namespace ShareX.UploadersLib.FileUploaders
             return contentInfo != null && !contentInfo.Is_deleted;
         }
 
-        // https://www.dropbox.com/developers/core/docs#shares
         public string CreateShareableLink(string path, DropboxURLType urlType)
         {
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string url = URLHelpers.CombineURL(URLShares, URLHelpers.URLPathEncode(path));
+                string url = URLHelpers.CombineURL(URLCreateSharedLink, URLHelpers.URLPathEncode(path));
 
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
@@ -295,7 +277,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region File operations
 
-        // https://www.dropbox.com/developers/core/docs#fileops-copy
         public DropboxContentInfo Copy(string from_path, string to_path)
         {
             DropboxContentInfo contentInfo = null;
@@ -318,7 +299,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return contentInfo;
         }
 
-        // https://www.dropbox.com/developers/core/docs#fileops-create-folder
         public DropboxContentInfo CreateFolder(string path)
         {
             DropboxContentInfo contentInfo = null;
@@ -340,7 +320,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return contentInfo;
         }
 
-        // https://www.dropbox.com/developers/core/docs#fileops-delete
         public DropboxContentInfo Delete(string path)
         {
             DropboxContentInfo contentInfo = null;
@@ -362,7 +341,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return contentInfo;
         }
 
-        // https://www.dropbox.com/developers/core/docs#fileops-move
         public DropboxContentInfo Move(string from_path, string to_path)
         {
             DropboxContentInfo contentInfo = null;
