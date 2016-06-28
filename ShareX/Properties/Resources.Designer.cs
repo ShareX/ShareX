@@ -1066,6 +1066,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset all hotkeys to defaults?.
+        /// </summary>
+        public static string HotkeySettingsForm_btnReset_Click_Reset_all_hotkeys_to_defaults_ {
+            get {
+                return ResourceManager.GetString("HotkeySettingsForm_btnReset_Click_Reset_all_hotkeys_to_defaults_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap hu {
@@ -1545,6 +1554,15 @@ namespace ShareX.Properties {
         public static string QuickTaskMenu_ShowMenu_Edit_this_menu___ {
             get {
                 return ResourceManager.GetString("QuickTaskMenu_ShowMenu_Edit_this_menu___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset all quick tasks to defaults?.
+        /// </summary>
+        public static string QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation {
+            get {
+                return ResourceManager.GetString("QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation", resourceCulture);
             }
         }
         

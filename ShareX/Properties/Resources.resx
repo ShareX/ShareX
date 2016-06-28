@@ -838,4 +838,10 @@ Would you like to restart ShareX?</value>
   <data name="Patreon_Button_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Patreon_Button_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HotkeySettingsForm_btnReset_Click_Reset_all_hotkeys_to_defaults_" xml:space="preserve">
+    <value>Reset all hotkeys to defaults?</value>
+  </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>Reset all quick tasks to defaults?</value>
+  </data>
 </root>

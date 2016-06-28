@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using ShareX.Properties;
 
 namespace ShareX
 {
@@ -211,8 +212,11 @@ namespace ShareX
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            manager.ResetHotkeys();
-            AddControls();
+            if (MessageBox.Show(Resources.HotkeySettingsForm_btnReset_Click_Reset_all_hotkeys_to_defaults_, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                manager.ResetHotkeys();
+                AddControls();
+            }
         }
     }
 }

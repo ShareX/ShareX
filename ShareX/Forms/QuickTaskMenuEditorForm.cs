@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -122,8 +123,11 @@ namespace ShareX
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            Program.Settings.QuickTaskPresets = QuickTaskInfo.DefaultPresets;
-            UpdateItems();
+            if (MessageBox.Show(Resources.QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Program.Settings.QuickTaskPresets = QuickTaskInfo.DefaultPresets;
+                UpdateItems();
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
