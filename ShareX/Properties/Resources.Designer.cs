@@ -1068,9 +1068,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Reset all hotkeys to defaults?.
         /// </summary>
-        public static string HotkeySettingsForm_btnReset_Click_Reset_all_hotkeys_to_defaults_ {
+        public static string HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation {
             get {
-                return ResourceManager.GetString("HotkeySettingsForm_btnReset_Click_Reset_all_hotkeys_to_defaults_", resourceCulture);
+                return ResourceManager.GetString("HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation", resourceCulture);
             }
         }
         
