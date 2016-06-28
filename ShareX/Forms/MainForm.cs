@@ -714,7 +714,7 @@ Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
 #if RELEASE
             lock (updateTimerLock)
             {
-                if (!Program.IsPortableApps && Program.Settings.AutoCheckUpdate)
+                if (!Program.PortableApps && Program.Settings.AutoCheckUpdate)
                 {
                     if (updateTimer == null)
                     {
