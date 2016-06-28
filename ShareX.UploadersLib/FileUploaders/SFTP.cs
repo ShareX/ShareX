@@ -231,7 +231,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 try
                 {
-                    using (SftpFileStream sftpStream = client.OpenWrite(remotePath))
+                    using (SftpFileStream sftpStream = client.Create(remotePath))
                     {
                         return TransferData(stream, sftpStream);
                     }
@@ -242,7 +242,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     CreateDirectory(URLHelpers.GetDirectoryPath(remotePath));
 
-                    using (SftpFileStream sftpStream = client.OpenWrite(remotePath))
+                    using (SftpFileStream sftpStream = client.Create(remotePath))
                     {
                         return TransferData(stream, sftpStream);
                     }
