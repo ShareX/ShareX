@@ -1187,6 +1187,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove all custom uploaders?.
+        /// </summary>
+        internal static string UploadersConfigForm_Remove_all_custom_uploaders_Confirmation {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_Remove_all_custom_uploaders_Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SendSpace registration.
         /// </summary>
         internal static string UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___ {
