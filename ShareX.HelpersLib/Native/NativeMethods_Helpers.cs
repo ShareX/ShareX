@@ -477,15 +477,18 @@ namespace ShareX.HelpersLib
             return FlashWindowEx(ref fInfo);
         }
 
-        // http://stackoverflow.com/questions/14600987/code-to-open-windows-explorer-or-focus-if-exists-with-file-selected
         public static void OpenFolderAndSelectFile(string filePath)
         {
-            if (filePath == null)
-                throw new ArgumentNullException(nameof(filePath));
-
             IntPtr pidl = ILCreateFromPathW(filePath);
-            SHOpenFolderAndSelectItems(pidl, 0, IntPtr.Zero, 0);
-            ILFree(pidl);
+
+            try
+            {
+                SHOpenFolderAndSelectItems(pidl, 0, IntPtr.Zero, 0);
+            }
+            finally
+            {
+                ILFree(pidl);
+            }
         }
     }
 }
