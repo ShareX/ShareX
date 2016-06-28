@@ -417,7 +417,7 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    Process.Start("explorer.exe", folderPath);
+                    Process.Start(folderPath);
                     return true;
                 }
                 catch (Exception e)
@@ -439,7 +439,7 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    Process.Start("explorer.exe", $"/select,\"{filePath}\"");
+                    NativeMethods.OpenFolderAndSelectFile(filePath);
                     return true;
                 }
                 catch (Exception e)
