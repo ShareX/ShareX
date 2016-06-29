@@ -278,23 +278,33 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string url = URLHelpers.CombineURL(URLCreateSharedLink, URLHelpers.URLPathEncode(path));
+                NameValueCollection headers = GetAuthHeaders();
+                path = URLHelpers.AddSlash(path, SlashType.Prefix);
+                string arg = JsonConvert.SerializeObject(new
+                {
+                    path = path,
+                    settings = new
+                    {
+                        requested_visibility = "public" // Anyone who has received the link can access it. No login required.
+                    }
+                });
 
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
+                // TODO: args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
 
-                string response = SendRequest(HttpMethod.POST, url, args, GetAuthHeaders());
+                string response = SendRequestJSON(URLCreateSharedLink, arg, headers);
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    DropboxShares shares = JsonConvert.DeserializeObject<DropboxShares>(response);
+                    DropboxLinkMetadata linkMetadata = JsonConvert.DeserializeObject<DropboxLinkMetadata>(response);
 
                     if (urlType == DropboxURLType.Direct)
                     {
-                        Match match = Regex.Match(shares.URL, @"https?://(?:www\.)?dropbox.com/s/(?<path>\w+/.+)");
+                        Match match = Regex.Match(linkMetadata.url, @"https?://(?:www\.)?dropbox.com/s/(?<path>\w+/.+)");
+
                         if (match.Success)
                         {
                             string urlPath = match.Groups["path"].Value;
+
                             if (!string.IsNullOrEmpty(urlPath))
                             {
                                 return URLHelpers.CombineURL(URLShareDirect, urlPath);
@@ -303,7 +313,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                     else
                     {
-                        return shares.URL;
+                        return linkMetadata.url;
                     }
                 }
             }
@@ -517,9 +527,51 @@ namespace ShareX.UploadersLib.FileUploaders
         public string value { get; set; }
     }
 
-    public class DropboxShares
+    public class DropboxLinkMetadata
     {
-        public string URL { get; set; }
-        public string Expires { get; set; }
+        [JsonProperty(".tag")]
+        public string tag { get; set; }
+        public string url { get; set; }
+        public string name { get; set; }
+        public DropboxLinkMetadataPermissions link_permissions { get; set; }
+        public string client_modified { get; set; }
+        public string server_modified { get; set; }
+        public string rev { get; set; }
+        public int size { get; set; }
+        public string id { get; set; }
+        public string path_lower { get; set; }
+        public DropboxLinkMetadataTeamMemberInfo team_member_info { get; set; }
+    }
+
+    public class DropboxLinkMetadataPermissions
+    {
+        public bool can_revoke { get; set; }
+        public DropboxLinkMetadataResolvedVisibility resolved_visibility { get; set; }
+        public DropboxLinkMetadataRevokeFailureReason revoke_failure_reason { get; set; }
+    }
+
+    public class DropboxLinkMetadataResolvedVisibility
+    {
+        [JsonProperty(".tag")]
+        public string tag { get; set; }
+    }
+
+    public class DropboxLinkMetadataRevokeFailureReason
+    {
+        [JsonProperty(".tag")]
+        public string tag { get; set; }
+    }
+
+    public class DropboxLinkMetadataTeamMemberInfo
+    {
+        public DropboxLinkMetadataTeamInfo team_info { get; set; }
+        public string display_name { get; set; }
+        public string member_id { get; set; }
+    }
+
+    public class DropboxLinkMetadataTeamInfo
+    {
+        public string id { get; set; }
+        public string name { get; set; }
     }
 }
