@@ -123,9 +123,6 @@
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Autorización de refrescar no es compatible.</value>
   </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Nombre del directorio para crear</value>
-  </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
     <value>ID de usuario:</value>
   </data>
@@ -144,9 +141,6 @@
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>¿Eliminar archivo?</value>
-  </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Carpeta raíz</value>
   </data>
@@ -155,12 +149,6 @@
   </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX cliente FTP</value>
-  </data>
-  <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
-    <value>Ruta no existe:</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
-    <value>¿Está seguro de que desea borrar "{0}" de su Dropbox?</value>
   </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Buscar un archivo de certificado...</value>

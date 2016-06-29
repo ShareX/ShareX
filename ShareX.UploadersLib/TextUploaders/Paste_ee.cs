@@ -34,7 +34,7 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public override TextDestination EnumValue { get; } = TextDestination.Paste_ee;
 
-        public override Image ServiceImage => Resources.page_white_text;
+        public override Image ServiceImage => Resources.document;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 

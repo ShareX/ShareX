@@ -120,9 +120,6 @@
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} a bien été créé.</value>
   </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
-    <value>Êtes-vous sûr de vouloir supprimer « {0} » de votre Dropbox ?</value>
-  </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Authentification requise.</value>
   </data>
@@ -151,9 +148,6 @@ Dossiers créés :</value>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Impossible d'actualiser l'autorisation.</value>
   </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Nom du dossier à créer</value>
-  </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
     <value>ID de l'utilisateur :</value>
   </data>
@@ -171,9 +165,6 @@ Dossiers créés :</value>
   </data>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Erreur</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>Supprimer le fichier ?</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Dossier racine</value>
@@ -225,9 +216,6 @@ Dossiers créés :</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
     <value>Chemin de l'album parent - Exemple :</value>
-  </data>
-  <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
-    <value>Le chemin n'existe pas :</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Demande des dossiers...</value>

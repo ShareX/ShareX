@@ -120,20 +120,11 @@
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Duyệt lấy tệp tin xác thực...</value>
   </data>
-  <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
-    <value>Đường dẫn không tồn tại:</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
-    <value>Bạn có chắc chắn xóa "{0}" khỏi Dropbox của bạn?</value>
-  </data>
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>Đang kết nối tới {0}</value>
   </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Làm mới quá trình xác thực không được hỗ trợ.</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Tên đường dẫn sẽ tạo</value>
   </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
     <value>User ID:</value>
@@ -152,9 +143,6 @@
   </data>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Lỗi</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>Xóa tệp tin?</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Thư mục gốc</value>

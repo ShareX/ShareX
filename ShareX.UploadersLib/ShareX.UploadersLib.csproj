@@ -266,14 +266,7 @@
     <Compile Include="Controls\AccountsControl.Designer.cs">
       <DependentUpon>AccountsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DropboxFilesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DropboxFilesForm.Designer.cs">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\CertFileNameEditor.cs" />
-    <Compile Include="Helpers\ImageListManager.cs" />
     <Compile Include="BaseUploaders\FileUploader.cs" />
     <Compile Include="FileUploaders\Dropbox.cs" />
     <Compile Include="FileUploaders\DropIO.cs" />
@@ -462,39 +455,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.zh-CN.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.de.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.es.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.fr.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.hu.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.ko-KR.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.nl-NL.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.pt-BR.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.ru.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.tr.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.vi-VN.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.zh-CN.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.de.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
@@ -786,9 +746,6 @@
     <EmbeddedResource Include="Controls\AccountsControl.resx">
       <DependentUpon>AccountsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -880,42 +837,6 @@
     <None Include="Favicons\OneTimeSecret.ico" />
     <None Include="Favicons\Polr.ico" />
     <None Include="packages.config" />
-    <None Include="Resources\server-network.png" />
-    <None Include="Resources\mail.png" />
-    <None Include="Resources\globe-network.png" />
-    <None Include="Resources\folder-network.png" />
-    <None Include="Resources\page_white_powerpoint.gif" />
-    <None Include="Resources\page_white_picture.gif" />
-    <None Include="Resources\page_white_php.gif" />
-    <None Include="Resources\page_white_paint.gif" />
-    <None Include="Resources\page_white_gear.gif" />
-    <None Include="Resources\page_white_flash.gif" />
-    <None Include="Resources\page_white_film.gif" />
-    <None Include="Resources\page_white_excel.gif" />
-    <None Include="Resources\page_white_dvd.gif" />
-    <None Include="Resources\page_white_cup.gif" />
-    <None Include="Resources\page_white_csharp.gif" />
-    <None Include="Resources\page_white_cplusplus.gif" />
-    <None Include="Resources\page_white_compressed.gif" />
-    <None Include="Resources\page_white_code.gif" />
-    <None Include="Resources\page_white_c.gif" />
-    <None Include="Resources\page_white_actionscript.gif" />
-    <None Include="Resources\page_white_acrobat.gif" />
-    <None Include="Resources\page_white.gif" />
-    <None Include="Resources\package.gif" />
-    <None Include="Resources\folder_user.gif" />
-    <None Include="Resources\folder_star.gif" />
-    <None Include="Resources\folder_public.gif" />
-    <None Include="Resources\folder_photos.gif" />
-    <None Include="Resources\folder_gray.gif" />
-    <None Include="Resources\folder.gif" />
-    <None Include="Resources\page_white_word.gif" />
-    <None Include="Resources\page_white_visualstudio.gif" />
-    <None Include="Resources\page_white_vector.gif" />
-    <None Include="Resources\page_white_tux.gif" />
-    <None Include="Resources\page_white_text.gif" />
-    <None Include="Resources\page_white_sound.gif" />
-    <None Include="Resources\page_white_ruby.gif" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
@@ -928,9 +849,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\Seafile.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\question-button.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\SomeImage.ico" />
@@ -949,6 +867,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\puush-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\globe-network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\server-network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
