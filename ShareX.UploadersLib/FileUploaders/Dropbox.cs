@@ -184,7 +184,10 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 NameValueCollection headers = GetAuthHeaders();
                 path = URLHelpers.AddSlash(path, SlashType.Prefix);
-                string arg = JsonConvert.SerializeObject(new DropboxPath(path));
+                string arg = JsonConvert.SerializeObject(new
+                {
+                    path = path
+                });
                 headers.Add("Dropbox-API-Arg", arg);
 
                 return SendRequest(HttpMethod.POST, downloadStream, URLDownload, headers: headers, contentType: ContentTypeJSON);
@@ -195,30 +198,47 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public UploadResult UploadFile(Stream stream, string path, string fileName, bool createShareableURL = false, DropboxURLType urlType = DropboxURLType.Default)
         {
-            string url = URLHelpers.CombineURL(URLUpload, URLHelpers.URLPathEncode(path));
-
-            // There's a 150MB limit to all uploads through the API.
-            UploadResult result = UploadData(stream, url, fileName, headers: GetAuthHeaders());
-
-            if (result.IsSuccess)
+            if (stream.Length > 150000000)
             {
-                DropboxContentInfo content = JsonConvert.DeserializeObject<DropboxContentInfo>(result.Response);
+                Errors.Add("There's a 150MB limit to uploads through the API.");
+                return null;
+            }
+
+            NameValueCollection headers = GetAuthHeaders();
+            path = URLHelpers.AddSlash(path, SlashType.Prefix);
+            path = URLHelpers.CombineURL(path, fileName);
+            string arg = JsonConvert.SerializeObject(new
+            {
+                path = path,
+                mode = "overwrite",
+                autorename = false,
+                mute = true
+            });
+            headers.Add("Dropbox-API-Arg", arg);
+
+            string response = SendRequestStream(URLUpload, stream, ContentTypeOctetStream, headers);
+
+            UploadResult ur = new UploadResult(response);
+
+            if (!string.IsNullOrEmpty(ur.Response))
+            {
+                DropboxContentInfo content = JsonConvert.DeserializeObject<DropboxContentInfo>(ur.Response);
 
                 if (content != null)
                 {
                     if (createShareableURL)
                     {
                         AllowReportProgress = false;
-                        result.URL = CreateShareableLink(content.Path, urlType);
+                        ur.URL = CreateShareableLink(content.Path, urlType);
                     }
                     else
                     {
-                        result.URL = GetPublicURL(content.Path);
+                        ur.URL = GetPublicURL(content.Path);
                     }
                 }
             }
 
-            return result;
+            return ur;
         }
 
         public DropboxContentInfo GetMetadata(string path, bool list)
@@ -424,16 +444,6 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return "";
-        }
-    }
-
-    public class DropboxPath
-    {
-        public string path { get; set; }
-
-        public DropboxPath(string path)
-        {
-            this.path = path;
         }
     }
 
