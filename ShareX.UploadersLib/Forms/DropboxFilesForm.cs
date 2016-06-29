@@ -39,17 +39,17 @@ namespace ShareX.UploadersLib.Forms
         public string CurrentFolderPath { get; private set; }
 
         private Dropbox dropbox;
-        private DropboxAccountInfo dropboxAccountInfo;
+        private DropboxAccount dropboxAccount;
         private ImageListManager ilm;
         private bool isSelectedFile, isSelectedPublic;
 
-        public DropboxFilesForm(OAuth2Info oauth, string path, DropboxAccountInfo accountInfo)
+        public DropboxFilesForm(OAuth2Info oauth, string path, DropboxAccount account)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
             dropbox = new Dropbox(oauth);
-            dropboxAccountInfo = accountInfo;
+            dropboxAccount = account;
             ilm = new ImageListManager(lvDropboxFiles);
 
             if (path != null)
@@ -156,7 +156,8 @@ namespace ShareX.UploadersLib.Forms
 
                 if (content != null && !content.Is_dir && content.Path.StartsWith("/Public/", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    string url = Dropbox.GetPublicURL(dropboxAccountInfo.Uid, content.Path);
+                    // TODO: uid
+                    string url = Dropbox.GetPublicURL(dropboxAccount.account_id, content.Path);
                     ClipboardHelpers.CopyText(url);
                 }
             }

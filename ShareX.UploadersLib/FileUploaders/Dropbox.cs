@@ -49,7 +49,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Dropbox(config.DropboxOAuth2Info, config.DropboxAccountInfo)
+            return new Dropbox(config.DropboxOAuth2Info, config.DropboxAccount)
             {
                 UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(config.DropboxUploadPath)),
                 AutoCreateShareableLink = config.DropboxAutoCreateShareableLink,
@@ -63,7 +63,7 @@ namespace ShareX.UploadersLib.FileUploaders
     public sealed class Dropbox : FileUploader, IOAuth2Basic
     {
         public OAuth2Info AuthInfo { get; set; }
-        public DropboxAccountInfo AccountInfo { get; set; }
+        public DropboxAccount Account { get; set; }
         public string UploadPath { get; set; }
         public bool AutoCreateShareableLink { get; set; }
         public DropboxURLType ShareURLType { get; set; }
@@ -71,12 +71,14 @@ namespace ShareX.UploadersLib.FileUploaders
         private const string APIVersion = "2";
         private const string Root = "dropbox";
 
-        private const string URLWEB = "https://www.dropbox.com/";
-        private const string URLAPI = "https://api.dropboxapi.com/" + APIVersion;
+        private const string URLWEB = "https://www.dropbox.com";
+        private const string URLAPIBase = "https://api.dropboxapi.com";
+        private const string URLAPI = URLAPIBase + "/" + APIVersion;
         private const string URLContent = "https://content.dropboxapi.com/" + APIVersion;
+        private const string URLNotify = "https://notify.dropboxapi.com/" + APIVersion;
 
         private const string URLOAuth2Authorize = URLWEB + "/oauth2/authorize";
-        private const string URLOAuth2Token = URLAPI + "/oauth2/token";
+        private const string URLOAuth2Token = URLAPIBase + "/oauth2/token";
 
         private const string URLGetCurrentAccount = URLAPI + "/users/get_current_account";
         private const string URLDownload = URLContent + "/files/download";
@@ -96,9 +98,9 @@ namespace ShareX.UploadersLib.FileUploaders
             AuthInfo = oauth;
         }
 
-        public Dropbox(OAuth2Info oauth, DropboxAccountInfo accountInfo) : this(oauth)
+        public Dropbox(OAuth2Info oauth, DropboxAccount account) : this(oauth)
         {
-            AccountInfo = accountInfo;
+            Account = account;
         }
 
         public string GetAuthorizationURL()
@@ -143,21 +145,21 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region Dropbox accounts
 
-        public DropboxAccountInfo GetAccountInfo()
+        public DropboxAccount GetAccountInfo()
         {
-            DropboxAccountInfo account = null;
+            DropboxAccount account = null;
 
             if (OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string response = SendRequest(HttpMethod.GET, URLGetCurrentAccount, headers: GetAuthHeaders());
+                string response = SendRequestJSON(URLGetCurrentAccount, "null", GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    account = JsonConvert.DeserializeObject<DropboxAccountInfo>(response);
+                    account = JsonConvert.DeserializeObject<DropboxAccount>(response);
 
                     if (account != null)
                     {
-                        AccountInfo = account;
+                        Account = account;
                     }
                 }
             }
@@ -383,10 +385,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string GetPublicURL(string path)
         {
-            return GetPublicURL(AccountInfo.Uid, path);
+            // TODO: uid
+            return GetPublicURL(Account.account_id, path);
         }
 
-        public static string GetPublicURL(long userID, string path)
+        public static string GetPublicURL(string userID, string path)
         {
             if (!string.IsNullOrEmpty(path))
             {
@@ -395,7 +398,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (path.StartsWith("Public/", StringComparison.InvariantCultureIgnoreCase))
                 {
                     path = URLHelpers.URLPathEncode(path.Substring(7));
-                    return URLHelpers.CombineURL(URLPublicDirect, userID.ToString(), path);
+                    return URLHelpers.CombineURL(URLPublicDirect, userID, path);
                 }
             }
 
@@ -420,14 +423,42 @@ namespace ShareX.UploadersLib.FileUploaders
         Direct
     }
 
-    public class DropboxAccountInfo
+    public class DropboxPath
     {
-        public string Referral_link { get; set; } // The user's referral link.
-        public string Display_name { get; set; } // The user's display name.
-        public long Uid { get; set; } // The user's unique Dropbox ID.
-        public string Country { get; set; } // The user's two-letter country code, if available.
-        public DropboxQuotaInfo Quota_info { get; set; }
-        public string Email { get; set; }
+        public string path { get; set; }
+
+        public DropboxPath(string path)
+        {
+            this.path = path;
+        }
+    }
+
+    public class DropboxAccount
+    {
+        public string account_id { get; set; }
+        public DropboxAccountName name { get; set; }
+        public string email { get; set; }
+        public bool email_verified { get; set; }
+        public bool disabled { get; set; }
+        public string locale { get; set; }
+        public string referral_link { get; set; }
+        public bool is_paired { get; set; }
+        public DropboxAccountType account_type { get; set; }
+        public string profile_photo_url { get; set; }
+        public string country { get; set; }
+    }
+
+    public class DropboxAccountName
+    {
+        public string given_name { get; set; }
+        public string surname { get; set; }
+        public string familiar_name { get; set; }
+        public string display_name { get; set; }
+    }
+
+    public class DropboxAccountType
+    {
+        public string tag { get; set; }
     }
 
     public class DropboxQuotaInfo
