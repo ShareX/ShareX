@@ -184,8 +184,8 @@ namespace ShareX.UploadersLib
             return false;
         }
 
-        private HttpWebResponse GetResponse(HttpMethod method, string url, Dictionary<string, string> arguments = null,
-            NameValueCollection headers = null, CookieCollection cookies = null, Stream dataStream = null)
+        private HttpWebResponse GetResponse(HttpMethod method, string url, Dictionary<string, string> arguments = null, NameValueCollection headers = null,
+            CookieCollection cookies = null, Stream dataStream = null)
         {
             IsUploading = true;
             StopUploadRequested = false;
@@ -228,13 +228,21 @@ namespace ShareX.UploadersLib
 
         protected string SendRequestJSON(string url, string json, NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
         {
-            byte[] data = Encoding.UTF8.GetBytes(json);
+            MemoryStream stream = null;
 
-            using (MemoryStream stream = new MemoryStream())
+            try
             {
-                stream.Write(data, 0, data.Length);
+                if (!string.IsNullOrEmpty(json))
+                {
+                    byte[] data = Encoding.UTF8.GetBytes(json);
+                    stream = new MemoryStream(data);
+                }
 
                 return SendRequestStream(url, stream, "application/json", headers, cookies, method);
+            }
+            finally
+            {
+                if (stream != null) stream.Dispose();
             }
         }
 
@@ -255,7 +263,7 @@ namespace ShareX.UploadersLib
         protected string SendRequestStream(string url, Stream stream, string contentType, NameValueCollection headers = null,
             CookieCollection cookies = null, HttpMethod method = HttpMethod.POST, ResponseType responseType = ResponseType.Text)
         {
-            using (HttpWebResponse response = GetResponse(url, stream, null, contentType, headers, cookies, method))
+            using (HttpWebResponse response = GetResponse(url, stream, contentType, headers, cookies, method))
             {
                 return ResponseToString(response, responseType);
             }
@@ -264,7 +272,7 @@ namespace ShareX.UploadersLib
         protected NameValueCollection SendRequestStreamGetHeaders(string url, Stream stream, string contentType, NameValueCollection headers = null,
             CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
         {
-            using (HttpWebResponse response = GetResponse(url, stream, null, contentType, headers, cookies, method))
+            using (HttpWebResponse response = GetResponse(url, stream, contentType, headers, cookies, method))
             {
                 if (response != null)
                 {
@@ -275,32 +283,43 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private HttpWebResponse SendRequestMultiPart(string url, Dictionary<string, string> arguments, NameValueCollection headers = null,
-            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
+        private HttpWebResponse SendRequestMultiPart(string url, Dictionary<string, string> arguments, NameValueCollection headers = null, CookieCollection cookies = null,
+            HttpMethod method = HttpMethod.POST)
         {
             string boundary = CreateBoundary();
+            string contentType = "multipart/form-data; boundary=" + boundary;
             byte[] data = MakeInputContent(boundary, arguments);
 
             using (MemoryStream stream = new MemoryStream())
             {
                 stream.Write(data, 0, data.Length);
-                return GetResponse(url, stream, boundary, "multipart/form-data", headers, cookies, method);
+                return GetResponse(url, stream, contentType, headers, cookies, method);
             }
         }
 
-        private HttpWebResponse GetResponse(string url, Stream dataStream, string boundary, string contentType, NameValueCollection headers = null,
-            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
+        private HttpWebResponse GetResponse(string url, Stream dataStream, string contentType, NameValueCollection headers = null, CookieCollection cookies = null,
+            HttpMethod method = HttpMethod.POST)
         {
             IsUploading = true;
             StopUploadRequested = false;
 
             try
             {
-                HttpWebRequest request = PrepareDataWebRequest(url, boundary, dataStream.Length, contentType, cookies, headers, method);
+                long length = 0;
 
-                using (Stream requestStream = request.GetRequestStream())
+                if (dataStream != null)
                 {
-                    if (!TransferData(dataStream, requestStream)) return null;
+                    length = dataStream.Length;
+                }
+
+                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, length);
+
+                if (length > 0)
+                {
+                    using (Stream requestStream = request.GetRequestStream())
+                    {
+                        if (!TransferData(dataStream, requestStream)) return null;
+                    }
                 }
 
                 return (HttpWebResponse)request.GetResponse();
@@ -324,7 +343,7 @@ namespace ShareX.UploadersLib
 
         protected UploadResult UploadData(Stream dataStream, string url, string fileName, string fileFormName = "file", Dictionary<string, string> arguments = null,
             NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST,
-            string requestContentType = "multipart/form-data", string metadata = null)
+            string contentType = "multipart/form-data", string metadata = null)
         {
             UploadResult result = new UploadResult();
 
@@ -334,6 +353,7 @@ namespace ShareX.UploadersLib
             try
             {
                 string boundary = CreateBoundary();
+                contentType += "; boundary=" + boundary;
 
                 byte[] bytesArguments = MakeInputContent(boundary, arguments, false);
                 byte[] bytesDataOpen;
@@ -352,7 +372,7 @@ namespace ShareX.UploadersLib
                 byte[] bytesDataClose = MakeFileInputContentClose(boundary);
 
                 long contentLength = bytesArguments.Length + bytesDataOpen.Length + bytesDataDatafile.Length + dataStream.Length + bytesDataClose.Length;
-                HttpWebRequest request = PrepareDataWebRequest(url, boundary, contentLength, requestContentType, cookies, headers, method);
+                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType, contentLength);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
@@ -394,56 +414,42 @@ namespace ShareX.UploadersLib
 
         #region Helper methods
 
-        private HttpWebRequest PrepareDataWebRequest(string url, string boundary, long length, string contentType, CookieCollection cookies = null,
-            NameValueCollection headers = null, HttpMethod method = HttpMethod.POST)
+        private HttpWebRequest PrepareWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null, long contentLength = 0)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-            if (headers != null && headers["Accept"] != null)
+            request.Method = method.ToString();
+
+            if (headers != null)
             {
-                request.Accept = headers["Accept"];
-                headers.Remove("Accept");
+                if (headers["Accept"] != null)
+                {
+                    request.Accept = headers["Accept"];
+                    headers.Remove("Accept");
+                }
+
+                request.Headers.Add(headers);
             }
 
-            request.AllowWriteStreamBuffering = HelpersOptions.CurrentProxy.IsValidProxy();
-            request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
-            request.ContentLength = length;
-            if (!string.IsNullOrEmpty(boundary)) contentType += "; boundary=" + boundary;
-            request.ContentType = contentType;
             request.CookieContainer = new CookieContainer();
             if (cookies != null) request.CookieContainer.Add(cookies);
-            if (headers != null) request.Headers.Add(headers);
-            request.KeepAlive = true;
-            request.Method = method.ToString();
-            request.Pipelined = false;
-            request.ProtocolVersion = HttpVersion.Version11;
-            request.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-            request.Timeout = -1;
-            request.UserAgent = UserAgent;
-
-            currentRequest = request;
-
-            return request;
-        }
-
-        private HttpWebRequest PrepareWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null)
-        {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-
-            if (headers != null && headers["Accept"] != null)
-            {
-                request.Accept = headers["Accept"];
-                headers.Remove("Accept");
-            }
-
-            request.Method = method.ToString();
-            if (headers != null) request.Headers.Add(headers);
-            request.CookieContainer = new CookieContainer();
-            if (cookies != null) request.CookieContainer.Add(cookies);
-            request.KeepAlive = false;
             IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             if (proxy != null) request.Proxy = proxy;
             request.UserAgent = UserAgent;
+            request.ContentType = contentType;
+
+            if (contentLength > 0)
+            {
+                request.AllowWriteStreamBuffering = HelpersOptions.CurrentProxy.IsValidProxy();
+                request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+                request.ContentLength = contentLength;
+                request.Pipelined = false;
+                request.Timeout = -1;
+            }
+            else
+            {
+                request.KeepAlive = false;
+            }
 
             currentRequest = request;
 
