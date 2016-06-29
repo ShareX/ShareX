@@ -40,6 +40,10 @@ namespace ShareX.UploadersLib
     {
         private static readonly string UserAgent = "ShareX";
 
+        public string ContentTypeMultipartFormData = "multipart/form-data";
+        public string ContentTypeJSON = "application/json";
+        public string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
+
         public delegate void ProgressEventHandler(ProgressManager progress);
         public event ProgressEventHandler ProgressChanged;
 
@@ -170,9 +174,9 @@ namespace ShareX.UploadersLib
         }
 
         protected bool SendRequest(HttpMethod method, Stream downloadStream, string url, Dictionary<string, string> arguments = null,
-            NameValueCollection headers = null, CookieCollection cookies = null)
+            NameValueCollection headers = null, CookieCollection cookies = null, string contentType = null)
         {
-            using (HttpWebResponse response = GetResponse(method, url, arguments, headers, cookies))
+            using (HttpWebResponse response = GetResponse(method, url, arguments, headers, cookies, null, contentType))
             {
                 if (response != null)
                 {
@@ -185,7 +189,7 @@ namespace ShareX.UploadersLib
         }
 
         private HttpWebResponse GetResponse(HttpMethod method, string url, Dictionary<string, string> arguments = null, NameValueCollection headers = null,
-            CookieCollection cookies = null, Stream dataStream = null)
+            CookieCollection cookies = null, Stream dataStream = null, string contentType = null)
         {
             IsUploading = true;
             StopUploadRequested = false;
@@ -194,7 +198,7 @@ namespace ShareX.UploadersLib
 
             try
             {
-                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies);
+                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies, contentType);
 
                 if (dataStream != null)
                 {
@@ -238,7 +242,7 @@ namespace ShareX.UploadersLib
                     stream = new MemoryStream(data);
                 }
 
-                return SendRequestStream(url, stream, "application/json", headers, cookies, method);
+                return SendRequestStream(url, stream, ContentTypeJSON, headers, cookies, method);
             }
             finally
             {
@@ -256,7 +260,7 @@ namespace ShareX.UploadersLib
             {
                 stream.Write(data, 0, data.Length);
 
-                return SendRequestStream(url, stream, "application/x-www-form-urlencoded", headers, cookies, method, responseType);
+                return SendRequestStream(url, stream, ContentTypeURLEncoded, headers, cookies, method, responseType);
             }
         }
 
@@ -287,7 +291,7 @@ namespace ShareX.UploadersLib
             HttpMethod method = HttpMethod.POST)
         {
             string boundary = CreateBoundary();
-            string contentType = "multipart/form-data; boundary=" + boundary;
+            string contentType = ContentTypeMultipartFormData + "; boundary=" + boundary;
             byte[] data = MakeInputContent(boundary, arguments);
 
             using (MemoryStream stream = new MemoryStream())
@@ -343,7 +347,7 @@ namespace ShareX.UploadersLib
 
         protected UploadResult UploadData(Stream dataStream, string url, string fileName, string fileFormName = "file", Dictionary<string, string> arguments = null,
             NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST,
-            string contentType = "multipart/form-data", string metadata = null)
+            string contentType = ContentTypeMultipartFormData, string metadata = null)
         {
             UploadResult result = new UploadResult();
 
@@ -535,7 +539,7 @@ namespace ShareX.UploadersLib
 
             if (metadata != null)
             {
-                format = string.Format("--{0}\r\nContent-Type: {1}; charset=UTF-8\r\n\r\n{2}\r\n\r\n", boundary, "application/json", metadata);
+                format = string.Format("--{0}\r\nContent-Type: {1}; charset=UTF-8\r\n\r\n{2}\r\n\r\n", boundary, ContentTypeJSON, metadata);
             }
             else
             {

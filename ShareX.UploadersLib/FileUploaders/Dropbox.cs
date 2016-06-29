@@ -175,8 +175,11 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string url = URLHelpers.CombineURL(URLDownload, URLHelpers.URLPathEncode(path));
-                return SendRequest(HttpMethod.GET, downloadStream, url, headers: GetAuthHeaders());
+                NameValueCollection headers = GetAuthHeaders();
+                path = URLHelpers.AddSlash(path, SlashType.Prefix);
+                string arg = JsonConvert.SerializeObject(new DropboxPath(path));
+
+                return SendRequest(HttpMethod.POST, downloadStream, URLDownload, headers: headers, contentType: ContentTypeJSON);
             }
 
             return false;
