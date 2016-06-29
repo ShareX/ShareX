@@ -179,7 +179,6 @@
             this.oauth2Dropbox = new ShareX.UploadersLib.OAuthControl();
             this.cbDropboxURLType = new System.Windows.Forms.ComboBox();
             this.cbDropboxAutoCreateShareableLink = new System.Windows.Forms.CheckBox();
-            this.btnDropboxShowFiles = new System.Windows.Forms.Button();
             this.pbDropboxLogo = new System.Windows.Forms.PictureBox();
             this.lblDropboxStatus = new System.Windows.Forms.Label();
             this.lblDropboxPathTip = new System.Windows.Forms.Label();
@@ -202,6 +201,7 @@
             this.cbGoogleDriveIsPublic = new System.Windows.Forms.CheckBox();
             this.oauth2GoogleDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpPuush = new System.Windows.Forms.TabPage();
+            this.pbPuush = new System.Windows.Forms.PictureBox();
             this.lblPuushAPIKey = new System.Windows.Forms.Label();
             this.txtPuushAPIKey = new System.Windows.Forms.TextBox();
             this.llPuushCreateAccount = new System.Windows.Forms.LinkLabel();
@@ -549,7 +549,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.pbPuush = new System.Windows.Forms.PictureBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -578,6 +577,7 @@
             this.tpOneDrive.SuspendLayout();
             this.tpGoogleDrive.SuspendLayout();
             this.tpPuush.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).BeginInit();
             this.tpBox.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
             this.tpMega.SuspendLayout();
@@ -629,7 +629,6 @@
             this.tpVgyme.SuspendLayout();
             this.tpSomeImage.SuspendLayout();
             this.tcUploaders.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).BeginInit();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -1731,7 +1730,6 @@
             this.tpDropbox.Controls.Add(this.oauth2Dropbox);
             this.tpDropbox.Controls.Add(this.cbDropboxURLType);
             this.tpDropbox.Controls.Add(this.cbDropboxAutoCreateShareableLink);
-            this.tpDropbox.Controls.Add(this.btnDropboxShowFiles);
             this.tpDropbox.Controls.Add(this.pbDropboxLogo);
             this.tpDropbox.Controls.Add(this.lblDropboxStatus);
             this.tpDropbox.Controls.Add(this.lblDropboxPathTip);
@@ -1764,13 +1762,6 @@
             this.cbDropboxAutoCreateShareableLink.Name = "cbDropboxAutoCreateShareableLink";
             this.cbDropboxAutoCreateShareableLink.UseVisualStyleBackColor = true;
             this.cbDropboxAutoCreateShareableLink.CheckedChanged += new System.EventHandler(this.cbDropboxAutoCreateShareableLink_CheckedChanged);
-            // 
-            // btnDropboxShowFiles
-            // 
-            resources.ApplyResources(this.btnDropboxShowFiles, "btnDropboxShowFiles");
-            this.btnDropboxShowFiles.Name = "btnDropboxShowFiles";
-            this.btnDropboxShowFiles.UseVisualStyleBackColor = true;
-            this.btnDropboxShowFiles.Click += new System.EventHandler(this.btnDropboxShowFiles_Click);
             // 
             // pbDropboxLogo
             // 
@@ -1938,6 +1929,15 @@
             resources.ApplyResources(this.tpPuush, "tpPuush");
             this.tpPuush.Name = "tpPuush";
             this.tpPuush.UseVisualStyleBackColor = true;
+            // 
+            // pbPuush
+            // 
+            this.pbPuush.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbPuush.Image = global::ShareX.UploadersLib.Properties.Resources.puush_256;
+            resources.ApplyResources(this.pbPuush, "pbPuush");
+            this.pbPuush.Name = "pbPuush";
+            this.pbPuush.TabStop = false;
+            this.pbPuush.Click += new System.EventHandler(this.pbPuush_Click);
             // 
             // lblPuushAPIKey
             // 
@@ -4407,15 +4407,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // pbPuush
-            // 
-            this.pbPuush.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPuush.Image = global::ShareX.UploadersLib.Properties.Resources.puush_256;
-            resources.ApplyResources(this.pbPuush, "pbPuush");
-            this.pbPuush.Name = "pbPuush";
-            this.pbPuush.TabStop = false;
-            this.pbPuush.Click += new System.EventHandler(this.pbPuush_Click);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -4474,6 +4465,7 @@
             this.tpGoogleDrive.PerformLayout();
             this.tpPuush.ResumeLayout(false);
             this.tpPuush.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).EndInit();
             this.tpBox.ResumeLayout(false);
             this.tpBox.PerformLayout();
             this.tpAmazonS3.ResumeLayout(false);
@@ -4567,7 +4559,6 @@
             this.tpSomeImage.ResumeLayout(false);
             this.tpSomeImage.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4649,7 +4640,6 @@
         public System.Windows.Forms.TabControl tcFileUploaders;
         private System.Windows.Forms.ComboBox cbDropboxURLType;
         private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
-        private System.Windows.Forms.Button btnDropboxShowFiles;
         private System.Windows.Forms.PictureBox pbDropboxLogo;
         private System.Windows.Forms.Label lblDropboxStatus;
         private System.Windows.Forms.Label lblDropboxPathTip;

@@ -126,17 +126,11 @@
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>선택된 폴더:</value>
   </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
-    <value>DropBox에서 "{0}"을/를 삭제할까요?</value>
-  </data>
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>{0}에 접속 중</value>
   </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>인증 새로고침은 지원되지 않습니다.</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>생성할 폴더 이름</value>
   </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
     <value>사용자 ID:</value>
@@ -155,9 +149,6 @@
   </data>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>오류</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>파일 삭제?</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>최상위 폴더</value>
@@ -188,9 +179,6 @@
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
     <value>부모 앨범 경로, 예:</value>
-  </data>
-  <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
-    <value>경로가 존재하지 않음:</value>
   </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>인증 파일 탐색...</value>

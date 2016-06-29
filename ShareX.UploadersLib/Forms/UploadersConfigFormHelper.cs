@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
-using ShareX.UploadersLib.Forms;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
@@ -433,20 +432,6 @@ namespace ShareX.UploadersLib
 
         #region Dropbox
 
-        public void DropboxOpenFiles()
-        {
-            if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info))
-            {
-                using (DropboxFilesForm filesForm = new DropboxFilesForm(Config.DropboxOAuth2Info, GetDropboxUploadPath(), Config.DropboxAccount))
-                {
-                    if (filesForm.ShowDialog() == DialogResult.OK)
-                    {
-                        txtDropboxPath.Text = filesForm.CurrentFolderPath;
-                    }
-                }
-            }
-        }
-
         public void DropboxAuthOpen()
         {
             try
@@ -530,7 +515,6 @@ namespace ShareX.UploadersLib
                 // TODO: uid
                 sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Download_path_ + " " + Dropbox.GetPublicURL(Config.DropboxAccount.account_id, uploadPath + "Example.png"));
                 lblDropboxStatus.Text = sb.ToString();
-                btnDropboxShowFiles.Enabled = true;
             }
             else
             {

@@ -266,14 +266,7 @@
     <Compile Include="Controls\AccountsControl.Designer.cs">
       <DependentUpon>AccountsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DropboxFilesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DropboxFilesForm.Designer.cs">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\CertFileNameEditor.cs" />
-    <Compile Include="Helpers\ImageListManager.cs" />
     <Compile Include="BaseUploaders\FileUploader.cs" />
     <Compile Include="FileUploaders\Dropbox.cs" />
     <Compile Include="FileUploaders\DropIO.cs" />
@@ -462,39 +455,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.zh-CN.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.de.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.es.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.fr.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.hu.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.ko-KR.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.nl-NL.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.pt-BR.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.ru.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.tr.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.vi-VN.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.zh-CN.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.de.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
@@ -785,9 +745,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountsControl.resx">
       <DependentUpon>AccountsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DropboxFilesForm.resx">
-      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>

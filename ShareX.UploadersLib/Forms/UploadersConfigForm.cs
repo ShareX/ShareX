@@ -1348,11 +1348,6 @@ namespace ShareX.UploadersLib
             UpdateDropboxStatus();
         }
 
-        private void btnDropboxShowFiles_Click(object sender, EventArgs e)
-        {
-            DropboxOpenFiles();
-        }
-
         private void cbDropboxAutoCreateShareableLink_CheckedChanged(object sender, EventArgs e)
         {
             Config.DropboxAutoCreateShareableLink = cbDropboxAutoCreateShareableLink.Checked;

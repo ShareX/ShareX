@@ -149,43 +149,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Path not exist:.
-        /// </summary>
-        internal static string DropboxFilesForm_OpenDirectory_Path_not_exist_ {
-            get {
-                return ResourceManager.GetString("DropboxFilesForm_OpenDirectory_Path_not_exist_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Directory name to create.
-        /// </summary>
-        internal static string DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create {
-            get {
-                return ResourceManager.GetString("DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to delete &quot;{0}&quot; from your Dropbox?.
-        /// </summary>
-        internal static string DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_ {
-            get {
-                return ResourceManager.GetString("DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your" +
-                        "_Dropbox_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Delete file?.
-        /// </summary>
-        internal static string DropboxFilesForm_tsmiDelete_Click_Delete_file_ {
-            get {
-                return ResourceManager.GetString("DropboxFilesForm_tsmiDelete_Click_Delete_file_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Flickr {
@@ -880,7 +843,7 @@ namespace ShareX.UploadersLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap puush_256 {
             get {
-                object obj = ResourceManager.GetObject("puush-256", resourceCulture);
+                object obj = ResourceManager.GetObject("puush_256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

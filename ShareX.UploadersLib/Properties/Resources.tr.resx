@@ -196,9 +196,6 @@ Oluşturulmuş dizinler:</value>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Yetkilendirme yenileme desteklenmiyor.</value>
   </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Oluşturulacak dizin adı</value>
-  </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
     <value>Kullanıcı ID:</value>
   </data>
@@ -217,9 +214,6 @@ Oluşturulmuş dizinler:</value>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Hata</value>
   </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
-    <value>Dosya silinsin mi?</value>
-  </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Ana klasör</value>
   </data>
@@ -237,12 +231,6 @@ Oluşturulmuş dizinler:</value>
   </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Sertifika dosyası için gözat...</value>
-  </data>
-  <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
-    <value>Yol mevcut değil:</value>
-  </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
-    <value>Dropbox'dan "{0}" silmek istediğinize emin misiniz?</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
     <value>Ana album yolu, örneğin:</value>
