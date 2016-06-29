@@ -183,11 +183,14 @@ namespace ShareX.UploadersLib.FileUploaders
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
                 NameValueCollection headers = GetAuthHeaders();
+
                 path = URLHelpers.AddSlash(path, SlashType.Prefix);
+
                 string arg = JsonConvert.SerializeObject(new
                 {
                     path = path
                 });
+
                 headers.Add("Dropbox-API-Arg", arg);
 
                 return SendRequest(HttpMethod.POST, downloadStream, URLDownload, headers: headers, contentType: ContentTypeJSON);
@@ -205,8 +208,10 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             NameValueCollection headers = GetAuthHeaders();
+
             path = URLHelpers.AddSlash(path, SlashType.Prefix);
             path = URLHelpers.CombineURL(path, fileName);
+
             string arg = JsonConvert.SerializeObject(new
             {
                 path = path,
@@ -214,6 +219,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 autorename = false,
                 mute = true
             });
+
             headers.Add("Dropbox-API-Arg", arg);
 
             string response = SendRequestStream(URLUpload, stream, ContentTypeOctetStream, headers);
@@ -247,8 +253,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (OAuth2Info.CheckOAuth(AuthInfo))
             {
-                NameValueCollection headers = GetAuthHeaders();
                 path = URLHelpers.AddSlash(path, SlashType.Prefix);
+
                 string arg = JsonConvert.SerializeObject(new
                 {
                     path = path,
@@ -257,7 +263,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     include_has_explicit_shared_members = false
                 });
 
-                string response = SendRequestJSON(URLGetMetadata, arg, headers);
+                string response = SendRequestJSON(URLGetMetadata, arg, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -278,8 +284,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                NameValueCollection headers = GetAuthHeaders();
                 path = URLHelpers.AddSlash(path, SlashType.Prefix);
+
                 string arg = JsonConvert.SerializeObject(new
                 {
                     path = path,
@@ -291,7 +297,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 // TODO: args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
 
-                string response = SendRequestJSON(URLCreateSharedLink, arg, headers);
+                string response = SendRequestJSON(URLCreateSharedLink, arg, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -327,88 +333,102 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public DropboxMetadata Copy(string from_path, string to_path)
         {
-            DropboxMetadata contentInfo = null;
+            DropboxMetadata metadata = null;
 
             if (!string.IsNullOrEmpty(from_path) && !string.IsNullOrEmpty(to_path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("root", Root);
-                args.Add("from_path", from_path);
-                args.Add("to_path", to_path);
+                from_path = URLHelpers.AddSlash(from_path, SlashType.Prefix);
+                to_path = URLHelpers.AddSlash(to_path, SlashType.Prefix);
 
-                string response = SendRequest(HttpMethod.POST, URLCopy, args, GetAuthHeaders());
+                string arg = JsonConvert.SerializeObject(new
+                {
+                    from_path = from_path,
+                    to_path = to_path
+                });
+
+                string response = SendRequestJSON(URLCopy, arg, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    contentInfo = JsonConvert.DeserializeObject<DropboxMetadata>(response);
+                    metadata = JsonConvert.DeserializeObject<DropboxMetadata>(response);
                 }
             }
 
-            return contentInfo;
+            return metadata;
         }
 
         public DropboxMetadata CreateFolder(string path)
         {
-            DropboxMetadata contentInfo = null;
+            DropboxMetadata metadata = null;
 
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("root", Root);
-                args.Add("path", path);
+                path = URLHelpers.AddSlash(path, SlashType.Prefix);
 
-                string response = SendRequest(HttpMethod.POST, URLCreateFolder, args, GetAuthHeaders());
+                string arg = JsonConvert.SerializeObject(new
+                {
+                    path = path
+                });
+
+                string response = SendRequestJSON(URLCreateFolder, arg, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    contentInfo = JsonConvert.DeserializeObject<DropboxMetadata>(response);
+                    metadata = JsonConvert.DeserializeObject<DropboxMetadata>(response);
                 }
             }
 
-            return contentInfo;
+            return metadata;
         }
 
         public DropboxMetadata Delete(string path)
         {
-            DropboxMetadata contentInfo = null;
+            DropboxMetadata metadata = null;
 
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("root", Root);
-                args.Add("path", path);
+                path = URLHelpers.AddSlash(path, SlashType.Prefix);
 
-                string response = SendRequest(HttpMethod.POST, URLDelete, args, GetAuthHeaders());
+                string arg = JsonConvert.SerializeObject(new
+                {
+                    path = path
+                });
+
+                string response = SendRequestJSON(URLDelete, arg, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    contentInfo = JsonConvert.DeserializeObject<DropboxMetadata>(response);
+                    metadata = JsonConvert.DeserializeObject<DropboxMetadata>(response);
                 }
             }
 
-            return contentInfo;
+            return metadata;
         }
 
         public DropboxMetadata Move(string from_path, string to_path)
         {
-            DropboxMetadata contentInfo = null;
+            DropboxMetadata metadata = null;
 
             if (!string.IsNullOrEmpty(from_path) && !string.IsNullOrEmpty(to_path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("root", Root);
-                args.Add("from_path", from_path);
-                args.Add("to_path", to_path);
+                from_path = URLHelpers.AddSlash(from_path, SlashType.Prefix);
+                to_path = URLHelpers.AddSlash(to_path, SlashType.Prefix);
 
-                string response = SendRequest(HttpMethod.POST, URLMove, args, GetAuthHeaders());
+                string arg = JsonConvert.SerializeObject(new
+                {
+                    from_path = from_path,
+                    to_path = to_path
+                });
+
+                string response = SendRequestJSON(URLMove, arg, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    contentInfo = JsonConvert.DeserializeObject<DropboxMetadata>(response);
+                    metadata = JsonConvert.DeserializeObject<DropboxMetadata>(response);
                 }
             }
 
-            return contentInfo;
+            return metadata;
         }
 
         #endregion File operations
