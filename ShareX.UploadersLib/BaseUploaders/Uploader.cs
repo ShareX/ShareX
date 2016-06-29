@@ -40,9 +40,9 @@ namespace ShareX.UploadersLib
     {
         private static readonly string UserAgent = "ShareX";
 
-        public string ContentTypeMultipartFormData = "multipart/form-data";
-        public string ContentTypeJSON = "application/json";
-        public string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
+        public const string ContentTypeMultipartFormData = "multipart/form-data";
+        public const string ContentTypeJSON = "application/json";
+        public const string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
 
         public delegate void ProgressEventHandler(ProgressManager progress);
         public event ProgressEventHandler ProgressChanged;

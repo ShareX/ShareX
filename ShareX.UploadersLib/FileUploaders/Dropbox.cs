@@ -60,6 +60,13 @@ namespace ShareX.UploadersLib.FileUploaders
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpDropbox;
     }
 
+    public enum DropboxURLType
+    {
+        Default,
+        Shortened,
+        Direct
+    }
+
     public sealed class Dropbox : FileUploader, IOAuth2Basic
     {
         public OAuth2Info AuthInfo { get; set; }
@@ -178,6 +185,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 NameValueCollection headers = GetAuthHeaders();
                 path = URLHelpers.AddSlash(path, SlashType.Prefix);
                 string arg = JsonConvert.SerializeObject(new DropboxPath(path));
+                headers.Add("Dropbox-API-Arg", arg);
 
                 return SendRequest(HttpMethod.POST, downloadStream, URLDownload, headers: headers, contentType: ContentTypeJSON);
             }
@@ -419,13 +427,6 @@ namespace ShareX.UploadersLib.FileUploaders
         }
     }
 
-    public enum DropboxURLType
-    {
-        Default,
-        Shortened,
-        Direct
-    }
-
     public class DropboxPath
     {
         public string path { get; set; }
@@ -461,6 +462,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class DropboxAccountType
     {
+        [JsonProperty(".tag")]
         public string tag { get; set; }
     }
 
