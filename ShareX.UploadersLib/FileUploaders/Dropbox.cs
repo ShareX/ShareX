@@ -49,11 +49,12 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Dropbox(config.DropboxOAuth2Info, config.DropboxAccount)
+            return new Dropbox(config.DropboxOAuth2Info)
             {
                 UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(config.DropboxUploadPath)),
                 AutoCreateShareableLink = config.DropboxAutoCreateShareableLink,
-                ShareURLType = config.DropboxURLType
+                ShareURLType = config.DropboxURLType,
+                AccountInfo = config.DropboxAccountInfo
             };
         }
 
@@ -71,6 +72,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public OAuth2Info AuthInfo { get; set; }
         public DropboxAccount Account { get; set; }
+        public DropboxAccountInfo AccountInfo { get; set; } // API v1
         public string UploadPath { get; set; }
         public bool AutoCreateShareableLink { get; set; }
         public DropboxURLType ShareURLType { get; set; }
@@ -103,11 +105,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public Dropbox(OAuth2Info oauth)
         {
             AuthInfo = oauth;
-        }
-
-        public Dropbox(OAuth2Info oauth, DropboxAccount account) : this(oauth)
-        {
-            Account = account;
         }
 
         public string GetAuthorizationURL()
@@ -452,7 +449,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string GetPublicURL(string path)
         {
             // TODO: uid
-            return GetPublicURL(Account.account_id, path);
+            return GetPublicURL(AccountInfo.Uid.ToString(), path);
         }
 
         public static string GetPublicURL(string userID, string path)
@@ -594,4 +591,25 @@ namespace ShareX.UploadersLib.FileUploaders
         public string id { get; set; }
         public string name { get; set; }
     }
+
+    #region API v1
+
+    public class DropboxAccountInfo
+    {
+        public string Referral_link { get; set; }
+        public string Display_name { get; set; }
+        public long Uid { get; set; }
+        public string Country { get; set; }
+        public DropboxQuotaInfo Quota_info { get; set; }
+        public string Email { get; set; }
+    }
+
+    public class DropboxQuotaInfo
+    {
+        public long Normal { get; set; }
+        public long Shared { get; set; }
+        public long Quota { get; set; }
+    }
+
+    #endregion API v1
 }
