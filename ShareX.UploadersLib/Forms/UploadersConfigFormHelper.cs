@@ -524,7 +524,7 @@ namespace ShareX.UploadersLib
 
         private string GetDropboxUploadPath()
         {
-            return NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(Config.DropboxUploadPath));
+            return NameParser.Parse(NameParserType.URL, Dropbox.VerifyPath(Config.DropboxUploadPath));
         }
 
         #endregion Dropbox
