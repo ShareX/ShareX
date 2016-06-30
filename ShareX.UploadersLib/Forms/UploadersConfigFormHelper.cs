@@ -504,27 +504,22 @@ namespace ShareX.UploadersLib
 
         private void UpdateDropboxStatus()
         {
-            if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info) && Config.DropboxAccount != null)
+            if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info) && Config.DropboxAccountInfo != null)
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Email_ + " " + Config.DropboxAccount.email);
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Name_ + " " + Config.DropboxAccount.name.display_name);
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_User_ID_ + " " + Config.DropboxAccount.account_id);
-                string uploadPath = GetDropboxUploadPath();
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Email_ + " " + Config.DropboxAccountInfo.Email);
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Name_ + " " + Config.DropboxAccountInfo.Display_name);
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_User_ID_ + " " + Config.DropboxAccountInfo.Uid);
+                string uploadPath = NameParser.Parse(NameParserType.URL, Dropbox.VerifyPath(Config.DropboxUploadPath));
                 sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Upload_path_ + " " + uploadPath);
-                // TODO: uid
-                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Download_path_ + " " + Dropbox.GetPublicURL(Config.DropboxAccount.account_id, uploadPath + "Example.png"));
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Download_path_ + " " +
+                    Dropbox.GetPublicURL(Config.DropboxAccountInfo.Uid.ToString(), URLHelpers.CombineURL(uploadPath, "Example.png")));
                 lblDropboxStatus.Text = sb.ToString();
             }
             else
             {
                 lblDropboxStatus.Text = "";
             }
-        }
-
-        private string GetDropboxUploadPath()
-        {
-            return NameParser.Parse(NameParserType.URL, Dropbox.VerifyPath(Config.DropboxUploadPath));
         }
 
         #endregion Dropbox

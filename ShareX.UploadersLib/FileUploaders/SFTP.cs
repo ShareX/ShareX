@@ -61,8 +61,6 @@ namespace ShareX.UploadersLib.FileUploaders
             Account = account;
         }
 
-        #region FileUploader methods
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
             UploadResult result = new UploadResult();
@@ -108,8 +106,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
             }
         }
-
-        #endregion FileUploader methods
 
         public bool Connect()
         {

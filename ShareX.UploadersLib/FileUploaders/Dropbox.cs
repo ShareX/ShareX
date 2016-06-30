@@ -106,6 +106,18 @@ namespace ShareX.UploadersLib.FileUploaders
             AuthInfo = oauth;
         }
 
+        public override UploadResult Upload(Stream stream, string fileName)
+        {
+            if (OAuth2Info.CheckOAuth(AuthInfo) && !AutoCreateShareableLink)
+            {
+                string url = GetPublicURL(URLHelpers.CombineURL(UploadPath, fileName));
+
+                OnEarlyURLCopyRequested(url);
+            }
+
+            return UploadFile(stream, UploadPath, fileName, AutoCreateShareableLink, ShareURLType);
+        }
+
         public string GetAuthorizationURL()
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
@@ -146,7 +158,28 @@ namespace ShareX.UploadersLib.FileUploaders
             return headers;
         }
 
-        #region Dropbox accounts
+        public static string VerifyPath(string path, string filename = null)
+        {
+            if (!string.IsNullOrEmpty(path))
+            {
+                path = path.Trim().Replace('\\', '/').Trim('/');
+                path = URLHelpers.AddSlash(path, SlashType.Prefix);
+
+                if (!string.IsNullOrEmpty(filename))
+                {
+                    path = URLHelpers.CombineURL(path, filename);
+                }
+
+                return path;
+            }
+
+            if (!string.IsNullOrEmpty(filename))
+            {
+                return filename;
+            }
+
+            return "";
+        }
 
         public DropboxAccount GetCurrentAccount()
         {
@@ -169,10 +202,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return account;
         }
-
-        #endregion Dropbox accounts
-
-        #region Files and metadata
 
         public bool DownloadFile(string path, Stream downloadStream)
         {
@@ -284,7 +313,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                 });
 
-                // TODO: args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
+                // TODO: Missing: args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
 
                 string response = SendRequestJSON(URLCreateSharedLink, json, GetAuthHeaders());
 
@@ -315,10 +344,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return null;
         }
-
-        #endregion Files and metadata
-
-        #region File operations
 
         public DropboxMetadata Copy(string fromPath, string toPath)
         {
@@ -408,48 +433,6 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return metadata;
-        }
-
-        #endregion File operations
-
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            CheckEarlyURLCopy(UploadPath, fileName);
-
-            return UploadFile(stream, UploadPath, fileName, AutoCreateShareableLink, ShareURLType);
-        }
-
-        private void CheckEarlyURLCopy(string path, string fileName)
-        {
-            if (OAuth2Info.CheckOAuth(AuthInfo) && !AutoCreateShareableLink)
-            {
-                string url = GetPublicURL(URLHelpers.CombineURL(path, fileName));
-
-                OnEarlyURLCopyRequested(url);
-            }
-        }
-
-        public static string VerifyPath(string path, string filename = null)
-        {
-            if (!string.IsNullOrEmpty(path))
-            {
-                path = path.Trim().Replace('\\', '/').Trim('/');
-                path = URLHelpers.AddSlash(path, SlashType.Prefix);
-
-                if (!string.IsNullOrEmpty(filename))
-                {
-                    path = URLHelpers.CombineURL(path, filename);
-                }
-
-                return path;
-            }
-
-            if (!string.IsNullOrEmpty(filename))
-            {
-                return filename;
-            }
-
-            return "";
         }
 
         public string GetPublicURL(string path)
