@@ -80,7 +80,7 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("https://p.fuwafuwa.moe/upload.php"),
             new PomfUploader("https://pomf.gocataclysm.com/upload.php")
         };
-        
+
         public PomfUploader Uploader { get; private set; }
 
         public Pomf(PomfUploader uploader)
