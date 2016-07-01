@@ -63,28 +63,24 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             //new PomfUploader("https://pomf.se/upload.php"),
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
-            new PomfUploader("https://catgirlsare.sexy/upload.php"),
             new PomfUploader("http://comfy.moe/upload.php"),
             new PomfUploader("https://cocaine.ninja/upload.php"),
             new PomfUploader("https://cuntflaps.me/upload.php"),
-            new PomfUploader("http://files.plebeianparty.com/upload.php", "http://a.plebeianparty.com"),
             new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
             new PomfUploader("http://glop.me/upload.php", "http://gateway.glop.me/ipfs"),
             new PomfUploader("http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
-            new PomfUploader("https://maxfile.ro/static/upload.php", "https://d2.maxfile.ro"),
             new PomfUploader("https://mixtape.moe/upload.php"),
-            new PomfUploader("https://nigger.cat/upload.php"),
             new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
-            new PomfUploader("http://pomf.hummingbird.moe/upload.php", "http://a.pomf.hummingbird.moe"),
             new PomfUploader("https://pomf.is/upload.php"),
             new PomfUploader("http://reich.io/upload.php"),
+            new PomfUploader("https://steamy.moe/upload.php"),
             new PomfUploader("https://sugoi.vidyagam.es/upload.php"),
             new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe"),
             new PomfUploader("https://filebunker.pw/upload.php"),
             new PomfUploader("https://p.fuwafuwa.moe/upload.php"),
             new PomfUploader("https://pomf.gocataclysm.com/upload.php")
         };
-
+        
         public PomfUploader Uploader { get; private set; }
 
         public Pomf(PomfUploader uploader)
