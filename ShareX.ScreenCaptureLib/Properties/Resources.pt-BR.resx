@@ -237,4 +237,10 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Iniciar captura</value>
   </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>Capturar</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>Parar</value>
+  </data>
 </root>

@@ -1073,4 +1073,91 @@ store.book[0].title</value>
 Com esta opção, os objetos são mais baratos de armazenar, mas possuem durabilidade de 99.99%, ao invés de 99.999999999%.
 Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value>
   </data>
+  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
+    <value>Todos...</value>
+  </data>
+  <data name="lblPuushAPIKey.Text" xml:space="preserve">
+    <value>Chave da API:</value>
+  </data>
+  <data name="llPuushCreateAccount.Text" xml:space="preserve">
+    <value>Criar uma conta...</value>
+  </data>
+  <data name="llPuushForgottenPassword.Text" xml:space="preserve">
+    <value>Esqueceu sua senha?</value>
+  </data>
+  <data name="btnPuushLogin.Text" xml:space="preserve">
+    <value>Iniciar sessão</value>
+  </data>
+  <data name="lblPuushEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblPuushPassword.Text" xml:space="preserve">
+    <value>Senha:</value>
+  </data>
+  <data name="tpPuush.Text" xml:space="preserve">
+    <value>puush</value>
+  </data>
+  <data name="tpLithiio.Text" xml:space="preserve">
+    <value>Lithiio</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
+    <value>Usar link direto</value>
+  </data>
+  <data name="cbMinusPublic.Text" xml:space="preserve">
+    <value>Público</value>
+  </data>
+  <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
+    <value>Usar link direto</value>
+  </data>
+  <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
+    <value>Obter chave de API...</value>
+  </data>
+  <data name="lblLithiioInfo.Text" xml:space="preserve">
+    <value>Deixe a chave de API em branco para utilizar o serviço de modo anônimo.</value>
+  </data>
+  <data name="lblLithiioApiKey.Text" xml:space="preserve">
+    <value>Chave de API:</value>
+  </data>
+  <data name="lblLithiioUploadURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
+    <value>Enviar para este email:</value>
+  </data>
+  <data name="cbPastebinRaw.Text" xml:space="preserve">
+    <value>Utilizar URL bruto</value>
+  </data>
+  <data name="cbGistUseRawURL.Text" xml:space="preserve">
+    <value>Utilizar URL bruto</value>
+  </data>
+  <data name="cbGistPublishPublic.Text" xml:space="preserve">
+    <value>Crira Gist público</value>
+  </data>
+  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
+    <value>Testar todos</value>
+  </data>
+  <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
+    <value>Exemplo: http://exemplo.com/api/1/upload</value>
+  </data>
+  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
+    <value>Envios:</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
+    <value>URL de envio:</value>
+  </data>
+  <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
+    <value>Você pode obter uma chave de usuário através da página de detalhes da conta.</value>
+  </data>
+  <data name="lvlVgymeUserKey.Text" xml:space="preserve">
+    <value>Chave de usuário:</value>
+  </data>
+  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
+    <value>Para obter uma chave de API visite https://someimage.com/api</value>
+  </data>
+  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
+    <value>Chave de API:</value>
+  </data>
+  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
+    <value>URL direto</value>
+  </data>
 </root>

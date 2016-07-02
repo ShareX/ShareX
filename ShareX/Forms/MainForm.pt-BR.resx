@@ -151,7 +151,7 @@
     <value>Histórico de imagens...</value>
   </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
-    <value>Capturas de tela...</value>
+    <value>Screenshots...</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
     <value>Config. de tarefas...</value>
@@ -355,7 +355,7 @@
     <value>Encurtar URL</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
-    <value>Pasta de capturas de tela...</value>
+    <value>Pasta de screenshots...</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Registro de depuração...</value>

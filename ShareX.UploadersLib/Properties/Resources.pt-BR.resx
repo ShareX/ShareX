@@ -241,4 +241,10 @@ Pastas criadas:</value>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Não foi possivel achar uma conta FTP valida.</value>
   </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>Falha ao analisar resposta.</value>
+  </data>
+  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
+    <value>Remover todos destinos customizados?</value>
+  </data>
 </root>
