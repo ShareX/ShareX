@@ -439,7 +439,7 @@
     <value>Substituir conta FTP padrão:</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Substituir serviço customizado padrão:</value>
+    <value>Substituir serviço de envio customizado:</value>
   </data>
   <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
     <value>Mostrar QPS no canto superior esquerdo</value>

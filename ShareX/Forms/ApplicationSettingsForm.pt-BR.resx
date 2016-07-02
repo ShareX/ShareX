@@ -151,7 +151,7 @@
     <value>Não abrir a janela de impressão do Windows</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Hospedagem de arquivos alternativa</value>
+    <value>Hospedagem de arquivos</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Mostrar ícone da área de notificações</value>
@@ -178,7 +178,7 @@
     <value>Adicionar...</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos da área de transferência - aparecem debaixo de Copiar no menu contextual na janela principal</value>
+    <value>Formatos da área de transferência - aparecem debaixo de Copiar no menu de contexto na janela principal</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Descrição</value>
@@ -232,13 +232,13 @@
     <value>Senha:</value>
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reenviar</value>
+    <value>Reenvio</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Enviar</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Número de tentativas se o envio falhar:</value>
+    <value>Tentativas se o envio falhar:</value>
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Formato</value>
@@ -250,7 +250,7 @@
     <value>Resultados</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Hospedagem de imagens alternativa</value>
+    <value>Hospedagem de imagens</value>
   </data>
   <data name="tpPrint.Text" xml:space="preserve">
     <value>Imprimir</value>
@@ -262,13 +262,13 @@
     <value>Executar ShareX quando o Windows iniciar</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Hospedagem de texto alternativa</value>
+    <value>Hospedagem de texto </value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
     <value>Nota: é necessário reiniciar o programa para que as alterações façam efeito.</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Pasta de capturas de tela customizada</value>
+    <value>Pasta de screenshots customizada</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>Enquanto o programa estiver aberto, mostrar "Em aplicativo" na Steam</value>

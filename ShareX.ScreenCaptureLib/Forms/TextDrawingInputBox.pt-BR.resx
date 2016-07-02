@@ -117,61 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblFont.Text" xml:space="preserve">
+    <value>Fonte:</value>
+  </data>
+  <data name="lblTextSize.Text" xml:space="preserve">
+    <value>Tamanho:</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
+    <value>Esquerda</value>
+  </data>
+  <data name="tsmiAlignmentCenter.Text" xml:space="preserve">
+    <value>Centro</value>
+  </data>
+  <data name="tsmiAlignmentRight.Text" xml:space="preserve">
+    <value>Direita</value>
+  </data>
+  <data name="tsmiAlignmentTop.Text" xml:space="preserve">
+    <value>Topo</value>
+  </data>
+  <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
+    <value>Meio</value>
+  </data>
+  <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
+    <value>Inferior</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Cliente FTP do ShareX</value>
-  </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Nome do arquivo</value>
-  </data>
-  <data name="chFilesize.Text" xml:space="preserve">
-    <value>Tamanho do arquivo</value>
-  </data>
-  <data name="chFiletype.Text" xml:space="preserve">
-    <value>Tipo do arquivo</value>
-  </data>
-  <data name="chLastModified.Text" xml:space="preserve">
-    <value>Ultima modificação</value>
-  </data>
-  <data name="lblConnecting.Text" xml:space="preserve">
-    <value>Conectando ao servidor FTP...</value>
-  </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>status</value>
-  </data>
-  <data name="tpAccount.Text" xml:space="preserve">
-    <value>Conta</value>
-  </data>
-  <data name="tpConsole.Text" xml:space="preserve">
-    <value>Console</value>
-  </data>
-  <data name="tpMain.Text" xml:space="preserve">
-    <value>Arquivos</value>
-  </data>
-  <data name="tsmiConnect.Text" xml:space="preserve">
-    <value>Conectar</value>
-  </data>
-  <data name="tsmiDisconnect.Text" xml:space="preserve">
-    <value>Desconectar</value>
-  </data>
-  <data name="tsmiDownload.Text" xml:space="preserve">
-    <value>Baixar</value>
-  </data>
-  <data name="tsmiOpenURL.Text" xml:space="preserve">
-    <value>Abrir URL</value>
-  </data>
-  <data name="tsmiRename.Text" xml:space="preserve">
-    <value>Renomear</value>
-  </data>
-  <data name="tsmiDelete.Text" xml:space="preserve">
-    <value>Deletar</value>
-  </data>
-  <data name="tsmiRefresh.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
-  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
-    <value>Criar diretório</value>
-  </data>
-  <data name="tsmiCopyURL.Text" xml:space="preserve">
-    <value>Copiar URL(s) para a área de transferência</value>
+    <value>ShareX - Entrada de texto</value>
   </data>
 </root>
