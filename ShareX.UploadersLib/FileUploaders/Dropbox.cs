@@ -97,6 +97,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private const string URLCreateFolder = URLAPI + "/files/create_folder";
         private const string URLDelete = URLAPI + "/files/delete";
         private const string URLMove = URLAPI + "/files/move";
+        private const string URLAccountInfo = "https://api.dropbox.com/1/account/info"; // API v1
 
         private const string URLPublicDirect = "https://dl.dropboxusercontent.com/u";
         private const string URLShareDirect = "https://dl.dropboxusercontent.com/s";
@@ -196,6 +197,29 @@ namespace ShareX.UploadersLib.FileUploaders
                     if (account != null)
                     {
                         Account = account;
+                    }
+                }
+            }
+
+            return account;
+        }
+
+        // API v1
+        public DropboxAccountInfo GetAccountInfo()
+        {
+            DropboxAccountInfo account = null;
+
+            if (OAuth2Info.CheckOAuth(AuthInfo))
+            {
+                string response = SendRequest(HttpMethod.GET, URLAccountInfo, headers: GetAuthHeaders());
+
+                if (!string.IsNullOrEmpty(response))
+                {
+                    account = JsonConvert.DeserializeObject<DropboxAccountInfo>(response);
+
+                    if (account != null)
+                    {
+                        AccountInfo = account;
                     }
                 }
             }

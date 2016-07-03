@@ -468,12 +468,12 @@ namespace ShareX.UploadersLib
 
                     if (result)
                     {
-                        Config.DropboxAccount = dropbox.GetCurrentAccount();
+                        Config.DropboxAccountInfo = dropbox.GetAccountInfo();
                         UpdateDropboxStatus();
 
                         oauth2Dropbox.Status = OAuthLoginStatus.LoginSuccessful;
 
-                        if (Config.DropboxAccount != null)
+                        if (Config.DropboxAccountInfo != null)
                         {
                             MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -492,7 +492,7 @@ namespace ShareX.UploadersLib
                     }
                 }
 
-                Config.DropboxAccount = null;
+                Config.DropboxAccountInfo = null;
                 UpdateDropboxStatus();
             }
             catch (Exception ex)
