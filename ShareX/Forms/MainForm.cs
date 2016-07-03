@@ -248,6 +248,7 @@ namespace ShareX
             UpdateCheckStates();
             UpdateMainWindowLayout();
             UpdateUploaderMenuNames();
+            UpdateDestinationStates();
             UpdateContextMenu();
             UpdateToggleHotkeyButton();
             AfterSettingsJobs();
