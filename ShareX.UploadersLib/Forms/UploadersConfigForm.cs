@@ -306,6 +306,7 @@ namespace ShareX.UploadersLib
 
             txtHastebinCustomDomain.Text = Config.HastebinCustomDomain;
             txtHastebinSyntaxHighlighting.Text = Config.HastebinSyntaxHighlighting;
+            cbHastebinUseFileExtension.Checked = Config.HastebinUseFileExtension;
 
             // OneTimeSecret
 
@@ -1199,6 +1200,11 @@ namespace ShareX.UploadersLib
         private void txtHastebinSyntaxHighlighting_TextChanged(object sender, EventArgs e)
         {
             Config.HastebinSyntaxHighlighting = txtHastebinSyntaxHighlighting.Text;
+        }
+
+        private void cbHastebinUseFileExtension_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.HastebinUseFileExtension = cbHastebinUseFileExtension.Checked;
         }
 
         #endregion Hastebin

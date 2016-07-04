@@ -117,6 +117,7 @@ namespace ShareX.UploadersLib
 
         public string HastebinCustomDomain = "http://hastebin.com";
         public string HastebinSyntaxHighlighting = "hs";
+        public bool HastebinUseFileExtension = true;
 
         // OneTimeSecret
 
