@@ -89,11 +89,7 @@ namespace ShareX.ScreenCaptureLib
 
             InitializeComponent();
             Icon = ShareXResources.Icon;
-
-            using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
-            {
-                Cursor = new Cursor(cursorStream);
-            }
+            Cursor = Helpers.CreateCursor(Resources.Crosshair);
 
             timer = new Timer { Interval = 10 };
             timer.Tick += timer_Tick;

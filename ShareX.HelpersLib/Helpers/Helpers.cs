@@ -1120,5 +1120,13 @@ namespace ShareX.HelpersLib
 
             return Environment.OSVersion.VersionString;
         }
+
+        public static Cursor CreateCursor(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return new Cursor(ms);
+            }
+        }
     }
 }

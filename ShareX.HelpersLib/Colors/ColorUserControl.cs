@@ -156,10 +156,7 @@ namespace ShareX.HelpersLib
         {
             if (this is ColorBox)
             {
-                using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
-                {
-                    Cursor = new Cursor(cursorStream);
-                }
+                Cursor = Helpers.CreateCursor(Resources.Crosshair);
             }
         }
 

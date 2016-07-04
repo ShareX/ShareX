@@ -82,16 +82,12 @@ namespace ShareX.ScreenCaptureLib
             StartPosition = FormStartPosition.Manual;
             Bounds = ScreenRectangle;
             Text = "ShareX - " + Resources.RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent;
+            Cursor = Helpers.CreateCursor(Resources.Crosshair);
 
             Shown += RectangleTransparent_Shown;
             KeyUp += RectangleTransparent_KeyUp;
             MouseDown += RectangleTransparent_MouseDown;
             MouseUp += RectangleTransparent_MouseUp;
-
-            using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
-            {
-                Cursor = new Cursor(cursorStream);
-            }
 
             timer = new Timer { Interval = 10 };
             timer.Tick += timer_Tick;
