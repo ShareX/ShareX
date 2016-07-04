@@ -32,110 +32,31 @@ namespace ShareX.ScreenCaptureLib
 {
     public class WindowInfo
     {
-        public IntPtr Handle { get; private set; }
+        public IntPtr Handle { get; }
 
-        public string Text
-        {
-            get
-            {
-                return NativeMethods.GetWindowText(Handle);
-            }
-        }
+        public string Text => NativeMethods.GetWindowText(Handle);
 
-        public string ClassName
-        {
-            get
-            {
-                return NativeMethods.GetClassName(Handle);
-            }
-        }
+        public string ClassName => NativeMethods.GetClassName(Handle);
 
-        public Process Process
-        {
-            get
-            {
-                return NativeMethods.GetProcessByWindowHandle(Handle);
-            }
-        }
+        public Process Process => NativeMethods.GetProcessByWindowHandle(Handle);
 
-        public string ProcessName
-        {
-            get
-            {
-                Process process = Process;
+        public string ProcessName => Process?.ProcessName;
 
-                if (process != null)
-                {
-                    return process.ProcessName;
-                }
+        public Rectangle Rectangle => CaptureHelpers.GetWindowRectangle(Handle);
 
-                return null;
-            }
-        }
+        public Rectangle ClientRectangle => NativeMethods.GetClientRect(Handle);
 
-        public Rectangle Rectangle
-        {
-            get
-            {
-                return CaptureHelpers.GetWindowRectangle(Handle);
-            }
-        }
+        public WindowStyles Styles => (WindowStyles)NativeMethods.GetWindowLong(Handle, NativeMethods.GWL_STYLE);
 
-        public Rectangle Rectangle0Based
-        {
-            get
-            {
-                return CaptureHelpers.ScreenToClient(Rectangle);
-            }
-        }
+        public Icon Icon => NativeMethods.GetApplicationIcon(Handle);
 
-        public Rectangle ClientRectangle
-        {
-            get
-            {
-                return NativeMethods.GetClientRect(Handle);
-            }
-        }
+        public bool IsMaximized => NativeMethods.IsZoomed(Handle);
 
-        public WindowStyles Styles
-        {
-            get
-            {
-                return (WindowStyles)NativeMethods.GetWindowLong(Handle, NativeMethods.GWL_STYLE);
-            }
-        }
+        public bool IsMinimized => NativeMethods.IsIconic(Handle);
 
-        public bool IsMaximized
-        {
-            get
-            {
-                return NativeMethods.IsZoomed(Handle);
-            }
-        }
+        public bool IsVisible => NativeMethods.IsWindowVisible(Handle);
 
-        public bool IsMinimized
-        {
-            get
-            {
-                return NativeMethods.IsIconic(Handle);
-            }
-        }
-
-        public bool IsVisible
-        {
-            get
-            {
-                return NativeMethods.IsWindowVisible(Handle);
-            }
-        }
-
-        public Icon Icon
-        {
-            get
-            {
-                return NativeMethods.GetApplicationIcon(Handle);
-            }
-        }
+        public bool IsActive => NativeMethods.GetForegroundWindow() == Handle;
 
         public WindowInfo(IntPtr handle)
         {
