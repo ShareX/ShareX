@@ -80,6 +80,8 @@ namespace ShareX.ScreenCaptureLib
                     {
                         Config.LastAnnotationTool = CurrentShapeType;
                     }
+
+                    UpdateCursor();
                 }
 
                 DeselectShape();
@@ -403,6 +405,7 @@ namespace ShareX.ScreenCaptureLib
 
                         UpdateContextMenu();
                         UpdateCurrentShape();
+                        UpdateCursor();
                     }
                 }
 
@@ -1482,6 +1485,39 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return Rectangle.Empty;
+        }
+
+        private void UpdateCursor()
+        {
+            Cursor cursor = Helpers.CreateCursor(Resources.Crosshair);
+
+            if (!IsCurrentShapeTypeRegion)
+            {
+                using (Bitmap bmp = new Bitmap(32, 32))
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    using (Pen pen = new Pen(Config.AnnotationOptions.BorderColor, 2))
+                    {
+                        g.DrawRectangleProper(pen, new Rectangle(2, 2, 27, 27));
+                    }
+
+                    cursor.Draw(g, new Rectangle(0, 0, 32, 32));
+
+                    IntPtr ptr = bmp.GetHicon();
+                    IconInfo iconInfo = new IconInfo();
+                    NativeMethods.GetIconInfo(ptr, out iconInfo);
+                    iconInfo.xHotspot = 15;
+                    iconInfo.yHotspot = 15;
+                    iconInfo.fIcon = false;
+                    ptr = NativeMethods.CreateIconIndirect(ref iconInfo);
+                    cursor.Dispose();
+                    cursor = new Cursor(ptr);
+                }
+            }
+
+            Cursor temp = form.Cursor;
+            form.Cursor = cursor;
+            temp.Dispose();
         }
 
         public void PauseForm()

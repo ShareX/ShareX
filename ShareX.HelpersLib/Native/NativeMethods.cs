@@ -120,6 +120,9 @@ namespace ShareX.HelpersLib
         [DllImport("user32.dll")]
         public static extern bool GetIconInfo(IntPtr hIcon, out IconInfo piconinfo);
 
+        [DllImport("user32.dll")]
+        public static extern IntPtr CreateIconIndirect([In] ref IconInfo piconinfo);
+
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         public static extern short GetKeyState(int keyCode);
 
