@@ -156,7 +156,6 @@
     <Compile Include="Screenshot_Transparent.cs" />
     <Compile Include="WebpageCapture.cs" />
     <Compile Include="WebpageCaptureOptions.cs" />
-    <Compile Include="WindowInfo.cs" />
     <Compile Include="WindowsList.cs" />
     <Compile Include="WindowsRectangleList.cs" />
   </ItemGroup>

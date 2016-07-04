@@ -203,6 +203,7 @@
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Native\NativeConstants.cs" />
+    <Compile Include="Native\WindowInfo.cs" />
     <Compile Include="PingHelper.cs" />
     <Compile Include="PingResult.cs" />
     <Compile Include="ProxyInfo.cs" />
