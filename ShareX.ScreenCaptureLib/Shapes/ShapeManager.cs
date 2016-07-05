@@ -28,6 +28,7 @@ using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -436,6 +437,7 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 UpdateCurrentShape();
+                UpdateCursor();
             };
             cmsContextMenu.Items.Add(tslnudBorderSize);
 
@@ -1491,27 +1493,47 @@ namespace ShareX.ScreenCaptureLib
         {
             Cursor cursor = Helpers.CreateCursor(Resources.Crosshair);
 
-            if (!IsCurrentShapeTypeRegion)
+            if (CurrentShapeType == ShapeType.DrawingRectangle || CurrentShapeType == ShapeType.DrawingRoundedRectangle || CurrentShapeType == ShapeType.DrawingEllipse ||
+                CurrentShapeType == ShapeType.DrawingLine || CurrentShapeType == ShapeType.DrawingArrow)
             {
                 using (Bitmap bmp = new Bitmap(32, 32))
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
-                    using (Pen pen = new Pen(Config.AnnotationOptions.BorderColor, 2))
+                    if (Config.AnnotationOptions.BorderSize.IsBetween(1, 4))
                     {
-                        g.DrawRectangleProper(pen, new Rectangle(2, 2, 27, 27));
+                        using (Pen pen = new Pen(Config.AnnotationOptions.BorderColor, Config.AnnotationOptions.BorderSize) { Alignment = PenAlignment.Inset })
+                        {
+                            g.DrawRectangleProper(pen, new Rectangle(0, 0, 10, 10));
+                        }
+                    }
+                    else
+                    {
+                        using (Brush brush = new SolidBrush(Config.AnnotationOptions.BorderColor))
+                        {
+                            g.FillRectangle(brush, new Rectangle(0, 0, 10, 10));
+                        }
                     }
 
                     cursor.Draw(g, new Rectangle(0, 0, 32, 32));
-
-                    IntPtr ptr = bmp.GetHicon();
-                    IconInfo iconInfo = new IconInfo();
-                    NativeMethods.GetIconInfo(ptr, out iconInfo);
-                    iconInfo.xHotspot = 15;
-                    iconInfo.yHotspot = 15;
-                    iconInfo.fIcon = false;
-                    ptr = NativeMethods.CreateIconIndirect(ref iconInfo);
                     cursor.Dispose();
-                    cursor = new Cursor(ptr);
+
+                    IntPtr iconPtr = IntPtr.Zero;
+
+                    try
+                    {
+                        iconPtr = bmp.GetHicon();
+                        IconInfo iconInfo = new IconInfo();
+                        NativeMethods.GetIconInfo(iconPtr, out iconInfo);
+                        iconInfo.xHotspot = 15;
+                        iconInfo.yHotspot = 15;
+                        iconInfo.fIcon = false;
+                        IntPtr newIconPtr = NativeMethods.CreateIconIndirect(ref iconInfo);
+                        cursor = new Cursor(newIconPtr);
+                    }
+                    finally
+                    {
+                        if (iconPtr != IntPtr.Zero) NativeMethods.DestroyIcon(iconPtr);
+                    }
                 }
             }
 
