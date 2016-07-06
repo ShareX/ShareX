@@ -836,10 +836,10 @@
     <value>Открыть окно истории</value>
   </data>
   <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
-    <value>Другое</value>
+    <value>Другие</value>
   </data>
   <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
-    <value>Другое</value>
+    <value>Другие</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
     <value>Файл не существует:</value>
@@ -852,5 +852,38 @@
   </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>Открыть окно истории изображений</value>
+  </data>
+  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
+    <value>Захват экрана</value>
+  </data>
+  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
+    <value>Захват области (Простые аннотации)</value>
+  </data>
+  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
+    <value>Захват экрана</value>
+  </data>
+  <data name="HotkeyType_TextCapture" xml:space="preserve">
+    <value>Захват текста (ORC)</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>Распознать текст (OCR)</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>Начать запись экрана, используя пользовательскую область</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>Начать запись экрана (GIF), используя пользовательскую область</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>Открыть главное окно</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
+    <value>Другие</value>
   </data>
 </root>

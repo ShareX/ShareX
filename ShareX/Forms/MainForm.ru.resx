@@ -654,4 +654,19 @@
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Скрыть столбцы</value>
   </data>
+  <data name="pbTips.ToolTip" xml:space="preserve">
+    <value>Показать подсказки и горячие клавиши</value>
+  </data>
+  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
+    <value>Открыть веб-страницу Patreon-кампании ShareX</value>
+  </data>
+  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
+    <value>Навсегда спрятать кнопку Patreon</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>Захват текста (OCR)...</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>Захват текста (OCR)...</value>
+  </data>
 </root>

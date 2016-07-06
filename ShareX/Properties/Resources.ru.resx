@@ -480,4 +480,10 @@
   <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
     <value>Ни один подходящий консольный кодировщик не выбран.</value>
   </data>
+  <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
+    <value>Сбросить все горячие клавиши?</value>
+  </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>Сбросить все быстрые задачи?</value>
+  </data>
 </root>
