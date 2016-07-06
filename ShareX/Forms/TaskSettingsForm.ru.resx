@@ -292,7 +292,7 @@
     <value>Использовать другой часовой пояс:</value>
   </data>
   <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Использовать шаблон имени окна и для захвата области (ShareX угадывает окно за выделенем)</value>
+    <value>Использовать шаблон имени окна и для захвата области (ShareX угадывает окно за выделением)</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Имена файлов</value>
@@ -446,5 +446,86 @@
   </data>
   <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
     <value>Использовать настройки сервисов загрузок по умолчанию</value>
+  </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>Выбрать область...</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>Пользовательская область:</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>Включить захват нескольких областей (с поддержкой изменения размера и перемещения областей)</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>Действие правой кнопки мыши:</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>Действие средней кнопки мыши:</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>Действие 4-й кнопки мыши:</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>Действие 5-й кнопки мыши:</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
+    <value>Затемнить фон, чтобы зону выделения было легче отличать (влияет на время запуска)</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>Показывать FPS в верхнем левом углу</value>
+  </data>
+  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
+    <value>Режим области фиксированного размера:</value>
+  </data>
+  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
+    <value>Показывать полноэкранное перекрестье</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>Показывать лупу возле курсора</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>Использовать квадратную лупу вместо круглой</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>Количество пикселей в лупе:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>Размер пикселя в лупе:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>Высота:</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>Высота:</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>Показывать пользовательский текст возле курсора:</value>
+  </data>
+  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
+    <value>Определять области окон и позволить захват наведением курсора</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>Также определять элементы интерфейса внутри окон</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
+    <value>Размеры области для привязки, если зажата кнопка "Alt":</value>
+  </data>
+  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
+    <value>Показывать горячие клавиши и подсказки в верхнем правом углу</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>Показывать информацию о позиции и размере</value>
   </data>
 </root>

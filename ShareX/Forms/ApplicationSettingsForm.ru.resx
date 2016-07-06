@@ -327,4 +327,13 @@
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
     <value>Показывать последние задачи в трее</value>
   </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>Клик средней кнопкой по иконке в трее:</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>Двойной клик по иконке в трее:</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>Клик левой кнопкой по иконке в трее:</value>
+  </data>
 </root>

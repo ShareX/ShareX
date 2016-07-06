@@ -929,4 +929,46 @@ store.book[0].title</value>
   <data name="cbPastebinRaw.Text" xml:space="preserve">
     <value>Использовать «сырую» ссылку</value>
   </data>
+  <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
+    <value>Отправлять письмо без показа диалога на этот адрес:</value>
+  </data>
+  <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
+    <value>Получить ключ API...</value>
+  </data>
+  <data name="lblLithiioApiKey.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
+  <data name="lblLithiioUploadURL.Text" xml:space="preserve">
+    <value>URL ссылки:</value>
+  </data>
+  <data name="lblLithiioInfo.Text" xml:space="preserve">
+    <value>Оставьте поле ключа API пустым для анонимного использования.</value>
+  </data>
+  <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
+    <value>Использовать прямую ссылку</value>
+  </data>
+  <data name="lblSeafileAPIURL.Text" xml:space="preserve">
+    <value>URL API:</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
+    <value>Использовать прямую ссылку</value>
+  </data>
+  <data name="llPuushCreateAccount.Text" xml:space="preserve">
+    <value>Создать аккаунт...</value>
+  </data>
+  <data name="llPuushForgottenPassword.Text" xml:space="preserve">
+    <value>Забыли пароль:</value>
+  </data>
+  <data name="btnPuushLogin.Text" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="lblPuushEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblPuushPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblPuushAPIKey.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
 </root>

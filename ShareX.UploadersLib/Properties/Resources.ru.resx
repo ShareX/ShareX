@@ -244,4 +244,7 @@
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Ошибка твита</value>
   </data>
+  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
+    <value>Убрать все пользовательские загрузчики?</value>
+  </data>
 </root>

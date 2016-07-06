@@ -118,36 +118,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>История изображений</value>
+    <value>ShareX - Ввод текста</value>
   </data>
-  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
-    <value>Галерея</value>
+  <data name="tsmiAlignmentTop.Text" xml:space="preserve">
+    <value>Вверху</value>
   </data>
-  <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>Панель</value>
+  <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
+    <value>Посередине</value>
   </data>
-  <data name="tsddbViewMode.Text" xml:space="preserve">
-    <value>Режим просмотра</value>
+  <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
+    <value>Внизу</value>
   </data>
-  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
-    <value>Размер миниатюры</value>
+  <data name="tsmiAlignmentRight.Text" xml:space="preserve">
+    <value>Справа</value>
   </data>
-  <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
-    <value>Миниатюры</value>
+  <data name="tsmiAlignmentCenter.Text" xml:space="preserve">
+    <value>По центру</value>
   </data>
-  <data name="tsddbMaxImageLimit.Text" xml:space="preserve">
-    <value>Ограничение на количество  изображений</value>
+  <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
+    <value>Слева</value>
   </data>
-  <data name="tsmiMaxImageLimit0.Text" xml:space="preserve">
-    <value>Без ограничений</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Закрыть</value>
   </data>
-  <data name="tsmiMaxImageLimit1000.Text" xml:space="preserve">
-    <value>Последние 1000</value>
+  <data name="lblTextSize.Text" xml:space="preserve">
+    <value>Размер:</value>
   </data>
-  <data name="tsmiMaxImageLimit250.Text" xml:space="preserve">
-    <value>Последние 250</value>
-  </data>
-  <data name="tsmiMaxImageLimit100.Text" xml:space="preserve">
-    <value>Последние 100</value>
+  <data name="lblFont.Text" xml:space="preserve">
+    <value>Шрифт:</value>
   </data>
 </root>
