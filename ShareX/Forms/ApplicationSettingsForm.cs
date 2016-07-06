@@ -307,11 +307,6 @@ namespace ShareX
 
         #region General
 
-        private void llTranslators_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL("https://github.com/ShareX/ShareX/wiki/Translation");
-        }
-
         private void cbShowTray_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.ShowTray = cbShowTray.Checked;

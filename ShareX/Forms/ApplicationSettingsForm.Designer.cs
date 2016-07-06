@@ -45,7 +45,6 @@ namespace ShareX
             this.btnLanguages = new ShareX.HelpersLib.MenuButton();
             this.cmsLanguages = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cbRememberMainFormPosition = new System.Windows.Forms.CheckBox();
-            this.llTranslators = new System.Windows.Forms.LinkLabel();
             this.cbSilentRun = new System.Windows.Forms.CheckBox();
             this.cbTaskbarProgressEnabled = new System.Windows.Forms.CheckBox();
             this.cbRememberMainFormSize = new System.Windows.Forms.CheckBox();
@@ -197,7 +196,6 @@ namespace ShareX
             this.tpGeneral.Controls.Add(this.cbTrayIconProgressEnabled);
             this.tpGeneral.Controls.Add(this.btnLanguages);
             this.tpGeneral.Controls.Add(this.cbRememberMainFormPosition);
-            this.tpGeneral.Controls.Add(this.llTranslators);
             this.tpGeneral.Controls.Add(this.cbSilentRun);
             this.tpGeneral.Controls.Add(this.cbTaskbarProgressEnabled);
             this.tpGeneral.Controls.Add(this.cbRememberMainFormSize);
@@ -284,13 +282,6 @@ namespace ShareX
             this.cbRememberMainFormPosition.Name = "cbRememberMainFormPosition";
             this.cbRememberMainFormPosition.UseVisualStyleBackColor = true;
             this.cbRememberMainFormPosition.CheckedChanged += new System.EventHandler(this.cbRememberMainFormPosition_CheckedChanged);
-            // 
-            // llTranslators
-            // 
-            resources.ApplyResources(this.llTranslators, "llTranslators");
-            this.llTranslators.Name = "llTranslators";
-            this.llTranslators.TabStop = true;
-            this.llTranslators.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llTranslators_LinkClicked);
             // 
             // cbSilentRun
             // 
@@ -1131,7 +1122,6 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbPrintDontShowWindowsDialog;
         private System.Windows.Forms.CheckBox cbRememberMainFormPosition;
         private System.Windows.Forms.Label lblLanguage;
-        private System.Windows.Forms.LinkLabel llTranslators;
         private TabToTreeView tttvMain;
         private MenuButton btnLanguages;
         private System.Windows.Forms.ContextMenuStrip cmsLanguages;

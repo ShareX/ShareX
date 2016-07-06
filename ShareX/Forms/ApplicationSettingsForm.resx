@@ -426,36 +426,6 @@
   <data name="&gt;&gt;cbRememberMainFormPosition.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="llTranslators.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="llTranslators.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="llTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 37</value>
-  </data>
-  <data name="llTranslators.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 13</value>
-  </data>
-  <data name="llTranslators.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Help us translate ShareX to your language!</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.Name" xml:space="preserve">
-    <value>llTranslators</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;llTranslators.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -484,7 +454,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbSilentRun.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -514,7 +484,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTaskbarProgressEnabled.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -544,7 +514,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormSize.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -574,7 +544,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -641,7 +611,7 @@
   </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
     <value>gbSteam</value>
   </data>
@@ -689,7 +659,7 @@
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbChrome.Name" xml:space="preserve">
     <value>gbChrome</value>
   </data>
@@ -803,7 +773,7 @@
   </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
     <value>gbWindows</value>
   </data>
@@ -917,7 +887,7 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
@@ -1160,7 +1130,7 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>
