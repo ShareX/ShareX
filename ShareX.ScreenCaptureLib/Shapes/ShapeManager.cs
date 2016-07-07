@@ -1169,13 +1169,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private BaseShape AddShape(Rectangle rect)
-        {
-            BaseShape shape = AddShape();
-            shape.Rectangle = rect;
-            return shape;
-        }
-
         private BaseShape AddShape()
         {
             BaseShape shape = CreateShape();
@@ -1184,18 +1177,35 @@ namespace ShareX.ScreenCaptureLib
             return shape;
         }
 
-        public BaseShape CreateShape(Rectangle rect)
+        private BaseShape AddShape(Rectangle rect)
         {
-            BaseShape shape = CreateShape();
+            BaseShape shape = AddShape();
             shape.Rectangle = rect;
             return shape;
         }
 
         public BaseShape CreateShape()
         {
+            return CreateShape(CurrentShapeType);
+        }
+
+        public BaseShape CreateShape(Rectangle rect)
+        {
+            return CreateShape(CurrentShapeType, rect);
+        }
+
+        public BaseShape CreateShape(ShapeType shapeType, Rectangle rect)
+        {
+            BaseShape shape = CreateShape(shapeType);
+            shape.Rectangle = rect;
+            return shape;
+        }
+
+        public BaseShape CreateShape(ShapeType shapeType)
+        {
             BaseShape shape;
 
-            switch (CurrentShapeType)
+            switch (shapeType)
             {
                 default:
                 case ShapeType.RegionRectangle:
@@ -1491,55 +1501,62 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateCursor()
         {
-            Cursor cursor = Helpers.CreateCursor(Resources.Crosshair);
-
-            if (CurrentShapeType == ShapeType.DrawingRectangle || CurrentShapeType == ShapeType.DrawingRoundedRectangle || CurrentShapeType == ShapeType.DrawingEllipse ||
-                CurrentShapeType == ShapeType.DrawingLine || CurrentShapeType == ShapeType.DrawingArrow)
+            try
             {
-                using (Bitmap bmp = new Bitmap(32, 32))
-                using (Graphics g = Graphics.FromImage(bmp))
+                Cursor cursor = Helpers.CreateCursor(Resources.Crosshair);
+
+                if ((CurrentShapeType == ShapeType.DrawingRectangle || CurrentShapeType == ShapeType.DrawingRoundedRectangle || CurrentShapeType == ShapeType.DrawingEllipse ||
+                    CurrentShapeType == ShapeType.DrawingLine || CurrentShapeType == ShapeType.DrawingArrow) && Config.AnnotationOptions.BorderSize > 0)
                 {
-                    if (Config.AnnotationOptions.BorderSize.IsBetween(1, 4))
+                    using (Bitmap bmp = new Bitmap(32, 32))
+                    using (Graphics g = Graphics.FromImage(bmp))
                     {
-                        using (Pen pen = new Pen(Config.AnnotationOptions.BorderColor, Config.AnnotationOptions.BorderSize) { Alignment = PenAlignment.Inset })
+                        if (Config.AnnotationOptions.BorderSize < 5)
                         {
-                            g.DrawRectangleProper(pen, new Rectangle(0, 0, 10, 10));
+                            using (Pen pen = new Pen(Config.AnnotationOptions.BorderColor, Config.AnnotationOptions.BorderSize) { Alignment = PenAlignment.Inset })
+                            {
+                                g.DrawRectangleProper(pen, new Rectangle(0, 0, 10, 10));
+                            }
                         }
-                    }
-                    else
-                    {
-                        using (Brush brush = new SolidBrush(Config.AnnotationOptions.BorderColor))
+                        else
                         {
-                            g.FillRectangle(brush, new Rectangle(0, 0, 10, 10));
+                            using (Brush brush = new SolidBrush(Config.AnnotationOptions.BorderColor))
+                            {
+                                g.FillRectangle(brush, new Rectangle(0, 0, 10, 10));
+                            }
                         }
-                    }
 
-                    cursor.Draw(g, new Rectangle(0, 0, 32, 32));
-                    cursor.Dispose();
+                        cursor.Draw(g, new Rectangle(0, 0, 32, 32));
+                        cursor.Dispose();
 
-                    IntPtr iconPtr = IntPtr.Zero;
+                        IntPtr iconPtr = IntPtr.Zero;
 
-                    try
-                    {
-                        iconPtr = bmp.GetHicon();
-                        IconInfo iconInfo = new IconInfo();
-                        NativeMethods.GetIconInfo(iconPtr, out iconInfo);
-                        iconInfo.xHotspot = 15;
-                        iconInfo.yHotspot = 15;
-                        iconInfo.fIcon = false;
-                        IntPtr newIconPtr = NativeMethods.CreateIconIndirect(ref iconInfo);
-                        cursor = new Cursor(newIconPtr);
-                    }
-                    finally
-                    {
-                        if (iconPtr != IntPtr.Zero) NativeMethods.DestroyIcon(iconPtr);
+                        try
+                        {
+                            iconPtr = bmp.GetHicon();
+                            IconInfo iconInfo = new IconInfo();
+                            NativeMethods.GetIconInfo(iconPtr, out iconInfo);
+                            iconInfo.xHotspot = 15;
+                            iconInfo.yHotspot = 15;
+                            iconInfo.fIcon = false;
+                            IntPtr newIconPtr = NativeMethods.CreateIconIndirect(ref iconInfo);
+                            cursor = new Cursor(newIconPtr);
+                        }
+                        finally
+                        {
+                            if (iconPtr != IntPtr.Zero) NativeMethods.DestroyIcon(iconPtr);
+                        }
                     }
                 }
-            }
 
-            Cursor temp = form.Cursor;
-            form.Cursor = cursor;
-            temp.Dispose();
+                Cursor temp = form.Cursor;
+                form.Cursor = cursor;
+                if (temp != null) temp.Dispose();
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
         }
 
         public void PauseForm()
