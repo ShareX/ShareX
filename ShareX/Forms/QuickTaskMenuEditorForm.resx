@@ -244,7 +244,7 @@
     <value>4</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Reset to default</value>
+    <value>Reset to default...</value>
   </data>
   <data name="&gt;&gt;btnReset.Name" xml:space="preserve">
     <value>btnReset</value>

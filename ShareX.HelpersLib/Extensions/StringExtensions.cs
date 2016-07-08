@@ -254,12 +254,8 @@ namespace ShareX.HelpersLib
 
         public static bool IsNumber(this string text)
         {
-            foreach (char c in text)
-            {
-                if (!char.IsNumber(c)) return false;
-            }
-
-            return true;
+            int num;
+            return int.TryParse(text, out num);
         }
 
         public static string[] Lines(this string text)

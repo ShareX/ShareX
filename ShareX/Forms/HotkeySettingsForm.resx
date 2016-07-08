@@ -166,7 +166,7 @@
     <value>4</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Restore default hotkeys</value>
+    <value>Restore default hotkeys...</value>
   </data>
   <data name="&gt;&gt;btnReset.Name" xml:space="preserve">
     <value>btnReset</value>
