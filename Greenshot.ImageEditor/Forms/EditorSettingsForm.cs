@@ -21,7 +21,7 @@ namespace Greenshot
 
         private void LoadSettings()
         {
-            nudIconSize.Value = (int)Math.Round(coreConfiguration.IconSize.Width / 16.0) * 16;
+            nudIconSize.Value = (int)Math.Round(coreConfiguration.IconSize.Width / 8.0) * 8;
             cbMatchSizeToCapture.Checked = editorConfiguration.MatchSizeToCapture;
             cbMaximizeWhenLargeImage.Checked = editorConfiguration.MaximizeWhenLargeImage;
             cbSuppressSaveDialogAtClose.Checked = editorConfiguration.SuppressSaveDialogAtClose;
