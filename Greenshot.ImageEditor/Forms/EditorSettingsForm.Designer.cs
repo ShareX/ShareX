@@ -35,6 +35,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cbRememberLastDrawingMode = new System.Windows.Forms.CheckBox();
+            this.cbMaximizeWhenLargeImage = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudIconSize)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +90,7 @@
             // cbSuppressSaveDialogAtClose
             // 
             this.cbSuppressSaveDialogAtClose.AutoSize = true;
-            this.cbSuppressSaveDialogAtClose.Location = new System.Drawing.Point(16, 64);
+            this.cbSuppressSaveDialogAtClose.Location = new System.Drawing.Point(16, 88);
             this.cbSuppressSaveDialogAtClose.Name = "cbSuppressSaveDialogAtClose";
             this.cbSuppressSaveDialogAtClose.Size = new System.Drawing.Size(257, 17);
             this.cbSuppressSaveDialogAtClose.TabIndex = 3;
@@ -122,12 +123,22 @@
             // cbRememberLastDrawingMode
             // 
             this.cbRememberLastDrawingMode.AutoSize = true;
-            this.cbRememberLastDrawingMode.Location = new System.Drawing.Point(16, 87);
+            this.cbRememberLastDrawingMode.Location = new System.Drawing.Point(16, 111);
             this.cbRememberLastDrawingMode.Name = "cbRememberLastDrawingMode";
             this.cbRememberLastDrawingMode.Size = new System.Drawing.Size(226, 17);
             this.cbRememberLastDrawingMode.TabIndex = 4;
             this.cbRememberLastDrawingMode.Text = "Remember the last drawing mode selected";
             this.cbRememberLastDrawingMode.UseVisualStyleBackColor = true;
+            // 
+            // cbMaximizeWhenLargeImage
+            // 
+            this.cbMaximizeWhenLargeImage.AutoSize = true;
+            this.cbMaximizeWhenLargeImage.Location = new System.Drawing.Point(36, 63);
+            this.cbMaximizeWhenLargeImage.Name = "cbMaximizeWhenLargeImage";
+            this.cbMaximizeWhenLargeImage.Size = new System.Drawing.Size(280, 17);
+            this.cbMaximizeWhenLargeImage.TabIndex = 6;
+            this.cbMaximizeWhenLargeImage.Text = "Maximize window when image larger than display area";
+            this.cbMaximizeWhenLargeImage.UseVisualStyleBackColor = true;
             // 
             // EditorSettingsForm
             // 
@@ -136,6 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(330, 186);
+            this.Controls.Add(this.cbMaximizeWhenLargeImage);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.cbRememberLastDrawingMode);
@@ -163,5 +175,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.CheckBox cbRememberLastDrawingMode;
+        private System.Windows.Forms.CheckBox cbMaximizeWhenLargeImage;
     }
 }

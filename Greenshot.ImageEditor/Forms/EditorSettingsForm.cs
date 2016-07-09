@@ -23,6 +23,7 @@ namespace Greenshot
         {
             nudIconSize.Value = (int)Math.Round(coreConfiguration.IconSize.Width / 16.0) * 16;
             cbMatchSizeToCapture.Checked = editorConfiguration.MatchSizeToCapture;
+            cbMaximizeWhenLargeImage.Checked = editorConfiguration.MaximizeWhenLargeImage;
             cbSuppressSaveDialogAtClose.Checked = editorConfiguration.SuppressSaveDialogAtClose;
             cbRememberLastDrawingMode.Checked = editorConfiguration.RememberLastDrawingMode;
         }
@@ -31,6 +32,7 @@ namespace Greenshot
         {
             coreConfiguration.IconSize = new Size((int)nudIconSize.Value, (int)nudIconSize.Value);
             editorConfiguration.MatchSizeToCapture = cbMatchSizeToCapture.Checked;
+            editorConfiguration.MaximizeWhenLargeImage = cbMaximizeWhenLargeImage.Checked;
             editorConfiguration.SuppressSaveDialogAtClose = cbSuppressSaveDialogAtClose.Checked;
             editorConfiguration.RememberLastDrawingMode = cbRememberLastDrawingMode.Checked;
         }
