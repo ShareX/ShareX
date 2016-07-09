@@ -327,8 +327,9 @@ namespace Greenshot
                 Size imageSize = Surface.Image.Size;
                 Size currentFormSize = Size;
                 Size currentImageClientSize = panel1.ClientSize;
-                int minimumFormWidth = 650;
-                int minimumFormHeight = 530;
+                // Scale minimum size based on icons over default 16 pixels
+                int minimumFormWidth = 650 + 24 * Math.Max(coreConfiguration.IconSize.Width - 16, 0);
+                int minimumFormHeight = 530 + 17 * Math.Max(coreConfiguration.IconSize.Height - 16, 0);
                 int newWidth = Math.Max(minimumFormWidth, currentFormSize.Width - currentImageClientSize.Width + imageSize.Width);
                 int newHeight = Math.Max(minimumFormHeight, currentFormSize.Height - currentImageClientSize.Height + imageSize.Height);
                 Size = new Size(newWidth, newHeight);
