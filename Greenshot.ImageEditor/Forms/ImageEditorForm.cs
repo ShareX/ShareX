@@ -121,9 +121,56 @@ namespace Greenshot
             if (EditorConfiguration.MatchSizeToCapture)
             {
                 RECT lastPosition = EditorConfiguration.GetEditorPlacement().NormalPosition;
+
+                WindowPlacement wp = new WindowDetails(Handle).WindowPlacement;
+                wp.NormalPosition.Top = lastPosition.Top ;
+                wp.NormalPosition.Left = lastPosition.Left;
+                // don't actually show window now (it is done later)
+                wp.ShowCmd = ShowWindowCommand.Hide;
+
                 this.StartPosition = FormStartPosition.Manual;
-                this.Location = new Point(lastPosition.Left, lastPosition.Top);
-            }
+
+                WindowDetails thisForm = new WindowDetails(Handle)
+                {
+                        WindowPlacement = wp
+                };
+
+                // Once image is loaded into window, size and position window
+                Load += delegate
+                {
+                    Rectangle workingArea = Screen.FromControl(this).WorkingArea;
+                    WindowPlacement windowPlacement = new WindowDetails(Handle).WindowPlacement;
+
+                    if (EditorConfiguration.MaximizeWhenLargeImage)
+                    {
+                        if ((windowPlacement.NormalPosition.Width > workingArea.Width) || (windowPlacement.NormalPosition.Height > workingArea.Height))
+                        {
+                            windowPlacement.ShowCmd = ShowWindowCommand.Maximize;
+                        }
+                    }
+
+                    if (windowPlacement.NormalPosition.Right > workingArea.Right)
+                    {
+                        int toMoveLeft = windowPlacement.NormalPosition.Right - workingArea.Right;
+                        if (windowPlacement.NormalPosition.Left - toMoveLeft < 0)
+                            toMoveLeft = windowPlacement.NormalPosition.Left;
+
+                        windowPlacement.NormalPosition.Left -= toMoveLeft;
+                        windowPlacement.NormalPosition.Right -= toMoveLeft;
+                    }
+                    if (windowPlacement.NormalPosition.Bottom > workingArea.Bottom)
+                    {
+                        int toMoveUp = windowPlacement.NormalPosition.Bottom - workingArea.Bottom;
+                        if (windowPlacement.NormalPosition.Top - toMoveUp < 0)
+                            toMoveUp = windowPlacement.NormalPosition.Top;
+
+                        windowPlacement.NormalPosition.Top -= toMoveUp;
+                        windowPlacement.NormalPosition.Bottom -= toMoveUp;
+                    }
+                    WindowDetails thisForm1 = new WindowDetails(Handle) { WindowPlacement = windowPlacement };
+                };
+
+                }
             else
             {
                 Load += delegate

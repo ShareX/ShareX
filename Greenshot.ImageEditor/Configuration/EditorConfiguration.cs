@@ -51,6 +51,8 @@ namespace Greenshot.Configuration
 
         [IniProperty("MatchSizeToCapture", Description = "Match the editor window size to the capture", DefaultValue = "True")]
         public bool MatchSizeToCapture;
+        [IniProperty("MaximizeWhenLargeImage", Description = "Maximize the editor window when image is larger than the working area", DefaultValue = "False")]
+        public bool MaximizeWhenLargeImage;
         [IniProperty("WindowPlacementFlags", Description = "Placement flags", DefaultValue = "0")]
         public WindowPlacementFlags WindowPlacementFlags;
         [IniProperty("WindowShowCommand", Description = "Show command", DefaultValue = "Normal")]
