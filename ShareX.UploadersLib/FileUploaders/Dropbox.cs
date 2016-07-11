@@ -98,6 +98,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private const string URLDelete = URLAPI + "/files/delete";
         private const string URLMove = URLAPI + "/files/move";
         private const string URLAccountInfo = "https://api.dropbox.com/1/account/info"; // API v1
+        private const string URLShares = "https://api.dropbox.com/1/shares/dropbox"; // API v1
 
         private const string URLPublicDirect = "https://dl.dropboxusercontent.com/u";
         private const string URLShareDirect = "https://dl.dropboxusercontent.com/s";
@@ -204,8 +205,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return account;
         }
 
-        // API v1
-        public DropboxAccountInfo GetAccountInfo()
+        public DropboxAccountInfo GetCurrentAccountAPIv1()
         {
             DropboxAccountInfo account = null;
 
@@ -280,7 +280,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         AllowReportProgress = false;
 
-                        ur.URL = CreateShareableLink(metadata.path_display, urlType);
+                        ur.URL = CreateShareableLinkAPIv1(metadata.path_display, urlType);
                     }
                     else
                     {
@@ -337,8 +337,6 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                 });
 
-                // TODO: Missing: args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
-
                 string response = SendRequestJSON(URLCreateSharedLink, json, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
@@ -347,21 +345,40 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (urlType == DropboxURLType.Direct)
                     {
-                        Match match = Regex.Match(linkMetadata.url, @"https?://(?:www\.)?dropbox.com/s/(?<path>\w+/.+)");
-
-                        if (match.Success)
-                        {
-                            string urlPath = match.Groups["path"].Value;
-
-                            if (!string.IsNullOrEmpty(urlPath))
-                            {
-                                return URLHelpers.CombineURL(URLShareDirect, urlPath);
-                            }
-                        }
+                        return GetDirectShareableURL(linkMetadata.url);
                     }
                     else
                     {
                         return linkMetadata.url;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public string CreateShareableLinkAPIv1(string path, DropboxURLType urlType)
+        {
+            if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
+            {
+                string url = URLHelpers.CombineURL(URLShares, URLHelpers.URLPathEncode(path));
+
+                Dictionary<string, string> args = new Dictionary<string, string>();
+                args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
+
+                string response = SendRequest(HttpMethod.POST, url, args, GetAuthHeaders());
+
+                if (!string.IsNullOrEmpty(response))
+                {
+                    DropboxShares shares = JsonConvert.DeserializeObject<DropboxShares>(response);
+
+                    if (urlType == DropboxURLType.Direct)
+                    {
+                        return GetDirectShareableURL(shares.URL);
+                    }
+                    else
+                    {
+                        return shares.URL;
                     }
                 }
             }
@@ -470,14 +487,41 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 path = path.Trim('/');
 
-                if (path.StartsWith("Public/", StringComparison.InvariantCultureIgnoreCase))
+                string find = "Public/";
+
+                if (path.StartsWith(find, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    path = URLHelpers.URLPathEncode(path.Substring(7));
+                    path = path.Substring(find.Length);
+                    path = URLHelpers.URLPathEncode(path);
                     return URLHelpers.CombineURL(URLPublicDirect, userID, path);
                 }
             }
 
-            return "Upload path is private. Use \"Public\" folder to get public URL.";
+            return "Upload path is private. Use \"Public\" folder or shareable URL option to get URL.";
+        }
+
+        private static string GetDirectShareableURL(string url)
+        {
+            string find = "dropbox.com/s/";
+            int index = url.IndexOf(find);
+
+            if (index > -1)
+            {
+                string path = url.Substring(index + find.Length);
+                index = path.LastIndexOf('?');
+
+                if (index > -1)
+                {
+                    path = path.Remove(index);
+                }
+
+                if (!string.IsNullOrEmpty(path))
+                {
+                    return URLHelpers.CombineURL(URLShareDirect, path);
+                }
+            }
+
+            return null;
         }
     }
 
@@ -611,6 +655,12 @@ namespace ShareX.UploadersLib.FileUploaders
         public long Normal { get; set; }
         public long Shared { get; set; }
         public long Quota { get; set; }
+    }
+
+    public class DropboxShares
+    {
+        public string URL { get; set; }
+        public string Expires { get; set; }
     }
 
     #endregion API v1

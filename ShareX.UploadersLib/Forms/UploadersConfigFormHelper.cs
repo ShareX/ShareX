@@ -468,7 +468,7 @@ namespace ShareX.UploadersLib
 
                     if (result)
                     {
-                        Config.DropboxAccountInfo = dropbox.GetAccountInfo();
+                        Config.DropboxAccountInfo = dropbox.GetCurrentAccountAPIv1();
                         UpdateDropboxStatus();
 
                         oauth2Dropbox.Status = OAuthLoginStatus.LoginSuccessful;
