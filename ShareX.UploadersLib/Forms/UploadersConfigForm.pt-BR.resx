@@ -639,9 +639,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Status</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Selecionar...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Criar URL compartilhável:</value>
   </data>

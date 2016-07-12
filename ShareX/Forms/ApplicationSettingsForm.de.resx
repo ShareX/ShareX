@@ -180,9 +180,6 @@
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Chrome-Erweiterung...</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Hilf uns, ShareX in deine Sprache zu übersetzen!</value>
-  </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Schnellzugriff Menü bearbeiten...</value>
   </data>

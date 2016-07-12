@@ -653,9 +653,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Estado</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Seleccionar...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Crear URL compartible:</value>
   </data>

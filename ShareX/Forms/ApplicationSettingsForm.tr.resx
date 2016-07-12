@@ -129,9 +129,6 @@
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>Başlangıçta simge durumuna küçült</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>ShareX i kendi dilinize çevirmek için bize yardım edin!</value>
-  </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Hızlı görev menüsünü düzenle...</value>
   </data>

@@ -662,9 +662,6 @@
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>상태:</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>선택...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>공유 가능한 URL 생성하기:</value>
   </data>

@@ -165,9 +165,6 @@
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Extensão do Chrome...</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Ajude-nos a traduzir o ShareX para o seu idioma! </value>
-  </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Procurar...</value>
   </data>

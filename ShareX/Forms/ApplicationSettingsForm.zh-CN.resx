@@ -174,9 +174,6 @@
   <data name="btnChromeSupport.Text" xml:space="preserve">
     <value>Chrome浏览器扩展支持</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>使用你的语言帮助我们翻译ShareX</value>
-  </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>浏览...</value>
   </data>

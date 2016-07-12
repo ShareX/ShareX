@@ -171,9 +171,6 @@
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Emlékezzen a főablak pozíciójára</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Segíts, hogy lefordíthassuk a ShareX-et a nyelvedre!</value>
-  </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Tallózás...</value>
   </data>

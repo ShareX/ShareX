@@ -234,9 +234,6 @@
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
     <value>Mostrar el progreso en icono de la bandeja</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>¡Ayúdanos a traducir ShareX a su idioma!</value>
-  </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Mostrar ShareX en "Enviar a" menú</value>
   </data>

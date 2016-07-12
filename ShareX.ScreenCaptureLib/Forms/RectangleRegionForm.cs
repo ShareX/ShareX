@@ -426,11 +426,10 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Mode == RectangleRegionMode.Annotation)
                 {
-                    sb.AppendLine("[Right click][Menu] Open options menu");
+                    sb.AppendLine("[Right click] [Menu] Open options menu");
                 }
             }
 
-            // TODO: Also right click when non annotation mode
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
 
             if (!Config.QuickCrop && ShapeManager.Regions.Length > 0)

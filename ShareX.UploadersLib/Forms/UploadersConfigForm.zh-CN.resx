@@ -703,9 +703,6 @@
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>状态</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>选择...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>创建共享网址:</value>
   </data>

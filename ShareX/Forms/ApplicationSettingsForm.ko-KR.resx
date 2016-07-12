@@ -207,9 +207,6 @@
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>메인 창 위치 기억하기</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>ShareX를 여러분의 언어로 번역하는 작업을 도와주세요!</value>
-  </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>탐색...</value>
   </data>

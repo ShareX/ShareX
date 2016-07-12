@@ -693,9 +693,6 @@ store.book[0].title</value>
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Состояние</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Выбрать...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Создать общественный URL:</value>
   </data>

@@ -647,9 +647,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Állapot</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Kiválasztás...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Megosztható URL készítése:</value>
   </data>

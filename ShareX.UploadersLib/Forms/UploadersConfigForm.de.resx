@@ -735,9 +735,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Status</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Aushwählen...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Erstelle teilbare URL:</value>
   </data>

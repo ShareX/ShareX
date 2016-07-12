@@ -702,9 +702,6 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Status</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Selecteer...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Maak een deelbare link:</value>
   </data>

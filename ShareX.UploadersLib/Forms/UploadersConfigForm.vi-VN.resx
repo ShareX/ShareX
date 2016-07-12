@@ -596,9 +596,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Trạng thái</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Chọn...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Tạo liên kết để chia sẻ:</value>
   </data>

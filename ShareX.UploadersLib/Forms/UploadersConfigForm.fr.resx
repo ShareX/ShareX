@@ -687,9 +687,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Statut</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Sélectionner...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Créer une URL partageable :</value>
   </data>

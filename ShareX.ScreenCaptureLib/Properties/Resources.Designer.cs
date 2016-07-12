@@ -710,7 +710,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Space] Fullscreen capture.
+        ///   Looks up a localized string similar to [Space] [Mouse 5 click] Fullscreen capture.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Space__Fullscreen_capture {
             get {

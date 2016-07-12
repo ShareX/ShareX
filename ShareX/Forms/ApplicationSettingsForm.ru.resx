@@ -144,9 +144,6 @@
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Прокси</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Помогите нам с переводом ShareX на ваш язык!</value>
-  </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Редактировать меню быстрых задач</value>
   </data>

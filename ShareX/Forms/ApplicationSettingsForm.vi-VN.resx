@@ -180,9 +180,6 @@
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Ngôn ngữ:</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>Giúp đỡ chúng tôi dịch ShareX sang ngôn ngữ của bạn!</value>
-  </data>
   <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
     <value>Xóa</value>
   </data>

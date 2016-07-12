@@ -696,9 +696,6 @@ store.book[0].title</value>
   <data name="lblDropboxStatus.Text" xml:space="preserve">
     <value>Durum:</value>
   </data>
-  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Seç...</value>
-  </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Paylaşılabilir URL oluştur:</value>
   </data>
