@@ -157,51 +157,30 @@ namespace ShareX.ScreenCaptureLib
 
     public enum RegionCaptureAction
     {
-        [Description("Do nothing")]
         None,
-        [Description("Cancel capture")]
         CancelCapture,
-        [Description("Remove shape or cancel capture")]
         RemoveShapeCancelCapture,
-        [Description("Remove shape")]
         RemoveShape,
-        [Description("Open options menu")]
         OpenOptionsMenu,
-        [Description("Swap tool type")]
         SwapToolType,
-        [Description("Capture fullscreen")]
         CaptureFullscreen,
-        [Description("Capture active monitor")]
         CaptureActiveMonitor
     }
 
     public enum ShapeType
     {
-        [Description("Region: Rectangle")]
         RegionRectangle,
-        [Description("Region: Rounded rectangle")]
         RegionRoundedRectangle,
-        [Description("Region: Ellipse")]
         RegionEllipse,
-        [Description("Drawing: Rectangle")]
         DrawingRectangle,
-        [Description("Drawing: Rounded rectangle")]
         DrawingRoundedRectangle,
-        [Description("Drawing: Ellipse")]
         DrawingEllipse,
-        [Description("Drawing: Line")]
         DrawingLine,
-        [Description("Drawing: Arrow")]
         DrawingArrow,
-        [Description("Drawing: Text")]
         DrawingText,
-        [Description("Drawing: Step")]
         DrawingStep,
-        [Description("Effect: Blur")]
         DrawingBlur,
-        [Description("Effect: Pixelate")]
         DrawingPixelate,
-        [Description("Effect: Highlight")]
         DrawingHighlight
     }
 

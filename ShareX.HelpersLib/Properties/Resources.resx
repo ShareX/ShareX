@@ -908,4 +908,67 @@ Would you like to download it?</value>
   <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>Cancel capture</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Capture active monitor</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>Capture fullscreen</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>Do nothing</value>
+  </data>
+  <data name="RegionCaptureAction_OpenOptionsMenu" xml:space="preserve">
+    <value>Open options menu</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>Remove shape</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>Remove shape or cancel capture</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>Swap tool type</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>Drawing: Arrow</value>
+  </data>
+  <data name="ShapeType_DrawingBlur" xml:space="preserve">
+    <value>Effect: Blur</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>Drawing: Ellipse</value>
+  </data>
+  <data name="ShapeType_DrawingHighlight" xml:space="preserve">
+    <value>Effect: Highlight</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>Drawing: Line</value>
+  </data>
+  <data name="ShapeType_DrawingPixelate" xml:space="preserve">
+    <value>Effect: Pixelate</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>Drawing: Rectangle</value>
+  </data>
+  <data name="ShapeType_DrawingRoundedRectangle" xml:space="preserve">
+    <value>Drawing: Rounded rectangle</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>Drawing: Step</value>
+  </data>
+  <data name="ShapeType_DrawingText" xml:space="preserve">
+    <value>Drawing: Text</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>Region: Ellipse</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>Region: Rectangle</value>
+  </data>
+  <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
+    <value>Region: Rounded rectangle</value>
+  </data>
 </root>
