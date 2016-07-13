@@ -56,9 +56,9 @@ namespace ShareX.ScreenCaptureLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            cbScrollMethod.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollMethod>());
+            cbScrollMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ScrollingCaptureScrollMethod>());
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;
-            cbScrollTopMethodBeforeCapture.Items.AddRange(Helpers.GetEnumDescriptions<ScrollingCaptureScrollTopMethod>());
+            cbScrollTopMethodBeforeCapture.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ScrollingCaptureScrollTopMethod>());
             cbScrollTopMethodBeforeCapture.SelectedIndex = (int)Options.ScrollTopMethodBeforeCapture;
             nudStartDelay.SetValue(Options.StartDelay);
             nudScrollDelay.SetValue(Options.ScrollDelay);

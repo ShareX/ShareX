@@ -37,11 +37,8 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ScreenRecordGIFEncoding // Localized
     {
-        [Description("FFmpeg")]
         FFmpeg,
-        [Description(".NET")]
         NET,
-        [Description("Octree quantizer")]
         OctreeQuantizer
     }
 
@@ -155,7 +152,7 @@ namespace ShareX.ScreenCaptureLib
         OneClick
     }
 
-    public enum RegionCaptureAction
+    public enum RegionCaptureAction // Localized
     {
         None,
         CancelCapture,
@@ -167,7 +164,7 @@ namespace ShareX.ScreenCaptureLib
         CaptureActiveMonitor
     }
 
-    public enum ShapeType
+    public enum ShapeType // Localized
     {
         RegionRectangle,
         RegionRoundedRectangle,
@@ -191,27 +188,19 @@ namespace ShareX.ScreenCaptureLib
         Pen
     }
 
-    public enum ScrollingCaptureScrollMethod
+    public enum ScrollingCaptureScrollMethod // Localized
     {
-        [Description("Automatically try all methods until one works")]
         Automatic,
-        [Description("Send scroll message to window or control")]
         SendMessageScroll,
-        [Description("Simulate pressing \"Page down\" key")]
         KeyPressPageDown,
-        [Description("Simulate mouse wheel scrolling")]
         MouseWheel
     }
 
-    public enum ScrollingCaptureScrollTopMethod
+    public enum ScrollingCaptureScrollTopMethod // Localized
     {
-        [Description("First simulate pressing \"Home\" key then send scroll top message")]
         All,
-        [Description("Send scroll top message")]
         SendMessageTop,
-        [Description("Simulate pressing \"Home\" key")]
         KeyPressHome,
-        [Description("Disable scrolling to top")]
         None
     }
 }

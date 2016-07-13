@@ -2348,6 +2348,78 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatically try all methods until one works.
+        /// </summary>
+        internal static string ScrollingCaptureScrollMethod_Automatic {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureScrollMethod_Automatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simulate pressing &quot;Page down&quot; key.
+        /// </summary>
+        internal static string ScrollingCaptureScrollMethod_KeyPressPageDown {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureScrollMethod_KeyPressPageDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simulate mouse wheel scrolling.
+        /// </summary>
+        internal static string ScrollingCaptureScrollMethod_MouseWheel {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureScrollMethod_MouseWheel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send scroll message to window or control.
+        /// </summary>
+        internal static string ScrollingCaptureScrollMethod_SendMessageScroll {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureScrollMethod_SendMessageScroll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First simulate pressing &quot;Home&quot; key then send scroll top message.
+        /// </summary>
+        internal static string ScrollingCaptureScrollTopMethod_All {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureScrollTopMethod_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simulate pressing &quot;Home&quot; key.
+        /// </summary>
+        internal static string ScrollingCaptureScrollTopMethod_KeyPressHome {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureScrollTopMethod_KeyPressHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable scrolling to top.
+        /// </summary>
+        internal static string ScrollingCaptureScrollTopMethod_None {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureScrollTopMethod_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send scroll top message.
+        /// </summary>
+        internal static string ScrollingCaptureScrollTopMethod_SendMessageTop {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureScrollTopMethod_SendMessageTop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drawing: Arrow.
         /// </summary>
         internal static string ShapeType_DrawingArrow {

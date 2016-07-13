@@ -971,4 +971,28 @@ Would you like to download it?</value>
   <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
     <value>Region: Rounded rectangle</value>
   </data>
+  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
+    <value>Automatically try all methods until one works</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>Simulate pressing "Page down" key</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Simulate mouse wheel scrolling</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
+    <value>Send scroll message to window or control</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
+    <value>First simulate pressing "Home" key then send scroll top message</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>Simulate pressing "Home" key</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
+    <value>Disable scrolling to top</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
+    <value>Send scroll top message</value>
+  </data>
 </root>
