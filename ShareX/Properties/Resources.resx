@@ -844,4 +844,30 @@ Would you like to restart ShareX?</value>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>Reset all quick tasks to defaults?</value>
   </data>
+  <data name="MainForm_UpdateMainFormTip_Tips" xml:space="preserve">
+    <value>Main window tips:
+- Drag files, image or text to main window to upload them.
+- Drag items from task list to copy files to anywhere. Hold "Ctrl" before dragging to copy URL or file path instead of file.
+
+Main window task list hotkeys:
+[Enter] Open URL or file
+[Ctrl + Enter] Open file
+[Ctrl + C] Copy URL or file path
+[Shift + C] Copy file
+[Ctrl + Shift + C] Copy file path
+[Ctrl + X] Copy URL or file path then remove selected items from list
+[Ctrl + V] Open clipboard content viewer so you can upload your clipboard content
+[Delete] Remove selected items from list
+[Shift + Delete] Delete files locally then remove them from list
+[Esc] Close main window
+
+Tray icon tasks:
+[Left click] {0}
+[Double left click] {1}
+[Middle click] {2}
+- You can change these tray icon tasks from "Application settings" window.</value>
+  </data>
+  <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
+    <value>{0} configuration is invalid or missing. Please check "Destination settings" window to configure it.</value>
+  </data>
 </root>

@@ -719,6 +719,117 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tip: Right click to open options menu.
+        /// </summary>
+        internal static string RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Arrow keys] Resize region from top left corner.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Arrow_keys__Resize_region_from_top_left_corner {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Arrow_keys__Resize_region_from_top_left_corner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Ctrl + Mouse wheel] Change magnifier size.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Hold Alt + Arrow keys] Resize region from bottom right corner.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Hold_Alt___Arrow_keys__Resize_region_from_bottom_right_corner {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Hold_Alt___Arrow_keys__Resize_region_from_bottom_r" +
+                        "ight_corner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Hold Ctrl + Arrow keys] Move region.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Hold Ctrl] Move selection.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Hold Shift + Arrow keys] Move cursor position faster.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_fast" +
+                        "er", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Hold Shift + Arrow keys] Resize or move region faster.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_fas" +
+                        "ter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Mouse wheel] Change current tool.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Right click] [Menu] Open options menu.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Tab] [Mouse 4 click] Select last annotation tool.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Tab] [Mouse 4 click] Select last region tool.
+        /// </summary>
+        internal static string RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool {
+            get {
+                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rectangle capture transparent.
         /// </summary>
         internal static string RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent {
@@ -742,6 +853,249 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ScrollingCaptureForm_StopCapture_Start_capture {
             get {
                 return ResourceManager.GetString("ScrollingCaptureForm_StopCapture_Start_capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blur radius:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Blur_radius_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Blur_radius_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Border color....
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Border_color___ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Border_color___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Border size:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Border_size_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Border_size_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel capture.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Cancel_capture {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Cancel_capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture active monitor.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Capture_active_monitor {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture_active_monitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture fullscreen.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Capture_fullscreen {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture_fullscreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture monitor.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Capture_monitor {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture_monitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close menu.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Close_menu {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Close_menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corner radius:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Corner_radius_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Corner_radius_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete all objects.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Delete_all_objects {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Delete_all_objects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete selected object.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Delete_selected_object {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Delete_selected_object", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fill color....
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Fill_color___ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Fill_color___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fixed size region mode.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Fixed_size_region_mode {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Fixed_size_region_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Height:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Height_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Height_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Highlight color....
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Highlight_color___ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Highlight_color___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Magnifier pixel count:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Magnifier_pixel_count_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Magnifier_pixel_count_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Magnifier pixel size:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Magnifier_pixel_size_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Magnifier_pixel_size_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multi region mode.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Multi_region_mode {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Multi_region_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Options {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pixel size:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Pixel_size_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Pixel_size_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show FPS.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Show_FPS {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_FPS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show magnifier.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Show_magnifier {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_magnifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show position and size info.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Show_position_and_size_info {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_position_and_size_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show screen wide crosshair.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Show_screen_wide_crosshair {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_screen_wide_crosshair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show tips.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Show_tips {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_tips", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Square shape magnifier.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Square_shape_magnifier {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Square_shape_magnifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Width_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Width_", resourceCulture);
             }
         }
         

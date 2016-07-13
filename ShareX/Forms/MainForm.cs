@@ -332,32 +332,8 @@ namespace ShareX
                 lblMainFormTip.Text = "";
             }
 
-            // TODO: Translate
-            lblTips.Text = string.Format(
-@"Main window tips:
-- Drag files, image or text to main window to upload them.
-- Drag items from task list to copy files to anywhere. Hold ""Ctrl"" before dragging to copy URL or file path instead of file.
-
-Main window task list hotkeys:
-[Enter] Open URL or file
-[Ctrl + Enter] Open file
-[Ctrl + C] Copy URL or file path
-[Shift + C] Copy file
-[Ctrl + Shift + C] Copy file path
-[Ctrl + X] Copy URL or file path then remove selected items from list
-[Ctrl + V] Open clipboard content viewer so you can upload your clipboard content
-[Delete] Remove selected items from list
-[Shift + Delete] Delete files locally then remove them from list
-[Esc] Close main window
-
-Tray icon tasks:
-[Left click] {0}
-[Double left click] {1}
-[Middle click] {2}
-- You can change these tray icon tasks from ""Application settings"" window.",
-Program.Settings.TrayLeftClickAction.GetLocalizedDescription(),
-Program.Settings.TrayLeftDoubleClickAction.GetLocalizedDescription(),
-Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
+            lblTips.Text = string.Format(Resources.MainForm_UpdateMainFormTip_Tips, Program.Settings.TrayLeftClickAction.GetLocalizedDescription(),
+                Program.Settings.TrayLeftDoubleClickAction.GetLocalizedDescription(), Program.Settings.TrayMiddleClickAction.GetLocalizedDescription());
         }
 
         private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)

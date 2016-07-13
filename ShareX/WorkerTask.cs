@@ -930,8 +930,9 @@ namespace ShareX
         private UploadResult GetInvalidConfigResult(IUploaderService uploaderService)
         {
             UploadResult ur = new UploadResult();
-            // TODO: Translate
-            string message = string.Format("{0} configuration is invalid or missing. Please check \"Destination settings\" window to configure it.", uploaderService.ServiceName);
+
+            string message = string.Format(Resources.WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_,
+                uploaderService.ServiceName);
             DebugHelper.WriteLine(message);
             ur.Errors.Add(message);
 

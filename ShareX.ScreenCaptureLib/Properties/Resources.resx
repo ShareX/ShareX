@@ -345,4 +345,121 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="counter_reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\counter-reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu" xml:space="preserve">
+    <value>Tip: Right click to open options menu</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu" xml:space="preserve">
+    <value>[Right click] [Menu] Open options menu</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Arrow_keys__Resize_region_from_top_left_corner" xml:space="preserve">
+    <value>[Arrow keys] Resize region from top left corner</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Alt___Arrow_keys__Resize_region_from_bottom_right_corner" xml:space="preserve">
+    <value>[Hold Alt + Arrow keys] Resize region from bottom right corner</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
+    <value>[Hold Ctrl + Arrow keys] Move region</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster" xml:space="preserve">
+    <value>[Hold Shift + Arrow keys] Resize or move region faster</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
+    <value>[Hold Shift + Arrow keys] Move cursor position faster</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection" xml:space="preserve">
+    <value>[Hold Ctrl] Move selection</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size" xml:space="preserve">
+    <value>[Ctrl + Mouse wheel] Change magnifier size</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
+    <value>[Tab] [Mouse 4 click] Select last annotation tool</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool" xml:space="preserve">
+    <value>[Tab] [Mouse 4 click] Select last region tool</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
+    <value>[Mouse wheel] Change current tool</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Cancel_capture" xml:space="preserve">
+    <value>Cancel capture</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
+    <value>Close menu</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Delete_selected_object" xml:space="preserve">
+    <value>Delete selected object</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
+    <value>Delete all objects</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>Border color...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>Border size:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>Fill color...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>Corner radius:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>Blur radius:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Pixel size:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>Highlight color...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>Capture fullscreen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>Capture active monitor</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>Capture monitor</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>Multi region mode</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
+    <value>Show tips</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>Show position and size info</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>Show magnifier</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>Square shape magnifier</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>Magnifier pixel count:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>Magnifier pixel size:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>Show screen wide crosshair</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>Fixed size region mode</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>Width:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>Show FPS</value>
+  </data>
 </root>
