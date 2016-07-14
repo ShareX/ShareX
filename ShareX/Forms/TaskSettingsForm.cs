@@ -257,13 +257,13 @@ namespace ShareX
             cbRegionCaptureShowMagnifier.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowMagnifier;
             cbRegionCaptureUseSquareMagnifier.Enabled = nudRegionCaptureMagnifierPixelCount.Enabled = nudRegionCaptureMagnifierPixelSize.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.ShowMagnifier;
             cbRegionCaptureUseSquareMagnifier.Checked = TaskSettings.CaptureSettings.SurfaceOptions.UseSquareMagnifier;
-            nudRegionCaptureMagnifierPixelCount.Value = TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelCount;
-            nudRegionCaptureMagnifierPixelSize.Value = TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelSize;
+            nudRegionCaptureMagnifierPixelCount.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelCount);
+            nudRegionCaptureMagnifierPixelSize.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelSize);
             cbRegionCaptureShowCrosshair.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowCrosshair;
             cbRegionCaptureIsFixedSize.Checked = TaskSettings.CaptureSettings.SurfaceOptions.IsFixedSize;
             nudRegionCaptureFixedSizeWidth.Enabled = nudRegionCaptureFixedSizeHeight.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.IsFixedSize;
-            nudRegionCaptureFixedSizeWidth.Value = TaskSettings.CaptureSettings.SurfaceOptions.FixedSize.Width;
-            nudRegionCaptureFixedSizeHeight.Value = TaskSettings.CaptureSettings.SurfaceOptions.FixedSize.Height;
+            nudRegionCaptureFixedSizeWidth.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.FixedSize.Width);
+            nudRegionCaptureFixedSizeHeight.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.FixedSize.Height);
             cbRegionCaptureShowFPS.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowFPS;
 
             #endregion Region capture
@@ -860,10 +860,10 @@ namespace ShareX
 
             if (RegionCaptureHelpers.GetRectangleRegion(out rect))
             {
-                nudCaptureCustomRegionX.Value = rect.X;
-                nudCaptureCustomRegionY.Value = rect.Y;
-                nudCaptureCustomRegionWidth.Value = rect.Width;
-                nudCaptureCustomRegionHeight.Value = rect.Height;
+                nudCaptureCustomRegionX.SetValue(rect.X);
+                nudCaptureCustomRegionY.SetValue(rect.Y);
+                nudCaptureCustomRegionWidth.SetValue(rect.Width);
+                nudCaptureCustomRegionHeight.SetValue(rect.Height);
             }
         }
 

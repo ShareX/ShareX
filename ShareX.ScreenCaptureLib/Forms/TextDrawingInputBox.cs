@@ -67,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
                 cbFonts.SelectedItem = "Arial";
             }
 
-            nudTextSize.Value = Options.Size;
+            nudTextSize.SetValue(Options.Size);
             btnTextColor.Color = Options.Color;
             cbBold.Checked = Options.Bold;
             cbItalic.Checked = Options.Italic;

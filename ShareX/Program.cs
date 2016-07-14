@@ -62,19 +62,13 @@ namespace ShareX
                 string title = string.Format("ShareX {0}.{1}", version.Major, version.Minor);
                 if (version.Build > 0) title += "." + version.Build;
                 if (version.Revision > 0) title += "." + version.Revision;
-                if (Portable) title += " Portable";
                 if (Beta) title += " Beta";
+                if (Portable) title += " Portable";
                 return title;
             }
         }
 
-        public static string TitleLong
-        {
-            get
-            {
-                return $"{Title} ({Build})";
-            }
-        }
+        public static string TitleLong => $"{Title} ({Build})";
 
         public static bool Beta { get; } = false;
         public static bool MultiInstance { get; private set; }
