@@ -196,15 +196,19 @@ namespace ShareX.ScreenCaptureLib
             switch (e.KeyCode)
             {
                 case Keys.Up:
+                case Keys.W:
                     isUpPressed = true;
                     break;
                 case Keys.Down:
+                case Keys.S:
                     isDownPressed = true;
                     break;
                 case Keys.Left:
+                case Keys.A:
                     isLeftPressed = true;
                     break;
                 case Keys.Right:
+                case Keys.D:
                     isRightPressed = true;
                     break;
                 case Keys.Menu:
@@ -212,12 +216,10 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            // Calculate cursor movement
             int speed = e.Shift ? MaxMoveSpeed : MinMoveSpeed;
             int y = isUpPressed && isDownPressed ? 0 : isDownPressed ? speed : isUpPressed ? -speed : 0;
             int x = isLeftPressed && isRightPressed ? 0 : isRightPressed ? speed : isLeftPressed ? -speed : 0;
 
-            // Move the cursor
             if (shapeManager.CurrentShape == null || shapeManager.IsCreating)
             {
                 Cursor.Position = Cursor.Position.Add(x, y);
@@ -240,15 +242,19 @@ namespace ShareX.ScreenCaptureLib
             switch (e.KeyCode)
             {
                 case Keys.Up:
+                case Keys.W:
                     isUpPressed = false;
                     break;
                 case Keys.Down:
+                case Keys.S:
                     isDownPressed = false;
                     break;
                 case Keys.Left:
+                case Keys.A:
                     isLeftPressed = false;
                     break;
                 case Keys.Right:
+                case Keys.D:
                     isRightPressed = false;
                     break;
                 case Keys.Menu:
