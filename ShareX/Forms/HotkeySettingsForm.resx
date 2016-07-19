@@ -148,19 +148,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnDuplicate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnReset.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>2</value>
   </data>
   <data name="btnReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 8</value>
+    <value>392, 8</value>
   </data>
   <data name="btnReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 23</value>
+    <value>208, 23</value>
   </data>
   <data name="btnReset.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -178,7 +175,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnReset.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="flpHotkeys.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -193,7 +190,7 @@
     <value>8, 35</value>
   </data>
   <data name="flpHotkeys.Size" type="System.Drawing.Size, System.Drawing">
-    <value>520, 373</value>
+    <value>591, 419</value>
   </data>
   <data name="flpHotkeys.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -211,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flpHotkeys.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btnEdit.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -241,7 +238,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnRemove.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -271,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -298,7 +295,64 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
+  </data>
+  <data name="btnMoveUp.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnMoveUp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 8</value>
+  </data>
+  <data name="btnMoveUp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 23</value>
+  </data>
+  <data name="btnMoveUp.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnMoveUp.Text" xml:space="preserve">
+    <value>↑</value>
+  </data>
+  <data name="&gt;&gt;btnMoveUp.Name" xml:space="preserve">
+    <value>btnMoveUp</value>
+  </data>
+  <data name="&gt;&gt;btnMoveUp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMoveUp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnMoveUp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnMoveDown.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnMoveDown.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnMoveDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 8</value>
+  </data>
+  <data name="btnMoveDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 23</value>
+  </data>
+  <data name="btnMoveDown.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnMoveDown.Text" xml:space="preserve">
+    <value>↓</value>
+  </data>
+  <data name="&gt;&gt;btnMoveDown.Name" xml:space="preserve">
+    <value>btnMoveDown</value>
+  </data>
+  <data name="&gt;&gt;btnMoveDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMoveDown.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnMoveDown.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -307,10 +361,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>536, 415</value>
+    <value>607, 461</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>552, 200</value>
+    <value>623, 200</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
