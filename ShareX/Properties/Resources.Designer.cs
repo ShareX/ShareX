@@ -755,9 +755,29 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap drive_download {
+            get {
+                object obj = ResourceManager.GetObject("drive_download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap drive_globe {
             get {
                 object obj = ResourceManager.GetObject("drive_globe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap drive_upload {
+            get {
+                object obj = ResourceManager.GetObject("drive_upload", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

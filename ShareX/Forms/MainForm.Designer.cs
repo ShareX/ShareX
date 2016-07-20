@@ -151,6 +151,7 @@
             this.tsmiCopyFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tssCopy5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiUploadSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDownloadSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
@@ -930,6 +931,7 @@
             this.tsmiOpen,
             this.tsmiCopy,
             this.tsmiUploadSelectedFile,
+            this.tsmiDownloadSelectedURL,
             this.tsmiEditSelectedFile,
             this.tsmiDeleteSelectedFile,
             this.tsmiShortenSelectedURL,
@@ -1194,10 +1196,17 @@
             // 
             // tsmiUploadSelectedFile
             // 
-            this.tsmiUploadSelectedFile.Image = global::ShareX.Properties.Resources.arrow_090;
+            this.tsmiUploadSelectedFile.Image = global::ShareX.Properties.Resources.drive_upload;
             this.tsmiUploadSelectedFile.Name = "tsmiUploadSelectedFile";
             resources.ApplyResources(this.tsmiUploadSelectedFile, "tsmiUploadSelectedFile");
             this.tsmiUploadSelectedFile.Click += new System.EventHandler(this.tsmiUploadSelectedFile_Click);
+            // 
+            // tsmiDownloadSelectedURL
+            // 
+            this.tsmiDownloadSelectedURL.Image = global::ShareX.Properties.Resources.drive_download;
+            this.tsmiDownloadSelectedURL.Name = "tsmiDownloadSelectedURL";
+            resources.ApplyResources(this.tsmiDownloadSelectedURL, "tsmiDownloadSelectedURL");
+            this.tsmiDownloadSelectedURL.Click += new System.EventHandler(this.tsmiDownloadSelectedURL_Click);
             // 
             // tsmiEditSelectedFile
             // 
@@ -2145,5 +2154,6 @@
         private System.Windows.Forms.PictureBox pbPatreonOpen;
         private System.Windows.Forms.PictureBox pbPatreonHide;
         private System.Windows.Forms.ToolTip ttMain;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDownloadSelectedURL;
     }
 }

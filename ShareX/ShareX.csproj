@@ -1266,6 +1266,8 @@
     <None Include="Resources\globe--arrow.png" />
     <None Include="Resources\Patreon_Button_01.png" />
     <None Include="Resources\Patreon_Button_02.png" />
+    <None Include="Resources\drive-download.png" />
+    <None Include="Resources\drive-upload.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

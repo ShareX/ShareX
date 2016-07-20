@@ -74,6 +74,7 @@ namespace ShareX
         TextUpload,
         ShortenURL,
         ShareURL,
+        Download,
         DownloadUpload
     }
 

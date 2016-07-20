@@ -441,13 +441,23 @@ namespace ShareX
             }
         }
 
+        public static void DownloadFile(string url, TaskSettings taskSettings = null)
+        {
+            DownloadFile(url, false, taskSettings);
+        }
+
         public static void DownloadAndUploadFile(string url, TaskSettings taskSettings = null)
+        {
+            DownloadFile(url, true, taskSettings);
+        }
+
+        private static void DownloadFile(string url, bool upload, TaskSettings taskSettings = null)
         {
             if (!string.IsNullOrEmpty(url))
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                WorkerTask task = WorkerTask.CreateDownloadUploadTask(url, taskSettings);
+                WorkerTask task = WorkerTask.CreateDownloadTask(url, true, taskSettings);
 
                 if (task != null)
                 {

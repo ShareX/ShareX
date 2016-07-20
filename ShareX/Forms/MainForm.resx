@@ -1170,6 +1170,12 @@
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="tsmiDownloadSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>Download</value>
+  </data>
   <data name="tsmiEditSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 22</value>
   </data>
@@ -1252,7 +1258,7 @@
     <value>Image preview</value>
   </data>
   <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 340</value>
+    <value>173, 362</value>
   </data>
   <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
     <value>cmsTaskInfo</value>
@@ -1694,7 +1700,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
@@ -2439,6 +2445,12 @@
   <data name="&gt;&gt;tsmiUploadSelectedFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiDownloadSelectedURL.Name" xml:space="preserve">
+    <value>tsmiDownloadSelectedURL</value>
+  </data>
+  <data name="&gt;&gt;tsmiDownloadSelectedURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiEditSelectedFile.Name" xml:space="preserve">
     <value>tsmiEditSelectedFile</value>
   </data>
@@ -2971,6 +2983,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=11.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

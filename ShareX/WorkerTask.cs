@@ -223,10 +223,10 @@ namespace ShareX
             return task;
         }
 
-        public static WorkerTask CreateDownloadUploadTask(string url, TaskSettings taskSettings)
+        public static WorkerTask CreateDownloadTask(string url, bool upload, TaskSettings taskSettings)
         {
             WorkerTask task = new WorkerTask(taskSettings);
-            task.Info.Job = TaskJob.DownloadUpload;
+            task.Info.Job = upload ? TaskJob.DownloadUpload : TaskJob.Download;
             task.Info.DataType = TaskHelpers.FindDataType(url, taskSettings);
 
             string filename = URLHelpers.URLDecode(url, 10);
@@ -531,9 +531,18 @@ namespace ShareX
                 ClipboardHelpers.Clear();
             }
 
-            if (Info.Job == TaskJob.DownloadUpload && !DownloadAndUpload())
+            if (Info.Job == TaskJob.Download || Info.Job == TaskJob.DownloadUpload)
             {
-                return false;
+                bool downloadResult = !DownloadFromURL(Info.Job == TaskJob.DownloadUpload);
+
+                if (!downloadResult)
+                {
+                    return false;
+                }
+                else if (Info.Job == TaskJob.Download)
+                {
+                    return true;
+                }
             }
 
             if (Info.Job == TaskJob.Job)
@@ -941,7 +950,7 @@ namespace ShareX
             return ur;
         }
 
-        private bool DownloadAndUpload()
+        private bool DownloadFromURL(bool upload)
         {
             string url = Info.Result.URL.Trim();
             Info.Result.URL = "";
@@ -962,7 +971,10 @@ namespace ShareX
                         wc.DownloadFile(url, Info.FilePath);
                     }
 
-                    LoadFileStream();
+                    if (upload)
+                    {
+                        LoadFileStream();
+                    }
 
                     return true;
                 }

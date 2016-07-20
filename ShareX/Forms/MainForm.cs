@@ -1650,6 +1650,11 @@ namespace ShareX
             uim.Upload();
         }
 
+        private void tsmiDownloadSelectedURL_Click(object sender, EventArgs e)
+        {
+            uim.Download();
+        }
+
         private void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(Resources.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,

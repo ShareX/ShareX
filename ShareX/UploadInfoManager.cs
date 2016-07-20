@@ -303,6 +303,11 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsFileExist) UploadManager.UploadFile(SelectedItem.Info.FilePath);
         }
 
+        public void Download()
+        {
+            if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.DownloadFile(SelectedItem.Info.Result.URL);
+        }
+
         public void EditImage()
         {
             if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageEditor(SelectedItem.Info.FilePath);
