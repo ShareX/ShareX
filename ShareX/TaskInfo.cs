@@ -43,7 +43,20 @@ namespace ShareX
         {
             get
             {
-                return Job != TaskJob.Job || TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
+                switch (Job)
+                {
+                    case TaskJob.Job:
+                        return TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
+                    case TaskJob.DataUpload:
+                    case TaskJob.FileUpload:
+                    case TaskJob.TextUpload:
+                    case TaskJob.ShortenURL:
+                    case TaskJob.ShareURL:
+                    case TaskJob.DownloadUpload:
+                        return true;
+                }
+
+                return false;
             }
         }
 

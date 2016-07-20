@@ -457,7 +457,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                WorkerTask task = WorkerTask.CreateDownloadTask(url, true, taskSettings);
+                WorkerTask task = WorkerTask.CreateDownloadTask(url, upload, taskSettings);
 
                 if (task != null)
                 {

@@ -533,7 +533,7 @@ namespace ShareX
 
             if (Info.Job == TaskJob.Download || Info.Job == TaskJob.DownloadUpload)
             {
-                bool downloadResult = !DownloadFromURL(Info.Job == TaskJob.DownloadUpload);
+                bool downloadResult = DownloadFromURL(Info.Job == TaskJob.DownloadUpload);
 
                 if (!downloadResult)
                 {
