@@ -483,7 +483,8 @@ namespace ShareX
             cmsTaskInfo.SuspendLayout();
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible = tsmiUploadSelectedFile.Visible =
-                 tsmiEditSelectedFile.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
+                tsmiDownloadSelectedURL.Visible = tsmiEditSelectedFile.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible =
+                tsmiClearList.Visible = tssUploadInfo1.Visible = false;
             pbPreview.Reset();
             uim.RefreshSelectedItems();
 
@@ -565,6 +566,7 @@ namespace ShareX
                     }
 
                     tsmiUploadSelectedFile.Visible = uim.SelectedItem.IsFileExist;
+                    tsmiDownloadSelectedURL.Visible = uim.SelectedItem.IsFileURL;
                     tsmiEditSelectedFile.Visible = uim.SelectedItem.IsImageFile;
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;

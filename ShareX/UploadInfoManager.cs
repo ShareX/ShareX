@@ -305,7 +305,7 @@ namespace ShareX
 
         public void Download()
         {
-            if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.DownloadFile(SelectedItem.Info.Result.URL);
+            if (IsItemSelected && SelectedItem.IsFileURL) UploadManager.DownloadFile(SelectedItem.Info.Result.URL);
         }
 
         public void EditImage()

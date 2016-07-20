@@ -283,6 +283,20 @@ namespace ShareX.HelpersLib
             return path;
         }
 
+        public static bool IsFileURL(string url)
+        {
+            int index = url.LastIndexOf('/');
+
+            if (index < 0)
+            {
+                return false;
+            }
+
+            string path = url.Substring(index + 1);
+
+            return !string.IsNullOrEmpty(path) && path.Contains(".");
+        }
+
         public static string GetDirectoryPath(string path)
         {
             if (path.Contains("/"))

@@ -36,6 +36,7 @@ namespace ShareX
         public bool IsShortenedURLExist { get; private set; }
         public bool IsThumbnailURLExist { get; private set; }
         public bool IsDeletionURLExist { get; private set; }
+        public bool IsFileURL { get; private set; }
         public bool IsImageURL { get; private set; }
         public bool IsTextURL { get; private set; }
         public bool IsFilePathValid { get; private set; }
@@ -59,8 +60,9 @@ namespace ShareX
                 IsShortenedURLExist = !string.IsNullOrEmpty(Info.Result.ShortenedURL);
                 IsThumbnailURLExist = !string.IsNullOrEmpty(Info.Result.ThumbnailURL);
                 IsDeletionURLExist = !string.IsNullOrEmpty(Info.Result.DeletionURL);
-                IsImageURL = IsURLExist && Helpers.IsImageFile(Info.Result.URL);
-                IsTextURL = IsURLExist && Helpers.IsTextFile(Info.Result.URL);
+                IsFileURL = IsURLExist && URLHelpers.IsFileURL(Info.Result.URL);
+                IsImageURL = IsFileURL && Helpers.IsImageFile(Info.Result.URL);
+                IsTextURL = IsFileURL && Helpers.IsTextFile(Info.Result.URL);
             }
 
             IsFilePathValid = !string.IsNullOrEmpty(Info.FilePath) && Path.HasExtension(Info.FilePath);
