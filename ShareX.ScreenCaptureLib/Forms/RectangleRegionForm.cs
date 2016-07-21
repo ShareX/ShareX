@@ -122,9 +122,9 @@ namespace ShareX.ScreenCaptureLib
             ClipboardHelpers.CopyText(clipboardText);
         }
 
-        public override void Prepare()
+        public override void Prepare(Screenshot screenshot)
         {
-            base.Prepare();
+            base.Prepare(screenshot);
 
             if (Config != null)
             {

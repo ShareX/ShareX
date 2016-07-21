@@ -107,11 +107,12 @@ namespace ShareX
 
             if (!rect.IsEmpty)
             {
-                Image img = Screenshot.CaptureRectangle(rect);
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
 
                 if (img != null)
                 {
-                    TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                     taskSettings.UseDefaultAfterCaptureJob = false;
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
                     taskSettings.UseDefaultAdvancedSettings = false;

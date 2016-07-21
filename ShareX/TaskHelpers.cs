@@ -989,5 +989,22 @@ namespace ShareX
 
             return null;
         }
+
+        public static Screenshot GetScreenshot(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            Screenshot screenshot = new Screenshot()
+            {
+                CaptureCursor = taskSettings.CaptureSettings.ShowCursor,
+                CaptureClientArea = taskSettings.CaptureSettings.CaptureClientArea,
+                RemoveOutsideScreenArea = true,
+                CaptureShadow = taskSettings.CaptureSettings.CaptureShadow,
+                ShadowOffset = taskSettings.CaptureSettings.CaptureShadowOffset,
+                AutoHideTaskbar = taskSettings.CaptureSettings.CaptureAutoHideTaskbar
+            };
+
+            return screenshot;
+        }
     }
 }

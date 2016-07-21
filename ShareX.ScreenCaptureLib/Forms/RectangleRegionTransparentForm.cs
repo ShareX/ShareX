@@ -158,13 +158,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Image GetAreaImage()
+        public Image GetAreaImage(Screenshot screenshot)
         {
             Rectangle rect = SelectionRectangle0Based;
 
             if (rect.Width > 0 && rect.Height > 0)
             {
-                return Screenshot.CaptureRectangle(SelectionRectangle);
+                return screenshot.CaptureRectangle(SelectionRectangle);
             }
 
             return null;

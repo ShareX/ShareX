@@ -107,10 +107,15 @@ namespace ShareX.ScreenCaptureLib
             ResumeLayout(false);
         }
 
-        /// <summary>Must be called before show form</summary>
-        public virtual void Prepare()
+        public void Prepare()
         {
-            backgroundImage = Screenshot.CaptureFullscreen();
+            Prepare(new Screenshot());
+        }
+
+        /// <summary>Must be called before show form</summary>
+        public virtual void Prepare(Screenshot screenshot)
+        {
+            backgroundImage = screenshot.CaptureFullscreen();
 
             if (Config.UseDimming)
             {

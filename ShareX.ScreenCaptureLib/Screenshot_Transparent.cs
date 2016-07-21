@@ -32,9 +32,9 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public static partial class Screenshot
+    public partial class Screenshot
     {
-        public static Image CaptureWindowTransparent(IntPtr handle)
+        public Image CaptureWindowTransparent(IntPtr handle)
         {
             if (handle.ToInt32() > 0)
             {
@@ -154,14 +154,14 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public static Image CaptureActiveWindowTransparent()
+        public Image CaptureActiveWindowTransparent()
         {
             IntPtr handle = NativeMethods.GetForegroundWindow();
 
             return CaptureWindowTransparent(handle);
         }
 
-        private static Bitmap CreateTransparentImage(Bitmap whiteBackground, Bitmap blackBackground)
+        private Bitmap CreateTransparentImage(Bitmap whiteBackground, Bitmap blackBackground)
         {
             if (whiteBackground != null && blackBackground != null && whiteBackground.Size == blackBackground.Size)
             {
@@ -202,7 +202,7 @@ namespace ShareX.ScreenCaptureLib
             return whiteBackground;
         }
 
-        private static Bitmap TrimTransparent(Bitmap bitmap)
+        private Bitmap TrimTransparent(Bitmap bitmap)
         {
             Rectangle source = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
             Rectangle rect = source;
@@ -229,7 +229,7 @@ namespace ShareX.ScreenCaptureLib
             return bitmap;
         }
 
-        private static Rectangle TrimTransparentFindX(UnsafeBitmap unsafeBitmap, Rectangle rect)
+        private Rectangle TrimTransparentFindX(UnsafeBitmap unsafeBitmap, Rectangle rect)
         {
             for (int x = rect.X; x < rect.Width; x++)
             {
@@ -246,7 +246,7 @@ namespace ShareX.ScreenCaptureLib
             return rect;
         }
 
-        private static Rectangle TrimTransparentFindY(UnsafeBitmap unsafeBitmap, Rectangle rect)
+        private Rectangle TrimTransparentFindY(UnsafeBitmap unsafeBitmap, Rectangle rect)
         {
             for (int y = rect.Y; y < rect.Height; y++)
             {
@@ -263,7 +263,7 @@ namespace ShareX.ScreenCaptureLib
             return rect;
         }
 
-        private static Rectangle TrimTransparentFindWidth(UnsafeBitmap unsafeBitmap, Rectangle rect)
+        private Rectangle TrimTransparentFindWidth(UnsafeBitmap unsafeBitmap, Rectangle rect)
         {
             for (int x = rect.Width - 1; x >= rect.X; x--)
             {
@@ -280,7 +280,7 @@ namespace ShareX.ScreenCaptureLib
             return rect;
         }
 
-        private static Rectangle TrimTransparentFindHeight(UnsafeBitmap unsafeBitmap, Rectangle rect)
+        private Rectangle TrimTransparentFindHeight(UnsafeBitmap unsafeBitmap, Rectangle rect)
         {
             for (int y = rect.Height - 1; y >= rect.Y; y--)
             {
@@ -297,7 +297,7 @@ namespace ShareX.ScreenCaptureLib
             return rect;
         }
 
-        private static Bitmap QuickTrimTransparent(Bitmap bitmap)
+        private Bitmap QuickTrimTransparent(Bitmap bitmap)
         {
             Rectangle source = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
             Rectangle rect = source;
@@ -356,7 +356,7 @@ namespace ShareX.ScreenCaptureLib
             return bitmap;
         }
 
-        private static void TrimShadow(Bitmap bitmap)
+        private void TrimShadow(Bitmap bitmap)
         {
             int sizeLimit = 10;
             int alphaLimit = 200;
@@ -427,7 +427,7 @@ namespace ShareX.ScreenCaptureLib
 
         #region Not in use
 
-        private static byte[,] windows7Corner = new byte[,]
+        private byte[,] windows7Corner = new byte[,]
         {
             { 0, 0 }, { 1, 0 }, { 2, 0 }, { 3, 0 }, { 4, 0 },
             { 0, 1 }, { 1, 1 }, { 2, 1 },
@@ -436,7 +436,7 @@ namespace ShareX.ScreenCaptureLib
             { 0, 4 }
         };
 
-        private static byte[,] windowsVistaCorner = new byte[,]
+        private byte[,] windowsVistaCorner = new byte[,]
         {
             { 0, 0 }, { 1, 0 }, { 2, 0 }, { 3, 0 },
             { 0, 1 }, { 1, 1 },
@@ -444,7 +444,7 @@ namespace ShareX.ScreenCaptureLib
             { 0, 3 }
         };
 
-        private static Bitmap RemoveCorners(Image img)
+        private Bitmap RemoveCorners(Image img)
         {
             byte[,] corner;
 
@@ -464,7 +464,7 @@ namespace ShareX.ScreenCaptureLib
             return RemoveCorners(img, corner);
         }
 
-        private static Bitmap RemoveCorners(Image img, byte[,] cornerData)
+        private Bitmap RemoveCorners(Image img, byte[,] cornerData)
         {
             Bitmap bmp = new Bitmap(img);
 

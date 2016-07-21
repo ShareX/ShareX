@@ -96,12 +96,13 @@ namespace ShareX.ScreenCaptureLib
 
         private int fps, delay, frameCount, previousProgress;
         private float durationSeconds;
+        private Screenshot screenshot;
         private Rectangle captureRectangle;
         private ImageCache imgCache;
         private FFmpegHelper ffmpegCli;
         private bool stopRequest;
 
-        public ScreenRecorder(ScreenRecordOutput outputType, ScreencastOptions options, Rectangle captureRectangle)
+        public ScreenRecorder(ScreenRecordOutput outputType, ScreencastOptions options, Screenshot screenshot, Rectangle captureRectangle)
         {
             if (string.IsNullOrEmpty(options.OutputPath))
             {
@@ -127,6 +128,8 @@ namespace ShareX.ScreenCaptureLib
                     imgCache = new HardDiskCache(Options);
                     break;
             }
+
+            this.screenshot = screenshot;
         }
 
         private void UpdateInfo()
@@ -164,7 +167,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Stopwatch timer = Stopwatch.StartNew();
 
-                    Image img = Screenshot.CaptureRectangle(CaptureRectangle);
+                    Image img = screenshot.CaptureRectangle(CaptureRectangle);
                     //DebugHelper.WriteLine("Screen capture: " + (int)timer.ElapsedMilliseconds);
 
                     imgCache.AddImageAsync(img);

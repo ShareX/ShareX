@@ -72,11 +72,11 @@ namespace ShareX.ScreenCaptureLib
         private Stopwatch penTimer;
         private Font infoFont;
 
-        public RectangleRegionAnnotateForm(RectangleAnnotateOptions options)
+        public RectangleRegionAnnotateForm(Screenshot screenshot, RectangleAnnotateOptions options)
         {
             Options = options;
 
-            backgroundImage = Screenshot.CaptureFullscreen();
+            backgroundImage = screenshot.CaptureFullscreen();
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };

@@ -313,8 +313,8 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            Screenshot.CaptureCursor = false;
-            Image image = Screenshot.CaptureRectangle(selectedRectangle);
+            Screenshot screenshot = new Screenshot() { CaptureCursor = false };
+            Image image = screenshot.CaptureRectangle(selectedRectangle);
 
             if (image != null)
             {
