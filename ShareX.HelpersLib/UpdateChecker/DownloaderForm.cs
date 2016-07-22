@@ -213,7 +213,10 @@ namespace ShareX.HelpersLib
                 Status = DownloaderFormStatus.DownloadStarted;
                 btnAction.Text = Resources.DownloaderForm_StartDownload_Cancel;
 
-                SavePath = Path.Combine(Path.GetTempPath(), Filename);
+                string folderPath = Path.Combine(Path.GetTempPath(), "ShareX");
+                Helpers.CreateDirectoryFromDirectoryPath(folderPath);
+                SavePath = Path.Combine(folderPath, Filename);
+
                 fileStream = new FileStream(SavePath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 fileDownloader = new FileDownloader(URL, fileStream, Proxy, AcceptHeader);
                 fileDownloader.FileSizeReceived += (v1, v2) => ChangeProgress();
