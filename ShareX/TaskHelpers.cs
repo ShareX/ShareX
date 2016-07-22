@@ -49,26 +49,14 @@ namespace ShareX
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
         {
             ImageData imageData = new ImageData();
+            imageData.ImageStream = SaveImage(img, taskSettings.ImageSettings.ImageFormat, taskSettings);
             imageData.ImageFormat = taskSettings.ImageSettings.ImageFormat;
 
-            if (taskSettings.ImageSettings.ImageFormat == EImageFormat.JPEG)
+            if (taskSettings.ImageSettings.ImageAutoUseJPEG && taskSettings.ImageSettings.ImageFormat != EImageFormat.JPEG &&
+                imageData.ImageStream.Length > taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000)
             {
-                img = ImageHelpers.FillBackground(img, Color.White);
-            }
-
-            imageData.ImageStream = SaveImage(img, taskSettings.ImageSettings.ImageFormat, taskSettings);
-
-            int sizeLimit = taskSettings.ImageSettings.ImageSizeLimit * 1000;
-
-            if (taskSettings.ImageSettings.ImageFormat != taskSettings.ImageSettings.ImageFormat2 && sizeLimit > 0 && imageData.ImageStream.Length > sizeLimit)
-            {
-                if (taskSettings.ImageSettings.ImageFormat2 == EImageFormat.JPEG)
-                {
-                    img = ImageHelpers.FillBackground(img, Color.White);
-                }
-
-                imageData.ImageStream = SaveImage(img, taskSettings.ImageSettings.ImageFormat2, taskSettings);
-                imageData.ImageFormat = taskSettings.ImageSettings.ImageFormat2;
+                imageData.ImageStream = SaveImage(img, EImageFormat.JPEG, taskSettings);
+                imageData.ImageFormat = EImageFormat.JPEG;
             }
 
             return imageData;
@@ -130,6 +118,7 @@ namespace ShareX
                     img.Save(stream, ImageFormat.Png);
                     break;
                 case EImageFormat.JPEG:
+                    img = ImageHelpers.FillBackground(img, Color.White);
                     img.SaveJPG(stream, jpegQuality);
                     break;
                 case EImageFormat.GIF:

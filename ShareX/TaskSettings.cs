@@ -274,8 +274,8 @@ namespace ShareX
         public EImageFormat ImageFormat = EImageFormat.PNG;
         public int ImageJPEGQuality = 90;
         public GIFQuality ImageGIFQuality = GIFQuality.Default;
-        public int ImageSizeLimit = 2048;
-        public EImageFormat ImageFormat2 = EImageFormat.JPEG;
+        public bool ImageAutoUseJPEG = true;
+        public int ImageAutoUseJPEGSize = 2048;
         public FileExistAction FileExistAction = FileExistAction.Ask;
 
         #endregion Image / General

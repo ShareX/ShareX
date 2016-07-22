@@ -183,9 +183,9 @@ namespace ShareX
             nudImageJPEGQuality.SetValue(TaskSettings.ImageSettings.ImageJPEGQuality);
             cbImageGIFQuality.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<GIFQuality>());
             cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
-            nudUseImageFormat2After.SetValue(TaskSettings.ImageSettings.ImageSizeLimit);
-            cbImageFormat2.Items.AddRange(Enum.GetNames(typeof(EImageFormat)));
-            cbImageFormat2.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat2;
+            cbImageAutoUseJPEG.Checked = TaskSettings.ImageSettings.ImageAutoUseJPEG;
+            nudImageAutoUseJPEGSize.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
+            nudImageAutoUseJPEGSize.SetValue(TaskSettings.ImageSettings.ImageAutoUseJPEGSize);
             cbImageFileExist.Items.Clear();
             cbImageFileExist.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<FileExistAction>());
             cbImageFileExist.SelectedIndex = (int)TaskSettings.ImageSettings.FileExistAction;
@@ -713,25 +713,25 @@ namespace ShareX
             TaskSettings.ImageSettings.ImageFormat = (EImageFormat)cbImageFormat.SelectedIndex;
         }
 
-        private void cbImageGIFQuality_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TaskSettings.ImageSettings.ImageGIFQuality = (GIFQuality)cbImageGIFQuality.SelectedIndex;
-        }
-
-        private void cbImageFormat2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TaskSettings.ImageSettings.ImageFormat2 = (EImageFormat)cbImageFormat2.SelectedIndex;
-        }
-
         private void nudImageJPEGQuality_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageJPEGQuality = (int)nudImageJPEGQuality.Value;
         }
 
-        private void nudUseImageFormat2After_ValueChanged(object sender, EventArgs e)
+        private void cbImageGIFQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.ImageSettings.ImageSizeLimit = (int)nudUseImageFormat2After.Value;
-            cbImageFormat2.Enabled = TaskSettings.ImageSettings.ImageSizeLimit > 0;
+            TaskSettings.ImageSettings.ImageGIFQuality = (GIFQuality)cbImageGIFQuality.SelectedIndex;
+        }
+
+        private void cbImageAutoUseJPEG_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.ImageAutoUseJPEG = cbImageAutoUseJPEG.Checked;
+            nudImageAutoUseJPEGSize.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
+        }
+
+        private void nudImageAutoUseJPEGSize_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.ImageAutoUseJPEGSize = (int)nudImageAutoUseJPEGSize.Value;
         }
 
         private void cbImageFileExist_SelectedIndexChanged(object sender, EventArgs e)

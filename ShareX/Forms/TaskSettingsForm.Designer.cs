@@ -65,16 +65,14 @@
             this.tcImage = new System.Windows.Forms.TabControl();
             this.tpQuality = new System.Windows.Forms.TabPage();
             this.pImage = new System.Windows.Forms.Panel();
+            this.cbImageAutoUseJPEG = new System.Windows.Forms.CheckBox();
             this.lblImageFormat = new System.Windows.Forms.Label();
             this.cbImageFileExist = new System.Windows.Forms.ComboBox();
-            this.lblUseImageFormat2After = new System.Windows.Forms.Label();
             this.lblImageFileExist = new System.Windows.Forms.Label();
-            this.nudUseImageFormat2After = new System.Windows.Forms.NumericUpDown();
-            this.lblImageFormat2 = new System.Windows.Forms.Label();
-            this.lblUseImageFormat2AfterHint = new System.Windows.Forms.Label();
+            this.nudImageAutoUseJPEGSize = new System.Windows.Forms.NumericUpDown();
+            this.lblImageSizeLimitHint = new System.Windows.Forms.Label();
             this.nudImageJPEGQuality = new System.Windows.Forms.NumericUpDown();
             this.cbImageFormat = new System.Windows.Forms.ComboBox();
-            this.cbImageFormat2 = new System.Windows.Forms.ComboBox();
             this.lblImageJPEGQualityHint = new System.Windows.Forms.Label();
             this.lblImageGIFQuality = new System.Windows.Forms.Label();
             this.lblImageJPEGQuality = new System.Windows.Forms.Label();
@@ -244,7 +242,7 @@
             this.tcImage.SuspendLayout();
             this.tpQuality.SuspendLayout();
             this.pImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudUseImageFormat2After)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudImageAutoUseJPEGSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudImageJPEGQuality)).BeginInit();
             this.tpEffects.SuspendLayout();
             this.tpThumbnail.SuspendLayout();
@@ -554,22 +552,27 @@
             // 
             // pImage
             // 
+            this.pImage.Controls.Add(this.cbImageAutoUseJPEG);
             this.pImage.Controls.Add(this.lblImageFormat);
             this.pImage.Controls.Add(this.cbImageFileExist);
-            this.pImage.Controls.Add(this.lblUseImageFormat2After);
             this.pImage.Controls.Add(this.lblImageFileExist);
-            this.pImage.Controls.Add(this.nudUseImageFormat2After);
-            this.pImage.Controls.Add(this.lblImageFormat2);
-            this.pImage.Controls.Add(this.lblUseImageFormat2AfterHint);
+            this.pImage.Controls.Add(this.nudImageAutoUseJPEGSize);
+            this.pImage.Controls.Add(this.lblImageSizeLimitHint);
             this.pImage.Controls.Add(this.nudImageJPEGQuality);
             this.pImage.Controls.Add(this.cbImageFormat);
-            this.pImage.Controls.Add(this.cbImageFormat2);
             this.pImage.Controls.Add(this.lblImageJPEGQualityHint);
             this.pImage.Controls.Add(this.lblImageGIFQuality);
             this.pImage.Controls.Add(this.lblImageJPEGQuality);
             this.pImage.Controls.Add(this.cbImageGIFQuality);
             resources.ApplyResources(this.pImage, "pImage");
             this.pImage.Name = "pImage";
+            // 
+            // cbImageAutoUseJPEG
+            // 
+            resources.ApplyResources(this.cbImageAutoUseJPEG, "cbImageAutoUseJPEG");
+            this.cbImageAutoUseJPEG.Name = "cbImageAutoUseJPEG";
+            this.cbImageAutoUseJPEG.UseVisualStyleBackColor = true;
+            this.cbImageAutoUseJPEG.CheckedChanged += new System.EventHandler(this.cbImageAutoUseJPEG_CheckedChanged);
             // 
             // lblImageFormat
             // 
@@ -584,41 +587,36 @@
             this.cbImageFileExist.Name = "cbImageFileExist";
             this.cbImageFileExist.SelectedIndexChanged += new System.EventHandler(this.cbImageFileExist_SelectedIndexChanged);
             // 
-            // lblUseImageFormat2After
-            // 
-            resources.ApplyResources(this.lblUseImageFormat2After, "lblUseImageFormat2After");
-            this.lblUseImageFormat2After.Name = "lblUseImageFormat2After";
-            // 
             // lblImageFileExist
             // 
             resources.ApplyResources(this.lblImageFileExist, "lblImageFileExist");
             this.lblImageFileExist.Name = "lblImageFileExist";
             // 
-            // nudUseImageFormat2After
+            // nudImageAutoUseJPEGSize
             // 
-            resources.ApplyResources(this.nudUseImageFormat2After, "nudUseImageFormat2After");
-            this.nudUseImageFormat2After.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.nudImageAutoUseJPEGSize, "nudImageAutoUseJPEGSize");
+            this.nudImageAutoUseJPEGSize.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.nudUseImageFormat2After.Name = "nudUseImageFormat2After";
-            this.nudUseImageFormat2After.Value = new decimal(new int[] {
+            this.nudImageAutoUseJPEGSize.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudImageAutoUseJPEGSize.Name = "nudImageAutoUseJPEGSize";
+            this.nudImageAutoUseJPEGSize.Value = new decimal(new int[] {
             2048,
             0,
             0,
             0});
-            this.nudUseImageFormat2After.ValueChanged += new System.EventHandler(this.nudUseImageFormat2After_ValueChanged);
+            this.nudImageAutoUseJPEGSize.ValueChanged += new System.EventHandler(this.nudImageAutoUseJPEGSize_ValueChanged);
             // 
-            // lblImageFormat2
+            // lblImageSizeLimitHint
             // 
-            resources.ApplyResources(this.lblImageFormat2, "lblImageFormat2");
-            this.lblImageFormat2.Name = "lblImageFormat2";
-            // 
-            // lblUseImageFormat2AfterHint
-            // 
-            resources.ApplyResources(this.lblUseImageFormat2AfterHint, "lblUseImageFormat2AfterHint");
-            this.lblUseImageFormat2AfterHint.Name = "lblUseImageFormat2AfterHint";
+            resources.ApplyResources(this.lblImageSizeLimitHint, "lblImageSizeLimitHint");
+            this.lblImageSizeLimitHint.Name = "lblImageSizeLimitHint";
             // 
             // nudImageJPEGQuality
             // 
@@ -638,14 +636,6 @@
             resources.ApplyResources(this.cbImageFormat, "cbImageFormat");
             this.cbImageFormat.Name = "cbImageFormat";
             this.cbImageFormat.SelectedIndexChanged += new System.EventHandler(this.cbImageFormat_SelectedIndexChanged);
-            // 
-            // cbImageFormat2
-            // 
-            this.cbImageFormat2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbImageFormat2.FormattingEnabled = true;
-            resources.ApplyResources(this.cbImageFormat2, "cbImageFormat2");
-            this.cbImageFormat2.Name = "cbImageFormat2";
-            this.cbImageFormat2.SelectedIndexChanged += new System.EventHandler(this.cbImageFormat2_SelectedIndexChanged);
             // 
             // lblImageJPEGQualityHint
             // 
@@ -2074,7 +2064,7 @@
             this.tpQuality.PerformLayout();
             this.pImage.ResumeLayout(false);
             this.pImage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudUseImageFormat2After)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudImageAutoUseJPEGSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudImageJPEGQuality)).EndInit();
             this.tpEffects.ResumeLayout(false);
             this.tpEffects.PerformLayout();
@@ -2158,17 +2148,14 @@
         private System.Windows.Forms.TabControl tcImage;
         private System.Windows.Forms.TabPage tpQuality;
         private System.Windows.Forms.Label lblImageFormat;
-        private System.Windows.Forms.Label lblUseImageFormat2AfterHint;
+        private System.Windows.Forms.Label lblImageSizeLimitHint;
         private System.Windows.Forms.ComboBox cbImageFormat;
         private System.Windows.Forms.Label lblImageJPEGQualityHint;
         private System.Windows.Forms.Label lblImageJPEGQuality;
         private System.Windows.Forms.ComboBox cbImageGIFQuality;
         private System.Windows.Forms.Label lblImageGIFQuality;
-        private System.Windows.Forms.ComboBox cbImageFormat2;
         private System.Windows.Forms.NumericUpDown nudImageJPEGQuality;
-        private System.Windows.Forms.Label lblImageFormat2;
-        private System.Windows.Forms.NumericUpDown nudUseImageFormat2After;
-        private System.Windows.Forms.Label lblUseImageFormat2After;
+        private System.Windows.Forms.NumericUpDown nudImageAutoUseJPEGSize;
         private System.Windows.Forms.TabPage tpEffects;
         private System.Windows.Forms.TabControl tcCapture;
         private System.Windows.Forms.TabPage tpCaptureGeneral;
@@ -2345,5 +2332,6 @@
         private System.Windows.Forms.CheckBox cbRegionCaptureIsFixedSize;
         private System.Windows.Forms.NumericUpDown nudRegionCaptureFixedSizeHeight;
         private System.Windows.Forms.CheckBox cbRegionCaptureShowFPS;
+        private System.Windows.Forms.CheckBox cbImageAutoUseJPEG;
     }
 }
