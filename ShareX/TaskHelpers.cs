@@ -391,6 +391,11 @@ namespace ShareX
             ScreenRecordManager.StartStopRecording(outputType, startMethod, taskSettings);
         }
 
+        public static void AbortScreenRecording()
+        {
+            ScreenRecordManager.AbortRecording();
+        }
+
         public static void OpenScrollingCapture(TaskSettings taskSettings = null, bool forceSelection = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();

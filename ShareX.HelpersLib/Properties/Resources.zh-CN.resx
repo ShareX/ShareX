@@ -696,12 +696,6 @@
   <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
     <value>屏幕捕捉</value>
   </data>
-  <data name="HotkeyType_IRCClient" xml:space="preserve">
-    <value>IRC客户端</value>
-  </data>
-  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>图像合并</value>
   </data>

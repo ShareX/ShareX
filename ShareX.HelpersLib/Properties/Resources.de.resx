@@ -711,12 +711,6 @@ Möchtest du sie herunterladen und installieren?</value>
   <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
     <value>Bildschirmaufnahme</value>
   </data>
-  <data name="HotkeyType_IRCClient" xml:space="preserve">
-    <value>IRC-Programm</value>
-  </data>
-  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Bildverbinder</value>
   </data>

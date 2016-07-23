@@ -714,12 +714,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
     <value>Chụp màn hình</value>
   </data>
-  <data name="HotkeyType_IRCClient" xml:space="preserve">
-    <value>Trình IRC</value>
-  </data>
-  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
-    <value>Công cụ</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Trình gộp ảnh</value>
   </data>

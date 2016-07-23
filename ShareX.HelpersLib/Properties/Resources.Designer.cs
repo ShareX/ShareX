@@ -754,6 +754,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abort screen recording.
+        /// </summary>
+        internal static string HotkeyType_AbortScreenRecording {
+            get {
+                return ResourceManager.GetString("HotkeyType_AbortScreenRecording", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen record.
+        /// </summary>
+        internal static string HotkeyType_AbortScreenRecording_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_AbortScreenRecording_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture active monitor.
         /// </summary>
         internal static string HotkeyType_ActiveMonitor {
@@ -1128,24 +1146,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_IndexFolder_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_IndexFolder_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to IRC client.
-        /// </summary>
-        internal static string HotkeyType_IRCClient {
-            get {
-                return ResourceManager.GetString("HotkeyType_IRCClient", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tools.
-        /// </summary>
-        internal static string HotkeyType_IRCClient_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_IRCClient_Category", resourceCulture);
             }
         }
         

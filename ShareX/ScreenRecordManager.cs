@@ -55,6 +55,14 @@ namespace ShareX
             }
         }
 
+        public static void AbortRecording()
+        {
+            if (IsRecording && recordForm != null && !recordForm.IsDisposed)
+            {
+                recordForm.AbortRecording();
+            }
+        }
+
         private static void StopRecording()
         {
             if (IsRecording && screenRecorder != null)

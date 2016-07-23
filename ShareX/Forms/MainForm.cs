@@ -1892,6 +1892,9 @@ namespace ShareX
                 case HotkeyType.StartScreenRecorderGIF:
                     TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
                     break;
+                case HotkeyType.AbortScreenRecording:
+                    TaskHelpers.AbortScreenRecording();
+                    break;
                 // Tools
                 case HotkeyType.ColorPicker:
                     TaskHelpers.OpenColorPicker();

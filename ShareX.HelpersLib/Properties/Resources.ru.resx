@@ -714,12 +714,6 @@
   <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
     <value>Захват экрана</value>
   </data>
-  <data name="HotkeyType_IRCClient" xml:space="preserve">
-    <value>Клиент IRC</value>
-  </data>
-  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
-    <value>Инструменты</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Объединитель изображений</value>
   </data>

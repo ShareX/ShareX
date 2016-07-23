@@ -708,12 +708,6 @@ Wil je deze downloaden en installeren?</value>
   <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
     <value>Scherm vastleggen</value>
   </data>
-  <data name="HotkeyType_IRCClient" xml:space="preserve">
-    <value>IRC programma</value>
-  </data>
-  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
-    <value>Hulpmiddelen</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Combineer afbeeldingen</value>
   </data>

@@ -795,12 +795,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
     <value>Ekran yakalama</value>
   </data>
-  <data name="HotkeyType_IRCClient" xml:space="preserve">
-    <value>IRC istemcisi</value>
-  </data>
-  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
-    <value>Araçlar</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Resim birleştirici</value>
   </data>
@@ -885,5 +879,11 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
     <value>Bölge yakalama (Basit dipnot)</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>Ekran kaydetme</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Ekran kaydetme iptal et</value>
   </data>
 </root>

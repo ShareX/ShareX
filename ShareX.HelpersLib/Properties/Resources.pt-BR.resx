@@ -738,12 +738,6 @@ Você gostaria de baixar e instalar?</value>
   <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
     <value>Gravar tela</value>
   </data>
-  <data name="HotkeyType_IRCClient" xml:space="preserve">
-    <value>Cliente IRC</value>
-  </data>
-  <data name="HotkeyType_IRCClient_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Mesclar imagens</value>
   </data>
