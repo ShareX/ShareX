@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX", "ShareX\ShareX.csproj", "{C5AE4585-E9EC-4FA3-B75A-E1210635ACB6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3D19A94A-7A58-4451-A686-EE70B471C206} = {3D19A94A-7A58-4451-A686-EE70B471C206}
+		{CD642BF4-D815-4D67-A0B5-C69F0B8231AF} = {CD642BF4-D815-4D67-A0B5-C69F0B8231AF}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.HistoryLib", "ShareX.HistoryLib\ShareX.HistoryLib.csproj", "{E7DE6237-AEA2-498B-8F56-9B392472C490}"
 EndProject
