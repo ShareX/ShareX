@@ -9197,7 +9197,7 @@ Using an encrypted library disables sharing.</value>
     <value>20</value>
   </data>
   <data name="txtSulAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 34</value>
+    <value>16, 32</value>
   </data>
   <data name="txtSulAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>409, 20</value>
@@ -9224,7 +9224,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblSulAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 18</value>
+    <value>13, 16</value>
   </data>
   <data name="lblSulAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -9278,10 +9278,10 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="btnLithiioGetAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 28</value>
+    <value>368, 31</value>
   </data>
   <data name="btnLithiioGetAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>144, 23</value>
   </data>
   <data name="btnLithiioGetAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -9308,7 +9308,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblLithiioApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 12</value>
+    <value>13, 16</value>
   </data>
   <data name="lblLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -9332,7 +9332,7 @@ Using an encrypted library disables sharing.</value>
     <value>1</value>
   </data>
   <data name="txtLithiioApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 28</value>
+    <value>16, 32</value>
   </data>
   <data name="txtLithiioApiKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 20</value>
@@ -9359,7 +9359,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 60</value>
+    <value>13, 64</value>
   </data>
   <data name="lblLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -9383,7 +9383,7 @@ Using an encrypted library disables sharing.</value>
     <value>3</value>
   </data>
   <data name="cbLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 76</value>
+    <value>16, 80</value>
   </data>
   <data name="cbLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 21</value>
@@ -13470,9 +13470,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 557</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>
