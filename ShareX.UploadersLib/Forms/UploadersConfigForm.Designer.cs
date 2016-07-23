@@ -377,7 +377,6 @@
             this.lblSulAPIKey = new System.Windows.Forms.Label();
             this.tpLithiio = new System.Windows.Forms.TabPage();
             this.btnLithiioGetAPIKey = new System.Windows.Forms.Button();
-            this.lblLithiioInfo = new System.Windows.Forms.Label();
             this.lblLithiioApiKey = new System.Windows.Forms.Label();
             this.txtLithiioApiKey = new System.Windows.Forms.TextBox();
             this.lblLithiioUploadURL = new System.Windows.Forms.Label();
@@ -436,6 +435,7 @@
             this.lblUpasteUserKey = new System.Windows.Forms.Label();
             this.txtUpasteUserKey = new System.Windows.Forms.TextBox();
             this.tpHastebin = new System.Windows.Forms.TabPage();
+            this.cbHastebinUseFileExtension = new System.Windows.Forms.CheckBox();
             this.txtHastebinSyntaxHighlighting = new System.Windows.Forms.TextBox();
             this.txtHastebinCustomDomain = new System.Windows.Forms.TextBox();
             this.lblHastebinSyntaxHighlighting = new System.Windows.Forms.Label();
@@ -530,7 +530,6 @@
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
-            this.cbHastebinUseFileExtension = new System.Windows.Forms.CheckBox();
             this.atcImgurAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new ShareX.UploadersLib.OAuthControl();
             this.atcTinyPicAccountType = new ShareX.UploadersLib.AccountTypeControl();
@@ -3140,7 +3139,6 @@
             // tpLithiio
             // 
             this.tpLithiio.Controls.Add(this.btnLithiioGetAPIKey);
-            this.tpLithiio.Controls.Add(this.lblLithiioInfo);
             this.tpLithiio.Controls.Add(this.lblLithiioApiKey);
             this.tpLithiio.Controls.Add(this.txtLithiioApiKey);
             this.tpLithiio.Controls.Add(this.lblLithiioUploadURL);
@@ -3155,11 +3153,6 @@
             this.btnLithiioGetAPIKey.Name = "btnLithiioGetAPIKey";
             this.btnLithiioGetAPIKey.UseVisualStyleBackColor = true;
             this.btnLithiioGetAPIKey.Click += new System.EventHandler(this.btnLithiioGetAPIKey_Click);
-            // 
-            // lblLithiioInfo
-            // 
-            resources.ApplyResources(this.lblLithiioInfo, "lblLithiioInfo");
-            this.lblLithiioInfo.Name = "lblLithiioInfo";
             // 
             // lblLithiioApiKey
             // 
@@ -3583,6 +3576,13 @@
             resources.ApplyResources(this.tpHastebin, "tpHastebin");
             this.tpHastebin.Name = "tpHastebin";
             this.tpHastebin.UseVisualStyleBackColor = true;
+            // 
+            // cbHastebinUseFileExtension
+            // 
+            resources.ApplyResources(this.cbHastebinUseFileExtension, "cbHastebinUseFileExtension");
+            this.cbHastebinUseFileExtension.Name = "cbHastebinUseFileExtension";
+            this.cbHastebinUseFileExtension.UseVisualStyleBackColor = true;
+            this.cbHastebinUseFileExtension.CheckedChanged += new System.EventHandler(this.cbHastebinUseFileExtension_CheckedChanged);
             // 
             // txtHastebinSyntaxHighlighting
             // 
@@ -4259,13 +4259,6 @@
             this.ttlvMain.MainTabControl = null;
             this.ttlvMain.Name = "ttlvMain";
             // 
-            // cbHastebinUseFileExtension
-            // 
-            resources.ApplyResources(this.cbHastebinUseFileExtension, "cbHastebinUseFileExtension");
-            this.cbHastebinUseFileExtension.Name = "cbHastebinUseFileExtension";
-            this.cbHastebinUseFileExtension.UseVisualStyleBackColor = true;
-            this.cbHastebinUseFileExtension.CheckedChanged += new System.EventHandler(this.cbHastebinUseFileExtension_CheckedChanged);
-            // 
             // atcImgurAccountType
             // 
             resources.ApplyResources(this.atcImgurAccountType, "atcImgurAccountType");
@@ -4908,7 +4901,6 @@
         private System.Windows.Forms.ComboBox cbLambdaUploadURL;
         private System.Windows.Forms.Label lblLithiioApiKey;
         private System.Windows.Forms.TextBox txtLithiioApiKey;
-        private System.Windows.Forms.Label lblLithiioInfo;
         private System.Windows.Forms.Label lblLithiioUploadURL;
         private System.Windows.Forms.ComboBox cbLithiioUploadURL;
         private OAuthControl oauthTwitter;

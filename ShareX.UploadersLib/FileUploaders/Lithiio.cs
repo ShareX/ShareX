@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return config.LithiioSettings != null;
+            return config.LithiioSettings != null && !string.IsNullOrEmpty(config.LithiioSettings.UserAPIKey);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
@@ -62,7 +62,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Config = config;
         }
 
-        private const string uploadUrl = "http://api.lithi.io/v2/";
+        private const string uploadUrl = "http://api.lithi.io/v3/";
 
         public static string[] UploadURLs = new string[] { "https://i.lithi.io/", "https://lithi.io/i/", "https://i.mugi.io/", "https://mugi.io/i/" };
 
