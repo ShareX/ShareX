@@ -549,6 +549,7 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.lblOwnCloudHostExample = new System.Windows.Forms.Label();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2252,6 +2253,7 @@
             // 
             // tpOwnCloud
             // 
+            this.tpOwnCloud.Controls.Add(this.lblOwnCloudHostExample);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloud81Compatibility);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudDirectLink);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudCreateShare);
@@ -4409,6 +4411,11 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // lblOwnCloudHostExample
+            // 
+            resources.ApplyResources(this.lblOwnCloudHostExample, "lblOwnCloudHostExample");
+            this.lblOwnCloudHostExample.Name = "lblOwnCloudHostExample";
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5086,5 +5093,6 @@
         public System.Windows.Forms.TabPage tpPuush;
         private System.Windows.Forms.PictureBox pbPuush;
         private System.Windows.Forms.CheckBox cbHastebinUseFileExtension;
+        private System.Windows.Forms.Label lblOwnCloudHostExample;
     }
 }

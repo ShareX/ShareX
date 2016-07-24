@@ -5649,6 +5649,33 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="lblOwnCloudHostExample.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOwnCloudHostExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 36</value>
+  </data>
+  <data name="lblOwnCloudHostExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 13</value>
+  </data>
+  <data name="lblOwnCloudHostExample.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
+    <value>Example: http://example.com/owncloud</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudHostExample.Name" xml:space="preserve">
+    <value>lblOwnCloudHostExample</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudHostExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudHostExample.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudHostExample.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbOwnCloud81Compatibility.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5677,7 +5704,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloud81Compatibility.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbOwnCloudDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5707,7 +5734,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudDirectLink.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbOwnCloudCreateShare.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5737,7 +5764,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudCreateShare.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtOwnCloudPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 176</value>
@@ -5758,7 +5785,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudPath.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txtOwnCloudPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -5779,7 +5806,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudPassword.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtOwnCloudUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -5800,7 +5827,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudUsername.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtOwnCloudHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -5821,7 +5848,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudHost.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblOwnCloudPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5851,7 +5878,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPath.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblOwnCloudPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5881,7 +5908,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPassword.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblOwnCloudUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5911,7 +5938,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudUsername.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblOwnCloudHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5929,7 +5956,7 @@ store.book[0].title</value>
     <value>0</value>
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>Host:</value>
+    <value>URL:</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudHost.Name" xml:space="preserve">
     <value>lblOwnCloudHost</value>
@@ -5941,7 +5968,7 @@ store.book[0].title</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudHost.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
