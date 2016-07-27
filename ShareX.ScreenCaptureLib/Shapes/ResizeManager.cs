@@ -78,9 +78,6 @@ namespace ShareX.ScreenCaptureLib
         public bool IsResizing { get; private set; }
         public bool IsBottomRightResizing { get; set; }
 
-        private const int MinMoveSpeed = 1;
-        private const int MaxMoveSpeed = 10;
-
         private ShapeManager shapeManager;
         private NodeObject[] nodes;
         private bool isUpPressed, isDownPressed, isLeftPressed, isRightPressed;
@@ -216,7 +213,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            int speed = e.Shift ? MaxMoveSpeed : MinMoveSpeed;
+            int speed = e.Shift ? RegionCaptureOptions.MoveSpeedMaximum : RegionCaptureOptions.MoveSpeedMinimum;
             int y = isUpPressed && isDownPressed ? 0 : isDownPressed ? speed : isUpPressed ? -speed : 0;
             int x = isLeftPressed && isRightPressed ? 0 : isRightPressed ? speed : isLeftPressed ? -speed : 0;
 

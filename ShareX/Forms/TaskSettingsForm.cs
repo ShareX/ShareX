@@ -257,7 +257,11 @@ namespace ShareX
             cbRegionCaptureShowMagnifier.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowMagnifier;
             cbRegionCaptureUseSquareMagnifier.Enabled = nudRegionCaptureMagnifierPixelCount.Enabled = nudRegionCaptureMagnifierPixelSize.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.ShowMagnifier;
             cbRegionCaptureUseSquareMagnifier.Checked = TaskSettings.CaptureSettings.SurfaceOptions.UseSquareMagnifier;
+            nudRegionCaptureMagnifierPixelCount.Minimum = RegionCaptureOptions.MagnifierPixelCountMinimum;
+            nudRegionCaptureMagnifierPixelCount.Maximum = RegionCaptureOptions.MagnifierPixelCountMaximum;
             nudRegionCaptureMagnifierPixelCount.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelCount);
+            nudRegionCaptureMagnifierPixelSize.Minimum = RegionCaptureOptions.MagnifierPixelSizeMinimum;
+            nudRegionCaptureMagnifierPixelSize.Maximum = RegionCaptureOptions.MagnifierPixelSizeMaximum;
             nudRegionCaptureMagnifierPixelSize.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelSize);
             cbRegionCaptureShowCrosshair.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowCrosshair;
             cbRegionCaptureIsFixedSize.Checked = TaskSettings.CaptureSettings.SurfaceOptions.IsFixedSize;
@@ -977,12 +981,18 @@ namespace ShareX
 
         private void nudRegionCaptureMagnifierPixelCount_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelCount = (int)nudRegionCaptureMagnifierPixelCount.Value;
+            if (loaded)
+            {
+                TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelCount = (int)nudRegionCaptureMagnifierPixelCount.Value;
+            }
         }
 
         private void nudRegionCaptureMagnifierPixelSize_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelSize = (int)nudRegionCaptureMagnifierPixelSize.Value;
+            if (loaded)
+            {
+                TaskSettings.CaptureSettings.SurfaceOptions.MagnifierPixelSize = (int)nudRegionCaptureMagnifierPixelSize.Value;
+            }
         }
 
         private void cbRegionCaptureShowCrosshair_CheckedChanged(object sender, EventArgs e)

@@ -1146,22 +1146,7 @@
             // nudRegionCaptureMagnifierPixelSize
             // 
             resources.ApplyResources(this.nudRegionCaptureMagnifierPixelSize, "nudRegionCaptureMagnifierPixelSize");
-            this.nudRegionCaptureMagnifierPixelSize.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.nudRegionCaptureMagnifierPixelSize.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             this.nudRegionCaptureMagnifierPixelSize.Name = "nudRegionCaptureMagnifierPixelSize";
-            this.nudRegionCaptureMagnifierPixelSize.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             this.nudRegionCaptureMagnifierPixelSize.ValueChanged += new System.EventHandler(this.nudRegionCaptureMagnifierPixelSize_ValueChanged);
             // 
             // lblRegionCaptureMagnifierPixelSize
@@ -1177,22 +1162,7 @@
             0,
             0});
             resources.ApplyResources(this.nudRegionCaptureMagnifierPixelCount, "nudRegionCaptureMagnifierPixelCount");
-            this.nudRegionCaptureMagnifierPixelCount.Maximum = new decimal(new int[] {
-            35,
-            0,
-            0,
-            0});
-            this.nudRegionCaptureMagnifierPixelCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudRegionCaptureMagnifierPixelCount.Name = "nudRegionCaptureMagnifierPixelCount";
-            this.nudRegionCaptureMagnifierPixelCount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudRegionCaptureMagnifierPixelCount.ValueChanged += new System.EventHandler(this.nudRegionCaptureMagnifierPixelCount_ValueChanged);
             // 
             // lblRegionCaptureMagnifierPixelCount

@@ -200,8 +200,6 @@ namespace ShareX.ScreenCaptureLib
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
-        private const int SnapDistance = 30;
-
         private RectangleRegionForm form;
         private ContextMenuStrip cmsContextMenu;
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
@@ -618,16 +616,16 @@ namespace ShareX.ScreenCaptureLib
             tsmiOptions.DropDownItems.Add(tsmiUseSquareMagnifier);
 
             ToolStripLabeledNumericUpDown tslnudMagnifierPixelCount = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Magnifier_pixel_count_);
-            tslnudMagnifierPixelCount.Content.Minimum = 1;
-            tslnudMagnifierPixelCount.Content.Maximum = 35;
+            tslnudMagnifierPixelCount.Content.Minimum = RegionCaptureOptions.MagnifierPixelCountMinimum;
+            tslnudMagnifierPixelCount.Content.Maximum = RegionCaptureOptions.MagnifierPixelCountMaximum;
             tslnudMagnifierPixelCount.Content.Increment = 2;
             tslnudMagnifierPixelCount.Content.Value = Config.MagnifierPixelCount;
             tslnudMagnifierPixelCount.Content.ValueChanged = (sender, e) => Config.MagnifierPixelCount = (int)tslnudMagnifierPixelCount.Content.Value;
             tsmiOptions.DropDownItems.Add(tslnudMagnifierPixelCount);
 
             ToolStripLabeledNumericUpDown tslnudMagnifierPixelSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Magnifier_pixel_size_);
-            tslnudMagnifierPixelSize.Content.Minimum = 2;
-            tslnudMagnifierPixelSize.Content.Maximum = 30;
+            tslnudMagnifierPixelSize.Content.Minimum = RegionCaptureOptions.MagnifierPixelSizeMinimum;
+            tslnudMagnifierPixelSize.Content.Maximum = RegionCaptureOptions.MagnifierPixelSizeMaximum;
             tslnudMagnifierPixelSize.Content.Value = Config.MagnifierPixelSize;
             tslnudMagnifierPixelSize.Content.ValueChanged = (sender, e) => Config.MagnifierPixelSize = (int)tslnudMagnifierPixelSize.Content.Value;
             tsmiOptions.DropDownItems.Add(tslnudMagnifierPixelSize);
@@ -884,11 +882,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (e.Delta > 0)
                 {
-                    if (Config.MagnifierPixelCount < 41) Config.MagnifierPixelCount += 2;
+                    Config.MagnifierPixelCount = Math.Min(Config.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
                 }
                 else if (e.Delta < 0)
                 {
-                    if (Config.MagnifierPixelCount > 2) Config.MagnifierPixelCount -= 2;
+                    Config.MagnifierPixelCount = Math.Max(Config.MagnifierPixelCount - 2, RegionCaptureOptions.MagnifierPixelCountMinimum);
                 }
             }
             else if (form.Mode == RectangleRegionMode.Annotation)
@@ -1298,7 +1296,7 @@ namespace ShareX.ScreenCaptureLib
 
             SnapSize snapSize = (from size in Config.SnapSizes
                                  let distance = MathHelpers.Distance(vector, new Vector2(size.Width, size.Height))
-                                 where distance > 0 && distance < SnapDistance
+                                 where distance > 0 && distance < RegionCaptureOptions.SnapDistance
                                  orderby distance
                                  select size).FirstOrDefault();
 

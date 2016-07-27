@@ -30,6 +30,14 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RegionCaptureOptions
     {
+        public const int MagnifierPixelCountMinimum = 3;
+        public const int MagnifierPixelCountMaximum = 35;
+        public const int MagnifierPixelSizeMinimum = 2;
+        public const int MagnifierPixelSizeMaximum = 30;
+        public const int SnapDistance = 30;
+        public const int MoveSpeedMinimum = 1;
+        public const int MoveSpeedMaximum = 10;
+
         public bool QuickCrop = true;
         public RegionCaptureAction MouseRightClickAction = RegionCaptureAction.OpenOptionsMenu;
         public RegionCaptureAction MouseMiddleClickAction = RegionCaptureAction.CancelCapture;
