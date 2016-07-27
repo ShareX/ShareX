@@ -32,7 +32,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public const int MagnifierPixelCountMinimum = 3;
         public const int MagnifierPixelCountMaximum = 35;
-        public const int MagnifierPixelSizeMinimum = 2;
+        public const int MagnifierPixelSizeMinimum = 3;
         public const int MagnifierPixelSizeMaximum = 30;
         public const int SnapDistance = 30;
         public const int MoveSpeedMinimum = 1;

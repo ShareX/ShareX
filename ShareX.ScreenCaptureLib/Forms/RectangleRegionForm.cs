@@ -665,8 +665,8 @@ namespace ShareX.ScreenCaptureLib
                     else
                     {
                         g.FillEllipse(brush, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
-                        g.DrawEllipse(Pens.White, x - 1, y + magnifierPosition - 1, magnifier.Width + 2, magnifier.Height + 2);
-                        g.DrawEllipse(Pens.Black, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
+                        g.DrawEllipse(Pens.White, x - 1, y + magnifierPosition - 1, magnifier.Width + 2 - 1, magnifier.Height + 2 - 1);
+                        g.DrawEllipse(Pens.Black, x, y + magnifierPosition, magnifier.Width - 1, magnifier.Height - 1);
                     }
                 }
             }
