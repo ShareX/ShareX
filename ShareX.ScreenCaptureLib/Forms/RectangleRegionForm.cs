@@ -726,7 +726,11 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 g.DrawRectangle(Pens.Black, (width - pixelSize) / 2 - 1, (height - pixelSize) / 2 - 1, pixelSize, pixelSize);
-                g.DrawRectangle(Pens.White, (width - pixelSize) / 2, (height - pixelSize) / 2, pixelSize - 2, pixelSize - 2);
+
+                if (pixelSize >= 6)
+                {
+                    g.DrawRectangle(Pens.White, (width - pixelSize) / 2, (height - pixelSize) / 2, pixelSize - 2, pixelSize - 2);
+                }
             }
 
             return bmp;
