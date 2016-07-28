@@ -532,7 +532,7 @@ namespace ShareX
         [Category("Name pattern"), DefaultValue(50), Description("Maximum name pattern title (%t) length for file name.")]
         public int NamePatternMaxTitleLength { get; set; }
 
-        [Category("Tools"), DefaultValue("$r, $g, $b"), Description("Copy this color format to clipboard after using screen color picker. Formats: $r, $g, $b, $hex, $x, $y")]
+        [Category("Tools"), DefaultValue("$r, $g, $b"), Description("Copy this color format to clipboard after using screen color picker. Formats: $r, $g, $b, $hex, $HEX, $x, $y")]
         public string ScreenColorPickerFormat { get; set; }
 
         public TaskSettingsAdvanced()
