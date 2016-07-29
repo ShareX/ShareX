@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
-using System;
 
 namespace ShareX.HelpersLib
 {

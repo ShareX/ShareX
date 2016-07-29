@@ -23,10 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Globalization;
 using System.Text;
 
