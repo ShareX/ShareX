@@ -486,15 +486,7 @@ namespace ShareX
 
             if (pointInfo != null)
             {
-                string text = taskSettings.ToolsSettings.ScreenColorPickerFormat;
-
-                text = text.Replace("$r", pointInfo.Color.R.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                    Replace("$g", pointInfo.Color.G.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                    Replace("$b", pointInfo.Color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                    Replace("$HEX", ColorHelpers.ColorToHex(pointInfo.Color), StringComparison.InvariantCulture).
-                    Replace("$hex", ColorHelpers.ColorToHex(pointInfo.Color).ToLowerInvariant(), StringComparison.InvariantCultureIgnoreCase).
-                    Replace("$x", pointInfo.Position.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                    Replace("$y", pointInfo.Position.Y.ToString(), StringComparison.InvariantCultureIgnoreCase);
+                string text = CodeMenuEntryPixelInfo.Parse(taskSettings.ToolsSettings.ScreenColorPickerFormat, pointInfo.Color, pointInfo.Position);
 
                 ClipboardHelpers.CopyText(text);
 

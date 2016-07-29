@@ -544,13 +544,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Mode != RectangleRegionMode.ScreenColorPicker && !string.IsNullOrEmpty(Config.CustomInfoText))
                 {
-                    return Config.CustomInfoText.Replace("$r", color.R.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                        Replace("$g", color.G.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                        Replace("$b", color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                        Replace("$hex", ColorHelpers.ColorToHex(color), StringComparison.InvariantCultureIgnoreCase).
-                        Replace("$x", CurrentPosition.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                        Replace("$y", CurrentPosition.Y.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                        Replace("$n", Environment.NewLine, StringComparison.InvariantCultureIgnoreCase);
+                    return CodeMenuEntryPixelInfo.Parse(Config.CustomInfoText, color, CurrentPosition);
                 }
 
                 return string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y);
