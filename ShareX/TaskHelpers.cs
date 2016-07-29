@@ -486,7 +486,7 @@ namespace ShareX
 
             if (pointInfo != null)
             {
-                string text = taskSettings.AdvancedSettings.ScreenColorPickerFormat;
+                string text = taskSettings.ToolsSettings.ScreenColorPickerFormat;
 
                 text = text.Replace("$r", pointInfo.Color.R.ToString(), StringComparison.InvariantCultureIgnoreCase).
                     Replace("$g", pointInfo.Color.G.ToString(), StringComparison.InvariantCultureIgnoreCase).

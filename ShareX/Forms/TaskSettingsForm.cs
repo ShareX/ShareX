@@ -359,17 +359,7 @@ namespace ShareX
 
             #region Tools
 
-            #region Indexer
-
-            pgIndexer.SelectedObject = TaskSettings.ToolsSettings.IndexerSettings;
-
-            #endregion Indexer
-
-            #region Video thumbnailer
-
-            pgVideoThumbnailer.SelectedObject = TaskSettings.ToolsSettings.VideoThumbnailOptions;
-
-            #endregion Video thumbnailer
+            txtToolsScreenColorPickerFormat.Text = TaskSettings.ToolsSettings.ScreenColorPickerFormat;
 
             #endregion Tools
 
@@ -389,7 +379,7 @@ namespace ShareX
 
         private void tttvMain_TabChanged(TabPage tabPage)
         {
-            if (IsDefault && (tabPage == tpUploadMain || tabPage == tpToolsMain))
+            if (IsDefault && tabPage == tpUploadMain)
             {
                 tttvMain.SelectChild();
             }
@@ -411,12 +401,12 @@ namespace ShareX
         {
             if (!IsDefault)
             {
-                panelGeneral.Enabled = !TaskSettings.UseDefaultGeneralSettings;
+                pGeneral.Enabled = !TaskSettings.UseDefaultGeneralSettings;
                 pImage.Enabled = ((Control)tpEffects).Enabled = ((Control)tpThumbnail).Enabled = !TaskSettings.UseDefaultImageSettings;
                 pCapture.Enabled = ((Control)tpRegionCapture).Enabled = ((Control)tpScreenRecorder).Enabled = !TaskSettings.UseDefaultCaptureSettings;
                 pActions.Enabled = !TaskSettings.UseDefaultActions;
                 ((Control)tpFileNaming).Enabled = ((Control)tpUploadClipboard).Enabled = !TaskSettings.UseDefaultUploadSettings;
-                ((Control)tpIndexer).Enabled = ((Control)tpVideoThumbnailer).Enabled = !TaskSettings.UseDefaultToolsSettings;
+                pTools.Enabled = !TaskSettings.UseDefaultToolsSettings;
                 pgTaskSettings.Enabled = !TaskSettings.UseDefaultAdvancedSettings;
             }
         }
@@ -1409,6 +1399,11 @@ namespace ShareX
         {
             TaskSettings.UseDefaultToolsSettings = chkUseDefaultToolsSettings.Checked;
             UpdateDefaultSettingVisibility();
+        }
+
+        private void txtToolsScreenColorPickerFormat_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ToolsSettings.ScreenColorPickerFormat = txtToolsScreenColorPickerFormat.Text;
         }
 
         #endregion Tools

@@ -376,6 +376,7 @@ namespace ShareX
 
     public class TaskSettingsTools
     {
+        public string ScreenColorPickerFormat = "$r, $g, $b"; // $r, $g, $b, $hex, $HEX, $x, $y
         public IndexerSettings IndexerSettings = new IndexerSettings();
         public ImageCombinerOptions ImageCombinerOptions = new ImageCombinerOptions();
         public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
@@ -531,9 +532,6 @@ namespace ShareX
 
         [Category("Name pattern"), DefaultValue(50), Description("Maximum name pattern title (%t) length for file name.")]
         public int NamePatternMaxTitleLength { get; set; }
-
-        [Category("Tools"), DefaultValue("$r, $g, $b"), Description("Copy this color format to clipboard after using screen color picker. Formats: $r, $g, $b, $hex, $HEX, $x, $y")]
-        public string ScreenColorPickerFormat { get; set; }
 
         public TaskSettingsAdvanced()
         {

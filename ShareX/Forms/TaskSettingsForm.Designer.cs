@@ -55,7 +55,7 @@
             this.tsmiURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTask = new ShareX.HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
-            this.panelGeneral = new System.Windows.Forms.Panel();
+            this.pGeneral = new System.Windows.Forms.Panel();
             this.lblAfterTaskNotification = new System.Windows.Forms.Label();
             this.cboPopUpNotification = new System.Windows.Forms.ComboBox();
             this.cbPlaySoundAfterUpload = new System.Windows.Forms.CheckBox();
@@ -222,22 +222,19 @@
             this.btnWatchFolderRemove = new System.Windows.Forms.Button();
             this.btnWatchFolderAdd = new System.Windows.Forms.Button();
             this.tpTools = new System.Windows.Forms.TabPage();
-            this.tcTools = new System.Windows.Forms.TabControl();
-            this.tpToolsMain = new System.Windows.Forms.TabPage();
             this.chkUseDefaultToolsSettings = new System.Windows.Forms.CheckBox();
-            this.tpIndexer = new System.Windows.Forms.TabPage();
-            this.pgIndexer = new System.Windows.Forms.PropertyGrid();
-            this.tpVideoThumbnailer = new System.Windows.Forms.TabPage();
-            this.pgVideoThumbnailer = new System.Windows.Forms.PropertyGrid();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.pTools = new System.Windows.Forms.Panel();
+            this.lblToolsScreenColorPickerFormat = new System.Windows.Forms.Label();
+            this.txtToolsScreenColorPickerFormat = new System.Windows.Forms.TextBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
             this.tpGeneral.SuspendLayout();
-            this.panelGeneral.SuspendLayout();
+            this.pGeneral.SuspendLayout();
             this.tpImage.SuspendLayout();
             this.tcImage.SuspendLayout();
             this.tpQuality.SuspendLayout();
@@ -282,11 +279,8 @@
             this.pActions.SuspendLayout();
             this.tpWatchFolders.SuspendLayout();
             this.tpTools.SuspendLayout();
-            this.tcTools.SuspendLayout();
-            this.tpToolsMain.SuspendLayout();
-            this.tpIndexer.SuspendLayout();
-            this.tpVideoThumbnailer.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
+            this.pTools.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -475,20 +469,20 @@
             // 
             // tpGeneral
             // 
-            this.tpGeneral.Controls.Add(this.panelGeneral);
+            this.tpGeneral.Controls.Add(this.pGeneral);
             this.tpGeneral.Controls.Add(this.chkUseDefaultGeneralSettings);
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.UseVisualStyleBackColor = true;
             // 
-            // panelGeneral
+            // pGeneral
             // 
-            this.panelGeneral.Controls.Add(this.lblAfterTaskNotification);
-            this.panelGeneral.Controls.Add(this.cboPopUpNotification);
-            this.panelGeneral.Controls.Add(this.cbPlaySoundAfterUpload);
-            this.panelGeneral.Controls.Add(this.cbPlaySoundAfterCapture);
-            resources.ApplyResources(this.panelGeneral, "panelGeneral");
-            this.panelGeneral.Name = "panelGeneral";
+            this.pGeneral.Controls.Add(this.lblAfterTaskNotification);
+            this.pGeneral.Controls.Add(this.cboPopUpNotification);
+            this.pGeneral.Controls.Add(this.cbPlaySoundAfterUpload);
+            this.pGeneral.Controls.Add(this.cbPlaySoundAfterCapture);
+            resources.ApplyResources(this.pGeneral, "pGeneral");
+            this.pGeneral.Name = "pGeneral";
             // 
             // lblAfterTaskNotification
             // 
@@ -1915,26 +1909,11 @@
             // 
             // tpTools
             // 
-            this.tpTools.Controls.Add(this.tcTools);
+            this.tpTools.Controls.Add(this.pTools);
+            this.tpTools.Controls.Add(this.chkUseDefaultToolsSettings);
             resources.ApplyResources(this.tpTools, "tpTools");
             this.tpTools.Name = "tpTools";
             this.tpTools.UseVisualStyleBackColor = true;
-            // 
-            // tcTools
-            // 
-            this.tcTools.Controls.Add(this.tpToolsMain);
-            this.tcTools.Controls.Add(this.tpIndexer);
-            this.tcTools.Controls.Add(this.tpVideoThumbnailer);
-            resources.ApplyResources(this.tcTools, "tcTools");
-            this.tcTools.Name = "tcTools";
-            this.tcTools.SelectedIndex = 0;
-            // 
-            // tpToolsMain
-            // 
-            this.tpToolsMain.Controls.Add(this.chkUseDefaultToolsSettings);
-            resources.ApplyResources(this.tpToolsMain, "tpToolsMain");
-            this.tpToolsMain.Name = "tpToolsMain";
-            this.tpToolsMain.UseVisualStyleBackColor = true;
             // 
             // chkUseDefaultToolsSettings
             // 
@@ -1944,36 +1923,6 @@
             this.chkUseDefaultToolsSettings.Name = "chkUseDefaultToolsSettings";
             this.chkUseDefaultToolsSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultToolsSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultToolsSettings_CheckedChanged);
-            // 
-            // tpIndexer
-            // 
-            this.tpIndexer.Controls.Add(this.pgIndexer);
-            resources.ApplyResources(this.tpIndexer, "tpIndexer");
-            this.tpIndexer.Name = "tpIndexer";
-            this.tpIndexer.UseVisualStyleBackColor = true;
-            // 
-            // pgIndexer
-            // 
-            this.pgIndexer.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            resources.ApplyResources(this.pgIndexer, "pgIndexer");
-            this.pgIndexer.Name = "pgIndexer";
-            this.pgIndexer.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgIndexer.ToolbarVisible = false;
-            // 
-            // tpVideoThumbnailer
-            // 
-            this.tpVideoThumbnailer.Controls.Add(this.pgVideoThumbnailer);
-            resources.ApplyResources(this.tpVideoThumbnailer, "tpVideoThumbnailer");
-            this.tpVideoThumbnailer.Name = "tpVideoThumbnailer";
-            this.tpVideoThumbnailer.UseVisualStyleBackColor = true;
-            // 
-            // pgVideoThumbnailer
-            // 
-            this.pgVideoThumbnailer.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            resources.ApplyResources(this.pgVideoThumbnailer, "pgVideoThumbnailer");
-            this.pgVideoThumbnailer.Name = "pgVideoThumbnailer";
-            this.pgVideoThumbnailer.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgVideoThumbnailer.ToolbarVisible = false;
             // 
             // tpAdvanced
             // 
@@ -2010,6 +1959,24 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // pTools
+            // 
+            this.pTools.Controls.Add(this.txtToolsScreenColorPickerFormat);
+            this.pTools.Controls.Add(this.lblToolsScreenColorPickerFormat);
+            resources.ApplyResources(this.pTools, "pTools");
+            this.pTools.Name = "pTools";
+            // 
+            // lblToolsScreenColorPickerFormat
+            // 
+            resources.ApplyResources(this.lblToolsScreenColorPickerFormat, "lblToolsScreenColorPickerFormat");
+            this.lblToolsScreenColorPickerFormat.Name = "lblToolsScreenColorPickerFormat";
+            // 
+            // txtToolsScreenColorPickerFormat
+            // 
+            resources.ApplyResources(this.txtToolsScreenColorPickerFormat, "txtToolsScreenColorPickerFormat");
+            this.txtToolsScreenColorPickerFormat.Name = "txtToolsScreenColorPickerFormat";
+            this.txtToolsScreenColorPickerFormat.TextChanged += new System.EventHandler(this.txtToolsScreenColorPickerFormat_TextChanged);
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2026,8 +1993,8 @@
             this.cmsDestinations.ResumeLayout(false);
             this.tpGeneral.ResumeLayout(false);
             this.tpGeneral.PerformLayout();
-            this.panelGeneral.ResumeLayout(false);
-            this.panelGeneral.PerformLayout();
+            this.pGeneral.ResumeLayout(false);
+            this.pGeneral.PerformLayout();
             this.tpImage.ResumeLayout(false);
             this.tcImage.ResumeLayout(false);
             this.tpQuality.ResumeLayout(false);
@@ -2087,13 +2054,11 @@
             this.tpWatchFolders.ResumeLayout(false);
             this.tpWatchFolders.PerformLayout();
             this.tpTools.ResumeLayout(false);
-            this.tcTools.ResumeLayout(false);
-            this.tpToolsMain.ResumeLayout(false);
-            this.tpToolsMain.PerformLayout();
-            this.tpIndexer.ResumeLayout(false);
-            this.tpVideoThumbnailer.ResumeLayout(false);
+            this.tpTools.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
+            this.pTools.ResumeLayout(false);
+            this.pTools.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2186,7 +2151,7 @@
         private System.Windows.Forms.CheckBox cbPlaySoundAfterCapture;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterUpload;
         private System.Windows.Forms.CheckBox chkUseDefaultGeneralSettings;
-        private System.Windows.Forms.Panel panelGeneral;
+        private System.Windows.Forms.Panel pGeneral;
         private System.Windows.Forms.TabPage tpTools;
         private System.Windows.Forms.NumericUpDown nudScreenRecorderStartDelay;
         private System.Windows.Forms.Button btnImageEffects;
@@ -2247,13 +2212,7 @@
         private System.Windows.Forms.ComboBox cbGIFEncoding;
         private System.Windows.Forms.Label lblGIFEncoding;
         private System.Windows.Forms.CheckBox cbScreenRecorderShowCursor;
-        private System.Windows.Forms.TabControl tcTools;
-        private System.Windows.Forms.TabPage tpToolsMain;
-        private System.Windows.Forms.TabPage tpIndexer;
         private System.Windows.Forms.CheckBox chkUseDefaultToolsSettings;
-        private System.Windows.Forms.PropertyGrid pgIndexer;
-        private System.Windows.Forms.TabPage tpVideoThumbnailer;
-        private System.Windows.Forms.PropertyGrid pgVideoThumbnailer;
         private System.Windows.Forms.TabPage tpScrollingCapture;
         private System.Windows.Forms.PropertyGrid pgScrollingCapture;
         private System.Windows.Forms.CheckBox cbRegionCaptureUseWindowPattern;
@@ -2303,5 +2262,8 @@
         private System.Windows.Forms.NumericUpDown nudRegionCaptureFixedSizeHeight;
         private System.Windows.Forms.CheckBox cbRegionCaptureShowFPS;
         private System.Windows.Forms.CheckBox cbImageAutoUseJPEG;
+        private System.Windows.Forms.Panel pTools;
+        private System.Windows.Forms.TextBox txtToolsScreenColorPickerFormat;
+        private System.Windows.Forms.Label lblToolsScreenColorPickerFormat;
     }
 }
