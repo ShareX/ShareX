@@ -42,7 +42,7 @@ namespace ShareX.ImageEffectsLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
             config = watermarkConfig;
-            CodeMenu.Create<ReplCodeMenuEntry>(txtWatermarkText, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtWatermarkText, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
         }
 
         private void WatermarkUI_Load(object sender, EventArgs e)

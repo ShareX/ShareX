@@ -23,23 +23,22 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib.Properties;
-using System;
-
 namespace ShareX.HelpersLib
 {
-    public class ActionsCodeMenuEntry : CodeMenuEntry
+    public class CodeMenuEntryPixelInfo : CodeMenuEntry
     {
-        public ActionsCodeMenuEntry(string value, string description) : base(value, description)
+        protected override string Prefix { get; } = "$";
+
+        public static readonly CodeMenuEntryPixelInfo x = new CodeMenuEntryPixelInfo("x", "X position");
+        public static readonly CodeMenuEntryPixelInfo y = new CodeMenuEntryPixelInfo("y", "Y position");
+        public static readonly CodeMenuEntryPixelInfo r = new CodeMenuEntryPixelInfo("r", "Red color (0-255)");
+        public static readonly CodeMenuEntryPixelInfo g = new CodeMenuEntryPixelInfo("g", "Green color (0-255)");
+        public static readonly CodeMenuEntryPixelInfo b = new CodeMenuEntryPixelInfo("b", "Blue color (0-255)");
+        public static readonly CodeMenuEntryPixelInfo hex = new CodeMenuEntryPixelInfo("hex", "Hex color value");
+        public static readonly CodeMenuEntryPixelInfo n = new CodeMenuEntryPixelInfo("n", "New line");
+
+        public CodeMenuEntryPixelInfo(string value, string description) : base(value, description)
         {
         }
-
-        public override string ToPrefixString()
-        {
-            return '%' + _value;
-        }
-
-        public static readonly ActionsCodeMenuEntry FilePath = new ActionsCodeMenuEntry("input", Resources.ActionsCodeMenuEntry_FilePath_File_path);
-        public static readonly ActionsCodeMenuEntry OutputFilePath = new ActionsCodeMenuEntry("output", Resources.ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_);
     }
 }

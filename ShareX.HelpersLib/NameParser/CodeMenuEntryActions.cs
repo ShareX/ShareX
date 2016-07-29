@@ -23,26 +23,19 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
+using ShareX.HelpersLib.Properties;
 
 namespace ShareX.HelpersLib
 {
-    public class NameParserEditor : UITypeEditor
+    public class CodeMenuEntryActions : CodeMenuEntry
     {
-        public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
-        {
-            return UITypeEditorEditStyle.Modal;
-        }
+        protected override string Prefix { get; } = "%";
 
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+        public static readonly CodeMenuEntryActions FilePath = new CodeMenuEntryActions("input", Resources.ActionsCodeMenuEntry_FilePath_File_path);
+        public static readonly CodeMenuEntryActions OutputFilePath = new CodeMenuEntryActions("output", Resources.ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_);
+
+        public CodeMenuEntryActions(string value, string description) : base(value, description)
         {
-            Point pos = Cursor.Position;
-            CodeMenu.Create(CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn).Show(pos.X, pos.Y);
-            return value;
         }
     }
 }

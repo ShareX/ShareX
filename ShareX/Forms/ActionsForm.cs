@@ -47,7 +47,7 @@ namespace ShareX
             txtName.Text = fileAction.Name ?? "";
             txtPath.Text = fileAction.Path ?? "";
             txtArguments.Text = fileAction.Args ?? "";
-            CodeMenu.Create<ActionsCodeMenuEntry>(txtArguments);
+            CodeMenu.Create<CodeMenuEntryActions>(txtArguments);
             txtOutputExtension.Text = fileAction.OutputExtension ?? "";
             txtExtensions.Text = fileAction.Extensions ?? "";
             cbHiddenWindow.Checked = fileAction.HiddenWindow;

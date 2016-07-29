@@ -88,7 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NameParser\ActionsCodeMenuEntry.cs" />
+    <Compile Include="NameParser\CodeMenuEntryActions.cs" />
     <Compile Include="Automate\AutomateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,7 +192,7 @@
     <Compile Include="Input\InputManager.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="MimeTypes.cs" />
-    <Compile Include="NameParser\RegionCaptureInfoTextCodeMenuEntry.cs" />
+    <Compile Include="NameParser\CodeMenuEntryPixelInfo.cs" />
     <Compile Include="Native\LayeredForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,7 +228,7 @@
     <Compile Include="Controls\TabToTreeView.Designer.cs">
       <DependentUpon>TabToTreeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="NameParser\ReplCodeMenuEntry.cs" />
+    <Compile Include="NameParser\CodeMenuEntryFilename.cs" />
     <Compile Include="TaskEx.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />

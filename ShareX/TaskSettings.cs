@@ -376,7 +376,7 @@ namespace ShareX
 
     public class TaskSettingsTools
     {
-        public string ScreenColorPickerFormat = "$r, $g, $b"; // $r, $g, $b, $hex, $HEX, $x, $y
+        public string ScreenColorPickerFormat = "$r, $g, $b";
         public IndexerSettings IndexerSettings = new IndexerSettings();
         public ImageCombinerOptions ImageCombinerOptions = new ImageCombinerOptions();
         public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
