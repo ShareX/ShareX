@@ -31,11 +31,23 @@ namespace ShareX.HelpersLib
     {
         protected override string Prefix { get; } = "%";
 
-        public static readonly CodeMenuEntryActions FilePath = new CodeMenuEntryActions("input", Resources.ActionsCodeMenuEntry_FilePath_File_path);
-        public static readonly CodeMenuEntryActions OutputFilePath = new CodeMenuEntryActions("output", Resources.ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_);
+        public static readonly CodeMenuEntryActions input = new CodeMenuEntryActions("input", Resources.ActionsCodeMenuEntry_FilePath_File_path);
+        public static readonly CodeMenuEntryActions output = new CodeMenuEntryActions("output", Resources.ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_);
 
         public CodeMenuEntryActions(string value, string description) : base(value, description)
         {
+        }
+
+        public static string Parse(string pattern, string inputPath, string outputPath)
+        {
+            string result = pattern.Replace(input.ToPrefixString(), '"' + inputPath + '"');
+
+            if (!string.IsNullOrEmpty(outputPath))
+            {
+                result.Replace(output.ToPrefixString(), '"' + outputPath + '"');
+            }
+
+            return result;
         }
     }
 }
