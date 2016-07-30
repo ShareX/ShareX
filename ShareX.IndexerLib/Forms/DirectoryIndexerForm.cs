@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.IndexerLib.Properties;
 using System;
 using System.IO;
 using System.Windows.Forms;

@@ -91,7 +91,6 @@ namespace GreenshotPlugin.UnmanagedHelpers
         [SecurityCritical]
         public SafeHBitmapHandle() : base(true)
         {
-
         }
 
         [SecurityCritical]

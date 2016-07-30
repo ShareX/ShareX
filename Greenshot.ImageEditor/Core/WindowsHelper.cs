@@ -230,10 +230,10 @@ namespace GreenshotPlugin.Core
         private WindowDetails _parent;
         private bool _frozen;
 
-		/// <summary>
- 		/// This checks if the window is a Windows 8 App
- 		/// For Windows 10 most normal code works, as it's hosted inside "ApplicationFrameWindow"
- 		/// </summary>
+        /// <summary>
+        /// This checks if the window is a Windows 8 App
+        /// For Windows 10 most normal code works, as it's hosted inside "ApplicationFrameWindow"
+        /// </summary>
         public bool IsApp
         {
             get
@@ -1223,7 +1223,7 @@ namespace GreenshotPlugin.Core
                         }
                     }
                 }
-                else if (!Environment.OSVersion.IsWindows8OrLater()) 
+                else if (!Environment.OSVersion.IsWindows8OrLater())
                 {
                     //GetClientRect(out windowRectangle);
                     GetBorderSize(out borderSize);

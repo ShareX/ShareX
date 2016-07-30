@@ -101,7 +101,7 @@ namespace Greenshot.Controls
                 catch
                 {
                     if (fontFamily != null)
-                    { 
+                    {
                         // If the drawing failed, BUG-1770 seems to have a weird case that causes: Font 'Lucida Sans Typewriter' does not support style 'Regular'
                         DrawText(e.Graphics, FontFamily.GenericSansSerif, FontStyle.Regular, e.Bounds, fontFamily.Name);
                     }

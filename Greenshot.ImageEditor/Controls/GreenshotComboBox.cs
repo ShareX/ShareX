@@ -29,7 +29,7 @@ namespace GreenshotPlugin.Controls
     {
         private Type _enumType = null;
         private Enum _selectedEnum = null;
-        
+
         [Category("Greenshot"), DefaultValue("Core"), Description("Specifies the Ini-Section to map this control with.")]
         public string SectionName { get; set; } = "Core";
 

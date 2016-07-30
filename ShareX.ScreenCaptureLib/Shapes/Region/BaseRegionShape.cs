@@ -23,14 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-
 namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseRegionShape : BaseShape

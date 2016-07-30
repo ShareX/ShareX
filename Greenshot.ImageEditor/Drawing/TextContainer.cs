@@ -211,7 +211,7 @@ namespace Greenshot.Drawing
             if (e.Field.FieldType.Name.StartsWith("FONT"))
             {
                 if (_font != null)
-                { 
+                {
                     _font.Dispose();
                     _font = null;
                 }

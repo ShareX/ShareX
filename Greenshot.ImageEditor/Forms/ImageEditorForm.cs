@@ -123,7 +123,7 @@ namespace Greenshot
                 RECT lastPosition = EditorConfiguration.GetEditorPlacement().NormalPosition;
 
                 WindowPlacement wp = new WindowDetails(Handle).WindowPlacement;
-                wp.NormalPosition.Top = lastPosition.Top ;
+                wp.NormalPosition.Top = lastPosition.Top;
                 wp.NormalPosition.Left = lastPosition.Left;
                 // don't actually show window now (it is done later)
                 wp.ShowCmd = ShowWindowCommand.Hide;
@@ -132,7 +132,7 @@ namespace Greenshot
 
                 WindowDetails thisForm = new WindowDetails(Handle)
                 {
-                        WindowPlacement = wp
+                    WindowPlacement = wp
                 };
 
                 // Once image is loaded into window, size and position window
@@ -169,8 +169,7 @@ namespace Greenshot
                     }
                     WindowDetails thisForm1 = new WindowDetails(Handle) { WindowPlacement = windowPlacement };
                 };
-
-                }
+            }
             else
             {
                 Load += delegate
@@ -229,7 +228,8 @@ namespace Greenshot
             {
                 _surface.TransparencyBackgroundBrush = new TextureBrush(backgroundForTransparency, WrapMode.Tile);
 
-                _surface.MovingElementChanged += delegate {
+                _surface.MovingElementChanged += delegate
+                {
                     RefreshEditorControls();
                 };
                 _surface.DrawingModeChanged += surface_DrawingModeChanged;

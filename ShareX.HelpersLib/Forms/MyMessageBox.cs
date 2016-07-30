@@ -165,14 +165,13 @@ namespace ShareX.HelpersLib
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
+            //
             // MyMessageBox
-            // 
+            //
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "MyMessageBox";
             this.ResumeLayout(false);
-
         }
     }
 }

@@ -234,6 +234,5 @@ namespace GreenshotPlugin.Controls
                 _eagerlyCreatedDirectory = null;
             }
         }
-
     }
 }

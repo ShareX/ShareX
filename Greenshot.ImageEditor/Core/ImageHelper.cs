@@ -1195,7 +1195,7 @@ namespace GreenshotPlugin.Core
         {
             float adjustedBrightness = brightness - 1.0f;
             ColorMatrix applyColorMatrix = new ColorMatrix(
-                    new [] {
+                    new[] {
                         new[] {contrast, 0, 0, 0, 0}, // scale red
 						new[] {0, contrast, 0, 0, 0}, // scale green
 						new[] {0, 0, contrast, 0, 0}, // scale blue

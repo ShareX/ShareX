@@ -28,7 +28,6 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.TextUploaders;
-using System;
 using System.Collections.Generic;
 
 namespace ShareX.UploadersLib

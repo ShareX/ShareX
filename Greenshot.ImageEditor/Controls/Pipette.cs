@@ -130,7 +130,7 @@ namespace Greenshot.Controls
                 //Release Capture should consume MouseUp when canceled with the escape key
                 User32.ReleaseCapture();
                 if (PipetteUsed != null)
-                { 
+                {
                     PipetteUsed(this, new PipetteUsedArgs(movableShowColorForm.color));
                 }
             }

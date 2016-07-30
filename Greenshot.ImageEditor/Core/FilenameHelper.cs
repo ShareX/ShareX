@@ -509,7 +509,8 @@ namespace GreenshotPlugin.Core
             }
 
             return CMD_VAR_REGEXP.Replace(pattern,
-                delegate (Match m) {
+                delegate (Match m)
+                {
                     return MatchVarEvaluator(m, null, processVars, userVars, machineVars, filenameSafeMode);
                 }
             );

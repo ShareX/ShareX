@@ -95,7 +95,7 @@ namespace GreenshotPlugin.Controls
                 // Descending sort is selected, return negative result of compare operation
                 return (-compareResult);
             }
-            
+
             // Return '0' to indicate they are equal
             return 0;
         }

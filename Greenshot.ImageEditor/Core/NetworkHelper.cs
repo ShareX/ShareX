@@ -57,7 +57,8 @@ namespace GreenshotPlugin.Core
             try
             {
                 // Disable certificate checking
-                ServicePointManager.ServerCertificateValidationCallback += delegate {
+                ServicePointManager.ServerCertificateValidationCallback += delegate
+                {
                     return true;
                 };
             }
