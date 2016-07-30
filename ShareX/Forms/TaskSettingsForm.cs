@@ -288,13 +288,6 @@ namespace ShareX
 
             #endregion Screen recorder
 
-            #region Scrolling capture
-
-            if (TaskSettings.CaptureSettings.ScrollingCaptureOptions == null) TaskSettings.CaptureSettings.ScrollingCaptureOptions = new ScrollingCaptureOptions();
-            pgScrollingCapture.SelectedObject = TaskSettings.CaptureSettings.ScrollingCaptureOptions;
-
-            #endregion Scrolling capture
-
             #endregion Capture
 
             #region Upload

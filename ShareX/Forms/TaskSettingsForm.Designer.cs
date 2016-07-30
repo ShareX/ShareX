@@ -177,8 +177,6 @@
             this.cbScreenRecorderFixedDuration = new System.Windows.Forms.CheckBox();
             this.nudGIFFPS = new System.Windows.Forms.NumericUpDown();
             this.lblGIFFPS = new System.Windows.Forms.Label();
-            this.tpScrollingCapture = new System.Windows.Forms.TabPage();
-            this.pgScrollingCapture = new System.Windows.Forms.PropertyGrid();
             this.tpUpload = new System.Windows.Forms.TabPage();
             this.tcUpload = new System.Windows.Forms.TabControl();
             this.tpUploadMain = new System.Windows.Forms.TabPage();
@@ -222,14 +220,14 @@
             this.btnWatchFolderRemove = new System.Windows.Forms.Button();
             this.btnWatchFolderAdd = new System.Windows.Forms.Button();
             this.tpTools = new System.Windows.Forms.TabPage();
+            this.pTools = new System.Windows.Forms.Panel();
+            this.txtToolsScreenColorPickerFormat = new System.Windows.Forms.TextBox();
+            this.lblToolsScreenColorPickerFormat = new System.Windows.Forms.Label();
             this.chkUseDefaultToolsSettings = new System.Windows.Forms.CheckBox();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.pTools = new System.Windows.Forms.Panel();
-            this.lblToolsScreenColorPickerFormat = new System.Windows.Forms.Label();
-            this.txtToolsScreenColorPickerFormat = new System.Windows.Forms.TextBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -269,7 +267,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).BeginInit();
-            this.tpScrollingCapture.SuspendLayout();
             this.tpUpload.SuspendLayout();
             this.tcUpload.SuspendLayout();
             this.tpUploadMain.SuspendLayout();
@@ -279,8 +276,8 @@
             this.pActions.SuspendLayout();
             this.tpWatchFolders.SuspendLayout();
             this.tpTools.SuspendLayout();
-            this.tpAdvanced.SuspendLayout();
             this.pTools.SuspendLayout();
+            this.tpAdvanced.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -780,7 +777,6 @@
             this.tcCapture.Controls.Add(this.tpCaptureGeneral);
             this.tcCapture.Controls.Add(this.tpRegionCapture);
             this.tcCapture.Controls.Add(this.tpScreenRecorder);
-            this.tcCapture.Controls.Add(this.tpScrollingCapture);
             resources.ApplyResources(this.tcCapture, "tcCapture");
             this.tcCapture.Name = "tcCapture";
             this.tcCapture.SelectedIndex = 0;
@@ -1584,21 +1580,6 @@
             resources.ApplyResources(this.lblGIFFPS, "lblGIFFPS");
             this.lblGIFFPS.Name = "lblGIFFPS";
             // 
-            // tpScrollingCapture
-            // 
-            this.tpScrollingCapture.Controls.Add(this.pgScrollingCapture);
-            resources.ApplyResources(this.tpScrollingCapture, "tpScrollingCapture");
-            this.tpScrollingCapture.Name = "tpScrollingCapture";
-            this.tpScrollingCapture.UseVisualStyleBackColor = true;
-            // 
-            // pgScrollingCapture
-            // 
-            this.pgScrollingCapture.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            resources.ApplyResources(this.pgScrollingCapture, "pgScrollingCapture");
-            this.pgScrollingCapture.Name = "pgScrollingCapture";
-            this.pgScrollingCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgScrollingCapture.ToolbarVisible = false;
-            // 
             // tpUpload
             // 
             this.tpUpload.Controls.Add(this.tcUpload);
@@ -1915,6 +1896,24 @@
             this.tpTools.Name = "tpTools";
             this.tpTools.UseVisualStyleBackColor = true;
             // 
+            // pTools
+            // 
+            this.pTools.Controls.Add(this.txtToolsScreenColorPickerFormat);
+            this.pTools.Controls.Add(this.lblToolsScreenColorPickerFormat);
+            resources.ApplyResources(this.pTools, "pTools");
+            this.pTools.Name = "pTools";
+            // 
+            // txtToolsScreenColorPickerFormat
+            // 
+            resources.ApplyResources(this.txtToolsScreenColorPickerFormat, "txtToolsScreenColorPickerFormat");
+            this.txtToolsScreenColorPickerFormat.Name = "txtToolsScreenColorPickerFormat";
+            this.txtToolsScreenColorPickerFormat.TextChanged += new System.EventHandler(this.txtToolsScreenColorPickerFormat_TextChanged);
+            // 
+            // lblToolsScreenColorPickerFormat
+            // 
+            resources.ApplyResources(this.lblToolsScreenColorPickerFormat, "lblToolsScreenColorPickerFormat");
+            this.lblToolsScreenColorPickerFormat.Name = "lblToolsScreenColorPickerFormat";
+            // 
             // chkUseDefaultToolsSettings
             // 
             resources.ApplyResources(this.chkUseDefaultToolsSettings, "chkUseDefaultToolsSettings");
@@ -1958,24 +1957,6 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // pTools
-            // 
-            this.pTools.Controls.Add(this.txtToolsScreenColorPickerFormat);
-            this.pTools.Controls.Add(this.lblToolsScreenColorPickerFormat);
-            resources.ApplyResources(this.pTools, "pTools");
-            this.pTools.Name = "pTools";
-            // 
-            // lblToolsScreenColorPickerFormat
-            // 
-            resources.ApplyResources(this.lblToolsScreenColorPickerFormat, "lblToolsScreenColorPickerFormat");
-            this.lblToolsScreenColorPickerFormat.Name = "lblToolsScreenColorPickerFormat";
-            // 
-            // txtToolsScreenColorPickerFormat
-            // 
-            resources.ApplyResources(this.txtToolsScreenColorPickerFormat, "txtToolsScreenColorPickerFormat");
-            this.txtToolsScreenColorPickerFormat.Name = "txtToolsScreenColorPickerFormat";
-            this.txtToolsScreenColorPickerFormat.TextChanged += new System.EventHandler(this.txtToolsScreenColorPickerFormat_TextChanged);
             // 
             // TaskSettingsForm
             // 
@@ -2039,7 +2020,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).EndInit();
-            this.tpScrollingCapture.ResumeLayout(false);
             this.tpUpload.ResumeLayout(false);
             this.tcUpload.ResumeLayout(false);
             this.tpUploadMain.ResumeLayout(false);
@@ -2055,10 +2035,10 @@
             this.tpWatchFolders.PerformLayout();
             this.tpTools.ResumeLayout(false);
             this.tpTools.PerformLayout();
-            this.tpAdvanced.ResumeLayout(false);
-            this.tpAdvanced.PerformLayout();
             this.pTools.ResumeLayout(false);
             this.pTools.PerformLayout();
+            this.tpAdvanced.ResumeLayout(false);
+            this.tpAdvanced.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2213,8 +2193,6 @@
         private System.Windows.Forms.Label lblGIFEncoding;
         private System.Windows.Forms.CheckBox cbScreenRecorderShowCursor;
         private System.Windows.Forms.CheckBox chkUseDefaultToolsSettings;
-        private System.Windows.Forms.TabPage tpScrollingCapture;
-        private System.Windows.Forms.PropertyGrid pgScrollingCapture;
         private System.Windows.Forms.CheckBox cbRegionCaptureUseWindowPattern;
         private System.Windows.Forms.TabPage tpFileNaming;
         private System.Windows.Forms.Label lblAutoIncrementNumber;

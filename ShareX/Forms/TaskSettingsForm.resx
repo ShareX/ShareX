@@ -633,6 +633,24 @@
   <data name="&gt;&gt;tpActions.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="cbWatchFolderEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbWatchFolderEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 17</value>
+  </data>
+  <data name="cbWatchFolderEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>Watch folders and if new file created then upload it</value>
+  </data>
   <data name="&gt;&gt;cbWatchFolderEnabled.Name" xml:space="preserve">
     <value>cbWatchFolderEnabled</value>
   </data>
@@ -644,6 +662,36 @@
   </data>
   <data name="&gt;&gt;cbWatchFolderEnabled.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="lvWatchFolderList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>Folder path</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Width" type="System.Int32, mscorlib">
+    <value>323</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="chWatchFolderFilter.Width" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Include subdirectories</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Width" type="System.Int32, mscorlib">
+    <value>124</value>
+  </data>
+  <data name="lvWatchFolderList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 64</value>
+  </data>
+  <data name="lvWatchFolderList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 408</value>
+  </data>
+  <data name="lvWatchFolderList.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Name" xml:space="preserve">
     <value>lvWatchFolderList</value>
@@ -657,6 +705,21 @@
   <data name="&gt;&gt;lvWatchFolderList.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnWatchFolderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnWatchFolderRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 32</value>
+  </data>
+  <data name="btnWatchFolderRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
+  </data>
+  <data name="btnWatchFolderRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
   <data name="&gt;&gt;btnWatchFolderRemove.Name" xml:space="preserve">
     <value>btnWatchFolderRemove</value>
   </data>
@@ -668,6 +731,21 @@
   </data>
   <data name="&gt;&gt;btnWatchFolderRemove.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btnWatchFolderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnWatchFolderAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 32</value>
+  </data>
+  <data name="btnWatchFolderAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
+  </data>
+  <data name="btnWatchFolderAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>Add...</value>
   </data>
   <data name="&gt;&gt;btnWatchFolderAdd.Name" xml:space="preserve">
     <value>btnWatchFolderAdd</value>
@@ -708,66 +786,6 @@
   <data name="&gt;&gt;tpWatchFolders.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="txtToolsScreenColorPickerFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
-  </data>
-  <data name="txtToolsScreenColorPickerFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 20</value>
-  </data>
-  <data name="txtToolsScreenColorPickerFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.Name" xml:space="preserve">
-    <value>txtToolsScreenColorPickerFormat</value>
-  </data>
-  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.Parent" xml:space="preserve">
-    <value>pTools</value>
-  </data>
-  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblToolsScreenColorPickerFormat.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblToolsScreenColorPickerFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
-  </data>
-  <data name="lblToolsScreenColorPickerFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 13</value>
-  </data>
-  <data name="lblToolsScreenColorPickerFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
-    <value>Screen color picker format:</value>
-  </data>
-  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.Name" xml:space="preserve">
-    <value>lblToolsScreenColorPickerFormat</value>
-  </data>
-  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.Parent" xml:space="preserve">
-    <value>pTools</value>
-  </data>
-  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pTools.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 25</value>
-  </data>
-  <data name="pTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 454</value>
-  </data>
-  <data name="pTools.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;pTools.Name" xml:space="preserve">
     <value>pTools</value>
   </data>
@@ -779,30 +797,6 @@
   </data>
   <data name="&gt;&gt;pTools.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 8, 8, 0</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>571, 25</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
-    <value>Use tools settings in main window task settings</value>
   </data>
   <data name="&gt;&gt;chkUseDefaultToolsSettings.Name" xml:space="preserve">
     <value>chkUseDefaultToolsSettings</value>
@@ -2603,18 +2597,6 @@
   </data>
   <data name="&gt;&gt;tpScreenRecorder.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;tpScrollingCapture.Name" xml:space="preserve">
-    <value>tpScrollingCapture</value>
-  </data>
-  <data name="&gt;&gt;tpScrollingCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpScrollingCapture.Parent" xml:space="preserve">
-    <value>tcCapture</value>
-  </data>
-  <data name="&gt;&gt;tpScrollingCapture.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="tcCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -5808,69 +5790,6 @@
   <data name="&gt;&gt;lblGIFFPS.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="&gt;&gt;pgScrollingCapture.Name" xml:space="preserve">
-    <value>pgScrollingCapture</value>
-  </data>
-  <data name="&gt;&gt;pgScrollingCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgScrollingCapture.Parent" xml:space="preserve">
-    <value>tpScrollingCapture</value>
-  </data>
-  <data name="&gt;&gt;pgScrollingCapture.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpScrollingCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpScrollingCapture.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpScrollingCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 447</value>
-  </data>
-  <data name="tpScrollingCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tpScrollingCapture.Text" xml:space="preserve">
-    <value>Scrolling capture</value>
-  </data>
-  <data name="&gt;&gt;tpScrollingCapture.Name" xml:space="preserve">
-    <value>tpScrollingCapture</value>
-  </data>
-  <data name="&gt;&gt;tpScrollingCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpScrollingCapture.Parent" xml:space="preserve">
-    <value>tcCapture</value>
-  </data>
-  <data name="&gt;&gt;tpScrollingCapture.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pgScrollingCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pgScrollingCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="pgScrollingCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>551, 441</value>
-  </data>
-  <data name="pgScrollingCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pgScrollingCapture.Name" xml:space="preserve">
-    <value>pgScrollingCapture</value>
-  </data>
-  <data name="&gt;&gt;pgScrollingCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgScrollingCapture.Parent" xml:space="preserve">
-    <value>tpScrollingCapture</value>
-  </data>
-  <data name="&gt;&gt;pgScrollingCapture.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;tpUploadMain.Name" xml:space="preserve">
     <value>tpUploadMain</value>
   </data>
@@ -6969,131 +6888,137 @@
   <data name="&gt;&gt;chkUseDefaultActions.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cbWatchFolderEnabled.AutoSize" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.Name" xml:space="preserve">
+    <value>txtToolsScreenColorPickerFormat</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.Parent" xml:space="preserve">
+    <value>pTools</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.Name" xml:space="preserve">
+    <value>lblToolsScreenColorPickerFormat</value>
+  </data>
+  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.Parent" xml:space="preserve">
+    <value>pTools</value>
+  </data>
+  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pTools.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 25</value>
+  </data>
+  <data name="pTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>571, 454</value>
+  </data>
+  <data name="pTools.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pTools.Name" xml:space="preserve">
+    <value>pTools</value>
+  </data>
+  <data name="&gt;&gt;pTools.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pTools.Parent" xml:space="preserve">
+    <value>tpTools</value>
+  </data>
+  <data name="&gt;&gt;pTools.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtToolsScreenColorPickerFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="txtToolsScreenColorPickerFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 20</value>
+  </data>
+  <data name="txtToolsScreenColorPickerFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.Name" xml:space="preserve">
+    <value>txtToolsScreenColorPickerFormat</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.Parent" xml:space="preserve">
+    <value>pTools</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerFormat.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbWatchFolderEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblToolsScreenColorPickerFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
   </data>
-  <data name="cbWatchFolderEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+  <data name="lblToolsScreenColorPickerFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 13</value>
   </data>
-  <data name="cbWatchFolderEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 17</value>
-  </data>
-  <data name="cbWatchFolderEnabled.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblToolsScreenColorPickerFormat.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>Watch folders and if new file created then upload it</value>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>Screen color picker format:</value>
   </data>
-  <data name="&gt;&gt;cbWatchFolderEnabled.Name" xml:space="preserve">
-    <value>cbWatchFolderEnabled</value>
+  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.Name" xml:space="preserve">
+    <value>lblToolsScreenColorPickerFormat</value>
   </data>
-  <data name="&gt;&gt;cbWatchFolderEnabled.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.Parent" xml:space="preserve">
+    <value>pTools</value>
+  </data>
+  <data name="&gt;&gt;lblToolsScreenColorPickerFormat.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 8, 8, 0</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>571, 25</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
+    <value>Use tools settings in main window task settings</value>
+  </data>
+  <data name="&gt;&gt;chkUseDefaultToolsSettings.Name" xml:space="preserve">
+    <value>chkUseDefaultToolsSettings</value>
+  </data>
+  <data name="&gt;&gt;chkUseDefaultToolsSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbWatchFolderEnabled.Parent" xml:space="preserve">
-    <value>tpWatchFolders</value>
+  <data name="&gt;&gt;chkUseDefaultToolsSettings.Parent" xml:space="preserve">
+    <value>tpTools</value>
   </data>
-  <data name="&gt;&gt;cbWatchFolderEnabled.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lvWatchFolderList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="lvWatchFolderList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 64</value>
-  </data>
-  <data name="lvWatchFolderList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 288</value>
-  </data>
-  <data name="lvWatchFolderList.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lvWatchFolderList.Name" xml:space="preserve">
-    <value>lvWatchFolderList</value>
-  </data>
-  <data name="&gt;&gt;lvWatchFolderList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvWatchFolderList.Parent" xml:space="preserve">
-    <value>tpWatchFolders</value>
-  </data>
-  <data name="&gt;&gt;lvWatchFolderList.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkUseDefaultToolsSettings.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
-    <value>Folder path</value>
-  </data>
-  <data name="chWatchFolderFolderPath.Width" type="System.Int32, mscorlib">
-    <value>323</value>
-  </data>
-  <data name="chWatchFolderFilter.Text" xml:space="preserve">
-    <value>Filter</value>
-  </data>
-  <data name="chWatchFolderFilter.Width" type="System.Int32, mscorlib">
-    <value>43</value>
-  </data>
-  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
-    <value>Include subdirectories</value>
-  </data>
-  <data name="chWatchFolderIncludeSubdirectories.Width" type="System.Int32, mscorlib">
-    <value>124</value>
-  </data>
-  <data name="btnWatchFolderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnWatchFolderRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 32</value>
-  </data>
-  <data name="btnWatchFolderRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
-  </data>
-  <data name="btnWatchFolderRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="&gt;&gt;btnWatchFolderRemove.Name" xml:space="preserve">
-    <value>btnWatchFolderRemove</value>
-  </data>
-  <data name="&gt;&gt;btnWatchFolderRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnWatchFolderRemove.Parent" xml:space="preserve">
-    <value>tpWatchFolders</value>
-  </data>
-  <data name="&gt;&gt;btnWatchFolderRemove.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnWatchFolderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnWatchFolderAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 32</value>
-  </data>
-  <data name="btnWatchFolderAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
-  </data>
-  <data name="btnWatchFolderAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
-    <value>Add...</value>
-  </data>
-  <data name="&gt;&gt;btnWatchFolderAdd.Name" xml:space="preserve">
-    <value>btnWatchFolderAdd</value>
-  </data>
-  <data name="&gt;&gt;btnWatchFolderAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnWatchFolderAdd.Parent" xml:space="preserve">
-    <value>tpWatchFolders</value>
-  </data>
-  <data name="&gt;&gt;btnWatchFolderAdd.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="pgTaskSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
