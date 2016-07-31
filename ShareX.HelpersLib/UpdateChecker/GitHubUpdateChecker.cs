@@ -29,7 +29,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Cache;
-using System.Text;
 
 namespace ShareX.HelpersLib
 {
@@ -86,18 +85,6 @@ namespace ShareX.HelpersLib
             }
 
             return null;
-        }
-
-        public string GetDownloadCounts()
-        {
-            StringBuilder sb = new StringBuilder();
-
-            foreach (GitHubRelease release in GetReleases().Where(x => x.assets != null && x.assets.Count > 0))
-            {
-                sb.AppendFormat("{0} ({1}): {2}{3}", release.name, DateTime.Parse(release.published_at), release.assets.Sum(x => x.download_count), Environment.NewLine);
-            }
-
-            return sb.ToString().Trim();
         }
 
         private List<GitHubRelease> GetReleases()
@@ -182,40 +169,40 @@ namespace ShareX.HelpersLib
 
             return false;
         }
-    }
 
-    public class GitHubRelease
-    {
-        public string url { get; set; }
-        public string assets_url { get; set; }
-        public string upload_url { get; set; }
-        public string html_url { get; set; }
-        public int id { get; set; }
-        public string tag_name { get; set; }
-        public string target_commitish { get; set; }
-        public string name { get; set; }
-        public string body { get; set; }
-        public bool draft { get; set; }
-        public bool prerelease { get; set; }
-        public string created_at { get; set; }
-        public string published_at { get; set; }
-        public List<GitHubAsset> assets { get; set; }
-        public string tarball_url { get; set; }
-        public string zipball_url { get; set; }
-    }
+        private class GitHubRelease
+        {
+            public string url { get; set; }
+            public string assets_url { get; set; }
+            public string upload_url { get; set; }
+            public string html_url { get; set; }
+            public int id { get; set; }
+            public string tag_name { get; set; }
+            public string target_commitish { get; set; }
+            public string name { get; set; }
+            public string body { get; set; }
+            public bool draft { get; set; }
+            public bool prerelease { get; set; }
+            public string created_at { get; set; }
+            public string published_at { get; set; }
+            public List<GitHubAsset> assets { get; set; }
+            public string tarball_url { get; set; }
+            public string zipball_url { get; set; }
+        }
 
-    public class GitHubAsset
-    {
-        public string url { get; set; }
-        public int id { get; set; }
-        public string name { get; set; }
-        public string label { get; set; }
-        public string content_type { get; set; }
-        public string state { get; set; }
-        public int size { get; set; }
-        public int download_count { get; set; }
-        public string created_at { get; set; }
-        public string updated_at { get; set; }
-        public string browser_download_url { get; set; }
+        private class GitHubAsset
+        {
+            public string url { get; set; }
+            public int id { get; set; }
+            public string name { get; set; }
+            public string label { get; set; }
+            public string content_type { get; set; }
+            public string state { get; set; }
+            public int size { get; set; }
+            public int download_count { get; set; }
+            public string created_at { get; set; }
+            public string updated_at { get; set; }
+            public string browser_download_url { get; set; }
+        }
     }
 }

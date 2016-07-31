@@ -105,6 +105,8 @@ namespace ShareX
             cbTrayLeftClickAction.SelectedIndex = (int)Program.Settings.TrayLeftClickAction;
             cbTrayMiddleClickAction.SelectedIndex = (int)Program.Settings.TrayMiddleClickAction;
 
+            cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
+
             // Integration
             cbStartWithWindows.Checked = IntegrationHelpers.CheckStartupShortcut();
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
@@ -366,6 +368,11 @@ namespace ShareX
         private void btnEditQuickTaskMenu_Click(object sender, EventArgs e)
         {
             new QuickTaskMenuEditorForm().ShowDialog();
+        }
+
+        private void cbCheckPreReleaseUpdates_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
         }
 
         #endregion General

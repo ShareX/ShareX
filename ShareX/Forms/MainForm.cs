@@ -697,7 +697,7 @@ namespace ShareX
                 {
                     if (updateTimer == null)
                     {
-                        updateTimer = new System.Threading.Timer(state => CheckUpdate(), null, TimeSpan.Zero, TimeSpan.FromHours(2));
+                        updateTimer = new System.Threading.Timer(state => CheckUpdate(), null, TimeSpan.Zero, TimeSpan.FromHours(1));
                     }
                 }
                 else if (updateTimer != null)

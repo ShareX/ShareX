@@ -78,6 +78,8 @@ namespace ShareX
         public HotkeyType TrayLeftDoubleClickAction = HotkeyType.OpenMainWindow;
         public HotkeyType TrayMiddleClickAction = HotkeyType.PrintScreen;
 
+        public bool CheckPreReleaseUpdates = false;
+
         #endregion General
 
         #region Paths

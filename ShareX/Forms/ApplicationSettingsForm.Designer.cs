@@ -33,6 +33,7 @@ namespace ShareX
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationSettingsForm));
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.cbCheckPreReleaseUpdates = new System.Windows.Forms.CheckBox();
             this.cbTrayMiddleClickAction = new System.Windows.Forms.ComboBox();
             this.lblTrayMiddleClickAction = new System.Windows.Forms.Label();
             this.cbTrayLeftDoubleClickAction = new System.Windows.Forms.ComboBox();
@@ -185,6 +186,7 @@ namespace ShareX
             // 
             // tpGeneral
             // 
+            this.tpGeneral.Controls.Add(this.cbCheckPreReleaseUpdates);
             this.tpGeneral.Controls.Add(this.cbTrayMiddleClickAction);
             this.tpGeneral.Controls.Add(this.lblTrayMiddleClickAction);
             this.tpGeneral.Controls.Add(this.cbTrayLeftDoubleClickAction);
@@ -203,6 +205,13 @@ namespace ShareX
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.UseVisualStyleBackColor = true;
+            // 
+            // cbCheckPreReleaseUpdates
+            // 
+            resources.ApplyResources(this.cbCheckPreReleaseUpdates, "cbCheckPreReleaseUpdates");
+            this.cbCheckPreReleaseUpdates.Name = "cbCheckPreReleaseUpdates";
+            this.cbCheckPreReleaseUpdates.UseVisualStyleBackColor = true;
+            this.cbCheckPreReleaseUpdates.CheckedChanged += new System.EventHandler(this.cbCheckPreReleaseUpdates_CheckedChanged);
             // 
             // cbTrayMiddleClickAction
             // 
@@ -1156,5 +1165,6 @@ namespace ShareX
         private System.Windows.Forms.ComboBox cbTrayMiddleClickAction;
         private System.Windows.Forms.ComboBox cbTrayLeftDoubleClickAction;
         private System.Windows.Forms.ComboBox cbTrayLeftClickAction;
+        private System.Windows.Forms.CheckBox cbCheckPreReleaseUpdates;
     }
 }
