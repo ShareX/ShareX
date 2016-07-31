@@ -140,6 +140,8 @@ namespace ShareX.UploadersLib
         Sul,
         [Description("Lithiio")]
         Lithiio,
+        [Description("transfer.sh")]
+        Transfersh,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
