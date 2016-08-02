@@ -76,7 +76,7 @@ namespace ShareX.HelpersLib
 
         public static Rectangle GetScreenBounds4()
         {
-            return Screen.AllScreens.Aggregate(Rectangle.Empty, (current, screen) => Rectangle.Union(current, screen.Bounds));
+            return Screen.AllScreens.Select(x => x.Bounds).Combine();
         }
 
         public static Rectangle GetActiveScreenBounds()

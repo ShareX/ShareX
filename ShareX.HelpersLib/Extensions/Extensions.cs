@@ -502,5 +502,24 @@ namespace ShareX.HelpersLib
                 }
             };
         }
+
+        public static Rectangle Combine(this IEnumerable<Rectangle> rects)
+        {
+            Rectangle result = Rectangle.Empty;
+
+            foreach (Rectangle rect in rects)
+            {
+                if (result.IsEmpty)
+                {
+                    result = rect;
+                }
+                else
+                {
+                    result = Rectangle.Union(result, rect);
+                }
+            }
+
+            return result;
+        }
     }
 }
