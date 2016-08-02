@@ -121,6 +121,8 @@ namespace ShareX.ScreenCaptureLib
         {
             g.SmoothingMode = SmoothingMode.HighQuality;
 
+            if (regionFillPath != null) regionFillPath.Dispose();
+
             regionFillPath = new GraphicsPath();
 
             for (int i = 0; i < nodes.Count - 1; i++)
