@@ -1479,25 +1479,6 @@ namespace ShareX.ScreenCaptureLib
             return GetShapeIntersect() != null;
         }
 
-        public Rectangle CombineAreas()
-        {
-            BaseShape[] areas = ValidRegions;
-
-            if (areas.Length > 0)
-            {
-                Rectangle rect = areas[0].Rectangle;
-
-                for (int i = 1; i < areas.Length; i++)
-                {
-                    rect = Rectangle.Union(rect, areas[i].Rectangle);
-                }
-
-                return rect;
-            }
-
-            return Rectangle.Empty;
-        }
-
         private void UpdateCursor()
         {
             try

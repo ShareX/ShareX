@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -145,29 +144,28 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static Image ApplyRegionPathToImage(Image backgroundImage, GraphicsPath regionFillPath, RegionCaptureOptions options)
+        public static Image ApplyRegionPathToImage(Image img, GraphicsPath gp)
         {
-            if (backgroundImage != null && regionFillPath != null)
+            if (img != null && gp != null)
             {
-                Image img;
-
-                Rectangle regionArea = Rectangle.Round(regionFillPath.GetBounds());
+                Rectangle regionArea = Rectangle.Round(gp.GetBounds());
                 Rectangle screenRectangle = CaptureHelpers.GetScreenBounds0Based();
-                Rectangle newRegionArea = Rectangle.Intersect(regionArea, screenRectangle);
+                regionArea = Rectangle.Intersect(regionArea, screenRectangle);
 
-                using (GraphicsPath gp = (GraphicsPath)regionFillPath.Clone())
+                if (regionArea.IsValid())
                 {
-                    using (Matrix matrix = new Matrix())
+                    using (Bitmap bmp = img.CreateEmptyBitmap())
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    using (TextureBrush brush = new TextureBrush(img))
                     {
-                        gp.CloseFigure();
-                        matrix.Translate(-Math.Max(0, regionArea.X), -Math.Max(0, regionArea.Y));
-                        gp.Transform(matrix);
+                        g.PixelOffsetMode = PixelOffsetMode.Half;
+                        g.SmoothingMode = SmoothingMode.HighQuality;
+
+                        g.FillPath(brush, gp);
+
+                        return ImageHelpers.CropBitmap(bmp, regionArea);
                     }
-
-                    img = ImageHelpers.CropImage(backgroundImage, newRegionArea, gp);
                 }
-
-                return img;
             }
 
             return null;

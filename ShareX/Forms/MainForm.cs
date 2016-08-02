@@ -2282,7 +2282,7 @@ namespace ShareX
                         {
                             using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                             {
-                                return RegionCaptureHelpers.ApplyRegionPathToImage(screenshot, BaseRegionForm.LastRegionFillPath, taskSettings.CaptureSettings.SurfaceOptions);
+                                return RegionCaptureHelpers.ApplyRegionPathToImage(screenshot, BaseRegionForm.LastRegionFillPath);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }

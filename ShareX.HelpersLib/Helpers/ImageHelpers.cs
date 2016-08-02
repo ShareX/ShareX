@@ -243,30 +243,6 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Image CropImage(Image img, Rectangle rect, GraphicsPath gp)
-        {
-            if (img != null && rect.Width > 0 && rect.Height > 0 && gp != null)
-            {
-                Bitmap bmp = new Bitmap(rect.Width, rect.Height);
-                bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
-
-                using (Graphics g = Graphics.FromImage(bmp))
-                {
-                    g.SetHighQuality();
-
-                    using (Region region = new Region(gp))
-                    {
-                        g.Clip = region;
-                        g.DrawImage(img, new Rectangle(0, 0, rect.Width, rect.Height), rect, GraphicsUnit.Pixel);
-                    }
-                }
-
-                return bmp;
-            }
-
-            return null;
-        }
-
         public static Image DrawOutline(Image img, GraphicsPath gp)
         {
             if (img != null && gp != null)
