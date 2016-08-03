@@ -84,5 +84,9 @@ namespace ShareX.ScreenCaptureLib
 
             Rectangle = Rectangle.LocationOffset(x, y);
         }
+
+        public override void Resize(int x, int y, bool fromBottomRight)
+        {
+        }
     }
 }
