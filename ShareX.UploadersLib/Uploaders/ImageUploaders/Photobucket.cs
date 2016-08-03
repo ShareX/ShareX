@@ -55,9 +55,9 @@ namespace ShareX.UploadersLib.ImageUploaders
 
     public sealed class Photobucket : ImageUploader, IOAuth
     {
-        private const string URLRequestToken = "http://api.photobucket.com/login/request";
-        private const string URLAuthorize = "http://photobucket.com/apilogin/login";
-        private const string URLAccessToken = "http://api.photobucket.com/login/access";
+        private const string URLRequestToken = "https://api.photobucket.com/login/request";
+        private const string URLAuthorize = "http://photobucket.com/apilogin/login"; // They should force ssl here
+        private const string URLAccessToken = "https://api.photobucket.com/login/access";
 
         public OAuthInfo AuthInfo { get; set; }
         public PhotobucketAccountInfo AccountInfo { get; set; }
@@ -120,7 +120,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("size", ""); // Size to resize an image to. (Images can only be made smaller.)
             */
 
-            string url = "http://api.photobucket.com/album/!/upload";
+            string url = "https://api.photobucket.com/album/!/upload";
             string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
             query = FixURL(query);
 
@@ -147,7 +147,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("id", albumID); // Album identifier.
             args.Add("name", albumName); // Name of result. Must be between 2 and 50 characters. Valid characters are letters, numbers, underscore ( _ ), hyphen (-), and space.
 
-            string url = "http://api.photobucket.com/album/!";
+            string url = "https://api.photobucket.com/album/!";
             string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
             query = FixURL(query);
 

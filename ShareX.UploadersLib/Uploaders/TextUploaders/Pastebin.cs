@@ -84,7 +84,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 loginArgs.Add("api_user_name", Settings.Username);
                 loginArgs.Add("api_user_password", Settings.Password);
 
-                string loginResponse = SendRequest(HttpMethod.POST, "http://pastebin.com/api/api_login.php", loginArgs);
+                string loginResponse = SendRequest(HttpMethod.POST, "https://pastebin.com/api/api_login.php", loginArgs);
 
                 if (!string.IsNullOrEmpty(loginResponse) && !loginResponse.StartsWith("Bad API request"))
                 {
@@ -121,14 +121,14 @@ namespace ShareX.UploadersLib.TextUploaders
                     args.Add("api_user_key", Settings.UserKey); // this paramater is part of the login system
                 }
 
-                ur.Response = SendRequest(HttpMethod.POST, "http://pastebin.com/api/api_post.php", args);
+                ur.Response = SendRequest(HttpMethod.POST, "https://pastebin.com/api/api_post.php", args);
 
                 if (!string.IsNullOrEmpty(ur.Response) && !ur.Response.StartsWith("Bad API request") && ur.Response.IsValidUrl())
                 {
                     if (Settings.RawURL)
                     {
                         string paste_key = URLHelpers.GetFileName(ur.Response);
-                        ur.URL = "http://pastebin.com/raw/" + paste_key;
+                        ur.URL = "https://pastebin.com/raw/" + paste_key;
                     }
                     else
                     {

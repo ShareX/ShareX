@@ -23,22 +23,46 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+using System.Collections.Generic;
+
 namespace ShareX.UploadersLib.URLShorteners
 {
-    public class VgdURLShortenerService : URLShortenerService
+    public class IsgdURLShortenerService : URLShortenerService
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.VGD;
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.ISGD;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 
         public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new VgdURLShortener();
+            return new IsgdURLShortener();
         }
     }
 
-    public class VgdURLShortener : IsgdURLShortener
+    public class IsgdURLShortener : URLShortener
     {
-        protected override string APIURL { get { return "http://v.gd/create.php"; } }
+        protected virtual string APIURL { get { return "https://is.gd/create.php"; } }
+
+        public override UploadResult ShortenURL(string url)
+        {
+            UploadResult result = new UploadResult { URL = url };
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                Dictionary<string, string> arguments = new Dictionary<string, string>();
+                arguments.Add("format", "simple");
+                arguments.Add("url", url);
+
+                result.Response = SendRequest(HttpMethod.GET, APIURL, arguments);
+
+                if (!result.Response.StartsWith("Error:", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    result.ShortenedURL = result.Response;
+                }
+            }
+
+            return result;
+        }
     }
 }

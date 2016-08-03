@@ -23,22 +23,23 @@
 
 #endregion License Information (GPL v3)
 
+using System.Collections.Generic;
 using System.IO;
 
-namespace ShareX.UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
-    public sealed class Img1Uploader : ImageUploader
+    public sealed class FileBin : FileUploader
     {
-        private const string uploadURL = "http://img1.us/?app";
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, uploadURL, fileName, "fileup");
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("MAX_FILE_SIZE", "82428800");
+
+            UploadResult result = UploadData(stream, "https://filebin.ca/upload.php", fileName, "file", args);
 
             if (result.IsSuccess)
             {
-                string lastLine = result.Response.Remove(0, result.Response.LastIndexOf('\n') + 1).Trim();
-                result.URL = lastLine;
+                result.URL = result.Response.Substring(result.Response.LastIndexOf(' ') + 1).Trim();
             }
 
             return result;

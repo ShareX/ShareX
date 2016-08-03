@@ -23,41 +23,41 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
-    public class Paste2TextUploaderService : TextUploaderService
+    public class Paste_eeTextUploaderService : TextUploaderService
     {
-        public override TextDestination EnumValue { get; } = TextDestination.Paste2;
+        public override TextDestination EnumValue { get; } = TextDestination.Paste_ee;
+
+        public override Image ServiceImage => Resources.document;
 
         public override bool CheckConfig(UploadersConfig config) => true;
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            Paste2Settings settings = new Paste2Settings()
-            {
-                TextFormat = taskInfo.TextFormat
-            };
-
-            return new Paste2(settings);
+            return new Paste_ee(config.Paste_eeUserAPIKey);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPaste_ee;
     }
 
-    public sealed class Paste2 : TextUploader
+    public sealed class Paste_ee : TextUploader
     {
-        private const string APIURL = "http://paste2.org/new-paste";
+        public string APIKey { get; private set; }
 
-        private Paste2Settings settings;
-
-        public Paste2()
+        public Paste_ee()
         {
-            settings = new Paste2Settings();
+            APIKey = "public";
         }
 
-        public Paste2(Paste2Settings settings)
+        public Paste_ee(string apiKey)
         {
-            this.settings = settings;
+            APIKey = apiKey;
         }
 
         public override UploadResult UploadText(string text, string fileName)
@@ -66,29 +66,31 @@ namespace ShareX.UploadersLib.TextUploaders
 
             if (!string.IsNullOrEmpty(text))
             {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("code", text);
-                arguments.Add("description", settings.Description);
-                arguments.Add("lang", settings.TextFormat);
-                arguments.Add("parent", "0");
+                if (string.IsNullOrEmpty(APIKey))
+                {
+                    APIKey = "public";
+                }
 
-                ur.URL = SendRequest(HttpMethod.POST, APIURL, arguments, responseType: ResponseType.RedirectionURL);
+                Dictionary<string, string> arguments = new Dictionary<string, string>();
+                arguments.Add("key", APIKey);
+                arguments.Add("description", "");
+                arguments.Add("paste", text);
+                arguments.Add("format", "simple");
+                arguments.Add("return", "link");
+
+                ur.Response = SendRequest(HttpMethod.POST, "https://paste.ee/api", arguments);
+
+                if (!string.IsNullOrEmpty(ur.Response) && ur.Response.StartsWith("error"))
+                {
+                    Errors.Add(ur.Response);
+                }
+                else
+                {
+                    ur.URL = ur.Response;
+                }
             }
 
             return ur;
-        }
-    }
-
-    public class Paste2Settings
-    {
-        public string TextFormat { get; set; }
-
-        public string Description { get; set; }
-
-        public Paste2Settings()
-        {
-            TextFormat = "text";
-            Description = "";
         }
     }
 }

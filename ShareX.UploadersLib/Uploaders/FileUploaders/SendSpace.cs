@@ -66,7 +66,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         private string APIKey;
 
-        private const string APIURL = "http://api.sendspace.com/rest/";
+        private const string APIURL = "https://api.sendspace.com/rest/";
         private const string APIVersion = "1.0";
 
         public AccountType AccountType { get; set; }
@@ -514,7 +514,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     if (result.Response.StartsWith("upload_status=ok")) // User
                     {
                         string fileid = Regex.Match(result.Response, @"file_id=(\w+)").Groups[1].Value;
-                        result.URL = "http://www.sendspace.com/file/" + fileid;
+                        result.URL = "https://www.sendspace.com/file/" + fileid;
                     }
                     else // Anonymous
                     {

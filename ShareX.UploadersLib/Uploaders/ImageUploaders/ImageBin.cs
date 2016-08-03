@@ -25,21 +25,33 @@
 
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.ImageUploaders
 {
-    public sealed class FileBin : FileUploader
+    public sealed class ImageBin : ImageUploader
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("MAX_FILE_SIZE", "82428800");
+            Dictionary<string, string> arguments = new Dictionary<string, string>();
+            arguments.Add("t", "file");
+            arguments.Add("name", "ShareX");
+            arguments.Add("tags", "ShareX");
+            arguments.Add("description", "test");
+            arguments.Add("adult", "t");
+            arguments.Add("sfile", "Upload");
+            arguments.Add("url", "");
 
-            UploadResult result = UploadData(stream, "http://filebin.ca/upload.php", fileName, "file", args);
+            UploadResult result = UploadData(stream, "https://imagebin.ca/upload.php", fileName, "f", arguments);
 
             if (result.IsSuccess)
             {
-                result.URL = result.Response.Substring(result.Response.LastIndexOf(' ') + 1).Trim();
+                Match match = Regex.Match(result.Response, @"(?<=ca/view/).+(?=\.html'>)");
+                if (match != null)
+                {
+                    string url = "https://imagebin.ca/img/" + match.Value + Path.GetExtension(fileName);
+                    result.URL = url;
+                }
             }
 
             return result;

@@ -64,28 +64,28 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public static List<CheveretoUploader> Uploaders = new List<CheveretoUploader>()
         {
-            new CheveretoUploader("http://ultraimg.com/api/1/upload", "3374fa58c672fcaad8dab979f7687397"),
-            new CheveretoUploader("http://yukle.at/3/api/1/upload", "bf3f97649acf179ac17e2b3004fa44bc"),
+            new CheveretoUploader("http://ultraimg.com/api/1/upload", "3374fa58c672fcaad8dab979f7687397"), // SSL redirect broken (infinite loop)
+            new CheveretoUploader("https://yukle.at/3/api/1/upload", "bf3f97649acf179ac17e2b3004fa44bc"),
             new CheveretoUploader("http://img.patifile.com/api/1/upload", "8320784a9b044510e8c723fb778fe3b7"),
-            new CheveretoUploader("http://boltimg.com/api/1/upload", "8dfbcb7ab9b5258a90be7cf09e361894"),
-            new CheveretoUploader("http://snapie.net/myapi/1/upload", "aff7bd5bf65b7e30b675a430049894b3"),
+            new CheveretoUploader("https://boltimg.com/api/1/upload", "8dfbcb7ab9b5258a90be7cf09e361894"),
+            // new CheveretoUploader("http://snapie.net/myapi/1/upload", "aff7bd5bf65b7e30b675a430049894b3"),
             new CheveretoUploader("http://picgur.org/api/1/upload", "0a65553c54cf72127d11281f96518469"),
             new CheveretoUploader("https://pixr.co/api/1/upload", "8fff10a8b0d2852c4167db53aa590e94"),
             new CheveretoUploader("https://sexr.co/api/1/upload", "46b9aa05ec994098c4b6f18b5eed5e36"),
-            new CheveretoUploader("http://lightpics.net/api/1/upload", "7c6238e8f24c19454315d5dc812d4b93"),
-            new CheveretoUploader("http://imgfly.me/api/1/upload", "c6133147592983996b65dda51ba70255"),
+            new CheveretoUploader("https://lightpics.net/api/1/upload", "7c6238e8f24c19454315d5dc812d4b93"),
+            new CheveretoUploader("https://imgfly.me/api/1/upload", "c6133147592983996b65dda51ba70255"),
             new CheveretoUploader("http://imgpinas.com/api/1/upload", "7153eeee787ccbb4b01bea44ec0e699e"),
             new CheveretoUploader("http://imu.gr/api/1/upload", "a8e5fcfb79df9be675a6aa0a1541a89e"),
-            new CheveretoUploader("http://www.upsieutoc.com/api/1/upload", "c692ca0925f8da5990e8c795602bf942"),
-            new CheveretoUploader("http://www.storemypic.com/api/1/upload", "995269492c2a19902715d5cc3ed810fa"),
-            new CheveretoUploader("https://i.tlthings.net/api/1/upload", "a7yk23ty0k13ralyh32p64hx22p7ek49tt"),
+            new CheveretoUploader("https://www.upsieutoc.com/api/1/upload", "c692ca0925f8da5990e8c795602bf942"),
+            new CheveretoUploader("http://www.storemypic.com/api/1/upload", "995269492c2a19902715d5cc3ed810fa"), // SSL redirects to http
+           // new CheveretoUploader("https://i.tlthings.net/api/1/upload", "a7yk23ty0k13ralyh32p64hx22p7ek49tt"),
             new CheveretoUploader("https://picuza.com/api/1/upload", "f613c791e4fc79ada8ec629a9ac34d90"),
             new CheveretoUploader("https://bobblepic.com/api/1/upload", "5f3d45874194ad6a6e8c7400932b824f"),
             new CheveretoUploader("http://zimg.se/api/1/upload", "25a772decbbe4381378880c5712d4ae6"),
             new CheveretoUploader("http://forumbilder.com/api/1/upload", "7d67072c194531c3c9343f0e0eb48a54"),
-            new CheveretoUploader("http://www.img-load.de/api/1/upload", "980ac733e6d272b5d7a6ee16afb753aa"),
+            new CheveretoUploader("https://www.img-load.de/api/1/upload", "980ac733e6d272b5d7a6ee16afb753aa"),
             new CheveretoUploader("http://imgchr.com/api/1/upload", "a788873e81d83019f4807c87145ddf1f"),
-            new CheveretoUploader("http://images.the-hive.fr/api/1/upload", "85c20c20105e5b741c11108498d5403b"),
+            new CheveretoUploader("https://images.the-hive.fr/api/1/upload", "85c20c20105e5b741c11108498d5403b"),
             new CheveretoUploader("https://www.ezphotoshare.com/api/1/upload", "15388b54636e96e3e63e5e86d6b72271"),
             new CheveretoUploader("http://imgmax.com/api/1/upload", "1fa647781a3fb7aa91bd70eb4824a6c3")
         };

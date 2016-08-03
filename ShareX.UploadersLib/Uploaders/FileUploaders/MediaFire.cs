@@ -149,7 +149,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (resp.doupload.quickkey == null) throw new IOException("Invalid response");
 
-                string url = URLHelpers.CombineURL("http://www.mediafire.com/view", resp.doupload.quickkey);
+                string url = URLHelpers.CombineURL("https://www.mediafire.com/view", resp.doupload.quickkey);
                 if (UseLongLink) url = URLHelpers.CombineURL(url, URLHelpers.URLEncode(resp.doupload.filename));
                 return url;
             }

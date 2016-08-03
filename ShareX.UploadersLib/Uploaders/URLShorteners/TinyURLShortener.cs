@@ -24,34 +24,33 @@
 #endregion License Information (GPL v3)
 
 using System.Collections.Generic;
-using System.IO;
-using System.Text.RegularExpressions;
 
-namespace ShareX.UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.URLShorteners
 {
-    public sealed class ImageBin : ImageUploader
+    public class TinyURLShortenerService : URLShortenerService
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.TINYURL;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("t", "file");
-            arguments.Add("name", "ShareX");
-            arguments.Add("tags", "ShareX");
-            arguments.Add("description", "test");
-            arguments.Add("adult", "t");
-            arguments.Add("sfile", "Upload");
-            arguments.Add("url", "");
+            return new TinyURLShortener();
+        }
+    }
 
-            UploadResult result = UploadData(stream, "http://imagebin.ca/upload.php", fileName, "f", arguments);
+    public sealed class TinyURLShortener : URLShortener
+    {
+        public override UploadResult ShortenURL(string url)
+        {
+            UploadResult result = new UploadResult { URL = url };
 
-            if (result.IsSuccess)
+            if (!string.IsNullOrEmpty(url))
             {
-                Match match = Regex.Match(result.Response, @"(?<=ca/view/).+(?=\.html'>)");
-                if (match != null)
-                {
-                    string url = "http://imagebin.ca/img/" + match.Value + Path.GetExtension(fileName);
-                    result.URL = url;
-                }
+                Dictionary<string, string> arguments = new Dictionary<string, string>();
+                arguments.Add("url", url);
+
+                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "https://tinyurl.com/api-create.php", arguments);
             }
 
             return result;

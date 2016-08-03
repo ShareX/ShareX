@@ -60,7 +60,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public string TinyPicKey { get; set; }
         public string Shuk { get; set; }
 
-        private const string URLAPI = "http://api.tinypic.com/api.php";
+        private const string URLAPI = "http://api.tinypic.com/api.php"; // Sad that they don't allow SSL
 
         public TinyPicUploader(string id, string key, AccountType accountType = AccountType.Anonymous, string shuk = null)
         {

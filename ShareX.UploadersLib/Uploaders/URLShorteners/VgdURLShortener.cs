@@ -23,25 +23,22 @@
 
 #endregion License Information (GPL v3)
 
-using System.Collections.Generic;
-
 namespace ShareX.UploadersLib.URLShorteners
 {
-    public sealed class NlcmURLShortener : URLShortener
+    public class VgdURLShortenerService : URLShortenerService
     {
-        public override UploadResult ShortenURL(string url)
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.VGD;
+
+        public override bool CheckConfig(UploadersConfig config) => true;
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            UploadResult result = new UploadResult { URL = url };
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("url", url);
-
-                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://nl.cm/api/", arguments);
-            }
-
-            return result;
+            return new VgdURLShortener();
         }
+    }
+
+    public class VgdURLShortener : IsgdURLShortener
+    {
+        protected override string APIURL { get { return "https://v.gd/create.php"; } }
     }
 }
