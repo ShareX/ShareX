@@ -78,10 +78,10 @@ namespace ShareX.UploadersLib.OtherServices
 
     public class OCRSpace : Uploader
     {
+        private const string APIURLUSA = "https://apipro1.ocr.space/parse/image";
+        private const string APIURLEurope = "https://apipro2.ocr.space/parse/image";
+        private const string APIURLAsia = "https://apipro3.ocr.space/parse/image";
         private const string APIURLFree = "https://api.ocr.space/parse/image";
-        private const string APIURLUSA = "?";
-        private const string APIURLEurope = "https://apipro3.ocr.space/parse/image"; // Frankfurt
-        private const string APIURLAsia = "https://apipro8.ocr.space/parse/image"; // Tokyo
 
         public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
         public bool Overlay { get; set; }
@@ -100,7 +100,7 @@ namespace ShareX.UploadersLib.OtherServices
             arguments.Add("language", Language.ToString());
             arguments.Add("isOverlayRequired", Overlay.ToString());
 
-            UploadResult ur = UploadData(stream, APIURLEurope, fileName, "file", arguments);
+            UploadResult ur = UploadData(stream, APIURLUSA, fileName, "file", arguments);
 
             if (ur.IsSuccess)
             {
