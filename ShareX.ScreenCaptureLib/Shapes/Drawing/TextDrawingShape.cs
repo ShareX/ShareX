@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
         public string Text { get; set; }
         public TextDrawingOptions Options { get; set; }
 
-        public override void UpdateShapeConfig()
+        public override void OnConfigLoad()
         {
             Options = AnnotationOptions.TextOptions.Copy();
             BorderColor = AnnotationOptions.TextBorderColor;
@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
             FillColor = AnnotationOptions.TextFillColor;
         }
 
-        public override void ApplyShapeConfig()
+        public override void OnConfigSave()
         {
             AnnotationOptions.TextOptions = Options;
             AnnotationOptions.TextBorderColor = BorderColor;
@@ -69,12 +69,12 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void OnShapeCreated()
+        public override void OnCreated()
         {
             UpdateText();
         }
 
-        public override void OnShapeDoubleClicked()
+        public override void OnDoubleClicked()
         {
             UpdateText();
         }
@@ -87,7 +87,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 inputBox.ShowDialog();
                 Text = inputBox.InputText;
-                ApplyShapeConfig();
+                OnConfigSave();
             }
 
             Manager.ResumeForm();

@@ -34,12 +34,12 @@ namespace ShareX.ScreenCaptureLib
 
         public int BlurRadius { get; set; }
 
-        public override void UpdateShapeConfig()
+        public override void OnConfigLoad()
         {
             BlurRadius = AnnotationOptions.BlurRadius;
         }
 
-        public override void ApplyShapeConfig()
+        public override void OnConfigSave()
         {
             AnnotationOptions.BlurRadius = BlurRadius;
         }

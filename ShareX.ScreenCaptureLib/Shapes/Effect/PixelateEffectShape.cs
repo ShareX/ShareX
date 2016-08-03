@@ -34,12 +34,12 @@ namespace ShareX.ScreenCaptureLib
 
         public int PixelSize { get; set; }
 
-        public override void UpdateShapeConfig()
+        public override void OnConfigLoad()
         {
             PixelSize = AnnotationOptions.PixelateSize;
         }
 
-        public override void ApplyShapeConfig()
+        public override void OnConfigSave()
         {
             AnnotationOptions.PixelateSize = PixelSize;
         }

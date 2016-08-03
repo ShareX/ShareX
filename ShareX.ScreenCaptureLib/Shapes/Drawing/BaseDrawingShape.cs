@@ -33,14 +33,14 @@ namespace ShareX.ScreenCaptureLib
         public int BorderSize { get; set; }
         public Color FillColor { get; set; }
 
-        public override void UpdateShapeConfig()
+        public override void OnConfigLoad()
         {
             BorderColor = AnnotationOptions.BorderColor;
             BorderSize = AnnotationOptions.BorderSize;
             FillColor = AnnotationOptions.FillColor;
         }
 
-        public override void ApplyShapeConfig()
+        public override void OnConfigSave()
         {
             AnnotationOptions.BorderColor = BorderColor;
             AnnotationOptions.BorderSize = BorderSize;

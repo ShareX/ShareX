@@ -32,7 +32,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.RegionEllipse;
 
-        public override void AddShapePath(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
         {
             gp.AddEllipse(rect);
         }

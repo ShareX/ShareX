@@ -94,39 +94,70 @@ namespace ShareX.ScreenCaptureLib
             return Rectangle.Contains(position);
         }
 
-        public virtual void AddShapePath(GraphicsPath gp, Rectangle rect)
+        public void AddShapePath(GraphicsPath gp, int sizeOffset = 0)
         {
-            gp.AddRectangle(rect);
+            Rectangle rect = Rectangle;
+
+            if (sizeOffset != 0)
+            {
+                rect = rect.SizeOffset(sizeOffset);
+            }
+
+            OnShapePathRequested(gp, rect);
         }
 
-        public void AddShapePath(GraphicsPath gp)
-        {
-            AddShapePath(gp, Rectangle);
-        }
-
-        public void AddShapePath(GraphicsPath gp, int sizeOffset)
-        {
-            Rectangle rect = Rectangle.SizeOffset(sizeOffset);
-            AddShapePath(gp, rect);
-        }
-
-        public virtual void UpdateShapeConfig()
-        {
-        }
-
-        public virtual void ApplyShapeConfig()
+        public virtual void OnCreated()
         {
         }
 
         public virtual void OnUpdate()
         {
+            if (Manager.IsMoving)
+            {
+                Manager.ResizeManager.MoveCurrentArea(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+            }
+            else if (Manager.IsCreating && !Rectangle.IsEmpty)
+            {
+                Point currentPosition = InputManager.MousePosition0Based;
+
+                if (Manager.IsCornerMoving)
+                {
+                    StartPosition = StartPosition.Add(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+                }
+                else if (Manager.IsProportionalResizing)
+                {
+                    if (NodeType == NodeType.Rectangle)
+                    {
+                        currentPosition = CaptureHelpers.SnapPositionToDegree(StartPosition, currentPosition, 90, 45);
+                    }
+                    else if (NodeType == NodeType.Line)
+                    {
+                        currentPosition = CaptureHelpers.SnapPositionToDegree(StartPosition, currentPosition, 45, 0);
+                    }
+                }
+                else if (Manager.IsSnapResizing)
+                {
+                    currentPosition = Manager.SnapPosition(StartPosition, currentPosition);
+                }
+
+                EndPosition = currentPosition;
+            }
         }
 
-        public virtual void OnShapeCreated()
+        public virtual void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        {
+            gp.AddRectangle(rect);
+        }
+
+        public virtual void OnConfigLoad()
         {
         }
 
-        public virtual void OnShapeDoubleClicked()
+        public virtual void OnConfigSave()
+        {
+        }
+
+        public virtual void OnDoubleClicked()
         {
         }
     }

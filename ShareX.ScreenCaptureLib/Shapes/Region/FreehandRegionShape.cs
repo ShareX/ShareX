@@ -47,7 +47,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void AddShapePath(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
         {
             int len = points.Count;
 

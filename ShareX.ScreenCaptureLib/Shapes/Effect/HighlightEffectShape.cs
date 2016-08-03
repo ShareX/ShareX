@@ -34,12 +34,12 @@ namespace ShareX.ScreenCaptureLib
 
         public Color HighlightColor { get; set; }
 
-        public override void UpdateShapeConfig()
+        public override void OnConfigLoad()
         {
             HighlightColor = AnnotationOptions.HighlightColor;
         }
 
-        public override void ApplyShapeConfig()
+        public override void OnConfigSave()
         {
             AnnotationOptions.HighlightColor = HighlightColor;
         }

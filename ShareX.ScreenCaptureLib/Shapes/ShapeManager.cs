@@ -52,7 +52,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (currentShape != null)
                 {
-                    currentShape.ApplyShapeConfig();
+                    currentShape.OnConfigSave();
                 }
 
                 OnCurrentShapeChanged(currentShape);
@@ -871,7 +871,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else if (CurrentShape != null && !IsCreating)
                 {
-                    CurrentShape.OnShapeDoubleClicked();
+                    CurrentShape.OnDoubleClicked();
                 }
             }
         }
@@ -1045,37 +1045,6 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null)
             {
                 shape.OnUpdate();
-
-                if (IsMoving)
-                {
-                    ResizeManager.MoveCurrentArea(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
-                }
-                else if (IsCreating && !CurrentRectangle.IsEmpty)
-                {
-                    Point currentPosition = InputManager.MousePosition0Based;
-
-                    if (IsCornerMoving)
-                    {
-                        shape.StartPosition = shape.StartPosition.Add(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
-                    }
-                    else if (IsProportionalResizing)
-                    {
-                        if (shape.NodeType == NodeType.Rectangle)
-                        {
-                            currentPosition = CaptureHelpers.SnapPositionToDegree(shape.StartPosition, currentPosition, 90, 45);
-                        }
-                        else if (shape.NodeType == NodeType.Line)
-                        {
-                            currentPosition = CaptureHelpers.SnapPositionToDegree(shape.StartPosition, currentPosition, 45, 0);
-                        }
-                    }
-                    else if (IsSnapResizing)
-                    {
-                        currentPosition = SnapPosition(shape.StartPosition, currentPosition);
-                    }
-
-                    shape.EndPosition = currentPosition;
-                }
             }
 
             CheckHover();
@@ -1161,7 +1130,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (wasCreating)
                         {
-                            shape.OnShapeCreated();
+                            shape.OnCreated();
                         }
 
                         SelectShape();
@@ -1255,7 +1224,7 @@ namespace ShareX.ScreenCaptureLib
 
             shape.Manager = this;
 
-            shape.UpdateShapeConfig();
+            shape.OnConfigLoad();
 
             return shape;
         }
@@ -1266,7 +1235,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null)
             {
-                shape.UpdateShapeConfig();
+                shape.OnConfigLoad();
             }
         }
 
@@ -1294,7 +1263,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private Point SnapPosition(Point posOnClick, Point posCurrent)
+        public Point SnapPosition(Point posOnClick, Point posCurrent)
         {
             Size currentSize = CaptureHelpers.CreateRectangle(posOnClick, posCurrent).Size;
             Vector2 vector = new Vector2(currentSize.Width, currentSize.Height);

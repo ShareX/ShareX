@@ -35,17 +35,17 @@ namespace ShareX.ScreenCaptureLib
 
         public float Radius { get; set; }
 
-        public override void UpdateShapeConfig()
+        public override void OnConfigLoad()
         {
             Radius = AnnotationOptions.RoundedRectangleRadius;
         }
 
-        public override void ApplyShapeConfig()
+        public override void OnConfigSave()
         {
             AnnotationOptions.RoundedRectangleRadius = (int)Radius;
         }
 
-        public override void AddShapePath(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
         {
             gp.AddRoundedRectangle(rect, Radius);
         }

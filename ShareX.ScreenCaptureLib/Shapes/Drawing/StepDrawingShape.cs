@@ -44,14 +44,14 @@ namespace ShareX.ScreenCaptureLib
             Rectangle = new Rectangle(0, 0, DefaultSize, DefaultSize);
         }
 
-        public override void UpdateShapeConfig()
+        public override void OnConfigLoad()
         {
             BorderColor = AnnotationOptions.StepBorderColor;
             BorderSize = AnnotationOptions.StepBorderSize;
             FillColor = AnnotationOptions.StepFillColor;
         }
 
-        public override void ApplyShapeConfig()
+        public override void OnConfigSave()
         {
             AnnotationOptions.StepBorderColor = BorderColor;
             AnnotationOptions.StepBorderSize = BorderSize;
@@ -113,7 +113,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void AddShapePath(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
         {
             gp.AddEllipse(rect);
         }
