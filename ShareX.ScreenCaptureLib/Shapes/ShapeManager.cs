@@ -1044,6 +1044,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null)
             {
+                shape.OnUpdate();
+
                 if (IsMoving)
                 {
                     ResizeManager.MoveCurrentArea(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
@@ -1215,6 +1217,9 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.RegionEllipse:
                     shape = new EllipseRegionShape();
+                    break;
+                case ShapeType.RegionFreehand:
+                    shape = new FreehandRegionShape();
                     break;
                 case ShapeType.DrawingRectangle:
                     shape = new RectangleDrawingShape();

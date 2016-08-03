@@ -165,6 +165,7 @@ namespace ShareX.ScreenCaptureLib
         protected override void Update()
         {
             base.Update();
+
             ShapeManager.Update();
         }
 

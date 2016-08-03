@@ -169,6 +169,7 @@ namespace ShareX.ScreenCaptureLib
         RegionRectangle,
         RegionRoundedRectangle,
         RegionEllipse,
+        RegionFreehand,
         DrawingRectangle,
         DrawingRoundedRectangle,
         DrawingEllipse,
