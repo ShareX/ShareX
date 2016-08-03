@@ -167,6 +167,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\layer-shape-curve.png" />
     <None Include="Resources\edit-vertical-alignment.png" />
     <None Include="Resources\edit-vertical-alignment-top.png" />
     <None Include="Resources\edit-alignment-right.png" />

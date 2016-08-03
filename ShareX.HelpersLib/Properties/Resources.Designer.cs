@@ -2501,6 +2501,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Region: Freehand.
+        /// </summary>
+        internal static string ShapeType_RegionFreehand {
+            get {
+                return ResourceManager.GetString("ShapeType_RegionFreehand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Region: Rectangle.
         /// </summary>
         internal static string ShapeType_RegionRectangle {

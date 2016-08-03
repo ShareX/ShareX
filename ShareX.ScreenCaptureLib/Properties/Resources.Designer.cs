@@ -337,6 +337,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_curve {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_curve", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap layer_shape_ellipse {
             get {
                 object obj = ResourceManager.GetObject("layer_shape_ellipse", resourceCulture);

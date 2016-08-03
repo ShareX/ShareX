@@ -312,6 +312,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.RegionEllipse:
                         img = Resources.layer_shape_ellipse_region;
                         break;
+                    case ShapeType.RegionFreehand:
+                        img = Resources.layer_shape_curve;
+                        break;
                     case ShapeType.DrawingRectangle:
                         img = Resources.layer_shape;
                         break;
