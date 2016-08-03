@@ -112,11 +112,7 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnUpdate()
         {
-            if (Manager.IsMoving)
-            {
-                Manager.ResizeManager.MoveCurrentArea(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
-            }
-            else if (Manager.IsCreating && !Rectangle.IsEmpty)
+            if (Manager.IsCreating && !Rectangle.IsEmpty)
             {
                 Point currentPosition = InputManager.MousePosition0Based;
 
@@ -141,6 +137,10 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 EndPosition = currentPosition;
+            }
+            else if (Manager.IsMoving)
+            {
+                Manager.ResizeManager.MoveCurrentArea(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
             }
         }
 

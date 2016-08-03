@@ -57,7 +57,8 @@ namespace ShareX.ScreenCaptureLib
         None,
         Rectangle,
         Line,
-        Point
+        Point,
+        CustomNoResize
     }
 
     internal enum NodePosition
