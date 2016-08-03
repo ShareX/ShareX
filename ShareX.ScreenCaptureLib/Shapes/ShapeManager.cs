@@ -1309,6 +1309,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     switch (CurrentShapeType)
                     {
+                        case ShapeType.RegionFreehand:
                         case ShapeType.DrawingLine:
                         case ShapeType.DrawingArrow:
                         case ShapeType.DrawingStep:
