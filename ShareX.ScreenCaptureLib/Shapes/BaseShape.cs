@@ -106,6 +106,16 @@ namespace ShareX.ScreenCaptureLib
             OnShapePathRequested(gp, rect);
         }
 
+        public virtual void Move(int x, int y)
+        {
+            Rectangle = Rectangle.LocationOffset(x, y);
+        }
+
+        public void Move(Point point)
+        {
+            Move(point.X, point.Y);
+        }
+
         public virtual void OnCreated()
         {
         }
@@ -140,7 +150,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Manager.IsMoving)
             {
-                Manager.ResizeManager.MoveCurrentArea(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+                Move(InputManager.MouseVelocity);
             }
         }
 

@@ -217,7 +217,9 @@ namespace ShareX.ScreenCaptureLib
             int y = isUpPressed && isDownPressed ? 0 : isDownPressed ? speed : isUpPressed ? -speed : 0;
             int x = isLeftPressed && isRightPressed ? 0 : isRightPressed ? speed : isLeftPressed ? -speed : 0;
 
-            if (shapeManager.CurrentShape == null || shapeManager.IsCreating)
+            BaseShape shape = shapeManager.CurrentShape;
+
+            if (shape == null || shapeManager.IsCreating)
             {
                 Cursor.Position = Cursor.Position.Add(x, y);
             }
@@ -225,7 +227,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (e.Control)
                 {
-                    MoveCurrentArea(x, y);
+                    shape.Move(x, y);
                 }
                 else
                 {
@@ -308,24 +310,6 @@ namespace ShareX.ScreenCaptureLib
                 {
                     nodes[(int)NodePosition.TopLeft].Position = shape.StartPosition;
                     nodes[(int)NodePosition.BottomRight].Position = shape.EndPosition;
-                }
-            }
-        }
-
-        public void MoveCurrentArea(int x, int y)
-        {
-            BaseShape shape = shapeManager.CurrentShape;
-
-            if (shape != null)
-            {
-                if (shape.NodeType == NodeType.Rectangle || shape.NodeType == NodeType.Point)
-                {
-                    shape.Rectangle = shape.Rectangle.LocationOffset(x, y);
-                }
-                else if (shape.NodeType == NodeType.Line)
-                {
-                    shape.StartPosition = shape.StartPosition.Add(x, y);
-                    shape.EndPosition = shape.EndPosition.Add(x, y);
                 }
             }
         }

@@ -61,5 +61,11 @@ namespace ShareX.ScreenCaptureLib
         {
             g.DrawLine(pen, StartPosition, EndPosition);
         }
+
+        public override void Move(int x, int y)
+        {
+            StartPosition = StartPosition.Add(x, y);
+            EndPosition = EndPosition.Add(x, y);
+        }
     }
 }
