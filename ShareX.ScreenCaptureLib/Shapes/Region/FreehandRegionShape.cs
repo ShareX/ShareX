@@ -51,12 +51,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Manager.IsMoving)
             {
-                for (int i = 0; i < points.Count; i++)
-                {
-                    points[i] = points[i].Add(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
-                }
-
-                Rectangle = Rectangle.LocationOffset(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+                Move(InputManager.MouseVelocity);
             }
         }
 
@@ -78,6 +73,16 @@ namespace ShareX.ScreenCaptureLib
 
                 gp.CloseFigure();
             }
+        }
+
+        public override void Move(int x, int y)
+        {
+            for (int i = 0; i < points.Count; i++)
+            {
+                points[i] = points[i].Add(x, y);
+            }
+
+            Rectangle = Rectangle.LocationOffset(x, y);
         }
     }
 }
