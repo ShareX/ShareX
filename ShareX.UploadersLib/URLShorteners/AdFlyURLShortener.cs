@@ -71,7 +71,7 @@ namespace ShareX.UploadersLib.URLShorteners
             args.Add("domain", "adf.ly");
             args.Add("url", url);
 
-            string response = SendRequest(HttpMethod.GET, "http://api.adf.ly/api.php", args);
+            string response = SendRequest(HttpMethod.GET, "https://api.adf.ly/api.php", args);
 
             if (!string.IsNullOrEmpty(response) && response != "error")
             {

@@ -42,14 +42,14 @@ namespace ShareX.UploadersLib.ImageUploaders
             arguments.Add("sfile", "Upload");
             arguments.Add("url", "");
 
-            UploadResult result = UploadData(stream, "http://imagebin.ca/upload.php", fileName, "f", arguments);
+            UploadResult result = UploadData(stream, "https://imagebin.ca/upload.php", fileName, "f", arguments);
 
             if (result.IsSuccess)
             {
                 Match match = Regex.Match(result.Response, @"(?<=ca/view/).+(?=\.html'>)");
                 if (match != null)
                 {
-                    string url = "http://imagebin.ca/img/" + match.Value + Path.GetExtension(fileName);
+                    string url = "https://imagebin.ca/img/" + match.Value + Path.GetExtension(fileName);
                     result.URL = url;
                 }
             }

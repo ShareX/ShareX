@@ -39,6 +39,6 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public class VgdURLShortener : IsgdURLShortener
     {
-        protected override string APIURL { get { return "http://v.gd/create.php"; } }
+        protected override string APIURL { get { return "https://v.gd/create.php"; } }
     }
 }

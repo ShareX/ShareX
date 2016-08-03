@@ -46,7 +46,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
     public sealed class Paste2 : TextUploader
     {
-        private const string APIURL = "http://paste2.org/new-paste";
+        private const string APIURL = "https://paste2.org/new-paste";
 
         private Paste2Settings settings;
 

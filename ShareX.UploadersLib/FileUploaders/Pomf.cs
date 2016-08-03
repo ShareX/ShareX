@@ -63,13 +63,13 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             //new PomfUploader("https://pomf.se/upload.php"),
             new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
-            new PomfUploader("http://comfy.moe/upload.php"),
+           // new PomfUploader("http://comfy.moe/upload.php"), // Site isn't up anymore?!?
             new PomfUploader("https://cocaine.ninja/upload.php"),
             new PomfUploader("https://cuntflaps.me/upload.php"),
             new PomfUploader("https://fluntcaps.me/upload.php"),
-            new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
+            new PomfUploader("https://g.zxq.co/upload.php", "https://y.zxq.co"),
             new PomfUploader("http://glop.me/upload.php", "http://gateway.glop.me/ipfs"),
-            new PomfUploader("http://kyaa.sg/upload.php", "https://r.kyaa.sg"),
+            new PomfUploader("https://kyaa.sg/upload.php", "https://r.kyaa.sg"),
             new PomfUploader("https://mixtape.moe/upload.php"),
             new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
             new PomfUploader("https://pomf.is/upload.php"),
