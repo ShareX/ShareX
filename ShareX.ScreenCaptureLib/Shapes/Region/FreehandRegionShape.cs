@@ -48,24 +48,31 @@ namespace ShareX.ScreenCaptureLib
                     Rectangle = Rectangle.AddPoint(point);
                 }
             }
+            else if (Manager.IsMoving)
+            {
+                for (int i = 0; i < points.Count; i++)
+                {
+                    points[i] = points[i].Add(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+                }
+
+                Rectangle = Rectangle.LocationOffset(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+            }
         }
 
         public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
         {
-            int len = points.Count;
-
-            if (len > 1)
+            if (points.Count > 1)
             {
                 gp.StartFigure();
 
-                for (int i = 0; i < len - 1; i++)
+                for (int i = 0; i < points.Count - 1; i++)
                 {
                     gp.AddLine(points[i], points[i + 1]);
                 }
 
-                if (len > 2)
+                if (points.Count > 2)
                 {
-                    gp.AddLine(points[len - 1], points[0]);
+                    gp.AddLine(points[points.Count - 1], points[0]);
                 }
 
                 gp.CloseFigure();
