@@ -163,7 +163,8 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                return CurrentShapeType == ShapeType.RegionRectangle || CurrentShapeType == ShapeType.RegionRoundedRectangle || CurrentShapeType == ShapeType.RegionEllipse;
+                return CurrentShapeType == ShapeType.RegionRectangle || CurrentShapeType == ShapeType.RegionRoundedRectangle || CurrentShapeType == ShapeType.RegionEllipse ||
+                    CurrentShapeType == ShapeType.RegionFreehand;
             }
         }
 
