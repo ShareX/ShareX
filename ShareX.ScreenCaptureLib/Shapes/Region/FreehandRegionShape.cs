@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -42,7 +43,9 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (points.Count == 0 || points.Last() != InputManager.MousePosition0Based)
                 {
-                    points.Add(InputManager.MousePosition0Based);
+                    Point point = InputManager.MousePosition0Based;
+                    points.Add(point);
+                    Rectangle = Rectangle.AddPoint(point);
                 }
             }
         }
@@ -53,6 +56,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (len > 1)
             {
+                gp.StartFigure();
+
                 if (len > 2)
                 {
                     for (int i = 0; i < len - 1; i++)
@@ -63,7 +68,7 @@ namespace ShareX.ScreenCaptureLib
 
                 gp.AddLine(points[len - 1], points[0]);
 
-                Rectangle = Rectangle.Round(gp.GetBounds());
+                gp.CloseFigure();
             }
         }
     }

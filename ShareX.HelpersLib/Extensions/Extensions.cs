@@ -521,5 +521,10 @@ namespace ShareX.HelpersLib
 
             return result;
         }
+
+        public static Rectangle AddPoint(this Rectangle rect, Point point)
+        {
+            return Rectangle.Union(rect, new Rectangle(point, new Size(1, 1)));
+        }
     }
 }
