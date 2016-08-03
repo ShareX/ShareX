@@ -311,9 +311,6 @@
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Загрузка папки</value>
   </data>
-  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>Захват области произвольной формы</value>
-  </data>
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>Клиент FTP</value>
   </data>
@@ -557,9 +554,6 @@
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Загрузка</value>
-  </data>
-  <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
-    <value>Захват экрана</value>
   </data>
   <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
     <value>Инструменты</value>

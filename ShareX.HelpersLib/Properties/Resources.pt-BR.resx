@@ -338,9 +338,6 @@ Tamanho do arquivo: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Upload de pasta</value>
   </data>
-  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>Capturar região à mão livre</value>
-  </data>
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>Cliente FTP</value>
   </data>
@@ -581,9 +578,6 @@ Você gostaria de baixar e instalar?</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Upload</value>
-  </data>
-  <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
-    <value>Capturar tela</value>
   </data>
   <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
     <value>Ferramentas</value>

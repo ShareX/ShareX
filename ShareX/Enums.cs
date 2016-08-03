@@ -132,7 +132,6 @@ namespace ShareX
         ActiveWindow,
         Rectangle,
         Polygon,
-        Freehand,
         CustomRegion,
         LastRegion
     }
@@ -166,7 +165,6 @@ namespace ShareX
         RectangleTransparent,
         RectangleAnnotate,
         PolygonRegion,
-        FreeHandRegion,
         CustomRegion,
         LastRegion,
         ScrollingCapture,

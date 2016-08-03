@@ -1024,24 +1024,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture freehand region.
-        /// </summary>
-        internal static string HotkeyType_FreeHandRegion {
-            get {
-                return ResourceManager.GetString("HotkeyType_FreeHandRegion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Screen capture.
-        /// </summary>
-        internal static string HotkeyType_FreeHandRegion_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_FreeHandRegion_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to FTP client.
         /// </summary>
         internal static string HotkeyType_FTPClient {

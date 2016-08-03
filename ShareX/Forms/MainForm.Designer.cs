@@ -55,7 +55,6 @@
             this.tsmiRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRectangleTransparent = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPolygon = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiFreeHand = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLastRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
@@ -176,7 +175,6 @@
             this.tsmiTrayRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRectangleTransparent = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayPolygon = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayFreeHand = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayLastRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
@@ -434,7 +432,6 @@
             this.tsmiRectangleLight,
             this.tsmiRectangleTransparent,
             this.tsmiPolygon,
-            this.tsmiFreeHand,
             this.tsmiLastRegion,
             this.tsmiScreenRecordingFFmpeg,
             this.tsmiScreenRecordingGIF,
@@ -493,13 +490,6 @@
             this.tsmiPolygon.Name = "tsmiPolygon";
             resources.ApplyResources(this.tsmiPolygon, "tsmiPolygon");
             this.tsmiPolygon.Click += new System.EventHandler(this.tsmiPolygon_Click);
-            // 
-            // tsmiFreeHand
-            // 
-            this.tsmiFreeHand.Image = global::ShareX.Properties.Resources.layer_shape_curve;
-            this.tsmiFreeHand.Name = "tsmiFreeHand";
-            resources.ApplyResources(this.tsmiFreeHand, "tsmiFreeHand");
-            this.tsmiFreeHand.Click += new System.EventHandler(this.tsmiFreeHand_Click);
             // 
             // tsmiLastRegion
             // 
@@ -1353,7 +1343,6 @@
             this.tsmiTrayRectangleLight,
             this.tsmiTrayRectangleTransparent,
             this.tsmiTrayPolygon,
-            this.tsmiTrayFreeHand,
             this.tsmiTrayLastRegion,
             this.tsmiTrayScreenRecordingFFmpeg,
             this.tsmiTrayScreenRecordingGIF,
@@ -1412,13 +1401,6 @@
             this.tsmiTrayPolygon.Name = "tsmiTrayPolygon";
             resources.ApplyResources(this.tsmiTrayPolygon, "tsmiTrayPolygon");
             this.tsmiTrayPolygon.Click += new System.EventHandler(this.tsmiTrayPolygon_Click);
-            // 
-            // tsmiTrayFreeHand
-            // 
-            this.tsmiTrayFreeHand.Image = global::ShareX.Properties.Resources.layer_shape_curve;
-            this.tsmiTrayFreeHand.Name = "tsmiTrayFreeHand";
-            resources.ApplyResources(this.tsmiTrayFreeHand, "tsmiTrayFreeHand");
-            this.tsmiTrayFreeHand.Click += new System.EventHandler(this.tsmiTrayFreeHand_Click);
             // 
             // tsmiTrayLastRegion
             // 
@@ -1965,7 +1947,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiFullscreen;
         private System.Windows.Forms.ToolStripMenuItem tsmiRectangle;
         private System.Windows.Forms.ToolStripMenuItem tsmiPolygon;
-        private System.Windows.Forms.ToolStripMenuItem tsmiFreeHand;
         private System.Windows.Forms.ToolStripMenuItem tsmiWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayHistory;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayAbout;
@@ -1975,7 +1956,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangle;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayPolygon;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayFreeHand;
         private System.Windows.Forms.ToolStripMenuItem tsmiLastRegion;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayLastRegion;
         private HelpersLib.SplitContainerCustomSplitter scMain;

@@ -314,9 +314,6 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Tải lên thư mục</value>
   </data>
-  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>Chụp lại vùng tạo bằng tay</value>
-  </data>
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>Trình FTP</value>
   </data>
@@ -557,9 +554,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Tải lên</value>
-  </data>
-  <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
-    <value>Chụp màn hình</value>
   </data>
   <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
     <value>Công cụ</value>

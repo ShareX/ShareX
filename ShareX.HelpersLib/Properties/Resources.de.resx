@@ -308,9 +308,6 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Ordner hochladen</value>
   </data>
-  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>Freihandregion aufnehmen</value>
-  </data>
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>FTP Gerät</value>
   </data>
@@ -554,9 +551,6 @@ Möchtest du sie herunterladen und installieren?</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Hochladen</value>
-  </data>
-  <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
   </data>
   <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
     <value>Werkzeuge</value>

@@ -58,15 +58,15 @@ namespace ShareX.ScreenCaptureLib
             {
                 gp.StartFigure();
 
-                if (len > 2)
+                for (int i = 0; i < len - 1; i++)
                 {
-                    for (int i = 0; i < len - 1; i++)
-                    {
-                        gp.AddLine(points[i], points[i + 1]);
-                    }
+                    gp.AddLine(points[i], points[i + 1]);
                 }
 
-                gp.AddLine(points[len - 1], points[0]);
+                if (len > 2)
+                {
+                    gp.AddLine(points[len - 1], points[0]);
+                }
 
                 gp.CloseFigure();
             }

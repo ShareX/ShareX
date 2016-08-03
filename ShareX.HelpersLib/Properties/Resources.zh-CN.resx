@@ -308,9 +308,6 @@
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>上传文件夹</value>
   </data>
-  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>捕捉手绘区域</value>
-  </data>
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>FTP客户端</value>
   </data>
@@ -554,9 +551,6 @@
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>上传</value>
-  </data>
-  <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
-    <value>屏幕捕捉</value>
   </data>
   <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
     <value>工具</value>

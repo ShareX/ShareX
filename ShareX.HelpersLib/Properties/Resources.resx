@@ -414,9 +414,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Upload folder</value>
   </data>
-  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>Capture freehand region</value>
-  </data>
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>FTP client</value>
   </data>
@@ -660,9 +657,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Upload</value>
-  </data>
-  <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
-    <value>Screen capture</value>
   </data>
   <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
     <value>Tools</value>

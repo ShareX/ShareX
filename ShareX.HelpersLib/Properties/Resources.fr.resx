@@ -308,9 +308,6 @@ Taille du fichier : {2:n0} / {3:n0} Ko</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Mise en ligne d'un dossier</value>
   </data>
-  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>Capturer une région à main levée</value>
-  </data>
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>Client FTP</value>
   </data>
@@ -554,9 +551,6 @@ Voulez-vous la télécharger et l'installer ?</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Mise en ligne</value>
-  </data>
-  <data name="HotkeyType_FreeHandRegion_Category" xml:space="preserve">
-    <value>Capture d'écran</value>
   </data>
   <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
     <value>Outils</value>

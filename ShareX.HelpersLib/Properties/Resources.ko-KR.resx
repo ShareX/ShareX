@@ -377,9 +377,6 @@
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>폴더 업로드</value>
   </data>
-  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>자유선 영역 촬영</value>
-  </data>
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>FTP 클라이언트</value>
   </data>

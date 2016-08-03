@@ -1843,9 +1843,6 @@ namespace ShareX
                 case HotkeyType.PolygonRegion:
                     CaptureScreenshot(CaptureType.Polygon, safeTaskSettings, false);
                     break;
-                case HotkeyType.FreeHandRegion:
-                    CaptureScreenshot(CaptureType.Freehand, safeTaskSettings, false);
-                    break;
                 case HotkeyType.CustomRegion:
                     CaptureScreenshot(CaptureType.CustomRegion, safeTaskSettings, false);
                     break;
@@ -1977,7 +1974,6 @@ namespace ShareX
                     break;
                 case CaptureType.Rectangle:
                 case CaptureType.Polygon:
-                case CaptureType.Freehand:
                     CaptureRegion(captureType, taskSettings, autoHideForm);
                     break;
                 case CaptureType.CustomRegion:
@@ -2060,7 +2056,7 @@ namespace ShareX
 
         private bool IsRegionCapture(CaptureType captureType)
         {
-            return captureType.HasFlagAny(CaptureType.Rectangle, CaptureType.Polygon, CaptureType.Freehand, CaptureType.LastRegion);
+            return captureType.HasFlagAny(CaptureType.Rectangle, CaptureType.Polygon, CaptureType.LastRegion);
         }
 
         private void CaptureActiveWindow(TaskSettings taskSettings, bool autoHideForm = true)
@@ -2146,9 +2142,6 @@ namespace ShareX
                     break;
                 case CaptureType.Polygon:
                     form = new PolygonRegionForm();
-                    break;
-                case CaptureType.Freehand:
-                    form = new FreeHandRegionForm();
                     break;
             }
 
@@ -2451,11 +2444,6 @@ namespace ShareX
             CaptureScreenshot(CaptureType.Polygon);
         }
 
-        private void tsmiFreeHand_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.Freehand);
-        }
-
         private void tsmiLastRegion_Click(object sender, EventArgs e)
         {
             CaptureScreenshot(CaptureType.LastRegion);
@@ -2533,11 +2521,6 @@ namespace ShareX
         private void tsmiTrayPolygon_Click(object sender, EventArgs e)
         {
             CaptureScreenshot(CaptureType.Polygon, null, false);
-        }
-
-        private void tsmiTrayFreeHand_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.Freehand, null, false);
         }
 
         private void tsmiTrayLastRegion_Click(object sender, EventArgs e)

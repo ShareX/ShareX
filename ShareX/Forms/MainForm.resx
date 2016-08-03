@@ -495,12 +495,6 @@
   <data name="tsmiPolygon.Text" xml:space="preserve">
     <value>Polygon</value>
   </data>
-  <data name="tsmiFreeHand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>Freehand</value>
-  </data>
   <data name="tsmiLastRegion.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
   </data>
@@ -1314,12 +1308,6 @@
   <data name="tsmiTrayPolygon.Text" xml:space="preserve">
     <value>Polygon</value>
   </data>
-  <data name="tsmiTrayFreeHand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>Freehand</value>
-  </data>
   <data name="tsmiTrayLastRegion.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
   </data>
@@ -1873,12 +1861,6 @@
     <value>tsmiPolygon</value>
   </data>
   <data name="&gt;&gt;tsmiPolygon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiFreeHand.Name" xml:space="preserve">
-    <value>tsmiFreeHand</value>
-  </data>
-  <data name="&gt;&gt;tsmiFreeHand.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiLastRegion.Name" xml:space="preserve">
@@ -2587,12 +2569,6 @@
     <value>tsmiTrayPolygon</value>
   </data>
   <data name="&gt;&gt;tsmiTrayPolygon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayFreeHand.Name" xml:space="preserve">
-    <value>tsmiTrayFreeHand</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayFreeHand.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayLastRegion.Name" xml:space="preserve">
