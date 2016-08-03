@@ -47,7 +47,7 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            string uploadUrl = "http://www.imgland.net/process.php?subAPI=mainsite";
+            string uploadUrl = "https://www.imgland.net/process.php?subAPI=mainsite";
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("usubmit", "true");
 
