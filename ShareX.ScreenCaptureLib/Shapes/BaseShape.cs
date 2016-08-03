@@ -116,6 +116,18 @@ namespace ShareX.ScreenCaptureLib
             Move(point.X, point.Y);
         }
 
+        public virtual void Resize(int x, int y, bool fromBottomRight)
+        {
+            if (fromBottomRight)
+            {
+                Rectangle = Rectangle.SizeOffset(x, y);
+            }
+            else
+            {
+                Rectangle = Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
+            }
+        }
+
         public virtual void OnCreated()
         {
         }

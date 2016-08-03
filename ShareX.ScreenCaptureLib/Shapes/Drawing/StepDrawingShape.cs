@@ -117,5 +117,9 @@ namespace ShareX.ScreenCaptureLib
         {
             gp.AddEllipse(rect);
         }
+
+        public override void Resize(int x, int y, bool fromBottomRight)
+        {
+        }
     }
 }

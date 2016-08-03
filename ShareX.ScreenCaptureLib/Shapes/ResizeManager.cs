@@ -231,7 +231,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    ResizeCurrentArea(x, y, IsBottomRightResizing);
+                    shape.Resize(x, y, IsBottomRightResizing);
                 }
             }
         }
@@ -310,37 +310,6 @@ namespace ShareX.ScreenCaptureLib
                 {
                     nodes[(int)NodePosition.TopLeft].Position = shape.StartPosition;
                     nodes[(int)NodePosition.BottomRight].Position = shape.EndPosition;
-                }
-            }
-        }
-
-        public void ResizeCurrentArea(int x, int y, bool isBottomRightMoving)
-        {
-            BaseShape shape = shapeManager.CurrentShape;
-
-            if (shape != null)
-            {
-                if (shape.NodeType == NodeType.Rectangle)
-                {
-                    if (isBottomRightMoving)
-                    {
-                        shape.Rectangle = shape.Rectangle.SizeOffset(x, y);
-                    }
-                    else
-                    {
-                        shape.Rectangle = shape.Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
-                    }
-                }
-                else if (shape.NodeType == NodeType.Line)
-                {
-                    if (isBottomRightMoving)
-                    {
-                        shape.StartPosition = shape.StartPosition.Add(x, y);
-                    }
-                    else
-                    {
-                        shape.EndPosition = shape.EndPosition.Add(x, y);
-                    }
                 }
             }
         }

@@ -67,5 +67,17 @@ namespace ShareX.ScreenCaptureLib
             StartPosition = StartPosition.Add(x, y);
             EndPosition = EndPosition.Add(x, y);
         }
+
+        public override void Resize(int x, int y, bool fromBottomRight)
+        {
+            if (fromBottomRight)
+            {
+                StartPosition = StartPosition.Add(x, y);
+            }
+            else
+            {
+                EndPosition = EndPosition.Add(x, y);
+            }
+        }
     }
 }
