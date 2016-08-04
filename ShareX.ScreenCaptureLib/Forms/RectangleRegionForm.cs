@@ -72,6 +72,43 @@ namespace ShareX.ScreenCaptureLib
             MouseDown += RectangleRegion_MouseDown;
         }
 
+        public override void Prepare(Screenshot screenshot)
+        {
+            base.Prepare(screenshot);
+
+            if (Config != null)
+            {
+                ShapeManager = new ShapeManager(this);
+                ShapeManager.WindowCaptureMode = Config.DetectWindows;
+                ShapeManager.IncludeControls = Config.DetectControls;
+
+                if (Mode == RectangleRegionMode.Annotation)
+                {
+                    ShapeManager.CurrentShapeTypeChanged += ShapeManager_CurrentShapeTypeChanged;
+
+                    ShapeManager_CurrentShapeTypeChanged(ShapeManager.CurrentShapeType);
+                }
+
+                if (Mode == RectangleRegionMode.OneClick || ShapeManager.WindowCaptureMode)
+                {
+                    IntPtr handle = Handle;
+
+                    TaskEx.Run(() =>
+                    {
+                        WindowsRectangleList wla = new WindowsRectangleList();
+                        wla.IgnoreHandle = handle;
+                        wla.IncludeChildWindows = ShapeManager.IncludeControls;
+                        ShapeManager.Windows = wla.GetWindowInfoListAsync(5000);
+                    });
+                }
+
+                if (Config.UseCustomInfoText || Mode == RectangleRegionMode.ScreenColorPicker)
+                {
+                    bmpBackgroundImage = new Bitmap(backgroundImage);
+                }
+            }
+        }
+
         private void ShapeManager_CurrentShapeTypeChanged(ShapeType shapeType)
         {
             shapeTypeTextAnimation.Start(shapeType.GetLocalizedDescription());
@@ -120,41 +157,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             ClipboardHelpers.CopyText(clipboardText);
-        }
-
-        public override void Prepare(Screenshot screenshot)
-        {
-            base.Prepare(screenshot);
-
-            if (Config != null)
-            {
-                ShapeManager = new ShapeManager(this);
-                ShapeManager.WindowCaptureMode = Config.DetectWindows;
-                ShapeManager.IncludeControls = Config.DetectControls;
-
-                if (Mode == RectangleRegionMode.Annotation)
-                {
-                    ShapeManager.CurrentShapeTypeChanged += ShapeManager_CurrentShapeTypeChanged;
-                }
-
-                if (Mode == RectangleRegionMode.OneClick || ShapeManager.WindowCaptureMode)
-                {
-                    IntPtr handle = Handle;
-
-                    TaskEx.Run(() =>
-                    {
-                        WindowsRectangleList wla = new WindowsRectangleList();
-                        wla.IgnoreHandle = handle;
-                        wla.IncludeChildWindows = ShapeManager.IncludeControls;
-                        ShapeManager.Windows = wla.GetWindowInfoListAsync(5000);
-                    });
-                }
-
-                if (Config.UseCustomInfoText || Mode == RectangleRegionMode.ScreenColorPicker)
-                {
-                    bmpBackgroundImage = new Bitmap(backgroundImage);
-                }
-            }
         }
 
         public override WindowInfo GetWindowInfo()
