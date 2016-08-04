@@ -526,5 +526,24 @@ namespace ShareX.HelpersLib
         {
             return Rectangle.Union(rect, new Rectangle(point, new Size(1, 1)));
         }
+
+        public static Rectangle CreateRectangle(this IEnumerable<Point> points)
+        {
+            Rectangle result = Rectangle.Empty;
+
+            foreach (Point point in points)
+            {
+                if (result.IsEmpty)
+                {
+                    result = new Rectangle(point, new Size(1, 1));
+                }
+                else
+                {
+                    result = result.AddPoint(point);
+                }
+            }
+
+            return result;
+        }
     }
 }
