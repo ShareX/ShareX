@@ -45,11 +45,12 @@ namespace ShareX.ScreenCaptureLib
             {
                 Point pos = InputManager.MousePosition0Based;
 
-                if (points.Count == 0 || (!Manager.IsProportionalResizing && points.Last() != pos))
+                if (points.Count == 0 || (!Manager.IsProportionalResizing && points[points.Count - 1] != pos))
                 {
                     points.Add(pos);
                 }
-                else if (Manager.IsProportionalResizing)
+
+                if (Manager.IsProportionalResizing)
                 {
                     if (!isPolygonMode)
                     {
