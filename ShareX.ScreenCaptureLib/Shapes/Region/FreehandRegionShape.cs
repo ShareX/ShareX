@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.RegionFreehand;
         public override NodeType NodeType { get; } = NodeType.CustomNoResize;
 
-        private List<Point> points = new List<Point>(128);
+        private List<Point> points = new List<Point>();
 
         public override void OnUpdate()
         {
@@ -64,11 +64,6 @@ namespace ShareX.ScreenCaptureLib
                 for (int i = 0; i < points.Count - 1; i++)
                 {
                     gp.AddLine(points[i], points[i + 1]);
-                }
-
-                if (points.Count > 2)
-                {
-                    gp.AddLine(points[points.Count - 1], points[0]);
                 }
 
                 gp.CloseFigure();
