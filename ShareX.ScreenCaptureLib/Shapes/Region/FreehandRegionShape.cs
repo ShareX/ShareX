@@ -37,6 +37,7 @@ namespace ShareX.ScreenCaptureLib
         public override NodeType NodeType { get; } = NodeType.CustomNoResize;
 
         private List<Point> points = new List<Point>();
+        private bool isPolygonMode;
 
         public override void OnUpdate()
         {
@@ -50,8 +51,15 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else if (Manager.IsProportionalResizing)
                 {
-                    points[points.Count - 1] = InputManager.MousePosition0Based;
+                    if (!isPolygonMode)
+                    {
+                        points.Add(pos);
+                    }
+
+                    points[points.Count - 1] = pos;
                 }
+
+                isPolygonMode = Manager.IsProportionalResizing;
 
                 Rectangle = points.CreateRectangle();
             }
