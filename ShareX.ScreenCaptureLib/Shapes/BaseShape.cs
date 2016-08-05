@@ -88,6 +88,8 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public virtual bool ShowNodes { get; } = true;
+
         internal ShapeManager Manager { get; set; }
 
         private Rectangle tempNodeRect;

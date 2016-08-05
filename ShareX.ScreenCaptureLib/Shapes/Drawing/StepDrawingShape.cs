@@ -36,6 +36,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override ShapeType ShapeType { get; } = ShapeType.DrawingStep;
         public override NodeType NodeType { get; } = NodeType.Point;
+        public override bool ShowNodes { get; } = false;
 
         public int Number { get; set; }
 

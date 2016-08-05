@@ -1517,7 +1517,7 @@ namespace ShareX.ScreenCaptureLib
         {
             BaseShape shape = CurrentShape;
 
-            if (shape != null && !CurrentRectangle.IsEmpty && shape.NodeType != NodeType.Point)
+            if (shape != null && shape.ShowNodes && !CurrentRectangle.IsEmpty)
             {
                 NodesVisible = true;
             }
@@ -1586,7 +1586,7 @@ namespace ShareX.ScreenCaptureLib
         {
             BaseShape shape = CurrentShape;
 
-            if (shape != null && NodesVisible && Nodes != null)
+            if (shape != null && NodesVisible)
             {
                 if (InputManager.IsMouseDown(MouseButtons.Left))
                 {
