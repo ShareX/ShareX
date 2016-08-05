@@ -179,8 +179,8 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool IsProportionalResizing { get; private set; }
         public bool IsCornerMoving { get; private set; }
+        public bool IsProportionalResizing { get; private set; }
         public bool IsSnapResizing { get; private set; }
 
         public List<SimpleWindowInfo> Windows { get; set; }
@@ -808,7 +808,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_LostFocus(object sender, EventArgs e)
         {
-            IsProportionalResizing = IsCornerMoving = IsSnapResizing = false;
+            IsCornerMoving = IsProportionalResizing = IsSnapResizing = false;
         }
 
         private void form_MouseDown(object sender, MouseEventArgs e)
@@ -918,15 +918,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                     else
                     {
-                        if (nodeManager.Visible)
-                        {
-                            DeselectShape();
-                        }
-
-                        if (CurrentShape == null || CurrentShape != GetShapeIntersect())
-                        {
-                            StartRegionSelection();
-                        }
+                        StartRegionSelection();
                     }
                     break;
                 case Keys.ControlKey:
@@ -1047,7 +1039,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                     else
                     {
-                        shape.Resize(x, y, e.Alt);
+                        shape.Resize(x, y, !e.Alt);
                     }
                 }
             }
