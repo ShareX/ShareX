@@ -1201,7 +1201,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Point pos = InputManager.MousePosition0Based;
 
-                if (shape.NodeType == NodeType.Point)
+                if (shape.FixedSize)
                 {
                     IsMoving = true;
                     shape.Rectangle = new Rectangle(new Point(pos.X - shape.Rectangle.Width / 2, pos.Y - shape.Rectangle.Height / 2), shape.Rectangle.Size);
@@ -1517,7 +1517,7 @@ namespace ShareX.ScreenCaptureLib
         {
             BaseShape shape = CurrentShape;
 
-            if (shape != null && shape.ShowNodes && !CurrentRectangle.IsEmpty)
+            if (shape != null && !shape.FixedSize && !CurrentRectangle.IsEmpty)
             {
                 NodesVisible = true;
             }

@@ -36,8 +36,6 @@ namespace ShareX.ScreenCaptureLib
 
         public abstract ShapeType ShapeType { get; }
 
-        public virtual NodeType NodeType { get; } = NodeType.Rectangle;
-
         public Rectangle Rectangle { get; set; }
 
         protected AnnotationOptions AnnotationOptions
@@ -88,7 +86,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public virtual bool ShowNodes { get; } = true;
+        public virtual bool FixedSize { get; } = false;
 
         internal ShapeManager Manager { get; set; }
 
@@ -149,14 +147,20 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else if (Manager.IsProportionalResizing)
                 {
-                    if (NodeType == NodeType.Rectangle)
+                    float degree, startDegree;
+
+                    if (ShapeType == ShapeType.DrawingLine || ShapeType == ShapeType.DrawingArrow)
                     {
-                        pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, 90, 45);
+                        degree = 45;
+                        startDegree = 0;
                     }
-                    else if (NodeType == NodeType.Line)
+                    else
                     {
-                        pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, 45, 0);
+                        degree = 90;
+                        startDegree = 45;
                     }
+
+                    pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, degree, startDegree);
                 }
                 else if (Manager.IsSnapResizing)
                 {

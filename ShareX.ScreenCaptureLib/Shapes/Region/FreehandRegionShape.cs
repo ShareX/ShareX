@@ -33,7 +33,6 @@ namespace ShareX.ScreenCaptureLib
     public class FreehandRegionShape : BaseRegionShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.RegionFreehand;
-        public override NodeType NodeType { get; } = NodeType.Freehand;
 
         public Point LastPosition
         {
