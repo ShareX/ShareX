@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class ResizeManager
+    public class NodeManager
     {
         private bool visible;
 
@@ -96,7 +96,7 @@ namespace ShareX.ScreenCaptureLib
         private NodeObject[] nodes;
         private Rectangle tempRect;
 
-        public ResizeManager(BaseRegionForm form, ShapeManager shapeManager)
+        public NodeManager(BaseRegionForm form, ShapeManager shapeManager)
         {
             this.shapeManager = shapeManager;
 

@@ -168,7 +168,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public ResizeManager ResizeManager { get; private set; }
         public bool IsCreating { get; set; }
         public bool IsMoving { get; private set; }
 
@@ -176,7 +175,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                return ResizeManager.IsResizing;
+                return nodeManager.IsResizing;
             }
         }
 
@@ -202,6 +201,7 @@ namespace ShareX.ScreenCaptureLib
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
         private RectangleRegionForm form;
+        private NodeManager nodeManager;
         private ContextMenuStrip cmsContextMenu;
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
         private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor;
@@ -213,7 +213,7 @@ namespace ShareX.ScreenCaptureLib
             this.form = form;
             Config = form.Config;
 
-            ResizeManager = new ResizeManager(form, this);
+            nodeManager = new NodeManager(form, this);
 
             form.LostFocus += form_LostFocus;
             form.MouseDown += form_MouseDown;
@@ -918,7 +918,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                     else
                     {
-                        if (ResizeManager.Visible)
+                        if (nodeManager.Visible)
                         {
                             DeselectShape();
                         }
@@ -1142,12 +1142,12 @@ namespace ShareX.ScreenCaptureLib
 
             CheckHover();
 
-            ResizeManager.Update();
+            nodeManager.Update();
         }
 
         private void RegionSelection(Point position)
         {
-            if (ResizeManager.IsCursorOnNode)
+            if (nodeManager.IsCursorOnNode)
             {
                 return;
             }
@@ -1386,7 +1386,7 @@ namespace ShareX.ScreenCaptureLib
         {
             CurrentHoverRectangle = Rectangle.Empty;
 
-            if (!ResizeManager.IsCursorOnNode && !IsCreating && !IsMoving && !IsResizing)
+            if (!nodeManager.IsCursorOnNode && !IsCreating && !IsMoving && !IsResizing)
             {
                 BaseShape shape = GetShapeIntersect();
 
@@ -1484,14 +1484,14 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null && !CurrentRectangle.IsEmpty && shape.NodeType != NodeType.Point)
             {
-                ResizeManager.Visible = true;
+                nodeManager.Visible = true;
             }
         }
 
         private void DeselectShape()
         {
             CurrentShape = null;
-            ResizeManager.Visible = false;
+            nodeManager.Visible = false;
         }
 
         private void DeleteCurrentShape()
