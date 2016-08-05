@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class NodeManager
+    internal class NodeManager
     {
         private bool visible;
 

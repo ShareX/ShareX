@@ -39,8 +39,6 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle Rectangle { get; set; }
 
-        public ShapeManager Manager { get; set; }
-
         protected AnnotationOptions AnnotationOptions
         {
             get
@@ -89,6 +87,8 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        internal ShapeManager Manager { get; set; }
+
         public virtual bool Intersects(Point position)
         {
             return Rectangle.Contains(position);
@@ -134,7 +134,7 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnUpdate()
         {
-            if (Manager.IsCreating && !Rectangle.IsEmpty)
+            if (Manager.IsCreating)
             {
                 Point pos = InputManager.MousePosition0Based;
 

@@ -39,8 +39,6 @@ namespace ShareX.ScreenCaptureLib
     {
         public RectangleRegionMode Mode { get; private set; }
 
-        public ShapeManager ShapeManager { get; private set; }
-
         public Point CurrentPosition { get; private set; }
 
         public Color CurrentColor
@@ -59,6 +57,8 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public SimpleWindowInfo SelectedWindow { get; private set; }
+
+        internal ShapeManager ShapeManager { get; private set; }
 
         private ColorBlinkAnimation colorBlinkAnimation = new ColorBlinkAnimation();
         private TextAnimation shapeTypeTextAnimation = new TextAnimation(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.5));

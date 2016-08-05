@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class ShapeManager
+    internal class ShapeManager
     {
         public List<BaseShape> Shapes { get; private set; } = new List<BaseShape>();
 
@@ -817,7 +817,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (!IsCreating)
                 {
-                    RegionSelection(InputManager.MousePosition0Based);
+                    StartRegionSelection();
                 }
             }
         }
@@ -925,7 +925,7 @@ namespace ShareX.ScreenCaptureLib
 
                         if (CurrentShape == null || CurrentShape != GetShapeIntersect())
                         {
-                            RegionSelection(InputManager.MousePosition0Based);
+                            StartRegionSelection();
                         }
                     }
                     break;
@@ -1145,7 +1145,7 @@ namespace ShareX.ScreenCaptureLib
             nodeManager.Update();
         }
 
-        private void RegionSelection(Point position)
+        private void StartRegionSelection()
         {
             if (nodeManager.IsCursorOnNode)
             {
@@ -1166,20 +1166,22 @@ namespace ShareX.ScreenCaptureLib
 
                 shape = AddShape();
 
+                Point pos = InputManager.MousePosition0Based;
+
                 if (shape.NodeType == NodeType.Point)
                 {
                     IsMoving = true;
-                    shape.Rectangle = new Rectangle(new Point(position.X - shape.Rectangle.Width / 2, position.Y - shape.Rectangle.Height / 2), shape.Rectangle.Size);
+                    shape.Rectangle = new Rectangle(new Point(pos.X - shape.Rectangle.Width / 2, pos.Y - shape.Rectangle.Height / 2), shape.Rectangle.Size);
                 }
                 else if (Config.IsFixedSize && IsCurrentShapeTypeRegion)
                 {
                     IsMoving = true;
-                    shape.Rectangle = new Rectangle(new Point(position.X - Config.FixedSize.Width / 2, position.Y - Config.FixedSize.Height / 2), Config.FixedSize);
+                    shape.Rectangle = new Rectangle(new Point(pos.X - Config.FixedSize.Width / 2, pos.Y - Config.FixedSize.Height / 2), Config.FixedSize);
                 }
                 else
                 {
                     IsCreating = true;
-                    shape.StartPosition = shape.EndPosition = position;
+                    shape.StartPosition = shape.EndPosition = pos;
                 }
             }
         }
