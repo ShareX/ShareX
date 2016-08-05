@@ -30,35 +30,6 @@ namespace ShareX.ScreenCaptureLib
 {
     public static class InputManager
     {
-        private static MouseState mouseState = new MouseState();
-        private static MouseState oldMouseState;
-
-        public static void Update()
-        {
-            oldMouseState = mouseState;
-            mouseState.Update();
-        }
-
-        public static bool IsMouseDown(MouseButtons button)
-        {
-            return mouseState.Buttons.HasFlag(button);
-        }
-
-        public static bool IsBeforeMouseDown(MouseButtons button)
-        {
-            return oldMouseState.Buttons.HasFlag(button);
-        }
-
-        public static bool IsMousePressed(MouseButtons button)
-        {
-            return IsMouseDown(button) && !IsBeforeMouseDown(button);
-        }
-
-        public static bool IsMouseReleased(MouseButtons button)
-        {
-            return !IsMouseDown(button) && IsBeforeMouseDown(button);
-        }
-
         public static Point MousePosition
         {
             get
@@ -105,6 +76,35 @@ namespace ShareX.ScreenCaptureLib
             {
                 return MouseVelocity.X != 0 || MouseVelocity.Y != 0;
             }
+        }
+
+        private static MouseState mouseState = new MouseState();
+        private static MouseState oldMouseState;
+
+        public static void Update()
+        {
+            oldMouseState = mouseState;
+            mouseState.Update();
+        }
+
+        public static bool IsMouseDown(MouseButtons button)
+        {
+            return mouseState.Buttons.HasFlag(button);
+        }
+
+        public static bool IsBeforeMouseDown(MouseButtons button)
+        {
+            return oldMouseState.Buttons.HasFlag(button);
+        }
+
+        public static bool IsMousePressed(MouseButtons button)
+        {
+            return IsMouseDown(button) && !IsBeforeMouseDown(button);
+        }
+
+        public static bool IsMouseReleased(MouseButtons button)
+        {
+            return !IsMouseDown(button) && IsBeforeMouseDown(button);
         }
     }
 }

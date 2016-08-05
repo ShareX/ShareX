@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -88,6 +89,8 @@ namespace ShareX.ScreenCaptureLib
         }
 
         internal ShapeManager Manager { get; set; }
+
+        private Rectangle tempNodeRect;
 
         public virtual bool Intersects(Point position)
         {
@@ -181,6 +184,89 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnDoubleClicked()
         {
+        }
+
+        public virtual void OnNodeVisible()
+        {
+            foreach (NodeObject node in Manager.Nodes)
+            {
+                node.Shape = NodeShape.Square;
+                node.Visible = true;
+            }
+        }
+
+        public virtual void OnNodeUpdate()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                if (Manager.Nodes[i].IsDragging)
+                {
+                    Manager.IsResizing = true;
+
+                    if (!InputManager.IsBeforeMouseDown(MouseButtons.Left))
+                    {
+                        tempNodeRect = Rectangle;
+                    }
+
+                    NodePosition nodePosition = (NodePosition)i;
+
+                    int x = InputManager.MouseVelocity.X;
+
+                    switch (nodePosition)
+                    {
+                        case NodePosition.TopLeft:
+                        case NodePosition.Left:
+                        case NodePosition.BottomLeft:
+                            tempNodeRect.X += x;
+                            tempNodeRect.Width -= x;
+                            break;
+                        case NodePosition.TopRight:
+                        case NodePosition.Right:
+                        case NodePosition.BottomRight:
+                            tempNodeRect.Width += x;
+                            break;
+                    }
+
+                    int y = InputManager.MouseVelocity.Y;
+
+                    switch (nodePosition)
+                    {
+                        case NodePosition.TopLeft:
+                        case NodePosition.Top:
+                        case NodePosition.TopRight:
+                            tempNodeRect.Y += y;
+                            tempNodeRect.Height -= y;
+                            break;
+                        case NodePosition.BottomLeft:
+                        case NodePosition.Bottom:
+                        case NodePosition.BottomRight:
+                            tempNodeRect.Height += y;
+                            break;
+                    }
+
+                    Rectangle = CaptureHelpers.FixRectangle(tempNodeRect);
+                }
+            }
+        }
+
+        public virtual void OnNodePositionUpdate()
+        {
+            int xStart = Rectangle.X;
+            int xMid = Rectangle.X + Rectangle.Width / 2;
+            int xEnd = Rectangle.X + Rectangle.Width - 1;
+
+            int yStart = Rectangle.Y;
+            int yMid = Rectangle.Y + Rectangle.Height / 2;
+            int yEnd = Rectangle.Y + Rectangle.Height - 1;
+
+            Manager.Nodes[(int)NodePosition.TopLeft].Position = new Point(xStart, yStart);
+            Manager.Nodes[(int)NodePosition.Top].Position = new Point(xMid, yStart);
+            Manager.Nodes[(int)NodePosition.TopRight].Position = new Point(xEnd, yStart);
+            Manager.Nodes[(int)NodePosition.Right].Position = new Point(xEnd, yMid);
+            Manager.Nodes[(int)NodePosition.BottomRight].Position = new Point(xEnd, yEnd);
+            Manager.Nodes[(int)NodePosition.Bottom].Position = new Point(xMid, yEnd);
+            Manager.Nodes[(int)NodePosition.BottomLeft].Position = new Point(xStart, yEnd);
+            Manager.Nodes[(int)NodePosition.Left].Position = new Point(xStart, yMid);
         }
     }
 }

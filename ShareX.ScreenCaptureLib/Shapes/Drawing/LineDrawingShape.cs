@@ -79,5 +79,33 @@ namespace ShareX.ScreenCaptureLib
                 EndPosition = EndPosition.Add(x, y);
             }
         }
+
+        public override void OnNodeVisible()
+        {
+            Manager.Nodes[(int)NodePosition.TopLeft].Shape = Manager.Nodes[(int)NodePosition.BottomRight].Shape = NodeShape.Circle;
+            Manager.Nodes[(int)NodePosition.TopLeft].Visible = Manager.Nodes[(int)NodePosition.BottomRight].Visible = true;
+        }
+
+        public override void OnNodeUpdate()
+        {
+            if (Manager.Nodes[(int)NodePosition.TopLeft].IsDragging)
+            {
+                Manager.IsResizing = true;
+
+                StartPosition = InputManager.MousePosition0Based;
+            }
+            else if (Manager.Nodes[(int)NodePosition.BottomRight].IsDragging)
+            {
+                Manager.IsResizing = true;
+
+                EndPosition = InputManager.MousePosition0Based;
+            }
+        }
+
+        public override void OnNodePositionUpdate()
+        {
+            Manager.Nodes[(int)NodePosition.TopLeft].Position = StartPosition;
+            Manager.Nodes[(int)NodePosition.BottomRight].Position = EndPosition;
+        }
     }
 }

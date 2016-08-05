@@ -168,9 +168,9 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool IsCreating { get; private set; }
+        public bool IsCreating { get; set; }
         public bool IsMoving { get; private set; }
-        public bool IsResizing { get; private set; }
+        public bool IsResizing { get; set; }
 
         public bool IsCornerMoving { get; private set; }
         public bool IsProportionalResizing { get; private set; }
@@ -217,26 +217,8 @@ namespace ShareX.ScreenCaptureLib
 
                     if (shape != null)
                     {
-                        UpdateNodePositions();
-
-                        if (shape.NodeType == NodeType.Rectangle)
-                        {
-                            foreach (NodeObject node in Nodes)
-                            {
-                                node.Shape = NodeShape.Square;
-                                node.Visible = nodesVisible;
-                            }
-                        }
-                        else if (shape.NodeType == NodeType.Line)
-                        {
-                            Nodes[(int)NodePosition.TopLeft].Shape = Nodes[(int)NodePosition.BottomRight].Shape = NodeShape.Circle;
-                            Nodes[(int)NodePosition.TopLeft].Visible = Nodes[(int)NodePosition.BottomRight].Visible = true;
-                        }
-                        else if (shape.NodeType == NodeType.Freehand)
-                        {
-                            Nodes[(int)NodePosition.TopLeft].Shape = NodeShape.Circle;
-                            Nodes[(int)NodePosition.TopLeft].Visible = true;
-                        }
+                        shape.OnNodePositionUpdate();
+                        shape.OnNodeVisible();
                     }
                 }
             }
@@ -259,7 +241,6 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudRoundedRectangleRadius, tslnudBlurRadius, tslnudPixelateSize;
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
-        private Rectangle tempNodeRect;
 
         public ShapeManager(RectangleRegionForm form)
         {
@@ -1609,132 +1590,14 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (InputManager.IsMouseDown(MouseButtons.Left))
                 {
-                    if (shape.NodeType == NodeType.Rectangle)
-                    {
-                        for (int i = 0; i < 8; i++)
-                        {
-                            if (Nodes[i].IsDragging)
-                            {
-                                IsResizing = true;
-
-                                if (!InputManager.IsBeforeMouseDown(MouseButtons.Left))
-                                {
-                                    tempNodeRect = shape.Rectangle;
-                                }
-
-                                NodePosition nodePosition = (NodePosition)i;
-
-                                int x = InputManager.MouseVelocity.X;
-
-                                switch (nodePosition)
-                                {
-                                    case NodePosition.TopLeft:
-                                    case NodePosition.Left:
-                                    case NodePosition.BottomLeft:
-                                        tempNodeRect.X += x;
-                                        tempNodeRect.Width -= x;
-                                        break;
-                                    case NodePosition.TopRight:
-                                    case NodePosition.Right:
-                                    case NodePosition.BottomRight:
-                                        tempNodeRect.Width += x;
-                                        break;
-                                }
-
-                                int y = InputManager.MouseVelocity.Y;
-
-                                switch (nodePosition)
-                                {
-                                    case NodePosition.TopLeft:
-                                    case NodePosition.Top:
-                                    case NodePosition.TopRight:
-                                        tempNodeRect.Y += y;
-                                        tempNodeRect.Height -= y;
-                                        break;
-                                    case NodePosition.BottomLeft:
-                                    case NodePosition.Bottom:
-                                    case NodePosition.BottomRight:
-                                        tempNodeRect.Height += y;
-                                        break;
-                                }
-
-                                shape.Rectangle = CaptureHelpers.FixRectangle(tempNodeRect);
-
-                                break;
-                            }
-                        }
-                    }
-                    else if (shape.NodeType == NodeType.Line)
-                    {
-                        if (Nodes[(int)NodePosition.TopLeft].IsDragging)
-                        {
-                            IsResizing = true;
-
-                            shape.StartPosition = InputManager.MousePosition0Based;
-                        }
-                        else if (Nodes[(int)NodePosition.BottomRight].IsDragging)
-                        {
-                            IsResizing = true;
-
-                            shape.EndPosition = InputManager.MousePosition0Based;
-                        }
-                    }
-                    else if (shape.NodeType == NodeType.Freehand)
-                    {
-                        if (Nodes[(int)NodePosition.TopLeft].IsDragging)
-                        {
-                            IsCreating = true;
-
-                            NodesVisible = false;
-                        }
-                    }
+                    shape.OnNodeUpdate();
                 }
                 else
                 {
                     IsResizing = false;
                 }
 
-                UpdateNodePositions();
-            }
-        }
-
-        private void UpdateNodePositions()
-        {
-            BaseShape shape = CurrentShape;
-
-            if (shape != null)
-            {
-                if (shape.NodeType == NodeType.Rectangle)
-                {
-                    Rectangle rect = shape.Rectangle;
-
-                    int xStart = rect.X;
-                    int xMid = rect.X + rect.Width / 2;
-                    int xEnd = rect.X + rect.Width - 1;
-
-                    int yStart = rect.Y;
-                    int yMid = rect.Y + rect.Height / 2;
-                    int yEnd = rect.Y + rect.Height - 1;
-
-                    Nodes[(int)NodePosition.TopLeft].Position = new Point(xStart, yStart);
-                    Nodes[(int)NodePosition.Top].Position = new Point(xMid, yStart);
-                    Nodes[(int)NodePosition.TopRight].Position = new Point(xEnd, yStart);
-                    Nodes[(int)NodePosition.Right].Position = new Point(xEnd, yMid);
-                    Nodes[(int)NodePosition.BottomRight].Position = new Point(xEnd, yEnd);
-                    Nodes[(int)NodePosition.Bottom].Position = new Point(xMid, yEnd);
-                    Nodes[(int)NodePosition.BottomLeft].Position = new Point(xStart, yEnd);
-                    Nodes[(int)NodePosition.Left].Position = new Point(xStart, yMid);
-                }
-                else if (shape.NodeType == NodeType.Line)
-                {
-                    Nodes[(int)NodePosition.TopLeft].Position = shape.StartPosition;
-                    Nodes[(int)NodePosition.BottomRight].Position = shape.EndPosition;
-                }
-                else if (shape.NodeType == NodeType.Freehand)
-                {
-                    FreehandRegionShape freehandRegionShape = (FreehandRegionShape)shape;
-                    Nodes[(int)NodePosition.TopLeft].Position = freehandRegionShape.LastPosition;
-                }
+                shape.OnNodePositionUpdate();
             }
         }
 

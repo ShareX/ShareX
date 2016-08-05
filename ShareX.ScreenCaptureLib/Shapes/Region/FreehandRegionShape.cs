@@ -124,5 +124,26 @@ namespace ShareX.ScreenCaptureLib
         public override void Resize(int x, int y, bool fromBottomRight)
         {
         }
+
+        public override void OnNodeVisible()
+        {
+            Manager.Nodes[(int)NodePosition.TopLeft].Shape = NodeShape.Circle;
+            Manager.Nodes[(int)NodePosition.TopLeft].Visible = true;
+        }
+
+        public override void OnNodeUpdate()
+        {
+            if (Manager.Nodes[(int)NodePosition.TopLeft].IsDragging)
+            {
+                Manager.IsCreating = true;
+
+                Manager.NodesVisible = false;
+            }
+        }
+
+        public override void OnNodePositionUpdate()
+        {
+            Manager.Nodes[(int)NodePosition.TopLeft].Position = LastPosition;
+        }
     }
 }
