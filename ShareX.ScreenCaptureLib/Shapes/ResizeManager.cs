@@ -70,6 +70,11 @@ namespace ShareX.ScreenCaptureLib
                             nodes[(int)NodePosition.TopLeft].Shape = nodes[(int)NodePosition.BottomRight].Shape = NodeShape.Circle;
                             nodes[(int)NodePosition.TopLeft].Visible = nodes[(int)NodePosition.BottomRight].Visible = true;
                         }
+                        else if (shape.NodeType == NodeType.Freehand)
+                        {
+                            nodes[(int)NodePosition.TopLeft].Shape = NodeShape.Circle;
+                            nodes[(int)NodePosition.TopLeft].Visible = true;
+                        }
                     }
                 }
             }
@@ -169,13 +174,22 @@ namespace ShareX.ScreenCaptureLib
                         {
                             IsResizing = true;
 
-                            shape.StartPosition = new Point(InputManager.MousePosition0Based.X, InputManager.MousePosition0Based.Y);
+                            shape.StartPosition = InputManager.MousePosition0Based;
                         }
                         else if (nodes[(int)NodePosition.BottomRight].IsDragging)
                         {
                             IsResizing = true;
 
-                            shape.EndPosition = new Point(InputManager.MousePosition0Based.X, InputManager.MousePosition0Based.Y);
+                            shape.EndPosition = InputManager.MousePosition0Based;
+                        }
+                    }
+                    else if (shape.NodeType == NodeType.Freehand)
+                    {
+                        if (nodes[(int)NodePosition.TopLeft].IsDragging)
+                        {
+                            shapeManager.IsCreating = true;
+
+                            Hide();
                         }
                     }
                 }
@@ -310,6 +324,11 @@ namespace ShareX.ScreenCaptureLib
                 {
                     nodes[(int)NodePosition.TopLeft].Position = shape.StartPosition;
                     nodes[(int)NodePosition.BottomRight].Position = shape.EndPosition;
+                }
+                else if (shape.NodeType == NodeType.Freehand)
+                {
+                    FreehandRegionShape freehandRegionShape = (FreehandRegionShape)shape;
+                    nodes[(int)NodePosition.TopLeft].Position = freehandRegionShape.LastPosition;
                 }
             }
         }

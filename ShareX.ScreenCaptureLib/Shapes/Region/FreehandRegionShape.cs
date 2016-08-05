@@ -33,7 +33,27 @@ namespace ShareX.ScreenCaptureLib
     public class FreehandRegionShape : BaseRegionShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.RegionFreehand;
-        public override NodeType NodeType { get; } = NodeType.CustomNoResize;
+        public override NodeType NodeType { get; } = NodeType.Freehand;
+
+        public Point LastPosition
+        {
+            get
+            {
+                if (points.Count > 0)
+                {
+                    return points[points.Count - 1];
+                }
+
+                return Point.Empty;
+            }
+            set
+            {
+                if (points.Count > 0)
+                {
+                    points[points.Count - 1] = value;
+                }
+            }
+        }
 
         private List<Point> points = new List<Point>();
         private bool isPolygonMode;
@@ -50,7 +70,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Point pos = InputManager.MousePosition0Based;
 
-                    if (points.Count == 0 || (!Manager.IsProportionalResizing && points[points.Count - 1] != pos))
+                    if (points.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
                     {
                         points.Add(pos);
                     }
@@ -62,13 +82,13 @@ namespace ShareX.ScreenCaptureLib
                             points.Add(pos);
                         }
 
-                        points[points.Count - 1] = pos;
+                        LastPosition = pos;
                     }
 
                     isPolygonMode = Manager.IsProportionalResizing;
-                }
 
-                Rectangle = points.CreateRectangle();
+                    Rectangle = points.CreateRectangle();
+                }
             }
             else if (Manager.IsMoving)
             {

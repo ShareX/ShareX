@@ -169,7 +169,7 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public ResizeManager ResizeManager { get; private set; }
-        public bool IsCreating { get; private set; }
+        public bool IsCreating { get; set; }
         public bool IsMoving { get; private set; }
 
         public bool IsResizing
@@ -1393,7 +1393,7 @@ namespace ShareX.ScreenCaptureLib
         {
             BaseShape shape = CurrentShape;
 
-            if (shape != null && !CurrentRectangle.IsEmpty && shape.NodeType != NodeType.Point && shape.NodeType != NodeType.CustomNoResize)
+            if (shape != null && !CurrentRectangle.IsEmpty && shape.NodeType != NodeType.Point)
             {
                 ResizeManager.Show();
             }

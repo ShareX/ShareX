@@ -140,7 +140,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Manager.IsCornerMoving)
                 {
-                    StartPosition = StartPosition.Add(InputManager.MouseVelocity.X, InputManager.MouseVelocity.Y);
+                    StartPosition = StartPosition.Add(InputManager.MouseVelocity);
                 }
                 else if (Manager.IsProportionalResizing)
                 {
