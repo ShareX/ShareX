@@ -206,6 +206,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
         private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudRoundedRectangleRadius, tslnudBlurRadius, tslnudPixelateSize;
+        private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
 
         public ShapeManager(RectangleRegionForm form)
         {
@@ -937,6 +938,22 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Menu:
                     IsSnapResizing = true;
                     break;
+                case Keys.Left:
+                case Keys.A:
+                    isLeftPressed = true;
+                    break;
+                case Keys.Right:
+                case Keys.D:
+                    isRightPressed = true;
+                    break;
+                case Keys.Up:
+                case Keys.W:
+                    isUpPressed = true;
+                    break;
+                case Keys.Down:
+                case Keys.S:
+                    isDownPressed = true;
+                    break;
             }
 
             if (form.Mode == RectangleRegionMode.Annotation && !IsCreating)
@@ -978,6 +995,62 @@ namespace ShareX.ScreenCaptureLib
                         break;
                 }
             }
+
+            int speed;
+
+            if (e.Shift)
+            {
+                speed = RegionCaptureOptions.MoveSpeedMaximum;
+            }
+            else
+            {
+                speed = RegionCaptureOptions.MoveSpeedMinimum;
+            }
+
+            int x = 0;
+
+            if (isLeftPressed)
+            {
+                x -= speed;
+            }
+
+            if (isRightPressed)
+            {
+                x += speed;
+            }
+
+            int y = 0;
+
+            if (isUpPressed)
+            {
+                y -= speed;
+            }
+
+            if (isDownPressed)
+            {
+                y += speed;
+            }
+
+            if (x != 0 || y != 0)
+            {
+                BaseShape shape = CurrentShape;
+
+                if (shape == null || IsCreating)
+                {
+                    Cursor.Position = Cursor.Position.Add(x, y);
+                }
+                else
+                {
+                    if (e.Control)
+                    {
+                        shape.Move(x, y);
+                    }
+                    else
+                    {
+                        shape.Resize(x, y, e.Alt);
+                    }
+                }
+            }
         }
 
         private void form_KeyUp(object sender, KeyEventArgs e)
@@ -1003,6 +1076,22 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.Apps:
                     OpenOptionsMenu();
+                    break;
+                case Keys.Left:
+                case Keys.A:
+                    isLeftPressed = false;
+                    break;
+                case Keys.Right:
+                case Keys.D:
+                    isRightPressed = false;
+                    break;
+                case Keys.Up:
+                case Keys.W:
+                    isUpPressed = false;
+                    break;
+                case Keys.Down:
+                case Keys.S:
+                    isDownPressed = false;
                     break;
             }
         }
@@ -1058,7 +1147,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void RegionSelection(Point position)
         {
-            if (ResizeManager.IsCursorOnNode())
+            if (ResizeManager.IsCursorOnNode)
             {
                 return;
             }
@@ -1297,7 +1386,7 @@ namespace ShareX.ScreenCaptureLib
         {
             CurrentHoverRectangle = Rectangle.Empty;
 
-            if (!ResizeManager.IsCursorOnNode() && !IsCreating && !IsMoving && !IsResizing)
+            if (!ResizeManager.IsCursorOnNode && !IsCreating && !IsMoving && !IsResizing)
             {
                 BaseShape shape = GetShapeIntersect();
 
@@ -1395,14 +1484,14 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null && !CurrentRectangle.IsEmpty && shape.NodeType != NodeType.Point)
             {
-                ResizeManager.Show();
+                ResizeManager.Visible = true;
             }
         }
 
         private void DeselectShape()
         {
             CurrentShape = null;
-            ResizeManager.Hide();
+            ResizeManager.Visible = false;
         }
 
         private void DeleteCurrentShape()

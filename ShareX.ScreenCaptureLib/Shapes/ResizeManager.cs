@@ -57,6 +57,8 @@ namespace ShareX.ScreenCaptureLib
 
                     if (shape != null)
                     {
+                        UpdateNodePositions();
+
                         if (shape.NodeType == NodeType.Rectangle)
                         {
                             foreach (NodeObject node in nodes)
@@ -81,19 +83,22 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public bool IsResizing { get; private set; }
-        public bool IsBottomRightResizing { get; set; }
+
+        public bool IsCursorOnNode
+        {
+            get
+            {
+                return Visible && nodes.Any(node => node.IsCursorHover);
+            }
+        }
 
         private ShapeManager shapeManager;
         private NodeObject[] nodes;
-        private bool isUpPressed, isDownPressed, isLeftPressed, isRightPressed;
         private Rectangle tempRect;
 
         public ResizeManager(BaseRegionForm form, ShapeManager shapeManager)
         {
             this.shapeManager = shapeManager;
-
-            form.KeyDown += form_KeyDown;
-            form.KeyUp += form_KeyUp;
 
             nodes = new NodeObject[8];
 
@@ -189,7 +194,7 @@ namespace ShareX.ScreenCaptureLib
                         {
                             shapeManager.IsCreating = true;
 
-                            Hide();
+                            Visible = false;
                         }
                     }
                 }
@@ -200,131 +205,6 @@ namespace ShareX.ScreenCaptureLib
 
                 UpdateNodePositions();
             }
-        }
-
-        private void form_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Left:
-                case Keys.A:
-                    isLeftPressed = true;
-                    break;
-                case Keys.Right:
-                case Keys.D:
-                    isRightPressed = true;
-                    break;
-                case Keys.Up:
-                case Keys.W:
-                    isUpPressed = true;
-                    break;
-                case Keys.Down:
-                case Keys.S:
-                    isDownPressed = true;
-                    break;
-                case Keys.Menu:
-                    IsBottomRightResizing = true;
-                    break;
-            }
-
-            int speed;
-
-            if (e.Shift)
-            {
-                speed = RegionCaptureOptions.MoveSpeedMaximum;
-            }
-            else
-            {
-                speed = RegionCaptureOptions.MoveSpeedMinimum;
-            }
-
-            int x = 0;
-
-            if (isLeftPressed)
-            {
-                x -= speed;
-            }
-
-            if (isRightPressed)
-            {
-                x += speed;
-            }
-
-            int y = 0;
-
-            if (isUpPressed)
-            {
-                y -= speed;
-            }
-
-            if (isDownPressed)
-            {
-                y += speed;
-            }
-
-            if (x != 0 || y != 0)
-            {
-                BaseShape shape = shapeManager.CurrentShape;
-
-                if (shape == null || shapeManager.IsCreating)
-                {
-                    Cursor.Position = Cursor.Position.Add(x, y);
-                }
-                else
-                {
-                    if (e.Control)
-                    {
-                        shape.Move(x, y);
-                    }
-                    else
-                    {
-                        shape.Resize(x, y, e.Alt);
-                    }
-                }
-            }
-        }
-
-        private void form_KeyUp(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Left:
-                case Keys.A:
-                    isLeftPressed = false;
-                    break;
-                case Keys.Right:
-                case Keys.D:
-                    isRightPressed = false;
-                    break;
-                case Keys.Up:
-                case Keys.W:
-                    isUpPressed = false;
-                    break;
-                case Keys.Down:
-                case Keys.S:
-                    isDownPressed = false;
-                    break;
-                case Keys.Menu:
-                    IsBottomRightResizing = false;
-                    break;
-            }
-        }
-
-        public bool IsCursorOnNode()
-        {
-            return Visible && nodes.Any(node => node.IsCursorHover);
-        }
-
-        public void Show()
-        {
-            UpdateNodePositions();
-
-            Visible = true;
-        }
-
-        public void Hide()
-        {
-            Visible = false;
         }
 
         private void UpdateNodePositions()
