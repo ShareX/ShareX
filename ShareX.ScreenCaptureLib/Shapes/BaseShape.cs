@@ -136,7 +136,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Manager.IsCreating && !Rectangle.IsEmpty)
             {
-                Point currentPosition = InputManager.MousePosition0Based;
+                Point pos = InputManager.MousePosition0Based;
 
                 if (Manager.IsCornerMoving)
                 {
@@ -146,19 +146,19 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (NodeType == NodeType.Rectangle)
                     {
-                        currentPosition = CaptureHelpers.SnapPositionToDegree(StartPosition, currentPosition, 90, 45);
+                        pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, 90, 45);
                     }
                     else if (NodeType == NodeType.Line)
                     {
-                        currentPosition = CaptureHelpers.SnapPositionToDegree(StartPosition, currentPosition, 45, 0);
+                        pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, 45, 0);
                     }
                 }
                 else if (Manager.IsSnapResizing)
                 {
-                    currentPosition = Manager.SnapPosition(StartPosition, currentPosition);
+                    pos = Manager.SnapPosition(StartPosition, pos);
                 }
 
-                EndPosition = currentPosition;
+                EndPosition = pos;
             }
             else if (Manager.IsMoving)
             {

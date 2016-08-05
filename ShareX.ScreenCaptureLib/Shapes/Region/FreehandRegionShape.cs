@@ -42,24 +42,31 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Manager.IsCreating)
             {
-                Point pos = InputManager.MousePosition0Based;
-
-                if (points.Count == 0 || (!Manager.IsProportionalResizing && points[points.Count - 1] != pos))
+                if (Manager.IsCornerMoving)
                 {
-                    points.Add(pos);
+                    Move(InputManager.MouseVelocity);
                 }
-
-                if (Manager.IsProportionalResizing)
+                else
                 {
-                    if (!isPolygonMode)
+                    Point pos = InputManager.MousePosition0Based;
+
+                    if (points.Count == 0 || (!Manager.IsProportionalResizing && points[points.Count - 1] != pos))
                     {
                         points.Add(pos);
                     }
 
-                    points[points.Count - 1] = pos;
-                }
+                    if (Manager.IsProportionalResizing)
+                    {
+                        if (!isPolygonMode)
+                        {
+                            points.Add(pos);
+                        }
 
-                isPolygonMode = Manager.IsProportionalResizing;
+                        points[points.Count - 1] = pos;
+                    }
+
+                    isPolygonMode = Manager.IsProportionalResizing;
+                }
 
                 Rectangle = points.CreateRectangle();
             }
