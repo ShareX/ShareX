@@ -206,14 +206,6 @@ namespace ShareX.ScreenCaptureLib
         {
             switch (e.KeyCode)
             {
-                case Keys.Up:
-                case Keys.W:
-                    isUpPressed = true;
-                    break;
-                case Keys.Down:
-                case Keys.S:
-                    isDownPressed = true;
-                    break;
                 case Keys.Left:
                 case Keys.A:
                     isLeftPressed = true;
@@ -222,30 +214,72 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.D:
                     isRightPressed = true;
                     break;
+                case Keys.Up:
+                case Keys.W:
+                    isUpPressed = true;
+                    break;
+                case Keys.Down:
+                case Keys.S:
+                    isDownPressed = true;
+                    break;
                 case Keys.Menu:
                     IsBottomRightResizing = true;
                     break;
             }
 
-            int speed = e.Shift ? RegionCaptureOptions.MoveSpeedMaximum : RegionCaptureOptions.MoveSpeedMinimum;
-            int y = isUpPressed && isDownPressed ? 0 : isDownPressed ? speed : isUpPressed ? -speed : 0;
-            int x = isLeftPressed && isRightPressed ? 0 : isRightPressed ? speed : isLeftPressed ? -speed : 0;
+            int speed;
 
-            BaseShape shape = shapeManager.CurrentShape;
-
-            if (shape == null || shapeManager.IsCreating)
+            if (e.Shift)
             {
-                Cursor.Position = Cursor.Position.Add(x, y);
+                speed = RegionCaptureOptions.MoveSpeedMaximum;
             }
             else
             {
-                if (e.Control)
+                speed = RegionCaptureOptions.MoveSpeedMinimum;
+            }
+
+            int x = 0;
+
+            if (isLeftPressed)
+            {
+                x -= speed;
+            }
+
+            if (isRightPressed)
+            {
+                x += speed;
+            }
+
+            int y = 0;
+
+            if (isUpPressed)
+            {
+                y -= speed;
+            }
+
+            if (isDownPressed)
+            {
+                y += speed;
+            }
+
+            if (x != 0 || y != 0)
+            {
+                BaseShape shape = shapeManager.CurrentShape;
+
+                if (shape == null || shapeManager.IsCreating)
                 {
-                    shape.Move(x, y);
+                    Cursor.Position = Cursor.Position.Add(x, y);
                 }
                 else
                 {
-                    shape.Resize(x, y, IsBottomRightResizing);
+                    if (e.Control)
+                    {
+                        shape.Move(x, y);
+                    }
+                    else
+                    {
+                        shape.Resize(x, y, e.Alt);
+                    }
                 }
             }
         }
@@ -254,14 +288,6 @@ namespace ShareX.ScreenCaptureLib
         {
             switch (e.KeyCode)
             {
-                case Keys.Up:
-                case Keys.W:
-                    isUpPressed = false;
-                    break;
-                case Keys.Down:
-                case Keys.S:
-                    isDownPressed = false;
-                    break;
                 case Keys.Left:
                 case Keys.A:
                     isLeftPressed = false;
@@ -269,6 +295,14 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Right:
                 case Keys.D:
                     isRightPressed = false;
+                    break;
+                case Keys.Up:
+                case Keys.W:
+                    isUpPressed = false;
+                    break;
+                case Keys.Down:
+                case Keys.S:
+                    isDownPressed = false;
                     break;
                 case Keys.Menu:
                     IsBottomRightResizing = false;
