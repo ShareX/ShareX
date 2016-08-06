@@ -408,12 +408,6 @@
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>파일 업로더</value>
   </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>자유선</value>
-  </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>자유선</value>
-  </data>
   <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
     <value>FTP 클라이언트...</value>
   </data>
@@ -464,12 +458,6 @@
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>모니터 테스트...</value>
-  </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>다각형</value>
-  </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>다각형</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>마지막 영역</value>

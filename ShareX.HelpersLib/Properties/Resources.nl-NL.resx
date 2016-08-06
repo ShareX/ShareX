@@ -329,9 +329,6 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
     <value>Open map met screenshots</value>
   </data>
-  <data name="HotkeyType_PolygonRegion" xml:space="preserve">
-    <value>Leg regio vast in vorm van een polygon</value>
-  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Leg het volledig scherm vast</value>
   </data>
@@ -566,9 +563,6 @@ Wil je deze downloaden en installeren?</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>Andere</value>
-  </data>
-  <data name="HotkeyType_PolygonRegion_Category" xml:space="preserve">
-    <value>Scherm vastleggen</value>
   </data>
   <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
     <value>Scherm vastleggen</value>

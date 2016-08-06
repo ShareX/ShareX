@@ -1820,7 +1820,7 @@ namespace ShareX
                     break;
                 // Screen capture
                 case HotkeyType.PrintScreen:
-                    CaptureScreenshot(CaptureType.Screen, safeTaskSettings, false);
+                    CaptureScreenshot(CaptureType.Fullscreen, safeTaskSettings, false);
                     break;
                 case HotkeyType.ActiveWindow:
                     CaptureScreenshot(CaptureType.ActiveWindow, safeTaskSettings, false);
@@ -1829,7 +1829,7 @@ namespace ShareX
                     CaptureScreenshot(CaptureType.ActiveMonitor, safeTaskSettings, false);
                     break;
                 case HotkeyType.RectangleRegion:
-                    CaptureScreenshot(CaptureType.Rectangle, safeTaskSettings, false);
+                    CaptureScreenshot(CaptureType.Region, safeTaskSettings, false);
                     break;
                 case HotkeyType.RectangleLight:
                     CaptureRectangleLight(safeTaskSettings, false);
@@ -1839,9 +1839,6 @@ namespace ShareX
                     break;
                 case HotkeyType.RectangleAnnotate:
                     CaptureRectangleAnnotate(safeTaskSettings, false);
-                    break;
-                case HotkeyType.PolygonRegion:
-                    CaptureScreenshot(CaptureType.Polygon, safeTaskSettings, false);
                     break;
                 case HotkeyType.CustomRegion:
                     CaptureScreenshot(CaptureType.CustomRegion, safeTaskSettings, false);
@@ -1963,8 +1960,8 @@ namespace ShareX
 
             switch (captureType)
             {
-                case CaptureType.Screen:
-                    DoCapture(TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen, CaptureType.Screen, taskSettings, autoHideForm);
+                case CaptureType.Fullscreen:
+                    DoCapture(TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen, CaptureType.Fullscreen, taskSettings, autoHideForm);
                     break;
                 case CaptureType.ActiveWindow:
                     CaptureActiveWindow(taskSettings, autoHideForm);
@@ -1972,9 +1969,8 @@ namespace ShareX
                 case CaptureType.ActiveMonitor:
                     DoCapture(TaskHelpers.GetScreenshot(taskSettings).CaptureActiveMonitor, CaptureType.ActiveMonitor, taskSettings, autoHideForm);
                     break;
-                case CaptureType.Rectangle:
-                case CaptureType.Polygon:
-                    CaptureRegion(captureType, taskSettings, autoHideForm);
+                case CaptureType.Region:
+                    CaptureRegion(taskSettings, autoHideForm);
                     break;
                 case CaptureType.CustomRegion:
                     CaptureCustomRegion(taskSettings, autoHideForm);
@@ -2056,7 +2052,7 @@ namespace ShareX
 
         private bool IsRegionCapture(CaptureType captureType)
         {
-            return captureType.HasFlagAny(CaptureType.Rectangle, CaptureType.Polygon, CaptureType.LastRegion);
+            return captureType.HasFlagAny(CaptureType.Region, CaptureType.LastRegion);
         }
 
         private void CaptureActiveWindow(TaskSettings taskSettings, bool autoHideForm = true)
@@ -2130,20 +2126,9 @@ namespace ShareX
             }, CaptureType.Window, taskSettings, autoHideForm);
         }
 
-        private void CaptureRegion(CaptureType captureType, TaskSettings taskSettings, bool autoHideForm = true)
+        private void CaptureRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
-            BaseRegionForm form;
-
-            switch (captureType)
-            {
-                default:
-                case CaptureType.Rectangle:
-                    form = new RectangleRegionForm(RectangleRegionMode.Annotation);
-                    break;
-                case CaptureType.Polygon:
-                    form = new PolygonRegionForm();
-                    break;
-            }
+            BaseRegionForm form = new RectangleRegionForm(RectangleRegionMode.Annotation);
 
             DoCapture(() =>
             {
@@ -2185,7 +2170,7 @@ namespace ShareX
                 }
 
                 return img;
-            }, captureType, taskSettings, autoHideForm);
+            }, CaptureType.Region, taskSettings, autoHideForm);
         }
 
         private void CaptureRectangleLight(TaskSettings taskSettings = null, bool autoHideForm = true)
@@ -2210,7 +2195,7 @@ namespace ShareX
                 }
 
                 return img;
-            }, CaptureType.Rectangle, taskSettings, autoHideForm);
+            }, CaptureType.Region, taskSettings, autoHideForm);
         }
 
         private void CaptureRectangleTransparent(TaskSettings taskSettings = null, bool autoHideForm = true)
@@ -2235,7 +2220,7 @@ namespace ShareX
                 }
 
                 return img;
-            }, CaptureType.Rectangle, taskSettings, autoHideForm);
+            }, CaptureType.Region, taskSettings, autoHideForm);
         }
 
         private void CaptureRectangleAnnotate(TaskSettings taskSettings = null, bool autoHideForm = true)
@@ -2261,7 +2246,7 @@ namespace ShareX
                  }
 
                  return img;
-             }, CaptureType.Rectangle, taskSettings, autoHideForm);
+             }, CaptureType.Region, taskSettings, autoHideForm);
         }
 
         private void CaptureLastRegion(TaskSettings taskSettings, bool autoHideForm = true)
@@ -2281,7 +2266,7 @@ namespace ShareX
                     }
                     else
                     {
-                        CaptureRegion(CaptureType.Rectangle, taskSettings, autoHideForm);
+                        CaptureRegion(taskSettings, autoHideForm);
                     }
                     break;
                 case LastRegionCaptureType.Light:
@@ -2396,7 +2381,7 @@ namespace ShareX
 
         private void tsmiFullscreen_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.Screen);
+            CaptureScreenshot(CaptureType.Fullscreen);
         }
 
         private void tsddbCapture_DropDownOpening(object sender, EventArgs e)
@@ -2426,7 +2411,7 @@ namespace ShareX
 
         private void tsmiRectangle_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.Rectangle);
+            CaptureScreenshot(CaptureType.Region);
         }
 
         private void tsmiRectangleLight_Click(object sender, EventArgs e)
@@ -2437,11 +2422,6 @@ namespace ShareX
         private void tsmiRectangleTransparent_Click(object sender, EventArgs e)
         {
             CaptureRectangleTransparent();
-        }
-
-        private void tsmiPolygon_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.Polygon);
         }
 
         private void tsmiLastRegion_Click(object sender, EventArgs e)
@@ -2464,7 +2444,7 @@ namespace ShareX
 
         private void tsmiTrayFullscreen_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.Screen, null, false);
+            CaptureScreenshot(CaptureType.Fullscreen, null, false);
         }
 
         private void tsmiCapture_DropDownOpening(object sender, EventArgs e)
@@ -2494,7 +2474,7 @@ namespace ShareX
 
         private void tsmiTrayRectangle_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.Rectangle, null, false);
+            CaptureScreenshot(CaptureType.Region, null, false);
         }
 
         private void tsmiTrayRectangleLight_Click(object sender, EventArgs e)
@@ -2516,11 +2496,6 @@ namespace ShareX
         private void tsmiTrayRectangleTransparent_Click(object sender, EventArgs e)
         {
             CaptureRectangleTransparent(null, false);
-        }
-
-        private void tsmiTrayPolygon_Click(object sender, EventArgs e)
-        {
-            CaptureScreenshot(CaptureType.Polygon, null, false);
         }
 
         private void tsmiTrayLastRegion_Click(object sender, EventArgs e)

@@ -413,9 +413,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
     <value>Ekran görüntüleri dizinini aç</value>
   </data>
-  <data name="HotkeyType_PolygonRegion" xml:space="preserve">
-    <value>Çokgen bölge yakala</value>
-  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Tüm ekranı yakala</value>
   </data>
@@ -653,9 +650,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>Diğer</value>
-  </data>
-  <data name="HotkeyType_PolygonRegion_Category" xml:space="preserve">
-    <value>Ekran yakalama</value>
   </data>
   <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
     <value>Ekran yakalama</value>

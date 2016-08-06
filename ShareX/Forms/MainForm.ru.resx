@@ -483,9 +483,6 @@
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR код…</value>
   </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>Многоугольник</value>
-  </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Линейка…</value>
   </data>
@@ -525,9 +522,6 @@
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Индексация папки…</value>
   </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>Многоугольник</value>
-  </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR код…</value>
   </data>
@@ -557,12 +551,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Миниатюры из видео…</value>
-  </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>Область произвольной формы</value>
-  </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>Область произвольной формы</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Область (Облегченный)</value>

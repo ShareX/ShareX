@@ -329,9 +329,6 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
     <value>Screenshotordner öffnen</value>
   </data>
-  <data name="HotkeyType_PolygonRegion" xml:space="preserve">
-    <value>Vieleckregion aufnehmen</value>
-  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Gesamten Bildschirm aufnehmen</value>
   </data>
@@ -569,9 +566,6 @@ Möchtest du sie herunterladen und installieren?</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>Andere</value>
-  </data>
-  <data name="HotkeyType_PolygonRegion_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
   </data>
   <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
     <value>Bildschirmaufnahme</value>

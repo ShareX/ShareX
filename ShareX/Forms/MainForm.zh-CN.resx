@@ -267,9 +267,6 @@
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>文件上传者</value>
   </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>手绘</value>
-  </data>
   <data name="tsmiFTPClient.Text" xml:space="preserve">
     <value>FTP客户端...</value>
   </data>
@@ -338,9 +335,6 @@
   </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
-  </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>多边形</value>
   </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>二维码...</value>
@@ -441,9 +435,6 @@
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>文件上传者</value>
   </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>写意</value>
-  </data>
   <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
     <value>FTP客户端...</value>
   </data>
@@ -482,9 +473,6 @@
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>显示器测试...</value>
-  </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>多边形</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>二维码...</value>

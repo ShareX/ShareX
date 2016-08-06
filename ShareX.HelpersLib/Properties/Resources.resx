@@ -435,9 +435,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
     <value>Open screenshots folder</value>
   </data>
-  <data name="HotkeyType_PolygonRegion" xml:space="preserve">
-    <value>Capture polygon region</value>
-  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Capture entire screen</value>
   </data>
@@ -675,9 +672,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>Other</value>
-  </data>
-  <data name="HotkeyType_PolygonRegion_Category" xml:space="preserve">
-    <value>Screen capture</value>
   </data>
   <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
     <value>Screen capture</value>

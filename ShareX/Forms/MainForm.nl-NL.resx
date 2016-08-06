@@ -153,9 +153,6 @@
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Rechthoek (transparant)</value>
   </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>Vrije hand</value>
-  </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Laatste regio</value>
   </data>
@@ -426,9 +423,6 @@
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Rechthoek (Transparant)</value>
   </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>Vrije hand</value>
-  </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Laatste regio</value>
   </data>
@@ -576,17 +570,11 @@
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>Polygon</value>
-  </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR code...</value>
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Stop upload</value>
-  </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>Polygon</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR code...</value>

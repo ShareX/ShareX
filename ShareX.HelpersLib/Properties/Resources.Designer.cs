@@ -1249,24 +1249,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture polygon region.
-        /// </summary>
-        internal static string HotkeyType_PolygonRegion {
-            get {
-                return ResourceManager.GetString("HotkeyType_PolygonRegion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Screen capture.
-        /// </summary>
-        internal static string HotkeyType_PolygonRegion_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_PolygonRegion_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Capture entire screen.
         /// </summary>
         internal static string HotkeyType_PrintScreen {

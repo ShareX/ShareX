@@ -54,7 +54,6 @@
             this.tsmiRectangle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRectangleTransparent = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPolygon = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLastRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
@@ -174,7 +173,6 @@
             this.tsmiTrayRectangle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRectangleTransparent = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayPolygon = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayLastRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
@@ -431,7 +429,6 @@
             this.tsmiRectangle,
             this.tsmiRectangleLight,
             this.tsmiRectangleTransparent,
-            this.tsmiPolygon,
             this.tsmiLastRegion,
             this.tsmiScreenRecordingFFmpeg,
             this.tsmiScreenRecordingGIF,
@@ -483,13 +480,6 @@
             this.tsmiRectangleTransparent.Name = "tsmiRectangleTransparent";
             resources.ApplyResources(this.tsmiRectangleTransparent, "tsmiRectangleTransparent");
             this.tsmiRectangleTransparent.Click += new System.EventHandler(this.tsmiRectangleTransparent_Click);
-            // 
-            // tsmiPolygon
-            // 
-            this.tsmiPolygon.Image = global::ShareX.Properties.Resources.layer_shape_polygon;
-            this.tsmiPolygon.Name = "tsmiPolygon";
-            resources.ApplyResources(this.tsmiPolygon, "tsmiPolygon");
-            this.tsmiPolygon.Click += new System.EventHandler(this.tsmiPolygon_Click);
             // 
             // tsmiLastRegion
             // 
@@ -1342,7 +1332,6 @@
             this.tsmiTrayRectangle,
             this.tsmiTrayRectangleLight,
             this.tsmiTrayRectangleTransparent,
-            this.tsmiTrayPolygon,
             this.tsmiTrayLastRegion,
             this.tsmiTrayScreenRecordingFFmpeg,
             this.tsmiTrayScreenRecordingGIF,
@@ -1394,13 +1383,6 @@
             this.tsmiTrayRectangleTransparent.Name = "tsmiTrayRectangleTransparent";
             resources.ApplyResources(this.tsmiTrayRectangleTransparent, "tsmiTrayRectangleTransparent");
             this.tsmiTrayRectangleTransparent.Click += new System.EventHandler(this.tsmiTrayRectangleTransparent_Click);
-            // 
-            // tsmiTrayPolygon
-            // 
-            this.tsmiTrayPolygon.Image = global::ShareX.Properties.Resources.layer_shape_polygon;
-            this.tsmiTrayPolygon.Name = "tsmiTrayPolygon";
-            resources.ApplyResources(this.tsmiTrayPolygon, "tsmiTrayPolygon");
-            this.tsmiTrayPolygon.Click += new System.EventHandler(this.tsmiTrayPolygon_Click);
             // 
             // tsmiTrayLastRegion
             // 
@@ -1946,7 +1928,6 @@
         private System.Windows.Forms.ToolStripDropDownButton tsddbCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiFullscreen;
         private System.Windows.Forms.ToolStripMenuItem tsmiRectangle;
-        private System.Windows.Forms.ToolStripMenuItem tsmiPolygon;
         private System.Windows.Forms.ToolStripMenuItem tsmiWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayHistory;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayAbout;
@@ -1955,7 +1936,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayFullscreen;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangle;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayPolygon;
         private System.Windows.Forms.ToolStripMenuItem tsmiLastRegion;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayLastRegion;
         private HelpersLib.SplitContainerCustomSplitter scMain;

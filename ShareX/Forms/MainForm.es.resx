@@ -153,12 +153,6 @@
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Rectángulo (Transparente)</value>
   </data>
-  <data name="tsmiPolygon.Text" xml:space="preserve">
-    <value>Polígono</value>
-  </data>
-  <data name="tsmiFreeHand.Text" xml:space="preserve">
-    <value>Dibujo a mano alzada</value>
-  </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Ultima región</value>
   </data>
@@ -446,12 +440,6 @@
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Rectángulo (Transparente)</value>
-  </data>
-  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
-    <value>Polígono</value>
-  </data>
-  <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
-    <value>Dibujo a mano alzada</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Ultima región</value>

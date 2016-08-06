@@ -125,13 +125,12 @@ namespace ShareX
 
     public enum CaptureType
     {
-        Screen,
+        Fullscreen,
         Monitor,
         ActiveMonitor,
         Window,
         ActiveWindow,
-        Rectangle,
-        Polygon,
+        Region,
         CustomRegion,
         LastRegion
     }
@@ -164,7 +163,6 @@ namespace ShareX
         RectangleLight,
         RectangleTransparent,
         RectangleAnnotate,
-        PolygonRegion,
         CustomRegion,
         LastRegion,
         ScrollingCapture,

@@ -174,11 +174,11 @@ namespace ShareX.ScreenCaptureLib
         protected override void Draw(Graphics g)
         {
             // Draw snap rectangles
-            if (ShapeManager.IsCreating && ShapeManager.IsSnapResizing && ShapeManager.CurrentShapeType != ShapeType.RegionFreehand)
+            if (ShapeManager.IsCreating && ShapeManager.IsSnapResizing)
             {
                 BaseShape shape = ShapeManager.CurrentShape;
 
-                if (shape != null)
+                if (shape != null && shape.ShapeType != ShapeType.RegionFreehand)
                 {
                     foreach (Size size in Config.SnapSizes)
                     {
