@@ -135,7 +135,6 @@ namespace ShareX.ScreenCaptureLib
             if (Manager.Nodes[(int)NodePosition.TopLeft].IsDragging)
             {
                 Manager.IsCreating = true;
-
                 Manager.NodesVisible = false;
             }
         }
