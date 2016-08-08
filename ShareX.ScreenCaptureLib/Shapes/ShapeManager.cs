@@ -104,55 +104,19 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool IsCurrentShapeValid
-        {
-            get
-            {
-                return CurrentShape != null && CurrentShape.IsValidShape;
-            }
-        }
+        public bool IsCurrentShapeValid => CurrentShape != null && CurrentShape.IsValidShape;
 
-        public BaseShape[] Regions
-        {
-            get
-            {
-                return Shapes.OfType<BaseRegionShape>().ToArray();
-            }
-        }
+        public BaseShape[] Regions => Shapes.OfType<BaseRegionShape>().ToArray();
 
-        public BaseDrawingShape[] DrawingShapes
-        {
-            get
-            {
-                return Shapes.OfType<BaseDrawingShape>().ToArray();
-            }
-        }
+        public BaseShape[] ValidRegions => Regions.Where(x => x.IsValidShape).ToArray();
 
-        public BaseEffectShape[] EffectShapes
-        {
-            get
-            {
-                return Shapes.OfType<BaseEffectShape>().ToArray();
-            }
-        }
+        public BaseDrawingShape[] DrawingShapes => Shapes.OfType<BaseDrawingShape>().ToArray();
 
-        public BaseShape[] ValidRegions
-        {
-            get
-            {
-                return Regions.Where(x => x.IsValidShape).ToArray();
-            }
-        }
+        public BaseEffectShape[] EffectShapes => Shapes.OfType<BaseEffectShape>().ToArray();
 
         public BaseShape CurrentHoverShape { get; private set; }
 
-        public bool IsCurrentHoverShapeValid
-        {
-            get
-            {
-                return CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
-            }
-        }
+        public bool IsCurrentHoverShapeValid => CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
 
         public bool IsCurrentShapeTypeRegion
         {
@@ -185,13 +149,7 @@ namespace ShareX.ScreenCaptureLib
 
         public RegionCaptureOptions Config { get; private set; }
 
-        public AnnotationOptions AnnotationOptions
-        {
-            get
-            {
-                return Config.AnnotationOptions;
-            }
-        }
+        public AnnotationOptions AnnotationOptions => Config.AnnotationOptions;
 
         public NodeObject[] Nodes { get; private set; }
 
@@ -227,13 +185,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool IsCursorOnNode
-        {
-            get
-            {
-                return NodesVisible && Nodes.Any(node => node.IsCursorHover);
-            }
-        }
+        public bool IsCursorOnNode => NodesVisible && Nodes.Any(node => node.IsCursorHover);
 
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;

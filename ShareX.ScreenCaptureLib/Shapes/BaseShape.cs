@@ -38,13 +38,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle Rectangle { get; set; }
 
-        protected AnnotationOptions AnnotationOptions
-        {
-            get
-            {
-                return Manager.Config.AnnotationOptions;
-            }
-        }
+        protected AnnotationOptions AnnotationOptions => Manager.Config.AnnotationOptions;
 
         private Point startPosition;
 
@@ -78,13 +72,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public virtual bool IsValidShape
-        {
-            get
-            {
-                return !Rectangle.IsEmpty && Rectangle.Width >= MinimumSize && Rectangle.Height >= MinimumSize;
-            }
-        }
+        public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= MinimumSize && Rectangle.Height >= MinimumSize;
 
         public virtual bool IsRegionShape { get; } = false;
 
