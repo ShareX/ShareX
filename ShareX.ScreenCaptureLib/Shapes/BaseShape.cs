@@ -86,6 +86,8 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public virtual bool IsRegionShape { get; } = false;
+
         public virtual bool FixedSize { get; } = false;
 
         internal ShapeManager Manager { get; set; }
