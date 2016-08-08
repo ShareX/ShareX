@@ -71,11 +71,11 @@ namespace ShareX.ScreenCaptureLib
         {
             if (fromBottomRight)
             {
-                StartPosition = StartPosition.Add(x, y);
+                EndPosition = EndPosition.Add(x, y);
             }
             else
             {
-                EndPosition = EndPosition.Add(x, y);
+                StartPosition = StartPosition.Add(x, y);
             }
         }
 
