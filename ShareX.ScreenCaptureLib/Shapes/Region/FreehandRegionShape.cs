@@ -122,6 +122,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Resize(int x, int y, bool fromBottomRight)
         {
+            Move(x, y);
         }
 
         public override void OnNodeVisible()
