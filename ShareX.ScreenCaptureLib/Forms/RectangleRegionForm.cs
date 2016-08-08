@@ -146,7 +146,7 @@ namespace ShareX.ScreenCaptureLib
         {
             string clipboardText;
 
-            if (ShapeManager.IsCurrentRectangleValid)
+            if (ShapeManager.IsCurrentShapeValid)
             {
                 clipboardText = GetAreaText(ShapeManager.CurrentRectangle);
             }
@@ -228,11 +228,11 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Draw animated rectangle on hover area
-            if (ShapeManager.IsCurrentHoverAreaValid)
+            if (ShapeManager.IsCurrentHoverShapeValid)
             {
                 using (GraphicsPath hoverDrawPath = new GraphicsPath { FillMode = FillMode.Winding })
                 {
-                    ShapeManager.CreateShape(ShapeManager.CurrentHoverRectangle).AddShapePath(hoverDrawPath, -1);
+                    ShapeManager.CurrentHoverShape.AddShapePath(hoverDrawPath, -1);
 
                     g.DrawPath(borderPen, hoverDrawPath);
                     g.DrawPath(borderDotPen, hoverDrawPath);
@@ -240,7 +240,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Draw animated rectangle on selection area
-            if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentRectangleValid)
+            if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentShapeValid)
             {
                 g.DrawRectangleProper(borderPen, ShapeManager.CurrentRectangle);
                 g.DrawRectangleProper(borderDotPen, ShapeManager.CurrentRectangle);
@@ -261,10 +261,9 @@ namespace ShareX.ScreenCaptureLib
             if (Config.ShowInfo)
             {
                 // Add hover area to list so rectangle info can be shown
-                if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentHoverAreaValid && areas.All(area => area.Rectangle != ShapeManager.CurrentHoverRectangle))
+                if (ShapeManager.IsCurrentShapeTypeRegion && ShapeManager.IsCurrentHoverShapeValid && areas.All(area => area.Rectangle != ShapeManager.CurrentHoverShape.Rectangle))
                 {
-                    BaseShape shape = ShapeManager.CreateShape(ShapeManager.CurrentHoverRectangle);
-                    areas.Add(shape);
+                    areas.Add(ShapeManager.CurrentHoverShape);
                 }
 
                 foreach (BaseShape regionInfo in areas)
@@ -468,7 +467,7 @@ namespace ShareX.ScreenCaptureLib
 
             sb.AppendLine();
 
-            if (ShapeManager.IsCurrentRectangleValid)
+            if (ShapeManager.IsCurrentShapeValid)
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size);
             }

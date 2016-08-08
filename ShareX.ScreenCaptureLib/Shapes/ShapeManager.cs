@@ -104,16 +104,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool IsCurrentRectangleValid
+        public bool IsCurrentShapeValid
         {
             get
             {
-                if (CurrentShape != null)
-                {
-                    return CurrentShape.IsValidShape;
-                }
-
-                return false;
+                return CurrentShape != null && CurrentShape.IsValidShape;
             }
         }
 
@@ -149,13 +144,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Rectangle CurrentHoverRectangle { get; private set; }
+        public BaseShape CurrentHoverShape { get; private set; }
 
-        public bool IsCurrentHoverAreaValid
+        public bool IsCurrentHoverShapeValid
         {
             get
             {
-                return !CurrentHoverRectangle.IsEmpty;
+                return CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
             }
         }
 
@@ -1244,9 +1239,9 @@ namespace ShareX.ScreenCaptureLib
 
                     CheckHover();
 
-                    if (IsCurrentHoverAreaValid)
+                    if (IsCurrentHoverShapeValid)
                     {
-                        shape.Rectangle = CurrentHoverRectangle;
+                        shape.Rectangle = CurrentHoverShape.Rectangle;
                     }
                     else
                     {
@@ -1283,31 +1278,12 @@ namespace ShareX.ScreenCaptureLib
             return shape;
         }
 
-        private BaseShape AddShape(Rectangle rect)
-        {
-            BaseShape shape = AddShape();
-            shape.Rectangle = rect;
-            return shape;
-        }
-
-        public BaseShape CreateShape()
+        private BaseShape CreateShape()
         {
             return CreateShape(CurrentShapeType);
         }
 
-        public BaseShape CreateShape(Rectangle rect)
-        {
-            return CreateShape(CurrentShapeType, rect);
-        }
-
-        public BaseShape CreateShape(ShapeType shapeType, Rectangle rect)
-        {
-            BaseShape shape = CreateShape(shapeType);
-            shape.Rectangle = rect;
-            return shape;
-        }
-
-        public BaseShape CreateShape(ShapeType shapeType)
+        private BaseShape CreateShape(ShapeType shapeType)
         {
             BaseShape shape;
 
@@ -1427,15 +1403,15 @@ namespace ShareX.ScreenCaptureLib
 
         private void CheckHover()
         {
-            CurrentHoverRectangle = Rectangle.Empty;
+            CurrentHoverShape = null;
 
             if (!IsCursorOnNode && !IsCreating && !IsMoving && !IsResizing)
             {
                 BaseShape shape = GetShapeIntersect();
 
-                if (shape != null && !shape.Rectangle.IsEmpty)
+                if (shape != null && shape.IsValidShape)
                 {
-                    CurrentHoverRectangle = shape.Rectangle;
+                    CurrentHoverShape = shape;
                 }
                 else
                 {
@@ -1451,7 +1427,11 @@ namespace ShareX.ScreenCaptureLib
                     if (Config.IsFixedSize && IsCurrentShapeTypeRegion)
                     {
                         Point location = InputManager.MousePosition0Based;
-                        CurrentHoverRectangle = new Rectangle(new Point(location.X - Config.FixedSize.Width / 2, location.Y - Config.FixedSize.Height / 2), Config.FixedSize);
+
+                        CurrentHoverShape = new RectangleRegionShape()
+                        {
+                            Rectangle = new Rectangle(new Point(location.X - Config.FixedSize.Width / 2, location.Y - Config.FixedSize.Height / 2), Config.FixedSize)
+                        };
                     }
                     else
                     {
@@ -1460,7 +1440,11 @@ namespace ShareX.ScreenCaptureLib
                         if (window != null && !window.Rectangle.IsEmpty)
                         {
                             Rectangle hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
-                            CurrentHoverRectangle = Rectangle.Intersect(form.ScreenRectangle0Based, hoverArea);
+
+                            CurrentHoverShape = new RectangleRegionShape()
+                            {
+                                Rectangle = Rectangle.Intersect(form.ScreenRectangle0Based, hoverArea)
+                            };
                         }
                     }
                 }
