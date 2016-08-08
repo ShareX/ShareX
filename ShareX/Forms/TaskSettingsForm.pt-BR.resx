@@ -177,9 +177,6 @@
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Gravações de tela</value>
   </data>
-  <data name="tpScrollingCapture.Text" xml:space="preserve">
-    <value>Captura rolante</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Capturar</value>
   </data>
@@ -203,12 +200,6 @@
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>Usar opções avançadas nas opções de tarefas da janela principal</value>
-  </data>
-  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
-    <value>Miniaturizador de vídeo</value>
-  </data>
-  <data name="tpIndexer.Text" xml:space="preserve">
-    <value>Arquivador</value>
   </data>
   <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
     <value>Usar opções de ferramentas nas opções de tarefas da janela principal</value>
@@ -381,17 +372,8 @@
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
   </data>
-  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
-    <value>0 - 5000  kB (0 desativa)</value>
-  </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>Formato de imagem 2:</value>
-  </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>Se o arquivo existir:</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Limite de tamanho de imagem para "Formato de imagem 2":</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Formato de imagem:</value>

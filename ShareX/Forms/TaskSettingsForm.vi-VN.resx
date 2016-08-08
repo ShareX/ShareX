@@ -177,9 +177,6 @@
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Trình ghi lại màn hình</value>
   </data>
-  <data name="tpScrollingCapture.Text" xml:space="preserve">
-    <value>Chụp khi cuộn trang</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Chụp</value>
   </data>
@@ -203,12 +200,6 @@
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>Sử dụng thiết lập nâng cao ở phần thiết lập tác vụ của cửa sổ chính</value>
-  </data>
-  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
-    <value>Trình tạo ảnh thu nhỏ cho video</value>
-  </data>
-  <data name="tpIndexer.Text" xml:space="preserve">
-    <value>Indexer</value>
   </data>
   <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
     <value>Sử dụng thiết lập công cụ ở phần thiết lập tác vụ của cửa sổ chính</value>
@@ -372,17 +363,8 @@
   <data name="lblImageGIFQuality.Text" xml:space="preserve">
     <value>Chất lượng ảnh GIF:</value>
   </data>
-  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
-    <value>kB 0 - 5000 (0 đã tắt)</value>
-  </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>Định dạng ảnh 2:</value>
-  </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>Nếu tệp tồn tại:</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Giới hạn kích thước ảnh ở "Định dạng ảnh 2":</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Định dạng ảnh:</value>

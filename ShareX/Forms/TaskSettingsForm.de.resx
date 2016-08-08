@@ -177,9 +177,6 @@
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Bildschirmaufnehmer</value>
   </data>
-  <data name="tpScrollingCapture.Text" xml:space="preserve">
-    <value>Scroll Aufnahme</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Aufnehmen</value>
   </data>
@@ -203,12 +200,6 @@
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>Benutze erweiterte Einstellungen in den Hauptfenster Aufgabeneinstellungen </value>
-  </data>
-  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
-    <value>Video Thumbnailer</value>
-  </data>
-  <data name="tpIndexer.Text" xml:space="preserve">
-    <value>Impulszähler</value>
   </data>
   <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
     <value>Benutze Werkzeugeinstellungen in den Hauptfenster Aufgabeneinstellungen</value>
@@ -381,17 +372,8 @@
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
   </data>
-  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
-    <value>kb 0 - 5000 (0 deaktiviert)</value>
-  </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>Bildformat 2:</value>
-  </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>Wenn Datei existiert:</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Bildgrößengrenze für den Gebrauch von "Bildformat 2":</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Bildformat:</value>

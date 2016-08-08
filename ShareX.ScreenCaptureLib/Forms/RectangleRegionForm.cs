@@ -35,7 +35,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleRegionForm : BaseRegionForm
+    public sealed class RectangleRegionForm : BaseRegionForm
     {
         public RectangleRegionMode Mode { get; private set; }
 
@@ -411,7 +411,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected virtual void WriteTips(StringBuilder sb)
+        private void WriteTips(StringBuilder sb)
         {
             sb.AppendLine(Resources.RectangleRegion_WriteTips__F1__Hide_tips);
             sb.AppendLine();
@@ -443,8 +443,8 @@ namespace ShareX.ScreenCaptureLib
             if ((!Config.QuickCrop || !ShapeManager.IsCurrentShapeTypeRegion) && ShapeManager.CurrentShape != null && !ShapeManager.IsCreating)
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region);
-                sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Arrow_keys__Resize_region_from_top_left_corner);
-                sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Alt___Arrow_keys__Resize_region_from_bottom_right_corner);
+                sb.AppendLine("[Arrow keys] Resize region from bottom right corner");
+                sb.AppendLine("[Hold Alt + Arrow keys] Resize region from top left corner");
                 sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region);
                 sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region);
@@ -459,7 +459,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing);
-                sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes);
+
+                if (ShapeManager.CurrentShapeType != ShapeType.RegionFreehand)
+                {
+                    sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes);
+                }
             }
 
             sb.AppendLine();
@@ -504,6 +508,8 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(ShapeType.RegionRoundedRectangle.GetLocalizedDescription());
                 if (ShapeManager.CurrentShapeType == ShapeType.RegionEllipse) sb.Append("-> ");
                 sb.AppendLine(ShapeType.RegionEllipse.GetLocalizedDescription());
+                if (ShapeManager.CurrentShapeType == ShapeType.RegionFreehand) sb.Append("-> ");
+                sb.AppendLine(ShapeType.RegionFreehand.GetLocalizedDescription());
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingRectangle) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 1", ShapeType.DrawingRectangle.GetLocalizedDescription()));
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingRoundedRectangle) sb.Append("-> ");

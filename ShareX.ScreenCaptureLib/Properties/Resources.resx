@@ -351,12 +351,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu" xml:space="preserve">
     <value>[Right click] [Menu] Open options menu</value>
   </data>
-  <data name="RectangleRegionForm_WriteTips__Arrow_keys__Resize_region_from_top_left_corner" xml:space="preserve">
-    <value>[Arrow keys] Resize region from top left corner</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Alt___Arrow_keys__Resize_region_from_bottom_right_corner" xml:space="preserve">
-    <value>[Hold Alt + Arrow keys] Resize region from bottom right corner</value>
-  </data>
   <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
     <value>[Hold Ctrl + Arrow keys] Move region</value>
   </data>

@@ -738,30 +738,11 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Arrow keys] Resize region from top left corner.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Arrow_keys__Resize_region_from_top_left_corner {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Arrow_keys__Resize_region_from_top_left_corner", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to [Ctrl + Mouse wheel] Change magnifier size.
         /// </summary>
         internal static string RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size {
             get {
                 return ResourceManager.GetString("RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Hold Alt + Arrow keys] Resize region from bottom right corner.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Hold_Alt___Arrow_keys__Resize_region_from_bottom_right_corner {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Hold_Alt___Arrow_keys__Resize_region_from_bottom_r" +
-                        "ight_corner", resourceCulture);
             }
         }
         

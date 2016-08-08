@@ -183,9 +183,6 @@
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Scherm opname</value>
   </data>
-  <data name="tpScrollingCapture.Text" xml:space="preserve">
-    <value>Scrollopname</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Vastleggen</value>
   </data>
@@ -209,12 +206,6 @@
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>Gebruik geavanceerde instellingen in het algemene taakvenster</value>
-  </data>
-  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
-    <value>Videominiatuur</value>
-  </data>
-  <data name="tpIndexer.Text" xml:space="preserve">
-    <value>Indexatie</value>
   </data>
   <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
     <value>Gebruik de instellingen van de hulpmiddelen in het algemene taakscherm</value>
@@ -379,17 +370,8 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="lblImageGIFQuality.Text" xml:space="preserve">
     <value>GIF kwaliteit:</value>
   </data>
-  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
-    <value>0 - 5000 kB (0 = geen limiet)</value>
-  </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>Afbeeldingsformaat 2:</value>
-  </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>Als het bestand bestaat:</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Maximale afbeeldingsgrootte voor "Afbeeldingsformaat 2":</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Afbeeldingsformaat:</value>

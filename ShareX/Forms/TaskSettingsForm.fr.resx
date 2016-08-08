@@ -168,9 +168,6 @@
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Enregistreur d'écran</value>
   </data>
-  <data name="tpScrollingCapture.Text" xml:space="preserve">
-    <value>Capture avec défilement</value>
-  </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Capturer</value>
   </data>
@@ -194,12 +191,6 @@
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>Utiliser les paramètres avancés dans la fenêtre principale des paramètres des tâches</value>
-  </data>
-  <data name="tpVideoThumbnailer.Text" xml:space="preserve">
-    <value>Générateur de miniatures de vidéo</value>
-  </data>
-  <data name="tpIndexer.Text" xml:space="preserve">
-    <value>Indexeur</value>
   </data>
   <data name="chkUseDefaultToolsSettings.Text" xml:space="preserve">
     <value>Utiliser les paramètres d'outils dans la fenêtre principale des paramètres des tâches</value>
@@ -369,17 +360,8 @@
   <data name="lblImageGIFQuality.Text" xml:space="preserve">
     <value>Qualité GIF :</value>
   </data>
-  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
-    <value>Ko (0 = désactivé)</value>
-  </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>Format d'image 2 :</value>
-  </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>Si le fichier existe :</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Taille limite de l'image pour l'utilisation de l'option « Format d'image 2 » :</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Format d'image :</value>

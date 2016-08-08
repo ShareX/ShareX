@@ -1109,9 +1109,6 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
   <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
     <value>Obter chave de API...</value>
   </data>
-  <data name="lblLithiioInfo.Text" xml:space="preserve">
-    <value>Deixe a chave de API em branco para utilizar o serviço de modo anônimo.</value>
-  </data>
   <data name="lblLithiioApiKey.Text" xml:space="preserve">
     <value>Chave de API:</value>
   </data>

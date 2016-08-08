@@ -938,9 +938,6 @@ store.book[0].title</value>
   <data name="lblLithiioUploadURL.Text" xml:space="preserve">
     <value>URL ссылки:</value>
   </data>
-  <data name="lblLithiioInfo.Text" xml:space="preserve">
-    <value>Оставьте поле ключа API пустым для анонимного использования.</value>
-  </data>
   <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
     <value>Использовать прямую ссылку</value>
   </data>

@@ -965,9 +965,6 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
   <data name="lblLithiioApiKey.Text" xml:space="preserve">
     <value>Clé API :</value>
   </data>
-  <data name="lblLithiioInfo.Text" xml:space="preserve">
-    <value>Laissez 'Clé API' vide pour une utilisation anonyme.</value>
-  </data>
   <data name="lblLithiioUploadURL.Text" xml:space="preserve">
     <value>Lien URL :</value>
   </data>

@@ -183,9 +183,6 @@
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>기본 작업 설정의 고급 설정 사용하기</value>
   </data>
-  <data name="tpIndexer.Text" xml:space="preserve">
-    <value>색인기</value>
-  </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>추가...</value>
   </data>
@@ -342,17 +339,8 @@
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 ~ 100</value>
   </data>
-  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
-    <value>kB  0 ~ 5000 (0으로 해제)</value>
-  </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>이미지 포맷 2:</value>
-  </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>파일이 이미 존재할 때:</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>"이미지 포맷 2"에 사용할 크기 제한:</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>이미지 포맷:</value>
