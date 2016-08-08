@@ -191,7 +191,7 @@ namespace ShareX.ImageEffectsLib
 
                     using (GraphicsPath gp = new GraphicsPath())
                     {
-                        gp.AddRoundedRectangle(watermarkRectangle, CornerRadius);
+                        gp.AddRoundedRectangleProper(watermarkRectangle, CornerRadius);
 
                         if (DrawBackground)
                         {

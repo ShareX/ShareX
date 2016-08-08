@@ -77,7 +77,7 @@ namespace ShareX.HelpersLib
         {
             using (GraphicsPath gp = new GraphicsPath())
             {
-                gp.AddRoundedRectangle(rect, radius);
+                gp.AddRoundedRectangleProper(rect, radius);
                 if (brush != null) g.FillPath(brush, gp);
                 if (pen != null) g.DrawPath(pen, gp);
             }

@@ -77,7 +77,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
         {
-            gp.AddRoundedRectangle(rect, Radius, 0);
+            gp.AddRoundedRectangle(rect, Radius);
         }
     }
 }

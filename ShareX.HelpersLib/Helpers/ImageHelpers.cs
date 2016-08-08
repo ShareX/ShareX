@@ -307,7 +307,7 @@ namespace ShareX.HelpersLib
 
                 using (GraphicsPath gp = new GraphicsPath())
                 {
-                    gp.AddRoundedRectangle(new RectangleF(0, 0, img.Width, img.Height), cornerRadius);
+                    gp.AddRoundedRectangleProper(new RectangleF(0, 0, img.Width, img.Height), cornerRadius);
 
                     using (TextureBrush brush = new TextureBrush(img))
                     {
