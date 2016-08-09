@@ -80,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
 
         internal ShapeManager Manager { get; set; }
 
-        private Rectangle tempNodeRect;
+        private Point tempNodePos, tempStartPos, tempEndPos;
 
         public virtual bool Intersects(Point position)
         {
@@ -195,52 +195,58 @@ namespace ShareX.ScreenCaptureLib
         {
             for (int i = 0; i < 8; i++)
             {
-                if (Manager.Nodes[i].IsDragging)
+                NodeObject node = Manager.Nodes[i];
+
+                if (node.IsDragging)
                 {
                     Manager.IsResizing = true;
 
                     if (!InputManager.IsBeforeMouseDown(MouseButtons.Left))
                     {
-                        tempNodeRect = Rectangle;
+                        tempNodePos = node.Position;
+                        tempStartPos = Rectangle.Location;
+                        tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
                     }
+
+                    Point pos = InputManager.MousePosition0Based;
+                    Point startPos = tempStartPos;
+                    Point endPos = tempEndPos;
 
                     NodePosition nodePosition = (NodePosition)i;
 
-                    int x = InputManager.MouseVelocity.X;
+                    int x = pos.X - tempNodePos.X;
 
                     switch (nodePosition)
                     {
                         case NodePosition.TopLeft:
                         case NodePosition.Left:
                         case NodePosition.BottomLeft:
-                            tempNodeRect.X += x;
-                            tempNodeRect.Width -= x;
+                            startPos.X += x;
                             break;
                         case NodePosition.TopRight:
                         case NodePosition.Right:
                         case NodePosition.BottomRight:
-                            tempNodeRect.Width += x;
+                            endPos.X += x;
                             break;
                     }
 
-                    int y = InputManager.MouseVelocity.Y;
+                    int y = pos.Y - tempNodePos.Y;
 
                     switch (nodePosition)
                     {
                         case NodePosition.TopLeft:
                         case NodePosition.Top:
                         case NodePosition.TopRight:
-                            tempNodeRect.Y += y;
-                            tempNodeRect.Height -= y;
+                            startPos.Y += y;
                             break;
                         case NodePosition.BottomLeft:
                         case NodePosition.Bottom:
                         case NodePosition.BottomRight:
-                            tempNodeRect.Height += y;
+                            endPos.Y += y;
                             break;
                     }
 
-                    Rectangle = CaptureHelpers.FixRectangle(tempNodeRect);
+                    Rectangle = CaptureHelpers.CreateRectangle(startPos, endPos);
                 }
             }
         }

@@ -221,28 +221,6 @@ namespace ShareX.HelpersLib
             return CreateRectangle(pos.X, pos.Y, pos2.X, pos2.Y);
         }
 
-        public static Rectangle FixRectangle(int x, int y, int width, int height)
-        {
-            if (width < 0)
-            {
-                x += width;
-                width = -width;
-            }
-
-            if (height < 0)
-            {
-                y += height;
-                height = -height;
-            }
-
-            return new Rectangle(x, y, width, height);
-        }
-
-        public static Rectangle FixRectangle(Rectangle rect)
-        {
-            return FixRectangle(rect.X, rect.Y, rect.Width, rect.Height);
-        }
-
         public static Point ProportionalPosition(Point pos, Point pos2)
         {
             Point newPosition = Point.Empty;
