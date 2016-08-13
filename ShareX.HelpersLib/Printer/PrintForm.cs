@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using ShareX.HelpersLib.Properties;
 using System;
 using System.Drawing;
@@ -45,10 +46,6 @@ namespace ShareX.HelpersLib
             LoadSettings();
         }
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -65,6 +62,11 @@ namespace ShareX.HelpersLib
             }
 
             base.Dispose(disposing);
+        }
+
+        private void PrintForm_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
         }
 
         private void LoadSettings()

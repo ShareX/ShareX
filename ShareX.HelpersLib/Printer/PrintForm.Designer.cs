@@ -115,6 +115,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "PrintForm";
+            this.Shown += new System.EventHandler(this.PrintForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.nudMargin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
