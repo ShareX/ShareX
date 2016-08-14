@@ -907,6 +907,15 @@ namespace ShareX.ScreenCaptureLib
         {
             switch (e.KeyCode)
             {
+                case Keys.ControlKey:
+                    IsCornerMoving = true;
+                    break;
+                case Keys.ShiftKey:
+                    IsProportionalResizing = true;
+                    break;
+                case Keys.Menu:
+                    IsSnapResizing = true;
+                    break;
                 case Keys.Insert:
                     if (IsCreating)
                     {
@@ -916,15 +925,6 @@ namespace ShareX.ScreenCaptureLib
                     {
                         StartRegionSelection();
                     }
-                    break;
-                case Keys.ControlKey:
-                    IsCornerMoving = true;
-                    break;
-                case Keys.ShiftKey:
-                    IsProportionalResizing = true;
-                    break;
-                case Keys.Menu:
-                    IsSnapResizing = true;
                     break;
                 case Keys.Left:
                 case Keys.A:
@@ -1062,9 +1062,6 @@ namespace ShareX.ScreenCaptureLib
                         EndRegionSelection();
                     }
                     break;
-                case Keys.Apps:
-                    OpenOptionsMenu();
-                    break;
                 case Keys.Left:
                 case Keys.A:
                     isLeftPressed = false;
@@ -1081,6 +1078,19 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.S:
                     isDownPressed = false;
                     break;
+            }
+
+            if (form.Mode == RectangleRegionMode.Annotation)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Apps:
+                        OpenOptionsMenu();
+                        break;
+                    case Keys.Q:
+                        Config.QuickCrop = !Config.QuickCrop;
+                        break;
+                }
             }
         }
 
