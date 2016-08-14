@@ -1472,7 +1472,7 @@ namespace ShareX.ScreenCaptureLib
         {
             BaseShape shape = CurrentShape;
 
-            if (shape != null && !shape.FixedSize && !CurrentRectangle.IsEmpty)
+            if (shape != null && shape.ShowResizeNodes && !CurrentRectangle.IsEmpty)
             {
                 NodesVisible = true;
             }

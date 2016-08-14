@@ -76,6 +76,8 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual bool IsRegionShape { get; } = false;
 
+        public virtual bool ShowResizeNodes { get; } = true;
+
         public virtual bool FixedSize { get; } = false;
 
         internal ShapeManager Manager { get; set; }
