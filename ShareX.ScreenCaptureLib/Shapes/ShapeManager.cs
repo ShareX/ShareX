@@ -193,7 +193,7 @@ namespace ShareX.ScreenCaptureLib
         private RectangleRegionForm form;
         private ContextMenuStrip cmsContextMenu;
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
-        private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor;
+        private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudRoundedRectangleRadius, tslnudBlurRadius, tslnudPixelateSize;
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
 
@@ -586,7 +586,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiOptions.Image = Resources.gear;
             cmsContextMenu.Items.Add(tsmiOptions);
 
-            ToolStripMenuItem tsmiQuickCrop = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Multi_region_mode);
+            tsmiQuickCrop = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Multi_region_mode);
             tsmiQuickCrop.Checked = !Config.QuickCrop;
             tsmiQuickCrop.CheckOnClick = true;
             tsmiQuickCrop.Click += (sender, e) => Config.QuickCrop = !tsmiQuickCrop.Checked;
@@ -1089,6 +1089,7 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case Keys.Q:
                         Config.QuickCrop = !Config.QuickCrop;
+                        tsmiQuickCrop.Checked = !Config.QuickCrop;
                         break;
                 }
             }
