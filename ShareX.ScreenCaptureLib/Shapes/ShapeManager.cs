@@ -1274,6 +1274,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingEllipse:
                     shape = new EllipseDrawingShape();
                     break;
+                case ShapeType.DrawingFreehand:
+                    shape = new FreehandDrawingShape();
+                    break;
                 case ShapeType.DrawingLine:
                     shape = new LineDrawingShape();
                     break;
@@ -1381,6 +1384,7 @@ namespace ShareX.ScreenCaptureLib
                     switch (CurrentShapeType)
                     {
                         case ShapeType.RegionFreehand:
+                        case ShapeType.DrawingFreehand:
                         case ShapeType.DrawingLine:
                         case ShapeType.DrawingArrow:
                         case ShapeType.DrawingStep:
