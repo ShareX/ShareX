@@ -2411,6 +2411,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drawing: Freehand.
+        /// </summary>
+        internal static string ShapeType_DrawingFreehand {
+            get {
+                return ResourceManager.GetString("ShapeType_DrawingFreehand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Effect: Highlight.
         /// </summary>
         internal static string ShapeType_DrawingHighlight {
