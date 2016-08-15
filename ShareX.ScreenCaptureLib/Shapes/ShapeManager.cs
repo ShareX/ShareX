@@ -756,6 +756,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingRoundedRectangle:
                 case ShapeType.DrawingEllipse:
+                case ShapeType.DrawingFreehand:
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
                 case ShapeType.DrawingText:
@@ -776,6 +777,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingRoundedRectangle:
                 case ShapeType.DrawingEllipse:
+                case ShapeType.DrawingFreehand:
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
                 case ShapeType.DrawingText:
@@ -1570,7 +1572,8 @@ namespace ShareX.ScreenCaptureLib
                 Cursor cursor = Helpers.CreateCursor(Resources.Crosshair);
 
                 if ((CurrentShapeType == ShapeType.DrawingRectangle || CurrentShapeType == ShapeType.DrawingRoundedRectangle || CurrentShapeType == ShapeType.DrawingEllipse ||
-                    CurrentShapeType == ShapeType.DrawingLine || CurrentShapeType == ShapeType.DrawingArrow) && Config.AnnotationOptions.BorderSize > 0)
+                    CurrentShapeType == ShapeType.DrawingFreehand || CurrentShapeType == ShapeType.DrawingLine || CurrentShapeType == ShapeType.DrawingArrow) &&
+                    Config.AnnotationOptions.BorderSize > 0)
                 {
                     using (Bitmap bmp = new Bitmap(32, 32))
                     using (Graphics g = Graphics.FromImage(bmp))
