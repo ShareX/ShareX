@@ -1137,6 +1137,8 @@ namespace ShareX.ScreenCaptureLib
 
         public void Update()
         {
+            OrderStepShapes();
+
             BaseShape shape = CurrentShape;
 
             if (shape != null)
@@ -1156,13 +1158,13 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
-            BaseShape shape = GetShapeIntersect();
+            BaseShape shape = GetIntersectShape();
 
             if (shape != null && shape.ShapeType == CurrentShapeType) // Select shape
             {
                 IsMoving = true;
                 CurrentShape = shape;
-                SelectShape();
+                SelectCurrentShape();
             }
             else if (!IsCreating) // Create new shape
             {
@@ -1232,7 +1234,7 @@ namespace ShareX.ScreenCaptureLib
                             shape.OnCreated();
                         }
 
-                        SelectShape();
+                        SelectCurrentShape();
                     }
                 }
             }
@@ -1339,6 +1341,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void OpenOptionsMenu()
         {
+            SelectIntersectShape();
+
             if (form.Mode == RectangleRegionMode.Annotation && cmsContextMenu != null)
             {
                 cmsContextMenu.Show(form, InputManager.MousePosition0Based.Add(-10, -10));
@@ -1378,7 +1382,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (!IsCursorOnNode && !IsCreating && !IsMoving && !IsResizing)
             {
-                BaseShape shape = GetShapeIntersect();
+                BaseShape shape = GetIntersectShape();
 
                 if (shape != null && shape.IsValidShape)
                 {
@@ -1477,13 +1481,24 @@ namespace ShareX.ScreenCaptureLib
             return bmp;
         }
 
-        private void SelectShape()
+        private void SelectCurrentShape()
         {
             BaseShape shape = CurrentShape;
 
             if (shape != null && shape.ShowResizeNodes && !CurrentRectangle.IsEmpty)
             {
                 NodesVisible = true;
+            }
+        }
+
+        private void SelectIntersectShape()
+        {
+            BaseShape shape = GetIntersectShape();
+
+            if (shape != null)
+            {
+                CurrentShape = shape;
+                SelectCurrentShape();
             }
         }
 
@@ -1506,7 +1521,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void DeleteIntersectShape()
         {
-            BaseShape shape = GetShapeIntersect();
+            BaseShape shape = GetIntersectShape();
 
             if (shape != null)
             {
@@ -1521,7 +1536,12 @@ namespace ShareX.ScreenCaptureLib
             DeselectShape();
         }
 
-        public BaseShape GetShapeIntersect(Point position)
+        public BaseShape GetIntersectShape()
+        {
+            return GetIntersectShape(InputManager.MousePosition0Based);
+        }
+
+        public BaseShape GetIntersectShape(Point position)
         {
             for (int i = Shapes.Count - 1; i >= 0; i--)
             {
@@ -1536,14 +1556,9 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public BaseShape GetShapeIntersect()
-        {
-            return GetShapeIntersect(InputManager.MousePosition0Based);
-        }
-
         public bool IsShapeIntersect()
         {
-            return GetShapeIntersect() != null;
+            return GetIntersectShape() != null;
         }
 
         private void UpdateNodes()

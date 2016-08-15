@@ -219,8 +219,6 @@ namespace ShareX.ScreenCaptureLib
                 effectShape.OnDraw(g);
             }
 
-            ShapeManager.OrderStepShapes();
-
             // Draw drawing shapes
             foreach (BaseDrawingShape drawingShape in ShapeManager.DrawingShapes)
             {
