@@ -85,7 +85,7 @@ namespace ShareX.ScreenCaptureLib
                     UpdateCursor();
                 }
 
-                DeselectShape();
+                DeselectCurrentShape();
 
                 OnCurrentShapeTypeChanged(currentShapeType);
             }
@@ -284,7 +284,7 @@ namespace ShareX.ScreenCaptureLib
 
             tsmiDeleteAll = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Delete_all_objects);
             tsmiDeleteAll.Image = Resources.minus;
-            tsmiDeleteAll.Click += (sender, e) => ClearAll();
+            tsmiDeleteAll.Click += (sender, e) => DeleteAllShapes();
             cmsContextMenu.Items.Add(tsmiDeleteAll);
 
             #endregion Selected object
@@ -921,16 +921,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Menu:
                     IsSnapResizing = true;
                     break;
-                case Keys.Insert:
-                    if (IsCreating)
-                    {
-                        EndRegionSelection();
-                    }
-                    else
-                    {
-                        StartRegionSelection();
-                    }
-                    break;
                 case Keys.Left:
                 case Keys.A:
                     isLeftPressed = true;
@@ -949,9 +939,26 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
+            switch (e.KeyData)
+            {
+                case Keys.Insert:
+                    if (IsCreating)
+                    {
+                        EndRegionSelection();
+                    }
+                    else
+                    {
+                        StartRegionSelection();
+                    }
+                    break;
+                case Keys.Control | Keys.Z:
+                    UndoShape();
+                    break;
+            }
+
             if (form.Mode == RectangleRegionMode.Annotation && !IsCreating)
             {
-                switch (e.KeyCode)
+                switch (e.KeyData)
                 {
                     case Keys.Tab:
                         SwapShapeType();
@@ -1059,14 +1066,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Menu:
                     IsSnapResizing = false;
                     break;
-                case Keys.Delete:
-                    DeleteCurrentShape();
-
-                    if (IsCreating)
-                    {
-                        EndRegionSelection();
-                    }
-                    break;
                 case Keys.Left:
                 case Keys.A:
                     isLeftPressed = false;
@@ -1085,9 +1084,21 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
+            switch (e.KeyData)
+            {
+                case Keys.Delete:
+                    DeleteCurrentShape();
+
+                    if (IsCreating)
+                    {
+                        EndRegionSelection();
+                    }
+                    break;
+            }
+
             if (form.Mode == RectangleRegionMode.Annotation)
             {
-                switch (e.KeyCode)
+                switch (e.KeyData)
                 {
                     case Keys.Apps:
                         OpenOptionsMenu();
@@ -1168,7 +1179,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (!IsCreating) // Create new shape
             {
-                DeselectShape();
+                DeselectCurrentShape();
 
                 shape = AddShape();
 
@@ -1502,38 +1513,43 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DeselectShape()
+        private void DeselectShape(BaseShape shape)
         {
-            CurrentShape = null;
-            NodesVisible = false;
+            if (shape == CurrentShape)
+            {
+                CurrentShape = null;
+                NodesVisible = false;
+            }
+        }
+
+        private void DeselectCurrentShape()
+        {
+            DeselectShape(CurrentShape);
+        }
+
+        private void DeleteShape(BaseShape shape)
+        {
+            if (shape != null)
+            {
+                Shapes.Remove(shape);
+                DeselectShape(shape);
+            }
         }
 
         private void DeleteCurrentShape()
         {
-            BaseShape shape = CurrentShape;
-
-            if (shape != null)
-            {
-                Shapes.Remove(shape);
-                DeselectShape();
-            }
+            DeleteShape(CurrentShape);
         }
 
         private void DeleteIntersectShape()
         {
-            BaseShape shape = GetIntersectShape();
-
-            if (shape != null)
-            {
-                Shapes.Remove(shape);
-                DeselectShape();
-            }
+            DeleteShape(GetIntersectShape());
         }
 
-        private void ClearAll()
+        private void DeleteAllShapes()
         {
             Shapes.Clear();
-            DeselectShape();
+            DeselectCurrentShape();
         }
 
         public BaseShape GetIntersectShape()
@@ -1559,6 +1575,14 @@ namespace ShareX.ScreenCaptureLib
         public bool IsShapeIntersect()
         {
             return GetIntersectShape() != null;
+        }
+
+        public void UndoShape()
+        {
+            if (Shapes.Count > 0)
+            {
+                DeleteShape(Shapes[Shapes.Count - 1]);
+            }
         }
 
         private void UpdateNodes()
