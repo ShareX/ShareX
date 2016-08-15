@@ -122,5 +122,20 @@ namespace ShareX.ScreenCaptureLib
                 g.SmoothingMode = SmoothingMode.None;
             }
         }
+
+        public override void Move(int x, int y)
+        {
+            for (int i = 0; i < points.Count; i++)
+            {
+                points[i] = points[i].Add(x, y);
+            }
+
+            Rectangle = Rectangle.LocationOffset(x, y);
+        }
+
+        public override void Resize(int x, int y, bool fromBottomRight)
+        {
+            Move(x, y);
+        }
     }
 }
