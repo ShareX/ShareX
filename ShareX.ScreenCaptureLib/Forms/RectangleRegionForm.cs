@@ -178,7 +178,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 BaseShape shape = ShapeManager.CurrentShape;
 
-                if (shape != null && shape.ShapeType != ShapeType.RegionFreehand)
+                if (shape != null && shape.ShapeType != ShapeType.RegionFreehand && shape.ShapeType != ShapeType.DrawingFreehand)
                 {
                     foreach (Size size in Config.SnapSizes)
                     {
@@ -459,7 +459,7 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection);
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing);
 
-                if (ShapeManager.CurrentShapeType != ShapeType.RegionFreehand)
+                if (ShapeManager.CurrentShapeType != ShapeType.RegionFreehand && ShapeManager.CurrentShapeType != ShapeType.DrawingFreehand)
                 {
                     sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes);
                 }
@@ -515,6 +515,8 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 2", ShapeType.DrawingRoundedRectangle.GetLocalizedDescription()));
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingEllipse) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 3", ShapeType.DrawingEllipse.GetLocalizedDescription()));
+                if (ShapeManager.CurrentShapeType == ShapeType.DrawingFreehand) sb.Append("-> ");
+                sb.AppendLine(ShapeType.DrawingFreehand.GetLocalizedDescription());
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingLine) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 4", ShapeType.DrawingLine.GetLocalizedDescription()));
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingArrow) sb.Append("-> ");
