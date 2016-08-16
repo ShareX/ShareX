@@ -463,6 +463,11 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
+            if (ShapeManager.Shapes.Count > 0)
+            {
+                sb.AppendLine("[Ctrl + Z] Undo shape");
+            }
+
             sb.AppendLine();
 
             if (ShapeManager.IsCurrentShapeValid)
@@ -530,6 +535,9 @@ namespace ShareX.ScreenCaptureLib
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingHighlight) sb.Append("-> ");
                 sb.AppendLine(ShapeType.DrawingHighlight.GetLocalizedDescription());
             }
+
+            sb.AppendLine();
+            sb.AppendLine("Note: Hiding these tips will increase FPS greatly.");
         }
 
         private string GetAreaText(Rectangle area)
