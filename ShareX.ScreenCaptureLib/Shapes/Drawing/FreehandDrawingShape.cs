@@ -36,6 +36,14 @@ namespace ShareX.ScreenCaptureLib
 
         public override bool ShowResizeNodes { get; } = false;
 
+        public override bool IsValidShape
+        {
+            get
+            {
+                return points.Count > 0;
+            }
+        }
+
         public Point LastPosition
         {
             get
@@ -104,19 +112,30 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            if (points.Count > 1 && BorderSize > 0 && BorderColor.A > 0)
+            if (points.Count > 0 && BorderSize > 0 && BorderColor.A > 0)
             {
                 g.SmoothingMode = SmoothingMode.HighQuality;
 
-                using (Pen pen = new Pen(BorderColor, BorderSize) { StartCap = LineCap.Round, EndCap = LineCap.Round })
-                using (GraphicsPath gp = new GraphicsPath())
+                if (points.Count == 1)
                 {
-                    for (int i = 0; i < points.Count - 1; i++)
+                    using (Brush brush = new SolidBrush(BorderColor))
                     {
-                        gp.AddLine(points[i], points[i + 1]);
+                        Rectangle rect = new Rectangle((int)(points[0].X - BorderSize / 2f), (int)(points[0].Y - BorderSize / 2f), BorderSize, BorderSize);
+                        g.FillEllipse(brush, rect);
                     }
+                }
+                else
+                {
+                    using (Pen pen = new Pen(BorderColor, BorderSize) { StartCap = LineCap.Round, EndCap = LineCap.Round })
+                    using (GraphicsPath gp = new GraphicsPath())
+                    {
+                        for (int i = 0; i < points.Count - 1; i++)
+                        {
+                            gp.AddLine(points[i], points[i + 1]);
+                        }
 
-                    g.DrawPath(pen, gp);
+                        g.DrawPath(pen, gp);
+                    }
                 }
 
                 g.SmoothingMode = SmoothingMode.None;
