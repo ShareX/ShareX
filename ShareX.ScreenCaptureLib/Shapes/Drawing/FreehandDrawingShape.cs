@@ -108,7 +108,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 g.SmoothingMode = SmoothingMode.HighQuality;
 
-                using (Pen pen = new Pen(BorderColor, BorderSize))
+                using (Pen pen = new Pen(BorderColor, BorderSize) { StartCap = LineCap.Round, EndCap = LineCap.Round })
                 using (GraphicsPath gp = new GraphicsPath())
                 {
                     for (int i = 0; i < points.Count - 1; i++)
