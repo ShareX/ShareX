@@ -206,7 +206,9 @@ namespace ShareX.ScreenCaptureLib
 
             for (int i = 0; i < 8; i++)
             {
-                Nodes[i] = form.MakeNode();
+                NodeObject node = new NodeObject();
+                form.DrawableObjects.Add(node);
+                Nodes[i] = node;
             }
 
             Nodes[(int)NodePosition.BottomRight].Order = 10;

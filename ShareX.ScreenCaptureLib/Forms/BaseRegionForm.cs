@@ -46,6 +46,7 @@ namespace ShareX.ScreenCaptureLib
         public Rectangle ScreenRectangle0Based { get; private set; }
         public RegionResult Result { get; private set; }
         public int MonitorIndex { get; set; }
+        public List<DrawableObject> DrawableObjects { get; private set; }
 
         protected Image backgroundImage;
         protected TextureBrush darkBackgroundBrush, lightBackgroundBrush;
@@ -56,7 +57,6 @@ namespace ShareX.ScreenCaptureLib
         protected Stopwatch timerStart, timerFPS;
         protected int frameCount;
         protected bool pause, isKeyAllowed;
-        protected List<DrawableObject> drawableObjects;
 
         public BaseRegionForm()
         {
@@ -67,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
             Icon = ShareXResources.Icon;
             Cursor = Helpers.CreateCursor(Resources.Crosshair);
 
-            drawableObjects = new List<DrawableObject>();
+            DrawableObjects = new List<DrawableObject>();
             Config = new RegionCaptureOptions();
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
@@ -111,7 +111,7 @@ namespace ShareX.ScreenCaptureLib
             Prepare(new Screenshot());
         }
 
-        /// <summary>Must be called before show form</summary>
+        // Must be called before show form
         public virtual void Prepare(Screenshot screenshot)
         {
             backgroundImage = screenshot.CaptureFullscreen();
@@ -195,6 +195,7 @@ namespace ShareX.ScreenCaptureLib
         public void Resume()
         {
             pause = false;
+
             Invalidate();
         }
 
@@ -280,6 +281,7 @@ namespace ShareX.ScreenCaptureLib
         public void Close(RegionResult result)
         {
             Result = result;
+
             Close();
         }
 
@@ -293,7 +295,7 @@ namespace ShareX.ScreenCaptureLib
 
             InputManager.Update();
 
-            DrawableObject[] objects = drawableObjects.OrderByDescending(x => x.Order).ToArray();
+            DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
 
             if (objects.All(x => !x.IsDragging))
             {
@@ -343,7 +345,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawObjects(Graphics g)
         {
-            foreach (DrawableObject drawObject in drawableObjects)
+            foreach (DrawableObject drawObject in DrawableObjects)
             {
                 if (drawObject.Visible)
                 {
@@ -382,13 +384,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             ImageHelpers.DrawTextWithOutline(g, text, textRectangle.Location, infoFontBig, Color.White, Color.Black);
-        }
-
-        internal NodeObject MakeNode()
-        {
-            NodeObject node = new NodeObject();
-            drawableObjects.Add(node);
-            return node;
         }
 
         public IContainer components = null;

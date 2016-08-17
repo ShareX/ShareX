@@ -30,53 +30,17 @@ namespace ShareX.ScreenCaptureLib
 {
     public static class InputManager
     {
-        public static Point MousePosition
-        {
-            get
-            {
-                return mouseState.Position;
-            }
-        }
+        public static Point MousePosition => mouseState.Position;
 
-        public static Point PreviousMousePosition
-        {
-            get
-            {
-                return oldMouseState.Position;
-            }
-        }
+        public static Point PreviousMousePosition => oldMouseState.Position;
 
-        public static Point MousePosition0Based
-        {
-            get
-            {
-                return mouseState.ZeroBasedPosition;
-            }
-        }
+        public static Point MousePosition0Based => mouseState.ZeroBasedPosition;
 
-        public static Point PreviousMousePosition0Based
-        {
-            get
-            {
-                return oldMouseState.ZeroBasedPosition;
-            }
-        }
+        public static Point PreviousMousePosition0Based => oldMouseState.ZeroBasedPosition;
 
-        public static Point MouseVelocity
-        {
-            get
-            {
-                return new Point(MousePosition0Based.X - PreviousMousePosition0Based.X, MousePosition0Based.Y - PreviousMousePosition0Based.Y);
-            }
-        }
+        public static Point MouseVelocity => new Point(MousePosition0Based.X - PreviousMousePosition0Based.X, MousePosition0Based.Y - PreviousMousePosition0Based.Y);
 
-        public static bool IsMouseMoved
-        {
-            get
-            {
-                return MouseVelocity.X != 0 || MouseVelocity.Y != 0;
-            }
-        }
+        public static bool IsMouseMoved => MouseVelocity.X != 0 || MouseVelocity.Y != 0;
 
         private static MouseState mouseState = new MouseState();
         private static MouseState oldMouseState;
