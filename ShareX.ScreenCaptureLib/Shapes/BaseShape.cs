@@ -186,7 +186,7 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnNodeVisible()
         {
-            foreach (NodeObject node in Manager.Nodes)
+            foreach (ResizeNode node in Manager.ResizeNodes)
             {
                 node.Shape = NodeShape.Square;
                 node.Visible = true;
@@ -197,7 +197,7 @@ namespace ShareX.ScreenCaptureLib
         {
             for (int i = 0; i < 8; i++)
             {
-                NodeObject node = Manager.Nodes[i];
+                ResizeNode node = Manager.ResizeNodes[i];
 
                 if (node.IsDragging)
                 {
@@ -263,14 +263,14 @@ namespace ShareX.ScreenCaptureLib
             int yMid = Rectangle.Y + Rectangle.Height / 2;
             int yEnd = Rectangle.Y + Rectangle.Height - 1;
 
-            Manager.Nodes[(int)NodePosition.TopLeft].Position = new Point(xStart, yStart);
-            Manager.Nodes[(int)NodePosition.Top].Position = new Point(xMid, yStart);
-            Manager.Nodes[(int)NodePosition.TopRight].Position = new Point(xEnd, yStart);
-            Manager.Nodes[(int)NodePosition.Right].Position = new Point(xEnd, yMid);
-            Manager.Nodes[(int)NodePosition.BottomRight].Position = new Point(xEnd, yEnd);
-            Manager.Nodes[(int)NodePosition.Bottom].Position = new Point(xMid, yEnd);
-            Manager.Nodes[(int)NodePosition.BottomLeft].Position = new Point(xStart, yEnd);
-            Manager.Nodes[(int)NodePosition.Left].Position = new Point(xStart, yMid);
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Position = new Point(xStart, yStart);
+            Manager.ResizeNodes[(int)NodePosition.Top].Position = new Point(xMid, yStart);
+            Manager.ResizeNodes[(int)NodePosition.TopRight].Position = new Point(xEnd, yStart);
+            Manager.ResizeNodes[(int)NodePosition.Right].Position = new Point(xEnd, yMid);
+            Manager.ResizeNodes[(int)NodePosition.BottomRight].Position = new Point(xEnd, yEnd);
+            Manager.ResizeNodes[(int)NodePosition.Bottom].Position = new Point(xMid, yEnd);
+            Manager.ResizeNodes[(int)NodePosition.BottomLeft].Position = new Point(xStart, yEnd);
+            Manager.ResizeNodes[(int)NodePosition.Left].Position = new Point(xStart, yMid);
         }
     }
 }

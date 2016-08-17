@@ -81,19 +81,19 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnNodeVisible()
         {
-            Manager.Nodes[(int)NodePosition.TopLeft].Shape = Manager.Nodes[(int)NodePosition.BottomRight].Shape = NodeShape.Circle;
-            Manager.Nodes[(int)NodePosition.TopLeft].Visible = Manager.Nodes[(int)NodePosition.BottomRight].Visible = true;
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Shape = Manager.ResizeNodes[(int)NodePosition.BottomRight].Shape = NodeShape.Circle;
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Visible = Manager.ResizeNodes[(int)NodePosition.BottomRight].Visible = true;
         }
 
         public override void OnNodeUpdate()
         {
-            if (Manager.Nodes[(int)NodePosition.TopLeft].IsDragging)
+            if (Manager.ResizeNodes[(int)NodePosition.TopLeft].IsDragging)
             {
                 Manager.IsResizing = true;
 
                 StartPosition = InputManager.MousePosition0Based;
             }
-            else if (Manager.Nodes[(int)NodePosition.BottomRight].IsDragging)
+            else if (Manager.ResizeNodes[(int)NodePosition.BottomRight].IsDragging)
             {
                 Manager.IsResizing = true;
 
@@ -103,8 +103,8 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnNodePositionUpdate()
         {
-            Manager.Nodes[(int)NodePosition.TopLeft].Position = StartPosition;
-            Manager.Nodes[(int)NodePosition.BottomRight].Position = EndPosition;
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Position = StartPosition;
+            Manager.ResizeNodes[(int)NodePosition.BottomRight].Position = EndPosition;
         }
     }
 }

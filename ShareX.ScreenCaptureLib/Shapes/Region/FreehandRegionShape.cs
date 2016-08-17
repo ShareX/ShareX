@@ -127,13 +127,13 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnNodeVisible()
         {
-            Manager.Nodes[(int)NodePosition.TopLeft].Shape = NodeShape.Circle;
-            Manager.Nodes[(int)NodePosition.TopLeft].Visible = true;
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Shape = NodeShape.Circle;
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Visible = true;
         }
 
         public override void OnNodeUpdate()
         {
-            if (Manager.Nodes[(int)NodePosition.TopLeft].IsDragging)
+            if (Manager.ResizeNodes[(int)NodePosition.TopLeft].IsDragging)
             {
                 Manager.IsCreating = true;
                 Manager.NodesVisible = false;
@@ -142,7 +142,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnNodePositionUpdate()
         {
-            Manager.Nodes[(int)NodePosition.TopLeft].Position = LastPosition;
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Position = LastPosition;
         }
     }
 }

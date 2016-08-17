@@ -28,7 +28,7 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class NodeObject : DrawableObject
+    internal class ResizeNode : DrawableObject
     {
         private Point position;
 
@@ -42,24 +42,24 @@ namespace ShareX.ScreenCaptureLib
             {
                 position = value;
 
-                Rectangle = new Rectangle(position.X - (NodeSize - 1) / 2, position.Y - (NodeSize - 1) / 2, NodeSize, NodeSize);
+                Rectangle = new Rectangle(position.X - (Size - 1) / 2, position.Y - (Size - 1) / 2, Size, Size);
             }
         }
 
-        public int NodeSize { get; set; }
+        public int Size { get; set; }
 
         public NodeShape Shape { get; set; }
 
-        public NodeObject(int x = 0, int y = 0)
+        public ResizeNode(int x = 0, int y = 0)
         {
-            NodeSize = 13;
+            Size = 13;
             Shape = NodeShape.Square;
             Position = new Point(x, y);
         }
 
         public override void Draw(Graphics g)
         {
-            Rectangle rect = new Rectangle(Rectangle.X, Rectangle.Y, Rectangle.Width - 1, Rectangle.Height - 1);
+            Rectangle rect = Rectangle.SizeOffset(-1);
 
             switch (Shape)
             {

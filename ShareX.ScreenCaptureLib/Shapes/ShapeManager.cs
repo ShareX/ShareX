@@ -151,7 +151,7 @@ namespace ShareX.ScreenCaptureLib
 
         public AnnotationOptions AnnotationOptions => Config.AnnotationOptions;
 
-        public NodeObject[] Nodes { get; private set; }
+        public ResizeNode[] ResizeNodes { get; private set; }
 
         private bool nodesVisible;
 
@@ -167,7 +167,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!nodesVisible)
                 {
-                    foreach (NodeObject node in Nodes)
+                    foreach (ResizeNode node in ResizeNodes)
                     {
                         node.Visible = nodesVisible;
                     }
@@ -185,7 +185,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool IsCursorOnNode => NodesVisible && Nodes.Any(node => node.IsCursorHover);
+        public bool IsCursorOnNode => NodesVisible && ResizeNodes.Any(node => node.IsCursorHover);
 
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
@@ -202,16 +202,16 @@ namespace ShareX.ScreenCaptureLib
             this.form = form;
             Config = form.Config;
 
-            Nodes = new NodeObject[8];
+            ResizeNodes = new ResizeNode[8];
 
             for (int i = 0; i < 8; i++)
             {
-                NodeObject node = new NodeObject();
+                ResizeNode node = new ResizeNode();
                 form.DrawableObjects.Add(node);
-                Nodes[i] = node;
+                ResizeNodes[i] = node;
             }
 
-            Nodes[(int)NodePosition.BottomRight].Order = 10;
+            ResizeNodes[(int)NodePosition.BottomRight].Order = 10;
 
             form.LostFocus += form_LostFocus;
             form.MouseDown += form_MouseDown;

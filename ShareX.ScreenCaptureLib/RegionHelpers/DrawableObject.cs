@@ -27,7 +27,7 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class DrawableObject
+    internal class DrawableObject
     {
         public bool Visible { get; set; }
         public Rectangle Rectangle { get; set; }

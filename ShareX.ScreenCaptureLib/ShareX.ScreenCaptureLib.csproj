@@ -131,13 +131,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Shapes\ShapeManager.cs" />
-    <Compile Include="RegionHelpers\DrawObject.cs" />
+    <Compile Include="RegionHelpers\DrawableObject.cs" />
     <Compile Include="Forms\RectangleRegionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegionHelpers\InputManager.cs" />
     <Compile Include="RegionHelpers\MouseState.cs" />
-    <Compile Include="RegionHelpers\NodeObject.cs" />
+    <Compile Include="RegionHelpers\ResizeNode.cs" />
     <Compile Include="RegionHelpers\RegionCaptureHelpers.cs" />
     <Compile Include="ScrollingCaptureOptions.cs" />
     <Compile Include="Shapes\Region\RoundedRectangleRegionShape.cs" />
