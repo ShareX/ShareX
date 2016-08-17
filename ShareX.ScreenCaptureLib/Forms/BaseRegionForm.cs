@@ -384,44 +384,11 @@ namespace ShareX.ScreenCaptureLib
             ImageHelpers.DrawTextWithOutline(g, text, textRectangle.Location, infoFontBig, Color.White, Color.Black);
         }
 
-        protected Rectangle CalculateAreaFromNodes()
-        {
-            IEnumerable<NodeObject> nodes = drawableObjects.OfType<NodeObject>().Where(x => x.Visible);
-
-            if (nodes.Count() > 1)
-            {
-                int left = (int)nodes.Min(x => x.Position.X);
-                int top = (int)nodes.Min(x => x.Position.Y);
-                int right = (int)nodes.Max(x => x.Position.X);
-                int bottom = (int)nodes.Max(x => x.Position.Y);
-
-                return CaptureHelpers.CreateRectangle(new Point(left, top), new Point(right, bottom));
-            }
-
-            return Rectangle.Empty;
-        }
-
         internal NodeObject MakeNode()
         {
             NodeObject node = new NodeObject();
             drawableObjects.Add(node);
             return node;
-        }
-
-        protected void ShowNodes()
-        {
-            foreach (NodeObject node in drawableObjects.OfType<NodeObject>())
-            {
-                node.Visible = true;
-            }
-        }
-
-        protected void HideNodes()
-        {
-            foreach (NodeObject node in drawableObjects.OfType<NodeObject>())
-            {
-                node.Visible = false;
-            }
         }
 
         public IContainer components = null;
