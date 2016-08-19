@@ -995,6 +995,9 @@ namespace ShareX.ScreenCaptureLib
                     case Keys.NumPad9:
                         CurrentShapeType = ShapeType.DrawingPixelate;
                         break;
+                    case Keys.Control | Keys.V:
+                        AddImageFromClipboard();
+                        break;
                 }
             }
 
@@ -1108,9 +1111,6 @@ namespace ShareX.ScreenCaptureLib
                     case Keys.Q:
                         Config.QuickCrop = !Config.QuickCrop;
                         tsmiQuickCrop.Checked = !Config.QuickCrop;
-                        break;
-                    case Keys.Control | Keys.V:
-                        AddImageFromClipboard();
                         break;
                 }
             }

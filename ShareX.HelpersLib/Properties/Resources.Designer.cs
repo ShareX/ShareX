@@ -2429,6 +2429,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drawing: Image.
+        /// </summary>
+        internal static string ShapeType_DrawingImage {
+            get {
+                return ResourceManager.GetString("ShapeType_DrawingImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drawing: Line.
         /// </summary>
         internal static string ShapeType_DrawingLine {

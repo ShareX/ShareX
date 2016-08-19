@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -33,13 +34,21 @@ namespace ShareX.ScreenCaptureLib
 
         public Image Image { get; private set; }
 
-        public void SetImage(Image img, Point pos)
+        public void SetImage(Image img)
         {
             Dispose();
 
             Image = img;
+        }
 
-            Rectangle = new Rectangle(new Point(pos.X - Image.Width / 2, pos.Y - Image.Height / 2), Image.Size);
+        public void SetImage(Image img, Point pos)
+        {
+            SetImage(img);
+
+            if (Image != null)
+            {
+                Rectangle = new Rectangle(new Point(pos.X - Image.Width / 2, pos.Y - Image.Height / 2), Image.Size);
+            }
         }
 
         public override void OnDraw(Graphics g)
