@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -35,18 +36,35 @@ namespace ShareX.ScreenCaptureLib
 
         public void SetImage(Image img)
         {
-            Dispose();
-
-            Image = img;
+            SetImage(img, Rectangle.Location);
         }
 
         public void SetImage(Image img, Point pos)
         {
-            SetImage(img);
+            Dispose();
+
+            Image = img;
 
             if (Image != null)
             {
-                Rectangle = new Rectangle(new Point(pos.X - Image.Width / 2, pos.Y - Image.Height / 2), Image.Size);
+                Rectangle = new Rectangle(pos, Image.Size);
+            }
+        }
+
+        public void OpenImageDialog()
+        {
+            Manager.IsMoving = false;
+
+            string filepath = ImageHelpers.OpenImageFileDialog();
+
+            if (!string.IsNullOrEmpty(filepath))
+            {
+                Image img = ImageHelpers.LoadImage(filepath);
+
+                if (img != null)
+                {
+                    SetImage(img);
+                }
             }
         }
 
@@ -56,6 +74,16 @@ namespace ShareX.ScreenCaptureLib
             {
                 g.DrawImage(Image, Rectangle);
             }
+        }
+
+        public override void OnCreated()
+        {
+            OpenImageDialog();
+        }
+
+        public override void OnDoubleClicked()
+        {
+            OpenImageDialog();
         }
 
         public override void Dispose()

@@ -136,7 +136,7 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public bool IsCreating { get; set; }
-        public bool IsMoving { get; private set; }
+        public bool IsMoving { get; set; }
         public bool IsResizing { get; set; }
 
         public bool IsCornerMoving { get; private set; }
@@ -1717,7 +1717,9 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentShapeType = ShapeType.DrawingImage;
                     ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
-                    shape.SetImage(img, InputManager.MousePosition0Based);
+                    Point pos = InputManager.MousePosition0Based;
+                    Point shapePos = new Point(pos.X - img.Width / 2, pos.Y - img.Height / 2);
+                    shape.SetImage(img, shapePos);
                     AddShape(shape);
                     SelectCurrentShape();
                 }
