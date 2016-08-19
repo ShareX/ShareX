@@ -1109,6 +1109,9 @@ namespace ShareX.ScreenCaptureLib
                         Config.QuickCrop = !Config.QuickCrop;
                         tsmiQuickCrop.Checked = !Config.QuickCrop;
                         break;
+                    case Keys.Control | Keys.V:
+                        AddImageFromClipboard();
+                        break;
                 }
             }
         }
@@ -1256,9 +1259,14 @@ namespace ShareX.ScreenCaptureLib
         private BaseShape AddShape()
         {
             BaseShape shape = CreateShape();
+            AddShape(shape);
+            return shape;
+        }
+
+        private void AddShape(BaseShape shape)
+        {
             Shapes.Add(shape);
             CurrentShape = shape;
-            return shape;
         }
 
         private BaseShape CreateShape()
@@ -1308,6 +1316,9 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.DrawingStep:
                     shape = new StepDrawingShape();
+                    break;
+                case ShapeType.DrawingImage:
+                    shape = new ImageDrawingShape();
                     break;
                 case ShapeType.DrawingBlur:
                     shape = new BlurEffectShape();
@@ -1684,6 +1695,23 @@ namespace ShareX.ScreenCaptureLib
             foreach (StepDrawingShape shape in Shapes.OfType<StepDrawingShape>())
             {
                 shape.Number = i++;
+            }
+        }
+
+        private void AddImageFromClipboard()
+        {
+            if (Clipboard.ContainsImage())
+            {
+                Image img = ClipboardHelpers.GetImage();
+
+                if (img != null)
+                {
+                    CurrentShapeType = ShapeType.DrawingImage;
+                    ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
+                    shape.SetImage(img, InputManager.MousePosition0Based);
+                    AddShape(shape);
+                    SelectCurrentShape();
+                }
             }
         }
 

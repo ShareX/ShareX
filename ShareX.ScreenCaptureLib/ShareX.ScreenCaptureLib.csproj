@@ -93,6 +93,7 @@
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\BaseDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\FreehandDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\ImageDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\StepDrawingShape.cs" />
     <Compile Include="Shapes\Region\FreehandRegionShape.cs" />
     <Compile Include="Shapes\TextDrawingOptions.cs" />

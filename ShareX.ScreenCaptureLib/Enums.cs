@@ -179,6 +179,7 @@ namespace ShareX.ScreenCaptureLib
         DrawingArrow,
         DrawingText,
         DrawingStep,
+        DrawingImage,
         DrawingBlur,
         DrawingPixelate,
         DrawingHighlight
