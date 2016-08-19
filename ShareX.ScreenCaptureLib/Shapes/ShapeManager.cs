@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ShapeManager
+    internal class ShapeManager : IDisposable
     {
         public List<BaseShape> Shapes { get; private set; } = new List<BaseShape>();
 
@@ -1544,6 +1544,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (shape != null)
             {
+                shape.Dispose();
                 Shapes.Remove(shape);
                 DeselectShape(shape);
             }
@@ -1561,6 +1562,11 @@ namespace ShareX.ScreenCaptureLib
 
         private void DeleteAllShapes()
         {
+            foreach (BaseShape shape in Shapes)
+            {
+                shape.Dispose();
+            }
+
             Shapes.Clear();
             DeselectCurrentShape();
         }
@@ -1729,6 +1735,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 CurrentShapeTypeChanged(shapeType);
             }
+        }
+
+        public void Dispose()
+        {
+            DeleteAllShapes();
         }
     }
 }

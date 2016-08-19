@@ -35,10 +35,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void SetImage(Image img, Point pos)
         {
-            if (Image != null)
-            {
-                Image.Dispose();
-            }
+            Dispose();
 
             Image = img;
 
@@ -50,6 +47,14 @@ namespace ShareX.ScreenCaptureLib
             if (Image != null)
             {
                 g.DrawImage(Image, Rectangle);
+            }
+        }
+
+        public override void Dispose()
+        {
+            if (Image != null)
+            {
+                Image.Dispose();
             }
         }
     }

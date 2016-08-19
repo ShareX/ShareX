@@ -800,6 +800,11 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void Dispose(bool disposing)
         {
+            if (ShapeManager != null)
+            {
+                ShapeManager.Dispose();
+            }
+
             if (bmpBackgroundImage != null)
             {
                 bmpBackgroundImage.Dispose();

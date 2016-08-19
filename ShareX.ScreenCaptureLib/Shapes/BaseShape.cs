@@ -24,13 +24,14 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public abstract class BaseShape
+    public abstract class BaseShape : IDisposable
     {
         protected const int MinimumSize = 3;
 
@@ -271,6 +272,10 @@ namespace ShareX.ScreenCaptureLib
             Manager.ResizeNodes[(int)NodePosition.Bottom].Position = new Point(xMid, yEnd);
             Manager.ResizeNodes[(int)NodePosition.BottomLeft].Position = new Point(xStart, yEnd);
             Manager.ResizeNodes[(int)NodePosition.Left].Position = new Point(xStart, yMid);
+        }
+
+        public virtual void Dispose()
+        {
         }
     }
 }
