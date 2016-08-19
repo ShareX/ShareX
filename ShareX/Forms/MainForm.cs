@@ -715,7 +715,7 @@ namespace ShareX
             {
                 UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
 
-                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) == DialogResult.No)
+                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) != DialogResult.Yes)
                 {
                     TimeSpan interval = TimeSpan.FromHours(24);
                     updateTimer.Change(interval, interval);

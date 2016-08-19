@@ -88,7 +88,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "UpdateMessageBox";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateMessageBox_FormClosing);
             this.Shown += new System.EventHandler(this.UpdateMessageBox_Shown);
             this.ResumeLayout(false);
 

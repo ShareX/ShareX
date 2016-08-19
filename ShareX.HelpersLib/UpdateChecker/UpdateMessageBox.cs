@@ -98,14 +98,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void UpdateMessageBox_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult = DialogResult.No;
-            }
-        }
-
         private void cbDontShow_CheckedChanged(object sender, EventArgs e)
         {
             DontShow = cbDontShow.Checked;
