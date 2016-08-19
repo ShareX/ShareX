@@ -58,6 +58,9 @@ namespace ShareX.ScreenCaptureLib
 
         protected virtual void DrawLine(Graphics g, Pen pen)
         {
+            pen.StartCap = LineCap.Round;
+            pen.EndCap = LineCap.Round;
+
             g.DrawLine(pen, StartPosition, EndPosition);
         }
 

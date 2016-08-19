@@ -38,7 +38,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 pen.CustomEndCap = arrowCap;
 
-                base.DrawLine(g, pen);
+                g.DrawLine(pen, StartPosition, EndPosition);
             }
         }
     }
