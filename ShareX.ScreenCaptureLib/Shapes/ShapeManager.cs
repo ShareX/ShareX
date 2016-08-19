@@ -339,6 +339,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingStep:
                         img = Resources.counter_reset;
                         break;
+                    case ShapeType.DrawingImage:
+                        img = Resources.image;
+                        break;
                     case ShapeType.DrawingBlur:
                         img = Resources.layer_shade;
                         break;
