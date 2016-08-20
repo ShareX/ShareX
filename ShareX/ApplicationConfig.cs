@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
+using System.IO;
 
 namespace ShareX
 {
@@ -85,7 +86,21 @@ namespace ShareX
         #region Paths
 
         public bool UseCustomScreenshotsPath = false;
-        public string CustomScreenshotsPath = "";
+        public string CustomScreenshotsPath1 = "";
+
+        [Browsable(false)]
+        public string CustomScreenshotsPath
+        {
+            get
+            {
+                return Directory.Exists(CustomScreenshotsPath1) ? CustomScreenshotsPath1 : CustomScreenshotsPath2;
+            }
+            set
+            {
+                CustomScreenshotsPath1 = value;
+            }
+        }
+
         public string SaveImageSubFolderPattern = "%y-%mo";
 
         #endregion Paths
@@ -217,6 +232,10 @@ namespace ShareX
         [Category("Paths"), Description("Custom hotkeys configuration path. If you have already configured this setting in another device and you are attempting to use the same location, then backup the file before configuring this setting and restore after exiting ShareX.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CustomHotkeysConfigPath { get; set; }
+
+        [Category("Paths"), Description("Custom screenshot path (secondary location). If custom screenshot path is temporarily unavailable (e.g. network share), ShareX will use this location (recommended to be a local path).")]
+        [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
+        public string CustomScreenshotsPath2 { get; set; }
 
         [Category("Drag and drop window"), DefaultValue(150), Description("Size of drop window.")]
         public int DropSize { get; set; }
