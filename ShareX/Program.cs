@@ -233,14 +233,19 @@ namespace ShareX
             {
                 if (Settings != null && Settings.UseCustomScreenshotsPath)
                 {
-                    string customPath = "";
-                    if (Directory.Exists(Helpers.ExpandFolderVariables(Settings.CustomScreenshotsPath)))
-                        customPath = Settings.CustomScreenshotsPath;
-                    else if (Directory.Exists(Helpers.ExpandFolderVariables(Settings.CustomScreenshotsPath2)))
-                        customPath = Settings.CustomScreenshotsPath2;
+                    string customPath = Helpers.ExpandFolderVariables(Settings.CustomScreenshotsPath);
 
-                    if (!string.IsNullOrEmpty(customPath))
+                    if (Directory.Exists(customPath))
+                    {
                         return customPath;
+                    }
+
+                    customPath = Helpers.ExpandFolderVariables(Settings.CustomScreenshotsPath2);
+
+                    if (Directory.Exists(customPath))
+                    {
+                        return customPath;
+                    }
                 }
 
                 return Path.Combine(PersonalFolder, "Screenshots");
