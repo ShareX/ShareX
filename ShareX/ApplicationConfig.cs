@@ -86,20 +86,7 @@ namespace ShareX
         #region Paths
 
         public bool UseCustomScreenshotsPath = false;
-        public string CustomScreenshotsPath1 = "";
-
-        [Browsable(false)]
-        public string CustomScreenshotsPath
-        {
-            get
-            {
-                return Directory.Exists(CustomScreenshotsPath1) ? CustomScreenshotsPath1 : CustomScreenshotsPath2;
-            }
-            set
-            {
-                CustomScreenshotsPath1 = value;
-            }
-        }
+        public string CustomScreenshotsPath = "";
 
         public string SaveImageSubFolderPattern = "%y-%mo";
 
