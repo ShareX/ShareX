@@ -32,10 +32,11 @@ namespace ShareX.ScreenCaptureLib
 {
     public static class RegionCaptureHelpers
     {
-        public static Image GetRegionImage()
+        public static Image GetRegionImage(RegionCaptureOptions options)
         {
             using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Default))
             {
+                form.Config = GetRegionCaptureOptions(options);
                 form.Config.ShowTips = false;
 
                 form.Prepare();
@@ -45,10 +46,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static bool GetRectangleRegion(out Rectangle rect)
+        public static bool GetRectangleRegion(out Rectangle rect, RegionCaptureOptions options)
         {
             using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Default))
             {
+                form.Config = GetRegionCaptureOptions(options);
                 form.Config.ShowTips = false;
 
                 form.Prepare();
@@ -89,10 +91,11 @@ namespace ShareX.ScreenCaptureLib
             return false;
         }
 
-        public static PointInfo GetPointInfo()
+        public static PointInfo GetPointInfo(RegionCaptureOptions options)
         {
             using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.ScreenColorPicker))
             {
+                form.Config = GetRegionCaptureOptions(options);
                 form.Config.DetectWindows = false;
                 form.Config.ShowTips = false;
                 form.Config.UseDimming = false;
@@ -112,10 +115,11 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public static SimpleWindowInfo GetWindowInfo()
+        public static SimpleWindowInfo GetWindowInfo(RegionCaptureOptions options)
         {
             using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.OneClick))
             {
+                form.Config = GetRegionCaptureOptions(options);
                 form.Config.UseDimming = false;
                 form.Config.ShowMagnifier = false;
                 form.Config.ShowTips = false;
@@ -132,10 +136,11 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public static void ShowScreenRuler()
+        public static void ShowScreenRuler(RegionCaptureOptions options)
         {
             using (RectangleRegionForm form = new RectangleRegionForm(RectangleRegionMode.Ruler))
             {
+                form.Config = GetRegionCaptureOptions(options);
                 form.Config.QuickCrop = false;
                 form.Config.ShowTips = false;
 
@@ -169,6 +174,26 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return null;
+        }
+
+        private static RegionCaptureOptions GetRegionCaptureOptions(RegionCaptureOptions options)
+        {
+            if (options == null)
+            {
+                return new RegionCaptureOptions();
+            }
+            else
+            {
+                return new RegionCaptureOptions()
+                {
+                    SnapSizes = options.SnapSizes,
+                    ShowMagnifier = options.ShowMagnifier,
+                    UseSquareMagnifier = options.UseSquareMagnifier,
+                    MagnifierPixelCount = options.MagnifierPixelCount,
+                    MagnifierPixelSize = options.MagnifierPixelSize,
+                    ShowCrosshair = options.ShowCrosshair
+                };
+            }
         }
     }
 }

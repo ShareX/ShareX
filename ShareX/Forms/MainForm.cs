@@ -1063,7 +1063,7 @@ namespace ShareX
 
         private void tsmiRuler_Click(object sender, EventArgs e)
         {
-            RegionCaptureHelpers.ShowScreenRuler();
+            TaskHelpers.OpenRuler();
         }
 
         private void tsmiAutomate_Click(object sender, EventArgs e)
@@ -1853,7 +1853,7 @@ namespace ShareX
                     TaskHelpers.OpenWebpageCapture(safeTaskSettings);
                     break;
                 case HotkeyType.TextCapture:
-                    TaskHelpers.OpenOCR();
+                    TaskHelpers.OpenOCR(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();
@@ -1912,7 +1912,7 @@ namespace ShareX
                     TaskHelpers.OpenQRCode();
                     break;
                 case HotkeyType.Ruler:
-                    RegionCaptureHelpers.ShowScreenRuler();
+                    TaskHelpers.OpenRuler(safeTaskSettings);
                     break;
                 case HotkeyType.Automate:
                     TaskHelpers.StartAutomate();

@@ -401,7 +401,8 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions, forceSelection);
+            ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions,
+                taskSettings.CaptureSettings.SurfaceOptions, forceSelection);
             scrollingCaptureForm.ImageProcessRequested += img => UploadManager.RunImageTask(img, taskSettings);
             scrollingCaptureForm.Show();
         }
@@ -483,7 +484,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            PointInfo pointInfo = RegionCaptureHelpers.GetPointInfo();
+            PointInfo pointInfo = RegionCaptureHelpers.GetPointInfo(taskSettings.CaptureSettings.SurfaceOptions);
 
             if (pointInfo != null)
             {
@@ -657,9 +658,18 @@ namespace ShareX
             new QRCodeForm().Show();
         }
 
-        public static void OpenOCR()
+        public static void OpenRuler(TaskSettings taskSettings = null)
         {
-            using (Image img = RegionCaptureHelpers.GetRegionImage())
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            RegionCaptureHelpers.ShowScreenRuler(taskSettings.CaptureSettings.SurfaceOptions);
+        }
+
+        public static void OpenOCR(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            using (Image img = RegionCaptureHelpers.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
             {
                 if (img != null)
                 {

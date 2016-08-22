@@ -121,7 +121,8 @@ namespace ShareX
                 Hide();
                 Thread.Sleep(250);
 
-                PointInfo pointInfo = RegionCaptureHelpers.GetPointInfo();
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+                PointInfo pointInfo = RegionCaptureHelpers.GetPointInfo(taskSettings.CaptureSettings.SurfaceOptions);
 
                 if (pointInfo != null)
                 {

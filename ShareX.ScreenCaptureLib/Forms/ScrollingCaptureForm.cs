@@ -39,8 +39,9 @@ namespace ShareX.ScreenCaptureLib
     {
         public event Action<Image> ImageProcessRequested;
 
-        public ScrollingCaptureOptions Options { get; set; }
-        public Image Result { get; set; }
+        public ScrollingCaptureOptions Options { get; private set; }
+        public RegionCaptureOptions RegionCaptureOptions { get; private set; }
+        public Image Result { get; private set; }
 
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
@@ -49,9 +50,10 @@ namespace ShareX.ScreenCaptureLib
         private bool isBusy, isCapturing, firstCapture, detectingScrollMethod;
         private ScrollingCaptureScrollMethod currentScrollMethod;
 
-        public ScrollingCaptureForm(ScrollingCaptureOptions options, bool forceSelection = false)
+        public ScrollingCaptureForm(ScrollingCaptureOptions options, RegionCaptureOptions regionCaptureOptions, bool forceSelection = false)
         {
             Options = options;
+            RegionCaptureOptions = regionCaptureOptions;
 
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -124,7 +126,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Thread.Sleep(250);
 
-                SimpleWindowInfo simpleWindowInfo = RegionCaptureHelpers.GetWindowInfo();
+                SimpleWindowInfo simpleWindowInfo = RegionCaptureHelpers.GetWindowInfo(RegionCaptureOptions);
 
                 if (simpleWindowInfo != null)
                 {
@@ -161,7 +163,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Rectangle rect;
 
-                if (RegionCaptureHelpers.GetRectangleRegion(out rect))
+                if (RegionCaptureHelpers.GetRectangleRegion(out rect, RegionCaptureOptions))
                 {
                     selectedRectangle = rect;
                     lblSelectedRectangle.Text = selectedRectangle.ToString();
