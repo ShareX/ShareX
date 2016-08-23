@@ -1406,7 +1406,9 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.DrawingFreehand:
                         case ShapeType.DrawingLine:
                         case ShapeType.DrawingArrow:
+                        case ShapeType.DrawingText:
                         case ShapeType.DrawingStep:
+                        case ShapeType.DrawingImage:
                             return;
                     }
 
@@ -1714,7 +1716,9 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentShapeType = ShapeType.DrawingText;
                     TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingText);
-                    shape.SetTextWithAutoSize(text.Trim(), true);
+                    shape.StartPosition = shape.EndPosition = InputManager.MousePosition0Based;
+                    shape.Text = text.Trim();
+                    shape.AutoSize(true);
                     AddShape(shape);
                     SelectCurrentShape();
                 }

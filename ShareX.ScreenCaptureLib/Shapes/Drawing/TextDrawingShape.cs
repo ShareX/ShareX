@@ -69,17 +69,28 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void OnCreated()
+        public override void OnCreating()
         {
-            UpdateText();
+            StartPosition = EndPosition = InputManager.MousePosition0Based;
+
+            ShowTextInputBox();
+
+            if (string.IsNullOrEmpty(Text))
+            {
+                Remove();
+            }
+            else
+            {
+                AutoSize(true);
+            }
         }
 
         public override void OnDoubleClicked()
         {
-            UpdateText();
+            ShowTextInputBox();
         }
 
-        private void UpdateText()
+        private void ShowTextInputBox()
         {
             Manager.PauseForm();
 
@@ -93,21 +104,20 @@ namespace ShareX.ScreenCaptureLib
             Manager.ResumeForm();
         }
 
-        public void SetTextWithAutoSize(string text, bool centerText)
+        public void AutoSize(bool center)
         {
             Size size;
 
             using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))
             {
-                size = Helpers.MeasureText(text, font).Offset(10, 20);
+                size = Helpers.MeasureText(Text, font).Offset(10, 15);
             }
 
             Point location;
 
-            if (centerText)
+            if (center)
             {
-                Point pos = InputManager.MousePosition0Based;
-                location = new Point(pos.X - size.Width / 2, pos.Y - size.Height / 2);
+                location = new Point(Rectangle.X - size.Width / 2, Rectangle.Y - size.Height / 2);
             }
             else
             {
@@ -115,7 +125,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Rectangle = new Rectangle(location, size);
-            Text = text;
         }
     }
 }
