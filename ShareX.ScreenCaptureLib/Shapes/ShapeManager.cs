@@ -1700,9 +1700,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentShapeType = ShapeType.DrawingImage;
                     ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
-                    Point pos = InputManager.MousePosition0Based;
-                    Point shapePos = new Point(pos.X - img.Width / 2, pos.Y - img.Height / 2);
-                    shape.SetImage(img, shapePos);
+                    shape.StartPosition = shape.EndPosition = InputManager.MousePosition0Based;
+                    shape.SetImage(img, true);
                     AddShape(shape);
                     SelectCurrentShape();
                 }

@@ -35,6 +35,7 @@ namespace ShareX.ScreenCaptureLib
         private const int DefaultSize = 30;
 
         public override ShapeType ShapeType { get; } = ShapeType.DrawingStep;
+
         public override bool ShowResizeNodes { get; } = false;
 
         public int Number { get; set; }

@@ -34,12 +34,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Image Image { get; private set; }
 
-        public void SetImage(Image img)
-        {
-            SetImage(img, Rectangle.Location);
-        }
-
-        public void SetImage(Image img, Point pos)
+        public void SetImage(Image img, bool centerImage)
         {
             Dispose();
 
@@ -47,11 +42,23 @@ namespace ShareX.ScreenCaptureLib
 
             if (Image != null)
             {
-                Rectangle = new Rectangle(pos, Image.Size);
+                Point location;
+                Size size = Image.Size;
+
+                if (centerImage)
+                {
+                    location = new Point(Rectangle.X - size.Width / 2, Rectangle.Y - size.Height / 2);
+                }
+                else
+                {
+                    location = Rectangle.Location;
+                }
+
+                Rectangle = new Rectangle(location, size);
             }
         }
 
-        public void OpenImageDialog()
+        public void OpenImageDialog(bool centerImage)
         {
             Manager.IsMoving = false;
 
@@ -63,7 +70,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (img != null)
                 {
-                    SetImage(img);
+                    SetImage(img, centerImage);
                 }
             }
         }
@@ -76,14 +83,16 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void OnCreated()
+        public override void OnCreating()
         {
-            OpenImageDialog();
+            StartPosition = EndPosition = InputManager.MousePosition0Based;
+
+            OpenImageDialog(true);
         }
 
         public override void OnDoubleClicked()
         {
-            OpenImageDialog();
+            OpenImageDialog(false);
         }
 
         public override void Dispose()
