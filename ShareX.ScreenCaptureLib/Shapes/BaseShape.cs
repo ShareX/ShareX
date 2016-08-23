@@ -39,8 +39,6 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle Rectangle { get; set; }
 
-        protected AnnotationOptions AnnotationOptions => Manager.Config.AnnotationOptions;
-
         private Point startPosition;
 
         public Point StartPosition
@@ -79,9 +77,11 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual bool ShowResizeNodes { get; } = true;
 
-        public virtual bool FixedSize { get; } = false;
-
         internal ShapeManager Manager { get; set; }
+
+        protected RegionCaptureOptions Options => Manager.Config;
+
+        protected AnnotationOptions AnnotationOptions => Manager.Config.AnnotationOptions;
 
         private Point tempNodePos, tempStartPos, tempEndPos;
 
@@ -121,6 +121,22 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 Rectangle = Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
+            }
+        }
+
+        public virtual void OnCreating()
+        {
+            Point pos = InputManager.MousePosition0Based;
+
+            if (Options.IsFixedSize && IsRegionShape)
+            {
+                Manager.IsMoving = true;
+                Rectangle = new Rectangle(new Point(pos.X - Options.FixedSize.Width / 2, pos.Y - Options.FixedSize.Height / 2), Options.FixedSize);
+            }
+            else
+            {
+                Manager.IsCreating = true;
+                StartPosition = EndPosition = pos;
             }
         }
 

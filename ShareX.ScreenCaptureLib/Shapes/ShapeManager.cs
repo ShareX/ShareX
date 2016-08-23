@@ -1190,24 +1190,7 @@ namespace ShareX.ScreenCaptureLib
                 DeselectCurrentShape();
 
                 shape = AddShape();
-
-                Point pos = InputManager.MousePosition0Based;
-
-                if (shape.FixedSize)
-                {
-                    IsMoving = true;
-                    shape.Rectangle = new Rectangle(new Point(pos.X - shape.Rectangle.Width / 2, pos.Y - shape.Rectangle.Height / 2), shape.Rectangle.Size);
-                }
-                else if (Config.IsFixedSize && IsCurrentShapeTypeRegion)
-                {
-                    IsMoving = true;
-                    shape.Rectangle = new Rectangle(new Point(pos.X - Config.FixedSize.Width / 2, pos.Y - Config.FixedSize.Height / 2), Config.FixedSize);
-                }
-                else
-                {
-                    IsCreating = true;
-                    shape.StartPosition = shape.EndPosition = pos;
-                }
+                shape.OnCreating();
             }
         }
 
