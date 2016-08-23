@@ -1714,7 +1714,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     CurrentShapeType = ShapeType.DrawingText;
                     TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingText);
-                    shape.SetTextWithAutoSize(text.Trim());
+                    shape.SetTextWithAutoSize(text.Trim(), true);
                     AddShape(shape);
                     SelectCurrentShape();
                 }

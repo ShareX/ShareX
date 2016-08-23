@@ -93,18 +93,26 @@ namespace ShareX.ScreenCaptureLib
             Manager.ResumeForm();
         }
 
-        public void SetTextWithAutoSize(string text)
+        public void SetTextWithAutoSize(string text, bool centerText)
         {
-            Point pos = InputManager.MousePosition0Based;
-
             Size size;
 
             using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))
             {
-                size = Helpers.MeasureText(text, font).Offset(30);
+                size = Helpers.MeasureText(text, font).Offset(10, 20);
             }
 
-            Point location = new Point(pos.X - size.Width / 2, pos.Y - size.Height / 2);
+            Point location;
+
+            if (centerText)
+            {
+                Point pos = InputManager.MousePosition0Based;
+                location = new Point(pos.X - size.Width / 2, pos.Y - size.Height / 2);
+            }
+            else
+            {
+                location = Rectangle.Location;
+            }
 
             Rectangle = new Rectangle(location, size);
             Text = text;

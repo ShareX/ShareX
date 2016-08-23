@@ -158,7 +158,12 @@ namespace ShareX.HelpersLib
 
         public static Size Offset(this Size size, int offset)
         {
-            return new Size(size.Width + offset, size.Height + offset);
+            return size.Offset(offset, offset);
+        }
+
+        public static Size Offset(this Size size, int width, int height)
+        {
+            return new Size(size.Width + width, size.Height + height);
         }
 
         public static Rectangle Offset(this Rectangle rect, int offset)
