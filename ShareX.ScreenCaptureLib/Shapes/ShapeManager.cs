@@ -1526,7 +1526,7 @@ namespace ShareX.ScreenCaptureLib
             DeselectShape(CurrentShape);
         }
 
-        private void DeleteShape(BaseShape shape)
+        public void DeleteShape(BaseShape shape)
         {
             if (shape != null)
             {

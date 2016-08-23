@@ -90,6 +90,11 @@ namespace ShareX.ScreenCaptureLib
             return Rectangle.Contains(position);
         }
 
+        public void Remove()
+        {
+            Manager.DeleteShape(this);
+        }
+
         public void AddShapePath(GraphicsPath gp, int sizeOffset = 0)
         {
             Rectangle rect = Rectangle;

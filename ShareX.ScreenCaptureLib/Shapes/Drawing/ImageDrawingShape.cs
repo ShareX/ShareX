@@ -58,7 +58,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void OpenImageDialog(bool centerImage)
+        public bool OpenImageDialog(bool centerImage)
         {
             Manager.IsMoving = false;
 
@@ -71,8 +71,12 @@ namespace ShareX.ScreenCaptureLib
                 if (img != null)
                 {
                     SetImage(img, centerImage);
+
+                    return true;
                 }
             }
+
+            return false;
         }
 
         public override void OnDraw(Graphics g)
@@ -87,7 +91,10 @@ namespace ShareX.ScreenCaptureLib
         {
             StartPosition = EndPosition = InputManager.MousePosition0Based;
 
-            OpenImageDialog(true);
+            if (!OpenImageDialog(true))
+            {
+                Remove();
+            }
         }
 
         public override void OnDoubleClicked()
