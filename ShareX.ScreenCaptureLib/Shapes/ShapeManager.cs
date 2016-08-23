@@ -999,7 +999,7 @@ namespace ShareX.ScreenCaptureLib
                         CurrentShapeType = ShapeType.DrawingPixelate;
                         break;
                     case Keys.Control | Keys.V:
-                        AddImageFromClipboard();
+                        PasteFromClipboard();
                         break;
                 }
             }
@@ -1690,7 +1690,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void AddImageFromClipboard()
+        private void PasteFromClipboard()
         {
             if (Clipboard.ContainsImage())
             {
@@ -1702,6 +1702,19 @@ namespace ShareX.ScreenCaptureLib
                     ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
                     shape.StartPosition = shape.EndPosition = InputManager.MousePosition0Based;
                     shape.SetImage(img, true);
+                    AddShape(shape);
+                    SelectCurrentShape();
+                }
+            }
+            else if (Clipboard.ContainsText())
+            {
+                string text = Clipboard.GetText();
+
+                if (!string.IsNullOrEmpty(text))
+                {
+                    CurrentShapeType = ShapeType.DrawingText;
+                    TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingText);
+                    shape.SetTextWithAutoSize(text.Trim());
                     AddShape(shape);
                     SelectCurrentShape();
                 }

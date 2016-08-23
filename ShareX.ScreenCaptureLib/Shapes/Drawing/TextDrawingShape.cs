@@ -34,11 +34,11 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingText;
 
         public string Text { get; set; }
-        public TextDrawingOptions Options { get; set; }
+        public TextDrawingOptions TextOptions { get; set; }
 
         public override void OnConfigLoad()
         {
-            Options = AnnotationOptions.TextOptions.Copy();
+            TextOptions = AnnotationOptions.TextOptions.Copy();
             BorderColor = AnnotationOptions.TextBorderColor;
             BorderSize = AnnotationOptions.TextBorderSize;
             FillColor = AnnotationOptions.TextFillColor;
@@ -46,7 +46,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnConfigSave()
         {
-            AnnotationOptions.TextOptions = Options;
+            AnnotationOptions.TextOptions = TextOptions;
             AnnotationOptions.TextBorderColor = BorderColor;
             AnnotationOptions.TextBorderSize = BorderSize;
             AnnotationOptions.TextFillColor = FillColor;
@@ -58,9 +58,9 @@ namespace ShareX.ScreenCaptureLib
 
             if (!string.IsNullOrEmpty(Text) && Rectangle.Width > 10 && Rectangle.Height > 10)
             {
-                using (Font font = new Font(Options.Font, Options.Size, Options.Style))
-                using (Brush textBrush = new SolidBrush(Options.Color))
-                using (StringFormat sf = new StringFormat { Alignment = Options.AlignmentHorizontal, LineAlignment = Options.AlignmentVertical })
+                using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))
+                using (Brush textBrush = new SolidBrush(TextOptions.Color))
+                using (StringFormat sf = new StringFormat { Alignment = TextOptions.AlignmentHorizontal, LineAlignment = TextOptions.AlignmentVertical })
                 {
                     g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
                     g.DrawString(Text, font, textBrush, Rectangle, sf);
@@ -83,7 +83,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Manager.PauseForm();
 
-            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, Options))
+            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextOptions))
             {
                 inputBox.ShowDialog();
                 Text = inputBox.InputText;
@@ -91,6 +91,23 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Manager.ResumeForm();
+        }
+
+        public void SetTextWithAutoSize(string text)
+        {
+            Point pos = InputManager.MousePosition0Based;
+
+            Size size;
+
+            using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))
+            {
+                size = Helpers.MeasureText(text, font).Offset(30);
+            }
+
+            Point location = new Point(pos.X - size.Width / 2, pos.Y - size.Height / 2);
+
+            Rectangle = new Rectangle(location, size);
+            Text = text;
         }
     }
 }
