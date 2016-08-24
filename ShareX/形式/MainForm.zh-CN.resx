@@ -639,4 +639,22 @@
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>最近的链接</value>
   </data>
+    <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>文本捕捉（OCR）</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>文本捕捉（OCR）</value>
+  </data>
+  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
+    <value>永久隐藏Patreon按钮</value>
+  </data>
+  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
+    <value>打开ShareX在Patreon上的捐助页面</value>
+  </data>
+  <data name="pbTips.ToolTip" xml:space="preserve">
+    <value>显示提示和快捷键</value>
+  </data>
 </root>
