@@ -36,13 +36,15 @@ namespace ShareX.ScreenCaptureLib
 
         public override ShapeType ShapeType { get; } = ShapeType.DrawingStep;
 
-        public override bool ShowResizeNodes { get; } = false;
-
         public int Number { get; set; }
 
         public StepDrawingShape()
         {
             Rectangle = new Rectangle(0, 0, DefaultSize, DefaultSize);
+        }
+
+        public override void ShowNodes()
+        {
         }
 
         public override void OnCreating()

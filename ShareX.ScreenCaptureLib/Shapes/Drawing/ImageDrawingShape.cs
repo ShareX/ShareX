@@ -97,7 +97,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                Manager.NodesVisible = true;
+                ShowNodes();
             }
         }
 

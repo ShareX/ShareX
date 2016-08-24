@@ -75,8 +75,6 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual bool IsRegionShape { get; } = false;
 
-        public virtual bool ShowResizeNodes { get; } = true;
-
         internal ShapeManager Manager { get; set; }
 
         protected RegionCaptureOptions Options => Manager.Config;
@@ -88,6 +86,11 @@ namespace ShareX.ScreenCaptureLib
         public virtual bool Intersects(Point position)
         {
             return Rectangle.Contains(position);
+        }
+
+        public virtual void ShowNodes()
+        {
+            Manager.NodesVisible = true;
         }
 
         public void Remove()

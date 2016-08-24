@@ -1493,14 +1493,17 @@ namespace ShareX.ScreenCaptureLib
             return bmp;
         }
 
+        private void SelectShape(BaseShape shape)
+        {
+            if (shape != null)
+            {
+                shape.ShowNodes();
+            }
+        }
+
         private void SelectCurrentShape()
         {
-            BaseShape shape = CurrentShape;
-
-            if (shape != null && shape.ShowResizeNodes && !CurrentRectangle.IsEmpty)
-            {
-                NodesVisible = true;
-            }
+            SelectShape(CurrentShape);
         }
 
         private void SelectIntersectShape()
@@ -1510,7 +1513,7 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null)
             {
                 CurrentShape = shape;
-                SelectCurrentShape();
+                SelectShape(shape);
             }
         }
 

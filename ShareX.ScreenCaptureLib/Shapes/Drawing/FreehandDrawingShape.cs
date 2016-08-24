@@ -34,15 +34,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingFreehand;
 
-        public override bool ShowResizeNodes { get; } = false;
-
-        public override bool IsValidShape
-        {
-            get
-            {
-                return points.Count > 0;
-            }
-        }
+        public override bool IsValidShape => points.Count > 0;
 
         public Point LastPosition
         {
@@ -70,6 +62,10 @@ namespace ShareX.ScreenCaptureLib
         public override bool Intersects(Point position)
         {
             return false;
+        }
+
+        public override void ShowNodes()
+        {
         }
 
         public override void OnUpdate()
