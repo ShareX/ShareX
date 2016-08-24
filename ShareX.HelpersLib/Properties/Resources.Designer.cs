@@ -2474,6 +2474,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drawing: Speech balloon.
+        /// </summary>
+        internal static string ShapeType_DrawingSpeechBalloon {
+            get {
+                return ResourceManager.GetString("ShapeType_DrawingSpeechBalloon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drawing: Step.
         /// </summary>
         internal static string ShapeType_DrawingStep {
