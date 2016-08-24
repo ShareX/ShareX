@@ -147,4 +147,37 @@
   <data name="tpTextConversions.Text" xml:space="preserve">
     <value>文本转换</value>
   </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>解码</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>解码</value>
+  </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>编码</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>文本：</value>
+  </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>二进制：</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>解码</value>
+  </data>
+  <data name="lblHashCheckHex.Text" xml:space="preserve">
+    <value>十六进制：</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>解码</value>
+  </data>
+  <data name="lblHashCheckBase64.Text" xml:space="preserve">
+    <value>Base64：</value>
+  </data>
+  <data name="lblHashCheckHash.Text" xml:space="preserve">
+    <value>哈希（Hash）：</value>
+  </data>
+  <data name="lblHashCheckASCII.Text" xml:space="preserve">
+    <value>ASCII：</value>
+  </data>
 </root>

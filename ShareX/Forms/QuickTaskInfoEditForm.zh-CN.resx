@@ -117,22 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblWebpageSize.Text" xml:space="preserve">
-    <value>浏览器大小:</value>
+  <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
+    <value>捕捉任务后：</value>
   </data>
-  <data name="lblCaptureDelay.Text" xml:space="preserve">
-    <value>延迟:</value>
+  <data name="After upload tasks:" xml:space="preserve">
+    <value>上传任务后：</value>
   </data>
-  <data name="btnCopy.Text" xml:space="preserve">
-    <value>复制</value>
-  </data>
-  <data name="btnUpload.Text" xml:space="preserve">
-    <value>上传</value>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>菜单：</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 网页捕获</value>
-  </data>
-  <data name="btnCapture.Text" xml:space="preserve">
-    <value>捕获</value>
+    <value>Sharex - 编辑快速任务菜单</value>
   </data>
 </root>

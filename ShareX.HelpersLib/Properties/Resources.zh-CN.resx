@@ -796,4 +796,163 @@
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>本年度（2位）</value>
   </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>显示快速任务菜单</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>打开历史记录</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>打开历史图片</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>文件不存在</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>选择文件夹</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>选择文件</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>打开主页面</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>屏幕录制</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>使用自定义区域开始屏幕录制</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>使用自定义区域开始屏幕录制（GIF）</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>屏幕录制</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>文本识别（OCR）</value>
+  </data>
+  <data name="HotkeyType_TextCapture" xml:space="preserve">
+    <value>文本捕捉（OCR）</value>
+  </data>
+  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
+    <value>屏幕捕获</value>
+  </data>
+  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
+    <value>屏幕捕获</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>屏幕捕获</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>捕获活动显示器</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>捕捉全屏</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>什么都不做</value>
+  </data>
+  <data name="RegionCaptureAction_OpenOptionsMenu" xml:space="preserve">
+    <value>打开选项菜单</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>删除形状</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>删除形状或取消捕捉</value>
+  </data>
+  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
+    <value>捕捉区域（简单注释）</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>互换工具类型</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>绘图：箭头</value>
+  </data>
+  <data name="ShapeType_DrawingBlur" xml:space="preserve">
+    <value>效果：朦胧</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>绘图：椭圆</value>
+  </data>
+  <data name="ShapeType_DrawingHighlight" xml:space="preserve">
+    <value>效果：高亮</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>绘图：线条</value>
+  </data>
+  <data name="ShapeType_DrawingPixelate" xml:space="preserve">
+    <value>效果：马赛克</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>绘图：矩形</value>
+  </data>
+  <data name="ShapeType_DrawingRoundedRectangle" xml:space="preserve">
+    <value>绘图：圆角矩形</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>绘图：序号</value>
+  </data>
+  <data name="ShapeType_DrawingText" xml:space="preserve">
+    <value>绘图：文本</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>区域：椭圆形</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>区域：矩形</value>
+  </data>
+  <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
+    <value>区域：圆角矩形</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>绘图：鼠绘</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>绘图：图片</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>区域：鼠绘</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>屏幕录制</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>中止屏幕录制</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>模拟鼠标滚轮滚动</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>模拟按下“Page Down”键</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>模拟按下“Home”键</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>随机的十六进制字符。重复使用 {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>自动递增的字母数字不区分大小写。0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>自动递增的十六进制。0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>自动递增的字母数字区分大小写。0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>由 {n} 为基础制动递增的字母数字 (1 &lt; n &lt; 63)</value>
+  </data>
 </root>
