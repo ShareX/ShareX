@@ -60,29 +60,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!Rectangle.Contains(TailNode.Position))
                 {
-                    g.SmoothingMode = SmoothingMode.HighQuality;
-                    g.ExcludeClip(Rectangle);
-
                     gpTail = CreateTailPath(TailWidth);
-
-                    if (FillColor.A > 0)
-                    {
-                        using (Brush brush = new SolidBrush(FillColor))
-                        {
-                            g.FillPath(brush, gpTail);
-                        }
-                    }
-
-                    if (BorderSize > 0 && BorderColor.A > 0)
-                    {
-                        using (Pen pen = new Pen(BorderColor, BorderSize))
-                        {
-                            g.DrawPath(pen, gpTail);
-                        }
-                    }
-
-                    g.SmoothingMode = SmoothingMode.None;
-                    g.ResetClip();
                 }
 
                 if (FillColor.A > 0)
@@ -91,6 +69,37 @@ namespace ShareX.ScreenCaptureLib
                     {
                         g.FillRectangle(brush, Rectangle);
                     }
+                }
+
+                if (gpTail != null)
+                {
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+
+                    if (FillColor.A > 0)
+                    {
+                        g.ExcludeClip(Rectangle);
+
+                        using (Brush brush = new SolidBrush(FillColor))
+                        {
+                            g.FillPath(brush, gpTail);
+                        }
+
+                        g.ResetClip();
+                    }
+
+                    if (BorderSize > 0 && BorderColor.A > 0)
+                    {
+                        g.ExcludeClip(Rectangle.Offset(-1));
+
+                        using (Pen pen = new Pen(BorderColor, BorderSize))
+                        {
+                            g.DrawPath(pen, gpTail);
+                        }
+
+                        g.ResetClip();
+                    }
+
+                    g.SmoothingMode = SmoothingMode.None;
                 }
 
                 if (BorderSize > 0 && BorderColor.A > 0)
