@@ -384,7 +384,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Color borderColor;
 
-                if (shapeType == ShapeType.DrawingText)
+                if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
                 {
                     borderColor = AnnotationOptions.TextBorderColor;
                 }
@@ -401,7 +401,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        if (shapeType == ShapeType.DrawingText)
+                        if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
                         {
                             AnnotationOptions.TextBorderColor = dialogColor.NewColor;
                         }
@@ -433,7 +433,7 @@ namespace ShareX.ScreenCaptureLib
 
                 int borderSize = (int)tslnudBorderSize.Content.Value;
 
-                if (shapeType == ShapeType.DrawingText)
+                if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
                 {
                     AnnotationOptions.TextBorderSize = borderSize;
                 }
@@ -460,7 +460,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Color fillColor;
 
-                if (shapeType == ShapeType.DrawingText)
+                if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
                 {
                     fillColor = AnnotationOptions.TextFillColor;
                 }
@@ -477,7 +477,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
-                        if (shapeType == ShapeType.DrawingText)
+                        if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
                         {
                             AnnotationOptions.TextFillColor = dialogColor.NewColor;
                         }
@@ -695,7 +695,7 @@ namespace ShareX.ScreenCaptureLib
 
             Color borderColor;
 
-            if (shapeType == ShapeType.DrawingText)
+            if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
             {
                 borderColor = AnnotationOptions.TextBorderColor;
             }
@@ -713,7 +713,7 @@ namespace ShareX.ScreenCaptureLib
 
             int borderSize;
 
-            if (shapeType == ShapeType.DrawingText)
+            if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
             {
                 borderSize = AnnotationOptions.TextBorderSize;
             }
@@ -730,7 +730,7 @@ namespace ShareX.ScreenCaptureLib
 
             Color fillColor;
 
-            if (shapeType == ShapeType.DrawingText)
+            if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
             {
                 fillColor = AnnotationOptions.TextFillColor;
             }
@@ -768,6 +768,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
                 case ShapeType.DrawingText:
+                case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
                 case ShapeType.DrawingBlur:
                 case ShapeType.DrawingPixelate:
@@ -789,6 +790,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
                 case ShapeType.DrawingText:
+                case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
                     tsmiBorderColor.Visible = true;
                     tslnudBorderSize.Visible = true;
@@ -804,6 +806,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingRoundedRectangle:
                 case ShapeType.DrawingEllipse:
                 case ShapeType.DrawingText:
+                case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
                     tsmiFillColor.Visible = true;
                     break;
@@ -1413,6 +1416,7 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.DrawingLine:
                         case ShapeType.DrawingArrow:
                         case ShapeType.DrawingText:
+                        case ShapeType.DrawingSpeechBalloon:
                         case ShapeType.DrawingStep:
                         case ShapeType.DrawingImage:
                             return;
