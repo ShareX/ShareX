@@ -56,6 +56,11 @@ namespace ShareX.ScreenCaptureLib
         {
             base.OnDraw(g);
 
+            DrawText(g);
+        }
+
+        protected void DrawText(Graphics g)
+        {
             if (!string.IsNullOrEmpty(Text) && Rectangle.Width > 10 && Rectangle.Height > 10)
             {
                 using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))

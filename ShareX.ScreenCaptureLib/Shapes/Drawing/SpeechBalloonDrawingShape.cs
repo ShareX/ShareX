@@ -54,55 +54,91 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            if (Rectangle.Width > 10 && Rectangle.Height > 10 && !Rectangle.Contains(TailNode.Position))
+            if (Rectangle.Width > 10 && Rectangle.Height > 10)
             {
-                DrawTail(g);
-            }
+                GraphicsPath gpTail = null;
 
-            base.OnDraw(g);
-        }
+                if (!Rectangle.Contains(TailNode.Position))
+                {
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.ExcludeClip(Rectangle);
 
-        private void DrawTail(Graphics g)
-        {
-            g.ExcludeClip(Rectangle);
+                    gpTail = CreateTailPath(TailWidth);
 
-            using (GraphicsPath gpTail = new GraphicsPath())
-            {
-                Point center = Rectangle.Center();
-                int tailOrigin = TailWidth / 2;
-                int tailLength = (int)MathHelpers.Distance(center, TailNode.Position);
-                gpTail.AddLine(0, -tailOrigin, 0, tailOrigin);
-                gpTail.AddLine(0, tailOrigin, tailLength, 0);
-                gpTail.CloseFigure();
+                    if (FillColor.A > 0)
+                    {
+                        using (Brush brush = new SolidBrush(FillColor))
+                        {
+                            g.FillPath(brush, gpTail);
+                        }
+                    }
 
-                g.TranslateTransform(center.X, center.Y);
-                float tailDegree = MathHelpers.LookAtDegree(center, TailNode.Position);
-                g.RotateTransform(tailDegree);
+                    if (BorderSize > 0 && BorderColor.A > 0)
+                    {
+                        using (Pen pen = new Pen(BorderColor, BorderSize))
+                        {
+                            g.DrawPath(pen, gpTail);
+                        }
+                    }
 
-                g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.SmoothingMode = SmoothingMode.None;
+                    g.ResetClip();
+                }
 
                 if (FillColor.A > 0)
                 {
                     using (Brush brush = new SolidBrush(FillColor))
                     {
-                        g.FillPath(brush, gpTail);
+                        g.FillRectangle(brush, Rectangle);
                     }
                 }
 
                 if (BorderSize > 0 && BorderColor.A > 0)
                 {
-                    using (Pen pen = new Pen(BorderColor, BorderSize))
+                    if (gpTail != null)
                     {
-                        g.DrawPath(pen, gpTail);
+                        using (Region region = new Region(gpTail))
+                        {
+                            g.ExcludeClip(region);
+                        }
                     }
+
+                    Rectangle rect = Rectangle.Offset(BorderSize - 1);
+
+                    using (Pen pen = new Pen(BorderColor, BorderSize) { Alignment = PenAlignment.Inset })
+                    {
+                        g.DrawRectangleProper(pen, rect);
+                    }
+
+                    g.ResetClip();
                 }
 
-                g.SmoothingMode = SmoothingMode.None;
+                if (gpTail != null)
+                {
+                    gpTail.Dispose();
+                }
 
-                g.ResetTransform();
+                DrawText(g);
             }
+        }
 
-            g.ResetClip();
+        protected GraphicsPath CreateTailPath(int tailWidth)
+        {
+            GraphicsPath gpTail = new GraphicsPath();
+            Point center = Rectangle.Center();
+            int tailOrigin = tailWidth / 2;
+            int tailLength = (int)MathHelpers.Distance(center, TailNode.Position);
+            gpTail.AddLine(0, -tailOrigin, 0, tailOrigin);
+            gpTail.AddLine(0, tailOrigin, tailLength, 0);
+            gpTail.CloseFigure();
+            using (Matrix matrix = new Matrix())
+            {
+                matrix.Translate(center.X, center.Y);
+                float tailDegree = MathHelpers.LookAtDegree(center, TailNode.Position);
+                matrix.Rotate(tailDegree);
+                gpTail.Transform(matrix);
+            }
+            return gpTail;
         }
 
         public override void OnNodeUpdate()
