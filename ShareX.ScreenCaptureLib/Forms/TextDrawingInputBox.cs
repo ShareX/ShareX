@@ -163,6 +163,14 @@ namespace ShareX.ScreenCaptureLib
             UpdateVerticalAlignmentImage();
         }
 
+        private void txtInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == (Keys.Control | Keys.Enter))
+            {
+                Close();
+            }
+        }
+
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
             InputText = txtInput.Text;

@@ -42,7 +42,7 @@
             this.cbUnderline = new System.Windows.Forms.CheckBox();
             this.btnAlignmentHorizontal = new System.Windows.Forms.Button();
             this.btnAlignmentVertical = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.cmsAlignmentHorizontal = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiAlignmentLeft = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAlignmentCenter = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +63,7 @@
             this.txtInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInput.Name = "txtInput";
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
+            this.txtInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyDown);
             // 
             // btnTextColor
             // 
@@ -161,12 +162,12 @@
             this.btnAlignmentVertical.UseVisualStyleBackColor = true;
             this.btnAlignmentVertical.Click += new System.EventHandler(this.btnAlignmentVertical_Click);
             // 
-            // btnClose
+            // btnOK
             // 
-            resources.ApplyResources(this.btnClose, "btnClose");
-            this.btnClose.Name = "btnClose";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.Name = "btnOK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // cmsAlignmentHorizontal
             // 
@@ -232,7 +233,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.flpProperties);
             this.Controls.Add(this.txtInput);
             this.MaximizeBox = false;
@@ -258,7 +259,7 @@
         private System.Windows.Forms.FlowLayoutPanel flpProperties;
         private System.Windows.Forms.Label lblTextSize;
         private System.Windows.Forms.NumericUpDown nudTextSize;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.CheckBox cbBold;
         private System.Windows.Forms.CheckBox cbItalic;
         private System.Windows.Forms.CheckBox cbUnderline;
