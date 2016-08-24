@@ -183,7 +183,20 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateInputBox()
         {
-            txtInput.Font = new Font(Options.Font, Options.Size, Options.Style);
+            Font font;
+
+            try
+            {
+                font = new Font(Options.Font, Options.Size, Options.Style);
+            }
+            catch
+            {
+                Options.Font = "Arial";
+                font = new Font(Options.Font, Options.Size, Options.Style);
+            }
+
+            txtInput.Font = font;
+
             txtInput.ForeColor = Options.Color;
             txtInput.BackColor = ColorHelpers.VisibleColor(Options.Color, Color.White, Color.FromArgb(50, 50, 50));
 
