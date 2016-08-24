@@ -126,4 +126,28 @@
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>按下"Ctrl"键,   停止当前窗口的屏幕拾色器。</value>
   </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>全部复制</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>复制 RGB</value>
+  </data>
+  <data name="tsmiCopyHex.Text" xml:space="preserve">
+    <value>复制 十六进制</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>复制 CMYK</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>复制 HSB</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>复制 十进制</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>复制位置</value>
+  </data>
 </root>

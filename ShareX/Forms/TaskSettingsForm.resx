@@ -5062,7 +5062,7 @@
     <value>11</value>
   </data>
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>Dim background so selection can be diffrentiated easily (affects startup speed)</value>
+    <value>Dim background so selection can be differentiated easily (affects startup speed)</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureUseDimming.Name" xml:space="preserve">
     <value>cbRegionCaptureUseDimming</value>

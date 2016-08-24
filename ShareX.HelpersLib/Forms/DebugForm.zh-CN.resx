@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -124,5 +125,11 @@
   </data>
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
     <value>加载的程序集</value>
+  </data>
+  <data name="btnOpenLogFile.Text" xml:space="preserve">
+    <value>打开日志文件...</value>
+  </data>
+  <data name="lblRunningFrom.Text" xml:space="preserve">
+    <value>启动路径：</value>
   </data>
 </root>

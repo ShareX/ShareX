@@ -117,22 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblWebpageSize.Text" xml:space="preserve">
-    <value>浏览器大小:</value>
-  </data>
-  <data name="lblCaptureDelay.Text" xml:space="preserve">
-    <value>延迟:</value>
-  </data>
-  <data name="btnCopy.Text" xml:space="preserve">
-    <value>复制</value>
-  </data>
-  <data name="btnUpload.Text" xml:space="preserve">
-    <value>上传</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 网页捕获</value>
+    <value>ShareX - 文本输入</value>
   </data>
-  <data name="btnCapture.Text" xml:space="preserve">
-    <value>捕获</value>
+  <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
+    <value>底部</value>
+  </data>
+  <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
+    <value>中部</value>
+  </data>
+  <data name="tsmiAlignmentTop.Text" xml:space="preserve">
+    <value>顶部</value>
+  </data>
+  <data name="tsmiAlignmentRight.Text" xml:space="preserve">
+    <value>右面</value>
+  </data>
+  <data name="tsmiAlignmentCenter.Text" xml:space="preserve">
+    <value>正中</value>
+  </data>
+  <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
+    <value>左面</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="lblTextSize.Text" xml:space="preserve">
+    <value>尺寸：</value>
+  </data>
+  <data name="lblFont.Text" xml:space="preserve">
+    <value>字体：</value>
   </data>
 </root>
