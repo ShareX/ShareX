@@ -81,9 +81,14 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                AutoSize(true);
-                ShowNodes();
+                OnCreated();
             }
+        }
+
+        public override void OnCreated()
+        {
+            AutoSize(true);
+            ShowNodes();
         }
 
         public override void OnDoubleClicked()
