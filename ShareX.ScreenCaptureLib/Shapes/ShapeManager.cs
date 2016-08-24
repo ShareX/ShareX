@@ -336,6 +336,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingText:
                         img = Resources.layer_shape_text;
                         break;
+                    case ShapeType.DrawingSpeechBalloon:
+                        img = Resources.balloon_box_left;
+                        break;
                     case ShapeType.DrawingStep:
                         img = Resources.counter_reset;
                         break;

@@ -61,6 +61,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap balloon_box_left {
+            get {
+                object obj = ResourceManager.GetObject("balloon_box_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Region capture.
         /// </summary>
         internal static string BaseRegionForm_InitializeComponent_Region_capture {

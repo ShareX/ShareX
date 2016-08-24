@@ -196,6 +196,7 @@
     <None Include="Resources\prohibition.png" />
     <None Include="Resources\cross.png" />
     <None Include="Resources\counter-reset.png" />
+    <None Include="Resources\balloon-box-left.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
