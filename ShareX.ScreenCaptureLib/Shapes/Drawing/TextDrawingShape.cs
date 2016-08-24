@@ -82,6 +82,8 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 AutoSize(true);
+
+                Manager.NodesVisible = true;
             }
         }
 

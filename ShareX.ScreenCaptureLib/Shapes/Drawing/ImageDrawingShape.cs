@@ -95,6 +95,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 Remove();
             }
+            else
+            {
+                Manager.NodesVisible = true;
+            }
         }
 
         public override void OnDoubleClicked()
