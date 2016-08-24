@@ -151,7 +151,7 @@ namespace ShareX.ScreenCaptureLib
 
         public AnnotationOptions AnnotationOptions => Config.AnnotationOptions;
 
-        public ResizeNode[] ResizeNodes { get; private set; }
+        public List<ResizeNode> ResizeNodes { get; private set; }
 
         private bool nodesVisible;
 
@@ -169,7 +169,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     foreach (ResizeNode node in ResizeNodes)
                     {
-                        node.Visible = nodesVisible;
+                        node.Visible = false;
                     }
                 }
                 else
@@ -202,13 +202,13 @@ namespace ShareX.ScreenCaptureLib
             this.form = form;
             Config = form.Config;
 
-            ResizeNodes = new ResizeNode[8];
+            ResizeNodes = new List<ResizeNode>();
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 9; i++)
             {
                 ResizeNode node = new ResizeNode();
                 form.DrawableObjects.Add(node);
-                ResizeNodes[i] = node;
+                ResizeNodes.Add(node);
             }
 
             ResizeNodes[(int)NodePosition.BottomRight].Order = 10;

@@ -70,7 +70,8 @@ namespace ShareX.ScreenCaptureLib
         BottomRight,
         Bottom,
         BottomLeft,
-        Left
+        Left,
+        Extra
     }
 
     internal enum NodeShape
