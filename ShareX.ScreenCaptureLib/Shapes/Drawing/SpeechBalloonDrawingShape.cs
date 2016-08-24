@@ -54,7 +54,10 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            DrawTail(g);
+            if (Rectangle.Width > 10 && Rectangle.Height > 10 && !Rectangle.Contains(TailNode.Position))
+            {
+                DrawTail(g);
+            }
 
             base.OnDraw(g);
         }
