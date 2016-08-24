@@ -61,6 +61,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawTail(Graphics g)
         {
+            g.ExcludeClip(Rectangle);
+
             using (GraphicsPath gpTail = new GraphicsPath())
             {
                 Point center = Rectangle.Center();
@@ -96,6 +98,8 @@ namespace ShareX.ScreenCaptureLib
 
                 g.ResetTransform();
             }
+
+            g.ResetClip();
         }
 
         public override void OnNodeUpdate()
