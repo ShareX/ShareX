@@ -132,4 +132,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 网页捕获</value>
   </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>捕获</value>
+  </data>
 </root>
