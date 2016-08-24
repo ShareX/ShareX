@@ -58,14 +58,6 @@ namespace ShareX.HelpersLib
         TIFF
     }
 
-    public enum TriangleAngle
-    {
-        Top,
-        Right,
-        Bottom,
-        Left
-    }
-
     public enum HashType
     {
         [Description("CRC-32")]

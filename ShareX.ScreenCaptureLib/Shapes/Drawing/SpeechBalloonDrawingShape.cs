@@ -25,12 +25,15 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace ShareX.ScreenCaptureLib
 {
     public class SpeechBalloonDrawingShape : TextDrawingShape
     {
-        //public override ShapeType ShapeType { get; } = ShapeType.DrawingSpeechBalloon;
+        public override ShapeType ShapeType { get; } = ShapeType.DrawingSpeechBalloon;
+
+        public int TailWidth { get; } = 40;
 
         internal ResizeNode TailNode => Manager.ResizeNodes[(int)NodePosition.Extra];
 
@@ -51,12 +54,58 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            using (Pen pen = new Pen(BorderColor, BorderSize))
-            {
-                g.DrawLine(pen, Rectangle.Center(), TailNode.Position);
-            }
+            DrawTail(g);
 
             base.OnDraw(g);
+        }
+
+        private void DrawTail(Graphics g)
+        {
+            using (GraphicsPath gpTail = new GraphicsPath())
+            {
+                Point center = Rectangle.Center();
+                int tailOrigin = TailWidth / 2;
+                int tailLength = (int)MathHelpers.Distance(center, TailNode.Position);
+                gpTail.AddLine(0, -tailOrigin, 0, tailOrigin);
+                gpTail.AddLine(0, tailOrigin, tailLength, 0);
+                gpTail.CloseFigure();
+
+                g.TranslateTransform(center.X, center.Y);
+                float tailDegree = MathHelpers.LookAtDegree(center, TailNode.Position);
+                g.RotateTransform(tailDegree);
+
+                g.SmoothingMode = SmoothingMode.HighQuality;
+
+                if (FillColor.A > 0)
+                {
+                    using (Brush brush = new SolidBrush(FillColor))
+                    {
+                        g.FillPath(brush, gpTail);
+                    }
+                }
+
+                if (BorderSize > 0 && BorderColor.A > 0)
+                {
+                    using (Pen pen = new Pen(BorderColor, BorderSize))
+                    {
+                        g.DrawPath(pen, gpTail);
+                    }
+                }
+
+                g.SmoothingMode = SmoothingMode.None;
+
+                g.ResetTransform();
+            }
+        }
+
+        public override void OnNodeUpdate()
+        {
+            base.OnNodeUpdate();
+
+            if (TailNode.IsDragging)
+            {
+                TailNode.Position = InputManager.MousePosition0Based;
+            }
         }
     }
 }

@@ -143,38 +143,6 @@ namespace ShareX.HelpersLib
             graphicsPath.CloseFigure();
         }
 
-        public static void AddTriangle(this GraphicsPath graphicsPath, RectangleF rect, TriangleAngle angle = TriangleAngle.Top)
-        {
-            PointF p1, p2, p3;
-
-            switch (angle)
-            {
-                default:
-                case TriangleAngle.Top:
-                    p1 = new PointF(rect.X + rect.Width / 2.0f, rect.Y);
-                    p2 = new PointF(rect.X, rect.Y + rect.Height);
-                    p3 = new PointF(rect.X + rect.Width, rect.Y + rect.Height);
-                    break;
-                case TriangleAngle.Right:
-                    p1 = new PointF(rect.X + rect.Width, rect.Y + rect.Height / 2.0f);
-                    p2 = new PointF(rect.X, rect.Y);
-                    p3 = new PointF(rect.X, rect.Y + rect.Height);
-                    break;
-                case TriangleAngle.Bottom:
-                    p1 = new PointF(rect.X + rect.Width / 2.0f, rect.Y + rect.Height);
-                    p2 = new PointF(rect.X + rect.Width, rect.Y);
-                    p3 = new PointF(rect.X, rect.Y);
-                    break;
-                case TriangleAngle.Left:
-                    p1 = new PointF(rect.X, rect.Y + rect.Height / 2.0f);
-                    p2 = new PointF(rect.X + rect.Width, rect.Y + rect.Height);
-                    p3 = new PointF(rect.X + rect.Width, rect.Y);
-                    break;
-            }
-
-            graphicsPath.AddPolygon(new PointF[] { p1, p2, p3 });
-        }
-
         public static void AddDiamond(this GraphicsPath graphicsPath, RectangleF rect)
         {
             PointF p1 = new PointF(rect.X + rect.Width / 2.0f, rect.Y);

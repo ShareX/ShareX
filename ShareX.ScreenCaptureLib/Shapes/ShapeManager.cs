@@ -1300,6 +1300,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingText:
                     shape = new TextDrawingShape();
                     break;
+                case ShapeType.DrawingSpeechBalloon:
+                    shape = new SpeechBalloonDrawingShape();
+                    break;
                 case ShapeType.DrawingStep:
                     shape = new StepDrawingShape();
                     break;
