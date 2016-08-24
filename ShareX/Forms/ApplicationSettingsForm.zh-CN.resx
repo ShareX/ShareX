@@ -273,4 +273,67 @@
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>语言:</value>
   </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>检查预览版更新</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>鼠标中键单击托盘图标：</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>鼠标左键双击托盘图标：</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>鼠标左键单击托盘图标：</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>编辑快速任务菜单...</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>导出设置</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>导出历史</value>
+  </data>
+  <data name="cbExportLogs.Text" xml:space="preserve">
+    <value>导出日志</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>导出...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>导入...</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>导出 / 导入</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>保存任务历史</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>最大数量的保存任务</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>仅保存URL（截图并上传图床之后）</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>历史</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>在托盘菜单显示最新的一个任务</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>在托盘菜单显示近期任务</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>保存近期的任务</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>近期任务</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>历史</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>在启动主窗口时显示近期的任务</value>
+  </data>
 </root>
