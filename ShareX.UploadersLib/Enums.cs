@@ -130,8 +130,6 @@ namespace ShareX.UploadersLib
         Uguu,
         [Description("Dropfile")]
         Dropfile,
-        [Description("Up1")]
-        Up1,
         [Description("Seafile")]
         Seafile,
         [Description("Streamable")]

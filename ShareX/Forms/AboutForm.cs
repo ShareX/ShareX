@@ -83,7 +83,6 @@ MediaFire support: https://github.com/michalx2
 Pushbullet support: https://github.com/BallisticLingonberries
 Lambda support: https://github.com/mstojcevich
 VideoBin support: https://github.com/corey-/
-Up1 support: https://github.com/Upload
 CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://github.com/DanielMcAssey
 Seafile support: https://github.com/zikeji
 Streamable support: https://github.com/streamablevideo
@@ -107,9 +106,9 @@ Russian: https://github.com/L1Q
 
 {2}:
 
-Greenshot Image Editor: https://bitbucket.org/greenshot/greenshot
+Greenshot Image Editor: https://github.com/greenshot/greenshot
 Json.NET: https://github.com/JamesNK/Newtonsoft.Json
-SSH.NET: https://sshnet.codeplex.com
+SSH.NET: https://github.com/sshnet/SSH.NET
 Icons: http://p.yusukekamiyamane.com
 ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: http://www.ffmpeg.org
@@ -120,7 +119,6 @@ DirectShow video and audio device: https://github.com/rdp/screen-capture-recorde
 QrCode.Net: https://qrcodenet.codeplex.com
 System.Net.FtpClient: https://netftp.codeplex.com
 AWS SDK: http://aws.amazon.com/sdk-for-net/
-CLR Security: http://clrsecurity.codeplex.com
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 OCR Space: http://ocr.space
 

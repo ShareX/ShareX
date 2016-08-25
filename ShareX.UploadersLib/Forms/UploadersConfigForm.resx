@@ -7920,147 +7920,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpPomf.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="txtUp1Key.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
-  </data>
-  <data name="txtUp1Key.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="txtUp1Key.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 20</value>
-  </data>
-  <data name="txtUp1Key.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;txtUp1Key.Name" xml:space="preserve">
-    <value>txtUp1Key</value>
-  </data>
-  <data name="&gt;&gt;txtUp1Key.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUp1Key.Parent" xml:space="preserve">
-    <value>tpUp1</value>
-  </data>
-  <data name="&gt;&gt;txtUp1Key.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtUp1Host.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
-  </data>
-  <data name="txtUp1Host.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="txtUp1Host.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 20</value>
-  </data>
-  <data name="txtUp1Host.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;txtUp1Host.Name" xml:space="preserve">
-    <value>txtUp1Host</value>
-  </data>
-  <data name="&gt;&gt;txtUp1Host.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUp1Host.Parent" xml:space="preserve">
-    <value>tpUp1</value>
-  </data>
-  <data name="&gt;&gt;txtUp1Host.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblUp1Key.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUp1Key.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUp1Key.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
-  </data>
-  <data name="lblUp1Key.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="lblUp1Key.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="lblUp1Key.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="&gt;&gt;lblUp1Key.Name" xml:space="preserve">
-    <value>lblUp1Key</value>
-  </data>
-  <data name="&gt;&gt;lblUp1Key.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUp1Key.Parent" xml:space="preserve">
-    <value>tpUp1</value>
-  </data>
-  <data name="&gt;&gt;lblUp1Key.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblUp1Host.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUp1Host.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUp1Host.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblUp1Host.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="lblUp1Host.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="lblUp1Host.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="&gt;&gt;lblUp1Host.Name" xml:space="preserve">
-    <value>lblUp1Host</value>
-  </data>
-  <data name="&gt;&gt;lblUp1Host.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUp1Host.Parent" xml:space="preserve">
-    <value>tpUp1</value>
-  </data>
-  <data name="&gt;&gt;lblUp1Host.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tpUp1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
-  </data>
-  <data name="tpUp1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpUp1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
-  </data>
-  <data name="tpUp1.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="tpUp1.Text" xml:space="preserve">
-    <value>Up1</value>
-  </data>
-  <data name="&gt;&gt;tpUp1.Name" xml:space="preserve">
-    <value>tpUp1</value>
-  </data>
-  <data name="&gt;&gt;tpUp1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpUp1.Parent" xml:space="preserve">
-    <value>tcFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpUp1.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
   </data>
@@ -9020,7 +8879,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSeafile.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="cbStreamableUseDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9221,7 +9080,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpStreamable.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="txtSulAPIKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -9299,7 +9158,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSul.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>20</value>
   </data>
   <data name="btnLithiioGetAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9455,7 +9314,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLithiio.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>21</value>
   </data>
   <data name="lblSharedFolderFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9662,7 +9521,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>22</value>
   </data>
   <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 408</value>
@@ -10082,7 +9941,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>23</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
