@@ -144,6 +144,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void BaseRegionForm_KeyUp(object sender, KeyEventArgs e)
         {
+            if (e.KeyData == Keys.Escape)
+            {
+                Close(RegionResult.Close);
+                return;
+            }
+
             if (!isKeyAllowed && timerStart.ElapsedMilliseconds < 1000)
             {
                 return;
@@ -159,9 +165,6 @@ namespace ShareX.ScreenCaptureLib
 
             switch (e.KeyData)
             {
-                case Keys.Escape:
-                    Close(RegionResult.Close);
-                    break;
                 case Keys.Space:
                     Close(RegionResult.Fullscreen);
                     break;
