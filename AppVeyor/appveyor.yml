@@ -8,6 +8,7 @@ shallow_clone: true
 before_build:
 - ps: >-
     Invoke-WebRequest "$env:APIKeys" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
+
     nuget restore
 build:
   project: ShareX.sln
