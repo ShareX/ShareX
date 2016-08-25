@@ -6,8 +6,15 @@ configuration:
 platform: Any CPU
 shallow_clone: true
 before_build:
-- cmd: nuget restore
+- ps: >-
+    Invoke-WebRequest "$env:APIKeys" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
+    nuget restore
 build:
   project: ShareX.sln
   parallel: true
   verbosity: minimal
+artifacts:
+- path: ShareX\bin\Release
+  name: Release
+- path: ShareX\bin\Debug
+  name: Debug
