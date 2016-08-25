@@ -1,0 +1,11 @@
+version: 11.2.1.{build}
+image: Visual Studio 2015
+configuration:
+- Release
+- Debug
+platform: Any CPU
+shallow_clone: true
+build:
+  project: ShareX.sln
+  parallel: true
+  verbosity: minimal
