@@ -5,6 +5,8 @@ configuration:
 - Debug
 platform: Any CPU
 shallow_clone: true
+before_build:
+- cmd: nuget restore
 build:
   project: ShareX.sln
   parallel: true
