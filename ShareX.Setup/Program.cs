@@ -27,6 +27,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 
 namespace ShareX.Setup
 {
@@ -39,10 +40,11 @@ namespace ShareX.Setup
             CreatePortable, // Create portable zip file
             PortableApps, // Create PortableApps folder
             Beta, // Build setup & upload it using "Debug/ShareX.exe"
-            Steam // Create Steam folder
+            Steam, // Create Steam folder
+            AppVeyor
         }
 
-        private static readonly SetupType Setup = SetupType.Stable;
+        private static SetupType Setup = SetupType.Stable;
 
         private static readonly string parentDir = @"..\..\..\";
         private static readonly string binDir = Path.Combine(parentDir, "ShareX", "bin");
@@ -66,6 +68,13 @@ namespace ShareX.Setup
 
         private static void Main(string[] args)
         {
+            Console.WriteLine("ShareX.Setup started.");
+
+            if (CheckArgs(args, "-appveyor"))
+            {
+                Setup = SetupType.AppVeyor;
+            }
+
             Console.WriteLine("Setup type: " + Setup);
 
             switch (Setup)
@@ -95,9 +104,28 @@ namespace ShareX.Setup
                     CreateSteamFolder();
                     OpenOutputDirectory();
                     break;
+                case SetupType.AppVeyor:
+                    CompileSetup();
+                    break;
             }
 
-            Console.WriteLine("Done.");
+            Console.WriteLine("ShareX.Setup successfully completed.");
+        }
+
+        private static bool CheckArgs(string[] args, string check)
+        {
+            if (!string.IsNullOrEmpty(check))
+            {
+                foreach (string arg in args)
+                {
+                    if (!string.IsNullOrEmpty(arg) && arg.Equals(check, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         private static void OpenOutputDirectory()
@@ -117,9 +145,37 @@ namespace ShareX.Setup
 
         private static void CompileSetup()
         {
-            Console.WriteLine("Compiling setup...");
-            Process.Start(innoSetupCompilerPath, string.Format("\"{0}\"", innoSetupScriptPath)).WaitForExit();
-            Console.WriteLine("Setup file created.");
+            if (Setup == SetupType.AppVeyor && !File.Exists(innoSetupCompilerPath))
+            {
+                Console.WriteLine("Downloading InnoSetup.");
+
+                string innoSetupURL = "http://files.jrsoftware.org/is/5/innosetup-5.5.9-unicode.exe";
+                string innoSetupFilename = "innosetup-5.5.9-unicode.exe";
+
+                using (WebClient webClient = new WebClient())
+                {
+                    webClient.DownloadFile(innoSetupURL, innoSetupFilename);
+                }
+
+                Console.WriteLine("Installing InnoSetup...");
+
+                Process.Start(innoSetupFilename, "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-").WaitForExit();
+
+                Console.WriteLine("InnoSetup installed.");
+            }
+
+            if (File.Exists(innoSetupCompilerPath))
+            {
+                Console.WriteLine("Compiling setup file.");
+
+                Process.Start(innoSetupCompilerPath, $"\"{innoSetupScriptPath}\"").WaitForExit();
+
+                Console.WriteLine("Setup file is created: " + innoSetupScriptPath);
+            }
+            else
+            {
+                Console.WriteLine("InnoSetup compiler is missing: " + innoSetupCompilerPath);
+            }
         }
 
         private static void CreateSteamFolder()
