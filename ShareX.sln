@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Setup", "ShareX.Setu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.MediaLib", "ShareX.MediaLib\ShareX.MediaLib.csproj", "{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Steam", "ShareX.Steam\ShareX.Steam.csproj", "{7F6ADFC5-2563-4A5F-B202-93B553578719}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,12 @@ Global
 		{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}.Steam|Any CPU.ActiveCfg = Steam|Any CPU
 		{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}.Steam|Any CPU.Build.0 = Steam|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Steam|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Steam|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
