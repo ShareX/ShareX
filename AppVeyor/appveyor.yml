@@ -12,7 +12,7 @@ before_build:
 - ps: >-
     Invoke-WebRequest "$env:APIKeys" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
-    nuget restore
+    nuget restore ShareX.sln
 build:
   project: ShareX.sln
   parallel: true
