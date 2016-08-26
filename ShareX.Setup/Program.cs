@@ -41,29 +41,28 @@ namespace ShareX.Setup
             PortableApps, // Create PortableApps folder
             Beta, // Build setup & upload it using "Debug/ShareX.exe"
             Steam, // Create Steam folder
-            AppVeyor
+            AppVeyor // -appveyor
         }
 
         private static SetupType Setup = SetupType.Stable;
 
-        private static readonly string binDir = Path.Combine(ParentDir, "ShareX", "bin");
-        private static readonly string releaseDir = Path.Combine(binDir, "Release");
-        private static readonly string debugDir = Path.Combine(binDir, "Debug");
-        private static readonly string steamDir = Path.Combine(binDir, "Steam");
-        private static readonly string debugPath = Path.Combine(debugDir, "ShareX.exe");
-        private static readonly string innoSetupDir = Path.Combine(ParentDir, @"ShareX.Setup\InnoSetup");
-        private static readonly string outputDir = Path.Combine(innoSetupDir, "Output");
-        private static readonly string portableDir = Path.Combine(outputDir, "ShareX-portable");
-        private static readonly string steamOutputDir = Path.Combine(outputDir, "ShareX");
-        private static readonly string portableAppsDir = Path.Combine(ParentDir, @"..\PortableApps\ShareXPortable\App\ShareX");
-        private static readonly string steamLauncherDir = Path.Combine(ParentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release");
-        private static readonly string steamUpdatesDir = Path.Combine(steamOutputDir, "Updates");
-        private static readonly string chromeReleaseDir = Path.Combine(ParentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release");
-        private static readonly string innoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        private static readonly string zipPath = @"C:\Program Files\7-Zip\7z.exe";
-
-        private static string ParentDir => Setup == SetupType.AppVeyor ? @"C:\projects\sharex" : @"..\..\..\";
-        private static string ReleaseDirectory => Setup == SetupType.Steam ? steamDir : releaseDir;
+        private static string ParentDir => Setup == SetupType.AppVeyor ? "" : @"..\..\..\";
+        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin");
+        private static string ReleaseDir => Path.Combine(BinDir, "Release");
+        private static string DebugDir => Path.Combine(BinDir, "Debug");
+        private static string SteamDir => Path.Combine(BinDir, "Steam");
+        private static string ReleaseDirectory => Setup == SetupType.Steam ? SteamDir : ReleaseDir;
+        private static string DebugPath => Path.Combine(DebugDir, "ShareX.exe");
+        private static string InnoSetupDir => Path.Combine(ParentDir, @"ShareX.Setup\InnoSetup");
+        private static string OutputDir => Path.Combine(InnoSetupDir, "Output");
+        private static string PortableDir => Path.Combine(OutputDir, "ShareX-portable");
+        private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX");
+        private static string PortableAppsDir => Path.Combine(ParentDir, @"..\PortableApps\ShareXPortable\App\ShareX");
+        private static string SteamLauncherDir => Path.Combine(ParentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release");
+        private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
+        private static string ChromeReleaseDir => Path.Combine(ParentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release");
+        private static string InnoSetupCompilerPath => @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
+        private static string ZipPath => @"C:\Program Files\7-Zip\7z.exe";
 
         private static void Main(string[] args)
         {
@@ -80,7 +79,7 @@ namespace ShareX.Setup
             {
                 case SetupType.Stable:
                     CompileSetup();
-                    CreatePortable(portableDir);
+                    CreatePortable(PortableDir);
                     OpenOutputDirectory();
                     break;
                 case SetupType.BuildSetup:
@@ -88,11 +87,11 @@ namespace ShareX.Setup
                     OpenOutputDirectory();
                     break;
                 case SetupType.CreatePortable:
-                    CreatePortable(portableDir);
+                    CreatePortable(PortableDir);
                     OpenOutputDirectory();
                     break;
                 case SetupType.PortableApps:
-                    CreatePortable(portableAppsDir);
+                    CreatePortable(PortableAppsDir);
                     OpenOutputDirectory();
                     break;
                 case SetupType.Beta:
@@ -129,22 +128,22 @@ namespace ShareX.Setup
 
         private static void OpenOutputDirectory()
         {
-            Process.Start("explorer.exe", outputDir);
+            Process.Start("explorer.exe", OutputDir);
         }
 
         private static void UploadLatestFile()
         {
-            FileInfo fileInfo = new DirectoryInfo(outputDir).GetFiles("*.exe").OrderByDescending(f => f.LastWriteTime).FirstOrDefault();
+            FileInfo fileInfo = new DirectoryInfo(OutputDir).GetFiles("*.exe").OrderByDescending(f => f.LastWriteTime).FirstOrDefault();
             if (fileInfo != null)
             {
                 Console.WriteLine("Uploading setup file...");
-                Process.Start(debugPath, fileInfo.FullName);
+                Process.Start(DebugPath, fileInfo.FullName);
             }
         }
 
         private static void CompileSetup()
         {
-            if (Setup == SetupType.AppVeyor && !File.Exists(innoSetupCompilerPath))
+            if (Setup == SetupType.AppVeyor && !File.Exists(InnoSetupCompilerPath))
             {
                 Console.WriteLine("Downloading InnoSetup.");
 
@@ -163,14 +162,14 @@ namespace ShareX.Setup
                 Console.WriteLine("InnoSetup installed.");
             }
 
-            if (File.Exists(innoSetupCompilerPath))
+            if (File.Exists(InnoSetupCompilerPath))
             {
                 Console.WriteLine("Compiling setup file.");
 
                 Process process = new Process();
-                ProcessStartInfo startInfo = new ProcessStartInfo(innoSetupCompilerPath, "\"ShareX-setup.iss\"");
+                ProcessStartInfo startInfo = new ProcessStartInfo(InnoSetupCompilerPath, "\"ShareX-setup.iss\"");
                 startInfo.UseShellExecute = false;
-                startInfo.WorkingDirectory = innoSetupDir;
+                startInfo.WorkingDirectory = Path.GetFullPath(InnoSetupDir);
                 process.StartInfo = startInfo;
                 process.Start();
                 process.WaitForExit();
@@ -179,25 +178,25 @@ namespace ShareX.Setup
             }
             else
             {
-                Console.WriteLine("InnoSetup compiler is missing: " + innoSetupCompilerPath);
+                Console.WriteLine("InnoSetup compiler is missing: " + InnoSetupCompilerPath);
             }
         }
 
         private static void CreateSteamFolder()
         {
-            if (Directory.Exists(steamOutputDir))
+            if (Directory.Exists(SteamOutputDir))
             {
-                Directory.Delete(steamOutputDir, true);
+                Directory.Delete(SteamOutputDir, true);
             }
 
-            Directory.CreateDirectory(steamOutputDir);
+            Directory.CreateDirectory(SteamOutputDir);
 
-            CopyFile(Path.Combine(steamLauncherDir, "ShareX_Launcher.exe"), steamOutputDir);
-            CopyFile(Path.Combine(steamLauncherDir, "steam_appid.txt"), steamOutputDir);
-            CopyFile(Path.Combine(steamLauncherDir, "installscript.vdf"), steamOutputDir);
-            CopyFiles(steamLauncherDir, "*.dll", steamOutputDir);
+            CopyFile(Path.Combine(SteamLauncherDir, "ShareX_Launcher.exe"), SteamOutputDir);
+            CopyFile(Path.Combine(SteamLauncherDir, "steam_appid.txt"), SteamOutputDir);
+            CopyFile(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
+            CopyFiles(SteamLauncherDir, "*.dll", SteamOutputDir);
 
-            CreatePortable(steamUpdatesDir);
+            CreatePortable(SteamUpdatesDir);
         }
 
         private static void CreatePortable(string destination)
@@ -215,8 +214,8 @@ namespace ShareX.Setup
             CopyFile(Path.Combine(ReleaseDirectory, "ShareX.exe.config"), destination);
             CopyFiles(ReleaseDirectory, "*.dll", destination);
             CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
-            CopyFile(Path.Combine(outputDir, "Recorder-devices-setup.exe"), destination);
-            CopyFile(Path.Combine(chromeReleaseDir, "ShareX_Chrome.exe"), destination);
+            CopyFile(Path.Combine(OutputDir, "Recorder-devices-setup.exe"), destination);
+            CopyFile(Path.Combine(ChromeReleaseDir, "ShareX_Chrome.exe"), destination);
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN" };
 
@@ -241,7 +240,7 @@ namespace ShareX.Setup
 
                 //FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
                 //string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
-                string zipPath = Path.Combine(outputDir, "ShareX-portable.zip");
+                string zipPath = Path.Combine(OutputDir, "ShareX-portable.zip");
 
                 if (File.Exists(zipPath))
                 {
@@ -287,7 +286,7 @@ namespace ShareX.Setup
         private static void Zip(string source, string target)
         {
             ProcessStartInfo p = new ProcessStartInfo();
-            p.FileName = zipPath;
+            p.FileName = ZipPath;
             p.Arguments = string.Format("a -tzip \"{0}\" \"{1}\" -r -mx=9", target, source);
             p.WindowStyle = ProcessWindowStyle.Hidden;
             Process process = Process.Start(p);
