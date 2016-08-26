@@ -62,7 +62,7 @@ namespace ShareX.Setup
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string ChromeReleaseDir => Path.Combine(ParentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release");
         private static string InnoSetupCompilerPath => @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        private static string ZipPath => @"C:\Program Files\7-Zip\7z.exe";
+        private static string ZipPath => Setup == SetupType.AppVeyor ? "7z" : @"C:\Program Files\7-Zip\7z.exe";
 
         private static void Main(string[] args)
         {
@@ -104,6 +104,7 @@ namespace ShareX.Setup
                     break;
                 case SetupType.AppVeyor:
                     CompileSetup();
+                    CreatePortable(PortableDir);
                     break;
             }
 
@@ -214,8 +215,12 @@ namespace ShareX.Setup
             CopyFile(Path.Combine(ReleaseDirectory, "ShareX.exe.config"), destination);
             CopyFiles(ReleaseDirectory, "*.dll", destination);
             CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
-            CopyFile(Path.Combine(OutputDir, "Recorder-devices-setup.exe"), destination);
-            CopyFile(Path.Combine(ChromeReleaseDir, "ShareX_Chrome.exe"), destination);
+
+            if (Setup != SetupType.AppVeyor)
+            {
+                CopyFile(Path.Combine(OutputDir, "Recorder-devices-setup.exe"), destination);
+                CopyFile(Path.Combine(ChromeReleaseDir, "ShareX_Chrome.exe"), destination);
+            }
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN" };
 
