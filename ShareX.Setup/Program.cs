@@ -60,7 +60,6 @@ namespace ShareX.Setup
         private static readonly string steamUpdatesDir = Path.Combine(steamOutputDir, "Updates");
         private static readonly string chromeReleaseDir = Path.Combine(ParentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release");
         private static readonly string innoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        private static readonly string innoSetupScriptPath = Path.Combine(innoSetupDir, "ShareX-setup.iss");
         private static readonly string zipPath = @"C:\Program Files\7-Zip\7z.exe";
 
         private static string ParentDir => Setup == SetupType.AppVeyor ? "" : @"..\..\..\";
@@ -169,9 +168,9 @@ namespace ShareX.Setup
                 Console.WriteLine("Compiling setup file.");
 
                 Process process = new Process();
-                ProcessStartInfo startInfo = new ProcessStartInfo(innoSetupCompilerPath, $"\"{innoSetupScriptPath}\"");
+                ProcessStartInfo startInfo = new ProcessStartInfo(innoSetupCompilerPath, "\"ShareX-setup.iss\"");
                 startInfo.UseShellExecute = false;
-                startInfo.WorkingDirectory = innoSetupDir;
+                startInfo.WorkingDirectory = Path.GetFullPath(innoSetupDir);
                 process.StartInfo = startInfo;
                 process.Start();
                 process.WaitForExit();
