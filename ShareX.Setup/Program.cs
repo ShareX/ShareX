@@ -137,7 +137,7 @@ namespace ShareX.Setup
             FileInfo fileInfo = new DirectoryInfo(OutputDir).GetFiles("*.exe").OrderByDescending(f => f.LastWriteTime).FirstOrDefault();
             if (fileInfo != null)
             {
-                Console.WriteLine("Uploading setup file...");
+                Console.WriteLine("Uploading setup file.");
                 Process.Start(DebugPath, fileInfo.FullName);
             }
         }
@@ -146,41 +146,52 @@ namespace ShareX.Setup
         {
             if (Setup == SetupType.AppVeyor && !File.Exists(InnoSetupCompilerPath))
             {
-                Console.WriteLine("Downloading InnoSetup.");
-
-                string innoSetupURL = "http://files.jrsoftware.org/is/5/innosetup-5.5.9-unicode.exe";
-                string innoSetupFilename = "innosetup-5.5.9-unicode.exe";
-
-                using (WebClient webClient = new WebClient())
-                {
-                    webClient.DownloadFile(innoSetupURL, innoSetupFilename);
-                }
-
-                Console.WriteLine("Installing InnoSetup.");
-
-                Process.Start(innoSetupFilename, "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-").WaitForExit();
-
-                Console.WriteLine("InnoSetup installed.");
+                InstallInnoSetup();
             }
 
             if (File.Exists(InnoSetupCompilerPath))
             {
-                Console.WriteLine("Compiling setup file.");
-
-                Process process = new Process();
-                ProcessStartInfo startInfo = new ProcessStartInfo(InnoSetupCompilerPath, "\"ShareX-setup.iss\"");
-                startInfo.UseShellExecute = false;
-                startInfo.WorkingDirectory = Path.GetFullPath(InnoSetupDir);
-                process.StartInfo = startInfo;
-                process.Start();
-                process.WaitForExit();
-
-                Console.WriteLine("Setup file is created.");
+                CompileISSFile("Recorder-devices-setup.iss");
+                CompileISSFile("ShareX-setup.iss");
             }
             else
             {
                 Console.WriteLine("InnoSetup compiler is missing: " + InnoSetupCompilerPath);
             }
+        }
+
+        private static void InstallInnoSetup()
+        {
+            Console.WriteLine("Downloading InnoSetup.");
+
+            string innoSetupURL = "http://files.jrsoftware.org/is/5/innosetup-5.5.9-unicode.exe";
+            string innoSetupFilename = "innosetup-5.5.9-unicode.exe";
+
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFile(innoSetupURL, innoSetupFilename);
+            }
+
+            Console.WriteLine("Installing InnoSetup.");
+
+            Process.Start(innoSetupFilename, "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-").WaitForExit();
+
+            Console.WriteLine("InnoSetup installed.");
+        }
+
+        private static void CompileISSFile(string filename)
+        {
+            Console.WriteLine("Compiling setup file: " + filename);
+
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo(InnoSetupCompilerPath, $"\"{filename}\"");
+            startInfo.UseShellExecute = false;
+            startInfo.WorkingDirectory = Path.GetFullPath(InnoSetupDir);
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+
+            Console.WriteLine("Setup file is created.");
         }
 
         private static void CreateSteamFolder()
@@ -202,7 +213,7 @@ namespace ShareX.Setup
 
         private static void CreatePortable(string destination)
         {
-            Console.WriteLine("Creating portable...");
+            Console.WriteLine("Creating portable.");
 
             if (Directory.Exists(destination))
             {
