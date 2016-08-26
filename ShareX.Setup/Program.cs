@@ -62,7 +62,7 @@ namespace ShareX.Setup
         private static readonly string innoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
         private static readonly string zipPath = @"C:\Program Files\7-Zip\7z.exe";
 
-        private static string ParentDir => Setup == SetupType.AppVeyor ? "" : @"..\..\..\";
+        private static string ParentDir => Setup == SetupType.AppVeyor ? @"C:\projects\sharex" : @"..\..\..\";
         private static string ReleaseDirectory => Setup == SetupType.Steam ? steamDir : releaseDir;
 
         private static void Main(string[] args)
