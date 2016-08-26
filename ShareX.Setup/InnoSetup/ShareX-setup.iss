@@ -38,7 +38,6 @@ UninstallDisplayName={#AppName}
 VersionInfoCompany={#AppPublisher}
 VersionInfoTextVersion={#AppVersion}
 VersionInfoVersion={#AppVersion}
-WizardImageBackColor=clWhite
 WizardImageFile=WizardImageFile.bmp
 WizardImageStretch=no
 WizardSmallImageFile=WizardSmallImageFile.bmp
