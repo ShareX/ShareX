@@ -566,7 +566,7 @@ namespace ShareX
                 return;
             }
 
-            taskSettings.ToolsSettings.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
+            taskSettings.ToolsSettingsReference.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
             VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath, taskSettings.ToolsSettingsReference.VideoThumbnailOptions);
             thumbnailerForm.ThumbnailsTaken += thumbnails =>
             {
