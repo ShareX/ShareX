@@ -61,8 +61,8 @@ namespace ShareX.Setup
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"..\ShareX_Steam\ShareX_Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string ChromeReleaseDir => Path.Combine(ParentDir, @"..\ShareX_Chrome\ShareX_Chrome\bin\Release");
-        private static string InnoSetupCompilerPath => @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        private static string ZipPath => Setup == SetupType.AppVeyor ? "7z" : @"C:\Program Files\7-Zip\7z.exe";
+        private static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
+        private static string ZipPath = @"C:\Program Files\7-Zip\7z.exe";
 
         private static void Main(string[] args)
         {
@@ -259,12 +259,13 @@ namespace ShareX.Setup
 
         private static void OpenOutputDirectory()
         {
-            Process.Start("explorer.exe", OutputDir);
+            Process.Start(OutputDir);
         }
 
         private static void UploadLatestFile()
         {
             FileInfo fileInfo = new DirectoryInfo(OutputDir).GetFiles("*.exe").OrderByDescending(f => f.LastWriteTime).FirstOrDefault();
+
             if (fileInfo != null)
             {
                 Console.WriteLine("Uploading setup file.");
