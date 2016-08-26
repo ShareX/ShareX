@@ -168,7 +168,12 @@ namespace ShareX.Setup
             {
                 Console.WriteLine("Compiling setup file.");
 
-                Process.Start(innoSetupCompilerPath, $"\"{InnoSetupScriptPath}\"").WaitForExit();
+                Process process = new Process();
+                ProcessStartInfo startInfo = new ProcessStartInfo(innoSetupCompilerPath, $"\"{InnoSetupScriptPath}\"");
+                startInfo.UseShellExecute = false;
+                process.StartInfo = startInfo;
+                process.Start();
+                process.WaitForExit();
 
                 Console.WriteLine("Setup file is created.");
             }
