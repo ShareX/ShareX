@@ -167,13 +167,10 @@ namespace ShareX.Setup
             {
                 Console.WriteLine("Compiling setup file.");
 
-                string workingDirectory = Path.GetFullPath(innoSetupDir);
-                Console.WriteLine("Working directory: " + workingDirectory);
-
                 Process process = new Process();
                 ProcessStartInfo startInfo = new ProcessStartInfo(innoSetupCompilerPath, "\"ShareX-setup.iss\"");
                 startInfo.UseShellExecute = false;
-                startInfo.WorkingDirectory = workingDirectory;
+                startInfo.WorkingDirectory = innoSetupDir;
                 process.StartInfo = startInfo;
                 process.Start();
                 process.WaitForExit();
