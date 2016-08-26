@@ -59,8 +59,8 @@ Source: "{#AppParentDirectory}\ShareX.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#AppParentDirectory}\ShareX.exe.config"; DestDir: {app}; Flags: ignoreversion
 Source: "{#AppParentDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "{#RootDirectory}\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
-Source: "Output\Recorder-devices-setup.exe"; DestDir: {app}; Flags: ignoreversion
-Source: "{#RootDirectory}\..\ShareX_Chrome\ShareX_Chrome\bin\Release\ShareX_Chrome.exe"; DestDir: {app}; Flags: ignoreversion
+;Source: "Output\Recorder-devices-setup.exe"; DestDir: {app}; Flags: ignoreversion
+;Source: "{#RootDirectory}\..\ShareX_Chrome\ShareX_Chrome\bin\Release\ShareX_Chrome.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#AppParentDirectory}\de\*.resources.dll"; DestDir: {app}\Languages\de; Flags: ignoreversion
 Source: "{#AppParentDirectory}\es\*.resources.dll"; DestDir: {app}\Languages\es; Flags: ignoreversion
 Source: "{#AppParentDirectory}\fr\*.resources.dll"; DestDir: {app}\Languages\fr; Flags: ignoreversion
