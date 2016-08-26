@@ -127,21 +127,6 @@ namespace ShareX.Setup
             return false;
         }
 
-        private static void OpenOutputDirectory()
-        {
-            Process.Start("explorer.exe", OutputDir);
-        }
-
-        private static void UploadLatestFile()
-        {
-            FileInfo fileInfo = new DirectoryInfo(OutputDir).GetFiles("*.exe").OrderByDescending(f => f.LastWriteTime).FirstOrDefault();
-            if (fileInfo != null)
-            {
-                Console.WriteLine("Uploading setup file.");
-                Process.Start(DebugPath, fileInfo.FullName);
-            }
-        }
-
         private static void CompileSetup()
         {
             if (Setup == SetupType.AppVeyor && !File.Exists(InnoSetupCompilerPath))
@@ -183,12 +168,10 @@ namespace ShareX.Setup
         {
             Console.WriteLine("Compiling setup file: " + filename);
 
-            Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo(InnoSetupCompilerPath, $"\"{filename}\"");
             startInfo.UseShellExecute = false;
             startInfo.WorkingDirectory = Path.GetFullPath(InnoSetupDir);
-            process.StartInfo = startInfo;
-            process.Start();
+            Process process = Process.Start(startInfo);
             process.WaitForExit();
 
             Console.WriteLine("Setup file is created.");
@@ -226,10 +209,10 @@ namespace ShareX.Setup
             CopyFile(Path.Combine(ReleaseDirectory, "ShareX.exe.config"), destination);
             CopyFiles(ReleaseDirectory, "*.dll", destination);
             CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
+            CopyFile(Path.Combine(OutputDir, "Recorder-devices-setup.exe"), destination);
 
             if (Setup != SetupType.AppVeyor)
             {
-                CopyFile(Path.Combine(OutputDir, "Recorder-devices-setup.exe"), destination);
                 CopyFile(Path.Combine(ChromeReleaseDir, "ShareX_Chrome.exe"), destination);
             }
 
@@ -274,6 +257,21 @@ namespace ShareX.Setup
             Console.WriteLine("Portable created.");
         }
 
+        private static void OpenOutputDirectory()
+        {
+            Process.Start("explorer.exe", OutputDir);
+        }
+
+        private static void UploadLatestFile()
+        {
+            FileInfo fileInfo = new DirectoryInfo(OutputDir).GetFiles("*.exe").OrderByDescending(f => f.LastWriteTime).FirstOrDefault();
+            if (fileInfo != null)
+            {
+                Console.WriteLine("Uploading setup file.");
+                Process.Start(DebugPath, fileInfo.FullName);
+            }
+        }
+
         private static void CopyFiles(string[] files, string toFolder)
         {
             if (!Directory.Exists(toFolder))
@@ -301,11 +299,11 @@ namespace ShareX.Setup
 
         private static void Zip(string source, string target)
         {
-            ProcessStartInfo p = new ProcessStartInfo();
-            p.FileName = ZipPath;
-            p.Arguments = string.Format("a -tzip \"{0}\" \"{1}\" -r -mx=9", target, source);
-            p.WindowStyle = ProcessWindowStyle.Hidden;
-            Process process = Process.Start(p);
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = ZipPath;
+            startInfo.Arguments = string.Format("a -tzip \"{0}\" \"{1}\" -r -mx=9", target, source);
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            Process process = Process.Start(startInfo);
             process.WaitForExit();
         }
     }
