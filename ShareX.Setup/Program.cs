@@ -170,7 +170,7 @@ namespace ShareX.Setup
 
                 Process.Start(innoSetupCompilerPath, $"\"{innoSetupScriptPath}\"").WaitForExit();
 
-                Console.WriteLine("Setup file is created: " + innoSetupScriptPath);
+                Console.WriteLine("Setup file is created.");
             }
             else
             {
