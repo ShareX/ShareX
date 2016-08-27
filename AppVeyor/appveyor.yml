@@ -10,13 +10,13 @@ environment:
   APIKeys:
     secure: oWmEefxkbok87VNVsrUuXKgNaM4+j+EW6FBLsXwCbv3OVHgFvT0M9k4891OvYXDsj0oLuEn0oZeaeV8RrRDHA2Hk2acXHrWkg9z6FCGASxRMJjv0+in1v5DxN1BfEPdASmhnYFu6pcINmwibGYjsxySek57cbYUDc69yQfyqX6FUI0kQcEGp8Dh3tHF981Dy
 before_build:
-- ps: .\before_build.ps1
+- ps: AppVeyor\before_build.ps1
 build:
   project: ShareX.sln
   parallel: true
   verbosity: minimal
 after_build:
-- ps: .\after_build.ps1
+- ps: AppVeyor\after_build.ps1
 artifacts:
 - path: ShareX.Setup\InnoSetup\Output\ShareX-*-setup.exe
   name: Setup
