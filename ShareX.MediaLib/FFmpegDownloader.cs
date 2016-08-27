@@ -24,12 +24,13 @@
 #endregion License Information (GPL v3)
 
 using SevenZip;
+using ShareX.HelpersLib;
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.MediaLib
 {
     public static class FFmpegDownloader
     {
@@ -62,11 +63,11 @@ namespace ShareX.HelpersLib
             {
                 if (NativeMethods.Is64Bit())
                 {
-                    SevenZipExtractor.SetLibraryPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7z-x64.dll"));
+                    SevenZipBase.SetLibraryPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7z-x64.dll"));
                 }
                 else
                 {
-                    SevenZipExtractor.SetLibraryPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7z.dll"));
+                    SevenZipBase.SetLibraryPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7z.dll"));
                 }
 
                 Helpers.CreateDirectoryFromFilePath(extractPath);
