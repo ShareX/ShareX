@@ -51,15 +51,18 @@ namespace ShareX.Setup
         private static string ReleaseDir => Path.Combine(BinDir, "Release");
         private static string DebugDir => Path.Combine(BinDir, "Debug");
         private static string SteamDir => Path.Combine(BinDir, "Steam");
-        private static string DebugPath => Path.Combine(DebugDir, "ShareX.exe");
+
         private static string InnoSetupDir => Path.Combine(ParentDir, @"ShareX.Setup\InnoSetup");
         private static string OutputDir => Path.Combine(InnoSetupDir, "Output");
-        private static string PortableDir => Path.Combine(OutputDir, "ShareX-portable");
+        private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
         private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
-        private static string PortableAppsDir => Path.Combine(ParentDir, @"..\PortableApps\ShareXPortable\App\ShareX");
+        private static string PortableAppsOutputDir => Path.Combine(ParentDir, @"..\PortableApps\ShareXPortable\App\ShareX");
+
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
-        private static string ChromeReleaseDir => Path.Combine(ParentDir, @"ShareX.Chrome\bin\Release");
+        private static string ChromeDir => Path.Combine(ParentDir, @"ShareX.Chrome\bin\Release");
+
+        private static string DebugExecutablePath => Path.Combine(DebugDir, "ShareX.exe");
         private static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
         private static string ZipPath = @"C:\Program Files\7-Zip\7z.exe";
 
@@ -78,7 +81,7 @@ namespace ShareX.Setup
             {
                 case SetupType.Stable:
                     CompileSetup();
-                    CreatePortable(PortableDir, ReleaseDir);
+                    CreatePortable(PortableOutputDir, ReleaseDir);
                     OpenOutputDirectory();
                     break;
                 case SetupType.BuildSetup:
@@ -86,11 +89,11 @@ namespace ShareX.Setup
                     OpenOutputDirectory();
                     break;
                 case SetupType.CreatePortable:
-                    CreatePortable(PortableDir, ReleaseDir);
+                    CreatePortable(PortableOutputDir, ReleaseDir);
                     OpenOutputDirectory();
                     break;
                 case SetupType.PortableApps:
-                    CreatePortable(PortableAppsDir, ReleaseDir);
+                    CreatePortable(PortableAppsOutputDir, ReleaseDir);
                     OpenOutputDirectory();
                     break;
                 case SetupType.Beta:
@@ -103,7 +106,7 @@ namespace ShareX.Setup
                     break;
                 case SetupType.AppVeyor:
                     CompileSetup();
-                    CreatePortable(PortableDir, ReleaseDir);
+                    CreatePortable(PortableOutputDir, ReleaseDir);
                     //CreateSteamFolder();
                     break;
             }
@@ -212,7 +215,7 @@ namespace ShareX.Setup
             CopyFiles(releaseDirectory, "*.dll", destination);
             CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
             CopyFile(Path.Combine(OutputDir, "Recorder-devices-setup.exe"), destination);
-            CopyFile(Path.Combine(ChromeReleaseDir, "ShareX_Chrome.exe"), destination);
+            CopyFile(Path.Combine(ChromeDir, "ShareX_Chrome.exe"), destination);
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN" };
 
@@ -227,7 +230,7 @@ namespace ShareX.Setup
                 CopyFile(Path.Combine(ParentDir, "Lib", "ffmpeg.exe"), destination);
                 CopyFile(Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe"), destination);
             }
-            else if (destination.Equals(PortableAppsDir, StringComparison.InvariantCultureIgnoreCase))
+            else if (destination.Equals(PortableAppsOutputDir, StringComparison.InvariantCultureIgnoreCase))
             {
                 File.Create(Path.Combine(destination, "PortableApps")).Dispose();
             }
@@ -267,7 +270,7 @@ namespace ShareX.Setup
             if (fileInfo != null)
             {
                 Console.WriteLine("Uploading setup file.");
-                Process.Start(DebugPath, fileInfo.FullName);
+                Process.Start(DebugExecutablePath, fileInfo.FullName);
             }
         }
 
