@@ -72,14 +72,16 @@ namespace ShareX.Setup
         private static string ChromeDir => Path.Combine(ParentDir, @"ShareX.Chrome\bin\Release");
 
         private static string DebugExecutablePath => Path.Combine(DebugDir, "ShareX.exe");
-        private static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
-        private static string ZipPath = @"C:\Program Files\7-Zip\7z.exe";
+        public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
+        public static string ZipPath = @"C:\Program Files\7-Zip\7z.exe";
+        public static string FFmpeg32bit = Path.Combine(ParentDir, "Lib", "ffmpeg.exe");
+        public static string FFmpeg64bit = Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe");
 
         private static void Main(string[] args)
         {
             Console.WriteLine("ShareX setup started.");
 
-            AppVeyor = CheckArgs(args, "-appveyor");
+            AppVeyor = Helpers.CheckArguments(args, "-appveyor");
 
             if (AppVeyor)
             {
@@ -128,22 +130,6 @@ namespace ShareX.Setup
             Console.WriteLine("ShareX setup successfully completed.");
         }
 
-        private static bool CheckArgs(string[] args, string check)
-        {
-            if (!string.IsNullOrEmpty(check))
-            {
-                foreach (string arg in args)
-                {
-                    if (!string.IsNullOrEmpty(arg) && arg.Equals(check, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
-
         private static void CompileSetup()
         {
             if (AppVeyor && !File.Exists(InnoSetupCompilerPath))
@@ -166,13 +152,7 @@ namespace ShareX.Setup
         {
             Console.WriteLine("Downloading InnoSetup.");
 
-            string innoSetupURL = "http://files.jrsoftware.org/is/5/innosetup-5.5.9-unicode.exe";
-            string innoSetupFilename = "innosetup-5.5.9-unicode.exe";
-
-            using (WebClient webClient = new WebClient())
-            {
-                webClient.DownloadFile(innoSetupURL, innoSetupFilename);
-            }
+            string innoSetupFilename = Helpers.DownloadFile("http://files.jrsoftware.org/is/5/innosetup-5.5.9-unicode.exe");
 
             Console.WriteLine("Installing InnoSetup.");
 
@@ -205,10 +185,10 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(SteamOutputDir);
 
-            CopyFile(Path.Combine(SteamLauncherDir, "ShareX_Launcher.exe"), SteamOutputDir);
-            CopyFile(Path.Combine(SteamLauncherDir, "steam_appid.txt"), SteamOutputDir);
-            CopyFile(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
-            CopyFiles(SteamLauncherDir, "*.dll", SteamOutputDir);
+            Helpers.CopyFile(Path.Combine(SteamLauncherDir, "ShareX_Launcher.exe"), SteamOutputDir);
+            Helpers.CopyFile(Path.Combine(SteamLauncherDir, "steam_appid.txt"), SteamOutputDir);
+            Helpers.CopyFile(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
+            Helpers.CopyFiles(SteamLauncherDir, "*.dll", SteamOutputDir);
 
             CreatePortable(SteamUpdatesDir, SteamDir);
         }
@@ -224,25 +204,23 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(destination);
 
-            CopyFile(Path.Combine(releaseDirectory, "ShareX.exe"), destination);
-            CopyFile(Path.Combine(releaseDirectory, "ShareX.exe.config"), destination);
-            CopyFiles(releaseDirectory, "*.dll", destination);
-            CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
-            CopyFile(Path.Combine(OutputDir, "Recorder-devices-setup.exe"), destination);
-            CopyFile(Path.Combine(ChromeDir, "ShareX_Chrome.exe"), destination);
+            Helpers.CopyFile(Path.Combine(releaseDirectory, "ShareX.exe"), destination);
+            Helpers.CopyFile(Path.Combine(releaseDirectory, "ShareX.exe.config"), destination);
+            Helpers.CopyFiles(releaseDirectory, "*.dll", destination);
+            Helpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
+            Helpers.CopyFile(Path.Combine(OutputDir, "Recorder-devices-setup.exe"), destination);
+            Helpers.CopyFile(Path.Combine(ChromeDir, "ShareX_Chrome.exe"), destination);
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN" };
 
             foreach (string language in languages)
             {
-                CopyFiles(Path.Combine(releaseDirectory, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
+                Helpers.CopyFiles(Path.Combine(releaseDirectory, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
             }
 
             if (destination.Equals(SteamUpdatesDir, StringComparison.InvariantCultureIgnoreCase))
             {
-                // These git ignored
-                CopyFile(Path.Combine(ParentDir, "Lib", "ffmpeg.exe"), destination);
-                CopyFile(Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe"), destination);
+                DownloadFFmpeg(destination);
             }
             else if (destination.Equals(PortableAppsOutputDir, StringComparison.InvariantCultureIgnoreCase))
             {
@@ -261,7 +239,7 @@ namespace ShareX.Setup
                     File.Delete(zipPath);
                 }
 
-                Zip(destination + "\\*", zipPath);
+                Helpers.Zip(destination + "\\*", zipPath);
 
                 if (Directory.Exists(destination))
                 {
@@ -270,6 +248,12 @@ namespace ShareX.Setup
             }
 
             Console.WriteLine("Portable created.");
+        }
+
+        private static void DownloadFFmpeg(string destination)
+        {
+            Helpers.CopyFile(FFmpeg32bit, destination);
+            Helpers.CopyFile(FFmpeg64bit, destination);
         }
 
         private static void OpenOutputDirectory()
@@ -286,41 +270,6 @@ namespace ShareX.Setup
                 Console.WriteLine("Uploading setup file.");
                 Process.Start(DebugExecutablePath, fileInfo.FullName);
             }
-        }
-
-        private static void CopyFiles(string[] files, string toFolder)
-        {
-            if (!Directory.Exists(toFolder))
-            {
-                Directory.CreateDirectory(toFolder);
-            }
-
-            foreach (string filepath in files)
-            {
-                string filename = Path.GetFileName(filepath);
-                string dest = Path.Combine(toFolder, filename);
-                File.Copy(filepath, dest);
-            }
-        }
-
-        private static void CopyFile(string path, string toFolder)
-        {
-            CopyFiles(new string[] { path }, toFolder);
-        }
-
-        private static void CopyFiles(string directory, string searchPattern, string toFolder)
-        {
-            CopyFiles(Directory.GetFiles(directory, searchPattern), toFolder);
-        }
-
-        private static void Zip(string source, string target)
-        {
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = ZipPath;
-            startInfo.Arguments = string.Format("a -tzip \"{0}\" \"{1}\" -r -mx=9", target, source);
-            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            Process process = Process.Start(startInfo);
-            process.WaitForExit();
         }
     }
 }
