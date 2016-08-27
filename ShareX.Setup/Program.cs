@@ -33,20 +33,29 @@ namespace ShareX.Setup
 {
     internal class Program
     {
-        private enum SetupType
+        [Flags]
+        private enum SetupJobs
         {
-            Stable, // Build setup & create portable zip file
-            BuildSetup, // Build setup
-            CreatePortable, // Create portable zip file
-            PortableApps, // Create PortableApps folder
-            Beta, // Build setup & upload it using "Debug/ShareX.exe"
-            Steam, // Create Steam folder
-            AppVeyor // -appveyor
+            None = 0,
+            CreateSetup = 1,
+            CreatePortable = 1 << 1,
+            CreateSteamFolder = 1 << 2,
+            CreatePortableAppsFolder = 1 << 3,
+            OpenOutputDirectory = 1 << 4,
+            UploadOutputFile = 1 << 5,
+
+            Stable = CreateSetup | CreatePortable | OpenOutputDirectory,
+            Setup = CreateSetup | OpenOutputDirectory,
+            Portable = CreatePortable | OpenOutputDirectory,
+            Steam = CreateSteamFolder | OpenOutputDirectory,
+            PortableApps = CreatePortableAppsFolder | OpenOutputDirectory,
+            Beta = CreateSetup | UploadOutputFile
         }
 
-        private static SetupType Setup = SetupType.Stable;
+        private static SetupJobs Job = SetupJobs.Stable;
+        private static bool AppVeyor = false;
 
-        private static string ParentDir => Setup == SetupType.AppVeyor ? "" : @"..\..\..\";
+        private static string ParentDir => AppVeyor ? "" : @"..\..\..\";
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin");
         private static string ReleaseDir => Path.Combine(BinDir, "Release");
         private static string DebugDir => Path.Combine(BinDir, "Debug");
@@ -68,50 +77,48 @@ namespace ShareX.Setup
 
         private static void Main(string[] args)
         {
-            Console.WriteLine("ShareX.Setup started.");
+            Console.WriteLine("ShareX setup started.");
 
-            if (CheckArgs(args, "-appveyor"))
+            AppVeyor = CheckArgs(args, "-appveyor");
+
+            if (AppVeyor)
             {
-                Setup = SetupType.AppVeyor;
+                Job = SetupJobs.CreateSetup | SetupJobs.CreatePortable;
             }
 
-            Console.WriteLine("Setup type: " + Setup);
+            Console.WriteLine("Setup job: " + Job);
 
-            switch (Setup)
+            if (Job.HasFlag(SetupJobs.CreateSetup))
             {
-                case SetupType.Stable:
-                    CompileSetup();
-                    CreatePortable(PortableOutputDir, ReleaseDir);
-                    OpenOutputDirectory();
-                    break;
-                case SetupType.BuildSetup:
-                    CompileSetup();
-                    OpenOutputDirectory();
-                    break;
-                case SetupType.CreatePortable:
-                    CreatePortable(PortableOutputDir, ReleaseDir);
-                    OpenOutputDirectory();
-                    break;
-                case SetupType.PortableApps:
-                    CreatePortable(PortableAppsOutputDir, ReleaseDir);
-                    OpenOutputDirectory();
-                    break;
-                case SetupType.Beta:
-                    CompileSetup();
-                    UploadLatestFile();
-                    break;
-                case SetupType.Steam:
-                    CreateSteamFolder();
-                    OpenOutputDirectory();
-                    break;
-                case SetupType.AppVeyor:
-                    CompileSetup();
-                    CreatePortable(PortableOutputDir, ReleaseDir);
-                    //CreateSteamFolder();
-                    break;
+                CompileSetup();
             }
 
-            Console.WriteLine("ShareX.Setup successfully completed.");
+            if (Job.HasFlag(SetupJobs.CreatePortable))
+            {
+                CreatePortable(PortableOutputDir, ReleaseDir);
+            }
+
+            if (Job.HasFlag(SetupJobs.CreateSteamFolder))
+            {
+                CreateSteamFolder();
+            }
+
+            if (Job.HasFlag(SetupJobs.CreatePortableAppsFolder))
+            {
+                CreatePortable(PortableAppsOutputDir, ReleaseDir);
+            }
+
+            if (Job.HasFlag(SetupJobs.OpenOutputDirectory))
+            {
+                OpenOutputDirectory();
+            }
+
+            if (Job.HasFlag(SetupJobs.UploadOutputFile))
+            {
+                UploadLatestFile();
+            }
+
+            Console.WriteLine("ShareX setup successfully completed.");
         }
 
         private static bool CheckArgs(string[] args, string check)
@@ -132,7 +139,7 @@ namespace ShareX.Setup
 
         private static void CompileSetup()
         {
-            if (Setup == SetupType.AppVeyor && !File.Exists(InnoSetupCompilerPath))
+            if (AppVeyor && !File.Exists(InnoSetupCompilerPath))
             {
                 InstallInnoSetup();
             }
