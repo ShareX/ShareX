@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/frfm608h1rcq5ojt?svg=true)](https://ci.appveyor.com/project/ShareX/sharex)
+
 ### ShareX website: [getsharex.com](https://getsharex.com)
 
 [![](https://getsharex.com/img/ShareX_Screenshot.png)](https://getsharex.com)

@@ -212,10 +212,12 @@ namespace ShareX.Setup
             Helpers.CopyFile(Path.Combine(releaseDirectory, "ShareX.exe.config"), destination);
             Helpers.CopyFiles(releaseDirectory, "*.dll", destination);
             Helpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
+
             if (!File.Exists(RecorderDevicesSetupPath))
             {
                 CompileISSFile("Recorder-devices-setup.iss");
             }
+
             Helpers.CopyFile(RecorderDevicesSetupPath, destination);
             Helpers.CopyFile(Path.Combine(ChromeDir, "ShareX_Chrome.exe"), destination);
 
