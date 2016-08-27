@@ -138,20 +138,8 @@ namespace ShareX.Setup
 
         private static void CompileSetup()
         {
-            if (AppVeyor && !File.Exists(InnoSetupCompilerPath))
-            {
-                InstallInnoSetup();
-            }
-
-            if (File.Exists(InnoSetupCompilerPath))
-            {
-                CompileISSFile("Recorder-devices-setup.iss");
-                CompileISSFile("ShareX-setup.iss");
-            }
-            else
-            {
-                Console.WriteLine("InnoSetup compiler is missing: " + InnoSetupCompilerPath);
-            }
+            CompileISSFile("Recorder-devices-setup.iss");
+            CompileISSFile("ShareX-setup.iss");
         }
 
         private static void InstallInnoSetup()
@@ -167,15 +155,27 @@ namespace ShareX.Setup
 
         private static void CompileISSFile(string filename)
         {
-            Console.WriteLine("Compiling setup file: " + filename);
+            if (AppVeyor && !File.Exists(InnoSetupCompilerPath))
+            {
+                InstallInnoSetup();
+            }
 
-            ProcessStartInfo startInfo = new ProcessStartInfo(InnoSetupCompilerPath, $"\"{filename}\"");
-            startInfo.UseShellExecute = false;
-            startInfo.WorkingDirectory = Path.GetFullPath(InnoSetupDir);
-            Process process = Process.Start(startInfo);
-            process.WaitForExit();
+            if (File.Exists(InnoSetupCompilerPath))
+            {
+                Console.WriteLine("Compiling setup file: " + filename);
 
-            Console.WriteLine("Setup file is created.");
+                ProcessStartInfo startInfo = new ProcessStartInfo(InnoSetupCompilerPath, $"\"{filename}\"");
+                startInfo.UseShellExecute = false;
+                startInfo.WorkingDirectory = Path.GetFullPath(InnoSetupDir);
+                Process process = Process.Start(startInfo);
+                process.WaitForExit();
+
+                Console.WriteLine("Setup file is created.");
+            }
+            else
+            {
+                Console.WriteLine("InnoSetup compiler is missing: " + InnoSetupCompilerPath);
+            }
         }
 
         private static void CreateSteamFolder()
