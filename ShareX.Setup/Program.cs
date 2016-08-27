@@ -59,6 +59,7 @@ namespace ShareX.Setup
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin");
         private static string ReleaseDir => Path.Combine(BinDir, "Release");
         private static string DebugDir => Path.Combine(BinDir, "Debug");
+        private static string DebugExecutablePath => Path.Combine(DebugDir, "ShareX.exe");
         private static string SteamDir => Path.Combine(BinDir, "Steam");
 
         private static string InnoSetupDir => Path.Combine(ParentDir, @"ShareX.Setup\InnoSetup");
@@ -70,12 +71,12 @@ namespace ShareX.Setup
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string ChromeDir => Path.Combine(ParentDir, @"ShareX.Chrome\bin\Release");
+        private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
 
-        private static string DebugExecutablePath => Path.Combine(DebugDir, "ShareX.exe");
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
         public static string ZipPath = @"C:\Program Files\7-Zip\7z.exe";
-        public static string FFmpeg32bit = Path.Combine(ParentDir, "Lib", "ffmpeg.exe");
-        public static string FFmpeg64bit = Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe");
+        public static string FFmpeg32bit => Path.Combine(ParentDir, "Lib", "ffmpeg.exe");
+        public static string FFmpeg64bit => Path.Combine(ParentDir, "Lib", "ffmpeg-x64.exe");
 
         private static void Main(string[] args)
         {
@@ -150,8 +151,6 @@ namespace ShareX.Setup
 
         private static void InstallInnoSetup()
         {
-            Console.WriteLine("Downloading InnoSetup.");
-
             string innoSetupFilename = Helpers.DownloadFile("http://files.jrsoftware.org/is/5/innosetup-5.5.9-unicode.exe");
 
             Console.WriteLine("Installing InnoSetup.");
@@ -208,7 +207,11 @@ namespace ShareX.Setup
             Helpers.CopyFile(Path.Combine(releaseDirectory, "ShareX.exe.config"), destination);
             Helpers.CopyFiles(releaseDirectory, "*.dll", destination);
             Helpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
-            Helpers.CopyFile(Path.Combine(OutputDir, "Recorder-devices-setup.exe"), destination);
+            if (!File.Exists(RecorderDevicesSetupPath))
+            {
+                CompileISSFile("Recorder-devices-setup.iss");
+            }
+            Helpers.CopyFile(RecorderDevicesSetupPath, destination);
             Helpers.CopyFile(Path.Combine(ChromeDir, "ShareX_Chrome.exe"), destination);
 
             string[] languages = new string[] { "de", "es", "fr", "hu", "ko-KR", "nl-NL", "pt-BR", "ru", "tr", "vi-VN", "zh-CN" };
@@ -220,7 +223,7 @@ namespace ShareX.Setup
 
             if (destination.Equals(SteamUpdatesDir, StringComparison.InvariantCultureIgnoreCase))
             {
-                DownloadFFmpeg(destination);
+                CopyFFmpeg(destination);
             }
             else if (destination.Equals(PortableAppsOutputDir, StringComparison.InvariantCultureIgnoreCase))
             {
@@ -250,9 +253,24 @@ namespace ShareX.Setup
             Console.WriteLine("Portable created.");
         }
 
-        private static void DownloadFFmpeg(string destination)
+        private static void CopyFFmpeg(string destination)
         {
+            if (!File.Exists(FFmpeg32bit))
+            {
+                string filename = Helpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20160827-c752733-win32-static.zip");
+                Helpers.Unzip(filename, "ffmpeg.exe");
+                File.Move("ffmpeg.exe", FFmpeg32bit);
+            }
+
             Helpers.CopyFile(FFmpeg32bit, destination);
+
+            if (!File.Exists(FFmpeg64bit))
+            {
+                string filename = Helpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20160827-c752733-win64-static.zip");
+                Helpers.Unzip(filename, "ffmpeg.exe");
+                File.Move("ffmpeg.exe", FFmpeg64bit);
+            }
+
             Helpers.CopyFile(FFmpeg64bit, destination);
         }
 

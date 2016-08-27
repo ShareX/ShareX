@@ -34,12 +34,19 @@ namespace ShareX.Setup
     {
         public static string DownloadFile(string url)
         {
+            Console.WriteLine("Downloading: " + url);
+
             using (WebClient webClient = new WebClient())
             {
                 string filename = Path.GetFileName(url);
                 webClient.DownloadFile(url, filename);
                 return filename;
             }
+        }
+
+        public static void CopyFile(string path, string toFolder)
+        {
+            CopyFiles(new string[] { path }, toFolder);
         }
 
         public static void CopyFiles(string[] files, string toFolder)
@@ -55,11 +62,6 @@ namespace ShareX.Setup
                 string dest = Path.Combine(toFolder, filename);
                 File.Copy(filepath, dest);
             }
-        }
-
-        public static void CopyFile(string path, string toFolder)
-        {
-            CopyFiles(new string[] { path }, toFolder);
         }
 
         public static void CopyFiles(string directory, string searchPattern, string toFolder)
@@ -81,6 +83,8 @@ namespace ShareX.Setup
 
         public static void Unzip(string source, string extract)
         {
+            Console.WriteLine("Extracting: " + source);
+
             ProcessStartInfo startInfo = new ProcessStartInfo()
             {
                 FileName = Program.ZipPath,
