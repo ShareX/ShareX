@@ -88,6 +88,13 @@ namespace ShareX.Setup
 
             Console.WriteLine("Setup job: " + Job);
 
+            if (Directory.Exists(OutputDir))
+            {
+                Console.WriteLine("Cleaning output directory: " + OutputDir);
+
+                Directory.Delete(OutputDir, true);
+            }
+
             if (Job.HasFlag(SetupJobs.CreateSetup))
             {
                 CompileSetup();
