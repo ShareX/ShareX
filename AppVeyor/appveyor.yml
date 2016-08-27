@@ -3,28 +3,24 @@ image: Visual Studio 2015
 configuration:
 - Release
 - Debug
+- Steam
 platform: Any CPU
 shallow_clone: true
 environment:
   APIKeys:
     secure: oWmEefxkbok87VNVsrUuXKgNaM4+j+EW6FBLsXwCbv3OVHgFvT0M9k4891OvYXDsj0oLuEn0oZeaeV8RrRDHA2Hk2acXHrWkg9z6FCGASxRMJjv0+in1v5DxN1BfEPdASmhnYFu6pcINmwibGYjsxySek57cbYUDc69yQfyqX6FUI0kQcEGp8Dh3tHF981Dy
 before_build:
-- ps: >-
-    Invoke-WebRequest "$env:APIKeys" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
-
-    nuget restore ShareX.sln
+- ps: before_build.ps1
 build:
   project: ShareX.sln
   parallel: true
   verbosity: minimal
 after_build:
-- ps: if ($env:Configuration -eq "Release") { & "ShareX.Setup\bin\Release\ShareX.Setup.exe" -appveyor }
+- ps: after_build.ps1
 artifacts:
 - path: ShareX.Setup\InnoSetup\Output\ShareX-*-setup.exe
   name: Setup
 - path: ShareX.Setup\InnoSetup\Output\ShareX-portable.zip
   name: Portable
-- path: ShareX\bin\Release
-  name: Release
-- path: ShareX\bin\Debug
-  name: Debug
+- path: ShareX.Setup\InnoSetup\Output\ShareX-Steam
+  name: Steam

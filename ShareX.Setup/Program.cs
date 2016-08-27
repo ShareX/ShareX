@@ -27,7 +27,6 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net;
 
 namespace ShareX.Setup
 {
@@ -49,10 +48,12 @@ namespace ShareX.Setup
             Portable = CreatePortable | OpenOutputDirectory,
             Steam = CreateSteamFolder | OpenOutputDirectory,
             PortableApps = CreatePortableAppsFolder | OpenOutputDirectory,
-            Beta = CreateSetup | UploadOutputFile
+            Beta = CreateSetup | UploadOutputFile,
+            AppVeyorRelease = CreateSetup | CreatePortable,
+            AppVeyorSteam = CreateSteamFolder
         }
 
-        private static SetupJobs Job = SetupJobs.Stable;
+        private static SetupJobs Job = SetupJobs.None;
         private static bool AppVeyor = false;
 
         private static string ParentDir => AppVeyor ? "" : @"..\..\..\";
@@ -82,11 +83,15 @@ namespace ShareX.Setup
         {
             Console.WriteLine("ShareX setup started.");
 
-            AppVeyor = Helpers.CheckArguments(args, "-appveyor");
-
-            if (AppVeyor)
+            if (Helpers.CheckArguments(args, "-AppVeyorRelease"))
             {
-                Job = SetupJobs.CreateSetup | SetupJobs.CreatePortable;
+                AppVeyor = true;
+                Job = SetupJobs.AppVeyorRelease;
+            }
+            else if (Helpers.CheckArguments(args, "-AppVeyorSteam"))
+            {
+                AppVeyor = true;
+                Job = SetupJobs.AppVeyorSteam;
             }
 
             Console.WriteLine("Setup job: " + Job);
