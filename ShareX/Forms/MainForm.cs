@@ -2482,6 +2482,11 @@ namespace ShareX
             CaptureRectangleLight(null, false);
         }
 
+        private void lvUploads_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            lvUploads.Invalidate(pbTips.Region);
+        }
+
         private void pbPatreonOpen_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_PATREON);

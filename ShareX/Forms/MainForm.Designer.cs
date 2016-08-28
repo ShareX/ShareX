@@ -318,6 +318,7 @@
             this.lvUploads.ShowItemToolTips = true;
             this.lvUploads.UseCompatibleStateImageBehavior = false;
             this.lvUploads.View = System.Windows.Forms.View.Details;
+            this.lvUploads.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.lvUploads_ColumnWidthChanged);
             this.lvUploads.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvUploads_ItemDrag);
             this.lvUploads.SelectedIndexChanged += new System.EventHandler(this.lvUploads_SelectedIndexChanged);
             this.lvUploads.QueryContinueDrag += new System.Windows.Forms.QueryContinueDragEventHandler(this.lvUploads_QueryContinueDrag);
