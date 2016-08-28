@@ -414,8 +414,10 @@ namespace ShareX
 
                                     if (info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowAfterUploadWindow))
                                     {
-                                        AfterUploadForm dlg = new AfterUploadForm(info);
-                                        NativeMethods.ShowWindow(dlg.Handle, (int)WindowShowStyle.ShowNoActivate);
+                                        if (info.IsUploadJob) { 
+                                            AfterUploadForm dlg = new AfterUploadForm(info);
+                                            NativeMethods.ShowWindow(dlg.Handle, (int)WindowShowStyle.ShowNoActivate);
+                                        }
                                     }
                                 }
                             }
