@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>FTP клиент ShareX</value>
+    <value>ShareX - FTP клиент</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Имя файла</value>
@@ -146,5 +146,32 @@
   </data>
   <data name="tpMain.Text" xml:space="preserve">
     <value>Файлы</value>
+  </data>
+  <data name="tsmiDownload.Text" xml:space="preserve">
+    <value>Скачать</value>
+  </data>
+  <data name="tsmiRename.Text" xml:space="preserve">
+    <value>Переименовать</value>
+  </data>
+  <data name="tsmiRefresh.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>Перейти по ссылке</value>
+  </data>
+  <data name="tsmiDisconnect.Text" xml:space="preserve">
+    <value>Отключиться</value>
+  </data>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
+    <value>Создать папку</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>Скопировать ссылку(и) в буфер обмена</value>
+  </data>
+  <data name="tsmiConnect.Text" xml:space="preserve">
+    <value>Подключиться</value>
   </data>
 </root>

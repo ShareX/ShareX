@@ -657,4 +657,7 @@
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Захват текста (OCR)...</value>
   </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>Скачать</value>
+  </data>
 </root>

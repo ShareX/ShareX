@@ -242,4 +242,115 @@
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Захват области с прозрачным фоном</value>
   </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>Показать FPS</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>Высота:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Cancel_capture" xml:space="preserve">
+    <value>Отменить захват</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
+    <value>Закрыть меню</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>Цвет рамки...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>Размер рамки:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>Цвет заливки...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
+    <value>Показать подсказки</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>Показывать полноэкранное перекрестье</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu" xml:space="preserve">
+    <value>[ПКМ] [Меню] Открыть меню опций</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>Квадратная лупа</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>Захват активного монитора</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>Режим области фиксированного размера:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>Захват всего экрана</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>Показывать лупу</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>Количество пикселей в лупе:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>Размер пикселя в лупе:</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size" xml:space="preserve">
+    <value>[Ctrl + Колесо мыши] Изменить размер лупы</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>Показывать информацию о позиции и размере</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>Захват нескольких областей</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>Захват монитора</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
+    <value>[Колесо мыши] Сменить текущий инструмент</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
+    <value>[Tab] [4-я кнопка мыши] Выбрать последний инструмент примечаний</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool" xml:space="preserve">
+    <value>[Tab] [4-я кнопка мыши] Выбрать последний инструмент области</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
+    <value>[Удерживание Ctrl + Стрелки] Переместить область</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection" xml:space="preserve">
+    <value>[Удерживание Ctrl] Переместить выделение</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
+    <value>[Удерживание Shift + Стрелки] Более быстрое перемещение курсора</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster" xml:space="preserve">
+    <value>[Hold Shift + Arrow keys] Более быстрое масштабирование или перемещение</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>Радиус размытия</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>Цвет подсветки...</value>
+  </data>
+  <data name="RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu" xml:space="preserve">
+    <value>Совет: Кликните ПКМ, чтобы открыть меню опций</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Размер пикселя:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Delete_selected_object" xml:space="preserve">
+    <value>Удалить выбранный объект</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
+    <value>Удалить все объекты</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>Радиус скругления</value>
+  </data>
 </root>

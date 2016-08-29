@@ -770,7 +770,7 @@
     <value>Получает AM/PM</value>
   </data>
   <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
-    <value>Получить имя активного окна</value>
+    <value>Имя процесса активного окна</value>
   </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>Текущая секунда</value>
@@ -785,7 +785,7 @@
     <value>Имя пользователя</value>
   </data>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
-    <value>временная метка UNIX</value>
+    <value>Временная метка UNIX</value>
   </data>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>Ширина картинки</value>
@@ -839,7 +839,7 @@
     <value>Захват экрана</value>
   </data>
   <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Захват области (Простые аннотации)</value>
+    <value>Захват области (Простые примечания)</value>
   </data>
   <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
     <value>Захват экрана</value>
@@ -867,5 +867,110 @@
   </data>
   <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
     <value>Другие</value>
+  </data>
+  <data name="RegionCaptureAction_OpenOptionsMenu" xml:space="preserve">
+    <value>Открыть меню опций</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>Отменить захват</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>Убрать фигуру или отменить захват</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Захват активного монитора</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>Рисование: Стрелка</value>
+  </data>
+  <data name="ShapeType_DrawingBlur" xml:space="preserve">
+    <value>Эффект: размытие</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>Рисование: Эллипс</value>
+  </data>
+  <data name="ShapeType_DrawingHighlight" xml:space="preserve">
+    <value>Эффект: Подсветить область</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>Рисование: Линия</value>
+  </data>
+  <data name="ShapeType_DrawingPixelate" xml:space="preserve">
+    <value>Эффект: Пикселизация</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>Рисование: Прямоугольник</value>
+  </data>
+  <data name="ShapeType_DrawingRoundedRectangle" xml:space="preserve">
+    <value>Рисование: Скругленный прямоугольник</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>Рисование: Шаг</value>
+  </data>
+  <data name="ShapeType_DrawingText" xml:space="preserve">
+    <value>Рисование: Текст</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>Область: Эллипс</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>Область: Прямоугольник</value>
+  </data>
+  <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
+    <value>Область: Скругленный прямоугольник</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>Область: От руки</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>Рисование: От руки</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>Захват всего экрана</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Отменить запись экрана</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>Убрать фигуру</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
+    <value>Автоматически пробовать все методы пока один не сработает</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>Симулировать нажатие клавиши "Page down"</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>Симулировать нажатие клавиши "Home"</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Симулировать прокрутку мыши</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
+    <value>Сначала симулировать нажатие клавиши "Home", потом отправить сообщение "scroll top"</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>Сменить тип инструмента</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
+    <value>Отправить сообщение "scroll top"</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
+    <value>Отправить окну или элементу сообщение "scroll"</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>Ничего не делать</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
+    <value>Отключить прокрутку вверх</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>Рисование: Картинка</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>Рисование: Сноска</value>
   </data>
 </root>
