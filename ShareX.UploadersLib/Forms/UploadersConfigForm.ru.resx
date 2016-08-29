@@ -965,4 +965,10 @@ store.book[0].title</value>
   <data name="lblPuushAPIKey.Text" xml:space="preserve">
     <value>Ключ API:</value>
   </data>
+  <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
+    <value>Пример: http://example.com/owncloud</value>
+  </data>
+  <data name="cbHastebinUseFileExtension.Text" xml:space="preserve">
+    <value>Использовать расширение файла для подсветки синтаксиса (кроме .txt)</value>
+  </data>
 </root>

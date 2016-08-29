@@ -292,7 +292,7 @@
     <value>Повторы</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
-    <value>Загрузки</value>
+    <value>Загрузка</value>
   </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
     <value>Сохранять только если ссылка не пуста</value>
@@ -332,5 +332,8 @@
   </data>
   <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
     <value>Клик левой кнопкой по иконке в трее:</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>Проверять наличие пре-релизных обновлений</value>
   </data>
 </root>

@@ -124,7 +124,7 @@
     <value>Выйти</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>&amp;ОК</value>
+    <value>Продолжить</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>Открыть журнал</value>
