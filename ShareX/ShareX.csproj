@@ -839,6 +839,9 @@
     <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.tr.resx">
       <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.zh-CN.resx">
+      <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.de.resx">
       <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -855,6 +858,9 @@
       <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.tr.resx">
+      <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.zh-CN.resx">
       <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenColorPicker.de.resx">
