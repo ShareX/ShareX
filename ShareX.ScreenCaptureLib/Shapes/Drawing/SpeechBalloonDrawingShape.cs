@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -33,7 +34,8 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingSpeechBalloon;
 
-        public int TailWidth { get; } = 40;
+        // If rectangle average size is 100px then tail width will be 30px
+        public float TailWidthMultiplier { get; } = 0.3f;
 
         internal ResizeNode TailNode => Manager.ResizeNodes[(int)NodePosition.Extra];
 
@@ -60,7 +62,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!Rectangle.Contains(TailNode.Position))
                 {
-                    gpTail = CreateTailPath(TailWidth);
+                    gpTail = CreateTailPath();
                 }
 
                 if (FillColor.A > 0)
@@ -131,10 +133,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected GraphicsPath CreateTailPath(int tailWidth)
+        protected GraphicsPath CreateTailPath()
         {
             GraphicsPath gpTail = new GraphicsPath();
             Point center = Rectangle.Center();
+            int rectAverageSize = (Rectangle.Width + Rectangle.Height) / 2;
+            int tailWidth = (int)(TailWidthMultiplier * rectAverageSize);
+            tailWidth = Math.Min(Math.Min(tailWidth, Rectangle.Width), Rectangle.Height);
             int tailOrigin = tailWidth / 2;
             int tailLength = (int)MathHelpers.Distance(center, TailNode.Position);
             gpTail.AddLine(0, -tailOrigin, 0, tailOrigin);
