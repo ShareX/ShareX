@@ -34,24 +34,52 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingSpeechBalloon;
 
-        // If rectangle average size is 100px then tail width will be 30px
-        public float TailWidthMultiplier { get; } = 0.3f;
+        private Point tailPosition;
+
+        public Point TailPosition
+        {
+            get
+            {
+                return tailPosition;
+            }
+            private set
+            {
+                tailPosition = value;
+                TailNode.Position = tailPosition;
+            }
+        }
+
+        public bool TailVisible => !Rectangle.Contains(TailPosition);
 
         internal ResizeNode TailNode => Manager.ResizeNodes[(int)NodePosition.Extra];
+
+        // If rectangle average size is 100px then tail width will be 30px
+        protected const float TailWidthMultiplier = 0.3f;
 
         public override void OnCreated()
         {
             base.OnCreated();
 
-            TailNode.Position = Rectangle.Location.Add(-30, -30);
+            TailPosition = Rectangle.Location.Add(-30, -30);
         }
 
         public override void OnNodeVisible()
         {
             base.OnNodeVisible();
 
+            TailNode.Position = TailPosition;
             TailNode.Shape = NodeShape.Circle;
             TailNode.Visible = true;
+        }
+
+        public override void OnNodeUpdate()
+        {
+            base.OnNodeUpdate();
+
+            if (TailNode.IsDragging)
+            {
+                TailPosition = InputManager.MousePosition0Based;
+            }
         }
 
         public override void OnDraw(Graphics g)
@@ -60,7 +88,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 GraphicsPath gpTail = null;
 
-                if (!Rectangle.Contains(TailNode.Position))
+                if (TailVisible)
                 {
                     gpTail = CreateTailPath();
                 }
@@ -141,28 +169,18 @@ namespace ShareX.ScreenCaptureLib
             int tailWidth = (int)(TailWidthMultiplier * rectAverageSize);
             tailWidth = Math.Min(Math.Min(tailWidth, Rectangle.Width), Rectangle.Height);
             int tailOrigin = tailWidth / 2;
-            int tailLength = (int)MathHelpers.Distance(center, TailNode.Position);
+            int tailLength = (int)MathHelpers.Distance(center, TailPosition);
             gpTail.AddLine(0, -tailOrigin, 0, tailOrigin);
             gpTail.AddLine(0, tailOrigin, tailLength, 0);
             gpTail.CloseFigure();
             using (Matrix matrix = new Matrix())
             {
                 matrix.Translate(center.X, center.Y);
-                float tailDegree = MathHelpers.LookAtDegree(center, TailNode.Position);
+                float tailDegree = MathHelpers.LookAtDegree(center, TailPosition);
                 matrix.Rotate(tailDegree);
                 gpTail.Transform(matrix);
             }
             return gpTail;
-        }
-
-        public override void OnNodeUpdate()
-        {
-            base.OnNodeUpdate();
-
-            if (TailNode.IsDragging)
-            {
-                TailNode.Position = InputManager.MousePosition0Based;
-            }
         }
     }
 }
