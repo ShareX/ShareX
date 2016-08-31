@@ -895,18 +895,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (Control.ModifierKeys.HasFlag(Keys.Control))
-            {
-                if (e.Delta > 0)
-                {
-                    Config.MagnifierPixelCount = Math.Min(Config.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
-                }
-                else if (e.Delta < 0)
-                {
-                    Config.MagnifierPixelCount = Math.Max(Config.MagnifierPixelCount - 2, RegionCaptureOptions.MagnifierPixelCountMinimum);
-                }
-            }
-            else if (form.Mode == RectangleRegionMode.Annotation)
+            if (Control.ModifierKeys.HasFlag(Keys.Control) && form.Mode == RectangleRegionMode.Annotation)
             {
                 if (e.Delta > 0)
                 {
@@ -915,6 +904,17 @@ namespace ShareX.ScreenCaptureLib
                 else if (e.Delta < 0)
                 {
                     CurrentShapeType = CurrentShapeType.Next<ShapeType>();
+                }
+            }
+            else
+            {
+                if (e.Delta > 0)
+                {
+                    Config.MagnifierPixelCount = Math.Min(Config.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
+                }
+                else if (e.Delta < 0)
+                {
+                    Config.MagnifierPixelCount = Math.Max(Config.MagnifierPixelCount - 2, RegionCaptureOptions.MagnifierPixelCountMinimum);
                 }
             }
         }
