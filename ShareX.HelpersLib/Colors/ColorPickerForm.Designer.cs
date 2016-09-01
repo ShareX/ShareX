@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ColorPickerForm));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -66,8 +67,10 @@
             this.lblKeyPerc = new System.Windows.Forms.Label();
             this.nudAlpha = new System.Windows.Forms.NumericUpDown();
             this.lblAlpha = new System.Windows.Forms.Label();
+            this.cbTransparent = new ShareX.HelpersLib.ColorButton();
             this.pbColorPreview = new ShareX.HelpersLib.MyPictureBox();
             this.colorPicker = new ShareX.HelpersLib.ColorPicker();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudYellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMagenta)).BeginInit();
@@ -382,6 +385,16 @@
             resources.ApplyResources(this.lblAlpha, "lblAlpha");
             this.lblAlpha.Name = "lblAlpha";
             // 
+            // cbTransparent
+            // 
+            this.cbTransparent.Color = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.cbTransparent, "cbTransparent");
+            this.cbTransparent.ManualButtonClick = true;
+            this.cbTransparent.Name = "cbTransparent";
+            this.ttMain.SetToolTip(this.cbTransparent, resources.GetString("cbTransparent.ToolTip"));
+            this.cbTransparent.UseVisualStyleBackColor = true;
+            this.cbTransparent.Click += new System.EventHandler(this.cbTransparent_Click);
+            // 
             // pbColorPreview
             // 
             this.pbColorPreview.BackColor = System.Drawing.SystemColors.Window;
@@ -398,12 +411,19 @@
             this.colorPicker.Name = "colorPicker";
             this.colorPicker.ColorChanged += new ShareX.HelpersLib.ColorEventHandler(this.colorPicker_ColorChanged);
             // 
+            // ttMain
+            // 
+            this.ttMain.AutoPopDelay = 5000;
+            this.ttMain.InitialDelay = 100;
+            this.ttMain.ReshowDelay = 100;
+            // 
             // ColorPickerForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.cbTransparent);
             this.Controls.Add(this.nudBlue);
             this.Controls.Add(this.nudGreen);
             this.Controls.Add(this.nudRed);
@@ -505,5 +525,7 @@
         protected System.Windows.Forms.TextBox txtHex;
         protected System.Windows.Forms.Button btnCancel;
         protected System.Windows.Forms.Button btnOK;
+        private ColorButton cbTransparent;
+        private System.Windows.Forms.ToolTip ttMain;
     }
 }

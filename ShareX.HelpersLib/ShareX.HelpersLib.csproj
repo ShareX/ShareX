@@ -113,9 +113,6 @@
     <Compile Include="Controls\BlackStyle\BlackStyleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\GreenlightButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controls\DoubleLabeledNumericUpDown.cs">
       <SubType>UserControl</SubType>
     </Compile>

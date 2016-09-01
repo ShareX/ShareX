@@ -51,6 +51,9 @@ namespace ShareX.HelpersLib
             }
         }
 
+        [DefaultValue(false)]
+        public bool ManualButtonClick { get; set; }
+
         protected void OnColorChanged(Color color)
         {
             if (ColorChanged != null)
@@ -63,7 +66,10 @@ namespace ShareX.HelpersLib
         {
             base.OnMouseClick(mevent);
 
-            ShowColorDialog();
+            if (!ManualButtonClick)
+            {
+                ShowColorDialog();
+            }
         }
 
         public void ShowColorDialog()
@@ -95,9 +101,12 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            using (Brush brush = new SolidBrush(Color))
+            if (Color.A > 0)
             {
-                g.FillRectangle(brush, boxRectangle);
+                using (Brush brush = new SolidBrush(Color))
+                {
+                    g.FillRectangle(brush, boxRectangle);
+                }
             }
 
             g.DrawRectangleProper(Pens.DarkGray, boxRectangle);
