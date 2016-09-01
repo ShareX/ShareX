@@ -222,7 +222,7 @@ namespace ShareX.ScreenCaptureLib
             if (Config.ShowFPS)
             {
                 CheckFPS();
-                DrawFPS(g);
+                DrawFPS(g, 10);
             }
 
             if (!pause)
@@ -371,23 +371,9 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DrawFPS(Graphics g)
+        private void DrawFPS(Graphics g, int offset)
         {
-            string text = "FPS: " + FPS;
-
-            SizeF textSize = g.MeasureString(text, infoFontBig);
-
-            int offset = 10;
-
-            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
-            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + offset, primaryScreenBounds.Y + offset, (int)textSize.Width, (int)textSize.Height);
-
-            if (textRectangle.Offset(10).Contains(InputManager.MousePosition0Based))
-            {
-                textRectangle.Y = primaryScreenBounds.Height - textRectangle.Height - offset;
-            }
-
-            ImageHelpers.DrawTextWithOutline(g, text, textRectangle.Location, infoFontBig, Color.White, Color.Black);
+            ImageHelpers.DrawTextWithShadow(g, FPS.ToString(), new Point(offset, offset), infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
         }
 
         public IContainer components = null;
