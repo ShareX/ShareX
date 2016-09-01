@@ -93,6 +93,7 @@
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
+
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -128,6 +129,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.cbHiddenWindow);
             this.Controls.Add(this.lblOutputExtension);
             this.Controls.Add(this.txtOutputExtension);

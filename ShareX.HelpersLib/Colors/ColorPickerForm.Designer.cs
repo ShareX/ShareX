@@ -419,6 +419,7 @@
             // 
             // ColorPickerForm
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
