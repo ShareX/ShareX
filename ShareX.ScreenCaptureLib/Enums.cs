@@ -166,6 +166,13 @@ namespace ShareX.ScreenCaptureLib
         CaptureActiveMonitor
     }
 
+    public enum ShapeCategory
+    {
+        Region,
+        Drawing,
+        Effect
+    }
+
     public enum ShapeType // Localized
     {
         RegionRectangle,

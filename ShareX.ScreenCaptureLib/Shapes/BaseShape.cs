@@ -35,6 +35,8 @@ namespace ShareX.ScreenCaptureLib
     {
         protected const int MinimumSize = 3;
 
+        public abstract ShapeCategory ShapeCategory { get; }
+
         public abstract ShapeType ShapeType { get; }
 
         public Rectangle Rectangle { get; set; }
@@ -72,8 +74,6 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= MinimumSize && Rectangle.Height >= MinimumSize;
-
-        public virtual bool IsRegionShape { get; } = false;
 
         internal ShapeManager Manager { get; set; }
 
@@ -136,7 +136,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Point pos = InputManager.MousePosition0Based;
 
-            if (Options.IsFixedSize && IsRegionShape)
+            if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
             {
                 Manager.IsMoving = true;
                 Rectangle = new Rectangle(new Point(pos.X - Options.FixedSize.Width / 2, pos.Y - Options.FixedSize.Height / 2), Options.FixedSize);

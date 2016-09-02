@@ -29,6 +29,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseEffectShape : BaseShape
     {
+        public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Effect;
+
         public abstract void OnDraw(Graphics g);
 
         public virtual void OnDrawFinal(Graphics g, Bitmap bmp)

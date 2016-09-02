@@ -27,6 +27,6 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseRegionShape : BaseShape
     {
-        public override bool IsRegionShape { get; } = true;
+        public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Region;
     }
 }

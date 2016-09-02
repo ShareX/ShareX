@@ -29,6 +29,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseDrawingShape : BaseShape
     {
+        public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Drawing;
+
         public Color BorderColor { get; set; }
         public int BorderSize { get; set; }
         public Color FillColor { get; set; }
