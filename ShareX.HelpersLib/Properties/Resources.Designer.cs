@@ -2393,15 +2393,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Effect: Blur.
-        /// </summary>
-        internal static string ShapeType_DrawingBlur {
-            get {
-                return ResourceManager.GetString("ShapeType_DrawingBlur", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Drawing: Ellipse.
         /// </summary>
         internal static string ShapeType_DrawingEllipse {
@@ -2420,15 +2411,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Effect: Highlight.
-        /// </summary>
-        internal static string ShapeType_DrawingHighlight {
-            get {
-                return ResourceManager.GetString("ShapeType_DrawingHighlight", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Drawing: Image.
         /// </summary>
         internal static string ShapeType_DrawingImage {
@@ -2443,15 +2425,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ShapeType_DrawingLine {
             get {
                 return ResourceManager.GetString("ShapeType_DrawingLine", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Effect: Pixelate.
-        /// </summary>
-        internal static string ShapeType_DrawingPixelate {
-            get {
-                return ResourceManager.GetString("ShapeType_DrawingPixelate", resourceCulture);
             }
         }
         
@@ -2497,6 +2470,33 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ShapeType_DrawingText {
             get {
                 return ResourceManager.GetString("ShapeType_DrawingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effect: Blur.
+        /// </summary>
+        internal static string ShapeType_EffectBlur {
+            get {
+                return ResourceManager.GetString("ShapeType_EffectBlur", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effect: Highlight.
+        /// </summary>
+        internal static string ShapeType_EffectHighlight {
+            get {
+                return ResourceManager.GetString("ShapeType_EffectHighlight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effect: Pixelate.
+        /// </summary>
+        internal static string ShapeType_EffectPixelate {
+            get {
+                return ResourceManager.GetString("ShapeType_EffectPixelate", resourceCulture);
             }
         }
         

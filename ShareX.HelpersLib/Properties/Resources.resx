@@ -917,19 +917,19 @@ Would you like to download it?</value>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>Drawing: Arrow</value>
   </data>
-  <data name="ShapeType_DrawingBlur" xml:space="preserve">
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
     <value>Effect: Blur</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>Drawing: Ellipse</value>
   </data>
-  <data name="ShapeType_DrawingHighlight" xml:space="preserve">
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
     <value>Effect: Highlight</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
     <value>Drawing: Line</value>
   </data>
-  <data name="ShapeType_DrawingPixelate" xml:space="preserve">
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
     <value>Effect: Pixelate</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">

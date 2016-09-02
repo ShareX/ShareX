@@ -30,7 +30,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public class PixelateEffectShape : BaseEffectShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingPixelate;
+        public override ShapeType ShapeType { get; } = ShapeType.EffectPixelate;
 
         public int PixelSize { get; set; }
 

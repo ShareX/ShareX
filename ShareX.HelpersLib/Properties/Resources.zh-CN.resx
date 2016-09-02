@@ -880,19 +880,19 @@
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>绘图：箭头</value>
   </data>
-  <data name="ShapeType_DrawingBlur" xml:space="preserve">
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
     <value>效果：朦胧</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>绘图：椭圆</value>
   </data>
-  <data name="ShapeType_DrawingHighlight" xml:space="preserve">
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
     <value>效果：高亮</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
     <value>绘图：线条</value>
   </data>
-  <data name="ShapeType_DrawingPixelate" xml:space="preserve">
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
     <value>效果：马赛克</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">

@@ -528,12 +528,12 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6", ShapeType.DrawingText.GetLocalizedDescription()));
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingStep) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 7", ShapeType.DrawingStep.GetLocalizedDescription()));
-                if (ShapeManager.CurrentShapeType == ShapeType.DrawingBlur) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8", ShapeType.DrawingBlur.GetLocalizedDescription()));
-                if (ShapeManager.CurrentShapeType == ShapeType.DrawingPixelate) sb.Append("-> ");
-                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 9", ShapeType.DrawingPixelate.GetLocalizedDescription()));
-                if (ShapeManager.CurrentShapeType == ShapeType.DrawingHighlight) sb.Append("-> ");
-                sb.AppendLine(ShapeType.DrawingHighlight.GetLocalizedDescription());
+                if (ShapeManager.CurrentShapeType == ShapeType.EffectBlur) sb.Append("-> ");
+                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8", ShapeType.EffectBlur.GetLocalizedDescription()));
+                if (ShapeManager.CurrentShapeType == ShapeType.EffectPixelate) sb.Append("-> ");
+                sb.AppendLine(string.Format("[{0}] {1}", "Numpad 9", ShapeType.EffectPixelate.GetLocalizedDescription()));
+                if (ShapeManager.CurrentShapeType == ShapeType.EffectHighlight) sb.Append("-> ");
+                sb.AppendLine(ShapeType.EffectHighlight.GetLocalizedDescription());
             }
 
             sb.AppendLine();

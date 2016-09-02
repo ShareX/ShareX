@@ -30,7 +30,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public class BlurEffectShape : BaseEffectShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingBlur;
+        public override ShapeType ShapeType { get; } = ShapeType.EffectBlur;
 
         public int BlurRadius { get; set; }
 

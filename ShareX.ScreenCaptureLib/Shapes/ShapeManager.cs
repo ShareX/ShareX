@@ -345,13 +345,13 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingImage:
                         img = Resources.image;
                         break;
-                    case ShapeType.DrawingBlur:
+                    case ShapeType.EffectBlur:
                         img = Resources.layer_shade;
                         break;
-                    case ShapeType.DrawingPixelate:
+                    case ShapeType.EffectPixelate:
                         img = Resources.grid;
                         break;
-                    case ShapeType.DrawingHighlight:
+                    case ShapeType.EffectHighlight:
                         img = Resources.highlighter_text;
                         break;
                 }
@@ -770,9 +770,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingText:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
-                case ShapeType.DrawingBlur:
-                case ShapeType.DrawingPixelate:
-                case ShapeType.DrawingHighlight:
+                case ShapeType.EffectBlur:
+                case ShapeType.EffectPixelate:
+                case ShapeType.EffectHighlight:
                     tssShapeOptions.Visible = true;
                     break;
             }
@@ -813,9 +813,9 @@ namespace ShareX.ScreenCaptureLib
             }
 
             tslnudRoundedRectangleRadius.Visible = shapeType == ShapeType.RegionRoundedRectangle || shapeType == ShapeType.DrawingRoundedRectangle;
-            tslnudBlurRadius.Visible = shapeType == ShapeType.DrawingBlur;
-            tslnudPixelateSize.Visible = shapeType == ShapeType.DrawingPixelate;
-            tsmiHighlightColor.Visible = shapeType == ShapeType.DrawingHighlight;
+            tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
+            tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
+            tsmiHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
         }
 
         private void form_LostFocus(object sender, EventArgs e)
@@ -999,10 +999,10 @@ namespace ShareX.ScreenCaptureLib
                         CurrentShapeType = ShapeType.DrawingStep;
                         break;
                     case Keys.NumPad8:
-                        CurrentShapeType = ShapeType.DrawingBlur;
+                        CurrentShapeType = ShapeType.EffectBlur;
                         break;
                     case Keys.NumPad9:
-                        CurrentShapeType = ShapeType.DrawingPixelate;
+                        CurrentShapeType = ShapeType.EffectPixelate;
                         break;
                     case Keys.Control | Keys.V:
                         PasteFromClipboard();
@@ -1315,13 +1315,13 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingImage:
                     shape = new ImageDrawingShape();
                     break;
-                case ShapeType.DrawingBlur:
+                case ShapeType.EffectBlur:
                     shape = new BlurEffectShape();
                     break;
-                case ShapeType.DrawingPixelate:
+                case ShapeType.EffectPixelate:
                     shape = new PixelateEffectShape();
                     break;
-                case ShapeType.DrawingHighlight:
+                case ShapeType.EffectHighlight:
                     shape = new HighlightEffectShape();
                     break;
             }

@@ -30,7 +30,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public class HighlightEffectShape : BaseEffectShape
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingHighlight;
+        public override ShapeType ShapeType { get; } = ShapeType.EffectHighlight;
 
         public Color HighlightColor { get; set; }
 
