@@ -97,16 +97,9 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
         {
-            if (points.Count > 1)
+            if (points.Count > 2)
             {
-                gp.StartFigure();
-
-                for (int i = 0; i < points.Count - 1; i++)
-                {
-                    gp.AddLine(points[i], points[i + 1]);
-                }
-
-                gp.CloseFigure();
+                gp.AddPolygon(points.ToArray());
             }
         }
 
