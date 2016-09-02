@@ -194,7 +194,7 @@ namespace ShareX.ScreenCaptureLib
         private ContextMenuStrip cmsContextMenu;
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
         private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
-        private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudRoundedRectangleRadius, tslnudBlurRadius, tslnudPixelateSize;
+        private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
 
         public ShapeManager(RectangleRegionForm form)
@@ -499,16 +499,30 @@ namespace ShareX.ScreenCaptureLib
             };
             cmsContextMenu.Items.Add(tsmiFillColor);
 
-            tslnudRoundedRectangleRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Corner_radius_);
-            tslnudRoundedRectangleRadius.Content.Minimum = 0;
-            tslnudRoundedRectangleRadius.Content.Maximum = 150;
-            tslnudRoundedRectangleRadius.Content.Increment = 3;
-            tslnudRoundedRectangleRadius.Content.ValueChanged = (sender, e) =>
+            tslnudCornerRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Corner_radius_);
+            tslnudCornerRadius.Content.Minimum = 0;
+            tslnudCornerRadius.Content.Maximum = 150;
+            tslnudCornerRadius.Content.Increment = 3;
+            tslnudCornerRadius.Content.ValueChanged = (sender, e) =>
             {
-                AnnotationOptions.RoundedRectangleRadius = (int)tslnudRoundedRectangleRadius.Content.Value;
+                ShapeType shapeType = CurrentShapeType;
+
+                if (shapeType == ShapeType.RegionRoundedRectangle || shapeType == ShapeType.DrawingRoundedRectangle)
+                {
+                    AnnotationOptions.RoundedRectangleRadius = (int)tslnudCornerRadius.Content.Value;
+                }
+                else if (shapeType == ShapeType.DrawingRectangle)
+                {
+                    AnnotationOptions.RectangleCornerRadius = (int)tslnudCornerRadius.Content.Value;
+                }
+                else if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+                {
+                    AnnotationOptions.TextCornerRadius = (int)tslnudCornerRadius.Content.Value;
+                }
+
                 UpdateCurrentShape();
             };
-            cmsContextMenu.Items.Add(tslnudRoundedRectangleRadius);
+            cmsContextMenu.Items.Add(tslnudCornerRadius);
 
             tslnudBlurRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Blur_radius_);
             tslnudBlurRadius.Content.Minimum = 2;
@@ -746,7 +760,22 @@ namespace ShareX.ScreenCaptureLib
             if (tsmiFillColor.Image != null) tsmiFillColor.Image.Dispose();
             tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(fillColor, new Rectangle(0, 0, 16, 16));
 
-            tslnudRoundedRectangleRadius.Content.Value = AnnotationOptions.RoundedRectangleRadius;
+            int cornerRadius = 0;
+
+            if (shapeType == ShapeType.RegionRoundedRectangle || shapeType == ShapeType.DrawingRoundedRectangle)
+            {
+                cornerRadius = AnnotationOptions.RoundedRectangleRadius;
+            }
+            else if (shapeType == ShapeType.DrawingRectangle)
+            {
+                cornerRadius = AnnotationOptions.RectangleCornerRadius;
+            }
+            else if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+            {
+                cornerRadius = AnnotationOptions.TextCornerRadius;
+            }
+
+            tslnudCornerRadius.Content.Value = cornerRadius;
 
             tslnudBlurRadius.Content.Value = AnnotationOptions.BlurRadius;
 
@@ -812,7 +841,20 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            tslnudRoundedRectangleRadius.Visible = shapeType == ShapeType.RegionRoundedRectangle || shapeType == ShapeType.DrawingRoundedRectangle;
+            switch (shapeType)
+            {
+                default:
+                    tslnudCornerRadius.Visible = false;
+                    break;
+                case ShapeType.RegionRoundedRectangle:
+                case ShapeType.DrawingRoundedRectangle:
+                case ShapeType.DrawingRectangle:
+                case ShapeType.DrawingText:
+                case ShapeType.DrawingSpeechBalloon:
+                    tslnudCornerRadius.Visible = true;
+                    break;
+            }
+
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
             tsmiHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;

@@ -144,5 +144,10 @@ namespace ShareX.HelpersLib
             }
             return result;
         }
+
+        public static bool IsEvenNumber(this int num)
+        {
+            return num % 2 == 0;
+        }
     }
 }

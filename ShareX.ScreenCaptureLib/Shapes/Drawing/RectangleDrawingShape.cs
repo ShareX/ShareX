@@ -33,24 +33,56 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingRectangle;
 
+        public float CornerRadius { get; set; }
+
+        public override void OnConfigLoad()
+        {
+            base.OnConfigLoad();
+            CornerRadius = AnnotationOptions.RectangleCornerRadius;
+        }
+
+        public override void OnConfigSave()
+        {
+            base.OnConfigSave();
+            AnnotationOptions.RectangleCornerRadius = (int)CornerRadius;
+        }
+
         public override void OnDraw(Graphics g)
         {
-            if (FillColor.A > 0)
+            Brush brush = null;
+            Pen pen = null;
+
+            try
             {
-                using (Brush brush = new SolidBrush(FillColor))
+                if (FillColor.A > 0)
                 {
-                    g.FillRectangle(brush, Rectangle);
+                    brush = new SolidBrush(FillColor);
                 }
+
+                if (BorderSize > 0 && BorderColor.A > 0)
+                {
+                    pen = new Pen(BorderColor, BorderSize);
+                }
+
+                if (CornerRadius > 0)
+                {
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+
+                    if (BorderSize.IsEvenNumber())
+                    {
+                        g.PixelOffsetMode = PixelOffsetMode.Half;
+                    }
+                }
+
+                g.DrawRoundedRectangle(brush, pen, Rectangle, CornerRadius);
+
+                g.SmoothingMode = SmoothingMode.None;
+                g.PixelOffsetMode = PixelOffsetMode.Default;
             }
-
-            if (BorderSize > 0 && BorderColor.A > 0)
+            finally
             {
-                Rectangle rect = Rectangle.Offset(BorderSize - 1);
-
-                using (Pen pen = new Pen(BorderColor, BorderSize) { Alignment = PenAlignment.Inset })
-                {
-                    g.DrawRectangleProper(pen, rect);
-                }
+                if (brush != null) brush.Dispose();
+                if (pen != null) pen.Dispose();
             }
         }
     }
