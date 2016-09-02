@@ -123,14 +123,8 @@ namespace ShareX.ScreenCaptureLib
                 else
                 {
                     using (Pen pen = new Pen(BorderColor, BorderSize) { StartCap = LineCap.Round, EndCap = LineCap.Round, LineJoin = LineJoin.Round })
-                    using (GraphicsPath gp = new GraphicsPath())
                     {
-                        for (int i = 0; i < points.Count - 1; i++)
-                        {
-                            gp.AddLine(points[i], points[i + 1]);
-                        }
-
-                        g.DrawPath(pen, gp);
+                        g.DrawLines(pen, points.ToArray());
                     }
                 }
 
