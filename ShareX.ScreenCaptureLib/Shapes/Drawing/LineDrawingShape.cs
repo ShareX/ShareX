@@ -47,12 +47,18 @@ namespace ShareX.ScreenCaptureLib
             {
                 g.SmoothingMode = SmoothingMode.HighQuality;
 
+                if (BorderSize.IsEvenNumber())
+                {
+                    g.PixelOffsetMode = PixelOffsetMode.Half;
+                }
+
                 using (Pen pen = new Pen(BorderColor, BorderSize))
                 {
                     DrawLine(g, pen);
                 }
 
                 g.SmoothingMode = SmoothingMode.None;
+                g.PixelOffsetMode = PixelOffsetMode.Default;
             }
         }
 
