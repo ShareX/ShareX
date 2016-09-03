@@ -34,9 +34,6 @@ namespace ShareX.ScreenCaptureLib
         public int BorderSize { get; set; } = 2;
         public Color FillColor { get; set; } = Color.FromArgb(0, 0, 0, 0);
 
-        // Rectangle
-        public int RectangleCornerRadius { get; set; } = 0;
-
         // Rounded rectangle region, rounded rectangle drawing
         public int RoundedRectangleRadius { get; set; } = 15;
 

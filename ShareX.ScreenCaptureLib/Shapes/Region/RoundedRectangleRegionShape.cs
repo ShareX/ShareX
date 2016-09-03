@@ -33,21 +33,21 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.RegionRoundedRectangle;
 
-        public float Radius { get; set; }
+        public int CornerRadius { get; set; }
 
         public override void OnConfigLoad()
         {
-            Radius = AnnotationOptions.RoundedRectangleRadius;
+            CornerRadius = AnnotationOptions.RoundedRectangleRadius;
         }
 
         public override void OnConfigSave()
         {
-            AnnotationOptions.RoundedRectangleRadius = (int)Radius;
+            AnnotationOptions.RoundedRectangleRadius = CornerRadius;
         }
 
         public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
         {
-            gp.AddRoundedRectangle(rect, Radius);
+            gp.AddRoundedRectangle(rect, CornerRadius);
         }
     }
 }

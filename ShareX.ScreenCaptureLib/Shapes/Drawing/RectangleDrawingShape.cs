@@ -33,19 +33,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingRectangle;
 
-        public float CornerRadius { get; set; }
-
-        public override void OnConfigLoad()
-        {
-            base.OnConfigLoad();
-            CornerRadius = AnnotationOptions.RectangleCornerRadius;
-        }
-
-        public override void OnConfigSave()
-        {
-            base.OnConfigSave();
-            AnnotationOptions.RectangleCornerRadius = (int)CornerRadius;
-        }
+        public int CornerRadius { get; set; }
 
         public override void OnDraw(Graphics g)
         {
@@ -84,6 +72,11 @@ namespace ShareX.ScreenCaptureLib
                 if (brush != null) brush.Dispose();
                 if (pen != null) pen.Dispose();
             }
+        }
+
+        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        {
+            gp.AddRoundedRectangle(rect, CornerRadius);
         }
     }
 }

@@ -29,55 +29,20 @@ using System.Drawing.Drawing2D;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RoundedRectangleDrawingShape : BaseDrawingShape
+    public class RoundedRectangleDrawingShape : RectangleDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingRoundedRectangle;
-
-        public float Radius { get; set; }
 
         public override void OnConfigLoad()
         {
             base.OnConfigLoad();
-            Radius = AnnotationOptions.RoundedRectangleRadius;
+            CornerRadius = AnnotationOptions.RoundedRectangleRadius;
         }
 
         public override void OnConfigSave()
         {
             base.OnConfigSave();
-            AnnotationOptions.RoundedRectangleRadius = (int)Radius;
-        }
-
-        public override void OnDraw(Graphics g)
-        {
-            Brush brush = null;
-            Pen pen = null;
-
-            try
-            {
-                if (FillColor.A > 0)
-                {
-                    brush = new SolidBrush(FillColor);
-                }
-
-                if (BorderSize > 0 && BorderColor.A > 0)
-                {
-                    pen = new Pen(BorderColor, BorderSize);
-                }
-
-                g.SmoothingMode = SmoothingMode.HighQuality;
-                g.DrawRoundedRectangle(brush, pen, Rectangle, Radius);
-                g.SmoothingMode = SmoothingMode.None;
-            }
-            finally
-            {
-                if (brush != null) brush.Dispose();
-                if (pen != null) pen.Dispose();
-            }
-        }
-
-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
-        {
-            gp.AddRoundedRectangle(rect, Radius);
+            AnnotationOptions.RoundedRectangleRadius = CornerRadius;
         }
     }
 }

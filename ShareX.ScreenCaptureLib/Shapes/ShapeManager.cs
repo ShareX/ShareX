@@ -511,11 +511,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     AnnotationOptions.RoundedRectangleRadius = (int)tslnudCornerRadius.Content.Value;
                 }
-                else if (shapeType == ShapeType.DrawingRectangle)
-                {
-                    AnnotationOptions.RectangleCornerRadius = (int)tslnudCornerRadius.Content.Value;
-                }
-                else if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+                else if (shapeType == ShapeType.DrawingText)
                 {
                     AnnotationOptions.TextCornerRadius = (int)tslnudCornerRadius.Content.Value;
                 }
@@ -766,11 +762,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 cornerRadius = AnnotationOptions.RoundedRectangleRadius;
             }
-            else if (shapeType == ShapeType.DrawingRectangle)
-            {
-                cornerRadius = AnnotationOptions.RectangleCornerRadius;
-            }
-            else if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+            else if (shapeType == ShapeType.DrawingText)
             {
                 cornerRadius = AnnotationOptions.TextCornerRadius;
             }
@@ -848,9 +840,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case ShapeType.RegionRoundedRectangle:
                 case ShapeType.DrawingRoundedRectangle:
-                case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingText:
-                case ShapeType.DrawingSpeechBalloon:
                     tslnudCornerRadius.Visible = true;
                     break;
             }
