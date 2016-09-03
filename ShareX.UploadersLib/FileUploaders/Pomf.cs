@@ -62,7 +62,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             //new PomfUploader("https://pomf.se/upload.php"),
-            new PomfUploader("http://1339.cf/upload.php", "http://b.1339.cf"),
             new PomfUploader("http://comfy.moe/upload.php"),
             new PomfUploader("https://cocaine.ninja/upload.php"),
             new PomfUploader("https://cuntflaps.me/upload.php"),
