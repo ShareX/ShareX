@@ -145,13 +145,14 @@ namespace ShareX.ScreenCaptureLib
         sierra2_4a
     }
 
-    public enum RectangleRegionMode
+    public enum RegionCaptureMode
     {
         Default,
         Annotation,
         ScreenColorPicker,
         Ruler,
-        OneClick
+        OneClick,
+        Editor
     }
 
     public enum RegionCaptureAction // Localized

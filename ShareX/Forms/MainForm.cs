@@ -2128,7 +2128,7 @@ namespace ShareX
 
         private void CaptureRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
-            BaseRegionForm form = new RectangleRegionForm(RectangleRegionMode.Annotation);
+            BaseRegionForm form = new RectangleRegionForm(RegionCaptureMode.Annotation);
 
             DoCapture(() =>
             {
@@ -2137,7 +2137,7 @@ namespace ShareX
                 try
                 {
                     form.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
-                    form.Prepare(TaskHelpers.GetScreenshot(taskSettings));
+                    form.Prepare(TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen());
                     form.ShowDialog();
 
                     img = form.GetResultImage();

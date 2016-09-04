@@ -37,7 +37,9 @@ namespace ShareX.ScreenCaptureLib
 {
     public sealed class RectangleRegionForm : BaseRegionForm
     {
-        public RectangleRegionMode Mode { get; private set; }
+        public RegionCaptureMode Mode { get; private set; }
+
+        public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || Mode == RegionCaptureMode.Editor;
 
         public Point CurrentPosition { get; private set; }
 
@@ -64,7 +66,7 @@ namespace ShareX.ScreenCaptureLib
         private TextAnimation shapeTypeTextAnimation = new TextAnimation(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.5));
         private Bitmap bmpBackgroundImage;
 
-        public RectangleRegionForm(RectangleRegionMode mode)
+        public RectangleRegionForm(RegionCaptureMode mode)
         {
             Mode = mode;
 
@@ -72,9 +74,9 @@ namespace ShareX.ScreenCaptureLib
             MouseDown += RectangleRegion_MouseDown;
         }
 
-        public override void Prepare(Screenshot screenshot)
+        public override void Prepare(Image img)
         {
-            base.Prepare(screenshot);
+            base.Prepare(img);
 
             if (Config != null)
             {
@@ -82,14 +84,14 @@ namespace ShareX.ScreenCaptureLib
                 ShapeManager.WindowCaptureMode = Config.DetectWindows;
                 ShapeManager.IncludeControls = Config.DetectControls;
 
-                if (Mode == RectangleRegionMode.Annotation)
+                if (IsAnnotationMode)
                 {
                     ShapeManager.CurrentShapeTypeChanged += ShapeManager_CurrentShapeTypeChanged;
 
                     ShapeManager_CurrentShapeTypeChanged(ShapeManager.CurrentShapeType);
                 }
 
-                if (Mode == RectangleRegionMode.OneClick || ShapeManager.WindowCaptureMode)
+                if (Mode == RegionCaptureMode.OneClick || ShapeManager.WindowCaptureMode)
                 {
                     IntPtr handle = Handle;
 
@@ -102,7 +104,7 @@ namespace ShareX.ScreenCaptureLib
                     });
                 }
 
-                if (Config.UseCustomInfoText || Mode == RectangleRegionMode.ScreenColorPicker)
+                if (Config.UseCustomInfoText || Mode == RegionCaptureMode.ScreenColorPicker)
                 {
                     bmpBackgroundImage = new Bitmap(backgroundImage);
                 }
@@ -116,11 +118,11 @@ namespace ShareX.ScreenCaptureLib
 
         private void RectangleRegion_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((Mode == RectangleRegionMode.OneClick || Mode == RectangleRegionMode.ScreenColorPicker) && e.Button == MouseButtons.Left)
+            if ((Mode == RegionCaptureMode.OneClick || Mode == RegionCaptureMode.ScreenColorPicker) && e.Button == MouseButtons.Left)
             {
                 CurrentPosition = InputManager.MousePosition;
 
-                if (Mode == RectangleRegionMode.OneClick)
+                if (Mode == RegionCaptureMode.OneClick)
                 {
                     SelectedWindow = ShapeManager.FindSelectedWindow();
                 }
@@ -243,7 +245,7 @@ namespace ShareX.ScreenCaptureLib
                 g.DrawRectangleProper(borderPen, ShapeManager.CurrentRectangle);
                 g.DrawRectangleProper(borderDotPen, ShapeManager.CurrentRectangle);
 
-                if (Mode == RectangleRegionMode.Ruler)
+                if (Mode == RegionCaptureMode.Ruler)
                 {
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 5, 10);
                     DrawRuler(g, ShapeManager.CurrentRectangle, borderPen, 15, 100);
@@ -283,7 +285,7 @@ namespace ShareX.ScreenCaptureLib
                 DrawTips(g);
             }
 
-            if (Mode == RectangleRegionMode.Annotation)
+            if (IsAnnotationMode)
             {
                 if (Config.ShowMenuTip)
                 {
@@ -422,7 +424,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection);
 
-                if (Mode == RectangleRegionMode.Annotation)
+                if (IsAnnotationMode)
                 {
                     sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu);
                 }
@@ -491,7 +493,7 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(Resources.RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture);
             sb.AppendLine(Resources.RectangleRegion_WriteTips_____Active_monitor_capture);
 
-            if (Mode == RectangleRegionMode.Annotation && !ShapeManager.IsCreating)
+            if (Mode == RegionCaptureMode.Annotation && !ShapeManager.IsCreating)
             {
                 sb.AppendLine();
 
@@ -542,7 +544,7 @@ namespace ShareX.ScreenCaptureLib
 
         private string GetAreaText(Rectangle area)
         {
-            if (Mode == RectangleRegionMode.Ruler)
+            if (Mode == RegionCaptureMode.Ruler)
             {
                 Point endPos = new Point(area.Right - 1, area.Bottom - 1);
                 return string.Format(Resources.RectangleRegion_GetRulerText_Ruler_info, area.X, area.Y, endPos.X, endPos.Y,
@@ -554,11 +556,11 @@ namespace ShareX.ScreenCaptureLib
 
         private string GetInfoText()
         {
-            if (Mode == RectangleRegionMode.ScreenColorPicker || Config.UseCustomInfoText)
+            if (Mode == RegionCaptureMode.ScreenColorPicker || Config.UseCustomInfoText)
             {
                 Color color = CurrentColor;
 
-                if (Mode != RectangleRegionMode.ScreenColorPicker && !string.IsNullOrEmpty(Config.CustomInfoText))
+                if (Mode != RegionCaptureMode.ScreenColorPicker && !string.IsNullOrEmpty(Config.CustomInfoText))
                 {
                     return CodeMenuEntryPixelInfo.Parse(Config.CustomInfoText, color, CurrentPosition);
                 }

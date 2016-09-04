@@ -581,8 +581,10 @@ namespace ShareX
             thumbnailerForm.Show();
         }
 
-        public static void OpenImageEditor(string filePath = null)
+        public static void OpenImageEditor(string filePath = null, TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             if (string.IsNullOrEmpty(filePath))
             {
                 if (Clipboard.ContainsImage() &&
@@ -604,7 +606,8 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                AnnotateImage(filePath);
+                RegionCaptureHelpers.EditImage(filePath, taskSettings.CaptureSettings.SurfaceOptions);
+                //AnnotateImage(filePath);
             }
         }
 
