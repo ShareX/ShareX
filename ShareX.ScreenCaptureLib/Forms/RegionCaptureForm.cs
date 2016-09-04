@@ -1085,7 +1085,16 @@ namespace ShareX.ScreenCaptureLib
 
         public Image GetResultImage()
         {
-            if (Result == RegionResult.Region)
+            if (Mode == RegionCaptureMode.Editor)
+            {
+                foreach (BaseShape shape in ShapeManager.Shapes)
+                {
+                    shape.Rectangle = new Rectangle(shape.Rectangle.X - ImageRectangle.X, shape.Rectangle.Y - ImageRectangle.Y, shape.Rectangle.Width, shape.Rectangle.Height);
+                }
+
+                return GetOutputImage();
+            }
+            else if (Result == RegionResult.Region)
             {
                 using (Image img = GetOutputImage())
                 {
