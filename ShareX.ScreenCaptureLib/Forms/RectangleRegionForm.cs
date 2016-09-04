@@ -74,9 +74,46 @@ namespace ShareX.ScreenCaptureLib
             MouseDown += RectangleRegion_MouseDown;
         }
 
-        public override void Prepare(Image img)
+        public void Prepare()
         {
-            base.Prepare(img);
+            Prepare(new Screenshot().CaptureFullscreen());
+        }
+
+        // Must be called before show form
+        public void Prepare(Image img)
+        {
+            Image = img;
+
+            if (Mode == RegionCaptureMode.Editor)
+            {
+                ImageRectangle = new Rectangle(ScreenRectangle.Width / 2 - Image.Width / 2, ScreenRectangle.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
+
+                using (Image background = ImageHelpers.DrawCheckers(ScreenRectangle0Based.Width, ScreenRectangle0Based.Height))
+                using (Graphics g = Graphics.FromImage(background))
+                {
+                    g.DrawImage(Image, ImageRectangle);
+
+                    backgroundBrush = new TextureBrush(background) { WrapMode = WrapMode.Clamp };
+                }
+            }
+            else if (Config.UseDimming)
+            {
+                using (Bitmap darkBackground = (Bitmap)Image.Clone())
+                using (Graphics g = Graphics.FromImage(darkBackground))
+                {
+                    using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
+                    {
+                        g.FillRectangle(brush, 0, 0, darkBackground.Width, darkBackground.Height);
+                    }
+
+                    backgroundBrush = new TextureBrush(darkBackground) { WrapMode = WrapMode.Clamp };
+                    backgroundHighlightBrush = new TextureBrush(Image) { WrapMode = WrapMode.Clamp };
+                }
+            }
+            else
+            {
+                backgroundBrush = new TextureBrush(Image) { WrapMode = WrapMode.Clamp };
+            }
 
             if (Config != null)
             {
@@ -106,15 +143,8 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Config.UseCustomInfoText || Mode == RegionCaptureMode.ScreenColorPicker)
                 {
-                    bmpBackgroundImage = new Bitmap(backgroundImage);
+                    bmpBackgroundImage = new Bitmap(Image);
                 }
-            }
-
-            if (Mode == RegionCaptureMode.Editor)
-            {
-                ImageRectangle = new Rectangle(ScreenRectangle.Width / 2 - backgroundImage.Width / 2, ScreenRectangle.Height / 2 - backgroundImage.Height / 2,
-                    backgroundImage.Width, backgroundImage.Height);
-                backgroundBrush.TranslateTransform(ImageRectangle.X, ImageRectangle.Y);
             }
         }
 
@@ -627,7 +657,7 @@ namespace ShareX.ScreenCaptureLib
                 if (itemCount > 0) totalSize.Height += itemGap;
                 magnifierPosition = totalSize.Height;
 
-                magnifier = Magnifier(backgroundImage, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize);
+                magnifier = Magnifier(Image, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize);
                 totalSize.Width = Math.Max(totalSize.Width, magnifier.Width);
 
                 totalSize.Height += magnifier.Height;
@@ -804,7 +834,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected override Image GetOutputImage()
         {
-            return ShapeManager.RenderOutputImage(backgroundImage);
+            return ShapeManager.RenderOutputImage(Image);
         }
 
         protected override void Dispose(bool disposing)

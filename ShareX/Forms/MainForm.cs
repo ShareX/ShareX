@@ -2128,7 +2128,7 @@ namespace ShareX
 
         private void CaptureRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
-            BaseRegionForm form = new RectangleRegionForm(RegionCaptureMode.Annotation);
+            RectangleRegionForm form = new RectangleRegionForm(RegionCaptureMode.Annotation);
 
             DoCapture(() =>
             {

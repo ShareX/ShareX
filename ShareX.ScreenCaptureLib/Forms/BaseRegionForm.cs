@@ -41,16 +41,16 @@ namespace ShareX.ScreenCaptureLib
         public static GraphicsPath LastRegionFillPath { get; protected set; }
 
         public RegionCaptureOptions Config { get; set; }
-        public int FPS { get; private set; }
         public Rectangle ScreenRectangle { get; private set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
+        public Image Image { get; protected set; }
         public Rectangle ImageRectangle { get; protected set; }
         public RegionResult Result { get; private set; }
+        public int FPS { get; private set; }
         public int MonitorIndex { get; set; }
 
         internal List<DrawableObject> DrawableObjects { get; private set; }
 
-        protected Image backgroundImage;
         protected TextureBrush backgroundBrush, backgroundHighlightBrush;
         protected GraphicsPath regionFillPath, regionDrawPath;
         protected Pen borderPen, borderDotPen, textBackgroundPenWhite, textBackgroundPenBlack, markerPen;
@@ -107,36 +107,6 @@ namespace ShareX.ScreenCaptureLib
             Shown += BaseRegionForm_Shown;
             KeyUp += BaseRegionForm_KeyUp;
             ResumeLayout(false);
-        }
-
-        public void Prepare()
-        {
-            Prepare(new Screenshot().CaptureFullscreen());
-        }
-
-        // Must be called before show form
-        public virtual void Prepare(Image img)
-        {
-            backgroundImage = img;
-
-            if (Config.UseDimming)
-            {
-                using (Bitmap darkBackground = (Bitmap)backgroundImage.Clone())
-                using (Graphics g = Graphics.FromImage(darkBackground))
-                {
-                    using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
-                    {
-                        g.FillRectangle(brush, 0, 0, darkBackground.Width, darkBackground.Height);
-                    }
-
-                    backgroundBrush = new TextureBrush(darkBackground) { WrapMode = WrapMode.Clamp };
-                    backgroundHighlightBrush = new TextureBrush(backgroundImage) { WrapMode = WrapMode.Clamp };
-                }
-            }
-            else
-            {
-                backgroundBrush = new TextureBrush(backgroundImage) { WrapMode = WrapMode.Clamp };
-            }
         }
 
         private void BaseRegionForm_Shown(object sender, EventArgs e)
@@ -216,7 +186,7 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
             g.CompositingMode = CompositingMode.SourceCopy;
-            g.FillRectangle(backgroundBrush, ImageRectangle);
+            g.FillRectangle(backgroundBrush, ScreenRectangle0Based);
             g.CompositingMode = CompositingMode.SourceOver;
 
             Draw(g);
@@ -276,7 +246,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected virtual Image GetOutputImage()
         {
-            return (Image)backgroundImage.Clone();
+            return (Image)Image.Clone();
         }
 
         public virtual WindowInfo GetWindowInfo()
@@ -411,7 +381,7 @@ namespace ShareX.ScreenCaptureLib
                 if (regionDrawPath != null) regionDrawPath.Dispose();
             }
 
-            if (backgroundImage != null) backgroundImage.Dispose();
+            if (Image != null) Image.Dispose();
 
             base.Dispose(disposing);
         }
