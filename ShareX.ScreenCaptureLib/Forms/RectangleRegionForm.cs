@@ -109,6 +109,13 @@ namespace ShareX.ScreenCaptureLib
                     bmpBackgroundImage = new Bitmap(backgroundImage);
                 }
             }
+
+            if (Mode == RegionCaptureMode.Editor)
+            {
+                ImageRectangle = new Rectangle(ScreenRectangle.Width / 2 - backgroundImage.Width / 2, ScreenRectangle.Height / 2 - backgroundImage.Height / 2,
+                    backgroundImage.Width, backgroundImage.Height);
+                backgroundBrush.TranslateTransform(ImageRectangle.X, ImageRectangle.Y);
+            }
         }
 
         private void ShapeManager_CurrentShapeTypeChanged(ShapeType shapeType)
@@ -203,7 +210,7 @@ namespace ShareX.ScreenCaptureLib
                     using (Region region = new Region(regionDrawPath))
                     {
                         g.Clip = region;
-                        g.FillRectangle(lightBackgroundBrush, ScreenRectangle0Based);
+                        g.FillRectangle(backgroundHighlightBrush, ScreenRectangle0Based);
                         g.ResetClip();
                     }
                 }
@@ -711,8 +718,8 @@ namespace ShareX.ScreenCaptureLib
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
                 g.PixelOffsetMode = PixelOffsetMode.Half;
 
-                g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(position.X - horizontalPixelCount / 2, position.Y - verticalPixelCount / 2,
-                    horizontalPixelCount, verticalPixelCount), GraphicsUnit.Pixel);
+                g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(position.X - horizontalPixelCount / 2 - ImageRectangle.X,
+                    position.Y - verticalPixelCount / 2 - ImageRectangle.Y, horizontalPixelCount, verticalPixelCount), GraphicsUnit.Pixel);
 
                 g.PixelOffsetMode = PixelOffsetMode.None;
 

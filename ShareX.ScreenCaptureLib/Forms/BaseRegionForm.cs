@@ -44,13 +44,14 @@ namespace ShareX.ScreenCaptureLib
         public int FPS { get; private set; }
         public Rectangle ScreenRectangle { get; private set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
+        public Rectangle ImageRectangle { get; protected set; }
         public RegionResult Result { get; private set; }
         public int MonitorIndex { get; set; }
 
         internal List<DrawableObject> DrawableObjects { get; private set; }
 
         protected Image backgroundImage;
-        protected TextureBrush darkBackgroundBrush, lightBackgroundBrush;
+        protected TextureBrush backgroundBrush, backgroundHighlightBrush;
         protected GraphicsPath regionFillPath, regionDrawPath;
         protected Pen borderPen, borderDotPen, textBackgroundPenWhite, textBackgroundPenBlack, markerPen;
         protected Brush nodeBackgroundBrush, textBackgroundBrush;
@@ -63,6 +64,7 @@ namespace ShareX.ScreenCaptureLib
         {
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
             ScreenRectangle0Based = CaptureHelpers.ScreenToClient(ScreenRectangle);
+            ImageRectangle = ScreenRectangle0Based;
 
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -127,13 +129,13 @@ namespace ShareX.ScreenCaptureLib
                         g.FillRectangle(brush, 0, 0, darkBackground.Width, darkBackground.Height);
                     }
 
-                    darkBackgroundBrush = new TextureBrush(darkBackground) { WrapMode = WrapMode.Clamp };
-                    lightBackgroundBrush = new TextureBrush(backgroundImage) { WrapMode = WrapMode.Clamp };
+                    backgroundBrush = new TextureBrush(darkBackground) { WrapMode = WrapMode.Clamp };
+                    backgroundHighlightBrush = new TextureBrush(backgroundImage) { WrapMode = WrapMode.Clamp };
                 }
             }
             else
             {
-                darkBackgroundBrush = new TextureBrush(backgroundImage) { WrapMode = WrapMode.Clamp };
+                backgroundBrush = new TextureBrush(backgroundImage) { WrapMode = WrapMode.Clamp };
             }
         }
 
@@ -214,7 +216,7 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
             g.CompositingMode = CompositingMode.SourceCopy;
-            g.FillRectangle(darkBackgroundBrush, ScreenRectangle0Based);
+            g.FillRectangle(backgroundBrush, ImageRectangle);
             g.CompositingMode = CompositingMode.SourceOver;
 
             Draw(g);
@@ -385,8 +387,8 @@ namespace ShareX.ScreenCaptureLib
                 components.Dispose();
             }
 
-            if (darkBackgroundBrush != null) darkBackgroundBrush.Dispose();
-            if (lightBackgroundBrush != null) lightBackgroundBrush.Dispose();
+            if (backgroundBrush != null) backgroundBrush.Dispose();
+            if (backgroundHighlightBrush != null) backgroundHighlightBrush.Dispose();
             if (borderPen != null) borderPen.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
             if (nodeBackgroundBrush != null) nodeBackgroundBrush.Dispose();
