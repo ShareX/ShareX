@@ -61,10 +61,10 @@
   <ItemGroup>
     <Compile Include="Shapes\AnnotationOptions.cs" />
     <Compile Include="Enums.cs" />
-    <Compile Include="Forms\RectangleRegionAnnotateForm.cs">
+    <Compile Include="Forms\RegionCaptureSimpleAnnotateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RectangleRegionTransparentForm.cs">
+    <Compile Include="Forms\RegionCaptureTransparentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ScrollingCaptureForm.cs">
@@ -119,7 +119,7 @@
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screencast\ScreencastOptions.cs" />
-    <Compile Include="Forms\RectangleRegionLightForm.cs">
+    <Compile Include="Forms\RegionCaptureLightForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screencast\ImageCache.cs" />
@@ -131,7 +131,7 @@
     </Compile>
     <Compile Include="Shapes\ShapeManager.cs" />
     <Compile Include="RegionHelpers\DrawableObject.cs" />
-    <Compile Include="Forms\RectangleRegionForm.cs">
+    <Compile Include="Forms\RegionCaptureForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegionHelpers\InputManager.cs" />

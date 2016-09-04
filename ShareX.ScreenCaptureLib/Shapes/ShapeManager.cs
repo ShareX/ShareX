@@ -181,14 +181,14 @@ namespace ShareX.ScreenCaptureLib
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
-        private RectangleRegionForm form;
+        private RegionCaptureForm form;
         private ContextMenuStrip cmsContextMenu;
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
         private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
 
-        public ShapeManager(RectangleRegionForm form)
+        public ShapeManager(RegionCaptureForm form)
         {
             this.form = form;
             Config = form.Config;

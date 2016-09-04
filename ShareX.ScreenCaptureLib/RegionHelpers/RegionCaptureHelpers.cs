@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public static Image GetRegionImage(RegionCaptureOptions options)
         {
-            using (RectangleRegionForm form = new RectangleRegionForm(RegionCaptureMode.Default))
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default))
             {
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.ShowTips = false;
@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
 
         public static bool GetRectangleRegion(out Rectangle rect, RegionCaptureOptions options)
         {
-            using (RectangleRegionForm form = new RectangleRegionForm(RegionCaptureMode.Default))
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default))
             {
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.ShowTips = false;
@@ -94,7 +94,7 @@ namespace ShareX.ScreenCaptureLib
 
         public static PointInfo GetPointInfo(RegionCaptureOptions options)
         {
-            using (RectangleRegionForm form = new RectangleRegionForm(RegionCaptureMode.ScreenColorPicker))
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.ScreenColorPicker))
             {
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.DetectWindows = false;
@@ -118,7 +118,7 @@ namespace ShareX.ScreenCaptureLib
 
         public static SimpleWindowInfo GetWindowInfo(RegionCaptureOptions options)
         {
-            using (RectangleRegionForm form = new RectangleRegionForm(RegionCaptureMode.OneClick))
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.OneClick))
             {
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.UseDimming = false;
@@ -139,7 +139,7 @@ namespace ShareX.ScreenCaptureLib
 
         public static void ShowScreenRuler(RegionCaptureOptions options)
         {
-            using (RectangleRegionForm form = new RectangleRegionForm(RegionCaptureMode.Ruler))
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Ruler))
             {
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.QuickCrop = false;
@@ -155,7 +155,7 @@ namespace ShareX.ScreenCaptureLib
             if (File.Exists(filePath))
             {
                 using (Image img = ImageHelpers.LoadImage(filePath))
-                using (RectangleRegionForm form = new RectangleRegionForm(RegionCaptureMode.Editor))
+                using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Editor))
                 {
                     form.Config = GetRegionCaptureOptions(options);
                     form.Config.DetectWindows = false;

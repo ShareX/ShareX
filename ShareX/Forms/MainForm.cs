@@ -2128,7 +2128,7 @@ namespace ShareX
 
         private void CaptureRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
-            RectangleRegionForm form = new RectangleRegionForm(RegionCaptureMode.Annotation);
+            RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Annotation);
 
             DoCapture(() =>
             {
@@ -2181,7 +2181,7 @@ namespace ShareX
             {
                 Image img = null;
 
-                using (RectangleRegionLightForm rectangleLight = new RectangleRegionLightForm(TaskHelpers.GetScreenshot(taskSettings)))
+                using (RegionCaptureLightForm rectangleLight = new RegionCaptureLightForm(TaskHelpers.GetScreenshot(taskSettings)))
                 {
                     if (rectangleLight.ShowDialog() == DialogResult.OK)
                     {
@@ -2206,7 +2206,7 @@ namespace ShareX
             {
                 Image img = null;
 
-                using (RectangleRegionTransparentForm rectangleTransparent = new RectangleRegionTransparentForm())
+                using (RegionCaptureTransparentForm rectangleTransparent = new RegionCaptureTransparentForm())
                 {
                     if (rectangleTransparent.ShowDialog() == DialogResult.OK)
                     {
@@ -2231,7 +2231,7 @@ namespace ShareX
              {
                  Image img = null;
 
-                 using (RectangleRegionAnnotateForm rectangleAnnotate = new RectangleRegionAnnotateForm(TaskHelpers.GetScreenshot(taskSettings),
+                 using (RegionCaptureSimpleAnnotateForm rectangleAnnotate = new RegionCaptureSimpleAnnotateForm(TaskHelpers.GetScreenshot(taskSettings),
                      taskSettings.CaptureSettingsReference.RectangleAnnotateOptions))
                  {
                      if (rectangleAnnotate.ShowDialog() == DialogResult.OK)
@@ -2254,13 +2254,13 @@ namespace ShareX
             switch (lastRegionCaptureType)
             {
                 case LastRegionCaptureType.Default:
-                    if (RectangleRegionForm.LastRegionFillPath != null)
+                    if (RegionCaptureForm.LastRegionFillPath != null)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                             {
-                                return RegionCaptureHelpers.ApplyRegionPathToImage(screenshot, RectangleRegionForm.LastRegionFillPath);
+                                return RegionCaptureHelpers.ApplyRegionPathToImage(screenshot, RegionCaptureForm.LastRegionFillPath);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
@@ -2270,13 +2270,13 @@ namespace ShareX
                     }
                     break;
                 case LastRegionCaptureType.Light:
-                    if (!RectangleRegionLightForm.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RegionCaptureLightForm.LastSelectionRectangle0Based.IsEmpty)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                             {
-                                return ImageHelpers.CropImage(screenshot, RectangleRegionLightForm.LastSelectionRectangle0Based);
+                                return ImageHelpers.CropImage(screenshot, RegionCaptureLightForm.LastSelectionRectangle0Based);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
@@ -2286,13 +2286,13 @@ namespace ShareX
                     }
                     break;
                 case LastRegionCaptureType.Transparent:
-                    if (!RectangleRegionTransparentForm.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RegionCaptureTransparentForm.LastSelectionRectangle0Based.IsEmpty)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                             {
-                                return ImageHelpers.CropImage(screenshot, RectangleRegionTransparentForm.LastSelectionRectangle0Based);
+                                return ImageHelpers.CropImage(screenshot, RegionCaptureTransparentForm.LastSelectionRectangle0Based);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
@@ -2302,13 +2302,13 @@ namespace ShareX
                     }
                     break;
                 case LastRegionCaptureType.Annotate:
-                    if (!RectangleRegionAnnotateForm.LastSelectionRectangle0Based.IsEmpty)
+                    if (!RegionCaptureSimpleAnnotateForm.LastSelectionRectangle0Based.IsEmpty)
                     {
                         DoCapture(() =>
                          {
                              using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                              {
-                                 return ImageHelpers.CropImage(screenshot, RectangleRegionAnnotateForm.LastSelectionRectangle0Based);
+                                 return ImageHelpers.CropImage(screenshot, RegionCaptureSimpleAnnotateForm.LastSelectionRectangle0Based);
                              }
                          }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }

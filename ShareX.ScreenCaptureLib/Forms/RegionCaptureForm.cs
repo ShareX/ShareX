@@ -37,7 +37,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class RectangleRegionForm : Form
+    public sealed class RegionCaptureForm : Form
     {
         public static GraphicsPath LastRegionFillPath { get; protected set; }
 
@@ -91,7 +91,7 @@ namespace ShareX.ScreenCaptureLib
         private TextAnimation shapeTypeTextAnimation = new TextAnimation(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.5));
         private Bitmap bmpBackgroundImage;
 
-        public RectangleRegionForm(RegionCaptureMode mode)
+        public RegionCaptureForm(RegionCaptureMode mode)
         {
             Mode = mode;
 
