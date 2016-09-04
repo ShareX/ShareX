@@ -39,13 +39,13 @@ namespace ShareX.ScreenCaptureLib
 {
     public sealed class RegionCaptureForm : Form
     {
-        public static GraphicsPath LastRegionFillPath { get; protected set; }
+        public static GraphicsPath LastRegionFillPath { get; private set; }
 
         public RegionCaptureOptions Config { get; set; }
         public Rectangle ScreenRectangle { get; private set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
-        public Image Image { get; protected set; }
-        public Rectangle ImageRectangle { get; protected set; }
+        public Image Image { get; private set; }
+        public Rectangle ImageRectangle { get; private set; }
         public RegionResult Result { get; private set; }
         public int FPS { get; private set; }
         public int MonitorIndex { get; set; }
@@ -87,8 +87,8 @@ namespace ShareX.ScreenCaptureLib
         private Stopwatch timerStart, timerFPS;
         private int frameCount;
         private bool pause, isKeyAllowed;
-        private ColorBlinkAnimation colorBlinkAnimation = new ColorBlinkAnimation();
-        private TextAnimation shapeTypeTextAnimation = new TextAnimation(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.5));
+        private ColorBlinkAnimation colorBlinkAnimation;
+        private TextAnimation shapeTypeTextAnimation;
         private Bitmap bmpBackgroundImage;
 
         public RegionCaptureForm(RegionCaptureMode mode)
@@ -100,17 +100,16 @@ namespace ShareX.ScreenCaptureLib
             ImageRectangle = ScreenRectangle0Based;
 
             InitializeComponent();
-            Icon = ShareXResources.Icon;
-            Cursor = Helpers.CreateCursor(Resources.Crosshair);
 
-            DrawableObjects = new List<DrawableObject>();
             Config = new RegionCaptureOptions();
+            DrawableObjects = new List<DrawableObject>();
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
+            colorBlinkAnimation = new ColorBlinkAnimation();
+            shapeTypeTextAnimation = new TextAnimation(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.5));
 
             borderPen = new Pen(Color.Black);
-            borderDotPen = new Pen(Color.White);
-            borderDotPen.DashPattern = new float[] { 5, 5 };
+            borderDotPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
             nodeBackgroundBrush = new SolidBrush(Color.White);
             infoFont = new Font("Verdana", 9);
             infoFontMedium = new Font("Verdana", 12);
@@ -126,8 +125,11 @@ namespace ShareX.ScreenCaptureLib
             components = new Container();
 
             SuspendLayout();
+
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
+            Cursor = Helpers.CreateCursor(Resources.Crosshair);
+            Icon = ShareXResources.Icon;
             StartPosition = FormStartPosition.Manual;
             FormBorderStyle = FormBorderStyle.None;
             Bounds = ScreenRectangle;
@@ -137,10 +139,12 @@ namespace ShareX.ScreenCaptureLib
 #if !DEBUG
             TopMost = true;
 #endif
-            Shown += RectangleRegion_Shown;
-            KeyDown += RectangleRegion_KeyDown;
-            KeyUp += RectangleRegion_KeyUp;
-            MouseDown += RectangleRegion_MouseDown;
+
+            Shown += RegionCaptureForm_Shown;
+            KeyDown += RegionCaptureForm_KeyDown;
+            KeyUp += RegionCaptureForm_KeyUp;
+            MouseDown += RegionCaptureForm_MouseDown;
+
             ResumeLayout(false);
         }
 
@@ -217,17 +221,17 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void RectangleRegion_Shown(object sender, EventArgs e)
-        {
-            this.ForceActivate();
-        }
-
         private void ShapeManager_CurrentShapeTypeChanged(ShapeType shapeType)
         {
             shapeTypeTextAnimation.Start(shapeType.GetLocalizedDescription());
         }
 
-        private void RectangleRegion_KeyDown(object sender, KeyEventArgs e)
+        private void RegionCaptureForm_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
+        }
+
+        private void RegionCaptureForm_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyData)
             {
@@ -240,7 +244,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void RectangleRegion_KeyUp(object sender, KeyEventArgs e)
+        private void RegionCaptureForm_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Escape)
             {
@@ -275,7 +279,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void RectangleRegion_MouseDown(object sender, MouseEventArgs e)
+        private void RegionCaptureForm_MouseDown(object sender, MouseEventArgs e)
         {
             if ((Mode == RegionCaptureMode.OneClick || Mode == RegionCaptureMode.ScreenColorPicker) && e.Button == MouseButtons.Left)
             {
@@ -345,7 +349,7 @@ namespace ShareX.ScreenCaptureLib
             return ShapeManager.FindSelectedWindowInfo(CurrentPosition);
         }
 
-        private void Update()
+        private new void Update()
         {
             if (!timerStart.IsRunning)
             {
