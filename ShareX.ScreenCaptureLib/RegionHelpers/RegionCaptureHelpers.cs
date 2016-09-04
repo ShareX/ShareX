@@ -150,7 +150,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static void EditImage(string filePath, RegionCaptureOptions options)
+        public static void AnnotateImage(string filePath, RegionCaptureOptions options)
         {
             if (File.Exists(filePath))
             {
@@ -158,7 +158,9 @@ namespace ShareX.ScreenCaptureLib
                 using (RectangleRegionForm form = new RectangleRegionForm(RegionCaptureMode.Editor))
                 {
                     form.Config = GetRegionCaptureOptions(options);
+                    form.Config.DetectWindows = false;
                     form.Config.ShowTips = false;
+                    form.Config.UseDimming = false;
 
                     form.Prepare(img);
                     form.ShowDialog();
@@ -216,7 +218,9 @@ namespace ShareX.ScreenCaptureLib
                     UseSquareMagnifier = options.UseSquareMagnifier,
                     MagnifierPixelCount = options.MagnifierPixelCount,
                     MagnifierPixelSize = options.MagnifierPixelSize,
-                    ShowCrosshair = options.ShowCrosshair
+                    ShowCrosshair = options.ShowCrosshair,
+                    AnnotationOptions = options.AnnotationOptions,
+                    ShowMenuTip = options.ShowMenuTip
                 };
             }
         }
