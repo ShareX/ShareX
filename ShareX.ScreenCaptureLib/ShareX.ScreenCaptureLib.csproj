@@ -122,9 +122,6 @@
     <Compile Include="Forms\RectangleRegionLightForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BaseRegionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Screencast\ImageCache.cs" />
     <Compile Include="LocationInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

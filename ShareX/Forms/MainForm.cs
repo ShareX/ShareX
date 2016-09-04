@@ -2254,13 +2254,13 @@ namespace ShareX
             switch (lastRegionCaptureType)
             {
                 case LastRegionCaptureType.Default:
-                    if (BaseRegionForm.LastRegionFillPath != null)
+                    if (RectangleRegionForm.LastRegionFillPath != null)
                     {
                         DoCapture(() =>
                         {
                             using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                             {
-                                return RegionCaptureHelpers.ApplyRegionPathToImage(screenshot, BaseRegionForm.LastRegionFillPath);
+                                return RegionCaptureHelpers.ApplyRegionPathToImage(screenshot, RectangleRegionForm.LastRegionFillPath);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }

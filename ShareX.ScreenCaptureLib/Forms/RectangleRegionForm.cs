@@ -27,6 +27,8 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -35,8 +37,19 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public sealed class RectangleRegionForm : BaseRegionForm
+    public class RectangleRegionForm : Form
     {
+        public static GraphicsPath LastRegionFillPath { get; protected set; }
+
+        public RegionCaptureOptions Config { get; set; }
+        public Rectangle ScreenRectangle { get; private set; }
+        public Rectangle ScreenRectangle0Based { get; private set; }
+        public Image Image { get; protected set; }
+        public Rectangle ImageRectangle { get; protected set; }
+        public RegionResult Result { get; private set; }
+        public int FPS { get; private set; }
+        public int MonitorIndex { get; set; }
+
         public RegionCaptureMode Mode { get; private set; }
 
         public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || Mode == RegionCaptureMode.Editor;
@@ -62,6 +75,18 @@ namespace ShareX.ScreenCaptureLib
 
         internal ShapeManager ShapeManager { get; private set; }
 
+        internal List<DrawableObject> DrawableObjects { get; private set; }
+
+        public IContainer components = null;
+
+        private TextureBrush backgroundBrush, backgroundHighlightBrush;
+        private GraphicsPath regionFillPath, regionDrawPath;
+        private Pen borderPen, borderDotPen, textBackgroundPenWhite, textBackgroundPenBlack, markerPen;
+        private Brush nodeBackgroundBrush, textBackgroundBrush;
+        private Font infoFont, infoFontMedium, infoFontBig;
+        private Stopwatch timerStart, timerFPS;
+        private int frameCount;
+        private bool pause, isKeyAllowed;
         private ColorBlinkAnimation colorBlinkAnimation = new ColorBlinkAnimation();
         private TextAnimation shapeTypeTextAnimation = new TextAnimation(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.5));
         private Bitmap bmpBackgroundImage;
@@ -70,8 +95,53 @@ namespace ShareX.ScreenCaptureLib
         {
             Mode = mode;
 
+            ScreenRectangle = CaptureHelpers.GetScreenBounds();
+            ScreenRectangle0Based = CaptureHelpers.ScreenToClient(ScreenRectangle);
+            ImageRectangle = ScreenRectangle0Based;
+
+            InitializeComponent();
+            Icon = ShareXResources.Icon;
+            Cursor = Helpers.CreateCursor(Resources.Crosshair);
+
+            DrawableObjects = new List<DrawableObject>();
+            Config = new RegionCaptureOptions();
+            timerStart = new Stopwatch();
+            timerFPS = new Stopwatch();
+
+            borderPen = new Pen(Color.Black);
+            borderDotPen = new Pen(Color.White);
+            borderDotPen.DashPattern = new float[] { 5, 5 };
+            nodeBackgroundBrush = new SolidBrush(Color.White);
+            infoFont = new Font("Verdana", 9);
+            infoFontMedium = new Font("Verdana", 12);
+            infoFontBig = new Font("Verdana", 16, FontStyle.Bold);
+            textBackgroundBrush = new SolidBrush(Color.FromArgb(75, Color.Black));
+            textBackgroundPenWhite = new Pen(Color.FromArgb(50, Color.White));
+            textBackgroundPenBlack = new Pen(Color.FromArgb(150, Color.Black));
+            markerPen = new Pen(Color.FromArgb(200, Color.Red));
+        }
+
+        private void InitializeComponent()
+        {
+            components = new Container();
+
+            SuspendLayout();
+            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            StartPosition = FormStartPosition.Manual;
+            FormBorderStyle = FormBorderStyle.None;
+            Bounds = ScreenRectangle;
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+            Text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
+            ShowInTaskbar = false;
+#if !DEBUG
+            TopMost = true;
+#endif
+            Shown += RectangleRegion_Shown;
             KeyDown += RectangleRegion_KeyDown;
+            KeyUp += RectangleRegion_KeyUp;
             MouseDown += RectangleRegion_MouseDown;
+            ResumeLayout(false);
         }
 
         public void Prepare()
@@ -100,15 +170,14 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (Bitmap darkBackground = (Bitmap)Image.Clone())
                 using (Graphics g = Graphics.FromImage(darkBackground))
+                using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
                 {
-                    using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
-                    {
-                        g.FillRectangle(brush, 0, 0, darkBackground.Width, darkBackground.Height);
-                    }
+                    g.FillRectangle(brush, 0, 0, darkBackground.Width, darkBackground.Height);
 
                     backgroundBrush = new TextureBrush(darkBackground) { WrapMode = WrapMode.Clamp };
-                    backgroundHighlightBrush = new TextureBrush(Image) { WrapMode = WrapMode.Clamp };
                 }
+
+                backgroundHighlightBrush = new TextureBrush(Image) { WrapMode = WrapMode.Clamp };
             }
             else
             {
@@ -148,9 +217,62 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void RectangleRegion_Shown(object sender, EventArgs e)
+        {
+            this.ForceActivate();
+        }
+
         private void ShapeManager_CurrentShapeTypeChanged(ShapeType shapeType)
         {
             shapeTypeTextAnimation.Start(shapeType.GetLocalizedDescription());
+        }
+
+        private void RectangleRegion_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyData)
+            {
+                case Keys.F1:
+                    Config.ShowTips = !Config.ShowTips;
+                    break;
+                case Keys.Control | Keys.C:
+                    CopyAreaInfo();
+                    break;
+            }
+        }
+
+        private void RectangleRegion_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+            {
+                Close(RegionResult.Close);
+                return;
+            }
+
+            if (!isKeyAllowed && timerStart.ElapsedMilliseconds < 1000)
+            {
+                return;
+            }
+
+            isKeyAllowed = true;
+
+            if (e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
+            {
+                MonitorKey(e.KeyData - Keys.D0);
+                return;
+            }
+
+            switch (e.KeyData)
+            {
+                case Keys.Space:
+                    Close(RegionResult.Fullscreen);
+                    break;
+                case Keys.Enter:
+                    Close(RegionResult.Region);
+                    break;
+                case Keys.Oemtilde:
+                    Close(RegionResult.ActiveMonitor);
+                    break;
+            }
         }
 
         private void RectangleRegion_MouseDown(object sender, MouseEventArgs e)
@@ -168,17 +290,37 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void RectangleRegion_KeyDown(object sender, KeyEventArgs e)
+        private void MonitorKey(int index)
         {
-            switch (e.KeyData)
+            if (index == 0)
             {
-                case Keys.F1:
-                    Config.ShowTips = !Config.ShowTips;
-                    break;
-                case Keys.Control | Keys.C:
-                    CopyAreaInfo();
-                    break;
+                index = 10;
             }
+
+            index--;
+
+            MonitorIndex = index;
+
+            Close(RegionResult.Monitor);
+        }
+
+        public void Close(RegionResult result)
+        {
+            Result = result;
+
+            Close();
+        }
+
+        public void Pause()
+        {
+            pause = true;
+        }
+
+        public void Resume()
+        {
+            pause = false;
+
+            Invalidate();
         }
 
         private void CopyAreaInfo()
@@ -198,19 +340,95 @@ namespace ShareX.ScreenCaptureLib
             ClipboardHelpers.CopyText(clipboardText);
         }
 
-        public override WindowInfo GetWindowInfo()
+        public WindowInfo GetWindowInfo()
         {
             return ShapeManager.FindSelectedWindowInfo(CurrentPosition);
         }
 
-        protected override void Update()
+        private void Update()
         {
-            base.Update();
+            if (!timerStart.IsRunning)
+            {
+                timerStart.Start();
+                timerFPS.Start();
+            }
+
+            InputManager.Update();
+
+            DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
+
+            if (objects.All(x => !x.IsDragging))
+            {
+                for (int i = 0; i < objects.Count(); i++)
+                {
+                    DrawableObject obj = objects[i];
+
+                    if (obj.Visible)
+                    {
+                        obj.IsCursorHover = obj.Rectangle.Contains(InputManager.MousePosition0Based);
+
+                        if (obj.IsCursorHover)
+                        {
+                            if (InputManager.IsMousePressed(MouseButtons.Left))
+                            {
+                                obj.IsDragging = true;
+                            }
+
+                            for (int y = i + 1; y < objects.Count(); y++)
+                            {
+                                objects[y].IsCursorHover = false;
+                            }
+
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (InputManager.IsMouseReleased(MouseButtons.Left))
+                {
+                    foreach (DrawableObject obj in objects)
+                    {
+                        obj.IsDragging = false;
+                    }
+                }
+            }
+
+            borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
 
             ShapeManager.Update();
         }
 
-        protected override void Draw(Graphics g)
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            //base.OnPaintBackground(e);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            Update();
+
+            Graphics g = e.Graphics;
+            g.CompositingMode = CompositingMode.SourceCopy;
+            g.FillRectangle(backgroundBrush, ScreenRectangle0Based);
+            g.CompositingMode = CompositingMode.SourceOver;
+
+            Draw(g);
+
+            if (Config.ShowFPS)
+            {
+                CheckFPS();
+                DrawFPS(g, 10);
+            }
+
+            if (!pause)
+            {
+                Invalidate();
+            }
+        }
+
+        private void Draw(Graphics g)
         {
             // Draw snap rectangles
             if (ShapeManager.IsCreating && ShapeManager.IsSnapResizing)
@@ -347,6 +565,35 @@ namespace ShareX.ScreenCaptureLib
             {
                 DrawCrosshair(g);
             }
+        }
+
+        private void DrawObjects(Graphics g)
+        {
+            foreach (DrawableObject drawObject in DrawableObjects)
+            {
+                if (drawObject.Visible)
+                {
+                    drawObject.Draw(g);
+                }
+            }
+        }
+
+        private void CheckFPS()
+        {
+            frameCount++;
+
+            if (timerFPS.ElapsedMilliseconds >= 1000)
+            {
+                FPS = (int)(frameCount / timerFPS.Elapsed.TotalSeconds);
+                frameCount = 0;
+                timerFPS.Reset();
+                timerFPS.Start();
+            }
+        }
+
+        private void DrawFPS(Graphics g, int offset)
+        {
+            ImageHelpers.DrawTextWithShadow(g, FPS.ToString(), new Point(offset, offset), infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
         }
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
@@ -832,7 +1079,48 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected override Image GetOutputImage()
+        public Image GetResultImage()
+        {
+            if (Result == RegionResult.Region)
+            {
+                using (Image img = GetOutputImage())
+                {
+                    return RegionCaptureHelpers.ApplyRegionPathToImage(img, regionFillPath);
+                }
+            }
+            else if (Result == RegionResult.Fullscreen)
+            {
+                return GetOutputImage();
+            }
+            else if (Result == RegionResult.Monitor)
+            {
+                Screen[] screens = Screen.AllScreens;
+
+                if (MonitorIndex < screens.Length)
+                {
+                    Screen screen = screens[MonitorIndex];
+                    Rectangle screenRect = CaptureHelpers.ScreenToClient(screen.Bounds);
+
+                    using (Image img = GetOutputImage())
+                    {
+                        return ImageHelpers.CropImage(img, screenRect);
+                    }
+                }
+            }
+            else if (Result == RegionResult.ActiveMonitor)
+            {
+                Rectangle activeScreenRect = CaptureHelpers.GetActiveScreenBounds0Based();
+
+                using (Image img = GetOutputImage())
+                {
+                    return ImageHelpers.CropImage(img, activeScreenRect);
+                }
+            }
+
+            return null;
+        }
+
+        private Image GetOutputImage()
         {
             return ShapeManager.RenderOutputImage(Image);
         }
@@ -848,6 +1136,37 @@ namespace ShareX.ScreenCaptureLib
             {
                 bmpBackgroundImage.Dispose();
             }
+
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+
+            if (backgroundBrush != null) backgroundBrush.Dispose();
+            if (backgroundHighlightBrush != null) backgroundHighlightBrush.Dispose();
+            if (borderPen != null) borderPen.Dispose();
+            if (borderDotPen != null) borderDotPen.Dispose();
+            if (nodeBackgroundBrush != null) nodeBackgroundBrush.Dispose();
+            if (infoFont != null) infoFont.Dispose();
+            if (infoFontMedium != null) infoFontMedium.Dispose();
+            if (infoFontBig != null) infoFontBig.Dispose();
+            if (textBackgroundBrush != null) textBackgroundBrush.Dispose();
+            if (textBackgroundPenWhite != null) textBackgroundPenWhite.Dispose();
+            if (textBackgroundPenBlack != null) textBackgroundPenBlack.Dispose();
+            if (markerPen != null) markerPen.Dispose();
+
+            if (regionFillPath != null)
+            {
+                if (LastRegionFillPath != null) LastRegionFillPath.Dispose();
+                LastRegionFillPath = regionFillPath;
+            }
+            else
+            {
+                if (regionFillPath != null) regionFillPath.Dispose();
+                if (regionDrawPath != null) regionDrawPath.Dispose();
+            }
+
+            if (Image != null) Image.Dispose();
 
             base.Dispose(disposing);
         }
