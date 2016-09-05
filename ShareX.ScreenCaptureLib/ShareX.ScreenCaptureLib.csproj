@@ -123,7 +123,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screencast\ImageCache.cs" />
-    <Compile Include="LocationInfo.cs" />
+    <Compile Include="RegionHelpers\LocationInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,11 +137,11 @@
     <Compile Include="RegionHelpers\InputManager.cs" />
     <Compile Include="RegionHelpers\MouseState.cs" />
     <Compile Include="RegionHelpers\ResizeNode.cs" />
-    <Compile Include="RegionHelpers\RegionCaptureHelpers.cs" />
+    <Compile Include="RegionCaptureHelpers.cs" />
     <Compile Include="ScrollingCaptureOptions.cs" />
     <Compile Include="Shapes\Region\RoundedRectangleRegionShape.cs" />
-    <Compile Include="SimpleWindowInfo.cs" />
-    <Compile Include="SnapSize.cs" />
+    <Compile Include="RegionHelpers\SimpleWindowInfo.cs" />
+    <Compile Include="RegionHelpers\SnapSize.cs" />
     <Compile Include="RegionCaptureOptions.cs" />
     <Compile Include="Screencast\ScreenRecorder.cs" />
     <Compile Include="Screencast\HardDiskCache.cs" />
@@ -150,8 +150,8 @@
     <Compile Include="Screenshot_Transparent.cs" />
     <Compile Include="WebpageCapture.cs" />
     <Compile Include="WebpageCaptureOptions.cs" />
-    <Compile Include="WindowsList.cs" />
-    <Compile Include="WindowsRectangleList.cs" />
+    <Compile Include="RegionHelpers\WindowsList.cs" />
+    <Compile Include="RegionHelpers\WindowsRectangleList.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
