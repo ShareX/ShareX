@@ -164,6 +164,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tick.png" />
     <None Include="Resources\image.png" />
     <None Include="Resources\layer-shape-polygon.png" />
     <None Include="Resources\layer-shape-curve.png" />

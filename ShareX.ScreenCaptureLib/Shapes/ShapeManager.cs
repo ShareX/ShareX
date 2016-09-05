@@ -257,7 +257,26 @@ namespace ShareX.ScreenCaptureLib
 
             #region Main
 
-            ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Cancel_capture);
+            if (form.Mode == RegionCaptureMode.Editor)
+            {
+                ToolStripMenuItem tsmiCompleteEdit = new ToolStripMenuItem("Run after capture tasks");
+                tsmiCompleteEdit.Image = Resources.tick;
+                tsmiCompleteEdit.Click += (sender, e) => form.Close(RegionResult.Region);
+                cmsContextMenu.Items.Add(tsmiCompleteEdit);
+            }
+
+            string buttonText;
+
+            if (form.Mode == RegionCaptureMode.Editor)
+            {
+                buttonText = "Cancel annotation";
+            }
+            else
+            {
+                buttonText = Resources.ShapeManager_CreateContextMenu_Cancel_capture;
+            }
+
+            ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem(buttonText);
             tsmiCancelCapture.Image = Resources.prohibition;
             tsmiCancelCapture.Click += (sender, e) => form.Close(RegionResult.Close);
             cmsContextMenu.Items.Add(tsmiCancelCapture);
