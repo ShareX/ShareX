@@ -484,7 +484,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            PointInfo pointInfo = RegionCaptureHelpers.GetPointInfo(taskSettings.CaptureSettings.SurfaceOptions);
+            PointInfo pointInfo = RegionCaptureTasks.GetPointInfo(taskSettings.CaptureSettings.SurfaceOptions);
 
             if (pointInfo != null)
             {
@@ -606,7 +606,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                Image img = RegionCaptureHelpers.AnnotateImage(filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+                Image img = RegionCaptureTasks.AnnotateImage(filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
 
                 if (img != null)
                 {
@@ -671,14 +671,14 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            RegionCaptureHelpers.ShowScreenRuler(taskSettings.CaptureSettings.SurfaceOptions);
+            RegionCaptureTasks.ShowScreenRuler(taskSettings.CaptureSettings.SurfaceOptions);
         }
 
         public static void OpenOCR(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (Image img = RegionCaptureHelpers.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+            using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
             {
                 if (img != null)
                 {

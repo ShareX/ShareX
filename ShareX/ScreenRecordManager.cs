@@ -134,7 +134,7 @@ namespace ShareX
             switch (startMethod)
             {
                 case ScreenRecordStartMethod.Region:
-                    RegionCaptureHelpers.GetRectangleRegion(out captureRectangle, taskSettings.CaptureSettings.SurfaceOptions);
+                    RegionCaptureTasks.GetRectangleRegion(out captureRectangle, taskSettings.CaptureSettings.SurfaceOptions);
                     break;
                 case ScreenRecordStartMethod.ActiveWindow:
                     if (taskSettings.CaptureSettings.CaptureClientArea)

@@ -31,7 +31,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public static class RegionCaptureHelpers
+    public static class RegionCaptureTasks
     {
         public static Image GetRegionImage(RegionCaptureOptions options)
         {

@@ -137,7 +137,7 @@
     <Compile Include="RegionHelpers\InputManager.cs" />
     <Compile Include="RegionHelpers\MouseState.cs" />
     <Compile Include="RegionHelpers\ResizeNode.cs" />
-    <Compile Include="RegionCaptureHelpers.cs" />
+    <Compile Include="RegionCaptureTasks.cs" />
     <Compile Include="ScrollingCaptureOptions.cs" />
     <Compile Include="Shapes\Region\RoundedRectangleRegionShape.cs" />
     <Compile Include="RegionHelpers\SimpleWindowInfo.cs" />

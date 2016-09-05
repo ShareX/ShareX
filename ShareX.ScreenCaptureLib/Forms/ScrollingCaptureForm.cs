@@ -126,7 +126,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Thread.Sleep(250);
 
-                SimpleWindowInfo simpleWindowInfo = RegionCaptureHelpers.GetWindowInfo(RegionCaptureOptions);
+                SimpleWindowInfo simpleWindowInfo = RegionCaptureTasks.GetWindowInfo(RegionCaptureOptions);
 
                 if (simpleWindowInfo != null)
                 {
@@ -163,7 +163,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Rectangle rect;
 
-                if (RegionCaptureHelpers.GetRectangleRegion(out rect, RegionCaptureOptions))
+                if (RegionCaptureTasks.GetRectangleRegion(out rect, RegionCaptureOptions))
                 {
                     selectedRectangle = rect;
                     lblSelectedRectangle.Text = selectedRectangle.ToString();

@@ -2260,7 +2260,7 @@ namespace ShareX
                         {
                             using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
                             {
-                                return RegionCaptureHelpers.ApplyRegionPathToImage(screenshot, RegionCaptureForm.LastRegionFillPath);
+                                return RegionCaptureTasks.ApplyRegionPathToImage(screenshot, RegionCaptureForm.LastRegionFillPath);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
