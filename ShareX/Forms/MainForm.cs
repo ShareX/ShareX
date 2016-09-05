@@ -1038,7 +1038,7 @@ namespace ShareX
 
         private void tsmiImageEditor_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenImageEditor();
+            TaskHelpers.AnnotateImage();
         }
 
         private void tsmiImageEffects_Click(object sender, EventArgs e)
@@ -1897,7 +1897,7 @@ namespace ShareX
                     TaskHelpers.OpenScreenColorPicker(safeTaskSettings);
                     break;
                 case HotkeyType.ImageEditor:
-                    TaskHelpers.OpenImageEditor();
+                    TaskHelpers.AnnotateImage();
                     break;
                 case HotkeyType.ImageEffects:
                     TaskHelpers.OpenImageEffects();

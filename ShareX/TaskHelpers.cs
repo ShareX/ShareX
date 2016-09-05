@@ -201,12 +201,12 @@ namespace ShareX
             return true;
         }
 
-        public static void AnnotateImage(string filePath)
+        public static void AnnotateImageUsingGreenshot(string filePath)
         {
-            AnnotateImage(null, filePath);
+            AnnotateImageUsingGreenshot(null, filePath);
         }
 
-        public static Image AnnotateImage(Image img, string imgPath)
+        public static Image AnnotateImageUsingGreenshot(Image img, string imgPath)
         {
             return ImageHelpers.AnnotateImage(img, imgPath, !Program.Sandbox, Program.PersonalFolder,
                 x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
@@ -581,39 +581,60 @@ namespace ShareX
             thumbnailerForm.Show();
         }
 
-        public static void OpenImageEditor(string filePath = null, TaskSettings taskSettings = null)
+        public static void AnnotateImage(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (string.IsNullOrEmpty(filePath))
+            if (Clipboard.ContainsImage() && MessageBox.Show(Resources.TaskHelpers_OpenImageEditor_Your_clipboard_contains_image,
+                Resources.TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (Clipboard.ContainsImage() &&
-                    MessageBox.Show(Resources.TaskHelpers_OpenImageEditor_Your_clipboard_contains_image,
-                    Resources.TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                using (Image img = ClipboardHelpers.GetImage())
                 {
-                    using (Image img = ClipboardHelpers.GetImage())
+                    if (img != null)
                     {
-                        if (img != null)
+                        if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
                         {
-                            AnnotateImage(img, null);
-                            return;
+                            Image result = RegionCaptureTasks.AnnotateImage(img, taskSettings.CaptureSettingsReference.SurfaceOptions);
+
+                            if (result != null)
+                            {
+                                UploadManager.RunImageTask(result, taskSettings);
+                            }
                         }
+                        else
+                        {
+                            AnnotateImageUsingGreenshot(img, null);
+                        }
+
+                        return;
                     }
                 }
-
-                filePath = ImageHelpers.OpenImageFileDialog();
             }
 
+            string filePath = ImageHelpers.OpenImageFileDialog();
+
+            AnnotateImage(filePath, taskSettings);
+        }
+
+        public static void AnnotateImage(string filePath, TaskSettings taskSettings = null)
+        {
             if (!string.IsNullOrEmpty(filePath))
             {
-                Image img = RegionCaptureTasks.AnnotateImage(filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                if (img != null)
+                if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
                 {
-                    UploadManager.RunImageTask(img, taskSettings);
-                }
+                    Image result = RegionCaptureTasks.AnnotateImage(filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
 
-                //AnnotateImage(filePath);
+                    if (result != null)
+                    {
+                        UploadManager.RunImageTask(result, taskSettings);
+                    }
+                }
+                else
+                {
+                    AnnotateImageUsingGreenshot(filePath);
+                }
             }
         }
 

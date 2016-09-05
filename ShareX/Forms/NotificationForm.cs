@@ -193,7 +193,7 @@ namespace ShareX
                 {
                     case ToastClickAction.AnnotateImage:
                         if (!string.IsNullOrEmpty(ToastConfig.FilePath) && Helpers.IsImageFile(ToastConfig.FilePath))
-                            TaskHelpers.AnnotateImage(ToastConfig.FilePath);
+                            TaskHelpers.AnnotateImageUsingGreenshot(ToastConfig.FilePath);
                         break;
                     case ToastClickAction.CopyImageToClipboard:
                         if (!string.IsNullOrEmpty(ToastConfig.FilePath))

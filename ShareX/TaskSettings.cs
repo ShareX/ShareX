@@ -399,6 +399,9 @@ namespace ShareX
         [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
         public bool AutoClearClipboard { get; set; }
 
+        [Category("General"), DefaultValue(false), Description("Experimental setting to use ShareX region capture to annotate images instead of Greenshot image editor.")]
+        public bool UseShareXForAnnotation { get; set; }
+
         [Category("Sound"), DefaultValue(false), Description("Enable/disable custom capture sound.")]
         public bool UseCustomCaptureSound { get; set; }
 
