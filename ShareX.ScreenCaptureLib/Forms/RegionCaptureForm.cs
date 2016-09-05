@@ -195,36 +195,33 @@ namespace ShareX.ScreenCaptureLib
                 backgroundBrush = new TextureBrush(Image) { WrapMode = WrapMode.Clamp };
             }
 
-            if (Config != null)
+            ShapeManager = new ShapeManager(this);
+            ShapeManager.WindowCaptureMode = Config.DetectWindows;
+            ShapeManager.IncludeControls = Config.DetectControls;
+
+            if (IsAnnotationMode)
             {
-                ShapeManager = new ShapeManager(this);
-                ShapeManager.WindowCaptureMode = Config.DetectWindows;
-                ShapeManager.IncludeControls = Config.DetectControls;
+                ShapeManager.CurrentShapeTypeChanged += ShapeManager_CurrentShapeTypeChanged;
 
-                if (IsAnnotationMode)
+                ShapeManager_CurrentShapeTypeChanged(ShapeManager.CurrentShapeType);
+            }
+
+            if (Mode == RegionCaptureMode.OneClick || ShapeManager.WindowCaptureMode)
+            {
+                IntPtr handle = Handle;
+
+                TaskEx.Run(() =>
                 {
-                    ShapeManager.CurrentShapeTypeChanged += ShapeManager_CurrentShapeTypeChanged;
+                    WindowsRectangleList wla = new WindowsRectangleList();
+                    wla.IgnoreHandle = handle;
+                    wla.IncludeChildWindows = ShapeManager.IncludeControls;
+                    ShapeManager.Windows = wla.GetWindowInfoListAsync(5000);
+                });
+            }
 
-                    ShapeManager_CurrentShapeTypeChanged(ShapeManager.CurrentShapeType);
-                }
-
-                if (Mode == RegionCaptureMode.OneClick || ShapeManager.WindowCaptureMode)
-                {
-                    IntPtr handle = Handle;
-
-                    TaskEx.Run(() =>
-                    {
-                        WindowsRectangleList wla = new WindowsRectangleList();
-                        wla.IgnoreHandle = handle;
-                        wla.IncludeChildWindows = ShapeManager.IncludeControls;
-                        ShapeManager.Windows = wla.GetWindowInfoListAsync(5000);
-                    });
-                }
-
-                if (Config.UseCustomInfoText || Mode == RegionCaptureMode.ScreenColorPicker)
-                {
-                    bmpBackgroundImage = new Bitmap(Image);
-                }
+            if (Config.UseCustomInfoText || Mode == RegionCaptureMode.ScreenColorPicker)
+            {
+                bmpBackgroundImage = new Bitmap(Image);
             }
         }
 
@@ -1096,7 +1093,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 foreach (BaseShape shape in ShapeManager.Shapes)
                 {
-                    shape.Rectangle = new Rectangle(shape.Rectangle.X - ImageRectangle.X, shape.Rectangle.Y - ImageRectangle.Y, shape.Rectangle.Width, shape.Rectangle.Height);
+                    shape.Move(-ImageRectangle.X, -ImageRectangle.Y);
                 }
 
                 return GetOutputImage();

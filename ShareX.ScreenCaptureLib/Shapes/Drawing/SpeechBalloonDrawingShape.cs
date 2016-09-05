@@ -60,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
         {
             base.OnCreated();
 
-            TailPosition = Rectangle.Location.Add(-30, -30);
+            TailPosition = Rectangle.Location.Add(0, Rectangle.Height + 30);
         }
 
         public override void OnNodeVisible()
@@ -80,6 +80,13 @@ namespace ShareX.ScreenCaptureLib
             {
                 TailPosition = InputManager.MousePosition0Based;
             }
+        }
+
+        public override void Move(int x, int y)
+        {
+            base.Move(x, y);
+
+            TailPosition = TailPosition.Add(x, y);
         }
 
         public override void OnDraw(Graphics g)
