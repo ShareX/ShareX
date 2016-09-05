@@ -75,11 +75,14 @@ namespace ShareX.ScreenCaptureLib
         {
             if (BlurRadius > 1)
             {
-                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
+                Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+                rect.Intersect(Rectangle);
+
+                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
                 {
                     ImageHelpers.Blur(croppedImage, BlurRadius);
 
-                    g.DrawImage(croppedImage, Rectangle);
+                    g.DrawImage(croppedImage, rect);
                 }
             }
         }

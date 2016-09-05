@@ -75,10 +75,13 @@ namespace ShareX.ScreenCaptureLib
         {
             if (PixelSize > 1)
             {
-                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
+                Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+                rect.Intersect(Rectangle);
+
+                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
                 using (Bitmap pixelatedImage = ImageHelpers.Pixelate(croppedImage, PixelSize))
                 {
-                    g.DrawImage(pixelatedImage, Rectangle);
+                    g.DrawImage(pixelatedImage, rect);
                 }
             }
         }

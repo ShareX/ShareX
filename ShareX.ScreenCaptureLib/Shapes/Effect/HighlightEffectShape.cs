@@ -70,11 +70,14 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDrawFinal(Graphics g, Bitmap bmp)
         {
-            using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, Rectangle))
+            Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            rect.Intersect(Rectangle);
+
+            using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
             {
                 ImageHelpers.HighlightImage(croppedImage, HighlightColor);
 
-                g.DrawImage(croppedImage, Rectangle);
+                g.DrawImage(croppedImage, rect);
             }
         }
     }
