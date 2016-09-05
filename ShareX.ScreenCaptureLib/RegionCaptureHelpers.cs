@@ -150,30 +150,38 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static void AnnotateImage(string filePath, RegionCaptureOptions options)
+        public static Image AnnotateImage(string filePath, RegionCaptureOptions options)
         {
             if (File.Exists(filePath))
             {
                 using (Image img = ImageHelpers.LoadImage(filePath))
-                using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Editor))
                 {
-                    form.Config = GetRegionCaptureOptions(options);
-                    form.Config.DetectWindows = false;
-                    form.Config.ShowTips = false;
-                    form.Config.UseDimming = false;
-
-                    form.Prepare(img);
-                    form.ShowDialog();
-
-                    if (form.Result == RegionResult.Region)
-                    {
-                        using (Image result = form.GetResultImage())
-                        {
-                            ImageHelpers.SaveImage(result, filePath);
-                        }
-                    }
+                    return AnnotateImage(img, options);
                 }
             }
+
+            return null;
+        }
+
+        public static Image AnnotateImage(Image img, RegionCaptureOptions options)
+        {
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Editor))
+            {
+                form.Config = GetRegionCaptureOptions(options);
+                form.Config.DetectWindows = false;
+                form.Config.ShowTips = false;
+                form.Config.UseDimming = false;
+
+                form.Prepare(img);
+                form.ShowDialog();
+
+                if (form.Result == RegionResult.Region)
+                {
+                    return form.GetResultImage();
+                }
+            }
+
+            return null;
         }
 
         public static Image ApplyRegionPathToImage(Image img, GraphicsPath gp)

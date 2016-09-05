@@ -606,7 +606,13 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                RegionCaptureHelpers.AnnotateImage(filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+                Image img = RegionCaptureHelpers.AnnotateImage(filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+
+                if (img != null)
+                {
+                    UploadManager.RunImageTask(img, taskSettings);
+                }
+
                 //AnnotateImage(filePath);
             }
         }
