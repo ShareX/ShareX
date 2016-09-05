@@ -160,7 +160,14 @@ namespace ShareX.ScreenCaptureLib
 
             if (Mode == RegionCaptureMode.Editor)
             {
-                ImageRectangle = new Rectangle(ScreenRectangle.Width / 2 - Image.Width / 2, ScreenRectangle.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
+                Rectangle rect = CaptureHelpers.GetActiveScreenBounds0Based();
+
+                if (Image.Width > rect.Width || Image.Height > rect.Height)
+                {
+                    rect = ScreenRectangle0Based;
+                }
+
+                ImageRectangle = new Rectangle(rect.X + rect.Width / 2 - Image.Width / 2, rect.Y + rect.Height / 2 - Image.Height / 2, Image.Width, Image.Height);
 
                 using (Image background = ImageHelpers.DrawCheckers(ScreenRectangle0Based.Width, ScreenRectangle0Based.Height))
                 using (Graphics g = Graphics.FromImage(background))
