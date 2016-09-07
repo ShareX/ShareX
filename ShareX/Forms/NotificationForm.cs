@@ -187,6 +187,8 @@ namespace ShareX
         {
             tDuration.Stop();
 
+            Close();
+
             if (e.Button == MouseButtons.Left)
             {
                 switch (ToastConfig.Action)
@@ -221,8 +223,6 @@ namespace ShareX
                         break;
                 }
             }
-
-            Close();
         }
 
         private void NotificationForm_MouseEnter(object sender, EventArgs e)
