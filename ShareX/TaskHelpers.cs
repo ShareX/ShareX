@@ -201,26 +201,6 @@ namespace ShareX
             return true;
         }
 
-        public static void AnnotateImageUsingGreenshot(string filePath)
-        {
-            AnnotateImageUsingGreenshot(null, filePath);
-        }
-
-        public static Image AnnotateImageUsingGreenshot(Image img, string imgPath)
-        {
-            return ImageHelpers.AnnotateImage(img, imgPath, !Program.Sandbox, Program.PersonalFolder,
-                x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
-                x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
-                (x, filePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)),
-                (x, filePath) =>
-                {
-                    string newFilePath = null;
-                    Program.MainForm.InvokeSafe(() => newFilePath = ImageHelpers.SaveImageFileDialog(x, filePath));
-                    return newFilePath;
-                },
-                x => Program.MainForm.InvokeSafe(() => PrintImage(x)));
-        }
-
         public static void PrintImage(Image img)
         {
             if (Program.Settings.DontShowPrintSettingsDialog)
@@ -594,12 +574,7 @@ namespace ShareX
                     {
                         if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
                         {
-                            Image result = RegionCaptureTasks.AnnotateImage(img, taskSettings.CaptureSettingsReference.SurfaceOptions);
-
-                            if (result != null)
-                            {
-                                UploadManager.RunImageTask(result, taskSettings);
-                            }
+                            AnnotateImageUsingShareX(img, taskSettings);
                         }
                         else
                         {
@@ -624,18 +599,48 @@ namespace ShareX
 
                 if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
                 {
-                    Image result = RegionCaptureTasks.AnnotateImage(filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
-
-                    if (result != null)
-                    {
-                        UploadManager.RunImageTask(result, taskSettings);
-                    }
+                    AnnotateImageUsingShareX(filePath, taskSettings);
                 }
                 else
                 {
-                    AnnotateImageUsingGreenshot(filePath);
+                    AnnotateImageUsingGreenshot(null, filePath);
                 }
             }
+        }
+
+        public static void AnnotateImageUsingShareX(Image img, TaskSettings taskSettings = null)
+        {
+            Image result = RegionCaptureTasks.AnnotateImage(img, taskSettings.CaptureSettingsReference.SurfaceOptions);
+
+            if (result != null)
+            {
+                UploadManager.RunImageTask(result, taskSettings);
+            }
+        }
+
+        public static void AnnotateImageUsingShareX(string filePath, TaskSettings taskSettings = null)
+        {
+            Image result = RegionCaptureTasks.AnnotateImage(filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+
+            if (result != null)
+            {
+                UploadManager.RunImageTask(result, taskSettings);
+            }
+        }
+
+        public static Image AnnotateImageUsingGreenshot(Image img, string imgPath)
+        {
+            return ImageHelpers.AnnotateImage(img, imgPath, !Program.Sandbox, Program.PersonalFolder,
+                x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
+                x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
+                (x, filePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)),
+                (x, filePath) =>
+                {
+                    string newFilePath = null;
+                    Program.MainForm.InvokeSafe(() => newFilePath = ImageHelpers.SaveImageFileDialog(x, filePath));
+                    return newFilePath;
+                },
+                x => Program.MainForm.InvokeSafe(() => PrintImage(x)));
         }
 
         public static void OpenImageEffects()
