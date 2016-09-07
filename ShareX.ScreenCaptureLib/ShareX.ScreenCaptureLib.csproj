@@ -164,6 +164,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\drive-globe.png" />
+    <None Include="Resources\disks-black.png" />
+    <None Include="Resources\disk-black.png" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\image.png" />
     <None Include="Resources\layer-shape-polygon.png" />
@@ -199,6 +203,7 @@
     <None Include="Resources\cross.png" />
     <None Include="Resources\counter-reset.png" />
     <None Include="Resources\balloon-box-left.png" />
+    <None Include="Resources\clipboard.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>

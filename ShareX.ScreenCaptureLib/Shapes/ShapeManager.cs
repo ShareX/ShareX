@@ -255,7 +255,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             };
 
-            #region Main
+            #region Editor mode
 
             if (form.Mode == RegionCaptureMode.Editor)
             {
@@ -263,7 +263,39 @@ namespace ShareX.ScreenCaptureLib
                 tsmiCompleteEdit.Image = Resources.tick;
                 tsmiCompleteEdit.Click += (sender, e) => form.Close(RegionResult.Region);
                 cmsContextMenu.Items.Add(tsmiCompleteEdit);
+
+                ToolStripMenuItem tsmiSaveImage = new ToolStripMenuItem("Save image");
+                tsmiSaveImage.Image = Resources.disk_black;
+                tsmiSaveImage.Click += (sender, e) => form.Close(RegionResult.Region);
+                cmsContextMenu.Items.Add(tsmiSaveImage);
+
+                ToolStripMenuItem tsmiSaveImageAs = new ToolStripMenuItem("Save image as...");
+                tsmiSaveImageAs.Image = Resources.disks_black;
+                tsmiSaveImageAs.Click += (sender, e) => form.Close(RegionResult.Region);
+                cmsContextMenu.Items.Add(tsmiSaveImageAs);
+
+                ToolStripMenuItem tsmiCopyImage = new ToolStripMenuItem("Copy image to clipboard");
+                tsmiCopyImage.Image = Resources.clipboard;
+                tsmiCopyImage.Click += (sender, e) => form.Close(RegionResult.Region);
+                cmsContextMenu.Items.Add(tsmiCopyImage);
+
+                ToolStripMenuItem tsmiUploadImage = new ToolStripMenuItem("Upload image");
+                tsmiUploadImage.Image = Resources.drive_globe;
+                tsmiUploadImage.Click += (sender, e) => form.Close(RegionResult.Region);
+                cmsContextMenu.Items.Add(tsmiUploadImage);
+
+                ToolStripMenuItem tsmiPrintImage = new ToolStripMenuItem("Print image...");
+                tsmiPrintImage.Image = Resources.printer;
+                tsmiPrintImage.Click += (sender, e) => form.Close(RegionResult.Region);
+                cmsContextMenu.Items.Add(tsmiPrintImage);
+
+                ToolStripSeparator tssEditorMode = new ToolStripSeparator();
+                cmsContextMenu.Items.Add(tssEditorMode);
             }
+
+            #endregion Editor mode
+
+            #region Main
 
             string buttonText;
 
