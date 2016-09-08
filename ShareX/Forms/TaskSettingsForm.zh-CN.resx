@@ -504,4 +504,7 @@
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
     <value>在光标附近显示自定义信息：</value>
   </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>屏幕拾色器格式：</value>
+  </data>
 </root>

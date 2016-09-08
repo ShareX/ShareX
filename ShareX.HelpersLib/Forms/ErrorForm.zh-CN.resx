@@ -136,4 +136,7 @@
     <value>错误
 错误2</value>
   </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
 </root>

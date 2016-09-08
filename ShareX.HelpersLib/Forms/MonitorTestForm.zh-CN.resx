@@ -159,4 +159,7 @@
   <data name="rbShapes.Text" xml:space="preserve">
     <value>形状:</value>
   </data>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>屏幕撕裂测试</value>
+  </data>
 </root>
