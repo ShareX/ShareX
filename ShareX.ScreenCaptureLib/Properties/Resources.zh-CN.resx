@@ -150,7 +150,7 @@
     <value>[Ctrl + C] 复制位置和大小</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
-    <value>[Right click] [Delete] 取消区域选择</value>
+    <value>[右键单击] [Delete] 取消区域选择</value>
   </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>开始捕捉</value>
@@ -159,28 +159,28 @@
     <value>[空格] 全屏捕捉</value>
   </data>
   <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
-    <value>[松开左键] [插入]完成区域选择</value>
+    <value>[松开左键] [Insert] 完成区域选择</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
     <value>[按住左键单击选择]移动区域</value>
   </data>
   <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Delete]删除区域</value>
+    <value>[Delete] 删除区域</value>
   </data>
   <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
-    <value>[F1]隐藏提示</value>
+    <value>[F1] 隐藏提示</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
-    <value>[按住左键] [Insert]启动区域选择</value>
+    <value>[按住左键] [Insert] 启动区域选择</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>停止捕捉</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
-    <value>[按住Alt键]重置捕捉选择区域至预设大小</value>
+    <value>[按住Alt键] 重置捕捉选择区域至预设大小</value>
   </data>
   <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
-    <value>[左键双击] [Enter]捕捉区域</value>
+    <value>[左键双击] [Enter] 捕捉区域</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
     <value>[Ctrl + C] 复制信息</value>
@@ -198,42 +198,159 @@
     <value>FFmpeg下载失败。</value>
   </data>
   <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
-    <value>[方向键]移动光标的位置</value>
+    <value>[方向键 ] 移动光标的位置</value>
   </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
     <value>[〜]捕获活动显示器</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
-    <value>[按住Shift]比例调整</value>
+    <value>[按住Shift] 比例调整</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>矩形捕捉光</value>
   </data>
   <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
-    <value>[1，2，3...0]捕获显示器</value>
+    <value>[1，2，3...0] 捕获显示器</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
-    <value>[鼠标滚轮]互换模式</value>
+    <value>[鼠标滚轮] 互换模式</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
-    <value>[1]选择捕捉模式</value>
+    <value>[1] 选择捕捉模式</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
-    <value>[2]选择矩形绘图模式</value>
+    <value>[2] 选择矩形绘图模式</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
-    <value>[3]选择画笔画模式</value>
+    <value>[3] 选择画笔画模式</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
-    <value>[Shift]更改边框颜色</value>
+    <value>[Shift] 更改边框颜色</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
-    <value>[Ctrl +鼠标滚轮]更改边框尺寸</value>
+    <value>[Ctrl +鼠标滚轮] 更改边框尺寸</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
-    <value>[Shift]更改画笔颜色</value>
+    <value>[Shift] 更改画笔颜色</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
-    <value>[Ctrl +鼠标滚轮]更改画笔大小</value>
+    <value>[Ctrl +鼠标滚轮] 更改画笔大小</value>
+  </data>
+  <data name="RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu" xml:space="preserve">
+    <value>提示：右键点击打开选项菜单</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu" xml:space="preserve">
+    <value>[点击右键] [菜单] 打开选项菜单</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
+    <value>[按住Ctrl + 方向键] 移动区域</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster" xml:space="preserve">
+    <value>[按住Shift + 方向键] 调整尺寸或更快的移动区域</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
+    <value>[按住Shift + 方向键] 快速移动光标位置</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>显示FPS</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>高度：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>宽度：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>固定尺寸区域模式</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>显示屏幕宽十字线</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>放大镜像素尺寸：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>放大镜像素数量：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>方形放大镜</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>显示放大镜</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>显示位置和尺寸信息</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
+    <value>显示提示</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>多区域模式</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>捕捉显示器</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>捕捉活动显示器</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>捕捉全屏</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>高亮颜色...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>像素尺寸</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>模糊半径：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>圆角半径：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>填充颜色...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>边框尺寸：</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>边框颜色...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
+    <value>删除所有对象</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Delete_selected_object" xml:space="preserve">
+    <value>删除选定对象</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
+    <value>关闭菜单</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Cancel_capture" xml:space="preserve">
+    <value>取消捕捉</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
+    <value>[鼠标滚轮] 更改当前工具</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool" xml:space="preserve">
+    <value>[Tab] [Mouse 4 click] 选择最后一个区域工具</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
+    <value>[Tab] [Mouse 4 click] 选择最后一个注解工具</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size" xml:space="preserve">
+    <value>[Ctrl +鼠标滚轮] 更改放大镜尺寸</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection" xml:space="preserve">
+    <value>[按住Ctrl键] 移动选择区域</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>捕捉</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>定制</value>
   </data>
 </root>

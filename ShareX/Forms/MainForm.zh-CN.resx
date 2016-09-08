@@ -657,4 +657,10 @@
   <data name="pbTips.ToolTip" xml:space="preserve">
     <value>显示提示和快捷键</value>
   </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>隐藏列</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
 </root>

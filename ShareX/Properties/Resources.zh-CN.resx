@@ -206,7 +206,7 @@
 你要重新启动ShareX？</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>启动屏幕的颜色选择器</value>
+    <value>启动屏幕取色器</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>使用新的名字:</value>
