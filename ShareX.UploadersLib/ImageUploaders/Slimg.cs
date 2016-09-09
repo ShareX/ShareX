@@ -86,7 +86,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             {
                 SlimgResponse response = JsonConvert.DeserializeObject<SlimgResponse>(result.Response);
 
-                while (response != null && response.success && response.data != null)
+                while (!StopUploadRequested && response != null && response.success && response.data != null)
                 {
                     if (response.data.status == 1)
                     {
