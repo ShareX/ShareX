@@ -105,7 +105,11 @@ namespace ShareX
             cbTrayLeftClickAction.SelectedIndex = (int)Program.Settings.TrayLeftClickAction;
             cbTrayMiddleClickAction.SelectedIndex = (int)Program.Settings.TrayMiddleClickAction;
 
+#if STEAM
+            cbCheckPreReleaseUpdates.Visible = false;
+#else
             cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
+#endif
 
             // Integration
             cbStartWithWindows.Checked = IntegrationHelpers.CheckStartupShortcut();
