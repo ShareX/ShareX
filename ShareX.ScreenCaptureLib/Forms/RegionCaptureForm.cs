@@ -41,6 +41,12 @@ namespace ShareX.ScreenCaptureLib
     {
         public static GraphicsPath LastRegionFillPath { get; private set; }
 
+        public event Action<Image, string> SaveImageRequested;
+        public event Func<Image, string, string> SaveImageAsRequested;
+        public event Action<Image> CopyImageRequested;
+        public event Action<Image> UploadImageRequested;
+        public event Action<Image> PrintImageRequested;
+
         public RegionCaptureOptions Config { get; set; }
         public Rectangle ScreenRectangle { get; private set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
@@ -1140,6 +1146,46 @@ namespace ShareX.ScreenCaptureLib
         private Image GetOutputImage()
         {
             return ShapeManager.RenderOutputImage(Image);
+        }
+
+        protected void OnSaveImageRequested(Image img, string filePath)
+        {
+            if (SaveImageRequested != null)
+            {
+                SaveImageRequested(img, filePath);
+            }
+        }
+
+        protected void OnSaveImageAsRequested(Image img, string filePath)
+        {
+            if (SaveImageAsRequested != null)
+            {
+                string newFilePath = SaveImageAsRequested(img, filePath);
+            }
+        }
+
+        protected void OnCopyImageRequested(Image img)
+        {
+            if (CopyImageRequested != null)
+            {
+                CopyImageRequested(img);
+            }
+        }
+
+        protected void OnUploadImageRequested(Image img)
+        {
+            if (UploadImageRequested != null)
+            {
+                UploadImageRequested(img);
+            }
+        }
+
+        protected void OnPrintImageRequested(Image img)
+        {
+            if (PrintImageRequested != null)
+            {
+                PrintImageRequested(img);
+            }
         }
 
         protected override void Dispose(bool disposing)
