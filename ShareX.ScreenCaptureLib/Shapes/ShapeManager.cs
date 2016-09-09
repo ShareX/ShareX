@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -186,7 +187,8 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
         private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
-        private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
+        private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed, allowOptionsMenu;
+        private Stopwatch cmsCloseTimer;
 
         public ShapeManager(RegionCaptureForm form)
         {
@@ -252,6 +254,14 @@ namespace ShareX.ScreenCaptureLib
                 if (e.KeyCode == Keys.Escape)
                 {
                     cmsContextMenu.Close();
+                }
+            };
+
+            cmsContextMenu.Closed += (sender, e) =>
+            {
+                if (e.CloseReason == ToolStripDropDownCloseReason.AppClicked)
+                {
+                    cmsCloseTimer = Stopwatch.StartNew();
                 }
             };
 
@@ -914,6 +924,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_MouseDown(object sender, MouseEventArgs e)
         {
+            allowOptionsMenu = cmsCloseTimer == null || cmsCloseTimer.ElapsedMilliseconds > 100;
+
             if (e.Button == MouseButtons.Left)
             {
                 if (!IsCreating)
@@ -1245,7 +1257,10 @@ namespace ShareX.ScreenCaptureLib
                     DeleteIntersectShape();
                     break;
                 case RegionCaptureAction.OpenOptionsMenu:
-                    OpenOptionsMenu();
+                    if (allowOptionsMenu)
+                    {
+                        OpenOptionsMenu();
+                    }
                     break;
                 case RegionCaptureAction.SwapToolType:
                     SwapShapeType();
