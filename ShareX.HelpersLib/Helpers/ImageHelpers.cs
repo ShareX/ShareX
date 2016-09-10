@@ -1136,6 +1136,8 @@ namespace ShareX.HelpersLib
 
             if (!string.IsNullOrEmpty(ext))
             {
+                ext = ext.ToLowerInvariant();
+
                 switch (ext)
                 {
                     default:
