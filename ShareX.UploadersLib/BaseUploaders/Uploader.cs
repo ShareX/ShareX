@@ -491,10 +491,15 @@ namespace ShareX.UploadersLib
             return new string('-', 20) + DateTime.Now.Ticks.ToString("x");
         }
 
-        private byte[] MakeInputContent(string boundary, string name, string value)
+        private byte[] AppendInputContentValue(string value, bool isValueBase64Encoded = false)
         {
-            string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}\r\n", boundary, name, value);
-            return Encoding.UTF8.GetBytes(format);
+            return isValueBase64Encoded ? Convert.FromBase64String(value.RemoveLeft("Base64Encoded:".Length)) :Encoding.UTF8.GetBytes(value);
+        }
+
+        private byte[] MakeInputContent(string boundary, string name, string value, bool isValueBase64Encoded = false)
+        {
+            string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n", boundary, name);
+            return Encoding.UTF8.GetBytes(format).Concat(AppendInputContentValue(value, isValueBase64Encoded)).Concat(Encoding.UTF8.GetBytes("\r\n")).ToArray();
         }
 
         private byte[] MakeInputContent(string boundary, Dictionary<string, string> contents, bool isFinal = true)
@@ -510,7 +515,7 @@ namespace ShareX.UploadersLib
                     {
                         if (!string.IsNullOrEmpty(content.Key) && !string.IsNullOrEmpty(content.Value))
                         {
-                            bytes = MakeInputContent(boundary, content.Key, content.Value);
+                            bytes = MakeInputContent(boundary, content.Key, content.Value, content.Value.StartsWith("Base64Encoded:"));
                             stream.Write(bytes, 0, bytes.Length);
                         }
                     }

@@ -24,12 +24,16 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json.Linq;
+
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
+using System.Drawing;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
+using ShareX.UploadersLib.Properties;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -37,7 +41,8 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Uplea;
 
-        //public override Icon ServiceIcon = Resources.Mega;
+        public override Icon ServiceIcon => Resources.Uplea;
+
         public override bool CheckConfig(UploadersConfig config)
         {
             return !string.IsNullOrEmpty(config.UpleaApiKey);
@@ -47,6 +52,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new Uplea(config);
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpUplea;
     }
 
     [Localizable(false)]
@@ -80,7 +87,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private UpleaNode GetBestNode()
         {
             JObject getBestNodeResponse = JObject.Parse(SendRequest(HttpMethod.POST, upleaBaseUrl + "get-best-node"));
-            return new UpleaNode((string)getBestNodeResponse.SelectToken("result.token"), (string)getBestNodeResponse.SelectToken("result.name"));
+            return new UpleaNode((string)getBestNodeResponse.SelectToken("result.name"), (string)getBestNodeResponse.SelectToken("result.token"));
         }
 
         public string GetApiKey(string username, string password)
@@ -125,6 +132,29 @@ namespace ShareX.UploadersLib.FileUploaders
             return string.Empty;
         }
 
+        public override UploadResult Upload(Stream stream, string fileName)
+        {
+            var upleaBestNode = GetBestNode();
+
+            byte[] fileToUpload = new byte[stream.Length];
+            stream.Read(fileToUpload, 0, fileToUpload.Length);
+
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("api_key", upleaConfig.UpleaApiKey);
+            args.Add("token", upleaBestNode.Token);
+            args.Add("file_id[]", string.Format("{0}", Guid.NewGuid()));
+            args.Add(string.Format("files[]\"; filename=\"{0}", fileName), "Base64Encoded:" + Convert.ToBase64String(fileToUpload));
+
+            UploadResult result = UploadData(stream, string.Format("http://{0}/", upleaBestNode.Name), fileName, "file", args, contentType: "multipart/form-data");
+
+            result.IsURLExpected = true;
+
+            JObject responseREsult = JObject.Parse(result.Response);
+            result.URL = (string)responseREsult.SelectToken("files[0].url");
+
+            return result;
+        }
+
         private sealed class UpleaNode
         {
             public UpleaNode(string name, string token)
@@ -137,10 +167,7 @@ namespace ShareX.UploadersLib.FileUploaders
             public string Token { get; private set; }
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public sealed class UpleaUserInformation
         {
