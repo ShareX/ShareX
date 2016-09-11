@@ -578,6 +578,14 @@ namespace ShareX.UploadersLib
             txtStreamableUsername.Enabled = txtStreamablePassword.Enabled = !Config.StreamableAnonymous;
             cbStreamableUseDirectURL.Checked = Config.StreamableUseDirectURL;
 
+            // Uplea
+            txtUpleaApiKey.Text = Config.UpleaApiKey;
+            txtUpleaUsername.Text = Config.UpleaUsername;
+            txtUpleaPassword.Text = Config.UpleaPassword;
+            txtUpleaEmailAddress.Text = Config.UpleaEmailAddress;
+            cbUpleaInstantDownloadEnabled.Checked = Config.UpleaInstantDownloadEnabled;
+            cbUpleaIsPremium.Checked = Config.UpleaIsPremiumMember;
+
             #endregion File uploaders
 
             #region URL shorteners
@@ -3182,5 +3190,51 @@ namespace ShareX.UploadersLib
         #endregion Custom Uploaders
 
         #endregion Other Uploaders
+
+        private void btnUpleaLogin_Click(object sender, EventArgs e)
+        {
+            Uplea uplea = new Uplea();
+            string apiKey = uplea.GetApiKey(txtUpleaUsername.Text, txtUpleaPassword.Text);
+
+            txtUpleaApiKey.Text = apiKey;
+
+            if (!string.IsNullOrEmpty(apiKey))
+            {
+                var upleaUserInformation = uplea.GetUserInformation(apiKey);
+                txtUpleaEmailAddress.Text = upleaUserInformation.EmailAddress;
+                cbUpleaIsPremium.Checked = upleaUserInformation.IsPremiumMember;
+                cbUpleaInstantDownloadEnabled.Checked = upleaUserInformation.InstantDownloadEnabled;
+            }
+        }
+
+        private void txtUpleaUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.UpleaUsername = (sender as TextBox).Text;
+        }
+
+        private void txtUpleaPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.UpleaPassword = (sender as TextBox).Text;
+        }
+
+        private void txtUpleaApiKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.UpleaApiKey = (sender as TextBox).Text;
+        }
+
+        private void txtUpleaEmailAddress_TextChanged(object sender, EventArgs e)
+        {
+            Config.UpleaEmailAddress = (sender as TextBox).Text;
+        }
+
+        private void cbUpleaIsPremium_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.UpleaIsPremiumMember = (sender as CheckBox).Checked;
+        }
+
+        private void cbUpleaInstantDownloadEnabled_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.UpleaInstantDownloadEnabled = (sender as CheckBox).Checked;
+        }
     }
 }

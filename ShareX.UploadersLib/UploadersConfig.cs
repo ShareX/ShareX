@@ -286,6 +286,15 @@ namespace ShareX.UploadersLib
         public string StreamablePassword = "";
         public bool StreamableUseDirectURL = false;
 
+        // Uplea
+
+        public string UpleaApiKey = string.Empty;
+        public string UpleaUsername = string.Empty;
+        public string UpleaPassword = string.Empty;
+        public string UpleaEmailAddress = string.Empty;
+        public bool UpleaIsPremiumMember = false;
+        public bool UpleaInstantDownloadEnabled = false;
+        
         #endregion File uploaders
 
         #region URL shorteners
