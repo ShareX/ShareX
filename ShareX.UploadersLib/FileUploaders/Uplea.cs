@@ -23,17 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json.Linq;
-
 using System;
 using System.IO;
 using System.Drawing;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Json;
 using ShareX.UploadersLib.Properties;
+using Newtonsoft.Json;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -60,25 +57,24 @@ namespace ShareX.UploadersLib.FileUploaders
     public sealed class Uplea : FileUploader
     {
         private const string upleaBaseUrl = "http://api.uplea.com/api/";
-        private readonly UploadersConfig upleaConfig;
+        private readonly string apiKey;
 
         public Uplea(UploadersConfig config)
         {
-            upleaConfig = config;
+            apiKey = config.UpleaApiKey;
         }
 
         public UpleaUserInformation GetUserInformation(string apiKey)
         {
             UpleaUserInformation upleaUserInformation = new UpleaUserInformation();
 
-            var upleaGetUserInformationResponse = GetUpleaResponse<UpleaGetUserInformationRequest>(new UpleaGetUserInformationRequest() { ApiKey = apiKey });           
+            var upleaGetUserInformationResponse = JsonConvert.DeserializeObject<UpleaGetUserInformationResponse>(GetUpleaResponse<UpleaGetUserInformationRequest>(new UpleaGetUserInformationRequest() { ApiKey = apiKey }));
 
-            if (!string.IsNullOrEmpty(upleaGetUserInformationResponse))
+            if (!string.IsNullOrEmpty(upleaGetUserInformationResponse.Status) && upleaGetUserInformationResponse.Status == bool.TrueString.ToLower())
             {
-                JObject upleaGetUserInformationResponseObj = JObject.Parse(upleaGetUserInformationResponse);
-                upleaUserInformation.EmailAddress = (string)upleaGetUserInformationResponseObj.SelectToken("result.mail");
-                upleaUserInformation.IsPremiumMember = (bool)upleaGetUserInformationResponseObj.SelectToken("result.is_premium");
-                upleaUserInformation.InstantDownloadEnabled = (bool)upleaGetUserInformationResponseObj.SelectToken("result.instant_download");
+                upleaUserInformation.EmailAddress = upleaGetUserInformationResponse.Result.EmailAddress;
+                upleaUserInformation.IsPremiumMember = upleaGetUserInformationResponse.Result.IsPremiumMember;
+                upleaUserInformation.InstantDownloadEnabled = upleaGetUserInformationResponse.Result.InstantDownloadEnabled;
             }
 
             return upleaUserInformation;
@@ -86,21 +82,33 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private UpleaNode GetBestNode()
         {
-            JObject getBestNodeResponse = JObject.Parse(SendRequest(HttpMethod.POST, upleaBaseUrl + "get-best-node"));
-            return new UpleaNode((string)getBestNodeResponse.SelectToken("result.name"), (string)getBestNodeResponse.SelectToken("result.token"));
+            var getBestNodeResponse = JsonConvert.DeserializeObject<UpleaGetBestNodeResponse>(SendRequest(HttpMethod.POST, upleaBaseUrl + "get-best-node"));
+            return new UpleaNode(getBestNodeResponse.Result.Name, getBestNodeResponse.Result.Token);
         }
 
         public string GetApiKey(string username, string password)
         {
-            var upleaGetApiKeyResponse = GetUpleaResponse<UpleaGetApiKeyRequest>(new UpleaGetApiKeyRequest() { Username = username, Password = password });
+            var upleaGetApiKeyResponseStr = GetUpleaResponse(new UpleaGetApiKeyRequest() { Username = username, Password = password });
 
-            if (!string.IsNullOrEmpty(upleaGetApiKeyResponse))
+            if (!string.IsNullOrEmpty(upleaGetApiKeyResponseStr))
             {
-                JObject upleaGetApiKeyResponseObj = JObject.Parse(upleaGetApiKeyResponse);
-
-                if ((string)upleaGetApiKeyResponseObj.SelectToken("status") == bool.TrueString)
+                try
                 {
-                    return (string)upleaGetApiKeyResponseObj.SelectToken("result.api_key");
+                    var upleaGetApiKeyResponse = JsonConvert.DeserializeObject<UpleaGetApiKeyResponse>(upleaGetApiKeyResponseStr);
+
+                    if (!string.IsNullOrEmpty(upleaGetApiKeyResponse.Status) && upleaGetApiKeyResponse.Status == bool.TrueString.ToLower())
+                    {
+                        return upleaGetApiKeyResponse.Result.ApiKey;
+                    }
+                }
+                catch (JsonSerializationException ex)
+                {
+                    // For some reason the Uplea API is supposed to return a single object in the result property of the response, but when 
+                    // there is an error it returns an empty array. This is causing deserialziation to fail. Do we want to just query the JSON 
+                    // status before trying to deserialize? 
+
+                    System.Diagnostics.Debug.WriteLine("Deserialization of UpleaGetApiKeyResponse failed: {0}", ex.Message);
+
                 }
             }
 
@@ -109,48 +117,32 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetUpleaResponse<T>(T upleaRequest) where T : IUpleaRequest
         {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                var ser = new DataContractJsonSerializer(typeof(T));
-
-                ser.WriteObject(ms, upleaRequest);
-
-                if (ms.CanRead)
-                {
-                    ms.Position = 0;
-
-                    using (StreamReader sr = new StreamReader(ms))
-                    {
-                        Dictionary<string, string> parameters = new Dictionary<string, string>();
-                        parameters.Add("json", sr.ReadToEnd());
-
-                        return SendRequestURLEncoded(upleaBaseUrl + upleaRequest.RequestType, parameters);
-                    }
-                }
-            }
-
-            return string.Empty;
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("json", JsonConvert.SerializeObject(upleaRequest));
+            return SendRequestURLEncoded(upleaBaseUrl + upleaRequest.RequestType, parameters);
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
             var upleaBestNode = GetBestNode();
 
-
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("api_key", upleaConfig.UpleaApiKey);
+            args.Add("api_key", apiKey);
             args.Add("token", upleaBestNode.Token);
             args.Add("file_id[]", string.Format("{0}", Guid.NewGuid()));
 
             UploadResult result = UploadData(stream, string.Format("http://{0}/", upleaBestNode.Name), fileName, "files[]", args, contentType: "multipart/form-data");
+            var uploadResult = JsonConvert.DeserializeObject<UpleaGetUpleaUploadResponse>(result.Response);
 
             result.IsURLExpected = true;
-            JObject responseREsult = JObject.Parse(result.Response);
-            result.URL = (string)responseREsult.SelectToken("files[0].url");
+            if (uploadResult.Files.Length > 0)
+            {
+                result.URL = uploadResult.Files[0].Url;
+            }
 
             return result;
         }
-
+        
         private sealed class UpleaNode
         {
             public UpleaNode(string name, string token)
@@ -163,37 +155,103 @@ namespace ShareX.UploadersLib.FileUploaders
             public string Token { get; private set; }
         }
 
-
-
         public sealed class UpleaUserInformation
         {
             public string EmailAddress { get; set; }
             public bool InstantDownloadEnabled { get; set; }
             public bool IsPremiumMember { get; set; }
         }
+        
+        #region Uplea Responses
+        private sealed class UpleaGetUpleaUploadResponse
+        {
+            public class UpleaUploadResult
+            {
+                [JsonProperty(PropertyName = "url")]
+                public string Url { get; set; }
+            }
 
-        [DataContract]
+            [JsonProperty(PropertyName = "files")]
+            public UpleaUploadResult[] Files { get; set; }
+        }
+
+        private sealed class UpleaGetBestNodeResponse
+        {
+            [JsonObject]
+            public class UpleaGetBestNodeResult
+            {
+                [JsonProperty(PropertyName = "name")]
+                public string Name { get; set; }
+                [JsonProperty(PropertyName = "token")]
+                public string Token { get; set; }
+            }
+
+            [JsonProperty(PropertyName = "result")]
+            public UpleaGetBestNodeResult Result { get; set; }
+            [JsonProperty(PropertyName = "status")]
+            public string Status { get; set; }
+        }
+
+        private sealed class UpleaGetApiKeyResponse
+        {
+            public class UpleaGetApiKeyResult
+            {
+                [JsonProperty(PropertyName = "api_key")]
+                public string ApiKey { get; set; }
+            }
+
+            [JsonProperty(PropertyName = "result")]
+            public UpleaGetApiKeyResult Result { get; set; }
+
+            [JsonProperty(PropertyName = "status")]
+            public string Status { get; set; }
+        }
+
+        private sealed class UpleaGetUserInformationResponse
+        {
+            public class UpleaUserInformationResult
+            {
+                [JsonProperty(PropertyName = "mail")]
+                public string EmailAddress { get; set; }
+                [JsonProperty(PropertyName = "instant_download")]
+                public bool InstantDownloadEnabled { get; set; }
+                [JsonProperty(PropertyName = "is_premium")]
+                public bool IsPremiumMember { get; set; }
+            }
+
+            public UpleaUserInformationResult Result { get; set; }
+            [JsonProperty(PropertyName = "status")]
+            public string Status { get; set; }
+        }
+        #endregion
+
+        #region Uplea Requests
         private sealed class UpleaGetApiKeyRequest : IUpleaRequest
         {
-            [DataMember(Name = "username", Order = 0)]
+            [JsonProperty(PropertyName = "username")]
             public string Username { get; set; }
-            [DataMember(Name = "password", Order = 1)]
+            [JsonProperty(PropertyName = "password")]
             public string Password { get; set; }
 
+            [JsonIgnore]
             public string RequestType { get; } = "get-my-api-key";
         }
 
-        [DataContract]
         private sealed class UpleaGetUserInformationRequest : IUpleaRequest
         {
-            [DataMember(Name = "api_key")]
+            [JsonProperty(PropertyName = "api_key")]
             public string ApiKey { get; set; }
+
+            [JsonIgnore]
             public string RequestType { get; } = "get-user-info";
         }
+        #endregion
 
+        #region Uplea Request Interface
         private interface IUpleaRequest
         {
             string RequestType { get; }
         }
+        #endregion
     }
 }
