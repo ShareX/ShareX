@@ -3193,7 +3193,7 @@ namespace ShareX.UploadersLib
 
         private void btnUpleaLogin_Click(object sender, EventArgs e)
         {
-            Uplea uplea = new Uplea();
+            Uplea uplea = new Uplea(Config);
             string apiKey = uplea.GetApiKey(txtUpleaUsername.Text, txtUpleaPassword.Text);
 
             txtUpleaApiKey.Text = apiKey;
