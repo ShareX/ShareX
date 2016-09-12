@@ -47,7 +47,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Uplea(config);
+            return new Uplea() { UpleaApiKey = config.UpleaApiKey };
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpUplea;
@@ -57,27 +57,18 @@ namespace ShareX.UploadersLib.FileUploaders
     public sealed class Uplea : FileUploader
     {
         private const string upleaBaseUrl = "http://api.uplea.com/api/";
-        private readonly string apiKey;
+        public string UpleaApiKey { get; set; }
 
-        public Uplea(UploadersConfig config)
+        public UpleaGetUserInformationResponse GetUserInformation(string apiKey)
         {
-            apiKey = config.UpleaApiKey;
-        }
-
-        public UpleaUserInformation GetUserInformation(string apiKey)
-        {
-            UpleaUserInformation upleaUserInformation = new UpleaUserInformation();
-
             var upleaGetUserInformationResponse = JsonConvert.DeserializeObject<UpleaGetUserInformationResponse>(GetUpleaResponse<UpleaGetUserInformationRequest>(new UpleaGetUserInformationRequest() { ApiKey = apiKey }));
 
-            if (!string.IsNullOrEmpty(upleaGetUserInformationResponse.Status) && upleaGetUserInformationResponse.Status == bool.TrueString.ToLower())
+            if (upleaGetUserInformationResponse.Status)
             {
-                upleaUserInformation.EmailAddress = upleaGetUserInformationResponse.Result.EmailAddress;
-                upleaUserInformation.IsPremiumMember = upleaGetUserInformationResponse.Result.IsPremiumMember;
-                upleaUserInformation.InstantDownloadEnabled = upleaGetUserInformationResponse.Result.InstantDownloadEnabled;
+                return upleaGetUserInformationResponse;
             }
 
-            return upleaUserInformation;
+            return new UpleaGetUserInformationResponse();
         }
 
         private UpleaNode GetBestNode()
@@ -96,7 +87,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     var upleaGetApiKeyResponse = JsonConvert.DeserializeObject<UpleaGetApiKeyResponse>(upleaGetApiKeyResponseStr);
 
-                    if (!string.IsNullOrEmpty(upleaGetApiKeyResponse.Status) && upleaGetApiKeyResponse.Status == bool.TrueString.ToLower())
+                    if (upleaGetApiKeyResponse.Status)
                     {
                         return upleaGetApiKeyResponse.Result.ApiKey;
                     }
@@ -127,7 +118,7 @@ namespace ShareX.UploadersLib.FileUploaders
             var upleaBestNode = GetBestNode();
 
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("api_key", apiKey);
+            args.Add("api_key", UpleaApiKey);
             args.Add("token", upleaBestNode.Token);
             args.Add("file_id[]", string.Format("{0}", Guid.NewGuid()));
 
@@ -154,24 +145,15 @@ namespace ShareX.UploadersLib.FileUploaders
             public string Name { get; private set; }
             public string Token { get; private set; }
         }
-
-        public sealed class UpleaUserInformation
-        {
-            public string EmailAddress { get; set; }
-            public bool InstantDownloadEnabled { get; set; }
-            public bool IsPremiumMember { get; set; }
-        }
         
         #region Uplea Responses
         private sealed class UpleaGetUpleaUploadResponse
         {
             public class UpleaUploadResult
             {
-                [JsonProperty(PropertyName = "url")]
                 public string Url { get; set; }
             }
-
-            [JsonProperty(PropertyName = "files")]
+            
             public UpleaUploadResult[] Files { get; set; }
         }
 
@@ -180,16 +162,12 @@ namespace ShareX.UploadersLib.FileUploaders
             [JsonObject]
             public class UpleaGetBestNodeResult
             {
-                [JsonProperty(PropertyName = "name")]
                 public string Name { get; set; }
-                [JsonProperty(PropertyName = "token")]
                 public string Token { get; set; }
             }
-
-            [JsonProperty(PropertyName = "result")]
+            
             public UpleaGetBestNodeResult Result { get; set; }
-            [JsonProperty(PropertyName = "status")]
-            public string Status { get; set; }
+            public bool Status { get; set; }
         }
 
         private sealed class UpleaGetApiKeyResponse
@@ -199,15 +177,12 @@ namespace ShareX.UploadersLib.FileUploaders
                 [JsonProperty(PropertyName = "api_key")]
                 public string ApiKey { get; set; }
             }
-
-            [JsonProperty(PropertyName = "result")]
+            
             public UpleaGetApiKeyResult Result { get; set; }
-
-            [JsonProperty(PropertyName = "status")]
-            public string Status { get; set; }
+            public bool Status { get; set; }
         }
 
-        private sealed class UpleaGetUserInformationResponse
+        public sealed class UpleaGetUserInformationResponse
         {
             public class UpleaUserInformationResult
             {
@@ -220,8 +195,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             public UpleaUserInformationResult Result { get; set; }
-            [JsonProperty(PropertyName = "status")]
-            public string Status { get; set; }
+            public bool Status { get; set; }
         }
         #endregion
 

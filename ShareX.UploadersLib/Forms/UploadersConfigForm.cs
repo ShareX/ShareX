@@ -2559,7 +2559,7 @@ namespace ShareX.UploadersLib
         {
             btnUpleaLogin.Enabled = false;
 
-            Uplea uplea = new Uplea(Config);
+            Uplea uplea = new Uplea();
 
             txtUpleaApiKey.Text = string.Empty;
             txtUpleaEmailAddress.Text = string.Empty;
@@ -2575,9 +2575,9 @@ namespace ShareX.UploadersLib
                 if (!string.IsNullOrEmpty(apiKey))
                 {
                     var upleaUserInformation = uplea.GetUserInformation(apiKey);
-                    txtUpleaEmailAddress.Text = upleaUserInformation.EmailAddress;
-                    cbUpleaIsPremium.Checked = upleaUserInformation.IsPremiumMember;
-                    cbUpleaInstantDownloadEnabled.Checked = upleaUserInformation.InstantDownloadEnabled;
+                    txtUpleaEmailAddress.Text = upleaUserInformation.Result.EmailAddress;
+                    cbUpleaIsPremium.Checked = upleaUserInformation.Result.IsPremiumMember;
+                    cbUpleaInstantDownloadEnabled.Checked = upleaUserInformation.Result.InstantDownloadEnabled;
                 }
                 else
                 {
