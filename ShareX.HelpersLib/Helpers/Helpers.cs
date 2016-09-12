@@ -140,13 +140,7 @@ namespace ShareX.HelpersLib
 
             if (!string.IsNullOrEmpty(ext))
             {
-                foreach (string extension in extensions)
-                {
-                    if (ext.Equals(extension, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        return true;
-                    }
-                }
+                return extensions.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase));
             }
 
             return false;
