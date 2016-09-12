@@ -391,7 +391,7 @@
             this.txtUpleaPassword = new System.Windows.Forms.TextBox();
             this.txtUpleaUsername = new System.Windows.Forms.TextBox();
             this.gbUpleaUserInformation = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblUpleaEmailAddress = new System.Windows.Forms.Label();
             this.cbUpleaInstantDownloadEnabled = new System.Windows.Forms.CheckBox();
             this.cbUpleaIsPremium = new System.Windows.Forms.CheckBox();
             this.txtUpleaEmailAddress = new System.Windows.Forms.TextBox();
@@ -3237,7 +3237,7 @@
             // 
             // gbUpleaUserInformation
             // 
-            this.gbUpleaUserInformation.Controls.Add(this.label4);
+            this.gbUpleaUserInformation.Controls.Add(this.lblUpleaEmailAddress);
             this.gbUpleaUserInformation.Controls.Add(this.cbUpleaInstantDownloadEnabled);
             this.gbUpleaUserInformation.Controls.Add(this.cbUpleaIsPremium);
             this.gbUpleaUserInformation.Controls.Add(this.txtUpleaEmailAddress);
@@ -3245,10 +3245,10 @@
             this.gbUpleaUserInformation.Name = "gbUpleaUserInformation";
             this.gbUpleaUserInformation.TabStop = false;
             // 
-            // label4
+            // lblUpleaEmailAddress
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.lblUpleaEmailAddress, "lblUpleaEmailAddress");
+            this.lblUpleaEmailAddress.Name = "lblUpleaEmailAddress";
             // 
             // cbUpleaInstantDownloadEnabled
             // 
@@ -5176,7 +5176,7 @@
         private System.Windows.Forms.TextBox txtUpleaPassword;
         private System.Windows.Forms.TextBox txtUpleaUsername;
         private System.Windows.Forms.GroupBox gbUpleaUserInformation;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblUpleaEmailAddress;
         private System.Windows.Forms.CheckBox cbUpleaInstantDownloadEnabled;
         private System.Windows.Forms.CheckBox cbUpleaIsPremium;
         private System.Windows.Forms.TextBox txtUpleaEmailAddress;

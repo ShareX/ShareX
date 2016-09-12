@@ -120,12 +120,11 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("api_key", UpleaApiKey);
             args.Add("token", upleaBestNode.Token);
-            args.Add("file_id[]", string.Format("{0}", Guid.NewGuid()));
+            args.Add("file_id[]", Guid.NewGuid().ToString());
 
-            UploadResult result = UploadData(stream, string.Format("http://{0}/", upleaBestNode.Name), fileName, "files[]", args, contentType: "multipart/form-data");
+            UploadResult result = UploadData(stream, string.Format("http://{0}/", upleaBestNode.Name), fileName, "files[]", args);
             var uploadResult = JsonConvert.DeserializeObject<UpleaGetUpleaUploadResponse>(result.Response);
 
-            result.IsURLExpected = true;
             if (uploadResult.Files.Length > 0)
             {
                 result.URL = uploadResult.Files[0].Url;
