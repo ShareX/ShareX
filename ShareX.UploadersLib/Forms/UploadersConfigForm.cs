@@ -578,6 +578,14 @@ namespace ShareX.UploadersLib
             txtStreamableUsername.Enabled = txtStreamablePassword.Enabled = !Config.StreamableAnonymous;
             cbStreamableUseDirectURL.Checked = Config.StreamableUseDirectURL;
 
+            // Uplea
+            txtUpleaApiKey.Text = Config.UpleaApiKey;
+            txtUpleaUsername.Text = Config.UpleaUsername;
+            txtUpleaPassword.Text = Config.UpleaPassword;
+            txtUpleaEmailAddress.Text = Config.UpleaEmailAddress;
+            cbUpleaInstantDownloadEnabled.Checked = Config.UpleaInstantDownloadEnabled;
+            cbUpleaIsPremium.Checked = Config.UpleaIsPremiumMember;
+
             #endregion File uploaders
 
             #region URL shorteners
@@ -2545,6 +2553,80 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Streamable
+
+        #region Uplea
+        private void btnUpleaLogin_Click(object sender, EventArgs e)
+        {
+            btnUpleaLogin.Enabled = false;
+
+            Uplea uplea = new Uplea();
+
+            txtUpleaApiKey.Text = string.Empty;
+            cbUpleaIsPremium.Checked = false;
+            cbUpleaInstantDownloadEnabled.Checked = false;
+
+            try
+            {
+                string apiKey = uplea.GetApiKey(txtUpleaUsername.Text, txtUpleaPassword.Text);
+
+                txtUpleaApiKey.Text = apiKey;
+
+                if (!string.IsNullOrEmpty(apiKey))
+                {
+                    var upleaUserInformation = uplea.GetUserInformation(apiKey);
+                    txtUpleaEmailAddress.Text = upleaUserInformation.Result.EmailAddress;
+                    cbUpleaIsPremium.Checked = upleaUserInformation.Result.IsPremiumMember;
+                    cbUpleaInstantDownloadEnabled.Checked = upleaUserInformation.Result.InstantDownloadEnabled;
+                }
+                else
+                {
+                    MessageBox.Show("Unable to retrieve API key and user details from Uplea. Please check your user credentials and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            {
+                btnUpleaLogin.Enabled = true;
+            }
+
+        }
+
+        private void txtUpleaUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.UpleaUsername = (sender as TextBox).Text;
+        }
+
+        private void txtUpleaPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.UpleaPassword = (sender as TextBox).Text;
+        }
+
+        private void txtUpleaApiKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.UpleaApiKey = (sender as TextBox).Text;
+
+            if (string.IsNullOrEmpty(txtUpleaApiKey.Text))
+            {
+                txtUpleaEmailAddress.Text = string.Empty;
+                cbUpleaIsPremium.Checked = false;
+                cbUpleaInstantDownloadEnabled.Checked = false;
+            }
+        }
+
+        private void txtUpleaEmailAddress_TextChanged(object sender, EventArgs e)
+        {
+            Config.UpleaEmailAddress = (sender as TextBox).Text;
+        }
+
+        private void cbUpleaIsPremium_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.UpleaIsPremiumMember = (sender as CheckBox).Checked;
+        }
+
+        private void cbUpleaInstantDownloadEnabled_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.UpleaInstantDownloadEnabled = (sender as CheckBox).Checked;
+        }
+        #endregion
 
         #endregion File Uploaders
 

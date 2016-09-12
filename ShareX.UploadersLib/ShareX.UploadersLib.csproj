@@ -150,6 +150,7 @@
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
     <Compile Include="FileUploaders\Transfersh.cs" />
     <Compile Include="FileUploaders\Uguu.cs" />
+    <Compile Include="FileUploaders\Uplea.cs" />
     <Compile Include="FileUploaders\VideoBin.cs" />
     <Compile Include="Forms\OCRSpaceForm.cs">
       <SubType>Form</SubType>
@@ -879,6 +880,9 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.9.0\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Favicons\Uplea.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
