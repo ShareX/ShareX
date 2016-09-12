@@ -2562,7 +2562,6 @@ namespace ShareX.UploadersLib
             Uplea uplea = new Uplea();
 
             txtUpleaApiKey.Text = string.Empty;
-            txtUpleaEmailAddress.Text = string.Empty;
             cbUpleaIsPremium.Checked = false;
             cbUpleaInstantDownloadEnabled.Checked = false;
 
@@ -2605,10 +2604,9 @@ namespace ShareX.UploadersLib
         {
             Config.UpleaApiKey = (sender as TextBox).Text;
 
-            if (string.IsNullOrEmpty(Config.UpleaApiKey))
+            if (string.IsNullOrEmpty(txtUpleaApiKey.Text))
             {
                 txtUpleaEmailAddress.Text = string.Empty;
-                txtUpleaPassword.Text = string.Empty;
                 cbUpleaIsPremium.Checked = false;
                 cbUpleaInstantDownloadEnabled.Checked = false;
             }
