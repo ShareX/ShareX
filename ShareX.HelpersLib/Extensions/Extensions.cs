@@ -176,6 +176,11 @@ namespace ShareX.HelpersLib
             return new Rectangle(rect.X + x, rect.Y + y, rect.Width, rect.Height);
         }
 
+        public static Rectangle LocationOffset(this Rectangle rect, Point offset)
+        {
+            return rect.LocationOffset(offset.X, offset.Y);
+        }
+
         public static Rectangle LocationOffset(this Rectangle rect, int offset)
         {
             return rect.LocationOffset(offset, offset);
