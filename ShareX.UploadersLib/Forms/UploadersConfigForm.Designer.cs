@@ -3227,13 +3227,11 @@
             // 
             resources.ApplyResources(this.txtUpleaPassword, "txtUpleaPassword");
             this.txtUpleaPassword.Name = "txtUpleaPassword";
-            this.txtUpleaPassword.TextChanged += new System.EventHandler(this.txtUpleaPassword_TextChanged);
             // 
             // txtUpleaUsername
             // 
             resources.ApplyResources(this.txtUpleaUsername, "txtUpleaUsername");
             this.txtUpleaUsername.Name = "txtUpleaUsername";
-            this.txtUpleaUsername.TextChanged += new System.EventHandler(this.txtUpleaUsername_TextChanged);
             // 
             // gbUpleaUserInformation
             // 

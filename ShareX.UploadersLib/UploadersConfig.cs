@@ -289,8 +289,6 @@ namespace ShareX.UploadersLib
         // Uplea
 
         public string UpleaApiKey = string.Empty;
-        public string UpleaUsername = string.Empty;
-        public string UpleaPassword = string.Empty;
         public string UpleaEmailAddress = string.Empty;
         public bool UpleaIsPremiumMember = false;
         public bool UpleaInstantDownloadEnabled = false;
