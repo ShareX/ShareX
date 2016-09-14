@@ -13652,7 +13652,7 @@ Using an encrypted library disables sharing.</value>
     <value>13</value>
   </data>
   <data name="btnUpleaLogin.Text" xml:space="preserve">
-    <value>Login</value>
+    <value>Get API Key</value>
   </data>
   <data name="cbUpleaInstantDownloadEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -13775,7 +13775,7 @@ Using an encrypted library disables sharing.</value>
     <value>Username:</value>
   </data>
   <data name="txtUpleaApiKey.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>True</value>
   </data>
   <data name="txtUpleaApiKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>81, 78</value>

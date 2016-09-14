@@ -580,8 +580,6 @@ namespace ShareX.UploadersLib
 
             // Uplea
             txtUpleaApiKey.Text = Config.UpleaApiKey;
-            txtUpleaUsername.Text = Config.UpleaUsername;
-            txtUpleaPassword.Text = Config.UpleaPassword;
             txtUpleaEmailAddress.Text = Config.UpleaEmailAddress;
             cbUpleaInstantDownloadEnabled.Checked = Config.UpleaInstantDownloadEnabled;
             cbUpleaIsPremium.Checked = Config.UpleaIsPremiumMember;
@@ -2588,16 +2586,6 @@ namespace ShareX.UploadersLib
                 btnUpleaLogin.Enabled = true;
             }
 
-        }
-
-        private void txtUpleaUsername_TextChanged(object sender, EventArgs e)
-        {
-            Config.UpleaUsername = (sender as TextBox).Text;
-        }
-
-        private void txtUpleaPassword_TextChanged(object sender, EventArgs e)
-        {
-            Config.UpleaPassword = (sender as TextBox).Text;
         }
 
         private void txtUpleaApiKey_TextChanged(object sender, EventArgs e)
