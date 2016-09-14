@@ -75,21 +75,6 @@ Resources.AboutForm_AboutForm_Changelog, Links.URL_CHANGELOG);
 
 https://github.com/ShareX/ShareX/graphs/contributors
 
-Mega, Gist and Jira support: https://github.com/gpailler
-Amazon S3 and DreamObjects support: https://github.com/alanedwardes
-Gfycat support: https://github.com/Dinnerbone
-AdFly support: https://github.com/LRNAB
-MediaFire support: https://github.com/michalx2
-Pushbullet support: https://github.com/BallisticLingonberries
-Lambda support: https://github.com/mstojcevich
-VideoBin support: https://github.com/corey-/
-CoinURL, QRnet, VURL, 2gp, SomeImage, OneTimeSecret, Polr support: https://github.com/DanielMcAssey
-Seafile support: https://github.com/zikeji
-Streamable support: https://github.com/streamablevideo
-s-ul support: https://github.com/corin12355
-Imgland support: https://github.com/jibcore
-Lithiio support: https://github.com/lithium720
-
 {1}:
 
 Turkish: https://github.com/Jaex & https://github.com/muratmoon

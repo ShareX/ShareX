@@ -780,19 +780,14 @@ namespace ShareX
 
         public static EDataType FindDataType(string filePath, TaskSettings taskSettings)
         {
-            string ext = Helpers.GetFilenameExtension(filePath);
-
-            if (!string.IsNullOrEmpty(ext))
+            if (Helpers.CheckExtension(filePath, taskSettings.AdvancedSettings.ImageExtensions))
             {
-                if (taskSettings.AdvancedSettings.ImageExtensions.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    return EDataType.Image;
-                }
+                return EDataType.Image;
+            }
 
-                if (taskSettings.AdvancedSettings.TextExtensions.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    return EDataType.Text;
-                }
+            if (Helpers.CheckExtension(filePath, taskSettings.AdvancedSettings.TextExtensions))
+            {
+                return EDataType.Text;
             }
 
             return EDataType.File;

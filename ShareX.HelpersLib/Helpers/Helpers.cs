@@ -64,6 +64,7 @@ namespace ShareX.HelpersLib
 
         public static readonly string[] ImageFileExtensions = new string[] { "jpg", "jpeg", "png", "gif", "bmp", "ico", "tif", "tiff" };
         public static readonly string[] TextFileExtensions = new string[] { "txt", "log", "nfo", "c", "cpp", "cc", "cxx", "h", "hpp", "hxx", "cs", "vb", "html", "htm", "xhtml", "xht", "xml", "css", "js", "php", "bat", "java", "lua", "py", "pl", "cfg", "ini", "dart" };
+        public static readonly string[] VideoFileExtensions = new string[] { "mp4", "webm", "mkv", "avi", "vob", "ogv", "ogg", "mov", "qt", "wmv", "m4p", "m4v", "mpg", "mp2", "mpeg", "mpe", "mpv", "m2v", "m4v", "flv", "f4v" };
 
         public static readonly Version OSVersion = Environment.OSVersion.Version;
 
@@ -76,7 +77,7 @@ namespace ShareX.HelpersLib
 
                 if (pos >= 0)
                 {
-                    return filePath.Substring(pos + 1).ToLowerInvariant();
+                    return filePath.Substring(pos + 1);
                 }
             }
 
@@ -133,13 +134,13 @@ namespace ShareX.HelpersLib
             return filePath.TrimEnd('.') + '.' + extension.TrimStart('.');
         }
 
-        private static bool IsValidFile(string filePath, string[] extensionList)
+        public static bool CheckExtension(string filePath, IEnumerable<string> extensions)
         {
             string ext = GetFilenameExtension(filePath);
 
             if (!string.IsNullOrEmpty(ext))
             {
-                return extensionList.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase));
+                return extensions.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase));
             }
 
             return false;
@@ -147,12 +148,17 @@ namespace ShareX.HelpersLib
 
         public static bool IsImageFile(string filePath)
         {
-            return IsValidFile(filePath, ImageFileExtensions);
+            return CheckExtension(filePath, ImageFileExtensions);
         }
 
         public static bool IsTextFile(string filePath)
         {
-            return IsValidFile(filePath, TextFileExtensions);
+            return CheckExtension(filePath, TextFileExtensions);
+        }
+
+        public static bool IsVideoFile(string filePath)
+        {
+            return CheckExtension(filePath, VideoFileExtensions);
         }
 
         public static EDataType FindDataType(string filePath)

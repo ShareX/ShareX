@@ -94,7 +94,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
                             if (!string.IsNullOrEmpty(ext) && !ext.Equals("txt", StringComparison.InvariantCultureIgnoreCase))
                             {
-                                syntaxHighlighting = ext;
+                                syntaxHighlighting = ext.ToLowerInvariant();
                             }
                         }
 
