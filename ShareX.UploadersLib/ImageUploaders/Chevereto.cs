@@ -90,7 +90,8 @@ namespace ShareX.UploadersLib.ImageUploaders
             new CheveretoUploader("http://imgmax.com/api/1/upload", "1fa647781a3fb7aa91bd70eb4824a6c3"),
             new CheveretoUploader("http://upgfx.com/api/1/upload", "207faeeb604b9d25ec7a8d94029d4289"),
             new CheveretoUploader("http://frimge.com/api/1/upload", "6f71a24683cec81d14fc9ce73a0c7f60"),
-            new CheveretoUploader("https://gifyu.com/api/1/upload", "9aa9c4dedd20aeb9a63e41676e061820")
+            new CheveretoUploader("https://gifyu.com/api/1/upload", "9aa9c4dedd20aeb9a63e41676e061820"),
+            new CheveretoUploader("http://imgbros.com/api/1/upload", "58b234bafd8011b0afd3ea72cec0ba4f")
         };
 
         public CheveretoUploader Uploader { get; private set; }
