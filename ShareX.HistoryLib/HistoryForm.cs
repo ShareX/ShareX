@@ -237,11 +237,11 @@ namespace ShareX.HistoryLib
                     status.AppendFormat(" - " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length.ToString("N0"));
                 }
 
-                var types = from hi in historyItems
-                            group hi by hi.Type
+                IEnumerable<string> types = from hi in historyItems
+                                            group hi by hi.Type
                             into t
-                            let count = t.Count()
-                            select string.Format(" - {0}: {1:N0}", t.Key, count);
+                                            let count = t.Count()
+                                            select string.Format(" - {0}: {1:N0}", t.Key, count);
 
                 foreach (string type in types)
                 {

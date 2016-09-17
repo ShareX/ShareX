@@ -363,7 +363,7 @@ namespace ShareX.HelpersLib
         // returns a list of public static fields of the class type (similar to enum values)
         public static T[] GetValueFields<T>()
         {
-            var res = new List<T>();
+            List<T> res = new List<T>();
             foreach (FieldInfo fi in typeof(T).GetFields(BindingFlags.Static | BindingFlags.Public))
             {
                 if (fi.FieldType != typeof(T)) continue;
@@ -1097,9 +1097,9 @@ namespace ShareX.HelpersLib
 
         public static T[] GetInstances<T>() where T : class
         {
-            var instances = from t in Assembly.GetCallingAssembly().GetTypes()
-                            where t.IsClass && t.IsSubclassOf(typeof(T)) && t.GetConstructor(Type.EmptyTypes) != null
-                            select Activator.CreateInstance(t) as T;
+            IEnumerable<T> instances = from t in Assembly.GetCallingAssembly().GetTypes()
+                                       where t.IsClass && t.IsSubclassOf(typeof(T)) && t.GetConstructor(Type.EmptyTypes) != null
+                                       select Activator.CreateInstance(t) as T;
 
             return instances.ToArray();
         }

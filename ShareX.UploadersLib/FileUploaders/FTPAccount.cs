@@ -188,11 +188,11 @@ namespace ShareX.UploadersLib
 
             UriBuilder httpHomeUri;
 
-            var httpHomePath = GetHttpHomePath();
+            string httpHomePath = GetHttpHomePath();
 
             if (string.IsNullOrEmpty(httpHomePath))
             {
-                var host = Host;
+                string host = Host;
 
                 if (host.StartsWith("ftp."))
                 {
@@ -205,16 +205,16 @@ namespace ShareX.UploadersLib
             else
             {
                 //Parse HttpHomePath in to host, port, path and query components
-                var firstSlash = httpHomePath.IndexOf('/');
-                var httpHome = firstSlash >= 0 ? httpHomePath.Substring(0, firstSlash) : httpHomePath;
-                var portSpecifiedAt = httpHome.LastIndexOf(':');
+                int firstSlash = httpHomePath.IndexOf('/');
+                string httpHome = firstSlash >= 0 ? httpHomePath.Substring(0, firstSlash) : httpHomePath;
+                int portSpecifiedAt = httpHome.LastIndexOf(':');
 
-                var httpHomeHost = portSpecifiedAt >= 0 ? httpHome.Substring(0, portSpecifiedAt) : httpHome;
-                var httpHomePort = -1;
-                var httpHomePathAndQuery = firstSlash >= 0 ? httpHomePath.Substring(firstSlash + 1) : "";
-                var querySpecifiedAt = httpHomePathAndQuery.LastIndexOf('?');
-                var httpHomeDir = querySpecifiedAt >= 0 ? httpHomePathAndQuery.Substring(0, querySpecifiedAt) : httpHomePathAndQuery;
-                var httpHomeQuery = querySpecifiedAt >= 0 ? httpHomePathAndQuery.Substring(querySpecifiedAt + 1) : "";
+                string httpHomeHost = portSpecifiedAt >= 0 ? httpHome.Substring(0, portSpecifiedAt) : httpHome;
+                int httpHomePort = -1;
+                string httpHomePathAndQuery = firstSlash >= 0 ? httpHomePath.Substring(firstSlash + 1) : "";
+                int querySpecifiedAt = httpHomePathAndQuery.LastIndexOf('?');
+                string httpHomeDir = querySpecifiedAt >= 0 ? httpHomePathAndQuery.Substring(0, querySpecifiedAt) : httpHomePathAndQuery;
+                string httpHomeQuery = querySpecifiedAt >= 0 ? httpHomePathAndQuery.Substring(querySpecifiedAt + 1) : "";
 
                 if (portSpecifiedAt >= 0)
                     int.TryParse(httpHome.Substring(portSpecifiedAt + 1), out httpHomePort);
@@ -222,20 +222,28 @@ namespace ShareX.UploadersLib
                 //Build URI
                 httpHomeUri = new UriBuilder { Host = httpHomeHost, Path = httpHomeDir, Query = httpHomeQuery };
                 if (portSpecifiedAt >= 0)
+                {
                     httpHomeUri.Port = httpHomePort;
+                }
 
                 if (httpHomeUri.Query.EndsWith("="))
                 {
                     //Setting URIBuilder.Query automatically prepends a ? so we must trim it first.
                     if (HttpHomePathAutoAddSubFolderPath)
+                    {
                         httpHomeUri.Query = URLHelpers.CombineURL(httpHomeUri.Query.Substring(1), subFolderPath, filename);
+                    }
                     else
+                    {
                         httpHomeUri.Query = httpHomeUri.Query.Substring(1) + filename;
+                    }
                 }
                 else
                 {
                     if (HttpHomePathAutoAddSubFolderPath)
+                    {
                         httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, subFolderPath);
+                    }
 
                     httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, filename);
                 }

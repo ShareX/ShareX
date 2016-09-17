@@ -110,11 +110,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return "";
         }
 
-        public class SeafileAuthResponse
-        {
-            public string token { get; set; }
-        }
-
         #endregion SeafileAuth
 
         #region SeafileChecks
@@ -233,13 +228,6 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        public class SeafileCheckAccInfoResponse
-        {
-            public long usage { get; set; }
-            public long total { get; set; }
-            public string email { get; set; }
-        }
-
         #endregion SeafileAccountInformation
 
         #region SeafileLibraries
@@ -279,12 +267,6 @@ namespace ShareX.UploadersLib.FileUploaders
                     sslBypassHelper.Dispose();
                 }
             }
-        }
-
-        public class SeafileDefaultLibraryObj
-        {
-            public string repo_id { get; set; }
-            public bool exists { get; set; }
         }
 
         public List<SeafileLibraryObj> GetLibraries()
@@ -357,22 +339,6 @@ namespace ShareX.UploadersLib.FileUploaders
                     sslBypassHelper.Dispose();
                 }
             }
-        }
-
-        public class SeafileLibraryObj
-        {
-            public string permission { get; set; }
-            public bool encrypted { get; set; }
-            public long mtime { get; set; }
-            public string owner { get; set; }
-            public string id { get; set; }
-            public long size { get; set; }
-            public string name { get; set; }
-            public string type { get; set; }
-            [JsonProperty("virtual")]
-            public string _virtual { get; set; }
-            public string desc { get; set; }
-            public string root { get; set; }
         }
 
         #endregion SeafileLibraries
@@ -537,5 +503,39 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         #endregion SeafileUpload
+    }
+
+    public class SeafileAuthResponse
+    {
+        public string token { get; set; }
+    }
+
+    public class SeafileCheckAccInfoResponse
+    {
+        public long usage { get; set; }
+        public long total { get; set; }
+        public string email { get; set; }
+    }
+
+    public class SeafileLibraryObj
+    {
+        public string permission { get; set; }
+        public bool encrypted { get; set; }
+        public long mtime { get; set; }
+        public string owner { get; set; }
+        public string id { get; set; }
+        public long size { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        [JsonProperty("virtual")]
+        public string _virtual { get; set; }
+        public string desc { get; set; }
+        public string root { get; set; }
+    }
+
+    public class SeafileDefaultLibraryObj
+    {
+        public string repo_id { get; set; }
+        public bool exists { get; set; }
     }
 }

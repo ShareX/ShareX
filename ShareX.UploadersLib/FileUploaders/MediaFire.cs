@@ -96,7 +96,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private void GetSessionToken()
         {
-            var args = new Dictionary<string, string>();
+            Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("email", _user);
             args.Add("password", _pasw);
             args.Add("application_id", _appId);
@@ -115,7 +115,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string SimpleUpload(Stream stream, string fileName)
         {
-            var args = new Dictionary<string, string>();
+            Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("session_token", _sessionToken);
             args.Add("path", UploadPath);
             args.Add("response_format", "json");
@@ -131,7 +131,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string PollUpload(string uploadKey, string fileName)
         {
-            var args = new Dictionary<string, string>();
+            Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("session_token", _sessionToken);
             args.Add("key", uploadKey);
             args.Add("filename", fileName);

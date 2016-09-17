@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -707,7 +708,7 @@ namespace ShareX
             {
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.PerformActions) && Info.TaskSettings.ExternalPrograms != null)
                 {
-                    var actions = Info.TaskSettings.ExternalPrograms.Where(x => x.IsActive);
+                    IEnumerable<ExternalProgram> actions = Info.TaskSettings.ExternalPrograms.Where(x => x.IsActive);
 
                     if (actions.Count() > 0)
                     {

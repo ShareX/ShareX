@@ -1469,7 +1469,7 @@ namespace ShareX.UploadersLib
             if (lvGoogleDriveFoldersList.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvGoogleDriveFoldersList.SelectedItems[0];
-                var folder = lvi.Tag as GoogleDrive.GoogleDriveFile;
+                GoogleDriveFile folder = lvi.Tag as GoogleDriveFile;
                 if (folder != null)
                 {
                     txtGoogleDriveFolderID.Text = folder.id;
@@ -1951,7 +1951,7 @@ namespace ShareX.UploadersLib
 
         private void cbAmazonS3Endpoint_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            var region = cbAmazonS3Endpoint.SelectedItem as AmazonS3Region;
+            AmazonS3Region region = cbAmazonS3Endpoint.SelectedItem as AmazonS3Region;
             if (region != null)
             {
                 Config.AmazonS3Settings.Endpoint = region.Identifier;
@@ -2394,7 +2394,7 @@ namespace ShareX.UploadersLib
             }
 
             Seafile sf = new Seafile(cbSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
-            Seafile.SeafileCheckAccInfoResponse SeafileCheckAccInfoResponse = sf.GetAccountInfo();
+            SeafileCheckAccInfoResponse SeafileCheckAccInfoResponse = sf.GetAccountInfo();
 
             if (SeafileCheckAccInfoResponse == null)
             {
@@ -2414,9 +2414,9 @@ namespace ShareX.UploadersLib
             lvSeafileLibraries.Items.Clear();
 
             Seafile sf = new Seafile(cbSeafileAPIURL.Text, txtSeafileAuthToken.Text, null);
-            List<Seafile.SeafileLibraryObj> SeafileLibraries = sf.GetLibraries();
+            List<SeafileLibraryObj> SeafileLibraries = sf.GetLibraries();
 
-            foreach (var SeafileLibrary in SeafileLibraries)
+            foreach (SeafileLibraryObj SeafileLibrary in SeafileLibraries)
             {
                 if (SeafileLibrary.permission == "rw")
                 {
@@ -2443,7 +2443,7 @@ namespace ShareX.UploadersLib
             {
                 ListViewItem selectedItem = lvSeafileLibraries.Items[selIndex];
                 Config.SeafileRepoID = selectedItem.Name;
-                Seafile.SeafileLibraryObj SealileLibraryInfo = (Seafile.SeafileLibraryObj)selectedItem.Tag;
+                SeafileLibraryObj SealileLibraryInfo = (SeafileLibraryObj)selectedItem.Tag;
                 if (SealileLibraryInfo.encrypted)
                 {
                     Config.SeafileIsLibraryEncrypted = true;
@@ -2553,6 +2553,7 @@ namespace ShareX.UploadersLib
         #endregion Streamable
 
         #region Uplea
+
         private void btnUpleaLogin_Click(object sender, EventArgs e)
         {
             btnUpleaLogin.Enabled = false;
@@ -2571,7 +2572,7 @@ namespace ShareX.UploadersLib
 
                 if (!string.IsNullOrEmpty(apiKey))
                 {
-                    var upleaUserInformation = uplea.GetUserInformation(apiKey);
+                    UpleaGetUserInformationResponse upleaUserInformation = uplea.GetUserInformation(apiKey);
                     txtUpleaEmailAddress.Text = upleaUserInformation.Result.EmailAddress;
                     cbUpleaIsPremium.Checked = upleaUserInformation.Result.IsPremiumMember;
                     cbUpleaInstantDownloadEnabled.Checked = upleaUserInformation.Result.InstantDownloadEnabled;
@@ -2585,7 +2586,6 @@ namespace ShareX.UploadersLib
             {
                 btnUpleaLogin.Enabled = true;
             }
-
         }
 
         private void txtUpleaApiKey_TextChanged(object sender, EventArgs e)
@@ -2614,7 +2614,8 @@ namespace ShareX.UploadersLib
         {
             Config.UpleaInstantDownloadEnabled = (sender as CheckBox).Checked;
         }
-        #endregion
+
+        #endregion Uplea
 
         #endregion File Uploaders
 

@@ -402,7 +402,7 @@ namespace ShareX
         {
             foreach (ToolStripDropDownItem parent in lists)
             {
-                foreach (var dropDownItem in parent.DropDownItems)
+                foreach (ToolStripItem dropDownItem in parent.DropDownItems)
                 {
                     ((ToolStripMenuItem)dropDownItem).Checked = false;
                 }

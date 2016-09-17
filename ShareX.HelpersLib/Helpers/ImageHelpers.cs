@@ -1013,7 +1013,7 @@ namespace ShareX.HelpersLib
                     // Create sharpening filter.
                     const int filterSize = 5;
 
-                    var filter = new double[,]
+                    double[,] filter = new double[,]
                     {
                         {-1, -1, -1, -1, -1},
                         {-1,  2,  2,  2, -1},
@@ -1027,7 +1027,7 @@ namespace ShareX.HelpersLib
 
                     const int s = filterSize / 2;
 
-                    var result = new Color[image.Width, image.Height];
+                    Color[,] result = new Color[image.Width, image.Height];
 
                     // Lock image bits for read/write.
                     if (sharpenImage != null)
@@ -1036,7 +1036,7 @@ namespace ShareX.HelpersLib
 
                         // Declare an array to hold the bytes of the bitmap.
                         int bytes = pbits.Stride * height;
-                        var rgbValues = new byte[bytes];
+                        byte[] rgbValues = new byte[bytes];
 
                         // Copy the RGB values into the array.
                         Marshal.Copy(pbits.Scan0, rgbValues, 0, bytes);

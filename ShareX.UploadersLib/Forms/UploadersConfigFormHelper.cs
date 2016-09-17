@@ -624,11 +624,11 @@ namespace ShareX.UploadersLib
 
                 if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
                 {
-                    var folders = new GoogleDrive(Config.GoogleDriveOAuth2Info).GetFolders();
+                    List<GoogleDriveFile> folders = new GoogleDrive(Config.GoogleDriveOAuth2Info).GetFolders();
 
                     if (folders != null)
                     {
-                        foreach (var folder in folders)
+                        foreach (GoogleDriveFile folder in folders)
                         {
                             ListViewItem lvi = new ListViewItem(folder.title);
                             lvi.SubItems.Add(folder.description);

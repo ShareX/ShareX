@@ -59,6 +59,16 @@ namespace ShareX.UploadersLib.FileUploaders
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGoogleDrive;
     }
 
+    public enum GoogleDrivePermissionRole
+    {
+        owner, reader, writer
+    }
+
+    public enum GoogleDrivePermissionType
+    {
+        user, group, domain, anyone
+    }
+
     public sealed class GoogleDrive : FileUploader, IOAuth2
     {
         public OAuth2Info AuthInfo { get; set; }
@@ -286,29 +296,19 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return result;
         }
+    }
 
-        public class GoogleDriveFile
-        {
-            public string id { get; set; }
-            public string alternateLink { get; set; }
-            public string webContentLink { get; set; }
-            public string title { get; set; }
-            public string description { get; set; }
-        }
+    public class GoogleDriveFile
+    {
+        public string id { get; set; }
+        public string alternateLink { get; set; }
+        public string webContentLink { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+    }
 
-        public class GoogleDriveFileList
-        {
-            public List<GoogleDriveFile> items { get; set; }
-        }
-
-        public enum GoogleDrivePermissionRole
-        {
-            owner, reader, writer
-        }
-
-        public enum GoogleDrivePermissionType
-        {
-            user, group, domain, anyone
-        }
+    public class GoogleDriveFileList
+    {
+        public List<GoogleDriveFile> items { get; set; }
     }
 }

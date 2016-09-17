@@ -114,7 +114,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetObjectKey(string fileName)
         {
-            var objectPrefix = NameParser.Parse(NameParserType.FolderPath, s3Settings.ObjectPrefix.Trim('/'));
+            string objectPrefix = NameParser.Parse(NameParserType.FolderPath, s3Settings.ObjectPrefix.Trim('/'));
             return URLHelpers.CombineURL(objectPrefix, fileName);
         }
 
@@ -150,7 +150,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string GetMd5Hash(Stream stream)
         {
             stream.Seek(0, SeekOrigin.Begin);
-            using (var md5 = MD5.Create())
+            using (MD5 md5 = MD5.Create())
             {
                 return string.Concat(md5.ComputeHash(stream).Select(b => b.ToString("x2")));
             }
@@ -168,9 +168,9 @@ namespace ShareX.UploadersLib.FileUploaders
                 return null;
             }
 
-            var region = GetCurrentRegion(s3Settings);
+            AmazonS3Region region = GetCurrentRegion(s3Settings);
 
-            var s3ClientConfig = new AmazonS3Config();
+            AmazonS3Config s3ClientConfig = new AmazonS3Config();
 
             if (region.AmazonRegion == null)
             {
@@ -181,9 +181,9 @@ namespace ShareX.UploadersLib.FileUploaders
                 s3ClientConfig.RegionEndpoint = region.AmazonRegion;
             }
 
-            using (var client = new AmazonS3Client(GetCurrentCredentials(), s3ClientConfig))
+            using (AmazonS3Client client = new AmazonS3Client(GetCurrentCredentials(), s3ClientConfig))
             {
-                var putRequest = new GetPreSignedUrlRequest
+                GetPreSignedUrlRequest putRequest = new GetPreSignedUrlRequest
                 {
                     BucketName = s3Settings.Bucket,
                     Key = GetObjectKey(fileName),
@@ -192,21 +192,21 @@ namespace ShareX.UploadersLib.FileUploaders
                     ContentType = Helpers.GetMimeType(fileName)
                 };
 
-                var requestHeaders = new NameValueCollection();
+                NameValueCollection requestHeaders = new NameValueCollection();
                 requestHeaders["x-amz-acl"] = "public-read";
                 requestHeaders["x-amz-storage-class"] = GetObjectStorageClass();
 
                 putRequest.Headers["x-amz-acl"] = "public-read";
                 putRequest.Headers["x-amz-storage-class"] = GetObjectStorageClass();
 
-                var responseHeaders = SendRequestStreamGetHeaders(client.GetPreSignedURL(putRequest), stream, Helpers.GetMimeType(fileName), requestHeaders, method: HttpMethod.PUT);
+                NameValueCollection responseHeaders = SendRequestStreamGetHeaders(client.GetPreSignedURL(putRequest), stream, Helpers.GetMimeType(fileName), requestHeaders, method: HttpMethod.PUT);
                 if (responseHeaders.Count == 0)
                 {
                     Errors.Add("Upload to Amazon S3 failed. Check your access credentials.");
                     return null;
                 }
 
-                var eTag = responseHeaders.Get("ETag");
+                string eTag = responseHeaders.Get("ETag");
                 if (eTag == null)
                 {
                     Errors.Add("Upload to Amazon S3 failed.");
