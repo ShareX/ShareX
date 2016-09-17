@@ -847,9 +847,6 @@
   <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
     <value>屏幕捕获</value>
   </data>
-  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
-    <value>屏幕捕获</value>
-  </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
     <value>屏幕捕获</value>
   </data>
@@ -870,9 +867,6 @@
   </data>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>删除形状或取消捕捉</value>
-  </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>捕捉区域（简单注释）</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>互换工具类型</value>

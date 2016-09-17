@@ -835,12 +835,6 @@
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>Открыть окно истории изображений</value>
   </data>
-  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
-    <value>Захват экрана</value>
-  </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Захват области (Простые примечания)</value>
-  </data>
   <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
     <value>Захват экрана</value>
   </data>

@@ -862,10 +862,4 @@ Gostaria de baixá-la?</value>
   <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
     <value>Capturar tela</value>
   </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Capturar região (anotação simples)</value>
-  </data>
-  <data name="HotkeyType_RectangleAnnotate_Category" xml:space="preserve">
-    <value>Capturar tela</value>
-  </data>
 </root>

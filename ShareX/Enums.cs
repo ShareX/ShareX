@@ -162,7 +162,6 @@ namespace ShareX
         RectangleRegion,
         RectangleLight,
         RectangleTransparent,
-        RectangleAnnotate,
         CustomRegion,
         LastRegion,
         ScrollingCapture,

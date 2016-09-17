@@ -1730,7 +1730,7 @@ namespace ShareX
 
         private delegate Image ScreenCaptureDelegate();
 
-        private enum LastRegionCaptureType { Default, Light, Transparent, Annotate }
+        private enum LastRegionCaptureType { Default, Light, Transparent }
 
         private LastRegionCaptureType lastRegionCaptureType = LastRegionCaptureType.Default;
 
@@ -1836,9 +1836,6 @@ namespace ShareX
                     break;
                 case HotkeyType.RectangleTransparent:
                     CaptureRectangleTransparent(safeTaskSettings, false);
-                    break;
-                case HotkeyType.RectangleAnnotate:
-                    CaptureRectangleAnnotate(safeTaskSettings, false);
                     break;
                 case HotkeyType.CustomRegion:
                     CaptureScreenshot(CaptureType.CustomRegion, safeTaskSettings, false);
@@ -2223,32 +2220,6 @@ namespace ShareX
             }, CaptureType.Region, taskSettings, autoHideForm);
         }
 
-        private void CaptureRectangleAnnotate(TaskSettings taskSettings = null, bool autoHideForm = true)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            DoCapture(() =>
-             {
-                 Image img = null;
-
-                 using (RegionCaptureSimpleAnnotateForm rectangleAnnotate = new RegionCaptureSimpleAnnotateForm(TaskHelpers.GetScreenshot(taskSettings),
-                     taskSettings.CaptureSettingsReference.RectangleAnnotateOptions))
-                 {
-                     if (rectangleAnnotate.ShowDialog() == DialogResult.OK)
-                     {
-                         img = rectangleAnnotate.GetAreaImage();
-
-                         if (img != null)
-                         {
-                             lastRegionCaptureType = LastRegionCaptureType.Annotate;
-                         }
-                     }
-                 }
-
-                 return img;
-             }, CaptureType.Region, taskSettings, autoHideForm);
-        }
-
         private void CaptureLastRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
             switch (lastRegionCaptureType)
@@ -2299,22 +2270,6 @@ namespace ShareX
                     else
                     {
                         CaptureRectangleTransparent(taskSettings, autoHideForm);
-                    }
-                    break;
-                case LastRegionCaptureType.Annotate:
-                    if (!RegionCaptureSimpleAnnotateForm.LastSelectionRectangle0Based.IsEmpty)
-                    {
-                        DoCapture(() =>
-                         {
-                             using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                             {
-                                 return ImageHelpers.CropImage(screenshot, RegionCaptureSimpleAnnotateForm.LastSelectionRectangle0Based);
-                             }
-                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                    }
-                    else
-                    {
-                        CaptureRectangleAnnotate(taskSettings, autoHideForm);
                     }
                     break;
             }

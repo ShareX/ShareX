@@ -1285,24 +1285,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capture region (Simple annotate).
-        /// </summary>
-        internal static string HotkeyType_RectangleAnnotate {
-            get {
-                return ResourceManager.GetString("HotkeyType_RectangleAnnotate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Screen capture.
-        /// </summary>
-        internal static string HotkeyType_RectangleAnnotate_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_RectangleAnnotate_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Capture region (Light).
         /// </summary>
         internal static string HotkeyType_RectangleLight {
