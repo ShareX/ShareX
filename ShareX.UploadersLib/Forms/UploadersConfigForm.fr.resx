@@ -447,12 +447,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Paramètres de partage Seafile</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Hôte : </value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>Clé API :</value>
-  </data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>Services de mise en ligne :</value>
   </data>

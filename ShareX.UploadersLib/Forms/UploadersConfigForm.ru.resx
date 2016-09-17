@@ -453,12 +453,6 @@ store.book[0].title</value>
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Настройки публикации</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Хост:</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>Ключ API:</value>
-  </data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>Сервисы:</value>
   </data>

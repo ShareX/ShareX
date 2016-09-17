@@ -138,9 +138,6 @@
   <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
     <value>左面</value>
   </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>关闭</value>
-  </data>
   <data name="lblTextSize.Text" xml:space="preserve">
     <value>尺寸：</value>
   </data>

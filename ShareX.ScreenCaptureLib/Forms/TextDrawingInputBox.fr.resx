@@ -120,9 +120,6 @@
   <data name="lblFont.Text" xml:space="preserve">
     <value>Police:</value>
   </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
   <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
     <value>Gauche</value>
   </data>

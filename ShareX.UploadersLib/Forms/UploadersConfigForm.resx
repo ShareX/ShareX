@@ -2338,9 +2338,6 @@ store.book[0].title</value>
   <data name="txtCustomUploaderLog.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
-  <data name="txtCustomUploaderLog.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;txtCustomUploaderLog.Name" xml:space="preserve">
     <value>txtCustomUploaderLog</value>
   </data>
@@ -13863,5 +13860,5 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;lblUpleaEmailAddress.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>  
+  </data>
 </root>

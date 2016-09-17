@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-// https://github.com/Burtsev-Alexey/net-object-deep-copy
+// Credits: https://github.com/Burtsev-Alexey/net-object-deep-copy
 
 using System;
 using System.Collections.Generic;

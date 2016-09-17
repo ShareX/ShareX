@@ -123,9 +123,6 @@
   <data name="lblTextSize.Text" xml:space="preserve">
     <value>Tamanho:</value>
   </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Fechar</value>
-  </data>
   <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
     <value>Esquerda</value>
   </data>

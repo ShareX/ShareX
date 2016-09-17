@@ -182,9 +182,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="tpPomf.Text" xml:space="preserve">
     <value>Pomf</value>
   </data>
-  <data name="tpUp1.Text" xml:space="preserve">
-    <value>Up1</value>
-  </data>
   <data name="tpSeafile.Text" xml:space="preserve">
     <value>Seafile</value>
   </data>
@@ -389,12 +386,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
-  </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Hospedagem:</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>Chave da API:</value>
   </data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>Uploaders:</value>

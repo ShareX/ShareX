@@ -105,7 +105,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
             }
 
-            return string.Empty;
+            return "";
         }
 
         private string GetUpleaResponse<T>(T upleaRequest) where T : IUpleaRequest

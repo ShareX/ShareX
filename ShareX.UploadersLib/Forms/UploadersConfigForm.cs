@@ -2560,7 +2560,7 @@ namespace ShareX.UploadersLib
 
             Uplea uplea = new Uplea();
 
-            txtUpleaApiKey.Text = string.Empty;
+            txtUpleaApiKey.Text = "";
             cbUpleaIsPremium.Checked = false;
             cbUpleaInstantDownloadEnabled.Checked = false;
 
@@ -2590,11 +2590,11 @@ namespace ShareX.UploadersLib
 
         private void txtUpleaApiKey_TextChanged(object sender, EventArgs e)
         {
-            Config.UpleaApiKey = (sender as TextBox).Text;
+            Config.UpleaApiKey = txtUpleaApiKey.Text;
 
-            if (string.IsNullOrEmpty(txtUpleaApiKey.Text))
+            if (string.IsNullOrEmpty(Config.UpleaApiKey))
             {
-                txtUpleaEmailAddress.Text = string.Empty;
+                txtUpleaEmailAddress.Text = "";
                 cbUpleaIsPremium.Checked = false;
                 cbUpleaInstantDownloadEnabled.Checked = false;
             }
@@ -2602,17 +2602,17 @@ namespace ShareX.UploadersLib
 
         private void txtUpleaEmailAddress_TextChanged(object sender, EventArgs e)
         {
-            Config.UpleaEmailAddress = (sender as TextBox).Text;
+            Config.UpleaEmailAddress = txtUpleaEmailAddress.Text;
         }
 
         private void cbUpleaIsPremium_CheckedChanged(object sender, EventArgs e)
         {
-            Config.UpleaIsPremiumMember = (sender as CheckBox).Checked;
+            Config.UpleaIsPremiumMember = cbUpleaIsPremium.Checked;
         }
 
         private void cbUpleaInstantDownloadEnabled_CheckedChanged(object sender, EventArgs e)
         {
-            Config.UpleaInstantDownloadEnabled = (sender as CheckBox).Checked;
+            Config.UpleaInstantDownloadEnabled = cbUpleaInstantDownloadEnabled.Checked;
         }
 
         #endregion Uplea

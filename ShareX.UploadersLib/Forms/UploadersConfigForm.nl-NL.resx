@@ -465,12 +465,6 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Seafile instellingen voor share:</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>API sleutel:</value>
-  </data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>Uploaders:</value>
   </data>

@@ -456,12 +456,6 @@ store.book[0].title</value>
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Paylaşma ayarları</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Sunucu:</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>API anahtarı:</value>
-  </data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>Yükleyiciler:</value>
   </data>

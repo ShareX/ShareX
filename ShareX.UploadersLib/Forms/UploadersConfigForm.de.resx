@@ -498,12 +498,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktivieren das Teilen.</value>
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Seafile "Teilen" Einstellungen:</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>API Schlüssel:</value>
-  </data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>Hochlader:</value>
   </data>

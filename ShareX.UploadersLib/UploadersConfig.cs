@@ -288,11 +288,11 @@ namespace ShareX.UploadersLib
 
         // Uplea
 
-        public string UpleaApiKey = string.Empty;
-        public string UpleaEmailAddress = string.Empty;
+        public string UpleaApiKey = "";
+        public string UpleaEmailAddress = "";
         public bool UpleaIsPremiumMember = false;
         public bool UpleaInstantDownloadEnabled = false;
-        
+
         #endregion File uploaders
 
         #region URL shorteners

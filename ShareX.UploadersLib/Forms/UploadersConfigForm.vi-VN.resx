@@ -365,12 +365,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Tệp:</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="lblUp1Key.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>Dịch vụ:</value>
   </data>

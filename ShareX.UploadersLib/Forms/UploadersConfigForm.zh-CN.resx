@@ -481,9 +481,6 @@
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Seafile共享设置</value>
   </data>
-  <data name="lblUp1Host.Text" xml:space="preserve">
-    <value>域名:</value>
-  </data>
   <data name="lblPomfUploaders.Text" xml:space="preserve">
     <value>上传者:</value>
   </data>

@@ -138,9 +138,6 @@
   <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
     <value>Слева</value>
   </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
   <data name="lblTextSize.Text" xml:space="preserve">
     <value>Размер:</value>
   </data>
