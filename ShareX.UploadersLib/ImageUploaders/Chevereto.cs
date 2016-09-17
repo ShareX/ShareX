@@ -64,7 +64,7 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public static List<CheveretoUploader> Uploaders = new List<CheveretoUploader>()
         {
-            new CheveretoUploader("http://ultraimg.com/api/1/upload", "3374fa58c672fcaad8dab979f7687397"),
+            new CheveretoUploader("http://www.ultraimg.com/api/1/upload", "3374fa58c672fcaad8dab979f7687397"),
             new CheveretoUploader("http://yukle.at/3/api/1/upload", "bf3f97649acf179ac17e2b3004fa44bc"),
             new CheveretoUploader("http://img.patifile.com/api/1/upload", "8320784a9b044510e8c723fb778fe3b7"),
             new CheveretoUploader("http://boltimg.com/api/1/upload", "8dfbcb7ab9b5258a90be7cf09e361894"),
