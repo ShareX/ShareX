@@ -120,9 +120,6 @@
   <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
     <value>捕捉任务后：</value>
   </data>
-  <data name="After upload tasks:" xml:space="preserve">
-    <value>上传任务后：</value>
-  </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>菜单：</value>
   </data>
