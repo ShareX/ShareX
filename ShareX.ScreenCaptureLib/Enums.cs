@@ -48,7 +48,13 @@ namespace ShareX.ScreenCaptureLib
         Region,
         Fullscreen,
         Monitor,
-        ActiveMonitor
+        ActiveMonitor,
+        AnnotateRunAfterCaptureTasks,
+        AnnotateSaveImage,
+        AnnotateSaveImageAs,
+        AnnotateCopyImage,
+        AnnotateUploadImage,
+        AnnotatePrintImage
     }
 
     public enum NodeType

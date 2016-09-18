@@ -41,13 +41,6 @@ namespace ShareX.ScreenCaptureLib
     {
         public static GraphicsPath LastRegionFillPath { get; private set; }
 
-        public event Action<Image> AfterCaptureTasksRequested;
-        public event Action<Image, string> SaveImageRequested;
-        public event Func<Image, string, string> SaveImageAsRequested;
-        public event Action<Image> CopyImageRequested;
-        public event Action<Image> UploadImageRequested;
-        public event Action<Image> PrintImageRequested;
-
         public RegionCaptureOptions Config { get; set; }
         public Rectangle ScreenRectangle { get; private set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
@@ -56,6 +49,7 @@ namespace ShareX.ScreenCaptureLib
         public RegionResult Result { get; private set; }
         public int FPS { get; private set; }
         public int MonitorIndex { get; set; }
+        public string ImageFilePath { get; set; }
 
         public RegionCaptureMode Mode { get; private set; }
 
@@ -80,10 +74,7 @@ namespace ShareX.ScreenCaptureLib
 
         public SimpleWindowInfo SelectedWindow { get; private set; }
 
-        public string ImageFilePath { get; set; }
-
         internal ShapeManager ShapeManager { get; private set; }
-
         internal List<DrawableObject> DrawableObjects { get; private set; }
 
         public IContainer components = null;
@@ -1149,88 +1140,6 @@ namespace ShareX.ScreenCaptureLib
         private Image GetOutputImage()
         {
             return ShapeManager.RenderOutputImage(Image);
-        }
-
-        internal void OnAfterCaptureTasksRequested()
-        {
-            if (AfterCaptureTasksRequested != null)
-            {
-                Close();
-
-                FormClosed += (sender, e) =>
-                {
-                    Image img = GetResultImage();
-                    AfterCaptureTasksRequested(img);
-                };
-            }
-        }
-
-        internal void OnSaveImageRequested()
-        {
-            if (SaveImageRequested != null)
-            {
-                Close();
-
-                using (Image img = GetResultImage())
-                {
-                    SaveImageRequested(img, ImageFilePath);
-                }
-            }
-        }
-
-        internal void OnSaveImageAsRequested()
-        {
-            if (SaveImageAsRequested != null)
-            {
-                Close();
-
-                using (Image img = GetResultImage())
-                {
-                    string filePath = SaveImageAsRequested(img, ImageFilePath);
-
-                    if (!string.IsNullOrEmpty(filePath))
-                    {
-                        ImageFilePath = filePath;
-                    }
-                }
-            }
-        }
-
-        internal void OnCopyImageRequested()
-        {
-            if (CopyImageRequested != null)
-            {
-                Close();
-
-                using (Image img = GetResultImage())
-                {
-                    CopyImageRequested(img);
-                }
-            }
-        }
-
-        internal void OnUploadImageRequested()
-        {
-            if (UploadImageRequested != null)
-            {
-                Close();
-
-                Image img = GetResultImage();
-                UploadImageRequested(img);
-            }
-        }
-
-        internal void OnPrintImageRequested()
-        {
-            if (PrintImageRequested != null)
-            {
-                Close();
-
-                using (Image img = GetResultImage())
-                {
-                    PrintImageRequested(img);
-                }
-            }
         }
 
         protected override void Dispose(bool disposing)

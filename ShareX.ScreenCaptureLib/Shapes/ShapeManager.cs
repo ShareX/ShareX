@@ -271,33 +271,33 @@ namespace ShareX.ScreenCaptureLib
             {
                 ToolStripMenuItem tsmiCompleteEdit = new ToolStripMenuItem("Run after capture tasks");
                 tsmiCompleteEdit.Image = Resources.tick;
-                tsmiCompleteEdit.Click += (sender, e) => form.OnAfterCaptureTasksRequested();
+                tsmiCompleteEdit.Click += (sender, e) => form.Close(RegionResult.AnnotateRunAfterCaptureTasks);
                 cmsContextMenu.Items.Add(tsmiCompleteEdit);
 
                 ToolStripMenuItem tsmiSaveImage = new ToolStripMenuItem("Save image");
                 tsmiSaveImage.Enabled = !string.IsNullOrEmpty(form.ImageFilePath);
                 tsmiSaveImage.Image = Resources.disk_black;
-                tsmiSaveImage.Click += (sender, e) => form.OnSaveImageRequested();
+                tsmiSaveImage.Click += (sender, e) => form.Close(RegionResult.AnnotateSaveImage);
                 cmsContextMenu.Items.Add(tsmiSaveImage);
 
                 ToolStripMenuItem tsmiSaveImageAs = new ToolStripMenuItem("Save image as...");
                 tsmiSaveImageAs.Image = Resources.disks_black;
-                tsmiSaveImageAs.Click += (sender, e) => form.OnSaveImageAsRequested();
+                tsmiSaveImageAs.Click += (sender, e) => form.Close(RegionResult.AnnotateSaveImageAs);
                 cmsContextMenu.Items.Add(tsmiSaveImageAs);
 
                 ToolStripMenuItem tsmiCopyImage = new ToolStripMenuItem("Copy image to clipboard");
                 tsmiCopyImage.Image = Resources.clipboard;
-                tsmiCopyImage.Click += (sender, e) => form.OnCopyImageRequested();
+                tsmiCopyImage.Click += (sender, e) => form.Close(RegionResult.AnnotateCopyImage);
                 cmsContextMenu.Items.Add(tsmiCopyImage);
 
                 ToolStripMenuItem tsmiUploadImage = new ToolStripMenuItem("Upload image");
                 tsmiUploadImage.Image = Resources.drive_globe;
-                tsmiUploadImage.Click += (sender, e) => form.OnUploadImageRequested();
+                tsmiUploadImage.Click += (sender, e) => form.Close(RegionResult.AnnotateUploadImage);
                 cmsContextMenu.Items.Add(tsmiUploadImage);
 
                 ToolStripMenuItem tsmiPrintImage = new ToolStripMenuItem("Print image...");
                 tsmiPrintImage.Image = Resources.printer;
-                tsmiPrintImage.Click += (sender, e) => form.OnPrintImageRequested();
+                tsmiPrintImage.Click += (sender, e) => form.Close(RegionResult.AnnotatePrintImage);
                 cmsContextMenu.Items.Add(tsmiPrintImage);
 
                 ToolStripSeparator tssEditorMode = new ToolStripSeparator();

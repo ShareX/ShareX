@@ -154,7 +154,7 @@ namespace ShareX.ScreenCaptureLib
         public static void AnnotateImage(Image img, string filePath, RegionCaptureOptions options,
             Action<Image> afterCaptureTasksRequested,
             Action<Image, string> saveImageRequested,
-            Func<Image, string, string> saveImageAsRequested,
+            Action<Image, string> saveImageAsRequested,
             Action<Image> copyImageRequested,
             Action<Image> uploadImageRequested,
             Action<Image> printImageRequested)
@@ -163,13 +163,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 form.ImageFilePath = filePath;
 
-                form.AfterCaptureTasksRequested += afterCaptureTasksRequested;
-                form.SaveImageRequested += saveImageRequested;
-                form.SaveImageAsRequested += saveImageAsRequested;
-                form.CopyImageRequested += copyImageRequested;
-                form.UploadImageRequested += uploadImageRequested;
-                form.PrintImageRequested += printImageRequested;
-
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.DetectWindows = false;
                 form.Config.ShowTips = false;
@@ -177,6 +170,40 @@ namespace ShareX.ScreenCaptureLib
 
                 form.Prepare(img);
                 form.ShowDialog();
+
+                if (form.Result != RegionResult.Close)
+                {
+                    Image result = form.GetResultImage();
+
+                    switch (form.Result)
+                    {
+                        default:
+                            result.Dispose();
+                            break;
+                        case RegionResult.AnnotateRunAfterCaptureTasks:
+                            afterCaptureTasksRequested(result);
+                            break;
+                        case RegionResult.AnnotateSaveImage:
+                            saveImageRequested(result, form.ImageFilePath);
+                            result.Dispose();
+                            break;
+                        case RegionResult.AnnotateSaveImageAs:
+                            saveImageAsRequested(result, form.ImageFilePath);
+                            result.Dispose();
+                            break;
+                        case RegionResult.AnnotateCopyImage:
+                            copyImageRequested(result);
+                            result.Dispose();
+                            break;
+                        case RegionResult.AnnotateUploadImage:
+                            uploadImageRequested(result);
+                            break;
+                        case RegionResult.AnnotatePrintImage:
+                            printImageRequested(result);
+                            result.Dispose();
+                            break;
+                    }
+                }
             }
         }
 
