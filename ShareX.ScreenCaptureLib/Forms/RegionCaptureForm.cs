@@ -41,6 +41,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public static GraphicsPath LastRegionFillPath { get; private set; }
 
+        public event Action<Image> AfterCaptureTasksRequested;
         public event Action<Image, string> SaveImageRequested;
         public event Func<Image, string, string> SaveImageAsRequested;
         public event Action<Image> CopyImageRequested;
@@ -78,6 +79,8 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public SimpleWindowInfo SelectedWindow { get; private set; }
+
+        public string ImageFilePath { get; set; }
 
         internal ShapeManager ShapeManager { get; private set; }
 
@@ -1148,45 +1151,85 @@ namespace ShareX.ScreenCaptureLib
             return ShapeManager.RenderOutputImage(Image);
         }
 
-        internal void OnSaveImageRequested(Image img, string filePath)
+        internal void OnAfterCaptureTasksRequested()
+        {
+            if (AfterCaptureTasksRequested != null)
+            {
+                Close();
+
+                FormClosed += (sender, e) =>
+                {
+                    Image img = GetResultImage();
+                    AfterCaptureTasksRequested(img);
+                };
+            }
+        }
+
+        internal void OnSaveImageRequested()
         {
             if (SaveImageRequested != null)
             {
-                SaveImageRequested(img, filePath);
+                Close();
+
+                using (Image img = GetResultImage())
+                {
+                    SaveImageRequested(img, ImageFilePath);
+                }
             }
         }
 
-        internal string OnSaveImageAsRequested(Image img, string filePath)
+        internal void OnSaveImageAsRequested()
         {
             if (SaveImageAsRequested != null)
             {
-                return SaveImageAsRequested(img, filePath);
-            }
+                Close();
 
-            return null;
+                using (Image img = GetResultImage())
+                {
+                    string filePath = SaveImageAsRequested(img, ImageFilePath);
+
+                    if (!string.IsNullOrEmpty(filePath))
+                    {
+                        ImageFilePath = filePath;
+                    }
+                }
+            }
         }
 
-        internal void OnCopyImageRequested(Image img)
+        internal void OnCopyImageRequested()
         {
             if (CopyImageRequested != null)
             {
-                CopyImageRequested(img);
+                Close();
+
+                using (Image img = GetResultImage())
+                {
+                    CopyImageRequested(img);
+                }
             }
         }
 
-        internal void OnUploadImageRequested(Image img)
+        internal void OnUploadImageRequested()
         {
             if (UploadImageRequested != null)
             {
+                Close();
+
+                Image img = GetResultImage();
                 UploadImageRequested(img);
             }
         }
 
-        internal void OnPrintImageRequested(Image img)
+        internal void OnPrintImageRequested()
         {
             if (PrintImageRequested != null)
             {
-                PrintImageRequested(img);
+                Close();
+
+                using (Image img = GetResultImage())
+                {
+                    PrintImageRequested(img);
+                }
             }
         }
 

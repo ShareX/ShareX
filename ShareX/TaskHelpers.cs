@@ -626,30 +626,22 @@ namespace ShareX
 
         public static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings = null)
         {
-            if (img == null)
+            if (img == null && File.Exists(filePath))
             {
-                if (File.Exists(filePath))
-                {
-                    img = ImageHelpers.LoadImage(filePath);
-                }
-                else
-                {
-                    return;
-                }
+                img = ImageHelpers.LoadImage(filePath);
             }
 
-            using (img)
+            if (img != null)
             {
-                Image result = RegionCaptureTasks.AnnotateImage(img, taskSettings.CaptureSettingsReference.SurfaceOptions,
-                    (x, newFilePath) => SaveImageAsFile(x, taskSettings),
-                    (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
-                    x => ClipboardHelpers.CopyImage(x),
-                    x => UploadManager.UploadImage(x),
-                    x => PrintImage(x));
-
-                if (result != null)
+                using (img)
                 {
-                    UploadManager.RunImageTask(result, taskSettings);
+                    RegionCaptureTasks.AnnotateImage(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions,
+                        x => UploadManager.RunImageTask(x, taskSettings),
+                        (x, newFilePath) => ImageHelpers.SaveImage(x, newFilePath),
+                        (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
+                        x => ClipboardHelpers.CopyImage(x),
+                        x => UploadManager.UploadImage(x),
+                        x => PrintImage(x));
                 }
             }
         }
