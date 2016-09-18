@@ -1096,7 +1096,14 @@ namespace ShareX.ScreenCaptureLib
                     shape.Move(-ImageRectangle.X, -ImageRectangle.Y);
                 }
 
-                return GetOutputImage();
+                Image img = GetOutputImage();
+
+                foreach (BaseShape shape in ShapeManager.Shapes)
+                {
+                    shape.Move(ImageRectangle.X, ImageRectangle.Y);
+                }
+
+                return img;
             }
             else if (Result == RegionResult.Region)
             {
