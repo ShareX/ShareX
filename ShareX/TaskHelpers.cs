@@ -49,13 +49,14 @@ namespace ShareX
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
         {
             ImageData imageData = new ImageData();
-            imageData.ImageStream = SaveImage(img, taskSettings.ImageSettings.ImageFormat, taskSettings);
+            imageData.ImageStream = SaveImageAsStream(img, taskSettings.ImageSettings.ImageFormat, taskSettings);
             imageData.ImageFormat = taskSettings.ImageSettings.ImageFormat;
 
             if (taskSettings.ImageSettings.ImageAutoUseJPEG && taskSettings.ImageSettings.ImageFormat != EImageFormat.JPEG &&
                 imageData.ImageStream.Length > taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000)
             {
-                imageData.ImageStream = SaveImage(img, EImageFormat.JPEG, taskSettings);
+                imageData.ImageStream.Dispose();
+                imageData.ImageStream = SaveImageAsStream(img, EImageFormat.JPEG, taskSettings);
                 imageData.ImageFormat = EImageFormat.JPEG;
             }
 
@@ -103,12 +104,12 @@ namespace ShareX
             return null;
         }
 
-        public static MemoryStream SaveImage(Image img, EImageFormat imageFormat, TaskSettings taskSettings)
+        public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, TaskSettings taskSettings)
         {
-            return SaveImage(img, imageFormat, taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
+            return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
         }
 
-        public static MemoryStream SaveImage(Image img, EImageFormat imageFormat, int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
+        public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
         {
             MemoryStream stream = new MemoryStream();
 
@@ -133,6 +134,21 @@ namespace ShareX
             }
 
             return stream;
+        }
+
+        public static void SaveImageAsFile(Image img, TaskSettings taskSettings)
+        {
+            using (ImageData imageData = PrepareImage(img, taskSettings))
+            {
+                string fileName = GetFilename(taskSettings, imageData.ImageFormat.GetDescription(), img);
+                string filePath = CheckFilePath(taskSettings.CaptureFolder, fileName, taskSettings);
+
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    imageData.Write(filePath);
+                    DebugHelper.WriteLine("Image saved to file: " + filePath);
+                }
+            }
         }
 
         public static string GetFilename(TaskSettings taskSettings, string extension = null, Image image = null)
@@ -574,7 +590,7 @@ namespace ShareX
                     {
                         if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
                         {
-                            AnnotateImageUsingShareX(img, taskSettings);
+                            AnnotateImageUsingShareX(img, null, taskSettings);
                         }
                         else
                         {
@@ -599,7 +615,7 @@ namespace ShareX
 
                 if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
                 {
-                    AnnotateImageUsingShareX(filePath, taskSettings);
+                    AnnotateImageUsingShareX(null, filePath, taskSettings);
                 }
                 else
                 {
@@ -608,23 +624,33 @@ namespace ShareX
             }
         }
 
-        public static void AnnotateImageUsingShareX(Image img, TaskSettings taskSettings = null)
+        public static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings = null)
         {
-            Image result = RegionCaptureTasks.AnnotateImage(img, taskSettings.CaptureSettingsReference.SurfaceOptions);
-
-            if (result != null)
+            if (img == null)
             {
-                UploadManager.RunImageTask(result, taskSettings);
+                if (File.Exists(filePath))
+                {
+                    img = ImageHelpers.LoadImage(filePath);
+                }
+                else
+                {
+                    return;
+                }
             }
-        }
 
-        public static void AnnotateImageUsingShareX(string filePath, TaskSettings taskSettings = null)
-        {
-            Image result = RegionCaptureTasks.AnnotateImage(filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
-
-            if (result != null)
+            using (img)
             {
-                UploadManager.RunImageTask(result, taskSettings);
+                Image result = RegionCaptureTasks.AnnotateImage(img, taskSettings.CaptureSettingsReference.SurfaceOptions,
+                    (x, newFilePath) => SaveImageAsFile(x, taskSettings),
+                    (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
+                    x => ClipboardHelpers.CopyImage(x),
+                    x => UploadManager.UploadImage(x),
+                    x => PrintImage(x));
+
+                if (result != null)
+                {
+                    UploadManager.RunImageTask(result, taskSettings);
+                }
             }
         }
 
@@ -708,7 +734,7 @@ namespace ShareX
             {
                 if (img != null)
                 {
-                    using (Stream stream = SaveImage(img, EImageFormat.PNG))
+                    using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
                     {
                         if (stream != null)
                         {

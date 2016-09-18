@@ -276,7 +276,14 @@ namespace ShareX.ScreenCaptureLib
 
                 ToolStripMenuItem tsmiSaveImage = new ToolStripMenuItem("Save image");
                 tsmiSaveImage.Image = Resources.disk_black;
-                tsmiSaveImage.Click += (sender, e) => form.Close(RegionResult.Region);
+                tsmiSaveImage.Click += (sender, e) =>
+                {
+                    form.Close();
+                    using (Image img = form.GetResultImage())
+                    {
+                        form.OnSaveImageRequested(img, null);
+                    }
+                };
                 cmsContextMenu.Items.Add(tsmiSaveImage);
 
                 ToolStripMenuItem tsmiSaveImageAs = new ToolStripMenuItem("Save image as...");
@@ -320,7 +327,7 @@ namespace ShareX.ScreenCaptureLib
 
             ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem(buttonText);
             tsmiCancelCapture.Image = Resources.prohibition;
-            tsmiCancelCapture.Click += (sender, e) => form.Close(RegionResult.Close);
+            tsmiCancelCapture.Click += (sender, e) => form.Close();
             cmsContextMenu.Items.Add(tsmiCancelCapture);
 
             ToolStripMenuItem tsmiCloseMenu = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Close_menu);
@@ -961,7 +968,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    form.Close(RegionResult.Close);
+                    form.Close();
                 }
             }
             else if (e.Button == MouseButtons.Middle)
@@ -1241,7 +1248,7 @@ namespace ShareX.ScreenCaptureLib
             switch (action)
             {
                 case RegionCaptureAction.CancelCapture:
-                    form.Close(RegionResult.Close);
+                    form.Close();
                     break;
                 case RegionCaptureAction.RemoveShapeCancelCapture:
                     if (IsShapeIntersect())
@@ -1250,7 +1257,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                     else
                     {
-                        form.Close(RegionResult.Close);
+                        form.Close();
                     }
                     break;
                 case RegionCaptureAction.RemoveShape:

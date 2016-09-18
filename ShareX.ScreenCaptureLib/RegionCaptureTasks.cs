@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
@@ -150,23 +151,21 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static Image AnnotateImage(string filePath, RegionCaptureOptions options)
-        {
-            if (File.Exists(filePath))
-            {
-                using (Image img = ImageHelpers.LoadImage(filePath))
-                {
-                    return AnnotateImage(img, options);
-                }
-            }
-
-            return null;
-        }
-
-        public static Image AnnotateImage(Image img, RegionCaptureOptions options)
+        public static Image AnnotateImage(Image img, RegionCaptureOptions options,
+            Action<Image, string> saveImageRequested,
+            Func<Image, string, string> saveImageAsRequested,
+            Action<Image> copyImageRequested,
+            Action<Image> uploadImageRequested,
+            Action<Image> printImageRequested)
         {
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Editor))
             {
+                form.SaveImageRequested += saveImageRequested;
+                form.SaveImageAsRequested += saveImageAsRequested;
+                form.CopyImageRequested += copyImageRequested;
+                form.UploadImageRequested += uploadImageRequested;
+                form.PrintImageRequested += printImageRequested;
+
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.DetectWindows = false;
                 form.Config.ShowTips = false;

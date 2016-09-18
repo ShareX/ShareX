@@ -44,7 +44,6 @@ namespace ShareX.ScreenCaptureLib
 
     public enum RegionResult
     {
-        None,
         Close,
         Region,
         Fullscreen,

@@ -258,7 +258,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.KeyData == Keys.Escape)
             {
-                Close(RegionResult.Close);
+                Close();
                 return;
             }
 
@@ -1148,7 +1148,7 @@ namespace ShareX.ScreenCaptureLib
             return ShapeManager.RenderOutputImage(Image);
         }
 
-        protected void OnSaveImageRequested(Image img, string filePath)
+        internal void OnSaveImageRequested(Image img, string filePath)
         {
             if (SaveImageRequested != null)
             {
@@ -1156,15 +1156,17 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected void OnSaveImageAsRequested(Image img, string filePath)
+        internal string OnSaveImageAsRequested(Image img, string filePath)
         {
             if (SaveImageAsRequested != null)
             {
-                string newFilePath = SaveImageAsRequested(img, filePath);
+                return SaveImageAsRequested(img, filePath);
             }
+
+            return null;
         }
 
-        protected void OnCopyImageRequested(Image img)
+        internal void OnCopyImageRequested(Image img)
         {
             if (CopyImageRequested != null)
             {
@@ -1172,7 +1174,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected void OnUploadImageRequested(Image img)
+        internal void OnUploadImageRequested(Image img)
         {
             if (UploadImageRequested != null)
             {
@@ -1180,7 +1182,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected void OnPrintImageRequested(Image img)
+        internal void OnPrintImageRequested(Image img)
         {
             if (PrintImageRequested != null)
             {
