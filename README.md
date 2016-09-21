@@ -4,8 +4,8 @@
 [![IRC](https://img.shields.io/badge/IRC-%23ShareX-blue.svg)](https://webchat.freenode.net/?channels=%23ShareX)
 [![Build status](https://img.shields.io/appveyor/ci/ShareX/sharex.svg?label=Build&maxAge=60)](https://ci.appveyor.com/project/ShareX/sharex)
 [![License](https://img.shields.io/github/license/ShareX/ShareX.svg?label=License&maxAge=86400)](./LICENSE.txt)
-[![Version](https://img.shields.io/github/release/ShareX/ShareX.svg?label=Release&maxAge=60)](https://github.com/ShareX/ShareX/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/ShareX/ShareX/latest/total.svg?label=Downloads&maxAge=60)](https://github.com/ShareX/ShareX/releases/latest)
+[![Release](https://img.shields.io/github/release/ShareX/ShareX.svg?label=Release&maxAge=60)](https://github.com/ShareX/ShareX/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/ShareX/ShareX/latest/total.svg?label=Downloads&maxAge=60)](https://getsharex.com/downloads/)
 
 [![Screenshot](https://getsharex.com/img/ShareX_Screenshot.png)](https://getsharex.com)
 
