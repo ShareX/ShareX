@@ -1,4 +1,4 @@
-version: 11.2.1.{build}
+version: $(AppVersion).{build}
 image: Visual Studio 2015
 configuration:
 - Release
