@@ -1,10 +1,10 @@
 if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
 {
-    if ($env:Configuration -eq "Release")
+    if ($env:CONFIGURATION -eq "Release")
     {
         & "ShareX.Setup\bin\Release\ShareX.Setup.exe" -AppVeyorRelease
     }
-    elseif ($env:Configuration -eq "Steam")
+    elseif ($env:CONFIGURATION -eq "Steam")
     {
         & "ShareX.Setup\bin\Steam\ShareX.Setup.exe" -AppVeyorSteam
     }
