@@ -1,4 +1,4 @@
-version: {build}
+version: 1.0.0.{build}
 image: Visual Studio 2015
 configuration:
 - Release
