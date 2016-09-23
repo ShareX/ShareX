@@ -29,7 +29,7 @@ artifacts:
 deploy:
   provider: GitHub
   release: ShareX $(AppVersion)
-  description: [Changelog](https://github.com/ShareX/ShareX/wiki/Changelog)
+  description: "[Changelog](https://github.com/ShareX/ShareX/wiki/Changelog)"
   auth_token:
     secure: bbUkNvyu1jnKkuZGlM1ois3MkmpCMlm3Lv68L9V5AYepHt1SG4ZQ15ZoKfjOFg9R
   artifact: Setup,Portable
