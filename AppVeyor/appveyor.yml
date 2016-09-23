@@ -26,3 +26,16 @@ artifacts:
   name: Portable
 - path: ShareX.Setup\InnoSetup\Output\ShareX-Steam
   name: Steam
+deploy:
+  provider: GitHub
+  release: ShareX $(AppVersion)
+  description: [Changelog](https://github.com/ShareX/ShareX/wiki/Changelog)
+  auth_token:
+    secure: bbUkNvyu1jnKkuZGlM1ois3MkmpCMlm3Lv68L9V5AYepHt1SG4ZQ15ZoKfjOFg9R
+  artifact: Setup,Portable
+  draft: true
+  prerelease: true
+  on:
+    branch: master
+    configuration: Release
+    appveyor_repo_tag: true
