@@ -364,7 +364,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[Hold Ctrl] Move selection</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size" xml:space="preserve">
-    <value>[Ctrl + Mouse wheel] Change magnifier size</value>
+    <value>[Ctrl + Mouse wheel] Change current tool</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
     <value>[Tab] [Mouse 4 click] Select last annotation tool</value>
@@ -373,7 +373,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[Tab] [Mouse 4 click] Select last region tool</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
-    <value>[Mouse wheel] Change current tool</value>
+    <value>[Mouse wheel] Change magnifier size</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Cancel_capture" xml:space="preserve">
     <value>Cancel capture</value>

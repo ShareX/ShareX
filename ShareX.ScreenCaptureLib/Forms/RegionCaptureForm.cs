@@ -777,7 +777,12 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Ctrl___C__Copy_position);
             }
 
-            sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size);
+            if (IsAnnotationMode)
+            {
+                sb.AppendLine("[Ctrl + V] Paste image or text");
+            }
+
+            sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool);
 
             sb.AppendLine();
 
@@ -797,7 +802,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool);
                 }
-                sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool);
+
+                sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size);
                 if (ShapeManager.CurrentShapeType == ShapeType.RegionRectangle) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 0", ShapeType.RegionRectangle.GetLocalizedDescription()));
                 if (ShapeManager.CurrentShapeType == ShapeType.RegionRoundedRectangle) sb.Append("-> ");
@@ -820,8 +826,12 @@ namespace ShareX.ScreenCaptureLib
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 5", ShapeType.DrawingArrow.GetLocalizedDescription()));
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingText) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 6", ShapeType.DrawingText.GetLocalizedDescription()));
+                if (ShapeManager.CurrentShapeType == ShapeType.DrawingSpeechBalloon) sb.Append("-> ");
+                sb.AppendLine(ShapeType.DrawingSpeechBalloon.GetLocalizedDescription());
                 if (ShapeManager.CurrentShapeType == ShapeType.DrawingStep) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 7", ShapeType.DrawingStep.GetLocalizedDescription()));
+                if (ShapeManager.CurrentShapeType == ShapeType.DrawingImage) sb.Append("-> ");
+                sb.AppendLine(ShapeType.DrawingImage.GetLocalizedDescription());
                 if (ShapeManager.CurrentShapeType == ShapeType.EffectBlur) sb.Append("-> ");
                 sb.AppendLine(string.Format("[{0}] {1}", "Numpad 8", ShapeType.EffectBlur.GetLocalizedDescription()));
                 if (ShapeManager.CurrentShapeType == ShapeType.EffectPixelate) sb.Append("-> ");
