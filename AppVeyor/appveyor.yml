@@ -34,7 +34,7 @@ deploy:
   auth_token:
     secure: bbUkNvyu1jnKkuZGlM1ois3MkmpCMlm3Lv68L9V5AYepHt1SG4ZQ15ZoKfjOFg9R
   artifact: Setup,Portable
-  draft: true
+  draft: false
   prerelease: true
   on:
     configuration: Release
