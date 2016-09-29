@@ -43,11 +43,10 @@ namespace ShareX
     {
         public bool IsReady { get; private set; }
 
-        private bool forceClose, trayMenuSaveSettings = true, firstUpdateCheck = true;
+        private bool forceClose, trayMenuSaveSettings = true;
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
-        private System.Threading.Timer updateTimer = null;
-        private static readonly object updateTimerLock = new object();
+        private UpdateManager updateManager;
 
         public MainForm()
         {
@@ -181,6 +180,8 @@ namespace ShareX
             }
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
+
+            updateManager = new UpdateManager();
 
             HandleCreated += MainForm_HandleCreated;
         }
@@ -628,7 +629,9 @@ namespace ShareX
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
-            ConfigureAutoUpdate();
+#if RELEASE
+            updateManager.ConfigureAutoUpdate();
+#endif
         }
 
         public void UpdateCheckStates()
@@ -686,43 +689,6 @@ namespace ShareX
 
             tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
                 Program.DefaultTaskSettings.URLSharingServiceDestination.GetLocalizedDescription());
-        }
-
-        private void ConfigureAutoUpdate()
-        {
-#if RELEASE
-            lock (updateTimerLock)
-            {
-                if (!Program.PortableApps && Program.Settings.AutoCheckUpdate)
-                {
-                    if (updateTimer == null)
-                    {
-                        updateTimer = new System.Threading.Timer(state => CheckUpdate(), null, TimeSpan.Zero, TimeSpan.FromHours(1));
-                    }
-                }
-                else if (updateTimer != null)
-                {
-                    updateTimer.Dispose();
-                    updateTimer = null;
-                }
-            }
-#endif
-        }
-
-        private void CheckUpdate()
-        {
-            if (!UpdateMessageBox.DontShow && !UpdateMessageBox.IsOpen)
-            {
-                UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
-
-                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) != DialogResult.Yes)
-                {
-                    TimeSpan interval = TimeSpan.FromHours(24);
-                    updateTimer.Change(interval, interval);
-                }
-
-                firstUpdateCheck = false;
-            }
         }
 
         public void UseCommandLineArgs(List<CLICommand> commands)

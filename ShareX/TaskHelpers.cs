@@ -325,29 +325,6 @@ namespace ShareX
             }
         }
 
-        public static UpdateChecker CheckUpdate()
-        {
-            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
-            updateChecker.IsBeta = Program.Beta;
-            updateChecker.IsPortable = Program.Portable;
-            updateChecker.IncludePreRelease = Program.Settings.CheckPreReleaseUpdates;
-            updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-            updateChecker.CheckUpdate();
-
-            /*
-            // Fallback if GitHub API fails
-            if (updateChecker.Status == UpdateStatus.None || updateChecker.Status == UpdateStatus.UpdateCheckFailed)
-            {
-                updateChecker = new XMLUpdateChecker(Links.URL_UPDATE, "ShareX");
-                updateChecker.IsBeta = Program.IsBeta;
-                updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                updateChecker.CheckUpdate();
-            }
-            */
-
-            return updateChecker;
-        }
-
         public static string CheckFilePath(string folder, string filename, TaskSettings taskSettings)
         {
             string filepath = Path.Combine(folder, filename);
