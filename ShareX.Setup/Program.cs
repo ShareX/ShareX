@@ -249,7 +249,7 @@ namespace ShareX.Setup
                     File.Delete(zipPath);
                 }
 
-                Helpers.Zip(destination + "\\*", zipPath);
+                Helpers.Zip(Path.GetFullPath(destination) + "\\*", Path.GetFullPath(zipPath));
 
                 if (Directory.Exists(destination))
                 {
