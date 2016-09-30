@@ -294,7 +294,18 @@ namespace ShareX
 
             if (string.IsNullOrEmpty(personalPath))
             {
-                personalPath = Program.DefaultPersonalFolder;
+                if (Program.PortableApps)
+                {
+                    personalPath = Program.PortableAppsPersonalFolder;
+                }
+                else if (Program.Portable)
+                {
+                    personalPath = Program.PortablePersonalFolder;
+                }
+                else
+                {
+                    personalPath = Program.DefaultPersonalFolder;
+                }
             }
             else
             {

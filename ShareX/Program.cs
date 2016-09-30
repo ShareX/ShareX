@@ -104,8 +104,8 @@ namespace ShareX
         private const string PersonalPathConfigFileName = "PersonalPath.cfg";
 
         public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), AppName);
-        private static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath(AppName);
-        private static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath("../../Data");
+        public static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath(AppName);
+        public static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath("../../Data");
 
         private static string PersonalPathConfigFilePath
         {
