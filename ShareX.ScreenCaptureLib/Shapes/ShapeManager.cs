@@ -275,6 +275,52 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.Controls.Add(tsMain);
 
+            #region Editor mode
+
+            if (form.Mode == RegionCaptureMode.Editor)
+            {
+                ToolStripButton tsbCompleteEdit = new ToolStripButton("Run after capture tasks");
+                tsbCompleteEdit.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbCompleteEdit.Image = Resources.tick;
+                tsbCompleteEdit.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateRunAfterCaptureTasks);
+                tsMain.Items.Add(tsbCompleteEdit);
+
+                ToolStripButton tsbSaveImage = new ToolStripButton("Save image");
+                tsbSaveImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbSaveImage.Enabled = !string.IsNullOrEmpty(form.ImageFilePath);
+                tsbSaveImage.Image = Resources.disk_black;
+                tsbSaveImage.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateSaveImage);
+                tsMain.Items.Add(tsbSaveImage);
+
+                ToolStripButton tsbSaveImageAs = new ToolStripButton("Save image as...");
+                tsbSaveImageAs.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbSaveImageAs.Image = Resources.disks_black;
+                tsbSaveImageAs.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateSaveImageAs);
+                tsMain.Items.Add(tsbSaveImageAs);
+
+                ToolStripButton tsbCopyImage = new ToolStripButton("Copy image to clipboard");
+                tsbCopyImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbCopyImage.Image = Resources.clipboard;
+                tsbCopyImage.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateCopyImage);
+                tsMain.Items.Add(tsbCopyImage);
+
+                ToolStripButton tsbUploadImage = new ToolStripButton("Upload image");
+                tsbUploadImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbUploadImage.Image = Resources.drive_globe;
+                tsbUploadImage.MouseDown += (sender, e) => form.Close(RegionResult.AnnotateUploadImage);
+                tsMain.Items.Add(tsbUploadImage);
+
+                ToolStripButton tsbPrintImage = new ToolStripButton("Print image...");
+                tsbPrintImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbPrintImage.Image = Resources.printer;
+                tsbPrintImage.MouseDown += (sender, e) => form.Close(RegionResult.AnnotatePrintImage);
+                tsMain.Items.Add(tsbPrintImage);
+
+                tsMain.Items.Add(new ToolStripSeparator());
+            }
+
+            #endregion Editor mode
+
             #region Main
 
             string buttonText;
@@ -295,25 +341,6 @@ namespace ShareX.ScreenCaptureLib
             tsMain.Items.Add(tsbCancelCapture);
 
             #endregion Main
-
-            #region Selected object
-
-            tssObjectOptions = new ToolStripSeparator();
-            tsMain.Items.Add(tssObjectOptions);
-
-            tsbDeleteSelected = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_selected_object);
-            tsbDeleteSelected.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbDeleteSelected.Image = Resources.layer__minus;
-            tsbDeleteSelected.MouseDown += (sender, e) => DeleteCurrentShape();
-            tsMain.Items.Add(tsbDeleteSelected);
-
-            tsbDeleteAll = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_all_objects);
-            tsbDeleteAll.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbDeleteAll.Image = Resources.minus;
-            tsbDeleteAll.MouseDown += (sender, e) => DeleteAllShapes();
-            tsMain.Items.Add(tsbDeleteAll);
-
-            #endregion Selected object
 
             #region Tools
 
@@ -401,6 +428,69 @@ namespace ShareX.ScreenCaptureLib
 
             #endregion Tools
 
+            #region Selected object
+
+            tssObjectOptions = new ToolStripSeparator();
+            tsMain.Items.Add(tssObjectOptions);
+
+            tsbDeleteSelected = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_selected_object);
+            tsbDeleteSelected.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbDeleteSelected.Image = Resources.layer__minus;
+            tsbDeleteSelected.MouseDown += (sender, e) => DeleteCurrentShape();
+            tsMain.Items.Add(tsbDeleteSelected);
+
+            tsbDeleteAll = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_all_objects);
+            tsbDeleteAll.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbDeleteAll.Image = Resources.minus;
+            tsbDeleteAll.MouseDown += (sender, e) => DeleteAllShapes();
+            tsMain.Items.Add(tsbDeleteAll);
+
+            #endregion Selected object
+
+            #region Capture
+
+            if (form.Mode != RegionCaptureMode.Editor)
+            {
+                tsMain.Items.Add(new ToolStripSeparator());
+
+                ToolStripButton tsbFullscreenCapture = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
+                tsbFullscreenCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbFullscreenCapture.Image = Resources.layer_fullscreen;
+                tsbFullscreenCapture.MouseDown += (sender, e) => form.Close(RegionResult.Fullscreen);
+                tsMain.Items.Add(tsbFullscreenCapture);
+
+                ToolStripButton tsbActiveMonitorCapture = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Capture_active_monitor);
+                tsbActiveMonitorCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbActiveMonitorCapture.Image = Resources.monitor;
+                tsbActiveMonitorCapture.MouseDown += (sender, e) => form.Close(RegionResult.ActiveMonitor);
+                tsMain.Items.Add(tsbActiveMonitorCapture);
+
+                ToolStripDropDownButton tsbMonitorCapture = new ToolStripDropDownButton(Resources.ShapeManager_CreateContextMenu_Capture_monitor);
+                tsbMonitorCapture.HideImageMargin();
+                tsbMonitorCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbMonitorCapture.Image = Resources.monitor_window;
+                tsMain.Items.Add(tsbMonitorCapture);
+
+                tsbMonitorCapture.DropDownItems.Clear();
+
+                Screen[] screens = Screen.AllScreens;
+
+                for (int i = 0; i < screens.Length; i++)
+                {
+                    Screen screen = screens[i];
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height));
+                    int index = i;
+                    tsmi.MouseDown += (sender, e) =>
+                    {
+                        form.MonitorIndex = index;
+                        form.Close(RegionResult.Monitor);
+                    };
+                    tsbMonitorCapture.DropDownItems.Add(tsmi);
+                }
+            }
+
+            #endregion Capture
+
             menuForm.ResumeLayout(false);
 
             menuForm.Show(form);
@@ -437,47 +527,6 @@ namespace ShareX.ScreenCaptureLib
                     cmsCloseTimer = Stopwatch.StartNew();
                 }
             };
-
-            #region Editor mode
-
-            if (form.Mode == RegionCaptureMode.Editor)
-            {
-                ToolStripMenuItem tsmiCompleteEdit = new ToolStripMenuItem("Run after capture tasks");
-                tsmiCompleteEdit.Image = Resources.tick;
-                tsmiCompleteEdit.Click += (sender, e) => form.Close(RegionResult.AnnotateRunAfterCaptureTasks);
-                cmsContextMenu.Items.Add(tsmiCompleteEdit);
-
-                ToolStripMenuItem tsmiSaveImage = new ToolStripMenuItem("Save image");
-                tsmiSaveImage.Enabled = !string.IsNullOrEmpty(form.ImageFilePath);
-                tsmiSaveImage.Image = Resources.disk_black;
-                tsmiSaveImage.Click += (sender, e) => form.Close(RegionResult.AnnotateSaveImage);
-                cmsContextMenu.Items.Add(tsmiSaveImage);
-
-                ToolStripMenuItem tsmiSaveImageAs = new ToolStripMenuItem("Save image as...");
-                tsmiSaveImageAs.Image = Resources.disks_black;
-                tsmiSaveImageAs.Click += (sender, e) => form.Close(RegionResult.AnnotateSaveImageAs);
-                cmsContextMenu.Items.Add(tsmiSaveImageAs);
-
-                ToolStripMenuItem tsmiCopyImage = new ToolStripMenuItem("Copy image to clipboard");
-                tsmiCopyImage.Image = Resources.clipboard;
-                tsmiCopyImage.Click += (sender, e) => form.Close(RegionResult.AnnotateCopyImage);
-                cmsContextMenu.Items.Add(tsmiCopyImage);
-
-                ToolStripMenuItem tsmiUploadImage = new ToolStripMenuItem("Upload image");
-                tsmiUploadImage.Image = Resources.drive_globe;
-                tsmiUploadImage.Click += (sender, e) => form.Close(RegionResult.AnnotateUploadImage);
-                cmsContextMenu.Items.Add(tsmiUploadImage);
-
-                ToolStripMenuItem tsmiPrintImage = new ToolStripMenuItem("Print image...");
-                tsmiPrintImage.Image = Resources.printer;
-                tsmiPrintImage.Click += (sender, e) => form.Close(RegionResult.AnnotatePrintImage);
-                cmsContextMenu.Items.Add(tsmiPrintImage);
-
-                ToolStripSeparator tssEditorMode = new ToolStripSeparator();
-                cmsContextMenu.Items.Add(tssEditorMode);
-            }
-
-            #endregion Editor mode
 
             #region Shape options
 
@@ -669,47 +718,6 @@ namespace ShareX.ScreenCaptureLib
             cmsContextMenu.Items.Add(tsmiHighlightColor);
 
             #endregion Shape options
-
-            #region Capture
-
-            if (form.Mode != RegionCaptureMode.Editor)
-            {
-                cmsContextMenu.Items.Add(new ToolStripSeparator());
-
-                ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
-                tsmiFullscreenCapture.Image = Resources.layer_fullscreen;
-                tsmiFullscreenCapture.Click += (sender, e) => form.Close(RegionResult.Fullscreen);
-                cmsContextMenu.Items.Add(tsmiFullscreenCapture);
-
-                ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_active_monitor);
-                tsmiActiveMonitorCapture.Image = Resources.monitor;
-                tsmiActiveMonitorCapture.Click += (sender, e) => form.Close(RegionResult.ActiveMonitor);
-                cmsContextMenu.Items.Add(tsmiActiveMonitorCapture);
-
-                ToolStripMenuItem tsmiMonitorCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_monitor);
-                tsmiMonitorCapture.HideImageMargin();
-                tsmiMonitorCapture.Image = Resources.monitor_window;
-                cmsContextMenu.Items.Add(tsmiMonitorCapture);
-
-                tsmiMonitorCapture.DropDownItems.Clear();
-
-                Screen[] screens = Screen.AllScreens;
-
-                for (int i = 0; i < screens.Length; i++)
-                {
-                    Screen screen = screens[i];
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height));
-                    int index = i;
-                    tsmi.Click += (sender, e) =>
-                    {
-                        form.MonitorIndex = index;
-                        form.Close(RegionResult.Monitor);
-                    };
-                    tsmiMonitorCapture.DropDownItems.Add(tsmi);
-                }
-            }
-
-            #endregion Capture
 
             #region Options
 
