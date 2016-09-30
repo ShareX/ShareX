@@ -268,6 +268,7 @@ namespace ShareX.ScreenCaptureLib
                 Location = new Point(0, 0),
                 MinimumSize = new Size(100, 30),
                 Padding = new Padding(0, 0, 0, 0),
+                Renderer = new CustomToolStripProfessionalRenderer(),
                 TabIndex = 0,
                 Text = "ToolStrip"
             };

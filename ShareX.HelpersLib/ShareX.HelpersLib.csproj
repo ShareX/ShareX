@@ -84,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CustomToolStripProfessionalRenderer.cs" />
     <Compile Include="Controls\ToolStripEx.cs">
       <SubType>Component</SubType>
     </Compile>
