@@ -206,6 +206,7 @@ namespace ShareX.ScreenCaptureLib
 
             ResizeNodes[(int)NodePosition.BottomRight].Order = 10;
 
+            form.Shown += form_Shown;
             form.LostFocus += form_LostFocus;
             form.MouseDown += form_MouseDown;
             form.MouseUp += form_MouseUp;
@@ -233,6 +234,18 @@ namespace ShareX.ScreenCaptureLib
             {
                 CurrentShapeType = ShapeType.RegionRectangle;
             }
+        }
+
+        private void form_Shown(object sender, EventArgs e)
+        {
+            CreateMenu();
+        }
+
+        private void CreateMenu()
+        {
+            RegionCaptureMenuForm menu = new RegionCaptureMenuForm();
+            menu.Location = new Point(100, 100);
+            menu.Show(form);
         }
 
         private void CreateContextMenu()
