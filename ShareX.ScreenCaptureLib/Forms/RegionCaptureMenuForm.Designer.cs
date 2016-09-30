@@ -32,9 +32,9 @@
             this.tsbRegionRectangle = new System.Windows.Forms.ToolStripButton();
             this.tsbRegionRoundedRectangle = new System.Windows.Forms.ToolStripButton();
             this.tsbRegionEllipse = new System.Windows.Forms.ToolStripButton();
+            this.tsbRegionFreehand = new System.Windows.Forms.ToolStripButton();
             this.tsbDrawingRectangle = new System.Windows.Forms.ToolStripButton();
             this.tsbDrawingRoundedRectangle = new System.Windows.Forms.ToolStripButton();
-            this.tsbRegionFreehand = new System.Windows.Forms.ToolStripButton();
             this.tsbDrawingEllipse = new System.Windows.Forms.ToolStripButton();
             this.tsbDrawingFreehand = new System.Windows.Forms.ToolStripButton();
             this.tsbDrawingLine = new System.Windows.Forms.ToolStripButton();
@@ -46,6 +46,7 @@
             this.tsbEffectBlur = new System.Windows.Forms.ToolStripButton();
             this.tsbEffectPixelate = new System.Windows.Forms.ToolStripButton();
             this.tsbEffectHighlight = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tsTools.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             this.tsTools.CanOverflow = false;
             this.tsTools.Dock = System.Windows.Forms.DockStyle.None;
             this.tsTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
             this.tsbRegionRectangle,
             this.tsbRegionRoundedRectangle,
             this.tsbRegionEllipse,
@@ -72,11 +74,10 @@
             this.tsbEffectBlur,
             this.tsbEffectPixelate,
             this.tsbEffectHighlight});
-            this.tsTools.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.tsTools.Location = new System.Drawing.Point(0, 0);
             this.tsTools.Name = "tsTools";
-            this.tsTools.Padding = new System.Windows.Forms.Padding(0);
-            this.tsTools.Size = new System.Drawing.Size(32, 432);
+            this.tsTools.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.tsTools.Size = new System.Drawing.Size(552, 28);
             this.tsTools.TabIndex = 0;
             this.tsTools.Text = "toolStrip1";
             // 
@@ -87,7 +88,7 @@
             this.tsbRegionRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRegionRectangle.Name = "tsbRegionRectangle";
             this.tsbRegionRectangle.Size = new System.Drawing.Size(31, 20);
-            this.tsbRegionRectangle.Text = "toolStripButton1";
+            this.tsbRegionRectangle.Text = "Region: Rectangle";
             // 
             // tsbRegionRoundedRectangle
             // 
@@ -96,7 +97,7 @@
             this.tsbRegionRoundedRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRegionRoundedRectangle.Name = "tsbRegionRoundedRectangle";
             this.tsbRegionRoundedRectangle.Size = new System.Drawing.Size(31, 20);
-            this.tsbRegionRoundedRectangle.Text = "toolStripButton2";
+            this.tsbRegionRoundedRectangle.Text = "Region: Rounded rectangle";
             // 
             // tsbRegionEllipse
             // 
@@ -105,25 +106,7 @@
             this.tsbRegionEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRegionEllipse.Name = "tsbRegionEllipse";
             this.tsbRegionEllipse.Size = new System.Drawing.Size(31, 20);
-            this.tsbRegionEllipse.Text = "toolStripButton3";
-            // 
-            // tsbDrawingRectangle
-            // 
-            this.tsbDrawingRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDrawingRectangle.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape;
-            this.tsbDrawingRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDrawingRectangle.Name = "tsbDrawingRectangle";
-            this.tsbDrawingRectangle.Size = new System.Drawing.Size(31, 20);
-            this.tsbDrawingRectangle.Text = "toolStripButton4";
-            // 
-            // tsbDrawingRoundedRectangle
-            // 
-            this.tsbDrawingRoundedRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDrawingRoundedRectangle.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_round;
-            this.tsbDrawingRoundedRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDrawingRoundedRectangle.Name = "tsbDrawingRoundedRectangle";
-            this.tsbDrawingRoundedRectangle.Size = new System.Drawing.Size(31, 20);
-            this.tsbDrawingRoundedRectangle.Text = "toolStripButton5";
+            this.tsbRegionEllipse.Text = "Region: Ellipse";
             // 
             // tsbRegionFreehand
             // 
@@ -132,7 +115,25 @@
             this.tsbRegionFreehand.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRegionFreehand.Name = "tsbRegionFreehand";
             this.tsbRegionFreehand.Size = new System.Drawing.Size(31, 20);
-            this.tsbRegionFreehand.Text = "toolStripButton6";
+            this.tsbRegionFreehand.Text = "Region: Freehand";
+            // 
+            // tsbDrawingRectangle
+            // 
+            this.tsbDrawingRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbDrawingRectangle.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape;
+            this.tsbDrawingRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDrawingRectangle.Name = "tsbDrawingRectangle";
+            this.tsbDrawingRectangle.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingRectangle.Text = "Drawing: Rectangle";
+            // 
+            // tsbDrawingRoundedRectangle
+            // 
+            this.tsbDrawingRoundedRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbDrawingRoundedRectangle.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_round;
+            this.tsbDrawingRoundedRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDrawingRoundedRectangle.Name = "tsbDrawingRoundedRectangle";
+            this.tsbDrawingRoundedRectangle.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingRoundedRectangle.Text = "Drawing: Rounded rectangle";
             // 
             // tsbDrawingEllipse
             // 
@@ -141,7 +142,7 @@
             this.tsbDrawingEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingEllipse.Name = "tsbDrawingEllipse";
             this.tsbDrawingEllipse.Size = new System.Drawing.Size(31, 20);
-            this.tsbDrawingEllipse.Text = "toolStripButton7";
+            this.tsbDrawingEllipse.Text = "Drawing: Ellipse";
             // 
             // tsbDrawingFreehand
             // 
@@ -150,7 +151,7 @@
             this.tsbDrawingFreehand.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingFreehand.Name = "tsbDrawingFreehand";
             this.tsbDrawingFreehand.Size = new System.Drawing.Size(31, 20);
-            this.tsbDrawingFreehand.Text = "toolStripButton8";
+            this.tsbDrawingFreehand.Text = "Drawing: Freehand";
             // 
             // tsbDrawingLine
             // 
@@ -159,7 +160,7 @@
             this.tsbDrawingLine.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingLine.Name = "tsbDrawingLine";
             this.tsbDrawingLine.Size = new System.Drawing.Size(31, 20);
-            this.tsbDrawingLine.Text = "toolStripButton9";
+            this.tsbDrawingLine.Text = "Drawing: Line";
             // 
             // tsbDrawingArrow
             // 
@@ -168,7 +169,7 @@
             this.tsbDrawingArrow.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingArrow.Name = "tsbDrawingArrow";
             this.tsbDrawingArrow.Size = new System.Drawing.Size(31, 20);
-            this.tsbDrawingArrow.Text = "toolStripButton10";
+            this.tsbDrawingArrow.Text = "Drawing: Arrow";
             // 
             // tsbDrawingText
             // 
@@ -177,7 +178,7 @@
             this.tsbDrawingText.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingText.Name = "tsbDrawingText";
             this.tsbDrawingText.Size = new System.Drawing.Size(31, 20);
-            this.tsbDrawingText.Text = "toolStripButton11";
+            this.tsbDrawingText.Text = "Drawing: Text";
             // 
             // tsbDrawingSpeechBalloon
             // 
@@ -186,7 +187,7 @@
             this.tsbDrawingSpeechBalloon.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingSpeechBalloon.Name = "tsbDrawingSpeechBalloon";
             this.tsbDrawingSpeechBalloon.Size = new System.Drawing.Size(31, 20);
-            this.tsbDrawingSpeechBalloon.Text = "toolStripButton12";
+            this.tsbDrawingSpeechBalloon.Text = "Drawing: Speech balloon";
             // 
             // tsbDrawingStep
             // 
@@ -195,7 +196,7 @@
             this.tsbDrawingStep.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingStep.Name = "tsbDrawingStep";
             this.tsbDrawingStep.Size = new System.Drawing.Size(31, 20);
-            this.tsbDrawingStep.Text = "toolStripButton13";
+            this.tsbDrawingStep.Text = "Drawing: Step";
             // 
             // tsbDrawingImage
             // 
@@ -204,7 +205,7 @@
             this.tsbDrawingImage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingImage.Name = "tsbDrawingImage";
             this.tsbDrawingImage.Size = new System.Drawing.Size(31, 20);
-            this.tsbDrawingImage.Text = "toolStripButton14";
+            this.tsbDrawingImage.Text = "Drawing: Image";
             // 
             // tsbEffectBlur
             // 
@@ -213,7 +214,7 @@
             this.tsbEffectBlur.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEffectBlur.Name = "tsbEffectBlur";
             this.tsbEffectBlur.Size = new System.Drawing.Size(31, 20);
-            this.tsbEffectBlur.Text = "toolStripButton15";
+            this.tsbEffectBlur.Text = "Effect: Blur";
             // 
             // tsbEffectPixelate
             // 
@@ -222,7 +223,7 @@
             this.tsbEffectPixelate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEffectPixelate.Name = "tsbEffectPixelate";
             this.tsbEffectPixelate.Size = new System.Drawing.Size(31, 20);
-            this.tsbEffectPixelate.Text = "toolStripButton16";
+            this.tsbEffectPixelate.Text = "Effect: Pixelate";
             // 
             // tsbEffectHighlight
             // 
@@ -231,18 +232,26 @@
             this.tsbEffectHighlight.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEffectHighlight.Name = "tsbEffectHighlight";
             this.tsbEffectHighlight.Size = new System.Drawing.Size(31, 20);
-            this.tsbEffectHighlight.Text = "toolStripButton17";
+            this.tsbEffectHighlight.Text = "Effect: Highlight";
             // 
-            // RegionCaptureFormMenu
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(0, 1, 2, 2);
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(35, 25);
+            this.toolStripLabel1.Text = "Tools";
+            // 
+            // RegionCaptureMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(318, 461);
+            this.ClientSize = new System.Drawing.Size(759, 509);
             this.Controls.Add(this.tsTools);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "RegionCaptureFormMenu";
+            this.Name = "RegionCaptureMenuForm";
+            this.ShowInTaskbar = false;
             this.Text = "RegionCaptureFormMenu";
             this.tsTools.ResumeLayout(false);
             this.tsTools.PerformLayout();
@@ -270,5 +279,6 @@
         private System.Windows.Forms.ToolStripButton tsbEffectBlur;
         private System.Windows.Forms.ToolStripButton tsbEffectPixelate;
         private System.Windows.Forms.ToolStripButton tsbEffectHighlight;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }
