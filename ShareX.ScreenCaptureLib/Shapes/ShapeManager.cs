@@ -264,6 +264,7 @@ namespace ShareX.ScreenCaptureLib
                 CanOverflow = false,
                 ClickThrough = true,
                 Dock = DockStyle.None,
+                GripStyle = ToolStripGripStyle.Hidden,
                 Location = new Point(0, 0),
                 MinimumSize = new Size(100, 30),
                 Padding = new Padding(0, 0, 0, 0),
@@ -271,15 +272,25 @@ namespace ShareX.ScreenCaptureLib
                 Text = "ToolStrip"
             };
 
-            tsMain.GripMouseDown += (sender, e) =>
-            {
-                NativeMethods.ReleaseCapture(tsMain.Handle);
-                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
-            };
-
             tsMain.SuspendLayout();
 
             menuForm.Controls.Add(tsMain);
+
+            ToolStripLabel tslDragLeft = new ToolStripLabel()
+            {
+                DisplayStyle = ToolStripItemDisplayStyle.Image,
+                Image = Resources.ui_radio_button_uncheck,
+                Margin = new Padding(0),
+                Padding = new Padding(2)
+            };
+
+            tslDragLeft.MouseDown += (sender, e) =>
+            {
+                NativeMethods.ReleaseCapture();
+                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
+            };
+
+            tsMain.Items.Add(tslDragLeft);
 
             #region Editor mode
 
@@ -779,6 +790,23 @@ namespace ShareX.ScreenCaptureLib
             }
 
             #endregion Options
+
+            ToolStripLabel tslDragRight = new ToolStripLabel()
+            {
+                Alignment = ToolStripItemAlignment.Right,
+                DisplayStyle = ToolStripItemDisplayStyle.Image,
+                Image = Resources.ui_radio_button_uncheck,
+                Margin = new Padding(0),
+                Padding = new Padding(2)
+            };
+
+            tslDragRight.MouseDown += (sender, e) =>
+            {
+                NativeMethods.ReleaseCapture();
+                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
+            };
+
+            tsMain.Items.Add(tslDragRight);
 
             tsMain.ResumeLayout(false);
             tsMain.PerformLayout();

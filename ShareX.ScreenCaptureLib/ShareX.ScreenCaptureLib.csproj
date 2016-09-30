@@ -170,6 +170,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ui-radio-button-uncheck.png" />
     <None Include="Resources\layer--pencil.png" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\drive-globe.png" />
