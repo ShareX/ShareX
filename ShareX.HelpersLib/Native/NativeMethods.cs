@@ -52,6 +52,9 @@ namespace ShareX.HelpersLib
         public static extern IntPtr CopyIcon(IntPtr hIcon);
 
         [DllImport("user32.dll")]
+        public static extern IntPtr DefWindowProc(IntPtr hWnd, uint uMsg, UIntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool DestroyIcon(IntPtr hIcon);
 
@@ -193,6 +196,9 @@ namespace ShareX.HelpersLib
 
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture(IntPtr hwnd);
 
         [DllImport("user32.dll")]
         public static extern int ReleaseDC(IntPtr hWnd, IntPtr hDC);

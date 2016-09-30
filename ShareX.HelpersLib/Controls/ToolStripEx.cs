@@ -24,12 +24,15 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
     public class ToolStripEx : ToolStrip
     {
+        public event MouseEventHandler GripMouseDown;
+
         private bool clickThrough = false;
 
         public bool ClickThrough
@@ -51,6 +54,26 @@ namespace ShareX.HelpersLib
             if (clickThrough && m.Msg == (int)WindowsMessages.MOUSEACTIVATE && m.Result == (IntPtr)NativeMethods.MA_ACTIVATEANDEAT)
             {
                 m.Result = (IntPtr)NativeMethods.MA_ACTIVATE;
+            }
+        }
+
+        protected override void OnMouseDown(MouseEventArgs mea)
+        {
+            if (GripRectangle.Offset(2).Contains(mea.Location))
+            {
+                OnGripMouseDown(mea);
+            }
+            else
+            {
+                base.OnMouseDown(mea);
+            }
+        }
+
+        protected virtual void OnGripMouseDown(MouseEventArgs mea)
+        {
+            if (GripMouseDown != null)
+            {
+                GripMouseDown(this, mea);
             }
         }
     }

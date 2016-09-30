@@ -271,6 +271,12 @@ namespace ShareX.ScreenCaptureLib
                 Text = "ToolStrip"
             };
 
+            tsMain.GripMouseDown += (sender, e) =>
+            {
+                NativeMethods.ReleaseCapture(tsMain.Handle);
+                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeMethods.MOUSE_MOVE, IntPtr.Zero);
+            };
+
             tsMain.SuspendLayout();
 
             menuForm.Controls.Add(tsMain);
@@ -496,7 +502,7 @@ namespace ShareX.ScreenCaptureLib
                             AnnotationOptions.BorderColor = dialogColor.NewColor;
                         }
 
-                        UpdateContextMenu();
+                        UpdateMenu();
                         UpdateCurrentShape();
                         UpdateCursor();
                     }
@@ -572,7 +578,7 @@ namespace ShareX.ScreenCaptureLib
                             AnnotationOptions.FillColor = dialogColor.NewColor;
                         }
 
-                        UpdateContextMenu();
+                        UpdateMenu();
                         UpdateCurrentShape();
                     }
                 }
@@ -632,7 +638,7 @@ namespace ShareX.ScreenCaptureLib
                     if (dialogColor.ShowDialog() == DialogResult.OK)
                     {
                         AnnotationOptions.HighlightColor = dialogColor.NewColor;
-                        UpdateContextMenu();
+                        UpdateMenu();
                         UpdateCurrentShape();
                     }
                 }
@@ -780,14 +786,14 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.Show(form);
 
-            UpdateContextMenu();
+            UpdateMenu();
 
-            CurrentShapeTypeChanged += shapeType => UpdateContextMenu();
+            CurrentShapeTypeChanged += shapeType => UpdateMenu();
 
-            CurrentShapeChanged += shape => UpdateContextMenu();
+            CurrentShapeChanged += shape => UpdateMenu();
         }
 
-        private void UpdateContextMenu()
+        private void UpdateMenu()
         {
             if (menuForm == null) return;
 

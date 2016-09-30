@@ -86,5 +86,6 @@ namespace ShareX.HelpersLib
         public const uint MA_ACTIVATEANDEAT = 2;
         public const uint MA_NOACTIVATE = 3;
         public const uint MA_NOACTIVATEANDEAT = 4;
+        public const uint MOUSE_MOVE = 0xF012;
     }
 }
