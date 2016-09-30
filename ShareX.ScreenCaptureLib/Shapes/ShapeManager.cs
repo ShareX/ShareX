@@ -183,9 +183,11 @@ namespace ShareX.ScreenCaptureLib
         public event Action<ShapeType> CurrentShapeTypeChanged;
 
         private RegionCaptureForm form;
+        private Form menuForm;
         private ContextMenuStrip cmsContextMenu;
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
-        private ToolStripMenuItem tsmiDeleteSelected, tsmiDeleteAll, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
+        private ToolStripButton tsbDeleteSelected, tsbDeleteAll;
+        private ToolStripMenuItem tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed, allowOptionsMenu;
         private Stopwatch cmsCloseTimer;
@@ -243,9 +245,167 @@ namespace ShareX.ScreenCaptureLib
 
         private void CreateMenu()
         {
-            RegionCaptureMenuForm menu = new RegionCaptureMenuForm();
-            menu.Location = new Point(100, 100);
-            menu.Show(form);
+            menuForm = new Form()
+            {
+                AutoScaleDimensions = new SizeF(6F, 13F),
+                AutoScaleMode = AutoScaleMode.Font,
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                ClientSize = new Size(759, 509),
+                FormBorderStyle = FormBorderStyle.None,
+                Location = new Point(100, 100),
+                ShowInTaskbar = false,
+                Text = "RegionCaptureFormMenu"
+            };
+
+            menuForm.SuspendLayout();
+
+            ToolStripEx tsMain = new ToolStripEx()
+            {
+                AutoSize = false,
+                CanOverflow = false,
+                ClickThrough = true,
+                Dock = DockStyle.None,
+                Location = new Point(0, 0),
+                Padding = new Padding(0, 0, 0, 0),
+                Size = new Size(552, 30),
+                TabIndex = 0,
+                Text = "ToolStrip"
+            };
+
+            menuForm.Controls.Add(tsMain);
+
+            #region Main
+
+            string buttonText;
+
+            if (form.Mode == RegionCaptureMode.Editor)
+            {
+                buttonText = "Cancel annotation";
+            }
+            else
+            {
+                buttonText = Resources.ShapeManager_CreateContextMenu_Cancel_capture;
+            }
+
+            ToolStripButton tsbCancelCapture = new ToolStripButton(buttonText);
+            tsbCancelCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbCancelCapture.Image = Resources.prohibition;
+            tsbCancelCapture.MouseDown += (sender, e) => form.Close();
+            tsMain.Items.Add(tsbCancelCapture);
+
+            #endregion Main
+
+            #region Selected object
+
+            tssObjectOptions = new ToolStripSeparator();
+            tsMain.Items.Add(tssObjectOptions);
+
+            tsbDeleteSelected = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_selected_object);
+            tsbDeleteSelected.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbDeleteSelected.Image = Resources.layer__minus;
+            tsbDeleteSelected.MouseDown += (sender, e) => DeleteCurrentShape();
+            tsMain.Items.Add(tsbDeleteSelected);
+
+            tsbDeleteAll = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_all_objects);
+            tsbDeleteAll.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbDeleteAll.Image = Resources.minus;
+            tsbDeleteAll.MouseDown += (sender, e) => DeleteAllShapes();
+            tsMain.Items.Add(tsbDeleteAll);
+
+            #endregion Selected object
+
+            #region Tools
+
+            tsMain.Items.Add(new ToolStripSeparator());
+
+            foreach (ShapeType shapeType in Helpers.GetEnums<ShapeType>())
+            {
+                if (form.Mode == RegionCaptureMode.Editor && IsShapeTypeRegion(shapeType))
+                {
+                    continue;
+                }
+
+                ToolStripButton tsbShapeType = new ToolStripButton(shapeType.GetLocalizedDescription());
+                tsbShapeType.DisplayStyle = ToolStripItemDisplayStyle.Image;
+
+                Image img = null;
+
+                switch (shapeType)
+                {
+                    case ShapeType.RegionRectangle:
+                        img = Resources.layer_shape_region;
+                        break;
+                    case ShapeType.RegionRoundedRectangle:
+                        img = Resources.layer_shape_round_region;
+                        break;
+                    case ShapeType.RegionEllipse:
+                        img = Resources.layer_shape_ellipse_region;
+                        break;
+                    case ShapeType.RegionFreehand:
+                        img = Resources.layer_shape_polygon;
+                        break;
+                    case ShapeType.DrawingRectangle:
+                        img = Resources.layer_shape;
+                        break;
+                    case ShapeType.DrawingRoundedRectangle:
+                        img = Resources.layer_shape_round;
+                        break;
+                    case ShapeType.DrawingEllipse:
+                        img = Resources.layer_shape_ellipse;
+                        break;
+                    case ShapeType.DrawingFreehand:
+                        img = Resources.layer_shape_curve;
+                        break;
+                    case ShapeType.DrawingLine:
+                        img = Resources.layer_shape_line;
+                        break;
+                    case ShapeType.DrawingArrow:
+                        img = Resources.layer_shape_arrow;
+                        break;
+                    case ShapeType.DrawingText:
+                        img = Resources.layer_shape_text;
+                        break;
+                    case ShapeType.DrawingSpeechBalloon:
+                        img = Resources.balloon_box_left;
+                        break;
+                    case ShapeType.DrawingStep:
+                        img = Resources.counter_reset;
+                        break;
+                    case ShapeType.DrawingImage:
+                        img = Resources.image;
+                        break;
+                    case ShapeType.EffectBlur:
+                        img = Resources.layer_shade;
+                        break;
+                    case ShapeType.EffectPixelate:
+                        img = Resources.grid;
+                        break;
+                    case ShapeType.EffectHighlight:
+                        img = Resources.highlighter_text;
+                        break;
+                }
+
+                tsbShapeType.Image = img;
+                tsbShapeType.Checked = shapeType == CurrentShapeType;
+                tsbShapeType.Tag = shapeType;
+
+                tsbShapeType.MouseDown += (sender, e) =>
+                {
+                    tsbShapeType.RadioCheck();
+                    CurrentShapeType = shapeType;
+                };
+
+                tsMain.Items.Add(tsbShapeType);
+            }
+
+            #endregion Tools
+
+            menuForm.ResumeLayout(false);
+
+            menuForm.Show(form);
+
+            UpdateContextMenu();
         }
 
         private void CreateContextMenu()
@@ -318,132 +478,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             #endregion Editor mode
-
-            #region Main
-
-            string buttonText;
-
-            if (form.Mode == RegionCaptureMode.Editor)
-            {
-                buttonText = "Cancel annotation";
-            }
-            else
-            {
-                buttonText = Resources.ShapeManager_CreateContextMenu_Cancel_capture;
-            }
-
-            ToolStripMenuItem tsmiCancelCapture = new ToolStripMenuItem(buttonText);
-            tsmiCancelCapture.Image = Resources.prohibition;
-            tsmiCancelCapture.Click += (sender, e) => form.Close();
-            cmsContextMenu.Items.Add(tsmiCancelCapture);
-
-            ToolStripMenuItem tsmiCloseMenu = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Close_menu);
-            tsmiCloseMenu.Image = Resources.cross;
-            tsmiCloseMenu.Click += (sender, e) => cmsContextMenu.Close();
-            cmsContextMenu.Items.Add(tsmiCloseMenu);
-
-            #endregion Main
-
-            #region Selected object
-
-            tssObjectOptions = new ToolStripSeparator();
-            cmsContextMenu.Items.Add(tssObjectOptions);
-
-            tsmiDeleteSelected = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Delete_selected_object);
-            tsmiDeleteSelected.Image = Resources.layer__minus;
-            tsmiDeleteSelected.Click += (sender, e) => DeleteCurrentShape();
-            cmsContextMenu.Items.Add(tsmiDeleteSelected);
-
-            tsmiDeleteAll = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Delete_all_objects);
-            tsmiDeleteAll.Image = Resources.minus;
-            tsmiDeleteAll.Click += (sender, e) => DeleteAllShapes();
-            cmsContextMenu.Items.Add(tsmiDeleteAll);
-
-            #endregion Selected object
-
-            #region Tools
-
-            cmsContextMenu.Items.Add(new ToolStripSeparator());
-
-            foreach (ShapeType shapeType in Helpers.GetEnums<ShapeType>())
-            {
-                if (form.Mode == RegionCaptureMode.Editor && IsShapeTypeRegion(shapeType))
-                {
-                    continue;
-                }
-
-                ToolStripMenuItem tsmiShapeType = new ToolStripMenuItem(shapeType.GetLocalizedDescription());
-
-                Image img = null;
-
-                switch (shapeType)
-                {
-                    case ShapeType.RegionRectangle:
-                        img = Resources.layer_shape_region;
-                        break;
-                    case ShapeType.RegionRoundedRectangle:
-                        img = Resources.layer_shape_round_region;
-                        break;
-                    case ShapeType.RegionEllipse:
-                        img = Resources.layer_shape_ellipse_region;
-                        break;
-                    case ShapeType.RegionFreehand:
-                        img = Resources.layer_shape_polygon;
-                        break;
-                    case ShapeType.DrawingRectangle:
-                        img = Resources.layer_shape;
-                        break;
-                    case ShapeType.DrawingRoundedRectangle:
-                        img = Resources.layer_shape_round;
-                        break;
-                    case ShapeType.DrawingEllipse:
-                        img = Resources.layer_shape_ellipse;
-                        break;
-                    case ShapeType.DrawingFreehand:
-                        img = Resources.layer_shape_curve;
-                        break;
-                    case ShapeType.DrawingLine:
-                        img = Resources.layer_shape_line;
-                        break;
-                    case ShapeType.DrawingArrow:
-                        img = Resources.layer_shape_arrow;
-                        break;
-                    case ShapeType.DrawingText:
-                        img = Resources.layer_shape_text;
-                        break;
-                    case ShapeType.DrawingSpeechBalloon:
-                        img = Resources.balloon_box_left;
-                        break;
-                    case ShapeType.DrawingStep:
-                        img = Resources.counter_reset;
-                        break;
-                    case ShapeType.DrawingImage:
-                        img = Resources.image;
-                        break;
-                    case ShapeType.EffectBlur:
-                        img = Resources.layer_shade;
-                        break;
-                    case ShapeType.EffectPixelate:
-                        img = Resources.grid;
-                        break;
-                    case ShapeType.EffectHighlight:
-                        img = Resources.highlighter_text;
-                        break;
-                }
-
-                tsmiShapeType.Image = img;
-
-                tsmiShapeType.Checked = shapeType == CurrentShapeType;
-                tsmiShapeType.Tag = shapeType;
-                tsmiShapeType.Click += (sender, e) =>
-                {
-                    tsmiShapeType.RadioCheck();
-                    CurrentShapeType = shapeType;
-                };
-                cmsContextMenu.Items.Add(tsmiShapeType);
-            }
-
-            #endregion Tools
 
             #region Shape options
 
@@ -770,10 +804,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateContextMenu()
         {
+            if (menuForm == null) return;
+
             ShapeType shapeType = CurrentShapeType;
 
-            tssObjectOptions.Visible = tsmiDeleteAll.Visible = Shapes.Count > 0;
-            tsmiDeleteSelected.Visible = CurrentShape != null;
+            tssObjectOptions.Visible = tsbDeleteAll.Visible = Shapes.Count > 0;
+            tsbDeleteSelected.Visible = CurrentShape != null;
 
             foreach (ToolStripMenuItem tsmi in cmsContextMenu.Items.OfType<ToolStripMenuItem>().Where(x => x.Tag is ShapeType))
             {

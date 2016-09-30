@@ -317,6 +317,21 @@ namespace ShareX.HelpersLib
             tsmi.Checked = true;
         }
 
+        public static void RadioCheck(this ToolStripButton tsb)
+        {
+            ToolStrip parent = tsb.GetCurrentParent();
+
+            foreach (ToolStripButton tsbParent in parent.Items.OfType<ToolStripButton>())
+            {
+                if (tsbParent != tsb)
+                {
+                    tsbParent.Checked = false;
+                }
+            }
+
+            tsb.Checked = true;
+        }
+
         public static void InvokeSafe(this Control control, Action action)
         {
             if (control != null && !control.IsDisposed)

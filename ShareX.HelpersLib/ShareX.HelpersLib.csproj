@@ -84,6 +84,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ToolStripEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NameParser\CodeMenuEntryActions.cs" />
     <Compile Include="Automate\AutomateForm.cs">
       <SubType>Form</SubType>

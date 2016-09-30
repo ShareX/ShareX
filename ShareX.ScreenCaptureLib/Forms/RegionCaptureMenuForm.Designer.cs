@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tsTools = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tsbRegionRectangle = new System.Windows.Forms.ToolStripButton();
             this.tsbRegionRoundedRectangle = new System.Windows.Forms.ToolStripButton();
             this.tsbRegionEllipse = new System.Windows.Forms.ToolStripButton();
@@ -46,7 +47,6 @@
             this.tsbEffectBlur = new System.Windows.Forms.ToolStripButton();
             this.tsbEffectPixelate = new System.Windows.Forms.ToolStripButton();
             this.tsbEffectHighlight = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tsTools.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,10 +76,17 @@
             this.tsbEffectHighlight});
             this.tsTools.Location = new System.Drawing.Point(0, 0);
             this.tsTools.Name = "tsTools";
-            this.tsTools.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.tsTools.Padding = new System.Windows.Forms.Padding(0);
             this.tsTools.Size = new System.Drawing.Size(552, 28);
             this.tsTools.TabIndex = 0;
             this.tsTools.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(0, 1, 2, 2);
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(35, 25);
+            this.toolStripLabel1.Text = "Tools";
             // 
             // tsbRegionRectangle
             // 
@@ -87,7 +94,7 @@
             this.tsbRegionRectangle.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_region;
             this.tsbRegionRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRegionRectangle.Name = "tsbRegionRectangle";
-            this.tsbRegionRectangle.Size = new System.Drawing.Size(31, 20);
+            this.tsbRegionRectangle.Size = new System.Drawing.Size(23, 25);
             this.tsbRegionRectangle.Text = "Region: Rectangle";
             // 
             // tsbRegionRoundedRectangle
@@ -96,7 +103,7 @@
             this.tsbRegionRoundedRectangle.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_round_region;
             this.tsbRegionRoundedRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRegionRoundedRectangle.Name = "tsbRegionRoundedRectangle";
-            this.tsbRegionRoundedRectangle.Size = new System.Drawing.Size(31, 20);
+            this.tsbRegionRoundedRectangle.Size = new System.Drawing.Size(23, 25);
             this.tsbRegionRoundedRectangle.Text = "Region: Rounded rectangle";
             // 
             // tsbRegionEllipse
@@ -105,7 +112,7 @@
             this.tsbRegionEllipse.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_ellipse_region;
             this.tsbRegionEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRegionEllipse.Name = "tsbRegionEllipse";
-            this.tsbRegionEllipse.Size = new System.Drawing.Size(31, 20);
+            this.tsbRegionEllipse.Size = new System.Drawing.Size(23, 25);
             this.tsbRegionEllipse.Text = "Region: Ellipse";
             // 
             // tsbRegionFreehand
@@ -114,7 +121,7 @@
             this.tsbRegionFreehand.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_polygon;
             this.tsbRegionFreehand.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRegionFreehand.Name = "tsbRegionFreehand";
-            this.tsbRegionFreehand.Size = new System.Drawing.Size(31, 20);
+            this.tsbRegionFreehand.Size = new System.Drawing.Size(23, 25);
             this.tsbRegionFreehand.Text = "Region: Freehand";
             // 
             // tsbDrawingRectangle
@@ -123,7 +130,7 @@
             this.tsbDrawingRectangle.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape;
             this.tsbDrawingRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingRectangle.Name = "tsbDrawingRectangle";
-            this.tsbDrawingRectangle.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingRectangle.Size = new System.Drawing.Size(23, 25);
             this.tsbDrawingRectangle.Text = "Drawing: Rectangle";
             // 
             // tsbDrawingRoundedRectangle
@@ -132,7 +139,7 @@
             this.tsbDrawingRoundedRectangle.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_round;
             this.tsbDrawingRoundedRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingRoundedRectangle.Name = "tsbDrawingRoundedRectangle";
-            this.tsbDrawingRoundedRectangle.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingRoundedRectangle.Size = new System.Drawing.Size(23, 25);
             this.tsbDrawingRoundedRectangle.Text = "Drawing: Rounded rectangle";
             // 
             // tsbDrawingEllipse
@@ -141,7 +148,7 @@
             this.tsbDrawingEllipse.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_ellipse;
             this.tsbDrawingEllipse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingEllipse.Name = "tsbDrawingEllipse";
-            this.tsbDrawingEllipse.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingEllipse.Size = new System.Drawing.Size(23, 25);
             this.tsbDrawingEllipse.Text = "Drawing: Ellipse";
             // 
             // tsbDrawingFreehand
@@ -150,7 +157,7 @@
             this.tsbDrawingFreehand.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_curve;
             this.tsbDrawingFreehand.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingFreehand.Name = "tsbDrawingFreehand";
-            this.tsbDrawingFreehand.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingFreehand.Size = new System.Drawing.Size(23, 25);
             this.tsbDrawingFreehand.Text = "Drawing: Freehand";
             // 
             // tsbDrawingLine
@@ -159,7 +166,7 @@
             this.tsbDrawingLine.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_line;
             this.tsbDrawingLine.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingLine.Name = "tsbDrawingLine";
-            this.tsbDrawingLine.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingLine.Size = new System.Drawing.Size(23, 25);
             this.tsbDrawingLine.Text = "Drawing: Line";
             // 
             // tsbDrawingArrow
@@ -168,7 +175,7 @@
             this.tsbDrawingArrow.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_arrow;
             this.tsbDrawingArrow.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingArrow.Name = "tsbDrawingArrow";
-            this.tsbDrawingArrow.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingArrow.Size = new System.Drawing.Size(23, 25);
             this.tsbDrawingArrow.Text = "Drawing: Arrow";
             // 
             // tsbDrawingText
@@ -177,7 +184,7 @@
             this.tsbDrawingText.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shape_text;
             this.tsbDrawingText.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingText.Name = "tsbDrawingText";
-            this.tsbDrawingText.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingText.Size = new System.Drawing.Size(23, 25);
             this.tsbDrawingText.Text = "Drawing: Text";
             // 
             // tsbDrawingSpeechBalloon
@@ -186,7 +193,7 @@
             this.tsbDrawingSpeechBalloon.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.balloon_box_left;
             this.tsbDrawingSpeechBalloon.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingSpeechBalloon.Name = "tsbDrawingSpeechBalloon";
-            this.tsbDrawingSpeechBalloon.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingSpeechBalloon.Size = new System.Drawing.Size(23, 25);
             this.tsbDrawingSpeechBalloon.Text = "Drawing: Speech balloon";
             // 
             // tsbDrawingStep
@@ -195,7 +202,7 @@
             this.tsbDrawingStep.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.counter_reset;
             this.tsbDrawingStep.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingStep.Name = "tsbDrawingStep";
-            this.tsbDrawingStep.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingStep.Size = new System.Drawing.Size(23, 25);
             this.tsbDrawingStep.Text = "Drawing: Step";
             // 
             // tsbDrawingImage
@@ -204,7 +211,7 @@
             this.tsbDrawingImage.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.image;
             this.tsbDrawingImage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDrawingImage.Name = "tsbDrawingImage";
-            this.tsbDrawingImage.Size = new System.Drawing.Size(31, 20);
+            this.tsbDrawingImage.Size = new System.Drawing.Size(23, 25);
             this.tsbDrawingImage.Text = "Drawing: Image";
             // 
             // tsbEffectBlur
@@ -213,7 +220,7 @@
             this.tsbEffectBlur.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.layer_shade;
             this.tsbEffectBlur.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEffectBlur.Name = "tsbEffectBlur";
-            this.tsbEffectBlur.Size = new System.Drawing.Size(31, 20);
+            this.tsbEffectBlur.Size = new System.Drawing.Size(23, 25);
             this.tsbEffectBlur.Text = "Effect: Blur";
             // 
             // tsbEffectPixelate
@@ -222,7 +229,7 @@
             this.tsbEffectPixelate.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.grid;
             this.tsbEffectPixelate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEffectPixelate.Name = "tsbEffectPixelate";
-            this.tsbEffectPixelate.Size = new System.Drawing.Size(31, 20);
+            this.tsbEffectPixelate.Size = new System.Drawing.Size(23, 25);
             this.tsbEffectPixelate.Text = "Effect: Pixelate";
             // 
             // tsbEffectHighlight
@@ -231,15 +238,8 @@
             this.tsbEffectHighlight.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.highlighter_text;
             this.tsbEffectHighlight.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEffectHighlight.Name = "tsbEffectHighlight";
-            this.tsbEffectHighlight.Size = new System.Drawing.Size(31, 20);
+            this.tsbEffectHighlight.Size = new System.Drawing.Size(23, 25);
             this.tsbEffectHighlight.Text = "Effect: Highlight";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(0, 1, 2, 2);
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(35, 25);
-            this.toolStripLabel1.Text = "Tools";
             // 
             // RegionCaptureMenuForm
             // 
