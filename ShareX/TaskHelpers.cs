@@ -196,21 +196,40 @@ namespace ShareX
             return filename;
         }
 
-        public static bool ShowAfterCaptureForm(TaskSettings taskSettings, out string fileName, Image img = null)
+        public static bool ShowAfterCaptureForm(TaskSettings taskSettings, out string fileName, Image img = null, string filePath = null)
         {
             fileName = null;
 
             if (taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowAfterCaptureWindow))
             {
-                using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings))
+                AfterCaptureForm afterCaptureForm = null;
+
+                try
                 {
+                    if (!string.IsNullOrEmpty(filePath))
+                    {
+                        afterCaptureForm = new AfterCaptureForm(filePath, taskSettings);
+                    }
+                    else
+                    {
+                        afterCaptureForm = new AfterCaptureForm(img, taskSettings);
+                    }
+
                     if (afterCaptureForm.ShowDialog() == DialogResult.Cancel)
                     {
-                        if (img != null) img.Dispose();
+                        if (img != null)
+                        {
+                            img.Dispose();
+                        }
+
                         return false;
                     }
 
                     fileName = afterCaptureForm.FileName;
+                }
+                finally
+                {
+                    afterCaptureForm.Dispose();
                 }
             }
 

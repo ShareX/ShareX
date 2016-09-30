@@ -305,7 +305,7 @@ namespace ShareX
             {
                 string customFileName;
 
-                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName))
+                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, null, path))
                 {
                     WorkerTask task = WorkerTask.CreateFileJobTask(path, taskSettings, customFileName);
                     TaskManager.Start(task);

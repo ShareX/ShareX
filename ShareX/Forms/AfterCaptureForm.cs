@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -37,7 +38,7 @@ namespace ShareX
         public TaskSettings TaskSettings { get; private set; }
         public string FileName { get; private set; }
 
-        public AfterCaptureForm(Image img, TaskSettings taskSettings)
+        public AfterCaptureForm(TaskSettings taskSettings)
         {
             TaskSettings = taskSettings;
 
@@ -55,6 +56,12 @@ namespace ShareX
             AddAfterCaptureItems(TaskSettings.AfterCaptureJob);
             AddAfterUploadItems(TaskSettings.AfterUploadJob);
 
+            FileName = TaskHelpers.GetFilename(TaskSettings);
+            txtFileName.Text = FileName;
+        }
+
+        public AfterCaptureForm(Image img, TaskSettings taskSettings) : this(taskSettings)
+        {
             if (img != null)
             {
                 pbImage.LoadImage(img);
@@ -62,6 +69,17 @@ namespace ShareX
             }
 
             FileName = TaskHelpers.GetFilename(TaskSettings, null, img);
+            txtFileName.Text = FileName;
+        }
+
+        public AfterCaptureForm(string filePath, TaskSettings taskSettings) : this(taskSettings)
+        {
+            if (Helpers.IsImageFile(filePath))
+            {
+                pbImage.LoadImageFromFileAsync(filePath);
+            }
+
+            FileName = Path.GetFileNameWithoutExtension(filePath);
             txtFileName.Text = FileName;
         }
 
