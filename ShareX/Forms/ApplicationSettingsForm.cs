@@ -38,6 +38,7 @@ namespace ShareX
         private const int MaxBufferSizePower = 14;
 
         private bool ready;
+        private string lastPersonalPath;
 
         public ApplicationSettingsForm()
         {
@@ -57,7 +58,14 @@ namespace ShareX
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Program.WritePersonalPathConfig(txtPersonalFolderPath.Text);
+            string currentPersonalPath = txtPersonalFolderPath.Text;
+
+            if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.InvariantCultureIgnoreCase))
+            {
+                Program.WritePersonalPathConfig(currentPersonalPath);
+
+                MessageBox.Show("You must reopen ShareX for personal folder changes to take effect.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void InitializeControls()
@@ -123,7 +131,8 @@ namespace ShareX
 #endif
 
             // Paths
-            txtPersonalFolderPath.Text = Program.ReadPersonalPathConfig();
+            lastPersonalPath = Program.ReadPersonalPathConfig();
+            txtPersonalFolderPath.Text = lastPersonalPath;
             UpdatePersonalFolderPathPreview();
             cbUseCustomScreenshotsPath.Checked = Program.Settings.UseCustomScreenshotsPath;
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
