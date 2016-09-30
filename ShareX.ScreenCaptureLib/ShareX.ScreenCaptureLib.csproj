@@ -170,6 +170,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\layer--pencil.png" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\drive-globe.png" />
     <None Include="Resources\disks-black.png" />

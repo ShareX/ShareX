@@ -184,13 +184,12 @@ namespace ShareX.ScreenCaptureLib
 
         private RegionCaptureForm form;
         private Form menuForm;
-        private ContextMenuStrip cmsContextMenu;
+        private ToolStripEx tsMain;
         private ToolStripSeparator tssObjectOptions, tssShapeOptions;
         private ToolStripButton tsbDeleteSelected, tsbDeleteAll;
         private ToolStripMenuItem tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
-        private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed, allowOptionsMenu;
-        private Stopwatch cmsCloseTimer;
+        private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
 
         public ShapeManager(RegionCaptureForm form)
         {
@@ -217,11 +216,6 @@ namespace ShareX.ScreenCaptureLib
             form.KeyDown += form_KeyDown;
             form.KeyUp += form_KeyUp;
 
-            if (form.IsAnnotationMode)
-            {
-                CreateContextMenu();
-            }
-
             CurrentShape = null;
 
             if (form.Mode == RegionCaptureMode.Annotation)
@@ -240,7 +234,10 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_Shown(object sender, EventArgs e)
         {
-            CreateMenu();
+            if (form.IsAnnotationMode)
+            {
+                CreateMenu();
+            }
         }
 
         private void CreateMenu()
@@ -253,25 +250,28 @@ namespace ShareX.ScreenCaptureLib
                 AutoSizeMode = AutoSizeMode.GrowAndShrink,
                 ClientSize = new Size(759, 509),
                 FormBorderStyle = FormBorderStyle.None,
-                Location = new Point(100, 100),
+                Location = new Point(200, 200),
                 ShowInTaskbar = false,
+                StartPosition = FormStartPosition.Manual,
                 Text = "RegionCaptureFormMenu"
             };
 
             menuForm.SuspendLayout();
 
-            ToolStripEx tsMain = new ToolStripEx()
+            tsMain = new ToolStripEx()
             {
-                AutoSize = false,
+                AutoSize = true,
                 CanOverflow = false,
                 ClickThrough = true,
                 Dock = DockStyle.None,
                 Location = new Point(0, 0),
+                MinimumSize = new Size(100, 30),
                 Padding = new Padding(0, 0, 0, 0),
-                Size = new Size(552, 30),
                 TabIndex = 0,
                 Text = "ToolStrip"
             };
+
+            tsMain.SuspendLayout();
 
             menuForm.Controls.Add(tsMain);
 
@@ -447,91 +447,15 @@ namespace ShareX.ScreenCaptureLib
 
             #endregion Selected object
 
-            #region Capture
-
-            if (form.Mode != RegionCaptureMode.Editor)
-            {
-                tsMain.Items.Add(new ToolStripSeparator());
-
-                ToolStripButton tsbFullscreenCapture = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
-                tsbFullscreenCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                tsbFullscreenCapture.Image = Resources.layer_fullscreen;
-                tsbFullscreenCapture.MouseDown += (sender, e) => form.Close(RegionResult.Fullscreen);
-                tsMain.Items.Add(tsbFullscreenCapture);
-
-                ToolStripButton tsbActiveMonitorCapture = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Capture_active_monitor);
-                tsbActiveMonitorCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                tsbActiveMonitorCapture.Image = Resources.monitor;
-                tsbActiveMonitorCapture.MouseDown += (sender, e) => form.Close(RegionResult.ActiveMonitor);
-                tsMain.Items.Add(tsbActiveMonitorCapture);
-
-                ToolStripDropDownButton tsbMonitorCapture = new ToolStripDropDownButton(Resources.ShapeManager_CreateContextMenu_Capture_monitor);
-                tsbMonitorCapture.HideImageMargin();
-                tsbMonitorCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                tsbMonitorCapture.Image = Resources.monitor_window;
-                tsMain.Items.Add(tsbMonitorCapture);
-
-                tsbMonitorCapture.DropDownItems.Clear();
-
-                Screen[] screens = Screen.AllScreens;
-
-                for (int i = 0; i < screens.Length; i++)
-                {
-                    Screen screen = screens[i];
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height));
-                    int index = i;
-                    tsmi.MouseDown += (sender, e) =>
-                    {
-                        form.MonitorIndex = index;
-                        form.Close(RegionResult.Monitor);
-                    };
-                    tsbMonitorCapture.DropDownItems.Add(tsmi);
-                }
-            }
-
-            #endregion Capture
-
-            menuForm.ResumeLayout(false);
-
-            menuForm.Show(form);
-
-            UpdateContextMenu();
-        }
-
-        private void CreateContextMenu()
-        {
-            cmsContextMenu = new ContextMenuStrip(form.components);
-            cmsContextMenu.Renderer = new ToolStripCheckedBoldRenderer();
-            cmsContextMenu.IgnoreSeparatorClick();
-
-            cmsContextMenu.PreviewKeyDown += (sender, e) =>
-            {
-                if (e.KeyCode == Keys.Escape)
-                {
-                    e.IsInputKey = true;
-                }
-            };
-
-            cmsContextMenu.KeyUp += (sender, e) =>
-            {
-                if (e.KeyCode == Keys.Escape)
-                {
-                    cmsContextMenu.Close();
-                }
-            };
-
-            cmsContextMenu.Closed += (sender, e) =>
-            {
-                if (e.CloseReason == ToolStripDropDownCloseReason.AppClicked)
-                {
-                    cmsCloseTimer = Stopwatch.StartNew();
-                }
-            };
-
             #region Shape options
 
             tssShapeOptions = new ToolStripSeparator();
-            cmsContextMenu.Items.Add(tssShapeOptions);
+            tsMain.Items.Add(tssShapeOptions);
+
+            ToolStripDropDownButton tsddbShapeOptions = new ToolStripDropDownButton("Shape options");
+            tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsddbShapeOptions.Image = Resources.layer__pencil;
+            tsMain.Items.Add(tsddbShapeOptions);
 
             tsmiBorderColor = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Border_color___);
             tsmiBorderColor.Click += (sender, e) =>
@@ -580,7 +504,7 @@ namespace ShareX.ScreenCaptureLib
 
                 ResumeForm();
             };
-            cmsContextMenu.Items.Add(tsmiBorderColor);
+            tsddbShapeOptions.DropDownItems.Add(tsmiBorderColor);
 
             tslnudBorderSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Border_size_);
             tslnudBorderSize.Content.Minimum = 0;
@@ -607,7 +531,7 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
                 UpdateCursor();
             };
-            cmsContextMenu.Items.Add(tslnudBorderSize);
+            tsddbShapeOptions.DropDownItems.Add(tslnudBorderSize);
 
             tsmiFillColor = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Fill_color___);
             tsmiFillColor.Click += (sender, e) =>
@@ -655,7 +579,7 @@ namespace ShareX.ScreenCaptureLib
 
                 ResumeForm();
             };
-            cmsContextMenu.Items.Add(tsmiFillColor);
+            tsddbShapeOptions.DropDownItems.Add(tsmiFillColor);
 
             tslnudCornerRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Corner_radius_);
             tslnudCornerRadius.Content.Minimum = 0;
@@ -676,7 +600,7 @@ namespace ShareX.ScreenCaptureLib
 
                 UpdateCurrentShape();
             };
-            cmsContextMenu.Items.Add(tslnudCornerRadius);
+            tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
 
             tslnudBlurRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Blur_radius_);
             tslnudBlurRadius.Content.Minimum = 2;
@@ -686,7 +610,7 @@ namespace ShareX.ScreenCaptureLib
                 AnnotationOptions.BlurRadius = (int)tslnudBlurRadius.Content.Value;
                 UpdateCurrentShape();
             };
-            cmsContextMenu.Items.Add(tslnudBlurRadius);
+            tsddbShapeOptions.DropDownItems.Add(tslnudBlurRadius);
 
             tslnudPixelateSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Pixel_size_);
             tslnudPixelateSize.Content.Minimum = 2;
@@ -696,7 +620,7 @@ namespace ShareX.ScreenCaptureLib
                 AnnotationOptions.PixelateSize = (int)tslnudPixelateSize.Content.Value;
                 UpdateCurrentShape();
             };
-            cmsContextMenu.Items.Add(tslnudPixelateSize);
+            tsddbShapeOptions.DropDownItems.Add(tslnudPixelateSize);
 
             tsmiHighlightColor = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Highlight_color___);
             tsmiHighlightColor.Click += (sender, e) =>
@@ -715,49 +639,94 @@ namespace ShareX.ScreenCaptureLib
 
                 ResumeForm();
             };
-            cmsContextMenu.Items.Add(tsmiHighlightColor);
+            tsddbShapeOptions.DropDownItems.Add(tsmiHighlightColor);
 
             #endregion Shape options
+
+            #region Capture
+
+            if (form.Mode != RegionCaptureMode.Editor)
+            {
+                tsMain.Items.Add(new ToolStripSeparator());
+
+                ToolStripButton tsbFullscreenCapture = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
+                tsbFullscreenCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbFullscreenCapture.Image = Resources.layer_fullscreen;
+                tsbFullscreenCapture.MouseDown += (sender, e) => form.Close(RegionResult.Fullscreen);
+                tsMain.Items.Add(tsbFullscreenCapture);
+
+                ToolStripButton tsbActiveMonitorCapture = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Capture_active_monitor);
+                tsbActiveMonitorCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbActiveMonitorCapture.Image = Resources.monitor;
+                tsbActiveMonitorCapture.MouseDown += (sender, e) => form.Close(RegionResult.ActiveMonitor);
+                tsMain.Items.Add(tsbActiveMonitorCapture);
+
+                ToolStripDropDownButton tsddbMonitorCapture = new ToolStripDropDownButton(Resources.ShapeManager_CreateContextMenu_Capture_monitor);
+                tsddbMonitorCapture.HideImageMargin();
+                tsddbMonitorCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsddbMonitorCapture.Image = Resources.monitor_window;
+                tsMain.Items.Add(tsddbMonitorCapture);
+
+                tsddbMonitorCapture.DropDownItems.Clear();
+
+                Screen[] screens = Screen.AllScreens;
+
+                for (int i = 0; i < screens.Length; i++)
+                {
+                    Screen screen = screens[i];
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height));
+                    int index = i;
+                    tsmi.MouseDown += (sender, e) =>
+                    {
+                        form.MonitorIndex = index;
+                        form.Close(RegionResult.Monitor);
+                    };
+                    tsddbMonitorCapture.DropDownItems.Add(tsmi);
+                }
+            }
+
+            #endregion Capture
 
             #region Options
 
             if (form.Mode != RegionCaptureMode.Editor)
             {
-                cmsContextMenu.Items.Add(new ToolStripSeparator());
+                tsMain.Items.Add(new ToolStripSeparator());
 
-                ToolStripMenuItem tsmiOptions = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Options);
-                tsmiOptions.Image = Resources.gear;
-                cmsContextMenu.Items.Add(tsmiOptions);
+                ToolStripDropDownButton tsddbOptions = new ToolStripDropDownButton(Resources.ShapeManager_CreateContextMenu_Options);
+                tsddbOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsddbOptions.Image = Resources.gear;
+                tsMain.Items.Add(tsddbOptions);
 
                 tsmiQuickCrop = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Multi_region_mode);
                 tsmiQuickCrop.Checked = !Config.QuickCrop;
                 tsmiQuickCrop.CheckOnClick = true;
                 tsmiQuickCrop.Click += (sender, e) => Config.QuickCrop = !tsmiQuickCrop.Checked;
-                tsmiOptions.DropDownItems.Add(tsmiQuickCrop);
+                tsddbOptions.DropDownItems.Add(tsmiQuickCrop);
 
                 ToolStripMenuItem tsmiTips = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_tips);
                 tsmiTips.Checked = Config.ShowTips;
                 tsmiTips.CheckOnClick = true;
                 tsmiTips.Click += (sender, e) => Config.ShowTips = tsmiTips.Checked;
-                tsmiOptions.DropDownItems.Add(tsmiTips);
+                tsddbOptions.DropDownItems.Add(tsmiTips);
 
                 ToolStripMenuItem tsmiShowInfo = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_position_and_size_info);
                 tsmiShowInfo.Checked = Config.ShowInfo;
                 tsmiShowInfo.CheckOnClick = true;
                 tsmiShowInfo.Click += (sender, e) => Config.ShowInfo = tsmiShowInfo.Checked;
-                tsmiOptions.DropDownItems.Add(tsmiShowInfo);
+                tsddbOptions.DropDownItems.Add(tsmiShowInfo);
 
                 ToolStripMenuItem tsmiShowMagnifier = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_magnifier);
                 tsmiShowMagnifier.Checked = Config.ShowMagnifier;
                 tsmiShowMagnifier.CheckOnClick = true;
                 tsmiShowMagnifier.Click += (sender, e) => Config.ShowMagnifier = tsmiShowMagnifier.Checked;
-                tsmiOptions.DropDownItems.Add(tsmiShowMagnifier);
+                tsddbOptions.DropDownItems.Add(tsmiShowMagnifier);
 
                 ToolStripMenuItem tsmiUseSquareMagnifier = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Square_shape_magnifier);
                 tsmiUseSquareMagnifier.Checked = Config.UseSquareMagnifier;
                 tsmiUseSquareMagnifier.CheckOnClick = true;
                 tsmiUseSquareMagnifier.Click += (sender, e) => Config.UseSquareMagnifier = tsmiUseSquareMagnifier.Checked;
-                tsmiOptions.DropDownItems.Add(tsmiUseSquareMagnifier);
+                tsddbOptions.DropDownItems.Add(tsmiUseSquareMagnifier);
 
                 ToolStripLabeledNumericUpDown tslnudMagnifierPixelCount = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Magnifier_pixel_count_);
                 tslnudMagnifierPixelCount.Content.Minimum = RegionCaptureOptions.MagnifierPixelCountMinimum;
@@ -765,26 +734,26 @@ namespace ShareX.ScreenCaptureLib
                 tslnudMagnifierPixelCount.Content.Increment = 2;
                 tslnudMagnifierPixelCount.Content.Value = Config.MagnifierPixelCount;
                 tslnudMagnifierPixelCount.Content.ValueChanged = (sender, e) => Config.MagnifierPixelCount = (int)tslnudMagnifierPixelCount.Content.Value;
-                tsmiOptions.DropDownItems.Add(tslnudMagnifierPixelCount);
+                tsddbOptions.DropDownItems.Add(tslnudMagnifierPixelCount);
 
                 ToolStripLabeledNumericUpDown tslnudMagnifierPixelSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Magnifier_pixel_size_);
                 tslnudMagnifierPixelSize.Content.Minimum = RegionCaptureOptions.MagnifierPixelSizeMinimum;
                 tslnudMagnifierPixelSize.Content.Maximum = RegionCaptureOptions.MagnifierPixelSizeMaximum;
                 tslnudMagnifierPixelSize.Content.Value = Config.MagnifierPixelSize;
                 tslnudMagnifierPixelSize.Content.ValueChanged = (sender, e) => Config.MagnifierPixelSize = (int)tslnudMagnifierPixelSize.Content.Value;
-                tsmiOptions.DropDownItems.Add(tslnudMagnifierPixelSize);
+                tsddbOptions.DropDownItems.Add(tslnudMagnifierPixelSize);
 
                 ToolStripMenuItem tsmiShowCrosshair = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_screen_wide_crosshair);
                 tsmiShowCrosshair.Checked = Config.ShowCrosshair;
                 tsmiShowCrosshair.CheckOnClick = true;
                 tsmiShowCrosshair.Click += (sender, e) => Config.ShowCrosshair = tsmiShowCrosshair.Checked;
-                tsmiOptions.DropDownItems.Add(tsmiShowCrosshair);
+                tsddbOptions.DropDownItems.Add(tsmiShowCrosshair);
 
                 ToolStripMenuItem tsmiFixedSize = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Fixed_size_region_mode);
                 tsmiFixedSize.Checked = Config.IsFixedSize;
                 tsmiFixedSize.CheckOnClick = true;
                 tsmiFixedSize.Click += (sender, e) => Config.IsFixedSize = tsmiFixedSize.Checked;
-                tsmiOptions.DropDownItems.Add(tsmiFixedSize);
+                tsddbOptions.DropDownItems.Add(tsmiFixedSize);
 
                 ToolStripDoubleLabeledNumericUpDown tslnudFixedSize = new ToolStripDoubleLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Width_,
                     Resources.ShapeManager_CreateContextMenu_Height_);
@@ -794,16 +763,24 @@ namespace ShareX.ScreenCaptureLib
                 tslnudFixedSize.Content.Value = Config.FixedSize.Width;
                 tslnudFixedSize.Content.Value2 = Config.FixedSize.Height;
                 tslnudFixedSize.Content.ValueChanged = (sender, e) => Config.FixedSize = new Size((int)tslnudFixedSize.Content.Value, (int)tslnudFixedSize.Content.Value2);
-                tsmiOptions.DropDownItems.Add(tslnudFixedSize);
+                tsddbOptions.DropDownItems.Add(tslnudFixedSize);
 
                 ToolStripMenuItem tsmiShowFPS = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_FPS);
                 tsmiShowFPS.Checked = Config.ShowFPS;
                 tsmiShowFPS.CheckOnClick = true;
                 tsmiShowFPS.Click += (sender, e) => Config.ShowFPS = tsmiShowFPS.Checked;
-                tsmiOptions.DropDownItems.Add(tsmiShowFPS);
+                tsddbOptions.DropDownItems.Add(tsmiShowFPS);
             }
 
             #endregion Options
+
+            tsMain.ResumeLayout(false);
+            tsMain.PerformLayout();
+            menuForm.ResumeLayout(false);
+
+            menuForm.Show(form);
+
+            UpdateContextMenu();
 
             CurrentShapeTypeChanged += shapeType => UpdateContextMenu();
 
@@ -819,11 +796,11 @@ namespace ShareX.ScreenCaptureLib
             tssObjectOptions.Visible = tsbDeleteAll.Visible = Shapes.Count > 0;
             tsbDeleteSelected.Visible = CurrentShape != null;
 
-            foreach (ToolStripMenuItem tsmi in cmsContextMenu.Items.OfType<ToolStripMenuItem>().Where(x => x.Tag is ShapeType))
+            foreach (ToolStripButton tsb in tsMain.Items.OfType<ToolStripButton>().Where(x => x.Tag is ShapeType))
             {
-                if ((ShapeType)tsmi.Tag == shapeType)
+                if ((ShapeType)tsb.Tag == shapeType)
                 {
-                    tsmi.RadioCheck();
+                    tsb.RadioCheck();
                     break;
                 }
             }
@@ -982,8 +959,6 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_MouseDown(object sender, MouseEventArgs e)
         {
-            allowOptionsMenu = cmsCloseTimer == null || cmsCloseTimer.ElapsedMilliseconds > 100;
-
             if (e.Button == MouseButtons.Left)
             {
                 if (!IsCreating)
@@ -1315,10 +1290,7 @@ namespace ShareX.ScreenCaptureLib
                     DeleteIntersectShape();
                     break;
                 case RegionCaptureAction.OpenOptionsMenu:
-                    if (allowOptionsMenu)
-                    {
-                        OpenOptionsMenu();
-                    }
+                    OpenOptionsMenu();
                     break;
                 case RegionCaptureAction.SwapToolType:
                     SwapShapeType();
@@ -1534,11 +1506,7 @@ namespace ShareX.ScreenCaptureLib
         {
             SelectIntersectShape();
 
-            if (form.IsAnnotationMode && cmsContextMenu != null)
-            {
-                cmsContextMenu.Show(form, InputManager.MousePosition0Based.Add(-10, -10));
-                Config.ShowMenuTip = false;
-            }
+            Config.ShowMenuTip = false;
         }
 
         public Point SnapPosition(Point posOnClick, Point posCurrent)
