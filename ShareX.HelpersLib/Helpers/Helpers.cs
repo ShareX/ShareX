@@ -421,6 +421,11 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
             {
+                if (!folderPath.EndsWith(@"\"))
+                {
+                    folderPath += @"\";
+                }
+
                 try
                 {
                     Process.Start(folderPath);
