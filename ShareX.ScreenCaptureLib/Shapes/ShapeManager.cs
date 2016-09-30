@@ -274,7 +274,7 @@ namespace ShareX.ScreenCaptureLib
             tsMain.GripMouseDown += (sender, e) =>
             {
                 NativeMethods.ReleaseCapture(tsMain.Handle);
-                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeMethods.MOUSE_MOVE, IntPtr.Zero);
+                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
             };
 
             tsMain.SuspendLayout();

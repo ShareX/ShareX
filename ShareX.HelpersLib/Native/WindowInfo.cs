@@ -46,7 +46,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Rectangle ClientRectangle => NativeMethods.GetClientRect(Handle);
 
-        public WindowStyles Styles => (WindowStyles)NativeMethods.GetWindowLong(Handle, NativeMethods.GWL_STYLE);
+        public WindowStyles Styles => (WindowStyles)NativeMethods.GetWindowLong(Handle, NativeConstants.GWL_STYLE);
 
         public Icon Icon => NativeMethods.GetApplicationIcon(Handle);
 

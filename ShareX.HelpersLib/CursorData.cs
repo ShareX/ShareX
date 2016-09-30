@@ -47,7 +47,7 @@ namespace ShareX.HelpersLib
 
             if (NativeMethods.GetCursorInfo(out cursorInfo))
             {
-                IsVisible = cursorInfo.flags == NativeMethods.CURSOR_SHOWING;
+                IsVisible = cursorInfo.flags == NativeConstants.CURSOR_SHOWING;
 
                 if (IsVisible)
                 {
@@ -102,7 +102,7 @@ namespace ShareX.HelpersLib
             if (IconHandle != IntPtr.Zero)
             {
                 Point drawPosition = new Point(Position.X - cursorOffset.X, Position.Y - cursorOffset.Y);
-                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, IconHandle, 0, 0, 0, IntPtr.Zero, NativeMethods.DI_NORMAL);
+                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, IconHandle, 0, 0, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
             }
         }
 

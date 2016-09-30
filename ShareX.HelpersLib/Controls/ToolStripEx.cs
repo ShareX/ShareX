@@ -51,9 +51,9 @@ namespace ShareX.HelpersLib
         {
             base.WndProc(ref m);
 
-            if (clickThrough && m.Msg == (int)WindowsMessages.MOUSEACTIVATE && m.Result == (IntPtr)NativeMethods.MA_ACTIVATEANDEAT)
+            if (clickThrough && m.Msg == (int)WindowsMessages.MOUSEACTIVATE && m.Result == (IntPtr)NativeConstants.MA_ACTIVATEANDEAT)
             {
-                m.Result = (IntPtr)NativeMethods.MA_ACTIVATE;
+                m.Result = (IntPtr)NativeConstants.MA_ACTIVATE;
             }
         }
 

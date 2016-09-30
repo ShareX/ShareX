@@ -25,7 +25,7 @@
 
 namespace ShareX.HelpersLib
 {
-    public static partial class NativeMethods
+    public static class NativeConstants
     {
         public const int GCL_HICONSM = -34;
         public const int GCL_HICON = -14;

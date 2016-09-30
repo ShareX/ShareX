@@ -496,7 +496,7 @@ namespace ShareX.HelpersLib
         {
             if (textBox != null && textBox.IsHandleCreated && watermarkText != null)
             {
-                NativeMethods.SendMessage(textBox.Handle, (int)NativeMethods.EM_SETCUEBANNER, showCueWhenFocus ? 1 : 0, watermarkText);
+                NativeMethods.SendMessage(textBox.Handle, (int)NativeConstants.EM_SETCUEBANNER, showCueWhenFocus ? 1 : 0, watermarkText);
             }
         }
 
