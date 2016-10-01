@@ -56,7 +56,7 @@ namespace ShareX.ScreenCaptureLib
             new SnapSize(1280, 720), // 720p
             new SnapSize(1920, 1080) // 1080p
         };
-        public bool ShowTips = true;
+        public bool ShowTips = false;
         public bool ShowInfo = true;
         public bool ShowMagnifier = true;
         public bool UseSquareMagnifier = false;
