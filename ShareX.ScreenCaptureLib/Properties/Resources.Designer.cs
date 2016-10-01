@@ -100,16 +100,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cross {
-            get {
-                object obj = ResourceManager.GetObject("cross", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] Crosshair {
@@ -535,16 +525,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap prohibition {
-            get {
-                object obj = ResourceManager.GetObject("prohibition", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Rectangle capture annotate.
         /// </summary>
         internal static string RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate {
@@ -952,15 +932,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateContextMenu_Border_size_ {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateContextMenu_Border_size_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cancel capture.
-        /// </summary>
-        internal static string ShapeManager_CreateContextMenu_Cancel_capture {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Cancel_capture", resourceCulture);
             }
         }
         

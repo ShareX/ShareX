@@ -139,30 +139,7 @@ namespace ShareX.ScreenCaptureLib
 
             #endregion Editor mode
 
-            #region Main
-
-            string buttonText;
-
-            if (form.Mode == RegionCaptureMode.Editor)
-            {
-                buttonText = "Cancel annotation";
-            }
-            else
-            {
-                buttonText = Resources.ShapeManager_CreateContextMenu_Cancel_capture;
-            }
-
-            ToolStripButton tsbCancelCapture = new ToolStripButton(buttonText);
-            tsbCancelCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbCancelCapture.Image = Resources.cross;
-            tsbCancelCapture.MouseDown += (sender, e) => form.Close();
-            tsMain.Items.Add(tsbCancelCapture);
-
-            #endregion Main
-
             #region Tools
-
-            tsMain.Items.Add(new ToolStripSeparator());
 
             foreach (ShapeType shapeType in Helpers.GetEnums<ShapeType>())
             {

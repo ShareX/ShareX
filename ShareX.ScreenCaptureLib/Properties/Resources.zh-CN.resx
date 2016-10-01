@@ -326,9 +326,6 @@
   <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
     <value>关闭菜单</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Cancel_capture" xml:space="preserve">
-    <value>取消捕捉</value>
-  </data>
   <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
     <value>[鼠标滚轮] 更改当前工具</value>
   </data>

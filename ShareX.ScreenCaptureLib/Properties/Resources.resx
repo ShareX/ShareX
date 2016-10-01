@@ -273,9 +273,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Bitrate: {0}k</value>
   </data>
-  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
     <value>[Hold left click] [Insert] Start region selection</value>
   </data>
@@ -308,9 +305,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
-  </data>
-  <data name="prohibition" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\prohibition.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit_alignment_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -368,9 +362,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
     <value>[Mouse wheel] Change magnifier size</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Cancel_capture" xml:space="preserve">
-    <value>Cancel capture</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
     <value>Close menu</value>

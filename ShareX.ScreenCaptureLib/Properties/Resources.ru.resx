@@ -251,9 +251,6 @@
   <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
     <value>Высота:</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Cancel_capture" xml:space="preserve">
-    <value>Отменить захват</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
     <value>Закрыть меню</value>
   </data>
