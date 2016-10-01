@@ -185,7 +185,6 @@ namespace ShareX.ScreenCaptureLib
         private RegionCaptureForm form;
         private Form menuForm;
         private ToolStripEx tsMain;
-        private ToolStripSeparator tssObjectActions, tssShapeOptions;
         private ToolStripButton tsbDeleteSelected, tsbDeleteAll;
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
@@ -449,27 +448,7 @@ namespace ShareX.ScreenCaptureLib
 
             #region Selected object
 
-            tssObjectActions = new ToolStripSeparator();
-            tsMain.Items.Add(tssObjectActions);
-
-            tsbDeleteSelected = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_selected_object);
-            tsbDeleteSelected.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbDeleteSelected.Image = Resources.layer__minus;
-            tsbDeleteSelected.MouseDown += (sender, e) => DeleteCurrentShape();
-            tsMain.Items.Add(tsbDeleteSelected);
-
-            tsbDeleteAll = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_all_objects);
-            tsbDeleteAll.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbDeleteAll.Image = Resources.minus;
-            tsbDeleteAll.MouseDown += (sender, e) => DeleteAllShapes();
-            tsMain.Items.Add(tsbDeleteAll);
-
-            #endregion Selected object
-
-            #region Shape options
-
-            tssShapeOptions = new ToolStripSeparator();
-            tsMain.Items.Add(tssShapeOptions);
+            tsMain.Items.Add(new ToolStripSeparator());
 
             tsddbShapeOptions = new ToolStripDropDownButton("Shape options");
             tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -660,7 +639,19 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiHighlightColor);
 
-            #endregion Shape options
+            tsbDeleteSelected = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_selected_object);
+            tsbDeleteSelected.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbDeleteSelected.Image = Resources.layer__minus;
+            tsbDeleteSelected.MouseDown += (sender, e) => DeleteCurrentShape();
+            tsMain.Items.Add(tsbDeleteSelected);
+
+            tsbDeleteAll = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_all_objects);
+            tsbDeleteAll.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbDeleteAll.Image = Resources.eraser;
+            tsbDeleteAll.MouseDown += (sender, e) => DeleteAllShapes();
+            tsMain.Items.Add(tsbDeleteAll);
+
+            #endregion Selected object
 
             #region Capture
 
@@ -829,9 +820,6 @@ namespace ShareX.ScreenCaptureLib
 
             ShapeType shapeType = CurrentShapeType;
 
-            tssObjectActions.Visible = tsbDeleteAll.Visible = Shapes.Count > 0;
-            tsbDeleteSelected.Visible = CurrentShape != null;
-
             foreach (ToolStripButton tsb in tsMain.Items.OfType<ToolStripButton>().Where(x => x.Tag is ShapeType))
             {
                 if ((ShapeType)tsb.Tag == shapeType)
@@ -917,8 +905,7 @@ namespace ShareX.ScreenCaptureLib
             switch (shapeType)
             {
                 default:
-                    tssShapeOptions.Visible = false;
-                    tsddbShapeOptions.Visible = false;
+                    tsddbShapeOptions.Enabled = false;
                     break;
                 case ShapeType.RegionRoundedRectangle:
                 case ShapeType.DrawingRectangle:
@@ -933,10 +920,12 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.EffectBlur:
                 case ShapeType.EffectPixelate:
                 case ShapeType.EffectHighlight:
-                    tssShapeOptions.Visible = true;
-                    tsddbShapeOptions.Visible = true;
+                    tsddbShapeOptions.Enabled = true;
                     break;
             }
+
+            tsbDeleteSelected.Enabled = CurrentShape != null;
+            tsbDeleteAll.Enabled = Shapes.Count > 0;
 
             switch (shapeType)
             {
