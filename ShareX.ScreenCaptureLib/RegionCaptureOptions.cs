@@ -39,10 +39,10 @@ namespace ShareX.ScreenCaptureLib
         public const int MoveSpeedMaximum = 10;
 
         public bool QuickCrop = true;
-        public RegionCaptureAction MouseRightClickAction = RegionCaptureAction.OpenOptionsMenu;
-        public RegionCaptureAction MouseMiddleClickAction = RegionCaptureAction.CancelCapture;
-        public RegionCaptureAction Mouse4ClickAction = RegionCaptureAction.SwapToolType;
-        public RegionCaptureAction Mouse5ClickAction = RegionCaptureAction.CaptureFullscreen;
+        public RegionCaptureAction MouseRightClickAction = RegionCaptureAction.RemoveShapeCancelCapture;
+        public RegionCaptureAction MouseMiddleClickAction = RegionCaptureAction.SwapToolType;
+        public RegionCaptureAction Mouse4ClickAction = RegionCaptureAction.CaptureFullscreen;
+        public RegionCaptureAction Mouse5ClickAction = RegionCaptureAction.CaptureActiveMonitor;
         public bool DetectWindows = true;
         public bool DetectControls = true;
         public bool UseDimming = true;
