@@ -97,6 +97,7 @@
     <Compile Include="Shapes\Drawing\ImageDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\StepDrawingShape.cs" />
     <Compile Include="Shapes\Region\FreehandRegionShape.cs" />
+    <Compile Include="Shapes\ShapeManagerMenu.cs" />
     <Compile Include="Shapes\TextDrawingOptions.cs" />
     <Compile Include="Shapes\Drawing\TextDrawingShape.cs" />
     <Compile Include="Shapes\Effect\BlurEffectShape.cs" />
