@@ -67,11 +67,10 @@ namespace ShareX.ScreenCaptureLib
                 Dock = DockStyle.None,
                 GripStyle = ToolStripGripStyle.Hidden,
                 Location = new Point(0, 0),
-                MinimumSize = new Size(100, 30),
+                MinimumSize = new Size(600, 30),
                 Padding = new Padding(0, 0, 0, 0),
                 Renderer = new CustomToolStripProfessionalRenderer(),
-                TabIndex = 0,
-                Text = "ToolStrip"
+                TabIndex = 0
             };
 
             tsMain.SuspendLayout();
@@ -609,7 +608,15 @@ namespace ShareX.ScreenCaptureLib
             menuForm.Show(form);
 
             Rectangle rect = CaptureHelpers.GetActiveScreenBounds0Based();
-            menuForm.Location = new Point(rect.X + rect.Width / 2 - tsMain.Width / 2, rect.Y + 20);
+
+            if (rect.Width > tsMain.Width)
+            {
+                menuForm.Location = new Point(rect.X + rect.Width / 2 - tsMain.Width / 2, rect.Y + 20);
+            }
+            else
+            {
+                menuForm.Location = rect.Location;
+            }
 
             form.Activate();
 
