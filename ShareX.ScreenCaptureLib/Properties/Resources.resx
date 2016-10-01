@@ -342,9 +342,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="counter_reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\counter-reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu" xml:space="preserve">
-    <value>Tip: Right click to open options menu</value>
-  </data>
   <data name="RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu" xml:space="preserve">
     <value>[Right click] [Menu] Open options menu</value>
   </data>

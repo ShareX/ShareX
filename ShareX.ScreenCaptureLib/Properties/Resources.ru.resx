@@ -338,9 +338,6 @@
   <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
     <value>Цвет подсветки...</value>
   </data>
-  <data name="RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu" xml:space="preserve">
-    <value>Совет: Кликните ПКМ, чтобы открыть меню опций</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
     <value>Размер пикселя:</value>
   </data>

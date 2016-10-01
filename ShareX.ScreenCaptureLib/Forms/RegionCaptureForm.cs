@@ -88,7 +88,6 @@ namespace ShareX.ScreenCaptureLib
         private int frameCount;
         private bool pause, isKeyAllowed;
         private ColorBlinkAnimation colorBlinkAnimation;
-        private TextAnimation shapeTypeTextAnimation;
         private Bitmap bmpBackgroundImage;
 
         public RegionCaptureForm(RegionCaptureMode mode)
@@ -106,7 +105,6 @@ namespace ShareX.ScreenCaptureLib
             timerStart = new Stopwatch();
             timerFPS = new Stopwatch();
             colorBlinkAnimation = new ColorBlinkAnimation();
-            shapeTypeTextAnimation = new TextAnimation(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.5));
 
             borderPen = new Pen(Color.Black);
             borderDotPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
@@ -199,13 +197,6 @@ namespace ShareX.ScreenCaptureLib
             ShapeManager.WindowCaptureMode = Config.DetectWindows;
             ShapeManager.IncludeControls = Config.DetectControls;
 
-            if (IsAnnotationMode)
-            {
-                ShapeManager.CurrentShapeTypeChanged += ShapeManager_CurrentShapeTypeChanged;
-
-                ShapeManager_CurrentShapeTypeChanged(ShapeManager.CurrentShapeType);
-            }
-
             if (Mode == RegionCaptureMode.OneClick || ShapeManager.WindowCaptureMode)
             {
                 IntPtr handle = Handle;
@@ -223,11 +214,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 bmpBackgroundImage = new Bitmap(Image);
             }
-        }
-
-        private void ShapeManager_CurrentShapeTypeChanged(ShapeType shapeType)
-        {
-            shapeTypeTextAnimation.Start(shapeType.GetLocalizedDescription());
         }
 
         private void RegionCaptureForm_Shown(object sender, EventArgs e)
@@ -548,20 +534,6 @@ namespace ShareX.ScreenCaptureLib
                 DrawTips(g);
             }
 
-            if (IsAnnotationMode)
-            {
-                if (Config.ShowMenuTip)
-                {
-                    // Draw right click menu tip
-                    DrawMenuTip(g);
-                }
-                else
-                {
-                    // If current shape changed then draw it temporary
-                    DrawCurrentShapeText(g);
-                }
-            }
-
             // Draw magnifier
             if (Config.ShowMagnifier || Config.ShowInfo)
             {
@@ -684,21 +656,6 @@ namespace ShareX.ScreenCaptureLib
             using (Brush textShadowBrush = new SolidBrush(Color.FromArgb((int)(opacity * 255), Color.Black)))
             {
                 DrawInfoText(g, text, textRectangle, infoFontMedium, padding, backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
-            }
-        }
-
-        private void DrawMenuTip(Graphics g)
-        {
-            DrawTopCenterTip(g, Resources.RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu);
-        }
-
-        private void DrawCurrentShapeText(Graphics g)
-        {
-            shapeTypeTextAnimation.Update();
-
-            if (shapeTypeTextAnimation.Active)
-            {
-                DrawTopCenterTip(g, shapeTypeTextAnimation.Text, shapeTypeTextAnimation.Opacity);
             }
         }
 

@@ -819,15 +819,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tip: Right click to open options menu.
-        /// </summary>
-        internal static string RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to [Ctrl + Mouse wheel] Change current tool.
         /// </summary>
         internal static string RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size {

@@ -70,6 +70,5 @@ namespace ShareX.ScreenCaptureLib
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
         public ShapeType LastRegionTool = ShapeType.RegionRectangle;
         public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
-        public bool ShowMenuTip = true;
     }
 }

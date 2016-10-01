@@ -784,9 +784,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void OpenOptionsMenu()
         {
+            // TODO
             SelectIntersectShape();
-
-            Config.ShowMenuTip = false;
         }
 
         public Point SnapPosition(Point posOnClick, Point posCurrent)

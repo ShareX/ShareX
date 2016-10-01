@@ -236,9 +236,6 @@
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
     <value>[Ctrl +鼠标滚轮] 更改画笔大小</value>
   </data>
-  <data name="RectangleRegionForm_DrawMenuTip_Tip__Right_click_to_open_options_menu" xml:space="preserve">
-    <value>提示：右键点击打开选项菜单</value>
-  </data>
   <data name="RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu" xml:space="preserve">
     <value>[点击右键] [菜单] 打开选项菜单</value>
   </data>
