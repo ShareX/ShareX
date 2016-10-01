@@ -185,8 +185,9 @@ namespace ShareX.ScreenCaptureLib
         private RegionCaptureForm form;
         private Form menuForm;
         private ToolStripEx tsMain;
-        private ToolStripSeparator tssObjectOptions, tssShapeOptions;
+        private ToolStripSeparator tssObjectActions, tssShapeOptions;
         private ToolStripButton tsbDeleteSelected, tsbDeleteAll;
+        private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
@@ -448,8 +449,8 @@ namespace ShareX.ScreenCaptureLib
 
             #region Selected object
 
-            tssObjectOptions = new ToolStripSeparator();
-            tsMain.Items.Add(tssObjectOptions);
+            tssObjectActions = new ToolStripSeparator();
+            tsMain.Items.Add(tssObjectActions);
 
             tsbDeleteSelected = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_selected_object);
             tsbDeleteSelected.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -470,7 +471,7 @@ namespace ShareX.ScreenCaptureLib
             tssShapeOptions = new ToolStripSeparator();
             tsMain.Items.Add(tssShapeOptions);
 
-            ToolStripDropDownButton tsddbShapeOptions = new ToolStripDropDownButton("Shape options");
+            tsddbShapeOptions = new ToolStripDropDownButton("Shape options");
             tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsddbShapeOptions.Image = Resources.layer__pencil;
             tsMain.Items.Add(tsddbShapeOptions);
@@ -828,7 +829,7 @@ namespace ShareX.ScreenCaptureLib
 
             ShapeType shapeType = CurrentShapeType;
 
-            tssObjectOptions.Visible = tsbDeleteAll.Visible = Shapes.Count > 0;
+            tssObjectActions.Visible = tsbDeleteAll.Visible = Shapes.Count > 0;
             tsbDeleteSelected.Visible = CurrentShape != null;
 
             foreach (ToolStripButton tsb in tsMain.Items.OfType<ToolStripButton>().Where(x => x.Tag is ShapeType))
@@ -917,6 +918,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 default:
                     tssShapeOptions.Visible = false;
+                    tsddbShapeOptions.Visible = false;
                     break;
                 case ShapeType.RegionRoundedRectangle:
                 case ShapeType.DrawingRectangle:
@@ -932,6 +934,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.EffectPixelate:
                 case ShapeType.EffectHighlight:
                     tssShapeOptions.Visible = true;
+                    tsddbShapeOptions.Visible = true;
                     break;
             }
 
