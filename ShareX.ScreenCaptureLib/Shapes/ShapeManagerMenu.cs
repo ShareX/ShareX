@@ -57,6 +57,36 @@ namespace ShareX.ScreenCaptureLib
                 Text = "RegionCaptureFormMenu"
             };
 
+            menuForm.LocationChanged += (sender, e) =>
+            {
+                Rectangle rectMenu = menuForm.Bounds;
+                Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
+                Point pos = rectMenu.Location;
+
+                if (rectMenu.X < rectScreen.X)
+                {
+                    pos.X = rectScreen.X;
+                }
+                else if (rectMenu.Right > rectScreen.Right)
+                {
+                    pos.X = rectScreen.Right - rectMenu.Width;
+                }
+
+                if (rectMenu.Y < rectScreen.Y)
+                {
+                    pos.Y = rectScreen.Y;
+                }
+                else if (rectMenu.Bottom > rectScreen.Bottom)
+                {
+                    pos.Y = rectScreen.Bottom - rectMenu.Height;
+                }
+
+                if (pos != rectMenu.Location)
+                {
+                    menuForm.Location = pos;
+                }
+            };
+
             menuForm.SuspendLayout();
 
             tsMain = new ToolStripEx()
@@ -591,15 +621,15 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.Show(form);
 
-            Rectangle rect = CaptureHelpers.GetActiveScreenBounds0Based();
+            Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenBounds0Based();
 
-            if (rect.Width > tsMain.Width)
+            if (rectActiveScreen.Width > tsMain.Width)
             {
-                menuForm.Location = new Point(rect.X + rect.Width / 2 - tsMain.Width / 2, rect.Y + 20);
+                menuForm.Location = new Point(rectActiveScreen.X + rectActiveScreen.Width / 2 - tsMain.Width / 2, rectActiveScreen.Y + 20);
             }
             else
             {
-                menuForm.Location = rect.Location;
+                menuForm.Location = rectActiveScreen.Location;
             }
 
             form.Activate();
