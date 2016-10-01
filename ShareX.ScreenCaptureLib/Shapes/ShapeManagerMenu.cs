@@ -611,6 +611,8 @@ namespace ShareX.ScreenCaptureLib
             Rectangle rect = CaptureHelpers.GetActiveScreenBounds0Based();
             menuForm.Location = new Point(rect.X + rect.Width / 2 - tsMain.Width / 2, rect.Y + 20);
 
+            form.Activate();
+
             UpdateMenu();
 
             CurrentShapeTypeChanged += shapeType => UpdateMenu();
