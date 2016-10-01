@@ -171,6 +171,11 @@ namespace ShareX.ScreenCaptureLib
                     continue;
                 }
 
+                if (shapeType == ShapeType.DrawingRectangle)
+                {
+                    tsMain.Items.Add(new ToolStripSeparator());
+                }
+
                 ToolStripButton tsbShapeType = new ToolStripButton(shapeType.GetLocalizedDescription());
                 tsbShapeType.DisplayStyle = ToolStripItemDisplayStyle.Image;
 
