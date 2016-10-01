@@ -67,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
                 Dock = DockStyle.None,
                 GripStyle = ToolStripGripStyle.Hidden,
                 Location = new Point(0, 0),
-                MinimumSize = new Size(600, 30),
+                MinimumSize = new Size(300, 30),
                 Padding = new Padding(0, 0, 0, 0),
                 Renderer = new CustomToolStripProfessionalRenderer(),
                 TabIndex = 0
@@ -143,12 +143,14 @@ namespace ShareX.ScreenCaptureLib
 
             foreach (ShapeType shapeType in Helpers.GetEnums<ShapeType>())
             {
-                if (form.Mode == RegionCaptureMode.Editor && IsShapeTypeRegion(shapeType))
+                if (form.Mode == RegionCaptureMode.Editor)
                 {
-                    continue;
+                    if (IsShapeTypeRegion(shapeType))
+                    {
+                        continue;
+                    }
                 }
-
-                if (shapeType == ShapeType.DrawingRectangle)
+                else if (shapeType == ShapeType.DrawingRectangle)
                 {
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
