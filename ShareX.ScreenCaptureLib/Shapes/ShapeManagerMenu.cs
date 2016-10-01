@@ -155,7 +155,7 @@ namespace ShareX.ScreenCaptureLib
 
             ToolStripButton tsbCancelCapture = new ToolStripButton(buttonText);
             tsbCancelCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbCancelCapture.Image = Resources.prohibition;
+            tsbCancelCapture.Image = Resources.cross;
             tsbCancelCapture.MouseDown += (sender, e) => form.Close();
             tsMain.Items.Add(tsbCancelCapture);
 
@@ -607,6 +607,9 @@ namespace ShareX.ScreenCaptureLib
             menuForm.ResumeLayout(false);
 
             menuForm.Show(form);
+
+            Rectangle rect = CaptureHelpers.GetActiveScreenBounds0Based();
+            menuForm.Location = new Point(rect.X + rect.Width / 2 - tsMain.Width / 2, rect.Y + 20);
 
             UpdateMenu();
 
