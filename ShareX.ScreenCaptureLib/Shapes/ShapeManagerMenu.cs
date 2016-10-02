@@ -634,17 +634,20 @@ namespace ShareX.ScreenCaptureLib
                 menuForm.Location = rectActiveScreen.Location;
             }
 
-            foreach (ToolStripButton tsb in tsMain.Items.OfType<ToolStripButton>())
+            foreach (ToolStripItem tsi in tsMain.Items.OfType<ToolStripItem>())
             {
-                tsb.MouseEnter += (sender, e) =>
+                if (!string.IsNullOrEmpty(tsi.Text))
                 {
-                    Point pos = CaptureHelpers.ScreenToClient(menuForm.PointToScreen(tsb.Bounds.Location));
-                    pos.Y += tsb.Height + 8;
-                    MenuTextAnimation.Position = pos;
-                    MenuTextAnimation.Start(tsb.ToolTipText);
-                };
+                    tsi.MouseEnter += (sender, e) =>
+                    {
+                        Point pos = CaptureHelpers.ScreenToClient(menuForm.PointToScreen(tsi.Bounds.Location));
+                        pos.Y += tsi.Height + 8;
+                        MenuTextAnimation.Position = pos;
+                        MenuTextAnimation.Start(tsi.Text);
+                    };
 
-                tsb.MouseLeave += (sender, e) => MenuTextAnimation.Stop();
+                    tsi.MouseLeave += (sender, e) => MenuTextAnimation.Stop();
+                }
             }
 
             form.Activate();
