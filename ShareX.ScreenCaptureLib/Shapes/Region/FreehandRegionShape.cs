@@ -101,6 +101,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 gp.AddPolygon(points.ToArray());
             }
+            else if (points.Count == 2)
+            {
+                gp.AddLine(points[0], points[1]);
+            }
         }
 
         public override void Move(int x, int y)
