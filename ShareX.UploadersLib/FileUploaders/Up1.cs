@@ -77,7 +77,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (string.IsNullOrEmpty(systemUrl))
             {
-                SystemUrl = "https://up1.ca";
+                SystemUrl = "https://share.riseup.net";
             }
             else
             {
@@ -86,7 +86,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (string.IsNullOrEmpty(apiKey))
             {
-                ApiKey = "c61540b5ceecd05092799f936e27755f";
+                ApiKey = "59Mnk5nY6eCn4bi9GvfOXhMH54E7Bh6EMJXtyJfs";
             }
             else
             {
