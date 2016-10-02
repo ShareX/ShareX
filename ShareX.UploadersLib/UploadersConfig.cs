@@ -250,8 +250,8 @@ namespace ShareX.UploadersLib
 
         // Up1
 
-        public string Up1Host = "https://up1.ca";
-        public string Up1Key = "c61540b5ceecd05092799f936e27755f";
+        public string Up1Host = "https://share.riseup.net";
+        public string Up1Key = "59Mnk5nY6eCn4bi9GvfOXhMH54E7Bh6EMJXtyJfs";
 
         // Lambda
 
