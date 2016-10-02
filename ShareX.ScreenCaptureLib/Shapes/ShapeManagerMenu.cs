@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
     {
         private Form menuForm;
         private ToolStripEx tsMain;
-        private ToolStripButton tsbDeleteSelected, tsbDeleteAll;
+        private ToolStripButton tsbUndoObject, tsbDeleteAll;
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
@@ -423,11 +423,11 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiHighlightColor);
 
-            tsbDeleteSelected = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_selected_object);
-            tsbDeleteSelected.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbDeleteSelected.Image = Resources.layer__minus;
-            tsbDeleteSelected.MouseDown += (sender, e) => DeleteCurrentShape();
-            tsMain.Items.Add(tsbDeleteSelected);
+            tsbUndoObject = new ToolStripButton("Undo object");
+            tsbUndoObject.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbUndoObject.Image = Resources.arrow_circle_225_left;
+            tsbUndoObject.MouseDown += (sender, e) => UndoShape();
+            tsMain.Items.Add(tsbUndoObject);
 
             tsbDeleteAll = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Delete_all_objects);
             tsbDeleteAll.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -751,8 +751,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            tsbDeleteSelected.Enabled = CurrentShape != null;
-            tsbDeleteAll.Enabled = Shapes.Count > 0;
+            tsbUndoObject.Enabled = tsbDeleteAll.Enabled = Shapes.Count > 0;
 
             switch (shapeType)
             {

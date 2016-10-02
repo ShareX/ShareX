@@ -201,11 +201,11 @@
     <None Include="Resources\layer-shape-ellipse.png" />
     <None Include="Resources\layer-shape-round.png" />
     <None Include="Resources\layer-shape.png" />
-    <None Include="Resources\layer--minus.png" />
     <None Include="Resources\minus.png" />
     <None Include="Resources\counter-reset.png" />
     <None Include="Resources\balloon-box-left.png" />
     <None Include="Resources\clipboard.png" />
+    <None Include="Resources\arrow-circle-225-left.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>

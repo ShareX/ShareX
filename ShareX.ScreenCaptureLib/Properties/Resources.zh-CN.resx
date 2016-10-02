@@ -320,9 +320,6 @@
   <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
     <value>删除所有对象</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Delete_selected_object" xml:space="preserve">
-    <value>删除选定对象</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
     <value>关闭菜单</value>
   </data>

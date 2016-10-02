@@ -217,9 +217,6 @@ X: {4} Y: {5}</value>
   <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
     <value>[Shift] Change pen color</value>
   </data>
-  <data name="layer__minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layer--minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
     <value>[Mouse wheel] Swap modes</value>
   </data>
@@ -366,9 +363,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
     <value>Close menu</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Delete_selected_object" xml:space="preserve">
-    <value>Delete selected object</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
     <value>Delete all objects</value>
   </data>
@@ -479,5 +473,8 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   </data>
   <data name="eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eraser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_circle_225_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-circle-225-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
