@@ -34,6 +34,8 @@ namespace ShareX.ScreenCaptureLib
 {
     internal partial class ShapeManager
     {
+        internal TextAnimation MenuTextAnimation = new TextAnimation(TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(0.5));
+
         private Form menuForm;
         private ToolStripEx tsMain;
         private ToolStripButton tsbUndoObject, tsbDeleteAll;
@@ -630,6 +632,19 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 menuForm.Location = rectActiveScreen.Location;
+            }
+
+            foreach (ToolStripButton tsb in tsMain.Items.OfType<ToolStripButton>())
+            {
+                tsb.MouseEnter += (sender, e) =>
+                {
+                    Point pos = CaptureHelpers.ScreenToClient(menuForm.PointToScreen(tsb.Bounds.Location));
+                    pos.Y += tsb.Height + 8;
+                    MenuTextAnimation.Position = pos;
+                    MenuTextAnimation.Start(tsb.ToolTipText);
+                };
+
+                tsb.MouseLeave += (sender, e) => MenuTextAnimation.Stop();
             }
 
             form.Activate();

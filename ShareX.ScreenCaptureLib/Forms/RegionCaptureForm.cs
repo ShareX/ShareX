@@ -545,6 +545,12 @@ namespace ShareX.ScreenCaptureLib
             {
                 DrawCrosshair(g);
             }
+
+            // Draw menu tooltips
+            if (IsAnnotationMode && ShapeManager.MenuTextAnimation.Update())
+            {
+                DrawTextAnimation(g, ShapeManager.MenuTextAnimation);
+            }
         }
 
         private void DrawObjects(Graphics g)
@@ -639,23 +645,19 @@ namespace ShareX.ScreenCaptureLib
             DrawInfoText(g, tipText, textRectangle, infoFont, padding);
         }
 
-        private void DrawTopCenterTip(Graphics g, string text, double opacity = 1)
+        private void DrawTextAnimation(Graphics g, TextAnimation textAnimation)
         {
-            Size textSize = g.MeasureString(text, infoFontMedium).ToSize();
-            int offset = 10;
+            Size textSize = g.MeasureString(textAnimation.Text, infoFontMedium).ToSize();
             int padding = 3;
-            int rectWidth = textSize.Width + padding * 2;
-            int rectHeight = textSize.Height + padding * 2;
-            Rectangle screenBounds = CaptureHelpers.GetActiveScreenBounds0Based();
-            Rectangle textRectangle = new Rectangle(screenBounds.X + (screenBounds.Width / 2) - (rectWidth / 2), screenBounds.Y + offset, rectWidth, rectHeight);
+            Rectangle textRectangle = new Rectangle(textAnimation.Position.X, textAnimation.Position.Y, textSize.Width + padding * 2, textSize.Height + padding * 2);
 
-            using (Brush backgroundBrush = new SolidBrush(Color.FromArgb((int)(opacity * 75), Color.Black)))
-            using (Pen outerBorderPen = new Pen(Color.FromArgb((int)(opacity * 50), Color.White)))
-            using (Pen innerBorderPen = new Pen(Color.FromArgb((int)(opacity * 150), Color.Black)))
-            using (Brush textBrush = new SolidBrush(Color.FromArgb((int)(opacity * 255), Color.White)))
-            using (Brush textShadowBrush = new SolidBrush(Color.FromArgb((int)(opacity * 255), Color.Black)))
+            using (Brush backgroundBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 175), Color.FromArgb(44, 135, 206))))
+            using (Pen outerBorderPen = new Pen(Color.FromArgb((int)(textAnimation.Opacity * 175), Color.White)))
+            using (Pen innerBorderPen = new Pen(Color.FromArgb((int)(textAnimation.Opacity * 175), Color.FromArgb(0, 81, 145))))
+            using (Brush textBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 255), Color.White)))
+            using (Brush textShadowBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 255), Color.Black)))
             {
-                DrawInfoText(g, text, textRectangle, infoFontMedium, padding, backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
+                DrawInfoText(g, textAnimation.Text, textRectangle, infoFontMedium, padding, backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
             }
         }
 

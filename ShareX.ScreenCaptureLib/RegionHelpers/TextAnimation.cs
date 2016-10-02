@@ -26,12 +26,15 @@
 using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
     internal class TextAnimation
     {
         public string Text { get; private set; }
+
+        public Point Position { get; set; }
 
         private double opacity;
 
@@ -50,21 +53,9 @@ namespace ShareX.ScreenCaptureLib
         public TimeSpan Duration { get; private set; }
         public TimeSpan FadeDuration { get; private set; }
 
-        public TimeSpan TotalDuration
-        {
-            get
-            {
-                return Duration + FadeDuration;
-            }
-        }
+        public TimeSpan TotalDuration => Duration + FadeDuration;
 
-        public bool Active
-        {
-            get
-            {
-                return timer.IsRunning && timer.Elapsed <= TotalDuration;
-            }
-        }
+        public bool Active => timer.IsRunning && timer.Elapsed <= TotalDuration;
 
         private Stopwatch timer = new Stopwatch();
 
@@ -81,7 +72,12 @@ namespace ShareX.ScreenCaptureLib
             timer.Restart();
         }
 
-        public void Update()
+        public void Stop()
+        {
+            timer.Stop();
+        }
+
+        public bool Update()
         {
             if (Active)
             {
@@ -91,7 +87,13 @@ namespace ShareX.ScreenCaptureLib
                 {
                     timer.Stop();
                 }
+                else
+                {
+                    return true;
+                }
             }
+
+            return false;
         }
     }
 }
