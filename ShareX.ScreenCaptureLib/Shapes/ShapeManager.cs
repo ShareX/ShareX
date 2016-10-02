@@ -967,6 +967,7 @@ namespace ShareX.ScreenCaptureLib
                 shape.Dispose();
                 Shapes.Remove(shape);
                 DeselectShape(shape);
+                UpdateMenu();
             }
         }
 
