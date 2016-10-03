@@ -56,7 +56,8 @@ namespace ShareX.ScreenCaptureLib
                 Location = new Point(200, 200),
                 ShowInTaskbar = false,
                 StartPosition = FormStartPosition.Manual,
-                Text = "RegionCaptureFormMenu"
+                Text = "RegionCaptureFormMenu",
+                TopMost = true
             };
 
             menuForm.SuspendLayout();
