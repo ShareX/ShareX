@@ -165,6 +165,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\layers.png" />
     <None Include="Resources\eraser.png" />
     <None Include="Resources\ui-radio-button-uncheck.png" />
     <None Include="Resources\layer--pencil.png" />

@@ -40,7 +40,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbUndoObject, tsbDeleteAll;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop;
+        private ToolStripMenuItem tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop, tsmiRegionCapture;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
 
         private void CreateMenu()
@@ -450,6 +450,15 @@ namespace ShareX.ScreenCaptureLib
                 tsddbCapture.Image = Resources.camera;
                 tsMain.Items.Add(tsddbCapture);
 
+                tsmiRegionCapture = new ToolStripMenuItem("Capture regions");
+                tsmiRegionCapture.Image = Resources.layers;
+                tsmiRegionCapture.MouseDown += (sender, e) =>
+                {
+                    form.UpdateRegionPath();
+                    form.Close(RegionResult.Region);
+                };
+                tsddbCapture.DropDownItems.Add(tsmiRegionCapture);
+
                 ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
                 tsmiFullscreenCapture.Image = Resources.layer_fullscreen;
                 tsmiFullscreenCapture.MouseDown += (sender, e) => form.Close(RegionResult.Fullscreen);
@@ -823,6 +832,8 @@ namespace ShareX.ScreenCaptureLib
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
             tsmiHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
+
+            tsmiRegionCapture.Visible = !Config.QuickCrop && ValidRegions.Length > 0;
         }
     }
 }
