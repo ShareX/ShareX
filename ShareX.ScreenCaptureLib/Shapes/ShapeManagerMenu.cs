@@ -593,7 +593,7 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.Show(form);
 
-            Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenBounds0Based();
+            Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenBounds();
 
             if (tsMain.Width < rectActiveScreen.Width)
             {
