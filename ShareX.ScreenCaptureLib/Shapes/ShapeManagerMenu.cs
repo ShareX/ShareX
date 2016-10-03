@@ -833,7 +833,10 @@ namespace ShareX.ScreenCaptureLib
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
             tsmiHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
 
-            tsmiRegionCapture.Visible = !Config.QuickCrop && ValidRegions.Length > 0;
+            if (tsmiRegionCapture != null)
+            {
+                tsmiRegionCapture.Visible = !Config.QuickCrop && ValidRegions.Length > 0;
+            }
         }
     }
 }
