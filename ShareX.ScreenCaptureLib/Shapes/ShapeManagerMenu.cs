@@ -445,25 +445,25 @@ namespace ShareX.ScreenCaptureLib
             {
                 tsMain.Items.Add(new ToolStripSeparator());
 
-                ToolStripButton tsbFullscreenCapture = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
-                tsbFullscreenCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                tsbFullscreenCapture.Image = Resources.layer_fullscreen;
-                tsbFullscreenCapture.MouseDown += (sender, e) => form.Close(RegionResult.Fullscreen);
-                tsMain.Items.Add(tsbFullscreenCapture);
+                ToolStripDropDownButton tsddbCapture = new ToolStripDropDownButton("Capture");
+                tsddbCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsddbCapture.Image = Resources.camera;
+                tsMain.Items.Add(tsddbCapture);
 
-                ToolStripButton tsbActiveMonitorCapture = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Capture_active_monitor);
-                tsbActiveMonitorCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                tsbActiveMonitorCapture.Image = Resources.monitor;
-                tsbActiveMonitorCapture.MouseDown += (sender, e) => form.Close(RegionResult.ActiveMonitor);
-                tsMain.Items.Add(tsbActiveMonitorCapture);
+                ToolStripMenuItem tsmiFullscreenCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_fullscreen);
+                tsmiFullscreenCapture.Image = Resources.layer_fullscreen;
+                tsmiFullscreenCapture.MouseDown += (sender, e) => form.Close(RegionResult.Fullscreen);
+                tsddbCapture.DropDownItems.Add(tsmiFullscreenCapture);
 
-                ToolStripDropDownButton tsddbMonitorCapture = new ToolStripDropDownButton(Resources.ShapeManager_CreateContextMenu_Capture_monitor);
-                tsddbMonitorCapture.HideImageMargin();
-                tsddbMonitorCapture.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                tsddbMonitorCapture.Image = Resources.monitor_window;
-                tsMain.Items.Add(tsddbMonitorCapture);
+                ToolStripMenuItem tsmiActiveMonitorCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_active_monitor);
+                tsmiActiveMonitorCapture.Image = Resources.monitor;
+                tsmiActiveMonitorCapture.MouseDown += (sender, e) => form.Close(RegionResult.ActiveMonitor);
+                tsddbCapture.DropDownItems.Add(tsmiActiveMonitorCapture);
 
-                tsddbMonitorCapture.DropDownItems.Clear();
+                ToolStripMenuItem tsmiMonitorCapture = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Capture_monitor);
+                tsmiMonitorCapture.HideImageMargin();
+                tsmiMonitorCapture.Image = Resources.monitor_window;
+                tsddbCapture.DropDownItems.Add(tsmiMonitorCapture);
 
                 Screen[] screens = Screen.AllScreens;
 
@@ -477,7 +477,7 @@ namespace ShareX.ScreenCaptureLib
                         form.MonitorIndex = index;
                         form.Close(RegionResult.Monitor);
                     };
-                    tsddbMonitorCapture.DropDownItems.Add(tsmi);
+                    tsmiMonitorCapture.DropDownItems.Add(tsmi);
                 }
             }
 

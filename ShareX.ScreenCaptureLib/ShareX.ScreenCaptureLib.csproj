@@ -206,6 +206,7 @@
     <None Include="Resources\balloon-box-left.png" />
     <None Include="Resources\clipboard.png" />
     <None Include="Resources\arrow-circle-225-left.png" />
+    <None Include="Resources\camera.png" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
