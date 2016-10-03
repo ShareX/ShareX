@@ -538,9 +538,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 switch (e.KeyData)
                 {
-                    case Keys.Apps:
-                        OpenOptionsMenu();
-                        break;
                     case Keys.Q:
                         Config.QuickCrop = !Config.QuickCrop;
                         tsmiQuickCrop.Checked = !Config.QuickCrop;
@@ -557,6 +554,7 @@ namespace ShareX.ScreenCaptureLib
                     form.Close();
                     break;
                 case RegionCaptureAction.RemoveShapeCancelCapture:
+                case RegionCaptureAction.OpenOptionsMenu:
                     if (IsShapeIntersect())
                     {
                         DeleteIntersectShape();
@@ -568,9 +566,6 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case RegionCaptureAction.RemoveShape:
                     DeleteIntersectShape();
-                    break;
-                case RegionCaptureAction.OpenOptionsMenu:
-                    OpenOptionsMenu();
                     break;
                 case RegionCaptureAction.SwapToolType:
                     SwapShapeType();
@@ -780,12 +775,6 @@ namespace ShareX.ScreenCaptureLib
                     CurrentShapeType = Config.LastRegionTool;
                 }
             }
-        }
-
-        private void OpenOptionsMenu()
-        {
-            // TODO
-            SelectIntersectShape();
         }
 
         public Point SnapPosition(Point posOnClick, Point posCurrent)
