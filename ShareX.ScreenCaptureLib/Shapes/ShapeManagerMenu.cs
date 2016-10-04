@@ -296,7 +296,6 @@ namespace ShareX.ScreenCaptureLib
 
                         UpdateMenu();
                         UpdateCurrentShape();
-                        UpdateCursor();
                     }
                 }
 
@@ -327,7 +326,6 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 UpdateCurrentShape();
-                UpdateCursor();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudBorderSize);
 
