@@ -435,6 +435,9 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudPixelateSize);
 
+            // In dropdown menu if only last item is visible then menu opens at 0, 0 position on first open, so need to add dummy item to solve this weird bug...
+            tsddbShapeOptions.DropDownItems.Add(new ToolStripSeparator() { Visible = false });
+
             tsbUndoObject = new ToolStripButton("Undo object");
             tsbUndoObject.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbUndoObject.Image = Resources.arrow_circle_225_left;
