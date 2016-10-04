@@ -38,9 +38,9 @@ namespace ShareX.ScreenCaptureLib
 
         private Form menuForm;
         private ToolStripEx tsMain;
-        private ToolStripButton tsbUndoObject, tsbDeleteAll;
+        private ToolStripButton tsbBorderColor, tsbFillColor, tsbUndoObject, tsbDeleteAll;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiBorderColor, tsmiFillColor, tsmiHighlightColor, tsmiQuickCrop, tsmiRegionCapture;
+        private ToolStripMenuItem tsmiHighlightColor, tsmiQuickCrop, tsmiRegionCapture;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
 
         private void CreateMenu()
@@ -244,13 +244,9 @@ namespace ShareX.ScreenCaptureLib
 
             tsMain.Items.Add(new ToolStripSeparator());
 
-            tsddbShapeOptions = new ToolStripDropDownButton("Shape options");
-            tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsddbShapeOptions.Image = Resources.layer__pencil;
-            tsMain.Items.Add(tsddbShapeOptions);
-
-            tsmiBorderColor = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Border_color___);
-            tsmiBorderColor.Click += (sender, e) =>
+            tsbBorderColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Border_color___);
+            tsbBorderColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbBorderColor.Click += (sender, e) =>
             {
                 PauseForm();
 
@@ -295,36 +291,11 @@ namespace ShareX.ScreenCaptureLib
 
                 ResumeForm();
             };
-            tsddbShapeOptions.DropDownItems.Add(tsmiBorderColor);
+            tsMain.Items.Add(tsbBorderColor);
 
-            tslnudBorderSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Border_size_);
-            tslnudBorderSize.Content.Minimum = 0;
-            tslnudBorderSize.Content.Maximum = 20;
-            tslnudBorderSize.Content.ValueChanged = (sender, e) =>
-            {
-                ShapeType shapeType = CurrentShapeType;
-
-                int borderSize = (int)tslnudBorderSize.Content.Value;
-
-                if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
-                {
-                    AnnotationOptions.TextBorderSize = borderSize;
-                }
-                else if (shapeType == ShapeType.DrawingStep)
-                {
-                    AnnotationOptions.StepBorderSize = borderSize;
-                }
-                else
-                {
-                    AnnotationOptions.BorderSize = borderSize;
-                }
-
-                UpdateCurrentShape();
-            };
-            tsddbShapeOptions.DropDownItems.Add(tslnudBorderSize);
-
-            tsmiFillColor = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Fill_color___);
-            tsmiFillColor.Click += (sender, e) =>
+            tsbFillColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Fill_color___);
+            tsbFillColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbFillColor.Click += (sender, e) =>
             {
                 PauseForm();
 
@@ -369,7 +340,39 @@ namespace ShareX.ScreenCaptureLib
 
                 ResumeForm();
             };
-            tsddbShapeOptions.DropDownItems.Add(tsmiFillColor);
+            tsMain.Items.Add(tsbFillColor);
+
+            tsddbShapeOptions = new ToolStripDropDownButton("Shape options");
+            tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsddbShapeOptions.HideImageMargin();
+            tsddbShapeOptions.Image = Resources.layer__pencil;
+            tsMain.Items.Add(tsddbShapeOptions);
+
+            tslnudBorderSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Border_size_);
+            tslnudBorderSize.Content.Minimum = 0;
+            tslnudBorderSize.Content.Maximum = 20;
+            tslnudBorderSize.Content.ValueChanged = (sender, e) =>
+            {
+                ShapeType shapeType = CurrentShapeType;
+
+                int borderSize = (int)tslnudBorderSize.Content.Value;
+
+                if (shapeType == ShapeType.DrawingText || shapeType == ShapeType.DrawingSpeechBalloon)
+                {
+                    AnnotationOptions.TextBorderSize = borderSize;
+                }
+                else if (shapeType == ShapeType.DrawingStep)
+                {
+                    AnnotationOptions.StepBorderSize = borderSize;
+                }
+                else
+                {
+                    AnnotationOptions.BorderSize = borderSize;
+                }
+
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tslnudBorderSize);
 
             tslnudCornerRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Corner_radius_);
             tslnudCornerRadius.Content.Minimum = 0;
@@ -723,8 +726,8 @@ namespace ShareX.ScreenCaptureLib
                 borderColor = AnnotationOptions.BorderColor;
             }
 
-            if (tsmiBorderColor.Image != null) tsmiBorderColor.Image.Dispose();
-            tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(borderColor, new Rectangle(0, 0, 16, 16));
+            if (tsbBorderColor.Image != null) tsbBorderColor.Image.Dispose();
+            tsbBorderColor.Image = ImageHelpers.CreateColorPickerIcon(borderColor, new Rectangle(0, 0, 16, 16));
 
             int borderSize;
 
@@ -758,8 +761,8 @@ namespace ShareX.ScreenCaptureLib
                 fillColor = AnnotationOptions.FillColor;
             }
 
-            if (tsmiFillColor.Image != null) tsmiFillColor.Image.Dispose();
-            tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(fillColor, new Rectangle(0, 0, 16, 16));
+            if (tsbFillColor.Image != null) tsbFillColor.Image.Dispose();
+            tsbFillColor.Image = ImageHelpers.CreateColorPickerIcon(fillColor, new Rectangle(0, 0, 16, 16));
 
             int cornerRadius = 0;
 
@@ -784,7 +787,7 @@ namespace ShareX.ScreenCaptureLib
             switch (shapeType)
             {
                 default:
-                    tsddbShapeOptions.Enabled = false;
+                    tsddbShapeOptions.Visible = false;
                     break;
                 case ShapeType.RegionRoundedRectangle:
                 case ShapeType.DrawingRectangle:
@@ -799,7 +802,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.EffectBlur:
                 case ShapeType.EffectPixelate:
                 case ShapeType.EffectHighlight:
-                    tsddbShapeOptions.Enabled = true;
+                    tsddbShapeOptions.Visible = true;
                     break;
             }
 
@@ -808,7 +811,7 @@ namespace ShareX.ScreenCaptureLib
             switch (shapeType)
             {
                 default:
-                    tsmiBorderColor.Visible = false;
+                    tsbBorderColor.Visible = false;
                     tslnudBorderSize.Visible = false;
                     break;
                 case ShapeType.DrawingRectangle:
@@ -820,7 +823,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingText:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
-                    tsmiBorderColor.Visible = true;
+                    tsbBorderColor.Visible = true;
                     tslnudBorderSize.Visible = true;
                     break;
             }
@@ -828,7 +831,7 @@ namespace ShareX.ScreenCaptureLib
             switch (shapeType)
             {
                 default:
-                    tsmiFillColor.Visible = false;
+                    tsbFillColor.Visible = false;
                     break;
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingRoundedRectangle:
@@ -836,7 +839,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingText:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
-                    tsmiFillColor.Visible = true;
+                    tsbFillColor.Visible = true;
                     break;
             }
 
