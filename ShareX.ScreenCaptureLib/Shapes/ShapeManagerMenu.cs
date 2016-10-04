@@ -38,9 +38,9 @@ namespace ShareX.ScreenCaptureLib
 
         private Form menuForm;
         private ToolStripEx tsMain;
-        private ToolStripButton tsbBorderColor, tsbFillColor, tsbUndoObject, tsbDeleteAll;
+        private ToolStripButton tsbBorderColor, tsbFillColor, tsbHighlightColor, tsbUndoObject, tsbDeleteAll;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiHighlightColor, tsmiQuickCrop, tsmiRegionCapture;
+        private ToolStripMenuItem tsmiQuickCrop, tsmiRegionCapture;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
 
         private void CreateMenu()
@@ -342,6 +342,26 @@ namespace ShareX.ScreenCaptureLib
             };
             tsMain.Items.Add(tsbFillColor);
 
+            tsbHighlightColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Highlight_color___);
+            tsbHighlightColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbHighlightColor.Click += (sender, e) =>
+            {
+                PauseForm();
+
+                using (ColorPickerForm dialogColor = new ColorPickerForm(AnnotationOptions.HighlightColor))
+                {
+                    if (dialogColor.ShowDialog() == DialogResult.OK)
+                    {
+                        AnnotationOptions.HighlightColor = dialogColor.NewColor;
+                        UpdateMenu();
+                        UpdateCurrentShape();
+                    }
+                }
+
+                ResumeForm();
+            };
+            tsMain.Items.Add(tsbHighlightColor);
+
             tsddbShapeOptions = new ToolStripDropDownButton("Shape options");
             tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsddbShapeOptions.HideImageMargin();
@@ -414,25 +434,6 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudPixelateSize);
-
-            tsmiHighlightColor = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Highlight_color___);
-            tsmiHighlightColor.Click += (sender, e) =>
-            {
-                PauseForm();
-
-                using (ColorPickerForm dialogColor = new ColorPickerForm(AnnotationOptions.HighlightColor))
-                {
-                    if (dialogColor.ShowDialog() == DialogResult.OK)
-                    {
-                        AnnotationOptions.HighlightColor = dialogColor.NewColor;
-                        UpdateMenu();
-                        UpdateCurrentShape();
-                    }
-                }
-
-                ResumeForm();
-            };
-            tsddbShapeOptions.DropDownItems.Add(tsmiHighlightColor);
 
             tsbUndoObject = new ToolStripButton("Undo object");
             tsbUndoObject.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -781,8 +782,8 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudPixelateSize.Content.Value = AnnotationOptions.PixelateSize;
 
-            if (tsmiHighlightColor.Image != null) tsmiHighlightColor.Image.Dispose();
-            tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
+            if (tsbHighlightColor.Image != null) tsbHighlightColor.Image.Dispose();
+            tsbHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
 
             switch (shapeType)
             {
@@ -801,7 +802,6 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingStep:
                 case ShapeType.EffectBlur:
                 case ShapeType.EffectPixelate:
-                case ShapeType.EffectHighlight:
                     tsddbShapeOptions.Visible = true;
                     break;
             }
@@ -857,7 +857,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
-            tsmiHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
+            tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
 
             if (tsmiRegionCapture != null)
             {
