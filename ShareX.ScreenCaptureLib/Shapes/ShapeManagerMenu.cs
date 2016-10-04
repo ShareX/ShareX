@@ -101,12 +101,6 @@ namespace ShareX.ScreenCaptureLib
                 Padding = new Padding(2)
             };
 
-            tslDragLeft.MouseDown += (sender, e) =>
-            {
-                NativeMethods.ReleaseCapture();
-                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
-            };
-
             tsMain.Items.Add(tslDragLeft);
 
             #region Editor mode
@@ -600,13 +594,14 @@ namespace ShareX.ScreenCaptureLib
                 Padding = new Padding(2)
             };
 
-            tslDragRight.MouseDown += (sender, e) =>
-            {
-                NativeMethods.ReleaseCapture();
-                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
-            };
-
             tsMain.Items.Add(tslDragRight);
+
+            tslDragLeft.MouseDown += TslDrag_MouseDown;
+            tslDragRight.MouseDown += TslDrag_MouseDown;
+            tslDragLeft.MouseEnter += TslDrag_MouseEnter;
+            tslDragRight.MouseEnter += TslDrag_MouseEnter;
+            tslDragLeft.MouseLeave += TslDrag_MouseLeave;
+            tslDragRight.MouseLeave += TslDrag_MouseLeave;
 
             tsMain.ResumeLayout(false);
             tsMain.PerformLayout();
@@ -680,6 +675,22 @@ namespace ShareX.ScreenCaptureLib
             CurrentShapeTypeChanged += shapeType => UpdateMenu();
 
             CurrentShapeChanged += shape => UpdateMenu();
+        }
+
+        private void TslDrag_MouseEnter(object sender, EventArgs e)
+        {
+            menuForm.Cursor = Cursors.SizeAll;
+        }
+
+        private void TslDrag_MouseLeave(object sender, EventArgs e)
+        {
+            menuForm.Cursor = Cursors.Default;
+        }
+
+        private void TslDrag_MouseDown(object sender, MouseEventArgs e)
+        {
+            NativeMethods.ReleaseCapture();
+            NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
         }
 
         private void UpdateMenu()
