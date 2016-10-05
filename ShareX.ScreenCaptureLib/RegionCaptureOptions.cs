@@ -66,6 +66,8 @@ namespace ShareX.ScreenCaptureLib
         public bool IsFixedSize = false;
         public Size FixedSize = new Size(250, 250);
         public bool ShowFPS = false;
+        public bool RememberMenuPosition = false;
+        public Point MenuPosition = Point.Empty;
 
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
         public ShapeType LastRegionTool = ShapeType.RegionRectangle;
