@@ -34,6 +34,8 @@ namespace ShareX.ScreenCaptureLib
 {
     internal partial class ShapeManager
     {
+        public bool IsMenuCollapsed { get; private set; }
+
         internal TextAnimation MenuTextAnimation = new TextAnimation(TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(0.5));
 
         private Form menuForm;
@@ -42,6 +44,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiQuickCrop, tsmiRegionCapture;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
+        private ToolStripLabel tslDragLeft;
 
         private void CreateMenu()
         {
@@ -70,7 +73,7 @@ namespace ShareX.ScreenCaptureLib
                 Dock = DockStyle.None,
                 GripStyle = ToolStripGripStyle.Hidden,
                 Location = new Point(0, 0),
-                MinimumSize = new Size(300, 30),
+                MinimumSize = new Size(10, 30),
                 Padding = new Padding(0, 0, 0, 0),
                 Renderer = new CustomToolStripProfessionalRenderer(),
                 TabIndex = 0
@@ -93,7 +96,7 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.Controls.Add(tsMain);
 
-            ToolStripLabel tslDragLeft = new ToolStripLabel()
+            tslDragLeft = new ToolStripLabel()
             {
                 DisplayStyle = ToolStripItemDisplayStyle.Image,
                 Image = Resources.ui_radio_button_uncheck,
@@ -696,8 +699,44 @@ namespace ShareX.ScreenCaptureLib
 
         private void TslDrag_MouseDown(object sender, MouseEventArgs e)
         {
-            NativeMethods.ReleaseCapture();
-            NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
+            if (e.Button == MouseButtons.Left)
+            {
+                NativeMethods.ReleaseCapture();
+                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                SwapMenuState();
+            }
+        }
+
+        private void SwapMenuState()
+        {
+            if (IsMenuCollapsed)
+            {
+                foreach (ToolStripItem tsi in tsMain.Items.OfType<ToolStripItem>())
+                {
+                    tsi.Visible = true;
+                }
+
+                UpdateMenu();
+
+                IsMenuCollapsed = false;
+            }
+            else
+            {
+                foreach (ToolStripItem tsi in tsMain.Items.OfType<ToolStripItem>())
+                {
+                    if (tsi == tslDragLeft)
+                    {
+                        continue;
+                    }
+
+                    tsi.Visible = false;
+                }
+
+                IsMenuCollapsed = true;
+            }
         }
 
         private void UpdateMenu()
