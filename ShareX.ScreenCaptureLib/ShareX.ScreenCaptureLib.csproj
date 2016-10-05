@@ -165,6 +165,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\test_32.png" />
     <None Include="Resources\layers.png" />
     <None Include="Resources\eraser.png" />
     <None Include="Resources\ui-radio-button-uncheck.png" />
@@ -202,7 +203,6 @@
     <None Include="Resources\layer-shape-ellipse.png" />
     <None Include="Resources\layer-shape-round.png" />
     <None Include="Resources\layer-shape.png" />
-    <None Include="Resources\minus.png" />
     <None Include="Resources\counter-reset.png" />
     <None Include="Resources\balloon-box-left.png" />
     <None Include="Resources\clipboard.png" />

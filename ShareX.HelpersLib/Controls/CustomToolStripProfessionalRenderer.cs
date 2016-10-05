@@ -23,18 +23,23 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
     public class CustomToolStripProfessionalRenderer : ToolStripProfessionalRenderer
     {
+        public CustomToolStripProfessionalRenderer()
+        {
+            RoundedEdges = false;
+        }
+
         protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         {
+            if (e.ToolStrip.IsDropDown)
+            {
+                base.OnRenderToolStripBorder(e);
+            }
         }
     }
 }
