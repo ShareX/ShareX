@@ -25,6 +25,7 @@
 
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -88,7 +89,7 @@ namespace ShareX.HelpersLib
         {
             StringBuilder sb = new StringBuilder();
             string directoryPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies().Where(x => x.IsDynamic == false))
             {
                 if (assembly.Location.StartsWith(directoryPath, StringComparison.InvariantCultureIgnoreCase))
                 {
