@@ -105,7 +105,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 DisplayStyle = ToolStripItemDisplayStyle.Image,
                 Image = Resources.ui_radio_button_uncheck,
-                Margin = new Padding(0, 0, 2, 0),
+                Margin = new Padding(2, 0, 2, 0),
                 Padding = new Padding(2)
             };
 
@@ -611,7 +611,7 @@ namespace ShareX.ScreenCaptureLib
                 Alignment = ToolStripItemAlignment.Right,
                 DisplayStyle = ToolStripItemDisplayStyle.Image,
                 Image = Resources.ui_radio_button_uncheck,
-                Margin = new Padding(0),
+                Margin = new Padding(0, 0, 2, 0),
                 Padding = new Padding(2)
             };
 
