@@ -144,7 +144,7 @@ namespace ShareX.Setup
 
         private static void InstallInnoSetup()
         {
-            string innoSetupFilename = Helpers.DownloadFile("http://files.jrsoftware.org/is/5/innosetup-5.5.9-unicode.exe");
+            string innoSetupFilename = Helpers.DownloadFile("http://files.jrsoftware.org/is/5/innosetup-5.5.9.exe");
 
             Console.WriteLine("Installing InnoSetup.");
 
