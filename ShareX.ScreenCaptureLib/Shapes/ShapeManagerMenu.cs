@@ -63,6 +63,7 @@ namespace ShareX.ScreenCaptureLib
                 TopMost = true
             };
 
+            menuForm.KeyUp += MenuForm_KeyUp;
             menuForm.LocationChanged += MenuForm_LocationChanged;
 
             menuForm.SuspendLayout();
@@ -654,6 +655,14 @@ namespace ShareX.ScreenCaptureLib
             ConfigureMenuPosition();
 
             form.Activate();
+        }
+
+        private void MenuForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+            {
+                form.Close();
+            }
         }
 
         private void MenuForm_LocationChanged(object sender, EventArgs e)

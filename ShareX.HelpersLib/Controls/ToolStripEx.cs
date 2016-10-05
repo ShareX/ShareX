@@ -24,15 +24,13 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
+    // https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/
     public class ToolStripEx : ToolStrip
     {
-        public event MouseEventHandler GripMouseDown;
-
         private bool clickThrough = false;
 
         public bool ClickThrough
@@ -54,26 +52,6 @@ namespace ShareX.HelpersLib
             if (clickThrough && m.Msg == (int)WindowsMessages.MOUSEACTIVATE && m.Result == (IntPtr)NativeConstants.MA_ACTIVATEANDEAT)
             {
                 m.Result = (IntPtr)NativeConstants.MA_ACTIVATE;
-            }
-        }
-
-        protected override void OnMouseDown(MouseEventArgs mea)
-        {
-            if (GripRectangle.Offset(2).Contains(mea.Location))
-            {
-                OnGripMouseDown(mea);
-            }
-            else
-            {
-                base.OnMouseDown(mea);
-            }
-        }
-
-        protected virtual void OnGripMouseDown(MouseEventArgs mea)
-        {
-            if (GripMouseDown != null)
-            {
-                GripMouseDown(this, mea);
             }
         }
     }
