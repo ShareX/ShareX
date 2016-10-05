@@ -33,13 +33,5 @@ namespace ShareX.HelpersLib
         {
             RoundedEdges = false;
         }
-
-        protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
-        {
-            if (e.ToolStrip.IsDropDown)
-            {
-                base.OnRenderToolStripBorder(e);
-            }
-        }
     }
 }
