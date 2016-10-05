@@ -30,6 +30,11 @@ namespace ShareX.HelpersLib
 {
     public class ToolStripCheckedBoldRenderer : ToolStripProfessionalRenderer
     {
+        public ToolStripCheckedBoldRenderer()
+        {
+            RoundedEdges = false;
+        }
+
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
             if (e.Item is ToolStripMenuItem && ((ToolStripMenuItem)e.Item).Checked)
