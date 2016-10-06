@@ -51,24 +51,34 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public TimeSpan Duration { get; private set; }
-        public TimeSpan FadeDuration { get; private set; }
+        public TimeSpan FadeInDuration { get; private set; }
+        public TimeSpan FadeOutDuration { get; private set; }
 
-        public TimeSpan TotalDuration => Duration + FadeDuration;
+        public TimeSpan TotalDuration => FadeInDuration + Duration + FadeOutDuration;
 
         public bool Active => timer.IsRunning && timer.Elapsed <= TotalDuration;
 
         private Stopwatch timer = new Stopwatch();
 
-        public TextAnimation(TimeSpan duration, TimeSpan fadeDuration)
+        public TextAnimation()
+        {
+        }
+
+        public TextAnimation(TimeSpan duration)
         {
             Duration = duration;
-            FadeDuration = fadeDuration;
+        }
+
+        public TextAnimation(TimeSpan duration, TimeSpan fadeInDuration, TimeSpan fadeOutDuration)
+        {
+            Duration = duration;
+            FadeInDuration = fadeInDuration;
+            FadeOutDuration = fadeOutDuration;
         }
 
         public void Start(string text)
         {
             Text = text;
-            Opacity = 1;
             timer.Restart();
         }
 
@@ -81,7 +91,14 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Active)
             {
-                Opacity = 1 - (timer.Elapsed - Duration).TotalMilliseconds / FadeDuration.TotalMilliseconds;
+                if (timer.Elapsed < FadeInDuration)
+                {
+                    Opacity = timer.Elapsed.TotalMilliseconds / FadeInDuration.TotalMilliseconds;
+                }
+                else
+                {
+                    Opacity = 1 - (timer.Elapsed - (FadeInDuration + Duration)).TotalMilliseconds / FadeOutDuration.TotalMilliseconds;
+                }
 
                 if (Opacity == 0)
                 {

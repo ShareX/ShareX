@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public bool IsMenuCollapsed { get; private set; }
 
-        internal TextAnimation MenuTextAnimation = new TextAnimation(TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(0.5));
+        internal TextAnimation MenuTextAnimation = new TextAnimation(TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(0.5), TimeSpan.FromSeconds(0.5));
 
         private Form menuForm;
         private ToolStripEx tsMain;
