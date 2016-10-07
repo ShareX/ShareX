@@ -20,7 +20,7 @@ ShareX incorporates the following methods to allow screen capture.
 * Active monitor
 * Window menu
 * Monitor menu
-* Region
+* [Region](#region-capture-tools)
 * Region (Light)
 * Region (Transparent)
 * Last region
