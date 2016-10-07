@@ -237,7 +237,7 @@ ShareX supports the following destinations.
 
 ## Tools
 
-Additional tools to make certain tasks more efficient.
+Productivity tools to make certain tasks more efficient.
 
 * Color picker
 * Screen color picker
