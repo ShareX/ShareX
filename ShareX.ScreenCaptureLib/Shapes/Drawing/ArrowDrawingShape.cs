@@ -38,7 +38,14 @@ namespace ShareX.ScreenCaptureLib
             {
                 pen.CustomEndCap = arrowCap;
 
-                g.DrawLine(pen, StartPosition, EndPosition);
+                if (MiddlePosition.IsEmpty)
+                {
+                    g.DrawLine(pen, StartPosition, EndPosition);
+                }
+                else
+                {
+                    g.DrawCurve(pen, new Point[] { StartPosition, MiddlePosition, EndPosition });
+                }
             }
         }
     }
