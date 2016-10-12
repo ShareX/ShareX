@@ -50,19 +50,15 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public TimeSpan Duration { get; private set; }
-        public TimeSpan FadeInDuration { get; private set; }
-        public TimeSpan FadeOutDuration { get; private set; }
+        public TimeSpan Duration { get; private set; } = TimeSpan.Zero;
+        public TimeSpan FadeInDuration { get; private set; } = TimeSpan.Zero;
+        public TimeSpan FadeOutDuration { get; private set; } = TimeSpan.Zero;
 
         public TimeSpan TotalDuration => FadeInDuration + Duration + FadeOutDuration;
 
         public bool Active => timer.IsRunning && timer.Elapsed <= TotalDuration;
 
         private Stopwatch timer = new Stopwatch();
-
-        public TextAnimation()
-        {
-        }
 
         public TextAnimation(TimeSpan duration)
         {
