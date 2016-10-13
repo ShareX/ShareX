@@ -115,15 +115,9 @@
             // 
             // nudRepeatTime
             // 
-            this.nudRepeatTime.DecimalPlaces = 1;
-            this.nudRepeatTime.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
             resources.ApplyResources(this.nudRepeatTime, "nudRepeatTime");
             this.nudRepeatTime.Maximum = new decimal(new int[] {
-            3600,
+            86400,
             0,
             0,
             0});
