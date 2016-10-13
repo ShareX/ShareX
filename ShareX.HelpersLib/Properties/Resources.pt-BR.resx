@@ -862,4 +862,109 @@ Gostaria de baixá-la?</value>
   <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
     <value>Capturar tela</value>
   </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Abortar captura de tela</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>Efeito: Pixelizar</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>Desenho: Retângulo</value>
+  </data>
+  <data name="ShapeType_DrawingRoundedRectangle" xml:space="preserve">
+    <value>Desenho: Retângulo arredondado</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>Desenho: Passo</value>
+  </data>
+  <data name="ShapeType_DrawingText" xml:space="preserve">
+    <value>Desenho: Texto</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>Região: Elipse</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>Região: Retângulo</value>
+  </data>
+  <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
+    <value>Região: Retângulo arredondado</value>
+  </data>
+  <data name="RegionCaptureAction_OpenOptionsMenu" xml:space="preserve">
+    <value>Abrir menu de opções</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>Remover forma</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>Remover forma ou cancelar captura</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>Trocar tipo de ferramenta</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>Desenho: Seta</value>
+  </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>Efeito: Embaçado</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>Desenho: Elipse</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>Efeito: Realçar</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>Desenho: Linha</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
+    <value>Primeiro simular apertando "Home" depois mandar mensagem de rolar para o topo</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>Simular apertando "Home"</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
+    <value>Desabilitar rolagem ao topo</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
+    <value>Enviar mensagem de rolagem ao topo</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>Gravação de tela</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>Região: Mão livre</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>Desenho: Mão livre</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>Desenho: Imagem</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>Desenho: Balão de fala</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Simular rolagem com scroll do mouse</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
+    <value>Enviar mensagem de rolagem à janela ou ao controle</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
+    <value>Tentar todos os métodos até que um funcione</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>Simular pressionando "Page Down"</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>Fazer nada</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>Capturar tela cheia</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Capturar monitor ativo</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>Cancelar captura</value>
+  </data>
 </root>

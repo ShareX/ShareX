@@ -243,4 +243,106 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>Parar</value>
   </data>
+  <data name="RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size" xml:space="preserve">
+    <value>[Ctrl + Scroll] Alterar ferramenta</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
+    <value>[Segurar Ctrl + Setas] Mover região</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection" xml:space="preserve">
+    <value>[Segurar Ctrl] Mover seleção</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>Raio das quinas:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>Mostrar FPS</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>Altura:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>Largura:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>Modo de região de tamanho fixo</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>Mostrar </value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>Tamanho da lupa:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>Quantidade de pixels da lupa:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>Lupa quadrada</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>Mostrar lupa</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>Mostrar tamanho e posição</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>Modo multirregião</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
+    <value>Mostrar dicas</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster" xml:space="preserve">
+    <value>[Segurar Shift + Setas] Redimensionar ou mover regiões mais rápido</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>Opções</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>Capturar monitor</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>Capturar monitor ativo</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>Capturar janela cheia</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>Cor de realce...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Tamanho do pixel:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>Tamanho do embaçado:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>Cor de preenchimento...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>Tamanho da borda:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>Cor da borda...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
+    <value>Deletar todos os objetos</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
+    <value>Fechar menu</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
+    <value>[Scroll] Alterar tamanho da lupa</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool" xml:space="preserve">
+    <value>[Tab] [Mouse 4] Selecionar ferramenta da última região</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
+    <value>[Tab] [Mouse 4] Selecionar ferramenta da última anotação</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
+    <value>[Segurar Shift + Setas] Mover cursor mais rápido</value>
+  </data>
+  <data name="RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu" xml:space="preserve">
+    <value>[Botão Direito] [Menu] Abrir opções</value>
+  </data>
 </root>

@@ -461,4 +461,54 @@ Pressione "Não" para cancelar e desabilitar o upload automático.</value>
     <value>Você está tentando enviar um arquivo grande.
 Tem certeza de que quer continuar?</value>
   </data>
+  <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
+    <value>Redefinir todos os atalhos?</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
+    <value>Mostrar colunas</value>
+  </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>Redefinir todas tarefas rápidas?</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
+    <value>Editar este menu...</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
+    <value>Esconder colunas</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
+    <value>Histórico</value>
+  </data>
+  <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
+    <value>Configuração de {0} está inválida ou faltando. Por favor reconfigure o destino novamente.</value>
+  </data>
+  <data name="MainForm_UpdateMainFormTip_Tips" xml:space="preserve">
+    <value>Dicas da janela principal:
+- Arraste arquivos, imagens ou texto à janela principal para enviá-los.
+- Arraste itens da lista de tarefas para copiar arquivos para qualquer lugar. Segure "Control" enquanto arrasta para copiar a URL ou o caminho do arquivo.
+
+Atalhos da lista de tarefas da janela principal:
+[Enter] Abrir URL ou arquivo
+[Ctrl + Enter] Abrir arquivo
+[Ctrl + C] Copiar URL ou caminho do arquivo
+[Shift + C] Copiar arquivo
+[Ctrl + Shift + C] Copiar caminho do arquivo
+[Ctrl + X] Copiar URL ou caminho do arquivo e depois remover os itens selecionados da lista
+[Ctrl + V] Abrir visualizador da área de transferência para enviar seu conteúdo
+[Delete] Remover itens selecionados da lista
+[Shift + Delete] Deletar arquivos localmente e removê-los da lista
+[Esc] Fechar janela principal
+
+Tarefas da bandeja:
+[Clique esquerdo] {0}
+[Clique duplo esquerdo] {1}
+[Clique do scroll] {2}
+- Você pode alterar estas tarefas na janela de "Config. do programa"</value>
+  </data>
 </root>

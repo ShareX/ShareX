@@ -339,4 +339,7 @@
   <data name="tpHistory.Text" xml:space="preserve">
     <value>Histórico</value>
   </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>Verificar por atualizações de teste</value>
+  </data>
 </root>

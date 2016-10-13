@@ -339,7 +339,7 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
     <value>Atualizar</value>
   </data>
   <data name="grpSeafileAccInfo.Text" xml:space="preserve">
-    <value>Informação da conta</value>
+    <value>Informações da conta</value>
   </data>
   <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
     <value>Selecionar biblioteca:</value>
@@ -1144,5 +1144,38 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
   </data>
   <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
     <value>URL direto</value>
+  </data>
+  <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
+    <value>Exemplo: http://example.com/owncloud</value>
+  </data>
+  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
+    <value>Download Instantâneo habilitado</value>
+  </data>
+  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
+    <value>Membro premium</value>
+  </data>
+  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
+    <value>Credenciais</value>
+  </data>
+  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblUpleaUsername.Text" xml:space="preserve">
+    <value>Usuário</value>
+  </data>
+  <data name="lblUpleaPassword.Text" xml:space="preserve">
+    <value>Senha:</value>
+  </data>
+  <data name="lblUpleaApiKey.Text" xml:space="preserve">
+    <value>Chave da API:</value>
+  </data>
+  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
+    <value>Informações do usuário</value>
+  </data>
+  <data name="cbHastebinUseFileExtension.Text" xml:space="preserve">
+    <value>Utilizar extensão do arquivo para destaque de sintaxe (exceto .txt)</value>
+  </data>
+  <data name="btnUpleaLogin.Text" xml:space="preserve">
+    <value>Obter chave da API</value>
   </data>
 </root>
