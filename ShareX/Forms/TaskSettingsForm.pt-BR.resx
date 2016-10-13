@@ -507,4 +507,22 @@
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
+    <value>Ao segurar Alt, as dimensões da região serão proporcionais</value>
+  </data>
+  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
+    <value>Detectar janelas e permitir captura do cursor</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>Formato do seletor de cores da tela:</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>Usar modo multirregião que também permitirá redimensionar e reposicionar regiões</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
+    <value>Escurecer plano de fundo para que a seleção seja diferenciada facilmente (afeta velocidade de inicialização)</value>
+  </data>
+  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
+    <value>Se o tamanho da imagem for maior que o especificado, utilizar JPEG como formato de imagem:</value>
+  </data>
 </root>

@@ -657,4 +657,7 @@
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Captura de texto (OCR)...</value>
   </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>Baixar</value>
+  </data>
 </root>
