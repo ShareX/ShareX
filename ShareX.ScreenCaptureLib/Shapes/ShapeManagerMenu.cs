@@ -79,7 +79,8 @@ namespace ShareX.ScreenCaptureLib
                 MinimumSize = new Size(10, 30),
                 Padding = new Padding(0, 0, 0, 0),
                 Renderer = new CustomToolStripProfessionalRenderer(),
-                TabIndex = 0
+                TabIndex = 0,
+                ShowItemToolTips = false
             };
 
             tsMain.MouseLeave += TsMain_MouseLeave;
