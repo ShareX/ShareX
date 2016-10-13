@@ -81,7 +81,7 @@ namespace ShareX.ScreenCaptureLib
 
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
-        private Pen borderPen, borderDotPen, textBackgroundPenWhite, textBackgroundPenBlack, markerPen;
+        private Pen borderPen, borderDotPen, textOuterBorderPen, textInnerBorderPen, markerPen;
         private Brush nodeBackgroundBrush, textBackgroundBrush;
         private Font infoFont, infoFontMedium, infoFontBig;
         private Stopwatch timerStart, timerFPS;
@@ -112,9 +112,9 @@ namespace ShareX.ScreenCaptureLib
             infoFont = new Font("Verdana", 9);
             infoFontMedium = new Font("Verdana", 12);
             infoFontBig = new Font("Verdana", 16, FontStyle.Bold);
-            textBackgroundBrush = new SolidBrush(Color.FromArgb(75, Color.Black));
-            textBackgroundPenWhite = new Pen(Color.FromArgb(50, Color.White));
-            textBackgroundPenBlack = new Pen(Color.FromArgb(150, Color.Black));
+            textBackgroundBrush = new SolidBrush(Color.FromArgb(175, Color.FromArgb(44, 135, 206)));
+            textOuterBorderPen = new Pen(Color.FromArgb(175, Color.White));
+            textInnerBorderPen = new Pen(Color.FromArgb(175, Color.FromArgb(0, 81, 145)));
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
         }
 
@@ -584,7 +584,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
         {
-            DrawInfoText(g, text, rect, font, padding, textBackgroundBrush, textBackgroundPenWhite, textBackgroundPenBlack, Brushes.White, Brushes.Black);
+            DrawInfoText(g, text, rect, font, padding, textBackgroundBrush, textOuterBorderPen, textInnerBorderPen, Brushes.White, Brushes.Black);
         }
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding,
@@ -599,7 +599,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawAreaText(Graphics g, string text, Rectangle area)
         {
-            int offset = 5;
+            int offset = 6;
             int backgroundPadding = 3;
             Size textSize = g.MeasureString(text, infoFont).ToSize();
             Point textPos;
@@ -1144,8 +1144,8 @@ namespace ShareX.ScreenCaptureLib
             if (infoFontMedium != null) infoFontMedium.Dispose();
             if (infoFontBig != null) infoFontBig.Dispose();
             if (textBackgroundBrush != null) textBackgroundBrush.Dispose();
-            if (textBackgroundPenWhite != null) textBackgroundPenWhite.Dispose();
-            if (textBackgroundPenBlack != null) textBackgroundPenBlack.Dispose();
+            if (textOuterBorderPen != null) textOuterBorderPen.Dispose();
+            if (textInnerBorderPen != null) textInnerBorderPen.Dispose();
             if (markerPen != null) markerPen.Dispose();
 
             if (regionFillPath != null)
