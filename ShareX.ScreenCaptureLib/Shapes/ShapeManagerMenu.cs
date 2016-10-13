@@ -598,11 +598,11 @@ namespace ShareX.ScreenCaptureLib
                 tsmiShowFPS.Click += (sender, e) => Config.ShowFPS = tsmiShowFPS.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiShowFPS);
 
-                ToolStripMenuItem tsmiRememberMenuPosition = new ToolStripMenuItem("Remember menu position");
-                tsmiRememberMenuPosition.Checked = Config.RememberMenuPosition;
-                tsmiRememberMenuPosition.CheckOnClick = true;
-                tsmiRememberMenuPosition.Click += (sender, e) => Config.RememberMenuPosition = tsmiRememberMenuPosition.Checked;
-                tsddbOptions.DropDownItems.Add(tsmiRememberMenuPosition);
+                ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem("Remember menu state");
+                tsmiRememberMenuState.Checked = Config.RememberMenuState;
+                tsmiRememberMenuState.CheckOnClick = true;
+                tsmiRememberMenuState.Click += (sender, e) => Config.RememberMenuState = tsmiRememberMenuState.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiRememberMenuState);
             }
 
             #endregion Options
@@ -653,7 +653,7 @@ namespace ShareX.ScreenCaptureLib
 
             CurrentShapeChanged += shape => UpdateMenu();
 
-            ConfigureMenuPosition();
+            ConfigureMenuState();
 
             form.Activate();
         }
@@ -667,6 +667,68 @@ namespace ShareX.ScreenCaptureLib
         }
 
         private void MenuForm_LocationChanged(object sender, EventArgs e)
+        {
+            CheckMenuPosition();
+        }
+
+        private void TsMain_MouseLeave(object sender, EventArgs e)
+        {
+            MenuTextAnimation.Stop();
+        }
+
+        private void TslDrag_MouseEnter(object sender, EventArgs e)
+        {
+            menuForm.Cursor = Cursors.SizeAll;
+        }
+
+        private void TslDrag_MouseLeave(object sender, EventArgs e)
+        {
+            menuForm.Cursor = Cursors.Default;
+        }
+
+        private void TslDrag_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                NativeMethods.ReleaseCapture();
+                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                SetMenuCollapsed(!IsMenuCollapsed);
+                CheckMenuPosition();
+            }
+        }
+
+        private void ConfigureMenuState()
+        {
+            if (Config.RememberMenuState)
+            {
+                SetMenuCollapsed(Config.MenuCollapsed);
+            }
+
+            Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
+
+            if (Config.RememberMenuState && rectScreen.Contains(Config.MenuPosition))
+            {
+                menuForm.Location = Config.MenuPosition;
+            }
+            else
+            {
+                Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenBounds();
+
+                if (tsMain.Width < rectActiveScreen.Width)
+                {
+                    menuForm.Location = new Point(rectActiveScreen.X + rectActiveScreen.Width / 2 - tsMain.Width / 2, rectActiveScreen.Y + 20);
+                }
+                else
+                {
+                    menuForm.Location = rectActiveScreen.Location;
+                }
+            }
+        }
+
+        private void CheckMenuPosition()
         {
             Rectangle rectMenu = menuForm.Bounds;
             Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
@@ -701,77 +763,22 @@ namespace ShareX.ScreenCaptureLib
                 menuForm.Location = pos;
             }
 
-            if (Config.RememberMenuPosition)
+            if (Config.RememberMenuState)
             {
                 Config.MenuPosition = pos;
             }
         }
 
-        private void TsMain_MouseLeave(object sender, EventArgs e)
+        private void SetMenuCollapsed(bool isCollapsed)
         {
-            MenuTextAnimation.Stop();
-        }
-
-        private void TslDrag_MouseEnter(object sender, EventArgs e)
-        {
-            menuForm.Cursor = Cursors.SizeAll;
-        }
-
-        private void TslDrag_MouseLeave(object sender, EventArgs e)
-        {
-            menuForm.Cursor = Cursors.Default;
-        }
-
-        private void TslDrag_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
+            if (IsMenuCollapsed == isCollapsed)
             {
-                NativeMethods.ReleaseCapture();
-                NativeMethods.DefWindowProc(menuForm.Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
+                return;
             }
-            else if (e.Button == MouseButtons.Right)
-            {
-                SwapMenuState();
-            }
-        }
 
-        private void ConfigureMenuPosition()
-        {
-            Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
+            IsMenuCollapsed = isCollapsed;
 
-            if (Config.RememberMenuPosition && rectScreen.Contains(Config.MenuPosition))
-            {
-                menuForm.Location = Config.MenuPosition;
-            }
-            else
-            {
-                Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenBounds();
-
-                if (tsMain.Width < rectActiveScreen.Width)
-                {
-                    menuForm.Location = new Point(rectActiveScreen.X + rectActiveScreen.Width / 2 - tsMain.Width / 2, rectActiveScreen.Y + 20);
-                }
-                else
-                {
-                    menuForm.Location = rectActiveScreen.Location;
-                }
-            }
-        }
-
-        private void SwapMenuState()
-        {
             if (IsMenuCollapsed)
-            {
-                foreach (ToolStripItem tsi in tsMain.Items.OfType<ToolStripItem>())
-                {
-                    tsi.Visible = true;
-                }
-
-                UpdateMenu();
-
-                IsMenuCollapsed = false;
-            }
-            else
             {
                 foreach (ToolStripItem tsi in tsMain.Items.OfType<ToolStripItem>())
                 {
@@ -782,8 +789,20 @@ namespace ShareX.ScreenCaptureLib
 
                     tsi.Visible = false;
                 }
+            }
+            else
+            {
+                foreach (ToolStripItem tsi in tsMain.Items.OfType<ToolStripItem>())
+                {
+                    tsi.Visible = true;
+                }
 
-                IsMenuCollapsed = true;
+                UpdateMenu();
+            }
+
+            if (Config.RememberMenuState)
+            {
+                Config.MenuCollapsed = IsMenuCollapsed;
             }
         }
 
@@ -818,7 +837,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             if (tsbBorderColor.Image != null) tsbBorderColor.Image.Dispose();
-            tsbBorderColor.Image = ImageHelpers.CreateColorPickerIcon(borderColor, new Rectangle(0, 0, 16, 16));
+            tsbBorderColor.Image = ImageHelpers.CreateColorPickerIcon(borderColor, new Rectangle(0, 0, 16, 16), 8);
 
             int borderSize;
 

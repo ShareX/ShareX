@@ -1262,19 +1262,19 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Image CreateColorPickerIcon(Color color, Rectangle rect)
+        public static Image CreateColorPickerIcon(Color color, Rectangle rect, int holeSize = 0)
         {
             Bitmap bmp = new Bitmap(rect.Width, rect.Height);
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                DrawColorPickerIcon(g, color, rect);
+                DrawColorPickerIcon(g, color, rect, holeSize);
             }
 
             return bmp;
         }
 
-        public static void DrawColorPickerIcon(Graphics g, Color color, Rectangle rect)
+        public static void DrawColorPickerIcon(Graphics g, Color color, Rectangle rect, int holeSize = 0)
         {
             if (color.A < 255)
             {
@@ -1290,6 +1290,16 @@ namespace ShareX.HelpersLib
             }
 
             g.DrawRectangleProper(Pens.Black, rect);
+
+            if (holeSize > 0)
+            {
+                g.CompositingMode = CompositingMode.SourceCopy;
+
+                Rectangle holeRect = new Rectangle(rect.Width / 2 - holeSize / 2, rect.Height / 2 - holeSize / 2, holeSize, holeSize);
+
+                g.FillRectangle(Brushes.Transparent, holeRect);
+                g.DrawRectangleProper(Pens.Black, holeRect);
+            }
         }
 
         public static void HighlightImage(Bitmap bmp)
