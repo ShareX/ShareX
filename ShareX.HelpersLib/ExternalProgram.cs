@@ -67,7 +67,7 @@ namespace ShareX.HelpersLib
 
                 try
                 {
-                    string newFilePath = "";
+                    string outputPath = "";
 
                     using (Process process = new Process())
                     {
@@ -81,17 +81,21 @@ namespace ShareX.HelpersLib
                         {
                             if (!string.IsNullOrEmpty(OutputExtension))
                             {
-                                newFilePath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(filePath), System.IO.Path.GetFileNameWithoutExtension(filePath));
+                                outputPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(filePath), System.IO.Path.GetFileNameWithoutExtension(filePath));
 
                                 if (!OutputExtension.Contains("."))
                                 {
                                     OutputExtension = "." + OutputExtension;
                                 }
 
-                                newFilePath += OutputExtension;
+                                outputPath += OutputExtension;
+                            }
+                            else
+                            {
+                                outputPath = filePath;
                             }
 
-                            psi.Arguments = CodeMenuEntryActions.Parse(Args, filePath, newFilePath);
+                            psi.Arguments = CodeMenuEntryActions.Parse(Args, filePath, outputPath);
                         }
 
                         if (HiddenWindow)
@@ -108,9 +112,9 @@ namespace ShareX.HelpersLib
                         process.WaitForExit();
                     }
 
-                    if (!string.IsNullOrEmpty(newFilePath) && File.Exists(newFilePath))
+                    if (!string.IsNullOrEmpty(outputPath) && File.Exists(outputPath))
                     {
-                        return newFilePath;
+                        return outputPath;
                     }
 
                     return filePath;

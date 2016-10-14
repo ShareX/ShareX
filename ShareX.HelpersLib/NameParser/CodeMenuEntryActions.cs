@@ -40,11 +40,16 @@ namespace ShareX.HelpersLib
 
         public static string Parse(string pattern, string inputPath, string outputPath)
         {
-            string result = pattern.Replace(input.ToPrefixString(), '"' + inputPath + '"');
+            string result = pattern;
 
-            if (!string.IsNullOrEmpty(outputPath))
+            if (inputPath != null)
             {
-                result.Replace(output.ToPrefixString(), '"' + outputPath + '"');
+                result = result.Replace(input.ToPrefixString(), '"' + inputPath + '"');
+            }
+
+            if (outputPath != null)
+            {
+                result = result.Replace(output.ToPrefixString(), '"' + outputPath + '"');
             }
 
             return result;
