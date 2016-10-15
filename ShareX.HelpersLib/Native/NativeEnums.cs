@@ -207,6 +207,9 @@ namespace ShareX.HelpersLib
         HasIconicBitmap,
         DisallowPeek,
         ExcludedFromPeek,
+        Cloak,
+        Cloaked,
+        FreezeRepresentation,
         Last
     }
 

@@ -54,7 +54,9 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsMinimized => NativeMethods.IsIconic(Handle);
 
-        public bool IsVisible => NativeMethods.IsWindowVisible(Handle);
+        public bool IsVisible => NativeMethods.IsWindowVisible(Handle) && !IsCloaked;
+
+        public bool IsCloaked => NativeMethods.IsWindowCloaked(Handle);
 
         public bool IsActive => NativeMethods.GetForegroundWindow() == Handle;
 
