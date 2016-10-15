@@ -349,6 +349,16 @@ namespace ShareX.HelpersLib
             return wp.showCmd == WindowShowStyle.Maximize;
         }
 
+        public static bool IsWindowCloaked(IntPtr handle)
+        {
+            if (!IsDWMEnabled())
+                return false;
+
+            int cloaked;
+            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.Cloaked, out cloaked, sizeof(int));
+            return result == 0 && cloaked != 0;
+        }
+
         public static IntPtr SetHook(int hookType, HookProc hookProc)
         {
             using (Process currentProcess = Process.GetCurrentProcess())
