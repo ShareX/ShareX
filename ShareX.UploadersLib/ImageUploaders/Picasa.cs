@@ -206,6 +206,9 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             ur.Response = SendRequestStream(url, stream, contentType, headers);
 
+            if (ur.Response == null)
+                return ur;
+
             XDocument xd = XDocument.Parse(ur.Response);
 
             XElement entry_element = xd.Element(AtomNS + "entry");
