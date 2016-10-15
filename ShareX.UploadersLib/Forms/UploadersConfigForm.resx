@@ -2338,6 +2338,9 @@ store.book[0].title</value>
   <data name="txtCustomUploaderLog.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
+  <data name="txtCustomUploaderLog.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;txtCustomUploaderLog.Name" xml:space="preserve">
     <value>txtCustomUploaderLog</value>
   </data>
@@ -9235,57 +9238,6 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;txtLithiioApiKey.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblLithiioUploadURL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblLithiioUploadURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
-  </data>
-  <data name="lblLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
-  </data>
-  <data name="lblLithiioUploadURL.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblLithiioUploadURL.Text" xml:space="preserve">
-    <value>Link URL:</value>
-  </data>
-  <data name="&gt;&gt;lblLithiioUploadURL.Name" xml:space="preserve">
-    <value>lblLithiioUploadURL</value>
-  </data>
-  <data name="&gt;&gt;lblLithiioUploadURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLithiioUploadURL.Parent" xml:space="preserve">
-    <value>tpLithiio</value>
-  </data>
-  <data name="&gt;&gt;lblLithiioUploadURL.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cbLithiioUploadURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="cbLithiioUploadURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 21</value>
-  </data>
-  <data name="cbLithiioUploadURL.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbLithiioUploadURL.Name" xml:space="preserve">
-    <value>cbLithiioUploadURL</value>
-  </data>
-  <data name="&gt;&gt;cbLithiioUploadURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbLithiioUploadURL.Parent" xml:space="preserve">
-    <value>tpLithiio</value>
-  </data>
-  <data name="&gt;&gt;cbLithiioUploadURL.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="tpLithiio.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
   </data>
@@ -9939,6 +9891,384 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
     <value>23</value>
+  </data>
+  <data name="btnUpleaLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnUpleaLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 104</value>
+  </data>
+  <data name="btnUpleaLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnUpleaLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnUpleaLogin.Text" xml:space="preserve">
+    <value>Get API Key</value>
+  </data>
+  <data name="&gt;&gt;btnUpleaLogin.Name" xml:space="preserve">
+    <value>btnUpleaLogin</value>
+  </data>
+  <data name="&gt;&gt;btnUpleaLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUpleaLogin.Parent" xml:space="preserve">
+    <value>gbUpleaLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;btnUpleaLogin.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblUpleaApiKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUpleaApiKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblUpleaApiKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 81</value>
+  </data>
+  <data name="lblUpleaApiKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="lblUpleaApiKey.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblUpleaApiKey.Text" xml:space="preserve">
+    <value>API Key: </value>
+  </data>
+  <data name="&gt;&gt;lblUpleaApiKey.Name" xml:space="preserve">
+    <value>lblUpleaApiKey</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaApiKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaApiKey.Parent" xml:space="preserve">
+    <value>gbUpleaLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaApiKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtUpleaApiKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 78</value>
+  </data>
+  <data name="txtUpleaApiKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 20</value>
+  </data>
+  <data name="txtUpleaApiKey.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaApiKey.Name" xml:space="preserve">
+    <value>txtUpleaApiKey</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaApiKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaApiKey.Parent" xml:space="preserve">
+    <value>gbUpleaLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaApiKey.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblUpleaPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUpleaPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblUpleaPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 55</value>
+  </data>
+  <data name="lblUpleaPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblUpleaPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblUpleaPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaPassword.Name" xml:space="preserve">
+    <value>lblUpleaPassword</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaPassword.Parent" xml:space="preserve">
+    <value>gbUpleaLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaPassword.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblUpleaUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUpleaUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblUpleaUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 29</value>
+  </data>
+  <data name="lblUpleaUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="lblUpleaUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblUpleaUsername.Text" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaUsername.Name" xml:space="preserve">
+    <value>lblUpleaUsername</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaUsername.Parent" xml:space="preserve">
+    <value>gbUpleaLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaUsername.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtUpleaPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 52</value>
+  </data>
+  <data name="txtUpleaPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="txtUpleaPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 20</value>
+  </data>
+  <data name="txtUpleaPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaPassword.Name" xml:space="preserve">
+    <value>txtUpleaPassword</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaPassword.Parent" xml:space="preserve">
+    <value>gbUpleaLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaPassword.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtUpleaUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 26</value>
+  </data>
+  <data name="txtUpleaUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 20</value>
+  </data>
+  <data name="txtUpleaUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaUsername.Name" xml:space="preserve">
+    <value>txtUpleaUsername</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaUsername.Parent" xml:space="preserve">
+    <value>gbUpleaLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaUsername.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="gbUpleaLoginCredentials.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 14</value>
+  </data>
+  <data name="gbUpleaLoginCredentials.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 145</value>
+  </data>
+  <data name="gbUpleaLoginCredentials.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
+    <value>Login Credentials</value>
+  </data>
+  <data name="&gt;&gt;gbUpleaLoginCredentials.Name" xml:space="preserve">
+    <value>gbUpleaLoginCredentials</value>
+  </data>
+  <data name="&gt;&gt;gbUpleaLoginCredentials.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbUpleaLoginCredentials.Parent" xml:space="preserve">
+    <value>tpUplea</value>
+  </data>
+  <data name="&gt;&gt;gbUpleaLoginCredentials.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblUpleaEmailAddress.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUpleaEmailAddress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblUpleaEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 22</value>
+  </data>
+  <data name="lblUpleaEmailAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="lblUpleaEmailAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
+    <value>Email Address: </value>
+  </data>
+  <data name="&gt;&gt;lblUpleaEmailAddress.Name" xml:space="preserve">
+    <value>lblUpleaEmailAddress</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaEmailAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaEmailAddress.Parent" xml:space="preserve">
+    <value>gbUpleaUserInformation</value>
+  </data>
+  <data name="&gt;&gt;lblUpleaEmailAddress.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbUpleaInstantDownloadEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbUpleaInstantDownloadEnabled.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbUpleaInstantDownloadEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbUpleaInstantDownloadEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 68</value>
+  </data>
+  <data name="cbUpleaInstantDownloadEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 17</value>
+  </data>
+  <data name="cbUpleaInstantDownloadEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
+    <value>Instant Download Enabled</value>
+  </data>
+  <data name="&gt;&gt;cbUpleaInstantDownloadEnabled.Name" xml:space="preserve">
+    <value>cbUpleaInstantDownloadEnabled</value>
+  </data>
+  <data name="&gt;&gt;cbUpleaInstantDownloadEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbUpleaInstantDownloadEnabled.Parent" xml:space="preserve">
+    <value>gbUpleaUserInformation</value>
+  </data>
+  <data name="&gt;&gt;cbUpleaInstantDownloadEnabled.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbUpleaIsPremium.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbUpleaIsPremium.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbUpleaIsPremium.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbUpleaIsPremium.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 45</value>
+  </data>
+  <data name="cbUpleaIsPremium.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="cbUpleaIsPremium.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
+    <value>Is Premium Member</value>
+  </data>
+  <data name="&gt;&gt;cbUpleaIsPremium.Name" xml:space="preserve">
+    <value>cbUpleaIsPremium</value>
+  </data>
+  <data name="&gt;&gt;cbUpleaIsPremium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbUpleaIsPremium.Parent" xml:space="preserve">
+    <value>gbUpleaUserInformation</value>
+  </data>
+  <data name="&gt;&gt;cbUpleaIsPremium.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtUpleaEmailAddress.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtUpleaEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 19</value>
+  </data>
+  <data name="txtUpleaEmailAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 20</value>
+  </data>
+  <data name="txtUpleaEmailAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaEmailAddress.Name" xml:space="preserve">
+    <value>txtUpleaEmailAddress</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaEmailAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaEmailAddress.Parent" xml:space="preserve">
+    <value>gbUpleaUserInformation</value>
+  </data>
+  <data name="&gt;&gt;txtUpleaEmailAddress.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gbUpleaUserInformation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>450, 14</value>
+  </data>
+  <data name="gbUpleaUserInformation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 107</value>
+  </data>
+  <data name="gbUpleaUserInformation.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
+    <value>User Information</value>
+  </data>
+  <data name="&gt;&gt;gbUpleaUserInformation.Name" xml:space="preserve">
+    <value>gbUpleaUserInformation</value>
+  </data>
+  <data name="&gt;&gt;gbUpleaUserInformation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbUpleaUserInformation.Parent" xml:space="preserve">
+    <value>tpUplea</value>
+  </data>
+  <data name="&gt;&gt;gbUpleaUserInformation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpUplea.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpUplea.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpUplea.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 475</value>
+  </data>
+  <data name="tpUplea.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="tpUplea.Text" xml:space="preserve">
+    <value>Uplea</value>
+  </data>
+  <data name="&gt;&gt;tpUplea.Name" xml:space="preserve">
+    <value>tpUplea</value>
+  </data>
+  <data name="&gt;&gt;tpUplea.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpUplea.Parent" xml:space="preserve">
+    <value>tcFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpUplea.ZOrder" xml:space="preserve">
+    <value>24</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -13479,386 +13809,5 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnUpleaLogin.Name" xml:space="preserve">
-    <value>btnUpleaLogin</value>
-  </data>
-  <data name="&gt;&gt;btnUpleaLogin.Parent" xml:space="preserve">
-    <value>gbUpleaLoginCredentials</value>
-  </data>
-  <data name="&gt;&gt;btnUpleaLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnUpleaLogin.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbUpleaInstantDownloadEnabled.Name" xml:space="preserve">
-    <value>cbUpleaInstantDownloadEnabled</value>
-  </data>
-  <data name="&gt;&gt;cbUpleaInstantDownloadEnabled.Parent" xml:space="preserve">
-    <value>gbUpleaUserInformation</value>
-  </data>
-  <data name="&gt;&gt;cbUpleaInstantDownloadEnabled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbUpleaInstantDownloadEnabled.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbUpleaIsPremium.Name" xml:space="preserve">
-    <value>cbUpleaIsPremium</value>
-  </data>
-  <data name="&gt;&gt;cbUpleaIsPremium.Parent" xml:space="preserve">
-    <value>gbUpleaUserInformation</value>
-  </data>
-  <data name="&gt;&gt;cbUpleaIsPremium.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbUpleaIsPremium.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;gbUpleaLoginCredentials.Name" xml:space="preserve">
-    <value>gbUpleaLoginCredentials</value>
-  </data>
-  <data name="&gt;&gt;gbUpleaLoginCredentials.Parent" xml:space="preserve">
-    <value>tpUplea</value>
-  </data>
-  <data name="&gt;&gt;gbUpleaLoginCredentials.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbUpleaLoginCredentials.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;gbUpleaUserInformation.Name" xml:space="preserve">
-    <value>gbUpleaUserInformation</value>
-  </data>
-  <data name="&gt;&gt;gbUpleaUserInformation.Parent" xml:space="preserve">
-    <value>tpUplea</value>
-  </data>
-  <data name="&gt;&gt;gbUpleaUserInformation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbUpleaUserInformation.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaApiKey.Name" xml:space="preserve">
-    <value>lblUpleaApiKey</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaApiKey.Parent" xml:space="preserve">
-    <value>gbUpleaLoginCredentials</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaApiKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaApiKey.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaPassword.Name" xml:space="preserve">
-    <value>lblUpleaPassword</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaPassword.Parent" xml:space="preserve">
-    <value>gbUpleaLoginCredentials</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaPassword.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaUsername.Name" xml:space="preserve">
-    <value>lblUpleaUsername</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaUsername.Parent" xml:space="preserve">
-    <value>gbUpleaLoginCredentials</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaUsername.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tpUplea.Name" xml:space="preserve">
-    <value>tpUplea</value>
-  </data>
-  <data name="&gt;&gt;tpUplea.Parent" xml:space="preserve">
-    <value>tcFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpUplea.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpUplea.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaApiKey.Name" xml:space="preserve">
-    <value>txtUpleaApiKey</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaApiKey.Parent" xml:space="preserve">
-    <value>gbUpleaLoginCredentials</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaApiKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaApiKey.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaEmailAddress.Name" xml:space="preserve">
-    <value>txtUpleaEmailAddress</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaEmailAddress.Parent" xml:space="preserve">
-    <value>gbUpleaUserInformation</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaEmailAddress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaEmailAddress.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaPassword.Name" xml:space="preserve">
-    <value>txtUpleaPassword</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaPassword.Parent" xml:space="preserve">
-    <value>gbUpleaLoginCredentials</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaPassword.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaUsername.Name" xml:space="preserve">
-    <value>txtUpleaUsername</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaUsername.Parent" xml:space="preserve">
-    <value>gbUpleaLoginCredentials</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtUpleaUsername.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnUpleaLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnUpleaLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 104</value>
-  </data>
-  <data name="btnUpleaLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="btnUpleaLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="btnUpleaLogin.Text" xml:space="preserve">
-    <value>Get API Key</value>
-  </data>
-  <data name="cbUpleaInstantDownloadEnabled.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbUpleaInstantDownloadEnabled.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="cbUpleaInstantDownloadEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbUpleaInstantDownloadEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 68</value>
-  </data>
-  <data name="cbUpleaInstantDownloadEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 17</value>
-  </data>
-  <data name="cbUpleaInstantDownloadEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
-    <value>Instant Download Enabled</value>
-  </data>
-  <data name="cbUpleaIsPremium.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbUpleaIsPremium.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="cbUpleaIsPremium.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbUpleaIsPremium.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 45</value>
-  </data>
-  <data name="cbUpleaIsPremium.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
-  </data>
-  <data name="cbUpleaIsPremium.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
-    <value>Is Premium Member</value>
-  </data>
-  <data name="gbUpleaLoginCredentials.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 14</value>
-  </data>
-  <data name="gbUpleaLoginCredentials.Size" type="System.Drawing.Size, System.Drawing">
-    <value>428, 145</value>
-  </data>
-  <data name="gbUpleaLoginCredentials.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
-    <value>Login Credentials</value>
-  </data>
-  <data name="gbUpleaUserInformation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>450, 14</value>
-  </data>
-  <data name="gbUpleaUserInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 107</value>
-  </data>
-  <data name="gbUpleaUserInformation.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
-    <value>User Information</value>
-  </data>
-  <data name="lblUpleaApiKey.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUpleaApiKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUpleaApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 81</value>
-  </data>
-  <data name="lblUpleaApiKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 13</value>
-  </data>
-  <data name="lblUpleaApiKey.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="lblUpleaApiKey.Text" xml:space="preserve">
-    <value>API Key: </value>
-  </data>
-  <data name="lblUpleaPassword.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUpleaPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUpleaPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 55</value>
-  </data>
-  <data name="lblUpleaPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblUpleaPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="lblUpleaPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="lblUpleaUsername.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUpleaUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUpleaUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 29</value>
-  </data>
-  <data name="lblUpleaUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="lblUpleaUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="lblUpleaUsername.Text" xml:space="preserve">
-    <value>Username:</value>
-  </data>
-  <data name="txtUpleaApiKey.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtUpleaApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 78</value>
-  </data>
-  <data name="txtUpleaApiKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 20</value>
-  </data>
-  <data name="txtUpleaApiKey.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="txtUpleaEmailAddress.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtUpleaEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 19</value>
-  </data>
-  <data name="txtUpleaEmailAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 20</value>
-  </data>
-  <data name="txtUpleaEmailAddress.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="txtUpleaPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 52</value>
-  </data>
-  <data name="txtUpleaPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
-    <value>*</value>
-  </data>
-  <data name="txtUpleaPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 20</value>
-  </data>
-  <data name="txtUpleaPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="txtUpleaUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 26</value>
-  </data>
-  <data name="txtUpleaUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 20</value>
-  </data>
-  <data name="txtUpleaUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="tpUplea.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
-  </data>
-  <data name="tpUplea.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpUplea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
-  </data>
-  <data name="tpUplea.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="tpUplea.Text" xml:space="preserve">
-    <value>Uplea</value>
-  </data>
-  <data name="lblUpleaEmailAddress.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUpleaEmailAddress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUpleaEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 22</value>
-  </data>
-  <data name="lblUpleaEmailAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
-  </data>
-  <data name="lblUpleaEmailAddress.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
-    <value>Email Address: </value>
-  </data>
-  <data name="&gt;&gt;lblUpleaEmailAddress.Name" xml:space="preserve">
-    <value>lblUpleaEmailAddress</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaEmailAddress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaEmailAddress.Parent" xml:space="preserve">
-    <value>gbUpleaUserInformation</value>
-  </data>
-  <data name="&gt;&gt;lblUpleaEmailAddress.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
 </root>

@@ -545,8 +545,6 @@ namespace ShareX.UploadersLib
             // Lithiio
 
             txtLithiioApiKey.Text = Config.LithiioSettings.UserAPIKey;
-            cbLithiioUploadURL.Items.AddRange(Lithiio.UploadURLs);
-            cbLithiioUploadURL.SelectedItem = Config.LithiioSettings.UploadURL;
 
             // Pomf
 
@@ -2201,19 +2199,6 @@ namespace ShareX.UploadersLib
         private void txtLithiioApiKey_TextChanged(object sender, EventArgs e)
         {
             Config.LithiioSettings.UserAPIKey = txtLithiioApiKey.Text;
-        }
-
-        private void cbLithiioUploadURL_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbLithiioUploadURL.SelectedIndex > -1)
-            {
-                string url = cbLithiioUploadURL.SelectedItem as string;
-
-                if (url != null)
-                {
-                    Config.LithiioSettings.UploadURL = url;
-                }
-            }
         }
 
         #endregion Lithiio

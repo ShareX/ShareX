@@ -64,18 +64,16 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private const string uploadUrl = "http://api.lithi.io/v3/";
 
-        public static string[] UploadURLs = new string[] { "https://i.lithi.io/", "https://lithi.io/i/", "https://i.mugi.io/", "https://mugi.io/i/" };
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("key", Config.UserAPIKey);
-            arguments.Add("linktype", Config.UploadURL);
             UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments);
 
             if (result.IsSuccess)
             {
                 LithiioResponse response = JsonConvert.DeserializeObject<LithiioResponse>(result.Response);
+
                 if (response.Success)
                 {
                     result.URL = response.URL;
@@ -100,6 +98,5 @@ namespace ShareX.UploadersLib.FileUploaders
     public class LithiioSettings
     {
         public string UserAPIKey { get; set; } = "";
-        public string UploadURL { get; set; } = "https://i.lithi.io/";
     }
 }
