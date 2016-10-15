@@ -351,12 +351,14 @@ namespace ShareX.HelpersLib
 
         public static bool IsWindowCloaked(IntPtr handle)
         {
-            if (!IsDWMEnabled())
-                return false;
+            if (IsDWMEnabled())
+            {
+                int cloaked;
+                int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.Cloaked, out cloaked, sizeof(int));
+                return result == 0 && cloaked != 0;
+            }
 
-            int cloaked;
-            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.Cloaked, out cloaked, sizeof(int));
-            return result == 0 && cloaked != 0;
+            return false;
         }
 
         public static IntPtr SetHook(int hookType, HookProc hookProc)

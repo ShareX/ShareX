@@ -111,7 +111,7 @@ namespace ShareX.ScreenCaptureLib
 
         private bool CheckHandle(IntPtr handle, bool isWindow)
         {
-            if (handle == IgnoreHandle || !NativeMethods.IsWindowVisible(handle))
+            if (handle == IgnoreHandle || !NativeMethods.IsWindowVisible(handle) || (isWindow && NativeMethods.IsWindowCloaked(handle)))
             {
                 return true;
             }
