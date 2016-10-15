@@ -351,6 +351,9 @@ namespace ShareX.HelpersLib
 
         public static bool IsWindowCloaked(IntPtr handle)
         {
+            if (!IsDWMEnabled())
+                return false;
+
             int cloaked;
             int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.Cloaked, out cloaked, sizeof(int));
             return result == 0 && cloaked != 0;
