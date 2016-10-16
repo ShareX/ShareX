@@ -112,9 +112,9 @@ namespace ShareX.ScreenCaptureLib
             infoFont = new Font("Verdana", 9);
             infoFontMedium = new Font("Verdana", 12);
             infoFontBig = new Font("Verdana", 16, FontStyle.Bold);
-            textBackgroundBrush = new SolidBrush(Color.FromArgb(175, Color.FromArgb(44, 135, 206)));
-            textOuterBorderPen = new Pen(Color.FromArgb(175, Color.White));
-            textInnerBorderPen = new Pen(Color.FromArgb(175, Color.FromArgb(0, 81, 145)));
+            textBackgroundBrush = new SolidBrush(Color.FromArgb(150, Color.FromArgb(42, 131, 199)));
+            textOuterBorderPen = new Pen(Color.FromArgb(150, Color.White));
+            textInnerBorderPen = new Pen(Color.FromArgb(150, Color.FromArgb(0, 81, 145)));
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
         }
 
