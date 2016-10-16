@@ -78,28 +78,11 @@ namespace ShareX.HelpersLib
         {
         }
 
-        private static readonly object _syncLock = new object();
+        private static readonly ITaskbarList4 TaskbarList = (ITaskbarList4)new CTaskbarList();
 
-        private static ITaskbarList4 _taskbarList;
-
-        private static ITaskbarList4 TaskbarList
+        static TaskbarManager()
         {
-            get
-            {
-                if (_taskbarList == null)
-                {
-                    lock (_syncLock)
-                    {
-                        if (_taskbarList == null)
-                        {
-                            _taskbarList = (ITaskbarList4)new CTaskbarList();
-                            _taskbarList.HrInit();
-                        }
-                    }
-                }
-
-                return _taskbarList;
-            }
+            TaskbarList.HrInit();
         }
 
         private static IntPtr _mainWindowHandle;
