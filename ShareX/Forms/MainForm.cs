@@ -721,7 +721,7 @@ namespace ShareX
             {
                 if (command.CheckCommand(job.ToString()))
                 {
-                    ExecuteJob(job);
+                    ExecuteJob(TaskSettings.GetDefaultTaskSettings(), job, command);
                     return true;
                 }
             }
@@ -1754,7 +1754,7 @@ namespace ShareX
             ExecuteJob(taskSettings, taskSettings.Job);
         }
 
-        private void ExecuteJob(TaskSettings taskSettings, HotkeyType job)
+        private void ExecuteJob(TaskSettings taskSettings, HotkeyType job, CLICommand command = null)
         {
             DebugHelper.WriteLine("Executing: " + job.GetLocalizedDescription());
 
@@ -1860,7 +1860,11 @@ namespace ShareX
                     TaskHelpers.OpenScreenColorPicker(safeTaskSettings);
                     break;
                 case HotkeyType.ImageEditor:
-                    TaskHelpers.AnnotateImage();
+                    if (command != null)
+                        if (!string.IsNullOrEmpty(command.Parameter))
+                            TaskHelpers.AnnotateImage(command.Parameter);
+                    else
+                        TaskHelpers.AnnotateImage(taskSettings);
                     break;
                 case HotkeyType.ImageEffects:
                     TaskHelpers.OpenImageEffects();
