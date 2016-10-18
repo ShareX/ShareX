@@ -620,7 +620,7 @@ namespace ShareX
             }
             else
             {
-                AnnotateImage(taskSettings);
+                MessageBox.Show("File does not exist:" + Environment.NewLine + filePath, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

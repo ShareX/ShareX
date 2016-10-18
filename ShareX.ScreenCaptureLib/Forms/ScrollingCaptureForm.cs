@@ -582,7 +582,7 @@ namespace ShareX.ScreenCaptureLib
                 Image newImage;
                 Image image = images[i];
 
-                if (Options.TrimLeftEdge > 0 || Options.TrimRightEdge > 0 || Options.TrimTopEdge > 0 || Options.TrimBottomEdge > 0 ||
+                if (Options.TrimLeftEdge > 0 || Options.TrimTopEdge > 0 || Options.TrimRightEdge > 0 || Options.TrimBottomEdge > 0 ||
                     Options.CombineAdjustmentVertical > 0 || Options.CombineAdjustmentLastVertical > 0)
                 {
                     Rectangle rect = new Rectangle(Options.TrimLeftEdge, Options.TrimTopEdge, image.Width - Options.TrimLeftEdge - Options.TrimRightEdge,
