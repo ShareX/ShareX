@@ -605,7 +605,7 @@ namespace ShareX
 
         public static void AnnotateImage(string filePath, TaskSettings taskSettings = null)
         {
-            if (!string.IsNullOrEmpty(filePath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -617,6 +617,10 @@ namespace ShareX
                 {
                     AnnotateImageUsingGreenshot(null, filePath);
                 }
+            }
+            else
+            {
+                AnnotateImage(taskSettings);
             }
         }
 
