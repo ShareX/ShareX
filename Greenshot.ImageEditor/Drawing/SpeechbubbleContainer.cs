@@ -342,7 +342,6 @@ namespace Greenshot.Drawing
             tail.Dispose();
 
             // Draw the text
-            UpdateFormat();
             DrawText(graphics, rect, lineThickness, lineColor, shadow, StringFormat, Text, Font);
         }
 
