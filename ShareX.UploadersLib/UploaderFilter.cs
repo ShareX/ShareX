@@ -37,6 +37,10 @@ namespace ShareX.UploadersLib
         public List<string> Extensions { get; set; } = new List<string>();
         //public long Size { get; set; }
 
+        public UploaderFilter()
+        {
+        }
+
         public UploaderFilter(string uploader, params string[] extensions)
         {
             Uploader = uploader;
@@ -53,6 +57,23 @@ namespace ShareX.UploadersLib
         public IGenericUploaderService GetUploaderService()
         {
             return UploaderFactory.AllGenericUploaderServices.Where(x => x.ServiceIdentifier.Equals(Uploader, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+        }
+
+        public void SetExtensions(string extensions)
+        {
+            if (!string.IsNullOrEmpty(extensions))
+            {
+                Extensions = extensions.Split(',').Select(x => x.Trim()).Where(x => !string.IsNullOrEmpty(x)).ToList();
+            }
+            else
+            {
+                Extensions = new List<string>();
+            }
+        }
+
+        public string GetExtensions()
+        {
+            return string.Join(", ", Extensions);
         }
 
         public override string ToString()

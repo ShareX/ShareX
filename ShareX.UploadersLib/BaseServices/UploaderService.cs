@@ -37,7 +37,7 @@ namespace ShareX.UploadersLib
         // Unique identifier
         public string ServiceIdentifier => EnumValue.ToString();
 
-        public string ServiceName => ((Enum)(object)EnumValue).GetDescription();
+        public string ServiceName => ((Enum)(object)EnumValue).GetLocalizedDescription();
 
         public virtual Icon ServiceIcon { get; }
 
@@ -48,6 +48,11 @@ namespace ShareX.UploadersLib
         public virtual TabPage GetUploadersConfigTabPage(UploadersConfigForm form)
         {
             return null;
+        }
+
+        public override string ToString()
+        {
+            return ServiceName;
         }
     }
 }

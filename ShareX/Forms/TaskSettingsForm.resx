@@ -546,6 +546,555 @@
   <data name="&gt;&gt;tpCapture.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;chkUseDefaultUploadSettings.Name" xml:space="preserve">
+    <value>chkUseDefaultUploadSettings</value>
+  </data>
+  <data name="&gt;&gt;chkUseDefaultUploadSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkUseDefaultUploadSettings.Parent" xml:space="preserve">
+    <value>tpUploadMain</value>
+  </data>
+  <data name="&gt;&gt;chkUseDefaultUploadSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpUploadMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpUploadMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 447</value>
+  </data>
+  <data name="tpUploadMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tpUploadMain.Name" xml:space="preserve">
+    <value>tpUploadMain</value>
+  </data>
+  <data name="&gt;&gt;tpUploadMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpUploadMain.Parent" xml:space="preserve">
+    <value>tcUpload</value>
+  </data>
+  <data name="&gt;&gt;tpUploadMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblAutoIncrementNumber.Name" xml:space="preserve">
+    <value>lblAutoIncrementNumber</value>
+  </data>
+  <data name="&gt;&gt;lblAutoIncrementNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAutoIncrementNumber.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;lblAutoIncrementNumber.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Name" xml:space="preserve">
+    <value>cbRegionCaptureUseWindowPattern</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbNameFormatCustomTimeZone.Name" xml:space="preserve">
+    <value>cbNameFormatCustomTimeZone</value>
+  </data>
+  <data name="&gt;&gt;cbNameFormatCustomTimeZone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbNameFormatCustomTimeZone.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;cbNameFormatCustomTimeZone.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.Name" xml:space="preserve">
+    <value>lblNameFormatPatternPreview</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Name" xml:space="preserve">
+    <value>lblNameFormatPatternActiveWindow</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Name" xml:space="preserve">
+    <value>lblNameFormatPatternPreviewActiveWindow</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbNameFormatTimeZone.Name" xml:space="preserve">
+    <value>cbNameFormatTimeZone</value>
+  </data>
+  <data name="&gt;&gt;cbNameFormatTimeZone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbNameFormatTimeZone.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;cbNameFormatTimeZone.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Name" xml:space="preserve">
+    <value>txtNameFormatPatternActiveWindow</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;btnResetAutoIncrementNumber.Name" xml:space="preserve">
+    <value>btnResetAutoIncrementNumber</value>
+  </data>
+  <data name="&gt;&gt;btnResetAutoIncrementNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnResetAutoIncrementNumber.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;btnResetAutoIncrementNumber.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadUseNamePattern.Name" xml:space="preserve">
+    <value>cbFileUploadUseNamePattern</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadUseNamePattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadUseNamePattern.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadUseNamePattern.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPattern.Name" xml:space="preserve">
+    <value>lblNameFormatPattern</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPattern.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPattern.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.Name" xml:space="preserve">
+    <value>txtNameFormatPattern</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.Parent" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="tpFileNaming.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpFileNaming.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpFileNaming.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 447</value>
+  </data>
+  <data name="tpFileNaming.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>File naming</value>
+  </data>
+  <data name="&gt;&gt;tpFileNaming.Name" xml:space="preserve">
+    <value>tpFileNaming</value>
+  </data>
+  <data name="&gt;&gt;tpFileNaming.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpFileNaming.Parent" xml:space="preserve">
+    <value>tcUpload</value>
+  </data>
+  <data name="&gt;&gt;tpFileNaming.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadShareURL.Name" xml:space="preserve">
+    <value>cbClipboardUploadShareURL</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadShareURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadShareURL.Parent" xml:space="preserve">
+    <value>tpUploadClipboard</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadShareURL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkClipboardUploadURLContents.Name" xml:space="preserve">
+    <value>chkClipboardUploadURLContents</value>
+  </data>
+  <data name="&gt;&gt;chkClipboardUploadURLContents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkClipboardUploadURLContents.Parent" xml:space="preserve">
+    <value>tpUploadClipboard</value>
+  </data>
+  <data name="&gt;&gt;chkClipboardUploadURLContents.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadAutoIndexFolder.Name" xml:space="preserve">
+    <value>cbClipboardUploadAutoIndexFolder</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadAutoIndexFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadAutoIndexFolder.Parent" xml:space="preserve">
+    <value>tpUploadClipboard</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadAutoIndexFolder.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadShortenURL.Name" xml:space="preserve">
+    <value>cbClipboardUploadShortenURL</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadShortenURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadShortenURL.Parent" xml:space="preserve">
+    <value>tpUploadClipboard</value>
+  </data>
+  <data name="&gt;&gt;cbClipboardUploadShortenURL.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tpUploadClipboard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpUploadClipboard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 447</value>
+  </data>
+  <data name="tpUploadClipboard.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>Clipboard upload</value>
+  </data>
+  <data name="&gt;&gt;tpUploadClipboard.Name" xml:space="preserve">
+    <value>tpUploadClipboard</value>
+  </data>
+  <data name="&gt;&gt;tpUploadClipboard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpUploadClipboard.Parent" xml:space="preserve">
+    <value>tcUpload</value>
+  </data>
+  <data name="&gt;&gt;tpUploadClipboard.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lvUploaderFiltersList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>Uploader</value>
+  </data>
+  <data name="chUploaderFiltersName.Width" type="System.Int32, mscorlib">
+    <value>128</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Extension</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Width" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="lvUploaderFiltersList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 136</value>
+  </data>
+  <data name="lvUploaderFiltersList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 304</value>
+  </data>
+  <data name="lvUploaderFiltersList.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lvUploaderFiltersList.Name" xml:space="preserve">
+    <value>lvUploaderFiltersList</value>
+  </data>
+  <data name="&gt;&gt;lvUploaderFiltersList.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvUploaderFiltersList.Parent" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;lvUploaderFiltersList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 104</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 23</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersRemove.Name" xml:space="preserve">
+    <value>btnUploaderFiltersRemove</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersRemove.Parent" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersRemove.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 104</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 23</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersUpdate.Name" xml:space="preserve">
+    <value>btnUploaderFiltersUpdate</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersUpdate.Parent" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersUpdate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 104</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 23</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersAdd.Name" xml:space="preserve">
+    <value>btnUploaderFiltersAdd</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersAdd.Parent" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;btnUploaderFiltersAdd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>Uploader:</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersDestination.Name" xml:space="preserve">
+    <value>lblUploaderFiltersDestination</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersDestination.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersDestination.Parent" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersDestination.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbUploaderFiltersDestination.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="cbUploaderFiltersDestination.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 21</value>
+  </data>
+  <data name="cbUploaderFiltersDestination.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbUploaderFiltersDestination.Name" xml:space="preserve">
+    <value>cbUploaderFiltersDestination</value>
+  </data>
+  <data name="&gt;&gt;cbUploaderFiltersDestination.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbUploaderFiltersDestination.Parent" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;cbUploaderFiltersDestination.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 76</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 13</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>Example: png, jpg, jpeg</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersExtensionsExample.Name" xml:space="preserve">
+    <value>lblUploaderFiltersExtensionsExample</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersExtensionsExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersExtensionsExample.Parent" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersExtensionsExample.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 56</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>Extension filter:</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersExtensions.Name" xml:space="preserve">
+    <value>lblUploaderFiltersExtensions</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersExtensions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersExtensions.Parent" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;lblUploaderFiltersExtensions.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtUploaderFiltersExtensions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 72</value>
+  </data>
+  <data name="txtUploaderFiltersExtensions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 20</value>
+  </data>
+  <data name="txtUploaderFiltersExtensions.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtUploaderFiltersExtensions.Name" xml:space="preserve">
+    <value>txtUploaderFiltersExtensions</value>
+  </data>
+  <data name="&gt;&gt;txtUploaderFiltersExtensions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtUploaderFiltersExtensions.Parent" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;txtUploaderFiltersExtensions.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tpUploaderFilters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpUploaderFilters.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpUploaderFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 447</value>
+  </data>
+  <data name="tpUploaderFilters.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>Uploader filters</value>
+  </data>
+  <data name="&gt;&gt;tpUploaderFilters.Name" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;tpUploaderFilters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpUploaderFilters.Parent" xml:space="preserve">
+    <value>tcUpload</value>
+  </data>
+  <data name="&gt;&gt;tpUploaderFilters.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tcUpload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tcUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>565, 473</value>
+  </data>
+  <data name="tcUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;tcUpload.Name" xml:space="preserve">
     <value>tcUpload</value>
   </data>
@@ -633,24 +1182,6 @@
   <data name="&gt;&gt;tpActions.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="cbWatchFolderEnabled.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbWatchFolderEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbWatchFolderEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="cbWatchFolderEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 17</value>
-  </data>
-  <data name="cbWatchFolderEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>Watch folders and if new file created then upload it</value>
-  </data>
   <data name="&gt;&gt;cbWatchFolderEnabled.Name" xml:space="preserve">
     <value>cbWatchFolderEnabled</value>
   </data>
@@ -662,36 +1193,6 @@
   </data>
   <data name="&gt;&gt;cbWatchFolderEnabled.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="lvWatchFolderList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
-    <value>Folder path</value>
-  </data>
-  <data name="chWatchFolderFolderPath.Width" type="System.Int32, mscorlib">
-    <value>323</value>
-  </data>
-  <data name="chWatchFolderFilter.Text" xml:space="preserve">
-    <value>Filter</value>
-  </data>
-  <data name="chWatchFolderFilter.Width" type="System.Int32, mscorlib">
-    <value>43</value>
-  </data>
-  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
-    <value>Include subdirectories</value>
-  </data>
-  <data name="chWatchFolderIncludeSubdirectories.Width" type="System.Int32, mscorlib">
-    <value>124</value>
-  </data>
-  <data name="lvWatchFolderList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 64</value>
-  </data>
-  <data name="lvWatchFolderList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 408</value>
-  </data>
-  <data name="lvWatchFolderList.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Name" xml:space="preserve">
     <value>lvWatchFolderList</value>
@@ -705,21 +1206,6 @@
   <data name="&gt;&gt;lvWatchFolderList.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnWatchFolderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnWatchFolderRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 32</value>
-  </data>
-  <data name="btnWatchFolderRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
-  </data>
-  <data name="btnWatchFolderRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
   <data name="&gt;&gt;btnWatchFolderRemove.Name" xml:space="preserve">
     <value>btnWatchFolderRemove</value>
   </data>
@@ -731,21 +1217,6 @@
   </data>
   <data name="&gt;&gt;btnWatchFolderRemove.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="btnWatchFolderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnWatchFolderAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 32</value>
-  </data>
-  <data name="btnWatchFolderAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
-  </data>
-  <data name="btnWatchFolderAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
-    <value>Add...</value>
   </data>
   <data name="&gt;&gt;btnWatchFolderAdd.Name" xml:space="preserve">
     <value>btnWatchFolderAdd</value>
@@ -5056,7 +5527,7 @@
     <value>8, 176</value>
   </data>
   <data name="cbRegionCaptureUseDimming.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 17</value>
+    <value>400, 17</value>
   </data>
   <data name="cbRegionCaptureUseDimming.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -5790,99 +6261,6 @@
   <data name="&gt;&gt;lblGIFFPS.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="&gt;&gt;tpUploadMain.Name" xml:space="preserve">
-    <value>tpUploadMain</value>
-  </data>
-  <data name="&gt;&gt;tpUploadMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpUploadMain.Parent" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tpUploadMain.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tpFileNaming.Name" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;tpFileNaming.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpFileNaming.Parent" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tpFileNaming.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tpUploadClipboard.Name" xml:space="preserve">
-    <value>tpUploadClipboard</value>
-  </data>
-  <data name="&gt;&gt;tpUploadClipboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpUploadClipboard.Parent" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tpUploadClipboard.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tcUpload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tcUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tcUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>565, 473</value>
-  </data>
-  <data name="tcUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tcUpload.Name" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tcUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcUpload.Parent" xml:space="preserve">
-    <value>tpUpload</value>
-  </data>
-  <data name="&gt;&gt;tcUpload.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultUploadSettings</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Parent" xml:space="preserve">
-    <value>tpUploadMain</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpUploadMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpUploadMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 447</value>
-  </data>
-  <data name="tpUploadMain.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tpUploadMain.Name" xml:space="preserve">
-    <value>tpUploadMain</value>
-  </data>
-  <data name="&gt;&gt;tpUploadMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpUploadMain.Parent" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tpUploadMain.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="chkUseDefaultUploadSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5918,177 +6296,6 @@
   </data>
   <data name="&gt;&gt;chkUseDefaultUploadSettings.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblAutoIncrementNumber.Name" xml:space="preserve">
-    <value>lblAutoIncrementNumber</value>
-  </data>
-  <data name="&gt;&gt;lblAutoIncrementNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAutoIncrementNumber.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;lblAutoIncrementNumber.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Name" xml:space="preserve">
-    <value>cbRegionCaptureUseWindowPattern</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbNameFormatCustomTimeZone.Name" xml:space="preserve">
-    <value>cbNameFormatCustomTimeZone</value>
-  </data>
-  <data name="&gt;&gt;cbNameFormatCustomTimeZone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbNameFormatCustomTimeZone.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;cbNameFormatCustomTimeZone.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.Name" xml:space="preserve">
-    <value>lblNameFormatPatternPreview</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Name" xml:space="preserve">
-    <value>lblNameFormatPatternActiveWindow</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Name" xml:space="preserve">
-    <value>lblNameFormatPatternPreviewActiveWindow</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cbNameFormatTimeZone.Name" xml:space="preserve">
-    <value>cbNameFormatTimeZone</value>
-  </data>
-  <data name="&gt;&gt;cbNameFormatTimeZone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbNameFormatTimeZone.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;cbNameFormatTimeZone.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Name" xml:space="preserve">
-    <value>txtNameFormatPatternActiveWindow</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;btnResetAutoIncrementNumber.Name" xml:space="preserve">
-    <value>btnResetAutoIncrementNumber</value>
-  </data>
-  <data name="&gt;&gt;btnResetAutoIncrementNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnResetAutoIncrementNumber.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;btnResetAutoIncrementNumber.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;cbFileUploadUseNamePattern.Name" xml:space="preserve">
-    <value>cbFileUploadUseNamePattern</value>
-  </data>
-  <data name="&gt;&gt;cbFileUploadUseNamePattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFileUploadUseNamePattern.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;cbFileUploadUseNamePattern.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPattern.Name" xml:space="preserve">
-    <value>lblNameFormatPattern</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPattern.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.Name" xml:space="preserve">
-    <value>txtNameFormatPattern</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="tpFileNaming.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpFileNaming.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpFileNaming.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 447</value>
-  </data>
-  <data name="tpFileNaming.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tpFileNaming.Text" xml:space="preserve">
-    <value>File naming</value>
-  </data>
-  <data name="&gt;&gt;tpFileNaming.Name" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;tpFileNaming.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpFileNaming.Parent" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tpFileNaming.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="lblAutoIncrementNumber.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6413,81 +6620,6 @@
   </data>
   <data name="&gt;&gt;txtNameFormatPattern.ZOrder" xml:space="preserve">
     <value>11</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadShareURL.Name" xml:space="preserve">
-    <value>cbClipboardUploadShareURL</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadShareURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadShareURL.Parent" xml:space="preserve">
-    <value>tpUploadClipboard</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadShareURL.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;chkClipboardUploadURLContents.Name" xml:space="preserve">
-    <value>chkClipboardUploadURLContents</value>
-  </data>
-  <data name="&gt;&gt;chkClipboardUploadURLContents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkClipboardUploadURLContents.Parent" xml:space="preserve">
-    <value>tpUploadClipboard</value>
-  </data>
-  <data name="&gt;&gt;chkClipboardUploadURLContents.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadAutoIndexFolder.Name" xml:space="preserve">
-    <value>cbClipboardUploadAutoIndexFolder</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadAutoIndexFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadAutoIndexFolder.Parent" xml:space="preserve">
-    <value>tpUploadClipboard</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadAutoIndexFolder.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadShortenURL.Name" xml:space="preserve">
-    <value>cbClipboardUploadShortenURL</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadShortenURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadShortenURL.Parent" xml:space="preserve">
-    <value>tpUploadClipboard</value>
-  </data>
-  <data name="&gt;&gt;cbClipboardUploadShortenURL.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tpUploadClipboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpUploadClipboard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 447</value>
-  </data>
-  <data name="tpUploadClipboard.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tpUploadClipboard.Text" xml:space="preserve">
-    <value>Clipboard upload</value>
-  </data>
-  <data name="&gt;&gt;tpUploadClipboard.Name" xml:space="preserve">
-    <value>tpUploadClipboard</value>
-  </data>
-  <data name="&gt;&gt;tpUploadClipboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpUploadClipboard.Parent" xml:space="preserve">
-    <value>tcUpload</value>
-  </data>
-  <data name="&gt;&gt;tpUploadClipboard.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="cbClipboardUploadShareURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6888,6 +7020,132 @@
   <data name="&gt;&gt;chkUseDefaultActions.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cbWatchFolderEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbWatchFolderEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 17</value>
+  </data>
+  <data name="cbWatchFolderEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>Watch folders and if new file created then upload it</value>
+  </data>
+  <data name="&gt;&gt;cbWatchFolderEnabled.Name" xml:space="preserve">
+    <value>cbWatchFolderEnabled</value>
+  </data>
+  <data name="&gt;&gt;cbWatchFolderEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbWatchFolderEnabled.Parent" xml:space="preserve">
+    <value>tpWatchFolders</value>
+  </data>
+  <data name="&gt;&gt;cbWatchFolderEnabled.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lvWatchFolderList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvWatchFolderList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 64</value>
+  </data>
+  <data name="lvWatchFolderList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 408</value>
+  </data>
+  <data name="lvWatchFolderList.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lvWatchFolderList.Name" xml:space="preserve">
+    <value>lvWatchFolderList</value>
+  </data>
+  <data name="&gt;&gt;lvWatchFolderList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvWatchFolderList.Parent" xml:space="preserve">
+    <value>tpWatchFolders</value>
+  </data>
+  <data name="&gt;&gt;lvWatchFolderList.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>Folder path</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Width" type="System.Int32, mscorlib">
+    <value>323</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="chWatchFolderFilter.Width" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Include subdirectories</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Width" type="System.Int32, mscorlib">
+    <value>124</value>
+  </data>
+  <data name="btnWatchFolderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnWatchFolderRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 32</value>
+  </data>
+  <data name="btnWatchFolderRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
+  </data>
+  <data name="btnWatchFolderRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;btnWatchFolderRemove.Name" xml:space="preserve">
+    <value>btnWatchFolderRemove</value>
+  </data>
+  <data name="&gt;&gt;btnWatchFolderRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnWatchFolderRemove.Parent" xml:space="preserve">
+    <value>tpWatchFolders</value>
+  </data>
+  <data name="&gt;&gt;btnWatchFolderRemove.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnWatchFolderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnWatchFolderAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 32</value>
+  </data>
+  <data name="btnWatchFolderAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
+  </data>
+  <data name="btnWatchFolderAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>Add...</value>
+  </data>
+  <data name="&gt;&gt;btnWatchFolderAdd.Name" xml:space="preserve">
+    <value>btnWatchFolderAdd</value>
+  </data>
+  <data name="&gt;&gt;btnWatchFolderAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnWatchFolderAdd.Parent" xml:space="preserve">
+    <value>tpWatchFolders</value>
+  </data>
+  <data name="&gt;&gt;btnWatchFolderAdd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;txtToolsScreenColorPickerFormat.Name" xml:space="preserve">
     <value>txtToolsScreenColorPickerFormat</value>
   </data>
@@ -7198,6 +7456,18 @@
     <value>chWatchFolderIncludeSubdirectories</value>
   </data>
   <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chUploaderFiltersName.Name" xml:space="preserve">
+    <value>chUploaderFiltersName</value>
+  </data>
+  <data name="&gt;&gt;chUploaderFiltersName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chUploaderFiltersExtension.Name" xml:space="preserve">
+    <value>chUploaderFiltersExtension</value>
+  </data>
+  <data name="&gt;&gt;chUploaderFiltersExtension.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

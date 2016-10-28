@@ -323,6 +323,19 @@ namespace ShareX
 
             #endregion Clipboard upload
 
+            #region Uploader filters
+
+            cbUploaderFiltersDestination.Items.AddRange(UploaderFactory.AllGenericUploaderServices.OrderBy(x => x.ServiceName).ToArray());
+
+            if (TaskSettings.UploadSettings.UploaderFilters == null) TaskSettings.UploadSettings.UploaderFilters = new List<UploaderFilter>();
+
+            foreach (UploaderFilter filter in TaskSettings.UploadSettings.UploaderFilters)
+            {
+                AddUploaderFilterToList(filter);
+            }
+
+            #endregion Uploader filters
+
             #endregion Upload
 
             #region Actions
@@ -1224,6 +1237,82 @@ namespace ShareX
         private void cbClipboardUploadAutoIndexFolder_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UploadSettings.ClipboardUploadAutoIndexFolder = cbClipboardUploadAutoIndexFolder.Checked;
+        }
+
+        private void AddUploaderFilterToList(UploaderFilter filter)
+        {
+            if (filter != null)
+            {
+                ListViewItem lvi = new ListViewItem(filter.Uploader);
+                lvi.SubItems.Add(filter.GetExtensions());
+                lvi.Tag = filter;
+
+                lvUploaderFiltersList.Items.Add(lvi);
+            }
+        }
+
+        private void UpdateUploaderFilterFields(UploaderFilter filter)
+        {
+            if (filter == null)
+            {
+                filter = new UploaderFilter();
+            }
+
+            for (int i = 0; i < cbUploaderFiltersDestination.Items.Count; i++)
+            {
+                if (cbUploaderFiltersDestination.Items[i].ToString().Equals(filter.Uploader, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    cbUploaderFiltersDestination.SelectedIndex = i;
+                    break;
+                }
+            }
+
+            txtUploaderFiltersExtensions.Text = filter.GetExtensions();
+        }
+
+        private void btnUploaderFiltersAdd_Click(object sender, EventArgs e)
+        {
+            IGenericUploaderService service = cbUploaderFiltersDestination.SelectedItem as IGenericUploaderService;
+
+            if (service != null)
+            {
+                UploaderFilter filter = new UploaderFilter();
+                filter.Uploader = service.ServiceIdentifier;
+                filter.SetExtensions(txtUploaderFiltersExtensions.Text);
+
+                TaskSettings.UploadSettings.UploaderFilters.Add(filter);
+
+                AddUploaderFilterToList(filter);
+
+                lvUploaderFiltersList.SelectedIndex = lvUploaderFiltersList.Items.Count - 1;
+            }
+        }
+
+        private void btnUploaderFiltersUpdate_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnUploaderFiltersRemove_Click(object sender, EventArgs e)
+        {
+            int index = lvUploaderFiltersList.SelectedIndex;
+
+            if (index > -1)
+            {
+                TaskSettings.UploadSettings.UploaderFilters.RemoveAt(index);
+                lvUploaderFiltersList.Items.RemoveAt(index);
+            }
+        }
+
+        private void lvUploaderFiltersList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UploaderFilter filter = null;
+
+            if (lvUploaderFiltersList.SelectedItems.Count > 0)
+            {
+                filter = lvUploaderFiltersList.SelectedItems[0].Tag as UploaderFilter;
+            }
+
+            UpdateUploaderFilterFields(filter);
         }
 
         #endregion Upload
