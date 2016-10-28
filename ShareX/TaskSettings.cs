@@ -366,6 +366,8 @@ namespace ShareX
         public bool ClipboardUploadAutoIndexFolder = false;
 
         #endregion Upload / Clipboard upload
+
+        public List<UploaderFilter> UploaderFilters = new List<UploaderFilter>();
     }
 
     public class TaskSettingsTools

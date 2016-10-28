@@ -25,29 +25,39 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Drawing;
-using System.Windows.Forms;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace ShareX.UploadersLib
 {
-    public abstract class UploaderService<T> : IUploaderService
+    public class UploaderFilter
     {
-        public abstract T EnumValue { get; }
+        public string Uploader { get; set; }
+        public List<string> Extensions { get; set; } = new List<string>();
+        //public long Size { get; set; }
 
-        // Unique identifier
-        public string ServiceIdentifier => EnumValue.ToString();
-
-        public string ServiceName => ((Enum)(object)EnumValue).GetDescription();
-
-        public virtual Icon ServiceIcon { get; }
-
-        public virtual Image ServiceImage { get; }
-
-        public abstract bool CheckConfig(UploadersConfig config);
-
-        public virtual TabPage GetUploadersConfigTabPage(UploadersConfigForm form)
+        public UploaderFilter(string uploader, params string[] extensions)
         {
-            return null;
+            Uploader = uploader;
+            Extensions = extensions.ToList();
+        }
+
+        public bool IsValidFilter(string filename, Stream stream)
+        {
+            string extension = Helpers.GetFilenameExtension(filename);
+
+            return !string.IsNullOrEmpty(extension) && Extensions.Any(x => x.TrimStart('.').Equals(extension, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        public IGenericUploaderService GetUploaderService()
+        {
+            return UploaderFactory.AllGenericUploaderServices.Where(x => x.ServiceIdentifier.Equals(Uploader, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+        }
+
+        public override string ToString()
+        {
+            return Uploader;
         }
     }
 }

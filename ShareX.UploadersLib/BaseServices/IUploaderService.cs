@@ -30,6 +30,8 @@ namespace ShareX.UploadersLib
 {
     public interface IUploaderService
     {
+        string ServiceIdentifier { get; }
+
         string ServiceName { get; }
 
         Icon ServiceIcon { get; }

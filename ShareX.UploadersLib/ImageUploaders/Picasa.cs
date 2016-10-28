@@ -206,28 +206,28 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             ur.Response = SendRequestStream(url, stream, contentType, headers);
 
-            if (ur.Response == null)
-                return ur;
-
-            XDocument xd = XDocument.Parse(ur.Response);
-
-            XElement entry_element = xd.Element(AtomNS + "entry");
-
-            if (entry_element != null)
+            if (ur.Response != null)
             {
-                XElement group_element = entry_element.Element(MediaNS + "group");
+                XDocument xd = XDocument.Parse(ur.Response);
 
-                if (group_element != null)
+                XElement entry_element = xd.Element(AtomNS + "entry");
+
+                if (entry_element != null)
                 {
-                    XElement content_element = group_element.Element(MediaNS + "content");
+                    XElement group_element = entry_element.Element(MediaNS + "group");
 
-                    if (content_element != null)
+                    if (group_element != null)
                     {
-                        ur.ThumbnailURL = content_element.GetAttributeValue("url");
+                        XElement content_element = group_element.Element(MediaNS + "content");
 
-                        int last_slash_index = ur.ThumbnailURL.LastIndexOf(@"/");
+                        if (content_element != null)
+                        {
+                            ur.ThumbnailURL = content_element.GetAttributeValue("url");
 
-                        ur.URL = ur.ThumbnailURL.Insert(last_slash_index, @"/s0");
+                            int last_slash_index = ur.ThumbnailURL.LastIndexOf(@"/");
+
+                            ur.URL = ur.ThumbnailURL.Insert(last_slash_index, @"/s0");
+                        }
                     }
                 }
             }

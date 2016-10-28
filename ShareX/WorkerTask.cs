@@ -467,17 +467,20 @@ namespace ShareX
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                switch (Info.UploadDestination)
+                if (!CheckUploadFilters(Data, Info.FileName))
                 {
-                    case EDataType.Image:
-                        Info.Result = UploadImage(Data, Info.FileName);
-                        break;
-                    case EDataType.Text:
-                        Info.Result = UploadText(Data, Info.FileName);
-                        break;
-                    case EDataType.File:
-                        Info.Result = UploadFile(Data, Info.FileName);
-                        break;
+                    switch (Info.UploadDestination)
+                    {
+                        case EDataType.Image:
+                            Info.Result = UploadImage(Data, Info.FileName);
+                            break;
+                        case EDataType.Text:
+                            Info.Result = UploadText(Data, Info.FileName);
+                            break;
+                        case EDataType.File:
+                            Info.Result = UploadFile(Data, Info.FileName);
+                            break;
+                    }
                 }
 
                 StopRequested |= taskReferenceHelper.StopRequested;
@@ -875,6 +878,28 @@ namespace ShareX
             }
 
             return null;
+        }
+
+        private bool CheckUploadFilters(Stream stream, string filename)
+        {
+            if (Info.TaskSettings.UploadSettings.UploaderFilters != null)
+            {
+                UploaderFilter filter = Info.TaskSettings.UploadSettings.UploaderFilters.FirstOrDefault(x => x.IsValidFilter(filename, stream));
+
+                if (filter != null)
+                {
+                    IGenericUploaderService service = filter.GetUploaderService();
+
+                    if (service != null)
+                    {
+                        Info.Result = UploadData(service, stream, filename);
+
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         public UploadResult UploadImage(Stream stream, string fileName)

@@ -252,6 +252,7 @@
     <Compile Include="TextUploaders\Hastebin.cs" />
     <Compile Include="TextUploaders\OneTimeSecret.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />
+    <Compile Include="UploaderFilter.cs" />
     <Compile Include="UploadersConfig.cs" />
     <Compile Include="Forms\UserPassBox.cs">
       <SubType>Form</SubType>
