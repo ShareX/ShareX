@@ -348,7 +348,7 @@ namespace ShareX
             {
                 tsmi.Font = new Font(tsmi.Font, FontStyle.Bold);
             }
-            tsmi.Click += (sender, e) => ExecuteJob(hotkeySetting.TaskSettings);
+            tsmi.Click += (sender, e) => TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
             return tsmi;
         }
 
@@ -721,7 +721,7 @@ namespace ShareX
             {
                 if (command.CheckCommand(job.ToString()))
                 {
-                    ExecuteJob(job, command);
+                    TaskHelpers.ExecuteJob(job, command);
                     return true;
                 }
             }
@@ -739,7 +739,7 @@ namespace ShareX
                     {
                         if (command.Parameter == hotkeySetting.TaskSettings.ToString())
                         {
-                            ExecuteJob(hotkeySetting.TaskSettings);
+                            TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
                             return true;
                         }
                     }
@@ -1387,7 +1387,7 @@ namespace ShareX
         private void timerTraySingleClick_Tick(object sender, EventArgs e)
         {
             timerTraySingleClick.Stop();
-            ExecuteJob(Program.Settings.TrayLeftClickAction);
+            TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
         }
 
         private void niTray_MouseClick(object sender, MouseEventArgs e)
@@ -1397,7 +1397,7 @@ namespace ShareX
                 case MouseButtons.Left:
                     if (Program.Settings.TrayLeftDoubleClickAction == HotkeyType.None)
                     {
-                        ExecuteJob(Program.Settings.TrayLeftClickAction);
+                        TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
                     }
                     else
                     {
@@ -1406,7 +1406,7 @@ namespace ShareX
                     }
                     break;
                 case MouseButtons.Middle:
-                    ExecuteJob(Program.Settings.TrayMiddleClickAction);
+                    TaskHelpers.ExecuteJob(Program.Settings.TrayMiddleClickAction);
                     break;
             }
         }
@@ -1416,7 +1416,7 @@ namespace ShareX
             if (e.Button == MouseButtons.Left)
             {
                 timerTraySingleClick.Stop();
-                ExecuteJob(Program.Settings.TrayLeftDoubleClickAction);
+                TaskHelpers.ExecuteJob(Program.Settings.TrayLeftDoubleClickAction);
             }
         }
 
@@ -1694,12 +1694,6 @@ namespace ShareX
 
         #region Hotkey/Capture codes and form events
 
-        private delegate Image ScreenCaptureDelegate();
-
-        private enum LastRegionCaptureType { Default, Light, Transparent }
-
-        private LastRegionCaptureType lastRegionCaptureType = LastRegionCaptureType.Default;
-
         private void InitHotkeys()
         {
             TaskEx.Run(() =>
@@ -1738,514 +1732,7 @@ namespace ShareX
         {
             DebugHelper.WriteLine("Hotkey triggered. " + hotkeySetting);
 
-            if (hotkeySetting.TaskSettings.Job != HotkeyType.None)
-            {
-                ExecuteJob(hotkeySetting.TaskSettings);
-            }
-        }
-
-        private void ExecuteJob(HotkeyType job, CLICommand command = null)
-        {
-            ExecuteJob(Program.DefaultTaskSettings, job, command);
-        }
-
-        private void ExecuteJob(TaskSettings taskSettings)
-        {
-            ExecuteJob(taskSettings, taskSettings.Job);
-        }
-
-        private void ExecuteJob(TaskSettings taskSettings, HotkeyType job, CLICommand command = null)
-        {
-            DebugHelper.WriteLine("Executing: " + job.GetLocalizedDescription());
-
-            TaskSettings safeTaskSettings = TaskSettings.GetSafeTaskSettings(taskSettings);
-
-            switch (job)
-            {
-                // Upload
-                case HotkeyType.FileUpload:
-                    UploadManager.UploadFile(safeTaskSettings);
-                    break;
-                case HotkeyType.FolderUpload:
-                    UploadManager.UploadFolder(safeTaskSettings);
-                    break;
-                case HotkeyType.ClipboardUpload:
-                    UploadManager.ClipboardUpload(safeTaskSettings);
-                    break;
-                case HotkeyType.ClipboardUploadWithContentViewer:
-                    UploadManager.ClipboardUploadWithContentViewer(safeTaskSettings);
-                    break;
-                case HotkeyType.UploadURL:
-                    UploadManager.UploadURL(safeTaskSettings);
-                    break;
-                case HotkeyType.DragDropUpload:
-                    TaskHelpers.OpenDropWindow(safeTaskSettings);
-                    break;
-                case HotkeyType.StopUploads:
-                    TaskManager.StopAllTasks();
-                    break;
-                // Screen capture
-                case HotkeyType.PrintScreen:
-                    CaptureScreenshot(CaptureType.Fullscreen, safeTaskSettings, false);
-                    break;
-                case HotkeyType.ActiveWindow:
-                    CaptureScreenshot(CaptureType.ActiveWindow, safeTaskSettings, false);
-                    break;
-                case HotkeyType.ActiveMonitor:
-                    CaptureScreenshot(CaptureType.ActiveMonitor, safeTaskSettings, false);
-                    break;
-                case HotkeyType.RectangleRegion:
-                    CaptureScreenshot(CaptureType.Region, safeTaskSettings, false);
-                    break;
-                case HotkeyType.RectangleLight:
-                    CaptureRectangleLight(safeTaskSettings, false);
-                    break;
-                case HotkeyType.RectangleTransparent:
-                    CaptureRectangleTransparent(safeTaskSettings, false);
-                    break;
-                case HotkeyType.CustomRegion:
-                    CaptureScreenshot(CaptureType.CustomRegion, safeTaskSettings, false);
-                    break;
-                case HotkeyType.LastRegion:
-                    CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
-                    break;
-                case HotkeyType.ScrollingCapture:
-                    TaskHelpers.OpenScrollingCapture(safeTaskSettings, true);
-                    break;
-                case HotkeyType.CaptureWebpage:
-                    TaskHelpers.OpenWebpageCapture(safeTaskSettings);
-                    break;
-                case HotkeyType.TextCapture:
-                    TaskHelpers.OpenOCR(safeTaskSettings);
-                    break;
-                case HotkeyType.AutoCapture:
-                    TaskHelpers.OpenAutoCapture();
-                    break;
-                case HotkeyType.StartAutoCapture:
-                    TaskHelpers.StartAutoCapture();
-                    break;
-                // Screen record
-                case HotkeyType.ScreenRecorder:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region, safeTaskSettings);
-                    break;
-                case HotkeyType.ScreenRecorderActiveWindow:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.ActiveWindow, safeTaskSettings);
-                    break;
-                case HotkeyType.ScreenRecorderCustomRegion:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.CustomRegion, safeTaskSettings);
-                    break;
-                case HotkeyType.StartScreenRecorder:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
-                    break;
-                case HotkeyType.ScreenRecorderGIF:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region, safeTaskSettings);
-                    break;
-                case HotkeyType.ScreenRecorderGIFActiveWindow:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.ActiveWindow, safeTaskSettings);
-                    break;
-                case HotkeyType.ScreenRecorderGIFCustomRegion:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.CustomRegion, safeTaskSettings);
-                    break;
-                case HotkeyType.StartScreenRecorderGIF:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
-                    break;
-                case HotkeyType.AbortScreenRecording:
-                    TaskHelpers.AbortScreenRecording();
-                    break;
-                // Tools
-                case HotkeyType.ColorPicker:
-                    TaskHelpers.OpenColorPicker();
-                    break;
-                case HotkeyType.ScreenColorPicker:
-                    TaskHelpers.OpenScreenColorPicker(safeTaskSettings);
-                    break;
-                case HotkeyType.ImageEditor:
-                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
-                    {
-                        TaskHelpers.AnnotateImage(command.Parameter, safeTaskSettings);
-                    }
-                    else
-                    {
-                        TaskHelpers.AnnotateImage(safeTaskSettings);
-                    }
-                    break;
-                case HotkeyType.ImageEffects:
-                    TaskHelpers.OpenImageEffects();
-                    break;
-                case HotkeyType.HashCheck:
-                    TaskHelpers.OpenHashCheck();
-                    break;
-                case HotkeyType.DNSChanger:
-                    TaskHelpers.OpenDNSChanger();
-                    break;
-                case HotkeyType.QRCode:
-                    TaskHelpers.OpenQRCode();
-                    break;
-                case HotkeyType.Ruler:
-                    TaskHelpers.OpenRuler(safeTaskSettings);
-                    break;
-                case HotkeyType.Automate:
-                    TaskHelpers.StartAutomate();
-                    break;
-                case HotkeyType.IndexFolder:
-                    UploadManager.IndexFolder();
-                    break;
-                case HotkeyType.ImageCombiner:
-                    TaskHelpers.OpenImageCombiner(safeTaskSettings);
-                    break;
-                case HotkeyType.VideoThumbnailer:
-                    TaskHelpers.OpenVideoThumbnailer(safeTaskSettings);
-                    break;
-                case HotkeyType.FTPClient:
-                    TaskHelpers.OpenFTPClient();
-                    break;
-                case HotkeyType.TweetMessage:
-                    TaskHelpers.TweetMessage();
-                    break;
-                case HotkeyType.MonitorTest:
-                    TaskHelpers.OpenMonitorTest();
-                    break;
-                // Other
-                case HotkeyType.DisableHotkeys:
-                    TaskHelpers.ToggleHotkeys();
-                    break;
-                case HotkeyType.OpenMainWindow:
-                    this.ForceActivate();
-                    break;
-                case HotkeyType.OpenScreenshotsFolder:
-                    TaskHelpers.OpenScreenshotsFolder();
-                    break;
-                case HotkeyType.OpenHistory:
-                    TaskHelpers.OpenHistory();
-                    break;
-                case HotkeyType.OpenImageHistory:
-                    TaskHelpers.OpenImageHistory();
-                    break;
-            }
-        }
-
-        public void CaptureScreenshot(CaptureType captureType, TaskSettings taskSettings = null, bool autoHideForm = true)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            switch (captureType)
-            {
-                case CaptureType.Fullscreen:
-                    DoCapture(TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen, CaptureType.Fullscreen, taskSettings, autoHideForm);
-                    break;
-                case CaptureType.ActiveWindow:
-                    CaptureActiveWindow(taskSettings, autoHideForm);
-                    break;
-                case CaptureType.ActiveMonitor:
-                    DoCapture(TaskHelpers.GetScreenshot(taskSettings).CaptureActiveMonitor, CaptureType.ActiveMonitor, taskSettings, autoHideForm);
-                    break;
-                case CaptureType.Region:
-                    CaptureRegion(taskSettings, autoHideForm);
-                    break;
-                case CaptureType.CustomRegion:
-                    CaptureCustomRegion(taskSettings, autoHideForm);
-                    break;
-                case CaptureType.LastRegion:
-                    CaptureLastRegion(taskSettings, autoHideForm);
-                    break;
-            }
-        }
-
-        private void DoCapture(ScreenCaptureDelegate capture, CaptureType captureType, TaskSettings taskSettings = null, bool autoHideForm = true)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (taskSettings.CaptureSettings.IsDelayScreenshot && taskSettings.CaptureSettings.DelayScreenshot > 0)
-            {
-                TaskEx.Run(() =>
-                {
-                    int sleep = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
-                    Thread.Sleep(sleep);
-                },
-                () =>
-                {
-                    DoCaptureWork(capture, captureType, taskSettings, autoHideForm);
-                });
-            }
-            else
-            {
-                DoCaptureWork(capture, captureType, taskSettings, autoHideForm);
-            }
-        }
-
-        private void DoCaptureWork(ScreenCaptureDelegate capture, CaptureType captureType, TaskSettings taskSettings, bool autoHideForm = true)
-        {
-            if (autoHideForm)
-            {
-                Hide();
-                Thread.Sleep(250);
-            }
-
-            Image img = null;
-
-            try
-            {
-                img = capture();
-            }
-            catch (Exception ex)
-            {
-                DebugHelper.WriteException(ex);
-            }
-            finally
-            {
-                if (autoHideForm)
-                {
-                    this.ForceActivate();
-                }
-
-                AfterCapture(img, captureType, taskSettings);
-            }
-        }
-
-        private void AfterCapture(Image img, CaptureType captureType, TaskSettings taskSettings)
-        {
-            if (img != null)
-            {
-                if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
-                {
-                    TaskHelpers.PlayCaptureSound(taskSettings);
-                }
-
-                if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture && !IsRegionCapture(captureType))
-                {
-                    taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
-                }
-
-                UploadManager.RunImageTask(img, taskSettings);
-            }
-        }
-
-        private bool IsRegionCapture(CaptureType captureType)
-        {
-            return captureType.HasFlagAny(CaptureType.Region, CaptureType.LastRegion);
-        }
-
-        private void CaptureActiveWindow(TaskSettings taskSettings, bool autoHideForm = true)
-        {
-            DoCapture(() =>
-            {
-                Image img;
-                string activeWindowTitle = NativeMethods.GetForegroundWindowText();
-                string activeProcessName = null;
-
-                using (Process process = NativeMethods.GetForegroundWindowProcess())
-                {
-                    if (process != null)
-                    {
-                        activeProcessName = process.ProcessName;
-                    }
-                }
-
-                if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
-                {
-                    img = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparent();
-                }
-                else
-                {
-                    img = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
-                }
-
-                img.Tag = new ImageTag
-                {
-                    WindowTitle = activeWindowTitle,
-                    ProcessName = activeProcessName
-                };
-
-                return img;
-            }, CaptureType.ActiveWindow, taskSettings, autoHideForm);
-        }
-
-        private void CaptureCustomRegion(TaskSettings taskSettings, bool autoHideForm)
-        {
-            DoCapture(() =>
-            {
-                Rectangle regionBounds = taskSettings.CaptureSettings.CaptureCustomRegion;
-                Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(regionBounds);
-
-                return img;
-            }, CaptureType.CustomRegion, taskSettings, autoHideForm);
-        }
-
-        private void CaptureWindow(IntPtr handle, TaskSettings taskSettings = null, bool autoHideForm = true)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            autoHideForm = autoHideForm && handle != Handle;
-
-            DoCapture(() =>
-            {
-                if (NativeMethods.IsIconic(handle))
-                {
-                    NativeMethods.RestoreWindow(handle);
-                }
-
-                NativeMethods.SetForegroundWindow(handle);
-                Thread.Sleep(250);
-
-                if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
-                {
-                    return TaskHelpers.GetScreenshot(taskSettings).CaptureWindowTransparent(handle);
-                }
-
-                return TaskHelpers.GetScreenshot(taskSettings).CaptureWindow(handle);
-            }, CaptureType.Window, taskSettings, autoHideForm);
-        }
-
-        private void CaptureRegion(TaskSettings taskSettings, bool autoHideForm = true)
-        {
-            RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Annotation);
-
-            DoCapture(() =>
-            {
-                Image img = null;
-
-                try
-                {
-                    form.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
-                    form.Prepare(TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen());
-                    form.ShowDialog();
-
-                    img = form.GetResultImage();
-
-                    if (img != null)
-                    {
-                        if (form.Result == RegionResult.Region && taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
-                        {
-                            WindowInfo windowInfo = form.GetWindowInfo();
-
-                            if (windowInfo != null)
-                            {
-                                img.Tag = new ImageTag
-                                {
-                                    WindowTitle = windowInfo.Text,
-                                    ProcessName = windowInfo.ProcessName
-                                };
-                            }
-                        }
-
-                        lastRegionCaptureType = LastRegionCaptureType.Default;
-                    }
-                }
-                finally
-                {
-                    if (form != null)
-                    {
-                        form.Dispose();
-                    }
-                }
-
-                return img;
-            }, CaptureType.Region, taskSettings, autoHideForm);
-        }
-
-        private void CaptureRectangleLight(TaskSettings taskSettings = null, bool autoHideForm = true)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            DoCapture(() =>
-            {
-                Image img = null;
-
-                using (RegionCaptureLightForm rectangleLight = new RegionCaptureLightForm(TaskHelpers.GetScreenshot(taskSettings)))
-                {
-                    if (rectangleLight.ShowDialog() == DialogResult.OK)
-                    {
-                        img = rectangleLight.GetAreaImage();
-
-                        if (img != null)
-                        {
-                            lastRegionCaptureType = LastRegionCaptureType.Light;
-                        }
-                    }
-                }
-
-                return img;
-            }, CaptureType.Region, taskSettings, autoHideForm);
-        }
-
-        private void CaptureRectangleTransparent(TaskSettings taskSettings = null, bool autoHideForm = true)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            DoCapture(() =>
-            {
-                Image img = null;
-
-                using (RegionCaptureTransparentForm rectangleTransparent = new RegionCaptureTransparentForm())
-                {
-                    if (rectangleTransparent.ShowDialog() == DialogResult.OK)
-                    {
-                        img = rectangleTransparent.GetAreaImage(TaskHelpers.GetScreenshot(taskSettings));
-
-                        if (img != null)
-                        {
-                            lastRegionCaptureType = LastRegionCaptureType.Transparent;
-                        }
-                    }
-                }
-
-                return img;
-            }, CaptureType.Region, taskSettings, autoHideForm);
-        }
-
-        private void CaptureLastRegion(TaskSettings taskSettings, bool autoHideForm = true)
-        {
-            switch (lastRegionCaptureType)
-            {
-                case LastRegionCaptureType.Default:
-                    if (RegionCaptureForm.LastRegionFillPath != null)
-                    {
-                        DoCapture(() =>
-                        {
-                            using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                            {
-                                return RegionCaptureTasks.ApplyRegionPathToImage(screenshot, RegionCaptureForm.LastRegionFillPath);
-                            }
-                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                    }
-                    else
-                    {
-                        CaptureRegion(taskSettings, autoHideForm);
-                    }
-                    break;
-                case LastRegionCaptureType.Light:
-                    if (!RegionCaptureLightForm.LastSelectionRectangle0Based.IsEmpty)
-                    {
-                        DoCapture(() =>
-                        {
-                            using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                            {
-                                return ImageHelpers.CropImage(screenshot, RegionCaptureLightForm.LastSelectionRectangle0Based);
-                            }
-                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                    }
-                    else
-                    {
-                        CaptureRectangleLight(taskSettings, autoHideForm);
-                    }
-                    break;
-                case LastRegionCaptureType.Transparent:
-                    if (!RegionCaptureTransparentForm.LastSelectionRectangle0Based.IsEmpty)
-                    {
-                        DoCapture(() =>
-                        {
-                            using (Image screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                            {
-                                return ImageHelpers.CropImage(screenshot, RegionCaptureTransparentForm.LastSelectionRectangle0Based);
-                            }
-                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                    }
-                    else
-                    {
-                        CaptureRectangleTransparent(taskSettings, autoHideForm);
-                    }
-                    break;
-            }
+            TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
         }
 
         private void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
@@ -2309,7 +1796,7 @@ namespace ShareX
 
         private void tsmiFullscreen_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.Fullscreen);
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Fullscreen);
         }
 
         private void tsddbCapture_DropDownOpening(object sender, EventArgs e)
@@ -2323,7 +1810,7 @@ namespace ShareX
             WindowInfo wi = tsi.Tag as WindowInfo;
             if (wi != null)
             {
-                CaptureWindow(wi.Handle);
+                CaptureTaskHelpers.CaptureWindow(wi.Handle);
             }
         }
 
@@ -2333,28 +1820,28 @@ namespace ShareX
             Rectangle rectangle = (Rectangle)tsi.Tag;
             if (!rectangle.IsEmpty)
             {
-                DoCapture(() => TaskHelpers.GetScreenshot().CaptureRectangle(rectangle), CaptureType.Monitor);
+                CaptureTaskHelpers.DoCapture(() => TaskHelpers.GetScreenshot().CaptureRectangle(rectangle), CaptureType.Monitor);
             }
         }
 
         private void tsmiRectangle_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.Region);
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Region);
         }
 
         private void tsmiRectangleLight_Click(object sender, EventArgs e)
         {
-            CaptureRectangleLight();
+            CaptureTaskHelpers.CaptureRectangleLight();
         }
 
         private void tsmiRectangleTransparent_Click(object sender, EventArgs e)
         {
-            CaptureRectangleTransparent();
+            CaptureTaskHelpers.CaptureRectangleTransparent();
         }
 
         private void tsmiLastRegion_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.LastRegion);
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.LastRegion);
         }
 
         #endregion Menu events
@@ -2372,7 +1859,7 @@ namespace ShareX
 
         private void tsmiTrayFullscreen_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.Fullscreen, null, false);
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Fullscreen, null, false);
         }
 
         private void tsmiCapture_DropDownOpening(object sender, EventArgs e)
@@ -2386,7 +1873,7 @@ namespace ShareX
             WindowInfo wi = tsi.Tag as WindowInfo;
             if (wi != null)
             {
-                CaptureWindow(wi.Handle, null, false);
+                CaptureTaskHelpers.CaptureWindow(wi.Handle, null, false);
             }
         }
 
@@ -2396,18 +1883,18 @@ namespace ShareX
             Rectangle rectangle = (Rectangle)tsi.Tag;
             if (!rectangle.IsEmpty)
             {
-                DoCapture(() => TaskHelpers.GetScreenshot().CaptureRectangle(rectangle), CaptureType.Monitor, null, false);
+                CaptureTaskHelpers.DoCapture(() => TaskHelpers.GetScreenshot().CaptureRectangle(rectangle), CaptureType.Monitor, null, false);
             }
         }
 
         private void tsmiTrayRectangle_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.Region, null, false);
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Region, null, false);
         }
 
         private void tsmiTrayRectangleLight_Click(object sender, EventArgs e)
         {
-            CaptureRectangleLight(null, false);
+            CaptureTaskHelpers.CaptureRectangleLight(null, false);
         }
 
         private void lvUploads_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
@@ -2428,12 +1915,12 @@ namespace ShareX
 
         private void tsmiTrayRectangleTransparent_Click(object sender, EventArgs e)
         {
-            CaptureRectangleTransparent(null, false);
+            CaptureTaskHelpers.CaptureRectangleTransparent(null, false);
         }
 
         private void tsmiTrayLastRegion_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.LastRegion, null, false);
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.LastRegion, null, false);
         }
 
         private void tsmiTrayTextCapture_Click(object sender, EventArgs e)

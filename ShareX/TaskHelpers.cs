@@ -38,7 +38,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Speech.Synthesis;
 using System.Windows.Forms;
 
@@ -46,6 +45,188 @@ namespace ShareX
 {
     public static class TaskHelpers
     {
+        public static void ExecuteJob(HotkeyType job, CLICommand command = null)
+        {
+            ExecuteJob(Program.DefaultTaskSettings, job, command);
+        }
+
+        public static void ExecuteJob(TaskSettings taskSettings)
+        {
+            ExecuteJob(taskSettings, taskSettings.Job);
+        }
+
+        public static void ExecuteJob(TaskSettings taskSettings, HotkeyType job, CLICommand command = null)
+        {
+            if (job == HotkeyType.None) return;
+
+            DebugHelper.WriteLine("Executing: " + job.GetLocalizedDescription());
+
+            TaskSettings safeTaskSettings = TaskSettings.GetSafeTaskSettings(taskSettings);
+
+            switch (job)
+            {
+                // Upload
+                case HotkeyType.FileUpload:
+                    UploadManager.UploadFile(safeTaskSettings);
+                    break;
+                case HotkeyType.FolderUpload:
+                    UploadManager.UploadFolder(safeTaskSettings);
+                    break;
+                case HotkeyType.ClipboardUpload:
+                    UploadManager.ClipboardUpload(safeTaskSettings);
+                    break;
+                case HotkeyType.ClipboardUploadWithContentViewer:
+                    UploadManager.ClipboardUploadWithContentViewer(safeTaskSettings);
+                    break;
+                case HotkeyType.UploadURL:
+                    UploadManager.UploadURL(safeTaskSettings);
+                    break;
+                case HotkeyType.DragDropUpload:
+                    OpenDropWindow(safeTaskSettings);
+                    break;
+                case HotkeyType.StopUploads:
+                    TaskManager.StopAllTasks();
+                    break;
+                // Screen capture
+                case HotkeyType.PrintScreen:
+                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.Fullscreen, safeTaskSettings, false);
+                    break;
+                case HotkeyType.ActiveWindow:
+                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.ActiveWindow, safeTaskSettings, false);
+                    break;
+                case HotkeyType.ActiveMonitor:
+                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.ActiveMonitor, safeTaskSettings, false);
+                    break;
+                case HotkeyType.RectangleRegion:
+                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.Region, safeTaskSettings, false);
+                    break;
+                case HotkeyType.RectangleLight:
+                    CaptureTaskHelpers.CaptureRectangleLight(safeTaskSettings, false);
+                    break;
+                case HotkeyType.RectangleTransparent:
+                    CaptureTaskHelpers.CaptureRectangleTransparent(safeTaskSettings, false);
+                    break;
+                case HotkeyType.CustomRegion:
+                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.CustomRegion, safeTaskSettings, false);
+                    break;
+                case HotkeyType.LastRegion:
+                    CaptureTaskHelpers.CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
+                    break;
+                case HotkeyType.ScrollingCapture:
+                    OpenScrollingCapture(safeTaskSettings, true);
+                    break;
+                case HotkeyType.CaptureWebpage:
+                    OpenWebpageCapture(safeTaskSettings);
+                    break;
+                case HotkeyType.TextCapture:
+                    OpenOCR(safeTaskSettings);
+                    break;
+                case HotkeyType.AutoCapture:
+                    OpenAutoCapture();
+                    break;
+                case HotkeyType.StartAutoCapture:
+                    StartAutoCapture();
+                    break;
+                // Screen record
+                case HotkeyType.ScreenRecorder:
+                    StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region, safeTaskSettings);
+                    break;
+                case HotkeyType.ScreenRecorderActiveWindow:
+                    StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.ActiveWindow, safeTaskSettings);
+                    break;
+                case HotkeyType.ScreenRecorderCustomRegion:
+                    StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.CustomRegion, safeTaskSettings);
+                    break;
+                case HotkeyType.StartScreenRecorder:
+                    StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
+                    break;
+                case HotkeyType.ScreenRecorderGIF:
+                    StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region, safeTaskSettings);
+                    break;
+                case HotkeyType.ScreenRecorderGIFActiveWindow:
+                    StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.ActiveWindow, safeTaskSettings);
+                    break;
+                case HotkeyType.ScreenRecorderGIFCustomRegion:
+                    StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.CustomRegion, safeTaskSettings);
+                    break;
+                case HotkeyType.StartScreenRecorderGIF:
+                    StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
+                    break;
+                case HotkeyType.AbortScreenRecording:
+                    AbortScreenRecording();
+                    break;
+                // Tools
+                case HotkeyType.ColorPicker:
+                    OpenColorPicker();
+                    break;
+                case HotkeyType.ScreenColorPicker:
+                    OpenScreenColorPicker(safeTaskSettings);
+                    break;
+                case HotkeyType.ImageEditor:
+                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    {
+                        AnnotateImage(command.Parameter, safeTaskSettings);
+                    }
+                    else
+                    {
+                        AnnotateImage(safeTaskSettings);
+                    }
+                    break;
+                case HotkeyType.ImageEffects:
+                    OpenImageEffects();
+                    break;
+                case HotkeyType.HashCheck:
+                    OpenHashCheck();
+                    break;
+                case HotkeyType.DNSChanger:
+                    OpenDNSChanger();
+                    break;
+                case HotkeyType.QRCode:
+                    OpenQRCode();
+                    break;
+                case HotkeyType.Ruler:
+                    OpenRuler(safeTaskSettings);
+                    break;
+                case HotkeyType.Automate:
+                    StartAutomate();
+                    break;
+                case HotkeyType.IndexFolder:
+                    UploadManager.IndexFolder();
+                    break;
+                case HotkeyType.ImageCombiner:
+                    OpenImageCombiner(safeTaskSettings);
+                    break;
+                case HotkeyType.VideoThumbnailer:
+                    OpenVideoThumbnailer(safeTaskSettings);
+                    break;
+                case HotkeyType.FTPClient:
+                    OpenFTPClient();
+                    break;
+                case HotkeyType.TweetMessage:
+                    TweetMessage();
+                    break;
+                case HotkeyType.MonitorTest:
+                    OpenMonitorTest();
+                    break;
+                // Other
+                case HotkeyType.DisableHotkeys:
+                    ToggleHotkeys();
+                    break;
+                case HotkeyType.OpenMainWindow:
+                    Program.MainForm.ForceActivate();
+                    break;
+                case HotkeyType.OpenScreenshotsFolder:
+                    OpenScreenshotsFolder();
+                    break;
+                case HotkeyType.OpenHistory:
+                    OpenHistory();
+                    break;
+                case HotkeyType.OpenImageHistory:
+                    OpenImageHistory();
+                    break;
+            }
+        }
+
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
         {
             ImageData imageData = new ImageData();

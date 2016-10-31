@@ -102,6 +102,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaptureTaskHelpers.cs" />
     <Compile Include="Controls\BeforeUploadControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
