@@ -674,16 +674,12 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection);
-
-                if (IsAnnotationMode)
-                {
-                    sb.AppendLine(Resources.RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu);
-                }
+                sb.AppendLine("[Right click] Cancel capture / remove region");
             }
 
             sb.AppendLine(Resources.RectangleRegion_WriteTips__Esc__Cancel_capture);
 
-            if (!Config.QuickCrop && ShapeManager.Regions.Length > 0)
+            if (!ShapeManager.IsCreating && !Config.QuickCrop && ShapeManager.Regions.Length > 0)
             {
                 sb.AppendLine(Resources.RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions);
             }

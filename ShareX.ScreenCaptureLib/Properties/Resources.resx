@@ -152,7 +152,7 @@ X: {4} Y: {5}</value>
     <value>[Hold Shift] Proportional resizing</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
-    <value>[Space] [Mouse 5 click] Fullscreen capture</value>
+    <value>[Space] [Mouse X1 click] Fullscreen capture</value>
   </data>
   <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
     <value>[Ctrl + Mouse wheel] Change pen size</value>
@@ -161,7 +161,7 @@ X: {4} Y: {5}</value>
     <value>Capture</value>
   </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] Active monitor capture</value>
+    <value>[~] [Mouse X2 click] Active monitor capture</value>
   </data>
   <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
     <value>[Ctrl + C] Copy position and size</value>
@@ -176,7 +176,7 @@ X: {4} Y: {5}</value>
     <value>..\Resources\edit-vertical-alignment-top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
-    <value>[F1] Hide tips</value>
+    <value>[F1] Hide hotkeys</value>
   </data>
   <data name="edit_alignment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,7 +313,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>Region capture</value>
   </data>
   <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
-    <value>[Middle click] [Esc] Cancel capture</value>
+    <value>[Esc] Cancel capture</value>
   </data>
   <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg error</value>
@@ -333,9 +333,6 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="counter_reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\counter-reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu" xml:space="preserve">
-    <value>[Right click] [Menu] Open options menu</value>
-  </data>
   <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
     <value>[Hold Ctrl + Arrow keys] Move region</value>
   </data>
@@ -352,16 +349,13 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>[Ctrl + Mouse wheel] Change current tool</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
-    <value>[Tab] [Mouse 4 click] Select last annotation tool</value>
+    <value>[Tab] [Mouse middle click] Select last annotation tool</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool" xml:space="preserve">
-    <value>[Tab] [Mouse 4 click] Select last region tool</value>
+    <value>[Tab] [Mouse middle click] Select last region tool</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
     <value>[Mouse wheel] Change magnifier size</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
-    <value>Close menu</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
     <value>Delete all objects</value>
@@ -403,7 +397,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>Multi region mode</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
-    <value>Show tips</value>
+    <value>Show hotkeys</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
     <value>Show position and size info</value>

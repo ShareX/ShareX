@@ -862,9 +862,6 @@
   <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
     <value>Другие</value>
   </data>
-  <data name="RegionCaptureAction_OpenOptionsMenu" xml:space="preserve">
-    <value>Открыть меню опций</value>
-  </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
     <value>Отменить захват</value>
   </data>

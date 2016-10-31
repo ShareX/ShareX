@@ -1853,15 +1853,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open options menu.
-        /// </summary>
-        internal static string RegionCaptureAction_OpenOptionsMenu {
-            get {
-                return ResourceManager.GetString("RegionCaptureAction_OpenOptionsMenu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Remove shape.
         /// </summary>
         internal static string RegionCaptureAction_RemoveShape {

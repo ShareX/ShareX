@@ -162,7 +162,7 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
     <value>[Çift sol tık] [Enter] Seçili alanları yakala</value>
   </data>
   <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
-    <value>[Orta tık] [Esc] Yakalamayı iptal et</value>
+    <value>[Esc] Yakalamayı iptal et</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>FFmpeg indirme hatası.</value>
@@ -171,7 +171,7 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
     <value>[Yön tuşları] İmleci hareket ettir</value>
   </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] Aktif monitörü yakala</value>
+    <value>[~] [Fare X2 tık] Aktif monitörü yakala</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
     <value>[Shift basılı tut] Orantısal boyutlandırma</value>
@@ -228,7 +228,7 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
     <value>[Delete] Alanı sil</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
-    <value>[Space] [Fare 5 tık] Tam ekran yakala</value>
+    <value>[Space] [Fare X1 tık] Tam ekran yakala</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
     <value>[Alt basılı tut] Seçimi önceden ayarlı boyutlara hizala</value>

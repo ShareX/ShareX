@@ -226,7 +226,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (form.IsAnnotationMode)
             {
-                CreateMenu();
+                CreateToolbar();
             }
         }
 

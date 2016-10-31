@@ -251,9 +251,6 @@
   <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
     <value>Высота:</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
-    <value>Закрыть меню</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
     <value>Цвет рамки...</value>
   </data>
@@ -271,9 +268,6 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
     <value>Опции</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu" xml:space="preserve">
-    <value>[ПКМ] [Меню] Открыть меню опций</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>Квадратная лупа</value>

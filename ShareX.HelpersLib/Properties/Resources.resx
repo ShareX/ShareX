@@ -896,9 +896,6 @@ Would you like to download it?</value>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Do nothing</value>
   </data>
-  <data name="RegionCaptureAction_OpenOptionsMenu" xml:space="preserve">
-    <value>Open options menu</value>
-  </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Remove shape</value>
   </data>

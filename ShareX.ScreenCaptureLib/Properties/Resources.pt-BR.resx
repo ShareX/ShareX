@@ -327,9 +327,6 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Delete_all_objects" xml:space="preserve">
     <value>Deletar todos os objetos</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_Close_menu" xml:space="preserve">
-    <value>Fechar menu</value>
-  </data>
   <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
     <value>[Scroll] Alterar tamanho da lupa</value>
   </data>
@@ -341,8 +338,5 @@ Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
     <value>[Segurar Shift + Setas] Mover cursor mais rápido</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu" xml:space="preserve">
-    <value>[Botão Direito] [Menu] Abrir opções</value>
   </data>
 </root>

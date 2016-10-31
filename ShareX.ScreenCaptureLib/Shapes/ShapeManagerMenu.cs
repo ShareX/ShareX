@@ -46,7 +46,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudBlurRadius, tslnudPixelateSize;
         private ToolStripLabel tslDragLeft;
 
-        private void CreateMenu()
+        private void CreateToolbar()
         {
             menuForm = new Form()
             {

@@ -859,9 +859,6 @@
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>什么都不做</value>
   </data>
-  <data name="RegionCaptureAction_OpenOptionsMenu" xml:space="preserve">
-    <value>打开选项菜单</value>
-  </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>删除形状</value>
   </data>

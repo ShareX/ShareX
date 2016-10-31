@@ -889,9 +889,6 @@ Gostaria de baixá-la?</value>
   <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
     <value>Região: Retângulo arredondado</value>
   </data>
-  <data name="RegionCaptureAction_OpenOptionsMenu" xml:space="preserve">
-    <value>Abrir menu de opções</value>
-  </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Remover forma</value>
   </data>

@@ -666,7 +666,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [~] Active monitor capture.
+        ///   Looks up a localized string similar to [~] [Mouse X2 click] Active monitor capture.
         /// </summary>
         internal static string RectangleRegion_WriteTips_____Active_monitor_capture {
             get {
@@ -729,7 +729,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Middle click] [Esc] Cancel capture.
+        ///   Looks up a localized string similar to [Esc] Cancel capture.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Esc__Cancel_capture {
             get {
@@ -738,7 +738,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [F1] Hide tips.
+        ///   Looks up a localized string similar to [F1] Hide hotkeys.
         /// </summary>
         internal static string RectangleRegion_WriteTips__F1__Hide_tips {
             get {
@@ -810,7 +810,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Space] [Mouse 5 click] Fullscreen capture.
+        ///   Looks up a localized string similar to [Space] [Mouse X1 click] Fullscreen capture.
         /// </summary>
         internal static string RectangleRegion_WriteTips__Space__Fullscreen_capture {
             get {
@@ -875,16 +875,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Right click] [Menu] Open options menu.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Right_click___Menu__Open_options_menu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Tab] [Mouse 4 click] Select last annotation tool.
+        ///   Looks up a localized string similar to [Tab] [Mouse middle click] Select last annotation tool.
         /// </summary>
         internal static string RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool {
             get {
@@ -893,7 +884,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Tab] [Mouse 4 click] Select last region tool.
+        ///   Looks up a localized string similar to [Tab] [Mouse middle click] Select last region tool.
         /// </summary>
         internal static string RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool {
             get {
@@ -979,15 +970,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateContextMenu_Capture_monitor {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture_monitor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Close menu.
-        /// </summary>
-        internal static string ShapeManager_CreateContextMenu_Close_menu {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Close_menu", resourceCulture);
             }
         }
         
@@ -1127,7 +1109,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show tips.
+        ///   Looks up a localized string similar to Show hotkeys.
         /// </summary>
         internal static string ShapeManager_CreateContextMenu_Show_tips {
             get {
