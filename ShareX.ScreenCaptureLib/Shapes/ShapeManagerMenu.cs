@@ -532,9 +532,9 @@ namespace ShareX.ScreenCaptureLib
                 tsddbOptions.DropDownItems.Add(tsmiQuickCrop);
 
                 ToolStripMenuItem tsmiTips = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_tips);
-                tsmiTips.Checked = Config.ShowTips;
+                tsmiTips.Checked = Config.ShowHotkeys;
                 tsmiTips.CheckOnClick = true;
-                tsmiTips.Click += (sender, e) => Config.ShowTips = tsmiTips.Checked;
+                tsmiTips.Click += (sender, e) => Config.ShowHotkeys = tsmiTips.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiTips);
 
                 ToolStripMenuItem tsmiShowInfo = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_position_and_size_info);

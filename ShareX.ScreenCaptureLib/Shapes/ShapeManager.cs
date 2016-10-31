@@ -264,7 +264,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else if (form.IsAnnotationMode)
                 {
-                    RunAction(Config.MouseRightClickAction);
+                    RunAction(Config.RegionCaptureActionRightClick);
                 }
                 else if (IsShapeIntersect())
                 {
@@ -277,15 +277,15 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (e.Button == MouseButtons.Middle)
             {
-                RunAction(Config.MouseMiddleClickAction);
+                RunAction(Config.RegionCaptureActionMiddleClick);
             }
             else if (e.Button == MouseButtons.XButton1)
             {
-                RunAction(Config.Mouse4ClickAction);
+                RunAction(Config.RegionCaptureActionX1Click);
             }
             else if (e.Button == MouseButtons.XButton2)
             {
-                RunAction(Config.Mouse5ClickAction);
+                RunAction(Config.RegionCaptureActionX2Click);
             }
         }
 
@@ -552,7 +552,6 @@ namespace ShareX.ScreenCaptureLib
                     form.Close();
                     break;
                 case RegionCaptureAction.RemoveShapeCancelCapture:
-                case RegionCaptureAction.OpenOptionsMenu:
                     if (IsShapeIntersect())
                     {
                         DeleteIntersectShape();

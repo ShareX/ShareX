@@ -39,10 +39,10 @@ namespace ShareX.ScreenCaptureLib
         public const int MoveSpeedMaximum = 10;
 
         public bool QuickCrop = true;
-        public RegionCaptureAction MouseRightClickAction = RegionCaptureAction.RemoveShapeCancelCapture;
-        public RegionCaptureAction MouseMiddleClickAction = RegionCaptureAction.SwapToolType;
-        public RegionCaptureAction Mouse4ClickAction = RegionCaptureAction.CaptureFullscreen;
-        public RegionCaptureAction Mouse5ClickAction = RegionCaptureAction.CaptureActiveMonitor;
+        public RegionCaptureAction RegionCaptureActionRightClick = RegionCaptureAction.RemoveShapeCancelCapture;
+        public RegionCaptureAction RegionCaptureActionMiddleClick = RegionCaptureAction.SwapToolType;
+        public RegionCaptureAction RegionCaptureActionX1Click = RegionCaptureAction.CaptureFullscreen;
+        public RegionCaptureAction RegionCaptureActionX2Click = RegionCaptureAction.CaptureActiveMonitor;
         public bool DetectWindows = true;
         public bool DetectControls = true;
         public bool UseDimming = true;
@@ -56,7 +56,7 @@ namespace ShareX.ScreenCaptureLib
             new SnapSize(1280, 720), // 720p
             new SnapSize(1920, 1080) // 1080p
         };
-        public bool ShowTips = false;
+        public bool ShowHotkeys = false;
         public bool ShowInfo = true;
         public bool ShowMagnifier = true;
         public bool UseSquareMagnifier = false;

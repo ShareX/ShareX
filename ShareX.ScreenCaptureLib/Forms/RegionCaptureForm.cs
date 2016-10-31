@@ -226,7 +226,7 @@ namespace ShareX.ScreenCaptureLib
             switch (e.KeyData)
             {
                 case Keys.F1:
-                    Config.ShowTips = !Config.ShowTips;
+                    Config.ShowHotkeys = !Config.ShowHotkeys;
                     break;
                 case Keys.Control | Keys.C:
                     CopyAreaInfo();
@@ -529,7 +529,7 @@ namespace ShareX.ScreenCaptureLib
             DrawObjects(g);
 
             // Draw F1 tips
-            if (Config.ShowTips)
+            if (Config.ShowHotkeys)
             {
                 DrawTips(g);
             }

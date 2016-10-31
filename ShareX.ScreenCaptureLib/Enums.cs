@@ -166,7 +166,6 @@ namespace ShareX.ScreenCaptureLib
         CancelCapture,
         RemoveShapeCancelCapture,
         RemoveShape,
-        OpenOptionsMenu,
         SwapToolType,
         CaptureFullscreen,
         CaptureActiveMonitor

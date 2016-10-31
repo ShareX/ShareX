@@ -39,7 +39,7 @@ namespace ShareX.ScreenCaptureLib
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default))
             {
                 form.Config = GetRegionCaptureOptions(options);
-                form.Config.ShowTips = false;
+                form.Config.ShowHotkeys = false;
 
                 form.Prepare();
                 form.ShowDialog();
@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default))
             {
                 form.Config = GetRegionCaptureOptions(options);
-                form.Config.ShowTips = false;
+                form.Config.ShowHotkeys = false;
 
                 form.Prepare();
                 form.ShowDialog();
@@ -99,7 +99,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.DetectWindows = false;
-                form.Config.ShowTips = false;
+                form.Config.ShowHotkeys = false;
                 form.Config.UseDimming = false;
 
                 form.Prepare();
@@ -124,7 +124,7 @@ namespace ShareX.ScreenCaptureLib
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.UseDimming = false;
                 form.Config.ShowMagnifier = false;
-                form.Config.ShowTips = false;
+                form.Config.ShowHotkeys = false;
 
                 form.Prepare();
                 form.ShowDialog();
@@ -144,7 +144,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.QuickCrop = false;
-                form.Config.ShowTips = false;
+                form.Config.ShowHotkeys = false;
 
                 form.Prepare();
                 form.ShowDialog();
@@ -165,7 +165,7 @@ namespace ShareX.ScreenCaptureLib
 
                 form.Config = GetRegionCaptureOptions(options);
                 form.Config.DetectWindows = false;
-                form.Config.ShowTips = false;
+                form.Config.ShowHotkeys = false;
                 form.Config.UseDimming = false;
 
                 form.Prepare(img);
