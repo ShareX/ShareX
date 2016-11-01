@@ -29,7 +29,6 @@ using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -277,6 +276,47 @@ namespace ShareX
             {
                 this.ForceActivate();
             }
+        }
+
+        private void InitHotkeys()
+        {
+            TaskEx.Run(() =>
+            {
+                if (Program.HotkeysConfig == null)
+                {
+                    Program.HotkeySettingsResetEvent.WaitOne();
+                }
+            },
+            () =>
+            {
+                if (Program.HotkeyManager == null)
+                {
+                    Program.HotkeyManager = new HotkeyManager(this);
+                    Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
+                }
+
+                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
+
+                DebugHelper.WriteLine("HotkeyManager started");
+
+                if (Program.WatchFolderManager == null)
+                {
+                    Program.WatchFolderManager = new WatchFolderManager();
+                }
+
+                Program.WatchFolderManager.UpdateWatchFolders();
+
+                DebugHelper.WriteLine("WatchFolderManager started");
+
+                UpdateWorkflowsMenu();
+            });
+        }
+
+        private void HandleHotkeys(HotkeySettings hotkeySetting)
+        {
+            DebugHelper.WriteLine("Hotkey triggered. " + hotkeySetting);
+
+            TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
         }
 
         private void UpdateWorkflowsMenu()
@@ -871,6 +911,63 @@ namespace ShareX
             }
         }
 
+        private void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
+        {
+            tsmiWindow.DropDownItems.Clear();
+
+            WindowsList windowsList = new WindowsList();
+            List<WindowInfo> windows = null;
+
+            TaskEx.Run(() =>
+            {
+                windows = windowsList.GetVisibleWindowsList();
+            },
+            () =>
+            {
+                if (windows != null)
+                {
+                    foreach (WindowInfo window in windows)
+                    {
+                        try
+                        {
+                            string title = window.Text.Truncate(50, "...");
+                            ToolStripItem tsi = tsmiWindow.DropDownItems.Add(title);
+                            tsi.Tag = window;
+                            tsi.Click += handlerWindow;
+
+                            using (Icon icon = window.Icon)
+                            {
+                                if (icon != null && icon.Width > 0 && icon.Height > 0)
+                                {
+                                    tsi.Image = icon.ToBitmap();
+                                }
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            DebugHelper.WriteException(e);
+                        }
+                    }
+                }
+
+                tsmiMonitor.DropDownItems.Clear();
+
+                Screen[] screens = Screen.AllScreens;
+
+                for (int i = 0; i < screens.Length; i++)
+                {
+                    Screen screen = screens[i];
+                    string text = string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height);
+                    ToolStripItem tsi = tsmiMonitor.DropDownItems.Add(text);
+                    tsi.Tag = screen.Bounds;
+                    tsi.Click += handlerMonitor;
+                }
+
+                tsmiWindow.Invalidate();
+                tsmiMonitor.Invalidate();
+            });
+        }
+
         #region Form events
 
         protected override void SetVisibleCore(bool value)
@@ -965,260 +1062,6 @@ namespace ShareX
         private void MainForm_DragDrop(object sender, DragEventArgs e)
         {
             UploadManager.DragDropUpload(e.Data);
-        }
-
-        private void tsbFileUpload_Click(object sender, EventArgs e)
-        {
-            UploadManager.UploadFile();
-        }
-
-        private void tsmiUploadFolder_Click(object sender, EventArgs e)
-        {
-            UploadManager.UploadFolder();
-        }
-
-        private void tsbClipboardUpload_Click(object sender, EventArgs e)
-        {
-            UploadManager.ClipboardUploadMainWindow();
-        }
-
-        private void tsmiUploadURL_Click(object sender, EventArgs e)
-        {
-            UploadManager.UploadURL();
-        }
-
-        private void tsbDragDropUpload_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDropWindow();
-        }
-
-        private void tsmiColorPicker_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenColorPicker();
-        }
-
-        private void tsmiScreenColorPicker_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenScreenColorPicker();
-        }
-
-        private void tsmiImageEditor_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.AnnotateImage();
-        }
-
-        private void tsmiImageEffects_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenImageEffects();
-        }
-
-        private void tsmiHashCheck_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenHashCheck();
-        }
-
-        private void tsmiDNSChanger_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDNSChanger();
-        }
-
-        private void tsmiQRCode_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenQRCode();
-        }
-
-        private void tsmiRuler_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenRuler();
-        }
-
-        private void tsmiAutomate_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenAutomate();
-        }
-
-        private void tsmiIndexFolder_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDirectoryIndexer();
-        }
-
-        private void tsmiImageCombiner_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenImageCombiner();
-        }
-
-        private void tsmiVideoThumbnailer_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenVideoThumbnailer();
-        }
-
-        private void tsmiFTPClient_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenFTPClient();
-        }
-
-        private void tsmiTweetMessage_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.TweetMessage();
-        }
-
-        private void tsmiMonitorTest_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenMonitorTest();
-        }
-
-        private void tsddbDestinations_DropDownOpened(object sender, EventArgs e)
-        {
-            UpdateDestinationStates();
-        }
-
-        private void tsmiShowDebugLog_Click(object sender, EventArgs e)
-        {
-            new DebugForm(DebugHelper.Logger).Show();
-        }
-
-        private void tsmiTestImageUpload_Click(object sender, EventArgs e)
-        {
-            UploadManager.UploadImage(ShareXResources.Logo);
-        }
-
-        private void tsmiTestTextUpload_Click(object sender, EventArgs e)
-        {
-            UploadManager.UploadText(Resources.MainForm_tsmiTestTextUpload_Click_Text_upload_test);
-        }
-
-        private void tsmiTestFileUpload_Click(object sender, EventArgs e)
-        {
-            UploadManager.UploadImage(ShareXResources.Logo, ImageDestination.FileUploader, Program.DefaultTaskSettings.FileDestination);
-        }
-
-        private void tsmiTestURLShortener_Click(object sender, EventArgs e)
-        {
-            UploadManager.ShortenURL(Links.URL_WEBSITE);
-        }
-
-        private void tsmiTestURLSharing_Click(object sender, EventArgs e)
-        {
-            UploadManager.ShareURL(Links.URL_WEBSITE);
-        }
-
-        private void tsmiScreenRecordingFFmpeg_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region);
-        }
-
-        private void tsmiScreenRecordingGIF_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region);
-        }
-
-        private void tsmiScrollingCapture_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenScrollingCapture();
-        }
-
-        private void tsmiWebpageCapture_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenWebpageCapture();
-        }
-
-        private void tsmiTextCapture_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Thread.Sleep(250);
-
-            try
-            {
-                TaskHelpers.OpenOCR();
-            }
-            catch (Exception ex)
-            {
-                DebugHelper.WriteException(ex);
-            }
-            finally
-            {
-                this.ForceActivate();
-            }
-        }
-
-        private void tsmiAutoCapture_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenAutoCapture();
-        }
-
-        private void tsbApplicationSettings_Click(object sender, EventArgs e)
-        {
-            using (ApplicationSettingsForm settingsForm = new ApplicationSettingsForm())
-            {
-                settingsForm.ShowDialog();
-            }
-
-            AfterSettingsJobs();
-            UpdateWorkflowsMenu();
-            Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
-            Program.ConfigureUploadersConfigWatcher();
-        }
-
-        private void tsbTaskSettings_Click(object sender, EventArgs e)
-        {
-            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(Program.DefaultTaskSettings, true))
-            {
-                taskSettingsForm.ShowDialog();
-            }
-
-            Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
-        }
-
-        private void tsbHotkeySettings_Click(object sender, EventArgs e)
-        {
-            if (Program.HotkeyManager != null)
-            {
-                using (HotkeySettingsForm hotkeySettingsForm = new HotkeySettingsForm(Program.HotkeyManager))
-                {
-                    hotkeySettingsForm.ShowDialog();
-                }
-
-                UpdateWorkflowsMenu();
-                Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
-            }
-        }
-
-        private void tsmiTrayToggleHotkeys_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.ToggleHotkeys();
-        }
-
-        private void tsbDestinationSettings_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenUploadersConfigWindow();
-        }
-
-        private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenScreenshotsFolder();
-        }
-
-        private void tsbHistory_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenHistory();
-        }
-
-        private void tsbImageHistory_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenImageHistory();
-        }
-
-        private void tsbAbout_Click(object sender, EventArgs e)
-        {
-            using (AboutForm aboutForm = new AboutForm())
-            {
-                aboutForm.ShowDialog();
-            }
-        }
-
-        private void tsbDonate_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DONATE);
         }
 
         private void lblDragAndDropTip_MouseUp(object sender, MouseEventArgs e)
@@ -1369,6 +1212,11 @@ namespace ShareX
             }
         }
 
+        private void lvUploads_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            lvUploads.Invalidate(pbTips.Region);
+        }
+
         private void pbTips_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -1381,6 +1229,320 @@ namespace ShareX
         {
             pTips.Visible = false;
         }
+
+        private void pbPatreonOpen_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_PATREON);
+        }
+
+        private void pbPatreonHide_Click(object sender, EventArgs e)
+        {
+            flpPatreon.Visible = false;
+            Program.Settings.ShowPatreonButton = false;
+        }
+
+        #region Menu events
+
+        private void tsmiFullscreen_Click(object sender, EventArgs e)
+        {
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Fullscreen);
+        }
+
+        private void tsddbCapture_DropDownOpening(object sender, EventArgs e)
+        {
+            PrepareCaptureMenuAsync(tsmiWindow, tsmiWindowItems_Click, tsmiMonitor, tsmiMonitorItems_Click);
+        }
+
+        private void tsmiWindowItems_Click(object sender, EventArgs e)
+        {
+            ToolStripItem tsi = (ToolStripItem)sender;
+            WindowInfo wi = tsi.Tag as WindowInfo;
+            if (wi != null)
+            {
+                CaptureTaskHelpers.CaptureWindow(wi.Handle);
+            }
+        }
+
+        private void tsmiMonitorItems_Click(object sender, EventArgs e)
+        {
+            ToolStripItem tsi = (ToolStripItem)sender;
+            Rectangle rectangle = (Rectangle)tsi.Tag;
+            if (!rectangle.IsEmpty)
+            {
+                CaptureTaskHelpers.DoCapture(() => TaskHelpers.GetScreenshot().CaptureRectangle(rectangle), CaptureType.Monitor);
+            }
+        }
+
+        private void tsmiRectangle_Click(object sender, EventArgs e)
+        {
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Region);
+        }
+
+        private void tsmiRectangleLight_Click(object sender, EventArgs e)
+        {
+            CaptureTaskHelpers.CaptureRectangleLight();
+        }
+
+        private void tsmiRectangleTransparent_Click(object sender, EventArgs e)
+        {
+            CaptureTaskHelpers.CaptureRectangleTransparent();
+        }
+
+        private void tsmiLastRegion_Click(object sender, EventArgs e)
+        {
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.LastRegion);
+        }
+
+        private void tsmiScreenRecordingFFmpeg_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region);
+        }
+
+        private void tsmiScreenRecordingGIF_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region);
+        }
+
+        private void tsmiScrollingCapture_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenScrollingCapture();
+        }
+
+        private void tsmiWebpageCapture_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenWebpageCapture();
+        }
+
+        private void tsmiTextCapture_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Thread.Sleep(250);
+
+            try
+            {
+                TaskHelpers.OpenOCR();
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+            finally
+            {
+                this.ForceActivate();
+            }
+        }
+
+        private void tsmiAutoCapture_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenAutoCapture();
+        }
+
+        private void tsbFileUpload_Click(object sender, EventArgs e)
+        {
+            UploadManager.UploadFile();
+        }
+
+        private void tsmiUploadFolder_Click(object sender, EventArgs e)
+        {
+            UploadManager.UploadFolder();
+        }
+
+        private void tsbClipboardUpload_Click(object sender, EventArgs e)
+        {
+            UploadManager.ClipboardUploadMainWindow();
+        }
+
+        private void tsmiUploadURL_Click(object sender, EventArgs e)
+        {
+            UploadManager.UploadURL();
+        }
+
+        private void tsbDragDropUpload_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenDropWindow();
+        }
+
+        private void tsmiColorPicker_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenColorPicker();
+        }
+
+        private void tsmiScreenColorPicker_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenScreenColorPicker();
+        }
+
+        private void tsmiImageEditor_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.AnnotateImage();
+        }
+
+        private void tsmiImageEffects_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageEffects();
+        }
+
+        private void tsmiHashCheck_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenHashCheck();
+        }
+
+        private void tsmiDNSChanger_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenDNSChanger();
+        }
+
+        private void tsmiQRCode_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenQRCode();
+        }
+
+        private void tsmiRuler_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenRuler();
+        }
+
+        private void tsmiAutomate_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenAutomate();
+        }
+
+        private void tsmiIndexFolder_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenDirectoryIndexer();
+        }
+
+        private void tsmiImageCombiner_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageCombiner();
+        }
+
+        private void tsmiVideoThumbnailer_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenVideoThumbnailer();
+        }
+
+        private void tsmiFTPClient_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenFTPClient();
+        }
+
+        private void tsmiTweetMessage_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.TweetMessage();
+        }
+
+        private void tsmiMonitorTest_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenMonitorTest();
+        }
+
+        private void tsddbDestinations_DropDownOpened(object sender, EventArgs e)
+        {
+            UpdateDestinationStates();
+        }
+
+        private void tsbDestinationSettings_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenUploadersConfigWindow();
+        }
+
+        private void tsbTaskSettings_Click(object sender, EventArgs e)
+        {
+            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(Program.DefaultTaskSettings, true))
+            {
+                taskSettingsForm.ShowDialog();
+            }
+
+            Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
+        }
+
+        private void tsbApplicationSettings_Click(object sender, EventArgs e)
+        {
+            using (ApplicationSettingsForm settingsForm = new ApplicationSettingsForm())
+            {
+                settingsForm.ShowDialog();
+            }
+
+            AfterSettingsJobs();
+            UpdateWorkflowsMenu();
+            Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
+            Program.ConfigureUploadersConfigWatcher();
+        }
+
+        private void tsbHotkeySettings_Click(object sender, EventArgs e)
+        {
+            if (Program.HotkeyManager != null)
+            {
+                using (HotkeySettingsForm hotkeySettingsForm = new HotkeySettingsForm(Program.HotkeyManager))
+                {
+                    hotkeySettingsForm.ShowDialog();
+                }
+
+                UpdateWorkflowsMenu();
+                Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
+            }
+        }
+
+        private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenScreenshotsFolder();
+        }
+
+        private void tsbHistory_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenHistory();
+        }
+
+        private void tsbImageHistory_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageHistory();
+        }
+
+        private void tsmiShowDebugLog_Click(object sender, EventArgs e)
+        {
+            new DebugForm(DebugHelper.Logger).Show();
+        }
+
+        private void tsmiTestImageUpload_Click(object sender, EventArgs e)
+        {
+            UploadManager.UploadImage(ShareXResources.Logo);
+        }
+
+        private void tsmiTestTextUpload_Click(object sender, EventArgs e)
+        {
+            UploadManager.UploadText(Resources.MainForm_tsmiTestTextUpload_Click_Text_upload_test);
+        }
+
+        private void tsmiTestFileUpload_Click(object sender, EventArgs e)
+        {
+            UploadManager.UploadImage(ShareXResources.Logo, ImageDestination.FileUploader, Program.DefaultTaskSettings.FileDestination);
+        }
+
+        private void tsmiTestURLShortener_Click(object sender, EventArgs e)
+        {
+            UploadManager.ShortenURL(Links.URL_WEBSITE);
+        }
+
+        private void tsmiTestURLSharing_Click(object sender, EventArgs e)
+        {
+            UploadManager.ShareURL(Links.URL_WEBSITE);
+        }
+
+        private void tsbDonate_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_DONATE);
+        }
+
+        private void tsbAbout_Click(object sender, EventArgs e)
+        {
+            using (AboutForm aboutForm = new AboutForm())
+            {
+                aboutForm.ShowDialog();
+            }
+        }
+
+        #endregion Menu events
 
         #region Tray events
 
@@ -1428,6 +1590,75 @@ namespace ShareX
             {
                 URLHelpers.OpenURL(url);
             }
+        }
+
+        private void cmsTray_Opened(object sender, EventArgs e)
+        {
+            if (Program.Settings.TrayAutoExpandCaptureMenu)
+            {
+                tsmiTrayCapture.Select();
+                tsmiTrayCapture.ShowDropDown();
+            }
+        }
+
+        private void tsmiTrayFullscreen_Click(object sender, EventArgs e)
+        {
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Fullscreen, null, false);
+        }
+
+        private void tsmiCapture_DropDownOpening(object sender, EventArgs e)
+        {
+            PrepareCaptureMenuAsync(tsmiTrayWindow, tsmiTrayWindowItems_Click, tsmiTrayMonitor, tsmiTrayMonitorItems_Click);
+        }
+
+        private void tsmiTrayWindowItems_Click(object sender, EventArgs e)
+        {
+            ToolStripItem tsi = (ToolStripItem)sender;
+            WindowInfo wi = tsi.Tag as WindowInfo;
+            if (wi != null)
+            {
+                CaptureTaskHelpers.CaptureWindow(wi.Handle, null, false);
+            }
+        }
+
+        private void tsmiTrayMonitorItems_Click(object sender, EventArgs e)
+        {
+            ToolStripItem tsi = (ToolStripItem)sender;
+            Rectangle rectangle = (Rectangle)tsi.Tag;
+            if (!rectangle.IsEmpty)
+            {
+                CaptureTaskHelpers.DoCapture(() => TaskHelpers.GetScreenshot().CaptureRectangle(rectangle), CaptureType.Monitor, null, false);
+            }
+        }
+
+        private void tsmiTrayRectangle_Click(object sender, EventArgs e)
+        {
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Region, null, false);
+        }
+
+        private void tsmiTrayRectangleLight_Click(object sender, EventArgs e)
+        {
+            CaptureTaskHelpers.CaptureRectangleLight(null, false);
+        }
+
+        private void tsmiTrayRectangleTransparent_Click(object sender, EventArgs e)
+        {
+            CaptureTaskHelpers.CaptureRectangleTransparent(null, false);
+        }
+
+        private void tsmiTrayLastRegion_Click(object sender, EventArgs e)
+        {
+            CaptureTaskHelpers.CaptureScreenshot(CaptureType.LastRegion, null, false);
+        }
+
+        private void tsmiTrayTextCapture_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenOCR();
+        }
+
+        private void tsmiTrayToggleHotkeys_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.ToggleHotkeys();
         }
 
         private void tsmiTrayShow_Click(object sender, EventArgs e)
@@ -1691,245 +1922,5 @@ namespace ShareX
         #endregion UploadInfoMenu events
 
         #endregion Form events
-
-        #region Hotkey/Capture codes and form events
-
-        private void InitHotkeys()
-        {
-            TaskEx.Run(() =>
-            {
-                if (Program.HotkeysConfig == null)
-                {
-                    Program.HotkeySettingsResetEvent.WaitOne();
-                }
-            },
-            () =>
-            {
-                if (Program.HotkeyManager == null)
-                {
-                    Program.HotkeyManager = new HotkeyManager(this);
-                    Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
-                }
-
-                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
-
-                DebugHelper.WriteLine("HotkeyManager started");
-
-                if (Program.WatchFolderManager == null)
-                {
-                    Program.WatchFolderManager = new WatchFolderManager();
-                }
-
-                Program.WatchFolderManager.UpdateWatchFolders();
-
-                DebugHelper.WriteLine("WatchFolderManager started");
-
-                UpdateWorkflowsMenu();
-            });
-        }
-
-        private void HandleHotkeys(HotkeySettings hotkeySetting)
-        {
-            DebugHelper.WriteLine("Hotkey triggered. " + hotkeySetting);
-
-            TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
-        }
-
-        private void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
-        {
-            tsmiWindow.DropDownItems.Clear();
-
-            WindowsList windowsList = new WindowsList();
-            List<WindowInfo> windows = null;
-
-            TaskEx.Run(() =>
-            {
-                windows = windowsList.GetVisibleWindowsList();
-            },
-            () =>
-            {
-                if (windows != null)
-                {
-                    foreach (WindowInfo window in windows)
-                    {
-                        try
-                        {
-                            string title = window.Text.Truncate(50, "...");
-                            ToolStripItem tsi = tsmiWindow.DropDownItems.Add(title);
-                            tsi.Tag = window;
-                            tsi.Click += handlerWindow;
-
-                            using (Icon icon = window.Icon)
-                            {
-                                if (icon != null && icon.Width > 0 && icon.Height > 0)
-                                {
-                                    tsi.Image = icon.ToBitmap();
-                                }
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            DebugHelper.WriteException(e);
-                        }
-                    }
-                }
-
-                tsmiMonitor.DropDownItems.Clear();
-
-                Screen[] screens = Screen.AllScreens;
-
-                for (int i = 0; i < screens.Length; i++)
-                {
-                    Screen screen = screens[i];
-                    string text = string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height);
-                    ToolStripItem tsi = tsmiMonitor.DropDownItems.Add(text);
-                    tsi.Tag = screen.Bounds;
-                    tsi.Click += handlerMonitor;
-                }
-
-                tsmiWindow.Invalidate();
-                tsmiMonitor.Invalidate();
-            });
-        }
-
-        #region Menu events
-
-        private void tsmiFullscreen_Click(object sender, EventArgs e)
-        {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Fullscreen);
-        }
-
-        private void tsddbCapture_DropDownOpening(object sender, EventArgs e)
-        {
-            PrepareCaptureMenuAsync(tsmiWindow, tsmiWindowItems_Click, tsmiMonitor, tsmiMonitorItems_Click);
-        }
-
-        private void tsmiWindowItems_Click(object sender, EventArgs e)
-        {
-            ToolStripItem tsi = (ToolStripItem)sender;
-            WindowInfo wi = tsi.Tag as WindowInfo;
-            if (wi != null)
-            {
-                CaptureTaskHelpers.CaptureWindow(wi.Handle);
-            }
-        }
-
-        private void tsmiMonitorItems_Click(object sender, EventArgs e)
-        {
-            ToolStripItem tsi = (ToolStripItem)sender;
-            Rectangle rectangle = (Rectangle)tsi.Tag;
-            if (!rectangle.IsEmpty)
-            {
-                CaptureTaskHelpers.DoCapture(() => TaskHelpers.GetScreenshot().CaptureRectangle(rectangle), CaptureType.Monitor);
-            }
-        }
-
-        private void tsmiRectangle_Click(object sender, EventArgs e)
-        {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Region);
-        }
-
-        private void tsmiRectangleLight_Click(object sender, EventArgs e)
-        {
-            CaptureTaskHelpers.CaptureRectangleLight();
-        }
-
-        private void tsmiRectangleTransparent_Click(object sender, EventArgs e)
-        {
-            CaptureTaskHelpers.CaptureRectangleTransparent();
-        }
-
-        private void tsmiLastRegion_Click(object sender, EventArgs e)
-        {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.LastRegion);
-        }
-
-        #endregion Menu events
-
-        #region Tray events
-
-        private void cmsTray_Opened(object sender, EventArgs e)
-        {
-            if (Program.Settings.TrayAutoExpandCaptureMenu)
-            {
-                tsmiTrayCapture.Select();
-                tsmiTrayCapture.ShowDropDown();
-            }
-        }
-
-        private void tsmiTrayFullscreen_Click(object sender, EventArgs e)
-        {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Fullscreen, null, false);
-        }
-
-        private void tsmiCapture_DropDownOpening(object sender, EventArgs e)
-        {
-            PrepareCaptureMenuAsync(tsmiTrayWindow, tsmiTrayWindowItems_Click, tsmiTrayMonitor, tsmiTrayMonitorItems_Click);
-        }
-
-        private void tsmiTrayWindowItems_Click(object sender, EventArgs e)
-        {
-            ToolStripItem tsi = (ToolStripItem)sender;
-            WindowInfo wi = tsi.Tag as WindowInfo;
-            if (wi != null)
-            {
-                CaptureTaskHelpers.CaptureWindow(wi.Handle, null, false);
-            }
-        }
-
-        private void tsmiTrayMonitorItems_Click(object sender, EventArgs e)
-        {
-            ToolStripItem tsi = (ToolStripItem)sender;
-            Rectangle rectangle = (Rectangle)tsi.Tag;
-            if (!rectangle.IsEmpty)
-            {
-                CaptureTaskHelpers.DoCapture(() => TaskHelpers.GetScreenshot().CaptureRectangle(rectangle), CaptureType.Monitor, null, false);
-            }
-        }
-
-        private void tsmiTrayRectangle_Click(object sender, EventArgs e)
-        {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.Region, null, false);
-        }
-
-        private void tsmiTrayRectangleLight_Click(object sender, EventArgs e)
-        {
-            CaptureTaskHelpers.CaptureRectangleLight(null, false);
-        }
-
-        private void lvUploads_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
-        {
-            lvUploads.Invalidate(pbTips.Region);
-        }
-
-        private void pbPatreonOpen_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_PATREON);
-        }
-
-        private void pbPatreonHide_Click(object sender, EventArgs e)
-        {
-            flpPatreon.Visible = false;
-            Program.Settings.ShowPatreonButton = false;
-        }
-
-        private void tsmiTrayRectangleTransparent_Click(object sender, EventArgs e)
-        {
-            CaptureTaskHelpers.CaptureRectangleTransparent(null, false);
-        }
-
-        private void tsmiTrayLastRegion_Click(object sender, EventArgs e)
-        {
-            CaptureTaskHelpers.CaptureScreenshot(CaptureType.LastRegion, null, false);
-        }
-
-        private void tsmiTrayTextCapture_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenOCR();
-        }
-
-        #endregion Tray events
-
-        #endregion Hotkey/Capture codes and form events
     }
 }

@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using ShareX.HelpersLib.Properties;
 using System;
 using System.Drawing;
