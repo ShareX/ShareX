@@ -965,4 +965,31 @@ store.book[0].title</value>
   <data name="cbHastebinUseFileExtension.Text" xml:space="preserve">
     <value>Использовать расширение файла для подсветки синтаксиса (кроме .txt)</value>
   </data>
+  <data name="lblUpleaPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblUpleaUsername.Text" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="lblUpleaApiKey.Text" xml:space="preserve">
+    <value>Ключ API:</value>
+  </data>
+  <data name="btnUpleaLogin.Text" xml:space="preserve">
+    <value>Получить ключ API:</value>
+  </data>
+  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
+    <value>Данные для входа</value>
+  </data>
+  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
+    <value>Моментальная загрузка включена</value>
+  </data>
+  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
+    <value>Премиум пользователь</value>
+  </data>
+  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
+    <value>Информация пользователя</value>
+  </data>
+  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
+    <value>Адрес Email:</value>
+  </data>
 </root>
