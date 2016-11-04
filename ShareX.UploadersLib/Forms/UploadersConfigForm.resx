@@ -10220,10 +10220,10 @@ Using an encrypted library disables sharing.</value>
     <value>3</value>
   </data>
   <data name="gbUpleaUserInformation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>450, 14</value>
+    <value>16, 225</value>
   </data>
   <data name="gbUpleaUserInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 120</value>
+    <value>428, 120</value>
   </data>
   <data name="gbUpleaUserInformation.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
