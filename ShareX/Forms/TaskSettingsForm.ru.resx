@@ -510,4 +510,31 @@
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>Форматирование пипетки:</value>
   </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Расширение</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>Загрузчик</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>Загрузчик</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>Пример: png, jpg, jpeg</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>Фильтры по расширениям:</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>Фильтры загрузчиков</value>
+  </data>
 </root>

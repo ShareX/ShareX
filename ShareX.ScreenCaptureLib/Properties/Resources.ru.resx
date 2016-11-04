@@ -121,7 +121,7 @@
     <value>Захват области с примечаниями</value>
   </data>
   <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
-    <value>[Пробел] Захват всего экрана</value>
+    <value>[Пробел] [ЛКМ] Захват всего экрана</value>
   </data>
   <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
     <value>Ошибка FFmpeg</value>
@@ -174,7 +174,7 @@
     <value>[Клавиши со стрелками] Двигать курсор</value>
   </data>
   <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] Захват активного монитора</value>
+    <value>[~] [ЛКМ дважды] Захват активного монитора</value>
   </data>
   <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
     <value>[Удерживание Shift] Пропорциональное масштабирование</value>
@@ -306,10 +306,10 @@
     <value>[Колесо мыши] Сменить текущий инструмент</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
-    <value>[Tab] [4-я кнопка мыши] Выбрать последний инструмент примечаний</value>
+    <value>[Tab] [средняя кнопка мыши] Выбрать последний инструмент примечаний</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool" xml:space="preserve">
-    <value>[Tab] [4-я кнопка мыши] Выбрать последний инструмент области</value>
+    <value>[Tab] [средняя кнопка мыши] Выбрать последний инструмент области</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
     <value>[Удерживание Ctrl + Стрелки] Переместить область</value>
@@ -321,7 +321,7 @@
     <value>[Удерживание Shift + Стрелки] Более быстрое перемещение курсора</value>
   </data>
   <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster" xml:space="preserve">
-    <value>[Hold Shift + Arrow keys] Более быстрое масштабирование или перемещение</value>
+    <value>[Удерживание Shift + Стрелки] Более быстрое масштабирование или перемещение</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
     <value>Радиус размытия</value>
