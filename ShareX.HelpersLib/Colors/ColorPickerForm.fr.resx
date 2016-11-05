@@ -171,4 +171,7 @@
   <data name="lblHex.Text" xml:space="preserve">
     <value>Code hexadécimal :</value>
   </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
 </root>

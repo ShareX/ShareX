@@ -258,7 +258,7 @@ store.book[0].title</value>
     <value>Résultat du test :</value>
   </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>URL de suppression:</value>
+    <value>URL de suppression :</value>
   </data>
   <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
     <value>Afficher la dernière réponse...</value>
@@ -267,10 +267,10 @@ store.book[0].title</value>
     <value>Type de réponse :</value>
   </data>
   <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Service de mise en ligne de textes:</value>
+    <value>Service de mise en ligne de textes :</value>
   </data>
   <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL de la requête:</value>
+    <value>URL de la requête :</value>
   </data>
   <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
     <value>Tester</value>
@@ -309,10 +309,10 @@ store.book[0].title</value>
     <value>Vous pouvez trouver votre clé API et UID ici</value>
   </data>
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>Clé API :</value>
+    <value>Clé API  :</value>
   </data>
   <data name="lblPolrAPIKey.Text" xml:space="preserve">
-    <value>Clé API :</value>
+    <value>Clé API  :</value>
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
     <value>Nom d'hôte de l'API : (ex: http://exemple.com/api.php - laissez ce champ vide pour utiliser polr.me)</value>
@@ -933,39 +933,54 @@ Cela signifie qu'ils peuvent être perdu depuis Amazon S3 à un certain moment.<
     <value>Mot de passe oublié ?</value>
   </data>
   <data name="lblPuushAPIKey.Text" xml:space="preserve">
-    <value>Clé API:</value>
+    <value>Clé API :</value>
   </data>
   <data name="btnPuushLogin.Text" xml:space="preserve">
     <value>Connexion</value>
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
-    <value>URL de l'API:</value>
+    <value>URL de l'API :</value>
   </data>
   <data name="lblSeafileAPIURL.Text" xml:space="preserve">
     <value>URL de l'API:</value>
   </data>
   <data name="lblCustomUploaderURL.Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>URL :</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>Utiliser les liens directs</value>
   </data>
   <data name="lblPuushPassword.Text" xml:space="preserve">
-    <value>Mot de passe:</value>
+    <value>Mot de passe :</value>
   </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
-    <value>UID de l'API:</value>
+    <value>UID de l'API :</value>
   </data>
   <data name="lblLithiioApiKey.Text" xml:space="preserve">
     <value>Clé API :</value>
-  </data>
-  <data name="lblLithiioUploadURL.Text" xml:space="preserve">
-    <value>Lien URL :</value>
   </data>
   <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
     <value>Utiliser les liens directs</value>
   </data>
   <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
-    <value>Envoyer des e-mails sans afficher de boite de dialogue pour cette adresse e-mail:</value>
+    <value>Envoyer des e-mails sans afficher de boite de dialogue pour cette adresse e-mail :</value>
+  </data>
+  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
+    <value>Adresse E-mail :</value>
+  </data>
+  <data name="lblUpleaApiKey.Text" xml:space="preserve">
+    <value>Clé API  :</value>
+  </data>
+  <data name="btnUpleaLogin.Text" xml:space="preserve">
+    <value>Obtenir la clé API</value>
+  </data>
+  <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
+    <value>Exemple : http://exemple.com/owncloud</value>
+  </data>
+  <data name="lblUpleaPassword.Text" xml:space="preserve">
+    <value>Mot de passe :</value>
+  </data>
+  <data name="lblUpleaUsername.Text" xml:space="preserve">
+    <value>Nom d'utilisateur :</value>
   </data>
 </root>

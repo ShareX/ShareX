@@ -343,7 +343,7 @@ Voulez-vous redémarrer ShareX ?</value>
     <value>Démarrer le sélecteur de couleurs de l'écran</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Utiliser un nouveau nom:</value>
+    <value>Utiliser un nouveau nom :</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
     <value>Arrêter le sélecteur de couleurs de l'écran</value>
@@ -478,5 +478,14 @@ Voulez-vous redémarrer ShareX ?</value>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Vous êtes sur le point de mettre en ligne un fichier volumineux.
 Êtes-vous sûr de vouloir continuer ?</value>
+  </data>
+  <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
+    <value>Réinitialiser les raccourcis clavier ?</value>
+  </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>Réinitialiser les tâches rapides ?</value>
+  </data>
+  <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
+    <value>La configuration {0} est invalide ou manquante. Merci de vérifier les "Paramètres de destination".</value>
   </data>
 </root>

@@ -177,7 +177,4 @@
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>Vérifier le hash d'un fichier</value>
   </data>
-  <data name="lblHashCheckASCII.Text" xml:space="preserve">
-    <value>Codage ASCII :</value>
-  </data>
 </root>

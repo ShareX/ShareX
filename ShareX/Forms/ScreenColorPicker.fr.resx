@@ -124,7 +124,7 @@
     <value>Démarrer le sélecteur de couleurs de l'écran</value>
   </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
-    <value>Position du curseur:</value>
+    <value>Position du curseur :</value>
   </data>
   <data name="btnCopy.Text" xml:space="preserve">
     <value>Copier</value>

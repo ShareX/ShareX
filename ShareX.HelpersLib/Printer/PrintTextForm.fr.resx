@@ -124,7 +124,7 @@
     <value>Changer la police...</value>
   </data>
   <data name="lblFont.Text" xml:space="preserve">
-    <value>Police:</value>
+    <value>Police :</value>
   </data>
   <data name="btnShowPreview.Text" xml:space="preserve">
     <value>Prévisualisation...</value>
