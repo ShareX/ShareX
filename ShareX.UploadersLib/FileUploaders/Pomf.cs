@@ -78,6 +78,7 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("https://filebunker.pw/upload.php"),
             new PomfUploader("https://p.fuwafuwa.moe/upload.php"),
             new PomfUploader("https://pomf.gocataclysm.com/upload.php")
+            new PomfUploader("https://desu.sh/upload.php")
         };
 
         public PomfUploader Uploader { get; private set; }
