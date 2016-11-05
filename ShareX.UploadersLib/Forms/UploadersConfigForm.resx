@@ -9896,10 +9896,10 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="btnUpleaLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 104</value>
+    <value>16, 162</value>
   </data>
   <data name="btnUpleaLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>195, 24</value>
   </data>
   <data name="btnUpleaLogin.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -9926,7 +9926,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblUpleaApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 81</value>
+    <value>13, 120</value>
   </data>
   <data name="lblUpleaApiKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
@@ -9950,7 +9950,7 @@ Using an encrypted library disables sharing.</value>
     <value>1</value>
   </data>
   <data name="txtUpleaApiKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 78</value>
+    <value>16, 136</value>
   </data>
   <data name="txtUpleaApiKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 20</value>
@@ -9977,7 +9977,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblUpleaPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 55</value>
+    <value>13, 72</value>
   </data>
   <data name="lblUpleaPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -10007,7 +10007,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblUpleaUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 29</value>
+    <value>13, 24</value>
   </data>
   <data name="lblUpleaUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -10031,7 +10031,7 @@ Using an encrypted library disables sharing.</value>
     <value>4</value>
   </data>
   <data name="txtUpleaPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 52</value>
+    <value>16, 88</value>
   </data>
   <data name="txtUpleaPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>*</value>
@@ -10055,7 +10055,7 @@ Using an encrypted library disables sharing.</value>
     <value>5</value>
   </data>
   <data name="txtUpleaUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 26</value>
+    <value>16, 40</value>
   </data>
   <data name="txtUpleaUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 20</value>
@@ -10079,7 +10079,7 @@ Using an encrypted library disables sharing.</value>
     <value>16, 14</value>
   </data>
   <data name="gbUpleaLoginCredentials.Size" type="System.Drawing.Size, System.Drawing">
-    <value>428, 145</value>
+    <value>428, 205</value>
   </data>
   <data name="gbUpleaLoginCredentials.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -10106,7 +10106,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblUpleaEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 22</value>
+    <value>13, 24</value>
   </data>
   <data name="lblUpleaEmailAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
@@ -10139,7 +10139,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbUpleaInstantDownloadEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 68</value>
+    <value>16, 89</value>
   </data>
   <data name="cbUpleaInstantDownloadEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 17</value>
@@ -10172,7 +10172,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbUpleaIsPremium.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 45</value>
+    <value>16, 66</value>
   </data>
   <data name="cbUpleaIsPremium.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 17</value>
@@ -10199,7 +10199,7 @@ Using an encrypted library disables sharing.</value>
     <value>False</value>
   </data>
   <data name="txtUpleaEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 19</value>
+    <value>16, 40</value>
   </data>
   <data name="txtUpleaEmailAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 20</value>
@@ -10220,10 +10220,10 @@ Using an encrypted library disables sharing.</value>
     <value>3</value>
   </data>
   <data name="gbUpleaUserInformation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>450, 14</value>
+    <value>16, 225</value>
   </data>
   <data name="gbUpleaUserInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 107</value>
+    <value>428, 120</value>
   </data>
   <data name="gbUpleaUserInformation.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
