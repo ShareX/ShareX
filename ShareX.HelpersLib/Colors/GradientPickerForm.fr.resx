@@ -145,6 +145,6 @@
     <value>Supprimer</value>
   </data>
   <data name="lblPreview.Text" xml:space="preserve">
-    <value>Prévisualisation:</value>
+    <value>Prévisualisation :</value>
   </data>
 </root>

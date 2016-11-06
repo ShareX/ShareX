@@ -328,9 +328,12 @@
     <value>Lors d'un clic gauche sur l'icône :</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
-    <value>Lors d'un double clic gauche sur l'icône:</value>
+    <value>Lors d'un double clic gauche sur l'icône :</value>
   </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
-    <value>Lors d'un clic de la molette sur l'icône:</value>
+    <value>Lors d'un clic de la molette sur l'icône :</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>Vérifier des mises à jour de pré-version</value>
   </data>
 </root>

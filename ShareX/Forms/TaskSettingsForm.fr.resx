@@ -256,7 +256,7 @@
     <value>Mise en ligne du presse-papier</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>Modèle de nom pour la mise en ligne de la capture ou du presse-papier:</value>
+    <value>Modèle de nom pour la mise en ligne de la capture ou du presse-papier :</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Utiliser un modèle de nom pour la mise en ligne de fichiers plutôt que le nom du fichier réel</value>
@@ -425,5 +425,95 @@
   </data>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
     <value>Région personnalisée:</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>Exemple : png, jpg, jpeg</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>Filtre d'extension :</value>
+  </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>kO</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>Hauteur :</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>Largeur :</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>Afficher les IPS dans le coin haut gauche</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>Taille des pixels de la loupe :</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>Nombre de pixels de la loupe :</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>Afficher la loupe près du curseur</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>Largeur :</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>Hauteur :</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>Format du sélecteur de couleurs de l'écran :</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>Service de mise en ligne</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>Service de mise en ligne :</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>Filtres de service de mise en ligne</value>
+  </data>
+  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
+    <value>Afficher les raccourcis clavier et les astuces dans le coin haut droit</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>Afficher les infos sur la position et la taille</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>Mettre à jour</value>
+  </data>
+  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
+    <value>Si l'image est plus lourde que la taille spécifiée alors utiliser le format JPEG :</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>Utiliser une forme de loupe carrée au lieu de ronde</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>Action du clic droit de la souris :</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>Action du clic de la molette :</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Extension</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
+    <value>Assombrir le fond pour que la sélection soit facilement différentiable (affecte la vitesse de lancement)</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>Utiliser le mode multi région qui permet de redimensionner et de déplacer les régions</value>
+  </data>
+  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
+    <value>Mode région à taille fixe :</value>
   </data>
 </root>

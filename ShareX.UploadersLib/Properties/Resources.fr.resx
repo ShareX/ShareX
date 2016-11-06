@@ -244,4 +244,7 @@ Dossiers créés :</value>
   <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
     <value>Le client FTP ne prend en charge que FTP ou FTPS.</value>
   </data>
+  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
+    <value>Supprimer tous les services de mise en ligne personnalisés ?</value>
+  </data>
 </root>

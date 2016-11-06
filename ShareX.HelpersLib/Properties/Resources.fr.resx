@@ -862,4 +862,91 @@ Voulez-vous la télécharger ?</value>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Reconnaître un texte (OCR)</value>
   </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>Supprimer une forme</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>Supprimer une forme ou annuler la capture</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Simuler un défilement à la souris</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
+    <value>Désactiver le défilement jusqu'en haut</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>Annuler la capture</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>Ne rien faire</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>Enregistrer l'écran</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Annuler l'enregistrement d'écran</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>Capture plein écran</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Capturer l'écran actif</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>Dessin : Flèche</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>Dessin : Ellipse</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>Dessin : Ligne</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>Dessin : Rectangle</value>
+  </data>
+  <data name="ShapeType_DrawingRoundedRectangle" xml:space="preserve">
+    <value>Dessin : Rectangle arrondi</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>Dessin : Etape</value>
+  </data>
+  <data name="ShapeType_DrawingText" xml:space="preserve">
+    <value>Dessin : Texte</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>Dessin : Main levée</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>Dessin : Image</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>Dessin : Bulle de dialogue</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>Région : Ellipse</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>Région : Rectangle</value>
+  </data>
+  <data name="ShapeType_RegionRoundedRectangle" xml:space="preserve">
+    <value>Région : Rectangle arrondi</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>Région : Main levée</value>
+  </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>Effet : Flou</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>Effet : Pixeliser</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>Effet : Surligner</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>Simuler un appui de la touche "Début"</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
+    <value>Automatiquement essayer toutes les méthodes jusqu'à ce qu'une fonctionne</value>
+  </data>
 </root>
