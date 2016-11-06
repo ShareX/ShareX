@@ -181,6 +181,9 @@
   <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
     <value>Connected!</value>
   </data>
+  <data name="Up1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Favicons\Up1.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
     <value>Status: Login failed.</value>
   </data>

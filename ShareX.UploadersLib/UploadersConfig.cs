@@ -248,6 +248,11 @@ namespace ShareX.UploadersLib
 
         public PushbulletSettings PushbulletSettings = new PushbulletSettings();
 
+        // Up1
+
+        public string Up1Host = "https://share.riseup.net";
+        public string Up1Key = "59Mnk5nY6eCn4bi9GvfOXhMH54E7Bh6EMJXtyJfs";
+
         // Lambda
 
         public LambdaSettings LambdaSettings = new LambdaSettings();

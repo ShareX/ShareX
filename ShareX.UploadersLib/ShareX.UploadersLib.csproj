@@ -98,6 +98,9 @@
       <HintPath>..\packages\SSH.NET.2014.4.6-beta2\lib\net40\Renci.SshNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Security.Cryptography">
+      <HintPath>..\Lib\Security.Cryptography.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -354,6 +357,7 @@
     <Compile Include="URLShorteners\VgdURLShortener.cs" />
     <Compile Include="URLShorteners\VURLShortener.cs" />
     <Compile Include="URLShorteners\YourlsURLShortener.cs" />
+    <Compile Include="FileUploaders\Up1.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\AccountsControl.de.resx">

@@ -105,6 +105,7 @@ DirectShow video and audio device: https://github.com/rdp/screen-capture-recorde
 QrCode.Net: https://qrcodenet.codeplex.com
 System.Net.FtpClient: https://netftp.codeplex.com
 AWS SDK: http://aws.amazon.com/sdk-for-net/
+CLR Security: http://clrsecurity.codeplex.com
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 OCR Space: http://ocr.space
 
