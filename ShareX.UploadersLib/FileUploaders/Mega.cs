@@ -58,10 +58,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class Mega : FileUploader, IWebClient
     {
-        // Pack file upload in 512MB fragments
+        // Pack all chunks in a single upload fragment
         // (by default, MegaApiClient splits files in 1MB fragments and do multiple uploads)
         // It allows to have a consistent upload progression in Sharex
-        private const int UploadChunksPackSize = 512 * 1024 * 1024;
+        private const int UploadChunksPackSize = -1;
 
         private readonly MegaApiClient _megaClient;
         private readonly MegaApiClient.AuthInfos _authInfos;
