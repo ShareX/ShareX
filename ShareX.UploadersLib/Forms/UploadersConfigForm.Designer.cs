@@ -1653,9 +1653,9 @@
             this.tcFileUploaders.Controls.Add(this.tpStreamable);
             this.tcFileUploaders.Controls.Add(this.tpSul);
             this.tcFileUploaders.Controls.Add(this.tpLithiio);
+            this.tcFileUploaders.Controls.Add(this.tpUplea);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
-            this.tcFileUploaders.Controls.Add(this.tpUplea);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
             this.tcFileUploaders.Multiline = true;
             this.tcFileUploaders.Name = "tcFileUploaders";

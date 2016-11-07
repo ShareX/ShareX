@@ -1239,6 +1239,21 @@ namespace ShareX
             TaskSettings.UploadSettings.ClipboardUploadAutoIndexFolder = cbClipboardUploadAutoIndexFolder.Checked;
         }
 
+        private UploaderFilter GetUploaderFilterFromFields()
+        {
+            IGenericUploaderService service = cbUploaderFiltersDestination.SelectedItem as IGenericUploaderService;
+
+            if (service != null)
+            {
+                UploaderFilter filter = new UploaderFilter();
+                filter.Uploader = service.ServiceIdentifier;
+                filter.SetExtensions(txtUploaderFiltersExtensions.Text);
+                return filter;
+            }
+
+            return null;
+        }
+
         private void AddUploaderFilterToList(UploaderFilter filter)
         {
             if (filter != null)
@@ -1260,7 +1275,9 @@ namespace ShareX
 
             for (int i = 0; i < cbUploaderFiltersDestination.Items.Count; i++)
             {
-                if (cbUploaderFiltersDestination.Items[i].ToString().Equals(filter.Uploader, StringComparison.InvariantCultureIgnoreCase))
+                IGenericUploaderService service = cbUploaderFiltersDestination.Items[i] as IGenericUploaderService;
+
+                if (service != null && service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.InvariantCultureIgnoreCase))
                 {
                     cbUploaderFiltersDestination.SelectedIndex = i;
                     break;
@@ -1272,14 +1289,10 @@ namespace ShareX
 
         private void btnUploaderFiltersAdd_Click(object sender, EventArgs e)
         {
-            IGenericUploaderService service = cbUploaderFiltersDestination.SelectedItem as IGenericUploaderService;
+            UploaderFilter filter = GetUploaderFilterFromFields();
 
-            if (service != null)
+            if (filter != null)
             {
-                UploaderFilter filter = new UploaderFilter();
-                filter.Uploader = service.ServiceIdentifier;
-                filter.SetExtensions(txtUploaderFiltersExtensions.Text);
-
                 TaskSettings.UploadSettings.UploaderFilters.Add(filter);
 
                 AddUploaderFilterToList(filter);
@@ -1290,6 +1303,22 @@ namespace ShareX
 
         private void btnUploaderFiltersUpdate_Click(object sender, EventArgs e)
         {
+            int index = lvUploaderFiltersList.SelectedIndex;
+
+            if (index > -1)
+            {
+                UploaderFilter filter = GetUploaderFilterFromFields();
+
+                if (filter != null)
+                {
+                    TaskSettings.UploadSettings.UploaderFilters[index] = filter;
+
+                    ListViewItem lvi = lvUploaderFiltersList.Items[index];
+                    lvi.Text = filter.Uploader;
+                    lvi.SubItems[1].Text = filter.GetExtensions();
+                    lvi.Tag = filter;
+                }
+            }
         }
 
         private void btnUploaderFiltersRemove_Click(object sender, EventArgs e)
@@ -1299,6 +1328,7 @@ namespace ShareX
             if (index > -1)
             {
                 TaskSettings.UploadSettings.UploaderFilters.RemoveAt(index);
+
                 lvUploaderFiltersList.Items.RemoveAt(index);
             }
         }

@@ -110,11 +110,6 @@ Root: "HKCU"; Subkey: "Software\Classes\Folder\shell\{#AppName}"; Flags: dontcre
 #include "Scripts\products\msi31.iss"
 #include "Scripts\products\dotnetfx40full.iss"
 
-procedure InitializeWizard;
-begin
-  WizardForm.LicenseAcceptedRadio.Checked := true;
-end;
-
 function InitializeSetup(): Boolean;
 begin
   initwinversion();
