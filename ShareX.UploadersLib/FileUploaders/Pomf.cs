@@ -69,6 +69,7 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
             new PomfUploader("http://glop.me/upload.php", "http://gateway.glop.me/ipfs"),
             new PomfUploader("https://mixtape.moe/upload.php"),
+            new PomfUploader("https://nya.is/upload"),
             new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
             new PomfUploader("https://pomf.is/upload.php"),
             new PomfUploader("http://reich.io/upload.php"),
