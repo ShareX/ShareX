@@ -264,7 +264,7 @@ namespace ShareX.Setup
         {
             if (!File.Exists(FFmpeg32bit))
             {
-                string filename = Helpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-20160827-c752733-win32-static.zip");
+                string filename = Helpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-3.2-win32-static.zip");
                 Helpers.Unzip(filename, "ffmpeg.exe");
                 File.Move("ffmpeg.exe", FFmpeg32bit);
             }
@@ -273,7 +273,7 @@ namespace ShareX.Setup
 
             if (!File.Exists(FFmpeg64bit))
             {
-                string filename = Helpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20160827-c752733-win64-static.zip");
+                string filename = Helpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-3.2-win64-static.zip");
                 Helpers.Unzip(filename, "ffmpeg.exe");
                 File.Move("ffmpeg.exe", FFmpeg64bit);
             }
