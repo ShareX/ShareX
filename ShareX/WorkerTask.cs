@@ -882,7 +882,7 @@ namespace ShareX
 
         private bool CheckUploadFilters(Stream stream, string filename)
         {
-            if (Info.TaskSettings.UploadSettings.UploaderFilters != null)
+            if (Info.TaskSettings.UploadSettings.UploaderFilters != null && !string.IsNullOrEmpty(filename) && stream != null)
             {
                 UploaderFilter filter = Info.TaskSettings.UploadSettings.UploaderFilters.FirstOrDefault(x => x.IsValidFilter(filename, stream));
 
