@@ -62,24 +62,31 @@ namespace ShareX.UploadersLib.FileUploaders
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             //new PomfUploader("https://pomf.se/upload.php"),
-            new PomfUploader("http://comfy.moe/upload.php"),
+            new PomfUploader("https://u.aww.moe/upload", "https://aww.moe"),
+            new PomfUploader("https://biyori.moe/upload.php"),
             new PomfUploader("https://cocaine.ninja/upload.php"),
+            new PomfUploader("https://comfy.moe/upload.php"),
             new PomfUploader("https://cuntflaps.me/upload.php"),
+            new PomfUploader("https://desu.sh/upload.php", "https://a.desu.sh"),
+            new PomfUploader("https://filebunker.pw/upload.php"),
             new PomfUploader("https://fluntcaps.me/upload.php"),
             new PomfUploader("http://g.zxq.co/upload.php", "http://y.zxq.co"),
             new PomfUploader("http://glop.me/upload.php", "http://gateway.glop.me/ipfs"),
             new PomfUploader("https://mixtape.moe/upload.php"),
             new PomfUploader("https://nya.is/upload"),
-            new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
-            new PomfUploader("https://pomf.is/upload.php"),
-            new PomfUploader("http://reich.io/upload.php"),
-            new PomfUploader("https://steamy.moe/upload.php"),
-            new PomfUploader("https://sugoi.vidyagam.es/upload.php"),
-            new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe"),
-            new PomfUploader("https://filebunker.pw/upload.php"),
             new PomfUploader("https://p.fuwafuwa.moe/upload.php"),
+            new PomfUploader("https://pomf.cat/upload.php", "https://a.pomf.cat"),
             new PomfUploader("https://pomf.gocataclysm.com/upload.php"),
-            new PomfUploader("https://desu.sh/upload.php")
+            new PomfUploader("https://pomf.is/upload.php"),
+            new PomfUploader("https://pomf.pyonpyon.moe/upload.php"),
+            new PomfUploader("https://pomfe.co/upload.php", "https://a.pomfe.co"),
+            new PomfUploader("http://reich.io/upload.php"),
+            new PomfUploader("https://sugoi.vidyagam.es/upload.php"),
+            new PomfUploader("https://u.xpw.us/upload"),
+            new PomfUploader("https://up.asis.io/upload.php", "http://dl.asis.io"),
+            new PomfUploader("http://up.che.moe/upload.php", "http://cdn.che.moe"),
+            new PomfUploader("https://vidga.me/upload.php"),
+            new PomfUploader("https://yiff.moe/upload.php")
         };
 
         public PomfUploader Uploader { get; private set; }
@@ -138,7 +145,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         if (result != null && result.IsSuccess && !string.IsNullOrEmpty(result.URL))
                         {
-                            successful.Add(new PomfTest { Name = uploader.ToString(), UploadTime = uploadTime });
+                            successful.Add(new PomfTest { Name = uploader.ToString(), URL = result.URL, UploadTime = uploadTime });
                         }
                         else
                         {
@@ -175,13 +182,14 @@ namespace ShareX.UploadersLib.FileUploaders
         private class PomfTest
         {
             public string Name { get; set; }
+            public string URL { get; set; }
             public long UploadTime { get; set; } = -1;
 
             public override string ToString()
             {
-                if (UploadTime >= 0)
+                if (!string.IsNullOrEmpty(URL))
                 {
-                    return $"{Name} ({UploadTime}ms)";
+                    return $"{Name} ({UploadTime}ms): {URL}";
                 }
 
                 return Name;

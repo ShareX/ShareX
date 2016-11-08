@@ -31,6 +31,7 @@ using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -2238,7 +2239,7 @@ namespace ShareX.UploadersLib
 
                     if (!string.IsNullOrEmpty(result))
                     {
-                        MessageBox.Show(result, "Pomf test results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Debug.WriteLine("Pomf test results:\r\n\r\n" + result);
                     }
                 }
             });
