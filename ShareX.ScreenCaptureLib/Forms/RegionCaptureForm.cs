@@ -579,7 +579,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawFPS(Graphics g, int offset)
         {
-            ImageHelpers.DrawTextWithShadow(g, FPS.ToString(), new Point(offset, offset), infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
+            Rectangle screenBounds = CaptureHelpers.GetActiveScreenBounds0Based();
+
+            ImageHelpers.DrawTextWithShadow(g, FPS.ToString(), screenBounds.Location.Add(offset), infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
         }
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
