@@ -781,7 +781,10 @@ namespace ShareX
 
             string filePath = ImageHelpers.OpenImageFileDialog();
 
-            AnnotateImage(filePath, taskSettings);
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                AnnotateImage(filePath, taskSettings);
+            }
         }
 
         public static void AnnotateImage(string filePath, TaskSettings taskSettings = null)
