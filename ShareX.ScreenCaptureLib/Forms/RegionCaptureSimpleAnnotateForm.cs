@@ -371,8 +371,7 @@ namespace ShareX.ScreenCaptureLib
             g.FillRectangle(textBackgroundBrush, rect.Offset(-2));
             g.DrawRectangleProper(textBackgroundPenBlack, rect.Offset(-1));
             g.DrawRectangleProper(textBackgroundPenWhite, rect);
-
-            ImageHelpers.DrawTextWithShadow(g, text, rect.Offset(-padding).Location, infoFont, Brushes.White, Brushes.Black);
+            g.DrawTextWithShadow(text, rect.Offset(-padding).Location, infoFont, Brushes.White, Brushes.Black);
         }
 
         private void DrawTips(Graphics g, int offset, int padding)

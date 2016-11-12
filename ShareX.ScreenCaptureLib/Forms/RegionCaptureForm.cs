@@ -581,7 +581,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Rectangle screenBounds = CaptureHelpers.GetActiveScreenBounds0Based();
 
-            ImageHelpers.DrawTextWithShadow(g, FPS.ToString(), screenBounds.Location.Add(offset), infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
+            g.DrawTextWithShadow(FPS.ToString(), screenBounds.Location.Add(offset), infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
         }
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
@@ -596,7 +596,7 @@ namespace ShareX.ScreenCaptureLib
             g.DrawRectangleProper(innerBorderPen, rect.Offset(-1));
             g.DrawRectangleProper(outerBorderPen, rect);
 
-            ImageHelpers.DrawTextWithShadow(g, text, rect.Offset(-padding).Location, font, textBrush, textShadowBrush);
+            g.DrawTextWithShadow(text, rect.Offset(-padding).Location, font, textBrush, textShadowBrush);
         }
 
         private void DrawAreaText(Graphics g, string text, Rectangle area)

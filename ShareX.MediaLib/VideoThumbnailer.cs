@@ -281,8 +281,7 @@ namespace ShareX.MediaLib
 
                                 using (Font font = new Font("Arial", 10, FontStyle.Bold))
                                 {
-                                    ImageHelpers.DrawTextWithShadow(g, thumbnails[i].Timestamp.ToString(),
-                                        new Point(offsetX + timestampOffset, offsetY + timestampOffset), font, Brushes.White, Brushes.Black);
+                                    g.DrawTextWithShadow(thumbnails[i].Timestamp.ToString(), new Point(offsetX + timestampOffset, offsetY + timestampOffset), font, Brushes.White, Brushes.Black);
                                 }
                             }
 
