@@ -696,7 +696,7 @@ namespace ShareX.HelpersLib
 
                 if (size > 0)
                 {
-                    Blur((Bitmap)shadowImage, size);
+                    FastBoxBlur((Bitmap)shadowImage, size);
                 }
 
                 if (darkness > 1)
@@ -860,7 +860,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void PixelateImage(Bitmap bmp, int pixelSize)
+        public static void Pixelate(Bitmap bmp, int pixelSize)
         {
             if (pixelSize > 1)
             {
@@ -899,6 +899,123 @@ namespace ShareX.HelpersLib
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        // http://incubator.quasimondo.com/processing/superfast_blur.php
+        public static void FastBoxBlur(Bitmap bmp, int radius)
+        {
+            if (radius < 1) return;
+
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+            {
+                int w = unsafeBitmap.Width;
+                int h = unsafeBitmap.Height;
+                int wm = w - 1;
+                int hm = h - 1;
+                int wh = w * h;
+                int div = radius + radius + 1;
+                byte[] r = new byte[wh];
+                byte[] g = new byte[wh];
+                byte[] b = new byte[wh];
+                byte[] a = new byte[wh];
+                int rsum, gsum, bsum, asum, x, y, i, p, p1, p2, yp, yi, yw;
+                int[] vmin = new int[Math.Max(w, h)];
+                int[] vmax = new int[Math.Max(w, h)];
+
+                byte[] dv = new byte[256 * div];
+
+                for (i = 0; i < 256 * div; i++)
+                {
+                    dv[i] = (byte)(i / div);
+                }
+
+                yw = yi = 0;
+
+                for (y = 0; y < h; y++)
+                {
+                    rsum = gsum = bsum = asum = 0;
+
+                    for (i = -radius; i <= radius; i++)
+                    {
+                        p = (yi + Math.Min(wm, Math.Max(i, 0)));
+
+                        ColorBgra color = unsafeBitmap.GetPixel(p);
+                        rsum += color.Red;
+                        gsum += color.Green;
+                        bsum += color.Blue;
+                        asum += color.Alpha;
+                    }
+
+                    for (x = 0; x < w; x++)
+                    {
+                        r[yi] = dv[rsum];
+                        g[yi] = dv[gsum];
+                        b[yi] = dv[bsum];
+                        a[yi] = dv[asum];
+
+                        if (y == 0)
+                        {
+                            vmin[x] = Math.Min(x + radius + 1, wm);
+                            vmax[x] = Math.Max(x - radius, 0);
+                        }
+
+                        p1 = (yw + vmin[x]);
+                        p2 = (yw + vmax[x]);
+
+                        ColorBgra color1 = unsafeBitmap.GetPixel(p1);
+                        ColorBgra color2 = unsafeBitmap.GetPixel(p2);
+
+                        rsum += color1.Red - color2.Red;
+                        gsum += color1.Green - color2.Green;
+                        bsum += color1.Blue - color2.Blue;
+                        asum += color1.Alpha - color2.Alpha;
+
+                        yi++;
+                    }
+
+                    yw += w;
+                }
+
+                for (x = 0; x < w; x++)
+                {
+                    rsum = gsum = bsum = asum = 0;
+                    yp = -radius * w;
+
+                    for (i = -radius; i <= radius; i++)
+                    {
+                        yi = Math.Max(0, yp) + x;
+                        rsum += r[yi];
+                        gsum += g[yi];
+                        bsum += b[yi];
+                        asum += a[yi];
+                        yp += w;
+                    }
+
+                    yi = x;
+
+                    for (y = 0; y < h; y++)
+                    {
+                        ColorBgra color = new ColorBgra(dv[bsum], dv[gsum], dv[rsum], dv[asum]);
+                        unsafeBitmap.SetPixel(yi, color);
+
+                        if (x == 0)
+                        {
+                            vmin[y] = Math.Min(y + radius + 1, hm) * w;
+                            vmax[y] = Math.Max(y - radius, 0) * w;
+                        }
+
+                        p1 = x + vmin[y];
+                        p2 = x + vmax[y];
+
+                        rsum += r[p1] - r[p2];
+                        gsum += g[p1] - g[p2];
+                        bsum += b[p1] - b[p2];
+                        asum += a[p1] - a[p2];
+
+                        yi += w;
                     }
                 }
             }
@@ -1152,18 +1269,6 @@ namespace ShareX.HelpersLib
             }
 
             return img;
-        }
-
-        public static void Blur(Bitmap sourceImage, int radius)
-        {
-            if (GDIplus.IsBlurPossible(radius))
-            {
-                GDIplus.ApplyBlur(sourceImage, new Rectangle(0, 0, sourceImage.Width, sourceImage.Height), radius, false);
-            }
-            else
-            {
-                ImageHelper.ApplyBoxBlur(sourceImage, radius);
-            }
         }
 
         public static Image CreateTornEdge(Image sourceImage, int toothHeight, int horizontalToothRange, int verticalToothRange, AnchorStyles sides)

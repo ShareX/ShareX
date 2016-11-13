@@ -80,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
 
                 using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
                 {
-                    ImageHelpers.Blur(croppedImage, BlurRadius);
+                    ImageHelpers.FastBoxBlur(croppedImage, BlurRadius);
 
                     g.DrawImage(croppedImage, rect);
                 }

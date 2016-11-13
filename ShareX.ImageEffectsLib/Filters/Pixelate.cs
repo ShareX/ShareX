@@ -53,9 +53,8 @@ namespace ShareX.ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            Bitmap bmp = (Bitmap)img;
-            ImageHelpers.PixelateImage(bmp, Size);
-            return bmp;
+            ImageHelpers.Pixelate((Bitmap)img, Size);
+            return img;
         }
     }
 }

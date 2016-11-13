@@ -80,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
 
                 using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
                 {
-                    ImageHelpers.PixelateImage(croppedImage, PixelSize);
+                    ImageHelpers.Pixelate(croppedImage, PixelSize);
 
                     g.DrawImage(croppedImage, rect);
                 }
