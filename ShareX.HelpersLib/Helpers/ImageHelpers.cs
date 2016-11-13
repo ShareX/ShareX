@@ -818,7 +818,7 @@ namespace ShareX.HelpersLib
 
                 if (size > 0)
                 {
-                    FastBoxBlur((Bitmap)shadowImage, size);
+                    BoxBlur((Bitmap)shadowImage, size);
                 }
 
                 if (darkness > 1)
@@ -1022,6 +1022,150 @@ namespace ShareX.HelpersLib
                             }
                         }
                     }
+                }
+            }
+        }
+
+        // https://lotsacode.wordpress.com/2010/12/08/fast-blur-box-blur-with-accumulator/
+        public static void BoxBlur(Bitmap bmp, int range)
+        {
+            if (range > 1)
+            {
+                if ((range & 1) == 0)
+                {
+                    range++;
+                }
+
+                using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+                {
+                    BoxBlurHorizontal(unsafeBitmap, range);
+                    BoxBlurVertical(unsafeBitmap, range);
+                    BoxBlurHorizontal(unsafeBitmap, range);
+                    BoxBlurVertical(unsafeBitmap, range);
+                }
+            }
+        }
+
+        private static void BoxBlurHorizontal(UnsafeBitmap unsafeBitmap, int range)
+        {
+            int w = unsafeBitmap.Width;
+            int h = unsafeBitmap.Height;
+            int halfRange = range / 2;
+            ColorBgra[] newColors = new ColorBgra[w];
+
+            for (int y = 0; y < h; y++)
+            {
+                int hits = 0;
+                int r = 0;
+                int g = 0;
+                int b = 0;
+                int a = 0;
+
+                for (int x = -halfRange; x < w; x++)
+                {
+                    int oldPixel = x - halfRange - 1;
+                    if (oldPixel >= 0)
+                    {
+                        ColorBgra color = unsafeBitmap.GetPixel(oldPixel, y);
+
+                        if (color.Bgra != 0)
+                        {
+                            r -= color.Red;
+                            g -= color.Green;
+                            b -= color.Blue;
+                            a -= color.Alpha;
+                        }
+
+                        hits--;
+                    }
+
+                    int newPixel = x + halfRange;
+                    if (newPixel < w)
+                    {
+                        ColorBgra color = unsafeBitmap.GetPixel(newPixel, y);
+
+                        if (color.Bgra != 0)
+                        {
+                            r += color.Red;
+                            g += color.Green;
+                            b += color.Blue;
+                            a += color.Alpha;
+                        }
+
+                        hits++;
+                    }
+
+                    if (x >= 0)
+                    {
+                        newColors[x] = new ColorBgra((byte)(b / hits), (byte)(g / hits), (byte)(r / hits), (byte)(a / hits));
+                    }
+                }
+
+                for (int x = 0; x < w; x++)
+                {
+                    unsafeBitmap.SetPixel(x, y, newColors[x]);
+                }
+            }
+        }
+
+        private static void BoxBlurVertical(UnsafeBitmap unsafeBitmap, int range)
+        {
+            int w = unsafeBitmap.Width;
+            int h = unsafeBitmap.Height;
+            int halfRange = range / 2;
+            ColorBgra[] newColors = new ColorBgra[w];
+
+            for (int x = 0; x < w; x++)
+            {
+                int hits = 0;
+                int r = 0;
+                int g = 0;
+                int b = 0;
+                int a = 0;
+
+                for (int y = -halfRange; y < h; y++)
+                {
+                    int oldPixel = y - halfRange - 1;
+                    if (oldPixel >= 0)
+                    {
+                        ColorBgra color = unsafeBitmap.GetPixel(x, oldPixel);
+
+                        if (color.Bgra != 0)
+                        {
+                            r -= color.Red;
+                            g -= color.Green;
+                            b -= color.Blue;
+                            a -= color.Alpha;
+                        }
+
+                        hits--;
+                    }
+
+                    int newPixel = y + halfRange;
+                    if (newPixel < h)
+                    {
+                        ColorBgra color = unsafeBitmap.GetPixel(x, newPixel);
+
+                        if (color.Bgra != 0)
+                        {
+                            r += color.Red;
+                            g += color.Green;
+                            b += color.Blue;
+                            a += color.Alpha;
+                        }
+
+                        hits++;
+                    }
+
+                    if (y >= 0)
+                    {
+                        newColors[y] = new ColorBgra((byte)(b / hits), (byte)(g / hits), (byte)(r / hits), (byte)(a / hits));
+                    }
+                }
+
+                for (int y = 0; y < h; y++)
+                {
+                    unsafeBitmap.SetPixel(x, y, newColors[y]);
                 }
             }
         }

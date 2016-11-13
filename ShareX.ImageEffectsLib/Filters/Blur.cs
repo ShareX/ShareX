@@ -53,7 +53,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            ImageHelpers.FastBoxBlur((Bitmap)img, Radius);
+            ImageHelpers.BoxBlur((Bitmap)img, Radius);
             return img;
         }
     }
